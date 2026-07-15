@@ -450,14 +450,14 @@ function multiSubjectPayloadFrom(basePayload) {
   h1.displayName = "דיקדוק";
   h1.questions = 5;
   h1.accuracy = 40;
-  fixIds(h1, "hebrew");
+  fixIds(h1, "science");
   return {
     version: 2,
     executiveSummary: { majorTrendsHe: ["קו מגמה ראשון לתקופה", "קו משני לתקופה"] },
     subjectProfiles: [
       { subject: "math", topicRecommendations: [m1] },
       { subject: "english", topicRecommendations: [e1] },
-      { subject: "hebrew", topicRecommendations: [h1] },
+      { subject: "science", topicRecommendations: [h1] },
     ],
   };
 }
@@ -484,7 +484,7 @@ const rSubjectsList = parentCopilot.runParentCopilotTurn({
 });
 assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("מתמטיקה"));
 assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("אנגלית"));
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("עברית"));
+assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("מדעים"));
 assert.equal(rSubjectsList.suggestedFollowUp, null);
 
 const rHardest = parentCopilot.runParentCopilotTurn({
@@ -493,7 +493,7 @@ const rHardest = parentCopilot.runParentCopilotTurn({
   utterance: "באיזה מקצוע הכי קשה?",
   sessionId: "semantic-hardest",
 });
-assert.ok(rHardest.answerBlocks[0].textHe.includes("עברית"));
+assert.ok(rHardest.answerBlocks[0].textHe.includes("מדעים"));
 assert.equal(rHardest.suggestedFollowUp, null);
 
 const rPeriod = parentCopilot.runParentCopilotTurn({

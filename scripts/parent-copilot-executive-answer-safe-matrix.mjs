@@ -76,8 +76,8 @@ function payloadMultiSubject() {
         topicRecommendations: [mkTopic("english", "e-voc", "אוצר מילים", 18, 92, { readiness: "ready", confidenceBand: "high", cannotConcludeYet: false, eligible: true, intensity: "RI2" })],
       },
       {
-        subject: "hebrew",
-        topicRecommendations: [mkTopic("hebrew", "h-gram", "דקדוק", 12, 45, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        subject: "science",
+        topicRecommendations: [mkTopic("science", "s-bio", "ביולוגיה", 12, 45, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
       },
     ],
     executiveSummary: { majorTrendsHe: [] },
@@ -132,8 +132,8 @@ function payloadImbalancedCounts() {
         topicRecommendations: [mkTopic("english", "e-light", "אוצר מילים", 8, 92, { readiness: "ready", confidenceBand: "high" })],
       },
       {
-        subject: "hebrew",
-        topicRecommendations: [mkTopic("hebrew", "h-tiny", "דקדוק", 3, 40, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        subject: "science",
+        topicRecommendations: [mkTopic("science", "s-tiny", "ביולוגיה", 3, 40, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
       },
     ],
     executiveSummary: { majorTrendsHe: [] },
