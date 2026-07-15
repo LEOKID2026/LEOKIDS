@@ -25,10 +25,8 @@
 ## 3. Cleanup commit
 
 ```text
-refactor: remove non-global learning subjects
+28a6852 — refactor: remove non-global learning subjects
 ```
-
-(Created after this report is written and changes are staged.)
 
 ## 4. Subjects kept (4)
 
