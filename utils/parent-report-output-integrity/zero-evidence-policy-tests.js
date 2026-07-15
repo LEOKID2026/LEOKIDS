@@ -11,15 +11,13 @@ import {
 } from "../parent-report-language/subject-evidence-policy.js";
 import { stripZeroEvidenceFromPublicReportPayload } from "../../lib/parent-server/report-payload-public-sanitize.js";
 
-const ALL_SUBJECTS = ["math", "geometry", "english", "science", "hebrew", "moledet-geography"];
+const ALL_SUBJECTS = ["math", "geometry", "english", "science"];
 
 const SUBJECT_LABEL_HE = {
   math: "מתמטיקה",
   geometry: "גאומטריה",
   english: "אנגלית",
   science: "מדעים",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
 };
 
 /**
@@ -32,8 +30,6 @@ export function subjectQuestionCountsFromBase(baseReport) {
     geometry: Number(s.geometryQuestions) || 0,
     english: Number(s.englishQuestions) || 0,
     science: Number(s.scienceQuestions) || 0,
-    hebrew: Number(s.hebrewQuestions) || 0,
-    "moledet-geography": Number(s.moledetGeographyQuestions) || 0,
   };
 }
 

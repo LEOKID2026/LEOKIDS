@@ -132,7 +132,7 @@ assert.ok(!/גאומטריה:/u.test(insightText), "geometry not in insight line
 assert.ok(!/אנגלית:/u.test(insightText), "english not in insight lines");
 
 const copilotPayload = detailedReportToCopilotPayload(mathOnlyDetailed);
-for (const sid of ["english", "geometry", "hebrew"]) {
+for (const sid of ["english", "geometry", "science"]) {
   const res = parentCopilot.runParentCopilotTurn({
     audience: "parent",
     payload: copilotPayload,

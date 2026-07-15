@@ -94,8 +94,7 @@ const { PARENT_REPORT_SCENARIOS, FIXTURE_MATH_ROW_ADD_LEARN_G4_MED } = await imp
 const { generateQuestion: genMath } = await importUtils("utils/math-question-generator.js");
 const { getLevelConfig } = await importUtils("utils/math-storage.js");
 const { generateQuestion: genGeo } = await importUtils("utils/geometry-question-generator.js");
-const { generateQuestion: genHe } = await importUtils("utils/hebrew-question-generator.js");
-const { getLevelConfig: getHebrewLevelConfig } = await importUtils("utils/hebrew-storage.js");
+const { generateQuestion: genEnglish } = await importUtils("utils/english-question-generator.js");
 const runDiagnosticEngineV2 =
   diagnosticEngineModule.runDiagnosticEngineV2 ||
   diagnosticEngineModule.default?.runDiagnosticEngineV2;
@@ -967,12 +966,11 @@ function runGeneratorPropertyLoops() {
     assert.ok(g.correctAnswer != null || g.answer != null);
   }
 
-  const heLevel = getHebrewLevelConfig("g3", "easy");
   for (let i = 0; i < 16; i++) {
-    const h = genHe(heLevel, "reading", "g3", null);
-    assert.ok(h && typeof h === "object");
-    assert.ok(String(h.question || "").trim().length > 0);
-    assert.ok(h.correctAnswer != null || h.answer != null);
+    const e = genEnglish("regular", "vocabulary", "g3", null, "regular");
+    assert.ok(e && typeof e === "object");
+    assert.ok(String(e.question || e.stem || e.text || "").trim().length > 0);
+    assert.ok(e.correctAnswer != null || e.answer != null);
   }
 }
 

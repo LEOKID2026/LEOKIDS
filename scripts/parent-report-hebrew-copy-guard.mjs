@@ -479,7 +479,6 @@ const GUILLEMET_UI_FILES = [
   "utils/learning-patterns-analysis.js",
   "utils/parent-report-intervention-plan.js",
   "utils/parent-report-mistake-intelligence.js",
-  "utils/history-subtopic-report.js",
   "utils/parent-report-ui-explain-he.js",
   "utils/parent-report-language/grade-aware-recommendation-templates.js",
   "utils/parent-report-language/v2-parent-copy.js",
