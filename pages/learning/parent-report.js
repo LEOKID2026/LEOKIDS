@@ -44,20 +44,6 @@ import { isImmersiveGameLayoutPath } from "../../lib/site-nav";
 import { useParentReportBrightPageBackground } from "../../lib/parent-ui/use-parent-report-bright-page-bg.js";
 import { mapParentReportLoadError } from "../../lib/parent-server/parent-api-errors.he.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
-import {
-  MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID,
-  moledetGeographyReportTopicKeyPrefix,
-} from "../../lib/learning-shared/moledet-geography-subject-id.js";
-import {
-  enrichDailyActivityWithVisualStrands,
-  splitMoledetGeographyReportForDisplay,
-  VISUAL_STRAND_LABEL_HE,
-} from "../../lib/learning-shared/moledet-geography-display.js";
-
-const ParentCopilotShellLazy = dynamic(
-  () => import("../../components/parent-copilot/parent-copilot-shell.jsx"),
-  { ssr: false }
-);
 import { improvingDiagnosticsDisplayLabelHe } from "../../utils/learning-patterns-analysis";
 import {
   stripTechnicalParensForParentDiagnosticsHe as stripTechnicalParensHe,
@@ -93,6 +79,28 @@ import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Head from "next/head";
+
+const MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID = "moledet-geography";
+function moledetGeographyReportTopicKeyPrefix() {
+  return "moledet_geography";
+}
+const VISUAL_STRAND_LABEL_HE = { moledet: "מולדת", geography: "גאוגרפיה" };
+function splitMoledetGeographyReportForDisplay(_report) {
+  return {
+    moledetTopics: {},
+    geographyTopics: {},
+    moledetStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
+    geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
+  };
+}
+function enrichDailyActivityWithVisualStrands(daily) {
+  return daily;
+}
+
+const ParentCopilotShellLazy = dynamic(
+  () => import("../../components/parent-copilot/parent-copilot-shell.jsx"),
+  { ssr: false }
+);
 import {
   BarChart,
   Bar,

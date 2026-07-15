@@ -6,10 +6,11 @@
 
 import { TOPICS } from "../geometry-constants.js";
 import { SCIENCE_TOPIC_ORDER } from "../question-metadata-qa/question-metadata-taxonomy.js";
-import { MOLEDET_GEOGRAPHY_STRAND_KEYS } from "../question-metadata-qa/question-metadata-taxonomy-geography.js";
 import { buildPlannerInputFromDiagnosticPayload, normalizeEngineDecisionString } from "./adaptive-planner-input-adapter.js";
 import { runArtifactSafetyAssertions } from "./adaptive-planner-artifact-runner.js";
 import { planAdaptiveLearning } from "./adaptive-planner.js";
+
+const MOLEDET_GEOGRAPHY_STRAND_KEYS = [];
 
 /**
  * @param {Record<string, string | undefined>} [env]

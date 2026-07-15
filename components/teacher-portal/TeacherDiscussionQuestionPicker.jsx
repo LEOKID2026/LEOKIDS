@@ -4,11 +4,9 @@ import { teacherAuthFetch, subjectLabelHe } from "../../lib/teacher-portal/teach
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { formatGradeLevelHe, resolveCanonicalGradeKey } from "../../lib/teacher-portal/teacher-class-grade.js";
 import {
-  moledetGeographyTopicOptionsForGrade,
   defaultTopicForSubject,
   englishTopicOptionsForGrade,
   geometryTopicOptionsForGrade,
-  hebrewTopicOptionsForGrade,
   mathTopicOptionsForGrade,
   scienceTopicOptionsForGrade,
   topicOptionsForSubject,
@@ -144,16 +142,7 @@ export default function TeacherDiscussionQuestionPicker({
   }, [accessToken, classId, isClassDiscussion]);
 
   useEffect(() => {
-    const opts =
-      subject === "math"
-        ? mathTopicOptionsForGrade(gradeKey)
-        : subject === "geometry"
-          ? geometryTopicOptionsForGrade(gradeKey)
-          : subject === "hebrew"
-            ? hebrewTopicOptionsForGrade(gradeKey)
-            : subject === "english"
-              ? englishTopicOptionsForGrade(gradeKey)
-              : [];
+    const opts = topicOptionsForSubject(subject, gradeKey);
     if (opts.length && !opts.some((o) => o.key === topic)) {
       setTopic(opts[0].key);
     }
@@ -370,37 +359,13 @@ export default function TeacherDiscussionQuestionPicker({
         </label>
         <label className="block text-sm md:col-span-2">
           <span className="text-white/70">נושא</span>
-          {subject === "moledet_geography" ? (
-            <select
-              className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
-              value={topic}
-              onChange={(e) => setTopic(e.target.value)}
-            >
-              {moledetGeographyTopicOptionsForGrade(gradeKey).map(({ key, label }) => (
-                <option key={key} value={key}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          ) : subject === "geometry" ? (
+          {subject === "geometry" ? (
             <select
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
             >
               {geometryTopicOptionsForGrade(gradeKey).map(({ key, label }) => (
-                <option key={key} value={key}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          ) : subject === "hebrew" ? (
-            <select
-              className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
-              value={topic}
-              onChange={(e) => setTopic(e.target.value)}
-            >
-              {hebrewTopicOptionsForGrade(gradeKey).map(({ key, label }) => (
                 <option key={key} value={key}>
                   {label}
                 </option>

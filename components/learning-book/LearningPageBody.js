@@ -74,18 +74,6 @@ import {
   saveScienceBookPracticePreset,
 } from "../../lib/learning-book/science-book-nav";
 import { resolveSciencePracticeTarget } from "../../lib/learning-book/science-book-practice-map";
-import { HEBREW_G1_BOOK_META } from "../../lib/learning-book/hebrew-g1-registry";
-import { HEBREW_G2_BOOK_META } from "../../lib/learning-book/hebrew-g2-registry";
-import { HEBREW_G3_BOOK_META } from "../../lib/learning-book/hebrew-g3-registry";
-import { HEBREW_G4_BOOK_META } from "../../lib/learning-book/hebrew-g4-registry";
-import { HEBREW_G5_BOOK_META } from "../../lib/learning-book/hebrew-g5-registry";
-import { HEBREW_G6_BOOK_META } from "../../lib/learning-book/hebrew-g6-registry";
-import {
-  getHebrewBookReturnQuerySuffix,
-  getHebrewBookPracticePath,
-  saveHebrewBookPracticePreset,
-} from "../../lib/learning-book/hebrew-book-nav";
-import { resolveHebrewPracticeTarget } from "../../lib/learning-book/hebrew-book-practice-map";
 import { ENGLISH_G1_BOOK_META } from "../../lib/learning-book/english-g1-registry";
 import { ENGLISH_G2_BOOK_META } from "../../lib/learning-book/english-g2-registry";
 import { ENGLISH_G3_BOOK_META } from "../../lib/learning-book/english-g3-registry";
@@ -98,24 +86,6 @@ import {
   saveEnglishBookPracticePreset,
 } from "../../lib/learning-book/english-book-nav";
 import { resolveEnglishPracticeTarget } from "../../lib/learning-book/english-book-practice-map";
-import { MOLEDET_G2_BOOK_META } from "../../lib/learning-book/moledet-g2-registry";
-import { MOLEDET_G3_BOOK_META } from "../../lib/learning-book/moledet-g3-registry";
-import { MOLEDET_G4_BOOK_META } from "../../lib/learning-book/moledet-g4-registry";
-import { GEOGRAPHY_G5_BOOK_META } from "../../lib/learning-book/geography-g5-registry";
-import { GEOGRAPHY_G6_BOOK_META } from "../../lib/learning-book/geography-g6-registry";
-import {
-  getMoledetGeographyBookReturnQuerySuffix,
-  getMoledetGeographyBookPracticePath,
-  saveMoledetGeographyBookPracticePreset,
-} from "../../lib/learning-book/moledet-geography-book-nav";
-import { resolveMoledetGeographyPracticeTarget } from "../../lib/learning-book/moledet-geography-book-practice-map";
-import { HISTORY_G6_BOOK_META } from "../../lib/learning-book/history-g6-registry";
-import {
-  getHistoryBookReturnQuerySuffix,
-  getHistoryBookPracticePath,
-  saveHistoryBookPracticePreset,
-} from "../../lib/learning-book/history-book-nav";
-import { resolveHistoryPracticeTarget } from "../../lib/learning-book/history-book-practice-map";
 import { createLearningBookNav } from "../../lib/learning-book/learning-book-nav";
 import { getLearningBookClientMeta, getLearningBookMasterPath } from "../../lib/learning-book/learning-book-catalog-meta";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
@@ -206,24 +176,6 @@ const SCIENCE_G4_BOOK_UI = makeScienceBookUi("g4", SCIENCE_G4_BOOK_META);
 const SCIENCE_G5_BOOK_UI = makeScienceBookUi("g5", SCIENCE_G5_BOOK_META);
 const SCIENCE_G6_BOOK_UI = makeScienceBookUi("g6", SCIENCE_G6_BOOK_META);
 
-/** @param {string} grade @param {typeof HEBREW_G1_BOOK_META} bookMeta */
-function makeHebrewBookUi(grade, bookMeta) {
-  return {
-    bookMeta,
-    getReturnQuerySuffix: getHebrewBookReturnQuerySuffix,
-    resolvePracticeTarget: (pageId) => resolveHebrewPracticeTarget(grade, pageId),
-    getPracticePath: getHebrewBookPracticePath,
-    savePracticePreset: (preset) => saveHebrewBookPracticePreset(grade, preset),
-  };
-}
-
-const HEBREW_G1_BOOK_UI = makeHebrewBookUi("g1", HEBREW_G1_BOOK_META);
-const HEBREW_G2_BOOK_UI = makeHebrewBookUi("g2", HEBREW_G2_BOOK_META);
-const HEBREW_G3_BOOK_UI = makeHebrewBookUi("g3", HEBREW_G3_BOOK_META);
-const HEBREW_G4_BOOK_UI = makeHebrewBookUi("g4", HEBREW_G4_BOOK_META);
-const HEBREW_G5_BOOK_UI = makeHebrewBookUi("g5", HEBREW_G5_BOOK_META);
-const HEBREW_G6_BOOK_UI = makeHebrewBookUi("g6", HEBREW_G6_BOOK_META);
-
 /** @param {string} grade @param {typeof ENGLISH_G1_BOOK_META} bookMeta */
 function makeEnglishBookUi(grade, bookMeta) {
   return {
@@ -241,36 +193,6 @@ const ENGLISH_G3_BOOK_UI = makeEnglishBookUi("g3", ENGLISH_G3_BOOK_META);
 const ENGLISH_G4_BOOK_UI = makeEnglishBookUi("g4", ENGLISH_G4_BOOK_META);
 const ENGLISH_G5_BOOK_UI = makeEnglishBookUi("g5", ENGLISH_G5_BOOK_META);
 const ENGLISH_G6_BOOK_UI = makeEnglishBookUi("g6", ENGLISH_G6_BOOK_META);
-
-/** @param {string} grade @param {typeof MOLEDET_G2_BOOK_META} bookMeta */
-function makeMoledetGeographyBookUi(grade, bookMeta) {
-  return {
-    bookMeta,
-    getReturnQuerySuffix: getMoledetGeographyBookReturnQuerySuffix,
-    resolvePracticeTarget: (pageId) => resolveMoledetGeographyPracticeTarget(grade, pageId),
-    getPracticePath: () => getMoledetGeographyBookPracticePath(grade),
-    savePracticePreset: (preset) => saveMoledetGeographyBookPracticePreset(grade, preset),
-  };
-}
-
-const MOLEDET_G2_BOOK_UI = makeMoledetGeographyBookUi("g2", MOLEDET_G2_BOOK_META);
-const MOLEDET_G3_BOOK_UI = makeMoledetGeographyBookUi("g3", MOLEDET_G3_BOOK_META);
-const MOLEDET_G4_BOOK_UI = makeMoledetGeographyBookUi("g4", MOLEDET_G4_BOOK_META);
-const GEOGRAPHY_G5_BOOK_UI = makeMoledetGeographyBookUi("g5", GEOGRAPHY_G5_BOOK_META);
-const GEOGRAPHY_G6_BOOK_UI = makeMoledetGeographyBookUi("g6", GEOGRAPHY_G6_BOOK_META);
-
-/** @param {string} grade @param {typeof HISTORY_G6_BOOK_META} bookMeta */
-function makeHistoryBookUi(grade, bookMeta) {
-  return {
-    bookMeta,
-    getReturnQuerySuffix: getHistoryBookReturnQuerySuffix,
-    resolvePracticeTarget: (pageId) => resolveHistoryPracticeTarget(grade, pageId),
-    getPracticePath: getHistoryBookPracticePath,
-    savePracticePreset: (preset) => saveHistoryBookPracticePreset(grade, preset),
-  };
-}
-
-const HISTORY_G6_BOOK_UI = makeHistoryBookUi("g6", HISTORY_G6_BOOK_META);
 
 export default function LearningPageBody({
   page,
@@ -293,24 +215,12 @@ export default function LearningPageBody({
   );
 
   const bookUi = useMemo(() => {
-    if (bookSubject === "hebrew" && bookGrade === "g6") return HEBREW_G6_BOOK_UI;
-    if (bookSubject === "hebrew" && bookGrade === "g5") return HEBREW_G5_BOOK_UI;
-    if (bookSubject === "hebrew" && bookGrade === "g4") return HEBREW_G4_BOOK_UI;
-    if (bookSubject === "hebrew" && bookGrade === "g3") return HEBREW_G3_BOOK_UI;
-    if (bookSubject === "hebrew" && bookGrade === "g2") return HEBREW_G2_BOOK_UI;
-    if (bookSubject === "hebrew" && bookGrade === "g1") return HEBREW_G1_BOOK_UI;
     if (bookSubject === "english" && bookGrade === "g6") return ENGLISH_G6_BOOK_UI;
     if (bookSubject === "english" && bookGrade === "g5") return ENGLISH_G5_BOOK_UI;
     if (bookSubject === "english" && bookGrade === "g4") return ENGLISH_G4_BOOK_UI;
     if (bookSubject === "english" && bookGrade === "g3") return ENGLISH_G3_BOOK_UI;
     if (bookSubject === "english" && bookGrade === "g2") return ENGLISH_G2_BOOK_UI;
     if (bookSubject === "english" && bookGrade === "g1") return ENGLISH_G1_BOOK_UI;
-    if (bookSubject === "history" && bookGrade === "g6") return HISTORY_G6_BOOK_UI;
-    if (bookSubject === "geography" && bookGrade === "g6") return GEOGRAPHY_G6_BOOK_UI;
-    if (bookSubject === "geography" && bookGrade === "g5") return GEOGRAPHY_G5_BOOK_UI;
-    if (bookSubject === "moledet" && bookGrade === "g4") return MOLEDET_G4_BOOK_UI;
-    if (bookSubject === "moledet" && bookGrade === "g3") return MOLEDET_G3_BOOK_UI;
-    if (bookSubject === "moledet" && bookGrade === "g2") return MOLEDET_G2_BOOK_UI;
     if (bookSubject === "science" && bookGrade === "g6") return SCIENCE_G6_BOOK_UI;
     if (bookSubject === "science" && bookGrade === "g5") return SCIENCE_G5_BOOK_UI;
     if (bookSubject === "science" && bookGrade === "g4") return SCIENCE_G4_BOOK_UI;
@@ -465,15 +375,9 @@ export default function LearningPageBody({
       ? "נעבור לתרגול של הנושא הזה בגאומטריה"
       : bookSubject === "science"
         ? "נעבור לתרגול של הנושא הזה במדעים"
-        : bookSubject === "hebrew"
-          ? "נעבור לתרגול של הנושא הזה בעברית"
-          : bookSubject === "english"
-            ? "נעבור לתרגול של הנושא הזה באנגלית"
-            : bookSubject === "moledet"
-              ? "נעבור לתרגול של הנושא הזה במולדת"
-              : bookSubject === "geography"
-                ? "נעבור לתרגול של הנושא הזה בגאוגרפיה"
-                : "נעבור לתרגול של הנושא הזה בחשבון";
+        : bookSubject === "english"
+          ? "נעבור לתרגול של הנושא הזה באנגלית"
+          : "נעבור לתרגול של הנושא הזה בחשבון";
 
   return (
     <>

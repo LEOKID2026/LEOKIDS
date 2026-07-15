@@ -15,9 +15,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
 
 const FILES = [
-  "pages/learning/hebrew-master.js",
-  "pages/learning/moledet-geography-master.js",
-  "pages/learning/history-master.js",
   "pages/learning/science-master.js",
   "pages/learning/geometry-curriculum.js",
   "pages/learning/curriculum.js",

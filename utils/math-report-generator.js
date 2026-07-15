@@ -5,9 +5,6 @@ import { getTimeByPeriod, getTimeByCustomPeriod, getAllTimeTracking } from './ma
 import { getGeometryTimeByPeriod, getGeometryTimeByCustomPeriod } from './math-time-tracking.js';
 import { getEnglishTimeByCustomPeriod } from './english-time-tracking.js';
 import { getScienceTimeByCustomPeriod } from './science-time-tracking.js';
-import { getHebrewTimeByCustomPeriod } from './hebrew-time-tracking.js';
-import { getMoledetGeographyTimeByCustomPeriod } from './moledet-geography-time-tracking.js';
-import { historyTopicLabelHe, historySubtopicLabelHe } from "../data/history-curriculum.js";
 
 // שמות פעולות בעברית (חשבון)
 const OPERATION_NAMES = {
@@ -186,14 +183,12 @@ export function getScienceTopicName(topic) {
   return SCIENCE_TOPIC_NAMES[key] || "";
 }
 
-export function getHistoryTopicName(topic) {
-  const key = normalizeReportTopicBucketKey(topic);
-  if (!key) return "";
-  return historyTopicLabelHe(key) || "";
+export function getHistoryTopicName(_topic) {
+  return "";
 }
 
-export function getHistorySubtopicName(subtopicKey) {
-  return historySubtopicLabelHe(subtopicKey) || getHistoryTopicName(subtopicKey);
+export function getHistorySubtopicName(_subtopicKey) {
+  return "";
 }
 
 const HEBREW_TOPIC_NAMES = {
@@ -371,14 +366,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     const scienceProgress = JSON.parse(localStorage.getItem("mleo_science_master" + "_progress") || "{}");
     const scienceProgressData = scienceProgress.progress || {};
     
-    // ========== עברית ==========
-    const hebrewProgress = JSON.parse(localStorage.getItem("mleo_hebrew_master" + "_progress") || "{}");
-    const hebrewProgressData = hebrewProgress.progress || {};
-    
-    // ========== מולדת וגאוגרפיה ==========
-    const moledetGeographyProgress = JSON.parse(localStorage.getItem("mleo_moledet_geography_master" + "_progress") || "{}");
-    const moledetGeographyProgressData = moledetGeographyProgress.progress || {};
-    
     // חישוב תקופה
     const now = new Date();
     let startDate, endDate;
@@ -403,8 +390,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     const geometryTimeData = getGeometryTimeByCustomPeriod(startDate, endDate);
     const englishTimeData = getEnglishTimeByCustomPeriod(startDate, endDate);
     const scienceTimeData = getScienceTimeByCustomPeriod(startDate, endDate);
-    const hebrewTimeData = getHebrewTimeByCustomPeriod(startDate, endDate);
-    const moledetGeographyTimeData = getMoledetGeographyTimeByCustomPeriod(startDate, endDate);
     
     // איסוף שגיאות (חשבון)
     const mathMistakes = JSON.parse(localStorage.getItem("mleo_mistakes") || "[]");
@@ -415,8 +400,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     // איסוף שגיאות (אנגלית)
     const englishMistakes = JSON.parse(localStorage.getItem("mleo_english_mistakes") || "[]");
     const scienceMistakes = JSON.parse(localStorage.getItem("mleo_science_mistakes") || "[]");
-    const hebrewMistakes = JSON.parse(localStorage.getItem("mleo_hebrew_mistakes") || "[]");
-    const moledetGeographyMistakes = JSON.parse(localStorage.getItem("mleo_moledet_geography_mistakes") || "[]");
     
     // איסוף אתגרים (חשבון)
     const dailyChallenge = JSON.parse(localStorage.getItem("mleo_daily_challenge") || "{}");
@@ -647,117 +630,9 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ? Math.round((scienceTotalCorrect / scienceTotalQuestions) * 100)
       : 0;
     
-    // ========== סיכום עברית ==========
-    const hebrewTopicsSummary = {};
-    let hebrewTotalQuestions = 0;
-    let hebrewTotalCorrect = 0;
-    
-    const hebrewTopicsWithTime = Object.keys(hebrewTimeData.topics || {});
-    const hebrewTopicsToProcess = hebrewTopicsWithTime.length > 0
-      ? hebrewTopicsWithTime
-      : Object.keys(hebrewProgressData);
-    
-    hebrewTopicsToProcess.forEach((topic) => {
-      const progressData = hebrewProgressData[topic] || { total: 0, correct: 0 };
-      const questions = progressData.total || 0;
-      const correct = progressData.correct || 0;
-      const accuracy = questions > 0 ? Math.round((correct / questions) * 100) : 0;
-      const timeMinutes = hebrewTimeData.topics?.[topic]?.minutes || 0;
-      
-      const hebTrackingSaved = (() => {
-        try {
-          return JSON.parse(localStorage.getItem("mleo_hebrew_time_tracking") || "{}");
-        } catch {
-          return {};
-        }
-      })();
-      const { gradeKey: mostCommonGradeKey, levelKey: mostCommonLevelKey, gradeLabel: mostCommonGrade, levelLabel: mostCommonLevel } =
-        getMostCommonGradeAndLevel(hebTrackingSaved, "topics", topic);
-      
-      if (timeMinutes > 0 || questions > 0) {
-        hebrewTotalQuestions += questions;
-        hebrewTotalCorrect += correct;
-        
-        hebrewTopicsSummary[topic] = {
-          subject: "hebrew",
-          questions,
-          correct,
-          wrong: questions - correct,
-          accuracy,
-          timeMinutes,
-          timeHours: (timeMinutes / 60).toFixed(2),
-          needsPractice: accuracy < 70 && questions > 0,
-          excellent: accuracy >= 90 && questions >= 10,
-          grade: mostCommonGrade,
-          gradeKey: mostCommonGradeKey,
-          level: mostCommonLevel,
-          levelKey: mostCommonLevelKey,
-          displayName: getHebrewTopicName(topic)
-        };
-      }
-    });
-    
-    const hebrewOverallAccuracy = hebrewTotalQuestions > 0
-      ? Math.round((hebrewTotalCorrect / hebrewTotalQuestions) * 100)
-      : 0;
-    
-    // ========== סיכום מולדת וגאוגרפיה ==========
-    const moledetGeographyTopicsSummary = {};
-    let moledetGeographyTotalQuestions = 0;
-    let moledetGeographyTotalCorrect = 0;
-    
-    const moledetGeographyTopicsWithTime = Object.keys(moledetGeographyTimeData.topics || {});
-    const moledetGeographyTopicsToProcess = moledetGeographyTopicsWithTime.length > 0
-      ? moledetGeographyTopicsWithTime
-      : Object.keys(moledetGeographyProgressData);
-    
-    moledetGeographyTopicsToProcess.forEach((topic) => {
-      const progressData = moledetGeographyProgressData[topic] || { total: 0, correct: 0 };
-      const questions = progressData.total || 0;
-      const correct = progressData.correct || 0;
-      const accuracy = questions > 0 ? Math.round((correct / questions) * 100) : 0;
-      const timeMinutes = moledetGeographyTimeData.topics?.[topic]?.minutes || 0;
-      
-      const mgTrackingSaved = (() => {
-        try {
-          return JSON.parse(localStorage.getItem("mleo_moledet_geography_time_tracking") || "{}");
-        } catch {
-          return {};
-        }
-      })();
-      const { gradeKey: mostCommonGradeKey, levelKey: mostCommonLevelKey, gradeLabel: mostCommonGrade, levelLabel: mostCommonLevel } =
-        getMostCommonGradeAndLevel(mgTrackingSaved, "topics", topic);
-      
-      if (timeMinutes > 0 || questions > 0) {
-        moledetGeographyTotalQuestions += questions;
-        moledetGeographyTotalCorrect += correct;
-        
-        moledetGeographyTopicsSummary[topic] = {
-          subject: "moledet-geography",
-          questions,
-          correct,
-          wrong: questions - correct,
-          accuracy,
-          timeMinutes,
-          timeHours: (timeMinutes / 60).toFixed(2),
-          needsPractice: accuracy < 70 && questions > 0,
-          excellent: accuracy >= 90 && questions >= 10,
-          grade: mostCommonGrade,
-          gradeKey: mostCommonGradeKey,
-          level: mostCommonLevel,
-          levelKey: mostCommonLevelKey,
-          displayName: getMoledetGeographyTopicName(topic)
-        };
-      }
-    });
-    
-    const moledetGeographyOverallAccuracy = moledetGeographyTotalQuestions > 0
-      ? Math.round((moledetGeographyTotalCorrect / moledetGeographyTotalQuestions) * 100)
-      : 0;
-    
     // ========== סיכום כללי ==========
-    const totalQuestions = mathTotalQuestions + geometryTotalQuestions + englishTotalQuestions + scienceTotalQuestions + hebrewTotalQuestions + moledetGeographyTotalQuestions;
-    const totalCorrect = mathTotalCorrect + geometryTotalCorrect + englishTotalCorrect + scienceTotalCorrect + hebrewTotalCorrect + moledetGeographyTotalCorrect;
+    const totalQuestions = mathTotalQuestions + geometryTotalQuestions + englishTotalQuestions + scienceTotalQuestions;
+    const totalCorrect = mathTotalCorrect + geometryTotalCorrect + englishTotalCorrect + scienceTotalCorrect;
     const overallAccuracy = totalQuestions > 0 
       ? Math.round((totalCorrect / totalQuestions) * 100) 
       : 0;
@@ -782,18 +657,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     });
     
     const filteredScienceMistakes = scienceMistakes.filter(mistake => {
-      if (!mistake.timestamp) return false;
-      const mistakeDate = new Date(mistake.timestamp);
-      return mistakeDate >= startDate && mistakeDate <= endDate;
-    });
-    
-    const filteredHebrewMistakes = hebrewMistakes.filter(mistake => {
-      if (!mistake.timestamp) return false;
-      const mistakeDate = new Date(mistake.timestamp);
-      return mistakeDate >= startDate && mistakeDate <= endDate;
-    });
-    
-    const filteredMoledetGeographyMistakes = moledetGeographyMistakes.filter(mistake => {
       if (!mistake.timestamp) return false;
       const mistakeDate = new Date(mistake.timestamp);
       return mistakeDate >= startDate && mistakeDate <= endDate;
@@ -874,60 +737,16 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       }
     });
     
-    // ניתוח שגיאות (עברית)
-    const hebrewMistakesByTopic = {};
-    filteredHebrewMistakes.forEach(mistake => {
-      const topic = mistake.topic;
-      if (!hebrewMistakesByTopic[topic]) {
-        hebrewMistakesByTopic[topic] = {
-          count: 0,
-          lastSeen: null,
-          commonErrors: {}
-        };
-      }
-      hebrewMistakesByTopic[topic].count++;
-      if (
-        !hebrewMistakesByTopic[topic].lastSeen ||
-        new Date(mistake.timestamp) > new Date(hebrewMistakesByTopic[topic].lastSeen)
-      ) {
-        hebrewMistakesByTopic[topic].lastSeen = mistake.timestamp;
-      }
-    });
-    
-    // ניתוח שגיאות (מולדת וגאוגרפיה)
-    const moledetGeographyMistakesByTopic = {};
-    filteredMoledetGeographyMistakes.forEach(mistake => {
-      const topic = mistake.topic;
-      if (!moledetGeographyMistakesByTopic[topic]) {
-        moledetGeographyMistakesByTopic[topic] = {
-          count: 0,
-          lastSeen: null,
-          commonErrors: {}
-        };
-      }
-      moledetGeographyMistakesByTopic[topic].count++;
-      if (
-        !moledetGeographyMistakesByTopic[topic].lastSeen ||
-        new Date(mistake.timestamp) > new Date(moledetGeographyMistakesByTopic[topic].lastSeen)
-      ) {
-        moledetGeographyMistakesByTopic[topic].lastSeen = mistake.timestamp;
-      }
-    });
-    
     // ========== המלצות ==========
     const mathRecommendations = generateRecommendations(mathOperationsSummary, mathMistakesByOperation);
     const geometryRecommendations = generateRecommendations(geometryTopicsSummary, geometryMistakesByTopic);
     const englishRecommendations = generateRecommendations(englishTopicsSummary, englishMistakesByTopic);
     const scienceRecommendations = generateRecommendations(scienceTopicsSummary, scienceMistakesByTopic);
-    const hebrewRecommendations = generateRecommendations(hebrewTopicsSummary, hebrewMistakesByTopic);
-    const moledetGeographyRecommendations = generateRecommendations(moledetGeographyTopicsSummary, moledetGeographyMistakesByTopic);
     const recommendations = [
       ...mathRecommendations,
       ...geometryRecommendations,
       ...englishRecommendations,
       ...scienceRecommendations,
-      ...hebrewRecommendations,
-      ...moledetGeographyRecommendations,
     ];
     
     // ========== הישגים ==========
@@ -935,38 +754,28 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     const geometryAchievements = geometryProgress.badges || [];
     const englishAchievements = englishProgress.badges || [];
     const scienceAchievements = scienceProgress.badges || [];
-    const hebrewAchievements = hebrewProgress.badges || [];
-    const moledetGeographyAchievements = moledetGeographyProgress.badges || [];
     const achievements = [
       ...mathAchievements,
       ...geometryAchievements,
       ...englishAchievements,
       ...scienceAchievements,
-      ...hebrewAchievements,
-      ...moledetGeographyAchievements,
     ];
     const stars =
       (mathProgress.stars || 0) +
       (geometryProgress.stars || 0) +
       (englishProgress.stars || 0) +
-      (scienceProgress.stars || 0) +
-      (hebrewProgress.stars || 0) +
-      (moledetGeographyProgress.stars || 0);
+      (scienceProgress.stars || 0);
     const playerLevel = Math.max(
       mathProgress.playerLevel || 1,
       geometryProgress.playerLevel || 1,
       englishProgress.playerLevel || 1,
-      scienceProgress.playerLevel || 1,
-      hebrewProgress.playerLevel || 1,
-      moledetGeographyProgress.playerLevel || 1
+      scienceProgress.playerLevel || 1
     );
     const xp =
       (mathProgress.xp || 0) +
       (geometryProgress.xp || 0) +
       (englishProgress.xp || 0) +
-      (scienceProgress.xp || 0) +
-      (hebrewProgress.xp || 0) +
-      (moledetGeographyProgress.xp || 0);
+      (scienceProgress.xp || 0);
     
     // פעילות יומית - רק בתקופה שנבחרה
     const dailyActivity = [];
@@ -974,8 +783,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     const geometryDailyData = geometryTimeData.daily || {};
     const englishDailyData = englishTimeData.daily || {};
     const scienceDailyData = scienceTimeData.daily || {};
-    const hebrewDailyData = hebrewTimeData.daily || {};
-    const moledetGeographyDailyData = moledetGeographyTimeData.daily || {};
     
     // איחוד נתונים יומיים
     const allDailyDates = new Set([
@@ -983,8 +790,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...Object.keys(geometryDailyData),
       ...Object.keys(englishDailyData),
       ...Object.keys(scienceDailyData),
-      ...Object.keys(hebrewDailyData),
-      ...Object.keys(moledetGeographyDailyData)
     ]);
     
     allDailyDates.forEach(dateStr => {
@@ -994,16 +799,12 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         const geometryDay = geometryDailyData[dateStr] || { total: 0, topics: {} };
         const englishDay = englishDailyData[dateStr] || { total: 0, topics: {} };
         const scienceDay = scienceDailyData[dateStr] || { total: 0, topics: {} };
-        const hebrewDay = hebrewDailyData[dateStr] || { total: 0, topics: {} };
-        const moledetGeographyDay = moledetGeographyDailyData[dateStr] || { total: 0, topics: {} };
         
         const totalTime =
           (mathDay.total || 0) +
           (geometryDay.total || 0) +
           (englishDay.total || 0) +
-          (scienceDay.total || 0) +
-          (hebrewDay.total || 0) +
-          (moledetGeographyDay.total || 0);
+          (scienceDay.total || 0);
         const mathQuestions = Object.values(mathDay.operations || {}).reduce((sum, time) => {
           return sum + Math.round(time / 30); // הערכה: שאלה אחת כל 30 שניות
         }, 0);
@@ -1016,23 +817,15 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         const scienceQuestions = Object.values(scienceDay.topics || {}).reduce((sum, time) => {
           return sum + Math.round(time / 30);
         }, 0);
-        const hebrewQuestions = Object.values(hebrewDay.topics || {}).reduce((sum, time) => {
-          return sum + Math.round(time / 30);
-        }, 0);
-        const moledetGeographyQuestions = Object.values(moledetGeographyDay.topics || {}).reduce((sum, time) => {
-          return sum + Math.round(time / 30);
-        }, 0);
         
         dailyActivity.push({
           date: dateStr,
           timeMinutes: Math.round(totalTime / 60),
-          questions: mathQuestions + geometryQuestions + englishQuestions + scienceQuestions + hebrewQuestions + moledetGeographyQuestions,
+          questions: mathQuestions + geometryQuestions + englishQuestions + scienceQuestions,
           mathTopics: Object.keys(mathDay.operations || {}).length,
           geometryTopics: Object.keys(geometryDay.topics || {}).length,
           englishTopics: Object.keys(englishDay.topics || {}).length,
           scienceTopics: Object.keys(scienceDay.topics || {}).length,
-          hebrewTopics: Object.keys(hebrewDay.topics || {}).length,
-          moledetGeographyTopics: Object.keys(moledetGeographyDay.topics || {}).length,
         });
       }
     });
@@ -1054,12 +847,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...Object.entries(scienceTopicsSummary)
         .filter(([_, data]) => data.needsPractice)
         .map(([topic, _]) => `מדעים: ${getScienceTopicName(topic)}`),
-      ...Object.entries(hebrewTopicsSummary)
-        .filter(([_, data]) => data.needsPractice)
-        .map(([topic, _]) => `עברית: ${getHebrewTopicName(topic)}`),
-      ...Object.entries(moledetGeographyTopicsSummary)
-        .filter(([_, data]) => data.needsPractice)
-        .map(([topic, _]) => `מולדת וגאוגרפיה: ${getMoledetGeographyTopicName(topic)}`)
     ];
     
     // נושאים מצוינים
@@ -1076,12 +863,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...Object.entries(scienceTopicsSummary)
         .filter(([_, data]) => data.excellent && data.questions >= 10)
         .map(([topic, _]) => `מדעים: ${getScienceTopicName(topic)}`),
-      ...Object.entries(hebrewTopicsSummary)
-        .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([topic, _]) => `עברית: ${getHebrewTopicName(topic)}`),
-      ...Object.entries(moledetGeographyTopicsSummary)
-        .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([topic, _]) => `מולדת וגאוגרפיה: ${getMoledetGeographyTopicName(topic)}`)
     ];
     
     return {
@@ -1097,16 +878,12 @@ export function generateParentReport(playerName, period = 'week', customStartDat
           (mathTimeData.totalMinutes || 0) +
           (geometryTimeData.totalMinutes || 0) +
           (englishTimeData.totalMinutes || 0) +
-          (scienceTimeData.totalMinutes || 0) +
-          (hebrewTimeData.totalMinutes || 0) +
-          (moledetGeographyTimeData.totalMinutes || 0),
+          (scienceTimeData.totalMinutes || 0),
         totalTimeHours: (
           ((mathTimeData.totalMinutes || 0) +
             (geometryTimeData.totalMinutes || 0) +
             (englishTimeData.totalMinutes || 0) +
-            (scienceTimeData.totalMinutes || 0) +
-            (hebrewTimeData.totalMinutes || 0) +
-            (moledetGeographyTimeData.totalMinutes || 0)) /
+            (scienceTimeData.totalMinutes || 0)) /
           60
         ).toFixed(2),
         totalQuestions,
@@ -1124,12 +901,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         scienceQuestions: scienceTotalQuestions,
         scienceCorrect: scienceTotalCorrect,
         scienceAccuracy: scienceOverallAccuracy,
-        hebrewQuestions: hebrewTotalQuestions,
-        hebrewCorrect: hebrewTotalCorrect,
-        hebrewAccuracy: hebrewOverallAccuracy,
-        moledetGeographyQuestions: moledetGeographyTotalQuestions,
-        moledetGeographyCorrect: moledetGeographyTotalCorrect,
-        moledetGeographyAccuracy: moledetGeographyOverallAccuracy,
         stars,
         playerLevel,
         xp,
@@ -1148,20 +919,12 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       // לפי נושאים (מדעים)
       scienceTopics: scienceTopicsSummary,
       
-      // לפי נושאים (עברית)
-      hebrewTopics: hebrewTopicsSummary,
-      
-      // לפי נושאים (מולדת וגאוגרפיה)
-      moledetGeographyTopics: moledetGeographyTopicsSummary,
-      
       // כל הפעולות והנושאים יחד (לצורך תצוגה)
       allItems: {
         ...Object.fromEntries(Object.entries(mathOperationsSummary).map(([k, v]) => [`math_${k}`, v])),
         ...Object.fromEntries(Object.entries(geometryTopicsSummary).map(([k, v]) => [`geometry_${k}`, v])),
         ...Object.fromEntries(Object.entries(englishTopicsSummary).map(([k, v]) => [`english_${k}`, v])),
         ...Object.fromEntries(Object.entries(scienceTopicsSummary).map(([k, v]) => [`science_${k}`, v])),
-        ...Object.fromEntries(Object.entries(hebrewTopicsSummary).map(([k, v]) => [`hebrew_${k}`, v])),
-        ...Object.fromEntries(Object.entries(moledetGeographyTopicsSummary).map(([k, v]) => [`moledet-geography_${k}`, v])),
       },
       
       // פעילות יומית
@@ -1177,8 +940,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         geometryMistakesByTopic,
         englishMistakesByTopic,
         scienceMistakesByTopic,
-        hebrewMistakesByTopic,
-        moledetGeographyMistakesByTopic,
         recommendations
       },
       

@@ -165,10 +165,6 @@ function SubjectsSection({ subjects }) {
     geometry: subjectAccentBar["geometry-master"],
     english: subjectAccentBar["english-master"],
     science: subjectAccentBar["science-master"],
-    hebrew: subjectAccentBar["hebrew-master"],
-    moledet_visual: subjectAccentBar["moledet-master"],
-    geography_visual: subjectAccentBar["geography-master"],
-    history: subjectAccentBar["history-master"],
   };
   return (
     <>

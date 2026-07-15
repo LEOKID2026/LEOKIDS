@@ -29,7 +29,6 @@ test("shouldLayoutUseRtl: student activity and auth routes use RTL shell", () =>
 });
 
 test("shouldLayoutUseRtl: immersive learning masters skip site header shell", () => {
-  assert.equal(shouldLayoutUseRtl("/learning/hebrew-master"), false);
   assert.equal(shouldLayoutUseRtl("/learning/dev/engine-review"), true);
 });
 

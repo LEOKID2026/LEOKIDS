@@ -253,13 +253,6 @@ export const READY_CATALOG_ENTRIES = [
   { slug: "geometry-g5-quadrilaterals-regular", subjectId: "geometry", gradeKey: "g5", topicKey: "quadrilaterals", levelKey: "regular", count: 12, seed: 60204, inkSave: false },
   { slug: "geometry-g6-pythagoras-advanced", subjectId: "geometry", gradeKey: "g6", topicKey: "pythagoras", levelKey: "advanced", count: 12, seed: 60205, inkSave: false },
 
-  // עברית — 5
-  { slug: "hebrew-g2-reading-regular", subjectId: "hebrew", gradeKey: "g2", topicKey: "reading", levelKey: "regular", count: 12, seed: 60301, inkSave: true },
-  { slug: "hebrew-g3-comprehension-regular", subjectId: "hebrew", gradeKey: "g3", topicKey: "comprehension", levelKey: "regular", count: 12, seed: 60302, inkSave: true },
-  { slug: "hebrew-g4-grammar-advanced", subjectId: "hebrew", gradeKey: "g4", topicKey: "grammar", levelKey: "advanced", count: 12, seed: 60303, inkSave: false },
-  { slug: "hebrew-g5-vocabulary-regular", subjectId: "hebrew", gradeKey: "g5", topicKey: "vocabulary", levelKey: "regular", count: 12, seed: 60304, inkSave: true },
-  { slug: "hebrew-g6-comprehension-advanced", subjectId: "hebrew", gradeKey: "g6", topicKey: "comprehension", levelKey: "advanced", count: 12, seed: 60305, inkSave: false },
-
   // אנגלית — 5
   { slug: "english-g2-vocabulary-regular", subjectId: "english", gradeKey: "g2", topicKey: "vocabulary", levelKey: "regular", count: 12, seed: 60401, inkSave: true },
   { slug: "english-g3-grammar-regular", subjectId: "english", gradeKey: "g3", topicKey: "grammar", levelKey: "regular", count: 12, seed: 60402, inkSave: true },

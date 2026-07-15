@@ -30,7 +30,6 @@ const SUBJECTS = [
     levelKey: "regular",
     seed: 90002,
   },
-  { subjectId: "hebrew", gradeKey: "g2", topicKey: "reading", levelKey: "regular", seed: 90003 },
   {
     subjectId: "english",
     gradeKey: "g2",

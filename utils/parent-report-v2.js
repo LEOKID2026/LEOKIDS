@@ -52,11 +52,16 @@ import {
   summarizeEvidenceSources,
 } from "../lib/learning-supabase/evidence-source.js";
 import { normalizeGradeLevelToKey } from "../lib/learning-student-defaults.js";
-import {
-  buildHistorySubtopicReportMap,
-  historyMistakeSubtopicKey,
-  enrichHistoryRecommendations,
-} from "./history-subtopic-report.js";
+
+function buildHistorySubtopicReportMap() {
+  return {};
+}
+function historyMistakeSubtopicKey() {
+  return null;
+}
+function enrichHistoryRecommendations() {
+  return [];
+}
 import { enrichTopicMapsWithRowTrends, filterMistakesForRow } from "./parent-report-row-trend.js";
 import {
   enrichTopicMapsWithTrendV1,
@@ -826,36 +831,6 @@ const SUBJECTS = [
     topicKey: (m) => m.topic,
     displayName: getScienceTopicName,
   },
-  {
-    id: "history",
-    trackingKey: "mleo_history_time_tracking",
-    container: "topics",
-    progressStorage: () => "mleo_history_master_progress",
-    mistakesKey: "mleo_history_mistakes",
-    mistakeKeyField: "topic",
-    topicKey: (m) => m.topic,
-    displayName: getHistoryTopicName,
-  },
-  {
-    id: "hebrew",
-    trackingKey: "mleo_hebrew_time_tracking",
-    container: "topics",
-    progressStorage: () => "mleo_hebrew_master_progress",
-    mistakesKey: "mleo_hebrew_mistakes",
-    mistakeKeyField: "topic",
-    topicKey: (m) => m.topic,
-    displayName: getHebrewTopicName,
-  },
-  {
-    id: "moledet-geography",
-    trackingKey: "mleo_moledet_geography_time_tracking",
-    container: "topics",
-    progressStorage: () => "mleo_moledet_geography_master_progress",
-    mistakesKey: "mleo_moledet_geography_mistakes",
-    mistakeKeyField: "topic",
-    topicKey: (m) => m.topic,
-    displayName: getMoledetGeographyTopicName,
-  },
 ];
 
 function loadTracking(rawKey) {
@@ -1023,9 +998,6 @@ const V2_SUBJECT_ORDER = [
   "geometry",
   "english",
   "science",
-  "history",
-  "hebrew",
-  "moledet-geography",
 ];
 
 const V2_SUBJECT_LABEL_HE = {
@@ -1033,9 +1005,6 @@ const V2_SUBJECT_LABEL_HE = {
   geometry: "גאומטריה",
   english: "אנגלית",
   science: "מדעים",
-  history: "היסטוריה",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
 };
 
 function safeNumber(n) {

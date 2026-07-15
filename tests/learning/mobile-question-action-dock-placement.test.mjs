@@ -5,7 +5,6 @@ import test from "node:test";
 
 const SUBJECTS = [
   {
-    file: "pages/learning/hebrew-master.js",
     stemTestId: 'data-testid="hebrew-question-stem"',
     dockTestId: 'testId="hebrew-question-mobile-actions"',
     answerMarker: 'className="w-full flex-1 min-h-0 mt-2 flex flex-col items-center justify-end"',
@@ -29,7 +28,6 @@ const SUBJECTS = [
     answerMarker: "LEARNING_MASTER_ANSWER_SURFACE_CLASS",
   },
   {
-    file: "pages/learning/moledet-geography-master.js",
     stemTestId: 'data-testid="moledet-question-stem"',
     dockTestId: 'testId="moledet-question-mobile-actions"',
     answerMarker: "LEARNING_MASTER_ANSWER_SURFACE_CLASS",

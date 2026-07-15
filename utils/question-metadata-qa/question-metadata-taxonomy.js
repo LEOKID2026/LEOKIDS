@@ -8,38 +8,20 @@ import {
   ENGLISH_SUBSKILL_ALLOWLIST_BY_SKILL,
 } from "./question-metadata-taxonomy-english.js";
 import { isTaxonomyValidMathSkillId, isTaxonomyValidMathSubskillId } from "./question-metadata-taxonomy-math.js";
-import {
-  HEBREW_ARCHIVE_GRADE_SUBSKILL_IDS,
-  HEBREW_ARCHIVE_SKILL_IDS,
-  HEBREW_ARCHIVE_SUBSKILL_ALLOWLIST_BY_SKILL,
-} from "./question-metadata-taxonomy-hebrew-archive.js";
-import {
-  MOLEDET_GEOGRAPHY_GRADE_SUBSKILL_IDS,
-  MOLEDET_GEOGRAPHY_SKILL_IDS,
-  MOLEDET_GEOGRAPHY_SUBSKILL_ALLOWLIST_BY_SKILL,
-} from "./question-metadata-taxonomy-geography.js";
-import {
-  HISTORY_SKILL_IDS as HISTORY_CURRICULUM_SKILL_IDS,
-  HISTORY_TOPIC_ORDER as HISTORY_CURRICULUM_TOPIC_ORDER,
-} from "../../data/history-curriculum.js";
-import { HISTORY_G6_SUBTOPIC_IDS as HISTORY_G6_CONTENT_MAP_SUBTOPIC_IDS } from "../../data/history-g6-content-map.js";
 import { BANK_ENRICHED_EXPECTED_ERROR_TYPES } from "./bank-enriched-expected-error-types.js";
 
-const HISTORY_SKILL_IDS = HISTORY_CURRICULUM_SKILL_IDS || [];
-const HISTORY_TOPIC_ORDER = HISTORY_CURRICULUM_TOPIC_ORDER || [];
-const HISTORY_G6_SUBTOPIC_IDS = HISTORY_G6_CONTENT_MAP_SUBTOPIC_IDS || [];
+export const HEBREW_ARCHIVE_GRADE_SUBSKILL_IDS = [];
+export const HEBREW_ARCHIVE_SKILL_IDS = new Set();
+export const HEBREW_ARCHIVE_SUBSKILL_ALLOWLIST_BY_SKILL = {};
+export const MOLEDET_GEOGRAPHY_GRADE_SUBSKILL_IDS = [];
+export const MOLEDET_GEOGRAPHY_SKILL_IDS = new Set();
+export const MOLEDET_GEOGRAPHY_SUBSKILL_ALLOWLIST_BY_SKILL = {};
+
+const HISTORY_SKILL_IDS = [];
+const HISTORY_TOPIC_ORDER = [];
+const HISTORY_G6_SUBTOPIC_IDS = [];
 
 export { ENGLISH_SKILL_IDS, ENGLISH_SUBSKILL_ALLOWLIST_BY_SKILL };
-export {
-  HEBREW_ARCHIVE_GRADE_SUBSKILL_IDS,
-  HEBREW_ARCHIVE_SKILL_IDS,
-  HEBREW_ARCHIVE_SUBSKILL_ALLOWLIST_BY_SKILL,
-} from "./question-metadata-taxonomy-hebrew-archive.js";
-export {
-  MOLEDET_GEOGRAPHY_GRADE_SUBSKILL_IDS,
-  MOLEDET_GEOGRAPHY_SKILL_IDS,
-  MOLEDET_GEOGRAPHY_SUBSKILL_ALLOWLIST_BY_SKILL,
-} from "./question-metadata-taxonomy-geography.js";
 
 export const TAXONOMY_VERSION = 1;
 

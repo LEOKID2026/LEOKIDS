@@ -16,8 +16,6 @@ import { orderMultiplicationTaxonomyCandidates } from "./diagnostic-engine-v2/mu
 import { orderWordProblemsTaxonomyCandidates } from "./diagnostic-engine-v2/word-problems-taxonomy-candidate-order.js";
 import { orderGeometryTaxonomyCandidatesWithMeta } from "./diagnostic-engine-v2/geometry-taxonomy-candidate-order.js";
 import { orderEnglishTaxonomyCandidatesWithMeta } from "./diagnostic-engine-v2/english-taxonomy-candidate-order.js";
-import { orderHebrewTaxonomyCandidates } from "./diagnostic-engine-v2/hebrew-taxonomy-candidate-order.js";
-import { orderMoledetTaxonomyCandidatesWithMeta, moledetGeographyRowHasMapEvidence } from "./diagnostic-engine-v2/moledet-taxonomy-candidate-order.js";
 import { passesRecurrenceRules } from "./diagnostic-engine-v2/recurrence.js";
 import { assessSubskillCandidateSafety } from "./subskill-candidate-safety.js";
 
@@ -109,31 +107,6 @@ export function resolveRowTaxonomyMatch({ subjectId, topicRowKey, row, rawMistak
       candidateIds = enOrder.orderedIds;
       disambiguationApplied = enOrder.disambiguationApplied === true;
       disambiguationWinnerId = enOrder.winnerId || null;
-    }
-  } else if (sid === "hebrew") {
-    if (
-      (bk === "grammar" && candidateIdsRaw.includes("H-02") && candidateIdsRaw.includes("H-06")) ||
-      (bk === "writing" && candidateIdsRaw.includes("H-03") && candidateIdsRaw.includes("H-07"))
-    ) {
-      candidateIds = orderHebrewTaxonomyCandidates(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-    }
-  } else if (sid === "moledet-geography") {
-    if (bk === "maps" && candidateIdsRaw.includes("MG-01") && candidateIdsRaw.includes("MG-02") && candidateIdsRaw.includes("MG-08")) {
-      const mgOrder = orderMoledetTaxonomyCandidatesWithMeta(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-      candidateIds = mgOrder.orderedIds;
-      disambiguationApplied = mgOrder.disambiguationApplied === true;
-      disambiguationWinnerId = mgOrder.winnerId || null;
-    } else if (bk === "geography" && candidateIdsRaw.includes("MG-01") && candidateIdsRaw.includes("MG-02") && candidateIdsRaw.includes("MG-05")) {
-      geographyDefinitionOnly = wrongs.length > 0 && !moledetGeographyRowHasMapEvidence(wrongs, row);
-      const mgOrder = orderMoledetTaxonomyCandidatesWithMeta(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-      candidateIds = mgOrder.orderedIds;
-      disambiguationApplied = geographyDefinitionOnly ? false : mgOrder.disambiguationApplied === true;
-      disambiguationWinnerId = geographyDefinitionOnly ? null : mgOrder.winnerId || null;
-    } else if (bk === "homeland" && candidateIdsRaw.includes("MG-04") && candidateIdsRaw.includes("MG-06")) {
-      const mgOrder = orderMoledetTaxonomyCandidatesWithMeta(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-      candidateIds = mgOrder.orderedIds;
-      disambiguationApplied = mgOrder.disambiguationApplied === true;
-      disambiguationWinnerId = mgOrder.winnerId || null;
     }
   }
 

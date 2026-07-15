@@ -98,7 +98,6 @@ export {
   learningPatternDecisionsMatch,
 } from "./compare-short-detailed-findings.js";
 export { auditLearningPatternDecisionReport } from "./audit-report.js";
-export { projectHistorySubtopicLearningPatternDecisions } from "./project-history-subtopic-lpd.js";
 export {
   getLpdFromRow,
   guardParentFacingText,

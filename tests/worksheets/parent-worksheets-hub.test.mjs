@@ -49,16 +49,16 @@ describe("parent-worksheets-hub", () => {
     assert.match(src, /clearParentBearerSessionAndRedirect/);
   });
 
-  test("ready catalog covers all four core subjects", () => {
+  test("ready catalog covers all three core subjects", () => {
     const subjects = new Set(READY_WORKSHEET_CATALOG.map((e) => e.subjectId));
     for (const sid of Object.keys(WORKSHEET_SUBJECT_ALLOWLIST)) {
       assert.ok(subjects.has(sid), `catalog missing subject ${sid}`);
     }
-    assert.ok(READY_WORKSHEET_CATALOG.length >= 30);
+    assert.ok(READY_WORKSHEET_CATALOG.length >= 20);
     const counts = countReadyCatalogBySubject();
     assert.ok(counts.math >= 15);
     assert.ok(counts.geometry >= 5);
-    assert.ok(counts.hebrew >= 5);
+    assert.ok((counts.hebrew || 0) === 0);
     assert.ok(counts.english >= 5);
   });
 

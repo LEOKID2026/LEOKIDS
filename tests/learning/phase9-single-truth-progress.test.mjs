@@ -202,9 +202,7 @@ describe("Phase 9 - product path imports", () => {
       "pages/learning/math-master.js",
       "pages/learning/geometry-master.js",
       "pages/learning/english-master.js",
-      "pages/learning/hebrew-master.js",
       "pages/learning/science-master.js",
-      "pages/learning/moledet-geography-master.js",
     ];
     for (const rel of masters) {
       const src = readFileSync(join(ROOT, rel), "utf8");

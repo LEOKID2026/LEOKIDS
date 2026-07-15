@@ -4,7 +4,6 @@
 import { SUBJECT_IDS } from "../diagnostic-engine-v2/subject-ids.js";
 import { buildLearningPatternDecision } from "./build-learning-pattern-decision.js";
 import { normalizeParentVisibleMetrics } from "./normalize-parent-practice-metrics.js";
-import { projectHistorySubtopicLearningPatternDecisions } from "./project-history-subtopic-lpd.js";
 
 /**
  * @param {object|null} professionalEngineV1
@@ -121,15 +120,10 @@ export function applyLearningPatternDecisionToUnitsAndRows({
     diagnosticEngineV2.learningPatternDecisionBySubject = bySubject;
   }
 
-  const historySubtopicProjection = projectHistorySubtopicLearningPatternDecisions(
-    maps?.history,
-    maps?.historySubtopics,
-  );
-
   return {
     bySubject,
     unitsUpdated: units.filter((u) => u.learningPatternDecision).length,
-    historySubtopicProjection,
+    historySubtopicProjection: {},
   };
 }
 

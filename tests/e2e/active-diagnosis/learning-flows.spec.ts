@@ -181,7 +181,7 @@ test.describe("Active diagnosis - learning flows (smoke)", () => {
   });
 
   test("Hebrew mixed: wrong MCQ → flow continues (stem updates)", async ({ page }) => {
-    await page.goto("/learning/hebrew-master");
+    await page.goto("/learning/science-master");
     await page.getByTestId("hebrew-player-name").fill(QA_USER);
     await page.getByTestId("hebrew-topic-select").selectOption("mixed");
     await confirmMixedModal(page);

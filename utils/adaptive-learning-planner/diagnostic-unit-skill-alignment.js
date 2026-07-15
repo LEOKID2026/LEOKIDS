@@ -12,11 +12,16 @@ import {
   HISTORY_TOPIC_ORDER,
   validateTaxonomyForRecord,
 } from "../question-metadata-qa/question-metadata-taxonomy.js";
-import { HISTORY_G6_CONTENT_MAP as HISTORY_G6_CONTENT_MAP_SOURCE } from "../../data/history-g6-content-map.js";
-import { HEBREW_ARCHIVE_CATEGORY_KEYS, hebrewArchiveCategoryToSkillId } from "../question-metadata-qa/question-metadata-taxonomy-hebrew-archive.js";
-import { MOLEDET_GEOGRAPHY_STRAND_KEYS, moledetGeographyStrandToSkillId } from "../question-metadata-qa/question-metadata-taxonomy-geography.js";
 
-const HISTORY_G6_CONTENT_MAP = HISTORY_G6_CONTENT_MAP_SOURCE || {};
+const HISTORY_G6_CONTENT_MAP = {};
+const HEBREW_ARCHIVE_CATEGORY_KEYS = [];
+function hebrewArchiveCategoryToSkillId() {
+  return null;
+}
+const MOLEDET_GEOGRAPHY_STRAND_KEYS = [];
+function moledetGeographyStrandToSkillId() {
+  return null;
+}
 
 /** Same contract as `mathReportBaseOperationKey` (avoid importing browser-heavy math-report-generator). */
 function mathReportBaseOperationKey(bucketKey) {

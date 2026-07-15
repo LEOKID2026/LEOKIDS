@@ -12,8 +12,6 @@ import { orderMultiplicationTaxonomyCandidates } from "./multiplication-taxonomy
 import { orderWordProblemsTaxonomyCandidates } from "./word-problems-taxonomy-candidate-order.js";
 import { orderGeometryTaxonomyCandidates } from "./geometry-taxonomy-candidate-order.js";
 import { orderEnglishTaxonomyCandidates } from "./english-taxonomy-candidate-order.js";
-import { orderHebrewTaxonomyCandidates } from "./hebrew-taxonomy-candidate-order.js";
-import { orderMoledetTaxonomyCandidates } from "./moledet-taxonomy-candidate-order.js";
 import { passesRecurrenceRules, heavyHintLikelyInvalidatesPattern } from "./recurrence.js";
 import { resolveConfidenceLevel } from "./confidence-policy.js";
 import { resolvePriority, breadthFromWeakRowCount } from "./priority-policy.js";
@@ -117,37 +115,6 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
         const bk = String(taxonomyBucketKey || "").trim().toLowerCase();
         if (bk === "vocabulary" || bk === "grammar") {
           candidateIds = orderEnglishTaxonomyCandidates(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-        }
-      } else if (subjectId === "hebrew") {
-        const bk = String(taxonomyBucketKey || "").trim().toLowerCase();
-        if (
-          (bk === "grammar" && candidateIdsRaw.includes("H-02") && candidateIdsRaw.includes("H-06")) ||
-          (bk === "writing" && candidateIdsRaw.includes("H-03") && candidateIdsRaw.includes("H-07"))
-        ) {
-          candidateIds = orderHebrewTaxonomyCandidates(candidateIdsRaw, wrongs, { row, bucketKey });
-        }
-      } else if (subjectId === "moledet-geography") {
-        const bk = String(taxonomyBucketKey || "").trim().toLowerCase();
-        if (
-          bk === "maps" &&
-          candidateIdsRaw.includes("MG-01") &&
-          candidateIdsRaw.includes("MG-02") &&
-          candidateIdsRaw.includes("MG-08")
-        ) {
-          candidateIds = orderMoledetTaxonomyCandidates(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-        } else if (
-          bk === "geography" &&
-          candidateIdsRaw.includes("MG-01") &&
-          candidateIdsRaw.includes("MG-02") &&
-          candidateIdsRaw.includes("MG-05")
-        ) {
-          candidateIds = orderMoledetTaxonomyCandidates(candidateIdsRaw, wrongs, { row, bucketKey: bk });
-        } else if (
-          bk === "homeland" &&
-          candidateIdsRaw.includes("MG-04") &&
-          candidateIdsRaw.includes("MG-06")
-        ) {
-          candidateIds = orderMoledetTaxonomyCandidates(candidateIdsRaw, wrongs, { row, bucketKey: bk });
         }
       }
       /** @type {string|null} */

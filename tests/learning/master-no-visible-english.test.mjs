@@ -14,7 +14,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
 
 describe("master pages: no visible English XP text", () => {
-  for (const file of ["pages/learning/science-master.js", "pages/learning/history-master.js"]) {
     test(`${file} "how to play" list has no visible "XP"`, () => {
       const src = readFileSync(join(ROOT, file), "utf8");
       assert.doesNotMatch(src, /כוכבים\s*ו\s*XP/);

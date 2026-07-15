@@ -1,11 +1,12 @@
 # Leo Kids Global — Globalization Audit & Implementation Plan
 
 **Audit date:** 2026-07-15  
-**Revision:** 2026-07-15 — owner review incorporated (dynamic locale/direction, early `product_id`, table isolation tiers, i18n pass/fail gates, revised wave order)  
+**Revision:** 2026-07-16 — **Fast Track A** owner decision: physical subject cleanup (4 keep / full delete of IL-only subjects); science kept; games out of scope; no Supabase change this round  
 **Audit scope (only):** `C:\Users\ERAN YOSEF\Desktop\final projects\FINAL-WEB\LEO-KIDS-FINAL\LEO-KIDS-GLOBAL`  
-**Audit type:** Read-only mapping and planning — no code changes, no migrations, no deploy  
-**Target product:** International Leo Kids (`leokids_global`) — English default locale, dynamic direction, math + geometry + English only  
-**Israeli product remains:** Separate site at `leokids.co.il` (`leokids_il`) — never treated as a language variant
+**Audit type:** Living implementation plan (execution in progress)  
+**Target product:** International Leo Kids (`leokids_global`) — English default locale, dynamic direction, **four learning subjects: Math, Geometry, English, Science**  
+**Israeli product remains:** Separate site at `leokids.co.il` (`leokids_il`) — never treated as a language variant  
+**Do not touch this round:** games/arcade/solo/educational-games, Supabase/migrations/SQL/`product_id`, Vercel/deploy/push, sibling `LEO-KIDS` / `LEO-KIDS-WEB-TRY`
 
 ---
 
@@ -30,32 +31,38 @@
 | Active Vercel project for global | **None configured** — expected at project start |
 | Supabase | Same project URL as Israel in `.env.example` (shared DB planned) |
 
-**Strategic recommendation (revised wave order):**
+**Strategic recommendation (Fast Track A — owner 2026-07-16):**
 
-1. **Wave 0:** Git, Vercel, env separation, build guard.
-2. **Wave 1:** Basic `product_id` + memberships in DB — **before any global user creates data** (RLS hardening later).
-3. **Wave 2:** Subject allowlist (math, geometry, english) — config only, no deletion.
-4. **Wave 3:** **Locale + dynamic direction foundation** — not hardcoded `<html lang="en" dir="ltr">`.
+1. **Fast Track A (NOW):** **Physical deletion** of non-global learning subjects — not feature flags, not hide-via-config.
+   - **KEEP:** `math`, `geometry`, `english`, `science`
+   - **DELETE completely:** `hebrew`, `history`, `moledet`, `geography`, `moledet_geography` / `moledet-geography`
+   - **Games are out of scope** — do not delete, edit, clean, or translate arcade/solo/educational games this round
+   - **No Supabase / migrations / SQL / `product_id` changes this round**
+2. **Wave 0 (ops):** Finish Git remote + new Vercel project + env separation when owner requests (no push/deploy in subject-cleanup commit).
+3. **Wave 1:** Basic `product_id` + memberships in DB — **before any global user creates data** (later; not this round).
+4. **Wave 3:** Locale + dynamic direction foundation.
 5. **Wave 4:** i18n infrastructure (keys, ICU, CI gates).
-6. **Waves 5–9:** English UI, content, reports.
-7. **Wave 10:** Games/online/PWA — cross-product matchmaking by design where intended.
+6. **Waves 5–9:** English UI, content, reports (report engines only stripped of deleted-subject branches for now).
+7. **Wave 10:** Games/online/PWA — separate track; untouched by subject cleanup.
 8. **Wave 11:** SEO, legal, security QA, launch.
-9. **Repository strategy:** Two separate repos (Option A) — defer monorepo.
+9. **Repository strategy:** Separate GitHub repo `LEOKID2026/LEOKIDS` — defer monorepo.
 
 **Five highest risks:**
 
-1. Creating global rows in shared Supabase **without** `product_id` (must not happen after Wave 1).
+1. Creating global rows in shared Supabase **without** `product_id` (deferred until Wave 1).
 2. Hardcoded `https://www.leokids.co.il` in auth/email/canonical URLs.
 3. Hardcoding LTR globally — blocks Arabic/Persian/Urdu without rewrite.
-4. 1,361 Hebrew files + report engine mixed with Hebrew copy.
+4. Remaining Hebrew UI/copy in kept subjects (translation waves — not subject cleanup).
 5. Stale copied `.vercel/project.json` (if present) — delete before global link.
 
-**Decisions confirmed — keep as-is:**
+**Decisions confirmed — Fast Track A:**
 
-- Config allowlist for 3 subjects before physical deletion.
+- **Four subjects only:** Math, Geometry, English, Science — physical full delete of Hebrew, History, Moledet, Geography.
+- Not temporary hiding; not feature flags; not “keep for later.”
+- Games system is **not** part of subject cleanup — leave untouched even if filenames mention Hebrew/Science/History/Geography.
 - No monorepo now; separate Git + Vercel project.
 - Delete copied `.vercel/` before linking.
-- Same Supabase phase 1; same `auth.users` + `user_product_memberships`.
+- Same Supabase phase 1 deferred; **no Supabase edits in Fast Track A**.
 - Israeli site is **not** `/he` on global domain.
 - Keep math bidi utilities for future RTL interface locales.
 - Separate `interface_language` vs `learning_language`.
@@ -303,23 +310,24 @@ flowchart TB
 
 ### 5.2 Per-subject removal plan
 
-#### KEEP: math, geometry, english
+#### KEEP (final): math, geometry, english, science
 
 | Subject | Key paths | Global work |
 |---------|-----------|-------------|
 | math | `utils/math-question-generator.js`, `pages/learning/math-master.js`, `lib/learning-book/math-g*-registry.js`, `lib/worksheets/worksheet-math-*` | English word problems, units, labels |
 | geometry | `utils/geometry-question-generator.js`, `utils/geometry-diagram-spec.js`, `lib/worksheets/worksheet-geometry-*` | English stems, diagram labels |
 | english | `data/english-curriculum.js`, `data/english-questions/`, `utils/english-question-generator.js` | Split interface vs learning language |
+| science | `data/science-*`, `pages/learning/science-master.js`, science books/taxonomy | Keep fully active; translate later |
 
-#### REMOVE (config first, delete later): hebrew, science, history, moledet, geography
+#### DELETE (physical, Fast Track A — not hide): hebrew, history, moledet, geography / moledet_geography
 
 | Subject | Est. files | Own directories | Shared dependencies | Delete now? |
 |---------|------------|-----------------|---------------------|-------------|
-| hebrew | ~337 | `data/hebrew-*`, `data/hebrew-literacy-g*`, `pages/learning/hebrew-master.js`, `pages/api/hebrew-audio-*`, `pages/api/hebrew-nakdan.js` | Subject hub, permissions matrix, reports withhold logic | **No** — config gate first |
-| science | ~134 | `data/science-*`, `pages/learning/science-master.js` | Diagnostic taxonomy, learning book | Config gate |
-| history | ~33 | `data/history-*`, `pages/learning/history-master.js` | g6 only, copilot scope | Config gate |
-| moledet | ~92 | `data/moledet-*`, combined master | Shares `moledet_geography` engine with geography | Config gate |
-| geography | ~91 | `data/geography-questions/g*.js` (2700+ Hebrew strings each) | Same engine as moledet | Config gate |
+| hebrew | ~337 | `data/hebrew-*`, `data/hebrew-literacy-g*`, `pages/learning/hebrew-master.js`, `pages/api/hebrew-audio-*`, `pages/api/hebrew-nakdan.js` | Subject hub, permissions matrix, reports | **YES — physical delete** |
+| history | ~33 | `data/history-*`, `pages/learning/history-master.js` | g6 only, copilot scope | **YES — physical delete** |
+| moledet | ~92 | `data/moledet-*`, combined master | Shares `moledet_geography` engine with geography | **YES — physical delete** |
+| geography | ~91 | `data/geography-questions/g*.js` | Same engine as moledet | **YES — physical delete** |
+| science | — | — | — | **KEEP** (owner decision 2026-07-16) |
 
 ### 5.3 Central gating files (Wave 1)
 
@@ -1060,18 +1068,19 @@ Dimensions: Desktop/Mobile/Tablet × Chrome/Edge/Safari × LTR × English × aut
 | **Pass** | All existing = `leokids_il`; global creates only `leokids_global`; memberships work for same email |
 | **Fail** | NULL product_id; global student under IL parent |
 
-### Wave 2 — Product scope (subjects)
+### Fast Track A / Wave 2 — Product scope (subjects) — PHYSICAL CLEANUP
 
 | | |
 |--|--|
-| **Goal** | math, geometry, english only via allowlist |
-| **Complexity** | Medium |
-| **Migration** | No |
-| **IL impact** | None |
-| **Changes** | Config-driven allowlist; hub, SEO, permissions, worksheets, guest topics |
-| **Key files** | `subject-key-map.js`, `pages/learning/index.js`, `seo-public-paths.js`, `worksheet-print-allowlist.js` |
-| **Pass** | 3 subjects visible; removed routes 404/redirect; no crashes on withheld keys |
-| **Fail** | Physical deletion before gating; report crash on removed subject |
+| **Goal** | **Four subjects only:** math, geometry, english, science — full physical removal of hebrew/history/moledet/geography |
+| **Complexity** | High |
+| **Migration** | No (historical Supabase migrations that mention deleted subjects **stay**; do not edit) |
+| **IL impact** | None (sibling IL trees untouched) |
+| **Changes** | Delete subject pages, banks, generators, books, worksheets, APIs, tests; strip registries/allowlists/nav/SEO; strip report/diagnostic subject branches only |
+| **Out of scope** | Games/arcade/solo/educational-games; Supabase; push/deploy/Vercel; i18n/translation; RTL foundation |
+| **Key files** | `learning-activity.js` allowlist, `subject-key-map.js`, `pages/learning/index.js`, learning-book catalogs, worksheet allowlists, SEO paths |
+| **Pass** | Only 4 subjects remain active; deleted subject routes gone; build green; games untouched; science still full |
+| **Fail** | Soft-hide / feature-flag leftovers; science removed; any game file changed; Supabase touched |
 
 ### Wave 3 — Locale + direction foundation
 

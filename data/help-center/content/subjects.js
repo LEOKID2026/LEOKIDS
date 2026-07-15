@@ -76,20 +76,4 @@ export const science = subjectArticle(
   "/learning/science-master"
 );
 
-export const hebrew = subjectArticle(
-  "hebrew",
-  "עברית",
-  "📚",
-  ["אוצר מילים ודקדוק", "הבנת הנקרא", "כתיב והיגוי"],
-  "/learning/hebrew-master"
-);
-
-export const moledetGeography = subjectArticle(
-  "moledet-geography",
-  "מולדת וגאוגרפיה",
-  "🗺️",
-  ["מולדת ואזרחות", "גאוגרפיה של ישראל והעולם", "חברה וסביבה"],
-  "/learning/moledet-geography-master"
-);
-
-export const SUBJECT_ARTICLES = [math, geometry, english, science, hebrew, moledetGeography];
+export const SUBJECT_ARTICLES = [math, geometry, english, science];

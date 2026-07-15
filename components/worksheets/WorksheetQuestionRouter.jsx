@@ -11,11 +11,6 @@ import {
   GenericMcqRenderer,
   GeometryDiagramPrintRenderer,
   GeometryTextRenderer,
-  HebrewLongPassageRenderer,
-  HebrewMcqRenderer,
-  HebrewNikudRenderer,
-  HebrewOpenAnswerRenderer,
-  HebrewPassageRenderer,
   MathFractionRenderer,
   MathPlainRenderer,
   MathVerticalLayoutRenderer,
@@ -39,27 +34,18 @@ export default function WorksheetQuestionRouter({ question }) {
     return <GeometryDiagramPrintRenderer question={question} />;
   }
   if (questionType === "passage_mcq") {
-    if (subject === "hebrew") {
-      if (question.longPassage) {
-        return <HebrewLongPassageRenderer question={question} />;
-      }
-      return <HebrewPassageRenderer question={question} />;
-    }
     return <GenericMcqRenderer question={question} />;
   }
   if (questionType === "translation") {
     return <EnglishTranslationRenderer question={question} />;
   }
   if (questionType === "open") {
-    // Geometry open compute may still include a diagram.
     if (subject === "geometry") {
       if (question.diagramSpec) {
         return <GeometryDiagramPrintRenderer question={question} />;
       }
       return <GeometryTextRenderer question={question} />;
     }
-    // Open writing always needs lines — even when nikud styling applies.
-    if (subject === "hebrew") return <HebrewOpenAnswerRenderer question={question} />;
     if (subject === "english") return <EnglishOpenAnswerRenderer question={question} />;
     return <MathPlainRenderer question={question} />;
   }
@@ -70,10 +56,6 @@ export default function WorksheetQuestionRouter({ question }) {
       return <EnglishMcqRenderer question={question} />;
     }
     if (subject === "geometry") return <GeometryTextRenderer question={question} />;
-    if (subject === "hebrew") {
-      if (question.hasNikud) return <HebrewNikudRenderer question={question} />;
-      return <HebrewMcqRenderer question={question} />;
-    }
     return <MathPlainRenderer question={question} />;
   }
 

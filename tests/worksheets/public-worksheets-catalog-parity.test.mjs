@@ -9,9 +9,9 @@ import { READY_WORKSHEET_CATALOG } from "../../lib/worksheets/worksheet-ready-ca
 import { buildReadyWorksheetCatalogItems } from "../../lib/worksheets/worksheet-public-catalog.server.js";
 
 describe("public-worksheets-catalog-parity", () => {
-  test("buildReadyWorksheetCatalogItems returns 35 slugs matching source", () => {
+  test("buildReadyWorksheetCatalogItems returns kept-subject slugs matching source", () => {
     const items = buildReadyWorksheetCatalogItems();
-    assert.equal(items.length, 35);
+    assert.ok(items.length >= 20);
     const sourceSlugs = READY_WORKSHEET_CATALOG.map((e) => e.slug).sort();
     const builtSlugs = items.map((i) => i.slug).sort();
     assert.deepEqual(builtSlugs, sourceSlugs);

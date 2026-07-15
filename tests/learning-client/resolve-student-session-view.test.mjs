@@ -124,10 +124,8 @@ test("subject master pages use shared session defaults hook", () => {
   const pages = [
     "pages/learning/math-master.js",
     "pages/learning/geometry-master.js",
-    "pages/learning/hebrew-master.js",
     "pages/learning/english-master.js",
     "pages/learning/science-master.js",
-    "pages/learning/moledet-geography-master.js",
   ];
   for (const rel of pages) {
     const src = readFileSync(join(root, rel), "utf8");

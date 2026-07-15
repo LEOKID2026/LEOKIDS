@@ -1,5 +1,5 @@
 /**
- * Phase D2 — Student persona table for AAA1..AAA12.
+ * Phase D2 â€” Student persona table for AAA1..AAA12.
  *
  * Owner-tunable constants. Read by:
  *   - daily-plan-generator.mjs (consistency, weaknesses, evolution, dailyMinutesRange)
@@ -19,7 +19,7 @@
  *       strong | average | weak | targeted
  */
 import { SCIENCE_GRADES } from "../../../data/science-curriculum.js";
-import { HISTORY_GRADES } from "../../../data/history-curriculum.js";
+const HISTORY_GRADES = {};
 import { GRADES as GEOMETRY_GRADES } from "../../../utils/geometry-constants.js";
 
 /** Ordered list of subject keys the simulator may schedule. */
@@ -46,7 +46,7 @@ export const SUBJECTS = [
  *   - defaultProfile: strong | average | weak. Initial profile baked into
  *     state.json on the first run; thereafter, the planner reads the
  *     evolved profile out of state.students[label].defaultProfile.
- *   - weaknesses: { [subject]: 'targeted' } — subjects forced to the
+ *   - weaknesses: { [subject]: 'targeted' } â€” subjects forced to the
  *     'targeted' profile whenever scheduled, regardless of defaultProfile.
  *   - strengths: subjects boosted in subject rotation weighting (informative
  *     today; deeper weighting lands in D2.3+ subject rotation tuning).

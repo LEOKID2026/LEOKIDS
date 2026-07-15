@@ -6,11 +6,6 @@ import WorksheetOptionsGrid from "../WorksheetOptionsGrid.jsx";
 
 export { GeometryTextRenderer } from "./GeometryTextRenderer.jsx";
 export { GeometryDiagramPrintRenderer } from "./GeometryDiagramPrintRenderer.jsx";
-export { HebrewMcqRenderer } from "./HebrewMcqRenderer.jsx";
-export { HebrewPassageRenderer } from "./HebrewPassageRenderer.jsx";
-export { HebrewLongPassageRenderer } from "./HebrewLongPassageRenderer.jsx";
-export { HebrewOpenAnswerRenderer } from "./HebrewOpenAnswerRenderer.jsx";
-export { HebrewNikudRenderer } from "./HebrewNikudRenderer.jsx";
 export { EnglishMcqRenderer } from "./EnglishMcqRenderer.jsx";
 export { EnglishPhonicsRenderer } from "./EnglishPhonicsRenderer.jsx";
 export { EnglishLtrBlock } from "./EnglishLtrBlock.jsx";

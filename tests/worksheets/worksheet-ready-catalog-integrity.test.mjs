@@ -17,12 +17,12 @@ import {
 import { findForbiddenPublicLevelLabels } from "../../lib/worksheets/worksheet-level-display.js";
 
 describe("worksheet-ready-catalog-integrity", () => {
-  test("catalog has at least 30 entries with subject minimums", () => {
-    assert.ok(READY_WORKSHEET_CATALOG.length >= 30);
+  test("catalog has at least 20 entries with subject minimums", () => {
+    assert.ok(READY_WORKSHEET_CATALOG.length >= 20);
     const counts = countReadyCatalogBySubject();
     assert.ok(counts.math >= 15);
     assert.ok(counts.geometry >= 5);
-    assert.ok(counts.hebrew >= 5);
+    assert.ok((counts.hebrew || 0) === 0);
     assert.ok(counts.english >= 5);
   });
 

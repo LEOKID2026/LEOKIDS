@@ -5,8 +5,6 @@
 
 import { OPERATIONS } from "../math-constants.js";
 import { TOPICS as GEOMETRY_TOPICS } from "../geometry-constants.js";
-import { TOPICS as HEBREW_TOPICS } from "../hebrew-constants.js";
-import { TOPICS as MOLEDET_TOPICS } from "../moledet-geography-constants.js";
 
 /** Mirrors `pages/learning/english-master.js` TOPICS keys (storage bucket ids). */
 const ENGLISH_TOPIC_KEYS = Object.freeze([
@@ -43,8 +41,6 @@ export const CANONICAL_SUBJECT_BUCKETS = Object.freeze({
   geometry: freezeArray(Object.keys(GEOMETRY_TOPICS)),
   english: ENGLISH_TOPIC_KEYS,
   science: SCIENCE_TOPIC_KEYS,
-  hebrew: freezeArray(Object.keys(HEBREW_TOPICS)),
-  "moledet-geography": freezeArray(Object.keys(MOLEDET_TOPICS)),
 });
 
 function setsEqual(a, b) {
@@ -74,18 +70,6 @@ export function assertCanonicalSubjectBucketsAligned() {
   const geoGot = new Set(CANONICAL_SUBJECT_BUCKETS.geometry);
   if (!setsEqual(geoExpected, geoGot)) {
     throw new Error("Dev simulator geometry topics out of sync with geometry-constants.TOPICS keys.");
-  }
-
-  const heExpected = new Set(Object.keys(HEBREW_TOPICS));
-  const heGot = new Set(CANONICAL_SUBJECT_BUCKETS.hebrew);
-  if (!setsEqual(heExpected, heGot)) {
-    throw new Error("Dev simulator Hebrew topics out of sync with hebrew-constants.TOPICS keys.");
-  }
-
-  const moExpected = new Set(Object.keys(MOLEDET_TOPICS));
-  const moGot = new Set(CANONICAL_SUBJECT_BUCKETS["moledet-geography"]);
-  if (!setsEqual(moExpected, moGot)) {
-    throw new Error("Dev simulator moledet-geography topics out of sync with moledet-geography-constants.TOPICS keys.");
   }
 
   const enGot = new Set(CANONICAL_SUBJECT_BUCKETS.english);

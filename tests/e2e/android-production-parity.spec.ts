@@ -51,12 +51,12 @@ test.describe("Android WebView parity - production mobile @android-qa", () => {
     await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
   });
 
-  test("S3–S4 - learning activity opens (hebrew-master smoke)", async ({ page }) => {
+  test("S3–S4 - learning activity opens (science-master smoke)", async ({ page }) => {
     test.skip(!STUDENT_USER || !STUDENT_PIN, "Set E2E_STUDENT_USERNAME + E2E_STUDENT_PIN");
     await waitStudentLoginReady(page);
     await submitStudentLogin(page, STUDENT_USER, STUDENT_PIN);
     await page.waitForURL(/\/student\//, { timeout: 45_000 });
-    const res = await page.goto("/learning/hebrew-master", { waitUntil: "domcontentloaded" });
+    const res = await page.goto("/learning/science-master", { waitUntil: "domcontentloaded" });
     expect(res?.status()).toBeLessThan(400);
     await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0, { timeout: 30_000 });
   });

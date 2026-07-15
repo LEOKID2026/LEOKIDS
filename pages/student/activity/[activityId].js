@@ -1,9 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { isChildHebrewNiqqudGradeKey, hebrewScriptLikely, stripHebrewNiqqudMarks, textAlreadyHasNiqqud } from "../../../utils/hebrew-dicta-nakdan";
-import { attachHebrewAudioToQuestion } from "../../../utils/hebrew-audio-attach";
 import { isLowerGradeG1G2Key } from "../../../utils/lower-grade-practice-runtime-quality";
 import { validateAudioStem } from "../../../utils/audio-task-contract";
-import HebrewAudioBuild1Panel from "../../../components/HebrewAudioBuild1Panel";
 import EnglishPhonicsAudioPanel from "../../../components/EnglishPhonicsAudioPanel";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -251,85 +248,6 @@ export default function StudentActivityPage({ activityId }) {
     [theme, textualAssigned]
   );
 
-  // ניקוד א׳–ב׳ בפעילות הורה
-  const [activityNiqqudMap, setActivityNiqqudMap] = useState({});
-  const activityNiqqudCacheRef = useRef(new Map());
-
-  // שמע א׳–ב׳ בפעילות הורה — audio stems מחושבים פעם אחת כשה-questionSet נטען
-  const [activityAudioStems, setActivityAudioStems] = useState({});
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !currentQuestion) {
-      setActivityNiqqudMap({});
-      return;
-    }
-    const gradeKey = String(currentQuestion.gradeLevel || "").toLowerCase();
-    if (!isChildHebrewNiqqudGradeKey(gradeKey) || currentQuestion.subject !== "hebrew") {
-      setActivityNiqqudMap({});
-      return;
-    }
-    const cache = activityNiqqudCacheRef.current;
-    const entries = [];
-    const preMap = {};
-    const addEntry = (id, text) => {
-      const s = String(text ?? "").trim();
-      if (!s || !hebrewScriptLikely(s)) return;
-      if (textAlreadyHasNiqqud(s)) { preMap[id] = s; return; }
-      const stripped = stripHebrewNiqqudMarks(s).trim();
-      if (!stripped || !hebrewScriptLikely(stripped)) return;
-      const cached = cache.get(stripped);
-      if (cached) { preMap[id] = cached; return; }
-      entries.push({ id, text: stripped });
-    };
-    addEntry("question", currentQuestion.question);
-    if (Array.isArray(currentQuestion.choices)) {
-      currentQuestion.choices.forEach((c, i) => addEntry(`choice_${i}`, c));
-    }
-    if (Object.keys(preMap).length > 0) setActivityNiqqudMap(preMap);
-    if (entries.length === 0) return;
-    const ac = new AbortController();
-    let cancelled = false;
-    const t = setTimeout(async () => {
-      try {
-        const res = await fetch("/api/hebrew-nakdan", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ entries }),
-          signal: ac.signal,
-        });
-        if (!res.ok || cancelled) return;
-        const data = await res.json();
-        const map = {};
-        for (const e of data.entries || []) { if (e?.id) map[e.id] = e.text; }
-        for (const { id, text } of entries) {
-          if (map[id]) cache.set(text, map[id]);
-        }
-        if (!cancelled) setActivityNiqqudMap({ ...preMap, ...map });
-      } catch (e) {
-        if (e?.name !== "AbortError" && !cancelled) setActivityNiqqudMap(preMap);
-      }
-    }, 60);
-    return () => { cancelled = true; clearTimeout(t); ac.abort(); };
-  }, [currentQuestion]);
-
-  // חישוב audio stems לשאלות עברית א׳–ב׳ בפעילות (חד-פעמי עם טעינת questionSet)
-  useEffect(() => {
-    if (!questionSet.length) { setActivityAudioStems({}); return; }
-    const stems = {};
-    let counter = 0;
-    for (let i = 0; i < questionSet.length; i++) {
-      const q = questionSet[i];
-      if (!q) continue;
-      const gradeKey = String(q.gradeLevel || "").toLowerCase();
-      if (!isLowerGradeG1G2Key(gradeKey) || q.subject !== "hebrew") continue;
-      const topic = String(q.topic || q.operation || "reading");
-      const qCopy = { ...q, params: { ...(q.params || {}) } };
-      attachHebrewAudioToQuestion(qCopy, { gradeKey, topic, sequenceIndex: counter++ });
-      if (qCopy.params?.audioStem) stems[i] = qCopy.params.audioStem;
-    }
-    setActivityAudioStems(stems);
-  }, [questionSet]);
-
   const isParentActivity = activityScope === "parent";
 
   const ensureParentVisit = useCallback(() => {
@@ -441,25 +359,7 @@ export default function StudentActivityPage({ activityId }) {
     [questionSet, savedAttempts]
   );
 
-  // שאלה לתצוגה: מחיל ניקוד א׳–ב׳ כשיש
-  const displayQuestion = useMemo(() => {
-    if (!currentQuestion || Object.keys(activityNiqqudMap).length === 0) return currentQuestion;
-    const nq = (id, fallback) =>
-      Object.prototype.hasOwnProperty.call(activityNiqqudMap, id) ? activityNiqqudMap[id] : fallback;
-    const vocChoices = Array.isArray(currentQuestion.choices)
-      ? currentQuestion.choices.map((c, i) => nq(`choice_${i}`, c))
-      : currentQuestion.choices;
-    return {
-      ...currentQuestion,
-      question: nq("question", currentQuestion.question),
-      choices: vocChoices,
-    };
-  }, [currentQuestion, activityNiqqudMap]);
-
-  // audio stem לשאלה הנוכחית (א׳–ב׳ עברית בלבד)
-  const currentActivityAudioStem = activityAudioStems[effectiveIdx] ?? null;
-  const showActivityAudio =
-    Boolean(currentActivityAudioStem) && validateAudioStem(currentActivityAudioStem);
+  const displayQuestion = currentQuestion;
 
   // שמע vocabulary אנגלית G1/G2 — stem כבר בנוי בגנרטור ונשמר ב-params
   const currentEnglishVocabAudioStem =
@@ -1184,28 +1084,6 @@ export default function StudentActivityPage({ activityId }) {
                   onExpandDiagram={expandGeometryDiagram}
                 />
               </MathScratchpadSlot>
-            ) : showActivityAudio ? (
-              <div
-                className="flex flex-col gap-0.5 w-full shrink-0"
-                dir="rtl"
-                data-testid="activity-hebrew-audio-wrap"
-              >
-                <div className="flex justify-start leading-none">
-                  <HebrewAudioBuild1Panel
-                    stem={currentActivityAudioStem}
-                    gameActive={!isCurrentQuestionAnswered}
-                    grade={String(currentQuestion.gradeLevel || "").toLowerCase()}
-                    topic={currentQuestion.topic || currentQuestion.operation || "reading"}
-                    guidedMode={false}
-                    onGuidedNeutralDone={() => {}}
-                  />
-                </div>
-                <StudentAssignedActivityQuestionStage
-                  question={displayQuestion || currentQuestion}
-                  questionIndex={effectiveIdx}
-                  onExpandDiagram={expandGeometryDiagram}
-                />
-              </div>
             ) : showEnglishVocabAudio ? (
               <div
                 className="flex flex-col gap-0.5 w-full shrink-0"

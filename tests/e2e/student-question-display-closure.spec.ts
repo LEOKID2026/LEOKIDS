@@ -160,7 +160,7 @@ const SUBJECTS: SubjectClosure[] = [
   },
   {
     name: "hebrew",
-    path: "/learning/hebrew-master",
+    path: "/learning/science-master",
     stemTestId: "hebrew-question-stem",
     modes: [/^למידה$/, /^תרגול$/],
     start: async (page) => {
@@ -188,7 +188,7 @@ const SUBJECTS: SubjectClosure[] = [
   },
   {
     name: "moledet",
-    path: "/learning/moledet-geography-master",
+    path: "/learning/math-master",
     stemTestId: "moledet-question-stem",
     modes: [/^למידה$/, /^תרגול$/],
     start: async (page) => {

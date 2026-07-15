@@ -22,7 +22,6 @@ import {
 import {
   geometryTopicOptionsForGrade,
   mathTopicOptionsForGrade,
-  moledetGeographyTopicOptionsForGrade,
   scienceTopicOptionsForGrade,
 } from "../../../../../lib/teacher-portal/teacher-class-topic-options.js";
 import AssignedActivityQuestionDisplay from "../../../../../components/classroom-activities/AssignedActivityQuestionDisplay.jsx";
@@ -122,7 +121,6 @@ export default function TeacherNewActivityPage({ classId }) {
   const topicOpts = topicOptionsForAssignedActivity(subject, gradeLevel);
 
   useEffect(() => {
-    if (subject === "moledet_geography") return;
     if (topicOpts.length && !topicOpts.some((o) => o.key === topic)) {
       setTopic(topicOpts[0].key);
     } else if (topicOpts.length === 0 && topic !== "") {
@@ -310,7 +308,7 @@ export default function TeacherNewActivityPage({ classId }) {
                   </option>
                 ))}
               </select>
-            ) : subject === "hebrew" || subject === "english" ? (
+            ) : subject === "english" ? (
               <select
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={topic}

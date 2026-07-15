@@ -19,7 +19,6 @@ const ROOT = join(__dirname, "../..");
 const CORE_SUBJECT_SAMPLES = [
   { subjectId: "math", gradeKey: "g3", topicKey: "addition", levelKey: "regular", seed: 99001 },
   { subjectId: "geometry", gradeKey: "g3", topicKey: "area", levelKey: "regular", seed: 99002 },
-  { subjectId: "hebrew", gradeKey: "g3", topicKey: "reading", levelKey: "regular", seed: 99003 },
   { subjectId: "english", gradeKey: "g3", topicKey: "grammar", levelKey: "regular", seed: 99004 },
 ];
 
@@ -57,7 +56,7 @@ describe("worksheet-system-closure", () => {
     }
   });
 
-  test("all four core subjects generate via public API params", async () => {
+  test("all three core subjects generate via public API params", async () => {
     for (const sample of CORE_SUBJECT_SAMPLES) {
       const v = validateWorksheetPublicGenerationParams({ ...sample, count: 5 });
       assert.equal(v.ok, true, sample.subjectId);
@@ -73,7 +72,7 @@ describe("worksheet-system-closure", () => {
     }
   });
 
-  test("four core subjects in allowlist", () => {
-    assert.equal(Object.keys(WORKSHEET_SUBJECT_ALLOWLIST).length, 4);
+  test("three core subjects in allowlist", () => {
+    assert.equal(Object.keys(WORKSHEET_SUBJECT_ALLOWLIST).length, 3);
   });
 });

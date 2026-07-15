@@ -57,34 +57,6 @@ const LEARNING_GAMES = [
     emoji: "🔬",
     blurb: "גוף, בעלי חיים, צמחים, חלל, חומר, מזג אוויר, כוחות ועוד.",
   },
-  {
-    slug: "hebrew-master",
-    permissionKey: "hebrew",
-    title: "עברית",
-    emoji: "📚",
-    blurb: "תרגול שפה, אוצר מילים, דקדוק, הבנת הנקרא ועוד.",
-  },
-  {
-    slug: "moledet-master",
-    permissionKey: "moledet",
-    title: "מולדת",
-    emoji: "🏠",
-    blurb: "מולדת, חברה, אזרחות וערכים.",
-  },
-  {
-    slug: "geography-master",
-    permissionKey: "geography",
-    title: "גאוגרפיה",
-    emoji: "🗺️",
-    blurb: "גאוגרפיה, מפות, נוף ויישובים.",
-  },
-  {
-    slug: "history-master",
-    permissionKey: "history",
-    title: "היסטוריה",
-    emoji: "📜",
-    blurb: "יוון, הלניזם, החשמונאים, רומא והיהודים.",
-  },
 ];
 
 const DEFAULT_SUBJECT_CARD = {

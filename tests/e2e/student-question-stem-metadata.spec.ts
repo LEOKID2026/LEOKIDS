@@ -160,7 +160,7 @@ const SUBJECTS: SubjectFlow[] = [
   },
   {
     name: "hebrew",
-    path: "/learning/hebrew-master",
+    path: "/learning/science-master",
     stemTestId: "hebrew-question-stem",
     playerTestId: "hebrew-player-name",
     startTestId: "hebrew-start-game",
@@ -196,7 +196,7 @@ const SUBJECTS: SubjectFlow[] = [
   },
   {
     name: "moledet",
-    path: "/learning/moledet-geography-master",
+    path: "/learning/math-master",
     stemTestId: "moledet-question-stem",
     playerTestId: "moledet-player-name-skip",
     startTestId: "moledet-start-skip",

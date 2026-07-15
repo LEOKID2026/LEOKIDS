@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
 import { formatBookShellTitleHe } from "../../lib/learning-book/format-book-shell-title-he";
-import { maybeRecordHebrewG1LiteracyBookPageView } from "../../lib/learning-book/hebrew-g1-literacy-progress";
 import { BookGradeThemeProvider } from "./BookGradeThemeContext";
 import BookShellHeader from "./BookShellHeader";
 import BookTocModal from "./BookTocModal";
@@ -25,10 +24,6 @@ export default function LearningBookShell({
   const [tocOpen, setTocOpen] = useState(false);
   const isIndex = activePageId === null;
 
-  useEffect(() => {
-    if (!activePageId || isIndex) return;
-    maybeRecordHebrewG1LiteracyBookPageView(subject, grade, activePageId);
-  }, [subject, grade, activePageId, isIndex]);
   const fromLearning = nav.isLearningReturn(router.query);
   const returnQuerySuffix = nav.getReturnQuerySuffix(router.query);
   const theme = getBookGradeTheme(grade);

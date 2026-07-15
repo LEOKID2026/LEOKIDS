@@ -9,36 +9,11 @@ import {
   SCIENCE_GRADE_ORDER,
 } from "../../data/science-curriculum";
 import {
-  HEBREW_GENERAL_GOALS,
-  HEBREW_GRADES,
-  HEBREW_GRADE_ORDER,
-} from "../../data/hebrew-curriculum";
-import {
-  MOLEDET_GENERAL_GOALS,
-  MOLEDET_GRADES,
-  MOLEDET_TEACHABLE_GRADE_ORDER,
-} from "../../data/moledet-curriculum";
-import {
-  GEOGRAPHY_SUBJECT_GENERAL_GOALS,
-  GEOGRAPHY_SUBJECT_GRADES,
-  GEOGRAPHY_SUBJECT_TEACHABLE_GRADE_ORDER,
-} from "../../data/geography-subject-curriculum";
-import {
-  HISTORY_GENERAL_GOALS,
-  HISTORY_GRADES,
-  HISTORY_GRADE_ORDER,
-  HISTORY_TOPIC_LABEL_HE,
-  HISTORY_TOPIC_ORDER,
-  HISTORY_TOPIC_SUBTOPICS,
-  historySubtopicLabelHe,
-} from "../../data/history-curriculum";
-import {
   TOPICS,
   TOPIC_SHAPES,
   topicDescriptionForCurriculumPage,
   GRADES,
 } from "../../utils/geometry-constants";
-import { TOPICS as MOLEDET_GEO_TOPICS } from "../../utils/moledet-geography-constants";
 
 const GRADE_KEYS = ["g1", "g2", "g3", "g4", "g5", "g6"];
 
@@ -55,12 +30,8 @@ const HEB_GRADE = {
 export const PARENT_CURRICULUM_SUBJECTS = [
   { key: "math", title: "מתמטיקה" },
   { key: "geometry", title: "גאומטריה" },
-  { key: "hebrew", title: "עברית" },
   { key: "english", title: "אנגלית" },
   { key: "science", title: "מדעים" },
-  { key: "history", title: "היסטוריה" },
-  { key: "moledet", title: "מולדת" },
-  { key: "geography", title: "גאוגרפיה" },
 ];
 
 const subjectTitles = {
@@ -68,10 +39,6 @@ const subjectTitles = {
   geometry: "גאומטריה",
   english: "אנגלית",
   science: "מדעים",
-  hebrew: "עברית",
-  history: "היסטוריה",
-  moledet: "מולדת, חברה ואזרחות",
-  geography: "גאוגרפיה",
 };
 
 const subjectDescriptions = {
@@ -83,14 +50,6 @@ const subjectDescriptions = {
     "מותאם לפי כיתה, נושא ורמת תרגול (רגיל בלבד) - כפי שמוצגים בדף המדעים. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
   geometry:
     "מותאם לפי כיתה, נושא ורמת תרגול (רגיל / מתקדם) - כפי שמוצגים בדף הגאומטריה. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
-  hebrew:
-    "מותאם לפי כיתה, נושא ורמת תרגול (רגיל / מתקדם) - כפי שמוצגים בדף השפה העברית. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
-  history:
-    "מותאם לכיתה ו׳ - כפי שמוצג בדף ההיסטוריה. נושאי העולם היווני-רומי והיהודים.",
-  moledet:
-    "מותאם לכיתות ב׳–ד׳ - כפי שמוצג בדף המולדת. נושאי תרגול: מולדת, קהילה, אזרחות, ערכים וערבוב.",
-  geography:
-    "מותאם לכיתות ה׳–ו׳ - כפי שמוצג בדף הגאוגרפיה. נושאי תרגול: גאוגרפיה, מפות וערבוב.",
 };
 
 function GeometryCurriculumBody() {
@@ -208,22 +167,12 @@ function GeometryCurriculumBody() {
 export default function ParentCurriculumContent({ subject, onSelectSubject }) {
   const englishGrades = ENGLISH_GRADE_ORDER.map((key) => ENGLISH_GRADES[key]);
   const scienceGrades = SCIENCE_GRADE_ORDER.map((key) => SCIENCE_GRADES[key]);
-  const hebrewGrades = HEBREW_GRADE_ORDER.map((key) => HEBREW_GRADES[key]);
-  const historyGrades = HISTORY_GRADE_ORDER.map((key) => HISTORY_GRADES[key]);
-  const moledetGrades = MOLEDET_TEACHABLE_GRADE_ORDER.map((key) => MOLEDET_GRADES[key]);
-  const geographySubjectGrades = GEOGRAPHY_SUBJECT_TEACHABLE_GRADE_ORDER.map(
-    (key) => GEOGRAPHY_SUBJECT_GRADES[key]
-  );
 
   const subjectTitle = subjectTitles[subject] || subjectTitles.math;
   const subjectDescription = subjectDescriptions[subject] || subjectDescriptions.math;
 
   const isEnglish = subject === "english";
   const isScience = subject === "science";
-  const isHebrew = subject === "hebrew";
-  const isHistory = subject === "history";
-  const isMoledet = subject === "moledet";
-  const isGeographySubject = subject === "geography";
   const isGeometry = subject === "geometry";
 
   return (
@@ -302,332 +251,6 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                         <li key={`benchmark-${grade.key}-${idx}`}>{item}</li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-      ) : isHebrew ? (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מטרות כלליות</h3>
-                <ul className="list-disc pr-6 space-y-2">
-                  {HEBREW_GENERAL_GOALS.map((goal, idx) => (
-                    <li key={`goal-${idx}`}>{goal}</li>
-                  ))}
-                </ul>
-              </div>
-              {hebrewGrades.map((grade) => (
-                <div
-                  key={grade.key}
-                  className="bg-sky-50 border border-sky-200 border-r-4 border-r-sky-500 shadow-sm p-4 rounded-lg mb-6"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                    <h2 className="text-2xl font-bold">{grade.name}</h2>
-                    <span className="text-sm text-slate-600">{grade.stage}</span>
-                  </div>
-                  {grade.curriculum?.summary && (
-                    <p className="text-sm text-slate-700 mb-3" dir="rtl">
-                      {grade.curriculum.summary}
-                    </p>
-                  )}
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מוקדי למידה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.focus?.map((item, idx) => (
-                          <li key={`focus-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מיומנויות</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.skills?.map((item, idx) => (
-                          <li key={`skills-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">דקדוק</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.grammar?.map((item, idx) => (
-                          <li key={`grammar-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">אוצר מילים</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.vocabulary?.map((item, idx) => (
-                          <li key={`vocab-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-      ) : isMoledet ? (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מטרות כלליות</h3>
-                <ul className="list-disc pr-6 space-y-2">
-                  {MOLEDET_GENERAL_GOALS.map((goal, idx) => (
-                    <li key={`goal-${idx}`}>{goal}</li>
-                  ))}
-                </ul>
-                <p className="text-sm text-slate-600 mt-3">
-                  גאוגרפיה (כיתות ה׳–ו׳) מוצגת בנפרד -{" "}
-                  <button
-                    type="button"
-                    onClick={() => onSelectSubject("geography")}
-                    className="text-sky-700 underline hover:text-sky-900 font-semibold"
-                  >
-                    תוכנית לימודים בגאוגרפיה
-                  </button>
-                </p>
-              </div>
-              <div className="bg-white border border-sky-100 p-4 rounded-lg mb-6 text-sm text-slate-700 shadow-sm">
-                <strong>נושאים זמינים בדף המולדת:</strong>{" "}
-                {["homeland", "community", "citizenship", "values", "mixed"]
-                  .map((k) => MOLEDET_GEO_TOPICS[k]?.name || k)
-                  .join(" · ")}
-              </div>
-              {moledetGrades.map((grade) => (
-                <div
-                  key={grade.key}
-                  className="bg-sky-50 border border-sky-200 border-r-4 border-r-sky-500 shadow-sm p-4 rounded-lg mb-6"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                    <h2 className="text-2xl font-bold">{grade.name}</h2>
-                    <span className="text-sm text-slate-600">{grade.stage}</span>
-                  </div>
-                  {grade.curriculum?.summary && (
-                    <p className="text-sm text-slate-700 mb-3" dir="rtl">
-                      {grade.curriculum.summary}
-                    </p>
-                  )}
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מוקדי למידה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.focus?.map((item, idx) => (
-                          <li key={`focus-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מיומנויות</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.skills?.map((item, idx) => (
-                          <li key={`skills-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מולדת</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.homeland?.map((item, idx) => (
-                          <li key={`homeland-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">קהילה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.community?.map((item, idx) => (
-                          <li key={`community-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">אזרחות</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.citizenship?.map((item, idx) => (
-                          <li key={`cit-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">ערכים</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.values?.map((item, idx) => (
-                          <li key={`values-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-      ) : isGeographySubject ? (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
-              <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מטרות כלליות</h3>
-                <ul className="list-disc pr-6 space-y-2">
-                  {GEOGRAPHY_SUBJECT_GENERAL_GOALS.map((goal, idx) => (
-                    <li key={`geo-goal-${idx}`}>{goal}</li>
-                  ))}
-                </ul>
-                <p className="text-sm text-slate-600 mt-3">
-                  מולדת (כיתות ב׳–ד׳) מוצגת בנפרד -{" "}
-                  <button
-                    type="button"
-                    onClick={() => onSelectSubject("moledet")}
-                    className="text-sky-700 underline hover:text-sky-900 font-semibold"
-                  >
-                    תוכנית לימודים במולדת
-                  </button>
-                </p>
-              </div>
-              <div className="bg-white border border-sky-100 p-4 rounded-lg mb-6 text-sm text-slate-700 shadow-sm">
-                <strong>נושאים זמינים בדף הגאוגרפיה:</strong>{" "}
-                {["geography", "maps", "mixed"]
-                  .map((k) => MOLEDET_GEO_TOPICS[k]?.name || k)
-                  .join(" · ")}
-              </div>
-              {geographySubjectGrades.map((grade) => (
-                <div
-                  key={grade.key}
-                  className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-500 shadow-sm p-4 rounded-lg mb-6"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                    <h2 className="text-2xl font-bold">{grade.name}</h2>
-                    <span className="text-sm text-slate-600">{grade.stage}</span>
-                  </div>
-                  {grade.curriculum?.summary && (
-                    <p className="text-sm text-slate-700 mb-3" dir="rtl">
-                      {grade.curriculum.summary}
-                    </p>
-                  )}
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מוקדי למידה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.focus?.map((item, idx) => (
-                          <li key={`geo-focus-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מיומנויות</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.skills?.map((item, idx) => (
-                          <li key={`geo-skills-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">גאוגרפיה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.geography?.map((item, idx) => (
-                          <li key={`geo-geo-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מפות</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.maps?.map((item, idx) => (
-                          <li key={`geo-maps-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">סביבה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.environment?.map((item, idx) => (
-                          <li key={`geo-env-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-      ) : isHistory ? (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מטרות כלליות</h3>
-                <ul className="list-disc pr-6 space-y-2">
-                  {HISTORY_GENERAL_GOALS.map((goal, idx) => (
-                    <li key={`hist-goal-${idx}`}>{goal}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-white border border-sky-100 p-4 rounded-lg mb-6 text-sm text-slate-700 shadow-sm space-y-2">
-                <p>
-                  <strong>מבנה ההיסטוריה באתר:</strong> תוכן לימודי לכיתה ו׳ בלבד -{" "}
-                  <strong>2 רמות תרגול</strong> (רגיל, מתקדם) ונושאי תרגול כפי שמופיעים
-                  בדף ההיסטוריה.
-                </p>
-                <p>
-                  <strong>נושאים זמינים:</strong>{" "}
-                  {HISTORY_TOPIC_ORDER.filter((k) => k !== "mixed")
-                    .map((k) => HISTORY_TOPIC_LABEL_HE[k] || k)
-                    .join(" · ")}{" "}
-                  · תערובת
-                </p>
-              </div>
-              {historyGrades.map((grade) => (
-                <div
-                  key={grade.key}
-                  className="bg-sky-50 border border-sky-200 border-r-4 border-r-sky-500 shadow-sm p-4 rounded-lg mb-6"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                    <h2 className="text-2xl font-bold">{grade.name}</h2>
-                    <span className="text-sm text-slate-600">{grade.stage}</span>
-                  </div>
-                  {grade.curriculum?.summary && (
-                    <p className="text-sm text-slate-700 mb-3" dir="rtl">
-                      {grade.curriculum.summary}
-                    </p>
-                  )}
-                  <div className="grid gap-4 md:grid-cols-2 mb-6">
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מוקדי למידה</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.focus?.map((item, idx) => (
-                          <li key={`hist-focus-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מיומנויות היסטוריות</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                        {grade.curriculum?.skills?.map((item, idx) => (
-                          <li key={`hist-skills-${grade.key}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">נושאים ותת-נושאים בדף ההיסטוריה</h3>
-                  <div className="space-y-4">
-                    {HISTORY_TOPIC_ORDER.filter((topicKey) => topicKey !== "mixed").map(
-                      (topicKey) => (
-                        <div
-                          key={topicKey}
-                          className="bg-slate-50 border border-slate-200 rounded-lg p-3"
-                        >
-                          <h4 className="font-semibold text-slate-900 mb-2">
-                            {HISTORY_TOPIC_LABEL_HE[topicKey] || topicKey}
-                          </h4>
-                          <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
-                            {(HISTORY_TOPIC_SUBTOPICS[topicKey] || []).map((subKey) => (
-                              <li key={subKey}>{historySubtopicLabelHe(subKey)}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )
-                    )}
-                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-3">
-                      <h4 className="font-semibold text-slate-900 mb-1">
-                        {HISTORY_TOPIC_LABEL_HE.mixed}
-                      </h4>
-                      <p className="text-sm text-slate-600">
-                        תרגול מעורב מכל הנושאים והתת-נושאים של כיתה ו׳
-                      </p>
-                    </div>
                   </div>
                 </div>
               ))}

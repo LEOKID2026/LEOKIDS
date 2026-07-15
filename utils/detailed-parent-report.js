@@ -127,10 +127,16 @@ import {
 import { resolveNarrativeDisplayLabels } from "./parent-report-output-integrity/row-display-label-context.js";
 import { parseCanonicalTopicFromRowKey } from "./parent-report-output-integrity/row-identity-v1.js";
 import { buildGradeEvidenceFields } from "../lib/learning-supabase/practice-grade-resolution.js";
-import {
-  splitMoledetGeographyReportForDisplay,
-  VISUAL_STRAND_LABEL_HE,
-} from "../lib/learning-shared/moledet-geography-display.js";
+
+function splitMoledetGeographyReportForDisplay(_report) {
+  return {
+    moledetTopics: {},
+    geographyTopics: {},
+    moledetStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
+    geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
+  };
+}
+const VISUAL_STRAND_LABEL_HE = { moledet: "מולדת", geography: "גאוגרפיה" };
 import { normalizeParentVisibleMetrics } from "./learning-pattern-decision/normalize-parent-practice-metrics.js";
 import { buildParentReportEngineDecisionContract } from "./learning-pattern-decision/build-parent-report-engine-decision-contract.js";
 import {
@@ -155,9 +161,6 @@ const SUBJECT_IDS = [
   "geometry",
   "english",
   "science",
-  "history",
-  "hebrew",
-  "moledet-geography",
 ];
 
 const SUBJECT_LABEL_HE = {
@@ -165,9 +168,6 @@ const SUBJECT_LABEL_HE = {
   geometry: "גאומטריה",
   english: "אנגלית",
   science: "מדעים",
-  history: "היסטוריה",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
 };
 
 const TOPIC_REC_MIN_ACTIONABLE_QUESTIONS = 8;
