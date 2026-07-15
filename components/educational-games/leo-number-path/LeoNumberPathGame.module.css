@@ -1,0 +1,174 @@
+/* Number path — play shell uses shared shop layout + LearningPrototypeFrame warm theme */
+
+.shellEmbedded {
+  height: 100%;
+  max-height: 100%;
+}
+
+.selectedBar {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.45rem;
+  border-radius: 0.75rem;
+  border: 2px dashed #fdba74;
+  background: rgba(255, 255, 255, 0.92);
+  overflow: hidden;
+}
+
+.selectedLabel {
+  font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+  font-weight: 900;
+  color: #9a3412;
+}
+
+.selectedPath {
+  font-size: clamp(0.86rem, 3.2vw, 1.05rem);
+  font-weight: 900;
+  color: #c2410c;
+  word-break: break-all;
+  text-align: center;
+}
+
+.pathPanel {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stonePathFit {
+  height: 100%;
+  max-height: none !important;
+  overflow: hidden !important;
+  align-content: center;
+  justify-content: center;
+  grid-auto-rows: auto;
+}
+
+.stonePath {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.stonesNormal,
+.stonesDense {
+  /* size classes override columns */
+}
+
+.stonesGridFew {
+  grid-template-columns: repeat(4, minmax(64px, 84px));
+  gap: 0.32rem;
+}
+
+.stonesGridMedium {
+  grid-template-columns: repeat(4, minmax(58px, 76px));
+  gap: 0.28rem;
+}
+
+.stonesGridMany {
+  grid-template-columns: repeat(4, minmax(52px, 68px));
+  gap: 0.24rem;
+}
+
+.stone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 84px;
+  max-height: 72px;
+  min-height: 56px;
+  height: auto;
+  border-radius: 0.85rem;
+  border: 3px solid #fdba74;
+  background: linear-gradient(180deg, #fff, #fffbeb);
+  font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+  font-weight: 900;
+  color: #9a3412;
+  box-shadow: 0 3px 0 #fdba74;
+  touch-action: manipulation;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.stonesGridMedium .stone {
+  max-width: 76px;
+  max-height: 66px;
+  min-height: 52px;
+  font-size: clamp(0.88rem, 3.2vw, 1.05rem);
+}
+
+.stonesGridMany .stone {
+  max-width: 68px;
+  max-height: 60px;
+  min-height: 48px;
+  font-size: clamp(0.82rem, 2.8vw, 0.95rem);
+}
+
+.stoneSelected {
+  border-color: #ea580c;
+  background: linear-gradient(180deg, #ffedd5, #fed7aa);
+  box-shadow: 0 3px 0 #c2410c, 0 0 0 3px rgba(251, 146, 60, 0.28);
+}
+
+.stoneOrder {
+  position: absolute;
+  top: 0.12rem;
+  left: 0.18rem;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: #ea580c;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pathWorkCol {
+  min-height: 0;
+}
+
+@media (max-width: 720px) {
+  .pathShopGrid {
+    grid-template-rows: auto minmax(230px, 1.25fr) minmax(130px, 0.75fr) auto;
+  }
+
+  .pathWorkCol {
+    max-height: clamp(230px, 40dvh, 290px);
+  }
+
+  .stonesGridFew {
+    grid-template-columns: repeat(4, minmax(58px, 76px));
+  }
+
+  .stonesGridMany {
+    grid-template-columns: repeat(4, minmax(48px, 64px));
+  }
+}
+
+@media (min-width: 721px) {
+  .stonesGridMany {
+    grid-template-columns: repeat(6, minmax(52px, 68px));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .stonesGridMany {
+    grid-template-columns: repeat(6, minmax(48px, 62px));
+  }
+
+  .stone {
+    min-height: 44px;
+    font-size: clamp(0.82rem, 2.8vw, 0.95rem);
+  }
+}

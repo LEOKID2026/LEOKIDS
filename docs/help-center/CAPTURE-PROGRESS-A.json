@@ -1,0 +1,10 @@
+{
+  "batch": "A",
+  "ok": 3,
+  "skipped": [],
+  "rejected": [],
+  "startedAt": "2026-05-24T12:10:50.088Z",
+  "expectedJobs": 3,
+  "rawCount": 114,
+  "endedAt": "2026-05-24T12:10:51.860Z"
+}

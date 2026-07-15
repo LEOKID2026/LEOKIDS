@@ -1,0 +1,312 @@
+import fs from "node:fs";
+import path from "node:path";
+import { DIFFICULTIES, TOPICS_BY_SUBJECT } from "./constants.mjs";
+import { createRng, pick, randInt } from "./prng.mjs";
+import { resolveHybridQuestionRow } from "./question-hybrid.mjs";
+
+const MISTAKE_TYPES = [
+  "conceptual",
+  "careless",
+  "misread_question",
+  "wrong_operation",
+  "timeout_pressure",
+  "guess",
+  "prerequisite_gap",
+  "pattern_confusion",
+];
+
+function difficultyForProfile(rng, profileType) {
+  if (profileType === "fast_wrong") return pick(rng, ["easy", "medium"]);
+  if (profileType === "slow_correct") return pick(rng, ["medium", "hard"]);
+  return pick(rng, DIFFICULTIES);
+}
+
+function mistakeTypeForAnswer(rng, profileType, isCorrect) {
+  if (isCorrect) return null;
+  if (profileType === "random_guessing") return "guess";
+  if (profileType === "calculation_errors") return pick(rng, ["wrong_operation", "careless"]);
+  if (profileType === "reading_comprehension_gap") return "misread_question";
+  if (profileType === "repeated_misconception") return "conceptual";
+  return pick(rng, MISTAKE_TYPES);
+}
+
+function answerCorrect(rng, profileType, difficulty) {
+  let base = 0.72;
+  if (profileType.startsWith("weak") || profileType === "thin_data") base = 0.42;
+  if (profileType === "strong_stable" || profileType === "rich_data") base = 0.88;
+  if (profileType === "improving_student") base = 0.62 + rng() * 0.15;
+  if (profileType === "declining_student") base = 0.48;
+  if (profileType === "random_guessing") base = 0.28;
+  if (profileType === "fast_wrong") base = 0.35;
+  if (profileType === "slow_correct") base = 0.82;
+  if (difficulty === "hard") base -= 0.12;
+  if (difficulty === "easy") base += 0.1;
+  return rng() < Math.min(0.97, Math.max(0.05, base));
+}
+
+/**
+ * @param {{ students: any[], questionTarget: number, outputRoot: string, questionSourceMode?: string }} opts
+ */
+export function simulateQuestionRuns(opts) {
+  const rows = [];
+  const defaultPerStudent = Math.max(1, Math.ceil(opts.questionTarget / opts.students.length));
+  const mode = opts.questionSourceMode || "synthetic";
+  const questionBudgetByStudent = new Map();
+  let allocated = 0;
+
+  for (const student of opts.students) {
+    const count = student.profileType === "thin_data" ? 8 : defaultPerStudent;
+    questionBudgetByStudent.set(student.studentId, count);
+    allocated += count;
+  }
+  if (allocated < opts.questionTarget) {
+    const nonThin = opts.students.filter((s) => s.profileType !== "thin_data");
+    let idx = 0;
+    while (allocated < opts.questionTarget && nonThin.length > 0) {
+      const s = nonThin[idx % nonThin.length];
+      questionBudgetByStudent.set(s.studentId, (questionBudgetByStudent.get(s.studentId) || 0) + 1);
+      allocated += 1;
+      idx += 1;
+    }
+  }
+
+  for (const student of opts.students) {
+    const rng = createRng((student.metadata?.rngSeedFragment ?? 1) ^ 0xdeadbeef);
+    let si = 0;
+    const studentQuestionCount = Math.max(1, Number(questionBudgetByStudent.get(student.studentId) || defaultPerStudent));
+    const pt = student.coverageHints?.perfectTopic;
+    const wt = student.coverageHints?.weakTopic;
+    const ptMatch = pt && typeof pt === "object" && pt.subject && pt.topic;
+    const wtMatch = wt && typeof wt === "object" && wt.subject && wt.topic;
+
+    for (let i = 0; i < studentQuestionCount; i++) {
+      let subject = pick(rng, student.subjects);
+      let topic = pick(rng, TOPICS_BY_SUBJECT[subject] || ["general"]);
+      if (ptMatch && rng() < 0.55) {
+        subject = String(pt.subject);
+        topic = String(pt.topic);
+      } else if (wtMatch && rng() < 0.45) {
+        subject = String(wt.subject);
+        topic = String(wt.topic);
+      }
+      const difficulty =
+        pick(rng, DIFFICULTIES) === "mixed" ? pick(rng, ["easy", "medium", "hard"]) : difficultyForProfile(rng, student.profileType);
+      let isCorrect = answerCorrect(rng, student.profileType, difficulty);
+      if (ptMatch && subject === String(pt.subject) && topic === String(pt.topic)) {
+        isCorrect = true;
+      }
+      if (wtMatch && subject === String(wt.subject) && topic === String(wt.topic)) {
+        isCorrect = rng() < 0.12;
+      }
+      const mistakeType = mistakeTypeForAnswer(rng, student.profileType, isCorrect);
+      const sessionId = `sess_${student.studentId}_${si++}`;
+      let qid = `q_${student.studentId}_${i}`;
+      let questionText = `[סימולציה] תרגול ${topic} ב-${subject} (${difficulty})`;
+      /** @type {"real"|"synthetic"|"placeholder"} */
+      let questionSource = "synthetic";
+      /** @type {"hit"|"fallback"|"none"} */
+      let adapterStatus = "none";
+
+      if (mode === "hybrid" || mode === "real") {
+        const hq = resolveHybridQuestionRow(rng, { grade: student.grade, subject, topic, difficulty });
+        if (hq && hq.source === "real") {
+          questionText = hq.questionText;
+          qid = `${hq.questionId}__${student.studentId}__${i}`;
+          questionSource = "real";
+          adapterStatus = "hit";
+        } else if (mode === "real") {
+          questionSource = "placeholder";
+          questionText = `[placeholder] אין שאלה אמיתית זמינה ל-${subject}/${topic} — ${difficulty}`;
+          adapterStatus = "fallback";
+        } else {
+          questionSource = "placeholder";
+          adapterStatus = "fallback";
+        }
+      }
+
+      const responseTimeMs = randInt(rng, student.profileType === "slow_correct" ? 8000 : 4000, student.profileType === "fast_wrong" ? 12000 : 55000);
+
+      const row = {
+        studentId: student.studentId,
+        grade: student.grade,
+        subject,
+        topic,
+        difficulty,
+        questionId: qid,
+        generatedQuestionId: qid,
+        questionText,
+        correctAnswer: isCorrect ? "בחירה נכונה" : "ערך ייחוס",
+        studentAnswer: isCorrect ? "בחירה נכונה" : "בחירה שגויה",
+        isCorrect,
+        mistakeType,
+        responseTimeMs,
+        sessionId,
+        questionSource,
+        adapterStatus,
+        contributesToParentReportEvidence: rng() > 0.08,
+      };
+      rows.push(row);
+      if (!isCorrect) {
+        student.mistakes.push({ topic, subject, mistakeType, questionId: qid });
+      }
+      student.generatedAnswers.push(row);
+    }
+
+    /**
+     * Parent Copilot anchors (`topicRecommendations` + narrative contracts) are emitted only for
+     * diagnose/intervene units. Topic-perfect coverage uses `strong_stable`, which otherwise produces
+     * almost all-correct rows → only "maintain" units → zero anchors → TruthPacket thin fallback.
+     * Add a small deterministic weak satellite bucket on a different topic so harness matches product.
+     */
+    if (ptMatch && student.profileType === "strong_stable") {
+      const ps = String(pt.subject);
+      const ptk = String(pt.topic);
+      /** Fixed satellite: avoid the perfect topic and pick a bucket that is unlikely to collide with the main RNG stream. */
+      let satSubject;
+      let satTopic;
+      if (ps !== "math") {
+        satSubject = "math";
+        satTopic = "subtraction";
+      } else {
+        satSubject = student.subjects.find((s) => String(s) !== "math") || "hebrew";
+        const pool = TOPICS_BY_SUBJECT[satSubject] || ["general"];
+        satTopic = pool.find((t) => String(t) !== ptk) || pool[0];
+      }
+      for (let j = 0; j < 56; j++) {
+        const difficulty =
+          pick(rng, DIFFICULTIES) === "mixed" ? pick(rng, ["easy", "medium", "hard"]) : difficultyForProfile(rng, student.profileType);
+        const isCorrect = j % 14 === 0;
+        const mistakeType = mistakeTypeForAnswer(rng, student.profileType, isCorrect);
+        const sessionId = `sess_${student.studentId}_${si++}`;
+        const qid = `q_${student.studentId}_sat_${j}`;
+        const row = {
+          studentId: student.studentId,
+          grade: student.grade,
+          subject: satSubject,
+          topic: satTopic,
+          difficulty,
+          questionId: qid,
+          generatedQuestionId: qid,
+          questionText: `[סימולציה] עוגן קופיילוט: ${satTopic} ב-${satSubject} (${difficulty})`,
+          correctAnswer: isCorrect ? "בחירה נכונה" : "ערך ייחוס",
+          studentAnswer: isCorrect ? "בחירה נכונה" : "בחירה שגויה",
+          isCorrect,
+          mistakeType,
+          responseTimeMs: randInt(rng, 5000, 40000),
+          sessionId,
+          questionSource: "synthetic",
+          adapterStatus: "none",
+          contributesToParentReportEvidence: true,
+        };
+        rows.push(row);
+        student.generatedAnswers.push(row);
+        if (!isCorrect) {
+          student.mistakes.push({ topic: satTopic, subject: satSubject, mistakeType, questionId: qid });
+        }
+      }
+    }
+
+    student.generatedSessions = [{ note: "סימולציה: סשן לכל שאלה", approximateSessions: studentQuestionCount }];
+  }
+
+  const qDir = path.join(opts.outputRoot, "question-runs");
+  fs.mkdirSync(qDir, { recursive: true });
+  for (const student of opts.students) {
+    const filtered = rows.filter((r) => r.studentId === student.studentId);
+    fs.writeFileSync(path.join(qDir, `${student.studentId}.json`), JSON.stringify(filtered, null, 2), "utf8");
+    const md = [
+      `# ריצות שאלות — ${student.displayName}`,
+      "",
+      `סה״כ שאלות בסימולציה: ${filtered.length}`,
+      "",
+      ...filtered.slice(0, 80).map(
+        (r) =>
+          `- [${r.subject}/${r.topic}/${r.difficulty}] ${r.isCorrect ? "✓" : "✗"} mistake=${r.mistakeType || "—"} \`${r.questionId}\``
+      ),
+      filtered.length > 80 ? `\n… ועוד ${filtered.length - 80} שורות (ראה JSON).` : "",
+    ].join("\n");
+    fs.writeFileSync(path.join(qDir, `${student.studentId}.md`), md, "utf8");
+    student.questionRunFiles = { json: `question-runs/${student.studentId}.json`, md: `question-runs/${student.studentId}.md` };
+  }
+
+  return { rows };
+}
+
+export function aggregateQuestionStats(rows) {
+  const byGrade = {};
+  const bySubject = {};
+  const byTopic = {};
+  const byDifficulty = {};
+  const byQuestionSource = { real: 0, synthetic: 0, placeholder: 0 };
+  const bySubjectQuestionSource = {};
+  const bySubjectAdapterStats = {};
+  const bySubjectDifficultySource = {};
+  let correct = 0;
+  const mistakeCounts = {};
+  for (const r of rows) {
+    byGrade[r.grade] = (byGrade[r.grade] || 0) + 1;
+    bySubject[r.subject] = (bySubject[r.subject] || 0) + 1;
+    byTopic[r.topic] = (byTopic[r.topic] || 0) + 1;
+    byDifficulty[r.difficulty] = (byDifficulty[r.difficulty] || 0) + 1;
+    const qs = r.questionSource || "synthetic";
+    byQuestionSource[qs] = (byQuestionSource[qs] || 0) + 1;
+    if (!bySubjectQuestionSource[r.subject]) {
+      bySubjectQuestionSource[r.subject] = {
+        real: 0,
+        synthetic: 0,
+        placeholder: 0,
+        realQuestionCount: 0,
+        placeholderQuestionCount: 0,
+        adapterHitCount: 0,
+        adapterFallbackCount: 0,
+      };
+    }
+    bySubjectQuestionSource[r.subject][qs] = (bySubjectQuestionSource[r.subject][qs] || 0) + 1;
+    bySubjectQuestionSource[r.subject].realQuestionCount = bySubjectQuestionSource[r.subject].real;
+    bySubjectQuestionSource[r.subject].placeholderQuestionCount = bySubjectQuestionSource[r.subject].placeholder;
+    if (r.adapterStatus === "hit") {
+      bySubjectQuestionSource[r.subject].adapterHitCount += 1;
+    } else if (r.adapterStatus === "fallback") {
+      bySubjectQuestionSource[r.subject].adapterFallbackCount += 1;
+    }
+
+    if (!bySubjectAdapterStats[r.subject]) {
+      bySubjectAdapterStats[r.subject] = {
+        realQuestionCount: 0,
+        placeholderQuestionCount: 0,
+        adapterHitCount: 0,
+        adapterFallbackCount: 0,
+      };
+    }
+    if (qs === "real") bySubjectAdapterStats[r.subject].realQuestionCount += 1;
+    if (qs === "placeholder") bySubjectAdapterStats[r.subject].placeholderQuestionCount += 1;
+    if (r.adapterStatus === "hit") bySubjectAdapterStats[r.subject].adapterHitCount += 1;
+    if (r.adapterStatus === "fallback") bySubjectAdapterStats[r.subject].adapterFallbackCount += 1;
+
+    if (!bySubjectDifficultySource[r.subject]) bySubjectDifficultySource[r.subject] = {};
+    if (!bySubjectDifficultySource[r.subject][r.difficulty]) {
+      bySubjectDifficultySource[r.subject][r.difficulty] = { real: 0, synthetic: 0, placeholder: 0 };
+    }
+    bySubjectDifficultySource[r.subject][r.difficulty][qs] =
+      (bySubjectDifficultySource[r.subject][r.difficulty][qs] || 0) + 1;
+
+    if (r.isCorrect) correct += 1;
+    if (r.mistakeType) mistakeCounts[r.mistakeType] = (mistakeCounts[r.mistakeType] || 0) + 1;
+  }
+  return {
+    total: rows.length,
+    byGrade,
+    bySubject,
+    byTopic,
+    byDifficulty,
+    correctRatio: rows.length ? correct / rows.length : 0,
+    mistakeTypes: mistakeCounts,
+    realQuestionCount: byQuestionSource.real,
+    generatedQuestionCount: byQuestionSource.synthetic,
+    placeholderQuestionCount: byQuestionSource.placeholder,
+    byQuestionSource,
+    bySubjectQuestionSource,
+    bySubjectAdapterStats,
+    bySubjectDifficultySource,
+  };
+}

@@ -1,0 +1,91 @@
+{
+  "id": "/pwa-student",
+  "name": "LEO KIDS",
+  "short_name": "LEO KIDS",
+  "description": "עולם קטן של משחקים ופעילויות למידה לילדים. לרוץ, לעוף, לפתור חידות ולתרגל מתמטיקה, גאומטריה ואנגלית.",
+  "start_url": "/student/login",
+  "display": "standalone",
+  "offline_enabled": true,
+  "background_color": "#050816",
+  "theme_color": "#c9f4ff",
+  "orientation": "any",
+  "scope": "/student/",
+  "icons": [
+    {
+      "src": "/icons/child/pwa-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/child/maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/child/maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["games", "education", "kids"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "בית הילד",
+      "short_name": "בית",
+      "description": "דף הבית של הילד",
+      "url": "/student/home",
+      "icons": [
+        {
+          "src": "/icons/child/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

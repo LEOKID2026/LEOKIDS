@@ -1,0 +1,48 @@
+# Parent-report CI: phase1 row stack, phase2 topic-next-step helpers, phase6 (Hebrew language selftest + suite + pages SSR), then full Next compile (see docs/PARENT_REPORT.md).
+name: Parent report checks
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  parent-report-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm run test:parent-report-phase1
+      - run: npm run test:topic-next-step-phase2
+      - run: npm run test:topic-next-step-engine-scenarios
+      - run: npm run test:diagnostic-engine-v2-harness
+      - run: npm run test:ai-hybrid-harness
+      - run: npm run test:parent-report-phase6
+      - run: npm run test:truth-gates:offline
+      - run: npm run test:minimal-safe-scope
+      - run: npm run test:parent-copilot-phaseA
+      - run: npm run test:parent-copilot-phaseB
+      - run: npm run test:parent-copilot-phaseC
+      - run: npm run test:parent-copilot-executive-answer-safe-matrix
+      - run: npm run test:parent-copilot-recommendation-semantic
+      - run: npm run test:parent-copilot-parent-language-semantic
+      - run: npm run test:parent-copilot-async-llm-gate
+      - run: npm run test:parent-copilot-telemetry-trace
+      - run: npm run test:parent-rollout-stage:s2-classifier
+      - run: npm run test:parent-rollout-stage:s2-hebrew-drift
+      - run: npm run test:parent-rollout-stage:s3-observability
+      - run: npm run test:oracle-conformance
+      - run: npm run test:canonical-state-e2e
+      - run: npm run test:parent-rollout-release-matrix
+        env:
+          PARENT_RELEASE_STAGE: s3
+          PARENT_SIGNOFF_ENG: "true"
+          PARENT_SIGNOFF_QA: "true"
+          PARENT_SIGNOFF_PRODUCT: "true"
+          PARENT_SIGNOFF_LANG: "true"
+          PARENT_SIGNOFF_OPS: "true"
+      - run: npx next build

@@ -1,0 +1,26 @@
+{
+	"appId": "com.leok.kids",
+	"appName": "LEO KIDS",
+	"webDir": "out",
+	"server": {
+		"url": "https://www.leokids.co.il",
+		"cleartext": false,
+		"allowNavigation": [
+			"www.leokids.co.il",
+			"leokids.co.il",
+			"*.supabase.co"
+		]
+	},
+	"android": {
+		"allowMixedContent": false,
+		"captureInput": true,
+		"webContentsDebuggingEnabled": false
+	},
+	"plugins": {
+		"SystemBars": {
+			"insetsHandling": "disable",
+			"style": "DARK",
+			"hidden": false
+		}
+	}
+}

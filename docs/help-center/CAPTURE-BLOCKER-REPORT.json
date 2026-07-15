@@ -1,0 +1,12 @@
+{
+  "blockedAt": "2026-05-24T12:31:07.218Z",
+  "requiredCount": 135,
+  "missingCount": 1,
+  "missing": [
+    {
+      "rel": "help-center/screenshots/parent-report/report-overview/mobile/detailed-report.png",
+      "reason": "missing raw file"
+    }
+  ],
+  "message": "Automated capture incomplete. Do not publish. Manual evidence requires separate owner approval."
+}

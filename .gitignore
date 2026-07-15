@@ -1,0 +1,116 @@
+# =============================================================================
+# LEO-KID — launch repo (.gitignore)
+# Target: C:\Users\ERAN YOSEF\Desktop\final projects\FINAL-WEB\LEO-KID
+# =============================================================================
+
+# --- Dependencies ---
+node_modules/
+/.pnp
+.pnp.js
+
+# --- Environment / secrets (never commit real values) ---
+.env*
+!.env.example
+.env.vercel*
+!.env.vercel*.example
+
+# --- Next.js / build output ---
+/.next/
+/.next-qa-deep/
+/.next-final-subject-sim/
+/out/
+/build
+
+# --- Local / IDE / deploy metadata ---
+.vercel/
+.cursor/
+.local/
+
+# --- Temp / scratch ---
+tmp/
+.tmp/
+.tmp-zip-preview/
+docs/audits/
+docs/qa/
+reports/mass-simulation/
+AUDIT*/
+*.log
+*.tmp
+
+# --- QA / test artifacts ---
+/coverage
+/playwright-report/
+/test-results/
+reports/
+reports/virtual-student-daily/
+reports/virtual-student-longitudinal/
+qa-evidence-audit/
+docs/repair/_artifacts/
+qa-visual-output/
+
+# --- Phase / one-off run logs (were tracked by mistake in old repo) ---
+.phase-*.log
+
+# --- Root audio samples (ElevenLabs exports) ---
+ElevenLabs*.mp3
+**/ElevenLabs*.mp3
+
+# --- Demo / sim credentials (use scripts/school-portal/.local/ override) ---
+scripts/school-portal/fixtures/demo-student-access-credentials.json
+scripts/school-portal/sim-state.json
+scripts/school-portal/.local/
+
+# --- Hebrew audio dev cache / API store ---
+public/audio/hebrew/gen/v1/
+data/_audio_store/
+data/hebrew-audio-review-queue.json
+
+# --- Admin video builder (local projects + uploads) ---
+data/admin-video-builder/projects/
+data/admin-video-builder/projects-index.json
+data/admin-video-builder/media-index.json
+data/admin-video-builder/export-work/
+public/admin-video-assets/
+
+# --- Large / regenerable data ---
+AUDIO.zip
+data/ai-hybrid-gold/synthetic-gold-v1.jsonl
+
+# --- Android signing & build (keep source; ignore secrets & build dirs) ---
+.android/
+android/app/build/
+.gradle/
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# --- Debug logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- TypeScript (auto-generated locally) ---
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Optional: handoff / review snapshots (omit from lean launch repo) ---
+# review-packages/
+# _handoff/
+# exports/
+
+# --- Keep tracked promo videos if parent dir rules ever broaden ---
+!public/videos/
+!public/videos/promo/
+!public/videos/promo/*.mp4
+.vercel
+
+.next/

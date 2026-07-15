@@ -1,0 +1,190 @@
+{
+  "passed": 25,
+  "failed": 0,
+  "skipped": 1,
+  "total": 26,
+  "results": [
+    {
+      "group": "I",
+      "id": "manager_invite_operator",
+      "ok": true,
+      "detail": "status=201 code=ok",
+      "skipped": false
+    },
+    {
+      "group": "I",
+      "id": "no_grants_credential_blocked",
+      "ok": true,
+      "detail": "status=403 code=operator_grant_required",
+      "skipped": false
+    },
+    {
+      "group": "I",
+      "id": "no_grants_report_blocked",
+      "ok": true,
+      "detail": "status=403 code=operator_grant_required",
+      "skipped": false
+    },
+    {
+      "group": "I",
+      "id": "operator_not_manager_list",
+      "ok": true,
+      "detail": "status=403 code=not_a_school_manager",
+      "skipped": false
+    },
+    {
+      "group": "I2",
+      "id": "grant_student_access_admin",
+      "ok": true,
+      "detail": "status=200",
+      "skipped": false
+    },
+    {
+      "group": "I2",
+      "id": "grant_student_access_admin_audited",
+      "ok": true,
+      "detail": "count 53 -> 54",
+      "skipped": false
+    },
+    {
+      "group": "I2",
+      "id": "access_admin_list_accounts",
+      "ok": true,
+      "detail": "status=200 code=null",
+      "skipped": false
+    },
+    {
+      "group": "I2",
+      "id": "access_admin_report_still_blocked",
+      "ok": true,
+      "detail": "status=403 code=operator_grant_required",
+      "skipped": false
+    },
+    {
+      "group": "I3",
+      "id": "grant_student_data_viewer",
+      "ok": true,
+      "detail": "status=200",
+      "skipped": false
+    },
+    {
+      "group": "I3",
+      "id": "grant_student_data_viewer_audited",
+      "ok": true,
+      "detail": "count 45 -> 46",
+      "skipped": false
+    },
+    {
+      "group": "I3",
+      "id": "data_viewer_report_allowed",
+      "ok": true,
+      "detail": "status=200 code=null",
+      "skipped": false
+    },
+    {
+      "group": "I3",
+      "id": "data_viewer_credential_blocked",
+      "ok": true,
+      "detail": "status=403 code=operator_grant_required",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "both_grants_accounts_and_report",
+      "ok": true,
+      "detail": "accounts=200 report=200",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "revoke_access_admin_audited",
+      "ok": true,
+      "detail": "count 45 -> 46",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "revoke_access_admin_blocks_credential",
+      "ok": true,
+      "detail": "status=403 code=operator_grant_required",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "revoke_data_viewer_audited",
+      "ok": true,
+      "detail": "count 36 -> 37",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "revoke_data_viewer_blocks_report",
+      "ok": true,
+      "detail": "status=403 code=operator_grant_required",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "operator_no_create_activity",
+      "ok": true,
+      "detail": "status=403 code=not_a_school_teacher",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "operator_no_assign_subject",
+      "ok": true,
+      "detail": "status=403 code=not_a_school_manager",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "operator_no_admin_api",
+      "ok": true,
+      "detail": "status=403 code=not_an_admin",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "operator_no_change_quotas",
+      "ok": true,
+      "detail": "status=403 code=not_an_admin",
+      "skipped": false
+    },
+    {
+      "group": "I4",
+      "id": "operator_wrong_school_blocked",
+      "ok": false,
+      "detail": "no student in other school",
+      "skipped": true
+    },
+    {
+      "group": "H",
+      "id": "operator_quota_exceeded",
+      "ok": true,
+      "detail": "status=400 code=school_operator_quota_exceeded",
+      "skipped": false
+    },
+    {
+      "group": "H",
+      "id": "teacher_quota_exceeded",
+      "ok": true,
+      "detail": "status=400 code=school_teacher_quota_exceeded",
+      "skipped": false
+    },
+    {
+      "group": "H",
+      "id": "manager_quota_exceeded",
+      "ok": true,
+      "detail": "status=400 code=school_manager_quota_exceeded",
+      "skipped": false
+    },
+    {
+      "group": "H",
+      "id": "student_quota_exceeded",
+      "ok": true,
+      "detail": "status=400 code=school_student_quota_exceeded",
+      "skipped": false
+    }
+  ]
+}

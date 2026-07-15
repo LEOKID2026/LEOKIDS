@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "generator": "scripts/verify-product-alignment.mjs",
+  "generated_at": "2026-06-04T18:56:57.457Z",
+  "oracle_snapshot": {
+    "matrix_path": "data/curriculum-oracle/v1/ministry-matrix.draft.json",
+    "row_count": 638,
+    "blocker_count": 35,
+    "high_confidence_rows": 0,
+    "science_oracle_rows": 473,
+    "hebrew_oracle_rows": 41,
+    "english_oracle_rows": 84,
+    "geometry_oracle_rows": 16,
+    "moledet_oracle_rows": 4,
+    "geography_oracle_rows": 2,
+    "source_inventory_verified_count": null,
+    "finding_count": 0,
+    "severity_counts": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0,
+      "INFO": 0
+    },
+    "generated_at": "2026-06-04T18:56:57.458Z"
+  },
+  "inputs_read": [
+    "data/curriculum-oracle/v1/ministry-matrix.draft.json",
+    "data/curriculum-oracle/v1/source-inventory.json",
+    "data/curriculum-oracle/v1/internal-scaffold.science.json",
+    "data/curriculum-oracle/v1/internal-scaffold.moledet-geography.json",
+    "data/curriculum-spine/v1/skills.json",
+    "utils/geometry-constants.js",
+    "scripts/curriculum-spine-grade-bindings.mjs",
+    "lib/learning-book/geometry-g5-registry.js",
+    "lib/learning-book/geometry-g6-registry.js",
+    "lib/classroom-activities/classroom-skill-labels-he.js",
+    "utils/diagnostic-engine-v2/geometry-taxonomy-candidate-order.js",
+    "utils/geometry-diagnostic-metadata-bridge.js",
+    "data/moledet-geography-curriculum.js",
+    "data/science-curriculum.js",
+    "utils/parent-report-language/grade-aware-recommendation-templates.js"
+  ],
+  "findings": []
+}
