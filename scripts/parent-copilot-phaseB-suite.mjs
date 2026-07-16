@@ -17,15 +17,15 @@ function syntheticPayload() {
     wordingEnvelope: "WE2",
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
-    forbiddenPhrases: ["בטוח לחלוטין"],
-    requiredHedges: ["נכון לעכשיו"],
+    forbiddenPhrases: ["completely certain"],
+    requiredHedges: ["right now"],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI2",
     textSlots: {
-      observation: "בשברים נצפו 12 שאלות, עם דיוק של כ־75%.",
-      interpretation: "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.",
-      action: "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.",
-      uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+      observation: "In Fractions, 12 questions were observed with about 75% accuracy.",
+      interpretation: "There is a reasonable practice direction, but it still needs more confirmation before a clear conclusion.",
+      action: "Focused reinforcement and a short independence check are recommended before moving ahead.",
+      uncertainty: "Right now it is worth continuing to monitor and confirm the direction in the next round.",
     },
   };
   const decision = {
@@ -60,7 +60,7 @@ function syntheticPayload() {
   };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "Fractions",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -75,7 +75,7 @@ function syntheticPayload() {
   return {
     version: 2,
     subjectProfiles: [{ subject: "math", topicRecommendations: [tr] }],
-    executiveSummary: { majorTrendsHe: ["קו ראשון בתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First line for the period"] },
   };
 }
 
@@ -83,7 +83,7 @@ const payload = syntheticPayload();
 const tp = truthPacket.buildTruthPacketV1(payload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "Fractions",
 });
 assert.ok(tp);
 
@@ -96,15 +96,15 @@ assert.deepEqual(plan2.blockPlan.slice(0, 2), ["meaning", "observation"]);
 // Session memory stores suggested follow-up + answer digest for Phase B ranking.
 sessionMemory.resetParentCopilotSessionForTests("phaseB-mem");
 sessionMemory.applyConversationStateDelta("phaseB-mem", {
-  suggestedFollowupTextHe: "רוצים לזהות יחד מה כדאי להימנע ממנו בשבוע הקרוב?",
-  assistantAnswerSummary: "יש כיוון עבודה סביר ועדיין נדרש אישור נוסף לפני כיוון ברור במשמעות ארוכה.",
+  suggestedFollowupTextHe: "Want to mark together what you should avoid in the coming week?",
+  assistantAnswerSummary: "There is a reasonable practice direction, but it still needs more confirmation before a clear conclusion.",
 });
 const sm = sessionMemory.getConversationState("phaseB-mem");
 assert.ok(Array.isArray(sm.recentSuggestedFollowupTexts) && sm.recentSuggestedFollowupTexts.length === 1);
 assert.ok(Array.isArray(sm.answerSummaryFingerprints) && sm.answerSummaryFingerprints.length >= 1);
 
-// De-dup: same Hebrew chip text recently suggested → demote that family when others exist.
-const avoidNowChip = "רוצים לזהות יחד מה כדאי להימנע ממנו בשבוע הקרוב?";
+// De-dup: same Global chip text recently suggested → demote that family when others exist.
+const avoidNowChip = "Want to mark together what you should avoid in the coming week?";
 sessionMemory.resetParentCopilotSessionForTests("phaseB-dedup");
 sessionMemory.applyConversationStateDelta("phaseB-dedup", {
   suggestedFollowupTextHe: avoidNowChip,
@@ -130,7 +130,7 @@ assert.notEqual(fu.selected?.family, "avoid_now");
 
 // End-to-end: same session + same observation intent → second answer leads with meaning block.
 sessionMemory.resetParentCopilotSessionForTests("phaseB-e2e");
-const utteranceObs = "מה רואים בנתונים בשברים";
+const utteranceObs = "What do the data show in Fractions?";
 const r1 = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload,

@@ -15,7 +15,7 @@ const { buildTruthPacketV1 } = await import(pathToFileURL(join(ROOT, "utils/pare
 const parentMod = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/index.js")).href);
 const runParentCopilotTurn = parentMod.default?.runParentCopilotTurn ?? parentMod.runParentCopilotTurn;
 
-const UI_HELPER_SUBSTRINGS = ["שאלה על הדוח", "תשובה:"];
+const UI_HELPER_SUBSTRINGS = ["question about the report", "answer:"];
 
 const payload = syntheticPayload({ eligible: true });
 
@@ -24,7 +24,7 @@ function executiveTruthSlotsForIntent(canonicalIntent) {
   const tp = buildTruthPacketV1(payload, {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "הדוח בתקופה הנבחרה",
+    scopeLabel: "the report for the selected period",
     interpretationScope: "executive",
     scopeClass: "executive",
     canonicalIntent,
@@ -42,77 +42,77 @@ const QUESTION_CLASS_FAMILIES = {
   broadReportExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
     paraphrases: [
-      "מה המשמעות של הדוח הזה בשבילי בפועל?",
-      "מה עקרונית חשוב שאדע מתוך הדוח?",
-      "תעזרו לי לעשות סדר במספרים של הדוח לא מבין את התמונה",
-      "מה הדוח אומר בגדול על התקופה??",
-      "איך להבין את המסקנות בלי להיתקע בפרטים קטנים",
-      "מה לשים לב אליו בדוח בתקופה הזאת",
-      "רוצה תמונה כללית של מה קורה אצלנו מהדוח",
-      "לא הבנתי את המשמעות תסבירו בקצרה על מה מדובר פה",
-      "מה כדאי שאזכור מזה בדוח",
-      "משמעות כללית של הדוח נא בבקשה",
-      "מה חשוב שאני אקח מהדוח הזה הביתה",
-      "איך לקרוא את הדוח בצורה חכמה כשיש הרבה נתונים",
-      "מה אומר הדוח בכללותו?",
+      "What does this report mean for me in practice?",
+      "What is the main thing I should know from the report?",
+      "Help me make sense of the report numbers, I do not understand the picture",
+      "What does the report say overall about this period?",
+      "How should I understand the conclusions without getting stuck in small details?",
+      "What should I pay attention to in this report period?",
+      "I want a general picture of what is going on from the report",
+      "I did not understand the meaning, please explain briefly what this is about",
+      "What should I remember from this report?",
+      "General meaning of the report please",
+      "What is important to take home from this report?",
+      "How should I read the report when there is a lot of data?",
+      "What does the report say overall?",
     ],
   },
   subjectAnchored: {
     expect: { resolutionStatus: "resolved", scopeType: "subject", scopeId: "math" },
     paraphrases: [
-      "מה קורה בחשבון?",
-      "במקצוע חשבון האמת לא ברור לי",
-      "אני רוצה להבין חשבון",
-      "בחשבון איך המצב בדוח?",
+      "What is going on in Math?",
+      "In the Math subject, I am not sure what is happening",
+      "I want to understand Math",
+      "How is Math doing in the report?",
     ],
   },
   topicAnchored: {
     expect: { resolutionStatus: "resolved", scopeType: "topic", scopeId: "t1" },
     paraphrases: [
-      "מה עם השברים?",
-      "השברים - מה המצב?",
-      "מה המצב בנושא השברים בדוח?",
-      "שברים???",
+      "What about Fractions?",
+      "Fractions - what is the status?",
+      "What is the status of Fractions in the report?",
+      "Fractions???",
     ],
   },
   actionExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
     paraphrases: [
-      "מה לעשות היום בבית?",
-      "מה כדאי לעשות בשבוע הקרוב?",
-      "תכנון לשבוע - מה מתחילים ממנו?",
+      "What should we do at home today?",
+      "What should we do in the coming week?",
+      "Weekly plan - what should we start with?",
     ],
   },
   meaningConcernExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
     paraphrases: [
-      "האם צריך לדאוג מהדוח?",
-      "לא ברור לי אם זה חמור או לא",
-      "יש פה משהו מדאיג לפי הדוח?",
+      "Should I be worried about the report?",
+      "I am not sure if this is serious or not",
+      "Is there anything concerning according to the report?",
     ],
   },
   communicationChildExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
     paraphrases: [
-      "איך להסביר לילד בלי להלחיץ?",
-      "מה לומר בבית על מה שרשום בדוח?",
+      "How should I explain this to my child without pressure?",
+      "What should I say at home about what is written in the report?",
     ],
   },
   communicationTeacherExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
-    paraphrases: ["מה לכתוב למורה על מה שראינו בדוח?", "ניסוח לשאול את המורה בבקשה"],
+    paraphrases: ["What should I write to the teacher about what we saw in the report?", "Please give me wording for a teacher question"],
   },
   strengthWeaknessExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
     paraphrases: [
-      "מה החזק ומה החלש בדוח?",
-      "חוזקות מול חולשות בדוח בבקשה",
-      "סיכום מאוזן של מה טוב ומה פחות",
+      "What is strong and what is weak in the report?",
+      "Strengths versus weaknesses in the report please",
+      "A balanced summary of what is good and what is less good",
     ],
   },
   clarifyTermExecutive: {
     expect: { resolutionStatus: "resolved", scopeType: "executive" },
-    paraphrases: ["מה המשמעות של המונח הזה בדוח?", "מהזה אומר פה בדוח?"],
+    paraphrases: ["What is the meaning of this term in the report?", "What does this mean here in the report?"],
   },
 };
 

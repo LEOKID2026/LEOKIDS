@@ -1,12 +1,12 @@
 /**
  * Validates draft answers and final ParentCopilotResponseV1-shaped payloads.
- * Phase 5: truth consistency, recommendation boundary, forbidden surfaces, parent-facing Hebrew.
+ * Phase 5: truth consistency, recommendation boundary, forbidden surfaces, parent-facing copy.
  *
  * **Fail-code categories (documentation only — see implementation for exact codes):**
  * - **Clinical / diagnostic surface:** patterns that imply diagnosis, disability labels, or forbidden certainty on boundary turns.
  * - **Recommendation / contract boundary:** `next_step` or imperative coaching when contracts forbid it; premature “closed” conclusions when `cannotConcludeYet`; strength hype / blocked-advance contradictions per truth.
  * - **Internal or dev leakage:** internal tokens, raw intensity codes, URLs, JSON/debug vocabulary in parent-facing text.
- * - **Hebrew / parent-facing hygiene:** normalization and filler/blacklist rules for composed glue.
+ * - **Parent-facing hygiene:** normalization and filler/blacklist rules for composed glue.
  *
  * Deterministic and LLM paths both pass through `validateAnswerDraft` / `validateParentCopilotResponseV1` as appropriate.
  */
@@ -341,9 +341,6 @@ export function validateAnswerDraft(draft, truthPacket, hints = null) {
   if (ROBOTIC_SYSTEM_RE.test(joined)) failCodes.push("robotic_system_phrasing");
   if (PARENT_META_INSTRUCTION_RE.test(composedJoined)) failCodes.push("parent_meta_instruction_wording");
 
-  const latinRatio = latinToHebrewLetterRatio(joined);
-  if (latinRatio > 0.34 && joined.length > 24) failCodes.push("excess_latin_in_parent_copy");
-
   const globalQ = Math.max(
     Number(truthPacket?.surfaceFacts?.reportQuestionTotalGlobal) || 0,
     Number(truthPacket?.surfaceFacts?.questions) || 0,
@@ -381,6 +378,7 @@ export function validateAnswerDraft(draft, truthPacket, hints = null) {
     if (joined.includes(ph)) failCodes.push("filler_blacklist");
   }
   const slotBundle = String(slotText + joined);
+  const slotBundleLower = slotBundle.toLowerCase();
   if (
     intent !== "clinical_boundary" &&
     intent !== "sensitive_education_choice" &&
@@ -390,7 +388,8 @@ export function validateAnswerDraft(draft, truthPacket, hints = null) {
     intent !== "off_report_subject_clarification"
   ) {
     for (const hedge of truthPacket?.allowedClaimEnvelope?.requiredHedges || []) {
-      if (hedge && !slotBundle.includes(String(hedge))) failCodes.push("missing_required_hedge");
+      const h = String(hedge || "").trim().toLowerCase();
+      if (h && !slotBundleLower.includes(h)) failCodes.push("missing_required_hedge");
     }
   }
 

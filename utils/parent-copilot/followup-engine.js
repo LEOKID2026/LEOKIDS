@@ -33,10 +33,10 @@ const INTENT_FOLLOWUP_AFFINITY = {
 /**
  * @param {string} text
  */
-function hebrewTokens(text) {
+function surfaceTokens(text) {
   return String(text || "")
     .split(/\s+/)
-    .map((t) => t.replace(/^[^\u0590-\u05FF]+|[^\u0590-\u05FF]+$/g, ""))
+    .map((t) => t.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
     .filter((t) => t.length >= 4);
 }
 
@@ -45,8 +45,8 @@ function hebrewTokens(text) {
  * @param {string} b
  */
 function tokenOverlapCount(a, b) {
-  const A = new Set(hebrewTokens(a));
-  const B = new Set(hebrewTokens(b));
+  const A = new Set(surfaceTokens(a));
+  const B = new Set(surfaceTokens(b));
   let n = 0;
   for (const t of A) if (B.has(t)) n += 1;
   return n;

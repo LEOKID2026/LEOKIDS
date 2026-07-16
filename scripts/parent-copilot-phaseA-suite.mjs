@@ -19,15 +19,15 @@ function syntheticPayload() {
     wordingEnvelope: "WE2",
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
-    forbiddenPhrases: ["בטוח לחלוטין"],
-    requiredHedges: ["נכון לעכשיו"],
+    forbiddenPhrases: ["completely certain"],
+    requiredHedges: ["right now"],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI2",
     textSlots: {
-      observation: "בשברים נצפו 12 שאלות, עם דיוק של כ־75%.",
-      interpretation: "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.",
-      action: "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.",
-      uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+      observation: "In Fractions, 12 questions were observed with about 75% accuracy.",
+      interpretation: "There is a reasonable practice direction, but it still needs more confirmation before a clear conclusion.",
+      action: "Focused reinforcement and a short independence check are recommended before moving ahead.",
+      uncertainty: "Right now it is worth continuing to monitor and confirm the direction in the next round.",
     },
   };
   const decision = {
@@ -62,7 +62,7 @@ function syntheticPayload() {
   };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "Fractions",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -77,7 +77,7 @@ function syntheticPayload() {
   return {
     version: 2,
     subjectProfiles: [{ subject: "math", topicRecommendations: [tr] }],
-    executiveSummary: { majorTrendsHe: ["קו ראשון בתקופה", "קו שני בתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First line for the period", "Second line for the period"] },
   };
 }
 
@@ -86,17 +86,17 @@ const payload = syntheticPayload();
 // Blocker 1 — utterance-driven scope (topic / subject before executive)
 const scopeTopic = scopeResolver.resolveScope({
   payload,
-  utterance: "מה המצב בנושא השברים?",
+  utterance: "What is the status of Fractions?",
   selectedContextRef: null,
 });
 assert.equal(scopeTopic.resolutionStatus, "resolved");
 assert.equal(scopeTopic.scope?.scopeType, "topic");
 assert.equal(scopeTopic.scope?.scopeId, "t1");
-assert.equal(scopeTopic.scope?.scopeLabel, "שברים");
+assert.equal(scopeTopic.scope?.scopeLabel, "Fractions");
 
 const scopeSubject = scopeResolver.resolveScope({
   payload,
-  utterance: "אני רוצה לדבר על חשבון",
+  utterance: "I want to talk about Math",
   selectedContextRef: null,
 });
 assert.equal(scopeSubject.resolutionStatus, "resolved");
@@ -105,16 +105,16 @@ assert.equal(scopeSubject.scope?.scopeId, "math");
 
 const scopeAgg = scopeResolver.resolveScope({
   payload,
-  utterance: "מה המקצוע החזק?",
+  utterance: "Which subject is strongest?",
   selectedContextRef: null,
 });
 assert.equal(scopeAgg.resolutionStatus, "resolved");
 assert.equal(scopeAgg.scope?.scopeType, "executive");
-assert.equal(scopeAgg.scope?.scopeLabel, "הדוח בתקופה הנבחרה");
+assert.equal(scopeAgg.scope?.scopeLabel, "the report for the selected period");
 
 const scopeBroadExecutiveFallback = scopeResolver.resolveScope({
   payload,
-  utterance: "אפשר הסבר נוסף?",
+  utterance: "Can you explain more?",
   selectedContextRef: null,
 });
 assert.equal(scopeBroadExecutiveFallback.resolutionStatus, "resolved");
@@ -129,7 +129,7 @@ sessionMemory.applyConversationStateDelta("mem-contract", {
   clickedFollowupFamily: "action_today",
   addedScopeKey: "topic:t1",
   answeredConstraintTag: "turn:validator_pass",
-  closingSnippet: "מילות בדיקה חוזרות מילות בדיקה חוזרות",
+  closingSnippet: "Repeated test words repeated test words",
 });
 const mem = sessionMemory.getConversationState("mem-contract");
 assert.ok(Array.isArray(mem.priorScopes) && mem.priorScopes.includes("topic:t1"));
@@ -261,7 +261,7 @@ const lowDecisionPayload = {
 const tpLow = truthPacket.buildTruthPacketV1(lowDecisionPayload, {
   scopeType: "executive",
   scopeId: "executive",
-  scopeLabel: "מבט על התקופה",
+  scopeLabel: "Period overview",
 });
 const qaList = renderAdapter.buildQuickActions(tpLow, true);
 const qaAdv = qaList.find((q) => q.id === "qa_advance_or_hold");
@@ -296,7 +296,7 @@ function assertTruthPacketShape(tp) {
 const tpExec = truthPacket.buildTruthPacketV1(payload, {
   scopeType: "executive",
   scopeId: "executive",
-  scopeLabel: "מבט על התקופה",
+  scopeLabel: "Period overview",
 });
 assertTruthPacketShape(tpExec);
 assert.equal(contractReader.readContractsSliceForScope("executive", "executive", "", payload)?.subjectId, "math");
@@ -314,7 +314,7 @@ assert.equal(resEmpty.resolutionStatus, "resolved", "empty utterance must not de
 const res = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload,
-  utterance: "מה המשמעות של המספרים?",
+  utterance: "What do the numbers mean?",
   sessionId: "test-session-a",
   selectedContextRef: null,
 });
@@ -335,7 +335,7 @@ if (res.resolutionStatus === "resolved") {
 const teacherTry = parentCopilot.runParentCopilotTurn({
   audience: "teacher",
   payload,
-  utterance: "שלום",
+  utterance: "Hello",
   sessionId: "t2",
 });
 assert.equal(teacherTry.resolutionStatus, "clarification_required");
@@ -345,7 +345,7 @@ assert.ok(guardrail.validateParentCopilotResponseV1(teacherTry).ok);
 const clar = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: null,
-  utterance: "שלום",
+  utterance: "Hello",
   sessionId: "t3",
 });
 assert.equal(clar.resolutionStatus, "clarification_required");
@@ -366,7 +366,7 @@ const badPayload = {
       topicRecommendations: [
         {
           topicRowKey: "x",
-          displayName: "בעיה",
+          displayName: "Issue",
           questions: 0,
           accuracy: 0,
           contractsV1: {
@@ -382,9 +382,9 @@ const badPayload = {
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI0",
               textSlots: {
-                observation: "אין מספיק תרגול.",
-                interpretation: "בשלב זה לא קובעים כיוון עקבי.",
-                uncertainty: "בשלב זה ועדיין מוקדם לקבוע סופית, לכן ממשיכים במעקב זהיר.",
+                observation: "There is not enough practice.",
+                interpretation: "At this stage we do not set a consistent direction.",
+                uncertainty: "At this stage it is still too early to decide finally, so we continue careful monitoring.",
               },
             },
             decision: { contractVersion: "v1", topicKey: "x", subjectId: "math", cannotConcludeYet: true, decisionTier: 0 },
@@ -411,7 +411,7 @@ const badPayload = {
 const res2 = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: badPayload,
-  utterance: "מה לעשות היום?",
+  utterance: "What should we do today?",
   sessionId: "t4",
 });
 assert.ok(guardrail.validateParentCopilotResponseV1(res2).ok);
@@ -435,25 +435,25 @@ function multiSubjectPayloadFrom(basePayload) {
   };
   const m1 = structuredClone(baseTr);
   m1.topicRowKey = "m1";
-  m1.displayName = "כפל";
+  m1.displayName = "Multiplication";
   m1.questions = 30;
   m1.accuracy = 60;
   fixIds(m1, "math");
   const e1 = structuredClone(baseTr);
   e1.topicRowKey = "e1";
-  e1.displayName = "מילים";
+  e1.displayName = "Words";
   e1.questions = 10;
   e1.accuracy = 95;
   fixIds(e1, "english");
   const h1 = structuredClone(baseTr);
   h1.topicRowKey = "h1";
-  h1.displayName = "דיקדוק";
+  h1.displayName = "Grammar";
   h1.questions = 5;
   h1.accuracy = 40;
   fixIds(h1, "science");
   return {
     version: 2,
-    executiveSummary: { majorTrendsHe: ["קו מגמה ראשון לתקופה", "קו משני לתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First trend line for the period", "Secondary line for the period"] },
     subjectProfiles: [
       { subject: "math", topicRecommendations: [m1] },
       { subject: "english", topicRecommendations: [e1] },
@@ -467,44 +467,45 @@ const multiPayload = multiSubjectPayloadFrom(payload);
 const rStrongest = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: multiPayload,
-  utterance: "מה המקצוע החזק?",
+  utterance: "Which subject is strongest?",
   sessionId: "semantic-strongest",
 });
 assert.equal(rStrongest.resolutionStatus, "resolved");
 assert.ok(guardrail.validateParentCopilotResponseV1(rStrongest).ok);
-assert.ok(rStrongest.answerBlocks[0].textHe.includes("אנגלית"));
-assert.ok(!rStrongest.answerBlocks.map((b) => b.textHe).join(" ").includes("כפל"));
+assert.ok(rStrongest.answerBlocks[0].textHe.includes("English"));
+assert.ok(!rStrongest.answerBlocks.map((b) => b.textHe).join(" ").includes("Multiplication"));
 assert.equal(rStrongest.suggestedFollowUp, null);
 
 const rSubjectsList = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: multiPayload,
-  utterance: "יש עוד מקצועות?",
+  utterance: "Are there more subjects?",
   sessionId: "semantic-subjects-list",
 });
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("מתמטיקה"));
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("אנגלית"));
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("מדעים"));
+assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("Math"));
+assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("English"));
+assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("Science"));
 assert.equal(rSubjectsList.suggestedFollowUp, null);
 
 const rHardest = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: multiPayload,
-  utterance: "באיזה מקצוע הכי קשה?",
+  utterance: "Which subject is hardest?",
   sessionId: "semantic-hardest",
 });
-assert.ok(rHardest.answerBlocks[0].textHe.includes("מדעים"));
+assert.ok(rHardest.answerBlocks[0].textHe.includes("Science"));
 assert.equal(rHardest.suggestedFollowUp, null);
 
 const rPeriod = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: multiPayload,
-  utterance: "מה הכי בולט בתקופה?",
+  utterance: "What stands out most this period?",
   sessionId: "semantic-period",
 });
-assert.ok(rPeriod.answerBlocks[0].textHe.includes("כיוון ראשון"));
-assert.ok(!rPeriod.answerBlocks[0].textHe.includes("קו מגמה"));
-assert.ok(rPeriod.answerBlocks[0].textHe.includes("מה שמסתמן בתקופה"));
+const rPeriodText = rPeriod.answerBlocks.map((b) => String(b.textHe || "")).join("\n");
+assert.ok(rPeriodText.includes("What stands out in the period"), rPeriodText);
+assert.ok(rPeriodText.includes("First"), rPeriodText);
+assert.ok(!rPeriodText.includes("קו מגמה"), rPeriodText);
 assert.equal(rPeriod.suggestedFollowUp, null);
 
 console.log("parent-copilot-phaseA-suite: OK");

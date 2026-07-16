@@ -43,17 +43,18 @@ function scorePracticalFollowupMode(t) {
   let advance = 0;
   let strengthen = 0;
   if (
-    /מה\s+עושים|מה\s+לעשות|אז\s+מה|מה\s+הלאה|מה\s+עכשיו|בפועל|במעשה|מה\s+זה\s+אומר\s+בפועל|איך\s+זה\s+מתבטא|מה\s+עושים\s+עם\s+זה/.test(t)
+    /מה\s+עושים|מה\s+לעשות|אז\s+מה|מה\s+הלאה|מה\s+עכשיו|בפועל|במעשה|מה\s+זה\s+אומר\s+בפועל|איך\s+זה\s+מתבטא|מה\s+עושים\s+עם\s+זה/.test(t) ||
+    /what\s+(?:should|do)\s+(?:we|i)\s+do|what\s+now|what\s+next|in\s+practice|practical|do\s+with\s+this/.test(t)
   ) {
     action += 2.4;
   }
   if (/ומה\s*עכשיו|ממה\s*עכשיו|אז\s*מה\s*עושים|ומה\s*בבית|ממה\s*בבית|ומה\s*מחר|ממה\s*מחר/u.test(t)) {
     action += 1.85;
   }
-  if (/המלצות|הצעד\s+הבא|מה\s+לעשות\s+היום|מה\s+לעשות\s+בשבוע|שבוע\s*הקרוב/.test(t)) action += 1.6;
-  if (/להתקדם|לקדם|כדאי\s+לקדם|האם\s+לקדם|מתי\s+לקדם|להעלות\s+רמה|לעלות\s+רמה|קידום|להמשיך\s+לקדם/.test(t)) advance += 2.5;
-  if (/להמתין|לעצור|לא\s+לקדם|לחכות/.test(t)) advance += 0.8;
-  if (/לחזק|חיזוק|לטפח|לעבוד\s+על|לחזק\s+את|חיזוקים|חיזוק\s+נוסף/.test(t)) strengthen += 2.4;
+  if (/המלצות|הצעד\s+הבא|מה\s+לעשות\s+היום|מה\s+לעשות\s+בשבוע|שבוע\s*הקרוב|recommendation|next\s+step|today|week|coming\s+week/.test(t)) action += 1.6;
+  if (/להתקדם|לקדם|כדאי\s+לקדם|האם\s+לקדם|מתי\s+לקדם|להעלות\s+רמה|לעלות\s+רמה|קידום|להמשיך\s+לקדם|advance|promote|move\s+ahead|raise\s+(?:the\s+)?level/.test(t)) advance += 2.5;
+  if (/להמתין|לעצור|לא\s+לקדם|לחכות|wait|stop|hold|do\s+not\s+promote/.test(t)) advance += 0.8;
+  if (/לחזק|חיזוק|לטפח|לעבוד\s+על|לחזק\s+את|חיזוקים|חיזוק\s+נוסף|strengthen|reinforce|work\s+on/.test(t)) strengthen += 2.4;
   return { action, advance, strengthen };
 }
 
@@ -173,6 +174,15 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
       textHe: `${hook}${String(answerBlocks[oix].textHe || "").trim()}`,
       source: "composed",
     };
+  } else if (oix < 0) {
+    const firstIx = answerBlocks.findIndex((b) => String(b?.textHe || "").trim());
+    if (firstIx >= 0 && !String(answerBlocks[firstIx].textHe || "").includes("Continuing from the comparison")) {
+      answerBlocks[firstIx] = {
+        ...answerBlocks[firstIx],
+        textHe: `${hook}${String(answerBlocks[firstIx].textHe || "").trim()}`,
+        source: "composed",
+      };
+    }
   }
 
   const scopeMeta = {

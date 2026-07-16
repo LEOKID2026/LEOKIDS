@@ -142,6 +142,8 @@ const STRONG_REPORT_TOKENS = [
   // Help / report references
   "לעזור לו", "לעזור לה", "איך לעזור", "איך אעזור", "איך נעזור",
   "לפי הדוח", "על פי הדוח", "מהדוח", "בדוח", "הדוח אומר", "הדוח מראה",
+  "report", "practice", "progress", "learning", "data", "numbers", "conclusions",
+  "help me", "at home", "teacher", "explain", "meaning", "general picture",
 ];
 
 /** STRONG report intent phrases — compact routing cues (after fold). */
@@ -199,6 +201,25 @@ const STRONG_REPORT_INTENTS = [
   /תן\s+לי\s+רק\s+3\s+נקודות/u,
   // Balanced strengths vs gaps (executive) without explicit "דוח" / חזק stems
   /סיכום\s+מאוזן.{0,48}מה\s+טוב.{0,24}פחות/u,
+  /what\s+(?:does|do).{0,20}(?:report|data|numbers).{0,20}(?:mean|show|say)/i,
+  /what\s+is\s+the\s+(?:main\s+)?thing.{0,40}(?:report|data)/i,
+  /what\s+should\s+i\s+(?:know|remember|take).{0,40}(?:report|home)/i,
+  /general\s+picture.{0,40}(?:going\s+on|report|learning)/i,
+  /what\s+is\s+going\s+on.{0,40}(?:report|learning|data)/i,
+  /how\s+(?:should\s+i\s+)?(?:read|understand).{0,40}report/i,
+  /how\s+(?:should\s+i\s+)?understand.{0,40}conclusions/i,
+  /what\s+should\s+we\s+do.{0,30}(?:home|today|week)/i,
+  /weekly\s+plan|coming\s+week|what\s+should\s+we\s+start/i,
+  /how\s+should\s+i\s+explain.{0,40}(?:child|kid)/i,
+  /what\s+should\s+i\s+(?:write|ask).{0,40}teacher/i,
+  /wording.{0,40}teacher|teacher\s+question|question.{0,40}teacher/i,
+  /(?:worried|concerning|serious|concern).{0,40}(?:report|data|this)/i,
+  /should\s+i\s+be\s+worried/i,
+  /serious\s+or\s+not/i,
+  /strengths?.{0,30}weaknesses|strong.{0,30}weak/i,
+  /balanced\s+summary.{0,40}(?:good|less\s+good|weaker|weak)/i,
+  /reinforcement\s+needed|most\s+reinforcement|needs\s+strengthening/i,
+  /what\s+is\s+(?:strong|weak).{0,30}report/i,
 ];
 
 /**
@@ -207,12 +228,12 @@ const STRONG_REPORT_INTENTS = [
  * STRONG_REPORT_INTENT_WEIGHT so a lone STRONG token (0.35) still clears 0.5.
  */
 function matchesExplainReportInquiry(t) {
-  const reportSurface = /דוח|מהדוח|בדוח|מתוך\s+הדוח/u.test(t);
+  const reportSurface = /דוח|מהדוח|בדוח|מתוך\s+הדוח|\breport\b|\bdata\b|\bnumbers\b/u.test(t);
   const inAppDeictic = /מדובר\s+פה|מה\s+שמופיע\s+למעלה|על\s+המסך\s+הזה/u.test(t);
   const conclusionReading =
     /מסקנות/u.test(t) && /להבין|להיתקע|פרטים|בלי\s+להיתקע/u.test(t);
   if (!reportSurface && !inAppDeictic && !conclusionReading) return false;
-  return /תסביר|הסבר|איך\s+לקרוא|איך\s+להבין|להבין|אומר|משמעות|מה\s+אומר|מה\s+הדוח|פירוש|בקצרה|מבט\s+על|תוכן|מה\s+מופיע|עקרונית|חשוב\s+שאדע|חשוב\s+ל|מה\s+חשוב|כדאי\s+שאזכור|מה\s+לשים\s+לב|סדר\s+במספרים|תמונה\s+כללית|מסקנות|מה\s+הדוח\s+אומר|איך\s+לקרוא\s+את\s+הדוח|תעזר|לעזור\s+לי\s+לעשות\s+סדר|לא\s+הבנתי/u.test(
+  return /תסביר|הסבר|איך\s+לקרוא|איך\s+להבין|להבין|אומר|משמעות|מה\s+אומר|מה\s+הדוח|פירוש|בקצרה|מבט\s+על|תוכן|מה\s+מופיע|עקרונית|חשוב\s+שאדע|חשוב\s+ל|מה\s+חשוב|כדאי\s+שאזכור|מה\s+לשים\s+לב|סדר\s+במספרים|תמונה\s+כללית|מסקנות|מה\s+הדוח\s+אומר|איך\s+לקרוא\s+את\s+הדוח|תעזר|לעזור\s+לי\s+לעשות\s+סדר|לא\s+הבנתי|explain|understand|meaning|mean|show|say|summary|main\s+thing|remember|take\s+home|pay\s+attention|make\s+sense|read\s+the\s+report/i.test(
     t,
   );
 }
@@ -845,6 +866,18 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
     ) ||
     /how\s+is\s+(?:my|the)\s+child\s+doing\s+in\s+/i.test(t) ||
     /^how\s+is\s+(?:my|the)\s+child.*(?:math|arithmetic|geometry|english|science|history|hebrew|social studies|geography)/i.test(
+      t,
+    ) ||
+    /what\s+is\s+going\s+on\s+in\s+(?:math|arithmetic|geometry|english|science|history|hebrew|social studies|geography)\b/i.test(
+      t,
+    ) ||
+    /\b(?:math|arithmetic|geometry|english|science|history|hebrew|social studies|geography)\b.{0,40}\b(?:status|situation|report)\b/i.test(
+      t,
+    ) ||
+    /\b(?:math|arithmetic|geometry|english|science|history|hebrew|social studies|geography)\s+subject\b/i.test(
+      t,
+    ) ||
+    /(?:want|need)\s+to\s+understand\s+(?:math|arithmetic|geometry|english|science|history|hebrew|social studies|geography)\b/i.test(
       t,
     )
   ) {

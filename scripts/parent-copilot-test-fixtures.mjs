@@ -36,7 +36,7 @@ export function syntheticPayload(opts = {}) {
         topicRecommendations: [
           {
             topicRowKey: "t1",
-            displayName: "שברים",
+            displayName: "Fractions",
             questions: 14,
             accuracy: 78,
             contractsV1: {
@@ -58,15 +58,15 @@ export function syntheticPayload(opts = {}) {
                 wordingEnvelope: eligible ? "WE2" : "WE0",
                 hedgeLevel: eligible ? "light" : "mandatory",
                 allowedTone: "parent_professional_warm",
-                forbiddenPhrases: ["בטוח לחלוטין"],
-                requiredHedges: ["נכון לעכשיו"],
+                forbiddenPhrases: ["completely certain"],
+                requiredHedges: ["right now"],
                 allowedSections: ["summary", "finding", "recommendation", "limitations"],
                 recommendationIntensityCap: eligible ? "RI2" : "RI0",
                 textSlots: {
-                  observation: "נכון לעכשיו בשברים נצפו 14 שאלות עם דיוק של כ־78%.",
-                  interpretation: "נכון לעכשיו יש כיוון עבודה טוב אך עדיין נדרש חיזוק עקבי.",
-                  action: eligible ? "נכון לעכשיו מומלץ תרגול קצר ממוקד וחזרה מונחית." : null,
-                  uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולוודא יציבות בסבב הבא.",
+                  observation: "Right now in Fractions, 14 questions were observed with about 78% accuracy.",
+                  interpretation: "Right now there is a good practice direction, but consistent reinforcement is still needed.",
+                  action: eligible ? "Right now short, focused practice with guided review is recommended." : null,
+                  uncertainty: "Right now it is worth continuing to monitor and verify stability in the next round.",
                 },
               },
             },
@@ -78,7 +78,7 @@ export function syntheticPayload(opts = {}) {
         topicRecommendations: [
           {
             topicRowKey: "e1",
-            displayName: "דקדוק",
+            displayName: "Grammar",
             questions: 10,
             accuracy: 88,
             contractsV1: {
@@ -103,15 +103,15 @@ export function syntheticPayload(opts = {}) {
                 wordingEnvelope: "WE2",
                 hedgeLevel: "light",
                 allowedTone: "parent_professional_warm",
-                forbiddenPhrases: ["בטוח לחלוטין"],
-                requiredHedges: ["נכון לעכשיו"],
+                forbiddenPhrases: ["completely certain"],
+                requiredHedges: ["right now"],
                 allowedSections: ["summary", "finding", "recommendation", "limitations"],
                 recommendationIntensityCap: "RI2",
                 textSlots: {
-                  observation: "נכון לעכשיו בדקדוק נצפה דיוק של כ־88%.",
-                  interpretation: "נכון לעכשיו מתקבלת יציבות טובה יחסית לתקופה.",
-                  action: "נכון לעכשיו מומלץ לשמר תרגול מדורג וקצר.",
-                  uncertainty: "נכון לעכשיו ממשיכים במעקב קצר לפני העלאת רמת קושי.",
+                  observation: "Right now in Grammar, accuracy is about 88%.",
+                  interpretation: "Right now the period shows relatively good stability.",
+                  action: "Right now it is recommended to preserve short, gradual practice.",
+                  uncertainty: "Right now continue with short monitoring before raising difficulty.",
                 },
               },
             },
@@ -119,7 +119,7 @@ export function syntheticPayload(opts = {}) {
         ],
       },
     ],
-    executiveSummary: { majorTrendsHe: ["קו ראשון בתקופה", "קו שני בתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First line for the period", "Second line for the period"] },
   };
 }
 

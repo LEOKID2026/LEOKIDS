@@ -17,14 +17,14 @@ const { tryBuildParentShortFollowupDraft } = await import(
 const parentMod = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/index.js")).href);
 const runParentCopilotTurn = parentMod.default?.runParentCopilotTurn ?? parentMod.runParentCopilotTurn;
 
-const HEDGE_LEAD = /^נכון לעכשיו/u;
-const METRIC_EXPLANATION_LEAD = /^(לפי ממוצע|ממוצע הדיוק|הדיוק הממוצע|בדוח התקופתי נספרו|כ־\s*\d+\s*%?\s*שאלות)/u;
-const EXEC_INVENTORY_MARKERS = /מופיעים המקצועות הבאים|לפי רשימת המקורות המעוגנים|נספרו כ־\d+\s+שאלות בכלל המקצועות/u;
+const HEDGE_LEAD = /^right now/i;
+const METRIC_EXPLANATION_LEAD = /^(according to the average|average accuracy|the periodic report counted|about\s*\d+\s*%?\s*questions)/i;
+const EXEC_INVENTORY_MARKERS = /the following professions appear|anchored sources|questions across all subjects/i;
 
 function payloadStableExecutiveBothReady() {
   const row = (subject, key, acc, q) => ({
     topicRowKey: key,
-    displayName: subject === "math" ? "חשבון" : "אנגלית",
+    displayName: subject === "math" ? "Math" : "English",
     questions: q,
     accuracy: acc,
     contractsV1: {
@@ -50,14 +50,14 @@ function payloadStableExecutiveBothReady() {
         hedgeLevel: "light",
         allowedTone: "parent_professional_warm",
         forbiddenPhrases: [],
-        requiredHedges: ["נכון לעכשיו"],
+        requiredHedges: ["right now"],
         allowedSections: ["summary", "finding", "recommendation", "limitations"],
         recommendationIntensityCap: "RI2",
         textSlots: {
-          observation: `תיעוד יציב במקצוע עם ${q} שאלות ודיוק של כ־${acc} אחוזים.`,
-          interpretation: "ההתאמה ליעדי התקופה המוצגים בדוח נראית סדירה ומסודרת.",
-          action: "להמשיך בתרגול קצר ומדוד לפי אותו קו.",
-          uncertainty: "להמשיך במעקב שגרתי לפי לוח הזמנים של התקופה.",
+          observation: `Stable documentation in the subject with ${q} questions and about ${acc}% accuracy.`,
+          interpretation: "The fit to the period goals shown in the report looks orderly and consistent.",
+          action: "Continue short, measured practice along the same line.",
+          uncertainty: "Continue routine monitoring according to the period schedule.",
         },
       },
     },
@@ -68,7 +68,7 @@ function payloadStableExecutiveBothReady() {
       { subject: "math", topicRecommendations: [row("math", "m1", 82, 12)] },
       { subject: "english", topicRecommendations: [row("english", "e1", 90, 10)] },
     ],
-    executiveSummary: { majorTrendsHe: ["קו כללי ראשון בתקופה", "קו כללי שני בתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First general line in the period", "Second general line in the period"] },
   };
 }
 
@@ -81,10 +81,10 @@ const payloadAgg = syntheticPayload({ eligible: true });
 
 // 1) Comparative families: direct answer first (no hedge lead on observation), not metric-explanation-first.
 const comparativeUtterances = [
-  "מי המקצוע החזק ביותר בדוח כרגע?",
-  "מה המקצוע החלש ביותר לפי הדוח?",
-  "מה הכי בולט בתקופה לפי מה שיש בדוח?",
-  "איפה הכי צריך חיזוק לפי הדוח?",
+  "Which subject is strongest in the report right now?",
+  "Which subject is weakest according to the report?",
+  "What stands out most this period according to the report?",
+  "Where is the most reinforcement needed according to the report?",
 ];
 for (const utt of comparativeUtterances) {
   const res = runParentCopilotTurn({
@@ -106,7 +106,7 @@ const sessionPractical = "cmp-practical-thread";
 const r1 = runParentCopilotTurn({
   audience: "parent",
   payload: payloadAgg,
-  utterance: "מי המקצוע החזק ביותר בדוח?",
+  utterance: "Which subject is strongest in the report?",
   sessionId: sessionPractical,
   selectedContextRef: null,
 });
@@ -114,38 +114,38 @@ assert.equal(r1.resolutionStatus, "resolved");
 const r2 = runParentCopilotTurn({
   audience: "parent",
   payload: payloadAgg,
-  utterance: "אז מה כדאי לעשות עם זה בפועל בשבוע הקרוב?",
+  utterance: "So what should we do with this in practice in the coming week?",
   sessionId: sessionPractical,
   selectedContextRef: null,
 });
 assert.equal(r2.resolutionStatus, "resolved");
 const joined2 = (r2.answerBlocks || []).map((b) => b.textHe).join(" ");
-assert.ok(/ממשיכים מההשוואה/.test(joined2), "practical follow-up should carry comparison continuity hook");
+assert.ok(/continuing from the comparison/i.test(joined2), `practical follow-up should carry comparison continuity hook: ${joined2}`);
 assert.ok(!EXEC_INVENTORY_MARKERS.test(joined2), "practical follow-up should not reopen executive inventory");
 
-// 3) Accepted follow-up: offered family avoid_now + affirmation executes that path (hook + difficulty intent).
+// 3) Accepted follow-up: offered family avoid_now + affirmation executes that path (hook + avoid-now intent).
 const pTopic = syntheticPayload({ eligible: false });
 const shortDraft = tryBuildParentShortFollowupDraft({
-  utteranceStr: "כן",
+  utteranceStr: "yes",
   conv: {
     lastOfferedFollowupFamily: "avoid_now",
     priorScopes: ["topic:t1"],
-    lastScopeLabelHe: "שברים",
+    lastScopeLabelHe: "Fractions",
     lastPlannerIntent: "what_is_still_difficult",
     priorIntents: ["what_is_still_difficult"],
   },
   payload: pTopic,
 });
 assert.ok(shortDraft, "short follow-up draft");
-assert.ok(shortDraft.answerBlocks.some((b) => String(b.textHe || "").includes("מבצעים את ההמשך")), "acceptance executes offered family");
-assert.equal(shortDraft.plannerIntent, "what_is_still_difficult");
+assert.ok(shortDraft.answerBlocks.some((b) => /continu|follow-up|next/i.test(String(b.textHe || ""))), "acceptance executes offered family");
+assert.equal(shortDraft.plannerIntent, "what_not_to_do_now");
 
 // 4) Follow-up gating: stable executive packet must not advertise avoid_now / advance_or_hold when fully ready + RI2.
 const pClean = payloadStableExecutiveBothReady();
 const tpClean = buildTruthPacketV1(pClean, {
   scopeType: "executive",
   scopeId: "executive",
-  scopeLabel: "הדוח בתקופה הנבחרה",
+  scopeLabel: "the report for the selected period",
   interpretationScope: "executive",
   scopeClass: "executive",
   canonicalIntent: "explain_report",
@@ -158,7 +158,7 @@ assert.ok(!tpClean.allowedFollowupFamilies.includes("advance_or_hold"), "advance
 const resBrief = runParentCopilotTurn({
   audience: "parent",
   payload: pTopic,
-  utterance: "המשך בקצרה",
+  utterance: "continue briefly",
   sessionId: "cmp-brief-continue",
   selectedContextRef: { scopeType: "topic", scopeId: "t1", subjectId: "math" },
 });

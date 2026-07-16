@@ -61,7 +61,7 @@ function emptyState() {
 function tokenizeForLedger(text) {
   return String(text || "")
     .split(/\s+/)
-    .map((t) => t.replace(/^[^\u0590-\u05FF]+|[^\u0590-\u05FF]+$/g, ""))
+    .map((t) => t.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
     .filter((t) => t.length >= 5);
 }
 
