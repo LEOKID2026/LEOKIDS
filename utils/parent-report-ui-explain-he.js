@@ -109,7 +109,8 @@ export function shortReportDiagnosticsParentVisibleHe(s) {
     ""
   );
   t = t.replace(/\b(no_memory|light_memory|not_enough_evidence)\b/gi, "");
-  t = t.replace(/\b[a-z][a-z0-9_]{10,}\b/g, "");
+  // Strip long snake_case engine tokens only — never plain English words like "information".
+  t = t.replace(/\b[a-z][a-z0-9]*_[a-z0-9_]{2,}\b/gi, "");
   t = t.replace(/\s{2,}/g, " ").trim();
   return normalizeParentFacingHe(stripKnownParentReportLeakageHe(t));
 }

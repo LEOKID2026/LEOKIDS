@@ -334,7 +334,13 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     {}
   );
   assert.ok(linesBare.length >= 1);
-  assert.ok(String(linesBare[0]).includes("מידע מועט"), "weak data uses cautious insufficient-data line");
+  const bareLine = String(linesBare[0] || "");
+  assert.ok(
+    /little\s+(information|data)/i.test(bareLine) &&
+      /practic/i.test(bareLine) &&
+      /firm\s+direction|lock(?:ing)?\s+in/i.test(bareLine),
+    "weak data uses cautious insufficient-data line"
+  );
 
   const store = new Map();
   const now = Date.now();

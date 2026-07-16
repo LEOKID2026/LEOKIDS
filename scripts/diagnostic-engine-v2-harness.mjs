@@ -328,7 +328,9 @@ const MATRIX = [
       assert.equal(u.outputGating.probeOnly, true);
       assert.ok(
         Array.isArray(u.explainability?.cannotConcludeYetHe) &&
-          u.explainability.cannotConcludeYetHe.some((line) => String(line || "").includes("עדיין לא מסווג")),
+          u.explainability.cannotConcludeYetHe.some((line) =>
+            /not yet mapped to a stable taxonomy|not yet classified|unclassified/i.test(String(line || ""))
+          ),
       );
     },
   },
