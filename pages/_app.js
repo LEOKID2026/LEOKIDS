@@ -1,8 +1,8 @@
-import "../styles/globals.css";
+﻿import "../styles/globals.css";
 import "../styles/worksheet-print.css";
 import "../styles/worksheet-hub.css";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/next";
 import OfflineIndicator from "../components/OfflineIndicator";
@@ -24,6 +24,9 @@ import {
   BROWSER_THEME_COLOR_BRIGHT,
   BROWSER_THEME_COLOR_BOOTSTRAP_SCRIPT,
 } from "../lib/student-ui/browser-theme-color.client.js";
+import { I18nProvider } from "../lib/i18n/I18nProvider.jsx";
+import { resolveRequestLocale } from "../lib/i18n/resolve-request-locale.js";
+import { resolveDirection, resolveLocaleDefinition } from "../lib/i18n/locale-registry.js";
 
 const UUID_PATH_SEGMENT_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -88,7 +91,7 @@ if (typeof window !== "undefined") {
   try { localStorage.removeItem("offline_game_err_log"); } catch {}
 }
 
-/** Internal dev tools — admin-only via DevPrototypeAdminGate in render. */
+/** Internal dev tools â€” admin-only via DevPrototypeAdminGate in render. */
 function pathnameIsInternalDevRoute(pathname) {
   const p = pathname || "";
   return (
@@ -103,6 +106,31 @@ export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useIOSViewportFix();
 
+  const locale = useMemo(() => {
+    if (pageProps?.locale) return resolveLocaleDefinition(pageProps.locale).id;
+    if (typeof document !== "undefined") {
+      return resolveRequestLocale({
+        asPath: router.asPath,
+        pathname: router.pathname,
+        query: router.query,
+        cookieHeader: document.cookie,
+      });
+    }
+    return resolveRequestLocale({
+      asPath: router.asPath,
+      pathname: router.pathname,
+      query: router.query,
+    });
+  }, [pageProps?.locale, router.asPath, router.pathname, router.query]);
+
+  const direction = resolveDirection(locale);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.documentElement.lang = locale;
+    document.documentElement.dir = direction;
+  }, [locale, direction]);
+
   useEffect(() => {
     initParentPwaInstallPromptCapture();
     initTeacherPwaInstallPromptCapture();
@@ -116,7 +144,7 @@ export default function MyApp({ Component, pageProps }) {
       return undefined;
     }
 
-    // בפיתוח: ראה DevServiceWorkerCleanup — לא רושמים SW; מנקים רישומים ו Cache Storage.
+    // ×‘×¤×™×ª×•×—: ×¨××” DevServiceWorkerCleanup â€” ×œ× ×¨×•×©×ž×™× SW; ×ž× ×§×™× ×¨×™×©×•×ž×™× ×• Cache Storage.
     if (process.env.NODE_ENV === "development") {
       return undefined;
     }
@@ -195,9 +223,9 @@ export default function MyApp({ Component, pageProps }) {
           .then((registration) => {
             console.log("[SW] Registered successfully:", registration.scope);
             
-            // Pre-cache דפים חשובים אחרי שהדף נטען (רק במצב online)
+            // Pre-cache ×“×¤×™× ×—×©×•×‘×™× ××—×¨×™ ×©×”×“×£ × ×˜×¢×Ÿ (×¨×§ ×‘×ž×¦×‘ online)
             if (registration.active && navigator.onLine) {
-              // המתין שהדף נטען לגמרי לפני pre-caching
+              // ×”×ž×ª×™×Ÿ ×©×”×“×£ × ×˜×¢×Ÿ ×œ×’×ž×¨×™ ×œ×¤× ×™ pre-caching
               setTimeout(() => {
                 const essentialPages = [
                   '/',
@@ -212,7 +240,7 @@ export default function MyApp({ Component, pageProps }) {
               }, 3000);
             }
             
-            // Pre-cache הדף הנוכחי
+            // Pre-cache ×”×“×£ ×”× ×•×›×—×™
             if (registration.active && navigator.onLine) {
               setTimeout(() => {
                 const currentPath = window.location.pathname;
@@ -225,17 +253,17 @@ export default function MyApp({ Component, pageProps }) {
               }, 4000);
             }
             
-            // בדיקה לעדכונים כל שעה
+            // ×‘×“×™×§×” ×œ×¢×“×›×•× ×™× ×›×œ ×©×¢×”
             setInterval(() => {
               registration.update();
             }, 60 * 60 * 1000);
             
-            // טיפול בעדכונים
+            // ×˜×™×¤×•×œ ×‘×¢×“×›×•× ×™×
             registration.addEventListener('updatefound', () => {
               const newWorker = registration.installing;
               newWorker.addEventListener('statechange', () => {
                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // Service Worker חדש זמין - אפשר להציע רענון (לא אוטומטי)
+                  // Service Worker ×—×“×© ×–×ž×™×Ÿ - ××¤×©×¨ ×œ×”×¦×™×¢ ×¨×¢× ×•×Ÿ (×œ× ××•×˜×•×ž×˜×™)
                   console.log("[SW] New service worker available");
                 }
               });
@@ -273,7 +301,10 @@ export default function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        <meta name="description" content="LEO KIDS - לימוד ומשחקים לילדים, תרגול במקצועות ודוחות להורים." />
+        <meta
+          name="description"
+          content="Leo Kids â€” practice math, geometry, English, and science with progress tracking for parents."
+        />
         {isStudentPwaInstallMode ? (
           <>
             <meta name="theme-color" content={BROWSER_THEME_COLOR_BRIGHT} />
@@ -355,8 +386,9 @@ export default function MyApp({ Component, pageProps }) {
           <link key="app-manifest" rel="manifest" href={manifestHref} />
         ) : null}
         
-        <title>LEO KIDS · לימוד ומשחקים לילדים</title>
+        <title>Leo Kids Â· Learning for elementary students</title>
       </Head>
+      <I18nProvider locale={locale}>
       <OfflineIndicator />
       <CookieConsentManager />
       <StudentThemeProvider>
@@ -375,6 +407,7 @@ export default function MyApp({ Component, pageProps }) {
         )}
         </GameAudioProvider>
       </StudentThemeProvider>
+      </I18nProvider>
       <Analytics beforeSend={vercelAnalyticsBeforeSend} />
     </>
   );

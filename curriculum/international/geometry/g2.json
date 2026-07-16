@@ -1,0 +1,42 @@
+[
+  {
+    "grade": "g2",
+    "subject": "geometry",
+    "topic": "shapes_basic",
+    "skill": "shapes_basic",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "geometry",
+    "topic": "area",
+    "skill": "square_area_intro",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "geometry",
+    "topic": "solids",
+    "skill": "solids_intro",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "geometry",
+    "topic": "transformations",
+    "skill": "transformations",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

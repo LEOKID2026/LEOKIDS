@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g5",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_technology",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "english",
+    "topic": "grammar",
+    "skill": "grammar_future",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "english",
+    "topic": "translation",
+    "skill": "translation_dialogue",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "english",
+    "topic": "sentences",
+    "skill": "sentences_complex",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "english",
+    "topic": "writing",
+    "skill": "writing_essay_intro",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  }
+]

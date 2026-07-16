@@ -1,0 +1,62 @@
+[
+  {
+    "grade": "g3",
+    "subject": "geometry",
+    "topic": "angles",
+    "skill": "triangle_angles",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "geometry",
+    "topic": "quadrilaterals",
+    "skill": "quadrilaterals",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "geometry",
+    "topic": "parallel_perpendicular",
+    "skill": "parallel_perpendicular",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "geometry",
+    "topic": "perimeter",
+    "skill": "square_perimeter",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "geometry",
+    "topic": "area",
+    "skill": "square_area",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "geometry",
+    "topic": "rotation",
+    "skill": "rotation",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  }
+]

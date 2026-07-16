@@ -1,0 +1,96 @@
+{
+  "hubTitle": "Games",
+  "arcade": "Arcade",
+  "solo": "Solo games",
+  "educational": "Educational games",
+  "play": "Play",
+  "pause": "Pause",
+  "resume": "Resume",
+  "settings": "Game settings",
+  "soundOn": "Sound on",
+  "soundOff": "Sound off",
+  "youWin": "You win!",
+  "youLose": "Nice try!",
+  "draw": "It's a draw",
+  "inviteFriend": "Invite a friend",
+  "waitingForOpponent": "Waiting for opponent…",
+  "matchFound": "Match found!",
+  "connectionLost": "Connection lost. Trying again…",
+  "back": "Back",
+  "gamesBadge": "Games",
+  "hubSubtitle": "Choose the experience that fits — Leo games, offline play, and more.",
+  "hubRegularTitle": "Leo's games",
+  "hubRegularBlurb": "Leo's games — memory match, puzzles, target practice, and more.",
+  "hubOfflineTitle": "Always with Leo",
+  "hubOfflineBlurb": "Play even without internet",
+  "hubEducationalTitle": "Leo's learning games",
+  "hubEducationalBlurb": "Enrichment, thinking skills, and general knowledge",
+  "soloHubBadge": "Leo's games",
+  "soloHubTitle": "Leo's games — Kids' world",
+  "soloHubSubtitle": "Play, earn points, and collect coins and gems for your world!",
+  "soloMeta": "Solo · coins · gems",
+  "playNow": "Play now",
+  "educationalBadge": "Educational",
+  "educationalHubTitle": "Educational games",
+  "educationalHubSubtitle": "Learning games that build skills while having fun.",
+  "noGamesAvailable": "No games available right now.",
+  "arcadeBack": "Arcade",
+  "arcadeBadge": "Arcade club",
+  "arcadeHubTitle": "Leo's game club",
+  "arcadeHubSubtitle": "Play with friends — create a room or join one.",
+  "entryCostLabel": "Entry cost",
+  "selectEntryCost": "Choose entry amount",
+  "roomTypeQuick": "Quick match",
+  "roomTypePublic": "Public",
+  "playersLabel": "Players",
+  "apiSuccess": "Done",
+  "apiAlreadyQueued": "Already in queue (not charged again)",
+  "apiInsufficientFunds": "Not enough coins for this action",
+  "apiFailed": "Action failed",
+  "quickAlreadyInRoom": "Already in a room — tap Enter game",
+  "quickJoined": "Joined a player waiting in the room",
+  "quickCreated": "Quick match room created — waiting for another player",
+  "quickReady": "Ready",
+  "social": {
+    "greatGame": "Great game!",
+    "wellPlayed": "Well played!",
+    "rematch": "Rematch?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Connect Four",
+      "blurb": "Connect four · two players",
+      "players": "Players: 2"
+    },
+    "ludo": {
+      "title": "Ludo",
+      "blurb": "Ludo · family board game",
+      "players": "Players: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Snakes & Ladders",
+      "blurb": "Board 1–100 · ladders and snakes",
+      "players": "Players: 2–4"
+    },
+    "checkers": {
+      "title": "Checkers",
+      "blurb": "Classic checkers · captures required",
+      "players": "Players: 2"
+    },
+    "chess": {
+      "title": "Chess",
+      "blurb": "Classic chess · check and checkmate",
+      "players": "Players: 2"
+    },
+    "dominoes": {
+      "title": "Dominoes",
+      "blurb": "Blocking dominoes · play until out",
+      "players": "Players: 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · full line wins",
+      "players": "Players: up to 8"
+    }
+  }
+}

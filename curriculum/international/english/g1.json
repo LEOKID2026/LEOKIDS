@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g1",
+    "subject": "english",
+    "topic": "phonics",
+    "skill": "phonics_letter_sounds",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_colors",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_numbers",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_family",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "english",
+    "topic": "grammar",
+    "skill": "grammar_be",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

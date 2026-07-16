@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g3",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_weather",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "english",
+    "topic": "grammar",
+    "skill": "grammar_present_simple",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "english",
+    "topic": "translation",
+    "skill": "translation_sentences",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "english",
+    "topic": "sentences",
+    "skill": "sentences_completion",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "english",
+    "topic": "writing",
+    "skill": "writing_short",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

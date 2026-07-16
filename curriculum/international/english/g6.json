@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g6",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_culture",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "english",
+    "topic": "grammar",
+    "skill": "grammar_conditionals",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "english",
+    "topic": "translation",
+    "skill": "translation_idioms",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "english",
+    "topic": "sentences",
+    "skill": "sentences_reported",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "english",
+    "topic": "writing",
+    "skill": "writing_essay",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

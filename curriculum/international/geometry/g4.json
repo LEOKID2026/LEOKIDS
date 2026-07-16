@@ -1,0 +1,62 @@
+[
+  {
+    "grade": "g4",
+    "subject": "geometry",
+    "topic": "symmetry",
+    "skill": "symmetry",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "geometry",
+    "topic": "parallel_perpendicular",
+    "skill": "parallel_perpendicular",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "geometry",
+    "topic": "perimeter",
+    "skill": "triangle_perimeter",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "geometry",
+    "topic": "area",
+    "skill": "square_area",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "geometry",
+    "topic": "quadrilaterals",
+    "skill": "quadrilaterals",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "geometry",
+    "topic": "diagonal",
+    "skill": "diagonal_rectangle",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

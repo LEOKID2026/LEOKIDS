@@ -1,0 +1,32 @@
+[
+  {
+    "grade": "g1",
+    "subject": "geometry",
+    "topic": "shapes_basic",
+    "skill": "shapes_basic_square",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "geometry",
+    "topic": "shapes_basic",
+    "skill": "shapes_basic_rectangle",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "geometry",
+    "topic": "transformations",
+    "skill": "transformations_intro",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "grade": "g2",
+    "subject": "math",
+    "topic": "addition",
+    "skill": "vertical_addition",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "math",
+    "topic": "subtraction",
+    "skill": "vertical_subtraction",
+    "difficulty": "medium",
+    "prerequisites": [
+      "vertical_addition"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "math",
+    "topic": "multiplication",
+    "skill": "basic_multiplication",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "math",
+    "topic": "division",
+    "skill": "basic_division",
+    "difficulty": "easy",
+    "prerequisites": [
+      "basic_multiplication"
+    ],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "math",
+    "topic": "fractions",
+    "skill": "equivalent_fractions",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "math",
+    "topic": "number_sense",
+    "skill": "place_value_hundreds",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  }
+]

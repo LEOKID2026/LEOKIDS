@@ -1,0 +1,66 @@
+[
+  {
+    "grade": "g5",
+    "subject": "math",
+    "topic": "fractions",
+    "skill": "fraction_add_sub",
+    "difficulty": "hard",
+    "prerequisites": [
+      "fraction_addition"
+    ],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "math",
+    "topic": "decimals",
+    "skill": "decimal_add_sub",
+    "difficulty": "medium",
+    "prerequisites": [
+      "decimal_place_value"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "math",
+    "topic": "factors_multiples",
+    "skill": "lcm_gcf",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "math",
+    "topic": "estimation",
+    "skill": "estimation",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "math",
+    "topic": "percentages",
+    "skill": "percent_intro",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "math",
+    "topic": "word_problems",
+    "skill": "word_problems_multi_step",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  }
+]

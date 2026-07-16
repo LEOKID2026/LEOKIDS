@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g5",
+    "subject": "science",
+    "topic": "body",
+    "skill": "body_circulation",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "science",
+    "topic": "animals",
+    "skill": "animals_adaptation",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "science",
+    "topic": "plants",
+    "skill": "plants_reproduction",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "science",
+    "topic": "materials",
+    "skill": "materials_separation",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "science",
+    "topic": "earth_space",
+    "skill": "earth_water_cycle",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  }
+]

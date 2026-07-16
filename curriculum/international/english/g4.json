@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g4",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_community",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "english",
+    "topic": "grammar",
+    "skill": "grammar_past_simple",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "english",
+    "topic": "translation",
+    "skill": "translation_paragraphs",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "english",
+    "topic": "sentences",
+    "skill": "sentences_order",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "english",
+    "topic": "writing",
+    "skill": "writing_paragraph",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

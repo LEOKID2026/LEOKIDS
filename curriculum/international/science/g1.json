@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g1",
+    "subject": "science",
+    "topic": "body",
+    "skill": "body_senses",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "science",
+    "topic": "animals",
+    "skill": "animals_basic",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "science",
+    "topic": "plants",
+    "skill": "plants_growth",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "science",
+    "topic": "materials",
+    "skill": "materials_properties",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "science",
+    "topic": "earth_space",
+    "skill": "earth_weather",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  }
+]

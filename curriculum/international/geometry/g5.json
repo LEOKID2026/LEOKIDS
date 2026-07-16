@@ -1,0 +1,62 @@
+[
+  {
+    "grade": "g5",
+    "subject": "geometry",
+    "topic": "area",
+    "skill": "triangle_area",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "geometry",
+    "topic": "area",
+    "skill": "trapezoid_area",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "geometry",
+    "topic": "area",
+    "skill": "parallelogram_area",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "geometry",
+    "topic": "heights",
+    "skill": "heights_triangle",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "geometry",
+    "topic": "tiling",
+    "skill": "tiling",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g5",
+    "subject": "geometry",
+    "topic": "volume",
+    "skill": "rectangular_prism_volume",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  }
+]

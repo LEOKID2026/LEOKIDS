@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g2",
+    "subject": "science",
+    "topic": "body",
+    "skill": "body_health",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "science",
+    "topic": "animals",
+    "skill": "animals_life_cycles",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "science",
+    "topic": "plants",
+    "skill": "plants_needs",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "science",
+    "topic": "materials",
+    "skill": "materials_states",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "science",
+    "topic": "experiments",
+    "skill": "experiments_observation",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  }
+]

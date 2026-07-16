@@ -1,0 +1,68 @@
+[
+  {
+    "grade": "g6",
+    "subject": "math",
+    "topic": "ratio",
+    "skill": "ratio_problems",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "math",
+    "topic": "percentages",
+    "skill": "percent_discount",
+    "difficulty": "medium",
+    "prerequisites": [
+      "percent_intro"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "math",
+    "topic": "decimals",
+    "skill": "decimal_multiply",
+    "difficulty": "hard",
+    "prerequisites": [
+      "decimal_add_sub"
+    ],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "math",
+    "topic": "fractions",
+    "skill": "fraction_multiply",
+    "difficulty": "hard",
+    "prerequisites": [
+      "fraction_add_sub"
+    ],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "math",
+    "topic": "equations",
+    "skill": "equation_one_step",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "math",
+    "topic": "scale",
+    "skill": "scale_map",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

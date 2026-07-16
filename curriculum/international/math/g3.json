@@ -1,0 +1,59 @@
+[
+  {
+    "grade": "g3",
+    "subject": "math",
+    "topic": "multiplication",
+    "skill": "long_multiplication",
+    "difficulty": "medium",
+    "prerequisites": [
+      "basic_multiplication"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "math",
+    "topic": "division",
+    "skill": "long_division",
+    "difficulty": "medium",
+    "prerequisites": [
+      "basic_division"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "math",
+    "topic": "fractions",
+    "skill": "equivalent_fractions",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "math",
+    "topic": "order_of_operations",
+    "skill": "order_of_operations",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "math",
+    "topic": "word_problems",
+    "skill": "word_problems_add_sub",
+    "difficulty": "medium",
+    "prerequisites": [
+      "vertical_addition",
+      "vertical_subtraction"
+    ],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

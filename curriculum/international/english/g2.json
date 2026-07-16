@@ -1,0 +1,64 @@
+[
+  {
+    "grade": "g2",
+    "subject": "english",
+    "topic": "phonics",
+    "skill": "phonics_blends",
+    "difficulty": "medium",
+    "prerequisites": [
+      "phonics_letter_sounds"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_food",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "english",
+    "topic": "vocabulary",
+    "skill": "vocab_school",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "english",
+    "topic": "translation",
+    "skill": "translation_classroom",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "english",
+    "topic": "grammar",
+    "skill": "grammar_plural",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g2",
+    "subject": "english",
+    "topic": "writing",
+    "skill": "writing_words",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  }
+]

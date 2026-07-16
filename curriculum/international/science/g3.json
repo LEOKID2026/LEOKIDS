@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g3",
+    "subject": "science",
+    "topic": "body",
+    "skill": "body_systems_intro",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "science",
+    "topic": "animals",
+    "skill": "animals_habitats",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "science",
+    "topic": "plants",
+    "skill": "plants_parts",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "science",
+    "topic": "materials",
+    "skill": "materials_mixtures",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g3",
+    "subject": "science",
+    "topic": "earth_space",
+    "skill": "earth_space_moon",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "grade": "g6",
+    "subject": "geometry",
+    "topic": "pythagoras",
+    "skill": "pythagoras_hyp",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "geometry",
+    "topic": "circles",
+    "skill": "circle_area",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "geometry",
+    "topic": "circles",
+    "skill": "circle_perimeter",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "geometry",
+    "topic": "volume",
+    "skill": "cylinder_volume",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "geometry",
+    "topic": "volume",
+    "skill": "cone_volume",
+    "difficulty": "hard",
+    "prerequisites": [
+      "cylinder_volume"
+    ],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "geometry",
+    "topic": "angles",
+    "skill": "triangle_angles",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  }
+]

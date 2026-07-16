@@ -1,0 +1,54 @@
+[
+  {
+    "grade": "g1",
+    "subject": "math",
+    "topic": "number_sense",
+    "skill": "counting_to_20",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "math",
+    "topic": "number_sense",
+    "skill": "number_line",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "math",
+    "topic": "addition",
+    "skill": "vertical_addition",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "math",
+    "topic": "subtraction",
+    "skill": "vertical_subtraction",
+    "difficulty": "easy",
+    "prerequisites": [
+      "vertical_addition"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g1",
+    "subject": "math",
+    "topic": "compare",
+    "skill": "compare_numbers",
+    "difficulty": "easy",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  }
+]

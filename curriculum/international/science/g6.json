@@ -1,0 +1,52 @@
+[
+  {
+    "grade": "g6",
+    "subject": "science",
+    "topic": "body",
+    "skill": "body_respiration",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "science",
+    "topic": "animals",
+    "skill": "animals_classification",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "science",
+    "topic": "plants",
+    "skill": "plants_cells_intro",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "science",
+    "topic": "materials",
+    "skill": "materials_energy",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g6",
+    "subject": "science",
+    "topic": "environment",
+    "skill": "environment_climate",
+    "difficulty": "hard",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "grade": "g4",
+    "subject": "math",
+    "topic": "division",
+    "skill": "long_division",
+    "difficulty": "hard",
+    "prerequisites": [
+      "long_division"
+    ],
+    "masteryTarget": 0.85,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "math",
+    "topic": "fractions",
+    "skill": "fraction_addition",
+    "difficulty": "medium",
+    "prerequisites": [
+      "equivalent_fractions"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "math",
+    "topic": "decimals",
+    "skill": "decimal_place_value",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "math",
+    "topic": "powers",
+    "skill": "powers_intro",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.75,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "math",
+    "topic": "estimation",
+    "skill": "estimation_add",
+    "difficulty": "medium",
+    "prerequisites": [],
+    "masteryTarget": 0.7,
+    "contentLocale": "en"
+  },
+  {
+    "grade": "g4",
+    "subject": "math",
+    "topic": "division",
+    "skill": "div_with_remainder",
+    "difficulty": "medium",
+    "prerequisites": [
+      "long_division"
+    ],
+    "masteryTarget": 0.8,
+    "contentLocale": "en"
+  }
+]
