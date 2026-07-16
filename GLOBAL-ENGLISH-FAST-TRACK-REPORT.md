@@ -8,8 +8,9 @@
 | **Remote** | `origin` → `https://github.com/LEOKID2026/LEOKIDS.git` (global; not Israeli) |
 | **HEAD before this round** | `c9a4066` (`docs: align fast-track report with pushed HEAD`) — local and `origin/main` matched |
 | **Prior report error** | Fast-track report briefly claimed `f421dfd` while delivered HEAD was `c9a4066` — report was stale |
-| **HEAD after this commit** | `6938fa0` (`fix: Production acceptance — English chrome, login crash, Hebrew CI hard-fail`) |
-| **Vercel** | Deploy from GitHub `leo-kids-global`; verify Production SHA matches `6938fa0` (or later) after deploy succeeds |
+| **HEAD after this push** | `6a72952` (`fix: Production acceptance — English chrome, login crash, Hebrew CI hard-fail`) |
+| **origin/main** | `6a72952` (pushed) |
+| **Vercel** | Deploy from GitHub `leo-kids-global`; verify Production SHA matches `6a72952` after deploy succeeds |
 
 ## Scope confirmations
 
