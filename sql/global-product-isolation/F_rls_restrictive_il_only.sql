@@ -66,7 +66,8 @@ END $$;
 ALTER TABLE public.students ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_students_il_only
-  AS RESTRICTIVE ON public.students
+  ON public.students
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_product_is_il(product_id))
   WITH CHECK (public.v3_product_is_il(product_id));
@@ -75,7 +76,8 @@ CREATE POLICY v3_restrict_students_il_only
 ALTER TABLE public.student_access_codes ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_sac_il_only
-  AS RESTRICTIVE ON public.student_access_codes
+  ON public.student_access_codes
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -84,7 +86,8 @@ CREATE POLICY v3_restrict_sac_il_only
 ALTER TABLE public.student_sessions ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_student_sessions_il_only
-  AS RESTRICTIVE ON public.student_sessions
+  ON public.student_sessions
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -93,7 +96,8 @@ CREATE POLICY v3_restrict_student_sessions_il_only
 ALTER TABLE public.learning_sessions ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_learning_sessions_il_only
-  AS RESTRICTIVE ON public.learning_sessions
+  ON public.learning_sessions
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -102,7 +106,8 @@ CREATE POLICY v3_restrict_learning_sessions_il_only
 ALTER TABLE public.answers ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_answers_il_only
-  AS RESTRICTIVE ON public.answers
+  ON public.answers
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -111,7 +116,8 @@ CREATE POLICY v3_restrict_answers_il_only
 ALTER TABLE public.parent_reports ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_parent_reports_il_only
-  AS RESTRICTIVE ON public.parent_reports
+  ON public.parent_reports
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -120,7 +126,8 @@ CREATE POLICY v3_restrict_parent_reports_il_only
 ALTER TABLE public.student_coin_balances ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_coin_balances_il_only
-  AS RESTRICTIVE ON public.student_coin_balances
+  ON public.student_coin_balances
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -128,7 +135,8 @@ CREATE POLICY v3_restrict_coin_balances_il_only
 ALTER TABLE public.coin_transactions ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_coin_tx_il_only
-  AS RESTRICTIVE ON public.coin_transactions
+  ON public.coin_transactions
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -136,7 +144,8 @@ CREATE POLICY v3_restrict_coin_tx_il_only
 ALTER TABLE public.student_inventory ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_inventory_il_only
-  AS RESTRICTIVE ON public.student_inventory
+  ON public.student_inventory
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
@@ -162,7 +171,8 @@ BEGIN
        ) THEN
       EXECUTE format('ALTER TABLE public.%I ENABLE ROW LEVEL SECURITY', t);
       EXECUTE format(
-        'CREATE POLICY v3_restrict_%s_il_only AS RESTRICTIVE ON public.%I
+        'CREATE POLICY v3_restrict_%s_il_only ON public.%I
+         AS RESTRICTIVE
          FOR ALL TO authenticated
          USING (public.v3_student_is_il_visible(student_id))
          WITH CHECK (public.v3_student_is_il_visible(student_id))',
@@ -182,7 +192,8 @@ BEGIN
      ) THEN
     EXECUTE 'ALTER TABLE public.teacher_students ENABLE ROW LEVEL SECURITY';
     EXECUTE $p$
-      CREATE POLICY v3_restrict_teacher_students_il_only AS RESTRICTIVE ON public.teacher_students
+      CREATE POLICY v3_restrict_teacher_students_il_only ON public.teacher_students
+         AS RESTRICTIVE
       FOR ALL TO authenticated
       USING (public.v3_student_is_il_visible(student_id))
       WITH CHECK (public.v3_student_is_il_visible(student_id))
@@ -196,7 +207,8 @@ BEGIN
      ) THEN
     EXECUTE 'ALTER TABLE public.teacher_class_students ENABLE ROW LEVEL SECURITY';
     EXECUTE $p$
-      CREATE POLICY v3_restrict_teacher_class_students_il_only AS RESTRICTIVE ON public.teacher_class_students
+      CREATE POLICY v3_restrict_teacher_class_students_il_only ON public.teacher_class_students
+         AS RESTRICTIVE
       FOR ALL TO authenticated
       USING (public.v3_student_is_il_visible(student_id))
       WITH CHECK (public.v3_student_is_il_visible(student_id))
@@ -210,7 +222,8 @@ BEGIN
   IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='student_subject_permissions') THEN
     EXECUTE 'ALTER TABLE public.student_subject_permissions ENABLE ROW LEVEL SECURITY';
     EXECUTE $p$
-      CREATE POLICY v3_restrict_ssp_il_only AS RESTRICTIVE ON public.student_subject_permissions
+      CREATE POLICY v3_restrict_ssp_il_only ON public.student_subject_permissions
+         AS RESTRICTIVE
       FOR ALL TO authenticated
       USING (public.v3_student_is_il_visible(student_id))
       WITH CHECK (public.v3_student_is_il_visible(student_id))
@@ -219,7 +232,8 @@ BEGIN
   IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='student_learning_access_preferences') THEN
     EXECUTE 'ALTER TABLE public.student_learning_access_preferences ENABLE ROW LEVEL SECURITY';
     EXECUTE $p$
-      CREATE POLICY v3_restrict_slap_il_only AS RESTRICTIVE ON public.student_learning_access_preferences
+      CREATE POLICY v3_restrict_slap_il_only ON public.student_learning_access_preferences
+         AS RESTRICTIVE
       FOR ALL TO authenticated
       USING (public.v3_student_is_il_visible(student_id))
       WITH CHECK (public.v3_student_is_il_visible(student_id))
@@ -228,7 +242,8 @@ BEGIN
   IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='student_subject_permissions_change_log') THEN
     EXECUTE 'ALTER TABLE public.student_subject_permissions_change_log ENABLE ROW LEVEL SECURITY';
     EXECUTE $p$
-      CREATE POLICY v3_restrict_ssp_log_il_only AS RESTRICTIVE ON public.student_subject_permissions_change_log
+      CREATE POLICY v3_restrict_ssp_log_il_only ON public.student_subject_permissions_change_log
+         AS RESTRICTIVE
       FOR ALL TO authenticated
       USING (public.v3_student_is_il_visible(student_id))
       WITH CHECK (public.v3_student_is_il_visible(student_id))
@@ -257,7 +272,8 @@ BEGIN
        ) THEN
       EXECUTE format('ALTER TABLE public.%I ENABLE ROW LEVEL SECURITY', t);
       EXECUTE format(
-        'CREATE POLICY v3_restrict_%s_il_only AS RESTRICTIVE ON public.%I
+        'CREATE POLICY v3_restrict_%s_il_only ON public.%I
+         AS RESTRICTIVE
          FOR ALL TO authenticated
          USING (public.v3_student_is_il_visible(student_id))
          WITH CHECK (public.v3_student_is_il_visible(student_id))',
@@ -277,7 +293,8 @@ BEGIN
       WHERE table_schema='public' AND table_name='parent_copilot_usage_log' AND column_name='product_id'
     ) THEN
       EXECUTE $p$
-        CREATE POLICY v3_restrict_copilot_il_only AS RESTRICTIVE ON public.parent_copilot_usage_log
+        CREATE POLICY v3_restrict_copilot_il_only ON public.parent_copilot_usage_log
+         AS RESTRICTIVE
         FOR ALL TO authenticated
         USING (public.v3_product_is_il(product_id))
         WITH CHECK (public.v3_product_is_il(product_id))
@@ -289,14 +306,16 @@ END $$;
 -- Product settings tables --------------------------------------------------
 DROP POLICY IF EXISTS v3_restrict_ppas_il_only ON public.product_parent_account_settings;
 CREATE POLICY v3_restrict_ppas_il_only
-  AS RESTRICTIVE ON public.product_parent_account_settings
+  ON public.product_parent_account_settings
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (product_id = 'leokids_il')
   WITH CHECK (product_id = 'leokids_il');
 
 DROP POLICY IF EXISTS v3_restrict_pgms_il_only ON public.product_guest_mode_settings;
 CREATE POLICY v3_restrict_pgms_il_only
-  AS RESTRICTIVE ON public.product_guest_mode_settings
+  ON public.product_guest_mode_settings
+  AS RESTRICTIVE
   FOR ALL TO authenticated
   USING (product_id = 'leokids_il')
   WITH CHECK (product_id = 'leokids_il');
@@ -304,18 +323,21 @@ CREATE POLICY v3_restrict_pgms_il_only
 -- Membership: authenticated cannot INSERT/UPDATE/DELETE
 DROP POLICY IF EXISTS v3_restrict_upm_no_write ON public.user_product_memberships;
 CREATE POLICY v3_restrict_upm_no_write
-  AS RESTRICTIVE ON public.user_product_memberships
+  ON public.user_product_memberships
+  AS RESTRICTIVE
   FOR INSERT TO authenticated
   WITH CHECK (false);
 
 CREATE POLICY v3_restrict_upm_no_update
-  AS RESTRICTIVE ON public.user_product_memberships
+  ON public.user_product_memberships
+  AS RESTRICTIVE
   FOR UPDATE TO authenticated
   USING (false)
   WITH CHECK (false);
 
 CREATE POLICY v3_restrict_upm_no_delete
-  AS RESTRICTIVE ON public.user_product_memberships
+  ON public.user_product_memberships
+  AS RESTRICTIVE
   FOR DELETE TO authenticated
   USING (false);
 

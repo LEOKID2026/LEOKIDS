@@ -252,6 +252,11 @@ async function testSqlPackageSafety() {
   assert.match(codeOnly, /REVOKE ALL[\s\S]*FROM authenticated/);
   assert.match(codeOnly, /trg_v3_auto_il_membership_on_student/);
   assert.match(codeOnly, /AS RESTRICTIVE/);
+  assert.doesNotMatch(fSql, /AS RESTRICTIVE ON/);
+  assert.doesNotMatch(all, /AS RESTRICTIVE ON/);
+  assert.match(fSql, /ON public\.\S+\s+AS RESTRICTIVE/);
+  // Dynamic format strings must also use ON ... AS RESTRICTIVE (not AS RESTRICTIVE ON)
+  assert.match(fSql, /CREATE POLICY v3_restrict_%s_il_only ON public\.%I\s+AS RESTRICTIVE/);
   assert.match(codeOnly, /create_global_parent_student_with_subject_defaults/);
 
   // NULL is not IL
