@@ -11,7 +11,7 @@
 | When | SHA |
 |------|-----|
 | Start (matched `origin/main`) | `fafd195a48e3144bac194fdac566f49af4234c26` |
-| End | `4630a576c8d17682db41408c02d0ca0adf3af6ed` *(plus follow-up tests/report commit)* |
+| End | `9afd9568090a4354ce694bd84178f08a460bd1ab` |
 
 ---
 
@@ -21,7 +21,7 @@
 |-----|---------|
 | `2b2cd2f` | `feat(global): enforce server-side product isolation on parent and student APIs` |
 | `4630a57` | `feat(sql): add global-product-isolation-v2 staged package` |
-| *(next)* | tests + `GLOBAL-PRODUCT-ISOLATION-V2-REPORT.md` |
+| `9afd956` | `test(global): add product-isolation suite and v2 completion report` |
 
 ---
 
