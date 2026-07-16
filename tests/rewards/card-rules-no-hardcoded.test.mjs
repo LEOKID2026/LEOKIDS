@@ -64,7 +64,7 @@ describe("card-rules-no-hardcoded", () => {
       "utf8"
     );
     assert.match(conversion, /feature_disabled/);
-    assert.match(conversion, /מכור עותק כפול בחנות/);
+    assert.match(conversion, /sell a duplicate in the shop/i);
 
     const shop = readFileSync(join(ROOT, "lib/rewards/server/reward-shop.server.js"), "utf8");
     assert.match(shop, /getDuplicateSellbackPercent/);

@@ -15,7 +15,8 @@ try {
   // the hint still forbids building reports from browser-local device data.
   assert.match(
     PARENT_REPORT_PORTAL_GATE.hintHe,
-    /דפדפן|מכשיר|מקומי|נתונים שמורים/
+    /browser|device|local|stored/i,
+    "portal gate hint must forbid building reports from local browser/device data",
   );
   for (const rel of pages) {
     const src = readFileSync(join(TRUTH_GATES_ROOT, rel), "utf8");

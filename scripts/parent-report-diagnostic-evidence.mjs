@@ -114,9 +114,8 @@ function recFromUnit(u, gradeKey = "g4") {
   const rec = recFromUnit(u);
   assert.equal(rec.thinEvidenceDowngraded, false, "math strong: not thin downgraded");
   assert.equal(rec.dataSufficiencyLevel, "strong");
-  assert.notEqual(
-    rec.recommendedStepLabelHe,
-    "לאסוף עוד מידע לפני החלטה",
+  assert.ok(
+    !/collect more (?:information|data)|לאסוף עוד מידע/i.test(String(rec.recommendedStepLabelHe || "")),
     "high volume must not get collect-more-data label",
   );
 }
@@ -179,8 +178,14 @@ for (const [sid, key, name] of [
   const k1 = executiveRowDedupeKey(rows[0]);
   const k2 = executiveRowDedupeKey(rows[1]);
   assert.notEqual(k1, k2, "grade-split rows must not dedupe together");
-  assert.ok(rows[0].labelHe.includes("g4") || rows[0].labelHe.includes("כיתה"));
-  assert.ok(rows[1].labelHe.includes("g5") || rows[1].labelHe.includes("מעל"));
+  assert.ok(
+    /g4|grade\s*4|grade\s*4th/i.test(String(rows[0].labelHe || "")),
+    "g4 row label must expose grade 4",
+  );
+  assert.ok(
+    /g5|grade\s*5|above|higher/i.test(String(rows[1].labelHe || "")),
+    "g5 higher-grade row label must expose grade 5 or above-registered wording",
+  );
 }
 
 // ─── H: Subskill limitation only when metadata truly absent ─────────────────
@@ -204,7 +209,10 @@ for (const [sid, key, name] of [
     uncMissing.includes(SUBSKILL_DETAIL_LIMITATION_HE.slice(0, 20)),
     "subskill limitation when pattern metadata absent",
   );
-  assert.ok(!uncMissing.includes("עדיין מוקדם לקבוע"), "high volume must not use early generic thin hedge");
+  assert.ok(
+    !/still too early to (?:decide|determine)|עדיין מוקדם לקבוע/i.test(uncMissing),
+    "high volume must not use early generic thin hedge",
+  );
 
   const narPresent = buildNarrativeContractV1({
     topicKey: "fractions::grade:g5",
@@ -253,9 +261,10 @@ const { buildGradeSplitBaseReport } = await import(
   assert.ok(g5Unit, "g5 v2 unit exists");
   const weakRecDirect = recFromUnit(g5Unit, "g5");
   assert.equal(weakRecDirect.thinEvidenceDowngraded, false, "g5 weak: sufficient volume at unit level");
-  assert.notEqual(
-    weakRecDirect.recommendedStepLabelHe,
-    "לאסוף עוד מידע לפני החלטה",
+  assert.ok(
+    !/collect more (?:information|data)|לאסוף עוד מידע/i.test(
+      String(weakRecDirect.recommendedStepLabelHe || ""),
+    ),
     "g5 weak: 66 Q must not get collect-more-data label at unit level",
   );
   assert.equal(classifyTopicEvidenceBand(weakRecDirect.questions), "strong", "g5 weak: 66 Q evidence band");
