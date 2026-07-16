@@ -18,9 +18,9 @@ export default function PracticeSeoRelatedGuides({ guides, isBright }) {
     <aside
       className={`space-y-2 ${shell}`}
       data-testid="practice-related-guides"
-      aria-label="מדריכים קשורים"
+      aria-label="Related guides"
     >
-      <h2 className={`text-base font-bold md:text-lg ${title}`}>מדריכים קשורים</h2>
+      <h2 className={`text-base font-bold md:text-lg ${title}`}>Related guides</h2>
       <ul className="space-y-1.5 text-sm md:text-base">
         {guides.map((g) => (
           <li key={g.href}>

@@ -22,8 +22,8 @@ export const PARENT_PROMO_MOBILE_SRC = "/videos/promo/leo-kids-parent-mobile.mp4
 export default function ParentPromoVideo({
   desktopSrc = PARENT_PROMO_DESKTOP_SRC,
   mobileSrc = PARENT_PROMO_MOBILE_SRC,
-  title = "הכירו את ליאו קידס",
-  description = "צפו בסרטון קצר שמציג את הכלים להורים ואת חוויית הלמידה לילדים.",
+  title = "Meet LEO KIDS",
+  description = "Watch a short video about parent tools and how children learn on LEO KIDS.",
   isBright = false,
   compact = false,
   compactHome = false,

@@ -2,6 +2,7 @@
  * English question generation (extracted from english-master.js for reuse in classroom activities + tests).
  */
 import { sanitizeQuestionForStudentDisplay } from "./student-question-stem-sanitizer.js";
+import { localizeLearningQuestion } from "./learning-content-en/index.js";
 import { mergeDiagnosticContractIntoParams } from "./diagnostic-question-contract.js";
 import { attachCanonicalMetadataToEnglishQuestion } from "../lib/learning/english-canonical-metadata.js";
 import { mcqCellValue } from "./mcq-option-cell.js";
@@ -988,7 +989,10 @@ export function generateQuestion(
     }
   }
 
-  return finalized;
+  return localizeLearningQuestion(finalized, {
+    subject: "english",
+    contentLocale: "en",
+  });
 }
 
 export { ENGLISH_GRADES, ENGLISH_GRADE_ORDER };

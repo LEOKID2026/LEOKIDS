@@ -2,16 +2,16 @@
 
 /** @type {PublicSeoFooterCta} */
 export const DEFAULT_PUBLIC_SEO_FOOTER_CTA = {
-  title: "מוכנים להתחיל?",
-  body: "פתחו חשבון הורה, הוסיפו את הילד, ותנו לו להתרגל בקצב שנוח לכם.",
-  primary: { href: "/parent/login", label: "כניסה / הרשמה להורים" },
-  secondary: { href: "/parents", label: "להכיר את פורטל ההורים" },
+  title: "Ready to start?",
+  body: "Open a parent account, add your child, and let them practice at a pace that works for you.",
+  primary: { href: "/parent/login", label: "Parent login / sign up" },
+  secondary: { href: "/parents", label: "Explore the parent portal" },
 };
 
 /** @type {PublicSeoFooterCta} */
 export const WORKSHEETS_PUBLIC_SEO_FOOTER_CTA = {
-  title: "רוצים ליצור עוד דפים ולפתוח את כל הנושאים?",
-  body: "במערכת המלאה להורים אפשר ליצור דפי עבודה ללא הגבלה, לבחור נושאים נוספים ולשלב את הדפים עם התרגול הדיגיטלי ועם המידע על התקדמות הילד.",
-  primary: { href: "/parents", label: "למערכת המלאה להורים" },
-  secondary: { href: "/practice", label: "לתחומי התרגול" },
+  title: "Want to create more sheets and unlock every topic?",
+  body: "In the full parent portal you can create unlimited worksheets, choose additional topics, and combine sheets with digital practice and progress tracking.",
+  primary: { href: "/parents", label: "Full parent portal" },
+  secondary: { href: "/practice", label: "All practice areas" },
 };

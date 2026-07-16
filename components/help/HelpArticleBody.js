@@ -25,7 +25,7 @@ export default function HelpArticleBody({ blocks, audience = "parent" }) {
 
         if (block.kind === "paragraph") {
           return (
-            <p key={key} className="text-right m-0">
+            <p key={key} className="text-left m-0">
               {block.text}
             </p>
           );
@@ -35,7 +35,7 @@ export default function HelpArticleBody({ blocks, audience = "parent" }) {
           const Tag = block.level === 3 ? "h3" : "h2";
           const cls = block.level === 3 ? SP.articleH3 : SP.articleH2;
           return (
-            <Tag key={key} id={block.id} className={`text-right scroll-mt-24 ${cls}`}>
+            <Tag key={key} id={block.id} className={`text-left scroll-mt-24 ${cls}`}>
               {block.text}
             </Tag>
           );
@@ -46,7 +46,7 @@ export default function HelpArticleBody({ blocks, audience = "parent" }) {
           return (
             <ListTag
               key={key}
-              className={`text-right pr-5 space-y-2 ${block.ordered ? "list-decimal" : "list-disc"}`}
+              className={`text-left pl-5 space-y-2 ${block.ordered ? "list-decimal" : "list-disc"}`}
             >
               {block.items.map((item, j) => (
                 <li key={j}>{item}</li>
@@ -59,7 +59,7 @@ export default function HelpArticleBody({ blocks, audience = "parent" }) {
           return (
             <aside
               key={key}
-              className={`rounded-xl border px-4 py-3 text-right text-sm sm:text-base ${calloutStyles[block.tone] || calloutStyles.info}`}
+              className={`rounded-xl border px-4 py-3 text-left text-sm sm:text-base ${calloutStyles[block.tone] || calloutStyles.info}`}
               role="note"
             >
               {block.text}
@@ -96,7 +96,7 @@ export default function HelpArticleBody({ blocks, audience = "parent" }) {
 
         if (block.kind === "disclaimerQuote") {
           return (
-            <aside key={key} className={SP.disclaimer} role="note" dir="rtl">
+            <aside key={key} className={SP.disclaimer} role="note">
               <h2 className={SP.disclaimerTitle}>{block.title}</h2>
               <div className={SP.disclaimerText}>
                 {block.paragraphs.map((p, j) => (

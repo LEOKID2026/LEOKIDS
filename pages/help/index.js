@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
 import HelpHubCard from "../../components/help/HelpHubCard";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
@@ -28,13 +28,13 @@ export default function HelpCenterHome() {
         description={helpSeo.description}
         canonicalPath={helpSeo.canonicalPath}
       />
-      <div dir="rtl" className={SP.helpWrap}>
+      <div className={SP.helpWrap}>
         <header className="text-center space-y-4">
-          <p className={SP.badge}>עזרה · מדריכים · שאלות נפוצות</p>
-          <h1 className={SP.helpH1}>מרכז עזרה</h1>
+          <p className={SP.badge}>Help · Guides · FAQ</p>
+          <h1 className={SP.helpH1}>Help center</h1>
           <p className={SP.helpSubtitle}>
-            מדריכים בעברית להורים ולילדים - איך להשתמש באתר, איך לקרוא את הדוח,
-            ואיך לתרגל בכל מקצוע.
+            Guides for parents and students — how to use the site, read reports, and practice by
+            subject.
           </p>
         </header>
 

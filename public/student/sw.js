@@ -17,8 +17,8 @@ const GENERATED = self.__STUDENT_OFFLINE_PRECACHE__ || {
 };
 
 const CACHE_NAME = STUDENT_OFFLINE_FULL_SW_ENABLED
-  ? "lk-global-student-offline-v1-full"
-  : "lk-global-student-offline-v1";
+  ? "lk-global-student-offline-v2-full"
+  : "lk-global-student-offline-v2";
 
 /** Cache API only supports full 200 responses — not 206 Partial Content (audio/video range). */
 function isCacheableResponse(response) {

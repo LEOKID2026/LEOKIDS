@@ -11,9 +11,11 @@ import {
 import { isCapacitorNative } from "../../lib/pwa/pwa-install-prompt";
 import { logPwaInstallDiagnostics, logPwaInstallEvent } from "../../lib/pwa/pwa-install-debug";
 import { getPwaInstallPageTheme } from "../../lib/pwa/pwa-install-page-theme.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /** Parent install page — explicit button only. Success only on appinstalled or standalone parent PWA. */
 export default function ParentPwaInstallLauncher({ isBright = false }) {
+  const t = useT();
   const T = useMemo(() => getPwaInstallPageTheme("parent", isBright).launcher, [isBright]);
   const hasNativePrompt = useParentPwaInstallPromptAvailable();
   const promptInstall = usePromptParentPwaInstall();
@@ -87,35 +89,28 @@ export default function ParentPwaInstallLauncher({ isBright = false }) {
   };
 
   if (isCapacitorNative()) {
-    return <p className={T.nativeMsg}>התקנת PWA זמינה בדפדפן, לא באפליקציה המותקנת.</p>;
+    return <p className={T.nativeMsg}>{t("ui.pwa.nativeOnlyBrowser")}</p>;
   }
 
   if (runningStandalone || installConfirmed) {
-    return (
-      <p className={T.successMsg}>P LEO KIDS מותקנת. פתחי את האייקון P LEO KIDS ממסך הבית.</p>
-    );
+    return <p className={T.successMsg}>{t("ui.pwa.installedParent")}</p>;
   }
 
   return (
     <div className="flex w-full max-w-xs flex-col items-center gap-4">
       <button type="button" onClick={handleInstallClick} className={T.installBtn}>
-        התקן P LEO KIDS
+        {t("ui.pwa.installBtnParent")}
       </button>
 
-      {promptAccepted ? (
-        <p className={T.infoMsg}>
-          Chrome אישר את ההתקנה. אם האייקון P LEO KIDS לא הופיע במסך הבית תוך דקה, רענן את הדף ונסה
-          שוב. אם עדיין אין אייקון - הסר התקנות קודמות של האתר מהגדרות האפליקציות.
-        </p>
-      ) : null}
+      {promptAccepted ? <p className={T.infoMsg}>{t("ui.pwa.promptAcceptedParent")}</p> : null}
 
       {installUnavailable ? (
         <p className={T.warnMsg}>
           {unavailableReason === "consumed"
-            ? "חלון ההתקנה כבר נוצל. רענן את הדף כדי לנסות שוב, אם Chrome עדיין מאפשר."
+            ? t("ui.pwa.unavailableConsumed")
             : unavailableReason === "error"
-              ? "חלון ההתקנה נכשל. רענן את הדף ונסה שוב."
-              : "Chrome לא הציע חלון התקנה ל-P LEO KIDS כרגע. ודא/י ש-LEO KIDS מותקנת, ונסה/י רענון - שתי האפליקציות אמורות להיות נפרדות."}
+              ? t("ui.pwa.unavailableError")
+              : t("ui.pwa.unavailableNoPromptParent")}
         </p>
       ) : null}
     </div>

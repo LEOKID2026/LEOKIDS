@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useSharedShellUi } from "../../hooks/useSharedShellUi.js";
 
 const MOBILE_MQ = "(max-width: 640px)";
-const PREVIEW_LABEL = "צפו בסרטון הדרכה";
-const CLOSE_LABEL = "סגירת סרטון";
+const PREVIEW_LABEL = "Watch tutorial video";
+const CLOSE_LABEL = "Close video";
 
 function pickViewport(sourcesByViewport) {
   if (!sourcesByViewport) return null;
@@ -153,10 +153,10 @@ export default function HelpVideoEmbed({
   if (!resolved?.webm && !resolved?.mp4) return null;
 
   const modalLabel =
-    activeVp === "mobile" ? "סרטון הדרכה (נייד)" : "סרטון הדרכה (מחשב)";
+    activeVp === "mobile" ? "Tutorial video (mobile)" : "Tutorial video (desktop)";
 
   return (
-    <div className="my-4 space-y-2 max-w-full" dir="rtl">
+    <div className="my-4 space-y-2 max-w-full">
       <button
         type="button"
         data-help-video-preview="true"
@@ -189,13 +189,13 @@ export default function HelpVideoEmbed({
 
       {duration ? (
         <p className={SP.videoDuration}>
-          משך משוער: {Math.max(1, Math.round(duration / 60))} דקות
+          Estimated length: {Math.max(1, Math.round(duration / 60))} min
         </p>
       ) : null}
 
       {transcriptHe ? (
         <details className={SP.videoTranscript}>
-          <summary className={SP.videoTranscriptSummary}>תמלול</summary>
+          <summary className={SP.videoTranscriptSummary}>Transcript</summary>
           <p className={SP.videoTranscriptText}>{transcriptHe}</p>
         </details>
       ) : null}
@@ -223,7 +223,7 @@ export default function HelpVideoEmbed({
                 className={SP.videoModalClose}
                 aria-label={CLOSE_LABEL}
               >
-                סגור
+                Close
               </button>
             </div>
             <div className={SP.videoModalBody}>
@@ -246,9 +246,9 @@ export default function HelpVideoEmbed({
                 {captionsUrl ? (
                   <track
                     kind="captions"
-                    srcLang="he"
+                    srcLang="en"
                     src={captionsUrl}
-                    label="עברית"
+                    label="English"
                   />
                 ) : null}
               </video>

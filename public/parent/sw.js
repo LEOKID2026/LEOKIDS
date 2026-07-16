@@ -2,7 +2,7 @@
 // Keeps parent install separate from the kids SW at scope /.
 // Cache names use lk-global- prefix (aligned with public/student/sw.js).
 
-const CACHE_NAME = "lk-global-parent-v1";
+const CACHE_NAME = "lk-global-parent-v2";
 const CACHE_PREFIX = "lk-global-parent-";
 
 self.addEventListener("install", (event) => {

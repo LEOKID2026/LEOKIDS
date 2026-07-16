@@ -12,7 +12,7 @@ import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 export default function PublicSeoWideCardGrid({
   cards,
   isBright,
-  heading = "תחומי תרגול",
+  heading = "Practice areas",
   testId,
 }) {
   if (!cards?.length) return null;

@@ -9,41 +9,20 @@ import GamesHubNavBar from "../components/games/GamesHubNavBar.jsx";
 import GamesHubHeader from "../components/games/GamesHubHeader.jsx";
 import { useStudentGameAccess } from "../hooks/useStudentGameAccess.js";
 import { hubCardKeyToCategory, GAME_ACCESS_STATES } from "../lib/games/game-catalog.constants.js";
-const GAME_HUB_CARDS = [
-  {
-    key: "regular",
-    title: "המשחקים של ליאו",
-    emoji: "🎮",
-    blurb: "משחקי ליאו הקלאסיים - ריצה, טיסה, חידות ועוד.",
-    href: "/game",
-  },
-  {
-    key: "online",
-    title: "משחקים עם חברים",
-    emoji: "🌐",
-    blurb: "חדרי משחק מרובי משתתפים עם חברים ושחקנים אחרים.",
-    href: "/student/arcade",
-  },
-  {
-    key: "offline",
-    title: "משחקים כל הזמן עם ליאו",
-    emoji: "🔌",
-    blurb: "משחקים על אותו מכשיר - גם בלי אינטרנט.",
-    href: "/offline",
-  },
-  {
-    key: "educational",
-    title: "המשחקים החינוכיים של ליאו",
-    emoji: "📚",
-    blurb: "משחקי העשרה, חשיבה וידע כללי",
-    href: "/student/educational-games",
-  },
+import { useT } from "../lib/i18n/I18nProvider.jsx";
+
+const GAME_HUB_CARD_KEYS = [
+  { key: "regular", titleKey: "games.hubRegularTitle", blurbKey: "games.hubRegularBlurb", emoji: "🎮", href: "/game" },
+  { key: "online", titleKey: "games.hubOnlineTitle", blurbKey: "games.hubOnlineBlurb", emoji: "🌐", href: "/student/arcade" },
+  { key: "offline", titleKey: "games.hubOfflineTitle", blurbKey: "games.hubOfflineBlurb", emoji: "🔌", href: "/offline" },
+  { key: "educational", titleKey: "games.hubEducationalTitle", blurbKey: "games.hubEducationalBlurb", emoji: "📚", href: "/student/educational-games" },
 ];
 
 const gamesSeo = getPublicPageSeo("games");
 
 export default function GamesHubPage() {
   useIOSViewportFix();
+  const t = useT();
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
   const { state, categoryState, isGuest } = useStudentGameAccess();
@@ -55,19 +34,19 @@ export default function GamesHubPage() {
         description={gamesSeo.description}
         canonicalPath={gamesSeo.canonicalPath}
       />
-      <main className={GH.pageWrap} dir="rtl">
+      <main className={GH.pageWrap} dir="ltr" lang="en">
         <div className={`${GH.container} space-y-4`}>
           <GamesHubNavBar
             backHref="/student/home"
-            backLabel="חזרה"
-            badge="🎯 משחקים"
+            backLabel={t("games.back")}
+            badge={`🎯 ${t("games.gamesBadge")}`}
             backBtnClass={GH.backBtn}
             badgeClass={GH.badge}
           />
 
           <GamesHubHeader
             title=""
-            subtitle="בחרו את סוג החוויה שמתאימה לכם - משחקי ליאו, משחקים ללא אינטרנט, או משחקים עם חברים."
+            subtitle={t("games.hubSubtitle")}
             titleClass={GH.hubTitle}
             subtitleClass={GH.hubSub}
           />
@@ -75,7 +54,7 @@ export default function GamesHubPage() {
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {state === "loading"
               ? null
-              : GAME_HUB_CARDS.map((card) => {
+              : GAME_HUB_CARD_KEYS.map((card) => {
                 const category = hubCardKeyToCategory(card.key);
                 const catState = category ? categoryState(category) : null;
                 const guestBrowseOnly =
@@ -86,11 +65,11 @@ export default function GamesHubPage() {
                 return (
                   <GameHubCard
                     key={card.key}
-                    title={card.title}
+                    title={t(card.titleKey)}
                     emoji={card.emoji}
-                    blurb={card.blurb}
+                    blurb={t(card.blurbKey)}
                     href={categoryHref}
-                    cardClass={`${GH.card} text-right min-h-[9.5rem] md:min-h-[11rem]`}
+                    cardClass={`${GH.card} text-left min-h-[9.5rem] md:min-h-[11rem]`}
                     ctaClass={GH.cardCta}
                     hidden={catState ? !catState.visible : false}
                     locked={categoryLocked}

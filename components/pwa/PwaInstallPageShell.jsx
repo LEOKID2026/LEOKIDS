@@ -5,6 +5,7 @@ import Layout from "../Layout";
 import IosInstallHelpModal from "./IosInstallHelpModal.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { getPwaInstallPageTheme } from "../../lib/pwa/pwa-install-page-theme.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Shared install-page shell — bright/classic via site theme picker.
@@ -27,6 +28,7 @@ export default function PwaInstallPageShell({
   appleTouchIcon,
   launcher: Launcher,
 }) {
+  const t = useT();
   const { theme, isBright } = useStudentTheme();
   const T = getPwaInstallPageTheme(portal, isBright);
   const [iosHelpOpen, setIosHelpOpen] = useState(false);
@@ -45,10 +47,10 @@ export default function PwaInstallPageShell({
         <title>{pageTitle}</title>
       </Head>
       <Layout studentTheme={theme} studentShell="home">
-        <div className={T.pageWrap} dir="rtl" lang="he">
+        <div className={T.pageWrap} dir="ltr" lang="en">
           <p className={T.badge}>{badge}</p>
           <h1 className={T.heading}>{title}</h1>
-          <p className={T.body}>לחצו "התקן" למטה כדי להוסיף את האפליקציה למסך הבית.</p>
+          <p className={T.body}>{t("ui.pwa.installBody")}</p>
           <div className="flex w-full max-w-xs flex-col items-stretch gap-2">
             <Launcher isBright={isBright} />
             <button
@@ -57,7 +59,7 @@ export default function PwaInstallPageShell({
               onClick={() => setIosHelpOpen(true)}
               data-testid="ios-install-help-trigger"
             >
-              התקנה ב-iPhone או iPad
+              {t("ui.pwa.iosHelpTitle")}
             </button>
           </div>
           <IosInstallHelpModal
@@ -67,7 +69,7 @@ export default function PwaInstallPageShell({
             doneBtnClass={T.iosHelpDoneBtn}
           />
           <Link href={portalHomeHref} className={T.backLink}>
-            חזרה לעמוד הבית
+            {t("ui.pwa.backHome")}
           </Link>
         </div>
       </Layout>

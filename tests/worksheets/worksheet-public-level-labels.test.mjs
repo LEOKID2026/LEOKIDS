@@ -38,10 +38,10 @@ const UI_FILES = [
 ];
 
 describe("worksheet-public-level-labels", () => {
-  test("level options are רגיל and מתקדם only", () => {
+  test("level options are Regular and Advanced only", () => {
     assert.deepEqual(
       WORKSHEET_LEVEL_OPTIONS.map((o) => o.labelHe),
-      ["רגיל", "מתקדם"]
+      ["Regular", "Advanced"]
     );
     assert.deepEqual(
       WORKSHEET_LEVEL_OPTIONS.map((o) => o.key),
@@ -95,7 +95,7 @@ describe("worksheet-public-level-labels", () => {
     }
   });
 
-  test("recommendations expose רגיל/מתקדם only", () => {
+  test("recommendations expose Regular/Advanced only", () => {
     const recs = buildWorksheetRecommendationsFromReport(
       {
         summary: { mathQuestions: 10 },

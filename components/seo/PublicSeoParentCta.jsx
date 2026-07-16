@@ -13,13 +13,13 @@ export default function PublicSeoParentCta({ isBright }) {
     >
       <HomeCtaLink
         href="/parent/login"
-        label="כניסה / הרשמה להורים"
+        label="Parent login / sign up"
         className={getHomeBtnClasses("parents", isBright, "primary")}
         testId="seo-cta-parent-login"
       />
       <HomeCtaLink
         href="/parents"
-        label="להכיר את פורטל ההורים"
+        label="Explore the parent portal"
         className={getHomeBtnClasses("parents", isBright, "secondary")}
         size="md"
         testId="seo-cta-parents-portal"

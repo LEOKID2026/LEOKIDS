@@ -1,6 +1,6 @@
 /**
- * Elementary Hebrew wording for geometry classroom-activity question stems (grades 1–6).
- * Applied when freezing new items and when serving stored question sets to students.
+ * Elementary English wording for geometry classroom-activity question stems (grades 1–6).
+ * Global product: student-facing stems are English (Hebrew generators are localized upstream).
  */
 
 import { stripGeometryFormulaHelpParenthetical } from "./student-question-display.js";
@@ -10,10 +10,10 @@ export const GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE =
   /אלגברה|משווא(?:ה|ת)|ביטוי\s+אלגברי|(?:^|[\s\-–])נעלם(?:[\s,.!?]|$)/u;
 
 /** Banned fallback phrase — never emit on worksheets. */
-export const GEOMETRY_GENERIC_ANSWER_FILLER_RE = /חשבו את התשובה/u;
+export const GEOMETRY_GENERIC_ANSWER_FILLER_RE = /חשבו את התשובה|Calculate the answer/u;
 
 const HAS_ASK_CUE_RE =
-  /(חשב(?:ו|י)?|מצא(?:ו|י)?|כתב(?:ו|י)?|השל(?:ימו|ם)|קבע(?:ו|י)?|סמנ(?:ו|י)?|מה\s|כמה\s)/u;
+  /(חשב(?:ו|י)?|מצא(?:ו|י)?|כתב(?:ו|י)?|השל(?:ימו|ם)|קבע(?:ו|י)?|סמנ(?:ו|י)?|מה\s|כמה\s|\bWhat\b|\bHow\b|\bFind\b|\bCalculate\b|\bWhich\b|\bTrue or false\b)/iu;
 
 /**
  * Canonical elementary stem when two triangle angles are known.
@@ -21,7 +21,7 @@ const HAS_ASK_CUE_RE =
  * @param {number|string} angle2
  */
 export function formatTriangleAnglesKnownTwoStem(angle1, angle2) {
-  return `במשולש שתי זוויות שגודלן ${angle1}° ו-${angle2}°. חשבו את גודל הזווית השלישית.`;
+  return `In a triangle, two angles measure ${angle1}° and ${angle2}°. Calculate the measure of the third angle.`;
 }
 
 /**
@@ -34,15 +34,15 @@ export function buildGeometryComputeStemFromParams(kind, params = {}) {
   const k = String(kind || "").replace(/^story_/, "");
 
   if (k === "diagonal_square" && typeof p.side === "number") {
-    return `אורך צלע הריבוע הוא ${p.side} ס״מ. חשבו את אורך האלכסון.`;
+    return `The side of the square is ${p.side} cm. Calculate the length of the diagonal.`;
   }
   if (
     (k === "diagonal_rectangle" || k === "diagonal_parallelogram") &&
     typeof p.side === "number" &&
     typeof p.width === "number"
   ) {
-    const shapeHe = k === "diagonal_parallelogram" ? "המקבילית" : "המלבן";
-    return `אורכי צלעות ${shapeHe} הם ${p.side} ס״מ ו-${p.width} ס״מ. חשבו את אורך האלכסון.`;
+    const shapeEn = k === "diagonal_parallelogram" ? "parallelogram" : "rectangle";
+    return `The side lengths of the ${shapeEn} are ${p.side} cm and ${p.width} cm. Calculate the length of the diagonal.`;
   }
   if (
     k === "triangle_perimeter" &&
@@ -50,35 +50,35 @@ export function buildGeometryComputeStemFromParams(kind, params = {}) {
     typeof p.side2 === "number" &&
     typeof p.side3 === "number"
   ) {
-    return `אורכי צלעות המשולש הם ${p.side1} ס״מ, ${p.side2} ס״מ ו-${p.side3} ס״מ. חשבו את היקף המשולש.`;
+    return `The side lengths of the triangle are ${p.side1} cm, ${p.side2} cm, and ${p.side3} cm. Calculate the perimeter of the triangle.`;
   }
   if (k === "parallelogram_area" && typeof p.base === "number" && typeof p.height === "number") {
-    return `אורך בסיס המקבילית הוא ${p.base} ס״מ והגובה לבסיס הוא ${p.height} ס״מ. חשבו את שטח המקבילית.`;
+    return `The base of the parallelogram is ${p.base} cm and the height to that base is ${p.height} cm. Calculate the area of the parallelogram.`;
   }
   if (k === "triangle_area" && typeof p.base === "number" && typeof p.height === "number") {
-    return `אורך בסיס המשולש הוא ${p.base} ס״מ והגובה לבסיס הוא ${p.height} ס״מ. חשבו את שטח המשולש.`;
+    return `The base of the triangle is ${p.base} cm and the height to that base is ${p.height} cm. Calculate the area of the triangle.`;
   }
   if (k === "square_area" && typeof p.side === "number") {
-    return `אורך צלע הריבוע הוא ${p.side} ס״מ. חשבו את שטח הריבוע.`;
+    return `The side of the square is ${p.side} cm. Calculate the area of the square.`;
   }
   if (k === "rectangle_area" && typeof p.length === "number" && typeof p.width === "number") {
-    return `אורך המלבן הוא ${p.length} ס״מ ורוחבו ${p.width} ס״מ. חשבו את שטח המלבן.`;
+    return `The length of the rectangle is ${p.length} cm and its width is ${p.width} cm. Calculate the area of the rectangle.`;
   }
   if (k === "square_perimeter" && typeof p.side === "number") {
-    return `אורך צלע הריבוע הוא ${p.side} ס״מ. חשבו את היקף הריבוע.`;
+    return `The side of the square is ${p.side} cm. Calculate the perimeter of the square.`;
   }
   if (
     k === "rectangle_perimeter" &&
     typeof p.length === "number" &&
     typeof p.width === "number"
   ) {
-    return `אורך המלבן הוא ${p.length} ס״מ ורוחבו ${p.width} ס״מ. חשבו את היקף המלבן.`;
+    return `The length of the rectangle is ${p.length} cm and its width is ${p.width} cm. Calculate the perimeter of the rectangle.`;
   }
   if (k === "heights_triangle" && typeof p.base === "number" && typeof p.area === "number") {
-    return `שטח המשולש הוא ${p.area} סמ״ר ואורך הבסיס הוא ${p.base} ס״מ. חשבו את גובה המשולש לבסיס זה.`;
+    return `The area of the triangle is ${p.area} cm² and the base is ${p.base} cm. Calculate the height to that base.`;
   }
   if (k === "heights_parallelogram" && typeof p.base === "number" && typeof p.area === "number") {
-    return `שטח המקבילית הוא ${p.area} סמ״ר ואורך הבסיס הוא ${p.base} ס״מ. חשבו את הגובה לבסיס זה.`;
+    return `The area of the parallelogram is ${p.area} cm² and the base is ${p.base} cm. Calculate the height to that base.`;
   }
   if (
     k === "trapezoid_area" &&
@@ -86,13 +86,13 @@ export function buildGeometryComputeStemFromParams(kind, params = {}) {
     typeof p.base2 === "number" &&
     typeof p.height === "number"
   ) {
-    return `בסיסי הטרפז הם ${p.base1} ס״מ ו-${p.base2} ס״מ, והגובה הוא ${p.height} ס״מ. חשבו את שטח הטרפז.`;
+    return `The bases of the trapezoid are ${p.base1} cm and ${p.base2} cm, and the height is ${p.height} cm. Calculate the area of the trapezoid.`;
   }
   if (k === "cylinder_volume" && typeof p.radius === "number" && typeof p.height === "number") {
-    return `רדיוס הגליל הוא ${p.radius} ס״מ וגובהו ${p.height} ס״מ. חשבו את נפח הגליל (π = 3.14).`;
+    return `The radius of the cylinder is ${p.radius} cm and its height is ${p.height} cm. Calculate the volume of the cylinder (π = 3.14).`;
   }
   if (k === "sphere_volume" && typeof p.radius === "number") {
-    return `רדיוס הכדור הוא ${p.radius} ס״מ. חשבו את נפח הכדור (π = 3.14).`;
+    return `The radius of the sphere is ${p.radius} cm. Calculate the volume of the sphere (π = 3.14).`;
   }
   if (
     (k === "pyramid_volume_square" || k === "pyramid_volume_rectangular") &&
@@ -102,15 +102,15 @@ export function buildGeometryComputeStemFromParams(kind, params = {}) {
     const side = typeof p.side === "number" ? p.side : p.baseSide;
     if (typeof p.baseWidth === "number" || typeof p.width === "number") {
       const w = typeof p.baseWidth === "number" ? p.baseWidth : p.width;
-      return `בסיס הפירמידה הוא מלבן באורך ${side} ס״מ וברוחב ${w} ס״מ, וגובהה ${p.height} ס״מ. חשבו את נפח הפירמידה.`;
+      return `The base of the pyramid is a rectangle ${side} cm by ${w} cm, and its height is ${p.height} cm. Calculate the volume of the pyramid.`;
     }
-    return `אורך צלע בסיס הפירמידה הריבועי הוא ${side} ס״מ וגובהה ${p.height} ס״מ. חשבו את נפח הפירמידה.`;
+    return `The base of the square pyramid has side ${side} cm and its height is ${p.height} cm. Calculate the volume of the pyramid.`;
   }
   if (k === "cone_volume" && typeof p.radius === "number" && typeof p.height === "number") {
-    return `רדיוס בסיס החרוט הוא ${p.radius} ס״מ וגובהו ${p.height} ס״מ. חשבו את נפח החרוט (π = 3.14).`;
+    return `The base radius of the cone is ${p.radius} cm and its height is ${p.height} cm. Calculate the volume of the cone (π = 3.14).`;
   }
   if (k === "cube_volume" && typeof p.side === "number") {
-    return `אורך צלע הקובייה הוא ${p.side} ס״מ. חשבו את נפח הקובייה.`;
+    return `The side of the cube is ${p.side} cm. Calculate the volume of the cube.`;
   }
   if (
     (k === "rectangular_prism_volume" || k === "box_volume") &&
@@ -118,7 +118,7 @@ export function buildGeometryComputeStemFromParams(kind, params = {}) {
     typeof p.width === "number" &&
     typeof p.height === "number"
   ) {
-    return `אורך התיבה הוא ${p.length} ס״מ, רוחבה ${p.width} ס״מ וגובהה ${p.height} ס״מ. חשבו את נפח התיבה.`;
+    return `The box is ${p.length} cm long, ${p.width} cm wide, and ${p.height} cm tall. Calculate the volume of the box.`;
   }
   if (
     (k === "prism_volume_triangle" || k === "prism_volume_rectangular") &&
@@ -126,19 +126,19 @@ export function buildGeometryComputeStemFromParams(kind, params = {}) {
     typeof p.height === "number"
   ) {
     if (typeof p.baseHeight === "number") {
-      return `בסיס המנסרה המשולשת הוא משולש שאורך בסיסו ${p.base} ס״מ וגובהו ${p.baseHeight} ס״מ, וגובה המנסרה הוא ${p.height} ס״מ. חשבו את נפח המנסרה.`;
+      return `The triangular prism has a triangular base with base ${p.base} cm and height ${p.baseHeight} cm, and the prism height is ${p.height} cm. Calculate the volume of the prism.`;
     }
-    return `שטח בסיס המנסרה הוא ${p.base} סמ״ר וגובהה ${p.height} ס״מ. חשבו את נפח המנסרה.`;
+    return `The base area of the prism is ${p.base} cm² and its height is ${p.height} cm. Calculate the volume of the prism.`;
   }
   if (k === "pythagoras_hyp" && typeof p.a === "number" && typeof p.b === "number") {
-    return `במשולש ישר-זווית, אורכי הניצבים הם ${p.a} ס״מ ו-${p.b} ס״מ. חשבו את אורך היתר.`;
+    return `In a right triangle, the legs are ${p.a} cm and ${p.b} cm. Calculate the length of the hypotenuse.`;
   }
   if (k === "pythagoras_leg" && typeof p.c === "number") {
     if (p.which === "leg_a" && typeof p.b === "number") {
-      return `במשולש ישר-זווית, אורך היתר הוא ${p.c} ס״מ ואורך ניצב אחד הוא ${p.b} ס״מ. חשבו את אורך הניצב השני.`;
+      return `In a right triangle, the hypotenuse is ${p.c} cm and one leg is ${p.b} cm. Calculate the length of the other leg.`;
     }
     if (p.which === "leg_b" && typeof p.a === "number") {
-      return `במשולש ישר-זווית, אורך היתר הוא ${p.c} ס״מ ואורך ניצב אחד הוא ${p.a} ס״מ. חשבו את אורך הניצב השני.`;
+      return `In a right triangle, the hypotenuse is ${p.c} cm and one leg is ${p.a} cm. Calculate the length of the other leg.`;
     }
   }
 
@@ -194,7 +194,7 @@ function stemNeedsComputeRewrite(text, kind) {
   if (computeKinds.has(k) && !HAS_ASK_CUE_RE.test(t)) return true;
   if (
     (k === "pythagoras_hyp" || k === "pythagoras_leg") &&
-    (!/ס״מ|סמ/.test(t) || !HAS_ASK_CUE_RE.test(t))
+    (!/ס״מ|סמ|\bcm\b/i.test(t) || !HAS_ASK_CUE_RE.test(t))
   ) {
     return true;
   }
@@ -258,8 +258,8 @@ export function normalizeGeometryWorksheetStem(text, context = {}) {
     kind === "concept_angle_reason" ||
     /עיקרון גיאומטרי|לפני חישוב המספר|מה אפשר להסיק על הזווית/.test(t)
   ) {
-    if (/סכום|180|זווית השלישית|שתי זוויות|ידועות/.test(t)) {
-      return "מה נכון לגבי סכום הזוויות במשולש?";
+    if (/סכום|180|זווית השלישית|שתי זוויות|ידועות|sum of|triangle angles/i.test(t)) {
+      return "Which statement is true about the sum of angles in a triangle?";
     }
   }
 

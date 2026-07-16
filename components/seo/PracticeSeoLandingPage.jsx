@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getGuideLink } from "../../data/seo/guide-pages.he";
+import { getGuideLink } from "../../data/seo/guide-pages";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import PublicSeoWideLayout from "./PublicSeoWideLayout";
 import PublicSeoWideSectionBody from "./PublicSeoWideSectionBody";
@@ -17,7 +17,7 @@ import {
 const WORKSHEETS_HUB_SPLIT_INDEX = 2;
 
 /**
- * @param {{ content: import("../../data/seo/practice-pages.he").PracticePageContent | import("../../data/seo/worksheets-pages.he").WorksheetsPageContent }} props
+ * @param {{ content: import("../../data/seo/practice-pages").PracticePageContent | import("../../data/seo/worksheets-pages.en.js").WorksheetsPageContent }} props
  */
 export default function PracticeSeoLandingPage({ content }) {
   const { isBright } = useStudentTheme();
@@ -62,7 +62,7 @@ export default function PracticeSeoLandingPage({ content }) {
 
       {content.relatedPracticeLinks?.length ? (
         <section className={`space-y-4 ${cls.section}`}>
-          <h2 className={cls.sectionTitle}>עוד תחומי תרגול</h2>
+          <h2 className={cls.sectionTitle}>More practice areas</h2>
           <ul className={`space-y-2 text-sm md:text-base ${cls.body}`}>
             {content.relatedPracticeLinks.map((l) => (
               <li key={l.href}>

@@ -139,7 +139,8 @@ describe("worksheet-generator-mcq-preference", () => {
     );
 
     assert.match(previewSrc, /typeof gen\.preferMcq === "boolean"/);
-    assert.match(createSrc, /WORKSHEET_UI_HE\.preferMcq/);
+    assert.match(createSrc, /ui\.preferMcq/);
+    assert.match(createSrc, /preferMcq:/);
     assert.equal(createSrc.includes("disabled={!mcqSupported}"), false);
     assert.equal(createSrc.includes("worksheet-checkbox-card-disabled"), false);
   });

@@ -3,6 +3,7 @@ import { mergeDiagnosticContractIntoParams } from './diagnostic-question-contrac
 import { probeMatchesSession } from './active-diagnostic-runtime/session-match.js';
 import { attachProfessionalMathMetadata } from './math-question-metadata.js';
 import { sanitizeQuestionForStudentDisplay } from './student-question-stem-sanitizer.js';
+import { localizeLearningQuestion } from './learning-content-en/index.js';
 import {
   COMPARISON_SIGN_DISPLAY_ORDER,
   computeComparisonSign,
@@ -1202,18 +1203,21 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       : "");
 
   const finalizeMathQuestionOutput = (out) =>
-    sanitizeQuestionForStudentDisplay(
-      attachMathEquationInstructionLabel(
-        attachProfessionalMathMetadata(
-          finalizeMathMcqAnswerBundle(out, randInt),
-          {
-            selectedOp,
-            gradeKey,
-            mathLevelKey,
-          }
-        ),
-        gradeKey
-      )
+    localizeLearningQuestion(
+      sanitizeQuestionForStudentDisplay(
+        attachMathEquationInstructionLabel(
+          attachProfessionalMathMetadata(
+            finalizeMathMcqAnswerBundle(out, randInt),
+            {
+              selectedOp,
+              gradeKey,
+              mathLevelKey,
+            }
+          ),
+          gradeKey
+        )
+      ),
+      { subject: "math", contentLocale: "en" }
     );
 
   const densSmallProbe = [2, 4, 5, 10];

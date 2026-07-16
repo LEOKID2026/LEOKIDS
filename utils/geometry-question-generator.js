@@ -15,6 +15,7 @@ import { attachCanonicalMetadataToMathGeometryQuestion } from "../lib/learning/m
 import { formatTriangleAnglesKnownTwoStem } from "./geometry-activity-question-stem.js";
 import { pickValidTriangleSides } from "../lib/worksheets/worksheet-geometry-math-valid.js";
 import { sanitizeQuestionForStudentDisplay } from "./student-question-stem-sanitizer.js";
+import { localizeLearningQuestion } from "./learning-content-en/index.js";
 import { repairMcqObviousAnswerContent } from "./mcq-fail-content-repair.js";
 
 function geometryTopicLabelHe(topicKey) {
@@ -517,23 +518,26 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
       topic: selectedTopic,
     });
     if (conceptual) {
-      return sanitizeQuestionForStudentDisplay(
-        attachCanonicalMetadataToMathGeometryQuestion(
-          {
-            question: conceptual.question,
-            correctAnswer: conceptual.correctAnswer,
-            answers: conceptual.answers,
-            topic: selectedTopic,
-            shape,
-            params: conceptual.params,
-          },
-          {
-            subject: "geometry",
-            gradeKey,
-            levelKey,
-            topic: selectedTopic,
-          }
-        )
+      return localizeLearningQuestion(
+        sanitizeQuestionForStudentDisplay(
+          attachCanonicalMetadataToMathGeometryQuestion(
+            {
+              question: conceptual.question,
+              correctAnswer: conceptual.correctAnswer,
+              answers: conceptual.answers,
+              topic: selectedTopic,
+              shape,
+              params: conceptual.params,
+            },
+            {
+              subject: "geometry",
+              gradeKey,
+              levelKey,
+              topic: selectedTopic,
+            }
+          )
+        ),
+        { subject: "geometry", contentLocale: "en" }
       );
     }
   }
@@ -2619,23 +2623,26 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     levelKey,
   });
 
-  return sanitizeQuestionForStudentDisplay(
-    attachCanonicalMetadataToMathGeometryQuestion(
-      {
-        question,
-        correctAnswer: repairedCorrect,
-        answers: repairedAnswers,
-        topic: selectedTopic,
-        shape,
-        params: enrichedParams,
-      },
-      {
-        subject: "geometry",
-        gradeKey,
-        levelKey,
-        topic: selectedTopic,
-      }
-    )
+  return localizeLearningQuestion(
+    sanitizeQuestionForStudentDisplay(
+      attachCanonicalMetadataToMathGeometryQuestion(
+        {
+          question,
+          correctAnswer: repairedCorrect,
+          answers: repairedAnswers,
+          topic: selectedTopic,
+          shape,
+          params: enrichedParams,
+        },
+        {
+          subject: "geometry",
+          gradeKey,
+          levelKey,
+          topic: selectedTopic,
+        }
+      )
+    ),
+    { subject: "geometry", contentLocale: "en" }
   );
 }
 

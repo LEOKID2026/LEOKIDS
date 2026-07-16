@@ -17,23 +17,23 @@ export default function PublicSeoPageActions({ pageKind, isBright }) {
   return (
     <nav
       className="flex w-full items-center justify-between gap-3"
-      aria-label="ניווט בדף"
+      aria-label="Page navigation"
       data-testid="public-seo-page-actions"
     >
       <div className="flex flex-wrap items-center gap-2 sm:gap-3">
         {showPracticeBack ? (
           <Link href="/practice" className={btn} data-testid="seo-nav-back-practice">
-            חזרה לתחומי התרגול
+            Back to practice areas
           </Link>
         ) : null}
         {showGuidesBack ? (
           <Link href="/guides" className={btn} data-testid="seo-nav-back-guides">
-            חזרה למדריכים
+            Back to guides
           </Link>
         ) : null}
       </div>
       <Link href="/" className={`${btn} shrink-0`} data-testid="seo-nav-home">
-        עמוד הבית
+        Home
       </Link>
     </nav>
   );

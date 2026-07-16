@@ -6,7 +6,7 @@ export default function HelpRelatedLinks({ items }) {
   if (!items?.length) return null;
   return (
     <aside className={SP.relatedAside}>
-      <h2 className={SP.relatedTitle}>קישורים קשורים</h2>
+      <h2 className={SP.relatedTitle}>Related links</h2>
       <ul className="space-y-2">
         {items.map((item) => (
           <li key={item.href}>

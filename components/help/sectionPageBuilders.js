@@ -15,7 +15,7 @@ export function buildSectionHubPage(sectionKey) {
         title={section.title}
         summary={section.description}
         breadcrumbs={[
-          { href: "/help", label: "מרכז עזרה" },
+          { href: "/help", label: "Help center" },
           { label: section.title },
         ]}
       >
@@ -27,7 +27,7 @@ export function buildSectionHubPage(sectionKey) {
 
 function ArticleUpdatedAt({ date }) {
   const { SP } = useSharedShellUi();
-  return <p className={SP.updatedAt}>עודכן: {date}</p>;
+  return <p className={SP.updatedAt}>Updated: {date}</p>;
 }
 
 export function buildArticlePage(sectionKey) {
@@ -40,13 +40,13 @@ export function buildArticlePage(sectionKey) {
         summary={article.summary}
         article
         breadcrumbs={[
-          { href: "/help", label: "מרכז עזרה" },
+          { href: "/help", label: "Help center" },
           { href: section.href, label: section.title },
           { label: article.title },
         ]}
         tocSlot={<HelpTOC toc={article.toc} />}
       >
-        <article lang="he" dir="rtl">
+        <article lang="en">
           <HelpArticleBody blocks={article.blocks} audience={article.audience} />
           <ArticleUpdatedAt date={article.updatedAt} />
         </article>

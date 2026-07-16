@@ -15,30 +15,30 @@ function subjectArticle(slug, title, emoji, topics, masterPath) {
   return baseArticle({
     slug,
     section: S,
-    title: `מדריך ${title}`,
-    summary: `תרגול ב${title} לכיתות א׳–ו׳ - מה לומדים ואיך מתרגלים.`,
-    keywords: [title, "מקצוע", "תרגול"],
+    title: `${title} guide`,
+    summary: `${title} practice for grades 1–6 — what children learn and how to practice.`,
+    keywords: [title, "subject", "practice"],
     toc: [
-      { id: "who", title: "למי מתאים?" },
-      { id: "topics", title: "מה מתרגלים?" },
-      { id: "practice", title: "איך נראה תרגול?" },
-      { id: "tips", title: "טיפים" },
+      { id: "who", title: "Who is it for?" },
+      { id: "topics", title: "What do we practice?" },
+      { id: "practice", title: "What does practice look like?" },
+      { id: "tips", title: "Tips" },
     ],
     blocks: [
-      heading(2, "who", "למי מתאים?"),
-      paragraph("התרגול מיועד לילד/הי כיתות א׳ עד ו׳, עם התאמה לרמת הכיתה."),
-      heading(2, "topics", "מה מתרגלים?"),
+      heading(2, "who", "Who is it for?"),
+      paragraph("Practice is designed for children in grades 1 through 6, matched to grade level."),
+      heading(2, "topics", "What do we practice?"),
       list(topics),
-      heading(2, "practice", "איך נראה תרגול?"),
-      paragraph("בוחרים כיתה ורמה, עונים על שאלות ומקבלים הסבר אחרי כל תשובה."),
+      heading(2, "practice", "What does practice look like?"),
+      paragraph("Choose a grade and level, answer questions, and get an explanation after each answer."),
       videoBlock(S, slug),
-      screenshotBlock(S, slug, "question", `מסך תרגול ב${title}`),
-      screenshotBlock(S, slug, "explanation", `הסבר לשאלה ב${title}`),
-      heading(2, "tips", "טיפים"),
-      callout("tip", "תרגלו בקצב קבוע - קצת כל יום עדיף על הרבה ביום אחד."),
+      screenshotBlock(S, slug, "question", `${title} practice screen`),
+      screenshotBlock(S, slug, "explanation", `Explanation for a ${title} question`),
+      heading(2, "tips", "Tips"),
+      callout("tip", "Practice at a steady pace — a little each day beats a lot on one day."),
       relatedLinks([
-        { href: masterPath, label: `מעבר לתרגול ${title}` },
-        { href: "/learning", label: "אזור לימודים" },
+        { href: masterPath, label: `Go to ${title} practice` },
+        { href: "/learning", label: "Learning hub" },
       ]),
     ],
   });
@@ -46,33 +46,33 @@ function subjectArticle(slug, title, emoji, topics, masterPath) {
 
 export const math = subjectArticle(
   "math",
-  "מתמטיקה",
+  "Math",
   "🧮",
-  ["חיבור, חיסור, כפל וחילוק", "שברים ועשרוניים (בכיתות הבכירות)", "בעיות מילוליות"],
+  ["Addition, subtraction, multiplication, and division", "Fractions and decimals (upper grades)", "Word problems"],
   "/learning/math-master"
 );
 
 export const geometry = subjectArticle(
   "geometry",
-  "גאומטריה",
+  "Geometry",
   "📐",
-  ["שטחים והיקפים", "זוויות וצורות", "פיתגורס (בכיתות מתקדמות)"],
+  ["Area and perimeter", "Angles and shapes", "Pythagoras (advanced grades)"],
   "/learning/geometry-master"
 );
 
 export const english = subjectArticle(
   "english",
-  "אנגלית",
+  "English",
   "🇬🇧",
-  ["אוצר מילים", "דקדוק ותרגום", "בניית משפטים"],
+  ["Vocabulary", "Grammar and meaning", "Building sentences"],
   "/learning/english-master"
 );
 
 export const science = subjectArticle(
   "science",
-  "מדעים",
+  "Science",
   "🔬",
-  ["גוף האדם ובעלי חיים", "צמחים וחומר", "מזג אוויר וכוח"],
+  ["The human body and animals", "Plants and materials", "Weather and forces"],
   "/learning/science-master"
 );
 

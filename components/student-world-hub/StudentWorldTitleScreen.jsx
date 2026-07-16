@@ -166,7 +166,7 @@ export default function StudentWorldTitleScreen({
           {coinsLogout}
         </header>
 
-        {/* Desktop: תמונת פרופיל */}
+        {/* */}
         <div className="hidden flex-col items-center px-3 pt-10 text-center md:flex">
           <div className="relative">
             {desktopAvatarNode}
@@ -237,3 +237,4 @@ export default function StudentWorldTitleScreen({
     </div>
   );
 }
+

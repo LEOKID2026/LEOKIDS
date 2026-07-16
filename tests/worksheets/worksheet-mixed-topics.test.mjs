@@ -26,7 +26,7 @@ describe("worksheet-mixed-topics", () => {
       for (const gradeKey of ["g3", "g5", "g6"]) {
         const opts = listWorksheetMixedTopicOptions(subjectId, gradeKey);
         assert.ok(opts.every((o) => o.key !== "mixed"), `${subjectId}/${gradeKey}`);
-        assert.ok(opts.every((o) => o.label && !/^[a-z_]+$/.test(o.label)), `${subjectId} has Hebrew labels`);
+        assert.ok(opts.every((o) => o.label && !/^[a-z_]+$/.test(o.label)), `${subjectId} has human labels`);
       }
     }
   });

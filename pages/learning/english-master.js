@@ -193,23 +193,8 @@ import {
 
 const ENGLISH_BOOK_GRADE_SET = new Set(ENGLISH_BOOK_GRADES);
 
-const MODES = {
-  learning: { name: "למידה", description: "ללא סיום משחק, תרגול בקצב שלך" },
-  challenge: { name: "אתגר", description: "טיימר + חיים, מרוץ ניקוד גבוה" },
-  speed: { name: "מהירות", description: "תשובות מהירות = יותר נקודות! ⚡" },
-  marathon: { name: "מרתון", description: "כמה שאלות תוכל לפתור? 🏃" },
-  practice: { name: "תרגול", description: "בוחר נושא/מצב אימון מדויק" },
-};
-
 const STORAGE_KEY = "mleo_english_master";
-
-const PRACTICE_FOCUS_OPTIONS = [
-  { value: "balanced", label: "📚 כל הנושאים" },
-  { value: "vocab_core", label: "🔤 אוצר מילים בסיסי" },
-  { value: "grammar_forms", label: "✏️ דקדוק ומבנים" },
-  { value: "writing_lab", label: "📝 כתיבה ומשפטים" },
-  { value: "translation_boost", label: "📖 תרגום והבנת קטע" },
-];
+const PRACTICE_FOCUS_VALUES = ["balanced", "vocab_core", "grammar_forms", "writing_lab", "translation_boost"];
 
 const AVATAR_OPTIONS = [
   "👤",
@@ -233,12 +218,12 @@ const AVATAR_OPTIONS = [
 ];
 
 const REFERENCE_CATEGORIES = {
-  colors: { label: "צבעים", lists: ["colors"] },
-  animals: { label: "חיות", lists: ["animals"] },
-  actions: { label: "פעלים נפוצים", lists: ["actions"] },
-  emotions: { label: "רגשות", lists: ["emotions"] },
-  school: { label: "חיי בית ספר", lists: ["school", "family"] },
-  technology: { label: "טכנולוגיה", lists: ["technology", "global_issues"] },
+  colors: { label: "Colors", lists: ["colors"] },
+  animals: { label: "Animals", lists: ["animals"] },
+  actions: { label: "Common verbs", lists: ["actions"] },
+  emotions: { label: "Emotions", lists: ["emotions"] },
+  school: { label: "School life", lists: ["school", "family"] },
+  technology: { label: "Technology", lists: ["technology", "global_issues"] },
 };
 
 const REFERENCE_CATEGORY_KEYS = Object.keys(REFERENCE_CATEGORIES);
@@ -701,7 +686,7 @@ export default function EnglishMaster() {
     }
     return "👤";
   });
-  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); // תמונת אווטר מותאמת אישית
+  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); //
   const [playerAvatarBackground, setPlayerAvatarBackground] = useState(DEFAULT_PROFILE_BACKGROUND_KEY);
   const [showPlayerProfile, setShowPlayerProfile] = useState(false);
   
@@ -2420,7 +2405,7 @@ export default function EnglishMaster() {
         <LearningMasterDesktopHeader
           MB={MB}
           desktopHeaderRef={desktopHeaderRef}
-          title="🇬🇧 אנגלית"
+          title={ms.getSubjectTitle()}
           subtitle={`${playerName || ms.player} • ${gradeInfo.name} • ${ms.getDisplayLevelLabel(displayLevel)} • ${getTopicName(topic)} • ${ms.getModeName(mode)}`}
           onBack={backSafe}
           onCurriculumClick={() => router.push("/learning/curriculum?subject=english")}
@@ -2437,7 +2422,7 @@ export default function EnglishMaster() {
             compactHeader
             integratedTopRow
             centerSlot={
-              <LearningMasterMobileNavTitle MB={MB} title="🇬🇧 אנגלית" audio={audio} />
+              <LearningMasterMobileNavTitle MB={MB} title={ms.getSubjectTitle()} audio={audio} />
             }
           />
         </div>
@@ -2472,7 +2457,7 @@ export default function EnglishMaster() {
             playerAvatarBackground={playerAvatarBackground}
           />
 
-          {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
+          {/* */}
           <div
             className={LEARNING_MASTER_MOBILE_MODE_ROW_CLASS}
             dir={ms.direction}
@@ -2527,7 +2512,7 @@ export default function EnglishMaster() {
               <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-pulse">
                 <div className="text-4xl mb-2">🌟</div>
                 <div className="text-2xl font-bold">{ms.levelUp}</div>
-                <div className="text-xl">אתה עכשיו ברמה {playerLevel}!</div>
+                <div className="text-xl">{ms.t("learning.master.levelUpNowText", { level: playerLevel })}</div>
               </div>
             </div>
           )}
@@ -2559,7 +2544,7 @@ export default function EnglishMaster() {
                 </div>
                 <select
                   value={gradeNumber}
-                  title={`כיתה ${gradeLabels[gradeNumber - 1]}`}
+                  title={ms.t("learning.master.gradeTitle", { grade: gradeLabels[gradeNumber - 1] })}
                   disabled={!canPickGrade}
                   aria-disabled={!canPickGrade || undefined}
                   onChange={(e) => handleGradeNumberChange(e.target.value)}
@@ -2567,7 +2552,7 @@ export default function EnglishMaster() {
                 >
                   {GRADE_ORDER.map((_, idx) => (
                     <option key={`grade-${idx + 1}`} value={idx + 1}>
-                      {`כיתה ${gradeLabels[idx]}`}
+                      {ms.t("learning.master.gradeTitle", { grade: gradeLabels[idx] })}
                     </option>
                   ))}
                 </select>
@@ -2615,7 +2600,7 @@ export default function EnglishMaster() {
                       type="button"
                       onClick={() => setShowMixedSelector(true)}
                       className={MB.preGameGearBtn}
-                      title="ערוך נושאים למיקס"
+                      title={ms.t("learning.master.editMixTopics")}
                     >
                       ⚙️
                     </button>
@@ -2701,7 +2686,7 @@ export default function EnglishMaster() {
                 >{ms.leaderboard}</button>
               </div>
 
-              {/* כפתורים עזרה ותרגול ממוקד */}
+              {/* */}
               <div className="w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl flex justify-center gap-2 md:gap-2.5 flex-wrap mx-auto px-1 md:px-2">
                 <button
                   onClick={() => setShowHowTo(true)}
@@ -2733,7 +2718,7 @@ export default function EnglishMaster() {
                     onClick={() => setShowPracticeOptions(true)}
                     className={`${MB.btnActionHelp} ${MB.btnActionPink}`}
                   >
-                    תרגול ממוקד ({mistakes.length})
+                    {ms.focusedPractice} ({mistakes.length})
                   </button>
                 )}
               </div>
@@ -2871,7 +2856,7 @@ export default function EnglishMaster() {
                               }
                             }}
                             disabled={!!selectedAnswer || !gameActive}
-                            placeholder="כתוב את התשובה שלך כאן..."
+                            placeholder={ms.t("learning.master.answerPlaceholderLong")}
                             className={
                               isMobileViewport
                                 ? LEARNING_MASTER_MOBILE_TYPING_INPUT_CLASS
@@ -2898,7 +2883,7 @@ export default function EnglishMaster() {
                                 }
                               >
                                 {primaryBtn.action === "check"
-                                  ? "✅ בדוק תשובה"
+                                  ? ms.t("learning.master.checkAnswerBtn")
                                   : primaryBtn.label}
                               </button>
                             );
@@ -3038,7 +3023,7 @@ export default function EnglishMaster() {
                             colSpan={4}
                             className="text-white/60 p-4 text-sm"
                           >
-                            עדיין אין תוצאות עבור רמה {ms.getDisplayLevelLabel(leaderboardLevel)}
+                            {ms.t("learning.master.noResultsForLevel")} {ms.getDisplayLevelLabel(leaderboardLevel)}
                           </td>
                         </tr>
                       ) : (
@@ -3114,10 +3099,10 @@ export default function EnglishMaster() {
               >
                 <div className="text-center mb-4 flex-shrink-0">
                   <h2 className="text-2xl font-extrabold text-white mb-2">
-                    🎲 בחר נושאים למיקס
+                    {ms.t("learning.master.pickMixTopics")}
                   </h2>
                   <p className="text-white/70 text-sm">
-                    בחר אילו נושאים לכלול במיקס
+                    {ms.t("learning.master.pickMixTopicsBlurb")}
                   </p>
                 </div>
 
@@ -3157,7 +3142,7 @@ export default function EnglishMaster() {
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 font-bold text-sm"
                   >
-                    הכל
+                    {ms.t("learning.master.all")}
                   </button>
                   <button
                     onClick={() => {
@@ -3170,7 +3155,7 @@ export default function EnglishMaster() {
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-gray-500/80 hover:bg-gray-500 font-bold text-sm"
                   >
-                    בטל הכל
+                    {ms.t("learning.master.cancel")} {ms.t("learning.master.all")}
                   </button>
                   <button
                     onClick={() => {
@@ -3180,12 +3165,12 @@ export default function EnglishMaster() {
                       if (hasSelected) {
                         setShowMixedSelector(false);
                       } else {
-                        alert("אנא בחר לפחות נושא אחד");
+                        alert(ms.t("learning.master.selectOneTopicMin"));
                       }
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
                   >
-                    שמור
+                    {ms.t("learning.master.save")}
                   </button>
                 </div>
               </div>
@@ -3204,16 +3189,16 @@ export default function EnglishMaster() {
               >
                 <div className="text-center mb-4">
                   <h2 className="text-2xl font-extrabold text-white mb-1">
-                    🎯 תרגול טעויות אחרונות
+                    {ms.t("learning.master.mistakePracticeTitle")}
                   </h2>
                   <p className="text-white/70 text-sm">
-                    בחר טעות אחרונה כדי לפתוח משחק ממוקד באותו נושא, כיתה ורמת קושי.
+                    {ms.t("learning.master.mistakePracticeBlurb")}
                   </p>
                 </div>
 
                 {mistakes.length === 0 ? (
                   <div className="text-center py-6 text-white/60">
-                    אין טעויות פעילות כרגע. תתחיל משחק, אסוף נתונים ואז חזור לכאן.
+                    {ms.t("learning.master.noActiveMistakes")}
                   </div>
                 ) : (
                   <div className="space-y-3">
@@ -3226,7 +3211,7 @@ export default function EnglishMaster() {
                         <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-white font-semibold mb-1">
                           <span>{getTopicName(mistake.topic || "vocabulary")}</span>
                           <span className="text-white/70 text-xs">
-                            {getGradeLabel(mistake.grade) || "כיתה נוכחית"} ·{" "}
+                            {getGradeLabel(mistake.grade) || ms.t("learning.master.currentGrade")} ·{" "}
                             {ms.getDisplayLevelLabel(
                               migrateLegacyPracticeKeyToDisplayLevel(mistake.level || level, "english")
                             )}
@@ -3239,14 +3224,14 @@ export default function EnglishMaster() {
                         )}
                         {mistake.correctAnswer && (
                           <p className="text-xs text-emerald-300 mb-1" dir="auto">
-                            תשובה נכונה: {mistake.correctAnswer}
+                            {ms.t("learning.master.correctAnswer", { answer: mistake.correctAnswer })}
                           </p>
                         )}
                         <button
                           onClick={() => handleMistakePractice(mistake)}
                           className="mt-2 w-full px-3 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 text-xs font-bold text-white"
                         >
-                          תרגל עכשיו
+                          {ms.t("learning.master.practiceNow")}
                         </button>
                       </div>
                     ))}
@@ -3263,7 +3248,7 @@ export default function EnglishMaster() {
                       onClick={clearMistakes}
                       className="flex-1 px-4 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 text-sm font-bold text-white"
                     >
-                      🧹 איפוס טעויות
+                      {ms.t("learning.master.clearMistakesBtn")}
                     </button>
                   )}
                 </div>
@@ -3282,7 +3267,7 @@ export default function EnglishMaster() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">📚 לוח מילים אינטראקטיבי</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.t("learning.master.wordBoardTitle")}</h2>
                   <button
                     onClick={() => setShowReferenceModal(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -3291,7 +3276,7 @@ export default function EnglishMaster() {
                   </button>
                 </div>
                 <p className="text-sm text-white/70 mb-3">
-                  בחר קטגוריה כדי לראות מילים חשובות באנגלית ובעברית, בדיוק כמו בעזרי העזר של משחק החשבון.
+                  {ms.t("learning.master.wordBoardBlurb")}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {REFERENCE_CATEGORY_KEYS.map((key) => (
@@ -3323,7 +3308,7 @@ export default function EnglishMaster() {
                   ))}
                   {referenceEntries.length === 0 && (
                     <div className="text-center col-span-full text-white/60 py-4">
-                      אין מילים להצגה בקטגוריה זו.
+                      {ms.t("learning.master.noWordsInCategory")}
                     </div>
                   )}
                 </div>
@@ -3342,7 +3327,7 @@ export default function EnglishMaster() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">🎛️ הגדרות תרגול חכם</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.t("learning.master.smartPracticeSettings")}</h2>
                   <button
                     onClick={() => setShowPracticeOptions(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -3351,14 +3336,14 @@ export default function EnglishMaster() {
                   </button>
                 </div>
                 <p className="text-sm text-white/70 mb-3">
-                  כמו במשחקי החשבון והגאומטריה, ניתן לבחור כאן מצב אימון מיוחד, חיבור לשגיאות אחרונות או מעבר מדורג בין רמות.
+                  {ms.t("learning.master.smartPracticeBlurb")}
                 </p>
                 <div className="space-y-2 mb-4">
-                  <p className="text-xs text-white/60 font-semibold">מצב מיקוד</p>
+                  <p className="text-xs text-white/60 font-semibold">{ms.t("learning.master.focusMode")}</p>
                   {[
-                    { value: "normal", label: "ברירת מחדל" },
-                    { value: "mistakes", label: "חזרה על טעויות אחרונות" },
-                    { value: "graded", label: "תרגול מדורג (התחלה נמוכה → הרמה שבחרת)" },
+                    { value: "normal", label: ms.t("learning.master.defaultMode") },
+                    { value: "mistakes", label: ms.t("learning.master.repeatRecentMistakes") },
+                    { value: "graded", label: ms.t("learning.master.gradedPracticeLabel") },
                   ].map((opt) => (
                     <label key={opt.value} className="flex items-center gap-2 text-sm">
                       <input
@@ -3373,7 +3358,7 @@ export default function EnglishMaster() {
                   ))}
                 </div>
                 <div className="space-y-2 mb-4">
-                  <p className="text-xs text-white/60 font-semibold">שאלות תרגום/סיפור</p>
+                  <p className="text-xs text-white/60 font-semibold">{ms.t("learning.master.translationQuestions")}</p>
                   <label className="flex items-center gap-2 text-sm">
                     <input
                       type="checkbox"
@@ -3383,7 +3368,7 @@ export default function EnglishMaster() {
                         if (!e.target.checked) setStoryOnly(false);
                       }}
                     />
-                    <span>שלב שאלות תרגום בתוך משחקי האוצר מילים/דקדוק</span>
+                    <span>{ms.t("learning.master.translationInVocab")}</span>
                   </label>
                   <label className="flex items-center gap-2 text-sm">
                     <input
@@ -3392,15 +3377,15 @@ export default function EnglishMaster() {
                       disabled={!useStoryQuestions}
                       onChange={(e) => setStoryOnly(e.target.checked)}
                     />
-                    <span>הצג רק שאלות תרגום/סיפור</span>
+                    <span>{ms.t("learning.master.translationOnly")}</span>
                   </label>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-white/80">
-                  <div className="font-semibold mb-1">סיכום מצב נוכחי</div>
-                  <p>מצב תרגול: {ms.getModeName(mode)}</p>
-                  <p>פוקוס: {PRACTICE_FOCUS_OPTIONS.find((o) => o.value === practiceFocus)?.label || ""}</p>
-                  <p>מיקוד שגיאות: {focusedPracticeMode === "normal" ? ms.t("learning.master.practiceModes.normal") : focusedPracticeMode === "mistakes" ? "טעויות אחרונות" : ms.t("learning.master.practiceModes.graded")}</p>
-                  <p>שאלות תרגום: {storyOnly ? "רק תרגום" : useStoryQuestions ? "מעורב" : "כבוי"}</p>
+                  <div className="font-semibold mb-1">{ms.t("learning.master.currentStateSummary")}</div>
+                  <p>{ms.practiceModeLabel}: {ms.getModeName(mode)}</p>
+                  <p>{ms.focus}: {ms.getPracticeFocusLabel(practiceFocus)}</p>
+                  <p>{ms.t("learning.master.mistakeFocus")} {focusedPracticeMode === "normal" ? ms.t("learning.master.practiceModes.normal") : focusedPracticeMode === "mistakes" ? ms.t("learning.master.recentMistakesMode") : ms.t("learning.master.practiceModes.graded")}</p>
+                  <p>{ms.t("learning.master.translationMode")} {storyOnly ? ms.t("learning.master.translationOnlyShort") : useStoryQuestions ? ms.t("learning.master.translationMixed") : ms.t("learning.master.translationOff")}</p>
                 </div>
                 <div className="flex gap-2 mt-4">
                   <button
@@ -3459,7 +3444,7 @@ export default function EnglishMaster() {
                   </div>
                   <div className="text-sm text-white/60 mb-3">{ms.chooseAvatar}</div>
                   
-                  {/* כפתור לבחירת תמונה */}
+                  {/* */}
                   <div className="mb-3">
                     <label className="block w-full">
                       <input
@@ -3542,12 +3527,12 @@ export default function EnglishMaster() {
                       <div className="text-xl font-bold text-yellow-400">⭐ {stars}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">רמה</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.level}</div>
                       <div className="text-xl font-bold text-purple-400">{ms.level} {playerLevel}</div>
                       {/* XP Progress Bar */}
                       <div className="mt-2">
                         <div className="flex justify-between text-xs text-white/60 mb-1">
-                          <span>נק׳ ניסיון</span>
+                          <span>{ms.xpPoints}</span>
                           <span>{xp} / {playerLevel * 100}</span>
                         </div>
                         <div className="w-full bg-black/50 rounded-full h-2">
@@ -3566,7 +3551,7 @@ export default function EnglishMaster() {
                     <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} {ms.days}</div>
                     {dailyStreak.streak >= 3 && (
                       <div className="text-xs text-white/60 mt-1">
-                        {dailyStreak.streak >= 30 ? "👑 אלוף!" : dailyStreak.streak >= 14 ? "🌟 מצוין!" : dailyStreak.streak >= 7 ? "⭐ יופי!" : "🔥 המשך כך!"}
+                        {dailyStreak.streak >= 30 ? ms.t("learning.master.dailyStreakChampion") : dailyStreak.streak >= 14 ? ms.t("learning.master.dailyStreakExcellent") : dailyStreak.streak >= 7 ? ms.t("learning.master.dailyStreakNice") : ms.t("learning.master.dailyStreakKeepGoing")}
                       </div>
                     )}
                   </div>
@@ -3575,7 +3560,7 @@ export default function EnglishMaster() {
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                     <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
-                      <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
+                      <span>{ms.t("learning.master.monthMinutesProgress", { current: Math.round(monthlyPersistenceView?.currentMinutes ?? 0), goal: monthlyPersistenceView?.goalMinutes ?? "-" })}</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
                     </div>
                     <div className="w-full bg-black/50 rounded-full h-3 mb-2">
@@ -3688,14 +3673,14 @@ export default function EnglishMaster() {
 
                 <div className={`${learningModalScrollBody} text-sm`}>
                   <p className="text-xs mb-3 text-center">
-                    המטרה היא לתרגל אנגלית בצורה משחקית, עם התאמה לכיתה, נושא ורמת קושי.
+                    The goal is to practice English in a fun way, matched to grade, topic, and difficulty.
                   </p>
 
                   <ul className="list-disc pr-4 space-y-1 text-[13px]">
-                    <li>בחר כיתה, רמת קושי ונושא (אוצר מילים, דקדוק, תרגום, כתיבה ועוד).</li>
-                    <li>בחר מצב משחק: למידה, אתגר עם טיימר וחיים, מהירות או מרתון.</li>
-                    <li>קרא היטב את השאלה – לפעמים צריך לבחור תשובה, ולפעמים לכתוב באנגלית.</li>
-                    <li>ניקוד גבוה, רצף תשובות נכון, כוכבים ו Badges עוזרים לך לעלות רמה כשחקן.</li>
+                    <li>Choose grade, difficulty, and topic (vocabulary, grammar, translation, writing, and more).</li>
+                    <li>Choose a game mode: learning, challenge with timer and lives, speed, or marathon.</li>
+                    <li>Read each question carefully — sometimes you choose an answer, sometimes you type in English.</li>
+                    <li>High scores, answer streaks, stars, and badges help you level up as a player.</li>
                   </ul>
                 </div>
 
@@ -3712,7 +3697,7 @@ export default function EnglishMaster() {
             </div>
           )}
 
-          {/* חלון הסבר מלא - Modal גדול ומרכזי */}
+          {/* */}
           {isShowingAnySolution && explanationQuestion && (
             <div
               className={learningModalOverlay}
@@ -3734,7 +3719,7 @@ export default function EnglishMaster() {
                   <h3 className={learningModalTitle} dir={ms.direction}>
                     {showPreviousSolution
                       ? ms.previousExercise
-                      : "\u200Fאיך פותרים את השאלה?"}
+                      : ms.t("learning.master.howToSolveExerciseRtl")}
                   </h3>
                   <span className="w-10 shrink-0" aria-hidden />
                 </div>
@@ -3773,7 +3758,7 @@ export default function EnglishMaster() {
                       className={learningPrimaryCloseBtn}
                       dir={ms.direction}
                     >
-                      {"\u200Fסגור"}
+                      {ms.t("learning.master.closeRtl")}
                     </button>
                   </div>
                 </div>
@@ -3801,4 +3786,5 @@ export default function EnglishMaster() {
     </MasterSubjectAccessScreen>
   );
 }
+
 

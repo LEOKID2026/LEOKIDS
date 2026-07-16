@@ -83,7 +83,7 @@ describe("parent-worksheets-hub", () => {
   test("parent dashboard links to worksheets hub", () => {
     const dash = readFileSync(join(ROOT, "pages/parent/dashboard.js"), "utf8");
     assert.match(dash, /\/parent\/worksheets/);
-    assert.match(dash, /דפי עבודה להדפסה/);
+    assert.match(dash, /t\("parent\.worksheets"\)/);
     assert.doesNotMatch(dash, /parent-report.*worksheets/);
   });
 });

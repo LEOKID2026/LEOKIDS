@@ -133,8 +133,8 @@ export const PUBLIC_SEO_INNER_VARIANTS = ["sky", "violet", "emerald"];
 /** @param {string} title @returns {PublicSeoPanelVariant} */
 export function getPublicSeoSectionPanelVariant(title) {
   const t = title || "";
-  if (/הורה|הורים|דוח/.test(t)) return "amber";
-  if (/^למה/.test(t)) return "emerald";
-  if (/משחק|אתגר|כיף/.test(t)) return "violet";
+  if (/parent|report/i.test(t)) return "amber";
+  if (/^why/i.test(t)) return "emerald";
+  if (/game|challenge|fun/i.test(t)) return "violet";
   return "sky";
 }

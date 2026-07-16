@@ -77,11 +77,11 @@ export function relatedLinks(items) {
 export function disclaimerQuoteBlock() {
   return {
     kind: "disclaimerQuote",
-    title: "הבהרה חשובה",
+    title: "Important notice",
     paragraphs: [
-      "הדוח מבוסס על נתוני התרגול שנאספו באתר Leo Kids.",
-      "הדוח נועד לשמש כלי עזר לימודי להורה, ולעזור להבין מה הילד תרגל, איפה נראו חוזקות ואיפה כדאי להמשיך לחזק.",
-      "הדוח אינו אבחון רפואי, אינו אבחון פסיכולוגי, אינו אבחון דידקטי ואינו מחליף מורה, יועץ, מאבחן או איש מקצוע. אם עולה חשש לגבי קושי לימודי מתמשך, פער לימודי או צורך בבירור נוסף, מומלץ לפנות למורה או לאיש מקצוע מתאים.",
+      "The report is based on practice data collected on Leo Kids.",
+      "The report is meant to help parents understand what their child practiced, where strengths appeared, and what to strengthen next.",
+      "The report is not a medical, psychological, or educational diagnosis and does not replace a teacher, counselor, assessor, or other professional. If you have ongoing concerns about learning difficulty or gaps, speak with a teacher or qualified professional.",
     ],
   };
 }

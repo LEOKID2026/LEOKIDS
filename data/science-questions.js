@@ -15,6 +15,7 @@ import { enrichScienceBankRowWithCanonicalMetadata } from "../lib/learning/scien
 import { rebalanceObviousMcqDistractors } from "../utils/mcq-distractor-rebalance.js";
 import { repairMcqObviousAnswerContent } from "../utils/mcq-fail-content-repair.js";
 import { auditMcqQuality } from "../utils/question-quality.js";
+import { localizeScienceBankForLocale } from "../utils/learning-content-en/science.js";
 
 const SCIENCE_QUESTIONS_RAW = [
   {
@@ -11000,7 +11001,7 @@ const SCIENCE_QUESTIONS_RAW = [
   .concat(SCIENCE_G3_BODY_BANK)
   .concat(SCIENCE_QUESTIONS_PHASE_B);
 
-export const SCIENCE_QUESTIONS = SCIENCE_QUESTIONS_RAW.map(applyPass1ScienceMetadata)
+export const SCIENCE_QUESTIONS_HE = SCIENCE_QUESTIONS_RAW.map(applyPass1ScienceMetadata)
   .map(enrichScienceBankRowWithCanonicalMetadata)
   .map((row) => {
     let current = row;
@@ -11019,3 +11020,8 @@ export const SCIENCE_QUESTIONS = SCIENCE_QUESTIONS_RAW.map(applyPass1ScienceMeta
     }
     return current;
   });
+
+export const SCIENCE_QUESTIONS = localizeScienceBankForLocale(
+  SCIENCE_QUESTIONS_HE,
+  "en"
+);

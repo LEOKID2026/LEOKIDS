@@ -176,19 +176,7 @@ import { formatMathHudNumber } from "../../utils/math-master-hud-number.client.j
 const STORAGE_KEY = "mleo_science_master";
 
 
-const LEVELS = {
-  easy: { name: "קל", difficulty: 1 },
-  medium: { name: "בינוני", difficulty: 2 },
-  hard: { name: "קשה", difficulty: 3 },
-};
-
-const MODES = {
-  learning: { name: "למידה", description: "ללא סיום משחק, תרגול בקצב שלך" },
-  challenge: { name: "אתגר", description: "טיימר + חיים, מרוץ ניקוד גבוה" },
-  speed: { name: "מהירות", description: "תשובות מהירות = יותר נקודות! ⚡" },
-  marathon: { name: "מרתון", description: "כמה שאלות תצליח ברצף? 🏃" },
-  practice: { name: "תרגול", description: "בוחר נושא או מיקוד אימון ייעודי" },
-};
+const PRACTICE_FOCUS_VALUES = ["balanced", "life_science", "earth_space", "materials_energy"];
 
 const GRADES = SCIENCE_GRADES;
 const GRADE_ORDER = SCIENCE_GRADE_ORDER;
@@ -205,13 +193,6 @@ const TOPIC_ICONS = {
   experiments: "🔬",
   mixed: "🎲",
 };
-
-const PRACTICE_FOCUS_OPTIONS = [
-  { value: "balanced", label: "📚 כל הנושאים" },
-  { value: "life_science", label: "🧬 מדעי החיים" },
-  { value: "earth_space", label: "🌍 כדור הארץ והחלל" },
-  { value: "materials_energy", label: "🧪 חומרים וניסויים" },
-];
 
 const PRACTICE_TOPIC_GROUPS = {
   balanced: null,
@@ -910,7 +891,7 @@ export default function ScienceMaster() {
       return "👤";
     }
   });
-  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); // תמונת אווטר מותאמת אישית
+  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); //
   const [playerAvatarBackground, setPlayerAvatarBackground] = useState(DEFAULT_PROFILE_BACKGROUND_KEY);
   const [showPlayerProfile, setShowPlayerProfile] = useState(false);
   const [practiceFocus, setPracticeFocus] = useState("balanced");
@@ -2116,7 +2097,7 @@ function saveScienceAnswerInParallel({
     setLives(3);
     clearActiveDiagnosticState(pendingDiagnosticProbeRef, scienceHypothesisLedgerRef);
 
-    // איפוס מאגר השאלות
+    // {ms.t("learning.master.reset")} מאגר השאלות
     questionPoolRef.current = [];
     questionIndexRef.current = 0;
     retryQueueRef.current = [];
@@ -2880,7 +2861,7 @@ function saveScienceAnswerInParallel({
             margin: "0 auto"
           }}
         >
-        {/* רקע עדין */}
+        {/* */}
         <div className="absolute inset-0 opacity-0 pointer-events-none hidden">
           <div
             className="absolute inset-0"
@@ -2948,7 +2929,7 @@ function saveScienceAnswerInParallel({
             playerAvatarBackground={playerAvatarBackground}
           />
 
-          {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
+          {/* */}
           <div
             className={`${MODE_ROW_CLASS} max-md:mb-1`}
             dir={ms.direction}
@@ -3147,7 +3128,7 @@ function saveScienceAnswerInParallel({
                 >{ms.leaderboard}</button>
               </div>
 
-              {/* כפתורים עזרה ותרגול ממוקד */}
+              {/* */}
               <div className="w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl flex justify-center gap-2 md:gap-2.5 flex-wrap mx-auto px-1 md:px-2">
                 <button
                   onClick={() => setShowHowTo(true)}
@@ -3178,7 +3159,7 @@ function saveScienceAnswerInParallel({
                   onClick={() => setShowPracticeOptions(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionPink}`}
                 >
-                  תרגול ממוקד
+                  {ms.focusedPractice}
                   {mistakes.length > 0 ? ` (${mistakes.length})` : ""}
                 </button>
               </div>
@@ -3382,7 +3363,7 @@ function saveScienceAnswerInParallel({
                       <h3 className={learningModalTitle}>
                         {showPreviousSolution
                           ? ms.previousExercise
-                          : "\u200Fאיך פותרים את השאלה?"}
+                          : ms.howToSolve}
                       </h3>
                       <span className="w-10 shrink-0" aria-hidden />
                     </div>
@@ -3427,7 +3408,7 @@ function saveScienceAnswerInParallel({
                           className={learningPrimaryCloseBtn}
                           dir={ms.direction}
                         >
-                          {"\u200Fסגור"}
+                          {ms.t("learning.master.closeRtl")}
                         </button>
                       </div>
                     </div>
@@ -3692,11 +3673,9 @@ function saveScienceAnswerInParallel({
                     ✖
                   </button>
                 </div>
-                <p className="text-sm text-white/70 mb-3">
-                  שלוט באימון שלך: חזרה על שגיאות אחרונות, תרגול מדורג (התחלה נמוכה ומתקדמות לרמה שבחרת), או בחירת קטגוריה מדעית.
-                </p>
+                <p className="text-sm text-white/70 mb-3">{ms.practiceSettingsBlurb}</p>
                 <div className="space-y-2 mb-4">
-                  <p className="text-xs text-white/60 font-semibold">מצב תרגול</p>
+                  <p className="text-xs text-white/60 font-semibold">{ms.practiceModeLabel}</p>
                   {[
                     { value: "normal", label: ms.t("learning.master.practiceModes.normal") },
                     { value: "mistakes", label: ms.t("learning.master.practiceModes.mistakes") },
@@ -3715,15 +3694,13 @@ function saveScienceAnswerInParallel({
                   ))}
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-white/80">
-                  <div className="font-semibold mb-1">מצב נוכחי</div>
-                  <p>{ms.currentMode}: {ms.getModeName(mode)}</p>
+                  <div className="font-semibold mb-1">{ms.currentMode}</div>
+                  <p>{ms.getModeName(mode)}</p>
                   <p>
-                    מיקוד:{" "}
-                    {PRACTICE_FOCUS_OPTIONS.find((o) => o.value === practiceFocus)?.label ||
-                      PRACTICE_FOCUS_OPTIONS[0].label}
+                    {ms.focus}: {ms.getPracticeFocusLabel(practiceFocus)}
                   </p>
                   <p>
-                    מצב תרגול ממוקד:{" "}
+                    {ms.focusedPracticeMode}:{" "}
                     {focusedPracticeMode === "normal"
                       ? ms.t("learning.master.practiceModes.normal")
                       : focusedPracticeMode === "mistakes"
@@ -3786,7 +3763,7 @@ function saveScienceAnswerInParallel({
                   </div>
                   <div className="text-sm text-white/60 mb-3">{ms.chooseAvatar}</div>
                   
-                  {/* כפתור לבחירת תמונה */}
+                  {/* */}
                   <div className="mb-3">
                     <label className="block w-full">
                       <input
@@ -3874,7 +3851,7 @@ function saveScienceAnswerInParallel({
                       {/* XP Progress Bar */}
                       <div className="mt-2">
                         <div className="flex justify-between text-xs text-white/60 mb-1">
-                          <span>נק׳ ניסיון</span>
+                          <span>{ms.xpPoints}</span>
                           <span>{xp} / {playerLevel * 100}</span>
                         </div>
                         <div className="w-full bg-black/50 rounded-full h-2">
@@ -3893,7 +3870,7 @@ function saveScienceAnswerInParallel({
                     <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} {ms.days}</div>
                     {dailyStreak.streak >= 3 && (
                       <div className="text-xs text-white/60 mt-1">
-                        {dailyStreak.streak >= 30 ? "👑 אלוף!" : dailyStreak.streak >= 14 ? "🌟 מצוין!" : dailyStreak.streak >= 7 ? "⭐ יופי!" : "🔥 המשך כך!"}
+                        {dailyStreak.streak >= 30 ? ms.t("learning.master.dailyStreakChampion") : dailyStreak.streak >= 14 ? ms.t("learning.master.dailyStreakExcellent") : dailyStreak.streak >= 7 ? ms.t("learning.master.dailyStreakNice") : ms.t("learning.master.dailyStreakKeepGoing")}
                       </div>
                     )}
                   </div>
@@ -3902,7 +3879,7 @@ function saveScienceAnswerInParallel({
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                     <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
-                      <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
+                      <span>{ms.t("learning.master.monthMinutesProgress", { current: Math.round(monthlyPersistenceView?.currentMinutes ?? 0), goal: monthlyPersistenceView?.goalMinutes ?? "-" })}</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
                     </div>
                     <div className="w-full bg-black/50 rounded-full h-3 mb-2">
@@ -4041,3 +4018,4 @@ function saveScienceAnswerInParallel({
     </MasterSubjectAccessScreen>
   );
 }
+

@@ -1,7 +1,9 @@
 // Service Worker for LEO K PWA - Full Offline Support
-const CACHE_NAME = 'lk-global-v1';
-const STATIC_CACHE = 'lk-global-static-v1';
-const DYNAMIC_CACHE = 'lk-global-dynamic-v1';
+const CACHE_NAME = 'lk-global-v2';
+const STATIC_CACHE = 'lk-global-static-v2';
+const DYNAMIC_CACHE = 'lk-global-dynamic-v2';
+const GLOBAL_CACHE_PREFIX = 'lk-global-';
+const CURRENT_GLOBAL_CACHES = new Set([CACHE_NAME, STATIC_CACHE, DYNAMIC_CACHE]);
 const REWARD_CARD_PATH_PREFIX = '/rewards/cards/';
 
 // Install-time precache: public chrome only. Game/solo assets cache on first request
@@ -133,10 +135,14 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE && cacheName !== CACHE_NAME) {
-            console.log('[SW] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
+          if (!cacheName.startsWith(GLOBAL_CACHE_PREFIX)) {
+            return undefined;
           }
+          if (CURRENT_GLOBAL_CACHES.has(cacheName)) {
+            return undefined;
+          }
+          console.log('[SW] Deleting old global cache:', cacheName);
+          return caches.delete(cacheName);
         })
       );
     })
@@ -210,7 +216,10 @@ self.addEventListener('fetch', (event) => {
 
   // Handle Next.js pages with Network First, fallback to cache
   // This works for both browser and PWA mode
-  if (request.destination === 'document' && !url.pathname.startsWith('/_next')) {
+  if (
+    (request.mode === 'navigate' || request.destination === 'document') &&
+    !url.pathname.startsWith('/_next')
+  ) {
     event.respondWith(
       fetch(request)
         .then((response) => {

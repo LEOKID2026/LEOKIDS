@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getGuideLink } from "../../data/seo/guide-pages.he";
-import { GUIDE_HUB_CARDS } from "../../data/seo/guide-pages.he";
+import { getGuideLink } from "../../data/seo/guide-pages";
+import { GUIDE_HUB_CARDS } from "../../data/seo/guide-pages";
 import { getHomeBtnClasses } from "../home/home-theme";
 import HomeCtaLink from "../home/HomeCtaLink";
 import PublicSeoWideLayout from "./PublicSeoWideLayout";
@@ -14,7 +14,7 @@ import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 import { DEFAULT_PUBLIC_SEO_FOOTER_CTA } from "./public-seo-wide-defaults";
 
 /**
- * @param {{ content: import("../../data/seo/guide-pages.he").GuidePageContent, isHub?: boolean }} props
+ * @param {{ content: import("../../data/seo/guide-pages").GuidePageContent, isHub?: boolean }} props
  */
 export default function GuideSeoArticlePage({ content, isHub = false }) {
   const { isBright } = useStudentTheme();
@@ -44,21 +44,21 @@ export default function GuideSeoArticlePage({ content, isHub = false }) {
         <PublicSeoWideCardGrid
           cards={GUIDE_HUB_CARDS}
           isBright={isBright}
-          heading={content.hubCardsHeading || "בחירת מדריך לפי מטרה"}
+          heading={content.hubCardsHeading || "Choose a guide by goal"}
           testId="guides-hub-list"
         />
       ) : null}
 
       {!isHub && content.relatedPracticePath ? (
         <aside className={`space-y-3 ${cls.highlight}`} data-testid="guide-practice-cta">
-          <h2 className={cls.sectionSubtitle}>ממשיכים מהמדריך לתרגול</h2>
+          <h2 className={cls.sectionSubtitle}>From guide to practice</h2>
           <p className={`w-full text-sm md:text-base ${cls.body}`}>
-            לאחר שבחרתם דרך עבודה, עברו לתחום התרגול המתאים ובחרו כיתה ונושא. אפשר לחזור למדריך
-            בכל שלב כדי לבדוק את הדרך ולהתאים את ההמשך.
+            After you choose an approach, go to the matching practice area and pick a grade and topic.
+            You can return to the guide at any step to adjust what comes next.
           </p>
           <HomeCtaLink
             href={content.relatedPracticePath}
-            label="לתחומי התרגול"
+            label={content.practiceCtaLabel || "All practice areas"}
             className={getHomeBtnClasses("parents", isBright, "secondary")}
             size="md"
           />
@@ -67,14 +67,14 @@ export default function GuideSeoArticlePage({ content, isHub = false }) {
 
       {isHub ? (
         <section className={`space-y-3 ${cls.highlight}`}>
-          <h2 className={cls.sectionSubtitle}>עברו מהמדריכים לתרגול</h2>
+          <h2 className={cls.sectionSubtitle}>From guides to practice</h2>
           <p className={`w-full text-sm md:text-base ${cls.body}`}>
-            עמודי התרגול מרכזים את המקצועות, הנושאים והפעילויות הזמינים, כדי שתוכלו לבחור את
-            הצעד הבא לפי המטרה שלכם.
+            Practice pages bring together subjects, topics, and available activities so you can choose
+            your next step by goal.
           </p>
           <HomeCtaLink
             href="/practice"
-            label="לתחומי התרגול"
+            label="All practice areas"
             className={getHomeBtnClasses("parents", isBright, "secondary")}
             size="md"
           />
@@ -83,7 +83,7 @@ export default function GuideSeoArticlePage({ content, isHub = false }) {
 
       {relatedGuides.length ? (
         <section className={`space-y-3 ${cls.section}`}>
-          <h2 className={cls.sectionSubtitle}>מדריכים נוספים</h2>
+          <h2 className={cls.sectionSubtitle}>More guides</h2>
           <ul className={`space-y-2 text-sm md:text-base ${cls.body}`}>
             {relatedGuides.map((g) => (
               <li key={g.href}>

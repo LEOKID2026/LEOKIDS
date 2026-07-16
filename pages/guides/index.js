@@ -1,5 +1,5 @@
 import GuideSeoArticlePage from "../../components/seo/GuideSeoArticlePage";
-import { getGuidePageContent } from "../../data/seo/guide-pages.he";
+import { getGuidePageContent } from "../../data/seo/guide-pages";
 
 export default function GuidesHubPage() {
   const content = getGuidePageContent("hub");

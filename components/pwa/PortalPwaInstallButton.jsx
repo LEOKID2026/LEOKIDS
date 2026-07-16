@@ -8,13 +8,12 @@ import {
 import { isStudentPwaInstalledStandalone } from "../../lib/pwa/pwa-install-prompt";
 import { isParentPwaInstalledStandalone } from "../../lib/pwa/pwa-parent-install-prompt";
 import { isTeacherPwaInstalledStandalone } from "../../lib/pwa/pwa-teacher-install-prompt";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const INSTALLED_MSG = "האפליקציה כבר מותקנת במכשיר.";
-
-const PORTAL_LABELS = {
-  student: "התקנת אפליקציית הילדים",
-  parent: "התקנת אפליקציית ההורים",
-  teacher: "התקנת אפליקציית המורים",
+const PORTAL_LABEL_KEYS = {
+  student: "ui.pwa.portalInstallStudent",
+  parent: "ui.pwa.portalInstallParent",
+  teacher: "ui.pwa.portalInstallTeacher",
 };
 
 const INSTALL_PATHS = {
@@ -54,7 +53,8 @@ function InstallPhoneIcon() {
  * @param {{ portal: 'student' | 'parent' | 'teacher', isBright?: boolean, accent: object, label?: string }} props
  */
 export default function PortalPwaInstallButton({ portal, isBright = false, accent, label }) {
-  const resolvedLabel = label || PORTAL_LABELS[portal];
+  const t = useT();
+  const resolvedLabel = label || t(PORTAL_LABEL_KEYS[portal]);
   const [alreadyInstalled, setAlreadyInstalled] = useState(false);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function PortalPwaInstallButton({ portal, isBright = false, accen
   const msgClass = isBright ? "text-slate-600" : "text-white/70";
 
   if (alreadyInstalled) {
-    return <p className={`text-sm ${msgClass}`}>{INSTALLED_MSG}</p>;
+    return <p className={`text-sm ${msgClass}`}>{t("ui.pwa.alreadyInstalled")}</p>;
   }
 
   return (
@@ -92,4 +92,4 @@ export default function PortalPwaInstallButton({ portal, isBright = false, accen
   );
 }
 
-export { PORTAL_LABELS };
+export { PORTAL_LABEL_KEYS };

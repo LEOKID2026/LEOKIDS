@@ -13,9 +13,9 @@ export default function PublicSeoWideRelatedGuides({ guides, isBright }) {
     <aside
       className={`space-y-3 ${cls.section}`}
       data-testid="practice-related-guides"
-      aria-label="מדריכים קשורים"
+      aria-label="Related guides"
     >
-      <h2 className={cls.sectionSubtitle}>מדריכים קשורים</h2>
+      <h2 className={cls.sectionSubtitle}>Related guides</h2>
       <ul className={`space-y-2 text-sm md:text-base ${cls.body}`}>
         {guides.map((g) => (
           <li key={g.href}>

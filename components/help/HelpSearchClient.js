@@ -26,16 +26,15 @@ export default function HelpSearchClient({ articles, sectionBase }) {
     <div className="space-y-4">
       <div>
         <label htmlFor={id} className="sr-only">
-          חיפוש במדריכים
+          Search guides
         </label>
         <input
           id={id}
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="חיפוש לפי נושא או מילת מפתח..."
+          placeholder="Search by topic or keyword..."
           className={SP.searchInput}
-          dir="rtl"
           aria-controls="help-search-results"
         />
       </div>
@@ -50,7 +49,7 @@ export default function HelpSearchClient({ articles, sectionBase }) {
         ))}
       </ul>
       {filtered.length === 0 ? (
-        <p className={SP.searchEmpty}>לא נמצאו תוצאות לחיפוש זה.</p>
+        <p className={SP.searchEmpty}>No results found for this search.</p>
       ) : null}
     </div>
   );

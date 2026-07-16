@@ -46,11 +46,11 @@ describe("worksheet-ready-catalog-integrity", () => {
     assert.equal(gen.pass, true, gen.errors.join("; "));
   });
 
-  test("summary rows have Hebrew labels only for levels", () => {
+  test("summary rows have English labels only for levels", () => {
     const rows = listReadyCatalogSummaryRows();
     assert.equal(rows.length, READY_WORKSHEET_CATALOG.length);
     for (const row of rows) {
-      assert.ok(row.levelHe === "רגיל" || row.levelHe === "מתקדם", row.slug);
+      assert.ok(row.levelHe === "Regular" || row.levelHe === "Advanced", row.slug);
       assert.equal(findForbiddenPublicLevelLabels(JSON.stringify(row)).length, 0);
     }
   });

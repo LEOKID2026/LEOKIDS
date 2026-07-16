@@ -6,10 +6,12 @@ import PageSeo from "../components/seo/PageSeo";
 import { getPublicPageSeo } from "../lib/site/public-page-seo.he";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useGalleryUi } from "../hooks/useGalleryUi.js";
+import { useT } from "../lib/i18n/I18nProvider.jsx";
 
 const gallerySeo = getPublicPageSeo("gallery");
 
 export default function Gallery() {
+  const t = useT();
   const { theme, tokens: T } = useStudentTheme();
   const { GL } = useGalleryUi();
   const [items, setItems] = useState([]);
@@ -57,12 +59,12 @@ export default function Gallery() {
         </>
       ) : null}
 
-      <div dir="rtl" className={GL.pageWrap}>
+      <div dir="ltr" lang="en" className={GL.pageWrap}>
         <div className={GL.container}>
           <div className={`${T.hubTopBar} mb-1 md:mb-2`}>
             <div className={T.hubTopBarBack}>
               <Link href="/student/home" className={T.hubBackLink}>
-                חזרה
+                {t("ui.gallery.back")}
               </Link>
             </div>
             <motion.h1
@@ -71,7 +73,7 @@ export default function Gallery() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              הגלריה של ליאו
+              {t("ui.gallery.title")}
             </motion.h1>
           </div>
 
@@ -81,7 +83,7 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            תמונות וסרטונים של ליאו - הכלב שמלווה את עולם הילדים באתר.
+            {t("ui.gallery.subtitle")}
           </motion.p>
 
           <motion.p
@@ -90,13 +92,13 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            כאן אפשר להכיר את ליאו מקרוב, דרך רגעים, תמונות וסרטונים שמוסיפים חום וחיים לעולם הילדים באתר.
+            {t("ui.gallery.intro")}
           </motion.p>
 
           {loading ? (
             <div className="min-h-[40vh]" aria-busy="true" />
           ) : items.length === 0 ? (
-            <p className={GL.empty}>לא נמצאו תמונות או סרטונים להצגה.</p>
+            <p className={GL.empty}>{t("ui.gallery.empty")}</p>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-5 w-full pb-6">
               {items.map((item, index) => (
@@ -113,7 +115,7 @@ export default function Gallery() {
                   {item.type === "image" ? (
                     <img
                       src={item.src}
-                      alt={`ליאו - תמונה ${index + 1}`}
+                      alt={t("ui.gallery.imageAlt", { num: index + 1 })}
                       className="w-full h-full object-cover block"
                     />
                   ) : (
@@ -129,7 +131,8 @@ export default function Gallery() {
       {selectedIndex !== null && (
         <div
           className={GL.modalOverlay}
-          dir="rtl"
+          dir="ltr"
+          lang="en"
           onClick={closeModal}
         >
           <motion.div
@@ -142,7 +145,7 @@ export default function Gallery() {
             {items[selectedIndex].type === "image" ? (
               <img
                 src={items[selectedIndex].src}
-                alt={`ליאו - תמונה ${selectedIndex + 1}`}
+                alt={t("ui.gallery.imageAlt", { num: selectedIndex + 1 })}
                 className="w-full max-h-[80vh] object-contain rounded-xl shadow-xl mx-auto"
               />
             ) : (
@@ -157,7 +160,7 @@ export default function Gallery() {
             <button
               type="button"
               onClick={closeModal}
-              aria-label="סגור"
+              aria-label={t("ui.gallery.close")}
               className={GL.modalClose}
             >
               ✖
@@ -165,18 +168,18 @@ export default function Gallery() {
             <button
               type="button"
               onClick={prevItem}
-              aria-label="הקודם"
+              aria-label={t("ui.gallery.previous")}
               className={`${GL.modalNav} ${GL.modalNavStart}`}
             >
-              →
+              ←
             </button>
             <button
               type="button"
               onClick={nextItem}
-              aria-label="הבא"
+              aria-label={t("ui.gallery.next")}
               className={`${GL.modalNav} ${GL.modalNavEnd}`}
             >
-              ←
+              →
             </button>
           </motion.div>
         </div>

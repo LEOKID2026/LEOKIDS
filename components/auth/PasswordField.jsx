@@ -4,7 +4,7 @@ import {
   AUTH_PASSWORD_HIDE_SHORT,
   AUTH_PASSWORD_SHOW,
   AUTH_PASSWORD_SHOW_SHORT,
-} from "../../lib/auth/auth-password.he";
+} from "../../lib/auth/auth-password.js";
 
 const DEFAULT_INPUT_CLASS =
   "w-full rounded bg-black/40 border border-white/20 px-3 py-2 pe-10";

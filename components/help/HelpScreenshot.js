@@ -17,7 +17,7 @@ export default function HelpScreenshot({ path, alt, caption, sources }) {
     return (
       <figure className={SP.screenshotMissing}>
         <figcaption>{caption || alt}</figcaption>
-        <p className="mt-2">תמונת מסך תתווסף בקרוב</p>
+        <p className="mt-2">Screenshot coming soon</p>
       </figure>
     );
   }
@@ -26,13 +26,13 @@ export default function HelpScreenshot({ path, alt, caption, sources }) {
     return (
       <figure className={SP.screenshotError}>
         <figcaption>{caption || alt}</figcaption>
-        <p className="mt-2">לא ניתן לטעון את תמונת המסך</p>
+        <p className="mt-2">Could not load screenshot</p>
       </figure>
     );
   }
 
   return (
-    <figure className="my-6 text-right">
+    <figure className="my-6 text-left">
       <picture>
         <source media="(max-width: 640px)" srcSet={mobile} />
         <source media="(max-width: 1023px)" srcSet={tablet} />

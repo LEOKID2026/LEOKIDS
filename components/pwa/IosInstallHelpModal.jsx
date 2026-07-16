@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const STEPS = [
-  "פתחו את הדף הזה בדפדפן Safari.",
-  "לחצו על כפתור השיתוף ⬆️ בסרגל הדפדפן.",
-  "גללו בתפריט ובחרו „הוספה למסך הבית”.",
-  "ודאו שהאפשרות „פתיחה כיישום אינטרנט” מופעלת, אם היא מוצגת.",
-  "לחצו על „הוספה”. סמל האפליקציה יופיע במסך הבית.",
+const STEP_KEYS = [
+  "ui.pwa.iosStep1",
+  "ui.pwa.iosStep2",
+  "ui.pwa.iosStep3",
+  "ui.pwa.iosStep4",
+  "ui.pwa.iosStep5",
 ];
 
 /**
@@ -19,6 +20,7 @@ export default function IosInstallHelpModal({
   isBright = false,
   doneBtnClass = "",
 }) {
+  const t = useT();
   const titleId = useId();
   const closeRef = useRef(null);
   const [portalTarget, setPortalTarget] = useState(null);
@@ -60,8 +62,8 @@ export default function IosInstallHelpModal({
     : "fixed inset-0 z-[180] flex items-center justify-center bg-black/75 p-3 backdrop-blur-[2px] sm:p-4";
 
   const panelClass = isBright
-    ? "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white px-4 py-4 text-right shadow-2xl sm:px-5 sm:py-5"
-    : "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-white/15 bg-[#0f1629] px-4 py-4 text-right shadow-2xl sm:px-5 sm:py-5";
+    ? "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-2xl sm:px-5 sm:py-5"
+    : "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-white/15 bg-[#0f1629] px-4 py-4 text-left shadow-2xl sm:px-5 sm:py-5";
 
   const titleClass = isBright
     ? "pe-8 text-base font-bold leading-snug text-slate-900"
@@ -95,40 +97,37 @@ export default function IosInstallHelpModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        dir="rtl"
-        lang="he"
+        dir="ltr"
+        lang="en"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="mb-1 flex items-start justify-between gap-2">
           <h2 id={titleId} className={titleClass}>
-            התקנה ב-iPhone או iPad
+            {t("ui.pwa.iosHelpTitle")}
           </h2>
           <button
             ref={closeRef}
             type="button"
             onClick={handleClose}
             className={closeBtnClass}
-            aria-label="סגור"
+            aria-label={t("ui.pwa.close")}
             data-testid="ios-install-help-modal-close"
           >
             ✕
           </button>
         </div>
 
-        <p className={introClass}>במכשירי Apple מתקינים את האפליקציה דרך Safari:</p>
+        <p className={introClass}>{t("ui.pwa.iosIntro")}</p>
 
-        <ol className="mt-2 list-decimal space-y-1.5 pe-4 ps-5">
-          {STEPS.map((step) => (
-            <li key={step} className={stepClass}>
-              {step}
+        <ol className="mt-2 list-decimal space-y-1.5 ps-5 pe-4">
+          {STEP_KEYS.map((key) => (
+            <li key={key} className={stepClass}>
+              {t(key)}
             </li>
           ))}
         </ol>
 
-        <p className={helpClass}>
-          לא מופיעה האפשרות „הוספה למסך הבית”? גללו לתחתית התפריט, לחצו על „עריכת פעולות”
-          והוסיפו אותה לרשימה.
-        </p>
+        <p className={helpClass}>{t("ui.pwa.iosHelpFooter")}</p>
 
         <button
           type="button"
@@ -136,7 +135,7 @@ export default function IosInstallHelpModal({
           className={`mt-4 w-full ${doneBtnClass}`}
           data-testid="ios-install-help-modal-done"
         >
-          הבנתי
+          {t("ui.pwa.gotIt")}
         </button>
       </div>
     </div>,

@@ -1,7 +1,7 @@
 // Minimal service worker for LEO KIDS teacher PWA (scope /teacher/ only).
 // Cache names use lk-global- prefix (aligned with public/student/sw.js).
 
-const CACHE_NAME = "lk-global-teacher-v1";
+const CACHE_NAME = "lk-global-teacher-v2";
 const CACHE_PREFIX = "lk-global-teacher-";
 
 self.addEventListener("install", (event) => {

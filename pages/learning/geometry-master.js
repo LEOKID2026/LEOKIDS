@@ -459,13 +459,13 @@ export default function GeometryMaster() {
   const [celebrationEmoji, setCelebrationEmoji] = useState("🎉");
   const [playerAvatarBackground, setPlayerAvatarBackground] = useState(DEFAULT_PROFILE_BACKGROUND_KEY);
   const [showPlayerProfile, setShowPlayerProfile] = useState(false);
-  const [playerAvatar, setPlayerAvatar] = useState("👤"); // אווטר ברירת מחדל
-  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); // תמונת אווטר מותאמת אישית
+  const [playerAvatar, setPlayerAvatar] = useState("👤"); //
+  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); //
   const [playerLevel, setPlayerLevel] = useState(1);
   const [xp, setXp] = useState(0);
   const [showLevelUp, setShowLevelUp] = useState(false);
   
-  // תרגול ממוקד
+  // {ms.focusedPractice}
   const [focusedPracticeMode, setFocusedPracticeMode] = useState("normal"); // "normal", "mistakes", "graded"
   const [practiceFocus, setPracticeFocus] = useState("default");
   const [mistakes, setMistakes] = useState([]);
@@ -1071,7 +1071,7 @@ export default function GeometryMaster() {
     closeOpenQuestionLedger(true);
     // בדיקה שהכיתה קיימת
     if (!GRADES[grade]) {
-      console.error("כיתה לא תקינה:", grade);
+      console.error("Invalid grade:", grade);
       setCurrentQuestion({
         question: ms.t("learning.geometry.errors.invalidGrade"),
         correctAnswer: 0,
@@ -1141,7 +1141,7 @@ export default function GeometryMaster() {
     
     // בדיקה שיש נושאים זמינים
     if (allowedTopics.length === 0) {
-      console.error("אין נושאים זמינים לכיתה:", grade);
+      console.error("No topics available for grade:", grade);
       setCurrentQuestion({
         question: ms.t("learning.geometry.errors.noTopics"),
         correctAnswer: 0,
@@ -1157,13 +1157,13 @@ export default function GeometryMaster() {
       const mixedAvailable = Object.keys(mixedTopics).filter(t => mixedTopics[t] && allowedTopics.includes(t));
       if (mixedAvailable.length === 0) {
         validTopic = allowedTopics.find(t => t !== "mixed") || allowedTopics[0];
-        if (validTopic) setTopic(validTopic); // עדכון הנושא
+        if (validTopic) setTopic(validTopic); //
       }
     } else if (!allowedTopics.includes(topic)) {
       // אם הנושא לא תקין, נבחר נושא תקין
       validTopic = allowedTopics.find(t => t !== "mixed") || allowedTopics[0];
       if (validTopic) {
-        setTopic(validTopic); // עדכון הנושא
+        setTopic(validTopic); //
       } else {
         setCurrentQuestion({
           question: ms.t("learning.geometry.errors.noTopics"),
@@ -1311,7 +1311,7 @@ export default function GeometryMaster() {
       
       // בדיקה שהשאלה תקינה
       if (!question || !question.answers || question.answers.length === 0 || question.params?.kind === "no_question") {
-        continue; // ננסה שוב
+        continue; //
       }
       
       const questionKey =
@@ -1764,7 +1764,7 @@ export default function GeometryMaster() {
       let points = 10 + streak;
       if (mode === "speed") {
         const timeBonus = timeLeft ? Math.floor(timeLeft * 2) : 0;
-        points += timeBonus; // בונוס זמן במצב מהירות
+        points += timeBonus; //
       }
       
       setScore((prev) => prev + points);
@@ -1971,9 +1971,9 @@ export default function GeometryMaster() {
       ) {
         const ans = `\u2066${currentQuestion.correctAnswer}\u2069`;
         if (errExpl && !errExpl.includes(String(currentQuestion.correctAnswer))) {
-          errExpl = `${errExpl} התשובה הנכונה: ${ans}.`;
+          errExpl = `${errExpl} ${ms.t("learning.master.correctAnswerColon", { answer: ans })}`;
         } else if (!errExpl) {
-          errExpl = `התשובה הנכונה: ${ans}.`;
+          errExpl = ms.t("learning.master.correctAnswerColon", { answer: ans });
         }
       }
       setErrorExplanation(errExpl);
@@ -2451,7 +2451,7 @@ export default function GeometryMaster() {
       steps = [
         {
           id: "geometry-fallback",
-          title: "הסבר",
+          title: ms.t("learning.master.explainTitle"),
           content: (
             <span
               style={{
@@ -2459,7 +2459,7 @@ export default function GeometryMaster() {
                 display: "block",
               }}
             >
-              אין כאן פירוט צעדים לשאלה זו. השתמשו בלוח הנוסחאות.
+              {ms.t("learning.master.noStepDetailGeometry")}
             </span>
           ),
           text: "",
@@ -2783,7 +2783,7 @@ export default function GeometryMaster() {
             playerAvatarBackground={playerAvatarBackground}
           />
 
-          {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
+          {/* */}
           <div
             className={LEARNING_MASTER_MOBILE_MODE_ROW_CLASS}
             dir={ms.direction}
@@ -2910,7 +2910,7 @@ export default function GeometryMaster() {
                     };
                     setMixedTopics(newMixedTopics);
 
-                    // מאפס את רשימת השאלות האחרונות כדי שלא תהיה לולאה בניסיון למצוא "שאלה חדשה"
+                    // מאפס את רשימת השאלות האחרונות כדי שלא תהיה לולאה בניסיון למצוא "{ms.t("learning.master.newQuestion")}"
                     setRecentQuestions(new Set());
                   }}
                   className={`${MB.selectControl} shrink-0 min-w-0 w-[5.75rem] max-w-[6.25rem] md:w-[6.5rem] md:max-w-[7rem]`}
@@ -2936,7 +2936,7 @@ export default function GeometryMaster() {
                         setShowMixedSelector(true);
                       }}
                       className={MB.preGameGearBtn}
-                      title="ערוך נושאים למיקס"
+                      title={ms.t("learning.master.editMixTopics")}
                     >
                       ⚙️
                     </button>
@@ -3053,7 +3053,7 @@ export default function GeometryMaster() {
                 >{ms.leaderboard}</button>
               </div>
 
-              {/* כפתורים עזרה ותרגול ממוקד */}
+              {/* */}
               <div className="w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl flex justify-center gap-2 md:gap-2.5 flex-wrap mx-auto px-1 md:px-2">
                 <button
                   onClick={() => setShowHowTo(true)}
@@ -3084,7 +3084,7 @@ export default function GeometryMaster() {
                   onClick={() => setShowPracticeOptions(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionPink}`}
                 >
-                  תרגול ממוקד
+                  {ms.focusedPractice}
                   {mistakes.length > 0 ? ` (${mistakes.length})` : ""}
                 </button>
               </div>
@@ -3096,7 +3096,7 @@ export default function GeometryMaster() {
             </div>
           ) : (
             <div className={`flex flex-col flex-1 min-h-0 w-full items-center${currentQuestion ? " max-md:-mt-1" : ""}`}>
-              {/* אנימציות חזותיות */}
+              {/* */}
               {showCorrectAnimation && (
                 <div className="fixed inset-0 z-[190] flex items-center justify-center pointer-events-none">
                   <div className="text-8xl animate-celebrate">
@@ -3118,7 +3118,7 @@ export default function GeometryMaster() {
                   ref={gameRef}
                   className={LEARNING_MASTER_MOBILE_GAME_CLASS}
                 >
-                  {/* שכבת הודעות לא דוחפת פריסה */}
+                  {/* */}
                   {(feedback || errorExplanation) && (
                     <div className="absolute top-0 left-0 right-0 z-[5] px-2 pt-1 pointer-events-none" role="status" aria-live="assertive" aria-atomic="true">
                       <div className="flex flex-col gap-2 items-stretch">
@@ -3152,7 +3152,7 @@ export default function GeometryMaster() {
                     </div>
                   )}
 
-                  {/* אזור שאלה יציב למניעת קפיצות בפריסת התשובות - כמו math-master */}
+                  {/* */}
                   <div
                     data-testid="geometry-question-surface"
                     className={`relative w-full flex-1 min-h-0 flex flex-col overflow-hidden px-2 ${showMobileQuestionActions ? "max-md:pb-11" : ""} ${questionPressureLayout?.questionStemInsetClass ?? ""}`.trim()}
@@ -3176,7 +3176,7 @@ export default function GeometryMaster() {
                     </div>
                   ) : null}
 
-                  {/* בדיקה אם יש שאלה תקינה */}
+                  {/* */}
                   {currentQuestion.params?.kind === "no_question" ? (
                     <div
                       className="text-xl font-bold text-red-400 mb-4 text-center p-4 bg-red-500/20 rounded-lg border border-red-400/50"
@@ -3268,7 +3268,7 @@ export default function GeometryMaster() {
                       <div
                         role="button"
                         tabIndex={0}
-                        aria-label="הגדל שרטוט"
+                        aria-label={ms.t("learning.master.enlargeDiagram")}
                         onClick={() => setShowDiagramModal(true)}
                         onKeyDown={(e) => {
                           if (e.key === "Enter" || e.key === " ") {
@@ -3288,7 +3288,7 @@ export default function GeometryMaster() {
                           className="absolute bottom-0.5 left-0.5 text-[10px] leading-none bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 rounded px-1.5 py-px shadow pointer-events-none select-none"
                           aria-hidden
                         >
-                          ⛶ הגדל
+                          {ms.t("learning.master.enlarge")}
                         </span>
                       </div>
                     </div>
@@ -3400,7 +3400,7 @@ export default function GeometryMaster() {
                           </div>
                         ) : null)}
 
-                      {/* כפתורי הסבר / עצירה */}
+                      {/* */}
                       {currentQuestion && (
                         <div className="mt-2 flex flex-col gap-2 w-full">
                           <div className={MB.answerActionsBar} dir={ms.direction}>
@@ -3415,7 +3415,7 @@ export default function GeometryMaster() {
                                   }}
                                   className={MB.btnStepByStep}
                                 >
-                                  📘 צעד-צעד
+                                  {ms.t("learning.master.stepByStep")}
                                 </button>
                               )}
 
@@ -3440,7 +3440,7 @@ export default function GeometryMaster() {
                         currentQuestion.params?.kind !== "no_question" && (
                         <>
 
-                      {/* חלון הסבר מלא - Modal גדול ומרכזי */}
+                      {/* */}
                       {isShowingAnySolution &&
                         explanationQuestion &&
                         geometryAnimationSteps &&
@@ -3477,7 +3477,7 @@ export default function GeometryMaster() {
                                   <h3 className={learningModalTitle}>
                                     {showPreviousSolution
                                       ? ms.previousExercise
-                                      : "\u200Fאיך פותרים את התרגיל?"}
+                                      : ms.t("learning.master.howToSolveExerciseRtl")}
                                   </h3>
                                   <span className="w-10 shrink-0" aria-hidden />
                                 </div>
@@ -3546,7 +3546,7 @@ export default function GeometryMaster() {
                                       disabled={animationStep === 0}
                                       className={learningStepNavBtn}
                                     >
-                                      קודם
+                                      {ms.t("learning.master.previous")}
                                     </button>
                                     <button
                                       type="button"
@@ -3570,12 +3570,14 @@ export default function GeometryMaster() {
                                       }
                                       className={learningStepNavBtn}
                                     >
-                                      הבא
+                                      {ms.t("learning.master.next")}
                                     </button>
                                   </div>
                                   <div className={learningStepCounter}>
-                                    צעד {animationStep + 1} מתוך{" "}
-                                    {geometryAnimationSteps.length}
+                                    {ms.t("learning.master.stepOf", {
+                                      current: animationStep + 1,
+                                      total: geometryAnimationSteps.length,
+                                    })}
                                   </div>
                                 </div>
                               </div>
@@ -3655,7 +3657,7 @@ export default function GeometryMaster() {
                             const topScores = loadLeaderboardTop10ByDisplayLevel(saved, dl);
                             setLeaderboardData(topScores);
                           } catch (e) {
-                            console.error("שגיאה בטעינת לוח התוצאות:", e);
+                            console.error(ms.t("learning.master.leaderboardLoadErrorPrefix"), e);
                           }
                         }
                       }}
@@ -3687,7 +3689,7 @@ export default function GeometryMaster() {
                             colSpan={4}
                             className="text-white/60 p-4 text-sm"
                           >
-                            עדיין אין תוצאות ברמה {ms.getDisplayLevelLabel(leaderboardLevel)}
+                            {ms.t("learning.master.noResultsForLevel")} {ms.getDisplayLevelLabel(leaderboardLevel)}
                           </td>
                         </tr>
                       ) : (
@@ -3767,10 +3769,10 @@ export default function GeometryMaster() {
               >
                 <div className="text-center mb-4 flex-shrink-0">
                   <h2 className="text-2xl font-extrabold text-white mb-2">
-                    🎲 בחר נושאים למיקס
+                    {ms.t("learning.master.pickMixTopics")}
                   </h2>
                   <p className="text-white/70 text-sm">
-                    בחר אילו נושאים לכלול במיקס
+                    {ms.t("learning.master.pickMixTopicsBlurb")}
                   </p>
                 </div>
 
@@ -3810,7 +3812,7 @@ export default function GeometryMaster() {
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 font-bold text-sm"
                   >
-                    הכל
+                    {ms.t("learning.master.all")}
                   </button>
                   <button
                     onClick={() => {
@@ -3823,7 +3825,7 @@ export default function GeometryMaster() {
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-gray-500/80 hover:bg-gray-500 font-bold text-sm"
                   >
-                    בטל הכל
+                    {ms.t("learning.master.cancel")} {ms.t("learning.master.all")}
                   </button>
                   <button
                     onClick={() => {
@@ -3833,12 +3835,12 @@ export default function GeometryMaster() {
                       if (hasSelected) {
                         setShowMixedSelector(false);
                       } else {
-                        alert("אנא בחר לפחות נושא אחד");
+                        alert(ms.t("learning.master.selectOneTopicMin"));
                       }
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
                   >
-                    שמור
+                    {ms.t("learning.master.save")}
                   </button>
                 </div>
               </div>
@@ -3877,7 +3879,7 @@ export default function GeometryMaster() {
                   <h2 className="text-2xl font-extrabold text-white mb-2">{ms.playerProfile}</h2>
                 </div>
 
-                {/* אווטר */}
+                {/* */}
                 <div className="text-center mb-4">
                   <div className="text-6xl mb-3">
                     {playerAvatarImage ? (
@@ -3892,7 +3894,7 @@ export default function GeometryMaster() {
                   </div>
                   <div className="text-sm text-white/60 mb-3">{ms.chooseAvatar}</div>
                   
-                  {/* כפתור לבחירת תמונה */}
+                  {/* */}
                   <div className="mb-3">
                     <label className="block w-full">
                       <input
@@ -3953,7 +3955,7 @@ export default function GeometryMaster() {
                   </div>
                 </div>
 
-                {/* סטטיסטיקות */}
+                {/* */}
                 <div className="space-y-3 mb-4">
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                     <div className="text-sm text-white/60 mb-1">{ms.playerName}</div>
@@ -3974,12 +3976,12 @@ export default function GeometryMaster() {
                       <div className="text-xl font-bold text-yellow-400">⭐ {stars}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">רמה</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.level}</div>
                       <div className="text-xl font-bold text-purple-400">{ms.level} {playerLevel}</div>
                       {/* XP Progress Bar */}
                       <div className="mt-2">
                         <div className="flex justify-between text-xs text-white/60 mb-1">
-                          <span>נק׳ ניסיון</span>
+                          <span>{ms.xpPoints}</span>
                           <span>{xp} / {playerLevel * 100}</span>
                         </div>
                         <div className="w-full bg-black/50 rounded-full h-2">
@@ -3998,7 +4000,7 @@ export default function GeometryMaster() {
                     <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} {ms.days}</div>
                     {dailyStreak.streak >= 3 && (
                       <div className="text-xs text-white/60 mt-1">
-                        {dailyStreak.streak >= 30 ? "👑 אלוף!" : dailyStreak.streak >= 14 ? "🌟 מצוין!" : dailyStreak.streak >= 7 ? "⭐ יופי!" : "🔥 המשך כך!"}
+                        {dailyStreak.streak >= 30 ? ms.t("learning.master.dailyStreakChampion") : dailyStreak.streak >= 14 ? ms.t("learning.master.dailyStreakExcellent") : dailyStreak.streak >= 7 ? ms.t("learning.master.dailyStreakNice") : ms.t("learning.master.dailyStreakKeepGoing")}
                       </div>
                     )}
                   </div>
@@ -4007,7 +4009,7 @@ export default function GeometryMaster() {
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                     <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
-                      <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
+                      <span>{ms.t("learning.master.monthMinutesProgress", { current: Math.round(monthlyPersistenceView?.currentMinutes ?? 0), goal: monthlyPersistenceView?.goalMinutes ?? "-" })}</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
                     </div>
                     <div className="w-full bg-black/50 rounded-full h-3 mb-2">
@@ -4026,7 +4028,7 @@ export default function GeometryMaster() {
                       {ms.t("learning.master.correctOfTotal", { correct, total: totalQuestions })}                    </div>
                   </div>
 
-                  {/* התקדמות לפי נושאים */}
+                  {/* */}
                   {Object.keys(progress).some(topic => progress[topic].total > 0) && (
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                       <div className="text-sm text-white/60 mb-2">{ms.topicProgress}</div>
@@ -4057,15 +4059,15 @@ export default function GeometryMaster() {
                       <div className="text-sm text-white/60 mb-2">{ms.t('learning.master.localInsights')}</div>
                       <div className="text-xs text-white/85 space-y-1">
                         <div>
-                          <span className="text-amber-300 font-semibold">לחזק:</span>{" "}
+                          <span className="text-amber-300 font-semibold">{ms.t("learning.master.strengthen")}</span>{" "}
                           {getTopicName(geometryInsights.weakest)}
                         </div>
                         <div>
-                          <span className="text-emerald-300 font-semibold">חזק ביחס:</span>{" "}
+                          <span className="text-emerald-300 font-semibold">{ms.t("learning.master.strongRelative")}</span>{" "}
                           {getTopicName(geometryInsights.strongest)}
                         </div>
                         <p className="text-[11px] text-white/50 mt-2">
-                          לפחות 2 ניסיונות; נשמר בדפדפן בלבד.
+                          {ms.t("learning.master.browserOnlyMistakes")}
                         </p>
                       </div>
                     </div>
@@ -4134,7 +4136,7 @@ export default function GeometryMaster() {
                     <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.mistakes')}</div>
                     <div className="text-sm text-white/70">
                       {mistakes.length > 0
-                        ? `תרגל את ${mistakes.length} השגיאות שעשית`
+                        ? ms.t("learning.master.practiceYourMistakes", { count: mistakes.length })
                         : ms.noMistakesToPractice}
                     </div>
                   </button>
@@ -4165,11 +4167,11 @@ export default function GeometryMaster() {
 
                 {mistakes.length > 0 && (
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3 mb-4">
-                    <div className="text-sm text-white/60 mb-2">שגיאות אחרונות:</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.t("learning.master.recentMistakes")}</div>
                     <div className="space-y-1 max-h-[150px] overflow-y-auto">
                       {mistakes.slice(-5).reverse().map((mistake, idx) => (
                         <div key={idx} className="text-xs text-white/80">
-                          {mistake.question} = {mistake.wrongAnswer} ❌ (נכון: {mistake.correctAnswer})
+                          {ms.t("learning.master.mistakeRow", { question: mistake.question, wrong: mistake.wrongAnswer, correct: mistake.correctAnswer })}
                         </div>
                       ))}
                     </div>
@@ -4185,7 +4187,7 @@ export default function GeometryMaster() {
                   }}
                   className="w-full px-4 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 font-bold text-sm mb-2"
                 >
-                  🗑️ נקה שגיאות
+                  {ms.clearMistakes}
                 </button>
 
                 <button
@@ -4230,15 +4232,15 @@ export default function GeometryMaster() {
             </div>
           )}
 
-          {/* לוח צורות ונוסחאות */}
-          {/* מודל הגדלת שרטוט */}
+          {/* */}
+          {/* */}
           {showDiagramModal && questionDiagramSpec && currentQuestion && (
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[186] p-4"
               onClick={() => setShowDiagramModal(false)}
               role="dialog"
               aria-modal="true"
-              aria-label="שרטוט מוגדל"
+              aria-label={ms.t("learning.master.enlargedDiagram")}
             >
               <div
                 className="w-full max-w-[min(96vw,720px)] bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-500/50 rounded-2xl p-3 sm:p-4 shadow-2xl"
@@ -4246,12 +4248,12 @@ export default function GeometryMaster() {
                 dir={ms.direction}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-emerald-300 font-bold text-sm">שרטוט</span>
+                  <span className="text-emerald-300 font-bold text-sm">{ms.t("learning.master.diagram")}</span>
                   <button
                     type="button"
                     onClick={() => setShowDiagramModal(false)}
                     className="text-slate-400 hover:text-white text-lg leading-none px-1"
-                    aria-label="סגור שרטוט"
+                    aria-label={ms.t("learning.master.closeDiagram")}
                   >
                     ✕
                   </button>
@@ -4362,6 +4364,7 @@ export default function GeometryMaster() {
     </MasterSubjectAccessScreen>
   );
 }
+
 
 
 

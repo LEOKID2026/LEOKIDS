@@ -13,7 +13,7 @@ export default function HelpHubCard({ href, title, description, emoji, sectionKe
   return (
     <Link
       href={href}
-      className={`group rounded-2xl bg-gradient-to-br ${gradient} p-[1px] block text-right`}
+      className={`group rounded-2xl bg-gradient-to-br ${gradient} p-[1px] block text-left`}
     >
       <div
         className={`h-full rounded-2xl p-5 flex flex-col justify-between min-h-[180px] ${
@@ -26,12 +26,12 @@ export default function HelpHubCard({ href, title, description, emoji, sectionKe
           <p className={`text-sm ${isBright ? "text-slate-600" : "text-white/75"}`}>{description}</p>
         </div>
         <span
-          className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold group-hover:-translate-x-1 transition ${
+          className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition ${
             isBright ? "text-sky-700" : "text-amber-200"
           }`}
         >
-          <span aria-hidden>←</span>
-          כניסה למדריך
+          <span aria-hidden>→</span>
+          Open guide
         </span>
       </div>
     </Link>

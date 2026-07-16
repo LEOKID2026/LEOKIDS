@@ -626,7 +626,7 @@ export default function MathMaster() {
     },
     [syncPracticeSourceDifficulty]
   );
-  const [operation, setOperation] = useState("addition"); // לא mixed כברירת מחדל כדי שה-modal לא יפתח אוטומטית
+  const [operation, setOperation] = useState("addition"); //  mixed    -modal   
   const {
     session,
     grade,
@@ -674,7 +674,7 @@ export default function MathMaster() {
   const [wrong, setWrong] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [textAnswer, setTextAnswer] = useState(""); // תשובה בקלט טקסט למצבי למידה ותרגול
+  const [textAnswer, setTextAnswer] = useState(""); //
   const [feedback, setFeedback] = useState(null);
   const [bestScore, setBestScore] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
@@ -758,8 +758,8 @@ export default function MathMaster() {
   const [showWrongAnimation, setShowWrongAnimation] = useState(false);
   const [celebrationEmoji, setCelebrationEmoji] = useState("🎉");
   const [showPlayerProfile, setShowPlayerProfile] = useState(false);
-  const [playerAvatar, setPlayerAvatar] = useState("👤"); // אווטר ברירת מחדל
-  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); // תמונת אווטר מותאמת אישית
+  const [playerAvatar, setPlayerAvatar] = useState("👤"); //
+  const [playerAvatarImage, setPlayerAvatarImage] = useState(null); //
   const [playerAvatarBackground, setPlayerAvatarBackground] = useState(DEFAULT_PROFILE_BACKGROUND_KEY);
   const [monthlyPersistenceView, setMonthlyPersistenceView] = useState(null);
   /** Display-only: `payload.student.coin_balance` from GET /api/student/me (same source as student defaults). */
@@ -778,8 +778,8 @@ export default function MathMaster() {
   }, []);
 
   // מערכת התקדמות אישית
-  const progressLoadedRef = useRef(false); // עוקב אחרי טעינת progress
-  const progressStringRef = useRef(""); // עוקב אחרי הגרסה האחרונה שנשמרה
+  const progressLoadedRef = useRef(false); //    progress
+  const progressStringRef = useRef(""); //
   const [progress, setProgress] = useState({
     addition: { total: 0, correct: 0 },
     subtraction: { total: 0, correct: 0 },
@@ -835,7 +835,7 @@ export default function MathMaster() {
   // Sound system
   const audio = useGameAudio();
   
-  // תרגול ממוקד - שמירת שגיאות ותרגול מדורג
+  // {ms.focusedPractice} - שמירת שגיאות ותרגול מדורג
   const [mistakes, setMistakes] = useState([]);
   const [learningIntel, setLearningIntel] = useState(() => ({
     opStats: {},
@@ -850,8 +850,8 @@ export default function MathMaster() {
   const remainingMistakesRef = useRef([]);
   const focusedPracticeModeRef = useRef("normal");
   const [focusedPracticeMode, setFocusedPracticeMode] = useState("normal"); // "normal", "mistakes", "graded"
-  const [remainingMistakes, setRemainingMistakes] = useState([]); // שגיאות שנותרו לתיקון
-  const [currentMistakeIndex, setCurrentMistakeIndex] = useState(0); // אינדקס השגיאה הנוכחית
+  const [remainingMistakes, setRemainingMistakes] = useState([]); //
+  const [currentMistakeIndex, setCurrentMistakeIndex] = useState(0); //
   const [showPracticeOptions, setShowPracticeOptions] = useState(false);
   const [showReferenceModal, setShowReferenceModal] = useState(false);
   const [referenceCategory, setReferenceCategory] = useState(REFERENCE_CATEGORY_KEYS[0]);
@@ -942,7 +942,7 @@ export default function MathMaster() {
       const places = params.places || 2;
       
       // רק חיבור וחיסור יכולים להיות מאונכים
-      // נשמור על הפורמט העשרוני עם toFixed
+      // נ{ms.t("learning.master.save")} על הפורמט העשרוני עם toFixed
       if (kind === "dec_add") {
         return buildVerticalOperation(a.toFixed(places), b.toFixed(places), "+");
       } else if (kind === "dec_sub") {
@@ -1026,7 +1026,7 @@ export default function MathMaster() {
       if (fallbackSteps && Array.isArray(fallbackSteps) && fallbackSteps.length > 0) {
         return fallbackSteps.map((node, idx) => ({
           id: `fallback-${idx + 1}`,
-          title: `שלב ${idx + 1}`,
+          title: ms.t("learning.master.step", { num: idx + 1 }),
           content: node,
           text: "",
         }));
@@ -1041,14 +1041,14 @@ export default function MathMaster() {
       return [
         {
           id: "fallback-basic-1",
-          title: "שלב 1: נבין את השאלה",
+          title: ms.t("learning.math.steps.understandQuestion"),
           content: qText ? renderMaybeStackedFractionOrMixed(qText) : (
-            <span>נסתכל על התרגיל.</span>
+            <span>{ms.t("learning.math.steps.understandQuestion")}</span>
           ),
           text: "",
         },
-        { id: "fallback-basic-2", title: "שלב 2: איך ניגשים?", content: <span>נפתור לפי הכללים של הנושא.</span>, text: "" },
-        { id: "fallback-basic-3", title: "שלב 3: התשובה", content: ansText ? <span>התשובה היא: {renderMaybeStackedFractionText(ansText)}</span> : <span>נבדוק את התשובה.</span>, text: "" },
+        { id: "fallback-basic-2", title: ms.t("learning.math.steps.howToApproach"), content: <span>{ms.t("learning.math.steps.solveByRules")}</span>, text: "" },
+        { id: "fallback-basic-3", title: ms.t("learning.math.steps.theAnswer"), content: ansText ? <span>{ms.t("learning.math.steps.answerIs", { answer: renderMaybeStackedFractionText(ansText) })}</span> : <span>{ms.check}</span>, text: "" },
       ];
     } catch {}
 
@@ -1085,7 +1085,7 @@ export default function MathMaster() {
     };
   }, [isShowingAnySolution, autoPlay, animationStep, animationSteps]);
 
-  // איפוס צעד האנימציה כשפותחים את המודל או כשהשאלה משתנה
+  // {ms.t("learning.master.reset")} צעד האנימציה כשפותחים את המודל או כשהשאלה משתנה
   useEffect(() => {
     // ניקוי timeouts כשסוגרים את המודל או משנים שאלה
     animationTimeoutsRef.current.forEach(clearTimeout);
@@ -1189,12 +1189,12 @@ export default function MathMaster() {
   // הסבר לטעות אחרונה
   const [errorExplanation, setErrorExplanation] = useState("");
 
-  // תרגול ממוקד (רק במצב Practice)
+  // {ms.focusedPractice} (רק במצב Practice)
   const [practiceFocus, setPracticeFocus] = useState("default"); // default | add_to_20 | times_6_8
 
   // מצב story questions
   const [useStoryQuestions, setUseStoryQuestions] = useState(false);
-  const [storyOnly, setStoryOnly] = useState(false); // שאלות מילוליות בלבד
+  const [storyOnly, setStoryOnly] = useState(false); //
 
   const applyBookPracticePreset = useCallback((preset) => {
     if (!preset || preset.mode !== "learning") return;
@@ -1235,11 +1235,11 @@ export default function MathMaster() {
   });
 
   const [showMultiplicationTable, setShowMultiplicationTable] = useState(false);
-  const [practiceRow, setPracticeRow] = useState(null); // שורה לתרגול ממוקד
-  const [practiceCol, setPracticeCol] = useState(null); // עמודה לתרגול ממוקד
-  const [practiceMode, setPracticeMode] = useState(false); // מצב תרגול
-  const [practiceQuestion, setPracticeQuestion] = useState(null); // שאלת תרגול
-  const [practiceAnswer, setPracticeAnswer] = useState(""); // תשובת התרגול
+  const [practiceRow, setPracticeRow] = useState(null); //
+  const [practiceCol, setPracticeCol] = useState(null); //
+  const [practiceMode, setPracticeMode] = useState(false); //
+  const [practiceQuestion, setPracticeQuestion] = useState(null); //
+  const [practiceAnswer, setPracticeAnswer] = useState(""); //
   const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   const [leaderboardLevel, setLeaderboardLevel] = useState("regular");
@@ -1464,7 +1464,7 @@ export default function MathMaster() {
       const firstAllowed = allowed[0] || GRADES[grade].operations.find(op => op !== "mixed") || "addition";
       setOperation(firstAllowed);
     }
-  }, [grade]); // רק כשהכיתה משתנה, לא כשהפעולה משתנה
+  }, [grade]); //   ,   
 
   useEffect(() => {
     if (!guestTopics.loaded || !guestTopics.isGuest || showMixedSelector) return;
@@ -1506,10 +1506,10 @@ export default function MathMaster() {
   // שמירת progress ל-localStorage בכל עדכון - רק אחרי טעינה ראשונית
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (!progressLoadedRef.current) return; // אל תשמור לפני שהטעינה הראשונית הסתיימה
+    if (!progressLoadedRef.current) return; //
     
     const currentProgressStr = JSON.stringify(progress);
-    // אם לא השתנה, אל תשמור - זה מונע לולאה אינסופית
+    // אם לא השתנה, אל ת{ms.t("learning.master.save")} - זה מונע לולאה אינסופית
     if (currentProgressStr === progressStringRef.current) return;
     progressStringRef.current = currentProgressStr;
     
@@ -2000,15 +2000,15 @@ export default function MathMaster() {
 
     let question;
     let attempts = 0;
-    const maxAttempts = 50; // מקסימום ניסיונות למצוא שאלה חדשה
+    const maxAttempts = 50; //
 
     const supportsWordProblems = GRADES[grade].operations.includes("word_problems");
 
-    // ✅ התאמה לפי מצב תרגול ממוקד (Practice)
+    // ✅ התאמה לפי מצב {ms.focusedPractice} (Practice)
     let operationForState = operation;
-    const levelConfigCopy = { ...levelConfig }; // עותק כדי לא לשנות את המקורי
+    const levelConfigCopy = { ...levelConfig }; //
 
-    // תרגול ממוקד — רק שחזור מלא מ-snapshot (לא יוצרים שאלה דומה)
+    // {ms.focusedPractice} — רק שחזור מלא מ-snapshot (לא יוצרים שאלה דומה)
     const mistakeList =
       remainingMistakesRef.current.length > 0
         ? remainingMistakesRef.current
@@ -2457,11 +2457,11 @@ export default function MathMaster() {
       mathPendingDiagnosticProbeRef,
       mathHypothesisLedgerRef
     );
-    setRecentQuestions(new Set()); // איפוס ההיסטוריה
+    setRecentQuestions(new Set()); //
     clearWrongAnswerAdvanceTimer();
     wrongAnswerPendingRef.current = false;
     wrongAnswerAdvanceCallbackRef.current = null;
-    setIsVerticalDisplay(false); // סשן חדש: תמיד מאוזן כברירת מחדל
+    setIsVerticalDisplay(false); //  :    
     setGameActive(true);
     setScore(0);
     setStreak(0);
@@ -2500,7 +2500,7 @@ export default function MathMaster() {
     if (mode === "challenge") {
       setTimeLeft(20);
     } else if (mode === "speed") {
-      setTimeLeft(10); // טיימר קצר יותר למצב מהירות
+      setTimeLeft(10); //
     } else {
       setTimeLeft(null);
     }
@@ -2582,7 +2582,7 @@ export default function MathMaster() {
     }
   };
 
-  // פונקציות לתרגול ממוקד בלוח הכפל
+  // פונקציות ל{ms.focusedPractice} בלוח הכפל
   const generatePracticeQuestion = (row = null, col = null) => {
     let selectedRow = row || practiceRow;
     let selectedCol = col || practiceCol;
@@ -2617,7 +2617,7 @@ export default function MathMaster() {
     });
 
     if (isCorrect) {
-      // תשובה נכונה - אנימציה והצגת שאלה חדשה
+      // תשובה נכונה - אנימציה והצגת {ms.t("learning.master.newQuestion")}
       setShowCorrectAnimation(true);
       setTimeout(() => setShowCorrectAnimation(false), 1000);
       setTimeout(() => {
@@ -2801,7 +2801,7 @@ export default function MathMaster() {
       let points = 10 + streak;
       if (mode === "speed") {
         const timeBonus = timeLeft ? Math.floor(timeLeft * 2) : 0;
-        points += timeBonus; // בונוס זמן במצב מהירות
+        points += timeBonus; //
       }
       
       setScore((prev) => prev + points);
@@ -2841,7 +2841,7 @@ export default function MathMaster() {
           }
           setFocusedPracticeMode("normal");
           focusedPracticeModeRef.current = "normal";
-          setFeedback("🎉 כל השגיאות תוקנו! מעולה!");
+          setFeedback(ms.t("learning.master.mistakesFixed"));
           setTimeout(() => {
             setFeedback(null);
             setGameActive(false);
@@ -2856,11 +2856,11 @@ export default function MathMaster() {
         );
         setCurrentMistakeIndex(nextIndex);
         
-        // עבור לשגיאה הבאה אחרי 1.5 שניות
+        // עבור לשגיאה {ms.t("learning.master.next")}ה אחרי 1.5 שניות
         setTimeout(() => {
           generateNewQuestion();
         }, 1500);
-        return; // אל תמשיך עם generateNewQuestion הרגיל
+        return; //    generateNewQuestion 
       }
 
       // עדכון התקדמות אישית
@@ -3035,15 +3035,15 @@ export default function MathMaster() {
       setTimeout(() => setShowCorrectAnimation(false), 1000);
       
       // משוב דינמי לפי רצף
-      let feedbackText = "נכון! ";
+      let feedbackText = ms.t("learning.master.streakFeedback.correct");
       if (streak + 1 >= 50) {
-        feedbackText = `מדהים! רצף של ${streak + 1}! `;
+        feedbackText = ms.t("learning.master.streakFeedback.amazing", { streak: streak + 1 });
       } else if (streak + 1 >= 25) {
-        feedbackText = `מצוין! רצף של ${streak + 1}! `;
+        feedbackText = ms.t("learning.master.streakFeedback.excellent", { streak: streak + 1 });
       } else if (streak + 1 >= 10) {
-        feedbackText = `כל הכבוד! רצף של ${streak + 1}! `;
+        feedbackText = ms.t("learning.master.streakFeedback.wellDone", { streak: streak + 1 });
       } else if (streak + 1 >= 5) {
-        feedbackText = `יופי! רצף של ${streak + 1}! `;
+        feedbackText = ms.t("learning.master.streakFeedback.nice", { streak: streak + 1 });
       }
       setFeedback(`${feedbackText}${randomEmoji}`);
       
@@ -3067,7 +3067,7 @@ export default function MathMaster() {
       
       if ("vibrate" in navigator) navigator.vibrate?.(50);
       
-      // איפוס השדה הטקסט מיד אחרי תשובה נכונה
+      // {ms.t("learning.master.reset")} השדה הטקסט מיד אחרי תשובה נכונה
       if (mode === "learning" || mode === "practice") {
         setTextAnswer("");
       }
@@ -3716,7 +3716,7 @@ export default function MathMaster() {
             playerAvatarBackground={playerAvatarBackground}
           />
 
-          {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
+          {/* */}
           <div
             className={LEARNING_MASTER_MOBILE_MODE_ROW_CLASS}
             dir={ms.direction}
@@ -3746,7 +3746,7 @@ export default function MathMaster() {
             </div>
           </div>
 
-          {/* הודעות מיוחדות */}
+          {/* */}
           {showBadge && (
             <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-bounce">
@@ -3776,7 +3776,7 @@ export default function MathMaster() {
             </div>
           )}
 
-          {/* פרופיל שחקן */}
+          {/* */}
           {showPlayerProfile && (
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
@@ -3803,7 +3803,7 @@ export default function MathMaster() {
                   <h2 className="text-2xl font-extrabold text-white mb-2">{ms.playerProfile}</h2>
                 </div>
 
-                {/* אווטר ונתונים בשורה */}
+                {/* */}
                 <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                     <div className="flex items-center gap-3 mb-3">
                       <StudentLearningAvatar
@@ -3831,13 +3831,13 @@ export default function MathMaster() {
                         <div className="text-lg font-bold text-yellow-400">⭐ {stars}</div>
                       </div>
                       <div className="bg-black/40 border border-white/10 rounded-lg p-2">
-                        <div className="text-xs text-white/60 mb-1">רמה</div>
-                        <div className="text-lg font-bold text-purple-400">רמה {playerLevel}</div>
+                        <div className="text-xs text-white/60 mb-1">{ms.level}</div>
+                        <div className="text-lg font-bold text-purple-400">{ms.t("learning.master.levelLabel", { level: playerLevel })}</div>
                       </div>
                     </div>
                     <div className="mt-2">
                       <div className="flex justify-between text-xs text-white/60 mb-1">
-                        <span>נק׳ ניסיון</span>
+                        <span>{ms.xpPoints}</span>
                         <span>{xp} / {playerLevel * 100}</span>
                       </div>
                       <div className="w-full bg-black/50 rounded-full h-2">
@@ -3848,9 +3848,9 @@ export default function MathMaster() {
                       </div>
                     </div>
                     <div className="mt-3">
-                      <div className="text-xs text-white/60 mb-2">בחר אווטר:</div>
+                      <div className="text-xs text-white/60 mb-2">{ms.chooseAvatar}</div>
                       
-                      {/* כפתור לבחירת תמונה */}
+                      {/* */}
                       <div className="mb-3">
                         <label className="block w-full">
                           <input
@@ -3917,7 +3917,7 @@ export default function MathMaster() {
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                     <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
-                      <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
+                      <span>{ms.t("learning.master.monthMinutesProgress", { current: Math.round(monthlyPersistenceView?.currentMinutes ?? 0), goal: monthlyPersistenceView?.goalMinutes ?? "-" })}</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
                     </div>
                     <div className="w-full bg-black/50 rounded-full h-3 mb-2">
@@ -3937,10 +3937,10 @@ export default function MathMaster() {
                     </div>
                   </div>
 
-                  {/* התקדמות לפי פעולות */}
+                  {/* */}
                   {Object.keys(progress).some(op => progress[op].total > 0) && (
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-sm text-white/60 mb-2">התקדמות לפי פעולות</div>
+                      <div className="text-sm text-white/60 mb-2">{ms.t("learning.master.progressByOperation")}</div>
                       <div className="space-y-2 max-h-[200px] overflow-y-auto">
                         {Object.entries(progress)
                           .filter(([_, data]) => data.total > 0)
@@ -3968,15 +3968,15 @@ export default function MathMaster() {
                       <div className="text-sm text-white/60 mb-2">{ms.t('learning.master.localInsights')}</div>
                       <div className="text-xs text-white/85 space-y-1">
                         <div>
-                          <span className="text-amber-300 font-semibold">לחזק:</span>{" "}
+                          <span className="text-amber-300 font-semibold">{ms.t("learning.master.strengthen")}</span>{" "}
                           {getOperationName(mathInsights.weakest)}
                         </div>
                         <div>
-                          <span className="text-emerald-300 font-semibold">חזק ביחס:</span>{" "}
+                          <span className="text-emerald-300 font-semibold">{ms.t("learning.master.strongRelative")}</span>{" "}
                           {getOperationName(mathInsights.strongest)}
                         </div>
                         <p className="text-[11px] text-white/50 mt-2">
-                          לפחות 2 ניסיונות; נשמר בדפדפן בלבד.
+                          {ms.t("learning.master.browserOnlyMistakes")}
                         </p>
                       </div>
                     </div>
@@ -4011,7 +4011,7 @@ export default function MathMaster() {
             </div>
           )}
 
-          {/* מודל תרגול ממוקד */}
+          {/* */}
           {showPracticeOptions && (
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
@@ -4042,7 +4042,7 @@ export default function MathMaster() {
                     <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.mistakes')}</div>
                     <div className="text-sm text-white/70">
                       {mistakes.length > 0
-                        ? `תרגל את ${mistakes.length} השגיאות שעשית`
+                        ? ms.t("learning.master.practiceYourMistakes", { count: mistakes.length })
                         : ms.noMistakesToPractice}
                     </div>
                   </button>
@@ -4073,7 +4073,7 @@ export default function MathMaster() {
 
                 {mistakes.length > 0 && (
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3 mb-4">
-                    <div className="text-sm text-white/60 mb-2">שגיאות אחרונות:</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.t("learning.master.recentMistakes")}</div>
                     <div className="space-y-1 max-h-[150px] overflow-y-auto">
                       {mistakes.slice(-5).reverse().map((mistake, idx) => (
                         <div key={mistake.id || idx} className="text-xs text-white/80">
@@ -4093,7 +4093,7 @@ export default function MathMaster() {
                   }}
                   className="w-full px-4 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 font-bold text-sm mb-2"
                 >
-                  🗑️ נקה שגיאות
+                  {ms.clearMistakes}
                 </button>
 
                 <button
@@ -4285,7 +4285,7 @@ export default function MathMaster() {
                 >{ms.leaderboard}</button>
               </div>
 
-              {/* כפתורים עזרה ותרגול ממוקד */}
+              {/* */}
               <div className="w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl flex justify-center gap-2 md:gap-2.5 flex-wrap mx-auto px-1 md:px-2">
                 <button
                   onClick={() => setShowHowTo(true)}
@@ -4316,7 +4316,7 @@ export default function MathMaster() {
                   onClick={() => setShowPracticeOptions(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionPink}`}
                 >
-                  תרגול ממוקד
+                  {ms.focusedPractice}
                   {mistakes.length > 0 ? ` (${mistakes.length})` : ""}
                 </button>
               </div>
@@ -4328,7 +4328,7 @@ export default function MathMaster() {
             </div>
           ) : (
             <div className={`flex flex-col flex-1 min-h-0 w-full items-center${currentQuestion ? " max-md:-mt-1" : ""}`}>
-              {/* אנימציה לתשובה נכונה */}
+              {/* */}
               {showCorrectAnimation && (
                 <div className="fixed inset-0 pointer-events-none z-[300] flex items-center justify-center">
                   <div className="text-8xl animate-bounce animate-pulse">
@@ -4342,7 +4342,7 @@ export default function MathMaster() {
                 </div>
               )}
 
-              {/* אנימציה לתשובה שגויה */}
+              {/* */}
               {showWrongAnimation && (
                 <div className="fixed inset-0 pointer-events-none z-[300] flex items-center justify-center">
                   <div className="text-6xl animate-shake">
@@ -4357,7 +4357,7 @@ export default function MathMaster() {
                   ref={gameRef}
                   className={LEARNING_MASTER_MOBILE_GAME_CLASS}
                 >
-                  {/* שכבת הודעות שלא משנה פריסה (אין מקום שמור / אין מיקרו-סק롤) */}
+                  {/* */}
                   {(feedback || errorExplanation) && (
                     <div className="absolute top-0 left-0 right-0 z-[5] px-2 pt-1 pointer-events-none" role="status" aria-live="assertive" aria-atomic="true">
                       <div className="flex flex-col gap-2 items-stretch">
@@ -4391,7 +4391,7 @@ export default function MathMaster() {
                     </div>
                   )}
 
-                  {/* אזור שאלה יציב למניעת קפיצות בפריסת התשובות */}
+                  {/* */}
                   <div
                     data-testid="math-question-surface"
                     className={`relative w-full flex-1 min-h-0 flex flex-col overflow-hidden px-2 ${mathShowMobileQuestionActions ? "max-md:pb-11" : ""} ${questionPressureLayout?.questionStemInsetClass ?? ""}`.trim()}
@@ -4403,7 +4403,7 @@ export default function MathMaster() {
                         className={`${MB.floatBtn} ${MB.floatBtnPurple} ${MB.floatBtnCornerLeft} max-md:hidden pointer-events-auto`}
                         title={isVerticalDisplay ? ms.horizontalDisplay : ms.verticalDisplay}
                       >
-                        {isVerticalDisplay ? "↔️ מאוזן" : "↕️ מאונך"}
+                        {isVerticalDisplay ? ms.t("learning.master.showHorizontal") : ms.t("learning.master.showVertical")}
                       </button>
                     )}
 
@@ -4521,7 +4521,7 @@ export default function MathMaster() {
                               className={`${MB.questionActionBtn} ${MB.floatBtnScratchpad} w-auto px-3`}
                               data-testid="math-scratchpad-open"
                             >
-                              דף טיוטה
+                              {ms.t("learning.master.draftPage")}
                             </button>
                           ) : null}
                         </div>
@@ -4534,7 +4534,7 @@ export default function MathMaster() {
                               title={isVerticalDisplay ? ms.horizontalDisplay : ms.verticalDisplay}
                               data-testid="activity-math-layout-toggle"
                             >
-                              {isVerticalDisplay ? "↔️ מאוזן" : "↕️ מאונך"}
+                              {isVerticalDisplay ? ms.t("learning.master.showHorizontal") : ms.t("learning.master.showVertical")}
                             </button>
                           ) : (
                             <span className="block h-8 w-full" aria-hidden="true" />
@@ -4569,7 +4569,7 @@ export default function MathMaster() {
                       openButtonWrapClassName="max-md:hidden"
                     >
 
-                    {/* הפרדה בין שורת השאלה לשורת התרגיל */}
+                    {/* */}
                     {isVerticalDisplay &&
                     canDisplayVertically &&
                     currentQuestion.exerciseText ? (
@@ -4724,13 +4724,13 @@ export default function MathMaster() {
                     </MathScratchpadSlot>
                   </div>
 
-                  {/* אזור התשובות/בקרים (קבוע בתחתית) - נשאר חשוף מעל overlay */}
+                  {/* */}
                   <div
                     ref={answerAreaRef}
                     data-testid="math-answer-surface"
                     className={`${LEARNING_MASTER_ANSWER_SURFACE_CLASS} relative z-30`}
                   >
-                    {/* בדיקה אם צריך להציג כפתורי בחירה או שדה קלט */}
+                    {/* */}
                     {(() => {
                     // נושאים שצריכים כפתורי בחירה: שברים, יחס, השוואה, קנה מידה, גורמים וכפולות, חילוק עם שארית
                     const needsChoiceButtons = 
@@ -5010,7 +5010,7 @@ export default function MathMaster() {
                     }
                   })()}
 
-                  {/* כפתורי הסבר / עצירה */}
+                  {/* */}
                   {currentQuestion && (
                     <div className="mt-2 flex flex-col gap-2 w-full">
                       <div className={MB.answerActionsBar} dir={ms.direction}>
@@ -5024,7 +5024,7 @@ export default function MathMaster() {
                             }}
                             className={MB.btnStepByStep}
                           >
-                            📖 צעד-צעד
+                            {ms.t("learning.master.stepByStep")}
                           </button>
                         )}
                         <button
@@ -5043,7 +5043,7 @@ export default function MathMaster() {
                           )}
                   </div>
 
-                      {/* חלון הסבר מלא - Modal גדול ומרכזי - למידה/תרגול קודם */}
+                      {/* */}
                       {(((mode === "learning" && showSolution && currentQuestion) ||
                         ((mode === "learning" || mode === "practice") &&
                           showPreviousSolution &&
@@ -5105,7 +5105,7 @@ export default function MathMaster() {
                                   <h3 className={learningModalTitle} dir={ms.direction}>
                                     {showPreviousSolution
                                       ? ms.previousExercise
-                                      : "\u200Fאיך פותרים את התרגיל?"}
+                                      : ms.t("learning.master.howToSolveExerciseRtl")}
                                   </h3>
                                   <span className="w-10 shrink-0" aria-hidden />
                                 </div>
@@ -5241,7 +5241,7 @@ export default function MathMaster() {
                                 className={learningModalPanel}
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                {/* כותרת - קבועה */}
+                                {/* */}
                                 <div className={learningModalHeader}>
                                   <button
                                     type="button"
@@ -5254,17 +5254,17 @@ export default function MathMaster() {
                                   <h3 className={learningModalTitle}>
                                     {showPreviousSolution
                                       ? ms.previousExercise
-                                      : "\u200Fאיך פותרים את התרגיל?"}
+                                      : ms.t("learning.master.howToSolveExerciseRtl")}
                                   </h3>
                                   <span className="w-10 shrink-0" aria-hidden />
                                 </div>
                                 
-                                {/* תוכן - גלילה */}
+                                {/* */}
                                 <StepExerciseUiProvider value={stepExerciseUi}>
                                 <div className={learningModalScrollBody}>
                                   {exerciseRouter}
                                   
-                                  {/* טקסט ההסבר */}
+                                  {/* */}
                                   <div className={learningStepSection} dir={ms.direction}>
                                     <h4 className={learningExplTitle}>{activeStep.title}</h4>
                                     {activeStep.content ? (
@@ -5279,16 +5279,16 @@ export default function MathMaster() {
                                 </div>
                                 </StepExerciseUiProvider>
                                 
-                                {/* כפתורים ואינדיקטור - קבועים בתחתית */}
+                                {/* */}
                                 <div className={learningModalFooter}>
-                                  {/* שליטה באנימציה */}
+                                  {/* */}
                                   <div className={learningStepNavRow} dir={ms.direction}>
                                     <button
                                       onClick={() => setAnimationStep((s) => (s > 0 ? s - 1 : 0))}
                                       disabled={animationStep === 0}
                                       className={learningStepNavBtn}
                                     >
-                                      קודם
+                                      {ms.t("learning.master.previous")}
                                     </button>
                                     <button
                                       onClick={() => setAutoPlay((p) => !p)}
@@ -5301,13 +5301,16 @@ export default function MathMaster() {
                                       disabled={animationStep >= animationSteps.length - 1}
                                       className={learningStepNavBtn}
                                     >
-                                      הבא
+                                      {ms.t("learning.master.next")}
                                     </button>
                                   </div>
                                   
-                                  {/* אינדיקטור צעדים */}
+                                  {/* */}
                                   <div className={learningStepCounter}>
-                                    צעד {animationStep + 1} מתוך {animationSteps.length}
+                                    {ms.t("learning.master.stepOf", {
+                                      current: animationStep + 1,
+                                      total: animationSteps.length,
+                                    })}
                                   </div>
                                 </div>
                               </div>
@@ -5326,7 +5329,7 @@ export default function MathMaster() {
                               className={learningModalPanel}
                               onClick={(e) => e.stopPropagation()}
                             >
-                              {/* כותרת - קבועה */}
+                              {/* */}
                               <div className={learningModalHeader}>
                                 <button
                                   type="button"
@@ -5339,15 +5342,15 @@ export default function MathMaster() {
                                 <h3 className={learningModalTitle}>
                                   {showPreviousSolution
                                     ? ms.previousExercise
-                                    : "\u200Fאיך פותרים את התרגיל?"}
+                                    : ms.t("learning.master.howToSolveExerciseRtl")}
                                 </h3>
                                 <span className="w-10 shrink-0" aria-hidden />
                               </div>
                               
-                              {/* תוכן - גלילה */}
+                              {/* */}
                               <StepExerciseUiProvider value={stepExerciseUi}>
                               <div className={learningModalScrollBody}>
-                                {/* הצגת התרגיל/שאלה (תמיד LTR כמו תרגיל חשבון) */}
+                                {/* */}
                                 <div className={`mb-3 ${learningQuestionBox}`} dir="ltr">
                                   <div
                                     className={`${learningQuestionText} mb-0`}
@@ -5357,7 +5360,7 @@ export default function MathMaster() {
                                   </div>
                                 </div>
                                 
-                                {/* טקסט ההסבר */}
+                                {/* */}
                                 <div className={learningStepSection} dir={ms.direction}>
                                   <h4 className={learningExplTitle}>{activeStep.title || ms.explanation}</h4>
                                   {shouldShowStandaloneExerciseView(
@@ -5391,16 +5394,16 @@ export default function MathMaster() {
                               </div>
                               </StepExerciseUiProvider>
                               
-                              {/* כפתורים ואינדיקטור - קבועים בתחתית */}
+                              {/* */}
                               <div className={learningModalFooter}>
-                                {/* שליטה באנימציה */}
+                                {/* */}
                                 <div className={learningStepNavRow} dir={ms.direction}>
                                   <button
                                     onClick={() => setAnimationStep((s) => (s > 0 ? s - 1 : 0))}
                                     disabled={animationStep === 0}
                                     className={learningStepNavBtn}
                                   >
-                                    קודם
+                                    {ms.t("learning.master.previous")}
                                   </button>
                                   <button
                                     onClick={() => setAutoPlay((p) => !p)}
@@ -5413,13 +5416,16 @@ export default function MathMaster() {
                                     disabled={animationStep >= animationSteps.length - 1}
                                     className={learningStepNavBtn}
                                   >
-                                    הבא
+                                    {ms.t("learning.master.next")}
                                   </button>
                                 </div>
                                 
-                                {/* אינדיקטור צעדים */}
+                                {/* */}
                                 <div className={learningStepCounter}>
-                                  צעד {animationStep + 1} מתוך {animationSteps.length}
+                                  {ms.t("learning.master.stepOf", {
+                                    current: animationStep + 1,
+                                    total: animationSteps.length,
+                                  })}
                                 </div>
                               </div>
                             </div>
@@ -5480,7 +5486,7 @@ export default function MathMaster() {
                       }}
                       className="px-2 py-1 rounded text-xs font-bold bg-white/10 hover:bg-white/20 text-white"
                     >
-                      איפוס
+                      {ms.t("learning.master.reset")}
                     </button>
                   </div>
                   <h2 className="text-xl font-bold text-white">{ms.t('learning.math.multiplicationTable')}</h2>
@@ -5507,7 +5513,7 @@ export default function MathMaster() {
                           : "bg-white/10 text-white/70 hover:bg-white/20"
                       }`}
                     >
-                      ÷ חילוק
+                      {ms.t("learning.master.divisionLabel")}
                     </button>
                     <button
                       onClick={() => {
@@ -5528,7 +5534,7 @@ export default function MathMaster() {
                           : "bg-white/10 text-white/70 hover:bg-white/20"
                       }`}
                     >
-                      × כפל
+                      {ms.t("learning.master.multiplicationLabel")}
                     </button>
                     <button
                       onClick={() => {
@@ -5550,7 +5556,7 @@ export default function MathMaster() {
                     >{ms.focusedPractice}</button>
                   </div>
 
-                  {/* מצב תרגול */}
+                  {/* */}
                   {practiceMode && practiceQuestion && (
                     <div className="mb-4 p-4 rounded-lg bg-emerald-500/20 border border-emerald-400/50">
                       <div className="text-center mb-3">
@@ -5576,19 +5582,19 @@ export default function MathMaster() {
                           onClick={checkPracticeAnswer}
                           className="px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
                         >
-                          בדוק
+                          {ms.check}
                         </button>
                         <button
                           onClick={() => generatePracticeQuestion()}
                           className="px-4 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 font-bold text-sm"
                         >
-                          שאלה חדשה
+                          {ms.t("learning.master.newQuestion")}
                         </button>
                       </div>
                     </div>
                   )}
 
-                  {/* בחירת שורה/עמודה לתרגול ממוקד */}
+                  {/* */}
                   {practiceMode && !practiceQuestion && (
                     <div className="mb-4 p-4 rounded-lg bg-blue-500/20 border border-blue-400/50">
                       <div className="text-center mb-3">
@@ -5607,8 +5613,7 @@ export default function MathMaster() {
                                   ? "bg-yellow-500/80 text-white"
                                   : "bg-white/10 text-white/70 hover:bg-white/20"
                               }`}
-                            >
-                              שורה {num}
+                            >{ms.t("learning.master.rowN", { num })}
                             </button>
                           ))}
                         </div>
@@ -5626,8 +5631,7 @@ export default function MathMaster() {
                                   ? "bg-yellow-500/80 text-white"
                                   : "bg-white/10 text-white/70 hover:bg-white/20"
                               }`}
-                            >
-                              עמודה {num}
+                            >{ms.t("learning.master.columnN", { num })}
                             </button>
                           ))}
                         </div>
@@ -5653,16 +5657,19 @@ export default function MathMaster() {
                       selectedResult % selectedDivisor !== 0 && (
                         <div className="w-full px-4 py-1 rounded-lg bg-red-500/20 border border-red-400/50 text-center flex items-center justify-center gap-2">
                           <span className="text-sm text-red-200 font-semibold">
-                            ⚠️ שגיאה:{" "}
+                            {ms.t("learning.master.remainderWarning")}{" "}
                             <MathLtrIsland>
                               {selectedResult} ÷ {selectedDivisor}
                             </MathLtrIsland>{" "}
-                            הוא לא מספר שלם!
+                            {ms.t("learning.master.notInteger")}
                           </span>
                           <span className="text-xs text-red-300">
                             (
                             {Math.floor(selectedResult / selectedDivisor)}{" "}
-                            שארית {selectedResult % selectedDivisor})
+                            {ms.t("learning.master.remainderOf", {
+                              remainder: selectedResult % selectedDivisor,
+                            })}
+                            )
                           </span>
                         </div>
                       )}
@@ -5991,8 +5998,8 @@ export default function MathMaster() {
                   <div className="mt-4 text-center space-y-2">
                     <div className="text-xs text-white/60 mb-2 text-center">
                       {tableMode === "multiplication"
-                        ? "לחץ על מספר מהטבלה, ואז על מספר שורה או עמודה"
-                        : "לחץ על מספר תוצאה, ואז על מספר שורה/עמודה כדי לראות את החילוק"}
+                        ? ms.t("learning.master.tableTapNumberHint")
+                        : ms.t("learning.master.divisionTableTapHint")}
                     </div>
                     <button
                       onClick={() => {
@@ -6045,10 +6052,7 @@ export default function MathMaster() {
                             merged.sort((a, b) => (b.score || 0) - (a.score || 0));
                             setLeaderboardData(merged.slice(0, 10));
                           } catch (e) {
-                            console.error(
-                              "שגיאה בטעינת לוח התוצאות:",
-                              e
-                            );
+                            console.error("Leaderboard load error", e);
                           }
                         }
                       }}
@@ -6081,7 +6085,7 @@ export default function MathMaster() {
                             colSpan={4}
                             className="text-white/60 p-4 text-sm"
                           >
-                            עדיין אין תוצאות ברמה{" "}
+                            {ms.t("learning.master.noResultsAtLevel")}{" "}
                             {ms.getDisplayLevelLabel(leaderboardLevel)}
                           </td>
                         </tr>
@@ -6162,10 +6166,10 @@ export default function MathMaster() {
               >
                 <div className="text-center mb-2 flex-shrink-0">
                   <h2 className="text-base font-extrabold text-white mb-0.5">
-                    🎲 בחר פעולות
+                    {ms.t("learning.master.pickOperations")}
                   </h2>
                   <p className="text-white/70 text-[10px] leading-tight">
-                    בחר פעולות
+                    {ms.t("learning.master.pickOperationsTitle")}
                   </p>
                 </div>
 
@@ -6197,7 +6201,7 @@ export default function MathMaster() {
                 <div className="flex flex-col gap-1.5 flex-shrink-0" dir={ms.direction}>
                   <button
                     onClick={() => {
-                      // בדוק שיש לפחות פעולה אחת נבחרת
+                      // {ms.check} שיש לפחות פעולה אחת נבחרת
                       const hasSelected = Object.values(mixedOperations).some(
                         (selected) => selected
                       );
@@ -6209,12 +6213,12 @@ export default function MathMaster() {
                     }}
                     className="w-full px-2 py-1 rounded bg-emerald-500/80 hover:bg-emerald-500 font-bold text-[10px]"
                   >
-                    שמור
+                    {ms.t("learning.master.save")}
                   </button>
                   <div className="flex gap-1">
                     <button
                       onClick={() => {
-                        // בטל הכל
+                        // {ms.t("learning.master.cancel")} {ms.t("learning.master.all")}
                         const availableOps = listVisibleTopicsForSelfPractice("math", grade, GRADES[grade].operations);
                         const noneSelected = {};
                         availableOps.forEach((op) => {
@@ -6224,11 +6228,11 @@ export default function MathMaster() {
                       }}
                       className="flex-1 px-1.5 py-1 rounded bg-gray-500/80 hover:bg-gray-500 font-bold text-[10px]"
                     >
-                      בטל
+                      {ms.t("learning.master.cancel")}
                     </button>
                     <button
                       onClick={() => {
-                        // בחר הכל
+                        // בחר {ms.t("learning.master.all")}
                         const availableOps = listVisibleTopicsForSelfPractice("math", grade, GRADES[grade].operations);
                         const allSelected = {};
                         availableOps.forEach((op) => {
@@ -6238,7 +6242,7 @@ export default function MathMaster() {
                       }}
                       className="flex-1 px-1.5 py-1 rounded bg-blue-500/80 hover:bg-blue-500 font-bold text-[10px]"
                     >
-                      הכל
+                      {ms.t("learning.master.all")}
                     </button>
                   </div>
                 </div>
@@ -6284,7 +6288,7 @@ export default function MathMaster() {
               </div>
             </div>
           )}
-          {/* Reference Modal - לוח עזרה */}
+          {/* */}
           {showReferenceModal && (
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[185] p-4"
@@ -6382,6 +6386,7 @@ export default function MathMaster() {
     </MasterSubjectAccessScreen>
 );
 }
+
 
 
 

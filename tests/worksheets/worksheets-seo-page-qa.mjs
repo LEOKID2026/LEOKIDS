@@ -1,5 +1,5 @@
 /**
- * Worksheets SEO page — H1, meta, גאומטריה spelling, unified layout.
+ * Worksheets SEO page — H1, meta, geometry spelling, unified layout.
  * Run: node --test tests/worksheets/worksheets-seo-page-qa.mjs
  */
 
@@ -8,8 +8,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { getWorksheetsPageContent } from "../../data/seo/worksheets-pages.he.js";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.he.js";
+import { getWorksheetsPageContent } from "../../data/seo/worksheets-pages.en.js";
+import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
 import { SEO_PUBLIC_PATHS } from "../../lib/seo/seo-public-paths.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -27,7 +27,7 @@ describe("worksheets-seo-page-qa", () => {
   test("SEO entry and sitemap include /practice/worksheets only", () => {
     const seo = getPublicPageSeo("practice-worksheets");
     assert.equal(seo.canonicalPath, "/practice/worksheets");
-    assert.ok(seo.title.includes("דפי עבודה"));
+    assert.ok(seo.title.toLowerCase().includes("worksheet"));
     assert.ok(SEO_PUBLIC_PATHS.includes("/practice/worksheets"));
 
     const sitemap = readFileSync(join(ROOT, "public/sitemap.xml"), "utf8");
@@ -35,20 +35,10 @@ describe("worksheets-seo-page-qa", () => {
     assert.doesNotMatch(sitemap, /\/practice\/worksheets\/preview/);
   });
 
-  test("גאומטריה spelling - not גיאומטריה", () => {
-    const files = [
-      "data/seo/worksheets-pages.he.js",
-      "components/seo/PracticeSeoLandingPage.jsx",
-      "components/seo/PublicSeoWideLayout.jsx",
-      "lib/site/public-page-seo.he.js",
-    ];
-    for (const rel of files) {
-      const src = readFileSync(join(ROOT, rel), "utf8");
-      assert.doesNotMatch(src, /גיאומטריה/, rel);
-      if (rel.includes("worksheets-pages")) {
-        assert.match(src, /גאומטריה/);
-      }
-    }
+  test("geometry spelling in English worksheets module", () => {
+    const src = readFileSync(join(ROOT, "data/seo/worksheets-pages.en.js"), "utf8");
+    assert.match(src, /geometry/i);
+    assert.doesNotMatch(src, /גיאומטריה/);
   });
 
   test("landing page uses unified PracticeSeoLandingPage wrapper", () => {

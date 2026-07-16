@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
- * Scan active source for Hebrew code points outside allowlisted paths.
- * Exemptions shrink over time as surfaces are localized.
+ * Hard-fail Hebrew scan for curated Global Production certification surfaces.
+ *
+ * Only scans the explicit CERTIFIED_FILES / roots list below — not entire
+ * pages/components trees. Does NOT soft-warn. Narrow file exemptions only.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -9,115 +11,188 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "../..");
-
 const HEBREW_RE = /[\u0590-\u05FF]/;
-const EXT = new Set([".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs"]);
+const EXT = new Set([".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs", ".html", ".json", ".webmanifest"]);
 
-/** Paths relative to repo root that may still contain Hebrew during migration. */
-const ALLOW_PREFIXES = [
-  "docs/",
-  "sql/",
-  "supabase/",
-  "node_modules/",
-  ".next/",
-  "coverage/",
-  "artifacts/",
-  "tmp/",
-  "scripts/help-center/",
-  "scripts/parent-video-pilot/",
-  "scripts/student-video-pilot/",
-  "scripts/launch-readiness/",
-  "tests/e2e/",
-  "utils/", // engines / legacy content — migrate gradually
-  "lib/parent-report",
-  "lib/parent-copilot",
-  "lib/learning",
-  "content/",
-  "data/",
-  "public/help/",
+/**
+ * @typedef {{ path: string, reason: string }} Exemption
+ * @type {Exemption[]}
+ */
+const EXEMPTIONS = [
+  {
+    path: "data/science-questions.js",
+    reason:
+      "Hebrew bank kept as SCIENCE_QUESTIONS_HE; Production masters use English SCIENCE_QUESTIONS + overlay. Not rendered as Hebrew.",
+  },
+  {
+    path: "data/help-center/videos-manifest.he.json",
+    reason:
+      "Historical Hebrew video capture metadata; Production help uses empty English videos-manifest.json (placeholders only).",
+  },
 ];
 
-/** Foundation paths that must stay Hebrew-free (hard fail). */
-const FOUNDATION_ROOTS = ["lib/i18n", "lib/global", "lib/site", "locales"];
-/** Broader soft-warn scan (migration in progress). */
-const STRICT_ROOTS = ["pages", "components", ...FOUNDATION_ROOTS];
+/** Single files on the certified Global launch surface. */
+const CERTIFIED_FILES = [
+  "pages/_app.js",
+  "pages/_document.js",
+  "pages/404.js",
+  "pages/500.js",
+  "pages/index.js",
+  "pages/kids.js",
+  "pages/parents.js",
+  "pages/teachers.js",
+  "pages/about.js",
+  "pages/contact.js",
+  "pages/parent/login.js",
+  "pages/student/login.js",
+  "pages/learning/index.js",
+  "pages/learning/curriculum.js",
+  "pages/parent/dashboard.js",
+  "pages/student/home.js",
+  "components/InstallAppChoiceButton.js",
+  "components/ui/CopyConfirmPopup.jsx",
+  "components/Layout.js",
+  "components/layout/SiteLegalFooterBar.jsx",
+  "lib/site/public-page-seo.js",
+  "lib/site/public-site-origin.client.js",
+  "public/sw.js",
+  "public/student/offline.html",
+];
+
+/** Directories whose files are certified (`.he.*` files skipped). */
+const CERTIFIED_DIRS = [
+  "pages/help",
+  "pages/guides",
+  "pages/practice",
+  "pages/auth",
+  "components/consent",
+  "locales/en",
+  "lib/i18n",
+  "lib/global",
+];
 
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
+  const st = fs.statSync(dir);
+  if (st.isFile()) {
+    out.push(dir);
+    return out;
+  }
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
     if (ent.name === "node_modules" || ent.name === ".next" || ent.name.startsWith(".")) continue;
     const full = path.join(dir, ent.name);
     if (ent.isDirectory()) walk(full, out);
-    else if (EXT.has(path.extname(ent.name))) out.push(full);
+    else out.push(full);
   }
   return out;
 }
 
-function isAllowed(relPosix) {
-  return ALLOW_PREFIXES.some((p) => relPosix.startsWith(p));
+function toPosix(abs) {
+  return path.relative(root, abs).split(path.sep).join("/");
 }
 
-const hits = [];
-for (const base of STRICT_ROOTS) {
-  const abs = path.join(root, base);
-  for (const file of walk(abs)) {
-    const rel = path.relative(root, file).split(path.sep).join("/");
-    if (isAllowed(rel)) continue;
-    const text = fs.readFileSync(file, "utf8");
-    if (!HEBREW_RE.test(text)) continue;
-    // allow Hebrew only inside comments that mention migration? — still flag for now
-    const lines = text.split(/\r?\n/);
-    lines.forEach((line, i) => {
-      if (HEBREW_RE.test(line) && !line.trim().startsWith("//") && !line.includes("*")) {
-        hits.push(`${rel}:${i + 1}: ${line.trim().slice(0, 120)}`);
-      } else if (HEBREW_RE.test(line) && (line.trim().startsWith("//") || line.includes("*"))) {
-        // comments ok during migration
-      } else if (HEBREW_RE.test(line)) {
-        hits.push(`${rel}:${i + 1}: ${line.trim().slice(0, 120)}`);
-      }
-    });
+function isHebrewCompanion(rel) {
+  return /\.he\.(js|jsx|ts|tsx|mjs|cjs|json)$/.test(rel);
+}
+
+function isScannableFile(rel) {
+  const ext = path.extname(rel);
+  return !ext || EXT.has(ext);
+}
+
+function shouldSkip(rel) {
+  if (isHebrewCompanion(rel)) return true;
+  if (EXEMPTIONS.some((e) => rel === e.path || rel.startsWith(e.path + "/"))) return true;
+  if (!isScannableFile(rel)) return true;
+  return false;
+}
+
+function collectCertifiedFiles() {
+  const files = new Set();
+
+  for (const rel of CERTIFIED_FILES) {
+    const abs = path.join(root, rel);
+    if (fs.existsSync(abs)) files.add(toPosix(abs));
   }
-}
 
-// Re-scan more simply: any Hebrew in string literals of STRICT roots not allowed
-const strictHits = [];
-for (const base of STRICT_ROOTS) {
-  for (const file of walk(path.join(root, base))) {
-    const rel = path.relative(root, file).split(path.sep).join("/");
-    if (isAllowed(rel)) continue;
-    if (rel.startsWith("locales/")) continue;
-    const text = fs.readFileSync(file, "utf8");
-    if (!HEBREW_RE.test(text)) continue;
-    strictHits.push(rel);
-  }
-}
-
-if (strictHits.length) {
-  console.error(`[i18n:hebrew] Hebrew found in ${strictHits.length} active file(s):`);
-  for (const h of strictHits.slice(0, 80)) console.error(`  - ${h}`);
-  if (strictHits.length > 80) console.error(`  … +${strictHits.length - 80} more`);
-  // Soft fail during migration: warn but exit 0 until exemption list shrinks via later commits
-  // Hard-fail for brand-new foundation files only
-  const foundationOnly = [];
-  for (const base of FOUNDATION_ROOTS) {
-    for (const file of walk(path.join(root, base))) {
-      const rel = path.relative(root, file).split(path.sep).join("/");
-      if (rel.endsWith(".he.js")) continue; // legacy shim filenames only
-      const text = fs.readFileSync(file, "utf8");
-      if (HEBREW_RE.test(text)) foundationOnly.push(rel);
+  for (const dirRel of CERTIFIED_DIRS) {
+    const absDir = path.join(root, dirRel);
+    if (!fs.existsSync(absDir)) continue;
+    for (const abs of walk(absDir)) {
+      files.add(toPosix(abs));
     }
   }
-  for (const rel of ["pages/_document.js", "pages/_app.js"]) {
-    const abs = path.join(root, rel);
-    if (!fs.existsSync(abs)) continue;
-    if (HEBREW_RE.test(fs.readFileSync(abs, "utf8"))) foundationOnly.push(rel);
+
+  const learningDir = path.join(root, "pages/learning");
+  if (fs.existsSync(learningDir)) {
+    for (const ent of fs.readdirSync(learningDir, { withFileTypes: true })) {
+      if (!ent.isFile()) continue;
+      if (ent.name.endsWith("-master.js")) {
+        files.add(toPosix(path.join(learningDir, ent.name)));
+      }
+    }
   }
-  if (foundationOnly.length) {
-    console.error("[i18n:hebrew] FAIL: foundation files must not contain Hebrew");
-    process.exit(1);
+
+  const siteDir = path.join(root, "lib/site");
+  if (fs.existsSync(siteDir)) {
+    for (const ent of fs.readdirSync(siteDir, { withFileTypes: true })) {
+      if (!ent.isFile()) continue;
+      if (ent.name.startsWith("canonical")) {
+        files.add(toPosix(path.join(siteDir, ent.name)));
+      }
+    }
   }
-  console.warn("[i18n:hebrew] WARN: legacy surfaces still contain Hebrew (migration in progress)");
-  process.exit(0);
+
+  const publicDir = path.join(root, "public");
+  if (fs.existsSync(publicDir)) {
+    for (const ent of fs.readdirSync(publicDir, { withFileTypes: true })) {
+      if (ent.isDirectory()) {
+        const swPath = path.join(publicDir, ent.name, "sw.js");
+        if (fs.existsSync(swPath)) files.add(toPosix(swPath));
+      } else if (ent.isFile() && ent.name.startsWith("manifest")) {
+        files.add(toPosix(path.join(publicDir, ent.name)));
+      }
+    }
+  }
+
+  return [...files].sort();
 }
 
-console.log("[i18n:hebrew] OK — no Hebrew in scanned active roots");
+function lineIsCommentOnly(line) {
+  const t = line.trim();
+  return t.startsWith("//") || t.startsWith("*") || t.startsWith("/*") || t.startsWith("<!--");
+}
+
+const scanFiles = collectCertifiedFiles();
+const failures = [];
+
+for (const rel of scanFiles) {
+  if (shouldSkip(rel)) continue;
+  const abs = path.join(root, rel);
+  let text;
+  try {
+    text = fs.readFileSync(abs, "utf8");
+  } catch {
+    continue;
+  }
+  if (!HEBREW_RE.test(text)) continue;
+  text.split(/\r?\n/).forEach((line, i) => {
+    if (!HEBREW_RE.test(line)) return;
+    if (lineIsCommentOnly(line)) return;
+    failures.push(`${rel}:${i + 1}: ${line.trim().slice(0, 140)}`);
+  });
+}
+
+if (failures.length) {
+  console.error(`[i18n:hebrew] FAIL — ${failures.length} Hebrew hit(s) on certified Global surfaces:`);
+  for (const h of failures.slice(0, 100)) console.error(`  ${h}`);
+  if (failures.length > 100) console.error(`  … +${failures.length - 100} more`);
+  console.error(`\nCertified scope: ${scanFiles.length} file(s)`);
+  console.error("\nDocumented exemptions:");
+  for (const e of EXEMPTIONS) console.error(`  - ${e.path}: ${e.reason}`);
+  process.exit(1);
+}
+
+console.log("[i18n:hebrew] OK — certified Global surfaces are Hebrew-free");
+console.log(`[i18n:hebrew] Scanned ${scanFiles.length} certified file(s)`);
+console.log(`[i18n:hebrew] Exemptions: ${EXEMPTIONS.length}`);

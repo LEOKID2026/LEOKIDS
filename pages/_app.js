@@ -1,4 +1,4 @@
-﻿import "../styles/globals.css";
+import "../styles/globals.css";
 import "../styles/worksheet-print.css";
 import "../styles/worksheet-hub.css";
 import Head from "next/head";

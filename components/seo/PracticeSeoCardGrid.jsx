@@ -3,7 +3,7 @@ import Link from "next/link";
 /**
  * @param {{ cards: { href: string, title: string, blurb?: string, emoji?: string }[], isBright: boolean, heading?: string }} props
  */
-export default function PracticeSeoCardGrid({ cards, isBright, heading = "תחומי תרגול" }) {
+export default function PracticeSeoCardGrid({ cards, isBright, heading = "Practice areas" }) {
   if (!cards?.length) return null;
 
   const h2 = isBright ? "text-sky-900 font-black" : "text-sky-100 font-black";

@@ -5,7 +5,7 @@ export default function HelpBreadcrumb({ items }) {
   const { SP } = useSharedShellUi();
   if (!items?.length) return null;
   return (
-    <nav aria-label="ניווט מסלול" className={SP.breadcrumbNav}>
+    <nav aria-label="Breadcrumb" className={SP.breadcrumbNav}>
       <ol className="flex flex-wrap items-center gap-1">
         {items.map((item, i) => (
           <li key={item.href || item.label} className="flex items-center gap-1">

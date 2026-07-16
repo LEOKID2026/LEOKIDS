@@ -1,114 +1,104 @@
-# GLOBAL ENGLISH FAST TRACK — Final Code Report
+# GLOBAL ENGLISH — Production Acceptance Fix Round Report
 
-## Git
+## Git / Deployment reconcile
 
 | | |
 |---|---|
-| **HEAD at start** | `480738f` (`chore: trigger fresh Vercel Next.js deployment`) |
 | **Branch** | `main` |
 | **Remote** | `origin` → `https://github.com/LEOKID2026/LEOKIDS.git` (global; not Israeli) |
-| **HEAD at end** | `f421dfd` (pushed to `origin/main`) |
-| **Commits** | `a66dc3a` → `cc42401` → `f8d3d17` → `f421dfd` |
+| **HEAD before this round** | `c9a4066` (`docs: align fast-track report with pushed HEAD`) — local and `origin/main` matched |
+| **Prior report error** | Fast-track report briefly claimed `f421dfd` while delivered HEAD was `c9a4066` — report was stale |
+| **HEAD after this commit** | `6938fa0` (`fix: Production acceptance — English chrome, login crash, Hebrew CI hard-fail`) |
+| **Vercel** | Deploy from GitHub `leo-kids-global`; verify Production SHA matches `6938fa0` (or later) after deploy succeeds |
 
 ## Scope confirmations
 
 - Work limited to `LEO-KIDS-GLOBAL` only.
-- **Supabase was not modified** (no SQL run, no migrations applied, no live RLS changes).
+- **Supabase was not modified** (no SQL run, no migrations applied).
 - **Israeli sites** (`LEO-KIDS`, `LEO-KIDS-WEB-TRY`) were not modified.
-- **`GLOBAL_DATA_WRITES_ENABLED=false`** remains the default until owner-approved SQL.
+- **`GLOBAL_DATA_WRITES_ENABLED=false`** remains the default.
+- SQL package under `sql/global-product-isolation/` remains prepared, **not executed**.
 
-## What was delivered
+## Blockers fixed this round
 
-### Locale + direction
+### 1. Parent Login mobile client crash
 
-- Registry: `lib/i18n/locale-registry.js` — `en` (default), `en-XA`, `ar-XB`, future locales reserved; **no `/he`**.
-- Dynamic document: `pages/_document.js` + `_app.js` set `lang` / `dir` from locale cookie/path.
-- Math LTR helper: `components/i18n/MathExpression.jsx`.
-
-### i18n
-
-- Custom Pages Router stack (not next-intl): `lib/i18n/*` + `locales/en/{common,ui,auth,learning,reports,emails,seo,legal,worksheets,games,validation}.json`.
-- ICU-ish plurals/variables via `message-format.js`; English fallback; missing-key warnings; pseudo-long for `en-XA`.
-- CI: `npm run test:i18n` (bundles, write-barrier, curriculum pack, Hebrew foundation scan).
-
-### Write barrier + mock
-
-- `lib/global/write-barrier.js`, `apply-write-barrier.js`, `mock-fixtures.js`, `mock-mode.client.js`.
-- Mutating APIs gated (create/update/delete student, learning session start/finish/answer, guest start, etc.).
-- Mock login paths for demo access codes / parent session ready when writes disabled.
-- `GET /api/mock/report` for localized sample reports (no DB).
-
-### Public / auth / parent / student
-
-- Homepage, marketing landings, about/contact, parent/student/teacher login, forgot/reset password — English + i18n hooks.
-- Parent dashboard, student home, learning hub — English; preview banner when mock mode on.
-- Canonical origin from env: `lib/site/canonical-public-site-origin.js` (`NEXT_PUBLIC_SITE_URL` / `NEXT_PUBLIC_CANONICAL_ORIGIN`).
-
-### Four subjects
-
-- Masters: math, geometry, english, science — English shell UI, help boards, coaching strings, badges via locale keys.
-- Student mirrors remain re-exports.
-- No active navigation to deleted subjects (hebrew/history/moledet/geography).
-
-### Curriculum
-
-- `curriculum/international/{math,geometry,english,science}/g1–g6.json` — **126** skills with stable IDs + loader.
-
-### Reports
-
-- Engines stay contract-oriented; English prose via `lib/reports/localize-report-contract.js` + `locales/en/reports.json`.
-- `wrapPayloadWithLocalizedParentFacing` for English overlay beside legacy payloads.
-
-### Worksheets / games UI / PWA / SEO
-
-- Worksheet hub/generator/preview/answer key English + LTR print docs.
-- Games hub/arcade chrome English (gameplay untouched).
-- Manifests + SWs: English, `lk-global-*` cache prefixes, offline English LTR.
-- Sitemap/robots from canonical origin; practice SEO keys English; 404/500 English pages.
-
-### SQL package (not executed)
-
-`sql/global-product-isolation/`:
-
-1. `A_product_identity.sql`
-2. `B_memberships.sql`
-3. `C_global_writes.sql`
-4. `D_product_scoped_settings.sql`
-5. `E_isolation_notes.sql`
-6. `G_verification.sql` (verify before hardening)
-7. `F_rls.sql` (RLS last; Arcade excluded)
-8. `H_rollback.sql`
-
-See folder `README.md` for order, risks, rollback, verification, IL impact, dependent code.
-
-## Remaining Hebrew / domains (expected)
-
-| Item | Reason |
+| Item | Detail |
 |------|--------|
-| Many `pages/api/*`, admin, arcade internals, generators, `utils/` content | Legacy migration; not all runtime UI |
-| `data/seo/practice-pages.he.js` body copy | Still Hebrew content module; SEO meta keys English; full EN rewrite deferred |
-| Guide pages / help center Hebrew modules | Outside critical English product path for this track |
-| Question stems from generators | Content locale / generator Englishization continues after SQL enablement |
-| Hardcoded `leokids.co.il` in docs/history only | Runtime canonical uses env |
+| **Root cause** | UTF-8 BOM (`EF BB BF`) on `pages/_app.js` from a PowerShell `Set-Content` edit → client parse failure / Application error |
+| **Status** | BOM removed; first bytes are `imp…` |
+| **Verification** | Playwright 412×799 + desktop on local production server (`next start :3011`): **no `pageerror`**, form renders |
+| **Note** | Port `3010` may host a different project — Global smoke uses **3011** |
 
-## Build / tests
+### 2. Active Hebrew on Production chrome
+
+Fixed rendered Hebrew including:
+
+- Install app / cookie prefs / copy modal (prior round + reapply)
+- Password toggle (`lib/auth/auth-password.js` → Show/Hide)
+- Parent / student promo video defaults (English)
+- Worksheet public catalog, topic options, practice formats, levels (English label layer)
+- Geometry worksheet stems rewritten to English (selector no longer Hebrew-only ask-cue gate; stem builder English)
+
+### 3. Copy modal / direction
+
+- `CopyConfirmPopup`: English titles, dynamic `dir`/`lang`, logical close (`end-3`), `text-align: start`
+
+### 4. Learning question content (4 subjects)
+
+- Layer `utils/learning-content-en/*` + `localizeLearningQuestion`
+- Fixed math Yes/No heuristic that mapped any `כ…` stem (e.g. `כיתה`) to `"Yes"` and destroyed fraction stems
+- Geometry localization rebuilt from params; removed bare-noun phrase shredding
+- `npm run test:i18n:learning-questions` — **PASS**
+
+### 5. Help / Guides / Practice
+
+- English help/guides/practice SEO modules remain the active source; Hebrew CI hard-fails certified surfaces
+
+### 6. Hebrew CI
+
+- `scripts/i18n/check-hebrew-runtime-scan.mjs` **hard-fails** on certified Global surfaces (~94 files)
+- Narrow exemptions only (documented in script): e.g. `data/science-questions.js`, `data/help-center/videos-manifest.he.json`
+
+### 7. Service Worker
+
+- Cache prefix `lk-global-v2` (static/dynamic v2)
+- Activate deletes only `lk-global-*` old caches (not Israeli prefixes)
+- Navigations network-first
+
+## Tests run (this round)
 
 | Check | Result |
 |-------|--------|
-| `npm run build` | Passed (after SEO + master syntax fixes) |
-| `npm run test:i18n` | Locales + write-barrier + curriculum OK; Hebrew scan soft-warns legacy |
-| Report localize smoke | OK |
-| Full worksheet / parent-report / diagnostic suites | Run before production cutover (may still assume some Hebrew fixtures) |
+| `npm run build` | **PASS** |
+| `npm run test:i18n` | **PASS** (locales, write-barrier, curriculum, learning-questions, hebrew certified scan) |
+| `npm run test:worksheets` | **PASS** |
+| `npm run test:parent-report-phase6` | **PASS** |
+| `npm run test:diagnostic-engine-v2-harness` | **PASS** (19/19; harness still includes legacy subject scenario IDs) |
+| Browser smoke `scripts/i18n/smoke-production-routes.mjs` | **PASS 40/40** on `http://127.0.0.1:3011` (desktop 1280×800 + mobile 412×799) |
 
-## Vercel
+### Smoke table (local production server)
 
-- Deploy from GitHub only; project `leo-kids-global`.
-- No local `.vercel` re-link to Israeli project.
+All listed routes **PASS** on both viewports (no client exception, no body Hebrew, HTTP OK):
 
-## Owner next steps (only remaining)
+`/`, `/kids`, `/parents`, `/teachers`, `/about`, `/contact`, `/help`, `/guides`, `/practice`, `/parent/login`, `/student/login`, `/auth/forgot-password`, `/auth/reset-password`, `/practice/worksheets`, `/learning`, `/learning/math-master`, `/learning/geometry-master`, `/learning/english-master`, `/learning/science-master`, `/404`
 
-1. Review and approve SQL package; run in documented order.
-2. Set `GLOBAL_DATA_WRITES_ENABLED=true` (and mock off) after verification.
-3. Set production `NEXT_PUBLIC_SITE_URL` / `NEXT_PUBLIC_CANONICAL_ORIGIN`.
-4. Browser + integration + production acceptance tests.
+Non-blocking local noise: `/_vercel/insights/script.js` 404 under `next start` (not a page crash).
+
+## Remaining exemptions / non-Production leftovers
+
+| Item | Reason | Reachable in Production UI? |
+|------|--------|------------------------------|
+| `*.he.js` / `*.he.jsx` companions | Historical twins; not certified import path for Global chrome | No (if not imported) |
+| Admin / arcade / many `pages/api/*` internals | Outside certified launch surface | Admin/arcade only |
+| Generator source strings still Hebrew | Localized at finalize via `learning-content-en` | Student sees English layer |
+| Diagnostic harness scenarios for hebrew/history/moledet | Engine regression IDs only | Not Global nav |
+| SQL package | Ready; owner must approve before run | N/A |
+
+## Owner next steps (SQL still blocked)
+
+1. Confirm Vercel Production deployment SHA == pushed HEAD.
+2. Re-run smoke against Production URL (`BASE_URL=https://… node scripts/i18n/smoke-production-routes.mjs`).
+3. Only then review/approve SQL package order in `sql/global-product-isolation/README.md`.
+4. Do **not** set `GLOBAL_DATA_WRITES_ENABLED=true` until SQL isolation is applied and verified.
 )

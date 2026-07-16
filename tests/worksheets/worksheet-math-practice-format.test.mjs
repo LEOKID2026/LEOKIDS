@@ -119,8 +119,8 @@ describe("worksheet-math-practice-format", () => {
       g4.map((f) => f.key),
       ["division_with_remainder", "long_division_with_remainder"]
     );
-    assert.equal(g4[0].label, "חילוק בסיסי");
-    assert.equal(g4[1].label, "חילוק ארוך");
+    assert.equal(g4[0].label, "Basic division");
+    assert.equal(g4[1].label, "Long division");
   });
 
   test("division_with_remainder basic stays horizontal", () => {
@@ -210,9 +210,9 @@ describe("worksheet-math-practice-format", () => {
   test("public UI exposes only regular/advanced levels", () => {
     assert.equal(WORKSHEET_LEVEL_OPTIONS.length, 2);
     const labels = WORKSHEET_LEVEL_OPTIONS.map((l) => l.labelHe);
-    assert.ok(labels.includes("רגיל"));
-    assert.ok(labels.includes("מתקדם"));
-    assert.equal(labels.some((l) => /קל|בינוני|קשה/.test(l)), false);
+    assert.ok(labels.includes("Regular"));
+    assert.ok(labels.includes("Advanced"));
+    assert.equal(labels.some((l) => /קל|בינוני|קשה|Easy|Medium|Hard/.test(l)), false);
   });
 
   test("computation formats prefer open answer over MCQ", () => {

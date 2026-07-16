@@ -20,8 +20,8 @@ export const STUDENT_PROMO_MOBILE_SRC = "/videos/promo/leo-kids-children-mobile.
 export default function StudentPromoVideo({
   desktopSrc = STUDENT_PROMO_DESKTOP_SRC,
   mobileSrc = STUDENT_PROMO_MOBILE_SRC,
-  title = "גלו את עולם הילדים של ליאו",
-  description = "צפו בסרטון קצר על תרגול, משחקים, קלפים והפתעות בדרך.",
+  title = "Discover the LEO kids world",
+  description = "Watch a short video about practice, games, cards, and surprises along the way.",
   isBright = false,
   compact = false,
   compactHome = false,

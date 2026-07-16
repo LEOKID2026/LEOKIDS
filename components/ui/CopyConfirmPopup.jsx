@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Centered copy confirmation popup — close button, backdrop, Escape, auto-close.
@@ -16,6 +17,8 @@ export default function CopyConfirmPopup({
   zIndexClass = "z-[180]",
   testId = "copy-confirm-popup",
 }) {
+  const { direction, locale } = useI18n();
+  const t = useT();
   const titleId = useId();
   const closeRef = useRef(null);
   const [portalTarget, setPortalTarget] = useState(null);
@@ -64,8 +67,8 @@ export default function CopyConfirmPopup({
     : `fixed inset-0 ${zIndexClass} flex items-center justify-center bg-black/75 p-4 backdrop-blur-[2px]`;
 
   const popupPanel = bright
-    ? "relative w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-2xl"
-    : "relative w-full max-w-sm rounded-2xl border border-white/15 bg-[#0f1629] p-5 text-center shadow-2xl";
+    ? "relative w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-5 text-start shadow-2xl"
+    : "relative w-full max-w-sm rounded-2xl border border-white/15 bg-[#0f1629] p-5 text-start shadow-2xl";
 
   const popupTitleClass = isError
     ? bright
@@ -95,23 +98,23 @@ export default function CopyConfirmPopup({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        dir="rtl"
-        lang="he"
+        dir={direction}
+        lang={locale}
         onClick={(event) => event.stopPropagation()}
       >
         <button
           ref={closeRef}
           type="button"
           onClick={handleClose}
-          className={`absolute left-3 top-3 ${popupCloseClass}`}
-          aria-label="סגור"
+          className={`absolute end-3 top-3 ${popupCloseClass}`}
+          aria-label={t("common.close")}
           data-testid={`${testId}-close`}
         >
           ✕
         </button>
 
         <p id={titleId} className={`mb-2 mt-1 ${popupTitleClass}`}>
-          {isError ? "שגיאה" : "הועתק בהצלחה"}
+          {isError ? t("ui.copyPopup.errorTitle") : t("ui.copyPopup.successTitle")}
         </p>
         <p className={popupBodyClass} role="status" aria-live="polite">
           {message}

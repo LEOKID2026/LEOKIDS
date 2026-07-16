@@ -19,13 +19,13 @@ export default function HelpTOC({ toc }) {
   return (
     <>
       <details className={SP.tocMobile}>
-        <summary className={SP.tocMobileSummary}>תוכן העניינים</summary>
-        <nav aria-label="תוכן העניינים" className="mt-3 text-right">
+        <summary className={SP.tocMobileSummary}>Table of contents</summary>
+        <nav aria-label="Table of contents" className="mt-3 text-left">
           {list}
         </nav>
       </details>
-      <nav aria-label="תוכן העניינים" className={SP.tocDesktop}>
-        <h2 className={SP.tocTitle}>תוכן העניינים</h2>
+      <nav aria-label="Table of contents" className={SP.tocDesktop}>
+        <h2 className={SP.tocTitle}>Table of contents</h2>
         {list}
       </nav>
     </>
