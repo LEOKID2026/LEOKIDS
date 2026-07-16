@@ -7,7 +7,8 @@
 | **HEAD at start** | `480738f` (`chore: trigger fresh Vercel Next.js deployment`) |
 | **Branch** | `main` |
 | **Remote** | `origin` → `https://github.com/LEOKID2026/LEOKIDS.git` (global; not Israeli) |
-| **HEAD at end** | *(see latest commit after push)* |
+| **HEAD at end** | `cc42401` (`feat: englishize public, auth, learning, worksheets, games UI, and PWA`) |
+| **Commits** | `a66dc3a` foundation · `cc42401` English UI/PWA/SQL package+report |
 
 ## Scope confirmations
 
