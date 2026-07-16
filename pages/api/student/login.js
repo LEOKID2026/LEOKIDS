@@ -23,7 +23,7 @@ import { trackServerAnalyticsEvent } from "../../../lib/analytics/track-event.se
 import { gateMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 import { findMockStudentByAccessCode } from "../../../lib/global/mock-fixtures.js";
 
-const GENERIC_LOGIN_FAILURE = { ok: false, error: "שם משתמש או PIN שגויים" };
+const GENERIC_LOGIN_FAILURE = { ok: false, error: "Incorrect username or PIN" };
 
 function mockStudentLogin(req, res) {
   const usernameNormalized = normalizeStudentUsername(req.body?.username);
@@ -131,16 +131,18 @@ async function handler(req, res) {
       });
     }
 
-    const { data: student, error: studentErr } = await supabase
-      .from("students")
-      .select("id,full_name,grade_level,is_active")
-      .eq("id", accessCode.student_id)
-      .maybeSingle();
-    if (studentErr || !student?.id || student.is_active !== true) {
+    const { loadGlobalStudentById } = await import("../../../lib/global/product-student.server.js");
+    const owned = await loadGlobalStudentById(
+      supabase,
+      accessCode.student_id,
+      "id,full_name,grade_level,is_active,product_id"
+    );
+    if (!owned.ok || !owned.student?.id || owned.student.is_active !== true) {
       recordLoginFailure(req, credential);
       clearStudentSessionCookie(res);
       return res.status(401).json(GENERIC_LOGIN_FAILURE);
     }
+    const student = owned.student;
 
     const token = generateStudentSessionToken();
     const tokenHash = hashStudentSecret(token);

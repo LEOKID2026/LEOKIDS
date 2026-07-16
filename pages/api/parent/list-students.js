@@ -2,6 +2,8 @@ import { getLearningSupabaseServiceRoleClient } from "../../../lib/learning-supa
 import { requireParentApiContext } from "../../../lib/auth/persona-guard.server.js";
 import { resolveParentMaxChildren } from "../../../lib/parent-server/parent-entitlement-provision.server.js";
 import { DEFAULT_PARENT_STUDENT_LIMIT } from "../../../lib/parent-server/parent-student-limit.server";
+import { getServerProductId, PRODUCT_ERRORS } from "../../../lib/global/product-context.server.js";
+import { isProductColumnSchemaMissing } from "../../../lib/global/product-membership.server.js";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
@@ -12,26 +14,33 @@ export default async function handler(req, res) {
     const ctx = await requireParentApiContext(res, req.headers.authorization || "");
     if (ctx.stopped) return undefined;
 
-    const { data, error } = await ctx.bearerSupabase
+    const productId = getServerProductId();
+    const serviceClient = getLearningSupabaseServiceRoleClient();
+
+    const { data, error } = await serviceClient
       .from("students")
-      .select("id,full_name,grade_level,is_active,created_at,account_kind,student_coin_balances(balance,lifetime_earned,lifetime_spent)")
+      .select(
+        "id,full_name,grade_level,is_active,created_at,account_kind,product_id,student_coin_balances(balance,lifetime_earned,lifetime_spent)"
+      )
       .eq("parent_id", ctx.parentUserId)
+      .eq("product_id", productId)
       .or("account_kind.eq.registered,account_kind.is.null")
       .order("created_at", { ascending: true });
 
     if (error) {
+      if (isProductColumnSchemaMissing(error)) {
+        return res.status(503).json(PRODUCT_ERRORS.schema_not_ready);
+      }
       return res.status(403).json({ ok: false, error: "Could not list students" });
     }
 
-    const students = data || [];
+    // Defense in depth: only Global students.
+    const students = (data || []).filter((s) => s.product_id === productId);
     const ids = students.map((s) => s.id).filter(Boolean);
     const loginByStudentId = Object.create(null);
     const activeStudentIds = new Set();
 
     if (ids.length > 0) {
-      // Service role + narrow projection only (never code_hash/pin_hash). IDs are limited to
-      // students already verified as owned by this parent via the query above.
-      const serviceClient = getLearningSupabaseServiceRoleClient();
       const { data: activeCodes, error: codesErr } = await serviceClient
         .from("student_access_codes")
         .select("student_id,login_username,is_active,revoked_at,created_at")
@@ -46,14 +55,13 @@ export default async function handler(req, res) {
 
       for (const row of activeCodes || []) {
         const sid = row.student_id;
-        if (!sid) continue;
+        if (!sid || !ids.includes(sid)) continue;
         activeStudentIds.add(sid);
       }
 
-      // Newest-first order: first non-empty login_username wins (duplicate-active edge case).
       for (const row of activeCodes || []) {
         const sid = row.student_id;
-        if (!sid) continue;
+        if (!sid || !ids.includes(sid)) continue;
         const u =
           typeof row.login_username === "string" && row.login_username.trim()
             ? row.login_username.trim()
@@ -79,10 +87,6 @@ export default async function handler(req, res) {
       };
     });
 
-    // Expose the resolved per-parent student-creation cap so the dashboard
-    // can render and gate the Add form against the same number the API
-    // will accept. The QA allowlist itself is never sent — only the
-    // integer the server has already decided to permit for this caller.
     const limitResult = await resolveParentMaxChildren(
       ctx.serviceRole,
       ctx.parentUserId,
@@ -95,6 +99,7 @@ export default async function handler(req, res) {
       students: enriched,
       studentLimit,
       defaultStudentLimit: DEFAULT_PARENT_STUDENT_LIMIT,
+      productId,
     });
   } catch (_e) {
     return res.status(500).json({ ok: false, error: "Unexpected server error" });

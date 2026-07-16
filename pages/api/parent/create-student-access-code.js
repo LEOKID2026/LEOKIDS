@@ -25,30 +25,33 @@ async function handler(req, res) {
   try {
     const username = normalizeStudentUsername(usernameRaw);
     if (!/^[a-z0-9_-]{3,24}$/.test(username)) {
-      return res.status(400).json({ ok: false, error: "שם משתמש לא תקין" });
+      return res.status(400).json({ ok: false, error: "Invalid username" });
     }
     const pin = normalizeStudentPin(pinRaw);
     if (!/^\d{4}$/.test(pin)) {
-      return res.status(400).json({ ok: false, error: "PIN לא תקין" });
+      return res.status(400).json({ ok: false, error: "Invalid PIN" });
     }
 
     const ctx = await requireParentApiContext(res, req.headers.authorization || "");
     if (ctx.stopped) return undefined;
 
     const serviceRole = getLearningSupabaseServiceRoleClient();
-
-    // Ownership verification first (RLS + explicit parent_id check).
-    const { data: student, error: studentErr } = await ctx.bearerSupabase
-      .from("students")
-      .select("id,parent_id,is_active")
-      .eq("id", studentId)
-      .eq("parent_id", ctx.parentUserId)
-      .maybeSingle();
-    if (studentErr || !student?.id) {
-      return res.status(403).json({ ok: false, error: "Student not found for this parent" });
+    const { loadOwnedGlobalStudent } = await import("../../../lib/global/product-student.server.js");
+    const owned = await loadOwnedGlobalStudent(serviceRole, {
+      studentId,
+      parentUserId: ctx.parentUserId,
+      select: "id,parent_id,is_active,product_id",
+    });
+    if (!owned.ok) {
+      return res.status(owned.status || 403).json({
+        ok: false,
+        error: owned.error || "Student not found for this parent",
+        message: owned.message,
+      });
     }
+    const student = owned.student;
     if (student.is_active !== true) {
-      return res.status(403).json({ ok: false, error: "הילד/ה אינו פעיל" });
+      return res.status(403).json({ ok: false, error: "This child is not active" });
     }
 
     const codeHash = hashStudentSecret(username);
@@ -64,10 +67,10 @@ async function handler(req, res) {
       .limit(1)
       .maybeSingle();
     if (conflictErr) {
-      return res.status(500).json({ ok: false, error: "בדיקת שם משתמש נכשלה" });
+      return res.status(500).json({ ok: false, error: "Username check failed" });
     }
     if (conflict?.id) {
-      return res.status(409).json({ ok: false, error: "שם המשתמש כבר תפוס" });
+      return res.status(409).json({ ok: false, error: "Username is already taken" });
     }
 
     // Mutations run with service role after explicit ownership checks above.
@@ -85,15 +88,38 @@ async function handler(req, res) {
       return res.status(500).json({ ok: false, error: "Could not revoke previous code" });
     }
 
-    const { error: insErr } = await serviceRole.from("student_access_codes").insert({
-      student_id: studentId,
-      code_hash: codeHash,
-      pin_hash: pinHash,
-      login_username: username,
-      is_active: true,
-      expires_at: null,
-      revoked_at: null,
-    });
+    const { getServerProductId } = await import("../../../lib/global/product-context.server.js");
+    const productId = getServerProductId();
+    let insErr = (
+      await serviceRole.from("student_access_codes").insert({
+        student_id: studentId,
+        code_hash: codeHash,
+        pin_hash: pinHash,
+        login_username: username,
+        product_id: productId,
+        is_active: true,
+        expires_at: null,
+        revoked_at: null,
+      })
+    ).error;
+
+    // Optional denormalized product_id — fall back if column not yet applied.
+    if (insErr) {
+      const msg = String(insErr.message || "").toLowerCase();
+      if (msg.includes("product_id") || insErr.code === "42703" || insErr.code === "PGRST204") {
+        insErr = (
+          await serviceRole.from("student_access_codes").insert({
+            student_id: studentId,
+            code_hash: codeHash,
+            pin_hash: pinHash,
+            login_username: username,
+            is_active: true,
+            expires_at: null,
+            revoked_at: null,
+          })
+        ).error;
+      }
+    }
     if (insErr) {
       return res.status(500).json({ ok: false, error: "Could not create access code" });
     }

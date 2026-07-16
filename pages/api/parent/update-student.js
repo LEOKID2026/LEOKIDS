@@ -50,16 +50,20 @@ async function handler(req, res) {
     const ctx = await requireParentApiContext(res, req.headers.authorization || "");
     if (ctx.stopped) return undefined;
 
-    const { data: existing, error: existingErr } = await ctx.bearerSupabase
-      .from("students")
-      .select("id, grade_level")
-      .eq("id", studentId)
-      .eq("parent_id", ctx.parentUserId)
-      .maybeSingle();
-
-    if (existingErr || !existing?.id) {
-      return res.status(403).json({ ok: false, error: "Could not update student" });
+    const { loadOwnedGlobalStudent } = await import("../../../lib/global/product-student.server.js");
+    const owned = await loadOwnedGlobalStudent(ctx.serviceRole, {
+      studentId,
+      parentUserId: ctx.parentUserId,
+      select: "id,grade_level,product_id,parent_id",
+    });
+    if (!owned.ok) {
+      return res.status(owned.status || 403).json({
+        ok: false,
+        error: owned.error || "Could not update student",
+        message: owned.message,
+      });
     }
+    const existing = owned.student;
 
     const gradeChanged =
       patch.grade_level != null && String(patch.grade_level) !== String(existing.grade_level || "");

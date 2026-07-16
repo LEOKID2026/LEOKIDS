@@ -60,19 +60,20 @@ export default async function handler(req, res) {
     const ctx = await requireParentApiContext(res, authHeader, { requireFeature: "reports_enabled" });
     if (ctx.stopped) return undefined;
 
-    const { data: student, error: studentErr } = await ctx.bearerSupabase
-      .from("students")
-      .select("id,full_name,grade_level,is_active,parent_id,account_kind")
-      .eq("id", studentId)
-      .eq("parent_id", ctx.parentUserId)
-      .maybeSingle();
-
-    if (studentErr) {
-      return res.status(403).json({ ok: false, error: "Could not verify student ownership" });
+    const { loadOwnedGlobalStudent } = await import("../../../../../lib/global/product-student.server.js");
+    const owned = await loadOwnedGlobalStudent(ctx.serviceRole, {
+      studentId,
+      parentUserId: ctx.parentUserId,
+      select: "id,full_name,grade_level,is_active,parent_id,account_kind,product_id",
+    });
+    if (!owned.ok) {
+      return res.status(owned.status || 403).json({
+        ok: false,
+        error: owned.error || "Could not verify student ownership",
+        message: owned.message,
+      });
     }
-    if (!student?.id) {
-      return res.status(404).json({ ok: false, error: "Student not found for this parent" });
-    }
+    const student = owned.student;
     if (student.account_kind === "guest") {
       return res.status(403).json({ ok: false, error: "לא זמין לאורח", code: "guest_not_eligible" });
     }

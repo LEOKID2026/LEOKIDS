@@ -17,15 +17,18 @@ export default async function handler(req, res) {
     const ctx = await requireParentApiContext(res, authHeader);
     if (ctx.stopped) return undefined;
 
-    const { data: student, error: studentErr } = await ctx.bearerSupabase
-      .from("students")
-      .select("id")
-      .eq("id", studentId)
-      .eq("parent_id", ctx.parentUserId)
-      .maybeSingle();
-
-    if (studentErr || !student?.id) {
-      return res.status(404).json({ ok: false, error: "Student not found for this parent" });
+    const { loadOwnedGlobalStudent } = await import("../../../../../lib/global/product-student.server.js");
+    const owned = await loadOwnedGlobalStudent(ctx.serviceRole, {
+      studentId,
+      parentUserId: ctx.parentUserId,
+      select: "id,product_id,parent_id",
+    });
+    if (!owned.ok) {
+      return res.status(owned.status || 404).json({
+        ok: false,
+        error: owned.error || "Student not found for this parent",
+        message: owned.message,
+      });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();

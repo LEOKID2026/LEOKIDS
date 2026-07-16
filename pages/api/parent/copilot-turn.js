@@ -113,25 +113,26 @@ async function authorizeParentBearer(req, res, studentId, authHeader) {
       };
     }
 
-    const { data: row, error: rowErr } = await ctx.bearerSupabase
-      .from("students")
-      .select("id")
-      .eq("id", studentId)
-      .eq("parent_id", ctx.parentUserId)
-      .maybeSingle();
-    if (rowErr) {
+    const { loadOwnedGlobalStudent } = await import("../../../lib/global/product-student.server.js");
+    const ownedStudent = await loadOwnedGlobalStudent(ctx.serviceRole, {
+      studentId,
+      parentUserId: ctx.parentUserId,
+      select: "id,product_id,parent_id",
+    });
+    if (!ownedStudent.ok) {
       logCopilotAuthDebug("parent_bearer_ownership_error", {
         studentId,
         parentUserId: ctx.parentUserId,
-        reason: "db_error",
+        reason: ownedStudent.error || "product_or_ownership",
       });
       return {
         ok: false,
         error: "Could not verify student ownership",
         code: "PARENT_OWNERSHIP_DENIED",
-        status: 403,
+        status: ownedStudent.status || 403,
       };
     }
+    const row = ownedStudent.student;
     if (!row?.id) {
       logCopilotAuthDebug("parent_bearer_ownership_denied", {
         studentId,
