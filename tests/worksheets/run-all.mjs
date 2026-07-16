@@ -38,6 +38,7 @@ const TEST_FILES = [
   "worksheet-recommendations-zero-evidence.test.mjs",
   "worksheet-public-level-labels.test.mjs",
   "worksheet-ready-catalog-integrity.test.mjs",
+  "worksheet-content-grade-fix.test.mjs",
   "public-worksheets-demo-count.test.mjs",
   "public-worksheets-ready-unchanged.test.mjs",
   "public-worksheets-topic-lock.test.mjs",
