@@ -42,7 +42,7 @@ export function buildFoundationDependencyPhase14(ctx) {
   const gateReadiness = String(ctx?.gateReadiness || "");
   const targetEv = String(ctx?.targetEvidenceType || "");
 
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "the topic").trim();
 
   /** @type {string[]} */
   const dependencyEvidence = [];
@@ -66,7 +66,7 @@ export function buildFoundationDependencyPhase14(ctx) {
       dependencyEvidence: [],
       ...L,
       shouldTreatAsFoundationFirst: false,
-      foundationDependencyNarrativeHe: `ב«${displayName}»: ${DEPENDENCY_STATE_LABEL_HE.insufficient_dependency_evidence}.`,
+      foundationDependencyNarrativeHe: `On «${displayName}»: ${DEPENDENCY_STATE_LABEL_HE.insufficient_dependency_evidence}.`,
     };
   }
 
@@ -79,7 +79,7 @@ export function buildFoundationDependencyPhase14(ctx) {
   const knowledgeGap = root === "knowledge_gap";
 
   if (speedOnly && !fragileStage && !persistentMistakes && !retentionShaky && !independenceGap) {
-    dependencyEvidence.push("לחץ מהירות בלי דפוס רחב נוסף");
+    dependencyEvidence.push("Speed pressure without another broad pattern");
     const L = likelihoodFields("low", "high");
     return {
       foundationDependency: {
@@ -98,7 +98,7 @@ export function buildFoundationDependencyPhase14(ctx) {
       dependencyEvidence,
       ...L,
       shouldTreatAsFoundationFirst: false,
-      foundationDependencyNarrativeHe: `ב«${displayName}»: ${DEPENDENCY_STATE_LABEL_HE.likely_local_issue} - ${L.localIssueLikelihoodHe}.`,
+      foundationDependencyNarrativeHe: `On «${displayName}»: ${DEPENDENCY_STATE_LABEL_HE.likely_local_issue} - ${L.localIssueLikelihoodHe}.`,
     };
   }
 
@@ -109,42 +109,42 @@ export function buildFoundationDependencyPhase14(ctx) {
   if (fragileStage) {
     likelyFoundationalBlocker = "retention_instability";
     foundationScore += 3;
-    dependencyEvidence.push("שימור שביר/רגרסיה");
+    dependencyEvidence.push("Fragile retention / regression");
   } else if (retentionShaky && persistentMistakes) {
     likelyFoundationalBlocker = "retention_instability";
     foundationScore += 2;
-    dependencyEvidence.push("סיכון שימור עם טעויות חוזרות");
+    dependencyEvidence.push("Retention risk with repeating mistakes");
   }
 
   if (independenceGap) {
     if (likelyFoundationalBlocker === "unknown") likelyFoundationalBlocker = "independence_readiness_gap";
     foundationScore += 2;
-    dependencyEvidence.push("עצמאות/מוכנות");
+    dependencyEvidence.push("Independence / readiness");
   }
 
   if (instructionLoad && (mem === "usable_memory" || mem === "strong_memory") && match === "misaligned") {
     likelyFoundationalBlocker = "instruction_language_load";
     foundationScore += 2;
-    dependencyEvidence.push("עומס הוראה מול זיכרון מסלול");
+    dependencyEvidence.push("Instruction load vs path memory");
   } else if (instructionLoad && q >= 14) {
     if (likelyFoundationalBlocker === "unknown") likelyFoundationalBlocker = "instruction_language_load";
     foundationScore += 1;
-    dependencyEvidence.push("חיכוך הוראה");
+    dependencyEvidence.push("Instruction friction");
   }
 
   if (knowledgeGap && persistentMistakes) {
     likelyFoundationalBlocker = "accuracy_foundation_gap";
     foundationScore += 2;
-    dependencyEvidence.push("פער דיוק חוזר");
+    dependencyEvidence.push("Repeating accuracy gap");
   } else if (knowledgeGap && accDown && q >= 14) {
     if (likelyFoundationalBlocker === "unknown") likelyFoundationalBlocker = "accuracy_foundation_gap";
     foundationScore += 1;
-    dependencyEvidence.push("פער ידע עם מגמת דיוק");
+    dependencyEvidence.push("Knowledge gap with accuracy trend");
   }
 
   if (root === "careless_pattern" && !persistentMistakes && !fragileStage) {
     localScore += 2;
-    dependencyEvidence.push("דפוס רשלנות מקומי");
+    dependencyEvidence.push("Local careless pattern");
   }
 
   if (targetEv === "independence_confirmation" && root !== "weak_independence") {
@@ -219,6 +219,6 @@ export function buildFoundationDependencyPhase14(ctx) {
     dependencyEvidence,
     ...L,
     shouldTreatAsFoundationFirst,
-    foundationDependencyNarrativeHe: `ב«${displayName}»: ${depLab} · ${blkLab} · ${L.downstreamSymptomLikelihoodHe}.`,
+    foundationDependencyNarrativeHe: `On «${displayName}»: ${depLab} · ${blkLab} · ${L.downstreamSymptomLikelihoodHe}.`,
   };
 }

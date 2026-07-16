@@ -32,7 +32,7 @@ export default function GameAudioSettingsModal({ open, onClose, musicScope = "gl
         paddingTop: "max(12px, env(safe-area-inset-top, 0px))",
         paddingBottom: "max(12px, env(safe-area-inset-bottom, 0px))",
       }}
-      dir="rtl"
+      dir="ltr"
       role="presentation"
       onClick={onClose}
     >

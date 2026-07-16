@@ -69,7 +69,7 @@ export default function ParentDashboardModal({
           sizeClass,
         ].join(" ")}
         onClick={(event) => event.stopPropagation()}
-        dir="rtl"
+        dir="ltr"
       >
         <div className={T.modalHeader}>
           <h2 id={titleId} className={T.modalTitle}>
@@ -81,7 +81,7 @@ export default function ParentDashboardModal({
             onClick={onClose}
             className={T.modalClose}
             style={{ direction: "ltr" }}
-            aria-label="סגור"
+            aria-label="Close"
           >
             ✖
           </button>

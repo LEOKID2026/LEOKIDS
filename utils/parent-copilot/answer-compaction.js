@@ -12,12 +12,12 @@ function norm(t) {
 
 /** Phrases that must appear at most once across the whole answer body. */
 const ONCE_ACROSS_ANSWER = [
-  "עדיין מוקדם לקבוע",
-  "לא ניתן לסגור",
-  "חוסר ודאות",
-  "להמשיך לעקוב",
-  "מוקדם לכיוון",
-  "לא ניתן לקבוע כיוון",
+  "Still too early to decide",
+  "Cannot be closed",
+  "uncertainty",
+  "keep following",
+  "early to the direction",
+  "Unable to determine direction",
 ];
 
 /**

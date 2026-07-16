@@ -3,7 +3,7 @@ import ReportHubModal from "../reporting/ReportHubModal.jsx";
 import ReportDateRangeControl from "../reporting/ReportDateRangeControl.jsx";
 import { parseClassReportViewModel } from "../../lib/school-portal/school-report-view-model.js";
 import { parseStudentReportViewModel } from "../../lib/school-portal/school-report-view-model.js";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { useReportDateRange } from "../../hooks/useReportDateRange.js";
 import { appendReportRangeToSearchParams } from "../../lib/reporting/report-date-range.js";
 
@@ -62,7 +62,7 @@ export default function TeacherClassReportModal({
         );
         const body = await res.json().catch(() => ({}));
         if (res.status !== 200) {
-          setError(body?.error?.message || "שגיאה בטעינת דוח");
+          setError(body?.error?.message || "Error loading report");
           return;
         }
         const cls = body?.class || {};
@@ -113,7 +113,7 @@ export default function TeacherClassReportModal({
         row?.name ||
         body?.student?.full_name ||
         viewModel?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "ילד/ה";
+        "Student";
       setNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -162,7 +162,7 @@ export default function TeacherClassReportModal({
         onApplyCustom={() => {
           const result = reportRange.applyCustom();
           if (!result.ok) {
-            alert("אנא בחר תאריכים תקינים");
+            alert("Please select valid dates");
             return;
           }
           refetchForRange({ from: result.from, to: result.to });
@@ -198,10 +198,10 @@ export default function TeacherClassReportModal({
 
       <ReportHubModal
         open
-        title="דוח כיתה"
+        title="Class report"
         onClose={onClose}
         loading={loading}
-        loadingLabel="טוען דוח כיתה…"
+        loadingLabel="Loading class report…"
         error={error}
         viewModel={viewModel}
         onStudentReport={openStudentReport}

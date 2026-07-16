@@ -13,7 +13,7 @@ import {
   SCHOOL_ASSIGN_TARGET_GRADE,
   SCHOOL_ASSIGN_TRANSFER,
   SCHOOL_ASSIGN_UPDATE,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * @param {{
@@ -67,11 +67,11 @@ export default function SchoolStudentAssignmentPanel({
       const assignJson = await assignRes.json().catch(() => ({}));
       const classesJson = await classesRes.json().catch(() => ({}));
       if (!assignRes.ok) {
-        setError(apiErrorMessageHe(assignJson?.error, "שגיאה בטעינת שיוך"));
+        setError(apiErrorMessageHe(assignJson?.error, "Error loading assignment"));
         return;
       }
       if (!classesRes.ok) {
-        setError(apiErrorMessageHe(classesJson?.error, "שגיאה בטעינת כיתות"));
+        setError(apiErrorMessageHe(classesJson?.error, "Error loading classes"));
         return;
       }
       const a = assignJson?.data?.assignment || null;
@@ -80,7 +80,7 @@ export default function SchoolStudentAssignmentPanel({
       setToGradeLevel(a?.gradeLevel ? String(a.gradeLevel) : "");
       setToPhysicalClassName(a?.physicalClassName || "");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setLoading(false);
     }
@@ -108,25 +108,25 @@ export default function SchoolStudentAssignmentPanel({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "עדכון שיוך נכשל"));
+        setError(apiErrorMessageHe(json?.error, "Failed to update assignment"));
         return;
       }
       setMessage(SCHOOL_ASSIGN_SAVED);
       await load();
       onUpdated?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
   };
 
   if (loading) {
-    return <p className="text-sm text-white/60 text-right">טוען…</p>;
+    return <p className="text-sm text-white/60 text-left">Loading…</p>;
   }
 
   return (
-    <div className="space-y-4 text-right" data-testid="school-student-assignment-panel">
+    <div className="space-y-4 text-left" data-testid="school-student-assignment-panel">
       {studentName ? <p className="text-sm text-white/70">{studentName}</p> : null}
 
       <dl className="grid grid-cols-2 gap-3 text-sm rounded-lg border border-white/10 bg-black/30 p-3">

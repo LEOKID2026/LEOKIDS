@@ -3,25 +3,25 @@
   "subjects": [
     {
       "subject_key": "math",
-      "display_name_he": "מתמטיקה",
+      "display_name_he": "Math",
       "sort_order": 1,
       "is_active": true
     },
     {
       "subject_key": "geometry",
-      "display_name_he": "גאומטריה",
+      "display_name_he": "Geometry",
       "sort_order": 2,
       "is_active": true
     },
     {
       "subject_key": "english",
-      "display_name_he": "אנגלית",
+      "display_name_he": "English",
       "sort_order": 3,
       "is_active": true
     },
     {
       "subject_key": "science",
-      "display_name_he": "מדעים",
+      "display_name_he": "Science",
       "sort_order": 4,
       "is_active": true
     }

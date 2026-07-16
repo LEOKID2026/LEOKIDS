@@ -5,8 +5,8 @@ import { worksheetQuestionTypeLabelHe } from "../../lib/worksheet-activities/wor
  */
 export default function StudentAnswerSheet({ questions, answers, onChange, disabled }) {
   return (
-    <div className="space-y-4 text-right">
-      <h3 className="text-lg font-bold text-white">גיליון תשובות</h3>
+    <div className="space-y-4 text-left">
+      <h3 className="text-lg font-bold text-white">Answer sheet</h3>
       {questions.map((q) => {
         const idx = q.questionIndex;
         const type = q.questionType;
@@ -15,14 +15,14 @@ export default function StudentAnswerSheet({ questions, answers, onChange, disab
         return (
           <div key={idx} className="rounded-xl border border-white/10 p-3 bg-black/25">
             <p className="text-sm text-white/70 mb-2">
-              שאלה {idx} · {worksheetQuestionTypeLabelHe(type)}
-              {q.points != null ? ` · ${q.points} נק'` : ""}
+              Question {idx} · {worksheetQuestionTypeLabelHe(type)}
+              {q.points != null ? ` · ${q.points} pts` : ""}
             </p>
 
             {type === "multiple_choice" && Array.isArray(q.choices) ? (
               <div className="flex flex-col gap-2">
                 {q.choices.map((c) => (
-                  <label key={c} className="flex items-center gap-2 justify-end cursor-pointer">
+                  <label key={c} className="flex items-center gap-2 justify-start cursor-pointer">
                     <span className="text-white">{c}</span>
                     <input
                       type="radio"
@@ -35,10 +35,10 @@ export default function StudentAnswerSheet({ questions, answers, onChange, disab
                 ))}
               </div>
             ) : type === "true_false" ? (
-              <div className="flex gap-3 justify-end">
+              <div className="flex gap-3 justify-start">
                 {["true", "false"].map((opt) => (
                   <label key={opt} className="flex items-center gap-1 text-white cursor-pointer">
-                    <span>{opt === "true" ? "נכון" : "לא נכון"}</span>
+                    <span>{opt === "true" ? "True" : "False"}</span>
                     <input
                       type="radio"
                       name={`q-${idx}`}

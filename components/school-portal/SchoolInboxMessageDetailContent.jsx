@@ -13,7 +13,7 @@ export default function SchoolInboxMessageDetailContent({
   return (
     <>
       <h2 id="school-message-detail-title" className="text-lg font-bold leading-snug">
-        {message.subject || "הודעה"}
+        {message.subject || "Message"}
       </h2>
       {senderLine ? <p className="text-xs text-amber-200/90">{senderLine}</p> : null}
       {sentLabel ? <p className="text-xs text-white/50">{sentLabel}</p> : null}

@@ -8,10 +8,10 @@ import {
   LEGAL_CROSS_LINKS,
   POLICY_LAST_UPDATED_DISPLAY,
   UNIFIED_LEGAL_SECTIONS,
-} from "../../data/legal/sitePolicies.he";
+} from "../../data/legal/sitePolicies.js";
 
 /**
- * Unified Hebrew legal page — full content with optional scroll to section (legacy routes).
+ * Unified legal page — full content with optional scroll to section (legacy routes).
  * @param {{ pageKey?: keyof typeof LEGACY_POLICY_PAGES; scrollToSectionId?: string }} props
  */
 export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSectionId }) {
@@ -39,9 +39,9 @@ export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSect
         description={metaDescription}
         canonicalPath={route}
       />
-      <article dir="rtl" lang="he" className="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-right">
+      <article dir="ltr" lang="en" className="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-left">
         <header className="mb-8 space-y-3">
-          <p className="text-xs text-white/50">עודכן לאחרונה: {POLICY_LAST_UPDATED_DISPLAY}</p>
+          <p className="text-xs text-white/50">Last updated: {POLICY_LAST_UPDATED_DISPLAY}</p>
           <h1 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-amber-300 via-amber-200 to-rose-300 bg-clip-text text-transparent">
             {pageKey === "legal" ? pageTitle : pageTitle}
           </h1>
@@ -49,25 +49,26 @@ export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSect
             <>
               <p className="text-base sm:text-lg text-white/75 leading-relaxed">{intro}</p>
               <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                יצירת קשר:{" "}
+                Contact:{" "}
                 <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber-300 hover:text-amber-200 underline">
                   {CONTACT_EMAIL}
                 </a>
               </p>
               <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                העמוד נכתב כדי להסביר בשפה ברורה מה השירות עושה, איזה מידע נשמר, איך משתמשים בו, מה ההורים
-                יכולים לראות, ומה חשוב לדעת לפני שימוש באתר.
+                This page explains in clear language what the service does, what information is stored, how it is
+                used, what parents can see, and what is important to know before using the site.
               </p>
               <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                השימוש באתר, יצירת חשבון, כניסה עם Google, כניסה עם אימייל וסיסמה, שימוש של ילד, שימוש של מורה
-                או המשך שימוש באתר לאחר עדכון התנאים - מהווים הסכמה לתנאים המפורטים בעמוד זה.
+                Using the site, creating an account, signing in with Google, signing in with email and password, use
+                by a child, use by a teacher, or continued use of the site after the terms are updated constitutes
+                acceptance of the terms outlined on this page.
               </p>
             </>
           ) : (
             <p className="text-sm text-white/60">
-              מסמך מלא:{" "}
+              Full document:{" "}
               <Link href="/legal" className="text-amber-300 hover:text-amber-200 underline">
-                תנאים, פרטיות, נגישות ושימוש בבינה מלאכותית
+                Terms, privacy, accessibility, and AI use
               </Link>
             </p>
           )}
@@ -77,13 +78,13 @@ export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSect
 
         <footer className="mt-10 pt-6 border-t border-white/10 space-y-4 text-sm text-white/65">
           <p>
-            שאלות:{" "}
+            Questions:{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber-300 hover:text-amber-200 underline">
               {CONTACT_EMAIL}
             </a>
           </p>
-          <nav aria-label="קישורים למסמכים משפטיים">
-            <p className="mb-2 font-semibold text-white/80">מסמכים נוספים</p>
+          <nav aria-label="Legal document links">
+            <p className="mb-2 font-semibold text-white/80">Additional documents</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-1">
               {LEGAL_CROSS_LINKS.filter((l) => l.href !== route && l.href !== "/legal").map((link) => (
                 <li key={link.href}>
@@ -94,7 +95,7 @@ export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSect
               ))}
               <li>
                 <Link href="/legal" className="text-amber-300/90 hover:text-amber-200 underline">
-                  תנאים, פרטיות ונגישות
+                  Terms, privacy, and accessibility
                 </Link>
               </li>
             </ul>
@@ -105,7 +106,7 @@ export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSect
   );
 }
 
-/** @param {{ sections: import("../../data/legal/sitePolicies.he").PolicySection[] & { paragraphsAfterBullets?: string[]; paragraphsAfterLinks?: string[] }[] }} props */
+/** @param {{ sections: import("../../data/legal/sitePolicies").PolicySection[] & { paragraphsAfterBullets?: string[]; paragraphsAfterLinks?: string[] }[] }} props */
 function PolicySections({ sections }) {
   return (
     <div className="space-y-6">

@@ -15,7 +15,7 @@ import {
   REG_TEACHER_SUCCESS,
   REG_TEACHER_TITLE,
   SUBJECT_LABELS_HE,
-} from "../../lib/auth/auth-registration.he.js";
+} from "../../lib/auth/auth-registration.js";
 
 export default function TeacherRegistrationRequestForm({ bright = false }) {
   const T = getTeacherPortalTheme(bright);
@@ -65,16 +65,16 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
         setMessage(REG_TEACHER_SUCCESS);
         return;
       }
-      setError("לא ניתן לשלוח את הבקשה כעת. נסו שנית מאוחר יותר.");
+      setError("Unable to submit the request right now. Please try again later.");
     } catch {
-      setError("שגיאת רשת. נסו שנית.");
+      setError("Network error. Please try again.");
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <div data-testid="teacher-registration-request-form" dir="rtl" lang="he">
+    <div data-testid="teacher-registration-request-form" dir="ltr" lang="en">
       <h2 className={T.regTitle}>{REG_TEACHER_TITLE}</h2>
       {message ? (
         <p className={`${T.regSuccess} mb-1`} role="status">
@@ -177,7 +177,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
             className={`${T.submitBtn} md:w-auto md:px-6 md:py-2`}
             data-testid="teacher-reg-submit"
           >
-            {busy ? "שולח…" : REG_TEACHER_SUBMIT}
+            {busy ? "Sending…" : REG_TEACHER_SUBMIT}
           </button>
         </form>
       )}

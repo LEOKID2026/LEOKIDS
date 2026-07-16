@@ -42,21 +42,21 @@ export function buildHybridExplanations({ snapshot, ranking, probeIntel, gate, c
 
   function templateParent() {
     if (cannot) {
-      return "לפי מה שנאסף עד עכשיו, עדיין אין מספיק בסיס לקבוע כיוון ברור בנושא הזה.";
+      return "Based on what has been gathered so far, there is still not enough basis to set a clear direction on this topic.";
     }
     const base = taxonomyId
-      ? `זוהה דפוס לימודי פעיל (${taxonomyId}) בהתאם לנתוני התרגול בטווח התאריכים. `
-      : "לפי נתוני התרגול בטווח הזה, יש תמונת מצב ראשונית. ";
+      ? `An active learning pattern (${taxonomyId}) was identified from practice data in the date range. `
+      : "Based on practice data in this range, there is an initial picture. ";
     const tail =
       gate.mode === "rank_only"
-        ? "מידת הוודאות בינונית - כדאי לקרוא את ההסבר יחד עם המורה לפני החלטות."
-        : "ניתן להשתמש בהמלצות הבדיקה כדי לצמצם אי ודאות.";
+        ? "Certainty is moderate - read the explanation with the teacher before decisions."
+        : "You can use the check recommendations to reduce uncertainty.";
     return base + tail;
   }
 
   function templateTeacher() {
     if (cannot) {
-      return "שער פלט: cannot-conclude. אין להסיק אבחנה חדה; להשתמש ב probe ובמעקב חוזר לפי מדיניות V2.";
+      return "Output gate: cannot-conclude. Do not infer a sharp diagnosis; use a probe and follow-up per V2 policy.";
     }
     return `V2 authority: taxonomy=${taxonomyId || "none"}, confidence=${conf}, mode=${gate.mode}, ambiguity=${(ambiguity ?? "").toString()}, suggestedProbe=${probeIntel?.suggestedProbeId || "none"}.`;
   }
@@ -66,9 +66,9 @@ export function buildHybridExplanations({ snapshot, ranking, probeIntel, gate, c
   let outputStatus = /** @type {"ok"|"fallback"|"failed"} */ ("ok");
   let failureReason = "";
 
-  if (isProbeOnly && !cannot && textParent.includes("דפוס לימודי פעיל")) {
+  if (isProbeOnly && !cannot && textParent.includes("active learning pattern")) {
     textParent =
-      "לפי מה שנאסף עד עכשיו, עדיין אין מספיק בסיס לקבוע כיוון ברור בנושא הזה.";
+      "Based on what has been gathered so far, there is still not enough basis to set a clear direction on this topic.";
     outputStatus = "fallback";
     failureReason = "probe_only_framed_as_success";
   }
@@ -76,7 +76,7 @@ export function buildHybridExplanations({ snapshot, ranking, probeIntel, gate, c
   let validator = validateExplanationOutput({ text: textParent, requireUncertainty, evidenceRefs });
   if (!validator.overallPass) {
     textParent =
-      "לפי מה שנאסף עד עכשיו, עדיין אין מספיק בסיס לקבוע כיוון ברור בנושא הזה.";
+      "Based on what has been gathered so far, there is still not enough basis to set a clear direction on this topic.";
     outputStatus = "fallback";
     failureReason = validator.reasonCodes.join(";");
     validator = validateExplanationOutput({
@@ -87,8 +87,8 @@ export function buildHybridExplanations({ snapshot, ranking, probeIntel, gate, c
   }
 
   const uncertaintyLine = requireUncertainty
-    ? "מידת הוודאות: ייתכנו פרשנויות שונות - יש לשלב שיקול דעת מבוגר."
-    : "מידת הוודאות גבוהה יחסית לפי שערי המערכת לטווח זה.";
+    ? "Certainty: different interpretations are possible - include adult judgment."
+    : "Certainty is relatively high per system gates for this range.";
 
   return {
     inputBundleId,

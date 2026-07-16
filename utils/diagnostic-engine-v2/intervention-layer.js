@@ -6,22 +6,22 @@ import { TAXONOMY_BY_ID } from "./taxonomy-registry.js";
 export function buildInterventionPlan(taxonomyId) {
   if (!taxonomyId || !TAXONOMY_BY_ID[taxonomyId]) {
     return {
-      immediateActionHe: "איסוף ראיה נוספת לפני תוכנית",
-      shortPracticeHe: "3–7 פריטים באותו נושא ברמת קושי נמוכה במעט",
-      avoidHe: "לא לקפוץ לרמה גבוהה מדי ולא לערבב כמה נושאים יחד.",
-      improvementSignalsHe: ["ירידה בטעויות חוזרות", "תיקון עצמאי אחרי טעות"],
-      failureSignalsHe: ["אין שינוי אחרי שני מחזורים מובנים"],
-      hypothesisChangeHe: "כישלון בבדיקה המוצעת או הצלחה רק כשיש הרבה רמזים",
+      immediateActionHe: "Gather more evidence before a plan",
+      shortPracticeHe: "3–7 items on the same topic at a slightly lower difficulty",
+      avoidHe: "Do not jump too high in level or mix several topics together.",
+      improvementSignalsHe: ["Fewer repeating errors", "Independent correction after a mistake"],
+      failureSignalsHe: ["No change after two structured cycles"],
+      hypothesisChangeHe: "Failure on the proposed check, or success only with heavy hinting",
     };
   }
   const row = TAXONOMY_BY_ID[taxonomyId];
   return {
     immediateActionHe: row.probeHe,
     shortPracticeHe: row.interventionHe,
-    avoidHe: "לא לקפוץ לרמה גבוהה מדי, לא לערבב כמה נושאים יחד, ולא להסתפק במשוב כללי בלי דוגמה.",
-    improvementSignalsHe: ["התאמה לסמני ההצלחה מהטקסונומיה", "שחזור בהעברה למשימה דומה"],
+    avoidHe: "Do not jump too high in level, mix several topics, or rely on general feedback without an example.",
+    improvementSignalsHe: ["Match taxonomy success markers", "Transfer success to a similar task"],
     failureSignalsHe: [row.escalationHe],
-    hypothesisChangeHe: "כאשר נכשל probe המומלץ או מופיעה נגד ראיה חזקה",
+    hypothesisChangeHe: "When the recommended probe fails or strong counter-evidence appears",
     taxonomyId: row.id,
   };
 }

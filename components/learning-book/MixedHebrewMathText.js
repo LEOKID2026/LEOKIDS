@@ -42,7 +42,7 @@ function MathSpan({ value, className = "" }) {
 
 function MixedLineBody({ children, className = "" }) {
   return (
-    <span className={`book-mixed-line-body block max-w-full ${className}`.trim()} dir="rtl">
+    <span className={`book-mixed-line-body block max-w-full ${className}`.trim()} dir="ltr">
       {children}
     </span>
   );
@@ -51,7 +51,7 @@ function MixedLineBody({ children, className = "" }) {
 function ProseSpan({ children, className = "" }) {
   return (
     <span
-      dir="rtl"
+      dir="ltr"
       style={bookProseIsolateStyle}
       className={`book-prose-isolate ${className}`.trim()}
       data-book-prose-run="true"
@@ -62,7 +62,7 @@ function ProseSpan({ children, className = "" }) {
 }
 
 /**
- * Unified BiDi policy: one LTR island per math run, RTL prose — no digit/token splitting.
+ * Unified BiDi policy: one LTR island per math run, LTR prose — no digit/token splitting.
  */
 function renderUnifiedMixedRuns(text, keyPrefix = "") {
   const input = String(text || "");
@@ -203,7 +203,7 @@ function renderVavPrefixedMathRow(text) {
   const input = String(text || "").trim();
   const match = input.match(/^(ו-)(\d[\s\S]+)$/u);
   if (!match?.[2]) return null;
-  // Only a real vav-prefixed equation, not a sentence that happens to start "ו-2 …".
+  // Only a real vav-prefixed equation (Hebrew "and-"), not a sentence that starts similarly.
   const body = stripStrayMarkdown(match[2]);
   if (/[\u0590-\u05FF]+\s+[\u0590-\u05FF]+/u.test(body)) return null;
 
@@ -320,7 +320,7 @@ function renderLabelWithBody(label, body, diagramLayout = false) {
 }
 
 /**
- * Render Hebrew text with math isolated first, then markdown in prose segments.
+ * Render mixed text with math isolated first, then markdown in prose segments.
  * @param {{ text: string, className?: string, diagramLayout?: boolean }} props
  */
 export default function MixedHebrewMathText({ text, className = "", diagramLayout = false }) {

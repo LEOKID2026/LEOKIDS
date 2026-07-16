@@ -54,12 +54,12 @@ export default class OfflineGameErrorBoundary extends React.Component {
           gap: "1.5rem",
           textAlign: "center",
         }}
-        dir="rtl"
+        dir="ltr"
       >
         <div style={{ fontSize: 48 }}>😕</div>
-        <div style={{ fontSize: 20, fontWeight: 700 }}>אופס! משהו השתבש</div>
+        <div style={{ fontSize: 20, fontWeight: 700 }}>Oops! Something went wrong</div>
         <div style={{ fontSize: 15, color: "#94a3b8", maxWidth: 280 }}>
-          לא הצלחנו לטעון את המשחק. אפשר לנסות שוב.
+          We couldn't load the game. You can try again.
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%", maxWidth: 260 }}>
@@ -67,19 +67,19 @@ export default class OfflineGameErrorBoundary extends React.Component {
             onClick={this.handleRetry}
             style={{ ...btnBase, background: "#2563eb", color: "#fff", justifyContent: "center" }}
           >
-            נסה שוב
+            Try Again
           </button>
           <a
             href={backHref}
             style={{ ...btnBase, background: "#1e293b", color: "#94a3b8", justifyContent: "center" }}
           >
-            חזרה לרשימת המשחקים
+            Back to Games List
           </a>
           <a
             href={OFFLINE_HUB_ROUTE}
             style={{ ...btnBase, background: "#0f172a", color: "#475569", justifyContent: "center" }}
           >
-            אזור משחקים ללא אינטרנט
+            Offline Games Area
           </a>
         </div>
       </div>

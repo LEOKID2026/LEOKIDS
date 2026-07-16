@@ -16,7 +16,7 @@ import {
 } from "../../hooks/useStudentGameAccess.js";
 import { studentPathNeedsGameAccess } from "../../lib/student-ui/student-game-access-paths.client.js";
 
-/** מותר לשמור ב next= אחרי login — ללא open redirect */
+/** Allowed to store in next= after login — no open redirect */
 function isSafeNextPath(path) {
   return (
     typeof path === "string" &&
@@ -44,10 +44,10 @@ function StudentGateShell({ pathname, children }) {
 function StudentGateBlockedPanel({ loginHref }) {
   const { tokens: T } = useStudentTheme();
   return (
-    <div className="max-w-md mx-auto px-4 py-8 md:py-12 space-y-4" dir="rtl" lang="he">
-      <p className={`${T.loadingText} text-right`}>יש להתחבר כילד/ה כדי להמשיך</p>
+    <div className="max-w-md mx-auto px-4 py-8 md:py-12 space-y-4" dir="ltr" lang="en">
+      <p className={`${T.loadingText} text-left`}>Please sign in as a student to continue</p>
       <Link href={loginHref} className={`${T.ctaPrimary} inline-flex justify-center w-full sm:w-auto`}>
-        כניסת ילד/ה
+        Student sign-in
       </Link>
     </div>
   );
@@ -200,7 +200,7 @@ export default function StudentAccessGate({ children }) {
   return (
     <StudentSessionProvider value={providerValue}>
       {showLoader ? (
-        <StudentLoadingPanel message="טוען..." fullPage />
+        <StudentLoadingPanel message="Loading..." fullPage />
       ) : (
         pageContent
       )}

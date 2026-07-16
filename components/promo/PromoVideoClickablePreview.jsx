@@ -36,7 +36,7 @@ export default function PromoVideoClickablePreview({
         className={`group relative cursor-pointer ${wrapClassName}`}
         role="button"
         tabIndex={0}
-        aria-label={`פתח ${ariaLabel}`}
+        aria-label={`Open ${ariaLabel}`}
         data-testid={testId ? `${testId}-preview` : "promo-video-preview"}
         onClick={openModal}
         onKeyDown={onKeyDown}

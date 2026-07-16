@@ -1,14 +1,14 @@
 /**
- * שכבת ניסוח להורה בלבד — דוח מקיף (תצוגה בלבד).
- * קצר, חד, בלי שכבות משנה — ללא שינוי שדות payload מהמנוע.
+ * Parent-facing wording layer only — detailed report (display only).
+ * Short, sharp, no sub-layers — does not change engine payload fields.
  */
 
 import { pickVariant } from "./parent-report-language/variants.js";
 import {
   normalizeParentFacingHe,
   normalizeSubjectParentLetterHe,
-} from "./parent-report-language/parent-facing-normalize-he.js";
-import { parentFacingWeaknessPracticePhraseHe } from "./diagnostic-labels-he.js";
+} from "./parent-report-language/parent-facing-normalize.js";
+import { parentFacingWeaknessPracticePhraseEn as parentFacingWeaknessPracticePhraseHe } from "./diagnostic-labels.js";
 import {
   buildNarrativeContractV1,
   narrativeSectionTextHe,
@@ -40,7 +40,7 @@ import {
   suppressRegisteredGradeStrengthenCopy,
 } from "./parent-report-language/grade-context-parent-he.js";
 
-/** הסרת מירכאות צרפתיות / גוילמטים */
+/** Strip French quotation marks / guillemets */
 export function stripGuillemetsHe(s) {
   return String(s || "")
     .replace(/[\u00AB\u00BB«»]/g, "")
@@ -61,51 +61,50 @@ function stripTechnicalNoiseHe(text) {
 
 function displayTopicCoreHe(labelHe) {
   let t = stripGuillemetsHe(stripTechnicalNoiseHe(labelHe));
-  t = t.replace(/^בנושא\s+/u, "").replace(/^הנושא\s+/u, "").trim();
+  t = t.replace(/^(on the topic of|the topic of|about|on)\s+/iu, "").trim();
   return t;
 }
 
 /**
- * ניסוח אחיד: "בנושא חיבור" או "בנושא של שטחים ויחידות שטח" (כשיש רווח בשם).
+ * Consistent phrasing: "on addition" or "on areas and surface units" (when there is a space in the name).
  */
 export function displayTopicPhraseHe(labelHe) {
   const core = displayTopicCoreHe(labelHe);
   if (!core) return "";
-  if (/\s/u.test(core)) return `בנושא של ${core}`;
-  return `בנושא ${core}`;
+  return `on ${core}`;
 }
 
-/** תרגום והסרת ניסוח "הגדרות / משחק / כיתה" לשפה הורית ברורה */
+/** Rewrites and removes "settings / game / grade" wording into clear parent-facing language */
 export function rewriteParentRecommendationForDetailedHe(raw) {
   let s = stripGuillemetsHe(String(raw || ""));
   if (!s) return "";
   s = s.replace(/\s+/g, " ").trim();
-  s = s.replace(/^על ([^,]+), (?:אחרי מה שנאסף בתקופה(?: שנבחרה)?|לפי התרגול שנאסף בתקופה שנבחרה):\s*/u, "ב$1: ");
-  s = s.replace(/במשחק/g, "בתרגול");
-  s = s.replace(/אם במשחק יש בחירת כיתה לפי נושא -/g, "אם ניתן להפריד רמת קושי לפי נושא -");
-  s = s.replace(/אם אפשר לבחור כיתה נפרדת לפי נושא -/g, "אם ניתן להתאים רמת קושי נפרדת לפי נושא -");
+  s = s.replace(/^On ([^,]+), (?:after what was collected in the(?: selected)? period|based on the practice collected in the selected period):\s*/iu, "In $1: ");
+  s = s.replace(/in the game/gi, "in practice");
+  s = s.replace(/if the game allows choosing a grade by topic -/gi, "if the difficulty level can be split by topic -");
+  s = s.replace(/if a separate grade can be chosen by topic -/gi, "if a separate difficulty level can be set by topic -");
   s = s.replace(
-    /אם ניתן להתאים רמת קושי נפרדת לפי נושא - ב(.+?) כדאי כיתה אחת נמוכה יותר\. בשאר הנושאים לא חייבים לשנות\./u,
-    "בנושא $1 מומלץ לנסות רמה או כיתה יותר נמוכה ואז להתקדם בהדרגה."
+    /if a separate difficulty level can be set by topic - in (.+?) one grade lower is recommended\. no need to change the other topics\./iu,
+    "in $1 it's recommended to try a lower level or grade and then progress gradually."
   );
   s = s.replace(
-    /נשארים על אותה הגדרה ב(?:«|")?([^»"]+)(?:»|")?\s*\([^)]*\)/gu,
-    "בנושא $1 מומלץ להמשיך כרגע באותה רמת קושי"
+    /staying at the same setting in (?:«|")?([^»"]+)(?:»|")?\s*\([^)]*\)/giu,
+    "in $1 it's recommended to continue at the current difficulty level for now"
   );
-  s = s.replace(/נשארים על אותה כיתה ורמה/g, "להמשיך באותה רמת קושי");
-  s = s.replace(/לתת לילד/g, "לסייע לילד");
-  s = s.replace(/ולבנות הצלחות קטנות/g, "ולבנות את הנושא בהדרגה עם הילד");
-  s = s.replace(/נשארים על רמה [^ ו]+ ומתמקדים/g, "כדאי להישאר על אותה רמת קושי ולהתמקד");
-  s = s.replace(/2–3 סשנים קצרים/g, "שני שלושה תרגולים קצרים");
-  s = s.replace(/סשנים קצרים/g, "תרגולים קצרים");
-  s = s.replace(/מפגשי תרגול קצרים/g, "תרגולים קצרים");
-  s = s.replace(/מומלץ לעלות רמת קושי אחת רק בנושא הזה בתרגול/g, "מומלץ לעלות רמה רק בנושא הזה");
-  s = s.replace(/מומלץ לעלות רמת קושי אחת רק בנושא הזה במשחק/g, "מומלץ לעלות רמה רק בנושא הזה בתרגול");
-  s = s.replace(/מומלץ להקשות מעט רק בנושא הזה/g, "מומלץ לעלות רמה רק בנושא הזה");
-  s = s.replace(/רק בנושא הזה במשחק/g, "רק בנושא הזה בתרגול");
+  s = s.replace(/staying at the same grade and level/gi, "continue at the same difficulty level");
+  s = s.replace(/give the child/gi, "help the child");
+  s = s.replace(/and build small successes/gi, "and build up the topic gradually with the child");
+  s = s.replace(/staying at level [^ ]+ and focusing/gi, "it's best to stay at the same difficulty level and focus");
+  s = s.replace(/2–3 short sessions/gi, "two to three short practice sessions");
+  s = s.replace(/short sessions/gi, "short practice sessions");
+  s = s.replace(/short practice meetings/gi, "short practice sessions");
+  s = s.replace(/it's recommended to raise the difficulty one level only on this topic in practice/gi, "it's recommended to raise the level only on this topic");
+  s = s.replace(/it's recommended to raise the difficulty one level only on this topic in the game/gi, "it's recommended to raise the level only on this topic in practice");
+  s = s.replace(/it's recommended to make it slightly harder only on this topic/gi, "it's recommended to raise the level only on this topic");
+  s = s.replace(/only on this topic in the game/gi, "only on this topic in practice");
   s = s.replace(
-    /כדאי להתאמן עוד קצת ב(?:«|")?([^»"]+)(?:»|")? באותה רמה - ואז נחליט על צעד הבא\./gu,
-    "מומלץ להמשיך בתרגול קצר בנושא $1 באותה רמת קושי, ולעכב שינוי עד שיש עקביות."
+    /it's worth practicing a bit more (?:«|")?([^»"]+)(?:»|")? at the same level - and then decide the next step\./giu,
+    "it's recommended to continue with short practice on $1 at the same difficulty level, and delay a change until there's consistency."
   );
   s = s.replace(/\s+/g, " ").trim();
   return stripGuillemetsHe(s);
@@ -142,7 +141,7 @@ function majorRiskAny(sp) {
   return Object.values(r).some(Boolean);
 }
 
-/** משפט פתיחה אחד */
+/** One opening sentence */
 function buildSubjectOpeningLineHe(sp, lab) {
   const contract = readSubjectEngineContract(sp);
   if (contract?.blockedLegacySummary) {
@@ -193,22 +192,22 @@ function buildSubjectOpeningLineHe(sp, lab) {
 
   if (pri === "immediate" && priReason) {
     const t = [
-      stripGuillemetsHe(`${priReason} כדאי לבחור משימה אחת השבוע ולדבוק בה.`),
-      stripGuillemetsHe(`${priReason} עדיף צעד קטן וחוזר מאשר לנסות "לנסות לתקן הכול בבת אחת".`),
+      stripGuillemetsHe(`${priReason} It helps to pick one task this week and stick with it.`),
+      stripGuillemetsHe(`${priReason} A small, repeated step is better than trying to "fix everything at once."`),
     ];
     return t[Math.abs(priReason.length + lab.length) % t.length];
   }
   if (pri === "monitor" && priReason) {
     const t = [
-      stripGuillemetsHe(`${priReason} בשלב הזה עדיף להימנע מהחלטות גדולות בבית.`),
-      stripGuillemetsHe(`${priReason} כדאי להמשיך בתרגול קצר לפני שקובעים כיוון ברור.`),
+      stripGuillemetsHe(`${priReason} At this stage it's best to avoid big decisions at home.`),
+      stripGuillemetsHe(`${priReason} It helps to continue with short practice before settling on a clear direction.`),
     ];
     return t[Math.abs((priReason + lab).length) % t.length];
   }
   if (pri === "maintain" && domSucc && ex0 && !mr) {
     const t = [
-      stripGuillemetsHe(`ב${lab} אפשר לנוח קצת על הגז: ${domSucc} - מספיק שגרת תרגול קצרה.`),
-      stripGuillemetsHe(`ב${lab} התמונה עקבית יחסית (${domSucc}) - אין חובה להוסיף עומס; מספיק לעקוב בעדינות.`),
+      stripGuillemetsHe(`In ${lab} you can ease off a bit: ${domSucc} - a short practice routine is enough.`),
+      stripGuillemetsHe(`In ${lab} the picture is relatively consistent (${domSucc}) - no need to add load; light monitoring is enough.`),
     ];
     return t[Math.abs((domSucc + lab).length) % t.length];
   }
@@ -217,36 +216,36 @@ function buildSubjectOpeningLineHe(sp, lab) {
     if (w0 && isClearWeakSubjectVolume(w0.questions, w0.accuracy)) {
       const coreW = displayTopicCoreHe(w0.labelHe) || displayTopicPhraseHe(w0.labelHe);
       return stripGuillemetsHe(
-        `ב${lab} נראית נקודת חיזוק ברורה ב${displayTopicPhraseHe(w0.labelHe) || coreW} - כדאי לחזק את הנושא בתרגול קצר.`,
+        `In ${lab} a clear point to reinforce shows up ${displayTopicPhraseHe(w0.labelHe) || coreW} - it's worth strengthening the topic with short practice.`,
       );
     }
     const templates = [
-      `ב${lab} עדיין מוקדם לדעת בבירור מה קורה לפי התרגול - מה שכן בולט: ${domRc}. כדאי להמשיך עם תרגול קצר לפני שינוי מהותי.`,
-      `ב${lab} המידע שנאסף בתקופה שנבחרה עדיין חלקי; הכיוון הסביר ביותר כרגע הוא ${domRc} - בלי לנעול תוכנית ארוכה.`,
+      `In ${lab} it's still early to know clearly what's happening from the practice - what does stand out: ${domRc}. It helps to continue with short practice before a major change.`,
+      `In ${lab} the information collected in the selected period is still partial; the most likely direction right now is ${domRc} - without locking in a long plan.`,
     ];
     return stripGuillemetsHe(templates[Math.abs((lab + domRc).length) % templates.length]);
   }
   if (readiness === "partial" && domRc && w0) {
     return stripGuillemetsHe(
-      `ב${lab} יש תמונה אמצעית: ${domRc} לצד ${displayTopicPhraseHe(w0.labelHe)} - כדאי לעקוב ולא לקבוע סופית עדיין.`
+      `In ${lab} there's a mixed picture: ${domRc} alongside ${displayTopicPhraseHe(w0.labelHe)} - it helps to keep watching without concluding yet.`
     );
   }
 
   if (domSucc && sp?.dominantSuccessPattern === "stable_mastery" && ex0 && !mr) {
     return stripGuillemetsHe(
-      `ב${lab} נראית עקביות טובה (${domSucc}) ב ${displayTopicPhraseHe(ex0.labelHe)} - כדאי לשמור על קצב רגוע.`
+      `In ${lab} there's good consistency (${domSucc}) ${displayTopicPhraseHe(ex0.labelHe)} - it's worth keeping a calm pace.`
     );
   }
   if (mr && ex0) {
     const acc = Math.round(Number(ex0.accuracy) || 0);
     return stripGuillemetsHe(
-      `ב${lab} יש גם תחומים עם תוצאות טובות יחסית (למשל ${displayTopicPhraseHe(ex0.labelHe)}, כ ${acc}%) וגם נקודות שכדאי לשים לב אליהן - לא מסמנים עדיין את כל הנושא כיציב.`
+      `In ${lab} there are also areas with relatively good results (for example ${displayTopicPhraseHe(ex0.labelHe)}, about ${acc}%) as well as points worth watching - the whole topic isn't marked as stable yet.`
     );
   }
-  if (domRisk && domRisk !== "דל נתון" && w0) {
-    const pre = sparse ? "עדיין מוקדם לסגור סופית, אבל " : "";
+  if (domRisk && domRisk !== "Sparse data" && w0) {
+    const pre = sparse ? "It's still early to conclude for sure, but " : "";
     return stripGuillemetsHe(
-      `${pre}ב${lab} התמונה המרכזית נוגעת אל ${domRisk} לצד ${displayTopicPhraseHe(w0.labelHe)}.`
+      `${pre}In ${lab} the main picture relates to ${domRisk} alongside ${displayTopicPhraseHe(w0.labelHe)}.`
     );
   }
 
@@ -258,22 +257,22 @@ function buildSubjectOpeningLineHe(sp, lab) {
   }
   if (w0) {
     const coreW = displayTopicCoreHe(w0.labelHe) || displayTopicPhraseHe(w0.labelHe);
-    const pre = sparse ? "עדיין מוקדם לקבוע בוודאות, אבל " : "";
-    return stripGuillemetsHe(`${pre}הנושא הבולט כרגע ב${lab} הוא ${coreW}.`);
+    const pre = sparse ? "It's still early to be certain, but " : "";
+    return stripGuillemetsHe(`${pre}The topic that stands out right now in ${lab} is ${coreW}.`);
   }
   if (ex0) {
     const acc = Math.round(Number(ex0.accuracy) || 0);
-    return stripGuillemetsHe(`ב${lab} יש אחיזה טובה ב ${displayTopicPhraseHe(ex0.labelHe)} (דיוק כ ${acc}%).`);
+    return stripGuillemetsHe(`In ${lab} there's a good handle ${displayTopicPhraseHe(ex0.labelHe)} (accuracy about ${acc}%).`);
   }
   if (imp0) {
     const acc = Math.round(Number(imp0.accuracy) || 0);
-    const pre = sparse ? "נראה ש" : "";
-    return stripGuillemetsHe(`${pre}ב${lab} יש התקדמות חלקית ב ${displayTopicPhraseHe(imp0.labelHe)} (דיוק כ ${acc}%).`);
+    const pre = sparse ? "It looks like " : "";
+    return stripGuillemetsHe(`${pre}In ${lab} there's partial progress ${displayTopicPhraseHe(imp0.labelHe)} (accuracy about ${acc}%).`);
   }
-  return stripGuillemetsHe(`עדיין מוקדם לסכם לגבי ${lab} - מעט מידע בתקופה שנבחרה.`);
+  return stripGuillemetsHe(`It's still early to summarize ${lab} - little information in the selected period.`);
 }
 
-/** משפט אבחנה אחד — ממזג חוזק/חולשה בלי בלוקים נפרדים */
+/** One diagnosis sentence — merges strength/weakness without separate blocks */
 function buildSubjectDiagnosisLineHe(sp, lab) {
   const contract = readSubjectEngineContract(sp);
   if (contract?.blockedLegacySummary) {
@@ -293,8 +292,8 @@ function buildSubjectDiagnosisLineHe(sp, lab) {
   const restraintLine = String(sp?.subjectDiagnosticRestraintHe || "").trim();
   if (domRc && restraintLine) {
     const variants = [
-      stripGuillemetsHe(`מה שבולט כרגע: ${domRc}. ${restraintLine}`),
-      stripGuillemetsHe(`מבט זהיר על ${lab}: ${domRc}. ${restraintLine}`),
+      stripGuillemetsHe(`What stands out right now: ${domRc}. ${restraintLine}`),
+      stripGuillemetsHe(`A careful look at ${lab}: ${domRc}. ${restraintLine}`),
     ];
     return variants[Math.abs(restraintLine.length) % variants.length];
   }
@@ -313,18 +312,18 @@ function buildSubjectDiagnosisLineHe(sp, lab) {
     return stripGuillemetsHe(ibs);
   }
 
-  if (trendLine && domRisk && domRisk !== "דל נתון") {
+  if (trendLine && domRisk && domRisk !== "Sparse data") {
     const base = stripGuillemetsHe(`${domRisk} - ${trendLine}`);
     if (w0 && s0) {
       return stripGuillemetsHe(
-        `${base} לפי התרגול שנאסף בתקופה שנבחרה: ${displayTopicPhraseHe(s0.labelHe)} יש בסיס טוב; לעומת זאת ${displayTopicPhraseHe(w0.labelHe)} כדאי לתת חיזוק ממוקד.`
+        `${base} Based on the practice collected in the selected period: ${displayTopicPhraseHe(s0.labelHe)} there's a good base; on the other hand ${displayTopicPhraseHe(w0.labelHe)} could use focused reinforcement.`
       );
     }
     if (w0) {
       const hint = parentFacingWeaknessPracticePhraseHe(w0.labelHe);
       const tail = hint
-        ? ` כדאי לתרגל שוב ${hint} בכמה שאלות קצרות.`
-        : " כדאי לתרגל את זה שוב בכמה שאלות קצרות.";
+        ? ` It's worth practicing ${hint} again with a few short questions.`
+        : " It's worth practicing this again with a few short questions.";
       return stripGuillemetsHe(`${base}${tail}`);
     }
     return base.length > 280 ? `${base.slice(0, 277)}…` : base;
@@ -333,26 +332,26 @@ function buildSubjectDiagnosisLineHe(sp, lab) {
   if (w0 && s0) {
     const strong = (Number(w0.mistakeCount) || 0) >= 8;
     const tail = strong
-      ? "שווה לחזק; הדפוס חוזר בעקביות."
-      : "שווה לחזק - וכדאי להמשיך לעקוב בלי למהר לקבוע כיוון סופי.";
+      ? "Worth reinforcing; the pattern repeats consistently."
+      : "Worth reinforcing - and it helps to keep watching without rushing to a final direction.";
     return stripGuillemetsHe(
-      `לפי התרגול שנאסף בתקופה שנבחרה: ${displayTopicPhraseHe(s0.labelHe)} יש בסיס טוב; לעומת זאת ${displayTopicPhraseHe(w0.labelHe)} ${tail}`
+      `Based on the practice collected in the selected period: ${displayTopicPhraseHe(s0.labelHe)} there's a good base; on the other hand ${displayTopicPhraseHe(w0.labelHe)} ${tail}`
     );
   }
   if (w0) {
     const ws =
       (Number(w0.mistakeCount) || 0) >= 8
-        ? "חזרה עקבית - כדאי לשים על זה דגש"
-        : "עדיין לא ברור אם זה דפוס ארוך";
-    return stripGuillemetsHe(`המיקוד המעשי כרגע: ${displayTopicPhraseHe(w0.labelHe)} - ${ws}.`);
+        ? "a consistent repeat - worth emphasizing"
+        : "still not clear if this is a long-term pattern";
+    return stripGuillemetsHe(`The practical focus right now: ${displayTopicPhraseHe(w0.labelHe)} - ${ws}.`);
   }
   if (s0) {
-    return stripGuillemetsHe(`הכיוון החזק: ${displayTopicPhraseHe(s0.labelHe)} - שווה לשמר עליו עם תרגול קצר עד שהכיוון מתבהר.`);
+    return stripGuillemetsHe(`The strong direction: ${displayTopicPhraseHe(s0.labelHe)} - worth maintaining with short practice until the direction becomes clearer.`);
   }
   if (imp0 && !w0) {
-    return stripGuillemetsHe(`יש תנועה ${displayTopicPhraseHe(imp0.labelHe)} - כדאי להמשיך בתרגול קצר ולא לקפוץ רמה מהר.`);
+    return stripGuillemetsHe(`There's movement ${displayTopicPhraseHe(imp0.labelHe)} - it helps to continue with short practice without jumping a level too fast.`);
   }
-  return stripGuillemetsHe("התמונה עדיין חלקית - עוד קצת תרגול יבהיר את הכיוון.");
+  return stripGuillemetsHe("The picture is still partial - a bit more practice will clarify the direction.");
 }
 
 function buildSubjectHomeLineHe(sp, lab) {
@@ -392,7 +391,7 @@ function buildSubjectHomeLineHe(sp, lab) {
   if (imm) return stripGuillemetsHe(rewriteParentRecommendationForDetailedHe(imm));
   const raw = sp?.parentActionHe && String(sp.parentActionHe).trim();
   if (raw) return rewriteParentRecommendationForDetailedHe(raw);
-  return stripGuillemetsHe(`ב${lab}: פעמיים בשבוע תרגול קצר, עם דגש על קריאת המשימה לפני התשובה.`);
+  return stripGuillemetsHe(`In ${lab}: short practice twice a week, with emphasis on reading the question before answering.`);
 }
 
 function buildSubjectClosingLineHe(sp, lab) {
@@ -441,7 +440,7 @@ function buildSubjectClosingLineHe(sp, lab) {
     if (!dup && m1.length > 20) parts.push(m1);
   }
   if (parts.length) return stripGuillemetsHe(parts.join(" "));
-  return stripGuillemetsHe(`ב${lab} עדיף עקביות בתרגולים קצרים מאשר מפגש ארוך אחד.`);
+  return stripGuillemetsHe(`In ${lab} consistency in short practice sessions is better than one long session.`);
 }
 
 function collectTopicNarrativeContracts(sp) {
@@ -458,7 +457,7 @@ function applySubjectNarrativeGuardrails(sp, letter) {
 
   const clearWeak = findClearWeakTopicInSubject(sp);
   if (clearWeak) {
-    const lab = sp?.subjectLabelHe || "המקצוע";
+    const lab = sp?.subjectLabelHe || "the subject";
     const topicCore = displayTopicCoreHe(clearWeak.label) || clearWeak.label;
     return {
       ...letter,
@@ -471,13 +470,13 @@ function applySubjectNarrativeGuardrails(sp, letter) {
   if (!contracts.length) return letter;
   const hasStrictRestraint = contracts.some((c) => String(c.wordingEnvelope) === "WE0" || String(c.wordingEnvelope) === "WE1");
   if (!hasStrictRestraint) return letter;
-  const lab = sp?.subjectLabelHe || "המקצוע";
+  const lab = sp?.subjectLabelHe || "the subject";
   return {
     ...letter,
-    opening: `ב${lab} עדיין אין תמונה מספיק ברורה. כדאי להמשיך עם תרגול קצר ולבדוק שוב אחרי עוד כמה תרגולים.`,
+    opening: `In ${lab} there isn't yet a clear enough picture. It helps to continue with short practice and check again after a few more sessions.`,
     diagnosisHe: letter.diagnosisHe,
-    homeAction: letter.homeAction || `ב${lab} מומלץ להתמקד בצעד קצר אחד ולא להרחיב עומס.`,
-    closing: `עדיין מוקדם לדעת אם הכיוון יציב ב${lab}; נמשיך לעקוב בשבועות הקרובים ונעדכן בהתאם.`,
+    homeAction: letter.homeAction || `In ${lab} it's recommended to focus on one short step and not add extra load.`,
+    closing: `It's still early to know if the direction is stable in ${lab}; we'll keep watching in the coming weeks and update accordingly.`,
   };
 }
 
@@ -548,18 +547,18 @@ function collectSubjectLetterTopicSlots(sp) {
 }
 
 /**
- * מכתב מקצוע קצר — שלב ביצוע 1 (דוח מקיף בלבד, תצוגה).
+ * Short subject letter — implementation phase 1 (detailed report only, display).
  * @param {Record<string, unknown>|null|undefined} sp
  */
 export function buildSubjectParentLetterDetailedPhase1(sp) {
-  const lab = String(sp?.subjectLabelHe || "המקצוע").trim();
+  const lab = String(sp?.subjectLabelHe || "the subject").trim();
   const subjQ = Number(sp?.subjectQuestionCount) || 0;
   const emptyTail = { diagnosisHe: "", homeAction: "", closing: "", goingWell: "", fragile: "", reliabilityNoteHe: null };
 
   if (subjQ < 5) {
     return {
       ...emptyTail,
-      opening: `יש מעט תרגול ב${lab} בתקופה הזאת, ולכן עדיין אי אפשר להסיק מסקנה רחבה. אפשר להמשיך בתרגול קצר ולבדוק אם הכיוון נשמר אחרי עוד שאלות.`,
+      opening: `There's little practice in ${lab} this period, so a broad conclusion isn't possible yet. It helps to continue with short practice and check if the direction holds after more questions.`,
     };
   }
 
@@ -567,22 +566,22 @@ export function buildSubjectParentLetterDetailedPhase1(sp) {
   if (!slots.length) {
     return {
       ...emptyTail,
-      opening: `יש תרגול ב${lab}, אבל עדיין אין מספיק פירוט לפי נושא כדי להציג מסקנה מדויקת. כדאי להמשיך בתרגול קצר, ובדוח הבא יהיה קל יותר לראות מה חוזר.`,
+      opening: `There's practice in ${lab}, but not yet enough detail by topic to show a precise conclusion. It helps to continue with short practice, and in the next report it will be easier to see what repeats.`,
     };
   }
 
   if (slots.length >= 2) {
     const t0 = slots[0];
     const t1 = slots[1];
-    let opening = `ב${lab} כדאי להתמקד קודם ב${t0.topic}. נפתרו ${t0.questions} שאלות, והדיוק הוא ${t0.accuracy}%.`;
-    opening += ` נושא נוסף שכדאי לשים לב אליו הוא ${t1.topic}, עם ${t1.questions} שאלות ודיוק של ${t1.accuracy}%.`;
-    if (t0.pattern) opening += ` הדפוס המרכזי שנראה: ${t0.pattern}.`;
+    let opening = `In ${lab} it's worth focusing first on ${t0.topic}. ${t0.questions} questions were solved, with ${t0.accuracy}% accuracy.`;
+    opening += ` Another topic worth watching is ${t1.topic}, with ${t1.questions} questions and ${t1.accuracy}% accuracy.`;
+    if (t0.pattern) opening += ` The main pattern seen: ${t0.pattern}.`;
     return { ...emptyTail, opening };
   }
 
   const t0 = slots[0];
-  let opening = `ב${lab} כדאי להתמקד כרגע ב${t0.topic}. נפתרו ${t0.questions} שאלות, והדיוק הוא ${t0.accuracy}%.`;
-  if (t0.pattern) opening += ` הדפוס המרכזי שנראה: ${t0.pattern}.`;
+  let opening = `In ${lab} it's worth focusing right now on ${t0.topic}. ${t0.questions} questions were solved, with ${t0.accuracy}% accuracy.`;
+  if (t0.pattern) opening += ` The main pattern seen: ${t0.pattern}.`;
   return { ...emptyTail, opening };
 }
 
@@ -600,7 +599,7 @@ export function buildSubjectParentLetterCompact(sp) {
 
 export function buildSubjectParentLetter(sp, opts = {}) {
   const compact = !!opts.compact;
-  const lab = sp.subjectLabelHe || "המקצוע";
+  const lab = sp.subjectLabelHe || "the subject";
   const opening = buildSubjectOpeningLineHe(sp, lab);
   let diagnosisHe = buildSubjectDiagnosisLineHe(sp, lab);
   if (compact && diagnosisHe.length > 200) {
@@ -614,7 +613,7 @@ export function buildSubjectParentLetter(sp, opts = {}) {
     diagnosisHe: normalizeParentFacingHe(stripGuillemetsHe(diagnosisHe)),
     homeAction: normalizeParentFacingHe(String(homeAction || "")),
     closing: normalizeParentFacingHe(stripGuillemetsHe(closing)),
-    /** תאימות לאחור — ריקים */
+    /** backward compatibility — empty */
     goingWell: "",
     fragile: "",
     reliabilityNoteHe: null,
@@ -642,7 +641,7 @@ export function buildTopicRecommendationNarrative(tr) {
   const findingSlot = narrativeSectionTextHe("finding", canonicalNarrative);
   const recommendationSlot = narrativeSectionTextHe("recommendation", canonicalNarrative);
   const limitationsSlot = narrativeSectionTextHe("limitations", canonicalNarrative);
-  const nameRaw = String(tr?.displayName || "הנושא").trim();
+  const nameRaw = String(tr?.displayName || "this topic").trim();
   const core = displayTopicCoreHe(nameRaw) || stripGuillemetsHe(nameRaw);
   const q = Number(tr?.questions) || 0;
   const acc = Math.round(Number(tr?.accuracy) || 0);
@@ -650,43 +649,43 @@ export function buildTopicRecommendationNarrative(tr) {
   const step = String(tr?.recommendedNextStep || "").trim();
   const statsLine =
     q > 0
-      ? `היו ${q} שאלות, עם דיוק של כ ${acc}%${m > 0 ? ` ו ${m} טעויות מצטברות` : ""}.`
-      : "בתקופה שנבחרה עדיין אין מספיק שאלות כדי לראות אם יש מגמה ברורה.";
-  let snap = q > 0 ? `ב${core} ${statsLine}` : `ב${core} ${statsLine}`;
+      ? `There were ${q} questions, with about ${acc}% accuracy${m > 0 ? ` and ${m} cumulative mistakes` : ""}.`
+      : "In the selected period there still aren't enough questions to see a clear trend.";
+  let snap = q > 0 ? `In ${core} ${statsLine}` : `In ${core} ${statsLine}`;
   if (q > 0 && !suppressRegisteredGradeStrengthenCopy(gradeRelation)) {
     const stepOpeners =
       step === "remediate_same_level"
         ? [
-            `ב${core} התמונה מצביעה על צורך בחיזוק: ${statsLine}`,
-            `ב${core} כרגע עדיף לעצור לחיזוק ממוקד: ${statsLine}`,
+            `In ${core} the picture points to a need for reinforcement: ${statsLine}`,
+            `In ${core} it's currently better to pause for focused reinforcement: ${statsLine}`,
           ]
         : [
-            `ב${core} כרגע הכיוון זהיר יותר: ${statsLine}`,
-            `ב${core} בשלב זה כדאי לאסוף עוד תרגול קצר לפני החלטה רחבה: ${statsLine}`,
+            `In ${core} the current direction is more cautious: ${statsLine}`,
+            `In ${core} at this stage it's worth gathering more short practice before a broad decision: ${statsLine}`,
           ];
     snap = stepOpeners[Math.abs(q + m + core.length) % stepOpeners.length];
   }
   const early = !!tr?.isEarlySignalOnly || tr?.dataSufficiencyLevel === "low" || tr?.evidenceStrength === "low";
   if (early && q > 0 && q < 12) {
-    snap = `ב${core} התמונה עדיין בראשית דרך: ${statsLine}`;
+    snap = `In ${core} the picture is still at an early stage: ${statsLine}`;
   }
   const cs = String(tr?.conclusionStrength || "").trim();
   const rc = String(tr?.rootCauseLabelHe || "").trim();
   if (cs === "withheld" || cs === "tentative") {
     const alt = [
-      `בשלב הזה לא קובעים סופית לגבי ${core}. ${statsLine}${rc ? ` הכיוון הסביר כרגע: ${rc}.` : ""}`,
+      `At this stage there's no final conclusion about ${core}. ${statsLine}${rc ? ` The likely direction right now: ${rc}.` : ""}`,
       q >= 20 && acc >= 85
-        ? `ב${core} נראים ביצועים טובים לאורך התקופה. ${statsLine} עדיין מוקדם לקבוע כיוון חד משמעי.${rc ? ` מה שנראה סביר עכשיו: ${rc}.` : ""}`
-        : `ב${core} הנתון עדיין חלקי. ${statsLine}${rc ? ` מה שכדאי לעקוב אחריו כרגע: ${rc}.` : ""}`,
+        ? `In ${core} performance looks good throughout the period. ${statsLine} It's still early to set a definitive direction.${rc ? ` What looks reasonable now: ${rc}.` : ""}`
+        : `In ${core} the data is still partial. ${statsLine}${rc ? ` What's worth watching right now: ${rc}.` : ""}`,
     ];
     snap = stripGuillemetsHe(pickVariant(`${core}|${q}|${acc}`, alt));
   } else if (rc) {
-    snap = stripGuillemetsHe(`${snap} נקודה שכדאי לשים עליה לב: ${rc}.`);
+    snap = stripGuillemetsHe(`${snap} A point worth noting: ${rc}.`);
   }
   if (q === 0 && !rc) {
     const altNoData = [
-      `ב${core} עדיין חסר קצב תרגול בסיסי כדי לקבוע כיוון ברור.`,
-      `ב${core} בשלב זה עדיין חסרים נתוני תרגול, ולכן נשארים עם ניסוח זהיר.`,
+      `In ${core} there still isn't a basic practice pace to establish a clear direction.`,
+      `In ${core} at this stage practice data is still missing, so we keep a careful wording.`,
     ];
     snap = altNoData[Math.abs(core.length) % altNoData.length];
   }
@@ -709,7 +708,7 @@ export function buildTopicRecommendationNarrative(tr) {
     const isStrength = gradeContextIsStrength(gradeRelation, acc, q);
     const expl = gradeContextExplanationHe({ gradeRelation, isStrength, needsSupport });
     const action = gradeContextActionHe({ gradeRelation, isStrength, needsSupport });
-    if (expl) snapshotOut = q > 0 ? `ב${core} ${expl}` : expl;
+    if (expl) snapshotOut = q > 0 ? `In ${core} ${expl}` : expl;
     if (action) homeFromContract = action;
   }
 
@@ -722,7 +721,7 @@ export function buildTopicRecommendationNarrative(tr) {
   };
 }
 
-/** Phase 10–11 — שורות קצרות לניסוח הורי (ממופות מ parent-report-ui-explain-he) */
+/** Phase 10–11 — short lines for parent-facing wording (mapped from parent-report-ui-explain-he) */
 export {
   responseToInterventionLineHe,
   supportAdjustmentLineHe,

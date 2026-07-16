@@ -94,40 +94,40 @@ function firstNonEmpty(...values) {
 function confidenceLabelHe(row) {
   const c = String(row?.confidenceLevel || "").toLowerCase();
   if (row?.thinEvidenceDowngraded || row?.gateReadiness === "insufficient") {
-    return "כמה אפשר לסמוך על זה: עדיין לא גבוה - צריך עוד תרגול לפני שסוגרים תמונה ברורה.";
+    return "How much to trust this: not high yet - more practice is needed before closing a clear picture.";
   }
-  if (c === "high") return "כמה אפשר לסמוך על זה: די גבוה יחסית למידע שנאסף.";
-  if (c === "moderate") return "כמה אפשר לסמוך על זה: בינוני - יש כיוון ברור, אבל כדאי לבדוק שוב אחרי עוד תרגול.";
-  return "כמה אפשר לסמוך על זה: עדיין לא גבוה - כדאי להמשיך לתרגל ולבדוק שוב.";
+  if (c === "high") return "How much to trust this: fairly high relative to the information gathered.";
+  if (c === "moderate") return "How much to trust this: moderate - there is a clear direction, but check again after more practice.";
+  return "How much to trust this: not high yet - keep practicing and check again.";
 }
 
 function trendSummaryHe(row) {
   const trend = row?.trend && typeof row.trend === "object" ? row.trend : null;
-  if (!trend) return "אין כרגע נתון מגמה מספק.";
+  if (!trend) return "There is not enough trend data right now.";
   const counters = getTrendEvidenceCounters(row);
   if (counters.trendEvidenceStatus !== "sufficient") {
-    return "אין מספיק נתוני מגמה תקינים כדי לקבוע כיוון שינוי.";
+    return "There is not enough valid trend data to set a change direction.";
   }
   const dir = String(trend.accuracyDirection || "unknown");
-  if (dir === "up") return "נראית מגמת שיפור מבוססת.";
-  if (dir === "down") return "נראית ירידה לאחרונה - שווה לשים לב בשבוע הקרוב.";
-  if (dir === "flat") return "נראית יציבות יחסית ללא שינוי מהותי.";
-  return "אין כרגע נתון מגמה מספק.";
+  if (dir === "up") return "An evidence-based improvement trend is visible.";
+  if (dir === "down") return "A recent decline is visible - worth watching in the coming week.";
+  if (dir === "flat") return "Relative stability is visible without a major change.";
+  return "There is not enough trend data right now.";
 }
 
 function nextCheckHe(row) {
   const q = Number(row?.questions) || 0;
   const counters = getTrendEvidenceCounters(row);
   if (q < PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS) {
-    return `לאסוף לפחות ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} שאלות איכותיות בנושא הזה לפני החלטת קושי.`;
+    return `Collect at least ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} quality questions on this topic before a difficulty decision.`;
   }
   if (
     counters.trendEvidencePoints > 0 &&
     counters.trendEvidencePoints < counters.minTrendPointsRequired
   ) {
-    return `נדרשים לפחות ${counters.minTrendPointsRequired} מפגשים תקינים להשוואת מגמה אמינה.`;
+    return `At least ${counters.minTrendPointsRequired} valid sessions are needed for a reliable trend comparison.`;
   }
-  return "להמשיך לתרגל עוד קצת ולבדוק יציבות לפני שינוי משמעותי.";
+  return "Keep practicing a bit more and check stability before a meaningful change.";
 }
 
 function buildEvidenceSummaryHe(row) {
@@ -135,7 +135,7 @@ function buildEvidenceSummaryHe(row) {
   const acc = Math.round(Number(row?.accuracy) || 0);
   const t = Number(row?.timeMinutes) || 0;
   const trendLine = trendSummaryHe(row);
-  return cleanText(`נאספו ${q} שאלות, דיוק ${acc}%, זמן תרגול ${t} דקות. ${trendLine}`);
+  return cleanText(`Collected ${q} questions, accuracy ${acc}%, practice time ${t} minutes. ${trendLine}`);
 }
 
 function buildContractRow(row, subjectProfile) {
@@ -148,15 +148,15 @@ function buildContractRow(row, subjectProfile) {
   );
   const mainStatus = firstNonEmpty(
     subjectProfile?.summaryHe,
-    `ב${subjectProfile?.subjectLabelHe || "המקצוע"} כדאי תרגול ממוקד וזהיר בשלב הזה.`
+    `In ${subjectProfile?.subjectLabelHe || "this subject"}, focused and careful practice is helpful at this stage.`
   );
-  const mainPriority = firstNonEmpty(doNow, "להמשיך תרגול קצר ומדויק עם משימה אחת ברורה.");
+  const mainPriority = firstNonEmpty(doNow, "Continue short, precise practice with one clear task.");
   return {
     mainStatusHe: removeForbiddenTerms(mainStatus),
     mainPriorityHe: removeForbiddenTerms(mainPriority),
-    whyHe: removeForbiddenTerms(why || "ההמלצה מבוססת על דיוק, כמות שאלות ודפוס עבודה בפועל."),
-    doNowHe: removeForbiddenTerms(doNow || "לקבוע תרגול קצר וממוקד ולוודא הבנה לפני מעבר למשימה הבאה."),
-    avoidNowHe: removeForbiddenTerms(avoidNow || "לא להעלות קושי לפני שמתקבלת יציבות עקבית."),
+    whyHe: removeForbiddenTerms(why || "The recommendation is based on accuracy, question count, and the actual work pattern."),
+    doNowHe: removeForbiddenTerms(doNow || "Set short, focused practice and confirm understanding before moving to the next task."),
+    avoidNowHe: removeForbiddenTerms(avoidNow || "Do not raise difficulty before consistent stability appears."),
     confidenceHe: removeForbiddenTerms(confidenceLabelHe(row)),
     evidenceSummaryHe: removeForbiddenTerms(buildEvidenceSummaryHe(row)),
     nextCheckHe: removeForbiddenTerms(nextCheckHe(row)),
@@ -213,7 +213,7 @@ function pickPrimaryRecommendation(subjectProfiles) {
 function isMonitoringOrInsufficientAction(text) {
   const t = cleanText(text);
   if (!t) return false;
-  return ["מעקב", "ניטור", "איסוף", "נתונים", "אין מספיק"].some((w) => t.includes(w));
+  return ["מעקב", "ניטור", "איסוף", "נתונים", "אין מספיק", "monitor", "tracking", "collect", "data", "not enough", "insufficient"].some((w) => t.toLowerCase().includes(String(w).toLowerCase()));
 }
 
 /**
@@ -257,14 +257,14 @@ export function buildParentProductContractV1(detailedReport) {
   const top = primary
     ? buildContractRow(primary.row, primary.subjectProfile)
     : {
-        mainStatusHe: "אין עדיין מספיק נתונים כדי לקבוע תמונת מצב מקצועית.",
-        mainPriorityHe: "להתחיל בתרגול קצר ועקבי כדי לבנות בסיס מדידה.",
-        whyHe: "נפח הנתונים הנוכחי נמוך ולכן אין בסיס לכיוון ברור.",
-        doNowHe: "לבחור נושא אחד ולתרגל 10–15 דקות בכל מפגש.",
-        avoidNowHe: "לא לשנות רמת קושי על בסיס מעט נתונים.",
-        confidenceHe: "כמה אפשר לסמוך על זה: עדיין לא גבוה בשלב זה.",
-        evidenceSummaryHe: "הנתונים הקיימים עדיין חלקיים.",
-        nextCheckHe: `לאסוף לפחות ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} שאלות לפני החלטה.`,
+        mainStatusHe: "There is not yet enough data to set a subject-level picture.",
+        mainPriorityHe: "Start short, consistent practice to build a measurement baseline.",
+        whyHe: "Current data volume is low, so there is no basis for a clear direction.",
+        doNowHe: "Pick one topic and practice 10–15 minutes each session.",
+        avoidNowHe: "Do not change difficulty based on sparse data.",
+        confidenceHe: "How much to trust this: not high yet at this stage.",
+        evidenceSummaryHe: "Existing data is still partial.",
+        nextCheckHe: `Collect at least ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} questions before deciding.`,
         evidence: {
           questionCount: 0,
           trendEvidencePoints: 0,
@@ -281,14 +281,14 @@ export function buildParentProductContractV1(detailedReport) {
     subjects[sid] = first
       ? buildContractRow(first, sp)
       : {
-          mainStatusHe: removeForbiddenTerms(firstNonEmpty(sp?.summaryHe, "אין כרגע מספיק נתונים בנושא זה.")),
-          mainPriorityHe: "להמשיך איסוף נתונים בסיסי.",
-          whyHe: "אין עדיין מספיק נתון כדי להגדיר כיוון ברור.",
-          doNowHe: "תרגול קצר וממוקד בנושא אחד.",
-          avoidNowHe: "לא להסיק מסקנות חזקות ממספר קטן של שאלות.",
-          confidenceHe: "כמה אפשר לסמוך על זה: עדיין לא גבוה.",
-          evidenceSummaryHe: "נתון חסר או חלקי.",
-          nextCheckHe: `לצבור לפחות ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} שאלות לפני שינוי.`,
+          mainStatusHe: removeForbiddenTerms(firstNonEmpty(sp?.summaryHe, "There is not enough data on this topic right now.")),
+          mainPriorityHe: "Continue basic data collection.",
+          whyHe: "There is not yet enough data to define a clear direction.",
+          doNowHe: "Short, focused practice on one topic.",
+          avoidNowHe: "Do not draw strong conclusions from a small number of questions.",
+          confidenceHe: "How much to trust this: not high yet.",
+          evidenceSummaryHe: "Data is missing or partial.",
+          nextCheckHe: `Accumulate at least ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} questions before changing.`,
           evidence: {
             questionCount: Number(sp?.subjectQuestionCount) || 0,
             trendEvidencePoints: 0,

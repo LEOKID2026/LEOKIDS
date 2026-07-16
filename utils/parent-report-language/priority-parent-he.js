@@ -8,13 +8,13 @@ export function priorityLevelParentLabelHe(level) {
   if (!k) return null;
   switch (k) {
     case "P4":
-      return "השבוע כדאי לתת דגש לנושאים האלה - בצעדים קטנים, בלי להילחץ.";
+      return "This week it's worth focusing on these topics - in small steps, without pressure.";
     case "P3":
-      return "כדאי לשים לב השבוע ולזמן תרגול קצת יותר סדיר סביב הנושאים האלה.";
+      return "It's worth paying attention this week and scheduling slightly more regular practice around these topics.";
     case "P2":
-      return "אין צורך בפעולה מיוחדת השבוע - תרגול קצר ורגיל מספיק.";
+      return "No special action is needed this week - short, regular practice is enough.";
     case "P1":
-      return "אין כרגע נושא שכדאי להתמקד בו - שגרת תרגול קצרה מספיקה.";
+      return "There's no topic that needs special focus right now - a short practice routine is enough.";
     default:
       return null;
   }

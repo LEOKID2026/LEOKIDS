@@ -196,7 +196,7 @@ function CtaButton({ cta, accent, isBright, size = "lg", onParentInvite }) {
 
 /**
  * Shared marketing landing page shell (RTL Hebrew).
- * @param {{ audience: 'kids' | 'parents' | 'teachers', content: import('../../data/marketing/landing-pages.he').MarketingPageContent, showPublicSeoEntrySection?: boolean }} props
+ * @param {{ audience: 'kids' | 'parents' | 'teachers', content: import('../../data/marketing/landing-pages').MarketingPageContent, showPublicSeoEntrySection?: boolean }} props
  */
 export default function MarketingLandingPage({ audience, content, showPublicSeoEntrySection = false }) {
   const { theme, isBright } = useStudentTheme();

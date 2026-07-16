@@ -15,12 +15,12 @@ function envStr(name, env = typeof process !== "undefined" ? process.env : {}) {
 }
 
 const SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  hebrew: "עברית",
-  science: "מדעים",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  "moledet-geography": "גאוגרפיה",
+  math: "Math",
+  hebrew: "Hebrew",
+  science: "Science",
+  geometry: "Geometry",
+  english: "English",
+  "moledet-geography": "Geography",
 };
 
 /**
@@ -72,53 +72,53 @@ export function buildStrictParentReportAIInput(raw) {
 }
 
 /**
- * Deterministic parent-facing narrative (Hebrew, professional, cautious).
+ * Deterministic parent-facing narrative (US English, professional, cautious).
  * @param {NonNullable<ReturnType<typeof buildStrictParentReportAIInput>>} input
  */
 export function getDeterministicParentReportExplanation(input) {
-  const subjectHe = SUBJECT_LABEL_HE[input.subject] || "המקצוע שנלמד";
+  const subjectHe = SUBJECT_LABEL_HE[input.subject] || "the subject being studied";
   const dc = String(input.dataConfidence || "").toLowerCase();
   const accBand = String(input.accuracyBand || "").toLowerCase();
 
   const parts = [];
   if (dc === "thin") {
     parts.push(
-      `לגבי ${subjectHe}: מהתרגול המועט שנאסף אפשר לקבל כיוון ראשוני בלבד.`
+      `For ${subjectHe}: from the limited practice collected so far, you can only get an initial direction.`
     );
   } else if (dc === "low") {
     parts.push(
-      `לגבי ${subjectHe}: הנתונים בתקופה שנבחרה עדיין מצומצמים - מהתרגול שנאסף אפשר לקבל כיוון ראשוני בלבד.`
+      `For ${subjectHe}: data in the selected period is still limited - from the practice collected so far, you can only get an initial direction.`
     );
   } else if (accBand === "low" || accBand === "mixed") {
     parts.push(
-      `לגבי ${subjectHe}: מהתרגול שנאסף אפשר לראות תחום שכדאי לחזק בבית - כדאי להמשיך לעקוב ולא לקבוע חד משמעית רק ממפגש בודד.`
+      `For ${subjectHe}: from the practice collected so far, you can see an area worth reinforcing at home - keep monitoring and avoid drawing firm conclusions from a single session.`
     );
   } else {
     parts.push(
-      `לגבי ${subjectHe}: מהתרגול שנאסף אפשר לראות תמונה ברורה יותר של תחומים עם תוצאות טובות יחסית ושל נושאים לחיזוק - כדאי להמשיך לעקוב בעדינות.`,
+      `For ${subjectHe}: from the practice collected so far, you can see a clearer picture of relatively strong areas and topics to reinforce - keep monitoring gently.`,
     );
   }
 
   if (input.mainStrengths) {
-    parts.push(`מה שבולט לטובה: ${input.mainStrengths}`);
+    parts.push(`What's going well: ${input.mainStrengths}`);
   }
   if (input.mainPracticeNeeds) {
-    parts.push(`כיוון שכדאי לחזק בתרגול הביתי והשיעורי: ${input.mainPracticeNeeds}`);
+    parts.push(`Area worth reinforcing in homework and class practice: ${input.mainPracticeNeeds}`);
   }
 
   const consistency = input.consistencyBand;
   if (consistency === "mixed" || consistency === "unstable") {
-    parts.push("התוצאות עדיין לא אחידות לחלוטין ולכן כדאי להמשיך עם תרגול רגיל ולעקוב אחרי יציבות.");
+    parts.push("Results aren't fully consistent yet, so continue with regular practice and watch for stability.");
   }
   if (consistency === "possibly_fast" || consistency === "possibly_inconsistent") {
     parts.push(
-      "לעיתים קצב התשובות מהיר יחסית לכן נשמרת זהירות בפרשנות ולא מסיקים מסקנות חזקות מיד."
+      "Sometimes answers come fairly quickly, so we stay cautious in interpretation and don't draw strong conclusions right away."
     );
   }
 
-  parts.push(`המלצת המערכת להמשך התרגול: ${input.recommendedNextStep}`);
+  parts.push(`The system's recommendation for continuing practice: ${input.recommendedNextStep}`);
   parts.push(
-    "מהצד של ההורה כדאי לעודד המשך שגרה של תרגול קצר ולשמור על שיח רגוע סביב למידה."
+    "From the parent side, encourage a steady routine of short practice and keep conversations around learning calm and supportive."
   );
 
   return parts.join(" ");
@@ -139,7 +139,7 @@ function buildParentModelPrompt(input) {
     approved_next_step_he: input.recommendedNextStep,
   };
   return [
-    "You write THREE to FIVE short sentences in Modern Hebrew for parents (calm, professional, supportive).",
+    "You write THREE to FIVE short sentences in US English for parents (calm, professional, supportive).",
     "Audience: parent reading a learning report. Not medical advice. No diagnoses, disorders, or clinical labels.",
     "Do NOT mention internal systems: metadata, diagnostics, planner, algorithms, AI, models, JSON, reason codes, scores, percentages, or raw numbers.",
     "No blame toward the child. No guarantees of future success. No scary predictions.",
@@ -171,7 +171,7 @@ async function callOpenAiParentExplanation(prompt, env, signal) {
       temperature: 0.3,
       max_tokens: 500,
       messages: [
-        { role: "system", content: "You only output valid minified JSON with a Hebrew text field." },
+        { role: "system", content: "You only output valid minified JSON with an English text field." },
         { role: "user", content: prompt },
       ],
     }),

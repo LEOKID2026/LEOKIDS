@@ -23,53 +23,53 @@ export function parentDirectOpenerHe(intent, truthPacket) {
     case "ask_topic_specific":
     case "ask_subject_specific":
       return exec
-        ? "הנה מה שמופיע בדוח לגבי התקופה:"
-        : "הנה מה שמופיע בדוח לגבי הנושא הזה:";
+        ? "Here is what appears in the report regarding the period:"
+        : "Here is what appears in the report regarding this issue:";
     case "what_is_most_important":
       return fragile
-        ? "יש כמה תחומים שעדיין לא יציבים - כדאי להתחיל מהם:"
+        ? "There are some areas that are still unstable - you should start with them:"
         : exec
           ? ""
-          : "הנה מה שכדאי לשים לב אליו קודם לפי הדוח:";
+          : "Here is what you should pay attention to first according to the report:";
     case "what_to_do_today":
     case "what_to_do_this_week":
       if (recOk) {
         if (exec) return "";
         return k === "what_to_do_today"
-          ? "הנה מה שכדאי לעשות היום לפי הנתונים:"
-          : "הנה הצעד המומלץ לשבוע הקרוב לפי הנתונים:";
+          ? "Here is what you should do today according to the data:"
+          : "Here is the recommended step for the coming week according to the data:";
       }
       if (practiceLooksSubstantial && !fragile) {
         return k === "what_to_do_today"
-          ? "יש מספיק נתונים לבחור צעד קטן וממוקד להיום:"
-          : "בשבוע הקרוב אפשר לבחור תרגול קצר וממוקד:";
+          ? "There is enough data to choose a small and focused step for today:"
+          : "In the coming week you can choose a short and focused practice:";
       }
       if (practiceLooksSubstantial && fragile) {
-        return "יש נפח תרגול בדוח, אבל חלק מהניסוחים עדיין זהירים - כדאי לצעדים קטנים ומדידים:";
+        return "There is a lot of practice in the report, but some of the wording is still cautious - it's better to take small, measurable steps:";
       }
       return k === "what_to_do_today"
-        ? "כדאי להתחיל בצעד קטן ולצבור עוד תרגול:"
-        : "כדאי לצבור עוד תרגול - הנה כיוון ראשוני:";
+        ? "You should start with a small step and gain more practice:"
+        : "You should gain more practice - here is an initial direction:";
     case "why_not_advance":
-      return "עצירת קידום ברמה קשורה בדרך כלל לניסוח שעדיין לא נסגר בדוח - לא בהכרח כישלון.";
+      return "Stopping a promotion at a level is usually related to a formulation that has not yet been closed in the report - not necessarily a failure.";
     case "what_is_going_well":
-      return exec ? "" : "הנה מה שנראה חזק יחסית בתרגול, לפי הדוח:";
+      return exec ? "" : "Here is what seems relatively strong in practice, according to the report:";
     case "what_is_still_difficult":
-      return "הנה מה שעדיין דורש חיזוק ותרגול, לפי הדוח:";
+      return "Here is what still requires strengthening and practice, according to the report:";
     case "how_to_tell_child":
-      return "עדיף משפט אחד רגוע על מה שרואים בדוח, ורק אז משפט משמעות קצר - בשפה פשוטה.";
+      return "One calm sentence about what you see in the report is better, and only then a short meaningful sentence - in simple language.";
     case "question_for_teacher":
-      return "שאלה טובה למורה מצביעה על מה שמופיע בדוח - קצרה וספציפית.";
+      return "A good question for the teacher indicates what appears in the report - short and specific.";
     case "is_intervention_needed":
       return fragile
-        ? "הדוח מציג כמה תחומים שעדיין לא מיושבים לגמרי. זה לא בהכרח \"בעיה חמורה\":"
+        ? "The report shows some areas that are not yet fully populated. This is not necessarily a \"serious problem\":"
         : exec
           ? ""
-          : "בשלב הזה אין סיבה לדאגה גדולה לפי הדוח. הנה מה שמופיע:";
+          : "At this stage there is no reason for great concern according to the report. Here is what appears:";
     case "clarify_term":
-      return "נשארים עם המילים שמופיעות בדוח עצמו:";
+      return "Staying with the words that appear in the report itself:";
     case "strength_vs_weakness_summary":
-      return "הנה שני הכיוונים שהדוח מציג - מה חזק יותר ומה עדיין דורש עבודה:";
+      return "Here are the two directions that the report presents - which is stronger and which still requires work:";
     case "off_topic_redirect":
     case "simple_parent_explanation":
       return "";

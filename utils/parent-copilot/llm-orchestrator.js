@@ -133,75 +133,75 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "") {
         const asksMiktzoa = utteranceAsksSubjectLevelStrength(u);
         if (asksMiktzoa) {
           return [
-            "השאלה מתייחסת למקצוע (רמת מקצוע), לא רק לנושא בודד.",
-            "  בלוק observation: התחל במשפט כמו 'המקצוע שבו נראו התוצאות הטובות ביותר הוא [שם המקצוע בעברית]', ואז במידת הצורך 'ובעיקר בנושא [שם הנושא]' - רק מה שמופיע ב-FACTS_JSON.observation.",
-            "  חובה: אל תשתמש במילה «התחום» בבלוקים - במקום זה «המקצוע» או פתיחה ישירה בשם המקצוע (למשל «באנגלית נראו התוצאות הטובות ביותר בתקופה הזו…»).",
-            "  אסור במפורש ניסוחים כמו «התחום שבו נראים המספרים…» - זה לא מתאים כשההורה שאל על מקצוע.",
-            "  אל תפתח בניסוח שמתחיל רק מנושא ספציפי (למשל «בנושא אוצר מילים...») כשהשאלה על מקצוע - קודם שם המקצוע, ואז הנושא הבולט בתוך המקצוע.",
-            "  בלוק meaning: הסבר בקצרה למה זה חיובי לפי FACTS_JSON.interpretation. אפשר להזכיר אחוז דיוק אחד.",
-            "  אל תרשום רשימה של כל המקצועות. אל תכתוב 'לפי הדוח, מופיעים:' או 'המקצועות שמופיעים'. אל תציג תחום כבעל תוצאות טובות יחסית אם הוא גם מופיע כמוקד לחיזוק בדוח.",
+            "The question refers to a profession (professional level), not just a single subject.",
+            "Block observation: start with a sentence like 'the profession in which the best results were seen is [name of the subject in Hebrew]', then if necessary 'and especially in the subject [name of the subject]' - only what appears in FACTS_JSON.observation.",
+            "Mandatory: Do not use the word «the field» in blocks - instead «the profession» or a direct opening with the name of the profession (for example «in English the best results were seen in this period...»).",
+            "Formulations such as «the area where the numbers are seen...» are expressly prohibited - this is not appropriate when the parent asked about a profession.",
+            "Do not start with a wording that begins only with a specific subject (for example «on the subject of vocabulary...») when the question is about a subject - first the name of the subject, then the prominent subject within the subject.",
+            "Block meaning: Briefly explain why it is positive according to FACTS_JSON.interpretation. One percentage of accuracy can be mentioned.",
+            "Do not list all professions. Do not write 'according to the report, appear:' or 'the professions that appear'. Do not present an area as having relatively good results if it also appears as a focus for strengthening in the report.",
           ].join("\n");
         }
         return [
-          "השאלה היא על איפה נראית התקדמות יחסית. המבנה הנדרש:",
-          "  בלוק observation: התחל בניסוח כמו 'הנושא שבו נראו התוצאות הטובות ביותר הוא...' או 'ב... נראו תוצאות טובות יחסית' - ציין 1–2 תחומים ספציפיים מה-FACTS_JSON.observation בלבד.",
-          "  בלוק meaning: הסבר בקצרה למה זה חיובי, ע\"פ ה-FACTS_JSON.interpretation. אפשר להזכיר אחוז דיוק אחד.",
-          "  אל תרשום רשימה של כל המקצועות. אל תכתוב 'לפי הדוח, מופיעים:' או 'המקצועות שמופיעים'. אל תציג תחום כבעל תוצאות טובות יחסית אם הוא גם מופיע כמוקד לחיזוק בדוח.",
+          "The question is about where relative progress is seen. The required structure:",
+          "Observation block: start with a wording like 'the topic where the best results were seen is...' or 'in... relatively good results were seen' - specify 1-2 specific areas from the FACTS_JSON.observation only.",
+          "Block meaning: Briefly explain why this is positive, according to the FACTS_JSON.interpretation. You can mention one percentage of accuracy.",
+          "Do not list all professions. Do not write 'according to the report, appear:' or 'the professions that appear'. Do not present an area as having relatively good results if it also appears as a focus for strengthening in the report.",
         ].join("\n");
       }
       case "what_is_still_difficult":
         return [
-          "השאלה היא על תחומי קושי. המבנה הנדרש:",
-          "  בלוק observation: התחל בניסוח ישיר כמו 'התחום שדורש חיזוק כרגע הוא...' או 'התחומים שדורשים חיזוק הם...' - ציין 1–2 תחומים ספציפיים מה-FACTS_JSON.observation.",
-          "  בלוק meaning: הסבר בשפה רגועה, ללא מילים מפחידות, ע\"פ ה-FACTS_JSON.interpretation.",
-          "  אל תאבחן. אל תגיד 'בעיה חמורה'. השתמש בטון רגוע ומעשי.",
+          "The question is about areas of difficulty. The required structure:",
+          "Observation block: start with a direct formulation such as 'the area that currently requires strengthening is...' or 'the areas that require strengthening are...' - specify 1-2 specific areas from the FACTS_JSON.observation.",
+          "Block meaning: explanation in calm language, without scary words, according to the FACTS_JSON.interpretation.",
+          "Don't diagnose. Don't say 'serious problem'. Use a calm and practical tone.",
         ].join("\n");
       case "what_is_most_important":
         return [
-          "השאלה היא על מה הכי חשוב לתרגל השבוע. חובה למלא את המבנה הבא (ניסוח טבעי, שמות נושאים מלאים מ-FACTS_JSON.observation בלבד):",
-          '  בלוק observation - משפט פתיחה ישיר במבנה: "השבוע כדאי להתמקד בעיקר ב-[שם נושא מלא] וב-[שם נושא מלא נוסף כשיש]."',
-          "  בלוק meaning - משפט קצר אחד להסבר למה חשוב להתמקד בכל תחום שציינת (אם יש שני תחומים - שני משפטים קצרים).",
-          '  חובה לכלול משפט פעולה ביתית מעשית (בתוך meaning, או משפט נוסף באותו בלוק): "מומלץ לתרגל בערך 10 דקות, 3 פעמים בשבוע, עם 5–8 שאלות קצרות בכל פעם."',
-          "  אם FACTS_JSON מאפשר בלוק next_step - אפשר לשים שם את משפט הפעולה; אם לא - עדיין חובה את אותו משפט (או ניסוח קרוב עם 10 דקות, 3 פעמים, 5–8 שאלות, תרגול קצר, בכל פעם) בתוך הטקסט.",
-          "  אסור נקודה או פיסוק מיד אחרי מילת יחס (ב, על, עם, של, ל) לפני שם הנושא - אסור \"ב.\", \"ב .\", \"ב .\", \"ב-.\", \"ב:.\". המשך מיד אחרי \"ב\" עם שם הנושא המלא.",
-          "  אל תפתח ב\"נראה שכדאי להתמקד ב\" ואז נקודה או מקף לפני הנושא. אל תכתוב 'אפשר לסדר מה חשוב קודם' או 'זה מה שהדוח נותן כרגע'.",
+          "The question is what is most important to practice this week. The following structure must be filled in (natural wording, full subject names from FACTS_JSON.observation only):",
+          'Block observation - a direct opening sentence in the structure: "This week you should focus mainly on [full topic name] and [additional full topic name if available]."',
+          "Block meaning - one short sentence to explain why it is important to focus on each area you mentioned (if there are two areas - two short sentences).",
+          'It is mandatory to include a practical homework sentence (within meaning, or another sentence in the same block): "It is recommended to practice for about 10 minutes, 3 times a week, with 5-8 short questions each time."',
+          "If FACTS_JSON allows a next_step block - you can put the action statement there; If not - the same sentence (or a close formulation with 10 minutes, 3 times, 5–8 questions, short practice, each time) within the text is still mandatory.",
+          "A full stop or punctuation is not allowed immediately after a preposition (in, on, with, of, to) before the subject name - \"in.\", \"in .\", \"in .\", \"in-.\", \"in:.\" are not allowed. Continue immediately after \"b\" with the full subject name.",
+          "Don't start with \"seems worth focusing on\" and then a period or dash before the subject. Do not write 'it is possible to arrange what is important first' or 'this is what the report gives at the moment'.",
         ].join("\n");
       case "what_to_do_today":
       case "what_to_do_this_week":
         return [
-          "השאלה היא על מה לעשות בבית. המבנה הנדרש:",
-          "  בלוק observation: התחל ב'בבית כדאי לתרגל...' - ציין נושא ספציפי מה-FACTS_JSON.observation.",
-          "  בלוק meaning: תוכנית מעשית קצרה: 5–10 דקות ביום, איזה נושא, סוג התרגול.",
+          "The question is what to do at home. The required structure:",
+          "Observation block: start with 'at home it's good to practice...' - specify a specific topic from the FACTS_JSON.observation.",
+          "Block meaning: short practical program: 5-10 minutes a day, what topic, type of practice.",
           facts.recommendationEligible && facts.recommendationIntensityCap !== "RI0"
-            ? "  בלוק next_step: צעד ספציפי אחד פשוט לביצוע (לפי FACTS_JSON.action)."
-            : "  אסור לכלול בלוק next_step.",
-          "  אל תכתוב 'אפשר לסדר' או 'זה מה שהדוח נותן'.",
+            ? "next_step block: one specific simple step to perform (according to FACTS_JSON.action)."
+            : "You must not include a next_step block.",
+          "Do not write 'it is possible to arrange' or 'this is what the report gives'.",
         ].join("\n");
       case "is_intervention_needed":
         return [
-          "השאלה היא אם יש סיבה לדאגה. המבנה הנדרש:",
-          "  בלוק observation: התחל ב'בשלב הזה...' - סקירה רגועה של מצב הדוח לפי FACTS_JSON.observation.",
-          "  בלוק meaning: הסבר מה המצב ומה הצעד הבא המומלץ, לפי FACTS_JSON.interpretation.",
-          "  אל תאבחן. אל תגרום לפאניקה. השתמש בטון רגוע ומעשי.",
-          '  פתח בטון רגוע ומקצועי. אם יש מספיק נתונים, אפשר לפתוח בנוסח: "בשלב זה אין סיבה לדאגה, אבל...". לאחר מכן חובה להמשיך לפי FACTS_JSON בלבד: אם יש ממצא לימודי מבוסס (לפי FACTS_JSON.interpretation), הצג אותו בצורה ברורה וזהירה והצע צעד לימודי מעשי; אם אין ממצא משמעותי בדוח, אפשר להרגיע בצורה קצרה. אל תאבחן, אל תשתמש בשפה רפואית/פסיכולוגית, ואל תסתיר ממצא לימודי שקיים בדוח.',
-          "  אסור לכתוב \"לא להיכנס ללחץ\", אסור \"אין מה לדאוג\" בניסוח מוחלט, ואסור \"הכול בסדר\" אם יש ממצא לימודי בדוח.",
+          "The question is whether there is cause for concern. The required structure:",
+          "Observation block: start with 'At this stage...' - a calm overview of the state of the report according to FACTS_JSON.observation.",
+          "block meaning: explain what the situation is and what the recommended next step is, according to FACTS_JSON.interpretation.",
+          "Don't diagnose. Don't panic. Use a calm and practical tone.",
+          'Open a calm and professional tone. If there is enough data, you can start with the following: "At this stage there is no reason for concern, but...". After that, it is mandatory to continue according to FACTS_JSON only: if there is an established study finding (according to FACTS_JSON.interpretation), present it clearly and carefully and propose a practical study step; If there is no significant finding in the report, you can reassure briefly. Do not diagnose, do not use medical/psychological language, and do not hide a study finding that exists in the report.',
+          "It is forbidden to write \"don't get under pressure\", it is forbidden to write \"nothing to worry about\" in an absolute wording, and it is forbidden to write \"everything is fine\" if there is a study finding in the report.",
         ].join("\n");
       case "ask_subject_specific":
       case "ask_topic_specific":
         return [
-          "השאלה היא על מקצוע או נושא ספציפי. המבנה הנדרש:",
-          "  בלוק observation: ציין רק מה שמופיע על הנושא הספציפי ב-FACTS_JSON.observation.",
-          "  בלוק meaning: הסבר מה המשמעות; כל הצעה מעשית קצרה מותרת כאן או במשפט נוסף באותו בלוק - לפי FACTS_JSON.interpretation/action רק אם מופיעים שם.",
-          "  אם לנושא הספציפי יש מעט שאלות - אפשר לציין זאת בזהירות רק לנושא הזה.",
+          "The question is about a specific profession or topic. The required structure:",
+          "Observation block: Specify only what appears on the specific topic in FACTS_JSON.observation.",
+          "block meaning: explain what the meaning is; Any short practical suggestion is allowed here or in another sentence in the same block - according to FACTS_JSON.interpretation/action only if they appear there.",
+          "If the specific topic has few questions - this can be carefully noted only for this topic.",
           facts.recommendationEligible && facts.recommendationIntensityCap !== "RI0"
-            ? "  אופציונלי: בלוק next_step - צעד ביתי קצר אחד לפי FACTS_JSON.action בלבד."
-            : "  אסור לכלול בלוק next_step - המלצות מעשיות רק בתוך בלוק meaning (FACTS_JSON מאשר המלצות רק כש-recommendationEligible=true ו-cap לא RI0).",
+            ? "Optional: next_step block - one short home step according to FACTS_JSON.action only."
+            : "The next_step block must not be included - practical recommendations only within the meaning block (FACTS_JSON approves recommendations only when recommendationEligible=true and cap is not RI0).",
         ].join("\n");
       default:
         return [
-          "ענה ישירות על שאלת ההורה. המבנה הנדרש:",
-          "  בלוק observation: תשובה ישירה קצרה, מבוססת על FACTS_JSON.observation.",
-          "  בלוק meaning: נקודה מעשית אחת מ-FACTS_JSON.interpretation.",
+          "Answer the parent's question directly. The required structure:",
+          "Observation block: a short direct answer, based on FACTS_JSON.observation.",
+          "block meaning: one practical point from FACTS_JSON.interpretation.",
         ].join("\n");
     }
   })();
@@ -209,24 +209,24 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "") {
   const uTrim = String(utterance || "").trim();
   const subjectStrengthStyleRule =
     intentLabel === "what_is_going_well" && utteranceAsksSubjectLevelStrength(uTrim)
-      ? "חוק סגנון לשאלה זו: ההורה שואל על מקצוע (חזק / הכי טוב). אסור להשתמש במילה «התחום» בתשובה - השתמש ב«המקצוע» או פתח ישירות בשם המקצוע. דוגמאות לפתיחה תקינה: «המקצוע שבו נראו התוצאות הטובות ביותר הוא אנגלית, ובעיקר בנושא אוצר מילים» או «באנגלית נראו התוצאות הטובות ביותר בתקופה הזו, בעיקר בנושא אוצר מילים». אסור: «התחום שבו נראים המספרים…»."
+      ? "Style rule for this question: the parent asks about a profession (strong / best). It is forbidden to use the word «the field» in the answer - use «the profession» or open directly with the name of the profession. Examples of a proper opening: «The subject in which the best results were seen is English, especially in the subject of vocabulary» or «In English, the best results were seen in this period, mainly in the subject of vocabulary». Prohibited: «The area where the numbers are visible...»."
       : "";
 
   return [
-    "אתה עוזר הורים מקצועי. תענה בעברית בלבד.",
-    "השתמש רק בעובדות מה-FACTS_JSON. אסור להמציא עובדות שאינן בו.",
-    "כתוב בשפה פשוטה, ישירה, וידידותית להורה - לא בשפת מערכת.",
-    "אל תשתמש בביטויים: 'לפי הדוח, מופיעים:', 'המקצועות שמופיעים:', 'מוקדים עם ניסוח', 'זה מה שהדוח נותן כרגע', 'אפשר לסדר מה חשוב קודם'.",
-    "ניסוח טבעי לדוגמה: 'השבוע כדאי להתמקד בעיקר ב...', 'ב... נראו תוצאות טובות יחסית', 'התחום שדורש חיזוק כרגע הוא...', 'בבית כדאי לתרגל...', 'בשלב הזה מומלץ...', 'הנתונים מצביעים על...'.",
-    "אסור לכתוב נקודה, נקודתיים או מקף מיד אחרי מילת יחס (ב, על, עם, של, ל) לפני שם הנושא - תמיד המשך מיד עם שם הנושא המלא. דוגמה אסורה: \"להתמקד ב. חשבון\"; נכון: \"להתמקד בחשבון\" או \"להתמקד בחשבון -\".",
-    "אל תשתמש במילים 'ביטחון', 'בטחון' או confidence לגבי הילד; אל תניח מצב רגשי.",
-    "אסור לאבחן: לעולם אל תאמר שיש לילד דיסלקציה, ADHD, לקות למידה או כל אבחון. הדוח הוא נתוני תרגול בלבד.",
-    `כלל נפח: אם reportQuestionTotalGlobal >= 100, אסור לכתוב ברמת כלל התקופה: 'מוקדם לקבוע', 'אין מספיק נתונים', 'נתונים מועטים', 'כיוון ראשוני בלבד', 'עדיין לא ניתן להסיק'. מותר רק אם מסוגל לנושא/מקצוע ספציפי עם מעט שאלות.`,
+    "You are a professional parent helper. Answer in Hebrew only.",
+    "Use only facts from the FACTS_JSON. It is forbidden to invent facts that are not in it.",
+    "Write in simple, direct, and parent-friendly language - not in system language.",
+    "Do not use the phrases: 'According to the report, there are:', 'The professions that appear:', 'Focuses with wording', 'This is what the report gives at the moment', 'It is possible to arrange what is important first'.",
+    "Natural wording for example: 'This week you should focus mainly on...', 'Relatively good results were seen in...', 'The area that needs strengthening at the moment is...', 'At home you should practice...', 'At this stage it is recommended...', 'The data points to...'.",
+    "You must not write a period, colon or dash immediately after a preposition (in, on, with, of, to) before the subject name - always continue immediately with the full subject name. Prohibited example: \"Focus on account\"; Correct: \"to focus on the account\" or \"to focus on the account -\".",
+    "Do not use the words 'security', 'security' or confidence about the child; Don't assume an emotional state.",
+    "Do not diagnose: Never say that a child has dyslexia, ADHD, a learning disability or any diagnosis. The report is practice data only.",
+    `Volume rule: If reportQuestionTotalGlobal >= 100, it is forbidden to write at the level of the period rule: 'Too early to determine', 'There is not enough data', 'Little data', 'Initial direction only', 'It is still not possible to conclude'. Allowed only if capable of a specific subject/subject with few questions.`,
     ...(subjectStrengthStyleRule ? [subjectStrengthStyleRule] : []),
-    "SYSTEM RULE - אי-אפשר לעקוף: אם השאלה אינה על הדוח, על הילד, על למידה, על תרגול, או על התקדמות הלמידה - החזר בדיוק: {\"answerBlocks\":[{\"type\":\"observation\",\"textHe\":\"אפשר לשאול כאן שאלות על הדוח והתקדמות הלמידה שמופיעה בו.\",\"source\":\"composed\"},{\"type\":\"meaning\",\"textHe\":\"למשל: מה כדאי לתרגל השבוע? או איפה נראו תוצאות טובות יחסית?\",\"source\":\"composed\"}]}. ללא עוד תוכן. ללא נתוני דוח. ללא סיכום ילד.",
-    `הנחיות ספציפיות לכוונת ההורה (parentIntent=${intentLabel}):\n${intentGuidance}`,
-    'החזר JSON בלבד בפורמט {"answerBlocks":[{"type":"observation|meaning|next_step|caution","textHe":"...","source":"composed"}]}',
-    `שאלת הורה: ${String(utterance || "").trim()}`,
+    "SYSTEM RULE - Impossible to bypass: if the question is not about the report, about the child, about learning, about practice, or about learning progress - return exactly: {\"answerBlocks\":[{\"type\":\"observation\",\"textHe\":\"You can ask questions here about the report and the learning progress that appears in it.\",\"source\":\"composed\"},{\"type\":\"meaning\",\"textHe\":\"For example: What should you practice this week? Or where have you seen relatively good results?\",\"source\":\"composed\"}]}. No more content. No report data. No summary child.",
+    `Specific instructions for the parent intent (parentIntent=${intentLabel}):\n${intentGuidance}`,
+    'Return only JSON in the format {"answerBlocks":[{"type":"observation|meaning|next_step|caution","textHe":"...","source":"composed"}]}',
+    `Parent Question: ${String(utterance || "").trim()}`,
     `FACTS_JSON: ${JSON.stringify(facts)}`,
   ].join("\n");
 }

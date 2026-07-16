@@ -11,7 +11,20 @@ export function extractNumbersFromText(text) {
   return matches;
 }
 
+/** EN student-prompt keywords + HE kept for legacy Hebrew word problems. */
 const KEYWORD_PATTERNS = [
+  /\bin\s*total\b/gi,
+  /\baltogether\b/gi,
+  /\bleft\b/gi,
+  /\bremaining\b/gi,
+  /\bmore\b/gi,
+  /\bless\b/gi,
+  /\bhow\s*many\b/gi,
+  /\beach\b/gi,
+  /\bdivid(?:e|es|ing)\b/gi,
+  /\bgets?\b/gi,
+  /\badd(?:s|ing)?\b/gi,
+  /\bsubtract(?:s|ing)?\b/gi,
   /בסך\s*ה?כל/g,
   /נותר/g,
   /נשאר/g,

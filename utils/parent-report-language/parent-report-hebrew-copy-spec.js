@@ -1,37 +1,37 @@
 /**
- * Parent report Hebrew copy — literal templates from parent_report_hebrew_copy_spec.md only.
- * Do not invent wording here; add new strings only when the spec is updated.
+ * Parent report copy — English literal templates (Global product).
+ * Do not invent wording here; add new strings deliberately and keep them parent-friendly.
  */
 
 import {
-  PARENT_TOPIC_HOME_ACTION_HEADING_HE,
-  resolveParentFacingPatternLabelHe,
-} from "../learning-pattern-decision/parent-facing-error-pattern-he.js";
+  PARENT_TOPIC_HOME_ACTION_HEADING as PARENT_TOPIC_HOME_ACTION_HEADING_HE,
+  resolveParentFacingPatternLabel as resolveParentFacingPatternLabelHe,
+} from "../learning-pattern-decision/parent-facing-error-pattern.js";
 
 /** @typedef {{ subject?: string, topic?: string, q?: number, acc?: number, wrongRatio?: number|null, pattern?: string, action?: string, rootCause?: string, strongTopic?: string, weakTopic?: string, totalAnswers?: number, diagnosticAnswers?: number }} CopyVars */
 
 /** Spec §9 — forbidden verbatim phrases in parent-facing output */
 export const SPEC_FORBIDDEN_PARENT_PHRASES = Object.freeze([
-  "פער יסוד",
-  "קושי בבסיס",
-  "הצלחה שבירה",
-  "נראה שיש קושי ב",
-  "יש טעויות חוזרות ב",
-  "שווה לחזור עליהן בקצב איטי",
-  "כדאי לשים לב ל",
-  "זה נושא שחוזר בתרגולים",
-  "הביצועים הכלליים בתקופה מצביעים על צורך בחיזוק נוסף",
-  "הדפוס הנראה בביצוע",
-  "נשמרו גם שיקולי זהירות",
-  "חלקים פשוטים יותר של הנושא",
-  "לא נקבע",
-  "רעש טבעי של למידה מוקדמת",
-  "אין מספיק מידע",
-  "אין עדיין מספיק מידע",
-  "יש כמה סוגי טעויות",
-  "אין עדיין דפוס אחד ברור",
-  "בלבול מושגי",
-  "נקודת ידע לא יציבה",
+  "foundation gap",
+  "basic difficulty",
+  "fragile success",
+  "appears to be a difficulty in",
+  "there are repeated mistakes in",
+  "worth reviewing at a slow pace",
+  "worth paying attention to",
+  "this is a topic that keeps recurring in practice",
+  "overall performance in this period indicates a need for further reinforcement",
+  "the pattern observed in performance",
+  "caution considerations were also kept",
+  "simpler parts of the topic",
+  "not determined",
+  "natural noise of early learning",
+  "not enough information",
+  "not yet enough information",
+  "there are several types of mistakes",
+  "no single clear pattern yet",
+  "conceptual confusion",
+  "unstable knowledge point",
   "clear_topic_gap",
   "partial_stable",
   "mastery_stable",
@@ -47,93 +47,93 @@ export const SPEC_FORBIDDEN_PARENT_PHRASES = Object.freeze([
 ]);
 
 const MEANING_BY_ROOT_CAUSE_INSIGHT = Object.freeze({
-  knowledge_gap: "הנתונים מצביעים על נקודת חיזוק שעדיין לא יציבה.",
-  speed_pressure: "חלק מהטעויות נראות קשורות למהירות - לא בהכרח לפער ידע מלא.",
-  instruction_friction: "ייתכן שהקושי קשור להבנת ההוראה, ולא רק לידע בנושא.",
-  careless_execution: "נראה שהחומר מוכר בחלקו, אבל יש טעויות ביצוע שחוזרות כשממהרים.",
-  weak_independence: "הילד מצליח יותר כשיש ליווי, ועדיין כדאי לחזק פתרון עצמאי.",
-  insufficient_evidence: "עדיין מעט תשובות - כדאי עוד תרגול קצר לפני מסקנה ברורה.",
-  preliminary_direction: "יש כיוון ראשוני, אבל כדאי עוד קצת תרגול לפני מסקנה ברורה.",
+  knowledge_gap: "The data points to a skill that is still not fully stable.",
+  speed_pressure: "Some of the mistakes look related to speed - not necessarily a full knowledge gap.",
+  instruction_friction: "The difficulty may be related to understanding the instructions, not just knowledge of the topic.",
+  careless_execution: "The material looks partly familiar, but there are execution mistakes that repeat when working quickly.",
+  weak_independence: "The child does better with support, and it still helps to build up independent problem-solving.",
+  insufficient_evidence: "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
+  preliminary_direction: "There is an early direction, but a bit more practice would help before drawing a clear conclusion.",
   recurring_pattern:
-    "כבר מופיע דפוס שחוזר בנושא הזה, ולכן כדאי להתייחס אליו ולחזק אותו. עדיין מומלץ להמשיך לתרגל כדי לוודא שהדפוס יציב לאורך זמן.",
+    "A recurring pattern already shows up in this topic, so it is worth addressing and reinforcing. It still helps to keep practicing to confirm the pattern holds over time.",
   recurring_pattern_supported:
-    "כבר מופיע דפוס שחוזר בנושא הזה בכמה מפגשים, ולכן כדאי להתייחס אליו ולחזק אותו. מומלץ להמשיך לתרגל כדי לוודא שהדפוס יציב לאורך זמן.",
-  no_consistent_pattern: "יש כבר תרגול בנושא, אבל עדיין לא מופיע דפוס עקבי מספיק.",
-  mixed_signal: "יש כמה כיוונים אפשריים - כדאי לבדוק שוב אחרי עוד תרגול קצר.",
-  early_stage_instability: "עדיין מעט תשובות - כדאי עוד תרגול קצר לפני מסקנה ברורה.",
-  mixed: "יש כמה כיוונים אפשריים - כדאי לבדוק שוב אחרי עוד תרגול קצר.",
+    "A recurring pattern already shows up in this topic across several sessions, so it is worth addressing and reinforcing. It helps to keep practicing to confirm the pattern holds over time.",
+  no_consistent_pattern: "There is already some practice in this topic, but a consistent enough pattern has not appeared yet.",
+  mixed_signal: "There are a few possible directions - worth checking again after a bit more practice.",
+  early_stage_instability: "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
+  mixed: "There are a few possible directions - worth checking again after a bit more practice.",
 });
 
 const MEANING_BY_BEHAVIOR_EXPLAIN = Object.freeze({
   knowledge_gap:
-    "יש נקודת חיזוק בנושא שעדיין לא יציבה. הדוח מסתמך על הדיוק ושיעור הטעויות.",
+    "There is a skill in this topic that is still not fully stable. The report relies on accuracy and the rate of mistakes.",
   fragile_success:
-    "הילד מגיע לחלק מהתשובות הנכונות, אבל היציבות עדיין לא מלאה. חשוב לבדוק את דרך הפתרון ולא רק את התוצאה הסופית.",
+    "The child gets to some of the correct answers, but consistency is not there yet. It is worth checking the solving method, not just the final result.",
   speed_pressure:
-    "חלק מהטעויות נראות קשורות למהירות או ללחץ זמן, ולכן לא נכון להסיק מיד שהחומר כולו לא מובן.",
+    "Some of the mistakes look related to speed or time pressure, so it would not be right to conclude right away that the whole topic is not understood.",
   instruction_friction:
-    "ייתכן שהקושי קשור לקריאת ההוראה או להבנת מה שמבקשים בשאלה, ולא רק לידע בנושא.",
+    "The difficulty may be related to reading the instructions or understanding what the question is asking, not just knowledge of the topic.",
   careless_execution:
-    "נראה שהילד מכיר חלק מהחומר, אבל יש טעויות ביצוע שחוזרות כשממהרים או מדלגים על שלב.",
+    "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
   careless_pattern:
-    "נראה שהילד מכיר חלק מהחומר, אבל יש טעויות ביצוע שחוזרות כשממהרים או מדלגים על שלב.",
+    "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
   weak_independence:
-    "הילד מצליח יותר כשיש ליווי או רמזים, ועדיין צריך לחזק פתרון עצמאי.",
+    "The child does better with support or hints, and it still helps to build up independent problem-solving.",
   stable_mastery:
-    "הנתונים מצביעים על שליטה טובה בנושא כרגע. חשוב לשמר את היכולת ולא למהר להסיק שכל המקצוע כבר יציב.",
+    "The data points to good command of the topic right now. It's important to maintain this skill rather than assume the whole subject is already stable.",
   insufficient_evidence:
-    "עדיין מעט תשובות - כדאי עוד תרגול קצר לפני מסקנה ברורה.",
+    "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
   undetermined:
-    "עדיין מעט תשובות - כדאי עוד תרגול קצר לפני מסקנה ברורה.",
+    "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
   mixed_low_signal:
-    "עדיין מעט תשובות - כדאי עוד תרגול קצר לפני מסקנה ברורה.",
+    "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
   mixed_signal:
-    "יש סימנים לכמה כיוונים שונים, ולכן הדוח ממליץ להתקדם בזהירות ולא לקבוע מסקנה אחת חזקה מדי.",
+    "There are signs pointing in a few different directions, so the report recommends moving forward carefully instead of drawing one strong conclusion.",
   mixed:
-    "יש סימנים לכמה כיוונים שונים, ולכן הדוח ממליץ להתקדם בזהירות ולא לקבוע מסקנה אחת חזקה מדי.",
+    "There are signs pointing in a few different directions, so the report recommends moving forward carefully instead of drawing one strong conclusion.",
 });
 
 const ACTION_BY_ROOT_CAUSE = Object.freeze({
   knowledge_gap:
-    "לחזור על שאלות דומות באותו נושא ובאותה רמת קושי, ולבקש מהילד להסביר בקול את שלבי הפתרון.",
-  speed_pressure: "לפתור כמה שאלות בלי טיימר, לעצור לפני שליחה, ולבדוק אם התשובה מתאימה לשאלה.",
+    "Go over similar questions in the same topic and difficulty level, and ask the child to explain the solving steps out loud.",
+  speed_pressure: "Solve a few questions without a timer, pause before submitting, and check whether the answer fits the question.",
   instruction_friction:
-    "לקרוא יחד את ההוראה, לסמן מה מבקשים למצוא, ורק אחר כך לפתור את השאלה.",
+    "Read the instructions together, mark what the question is asking for, and only then solve the question.",
   careless_execution:
-    "לפתור לאט ולבצע בדיקת סיום קצרה: האם עניתי על מה שנשאל, והאם דילגתי על שלב.",
+    "Solve slowly and do a short final check: did I answer what was asked, and did I skip a step.",
   weak_independence:
-    "לתת לילד ניסיון ראשון לבד, ורק אחר כך לבדוק יחד. המטרה היא לחזק פתרון עצמאי לפני קבלת עזרה.",
+    "Let the child try first on their own, and only then check together. The goal is to build independent problem-solving before getting help.",
   fragile_success:
-    "לפתור מספר קטן של שאלות דומות, להתעכב על הניסיון הראשון, ולבדוק למה התשובה הראשונה נבחרה.",
+    "Solve a small number of similar questions, pause on the first attempt, and check why that first answer was chosen.",
   stable_mastery:
-    "לשמר את הנושא בתרגול קצר, ואפשר לשלב בהדרגה שאלות מעט מאתגרות יותר אם הדיוק נשמר.",
+    "Keep the topic fresh with short practice, and gradually add slightly more challenging questions if accuracy holds.",
   insufficient_evidence:
-    "עדיין מעט תשובות - כדאי עוד תרגול קצר באותו נושא, ואז לבדוק שוב את הדוח.",
-  preliminary_direction: "לבצע עוד כמה שאלות באותו נושא, ואז לבדוק שוב את הדוח.",
+    "There are still only a few answers - a bit more practice on this topic would help, then check the report again.",
+  preliminary_direction: "Do a few more questions on this topic, then check the report again.",
   recurring_pattern:
-    "לחזור על שאלות דומות באותו נושא, לחזק את הנקודה שחוזרת, ולבדוק שוב אחרי עוד תרגול.",
+    "Go over similar questions in this topic, reinforce the point that keeps recurring, and check again after more practice.",
   recurring_pattern_supported:
-    "להמשיך בתרגול ממוקד באותו נושא, לחזק את הנקודה שחוזרת, ולבדוק שהשיפור נשמר גם בהמשך.",
+    "Keep up focused practice on this topic, reinforce the point that keeps recurring, and confirm the improvement holds going forward.",
   no_consistent_pattern:
-    "להמשיך בתרגול קצר באותו נושא כדי לראות אם יתגבש דפוס עקבי.",
+    "Keep up short practice on this topic to see whether a consistent pattern forms.",
   mixed_signal:
-    "להמשיך בתרגול קצר באותו נושא - כדאי לבדוק שוב אחרי עוד כמה שאלות.",
+    "Keep up short practice on this topic - worth checking again after a few more questions.",
   early_stage_instability:
-    "לבצע עוד כמה שאלות באותו נושא, ואז לבדוק שוב את הדוח.",
+    "Do a few more questions on this topic, then check the report again.",
 });
 
 /** Spec §3 — mistake pattern parent text by engine id */
 export const MISTAKE_PATTERN_PARENT_HE = Object.freeze({
   insufficient_mistake_evidence: "",
-  recurring_weakness: "חלק מהטעויות חוזרות באותו סוג פעילות.",
+  recurring_weakness: "Some mistakes repeat in the same type of activity.",
   insufficient_recurrence: "",
   early_signal: "",
-  speed_driven_error: "חלק מהטעויות הופיעו בזמן עבודה מהיר.",
-  instruction_misread: "חלק מהטעויות נראות קשורות להבנת ההוראה.",
-  support_dependent_success: "הצלחה בעיקר כשיש ליווי או רמזים.",
-  careless_flip: "טעויות ביצוע קטנות שחוזרות כשממהרים.",
+  speed_driven_error: "Some mistakes happened while working quickly.",
+  instruction_misread: "Some mistakes appear related to understanding the instructions.",
+  support_dependent_success: "Success mostly happens with guidance or hints.",
+  careless_flip: "Small execution mistakes that repeat when working quickly.",
   concept_confusion: "",
-  procedure_break: "בלבול בסדר הפעולות או בשלבי הפתרון.",
+  procedure_break: "Confusion about the order of steps in solving.",
   mixed_mistake_pattern: "",
   early_learning_noise: "",
 });
@@ -141,33 +141,33 @@ export const MISTAKE_PATTERN_PARENT_HE = Object.freeze({
 /** Spec §4 — foundation dependency parent text by engine id */
 export const DEPENDENCY_STATE_PARENT_HE = Object.freeze({
   insufficient_dependency_evidence:
-    "אין עדיין מספיק מידע כדי לדעת אם הקושי נמצא בנושא עצמו או בבסיס שלו.",
-  likely_local_issue: "הסימנים מצביעים בעיקר על קושי בתוך הנושא הזה עצמו.",
+    "There is not yet enough information to know whether the difficulty is in the topic itself or in its foundation.",
+  likely_local_issue: "The signs mostly point to a difficulty within this topic itself.",
   likely_foundational_block:
-    "יש סימן שהקושי אולי קשור לבסיס של הנושא, אבל אין עדיין מיפוי שמראה איזה חלק בסיסי בדיוק.",
+    "There is a sign that the difficulty may be related to the foundation of this topic, but there is no mapping yet showing exactly which foundational part is involved.",
   mixed_dependency_signal:
-    "יש גם סימנים לקושי בנושא עצמו וגם סימנים שאולי הבסיס משפיע. לכן כדאי להמשיך בזהירות ולא לקבוע מסקנה אחת חזקה מדי.",
+    "There are signs of a difficulty in the topic itself, and also signs that the foundation may be a factor. It's best to move forward carefully rather than draw one strong conclusion.",
   accuracy_foundation_gap:
-    "הדיוק הנמוך חוזר מספיק כדי לחשוד שהבסיס של הנושא עדיין לא יציב, אבל אין זיהוי מדויק של תת-נושא בסיסי.",
+    "The low accuracy repeats enough to suspect the foundation of this topic is still not stable, but there is no precise identification of the underlying sub-topic.",
 });
 
 /** Spec §2.1 — allowed step labels for parent explain block */
 const STEP_LABEL_BY_ENGINE_STEP = Object.freeze({
-  maintain_and_strengthen: "לבסס באותה רמה",
-  remediate_same_level: "חיזוק באותה רמה",
-  advance_level: "העלאת רמת קושי בנושא זה בלבד",
-  advance_grade_topic_only: "העלאת כיתה בנושא זה בלבד",
-  drop_one_level_topic_only: "הורדת רמת קושי בנושא זה בלבד",
-  drop_one_grade_topic_only: "הורדת רמת קושי בנושא זה בלבד",
+  maintain_and_strengthen: "keep building at the same level",
+  remediate_same_level: "reinforce at the same level",
+  advance_level: "raise the difficulty level for this topic only",
+  advance_grade_topic_only: "move up a grade level for this topic only",
+  drop_one_level_topic_only: "lower the difficulty level for this topic only",
+  drop_one_grade_topic_only: "lower the difficulty level for this topic only",
 });
 
 const SUBJECT_ID_TO_LABEL = Object.freeze({
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
+  hebrew: "Hebrew",
+  "moledet-geography": "Social Studies & Geography",
 });
 
 function clean(s) {
@@ -193,11 +193,11 @@ export function parentStepLabelHe(recommendedNextStep, recommendedStepLabelHe) {
   for (const allowed of Object.values(STEP_LABEL_BY_ENGINE_STEP)) {
     if (lab === allowed) return allowed;
   }
-  if (lab.includes("לבסס")) return STEP_LABEL_BY_ENGINE_STEP.maintain_and_strengthen;
-  if (lab.includes("חיזוק")) return STEP_LABEL_BY_ENGINE_STEP.remediate_same_level;
-  if (lab.includes("העלאת רמת")) return STEP_LABEL_BY_ENGINE_STEP.advance_level;
-  if (lab.includes("העלאת כיתה")) return STEP_LABEL_BY_ENGINE_STEP.advance_grade_topic_only;
-  if (lab.includes("הורדת")) return STEP_LABEL_BY_ENGINE_STEP.drop_one_level_topic_only;
+  if (lab.includes("keep building")) return STEP_LABEL_BY_ENGINE_STEP.maintain_and_strengthen;
+  if (lab.includes("reinforce")) return STEP_LABEL_BY_ENGINE_STEP.remediate_same_level;
+  if (lab.includes("raise the difficulty")) return STEP_LABEL_BY_ENGINE_STEP.advance_level;
+  if (lab.includes("move up a grade")) return STEP_LABEL_BY_ENGINE_STEP.advance_grade_topic_only;
+  if (lab.includes("lower the difficulty")) return STEP_LABEL_BY_ENGINE_STEP.drop_one_level_topic_only;
   return "";
 }
 
@@ -234,7 +234,7 @@ export function meaningInsightSentenceHe(rootCause, diagnosticType) {
   if (bt === "instruction_friction") return MEANING_BY_ROOT_CAUSE_INSIGHT.instruction_friction;
   if (bt === "careless_pattern") return MEANING_BY_ROOT_CAUSE_INSIGHT.careless_execution;
   if (bt === "fragile_success") return MEANING_BY_ROOT_CAUSE_INSIGHT.weak_independence;
-  return "הדוח מציג את הנושא למעקב, אך אין עדיין סיבה פנימית מדויקת יותר.";
+  return "The report is flagging this topic to keep an eye on, but there isn't yet a more precise underlying reason.";
 }
 
 /**
@@ -262,38 +262,38 @@ export function actionTextHe(rootCause, diagnosticType, engineAction) {
   if (bt === "stable_mastery" && ACTION_BY_ROOT_CAUSE.stable_mastery) return ACTION_BY_ROOT_CAUSE.stable_mastery;
   const eng = clean(engineAction);
   if (eng) return eng;
-  return "להמשיך בתרגול קצר באותו נושא, בלי להסיק עדיין מסקנה מדויקת יותר.";
+  return "Keep up short practice on this topic, without drawing a more precise conclusion just yet.";
 }
 
 /** Spec §1.2 zero diagnostic */
 export function activityGapZeroDiagnosticHe(totalAnswers) {
   return (
-    `היו ${Math.round(Number(totalAnswers) || 0)} תשובות באתר, אבל 0 נספרו לדוח הלימודי. ` +
-    "לכן הדוח עדיין לא מציג תמונה לימודית מלאה. כדי לקבל תמונה מדויקת יותר, כדאי לבצע גם תרגול שאלות רגיל במקצועות הליבה."
+    `There were ${Math.round(Number(totalAnswers) || 0)} answers on the site, but 0 counted toward the learning report. ` +
+    "So the report doesn't yet show a full learning picture. For a more accurate picture, it helps to also do regular practice questions in the core subjects."
   );
 }
 
 /** Spec §1.2 partial diagnostic */
 export function activityGapPartialDiagnosticHe(totalAnswers, diagnosticAnswers) {
   return (
-    `היו ${Math.round(Number(totalAnswers) || 0)} תשובות באתר, אבל רק ${Math.round(Number(diagnosticAnswers) || 0)} נספרו לדוח הלימודי. ` +
-    "לכן המסקנות עדיין חלקיות. כדי לקבל תמונה מדויקת יותר, כדאי לבצע עוד תרגול שאלות רגיל במקצועות הליבה."
+    `There were ${Math.round(Number(totalAnswers) || 0)} answers on the site, but only ${Math.round(Number(diagnosticAnswers) || 0)} counted toward the learning report. ` +
+    "So the conclusions are still partial. For a more accurate picture, it helps to do more regular practice questions in the core subjects."
   );
 }
 
 /** Spec §1.2 non-diagnostic only */
 export function activityGapNonDiagnosticOnlyHe() {
   return (
-    "היו פעילויות באתר בתקופה הזו, אבל רובן אינן מסוג שמאפשר לדוח להסיק מסקנה לימודית מדויקת. " +
-    "כדאי להוסיף תרגול שאלות רגיל כדי שהדוח יוכל לזהות חוזקות ונקודות לחיזוק."
+    "There was activity on the site during this period, but most of it isn't the kind that lets the report draw a precise learning conclusion. " +
+    "Adding regular practice questions would help the report identify strengths and areas to reinforce."
   );
 }
 
 /** Spec §1.3 */
 export function noUrgentTopicInsightHe() {
   return (
-    "בתקופה שנבחרה יש תרגול, אבל המערכת עדיין לא זיהתה נושא אחד בולט שצריך חיזוק מיוחד. " +
-    "כדאי להמשיך בתרגול קצר וקבוע ולבדוק שהיציבות נשמרת גם בהמשך."
+    "There is practice in the selected period, but the system has not yet identified one standout topic that needs special reinforcement. " +
+    "It helps to continue with short, regular practice and check that stability holds going forward."
   );
 }
 
@@ -304,8 +304,8 @@ export function mixedSubjectStrongWeakHe(subject, strongTopic, weakTopic) {
   const weak = clean(weakTopic);
   if (!subj || !strong || !weak || strong === weak) return "";
   return (
-    `ב${subj} יש תמונה מעורבת: בנושא ${strong} נראית נקודת חוזק, אבל בנושא ${weak} עדיין יש נקודה שכדאי לחזק. ` +
-    "לכן הדוח מציג את המקצוע לפי נושאים ולא כמסקנה כללית אחת."
+    `${subj} shows a mixed picture: ${strong} looks like a strength, but ${weak} still has a point worth reinforcing. ` +
+    "That's why the report breaks the subject down by topic instead of giving one overall conclusion."
   );
 }
 
@@ -316,11 +316,11 @@ export function mixedSubjectStrongWeakHe(subject, strongTopic, weakTopic) {
  */
 function adjustInsufficientEvidenceByQHe(text, q) {
   const t = String(text || "");
-  if (!t.includes("מעט תשובות")) return t;
+  if (!t.includes("only a few answers")) return t;
   const n = Math.round(Number(q) || 0);
-  if (n <= 5) return "עדיין מעט נתונים - עוד קצת תרגול יעזור לנו להבין טוב יותר.";
-  if (n <= 15) return "יש כיוון ראשוני, אבל כדאי עוד קצת תרגול לפני מסקנה ברורה.";
-  return "נראה שיש כאן נושא שכדאי לחזק בתרגול הקרוב.";
+  if (n <= 5) return "Still very little data - a bit more practice will help us get a clearer picture.";
+  if (n <= 15) return "There is an early direction, but a bit more practice would help before drawing a clear conclusion.";
+  return "This looks like a topic worth reinforcing in upcoming practice.";
 }
 
 /**
@@ -353,10 +353,10 @@ export function topicAttentionInsightHe(p) {
   );
 
   const base =
-    `ב${subj} - בנושא ${topic}: נפתרו ${q} שאלות, הדיוק היה ${acc}%, ושיעור הטעויות היה ${wr}%. ` +
+    `${subj} - topic ${topic}: ${q} questions solved, accuracy was ${acc}%, and the mistake rate was ${wr}%. ` +
     `${patternSentence ? `${patternSentence} ` : ""}${meaningSentence}`;
 
-  return `${base} מה כדאי לעשות: ${action}`;
+  return `${base} What to do: ${action}`;
 }
 
 /** Spec §5.1 */
@@ -369,9 +369,9 @@ export function stableMasteryInsightHe(p) {
   if (wr == null || !Number.isFinite(Number(wr))) wr = Math.max(0, Math.min(100, 100 - acc));
   else wr = Math.round(Number(wr));
   return (
-    `ב${subj} - בנושא ${topic}: נפתרו ${q} שאלות, והדיוק היה ${acc}%. ` +
-    "נראית שליטה טובה בנושא. " +
-    "מה כדאי לעשות: לשמר את הנושא בתרגול קצר מדי פעם, ולבדוק שהדיוק נשמר גם בשאלות חדשות."
+    `${subj} - topic ${topic}: ${q} questions solved, accuracy was ${acc}%. ` +
+    "This shows good command of the topic. " +
+    "What to do: keep the topic fresh with occasional short practice, and check that accuracy holds on new questions too."
   );
 }
 
@@ -380,8 +380,8 @@ export function advanceLevelInsightHe(p) {
   const subj = subjectLabel(p.subject, p.subjectId);
   const topic = clean(p.topic);
   return (
-    `ב${subj} - בנושא ${topic}: הנתונים מצביעים על שליטה טובה מספיק כדי לשקול עלייה ברמת הקושי בנושא הזה בלבד. ` +
-    "מומלץ להתקדם בהדרגה ולבדוק שהדיוק נשמר גם בשאלות קשות יותר."
+    `${subj} - topic ${topic}: the data points to a good enough command to consider raising the difficulty level for this topic only. ` +
+    "It's recommended to move up gradually and check that accuracy holds on harder questions too."
   );
 }
 
@@ -390,8 +390,8 @@ export function advanceGradeInsightHe(p) {
   const subj = subjectLabel(p.subject, p.subjectId);
   const topic = clean(p.topic);
   return (
-    `ב${subj} - בנושא ${topic}: הנתונים מצביעים על מוכנות להתקדמות בנושא הזה בלבד. ` +
-    "העלייה לא אומרת שכל המקצוע מוכן לקפיצה, אלא רק שהנושא המסוים הזה נראה יציב יותר."
+    `${subj} - topic ${topic}: the data points to readiness to advance in this topic only. ` +
+    "This doesn't mean the whole subject is ready for a jump - just that this particular topic looks more stable."
   );
 }
 
@@ -402,8 +402,8 @@ export function strengthOverviewLineHe(p) {
   const q = Math.round(Number(p.q) || 0);
   const acc = Math.round(Number(p.acc) || 0);
   return (
-    `נקודת חוזק: ב${subj} - בנושא ${topic} נפתרו ${q} שאלות והדיוק היה ${acc}%. ` +
-    "זה נושא שכדאי לשמר, ובמידה שהדיוק נשמר אפשר לשקול התקדמות הדרגתית."
+    `Strength: in ${subj} - topic ${topic}, ${q} questions were solved with ${acc}% accuracy. ` +
+    "This is a topic worth maintaining, and if accuracy holds, gradual progress can be considered."
   );
 }
 
@@ -413,8 +413,8 @@ export function rawMetricStrengthPositiveHe(subject, q, acc) {
   const nq = Math.round(Number(q) || 0);
   const nacc = Math.round(Number(acc) || 0);
   return (
-    `ב${subj} נראית תמונה חיובית יחסית: ${nq} שאלות ודיוק ${nacc}%. ` +
-    "כדי להבין אם זו שליטה יציבה, כדאי לבדוק גם את הפירוט לפי נושאים."
+    `${subj} shows a relatively positive picture: ${nq} questions and ${nacc}% accuracy. ` +
+    "To understand whether this is stable mastery, it also helps to check the breakdown by topic."
   );
 }
 
@@ -422,46 +422,46 @@ export function rawMetricStrengthPositiveHe(subject, q, acc) {
 export function rawMetricStrengthMixedSubjectHe(subject) {
   const subj = clean(subject);
   return (
-    `ב${subj} יש גם נקודות טובות, אבל הדוח מצא נושא מסוים שכדאי לחזק. ` +
-    "לכן חשוב להסתכל על הפירוט לפי נושאים ולא להסיק מסקנה כללית על כל המקצוע."
+    `${subj} also has good points, but the report found a specific topic worth reinforcing. ` +
+    "That's why it's important to look at the breakdown by topic rather than draw one overall conclusion about the whole subject."
   );
 }
 
 /** Spec §5.6 */
 export function dailyImprovementInsightHe() {
   return (
-    "נראית מגמת שיפור בתקופה האחרונה, אבל צריך לבדוק אם היא נשמרת גם בהמשך. " +
-    "מומלץ להמשיך באותה רמה עוד מעט לפני שמסיקים שהנושא כבר יציב."
+    "There's an improving trend over the recent period, but it's worth checking whether it holds going forward. " +
+    "It's recommended to keep up the same level a bit longer before concluding the topic is already stable."
   );
 }
 
 /** Spec §5.7 */
 export function strengthNotStableEnoughHe() {
   return (
-    "הדיוק נראה טוב, אבל יש סימני זהירות כמו רמזים, ניסיונות חוזרים או מגמה לא ברורה. " +
-    "לכן כרגע עדיף לבסס את הנושא ולא לקפוץ רמה."
+    "Accuracy looks good, but there are cautionary signs such as hints used, repeated attempts, or an unclear trend. " +
+    "So for now it's better to build up this topic rather than jump a level."
   );
 }
 
 /** Spec §6 insufficient_data (student level) */
 export function insufficientDataInsightHe() {
   return (
-    "יש עדיין מעט מדי נתוני תרגול כדי להציג תמונה לימודית אמינה. " +
-    "כדאי להוסיף תרגול קצר כדי לקבל תמונה מדויקת יותר."
+    "There is still too little practice data to show a reliable learning picture. " +
+    "Adding some short practice would help get a more accurate picture."
   );
 }
 
 /** Spec §6.1 — recent inactivity (not thin-data wording) */
 export function recentInactivityInsightHe() {
-  return "לא הייתה פעילות לאחרונה - מומלץ לחזור לתרגול קצר כדי לשמור על רצף למידה.";
+  return "There hasn't been recent activity - it's recommended to return to short practice to keep up the learning streak.";
 }
 
 /** Spec §2.1 */
 export function explainIdentifiedHe(stepLabel, topic) {
   const step = clean(stepLabel);
   const t = clean(topic);
-  if (step && t) return `מה רואים: ${step} בנושא ${t}.`;
-  if (t) return `מה רואים: מיקוד בנושא ${t}.`;
+  if (step && t) return `What we see: ${step} in the topic ${t}.`;
+  if (t) return `What we see: focus on the topic ${t}.`;
   return "";
 }
 
@@ -470,11 +470,11 @@ export function explainDataHe(q, acc, wrongRatio) {
   const nq = Math.round(Number(q) || 0);
   const nacc = Math.round(Number(acc) || 0);
   if (nq > 0 && nq < 5) {
-    return `הנתונים: יש ${nq} שאלות בנושא - זו תמונה ראשונית בלבד.`;
+    return `The data: there are ${nq} questions on this topic - this is only an early picture.`;
   }
   const wr = wrongRatio != null && Number.isFinite(Number(wrongRatio)) ? Math.round(Number(wrongRatio)) : null;
-  if (wr != null) return `הנתונים: ${nq} שאלות, דיוק ${nacc}%, ${wr}% טעויות.`;
-  return `הנתונים: ${nq} שאלות, דיוק ${nacc}%.`;
+  if (wr != null) return `The data: ${nq} questions, ${nacc}% accuracy, ${wr}% mistakes.`;
+  return `The data: ${nq} questions, ${nacc}% accuracy.`;
 }
 
 /** Spec §2.3 */
@@ -482,7 +482,7 @@ export function explainPatternHe(patternText) {
   const mapped = resolveParentFacingPatternLabelHe(patternText);
   const p = clean(mapped || patternText);
   if (!p || /^[a-z][a-z0-9_]*$/i.test(p)) return "";
-  if (p) return `הטעות שחוזרת: ${p.replace(/^הטעות שחוזרת:\s*/, "").replace(/^דפוס:\s*/, "").replace(/^דפוס הטעות הבולט:\s*/, "")}.`.replace(/\.\.$/, ".");
+  if (p) return `The recurring mistake: ${p.replace(/^the recurring mistake:\s*/i, "").replace(/^pattern:\s*/i, "").replace(/^the standout mistake pattern:\s*/i, "")}.`.replace(/\.\.$/, ".");
   return "";
 }
 
@@ -490,8 +490,8 @@ export function explainPatternHe(patternText) {
 export function explainMeaningHe(rootCause, diagnosticType, foundationLine) {
   const core = meaningExplainSentenceHe(rootCause, diagnosticType);
   const foundation = clean(foundationLine);
-  if (foundation) return `מה זה אומר: ${core} ${foundation}`;
-  return `מה זה אומר: ${core}`;
+  if (foundation) return `What this means: ${core} ${foundation}`;
+  return `What this means: ${core}`;
 }
 
 /** Spec §2.5 */
@@ -504,49 +504,49 @@ export function explainActionHe(rootCause, diagnosticType, engineAction) {
 export function homeWithEngineActionHe(action) {
   const a = clean(action);
   if (!a) return "";
-  return `בבית: ${a}`;
+  return `At home: ${a}`;
 }
 
 /** Spec §7 fallback */
 export function homeFallbackHe() {
-  return "בבית: מומלץ לבצע תרגול קצר וקבוע, ולבדוק בדוח הבא אם כבר נוצר דפוס ברור יותר.";
+  return "At home: it's recommended to do short, regular practice, and check the next report to see whether a clearer pattern has formed.";
 }
 
 /** Spec §7 by subject when no action */
 export function homeBySubjectHe(subjectId) {
   const sid = String(subjectId || "").trim();
   if (sid === "math" || sid === "geometry") {
-    return "בבית: לפתור מעט שאלות באותו נושא, בקצב איטי, ולבקש מהילד להסביר את שלבי הפתרון.";
+    return "At home: solve a few questions on the same topic, at a slow pace, and ask the child to explain the solving steps.";
   }
   if (sid === "hebrew") {
-    return "בבית: לקרוא טקסט קצר, לעצור אחרי כל קטע, ולבקש מהילד להסביר במילים שלו מה הבין.";
+    return "At home: read a short text, pause after each section, and ask the child to explain in their own words what they understood.";
   }
   if (sid === "english") {
-    return "בבית: לתרגל מעט מילים או משפטים קצרים, ולבדוק שהילד מבין את המשמעות ולא רק מזהה את התשובה.";
+    return "At home: practice a few words or short sentences, and check that the child understands the meaning, not just recognizes the answer.";
   }
   if (sid === "science" || sid === "moledet-geography") {
-    return "בבית: לחזור על מושגים מרכזיים מהנושא, ולבקש מהילד להסביר דוגמה אחת במילים שלו.";
+    return "At home: review the key concepts from the topic, and ask the child to explain one example in their own words.";
   }
   return homeFallbackHe();
 }
 
 /** Spec §2.4 / §6 — short parent labels for diagnostic type badges */
 export const PARENT_DIAGNOSTIC_TYPE_LABEL_HE = Object.freeze({
-  knowledge_gap: "יש נקודת ידע בנושא שעדיין לא יציבה.",
-  speed_pressure: "חלק מהטעויות נראות קשורות למהירות או ללחץ זמן.",
-  instruction_friction: "ייתכן שהקושי קשור לקריאת ההוראה או להבנת מה שמבקשים בשאלה.",
-  careless_pattern: "נראה שהילד מכיר חלק מהחומר, אבל יש טעויות ביצוע שחוזרות כשממהרים או מדלגים על שלב.",
-  careless_execution: "נראה שהילד מכיר חלק מהחומר, אבל יש טעויות ביצוע שחוזרות כשממהרים או מדלגים על שלב.",
-  fragile_success: "הילד מגיע לחלק מהתשובות הנכונות, אבל היציבות עדיין לא מלאה.",
-  stable_mastery: "הנתונים מצביעים על שליטה טובה בנושא כרגע.",
-  undetermined: "עדיין לא נקבע דפוס ברור בנושא הזה.",
-  insufficient_evidence: "עדיין מוקדם לקבוע בבירור מה צריך לחזק בנושא הזה.",
-  mixed_low_signal: "עדיין מוקדם לקבוע בבירור מה צריך לחזק בנושא הזה.",
-  mixed_signal: "יש סימנים לכמה כיוונים שונים, ולכן הדוח ממליץ להתקדם בזהירות.",
-  mixed: "יש סימנים לכמה כיוונים שונים, ולכן הדוח ממליץ להתקדם בזהירות.",
-  weak_independence: "הילד מצליח יותר כשיש ליווי או רמזים, ועדיין צריך לחזק פתרון עצמאי.",
-  none_sparse: "יש מעט מדי שאלות בנושא הזה, ולכן לא מסיקים ממנו מסקנה ברורה.",
-  none_observed: "אין עדיין מספיק חזרתיות כדי לומר שהטעות היא דפוס קבוע.",
+  knowledge_gap: "There's a knowledge point in this topic that isn't fully stable yet.",
+  speed_pressure: "Some of the mistakes look related to speed or time pressure.",
+  instruction_friction: "The difficulty may be related to reading the instructions or understanding what the question asks.",
+  careless_pattern: "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
+  careless_execution: "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
+  fragile_success: "The child gets to some of the correct answers, but consistency isn't fully there yet.",
+  stable_mastery: "The data points to good command of the topic right now.",
+  undetermined: "No clear pattern has been established for this topic yet.",
+  insufficient_evidence: "It's still early to clearly determine what needs reinforcement in this topic.",
+  mixed_low_signal: "It's still early to clearly determine what needs reinforcement in this topic.",
+  mixed_signal: "There are signs pointing in a few different directions, so the report recommends moving forward carefully.",
+  mixed: "There are signs pointing in a few different directions, so the report recommends moving forward carefully.",
+  weak_independence: "The child does better with support or hints, and it still helps to build up independent problem-solving.",
+  none_sparse: "There are too few questions on this topic to draw a clear conclusion from.",
+  none_observed: "There isn't yet enough repetition to call the mistake a consistent pattern.",
 });
 
 /** Spec §1.1 meaningSentence — root cause labels for parent display */
@@ -570,7 +570,7 @@ export const ROOT_CAUSE_PARENT_HE = Object.freeze({
 
 /** Spec §6 preliminary_signal */
 export function preliminarySignalHe() {
-  return "יש סימן ראשוני, אבל עדיין אין מספיק חזרתיות כדי לקבוע מסקנה ברורה.";
+  return "There's an early signal, but not yet enough repetition to draw a clear conclusion.";
 }
 
 /**
@@ -579,7 +579,7 @@ export function preliminarySignalHe() {
 export function parentDiagnosticTypeLabelHe(diagnosticType) {
   const k = clean(diagnosticType);
   if (k && PARENT_DIAGNOSTIC_TYPE_LABEL_HE[k]) return PARENT_DIAGNOSTIC_TYPE_LABEL_HE[k];
-  return k ? "מה שנראה בתרגול" : "עדיין לא נקבע דפוס ברור בנושא הזה.";
+  return k ? "What was seen in practice" : "No clear pattern has been established for this topic yet.";
 }
 
 /**

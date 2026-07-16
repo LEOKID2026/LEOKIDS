@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { formatDateHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { formatDateHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 
 function formatMessageDateTime(iso) {
   if (!iso) return "";
   try {
     const d = new Date(iso);
     if (!Number.isFinite(d.getTime())) return formatDateHe(iso);
-    return new Intl.DateTimeFormat("he-IL", {
+    return new Intl.DateTimeFormat("en-US", {
       dateStyle: "medium",
       timeStyle: "short",
     }).format(d);
@@ -34,11 +34,11 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
     const body = await res.json().catch(() => ({}));
     setLoading(false);
     if (res.status === 503 && body?.error?.code === "schema_not_ready") {
-      setError("תכונת ההודעות טרם הופעלה במערכת. יש להפעיל את המיגרציה במסד הנתונים.");
+      setError("Messaging is not enabled yet. Please run the database migration.");
       return;
     }
     if (res.status !== 200) {
-      setError("לא ניתן לטעון את ההודעות.");
+      setError("Could not load messages.");
       return;
     }
     setMessages(body?.data?.messages || []);
@@ -66,11 +66,11 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status === 503 && body?.error?.code === "schema_not_ready") {
-      setError("תכונת ההודעות טרם הופעלה במערכת.");
+      setError("Messaging is not enabled yet.");
       return;
     }
     if (res.status !== 201) {
-      setError("שליחת ההודעה נכשלה. נסו שוב.");
+      setError("Could not send the message. Please try again.");
       return;
     }
     setDraft("");
@@ -89,7 +89,7 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
     setBusy(false);
     setConfirmHideId(null);
     if (res.status !== 200) {
-      setError("הסתרת ההודעה נכשלה.");
+      setError("Could not hide the message.");
       return;
     }
     await load();
@@ -101,23 +101,23 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
   return (
     <section
       className="rounded-xl border border-white/15 bg-black/30 p-4 md:p-5 mb-6"
-      dir="rtl"
-      lang="he"
+      dir="ltr"
+      lang="en"
       data-testid="teacher-parent-message-panel"
     >
-      <h2 className="text-lg font-semibold mb-3">הודעה להורה</h2>
+      <h2 className="text-lg font-semibold mb-3">Message to parent</h2>
       <p className="text-sm text-white/60 mb-4">
-        ההודעה תופיע בדוח ההורה - כולל גישה עם קוד מהמורה.
+        This message will appear on the parent report — including teacher-code access.
       </p>
 
       <form onSubmit={onSubmit} className="space-y-3 mb-5">
         <label className="block text-sm">
-          <span className="sr-only">הודעה להורה</span>
+          <span className="sr-only">Message to parent</span>
           <textarea
             className="w-full min-h-[96px] rounded-lg bg-black/40 border border-white/20 px-3 py-2 text-sm resize-y"
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
-            placeholder="כתבו הודעה קצרה להורה..."
+            placeholder="Write a short message to the parent..."
             maxLength={2000}
             disabled={busy}
           />
@@ -127,7 +127,7 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
           disabled={busy || !draft.trim()}
           className="rounded bg-amber-500 text-black font-semibold px-4 py-2 text-sm disabled:opacity-60"
         >
-          {busy ? "שולח…" : "שליחת הודעה להורה"}
+          {busy ? "Sending…" : "Send message to parent"}
         </button>
       </form>
 
@@ -137,10 +137,10 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
         </p>
       ) : null}
 
-      <h3 className="text-sm font-semibold text-white/80 mb-2">הודעות קודמות</h3>
-      {loading ? <p className="text-sm text-white/50">טוען…</p> : null}
+      <h3 className="text-sm font-semibold text-white/80 mb-2">Previous messages</h3>
+      {loading ? <p className="text-sm text-white/50">Loading…</p> : null}
       {!loading && visibleHistory.length === 0 && hiddenHistory.length === 0 ? (
-        <p className="text-sm text-white/50">עדיין לא נשלחו הודעות.</p>
+        <p className="text-sm text-white/50">No messages sent yet.</p>
       ) : null}
 
       <ul className="space-y-3 m-0 p-0 list-none">
@@ -159,14 +159,14 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
                     onClick={() => onHide(msg.id)}
                     disabled={busy}
                   >
-                    אישור הסתרה
+                    Confirm hide
                   </button>
                   <button
                     type="button"
                     className="text-white/60 underline"
                     onClick={() => setConfirmHideId(null)}
                   >
-                    ביטול
+                    Cancel
                   </button>
                 </div>
               ) : (
@@ -176,7 +176,7 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
                   onClick={() => setConfirmHideId(msg.id)}
                   disabled={busy}
                 >
-                  הסתר מהורה
+                  Hide from parent
                 </button>
               )}
             </div>
@@ -189,7 +189,7 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
 
       {hiddenHistory.length > 0 ? (
         <div className="mt-4 pt-3 border-t border-white/10">
-          <p className="text-xs text-white/45 mb-2">הודעות מוסתרות ({hiddenHistory.length})</p>
+          <p className="text-xs text-white/45 mb-2">Hidden messages ({hiddenHistory.length})</p>
           <ul className="space-y-2 m-0 p-0 list-none">
             {hiddenHistory.map((msg) => (
               <li key={msg.id} className="text-xs text-white/40 line-through break-words">

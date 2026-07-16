@@ -11,7 +11,7 @@ import {
   SC_PIN_GATE_FIELD_NEW,
   SC_PIN_GATE_HEADING,
   SC_PIN_GATE_SUCCESS,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 
 export default function ParentMustChangePinGate({ onSuccess }) {
   const [currentPin, setCurrentPin] = useState("");
@@ -71,7 +71,7 @@ export default function ParentMustChangePinGate({ onSuccess }) {
   }
 
   return (
-    <div className="max-w-md mx-auto rounded-xl border border-amber-500/30 bg-black/40 p-6 text-right" dir="rtl">
+    <div className="max-w-md mx-auto rounded-xl border border-amber-500/30 bg-black/40 p-6 text-left" dir="ltr" lang="en">
       <h2 className="text-xl font-bold mb-2">{SC_PIN_GATE_HEADING}</h2>
       <p className="text-sm text-white/70 mb-4">{SC_PIN_GATE_EXPLANATION}</p>
       <form onSubmit={submit} className="space-y-4">

@@ -36,21 +36,21 @@ function acceptanceHookHe(family, truthPacket) {
   const f = String(family || "").trim();
   const base =
     f === "avoid_now"
-      ? "מה כדאי להימנע ממנו בשבוע הקרוב"
+      ? "What should you avoid in the coming week?"
       : f === "advance_or_hold"
-        ? "מתי כדאי לקדם ומתי לעצור"
+        ? "When should you promote and when should you stop?"
         : f === "explain_to_child"
-          ? "ניסוח קצר להסבר לילד"
+          ? "A short formulation to explain to the child"
           : f === "ask_teacher"
-            ? "שאלה ממוקדת למורה"
+            ? "A question aimed at the teacher"
             : f === "uncertainty_boundary"
-              ? "מה עדיין לא ברור לפי הדוח"
-              : "ההמשך שהוצע";
+              ? "What is still not clear according to the report"
+              : "The proposed sequel";
   const scopeTail =
     String(truthPacket.scopeType || "") === "subject" && String(truthPacket.scopeLabel || "").trim()
-      ? ` (במסגרת ${String(truthPacket.scopeLabel).trim()})`
+      ? `(in the framework of ${String(truthPacket.scopeLabel).trim()})`
       : "";
-  return `ממשיכים לפי ההצעה שבחרתם - ${base}${scopeTail}: `;
+  return `Continue according to the offer you chose - ${base}${scopeTail}:`;
 }
 
 /**
@@ -145,7 +145,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
   if (!scopeType || !scopeId) return null;
 
   const scopeLabel =
-    String(conv.lastScopeLabelHe || "").trim() || (scopeType === "executive" ? "הדוח בתקופה הנבחרה" : "נושא");
+    String(conv.lastScopeLabelHe || "").trim() || (scopeType === "executive" ? "the report for the selected period" : "Topic");
 
   const scope = {
     scopeType,
@@ -182,7 +182,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
             {
               type: "observation",
               textHe:
-                "לפי מה שבדוח כרגע - אין עדיין בסיס חזק מספיק לצעד גדול; עדיף צעד זעיר מאוד אחרי עוד תרגול, או המתנה קצרה.",
+                "According to what is in the report at the moment - there is not yet a strong enough basis for a big step; Better a very tiny step after more practice, or a short wait.",
               source: "composed",
             },
             { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
@@ -191,7 +191,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           answerBlocks = [
             {
               type: "observation",
-              textHe: "מצוין - מתחילים בצעד קטן שמתאים למה שמופיע בדוח, בלי להרחיב מעבר לניסוח הזה.",
+              textHe: "Excellent - start with a small step that corresponds to what appears in the report, without expanding beyond this wording.",
               source: "composed",
             },
           ];
@@ -224,7 +224,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           );
           const hook = acceptanceHookHe(fam, truthPacket);
           const oix = answerBlocks.findIndex((b) => b.type === "observation" && String(b.textHe || "").trim());
-          if (oix >= 0 && hook && !String(answerBlocks[oix].textHe || "").includes("מבצעים את ההמשך")) {
+          if (oix >= 0 && hook && !String(answerBlocks[oix].textHe || "").includes("Carry out the continuation")) {
             answerBlocks[oix] = {
               ...answerBlocks[oix],
               textHe: `${hook}${String(answerBlocks[oix].textHe || "").trim()}`,
@@ -235,7 +235,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           answerBlocks = [
             {
               type: "observation",
-              textHe: "מובן - נשארים עם אותו ניסוח מהדוח ומתקדמים בצעד קטן הבא כשמתאים.",
+              textHe: "Understandable - we stay with the same wording from the report and move forward with the next small step when appropriate.",
               source: "composed",
             },
             { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
@@ -248,7 +248,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe: "בסדר - לא חייבים לקדם עכשיו. נשארים עם מה שהדוח מציג, בלי לחץ להחלטה מיידית.",
+          textHe: "OK - you don't have to promote now. Stay with what the report shows, without pressure to make an immediate decision.",
           source: "composed",
         },
         { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
@@ -262,8 +262,8 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           type: "observation",
           textHe:
             dl.cannotConcludeYet || dl.confidenceBand === "low"
-              ? "זה לא בהכרח \"לא טוב\" - זה בעיקר סימן שהדוח עדיין לא סוגר מספיק כדי לתייג מצב בצורה חדה."
-              : "לפי מה שמופיע בדוח, אין כאן אות ל\"לא טוב\" גורף - עדיין מדובר בתמונה בתוך התקופה.",
+              ? "It's not necessarily \"bad\" - it's mostly a sign that the report isn't yet close enough to label a situation sharply."
+              : "According to what appears in the report, there is no sign of a blanket \"bad\" here - it is still a picture within the period.",
           source: "composed",
         },
         { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
@@ -275,7 +275,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe: obs ? `במילים פשוטות: ${obs.slice(0, 420)}` : "אין כאן פסקה ארוכה להרחבה - אפשר לנסח במילה אחרת מה בדיוק לא ברור.",
+          textHe: obs ? `Simply put: ${obs.slice(0, 420)}` : "There is no long paragraph here for elaboration - you can put in another word what exactly is not clear.",
           source: "composed",
         },
       ];
@@ -285,12 +285,12 @@ export function tryBuildParentShortFollowupDraft(ctx) {
     case "clarify_previous": {
       plannerIntent = "clarify_term";
       const digest = String(conv.lastAssistantAnswerDigestHe || "").trim();
-      const scopeBit = scopeLabel ? `בהקשר של ${scopeLabel}` : "באותו הקשר";
-      const tail = digest ? ` סיכום קצר של מה שהוצג: ${digest.slice(0, 220)}${digest.length > 220 ? "…" : ""}` : "";
+      const scopeBit = scopeLabel ? `in the context of ${scopeLabel}` : "in the same context";
+      const tail = digest ? `A brief summary of what was presented: ${digest.slice(0, 220)}${digest.length > 220 ? "…" : ""}` : "";
       answerBlocks = [
         {
           type: "observation",
-          textHe: `נשארים על אותו ניסוח מהדוח ${scopeBit}, בלי להוסיף עובדה חדשה מעבר למה שכבר מופיע בדוח.${tail}`,
+          textHe: `We remain on the same wording from the ${scopeBit} report, without adding a new fact beyond what already appears in the report. ${tail}`,
           source: "composed",
         },
       ];
@@ -303,8 +303,8 @@ export function tryBuildParentShortFollowupDraft(ctx) {
         {
           type: "observation",
           textHe: obs
-            ? `ממשיכים מאותה נקודה של הדוח - נשארים באותה תמונה בלי להוסיף נושא חדש: ${obs.slice(0, 360)}`
-            : "ממשיכים מאותה נקודה של הדוח - נשארים באותה תמונה בלי להוסיף נושא חדש מעבר למה שכבר הוצג.",
+            ? `Continuing from the same point of the report - staying in the same picture without adding a new topic: ${obs.slice(0, 360)}`
+            : "Continuing from the same point of the report - staying in the same picture without adding a new subject beyond what has already been presented.",
           source: "composed",
         },
       ];

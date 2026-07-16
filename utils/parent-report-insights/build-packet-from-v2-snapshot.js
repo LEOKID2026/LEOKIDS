@@ -341,7 +341,7 @@ export function buildInsightPacketFromV2Snapshot(report, options = {}) {
       packet.mixedGradePracticeNoteHe =
         typeof report?.gradePracticeMeta?.mixedGradePracticeNoteHe === "string"
           ? report.gradePracticeMeta.mixedGradePracticeNoteHe
-          : "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד.";
+          : "Some practice was done at a different grade than the registered grade, so it is shown separately.";
     }
   }
   return packet;

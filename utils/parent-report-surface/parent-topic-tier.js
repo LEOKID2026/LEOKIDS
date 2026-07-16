@@ -18,25 +18,25 @@ export const PARENT_TOPIC_TIER = Object.freeze({
 });
 
 const TIER_LABEL_HE = Object.freeze({
-  strong: "נראה חזק",
-  monitor: "כדאי לעקוב",
-  strengthen: "כדאי לחזק",
-  needs_guidance: "כדאי ללוות",
-  clear_gap: "דורש חיזוק",
-  low_evidence: "מעט שאלות",
-  advanced_practice: "מעל רמת הכיתה",
-  foundation_practice: "יסודות קודמים",
+  strong: "Looks strong",
+  monitor: "Worth watching",
+  strengthen: "Worth strengthening",
+  needs_guidance: "Worth guiding",
+  clear_gap: "Needs strengthening",
+  low_evidence: "Few questions",
+  advanced_practice: "Above grade level",
+  foundation_practice: "Earlier foundations",
 });
 
 const TIER_SECTION_TITLE_HE = Object.freeze({
-  strong: "נושאים חזקים",
-  monitor: "נושאים שכדאי לעקוב אחריהם",
-  strengthen: "נושאים שכדאי לחזק",
-  needs_guidance: "נושאים שכדאי ללוות בתרגול",
-  clear_gap: "נושאים שכדאי לחזק",
-  low_evidence: "נושאים עם מעט שאלות",
-  advanced_practice: "תרגול מעל רמת הכיתה",
-  foundation_practice: "תרגול יסודות קודמים",
+  strong: "Strong topics",
+  monitor: "Topics worth watching",
+  strengthen: "Topics worth strengthening",
+  needs_guidance: "Topics worth guiding in practice",
+  clear_gap: "Topics worth strengthening",
+  low_evidence: "Topics with few questions",
+  advanced_practice: "Practice above grade level",
+  foundation_practice: "Earlier foundation practice",
 });
 
 const TIER_PLACEMENT_KIND = Object.freeze({
@@ -150,12 +150,12 @@ export function parentTopicTierFromUnit(u, mapRow) {
 
 /** @param {ParentTopicTier} tier */
 export function parentTopicTierLabelHe(tier) {
-  return TIER_LABEL_HE[String(tier || "")] || "במעקב";
+  return TIER_LABEL_HE[String(tier || "")] || "In review";
 }
 
 /** @param {ParentTopicTier} tier */
 export function parentTopicTierSectionTitleHe(tier) {
-  return TIER_SECTION_TITLE_HE[String(tier || "")] || "נושאים";
+  return TIER_SECTION_TITLE_HE[String(tier || "")] || "Topics";
 }
 
 /** @param {ParentTopicTier} tier */

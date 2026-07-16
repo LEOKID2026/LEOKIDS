@@ -25,7 +25,7 @@ function studentReportButton(onStudentReport, studentReportLoading) {
       className="shrink-0 rounded-lg bg-amber-500 text-black text-xs font-semibold px-3 py-1.5 disabled:opacity-50"
       data-testid={item.studentId ? `report-open-student-${item.studentId}` : undefined}
     >
-      {studentReportLoading ? "טוען…" : "דוח ילד/ה"}
+      {studentReportLoading ? "Loading…" : "Child report"}
     </button>
   );
 }
@@ -38,7 +38,7 @@ export default function ReportHubModal({
   title,
   onClose,
   loading = false,
-  loadingLabel = "טוען דוח…",
+  loadingLabel = "Loading report…",
   error = "",
   viewModel = null,
   onStudentReport,
@@ -65,7 +65,7 @@ export default function ReportHubModal({
   const displayTitle = viewModel?.header?.title || title;
   const detailSection = detailId && viewModel?.sections?.[detailId];
   const detailNavItem = viewModel?.navigation?.find((n) => n.id === detailId);
-  const detailTitle = detailSection?.title || detailNavItem?.label || "פירוט";
+  const detailTitle = detailSection?.title || detailNavItem?.label || "Details";
 
   const drilldownSection = useMemo(() => {
     if (!drilldownKey || !detailId || !viewModel?.drilldowns) return null;
@@ -80,7 +80,7 @@ export default function ReportHubModal({
     (n) => n.id === studentDetailId
   );
   const studentDetailTitle =
-    studentDetailSection?.title || studentDetailNav?.label || "פירוט ילד/ה";
+    studentDetailSection?.title || studentDetailNav?.label || "Child details";
 
   const detailVariant = useMemo(
     () => DETAIL_VARIANT[detailId] || "default",
@@ -136,7 +136,7 @@ export default function ReportHubModal({
         title={displayTitle}
         subtitle={title}
         onClose={handleCloseAll}
-        closeLabel="סגירה"
+        closeLabel="Close"
         zIndex={100 + z}
         scrollAreaClassName={scrollAreaClassName}
         testId="report-hub-main"
@@ -178,7 +178,7 @@ export default function ReportHubModal({
 
       <ReportModalFrame
         open={drilldownOpen}
-        title={drilldownSection?.title || "פירוט"}
+        title={drilldownSection?.title || "Details"}
         subtitle={detailTitle}
         onClose={handleCloseAll}
         onBack={handleBackFromDrilldown}
@@ -192,7 +192,7 @@ export default function ReportHubModal({
         <ReportDetailSectionView
           section={{
             title: drilldownSection?.title,
-            empty: "אין ילדים בקבוצה זו.",
+            empty: "No children in this group.",
             items: drilldownSection?.items || [],
           }}
           variant="students"
@@ -205,7 +205,7 @@ export default function ReportHubModal({
 
       <ReportModalFrame
         open={studentMainOpen}
-        title={nestedStudentViewModel?.header?.title || "דוח ילד/ה"}
+        title={nestedStudentViewModel?.header?.title || "Child report"}
         subtitle={displayTitle}
         onClose={handleCloseAll}
         onBack={handleBackFromStudentMain}
@@ -215,7 +215,7 @@ export default function ReportHubModal({
       >
         {rangeControl}
         {studentReportLoading ? (
-          <p className="text-white/60 text-sm py-6 text-center">טוען דוח ילד/ה…</p>
+          <p className="text-white/60 text-sm py-6 text-center">Loading child report…</p>
         ) : (
           <ReportHubSummary
             viewModel={nestedStudentViewModel}
@@ -227,7 +227,7 @@ export default function ReportHubModal({
       <ReportModalFrame
         open={Boolean(open && nestedStudentViewModel && studentDetailId && studentDetailSection)}
         title={studentDetailTitle}
-        subtitle={nestedStudentViewModel?.header?.title || "דוח ילד/ה"}
+        subtitle={nestedStudentViewModel?.header?.title || "Child report"}
         onClose={handleCloseAll}
         onBack={handleBackFromStudentDetail}
         zIndex={130 + z}

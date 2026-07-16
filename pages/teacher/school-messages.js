@@ -10,7 +10,7 @@ import {
   SC_MESSAGE_FROM_SCHOOL_ADMIN,
   SC_TEACHER_INBOX_EMPTY,
   SC_TEACHER_INBOX_TITLE,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import { getSchoolMessageId } from "../../lib/school-portal/school-messaging-ui";
 
 async function teacherFetch(path, accessToken, init = {}) {
@@ -110,7 +110,7 @@ export default function TeacherSchoolMessagesPage() {
         schoolMessageUnreadCount={unreadCount}
       >
         {loading ? (
-          <p className="text-white/50 text-sm">טוען…</p>
+          <p className="text-white/50 text-sm">Loading…</p>
         ) : messages.length ? (
           <ul className="space-y-3">
             {messages.map((m) => {

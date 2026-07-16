@@ -6,7 +6,7 @@ import PortalLoadingPanel from "./PortalLoadingPanel.jsx";
  * @param {{ message?: string, fullPage?: boolean, reportPage?: boolean, hubGrid?: boolean, className?: string }} props
  */
 export default function StudentLoadingPanel({
-  message = "טוען…",
+  message = "Loading…",
   fullPage = false,
   reportPage = false,
   hubGrid = false,

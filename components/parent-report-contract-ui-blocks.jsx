@@ -14,14 +14,14 @@ function row(label, value) {
 export function ParentTopContractSummaryBlock({ top }) {
   if (!top || typeof top !== "object") return null;
   const items = [
-    row("מצב", top.mainStatusHe),
-    row("מה חשוב קודם", top.mainPriorityHe),
-    row("מה עושים עכשיו", top.doNowHe),
-    row("למה", top.whyHe),
-    row("מה לא לעשות כרגע", top.avoidNowHe),
-    row("כמה אפשר לסמוך על זה", top.confidenceHe),
-    row("על מה זה נשען", top.evidenceSummaryHe),
-    row("בדיקה הבאה", top.nextCheckHe),
+    row("Status", top.mainStatusHe),
+    row("What matters first", top.mainPriorityHe),
+    row("What to do now", top.doNowHe),
+    row("Why", top.whyHe),
+    row("What not to do right now", top.avoidNowHe),
+    row("How much we can trust this", top.confidenceHe),
+    row("What this is based on", top.evidenceSummaryHe),
+    row("Next check", top.nextCheckHe),
   ].filter(Boolean);
   if (!items.length) return null;
   return (
@@ -45,11 +45,11 @@ export function ParentSubjectContractSummaryBlock({
   const subjectDoNowNorm = String(contractRow.doNowHe || "").trim();
   const doNow = topDoNowNorm && subjectDoNowNorm === topDoNowNorm ? "" : subjectDoNowNorm;
   const items = [
-    row("סיכום להורה", contractRow.mainStatusHe),
-    row("מה הכי חשוב כאן", mainPriority),
-    row("מה עושים עכשיו", doNow),
-    row("מה לא לעשות כרגע", contractRow.avoidNowHe),
-    row("כמה אפשר לסמוך על זה", contractRow.confidenceHe),
+    row("Parent summary", contractRow.mainStatusHe),
+    row("What matters most here", mainPriority),
+    row("What to do now", doNow),
+    row("What not to do right now", contractRow.avoidNowHe),
+    row("How much we can trust this", contractRow.confidenceHe),
   ].filter(Boolean);
   if (!items.length) return null;
   return (

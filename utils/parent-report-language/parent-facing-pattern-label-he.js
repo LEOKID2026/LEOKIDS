@@ -5,18 +5,18 @@
 
 import { mathReportBaseOperationKey } from "../math-report-generator.js";
 import { rewriteEngineTaxonomySnippetForParentHe } from "../diagnostic-labels-he.js";
-import { normalizeParentFacingHe } from "./parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "./parent-facing-normalize.js";
 
 /** Engine-internal M-10 patternHe — must not appear parent-facing. */
 export const M10_ENGINE_PATTERN_HE = "בחירת כפל לא מתאים לחילוק";
 
 export const M10_PARENT_PATTERN_LABELS = {
   divisionBuckets:
-    "לפי השאלות שתורגלו בתקופה שנבחרה, כדאי להמשיך לתרגל חילוק ולחזק את הקשר לכפל.",
+    "Based on the questions practiced in the selected period, it's worth continuing to practice division and reinforcing the connection to multiplication.",
   multiplication:
-    "לפי השאלות שתורגלו בתקופה שנבחרה, כדאי להמשיך לתרגל את הקשר ההפוך בין כפל לחילוק.",
+    "Based on the questions practiced in the selected period, it's worth continuing to practice the inverse relationship between multiplication and division.",
   thinFallback:
-    "לפי השאלות שתורגלו בתקופה שנבחרה, כדאי להמשיך לתרגל חילוק ולחזק את הקשר לכפל.",
+    "Based on the questions practiced in the selected period, it's worth continuing to practice division and reinforcing the connection to multiplication.",
 };
 
 /**

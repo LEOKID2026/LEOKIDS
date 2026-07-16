@@ -6,28 +6,26 @@ import { isUsableParentPatternLabel, isBlockedParentPatternLabel, sanitizeParent
 
 /** @type {readonly string[]} */
 export const FORBIDDEN_PARENT_WORDS = Object.freeze([
-  "אבחון",
-  "אובחן",
-  "אבחנה",
-  "אזהרה",
-  "אזהרה חמורה",
-  "בעיה חמורה",
-  "הילד לא יודע",
-  "פער קבוע",
-  "מקור הקושי בוודאות",
-  "בעיה קבועה",
+  "diagnosis",
+  "diagnosed",
+  "diagnostic",
+  "warning",
+  "severe warning",
+  "serious problem",
+  "the child does not know",
+  "permanent gap",
+  "the source of the difficulty for certain",
+  "permanent problem",
   "alert",
   "urgent",
   "critical",
-  "diagnosis",
-  "diagnostic",
   "cold probe",
   "unknown",
-  "נספרו לדוח",
-  "דוח הלימודי",
+  "counted in the report",
+  "the learning report",
   "internal",
-  "אין תמונה מספיק",
-  "מעט נתונים",
+  "not enough of a picture",
+  "limited data",
 ]);
 
 /**
@@ -40,7 +38,7 @@ export function findForbiddenParentWords(text) {
   for (const w of FORBIDDEN_PARENT_WORDS) {
     if (s.includes(String(w).toLowerCase())) hits.push(w);
   }
-  if (/בתרגול האחרון/i.test(text)) hits.push("בתרגול האחרון");
+  if (/in the last practice session/i.test(text)) hits.push("in the last practice session");
   return hits;
 }
 
@@ -54,8 +52,8 @@ function difficultyVolumePhrase(wrongCount, questionCount, accuracy) {
   const q = Math.max(0, Number(questionCount) || 0);
   const acc = Number(accuracy) || 0;
   const ratio = q > 0 ? w / q : 0;
-  if (ratio >= 0.5 || acc <= 40) return "הרבה טעויות";
-  return "כמה טעויות";
+  if (ratio >= 0.5 || acc <= 40) return "many mistakes";
+  return "some mistakes";
 }
 
 /**
@@ -67,8 +65,8 @@ function difficultyActionPhrase(wrongCount, questionCount, accuracy) {
   const w = Math.max(0, Number(wrongCount) || 0);
   const q = Math.max(0, Number(questionCount) || 0);
   const acc = Number(accuracy) || 0;
-  if (q >= 5 && (acc < 55 || w >= Math.ceil(q * 0.4))) return "לחזור ולחזק";
-  return "לחזור ולתרגל";
+  if (q >= 5 && (acc < 55 || w >= Math.ceil(q * 0.4))) return "go back and reinforce";
+  return "go back and practice";
 }
 
 /**
@@ -99,11 +97,11 @@ export function buildParentVisibleFinding({
   const q = Math.max(0, Number(questionCount) || 0);
   const w = Math.max(0, Number(wrongCount) || 0);
   const acc = Number(accuracy) || 0;
-  const name = String(topicName || "הנושא").trim() || "הנושא";
+  const name = String(topicName || "this topic").trim() || "this topic";
   const rawPatternLabel = String(repeatedMistakePatterns[0]?.label || "").trim();
   const patternLabel = sanitizeParentPatternLabel(repeatedMistakePatterns[0]?.label);
   const contextSuffix =
-    q > 0 ? ` מבוסס על ${q} שאלות שנפתרו בנושא.` : "";
+    q > 0 ? ` Based on ${q} questions solved in this topic.` : "";
 
   /** @type {"no_parent_text"|"factual_observation"|"pattern_observed"|"repeated_pattern"|"strong_pattern"} */
   let parentWordingLevel = "no_parent_text";
@@ -123,8 +121,8 @@ export function buildParentVisibleFinding({
     parentWordingLevel = "factual_observation";
     parentVisibleFinding =
       q === 1
-        ? `בנושא ${name} יש נתונים ראשוניים בלבד. ככל שיהיו עוד שאלות בנושא, נוכל להציג תמונה מדויקת יותר.`
-        : `בנושא ${name} נפתרו ${q} שאלות. עדיין מוקדם לזהות דפוס ברור בנושא.`;
+        ? `In ${name}, there is only early data so far. As more questions are solved in this topic, we can show a clearer picture.`
+        : `In ${name}, ${q} questions were solved. It is still too early to spot a clear pattern in this topic.`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
@@ -134,7 +132,7 @@ export function buildParentVisibleFinding({
   if (q34Factual) {
     templateId = "q3_4_factual";
     parentWordingLevel = "factual_observation";
-    parentVisibleFinding = `בנושא ${name}, מבוסס על ${q} שאלות שנפתרו בנושא, נראה דפוס מוקדם של טעויות.`;
+    parentVisibleFinding = `In ${name}, based on ${q} questions solved in this topic, an early pattern of mistakes is showing.`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
@@ -142,11 +140,11 @@ export function buildParentVisibleFinding({
     templateId = "competitive_bucket_only";
     parentWordingLevel = "factual_observation";
     const brief = topicStatus.includes("positive")
-      ? "נראית הצלחה"
+      ? "success is showing"
       : topicStatus.includes("difficulty")
-        ? "נראה קושי"
-        : "נראה דפוס";
-    parentVisibleFinding = `בנושא ${name}, בהקשר תחרותי/מהירות, ${brief}.${contextSuffix}`;
+        ? "difficulty is showing"
+        : "a pattern is showing";
+    parentVisibleFinding = `In ${name}, in a competitive/speed setting, ${brief}.${contextSuffix}`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
@@ -154,26 +152,26 @@ export function buildParentVisibleFinding({
     templateId = "mixed";
     parentWordingLevel = "pattern_observed";
     parentVisibleFinding =
-      `בנושא ${name} יש גם הצלחות וגם נקודות שכדאי לחזק. ` +
-      `כדאי לחזק חלקים שדורשים תשומת לב, ובמקביל להמשיך לחזק את מה שכבר עובד.${contextSuffix}`;
+      `In ${name}, there are both successes and areas worth reinforcing. ` +
+      `It helps to strengthen the parts that need attention, while continuing to build on what already works.${contextSuffix}`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
   if (topicStatus === "difficulty_repeated" && canUseRepeatedWording) {
     if (isBlockedParentPatternLabel(rawPatternLabel)) {
-      // Fall through to difficulty_observed — no "דפוס חוזר" for unknown/missing labels.
+      // Fall through to difficulty_observed — no "recurring pattern" for unknown/missing labels.
     } else if (isUsableParentPatternLabel(patternLabel)) {
       templateId = "difficulty_repeated";
       parentWordingLevel =
         evidenceStrength === "strong" ? "strong_pattern" : "repeated_pattern";
       parentVisibleFinding =
-        `בנושא ${name} מופיע דפוס חוזר של טעויות (${patternLabel}). כדאי לחזק את הנושא.${contextSuffix}`;
+        `In ${name}, a recurring pattern of mistakes appears (${patternLabel}). It helps to reinforce this topic.${contextSuffix}`;
       return { parentVisibleFinding, parentWordingLevel, templateId };
     } else {
       templateId = "difficulty_repeated_generic";
       parentWordingLevel = "repeated_pattern";
       parentVisibleFinding =
-        `בנושא ${name} מופיע דפוס חוזר של טעויות. כדאי לחזק את הנושא.${contextSuffix}`;
+        `In ${name}, a recurring pattern of mistakes appears. It helps to reinforce this topic.${contextSuffix}`;
       return { parentVisibleFinding, parentWordingLevel, templateId };
     }
   }
@@ -191,7 +189,7 @@ export function buildParentVisibleFinding({
       : "difficulty_observed";
     parentWordingLevel = q >= 5 ? "pattern_observed" : "factual_observation";
     parentVisibleFinding =
-      `בנושא ${name} ${volume === "הרבה טעויות" ? "היו הרבה טעויות" : "היו כמה טעויות"} בשאלות שנפתרו. כדאי ${action} את הנושא.${contextSuffix}`;
+      `In ${name}, there ${volume === "many mistakes" ? "were many mistakes" : "were some mistakes"} on the questions solved. It helps to ${action} this topic.${contextSuffix}`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
@@ -200,7 +198,7 @@ export function buildParentVisibleFinding({
     parentWordingLevel =
       evidenceStrength === "strong" ? "strong_pattern" : "pattern_observed";
     parentVisibleFinding =
-      `בנושא ${name} נראית הצלחה טובה ועקבית בשאלות שנפתרו.${contextSuffix}`;
+      `In ${name}, consistent strong success shows on the questions solved.${contextSuffix}`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
@@ -209,7 +207,7 @@ export function buildParentVisibleFinding({
     parentWordingLevel =
       q >= 8 ? "pattern_observed" : "factual_observation";
     parentVisibleFinding =
-      `בנושא ${name} נראית הצלחה טובה בשאלות שנפתרו.${contextSuffix}`;
+      `In ${name}, strong success shows on the questions solved.${contextSuffix}`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 
@@ -220,7 +218,7 @@ export function buildParentVisibleFinding({
       templateId = "no_clear_pattern_difficulty_fallback";
       parentWordingLevel = "pattern_observed";
       parentVisibleFinding =
-        `בנושא ${name} ${volume === "הרבה טעויות" ? "היו הרבה טעויות" : "היו כמה טעויות"} בשאלות שנפתרו. כדאי ${action} את הנושא.${contextSuffix}`;
+        `In ${name}, there ${volume === "many mistakes" ? "were many mistakes" : "were some mistakes"} on the questions solved. It helps to ${action} this topic.${contextSuffix}`;
       return { parentVisibleFinding, parentWordingLevel, templateId };
     }
     templateId = "no_clear_pattern";
@@ -235,7 +233,7 @@ export function buildParentVisibleFinding({
     templateId = "difficulty_observed_fallback";
     parentWordingLevel = "pattern_observed";
     parentVisibleFinding =
-      `בנושא ${name} ${volume === "הרבה טעויות" ? "היו הרבה טעויות" : "היו כמה טעויות"} בשאלות שנפתרו. כדאי ${action} את הנושא.${contextSuffix}`;
+      `In ${name}, there ${volume === "many mistakes" ? "were many mistakes" : "were some mistakes"} on the questions solved. It helps to ${action} this topic.${contextSuffix}`;
     return { parentVisibleFinding, parentWordingLevel, templateId };
   }
 

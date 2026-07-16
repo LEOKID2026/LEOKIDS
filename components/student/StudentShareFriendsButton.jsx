@@ -6,7 +6,7 @@ import {
   COPY_INVITE_ERROR_MESSAGE_HE,
   COPY_INVITE_SUCCESS_MESSAGE_HE,
   copyTextToClipboard,
-} from "../../lib/ui/copy-confirm-message.he.js";
+} from "../../lib/ui/copy-confirm-message.js";
 
 const MOBILE_BTN_BRIGHT =
   "inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 px-2.5 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-teal-600 hover:to-cyan-700";
@@ -27,7 +27,7 @@ const CHIP_BTN_CLASSIC =
 export default function StudentShareFriendsButton({
   className = "",
   variant = "mobile",
-  label = "שתף עם חברים",
+  label = "Share with friends",
 }) {
   const { tokens: T, isBright } = useStudentTheme();
   const [popupOpen, setPopupOpen] = useState(false);

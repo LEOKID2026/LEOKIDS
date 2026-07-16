@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
-import { REPORT_SUBJECTS, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../lib/classroom-activities/generate-activity-questions-client.js";
 import {
@@ -19,7 +19,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [subject, setSubject] = useState("math");
-  const [topic, setTopic] = useState("חיבור");
+  const [topic, setTopic] = useState("Addition");
   const [mode, setMode] = useState("homework");
   const [displayLevel, setDisplayLevel] = useState("regular");
   const [questionCount, setQuestionCount] = useState(5);
@@ -63,7 +63,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       });
       setPreview(qs);
     } catch (e) {
-      setError(e?.message || "יצירת תצוגה מקדימה נכשלה");
+      setError(e?.message || "Could not create question preview");
       setPreview([]);
     } finally {
       setBusy(false);
@@ -72,15 +72,15 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
 
   const createDraft = async () => {
     if (!title.trim()) {
-      setError("נא למלא כותרת");
+      setError("Please enter a title");
       return;
     }
     if (!preview.length) {
-      setError("נא ליצור תצוגה מקדימה של שאלות לפני שמירה");
+      setError("Please preview the questions before saving");
       return;
     }
     if (mode === "quiz" && !timeLimitSeconds) {
-      setError("במצב בוחן יש להגדיר מגבלת זמן בשניות");
+      setError("Quiz mode requires a time limit in seconds");
       return;
     }
     setBusy(true);
@@ -106,7 +106,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "יצירת הפעילות נכשלה");
+        setError(json?.error?.message || json?.error?.code || "Could not create the activity");
         return;
       }
       const activityId = json?.data?.activityId;
@@ -122,7 +122,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       setPreview([]);
       await load();
     } catch {
-      setError("אירעה שגיאת רשת");
+      setError("A network error occurred");
     } finally {
       setBusy(false);
     }
@@ -139,12 +139,12 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "עדכון הפעילות נכשל");
+        setError(json?.error?.message || json?.error?.code || "Could not update the activity");
         return;
       }
       await load();
     } catch {
-      setError("אירעה שגיאת רשת");
+      setError("A network error occurred");
     } finally {
       setBusy(false);
     }
@@ -158,13 +158,13 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       data-testid="teacher-student-individual-activities"
     >
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-        <h2 className="text-lg font-semibold">פעילויות אישיות לילד/ה</h2>
+        <h2 className="text-lg font-semibold">Individual student activities</h2>
         <button
           type="button"
           onClick={() => setShowForm((v) => !v)}
           className="rounded-lg bg-violet-500/90 hover:bg-violet-400 text-black text-sm font-bold px-4 py-2"
         >
-          {showForm ? "ביטול" : "יצירת פעילות אישית לילד/ה"}
+          {showForm ? "Cancel" : "Create individual student activity"}
         </button>
       </div>
 
@@ -177,7 +177,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       {showForm ? (
         <div className="grid gap-3 md:grid-cols-2 mb-4 text-sm">
           <label className="block">
-            <span className="text-white/70">כותרת</span>
+            <span className="text-white/70">Title</span>
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={title}
@@ -186,7 +186,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
             />
           </label>
           <label className="block">
-            <span className="text-white/70">מקצוע</span>
+            <span className="text-white/70">Subject</span>
             <select
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={subject}
@@ -200,7 +200,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
             </select>
           </label>
           <label className="block">
-            <span className="text-white/70">נושא</span>
+            <span className="text-white/70">Topic</span>
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={topic}
@@ -208,7 +208,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
             />
           </label>
           <label className="block">
-            <span className="text-white/70">סוג פעילות</span>
+            <span className="text-white/70">Activity type</span>
             <select
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={mode}
@@ -229,11 +229,11 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
               setPreview([]);
             }}
             variant="select"
-            label="רמה"
+            label="Level"
             inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
           />
           <label className="block">
-            <span className="text-white/70">מספר שאלות</span>
+            <span className="text-white/70">Number of questions</span>
             <input
               type="number"
               min={1}
@@ -244,7 +244,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
             />
           </label>
           <label className="block">
-            <span className="text-white/70">מגבלת זמן (שניות, לבוחן)</span>
+            <span className="text-white/70">Time limit (seconds, for quizzes)</span>
             <input
               type="number"
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
@@ -259,7 +259,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
               onClick={() => void runPreview()}
               className="rounded-lg border border-white/25 px-4 py-2 hover:bg-white/10"
             >
-              {busy ? "מייצר…" : "תצוגה מקדימה של שאלות"}
+              {busy ? "Generating…" : "Preview questions"}
             </button>
             <button
               type="button"
@@ -267,19 +267,19 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
               onClick={() => void createDraft()}
               className="rounded-lg bg-violet-500 text-black font-bold px-4 py-2"
             >
-              שמירה והפעלה
+              Save and launch
             </button>
           </div>
           {preview.length > 0 ? (
             <p className="md:col-span-2 text-white/60 text-xs">
-              תצוגה מקדימה ({preview.length} שאלות)
+              Preview ({preview.length} questions)
             </p>
           ) : null}
         </div>
       ) : null}
 
       {loaded && activities.length === 0 && !showForm ? (
-        <p className="text-white/60 text-sm">אין עדיין פעילויות אישיות</p>
+        <p className="text-white/60 text-sm">No individual activities yet</p>
       ) : null}
 
       {activities.length > 0 ? (
@@ -310,7 +310,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
                     className="text-xs text-violet-300 hover:underline"
                     onClick={() => void patchStatus(a.activityId, "activate")}
                   >
-                    הפעלה
+                    Launch
                   </button>
                 ) : null}
                 {a.status === "active" ? (
@@ -320,7 +320,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
                     className="text-xs text-amber-300 hover:underline"
                     onClick={() => void patchStatus(a.activityId, "close")}
                   >
-                    סגירה
+                    Close
                   </button>
                 ) : null}
               </div>

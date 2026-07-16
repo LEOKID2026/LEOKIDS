@@ -36,7 +36,7 @@ export default function LearningHubSubjectCard({
       </div>
       <p className={T.hubCardBlurb}>{blurb}</p>
       {locked ? (
-        <p className="mt-2 text-xs font-semibold text-amber-200/90">נעול על ידי ההורים</p>
+        <p className="mt-2 text-xs font-semibold text-amber-200/90">Locked by parents</p>
       ) : null}
     </>
   );
@@ -46,7 +46,7 @@ export default function LearningHubSubjectCard({
       <div
         className={`${cardClass} opacity-90 cursor-not-allowed`}
         aria-disabled="true"
-        aria-label={`${title} - נעול על ידי ההורים`}
+        aria-label={`${title} - Locked by parents`}
       >
         {inner}
       </div>

@@ -72,11 +72,10 @@ export function updateDailyStreak(storageKey = "mleo_daily_streak") {
 }
 
 export function getStreakReward(streak) {
-  // תגמולים לפי רצף יומי
-  if (streak >= 30) return { emoji: "👑", message: "רצף של 30 ימים! אתה אלוף!" };
-  if (streak >= 14) return { emoji: "🌟", message: "רצף של 14 ימים! כל הכבוד!" };
-  if (streak >= 7) return { emoji: "⭐", message: "רצף של שבוע! יופי!" };
-  if (streak >= 3) return { emoji: "🔥", message: "רצף של 3 ימים! המשך כך!" };
+  if (streak >= 30) return { emoji: "👑", message: "30-day streak! You're a champion!" };
+  if (streak >= 14) return { emoji: "🌟", message: "14-day streak! Well done!" };
+  if (streak >= 7) return { emoji: "⭐", message: "One-week streak! Nice work!" };
+  if (streak >= 3) return { emoji: "🔥", message: "3-day streak! Keep it up!" };
   return null;
 }
 

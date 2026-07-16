@@ -209,13 +209,13 @@ export default function MemoryMatch() {
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
               >
-                חזרה
+                Back
               </button>
               {isSetupPhase ? <GameAudioSettingsButton /> : null}
             </div>
             <div className="absolute right-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
-                מקומי
+                Local
               </span>
             </div>
           </div>
@@ -233,10 +233,10 @@ export default function MemoryMatch() {
         >
           <div className="text-center mb-1">
             <h1 className="text-2xl font-extrabold text-white mb-0.5">
-              🧠 התאמת זיכרון
+              🧠 Memory Match
             </h1>
             <p className="text-white/70 text-xs">
-              {twoPlayers ? "2 שחקנים" : "שחקן יחיד"} • {formatTime(elapsed)}
+              {twoPlayers ? "2 Players" : "Single Player"} • {formatTime(elapsed)}
             </p>
           </div>
 
@@ -245,22 +245,22 @@ export default function MemoryMatch() {
             className="grid grid-cols-3 gap-1 mb-1 w-full max-w-md"
           >
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">זמן</div>
+              <div className="text-[10px] text-white/60">Time</div>
               <div className="text-sm font-bold text-emerald-400">
                 {formatTime(elapsed)}
               </div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">מהלכים</div>
+              <div className="text-[10px] text-white/60">Moves</div>
               <div className="text-sm font-bold text-amber-400">{moves}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
               <div className="text-[10px] text-white/60">
-                {twoPlayers ? "תור" : "זוגות"}
+                {twoPlayers ? "Turn" : "Pairs"}
               </div>
               <div className="text-sm font-bold text-purple-400">
                 {twoPlayers
-                  ? `שחקן ${currentPlayer + 1}`
+                  ? `Player ${currentPlayer + 1}`
                   : `${matched.length / 2}/${deck.length / 2}`}
               </div>
             </div>
@@ -277,13 +277,13 @@ export default function MemoryMatch() {
                 }}
                 className="w-5 h-5"
               />
-              2 שחקנים
+              2 Players
             </label>
             <button
               onClick={resetGame}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              ערבוב
+              Shuffle
             </button>
           </div>
 
@@ -296,7 +296,7 @@ export default function MemoryMatch() {
                     : "border-white/10"
                 }`}
               >
-                <div className="text-[10px] text-white/60">שחקן 1</div>
+                <div className="text-[10px] text-white/60">Player 1</div>
                 <div className="text-sm font-bold">{scores[0]}</div>
               </div>
               <div
@@ -306,7 +306,7 @@ export default function MemoryMatch() {
                     : "border-white/10"
                 }`}
               >
-                <div className="text-[10px] text-white/60">שחקן 2</div>
+                <div className="text-[10px] text-white/60">Player 2</div>
                 <div className="text-sm font-bold">{scores[1]}</div>
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function MemoryMatch() {
 
           {allMatched && (
             <div className="mb-1 px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-semibold">
-              🎉 כל הזוגות נמצאו!
+              🎉 All pairs found!
             </div>
           )}
 

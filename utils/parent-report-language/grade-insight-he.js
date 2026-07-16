@@ -14,9 +14,9 @@
 const EVIDENCE_SOURCE_PHRASE_HE = Object.freeze({
   // Parent-assigned provenance is internal only — never shown as a separate parent-report label.
   parent_assigned_activity: "",
-  self_practice: "בתרגול עצמאי",
-  learning_book: "לאחר עבודה בספר",
-  classroom_assigned_activity: "בפעילות מהכיתה",
+  self_practice: "in independent practice",
+  learning_book: "after working in the book",
+  classroom_assigned_activity: "in a classroom activity",
 });
 
 /**
@@ -63,27 +63,27 @@ export function gradeScopeMeaningHe(args) {
 
   if (scope === "prerequisite_foundation" || rel === "lower") {
     if (needsSupport) {
-      return "התרגול בוצע מתחת לכיתה הרשומה, ולכן קושי כאן עשוי להעיד על צורך בחיזוק היסודות בנושא לפני שמתקדמים לרמת הכיתה.";
+      return "This practice was done below the registered grade, so difficulty here may point to a need to reinforce the topic's foundations before moving on to grade-level work.";
     }
     if (isStrength) {
-      return "התרגול בוצע מתחת לכיתה הרשומה, וההצלחה כאן מעידה על בסיס יציב - אפשר להתקדם לתרגול ברמת הכיתה.";
+      return "This practice was done below the registered grade, and the success here points to a stable foundation - it's fine to move on to grade-level practice.";
     }
-    return "התרגול בוצע מתחת לכיתה הרשומה, כך שכדאי לקרוא את התוצאה כתמונת בסיס ולא כביצוע ברמת הכיתה.";
+    return "This practice was done below the registered grade, so it's worth reading the result as a foundation snapshot rather than grade-level performance.";
   }
 
   if (scope === "enrichment_stretch" || rel === "higher") {
     if (isStrength) {
-      return "הילד הצליח גם מעל רמת הכיתה בנושא הזה - אפשר לשקול להעלות קושי או להתקדם לנושא מתקדם יותר.";
+      return "The child also succeeded above grade level on this topic - it's worth considering raising the difficulty or moving to a more advanced topic.";
     }
     if (needsSupport) {
-      return "התרגול בוצע מעל רמת הכיתה הרשומה, כך שקושי כאן צפוי יותר ולא בהכרח מעיד על פער בתוכן הכיתה.";
+      return "This practice was done above the registered grade level, so difficulty here is more expected and doesn't necessarily point to a gap in grade-level content.";
     }
-    return "התרגול בוצע מעל רמת הכיתה הרשומה - כדאי לקרוא את זה בנפרד מביצוע ברמת הכיתה.";
+    return "This practice was done above the registered grade level - it's worth reading this separately from grade-level performance.";
   }
 
   if (scope === "registered_grade_primary" || rel === "same") {
     if (isStrength) {
-      return "יש שליטה טובה ברמת הכיתה בנושא הזה; אפשר להתקדם בהדרגה - להעלות מעט קושי או לעבור לנושא הבא.";
+      return "There's good mastery at grade level on this topic; it's fine to progress gradually - raise the difficulty a bit or move to the next topic.";
     }
   }
 
@@ -99,8 +99,8 @@ export function gradeScopeMeaningHe(args) {
 export function masteryReallocationHe(topicName) {
   const name = String(topicName || "").trim();
   return name
-    ? `נראה שיש שליטה ב${name}; כדאי לשקול להפנות חלק מזמן התרגול לנושא אחר שכדאי לשים לב אליו יותר.`
-    : "נראה שיש שליטה בנושא הזה; כדאי לשקול להפנות חלק מזמן התרגול לנושא אחר שכדאי לשים לב אליו יותר.";
+    ? `It looks like there's mastery of ${name}; it's worth considering directing some practice time to another topic that deserves more attention.`
+    : "It looks like there's mastery of this topic; it's worth considering directing some practice time to another topic that deserves more attention.";
 }
 
 export default {

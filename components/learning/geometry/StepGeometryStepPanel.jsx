@@ -10,7 +10,7 @@ export default function StepGeometryStepPanel({
 
   return (
     <div key={step.id} data-geometry-step-id={step.id}>
-      <h4 className={titleClassName}>{step.title || "הסבר"}</h4>
+      <h4 className={titleClassName}>{step.title || "Explanation"}</h4>
       {step.content ? (
         <div className={bodyClassName}>{step.content}</div>
       ) : (

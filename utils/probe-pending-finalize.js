@@ -34,7 +34,7 @@ export function finalizePendingProbeHint(pb, normalized, subjectId) {
     if (!mathIsFractionContext(normalized)) {
       next.suggestedQuestionType = "operation_choice_word_problem";
       next.reasonHe =
-        "לבחור במפורש פעולה (חיבור/כפל/חיסור) בהקשר מילולי קצר לפני חישוב.";
+        "Explicitly choose an operation (add/multiply/subtract) in a short word problem before calculating.";
     }
   }
 
@@ -44,27 +44,27 @@ export function finalizePendingProbeHint(pb, normalized, subjectId) {
       concept_confusion: {
         type: "geometry_concept_minimal_contrast",
         reasonHe:
-          "להבדיל בין שני מושגים גיאומטריים קרובים עם שאלה קצרה מהבנק הקונספטואלי.",
+          "Distinguish two closely related geometry concepts with a short question from the conceptual bank.",
       },
       geometry_calculation_slip: {
         type: "geometry_formula_choice",
-        reasonHe: "לבחור נוסחה או שלב ראשון נכון לפני חישוב מספרי.",
+        reasonHe: "Choose the correct formula or first step before numerical calculation.",
       },
       calculation_slip: {
         type: "geometry_formula_choice",
-        reasonHe: "לבחור נוסחה או שלב ראשון נכון לפני חישוב מספרי.",
+        reasonHe: "Choose the correct formula or first step before numerical calculation.",
       },
       strategy_error: {
         type: "geometry_identify_shape_property",
-        reasonHe: "לזהות תכונה אחת ברורה של צורה או מצב לפני חישוב.",
+        reasonHe: "Identify one clear shape property or state before calculating.",
       },
       prerequisite_gap: {
         type: "geometry_concept_minimal_contrast",
-        reasonHe: "לחזק מושג בסיס לפני המשך.",
+        reasonHe: "Reinforce a foundational concept before continuing.",
       },
       instruction_misread: {
         type: "geometry_identify_shape_property",
-        reasonHe: "שאלת זיהוי קצרה לאחר קריאת הנחיה.",
+        reasonHe: "A short identification question after reading the instruction.",
       },
     };
     const row = routeByTag[dom];

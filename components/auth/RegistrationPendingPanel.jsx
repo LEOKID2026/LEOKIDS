@@ -5,7 +5,7 @@ import {
   PENDING_SCHOOL_HEADING,
   PENDING_TEACHER_BODY,
   PENDING_TEACHER_HEADING,
-} from "../../lib/auth/auth-registration.he.js";
+} from "../../lib/auth/auth-registration.js";
 
 /**
  * @param {{ variant: "teacher"|"school", rejected?: boolean, bright?: boolean }} props
@@ -30,11 +30,11 @@ export default function RegistrationPendingPanel({ variant, rejected = false, br
 
   return (
     <div
-      className="max-w-lg space-y-3 text-right"
+      className="max-w-lg space-y-3 text-left"
       data-testid={`${variant}-registration-pending`}
       data-state={rejected ? "rejected" : "pending"}
-      dir="rtl"
-      lang="he"
+      dir="ltr"
+      lang="en"
     >
       <h2 className={headingClass}>{heading}</h2>
       <p className={bodyClass}>{body}</p>

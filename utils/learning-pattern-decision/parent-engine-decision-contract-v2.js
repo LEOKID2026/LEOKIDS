@@ -46,23 +46,36 @@
 
 /** @typedef {"topic"|"subject"} DecisionScope */
 
-/** Claim vocabulary — matched against real rendered Hebrew text. */
+/**
+ * Claim vocabulary — matched against real rendered English parent text.
+ * HE→EN map (former Hebrew triggers → English equivalents):
+ *   דפוס חוזר → recurring/repeated pattern
+ *   יציבות / יציב(ה) טובה|יחסית → steadiness / fairly steady / looks steady
+ *   שליטה → mastery / strong success / good command
+ *   קושי ברור / נקודת חיזוק|ידע / פער → clear difficulty|area to reinforce / gap
+ *   קשב → attention
+ *   עייפות / מתעייף → fatigue / getting tired
+ *   תחת לחץ / לחץ זמן / קשור למהירות|לחץ → under/time pressure / related to speed|pressure
+ *   השתפר / שיפור → improved / improvement
+ *   כדאי לחזק|חיזוק / חיזוק ממוקד → helps to reinforce|strengthen / focused reinforcement
+ *   מהירות → speed
+ */
 export const CLAIM_REGEX = Object.freeze({
-  repeated_pattern: /דפוס\s*חוזר/u,
-  stability: /יציבות|יציב(ה|ות)?\s*(טובה|יחסית)/u,
-  mastery: /שליטה\s*(טובה|חלקית)?/u,
-  knowledge_gap: /קושי\s*ברור|נקודת\s*(חיזוק|ידע)|פער/u,
-  attention: /קשב/u,
-  fatigue: /עייפות|מתעייף/u,
-  pressure: /(תחת\s*לחץ|לחץ\s*זמן|קשור\S*\s*ל(מהירות|לחץ))/u,
-  improvement: /השתפר|שיפור/u,
-  needs_strengthening: /כדאי\s*(לחזק|חיזוק)|חיזוק\s*ממוקד/u,
-  speed: /מהירות/u,
+  repeated_pattern: /recurring\s*pattern|repeated\s*pattern/iu,
+  stability: /steadiness|fairly\s*steady|looks\s*(fairly\s*)?steady|consistent\s*strong\s*success/iu,
+  mastery: /mastery|strong\s*success|good\s*command/iu,
+  knowledge_gap: /clear\s*(difficulty|area\s*to\s*reinforce)|area\s*to\s*reinforce|\bgap\b/iu,
+  attention: /\battention\b/iu,
+  fatigue: /\bfatigue\b|getting\s*tired/iu,
+  pressure: /(under\s*pressure|time\s*pressure|related\s+to\s+(speed|pressure))/iu,
+  improvement: /\bimproved\b|\bimprovement\b/iu,
+  needs_strengthening: /helps\s*to\s*(reinforce|strengthen)|worth\s*reinforcing|reinforce\s*this\s*topic|go\s*back\s*and\s*reinforce|focused\s*reinforcement/iu,
+  speed: /\bspeed\b|competitive\/speed/iu,
 });
 
 /** Forbidden combinations that must never co-occur in one rendered text. */
 export const FORBIDDEN_COOCCURRENCE = Object.freeze([
-  { a: "repeated_pattern", b: "insufficient_data_phrase", pattern_b: /עדיין\s*מוקדם|אין\s*מספיק\s*נתונים|מעט\s*מדי\s*נתונים/u },
+  { a: "repeated_pattern", b: "insufficient_data_phrase", pattern_b: /still\s*too\s*early|not\s*enough\s*(data|of\s*a\s*picture)|limited\s*data/iu },
 ]);
 
 /**
@@ -288,7 +301,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     forbiddenClaims: ["repeated_pattern", "mastery", "stability", "attention", "fatigue", "pressure"],
     requiredTemplateIds: ["no_clear_pattern_difficulty_fallback"],
     supportedSurfaces: ["detailedReport", "lpdExplain"],
-    fallbackPolicy: "none - always renders the grounded 'כמה/הרבה טעויות' + strengthening sentence",
+    fallbackPolicy: "none - always renders the grounded 'some/many mistakes' + strengthening sentence",
     ownerApprovalStatus: "owner_approved",
     provenance: "learningPatternDecision.parentVisibleFinding / build-parent-visible-finding.js",
     sourceFile: "utils/learning-pattern-decision/build-parent-visible-finding.js",
@@ -320,7 +333,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     forbiddenClaims: ["mastery", "stability", "attention", "fatigue", "pressure"],
     requiredTemplateIds: ["difficulty_repeated", "difficulty_repeated_generic"],
     supportedSurfaces: ["detailedReport", "lpdExplain", "shortReport"],
-    fallbackPolicy: "falls to difficulty_observed template if the label is blocked/unusable (never asserts 'דפוס חוזר' with no real label)",
+    fallbackPolicy: "falls to difficulty_observed template if the label is blocked/unusable (never asserts 'recurring pattern' with no real label)",
     ownerApprovalStatus: "owner_approved",
     provenance: "learningPatternDecision.parentVisibleFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-visible-finding.js",
@@ -595,8 +608,14 @@ export function hasRepeatedVsInsufficientContradiction(text) {
   return FORBIDDEN_COOCCURRENCE[0].pattern_b.test(t);
 }
 
-/** Hebrew grammar guard: catches "<digit> שאלות/שגיאות/שגויות/תשובות" where digit===1. */
-export const HEBREW_SINGULAR_VIOLATION_RE = /\b1\s*(שאלות|שגיאות|שגויות|תשובות\s*נכונות|תשובות\s*שגויות|נושאים)\b/u;
+/**
+ * English grammar guard: catches "1" + plural noun (e.g. "1 questions/errors/mistakes").
+ * Export name kept for API stability (was Hebrew singular-violation guard).
+ * HE→EN: שאלות→questions, שגיאות/שגויות→errors/mistakes, תשובות נכונות→correct answers,
+ * תשובות שגויות→wrong/incorrect answers, נושאים→topics.
+ */
+export const HEBREW_SINGULAR_VIOLATION_RE =
+  /\b1\s*(questions|errors|mistakes|correct\s*answers|wrong\s*answers|incorrect\s*answers|topics)\b/i;
 
 /** Technical/English identifiers that must never leak into parent-visible text. */
 export const TECHNICAL_LEAK_RE =

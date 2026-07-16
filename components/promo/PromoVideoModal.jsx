@@ -72,7 +72,7 @@ export default function PromoVideoModal({ open, onClose, src, title }) {
           ref={closeRef}
           type="button"
           className="absolute end-2 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-black/70 text-lg font-bold text-white shadow-lg transition hover:bg-black/90 sm:end-3 sm:top-3 sm:h-10 sm:w-10"
-          aria-label="סגור"
+          aria-label="Close"
           data-testid="promo-video-modal-close"
           onClick={onClose}
         >

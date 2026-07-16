@@ -36,7 +36,7 @@ export function measureGroundedness(answerBlocks, truthPacket) {
       covered += 1;
       continue;
     }
-    if (sfQ > 0 && /\d/.test(txt) && (txt.includes(String(sfQ)) || new RegExp(`${sfQ}\\s*שאלות`, "u").test(txt))) {
+    if (sfQ > 0 && /\d/.test(txt) && (txt.includes(String(sfQ)) || new RegExp(`${sfQ}\\s*Questions`, "u").test(txt))) {
       covered += 1;
     }
   }
@@ -51,7 +51,7 @@ export function measureGenericness(answerBlocks) {
   const blocks = Array.isArray(answerBlocks) ? answerBlocks : [];
   const text = blocks.map((b) => String(b?.textHe || "")).join(" ").trim();
   if (!text) return { score: 100, repeatedCueCount: 0 };
-  const cues = ["נכון לעכשיו", "בשלב זה", "ממשיכים לעקוב", "עדיין מוקדם לקבוע", "כדאי להמשיך לעקוב"];
+  const cues = ["As of now", "At this stage", "continue to follow", "Still too early to decide", "You should keep following"];
   let hits = 0;
   for (const cue of cues) {
     if (text.includes(cue)) hits += 1;

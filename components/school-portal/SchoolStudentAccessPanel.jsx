@@ -6,7 +6,7 @@ import {
   SCHOOL_PORTAL_BTN_CURSOR,
   SCHOOL_PORTAL_MODAL_SCROLL_CLASS,
 } from "./SchoolPortalUi";
-import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.he";
+import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.js";
 import { hasSchoolPortalSession } from "../../lib/school-portal/operator-grants.js";
 import {
   SC_BTN_ADD_PARENT,
@@ -36,7 +36,7 @@ import {
   SC_STATUS_BLOCKED,
   SC_STATUS_NOT_CREATED,
   SC_STATUS_REVOKED,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 
 function studentStatusLabel(status) {
   if (status === "active") return SC_STATUS_ACTIVE;
@@ -172,13 +172,13 @@ export default function SchoolStudentAccessPanel({ accessToken, authMethod = "su
   const studentCanManage = hasSchoolStudent && student?.status !== "revoked";
 
   if (loading) {
-    return <p className="text-sm text-white/50 text-right py-6">{SC_LOADING}</p>;
+    return <p className="text-sm text-white/50 text-left py-6">{SC_LOADING}</p>;
   }
 
   return (
     <div
-      className={`space-y-6 text-right overflow-y-auto max-h-[min(70vh,520px)] px-1 pb-2 ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
-      dir="rtl"
+      className={`space-y-6 text-left overflow-y-auto max-h-[min(70vh,520px)] px-1 pb-2 ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
+      dir="ltr"
     >
       {studentName ? <p className="text-sm text-white/60">{studentName}</p> : null}
       {loadError ? <p className="text-sm text-red-300">{loadError}</p> : null}
@@ -208,7 +208,7 @@ export default function SchoolStudentAccessPanel({ accessToken, authMethod = "su
             ) : null}
 
             {studentCanManage ? (
-              <ActionGroup label="פעולות חשבון">
+              <ActionGroup label="Account actions">
                 <button
                   type="button"
                   disabled={busy}
@@ -257,7 +257,7 @@ export default function SchoolStudentAccessPanel({ accessToken, authMethod = "su
             ) : null}
 
             {studentCanManage ? (
-              <ActionGroup label="פעולות בלתי הפיכות">
+              <ActionGroup label="Irreversible actions">
                 <button
                   type="button"
                   disabled={busy}

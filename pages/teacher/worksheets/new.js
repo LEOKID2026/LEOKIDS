@@ -7,8 +7,8 @@ import TeacherQuestionBuilder from "../../../components/worksheet-activities/Tea
 import TeacherStudentSelector from "../../../components/worksheet-activities/TeacherStudentSelector";
 import { getLearningSupabaseBrowserClient } from "../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../lib/teacher-portal/teacher-ui.he.js";
-import { REPORT_SUBJECTS, subjectLabelHe } from "../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabelHe } from "../../../lib/teacher-portal/teacher-ui.js";
 import { worksheetModeLabelHe } from "../../../lib/worksheet-activities/worksheet-labels.client.js";
 
 const MODES = ["pdf_only", "digital_answers", "manual_grading"];
@@ -32,10 +32,10 @@ export default function TeacherNewDirectWorksheetPage() {
 
   const uploadPdf = useCallback(
     async (file) => {
-      if (!worksheetId) return { ok: false, error: "שמרו טיוטה תחילה" };
+      if (!worksheetId) return { ok: false, error: "Save a draft first" };
       const supabase = getLearningSupabaseBrowserClient();
       const session = await resolveTeacherAccessToken(supabase);
-      if (!session.ok) return { ok: false, error: "לא מחובר" };
+      if (!session.ok) return { ok: false, error: "Not signed in" };
 
       const pdfBase64 = await new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -61,7 +61,7 @@ export default function TeacherNewDirectWorksheetPage() {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        return { ok: false, error: body?.error?.message || body?.error?.code || "העלאה נכשלה" };
+        return { ok: false, error: body?.error?.message || body?.error?.code || "Upload failed" };
       }
       setHasPdf(true);
       return {
@@ -75,11 +75,11 @@ export default function TeacherNewDirectWorksheetPage() {
 
   const saveDraft = useCallback(async () => {
     if (!title.trim()) {
-      setError("נא למלא כותרת");
+      setError("Please enter a title");
       return null;
     }
     if (!selectedStudentIds.length) {
-      setError("נא לבחור לפחות ילד/ה אחד");
+      setError("Please select at least one student");
       return null;
     }
     setBusy(true);
@@ -111,7 +111,7 @@ export default function TeacherNewDirectWorksheetPage() {
         });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) {
-          setError(body?.error?.message || body?.error?.code || "שגיאה בשמירה");
+          setError(body?.error?.message || body?.error?.code || "Error saving");
           return null;
         }
         id = body?.data?.worksheetId;
@@ -149,7 +149,7 @@ export default function TeacherNewDirectWorksheetPage() {
 
       return id;
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
       return null;
     } finally {
       setBusy(false);
@@ -170,7 +170,7 @@ export default function TeacherNewDirectWorksheetPage() {
     const id = worksheetId || (await saveDraft());
     if (!id) return;
     if (!hasPdf) {
-      setError("יש להעלות PDF לפני הפעלה");
+      setError("Upload a PDF before launching");
       return;
     }
     setBusy(true);
@@ -193,12 +193,12 @@ export default function TeacherNewDirectWorksheetPage() {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "הפעלה נכשלה");
+        setError(body?.error?.message || body?.error?.code || "Launch failed");
         return;
       }
       router.push(`/teacher/worksheets/${encodeURIComponent(id)}`);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -206,8 +206,8 @@ export default function TeacherNewDirectWorksheetPage() {
 
   return (
     <Layout>
-      <TeacherPortalShell title="פעילות דף עבודה - ילדים נבחרים" backHref="/teacher/worksheets">
-        <div className="max-w-2xl mx-auto space-y-5 text-right">
+      <TeacherPortalShell title="Worksheet activity — selected students" backHref="/teacher/worksheets">
+        <div className="max-w-2xl mx-auto space-y-5 text-left">
           {error ? <p className="text-red-300 text-sm">{error}</p> : null}
 
           <TeacherStudentSelector
@@ -218,7 +218,7 @@ export default function TeacherNewDirectWorksheetPage() {
           />
 
           <label className="block text-sm text-white/80">
-            כותרת
+            Title
             <input
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
               value={title}
@@ -227,7 +227,7 @@ export default function TeacherNewDirectWorksheetPage() {
           </label>
 
           <label className="block text-sm text-white/80">
-            מקצוע
+            Subject
             <select
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
               value={subject}
@@ -242,7 +242,7 @@ export default function TeacherNewDirectWorksheetPage() {
           </label>
 
           <label className="block text-sm text-white/80">
-            הוראות לילדים
+            Instructions for students
             <textarea
               rows={3}
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
@@ -252,7 +252,7 @@ export default function TeacherNewDirectWorksheetPage() {
           </label>
 
           <label className="block text-sm text-white/80">
-            מועד הגשה פיזית
+            Physical submission due date
             <input
               type="datetime-local"
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
@@ -262,7 +262,7 @@ export default function TeacherNewDirectWorksheetPage() {
           </label>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm text-white/80 mb-2">מצב פעילות</legend>
+            <legend className="text-sm text-white/80 mb-2">Activity mode</legend>
             {MODES.map((m) => (
               <label key={m} className="flex items-center gap-2 justify-end cursor-pointer">
                 <span className="text-white">{worksheetModeLabelHe(m)}</span>
@@ -278,7 +278,7 @@ export default function TeacherNewDirectWorksheetPage() {
                           questionIndex: 1,
                           questionType: "multiple_choice",
                           points: 1,
-                          choices: ["א", "ב", "ג", "ד"],
+                          choices: ["A", "B", "C", "D"],
                         },
                       ]);
                     }
@@ -299,14 +299,14 @@ export default function TeacherNewDirectWorksheetPage() {
               onClick={() => void saveDraft()}
               className="px-4 py-2 rounded-xl border border-white/20 text-white"
             >
-              שמור כטיוטה
+              Save as draft
             </button>
           </div>
 
           {worksheetId ? (
             <PdfUploader disabled={busy} uploadFn={uploadPdf} onUploaded={() => setHasPdf(true)} />
           ) : (
-            <p className="text-sm text-white/50">שמרו טיוטה כדי להעלות PDF.</p>
+            <p className="text-sm text-white/50">Save a draft before uploading a PDF.</p>
           )}
 
           <button
@@ -316,7 +316,7 @@ export default function TeacherNewDirectWorksheetPage() {
             className="w-full py-3 rounded-xl bg-violet-500/90 text-black font-bold hover:bg-violet-400"
             data-testid="teacher-worksheet-activate-selected-students"
           >
-            הפעל ושלח לילדים הנבחרים
+            Launch and send to selected students
           </button>
         </div>
       </TeacherPortalShell>

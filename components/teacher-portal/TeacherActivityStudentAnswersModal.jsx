@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import ClassroomGeometryQuestionDiagram from "../student/ClassroomGeometryQuestionDiagram";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { studentActivityStatusLabelHe } from "../../lib/classroom-activities/classroom-activities-labels.client.js";
 import AssignedActivityQuestionDisplay from "../classroom-activities/AssignedActivityQuestionDisplay.jsx";
 import AssignedActivityBidiText from "../classroom-activities/AssignedActivityBidiText.jsx";
 
 function answerStatusLabel(isCorrect) {
-  if (isCorrect === true) return { text: "נכון", className: "text-emerald-300" };
-  if (isCorrect === false) return { text: "שגוי", className: "text-red-300" };
-  return { text: "ללא תשובה", className: "text-white/50" };
+  if (isCorrect === true) return { text: "Correct", className: "text-emerald-300" };
+  if (isCorrect === false) return { text: "Incorrect", className: "text-red-300" };
+  return { text: "No answer", className: "text-white/50" };
 }
 
 /**
@@ -50,13 +50,13 @@ export default function TeacherActivityStudentAnswersModal({
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
         setDetail(null);
-        setError(body?.error?.message || body?.error?.code || "טעינת תשובות נכשלה");
+        setError(body?.error?.message || body?.error?.code || "Could not load answers");
         return;
       }
       setDetail(body.data);
     } catch {
       setDetail(null);
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setLoading(false);
     }
@@ -77,7 +77,7 @@ export default function TeacherActivityStudentAnswersModal({
   const emptyNoAnswers =
     !emptyNotStarted && (student.answersCount ?? 0) === 0 && !(detail?.questions || []).some((q) => q.selectedAnswer);
 
-  const title = activityTitle || detail?.activity?.title || "פעילות";
+  const title = activityTitle || detail?.activity?.title || "Activity";
   const accuracy =
     detail?.student?.accuracyPct != null
       ? `${detail.student.accuracyPct}%`
@@ -90,7 +90,7 @@ export default function TeacherActivityStudentAnswersModal({
       <button
         type="button"
         className="absolute inset-0 bg-black/70"
-        aria-label="סגור"
+        aria-label="Close"
         onClick={onClose}
       />
       <div
@@ -102,17 +102,17 @@ export default function TeacherActivityStudentAnswersModal({
       >
         <div className="sticky top-0 z-10 flex items-center justify-between gap-2 border-b border-white/10 bg-[#1a1f35] px-4 py-3">
           <h2 id="teacher-student-answers-title" className="text-lg font-semibold">
-            תשובות: {student.studentFullNameMasked}
+            Answers: {student.studentFullNameMasked}
           </h2>
           <button type="button" onClick={onClose} className="text-white/60 text-sm shrink-0">
-            סגור
+            Close
           </button>
         </div>
 
         <div className="px-4 py-3 text-sm text-white/70 space-y-1">
           <p>{title}</p>
           <p>
-            סטטוס: {studentActivityStatusLabelHe(status)} · דיוק: {accuracy} · תשובות:{" "}
+            Status: {studentActivityStatusLabelHe(status)} · Accuracy: {accuracy} · Answers:{" "}
             {detail?.student?.answersCount ?? student.answersCount ?? 0}/
             {detail?.activity?.questionCount ?? "-"}
           </p>
@@ -120,15 +120,15 @@ export default function TeacherActivityStudentAnswersModal({
 
         <div className="px-4 pb-4">
           {loading ? (
-            <p className="text-white/60 text-sm py-6 text-center">טוען תשובות…</p>
+            <p className="text-white/60 text-sm py-6 text-center">Loading answers…</p>
           ) : error ? (
             <p className="text-red-200 text-sm py-4 rounded-lg border border-red-400/30 bg-red-500/10 px-3">
               {error}
             </p>
           ) : emptyNotStarted ? (
-            <p className="text-white/60 text-sm py-6 text-center">הילד/ה עדיין לא התחיל/ה את הפעילות.</p>
+            <p className="text-white/60 text-sm py-6 text-center">This student has not started the activity yet.</p>
           ) : emptyNoAnswers ? (
-            <p className="text-white/60 text-sm py-6 text-center">אין עדיין תשובות.</p>
+            <p className="text-white/60 text-sm py-6 text-center">No answers yet.</p>
           ) : (
             <ol className="space-y-4">
               {(detail?.questions || []).map((q) => {
@@ -149,7 +149,7 @@ export default function TeacherActivityStudentAnswersModal({
                     data-testid={`teacher-student-answer-row-${q.questionIndex}`}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <span className="font-medium text-white/90">שאלה {q.questionIndex + 1}</span>
+                      <span className="font-medium text-white/90">Question {q.questionIndex + 1}</span>
                       <span className={`text-xs font-medium ${badge.className}`}>{badge.text}</span>
                     </div>
                     {diagramQuestion ? (
@@ -162,7 +162,7 @@ export default function TeacherActivityStudentAnswersModal({
                     ) : null}
                     {Array.isArray(q.choices) && q.choices.length > 0 ? (
                       <p className="text-white/50 text-xs mb-2">
-                        אפשרויות:{" "}
+                        Options:{" "}
                         {q.choices.map((choice, choiceIndex) => (
                           <span key={choiceIndex}>
                             {choiceIndex > 0 ? " · " : ""}
@@ -173,13 +173,13 @@ export default function TeacherActivityStudentAnswersModal({
                     ) : null}
                     <dl className="grid gap-1 text-sm">
                       <div className="flex flex-wrap gap-x-2">
-                        <dt className="text-white/50">תשובת הילד/ה:</dt>
+                        <dt className="text-white/50">Student answer:</dt>
                         <dd className="text-white/90" data-testid="student-selected-answer">
                           <AssignedActivityBidiText text={q.selectedAnswer ?? "-"} />
                         </dd>
                       </div>
                       <div className="flex flex-wrap gap-x-2">
-                        <dt className="text-white/50">תשובה נכונה:</dt>
+                        <dt className="text-white/50">Correct answer:</dt>
                         <dd className="text-white/90" data-testid="student-correct-answer">
                           <AssignedActivityBidiText text={q.correctAnswer ?? "-"} />
                         </dd>

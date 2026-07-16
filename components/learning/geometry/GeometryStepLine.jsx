@@ -25,7 +25,7 @@ function renderMixedRuns(text) {
       );
     }
     return (
-      <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="rtl">
+      <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="ltr">
         {run.value}
       </span>
     );
@@ -33,7 +33,7 @@ function renderMixedRuns(text) {
 }
 
 /**
- * Geometry step lines: unified Hebrew + math BiDi via shared splitter.
+ * Geometry step lines: unified prose + math BiDi via shared splitter.
  */
 export default function GeometryStepLine({ text, stepKey }) {
   const stripped = stripBidiMarks(text).trim();
@@ -46,7 +46,7 @@ export default function GeometryStepLine({ text, stepKey }) {
     wordBreak: "break-word",
   };
 
-  const andThenIdx = stripped.indexOf(", ואז ");
+  const andThenIdx = stripped.indexOf(", then ");
   if (andThenIdx > 0) {
     const head = stripped.slice(0, andThenIdx + 1);
     const tail = stripped.slice(andThenIdx + 2);

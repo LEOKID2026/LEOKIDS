@@ -1,6 +1,6 @@
 /**
- * דוח מקיף לתקופה — payload נפרד מהדוח הרגיל (V2).
- * מקור נתונים: generateParentReportV2 + diagnosticEngineV2 (מקור ראשי), עם fallback ל-patternDiagnostics.
+ * Detailed report for the period — payload separate from the regular report (V2).
+ * Data source: generateParentReportV2 + diagnosticEngineV2 (primary source), with fallback to patternDiagnostics.
  */
 
 import { generateParentReportV2 } from "./parent-report-v2.js";
@@ -136,7 +136,7 @@ function splitMoledetGeographyReportForDisplay(_report) {
     geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
   };
 }
-const VISUAL_STRAND_LABEL_HE = { moledet: "מולדת", geography: "גאוגרפיה" };
+const VISUAL_STRAND_LABEL_HE = { moledet: "Social Studies", geography: "Geography" };
 import { normalizeParentVisibleMetrics } from "./learning-pattern-decision/normalize-parent-practice-metrics.js";
 import { buildParentReportEngineDecisionContract } from "./learning-pattern-decision/build-parent-report-engine-decision-contract.js";
 import {
@@ -164,10 +164,10 @@ const SUBJECT_IDS = [
 ];
 
 const SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
 };
 
 const TOPIC_REC_MIN_ACTIONABLE_QUESTIONS = 8;
@@ -350,11 +350,11 @@ function uniqueTopLabels(rows, labelKey, max) {
   return out;
 }
 
-/** להסרת "בנושא " מתחילת תווית כדי לא לכפול ניסוח ("דגש על הנושא חיבור"). */
+/** Removes a leading "on the topic of " to avoid doubled wording ("emphasis on the topic of addition"). */
 function stripLeadingBenosheaHe(s) {
   return String(s || "")
-    .replace(/^בנושא\/ים\s+/u, "")
-    .replace(/^בנושא\s+/u, "")
+    .replace(/^on the topics? of\s+/iu, "")
+    .replace(/^on\s+/iu, "")
     .trim();
 }
 
@@ -383,7 +383,7 @@ const CROSS_RISK_LABEL_HE = {
   ...PARENT_DIAGNOSTIC_TYPE_LABEL_HE,
   mixed: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_signal,
   none_sparse: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.none_sparse,
-  none_observed: "לא נראה כרגע קושי דומיננטי",
+  none_observed: "No dominant difficulty is visible right now",
 };
 
 function crossRiskLabelHe(riskId, subjects) {
@@ -407,10 +407,10 @@ function crossSuccessLabelHe(patId, subjects) {
 }
 
 const CROSS_SUCCESS_LABEL_HE = {
-  stable_mastery: "שליטה יציבה בחומר",
-  fragile_success_cluster: "הצלחה שחוזרת אך עדיין שבירה",
-  mixed: "כמה דפוסי הצלחה במקביל",
-  none_sparse: "עדיין מעט נתונים",
+  stable_mastery: "stable mastery of the material",
+  fragile_success_cluster: "repeated success but still fragile",
+  mixed: "several success patterns in parallel",
+  none_sparse: "still limited data",
 };
 
 function shortenHe(s, maxLen) {
@@ -486,8 +486,8 @@ function buildMajorTrendsHe(subjects, subjectCoverage) {
     if (ibs.length > 20) scored.push({ text: shortenHe(ibs, 150), w: w + 3, sid });
     const pos = String(s.strongestPositiveTrendRowHe || "").trim();
     const cau = String(s.strongestCautionTrendRowHe || "").trim();
-    if (pos.length > 20) scored.push({ text: shortenHe(`חיזוק שחוזר בכמה מקצועות (${SUBJECT_LABEL_HE[sid]}): ${pos}`, 150), w: w - 1, sid });
-    if (cau.length > 20) scored.push({ text: shortenHe(`זהירות (${SUBJECT_LABEL_HE[sid]}): ${cau}`, 150), w: w + 2, sid });
+    if (pos.length > 20) scored.push({ text: shortenHe(`A recurring strength across subjects (${SUBJECT_LABEL_HE[sid]}): ${pos}`, 150), w: w - 1, sid });
+    if (cau.length > 20) scored.push({ text: shortenHe(`Caution (${SUBJECT_LABEL_HE[sid]}): ${cau}`, 150), w: w + 2, sid });
   }
   scored.sort((a, b) => b.w - a.w);
   const out = [];
@@ -500,10 +500,10 @@ function buildMajorTrendsHe(subjects, subjectCoverage) {
     if (out.length >= 2) break;
   }
   if (!out.length) {
-    out.push("עדיין אין שתי מגמות חוצות מקצועות ברורות - התמונה תתבהר אחרי עוד תרגול בתקופה שנבחרה.");
+    out.push("There aren't yet two clear cross-subject trends - the picture will become clearer after more practice in the selected period.");
   }
   if (out.length === 1) {
-    out.push("מגמה שנייה תתבהר אחרי עוד תרגול במקצועות עם מעט שאלות.");
+    out.push("A second trend will become clearer after more practice in subjects with few questions.");
   }
   return out.slice(0, 2);
 }
@@ -534,32 +534,32 @@ function pickMainHomeRecommendationHe(subjects, subjectCoverage, summary, topFoc
   if (topFocusAreasHe[0]) {
     const core = stripLeadingBenosheaHe(topFocusAreasHe[0].replace(/\s*\([^)]*\)\s*$/u, "").trim());
     return shortenHe(
-      `להתמקד השבוע ב${core} - שני מפגשים קצרים, קריאת משימה משותפת ותרגול ממוקד בלי קפיצת רמה.`,
+      `Focus this week on ${core} - two short sessions, reading the task together, and focused practice without jumping a level.`,
       220
     );
   }
   if (topStrengthsAcrossHe[0]) {
     return shortenHe(
-      `לשמור קצב רגוע סביב ${stripLeadingBenosheaHe(topStrengthsAcrossHe[0])} - תרגול קצר פעמיים בשבוע לשימור עקביות.`,
+      `Keep a calm pace around ${stripLeadingBenosheaHe(topStrengthsAcrossHe[0])} - short practice twice a week to maintain consistency.`,
       220
     );
   }
-  return "שני מפגשים קצרים בשבוע, דגש על קריאת המשימה לפני תשובה - עד שיתקבל עוד תרגול בתקופה שנבחרה.";
+  return "Two short sessions a week, with emphasis on reading the question before answering - until more practice is collected in the selected period.";
 }
 
 function buildCautionNoteHe(crossRisks, subjects, dominantRiskId) {
   const parts = [];
-  if (crossRisks.hintDependenceRisk) parts.push("בכמה מקצועות הילד עדיין נשען על רמזים - לא כדאי להתקדם מהר מדי.");
-  if (crossRisks.falsePromotionRisk) parts.push("סיכון לקידום שווא - לא לפרש הצלחה חלקית כמוכנות לעלייה מהירה מדי ברמה.");
-  if (crossRisks.recentTransitionRisk) parts.push("מגמות אחרונות מצביעות על זהירות - לא לרדת מדרגה בכל המקצוע בבת אחת.");
-  if (crossRisks.speedOnlyRisk) parts.push("מופיעה חולשה הקשורה למהירות - לא להכליל לכל סוגי התרגול.");
+  if (crossRisks.hintDependenceRisk) parts.push("In a few subjects the child still relies on hints - it's best not to advance too quickly.");
+  if (crossRisks.falsePromotionRisk) parts.push("Risk of false promotion - don't read partial success as readiness for a fast level jump.");
+  if (crossRisks.recentTransitionRisk) parts.push("Recent trends suggest caution - don't drop a level across the whole subject at once.");
+  if (crossRisks.speedOnlyRisk) parts.push("A speed-related weakness appears - don't generalize it to all types of practice.");
   if (parts.length) return shortenHe(parts.join(" "), 220);
   const wnts = SUBJECT_IDS.map((sid) => String(subjects?.[sid]?.whatNotToDoHe || "").trim()).filter(Boolean);
   if (wnts.length) return shortenHe(wnts.sort((a, b) => b.length - a.length)[0], 220);
   if (dominantRiskId === "none_sparse" || dominantRiskId === "none_observed") {
-    return "עדיין מעט מידע - לא לקבוע שינוי דרמטי בבית לפני שיתקבל עוד תרגול.";
+    return "There's still limited data - don't make a drastic change at home before more practice is collected.";
   }
-  return "לעקוב אחרי הדפוסים בשורות לפני שינוי הגדרות חד.";
+  return "Keep watching the patterns in the rows before making a sharp change to settings.";
 }
 
 function buildOverallConfidenceHe(subjectCoverage, crossRisks) {
@@ -570,9 +570,9 @@ function buildOverallConfidenceHe(subjectCoverage, crossRisks) {
     active >= 2 &&
     cov.reduce((m, c) => Math.max(m, c.questionCount || 0), 0) >
       2 * (cov.reduce((s, c) => s + (c.questionCount || 0), 0) / Math.max(active, 1));
-  let t = `בתקופה שנבחרה: ${active} מקצועות עם פעילות; ${low} עם מעט שאלות יחסית - הביטחון בין המקצועות לא אחיד.`;
-  if (crossRisks.insufficientEvidenceRisk) t += " חלק מהנתונים עם מה שרואים בהן רק חלקית.";
-  if (uneven) t += " רוב הנתונים מגיעים ממקצוע אחד בולט - לא מניחים התפלגות שווה.";
+  let t = `In the selected period: ${active} subjects with activity; ${low} with relatively few questions - confidence isn't uniform across subjects.`;
+  if (crossRisks.insufficientEvidenceRisk) t += " Some of the data only partially shows what's happening.";
+  if (uneven) t += " Most of the data comes from one dominant subject - the distribution isn't assumed to be even.";
   return shortenHe(t, 280);
 }
 
@@ -580,10 +580,10 @@ function buildReportReadinessHe(dataIntegrityReport, summary) {
   const issues = dataIntegrityReport?.issues;
   const n = Array.isArray(issues) ? issues.length : 0;
   const q = Number(summary?.totalQuestions) || 0;
-  if (n === 0 && q >= 24) return "בדוח יש מספיק מידע לקריאה הורית - נאספו מספיק שאלות ואין בעיות נתונים משמעותיות.";
-  if (n > 0 && q >= 18) return `הדוח קריא, אך יש ${n} הערות שלמות נתונים - לקרוא מסקנות בעדינות.`;
-  if (q < 18) return "הדוח חלקי - מומלץ להשלים עוד תרגול בתקופה שנבחרה לפני החלטות גדולות.";
-  return "בדוח יש מידע חלקי - כדאי לשלב את מה שמופיע כאן עם מה שאתם רואים בבית.";
+  if (n === 0 && q >= 24) return "The report has enough information for a parent read - enough questions were collected and there are no significant data issues.";
+  if (n > 0 && q >= 18) return `The report is readable, but there are ${n} data-completeness notes - read the conclusions gently.`;
+  if (q < 18) return "The report is partial - it's recommended to complete more practice in the selected period before major decisions.";
+  return "The report has partial information - it helps to combine what appears here with what you see at home.";
 }
 
 function buildEvidenceBalanceHe(subjects) {
@@ -600,7 +600,7 @@ function buildEvidenceBalanceHe(subjects) {
     weak += Array.isArray(s.topWeaknesses) ? s.topWeaknesses.length : 0;
   }
   return shortenHe(
-    `איזון הכוונה: כ ${stab} נתונים עם שליטה טובה ויציבה מול ${frag} שבירות; ${str} כיווני חוזק מובחרים מול ${weak} מוקדי חולשה מובחרים.`,
+    `Evidence balance: about ${stab} entries with good, stable mastery vs. ${frag} fragile ones; ${str} distinct strength directions vs. ${weak} distinct weakness points.`,
     220
   );
 }
@@ -610,23 +610,23 @@ function buildMixedSignalNoticeHe(subjects, crossRisks, topStrengthsAcrossHe) {
   const strong = topStrengthsAcrossHe.length >= 2;
   const risky = crossRisks.falsePromotionRisk || crossRisks.hintDependenceRisk;
   if (strong && risky) {
-    return "תמונה מעורבת: יש תחומים עם תוצאות טובות יחסית, אך גם סימנים שכדאי לבדוק לפני קביעה שהכול כבר יציב בכל התחומים.";
+    return "Mixed picture: there are areas with relatively good results, but also signs worth checking before concluding everything is already stable across the board.";
   }
   if (anyIbs) {
-    return "יש שיפור, אבל הילד עדיין נעזר בזמן הפתרון - ההתקדמות עדיין דורשת ליווי רגוע.";
+    return "There's improvement, but the child still relies on extra time to solve - progress still needs calm support.";
   }
   const modeNotes = SUBJECT_IDS.map((sid) => subjects?.[sid]?.modeConcentrationNoteHe).filter(Boolean);
   if (modeNotes.length >= 2) {
-    return "חולשות מרוכזות במצבי תרגול שונים - לא מכלילים אוטומטית לכל המקצוע.";
+    return "Weaknesses are concentrated in different practice modes - this isn't automatically generalized to the whole subject.";
   }
   return null;
 }
 
 /**
- * מיקוד ביתי — משפט אחד לפי מצב (חיזוק / שימור / דל נתון), בלי שכבות מרובות.
+ * Home focus — one sentence per state (reinforce / maintain / sparse data), no multiple layers.
  */
 /**
- * סיכום שחוזר בכמה מקצועות לשלב 7 (מקור הקושי, מידת הבהירות, סדר עדיפויות הורה).
+ * Cross-subject summary for phase 7 (source of difficulty, clarity level, parent priority order).
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase7Fields(subjects, subjectCoverage) {
@@ -689,7 +689,7 @@ function buildCrossSubjectPhase7Fields(subjects, subjectCoverage) {
   const majorDiagnosticCautionsHe = [];
   if (crossSubjectConclusionReadiness !== "ready") {
     majorDiagnosticCautionsHe.push(
-      "בחלק מהמקצועות יש רק סימנים ראשוניים או מעורבים - עדיין מוקדם לקבוע כיוון ברור לכל המקצועות."
+      "In some subjects there are only early or mixed signals - it's still early to set a clear direction for all subjects."
     );
   }
   for (const c of cautionSet) {
@@ -722,7 +722,7 @@ const CROSS_STAGE_PRIORITY_P9 = [
 ];
 
 /**
- * Phase 9 — טעות חוזרת וזיכרון למידה בכמה מקצועות.
+ * Phase 9 — repeated mistakes and learning memory across subjects.
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase9Fields(subjects) {
@@ -752,7 +752,7 @@ function buildCrossSubjectPhase9Fields(subjects) {
       reviewBeforeAdvanceAreasHe.push(`${SUBJECT_LABEL_HE[sid]}: ${shortenHe(rba, 110)}`);
     }
     if (tr === "ready" && sls === "stable_control" && transferReadyAreasHe.length < 4) {
-      transferReadyAreasHe.push(`${SUBJECT_LABEL_HE[sid]}: מוכנות זהירה להרחבה קטנה בתוך הנושא בלבד.`);
+      transferReadyAreasHe.push(`${SUBJECT_LABEL_HE[sid]}: cautious readiness for a small extension within the topic only.`);
     }
   }
 
@@ -821,7 +821,7 @@ const RTI_CROSS_WORST_FIRST = [
 ];
 
 /**
- * Phase 10 — תגובה להתערבות וריענון מסקנות בכמה מקצועות.
+ * Phase 10 — response to intervention and conclusion freshness across subjects.
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase10Fields(subjects) {
@@ -872,7 +872,7 @@ function buildCrossSubjectPhase10Fields(subjects) {
     const lab = SUBJECT_LABEL_HE[sid];
     if (rec === "structured_recheck" || cf === "expired" || (cf === "low" && rec !== "none")) {
       if (majorRecheckAreasHe.length < 6) {
-        const hint = String(s.subjectRecalibrationNeedHe || "").trim() || "לעשות סבב תצפית לפני שינוי משמעותי.";
+        const hint = String(s.subjectRecalibrationNeedHe || "").trim() || "Do an observation round before a significant change.";
         majorRecheckAreasHe.push(`${lab}: ${shortenHe(hint, 120)}`);
       }
     }
@@ -885,7 +885,7 @@ function buildCrossSubjectPhase10Fields(subjects) {
     }
     if (rti === "regression_under_support" || (rti === "stalled_response" && String(s.subjectSupportFit) === "poor_fit")) {
       if (areasNeedingStrategyChangeHe.length < 5) {
-        areasNeedingStrategyChangeHe.push(`${lab}: כדאי לבחון שינוי אסטרטגיה זהיר, לא רק עוד אותה חזרה.`);
+        areasNeedingStrategyChangeHe.push(`${lab}: worth considering a careful strategy change, not just more of the same repetition.`);
       }
     }
   }
@@ -940,7 +940,7 @@ const NEXT_BEST_STEP_CROSS_WORST_FIRST = [
 ];
 
 /**
- * Phase 11 — כיוון עזרה בכמה מקצועות.
+ * Phase 11 — support direction across subjects.
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase11Fields(subjects) {
@@ -993,7 +993,7 @@ function buildCrossSubjectPhase11Fields(subjects) {
       (ss === "sequence_exhausted" || rot === "meaningful_rotation") &&
       subjectsNeedingSupportResetHe.length < 5
     ) {
-      subjectsNeedingSupportResetHe.push(`${lab}: כדאי לעצור חזרות ולחדש כיוון לפני עוד אותו סוג תרגול.`);
+      subjectsNeedingSupportResetHe.push(`${lab}: it's worth pausing repetitions and refreshing direction before more of the same type of practice.`);
     }
   }
 
@@ -1049,7 +1049,7 @@ const CONTINUATION_WORST_FIRST_P12 = [
 ];
 
 /**
- * Phase 12 — מה נוסה לאחרונה ומעקב תוצאה בכמה מקצועות.
+ * Phase 12 — what was tried recently and outcome tracking across subjects.
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase12Fields(subjects) {
@@ -1081,18 +1081,18 @@ function buildCrossSubjectPhase12Fields(subjects) {
       mat === "aligned" &&
       subjectsWithClearCarryoverHe.length < 5
     ) {
-      subjectsWithClearCarryoverHe.push(`${lab}: נראה שעקביות המסלול נשמרה והתוצאה מתאימה לציפייה.`);
+      subjectsWithClearCarryoverHe.push(`${lab}: it looks like the path's consistency held and the result matches expectations.`);
     }
     if (
       (m === "no_memory" || m === "light_memory") &&
       (mat === "not_enough_evidence" || s.subjectFollowThroughSignal === "not_inferable") &&
       subjectsNeedingFreshEvidenceHe.length < 5
     ) {
-      subjectsNeedingFreshEvidenceHe.push(`${lab}: כדאי לאסוף עוד מידע לפני שממשיכים באותו מסלול.`);
+      subjectsNeedingFreshEvidenceHe.push(`${lab}: it's worth collecting more information before continuing on the same path.`);
     }
     if (mat === "misaligned" && subjectsWherePriorPathSeemsMisalignedHe.length < 5) {
       subjectsWherePriorPathSeemsMisalignedHe.push(
-        `${lab}: הציפייה מהמסלול הקודם לא נראית מתיישרת עם מה שרואים עכשיו.`
+        `${lab}: the expectation from the previous path doesn't seem to line up with what's seen now.`
       );
     }
   }
@@ -1185,7 +1185,7 @@ const TARGET_TYPE_CROSS_P13 = [
 const WINDOW_CROSS_P13 = ["needs_fresh_baseline", "next_two_cycles", "next_short_cycle", "unknown"];
 
 /**
- * Phase 13 — מה צריך לבדוק בהמשך בכמה מקצועות.
+ * Phase 13 — what to check next across subjects.
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase13Fields(subjects) {
@@ -1218,17 +1218,17 @@ function buildCrossSubjectPhase13Fields(subjects) {
       subjectsNearReleaseButNotThereHe.length < 5
     ) {
       subjectsNearReleaseButNotThereHe.push(
-        `${lab}: יש סימנים טובים, אבל כדאי לראות עוד הצלחה קצרה בלי עזרה לפני שמפחיתים תמיכה.`
+        `${lab}: there are good signs, but it's worth seeing one more short success without help before reducing support.`
       );
     }
     if (
       (gs === "recheck_gate_visible" || nf === "refresh_baseline_before_decision") &&
       subjectsNeedingRecheckBeforeDecisionHe.length < 5
     ) {
-      subjectsNeedingRecheckBeforeDecisionHe.push(`${lab}: כדאי סבב תצפית/נתון עדכני לפני החלטה מהותית.`);
+      subjectsNeedingRecheckBeforeDecisionHe.push(`${lab}: worth an observation round / updated data point before a significant decision.`);
     }
     if (gs === "pivot_gate_visible" && subjectsWithVisiblePivotTriggerHe.length < 5) {
-      subjectsWithVisiblePivotTriggerHe.push(`${lab}: אם הסבב הבא חוזר על אותו דפוס בלי שיפור - כדאי לשקול שינוי כיוון זהיר.`);
+      subjectsWithVisiblePivotTriggerHe.push(`${lab}: if the next round repeats the same pattern without improvement - worth considering a careful change of direction.`);
     }
   }
 
@@ -1312,7 +1312,7 @@ const BLOCKER_CROSS_PRIORITY_P14 = [
 ];
 
 /**
- * Phase 14 — מאיפה מתחיל הקושי בכמה מקצועות.
+ * Phase 14 — where the difficulty starts across subjects.
  * @param {Record<string, unknown>} subjects
  */
 function buildCrossSubjectPhase14Fields(subjects) {
@@ -1345,14 +1345,14 @@ function buildCrossSubjectPhase14Fields(subjects) {
       subjectsLikelyShowingDownstreamSymptomsHe.length < 5
     ) {
       subjectsLikelyShowingDownstreamSymptomsHe.push(
-        `${lab}: ייתכן שהקושי הנראה קשור גם לבסיס - לא רק לנקודה אחת בנושא.`
+        `${lab}: the visible difficulty may also be tied to the foundation - not just one point in the topic.`
       );
     }
     if (s.subjectFoundationFirstPriority && subjectsNeedingFoundationFirstHe.length < 5) {
-      subjectsNeedingFoundationFirstHe.push(`${lab}: כדאי לפתוח קודם ייצוב בסיס קצר - ואז לחדד במקצוע.`);
+      subjectsNeedingFoundationFirstHe.push(`${lab}: it's worth starting with a short foundation stabilization first - then refining in the subject.`);
     }
     if (ds === "likely_local_issue" && subjectsSafeForLocalInterventionHe.length < 5) {
-      subjectsSafeForLocalInterventionHe.push(`${lab}: נראה שהקושי ממוקד בנושא הזה - אפשר לתרגל אותו בלי להרחיב יותר מדי.`);
+      subjectsSafeForLocalInterventionHe.push(`${lab}: the difficulty looks focused on this topic - it can be practiced without expanding too much.`);
     }
   }
 
@@ -1380,8 +1380,8 @@ function buildCrossSubjectPhase14Fields(subjects) {
 
   const crossSubjectFoundationFirstPriority = foundationFirstSubjects >= 2 || downstreamHigh >= 2;
   const crossSubjectFoundationFirstPriorityHe = crossSubjectFoundationFirstPriority
-    ? "בכמה מקצועות כדאי לחזק קודם בסיס לפני הרחבה או ליטוש עמוק."
-    : "ברוב המקצועות הקושי נראה ממוקד או שהמידע עדיין חלקי - לא צריך להסיק שיש קושי רחב בכל המקצועות.";
+    ? "In a few subjects it's worth reinforcing the foundation first before expanding or fine-tuning deeply."
+    : "In most subjects the difficulty looks focused or the data is still partial - there's no need to conclude there's a broad difficulty across all subjects.";
 
   return {
     crossSubjectDependencyState,
@@ -1401,7 +1401,7 @@ function buildCrossSubjectPhase14Fields(subjects) {
 }
 
 /**
- * Phase 8 — סולם עדיפויות הורי בכמה מקצועות (1–2 פעולות מיידיות מרכזיות).
+ * Phase 8 — parent priority ladder across subjects (1–2 main immediate actions).
  * @param {Record<string, unknown>} subjects
  * @param {Array<{ subject: string, questionCount?: number }>} subjectCoverage
  */
@@ -1455,7 +1455,7 @@ function buildParentPriorityLadderPhase8(subjects, subjectCoverage) {
   for (const r of ranked) {
     if (r.s.subjectMonitoringOnly && monitoringOnlyAreasHe.length < 5) {
       monitoringOnlyAreasHe.push(
-        `${r.subjectLabelHe}: ${shortenHe(String(r.s.subjectPriorityReasonHe || "שגרת תרגול קצרה בשלב זה."), 120)}`
+        `${r.subjectLabelHe}: ${shortenHe(String(r.s.subjectPriorityReasonHe || "A short practice routine at this stage."), 120)}`
       );
     } else if (
       r.s.subjectPriorityLevel === "soon" &&
@@ -1464,7 +1464,7 @@ function buildParentPriorityLadderPhase8(subjects, subjectCoverage) {
       deferForNowAreasHe.length < 4
     ) {
       deferForNowAreasHe.push(
-        `${r.subjectLabelHe}: ${shortenHe(String(r.s.subjectDeferredActionHe || "להמתין עם שינוי מהותי."), 110)}`
+        `${r.subjectLabelHe}: ${shortenHe(String(r.s.subjectDeferredActionHe || "Hold off on a significant change."), 110)}`
       );
     }
   }
@@ -1495,7 +1495,7 @@ function buildHomeFocusHe(subjects, topStrengthsAcrossHe, topFocusAreasHe, summa
   let preservePhrase = null;
   if (maintainRows.length && maintainRows[0].labelHe) {
     const m = maintainRows[0];
-    preservePhrase = `${m.labelHe} ב${m.subjectLabelHe}`;
+    preservePhrase = `${m.labelHe} in ${m.subjectLabelHe}`;
   } else if (topStrengthsAcrossHe.length) {
     preservePhrase =
       topStrengthsAcrossHe[0].replace(/\s*\([^)]*\)\s*$/u, "").trim() || topStrengthsAcrossHe[0];
@@ -1507,22 +1507,22 @@ function buildHomeFocusHe(subjects, topStrengthsAcrossHe, topFocusAreasHe, summa
   if (focusLabels.length) {
     const cleaned = focusLabels.map(stripLeadingBenosheaHe).filter(Boolean);
     const joined = cleaned.join(" · ");
-    const noun = cleaned.length > 1 ? "הנושאים" : "הנושא";
-    return `השבוע מומלץ לשים דגש על ${noun} ${joined} - ההמלצה שלנו: תרגול משותף עם הילד. אחרי טעות, לקרוא שוב את השאלה, להיכנס לחלון התרגיל הקודם ולהבין ביחד איפה הטעות.`;
+    const noun = cleaned.length > 1 ? "topics" : "topic";
+    return `This week it's recommended to emphasize the ${noun} ${joined} - our recommendation: practice together with the child. After a mistake, re-read the question, open the previous exercise window, and understand together where the mistake happened.`;
   }
   if (preservePhrase) {
-    return `כדאי לשמור גם על תרגול רגוע סביב ${preservePhrase} - שם כבר יש בסיס טוב.`;
+    return `It's also worth keeping calm practice around ${preservePhrase} - there's already a good base there.`;
   }
   if (q < 18) {
-    return "בתקופה שנבחרה עדיין נאסף מעט תרגול - שני תרגולים קצרים בשבוע יעזרו להבין את הכיוון טוב יותר בפעם הבאה.";
+    return "In the selected period only a little practice has been collected so far - two short practice sessions a week will help clarify the direction better next time.";
   }
   if (acc >= 78 && q >= 35) {
-    return "הקצב הנוכחי נראה מאוזן - אפשר להמשיך כך ולהעמיק רק בנושאים שמופיעים למעלה ברשימת המיקוד.";
+    return "The current pace looks balanced - you can continue this way and deepen only the topics that appear at the top of the focus list.";
   }
   if (acc < 62 && q >= 18) {
-    return "כדאי לייצב לאט: משימה ברורה לפני פתרון, ושבח קטן אחרי הצלחה קטנה.";
+    return "It's worth stabilizing slowly: a clear task before solving, and small praise after a small success.";
   }
-  return "להמשיך על שגרת תרגול קבועה ורגועה, ולעקוב איך הדיוק והביטחון מתפתחים.";
+  return "Continue with a steady, calm practice routine, and watch how accuracy and confidence develop.";
 }
 
 function buildExecutiveSummary(subjects, summary, subjectCoverage, dataIntegrityReport) {
@@ -1665,22 +1665,22 @@ function buildOverallSnapshot(baseReport, subjectCoverage) {
   for (const row of practicedCoverage) {
     if (row.questionCount > 0 && row.questionCount < 15) {
       sparseSubjectsHe.push(
-        `${row.subjectLabelHe} - מספר שאלות נמוך (${row.questionCount} שאלות)`
+        `${row.subjectLabelHe} - low question count (${row.questionCount} questions)`
       );
     }
     const isHighVolumeStrong = row.questionCount >= 40 && row.accuracy >= 85;
     const isMediumVolumeStrong = row.questionCount >= 18 && row.accuracy >= 88;
     if (isHighVolumeStrong || isMediumVolumeStrong) {
       notableSubjectsHe.push(
-        `${row.subjectLabelHe} - נאספו ${row.questionCount} שאלות עם דיוק טוב (${row.accuracy}%)`
+        `${row.subjectLabelHe} - ${row.questionCount} questions collected with good accuracy (${row.accuracy}%)`
       );
     }
   }
   if (!notableSubjectsHe.length) {
-    notableSubjectsHe.push("אין עדיין מקצוע בולט לפי כמות השאלות והדיוק - המשך תרגול יעשה את ההבדל.");
+    notableSubjectsHe.push("There's no standout subject yet based on question count and accuracy - continued practice will make the difference.");
   }
   return {
-    /** סה״כ זמן למידה בדקות (כמו ב V2 summary.totalTimeMinutes) */
+    /** total learning time in minutes (like V2 summary.totalTimeMinutes) */
     totalTime: Number(sum.totalTimeMinutes) || 0,
     totalQuestions: Number(sum.totalQuestions) || 0,
     overallAccuracy: Number(sum.overallAccuracy) || 0,
@@ -1703,24 +1703,24 @@ function buildCrossSubjectInsights(baseReport, subjects) {
   const sparse = coverage.filter((c) => c.questionCount > 0 && c.questionCount < 10);
   if (sparse.length) {
     bulletsHe.push(
-      `ב${sparse.map((s) => s.subjectLabelHe).join(", ")} עדיין יש מעט מידע - התמונה תתבהר אחרי עוד תרגול.`
+      `In ${sparse.map((s) => s.subjectLabelHe).join(", ")} there's still limited information - the picture will become clearer after more practice.`
     );
   }
   const wRows = collectWeaknessRows(subjects);
-  const instr = wRows.filter((w) => /הוראות|ניסוח|קריאה/i.test(w.labelHe));
+  const instr = wRows.filter((w) => /instructions|wording|reading|הוראות|ניסוח|קריאה/i.test(w.labelHe));
   if (instr.length >= 2) {
     bulletsHe.push(
-      "בכמה מקצועות חוזרת אותה תמונה: קריאה זהירה של ניסוח המשימה לפני כתיבת התשובה. מומלץ לקבע בבית רגע קצר קבוע לזה."
+      "The same picture repeats across several subjects: careful reading of the question wording before writing the answer. It's recommended to set aside a fixed short moment at home for this."
     );
   }
   if (!bulletsHe.length) {
-    bulletsHe.push("כרגע לא נראה דפוס שחוזר בכמה מקצועות - כשיתווסף עוד תרגול, הסעיף הזה יתעדכן.");
+    bulletsHe.push("Right now there's no pattern that repeats across several subjects - once more practice is added, this section will update.");
   }
   return {
     bulletsHe,
     dataQualityNoteHe:
       (baseReport?.summary?.totalQuestions || 0) < 30
-        ? "מספר השאלות בתקופה נמוך - יש לקרוא את המסקנות הכלליות בעדינות."
+        ? "The number of questions in the period is low - read the general conclusions gently."
         : null,
   };
 }
@@ -1731,13 +1731,13 @@ function buildHomePlan(subjects) {
     const pa = subjects?.[sid]?.parentActionHe;
     if (pa && String(pa).trim()) {
       itemsHe.push(
-        `ב${SUBJECT_LABEL_HE[sid]}: ${rewriteParentRecommendationForDetailedHe(String(pa).trim())}`
+        `In ${SUBJECT_LABEL_HE[sid]}: ${rewriteParentRecommendationForDetailedHe(String(pa).trim())}`
       );
     }
     if (itemsHe.length >= 6) break;
   }
   if (!itemsHe.length) {
-    itemsHe.push("עדיין אין המלצות ממוקדות מהמערכת - מומלץ להמשיך על שגרת תרגול קבועה.");
+    itemsHe.push("There aren't yet focused recommendations from the system - it's recommended to continue with a steady practice routine.");
   }
   return { itemsHe };
 }
@@ -1748,13 +1748,13 @@ function buildNextPeriodGoals(subjects) {
     const g = subjects?.[sid]?.nextWeekGoalHe;
     if (g && String(g).trim()) {
       itemsHe.push(
-        `ב${SUBJECT_LABEL_HE[sid]}: ${rewriteParentRecommendationForDetailedHe(String(g).trim())}`
+        `In ${SUBJECT_LABEL_HE[sid]}: ${rewriteParentRecommendationForDetailedHe(String(g).trim())}`
       );
     }
     if (itemsHe.length >= 6) break;
   }
   if (!itemsHe.length) {
-    itemsHe.push("כשיתווסף עוד תרגול בתקופה שנבחרה, יופיע כאן כיוון ברור יותר - עד אז עדיף לא להעמיס יעדים מיותרים.");
+    itemsHe.push("Once more practice is collected in the selected period, a clearer direction will appear here - until then it's better not to add unnecessary goals.");
   }
   return { itemsHe };
 }
@@ -1814,9 +1814,9 @@ function buildSubjectProfiles(baseReport) {
       parentActionHe: s.parentActionHe ?? null,
       nextWeekGoalHe: s.nextWeekGoalHe ?? null,
       evidenceExamples: Array.isArray(s.evidenceExamples) ? s.evidenceExamples : [],
-      /** כשתהיה השוואת תקופות אמיתית — ימולא; לא שולחים placeholder אל UI */
+      /** When a real period comparison exists — this will be filled in; no placeholder is sent to the UI */
       trendVsPreviousPeriod: null,
-      /** המלצות צעד הבא ברמת נושא — מנוע נפרד, מבוסס שורות V2 + טעויות */
+      /** Next-step recommendations at topic level — separate engine, based on V2 rows + mistakes */
       topicRecommendations,
       dominantLearningRisk: s.dominantLearningRisk ?? null,
       dominantSuccessPattern: s.dominantSuccessPattern ?? null,
@@ -2041,8 +2041,8 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
       : "maintain_and_strengthen";
   const label =
     step === "remediate_same_level"
-      ? "לחזק לפני שמתקדמים"
-      : "צריך עוד שאלות";
+      ? "Reinforce before advancing"
+      : "Needs more questions";
   const confLev = String(u?.confidence?.level || "");
   let evidenceStrength = "low";
   if (confLev === "moderate") evidenceStrength = "medium";
@@ -2220,10 +2220,10 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
   const gradeRelation = geForIdentity.gradeRelation;
   let finalLabelRaw =
     finalStep === "remediate_same_level"
-      ? "לחזק לפני שמתקדמים"
+      ? "Reinforce before advancing"
       : outQuestions >= TOPIC_REC_MIN_ACTIONABLE_QUESTIONS
-        ? "לחזק לפי מה שחוזר"
-        : "צריך עוד שאלות";
+        ? "Reinforce based on what repeats"
+        : "Needs more questions";
   if (suppressRegisteredGradeStrengthenCopy(gradeRelation)) {
     finalLabelRaw = resolveGradeAwareRecommendationStepLabelHe(gradeRelation, finalLabelRaw);
   }
@@ -2232,8 +2232,8 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
     (suppressRegisteredGradeStrengthenCopy(gradeRelation)
       ? resolveGradeAwareRecommendationStepLabelHe(gradeRelation, "")
       : finalStep === "remediate_same_level"
-        ? "לחזק לפני שמתקדמים"
-        : "לחזק לפי מה שחוזר");
+        ? "Reinforce before advancing"
+        : "Reinforce based on what repeats");
   const conclusionStrength = cannotConcludeYet
     ? "withheld"
     : canonicalDecisionTier >= 3
@@ -2413,10 +2413,10 @@ function applyNarrativeConsistencyToExecutiveSummary(executiveSummary, subjectPr
   const totalSubjectQ = profiles.reduce((acc, sp) => acc + (Number(sp?.subjectQuestionCount) || 0), 0);
   const restrainedLine =
     totalSubjectQ >= 120
-      ? "בחלק מהנושאים עדיין יש מה לחזק - נשארים בצעדים קטנים ובוחנים שוב אחרי תרגול נוסף."
+      ? "In some topics there's still room to reinforce - keeping to small steps and checking again after more practice."
       : totalSubjectQ >= 60
-        ? "בחלק מהנושאים התמונה עדיין לא סגורה לגמרי - נשארים בצעדים קטנים עד שמתבהר מה נשמר."
-        : "בחלק מהנושאים המידע עדיין מצומצם - נשארים בצעדים קטנים עד להתבססות נתון נוסף.";
+        ? "In some topics the picture isn't fully settled yet - keeping to small steps until what holds becomes clearer."
+        : "In some topics the information is still limited - keeping to small steps until more data accumulates.";
   const existingMain = String(es.mainHomeRecommendationHe || "").trim();
   if (existingMain) return es;
   return {
@@ -2471,11 +2471,11 @@ function pickClearWeakestSubjectFromSummaryAggregates(summary, baseReport = null
 }
 
 function crossSubjectWeakFocusLineHe(worst) {
-  return `לפי סיכום התרגול בתקופה שנבחרה, הדיוק הנמוך ביותר (כ ${worst.acc}% על ${worst.q} תשובות) מופיע כרגע ב${worst.labelHe} - כדאי לתת שם דגש ממוקד השבוע.`;
+  return `Based on the practice summary for the selected period, the lowest accuracy (about ${worst.acc}% on ${worst.q} answers) currently appears in ${worst.labelHe} - it's worth giving that a focused emphasis this week.`;
 }
 
 /**
- * When topic-level diagnosis does not surface a clear מיקוד בית, still give parents a Hebrew subject label
+ * When topic-level diagnosis does not surface a clear home focus, still give parents a subject label
  * from cross-subject accuracy aggregates (same numbers shown elsewhere in the report).
  */
 function augmentExecutiveSummaryWithCrossSubjectAccuracyWeakSignal(executiveSummary, summary, baseReport = null) {
@@ -2496,7 +2496,7 @@ function augmentExecutiveSummaryWithCrossSubjectAccuracyWeakSignal(executiveSumm
   if (blob.includes(worst.labelHe)) return es;
 
   const prevHome = String(es.homeFocusHe || "");
-  const genericHome = !prevHome.trim() || /עדיין אין מוקד ברור/.test(prevHome);
+  const genericHome = !prevHome.trim() || /still no clear focus|עדיין אין מוקד ברור/.test(prevHome);
 
   if (genericHome) {
     es.homeFocusHe = line;
@@ -2547,8 +2547,8 @@ function buildSubjectProfilesFromV2(baseReport) {
       const subjQ = subjectQuestionCountFromReportSummary(baseReport, sid);
       const summaryHeEmpty =
         subjQ > 0
-          ? "יש פעילות בנושא בתקופה, אך עדיין אין תמונה מסודרת מהתרגולים על הנושא - כדאי להמשיך בתרגול."
-          : "אין מספיק נתונים בתקופה הנבחנת.";
+          ? "There's activity in the subject this period, but there still isn't an organized picture from the practice on the topic - it's worth continuing to practice."
+          : "There isn't enough data in the examined period.";
       out.push({
         subject: sid,
         subjectLabelHe: SUBJECT_LABEL_HE[sid],
@@ -2563,7 +2563,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         topicRecommendations: [],
         parentActionHe: null,
         nextWeekGoalHe: null,
-        confidenceSummaryHe: "עדיין לא הצטבר מספיק מידע כדי לקבוע כיוון ברור.",
+        confidenceSummaryHe: "Not enough information has accumulated yet to set a clear direction.",
         recommendedHomeMethodHe: null,
         trendNarrativeHe: null,
         subjectMonitoringOnly: true,
@@ -2746,10 +2746,10 @@ function buildSubjectProfilesFromV2(baseReport) {
 
     const summaryHe = (() => {
       if (p4UnitD) {
-        return `בנושא ${p4UnitD.displayName}: ${parentFacingPatternLabelHe(p4UnitD) || "צריך בירור נוסף"}`;
+        return `On the topic of ${p4UnitD.displayName}: ${parentFacingPatternLabelHe(p4UnitD) || "needs further clarification"}`;
       }
       if (strongPosD && leadPosD) {
-        const base = `בנושא ${leadPosD.displayName}: ${tierStableStrengthHe()}`;
+        const base = `On the topic of ${leadPosD.displayName}: ${tierStableStrengthHe()}`;
         const pattern = parentFacingPatternLabelHe(diagnosticLeadSource);
         if (additiveLeadD && pattern) {
           return `${base} · ${pattern}`;
@@ -2760,10 +2760,10 @@ function buildSubjectProfilesFromV2(baseReport) {
         return base;
       }
       if (isStrengthLeadD && leadPosD && leadLevD === "good") {
-        return `בנושא ${leadPosD.displayName}: ${tierStableStrengthHe()}`;
+        return `On the topic of ${leadPosD.displayName}: ${tierStableStrengthHe()}`;
       }
       if (diagnosticLeadSource) {
-        return `בנושא ${diagnosticLeadSource.displayName}: ${parentFacingPatternLabelHe(diagnosticLeadSource) || "צריך בירור נוסף"}`;
+        return `On the topic of ${diagnosticLeadSource.displayName}: ${parentFacingPatternLabelHe(diagnosticLeadSource) || "needs further clarification"}`;
       }
       const sumQ = units.reduce((acc, u) => acc + (Number(u?.evidenceTrace?.[0]?.value?.questions) || 0), 0);
       const reportQ = subjectQuestionCountFromReportSummary(baseReport, sid);
@@ -2848,7 +2848,7 @@ function buildSubjectProfilesFromV2(baseReport) {
                 reportSubjectAccuracy: subjectAccuracyFromReportSummary(baseReport, sid),
               });
             })()
-          : "עדיין לא הצטבר מספיק מידע לתמונה רחבה מהתרגולים.",
+          : "Not enough information has accumulated yet for a broad picture from the practice.",
       recommendedHomeMethodHe:
         resolveUnitNextGoalHe(subjectAnchorUnit, anchorGradeKey) || resolveUnitHomeMethodHe(subjectAnchorUnit, anchorGradeKey),
       whatNotToDoHe: subjectAnchorUnit?.intervention?.avoidHe || null,
@@ -2857,14 +2857,14 @@ function buildSubjectProfilesFromV2(baseReport) {
         hintDependenceRisk: false,
       },
       dominantBehaviorProfileAcrossRows: subjectAnchorUnit?.strengthProfile?.dominantBehavior || null,
-      strongestPositiveTrendRowHe: stable > 0 ? "נראים כיסי שליטה יציבה." : null,
-      strongestCautionTrendRowHe: fragile > 0 ? "יש הצלחות שבירות שדורשות ייצוב." : null,
+      strongestPositiveTrendRowHe: stable > 0 ? "Pockets of stable mastery are visible." : null,
+      strongestCautionTrendRowHe: fragile > 0 ? "There are fragile successes that need stabilizing." : null,
       fragileSuccessRowCount: fragile,
       stableMasteryRowCount: stable,
       modeConcentrationNoteHe: null,
       dominantLearningRiskLabelHe: parentFacingPatternLabelHe(subjectAnchorUnit) || null,
       dominantSuccessPatternLabelHe:
-        stable > 0 ? normalizeParentFacingHe("התקדמות יציבה וטובה בחלק מהנושאים") : null,
+        stable > 0 ? normalizeParentFacingHe("Stable, good progress in some topics") : null,
       improvingButSupportedHe: null,
       dominantRootCause: subjectAnchorUnit?.taxonomy?.rootsHe?.[0] || null,
       dominantRootCauseLabelHe: subjectAnchorUnit?.taxonomy?.rootsHe?.[0] || null,
@@ -2873,7 +2873,7 @@ function buildSubjectProfilesFromV2(baseReport) {
       subjectDiagnosticRestraintHe: blockedSubjectLegacy
         ? null
         : units.some((u) => csOf(u)?.assessment?.cannotConcludeYet ?? u?.outputGating?.cannotConcludeYet)
-          ? "בחלק מהשורות מה שרואים עדיין לא מספיק כדי לסגור תמונה ברורה."
+          ? "In some rows, what's seen still isn't enough to close a clear picture."
           : null,
       subjectConclusionReadiness: mergeSubjectConclusionReadinessContract({
         internalReadiness: units.some((u) => csOf(u)?.assessment?.cannotConcludeYet ?? u?.outputGating?.cannotConcludeYet) ? "partial" : "ready",
@@ -2889,7 +2889,7 @@ function buildSubjectProfilesFromV2(baseReport) {
       subjectImmediateActionHe: resolveUnitParentActionHe(subjectAnchorUnit, anchorGradeKey),
       subjectDeferredActionHe:
         subjectAnchorUnit && isStrongPositiveUnitForParentGuidance(subjectAnchorUnit)
-          ? "להמשיך באותה מורכבות ולבחון הרחבה זהירה רק אחרי עקביות נוספת."
+          ? "Continue at the same complexity and consider a careful expansion only after further consistency."
           : null,
       subjectMonitoringOnly: units.length === 0,
       subjectDoNowHe: resolveUnitParentActionHe(subjectAnchorUnit, anchorGradeKey),
@@ -2901,12 +2901,12 @@ function buildSubjectProfilesFromV2(baseReport) {
         { subjectId: sid },
       ),
       subjectTransferReadiness: units.some((u) => u?.diagnosis?.allowed) ? "emerging" : "not_ready",
-      subjectSupportAdjustmentNeedHe: highPriority > 0 ? "להדק תמיכה ולבחון מחדש." : "לשמור על מה שעובד ולבדוק שוב.",
+      subjectSupportAdjustmentNeedHe: highPriority > 0 ? "Tighten support and re-evaluate." : "Keep what's working and check again.",
       subjectRecalibrationNeedHe: units.some((u) => u?.outputGating?.cannotConcludeYet)
         ? subjectV2RecalibrationNeedYesHe()
         : subjectV2RecalibrationNeedNoHe(),
       subjectDependencyNarrativeHe: subjectAnchorUnit?.taxonomy?.competitorsHe?.[0]
-        ? `יש לבדוק גם חלופה: ${subjectAnchorUnit.taxonomy.competitorsHe[0]}.`
+        ? `An alternative should also be checked: ${subjectAnchorUnit.taxonomy.competitorsHe[0]}.`
         : null,
     });
   }
@@ -2973,17 +2973,17 @@ function buildExecutiveSummaryFromV2(baseReport, subjectCoverage) {
       resolveUnitParentActionHe(p4[0], gk(p4[0]))
       || resolveUnitParentActionHe(diagnosed[0], gk(diagnosed[0]))
       || resolveUnitParentActionHe(leadPosX, gk(leadPosX))
-      || "כרגע אין המלצה ביתית אחת מרכזית, כי עדיין צריך עוד מידע.",
+      || "There's no single central home recommendation right now, because more information is still needed.",
     cautionNoteHe: executiveV2CautionNoteHe({ p4Length: p4.length, uncertainLength: uncertain.length }),
     overallConfidenceHe: executiveV2OverallConfidenceHe(diagnosed.length, units.length, stable.length),
     dominantCrossSubjectRiskLabelHe: parentFacingPatternLabelHe(diagnosed[0]) || "",
     dominantCrossSubjectSuccessPatternLabelHe: (() => {
       const focusHe = stable[0]?.taxonomy?.["sub" + "skillHe"];
       if (focusHe) {
-        return normalizeParentFacingHe(`התקדמות יציבה וטובה ב${focusHe}`);
+        return normalizeParentFacingHe(`Stable, good progress in ${focusHe}`);
       }
       if (stable[0]) {
-        return normalizeParentFacingHe(`התקדמות יציבה וטובה ב${stable[0].displayName}`);
+        return normalizeParentFacingHe(`Stable, good progress in ${stable[0].displayName}`);
       }
       return "";
     })(),
@@ -3069,7 +3069,7 @@ function buildHomePlanFromV2(baseReport) {
   for (const u of maintainUnits.slice(0, 3)) {
     const action =
       resolveUnitParentActionHe(u, gradeKeyForV2UnitFromReport(baseReport, u)) ||
-      "להמשיך באותו קצב תרגול - המצב נראה יציב בתקופה שנבחרה.";
+      "Continue at the same practice pace - the situation looks stable for the selected period.";
     itemsHe.push(
       homePlanLineFromV2Unit(baseReport, u, rewriteParentRecommendationForDetailedHe(String(action))),
     );
@@ -3089,7 +3089,7 @@ function buildNextPeriodGoalsFromV2(baseReport) {
     .slice(0, 6)
     .map((u) => {
       const goal = resolveUnitNextGoalHe(u, gradeKeyForV2UnitFromReport(baseReport, u)) || "";
-      return `ב${SUBJECT_LABEL_HE[u.subjectId] || u.subjectId}: ${rewriteParentRecommendationForDetailedHe(String(goal))}`;
+      return `In ${SUBJECT_LABEL_HE[u.subjectId] || u.subjectId}: ${rewriteParentRecommendationForDetailedHe(String(goal))}`;
     });
   return { itemsHe: itemsHe.length ? itemsHe : [nextPeriodGoalsV2EmptyFallbackHe()] };
 }
@@ -3108,7 +3108,7 @@ export function attachOutOfGradeTransparencyFromRawBase(detailed, rawBaseReport)
 }
 
 /**
- * בונה דוח מקיף מאובייקט דוח V2 קיים — לבדיקות ולכלי עזר (ללא טעינת שחקן).
+ * Builds a detailed report from an existing V2 report object — for tests and utilities (no player loading).
  * @param {Record<string, unknown>} baseReport
  * @param {{ playerName?: string, period?: string }} [meta]
  */
@@ -3244,7 +3244,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
 }
 
 /**
- * בונה דוח מקיף לתקופה (מבנה נפרד מדוח V2).
+ * Builds a detailed report for the period (structure separate from the V2 report).
  * @param {string} playerName
  * @param {string} period 'week'|'month'|'custom'
  * @param {string|null} customStartDate YYYY-MM-DD

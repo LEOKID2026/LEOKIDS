@@ -22,10 +22,10 @@ export default function GameAudioSettingsButton({ className = "", buttonClassNam
           type="button"
           onClick={() => setShowPanel(true)}
           className={btnClass}
-          aria-label="הגדרות שמע"
+          aria-label="Audio settings"
           aria-expanded={showPanel}
           aria-haspopup="dialog"
-          title="הגדרות שמע"
+          title="Audio settings"
         >
           <span aria-hidden="true">{masterOn ? "🔊" : "🔇"}</span>
         </button>

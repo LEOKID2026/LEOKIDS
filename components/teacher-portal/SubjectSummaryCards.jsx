@@ -3,11 +3,11 @@ import {
   formatPercent,
   subjectLabelHe,
   topicLabelHe,
-} from "../../lib/teacher-portal/teacher-ui.he.js";
+} from "../../lib/teacher-portal/teacher-ui.js";
 
 export default function SubjectSummaryCards({ subjects, showTopics = false }) {
   if (!subjects || typeof subjects !== "object") {
-    return <p className="text-white/60 text-sm">אין מספיק נתונים</p>;
+    return <p className="text-white/60 text-sm">Not enough data</p>;
   }
 
   const cards = REPORT_SUBJECTS.map((sid) => {
@@ -22,15 +22,15 @@ export default function SubjectSummaryCards({ subjects, showTopics = false }) {
         <h3 className="font-semibold text-amber-200 mb-2">{label}</h3>
         <dl className="text-sm space-y-1 text-white/80">
           <div className="flex justify-between gap-2">
-            <dt>מפגשים</dt>
+            <dt>Sessions</dt>
             <dd>{subj.sessions ?? 0}</dd>
           </div>
           <div className="flex justify-between gap-2">
-            <dt>תשובות</dt>
+            <dt>Answers</dt>
             <dd>{subj.answers ?? 0}</dd>
           </div>
           <div className="flex justify-between gap-2">
-            <dt>הצלחה</dt>
+            <dt>Success</dt>
             <dd>{formatPercent(subj.accuracy)}</dd>
           </div>
         </dl>
@@ -63,7 +63,7 @@ export default function SubjectSummaryCards({ subjects, showTopics = false }) {
   }).filter(Boolean);
 
   if (!cards.length) {
-    return <p className="text-white/60 text-sm">אין מספיק נתונים לפי מקצוע</p>;
+    return <p className="text-white/60 text-sm">Not enough data by subject</p>;
   }
 
   return (

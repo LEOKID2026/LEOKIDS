@@ -4,7 +4,7 @@ import {
   SchoolReportLabelList,
   SchoolReportSection,
 } from "../school-portal/SchoolReportModalBody.jsx";
-import { studentLearningStatusBadgeClass } from "../../lib/school-portal/school-ui.he.js";
+import { studentLearningStatusBadgeClass } from "../../lib/school-portal/school-ui.js";
 
 export function ReportSummaryHeader({ header }) {
   if (!header) return null;
@@ -100,7 +100,7 @@ function RowActionButtons({ actions, onRowAction, item, studentReportLoading, on
               className="rounded-lg bg-amber-500 text-black text-xs font-semibold px-3 py-1.5 disabled:opacity-50"
               data-testid={`report-open-student-${action.studentId}`}
             >
-              {studentReportLoading ? "טוען…" : action.label || "דוח ילד/ה"}
+              {studentReportLoading ? "Loading…" : action.label || "Child report"}
             </button>
           );
         }
@@ -198,7 +198,7 @@ function SubjectRowsSection({ section, onRowAction }) {
           <div className="min-w-0">
             <p className="font-medium text-white">{item.label}</p>
             {item.detail ? <p className="text-xs text-white/55 mt-0.5">{item.detail}</p> : null}
-            {item.status ? <p className="text-xs text-amber-200/90 mt-0.5">דיוק {item.status}</p> : null}
+            {item.status ? <p className="text-xs text-amber-200/90 mt-0.5">Accuracy {item.status}</p> : null}
           </div>
           {item.actions?.length ? (
             <RowActionButtons actions={item.actions} onRowAction={onRowAction} item={item} />
@@ -261,7 +261,7 @@ export function ReportDetailSectionView({
   studentReportLoading = false,
   onStudentReport,
 }) {
-  if (!section) return <p className="text-sm text-white/50">אין נתונים להצגה.</p>;
+  if (!section) return <p className="text-sm text-white/50">No data to display.</p>;
 
   if (variant === "activities" && section.items?.some((i) => i.actions?.length)) {
     return (
@@ -324,14 +324,14 @@ export function ReportDetailSectionView({
           const Tag = clickable ? "button" : "div";
           const countText =
             item.count != null && item.count !== ""
-              ? `${item.count} ילדים`
+              ? `${item.count} children`
               : null;
           return (
             <li key={`${label}-${i}`}>
               <Tag
                 type={clickable ? "button" : undefined}
                 onClick={clickable ? () => onDrilldownSelect(item.drilldownKey) : undefined}
-                aria-label={clickable ? `${label}${countText ? `, ${countText}` : ""}, פתח רשימה` : undefined}
+                aria-label={clickable ? `${label}${countText ? `, ${countText}` : ""}, open list` : undefined}
                 className={`w-full rounded-lg border bg-black/20 px-3 py-2.5 text-sm text-right ${
                   clickable
                     ? "border-amber-500/20 hover:bg-black/35 hover:border-amber-500/35 cursor-pointer transition"
@@ -356,7 +356,7 @@ export function ReportDetailSectionView({
                   {clickable ? (
                     <>
                       <span className="text-white/45"> · </span>
-                      <span className="font-medium text-amber-200/90">פתח</span>
+                      <span className="font-medium text-amber-200/90">Open</span>
                     </>
                   ) : null}
                 </span>

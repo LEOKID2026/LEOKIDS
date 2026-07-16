@@ -40,7 +40,7 @@ export function buildInterventionEffectivenessPhase10(ctx) {
   const suff = String(ctx?.dataSufficiencyLevel || "low");
   const cs = String(ctx?.conclusionStrength || "");
   const hint = !!rf.hintDependenceRisk;
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "the topic").trim();
 
   const trendOk = !!td.trendConfOk;
   const posAcc = !!td.positiveAccuracy;
@@ -64,7 +64,7 @@ export function buildInterventionEffectivenessPhase10(ctx) {
 
   if (weak) {
     responseToIntervention = "not_enough_evidence";
-    evidence.push("עדיין אין מספיק אות להעריך אם התמיכה הנוכחית «מחזיקה» מגמה.");
+    evidence.push("There still isn't enough signal to tell whether current support is «holding» a trend.");
     effectivenessConfidence = 0.25;
     supportFit = "unknown";
     supportAdjustmentNeed = "monitor_only";
@@ -76,43 +76,43 @@ export function buildInterventionEffectivenessPhase10(ctx) {
     ev !== "low"
   ) {
     responseToIntervention = "regression_under_support";
-    evidence.push("מגמת דיוק שלילית בטווח - חשוב לבחון אם התמיכה מספיקת או מכוונת נכון.");
+    evidence.push("Negative accuracy trend in the range - worth checking whether support is enough or aimed correctly.");
     effectivenessConfidence = 0.62;
     supportFit = "poor_fit";
     supportAdjustmentNeed = "change_strategy";
   } else if (posAcc && indepDown && trendOk && q >= 8) {
     responseToIntervention = "mixed_response";
-    evidence.push("דיוק משתפר אך העצמאות יורדת - תגובה מעורבת לתמיכה הנוכחית.");
+    evidence.push("Accuracy is improving but independence is dropping - mixed response to current support.");
     effectivenessConfidence = 0.44;
     supportFit = "partial_fit";
     supportAdjustmentNeed = "increase_structure";
   } else if ((mrec === "persistent" || mrec === "repeating") && !posAcc && acc < 72) {
     responseToIntervention = "stalled_response";
-    evidence.push("טעויות חוזרות בלי שיפור דיוק ברור - נראה שההתקדמות נתקעה.");
+    evidence.push("Repeating mistakes without clear accuracy gains - progress looks stalled.");
     effectivenessConfidence = 0.55;
     supportFit = "partial_fit";
     supportAdjustmentNeed = "tighten_focus";
   } else if (acc >= 78 && (hint || learningStage === "fragile_retention") && !indepUp) {
     responseToIntervention = "over_supported_progress";
-    evidence.push("דיוק טוב יחסית אך ההצלחה עדיין תלויה בליווי - לא שליטה מלאה בלי עזרה.");
+    evidence.push("Accuracy is relatively good but success still depends on guidance - not full control without help.");
     effectivenessConfidence = 0.58;
     supportFit = "partial_fit";
     supportAdjustmentNeed = "reduce_support";
   } else if (indep === "improving" && indepUp && acc >= 70) {
     responseToIntervention = "independence_growing";
-    evidence.push("עולה עצמאות יחסית לצד דיוק סביר - סימן שהכיוון מתחיל להתאים.");
+    evidence.push("Independence is rising alongside reasonable accuracy - a sign the direction is starting to fit.");
     effectivenessConfidence = Math.min(0.82, 0.55 + (suff === "strong" ? 0.12 : 0));
     supportFit = "good_fit";
     supportAdjustmentNeed = "hold_course";
   } else if (posAcc && trendOk && q >= 10 && acc >= 68 && !negAcc) {
     responseToIntervention = "early_positive_response";
-    evidence.push("יש סימנים ראשונים לשיפור - עדיין מוקדם לראות אם זה נשמר בלי תמיכה.");
+    evidence.push("There are early signs of improvement - still early to know if it holds without support.");
     effectivenessConfidence = 0.48;
     supportFit = ev === "strong" && suff !== "low" ? "good_fit" : "partial_fit";
     supportAdjustmentNeed = "hold_course";
   } else {
     responseToIntervention = "mixed_response";
-    evidence.push("תמונה אמצעית - לא סוגרים אם התמיכה מספיקת או דורשת שינוי.");
+    evidence.push("Middle-of-the-road picture - not closing whether support is enough or needs a change.");
     effectivenessConfidence = 0.4;
     supportFit = "partial_fit";
     supportAdjustmentNeed = "monitor_only";
@@ -127,7 +127,7 @@ export function buildInterventionEffectivenessPhase10(ctx) {
   const supportAdjustmentNeedHe =
     SUPPORT_ADJUSTMENT_NEED_LABEL_HE[supportAdjustmentNeed] || SUPPORT_ADJUSTMENT_NEED_LABEL_HE.monitor_only;
 
-  const interventionEffectNarrativeHe = `ב«${displayName}»: ${responseToInterventionLabelHe}. ${supportAdjustmentNeedHe}`;
+  const interventionEffectNarrativeHe = `On «${displayName}»: ${responseToInterventionLabelHe}. ${supportAdjustmentNeedHe}`;
 
   const interventionEffectiveness = {
     version: 1,

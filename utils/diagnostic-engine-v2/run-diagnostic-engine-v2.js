@@ -217,25 +217,25 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
 
       const tax = chosenId ? TAXONOMY_BY_ID[chosenId] : null;
       const diagnosisLineRaw = tax
-        ? `מצביע על דפוס: ${tax.patternHe} (נקודת מיקוד: ${tax.subskillHe}) ב${String(row.displayName || bucketKey)}.`
+        ? `Points to a pattern: ${tax.patternHe} (focus: ${tax.subskillHe}) in ${String(row.displayName || bucketKey)}.`
         : "";
       const sanitized = sanitizePedagogicLine(diagnosisLineRaw);
 
       /** @type {string[]} */
       const whyNotStronger = [];
-      if (!recurrenceFull) whyNotStronger.push("חזרתיות מלאה לפי סוג הטעות שנבחר לא הושגה");
-      if (narrowSample) whyNotStronger.push("נפח שאלות בשורה קטן מדי לביטחון גבוה");
-      if (weakEvidence) whyNotStronger.push("אין רצף אירועי טעות מספק; נדרש חיזוק ראיות לפני קביעה");
-      if (hintInvalidates) whyNotStronger.push("רמז כבד מסביר חלק מההצלחות - אין להסיק שליטה מלאה");
-      if (counterEvidenceStrong) whyNotStronger.push("דיוק גבוה יחסית לנפח טעויות - נדרשת הבחנה מול רשלנות או רעש");
+      if (!recurrenceFull) whyNotStronger.push("Full recurrence for the chosen error type was not met");
+      if (narrowSample) whyNotStronger.push("Question volume on the row is too small for high confidence");
+      if (weakEvidence) whyNotStronger.push("Not enough error-event sequence; strengthen evidence before concluding");
+      if (hintInvalidates) whyNotStronger.push("Heavy hinting explains some successes - do not infer full mastery");
+      if (counterEvidenceStrong) whyNotStronger.push("Accuracy is high relative to error volume - distinguish carelessness or noise");
 
       /** @type {string[]} */
       const cannotConclude = [];
-      if (gating.cannotConcludeYet) cannotConclude.push("לא ניתן לקבוע כיוון עקבי כרגע - כדאי עוד תרגול בטווח");
+      if (gating.cannotConcludeYet) cannotConclude.push("Cannot set a consistent direction yet - more practice in range is helpful");
       if (weakTaxonomyFallbackBlocked) {
-        cannotConclude.push("האות עדיין לא מסווג לטקסונומיה יציבה - נשארים בשאלת בדיקה לפני כיוון.");
+        cannotConclude.push("The signal is not yet mapped to a stable taxonomy - stay on a check question before direction.");
       }
-      if (!chosenId && wrongCountForRules > 0) cannotConclude.push("לא נמצאה התאמה ברורה לסוג טעות אחרי סינון חזרתיות");
+      if (!chosenId && wrongCountForRules > 0) cannotConclude.push("No clear error-type match after recurrence filtering");
 
       const gradeRelation =
         typeof row.gradeRelation === "string" ? row.gradeRelation.trim() : "unknown";
@@ -390,7 +390,7 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
     evidenceFoundation: {
       schema: "MistakeEventV1+report_row",
       mappingChain: "question_event → topicRowKey → bucketKey → taxonomyId (bridge)",
-      eventCountHint: "סוכם מסננים per-row; ראה evidenceTrace בכל unit",
+      eventCountHint: "Summarized per-row filters; see evidenceTrace on each unit",
     },
     units,
     subjectRollup,

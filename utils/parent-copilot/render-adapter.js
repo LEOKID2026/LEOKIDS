@@ -57,21 +57,21 @@ export function buildQuickActions(truthPacket, answerValidatorOk) {
   return [
     qa({
       id: "qa_action_today",
-      labelHe: "צעד קטן היום",
+      labelHe: "A small step today",
       sourceContract: "contractsV1.recommendation",
       contractGate: () => recOk,
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "ineligible_recommendation" : "cap_blocked"),
     }),
     qa({
       id: "qa_action_week",
-      labelHe: "תוכנית לשבוע",
+      labelHe: "Program for the week",
       sourceContract: "contractsV1.recommendation",
       contractGate: () => recOk,
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "ineligible_recommendation" : "cap_blocked"),
     }),
     qa({
       id: "qa_avoid_now",
-      labelHe: "מה להימנע ממנו עכשיו",
+      labelHe: "What to avoid now",
       sourceContract: "contractsV1.readiness",
       contractGate: () =>
         readiness === "insufficient" || readiness === "forming" || readiness === "emerging",
@@ -79,21 +79,21 @@ export function buildQuickActions(truthPacket, answerValidatorOk) {
     }),
     qa({
       id: "qa_advance_or_hold",
-      labelHe: "להתקדם או להמתין",
+      labelHe: "move forward or wait",
       sourceContract: "contractsV1.decision",
       contractGate: () => gateAdvanceOrHoldFromContracts(truthPacket),
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "readiness_blocked" : "confidence_blocked"),
     }),
     qa({
       id: "qa_explain_to_child",
-      labelHe: "ניסוח לילד",
+      labelHe: "Formulation for a child",
       sourceContract: "contractsV1.narrative",
       contractGate: () => !!truthPacket?.contracts?.narrative,
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "scope_not_applicable" : "scope_not_applicable"),
     }),
     qa({
       id: "qa_ask_teacher",
-      labelHe: "שאלה למורה",
+      labelHe: "A question to the teacher",
       sourceContract: "contractsV1.confidence",
       contractGate: () => conf === "low" || conf === "medium",
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "confidence_blocked" : "confidence_blocked"),

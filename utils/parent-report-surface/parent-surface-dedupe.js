@@ -4,13 +4,13 @@
 
 /** Phrases that may appear at most once per report surface. */
 export const PARENT_SURFACE_ONCE_PHRASES = Object.freeze([
-  "הכיוון חיובי יחסית",
-  "נשארים עם חיזוק קצר וברור",
-  "לפני שקובעים שהנושא יציב",
-  "חיזוק ממוקד לפני קידום",
-  "חיזוק ממוקד לפי הדוח",
-  "לפני שקובעים כיוון",
-  "עדיין מוקדם לקבוע",
+  "The direction looks relatively positive",
+  "Stay with short, clear strengthening",
+  "Before deciding the topic is stable",
+  "Focused strengthening before advancing",
+  "Focused strengthening based on the report",
+  "Before locking in a direction",
+  "Still too early to decide",
 ]);
 
 function norm(s) {

@@ -1,9 +1,9 @@
 /**
- * Parent-facing Hebrew copy from engineDiagnosticDecision only — no engine/threshold changes.
- * Templates per Stage Hebrew parent copy spec (engine decision × safeSubskill).
+ * Parent-facing copy from engineDiagnosticDecision only — no engine/threshold changes.
+ * Templates per Stage parent copy spec (engine decision × safeSubskill).
  */
 
-import { subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
 import { TAXONOMY_BY_ID } from "../diagnostic-engine-v2/taxonomy-registry.js";
 import { resolveGradeAwareParentRecommendationHe } from "./grade-aware-recommendation-resolver.js";
 import { splitTopicRowKey } from "../parent-report-row-diagnostics.js";
@@ -12,113 +12,113 @@ import { buildSpeedPressurePatternFindingHe } from "../learning-pattern-decision
 /** Home actions by taxonomy id — editorial parent copy, not engine logic. */
 const HOME_ACTION_BY_TAXONOMY_ID = Object.freeze({
   "M-02":
-    "לפתור תרגילים בטור, לסמן יחידות ועשרות, ולבקש מהילד להסביר מתי מעבירים עשרת לעמודה הבאה.",
+    "Solve column-addition problems, mark the ones and tens, and ask the child to explain when a ten is carried to the next column.",
   "M-09":
-    "לפתור לאט תרגילי חיסור בטור, לסמן מאיפה לוקחים עשרת, ולבדוק כל שלב לפני התשובה.",
+    "Solve column-subtraction problems slowly, mark where a ten is borrowed from, and check every step before the answer.",
   "M-01":
-    "לפרק מספרים לעשרות ואחדות או למאות, עשרות ואחדות, ואז לפתור.",
+    "Break numbers into tens and ones, or hundreds, tens and ones, and then solve.",
   "M-04":
-    "לשאול בכל שבר \"כמה חלקים יש בסך הכול?\" ו\"כמה חלקים לקחנו?\", לפני שמחשבים.",
+    "For every fraction, ask \"how many parts are there in total?\" and \"how many parts did we take?\" before calculating.",
   "M-05":
-    "לצייר שני שברים פשוטים, להשוות בציור, ורק אחר כך לעבור לחישוב.",
+    "Draw two simple fractions, compare them in the drawing, and only then move to calculation.",
   "M-03":
-    "לעבוד על קבוצות שוות, למשל \"3 קבוצות של 4\", ולבקש מהילד להסביר מה כל מספר מייצג.",
+    "Work with equal groups, for example \"3 groups of 4\", and ask the child to explain what each number represents.",
   "M-10":
-    "לעבוד על קבוצות שוות, למשל \"3 קבוצות של 4\", ולבקש מהילד להסביר מה כל מספר מייצג.",
+    "Work with equal groups, for example \"3 groups of 4\", and ask the child to explain what each number represents.",
   "G-03":
-    "להראות צורה ולשאול \"מה מודדים בתוך הצורה?\". לאחר מכן לחשב יחד לפי יחידות שטח.",
+    "Show a shape and ask \"what are we measuring inside the shape?\" Then calculate together using area units.",
   "G-08":
-    "להראות צורה ולשאול \"מה מודדים בתוך הצורה?\". לאחר מכן לחשב יחד לפי יחידות שטח.",
+    "Show a shape and ask \"what are we measuring inside the shape?\" Then calculate together using area units.",
   "G-06":
-    "להראות צורה ולשאול \"מה מודדים מסביב לצורה?\". לאחר מכן לחבר את אורכי הצלעות.",
+    "Show a shape and ask \"what are we measuring around the shape?\" Then add up the side lengths.",
   "G-04":
-    "בכל צורה לשאול קודם \"האם מודדים בפנים או מסביב?\", ורק אחר כך לחשב.",
+    "For every shape, first ask \"are we measuring inside or around it?\", and only then calculate.",
   "G-02":
-    "לסמן את היחידות ליד כל מספר ולבדוק שהתשובה כתובה ביחידה הנכונה.",
+    "Mark the units next to every number and check that the answer is written with the correct unit.",
   "G-01":
-    "לבקש מהילד להצביע על הנתונים בציור לפני שהוא מתחיל לפתור.",
+    "Ask the child to point to the given data in the drawing before starting to solve.",
   "E-01":
-    "לקרוא 5–8 מילים קצרות, לבקש מהילד לומר את המשמעות בעברית, ואז להשתמש במילה אחת במשפט קצר.",
+    "Read 5-8 short words, ask the child to say the meaning, and then use one word in a short sentence.",
   "E-02":
-    "לתת מילה בעברית, לבקש מהילד לומר באנגלית, ואז לבדוק יחד את הכתיב והמשמעות.",
+    "Give a word, ask the child to say it in English, and then check the spelling and meaning together.",
   "E-03":
-    "לקרוא מילה באנגלית, לבקש מהילד להסביר בעברית, ולא רק לבחור תשובה.",
+    "Read a word in English, ask the child to explain its meaning, not just pick an answer.",
   "E-05":
-    "להציג שתי מילים דומות, לקרוא אותן לאט, ולסמן מה שונה ביניהן.",
+    "Show two similar words, read them slowly, and point out what's different between them.",
   "E-06":
-    "לקרוא משפט קצר, לעצור, ולשאול \"מה המשפט אומר בעברית?\"",
+    "Read a short sentence, pause, and ask \"what does the sentence say?\"",
   "H-04":
-    "לקרוא משפט קצר בקול, לעצור, ולבקש מהילד להסביר מה קרא.",
+    "Read a short sentence out loud, pause, and ask the child to explain what they read.",
   "H-02":
-    "לקרוא את המשפט ולשאול מה התפקיד של המילה במשפט, בלי למהר לתשובה.",
+    "Read the sentence and ask what role the word plays in it, without rushing to an answer.",
   "H-06":
-    "לקרוא את המשפט ולשאול מה התפקיד של המילה במשפט, בלי למהר לתשובה.",
+    "Read the sentence and ask what role the word plays in it, without rushing to an answer.",
   "H-01":
-    "לבחור מילה אחת מהשאלה, לבקש מהילד להסביר אותה במילים שלו, ואז להשתמש בה במשפט.",
+    "Choose one word from the question, ask the child to explain it in their own words, then use it in a sentence.",
   "H-03":
-    "לכתוב את המילה, לקרוא אותה בקול, ולסמן את החלק שבו הייתה הטעות.",
+    "Write the word, read it out loud, and mark the part where the mistake was.",
   "H-07":
-    "לכתוב את המילה, לקרוא אותה בקול, ולסמן את החלק שבו הייתה הטעות.",
+    "Write the word, read it out loud, and mark the part where the mistake was.",
   "S-01":
-    "לחזור על 3 עובדות קצרות, ואז לשאול שאלה אחת בלי להסתכל.",
+    "Review 3 short facts, then ask one question without looking.",
   "S-02":
-    "לחזור על 3 עובדות קצרות, ואז לשאול שאלה אחת בלי להסתכל.",
+    "Review 3 short facts, then ask one question without looking.",
   "S-03":
-    "לשים שני מושגים זה ליד זה, לשאול \"מה דומה?\" ו\"מה שונה?\", ואז לפתור שאלה אחת.",
+    "Put two concepts side by side, ask \"what's similar?\" and \"what's different?\", then solve one question.",
   "S-04":
-    "לשאול \"מה קרה קודם?\" ו\"מה קרה בגלל זה?\"",
+    "Ask \"what happened first?\" and \"what happened because of that?\"",
   "S-05":
-    "לשאול \"מה קרה קודם?\" ו\"מה קרה בגלל זה?\"",
+    "Ask \"what happened first?\" and \"what happened because of that?\"",
   "S-06":
-    "לסדר את שלבי התהליך לפי הסדר, ואז להסביר כל שלב במשפט קצר.",
+    "Put the steps of the process in order, then explain each step in a short sentence.",
   "S-07":
-    "לבחור מושג אחד, לבקש מהילד להסביר אותו במילים שלו, ואז לתת דוגמה מהחיים.",
+    "Choose one concept, ask the child to explain it in their own words, then give a real-life example.",
   "MG-01":
-    "לתרגל קריאת קנה מידה במפה בעזרת סרגל או קו קנה מידה, ולבקש מהילד להסביר מה מייצג המרחק במפה.",
+    "Practice reading a map scale using a ruler or scale line, and ask the child to explain what a distance on the map represents.",
   "MG-02":
-    "לתרגל כיוונים במפה בעזרת חץ צפון, ולבקש מהילד להסביר לאיזה כיוון צריך ללכת.",
+    "Practice map directions using a north arrow, and ask the child to explain which direction to go.",
   "MG-03":
-    "לתרגל מצבים קצרים שבהם צריך להבחין בין זכות, חובה או כלל, ולבקש מהילד להסביר מה בטקסט תומך בתשובה.",
+    "Practice short scenarios that require distinguishing between a right, an obligation, or a rule, and ask the child to explain what in the text supports the answer.",
   "MG-04":
-    "לתרגל סידור אירועים לפי סדר זמן, ולבקש מהילד להסביר איזה אירוע קרה קודם ומה הראיה לכך.",
+    "Practice ordering events by time, and ask the child to explain which event happened first and what the evidence is.",
   "MG-05":
-    "לתרגל השוואת אזורים במפה בעזרת מקרא, צבעים וסימנים, ולבקש מהילד להראות באיזה נתון במפה השתמש.",
+    "Practice comparing areas on a map using the legend, colors and symbols, and ask the child to show which map data was used.",
   "MG-06":
-    "לתרגל שאלות של סיבה ותוצאה, ולבקש מהילד להפריד בין עובדה שמופיעה בטקסט לבין דעה.",
+    "Practice cause-and-effect questions, and ask the child to separate a fact stated in the text from an opinion.",
   "MG-07":
-    "לתרגל התאמה בין מוסדות בקהילה לתפקיד שלהם, ולבקש מהילד להסביר מי נעזר במוסד ומה השירות שהוא נותן.",
+    "Practice matching community institutions to their roles, and ask the child to explain who uses the institution and what service it provides.",
   "MG-08":
-    "לתרגל קריאת מקרא וסימנים במפה, ולבקש מהילד לזהות את הנתון המתאים לפני שעונה.",
+    "Practice reading a map legend and symbols, and ask the child to identify the relevant data before answering.",
 });
 
 /** Parent-facing subskill labels — taxonomy ids unchanged; editorial copy only. */
 const PARENT_SUBSKILL_LABEL_HE = Object.freeze({
-  "M-02": "נשיאה בחיבור",
-  "H-04": "איתור מידע בטקסט",
-  "S-03": "הבנת הקשר בין חלקי הגוף",
-  "MG-01": "קריאת קנה מידה במפה",
-  "MG-02": "כיוונים וצפון במפה",
-  "MG-03": "זכות, חובה וכלל",
-  "MG-04": "סדר אירועים בציר זמן",
-  "MG-05": "קריאת מפת אקלים",
-  "MG-06": "סיבה ותוצאה",
-  "MG-07": "מוסדות בקהילה",
-  "MG-08": "מקרא וסימנים במפה",
+  "M-02": "carrying in addition",
+  "H-04": "finding information in a text",
+  "S-03": "understanding the connection between body parts",
+  "MG-01": "reading a map scale",
+  "MG-02": "directions and north on a map",
+  "MG-03": "rights, obligations and rules",
+  "MG-04": "ordering events on a timeline",
+  "MG-05": "reading a climate map",
+  "MG-06": "cause and effect",
+  "MG-07": "institutions in the community",
+  "MG-08": "map legend and symbols",
 });
 
 const TOPIC_ONLY_HOME = Object.freeze({
   strengthening:
-    "לתרגל מספר קטן של שאלות באותו נושא, ולבקש מהילד להסביר בקול איך הגיע לתשובה. אם אותו סוג טעות חוזר, הדוח יוכל לדייק יותר בהמשך.",
+    "Practice a small number of questions on this topic, and ask the child to explain out loud how they reached the answer. If the same kind of mistake repeats, the report will be able to narrow it down further later.",
   clear_gap:
-    "לחזור לשאלות פשוטות יותר באותו נושא, לפתור יחד 3–5 דוגמאות, ואז לתת לילד להסביר את דרך הפתרון במילים שלו.",
+    "Go back to simpler questions on this topic, solve 3-5 examples together, and then let the child explain the solving method in their own words.",
   partial:
-    "להמשיך באותה רמה עוד קצת, עם בדיקה קצרה אחרי כל תשובה.",
+    "Continue at the same level a bit longer, with a short check after every answer.",
   mastery:
-    "לשמר את הנושא בתרגול קצר מדי פעם, ולבדוק שהדיוק נשמר גם בשאלות חדשות.",
+    "Keep the topic fresh with occasional short practice, and check that accuracy holds on new questions too.",
   early:
-    "לתת עוד תרגול קצר באותו נושא לפני שמסיקים מסקנה ברורה.",
+    "Do a bit more short practice on this topic before drawing a clear conclusion.",
   insufficient:
-    "לבצע עוד כמה שאלות באותו נושא, ואז לבדוק שוב את הדוח.",
+    "Do a few more questions on this topic, then check the report again.",
 });
 
 function clean(s) {
@@ -146,15 +146,15 @@ function parentSubskillLabelHe(taxonomyId, safe, topicLabel = "") {
 
   const row = TAXONOMY_BY_ID[id];
   const name = clean(row?.subskillHe);
-  if (!name || /^[a-zA-Z][a-zA-Z0-9_/\-\s]*$/.test(name)) return null;
+  if (!name) return null;
 
-  if (id === "H-04" && name === "חיפוש") {
+  if (id === "H-04") {
     const topic = clean(topicLabel);
-    if (/הבנ(?:ת|ה)\s+(?:ה)?נקרא/i.test(topic)) return "הבנת מה שנקרא";
-    return "איתור מידע בטקסט";
+    if (/reading comprehension/i.test(topic)) return "reading comprehension";
+    return "finding information in a text";
   }
 
-  return name;
+  return /^[a-zA-Z][a-zA-Z0-9_/\-\s]*$/.test(name) ? null : name;
 }
 
 /**
@@ -196,7 +196,7 @@ function competitiveModeContextHe(sig) {
 
   if (decision === "speed_pressure_pattern" || diagType === "speed_pressure" || speedRisk) {
     return (
-      "נראה שחלק מהטעויות קשורות לקצב פתרון מהיר מדי. כדאי לתרגל עצירה קצרה לפני שליחה: לקרוא שוב את השאלה, לבדוק את התשובה, ורק אז להמשיך."
+      "Some of the mistakes appear related to solving too quickly. It helps to practice pausing briefly before submitting: re-read the question, check the answer, and only then continue."
     );
   }
   return "";
@@ -216,45 +216,45 @@ function buildDiagnosticBodyByDecision(p) {
 
   if (decision === "mastery_stable") {
     let body =
-      `ב${subj} בנושא ${topic} נראית שליטה טובה. הילד פתר ${q} שאלות בדיוק של ${acc}%.`;
-    if (subskill) body += ` במיוחד נראית יציבות ב${subskill}.`;
+      `In ${subj} - topic ${topic}, good command is showing. The child solved ${q} questions with ${acc}% accuracy.`;
+    if (subskill) body += ` Stability is especially visible in ${subskill}.`;
     return body;
   }
 
   if (decision === "partial_stable") {
     let body =
-      `ב${subj} בנושא ${topic} נראית הבנה חלקית וטובה, אבל עדיין לא שליטה מלאה. ` +
-      `הילד פתר ${q} שאלות בדיוק של ${acc}%.`;
-    if (subskill) body += ` נראה שכדאי לחזק במיוחד את ${subskill}.`;
+      `In ${subj} - topic ${topic}, understanding looks partial but good, though not full mastery yet. ` +
+      `The child solved ${q} questions with ${acc}% accuracy.`;
+    if (subskill) body += ` It looks like ${subskill} is especially worth reinforcing.`;
     return body;
   }
 
   if (decision === "topic_needs_strengthening") {
     let body =
-      `ב${subj} בנושא ${topic} יש נקודת חיזוק שכדאי לעבוד עליה. ` +
-      `הילד פתר ${q} שאלות בדיוק של ${acc}%. ` +
-      "הנתונים מראים שהנושא עדיין לא יציב, ולכן כדאי לתרגל אותו בצורה ממוקדת.";
-    if (subskill) body += ` החיזוק המרכזי הוא ב${subskill}.`;
+      `In ${subj} - topic ${topic}, there's a point worth reinforcing. ` +
+      `The child solved ${q} questions with ${acc}% accuracy. ` +
+      "The data shows this topic isn't stable yet, so focused practice would help.";
+    if (subskill) body += ` The main point to reinforce is ${subskill}.`;
     return body;
   }
 
   if (decision === "clear_topic_gap") {
     let body =
-      `ב${subj} בנושא ${topic} נראה שיש כאן נושא שכדאי לחזק. ` +
-      `הילד פתר ${q} שאלות בדיוק של ${acc}%, ולכן כדאי לעצור ולחזק את הבסיס לפני שמתקדמים.`;
-    if (subskill) body += ` הנקודה המרכזית לחיזוק היא ${subskill}.`;
+      `In ${subj} - topic ${topic}, this looks like a topic worth reinforcing. ` +
+      `The child solved ${q} questions with ${acc}% accuracy, so it helps to pause and reinforce the basics before moving on.`;
+    if (subskill) body += ` The main point to reinforce is ${subskill}.`;
     return body;
   }
 
   if (decision === "early_direction_only") {
-    if (q <= 5) return `עדיין מעט נתונים בנושא ${topic} - עוד קצת תרגול יעזור לנו להבין טוב יותר.`;
-    return `זו תמונה ראשונית בלבד בנושא ${topic}, אבל כדאי עוד קצת תרגול לפני מסקנה ברורה.`;
+    if (q <= 5) return `There's still limited data on the topic ${topic} - a bit more practice will help us understand better.`;
+    return `This is only an early picture for the topic ${topic}, but a bit more practice would help before a clear conclusion.`;
   }
 
   if (decision === "insufficient_data" || q < 5) {
-    if (q <= 5) return `עדיין מעט נתונים בנושא ${topic} - עוד קצת תרגול יעזור לנו להבין טוב יותר.`;
-    if (q <= 15) return `זו תמונה ראשונית בלבד בנושא ${topic}, אבל כדאי עוד קצת תרגול לפני מסקנה ברורה.`;
-    return `נראה שיש בנושא ${topic} נושא שכדאי לחזק בתרגול הקרוב.`;
+    if (q <= 5) return `There's still limited data on the topic ${topic} - a bit more practice will help us understand better.`;
+    if (q <= 15) return `This is only an early picture for the topic ${topic}, but a bit more practice would help before a clear conclusion.`;
+    return `It looks like ${topic} is a topic worth reinforcing in upcoming practice.`;
   }
 
   if (decision === "speed_pressure_pattern") {
@@ -264,8 +264,8 @@ function buildDiagnosticBodyByDecision(p) {
   }
 
   return (
-    `ב${subj} בנושא ${topic} יש נקודת חיזוק שכדאי לעקוב אחריה. ` +
-    `הילד פתר ${q} שאלות בדיוק של ${acc}%.`
+    `In ${subj} - topic ${topic}, there's a point worth following. ` +
+    `The child solved ${q} questions with ${acc}% accuracy.`
   );
 }
 
@@ -279,7 +279,7 @@ function buildHomeActionTextHe(p) {
   const home = p.homeAction;
 
   if (decision === "mastery_stable") {
-    if (subskill) return "לתת כמה שאלות דומות ברמה מעט גבוהה יותר, בלי למהר.";
+    if (subskill) return "Give a few similar questions at a slightly higher level, without rushing.";
     return TOPIC_ONLY_HOME.mastery;
   }
   if (decision === "partial_stable") {
@@ -371,13 +371,13 @@ export function buildEngineDecisionParentTopicCopyHe(p) {
 
   const diagnosticBody = buildDiagnosticBodyByDecision(copyCtx);
   const homeActionText = buildHomeActionTextHe(copyCtx);
-  const actionHe = homeActionText ? `מה כדאי לעשות ביחד: ${homeActionText}` : "";
+  const actionHe = homeActionText ? `What to try together: ${homeActionText}` : "";
 
   // speed_pressure_pattern's diagnosticBody already IS the single canonical
   // sentence (incl. the untimed-practice check) — do not append a second,
   // duplicate speed remark for the same decision on the same surface.
   const modeContextHe = engineDecision === "speed_pressure_pattern" ? "" : competitiveModeContextHe(sig);
-  const dataHe = `הילד פתר ${q} שאלות בדיוק של ${acc}%.`;
+  const dataHe = `The child solved ${q} questions with ${acc}% accuracy.`;
 
   let summaryHe = diagnosticBody;
   if (actionHe) summaryHe += ` ${actionHe}`;
@@ -405,29 +405,28 @@ export function buildExplainIdentifiedLineHe(engineCopy, label) {
   if (!engineCopy || !t) return "";
   switch (engineCopy.engineDecision) {
     case "mastery_stable":
-      return `מה רואים: שליטה טובה בנושא ${t}.`;
+      return `What we see: good command of the topic ${t}.`;
     case "partial_stable":
-      return `מה רואים: שליטה חלקית בנושא ${t}.`;
+      return `What we see: partial command of the topic ${t}.`;
     case "clear_topic_gap":
-      return "מה כדאי לחזק: נראה שיש כאן נושא שכדאי לתרגל עוד.";
+      return "What's worth reinforcing: this looks like a topic that needs more practice.";
     case "topic_needs_strengthening":
-      return `מה רואים: נקודת חיזוק בנושא ${t}.`;
+      return `What we see: a point worth reinforcing in the topic ${t}.`;
     case "early_direction_only":
-      return `מה רואים: זו תמונה ראשונית בלבד בנושא ${t}.`;
+      return `What we see: this is only an early picture for the topic ${t}.`;
     case "insufficient_data":
-      return `מה רואים: נושא לסקירה בנושא ${t}.`;
+      return `What we see: a topic to keep an eye on: ${t}.`;
     case "deferred_topic_only":
-      return `מה רואים: תמונה כללית בנושא ${t}.`;
+      return `What we see: a general picture for the topic ${t}.`;
     case "speed_pressure_pattern":
       // No second sentence for this decision on the same surface: the canonical
       // buildSpeedPressurePatternFindingHe text already appears once (via
       // engineCopy.whyHe/meaning). Also — there is no evidence that the mistakes are
-      // CAUSED BY speed ("קשורות למהירות"); the only proven fact is that they occurred
-      // during fast/timed practice, which the canonical sentence already states without
-      // overclaiming causation. Return empty so this line never renders.
+      // CAUSED BY speed; the only proven fact is that they occurred during fast/timed
+      // practice, which the canonical sentence already states without overclaiming causation.
       return "";
     default:
-      return `מה רואים: מיקוד בנושא ${t}.`;
+      return `What we see: focus on the topic ${t}.`;
   }
 }
 

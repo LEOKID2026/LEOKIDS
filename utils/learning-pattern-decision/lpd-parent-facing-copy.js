@@ -2,7 +2,7 @@
  * LPD-safe parent-facing copy helpers — subject-agnostic.
  */
 import { sanitizeParentPatternLabel, isBlockedParentPatternLabel } from "./parent-pattern-label.js";
-import { resolveParentFacingPatternLabelHe, parentFacingErrorPatternMeaningHe } from "./parent-facing-error-pattern-he.js";
+import { resolveParentFacingPatternLabel, parentFacingErrorPatternMeaning } from "./parent-facing-error-pattern.js";
 import { buildLearningPatternDecision } from "./build-learning-pattern-decision.js";
 import { findForbiddenParentWords } from "./build-parent-visible-finding.js";
 import { rowNeedsPracticeFromLpd } from "./apply-learning-pattern-decision.js";
@@ -281,19 +281,19 @@ function lpdMeaningLineHe(lpd, topicName) {
   const templateId = String(lpd.templateId || "");
 
   if (ts === "mixed" || ft === "mixed_pattern") {
-    return `מה זה אומר: יש בסיס מסוים, אבל ${topicName} עדיין לא יציב לגמרי.`;
+    return `What this means: There is some foundation, but ${topicName} is not fully steady yet.`;
   }
   if (ts.startsWith("positive") || ft === "success_pattern") {
-    return `מה זה אומר: ${topicName} נראה יציב יחסית עכשיו. כדאי לשמור עליו עם תרגול קצר מדי פעם.`;
+    return `What this means: ${topicName} looks fairly steady right now. It helps to keep it up with short practice now and then.`;
   }
   if (
     (ts === "difficulty_repeated" || templateId.startsWith("difficulty_repeated")) &&
     !isBlockedParentPatternLabel(String(lpd.repeatedMistakePatterns?.[0]?.label || ""))
   ) {
     const rawPattern = String(lpd.repeatedMistakePatterns?.[0]?.label || "");
-    const specific = parentFacingErrorPatternMeaningHe(rawPattern);
-    if (specific) return `מה זה אומר: ${specific}`;
-    return "מה זה אומר: אותה טעות חוזרת כמה פעמים, ולכן כדאי לעצור ולתרגל אותה בנפרד.";
+    const specific = parentFacingErrorPatternMeaning(rawPattern);
+    if (specific) return `What this means: ${specific}`;
+    return "What this means: The same mistake keeps coming back, so it helps to pause and practice it on its own.";
   }
   if (
     ts === "difficulty_observed" ||
@@ -303,13 +303,13 @@ function lpdMeaningLineHe(lpd, topicName) {
     templateId.includes("difficulty") ||
     templateId.includes("practice_focus")
   ) {
-    return `מה זה אומר: כדאי לחזק את ${topicName} לפני שממשיכים לנושאים קשים יותר.`;
+    return `What this means: It helps to reinforce ${topicName} before moving on to harder topics.`;
   }
 
   const finding = guardParentFacingText(lpd.parentVisibleFinding);
   if (finding && q >= 3 && q <= 4) {
-    const core = finding.replace(/\s*מבוסס על \d+ שאלות שנפתרו בנושא\.?\s*$/u, "").trim();
-    if (core) return `מה זה אומר: ${core}.`;
+    const core = finding.replace(/\s*Based on \d+ questions solved in this topic\.?\s*$/iu, "").trim();
+    if (core) return `What this means: ${core}.`;
   }
   return "";
 }
@@ -328,7 +328,7 @@ function lpdPatternLineHe(lpd) {
   if (!patterns.length) return "";
 
   const label = sanitizeParentPatternLabel(String(patterns[0]?.label || "").trim());
-  if (label) return `הטעות שחוזרת: ${label}.`;
+  if (label) return `The recurring mistake: ${label}.`;
   return "";
 }
 
@@ -349,13 +349,13 @@ function lpdHomeActionLineHe(lpd, topicName) {
   const ft = String(lpd.findingType || "");
 
   if (ts === "mixed" || ft === "mixed_pattern") {
-    return `מה כדאי לעשות ביחד: לבחור 5–8 שאלות בנושא ${topicName}, לשלב שאלות קלות ובינוניות, ולעצור בכל טעות כדי להבין מה קרה.`;
+    return `What to try together: Pick 5–8 questions on ${topicName}, mix easy and medium ones, and pause at every mistake to understand what happened.`;
   }
   if (ts.startsWith("positive") || ft === "success_pattern") {
-    return `מה כדאי לעשות ביחד: להמשיך מדי פעם בתרגול קצר ב${topicName}, כדי לשמור על מה שכבר עובד.`;
+    return `What to try together: Keep doing short practice on ${topicName} now and then, to hold on to what already works.`;
   }
   if (needsPractice || hasFocus) {
-    return `מה כדאי לעשות ביחד: לתרגל כמה שאלות קצרות ב${topicName}, ולבקש מהילד להסביר את הדרך בקול.`;
+    return `What to try together: Practice a few short questions on ${topicName}, and ask the child to explain the method out loud.`;
   }
   return "";
 }
@@ -387,7 +387,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
   }
 
   const topicName =
-    String(row?.label || row?.displayName || lpd.recommendedFocus || "").trim() || "הנושא";
+    String(row?.label || row?.displayName || lpd.recommendedFocus || "").trim() || "this topic";
   const acc = metrics.accuracy;
   const w = metrics.wrong;
 
@@ -397,27 +397,27 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
     null;
 
   if (contract?.parentSafeFinding && q >= 3) {
-    const patternLabel = resolveParentFacingPatternLabelHe(contract.detectedPattern);
+    const patternLabel = resolveParentFacingPatternLabel(contract.detectedPattern);
     const pattern =
       patternLabel && q >= 5
-        ? guardParentFacingText(`הטעות שחוזרת: ${patternLabel}.`)
+        ? guardParentFacingText(`The recurring mistake: ${patternLabel}.`)
         : "";
     const meaning =
       contract.engineDecision === "clear_topic_gap" ||
       contract.engineDecision === "topic_needs_strengthening"
         ? guardParentFacingText(
-            `מה זה אומר: כדאי לחזק את ${topicName} לפני שממשיכים לנושאים קשים יותר.`,
+            `What this means: It helps to reinforce ${topicName} before moving on to harder topics.`,
           )
         : guardParentFacingText(lpdMeaningLineHe(lpd, topicName));
     const action =
       contract.recommendedAction === "remediate_same_level"
         ? guardParentFacingText(
-            `מה כדאי לעשות ביחד: לתרגל כמה שאלות קצרות ב${topicName}, ולבקש מהילד להסביר את הדרך בקול.`,
+            `What to try together: Practice a few short questions on ${topicName}, and ask the child to explain the method out loud.`,
           )
         : guardParentFacingText(lpdHomeActionLineHe(lpd, topicName));
 
     return {
-      identified: guardParentFacingText(`מה רואים: ${contract.parentSafeFinding}`),
+      identified: guardParentFacingText(`What we see: ${contract.parentSafeFinding}`),
       data: guardParentFacingText(
         contract.dataText || buildParentMetricsDataLineHe(metrics, topicName),
       ),
@@ -433,36 +433,37 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
   let data = guardParentFacingText(buildParentMetricsDataLineHe(metrics, topicName));
 
   if (isInitial) {
-    const topicShort = topicName.replace(/\s*-\s*כיתה\s*[א-ט״']+\s*$/u, "").trim() || topicName;
+    const topicShort =
+      topicName.replace(/\s*-\s*(?:grade\s*\d+|כיתה\s*[א-ט״']+)\s*$/iu, "").trim() || topicName;
     return {
-      identified: guardParentFacingText(`מה רואים: יש כרגע מעט שאלות בנושא ${topicShort}.`),
+      identified: guardParentFacingText(`What we see: There are only a few questions so far on ${topicShort}.`),
       data: guardParentFacingText(
         buildParentMetricsDataLineHe({ ...metrics, questions: q, accuracy: acc }, topicShort),
       ),
       pattern: "",
-      meaning: guardParentFacingText("מה זה אומר: עדיין מוקדם להסיק מסקנה ברורה. צריך עוד כמה שאלות בנושא."),
+      meaning: guardParentFacingText("What this means: It is still too early to draw a clear conclusion. A few more questions on this topic are needed."),
       action: guardParentFacingText(
-        "מה כדאי לעשות ביחד: להמשיך לתרגל מעט, בלי להסיק עדיין שיש קושי קבוע.",
+        "What to try together: Keep practicing a little, without assuming there is a lasting difficulty yet.",
       ),
     };
   }
 
   const identified = finding
-    ? `מה רואים: ${finding}`
-    : `מה רואים: מיקוד בנושא ${topicName}.`;
+    ? `What we see: ${finding}`
+    : `What we see: Focus on ${topicName}.`;
 
   const pattern = q >= 5 ? guardParentFacingText(lpdPatternLineHe(lpd)) : "";
   let meaning = guardParentFacingText(lpdMeaningLineHe(lpd, topicName));
   if (!meaning && !isInitial && w > 0 && q >= 3) {
     meaning = guardParentFacingText(
-      "מה זה אומר: כדאי לחזק את הנושא לפני שממשיכים לנושאים קשים יותר.",
+      "What this means: It helps to reinforce this topic before moving on to harder topics.",
     );
   }
   let action =
     q >= 3 ? guardParentFacingText(lpdHomeActionLineHe(lpd, topicName)) : "";
   if (!action && !isInitial && w > 0 && q >= 3) {
     action = guardParentFacingText(
-      `מה כדאי לעשות ביחד: לפתור כמה שאלות קצרות בנושא ${topicName}, בקצב רגוע, ולבקש מהילד להסביר את שלבי הפתרון.`,
+      `What to try together: Solve a few short questions on ${topicName}, at a calm pace, and ask the child to explain the solving steps.`,
     );
   }
 

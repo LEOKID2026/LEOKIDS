@@ -54,119 +54,119 @@ export function coachingVariantIndex(conv, intent, turnOrdinal = 0) {
 /** @param {string} label */
 function scopeSnippet(label) {
   const t = String(label || "").trim();
-  if (t.length < 2) return "בנושא שנבחר";
-  if (t === "מבט על התקופה" || t === "הדוח בתקופה הנבחרה" || t === "executive") return "מה שמופיע בדוח";
-  if (t.length > 32) return `בנושא ${t.slice(0, 30)}…`;
-  return `בנושא ${t}`;
+  if (t.length < 2) return "On the selected topic";
+  if (t === "Period overview" || t === "the report for the selected period" || t === "executive") return "What appears in the report";
+  if (t.length > 32) return `About ${t.slice(0, 30)}…`;
+  return `on ${t}`;
 }
 
 /** @type {Record<string, string[]>} */
 const OBS_PREFIX = {
   understand_observation: [
-    "במילים פשוטות מתוך הדוח: ",
-    "מה שנרשם שם בשורה הזו: ",
-    "נקודת הנתון: ",
-    "כאן רק מה שמופיע בדוח, בלי להרחיב מעבר לו: ",
+    "In simple words from the report:",
+    "What is written there in this line:",
+    "Data point:",
+    "Here is only what appears in the report, without expanding beyond it:",
   ],
   understand_meaning: [
-    "זה מה שהדוח מסכם כאן: ",
-    "מה שמופיע בדוח מסכם כך: ",
+    "This is what the report summarizes here:",
+    "What appears in the report summarizes as follows:",
     "",
-    "בניסוח של הדוח: ",
+    "In the wording of the report:",
   ],
-  action_today: ["מה שמוצג בדוח: ", "על אותו נתון בדוח: ", "", "בקשר לאותו נתון בדוח: "],
-  action_tomorrow: ["מה שמוצג בדוח: ", "בהמשך לניסוח בדוח: ", "", "על בסיס מה שכתוב בדוח: "],
-  action_week: ["מה שמוצג בדוח: ", "בקשר לתמונה מהדוח: ", "", "על בסיס מה שכתוב בדוח: "],
-  avoid_now: ["מה שמוצג בדוח: ", "בזהירות ובהתאם למה שכתוב: ", "", "על בסיס מה שכתוב בדוח: "],
-  advance_or_hold: ["מה שמוצג בדוח: ", "בלי לקבוע מעבר לניסוח בדוח: ", "", "על בסיס מה שכתוב בדוח: "],
-  explain_to_child: ["מה שמופיע בדוח: ", "על בסיס אותו ניסוח בדוח: ", "", "מתוך מה שמופיע בדוח: "],
-  ask_teacher: ["מה שמופיע בדוח: ", "מתוך מה שמופיע בדוח: ", "", "על בסיס מה שכתוב בדוח: "],
-  uncertainty_boundary: ["מה שמוצג בדוח: ", "בגבולות הניסוח בדוח: ", "", "על בסיס מה שכתוב בדוח: "],
+  action_today: ["What the report shows: ", "On the same figure in the report:", "", "Regarding that figure in the report:"],
+  action_tomorrow: ["What the report shows: ", "Further to the wording in the report:", "", "Based on what the report says: "],
+  action_week: ["What the report shows: ", "Regarding the picture from the report:", "", "Based on what the report says: "],
+  avoid_now: ["What the report shows: ", "Carefully and according to what is written:", "", "Based on what the report says: "],
+  advance_or_hold: ["What the report shows: ", "Without determining beyond the wording in the report:", "", "Based on what the report says: "],
+  explain_to_child: ["What appears in the report:", "Based on the same wording in the report:", "", "From what appears in the report:"],
+  ask_teacher: ["What appears in the report:", "From what appears in the report:", "", "Based on what the report says: "],
+  uncertainty_boundary: ["What the report shows: ", "Within the limits of the wording in the report:", "", "Based on what the report says: "],
 };
 
 /** @type {Record<string, string[]>} */
 const MEANING_COACH = {
   understand_meaning: [
-    "כהורים אפשר לשאול: איפה זה נוגע ביום יום - בלי להרחיב מעבר למה שכתוב בדוח.",
-    "אם זה ברור, אפשר להשאיר את זה כהסבר לעצמך ולהמשיך לצעד קטן רק כשמתאים.",
-    "שווה לחבר את המשפט הזה לדוגמה קונקרטית מהבית, בלי לייצר כיוון חדש שלא מופיע בדוח.",
-    "נכון לעכשיו, מספיק להחזיק את המשמעות הזו כמסגרת ולא למהר לפעולה גדולה.",
+    "As parents, you can ask: where does this apply on a daily basis - without expanding beyond what is written in the report.",
+    "If it is clear, you can leave it as an explanation to yourself and continue with a small step only when appropriate.",
+    "It is worth connecting this sentence to a concrete example from home, without creating a new direction that does not appear in the report.",
+    "For now, it is enough to hold this meaning as a framework and not rush into a big action.",
   ],
   understand_observation: [
-    "כהורה אפשר לקרוא את המספר הזה כסימן לכיוון, לא כסיפור מלא בפני עצמו.",
-    "אם משהו לא ברור בשורה, אפשר לחזור אליה מאוחר יותר עם שאלה ממוקדת - עדיין בתוך גבולות הדוח.",
-    "שימוש טוב: לציין לילד מה רואים בדוח בלי לתת ציון אישי על אופי.",
-    "נכון לעכשיו, מספיק לזהות מה מודדים כאן ומה עדיין לא נאמר.",
+    "As a parent, this number can be read as a sign of direction, not as a complete story in itself.",
+    "If something is not clear in a line, you can return to it later with a focused question - still within the limits of the report.",
+    "Good use: to indicate to the child what is seen in the report without giving a personal grade on character.",
+    "For now, it is enough to identify what is being measured here and what has not yet been said.",
   ],
   action_today: [
-    "מהצד ההורי: עדיף צעד קטן אחד שניתן לבדוק היום, במקום רשימה ארוכה.",
-    "אם זה נשמע הרבה, אפשר לבחור חלק אחד בלבד ולהשאיר את השאר לימים הבאים.",
-    "כדאי לוודא שהצעד מתאים למצב בבית - בלי להוסיף מטרות שלא מופיעות בדוח.",
-    "נכון לעכשיו, מספיק לפרק למשהו שאפשר לתאר לילד במשפט אחד.",
+    "From the parent's side: one small step that can be checked today is better, instead of a long list.",
+    "If that sounds like a lot, you can choose just one part and leave the rest for the next few days.",
+    "You should make sure that the step fits the situation at home - without adding goals that do not appear in the report.",
+    "Currently, it is enough to break down into something that can be described to a child in one sentence.",
   ],
   action_tomorrow: [
-    "מחר עדיף משהו שכבר \"מוכן מראש\" - משפט אחד למשפחה ומשימה קצרה.",
-    "אם היום צפוף, אפשר להכין הערה קצרה היום כדי שלמחרה לא יידרשו החלטות ברגע האחרון.",
-    "מהצד ההורי: עדיף לא לשבת את כל הערב על תכנון - מספיק כיוון אחד ברור.",
-    "נכון לעכשיו, מספיק לבחור חלון זמן קצר מראש.",
+    "Tomorrow, something already \"prepared in advance\" is better - one sentence for the family and a short task.",
+    "If the day is busy, you can prepare a short note today so that no last minute decisions are required the next day.",
+    "From the parents' side: it is better not to sit all evening on planning - one clear direction is enough.",
+    "Currently, it is enough to choose a short time window in advance.",
   ],
   action_week: [
-    "תוכנית לשבוע אמורה להישאר ריאלית: עדיף פחות פריטים שמחזיקים מעמד מאשר רשימה ארוכה.",
-    "אפשר לתזמן חזרה קצרה באמצע השבוע ולראות אם הצעד עדיין מתאים.",
-    "כהורים, שווה לשייך את התוכנית ליום קבוע קצר - לא להפוך את זה למבחן.",
-    "נכון לעכשיו, עדיף מסגרת קלה שניתן לעדכן אחרי שבוע.",
+    "A plan for the week should remain realistic: fewer items that last are better than a long list.",
+    "You can schedule a short return in the middle of the week and see if the step is still appropriate.",
+    "As parents, it's worth associating the plan with a short fixed day - not turning it into a test.",
+    "Currently, a lightweight framework that can be updated after a week is preferable.",
   ],
   avoid_now: [
-    "רשימת הימנעות עובדת טוב כשהיא קצרה וברורה - במיוחד כשמדובר בשבוע עמוס.",
-    "אפשר לבחור דבר אחד להימנעות ממנו ולהשאיר את השאר לשיחה אחרת.",
-    "כדאי לשמור על טון של הגנה על אנרגיה, לא על ביקורת על הילד.",
-    "נכון לעכשיו, מספיק לזהות מוקד אחד שמסבך ולהקל עליו.",
+    "An avoid list works well when it's short and to the point - especially when it's a busy week.",
+    "You can choose one thing to avoid and leave the rest for another conversation.",
+    "You should maintain a tone of energy protection, not criticism of the child.",
+    "Currently, it is enough to identify one focal point that complicates it and make it easier.",
   ],
   advance_or_hold: [
-    "החלטה של קידום מול המתנה טובה כשהיא נשענת על אותם אותות שבדוח, לא על תחושת בטן בלבד.",
-    "אפשר לכתוב לעצמכם שני משפטים: מתי מקדמים צעד קטן ומתי נשארים במקום.",
-    "כהורים, לפעמים \"להמתין\" הוא צעד חכם - במיוחד כשהנתונים עדיין דקים.",
-    "נכון לעכשיו, שווה לקבוע תאריך לבדיקה חוזרת במקום להחליט הכול היום.",
+    "A decision to promote versus waiting is good when it is based on the same signals in the report, not on a gut feeling alone.",
+    "You can write two sentences for yourself: when you take a small step forward and when you stay put.",
+    "As parents, sometimes \"waiting\" is a wise move - especially when the data is still thin.",
+    "Currently, it is worth setting a date for a re-examination instead of deciding everything today.",
   ],
   explain_to_child: [
-    "ניסוח לילד עדיף שיהיה קצר, בגובה העיניים, ובלי מילים מהדוח שהילד לא מכיר.",
-    "אפשר לפתוח במשפט על מה שרואים ביחד ורק אז להוסיף משפט משמעות אחד.",
-    "אם הילד שואל \"למה\", אפשר להישאר בתוך מה שהדוח אומר בלי לנבא עתיד.",
-    "נכון לעכשיו, מספיק משפט אחד של עידוד ומשפט אחד של כיוון.",
+    "Formulation for the child is better to be short, at eye level, and without words from the report that the child does not know.",
+    "You can start with a sentence about what you see together and only then add one meaningful sentence.",
+    "If the child asks \"why\", you can stay within what the report says without predicting the future.",
+    "For now, one sentence of encouragement and one sentence of direction is enough.",
   ],
   ask_teacher: [
-    "שאלה טובה למורה היא ספציפית וקצרה - עם ציטוט מהדוח אם צריך.",
-    "אפשר לסדר מראש מה רוצים לשמוע בתשובה (מדד, דוגמה, המלצה הבאה).",
-    "כדאי לשמור על שפה שיתופית: \"איך נוכל לתמוך בבית\" במקום האשמה.",
-    "נכון לעכשיו, עדיף שאלה אחת ממוקדת מאשר רשימה ארוכה.",
+    "A good question for the teacher is specific and short - with a quote from the report if needed.",
+    "You can arrange in advance what you want to hear in the answer (index, example, next recommendation).",
+    "It is useful to maintain a cooperative language: \"how can we support the house\" instead of blame.",
+    "Currently, one focused question is better than a long list.",
   ],
   uncertainty_boundary: [
-    "כשיש חוסר ודאות, עדיף לא למלא את החלל עם הסברים שלא מופיעים בדוח.",
-    "אפשר לרשום לעצמכם מה כן יודעים מהדוח ומה עדיין פתוח - זה מוריד לחץ.",
-    "כהורים, לפעמים הכי מועיל הוא להגדיר מתי בודקים שוב במקום לסגור היום.",
-    "נכון לעכשיו, מספיק להחזיק את הסימן השאלה ולפעול בצעדים קטנים.",
+    "When there is uncertainty, it is better not to fill the space with explanations that do not appear in the report.",
+    "You can write down for yourself what you do know from the report and what is still open - it takes the pressure off.",
+    "As parents, sometimes it's most helpful to set when to check back instead of closing the day.",
+    "For now, it's enough to hold the question mark and take small steps.",
   ],
 };
 
 /** @type {Record<string, string[]>} */
 const NEXT_STEP_COACH = {
   action_today: [
-    "לפני ביצוע: שווה לוודא שהצעד קטן מספיק שיהיה ברור מתי סיימנו אותו.",
-    "מהצד ההורי: עדיף משהו שניתן לתאר לילד במשפט אחד.",
-    "אם יש התנגדות, אפשר לקצר עוד יותר ולהישאר על חלק אחד בלבד.",
-    "נכון לעכשיו, מספיק ניסיון קצר שניתן לחזור עליו מחר.",
+    "Before execution: it is worth making sure that the step is small enough that it is clear when we have finished it.",
+    "From the parent's side: something that can be described to the child in one sentence is better.",
+    "If there is resistance, you can shorten even more and stay on only one part.",
+    "For now, a short trial that can be repeated tomorrow is enough.",
   ],
   action_tomorrow: [
-    "להמשך מחר: אפשר להכין הערה קצרה היום כדי שלמחרה לא יידרשו החלטות ברגע האחרון.",
-    "שווה לבחור חלון זמן קצר מראש - לא משימה שפותחת ויכוח ארוך.",
-    "מהצד ההורי: עדיף משהו שמתאים ליום שאחרי בית ספר, לא לשיא העומס.",
-    "נכון לעכשיו, מספיק להגדיר \"מה עושים במשך חמש דקות\".",
+    "To continue tomorrow: you can prepare a short note today so that no last-minute decisions are required the next day.",
+    "It is worth choosing a short time window in advance - not a task that opens a long debate.",
+    "From the parents' side: something suitable for the day after school, not for the peak of the rush, is better.",
+    "Currently, it is enough to define \"what we do for five minutes\".",
   ],
   action_week: [
-    "לשבוע הקרוב: עדיף שלושה צעדים קטנים שמחזיקים מאשר עשרה שלא מתקדמים.",
-    "אפשר לשבץ יום אחד בלי משימה - כדי לאפשר ספיגה.",
-    "מהצד ההורי: שווה לתאם מראש מי אחראי על מה, בלי הנחות.",
-    "נכון לעכשיו, מספיק מסגרת שבועית שניתן לעדכן בסוף השבוע.",
+    "For the coming week: three small steps that hold are better than ten that do not progress.",
+    "It is possible to insert one day without a task - to allow absorption.",
+    "From the parents' side: it is worth coordinating in advance who is responsible for what, without discounts.",
+    "Currently, a weekly framework that can be updated at the end of the week is sufficient.",
   ],
 };
 
@@ -175,10 +175,10 @@ function personalizedLine(truthPacket, ix) {
   const label = truthPacket?.scopeLabel || "";
   const snip = scopeSnippet(label);
   const pool = [
-    `${snip} - אפשר לקרוא את התשובה כהדרכה מעשית, לא כהערכת אישיות.`,
-    `${snip} שווה לשמור על קשר בין מה שכתוב בדוח לבין מה שאפשר לבצע בבית בפועל.`,
-    `${snip} אם משהו לא מתיישב עם המצב בבית, עדיף לקצר צעד מאשר להרחיב כיוון.`,
-    `${snip} נכון לעכשיו, מספיק להחזיק את המידע כמסגרת ולעדכן אחרי תרגול נוסף.`,
+    `${snip} - The answer can be read as practical guidance, not as a personality assessment.`,
+    `${snip} It is worth maintaining a connection between what is written in the report and what can be done at home in practice.`,
+    `${snip} If something does not agree with the situation at home, it is better to shorten a step than to expand a direction.`,
+    `${snip} Currently, it is enough to keep the information as a frame and update after further practice.`,
   ];
   return pool[ix % pool.length];
 }
@@ -228,7 +228,7 @@ export function applyParentCoachingPacks(blocks, ctx) {
   /** @type {Array<{ type: string; textHe: string; source: string }>} */
   const out = [];
 
-  const obsArr = OBS_PREFIX[packGroup] || ["מה שמוצג בדוח: ", "", "על בסיס מה שכתוב בדוח: ", "בקשר לנתון בדוח: "];
+  const obsArr = OBS_PREFIX[packGroup] || ["What the report shows: ", "", "Based on what the report says: ", "Regarding the figure in the report:"];
   const obsPrefix = obsArr[effIx % obsArr.length];
 
   const meaningLines = MEANING_COACH[packGroup];
@@ -296,26 +296,26 @@ export function pickUncertaintyReasonScript(dl, intent, ix) {
 
   if (cannot) {
     const lines = [
-      "לפי המסגרת של הדוח עדיין לא ניתן לקבוע כיוון עקבי - ממשיכים בתרגול ובדיקה חוזרת.",
-      "הדוח עדיין לא מאפשר לקבוע כיוון ברור; נכון לעכשיו ממשיכים בתרגול ממוקד ובודקים שוב בהמשך.",
-      "כשלא ניתן לסגור עדיין, עדיף לפרק לצעדים קטנים של איסוף מידע מאשר לנחש.",
-      "לפי הגבולות שבדוח: אין עדיין \"נקודת סיום\" לכיוון; ממשיכים בזהירות ובמדידה חוזרת.",
+      "According to the framework of the report, it is still not possible to determine a consistent direction - practice and retesting continue.",
+      "The report still does not make it possible to determine a clear direction; Currently, we continue with focused practice and check again later.",
+      "When you can't close yet, it's better to break down into small steps of information gathering than to guess.",
+      "According to the limits in the report: there is still no \"end point\" for the direction; Continue with caution and repeat measurement.",
     ];
     return lines[ix % lines.length];
   }
   if (low) {
     const lines = [
-      "מה שמוצג כאן עדיין לא מבוסס מספיק בטווח הזה, ולכן נשמרת זהירות בניסוח.",
-      "כשהביטחון נמוך, נכון לעכשיו נשמרים קרוב למה שכתוב בדוח ולא מרחיבים הערכה.",
-      "הנתונים כאן דקים מדי כדי לקבוע בביטחון; עדיף להחזיק שאלות פתוחות ולבדוק שוב בהמשך.",
-      "במצב של ביטחון נמוך, נכון לשמור על זהירות ועל מדידה חוזרת.",
+      "What is presented here is not yet sufficiently established in this range, so caution is maintained in wording.",
+      "When the confidence is low, at the moment we keep close to what is written in the report and do not expand the estimate.",
+      "The data here is too thin to state with confidence; Better to keep questions open and check back later.",
+      "In a situation of low security, it is correct to maintain caution and repeat measurement.",
     ];
     return lines[ix % lines.length];
   }
   const lines = [
-    "ההמלצות כאן משקפות את אותו מקור נתונים שבדוח בלבד, בלי הרחבה מעבר לו.",
-    "מה שמופיע כאן נשען על אותו ניסוח שבדוח; אם משהו חסר, נשארים בתוך מה שמופיע שם.",
-    "הדוח מתבסס על התרגול שבוצע באתר בתקופה שנבחרה.",
+    "The recommendations here reflect the same data source in the report only, without expanding beyond it.",
+    "What appears here is based on the same wording as in the report; If something is missing, stay within what appears there.",
+    "The report is based on the practice carried out on the site in the selected period.",
   ];
   if (
     intent === "uncertainty_boundary" ||
@@ -325,7 +325,7 @@ export function pickUncertaintyReasonScript(dl, intent, ix) {
   ) {
     const extra = [
       ...lines,
-      "זה בדיוק המקום לשאול מה עוד חסר בדוח כדי להרגיש בטוחים יותר - בלי להשלים חוסר בניחושים.",
+      "This is exactly the place to ask what else is missing in the report to feel more confident - without making up for a lack of guesswork.",
     ];
     return extra[ix % extra.length];
   }

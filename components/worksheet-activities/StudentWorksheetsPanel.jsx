@@ -33,7 +33,7 @@ export default function StudentWorksheetsPanel({ emptyFallback = null }) {
   }, [load]);
 
   if (!loaded) {
-    return <p className={T.emptyText}>טוען דפי עבודה...</p>;
+    return <p className={T.emptyText}>Loading worksheets...</p>;
   }
 
   if (worksheets.length === 0) {
@@ -43,7 +43,7 @@ export default function StudentWorksheetsPanel({ emptyFallback = null }) {
   return (
     <section className={T.worksheetSection}>
       <p className={T.panelIntro}>
-        דפי עבודה שהוקצו לך - פתחו כל דף, מלאו ושלחו לבדיקה.
+        Worksheets assigned to you - open each one, complete it, and submit for review.
       </p>
       <div className="grid gap-3">
         {worksheets.map((w) => {
@@ -55,11 +55,11 @@ export default function StudentWorksheetsPanel({ emptyFallback = null }) {
                 <h3 className={T.worksheetCardTitle}>{w.title}</h3>
                 <p className={T.worksheetCardMeta}>
                   {worksheetModeLabelHe(w.worksheetMode)} · {worksheetGradingStatusLabelHe(st)}
-                  {w.displayScore != null ? ` · ציון: ${w.displayScore}%` : ""}
+                  {w.displayScore != null ? ` · Score: ${w.displayScore}%` : ""}
                 </p>
               </div>
               <Link href={href} className={T.worksheetCardCta}>
-                פתיחה
+                Open
               </Link>
             </div>
           );

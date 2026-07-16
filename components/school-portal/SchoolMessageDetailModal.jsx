@@ -1,5 +1,5 @@
 import { SchoolSecondaryButton, SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi";
-import { SC_BTN_CLOSE_MESSAGE_DETAIL } from "../../lib/school-portal/school-communication.he";
+import { SC_BTN_CLOSE_MESSAGE_DETAIL } from "../../lib/school-portal/school-communication.js";
 
 /**
  * Centered school messaging detail overlay (RTL, dark/gold).
@@ -15,7 +15,7 @@ export default function SchoolMessageDetailModal({ open, onClose, children }) {
       aria-labelledby="school-message-detail-title"
     >
       <div
-        className="w-full max-w-lg rounded-xl border border-amber-500/30 bg-[#1a1208] text-right shadow-xl max-h-[90vh] flex flex-col"
+        className="w-full max-w-lg rounded-xl border border-amber-500/30 bg-[#1a1208] text-left shadow-xl max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-end shrink-0 border-b border-white/10 px-4 py-3">

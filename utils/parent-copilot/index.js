@@ -205,7 +205,7 @@ function normalizeAnswerBlocksHe(answerBlocks, truthPacket = null, opts = null) 
 
 const THIN_DATA_APPROVED_SCARCITY_RE =
   /(יש\s+כרגע\s+מעט\s+נתוני\s+תרגול|נפח\s+הנתונים\s+עדיין\s+מצומצם|אין\s+עדיין\s+מספיק\s+מידע\s+לכיוון\s+ברור)/u;
-const THIN_DATA_DEFAULT_LEAD = "יש כרגע מעט נתוני תרגול, ולכן אין עדיין מספיק מידע לכיוון ברור.";
+const THIN_DATA_DEFAULT_LEAD = "There is currently little practice data, so there is not yet enough information for a clear direction.";
 
 function shouldUseThinDataLead(truthPacket, intent, payload) {
   const tp = truthPacket && typeof truthPacket === "object" ? truthPacket : {};
@@ -217,7 +217,7 @@ function shouldUseThinDataLead(truthPacket, intent, payload) {
     Math.max(0, Number(sf.reportQuestionTotalGlobal) || 0),
     maxGlobalReportQuestionCount(payload),
   );
-  /** Never prepend global "מעט נתונים" when the report window has substantial answer volume. */
+  /** Never prepend global "little data" when the report window has substantial answer volume. */
   if (globalQ >= STRONG_GLOBAL_QUESTION_FLOOR) return false;
   /** Topic/subject answers already ground on local TQ; do not prepend global scarcity when this scope has enough attempts. */
   const scopeType = String(tp.scopeType || "").trim();
@@ -273,22 +273,22 @@ function buildNoScopeCategorySpecificClarification(utterance) {
     return GENERAL_OFF_TOPIC_RESPONSE_HE;
   }
   if (/תתעלם|תחשוף|system\s*prompt|debug|הוראות\s*פנימיות|תדפיס|מעכשיו\s*אל\s*תשתמש/i.test(t)) {
-    return "אני לא מתעלם/ת מהדוח ולא חושף/ת הוראות פנימיות. התשובה כאן נשארת מבוססת נתוני למידה, ואפשר להמשיך לשאלה על מצב הלמידה בפועל.";
+    return "I do not ignore the report and do not disclose internal instructions. The answer here remains based on learning data, and it is possible to continue with the question about the actual state of learning.";
   }
   if (/תמציא|תסתיר|בלי\s*להתחשב\s*בנתונים|תכתוב\s*שהילד\s*מצוין\s*למרות|תשנה\s*את\s*הדוח/i.test(t)) {
-    return "אי אפשר להמציא, לשנות או לשפר נתונים בדוח. אפשר להסביר רק את הנתונים שמופיעים בו. אפשר גם לבנות ניסוח ברור להורה לפי מה שיש כרגע בנתוני הלמידה.";
+    return "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it. It is also possible to build a clear formulation for the parent according to what is currently in the learning data.";
   }
   if (/מה\s*מצב.*במוזיקה|במוזיקה|באמנות|בספורט|במחול/i.test(t)) {
-    return "כרגע אין בדוח נתוני תרגול למקצוע הזה, ולכן אי אפשר להסיק עליו מצב. אם תרצו, נוכל להתמקד במקצועות שכן מופיעים בדוח.";
+    return "At the moment, there is no practice data for this profession in the report, so it is impossible to conclude a situation about it. If you wish, we can focus on professions that do appear in the report.";
   }
   if (/למה\s*כתבת\s*שהוא\s*חלש|לא\s*מסכים\s*עם\s*הדוח|הדוח\s*טועה/i.test(t)) {
-    return "יכול להיות פער בין הצלחה בבית לבין ביצוע בתרגול באפליקציה. לכן מסתכלים על דפוס חוזר בדוח לאורך זמן, ולא על תשובה בודדת.";
+    return "There can be a gap between success at home and performance in practice in the app. That is why we look at a repeating pattern in the report over time, and not at a single answer.";
   }
   if (/תסביר\s*לי\s*כמו\s*להורה|בלי\s*מושגים|במשפט\s*אחד|רק\s*3\s*נקודות|בקיצור/i.test(t)) {
-    return "בקצרה: הדוח משווה בין נושאים לפי כמות שאלות ודיוק בתרגול. אם הנתונים עדיין מעטים, זה סימן ראשוני ולא כיוון סופי - כדאי לצבור עוד קצת תרגול קצר לפני שקובעים כיוון.";
+    return "In short: the report compares subjects according to the amount of questions and accuracy in practice. If the data is still few, it is an initial sign and not a final direction - it is better to accumulate some more short practice before determining a direction.";
   }
   if (/מה\s*לעשות\s*מחר|מה\s*לתרגל\s*השבוע|תוכנית\s*קצרה|איך\s*לעזור\s*בלי\s*לחץ/i.test(t)) {
-    return "אפשר להתחיל בתוכנית קצרה: 1) 10 דקות חזרה בנושא אחד, 2) 5-8 שאלות בנושא נוסף, 3) בדיקה חוזרת בעוד יומיים אם אותו דפוס נשמר.";
+    return "You can start with a short program: 1) 10 minutes of repetition on one subject, 2) 5-8 questions on another subject, 3) retesting in two days if the same pattern is maintained.";
   }
   return null;
 }
@@ -737,8 +737,8 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     lastTurnWasWhatNotInfer:
       String(scopeMeta?.patternId || "") === "what_not_infer" ||
       String(scopeMeta?.patternId || "") === "avoid_now" ||
-      assistantAnswerSummary.includes("לא כדאי להסיק מהדוח") ||
-      assistantAnswerSummary.includes("לא להסיק מסקנה אישית"),
+      assistantAnswerSummary.includes("You should not draw conclusions from the report") ||
+      assistantAnswerSummary.includes("Do not draw a personal conclusion"),
     ...(memoryHints && memoryHints.lastAnswerAggregateClass !== undefined
       ? {
           lastAnswerAggregateClass: memoryHints.lastAnswerAggregateClass,
@@ -866,7 +866,7 @@ function runDeterministicCore(input, options) {
 
   if (audience !== "parent") {
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: "מצב זה מיועד להורה בלבד.",
+      clarificationQuestionHe: "This mode is for parent only.",
       intent: "uncertainty_boundary",
       priorRepeated,
       metadata: { intentConfidence: 1, intentReason: "audience_guard", scopeConfidence: 1, scopeReason: "audience_guard" },
@@ -898,7 +898,7 @@ function runDeterministicCore(input, options) {
     const r = buildClarificationParentCopilotResponse({
       clarificationQuestionHe:
         scopeResMissing.clarificationQuestionHe ||
-        "לא נטען דוח מקיף - לא ניתן לענות מתוך נתוני התקופה. רעננו את הדף או בחרו תקופה אחרת.",
+        "A comprehensive report was not loaded - it is not possible to answer from the data of the period. Refresh the page or choose another period.",
       intent: stageAForMissing?.canonicalIntent || "uncertainty_boundary",
       priorRepeated,
       metadata: scopeMetaMissing,
@@ -1194,7 +1194,7 @@ function runDeterministicCore(input, options) {
   if (scopeRes.resolutionStatus === "clarification_required") {
     if (String(scopeRes.scopeReason || "") === "subject_zero_evidence_in_period") {
       const r = buildClarificationParentCopilotResponse({
-        clarificationQuestionHe: scopeRes.clarificationQuestionHe || "בתקופה הזו אין נתוני תרגול במקצוע הזה.",
+        clarificationQuestionHe: scopeRes.clarificationQuestionHe || "In this period there is no practice data in this profession.",
         intent,
         priorRepeated,
         metadata: scopeMeta,
@@ -1255,7 +1255,7 @@ function runDeterministicCore(input, options) {
       if (packaged) return packaged;
     }
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: scopeRes.clarificationQuestionHe || "צריך עוד הקשר.",
+      clarificationQuestionHe: scopeRes.clarificationQuestionHe || "Need more context.",
       intent,
       priorRepeated,
       metadata: scopeMeta,
@@ -1267,7 +1267,7 @@ function runDeterministicCore(input, options) {
   const scope = scopeRes.scope;
   if (!scope) {
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: "לא ניתן לזהות הקשר מהדוח.",
+      clarificationQuestionHe: "The relationship cannot be identified from the report.",
       intent,
       priorRepeated,
       metadata: scopeMeta,
@@ -1308,7 +1308,7 @@ function runDeterministicCore(input, options) {
   });
   if (!truthPacket) {
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: "לא נמצאו חוזים תואמים לנושא שנבחר בדוח.",
+      clarificationQuestionHe: "No contracts were found matching the topic selected in the report.",
       intent,
       priorRepeated,
       metadata: scopeMeta,

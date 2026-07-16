@@ -11,9 +11,9 @@ import {
   SC_MINI_REPORT_LINK_FULL,
   SC_MINI_REPORT_NO_DATA,
   SC_NAV_SCHOOL_INBOX_PARENT,
-} from "../../lib/school-portal/school-communication.he";
-import { formatDateHe } from "../../lib/teacher-portal/teacher-ui.he.js";
-import { formatParentReportSubjectHe } from "../../utils/parent-report-language/parent-report-display-labels.he.js";
+} from "../../lib/school-portal/school-communication.js";
+import { formatParentDate } from "../../lib/parent-ui/format-parent-date.js";
+import { formatParentReportSubjectHe as formatParentReportSubject } from "../../utils/parent-report-language/parent-report-display-labels.js";
 
 async function fetchGuardianMe() {
   const res = await fetch("/api/guardian/me", {
@@ -35,7 +35,7 @@ async function fetchGuardianReport(studentId) {
 }
 
 /**
- * Limited child report for teacher-issued parent access (הורה + קוד מהמורה).
+ * Limited child report for teacher-issued parent access (parent + teacher-provided code).
  *
  * @param {{ loginRedirectPath?: string, logoutRedirectPath?: string }} props
  */
@@ -45,7 +45,7 @@ export default function ParentTeacherCodeReport({
 }) {
   const router = useRouter();
   const [state, setState] = useState("loading");
-  const [loadingHint, setLoadingHint] = useState("מאמת חיבור…");
+  const [loadingHint, setLoadingHint] = useState("Verifying access…");
   const [studentId, setStudentId] = useState(null);
   const [report, setReport] = useState(null);
   const [expiresAt, setExpiresAt] = useState(null);
@@ -83,7 +83,7 @@ export default function ParentTeacherCodeReport({
       setIsSchoolLinked(schoolLinked);
       setMustChangePin(schoolLinked && Boolean(me.body.data.mustChangePin));
       setPinGateDone(!schoolLinked || !me.body.data.mustChangePin);
-      setLoadingHint("הדוח נטען - זה עשוי לקחת כמה שניות.");
+      setLoadingHint("Loading the report - this may take a few seconds.");
 
       if (schoolLinked) {
         const inboxRes = await fetch("/api/guardian/school-messages", {
@@ -143,7 +143,7 @@ export default function ParentTeacherCodeReport({
   };
 
   const studentName =
-    report?.student?.full_name || report?.accountSnapshot?.displayName || "הילד";
+    report?.student?.full_name || report?.accountSnapshot?.displayName || "your child";
   const summary = report?.summary || {};
   const lastDate = report?.dailyActivity?.length
     ? [...report.dailyActivity].sort((a, b) => b.date.localeCompare(a.date))[0]?.date
@@ -153,14 +153,14 @@ export default function ParentTeacherCodeReport({
   if (expiresAt) {
     const daysLeft = Math.ceil((new Date(expiresAt).getTime() - Date.now()) / 86_400_000);
     if (daysLeft <= 7 && daysLeft >= 0) {
-      expiryWarning = `הגישה שלכם לדוח זה תפוג בקרוב (${formatDateHe(expiresAt)}). פנו למורה לחידוש.`;
+      expiryWarning = `Your access to this report will expire soon (${formatParentDate(expiresAt)}). Contact the teacher to renew it.`;
     }
   }
 
   if (state === "loading") {
     return (
       <Layout>
-        <TeacherPortalShell title="דוח ילד">
+        <TeacherPortalShell title="Child report">
           <p className="text-white/60" role="status">{loadingHint}</p>
         </TeacherPortalShell>
       </Layout>
@@ -172,9 +172,9 @@ export default function ParentTeacherCodeReport({
       <Layout>
         <TeacherPortalShell>
           <p className="text-red-300" role="alert">
-            אירעה שגיאה. נסו להיכנס שנית דרך{" "}
+            Something went wrong. Try signing in again from the{" "}
             <a href={loginRedirectPath} className="text-amber-300 underline">
-              דף כניסת הורה
+              parent login page
             </a>
             .
           </p>
@@ -188,7 +188,7 @@ export default function ParentTeacherCodeReport({
       <Layout>
         <TeacherPortalShell>
           <p className="text-red-300" role="alert">
-            אין לכם גישה לדוח זה.
+            You do not have access to this report.
           </p>
         </TeacherPortalShell>
       </Layout>
@@ -198,7 +198,7 @@ export default function ParentTeacherCodeReport({
   if (isSchoolLinked && mustChangePin && !pinGateDone) {
     return (
       <Layout>
-        <TeacherPortalShell title="שינוי קוד גישה">
+        <TeacherPortalShell title="Change access code">
           <ParentMustChangePinGate onSuccess={() => setPinGateDone(true)} />
         </TeacherPortalShell>
       </Layout>
@@ -210,7 +210,7 @@ export default function ParentTeacherCodeReport({
       <Layout>
         <TeacherPortalShell>
           <p className="text-red-300" role="alert">
-            לא ניתן לטעון את הדוח כרגע. רעננו את הדף ונסו שוב.
+            The report could not be loaded right now. Refresh the page and try again.
           </p>
         </TeacherPortalShell>
       </Layout>
@@ -225,14 +225,14 @@ export default function ParentTeacherCodeReport({
         data-student-id={studentId || ""}
         data-report-ok="1"
       >
-        <TeacherPortalShell title={`דוח הלמידה של ${studentName}`}>
+        <TeacherPortalShell title={`${studentName}'s learning report`}>
           <div className="flex justify-end mb-4">
             <button
               type="button"
               onClick={onLogout}
               className="text-sm px-3 py-1.5 rounded border border-white/20 hover:bg-white/10"
             >
-              יציאה
+              Log out
             </button>
           </div>
 
@@ -259,9 +259,9 @@ export default function ParentTeacherCodeReport({
                 <ul className="text-sm space-y-2 mb-3">
                   {miniReport.subjectSummary.map((s) => (
                     <li key={s.subjectKey} className="flex justify-between gap-2">
-                      <span>{formatParentReportSubjectHe(s.subjectKey)}</span>
+                      <span>{formatParentReportSubject(s.subjectKey)}</span>
                       <span className="text-white/60">
-                        {Math.round((s.accuracy || 0) * 100)}% · {s.answers} תשובות
+                        {Math.round((s.accuracy || 0) * 100)}% · {s.answers} answers
                       </span>
                     </li>
                   ))}
@@ -274,21 +274,21 @@ export default function ParentTeacherCodeReport({
           ) : null}
 
           <section className="rounded-xl border border-white/15 bg-black/30 p-5 mb-6">
-            <h2 className="text-lg font-semibold mb-3">סיכום פעילות</h2>
+            <h2 className="text-lg font-semibold mb-3">Activity summary</h2>
             <dl className="grid grid-cols-2 gap-3 text-sm">
               <div>
-                <dt className="text-white/60">מפגשי תרגול</dt>
+                <dt className="text-white/60">Practice sessions</dt>
                 <dd>{summary.totalSessions ?? 0}</dd>
               </div>
               <div>
-                <dt className="text-white/60">פעיל לאחרונה</dt>
-                <dd>{lastDate ? formatDateHe(lastDate) : "לא היה תרגול בתקופה האחרונה."}</dd>
+                <dt className="text-white/60">Last active</dt>
+                <dd>{lastDate ? formatParentDate(lastDate) : "No practice in the recent period."}</dd>
               </div>
             </dl>
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-3">ביצועים לפי מקצוע</h2>
+            <h2 className="text-lg font-semibold mb-3">Performance by subject</h2>
             <SubjectSummaryCards subjects={report?.subjects} />
           </section>
 

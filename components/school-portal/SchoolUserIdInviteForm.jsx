@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SchoolPrimaryButton, SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi";
-import { apiErrorMessageHe, schoolAuthFetch, SCHOOL_STUDENT_ID } from "../../lib/school-portal/school-ui.he";
+import { apiErrorMessageHe, schoolAuthFetch, SCHOOL_STUDENT_ID } from "../../lib/school-portal/school-ui.js";
 
 /**
  * Invite existing auth user by UUID (teachers or operators).
@@ -42,15 +42,15 @@ export default function SchoolUserIdInviteForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "הזמנה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, "Invite failed"));
         return;
       }
-      setMessage("ההזמנה בוצעה בהצלחה");
+      setMessage("Invite completed successfully");
       setUserId("");
       setDisplayName("");
       onSuccess?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -59,9 +59,9 @@ export default function SchoolUserIdInviteForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`}>
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-right">{sectionTitle}</h2>
+        <h2 className="text-base font-semibold mb-3 text-left">{sectionTitle}</h2>
         <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl">
-          <label className="block text-sm text-right">
+          <label className="block text-sm text-left">
             <span className="text-white/60 block mb-1">{SCHOOL_STUDENT_ID}</span>
             <input
               type="text"
@@ -73,8 +73,8 @@ export default function SchoolUserIdInviteForm({
             />
           </label>
           {bodyKey === "operatorUserId" ? (
-            <label className="block text-sm text-right">
-              <span className="text-white/60 block mb-1">שם תצוגה (אופציונלי)</span>
+            <label className="block text-sm text-left">
+              <span className="text-white/60 block mb-1">Display name (optional)</span>
               <input
                 type="text"
                 value={displayName}
@@ -86,7 +86,7 @@ export default function SchoolUserIdInviteForm({
           {error ? <p className="text-red-300 text-sm">{error}</p> : null}
           {message ? <p className="text-emerald-300 text-sm">{message}</p> : null}
           <SchoolPrimaryButton type="submit" disabled={busy || !userId.trim()}>
-            {busy ? "שולח…" : submitLabel}
+            {busy ? "Sending…" : submitLabel}
           </SchoolPrimaryButton>
         </form>
       </div>

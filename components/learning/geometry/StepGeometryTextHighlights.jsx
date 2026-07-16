@@ -24,7 +24,7 @@ export default function StepGeometryTextHighlights({ step, text, className = "" 
     return (
       <p
         className={className}
-        dir="rtl"
+        dir="ltr"
         style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", lineHeight: 1.75 }}
       >
         {plain}
@@ -52,7 +52,7 @@ export default function StepGeometryTextHighlights({ step, text, className = "" 
   return (
     <p
       className={className}
-      dir="rtl"
+      dir="ltr"
       style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", lineHeight: 1.75 }}
     >
       {parts}

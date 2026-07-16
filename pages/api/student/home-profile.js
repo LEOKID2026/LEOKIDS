@@ -55,6 +55,6 @@ export default async function handler(req, res) {
   } catch (e) {
     const msg = e && typeof e === "object" && "message" in e ? String(e.message) : String(e);
     console.error("[student-home-profile] unexpected error", msg.slice(0, 200));
-    return res.status(500).json({ ok: false, error: "אירעה שגיאה זמנית. נסו שוב מאוחר יותר." });
+    return res.status(500).json({ ok: false, error: "A temporary error occurred. Please try again later." });
   }
 }

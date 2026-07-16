@@ -16,7 +16,7 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
           questionIndex: i,
           questionType: "multiple_choice",
           points: 1,
-          choices: ["א", "ב", "ג", "ד"],
+          choices: ["A", "B", "C", "D"],
           correctAnswer: null,
         }
       );
@@ -31,9 +31,9 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
   };
 
   return (
-    <div className="space-y-4 text-right">
+    <div className="space-y-4 text-left">
       <label className="block text-sm text-white/80">
-        מספר שאלות
+        Number of questions
         <input
           type="number"
           min={1}
@@ -50,10 +50,10 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
         const type = String(q.questionType || "multiple_choice");
         return (
           <div key={idx} className="rounded-xl border border-white/10 p-3 bg-black/25">
-            <p className="font-semibold text-white mb-2">שאלה {idx}</p>
+            <p className="font-semibold text-white mb-2">Question {idx}</p>
             <div className="grid gap-2 sm:grid-cols-2">
               <label className="text-sm text-white/70">
-                סוג
+                Type
                 <select
                   disabled={disabled}
                   className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-2 py-2 text-white"
@@ -68,7 +68,7 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
                 </select>
               </label>
               <label className="text-sm text-white/70">
-                נקודות
+                Points
                 <input
                   type="number"
                   min={0.5}
@@ -83,7 +83,7 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
 
             {type === "multiple_choice" ? (
               <label className="block text-sm text-white/70 mt-2">
-                אפשרויות (מופרדות בפסיק)
+                Choices (comma-separated)
                 <input
                   disabled={disabled}
                   className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-2 py-2 text-white"
@@ -99,7 +99,7 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
 
             {type !== "free_text" ? (
               <label className="block text-sm text-white/70 mt-2">
-                תשובה נכונה (אופציונלי)
+                Correct answer (optional)
                 <input
                   disabled={disabled}
                   className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-2 py-2 text-white"

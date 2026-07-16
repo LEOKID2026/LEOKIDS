@@ -57,14 +57,14 @@ export default function WorksheetProseMathLines({
         {showProse ? (
           split.mode === "mixed-inline" || split.mode === "prose-only" ? (
             inlineUsesStackedFractions ? (
-              <p className="worksheet-stem" dir="rtl">
+              <p className="worksheet-stem" dir="ltr">
                 {renderMathFractionAwareText(inlineProse)}
               </p>
             ) : (
               <WorksheetStemText text={inlineProse} />
             )
           ) : (
-            <p className="worksheet-stem worksheet-stem-prose" dir="rtl">
+            <p className="worksheet-stem worksheet-stem-prose" dir="ltr">
               {split.proseHe}
             </p>
           )

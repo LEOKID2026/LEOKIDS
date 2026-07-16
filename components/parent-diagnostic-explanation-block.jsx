@@ -19,7 +19,7 @@ export function ParentDiagnosticExplanationBlock({ explanationV1, className = ""
       </p>
       {exampleHe ? (
         <p className="parent-diagnostic-explanation-example text-[10px] md:text-[11px] text-white/65 leading-snug m-0 mt-1">
-          <span className="text-white/45 font-semibold">דוגמה כללית: </span>
+          <span className="text-white/45 font-semibold">General example: </span>
           <bdi className="parent-diagnostic-explanation-example-ltr" dir="auto">
             {exampleHe}
           </bdi>

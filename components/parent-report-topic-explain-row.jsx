@@ -1,5 +1,5 @@
 /**
- * הסברי נושא תחת הגרף בדוח ההורה — מופרד לבדיקות SSR בלי שאר הדף.
+ * Topic explanations under the chart in the parent report — separated for SSR tests without the rest of the page.
  */
 import React from "react";
 import {
@@ -33,7 +33,7 @@ function parentFacingEngineLine(raw) {
   return normalizeParentFacingHe(s);
 }
 
-/** תג קומפקטי — RTL */
+/** Compact badge */
 export function PrMiniBadge({ children, tone = "neutral" }) {
   const tones = {
     neutral: "border-white/15 bg-white/[0.06] text-white/75",
@@ -87,16 +87,16 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
             data-testid="parent-report-topic-diagnostic-explain"
           >
             {parentCard.whatWeSee ? (
-              <ExplainSectionLine label="מה רואים?" text={parentCard.whatWeSee} />
+              <ExplainSectionLine label="What we see?" text={parentCard.whatWeSee} />
             ) : null}
             {trendV1Facing ? (
               <ExplainSectionLine text={trendV1Facing} dataTestId="parent-report-topic-trend-v1" />
             ) : null}
             {parentCard.whatItMeans ? (
-              <ExplainSectionLine label="מה זה אומר?" text={parentCard.whatItMeans} />
+              <ExplainSectionLine label="What it means?" text={parentCard.whatItMeans} />
             ) : null}
             {parentCard.homeAction ? (
-              <ExplainSectionLine label="מה כדאי לעשות ביחד?" text={parentCard.homeAction} />
+              <ExplainSectionLine label="What to do together?" text={parentCard.homeAction} />
             ) : null}
           </div>
         </div>
@@ -156,11 +156,11 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
           ) : null}
         </div>
         {trendFacing ? (
-          <ExplainSectionLine label="בתקופה האחרונה:" text={trendFacing} />
+          <ExplainSectionLine label="In the recent period:" text={trendFacing} />
         ) : null}
         {primaryFinding ? (
           <div data-testid="parent-report-lpd-finding">
-            <ExplainSectionLine label="מה ראינו:" text={primaryFinding} />
+            <ExplainSectionLine label="What we saw:" text={primaryFinding} />
           </div>
         ) : null}
         {sections &&
@@ -193,19 +193,19 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
           </div>
         ) : null}
         {fdFacing && !sections?.meaning?.includes(fdFacing.slice(0, 24)) ? (
-          <ExplainSectionLine label="בסיס ותלויות:" text={fdFacing} />
+          <ExplainSectionLine label="Foundation and dependencies:" text={fdFacing} />
         ) : null}
         {mpFacing && !sections?.pattern?.includes(mpFacing.slice(0, 20)) ? (
-          <ExplainSectionLine label="איפה נתקעים לעיתים:" text={mpFacing} />
+          <ExplainSectionLine label="Where they sometimes get stuck:" text={mpFacing} />
         ) : null}
-        {lmFacing ? <ExplainSectionLine label="שימור בבית:" text={lmFacing} /> : null}
+        {lmFacing ? <ExplainSectionLine label="Retention at home:" text={lmFacing} /> : null}
         {dn || av ? (
           <div className="text-[9px] md:text-[10px] text-sky-100/88 leading-snug border border-sky-400/20 rounded px-1.5 py-1 bg-sky-950/12 space-y-0.5 m-0 pr-0.5">
-            {dn ? <ExplainSectionLine label="עכשיו:" text={dn} /> : null}
-            {av ? <ExplainSectionLine label="להימנע:" text={av} /> : null}
+            {dn ? <ExplainSectionLine label="Now:" text={dn} /> : null}
+            {av ? <ExplainSectionLine label="Avoid:" text={av} /> : null}
           </div>
         ) : null}
-        {caut ? <ExplainSectionLine label="זהירות:" text={caut} /> : null}
+        {caut ? <ExplainSectionLine label="Caution:" text={caut} /> : null}
       </div>
     </div>
   );
@@ -220,7 +220,7 @@ export function ParentReportTopicExplainBlock({ rows, compact = false, registere
   return (
     <div className="parent-report-topic-explain-block mt-2 rounded-lg border border-white/10 bg-black/25 overflow-hidden avoid-break">
       <div className="px-2 py-1 text-[10px] md:text-[11px] font-bold text-white/55 border-b border-white/10">
-        מה בולט בכל נושא
+        What stands out in each topic
       </div>
       <div className="max-h-none overflow-visible">
         {withQ.map((r) => (

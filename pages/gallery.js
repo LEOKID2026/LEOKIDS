@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useGalleryUi } from "../hooks/useGalleryUi.js";
 import { useT } from "../lib/i18n/I18nProvider.jsx";

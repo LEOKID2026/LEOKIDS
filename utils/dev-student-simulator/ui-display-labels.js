@@ -1,5 +1,5 @@
 /**
- * Hebrew display strings for the Dev Student Simulator Custom Builder UI only.
+ * Display strings for the Dev Student Simulator Custom Builder UI only.
  * Internal subject ids and topic keys stay unchanged everywhere else.
  */
 
@@ -16,92 +16,92 @@ export const CUSTOM_BUILDER_UI_SUBJECT_ORDER = Object.freeze([
 ]);
 
 export const SUBJECT_DISPLAY_HE = Object.freeze({
-  math: "חשבון",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  hebrew: "עברית",
-  science: "מדעים",
-  "moledet-geography": "מולדת / גאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  hebrew: "Hebrew",
+  science: "Science",
+  "moledet-geography": "Homeland / Geography",
 });
 
 /**
- * Flat map: internal topic key -> Hebrew label for checkboxes.
+ * Flat map: internal topic key -> display label for checkboxes.
  * Includes all keys from SUBJECT_BUCKETS plus extras for forward-compatible buckets.
  */
 export const TOPIC_DISPLAY_HE = Object.freeze({
   // Math
-  addition: "חיבור",
-  subtraction: "חיסור",
-  multiplication: "כפל",
-  division: "חילוק",
-  division_with_remainder: "חילוק עם שארית",
-  fractions: "שברים",
-  percentages: "אחוזים",
-  sequences: "סדרות",
-  decimals: "מספרים עשרוניים",
-  rounding: "עיגול מספרים",
-  divisibility: "התחלקות",
-  prime_composite: "ראשוני / פריק",
-  powers: "חזקות",
-  ratio: "יחס",
-  equations: "משוואות",
-  order_of_operations: "סדר פעולות חשבון",
-  zero_one_properties: "תכונות 0 ו 1",
-  estimation: "אומדן",
-  scale: "קנה מידה",
-  compare: "השוואת מספרים",
-  number_sense: "חוש מספרי",
-  factors_multiples: "גורמים וכפולות",
-  word_problems: "בעיות מילוליות",
+  addition: "Addition",
+  subtraction: "Subtraction",
+  multiplication: "Multiplication",
+  division: "Division",
+  division_with_remainder: "Division with remainder",
+  fractions: "Fractions",
+  percentages: "Percentages",
+  sequences: "Sequences",
+  decimals: "Decimals",
+  rounding: "Rounding",
+  divisibility: "Divisibility",
+  prime_composite: "Prime / composite",
+  powers: "Powers",
+  ratio: "Ratio",
+  equations: "Equations",
+  order_of_operations: "Order of operations",
+  zero_one_properties: "Properties of 0 and 1",
+  estimation: "Estimation",
+  scale: "Scale",
+  compare: "Number comparison",
+  number_sense: "Number sense",
+  factors_multiples: "Factors and multiples",
+  word_problems: "Word problems",
   // Geometry
-  shapes_basic: "צורות בסיסיות",
-  area: "שטח",
-  perimeter: "היקף",
-  volume: "נפח",
-  angles: "זוויות",
-  parallel_perpendicular: "מקבילים ומאונכים",
-  triangles: "משולשים",
-  quadrilaterals: "מרובעים",
-  transformations: "הזזות ושיקופים",
-  rotation: "סיבוב",
-  symmetry: "סימטריה",
-  diagonal: "אלכסונים",
-  heights: "גבהים",
-  tiling: "ריצוף",
-  circles: "מעגלים",
-  solids: "גופים",
-  pythagoras: "משפט פיתגורס",
-  units: "יחידות מידה",
+  shapes_basic: "Basic shapes",
+  area: "Area",
+  perimeter: "Perimeter",
+  volume: "Volume",
+  angles: "Angles",
+  parallel_perpendicular: "Parallel and perpendicular",
+  triangles: "Triangles",
+  quadrilaterals: "Quadrilaterals",
+  transformations: "Transformations",
+  rotation: "Rotation",
+  symmetry: "Symmetry",
+  diagonal: "Diagonals",
+  heights: "Heights",
+  tiling: "Tiling",
+  circles: "Circles",
+  solids: "Solid shapes",
+  pythagoras: "Pythagorean theorem",
+  units: "Units of measure",
   // Hebrew (subject)
-  reading: "קריאה",
-  comprehension: "הבנת הנקרא",
-  writing: "כתיבה",
-  grammar: "דקדוק",
-  vocabulary: "אוצר מילים",
-  speaking: "הבעה בעל פה",
+  reading: "Reading",
+  comprehension: "Reading comprehension",
+  writing: "Writing",
+  grammar: "Grammar",
+  vocabulary: "Vocabulary",
+  speaking: "Speaking",
   // English (subject) — overlaps keys with Hebrew where meaning matches UI
-  translation: "תרגום",
-  sentences: "בניית משפטים",
+  translation: "Translation",
+  sentences: "Sentence building",
   // Science
-  body: "גוף האדם",
-  animals: "בעלי חיים",
-  plants: "צמחים",
-  materials: "חומרים",
-  earth_space: "כדור הארץ והחלל",
-  environment: "סביבה",
-  experiments: "ניסויים",
+  body: "Human body",
+  animals: "Animals",
+  plants: "Plants",
+  materials: "Materials",
+  earth_space: "Earth and space",
+  environment: "Environment",
+  experiments: "Experiments",
   // Moledet / geography
-  homeland: "מולדת",
-  community: "קהילה",
-  citizenship: "אזרחות",
-  geography: "גאוגרפיה",
-  values: "ערכים",
-  maps: "מפות",
+  homeland: "Homeland",
+  community: "Community",
+  citizenship: "Citizenship",
+  geography: "Geography",
+  values: "Values",
+  maps: "Maps",
   // Shared
-  mixed: "מעורב",
+  mixed: "Mixed",
 });
 
-const UNMAPPED_TOPIC_HE = "נושא (מפתח לא מתויג)";
+const UNMAPPED_TOPIC_HE = "Topic (unlabeled key)";
 
 /**
  * @param {string} subjectId
@@ -112,7 +112,7 @@ export function hebrewSubjectLabel(subjectId) {
 }
 
 /**
- * Primary Hebrew line for a topic checkbox. Never returns the raw key as the only label.
+ * Primary display line for a topic checkbox. Never returns the raw key as the only label.
  * @param {string} topicKey
  * @returns {string}
  */

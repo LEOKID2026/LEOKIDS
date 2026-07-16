@@ -1,6 +1,6 @@
 /**
- * מנוע המלצות ברמת נושא/פעולה לדוח מקיף בלבד.
- * מבוסס על שורות דוח V2 + מפת טעויות (עם נירמול מפתחות מול אחסון אמיתי).
+ * Topic/operation recommendation engine for the comprehensive report only.
+ * Based on V2 report rows + mistake map (with key normalization vs real storage).
  */
 
 import { splitBucketModeRowKey } from "./parent-report-row-diagnostics.js";
@@ -85,14 +85,14 @@ import {
 /** @typedef {'advance_level'|'advance_grade_topic_only'|'maintain_and_strengthen'|'maintain_regular_strengthen_medium'|'remediate_same_level'|'drop_one_level_topic_only'|'drop_one_grade_topic_only'|'suggest_return_to_regular'} RecommendedNextStep */
 
 export const RECOMMENDED_STEP_LABEL_HE = {
-  advance_level: "מעבר לרמת מתקדם - באותו נושא בלבד",
-  advance_grade_topic_only: "העלאת כיתה - באותו נושא בלבד",
-  maintain_and_strengthen: "לבסס באותה רמה",
-  maintain_regular_strengthen_medium: "לבסס ברמה רגילה",
-  remediate_same_level: "חיזוק באותה רמה",
-  suggest_return_to_regular: "חזרה לתרגול רגיל",
-  drop_one_level_topic_only: "חיזוק באותה רמה",
-  drop_one_grade_topic_only: "הורדת רמת קושי - באותו נושא בלבד",
+  advance_level: "Move to advanced — same topic only",
+  advance_grade_topic_only: "Move up a grade — same topic only",
+  maintain_and_strengthen: "Solidify at the same level",
+  maintain_regular_strengthen_medium: "Solidify at regular level",
+  remediate_same_level: "Strengthen at the same level",
+  suggest_return_to_regular: "Return to regular practice",
+  drop_one_level_topic_only: "Strengthen at the same level",
+  drop_one_grade_topic_only: "Lower difficulty — same topic only",
 };
 
 /** Engine field key — split to keep parent-copy guard clean. */
@@ -113,7 +113,7 @@ export function mergeTopicNextStepConfig(partial) {
 }
 
 /**
- * מפתח אחיד לחיפוש טעויות מול שורת דוח (מתאים אל operation/topic ב localStorage ואל bucket במתמטיקה).
+ * Unified key for looking up mistakes against a report row (matches operation/topic in localStorage and math bucket).
  * @param {string} subjectId
  * @param {string|null|undefined} rawKey
  */
@@ -126,7 +126,7 @@ export function canonicalMistakeLookupKey(subjectId, rawKey) {
 }
 
 /**
- * מאגד ספירות טעויות לפי מפתח קנוני — כמה מפתחות גולמיים מצביעים על אותו נושא (למשל base אחרי :: במתמטיקה).
+ * Aggregates mistake counts by canonical key — several raw keys may point at the same topic (e.g. base before :: in math).
  * @param {string} subjectId
  * @param {Record<string, { count?: number }>} mistakesByBucket
  */
@@ -143,7 +143,7 @@ export function aggregateMistakeCountsByCanonical(subjectId, mistakesByBucket) {
 }
 
 /**
- * ספירת אירועי טעות לשורה: bucketKey, מפתח שורה מהמפה, שם תצוגה, ובמתמטיקה גם בסיס לפני מפריד מצב.
+ * Count mistake events for a row: bucketKey, map row key, display name, and in math also the base before the mode separator.
  */
 export function resolveMistakeEventCount(subjectId, mistakesByBucket, bucketKey, topicRowKey, row) {
   return rowMistakeEventCount(subjectId, mistakesByBucket, bucketKey, topicRowKey, row);
@@ -201,51 +201,51 @@ function buildHebrewCopy(step, ctx, cfg) {
 
   const mPart =
     mC >= cfg.copyMentionMistakesMin
-      ? ` בתקופה שנבחרה נרשמו ${mC} טעויות בנושא הזה - לקרוא את המשימה לאט לפני מענה.`
+      ? ` In the selected period, ${mC} mistakes were logged on this topic — read the task slowly before answering.`
       : "";
 
   /** @type {Record<RecommendedNextStep, { reasonHe: string, parentHe: string, studentHe: string }>} */
   const table = {
     advance_level: {
-      reasonHe: "נפתרו מספיק שאלות ברמה רגילה עם דיוק יציב. אפשר לנסות מעבר למתקדם באותו נושא.",
-      parentHe: "מומלץ לנסות מתקדם באותו נושא.",
-      studentHe: "אפשר לנסות מתקדם באותו נושא.",
+      reasonHe: "Enough questions were solved at regular level with stable accuracy. Trying advanced on the same topic is reasonable.",
+      parentHe: "Trying advanced on the same topic is recommended.",
+      studentHe: "You can try advanced on the same topic.",
     },
     advance_grade_topic_only: {
-      reasonHe: `בנושא ${displayName} כבר עובדים בתרגול הנוכחי (${levelLabel}) עם דיוק טוב (${acc}%) וכמות שאלות מספיקה (${q} שאלות). אפשר לנסות כיתה גבוהה יותר דווקא בנושא הזה - לא לכל המקצוע.`,
-      parentHe: `אם ניתן לבחור כיתה לפי נושא - בנושא ${displayName} אפשר לנסות כיתה אחת מעלה. זה רק לנושא הזה; בשאר הנושאים נשארים כרגיל עד שיהיו נתונים דומים.`,
-      studentHe: `בנושא ${displayName} אפשר לנסות כיתה קצת יותר גבוהה - רק שם, צעד אחר צעד.`,
+      reasonHe: `On ${displayName}, current practice (${levelLabel}) already shows good accuracy (${acc}%) with enough questions (${q}). Trying a higher grade on this topic only — not for the whole subject — is reasonable.`,
+      parentHe: `If grade can be chosen by topic — on ${displayName} you can try one grade up. That applies only to this topic; keep other topics as usual until similar data appears.`,
+      studentHe: `On ${displayName}, you can try a slightly higher grade — only there, step by step.`,
     },
     maintain_and_strengthen: {
-      reasonHe: `בנושא ${displayName} יש ${q} שאלות ודיוק של כ-${acc}%${mPart}. עדיין לא בטוחים מספיק לקפיצה קדימה או אחורה - כדאי להמשיך באותה כיתה ורמת קושי ולחזק עקביות.`,
-      parentHe: `בנושא ${displayName} מומלץ להמשיך כרגע באותה רמת קושי, להוסיף תרגול קצר וממוקד פעמיים בשבוע. המטרה: ביסוס הנושא ועקביות לפני שמשנים משהו.`,
-      studentHe: `כדאי להתאמן עוד קצת בנושא ${displayName} באותה רמה - ואז נחליט על צעד הבא.`,
+      reasonHe: `On ${displayName} there are ${q} questions with about ${acc}% accuracy${mPart}. Not confident enough yet for a jump forward or back — stay on the same grade and difficulty and build consistency.`,
+      parentHe: `On ${displayName}, continue at the same difficulty for now, and add short focused practice twice a week. Goal: solidify the topic and consistency before changing anything.`,
+      studentHe: `Practice a bit more on ${displayName} at the same level — then we will pick the next step.`,
     },
     remediate_same_level: {
-      reasonHe: `בנושא ${displayName} הדיוק בינוני (${acc}%) עם ${q} שאלות${mPart}. עדיף לחזק את הבסיס באותה רמת קושי לפני שמנסים משהו חדש.`,
+      reasonHe: `On ${displayName}, accuracy is moderate (${acc}%) with ${q} questions${mPart}. Better to strengthen the foundation at the same difficulty before trying something new.`,
       parentHe:
-        "כדאי להמשיך על אותה רמת קושי ולהתמקד בהבנת הטעויות: לתרגל ביחד עם הילד, ואחרי תשובה שגויה לעצור ולברר ביחד איפה זה הסתבך. עדיף לא לעלות רמה לפני שיש תחושה של התקדמות ועקביות.",
-      studentHe: `נחזק קודם את הבסיס בנושא ${displayName} באותה רמה - ואז נתקדם.`,
+        "Stay on the same difficulty and focus on understanding mistakes: practice together, and after a wrong answer pause and figure out where it went wrong. Prefer not to raise the level until progress and consistency feel real.",
+      studentHe: `We will strengthen the base on ${displayName} at the same level first — then move forward.`,
     },
     maintain_regular_strengthen_medium: {
-      reasonHe: "כדאי לצבור עוד תרגול יציב ברמה רגילה לפני מעבר למתקדם.",
-      parentHe: "מומלץ להמשיך ברמה רגילה ולחזק דיוק וביטחון לפני מעבר למתקדם.",
-      studentHe: "נמשיך עוד קצת ברמה רגילה, נתחזק, ואז ננסה להתקדם.",
+      reasonHe: "Build more steady practice at regular level before moving to advanced.",
+      parentHe: "Continue at regular level and strengthen accuracy and confidence before advanced.",
+      studentHe: "We will stay a bit longer at regular level, get stronger, then try to advance.",
     },
     suggest_return_to_regular: {
-      reasonHe: "האתגר במתקדם היה גבוה כרגע. מומלץ לחזור לתרגול רגיל באותו נושא.",
-      parentHe: "האתגר במתקדם היה גבוה כרגע. מומלץ לחזור לתרגול רגיל, לחזק דיוק וביטחון, ואז לנסות שוב בהמשך.",
-      studentHe: "נחזור רגע לתרגול רגיל, נתחזק, ואז ננסה שוב.",
+      reasonHe: "The advanced challenge was high right now. Returning to regular practice on the same topic is recommended.",
+      parentHe: "The advanced challenge was high right now. Return to regular practice, strengthen accuracy and confidence, then try again later.",
+      studentHe: "We will return to regular practice for a bit, get stronger, then try again.",
     },
     drop_one_level_topic_only: {
-      reasonHe: "כדאי לחזק את אותו נושא בתרגול רגיל בקצב נוח.",
-      parentHe: "מומלץ להמשיך בתרגול רגיל בקצב נוח, עם כמה שאלות קצרות לחיזוק.",
-      studentHe: "נחזק קודם בתרגול רגיל, ואז נמשיך הלאה.",
+      reasonHe: "Strengthen the same topic with regular practice at a comfortable pace.",
+      parentHe: "Continue regular practice at a comfortable pace, with a few short questions for reinforcement.",
+      studentHe: "We will strengthen with regular practice first, then move on.",
     },
     drop_one_grade_topic_only: {
-      reasonHe: `בנושא ${displayName} עובדים כבר ברמה הקלה ביותר (${levelLabel}) אבל הדיוק עדיין נמוך (${acc}%)${mPart}. סביר שהפער הוא כיתתי - כדאי לרדת כיתה אחת רק בנושא הזה.`,
-      parentHe: "מומלץ לנסות רמה או כיתה יותר נמוכה ואז להתקדם בהדרגה.",
-      studentHe: `בנושא ${displayName} ננסה כיתה קצת יותר נוחה - רק שם - כדי שהכל יהיה יותר הוגן.`,
+      reasonHe: `On ${displayName}, practice is already at the easiest level (${levelLabel}) but accuracy is still low (${acc}%)${mPart}. The gap is likely grade-related — drop one grade on this topic only.`,
+      parentHe: "Try a lower level or grade, then advance gradually.",
+      studentHe: `On ${displayName}, we will try a slightly more comfortable grade — only there — so it feels fairer.`,
     },
   };
 
@@ -255,7 +255,7 @@ function buildHebrewCopy(step, ctx, cfg) {
 /**
  * @param {typeof DEFAULT_TOPIC_NEXT_STEP_CONFIG} cfg
  */
-/** מיוצא לבדיקות חוזה — לא חלק מ-API המוצר */
+/** Exported for contract tests — not part of the product API */
 export function applyAggressiveEvidenceCap(result, row, ctx, cfg) {
   const trace = Array.isArray(result?.recommendationDecisionTrace)
     ? [...result.recommendationDecisionTrace]
@@ -274,7 +274,7 @@ export function applyAggressiveEvidenceCap(result, row, ctx, cfg) {
   }
   const step = "maintain_and_strengthen";
   const copy = buildHebrewCopy(step, ctx, cfg);
-  const note = " (הנתון עדיין חלקי - לא משנים כיתה או רמת קושי כרגע; כדאי לבסס באותה הגדרה ולאסוף עוד קצת תרגול.)";
+  const note = " (Data is still partial — do not change grade or difficulty yet; solidify the same setup and gather a bit more practice.)";
   trace.push({
     source: "recommendation",
     phase: "post_cap_adjustments",
@@ -307,7 +307,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
   const subjectId = row?.subjectId || row?.subject || null;
   const displayLevel = resolveRowDisplayLevelKey(subjectId, row);
   const isScience = isScienceSubjectId(subjectId);
-  const displayName = String(row?.displayName || row?.bucketKey || "נושא").trim();
+  const displayName = String(row?.displayName || row?.bucketKey || "topic").trim();
 
   const stability = computeStability(row, mistakeEventCount, cfg);
   const confidence = computeConfidence(row, mistakeEventCount, cfg);
@@ -320,8 +320,8 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
     questions: q,
     accuracy: acc,
     mistakeEventCount,
-    levelLabel: row?.level || (displayLevel === "advanced" ? "מתקדם" : "רגיל"),
-    gradeLabel: row?.grade || gradeKey || "לא זמין",
+    levelLabel: row?.level || (displayLevel === "advanced" ? "advanced" : "regular"),
+    gradeLabel: row?.grade || gradeKey || "Not available",
     wrongRatio,
   };
 
@@ -376,9 +376,9 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
         currentMastery: acc,
         stability,
         confidence,
-        reasonHe: `יש רק ${q} שאלות בנושא ${displayName} בתקופה שנבחרה - מוקדם מדי לשנות כיתה או רמת קושי. עדיף עוד מפגשים קצרים באותה הגדרה ואז נבחן מחדש.`,
-        parentHe: `בנושא ${displayName} יש עדיין מעט נתונים (${q} שאלות). המלצה להמשיך באותה רמת קושי, להוסיף שניים שלושה תרגולים קצרים כדי שההמלצה הבאה תהיה מדויקת יותר.`,
-        studentHe: `נמשיך עוד קצת באותה רמה בנושא ${displayName} - ואז נדע טוב יותר מה הלאה.`,
+        reasonHe: `Only ${q} questions on ${displayName} in the selected period — too early to change grade or difficulty. Prefer a few more short sessions with the same setup, then reassess.`,
+        parentHe: `On ${displayName} there is still little data (${q} questions). Continue at the same difficulty and add two or three short practices so the next recommendation is more precise.`,
+        studentHe: `We will stay a bit longer at the same level on ${displayName} — then we will know better what is next.`,
         recommendationDecisionTrace: trace,
       },
       row,
@@ -677,8 +677,8 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
 }
 
 /**
- * החלטת צעד נושא — כולל שלב 2 (התנהגות, מגמה, סיכונים) + cap ראיות.
- * מיוצא לבדיקות יחידה.
+ * Topic next-step decision — includes phase 2 (behavior, trend, risks) + evidence cap.
+ * Exported for unit tests.
  * @param {typeof DEFAULT_TOPIC_NEXT_STEP_CONFIG} [cfg]
  */
 export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_NEXT_STEP_CONFIG) {
@@ -756,7 +756,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
   const guardedTraceAdds = [...afterP2.traceAdds, ...afterP7.traceAdds];
   const guardedStep = afterP7.step;
 
-  const displayName = String(row?.displayName || row?.bucketKey || "נושא").trim();
+  const displayName = String(row?.displayName || row?.bucketKey || "topic").trim();
   const levelKey = normLevelKey(row);
   const gradeKey = normGradeKey(row);
   const ctx = {
@@ -764,8 +764,8 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     questions: q,
     accuracy: acc,
     mistakeEventCount,
-    levelLabel: row?.level || levelKey || "לא זמין",
-    gradeLabel: row?.grade || gradeKey || "לא זמין",
+    levelLabel: row?.level || levelKey || "Not available",
+    gradeLabel: row?.grade || gradeKey || "Not available",
     wrongRatio,
   };
 
@@ -779,7 +779,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     const copy = buildHebrewCopy(guardedStep, ctx, cfg);
     const phaseNote =
       guardedBlockers.length > 0
-        ? ` [שלבים 2–7: ${guardedBlockers.map((b) => b.detailHe).join(" | ")}]`
+        ? ` [Phases 2–7: ${guardedBlockers.map((b) => b.detailHe).join(" | ")}]`
         : "";
     const softened = mergePhase7SoftHebrewCopy(
       { ...copy, reasonHe: (copy.reasonHe || "") + phaseNote },
@@ -1189,20 +1189,20 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     whyFoundationFirstHe: phase14Overlay.whyFoundationFirstHe,
   });
   if (capped.postCapApplied) {
-    whyThisRecommendationHe += " נשמר כלל זהירות - לא עושים שינוי גדול כשהמידע עדיין חלקי.";
+    whyThisRecommendationHe += " A caution rule was kept — no big change while information is still partial.";
   }
-  whyThisRecommendationHe += ` נקודה שכדאי לשים עליה לב: ${rootCausePayload.rootCauseLabelHe || rootCausePayload.rootCause}.`;
+  whyThisRecommendationHe += ` Worth watching: ${rootCausePayload.rootCauseLabelHe || rootCausePayload.rootCause}.`;
   const dc = String(restraintPayload.diagnosticCautionHe || "").trim();
   if (dc) whyThisRecommendationHe += ` ${dc}`;
   if (phase10Aging.confidenceDecayApplied) {
-    whyThisRecommendationHe += " הנתונים בתקופה שנבחרה מתחילים להתיישן - נשארים עם ניסוח זהיר יחסית.";
+    whyThisRecommendationHe += " Data in the selected period is starting to age — wording stays relatively cautious.";
   }
   if (phase11Drift.repeatAdviceWarning && phase11Overlay.whyWeShouldNotRepeatSameSupportHe) {
     whyThisRecommendationHe += ` ${phase11Overlay.whyWeShouldNotRepeatSameSupportHe}`;
   } else if (phase11Drift.recommendationRotationNeed === "meaningful_rotation" && phase11Overlay.whyWeShouldNotRepeatSameSupportHe) {
     whyThisRecommendationHe += ` ${String(phase11Overlay.whyWeShouldNotRepeatSameSupportHe).slice(0, 120)}`;
   }
-  /* Phase 15: קדימות ניסוח — Phase 13 (מה עדיין חסר) מעל Phase 12 כדי לא לשכפל אות זהה */
+  /* Phase 15: wording priority — Phase 13 (what is still missing) over Phase 12 to avoid duplicating the same letter */
   const evStillNeed = phase13Overlay.whatEvidenceWeStillNeedHe
     ? String(phase13Overlay.whatEvidenceWeStillNeedHe).trim()
     : "";
@@ -1248,9 +1248,9 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
   if (
     phase14Dep.dependencyState === "likely_foundational_block" &&
     (phase13Gates.releaseGate === "forming" || phase13Gates.advanceGate === "forming") &&
-    !whyThisRecommendationHe.includes("לא מרחיבים שחרור")
+    !whyThisRecommendationHe.includes("do not ease support")
   ) {
-    whyThisRecommendationHe += " כל עוד לא ברור מאיפה מתחיל הקושי - לא מפחיתים עזרה ולא מקדמים מהר מדי.";
+    whyThisRecommendationHe += " Until it is clear where the difficulty starts — do not ease support or advance too quickly.";
   }
 
   return {
@@ -1522,10 +1522,10 @@ export function buildTopicRecommendationRecord(
     recommendedStudentActionHe,
     recommendedEvidenceLevelHe:
       signals.evidenceStrength === "strong"
-        ? "מידע ברור יחסית"
+        ? "Relatively clear information"
         : signals.evidenceStrength === "medium"
-          ? "מידע חלקי אך שימושי"
-          : "מידע מצומצם",
+          ? "Partial but useful information"
+          : "Limited information",
     recommendedWhyNowHe: signals.recommendationContextHe,
     recommendationStabilityNoteHe: signals.patternStabilityHe,
     isEarlySignalOnly: !!signals.isEarlySignalOnly,
@@ -1774,7 +1774,7 @@ export function buildTopicRecommendationRecord(
 }
 
 /**
- * מוסיף לכל שורת נושא בדוח תוויות המלצה קצרות בעברית (אל UI הדוח הרגיל).
+ * Adds short recommendation labels to each topic row in the report (for the regular report UI).
  * @param {Record<string, Record<string, unknown>>} maps
  * @param {Record<string, Record<string, { count?: number }>>} mistakesBySubject
  * @param {number} periodEndMs

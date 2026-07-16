@@ -31,7 +31,7 @@ function renderInlineMixedRuns(text) {
       );
     }
     return (
-      <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="rtl">
+      <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="ltr">
         {run.value}
       </span>
     );

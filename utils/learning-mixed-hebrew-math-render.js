@@ -36,7 +36,7 @@ export const learningMathIsolateStyle = Object.freeze({
 });
 
 export const learningProseIsolateStyle = Object.freeze({
-  direction: "rtl",
+  direction: "ltr",
   unicodeBidi: "isolate",
   display: "inline-block",
   verticalAlign: "baseline",
@@ -44,7 +44,7 @@ export const learningProseIsolateStyle = Object.freeze({
 });
 
 export const learningProseBlockStyle = Object.freeze({
-  direction: "rtl",
+  direction: "ltr",
   unicodeBidi: "isolate",
   display: "block",
   whiteSpace: "pre-wrap",

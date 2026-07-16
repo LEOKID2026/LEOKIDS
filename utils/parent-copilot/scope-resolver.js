@@ -251,7 +251,7 @@ export function resolveScope(input) {
     return {
       resolutionStatus: "clarification_required",
       clarificationQuestionHe:
-        "לא נטען דוח מקיף - לא ניתן לענות מתוך נתוני התקופה. רעננו את הדף או בחרו תקופה אחרת.",
+        "A comprehensive report was not loaded - it is not possible to answer from the data of the period. Refresh the page or choose another period.",
       scopeConfidence: 0,
       scopeReason: "missing_payload",
       stageA,
@@ -266,7 +266,7 @@ export function resolveScope(input) {
         {
           scopeType: "executive",
           scopeId: "executive",
-          scopeLabel: "הדוח בתקופה הנבחרה",
+          scopeLabel: "the report for the selected period",
         },
         stageA,
       ),
@@ -301,7 +301,7 @@ export function resolveScope(input) {
       if (anchors.length === 1) {
         const tr = anchors[0].tr;
         const topicRowKey = String(tr?.topicRowKey || tr?.topicKey || "").trim();
-        const displayName = norm(tr?.displayName) || "נושא";
+        const displayName = norm(tr?.displayName) || "Topic";
         if (topicRowKey) {
           return {
             resolutionStatus: "resolved",
@@ -329,7 +329,7 @@ export function resolveScope(input) {
         {
           scopeType: "executive",
           scopeId: "executive",
-          scopeLabel: "הדוח בתקופה הנבחרה",
+          scopeLabel: "the report for the selected period",
         },
         stageA,
       ),
@@ -348,7 +348,7 @@ export function resolveScope(input) {
     if (!hit) {
       return {
         resolutionStatus: "clarification_required",
-        clarificationQuestionHe: "בנושא הזה עדיין אין מספיק תרגול שמופיע בדוח - כדאי לבחור נושא שכבר יש בו תרגול.",
+        clarificationQuestionHe: "In this subject there is still not enough practice that appears in the report - you should choose a subject in which there is already practice.",
         scopeConfidence: 0.2,
         scopeReason: "selected_context_topic_missing_anchor",
         stageA,
@@ -356,7 +356,7 @@ export function resolveScope(input) {
     }
     const label =
       String(hit?.tr?.displayName || "").trim() ||
-      (subj ? `${subjectLabelHe(subj)} · נושא` : "נושא נבחר");
+      (subj ? `${subjectLabelHe(subj)} · Subject` : "Selected topic");
     return {
       resolutionStatus: "resolved",
       scope: attachScopeInterpretation(
@@ -378,7 +378,7 @@ export function resolveScope(input) {
     if (!subjectHasAnchor) {
       return {
         resolutionStatus: "clarification_required",
-        clarificationQuestionHe: "במקצוע הזה אין עדיין נושא עם מספיק תרגול כדי לדבר עליו - אפשר לנסות מקצוע אחר.",
+        clarificationQuestionHe: "In this profession there is not yet a topic with enough practice to talk about - you can try another profession.",
         scopeConfidence: 0.24,
         scopeReason: "selected_context_subject_missing_anchor",
         stageA,
@@ -393,12 +393,12 @@ export function resolveScope(input) {
       .slice(0, 3)
       .map((r) => r.displayName)
       .filter(Boolean)
-      .join(" או ");
+      .join("or");
     return {
       resolutionStatus: "clarification_required",
       clarificationQuestionHe: names
-        ? `יש כמה נושאים דומים בדוח - על איזה מהם לענות: ${names}?`
-        : "יש כאן יותר מנושא אחד - על איזה נושא לענות?",
+        ? `There are several similar topics in the report - which one to answer: ${names}?`
+        : "There is more than one topic here - which topic to answer?",
       scopeConfidence: 0.25,
       scopeReason: "utterance_topic_ambiguous",
       stageA,
@@ -440,7 +440,7 @@ export function resolveScope(input) {
   if (topicMatch.ambiguous) {
     return {
       resolutionStatus: "clarification_required",
-      clarificationQuestionHe: "יש כאן יותר מנושא אחד - על איזה נושא לענות?",
+      clarificationQuestionHe: "There is more than one topic here - which topic to answer?",
       scopeConfidence: 0.25,
       scopeReason: "utterance_topic_ambiguous",
       stageA,
@@ -490,7 +490,7 @@ export function resolveScope(input) {
     return {
       resolutionStatus: "clarification_required",
       clarificationQuestionHe:
-        "בדוח אין כרגע מספיק שאלות מעוגנות כדי לענות בצורה מדויקת - הנתונים עדיין מצומצמים ומוקדם לכיוון ברור. כדאי לצבור עוד קצת תרגול בטווח התאריכים (למשל 5–8 שאלות ממוקדות בשבוע), ואז לנסות שוב.",
+        "The report currently does not have enough anchored questions to answer accurately - the data is still limited and early in a clear direction. You should gain some more practice in the date range (e.g. 5-8 focused questions per week), then try again.",
       scopeConfidence: 0,
       scopeReason: "no_anchor_available",
       stageA,
@@ -506,7 +506,7 @@ export function resolveScope(input) {
       {
         scopeType: "executive",
         scopeId: "executive",
-        scopeLabel: "הדוח בתקופה הנבחרה",
+        scopeLabel: "the report for the selected period",
       },
       stageA,
     );

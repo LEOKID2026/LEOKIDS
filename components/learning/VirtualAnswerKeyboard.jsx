@@ -116,7 +116,7 @@ export default function VirtualAnswerKeyboard({
       className={`w-full ${shellMaxWidthClass} mx-auto select-none ${shellPaddingClass} ${className}`}
       dir="ltr"
       role="group"
-      aria-label="מקלדת מספרים"
+      aria-label="Number keyboard"
     >
       {showClose && onClose ? (
         <div className="flex justify-end mb-1">
@@ -124,8 +124,8 @@ export default function VirtualAnswerKeyboard({
             type="button"
             onClick={onClose}
             className={closeBtnClass}
-            aria-label="סגור"
-            title="סגור"
+            aria-label="Close"
+            title="Close"
           >
             ✕
           </button>
@@ -191,7 +191,7 @@ export default function VirtualAnswerKeyboard({
                   onClick={submitButton.onClick}
                   className={submitClass}
                 >
-                  {submitButton.label || "בדוק"}
+                  {submitButton.label || "Check"}
                 </button>
               ) : null}
             </div>

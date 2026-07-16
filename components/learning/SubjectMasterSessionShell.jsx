@@ -7,7 +7,7 @@ import Layout from "../Layout";
 export default function SubjectMasterSessionShell({ shellClass, shellBgStyle }) {
   return (
     <Layout>
-      <div className={shellClass} style={shellBgStyle} dir="rtl" aria-busy="true" />
+      <div className={shellClass} style={shellBgStyle} dir="ltr" aria-busy="true" />
     </Layout>
   );
 }

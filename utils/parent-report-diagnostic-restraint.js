@@ -87,7 +87,7 @@ export function computeDiagnosticRestraint(ctx) {
   if (speedVsGap) {
     reasons.push("speed_vs_mastery_conflict");
     level = "mixed";
-    alternativeExplanations.push("ייתכן שהחולשה קשורה למסלול מהיר או לחץ זמן ולא לפער ידע עמוק.");
+    alternativeExplanations.push("The weakness may relate to speed mode or time pressure rather than a deep knowledge gap.");
   }
 
   const hintInd =
@@ -97,7 +97,7 @@ export function computeDiagnosticRestraint(ctx) {
   if (hintInd && acc >= 78) {
     reasons.push("strong_score_weak_independence");
     if (level === "confirmed") level = "likely";
-    alternativeExplanations.push("הדיוק גבוה אך יש סימני תלות ברמזים - כדאי לא לפרש כמאסטרי מלא לפני עצמאות.");
+    alternativeExplanations.push("Accuracy is high but there are signs of hint dependence — avoid reading this as full mastery before independence is shown.");
   }
 
   if (trendDer.fragileProgressPattern && behaviorType !== "fragile_success") {
@@ -127,7 +127,7 @@ export function computeDiagnosticRestraint(ctx) {
     reasons.push("fragile_success_unsupported");
     if (conclusionStrength === "strong") conclusionStrength = "tentative";
     if (level === "confirmed") level = "weak";
-    alternativeExplanations.push("פרופיל «הצלחה שבירה» דורש תמיכה במגמה או ברמזים - כרגע זה לא מלא.");
+    alternativeExplanations.push("A fragile-success profile needs support from trend or hint signals — that support is not complete yet.");
   }
 
   const kgClaim = behaviorType === "knowledge_gap";
@@ -136,7 +136,7 @@ export function computeDiagnosticRestraint(ctx) {
     reasons.push("knowledge_gap_under_evidence");
     if (conclusionStrength === "strong" || conclusionStrength === "moderate") conclusionStrength = "tentative";
     if (level === "confirmed") level = "weak";
-    alternativeExplanations.push("פער ידע אמיתי דורש דיוק נמוך יחד עם נפח וטעויות - כאן הנתון עדיין חלקי.");
+    alternativeExplanations.push("A real knowledge gap needs low accuracy together with volume and mistakes — here the data is still partial.");
   }
 
   const shouldAvoidStrongConclusion =
@@ -146,15 +146,15 @@ export function computeDiagnosticRestraint(ctx) {
     level === "mixed";
 
   let diagnosticCautionHe =
-    "המערכת מצמצמת ניסוח: הנתונים בטווח לא מאפשרים כיוון ברור חזק לגבי מקור הקושי.";
+    "The system is narrowing its wording: the data in this range does not support a strong clear direction about the source of difficulty.";
   if (level === "insufficient") {
     diagnosticCautionHe =
-      "מעט מדי תרגול בטווח - לא מסיקים מסקנות חזקות; מומלץ לאסוף עוד מפגשים קצרים לפני שינוי מהותי.";
+      "Too little practice in range — no strong conclusions; collect a few more short sessions before a major change.";
   } else if (level === "mixed") {
     diagnosticCautionHe =
-      "יש אותות מנוגדים (למשל מהירות מול פער ידע) - לא ננעל על כיוון אחד לפני עוד תרגול מבוקר.";
+      "There are conflicting signals (for example speed versus knowledge gap) — do not lock onto one direction before more guided practice.";
   } else if (conclusionStrength === "tentative") {
-    diagnosticCautionHe = "מה שמוצג כאן סביר אך לא סופי - כדאי לעקוב ולא לדרוס את הילד בהנחה חדה.";
+    diagnosticCautionHe = "What is shown here is plausible but not final — follow up rather than acting on a sharp assumption.";
   }
 
   return {

@@ -1,18 +1,9 @@
 import { useMemo, useState } from "react";
-import { formatDateHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { formatParentDateTime } from "../../lib/parent-ui/format-parent-date.js";
 
 function formatMessageDate(iso) {
   if (!iso) return "";
-  try {
-    const d = new Date(iso);
-    if (!Number.isFinite(d.getTime())) return formatDateHe(iso);
-    return new Intl.DateTimeFormat("he-IL", {
-      dateStyle: "medium",
-      timeStyle: "short",
-    }).format(d);
-  } catch {
-    return formatDateHe(iso);
-  }
+  return formatParentDateTime(iso);
 }
 
 export function normalizeParentFacing(report) {
@@ -70,8 +61,8 @@ export default function ParentReportParentSections({
   const visibleMessages = showAllMessages ? activeMessages : activeMessages.slice(0, 3);
 
   const listClass = compact
-    ? "space-y-2 text-sm text-white/90 leading-relaxed list-disc pr-5"
-    : "space-y-2.5 text-sm md:text-base text-white/90 leading-relaxed list-disc pr-5";
+    ? "space-y-2 text-sm text-white/90 leading-relaxed list-disc pl-5"
+    : "space-y-2.5 text-sm md:text-base text-white/90 leading-relaxed list-disc pl-5";
 
   const showInsights = visibleSections.includes("insights");
   const showTeacher = visibleSections.includes("teacher");
@@ -79,7 +70,7 @@ export default function ParentReportParentSections({
 
   const teacherSection =
     showTeacher && activeMessages.length > 0 ? (
-      <SectionCard title="הודעות מהמורה">
+      <SectionCard title="Messages from the teacher">
         <ul className="space-y-3 m-0 p-0 list-none">
           {visibleMessages.map((msg) => (
             <li
@@ -99,7 +90,7 @@ export default function ParentReportParentSections({
             onClick={() => setShowAllMessages(true)}
             className="mt-3 text-sm text-amber-300 underline hover:text-amber-200"
           >
-            הצג הודעות נוספות
+            Show more messages
           </button>
         ) : null}
         {showAllMessages && activeMessages.length > 3 ? (
@@ -108,7 +99,7 @@ export default function ParentReportParentSections({
             onClick={() => setShowAllMessages(false)}
             className="mt-3 text-sm text-white/60 underline hover:text-white/80"
           >
-            הצג פחות
+            Show less
           </button>
         ) : null}
       </SectionCard>
@@ -116,7 +107,7 @@ export default function ParentReportParentSections({
 
   const insightsSection =
     showInsights && insights.length > 0 ? (
-      <SectionCard title="מה חשוב לדעת">
+      <SectionCard title="What's important to know">
         <ul className={listClass}>
           {insights.map((line, i) => (
             <li key={`ins-${i}`} className="break-words">
@@ -129,7 +120,7 @@ export default function ParentReportParentSections({
 
   const homeSection =
     showHome && homeRecommendations.length > 0 ? (
-      <SectionCard title="מה מומלץ לעשות בבית">
+      <SectionCard title="Recommended at-home practice">
         <ul className={listClass}>
           {homeRecommendations.map((line, i) => (
             <li key={`rec-${i}`} className="break-words">
@@ -141,7 +132,7 @@ export default function ParentReportParentSections({
     ) : null;
 
   return (
-    <div className="space-y-0" dir="rtl" lang="he" data-testid="parent-report-parent-sections">
+    <div className="space-y-0" dir="ltr" lang="en" data-testid="parent-report-parent-sections">
       {insightsSection}
       {teacherSection}
       {homeSection}

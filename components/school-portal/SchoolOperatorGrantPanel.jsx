@@ -1,14 +1,14 @@
 import { operatorGrantLabel } from "../../lib/school-portal/operator-grant-labels.js";
-import { ADMIN_YES, ADMIN_NO } from "../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_YES, ADMIN_NO } from "../../lib/admin-portal/admin-ui.js";
 import {
   SCHOOL_OPERATOR_GRANT_SECTION,
   SCHOOL_OPERATOR_NO_PERMISSIONS,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 function GrantToggle({ label, checked, disabled, onChange }) {
   return (
     <label className="flex items-center justify-between gap-3 text-sm py-2 border-b border-white/10 last:border-0">
-      <span className="text-right flex-1">{label}</span>
+      <span className="text-left flex-1">{label}</span>
       <input
         type="checkbox"
         checked={checked}

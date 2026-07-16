@@ -69,7 +69,7 @@ export default function InstallAppPrompt() {
     }
 
     if (!isIOS) {
-      console.info("[PWA] התקנה זמינה דרך תפריט הדפדפן");
+      console.info("[PWA] Install is available from the browser menu");
     }
   };
 
@@ -86,7 +86,7 @@ export default function InstallAppPrompt() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-50 animate-slide-up">
+    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-50 animate-slide-up" dir="ltr" lang="en">
       <div className="bg-gradient-to-br from-amber-500/90 to-orange-600/90 backdrop-blur-sm rounded-2xl p-5 shadow-2xl border border-white/20">
         <div className="flex items-start gap-4">
           <div className="flex-shrink-0">
@@ -102,11 +102,11 @@ export default function InstallAppPrompt() {
             </svg>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-white mb-1">התקן את LEO KIDS</h3>
+            <h3 className="text-lg font-bold text-white mb-1">Install LEO KIDS</h3>
             <p className="text-sm text-white/90 mb-3">
               {isIOS
-                ? "הוסף את האפליקציה למסך הבית לחוויה טובה יותר"
-                : "התקן את האפליקציה לגישה מהירה ונוחה יותר"}
+                ? "Add the app to your home screen for a better experience"
+                : "Install the app for faster, easier access"}
             </p>
 
             <button
@@ -124,16 +124,16 @@ export default function InstallAppPrompt() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              {hasNativePrompt ? "הורד והתקן עכשיו" : isIOS ? "הצג הוראות הורדה" : "התקן אפליקציה"}
+              {hasNativePrompt ? "Download and install now" : isIOS ? "Show install instructions" : "Install app"}
             </button>
 
             {isIOS && (
               <div className="bg-black/30 rounded-lg p-3 mb-3 text-xs text-white/90">
-                <p className="font-semibold mb-2">הוראות התקנה:</p>
+                <p className="font-semibold mb-2">Install instructions:</p>
                 <ol className="list-decimal list-inside space-y-1">
-                  <li>לחץ על כפתור השיתוף <span className="font-bold">📤</span> בתחתית Safari</li>
-                  <li>בחר "הוסף למסך הבית"</li>
-                  <li>לחץ "הוסף"</li>
+                  <li>Tap the Share button <span className="font-bold">📤</span> at the bottom of Safari</li>
+                  <li>Choose &quot;Add to Home Screen&quot;</li>
+                  <li>Tap &quot;Add&quot;</li>
                 </ol>
               </div>
             )}
@@ -144,7 +144,7 @@ export default function InstallAppPrompt() {
                 type="button"
                 className="flex-1 px-4 py-2 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all hover:scale-105 active:scale-95 text-sm"
               >
-                ✕ סגור
+                ✕ Close
               </button>
             </div>
           </div>

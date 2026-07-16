@@ -22,7 +22,7 @@ import {
   SC_COUNTER_IMPORTANT_ACTIVE,
   SC_COUNTER_UNREAD_PARENTS,
   SC_COUNTER_UNREAD_TEACHERS,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import {
   schoolAuthFetch,
   SCHOOL_ALERT_ACTIVE_ACTIVITIES,
@@ -50,7 +50,7 @@ import {
   SCHOOL_STAT_CLASSES,
   SCHOOL_STAT_STUDENTS,
   SCHOOL_STAT_TEACHERS,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 export default function SchoolDashboardPage() {
   const router = useRouter();

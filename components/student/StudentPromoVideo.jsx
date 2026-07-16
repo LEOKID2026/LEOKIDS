@@ -72,7 +72,7 @@ export default function StudentPromoVideo({
         src={desktopSrc}
         wrapClassName={`${wrapClass} ${frameClass}`}
         videoClassName="block h-auto w-full aspect-video bg-black object-contain"
-        ariaLabel="סרטון ילדים"
+        ariaLabel="Kids video"
         testId="student-promo-video-desktop"
       />
     </section>

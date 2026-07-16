@@ -7,7 +7,7 @@ import { STUDENT_TRUTH_LABELS_HE } from "../../lib/learning-shared/student-displ
 function tierCoinLabel(tier) {
   const coins = Number(tier.coins);
   if (Number.isFinite(coins) && coins > 0) {
-    return `${coins.toLocaleString("he-IL")} מטבעות`;
+    return `${coins.toLocaleString("en-US")} coins`;
   }
   return "";
 }
@@ -34,10 +34,10 @@ function TierMilestone({ tier, tierIndex, currentMinutes }) {
         {done ? "✓" : tier.minutes}
       </div>
       <p className={`mt-2 text-[10px] sm:text-xs text-center leading-tight ${done ? "text-amber-700 font-semibold" : "text-slate-500"}`}>
-        {tier.minutes} דק׳
+        {tier.minutes} min
       </p>
       <p className={`text-[10px] sm:text-xs text-center mt-0.5 tabular-nums ${done ? "text-amber-600" : "text-slate-400"}`}>
-        {label.replace(" מטבעות", "")}
+        {label.replace(" coins", "")}
       </p>
     </div>
   );
@@ -71,16 +71,16 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
       aria-labelledby="monthly-persistence-heading"
     >
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5 md:mb-6">
-        <div className="text-right min-w-0">
+        <div className="text-left min-w-0">
           <h2 id="monthly-persistence-heading" className="text-lg md:text-xl font-extrabold text-slate-800">
-            ההתקדמות החודשית שלי
+            My monthly progress
           </h2>
           <p className="text-slate-600 text-sm mt-1 leading-relaxed">
-            למדו דקות אמיתיות החודש וקבלו מטבעות למידה
+            Learn real minutes this month and earn learning coins
           </p>
         </div>
         <div className="shrink-0 rounded-2xl border border-amber-200 bg-white px-4 py-2.5 text-center shadow-sm">
-          <p className="text-[10px] text-slate-500 uppercase tracking-wide">דקות החודש</p>
+          <p className="text-[10px] text-slate-500 uppercase tracking-wide">Minutes this month</p>
           <p className="text-2xl md:text-3xl font-extrabold text-amber-600 tabular-nums leading-tight">
             {minutesLabel}
           </p>
@@ -124,7 +124,7 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full text-xs border border-current/30">
                   {done ? "✓" : "○"}
                 </span>
-                {tier.minutes} דקות
+                {tier.minutes} minutes
               </span>
               <span className={`tabular-nums text-xs font-bold ${done ? "text-amber-600" : "text-slate-400"}`}>
                 {label}
@@ -139,15 +139,15 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
           className="rounded-xl border border-amber-300 bg-amber-100 px-4 py-3 text-center text-amber-900 text-sm font-semibold"
           role="status"
         >
-          השגת את כל פרסי החודש! כל הכבוד!
+          You earned all of this month's prizes! Great job!
         </div>
       ) : progressToNextTierPct != null && typeof currentMinutes === "number" && nextTier ? (
         <div className="space-y-2">
-          <p className="text-slate-700 text-sm text-right font-medium">
-            {nextTierEncouragementHe || `עוד ${Math.ceil(nextTier.minutes - currentMinutes)} דקות לפרס הבא`}
+          <p className="text-slate-700 text-sm text-left font-medium">
+            {nextTierEncouragementHe || `${Math.ceil(nextTier.minutes - currentMinutes)} more minutes to the next prize`}
           </p>
-          <p className="text-slate-500 text-xs text-right">
-            היעד הבא: {nextTier.minutes} דקות → {tierCoinLabel(nextTier)}
+          <p className="text-slate-500 text-xs text-left">
+            Next goal: {nextTier.minutes} minutes → {tierCoinLabel(nextTier)}
           </p>
           <div className="h-3 rounded-full bg-slate-200 overflow-hidden border border-slate-100">
             <div
@@ -156,11 +156,11 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
             />
           </div>
           <p className="text-[11px] text-slate-500 text-left tabular-nums">
-            {currentMinutes} / {nextTier.minutes} דק׳ ({progressToNextTierPct}%)
+            {currentMinutes} / {nextTier.minutes} min ({progressToNextTierPct}%)
           </p>
         </div>
       ) : (
-        <p className="text-sm text-slate-600 text-right">{STUDENT_TRUTH_LABELS_HE.noData}</p>
+        <p className="text-sm text-slate-600 text-left">{STUDENT_TRUTH_LABELS_HE.noData}</p>
       )}
     </section>
   );

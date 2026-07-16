@@ -49,7 +49,7 @@ import {
   SCHOOL_PHYSICAL_CLASS_REPORT_TITLE,
   SCHOOL_VIEW_CLASS_REPORT,
   studentLearningStatusBadgeClass,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 
 /** Stacked subject-class report must sit above physical report detail (z 110). */
 const REPORT_STACK_SUBJECT_OVER_PHYSICAL = 150;
@@ -133,7 +133,7 @@ export default function SchoolClassesPage() {
       onApplyCustom={() => {
         const result = reportRange.applyCustom();
         if (!result.ok) {
-          alert("אנא בחר תאריכים תקינים");
+          alert("Please select valid dates");
           return;
         }
         refetchActiveReportForRange({ from: result.from, to: result.to });
@@ -316,7 +316,7 @@ export default function SchoolClassesPage() {
         row?.name ||
         body?.student?.full_name ||
         physicalReportVm?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "ילד/ה";
+        "Child";
       setPhysicalNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -357,7 +357,7 @@ export default function SchoolClassesPage() {
         row?.name ||
         body?.student?.full_name ||
         subjectFromPhysicalVm?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "ילד/ה";
+        "Child";
       setSubjectFromPhysicalNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -423,7 +423,7 @@ export default function SchoolClassesPage() {
         force,
       });
       if (summaryResult?.status !== 200) {
-        setPhysicalReportError(apiErrorMessageHe(summaryResult?.body?.error, "שגיאה בטעינת דוח"));
+        setPhysicalReportError(apiErrorMessageHe(summaryResult?.body?.error, "Error loading report"));
         return;
       }
       setPhysicalReportVm(parsePhysicalClassReportViewModel(summaryResult.body, parseCtx));
@@ -442,7 +442,7 @@ export default function SchoolClassesPage() {
         setPhysicalReportVm(parsePhysicalClassReportViewModel(fullResult.body, parseCtx));
       }
     } catch {
-      setPhysicalReportError("שגיאה בטעינת דוח");
+      setPhysicalReportError("Error loading report");
     } finally {
       setPhysicalReportLoading(false);
     }
@@ -468,7 +468,7 @@ export default function SchoolClassesPage() {
     try {
       const result = await fetchSchoolReportCached({ accessToken, schoolId, path, force });
       if (result?.status !== 200) {
-        setSubjectFromPhysicalError(apiErrorMessageHe(result?.body?.error, "שגיאה בטעינת דוח"));
+        setSubjectFromPhysicalError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
         return;
       }
       setSubjectFromPhysicalVm(
@@ -496,7 +496,7 @@ export default function SchoolClassesPage() {
         row?.name ||
         body?.student?.full_name ||
         reportViewModel?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "ילד/ה";
+        "Child";
       setNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -558,7 +558,7 @@ export default function SchoolClassesPage() {
         force,
       });
       if (result?.status !== 200) {
-        setReportError(apiErrorMessageHe(result?.body?.error, "שגיאה בטעינת דוח"));
+        setReportError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
         return;
       }
       applyBody(result.body);
@@ -601,7 +601,7 @@ export default function SchoolClassesPage() {
 
             {!gradeLevel ? (
               <SchoolSection title={SCHOOL_CHOOSE_GRADE}>
-                {loading ? <p className="text-xs text-white/45 mb-3 text-right">{SCHOOL_LOADING_DATA}</p> : null}
+                {loading ? <p className="text-xs text-white/45 mb-3 text-left">{SCHOOL_LOADING_DATA}</p> : null}
                 <SchoolCardGrid columns={3}>
                   {SCHOOL_GRADE_OPTIONS.map((grade) => {
                     const count = classes ? gradePhysicalCounts.get(grade.level) ?? null : null;
@@ -610,7 +610,7 @@ export default function SchoolClassesPage() {
                         key={grade.level}
                         title={grade.label}
                         subtitle={
-                          count != null ? `${count} כיתות פיזיות` : loading ? "…" : "-"
+                          count != null ? `${count} physical classes` : loading ? "…" : "-"
                         }
                         gradeStatusLabel={browseStatus?.gradeStatusByLevel?.[grade.level] || null}
                         onClick={() => setGradeLevel(grade.level)}
@@ -642,7 +642,7 @@ export default function SchoolClassesPage() {
                           <SchoolManagementCard
                             key={physKey}
                             title={group.name}
-                            subtitle={`${physicalClassStudentCount(group.subjectClasses)} ${SCHOOL_STUDENTS_IN_CLASS} · 6 מקצועות`}
+                            subtitle={`${physicalClassStudentCount(group.subjectClasses)} ${SCHOOL_STUDENTS_IN_CLASS} · 6 subjects`}
                             classStatusLabel={browseStatus?.physicalByKey?.[physKey] || null}
                             onClick={() => setPhysicalKey(physKey)}
                           />
@@ -650,7 +650,7 @@ export default function SchoolClassesPage() {
                       })}
                     </SchoolCardGrid>
                   ) : (
-                    <SchoolEmptyState title="אין כיתות בשכבה זו." />
+                    <SchoolEmptyState title="No classes in this grade." />
                   )}
                 </SchoolSection>
               </>
@@ -667,13 +667,13 @@ export default function SchoolClassesPage() {
                       ];
                     if (!classStatus) return null;
                     return (
-                      <p className="text-sm mb-3 text-right" data-testid="school-physical-class-browse-status">
+                      <p className="text-sm mb-3 text-left" data-testid="school-physical-class-browse-status">
                         <span
                           className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full border leading-snug ${studentLearningStatusBadgeClass(
                             classStatus
                           )}`}
                         >
-                          מצב כיתה: {classStatus}
+                          Class status: {classStatus}
                         </span>
                       </p>
                     );
@@ -682,7 +682,7 @@ export default function SchoolClassesPage() {
                     <button
                       type="button"
                       onClick={() => void openPhysicalClassReport(selectedPhysical)}
-                      className="w-full rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 px-4 py-3 text-right font-semibold text-amber-100 transition"
+                      className="w-full rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 px-4 py-3 text-left font-semibold text-amber-100 transition"
                       data-testid="school-physical-class-report-button"
                     >
                       {SCHOOL_PHYSICAL_CLASS_REPORT_BUTTON}

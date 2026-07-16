@@ -41,13 +41,16 @@ function normalizedResolverBucketKey(subjectId, bucketKeyRaw) {
 }
 
 /**
+ * Global (English) product — always uses the editorially-approved `intentDescriptionEn`
+ * field on each band, never the Hebrew `actionTextHe`/`goalTextHe` slots.
  * @param {unknown} bandObj
  * @param {"action"|"nextGoal"} slot
  * @returns {string|null}
  */
 function slotTextFromBandObject(bandObj, slot) {
   if (!bandObj || typeof bandObj !== "object") return null;
-  const raw = slot === "nextGoal" ? bandObj.goalTextHe : bandObj.actionTextHe;
+  void slot;
+  const raw = bandObj.intentDescriptionEn;
   if (raw == null) return null;
   const text = String(raw).trim();
   return text ? text : null;

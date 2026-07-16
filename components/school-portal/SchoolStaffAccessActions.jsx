@@ -11,7 +11,7 @@ import {
   SCHOOL_STAFF_STATUS_ACTIVE,
   SCHOOL_STAFF_STATUS_SUSPENDED,
   SCHOOL_STAFF_SUSPEND,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * @param {{
@@ -49,7 +49,7 @@ export default function SchoolStaffAccessActions({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "הפעולה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, "Action failed"));
         return;
       }
       if (json?.data?.initialPin) {
@@ -60,7 +60,7 @@ export default function SchoolStaffAccessActions({
       }
       onChanged?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy("");
     }

@@ -3,7 +3,7 @@ import MixedHebrewMathText from "./MixedHebrewMathText";
 const HEADER_BTN =
   "inline-flex min-h-[2.5rem] shrink-0 items-center justify-center rounded-full px-3 py-2 text-xs font-semibold leading-none transition sm:px-3.5 sm:text-sm";
 
-/** Top HUD: buttons + "ספר לימוד" on one row; title and subtitle below. */
+/** Top HUD: buttons + "Textbook" on one row; title and subtitle below. */
 export default function BookShellHeader({
   fromLearning,
   onReturn,
@@ -21,13 +21,13 @@ export default function BookShellHeader({
     <div className="mx-auto max-w-4xl space-y-1 px-4 py-2 sm:py-2.5">
       <div className="flex items-center justify-between gap-2 sm:gap-3">
         <button type="button" onClick={onReturn} className={btnClass}>
-          {fromLearning ? "סגור" : "חזרה"}
+          {fromLearning ? "Close" : "Back"}
         </button>
         <p className="min-w-0 shrink text-center text-[11px] leading-none tracking-[0.15em] text-[color:var(--book-text-muted)]">
-          ספר לימוד
+          Textbook
         </p>
         <button type="button" onClick={onOpenToc} className={btnClass}>
-          📑 תוכן עניינים
+          📑 Table of contents
         </button>
       </div>
 

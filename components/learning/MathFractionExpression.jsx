@@ -203,13 +203,13 @@ export function renderMathFractionAwareText(text, className = "") {
         }
         if (hasStackedFractionToken(run.value)) {
           return (
-            <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="rtl">
+            <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="ltr">
               {renderStackedFractionFragment(run.value)}
             </span>
           );
         }
         return (
-          <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="rtl">
+          <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="ltr">
             {run.value}
           </span>
         );
@@ -243,7 +243,7 @@ export function renderLearningMathRunsWithStackedFractions(runs, className = "")
           );
         }
         return (
-          <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="rtl">
+          <span key={`prose-${idx}`} style={learningProseIsolateStyle} dir="ltr">
             {hasStackedFractionToken(run.value)
               ? renderStackedFractionFragment(run.value)
               : run.value}

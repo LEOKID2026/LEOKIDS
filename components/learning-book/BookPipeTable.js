@@ -10,7 +10,7 @@ function TableCell({ value }) {
       className={`border border-[color:var(--book-divider)] px-2 py-1.5 text-center sm:px-3 sm:py-2 ${
         isNumeric ? "tabular-nums" : ""
       }`}
-      dir={isNumeric ? "ltr" : "rtl"}
+      dir="ltr"
     >
       <MixedHebrewMathText text={trimmed} />
     </td>
@@ -18,7 +18,7 @@ function TableCell({ value }) {
 }
 
 /**
- * Responsive RTL pipe table for place-value / comparison grids in learning books.
+ * Responsive LTR pipe table for place-value / comparison grids in learning books.
  */
 export default function BookPipeTable({ headers = [], rows = [] }) {
   const { classes: theme } = useBookGradeTheme();
@@ -29,7 +29,7 @@ export default function BookPipeTable({ headers = [], rows = [] }) {
   return (
     <div
       className="book-pipe-table my-4 w-full overflow-x-auto rounded-lg border border-[color:var(--book-divider)]"
-      dir="rtl"
+      dir="ltr"
     >
       <table className="w-full min-w-[260px] border-collapse text-sm sm:text-base">
         {headers.length > 0 ? (
@@ -39,7 +39,7 @@ export default function BookPipeTable({ headers = [], rows = [] }) {
                 <th
                   key={i}
                   className="border border-[color:var(--book-divider)] px-2 py-1.5 font-bold sm:px-3 sm:py-2"
-                  dir="rtl"
+                  dir="ltr"
                 >
                   {headers[i] ? (
                     <MixedHebrewMathText text={headers[i]} />

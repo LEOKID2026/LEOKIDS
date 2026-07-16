@@ -11,7 +11,7 @@ import {
   SCHOOL_STAFF_PIN_WRONG_CURRENT,
   SCHOOL_STAFF_CHANGE_PIN_EXPLANATION,
   SCHOOL_STAFF_CHANGE_PIN_REQUIRED,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * @param {{ onSuccess?: (redirectPath?: string) => void }} props
@@ -75,7 +75,7 @@ export default function SchoolStaffChangePinForm({ onSuccess }) {
   }
 
   return (
-    <div className="max-w-md mx-auto rounded-xl border border-amber-500/30 bg-black/40 p-6 text-right" dir="rtl">
+    <div className="max-w-md mx-auto rounded-xl border border-amber-500/30 bg-black/40 p-6 text-left" dir="ltr">
       <h2 className="text-xl font-bold mb-2">{SCHOOL_STAFF_CHANGE_PIN_REQUIRED}</h2>
       <p className="text-sm text-white/70 mb-4">{SCHOOL_STAFF_CHANGE_PIN_EXPLANATION}</p>
       <form onSubmit={submit} className="space-y-4">

@@ -32,7 +32,7 @@ export default function StudentExternalAdHost({
   return (
     <aside
       role="complementary"
-      aria-label="פרסומת"
+      aria-label="Advertisement"
       data-ad-slot={dataAdSlot}
       data-ad-render="external-host"
       data-ad-child-safe={STUDENT_AD_POLICY.childSafe ? "true" : "false"}

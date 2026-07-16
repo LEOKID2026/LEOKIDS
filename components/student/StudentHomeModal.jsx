@@ -88,7 +88,7 @@ export default function StudentHomeModal({
       <div
         className={`${homeModalShell.panel} ${sizeClass}`}
         onClick={(event) => event.stopPropagation()}
-        dir="rtl"
+        dir="ltr"
       >
         <div
           className={`${homeModalShell.header} ${headerClass}`}
@@ -112,7 +112,7 @@ export default function StudentHomeModal({
             onClick={onClose}
             className={homeModalShell.closeBtn}
             style={{ direction: "ltr" }}
-            aria-label="סגור"
+            aria-label="Close"
           >
             ✖
           </button>

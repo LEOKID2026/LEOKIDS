@@ -6,14 +6,14 @@ import {
   defaultTopicForAssignedActivity,
   topicOptionsForAssignedActivity,
 } from "../../lib/classroom-activities/assigned-activity-topic-options.js";
-import { activitySubjectsForGrade, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { activitySubjectsForGrade, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
 import AssignedActivityQuestionDisplay from "../classroom-activities/AssignedActivityQuestionDisplay.jsx";
 import ActivityDisplayLevelSelector from "../classroom-activities/ActivityDisplayLevelSelector.jsx";
 import { writeActivityDifficultyFromDisplayLevel } from "../../lib/learning/activity-display-level.js";
 import ParentSentActivitiesPanel from "./ParentSentActivitiesPanel.jsx";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
-import { mapParentPanelApiError } from "../../lib/parent-server/parent-api-errors.he.js";
+import { mapParentPanelApiError } from "../../lib/parent-client/parent-api-errors.js";
 
 const PARENT_ACTIVITY_MODE = "guided_practice";
 const MAX_QUESTION_COUNT = 30;
@@ -98,12 +98,12 @@ export default function AssignActivityModal({
 
   const runPreview = useCallback(async () => {
     if (!activityGradeKey) {
-      setError("יש לבחור כיתה לפעילות לפני יצירת שאלות");
+      setError("Choose a grade for the activity before generating questions");
       return;
     }
     const count = resolveQuestionCountForApi(questionCountInput);
     if (count == null) {
-      setError("יש להזין מספר שאלות");
+      setError("Enter the number of questions");
       return;
     }
     setBusy(true);
@@ -119,7 +119,7 @@ export default function AssignActivityModal({
       });
       setPreview(qs || []);
     } catch {
-      setError("לא ניתן ליצור שאלות - נסו נושא אחר");
+      setError("Could not generate questions — try a different topic");
     } finally {
       setBusy(false);
     }
@@ -127,20 +127,20 @@ export default function AssignActivityModal({
 
   const sendActivity = useCallback(async () => {
     if (!activityGradeKey) {
-      setError("יש לבחור כיתה לפעילות לפני השליחה");
+      setError("Choose a grade for the activity before sending");
       return;
     }
     const count = resolveQuestionCountForApi(questionCountInput);
     if (count == null) {
-      setError("יש להזין מספר שאלות");
+      setError("Enter the number of questions");
       return;
     }
     if (!title.trim()) {
-      setError("יש להזין כותרת לפעילות");
+      setError("Enter a title for the activity");
       return;
     }
     if (!preview.length) {
-      setError("נא לייצר שאלות תחילה");
+      setError("Generate questions first");
       return;
     }
 
@@ -168,7 +168,7 @@ export default function AssignActivityModal({
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
         if (res.status === 403) {
-          setError("לא ניתן לשלוח פעילות לילד זה");
+          setError("Cannot send an activity to this child");
         } else {
           setError(mapParentPanelApiError(json?.error, "save"));
         }
@@ -189,7 +189,7 @@ export default function AssignActivityModal({
       });
       onSuccess();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -216,7 +216,7 @@ export default function AssignActivityModal({
       <div className={T.activityPanel}>
         <div className="flex items-start justify-between gap-3">
           <h2 id="assign-activity-title" className="text-lg font-semibold">
-            {`שליחת פעילות ל${student.full_name || "ילד"}`}
+            {`Send activity to ${student.full_name || "child"}`}
           </h2>
           <button
             type="button"
@@ -224,7 +224,7 @@ export default function AssignActivityModal({
             onClick={onClose}
             disabled={busy}
           >
-            סגירה
+            Close
           </button>
         </div>
 
@@ -232,7 +232,7 @@ export default function AssignActivityModal({
 
         <div className="grid gap-4 md:grid-cols-2">
           <label className="block text-sm md:col-span-2">
-            <span className={T.label}>כותרת</span>
+            <span className={T.label}>Title</span>
             <input
               className={T.inputMt}
               value={title}
@@ -243,7 +243,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm">
-            <span className={T.label}>מקצוע</span>
+            <span className={T.label}>Subject</span>
             <select
               className={T.inputMt}
               value={subject}
@@ -259,7 +259,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm">
-            <span className={T.label}>כיתה לפעילות</span>
+            <span className={T.label}>Grade for activity</span>
             <select
               className={T.inputMt}
               value={activityGradeKey}
@@ -278,7 +278,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm md:col-span-2">
-            <span className={T.label}>נושא</span>
+            <span className={T.label}>Topic</span>
             {topicOpts.length > 0 ? (
               <select
                 className={T.inputMt}
@@ -309,7 +309,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm">
-            <span className={T.label}>מספר שאלות</span>
+            <span className={T.label}>Number of questions</span>
             <input
               type="text"
               inputMode="numeric"
@@ -327,7 +327,7 @@ export default function AssignActivityModal({
             />
             {questionCountExceedsMax(questionCountInput) ? (
               <p id="question-count-max-hint" className={`${T.warning} text-xs mt-1`}>
-                {`מספר השאלות מוגבל עד ${MAX_QUESTION_COUNT}`}
+                {`Question count is limited to ${MAX_QUESTION_COUNT}`}
               </p>
             ) : null}
           </label>
@@ -341,7 +341,7 @@ export default function AssignActivityModal({
             }}
             disabled={busy}
             variant="radio"
-            label="רמה"
+            label="Level"
             className="block text-sm"
             name="parent-activity-display-level"
           />
@@ -354,7 +354,7 @@ export default function AssignActivityModal({
             onClick={runPreview}
             disabled={busy || missingGrade}
           >
-            תצוגה מקדימה
+            Preview
           </button>
           <button
             type="button"
@@ -362,7 +362,7 @@ export default function AssignActivityModal({
             onClick={sendActivity}
             disabled={busy || missingGrade}
           >
-            שלח פעילות
+            Send activity
           </button>
           <ParentSentActivitiesPanel
             studentId={student.id}
@@ -374,7 +374,7 @@ export default function AssignActivityModal({
 
         {preview.length > 0 ? (
           <div className="space-y-2">
-            <h3 className={`text-sm font-semibold ${T.label}`}>שאלות ({preview.length})</h3>
+            <h3 className={`text-sm font-semibold ${T.label}`}>Questions ({preview.length})</h3>
             <ul className="space-y-2 max-h-48 overflow-y-auto text-sm">
               {preview.map((q, i) => (
                 <li key={i} className={T.activityPreviewItem}>

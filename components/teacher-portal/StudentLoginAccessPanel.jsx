@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   guardianAccessStateHe,
   teacherAuthFetch,
-} from "../../lib/teacher-portal/teacher-ui.he.js";
+} from "../../lib/teacher-portal/teacher-ui.js";
 import { shouldDisplayStudentAccessCode } from "../../lib/teacher-portal/student-access-display.js";
 
 function ShownOnceBox({ credentials, onDismiss }) {
@@ -17,51 +17,51 @@ function ShownOnceBox({ credentials, onDismiss }) {
 
   const copyAll = async () => {
     const parts = [];
-    if (credentials.loginUsername) parts.push(`שם משתמש: ${credentials.loginUsername}`);
-    if (credentials.loginPinPlaintext) parts.push(`קוד כניסה: ${credentials.loginPinPlaintext}`);
+    if (credentials.loginUsername) parts.push(`Username: ${credentials.loginUsername}`);
+    if (credentials.loginPinPlaintext) parts.push(`Login code: ${credentials.loginPinPlaintext}`);
     if (parts.length) await copy(parts.join("\n"));
   };
 
   return (
     <div className="mt-4 rounded-xl border border-amber-500/50 bg-amber-500/10 p-4 space-y-3">
       <p className="text-amber-200 font-semibold text-sm">
-        ⚠ שמור את הפרטים האלה - לא יוצגו שוב.
+        ⚠ Save these details — they will not be shown again.
       </p>
       {credentials.loginUsername ? (
         <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="text-white/70">שם משתמש:</span>
+          <span className="text-white/70">Username:</span>
           <code className="bg-black/40 px-2 py-1 rounded">{credentials.loginUsername}</code>
           <button
             type="button"
             className="text-amber-300 text-xs underline"
             onClick={() => copy(credentials.loginUsername)}
           >
-            העתק שם משתמש
+            Copy username
           </button>
         </div>
       ) : null}
       {credentials.loginPinPlaintext ? (
         <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="text-white/70">קוד כניסה:</span>
+          <span className="text-white/70">Login code:</span>
           <code className="bg-black/40 px-2 py-1 rounded">{credentials.loginPinPlaintext}</code>
           <button
             type="button"
             className="text-amber-300 text-xs underline"
             onClick={() => copy(credentials.loginPinPlaintext)}
           >
-            העתק קוד
+            Copy code
           </button>
         </div>
       ) : null}
       <button type="button" className="text-amber-300 text-xs underline" onClick={copyAll}>
-        העתק את כל פרטי הכניסה
+        Copy all login details
       </button>
       <button
         type="button"
         className="block rounded bg-amber-500 text-black font-semibold px-4 py-2 text-sm"
         onClick={onDismiss}
       >
-        סגור - שמרתי את הפרטים
+        Close — I've saved the details
       </button>
     </div>
   );
@@ -86,7 +86,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
     const body = await res.json().catch(() => ({}));
     setLoading(false);
     if (res.status !== 200) {
-      setError("לא ניתן לטעון את פרטי כניסת הילד/ה.");
+      setError("Could not load the student login details.");
       return;
     }
     setAccesses(body?.data?.accesses || []);
@@ -107,9 +107,9 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
     setBusy(false);
     if (res.status !== 201) {
       if (body?.error?.code === "active_access_exists") {
-        setError("כבר קיימת כניסת ילד/ה פעילה.");
+        setError("An active student login already exists.");
       } else {
-        setError("אירעה שגיאה ביצירת כניסת ילד/ה.");
+        setError("Something went wrong creating the student login.");
       }
       return;
     }
@@ -127,11 +127,11 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
     setBusy(false);
     setConfirmRevoke(null);
     if (res.status === 200) load();
-    else setError("לא ניתן לבטל את כניסת הילד/ה.");
+    else setError("Could not revoke the student login.");
   };
 
   const onRotatePin = async (accessId) => {
-    if (!window.confirm("הקוד הנוכחי יבוטל ויופק קוד חדש. שמור את הקוד החדש - הוא יוצג פעם אחת בלבד.")) {
+    if (!window.confirm("The current code will be revoked and a new one generated. Save the new code — it will be shown only once.")) {
       return;
     }
     setBusy(true);
@@ -149,12 +149,12 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
       });
       load();
     } else {
-      setError("לא ניתן לחדש את הקוד.");
+      setError("Could not renew the code.");
     }
   };
 
   const onRotateUsername = async (accessId) => {
-    if (!window.confirm("שם המשתמש הנוכחי יבוטל. שם המשתמש החדש יוצג פעם אחת בלבד.")) {
+    if (!window.confirm("The current username will be revoked. The new username will be shown only once.")) {
       return;
     }
     setBusy(true);
@@ -172,7 +172,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
       });
       load();
     } else {
-      setError("לא ניתן לשנות את שם המשתמש.");
+      setError("Could not change the username.");
     }
   };
 
@@ -180,9 +180,9 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
 
   return (
     <section className="mt-8 rounded-xl border border-white/15 bg-black/25 p-5">
-      <h2 className="text-lg font-semibold mb-3">כניסת ילד/ה</h2>
+      <h2 className="text-lg font-semibold mb-3">Student login</h2>
 
-      {loading ? <p className="text-white/60 text-sm">טוען…</p> : null}
+      {loading ? <p className="text-white/60 text-sm">Loading…</p> : null}
       {error ? (
         <p className="text-red-300 text-sm mb-3" role="alert">
           {error}
@@ -190,7 +190,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
       ) : null}
 
       {!loading && accesses.length === 0 ? (
-        <p className="text-white/70 text-sm mb-4">לא הוגדרה כניסת ילד/ה.</p>
+        <p className="text-white/70 text-sm mb-4">No student login has been set up.</p>
       ) : null}
 
       <ul className="space-y-3 mb-4">
@@ -205,10 +205,10 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
           >
             <div>
               {visibleUsername ? (
-                <span className="text-white/80">כניסה: {visibleUsername}</span>
+                <span className="text-white/80">Login: {visibleUsername}</span>
               ) : (
                 <span className="text-white/80">
-                  {row.state === "active" ? "כניסה פעילה" : "כניסה"}
+                  {row.state === "active" ? "Login active" : "Login"}
                 </span>
               )}
               <span className="mx-2 text-white/40">·</span>
@@ -232,7 +232,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
                   disabled={busy}
                   onClick={() => onRotatePin(row.accessId)}
                 >
-                  חדש קוד
+                  Renew code
                 </button>
                 <button
                   type="button"
@@ -240,7 +240,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
                   disabled={busy}
                   onClick={() => onRotateUsername(row.accessId)}
                 >
-                  שנה שם משתמש
+                  Change username
                 </button>
                 <button
                   type="button"
@@ -248,7 +248,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
                   disabled={busy}
                   onClick={() => setConfirmRevoke(row.accessId)}
                 >
-                  בטל כניסה
+                  Revoke login
                 </button>
               </div>
             ) : null}
@@ -259,9 +259,9 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
 
       {confirmRevoke ? (
         <div className="mb-4 p-4 rounded-lg border border-red-400/30 bg-red-500/10">
-          <p className="font-semibold mb-2">ביטול כניסת ילד/ה</p>
+          <p className="font-semibold mb-2">Revoke student login</p>
           <p className="text-sm text-white/80 mb-3">
-            לאחר הביטול הילד/ה לא יוכל להיכנס עם הקוד. פעולה זו בלתי הפיכה.
+            After revocation, the student will not be able to sign in with this code. This cannot be undone.
           </p>
           <div className="flex gap-2">
             <button
@@ -270,14 +270,14 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
               disabled={busy}
               onClick={() => onRevoke(confirmRevoke)}
             >
-              כן, בטל כניסה
+              Yes, revoke login
             </button>
             <button
               type="button"
               className="rounded border border-white/20 px-3 py-1.5 text-sm"
               onClick={() => setConfirmRevoke(null)}
             >
-              ביטול
+              Cancel
             </button>
           </div>
         </div>
@@ -292,7 +292,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
           disabled={busy}
           onClick={onCreate}
         >
-          צור כניסת ילד/ה
+          Create student login
         </button>
       ) : null}
     </section>

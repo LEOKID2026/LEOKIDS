@@ -3,6 +3,6 @@
  * Container is RTL; child runs use unicodeBidi isolate via LearningMixedHebrewMathText.
  */
 export const learningMixedHebrewMathStyle = Object.freeze({
-  direction: "rtl",
+  direction: "ltr",
   unicodeBidi: "isolate",
 });

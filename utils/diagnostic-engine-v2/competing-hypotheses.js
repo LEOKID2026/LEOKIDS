@@ -15,28 +15,28 @@ export function buildCompetingHypotheses(taxonomyRow, behaviorDominant) {
   if (b === "speed_pressure") {
     out.push({
       hypothesisId: "speed_vs_knowledge",
-      labelHe: "לחץ מהירות מול פער ידע",
+      labelHe: "Speed pressure vs knowledge gap",
       role: "behavior",
     });
   } else if (b === "careless_pattern") {
     out.push({
       hypothesisId: "careless_vs_misunderstanding",
-      labelHe: "רשלנות מול אי הבנה",
+      labelHe: "Carelessness vs misunderstanding",
       role: "behavior",
     });
   } else if (b === "instruction_friction") {
     out.push({
       hypothesisId: "hint_dependence_vs_gap",
-      labelHe: "חיכוך הוראה/רמז מול פער מושגי",
+      labelHe: "Instruction/hint friction vs conceptual gap",
       role: "behavior",
     });
   }
   return {
     hypotheses: out,
     distinguishingEvidenceHe: [
-      "השוואת ביצועים timed מול untimed",
-      "השוואת רמז דל מול רמז עשיר",
-      "בדיקת חזרתיות לפי משפחת דפוס",
+      "Compare timed vs untimed performance",
+      "Compare sparse vs rich hinting",
+      "Check recurrence by pattern family",
     ],
   };
 }

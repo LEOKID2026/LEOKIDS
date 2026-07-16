@@ -38,21 +38,21 @@ export function isAdaptivePlannerAIExplainerServerEnabled(env = typeof process !
 export function getDeterministicPlannerExplanationFallback(nextAction) {
   const n = String(nextAction || "").toLowerCase().trim();
   if (n === "advance_skill") {
-    return "המערכת הציעה לנסות שלב הבא כשמרגישים שהחומר יושב טוב.";
+    return "The system suggested trying the next step when the material feels solid.";
   }
   if (n === "maintain_skill") {
-    return "המערכת ראתה שכדאי לתרגל עוד קצת באותה רמה כדי לבסס את ההבנה.";
+    return "The system saw that a bit more practice at the same level would help strengthen understanding.";
   }
   if (n === "practice_current") {
-    return "נבחר תרגול שיעזור לחזק את הבסיס לפני מעבר רחוק יותר.";
+    return "Practice was chosen to strengthen the basics before moving further.";
   }
   if (n === "review_prerequisite" || n === "probe_skill") {
-    return "נבחר תרגול קצר שיעזור לחדד את מה שלמדנו לאחרונה.";
+    return "A short practice was chosen to sharpen what was learned recently.";
   }
   if (n === "pause_collect_more_data") {
-    return "המערכת מציעה להמשיך לתרגל בהתאם למה שמתאים לך עכשיו.";
+    return "The system suggests continuing to practice at a pace that fits you now.";
   }
-  return "המערכת מציעה להמשיך לתרגל בהתאם למה שמתאים לך עכשיו.";
+  return "The system suggests continuing to practice at a pace that fits you now.";
 }
 
 /**
@@ -89,9 +89,9 @@ function buildModelPrompt(input) {
     approved_hebrew_recommendation_one_liner: input.approvedHebrewRecommendationLine,
   };
   return [
-    "You write ONE or TWO very short sentences in Modern Hebrew for elementary students.",
+    "You write ONE or TWO very short sentences in English for elementary students.",
     "Tone: calm, encouraging, non-judgmental. No blame, weakness, failure, predictions, parents, reports, medicine, psychology, or diagnoses.",
-    "Do NOT mention scores, percentages, accuracy, algorithms, AI, systems, safety checks, metadata, diagnostics, or English planner labels.",
+    "Do NOT mention scores, percentages, accuracy, algorithms, AI, systems, safety checks, metadata, diagnostics, or internal planner labels.",
     "Do NOT use digits, bullet lists, markdown, emojis, or line breaks.",
     "Paraphrase only the meaning of approved_hebrew_recommendation_one_liner; do not invent new recommendations or difficulty.",
     'Return JSON only: {"text":"..."}',
@@ -119,7 +119,7 @@ async function callOpenAiChatHebrewExplanation(prompt, env, signal) {
       temperature: 0.25,
       max_tokens: 140,
       messages: [
-        { role: "system", content: "You only output valid minified JSON with a Hebrew text field." },
+        { role: "system", content: "You only output valid minified JSON with an English text field." },
         { role: "user", content: prompt },
       ],
     }),

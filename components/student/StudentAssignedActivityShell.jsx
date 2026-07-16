@@ -40,8 +40,8 @@ export default function StudentAssignedActivityShell({
   return (
     <div
       className={L.page}
-      dir="rtl"
-      lang="he"
+      dir="ltr"
+      lang="en"
       data-scratchpad-dock={usesScratchpadDock ? "true" : undefined}
       data-activity-layout={textualAssigned ? "textual-assigned" : "default"}
     >
@@ -49,10 +49,10 @@ export default function StudentAssignedActivityShell({
         <div className={L.headerRow} dir="ltr">
           <div className={L.headerNavGroup}>
             <Link href="/student/home" className={L.backLink}>
-              ← חזרה לבית
+              ← Back to home
             </Link>
           </div>
-          <div className={L.titleBlock} dir="rtl">
+          <div className={L.titleBlock} dir="ltr">
             <h1 className={L.title}>{title}</h1>
             <p className={L.subtitle}>{subtitle}</p>
           </div>

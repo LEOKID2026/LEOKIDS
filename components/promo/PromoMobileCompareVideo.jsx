@@ -25,10 +25,10 @@ export default function PromoMobileCompareVideo({
   return (
     <section
       className={`md:hidden mt-6 space-y-2 text-center ${className}`}
-      aria-label="גרסת מובייל לבדיקה"
+      aria-label="Mobile compare version"
       data-testid={testId}
     >
-      <p className={`text-xs font-medium ${labelClass}`}>גרסת מובייל לבדיקה</p>
+      <p className={`text-xs font-medium ${labelClass}`}>Mobile compare version</p>
       <div
         className={`mx-auto w-full max-w-[min(100%,320px)] overflow-hidden rounded-xl border ${frameClass}`}
       >
@@ -39,7 +39,7 @@ export default function PromoMobileCompareVideo({
           playsInline
           disableRemotePlayback
           preload="metadata"
-          aria-label="סרטון מובייל לבדיקה"
+          aria-label="Mobile test video"
           data-testid={`${testId}-player`}
         >
           <source src={mobileSrc} type="video/mp4" />

@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { SC_NAV_SCHOOL_MESSAGES_TEACHER } from "../../lib/school-portal/school-communication.he";
+import { SC_NAV_SCHOOL_MESSAGES_TEACHER } from "../../lib/school-portal/school-communication.js";
 
 export default function TeacherPortalShell({
   children,
   title,
   titleClassName = "text-2xl font-bold mb-6",
   backHref,
-  backLabel = "← חזרה ללוח הבקרה",
+  backLabel = "← Back to dashboard",
   schoolMembership = null,
   schoolMessageUnreadCount = 0,
 }) {
@@ -15,12 +15,12 @@ export default function TeacherPortalShell({
   const schoolLabel = schoolMembership?.schoolName;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8" dir="rtl" lang="he">
+    <div className="max-w-4xl mx-auto px-4 py-8" dir="ltr" lang="en">
       {(showSchoolLink || showSchoolInbox || schoolLabel) && (
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2 text-sm">
           {schoolLabel ? (
             <span className="rounded-full border border-amber-400/30 bg-amber-500/10 px-3 py-1 text-amber-200">
-              בית ספר: {schoolLabel}
+              School: {schoolLabel}
             </span>
           ) : (
             <span />
@@ -34,7 +34,7 @@ export default function TeacherPortalShell({
             ) : null}
             {showSchoolLink ? (
               <Link href="/school/dashboard" className="text-emerald-300 hover:underline font-medium">
-                ניהול בית הספר
+                School management
               </Link>
             ) : null}
           </div>

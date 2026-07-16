@@ -111,7 +111,7 @@ export default function RecommendationsTab({
 
               <option key={s.id} value={s.id}>
 
-                {s.full_name || "ילד/ה"}
+                {s.full_name || "Child"}
 
               </option>
 

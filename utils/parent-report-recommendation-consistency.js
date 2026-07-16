@@ -39,7 +39,7 @@ function withGradeScopeInsight(text, unit) {
   });
   if (!insight) return base;
   // Avoid duplicating the relation phrase if the base already mentions it.
-  if (base.includes("מעל הכיתה") || base.includes("מתחת לכיתה") || base.includes("מעל רמת הכיתה")) {
+  if (base.includes("above grade") || base.includes("below grade") || base.includes("above registered grade")) {
     return base;
   }
   return normalizeParentFacingHe(`${base} ${insight}`);
@@ -89,7 +89,7 @@ export function classifyParentRecommendationState(unit) {
 }
 
 function topicName(unit) {
-  return String(unit?.displayName || "הנושא").trim() || "הנושא";
+  return String(unit?.displayName || "this topic").trim() || "this topic";
 }
 
 function bestEffortText(s) {
@@ -135,7 +135,7 @@ export function resolveUnitParentActionHe(unit, gradeKey, opts = {}) {
         unit,
         withGradeScopeInsight(
           normalizeParentFacingHe(
-            `ב${name} מומלץ להישאר בינתיים באותה רמה, ורק אם ההצלחה נמשכת גם בהמשך - להוסיף קושי קטן ומדוד.`
+            `In ${name}, stay at the same level for now, and only if success continues — add a small, measured increase in difficulty.`
           ),
           unit
         )
@@ -146,7 +146,7 @@ export function resolveUnitParentActionHe(unit, gradeKey, opts = {}) {
         unit,
         withGradeScopeInsight(
           normalizeParentFacingHe(
-            `ב${name} מומלץ להמשיך באותה רמה, ורק אם זה ממשיך להצליח באופן יציב - להוסיף מעט קושי.`
+            `In ${name}, continue at the same level, and only if it keeps succeeding steadily — add a little difficulty.`
           ),
           unit
         )
@@ -186,7 +186,7 @@ export function resolveUnitNextGoalHe(unit, gradeKey, opts = {}) {
     const name = topicName(unit);
     return withGradeScopeInsight(
       normalizeParentFacingHe(
-        `לשבוע הקרוב ב${name}: להמשיך באותה רמה, ואם ההצלחה נשמרת - לנסות צעד אחד מעט מאתגר יותר.`
+        `For the coming week in ${name}: stay at the same level, and if success holds — try one slightly more challenging step.`
       ),
       unit
     );
@@ -220,7 +220,7 @@ export function resolveUnitHomeMethodHe(unit, gradeKey, opts = {}) {
   if (isStrengthAction(unit) && cs?.recommendation?.allowed) {
     const name = topicName(unit);
     return normalizeParentFacingHe(
-      `ב${name} עדיף תרגול קצר וקבוע באותה רמה, בלי לקפוץ מהר קדימה.`
+      `In ${name}, short regular practice at the same level works best — without jumping ahead too quickly.`
     );
   }
   const nextG = resolveGradeAwareParentRecommendationHe({

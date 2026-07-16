@@ -11,8 +11,8 @@ import {
   SCHOOL_NAV_TEACHERS,
   SCHOOL_NAV_OPERATORS,
   SCHOOL_PLATFORM_LABEL,
-} from "../../lib/school-portal/school-ui.he.js";
-import { SC_NAV_MESSAGES } from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-ui.js";
+import { SC_NAV_MESSAGES } from "../../lib/school-portal/school-communication.js";
 
 export const SCHOOL_PAGE_CONTAINER =
   "max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 md:py-10";
@@ -78,19 +78,18 @@ export default function SchoolPortalShell({
   };
 
   const path = router.pathname;
-  const navLabel = portalRole === "school_operator" ? "תפריט תפעול" : "תפריט ניהול";
+  const navLabel = portalRole === "school_operator" ? "Operations menu" : "Management menu";
 
   /**
-   * Site Layout HUD uses flex + justify-between; without document RTL (see Layout.js
-   * layoutRtlHebrew paths), /school/* renders logo left / menu right. Scope stays here
-   * so global Layout is unchanged.
+   * Keep document direction/lang aligned with US English school portal UI.
+   * Scoped here so global Layout is unchanged.
    */
   useEffect(() => {
     const html = document.documentElement;
     const prevDir = html.getAttribute("dir");
     const prevLang = html.getAttribute("lang");
-    html.setAttribute("dir", "rtl");
-    html.setAttribute("lang", "he");
+    html.setAttribute("dir", "ltr");
+    html.setAttribute("lang", "en");
     return () => {
       if (prevDir) html.setAttribute("dir", prevDir);
       else html.removeAttribute("dir");
@@ -100,15 +99,15 @@ export default function SchoolPortalShell({
   }, []);
 
   return (
-    <div className={`${SCHOOL_PAGE_CONTAINER} text-white`} dir="rtl" lang="he">
+    <div className={`${SCHOOL_PAGE_CONTAINER} text-white`} dir="ltr" lang="en">
       <header className="mb-6 lg:mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-white/15 pb-4">
-        <div className="min-w-0 flex-1 text-right">
+        <div className="min-w-0 flex-1 text-left">
           <p className="text-xs text-white/50 mb-1">{SCHOOL_PLATFORM_LABEL}</p>
           {schoolName ? (
             <p className="text-sm sm:text-base text-amber-200/95 font-medium mb-1">{schoolName}</p>
           ) : null}
-          {title ? <h1 className="text-xl md:text-2xl font-bold text-right">{title}</h1> : null}
-          {subtitle ? <p className="text-sm text-white/55 mt-1 text-right max-w-2xl">{subtitle}</p> : null}
+          {title ? <h1 className="text-xl md:text-2xl font-bold text-left">{title}</h1> : null}
+          {subtitle ? <p className="text-sm text-white/55 mt-1 text-left max-w-2xl">{subtitle}</p> : null}
         </div>
         <div className="flex flex-wrap items-center gap-2 shrink-0 w-full sm:w-auto justify-end">
           {showTeacherDashboardLink ? (
@@ -125,7 +124,7 @@ export default function SchoolPortalShell({
             disabled={busy}
             className="rounded-lg border border-white/25 bg-white/10 hover:bg-white/15 px-3 py-1.5 font-semibold text-white disabled:opacity-60 min-h-[2rem] text-sm"
           >
-            {busy ? "יוצא…" : "יציאה"}
+            {busy ? "Signing out…" : "Sign out"}
           </button>
         </div>
       </header>
@@ -134,7 +133,7 @@ export default function SchoolPortalShell({
         <aside className="lg:sticky lg:top-6">
           <nav
             className="rounded-xl border border-white/15 bg-black/25 p-2 space-y-1"
-            aria-label="ניווט בית ספר"
+            aria-label="School navigation"
           >
             <p className="text-xs text-white/45 px-3 pt-1 pb-2 hidden lg:block">{navLabel}</p>
             <div className="flex flex-wrap lg:flex-col gap-1 pb-1 lg:pb-0">

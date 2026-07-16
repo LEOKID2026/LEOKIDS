@@ -18,18 +18,18 @@ export default function TeacherClassActivitiesNav({ classId, active = "activitie
       : "px-3 py-1.5 rounded-lg border border-white/15 text-white/80 hover:bg-white/10";
 
   return (
-    <nav className="flex flex-wrap gap-2 mb-6 text-sm" aria-label="ניווט כיתה">
+    <nav className="flex flex-wrap gap-2 mb-6 text-sm" aria-label="Class navigation">
       <Link href={base} className={linkClass("class")}>
-        דוח כיתה
+        Class report
       </Link>
       <Link href={`${base}/activities`} className={linkClass("activities")}>
-        פעילויות
+        Activities
       </Link>
       <Link href={`${base}/worksheets`} className={linkClass("worksheets")}>
-        דפי עבודה
+        Worksheets
       </Link>
       <Link href={`${base}/discussion/new`} className={linkClass("discussion")}>
-        דיון
+        Discussion
       </Link>
     </nav>
   );

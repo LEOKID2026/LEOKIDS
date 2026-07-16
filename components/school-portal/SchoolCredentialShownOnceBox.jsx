@@ -7,7 +7,7 @@ import {
   SC_CREDENTIAL_LABEL_PIN,
   SC_CREDENTIAL_LABEL_USERNAME,
   SC_BTN_COPY_CREDENTIALS,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import { SCHOOL_PORTAL_BTN_CURSOR } from "./SchoolPortalUi";
 
 export default function SchoolCredentialShownOnceBox({ credentials, onDismiss }) {
@@ -27,7 +27,7 @@ export default function SchoolCredentialShownOnceBox({ credentials, onDismiss })
 
   return (
     <div
-      className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-right space-y-3"
+      className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-left space-y-3"
       data-testid="school-credential-once-box"
     >
       <p className="font-semibold text-amber-200">{SC_CREDENTIAL_BOX_HEADING}</p>

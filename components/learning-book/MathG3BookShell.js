@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+﻿import { useRouter } from "next/router";
 import { useState } from "react";
 import { MATH_G3_BOOK_META } from "../../lib/learning-book/math-g3-registry";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
@@ -27,7 +27,7 @@ export default function MathG3BookShell({
   const isIndex = activePageId === null;
   const fromLearning = isMathG3BookLearningReturn(router.query);
   const returnQuerySuffix = getMathG3BookReturnQuerySuffix(router.query);
-  const returnLabel = fromLearning ? "סגור" : "חזרה למתמטיקה";
+  const returnLabel = fromLearning ? "Close" : "Back to Math";
 
   const handleReturnClick = () => {
     if (fromLearning) {
@@ -44,7 +44,7 @@ export default function MathG3BookShell({
       >
         <header
           className={`sticky top-0 z-50 border-b border-[color:var(--book-accent-border)] backdrop-blur-md ${theme.classes.headerBg}`}
-          dir="rtl"
+          dir="ltr"
           style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
         >
           <BookShellHeader
@@ -55,7 +55,7 @@ export default function MathG3BookShell({
             titleHe={formatBookShellTitleHe(MATH_G3_BOOK_META.bookTitleHe)}
             isIndex={isIndex}
             pageMeta={pageMeta}
-            indexSubtitle={`${MATH_G3_BOOK_META.gradeShortLabel} · בחרו נושא וקראו עמוד אחר עמוד`}
+            indexSubtitle={`${MATH_G3_BOOK_META.gradeShortLabel} · Pick a topic and read page by page`}
             activePageTitleClass={theme.classes.activePageTitle}
           />
         </header>
@@ -64,7 +64,7 @@ export default function MathG3BookShell({
           <div className="min-w-0">{children}</div>
 
           {isIndex ? (
-            <footer className="mt-8 pb-6 text-center" dir="rtl">
+            <footer className="mt-8 pb-6 text-center" dir="ltr">
               <button
                 type="button"
                 onClick={handleReturnClick}

@@ -63,9 +63,9 @@ export default function GuardianLoginPage({ inviteToken }) {
       }
       setState("invite_failed");
       if (body?.error?.code === "session_revoked" || body?.error?.code === "access_expired") {
-        setErrorMsg("הגישה שלכם פגה תוקפה או בוטלה. פנו למורה לחידוש.");
+        setErrorMsg("Your access has expired or been revoked. Contact the teacher to renew it.");
       } else {
-        setErrorMsg("הקישור לא תקף או פג תוקפו. בקשו מהמורה קישור חדש.");
+        setErrorMsg("This link is invalid or has expired. Ask the teacher for a new link.");
       }
     });
   }, [inviteToken, router]);
@@ -85,7 +85,7 @@ export default function GuardianLoginPage({ inviteToken }) {
     if (result.status === 409 && result.body?.error?.code === "guardian_multiple_students") {
       setMultiStudents(parseGuardianMultipleStudents(result.body));
       setState("select_child");
-      setErrorMsg("יש לבחור ילד/ה להמשך הכניסה.");
+      setErrorMsg("Select a child to continue signing in.");
       return;
     }
     setState("login_failed");
@@ -93,24 +93,24 @@ export default function GuardianLoginPage({ inviteToken }) {
       result.body?.error?.code === "session_revoked" ||
       result.body?.error?.code === "access_expired"
     ) {
-      setErrorMsg("הגישה שלכם פגה תוקפה או בוטלה. פנו למורה לחידוש.");
+      setErrorMsg("Your access has expired or been revoked. Contact the teacher to renew it.");
     } else {
-      setErrorMsg("שם המשתמש או הקוד שגויים. פנו למורה לקבלת פרטים מעודכנים.");
+      setErrorMsg("Incorrect username or code. Contact the teacher for updated details.");
     }
   };
 
   return (
     <Layout>
-      <TeacherPortalShell title="כניסה לצפייה בדוח">
+      <TeacherPortalShell title="Sign in to view the report">
         <div data-testid="guardian-login-root" data-state={state}>
           <p className="text-white/70 text-sm mb-6">
-            קיבלתם פרטי כניסה מהמורה? הכניסו אותם כאן.
+            Got login details from the teacher? Enter them here.
           </p>
 
           {inviteToken ? (
             <div data-testid="guardian-login-invite" data-busy={busy ? "1" : "0"}>
               {state === "invite_loading" || busy ? (
-                <p className="text-white/70">מתחבר דרך הקישור…</p>
+                <p className="text-white/70">Signing in via link…</p>
               ) : null}
               {state === "invite_failed" && errorMsg ? (
                 <p className="text-red-300 text-sm" role="alert">
@@ -125,19 +125,19 @@ export default function GuardianLoginPage({ inviteToken }) {
               data-testid="guardian-login-form"
             >
               <label className="block text-sm">
-                <span className="text-white/80">שם משתמש</span>
+                <span className="text-white/80">Username</span>
                 <input
                   data-testid="guardian-login-username"
                   className="mt-1 w-full rounded bg-black/40 border border-white/20 px-3 py-2"
                   value={loginUsername}
                   onChange={(e) => setLoginUsername(e.target.value)}
                   autoComplete="username"
-                  placeholder="שם המשתמש שקיבלת"
+                  placeholder="The username you received"
                   required
                 />
               </label>
               <label className="block text-sm">
-                <span className="text-white/80">קוד כניסה</span>
+                <span className="text-white/80">Access code</span>
                 <input
                   data-testid="guardian-login-pin"
                   className="mt-1 w-full rounded bg-black/40 border border-white/20 px-3 py-2"
@@ -145,7 +145,7 @@ export default function GuardianLoginPage({ inviteToken }) {
                   onChange={(e) => setPin(e.target.value)}
                   inputMode="numeric"
                   autoComplete="current-password"
-                  placeholder="הקוד שקיבלת"
+                  placeholder="The code you received"
                   required
                 />
               </label>
@@ -155,7 +155,7 @@ export default function GuardianLoginPage({ inviteToken }) {
                 data-testid="guardian-login-submit"
                 className="rounded bg-amber-500 text-black font-semibold px-6 py-2 disabled:opacity-60"
               >
-                {busy ? "מתחבר…" : "כניסה"}
+                {busy ? "Signing in…" : "Sign in"}
               </button>
             </form>
           )}
@@ -173,7 +173,7 @@ export default function GuardianLoginPage({ inviteToken }) {
                     router.replace("/guardian/view");
                   } else {
                     setState("login_failed");
-                    setErrorMsg("שם המשתמש או הקוד שגויים. פנו למורה לקבלת פרטים מעודכנים.");
+                    setErrorMsg("Incorrect username or code. Contact the teacher for updated details.");
                   }
                 }}
               />

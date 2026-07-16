@@ -21,11 +21,19 @@ const GEOMETRY_ONLY_PHRASES = [
   "עם/בלי פריסה",
   "עם/בלי ציר",
   "ציר + סימבולי",
+  "Vertical vs horizontal",
+  "Height line",
+  "With/without height line",
+  "External height",
+  "Net",
+  "With/without net",
+  "With/without axis",
+  "Axis + symbolic",
 ];
 
 /** Parent-facing subskill overrides (surface copy only). */
 const SUBSKILL_SURFACE_HE = Object.freeze({
-  "S-03": "הבנת הקשר בין חלקי הגוף",
+  "S-03": "Understanding how body parts relate",
 });
 
 /**

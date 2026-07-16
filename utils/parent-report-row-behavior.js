@@ -161,11 +161,11 @@ export function computeRowBehaviorProfile(subjectId, topicRowKey, row, rawMistak
 
   const summaryParts = [];
   if (winner === "undetermined") {
-    summaryParts.push("אין מספיק אותות התנהגותיים באירועי טעות ובנפח כדי לסווג דומיננטית.");
+    summaryParts.push("Not enough behavioral signals in mistake events and volume to classify dominantly.");
   } else {
-    summaryParts.push(`סיווג דומיננטי: ${winner} (עוצמה ${strength}).`);
-    if (medWrongMs != null) summaryParts.push(`זמן תגובה חציוני בשאלות שגויות: ${Math.round(medWrongMs)}ms.`);
-    if (hintRate != null) summaryParts.push(`שיעור שימוש ברמזים בשאלות שגויות: ${Math.round(hintRate * 100)}%.`);
+    summaryParts.push(`Dominant classification: ${winner} (strength ${strength}).`);
+    if (medWrongMs != null) summaryParts.push(`Median response time on wrong questions: ${Math.round(medWrongMs)}ms.`);
+    if (hintRate != null) summaryParts.push(`Hint usage rate on wrong questions: ${Math.round(hintRate * 100)}%.`);
   }
   const summaryHe = summaryParts.join(" ");
 

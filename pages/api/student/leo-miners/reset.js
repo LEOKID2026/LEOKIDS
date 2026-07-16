@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     const body = await readJsonBody(req);
     if (body?.confirm !== true) {
-      return res.status(400).json({ ok: false, error: "נדרש אישור איפוס" });
+      return res.status(400).json({ ok: false, error: "Reset confirmation is required" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();

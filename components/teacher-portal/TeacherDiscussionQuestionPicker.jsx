@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { teacherAuthFetch, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { formatGradeLevelHe, resolveCanonicalGradeKey } from "../../lib/teacher-portal/teacher-class-grade.js";
 import {
@@ -165,13 +165,13 @@ export default function TeacherDiscussionQuestionPicker({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "יצירת שאלות נכשלה");
+        setError(json?.error?.message || json?.error?.code || "Could not generate questions");
         setPreview([]);
         return;
       }
       setPreview(json?.data?.questions || []);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
       setPreview([]);
     } finally {
       setBusy(false);
@@ -180,15 +180,15 @@ export default function TeacherDiscussionQuestionPicker({
 
   const createDiscussion = useCallback(async () => {
     if (selectedIndices.size === 0) {
-      setError("נא לבחור לפחות שאלה אחת");
+      setError("Please select at least one question");
       return;
     }
     if (!title.trim()) {
-      setError("נא למלא כותרת");
+      setError("Please enter a title");
       return;
     }
     if (isClassDiscussion && recipientScope === "selected_students" && selectedStudentIds.size === 0) {
-      setError("נא לבחור לפחות ילד/ה אחד");
+      setError("Please select at least one student");
       return;
     }
     setBusy(true);
@@ -226,7 +226,7 @@ export default function TeacherDiscussionQuestionPicker({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "יצירה נכשלה");
+        setError(json?.error?.message || json?.error?.code || "Creation failed");
         return;
       }
       const activityId = json?.data?.activityId;
@@ -247,7 +247,7 @@ export default function TeacherDiscussionQuestionPicker({
         router.push(href);
       }
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -278,7 +278,7 @@ export default function TeacherDiscussionQuestionPicker({
         return next;
       }
       if (next.size >= 5) {
-        setError("ניתן לבחור עד 5 שאלות");
+        setError("You can select up to 5 questions");
         return prev;
       }
       next.add(index);
@@ -307,7 +307,7 @@ export default function TeacherDiscussionQuestionPicker({
   if (subjectsLoaded && subjectOptions.length === 0) {
     return (
       <p className="text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-3">
-        אין הרשאות מקצוע לפעילות דיון. פנה למנהל המערכת או למנהל בית הספר להקצאת מקצועות.
+        No subject permissions for discussion activities. Contact your system or school admin to assign subjects.
       </p>
     );
   }
@@ -322,7 +322,7 @@ export default function TeacherDiscussionQuestionPicker({
 
       <div className="grid gap-4 md:grid-cols-2">
         <label className="block text-sm">
-          <span className="text-white/70">כותרת</span>
+          <span className="text-white/70">Title</span>
           <input
             className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
             value={title}
@@ -331,7 +331,7 @@ export default function TeacherDiscussionQuestionPicker({
           />
         </label>
         <label className="block text-sm">
-          <span className="text-white/70">מקצוע</span>
+          <span className="text-white/70">Subject</span>
           {subjectLocked && lockedSubject ? (
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
@@ -358,7 +358,7 @@ export default function TeacherDiscussionQuestionPicker({
           )}
         </label>
         <label className="block text-sm md:col-span-2">
-          <span className="text-white/70">נושא</span>
+          <span className="text-white/70">Topic</span>
           {subject === "geometry" ? (
             <select
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
@@ -398,7 +398,7 @@ export default function TeacherDiscussionQuestionPicker({
           ) : subject === "science" ? (
             scienceTopicOptionsForGrade(gradeKey).length === 0 ? (
               <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                לא נמצאו נושאים זמינים לכיתה זו במקצוע מדעים.
+                No topics available for this grade in Science.
               </p>
             ) : (
               <select
@@ -430,11 +430,11 @@ export default function TeacherDiscussionQuestionPicker({
             setSelectedIndices(new Set());
           }}
           variant="select"
-          label="רמה"
+          label="Level"
           inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
         />
         <label className="block text-sm">
-          <span className="text-white/70">כיתה</span>
+          <span className="text-white/70">Class</span>
           <input
             className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
             value={formatGradeLevelHe(gradeKey)}
@@ -446,7 +446,7 @@ export default function TeacherDiscussionQuestionPicker({
 
       {isClassDiscussion && selectedIndices.size > 0 ? (
         <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 space-y-3">
-          <p className="text-sm font-medium text-white">נמענים</p>
+          <p className="text-sm font-medium text-white">Recipients</p>
           <div className="flex flex-wrap gap-4 text-sm">
             <label className="flex items-center gap-2 cursor-pointer">
               <input
@@ -455,7 +455,7 @@ export default function TeacherDiscussionQuestionPicker({
                 checked={recipientScope === "whole_class"}
                 onChange={() => setRecipientScope("whole_class")}
               />
-              <span>כל הכיתה</span>
+              <span>Whole class</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
               <input
@@ -464,32 +464,32 @@ export default function TeacherDiscussionQuestionPicker({
                 checked={recipientScope === "selected_students"}
                 onChange={() => setRecipientScope("selected_students")}
               />
-              <span>ילדים נבחרים</span>
+              <span>Selected students</span>
             </label>
           </div>
 
           {recipientScope === "selected_students" ? (
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2 text-xs text-white/60">
-                <span>נבחרו: {selectedStudentIds.size}</span>
+                <span>Selected: {selectedStudentIds.size}</span>
                 <button
                   type="button"
                   className="underline hover:text-white"
                   onClick={selectAllStudents}
                   disabled={!classMembers.length}
                 >
-                  בחר הכל
+                  Select all
                 </button>
                 <button
                   type="button"
                   className="underline hover:text-white"
                   onClick={clearSelectedStudents}
                 >
-                  נקה
+                  Clear
                 </button>
               </div>
               {classMembers.length === 0 ? (
-                <p className="text-white/50 text-sm">אין ילדים פעילים בכיתה.</p>
+                <p className="text-white/50 text-sm">No active students in this class.</p>
               ) : (
                 <ul className="max-h-48 overflow-y-auto space-y-1 rounded-lg border border-white/10 p-2">
                   {classMembers.map((m) => (
@@ -512,7 +512,7 @@ export default function TeacherDiscussionQuestionPicker({
       ) : null}
 
       <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 space-y-3">
-        <p className="text-sm font-medium text-white">סוג דיון</p>
+        <p className="text-sm font-medium text-white">Discussion type</p>
         <div className="flex flex-col gap-3 text-sm">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -521,7 +521,7 @@ export default function TeacherDiscussionQuestionPicker({
               checked={answerRequired}
               onChange={() => setAnswerRequired(true)}
             />
-            <span>דיון עם מענה (ילדים מגישים תשובה)</span>
+            <span>Discussion with response (students submit an answer)</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -530,7 +530,7 @@ export default function TeacherDiscussionQuestionPicker({
               checked={!answerRequired}
               onChange={() => setAnswerRequired(false)}
             />
-            <span>הסבר בלבד - ללא מענה נדרש</span>
+            <span>Explanation only — no response required</span>
           </label>
         </div>
       </div>
@@ -542,7 +542,7 @@ export default function TeacherDiscussionQuestionPicker({
           onClick={runPreview}
           className="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-sm"
         >
-          {busy ? "מייצר…" : "הצג שאלות לבחירה"}
+          {busy ? "Generating…" : "Show questions to choose from"}
         </button>
         <button
           type="button"
@@ -550,14 +550,14 @@ export default function TeacherDiscussionQuestionPicker({
           onClick={createDiscussion}
           className="px-4 py-2 rounded-xl bg-cyan-500/90 text-black font-semibold text-sm disabled:opacity-50"
         >
-          צור פעילות דיון
+          Create discussion activity
         </button>
       </div>
 
       {preview.length > 0 ? (
         <>
           <p className="text-sm text-white/70">
-            נבחרו {selectedIndices.size} מתוך 5
+            Selected {selectedIndices.size} of 5
           </p>
         <div className="grid gap-3 md:grid-cols-2">
           {preview.map((q, i) => {
@@ -595,7 +595,7 @@ export default function TeacherDiscussionQuestionPicker({
                   </ul>
                 ) : correct ? (
                   <p className="text-emerald-300 text-xs mb-2" dir="auto">
-                    תשובה נכונה: {correct}
+                    Correct answer: {correct}
                   </p>
                 ) : null}
                 <button
@@ -604,11 +604,11 @@ export default function TeacherDiscussionQuestionPicker({
                   onClick={() => {
                     toggleQuestionIndex(i);
                     if (!title.trim()) {
-                      setTitle(`דיון - ${subjectLabelHe(subject)}`);
+                      setTitle(`Discussion - ${subjectLabelHe(subject)}`);
                     }
                   }}
                 >
-                  {selected ? "נבחרה ✓" : "בחר שאלה"}
+                  {selected ? "Selected ✓" : "Select question"}
                 </button>
               </div>
             );

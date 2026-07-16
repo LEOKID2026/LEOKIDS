@@ -193,7 +193,7 @@ const INTENT_PARAPHRASES = {
     /^ו?בקיצור\??$/u,
     /אז\s*מה\s*בעצם|מה\s*השורה\s*התחתונה|מה\s*לקחת\s*מזה/u,
   ],
-  // what_is_most_important: /^במה להתמקד/ must not match "במה להתמקד השבוע" (prefix-only false positive).
+  // what_is_most_important: /^במה להתמקד/ must not match "What to focus on this week" (prefix-only false positive).
   what_is_most_important: [
     /^במה\s*להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))/u,
     /^במה\s*כדאי\s*להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))/u,
@@ -213,7 +213,7 @@ const INTENT_PARAPHRASES = {
     /מה\s*העיקר\s*לטפל|מה\s*העיקר\s*כרגע/u,
     /מה\s*דחוף\s*לטפל|מה\s*דחוף\s*לטפל\s*בו/u,
     /מה\s*הכי\s*משמעותי\s*כרגע/u,
-    // Common phrasings with כדאי / איפה (exclude weekly focus: "איפה כדאי להתמקד השבוע")
+    // Common phrasings with כדאי / איפה (exclude weekly focus: "Where should you focus this week?")
     /איפה\s*כדאי\s*(?:להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))|לשים\s*לב|לשים\s*דגש)/u,
     /על\s*מה\s*כדאי\s*(?:להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))|לשים\s*לב)/u,
     /כדאי\s*לשים\s*(דגש|תשומת\s*לב)\s*ב/u,
@@ -768,7 +768,7 @@ export function interpretFreeformStageA(utteranceRaw, payload) {
     }
   }
 
-  // Short topic/subject follow-ups (e.g. "מה עם גאומטריה?") often score zero Stage‑A patterns.
+  // Short topic/subject follow-ups (e.g. "What about geometry?") often score zero Stage‑A patterns.
   // When the utterance matches an anchored topic or subject row from the payload, route explicitly.
   if (best === "unclear" && topicHintEarly) {
     best = "ask_topic_specific";

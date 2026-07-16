@@ -5,14 +5,14 @@
 export const PARENT_FACING_SURFACES = [
   {
     id: "short_report_table",
-    labelHe: "טבלת דוח קצר",
+    labelHe: "Short report table",
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "pages/learning/parent-report.js + baseReport topic maps",
   },
   {
     id: "short_report_smart_summary",
-    labelHe: "סיכום חכם - דוח קצר",
+    labelHe: "Smart summary - short report",
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -20,7 +20,7 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "detailed_smart_summary",
-    labelHe: "סיכום חכם - דוח מפורט",
+    labelHe: "Smart summary - detailed report",
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -28,28 +28,28 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "detailed_strengths",
-    labelHe: "חוזקות",
+    labelHe: "Strengths",
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/detailed-parent-report.js topStrengths",
   },
   {
     id: "detailed_weaknesses",
-    labelHe: "מיקוד / חולשות",
+    labelHe: "Focus / weaknesses",
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/detailed-parent-report.js topWeaknesses",
   },
   {
     id: "topic_recommendations",
-    labelHe: "המלצות לנושא",
+    labelHe: "Topic recommendations",
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/detailed-parent-report.js topicRecommendations",
   },
   {
     id: "home_plan",
-    labelHe: "מה לעשות בבית",
+    labelHe: "What to do at home",
     classification: "mixed",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -57,7 +57,7 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "executive_summary",
-    labelHe: "סיכום מנהלים",
+    labelHe: "Executive summary",
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -65,14 +65,14 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "charts",
-    labelHe: "גרפים / תוויות",
+    labelHe: "Charts / labels",
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "parent-report.js buildTopicRowsForChart",
   },
   {
     id: "pdf_print",
-    labelHe: "PDF / הדפסה",
+    labelHe: "PDF / print",
     classification: "mixed",
     requiresRowIdentity: true,
     requiresGradeSplitRespect: true,
@@ -165,7 +165,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     const byClean = new Map();
     for (const [trk, row] of Object.entries(tm)) {
       const clean = String(row?.cleanTopicLabelHe || row?.displayName || "");
-      if (/(?:-|\()\s*(?:כיתה|תרגול ב)/u.test(clean)) tableGradeInTopic += 1;
+      if (/(?:-|\()\s*(?:כיתה|תרגול ב|Grade|practice in)/iu.test(clean)) tableGradeInTopic += 1;
       const narrative = String(row?.narrativeTopicLabelHe || "");
       if (!byClean.has(clean)) byClean.set(clean, []);
       byClean.get(clean).push({ trk, narrative });

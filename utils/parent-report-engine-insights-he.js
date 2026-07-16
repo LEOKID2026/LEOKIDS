@@ -6,7 +6,7 @@
 
  */
 
-import { subjectLabelHe } from "../lib/teacher-portal/teacher-ui.he.js";
+import { subjectLabelHe } from "../lib/teacher-portal/teacher-ui.js";
 import {
   filterCoreParentReportRows,
   resolveRegisteredGradeKeyFromReport,
@@ -699,7 +699,7 @@ function dedupeDiagnosticOverviewAgainstInsights(report, insightLines) {
 
       if (q > 0 && subj) {
 
-        return `${subj}: ${topic}: כ-${q} שאלות, דיוק ${acc}%`;
+        return `${subj}: ${topic}: about ${q} questions, ${acc}% accuracy`;
 
       }
 

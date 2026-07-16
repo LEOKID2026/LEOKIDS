@@ -7,7 +7,7 @@ import {
   SC_TAB_ACCESS_ACCOUNTS,
   SC_TAB_LEARNING_REPORT,
   SC_TAB_STUDENT_ASSIGNMENT,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import { SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi";
 import { hasSchoolPortalSession } from "../../lib/school-portal/operator-grants.js";
 
@@ -70,7 +70,7 @@ export default function SchoolReportModal({
   title,
   onClose,
   loading = false,
-  loadingLabel = "טוען דוח…",
+  loadingLabel = "Loading report…",
   error = "",
   viewModel = null,
   onStudentReport,

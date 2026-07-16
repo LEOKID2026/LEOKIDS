@@ -26,27 +26,27 @@ export default function BookTocModal({
       <button
         type="button"
         className="absolute inset-0 bg-black/55 backdrop-blur-sm"
-        aria-label="סגירה"
+        aria-label="Close"
         onClick={onClose}
       />
       <div
         className={`relative z-10 flex max-h-[min(92vh,40rem)] w-full max-w-lg flex-col rounded-t-3xl sm:rounded-3xl border shadow-2xl ${theme.tocModalPanel}`}
-        dir="rtl"
+        dir="ltr"
       >
         <div className="flex items-center justify-between gap-3 border-b border-[color:var(--book-divider)] px-5 py-4">
           <h2 id="book-toc-title" className="text-lg font-bold text-[color:var(--book-text)]">
-            תוכן עניינים
+            Table of contents
           </h2>
           <button
             type="button"
             onClick={onClose}
             className={`rounded-full px-3 py-1 text-sm font-semibold ${theme.tocCloseButton}`}
           >
-            ✕ סגור
+            ✕ Close
           </button>
         </div>
         <div className="flex-1 overflow-y-auto px-5 py-4">
-          <nav className="space-y-5" aria-label="תוכן העניינים">
+          <nav className="space-y-5" aria-label="Table of contents">
             {batches.map((batch) => (
               <div key={batch.id}>
                 <h3 className={`mb-2 text-sm font-bold ${theme.tocBatchHeading}`}>
@@ -63,7 +63,7 @@ export default function BookTocModal({
                             returnQuerySuffix
                           )}
                           onClick={onClose}
-                          className={`block rounded-xl px-4 py-2.5 text-right text-sm transition ${
+                          className={`block rounded-xl px-4 py-2.5 text-left text-sm transition ${
                             isActive
                               ? theme.tocActiveItem
                               : "bg-[color:var(--book-surface-soft)] text-[color:var(--book-text)] hover:bg-[color:var(--book-accent-muted)]"
@@ -85,7 +85,7 @@ export default function BookTocModal({
             onClick={onClose}
             className={`block text-center text-sm font-semibold ${theme.tocFooterLink}`}
           >
-            ← חזרה לדף הראשי של הספר
+            ← Back to the book home page
           </Link>
         </div>
       </div>

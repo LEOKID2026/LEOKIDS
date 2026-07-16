@@ -22,7 +22,7 @@ export function MathPlainRenderer({ question }) {
     return (
       <div className="worksheet-renderer math-plain worksheet-renderer-compact worksheet-renderer-math-card">
         <WorksheetProseMathLines text={math} />
-        <p className="worksheet-remainder-prompt" dir="rtl">
+        <p className="worksheet-remainder-prompt" dir="ltr">
           {stem}
         </p>
         <WorksheetOptionsGrid optionsHe={question.optionsHe} mathNumericOptions showHeading={false} />

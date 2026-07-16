@@ -29,22 +29,22 @@ export default function LearningBookShell({
   const theme = getBookGradeTheme(grade);
 
   const returnLabel = fromLearning
-    ? "סגור"
+    ? "Close"
     : subject === "geometry"
-      ? "חזרה לגאומטריה"
+      ? "Back to Geometry"
       : subject === "science"
-        ? "חזרה למדעים"
+        ? "Back to Science"
         : subject === "hebrew"
-          ? "חזרה לעברית"
+          ? "Back to Hebrew"
           : subject === "english"
-            ? "חזרה לאנגלית"
+            ? "Back to English"
             : subject === "moledet"
-              ? "חזרה למולדת"
+              ? "Back to Homeland"
               : subject === "geography"
-                ? "חזרה לגאוגרפיה"
+                ? "Back to Geography"
                 : subject === "history"
-                  ? "חזרה להיסטוריה"
-                  : "חזרה למתמטיקה";
+                  ? "Back to History"
+                  : "Back to Math";
 
   const handleReturnClick = () => {
     if (fromLearning) {
@@ -61,7 +61,7 @@ export default function LearningBookShell({
       >
         <header
           className={`sticky top-0 z-50 border-b border-[color:var(--book-accent-border)] backdrop-blur-md ${theme.classes.headerBg}`}
-          dir="rtl"
+          dir="ltr"
           style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
         >
           <BookShellHeader
@@ -72,7 +72,7 @@ export default function LearningBookShell({
             titleHe={formatBookShellTitleHe(bookMeta.bookTitleHe)}
             isIndex={isIndex}
             pageMeta={pageMeta}
-            indexSubtitle={`${bookMeta.gradeShortLabel} · בחרו נושא וקראו עמוד אחר עמוד`}
+            indexSubtitle={`${bookMeta.gradeShortLabel} · Pick a topic and read page by page`}
             activePageTitleClass={theme.classes.activePageTitle}
           />
         </header>
@@ -81,7 +81,7 @@ export default function LearningBookShell({
           <div className="min-w-0">{children}</div>
 
           {isIndex ? (
-            <footer className="mt-8 pb-6 text-center" dir="rtl">
+            <footer className="mt-8 pb-6 text-center" dir="ltr">
               <button
                 type="button"
                 onClick={handleReturnClick}

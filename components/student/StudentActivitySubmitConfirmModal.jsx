@@ -79,13 +79,13 @@ export default function StudentActivitySubmitConfirmModal({
     >
       <div
         className={M.panel}
-        dir="rtl"
+        dir="ltr"
         onClick={(event) => event.stopPropagation()}
         data-testid="activity-submit-confirm-modal"
       >
         <div className="space-y-2">
           <h2 id={titleId} className={M.title}>
-            לסיים ולהגיש את הפעילות?
+            Finish and submit this activity?
           </h2>
           {activityTitle ? (
             <p className={M.subtitle}>{activityTitle}</p>
@@ -94,15 +94,15 @@ export default function StudentActivitySubmitConfirmModal({
 
         <div className={M.summaryBox}>
           <p className={M.summaryTitle}>
-            ענית על {answeredCount} מתוך {questionCount} שאלות
+            You answered {answeredCount} of {questionCount} questions
           </p>
           {unansweredCount > 0 ? (
             <p className={M.summaryWarn}>
-              יש {unansweredCount} שאלות שעדיין לא נענו. אחרי ההגשה לא ניתן לחזור ולשנות תשובות.
+              There are {unansweredCount} unanswered questions. After submitting you cannot go back and change answers.
             </p>
           ) : (
             <p className={M.summaryNote}>
-              אחרי ההגשה לא ניתן לחזור ולשנות תשובות.
+              After submitting you cannot go back and change answers.
             </p>
           )}
         </div>
@@ -115,7 +115,7 @@ export default function StudentActivitySubmitConfirmModal({
             className={M.cancelBtn}
             data-testid="activity-submit-confirm-cancel"
           >
-            ביטול
+            Cancel
           </button>
           <button
             ref={confirmRef}
@@ -125,7 +125,7 @@ export default function StudentActivitySubmitConfirmModal({
             className={M.confirmBtn}
             data-testid="activity-submit-confirm-submit"
           >
-            {busy ? "מגיש…" : "כן, סיום והגשה"}
+            {busy ? "Submitting…" : "Yes, finish and submit"}
           </button>
         </div>
       </div>

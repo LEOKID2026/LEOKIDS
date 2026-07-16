@@ -51,7 +51,7 @@ async function handler(req, res) {
     });
   } catch (_e) {
     clearStudentSessionCookie(res);
-    return res.status(500).json({ ok: false, error: "שגיאת שרת" });
+    return res.status(500).json({ ok: false, error: "Server error" });
   }
 }
 

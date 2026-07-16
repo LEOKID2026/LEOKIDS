@@ -661,7 +661,7 @@ export default function DevStudentSimulatorClient() {
   };
 
   return (
-    <div dir="rtl" lang="he" style={{ maxWidth: 1160, margin: "0 auto", color: COLORS.pageText }}>
+    <div dir="ltr" lang="en" style={{ maxWidth: 1160, margin: "0 auto", color: COLORS.pageText }}>
       <div style={{ ...sectionCard, background: COLORS.cardSoft, marginBottom: 16 }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", justifyContent: "space-between" }}>
           <div>

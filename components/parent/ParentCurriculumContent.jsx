@@ -17,39 +17,39 @@ import {
 
 const GRADE_KEYS = ["g1", "g2", "g3", "g4", "g5", "g6"];
 
-const HEB_GRADE = {
-  g1: "א׳",
-  g2: "ב׳",
-  g3: "ג׳",
-  g4: "ד׳",
-  g5: "ה׳",
-  g6: "ו׳",
+const GRADE_LABEL = {
+  g1: "1",
+  g2: "2",
+  g3: "3",
+  g4: "4",
+  g5: "5",
+  g6: "6",
 };
 
 
 export const PARENT_CURRICULUM_SUBJECTS = [
-  { key: "math", title: "מתמטיקה" },
-  { key: "geometry", title: "גאומטריה" },
-  { key: "english", title: "אנגלית" },
-  { key: "science", title: "מדעים" },
+  { key: "math", title: "Math" },
+  { key: "geometry", title: "Geometry" },
+  { key: "english", title: "English" },
+  { key: "science", title: "Science" },
 ];
 
 const subjectTitles = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
 };
 
 const subjectDescriptions = {
   math:
-    "מותאם לפי כיתה, נושא ורמת תרגול (רגיל / מתקדם) - כפי שמוצגים בדף החשבון. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
+    "Tailored by grade, topic, and practice level (regular / advanced) - as shown on the Math page. Aligned with the topics commonly taught in elementary schools.",
   english:
-    "מותאם לפי כיתה, נושא ורמת תרגול (רגיל / מתקדם) - כפי שמוצגים בדף האנגלית. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
+    "Tailored by grade, topic, and practice level (regular / advanced) - as shown on the English page. Aligned with the topics commonly taught in elementary schools.",
   science:
-    "מותאם לפי כיתה, נושא ורמת תרגול (רגיל בלבד) - כפי שמוצגים בדף המדעים. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
+    "Tailored by grade, topic, and practice level (regular only) - as shown on the Science page. Aligned with the topics commonly taught in elementary schools.",
   geometry:
-    "מותאם לפי כיתה, נושא ורמת תרגול (רגיל / מתקדם) - כפי שמוצגים בדף הגאומטריה. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
+    "Tailored by grade, topic, and practice level (regular / advanced) - as shown on the Geometry page. Aligned with the topics commonly taught in elementary schools.",
 };
 
 function GeometryCurriculumBody() {
@@ -58,20 +58,20 @@ function GeometryCurriculumBody() {
   };
 
   const shapeNames = {
-    square: "ריבוע",
-    rectangle: "מלבן",
-    triangle: "משולש",
-    quadrilateral: "מרובע",
-    circle: "עיגול",
-    parallelogram: "מקבילית",
-    trapezoid: "טרפז",
-    rectangular_prism: "תיבה",
-    cube: "קובייה",
-    cylinder: "גליל",
-    sphere: "כדור",
-    cone: "חרוט",
-    pyramid: "פירמידה",
-    prism: "מנסרה",
+    square: "Square",
+    rectangle: "Rectangle",
+    triangle: "Triangle",
+    quadrilateral: "Quadrilateral",
+    circle: "Circle",
+    parallelogram: "Parallelogram",
+    trapezoid: "Trapezoid",
+    rectangular_prism: "Rectangular prism",
+    cube: "Cube",
+    cylinder: "Cylinder",
+    sphere: "Sphere",
+    cone: "Cone",
+    pyramid: "Pyramid",
+    prism: "Prism",
   };
 
   const getShapesForGradeTopic = (gradeKey, topicKey) => {
@@ -83,23 +83,23 @@ function GeometryCurriculumBody() {
   const topicCountLabel = String(topicKeysForProduct.length);
 
   return (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
+<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
             <div className="max-w-none text-slate-800">
               <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מבנה כללי</h3>
+                <h3 className="text-xl font-bold mb-2">General structure</h3>
                 <ul className="list-disc pr-6 space-y-2">
                   <li>
-                    <strong>6 כיתות</strong>: א׳, ב׳, ג׳, ד׳, ה׳, ו׳
+                    <strong>6 grades</strong>: 1st, 2nd, 3rd, 4th, 5th, 6th
                   </li>
                   <li>
-                    <strong>שתי רמות תרגול - רגיל ומתקדם</strong> לכל כיתה
+                    <strong>Two practice levels - regular and advanced</strong> for every grade
                   </li>
                   <li>
-                    <strong>{topicCountLabel} נושאי גאומטריה</strong> (לא כולל &quot;ערבוב&quot; כנושא נפרד בספירה זו)
+                    <strong>{topicCountLabel} geometry topics</strong> (not counting &quot;Mixed&quot; as a separate topic in this count)
                   </li>
                 </ul>
                 <p className="text-sm text-slate-600 mt-3">
-                  בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.
+                  Aligned with the topics commonly taught in elementary schools.
                 </p>
               </div>
 
@@ -110,8 +110,8 @@ function GeometryCurriculumBody() {
                     key={gradeKey}
                     className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6"
                   >
-                    <h2 className="text-2xl font-bold mb-3">כיתה {HEB_GRADE[gradeKey]}</h2>
-                    <h3 className="text-lg font-semibold mb-2">נושאים לכיתה זו:</h3>
+                    <h2 className="text-2xl font-bold mb-3">Grade {GRADE_LABEL[gradeKey]}</h2>
+                    <h3 className="text-lg font-semibold mb-2">Topics for this grade:</h3>
                     <ol className="list-decimal pr-6 space-y-1 mb-4">
                       {topics.map((tk) => {
                         const desc = topicDescriptionForCurriculumPage(gradeKey, tk);
@@ -126,7 +126,7 @@ function GeometryCurriculumBody() {
                       })}
                     </ol>
                     <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                      <h4 className="font-semibold mb-2">צורות ודוגמאות לפי נושא:</h4>
+                      <h4 className="font-semibold mb-2">Shapes and examples by topic:</h4>
                       <div className="text-sm space-y-1">
                         {topics.map((tk) => {
                           const shapesLine = getShapesForGradeTopic(gradeKey, tk);
@@ -144,13 +144,13 @@ function GeometryCurriculumBody() {
               })}
 
               <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg">
-                <h3 className="text-xl font-bold mb-3 text-center">סיכום כללי</h3>
+                <h3 className="text-xl font-bold mb-3 text-center">General summary</h3>
                 <p className="text-center mb-3">
-                  במערכת מוצגים <strong>{topicCountLabel} נושאי גאומטריה</strong> (בנוסף למצב ערבוב היכן שקיים), ב 
-                  <strong> שש כיתות</strong> וב<strong>שתי רמות תרגול - רגיל ומתקדם</strong>.
+                  The system covers <strong>{topicCountLabel} geometry topics</strong> (plus a mixed mode where available), across
+                  <strong> six grades</strong> and <strong>two practice levels - regular and advanced</strong>.
                 </p>
                 <p className="text-center text-sm text-slate-700">
-                  בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.
+                  Aligned with the topics commonly taught in elementary schools.
                 </p>
               </div>
             </div>
@@ -176,10 +176,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
   const isGeometry = subject === "geometry";
 
   return (
-    <div className="space-y-4" dir="rtl">
+    <div className="space-y-4">
       <header className="text-center space-y-2">
         <h3 className="text-xl md:text-2xl font-black text-sky-800">
-          תוכנית הלימודים באתר - {subjectTitle}
+          Site curriculum - {subjectTitle}
         </h3>
         <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
           {subjectDescription}
@@ -187,9 +187,9 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
       </header>
 
       {isEnglish ? (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
+<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
               <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מטרות כלליות</h3>
+                <h3 className="text-xl font-bold mb-2">General goals</h3>
                 <ul className="list-disc pr-6 space-y-2">
                   {ENGLISH_GENERAL_GOALS.map((goal, idx) => (
                     <li key={`goal-${idx}`}>{goal}</li>
@@ -206,13 +206,13 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     <span className="text-sm text-slate-600">{grade.stage}</span>
                   </div>
                   {grade.curriculum?.summary && (
-                    <p className="text-sm text-slate-700 mb-3" dir="rtl">
+                    <p className="text-sm text-slate-700 mb-3">
                       {grade.curriculum.summary}
                     </p>
                   )}
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מוקדי למידה</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Learning focus areas</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.focus?.map((item, idx) => (
                           <li key={`focus-${grade.key}-${idx}`}>{item}</li>
@@ -220,7 +220,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מיומנויות עיקריות</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Key skills</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.skills?.map((item, idx) => (
                           <li key={`skills-${grade.key}-${idx}`}>{item}</li>
@@ -228,7 +228,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">דקדוק ומבנים</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Grammar and structures</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.grammar?.map((item, idx) => (
                           <li key={`grammar-${grade.key}-${idx}`}>{item}</li>
@@ -236,7 +236,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">נושאי אוצר מילים</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Vocabulary topics</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.vocabulary?.map((item, idx) => (
                           <li key={`vocab-${grade.key}-${idx}`}>{item}</li>
@@ -245,7 +245,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                   </div>
                   <div className="mt-3">
-                    <h4 className="font-semibold mb-1 text-slate-900">יעדי סף</h4>
+                    <h4 className="font-semibold mb-1 text-slate-900">Benchmark goals</h4>
                     <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                       {grade.curriculum?.benchmark?.map((item, idx) => (
                         <li key={`benchmark-${grade.key}-${idx}`}>{item}</li>
@@ -256,9 +256,9 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
               ))}
             </div>
       ) : isScience ? (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
+<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
               <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
-                <h3 className="text-xl font-bold mb-2">מטרות כלליות</h3>
+                <h3 className="text-xl font-bold mb-2">General goals</h3>
                 <ul className="list-disc pr-6 space-y-2">
                   {SCIENCE_GENERAL_GOALS.map((goal, idx) => (
                     <li key={`science-goal-${idx}`}>{goal}</li>
@@ -276,13 +276,13 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     <span className="text-sm text-slate-600">{grade.stage}</span>
                   </div>
                   {grade.curriculum?.summary && (
-                    <p className="text-sm text-slate-700 mb-3" dir="rtl">
+                    <p className="text-sm text-slate-700 mb-3">
                       {grade.curriculum.summary}
                     </p>
                   )}
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">נושאים מרכזיים</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Core topics</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.focus?.map((item, idx) => (
                           <li key={`science-focus-${grade.key}-${idx}`}>{item}</li>
@@ -290,7 +290,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">מיומנויות</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Skills</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.skills?.map((item, idx) => (
                           <li key={`science-skills-${grade.key}-${idx}`}>{item}</li>
@@ -298,7 +298,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">חקר והתנסות</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Inquiry and hands-on exploration</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.inquiry?.map((item, idx) => (
                           <li key={`science-inquiry-${grade.key}-${idx}`}>{item}</li>
@@ -306,7 +306,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">קישור לטכנולוגיה</h4>
+                      <h4 className="font-semibold mb-1 text-slate-900">Technology connections</h4>
                       <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.technology?.map((item, idx) => (
                           <li key={`science-tech-${grade.key}-${idx}`}>{item}</li>
@@ -320,192 +320,192 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
       ) : isGeometry ? (
         <GeometryCurriculumBody />
       ) : (
-<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6" dir="rtl">
+<div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
               <div className="max-w-none text-slate-800">
                 <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
-                  <h3 className="text-xl font-bold mb-2">מבנה כללי</h3>
+                  <h3 className="text-xl font-bold mb-2">General structure</h3>
                   <ul className="list-disc pr-6 space-y-2">
-                    <li><strong>6 כיתות</strong>: א', ב', ג', ד', ה', ו'</li>
-                    <li><strong>2 רמות תרגול</strong> לכל כיתה: רגיל, מתקדם</li>
-                    <li><strong>נושאים לפי כיתה</strong> - כפי שמוצגים בדף החשבון</li>
+                    <li><strong>6 grades</strong>: 1st, 2nd, 3rd, 4th, 5th, 6th</li>
+                    <li><strong>2 practice levels</strong> per grade: regular, advanced</li>
+                    <li><strong>Topics by grade</strong> - as shown on the Math page</li>
                   </ul>
                 </div>
 
                 {/* */}
                 <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                  <h2 className="text-2xl font-bold mb-3">כיתה א'</h2>
-                  <h3 className="text-lg font-semibold mb-2">נושאים זמינים:</h3>
+                  <h2 className="text-2xl font-bold mb-3">Grade 1</h2>
+                  <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
                   <ol className="list-decimal pr-6 space-y-1 mb-4">
-                    <li>חיבור - כולל חיבור בעשרות שלמות ובעשרת השנייה</li>
-                    <li>חיסור - כולל חיסור בעשרות שלמות ובעשרת השנייה</li>
-                    <li>כפל - עד 20</li>
-                    <li>השוואה</li>
-                    <li>תחושת מספר - שכנים, זוגי/אי-זוגי, השלמה ל-10, עשרות/אחדות, ישר המספרים, מנייה וספירה (כולל השלמת מספר / איזון פשוט בלבד - לא אלגברה פורמלית)</li>
-                    <li>שאלות מילוליות - שאלות חיבור וחיסור (כסף, זמן, כמויות)</li>
-                    <li>מעורב - תרגילים מעורבים מתוך הנושאים למעלה</li>
+                    <li>Addition - including addition with whole tens and crossing into the second ten</li>
+                    <li>Subtraction - including subtraction with whole tens and crossing into the second ten</li>
+                    <li>Multiplication - up to 20</li>
+                    <li>Comparison</li>
+                    <li>Number sense - neighboring numbers, even/odd, making 10, tens/ones, the number line, counting (including simple number completion/balancing only - not formal algebra)</li>
+                    <li>Word problems - addition and subtraction problems (money, time, quantities)</li>
+                    <li>Mixed - mixed exercises drawn from the topics above</li>
                   </ol>
                   <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                    <h4 className="font-semibold mb-2">רמות תרגול (רגיל / מתקדם):</h4>
+                    <h4 className="font-semibold mb-2">Practice levels (regular / advanced):</h4>
                     <div className="text-sm space-y-2">
-                      <div><strong>רגיל:</strong> חיבור מ-10 עד 20 (כולל חיבור בעשרות שלמות ובעשרת השנייה), חיסור מ-10 עד 20, כפל עד 5×5, השוואה מ-10 עד 20, תחושת מספר מ-10 עד 20 (ישר המספרים, מנייה וספירה), שאלות מילוליות עד 20, מעורב</div>
-                      <div><strong>מתקדם:</strong> חיבור עד 30, חיסור עד 30, כפל עד 5×5, השוואה עד 30, תחושת מספר עד 30, שאלות מילוליות עד 30, מעורב</div>
+                      <div><strong>Regular:</strong> addition from 10 to 20 (including addition with whole tens and crossing into the second ten), subtraction from 10 to 20, multiplication up to 5×5, comparison from 10 to 20, number sense from 10 to 20 (number line, counting), word problems up to 20, mixed</div>
+                      <div><strong>Advanced:</strong> addition up to 30, subtraction up to 30, multiplication up to 5×5, comparison up to 30, number sense up to 30, word problems up to 30, mixed</div>
                     </div>
                   </div>
                 </div>
 
                 {/* */}
                 <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                  <h2 className="text-2xl font-bold mb-3">כיתה ב'</h2>
-                  <h3 className="text-lg font-semibold mb-2">נושאים זמינים:</h3>
+                  <h2 className="text-2xl font-bold mb-3">Grade 2</h2>
+                  <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
                   <ol className="list-decimal pr-6 space-y-1 mb-4">
-                    <li>חיבור</li>
-                    <li>חיסור</li>
-                    <li>כפל - לוח כפל עד 10×10</li>
-                    <li>חילוק - לפי לוח הכפל</li>
-                    <li>שברים - חצי, רבע וחלק מהשלם (היכרות בסיסית בלבד)</li>
-                    <li>השוואה</li>
-                    <li>תחושת מספר</li>
-                    <li>שאלות מילוליות - שאלות חיבור, חיסור, כפל וחילוק (כסף, זמן, כמויות)</li>
-                    <li>מעורב - תרגילים מעורבים בתחום ה-1000</li>
+                    <li>Addition</li>
+                    <li>Subtraction</li>
+                    <li>Multiplication - times tables up to 10×10</li>
+                    <li>Division - based on the times tables</li>
+                    <li>Fractions - half, quarter, and parts of a whole (basic introduction only)</li>
+                    <li>Comparison</li>
+                    <li>Number sense</li>
+                    <li>Word problems - addition, subtraction, multiplication, and division problems (money, time, quantities)</li>
+                    <li>Mixed - mixed exercises within the range of 1,000</li>
                   </ol>
                   <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                    <h4 className="font-semibold mb-2">רמות תרגול (רגיל / מתקדם):</h4>
+                    <h4 className="font-semibold mb-2">Practice levels (regular / advanced):</h4>
                     <div className="text-sm space-y-2">
-                      <div><strong>רגיל:</strong> חיבור/חיסור מ-50 עד 100, כפל מ-5×5 עד 10×10, חילוק מ-50 עד 100, שברים חצי/רבע, השוואה עד 1000, שאלות מילוליות עד 100</div>
-                      <div><strong>מתקדם:</strong> חיבור/חיסור עד 100, כפל עד 10×10, חילוק עד 100, שברים חצי/רבע, השוואה עד 1000, שאלות מילוליות עד 100</div>
+                      <div><strong>Regular:</strong> addition/subtraction from 50 to 100, multiplication from 5×5 to 10×10, division from 50 to 100, half/quarter fractions, comparison up to 1,000, word problems up to 100</div>
+                      <div><strong>Advanced:</strong> addition/subtraction up to 100, multiplication up to 10×10, division up to 100, half/quarter fractions, comparison up to 1,000, word problems up to 100</div>
                     </div>
                   </div>
                 </div>
 
                 {/* */}
                 <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                  <h2 className="text-2xl font-bold mb-3">כיתה ג'</h2>
-                  <h3 className="text-lg font-semibold mb-2">נושאים זמינים:</h3>
+                  <h2 className="text-2xl font-bold mb-3">Grade 3</h2>
+                  <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
                   <ol className="list-decimal pr-6 space-y-1 mb-4">
-                    <li>חיבור</li>
-                    <li>חיסור</li>
-                    <li>כפל - כולל כפל בעשרות שלמות ובמאות שלמות</li>
-                    <li>חילוק - כולל חילוק עם שארית</li>
-                    <li>שברים - היכרות עם שבר כחלק משלם</li>
-                    <li>סדרות</li>
-                    <li>עשרוניים - עשרוניים בסיסיים</li>
-                    <li>סימני התחלקות - ב-2, 5, 10</li>
-                    <li>סדר פעולות והשימוש בסוגריים</li>
-                    <li>השוואה</li>
-                    <li>תחושת מספר (כולל השלמת מספר / איזון פשוט - לא משוואות אלגבריות כנושא נפרד)</li>
-                    <li>שאלות מילוליות</li>
-                    <li>מעורב</li>
+                    <li>Addition</li>
+                    <li>Subtraction</li>
+                    <li>Multiplication - including multiplication with whole tens and whole hundreds</li>
+                    <li>Division - including division with remainders</li>
+                    <li>Fractions - introduction to fractions as part of a whole</li>
+                    <li>Sequences</li>
+                    <li>Decimals - basic decimals</li>
+                    <li>Divisibility rules - by 2, 5, 10</li>
+                    <li>Order of operations and using parentheses</li>
+                    <li>Comparison</li>
+                    <li>Number sense (including simple number completion/balancing - not algebraic equations as a separate topic)</li>
+                    <li>Word problems</li>
+                    <li>Mixed</li>
                   </ol>
                   <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                    <h4 className="font-semibold mb-2">רמות תרגול (רגיל / מתקדם):</h4>
+                    <h4 className="font-semibold mb-2">Practice levels (regular / advanced):</h4>
                     <div className="text-sm space-y-2">
-                      <div><strong>רגיל:</strong> חיבור/חיסור מ-200 עד 500, כפל מ-10 עד 12 (כולל כפל בעשרות ומאות), חילוק מ-100 עד 144 (עם שארית), שברים מכנה מ-4 עד 6, סדרות התחלה מ-20 עד 50, עשרוניים בסיס עד 50, סימני התחלקות ב-2,5,10, סדר פעולות עם סוגריים, השוואה עד 10000, שאלות מילוליות</div>
-                      <div><strong>מתקדם:</strong> חיבור/חיסור עד 1000, כפל עד 12 (כולל כפל בעשרות ומאות), חילוק עד 200 (עם שארית), שברים מכנה עד 6, סדרות התחלה עד 50, עשרוניים בסיס עד 50, סימני התחלקות ב-2,5,10, סדר פעולות עם סוגריים, השוואה עד 10000, שאלות מילוליות</div>
+                      <div><strong>Regular:</strong> addition/subtraction from 200 to 500, multiplication from 10 to 12 (including multiplication with tens and hundreds), division from 100 to 144 (with remainders), fractions with denominators from 4 to 6, sequences starting from 20 to 50, decimals up to a base of 50, divisibility rules by 2, 5, 10, order of operations with parentheses, comparison up to 10,000, word problems</div>
+                      <div><strong>Advanced:</strong> addition/subtraction up to 1,000, multiplication up to 12 (including multiplication with tens and hundreds), division up to 200 (with remainders), fractions with denominators up to 6, sequences starting up to 50, decimals up to a base of 50, divisibility rules by 2, 5, 10, order of operations with parentheses, comparison up to 10,000, word problems</div>
                     </div>
                   </div>
                 </div>
 
               {/* */}
               <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h2 className="text-2xl font-bold mb-3">כיתה ד'</h2>
-                <h3 className="text-lg font-semibold mb-2">נושאים זמינים:</h3>
+                <h2 className="text-2xl font-bold mb-3">Grade 4</h2>
+                <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
                 <ol className="list-decimal pr-6 space-y-1 mb-4">
-                  <li>חיבור</li>
-                  <li>חיסור</li>
-                  <li>כפל - כולל כפל במאונך (גורם רב-ספרתי)</li>
-                  <li>חילוק - כולל חילוק ארוך (מחלק חד-ספרתי או עשרת שלמה)</li>
-                  <li>שברים - שברים פשוטים, משמעות והשוואה</li>
-                  <li>עשרוניים</li>
-                  <li>סדרות</li>
-                  <li>עיגול</li>
-                  <li>סימני התחלקות - ב-3, 6, 9</li>
-                  <li>מספרים ראשוניים ופריקים</li>
-                  <li>חזקות</li>
-                  <li>אומדן ופיתוח תובנה מספרית</li>
-                  <li>תכונות ה-0 וה-1</li>
-                  <li>משוואות</li>
-                  <li>השוואה</li>
-                  <li>תחושת מספר</li>
-                  <li>גורמים וכפולות</li>
-                  <li>מעורב</li>
+                  <li>Addition</li>
+                  <li>Subtraction</li>
+                  <li>Multiplication - including column (vertical) multiplication (multi-digit factor)</li>
+                  <li>Division - including long division (single-digit divisor or a whole ten)</li>
+                  <li>Fractions - simple fractions, meaning, and comparison</li>
+                  <li>Decimals</li>
+                  <li>Sequences</li>
+                  <li>Rounding</li>
+                  <li>Divisibility rules - by 3, 6, 9</li>
+                  <li>Prime and composite numbers</li>
+                  <li>Powers/exponents</li>
+                  <li>Estimation and developing number sense</li>
+                  <li>Properties of 0 and 1</li>
+                  <li>Equations</li>
+                  <li>Comparison</li>
+                  <li>Number sense</li>
+                  <li>Factors and multiples</li>
+                  <li>Mixed</li>
                 </ol>
                 <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                  <h4 className="font-semibold mb-2">רמות תרגול (רגיל / מתקדם):</h4>
+                  <h4 className="font-semibold mb-2">Practice levels (regular / advanced):</h4>
                   <div className="text-sm space-y-2">
-                      <div><strong>רגיל:</strong> חיבור/חיסור מ-1000 עד 5000, כפל מ-20×20 עד 30×30 (כולל כפל במאונך), חילוק מ-200 עד 500 (כולל חילוק ארוך), שברים מכנה מ-6 עד 8, עיגול מ-999 לעשרות ועד 9999 למאות, סימני התחלקות ב-3,6,9, מספרים ראשוניים מ-100 עד 200, חזקות בסיס עד 10^3, אומדן, תכונות 0 ו-1, גורמים/כפולות מ-100 עד 200, השוואה עד מיליון</div>
-                      <div><strong>מתקדם:</strong> חיבור/חיסור עד 10000, כפל עד 25×25 (כולל כפל במאונך), חילוק עד 1000 (כולל חילוק ארוך), שברים מכנה עד 8, עיגול עד 9999 למאות, סימני התחלקות ב-3,6,9, מספרים ראשוניים עד 500, חזקות בסיס עד 10^3, אומדן, תכונות 0 ו-1, גורמים/כפולות עד 500, השוואה עד מיליון</div>
+                      <div><strong>Regular:</strong> addition/subtraction from 1,000 to 5,000, multiplication from 20×20 to 30×30 (including column multiplication), division from 200 to 500 (including long division), fractions with denominators from 6 to 8, rounding from 999 to the nearest ten and up to 9,999 to the nearest hundred, divisibility rules by 3, 6, 9, prime numbers from 100 to 200, powers with base up to 10^3, estimation, properties of 0 and 1, factors/multiples from 100 to 200, comparison up to one million</div>
+                      <div><strong>Advanced:</strong> addition/subtraction up to 10,000, multiplication up to 25×25 (including column multiplication), division up to 1,000 (including long division), fractions with denominators up to 8, rounding up to 9,999 to the nearest hundred, divisibility rules by 3, 6, 9, prime numbers up to 500, powers with base up to 10^3, estimation, properties of 0 and 1, factors/multiples up to 500, comparison up to one million</div>
                     </div>
                 </div>
               </div>
 
               {/* */}
               <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h2 className="text-2xl font-bold mb-3">כיתה ה'</h2>
-                <h3 className="text-lg font-semibold mb-2">נושאים זמינים:</h3>
+                <h2 className="text-2xl font-bold mb-3">Grade 5</h2>
+                <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
                 <ol className="list-decimal pr-6 space-y-1 mb-4">
-                  <li>חיבור</li>
-                  <li>חיסור</li>
-                  <li>כפל</li>
-                  <li>חילוק - כולל חילוק במספר דו-ספרתי</li>
-                  <li>שברים - כולל צמצום, הרחבה, חיבור וחיסור, מספרים מעורבים</li>
-                  <li>אחוזים</li>
-                  <li>סדרות</li>
-                  <li>עשרוניים</li>
-                  <li>עיגול</li>
-                  <li>אומדן תוצאות של פעולות</li>
-                  <li>משוואות</li>
-                  <li>השוואה</li>
-                  <li>תחושת מספר</li>
-                  <li>גורמים וכפולות</li>
-                  <li>בעיות מילוליות - כולל ממוצע</li>
-                  <li>מעורב</li>
+                  <li>Addition</li>
+                  <li>Subtraction</li>
+                  <li>Multiplication</li>
+                  <li>Division - including division by a two-digit number</li>
+                  <li>Fractions - including simplifying, expanding, addition and subtraction, mixed numbers</li>
+                  <li>Percentages</li>
+                  <li>Sequences</li>
+                  <li>Decimals</li>
+                  <li>Rounding</li>
+                  <li>Estimating the results of operations</li>
+                  <li>Equations</li>
+                  <li>Comparison</li>
+                  <li>Number sense</li>
+                  <li>Factors and multiples</li>
+                  <li>Word problems - including averages</li>
+                  <li>Mixed</li>
                 </ol>
                 <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                  <h4 className="font-semibold mb-2">רמות תרגול (רגיל / מתקדם):</h4>
+                  <h4 className="font-semibold mb-2">Practice levels (regular / advanced):</h4>
                   <div className="text-sm space-y-2">
-                      <div><strong>רגיל:</strong> חיבור/חיסור מ-10000 עד 50000, כפל מ-30×30 עד 50×50, שברים (כולל מספרים מעורבים), אחוזים בסיס מ-400 עד 1000, אומדן, בעיות מילוליות מ-10000 עד 50000</div>
-                      <div><strong>מתקדם:</strong> חיבור/חיסור עד 100000, כפל עד 99×99, שברים (כולל מספרים מעורבים), אחוזים בסיס עד 2000, אומדן, בעיות מילוליות עד 100000, מספרים שליליים</div>
+                      <div><strong>Regular:</strong> addition/subtraction from 10,000 to 50,000, multiplication from 30×30 to 50×50, fractions (including mixed numbers), percentages with a base from 400 to 1,000, estimation, word problems from 10,000 to 50,000</div>
+                      <div><strong>Advanced:</strong> addition/subtraction up to 100,000, multiplication up to 99×99, fractions (including mixed numbers), percentages with a base up to 2,000, estimation, word problems up to 100,000, negative numbers</div>
                     </div>
                 </div>
               </div>
 
               {/* */}
               <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
-                <h2 className="text-2xl font-bold mb-3">כיתה ו'</h2>
-                <h3 className="text-lg font-semibold mb-2">נושאים זמינים:</h3>
+                <h2 className="text-2xl font-bold mb-3">Grade 6</h2>
+                <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
                 <ol className="list-decimal pr-6 space-y-1 mb-4">
-                  <li>חיבור</li>
-                  <li>חיסור</li>
-                  <li>כפל</li>
-                  <li>חילוק</li>
-                  <li>שברים - כולל כפל וחילוק שברים, שבר כמנת חילוק</li>
-                  <li>אחוזים</li>
-                  <li>יחס</li>
-                  <li>סדרות</li>
-                  <li>עשרוניים - כולל כפל וחילוק ב-10/100, שבר עשרוני מחזורי</li>
-                  <li>עיגול</li>
-                  <li>קנה מידה - במפות ובמודלים</li>
-                  <li>משוואות</li>
-                  <li>השוואה</li>
-                  <li>תחושת מספר</li>
-                  <li>גורמים וכפולות</li>
-                  <li>בעיות מילוליות</li>
-                  <li>מעורב</li>
+                  <li>Addition</li>
+                  <li>Subtraction</li>
+                  <li>Multiplication</li>
+                  <li>Division</li>
+                  <li>Fractions - including multiplying and dividing fractions, fractions as division quotients</li>
+                  <li>Percentages</li>
+                  <li>Ratio</li>
+                  <li>Sequences</li>
+                  <li>Decimals - including multiplying and dividing by 10/100, repeating decimals</li>
+                  <li>Rounding</li>
+                  <li>Scale - on maps and models</li>
+                  <li>Equations</li>
+                  <li>Comparison</li>
+                  <li>Number sense</li>
+                  <li>Factors and multiples</li>
+                  <li>Word problems</li>
+                  <li>Mixed</li>
                 </ol>
                 <div className="bg-white/80 border border-slate-200 p-3 rounded-lg mb-3 shadow-sm">
-                  <h4 className="font-semibold mb-2">רמות תרגול (רגיל / מתקדם):</h4>
+                  <h4 className="font-semibold mb-2">Practice levels (regular / advanced):</h4>
                   <div className="text-sm space-y-2">
-                      <div><strong>רגיל:</strong> חיבור/חיסור מ-50000 עד 100000, כפל מ-100×100 עד 200×200, חילוק במספר דו-ספרתי, שברים (כולל כפל/חילוק, שבר כמנת חילוק), אחוזים בסיס מ-1000 עד 2000, עשרוניים (כולל כפל/חילוק ב-10/100, שבר מחזורי), קנה מידה, בעיות מילוליות מ-50000 עד 100000</div>
-                      <div><strong>מתקדם:</strong> חיבור/חיסור עד 200000, כפל עד 500×500, חילוק במספר דו-ספרתי, שברים (כולל כפל/חילוק, שבר כמנת חילוק), אחוזים בסיס עד 5000, עשרוניים (כולל כפל/חילוק ב-10/100, שבר מחזורי), קנה מידה, בעיות מילוליות עד 200000, מספרים שליליים</div>
+                      <div><strong>Regular:</strong> addition/subtraction from 50,000 to 100,000, multiplication from 100×100 to 200×200, division by a two-digit number, fractions (including multiplication/division, fractions as division quotients), percentages with a base from 1,000 to 2,000, decimals (including multiplication/division by 10/100, repeating decimals), scale, word problems from 50,000 to 100,000</div>
+                      <div><strong>Advanced:</strong> addition/subtraction up to 200,000, multiplication up to 500×500, division by a two-digit number, fractions (including multiplication/division, fractions as division quotients), percentages with a base up to 5,000, decimals (including multiplication/division by 10/100, repeating decimals), scale, word problems up to 200,000, negative numbers</div>
                     </div>
                 </div>
               </div>
 
               {/* */}
               <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg">
-                <h3 className="text-xl font-bold mb-3 text-center">סיכום כללי</h3>
+                <h3 className="text-xl font-bold mb-3 text-center">General summary</h3>
                 <p className="text-center">
-                  המערכת מותאמת לפי כיתה, נושא ורמת תרגול: <strong>6 כיתות</strong>, <strong>רגיל / מתקדם</strong>, והנושאים כפי שמופיעים למעלה ובדף החשבון. בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.
+                  The system is tailored by grade, topic, and practice level: <strong>6 grades</strong>, <strong>regular / advanced</strong>, and the topics shown above and on the Math page. Aligned with the topics commonly taught in elementary schools.
                 </p>
               </div>
             </div>

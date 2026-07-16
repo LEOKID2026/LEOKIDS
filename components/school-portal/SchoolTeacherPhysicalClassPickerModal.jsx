@@ -1,6 +1,6 @@
 import { ReportModalFrame } from "../reporting/ReportModalFrame.jsx";
 import { SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi";
-import { schoolSubjectLabelHe, SCHOOL_VIEW_CLASS_REPORT, SCHOOL_STUDENTS_IN_CLASS } from "../../lib/school-portal/school-ui.he.js";
+import { schoolSubjectLabelHe, SCHOOL_VIEW_CLASS_REPORT, SCHOOL_STUDENTS_IN_CLASS } from "../../lib/school-portal/school-ui.js";
 
 /**
  * Subject picker when a teacher teaches multiple subjects in one physical class.
@@ -41,7 +41,7 @@ export default function SchoolTeacherPhysicalClassPickerModal({
             <p className="font-medium text-white">{schoolSubjectLabelHe(cls.subjectFocus)}</p>
             <p className="text-sm text-white/55">
               {cls.memberCount ?? 0} {SCHOOL_STUDENTS_IN_CLASS}
-              {cls.activityCount != null ? ` · ${cls.activityCount} פעילויות` : ""}
+              {cls.activityCount != null ? ` · ${cls.activityCount} activities` : ""}
             </p>
             <div className="flex flex-wrap gap-2 justify-end">
               <button

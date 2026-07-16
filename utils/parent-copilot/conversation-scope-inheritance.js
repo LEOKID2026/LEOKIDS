@@ -80,7 +80,7 @@ export function tryResolveInheritedScope(params) {
     const label =
       String(hit?.tr?.displayName || "").trim() ||
       String(conv?.lastScopeLabelHe || "").trim() ||
-      "נושא";
+      "Topic";
     return {
       resolutionStatus: "resolved",
       scope: {

@@ -31,20 +31,20 @@ function hasPattern(s) {
 
 function formatQuestionsText(n) {
   const q = Math.max(0, Math.round(Number(n) || 0));
-  if (q === 1) return "שאלה אחת";
-  return `${q} שאלות`;
+  if (q === 1) return "1 question";
+  return `${q} questions`;
 }
 
 function formatCorrectText(n) {
   const c = Math.max(0, Math.round(Number(n) || 0));
-  if (c === 1) return "תשובה אחת נכונה";
-  return `${c} תשובות נכונות`;
+  if (c === 1) return "1 correct answer";
+  return `${c} correct answers`;
 }
 
 function formatWrongText(n) {
   const w = Math.max(0, Math.round(Number(n) || 0));
-  if (w === 1) return "תשובה אחת שגויה";
-  return `${w} תשובות שגויות`;
+  if (w === 1) return "1 wrong answer";
+  return `${w} wrong answers`;
 }
 
 function hasBreakdown(s) {
@@ -69,28 +69,28 @@ function renderTopicDataLine(s) {
   const topic = s.topicName;
   const qText = formatQuestionsText(s.questions);
   if (hasBreakdown(s)) {
-    let line = `הנתונים: נפתרו ${qText} בנושא ${topic}, מתוכן ${formatCorrectText(s.correct)} ו-${formatWrongText(s.wrong)}.`;
+    let line = `The data: ${qText} solved in ${topic}, of which ${formatCorrectText(s.correct)} and ${formatWrongText(s.wrong)}.`;
     if (hasReliableAccuracy(s) && s.accuracy > 0) {
-      line += ` הדיוק הוא ${s.accuracy}%.`;
+      line += ` Accuracy is ${s.accuracy}%.`;
     }
     return line;
   }
   if (hasReliableAccuracy(s) && s.accuracy > 0) {
-    return `הנתונים: נפתרו ${qText} בנושא ${topic}, והדיוק הוא ${s.accuracy}%.`;
+    return `The data: ${qText} solved in ${topic}, and accuracy is ${s.accuracy}%.`;
   }
-  return `הנתונים: נפתרו ${qText} בנושא ${topic}.`;
+  return `The data: ${qText} solved in ${topic}.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderTopicPatternLine(s) {
   if (!hasPattern(s)) return "";
-  return `הטעות שחוזרת: ${s.detectedPattern}.`;
+  return `The recurring mistake: ${s.detectedPattern}.`;
 }
 
 /** @param {string} base @param {TopicOwnerCopySlots} s */
 function appendPatternToSnapshot(base, s) {
   if (!hasPattern(s)) return base;
-  return `${base} הטעות שחוזרת: ${s.detectedPattern}.`;
+  return `${base} The recurring mistake: ${s.detectedPattern}.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -99,9 +99,9 @@ function renderDifficultyObservedBase(s) {
   const qText = formatQuestionsText(s.questions);
   let base;
   if (s.decisionCode === "clear_topic_gap") {
-    base = `ב${tn} כדאי להתמקד עכשיו. נפתרו ${qText}, והדיוק הוא ${s.accuracy}%.`;
+    base = `${tn} is worth focusing on now. ${qText} solved, and accuracy is ${s.accuracy}%.`;
   } else {
-    base = `ב${tn} יש סימן לנושא שצריך חיזוק. נפתרו ${qText}, והדיוק הוא ${s.accuracy}%.`;
+    base = `${tn} shows a sign of a topic that needs reinforcement. ${qText} solved, and accuracy is ${s.accuracy}%.`;
   }
   return appendPatternToSnapshot(base, s);
 }
@@ -109,9 +109,9 @@ function renderDifficultyObservedBase(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedIdentified(s) {
   if (hasPattern(s)) {
-    return `מה רואים: ב${s.topicName} יש כמה טעויות שחוזרות סביב אותו רעיון.`;
+    return `What we see: in ${s.topicName} there are a few mistakes that repeat around the same idea.`;
   }
-  return `מה רואים: ב${s.topicName} יש קושי לפי השאלות שנפתרו והדיוק.`;
+  return `What we see: in ${s.topicName} there's difficulty based on the questions solved and the accuracy.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -127,50 +127,50 @@ function renderDifficultyObservedPattern(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedMeaning(s) {
   if (s.decisionCode === "clear_topic_gap") {
-    return `מה זה אומר: כנראה לא מדובר בטעות חד-פעמית. כדאי לחזור לבסיס של ${s.topicName} לפני שממשיכים.`;
+    return `What it means: this probably isn't a one-time mistake. It's worth going back to the basics of ${s.topicName} before moving on.`;
   }
-  return `מה זה אומר: הילד מצליח בחלק מהשאלות, אבל ${s.topicName} עדיין לא יציב מספיק.`;
+  return `What it means: the child succeeds on some of the questions, but ${s.topicName} still isn't stable enough.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedHomeAction(s) {
   if (hasPattern(s)) {
-    return `מה כדאי לעשות ביחד: לפתור 5–8 שאלות קצרות בנושא ${s.topicName}. אחרי כל טעות לעצור, לבקש מהילד להסביר איך פתר, ולשים לב במיוחד ל-${s.detectedPattern}.`;
+    return `What to do together: solve 5-8 short questions in ${s.topicName}. After each mistake, pause, ask the child to explain how they solved it, and pay special attention to ${s.detectedPattern}.`;
   }
-  return `מה כדאי לעשות ביחד: לפתור 5–8 שאלות קצרות בנושא ${s.topicName}. אחרי כל טעות לעצור ולבקש מהילד להסביר איך פתר.`;
+  return `What to do together: solve 5-8 short questions in ${s.topicName}. After each mistake, pause and ask the child to explain how they solved it.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedStepLabel(s) {
-  if (s.decisionCode === "clear_topic_gap") return "חיזוק בסיסי";
-  return "חיזוק באותה רמה";
+  if (s.decisionCode === "clear_topic_gap") return "Basic reinforcement";
+  return "Reinforcement at the same level";
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedInterventionPlan(s) {
   if (hasPattern(s)) {
-    return `בשבוע הקרוב מומלץ להתמקד ב${s.topicName} באותה רמת קושי. התחילו בשאלות קצרות, בדקו במיוחד את הדפוס שחוזר בטעויות (${s.detectedPattern}), ורק אחרי שיפור בדיוק עברו לשאלות מורכבות יותר.`;
+    return `In the coming week it's recommended to focus on ${s.topicName} at the same difficulty level. Start with short questions, pay special attention to the recurring mistake pattern (${s.detectedPattern}), and only move to more complex questions after accuracy improves.`;
   }
-  return `בשבוע הקרוב מומלץ להתמקד ב${s.topicName} באותה רמת קושי. התחילו בשאלות קצרות, בדקו את דרך הפתרון, ורק אחרי שיפור בדיוק עברו לשאלות מורכבות יותר.`;
+  return `In the coming week it's recommended to focus on ${s.topicName} at the same difficulty level. Start with short questions, check the solving method, and only move to more complex questions after accuracy improves.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedDoNow(s) {
   if (hasPattern(s)) {
-    return `היום כדאי לפתור יחד 5 שאלות בנושא ${s.topicName}. אחרי כל שאלה בקשו מהילד להסביר את הדרך, ושימו לב במיוחד לדפוס: ${s.detectedPattern}.`;
+    return `Today, solve 5 questions in ${s.topicName} together. After each question, ask the child to explain the method, and pay special attention to the pattern: ${s.detectedPattern}.`;
   }
-  return `היום כדאי לפתור יחד 5 שאלות בנושא ${s.topicName}. אחרי כל שאלה בקשו מהילד להסביר את הדרך, ולא רק לסמן תשובה.`;
+  return `Today, solve 5 questions in ${s.topicName} together. After each question, ask the child to explain the method, not just mark an answer.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPositiveObservedBase(s) {
   const qText = formatQuestionsText(s.questions);
-  return `ב${s.topicName} נראית הצלחה טובה. נפתרו ${qText}, והדיוק הוא ${s.accuracy}%.`;
+  return `${s.topicName} shows good success. ${qText} solved, and accuracy is ${s.accuracy}%.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPositiveObservedIdentified(s) {
-  return `מה רואים: ב${s.topicName} נראית הצלחה טובה בשאלות שנפתרו.`;
+  return `What we see: ${s.topicName} shows good success on the questions solved.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -180,36 +180,36 @@ function renderPositiveObservedData(s) {
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPositiveObservedMeaning(_s) {
-  return `מה זה אומר: ${_s.topicName} נראה יציב יחסית עכשיו. כדאי לשמור עליו עם תרגול קצר מדי פעם.`;
+  return `What it means: ${_s.topicName} looks relatively stable right now. It's worth maintaining it with short practice now and then.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPositiveObservedHomeAction(s) {
-  return `מה כדאי לעשות ביחד: לפתור מדי פעם כמה שאלות קצרות בנושא ${s.topicName}, כדי לשמור על רצף וביטחון.`;
+  return `What to do together: solve a few short questions in ${s.topicName} now and then, to keep up momentum and confidence.`;
 }
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPositiveObservedStepLabel(_s) {
-  return "שימור בתרגול קצר";
+  return "Maintain with short practice";
 }
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPositiveObservedCaution(_s) {
-  return "גם כשנראית הצלחה, כדאי לשמור על תרגול קצר מדי פעם כדי לוודא שהנושא נשאר יציב.";
+  return "Even when success looks good, it's worth keeping up short practice now and then to make sure the topic stays stable.";
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderInitialTopicDataBase(s) {
   const tn = s.topicName;
   if (s.questions === 1) {
-    return `ב${tn} יש עדיין שאלה אחת בלבד. זו תמונה ראשונית בלבד.`;
+    return `${tn} still has only 1 question so far. This is only an initial picture.`;
   }
-  return `ב${tn} יש עדיין מעט שאלות: ${s.questions}. זו תמונה ראשונית בלבד.`;
+  return `${tn} still has few questions: ${s.questions}. This is only an initial picture.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderInitialTopicDataIdentified(s) {
-  return `מה רואים: יש כרגע מעט שאלות בנושא ${s.topicName}.`;
+  return `What we see: there are currently few questions in ${s.topicName}.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -219,22 +219,22 @@ function renderInitialTopicDataData(s) {
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderInitialTopicDataMeaning(_s) {
-  return "מה זה אומר: עדיין מוקדם להסיק מסקנה ברורה. צריך עוד כמה שאלות בנושא.";
+  return "What it means: it's still too early to draw a clear conclusion. A few more questions on this topic are needed.";
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderInitialTopicDataHomeAction(s) {
-  return `מה כדאי לעשות ביחד: לפתור עוד כמה שאלות קצרות בנושא ${s.topicName}, בלי לחץ, כדי לקבל תמונה ברורה יותר.`;
+  return `What to do together: solve a few more short questions in ${s.topicName}, without pressure, to get a clearer picture.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPracticeFocusBase(s) {
-  return `ב${s.topicName} היו כמה טעויות, אבל עדיין אין מספיק שאלות כדי לדעת אם זה חוזר בקביעות.`;
+  return `${s.topicName} had a few mistakes, but there still aren't enough questions to know whether this repeats consistently.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPracticeFocusIdentified(s) {
-  return `מה רואים: היו כמה טעויות בנושא ${s.topicName}, אבל עדיין אין מספיק שאלות כדי לדעת אם זה דפוס קבוע.`;
+  return `What we see: there were a few mistakes in ${s.topicName}, but there still aren't enough questions to know if this is a steady pattern.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -244,26 +244,26 @@ function renderPracticeFocusData(s) {
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPracticeFocusMeaning(_s) {
-  return "מה זה אומר: כדאי להוסיף מעט תרגול ולראות אם אותן טעויות חוזרות.";
+  return "What it means: it's worth adding a bit more practice and seeing whether the same mistakes repeat.";
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPracticeFocusHomeAction(s) {
-  return `מה כדאי לעשות ביחד: לתרגל כמה שאלות קצרות ב${s.topicName}, ולבקש מהילד להסביר את הדרך בקול.`;
+  return `What to do together: practice a few short questions in ${s.topicName}, and ask the child to explain the method out loud.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedBase(s) {
-  const base = `ב${s.topicName} יש גם תשובות נכונות וגם טעויות שחוזרות. כדאי לחזק נקודתית בלי לקפוץ רמה מהר מדי.`;
+  const base = `${s.topicName} has both correct answers and recurring mistakes. It's worth reinforcing on target without jumping a level too fast.`;
   return appendPatternToSnapshot(base, s);
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedIdentified(s) {
   if (hasPattern(s)) {
-    return `מה רואים: ב${s.topicName} יש גם הצלחות וגם טעויות שחוזרות.`;
+    return `What we see: ${s.topicName} has both successes and recurring mistakes.`;
   }
-  return `מה רואים: ב${s.topicName} יש גם הצלחות וגם טעויות שדורשות חיזוק.`;
+  return `What we see: ${s.topicName} has both successes and mistakes that need reinforcement.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -278,12 +278,12 @@ function renderMixedPattern(s) {
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedMeaning(s) {
-  return `מה זה אומר: יש בסיס מסוים, אבל ${s.topicName} עדיין לא יציב לגמרי.`;
+  return `What it means: there's a certain foundation, but ${s.topicName} still isn't fully stable.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedHomeAction(s) {
-  return `מה כדאי לעשות ביחד: לבחור 5–8 שאלות בנושא ${s.topicName}, לשלב שאלות קלות ובינוניות, ולעצור בכל טעות כדי להבין מה קרה.`;
+  return `What to do together: pick 5-8 questions in ${s.topicName}, mix easy and medium questions, and pause at every mistake to understand what happened.`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -300,10 +300,10 @@ function renderNarrativeWe0Snapshot(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderNarrativeWe0Caution(s) {
   if (s.decisionCode === "early_direction_only") {
-    return "זה עדיין מידע ראשוני - כדאי להוסיף עוד כמה שאלות ולבדוק אם הכיוון נשמר.";
+    return "This is still initial information - it's worth adding a few more questions and checking whether the direction holds.";
   }
   if (s.decisionCode === "clear_topic_gap") {
-    return "כאן כבר לא מדובר רק במידע ראשוני; כדאי לחזור ולחזק את הנושא בצורה ממוקדת.";
+    return "This is no longer just initial information; it's worth going back and reinforcing this topic in a focused way.";
   }
   return "";
 }
@@ -324,9 +324,9 @@ function renderNarrativeWe2Snapshot(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderNarrativeWe2Caution(s) {
   if (hasPattern(s)) {
-    return `כדאי לבדוק אחרי עוד תרגול קצר אם הדפוס (${s.detectedPattern}) ממשיך להופיע או מתחיל להיעלם.`;
+    return `It's worth checking after a bit more short practice whether the pattern (${s.detectedPattern}) keeps showing up or starts to fade.`;
   }
-  return "כדאי לבדוק אחרי עוד תרגול קצר אם הדיוק משתפר והנושא נהיה יציב יותר.";
+  return "It's worth checking after a bit more short practice whether accuracy improves and the topic becomes more stable.";
 }
 
 /** @type {Record<string, (s: TopicOwnerCopySlots) => string>} */

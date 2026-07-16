@@ -62,24 +62,24 @@ export default function ParentGoogleOAuthCallbackPage() {
       router.replace(finished.redirectTo || "/parent/dashboard");
     })().catch(() => {
       clearParentGoogleOAuthFlow();
-      setMessage("שגיאה בהתחברות עם Google. נסו שוב.");
+      setMessage("Could not sign in with Google. Please try again.");
     });
   }, [router]);
 
   return (
     <Layout {...layoutProps}>
-      <div className="max-w-md mx-auto px-4 py-10" dir="rtl" lang="he">
+      <div className="max-w-md mx-auto px-4 py-10" dir="ltr" lang="en">
         {message ? (
           <div className="space-y-3">
             <p className={T.error} role="alert">
               {message}
             </p>
             <Link href="/parent/login" className={T.link}>
-              חזרה לכניסת הורים
+              Back to parent sign-in
             </Link>
           </div>
         ) : (
-          <PortalLoadingPanel isBright={isBright} message="משלימים התחברות עם Google..." />
+          <PortalLoadingPanel isBright={isBright} message="Finishing Google sign-in..." />
         )}
       </div>
     </Layout>

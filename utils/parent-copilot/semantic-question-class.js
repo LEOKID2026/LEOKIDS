@@ -90,7 +90,7 @@ export function detectAggregateQuestionClass(utterance) {
   ) {
     return "period_highlight";
   }
-  if (/בולט|בולטים/.test(t) && (t.includes("דוח") || t.includes("למידה"))) {
+  if (/בולט|בולטים/.test(t) && (t.includes("report") || t.includes("learning"))) {
     return "period_highlight";
   }
 
@@ -103,7 +103,7 @@ export function detectAggregateQuestionClass(utterance) {
   if (/מה\s+השתפר|איפה\s+השתפר|שיפור|התקדמות|התחזק/.test(t)) return "improved";
   if (/מה\s+דורש\s+תשומת\s+לב|דורש\s+תשומת\s+לב|מה\s+צריך\s+חיזוק|צריך\s+חיזוק/.test(t)) return "needs_attention";
   if (/מה\s+עדיין\s+לא\s+ברור|עדיין\s+לא\s+ברור|מה\s+לא\s+ברור/.test(t)) return "still_unclear";
-  if (/הכי\s+יציב|יציב\s+ביותר|יציבות|לא\s+יציב|stable|unstable/.test(t) && (hasSubjectWord || t.includes("מקצוע"))) {
+  if (/הכי\s+יציב|יציב\s+ביותר|יציבות|לא\s+יציב|stable|unstable/.test(t) && (hasSubjectWord || t.includes("Subject"))) {
     return "most_stable";
   }
 
@@ -114,7 +114,7 @@ export function detectAggregateQuestionClass(utterance) {
   if (/מקצוע\s+החלש|המקצוע\s+החלש|חלש\s+ביותר/.test(t)) return "weakest_subject";
 
   if (/(הכי|הכי\s+)(חזק|חזקה|חזקים|טוב|טובה|טובים)/.test(t) && hasSubjectWord) return "strongest_subject";
-  if (/מקצוע\s+החזק|המקצוע\s+החזק|חזק\s+ביותר|הכי\s+חזק/.test(t) && (hasSubjectWord || t.includes("מקצוע"))) {
+  if (/מקצוע\s+החזק|המקצוע\s+החזק|חזק\s+ביותר|הכי\s+חזק/.test(t) && (hasSubjectWord || t.includes("Subject"))) {
     return "strongest_subject";
   }
   if (/מה\s+המקצוע\s+החזק|איזה\s+מקצוע\s+החזק/.test(t)) return "strongest_subject";

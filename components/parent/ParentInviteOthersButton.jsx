@@ -5,7 +5,7 @@ import {
   COPY_INVITE_ERROR_MESSAGE_HE,
   COPY_INVITE_SUCCESS_MESSAGE_HE,
   copyTextToClipboard,
-} from "../../lib/ui/copy-confirm-message.he.js";
+} from "../../lib/ui/copy-confirm-message.js";
 
 /**
  * Share invite — copy message + centered popup confirmation.
@@ -13,7 +13,7 @@ import {
  */
 export default function ParentInviteOthersButton({
   bright = false,
-  label = "הזמן הורים נוספים",
+  label = "Invite other parents",
   className,
   inline = false,
 }) {

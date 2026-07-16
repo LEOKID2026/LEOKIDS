@@ -105,7 +105,7 @@ export default function StudentSoloGamesPage() {
                       <div className={GH.cardEmoji}>{SOLO_DEV_PROTOTYPES_HUB.emoji}</div>
                       <div>
                         <h2 className={GH.cardTitle}>{SOLO_DEV_PROTOTYPES_HUB.titleHe}</h2>
-                        <p className={GH.cardMeta}>פיתוח · בדיקות פנימיות</p>
+                        <p className={GH.cardMeta}>Dev · internal testing</p>
                       </div>
                     </div>
                     <p className={`${GH.cardBlurb} flex-1`}>{SOLO_DEV_PROTOTYPES_HUB.blurbHe}</p>

@@ -48,75 +48,79 @@ export function buildLearningMemoryPhase9(ctx) {
     stabilizationState = "unknown";
     transferReadiness = "not_ready";
     independenceProgress = q < 8 ? "not_visible" : "unknown";
-    memEvidence.push("אין עדיין מספיק ציר זמן או ביטחון מגמה לסיכום יציבות.");
+    memEvidence.push("There is not yet enough timeline or trend confidence for a stability summary.");
   } else if (negAcc && (negTrendRecent || periodReg) && q >= 14) {
     learningStage = "regression_signal";
     retentionRisk = "high";
     stabilizationState = "unstable";
     transferReadiness = "not_ready";
     independenceProgress = indepDown ? "limited" : "unknown";
-    memEvidence.push("מגמת דיוק שלילית עם סימן לירידה - לא קופצים קדימה.");
+    memEvidence.push("Negative accuracy trend with a decline signal - don't jump ahead.");
   } else if (fragileProg || (behaviorType === "fragile_success" && indepDown && posAcc)) {
     learningStage = "fragile_retention";
     retentionRisk = "moderate";
     stabilizationState = "unstable";
     transferReadiness = "limited";
     independenceProgress = "limited";
-    memEvidence.push("הצלחה חלקית שלא נשמרת בעצמאות - סיכון שימור בינוני.");
+    memEvidence.push("Partial success that isn't held independently - moderate retention risk.");
   } else if (behaviorType === "stable_mastery" && acc >= 82 && q >= 16 && !indepDown && !rf.hintDependenceRisk) {
     learningStage = "stable_control";
     retentionRisk = "low";
     stabilizationState = "stable";
     transferReadiness = indepUp || String(td.independenceDirection || "") === "flat" ? "emerging" : "limited";
     independenceProgress = indepUp ? "improving" : "stable";
-    memEvidence.push("דיוק גבוה יחסית עם יציבות - נראה שליטה מתייצבת.");
+    memEvidence.push("Relatively high accuracy with stability - control looks like it is settling.");
   } else if (posAcc && indepUp && acc >= 78 && q >= 18 && !rf.hintDependenceRisk) {
     learningStage = "transfer_emerging";
     retentionRisk = "low";
     stabilizationState = "forming";
     transferReadiness = "emerging";
     independenceProgress = "improving";
-    memEvidence.push("מגמה חיובית בעצמאות ובדיוק - התחלת העברה לתנאים קשים יותר.");
+    memEvidence.push("Positive trend in independence and accuracy - starting to transfer to harder conditions.");
   } else if (q < 14 || cs === "tentative") {
     learningStage = "early_acquisition";
     retentionRisk = wr > 0.25 ? "moderate" : "low";
     stabilizationState = "unstable";
     transferReadiness = "not_ready";
     independenceProgress = "not_visible";
-    memEvidence.push("עדיין לא נצבר מספיק ניסיון ארוך בטווח כדי לדבר על יציבות מלאה - זה בסדר.");
+    memEvidence.push("Not enough longer experience in the range yet to talk about full stability - that's okay.");
   } else if (acc >= 70 && acc < 82 && !negAcc) {
     learningStage = "partial_stabilization";
     retentionRisk = fragileProg || rf.hintDependenceRisk ? "moderate" : "low";
     stabilizationState = "forming";
     transferReadiness = rf.hintDependenceRisk ? "not_ready" : "limited";
     independenceProgress = indepDown ? "limited" : indepUp ? "improving" : "stable";
-    memEvidence.push("דיוק בינוני טוב - יציבות חלקית בלי אישור להעברה מלאה.");
+    memEvidence.push("Solid moderate accuracy - partial stability without confirmation of full transfer.");
   } else {
     learningStage = "partial_stabilization";
     retentionRisk = "moderate";
     stabilizationState = "forming";
     transferReadiness = "limited";
     independenceProgress = indepDown ? "limited" : "stable";
-    memEvidence.push("תמונה אמצעית - ממשיכים לעקוב לפני שינוי תנאים.");
+    memEvidence.push("Middle-of-the-road picture - keep watching before changing conditions.");
   }
 
   // Positive trend alone cannot be stable_control — already gated above with behavior + q + indep
   if (learningStage === "stable_control" && (q < 16 || acc < 82)) {
     learningStage = "partial_stabilization";
     transferReadiness = "limited";
-    memEvidence.push("הורדת דרגת בשלות: נפח/דיוק לא מספיקים ל«שליטה יציבה».");
+    memEvidence.push("Lowering maturity level: volume/accuracy are not enough for «stable control».");
   }
 
   if (rf.hintDependenceRisk && transferReadiness === "ready") {
     transferReadiness = "limited";
-    memEvidence.push("תלות ברמזים - לא מוכנים להעברה מלאה.");
+    memEvidence.push("Hint dependence - not ready for full transfer.");
   }
 
   const learningStageLabelHe =
     LEARNING_STAGE_LABEL_HE[learningStage] || LEARNING_STAGE_LABEL_HE.insufficient_longitudinal_evidence;
 
-  const memoryNarrativeHe = `${learningStageLabelHe}. שימור: ${
-    retentionRisk === "high" ? "לטפל בחזרה ובדיוק לפני הרחבה." : retentionRisk === "moderate" ? "לעקוב לפני שינוי רמה." : "אפשר קצב עקבי."
+  const memoryNarrativeHe = `${learningStageLabelHe}. Retention: ${
+    retentionRisk === "high"
+      ? "Address review and accuracy before expanding."
+      : retentionRisk === "moderate"
+        ? "Monitor before changing level."
+        : "A steady pace is fine."
   }`;
 
   const learningMemory = {

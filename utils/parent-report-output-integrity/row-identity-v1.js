@@ -168,7 +168,7 @@ export function classifyRowSectionPlacement(identity) {
 }
 
 /** @param {string} label */
-const COLLECT_MORE_DATA_HE = "לאסוף עוד מידע";
+const COLLECT_MORE_DATA_HE = "Collect more information";
 
 /**
  * @param {ReturnType<typeof buildRowIdentityV1>} identity
@@ -176,7 +176,7 @@ const COLLECT_MORE_DATA_HE = "לאסוף עוד מידע";
  */
 export function textImpliesThinDataMislabel(identity, text) {
   const t = String(text || "");
-  if (!t.includes(COLLECT_MORE_DATA_HE) && !/עדיין מוקדם לקבוע|אין מספיק מידע על המצב/u.test(t)) {
+  if (!t.includes(COLLECT_MORE_DATA_HE) && !t.includes("לאסוף עוד מידע") && !/עדיין מוקדם לקבוע|אין מספיק מידע על המצב|still too early to decide|not enough information about the situation/iu.test(t)) {
     return false;
   }
   return identity.hasTopicLevelEvidence && !identity.thinEvidenceDowngraded;

@@ -1,6 +1,6 @@
 /**
- * Phase 8 — תוכנית התערבות מיקרומבנית לשורת נושא (מבוססת Phase 7).
- * טהור לוגית; לא תלוי React.
+ * Phase 8 — micro intervention plan for a topic row (based on Phase 7).
+ * Pure logic; not React-dependent.
  */
 
 /**
@@ -30,7 +30,7 @@ export function buildInterventionPlanPhase8(ctx) {
   const conclusionStrength = String(ctx?.conclusionStrength || "moderate");
   const shouldAvoid = !!ctx?.shouldAvoidStrongConclusion;
   const sparse = (Number(ctx?.q) || 0) < 10 || String(ctx?.evidenceStrength || "") === "low";
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "the topic").trim();
 
   let interventionDurationBand /** @type {InterventionDurationBand} */ = "short";
   let interventionIntensity /** @type {InterventionIntensity} */ = "focused";
@@ -39,8 +39,8 @@ export function buildInterventionPlanPhase8(ctx) {
   let interventionGoal = "stabilize_signal";
   /** @type {string[]} */
   const stepsHe = [];
-  let interventionSuccessSignalHe = "עקביות קטנה: אותה רמה עם פחות טעויות חוזרות.";
-  let interventionStopSignalHe = "אם נוצר חוסר סבלנות או התנגדות - לעצור ולקצר עוד.";
+  let interventionSuccessSignalHe = "Small consistency: same level with fewer repeated mistakes.";
+  let interventionStopSignalHe = "If frustration or pushback shows up — stop and shorten further.";
   let doNowHe = "";
   let avoidNowHe = "";
 
@@ -52,93 +52,93 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionFormat = "observation_block";
     interventionParentEffort = "low";
     interventionGoal = "collect_evidence";
-    stepsHe.push(`לצפות ב 2–3 תרגולים קצרים בנושא ${displayName} באותה רמת קושי - לרשום רק האם הילד קורא את המשימה לפני מענה.`);
-    stepsHe.push("לא לשנות כיתה או רמה בבית בשלב זה.");
-    interventionSuccessSignalHe = "אחרי 2–3 מפגשים קצרים נראה אם הדפוס חוזר - אז אפשר להחמיר מיקוד.";
-    interventionStopSignalHe = "אם כל מפגש הופך למאבק - לצמצם אל 5–7 דקות ולחזור למחר.";
-    doNowHe = "תרגול קצר ומדיד: אותה משימה, אותה רמה, דגש על קריאה לפני תשובה.";
-    avoidNowHe = "לא לגזור מסקנות עמוקות ולא להחמיר רמה בגלל תוצאה בודדת.";
+    stepsHe.push(`Watch 2–3 short practice sessions on ${displayName} at the same difficulty — only note whether the child reads the task before answering.`);
+    stepsHe.push("Do not change grade or level at home at this stage.");
+    interventionSuccessSignalHe = "After 2–3 short sessions we can see if the pattern repeats — then tighten the focus.";
+    interventionStopSignalHe = "If every session turns into a struggle — cut to 5–7 minutes and try again tomorrow.";
+    doNowHe = "Short, measurable practice: same task, same level, emphasize reading before answering.";
+    avoidNowHe = "Do not draw deep conclusions or raise the level based on a single result.";
   } else if (rootCause === "speed_pressure") {
     interventionDurationBand = sparse ? "very_short" : "short";
     interventionIntensity = capAggressivePlan ? "light" : "focused";
     interventionFormat = capAggressivePlan ? "observation_block" : "guided_practice";
     interventionParentEffort = capAggressivePlan ? "low" : "medium";
     interventionGoal = "accuracy_over_speed";
-    stepsHe.push(`בנושא ${displayName} לבחור מצב רגוע (לא מרתון) לאותה רמת קושי - דיוק לפני שעון.`);
-    stepsHe.push("מטרה: שני ניסיונות זהים ברצף עם בדיקה קצרה לפני שליחה.");
-    interventionSuccessSignalHe = "כשהדיוק נשמר בלי לחץ זמן - אפשר לחזור בהדרגה למסלול מהיר יותר.";
-    interventionStopSignalHe = "אם הילד מזדרז שוב - לחזור לרגע לתרגול ללא טיימר.";
-    doNowHe = "תרגול אחד קצר בלי טיימר, עם עצירה לפני שליחה.";
-    avoidNowHe = "לא להפוך חולשה במהירות לירידת רמה בכל המקצוע ולא לדחוף שיאים.";
+    stepsHe.push(`On ${displayName}, choose a calm mode (not a marathon) at the same difficulty — accuracy before the clock.`);
+    stepsHe.push("Goal: two matching attempts in a row with a quick check before submitting.");
+    interventionSuccessSignalHe = "When accuracy holds without time pressure — gradually return to a faster track.";
+    interventionStopSignalHe = "If the child rushes again — briefly return to untimed practice.";
+    doNowHe = "One short untimed practice, with a pause before submitting.";
+    avoidNowHe = "Do not turn a speed weakness into a subject-wide level drop, and do not push for records.";
   } else if (rootCause === "instruction_friction") {
     interventionDurationBand = "very_short";
     interventionIntensity = "light";
     interventionFormat = "guided_practice";
     interventionParentEffort = "medium";
     interventionGoal = "clarity_first";
-    stepsHe.push(`משימה אחת בנושא ${displayName}: לקרוא יחד את הניסוח, לנסח במשפט מה מבקשים, ורק אז לפתור.`);
-    stepsHe.push("רמז אחד בלבד אחרי ניסיון עצמי קצר - לא שרשרת רמזים.");
-    interventionSuccessSignalHe = "כשהילד מתחיל לעצור לבד לפני תשובה - סימן שהעומס יורד.";
-    interventionStopSignalHe = "אם נשארים על רמזים - לקצר את המשימה ולחזור למחר.";
-    doNowHe = "משימה קצרה, ניסוח ברור, פחות הסברים ארוכים בזמן התרגול.";
-    avoidNowHe = "לא להסביר כל פריט במילים רבות כשהקושי הוא בהבנת המשימה.";
+    stepsHe.push(`One task on ${displayName}: read the wording together, say in one sentence what is asked, then solve.`);
+    stepsHe.push("Only one hint after a short independent try — not a chain of hints.");
+    interventionSuccessSignalHe = "When the child starts pausing alone before answering — the load is easing.";
+    interventionStopSignalHe = "If you stay stuck on hints — shorten the task and return tomorrow.";
+    doNowHe = "Short task, clear wording, fewer long explanations during practice.";
+    avoidNowHe = "Do not over-explain every item when the hard part is understanding the task.";
   } else if (rootCause === "weak_independence") {
     interventionDurationBand = "short";
     interventionIntensity = capAggressivePlan ? "light" : "focused";
     interventionFormat = "mixed";
     interventionParentEffort = capAggressivePlan ? "low" : "medium";
     interventionGoal = "fade_support";
-    stepsHe.push(`בנושא ${displayName}: שלב א׳ עם ליווי קצר, שלב ב׳ ניסיון עצמאי באותה משימה, השוואה בסוף.`);
-    stepsHe.push("להגדיל רק מעט את החלק העצמאי כשהצלחה קטנה חוזרת פעמיים.");
-    interventionSuccessSignalHe = "כשהילד מסיים שלב ב׳ לבד ברובו - אפשר להרחיב מעט.";
-    interventionStopSignalHe = "אם העצמאות יורדת והטעויות עולות - לחזור ליחס הכוונה גבוה יותר לשבוע.";
-    doNowHe = "להפריד בבירור בין \"ניסיון לבד\" לבין \"בדיקה יחד בסוף\".";
-    avoidNowHe = "לא לעבור למתקדם לפני שני מפגשים עקביים עם עצמאות סבירה.";
+    stepsHe.push(`On ${displayName}: stage A with brief support, stage B an independent try on the same task, then compare at the end.`);
+    stepsHe.push("Increase the independent part only a little when a small success repeats twice.");
+    interventionSuccessSignalHe = "When the child mostly finishes stage B alone — expand a little.";
+    interventionStopSignalHe = "If independence drops and mistakes rise — return to more guidance for a week.";
+    doNowHe = 'Clearly separate "try alone" from "check together at the end".';
+    avoidNowHe = "Do not move to advanced before two consistent sessions with reasonable independence.";
   } else if (rootCause === "knowledge_gap" && !capAggressivePlan) {
     interventionDurationBand = sparse ? "short" : "moderate";
     interventionIntensity = sparse ? "focused" : "targeted";
     interventionFormat = "guided_practice";
     interventionParentEffort = sparse ? "medium" : "high";
     interventionGoal = "core_skill_gap";
-    stepsHe.push(`בנושא ${displayName} לבחור 2–3 טעויות טיפוסיות ולחזור עליהן באותה רמה - לא להרחיב נושאים.`);
-    stepsHe.push("פעמיים בשבוע, 8–12 דקות - מספיק לביסוס אם עקבי.");
-    interventionSuccessSignalHe = "כשאותו סוג טעות נעלם בשני מפגשים רצופים - סימן לייצוב.";
-    interventionStopSignalHe = "אם אין שיפור אחרי שבועיים של עקביות - לעצור ולבחון רמה או ניסוח.";
-    doNowHe = "חזרה ממוקדת על טעויות דומות באותה רמת קושי.";
-    avoidNowHe = "לא לדלג על בסיס ולא לפתוח יותר מדי נושאים במקביל.";
+    stepsHe.push(`On ${displayName}, pick 2–3 typical mistakes and revisit them at the same level — do not expand topics.`);
+    stepsHe.push("Twice a week, 8–12 minutes — enough to consolidate if consistent.");
+    interventionSuccessSignalHe = "When that mistake type disappears across two sessions in a row — a sign of stabilization.";
+    interventionStopSignalHe = "If there is no improvement after two weeks of consistency — pause and review level or wording.";
+    doNowHe = "Focused review of similar mistakes at the same difficulty.";
+    avoidNowHe = "Do not skip foundations or open too many topics at once.";
   } else if (rootCause === "careless_execution") {
     interventionDurationBand = "very_short";
     interventionIntensity = "light";
     interventionFormat = "independent_practice";
     interventionParentEffort = "low";
     interventionGoal = "execution_habits";
-    stepsHe.push(`בנושא ${displayName} לבדוק לפני שליחה: ניסוח → תשובה → בדיקה מהירה (10 שניות).`);
-    interventionSuccessSignalHe = "פחות טעויות \"מוכרות\" באותו סוג משימה.";
-    interventionStopSignalHe = "אם הטעויות עמוקות יותר מרשלנות - לעבור לחיזוק מושגי.";
-    doNowHe = "כל משימה עם עצירת בדיקה קצרה לפני סיום.";
-    avoidNowHe = "לא להניח מיד שזה פער ידע עמוק כשיש שליטה חלקית.";
+    stepsHe.push(`On ${displayName}, check before submitting: wording → answer → quick review (10 seconds).`);
+    interventionSuccessSignalHe = 'Fewer "familiar" mistakes on the same task type.';
+    interventionStopSignalHe = "If mistakes run deeper than carelessness — shift to concept reinforcement.";
+    doNowHe = "Every task includes a short check pause before finishing.";
+    avoidNowHe = "Do not assume a deep knowledge gap when there is partial mastery.";
   } else if (rootCause === "mixed_signal" || rootCause === "early_stage_instability") {
     interventionDurationBand = "very_short";
     interventionIntensity = "light";
     interventionFormat = "observation_block";
     interventionParentEffort = "low";
     interventionGoal = "observe_and_stabilize";
-    stepsHe.push(`בנושא ${displayName} לשמור על אותה הגדרה ולתעד הצלחות קטנות - לא לשנות משתנים רבים.`);
-    interventionSuccessSignalHe = "כששני מפגשים רצופים נראים דומים - אפשר לבחור כיוון אחד.";
-    interventionStopSignalHe = "אם התמונה משתנה מאוד בין מפגשים - להישאר עם תרגול קצר ולשים לב, בלי שינוי גדול.";
-    doNowHe = "להמשיך באותה רמה ולבדוק את הדיוק אחרי כל מפגש.";
-    avoidNowHe = "לא לנעול הסבר יחיד כשיש אותות מנוגדים.";
+    stepsHe.push(`On ${displayName}, keep the same setup and note small wins — do not change many variables.`);
+    interventionSuccessSignalHe = "When two sessions in a row look similar — pick one direction.";
+    interventionStopSignalHe = "If the picture changes a lot between sessions — stay with short practice and watch, without a big change.";
+    doNowHe = "Continue at the same level and check accuracy after each session.";
+    avoidNowHe = "Do not lock onto a single explanation when signals conflict.";
   } else {
     interventionDurationBand = "short";
     interventionIntensity = capAggressivePlan ? "light" : "focused";
     interventionFormat = capAggressivePlan ? "observation_block" : "mixed";
     interventionParentEffort = capAggressivePlan ? "low" : "medium";
     interventionGoal = "balanced_support";
-    stepsHe.push(`בנושא ${displayName} תרגול קצר פעמיים בשבוע - מיקוד אחד לכל מפגש.`);
-    interventionSuccessSignalHe = "שיפור קטן ועקבי בדיוק או בפחות טעויות חוזרות.";
-    interventionStopSignalHe = "אם אין תנועה אחרי שבועיים - לעדכן את אופן התרגול.";
-    doNowHe = "תרגול קצר וקבוע סביב אותה רמה.";
-    avoidNowHe = "לא להעמיס יעדים גדולים כשהתמונה עדיין לא בשלה.";
+    stepsHe.push(`On ${displayName}, short practice twice a week — one focus per session.`);
+    interventionSuccessSignalHe = "Small, consistent improvement in accuracy or fewer repeated mistakes.";
+    interventionStopSignalHe = "If there is no movement after two weeks — update how practice is run.";
+    doNowHe = "Short, steady practice around the same level.";
+    avoidNowHe = "Do not pile on big goals while the picture is still forming.";
   }
 
   if (capAggressivePlan && interventionIntensity === "targeted") {
@@ -154,33 +154,34 @@ export function buildInterventionPlanPhase8(ctx) {
   const ls9 = String(p9?.learningStage || "");
   const rr9 = String(p9?.retentionRisk || "");
   if (mp9 === "concept_confusion" && stepsHe.length && !capAggressivePlan) {
-    stepsHe.push(`התאמה לדפוס: לבודד משפט מפתח אחד בנושא ${displayName} ולחזור עליו לפני הרחבה.`);
+    stepsHe.push(`Pattern fit: isolate one key sentence on ${displayName} and revisit it before expanding.`);
   } else if (mp9 === "procedure_break" && stepsHe.length) {
-    stepsHe.push(`התאמה לדפוס: לכתוב שלבביניים אחד בכל פעם - לא לדלג לתוצאה סופית מיד.`);
+    stepsHe.push("Pattern fit: write one intermediate step at a time — do not jump straight to the final answer.");
   } else if (mp9 === "speed_driven_error") {
-    if (doNowHe && !doNowHe.includes("טיימר")) doNowHe = `${doNowHe} בלי טיימר בשלב זה.`.trim();
+    if (doNowHe && !doNowHe.includes("timer") && !doNowHe.includes("untimed"))
+      doNowHe = `${doNowHe} No timer at this stage.`.trim();
   } else if (mp9 === "instruction_misread" && stepsHe.length) {
-    stepsHe.push("התאמה לדפוס: לקרוא את המשימה בקול ולנסח במילה אחת מה מבקשים - ואז לפתור.");
+    stepsHe.push("Pattern fit: read the task aloud and say in one word what is asked — then solve.");
   }
   if (ls9 === "fragile_retention" || ls9 === "regression_signal" || rr9 === "high") {
-    if (!avoidNowHe.includes("להרחיב") && !avoidNowHe.includes("קידום"))
-      avoidNowHe = `${avoidNowHe || "לא להעמיס."} לא להרחיב רמה לפני חיזוק חוזר קצר.`.trim();
+    if (!avoidNowHe.includes("expand") && !avoidNowHe.includes("advance"))
+      avoidNowHe = `${avoidNowHe || "Do not overload."} Do not expand level before a short refresh.`.trim();
   }
-  if (ls9 === "transfer_emerging" && doNowHe && !doNowHe.includes("עצמאות")) {
-    doNowHe = `${doNowHe} אפשר ניסיון עצמאי קצר ואז בדיקה יחד.`.trim();
+  if (ls9 === "transfer_emerging" && doNowHe && !doNowHe.includes("independent")) {
+    doNowHe = `${doNowHe} A short independent try, then check together, is fine.`.trim();
   }
 
   const interventionPlan = {
     version: 1,
     rootCause,
-    headlineHe: `תוכנית מיקרו לנושא ${displayName}`,
+    headlineHe: `Micro plan for ${displayName}`,
     stepsHe: [...stepsHe],
     cadenceHe:
       interventionDurationBand === "very_short"
-        ? "2–3 מפגשים קצרים בשבוע (5–8 דקות)"
+        ? "2–3 short sessions per week (5–8 minutes)"
         : interventionDurationBand === "short"
-          ? "2 מפגשים בשבוע (כ 8–12 דקות)"
-          : "2–3 מפגשים בשבוע (עד ~15 דקות)",
+          ? "2 sessions per week (about 8–12 minutes)"
+          : "2–3 sessions per week (up to ~15 minutes)",
   };
 
   const interventionPlanHe = [interventionPlan.headlineHe, ...stepsHe, interventionPlan.cadenceHe]

@@ -42,7 +42,7 @@ import {
   SC_FILTER_TEACHERS,
   SC_MESSAGES_EMPTY,
   SC_PAGE_MESSAGES_TITLE,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import SchoolInboxMessageCard from "../../components/school-portal/SchoolInboxMessageCard";
 import SchoolManagerMessageDetailContent from "../../components/school-portal/SchoolManagerMessageDetailContent";
 import SchoolMessageDetailModal from "../../components/school-portal/SchoolMessageDetailModal";
@@ -54,7 +54,7 @@ import {
   schoolMessageHasParentRecipients,
   schoolMessageHasTeacherRecipients,
 } from "../../lib/school-portal/school-messaging-ui";
-import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.he";
+import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.js";
 
 const AUDIENCE_OPTIONS = [
   { value: "all_parents", label: SC_AUDIENCE_ALL_PARENTS },
@@ -111,12 +111,12 @@ export default function SchoolMessagesPage() {
       const res = await schoolAuthFetch(accessToken, `/api/school/messages${q}`);
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "שגיאה בטעינת הודעות"));
+        setError(apiErrorMessageHe(json?.error, "Error loading messages"));
         return;
       }
       setMessages(json.data?.messages || []);
     } catch {
-      setError("שגיאה בטעינת הודעות");
+      setError("Error loading messages");
     } finally {
       setLoading(false);
     }
@@ -214,7 +214,7 @@ export default function SchoolMessagesPage() {
     <Layout>
       <SchoolPortalShell title={SC_PAGE_MESSAGES_TITLE} schoolName={me?.school?.name}>
         {state !== "ready" ? (
-          <SchoolLoadingBlock message="טוען…" />
+          <SchoolLoadingBlock message="Loading…" />
         ) : (
           <div className="space-y-6">
             <div className="flex flex-wrap justify-between gap-3">
@@ -285,7 +285,7 @@ export default function SchoolMessagesPage() {
 
             {error ? <SchoolErrorBlock message={error} onRetry={() => void loadMessages()} /> : null}
             {loading ? (
-              <SchoolLoadingBlock message="טוען…" />
+              <SchoolLoadingBlock message="Loading…" />
             ) : messages.length ? (
               <>
                 <ul className="md:hidden space-y-3">
@@ -305,7 +305,7 @@ export default function SchoolMessagesPage() {
                   })}
                 </ul>
                 <div className="hidden md:block overflow-x-auto rounded-xl border border-white/15">
-                  <table className="w-full text-sm text-right">
+                  <table className="w-full text-sm text-left">
                     <thead className="text-white/50 border-b border-white/10">
                       <tr>
                         <th className="p-3">{SC_COL_SUBJECT}</th>
@@ -346,13 +346,13 @@ export default function SchoolMessagesPage() {
                 </div>
               </>
             ) : (
-              <p className="text-white/50 text-sm text-right">{SC_MESSAGES_EMPTY}</p>
+              <p className="text-white/50 text-sm text-left">{SC_MESSAGES_EMPTY}</p>
             )}
 
             {composeOpen ? (
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
                 <div
-                  className={`w-full max-w-lg rounded-xl border border-amber-500/30 bg-[#1a1208] p-5 text-right max-h-[90vh] overflow-y-auto ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
+                  className={`w-full max-w-lg rounded-xl border border-amber-500/30 bg-[#1a1208] p-5 text-left max-h-[90vh] overflow-y-auto ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
                 >
                   <h2 className="text-lg font-bold mb-4">{SC_COMPOSE_TITLE}</h2>
                   <div className="space-y-3 text-sm">
@@ -372,7 +372,7 @@ export default function SchoolMessagesPage() {
                     </label>
                     {AUDIENCE_OPTIONS.find((o) => o.value === audienceType)?.needsGrade ? (
                       <label className="block">
-                        שכבה
+                        Grade
                         <input
                           value={gradeLevel}
                           onChange={(e) => setGradeLevel(e.target.value)}
@@ -382,7 +382,7 @@ export default function SchoolMessagesPage() {
                     ) : null}
                     {AUDIENCE_OPTIONS.find((o) => o.value === audienceType)?.needsClass ? (
                       <label className="block">
-                        כיתה
+                        Class
                         <input
                           value={physicalClassName}
                           onChange={(e) => setPhysicalClassName(e.target.value)}
@@ -392,7 +392,7 @@ export default function SchoolMessagesPage() {
                     ) : null}
                     {AUDIENCE_OPTIONS.find((o) => o.value === audienceType)?.needsSubject ? (
                       <label className="block">
-                        מקצוע
+                        Subject
                         <input
                           value={subjectKey}
                           onChange={(e) => setSubjectKey(e.target.value)}
@@ -410,10 +410,10 @@ export default function SchoolMessagesPage() {
                         onChange={(e) => setMessageType(e.target.value)}
                         className="mt-1 w-full rounded bg-black/40 border border-white/20 px-2 py-2"
                       >
-                        <option value="regular">רגיל</option>
-                        <option value="important">חשוב</option>
-                        <option value="urgent">דחוף</option>
-                        <option value="requires_confirmation">דורש אישור</option>
+                        <option value="regular">Regular</option>
+                        <option value="important">Important</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="requires_confirmation">Requires confirmation</option>
                       </select>
                     </label>
                     <label className="block">

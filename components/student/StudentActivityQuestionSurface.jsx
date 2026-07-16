@@ -161,10 +161,10 @@ export default function StudentActivityQuestionSurface({
           type="button"
           onClick={() => setIsVerticalDisplay((prev) => !prev)}
           className={L.mathToggle}
-          title={isVerticalDisplay ? "הצג מאוזן" : "הצג מאונך"}
+          title={isVerticalDisplay ? "Show landscape" : "Show portrait"}
           data-testid="activity-math-layout-toggle"
         >
-          {isVerticalDisplay ? "↔️ מאוזן" : "↕️ מאונך"}
+          {isVerticalDisplay ? "↔️ Landscape" : "↕️ Portrait"}
         </button>
       ) : null}
 
@@ -180,10 +180,10 @@ export default function StudentActivityQuestionSurface({
             {displayParts.leadText ? (
               <p
                 className={L.questionLead}
-                dir="rtl"
+                dir="ltr"
                 data-testid="student-question-lead"
                 style={{
-                  direction: "rtl",
+                  direction: "ltr",
                   unicodeBidi: "plaintext",
                   ...resolveQuestionFontStyle({
                     text: displayParts.leadText,

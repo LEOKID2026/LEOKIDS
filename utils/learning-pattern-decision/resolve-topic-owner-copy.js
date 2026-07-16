@@ -91,7 +91,7 @@ export function buildTopicOwnerCopySlots(row) {
     null;
 
   const topicName =
-    str(row?.label || row?.displayName || row?.narrativeTitleHe || lpd?.recommendedFocus) || "הנושא";
+    str(row?.label || row?.displayName || row?.narrativeTitleHe || lpd?.recommendedFocus) || "this topic";
 
   return {
     topicName,

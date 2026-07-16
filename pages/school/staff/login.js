@@ -12,7 +12,7 @@ import {
   SCHOOL_STAFF_LOGIN_SUSPENDED,
   SCHOOL_STAFF_LOGIN_TITLE,
   SCHOOL_STAFF_PIN_LABEL,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 
 async function postStaffLogin(payload) {
   const res = await fetch("/api/school/staff/login", {
@@ -78,7 +78,7 @@ export default function SchoolStaffLoginPage() {
 
   return (
     <Layout>
-      <div className="max-w-md mx-auto px-3 md:px-4 py-3 md:py-8" dir="rtl" lang="he">
+      <div className="max-w-md mx-auto px-3 md:px-4 py-3 md:py-8" dir="ltr" lang="en">
         <PortalLoginHeading
           title={SCHOOL_STAFF_LOGIN_TITLE}
           subtitle={SCHOOL_STAFF_LOGIN_SUBTITLE}

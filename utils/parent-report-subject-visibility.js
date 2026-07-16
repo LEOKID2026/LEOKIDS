@@ -4,7 +4,7 @@
  */
 
 export const PARENT_REPORT_PERIOD_EMPTY_STATE_HE =
-  "עדיין אין מספיק תרגול בתקופה שנבחרה כדי להציג דוח.";
+  "There isn't enough practice yet in the selected period to show a report.";
 
 /**
  * @param {number|string|null|undefined} questions

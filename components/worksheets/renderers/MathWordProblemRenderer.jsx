@@ -8,7 +8,7 @@ export function MathWordProblemRenderer({ question }) {
   const body = question.wordProblemBodyHe || question.stemHe;
   return (
     <div className="worksheet-renderer math-word-problem worksheet-renderer-compact worksheet-renderer-math-card">
-      <div className="worksheet-word-problem" dir="rtl">
+      <div className="worksheet-word-problem" dir="ltr">
         {body}
       </div>
       <div className="worksheet-writing-lines" data-lines={lines} aria-hidden="true" />

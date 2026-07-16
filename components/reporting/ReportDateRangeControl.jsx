@@ -19,7 +19,7 @@ export default function ReportDateRangeControl({
   disabled = false,
   showDayPreset = false,
   showSchoolYearPreset = false,
-  customRangeLabel = "תאריכים מותאמים",
+  customRangeLabel = "Custom dates",
   compactPresets = false,
   presetRowClassName = "",
   className = "",
@@ -70,7 +70,7 @@ export default function ReportDateRangeControl({
             className={btnClass(!customDates && presetDays === "day")}
             data-testid="report-range-preset-day"
           >
-            יום
+            Day
           </button>
         ) : null}
         <button
@@ -80,7 +80,7 @@ export default function ReportDateRangeControl({
           className={btnClass(!customDates && presetDays === 7)}
           data-testid="report-range-preset-week"
         >
-          שבוע
+          Week
         </button>
         <button
           type="button"
@@ -89,7 +89,7 @@ export default function ReportDateRangeControl({
           className={btnClass(!customDates && presetDays === 30)}
           data-testid="report-range-preset-month"
         >
-          חודש
+          Month
         </button>
         {showSchoolYearPreset ? (
           <button
@@ -99,7 +99,7 @@ export default function ReportDateRangeControl({
             className={btnClass(!customDates && presetDays === "schoolYear")}
             data-testid="report-range-preset-school-year"
           >
-            שנה
+            Year
           </button>
         ) : null}
         <button
@@ -116,7 +116,7 @@ export default function ReportDateRangeControl({
       {customDates ? (
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-2">
           <div className="flex flex-col sm:flex-row items-center gap-2">
-            <label className="text-xs text-white/70 whitespace-nowrap">מתאריך:</label>
+            <label className="text-xs text-white/70 whitespace-nowrap">From:</label>
             <input
               type="date"
               value={startDate}
@@ -129,7 +129,7 @@ export default function ReportDateRangeControl({
             />
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-2">
-            <label className="text-xs text-white/70 whitespace-nowrap">עד תאריך:</label>
+            <label className="text-xs text-white/70 whitespace-nowrap">To:</label>
             <input
               type="date"
               value={endDate}
@@ -149,7 +149,7 @@ export default function ReportDateRangeControl({
             className="px-4 py-1.5 rounded-lg bg-blue-500/80 hover:bg-blue-500 font-bold text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-all whitespace-nowrap"
             data-testid="report-range-apply"
           >
-            הצג
+            Show
           </button>
         </div>
       ) : null}

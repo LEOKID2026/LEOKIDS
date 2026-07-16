@@ -22,7 +22,7 @@ export default function LearningPlannerRecommendationBlock({ model, onRecommende
   return (
     <div
       className="bg-black/25 border border-white/15 rounded-lg px-2 py-2 mb-3 w-full max-w-lg shadow-sm"
-      dir="rtl"
+      dir="ltr"
       data-testid="learning-planner-recommendation-block"
     >
       <div className="text-[10px] text-white/60 mb-1">{model.sectionTitle}</div>

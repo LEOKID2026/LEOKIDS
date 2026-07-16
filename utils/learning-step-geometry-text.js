@@ -1,11 +1,24 @@
 import { TEXT_HIGHLIGHT_KINDS } from "./geometry-step-types.js";
 
+/** EN keywords for student-facing text; HE kept for legacy Hebrew stems. */
 const FORMULA_KEYWORDS = [
+  "formula",
+  "area",
+  "perimeter",
+  "volume",
+  "π",
+  "pi",
+  "Pythagoras",
+  "Pythagorean",
+  "angle",
+  "parallel",
+  "perpendicular",
+  "symmetr",
+  "diagonal",
   "נוסחה",
   "שטח",
   "היקף",
   "נפח",
-  "π",
   "פיתגורס",
   "זווית",
   "מקביל",
@@ -37,7 +50,7 @@ export function buildGeometryTextHighlightState(step, plainText = "") {
     if (!highlights.includes(TEXT_HIGHLIGHT_KINDS.formula) && !highlights.includes(TEXT_HIGHLIGHT_KINDS.keyword)) {
       if (highlights.length > 0) continue;
     }
-    const idx = text.indexOf(kw);
+    const idx = text.toLowerCase().indexOf(String(kw).toLowerCase());
     if (idx >= 0) {
       ranges.push({
         id: `kw-${kw}`,

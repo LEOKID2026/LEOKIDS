@@ -1,5 +1,5 @@
 /**
- * דוח הורים קצר (V2) — ניסוח הורי בלבד, פרמטרים בלבד.
+ * Short parent report (V2) — parent-facing wording only, parameters only.
  */
 
 export {
@@ -9,34 +9,34 @@ export {
 } from "./subject-evidence-policy.js";
 
 export function tierStableStrengthHe() {
-  return "חוזק יציב";
+  return "Stable strength";
 }
 
 export function tierWeaknessRecurringHe() {
-  return "קושי שחוזר על עצמו";
+  return "A recurring difficulty";
 }
 
 export function tierWeaknessSupportHe() {
-  return "חיזוק עדין";
+  return "Gentle reinforcement";
 }
 
 export function evidenceExampleTitleFallbackHe() {
-  return "נושא שנבדק";
+  return "Topic examined";
 }
 
 export function evidenceExampleBodyFallbackHe() {
-  return "עדיין אין מספיק פרטים כאן כדי להאריך - עדיף להמשיך בתרגול קצר ואז לחזור לניסוח.";
+  return "There still isn't enough detail here to elaborate - it's better to continue with short practice and come back to this.";
 }
 
 export function v2SubjectMemoryPartialEvidenceHe() {
-  return "בחלק מהנושאים עדיין מעט תרגול - עוד כמה שאלות יעשו את התמונה ברורה יותר.";
+  return "In some topics there's still limited practice - a few more questions will make the picture clearer.";
 }
 
 export function v2SubjectDiagnosticRestraintHe() {
-  return "עדיין מוקדם לקבוע כיוון ברור על כל הנושאים בבת אחת - עדיף לתת לתרגול עקבי עוד זמן.";
+  return "It's still too early to set a clear direction across all topics at once - it's better to give consistent practice more time.";
 }
 
 /** Short overview when topic engine cannot conclude (2–3 questions, withhold). */
 export function v2ShortOverviewCannotConcludeHe() {
-  return "הנתונים עדיין חלקיים, ולכן כדאי לאסוף עוד מידע לפני שקובעים כיוון סופי.";
+  return "The data is still partial, so it's worth collecting more information before setting a final direction.";
 }

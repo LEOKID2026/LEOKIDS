@@ -12,7 +12,7 @@ import {
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
 import { withTimeout } from "../../lib/teacher-portal/async-utils.js";
 import { resolveTeacherPortalAuth } from "../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 
 export async function getServerSideProps() {
   const { isTeacherPortalLinkEnabled: linkEnabled } = await import(
@@ -40,7 +40,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
   const supabaseRef = useRef(null);
   const activityRequestRef = useRef(0);
   const [state, setState] = useState("loading");
-  const [loadingHint, setLoadingHint] = useState("מאמת חיבור…");
+  const [loadingHint, setLoadingHint] = useState("Verifying connection…");
   const [dashboard, setDashboard] = useState(null);
   const [activityLoading, setActivityLoading] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
@@ -73,7 +73,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
   }, []);
 
   const loadDashboardShell = useCallback(async (token, { backgroundActivity = true } = {}) => {
-    setLoadingHint("טוען לוח בקרה…");
+    setLoadingHint("Loading dashboard…");
     try {
       const res = await withTimeout(
         teacherAuthFetch(token, "/api/teacher/dashboard"),
@@ -122,7 +122,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
       const isStaffCookie = session.authMethod === "staff_cookie";
       setAuthMethod(session.authMethod);
       setAccessToken(token);
-      setLoadingHint("טוען לוח בקרה…");
+      setLoadingHint("Loading dashboard…");
 
       let dash;
       try {
@@ -230,11 +230,11 @@ export default function TeacherDashboardPage({ linkEnabled }) {
   if (state === "schema_not_ready" || state === "data_load_error") {
     const msg =
       state === "schema_not_ready"
-        ? "המערכת עדיין מתכוננת. נסה שנית בעוד מספר דקות."
-        : "אירעה שגיאה בטעינת הנתונים. רענן את הדף ונסה שנית.";
+        ? "The system is still warming up. Try again in a few minutes."
+        : "Something went wrong loading the data. Refresh the page and try again.";
     return (
       <Layout {...privateLayoutProps}>
-        <TeacherPortalShell title="לוח הבקרה שלי" titleClassName={shellTheme.shellTitle}>
+        <TeacherPortalShell title="My dashboard" titleClassName={shellTheme.shellTitle}>
           <p className={shellTheme.shellError} data-testid="teacher-dashboard-root" data-state={state} role="alert">
             {msg}
           </p>
@@ -253,7 +253,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
         data-link-enabled={linkEnabled ? "true" : "false"}
       >
         <TeacherPortalShell
-          title="לוח הבקרה שלי"
+          title="My dashboard"
           titleClassName={shellTheme.shellTitle}
           schoolMembership={dashboard?.schoolMembership}
         >

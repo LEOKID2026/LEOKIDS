@@ -13,8 +13,8 @@ const SIZES = [3, 5, 7];
 const initialScore = { X: 0, O: 0, ties: 0 };
 
 function playerLabel(symbol) {
-  if (symbol === "X") return "איקס";
-  if (symbol === "O") return "עיגול";
+  if (symbol === "X") return "X";
+  if (symbol === "O") return "O";
   return symbol;
 }
 
@@ -160,7 +160,7 @@ export default function TicTacToeXL() {
     setBoard(nextBoard);
 
     if (potentialWinner) {
-      setWinnerMessage(`${playerLabel(potentialWinner)} ניצח!`);
+      setWinnerMessage(`${playerLabel(potentialWinner)} won!`);
       if (vsBot && potentialWinner === "O") {
         playSfx("sfx-defeat");
       } else {
@@ -171,7 +171,7 @@ export default function TicTacToeXL() {
         [potentialWinner]: prev[potentialWinner] + 1,
       }));
     } else if (full) {
-      setWinnerMessage("תיקו!");
+      setWinnerMessage("Tie!");
       setScore((prev) => ({ ...prev, ties: prev.ties + 1 }));
     } else {
       setCurrentPlayer(nextPlayer);
@@ -233,13 +233,13 @@ export default function TicTacToeXL() {
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
               >
-                חזרה
+                Back
               </button>
               {!isMidGame ? <GameAudioSettingsButton /> : null}
             </div>
             <div className="absolute right-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
-                מקומי
+                Local
               </span>
             </div>
           </div>
@@ -257,10 +257,10 @@ export default function TicTacToeXL() {
         >
           <div className="text-center mb-1">
             <h1 className="text-2xl font-extrabold text-white mb-0.5">
-              ❌⭕️ איקס עיגול
+              ❌⭕️ Tic-Tac-Toe
             </h1>
             <p className="text-white/70 text-xs">
-              לוח {size}×{size} • {vsBot ? "נגד רובוט" : "2 שחקנים"}
+              Board {size}×{size} • {vsBot ? "vs Bot" : "2 Players"}
             </p>
           </div>
 
@@ -269,15 +269,15 @@ export default function TicTacToeXL() {
             className="grid grid-cols-3 gap-1 mb-1 w-full max-w-md"
           >
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">שחקן איקס</div>
+              <div className="text-[10px] text-white/60">Player X</div>
               <div className="text-sm font-bold text-emerald-400">{score.X}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">תיקו</div>
+              <div className="text-[10px] text-white/60">Tie</div>
               <div className="text-sm font-bold text-amber-400">{score.ties}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">שחקן עיגול</div>
+              <div className="text-[10px] text-white/60">Player O</div>
               <div className="text-sm font-bold text-purple-400">{score.O}</div>
             </div>
           </div>
@@ -304,19 +304,19 @@ export default function TicTacToeXL() {
                 }}
                 className="w-5 h-5"
               />
-              נגד רובוט
+              vs Bot
             </label>
             <button
               onClick={resetBoard}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              איפוס לוח
+              Reset Board
             </button>
             <button
               onClick={resetScore}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              איפוס ציון
+              Reset Score
             </button>
           </div>
 
@@ -361,7 +361,7 @@ export default function TicTacToeXL() {
           </div>
 
           <div className="text-center text-sm text-white/80 font-semibold">
-            תור: <span className="font-bold text-white text-lg">{playerLabel(currentPlayer)}</span>
+            Turn: <span className="font-bold text-white text-lg">{playerLabel(currentPlayer)}</span>
           </div>
         </div>
         <StudentAdSlot variant="dvh" />

@@ -77,10 +77,10 @@ export default function TeacherPendingPage() {
 
   return (
     <Layout {...layoutProps}>
-      <TeacherPortalShell title="סטטוס בקשה" titleClassName={T.shellTitle}>
+      <TeacherPortalShell title="Request status" titleClassName={T.shellTitle}>
         {state === "loading" ? (
           <p className={T.shellLoading} data-testid="teacher-pending-root" data-state="loading">
-            טוען…
+            Loading…
           </p>
         ) : (
           <div data-testid="teacher-pending-root" data-state={rejected ? "rejected" : "pending"}>
@@ -90,7 +90,7 @@ export default function TeacherPendingPage() {
               onClick={() => void onLogout()}
               className={`mt-6 ${T.logoutBtn}`}
             >
-              יציאה
+              Sign out
             </button>
           </div>
         )}

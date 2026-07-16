@@ -29,12 +29,12 @@ const VALID_BUCKETS = new Set([
 function subjectLabelLocalHe(subjectId) {
   const sid = normalizeSubjectId(subjectId);
   switch (sid) {
-    case "math": return "מתמטיקה";
-    case "geometry": return "גאומטריה";
-    case "english": return "אנגלית";
-    case "science": return "מדעים";
-    case "hebrew": return "עברית";
-    case "moledet-geography": return "מולדת";
+    case "math": return "Math";
+    case "geometry": return "Geometry";
+    case "english": return "English";
+    case "science": return "Science";
+    case "hebrew": return "Hebrew";
+    case "moledet-geography": return "Homeland Studies";
     default: return "";
   }
 }
@@ -72,20 +72,20 @@ function buildClassifierContext(payload) {
 function buildPrompt(utterance, payload) {
   const ctx = buildClassifierContext(payload);
   return [
-    "אתה מסווג שאלות הורים על דוח למידה. תחזיר JSON בלבד.",
-    "ארבע קטגוריות:",
-    "  report_related        - שאלה על הילד, על הלמידה שלו, על התקדמות, על תרגול, או על נושא/מקצוע מהדוח.",
-    "  off_topic             - שאלה כללית שאינה על הדוח/הילד/הלמידה (מזג אויר, מתכון, ידע כללי, חדשות וכד').",
-    "  diagnostic_sensitive  - שאלה שמבקשת אבחנה קלינית (ADHD, דיסלקציה, לקות למידה, מצב רגשי).",
-    "  ambiguous_or_unclear  - שאלה קצרה מדי, סתומה, או שלא ברור על מה היא.",
-    "כללי הכרעה:",
-    "  ידע כללי על נושא לימודי (\"מה זה X\") הוא off_topic, גם אם X מופיע בדוח.",
-    "  שאלה על הילד בנושא מהדוח (\"הוא מתקשה ב X\", \"מה עם X בדוח\") היא report_related.",
-    "  שאלה רגשית/קלינית היא diagnostic_sensitive גם אם בדוח יש נתוני תרגול.",
-    `מקצועות בדוח: ${ctx.subjects.join(", ") || "(אין)"}.`,
-    `נושאים נבחרים בדוח: ${ctx.topics.join(", ") || "(אין)"}.`,
-    `שאלת ההורה: ${String(utterance || "").trim()}`,
-    'החזר JSON בלבד בפורמט {"bucket":"report_related|off_topic|diagnostic_sensitive|ambiguous_or_unclear","confidence":0..1}.',
+    "You categorize parenting questions on a learning report. Return JSON only.",
+    "Four categories:",
+    "report_related - a question about the child, about his learning, about progress, about practice, or about a subject/subject from the report.",
+    "off_topic - a general question that is not about the report/child/learning (weather, recipe, general knowledge, news, etc.).",
+    "diagnostic_sensitive - a question that asks for a clinical diagnosis (ADHD, dyslexia, learning disability, emotional state).",
+    "ambiguous_or_unclear - a question that is too short, obscure, or it is not clear what it is about.",
+    "Decision rules:",
+    "General knowledge about a study topic (\"what is X\") is off_topic, even if X appears in the report.",
+    "A question about the child on a topic from the report (\"He has difficulty with X\", \"What about X in the report\") is report_related.",
+    "An emotional/clinical question is diagnostic_sensitive even if the report has practice data.",
+    `Subjects in the report: ${ctx.subjects.join(", ") || "(none)"}.`,
+    `Selected topics in the report: ${ctx.topics.join(", ") || "(none)"}.`,
+    `Parent Question: ${String(utterance || "").trim()}`,
+    'Return only JSON in the format {"bucket":"report_related|off_topic|diagnostic_sensitive|ambiguous_or_unclear","confidence":0..1}.',
   ].join("\n");
 }
 

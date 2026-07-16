@@ -1,5 +1,5 @@
 /**
- * Parent AI insight surface ("סיכום חכם להורה" / "תובנה להורה").
+ * Parent AI insight surface ("Smart summary for parents" / "Insight for parents").
  *
  * Renders the new structured AI narrative produced by `utils/parent-report-ai-narrative/`
  * (`summary` + `strengths` + `focusAreas` + `homeTips` + `cautionNote`) when present.
@@ -11,7 +11,7 @@
  */
 
 import React from "react";
-import { normalizeParentFacingHe } from "../utils/parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "../utils/parent-report-language/parent-facing-normalize.js";
 import { filterOutParentReportDuplicates } from "../utils/parent-report-text-dedupe.js";
 
 function isObject(value) {
@@ -86,7 +86,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
       {strengths.length > 0 ? (
         <div className="mb-3">
-          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-emerald-200/95">מה הולך טוב</p>
+          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-emerald-200/95">What's going well</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
             {strengths.map((textHe, i) => (
               <li key={`strength-${bulletKey(rawStrengths[i], i)}`}>{textHe}</li>
@@ -97,7 +97,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
       {focusAreas.length > 0 ? (
         <div className="mb-3">
-          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-amber-200/95">תחומים לחיזוק</p>
+          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-amber-200/95">Areas to strengthen</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
             {focusAreas.map((textHe, i) => (
               <li key={`focus-${bulletKey(rawFocus[i], i)}`}>{textHe}</li>
@@ -108,7 +108,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
       {homeTips.length > 0 ? (
         <div className="mb-3">
-          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-sky-200/95">טיפים לבית</p>
+          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-sky-200/95">Home tips</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
             {homeTips.map((textHe, i) => (
               <li key={`tip-${i}`}>{textHe}</li>
@@ -141,7 +141,7 @@ export function ParentReportInsight({ explanation, className = "", excludeHomeTi
   const fallbackText = typeof explanation?.text === "string" ? normalizeParentFacingHe(explanation.text) : "";
 
   // Wave 2 Fix 1.3: avoid repeating a home tip that already appeared verbatim (or
-  // near-verbatim) in "מה מומלץ לעשות בבית" (ParentReportParentSections).
+  // near-verbatim) in "What's recommended at home" (ParentReportParentSections).
   let structured =
     structuredRaw && Array.isArray(excludeHomeTipTextsHe) && excludeHomeTipTextsHe.length > 0
       ? {
@@ -162,12 +162,12 @@ export function ParentReportInsight({ explanation, className = "", excludeHomeTi
 
   if (!structured && !fallbackText.trim()) return null;
 
-  const headingHe = structured ? "סיכום חכם להורה" : "תובנה להורה";
+  const headingHe = structured ? "Smart summary for parents" : "Insight for parents";
   const isStructuredAi = structured && (explanation.structuredSource === "ai" || explanation.source === "ai");
   const sourceLabel = structured
     ? isStructuredAi
-      ? "הסיכום נכתב בעזרת בינה מלאכותית על בסיס נתוני הדוח, ונועד לשמש כלי עזר לימודי בלבד."
-      : "הסיכום נבנה אוטומטית מנתוני הדוח, ונועד לשמש כלי עזר לימודי בלבד."
+      ? "This summary was written with the help of AI based on the report data, and is meant to be used only as a learning aid."
+      : "This summary was generated automatically from the report data, and is meant to be used only as a learning aid."
     : "";
 
   return (

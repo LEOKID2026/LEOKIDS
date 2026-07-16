@@ -10,35 +10,35 @@ const OFFLINE_GAMES = [
   {
     slug: "tic-tac-toe",
     gameKey: "tic-tac-toe",
-    title: "איקס עיגול",
+    title: "Tic-Tac-Toe",
     emoji: "❌⭕️",
-    players: "2 שחקנים",
-    blurb: "לוחות מ 3×3 ועד 7×7 עם מעקב ציון.",
+    players: "2 players",
+    blurb: "Boards from 3×3 to 7×7 with score tracking.",
   },
   {
     slug: "rock-paper-scissors",
     gameKey: "rock-paper-scissors",
-    title: "אבן · נייר · מספריים",
+    title: "Rock · Paper · Scissors",
     titleOneLine: true,
     emoji: "🪨📄✂️",
-    players: "2 שחקנים או נגד רובוט",
-    blurb: "משחקים מהירים, סיבובים הטוב מול כולם.",
+    players: "2 players or vs robot",
+    blurb: "Quick rounds — best of all.",
   },
   {
     slug: "tap-battle",
     gameKey: "tap-battle",
-    title: "קרב הקשות",
+    title: "Tap Battle",
     emoji: "⚡️",
-    players: "2 שחקנים",
-    blurb: "כל צד מקיש מהר ככל האפשר - מי ינצח?",
+    players: "2 players",
+    blurb: "Each side taps as fast as they can — who wins?",
   },
   {
     slug: "memory-match",
     gameKey: "memory-match",
-    title: "התאמת זיכרון",
+    title: "Memory Match",
     emoji: "🧠",
-    players: "1–2 שחקנים",
-    blurb: "הופכים קלפים, מוצאים זוגות ומנסים לנצח.",
+    players: "1–2 players",
+    blurb: "Flip cards, find pairs, and try to win.",
   },
 ];
 
@@ -62,15 +62,15 @@ export default function OfflineHub() {
         <div className={`${GH.container} space-y-4`}>
           <GamesHubNavBar
             backHref="/games"
-            backLabel="משחקים"
-            badge="🔌כל הזמן עם ליאו"
+            backLabel="Games"
+            badge="🔌 Always with Leo"
             backBtnClass={GH.backBtn}
             badgeClass={GH.badge}
           />
 
           <GamesHubHeader
-            title="משחקים כל הזמן עם ליאו"
-            subtitle="משחקים על אותו מכשיר - גם בלי אינטרנט."
+            title="Always-on games with Leo"
+            subtitle="Play on the same device — even offline."
             titleClass={GH.hubTitle}
             subtitleClass={GH.hubSub}
           />
@@ -79,8 +79,8 @@ export default function OfflineHub() {
             {state === "loading"
               ? null
               : visibleGames.map((game) => (
-                <OfflineHubGameCard key={game.slug} game={game} GH={GH} locked={game.locked} />
-              ))}
+                  <OfflineHubGameCard key={game.slug} game={game} GH={GH} />
+                ))}
           </section>
         </div>
       </GameAccessGuard>

@@ -15,15 +15,15 @@ import {
 import { splitTopicRowKey, MATH_SCOPE_UNKNOWN } from "./parent-report-row-diagnostics.js";
 
 const MODE_SUFFIX_LABELS = {
-  learning: "למידה",
-  practice: "תרגול",
-  challenge: "אתגר",
-  speed: "מהירות",
-  marathon: "מרתון",
-  graded: "מדורג",
-  normal: "רגיל",
-  mistakes: "טעויות",
-  practice_mistakes: "חזרה על שגיאות",
+  learning: "Learning",
+  practice: "Practice",
+  challenge: "Challenge",
+  speed: "Speed",
+  marathon: "Marathon",
+  graded: "Graded",
+  normal: "Normal",
+  mistakes: "Mistakes",
+  practice_mistakes: "Review mistakes",
 };
 
 function effectiveMathGradeKeyFromRowOrKey(rowKey, row) {
@@ -43,8 +43,8 @@ function effectiveMathLevelKeyFromRowOrKey(rowKey, row) {
 }
 
 function modeSuffixLabel(m) {
-  if (m == null || m === "") return "לא זמין";
-  return MODE_SUFFIX_LABELS[m] || "מצב תרגול";
+  if (m == null || m === "") return "Unavailable";
+  return MODE_SUFFIX_LABELS[m] || "Practice mode";
 }
 
 /** Hebrew operation name only (same as chart/table fallback without grade/level). */

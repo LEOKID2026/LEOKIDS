@@ -46,30 +46,30 @@ export function buildEvidenceTargetsPhase13(ctx) {
 
   const targetSuccessSignalHe =
     targetEvidenceType === "independence_confirmation"
-      ? "הצלחה קצרה בסוף המשימה בלי הכוונה באמצע - גם אם לא מושלם."
+      ? "A short success at the end of the task without guidance in the middle - even if not perfect."
       : targetEvidenceType === "accuracy_confirmation"
-        ? "שני מפגשים קצרים עם דיוק דומה כשהקצב רגוע."
+        ? "Two short sessions with similar accuracy when the pace is calm."
         : targetEvidenceType === "retention_confirmation"
-          ? "פתרון נכון אחרי הפסקה קצרה או למחרת - בלי חזרה מיידית לרמז."
+          ? "A correct solution after a short break or the next day - without immediately returning to a hint."
           : targetEvidenceType === "mistake_reduction_confirmation"
-            ? "פחות טעויות מאותו «דפוס» באותה רמת קושי."
+            ? "Fewer mistakes of the same «pattern» at the same difficulty level."
             : targetEvidenceType === "fresh_data_needed"
-              ? "סבב תרגול אחד חד עם רישום קצר בסוף - מה השתנה."
-              : "מפגש קצר עם אותו כיוון - ולראות אם הילד מגיב עקבית.";
+              ? "One fresh practice round with a short note at the end - what changed."
+              : "A short session with the same direction - and see if the child responds consistently.";
 
   const targetFailureSignalHe =
-    "אם חוזרים בדיוק אותו סוג טעות בלי שינוי - עוצרים ומצמצמים מטרה.";
+    "If the exact same mistake type repeats with no change - stop and narrow the goal.";
 
-  const targetIndependenceSignalHe = "פחות עצירות לאמצע משימה כשההוראות ברורות.";
+  const targetIndependenceSignalHe = "Fewer mid-task stops when the instructions are clear.";
 
-  const targetStabilitySignalHe = "אותה רמת קושי עם תוצאות דומות בשני מפגשים רצופים.";
+  const targetStabilitySignalHe = "The same difficulty level with similar results across two consecutive sessions.";
 
   const targetFreshnessNeedHe = stale
-    ? "כדאי תאריך תרגול עדכני ולא להסתמך רק על מה שנראה מזמן."
-    : "מספיק לעקוב אחרי שני מפגשים קצרים לפני שינוי מהותי.";
+    ? "Prefer a recent practice date and don't rely only on what was seen a while ago."
+    : "It's enough to follow two short sessions before a major change.";
 
-  const displayName = String(ctx?.displayName || "הנושא").trim();
-  const evidenceTargetNarrativeHe = `ב«${displayName}»: ${targetEvidenceTypeLabelHe} · ${targetObservationWindowLabelHe}.`;
+  const displayName = String(ctx?.displayName || "the topic").trim();
+  const evidenceTargetNarrativeHe = `On «${displayName}»: ${targetEvidenceTypeLabelHe} · ${targetObservationWindowLabelHe}.`;
 
   const evidenceTargets = {
     version: 1,

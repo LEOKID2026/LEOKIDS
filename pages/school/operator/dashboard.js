@@ -18,7 +18,7 @@ import {
   SCHOOL_OPERATOR_NO_PERMISSIONS_DETAIL,
   SCHOOL_OPERATOR_NO_TEACHING,
   SCHOOL_OPERATOR_WORKSPACE,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "../../../components/school-portal/SchoolPortalUi";
 
 function WorkspaceCard({ title, description, href, ctaLabel, testId }) {

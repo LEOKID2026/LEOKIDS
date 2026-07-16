@@ -42,7 +42,7 @@ import {
 } from "../../lib/parent-ui/parent-report-site-bright-theme.css.js";
 import { isImmersiveGameLayoutPath } from "../../lib/site-nav";
 import { useParentReportBrightPageBackground } from "../../lib/parent-ui/use-parent-report-bright-page-bg.js";
-import { mapParentReportLoadError } from "../../lib/parent-server/parent-api-errors.he.js";
+import { mapParentReportLoadError } from "../../lib/parent-client/parent-api-errors.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { improvingDiagnosticsDisplayLabelHe } from "../../utils/learning-patterns-analysis";
 import {
@@ -53,7 +53,7 @@ import {
   confidenceBadgeLabelHe,
 } from "../../utils/parent-report-ui-explain-he";
 import { TOPIC_EVIDENCE_THRESHOLDS } from "../../utils/parent-report-topic-evidence.js";
-import { normalizeParentFacingHe } from "../../utils/parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "../../utils/parent-report-language/parent-facing-normalize.js";
 import {
   diagnosticPrimarySourceParentLabelHe,
 } from "../../utils/parent-report-language/index.js";
@@ -63,7 +63,7 @@ import {
   formatParentReportGradeHe,
   formatParentReportLevelHe,
   formatParentReportSubjectHe,
-} from "../../utils/parent-report-language/parent-report-display-labels.he.js";
+} from "../../utils/parent-report-language/parent-report-display-labels.js";
 import {
   deriveParentDataPresenceForDiagnosticsView,
   PARENT_THIN_DATA_EXPLAINER_HE,
@@ -84,7 +84,7 @@ const MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID = "moledet-geography";
 function moledetGeographyReportTopicKeyPrefix() {
   return "moledet_geography";
 }
-const VISUAL_STRAND_LABEL_HE = { moledet: "מולדת", geography: "גאוגרפיה" };
+const VISUAL_STRAND_LABEL_HE = { moledet: "Social Studies", geography: "Geography" };
 function splitMoledetGeographyReportForDisplay(_report) {
   return {
     moledetTopics: {},
@@ -309,7 +309,7 @@ function subjectTopicLabelForParentHe(subjectId, data, fallbackTopic) {
     return normalizeParentFacingHe(MATH_PARENT_TOPIC_FALLBACK_HE);
   }
   if (subjectId === "geometry") {
-    return normalizeParentFacingHe("גאומטריה");
+    return normalizeParentFacingHe("Geometry");
   }
   return normalizeParentFacingHe(displayName || bucketForLookup || MATH_PARENT_TOPIC_FALLBACK_HE);
 }
@@ -340,7 +340,7 @@ function regularReportTopicMapHasRows(displayReport, mapKey, regularDisplay) {
   return Object.keys(map).length > 0;
 }
 
-/** צבעי מקצוע עקביים בגרפים */
+/** Consistent subject colors across charts */
 const SUBJECT_CHART_COLORS = {
   math: "#3b82f6",
   geometry: "#10b981",
@@ -352,9 +352,10 @@ const SUBJECT_CHART_COLORS = {
   geography: "#14b8a6",
 };
 
-const INSUFFICIENT_TREND_SESSIONS_RE = /אין\s+מספיק\s+מפגש/;
+const INSUFFICIENT_TREND_SESSIONS_RE =
+  /\u05D0\u05D9\u05DF\s+\u05DE\u05E1\u05E4\u05D9\u05E7\s+\u05DE\u05E4\u05D2\u05E9|not enough sessions/i;
 
-/** שורת משנה בעמודת סטטוס — שורה קצרה מנתוני שורה קיימים בלבד. */
+/** Status column subline — a short line built only from existing row data. */
 function ParentReportRowDiagnosticsFootnote({ data }) {
   const row = data && typeof data === "object" ? data : null;
   if (!row) return null;
@@ -418,7 +419,7 @@ function diagnosticCardConfidenceLabelHe(raw) {
   const x = String(raw || "").trim().toLowerCase();
   if (x === "moderate") return confidenceBadgeLabelHe("medium");
   if (x === "medium" || x === "high" || x === "low") return confidenceBadgeLabelHe(x);
-  if (x === "contradictory") return "התוצאות מעורבות - נמשיך לעקוב";
+  if (x === "contradictory") return "Mixed results - we'll keep watching";
   return diagnosticParentVisibleTextHe(raw || "");
 }
 
@@ -460,7 +461,7 @@ function buildSubjectOverviewRows(report) {
   return [
     subjectRow(
       "math",
-      "מתמטיקה",
+      "Math",
       sumTopicMapMinutes(report.mathOperations),
       s.mathQuestions,
       s.mathCorrect,
@@ -469,7 +470,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "geometry",
-      "גאומטריה",
+      "Geometry",
       sumTopicMapMinutes(report.geometryTopics),
       s.geometryQuestions,
       s.geometryCorrect,
@@ -478,7 +479,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "english",
-      "אנגלית",
+      "English",
       sumTopicMapMinutes(report.englishTopics),
       s.englishQuestions,
       s.englishCorrect,
@@ -487,7 +488,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "science",
-      "מדעים",
+      "Science",
       sumTopicMapMinutes(report.scienceTopics),
       s.scienceQuestions,
       s.scienceCorrect,
@@ -496,7 +497,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "history",
-      "היסטוריה",
+      "History",
       sumTopicMapMinutes(report.historyTopics),
       s.historyQuestions,
       s.historyCorrect,
@@ -505,7 +506,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "hebrew",
-      "עברית",
+      "Hebrew",
       sumTopicMapMinutes(report.hebrewTopics),
       s.hebrewQuestions,
       s.hebrewCorrect,
@@ -632,7 +633,7 @@ function topicShowsExcellent(row) {
   return topicUiFromLearningPatternDecision(row).excellent;
 }
 
-/** סדר תצוגת אבחון מקצועי — תואם `patternDiagnostics.subjects` (הצטיינות עקבית → תוצאות טובות יחסית → מומלץ לשמר → נקודות לשיפור → תחומים דורשים תשומת לב) */
+/** Subject diagnostic display order — matches `patternDiagnostics.subjects` (consistent excellence → relatively good results → recommended to maintain → points to improve → areas needing attention) */
 const PATTERN_DIAGNOSTIC_SUBJECT_ORDER = [
   "math",
   "geometry",
@@ -645,26 +646,27 @@ const PATTERN_DIAGNOSTIC_SUBJECT_ORDER = [
 
 const MAX_DIAGNOSTIC_EVIDENCE_CHARS = 200;
 
-/** תאימות ל-tierHe ישן בדוחות שמורים */
+/** Compatibility for the legacy tierHe in saved reports */
 function weaknessTierHeDisplay(tierHe) {
   const t = String(tierHe || "").trim();
   const legacyRecurring = "\u05E7\u05D5\u05E9\u05D9 \u05D7\u05D5\u05D6\u05E8";
   const legacyRecurringConsistent = `${legacyRecurring} / \u05E7\u05D5\u05E9\u05D9 \u05E2\u05E7\u05D1\u05D9`;
   const legacySelfRepeating = "\u05E7\u05D5\u05E9\u05D9 \u05E9\u05D7\u05D5\u05D6\u05E8 \u05E2\u05DC \u05E2\u05E6\u05DE\u05D5";
   if (t === legacyRecurringConsistent || t === legacyRecurring || t === legacySelfRepeating) {
-    return "כרגע בתרגול נראה שכדאי לחזק";
+    return "Right now practice suggests this could use reinforcement";
   }
-  if (t === "\u05E7\u05D5\u05E9\u05D9 \u05E0\u05E7\u05D5\u05D3\u05D9") return "נראה שכדאי לחזק בתרגול";
+  if (t === "\u05E7\u05D5\u05E9\u05D9 \u05E0\u05E7\u05D5\u05D3\u05D9") return "Looks like this could use more practice";
   return t;
 }
 
-/** תאימות ל-tierHe ישן בנתונים שימור */
+/** Compatibility for the legacy retention tierHe */
 function maintainTierHeDisplay(tierHe) {
-  return tierHe === "תחום לשימור" ? "עקביות" : tierHe;
+  const legacyMaintain = "\u05EA\u05D7\u05D5\u05DD \u05DC\u05E9\u05D9\u05DE\u05D5\u05E8";
+  return tierHe === legacyMaintain ? "Consistency" : tierHe;
 }
 
 /**
- * תאימות לאחור: payload ישן (לפני patternDiagnostics.version 2).
+ * Backward compatibility: legacy payload (before patternDiagnostics.version 2).
  */
 function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   if (!sub || typeof sub !== "object") return null;
@@ -672,8 +674,8 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   const weaknesses = (sub.stableWeaknesses || []).slice(0, 2).map((w, i) => ({
     id: w.id || `${subjectId}:w:${i}`,
     labelHe:
-      stripTechnicalParensHe(String(w.label || "").replace(/דפוס שגיאות\s*\([^)]+\)/, "דפוס שגיאות")) ||
-      "דפוס שגיאות חוזר",
+      stripTechnicalParensHe(String(w.label || "").replace(/\u05D3\u05E4\u05D5\u05E1 \u05E9\u05D2\u05D9\u05D0\u05D5\u05EA\s*\([^)]+\)/, "Mistake pattern")) ||
+      "Recurring mistake pattern",
     mistakeCount: Number(w.mistakeCount) || 0,
     confidence: w.confidence === "high" ? "high" : "moderate",
   }));
@@ -682,7 +684,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     id: s.id,
     labelHe: stripTechnicalParensHe(
       String(s.label || "").replace(/^[^:]+:\s*/, "").trim()
-    ) || "בנושא תרגול",
+    ) || "In this topic",
     questions: Number(s.questions) || 0,
     accuracy: Number(s.accuracy) || 0,
     confidence: s.confidence === "high" ? "high" : "moderate",
@@ -728,14 +730,14 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     confidence: w.confidence,
     tierHe:
       (w.mistakeCount || 0) >= 10
-        ? "כרגע בתרגול נראה שכדאי לחזק"
+        ? "Right now practice suggests this could use reinforcement"
         : (w.mistakeCount || 0) >= 5
-          ? "נראה שכדאי לחזק בתרגול"
-          : "תחום לחיזוק",
+          ? "Looks like this could use more practice"
+          : "Area to reinforce",
   }));
   const topStrengths = excellent.map((e) => ({
     ...e,
-    tierHe: e.questions >= 20 ? "נושא שהילד מצליח בו יותר כרגע" : "נושא חזק כרגע",
+    tierHe: e.questions >= 20 ? "A topic the child is succeeding in right now" : "A strong topic right now",
   }));
   const evidenceExamples = [];
   if (evidenceMistake) evidenceExamples.push({ type: "mistake", ...evidenceMistake });
@@ -771,7 +773,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
 }
 
 /**
- * מקור תצוגה לאזור ההמלצות: V2 (ראשי) או fallback legacy מפורש בלבד.
+ * Display source for the recommendations area: V2 (primary) or an explicit legacy fallback only.
  * @returns {{ mode: "new"|"insufficient"|"legacy", rows: object[], legacyRecommendations: object[], presence: object }}
  */
 function buildParentReportDiagnosticsView(report) {
@@ -871,22 +873,22 @@ function buildParentReportDiagnosticsView(report) {
   };
 }
 
-/** הגדרות כרטיסי נושא — מקור אחד לרשימת המקצועות + איסוף תוויות גלובלי */
+/** Topic card definitions — single source for the subject list + global label collection */
 const TOPIC_BAR_SUBJECT_CARDS = [
-  { title: "מתמטיקה - דיוק לפי נושא", mapKey: "mathOperations", prefix: "math_", border: "border-blue-400/25" },
-  { title: "גאומטריה - דיוק לפי נושא", mapKey: "geometryTopics", prefix: "geometry_", border: "border-emerald-400/25" },
-  { title: "אנגלית - דיוק לפי נושא", mapKey: "englishTopics", prefix: "english_", border: "border-purple-400/25" },
-  { title: "מדעים - דיוק לפי נושא", mapKey: "scienceTopics", prefix: "science_", border: "border-green-400/25" },
-  { title: "היסטוריה - דיוק לפי נושא", mapKey: "historyTopics", prefix: "history_", border: "border-amber-400/25" },
-  { title: "עברית - דיוק לפי נושא", mapKey: "hebrewTopics", prefix: "hebrew_", border: "border-orange-400/25" },
+  { title: "Math - accuracy by topic", mapKey: "mathOperations", prefix: "math_", border: "border-blue-400/25" },
+  { title: "Geometry - accuracy by topic", mapKey: "geometryTopics", prefix: "geometry_", border: "border-emerald-400/25" },
+  { title: "English - accuracy by topic", mapKey: "englishTopics", prefix: "english_", border: "border-purple-400/25" },
+  { title: "Science - accuracy by topic", mapKey: "scienceTopics", prefix: "science_", border: "border-green-400/25" },
+  { title: "History - accuracy by topic", mapKey: "historyTopics", prefix: "history_", border: "border-amber-400/25" },
+  { title: "Hebrew - accuracy by topic", mapKey: "hebrewTopics", prefix: "hebrew_", border: "border-orange-400/25" },
   {
-    title: `${VISUAL_STRAND_LABEL_HE.moledet} - דיוק לפי נושא`,
+    title: `${VISUAL_STRAND_LABEL_HE.moledet} - accuracy by topic`,
     mapKey: "_visualMoledetTopics",
     prefix: moledetGeographyReportTopicKeyPrefix(),
     border: "border-cyan-400/25",
   },
   {
-    title: `${VISUAL_STRAND_LABEL_HE.geography} - דיוק לפי נושא`,
+    title: `${VISUAL_STRAND_LABEL_HE.geography} - accuracy by topic`,
     mapKey: "_visualGeographyTopics",
     prefix: moledetGeographyReportTopicKeyPrefix(),
     border: "border-teal-400/25",
@@ -894,14 +896,14 @@ const TOPIC_BAR_SUBJECT_CARDS = [
 ];
 
 /**
- * גיאומטריית אב - "סיכום לפי שש המקצועות" הוא המקור; מסילת המגרעת (רוחב פיקסלים) זהה לכל גרפי הנושא.
+ * Master geometry - the "summary across six subjects" chart is the source; the bar track (pixel width) is identical across all topic charts.
  */
 const MASTER_BAR_CHART_GEOMETRY = {
-  /** מרווחים בתוך מסילת הגרף בלבד — זהים לסיכום ולנושאים (יישור אופקי אחיד) */
+  /** Margins inside the chart plot track only — identical for the summary and topics (consistent horizontal alignment) */
   plotChartMargin: { top: 8, right: 16, left: 8, bottom: 8 },
   /**
-   * גובה נוסף לתחתית משותף: תוויות ציר X + כותרת ציר — מסילת תוויות ו-Recharts חייבים אותו אזור קטגוריות.
-   * (margin.bottom הבסיסי קטן מדי; בלי זה מרכזי שורות מתפצלים מהפסים.)
+   * Shared extra bottom height: X-axis labels + axis title — the label track and Recharts must use the same category area.
+   * (The base margin.bottom is too small; without this, row centers drift from the bars.)
    */
   barChartXAxisReservedHeightPx: 28,
   summaryBarCategoryGap: 14,
@@ -909,9 +911,9 @@ const MASTER_BAR_CHART_GEOMETRY = {
   topicBarCategoryGap: 10,
   topicMaxBarSize: 22,
   topicAccuracyDomain: [0, 100],
-  /** גובה כרטיס הסיכום (נשמר) */
+  /** Summary card height (kept) */
   summaryChartHeightPx: 300,
-  /** רוחב מסילת המגרעה — אותו ערך לסיכום ולנושאים */
+  /** Bar track width — same value for the summary and the topics */
   plotRailWidthMobilePx: 248,
   plotRailWidthDesktopPx: 312,
   labelPlotGapPx: 8,
@@ -926,10 +928,10 @@ const MASTER_BAR_CHART_GEOMETRY = {
   chartBodyVerticalPadPx: 96,
   chartBodyMinHeightPx: 220,
   chartBodyMaxHeightPx: 960,
-  /** ריפוד אופקי כרטיס גרף (p-3 / md:p-5) — לחישוב רוחב מסילת מגרעה דינמי */
+  /** Chart card horizontal padding (p-3 / md:p-5) — for computing the dynamic bar track width */
   chartCardPadXPxMobile: 24,
   chartCardPadXPxDesktop: 40,
-  /** מרווח קטן מקצה הכרטיס לפס גלילה/עיגול */
+  /** Small margin from the card edge for the scrollbar/rounding */
   chartHostWidthSlopPx: 6,
 };
 
@@ -962,7 +964,7 @@ function collectAllTopicChartLabels(report) {
   return out;
 }
 
-/** מדידת רוחב מקסימלי בפיקסלים (ללא היוריסטיקה label.length * N) */
+/** Measures max width in pixels (without the label.length * N heuristic) */
 function measureMaxLabelWidthPx(labels, fontPx, fontFamily) {
   const pad = MASTER_BAR_CHART_GEOMETRY.labelPadPx;
   if (!labels.length) return Math.ceil(48 + pad);
@@ -980,7 +982,7 @@ function measureMaxLabelWidthPx(labels, fontPx, fontFamily) {
 }
 
 /**
- * גיאומטריה אחת מהסיכום: אותה מסילת מגרעה (פיקסלים); מסילת תוויות לנושאים רחבה לפי צורך אך לא מצמצמת את המגרעה.
+ * Single geometry derived from the summary: same bar track (pixels); the topic label track widens as needed but never shrinks the bar track.
  */
 function computeMasterBarChartGeometry(report, view) {
   const G = MASTER_BAR_CHART_GEOMETRY;
@@ -1018,7 +1020,7 @@ function computeMasterBarChartGeometry(report, view) {
     plotRailWidthPx = Math.max(minPlot, derivedPlot);
   }
 
-  /** מובייל: בלי גלילה אופקית — סכום מסילות לא יעבור את hostInner */
+  /** Mobile: no horizontal scrolling — the sum of the tracks must not exceed hostInner */
   const mobileNoHorizontalScroll =
     Boolean(view.isMobileViewport && !view.forceDesktopLayout) &&
     typeof hostInner === "number" &&
@@ -1073,7 +1075,7 @@ const chartTooltipStyle = {
   border: "1px solid rgba(255,255,255,0.25)",
   borderRadius: "10px",
   color: "#f8fafc",
-  direction: "rtl",
+  direction: "ltr",
   fontSize: "13px",
 };
 
@@ -1082,7 +1084,7 @@ const chartTooltipStyleLight = {
   border: "1px solid #e2e8f0",
   borderRadius: "10px",
   color: "#0f172a",
-  direction: "rtl",
+  direction: "ltr",
   fontSize: "13px",
 };
 
@@ -1093,8 +1095,8 @@ function subjectPracticeSecondaryLineHe(questions, correct, accuracy, timeMinute
   const metrics = normalizeParentVisibleMetrics({ questions, correct, accuracy });
   const q = metrics.questions;
   const tm = Number(timeMinutes) || 0;
-  if (q > 0) return `${metrics.correct} נכון • ${metrics.accuracy}% דיוק`;
-  if (tm > 0) return `${tm} דק׳ תרגול`;
+  if (q > 0) return `${metrics.correct} correct • ${metrics.accuracy}% accuracy`;
+  if (tm > 0) return `${tm} min of practice`;
   return null;
 }
 
@@ -1111,7 +1113,7 @@ function sanitizeDiagnosticsFootnoteDetailHe(raw) {
   const s = String(raw || "").trim();
   if (!s) return "";
   if (/suppressAggressiveStep/i.test(s)) {
-    return "כמות המידע עוזרת להחליט כמה בזהירות להתקדם בצעד הבא.";
+    return "The amount of information helps decide how carefully to move to the next step.";
   }
   return s;
 }
@@ -1182,7 +1184,7 @@ export default function ParentReport() {
   const reportShellOpts = { immersive: reportImmersive };
   useParentReportBrightPageBackground(isBright);
   const parentReportPdfRef = useRef(null);
-  /** רוחב פנימי משוער לכרטיס גרף (עמודת PDF − ריפוד כרטיס) — למגרעת X דינמית */
+  /** Estimated inner width for the chart card (PDF column − card padding) — for the dynamic X track */
   const [chartHostInnerWidthPx, setChartHostInnerWidthPx] = useState(0);
   const [parentReportError, setParentReportError] = useState("");
   const reportRemoteFetchKeyRef = useRef(null);
@@ -1221,7 +1223,7 @@ export default function ParentReport() {
     remoteStudentId,
   ]);
 
-  // useEffect (לא useLayoutEffect) — נדרש ב-SSR של Next כדי למנוע אזהרת hydration / useLayoutEffect על השרת
+  // useEffect (not useLayoutEffect) — required for Next SSR to avoid a hydration warning / useLayoutEffect on the server
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
     const el = parentReportPdfRef.current;
@@ -1242,7 +1244,7 @@ export default function ParentReport() {
     };
   }, [isMobile, report]);
 
-  // פונקציה לפרמט תאריך מ-YYYY-MM-DD ל-DD/MM/YYYY
+  // Function to format a date from YYYY-MM-DD to DD/MM/YYYY
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
     const parts = dateStr.split('-');
@@ -1257,7 +1259,7 @@ export default function ParentReport() {
       subjectId: row?.subject || row?.subjectId,
     });
 
-  // בדיקת גודל מסך
+  // Screen size check
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -1470,7 +1472,7 @@ export default function ParentReport() {
         supabase = getLearningSupabaseBrowserClient();
       } catch {
         if (!cancelled) {
-          setParentReportError("שגיאת הגדרות מערכת.");
+          setParentReportError("System configuration error.");
           setReport(null);
           setCopilotDetailedPayload(null);
           setLoading(false);
@@ -1491,8 +1493,8 @@ export default function ParentReport() {
         if (!cancelled) {
           setParentReportError(
             isTeacherSource
-              ? "נדרשת התחברות כמורה - התחברו מחדש ונסו שוב."
-              : "נדרשת התחברות כהורה - השתמשו בכניסת הורה ונסו שוב."
+              ? "Teacher sign-in is required - sign in again and try again."
+              : "Parent sign-in is required - use the parent sign-in and try again."
           );
           setReport(null);
           setCopilotDetailedPayload(null);
@@ -1535,7 +1537,7 @@ export default function ParentReport() {
         const out = runParentReportGenerationFromApiBody(body, uiPeriodResolved);
         if (!out.ok || !out.base) {
           if (!cancelled) {
-            setParentReportError("לא ניתן לבנות את הדוח מהנתונים שהתקבלו מהשרת.");
+            setParentReportError("The report could not be built from the data received from the server.");
             setReport(null);
             setCopilotDetailedPayload(null);
             setLoading(false);
@@ -1574,8 +1576,8 @@ export default function ParentReport() {
               /aborted|timeout/i.test(String(loadErr.message || "")));
           setParentReportError(
             aborted
-              ? "טעינת הדוח לקחה יותר מדי זמן - נסו טווח קצר יותר או רענון."
-              : "שגיאת רשת בטעינת הדוח."
+              ? "Loading the report took too long - try a shorter range or refresh."
+              : "Network error while loading the report."
           );
           setReport(null);
           setCopilotDetailedPayload(null);
@@ -1608,7 +1610,7 @@ export default function ParentReport() {
       setAppliedStartDate(startDate);
       setAppliedEndDate(endDate);
     } else {
-      alert("אנא בחר תאריכים תקינים");
+      alert("Please choose valid dates");
     }
   };
 
@@ -1630,7 +1632,7 @@ export default function ParentReport() {
     <ReportDateRangeControl
       showDayPreset
       showSchoolYearPreset
-      customRangeLabel="בחירה"
+      customRangeLabel="Custom"
       compactPresets
       className="!border-0 !bg-transparent !p-0 !mb-0 no-pdf"
       presetDays={parentReportPresetDays(period, customDates)}
@@ -1715,7 +1717,7 @@ export default function ParentReport() {
     const recs = report?.parentFacing?.homeRecommendations;
     return Array.isArray(recs) && recs.filter(Boolean).length > 0;
   }, [report]);
-  // Wave 2 Fix 1.2: "חוזקות שבלטו בתרגול" already covers subject-level strengths in
+  // Wave 2 Fix 1.2: "Strengths that stood out in practice" already covers subject-level strengths in
   // detail, so the shorter Overview headline is only needed as a fallback when that
   // block has nothing to show.
   const hasRawMetricStrengthsHe = useMemo(() => {
@@ -1776,7 +1778,7 @@ export default function ParentReport() {
             isBright={isBright}
             fullPage={reportImmersive}
             className="!min-h-0 h-full max-h-full overflow-hidden"
-            message="מכין את דוח הביצועים..."
+            message="Preparing the performance report..."
           />
         </div>
         {reportImmersive ? (
@@ -1792,7 +1794,7 @@ export default function ParentReport() {
         <div
           className={getParentReportStateShellClass(isBright)}
           style={getParentReportStateShellStyle(isBright)}
-          dir="rtl"
+          dir="ltr"
         >
           <ParentReportThemeIcons className="mb-2" />
           <p className={getParentReportErrorTextClass(isBright)}>{parentReportError}</p>
@@ -1803,13 +1805,13 @@ export default function ParentReport() {
                   href={`/teacher/student/${parentStudentId}`}
                   className="rounded-lg px-4 py-2 bg-amber-500 text-black font-semibold"
                 >
-                  חזרה לדוח מורה
+                  Back to teacher report
                 </Link>
                 <Link
                   href="/teacher/dashboard"
                   className={getParentReportSecondaryLinkClass(isBright)}
                 >
-                  לוח בקרה
+                  Dashboard
                 </Link>
               </>
             ) : (
@@ -1818,10 +1820,10 @@ export default function ParentReport() {
                   href="/parent/login"
                   className="rounded-lg px-4 py-2 bg-amber-500 text-black font-semibold"
                 >
-                  כניסת הורה
+                  Parent sign-in
                 </Link>
                 <Link href="/parent/dashboard" className={getParentReportSecondaryLinkClass(isBright)}>
-                  דשבורד הורים
+                  Parent dashboard
                 </Link>
               </>
             )}
@@ -1837,7 +1839,7 @@ export default function ParentReport() {
         <div
           className={getParentReportStateShellClass(isBright)}
           style={getParentReportStateShellStyle(isBright)}
-          dir="rtl"
+          dir="ltr"
           data-testid="parent-report-portal-gate"
         >
           <ParentReportThemeIcons className="mb-2" />
@@ -1856,10 +1858,10 @@ export default function ParentReport() {
               href="/parent/login"
               className="rounded-lg px-4 py-2 bg-amber-500 text-black font-semibold"
             >
-              כניסת הורה
+              Parent sign-in
             </Link>
             <Link href="/parent/dashboard" className={getParentReportSecondaryLinkClass(isBright)}>
-              דשבורד הורים
+              Parent dashboard
             </Link>
           </div>
         </div>
@@ -1881,7 +1883,7 @@ export default function ParentReport() {
         {/* Same page shell / top spacing as populated report - no vertical centering. */}
         <div
           className={getParentReportNoScrollPageShellClass(isBright, reportShellOpts)}
-          dir="rtl"
+          dir="ltr"
           style={getParentReportNoScrollPageContentStyle(isBright, reportShellOpts)}
           data-testid="parent-report-empty-period"
         >
@@ -1890,7 +1892,7 @@ export default function ParentReport() {
 
             <div className="text-center mb-1 md:mb-2">
               <h1 className="parent-report-print-page-section-heading text-2xl md:text-3xl font-extrabold mb-2">
-                📊 דוח להורים
+                📊 Parent Report
               </h1>
               <p className="text-white/70 text-sm md:text-base">{emptyPlayerName}</p>
 
@@ -1917,7 +1919,7 @@ export default function ParentReport() {
     <Layout {...layoutProps}>
       <Head>
         <style>{`
-          /* מסך: בלי גלילה אופקית באזור גרפי עמודות — מניעת לכידת מגע אופקית */
+          /* Screen: no horizontal scrolling in the bar chart area — prevents horizontal touch capture */
           .parent-report-topic-bar-host {
             overflow-x: hidden !important;
             touch-action: pan-y;
@@ -1928,7 +1930,7 @@ export default function ParentReport() {
             min-width: 0;
           }
 
-          /* מצב הדפסה (לייצוא PDF) */
+          /* Print mode (for PDF export) */
           .pdf-print-mode .no-pdf {
             display: none !important;
           }
@@ -1942,7 +1944,7 @@ export default function ParentReport() {
               color: black !important;
             }
 
-            /* להדפיס רק את הדוח עצמו */
+            /* Print only the report itself */
             body * {
               visibility: hidden !important;
             }
@@ -1998,7 +2000,7 @@ export default function ParentReport() {
               color: #333 !important;
             }
 
-            /* Recharts (SVG) – טקסט של צירים/תוויות/מקרא יוצא לבן כברירת מחדל; בהדפסה חייב להיות שחור */
+            /* Recharts (SVG) – axis/label/legend text renders white by default; in print it must be black */
             #parent-report-pdf svg text {
               fill: #000 !important;
             }
@@ -2013,7 +2015,7 @@ export default function ParentReport() {
             #parent-report-pdf .recharts-cartesian-grid path {
               stroke: #d1d5db !important;
             }
-            /* להסתיר רק מה שמסומן (וגם כפתורים) */
+            /* Hide only what's marked (and also buttons) */
             .no-pdf,
             [data-pdf-overlay="1"],
             button {
@@ -2077,7 +2079,7 @@ export default function ParentReport() {
               direction: ltr !important;
               unicode-bidi: isolate !important;
             }
-            /* נושאים: בהדפסה תמיד פריסת שולחן עבודה; כרטיסי מובייל מוסתרים */
+            /* Topics: print always uses desktop layout; mobile cards are hidden */
             #parent-report-pdf .parent-report-desktop-only {
               display: block !important;
             }
@@ -2085,7 +2087,7 @@ export default function ParentReport() {
               display: none !important;
             }
 
-            /* טבלאות נושאים — הפרדה עדינה בלבד (ללא הדגשת תא נושא) */
+            /* Topic tables — subtle separation only (no topic-cell highlight) */
             #parent-report-pdf .parent-report-subject-table {
               border-collapse: collapse !important;
             }
@@ -2109,7 +2111,7 @@ export default function ParentReport() {
               page-break-before: auto !important;
             }
 
-            /* המלצות / אבחון — מניעת שבירה + חיזוק גבולות בהדפסה בלבד */
+            /* Recommendations / diagnostics — prevent breaks + reinforce borders in print only */
             #parent-report-pdf .parent-report-recommendations-print .parent-report-rec-item {
               break-inside: avoid !important;
               page-break-inside: avoid !important;
@@ -2121,14 +2123,14 @@ export default function ParentReport() {
               -webkit-print-color-adjust: exact !important;
               print-color-adjust: exact !important;
             }
-            /* רקע כהה שלא נכלל בגלובל — כרטיס מקצוע באבחון */
+            /* Dark background not covered by the global override — subject card in diagnostics */
             #parent-report-pdf .parent-report-diagnostics-print .bg-black\\/20 {
               background: #f8fafc !important;
               border-color: #64748b !important;
               -webkit-print-color-adjust: exact !important;
               print-color-adjust: exact !important;
             }
-            /* כותרת מקצוע: לא להסתמך על text-white → שחור; צבע ורקע מפורשים ל-PDF */
+            /* Subject title: don't rely on text-white → black; explicit color and background for PDF */
             #parent-report-pdf .parent-report-diagnostics-print .parent-report-diagnostic-subject-title {
               color: #0f172a !important;
               font-weight: 800 !important;
@@ -2152,8 +2154,8 @@ export default function ParentReport() {
             }
 
             /*
-             * דוגמאות טעות / תוצאות טובות — הדפסה בלבד: Tailwind text-white/45, text-white/88, text-sky-300 וכו׳
-             * לא תואמים תמיד ל-overrides הגלובליים; כאן צבעים מפורשים ללא opacity נמוכה.
+             * Mistake examples / good results — print only: Tailwind text-white/45, text-white/88, text-sky-300, etc.
+             * don't always match the global overrides; here we use explicit colors without low opacity.
              */
             #parent-report-pdf .parent-report-diagnostics-print .parent-report-example-card {
               background: #ffffff !important;
@@ -2191,7 +2193,7 @@ export default function ParentReport() {
               color: #1e293b !important;
             }
 
-            /* —— PDF בלבד: חדות היררכיה, כרטיסי סיכום, גרפים (לא משנה מסך) —— */
+            /* —— PDF only: hierarchy sharpness, summary cards, charts (does not affect screen) —— */
             #parent-report-pdf .parent-report-print-section-label {
               color: #0f172a !important;
               opacity: 1 !important;
@@ -2272,7 +2274,7 @@ export default function ParentReport() {
               color: #111827 !important;
               opacity: 1 !important;
             }
-            /* גרפים — מניעת שבירה וקריאות בהדפסה */
+            /* Charts — prevent breaks and improve readability in print */
             #parent-report-pdf .parent-report-chart-card {
               break-inside: avoid !important;
               page-break-inside: avoid !important;
@@ -2321,7 +2323,7 @@ export default function ParentReport() {
               font-weight: 700 !important;
             }
 
-            /* גרפי נושא — גיאומטריה דסקטופית אחידה בהדפסה (ללא דחיסה) */
+            /* Topic charts — uniform desktop geometry in print (no compression) */
             @media print {
               #parent-report-pdf .parent-report-topic-bar-host {
                 overflow-x: visible !important;
@@ -2329,13 +2331,13 @@ export default function ParentReport() {
             }
           }
 
-          /* ===== מצב בהיר — זהה ל-Layout / דשבורד הורה ===== */
+          /* ===== Bright mode — matches Layout / parent dashboard ===== */
           ${PARENT_REPORT_SITE_BRIGHT_CSS}
         `}</style>
       </Head>
       <div
         className={getParentReportPageShellClass(isBright, reportShellOpts)}
-        dir="rtl"
+        dir="ltr"
         style={getParentReportPageContentStyle(isBright, reportShellOpts)}
       >
         <div
@@ -2348,7 +2350,7 @@ export default function ParentReport() {
           {/* */}
           <div className="text-center mb-1 md:mb-2">
             <h1 className="parent-report-print-page-section-heading text-2xl md:text-3xl font-extrabold mb-2">
-              📊 דוח להורים
+              📊 Parent Report
             </h1>
             <p className="text-white/70 text-sm md:text-base">{report.playerName}</p>
             
@@ -2370,7 +2372,7 @@ export default function ParentReport() {
                     : "inline-flex px-4 py-2 rounded-lg text-sm font-bold bg-violet-500/35 border border-violet-300/45 hover:bg-violet-500/50 text-white transition-all"
                 }
               >
-                דוח מקיף לתקופה
+                Detailed Report for the Period
               </Link>
             </div>
 
@@ -2385,31 +2387,31 @@ export default function ParentReport() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-3 md:mb-6 avoid-break">
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                זמן כולל
+                Total time
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-blue-400">
-                {displayReport.summary.totalTimeMinutes} דק'
+                {displayReport.summary.totalTimeMinutes} min
               </div>
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60">
-                ({displayReport.summary.totalTimeHours} שעות)
+                ({displayReport.summary.totalTimeHours} hours)
               </div>
             </div>
             
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                שאלות
+                Questions
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-emerald-400">
                 {displayReport.summary.totalQuestions}
               </div>
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60">
-                {displayReport.summary.totalCorrect} נכון
+                {displayReport.summary.totalCorrect} correct
               </div>
             </div>
             
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                דיוק כללי
+                Overall accuracy
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-yellow-400">
                 {displayReport.summary.overallAccuracy}%
@@ -2418,10 +2420,10 @@ export default function ParentReport() {
             
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                רמה
+                Level
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-purple-400">
-                רמה {displayReport.summary.playerLevel}
+                Level {displayReport.summary.playerLevel}
               </div>
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60">
                 ⭐ {displayReport.summary.stars} • 🏆 {displayReport.summary.achievements}
@@ -2445,7 +2447,7 @@ export default function ParentReport() {
 
           {report.summary?.diagnosticOverviewHe ? (
             <div className="mb-3 md:mb-5 avoid-break rounded-lg border border-amber-400/25 bg-amber-950/15 p-3 md:p-4 text-sm text-white/90 space-y-2">
-              <p className="font-bold text-amber-100/95 m-0 text-sm md:text-base">מה הכי בולט עכשיו</p>
+              <p className="font-bold text-amber-100/95 m-0 text-sm md:text-base">What stands out most right now</p>
               {regularReportDisplay?.prominentFindingLinesHe?.length ? (
                 <ul className="m-0 pr-4 list-disc text-xs md:text-sm text-white/88 space-y-1.5">
                   {regularReportDisplay.prominentFindingLinesHe.map((line, i) => (
@@ -2463,15 +2465,15 @@ export default function ParentReport() {
                   ) : null}
                   {!shortContractTop && report.summary.diagnosticOverviewHe.mainFocusAreaLineHe ? (
                     <p className="m-0 leading-relaxed">
-                      <span className="text-white/55">כדאי לשים לב: </span>
+                      <span className="text-white/55">Worth noting: </span>
                       {report.summary.diagnosticOverviewHe.mainFocusAreaLineHe}
                     </p>
                   ) : !shortContractTop ? (
                     <p className="m-0 text-white/55 text-xs">
                       {Number(displayReport.summary?.totalQuestions) > 0 &&
                       diagnosticsView?.presence?.state === "hasVolumeNoPattern"
-                        ? "יש נתוני תרגול בתקופה שנבחרה, אך עדיין אין מספיק בסיס ברור מהתרגולים כדי לראות לאיזה נושא כדאי להתמקד - כדאי להמשיך בתרגול ולעקוב שוב לאחר מכן."
-                        : "אין עדיין תחום שכדאי לשים לב עכשיו בתקופה שנבחרה."}
+                        ? "There's practice data for the selected period, but there still isn't enough clear basis from the practice to see which topic to focus on - it's worth continuing to practice and checking again afterward."
+                        : "There's no area worth focusing on right now for the selected period."}
                     </p>
                   ) : null}
                 </>
@@ -2483,7 +2485,7 @@ export default function ParentReport() {
 
           {regularReportDisplay?.topicStrengthLinesHe?.length ? (
             <div className="mb-3 md:mb-5 avoid-break rounded-lg border border-emerald-400/25 bg-emerald-950/15 p-3 md:p-4 text-sm text-white/90 space-y-1">
-              <p className="font-bold text-emerald-100/95 m-0 text-sm md:text-base">חוזקות שבלטו בתרגול</p>
+              <p className="font-bold text-emerald-100/95 m-0 text-sm md:text-base">Strengths that stood out in practice</p>
               <ul className="m-0 pr-4 list-disc text-xs md:text-sm text-white/85 space-y-1">
                 {regularReportDisplay.topicStrengthLinesHe.map((line, i) => (
                   <li key={`rms-${i}`} className="leading-relaxed">
@@ -2513,7 +2515,7 @@ export default function ParentReport() {
                     {ui.emoji} {row.name}
                   </div>
                   <div className={`parent-report-print-summary-stat text-base md:text-lg font-bold ${ui.statClass}`}>
-                    {row.questions > 0 ? `${row.questions} שאלות` : `${row.minutes} דק׳`}
+                    {row.questions > 0 ? `${row.questions} questions` : `${row.minutes} min`}
                   </div>
                   {secondary ? (
                     <div className="parent-report-print-muted-text text-xs text-white/80">{secondary}</div>
@@ -2540,7 +2542,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "mathOperations", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="parent-report-math-progress-title text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🧮 התקדמות במתמטיקה</h2>
+              <h2 className="parent-report-math-progress-title text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🧮 Math progress</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only parent-report-table-wrap-print hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -2558,16 +2560,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">פעולה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Operation</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2590,7 +2592,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2632,40 +2634,40 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-blue-400">{regularReportTopicLabel("math", data, op, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span> <span className={`font-bold ${
+                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2678,7 +2680,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "geometryTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📐 התקדמות בגאומטריה</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📐 Geometry progress</h2>
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
                   <colgroup>
@@ -2695,16 +2697,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">נושא</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2727,7 +2729,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2769,40 +2771,40 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-emerald-400">{regularReportTopicLabel("geometry", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span> <span className={`font-bold ${
+                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2815,7 +2817,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "englishTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📘 התקדמות באנגלית</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📘 English progress</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -2833,16 +2835,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">נושא</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2865,7 +2867,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2907,40 +2909,40 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-purple-400">{regularReportTopicLabel("english", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span> <span className={`font-bold ${
+                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2953,7 +2955,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "scienceTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🔬 התקדמות במדעים</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🔬 Science progress</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -2971,16 +2973,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">נושא</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -3003,7 +3005,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -3045,40 +3047,40 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-green-400">{regularReportTopicLabel("science", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span> <span className={`font-bold ${
+                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -3091,7 +3093,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "hebrewTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📚 התקדמות בעברית</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📚 Hebrew progress</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -3109,16 +3111,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">נושא</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -3141,7 +3143,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -3183,40 +3185,40 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-orange-400">{regularReportTopicLabel("hebrew", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span> <span className={`font-bold ${
+                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -3229,7 +3231,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows({ moledetTopics: mgVisualSplit?.moledetTopics }, "moledetTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🏠 התקדמות ב{VISUAL_STRAND_LABEL_HE.moledet}</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🏠 {VISUAL_STRAND_LABEL_HE.moledet} progress</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -3247,16 +3249,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">נושא</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -3288,7 +3290,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -3334,40 +3336,40 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-cyan-400">{subjectTopicLabelForParentHe(MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID, data, topic)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span> <span className={`font-bold ${
+                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -3380,7 +3382,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows({ geographyTopics: mgVisualSplit?.geographyTopics }, "geographyTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🗺️ התקדמות ב{VISUAL_STRAND_LABEL_HE.geography}</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🗺️ {VISUAL_STRAND_LABEL_HE.geography} progress</h2>
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
                   <colgroup>
@@ -3397,16 +3399,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">נושא</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">רמה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">כיתה</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">מקור</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">תאריך אחרון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">שאלות</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">נכון</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">דיוק</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">סטטוס</th>
+                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Questions</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -3438,7 +3440,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "לא זמין"}
+                            {data.lastSessionAt ?? "Not available"}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -3483,29 +3485,29 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-teal-400">{subjectTopicLabelForParentHe(MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID, data, topic)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">רמה:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">כיתה:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">מקור:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">תאריך אחרון:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "לא זמין"}</span>
+                          <span className="text-white/60">Last date:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">זמן:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">שאלות:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">נכון:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">דיוק:</span>{" "}
+                          <span className="text-white/60">Accuracy:</span>{" "}
                           <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
@@ -3513,11 +3515,11 @@ export default function ParentReport() {
                       </div>
                       <div className="mt-2 text-center">
                         {topicShowsExcellent(data) ? (
-                          <span className="text-emerald-400 text-xs">✅ מצוין</span>
+                          <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ כדאי לתרגל עוד</span>
+                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 טוב</span>
+                          <span className="text-yellow-400 text-xs">👍 Good</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -3535,39 +3537,39 @@ export default function ParentReport() {
             return (
               <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
                 <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">
-                  חלוקת זמן הלמידה
+                  Learning time breakdown
                 </h2>
                 <div className="parent-report-desktop-only parent-report-table-wrap-print mt-2 overflow-x-auto">
                   <table className="w-full text-sm parent-report-subject-table">
                     <thead>
                       <tr className="border-b border-white/20">
-                        <th className="text-right py-1.5 px-0.5 whitespace-nowrap">סוג הלמידה</th>
-                        <th className="text-center py-1.5 px-0.5 whitespace-nowrap">זמן</th>
+                        <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Learning type</th>
+                        <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1">תרגול עם שאלות</td>
+                        <td className="text-right py-1.5 px-1">Practice with questions</td>
                         <td className="py-1.5 px-0.5 text-center text-white/80 whitespace-nowrap">
-                          {formatExclusiveLearningMinutesHe(exclusive.questionPracticeMinutes)} דק׳
+                          {formatExclusiveLearningMinutesHe(exclusive.questionPracticeMinutes)} min
                         </td>
                       </tr>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1">קריאת ספרים</td>
+                        <td className="text-right py-1.5 px-1">Book reading</td>
                         <td className="py-1.5 px-0.5 text-center text-white/80 whitespace-nowrap">
-                          {formatExclusiveLearningMinutesHe(exclusive.bookReadingMinutes)} דק׳
+                          {formatExclusiveLearningMinutesHe(exclusive.bookReadingMinutes)} min
                         </td>
                       </tr>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1">למידה פעילה נוספת</td>
+                        <td className="text-right py-1.5 px-1">Other active learning</td>
                         <td className="py-1.5 px-0.5 text-center text-white/80 whitespace-nowrap">
-                          {formatExclusiveLearningMinutesHe(exclusive.otherActiveLearningMinutes)} דק׳
+                          {formatExclusiveLearningMinutesHe(exclusive.otherActiveLearningMinutes)} min
                         </td>
                       </tr>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1 font-semibold">סך הכול</td>
+                        <td className="text-right py-1.5 px-1 font-semibold">Total</td>
                         <td className="py-1.5 px-0.5 text-center text-white/90 font-semibold whitespace-nowrap">
-                          {formatExclusiveLearningMinutesHe(exclusive.totalMinutes)} דק׳
+                          {formatExclusiveLearningMinutesHe(exclusive.totalMinutes)} min
                         </td>
                       </tr>
                     </tbody>
@@ -3585,7 +3587,7 @@ export default function ParentReport() {
                 diagnosticsView.legacyRecommendations.length > 0)) && (
               <div className="parent-report-recommendations-print parent-report-diagnostics-print bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
                 <h2 className="parent-report-print-page-section-heading text-base md:text-xl font-bold mb-2 md:mb-3 text-center">
-                  💡 המלצות
+                  💡 Recommendations
                 </h2>
                 <p className="text-[11px] md:text-xs text-white/60 text-center mb-2">
                   {diagnosticSourceLabelHe}
@@ -3637,7 +3639,7 @@ export default function ParentReport() {
                     {diagnosticsView.presence?.recommendationsExplainerHe ||
                       (Number(displayReport.summary?.totalQuestions) > 0
                         ? PARENT_THIN_DATA_EXPLAINER_HE
-                        : "עדיין אין מספיק נתונים לתמונה ברורה מהתרגולים")}
+                        : "There still isn't enough data for a clear picture from the practice sessions")}
                   </p>
                 )}
 
@@ -3654,13 +3656,13 @@ export default function ParentReport() {
                         tierHe:
                           x.tierHe ||
                           (x.excellent && (x.questions || 0) >= 20
-                            ? "נושא שהילד מצליח בו יותר כרגע"
-                            : "נושא חזק כרגע"),
+                            ? "A topic the child is succeeding in right now"
+                            : "A strong topic right now"),
                       }));
                       const topStr = s.topStrengths?.length ? s.topStrengths : legacyStrength;
                       const wkLegacy = (s.weaknesses || []).map((w) => ({
                         ...w,
-                        tierHe: w.tierHe || "כרגע בתרגול נראה שכדאי לחזק",
+                        tierHe: w.tierHe || "Right now practice suggests this could use reinforcement",
                       }));
                       const topWk = s.topWeaknesses?.length ? s.topWeaknesses : wkLegacy;
                       const mn = s.maintain || [];
@@ -3724,7 +3726,7 @@ export default function ParentReport() {
                             {Array.isArray(s.diagnosticCards) && s.diagnosticCards.length > 0 ? (
                               <div className="text-[10px] md:text-[11px] text-white/80 space-y-1.5 border border-white/10 rounded-md bg-white/5 px-2 py-1.5">
                                 <div className="font-semibold text-white/90 text-[11px] md:text-xs">
-                                  ממה שתורגל:
+                                  Based on what was practiced:
                                 </div>
                                 {s.diagnosticCards.map((card, cardIdx) => {
                                   const recHe = String(card.recommendationHe || "").trim();
@@ -3749,7 +3751,7 @@ export default function ParentReport() {
                                         : null}
                                       {recHe ? (
                                         <div className="text-white/78 text-[9px] md:text-[10px] leading-snug break-words">
-                                          <span className="text-white/45">מה לעשות: </span>
+                                          <span className="text-white/45">What to do: </span>
                                           {diagnosticParentVisibleTextHe(recHe)}
                                         </div>
                                       ) : null}
@@ -3765,13 +3767,13 @@ export default function ParentReport() {
                                 ) : null}
                                 {s.subjectDoNowHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">עכשיו: </span>
+                                    <span className="text-white/45 font-bold">Now: </span>
                                     {diagnosticParentVisibleTextHe(s.subjectDoNowHe)}
                                   </p>
                                 ) : null}
                                 {s.subjectAvoidNowHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">להימנע: </span>
+                                    <span className="text-white/45 font-bold">Avoid: </span>
                                     {diagnosticParentVisibleTextHe(s.subjectAvoidNowHe)}
                                   </p>
                                 ) : null}
@@ -3781,13 +3783,13 @@ export default function ParentReport() {
                               <div className="text-[10px] md:text-[11px] text-emerald-100/85 border border-emerald-400/20 bg-emerald-950/10 rounded px-2 py-1.5 space-y-1 leading-snug">
                                 {s.dominantMistakePatternLabelHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">מה חוזר בטעות: </span>
+                                    <span className="text-white/45 font-bold">What repeats as a mistake: </span>
                                     {diagnosticParentVisibleTextHe(s.dominantMistakePatternLabelHe)}
                                   </p>
                                 ) : null}
                                 {s.subjectMemoryNarrativeHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">מה הילד כבר זוכר טוב: </span>
+                                    <span className="text-white/45 font-bold">What the child already remembers well: </span>
                                     {diagnosticParentVisibleTextHe(s.subjectMemoryNarrativeHe)}
                                   </p>
                                 ) : null}
@@ -3795,7 +3797,7 @@ export default function ParentReport() {
                             )}
                             {sx.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-violet-200/85 pt-1">
-                                מה שהילד עושה טוב לאורך זמן
+                                What the child does well over time
                               </div>
                             )}
                             {sx.map((x, sxIdx) => (
@@ -3807,10 +3809,10 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🏆</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {x.tierHe || "מה שהילד עושה טוב לאורך זמן"}
+                                      {x.tierHe || "What the child does well over time"}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - דיוק {x.accuracy}% ({x.questions} שאלות)
+                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {x.accuracy}% accuracy ({x.questions} questions)
                                     </div>
                                   </div>
                                 </div>
@@ -3818,7 +3820,7 @@ export default function ParentReport() {
                             ))}
                             {topStr.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-emerald-200/80 pt-1">
-                                איפה נראו התוצאות הטובות ביותר
+                                Where the best results were seen
                               </div>
                             )}
                             {topStr.map((x, tsIdx) => (
@@ -3830,10 +3832,10 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🌟</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {x.tierHe || "תוצאות טובות בנושא"}
+                                      {x.tierHe || "Good results in this topic"}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - דיוק {x.accuracy}% ({x.questions} שאלות)
+                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {x.accuracy}% accuracy ({x.questions} questions)
                                     </div>
                                   </div>
                                 </div>
@@ -3841,7 +3843,7 @@ export default function ParentReport() {
                             ))}
                             {mn.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-sky-200/80 pt-1">
-                                מומלץ לשמר
+                                Recommended to maintain
                               </div>
                             )}
                             {mn.map((x, mnIdx) => (
@@ -3853,10 +3855,10 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🔷</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {maintainTierHeDisplay(x.tierHe) || "עקביות"}
+                                      {maintainTierHeDisplay(x.tierHe) || "Consistency"}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - דיוק {x.accuracy}% ({x.questions} שאלות)
+                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {x.accuracy}% accuracy ({x.questions} questions)
                                     </div>
                                   </div>
                                 </div>
@@ -3864,7 +3866,7 @@ export default function ParentReport() {
                             ))}
                             {im.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-amber-200/80 pt-1">
-                                איפה כדאי לחזק
+                                Where it's worth reinforcing
                               </div>
                             )}
                             {im.map((x, imIdx) => (
@@ -3876,13 +3878,13 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">📈</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {x.tierHe || "נושא שעדיין מתחזק"}
+                                      {x.tierHe || "A topic still strengthening"}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(
                                         improvingDiagnosticsDisplayLabelHe(x.labelHe)
                                       )}{" "}
-                                      - דיוק {x.accuracy}% ({x.questions} שאלות)
+                                      - {x.accuracy}% accuracy ({x.questions} questions)
                                     </div>
                                   </div>
                                 </div>
@@ -3890,7 +3892,7 @@ export default function ParentReport() {
                             ))}
                             {topWk.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-white/55 tracking-wide">
-                                מה כדאי לשים לב אליו השבוע
+                                What's worth paying attention to this week
                               </div>
                             )}
                             {topWk.map((w, wkIdx) => (
@@ -3902,12 +3904,12 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🔴</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {weaknessTierHeDisplay(w.tierHe) || "תחום לחיזוק"}
+                                      {weaknessTierHeDisplay(w.tierHe) || "Area to reinforce"}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(w.labelHe)}
                                       {typeof w.mistakeCount === "number"
-                                        ? ` (${w.mistakeCount} טעויות דומות)`
+                                        ? ` (${w.mistakeCount} similar mistakes)`
                                         : ""}
                                     </div>
                                     <ParentDiagnosticExplanationBlock
@@ -3927,7 +3929,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">👪</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      מה אפשר לעשות בבית
+                                      What can be done at home
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(parentHomeActionHe)}
@@ -3942,7 +3944,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🗓️</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      יעדים לשבוע הקרוב
+                                      Goals for the coming week
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(nextWeekGoalHe)}
@@ -3960,7 +3962,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🎯</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      המלצה לילד/ה
+                                      Recommendation for the child
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(r.textHe)}
@@ -3978,7 +3980,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">✨</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      המלצה לילד/ה - שימור מה שעובד טוב
+                                      Recommendation for the child - keeping what's working
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(r.textHe)}
@@ -3996,7 +3998,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">💬</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      המלצה להורה - עידוד ושימור
+                                      Recommendation for the parent - encouragement and support
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(r.textHe)}
@@ -4012,7 +4014,7 @@ export default function ParentReport() {
                                   className="parent-report-rec-item parent-report-example-card parent-report-example-mistake p-2 md:p-3 rounded-lg border bg-white/5 border-white/15"
                                 >
                                   <div className="parent-report-example-heading font-semibold text-xs text-white/70 mb-1">
-                                    דוגמה לטעות (מהתרגול)
+                                    Example of a mistake (from practice)
                                   </div>
                                   {ev.exerciseText ? (
                                     <div className="parent-report-example-prose text-xs text-white/80 break-words mb-1">
@@ -4023,12 +4025,12 @@ export default function ParentReport() {
                                   hasMeaningfulExampleAnswer(ev.userAnswer) ? (
                                     <div
                                       className="parent-report-example-answers flex flex-col gap-1.5 text-[11px] md:text-xs break-words"
-                                      dir="rtl"
+                                      dir="ltr"
                                     >
                                       {hasMeaningfulExampleAnswer(ev.correctAnswer) ? (
                                         <div>
                                           <span className="parent-report-example-answer-label font-semibold text-sky-300">
-                                            התשובה הנכונה
+                                            Correct answer
                                           </span>
                                           <span className="parent-report-example-answer-sep text-white/45 mx-1">
                                             :
@@ -4044,7 +4046,7 @@ export default function ParentReport() {
                                       {hasMeaningfulExampleAnswer(ev.userAnswer) ? (
                                         <div>
                                           <span className="parent-report-example-answer-label font-semibold text-amber-300">
-                                            תשובת הילד
+                                            Child's answer
                                           </span>
                                           <span className="parent-report-example-answer-sep text-white/45 mx-1">
                                             :
@@ -4086,16 +4088,16 @@ export default function ParentReport() {
           {/* */}
           <section
             className="parent-report-graph-section space-y-5 md:space-y-7 mb-3 md:mb-6"
-            aria-label="גרפים"
+            aria-label="Charts"
           >
             {suppressChartsForThinEvidenceWindow ? (
               <div className="parent-report-chart-card bg-amber-950/25 border border-amber-400/35 rounded-xl p-4 md:p-6 avoid-break text-center space-y-2">
                 <h2 className="parent-report-print-chart-title text-base md:text-lg font-bold text-amber-100/95">
-                  מעט שאלות בתקופה שנבחרה
+                  Few questions in the selected period
                 </h2>
                 <p className="text-xs md:text-sm text-white/80 leading-relaxed m-0">
-                  מספר השאלות בתקופה שנבחרה נמוך מדי כדי להציג כאן גרפים או טבלאות בעלי משמעות ברורה.
-                  מומלץ להסתמך על הסיכום וההסברים למעלה, ולהמשיך בתרגול כדי לצבור תמונה ברורה יותר.
+                  The number of questions in the selected period is too low to show meaningful charts or tables here.
+                  It's recommended to rely on the summary and explanations above, and keep practicing to build a clearer picture.
                 </p>
               </div>
             ) : (
@@ -4110,7 +4112,7 @@ export default function ParentReport() {
               const oMin = exclusive.otherActiveLearningMinutes;
               const chartRow = [
                 {
-                  name: "חלוקה",
+                  name: "Breakdown",
                   question: qMin,
                   book: bMin,
                   other: oMin,
@@ -4120,10 +4122,10 @@ export default function ParentReport() {
                 <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                   <div className="text-center mb-1 md:mb-2">
                     <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                      חלוקת זמן הלמידה
+                      Learning time breakdown
                     </h2>
                     <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                      תרגול עם שאלות, קריאת ספרים ולמידה פעילה נוספת
+                      Practice with questions, book reading, and other active learning
                     </p>
                   </div>
                   <div className="w-full" style={{ minHeight: isMobile ? 160 : 180, direction: "ltr" }}>
@@ -4139,14 +4141,14 @@ export default function ParentReport() {
                           tick={{ fill: "#ffffff85", fontSize: isMobile ? 10 : 11 }}
                           tickMargin={6}
                           tickFormatter={(value) =>
-                            `${formatExclusiveLearningMinutesHe(value)} דק׳`
+                            `${formatExclusiveLearningMinutesHe(value)} min`
                           }
                         />
                         <YAxis type="category" dataKey="name" hide width={0} />
                         <Tooltip
                           contentStyle={activeTooltipStyle}
                           formatter={(value, name) => [
-                            `${formatExclusiveLearningMinutesHe(value)} דק׳`,
+                            `${formatExclusiveLearningMinutesHe(value)} min`,
                             name,
                           ]}
                         />
@@ -4161,12 +4163,12 @@ export default function ParentReport() {
                           iconSize={11}
                           formatter={(value) => {
                             let mins = 0;
-                            if (value === "תרגול עם שאלות") mins = qMin;
-                            else if (value === "קריאת ספרים") mins = bMin;
-                            else if (value === "למידה פעילה נוספת") mins = oMin;
+                            if (value === "Practice with questions") mins = qMin;
+                            else if (value === "Book reading") mins = bMin;
+                            else if (value === "Other active learning") mins = oMin;
                             return (
                               <span className="parent-report-print-legend-label text-white/80">
-                                {value} ({formatExclusiveLearningMinutesHe(mins)} דק׳)
+                                {value} ({formatExclusiveLearningMinutesHe(mins)} min)
                               </span>
                             );
                           }}
@@ -4174,21 +4176,21 @@ export default function ParentReport() {
                         <Bar
                           dataKey="question"
                           stackId="lt"
-                          name="תרגול עם שאלות"
+                          name="Practice with questions"
                           fill="#34d399"
                           isAnimationActive={false}
                         />
                         <Bar
                           dataKey="book"
                           stackId="lt"
-                          name="קריאת ספרים"
+                          name="Book reading"
                           fill="#60a5fa"
                           isAnimationActive={false}
                         />
                         <Bar
                           dataKey="other"
                           stackId="lt"
-                          name="למידה פעילה נוספת"
+                          name="Other active learning"
                           fill="#fbbf24"
                           isAnimationActive={false}
                         />
@@ -4202,10 +4204,10 @@ export default function ParentReport() {
               <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                 <div className="text-center mb-1 md:mb-2">
                   <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                    פעילות יומית
+                    Daily activity
                   </h2>
                   <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                    זמן תרגול ושאלות לפי יום בתקופה שנבחרה
+                    Practice time and questions by day for the selected period
                   </p>
                 </div>
                 <div className="w-full" style={{ minHeight: isMobile ? 240 : 300 }}>
@@ -4235,15 +4237,15 @@ export default function ParentReport() {
                       <Tooltip
                         contentStyle={activeTooltipStyle}
                         labelFormatter={(value) =>
-                          new Date(value).toLocaleDateString("he-IL", {
+                          new Date(value).toLocaleDateString("en-US", {
                             weekday: "short",
                             day: "numeric",
                             month: "short",
                           })
                         }
                         formatter={(value, name) => {
-                          if (name === "זמן (דקות)") return [`${value} דק׳`, name];
-                          if (name === "שאלות") return [value, name];
+                          if (name === "Time (minutes)") return [`${value} min`, name];
+                          if (name === "Questions") return [value, name];
                           return [value, name];
                         }}
                       />
@@ -4266,7 +4268,7 @@ export default function ParentReport() {
                         dataKey="timeMinutes"
                         stroke="#60a5fa"
                         strokeWidth={2}
-                        name="זמן (דקות)"
+                        name="Time (minutes)"
                         dot={{ fill: "#60a5fa", r: 3 }}
                         activeDot={{ r: 5 }}
                       />
@@ -4275,7 +4277,7 @@ export default function ParentReport() {
                         dataKey="questions"
                         stroke="#34d399"
                         strokeWidth={2}
-                        name="שאלות"
+                        name="Questions"
                         dot={{ fill: "#34d399", r: 3 }}
                         activeDot={{ r: 5 }}
                       />
@@ -4289,10 +4291,10 @@ export default function ParentReport() {
               <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                 <div className="text-center mb-1 md:mb-2">
                   <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                    פעילות לפי מקצועות (יומי)
+                    Activity by subject (daily)
                   </h2>
                   <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                    מספר נושאים שונים שתורגלו בכל יום
+                    Number of different topics practiced each day
                   </p>
                 </div>
                 <div className="w-full" style={{ minHeight: isMobile ? 260 : 320 }}>
@@ -4323,7 +4325,7 @@ export default function ParentReport() {
                       <Tooltip
                         contentStyle={activeTooltipStyle}
                         labelFormatter={(value) =>
-                          new Date(value).toLocaleDateString("he-IL", {
+                          new Date(value).toLocaleDateString("en-US", {
                             weekday: "short",
                             day: "numeric",
                             month: "short",
@@ -4351,7 +4353,7 @@ export default function ParentReport() {
                         dataKey="mathTopics"
                         stroke={SUBJECT_CHART_COLORS.math}
                         strokeWidth={1.8}
-                        name="מתמטיקה"
+                        name="Math"
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -4360,7 +4362,7 @@ export default function ParentReport() {
                         dataKey="geometryTopics"
                         stroke={SUBJECT_CHART_COLORS.geometry}
                         strokeWidth={1.8}
-                        name="גאומטריה"
+                        name="Geometry"
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -4369,7 +4371,7 @@ export default function ParentReport() {
                         dataKey="englishTopics"
                         stroke={SUBJECT_CHART_COLORS.english}
                         strokeWidth={1.8}
-                        name="אנגלית"
+                        name="English"
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -4378,7 +4380,7 @@ export default function ParentReport() {
                         dataKey="scienceTopics"
                         stroke={SUBJECT_CHART_COLORS.science}
                         strokeWidth={1.8}
-                        name="מדעים"
+                        name="Science"
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -4387,7 +4389,7 @@ export default function ParentReport() {
                         dataKey="historyTopics"
                         stroke={SUBJECT_CHART_COLORS.history}
                         strokeWidth={1.8}
-                        name="היסטוריה"
+                        name="History"
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -4396,7 +4398,7 @@ export default function ParentReport() {
                         dataKey="hebrewTopics"
                         stroke={SUBJECT_CHART_COLORS.hebrew}
                         strokeWidth={1.8}
-                        name="עברית"
+                        name="Hebrew"
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -4445,10 +4447,10 @@ export default function ParentReport() {
                   <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                     <div className="text-center mb-2 md:mb-3">
                       <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                        סיכום לפי שש המקצועות
+                        Summary across six subjects
                       </h2>
                       <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                        זמן תרגול (דקות) - בפרטים מלאים יופיעו גם שאלות ודיוק
+                        Practice time (minutes) - full details will also show questions and accuracy
                       </p>
                     </div>
                     <div
@@ -4485,7 +4487,7 @@ export default function ParentReport() {
                               tick={{ fill: "#ffffff85", fontSize: M.tickFontPx }}
                               tickMargin={6}
                               label={{
-                                value: "דקות",
+                                value: "minutes",
                                 position: "insideBottom",
                                 offset: -2,
                                 fill: "#ffffff70",
@@ -4535,19 +4537,19 @@ export default function ParentReport() {
                                   const minutes = Number(p.minutes) || 0;
                                   if (q <= 0) {
                                     if (minutes > 0) {
-                                      return ["אין שאלות שנענו בתקופה זו", ""];
+                                      return ["No questions answered in this period", ""];
                                     }
-                                    return ["לא תורגל במקצוע זה בתקופה שנבחרה", ""];
+                                    return ["Not practiced in this subject for the selected period", ""];
                                   }
                                   return [
-                                    `${p.minutes} דק׳ תרגול · ${q} שאלות · דיוק ${p.accuracy}%`,
+                                    `${p.minutes} min practice · ${q} questions · ${p.accuracy}% accuracy`,
                                     "",
                                   ];
                                 }}
                               />
                               <Bar
                                 dataKey="minutes"
-                                name="זמן (דקות)"
+                                name="Time (minutes)"
                                 radius={[0, 6, 6, 0]}
                                 maxBarSize={M.summaryMaxBarSize}
                               >
@@ -4600,7 +4602,7 @@ export default function ParentReport() {
                         {cfg.title}
                       </h2>
                       <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/50 mt-0.5">
-                        מסילת תוויות ומסילת גרף משותפות לכל המקצועות
+                        Label track and chart track shared across all subjects
                       </p>
                     </div>
                     <div
@@ -4634,7 +4636,7 @@ export default function ParentReport() {
                               tick={{ fill: "#ffffff85", fontSize: M.tickFontPx }}
                               tickMargin={6}
                               label={{
-                                value: "דיוק %",
+                                value: "Accuracy %",
                                 position: "insideBottom",
                                 offset: -2,
                                 fill: "#ffffff65",
@@ -4682,19 +4684,19 @@ export default function ParentReport() {
                                 if (!p) return ["", ""];
                                 const q = Number(p.questions) || 0;
                                 if (q <= 0) {
-                                  return ["לא תורגל באותו נושא בתקופה שנבחרה", ""];
+                                  return ["Not practiced in this topic for the selected period", ""];
                                 }
                                 const timeLabel = formatRegularReportTopicTimeCellHe({
                                   questions: q,
                                   timeMinutes: p.timeMinutes,
                                 });
                                 const timePart = timeLabel === "-" ? "" : ` · ${timeLabel}`;
-                                return [`דיוק ${p.accuracy}% · ${q} שאלות${timePart}`, ""];
+                                return [`${p.accuracy}% accuracy · ${q} questions${timePart}`, ""];
                               }}
                             />
                             <Bar
                               dataKey="accuracy"
-                              name="דיוק %"
+                              name="Accuracy %"
                               radius={[0, 4, 4, 0]}
                               maxBarSize={M.topicMaxBarSize}
                             >
@@ -4720,15 +4722,15 @@ export default function ParentReport() {
 
           {/* */}
           <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6">
-            <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">🎯 אתגרים</h2>
+            <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">🎯 Challenges</h2>
             <div className="grid grid-cols-2 gap-2 md:gap-4">
               <div className="bg-blue-500/20 border border-blue-400/50 rounded-lg p-2 md:p-3">
-                <div className="text-xs md:text-sm text-white/60 mb-1">אתגר יומי</div>
+                <div className="text-xs md:text-sm text-white/60 mb-1">Daily challenge</div>
                 <div className="text-base md:text-lg font-bold">
                   {report.challenges.daily.correct} / {report.challenges.daily.questions}
                 </div>
                 <div className="text-[10px] md:text-xs text-white/60">
-                  ניקוד שיא: {report.challenges.daily.bestScore}
+                  Best score: {report.challenges.daily.bestScore}
                 </div>
               </div>
               <div className={`border rounded-lg p-2 md:p-3 ${
@@ -4736,12 +4738,12 @@ export default function ParentReport() {
                   ? "bg-yellow-500/20 border-yellow-400/50"
                   : "bg-purple-500/20 border-purple-400/50"
               }`}>
-                <div className="text-xs md:text-sm text-white/60 mb-1">אתגר שבועי</div>
+                <div className="text-xs md:text-sm text-white/60 mb-1">Weekly challenge</div>
                 <div className="text-base md:text-lg font-bold">
                   {report.challenges.weekly.current} / {report.challenges.weekly.target}
                 </div>
                 {report.challenges.weekly.completed && (
-                  <div className="text-[10px] md:text-xs text-yellow-400">🎉 הושלם!</div>
+                  <div className="text-[10px] md:text-xs text-yellow-400">🎉 Completed!</div>
                 )}
               </div>
             </div>
@@ -4750,7 +4752,7 @@ export default function ParentReport() {
           {/* */}
           {report.achievements.length > 0 && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">🏆 הישגים</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">🏆 Achievements</h2>
               <div className="flex flex-wrap gap-2 justify-center">
                 {report.achievements.map((achievement) => (
                   <div
@@ -4791,13 +4793,13 @@ export default function ParentReport() {
               }}
               className="px-4 md:px-6 py-2 md:py-3 rounded-lg bg-red-500/80 hover:bg-red-500 font-bold text-sm md:text-base"
             >
-              🖨️ הדפס / 📄 ייצא ל-PDF
+              🖨️ Print / 📄 Export to PDF
             </button>
             <button
               onClick={() => router.push("/learning")}
               className="px-4 md:px-6 py-2 md:py-3 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm md:text-base"
             >
-              ← חזור ללמידה
+              ← Back to learning
             </button>
           </div>
         </div>

@@ -24,16 +24,16 @@ const SUBJECT_MAP_KEYS = {
 };
 
 const SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
+  hebrew: "Hebrew",
+  "moledet-geography": "Homeland and Geography",
 };
 
-const NARRATIVE_GRADE_TITLE_RE = / - כיתה /u;
-const TABLE_GRADE_IN_TOPIC_RE = /(?:-|\()\s*(?:כיתה|תרגול ב)/u;
+const NARRATIVE_GRADE_TITLE_RE = / - (?:כיתה|Grade) /iu;
+const TABLE_GRADE_IN_TOPIC_RE = /(?:-|\()\s*(?:כיתה|תרגול ב|Grade|practice in)/iu;
 
 /**
  * @param {string} subjectId

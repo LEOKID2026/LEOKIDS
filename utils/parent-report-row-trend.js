@@ -305,21 +305,21 @@ export function computeRowTrend({
   const hasEnoughQuestionsForStatus =
     nCur >= TOPIC_EVIDENCE_THRESHOLDS.minQuestionsModerate;
   const parts = [];
-  if (accCurrent != null) parts.push(`בטווח הנוכחי כ-${accCurrent}% דיוק על ${nCur} שאלות`);
-  if (accPrev != null && nPrev > 0) parts.push(`בתקופה המקבילה הקודמת כ-${accPrev}% (${nPrev} שאלות)`);
-  if (accRecent != null && recentSessions.length) parts.push(`בחלון האחרון בטווח כ-${accRecent}% דיוק`);
+  if (accCurrent != null) parts.push(`In the current period, about ${accCurrent}% accuracy on ${nCur} questions`);
+  if (accPrev != null && nPrev > 0) parts.push(`in the previous comparable period about ${accPrev}% (${nPrev} questions)`);
+  if (accRecent != null && recentSessions.length) parts.push(`in the recent window about ${accRecent}% accuracy`);
   if (!parts.length && !hasEnoughQuestionsForStatus) {
-    parts.push("אין מספיק מפגשים בטווח כדי להשוות מגמה");
+    parts.push("Not enough sessions in range to compare a trend");
   }
   if (!hasMinTrendEvidence && !hasEnoughQuestionsForStatus) {
-    parts.push(`אין מספיק מפגשים תקינים להשוואת מגמה אמינה (נדרשים לפחות ${MIN_TREND_POINTS})`);
+    parts.push(`Not enough valid sessions for a reliable trend comparison (at least ${MIN_TREND_POINTS} required)`);
   }
   let summaryHe = parts.join(" · ") + ".";
   if (trendConfidence < 0.35) {
     summaryHe +=
-      " בשלב הזה ההשוואה בין תקופות רגישה לרעש - כדאי לאמת שוב אחרי עוד תרגול.";
+      " At this stage the period comparison is sensitive to noise — worth checking again after more practice.";
   } else if (trendConfidence < 0.55) {
-    summaryHe += " ההשוואה לתקופה קודמת עדיין עדינה - שווה לצבור עוד קצת נתון.";
+    summaryHe += " The comparison to the previous period is still delicate — worth gathering a bit more data.";
   }
 
   return {

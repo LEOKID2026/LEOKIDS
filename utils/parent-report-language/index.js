@@ -33,11 +33,11 @@ export { diagnosticPrimarySourceParentLabelHe } from "./short-report-source-labe
 export { normalizePedagogyForParentReportHe } from "./pedagogy-glossary-he.js";
 export {
   normalizeParentFacingHe,
-  normalizeExecutiveTrendLineHe,
-  normalizeExecutiveTrendLinesHe,
+  normalizeExecutiveTrendLine as normalizeExecutiveTrendLineHe,
+  normalizeExecutiveTrendLines as normalizeExecutiveTrendLinesHe,
   normalizeSubjectParentLetterHe,
   glossTopicRecommendationHeFields,
-} from "./parent-facing-normalize-he.js";
+} from "./parent-facing-normalize.js";
 export {
   formatParentReportLabelHe,
   formatParentReportSubjectHe,
@@ -54,7 +54,7 @@ export {
   PARENT_REPORT_FORBIDDEN_ENGLISH_ENUMS,
   PARENT_REPORT_SUBJECT_LABELS_HE,
   PARENT_REPORT_MODE_LABELS_HE,
-} from "./parent-report-display-labels.he.js";
+} from "./parent-report-display-labels.js";
 export {
   insufficientSubjectQuestionsLineHe,
   tierStableStrengthHe,

@@ -5,7 +5,7 @@ import {
   COPY_LEO_NUMBER_ERROR_MESSAGE_HE,
   COPY_LEO_NUMBER_SUCCESS_MESSAGE_HE,
   copyTextToClipboard,
-} from "../../lib/ui/copy-confirm-message.he.js";
+} from "../../lib/ui/copy-confirm-message.js";
 
 /** Student home — tap Leo number chip to copy digits only + centered popup. */
 export default function StudentCopyLeoNumberChip({
@@ -42,7 +42,7 @@ export default function StudentCopyLeoNumberChip({
         onClick={() => void handleClick()}
         className={className}
         data-testid="student-copy-leo-number-chip"
-        aria-label="העתק מספר ליאו"
+        aria-label="Copy Leo number"
       >
         {label}
       </button>

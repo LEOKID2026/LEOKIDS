@@ -16,7 +16,7 @@ import {
   SCHOOL_CLASS_MGMT_SECTION,
   SCHOOL_CLASS_MGMT_STUDENT_COUNT,
   SCHOOL_CLASS_MGMT_SUBJECT_COUNT,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * @param {{ accessToken: string, onChanged?: () => void }} props
@@ -43,12 +43,12 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
       const res = await schoolAuthFetch(accessToken, "/api/school/physical-classes");
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "שגיאה בטעינת כיתות"));
+        setError(apiErrorMessageHe(json?.error, "Error loading classes"));
         return;
       }
       setClasses(json?.data?.physicalClasses || []);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setLoading(false);
     }
@@ -71,7 +71,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "יצירת כיתה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, "Failed to create class"));
         return;
       }
       setMessage(SCHOOL_CLASS_MGMT_CREATE_SUCCESS);
@@ -79,7 +79,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
       await load();
       onChanged?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -88,18 +88,18 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
   return (
     <section className={SCHOOL_CARD} data-testid="school-class-management-panel">
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-right">{SCHOOL_CLASS_MGMT_SECTION}</h2>
+        <h2 className="text-base font-semibold mb-3 text-left">{SCHOOL_CLASS_MGMT_SECTION}</h2>
 
         {loading ? (
-          <p className="text-sm text-white/60 text-right">טוען…</p>
+          <p className="text-sm text-white/60 text-left">Loading…</p>
         ) : error && !classes.length ? (
-          <p className="text-sm text-red-300 text-right">{error}</p>
+          <p className="text-sm text-red-300 text-left">{error}</p>
         ) : null}
 
         <div className="mb-4">
-          <h3 className="text-sm font-medium text-white/80 mb-2 text-right">{SCHOOL_CLASS_MGMT_LIST_TITLE}</h3>
+          <h3 className="text-sm font-medium text-white/80 mb-2 text-left">{SCHOOL_CLASS_MGMT_LIST_TITLE}</h3>
           {classes.length ? (
-            <ul className="space-y-2 text-right" data-testid="school-class-list">
+            <ul className="space-y-2 text-left" data-testid="school-class-list">
               {classes.map((c) => (
                 <li
                   key={`${c.gradeLevel}:${c.name}`}
@@ -120,8 +120,8 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
           )}
         </div>
 
-        <h3 className="text-sm font-medium text-white/80 mb-2 text-right">{SCHOOL_CLASS_MGMT_ADD}</h3>
-        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-md text-right">
+        <h3 className="text-sm font-medium text-white/80 mb-2 text-left">{SCHOOL_CLASS_MGMT_ADD}</h3>
+        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-md text-left">
           <label className="block text-sm">
             <span className="text-white/60 block mb-1">{SCHOOL_CLASS_MGMT_NAME}</span>
             <input

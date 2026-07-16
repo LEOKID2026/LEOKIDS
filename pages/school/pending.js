@@ -5,7 +5,7 @@ import SchoolPortalShell from "../../components/school-portal/SchoolPortalShell"
 import RegistrationPendingPanel from "../../components/auth/RegistrationPendingPanel";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
 import { resolveSchoolPortalAuth } from "../../lib/teacher-portal/use-teacher-portal-session";
-import { schoolAuthFetch } from "../../lib/school-portal/school-ui.he";
+import { schoolAuthFetch } from "../../lib/school-portal/school-ui.js";
 
 export default function SchoolPendingPage() {
   const router = useRouter();
@@ -63,10 +63,10 @@ export default function SchoolPendingPage() {
 
   return (
     <Layout>
-      <SchoolPortalShell title="סטטוס רישום">
+      <SchoolPortalShell title="Registration status">
         {state === "loading" ? (
           <p className="text-white/60 text-sm" data-testid="school-pending-root" data-state="loading">
-            טוען…
+            Loading…
           </p>
         ) : (
           <div data-testid="school-pending-root" data-state={rejected ? "rejected" : "pending"}>
@@ -76,7 +76,7 @@ export default function SchoolPendingPage() {
               onClick={() => void onLogout()}
               className="mt-6 rounded border border-white/20 px-4 py-2 text-sm text-white/70 hover:bg-white/5"
             >
-              יציאה
+              Sign out
             </button>
           </div>
         )}

@@ -22,7 +22,7 @@ export default function SubjectMonthlyPrizeJourney({ view }) {
   if (!view) {
     return (
       <div className="bg-white/5 border border-white/10 rounded-md md:rounded-lg px-2 pt-2.5 pb-3 md:px-4 md:py-4 lg:py-5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto opacity-90 md:min-h-[12.5rem] lg:min-h-[13rem]">
-        <p className="text-center text-white/60 text-sm py-6">טוען התקדמות חודשית...</p>
+        <p className="text-center text-white/60 text-sm py-6">Loading monthly progress...</p>
       </div>
     );
   }
@@ -39,9 +39,9 @@ export default function SubjectMonthlyPrizeJourney({ view }) {
   return (
     <div className="bg-white/5 border border-white/10 rounded-md md:rounded-lg px-2 pt-2.5 pb-3 md:px-4 md:py-4 lg:py-5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto opacity-90 md:min-h-[12.5rem] lg:min-h-[13rem]">
       <div className="flex items-center justify-between text-[10px] md:text-xs lg:text-sm text-white/82 md:text-white/90 lg:text-white/95 mb-1 md:mb-1.5 lg:mb-2 leading-tight font-semibold md:font-bold">
-        <span>🎁 מסע פרס חודשי</span>
+        <span>🎁 Monthly prize journey</span>
         <span>
-          {Math.round(currentMinutes)} / {goalMinutes} דק׳
+          {Math.round(currentMinutes)} / {goalMinutes} min
         </span>
       </div>
       <p className="text-[10px] md:text-xs lg:text-sm text-white/82 md:text-white/88 lg:text-white/92 mb-1 md:mb-1.5 lg:mb-2 text-center leading-snug">
@@ -64,7 +64,7 @@ export default function SubjectMonthlyPrizeJourney({ view }) {
                 "rounded-lg md:rounded-xl border px-1 py-2 md:px-2 md:py-2.5 flex flex-col items-center justify-center gap-0.5 min-h-[4.25rem] md:min-h-[5rem] transition-all",
                 tierBoxClass(tier.state),
               ].join(" ")}
-              aria-label={`${tier.minutes} דקות - ${tier.label}`}
+              aria-label={`${tier.minutes} minutes - ${tier.label}`}
             >
               <span className="text-lg md:text-xl leading-none" aria-hidden>
                 {PRIZE_COIN_ICON}
@@ -73,12 +73,12 @@ export default function SubjectMonthlyPrizeJourney({ view }) {
                 {rewardParts.amount}
               </span>
               <span className="text-[8px] md:text-[9px] text-white/70 text-center leading-tight">
-                {rewardParts.name || "מטבעות"}
+                {rewardParts.name || "Coins"}
               </span>
               {isAwardedBox ? (
-                <span className="text-[8px] md:text-[9px] text-amber-200 font-bold mt-0.5">קיבלת פרס</span>
+                <span className="text-[8px] md:text-[9px] text-amber-200 font-bold mt-0.5">Prize earned</span>
               ) : tier.state === "reached" ? (
-                <span className="text-[8px] md:text-[9px] text-emerald-300 font-semibold mt-0.5">הגעת!</span>
+                <span className="text-[8px] md:text-[9px] text-emerald-300 font-semibold mt-0.5">You made it!</span>
               ) : null}
             </div>
           );

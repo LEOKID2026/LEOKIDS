@@ -20,7 +20,7 @@ const BANNED_PHRASE_RULES = [
   },
   {
     pattern: /זה אומר שהתמונה בנויה ממקצועות ונושאים שכבר הוכנסו לטווח התקופה\.?/gu,
-    replace: "הדוח מתבסס על התרגול שבוצע באתר בתקופה שנבחרה.",
+    replace: "The report is based on the practice carried out on the site in the selected period.",
   },
   {
     pattern: /כהורה,?\s*אפשר להשתמש בזה כמילון משמעויות לדוח[^.!?]*[.!?]?/gu,
@@ -132,11 +132,11 @@ export function postprocessParentFacingBlocksHe(blocks) {
 }
 
 export const BANNED_PARENT_PHRASE_SNIPPETS = [
-  "רוב המוקדים עם ניסוח יציב יחסית",
-  "נכון לעכשיו, אין כאן מידע שלא מגיע מהדוח",
-  "התמונה בנויה ממקצועות ונושאים",
-  "מילון משמעויות",
-  "שכבת פרשנות חיצונית",
+  "Most foci with a relatively stable formulation",
+  "Currently, there is no information here that does not come from the report",
+  "The picture is made up of professions and subjects",
+  "Dictionary of meanings",
+  "External interpretation layer",
 ];
 
 export default {

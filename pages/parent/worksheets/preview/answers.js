@@ -14,7 +14,7 @@ import {
   loadWorksheetPreviewSession,
 } from "../../../../lib/worksheets/worksheet-preview-session.client.js";
 import { validateStoredAnswerKeyForWorksheet } from "../../../../lib/worksheets/worksheet-fingerprint.js";
-import { WORKSHEET_UI_HE } from "../../../../lib/worksheets/worksheet-ui.he.js";
+import { WORKSHEET_UI_EN } from "../../../../lib/worksheets/worksheet-ui.js";
 
 export default function ParentWorksheetAnswerKeyRoute() {
   const router = useRouter();
@@ -57,7 +57,7 @@ export default function ParentWorksheetAnswerKeyRoute() {
       );
       if (!validation.ok) {
         clearWorksheetAnswerKeySession();
-        setStaleMessage(WORKSHEET_UI_HE.answerKeyStale);
+        setStaleMessage(WORKSHEET_UI_EN.answerKeyStale);
         return;
       }
       setAnswerKeyPayload(stored);
@@ -71,14 +71,14 @@ export default function ParentWorksheetAnswerKeyRoute() {
   if (staleMessage) {
     return (
       <Layout {...layoutProps}>
-        <div dir="rtl" className="mx-auto max-w-lg px-4 py-10 text-center">
+        <div dir="ltr" className="mx-auto max-w-lg px-4 py-10 text-center">
           <p className="mb-6 text-base text-slate-700">{staleMessage}</p>
           <button
             type="button"
             className="rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
             onClick={() => router.push("/parent/worksheets/preview")}
           >
-            {WORKSHEET_UI_HE.back}
+            {WORKSHEET_UI_EN.back}
           </button>
         </div>
       </Layout>
@@ -88,8 +88,8 @@ export default function ParentWorksheetAnswerKeyRoute() {
   if (!answerKeyPayload) {
     return (
       <Layout {...layoutProps}>
-        <div dir="rtl" className="p-4 text-center text-slate-500">
-          {WORKSHEET_UI_HE.loading}
+        <div dir="ltr" className="p-4 text-center text-slate-500">
+          {WORKSHEET_UI_EN.loading}
         </div>
       </Layout>
     );

@@ -10,10 +10,10 @@ function missionTypeIcon(type) {
 }
 
 function missionProgressLabel(m) {
-  if (m.completed) return "הושלם";
+  if (m.completed) return "Done";
   if (m.type === "minutes") {
     const prog = Math.round(m.progress * 10) / 10;
-    return `${prog} / ${m.target} דק׳`;
+    return `${prog} / ${m.target} min`;
   }
   return `${m.progress} / ${m.target}`;
 }
@@ -40,7 +40,7 @@ function MissionCardHeader({ completed, type, textHe }) {
           {textHe}
         </p>
         {completed ? (
-          <p className="text-emerald-600 text-xs mt-1 font-medium">הושלם</p>
+          <p className="text-emerald-600 text-xs mt-1 font-medium">Done</p>
         ) : null}
       </div>
     </div>
@@ -53,12 +53,12 @@ function MissionCard({ mission, index }) {
   return (
     <article
       className={[
-        "relative rounded-2xl border p-4 flex flex-col gap-3 text-right transition-all duration-300 min-w-0",
+        "relative rounded-2xl border p-4 flex flex-col gap-3 text-left transition-all duration-300 min-w-0",
         completed
           ? "border-emerald-200 bg-emerald-50 shadow-md"
           : "border-slate-200 bg-white hover:border-sky-200 hover:shadow-md",
       ].join(" ")}
-      aria-label={`משימה ${index + 1}: ${textHe}`}
+      aria-label={`Mission ${index + 1}: ${textHe}`}
     >
       {completed ? (
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-l from-emerald-400 to-teal-400" aria-hidden />
@@ -84,10 +84,10 @@ function MissionCard({ mission, index }) {
       <div className="flex items-center justify-between gap-2 mt-auto">
         {completed ? (
           <span className="text-emerald-700 text-sm font-bold">
-            {coinAwarded ? "כל הכבוד! קיבלת את הפרס" : "הושלם"}
+            {coinAwarded ? "Great job! You got the reward" : "Done"}
           </span>
         ) : (
-          <span className="text-slate-500 text-xs">המשיכו ללמוד כדי להשלים</span>
+          <span className="text-slate-500 text-xs">Keep learning to finish</span>
         )}
         <span
           className={[
@@ -97,7 +97,7 @@ function MissionCard({ mission, index }) {
               : "bg-amber-50 text-amber-700 border border-amber-100",
           ].join(" ")}
         >
-          +{rewardCoins} מטבעות
+          +{rewardCoins} coins
         </span>
       </div>
     </article>
@@ -116,8 +116,8 @@ export default function StudentDailyMissionsPanel({ dailyMissions }) {
       aria-labelledby="daily-missions-heading"
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4 md:mb-5">
-        <h2 id="daily-missions-heading" className="text-lg md:text-xl font-extrabold text-slate-800 text-right">
-          המשימות שלי להיום
+        <h2 id="daily-missions-heading" className="text-lg md:text-xl font-extrabold text-slate-800 text-left">
+          My missions for today
         </h2>
         <span
           className={[
@@ -127,7 +127,7 @@ export default function StudentDailyMissionsPanel({ dailyMissions }) {
               : "bg-slate-100 text-slate-600 border border-slate-200",
           ].join(" ")}
         >
-          {totalCompleted}/{total} הושלמו
+          {totalCompleted}/{total} completed
         </span>
       </div>
 
@@ -136,11 +136,11 @@ export default function StudentDailyMissionsPanel({ dailyMissions }) {
           className="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-emerald-800 text-sm font-semibold"
           role="status"
         >
-          כל הכבוד! סיימת את כל המשימות להיום
+          Great job! You finished all of today's missions
         </div>
       ) : (
-        <p className="text-slate-600 text-sm text-right mb-4 leading-relaxed">
-          השלימו משימות על ידי למידה אמיתית - כל משימה שווה מטבעות
+        <p className="text-slate-600 text-sm text-left mb-4 leading-relaxed">
+          Complete missions by real learning — each mission earns coins
         </p>
       )}
 

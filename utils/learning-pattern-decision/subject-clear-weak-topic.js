@@ -55,11 +55,11 @@ export function isClearWeakSubjectVolume(q, acc) {
  * @param {string} topicLabelHe
  */
 export function subjectClearWeakOpeningHe(subjectLabelHe, topicLabelHe) {
-  const lab = String(subjectLabelHe || "המקצוע").trim();
-  const topic = String(topicLabelHe || "הנושא")
+  const lab = String(subjectLabelHe || "this subject").trim();
+  const topic = String(topicLabelHe || "this topic")
     .replace(/^[^-]+-\s*/, "")
     .trim();
-  return `ב${lab} נראית נקודת חיזוק ברורה בנושא ${topic} - כדאי לחזק אותו בתרגול קצר ורגוע.`;
+  return `In ${lab}, a clear area to reinforce shows in ${topic} - it helps to strengthen it with short, calm practice.`;
 }
 
 /**
@@ -67,12 +67,12 @@ export function subjectClearWeakOpeningHe(subjectLabelHe, topicLabelHe) {
  * @param {string} topicLabelHe
  */
 export function subjectClearWeakClosingHe(subjectLabelHe, topicLabelHe) {
-  const lab = String(subjectLabelHe || "המקצוע").trim();
-  const topic = String(topicLabelHe || "הנושא")
+  const lab = String(subjectLabelHe || "this subject").trim();
+  const topic = String(topicLabelHe || "this topic")
     .replace(/^[^-]+-\s*/, "")
     .trim();
-  return `בשבועות הקרובים כדאי להתמקד ב${topic} ולבדוק שוב אחרי עוד כמה תרגולים קצרים.`;
+  return `In the coming weeks, it helps to focus on ${topic} and check again after a few more short practice sessions.`;
 }
 
 export const INSUFFICIENT_SUBJECT_SUMMARY_RE =
-  /אין תמונה מספיק|עדיין מוקדם|מעט נתונים|מעט מידע|עדיין אין מספיק|עדיין זהיר|לעקוב אחרי עוד תרגול|הכיוון יציב/i;
+  /not enough of a picture|still too early|limited data|little information|not enough yet|still cautious|follow up after more practice|the direction looks stable/i;

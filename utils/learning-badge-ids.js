@@ -12,11 +12,11 @@ export const LEARNING_BADGE = {
   CORRECT_500: "correct_500",
 };
 
-/** @type {Record<string, string[]>} */
+/** @type {Record<string, string[]>} Legacy stored badge strings (HE + EN) for matching only — display comes from locales. */
 export const BADGE_LEGACY_ALIASES = {
   [LEARNING_BADGE.STREAK_10]: ["🔥 רצף חם", "🔥 Hot Streak", "🔥 Hot streak"],
   [LEARNING_BADGE.STREAK_25]: ["⚡ מהיר כברק", "⚡ Lightning Fast", "⚡ Lightning fast"],
-  [LEARNING_BADGE.STREAK_50]: ["🌟 אלוף", "🌟 מאסטר", "🌟 Master", "🌟 אלוף מדעים", "🌟 מאסטר מדעים", "🌟 Science champion"],
+  [LEARNING_BADGE.STREAK_50]: ["🌟 אלוף", "🌟 מאסטר", "🌟 Master", "🌟 אלוף מדעים", "🌟 מאסטר מדעים", "🌟 Science champion", "🌟 Champion"],
   [LEARNING_BADGE.STREAK_100_MATH]: ["👑 מלך החשבון", "👑 Math King"],
   [LEARNING_BADGE.STREAK_100_SCIENCE]: ["👑 מלך המדעים", "👑 Science King"],
   [LEARNING_BADGE.SCORE_1000]: ["💎 אלף נקודות", "💎 1,000 points"],

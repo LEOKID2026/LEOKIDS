@@ -16,7 +16,7 @@ const POLL_MS = 8000;
 function formatWhen(iso) {
   if (!iso) return "-";
   try {
-    return new Date(iso).toLocaleString("he-IL", {
+    return new Date(iso).toLocaleString("en-US", {
       dateStyle: "short",
       timeStyle: "short",
     });
@@ -110,13 +110,13 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setError(json?.message || json?.error || "לא ניתן לטעון תוצאות");
+        setError(json?.message || json?.error || "Could not load results");
         setDetail(null);
         return;
       }
       setDetail(json);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
       setDetail(null);
     } finally {
       setBusy(false);
@@ -141,37 +141,37 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
       <div className={panelClass}>
         <div className="flex items-start justify-between gap-3">
           <h3 id="parent-activity-results-title" className={titleClass}>
-            {activity?.title || "תוצאות פעילות"}
+            {activity?.title || "Activity results"}
           </h3>
           <button type="button" className={bright ? T.copyBtn : "rounded bg-white/10 px-2 py-1 text-xs shrink-0"} onClick={onClose}>
-            סגירה
+            Close
           </button>
         </div>
 
-        {busy ? <p className={mutedClass}>טוען…</p> : null}
+        {busy ? <p className={mutedClass}>Loading…</p> : null}
         {error ? <p className={errorClass}>{error}</p> : null}
 
         {activity ? (
           <div className={bodyClass}>
             <div>
-              מקצוע: {subjectLabelHe(activity.subject)} · נושא:{" "}
+              Subject: {subjectLabelHe(activity.subject)} · Topic:{" "}
               {formatActivityTopicDisplayHe(activity.subject, activity.topic, activity.subtopic)}
             </div>
             <div>
-              סטטוס: {parentSentActivityStatusLabelHe(activity.studentStatus)}
+              Status: {parentSentActivityStatusLabelHe(activity.studentStatus)}
             </div>
             <div>
-              תשובות: {activity.answersCount ?? 0} · נכונות: {activity.correctCount ?? 0} ·
-              ציון: {formatScore(activity.scorePct)}
+              Answers: {activity.answersCount ?? 0} · Correct: {activity.correctCount ?? 0} ·
+              Score: {formatScore(activity.scorePct)}
             </div>
-            <div>התחלה: {formatWhen(activity.startedAt)}</div>
-            <div>סיום: {formatWhen(activity.submittedAt)}</div>
+            <div>Started: {formatWhen(activity.startedAt)}</div>
+            <div>Finished: {formatWhen(activity.submittedAt)}</div>
           </div>
         ) : null}
 
         {questions.length > 0 ? (
           <div className={dividerClass}>
-            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>פירוט תשובות</div>
+            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>Answer details</div>
             {questions.map((q) => (
               <div
                 key={q.questionIndex}
@@ -179,12 +179,12 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
                 data-testid={`parent-activity-question-${q.questionIndex}`}
               >
                 <div className={itemTitleClass}>
-                  שאלה {Number(q.questionIndex) + 1}:{" "}
+                  Question {Number(q.questionIndex) + 1}:{" "}
                   <span className={parentActivityResultStatusClass(q.isCorrect, bright)}>
                     {q.isCorrect === true
-                      ? "נכון"
+                      ? "Correct"
                       : q.isCorrect === false
-                        ? "לא נכון"
+                        ? "Incorrect"
                         : "-"}
                   </span>
                 </div>
@@ -200,7 +200,7 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
                 ) : null}
                 {Array.isArray(q.choices) && q.choices.length > 0 ? (
                   <div className={itemMetaClass}>
-                    אפשרויות:{" "}
+                    Choices:{" "}
                     {q.choices.map((choice, choiceIndex) => (
                       <span key={choiceIndex}>
                         {choiceIndex > 0 ? " · " : ""}
@@ -210,13 +210,13 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
                   </div>
                 ) : null}
                 <div className={itemAnswerLabelClass}>
-                  תשובה:{" "}
+                  Answer:{" "}
                   <span className={parentActivityAnswerValueClass(q.isCorrect, bright)}>
                     <AssignedActivityBidiText text={q.selectedAnswer || "-"} />
                   </span>
                 </div>
                 <div className={itemCorrectAnswerClass}>
-                  תשובה נכונה: <AssignedActivityBidiText text={q.correctAnswer || "-"} />
+                  Correct answer: <AssignedActivityBidiText text={q.correctAnswer || "-"} />
                 </div>
                 {q.legacyFallback ? (
                   <div className={itemLegacyClass} data-testid="legacy-fallback-indicator">
@@ -228,24 +228,24 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
           </div>
         ) : attempts.length > 0 ? (
           <div className={dividerClass}>
-            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>פירוט תשובות</div>
+            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>Answer details</div>
             {attempts.map((attempt) => (
               <div
                 key={attempt.questionIndex}
                 className={parentActivityResultItemClass(attempt.isCorrect, bright)}
               >
                 <div className={itemTitleClass}>
-                  שאלה {Number(attempt.questionIndex) + 1}:{" "}
+                  Question {Number(attempt.questionIndex) + 1}:{" "}
                   <span className={parentActivityResultStatusClass(attempt.isCorrect, bright)}>
                     {attempt.isCorrect === true
-                      ? "נכון"
+                      ? "Correct"
                       : attempt.isCorrect === false
-                        ? "לא נכון"
+                        ? "Incorrect"
                         : "-"}
                   </span>
                 </div>
                 <div className={itemAnswerLabelClass}>
-                  תשובה:{" "}
+                  Answer:{" "}
                   <span className={parentActivityAnswerValueClass(attempt.isCorrect, bright)}>
                     {attempt.selectedAnswer || "-"}
                   </span>
@@ -325,13 +325,13 @@ function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose
               {parentSentActivitiesSectionTitleHe()}
             </h3>
             <button type="button" className={bright ? T.copyBtn : "rounded bg-white/10 px-2 py-1 text-xs shrink-0"} onClick={onClose}>
-              סגירה
+              Close
             </button>
           </div>
 
-          {!loaded ? <p className={mutedClass}>טוען…</p> : null}
+          {!loaded ? <p className={mutedClass}>Loading…</p> : null}
 
-          {loaded && activities.length === 0 ? <p className={mutedClass}>עדיין לא נשלחו פעילויות</p> : null}
+          {loaded && activities.length === 0 ? <p className={mutedClass}>No activities sent yet</p> : null}
 
           {activities.length > 0 ? (
             <div className="space-y-2">
@@ -347,12 +347,12 @@ function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose
                     )}
                   </div>
                   <div className={cardBodyClass}>
-                    {parentSentActivityStatusLabelHe(activity.studentStatus)} · תשובות:{" "}
-                    {activity.answersCount ?? 0} · נכונות: {activity.correctCount ?? 0} · ציון:{" "}
+                    {parentSentActivityStatusLabelHe(activity.studentStatus)} · Answers:{" "}
+                    {activity.answersCount ?? 0} · Correct: {activity.correctCount ?? 0} · Score:{" "}
                     {formatScore(activity.scorePct)}
                   </div>
                   <div className={cardMetaClass}>
-                    התחלה: {formatWhen(activity.startedAt)} · סיום:{" "}
+                    Started: {formatWhen(activity.startedAt)} · Finished:{" "}
                     {formatWhen(activity.submittedAt)}
                   </div>
                   <button

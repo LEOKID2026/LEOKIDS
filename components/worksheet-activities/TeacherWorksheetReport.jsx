@@ -11,29 +11,29 @@ export default function TeacherWorksheetReport({ classId, worksheetId, report, w
   const rows = Array.isArray(report.studentRows) ? report.studentRows : [];
 
   return (
-    <div className="space-y-6 text-right">
+    <div className="space-y-6 text-left">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        <Stat label="סה״כ ילדים" value={report.totalStudents} />
-        <Stat label="פתחו PDF" value={report.pdfOpenedCount} />
-        <Stat label="סיימו (PDF)" value={report.markedCompleteCount} />
-        <Stat label="הגישו תשובות" value={report.digitalSubmittedCount} />
-        <Stat label="ממתין לבדיקה" value={report.pendingReviewCount} />
-        <Stat label="פורסם" value={report.publishedCount} />
+        <Stat label="Total students" value={report.totalStudents} />
+        <Stat label="Opened PDF" value={report.pdfOpenedCount} />
+        <Stat label="Completed (PDF)" value={report.markedCompleteCount} />
+        <Stat label="Submitted answers" value={report.digitalSubmittedCount} />
+        <Stat label="Pending review" value={report.pendingReviewCount} />
+        <Stat label="Published" value={report.publishedCount} />
         {report.classAveragePct != null ? (
-          <Stat label="ממוצע כיתה" value={`${report.classAveragePct}%`} />
+          <Stat label="Class average" value={`${report.classAveragePct}%`} />
         ) : null}
       </div>
 
       <div className="overflow-x-auto rounded-2xl border border-white/10">
-        <table className="w-full text-sm text-right">
+        <table className="w-full text-sm text-left">
           <thead className="bg-white/5 text-white/70">
             <tr>
-              <th className="p-3">ילד/ה</th>
-              <th className="p-3">פתח PDF</th>
-              <th className="p-3">סיים</th>
-              <th className="p-3">הגשה דיגיטלית</th>
-              <th className="p-3">סטטוס</th>
-              <th className="p-3">ציון</th>
+              <th className="p-3">Student</th>
+              <th className="p-3">Opened PDF</th>
+              <th className="p-3">Completed</th>
+              <th className="p-3">Digital submission</th>
+              <th className="p-3">Status</th>
+              <th className="p-3">Score</th>
               <th className="p-3" />
             </tr>
           </thead>
@@ -66,7 +66,7 @@ export default function TeacherWorksheetReport({ classId, worksheetId, report, w
                       href={`${base}/grade/${encodeURIComponent(row.studentId)}`}
                       className="text-amber-300 hover:underline"
                     >
-                      בדיקה
+                      Review
                     </Link>
                   ) : null}
                 </td>

@@ -113,7 +113,7 @@ function stableSubjectPhraseList(payload, excludeSid) {
   if (!rows.length) return "";
   return rows
     .slice(0, 4)
-    .map((r) => `${subjectLabelHe(r.sid)} עם ${r.q} שאלות ו-${r.acc}%`)
+    .map((r) => `${subjectLabelHe(r.sid)} with ${r.q} questions and ${r.acc}%`)
     .join(", ");
 }
 
@@ -123,16 +123,16 @@ function composeExplainReportSimpleWords(payload) {
   const a = topicAnchorFields(weak);
   const stableList = stableSubjectPhraseList(payload, a.subjectId || "");
   let text =
-    `במילים פשוטות: יש מספיק תרגול כדי לראות איפה להתחיל. הנקודה המרכזית היא ${a.subjectLabel} - ${a.topicLabel}: ${a.questionCount} שאלות עם ${a.accuracyPercent}% הצלחה. זה הנושא הראשון שכדאי לחזק.`;
+    `Simply put: there is enough practice to see where to start. The main point is ${a.subjectLabel} - ${a.topicLabel}: ${a.questionCount} questions with ${a.accuracyPercent}% success. This is the first issue that should be strengthened.`;
   if (stableList) {
-    text += ` לצד זה, יש תחומים שנראים יציבים יותר בתקופה הזו: ${stableList}.`;
+    text += `Alongside this, there are areas that seem more stable in this period: ${stableList}.`;
   }
-  text += ` לכן ההמלצה היא לא לפזר את התרגול: להתחיל ב${a.subjectLabel} - ${a.topicLabel}, 5–10 דקות, 3–5 שאלות בכל פעם, ואז לבדוק אם התשובות יציבות יותר.`;
+  text += `Therefore, the recommendation is not to scatter the practice: start with ${a.subjectLabel} - ${a.topicLabel}, 5–10 minutes, 3–5 questions each time, then check if the answers are more stable.`;
   return patternDraft(text, a, "explain_report");
 }
 
 /**
- * Approved narrative for "תסביר לי את הדוח במילים פשוטות" when report volume is sufficient.
+ * Approved narrative for "Explain the report to me in simple words" when report volume is sufficient.
  * Not routed via classifyApprovedPatternQuestion — invoked explicitly from index.js.
  */
 export function tryComposeExplainReportSimpleWordsDraft(params) {
@@ -146,7 +146,7 @@ export function tryComposeExplainReportSimpleWordsDraft(params) {
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "topic",
     scopeId: composed.focusTopic?.topicRowKey || "explain-simple-words",
-    scopeLabel: composed.focusTopic?.displayName || composed.focusTopic?.topicLabel || "סיכום דוח",
+    scopeLabel: composed.focusTopic?.displayName || composed.focusTopic?.topicLabel || "Report summary",
     canonicalIntent: "explain_report",
     parentUtterance: utteranceStr,
   });
@@ -221,7 +221,7 @@ function patternAnswerBlocks(textHe) {
     { type: "observation", textHe: text, source: "pattern_composer" },
     {
       type: "meaning",
-      textHe: "זו תשובה ממוקדת לפי מה שמופיע בדוח בתקופה שנבחרה, בלי להסיק מעבר לנתונים שמוצגים.",
+      textHe: "This is a focused answer according to what appears in the report in the selected period, without concluding beyond the data that is presented.",
       source: "pattern_composer",
     },
   ];
@@ -244,12 +244,12 @@ function composeWhereHelp(payload) {
   const weakTopics = pickWeakestTopics(collectTopicMetrics(payload), 2);
   if (!weakTopics.length) return null;
   const first = topicAnchorFields(weakTopics[0]);
-  let text = `לפי הדוח, המקום הראשון שכדאי לחזק הוא ${first.subjectLabel} - ${first.topicLabel}: ${first.questionCount} שאלות, ${first.accuracyPercent}% הצלחה. זה הנושא שהכי כדאי להתחיל ממנו כי הוא גם מופיע בדוח וגם נותן כיוון ברור לתרגול קצר בבית.`;
+  let text = `According to the report, the first place worth strengthening is ${first.subjectLabel} - ${first.topicLabel}: ${first.questionCount} questions, ${first.accuracyPercent}% success. This is the best topic to start with because it both appears in the report and gives a clear direction for a short practice at home.`;
   if (weakTopics.length >= 2) {
     const second = topicAnchorFields(weakTopics[1]);
-    text += ` אחריו אפשר לשים לב גם ל-${second.subjectLabel} - ${second.topicLabel}: ${second.questionCount} שאלות, ${second.accuracyPercent}% הצלחה.`;
+    text += `After him you can also pay attention to ${second.subjectLabel} - ${second.topicLabel}: ${second.questionCount} questions, ${second.accuracyPercent}% success.`;
   }
-  text += ` הצעד המעשי: לפתוח פעילות קצרה אחת בנושא הראשון, 5–10 דקות, ואז לבדוק אם התשובות הבאות יציבות יותר.`;
+  text += `The practical step: start one short activity on the first topic, 5-10 minutes, then check if the following answers are more stable.`;
   return patternDraft(text, first, "what_is_still_difficult");
 }
 
@@ -259,40 +259,40 @@ function composeThreeThings(payload) {
   const weak = pickWeakForThreeThings(metas);
   if (!metas.length) return null;
 
-  let text = "שלושת הדברים הכי חשובים כרגע הם:\n\n";
+  let text = "The three most important things right now are:";
   if (strong) {
     const s = topicAnchorFields(strong);
-    text += `1. לשמר את מה שעובד: ${s.subjectLabel} - ${s.topicLabel}, עם ${s.questionCount} שאלות ו-${s.accuracyPercent}% הצלחה.\n\n`;
+    text += `1. Preserve what works: ${s.subjectLabel} - ${s.topicLabel}, with ${s.questionCount} questions and ${s.accuracyPercent}% success.\n\n`;
   } else {
-    text += "1. קודם לצבור עוד תרגול קצר, כדי שהתמונה בדוח תהיה יציבה יותר.\n\n";
+    text += "1. First, accumulate another short practice, so that the image in the report will be more stable.";
   }
   if (weak) {
     const w = topicAnchorFields(weak);
-    text += `2. לחזק נקודה אחת: ${w.subjectLabel} - ${w.topicLabel}, עם ${w.questionCount} שאלות ו-${w.accuracyPercent}% הצלחה.\n\n`;
-    text += `3. לעשות צעד קטן בבית: פעילות קצרה אחת בנושא ${w.topicLabel}, בלי להעמיס הרבה נושאים ביחד.`;
+    text += `2. Strengthen one point: ${w.subjectLabel} - ${w.topicLabel}, with ${w.questionCount} questions and ${w.accuracyPercent}% success.\n\n`;
+    text += `3. Take a small step at home: one short activity on ${w.topicLabel}, without overloading many topics together.`;
     return patternDraft(text, w, "what_is_most_important");
   }
-  text += "2. אין כרגע נושא אחד שבולט מספיק לחיזוק, לכן כדאי לשמור על תרגול קצר ומגוון.\n\n";
+  text += "2. At the moment, there is not one subject that stands out enough for reinforcement, so it is better to keep the practice short and varied.";
   const fallbackWeak = pickWeakestTopic(metas);
-  const wLabel = fallbackWeak ? fallbackWeak.label || fallbackWeak.displayName : "נושא";
-  text += `3. לעשות צעד קטן בבית: פעילות קצרה אחת בנושא ${wLabel}, בלי להעמיס הרבה נושאים ביחד.`;
+  const wLabel = fallbackWeak ? fallbackWeak.label || fallbackWeak.displayName : "Topic";
+  text += `3. Take a small step at home: one short activity on ${wLabel}, without overloading many topics together.`;
   const focus = fallbackWeak ? topicAnchorFields(fallbackWeak) : strong ? topicAnchorFields(strong) : topicAnchorFields(metas[0]);
   return patternDraft(text, focus, "what_is_most_important");
 }
 
 function composeAvoidNow(payload, utteranceStr = "") {
   let text =
-    "כרגע כדאי להימנע משלושה דברים: לא להסיק מסקנה אישית על הילד, לא לפתוח הרבה נושאים יחד, ולא להחליט לפי שאלה אחת או שתיים. לפי הדוח, עדיף לבחור נושא אחד לתרגול קצר, לבדוק כמה תשובות ברצף, ואז לראות אם הכיוון חוזר גם בהמשך.";
+    "Right now you should avoid three things: don't draw a personal conclusion about the child, don't open many topics together, and don't decide based on one or two questions. According to the report, it is better to choose one topic for a short practice, check several answers in a row, and then see if the direction returns later on.";
   const weak = pickWeakestTopic(collectTopicMetrics(payload));
   if (weak?.q) {
     const a = topicAnchorFields(weak);
-    text += ` הנושא להתחלה: ${a.subjectLabel} - ${a.topicLabel}.`;
+    text += `Topic to start: ${a.subjectLabel} - ${a.topicLabel}.`;
     return patternDraft(text, a, "what_not_to_do_now");
   }
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "סיכום דוח",
+    scopeLabel: "Report summary",
     canonicalIntent: "what_not_to_do_now",
     parentUtterance: utteranceStr,
   });
@@ -311,13 +311,13 @@ function composeImportantNow(payload) {
   const weak = pickWeakestTopic(metas);
   if (weak?.q) {
     const a = topicAnchorFields(weak);
-    const text = `הדבר הכי חשוב כרגע הוא לבחור נושא אחד לחיזוק ולא לפזר את התרגול. לפי הדוח, המקום הראשון להתחלה הוא ${a.subjectLabel} - ${a.topicLabel}: ${a.questionCount} שאלות, ${a.accuracyPercent}% הצלחה. כדאי לתרגל 5–10 דקות, 3–5 שאלות, ואז לבדוק אם התשובות יציבות יותר.`;
+    const text = `The most important thing right now is to choose one topic to strengthen and not spread the practice. According to the report, the first place to start is ${a.subjectLabel} - ${a.topicLabel}: ${a.questionCount} questions, ${a.accuracyPercent}% success. You should practice for 5-10 minutes, 3-5 questions, and then check if the answers are more stable.`;
     return patternDraft(text, a, "what_is_most_important");
   }
   const stable = pickStableTopicForProgress(metas);
   if (stable?.q) {
     const a = topicAnchorFields(stable);
-    const text = `הדבר הכי חשוב כרגע הוא לשמור על תרגול קצר וקבוע. לפי הדוח, הנושא שנראה יציב יותר בתקופה הזו הוא ${a.subjectLabel} - ${a.topicLabel}: ${a.questionCount} שאלות, ${a.accuracyPercent}% הצלחה. כדאי לתרגל 5–10 דקות, 3–5 שאלות, ואז לבדוק אם היציבות נשמרת.`;
+    const text = `The most important thing right now is to keep the practice short and regular. According to the report, the topic that seems more stable in this period is ${a.subjectLabel} - ${a.topicLabel}: ${a.questionCount} questions, ${a.accuracyPercent}% success. You should practice for 5-10 minutes, 3-5 questions, and then check if the stability is maintained.`;
     return patternDraft(text, a, "what_is_most_important");
   }
   return null;
@@ -331,13 +331,13 @@ function composeProgressWhere(payload) {
   const stableTopic = pickStableTopicForProgress(metas);
   if (stableTopic?.q) {
     const a = topicAnchorFields(stableTopic);
-    const text = `בדוח הנוכחי לא מופיעה השוואה מספיקה שמוכיחה שינוי מהשבוע הקודם. כן אפשר לראות איפה התרגול נראה יציב יותר בתקופה הזו: ${a.subjectLabel} - ${a.topicLabel}, עם ${a.questionCount} שאלות ו-${a.accuracyPercent}% הצלחה. לכן כדאי להמשיך שם בתרגול קצר ולבדוק אם היציבות נשמרת גם בהמשך.`;
+    const text = `The current report does not show a sufficient comparison that proves a change from the previous week. Yes, you can see where the practice seems more stable during this period: ${a.subjectLabel} - ${a.topicLabel}, with ${a.questionCount} questions and ${a.accuracyPercent}% success. That's why you should continue there with a short practice and check if the stability is maintained in the future.`;
     return patternDraft(text, a, "explain_report");
   }
 
   const subjectAnchor = pickStableSubjectForProgress(payload);
   if (subjectAnchor?.questionCount) {
-    const text = `בדוח הנוכחי לא מופיעה השוואה מספיקה שמוכיחה שינוי מהשבוע הקודם. כן אפשר לראות איפה התרגול נראה יציב יותר בתקופה הזו: ${subjectAnchor.subjectLabel}, עם ${subjectAnchor.questionCount} שאלות ו-${subjectAnchor.accuracyPercent}% הצלחה. לכן כדאי להמשיך שם בתרגול קצר ולבדוק אם היציבות נשמרת גם בהמשך.`;
+    const text = `The current report does not show a sufficient comparison that proves a change from the previous week. Yes, you can see where the practice seems more stable during this period: ${subjectAnchor.subjectLabel}, with ${subjectAnchor.questionCount} questions and ${subjectAnchor.accuracyPercent}% success. That's why you should continue there with a short practice and check if the stability is maintained in the future.`;
     const truthPacket = buildTruthPacketV1(payload, {
       scopeType: "subject",
       scopeId: subjectAnchor.subjectId,
@@ -362,14 +362,14 @@ function composeHomeToday(payload, conv) {
   const weak = resolveContextTopicMetrics(payload, conv, { allowWeakestFallback: true });
   if (!weak?.q) return null;
   const a = topicAnchorFields(weak);
-  let text = `היום הייתי עושה דבר אחד: פעילות קצרה בנושא ${a.subjectLabel} - ${a.topicLabel}. בדוח מופיעות שם ${a.questionCount} שאלות עם ${a.accuracyPercent}% הצלחה, ולכן זה מקום טוב לתרגול ממוקד. לעשות 5–10 דקות בלבד, 3–5 שאלות, ובסוף לשאול את הילד: איך חשבת על התשובה?`;
+  let text = `Today I would do one thing: a short activity on the topic ${a.subjectLabel} - ${a.topicLabel}. In the report there are ${a.questionCount} questions with ${a.accuracyPercent}% success, so it is a good place for focused practice. Do only 5-10 minutes, 3-5 questions, and at the end ask the child: How did you think of the answer?`;
   const hit = findTopicRowByKey(payload, a.topicRowKey, a.subjectId || undefined);
   const sub =
     hit?.tr?.contractsV1?.evidence?.safeSubskillHe ||
     hit?.tr?.safeSubskillHe ||
     hit?.tr?.contractsV1?.narrative?.safeSubskillHe;
   if (String(sub || "").trim().length >= 3) {
-    text += " אם מופיעה בדוח תת-מיומנות ברורה, כדאי להתמקד בה ולא לפתוח כמה נושאים ביחד.";
+    text += "If a clear sub-skill appears in the report, you should focus on it and not open several subjects together.";
   }
   return patternDraft(text, a, "what_to_do_today");
 }
@@ -378,17 +378,17 @@ function composeAskAtHome(payload, conv) {
   const weak = resolveContextTopicMetrics(payload, conv, { allowWeakestFallback: true });
   if (!weak?.q) return null;
   const a = topicAnchorFields(weak);
-  const text = `אפשר לשאול אותו שלוש שאלות קצרות על ${a.subjectLabel} - ${a.topicLabel}:\n\n1. מה ביקשו ממך למצוא בשאלה?\n\n2. איך החלטת מה הצעד הראשון?\n\n3. איפה הרגשת שזה נהיה קשה?\n\nהמטרה היא להבין את דרך החשיבה שלו, לא לבחון אותו הרבה זמן.`;
+  const text = `You can ask him three short questions about ${a.subjectLabel} - ${a.topicLabel}:\n\n1. What did they ask you to find in the question?\n\n2. How did you decide what the first step is?\n\n3. Where did you feel it became difficult?\n\nThe goal is to understand his way of thinking, not to test him for a long time.`;
   return patternDraft(text, a, "what_to_do_today");
 }
 
 function composeWhatNotInfer(payload, utterance) {
   const text =
-    "לא כדאי להסיק מהדוח מסקנה אישית על הילד, ולא להשוות אותו לילדים אחרים. הדוח מציג רק את מה שקרה בתרגול באתר בתקופה שנבחרה: מקצועות, נושאים, כמות שאלות ודיוק. לכן נכון להתמקד בצעד לימודי קטן אחד לפי הנתונים, ולא להסיק מעבר למה שמופיע בדוח.";
+    "You should not draw a personal conclusion about the child from the report, nor compare him to other children. The report shows only what happened in practice on the site during the selected period: subjects, subjects, amount of questions and accuracy. Therefore it is correct to focus on one small study step according to the data, and not to conclude beyond what appears in the report.";
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "סיכום דוח",
+    scopeLabel: "Report summary",
     canonicalIntent: "report_trust_question",
     parentUtterance: utterance,
   });
@@ -413,7 +413,7 @@ function composeOpenActivity(payload) {
   const weak = pickWeakestTopic(collectTopicMetrics(payload));
   if (!weak) return null;
   const a = topicAnchorFields(weak);
-  const text = `כדאי לפתוח פעילות קצרה בנושא ${a.subjectLabel} - ${a.topicLabel}. בדוח מופיעות שם ${a.questionCount} שאלות עם ${a.accuracyPercent}% הצלחה, ולכן זה נושא טוב לתרגול ממוקד עכשיו. מומלץ לבחור פעילות קצרה אחת בלבד, כדי לראות אם יש שיפור לפני שעוברים לנושא נוסף.`;
+  const text = `You should start a short activity on the topic ${a.subjectLabel} - ${a.topicLabel}. In the report there are ${a.questionCount} questions with ${a.accuracyPercent}% success, so this is a good topic for focused practice now. It is recommended to choose only one short activity, to see if there is an improvement before moving on to another topic.`;
   return patternDraft(text, a, "what_to_do_now");
 }
 
@@ -449,28 +449,28 @@ function composeTrend(payload) {
   if (!exportTrendEvidence(payload)) return null;
   const anchor = findTrendAnchor(payload);
   if (!anchor?.trendText) return null;
-  const text = `בדוח מופיע שינוי ב-${anchor.subjectLabel} - ${anchor.topicLabel}: ${anchor.trendText}. לכן אפשר לומר שיש כאן כיוון בדוח, אבל עדיין כדאי לבדוק אותו בעוד תרגול קצר.`;
+  const text = `The report shows a change in ${anchor.subjectLabel} - ${anchor.topicLabel}: ${anchor.trendText}. Therefore, it can be said that there is a direction in the report, but it is still worth checking it in another short practice.`;
   return patternDraft(text, anchor, "explain_report");
 }
 
 function composeParentActivity(payload) {
   const anchor = exportParentActivityEvidence(payload);
   if (!anchor) return null;
-  const text = `בדוח מופיעה פעילות אישית בנושא ${anchor.subjectLabel} - ${anchor.topicLabel}. אחרי הפעילות מופיעות ${anchor.questionCount} שאלות עם ${anchor.accuracyPercent}% הצלחה. זה נותן כיוון ראשוני, אבל כדאי לבדוק עוד תרגול קצר לפני שמסיקים שינוי יציב.`;
+  const text = `The report shows personal activity on the subject ${anchor.subjectLabel} - ${anchor.topicLabel}. After the activity, ${anchor.questionCount} questions appear with ${anchor.accuracyPercent}% success. This gives an initial direction, but it is worth checking another short practice before concluding a stable change.`;
   return patternDraft(text, anchor, "explain_report");
 }
 
 function composeSpeed(payload) {
   const anchor = exportSpeedEvidence(payload);
   if (!anchor) return null;
-  const text = `בדוח מופיע סימן לכך שחלק מהתרגול היה במצב מהיר. לכן כדאי לבדוק את ${anchor.subjectLabel} - ${anchor.topicLabel} גם בתרגול רגיל, בלי לחץ זמן, ולראות אם התשובות יציבות יותר.`;
+  const text = `The report shows a sign that part of the practice was in fast mode. That's why you should check ${anchor.subjectLabel} - ${anchor.topicLabel} also in normal practice, without time pressure, and see if the answers are more stable.`;
   return patternDraft(text, anchor, "explain_report");
 }
 
 function composeLearningSeverityFollowup(payload, conv) {
   const last = resolveLastTopicFromConv(payload, conv);
   if (!last?.questionCount) return null;
-  const text = `מהדוח אפשר להתייחס לזה רק כנושא לימודי לתרגול. ב-${last.subjectLabel} - ${last.topicLabel} מופיעות ${last.questionCount} שאלות עם ${last.accuracyPercent}% הצלחה, ולכן ההמלצה היא להתחיל מתרגול קצר וממוקד, לא להסיק מעבר למה שהדוח מראה.`;
+  const text = `From the report, it can only be regarded as a study subject for practice. In ${last.subjectLabel} - ${last.topicLabel} there are ${last.questionCount} questions with ${last.accuracyPercent}% success, so the recommendation is to start with a short and focused practice, not to conclude beyond what the report shows.`;
   return patternDraft(text, last, "explain_report");
 }
 

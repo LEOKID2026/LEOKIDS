@@ -8,7 +8,7 @@ function BookProseBlock({ lines }) {
   if (!lines?.length) return null;
 
   return (
-    <div className="my-4 space-y-2.5 text-right leading-relaxed" dir="rtl">
+    <div className="my-4 space-y-2.5 text-left leading-relaxed" dir="ltr">
       {lines.map((line, i) => (
         <div key={i}>
           <BookContentLine text={line} context="prose" />
@@ -39,7 +39,7 @@ function MarkdownBlock({ block }) {
 
   if (block.type === "ul") {
     return (
-      <ul className="my-3 list-disc space-y-3 pr-6 text-right">
+      <ul className="my-3 list-disc space-y-3 pl-6 text-left">
         {block.items.map((itemLines, i) => (
           <li key={i} className="space-y-2">
             {itemLines.map((line, j) => (
@@ -55,7 +55,7 @@ function MarkdownBlock({ block }) {
 
   if (block.type === "ol") {
     return (
-      <ol className="my-3 list-decimal space-y-3 pr-6 text-right">
+      <ol className="my-3 list-decimal space-y-3 pl-6 text-left">
         {block.items.map((itemLines, i) => (
           <li key={i} className="space-y-2">
             {itemLines.map((line, j) => (

@@ -7,8 +7,8 @@ import {
   SCHOOL_INVITE_EMAIL,
   SCHOOL_INVITE_SUCCESS,
   SCHOOL_STAFF_UUID_ADVANCED,
-} from "../../lib/school-portal/school-ui.he";
-import { ADMIN_COL_EMAIL } from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/school-portal/school-ui.js";
+import { ADMIN_COL_EMAIL } from "../../lib/admin-portal/admin-ui.js";
 
 /**
  * Primary staff invite by email; optional collapsed UUID fallback.
@@ -61,7 +61,7 @@ export default function SchoolStaffEmailInviteForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "הזמנה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, "Invite failed"));
         return;
       }
       setMessage(SCHOOL_INVITE_SUCCESS);
@@ -70,7 +70,7 @@ export default function SchoolStaffEmailInviteForm({
       setAdvancedUuid("");
       onSuccess?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -81,11 +81,11 @@ export default function SchoolStaffEmailInviteForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`}>
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-right">{sectionTitle}</h2>
-        {helpText ? <p className="text-sm text-white/60 mb-3 text-right">{helpText}</p> : null}
+        <h2 className="text-base font-semibold mb-3 text-left">{sectionTitle}</h2>
+        {helpText ? <p className="text-sm text-white/60 mb-3 text-left">{helpText}</p> : null}
         <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl">
           {!useAdvanced ? (
-            <label className="block text-sm text-right">
+            <label className="block text-sm text-left">
               <span className="text-white/60 block mb-1">{SCHOOL_INVITE_EMAIL || ADMIN_COL_EMAIL}</span>
               <input
                 type="email"
@@ -98,7 +98,7 @@ export default function SchoolStaffEmailInviteForm({
               />
             </label>
           ) : (
-            <label className="block text-sm text-right">
+            <label className="block text-sm text-left">
               <span className="text-white/60 block mb-1">{SCHOOL_STAFF_UUID_ADVANCED}</span>
               <input
                 type="text"
@@ -112,8 +112,8 @@ export default function SchoolStaffEmailInviteForm({
           )}
 
           {showDisplayName ? (
-            <label className="block text-sm text-right">
-              <span className="text-white/60 block mb-1">שם תצוגה (אופציונלי)</span>
+            <label className="block text-sm text-left">
+              <span className="text-white/60 block mb-1">Display name (optional)</span>
               <input
                 type="text"
                 value={displayName}
@@ -125,7 +125,7 @@ export default function SchoolStaffEmailInviteForm({
 
           <details className="text-sm text-white/50">
             <summary className="cursor-pointer hover:text-white/70">{SCHOOL_INVITE_ADVANCED_UUID}</summary>
-            <label className="flex items-center gap-2 mt-2 text-right">
+            <label className="flex items-center gap-2 mt-2 text-left">
               <input
                 type="checkbox"
                 checked={useAdvanced}
@@ -135,14 +135,14 @@ export default function SchoolStaffEmailInviteForm({
                   setMessage("");
                 }}
               />
-              <span>הזמנה לפי מזהה משתמש (מתקדם)</span>
+              <span>Invite by user ID (advanced)</span>
             </label>
           </details>
 
           {error ? <p className="text-red-300 text-sm">{error}</p> : null}
           {message ? <p className="text-emerald-300 text-sm">{message}</p> : null}
           <SchoolPrimaryButton type="submit" disabled={busy || !canSubmit}>
-            {busy ? "שולח…" : submitLabel}
+            {busy ? "Sending…" : submitLabel}
           </SchoolPrimaryButton>
         </form>
       </div>

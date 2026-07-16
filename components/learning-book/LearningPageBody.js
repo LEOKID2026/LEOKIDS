@@ -356,8 +356,8 @@ export default function LearningPageBody({
 
   if (!page?.sections?.length) {
     return (
-      <p className="text-center text-[color:var(--book-text-muted)]" dir="rtl">
-        אין תוכן להצגה בדף זה.
+      <p className="text-center text-[color:var(--book-text-muted)]" dir="ltr">
+        No content to show on this page.
       </p>
     );
   }
@@ -372,12 +372,12 @@ export default function LearningPageBody({
   const isFinalPracticeSection = atLast && section?.number === 7;
   const practiceCtaSubtext =
     bookSubject === "geometry"
-      ? "נעבור לתרגול של הנושא הזה בגאומטריה"
+      ? "We'll practice this Geometry topic next"
       : bookSubject === "science"
-        ? "נעבור לתרגול של הנושא הזה במדעים"
+        ? "We'll practice this Science topic next"
         : bookSubject === "english"
-          ? "נעבור לתרגול של הנושא הזה באנגלית"
-          : "נעבור לתרגול של הנושא הזה בחשבון";
+          ? "We'll practice this English topic next"
+          : "We'll practice this Math topic next";
 
   return (
     <>
@@ -405,7 +405,7 @@ export default function LearningPageBody({
         className={`mx-auto w-full max-w-3xl ${
           hasLessonNav ? "pb-[15.5rem] sm:pb-[13.5rem]" : "pb-[11.5rem] sm:pb-[10.5rem]"
         }`}
-        dir="rtl"
+        dir="ltr"
         onTouchStart={swipeHandlers.onTouchStart}
         onTouchEnd={swipeHandlers.onTouchEnd}
       >
@@ -429,7 +429,7 @@ export default function LearningPageBody({
                       ? `book-dot-active w-7 ${theme.dotActive}`
                       : "w-2.5 bg-[color:var(--book-divider)] hover:bg-[color:var(--book-accent-muted)]"
                   }`}
-                  aria-label={`עמוד ${i + 1}`}
+                  aria-label={`Page ${i + 1}`}
                 />
               ))}
             </div>
@@ -460,7 +460,7 @@ export default function LearningPageBody({
                 onClick={handlePracticeClick}
                 className={`mx-auto block w-full max-w-md rounded-2xl border px-5 py-4 transition sm:inline-block sm:w-auto sm:min-w-[16rem] ${theme.practiceCta}`}
               >
-                <span className="block text-lg font-bold sm:text-xl">בואו נתרגל עכשיו</span>
+                <span className="block text-lg font-bold sm:text-xl">Let's practice now</span>
                 <span className={`mt-1 block text-sm font-medium ${theme.practiceCtaSub}`}>
                   {practiceCtaSubtext}
                 </span>
@@ -473,17 +473,17 @@ export default function LearningPageBody({
       {/* Bottom HUD - fixed, always visible */}
       <footer
         className={`fixed bottom-0 left-0 right-0 z-40 border-t border-[color:var(--book-accent-border)] backdrop-blur-md ${theme.footerBg}`}
-        dir="rtl"
+        dir="ltr"
         style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       >
         <div className="mx-auto max-w-4xl space-y-3 px-4 py-3 sm:py-4">
           <p className="text-center text-sm font-medium text-[color:var(--book-text-muted)]">
-            עמוד {pageNumber} מתוך {totalSections}
+            Page {pageNumber} of {totalSections}
           </p>
 
           <nav
             className="flex items-stretch gap-3"
-            aria-label="ניווט בין עמודים בנושא"
+            aria-label="Page navigation within this topic"
           >
             <button
               type="button"
@@ -491,7 +491,7 @@ export default function LearningPageBody({
               onClick={goPrev}
               className={`min-h-[48px] flex-1 rounded-2xl border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-100 ${theme.navPrevButton}`}
             >
-              עמוד קודם
+              Previous page
             </button>
             <button
               type="button"
@@ -499,14 +499,14 @@ export default function LearningPageBody({
               onClick={goNext}
               className={`min-h-[48px] flex-1 rounded-2xl border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-100 ${theme.navNextButton}`}
             >
-              עמוד הבא
+              Next page
             </button>
           </nav>
 
           {hasLessonNav ? (
             <nav
               className="grid grid-cols-2 gap-2 border-t border-[color:var(--book-divider)] pt-3"
-              aria-label="ניווט בין נושאים"
+              aria-label="Topic navigation"
             >
               {prevPageId ? (
                 <Link
@@ -514,9 +514,9 @@ export default function LearningPageBody({
                     `${bookMeta.routeBase}/${prevPageId}`,
                     returnQuerySuffix
                   )}
-                  className={`min-h-[52px] rounded-xl border px-3 py-2.5 text-right text-xs shadow-sm transition ${theme.topicPrevLink}`}
+                  className={`min-h-[52px] rounded-xl border px-3 py-2.5 text-left text-xs shadow-sm transition ${theme.topicPrevLink}`}
                 >
-                  <span className={`block text-[10px] ${theme.topicPrevLabel}`}>נושא קודם</span>
+                  <span className={`block text-[10px] ${theme.topicPrevLabel}`}>Previous topic</span>
                   <BookTopicCardTitle text={prevTitle} />
                 </Link>
               ) : (
@@ -528,9 +528,9 @@ export default function LearningPageBody({
                     `${bookMeta.routeBase}/${nextPageId}`,
                     returnQuerySuffix
                   )}
-                  className={`min-h-[52px] rounded-xl border px-3 py-2.5 text-right text-xs shadow-sm transition ${theme.topicNextLink}`}
+                  className={`min-h-[52px] rounded-xl border px-3 py-2.5 text-left text-xs shadow-sm transition ${theme.topicNextLink}`}
                 >
-                  <span className={`block text-[10px] ${theme.topicNextLabel}`}>נושא הבא</span>
+                  <span className={`block text-[10px] ${theme.topicNextLabel}`}>Next topic</span>
                   <BookTopicCardTitle text={nextTitle} />
                 </Link>
               ) : (

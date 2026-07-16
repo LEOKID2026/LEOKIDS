@@ -42,20 +42,20 @@ export function classifyPracticePolarity(q, acc) {
  * @param {number} acc
  */
 export function meaningHeForPolarity(displayName, q, acc) {
-  const label = String(displayName || "הנושא").trim() || "הנושא";
+  const label = String(displayName || "the topic").trim() || "the topic";
   const questions = Math.max(0, Math.floor(Number(q) || 0));
   const accuracy = Math.max(0, Math.min(100, Math.round(Number(acc) || 0)));
   const tier = classifyPracticePolarity(questions, accuracy);
   if (tier === POLARITY.none) {
-    return `ב${label} אין עדיין מספיק תרגול בטווח התקופה כדי לקבוע כיוון.`;
+    return `In ${label} there is still not enough practice in the period range to determine a direction.`;
   }
   if (tier === POLARITY.thin) {
-    return `ב${label} יש ${questions} שאלות בלבד - עדיין מוקדם לקבוע כיוון ברור.`;
+    return `In ${label} there are only ${questions} questions - it is still too early to determine a clear direction.`;
   }
   if (tier === POLARITY.strong) {
-    return `ב${label} נראית יציבות טובה יחסית (${accuracy}% דיוק על ${questions} שאלות) - כדאי לשמר תרגול שגרתי.`;
+    return `In ${label} relatively good stability is seen (${accuracy}% accuracy on ${questions} questions) - you should maintain a routine practice.`;
   }
-  return `ב${label} יש ${questions} שאלות עם דיוק של כ ${accuracy}% - זה מצב שדורש חיזוק ממוקד, לא סימן ליציבות חזקה.`;
+  return `In ${label} there are ${questions} questions with an accuracy of about ${accuracy}% - this is a situation that requires focused reinforcement, not a sign of strong stability.`;
 }
 
 /**

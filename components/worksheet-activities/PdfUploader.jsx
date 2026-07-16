@@ -15,24 +15,24 @@ export default function PdfUploader({ disabled, fileRole = "worksheet", onUpload
       setError("");
       if (!file) return;
       if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
-        setError("ניתן להעלות קבצי PDF בלבד");
+        setError("Only PDF files can be uploaded");
         return;
       }
       if (file.size > MAX_BYTES) {
-        setError("הקובץ גדול מדי. גודל מקסימלי: 20MB");
+        setError("File is too large. Maximum size: 20MB");
         return;
       }
       setBusy(true);
       try {
         const result = await uploadFn(file);
         if (!result.ok) {
-          setError(result.error || "העלאה נכשלה");
+          setError(result.error || "Upload failed");
           return;
         }
         setLastName(result.originalFilename || file.name);
         onUploaded?.({ fileId: result.fileId, originalFilename: result.originalFilename || file.name });
       } catch {
-        setError("שגיאת רשת");
+        setError("Network error");
       } finally {
         setBusy(false);
       }
@@ -41,9 +41,11 @@ export default function PdfUploader({ disabled, fileRole = "worksheet", onUpload
   );
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/20 p-4 text-right">
+    <div className="rounded-2xl border border-white/10 bg-black/20 p-4 text-left">
       <p className="text-sm text-white/80 mb-2">
-        {fileRole === "answer_key" ? "העלאת מחוון PDF (למורה בלבד)" : "העלאת דף עבודה PDF"}
+        {fileRole === "answer_key"
+          ? "Upload answer-key PDF (teachers only)"
+          : "Upload worksheet PDF"}
       </p>
       <input
         type="file"
@@ -58,7 +60,7 @@ export default function PdfUploader({ disabled, fileRole = "worksheet", onUpload
       />
       {lastName ? <p className="text-xs text-emerald-300/90 mt-2">✓ {lastName}</p> : null}
       {error ? <p className="text-xs text-red-300 mt-2">{error}</p> : null}
-      {busy ? <p className="text-xs text-white/50 mt-2">מעלה…</p> : null}
+      {busy ? <p className="text-xs text-white/50 mt-2">Uploading…</p> : null}
     </div>
   );
 }

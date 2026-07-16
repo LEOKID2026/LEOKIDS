@@ -98,7 +98,7 @@ export default function StudentLoginPage() {
           redirectAfterStudentLogin(router);
           return;
         }
-        // אורח אחרי logout: לא מחדשים session אוטומטית — רק בלחיצה מפורשת על "כניסה כאורח".
+        // Guest after logout: do not auto-refresh the session — only on an explicit "Continue as guest" tap.
         setSessionCheck("none");
       })
       .catch(() => {
@@ -107,7 +107,7 @@ export default function StudentLoginPage() {
     return () => {
       mounted = false;
     };
-    // רק isReady — לא router (re-run מבטל fetch → stuck על "בודקים חיבור...").
+    // Only isReady — not router (re-run aborts fetch → stuck on "Checking connection...").
   }, [router.isReady]);
 
   if (sessionCheck === "pending") {

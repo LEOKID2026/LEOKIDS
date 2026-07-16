@@ -49,7 +49,7 @@ export default function StudentAssignedActivityQuestionStage({
           <div
             role="button"
             tabIndex={0}
-            aria-label="הגדל שרטוט"
+            aria-label="Enlarge diagram"
             onClick={() => onExpandDiagram?.()}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -69,7 +69,7 @@ export default function StudentAssignedActivityQuestionStage({
               className="absolute bottom-0.5 left-0.5 text-[10px] leading-none bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 rounded px-1.5 py-px shadow pointer-events-none select-none"
               aria-hidden
             >
-              ⛶ הגדל
+              ⛶ Enlarge
             </span>
           </div>
         </div>

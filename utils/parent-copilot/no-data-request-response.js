@@ -43,7 +43,7 @@ export function isRealTrendLineHe(line) {
 }
 
 /**
- * Week-over-week or directional change — excludes cautionary «יציבות» without comparison.
+ * Week-over-week or directional change — excludes a cautionary "stability" mention without comparison.
  * @param {string} line
  */
 export function isProgressComparisonTrendLineHe(line) {
@@ -228,8 +228,8 @@ export function isNoDataClarificationText(text) {
   return (
     t === NO_DATA_FOR_REQUEST_RESPONSE_HE ||
     t === NO_DATA_SPECIFIC_FOR_REQUEST_RESPONSE_HE ||
-    t.includes("אין מספיק מידע") ||
-    t.includes("בדוח הנוכחי אין מספיק") ||
-    t.includes("יש בדוח נתוני תרגול")
+    t.includes("Not enough information") ||
+    t.includes("There is not enough in the current report") ||
+    t.includes("There is practice data in the report")
   );
 }

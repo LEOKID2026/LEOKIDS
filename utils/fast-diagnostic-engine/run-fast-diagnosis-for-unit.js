@@ -4,8 +4,8 @@
 import { normalizeParentFacingHe } from "../parent-report-language/index.js";
 import { shortReportDiagnosticsParentVisibleHe } from "../parent-report-ui-explain-he.js";
 import { inferNormalizedTags, isHighInformationMisconceptionTag } from "./infer-tags.js";
-import { TAG_LABEL_HE, tagsSummaryHe } from "./parent-copy-he.js";
-import { resolveProbeHintFromMap } from "./probe-map-he.js";
+import { TAG_LABEL_HE, tagsSummaryHe } from "./parent-copy.js";
+import { resolveProbeHintFromMap } from "./probe-map.js";
 
 function safeNumber(n) {
   const v = Number(n);
@@ -30,7 +30,7 @@ function stripInternalTokensHe(s) {
 export function runFastDiagnosisForUnit({ unit, events, row }) {
   const subjectId = String(unit?.subjectId || "");
   const topicId = String(unit?.bucketKey || "").trim();
-  const topicName = String(unit?.displayName || topicId || "").trim() || "הנושא";
+  const topicName = String(unit?.displayName || topicId || "").trim() || "the topic";
   const wrongs = Array.isArray(events) ? events.filter((e) => e && !e.isCorrect) : [];
   const w = wrongs.length;
   const q = safeNumber(row?.questions);
@@ -157,44 +157,44 @@ function buildHypothesisHe({ diagnosisStage, topicName, dominantTag, w, ratio, s
   const summary = tagsSummaryHe(suspectedErrorTags);
   if (diagnosisStage === "stable_diagnosis") {
     return normalizeParentFacingHe(
-      `ב${topicName} נראה דפוס עקבי (${w} טעויות בטווח; ריכוז דומה של סוג הקושי). ${tagLab ? `מוקד: ${tagLab}.` : summary ? `מוקדים אפשריים: ${summary}.` : ""}`
+      `In ${topicName} a consistent pattern appears (${w} mistakes in range; similar concentration of the difficulty type). ${tagLab ? `Focus: ${tagLab}.` : summary ? `Possible focus areas: ${summary}.` : ""}`
     );
   }
   if (diagnosisStage === "working_hypothesis") {
     return normalizeParentFacingHe(
-      `השערה ראשונית ב${topicName}: חוזרות על אותו סוג טעות - כדאי לאמת בהמשך עם עוד דוגמאות. ${tagLab ? `מוקד: ${tagLab}.` : ""}`
+      `Initial hypothesis in ${topicName}: the same type of mistake repeats — worth confirming with more examples. ${tagLab ? `Focus: ${tagLab}.` : ""}`
     );
   }
   if (diagnosisStage === "early_signal") {
     return normalizeParentFacingHe(
-      `סימן ראשוני ב${topicName}${tagLab ? ` - נראה קשר ל${tagLab}` : summary ? ` - ${summary}` : ""}. מדובר בתמונה מוקדמת בלבד.`
+      `Early signal in ${topicName}${tagLab ? ` — appears related to ${tagLab}` : summary ? ` — ${summary}` : ""}. This is only a preliminary picture.`
     );
   }
   return normalizeParentFacingHe(
-    `עדיין לא ניתן לבחור דפוס יציב ב${topicName} - נמשיך לאסוף תצפיות ממוקדות.${w > 0 ? ` (${w} טעויות בטווח)` : ""}`
+    `A stable pattern cannot be determined yet in ${topicName} — we will continue collecting focused observations.${w > 0 ? ` (${w} mistakes in range)` : ""}`
   );
 }
 
 function buildEvidenceLinesHe({ topicName, w, q, dominantTag, dominantCount, suspectedErrorTags }) {
   const lines = [];
   if (q > 0) {
-    lines.push(normalizeParentFacingHe(`בטווח: ${q} שאלות בסך הכל בנושא ${topicName}.`));
+    lines.push(normalizeParentFacingHe(`In range: ${q} questions total in ${topicName}.`));
   }
   if (w > 0) {
-    lines.push(normalizeParentFacingHe(`נתפסו ${w} טעויות רלוונטיות לשורה.`));
+    lines.push(normalizeParentFacingHe(`Captured ${w} relevant mistakes for this row.`));
   }
   if (dominantTag && dominantCount > 0) {
     const lab = TAG_LABEL_HE[dominantTag] || "";
     if (lab) {
-      lines.push(normalizeParentFacingHe(`הכי בולט בטעויות: ${lab} (${dominantCount} מקרים).`));
+      lines.push(normalizeParentFacingHe(`Most prominent in mistakes: ${lab} (${dominantCount} cases).`));
     }
   }
   if (suspectedErrorTags.length > 1) {
     const rest = tagsSummaryHe(suspectedErrorTags.slice(1));
-    if (rest) lines.push(normalizeParentFacingHe(`גם מופיע: ${rest}.`));
+    if (rest) lines.push(normalizeParentFacingHe(`Also appears: ${rest}.`));
   }
   if (!lines.length) {
-    lines.push(normalizeParentFacingHe(`אין עדיין מספיק אירועי טעות מסווגים ל${topicName}.`));
+    lines.push(normalizeParentFacingHe(`There are not yet enough classified mistake events for ${topicName}.`));
   }
   return lines.slice(0, 6);
 }
@@ -235,11 +235,11 @@ function buildNextProbe({ diagnosisStage, topicName, dominantTag, subjectId, w, 
 
   const tagLab = dominantTag ? TAG_LABEL_HE[dominantTag] || "" : "";
   let reasonHe = normalizeParentFacingHe(
-    `לבדוק האם ${tagLab || "אותו סוג קושי"} חוזר כשמורידים רמזים ומאריכים קצת את זמן העבודה.`
+    `Check whether ${tagLab || "the same type of difficulty"} repeats when hints are reduced and work time is extended slightly.`
   );
   if (diagnosisStage === "insufficient_signal") {
     reasonHe = normalizeParentFacingHe(
-      `להריץ 2–3 שאלות קצרות באותו מושג בלי רמז, כדי לראות אם הטעות חוזרת בצורה יציבה.`
+      `Run 2–3 short questions on the same concept without hints, to see if the mistake repeats consistently.`
     );
   }
   let suggestedQuestionType = "same_topic_short_set";
@@ -269,16 +269,16 @@ function buildNextProbe({ diagnosisStage, topicName, dominantTag, subjectId, w, 
 function buildParentSafeHe({ diagnosisStage, topicName, hypothesisHe, w, q, suspectedErrorTags, nextProbe }) {
   const stagePhrase =
     diagnosisStage === "early_signal"
-      ? "זהו סימן ראשוני בלבד - לא כיוון סופי."
+      ? "This is only an early signal — not a final direction."
       : diagnosisStage === "working_hypothesis"
-        ? "זוהי השערת עבודה - כדאי לאמת בתרגול המשך."
+        ? "This is a working hypothesis — worth confirming with continued practice."
         : diagnosisStage === "stable_diagnosis"
-          ? "הדפוס נראה יציב יחסית לטווח הזה - עדיין כדאי לעקוב גם בהמשך."
-          : "עדיין חסר אות חזק מספיק; נמשיך לאסוף תצפיות.";
+          ? "The pattern appears relatively stable for this range — still worth monitoring going forward."
+          : "A strong enough signal is still missing; we will continue collecting observations.";
 
   const tags = tagsSummaryHe(suspectedErrorTags.slice(0, 2));
   const base = `${hypothesisHe} ${stagePhrase}`;
-  const probe = nextProbe?.reasonHe ? ` הצעה להמשך: ${nextProbe.reasonHe}` : "";
-  const counts = q > 0 || w > 0 ? ` (שאלות בטווח: ${q || "-"}, טעויות נספרות: ${w})` : "";
-  return normalizeParentFacingHe(`${base}${tags ? ` נושאי מיקוד אפשריים: ${tags}.` : ""}${probe}${counts}`);
+  const probe = nextProbe?.reasonHe ? ` Suggested next step: ${nextProbe.reasonHe}` : "";
+  const counts = q > 0 || w > 0 ? ` (Questions in range: ${q || "-"}, counted mistakes: ${w})` : "";
+  return normalizeParentFacingHe(`${base}${tags ? ` Possible focus areas: ${tags}.` : ""}${probe}${counts}`);
 }

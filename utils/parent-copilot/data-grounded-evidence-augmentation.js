@@ -57,12 +57,12 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
   const subj =
     String(truthPacket.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
     String(truthPacket.surfaceFacts?.subjectLabelHe || "").trim() ||
-    "התחום המרכזי שעולה מהדוח";
+    "The main area that emerges from the report";
   const acc = Math.max(0, Math.round(Number(truthPacket.surfaceFacts?.accuracy ?? 0)));
   const line =
     acc > 0
-      ? `לפי נתוני הדוח, נענו כ ${vol} שאלות בתרגול, עם דיוק כללי של כ ${acc}%. כרגע כדאי למקד את התרגול ב ${subj}.`
-      : `לפי נתוני הדוח, נענו כ ${vol} שאלות בתרגול. כרגע כדאי למקד את התרגול ב ${subj}.`;
+      ? `According to the report data, about ${vol} questions were answered in practice, with a general accuracy of about ${acc}%. Right now you should focus the practice on ${subj}.`
+      : `According to the report data, about ${vol} questions were answered in practice. Right now you should focus the practice on ${subj}.`;
 
   return {
     ...draft,

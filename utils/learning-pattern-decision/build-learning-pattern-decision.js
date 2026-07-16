@@ -200,7 +200,7 @@ export function buildLearningPatternDecision({
     );
 
   const fallbackHasRepeatedPattern =
-    !!fallbackFinding && /מופיע דפוס חוזר/u.test(String(fallbackFinding));
+    !!fallbackFinding && /a recurring pattern of mistakes/i.test(String(fallbackFinding));
 
   // competitiveBucketOnly (all mistakes are in a "speed"/competitive context) must keep that
   // context in the parent-facing text — the engine's own parentSafeFinding is not aware of

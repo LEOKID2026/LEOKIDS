@@ -6,7 +6,7 @@ import {
   usePromptPwaInstall,
 } from "../lib/pwa/pwa-install-prompt";
 
-export default function InstallAppButton({ className = "", label = "התקן אפליקציה" }) {
+export default function InstallAppButton({ className = "", label = "Install app" }) {
   const hasNativePrompt = usePwaInstallPromptAvailable();
   const promptInstall = usePromptPwaInstall();
   const [isIOS, setIsIOS] = useState(false);
@@ -97,8 +97,9 @@ export default function InstallAppButton({ className = "", label = "התקן א�
           onClick={closeInstructions}
         >
           <div
-            className="relative w-full max-w-md rounded-xl border border-white/20 bg-black/85 p-5 shadow-2xl text-right animate-slide-up"
-            dir="rtl"
+            className="relative w-full max-w-md rounded-xl border border-white/20 bg-black/85 p-5 shadow-2xl text-left animate-slide-up"
+            dir="ltr"
+            lang="en"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-3 flex items-start justify-between gap-3">
@@ -118,14 +119,14 @@ export default function InstallAppButton({ className = "", label = "התקן א�
                   />
                 </svg>
                 <h3 id="install-app-instructions-title" className="text-lg font-bold text-white">
-                  {isIOS ? "הוראות התקנה ל-iOS" : "הוראות התקנה"}
+                  {isIOS ? "iOS install instructions" : "Install instructions"}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={closeInstructions}
                 className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition"
-                aria-label="סגור"
+                aria-label="Close"
               >
                 ✕
               </button>
@@ -134,18 +135,18 @@ export default function InstallAppButton({ className = "", label = "התקן א�
             {isIOS ? (
               <ol className="list-decimal list-inside space-y-2 text-sm text-white/90">
                 <li>
-                  לחץ על כפתור השיתוף <span className="font-bold">📤</span> בתחתית Safari
+                  Tap the Share button <span className="font-bold">📤</span> at the bottom of Safari
                 </li>
-                <li>גלול למטה ובחר &quot;הוסף למסך הבית&quot;</li>
-                <li>לחץ &quot;הוסף&quot; בפינה הימנית העליונה</li>
-                <li>האפליקציה תופיע במסך הבית שלך</li>
+                <li>Scroll down and choose &quot;Add to Home Screen&quot;</li>
+                <li>Tap &quot;Add&quot; in the top-right corner</li>
+                <li>The app will appear on your home screen</li>
               </ol>
             ) : (
               <ol className="list-decimal list-inside space-y-2 text-sm text-white/90">
-                <li>בדפדפן Chrome/Edge: לחץ על אייקון ההתקנה בשורת הכתובת</li>
-                <li>בדפדפן Firefox: לחץ על תפריט (☰) ובחר &quot;התקן&quot;</li>
-                <li>במובייל: לחץ על &quot;הוסף למסך הבית&quot; בתפריט הדפדפן</li>
-                <li>האפליקציה תופיע במסך הבית שלך</li>
+                <li>In Chrome/Edge: click the install icon in the address bar</li>
+                <li>In Firefox: open the menu (☰) and choose &quot;Install&quot;</li>
+                <li>On mobile: tap &quot;Add to Home Screen&quot; in the browser menu</li>
+                <li>The app will appear on your home screen</li>
               </ol>
             )}
           </div>

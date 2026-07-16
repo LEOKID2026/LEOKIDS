@@ -213,50 +213,48 @@ export function normalizeParentVisibleMetrics(raw = {}, unit = null) {
 }
 
 /**
- * Public Hebrew count-pluralization helpers — single source of truth for
- * "N שאלות/תשובות" style phrases anywhere in the parent report engine or
- * renderers. Every surface MUST reuse these instead of inline `${q} שאלות`
- * interpolation, which breaks Hebrew grammar at q=1 / wrong=1 ("1 שאלות").
+ * Public count-pluralization helpers — single source of truth for
+ * "N questions/answers" style phrases anywhere in the parent report engine or
+ * renderers. Every surface should reuse these instead of inline `${q} questions`
+ * interpolation, so wording stays consistent at q=1 ("1 question").
  * @param {ParentVisibleMetrics} metrics
  * @param {string} topicName
  */
 export function formatQuestionsTextHe(n) {
   const q = Math.max(0, Math.round(Number(n) || 0));
-  if (q === 1) return "שאלה אחת";
-  return `${q} שאלות`;
+  if (q === 1) return "1 question";
+  return `${q} questions`;
 }
 
 export function formatCorrectTextHe(n) {
   const c = Math.max(0, Math.round(Number(n) || 0));
-  if (c === 1) return "תשובה אחת נכונה";
-  return `${c} תשובות נכונות`;
+  if (c === 1) return "1 correct answer";
+  return `${c} correct answers`;
 }
 
 export function formatWrongTextHe(n) {
   const w = Math.max(0, Math.round(Number(n) || 0));
-  if (w === 1) return "תשובה אחת שגויה";
-  return `${w} תשובות שגויות`;
+  if (w === 1) return "1 incorrect answer";
+  return `${w} incorrect answers`;
 }
 
 /**
- * "N שגיאות מתוך M שאלות" style phrase used by engine-decision copy.
- * Uses "שגיאה/שגיאות" (mistake/mistakes), not "שגויה/שגויות" (wrong-fem.
- * adjective without a noun, which is not standalone-grammatical in Hebrew).
+ * "N mistakes out of M questions" style phrase used by engine-decision copy.
  * Does not touch the unrelated, pre-existing `formatWrongTextHe` wording
- * ("תשובה שגויה" / "תשובות שגויות"), which is untouched by this fix.
+ * ("incorrect answer(s)"), which is untouched by this fix.
  */
 export function formatWrongOfQuestionsTextHe(w, q) {
   const wrong = Math.max(0, Math.round(Number(w) || 0));
   const questions = Math.max(0, Math.round(Number(q) || 0));
-  const wrongText = wrong === 1 ? "שגיאה אחת" : `${wrong} שגיאות`;
-  return `${wrongText} מתוך ${formatQuestionsTextHe(questions)}`;
+  const wrongText = wrong === 1 ? "1 mistake" : `${wrong} mistakes`;
+  return `${wrongText} out of ${formatQuestionsTextHe(questions)}`;
 }
 
-/** "פתר N שאלות" style phrase (verb-first) used by topic-decision copy. */
+/** "solved N questions" style phrase (verb-first) used by topic-decision copy. */
 export function formatSolvedQuestionsTextHe(n) {
   const q = Math.max(0, Math.round(Number(n) || 0));
-  if (q === 1) return "פתר שאלה אחת";
-  return `פתר ${q} שאלות`;
+  if (q === 1) return "solved 1 question";
+  return `solved ${q} questions`;
 }
 
 /**
@@ -269,11 +267,11 @@ export function formatSolvedQuestionsTextHe(n) {
  * @param {{ topicName: string, wrong: number, questions: number, accuracy: number }} p
  */
 export function buildSpeedPressurePatternFindingHe({ topicName, wrong, questions, accuracy }) {
-  const name = String(topicName || "הנושא").trim() || "הנושא";
+  const name = String(topicName || "this topic").trim() || "this topic";
   const acc = Math.max(0, Math.min(100, Math.round(Number(accuracy) || 0)));
   return (
-    `בנושא ${name}, בתרגול המהיר נרשמו ${formatWrongOfQuestionsTextHe(wrong, questions)} (${acc}% דיוק). ` +
-    "כדאי לבדוק את הנושא גם בתרגול ללא הגבלת זמן, לפני שמחליטים אם נדרש חיזוק בידע."
+    `In ${name}, quick practice recorded ${formatWrongOfQuestionsTextHe(wrong, questions)} (${acc}% accuracy). ` +
+    "It helps to also check this topic in practice without a time limit, before deciding whether it needs more knowledge reinforcement."
   );
 }
 
@@ -289,7 +287,7 @@ function hasReliableAccuracyHe(metrics) {
 
 export function buildParentMetricsDataLineHe(metrics, topicName) {
   const q = metrics.questions;
-  const topic = String(topicName || "הנושא").trim() || "הנושא";
+  const topic = String(topicName || "this topic").trim() || "this topic";
   const acc = metrics.accuracy;
 
   if (q <= 0) return "";
@@ -298,17 +296,17 @@ export function buildParentMetricsDataLineHe(metrics, topicName) {
 
   if (metrics.canShowCorrectWrongBreakdown) {
     const { correct: c, wrong: w } = metrics;
-    let line = `הנתונים: נפתרו ${qText} בנושא ${topic}, מתוכן ${formatCorrectTextHe(c)} ו-${formatWrongTextHe(w)}.`;
+    let line = `The data: ${qText} solved in ${topic}, of which ${formatCorrectTextHe(c)} and ${formatWrongTextHe(w)}.`;
     if (hasReliableAccuracyHe(metrics) && acc > 0) {
-      line += ` הדיוק הוא ${acc}%.`;
+      line += ` Accuracy is ${acc}%.`;
     }
     return line;
   }
 
   if (hasReliableAccuracyHe(metrics) && acc > 0) {
-    return `הנתונים: נפתרו ${qText} בנושא ${topic}, והדיוק הוא ${acc}%.`;
+    return `The data: ${qText} solved in ${topic}, with ${acc}% accuracy.`;
   }
-  return `הנתונים: נפתרו ${qText} בנושא ${topic}.`;
+  return `The data: ${qText} solved in ${topic}.`;
 }
 
 /**

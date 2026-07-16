@@ -9,8 +9,8 @@ export function ReportModalFrame({
   subtitle,
   onClose,
   onBack,
-  backLabel = "חזרה",
-  closeLabel = "סגירה",
+  backLabel = "Back",
+  closeLabel = "Close",
   zIndex = 100,
   scrollAreaClassName = "",
   children,
@@ -49,7 +49,7 @@ export function ReportModalFrame({
       <button
         type="button"
         className="absolute inset-0 bg-black/75 backdrop-blur-sm"
-        aria-label="סגירת חלון"
+        aria-label="Close window"
         onClick={onClose}
       />
       <div className="relative w-full max-w-2xl max-h-[min(88vh,720px)] flex flex-col text-right">

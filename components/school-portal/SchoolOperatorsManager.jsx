@@ -14,7 +14,7 @@ import {
   SCHOOL_OPERATOR_IDENTITY,
   SCHOOL_STAFF_CREATE_OPERATOR_SECTION,
   SCHOOL_STAFF_INVITE_EMAIL_SECTION,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * @param {{ accessToken: string, enabled?: boolean }} props
@@ -33,12 +33,12 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
       const res = await schoolAuthFetch(accessToken, "/api/school/operators");
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "שגיאה בטעינה"));
+        setError(apiErrorMessageHe(json?.error, "Error loading"));
         return;
       }
       setOperators(json?.data?.operators || []);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setLoading(false);
     }
@@ -58,7 +58,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
       );
       if (!res.ok) {
         const json = await res.json().catch(() => ({}));
-        setError(apiErrorMessageHe(json?.error, "עדכון הרשאות נכשל"));
+        setError(apiErrorMessageHe(json?.error, "Failed to update permissions"));
         return;
       }
       await load();
@@ -93,7 +93,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
         ) : error ? (
           <SchoolErrorBlock message={error} onRetry={() => void load()} />
         ) : operators.length === 0 ? (
-          <SchoolEmptyState title="אין מזכיר/ות משויכ/ים" />
+          <SchoolEmptyState title="No secretaries linked" />
         ) : (
           <SchoolCardGrid columns={1}>
             {operators.map((op) => (
@@ -111,7 +111,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
                       {op.staffCode ? (
                         <p className="text-xs text-white/50 mt-1 font-mono" dir="ltr">
                           {op.staffCode}
-                          {op.staffAccessStatus === "suspended" ? " · מושעה" : ""}
+                          {op.staffAccessStatus === "suspended" ? " · Suspended" : ""}
                         </p>
                       ) : null}
                     </div>
@@ -119,7 +119,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
                       href={`/school/operators/${op.operatorUserId}`}
                       className="text-amber-300 text-sm hover:underline"
                     >
-                      פרטים
+                      Details
                     </Link>
                   </div>
                   <SchoolOperatorGrantPanel

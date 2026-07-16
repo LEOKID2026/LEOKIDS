@@ -19,20 +19,20 @@ const APPROVED_TREND_SOURCES = new Set([
 
 export const TREND_V1_PARENT_LINE_HE = Object.freeze({
   improving:
-    "מגמה בתקופה: משתפר - בחלק המאוחר של התקופה הדיוק גבוה יותר מאשר בתחילתה.",
+    "Trend for this period: improving - accuracy is higher in the later part of the period than at the start.",
   stable:
-    "מגמה בתקופה: ללא שינוי משמעותי - עדיין כדאי לחזק את הנושא בתרגול קצר.",
+    "Trend for this period: no significant change - it still helps to reinforce this topic with short practice.",
   declining:
-    "מגמה בתקופה: צריך חיזוק - בחלק המאוחר של התקופה היו יותר טעויות, ולכן כדאי לחזק בתרגול קצר.",
+    "Trend for this period: needs reinforcement - there were more mistakes in the later part of the period, so short practice would help.",
   insufficient_data:
-    "עדיין אין מספיק רצף תרגול כדי לזהות מגמה לאורך זמן.",
+    "There still isn't enough of a practice streak to identify a trend over time.",
 });
 
-/** Short status label shown after "מגמה בתקופה:" in parent-facing lines. */
+/** Short status label shown after "Trend for this period:" in parent-facing lines. */
 export const TREND_V1_STATUS_LABEL_HE = Object.freeze({
-  improving: "משתפר",
-  stable: "ללא שינוי משמעותי",
-  declining: "צריך חיזוק",
+  improving: "Improving",
+  stable: "No significant change",
+  declining: "Needs reinforcement",
 });
 
 /** Aggregate stores `moledet_geography`; V2 maps use `moledet-geography`. */

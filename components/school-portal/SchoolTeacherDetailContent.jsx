@@ -48,7 +48,7 @@ import {
   SCHOOL_TEACHER_CLASSES_TITLE,
   SCHOOL_TEACHER_CLASS_SUBJECTS_PREFIX,
   SCHOOL_TEACHER_EMPTY_CLASSES,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * Full school teacher detail - shared by `/school/teachers/[teacherId]` and in-report modal.
@@ -177,7 +177,7 @@ export default function SchoolTeacherDetailContent({
       } else {
         setDetail(null);
         onDetailLoaded?.(null);
-        setDetailError(dBody?.error?.message || "שגיאה בטעינת פרטי המורה");
+        setDetailError(dBody?.error?.message || "Error loading teacher details");
       }
       if (sResult?.status === 200) {
         setSubjects(sBody.data?.subjects || []);
@@ -185,7 +185,7 @@ export default function SchoolTeacherDetailContent({
         setSubjects([]);
       }
     } catch {
-      setDetailError("שגיאת רשת בטעינת פרטי המורה");
+      setDetailError("Network error loading teacher details");
     } finally {
       setDetailLoading(false);
     }
@@ -241,7 +241,7 @@ export default function SchoolTeacherDetailContent({
         path,
       });
       if (result?.status !== 200) {
-        setReportError(apiErrorMessageHe(result?.body?.error, "שגיאה בטעינת דוח"));
+        setReportError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
         return;
       }
       setReportViewModel(
@@ -280,7 +280,7 @@ export default function SchoolTeacherDetailContent({
         row?.displayName ||
         body?.student?.full_name ||
         reportViewModel?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "ילד/ה";
+        "Child";
       setNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -332,12 +332,12 @@ export default function SchoolTeacherDetailContent({
       const res = await schoolAuthFetch(accessToken, `/api/school/students?${q.toString()}`);
       const body = await res.json().catch(() => ({}));
       if (res.status !== 200) {
-        setStudentsError(apiErrorMessageHe(body?.error, "שגיאה בטעינת ילדים"));
+        setStudentsError(apiErrorMessageHe(body?.error, "Error loading children"));
         return;
       }
       setStudents(body?.data?.students || []);
     } catch {
-      setStudentsError("שגיאה בטעינת ילדים");
+      setStudentsError("Error loading children");
     } finally {
       setStudentsLoading(false);
     }
@@ -376,11 +376,11 @@ export default function SchoolTeacherDetailContent({
     : "";
 
   if (!teacherId) {
-    return <p className="text-white/60 text-sm text-right">לא נמצא מזהה מורה.</p>;
+    return <p className="text-white/60 text-sm text-left">No teacher ID found.</p>;
   }
 
   if (detailBlocking) {
-    return <p className="text-white/60 text-sm text-right">{SCHOOL_LOADING_DATA}</p>;
+    return <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING_DATA}</p>;
   }
 
   return (
@@ -395,7 +395,7 @@ export default function SchoolTeacherDetailContent({
       ) : null}
 
       {detailError ? (
-        <p className="text-red-300 text-sm text-right" role="alert">
+        <p className="text-red-300 text-sm text-left" role="alert">
           {detailError}
         </p>
       ) : null}
@@ -417,10 +417,10 @@ export default function SchoolTeacherDetailContent({
       {!isManager ? (
         <SchoolSection title={SCHOOL_TEACHER_CLASSES_TITLE} data-testid="school-teacher-physical-classes">
           {classesLoading ? (
-            <p className="text-xs text-white/45 mb-3 text-right">{SCHOOL_LOADING_DATA}</p>
+            <p className="text-xs text-white/45 mb-3 text-left">{SCHOOL_LOADING_DATA}</p>
           ) : null}
           {classesError ? (
-            <p className="text-red-300 text-sm text-right" role="alert">
+            <p className="text-red-300 text-sm text-left" role="alert">
               {classesError}
             </p>
           ) : null}
@@ -434,7 +434,7 @@ export default function SchoolTeacherDetailContent({
                   <SchoolManagementCard
                     key={key}
                     title={group.name}
-                    subtitle={`${studentCount} ילדים`}
+                    subtitle={`${studentCount} children`}
                     meta={`${SCHOOL_TEACHER_CLASS_SUBJECTS_PREFIX}: ${subjectLabels.join(", ")}`}
                     onClick={() => openPhysicalClass(group)}
                     data-testid={`school-teacher-physical-class-card-${key}`}
@@ -450,13 +450,13 @@ export default function SchoolTeacherDetailContent({
       ) : null}
 
       {isManager ? (
-        <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right`}>
+        <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`}>
           <p className="text-sm text-white/70">{SCHOOL_MANAGER_ALL_SUBJECTS}</p>
         </div>
       ) : (
         <SchoolSection title={SCHOOL_SUBJECTS_TITLE}>
           <div className="mb-4">
-            <p className="text-sm text-white/55 mb-2">מקצועות מורשים:</p>
+            <p className="text-sm text-white/55 mb-2">Authorized subjects:</p>
             <SchoolSubjectBadges subjects={subjects.map((s) => s.subject)} max={12} />
           </div>
           <ul className="space-y-2 mb-6">
@@ -481,7 +481,7 @@ export default function SchoolTeacherDetailContent({
           </ul>
           <form onSubmit={grantSubject} className="flex flex-wrap gap-3 items-end border-t border-white/10 pt-4">
             <label className="text-sm text-white/70">
-              מקצוע
+              Subject
               <SchoolSubjectSelect value={newSubject} onChange={setNewSubject} />
             </label>
             <SchoolPrimaryButton disabled={busy} type="submit">

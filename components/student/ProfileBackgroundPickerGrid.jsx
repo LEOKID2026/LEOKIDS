@@ -22,7 +22,7 @@ export default function ProfileBackgroundPickerGrid({
 
   return (
     <div>
-      <div className={labelClass}>בחר רקע לפרופיל:</div>
+      <div className={labelClass}>Choose a profile background:</div>
       <div className="grid grid-cols-6 gap-2">
         {PROFILE_BACKGROUND_OPTIONS.map((option) => {
           const selected = activeKey === option.id;

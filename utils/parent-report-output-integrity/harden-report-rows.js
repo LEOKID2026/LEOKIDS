@@ -186,21 +186,21 @@ export function detectGradeSplitContradictions(units, baseReport) {
       if (questions >= 8 && accuracy < 55) hasWeak = true;
     }
     if (!hasStrong || !hasWeak) continue;
-    const displayName = String(group[0]?.displayName || "נושא");
+    const displayName = String(group[0]?.displayName || "Topic");
     const subjectLabel =
-      { math: "מתמטיקה", geometry: "גאומטריה", english: "אנגלית", science: "מדעים", hebrew: "עברית", "moledet-geography": "מולדת" }[
+      { math: "Math", geometry: "Geometry", english: "English", science: "Science", hebrew: "Hebrew", "moledet-geography": "Homeland" }[
         String(group[0]?.subjectId || "")
       ] || String(group[0]?.subjectId || "");
     const parts = group
       .map((u) => {
         const { questions, accuracy } = unitMetrics(u);
         const label = parentFacingLabelForV2Unit(baseReport, u);
-        const band = questions >= 40 && accuracy >= 78 ? "יציב" : accuracy < 55 ? "כדאי לחזק" : "ביניים";
-        return `${label}: ${questions} שאלות, דיוק ${accuracy}% (${band})`;
+        const band = questions >= 40 && accuracy >= 78 ? "stable" : accuracy < 55 ? "needs strengthening" : "in between";
+        return `${label}: ${questions} questions, accuracy ${accuracy}% (${band})`;
       })
       .join("; ");
     notices.push(
-      `ב${subjectLabel}, באותו נושא (${displayName}) נראו תוצאות שונות לפי רמת הכיתה - ${parts}. לא מאחדים לשורה אחת.`,
+      `In ${subjectLabel}, the same topic (${displayName}) showed different results by grade level - ${parts}. Not merging into one row.`,
     );
   }
   return notices;
@@ -214,7 +214,7 @@ export function executiveLineFromV2Unit(baseReport, unit) {
   const label = parentFacingLabelForV2Unit(baseReport, unit);
   const sid = String(unit?.subjectId || "");
   const subjectLabel =
-    { math: "מתמטיקה", geometry: "גאומטריה", english: "אנגלית", science: "מדעים", hebrew: "עברית", "moledet-geography": "מולדת" }[
+    { math: "Math", geometry: "Geometry", english: "English", science: "Science", hebrew: "Hebrew", "moledet-geography": "Homeland" }[
       sid
     ] || sid;
   return `${label} (${subjectLabel})`;
@@ -228,7 +228,7 @@ export function homePlanLineFromV2Unit(baseReport, unit, actionHe) {
   const label = parentFacingLabelForV2Unit(baseReport, unit);
   const sid = String(unit?.subjectId || "");
   const subjectLabel =
-    { math: "מתמטיקה", geometry: "גאומטריה", english: "אנגלית", science: "מדעים", hebrew: "עברית", "moledet-geography": "מולדת" }[
+    { math: "Math", geometry: "Geometry", english: "English", science: "Science", hebrew: "Hebrew", "moledet-geography": "Homeland" }[
       sid
     ] || sid;
   return `${label} (${subjectLabel}): ${String(actionHe || "").trim()}`;

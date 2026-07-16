@@ -184,5 +184,29 @@ export function finalizeAnimationSteps(steps, question, operation) {
     );
   }
 
-  return out;
+  return scrubAnimationStepsForGlobalEnglish(out);
+}
+
+const HEBREW_UI_RE = /[\u0590-\u05FF]/;
+
+/**
+ * Global English-only guard: never ship Hebrew titles/captions to the student UI.
+ * Source files may still contain HE while translation completes; display is forced EN.
+ * @param {unknown[]} steps
+ */
+function scrubAnimationStepsForGlobalEnglish(steps) {
+  if (!Array.isArray(steps)) return steps;
+  return steps.map((step, i) => {
+    if (!step || typeof step !== "object") return step;
+    const next = { ...step };
+    if (typeof next.title === "string" && HEBREW_UI_RE.test(next.title)) {
+      next.title = `Step ${i + 1}`;
+    }
+    for (const key of ["text", "contentText", "caption", "body", "explanation", "prompt"]) {
+      if (typeof next[key] === "string" && HEBREW_UI_RE.test(next[key])) {
+        next[key] = "Follow the highlighted numbers on the board.";
+      }
+    }
+    return next;
+  });
 }

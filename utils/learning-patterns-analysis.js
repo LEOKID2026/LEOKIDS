@@ -43,11 +43,11 @@ import {
   normalizeMistakeModeField,
 } from "./parent-report-row-diagnostics.js";
 import { applyMathScopedParentDisplayNames } from "./math-topic-parent-display.js";
-import { normalizeParentFacingHe } from "./parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "./parent-report-language/parent-facing-normalize.js";
 import { mergeSubjectConclusionReadinessContract } from "./minimal-safe-scope-enforcement.js";
 
 /**
- * מזהה נושא עקבי לצורך reconciliation (אותו bucket כמו בטעויות / שורת דוח).
+ * Stable topic identifier for reconciliation purposes (same bucket as in mistakes / the report row).
  * @param {string} subjectId
  * @param {string} topicRowKey
  * @param {Record<string, unknown>|null|undefined} row
@@ -62,7 +62,7 @@ function stableTopicBucketBase(subjectId, topicRowKey, row) {
 }
 
 /**
- * תואם סף "חוזקה" ב-buildSessionBands: דיוק גבוה + מספיק שאלות, בלי needsPractice.
+ * Matches the "strength" threshold in buildSessionBands: high accuracy + enough questions, without needsPractice.
  */
 function isHighAccuracySessionRow(row) {
   if (!row || typeof row !== "object") return false;
@@ -74,7 +74,7 @@ function isHighAccuracySessionRow(row) {
   return acc >= 87;
 }
 
-/** דיוק נמוך לצורך true_weakness כשיש דפוס טעויות */
+/** Low accuracy for true_weakness purposes when there is a mistake pattern */
 function isLowAccuracySessionRow(row) {
   if (!row || typeof row !== "object") return false;
   const acc = Number(row.accuracy) || 0;
@@ -106,19 +106,19 @@ function findWeaknessCandidateForTopWeakness(weaknessCandidates, w) {
 }
 
 function buildStrengthWithCautionLines(row, mistakeCount) {
-  const label = normalizeParentFacingHe(String(row?.displayName || "הנושא").trim() || "הנושא");
+  const label = normalizeParentFacingHe(String(row?.displayName || "the topic").trim() || "the topic");
   const acc = Number(row?.accuracy) || 0;
   const q = Number(row?.questions) || 0;
   const n = Number(mistakeCount) || 0;
   return [
-    `ב${label} נראית שליטה טובה בתקופה שנבחרה: כ ${acc}% נכון מתוך ${q} שאלות.`,
-    `כשיש טעות, לפעמים חוזר אותו דפוס (${n} מקרים דומים בתקופה שנבחרה) - כדאי לעצור רגע על דוגמה אחת ביחד.`,
-    `מה כדאי לעשות ביחד: לבחור תרגיל אחד קצר, לעבור עליו בקול צעד אחר צעד, ואז לתת לילד לנסות שוב בעצמו.`,
+    `In ${label} good control is seen in the selected period: about ${acc}% correct out of ${q} questions.`,
+    `When there is a mistake, sometimes the same pattern repeats (${n} similar cases in the selected period) - it is worth stopping for a moment on one example together.`,
+    `What should be done together: choose one short exercise, go through it aloud step by step, then let the child try again by himself.`,
   ];
 }
 
 /**
- * מונע חפיפה בין חולשה ראשית לבין שורת נושא עם דיוק גבוה (Batch 1 — לוגיקה בלבד, ללא שינוי UI).
+ * Prevents overlap between the primary weakness and a topic row with high accuracy (Batch 1 — logic only, no UI change).
  * @returns {{
  *   topWeaknesses: object[],
  *   parentTopicToneByKey: Record<string, string>,
@@ -262,7 +262,7 @@ function mergeParentActionWithCautionBlocks(parentActionHe, parentStrengthWithCa
   return `${block} ${base}`.trim();
 }
 /**
- * סיווג גס לסגנון פעולה בבית — לפי תווית חולשה בעברית בלבד.
+ * Coarse classification for the at-home action style — based only on the (Hebrew-sourced) weakness label.
  * @returns {"wording"|"careless"|"foundation"}
  */
 function inferWeaknessKindHe(labelHe) {
@@ -289,28 +289,28 @@ function inferWeaknessKindHe(labelHe) {
  * - summaryHe: string | null
  * - topStrengths: Array<{ id, labelHe, questions, accuracy, confidence, needsPractice, excellent, tierHe }>
  * - topWeaknesses: Array<{ id, labelHe, mistakeCount, confidence, tierHe }>
- * - parentTopicToneByKey: Record<topicRowKey, "strength"|"strength_with_caution"|"stable_monitor"|"true_weakness"> - reconciliation מול שורות דוח
- * - parentStrengthWithCautionLinesByKey: Record<topicRowKey, [string,string,string]> — חיובי, הסתייגות על דפוס בטעויות, כיוון לבית (רק ב strength_with_caution)
- * - stableExcellence: Array<{ id, labelHe, questions, accuracy, confidence, needsPractice, excellent, tierHe }> — סף גבוה, נפרד מ maintain
- * - maintain, improving: session bands + tierHe על כל שורה
+ * - parentTopicToneByKey: Record<topicRowKey, "strength"|"strength_with_caution"|"stable_monitor"|"true_weakness"> - reconciliation against report rows
+ * - parentStrengthWithCautionLinesByKey: Record<topicRowKey, [string,string,string]> — positive, caveat about a mistake pattern, at-home direction (only for strength_with_caution)
+ * - stableExcellence: Array<{ id, labelHe, questions, accuracy, confidence, needsPractice, excellent, tierHe }> — high threshold, separate from maintain
+ * - maintain, improving: session bands + tierHe for each row
  * - parentActionHe: string | null  (max 1 concrete home action)
- * - nextWeekGoalHe: string | null   (חיזוק + שימור when data allows)
+ * - nextWeekGoalHe: string | null   (reinforcement + maintenance when data allows)
  * - evidenceExamples: Array<{ type: "mistake"|"success", ... }>  (max 2; only moderate/high confidence)
  *
  * B) Ranking:
  * - Weaknesses: clusters by mistakePatternClusterKey, sort by mistakeCount desc → top 3 (≥ MIN_PATTERN_FAMILY).
  * - topStrengths: merge excellent-pool + strengths-pool (disjoint), sort by
  *   (excellent desc, accuracy desc, questions desc) → top 3.
- * - stableExcellence / maintain / improving: סריקת שורות דוח (ממוין דיוק) לדליים נפרדים — stableExcellence קודם (סף גבוה), אחר כך excellent/strengths/maintain/improving (ללא כפילויות).
+ * - stableExcellence / maintain / improving: scan report rows (sorted by accuracy) into separate buckets — stableExcellence first (high threshold), then excellent/strengths/maintain/improving (no duplicates).
  *
  * C) summaryHe: 1–2 Hebrew sentences — positives (stableExcellence, topStrengths, maintain), risks (topWeaknesses or improving),
  *    stability note if mistakeCount ≥ MIN_MISTAKES_FOR_STRONG_RECOMMENDATION, sparse-data note if needed.
  *
  * D) parentActionHe: one imperative block with duration + focus + method; prefers top weakness, else improving, else maintain.
- *    nextWeekGoalHe: optional "יעד לחיזוק" from top weakness or improving + "יעד לשימור" from topStrengths[0] or maintain[0]
+ *    nextWeekGoalHe: optional "A target for reinforcement" from top weakness or improving + "Target for conservation" from topStrengths[0] or maintain[0]
  *    when questions ≥ 8 or excellent.
  *
- * E) UI: parent-report maps each tierHe to the card subtitle (not everything is "חולשה"; maintain → "שמירה על רמה טובה"; stableExcellence → "הילד מצליח בנושא הזה לאורך זמן").
+ * E) UI: parent-report maps each tierHe to the card subtitle (not everything is "weakness"; maintain → "Keeping a good level"; stableExcellence → "Your child is doing well on this topic over time").
  */
 
 const SUBJECT_IDS = [
@@ -334,15 +334,15 @@ const REPORT_ROWS_KEY = {
 };
 
 const SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  history: "היסטוריה",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
-  moledet: "מולדת",
-  geography: "גאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
+  history: "History",
+  hebrew: "Hebrew",
+  "moledet-geography": "Homeland & Geography",
+  moledet: "Homeland Studies",
+  geography: "Geography",
 };
 
 /** Narrative caps (professional profile) */
@@ -350,35 +350,35 @@ const MAX_TOP_WEAKNESSES = 3;
 const MAX_TOP_STRENGTHS = 3;
 const MAX_MAINTAIN = 2;
 const MAX_IMPROVING = 2;
-/** עד כמה שורות "הילד מצליח בנושא הזה לאורך זמן" (נפרד מ maintain / חוזקות מובילות) */
+/** How many "Your child is doing well on this topic over time" rows (separate from maintain / top strengths) */
 const MAX_STABLE_EXCELLENCE = 3;
-/** סף הצלחה לאורך זמן: לא מכריזים מהר — דיוק גבוה + מספיק שאלות בטווח */
+/** Long-term success threshold: don't declare too quickly — high accuracy + enough questions in range */
 const STABLE_EXCELLENCE_MIN_ACCURACY = 92;
 const STABLE_EXCELLENCE_MIN_QUESTIONS = 22;
 /** Internal pool before merge/rank */
 const INTERNAL_SESSION_POOL = 12;
 
-/** ברירת מחדל לשורת סשן בלי שם בעברית — בכרטיס "מגמת שיפור" מוצגת מילה קצרה */
-const IMPROVING_GENERIC_PRACTICE_LABEL_ALIASES = new Set(["בנושא תרגול", "נושא בתרגול"]);
+/** Default for a session row without a label — the "improvement trend" card shows a short word */
+const IMPROVING_GENERIC_PRACTICE_LABEL_ALIASES = new Set(["on the subject of practice", "Subject in practice"]);
 
 /**
- * תווית לתצוגה בכרטיסי "תחום במגמת שיפור" (ולדוחות ישנים במטמון).
+ * Display label for "A field in the trend of improvement" cards (and for old cached reports).
  * @param {string|null|undefined} labelHe
  */
 export function improvingDiagnosticsDisplayLabelHe(labelHe) {
   const lab = String(labelHe || "").trim();
-  if (IMPROVING_GENERIC_PRACTICE_LABEL_ALIASES.has(lab)) return "תרגול";
+  if (IMPROVING_GENERIC_PRACTICE_LABEL_ALIASES.has(lab)) return "Practice";
   return lab;
 }
 
 /**
- * ניסוח קצר להורה מכל תווית חולשה - "בנושא חיבור" במקום "קושי נקודתי בחיבור" / "סביב הנושא …".
+ * Short parent-facing phrasing from any weakness label - "About connection" instead of "Point difficulty in connection" / "around the topic...".
  * @param {string|null|undefined} labelHe
  */
 function parentCopyTopicPhraseHe(labelHe) {
   const s = String(labelHe || "").trim();
-  if (!s) return "בנושא שנבחר בתרגול";
-  if (s === GENERIC_WEAKNESS_HE) return "בנושא שזוהה בתרגול";
+  if (!s) return "On the selected practice topic";
+  if (s === GENERIC_WEAKNESS_HE) return "On a topic identified in practice";
   if (/^בנושא(\s|\/)/u.test(s)) return s;
 
   const tailed = [
@@ -388,40 +388,40 @@ function parentCopyTopicPhraseHe(labelHe) {
   ];
   for (const re of tailed) {
     const m = s.match(re);
-    if (m) return `בנושא ${m[1].trim()}`;
+    if (m) return `on ${m[1].trim()}`;
   }
 
   const dePattern = s.replace(/^דפוס שגיאות:\s*/u, "").trim();
-  if (dePattern && dePattern !== s) return `בנושא ${dePattern}`;
+  if (dePattern && dePattern !== s) return `on ${dePattern}`;
 
-  if (s.startsWith("בלבול")) return `בנושא ${s}`;
+  if (s.startsWith("confusion")) return `on ${s}`;
 
   if (/^קושי\s+/u.test(s)) {
     const rest = s.replace(/^קושי\s+/u, "").trim();
     if (/^בנושא(\s|\/)/u.test(rest)) return rest;
-    return `בנושא ${rest}`;
+    return `on ${rest}`;
   }
 
-  return `בנושא ${s}`;
+  return `on ${s}`;
 }
 
-/** לניסוח "מומלץ להתמקד…" — נקודתיים אחרי "בנושא" / "בנושא/ים" */
+/** For the phrasing "It is recommended to focus on…" — a colon after "on the subject" / "on the subject/s" */
 function parentCopyTopicPhraseForFocusHe(labelHe) {
   return parentCopyTopicPhraseHe(labelHe)
-    .replace(/^בנושא\/ים\s+/u, "בנושא/ים: ")
-    .replace(/^בנושא\s+/u, "בנושא: ");
+    .replace(/^בנושא\/ים\s+/u, "on the subject/s:")
+    .replace(/^בנושא\s+/u, "Subject:");
 }
 
-/** משפט יעד לחיזוק מנקודת מבט של הצלחה, לא "לצמצם טעויות בדפוס" */
+/** A reinforcement-goal sentence framed from a success perspective, not "Reduce typographical errors" */
 function successRateImprovementGoalHe(labelHe) {
   const ph = parentCopyTopicPhraseHe(labelHe);
   const core = ph
     .replace(/^בנושא\/ים\s+/u, "")
     .replace(/^בנושא\s+/u, "")
     .trim() || ph;
-  if (!core) return "להעלות את אחוזי ההצלחה במקצוע";
-  if (/^ב/u.test(core)) return `להעלות את אחוזי ההצלחה ${core}`;
-  return `להעלות את אחוזי ההצלחה ב${core}`;
+  if (!core) return "Raise success rate in the subject";
+  if (/^ב/u.test(core)) return `increase the success rate ${core}`;
+  return `Increase the success rate in ${core}`;
 }
 
 function recStrength(mistakeCount) {
@@ -453,30 +453,30 @@ function joinHebrewList(items) {
   const xs = (items || []).map((s) => String(s || "").trim()).filter(Boolean);
   if (!xs.length) return "";
   if (xs.length === 1) return xs[0];
-  if (xs.length === 2) return `${xs[0]} ו${xs[1]}`;
-  return `${xs.slice(0, -1).join(", ")} ו${xs[xs.length - 1]}`;
+  if (xs.length === 2) return `${xs[0]} and ${xs[1]}`;
+  return `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
 }
 
 function strengthTierHe(row) {
   const q = Number(row?.questions) || 0;
   const acc = Number(row?.accuracy) || 0;
-  if (row?.excellent && q >= 20 && acc >= 90) return "נושא שהילד מצליח בו יותר כרגע";
-  if (row?.excellent) return "נושא חזק כרגע";
-  if (acc >= 92 && q >= 14) return "נושא חזק כרגע";
-  return "נושא חזק כרגע";
+  if (row?.excellent && q >= 20 && acc >= 90) return "A topic your child is doing better on right now";
+  if (row?.excellent) return "A current strength";
+  if (acc >= 92 && q >= 14) return "A current strength";
+  return "A current strength";
 }
 
 function weaknessTierHe(labelHe, mistakeCount, confidence) {
   const lab = String(labelHe || "").trim();
-  if (!lab || lab === GENERIC_WEAKNESS_HE) return "תחום לחיזוק";
+  if (!lab || lab === GENERIC_WEAKNESS_HE) return "Area to strengthen";
   if (mistakeCount >= MIN_MISTAKES_FOR_STRONG_RECOMMENDATION) {
-    return "כרגע בתרגול נראה שכדאי לחזק";
+    return "Practice so far suggests this is worth strengthening";
   }
   if (mistakeCount >= MIN_PATTERN_FAMILY_FOR_DIAGNOSIS) {
-    if (confidence === "high") return "כרגע בתרגול נראה שכדאי לחזק";
-    return "נראה שכדאי לחזק בתרגול";
+    if (confidence === "high") return "Practice so far suggests this is worth strengthening";
+    return "Practice suggests this is worth strengthening";
   }
-  return "תחום לחיזוק";
+  return "Area to strengthen";
 }
 
 function buildTopStrengthsMerged(excellent, strengths, max) {
@@ -495,8 +495,8 @@ function buildTopStrengthsMerged(excellent, strengths, max) {
 }
 
 /**
- * מחלק שורות דוח אל stableExcellence / excellent / strengths / maintain / improving (ללא כפילויות לפי מפתח שורה).
- * אוסף בריכה פנימית גדולה יותר לצורך דירוג לפני חיתוך אל topStrengths וכו׳.
+ * Splits report rows into stableExcellence / excellent / strengths / maintain / improving (no duplicates by row key).
+ * Collects a larger internal pool for ranking purposes before trimming to topStrengths, etc.
  */
 function buildSessionBands(subjectId, report) {
   const rowsKey = REPORT_ROWS_KEY[subjectId];
@@ -538,7 +538,7 @@ function buildSessionBands(subjectId, report) {
 
   const stableExcellenceOut = stableExcellenceRaw.map((r) => ({
     ...r,
-    tierHe: "הילד מצליח בנושא הזה לאורך זמן",
+    tierHe: "Your child is doing well on this topic over time",
   }));
 
   const excellent = take(
@@ -584,12 +584,12 @@ function buildSessionBands(subjectId, report) {
 
   const maintainOut = maintain
     .slice(0, MAX_MAINTAIN)
-    .map((r) => ({ ...r, tierHe: "שמירה על רמה טובה" }));
+    .map((r) => ({ ...r, tierHe: "Keeping a good level" }));
   const improvingOut = improving
     .slice(0, MAX_IMPROVING)
     .map((r) => ({
       ...r,
-      tierHe: "נושא שעדיין מתחזק",
+      tierHe: "A topic still gaining strength",
       labelHe: improvingDiagnosticsDisplayLabelHe(r.labelHe),
     }));
 
@@ -624,8 +624,8 @@ function buildEvidenceSuccessFromPick(pick) {
   const conf =
     pick.confidence === "high" || pick.questions >= 20 ? "high" : "moderate";
   return {
-    titleHe: "מה שהילד עושה טוב בתרגול",
-    bodyHe: `בנושא ${pick.labelHe} יש הצלחה טובה בתקופה שנבחרה: כ ${pick.accuracy}% נכון מתוך ${pick.questions} שאלות.`,
+    titleHe: "What your child is doing well in practice",
+    bodyHe: `On the subject ${pick.labelHe} there is good success in the selected period: about ${pick.accuracy}% correct out of ${pick.questions} questions.`,
     confidence: conf,
   };
 }
@@ -641,8 +641,8 @@ function buildSummaryHe(
   mistakeEventCount,
   diagnosticSparseNoteHe
 ) {
-  const label = subjectLabelHe || "המקצוע";
-  const opening = `לגבי ${label}:`;
+  const label = subjectLabelHe || "the subject";
+  const opening = `Regarding ${label}:`;
 
   if (
     !stableExcellence.length &&
@@ -653,10 +653,10 @@ function buildSummaryHe(
   ) {
     if (diagnosticSparseNoteHe) return `${opening} ${diagnosticSparseNoteHe}`;
     if (wrongCount > 0 && !topWeaknesses.length) {
-      return `${opening} יש כאן כמה טעויות בלי דפוס חוזר ברור - עדיף לא למהר למסקנות; כדאי להמשיך בתרגול רגוע ולצבור עוד דוגמאות.`;
+      return `${opening} There are some mistakes here without a clear repeating pattern - it's better not to jump to conclusions; You should continue with calm practice and accumulate more samples.`;
     }
     if (mistakeEventCount >= 0 && mistakeEventCount < 5) {
-      return `${opening} עדיין מעט מידע בתקופה שנבחרה - אחרי עוד קצת תרגול אפשר יהיה לנסח תמונה מלאה יותר.`;
+      return `${opening} There is still little information in the selected period - after a little more practice it will be possible to formulate a more complete picture.`;
     }
     return null;
   }
@@ -666,24 +666,24 @@ function buildSummaryHe(
     const exNames = joinHebrewList(stableExcellence.map((s) => s.labelHe));
     parts.push(
       stableExcellence.length > 1
-        ? `נראה שהילד מצליח ב${exNames} לאורך זמן.`
-        : `נראה שהילד מצליח ב${stableExcellence[0].labelHe} לאורך זמן.`
+        ? `The child seems to do well in ${exNames} over time.`
+        : `The child seems to do well in ${stableExcellence[0].labelHe} over time.`
     );
   }
   if (topStrengths.length) {
     const names = joinHebrewList(topStrengths.map((s) => s.labelHe));
     parts.push(
       topStrengths.length > 1
-        ? `רואים נושאים חזקים ב${names}.`
-        : `רואים נושא חזק ב${names}.`
+        ? `You see strong themes in ${names}.`
+        : `We see a strong theme in ${names}.`
     );
   } else if (!stableExcellence.length && maintain.length) {
     parts.push(
-      `רואים שמירה טובה על הרמה ב ${joinHebrewList(maintain.map((m) => m.labelHe))}.`
+      `We see a good maintenance of the level in ${joinHebrewList(maintain.map((m) => m.labelHe))}.`
     );
   } else if (stableExcellence.length && maintain.length) {
     parts.push(
-      `רואים גם שמירה טובה על הרמה ב ${joinHebrewList(maintain.map((m) => m.labelHe))}.`
+      `We also see a good maintenance of the level in ${joinHebrewList(maintain.map((m) => m.labelHe))}.`
     );
   }
 
@@ -693,25 +693,25 @@ function buildSummaryHe(
     );
     let s =
       topWeaknesses.length > 1
-        ? `יש גם כמה תחומים שכדאי לחזק: ${names}.`
-        : `יש גם מקום לחיזוק ${parentCopyTopicPhraseHe(topWeaknesses[0].labelHe)}.`;
+        ? `There are also some areas that should be strengthened: ${names}.`
+        : `There is also room for strengthening ${parentCopyTopicPhraseHe(topWeaknesses[0].labelHe)}.`;
     if (
       topWeaknesses.some(
         (w) => w.mistakeCount >= MIN_MISTAKES_FOR_STRONG_RECOMMENDATION
       )
     ) {
-      s += " זה חוזר מספיק כדי ששווה לגשת אליו מוקדם - בלי לחץ, עם תרגול קצר ומסודר.";
+      s += "It's repetitive enough that it's worth approaching it early - without pressure, with short, neat practice.";
     }
     parts.push(s);
   } else if (wrongCount > 0) {
     parts.push(
-      "הטעויות שיש עדיין לא מספרות סיפור אחד ברור - זה בסדר; נמשיך לעקוב."
+      "The mistakes that are there still don't tell one clear story - that's okay; We will continue to follow."
     );
   }
 
   if (!topWeaknesses.length && improving.length) {
     parts.push(
-      `רואים גם נושאים שעדיין מתחזקים: ${joinHebrewList(improving.map((x) => x.labelHe))}.`
+      `You also see topics that are still growing: ${joinHebrewList(improving.map((x) => x.labelHe))}.`
     );
   }
 
@@ -726,7 +726,7 @@ function buildParentActionHe(
   maintain,
   topStrengths
 ) {
-  const subj = subjectLabelHe || "המקצוע";
+  const subj = subjectLabelHe || "the subject";
   const tp = parentCopyTopicPhraseHe;
   const w0 = topWeaknesses[0];
   const i0 = improving[0];
@@ -735,25 +735,25 @@ function buildParentActionHe(
   if (w0) {
     const kind = inferWeaknessKindHe(w0.labelHe);
     if (kind === "wording") {
-      return `כדאי פעמיים בשבוע, כרבע שעה ב${subj} ${tp(w0.labelHe)} - לקרוא יחד את הניסוח, לפרק למשפטים קצרים, ורק אז לנסח תשובה.`;
+      return `It is advisable twice a week, about fifteen minutes in ${subj} ${tp(w0.labelHe)} - to read the formulation together, break it into short sentences, and only then formulate an answer.`;
     }
     if (kind === "careless") {
-      return `פעמיים בשבוע, רבע שעה ב${subj} ${tp(w0.labelHe)} - עצירה קצרה לפני שליחה: "האם עניתי על מה שנשאלתי?".`;
+      return `Twice a week, fifteen minutes at ${subj} ${tp(w0.labelHe)} - a short stop before sending: "Did I answer what I was asked?".`;
     }
-    return `פעמיים בשבוע, רבע שעה: תרגול ב${subj} ממוקד ${tp(w0.labelHe)} - לחזור על שאלות בתרגול ממוקד, להמשיך לאט עד שהנושא מובן, ואז לזהות שיפור קטן.`;
+    return `Twice a week, fifteen minutes: practice in ${subj} focused ${tp(w0.labelHe)} - repeat questions in focused practice, continue slowly until the topic is understood, then recognize a small improvement.`;
   }
   if (i0) {
-    return `פעמיים בשבוע, רבע שעה: תרגול קצר ב${subj} ${tp(i0.labelHe)} (כרגע דיוק כ ${i0.accuracy}%) - לנסח קודם, לבדוק אחר כך.`;
+    return `Twice a week, fifteen minutes: short practice in ${subj} ${tp(i0.labelHe)} (currently accurate about ${i0.accuracy}%) - draft first, check later.`;
   }
   const pick = m0 || s0;
   if (pick) {
-    return `פעם בשבוע, עשר דקות: לתרגל את המקצוע ${subj} ${tp(pick.labelHe)} - תרגול וחזרה קצרה על החומר הנלמד.`;
+    return `Once a week, ten minutes: practice the subject ${subj} ${tp(pick.labelHe)} - practice and a short repetition of the studied material.`;
   }
   return null;
 }
 
 function buildNextWeekGoalHe(subjectLabelHe, topWeaknesses, improving, topStrengths, maintain, stableExcellence) {
-  const subj = subjectLabelHe || "המקצוע";
+  const subj = subjectLabelHe || "the subject";
   const w0 = topWeaknesses[0];
   const preserve =
     stableExcellence[0] ||
@@ -767,21 +767,21 @@ function buildNextWeekGoalHe(subjectLabelHe, topWeaknesses, improving, topStreng
   if (w0) {
     if (inferWeaknessKindHe(w0.labelHe) === "wording") {
       goals.push(
-        `מומלץ לבחור כמה דוגמאות לעבור ביחד עם הילד צעד צעד, ולנסות השבוע להעלות את אחוזי ההצלחה - מספיק אפילו שיפור קטן באחוזי ההצלחה.`
+        `It is recommended to choose a few examples to go through together with the child step by step, and try this week to increase the success rate - even a small improvement in the success rate is enough.`
       );
     } else {
       goals.push(
-        `ב${subj} ${tp(w0.labelHe)} - לנסות שבוע אחד ${successRateImprovementGoalHe(w0.labelHe)} - מספיק אפילו שיפור קטן באחוזי ההצלחה.`
+        `In ${subj} ${tp(w0.labelHe)} - try one week ${successRateImprovementGoalHe(w0.labelHe)} - even a small improvement in the success rate is enough.`
       );
     }
   } else if (improving?.[0]) {
     const i0 = improving[0];
     goals.push(
-      `שבועיים קצרים סביב ${i0.labelHe} - ${successRateImprovementGoalHe(i0.labelHe)} - שני מפגשים קטנים, לא תרגול ארוך.`
+      `Two short weeks around ${i0.labelHe} - ${successRateImprovementGoalHe(i0.labelHe)} - two small sessions, not a long practice.`
     );
   }
   if (preserveLabel) {
-    goals.push(`להמשיך בשבוע הבא באותו קצב סביב ${tp(preserveLabel)} - לשמור על הרמה הטובה.`);
+    goals.push(`Continue next week at the same pace around ${tp(preserveLabel)} - maintain the good level.`);
   }
   if (!goals.length) return null;
   return goals.join(" ");
@@ -804,7 +804,7 @@ function buildEvidenceExamples(evidenceMistake, evidenceSuccess) {
 }
 
 /**
- * מקטעים מובנים לדוח מקיף — מבוסס על אותם דליים כמו הכרטיסים הקיימים, בלי טקסט דמה.
+ * Structured segments for the comprehensive report — based on the same buckets as the existing cards, no placeholder text.
  */
 function buildDiagnosticSectionsHe({
   stableExcellence,
@@ -819,36 +819,36 @@ function buildDiagnosticSectionsHe({
 }) {
   const strongHe = [];
   for (const x of stableExcellence) {
-    strongHe.push(`${x.labelHe} - דיוק כ ${x.accuracy}% (${x.questions} שאלות)`);
+    strongHe.push(`${x.labelHe} - accuracy about ${x.accuracy}% (${x.questions} questions)`);
   }
   for (const x of topStrengths) {
     if (strongHe.length >= 6) break;
-    strongHe.push(`${x.labelHe} - דיוק כ ${x.accuracy}% (${x.questions} שאלות)`);
+    strongHe.push(`${x.labelHe} - accuracy about ${x.accuracy}% (${x.questions} questions)`);
   }
 
   const maintainHe = (maintain || []).map(
-    (x) => `${x.labelHe} - דיוק ${x.accuracy}% (${x.questions} שאלות; מומלץ לשמר קצב)`
+    (x) => `${x.labelHe} - accuracy ${x.accuracy}% (${x.questions} questions; it is recommended to keep pace)`
   );
 
   const improveHe = (improving || []).map(
     (x) =>
-      `${improvingDiagnosticsDisplayLabelHe(x.labelHe)} - דיוק ${x.accuracy}% (${x.questions} שאלות)`
+      `${improvingDiagnosticsDisplayLabelHe(x.labelHe)} - accuracy ${x.accuracy}% (${x.questions} questions)`
   );
 
   const urgentAttentionHe = topWeaknesses.map((w) =>
     `${w.labelHe}${
-      typeof w.mistakeCount === "number" ? ` - כ ${w.mistakeCount} טעויות דומות בתקופה שנבחרה` : ""
+      typeof w.mistakeCount === "number" ? ` - about ${w.mistakeCount} similar mistakes in the selected period` : ""
     }`
   );
 
   const insufficientDataHe = [];
   if (diagnosticSparseNoteHe) insufficientDataHe.push(diagnosticSparseNoteHe);
   for (const u of insufficientData.slice(0, 5)) {
-    insufficientDataHe.push(u.note || "נתונים חלקיים לדפוס מסוים.");
+    insufficientDataHe.push(u.note || "Partial data for a particular pattern.");
   }
   const insufficientDataNoteHe =
     insufficientData.length > 8
-      ? "יש עוד אזורים עם טעויות מפוזרות שלא הגיעו לסף דפוס שחוזר מספיק - התמונה בהם עדיין חלקית."
+      ? "There are other areas with scattered errors that have not reached the threshold of a pattern that repeats enough - the picture in them is still partial."
       : null;
   if (insufficientDataNoteHe) insufficientDataHe.push(insufficientDataNoteHe);
 
@@ -868,10 +868,10 @@ function buildSubSkillInsightsHe(topWeaknesses) {
     lineHe: w.labelHe,
     evidenceNoteHe:
       typeof w.mistakeCount === "number" && w.mistakeCount >= MIN_MISTAKES_FOR_STRONG_RECOMMENDATION
-        ? "דפוס שחוזר בתקופה שנבחרה."
+        ? "A pattern that repeats in the selected period."
         : typeof w.mistakeCount === "number" && w.mistakeCount >= MIN_PATTERN_FAMILY_FOR_DIAGNOSIS
-          ? "דפוס חוזר בינוני - שווה לשים לב."
-          : "סימן ראשוני בלבד - עדיין מוקדם לסיכום חד משמעי.",
+          ? "Medium repeating pattern - worth noting."
+          : "Only an initial sign - still too early for an unequivocal conclusion.",
   }));
 }
 
@@ -895,7 +895,7 @@ function emptyRiskOr() {
 }
 
 /**
- * Phase 8 — סולם עדיפות הורית ברמת מקצוע.
+ * Phase 8 — subject-level parent priority scale.
  * @param {string} subjectId
  * @param {object} args
  */
@@ -911,7 +911,7 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
     recommendedHomeMethodHe,
     strongRowCount,
   } = args;
-  const lab = SUBJECT_LABEL_HE[subjectId] || "המקצוע";
+  const lab = SUBJECT_LABEL_HE[subjectId] || "the subject";
   const home =
     recommendedHomeMethodHe && String(recommendedHomeMethodHe).trim()
       ? String(recommendedHomeMethodHe).trim()
@@ -920,12 +920,12 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
   if (subjectConclusionReadiness === "not_ready" || dominantRootCause === "insufficient_evidence") {
     return {
       subjectPriorityLevel: "monitor",
-      subjectPriorityReasonHe: `ב${lab} המידע עדיין חלקי - עדיף תרגול קל ובדיקה חוזרת, לא שינוי גדול מדי.`,
-      subjectImmediateActionHe: `ב${lab}: שני מפגשים קצרים (5–8 דקות) באותה רמת קושי - לצפות ולתעד בלבד.`,
-      subjectDeferredActionHe: `ב${lab}: לדחות שינוי רמה/כיתה ותוכנית ארוכה עד שיתייצב נתון.`,
+      subjectPriorityReasonHe: `In ${lab} the information is still incomplete - light practice and repeated testing is better, not too big a change.`,
+      subjectImmediateActionHe: `In ${lab}: two short sessions (5–8 minutes) at the same difficulty level - watch and record only.`,
+      subjectDeferredActionHe: `In ${lab}: postpone a change of level/class and a long program until a figure stabilizes.`,
       subjectMonitoringOnly: true,
-      subjectDoNowHe: "תרגול קצר וקבוע; משימה אחת ברורה לכל מפגש.",
-      subjectAvoidNowHe: "לא להסיק מסקנות חזקות ולא להעמיס סדרת חיזוקים.",
+      subjectDoNowHe: "short and regular practice; One clear task for each session.",
+      subjectAvoidNowHe: "Do not draw strong conclusions or load a series of reinforcements.",
     };
   }
 
@@ -936,12 +936,12 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
   ) {
     return {
       subjectPriorityLevel: "immediate",
-      subjectPriorityReasonHe: `ב${lab} ${ROOT_CAUSE_LABEL_HE.knowledge_gap} מומלץ להתחיל בתרגול קצר וממוקד.`,
-      subjectImmediateActionHe: home || `ב${lab}: משימה אחת קצרה עם חזרה על טעות טיפוסית באותה רמה.`,
-      subjectDeferredActionHe: `ב${lab}: להמתין עם הרחבת נושאים עד שייצבו הצלחות קטנות חוזרות.`,
+      subjectPriorityReasonHe: `In ${lab} ${ROOT_CAUSE_LABEL_HE.knowledge_gap} it is recommended to start with a short and focused practice.`,
+      subjectImmediateActionHe: home || `In ${lab}: one short mission with repetition of a typical mistake at the same level.`,
+      subjectDeferredActionHe: `In ${lab}: to wait with the expansion of subjects until they have stabilized repeated small successes.`,
       subjectMonitoringOnly: false,
-      subjectDoNowHe: "חיזוק ממוקד באותה רמה; פחות נושאים במקביל.",
-      subjectAvoidNowHe: "לא לדחוף עלייה מהירה מדי ברמה בבית; לא לדלג על טעויות חוזרות.",
+      subjectDoNowHe: "targeted reinforcement at the same level; Fewer issues at the same time.",
+      subjectAvoidNowHe: "Do not push too fast a rise in the level at home; Do not skip repeating mistakes.",
     };
   }
 
@@ -952,12 +952,12 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
   ) {
     return {
       subjectPriorityLevel: "immediate",
-      subjectPriorityReasonHe: `ב${lab} יש הצלחה עם הילד עדיין נעזר ברמזים - כדאי לעבוד עכשיו על מעבר הדרגתי לעצמאות.`,
-      subjectImmediateActionHe: home || `ב${lab}: משימה קצרה - ניסיון עצמאי קטן ואז בדיקה יחד.`,
-      subjectDeferredActionHe: `ב${lab}: לדחות עלייה מהירה מדי ברמה עד שיורדת התלות מעט.`,
+      subjectPriorityReasonHe: `In ${lab} there is success with the child still using hints - you should work now on a gradual transition to independence.`,
+      subjectImmediateActionHe: home || `In ${lab}: a short task - a small independent experience and then a test together.`,
+      subjectDeferredActionHe: `In ${lab}: postpone a too rapid increase in level until the dependency decreases a little.`,
       subjectMonitoringOnly: false,
-      subjectDoNowHe: "להפריד בין ניסיון עצמאי קצר לבין בדיקה בסוף.",
-      subjectAvoidNowHe: "לא להפסיק עזרה פתאום; לא להסביר ארוך מדי בזמן התרגול.",
+      subjectDoNowHe: "Separate a short independent experience from a test at the end.",
+      subjectAvoidNowHe: "Do not stop help suddenly; Do not explain too long during the practice.",
     };
   }
 
@@ -969,40 +969,40 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
   ) {
     return {
       subjectPriorityLevel: "maintain",
-      subjectPriorityReasonHe: `ב${lab} נראה שהרמה נשמרת טוב יחסית - להישאר על שגרה רגועה.`,
-      subjectImmediateActionHe: home || `ב${lab}: להמשיך עם שני תרגולים קצרים בשבוע סביב הנושאים שבהם נראות תוצאות טובות יחסית.`,
-      subjectDeferredActionHe: `ב${lab}: לדחות הרחבות או הקשחה לפני צורך ברור.`,
+      subjectPriorityReasonHe: `In ${lab} it seems that the level is maintained relatively well - stay on a calm routine.`,
+      subjectImmediateActionHe: home || `In ${lab}: continue with two short practices a week around the topics where relatively good results are seen.`,
+      subjectDeferredActionHe: `In ${lab}: reject extensions or hardening before a clear need.`,
       subjectMonitoringOnly: false,
-      subjectDoNowHe: "להמשיך קצב קבוע; לשבח התמדה קטנה.",
-      subjectAvoidNowHe: "לא להוסיף עומס בבית כשאין לכך סימן ברור.",
+      subjectDoNowHe: "to continue a steady pace; Praise a little persistence.",
+      subjectAvoidNowHe: "Do not add load to the house when there is no clear sign.",
     };
   }
 
   if (subjectConclusionReadiness === "partial" || dominantRootCause === "mixed_signal") {
     return {
       subjectPriorityLevel: "soon",
-      subjectPriorityReasonHe: `ב${lab} תמונה אמצעית - שינוי קטן עכשיו, החלטות גדולות אחר כך.`,
-      subjectImmediateActionHe: home || `ב${lab}: מפגש קצר אחד השבוע עם מיקוד אחד בלבד.`,
-      subjectDeferredActionHe: `ב${lab}: לדחות החלטה סופית כשהנתונים עדיין מעורבים.`,
+      subjectPriorityReasonHe: `In ${lab} middle picture - small change now, big decisions later.`,
+      subjectImmediateActionHe: home || `In ${lab}: one short meeting this week with only one focus.`,
+      subjectDeferredActionHe: `In ${lab}: postpone a final decision when the data is still mixed.`,
       subjectMonitoringOnly: false,
-      subjectDoNowHe: "לעקוב אחרי דיוק באותה רמה לפני שמוסיפים משתנים.",
-      subjectAvoidNowHe: "לא לנעול הסבר יחיד כשיש כמה כיוונים סבירים.",
+      subjectDoNowHe: "to track accuracy at the same level before adding variables.",
+      subjectAvoidNowHe: "Do not lock in a single explanation when there are several possible directions.",
     };
   }
 
   return {
     subjectPriorityLevel: "soon",
-    subjectPriorityReasonHe: `ב${lab}: עדיפות בינונית - תרגול קצר וקבוע.`,
-    subjectImmediateActionHe: home || `ב${lab}: שני מפגשים קצרים בשבוע באותה רמה.`,
-    subjectDeferredActionHe: `ב${lab}: לדחות שינויים דרמטיים עד שיתבהר הכיוון.`,
+    subjectPriorityReasonHe: `In ${lab}: medium priority - short and regular practice.`,
+    subjectImmediateActionHe: home || `In ${lab}: two short sessions a week at the same level.`,
+    subjectDeferredActionHe: `In ${lab}: postpone dramatic changes until the direction becomes clear.`,
     subjectMonitoringOnly: false,
-    subjectDoNowHe: "תרגול קצר וקבוע; משימה ברורה.",
-    subjectAvoidNowHe: "לא להחמיר רמה בלי שני מפגשים טובים ברצף.",
+    subjectDoNowHe: "short and regular practice; A clear mission.",
+    subjectAvoidNowHe: "Do not make a level worse without two good encounters in a row.",
   };
 }
 
 /**
- * סינתזה ברמת מקצוע משורות דוח מועשרות (Phase 1–2) — רק כשיש נתונים בשורה.
+ * Subject-level synthesis from enriched report rows (Phase 1–2) — only when there is data in the row.
  * @param {string} subjectId
  * @param {Record<string, unknown>} report
  */
@@ -1021,10 +1021,10 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     return {
       dominantLearningRisk: "none_sparse",
       dominantSuccessPattern: "none_sparse",
-      trendNarrativeHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לזהות מגמה ברורה במקצוע זה.",
-      confidenceSummaryHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לדעת עד כמה הכיוון ברור במקצוע הזה.",
+      trendNarrativeHe: "In the selected period there is still not enough practice to identify a clear trend in this profession.",
+      confidenceSummaryHe: "In the chosen period there is still not enough practice to know how clear the direction is in this profession.",
       recommendedHomeMethodHe: null,
-      whatNotToDoHe: "לא לבנות תוכנית ארוכה לפני שיש עוד תרגול בתקופה שנבחרה.",
+      whatNotToDoHe: "Do not build a long plan before there is more practice in the selected period.",
       majorRiskFlagsAcrossRows: emptyRiskOr(),
       dominantBehaviorProfileAcrossRows: "undetermined",
       strongestPositiveTrendRowHe: null,
@@ -1040,16 +1040,16 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       secondaryRootCause: null,
       rootCauseDistribution: {},
       subjectDiagnosticRestraintHe:
-        "בתקופה שנבחרה עדיין אין מספיק תרגול כדי להבין איפה מתחיל הקושי או להמליץ על שינוי גדול.",
+        "In the chosen period there is still not enough practice to understand where the difficulty starts or to recommend a major change.",
       subjectConclusionReadiness: "not_ready",
       subjectInterventionPriorityHe: INTERVENTION_TYPE_LABEL_HE.monitor_before_escalation,
       subjectPriorityLevel: "monitor",
-      subjectPriorityReasonHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לקבוע מה חשוב לתרגל קודם.",
+      subjectPriorityReasonHe: "In the selected period there is still not enough practice to determine what is important to practice first.",
       subjectImmediateActionHe: null,
       subjectDeferredActionHe: null,
       subjectMonitoringOnly: true,
-      subjectDoNowHe: "לאסוף מעט תרגול קצר לפני החלטות.",
-      subjectAvoidNowHe: "לא לבנות תוכנית ארוכה לפני שיש נתון.",
+      subjectDoNowHe: "Collect a little short practice before decisions.",
+      subjectAvoidNowHe: "Do not build a long plan before there is a figure.",
       dominantMistakePattern: "insufficient_mistake_evidence",
       dominantMistakePatternLabelHe: MISTAKE_PATTERN_LABEL_HE.insufficient_mistake_evidence,
       mistakePatternDistribution: {},
@@ -1057,7 +1057,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectLearningStageLabelHe: LEARNING_STAGE_LABEL_HE.insufficient_longitudinal_evidence,
       subjectRetentionRisk: "unknown",
       subjectTransferReadiness: "not_ready",
-      subjectMemoryNarrativeHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לזהות טעות שחוזרת או שינוי לאורך זמן.",
+      subjectMemoryNarrativeHe: "In the selected period there is still not enough practice to detect a recurring error or a change over time.",
       subjectReviewBeforeAdvanceHe: null,
       subjectResponseToIntervention: "not_enough_evidence",
       subjectResponseToInterventionLabelHe: RESPONSE_TO_INTERVENTION_LABEL_HE.not_enough_evidence,
@@ -1067,7 +1067,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectConclusionFreshness: "low",
       subjectRecalibrationNeed: "do_not_rely_yet",
       subjectRecalibrationNeedHe: RECALIBRATION_NEED_LABEL_HE.do_not_rely_yet,
-      subjectEffectivenessNarrativeHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לדעת אם העזרה שניתנה באמת עזרה.",
+      subjectEffectivenessNarrativeHe: "In the selected period there is still not enough practice to know if the help given really helped.",
       subjectSupportSequenceState: "insufficient_sequence_evidence",
       subjectSupportSequenceStateLabelHe: SUPPORT_SEQUENCE_STATE_LABEL_HE.insufficient_sequence_evidence,
       subjectStrategyRepetitionRisk: "unknown",
@@ -1076,7 +1076,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectNextBestSequenceStepHe: NEXT_BEST_SEQUENCE_STEP_LABEL_HE.observe_before_next_cycle,
       subjectAdviceNovelty: "unknown",
       subjectRecommendationRotationNeed: "do_not_repeat_yet",
-      subjectSequenceNarrativeHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי להחליט מה הצעד הבא בתרגול.",
+      subjectSequenceNarrativeHe: "In the selected period there is still not enough practice to decide what the next step in practice is.",
       subjectRecommendationMemoryState: "no_memory",
       subjectPriorRecommendationSignature: "unknown",
       subjectSupportHistoryDepth: "unknown",
@@ -1085,7 +1085,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectFollowThroughSignal: "not_inferable",
       subjectContinuationDecision: "continue_but_refine",
       subjectContinuationDecisionHe: RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE.continue_but_refine,
-      subjectOutcomeNarrativeHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לדעת אם מה שניסינו לאחרונה עזר.",
+      subjectOutcomeNarrativeHe: "In the selected period there is still not enough practice to know if what we tried recently helped.",
       subjectGateState: "gates_not_ready",
       subjectGateStateLabelHe: GATE_STATE_LABEL_HE.gates_not_ready,
       subjectGateReadiness: "insufficient",
@@ -1093,15 +1093,15 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectNextCycleDecisionFocusHe: NEXT_CYCLE_DECISION_FOCUS_LABEL_HE.prove_current_direction,
       subjectEvidenceTargetType: "fresh_data_needed",
       subjectTargetObservationWindow: "unknown",
-      subjectGateNarrativeHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי לקבל החלטה בטוחה.",
+      subjectGateNarrativeHe: "In the selected period there is still not enough practice to make a confident decision.",
       subjectDependencyState: "insufficient_dependency_evidence",
       subjectDependencyStateLabelHe: DEPENDENCY_STATE_LABEL_HE.insufficient_dependency_evidence,
       subjectLikelyFoundationalBlocker: "unknown",
       subjectLikelyFoundationalBlockerLabelHe: FOUNDATIONAL_BLOCKER_LABEL_HE.unknown,
       subjectDownstreamSymptomRisk: "unknown",
       subjectFoundationFirstPriority: false,
-      subjectFoundationFirstPriorityHe: "בתקופה שנבחרה עדיין אין מספיק תרגול כדי להבין מאיפה מתחיל הקושי.",
-      subjectDependencyNarrativeHe: "כדאי לאסוף עוד תרגול לפני שמחליטים מה כדאי לחזק קודם.",
+      subjectFoundationFirstPriorityHe: "In the chosen period there is still not enough practice to understand where the difficulty starts.",
+      subjectDependencyNarrativeHe: "You should gather more practice before deciding what should be strengthened first.",
     };
   }
 
@@ -1296,8 +1296,8 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       trend.independenceDirection === "down" &&
       !improvingButSupportedHe
     ) {
-      const subLab = SUBJECT_LABEL_HE[subjectId] || "המקצוע";
-      improvingButSupportedHe = `ב${subLab} מופיעה לפחות שורה (${labelHe}) שבה הדיוק עולה אך העצמאות יורדת - ההתקדמות עדיין דורשת ליווי; עדיין לא שליטה עצמאית מלאה.`;
+      const subLab = SUBJECT_LABEL_HE[subjectId] || "the subject";
+      improvingButSupportedHe = `In ${subLab} there is at least one line (${labelHe}) in which accuracy increases but independence decreases - progress still requires accompaniment; Not yet full independent control.`;
     }
 
     const dmp = String(sig?.dominantMistakePattern || "").trim();
@@ -1442,25 +1442,25 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   const modeTop = Object.entries(modeDist).sort((a, b) => b[1] - a[1])[0];
   let modeConcentrationNoteHe = null;
   if (modeTop && modeKeys.length >= 4 && modeTop[1] / modeKeys.length >= 0.62) {
-    modeConcentrationNoteHe = `רוב התרגול בתקופה שנבחרה במצב "${modeTop[0]}" - לא מכלילים אוטומטית לכל המקצוע.`;
+    modeConcentrationNoteHe = `Most of the practice in the selected period in the "${modeTop[0]}" mode - are not automatically generalized to the entire profession.`;
   }
 
   const strongRows = rows.filter((r) => r.row.dataSufficiencyLevel === "strong" && r.row.evidenceStrength === "strong");
   const anyHighRisk = riskOr.falsePromotionRisk || riskOr.hintDependenceRisk || riskOr.recentTransitionRisk;
   const trendParts = [];
   if (bestPositive && bestPositive.summaryHe && (bestPositive.conf >= 0.35 || !Number.isFinite(bestPositive.conf))) {
-    trendParts.push(`מגמה חיובית ב ${bestPositive.labelHe}: ${bestPositive.summaryHe}`);
+    trendParts.push(`Positive trend in ${bestPositive.labelHe}: ${bestPositive.summaryHe}`);
   }
   if (worstCaution && worstCaution.summaryHe) {
-    trendParts.push(`נקודת זהירות ב ${worstCaution.labelHe}: ${worstCaution.summaryHe}`);
+    trendParts.push(`A point of caution in ${worstCaution.labelHe}: ${worstCaution.summaryHe}`);
   }
   if (modeConcentrationNoteHe) trendParts.push(modeConcentrationNoteHe);
   let trendNarrativeHe = trendParts.join(" ").trim();
   if (!trendNarrativeHe) {
     trendNarrativeHe =
       rows.some((r) => r.row.trend)
-        ? "יש נתוני מגמה בשורות, אך אין עדיין סיפור מגמה אחיד ברמת המקצוע - כדאי לאסוף עוד תרגול."
-        : "עדיין מעט נתונים על שינוי לאורך זמן - כדאי לבדוק שוב אחרי עוד תרגול.";
+        ? "There are trend data in the ranks, but there is still no uniform trend story at the professional level - it is worth gathering more practice."
+        : "There is still little data on change over time - you should check again after more practice.";
   }
   trendNarrativeHe = normalizeParentFacingHe(trendNarrativeHe);
 
@@ -1468,69 +1468,69 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   const suffMed = rows.filter((r) => r.row.dataSufficiencyLevel === "medium").length;
   const suffLow = rows.filter((r) => r.row.dataSufficiencyLevel === "low" || !r.row.dataSufficiencyLevel).length;
   const hiConf = rows.filter((r) => (Number(r.row.confidenceScore) || 0) >= 72).length;
-  let confidenceSummaryHe = `לפי הנתונים שנאספו: ${suffStrong} שורות נותנות כיוון ברור, ${suffMed} שורות נותנות כיוון חלקי, ו ${suffLow} שורות עדיין עם מעט מידע; ${hiConf} נתונים ברורים יותר מתוך ${rows.length}.`;
+  let confidenceSummaryHe = `According to the collected data: ${suffStrong} lines give a clear direction, ${suffMed} lines give a partial direction, and ${suffLow} lines still with little information; ${hiConf} Clearer data from ${rows.length}.`;
   if (suffLow >= rows.length * 0.55) {
-    confidenceSummaryHe += " התמונה במקצוע עדיין חלקית - נשארים בזהירות.";
+    confidenceSummaryHe += "The picture in the profession is still partial - remain cautious.";
   }
   if (anyHighRisk && strongRows.length >= 2) {
-    confidenceSummaryHe += " למרות נתונים עם תוצאות טובות יחסית, מופיעות גם נקודות לתשומת לב - לא לסמן עדיין את הכול כיציב.";
+    confidenceSummaryHe += "Despite data with relatively good results, there are also points for attention - don't mark everything as stable yet.";
   }
 
   const riskLabelHe = {
     ...PARENT_DIAGNOSTIC_TYPE_LABEL_HE,
     mixed: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_signal,
     fragile_success: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.fragile_success,
-    none_sparse: "מעט מדי תרגול בשורות",
-    none_observed: "לא זוהה סוג התנהגות חוזר אחד שבולט",
+    none_sparse: "Too little practice in the lines",
+    none_observed: "Not one prominent repetitive behavior type was identified",
   };
 
   const successLabelHe = {
-    stable_mastery: "שליטה טובה שנשמרת לאורך זמן בשורות",
-    fragile_success_cluster: "הצלחה עם שבירות בעזרה/עצמאות",
-    mixed: "תערובת הצלחות",
-    none_sparse: "מעט מדי תרגול בשורות",
+    stable_mastery: "Good control that is maintained over time in the rows",
+    fragile_success_cluster: "Success with fragility in help/independence",
+    mixed: "A mix of plates",
+    none_sparse: "Too little practice in the lines",
   };
 
   let recommendedHomeMethodHe = null;
   const domRiskHe = riskLabelHe[dominantLearningRisk] || dominantLearningRisk;
   if (dominantLearningRisk === "knowledge_gap") {
-    recommendedHomeMethodHe = `מה לעשות בבית: חזרה איטית על הבסיס ב${domRiskHe} - משימה קצרה, בדיקה מול הפתרון, בלי עלייה מהירה מדי ברמה.`;
+    recommendedHomeMethodHe = `What to do at home: slow repetition of the basics in ${domRiskHe} - a short task, testing against the solution, without increasing the level too quickly.`;
   } else if (dominantLearningRisk === "speed_pressure") {
     recommendedHomeMethodHe =
-      "מה לעשות בבית: לפרק את הלחץ למהירות - תרגול באותה רמת קושי עם דגש על דיוק לפני מהירות, בלי להוריד רמה לכל המקצוע.";
+      "What to do at home: break down the pressure for speed - practice at the same level of difficulty with an emphasis on accuracy before speed, without lowering the level of the entire profession.";
   } else if (dominantLearningRisk === "instruction_friction") {
     recommendedHomeMethodHe =
-      "מה לעשות בבית: קריאת משימה משותפת, זיהוי מה נשאל, ורק אז תשובה - לצמצם הילד עדיין נעזר ברמזים צעד אחר צעד.";
+      "What to do at home: reading a joint task, identifying what was asked, and only then answering - to reduce the child is still helped by step-by-step hints.";
   } else if (dominantLearningRisk === "careless_pattern") {
     recommendedHomeMethodHe =
-      "מה לעשות בבית: עצירה קצרה לפני שליחה, בדיקה מול הניסוח - לא מניחים מיד שזה קושי עמוק בבסיס.";
+      "What to do at home: a short stop before sending, checking against the wording - do not immediately assume that this is a deep-rooted difficulty.";
   } else if (dominantLearningRisk === "fragile_success") {
     recommendedHomeMethodHe =
-      "מה לעשות בבית: לבנות עצמאות בהדרגה - תרגול קצר עם פחות עזרה אחרי שההבנה ברורה, בלי לדחוף עלייה מהירה מדי ברמה.";
+      "What to do at home: build independence gradually - a short practice with less help after the understanding is clear, without pushing too fast an increase in level.";
   } else {
     recommendedHomeMethodHe =
       strongRows.length >= 1
-        ? "מה לעשות בבית: לשמור על תרגול קצר וקבוע, ולבדוק שהרמה נשמרת לפני שינוי הגדרות."
-        : "מה לעשות בבית: להמשיך לאסוף תרגול קצר עד שהתמונה במקצוע מתייצבת.";
+        ? "What to do at home: keep practice short and regular, and check that the level is maintained before changing settings."
+        : "What to do at home: continue to collect short practice until the image in the profession stabilizes.";
   }
 
   const avoid = [];
   if (riskOr.falsePromotionRisk || dominantLearningRisk === "fragile_success") {
-    avoid.push("לא לדחוף עלייה מהירה מדי ברמה או כיתה בבית בלי הצלחה שחוזרת ובלי ירידה בהילד עדיין נעזר ברמזים.");
+    avoid.push("Do not push a too fast increase in level or class at home without repeated success and without a decrease in the child still using hints.");
   }
   if (riskOr.speedOnlyRisk || dominantLearningRisk === "speed_pressure") {
-    avoid.push("לא להפוך קושי במצב מהירות לירידת רמה בכל המקצוע.");
+    avoid.push("Do not turn difficulty in speed mode into a level drop in the entire profession.");
   }
   if (riskOr.falseRemediationRisk || dominantLearningRisk === "careless_pattern") {
-    avoid.push("לא לרדת מיד לרמה קלה בלי לנסות קודם חיזוק ממוקד באותה רמה.");
+    avoid.push("Do not immediately drop to an easy level without first trying targeted strengthening at the same level.");
   }
   if (riskOr.hintDependenceRisk) {
-    avoid.push("לא להפסיק פתאום עזרה - אלא לצמצם אותה בהדרגה כשההבנה משתפרת.");
+    avoid.push("Don't suddenly stop help - but gradually reduce it as understanding improves.");
   }
   if (worstCaution && worstCaution.score >= 3) {
-    avoid.push("לא לפרש ירידה קצרה ככישלון קבוע - עדיף זהירות ובדיקה חוזרת.");
+    avoid.push("Do not interpret a short drop as a permanent failure - it is better to be careful and retest.");
   }
-  const whatNotToDoHe = avoid.length ? avoid.join(" ") : "לא לקבוע שינוי דרמטי בלי עוד תרגול בתקופה שנבחרה.";
+  const whatNotToDoHe = avoid.length ? avoid.join(" ") : "Do not determine a dramatic change without more practice in the chosen period.";
 
   const rootEntries = Object.entries(rootCauseRowCounts)
     .filter(([, n]) => n > 0)
@@ -1570,14 +1570,14 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   let subjectDiagnosticRestraintHe = "";
   if (subjectConclusionReadiness === "not_ready") {
     subjectDiagnosticRestraintHe =
-      "ברוב נתוני המקצוע עדיין יש מעט מידע או מוקדם לקבוע - לא קובעים עדיין הסבר חד משמעי.";
+      "In most profession data there is still little information or it is too early to determine - no unambiguous explanation has yet been established.";
   } else if (subjectConclusionReadiness === "partial") {
     subjectDiagnosticRestraintHe =
-      "יש מידע מסוים, אבל גם נתונים שדורשים זהירות - כדאי לעקוב ולא למהר לקבוע כיוון חזק מדי.";
+      "There is some information, but also data that requires caution - you should follow it and not rush to determine too strong a direction.";
   } else if (moderateOrStrongRows >= Math.ceil(nR * 0.55)) {
-    subjectDiagnosticRestraintHe = "יש כמה נתונים שמראים כיוון דומה - אפשר לסמוך יותר על הסיכום בתוך המקצוע.";
+    subjectDiagnosticRestraintHe = "There are some data that show a similar direction - the summary within the profession can be trusted more.";
   } else {
-    subjectDiagnosticRestraintHe = "התמונה במקצוע עדיין מעורבת - כדאי לעבור על הנושאים בנפרד.";
+    subjectDiagnosticRestraintHe = "The picture in the profession is still mixed - it's worth going over the issues separately.";
   }
 
   const intv = pickRecommendedInterventionType(dominantRootCause, "maintain_and_strengthen");
@@ -1644,22 +1644,22 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     if (subjectTransferReadiness === "ready") subjectTransferReadiness = "limited";
   }
 
-  const subjectMemoryNarrativeHe = `${subjectLearningStageLabelHe} ברוב השורות - שימור: ${
+  const subjectMemoryNarrativeHe = `${subjectLearningStageLabelHe} in most lines - conservation: ${
     subjectRetentionRisk === "high"
-      ? "עדיף חיזוק חוזר לפני הרחבה."
+      ? "Prefer repeated reinforcement before expanding."
       : subjectRetentionRisk === "moderate"
-        ? "כדאי לעקוב לפני שינוי מהותי."
-        : "אפשר להמשיך בקצב קבוע ולשים לב לתוצאות."
+        ? "Worth watching before a major change."
+        : "You can keep a steady pace and watch the results."
   }`.trim();
 
   let subjectReviewBeforeAdvanceHe = null;
   if (subjectRetentionRisk === "high" || subjectLearningStage === "fragile_retention" || subjectLearningStage === "regression_signal") {
     subjectReviewBeforeAdvanceHe =
-      "לעצור לרגע לפני קידום: לחזור על אותה רמה עם מפגשים קצרים עד שמתייצב דיוק.";
+      "Pause for a moment before advancing: repeat the same level with short sessions until accuracy stabilizes.";
   } else if (reviewBeforeAdvanceRowHints.length) {
     subjectReviewBeforeAdvanceHe = reviewBeforeAdvanceRowHints[0];
   } else if (subjectTransferReadiness === "limited" || subjectTransferReadiness === "not_ready") {
-    subjectReviewBeforeAdvanceHe = "לוודא חזרה על טעויות דומות באותה רמה לפני פתיחת נושא חדש.";
+    subjectReviewBeforeAdvanceHe = "Make sure to repeat similar mistakes at the same level before opening a new topic.";
   }
 
   let subjectResponseToIntervention = "not_enough_evidence";
@@ -1684,9 +1684,9 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   const subjectRecalibrationNeed = subjectRecalibrationNeedAgg;
   const subjectRecalibrationNeedHe =
     RECALIBRATION_NEED_LABEL_HE[subjectRecalibrationNeed] || RECALIBRATION_NEED_LABEL_HE.none;
-  const subLabAgg = SUBJECT_LABEL_HE[subjectId] || "המקצוע";
+  const subLabAgg = SUBJECT_LABEL_HE[subjectId] || "the subject";
   const subjectEffectivenessNarrativeHe =
-    `ב${subLabAgg}: ${subjectResponseToInterventionLabelHe}. ` +
+    `In ${subLabAgg}: ${subjectResponseToInterventionLabelHe}.` +
     (subjectRecalibrationNeed !== "none" ? subjectRecalibrationNeedHe : subjectSupportAdjustmentNeedHe);
 
   let subjectSupportSequenceState = "insufficient_sequence_evidence";
@@ -1718,7 +1718,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     NEXT_BEST_SEQUENCE_STEP_LABEL_HE.observe_before_next_cycle;
 
   const subjectSequenceNarrativeHe =
-    `ב${subLabAgg}: ${subjectSupportSequenceStateLabelHe}. ${subjectNextBestSequenceStepHe} · ` +
+    `In ${subLabAgg}: ${subjectSupportSequenceStateLabelHe}. ${subjectNextBestSequenceStepHe}` +
     (RECOMMENDATION_ROTATION_NEED_LABEL_HE[subjectRecommendationRotationNeedAgg] ||
       RECOMMENDATION_ROTATION_NEED_LABEL_HE.none);
 
@@ -1767,7 +1767,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE.continue_but_refine;
 
   const subjectOutcomeNarrativeHe =
-    `ב${subLabAgg}: ${RECOMMENDATION_MEMORY_STATE_LABEL_HE[subjectRecommendationMemoryState] || RECOMMENDATION_MEMORY_STATE_LABEL_HE.no_memory} · ` +
+    `In ${subLabAgg}: ${RECOMMENDATION_MEMORY_STATE_LABEL_HE[subjectRecommendationMemoryState] || RECOMMENDATION_MEMORY_STATE_LABEL_HE.no_memory} ·` +
     `${PRIOR_RECOMMENDATION_SIGNATURE_LABEL_HE[subjectPriorRecommendationSignature] || PRIOR_RECOMMENDATION_SIGNATURE_LABEL_HE.unknown} · ` +
     `${EXPECTED_VS_OBSERVED_MATCH_LABEL_HE[subjectExpectedVsObservedMatch] || EXPECTED_VS_OBSERVED_MATCH_LABEL_HE.not_enough_evidence} · ` +
     `${FOLLOW_THROUGH_SIGNAL_LABEL_HE[subjectFollowThroughSignal] || FOLLOW_THROUGH_SIGNAL_LABEL_HE.not_inferable} · ` +
@@ -1840,7 +1840,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   }
 
   const subjectGateNarrativeHe =
-    `ב${subLabAgg}: ${subjectGateStateLabelHe} · ${subjectNextCycleDecisionFocusHe} · ` +
+    `In ${subLabAgg}: ${subjectGateStateLabelHe} · ${subjectNextCycleDecisionFocusHe} ·` +
     `${TARGET_EVIDENCE_TYPE_LABEL_HE[subjectEvidenceTargetType] || TARGET_EVIDENCE_TYPE_LABEL_HE.mixed_target} · ` +
     `${TARGET_OBSERVATION_WINDOW_LABEL_HE[subjectTargetObservationWindow] || TARGET_OBSERVATION_WINDOW_LABEL_HE.unknown}`;
 
@@ -1897,8 +1897,8 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     subjectDependencyState === "likely_foundational_block" ||
     (subjectDependencyState === "mixed_dependency_signal" && foundationHeavyRows >= 1);
   const subjectFoundationFirstPriorityHe = subjectFoundationFirstPriority
-    ? "כדאי לפתוח קודם ייצוב בסיס קצר במקצוע הזה - ורק אז להרחיב."
-    : "אפשר להישאר עם תרגול ממוקד או קל במקביל - בלי להרחיב לסיפור רחב מיותר.";
+    ? "It is better to first establish a short foundation in this profession - and only then expand."
+    : "You can stay with focused or easy practice at the same time - without expanding into an unnecessarily broad story.";
 
   const subjectDependencyStateLabelHe =
     DEPENDENCY_STATE_LABEL_HE[subjectDependencyState] || DEPENDENCY_STATE_LABEL_HE.insufficient_dependency_evidence;
@@ -1906,7 +1906,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     FOUNDATIONAL_BLOCKER_LABEL_HE[subjectLikelyFoundationalBlocker] || FOUNDATIONAL_BLOCKER_LABEL_HE.unknown;
 
   const subjectDependencyNarrativeHe =
-    `ב${subLabAgg}: ${subjectDependencyStateLabelHe} · ${subjectLikelyFoundationalBlockerLabelHe} · ${subjectFoundationFirstPriorityHe}`;
+    `In ${subLabAgg}: ${subjectDependencyStateLabelHe} · ${subjectLikelyFoundationalBlockerLabelHe} · ${subjectFoundationFirstPriorityHe}`;
 
   return {
     dominantLearningRisk,
@@ -2048,7 +2048,7 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
         if (insufficientData.length < 24) {
           insufficientData.push({
             mistakeCount: n,
-            note: "פחות מ 5 טעויות באותו דפוס - עדיין מוקדם לקבוע קושי שחוזר",
+            note: "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty",
           });
         }
         return;
@@ -2102,7 +2102,7 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
       const rs = recStrength(w.mistakeCount);
       studentRecommendationsImprove.push({
         id: `stu-imp:${w.id}`,
-        textHe: `כדאי לתרגל עוד קצת ${parentCopyTopicPhraseForFocusHe(w.labelHe)} - נרשמו ${w.mistakeCount} טעויות דומות בתקופה שנבחרה. נשארים עם תרגול ממוקד ולא עם "לנסות לתקן הכול בבת אחת".`,
+        textHe: `You should practice a little more ${parentCopyTopicPhraseForFocusHe(w.labelHe)} - ${w.mistakeCount} similar mistakes were recorded in the selected period. We stay with focused practice and not with "trying to fix everything at once".`,
         strength: rs,
       });
     }
@@ -2114,8 +2114,8 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
         id: `par-imp:${w0.id}`,
         textHe:
           rs === "strong"
-            ? `חוזרת אותה טעות - ${parentCopyTopicPhraseHe(w0.labelHe)}. זה לא חירום, אבל שווה לטפל. מומלץ לשבת יחד על דוגמה אחת ולעבור עליה בקול צעד אחר צעד.`
-            : `מתחילה חזרה על אותו סוג טעות - ${parentCopyTopicPhraseHe(w0.labelHe)}. לשבוע הקרוב מספיק מבט רגוע ותרגול קצר וממוקד.`,
+            ? `The same error repeats - ${parentCopyTopicPhraseHe(w0.labelHe)}. It's not an emergency, but it's worth taking care of. It is recommended to sit together on one example and go through it aloud step by step.`
+            : `A repetition of the same type of error begins - ${parentCopyTopicPhraseHe(w0.labelHe)}. For the coming week, a calm look and a short, focused practice are enough.`,
         strength: rs,
       });
     }
@@ -2129,12 +2129,12 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
           : "moderate";
       studentRecommendationsMaintain.push({
         id: `stu-maint:${topPositive.id}`,
-        textHe: `להמשיך לתרגל בנוחות בנושא ${topPositive.labelHe} - הרמה שם נשמרת (דיוק כ ${topPositive.accuracy}%).`,
+        textHe: `Continue to practice comfortably on the topic ${topPositive.labelHe} - the level there is maintained (accuracy about ${topPositive.accuracy}%).`,
         strength: rs,
       });
       parentRecommendationsMaintain.push({
         id: `par-maint:${topPositive.id}`,
-        textHe: `מומלץ לעודד על ההתמדה בנושא ${topPositive.labelHe} - רואים הצלחה חוזרת; שימור הרגל חיובי חשוב לא פחות מתיקון טעויות.`,
+        textHe: `It is recommended to encourage persistence in the subject ${topPositive.labelHe} - you see repeated success; Maintaining a positive habit is just as important as correcting mistakes.`,
         strength: rs,
       });
     }
@@ -2142,7 +2142,7 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
     let diagnosticSparseNoteHe = null;
     if (!topWeaknesses.length && wrong.length > 0) {
       diagnosticSparseNoteHe =
-        "יש טעויות בודדות אך בלי דפוס שחוזר מספיק פעמים - עדיין לא ניתן לקבוע קושי שחוזר.";
+        "There are individual mistakes but without a pattern that repeats enough times - it is still not possible to determine a recurring difficulty.";
       if (!parentRecommendationsImprove.length) {
         parentRecommendationsImprove.push({
           id: `par-imp:${sid}:sparse`,
@@ -2268,7 +2268,7 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
   return out;
 }
 
-/** דוגמה סטטית לפי מבנה גרסה 2 */
+/** Static example following the version 2 structure */
 export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
   version: 2,
   generatedAt: "2026-04-11T12:00:00.000Z",
@@ -2286,44 +2286,44 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
   subjects: {
     math: {
       subject: "math",
-      subjectLabelHe: "מתמטיקה",
+      subjectLabelHe: "Math",
       mistakeEventCount: 12,
       wrongCount: 12,
       hasAnySignal: true,
       summaryHe:
-        "תמונת המקצוע במתמטיקה: הילד מצליח בחיבור לאורך זמן. יש גם מקום לחיזוק בהשוואת כמויות או מספרים.",
+        "The picture of the subject in mathematics: the child succeeds in composition over time. There is also room for reinforcement in comparing quantities or numbers.",
       stableExcellence: [
         {
           id: "math:addition:learning",
-          labelHe: "חיבור",
+          labelHe: "Addition",
           questions: 42,
           accuracy: 93,
           confidence: "high",
           needsPractice: false,
           excellent: true,
-          tierHe: "הילד מצליח בנושא הזה לאורך זמן",
+          tierHe: "Your child is doing well on this topic over time",
         },
       ],
       topStrengths: [],
       topWeaknesses: [
         {
           id: "math:w:0",
-          labelHe: "קושי בהשוואת כמויות או מספרים",
+          labelHe: "Difficulty comparing quantities or numbers",
           mistakeCount: 7,
           confidence: "moderate",
-          tierHe: "קושי נקודתי",
+          tierHe: "Focused difficulty",
         },
       ],
       parentTopicToneByKey: {},
       parentStrengthWithCautionLinesByKey: {},
       parentActionHe:
-        "שלוש פעמים בשבוע, 15–20 דק׳ בכל מפגש: לבחור משימה אחת במתמטיקה בנושא בהשוואת כמויות או מספרים - לקרוא יחד את הניסוח, לנסח בקול מה נתון ומה מבקשים, לבצע צעד ראשון על דף טיוטה ורק אז לכתוב תשובה סופית ולבדוק מול הפתרון.",
+        "Three times a week, 15-20 minutes each session: choose one math task on the subject of comparing quantities or numbers - read the formulation together, formulate out loud what is given and what is requested, perform a first step on a draft sheet and only then write a final answer and check against the solution.",
       nextWeekGoalHe:
-        "יעד לחיזוק: להעלות את אחוזי ההצלחה בהשוואת כמויות או מספרים (לפחות ניסיון אחד מוצלח יותר מהשבוע שעבר). יעד לשימור: להמשיך בשגרת תרגול נינוחה בנושא חיבור כדי לשמר את רמת הדיוק.",
+        "Target for reinforcement: increase the percentage of success in comparing quantities or numbers (at least one more successful attempt than last week). Goal for retention: continue a relaxed practice routine on composition to maintain the level of accuracy.",
       evidenceExamples: [
         {
           type: "mistake",
-          exerciseText: "בכמה שקים המחיר של המחשב גבוה יותר?",
+          exerciseText: "How many bags is the price of the computer higher?",
           questionLabel: null,
           correctAnswer: 120,
           userAnswer: 102,
@@ -2331,19 +2331,19 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         },
         {
           type: "success",
-          titleHe: "מה שהילד עושה טוב בתרגול",
+          titleHe: "What your child is doing well in practice",
           bodyHe:
-            "בנושא חיבור יש הצלחה טובה בתקופה שנבחרה: כ 93% נכון מתוך 42 שאלות.",
+            "In the subject of essay there is good success in the selected period: about 93% correct out of 42 questions.",
           confidence: "high",
         },
       ],
       weaknesses: [
         {
           id: "math:w:0",
-          labelHe: "קושי בהשוואת כמויות או מספרים",
+          labelHe: "Difficulty comparing quantities or numbers",
           mistakeCount: 7,
           confidence: "moderate",
-          tierHe: "קושי נקודתי",
+          tierHe: "Focused difficulty",
         },
       ],
       strengths: [],
@@ -2354,7 +2354,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "stu-imp:math:w:0",
           textHe:
-            "כדאי לתרגל עוד קצת בנושא: בהשוואת כמויות או מספרים - נרשמו 7 טעויות דומות בתקופה שנבחרה. נשארים עם תרגול ממוקד ולא עם \"לנסות לתקן הכול בבת אחת\".",
+            "You should practice a little more on the subject: when comparing quantities or numbers - 7 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
           strength: "moderate",
         },
       ],
@@ -2362,7 +2362,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "stu-maint:math:addition:learning",
           textHe:
-            "להמשיך לתרגל בנוחות בנושא חיבור - הרמה שם נשמרת (דיוק כ 93%).",
+            "Continue practicing comfortably on the topic of connection - the level there is maintained (accuracy about 93%).",
           strength: "strong",
         },
       ],
@@ -2370,7 +2370,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "par-imp:math:w:0",
           textHe:
-            "מתחילה חזרה על אותו סוג טעות - בנושא בהשוואת כמויות או מספרים. לשבוע הקרוב מספיק מבט רגוע ותרגול קצר וממוקד.",
+            "A repetition of the same type of error begins - in the subject of comparing quantities or numbers. For the coming week, a calm look and a short, focused practice are enough.",
           strength: "moderate",
         },
       ],
@@ -2378,71 +2378,71 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "par-maint:math:addition:learning",
           textHe:
-            "מומלץ לעודד על ההתמדה בנושא חיבור - רואים הצלחה חוזרת; שימור הרגל חיובי חשוב לא פחות מתיקון טעויות.",
+            "It is recommended to encourage persistence in connection - you see repeated success; Maintaining a positive habit is just as important as correcting mistakes.",
           strength: "strong",
         },
       ],
       evidenceMistake: {
-        exerciseText: "בכמה שקים המחיר של המחשב גבוה יותר?",
+        exerciseText: "How many bags is the price of the computer higher?",
         questionLabel: null,
         correctAnswer: 120,
         userAnswer: 102,
         confidence: "moderate",
       },
       evidenceSuccess: {
-        titleHe: "מה שהילד עושה טוב בתרגול",
+        titleHe: "What your child is doing well in practice",
         bodyHe:
-          "בנושא חיבור יש הצלחה טובה בתקופה שנבחרה: כ 93% נכון מתוך 42 שאלות.",
+          "In the subject of essay there is good success in the selected period: about 93% correct out of 42 questions.",
         confidence: "high",
       },
       insufficientData: [
         {
           mistakeCount: 2,
-          note: "פחות מ 5 טעויות באותו דפוס - עדיין מוקדם לקבוע קושי שחוזר",
+          note: "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty",
         },
       ],
       diagnosticSparseNoteHe: null,
     },
     geometry: {
       subject: "geometry",
-      subjectLabelHe: "גאומטריה",
+      subjectLabelHe: "Geometry",
       mistakeEventCount: 9,
       wrongCount: 9,
       hasAnySignal: true,
       summaryHe:
-        "תמונת המקצוע בגאומטריה: יש גם מקום לחיזוק בנושא בלבול חוזר בין היקף לשטח.",
+        "The image of the profession in geometry: there is also room for strengthening on the issue of recurring confusion between perimeter and area.",
       topStrengths: [],
       stableExcellence: [],
       topWeaknesses: [
         {
           id: "geometry:w:0",
-          labelHe: "בלבול חוזר בין היקף לשטח",
+          labelHe: "Repeated confusion between perimeter and area",
           mistakeCount: 6,
           confidence: "moderate",
-          tierHe: "קושי נקודתי",
+          tierHe: "Focused difficulty",
         },
       ],
       parentActionHe:
-        "שלוש פעמים בשבוע, 15–20 דק׳ בכל מפגש: לבחור משימה אחת בגאומטריה בנושא בלבול חוזר בין היקף לשטח - לקרוא יחד את הניסוח, לנסח בקול מה נתון ומה מבקשים, לבצע צעד ראשון על דף טיוטה ורק אז לכתוב תשובה סופית ולבדוק מול הפתרון.",
+        "Three times a week, 15-20 minutes each session: choose one task in geometry on the topic of repeated confusion between perimeter and area - read the formulation together, formulate out loud what is given and what is requested, make a first step on a draft sheet and only then write a final answer and check against the solution.",
       nextWeekGoalHe:
-        "יעד לחיזוק: להעלות את אחוזי ההצלחה בלבול חוזר בין היקף לשטח (לפחות ניסיון אחד מוצלח יותר מהשבוע שעבר).",
+        "Target for reinforcement: increase the percentage of success in repeated confusion between scope and area (at least one more successful attempt than last week).",
       evidenceExamples: [
         {
           type: "mistake",
-          exerciseText: "מה ההיקף של מלבן 5×3 ס״מ?",
+          exerciseText: "What is the perimeter of a 5x3 cm rectangle?",
           questionLabel: null,
-          correctAnswer: "16 ס״מ",
-          userAnswer: "15 ס״מ",
+          correctAnswer: "16 cm",
+          userAnswer: "15 cm",
           confidence: "moderate",
         },
       ],
       weaknesses: [
         {
           id: "geometry:w:0",
-          labelHe: "בלבול חוזר בין היקף לשטח",
+          labelHe: "Repeated confusion between perimeter and area",
           mistakeCount: 6,
           confidence: "moderate",
-          tierHe: "קושי נקודתי",
+          tierHe: "Focused difficulty",
         },
       ],
       strengths: [],
@@ -2453,7 +2453,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "stu-imp:geometry:w:0",
           textHe:
-            "כדאי לתרגל עוד קצת בנושא: בלבול חוזר בין היקף לשטח - נרשמו 6 טעויות דומות בתקופה שנבחרה. נשארים עם תרגול ממוקד ולא עם \"לנסות לתקן הכול בבת אחת\".",
+            "You should practice a little more on the subject: repeated confusion between scope and area - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
           strength: "moderate",
         },
       ],
@@ -2462,16 +2462,16 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "par-imp:geometry:w:0",
           textHe:
-            "מתחילה חזרה על אותו סוג טעות - בנושא בלבול חוזר בין היקף לשטח. לשבוע הקרוב מספיק מבט רגוע ותרגול קצר וממוקד.",
+            "A repetition of the same type of error begins - on the topic of repeated confusion between scope and area. For the coming week, a calm look and a short, focused practice are enough.",
           strength: "moderate",
         },
       ],
       parentRecommendationsMaintain: [],
       evidenceMistake: {
-        exerciseText: "מה ההיקף של מלבן 5×3 ס״מ?",
+        exerciseText: "What is the perimeter of a 5x3 cm rectangle?",
         questionLabel: null,
-        correctAnswer: "16 ס״מ",
-        userAnswer: "15 ס״מ",
+        correctAnswer: "16 cm",
+        userAnswer: "15 cm",
         confidence: "moderate",
       },
       evidenceSuccess: null,
@@ -2480,7 +2480,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
     },
     english: {
       subject: "english",
-      subjectLabelHe: "אנגלית",
+      subjectLabelHe: "English",
       mistakeEventCount: 0,
       wrongCount: 0,
       hasAnySignal: false,
@@ -2507,7 +2507,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
     },
     science: {
       subject: "science",
-      subjectLabelHe: "מדעים",
+      subjectLabelHe: "Science",
       mistakeEventCount: 0,
       wrongCount: 0,
       hasAnySignal: false,
@@ -2534,44 +2534,44 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
     },
     hebrew: {
       subject: "hebrew",
-      subjectLabelHe: "עברית",
+      subjectLabelHe: "Hebrew",
       mistakeEventCount: 11,
       wrongCount: 11,
       hasAnySignal: true,
       summaryHe:
-        "תמונת המקצוע בעברית: יש גם מקום לחיזוק במילות יחס ובמבנה משפט.",
+        "The image of the profession in Hebrew: there is also room for reinforcement in prepositions and sentence structure.",
       topStrengths: [],
       stableExcellence: [],
       topWeaknesses: [
         {
           id: "hebrew:w:0",
-          labelHe: "קושי במילות יחס ובמבנה משפט",
+          labelHe: "Difficulty with prepositions and sentence structure",
           mistakeCount: 6,
           confidence: "moderate",
-          tierHe: "קושי נקודתי",
+          tierHe: "Focused difficulty",
         },
       ],
       parentActionHe:
-        "שלוש פעמים בשבוע, 15–20 דק׳ בכל מפגש: לבחור משימה אחת בעברית בנושא במילות יחס ובמבנה משפט - לקרוא יחד את הניסוח, לנסח בקול מה נתון ומה מבקשים, לבצע צעד ראשון על דף טיוטה ורק אז לכתוב תשובה סופית ולבדוק מול הפתרון.",
+        "Three times a week, 15-20 minutes in each session: choose one task in Hebrew on the topic with prepositions and sentence structure - read the wording together, formulate out loud what is given and what is requested, take the first step on a draft sheet and only then write a final answer and check against the solution.",
       nextWeekGoalHe:
-        "יעד לחיזוק: להעלות את אחוזי ההצלחה במילות יחס ובמבנה משפט (לפחות ניסיון אחד מוצלח יותר מהשבוע שעבר).",
+        "Target for reinforcement: increase the percentage of success in prepositions and sentence structure (at least one more successful attempt than last week).",
       evidenceExamples: [
         {
           type: "mistake",
-          exerciseText: "השלימו: הילדים שיחקו ___ הזמן בגן.",
+          exerciseText: "Complete: The children played ___ the time in kindergarten.",
           questionLabel: null,
-          correctAnswer: "בְּ",
-          userAnswer: "לְ",
+          correctAnswer: "on",
+          userAnswer: "to",
           confidence: "moderate",
         },
       ],
       weaknesses: [
         {
           id: "hebrew:w:0",
-          labelHe: "קושי במילות יחס ובמבנה משפט",
+          labelHe: "Difficulty with prepositions and sentence structure",
           mistakeCount: 6,
           confidence: "moderate",
-          tierHe: "קושי נקודתי",
+          tierHe: "Focused difficulty",
         },
       ],
       strengths: [],
@@ -2582,7 +2582,7 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "stu-imp:hebrew:w:0",
           textHe:
-            "כדאי לתרגל עוד קצת בנושא: במילות יחס ובמבנה משפט - נרשמו 6 טעויות דומות בתקופה שנבחרה. נשארים עם תרגול ממוקד ולא עם \"לנסות לתקן הכול בבת אחת\".",
+            "You should practice a little more on the subject: in prepositions and sentence structure - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
           strength: "moderate",
         },
       ],
@@ -2591,30 +2591,30 @@ export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
         {
           id: "par-imp:hebrew:w:0",
           textHe:
-            "מתחילה חזרה על אותו סוג טעות - בנושא במילות יחס ובמבנה משפט. לשבוע הקרוב מספיק מבט רגוע ותרגול קצר וממוקד.",
+            "A repetition of the same type of error begins - on the subject in prepositions and sentence structure. For the coming week, a calm look and a short, focused practice are enough.",
           strength: "moderate",
         },
       ],
       parentRecommendationsMaintain: [],
       evidenceMistake: {
-        exerciseText: "השלימו: הילדים שיחקו ___ הזמן בגן.",
+        exerciseText: "Complete: The children played ___ the time in kindergarten.",
         questionLabel: null,
-        correctAnswer: "בְּ",
-        userAnswer: "לְ",
+        correctAnswer: "on",
+        userAnswer: "to",
         confidence: "moderate",
       },
       evidenceSuccess: null,
       insufficientData: [
         {
           mistakeCount: 3,
-          note: "פחות מ 5 טעויות באותו דפוס - עדיין מוקדם לקבוע קושי שחוזר",
+          note: "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty",
         },
       ],
       diagnosticSparseNoteHe: null,
     },
     "moledet-geography": {
       subject: "moledet-geography",
-      subjectLabelHe: "מולדת וגאוגרפיה",
+      subjectLabelHe: "Homeland & Geography",
       mistakeEventCount: 0,
       wrongCount: 0,
       hasAnySignal: false,

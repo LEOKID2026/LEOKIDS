@@ -17,7 +17,7 @@ function renderWordProblemText(text, ranges) {
           {run.value}
         </p>
       ) : (
-        <p key={`prose-${idx}`} dir="rtl" className="my-0" style={learningProseBlockStyle}>
+        <p key={`prose-${idx}`} dir="ltr" className="my-0" style={learningProseBlockStyle}>
           {run.value}
         </p>
       )
@@ -25,7 +25,7 @@ function renderWordProblemText(text, ranges) {
   }
 
   return (
-    <p dir="rtl" className="my-0" style={learningProseBlockStyle}>
+    <p dir="ltr" className="my-0" style={learningProseBlockStyle}>
       {(() => {
         const parts = [];
         let cursor = 0;
@@ -67,7 +67,7 @@ export default function StepWordProblemExerciseView({ step, className = "" }) {
               {run.value}
             </p>
           ) : (
-            <p key={`prose-${idx}`} dir="rtl" className="my-0" style={learningProseBlockStyle}>
+            <p key={`prose-${idx}`} dir="ltr" className="my-0" style={learningProseBlockStyle}>
               {run.value}
             </p>
           )

@@ -14,7 +14,7 @@ export function getActiveDiagnosisSessionSummaryForReport() {
     return {
       version: 1,
       cautionHe:
-        "תמונת מצב סשן מקומית בלבד (לא אבחון קליני ולא כיוון סופי).",
+        "Local session snapshot only (not a clinical diagnosis and not a final recommendation).",
       pendingProbe: d.pendingProbe ?? null,
       hypothesisLedger: d.hypothesisLedger ?? null,
       lastProbeSelectionResult: d.lastProbeSelectionResult ?? null,

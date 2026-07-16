@@ -45,7 +45,7 @@ import {
 } from "../../lib/parent-ui/parent-report-site-bright-theme.css.js";
 import { isImmersiveGameLayoutPath } from "../../lib/site-nav";
 import { useParentReportBrightPageBackground } from "../../lib/parent-ui/use-parent-report-bright-page-bg.js";
-import { mapParentReportLoadError } from "../../lib/parent-server/parent-api-errors.he.js";
+import { mapParentReportLoadError } from "../../lib/parent-client/parent-api-errors.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { resolveDetailedParentReportPathname } from "../../lib/parent-report/detailed-report-pathname.client.js";
 import { PARENT_BULLETS_EMPTY_WITH_VOLUME_HE } from "../../utils/parent-data-presence.js";
@@ -76,7 +76,7 @@ import { PARENT_REPORT_PORTAL_GATE } from "../../lib/parent-report-server-truth.
 const PARENT_REPORT_DETAILED_PRINTING_CLASS = "parent-report-detailed-printing";
 
 /**
- * מיפוי ויזואלי בלבד לפי recommendedNextStep מה payload — לא משנה מנוע או תוכן.
+ * Visual-only mapping based on recommendedNextStep from the payload — does not change engine or content.
  * @param {string | undefined} step
  * @returns {"advance" | "maintain" | "remediate" | "drop"}
  */
@@ -114,12 +114,12 @@ function SectionCard({ title, children, className = "", compact = false }) {
   );
 }
 
-/** כרטיס לכל שורה — פעולות לבית (מסך + הדפסה) */
+/** Card for each row — home actions (screen + print) */
 function PlanItemCards({ items, windowTotalQuestions = 0 }) {
   if (!items?.length)
     return (
       <p className="pr-detailed-muted text-sm">
-        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "אין נתונים להצגה."}
+        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
       </p>
     );
   return (
@@ -136,12 +136,12 @@ function PlanItemCards({ items, windowTotalQuestions = 0 }) {
   );
 }
 
-/** כרטיס לכל שורה — יעדי תקופה (מסך + הדפסה) */
+/** Card for each row — period goals (screen + print) */
 function GoalItemCards({ items, windowTotalQuestions = 0 }) {
   if (!items?.length)
     return (
       <p className="pr-detailed-muted text-sm">
-        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "אין נתונים להצגה."}
+        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
       </p>
     );
   return (
@@ -158,7 +158,7 @@ function GoalItemCards({ items, windowTotalQuestions = 0 }) {
   );
 }
 
-/** מכתב מקצועי להורה — שלב ביצוע 1: ניסוח קצר בלבד */
+/** Subject letter to parent — implementation phase 1: short wording only */
 function SubjectParentLetter({ sp }) {
   const letter = useMemo(() => buildSubjectParentLetterDetailedPhase1(sp), [sp]);
   if (!letter.opening) return null;
@@ -171,7 +171,7 @@ function SubjectParentLetter({ sp }) {
   );
 }
 
-/** מצב תצוגה: אותו payload, תצוגה מלאה או תמצית להדפסה */
+/** Display mode: same payload, full view or a print summary */
 function normalizeDisplayMode(raw) {
   return raw === "summary" ? "summary" : "full";
 }
@@ -212,7 +212,7 @@ function enrichDetailedPayloadWithUiAuthority(detailed, baseReport) {
   };
 }
 
-/** query נקי לשיתוף/הדפסה — רק פרמטרים שמוכרים לדף המקיף */
+/** Clean query for sharing/printing — only parameters recognized by the detailed page */
 function buildDetailedReportQueryFromQueryObject(query, mode) {
   const next = normalizeDisplayMode(mode);
   const q = {};
@@ -426,8 +426,8 @@ export default function ParentReportDetailedPage() {
             if (!cancelled) {
               setParentReportError(
                 isTeacherSource
-                  ? "נדרשת התחברות כמורה - התחברו מחדש ונסו שוב."
-                  : "נדרשת התחברות כהורה - השתמשו בכניסת הורה ונסו שוב."
+                  ? "Teacher sign-in is required - please sign in again and try again."
+                  : "Parent sign-in is required - please use parent sign-in and try again."
               );
               setPayload(null);
               setBaseReport(null);
@@ -473,7 +473,7 @@ export default function ParentReportDetailedPage() {
           const out = runParentReportGenerationFromApiBody(body, uiPeriod);
           if (!out.ok || !out.detailed) {
             if (!cancelled) {
-              setParentReportError("לא ניתן לבנות את הדוח המקיף מהנתונים שהתקבלו.");
+              setParentReportError("The detailed report could not be built from the data received.");
               setPayload(null);
               setBaseReport(null);
               setLoading(false);
@@ -504,8 +504,8 @@ export default function ParentReportDetailedPage() {
               );
             setParentReportError(
               networkLike
-                ? "טעינת הדוח לקחה יותר מדי זמן - נסו טווח קצר יותר או רענון."
-                : "לא ניתן לטעון את הדוח המקיף כרגע."
+                ? "Loading the report took too long - try a shorter range or refresh."
+                : "The detailed report cannot be loaded right now."
             );
             setPayload(null);
             setBaseReport(null);
@@ -653,7 +653,7 @@ export default function ParentReportDetailedPage() {
     <div
       className={`no-pdf flex flex-wrap items-center justify-center gap-2 ${className}`}
       role="group"
-      aria-label="מצב תצוגת דוח"
+      aria-label="Report display mode"
     >
       <button
         type="button"
@@ -664,7 +664,7 @@ export default function ParentReportDetailedPage() {
             : isBright ? "bg-white border-sky-200 text-slate-700 hover:bg-sky-50 shadow-sm" : "bg-white/5 border-white/20 text-white/80 hover:bg-white/10"
         }`}
       >
-        דוח מלא
+        Full report
       </button>
       <button
         type="button"
@@ -675,7 +675,7 @@ export default function ParentReportDetailedPage() {
             : isBright ? "bg-white border-sky-200 text-slate-700 hover:bg-sky-50 shadow-sm" : "bg-white/5 border-white/20 text-white/80 hover:bg-white/10"
         }`}
       >
-        דוח מקוצר
+        Short report
       </button>
     </div>
   );
@@ -695,7 +695,7 @@ export default function ParentReportDetailedPage() {
             isBright={isBright}
             fullPage={reportImmersive}
             className="!min-h-0 h-full max-h-full overflow-hidden"
-            message="טוען דוח מקיף…"
+            message="Loading detailed report…"
           />
         </div>
         {reportImmersive ? (
@@ -711,7 +711,7 @@ export default function ParentReportDetailedPage() {
         <div
           className={getParentReportStateShellClass(isBright)}
           style={getParentReportStateShellStyle(isBright)}
-          dir="rtl"
+          dir="ltr"
         >
           <ParentReportThemeIcons className="mb-2" />
           <p className={getParentReportErrorTextClass(isBright)}>{parentReportError}</p>
@@ -722,13 +722,13 @@ export default function ParentReportDetailedPage() {
                   href={`/teacher/student/${parentStudentId}`}
                   className="rounded-lg px-4 py-2 bg-amber-500 text-black font-semibold"
                 >
-                  חזרה לדוח מורה
+                  Back to teacher report
                 </Link>
                 <Link
                   href="/teacher/dashboard"
                   className={getParentReportSecondaryLinkClass(isBright)}
                 >
-                  לוח בקרה
+                  Dashboard
                 </Link>
               </>
             ) : (
@@ -737,13 +737,13 @@ export default function ParentReportDetailedPage() {
                   href="/parent/login"
                   className="rounded-lg px-4 py-2 bg-amber-500 text-black font-semibold"
                 >
-                  כניסת הורה
+                  Parent sign-in
                 </Link>
                 <Link
                   href="/parent/dashboard"
                   className={getParentReportSecondaryLinkClass(isBright)}
                 >
-                  דשבורד הורים
+                  Parent dashboard
                 </Link>
               </>
             )}
@@ -759,7 +759,7 @@ export default function ParentReportDetailedPage() {
         <div
           className={getParentReportStateShellClass(isBright)}
           style={getParentReportStateShellStyle(isBright)}
-          dir="rtl"
+          dir="ltr"
           data-testid="parent-report-detailed-portal-gate"
         >
           <ParentReportThemeIcons className="mb-2" />
@@ -778,13 +778,13 @@ export default function ParentReportDetailedPage() {
               href="/parent/login"
               className="rounded-lg px-4 py-2 bg-amber-500 text-black font-semibold"
             >
-              כניסת הורה
+              Parent sign-in
             </Link>
             <Link
               href="/parent/dashboard"
               className={getParentReportSecondaryLinkClass(isBright)}
             >
-              דשבורד הורים
+              Parent dashboard
             </Link>
           </div>
         </div>
@@ -825,7 +825,7 @@ export default function ParentReportDetailedPage() {
     if (!Array.isArray(sp?.topicRecommendations) || sp.topicRecommendations.length < 1) return null;
     return (
       <div className="pr-detailed-topic-rec-block parent-surface-only">
-        <p className="pr-detailed-topic-rec-head">המלצות מפורטות לפי נושא</p>
+        <p className="pr-detailed-topic-rec-head">Detailed recommendations by topic</p>
         <div className="space-y-2.5">
           {(() => {
             const seenStepLabels = new Set();
@@ -887,7 +887,7 @@ export default function ParentReportDetailedPage() {
       layoutLockViewport={!reportImmersive && !(payload && periodHasPracticeEvidence)}
     >
       <Head>
-        <title>דוח מקיף לתקופה - Leo Kids</title>
+        <title>Detailed Report for the Period - Leo Kids</title>
         <style>{`
           .pr-detailed-page {
             --pr-h1: 1.35rem;
@@ -1725,7 +1725,7 @@ export default function ParentReportDetailedPage() {
 
           }
 
-          /* ===== מצב בהיר — זהה ל-Layout / דשבורד הורה ===== */
+          /* ===== Bright mode — matches Layout / parent dashboard ===== */
           ${PARENT_REPORT_SITE_BRIGHT_CSS}
         `}</style>
       </Head>
@@ -1735,7 +1735,7 @@ export default function ParentReportDetailedPage() {
             ? getParentReportDetailedShellClass(isBright, reportShellOpts)
             : getParentReportNoScrollDetailedShellClass(isBright, reportShellOpts)
         } ${payload ? `pr-detailed-layout-${displayMode}` : ""}`}
-        dir="rtl"
+        dir="ltr"
         style={
           payload && periodHasPracticeEvidence
             ? getParentReportDetailedContentStyle(isBright, reportShellOpts)
@@ -1756,7 +1756,7 @@ export default function ParentReportDetailedPage() {
           ) : null}
 
           {!payload ? (
-            <p className="text-center text-white/80">לא ניתן לטעון את הדוח המקיף.</p>
+            <p className="text-center text-white/80">The detailed report could not be loaded.</p>
           ) : !periodHasPracticeEvidence ? (
             <div className={`text-center max-w-md mx-auto ${isBright ? "text-slate-600" : "text-white/70"}`}>
               <div className="text-4xl mb-4">📊</div>
@@ -1772,19 +1772,19 @@ export default function ParentReportDetailedPage() {
                 {/* A */}
                 <header className="pr-detailed-doc-header mb-6 text-center border-b border-white/15 pb-4">
                   <h1 className="pr-detailed-doc-title text-2xl md:text-3xl font-black text-white mb-1 tracking-tight">
-                    דוח מקיף לתקופה
+                    Detailed Report for the Period
                   </h1>
                   <p className="pr-detailed-mode-hint text-xs font-semibold text-amber-200/90 mb-1">
-                    {displayMode === "summary" ? "דוח מקוצר" : "דוח מלא"}
+                    {displayMode === "summary" ? "Short report" : "Full report"}
                   </p>
                   <p className="pr-detailed-body-text text-white/85 text-sm md:text-base">
-                    דוח הורים מקיף - מבוסס על התאריכים הנבחרים
+                    Detailed parent report - based on the selected dates
                   </p>
                   <p className="pr-detailed-muted text-sm mt-2">
-                    טווח תאריכים: {pi.startDateLabelHe} – {pi.endDateLabelHe}
+                    Date range: {pi.startDateLabelHe} – {pi.endDateLabelHe}
                     <span className="text-white/40 mx-1">|</span>
-                    מצב תקופה:{" "}
-                    {pi.period === "custom" ? "תאריכים מותאמים" : pi.period === "month" ? "חודש" : "שבוע"}
+                    Period: {" "}
+                    {pi.period === "custom" ? "Custom dates" : pi.period === "month" ? "Month" : "Week"}
                   </p>
                 </header>
 
@@ -1794,22 +1794,22 @@ export default function ParentReportDetailedPage() {
                 />
 
                 {/* */}
-                <SectionCard title="מה עשינו בתקופה הזאת" compact={displayMode === "summary"}>
+                <SectionCard title="What we did during this period" compact={displayMode === "summary"}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">זמן כולל</div>
+                    <div className="text-xs text-white/55 mb-1">Total time</div>
                     <div className="text-xl font-bold text-blue-300">
-                      {payload.overallSnapshot.totalTime} דק׳
+                      {payload.overallSnapshot.totalTime} min
                     </div>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">שאלות</div>
+                    <div className="text-xs text-white/55 mb-1">Questions</div>
                     <div className="text-xl font-bold text-emerald-300">
                       {payload.overallSnapshot.totalQuestions}
                     </div>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">דיוק כללי</div>
+                    <div className="text-xs text-white/55 mb-1">Overall accuracy</div>
                     <div className="text-xl font-bold text-amber-300">
                       {payload.overallSnapshot.overallAccuracy}%
                     </div>
@@ -1826,15 +1826,15 @@ export default function ParentReportDetailedPage() {
                     </p>
                   );
                 })()}
-                <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">כיסוי לפי מקצוע</p>
+                <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">Coverage by subject</p>
                 <div className="overflow-x-auto rounded-lg border border-white/10">
-                  <table className="w-full text-sm text-right">
+                  <table className="w-full text-sm text-left">
                     <thead>
                       <tr className="border-b border-white/15 bg-white/5">
-                        <th className="p-2 font-semibold">מקצוע</th>
-                        <th className="p-2 font-semibold">שאלות</th>
-                        <th className="p-2 font-semibold">דיוק</th>
-                        <th className="p-2 font-semibold">זמן (דק׳)</th>
+                        <th className="p-2 font-semibold">Subject</th>
+                        <th className="p-2 font-semibold">Questions</th>
+                        <th className="p-2 font-semibold">Accuracy</th>
+                        <th className="p-2 font-semibold">Time (min)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1853,7 +1853,7 @@ export default function ParentReportDetailedPage() {
                   {payload.overallSnapshot.sparseSubjectsHe?.length ? (
                     <div>
                       <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">
-                        מקצועות עם מעט נתונים בתקופה
+                        Subjects with limited data this period
                       </p>
                       <Bullets
                         items={payload.overallSnapshot.sparseSubjectsHe}
@@ -1862,7 +1862,7 @@ export default function ParentReportDetailedPage() {
                     </div>
                   ) : null}
                   <div>
-                    <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">מקצועות בולטים</p>
+                    <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">Notable subjects</p>
                     <Bullets
                       items={payload.overallSnapshot.notableSubjectsHe}
                       volumeQuestionsTotal={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -1894,7 +1894,7 @@ export default function ParentReportDetailedPage() {
                 ) : null}
 
                 {displayMode === "full" && whatToNoticeItems.length > 0 ? (
-                  <SectionCard title="מה חשוב לדעת" compact={false}>
+                  <SectionCard title="What's important to know" compact={false}>
                     <Bullets
                       items={whatToNoticeItems}
                       volumeQuestionsTotal={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -1903,7 +1903,7 @@ export default function ParentReportDetailedPage() {
                 ) : null}
 
                 {displayMode === "full" && activeTeacherMessages.length > 0 ? (
-                  <SectionCard title="הודעות מהמורה" compact={false}>
+                  <SectionCard title="Messages from the teacher" compact={false}>
                     <ul className="space-y-3 m-0 p-0 list-none">
                       {activeTeacherMessages.map((msg) => (
                         <li
@@ -1930,7 +1930,7 @@ export default function ParentReportDetailedPage() {
                       id="pr-detailed-subjects-heading-summary"
                       className="pr-detailed-subjects-region-title pr-detailed-section-title text-base md:text-lg font-extrabold tracking-tight text-white m-0 mb-3 md:mb-4 pb-2 border-b border-white/10"
                     >
-                      מקצועות הלימוד
+                      Learning subjects
                     </h2>
                     <div className="space-y-6">
                       {visibleSubjectProfiles.map((sp) => (
@@ -1940,7 +1940,7 @@ export default function ParentReportDetailedPage() {
                               {sp.subjectLabelHe}
                             </h3>
                             <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-                              שאלות: {Number(sp?.subjectQuestionCount) || 0} | דיוק: {Number(sp?.subjectAccuracy) || 0}%
+                              Questions: {Number(sp?.subjectQuestionCount) || 0} | Accuracy: {Number(sp?.subjectAccuracy) || 0}%
                             </p>
                           </div>
                           <div className="pr-detailed-subject-inner space-y-4 pt-3">
@@ -1956,7 +1956,7 @@ export default function ParentReportDetailedPage() {
                         </div>
                       ))}
                       {!visibleSubjectProfiles.length ? (
-                        <p className="pr-detailed-muted text-sm">אין מקצועות עם מספיק נתונים להצגה בתקופה שנבחרה.</p>
+                        <p className="pr-detailed-muted text-sm">There are no subjects with enough data to display for the selected period.</p>
                       ) : null}
                     </div>
                   </section>
@@ -1969,7 +1969,7 @@ export default function ParentReportDetailedPage() {
                       id="pr-detailed-subjects-heading-full"
                       className="pr-detailed-subjects-region-title pr-detailed-section-title text-base md:text-lg font-extrabold tracking-tight text-white m-0 mb-3 md:mb-4 pb-2 border-b border-white/10"
                     >
-                      מקצועות הלימוד
+                      Learning subjects
                     </h2>
                     <div className="space-y-6">
                       {visibleSubjectProfiles.map((sp) => (
@@ -1979,7 +1979,7 @@ export default function ParentReportDetailedPage() {
                               {sp.subjectLabelHe}
                             </h3>
                             <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-                              שאלות: {Number(sp?.subjectQuestionCount) || 0} | דיוק: {Number(sp?.subjectAccuracy) || 0}%
+                              Questions: {Number(sp?.subjectQuestionCount) || 0} | Accuracy: {Number(sp?.subjectAccuracy) || 0}%
                             </p>
                           </div>
                           <div className="pr-detailed-subject-inner space-y-4 pt-3">
@@ -1995,14 +1995,14 @@ export default function ParentReportDetailedPage() {
                             {sp.evidenceExamples?.length ? (
                               <div className="pr-detailed-tier-examples">
                                 <p className="pr-detailed-body-text text-sm m-0 mb-2 text-white/[0.82]">
-                                  דוגמאות מהתרגול - לעיון ההורים, בלי צורך לעבור על הכול בבת אחת.
+                                  Practice examples - for parents to review, no need to go through everything at once.
                                 </p>
                                 <ul className="pr-detailed-muted text-xs space-y-1.5 m-0 list-none pr-0 leading-relaxed">
                                   {sp.evidenceExamples.map((e, idx) => (
                                     <li key={idx} className="pr-0 pr-detailed-bullet-li">
                                       {e.type === "mistake"
-                                        ? "שאלה שבה כדאי לעצור ולקרוא שוב את הניסוח"
-                                        : "שאלה שבה הכיוון היה נכון"}
+                                        ? "A question worth pausing on and re-reading the wording"
+                                        : "A question where the approach was right"}
                                       {e.exerciseText ? `: ${String(e.exerciseText).slice(0, 140)}` : ""}
                                     </li>
                                   ))}
@@ -2013,7 +2013,7 @@ export default function ParentReportDetailedPage() {
                         </div>
                       ))}
                       {!visibleSubjectProfiles.length ? (
-                        <p className="pr-detailed-muted text-sm">אין מקצועות עם מספיק נתונים להצגה בתקופה שנבחרה.</p>
+                        <p className="pr-detailed-muted text-sm">There are no subjects with enough data to display for the selected period.</p>
                       ) : null}
                     </div>
                   </section>
@@ -2021,7 +2021,7 @@ export default function ParentReportDetailedPage() {
 
                 <div className="internal-only hidden" aria-hidden="true">
                   {showCollapsedHomePlan ? (
-                    <SectionCard title="רעיונות קצרים לבית" compact className="border-0 rounded-none mb-0">
+                    <SectionCard title="Short ideas for home" compact className="border-0 rounded-none mb-0">
                       <PlanItemCards
                         items={homePlanItemsForUi}
                         windowTotalQuestions={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -2029,7 +2029,7 @@ export default function ParentReportDetailedPage() {
                     </SectionCard>
                   ) : null}
                   {showCollapsedNextGoals ? (
-                    <SectionCard title="כיוון לימים הבאים" compact className="border-0 rounded-none mb-0">
+                    <SectionCard title="Direction for the coming days" compact className="border-0 rounded-none mb-0">
                       <GoalItemCards
                         items={nextGoalsItemsForUi}
                         windowTotalQuestions={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -2047,20 +2047,20 @@ export default function ParentReportDetailedPage() {
                   onClick={() => printWithMode("full")}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold bg-sky-600/85 border border-sky-400/50 hover:bg-sky-600 text-white transition-all"
                 >
-                  🖨️ הדפס מלא
+                  🖨️ Print full
                 </button>
                 <button
                   type="button"
                   onClick={() => printWithMode("summary")}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold bg-amber-600/85 border border-amber-400/50 hover:bg-amber-600 text-white transition-all"
                 >
-                  🖨️ הדפס תקציר
+                  🖨️ Print summary
                 </button>
                 <Link
                   href="/learning"
                   className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-bold bg-violet-600/50 border border-violet-300/40 hover:bg-violet-600/65 text-white transition-all text-center"
                 >
-                  חזרה ללמידה
+                  Back to learning
                 </Link>
               </div>
             </>

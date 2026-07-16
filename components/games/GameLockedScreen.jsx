@@ -4,15 +4,15 @@ import Link from "next/link";
  * Full-page lock when direct URL is blocked (parent lock or admin disabled).
  */
 export default function GameLockedScreen({
-  title = "נעול על ידי ההורים",
+  title = "Locked by parents",
   adminDisabled = false,
   backHref = "/games",
-  backLabel = "חזרה למשחקים",
+  backLabel = "Back to games",
 }) {
-  const heading = adminDisabled ? "המשחק אינו זמין כרגע" : title;
+  const heading = adminDisabled ? "This game is unavailable right now" : title;
 
   return (
-    <div className="flex min-h-[50vh] flex-col items-center justify-center gap-4 px-4 text-center" dir="rtl">
+    <div className="flex min-h-[50vh] flex-col items-center justify-center gap-4 px-4 text-center" dir="ltr" lang="en">
       <div className="text-5xl" aria-hidden>
         {adminDisabled ? "🚫" : "🔒"}
       </div>

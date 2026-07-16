@@ -26,7 +26,7 @@ export default function MathScratchpadPanel({
     <div
       role="dialog"
       aria-modal="false"
-      aria-label="דף טיוטה"
+      aria-label="Scratch pad"
       data-testid="math-scratchpad-panel"
       className={`flex flex-col h-full w-full overflow-hidden shadow-2xl ${
         isBright
@@ -53,10 +53,10 @@ export default function MathScratchpadPanel({
             ? S.panelHeader
             : "shrink-0 flex items-center justify-between gap-2 px-3 py-2.5 border-b border-white/10 bg-slate-900/95"
         }
-        dir="rtl"
+        dir="ltr"
       >
         <h3 className={isBright ? S.panelTitle : "text-sm md:text-base font-semibold text-sky-100"}>
-          דף טיוטה
+          Scratch pad
         </h3>
         <button
           type="button"
@@ -68,7 +68,7 @@ export default function MathScratchpadPanel({
           }
           data-testid="math-scratchpad-close"
         >
-          סגור
+          Close
         </button>
       </div>
 
@@ -86,10 +86,10 @@ export default function MathScratchpadPanel({
                 ? S.panelLeadText
                 : "text-sm md:text-base text-center text-white/80 break-words"
             }
-            dir="rtl"
+            dir="ltr"
             data-testid="math-scratchpad-exercise-lead"
             style={{
-              direction: "rtl",
+              direction: "ltr",
               unicodeBidi: "plaintext",
               ...leadStyle,
             }}

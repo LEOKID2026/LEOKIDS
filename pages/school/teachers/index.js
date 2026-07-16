@@ -30,7 +30,7 @@ import {
   SCHOOL_TEACHERS_SUBTITLE,
   SCHOOL_TEACHERS_TITLE,
   SCHOOL_VIEW_DETAILS,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 
 export default function SchoolTeachersPage() {
   const router = useRouter();

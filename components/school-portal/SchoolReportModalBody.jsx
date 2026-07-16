@@ -74,7 +74,7 @@ export function SchoolReportLabelList({ items, variant = "default" }) {
               {item.status ? (
                 <span
                   className={`text-xs shrink-0 ${
-                    item.status === "אין עדיין נתונים" ? "text-white/45" : "text-amber-200 font-semibold"
+                    item.status === "No data yet" ? "text-white/45" : "text-amber-200 font-semibold"
                   }`}
                 >
                   {item.status}

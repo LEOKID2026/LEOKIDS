@@ -15,7 +15,7 @@ import {
   SC_STATUS_ACTIVE,
   SC_STATUS_BLOCKED,
   SC_STATUS_REVOKED,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import { SCHOOL_PORTAL_BTN_CURSOR } from "./SchoolPortalUi";
 
 const RELATION_LABEL = {
@@ -57,7 +57,7 @@ export default function SchoolStudentParentAccessRow({
   const canAct = !readOnly && (row.status === "active" || row.status === "blocked");
 
   return (
-    <div className="rounded-xl border border-white/15 bg-white/5 p-4 text-sm text-right space-y-3">
+    <div className="rounded-xl border border-white/15 bg-white/5 p-4 text-sm text-left space-y-3">
       <div className="flex flex-wrap justify-between gap-2">
         <span className="font-mono text-white/90 break-all">{row.loginUsername || "-"}</span>
         <span className="text-white/60 shrink-0">{statusLabel(row.status)}</span>

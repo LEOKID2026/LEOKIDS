@@ -432,12 +432,12 @@ export function resolveStudentQuestionDisplayParts(q) {
  * @param {Record<string, unknown>|null|undefined} q
  */
 const MATH_EQUATION_LABELS = {
-  g1: "חידת משוואה קצרה:",
-  g2: "השלימו את החסר במשוואה:",
-  g3: "מצאו את הנעלם:",
-  g4: "מצאו את הנעלם:",
-  g5: "מצאו את הנעלם:",
-  g6: "מצאו x:",
+  g1: "Short equation puzzle:",
+  g2: "Complete the missing part of the equation:",
+  g3: "Find the unknown:",
+  g4: "Find the unknown:",
+  g5: "Find the unknown:",
+  g6: "Find x:",
 };
 
 /**
@@ -472,7 +472,7 @@ export function attachMathEquationInstructionLabel(q, gradeKey) {
     return q;
   }
 
-  const proposed = MATH_EQUATION_LABELS[gradeKey] || "השלימו את המשוואה:";
+  const proposed = MATH_EQUATION_LABELS[gradeKey] || "Complete the equation:";
   if (shouldOmitInstructionLead(proposed, body)) return q;
 
   return {

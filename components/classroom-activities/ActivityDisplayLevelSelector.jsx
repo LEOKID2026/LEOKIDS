@@ -14,7 +14,7 @@ export default function ActivityDisplayLevelSelector({
   onChange,
   disabled = false,
   variant = "select",
-  label = "רמה",
+  label = "Level",
   className = "",
   inputClassName = "",
   name = "activity-display-level",

@@ -118,8 +118,8 @@ export function buildHybridCaseReviewRecord({
           : !!(d.v2TopId && d.aiTopId && d.v2TopId !== d.aiTopId),
       narrativeHe:
         typeof d.hasDisagreement === "boolean" && d.hasDisagreement
-          ? `התנגשות: V2 בחר ${d.v2TopId || "-"} לעומת Hybrid top ${d.aiTopId || "-"} (חומרה: ${d.severity || "-"})`
-          : "אין התנגשות בין V2 לבין היפותזה עליונה של Hybrid.",
+          ? `Conflict: V2 chose ${d.v2TopId || "-"} vs Hybrid top ${d.aiTopId || "-"} (severity: ${d.severity || "-"})`
+          : "No conflict between V2 and the Hybrid top hypothesis.",
     },
   };
 }

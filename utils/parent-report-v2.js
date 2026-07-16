@@ -126,7 +126,7 @@ import {
   formatParentReportModeHe,
   formatParentReportLevelHe,
   formatParentReportSubjectHe,
-} from "./parent-report-language/parent-report-display-labels.he.js";
+} from "./parent-report-language/parent-report-display-labels.js";
 import { resolvePracticeDisplayLevelKey } from "../lib/learning/parent-report-display-level.js";
 import { isScienceSubjectId } from "../lib/learning/display-level.js";
 import { withholdSummaryCopyHe } from "./parent-report-language/subject-withhold-summary-he.js";
@@ -211,7 +211,7 @@ function sessionInRange(session, startMs, endMs) {
   return t >= startMs && t <= endMs;
 }
 
-/** Latest session timestamp in a row's sessions (for תאריך אחרון). */
+/** Latest session timestamp in a row's sessions (for last date). */
 function latestSessionMs(sessions) {
   let max = null;
   if (!Array.isArray(sessions)) return max;
@@ -569,18 +569,18 @@ export function collapseTopicRowsToCanonicalTopicEntity(subjectId, rowsByKey) {
       grade: formatParentReportGradeLabel(gradeKey),
       levelKey: displayLevelKey || null,
       displayLevelKey: displayLevelKey || null,
-      level: displayLevelKey ? formatParentReportLevelHe(displayLevelKey, subjectId) : "לא זמין",
+      level: displayLevelKey ? formatParentReportLevelHe(displayLevelKey, subjectId) : "Not available",
       _sourceDifficultyBreakdown:
         mergedSourceBreakdown.easy + mergedSourceBreakdown.medium + mergedSourceBreakdown.hard > 0
           ? { ...mergedSourceBreakdown }
           : representative?._sourceDifficultyBreakdown || null,
       displayName: String(representative?.displayName || "").trim() || String(representative?.bucketKey || bucketKey),
       lastSessionMs: validActivityMs(Number(lastSessionMs)),
-      lastSessionAt: lastSessionAt || representative?.lastSessionAt || "לא זמין",
+      lastSessionAt: lastSessionAt || representative?.lastSessionAt || "Not available",
       latestActivityAt:
         validActivityMs(Number(lastSessionMs)) != null
           ? formatParentReportActivityIsrael(Number(lastSessionMs))
-          : "לא זמין",
+          : "Not available",
       latestActivityMs: validActivityMs(Number(lastSessionMs)),
       lastAnswerMs: validActivityMs(Number(lastAnswerMs)),
       lastAnswerAt: lastAnswerAt || representative?.lastAnswerAt || null,
@@ -609,7 +609,7 @@ export function collapseTopicRowsToCanonicalTopicEntityForTests(subjectId, rowsB
   return collapseTopicRowsToCanonicalTopicEntity(subjectId, rowsByKey);
 }
 
-/** כיתה/רמה לתצוגה: הערך מהסשן העדכני ביותר בטווח (לא שכיחות היסטורית). */
+/** Grade/level for display: value from the latest session in range (not historical mode). */
 function latestSessionFieldValue(sessions, field) {
   let bestT = -Infinity;
   let bestVal = null;
@@ -727,7 +727,7 @@ function buildRowSummary({
   const topicOpLabel = displayNameFn(bucketKey);
   const modeStr = modeLabel(modeKey);
   const lastMs = latestSessionMs(sessions);
-  const lastSessionAt = formatLastSessionAt(lastMs) || "לא זמין";
+  const lastSessionAt = formatLastSessionAt(lastMs) || "Not available";
   const lastAnswerMsFromSessions = (() => {
     let max = null;
     for (const s of sessions) {
@@ -777,13 +777,13 @@ function buildRowSummary({
     actualGradeKey: gradeEvidence.contentGradeLevel,
     gradeRelation: gradeEvidence.gradeRelation,
     gradeDelta: gradeEvidence.gradeDelta,
-    level: levelKey ? formatParentReportLevelHe(levelKey, subject) : "לא זמין",
+    level: levelKey ? formatParentReportLevelHe(levelKey, subject) : "Not available",
     levelKey,
     displayLevelKey,
     mode: modeStr,
     modeKey,
     ...(aggregateModeCounts ? { aggregateModeCounts } : {}),
-    // Topic/op only — mode appears in the dedicated מצב column in parent-report UI.
+    // Topic/op only — mode appears in the dedicated mode column in parent-report UI.
     displayName: topicOpLabel,
   };
   if (subject === "math") base.improvement = null;
@@ -868,7 +868,7 @@ function resolveRegisteredGradeKeyFromTrackingBuckets() {
 }
 
 /**
- * מתמטיקה: ספירת טעויות לפי מפתח שורה scoped (פעולה+מצב+כיתה+רמה); טעויות בלי scope מלא → מפתח `op__UNSCOPED__`.
+ * Math: count mistakes by scoped row key (operation+mode+grade+level); mistakes without full scope → key `op__UNSCOPED__`.
  * @param {unknown[]} mistakes
  * @param {number} startMs
  * @param {number} endMs
@@ -1001,10 +1001,10 @@ const V2_SUBJECT_ORDER = [
 ];
 
 const V2_SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
 };
 
 function safeNumber(n) {
@@ -1012,17 +1012,17 @@ function safeNumber(n) {
   return Number.isFinite(v) ? v : 0;
 }
 
-const EVIDENCE_STRENGTH_HE = { low: "מוגבלת", medium: "בינונית", strong: "טובה" };
+const EVIDENCE_STRENGTH_HE = { low: "limited", medium: "moderate", strong: "good" };
 
 const INSUFFICIENT_EVIDENCE_LINE_HE =
-  "מידע מועט בנושא - כדאי להמשיך בתרגול לפני שקובעים כיוון חד משמעי.";
+  "Little information on this topic — continue practicing before locking in a firm direction.";
 
 /** Strip internal engine identifiers from diagnostic trace lines shown to parents. */
 function sanitizeDecisionTraceDetailHeForParents(raw) {
   const s = String(raw || "").trim();
   if (!s) return "";
   if (/suppressAggressiveStep/i.test(s)) {
-    return "כמות המידע עוזרת להחליט כמה בזהירות להתקדם בצעד הבא.";
+    return "The amount of information helps decide how carefully to take the next step.";
   }
   return s;
 }
@@ -1033,7 +1033,7 @@ const POSITIVE_LEVEL_RANK = { excellent: 3, very_good: 2, good: 1, none: 0 };
 
 /** Positive-first evidence line: approved tier text (no diagnosis/taxonomy dependency). */
 function v2PositiveStrengthBodyHe() {
-  return "תרגול טוב ועקבי - נראית שליטה טובה בחומר.";
+  return "Good, consistent practice — solid command of the material.";
 }
 
 /**
@@ -1047,7 +1047,7 @@ function v2PositiveStrengthBodyFromUnitHe(u) {
   const acc = safeNumber(v0?.accuracy);
   if (q > 0) {
     return normalizeParentFacingHe(
-      `על סמך ${Math.round(q)} שאלות בנושא, נראית שליטה יציבה עם דיוק של ${Math.round(acc)}%.`
+      `Based on ${Math.round(q)} questions on this topic, mastery looks steady with ${Math.round(acc)}% accuracy.`
     );
   }
   return normalizeParentFacingHe(v2PositiveStrengthBodyHe());
@@ -1075,14 +1075,14 @@ function collectDiagnosticEvidenceLinesHe(unit, row) {
   const vol = ev.find((e) => e?.type === "volume")?.value;
   if (vol && safeNumber(vol.questions) > 0) {
     push(
-      `בתקופה שנבחרה: ${Math.round(safeNumber(vol.questions))} שאלות, דיוק כ-${Math.round(safeNumber(vol.accuracy))}%.`
+      `In the selected period: ${Math.round(safeNumber(vol.questions))} questions, about ${Math.round(safeNumber(vol.accuracy))}% accuracy.`
     );
   }
 
   const mist = ev.find((e) => e?.type === "mistake_events")?.value;
   if (mist && safeNumber(mist.wrong) > 0) {
     push(
-      `נרשמו ${Math.round(safeNumber(mist.wrong))} טעויות רלוונטיות (מתוך ${Math.round(safeNumber(mist.total))} ניסיונות).`
+      `${Math.round(safeNumber(mist.wrong))} relevant mistakes were logged (out of ${Math.round(safeNumber(mist.total))} attempts).`
     );
   }
 
@@ -1099,21 +1099,21 @@ function collectDiagnosticEvidenceLinesHe(unit, row) {
 
   const ec = r.contractsV1?.evidence;
   if (ec && typeof ec === "object" && EVIDENCE_STRENGTH_HE[ec.evidenceStrength]) {
-    push(`עד כמה הנתונים מבוססים כרגע: ${EVIDENCE_STRENGTH_HE[ec.evidenceStrength]}.`);
+    push(`How solid the data looks right now: ${EVIDENCE_STRENGTH_HE[ec.evidenceStrength]}.`);
   }
 
-  if (r._feedback === "improved") push("הדיוק השתפר לעומת התקופה הקודמת.");
-  else if (r._feedback === "worsened") push("הדיוק ירד לעומת התקופה הקודמת.");
-  else if (r._feedback === "no_change") push("הדיוק דומה לתקופה הקודמת.");
+  if (r._feedback === "improved") push("Accuracy improved versus the previous period.");
+  else if (r._feedback === "worsened") push("Accuracy declined versus the previous period.");
+  else if (r._feedback === "no_change") push("Accuracy is similar to the previous period.");
 
   if (r._timeAdjusted === "declining_block") {
-    push("בגלל מגמת ירידה בדיוק, ההמלצה כרגע זהירה יותר.");
+    push("Because of a downward accuracy trend, the recommendation is more cautious for now.");
   } else if (r._timeAdjusted === "improving_soften") {
-    push("בגלל שיפור במגמה, ההמלצה רוככה לתרגול מתאים יותר.");
+    push("Because of an improving trend, the recommendation was softened toward more suitable practice.");
   }
 
   if (Number.isFinite(Number(r._priorityScore)) && Number(r._priorityScore) >= 3) {
-    push("הנושא קיבל עדיפות גבוהה יחסית ברשימת הפעולות.");
+    push("This topic received relatively high priority on the action list.");
   }
 
   if (lines.length === 0) {
@@ -1149,8 +1149,8 @@ function diagnosticCardLabelHe(unit) {
   if (line) {
     return normalizeParentFacingHe(shortReportDiagnosticsParentVisibleHe(parentFacingDiagnosisSnippetHe(unit, line)));
   }
-  const name = String(unit?.displayName || unit?.bucketKey || "הנושא").trim();
-  return normalizeParentFacingHe(`נושא: ${name}`);
+  const name = String(unit?.displayName || unit?.bucketKey || "the topic").trim();
+  return normalizeParentFacingHe(`Topic: ${name}`);
 }
 
 function diagnosticCardConfidence(unit) {
@@ -1198,7 +1198,7 @@ function buildDiagnosticCardsForSubject(subjectId, subjectUnits, topicMap, regis
       id,
       subjectId,
       topicId: String(u.bucketKey || ""),
-      topicName: normalizeParentFacingHe(String(u.displayName || u.bucketKey || "").trim() || "הנושא"),
+      topicName: normalizeParentFacingHe(String(u.displayName || u.bucketKey || "").trim() || "the topic"),
       label: diagnosticCardLabel(u),
       labelHe: diagnosticCardLabelHe(u),
       confidence: diagnosticCardConfidence(u),
@@ -1295,7 +1295,7 @@ function appendThinOverviewHedgeToLine(line, unit) {
  */
 function overviewShortLineWithSubject(subjectId, unit, kind) {
   const subj = V2_SUBJECT_LABEL_HE[subjectId] || "";
-  const name = String(unit?.displayName || "").trim() || "נושא";
+  const name = String(unit?.displayName || "").trim() || "topic";
   const vol = unit?.evidenceTrace?.find((e) => e?.type === "volume")?.value;
   const pat = parentFacingPatternLabelHe(unit);
   let core = "";
@@ -1305,7 +1305,7 @@ function overviewShortLineWithSubject(subjectId, unit, kind) {
     } else if (unit?.diagnosis?.allowed && String(unit?.diagnosis?.lineHe || "").trim()) {
       core = `${name}: ${shortReportDiagnosticsParentVisibleHe(parentFacingDiagnosisSnippetHe(unit, unit.diagnosis.lineHe))}`;
     } else if (vol && safeNumber(vol.questions) > 0) {
-      core = `${name}: כ-${Math.round(safeNumber(vol.questions))} שאלות, דיוק ${Math.round(safeNumber(vol.accuracy))}%`;
+      core = `${name}: about ${Math.round(safeNumber(vol.questions))} questions, ${Math.round(safeNumber(vol.accuracy))}% accuracy`;
     } else {
       core = name;
     }
@@ -1689,8 +1689,8 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
   let summaryHe = (() => {
     if (p4Unit) {
       return normalizeParentFacingHe(
-        `בנושא ${String(p4Unit?.displayName || evidenceExampleTitleFallbackHe())}: ${String(
-          parentFacingPatternLabelHe(p4Unit) || "עדיף עוד קצת תרגול לפני שקובעים כיוון סופי."
+        `On ${String(p4Unit?.displayName || evidenceExampleTitleFallbackHe())}: ${String(
+          parentFacingPatternLabelHe(p4Unit) || "A little more practice helps before locking in a final direction."
         )}`
       );
     }
@@ -1698,7 +1698,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
       const leadLevel = cs(leadPositive)?.evidence?.positiveAuthorityLevel || "none";
       const isStrongLead = leadLevel === "excellent" || leadLevel === "very_good";
       const name = String(leadPositive.displayName || evidenceExampleTitleFallbackHe());
-      const base = `בנושא ${name}: ${tierStableStrengthHe()}`;
+      const base = `On ${name}: ${tierStableStrengthHe()}`;
       const pattern = parentFacingPatternLabelHe(topWeak);
       if (isStrongLead && additiveOnLead && pattern) {
         return normalizeParentFacingHe(`${base} · ${pattern}`);
@@ -1713,12 +1713,12 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
       const weakAcc = Number(topWeak?.evidenceTrace?.[0]?.value?.accuracy) || 0;
       if (weakQ >= 5 && weakAcc < 70) {
         return normalizeParentFacingHe(
-          `בנושא ${String(topWeak?.displayName || evidenceExampleTitleFallbackHe())}: כדאי לחזק את הנושא בתרגול קצר - לפי ${weakQ} שאלות ודיוק של ${Math.round(weakAcc)}%.`,
+          `On ${String(topWeak?.displayName || evidenceExampleTitleFallbackHe())}: short focused practice would help strengthen this topic — based on ${weakQ} questions at ${Math.round(weakAcc)}% accuracy.`,
         );
       }
       return normalizeParentFacingHe(
-        `בנושא ${String(topWeak?.displayName || evidenceExampleTitleFallbackHe())}: ${String(
-          parentFacingPatternLabelHe(topWeak) || "עדיף עוד קצת תרגול לפני שקובעים כיוון סופי."
+        `On ${String(topWeak?.displayName || evidenceExampleTitleFallbackHe())}: ${String(
+          parentFacingPatternLabelHe(topWeak) || "A little more practice helps before locking in a final direction."
         )}`
       );
     }
@@ -1745,16 +1745,16 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
           reportSubjectAccuracy,
           reportTotalQuestions,
         });
-        return normalizeParentFacingHe(`בנושא ${name}: ${inner}`);
+        return normalizeParentFacingHe(`On ${name}: ${inner}`);
       }
-      // Grammar fix (was: "עדיין אין מספיק מה שרואים בשורות כדי לסגור תמונה ברורה." — broken syntax).
-      return normalizeParentFacingHe(`בנושא ${name}: עדיין אין מספיק נתונים כדי לקבוע תמונה ברורה.`);
+      // Grammar fix (prior Hebrew wording had broken syntax).
+      return normalizeParentFacingHe(`On ${name}: there still is not enough data for a clear picture.`);
     }
     if (act === "probe_only") {
-      return normalizeParentFacingHe(`בנושא ${name}: עדיף עוד קצת תרגול לפני שקובעים כיוון סופי.`);
+      return normalizeParentFacingHe(`On ${name}: a little more practice helps before locking in a final direction.`);
     }
     return normalizeParentFacingHe(
-      `בנושא ${name}: עדיף עוד קצת תרגול לפני שקובעים כיוון סופי.`
+      `On ${name}: a little more practice helps before locking in a final direction.`
     );
   })();
 
@@ -2328,28 +2328,28 @@ export function generateParentReportV2(
       .filter(([_, d]) => d.needsPractice)
       .map(
         ([_, d]) =>
-          `מתמטיקה: ${d.displayName || getMathReportBucketDisplayName(d.bucketKey)}`
+          `Math: ${d.displayName || getMathReportBucketDisplayName(d.bucketKey)}`
       ),
     ...Object.entries(geometryTopics)
       .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `גאומטריה: ${d.displayName || getTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `Geometry: ${d.displayName || getTopicName(d.bucketKey)}`),
     ...Object.entries(englishTopics)
       .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `אנגלית: ${d.displayName || getEnglishTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `English: ${d.displayName || getEnglishTopicName(d.bucketKey)}`),
     ...Object.entries(scienceTopics)
       .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `מדעים: ${d.displayName || getScienceTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `Science: ${d.displayName || getScienceTopicName(d.bucketKey)}`),
     ...Object.entries(historyTopics)
       .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `היסטוריה: ${d.displayName || getHistoryTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `History: ${d.displayName || getHistoryTopicName(d.bucketKey)}`),
     ...Object.entries(hebrewTopics)
       .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `עברית: ${d.displayName || getHebrewTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `Hebrew: ${d.displayName || getHebrewTopicName(d.bucketKey)}`),
     ...Object.entries(moledetGeographyTopics)
       .filter(([_, d]) => d.needsPractice)
       .map(
         ([_, d]) =>
-          `מולדת וגאוגרפיה: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
+          `Homeland & geography: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
       ),
   ];
 
@@ -2358,28 +2358,28 @@ export function generateParentReportV2(
       .filter(([_, d]) => d.excellent && d.questions >= 10)
       .map(
         ([_, d]) =>
-          `מתמטיקה: ${d.displayName || getMathReportBucketDisplayName(d.bucketKey)}`
+          `Math: ${d.displayName || getMathReportBucketDisplayName(d.bucketKey)}`
       ),
     ...Object.entries(geometryTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `גאומטריה: ${d.displayName || getTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `Geometry: ${d.displayName || getTopicName(d.bucketKey)}`),
     ...Object.entries(englishTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `אנגלית: ${d.displayName || getEnglishTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `English: ${d.displayName || getEnglishTopicName(d.bucketKey)}`),
     ...Object.entries(scienceTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `מדעים: ${d.displayName || getScienceTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `Science: ${d.displayName || getScienceTopicName(d.bucketKey)}`),
     ...Object.entries(historyTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `היסטוריה: ${d.displayName || getHistoryTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `History: ${d.displayName || getHistoryTopicName(d.bucketKey)}`),
     ...Object.entries(hebrewTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `עברית: ${d.displayName || getHebrewTopicName(d.bucketKey)}`),
+      .map(([_, d]) => `Hebrew: ${d.displayName || getHebrewTopicName(d.bucketKey)}`),
     ...Object.entries(moledetGeographyTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
       .map(
         ([_, d]) =>
-          `מולדת וגאוגרפיה: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
+          `Homeland & geography: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
       ),
   ];
 
@@ -2608,7 +2608,7 @@ export function generateParentReportV2(
         case "moledet-geography":
           return String(row.displayName || getMoledetGeographyTopicName(bk));
         default:
-          return String(row.displayName || bk || "נושא");
+          return String(row.displayName || bk || "topic");
       }
     },
   );
@@ -2736,7 +2736,7 @@ export function generateParentReportV2(
     }
   }
   const mixedGradePracticeNoteHe = mixedGradePractice
-    ? "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד."
+    ? "Some practice was done in a different grade than the registered grade, so it is shown separately."
     : null;
 
   const weakSubjectIds = new Set();
@@ -2889,9 +2889,9 @@ export function generateParentReportV2(
     diagnosticPrimarySource: hasV2Units
       ? "diagnosticEngineV2"
       : "legacy_patternDiagnostics_fallback",
-    /** שלמות נתונים — לבדיקה; לא מוצג ב UI בשלב 1 */
+    /** Data completeness — for checks; not shown in UI in phase 1 */
     dataIntegrityReport,
-    /** מנוע אבחון V2 — פלט מובנה לפי stage1 blueprint (שכבות נפרדות, שערים, טקסונומיה) */
+    /** Diagnostic engine V2 — structured output per stage1 blueprint (separate layers, gates, taxonomy) */
     diagnosticEngineV2: sanitizeDiagnosticEngineV2ForParentFacing(diagnosticEngineV2),
     /** DE3 — internal subskill/error/probe layer; does not override DE2 parent copy. */
     diagnosticEngineV3,

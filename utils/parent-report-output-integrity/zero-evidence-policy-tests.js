@@ -14,10 +14,10 @@ import { stripZeroEvidenceFromPublicReportPayload } from "../../lib/parent-serve
 const ALL_SUBJECTS = ["math", "geometry", "english", "science"];
 
 const SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
 };
 
 /**

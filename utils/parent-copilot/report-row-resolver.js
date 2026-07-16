@@ -11,46 +11,46 @@ import { detectHistoryCopilotLock } from "./history-scope-he.js";
 
 /** @type {Record<string, string[]>} */
 export const SUBJECT_HE_ALIASES = Object.freeze({
-  math: ["חשבון", "מתמטיקה"],
-  geometry: ["גאומטריה", "גיאומטריה"],
-  english: ["אנגלית"],
-  science: ["מדעים", "מדע"],
-  history: ["היסטוריה"],
-  hebrew: ["עברית", "שפה"],
-  "moledet-geography": ["מולדת", "גאוגרפיה", "מולדת וגאוגרפיה"],
+  math: ["Math", "Math"],
+  geometry: ["Geometry", "Geometry"],
+  english: ["English"],
+  science: ["Science", "science"],
+  history: ["History"],
+  hebrew: ["Hebrew", "language"],
+  "moledet-geography": ["Homeland Studies", "Geography", "Homeland & Geography"],
 });
 
 /** Common parent/taxonomy topic phrases beyond exact displayName (report rows still win first). */
 /** @type {Record<string, string[]>} */
 export const TOPIC_HE_ALIASES = Object.freeze({
-  fractions: ["שברים", "חשבון שברים"],
-  multiplication: ["כפל", "לוח הכפל", "כפל בעשרות"],
-  division: ["חילוק", "חלוקה", "חילוק בעשרות"],
-  "word-problems": ["בעיות מילוליות", "בעיות מילולית", "תרגילי מילה"],
-  "reading-comprehension": ["הבנת הנקרא", "הבנה", "קריאה"],
-  grammar: ["דקדוק", "דקדוק עברית"],
-  vocabulary: ["אוצר מילים", "אוצר"],
-  what_is_history: ["מהי היסטוריה", "מקור ראשוני", "מקור משני", "ציר זמן"],
-  classical_greece: ["יוון הקלאסית", "אתונה", "ספרטה", "דמוקרטיה", "השוואה אתונה ספרטה"],
-  hellenism_jews: ["הלניזם", "אלכסנדר מוקדון", "אלכסנדר", "הלניזם והיהודים"],
-  hasmonaeans: ["החשמונאים", "חשמונאים", "אנטיוכוס", "מרד המקבים", "המקבים", "חנוכה"],
-  rome_jews: ["רומא והיהודים", "רומא", "הורדוס", "המרד הגדול", "חורבן בית המקדש", "חורבן", "יבנה", "בר כוכבא", "בבל"],
-  hist_sub_intro_sources_timeline: ["מקור ראשוני", "מקור משני", "ציר זמן", "מהי היסטוריה"],
-  hist_sub_athens_democracy: ["אתונה", "דמוקרטיה", "אתונה הדמוקרטית"],
-  hist_sub_sparta: ["ספרטה"],
-  hist_sub_athens_sparta_compare: ["השוואה אתונה ספרטה", "השוואה בין אתונה לספרטה"],
-  hist_sub_greek_culture_legacy: ["תרבות יוון", "מורשת יוון", "אולימפיאדה"],
-  hist_sub_alexander_hellenism: ["אלכסנדר מוקדון", "הלניזם"],
-  hist_sub_hellenism_meets_judaism: ["המפגש בין הלניזם ליהדות", "הלניזם והיהודים"],
-  hist_sub_antiochus_maccabees: ["גזרות אנטיוכוס", "מרד המקבים", "המקבים"],
-  hist_sub_hasmonaean_kingdom: ["ממלכת החשמונאים"],
-  hist_sub_rise_of_rome: ["עליית רומא", "רומא"],
-  hist_sub_roman_culture_law: ["תרבות רומית", "משפט רומי", "חוק רומי"],
-  hist_sub_hasmonaean_loss_roman_conquest: ["כיבוש רומי", "פומפיוס", "אובדן עצמאות"],
-  hist_sub_herod_building: ["הורדוס", "מפעלי בנייה", "הרודיון"],
-  hist_sub_judea_province: ["יהודה כפרובינציה", "פרובינציה"],
-  hist_sub_great_revolt_destruction: ["המרד הגדול", "חורבן בית המקדש", "מצדה"],
-  hist_sub_yavne_bar_kokhba_babylon: ["יבנה", "בר כוכבא", "מרכז בבל", "בבל"],
+  fractions: ["Fractions", "Calculus of fractions"],
+  multiplication: ["Multiplication", "Multiplication table", "Multiply by tens"],
+  division: ["Division", "division", "division by tens"],
+  "word-problems": ["Word problems", "Verbal problems", "Word exercises"],
+  "reading-comprehension": ["Reading comprehension", "understanding", "Reading"],
+  grammar: ["Grammar", "Hebrew grammar"],
+  vocabulary: ["Vocabulary", "curator"],
+  what_is_history: ["what is history", "primary source", "secondary source", "timeline"],
+  classical_greece: ["Classical Greece", "Athens", "Sparta", "democracy", "Compare Athens Sparta"],
+  hellenism_jews: ["Hellenism", "Alexander the Great", "Alexander", "Hellenism and the Jews"],
+  hasmonaeans: ["The Hasmoneans", "Hasmoneans", "Antiochus", "Rebellion of the Maccabees", "the maces", "inauguration"],
+  rome_jews: ["Rome and the Jews", "Rome", "Herod", "The Great Rebellion", "The destruction of the temple", "destruction", "will build", "Bar Kochba", "Babylon"],
+  hist_sub_intro_sources_timeline: ["primary source", "secondary source", "timeline", "what is history"],
+  hist_sub_athens_democracy: ["Athens", "democracy", "Democratic Athens"],
+  hist_sub_sparta: ["Sparta"],
+  hist_sub_athens_sparta_compare: ["Compare Athens Sparta", "Comparison between Athens and Sparta"],
+  hist_sub_greek_culture_legacy: ["Greek culture", "Greek heritage", "Olympics"],
+  hist_sub_alexander_hellenism: ["Alexander the Great", "Hellenism"],
+  hist_sub_hellenism_meets_judaism: ["The encounter between Hellenism and Judaism", "Hellenism and the Jews"],
+  hist_sub_antiochus_maccabees: ["Antiochus decrees", "Rebellion of the Maccabees", "the maces"],
+  hist_sub_hasmonaean_kingdom: ["Hasmonean kingdom"],
+  hist_sub_rise_of_rome: ["The rise of Rome", "Rome"],
+  hist_sub_roman_culture_law: ["Roman culture", "Roman law", "Roman law"],
+  hist_sub_hasmonaean_loss_roman_conquest: ["Roman occupation", "Pompey", "loss of independence"],
+  hist_sub_herod_building: ["Herod", "construction plants", "The rhodium"],
+  hist_sub_judea_province: ["Judah as a province", "province"],
+  hist_sub_great_revolt_destruction: ["The Great Rebellion", "The destruction of the temple", "Masada"],
+  hist_sub_yavne_bar_kokhba_babylon: ["will build", "Bar Kochba", "Center of Babylon", "Babylon"],
 });
 
 const TOPIC_INQUIRY_PREFIX_RE =
@@ -59,7 +59,7 @@ const TOPIC_INQUIRY_PREFIX_RE =
 const FOLDED_PHRASE_BOUNDARY = /[\s?!.,:;״׳]/u;
 
 /**
- * Avoid false positives (e.g. alias "שבר" inside "חשבון").
+ * Avoid false positives (e.g. alias "crisis" inside "Math").
  * @param {string} haystack
  * @param {string} phrase
  */
@@ -443,8 +443,8 @@ export function buildTopicClarificationQuestionHe(payload) {
     examples.push(label);
   }
   const ex =
-    examples.length > 0 ? examples.join(", ") : "חשבון, שברים, הבנת הנקרא או מדעים";
-  return `על איזה נושא תרצה לדעת? למשל ${ex}.`;
+    examples.length > 0 ? examples.join(", ") : "Math, fractions, reading comprehension or science";
+  return `What topic would you like to know about? For example ${ex}.`;
 }
 
 /**

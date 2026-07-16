@@ -228,7 +228,7 @@ export default function MathScratchpadSlot({
               }
               data-testid="math-scratchpad-open"
             >
-              דף טיוטה
+              Scratch pad
             </button>
           </div>
         ) : null}

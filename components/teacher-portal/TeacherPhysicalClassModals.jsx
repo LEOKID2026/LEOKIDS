@@ -4,7 +4,7 @@ import {
   activityStatusLabelHe,
 } from "../../lib/classroom-activities/classroom-activities-labels.client.js";
 import { sanitizeActivityTitleHe } from "../../lib/platform-ui/hebrew-display-labels.js";
-import { subjectLabelHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { subjectLabelHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 
 function Overlay({ onClose, children, title }) {
   useEffect(() => {
@@ -32,7 +32,7 @@ function Overlay({ onClose, children, title }) {
           <div className="flex items-center justify-between gap-2 mb-4">
             <h3 className="text-lg font-semibold">{title}</h3>
             <button type="button" onClick={onClose} className="text-white/60 text-sm">
-              סגור
+              Close
             </button>
           </div>
           {children}
@@ -77,7 +77,7 @@ export function TeacherPhysicalClassActivitiesModal({ accessToken, classCard, on
     const res = await teacherAuthFetch(accessToken, `/api/teacher/activities?${qs}`);
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
-      setError(body?.error?.message || "שגיאה בטעינת פעילויות");
+      setError(body?.error?.message || "Error loading activities");
       setPhase("error");
       return;
     }
@@ -90,9 +90,9 @@ export function TeacherPhysicalClassActivitiesModal({ accessToken, classCard, on
   }, [load]);
 
   return (
-    <Overlay title={`פעילויות - ${classCard.name}`} onClose={onClose}>
+    <Overlay title={`Activities - ${classCard.name}`} onClose={onClose}>
       {phase === "loading" ? (
-        <p className="text-sm text-white/60">טוען פעילויות…</p>
+        <p className="text-sm text-white/60">Loading activities…</p>
       ) : null}
       {phase === "error" ? (
         <p className="text-sm text-red-300" role="alert">
@@ -100,7 +100,7 @@ export function TeacherPhysicalClassActivitiesModal({ accessToken, classCard, on
         </p>
       ) : null}
       {phase === "ready" && activities.length === 0 ? (
-        <p className="text-sm text-white/60">אין פעילויות כיתה להצגה.</p>
+        <p className="text-sm text-white/60">No class activities to show.</p>
       ) : null}
       {phase === "ready" && activities.length > 0 ? (
         <ul className="space-y-2">

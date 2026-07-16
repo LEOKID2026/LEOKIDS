@@ -7,13 +7,13 @@
 import { mapCanonicalIntentToPackGroup } from "./parent-coaching-packs.js";
 
 const TEXT = {
-  action_today: "אפשר לפרק יחד לצעד קטן היום בבית סביב אותו נושא?",
-  action_week: "אפשר לשרטט יחד תוכנית קצרה לשבוע הקרוב סביב הנושא הזה?",
-  avoid_now: "רוצים לסמן יחד מה כדאי להימנע ממנו בשבוע הקרוב?",
-  advance_or_hold: "רוצים לבדוק יחד מתי כדאי לקדם ומתי לעצור באותו נושא?",
-  explain_to_child: "רוצים ניסוח קצר להסבר לילד בלי לחץ?",
-  ask_teacher: "רוצים ניסוח לשאלה ממוקדת למורה לפי מה שמופיע בדוח?",
-  uncertainty_boundary: "רוצים לפרק מה עדיין לא ברור מהנתונים בדוח?",
+  action_today: "Is it possible to take a small step together today at home around the same topic?",
+  action_week: "Can we draw together a short plan for the coming week around this topic?",
+  avoid_now: "Want to mark together what you should avoid in the coming week?",
+  advance_or_hold: "Do you want to check together when you should promote and when to stop on the same topic?",
+  explain_to_child: "Want a short wording to explain to a child without pressure?",
+  ask_teacher: "Do you want a wording for a targeted question for the teacher according to what appears in the report?",
+  uncertainty_boundary: "Want to break down what is still not clear from the data in the report?",
 };
 
 /** @type {Record<string, Partial<Record<string, number>>>} */
@@ -85,12 +85,12 @@ function sameScopeStreak(priorScopes, scopeKey) {
 function followUpTextForSurface(family, intent, scopeLabelHe, scopeType = "") {
   const base = TEXT[family] || TEXT.uncertainty_boundary;
   if (String(scopeType || "").trim() === "executive") return base;
-  const internalLabels = new Set(["מבט על התקופה", "הדוח בתקופה הנבחרה", "executive"]);
+  const internalLabels = new Set(["Period overview", "the report for the selected period", "executive"]);
   const lab = String(scopeLabelHe || "").trim();
   if (!lab || lab.length < 2 || internalLabels.has(lab)) return base;
   const short = lab.length > 22 ? `${lab.slice(0, 20)}…` : lab;
   if (family === "action_today" || family === "action_week") {
-    return base.replace(/\?$/, ` - סביב ${short}?`);
+    return base.replace(/\?$/, `- around ${short}?`);
   }
   if (family === "uncertainty_boundary" || family === "advance_or_hold") {
     return base.replace(/\?$/, ` (${short})?`);

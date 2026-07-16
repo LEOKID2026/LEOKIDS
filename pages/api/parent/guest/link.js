@@ -12,8 +12,8 @@ import {
 } from "../../../../lib/guest/guest-link-rate-limit.server.js";
 import { clientIpFromRequest } from "../../../../lib/security/in-memory-rate-limit.js";
 
-const GENERIC_LINK_ERROR = "לא ניתן לקשר את מספר האורח. בדקו את המספר ונסו שוב.";
-const RATE_LIMIT_ERROR = "בוצעו יותר מדי ניסיונות. נסו שוב מאוחר יותר.";
+const GENERIC_LINK_ERROR = "Unable to link this guest number. Check the number and try again.";
+const RATE_LIMIT_ERROR = "Too many attempts. Please try again later.";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   if (!targetStudentId) {
     return res
       .status(400)
-      .json({ ok: false, error: "מזהה ילד/ה חסר", code: "missing_student_id" });
+      .json({ ok: false, error: "Child ID is missing", code: "missing_student_id" });
   }
 
   try {
@@ -114,6 +114,6 @@ export default async function handler(req, res) {
       cardsTransferred: result.cardsTransferred,
     });
   } catch (_e) {
-    return res.status(500).json({ ok: false, error: "אירעה שגיאה זמנית. נסו שוב מאוחר יותר." });
+    return res.status(500).json({ ok: false, error: "A temporary error occurred. Please try again later." });
   }
 }

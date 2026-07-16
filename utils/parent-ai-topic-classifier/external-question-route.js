@@ -9,7 +9,6 @@ import {
   matchLooseTopicFromUtterance,
   looksLikeExternalPastedQuestion,
   isPracticeSuggestionRequest,
-  PHASE_E_GENERAL_DISCLAIMER_LINE,
 } from "./classifier.js";
 
 const INTERPRETATION_SCOPES = new Set([
@@ -90,7 +89,7 @@ export function tryBuildPhaseEClarificationBypassDraft(input) {
   const scope = {
     scopeType: /** @type {const} */ ("executive"),
     scopeId: "executive",
-    scopeLabel: "הדוח בתקופה הנבחרה",
+    scopeLabel: "The report for the selected period",
     canonicalIntent: "explain_report",
     interpretationScope,
     scopeClass: interpretationScope,
@@ -105,26 +104,27 @@ export function tryBuildPhaseEClarificationBypassDraft(input) {
   let meaning;
 
   if (practice) {
-    observation = `${PHASE_E_GENERAL_DISCLAIMER_LINE}.`;
+    observation =
+      "General practice - not from the official question bank and does not change the diagnosis.";
     meaning =
-      "רעיון תרגול כללי (לא שאלה מהמאגר הרשמי): קצרו משימה לדקה אחת על אותו רעיון, ובקשו מהילד להסביר במילים מה עשה לפני שממשיכים. זה לא מעדכן המלצות או אבחון במערכת.";
+      "General practice idea (not an official bank question): shorten a task to one minute on the same idea, and ask the child to explain in words what they did before continuing. This does not update recommendations or diagnosis in the system.";
     appendPhaseEPracticeReviewRecord({
       route: phaseERoute,
       utterancePreview: utteranceStr.slice(0, 240),
     });
   } else if (phaseERoute === "catalog_topic_without_anchor" && loose) {
     observation =
-      `בשלב זה - עדיין מוקדם לקבוע לגבי ילדכם מתוך האבחון הרשמי. הכותרת «${loose.displayName}» מוכרת במבנה הנושאים, אך אין בדוח ניסוח מעוגן לילד בנושא הזה - ההמשך הוא הסבר כללי בלבד ולא ניתוח רשמי של המערכת.`;
+      `At this stage - it is still too early to conclude about your child from the official diagnosis. The heading «${loose.displayName}» is recognized in the topic structure, but the report has no child-anchored wording on this topic - what follows is a general explanation only, not an official system analysis.`;
     meaning =
-      "לא ניתן להציג זאת כחולשה או חוזק של הילד במערכת. כשיופיע ניסוח מעוגן בדוח, אפשר יחזור לשאלה מתוך הדוח.";
+      "This cannot be shown as a weakness or strength of the child in the system. When anchored wording appears in the report, you can return to a question from the report.";
   } else {
     const externalHint = looksLikeExternalPastedQuestion(utteranceStr)
-      ? " אם מדובר בשאלה שהודבקה מבחוץ, היא מחוץ למסגרת השאלות הרשמיות של הדוח."
+      ? " If this is a question pasted from outside, it is outside the report's official question framework."
       : "";
     observation =
-      `בשלב זה - עדיין מוקדם לקבוע כל דבר על ילדכם מתוך האבחון הרשמי של המערכת לגבי הנושא ששאלתם. זהו הסבר חינוכי כללי בלבד; הוא אינו נשען על מאגר השאלות הרשמי ואינו מהווה אבחון.${externalHint}`;
+      `At this stage - it is still too early to conclude anything about your child from the system's official diagnosis on the topic you asked about. This is a general educational explanation only; it is not based on the official question bank and is not a diagnosis.${externalHint}`;
     meaning =
-      "לא ניתן להציג את זה כחולשה או חוזק של הילד במערכת; זה לא מחליף המלצות רשמיות מהאבחון.";
+      "This cannot be shown as a weakness or strength of the child in the system; it does not replace official recommendations from the diagnosis.";
   }
 
   const answerBlocks = [
@@ -186,9 +186,10 @@ export function tryBuildPhaseEResolvedShortcutDraft(input) {
 
   if (practice) {
     phaseERoute = "practice_suggestion_general";
-    observation = `${PHASE_E_GENERAL_DISCLAIMER_LINE}.`;
+    observation =
+      "General practice - not from the official question bank and does not change the diagnosis.";
     meaning =
-      "רעיון תרגול כללי (לא שאלה מהמאגר הרשמי): קצרו משימה לדקה אחת על אותו רעיון, ובקשו מהילד להסביר במילים מה עשה לפני שממשיכים. זה לא מעדכן המלצות או אבחון במערכת.";
+      "General practice idea (not an official bank question): shorten a task to one minute on the same idea, and ask the child to explain in words what they did before continuing. This does not update recommendations or diagnosis in the system.";
     appendPhaseEPracticeReviewRecord({
       route: phaseERoute,
       utterancePreview: utteranceStr.slice(0, 240),
@@ -198,12 +199,12 @@ export function tryBuildPhaseEResolvedShortcutDraft(input) {
     phaseERoute = "resolved_external_paste";
     const topicHint =
       st === "topic"
-        ? ` לגבי הנושא «${String(truthPacket.surfaceFacts?.displayName || truthPacket.scopeLabel || "").trim()}»,`
+        ? ` Regarding the topic «${String(truthPacket.surfaceFacts?.displayName || truthPacket.scopeLabel || "").trim()}»,`
         : "";
     observation =
-      `בשלב זה - עדיין מוקדם לקבוע לגבי ילדכם מתוך האבחון הרשמי של המערכת.${topicHint} השאלה נראית כמו תוכן שהודבק מבחוץ - ההמשך הוא הסבר חינוכי כללי בלבד; הוא אינו נשען על מאגר השאלות הרשמי ואינו מהווה אבחון.`;
+      `At this stage - it is still too early to conclude about your child from the system's official diagnosis.${topicHint} The question looks like content pasted from outside - what follows is a general educational explanation only; it is not based on the official question bank and is not a diagnosis.`;
     meaning =
-      "לא ניתן להציג זאת כחולשה או חוזק של הילד במערכת, ולא להסיק מהדוח על התוצאה של השאלה שהודבקה.";
+      "This cannot be shown as a weakness or strength of the child in the system, and you should not infer from the report about the outcome of the pasted question.";
   }
 
   const answerBlocks = [
@@ -240,14 +241,17 @@ export function augmentPhaseEThinEvidenceDraft(draft, truthPacket) {
   if (!thin) return draft;
 
   const joined = blocks.map((b) => String(b.textHe || "")).join(" ");
-  if (/אין בדוח מספיק ראיות על ילדכם/.test(joined)) return draft;
+  if (
+    /אין בדוח מספיק ראיות על ילדכם|not enough evidence in the report about your child/i.test(joined)
+  )
+    return draft;
 
-  const topicLabel = String(truthPacket.surfaceFacts?.displayName || truthPacket.scopeLabel || "הנושא").trim();
+  const topicLabel = String(truthPacket.surfaceFacts?.displayName || truthPacket.scopeLabel || "the topic").trim();
   const hedges = Array.isArray(truthPacket.allowedClaimEnvelope?.requiredHedges)
     ? truthPacket.allowedClaimEnvelope.requiredHedges.map((h) => String(h || "").trim()).filter(Boolean)
     : [];
-  const hedgeLead = hedges.length ? `${hedges[0]} - ` : "בשלב זה - ";
-  const caution = `${hedgeLead}אין בדוח מספיק ראיות על ילדכם בנושא «${topicLabel}» בטווח התאריכים שנבחר; מה שמוצג למטה נשען על מה שכבר מופיע בדוח, לא על כיוון רשמי מחוץ לו.`;
+  const hedgeLead = hedges.length ? `${hedges[0]} - ` : "At this stage - ";
+  const caution = `${hedgeLead}there is not enough evidence in the report about your child on «${topicLabel}» in the selected date range; what is shown below relies on what already appears in the report, not on an official direction outside it.`;
 
   return {
     ...draft,

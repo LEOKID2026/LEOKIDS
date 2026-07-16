@@ -1,7 +1,7 @@
 import { ReportModalFrame } from "../reporting/ReportModalFrame.jsx";
 import { SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi";
 import SchoolTeacherDetailContent from "./SchoolTeacherDetailContent.jsx";
-import { SCHOOL_TEACHER_CARD_ACTION } from "../../lib/school-portal/school-ui.he.js";
+import { SCHOOL_TEACHER_CARD_ACTION } from "../../lib/school-portal/school-ui.js";
 
 /**
  * Full teacher detail inside Report Hub flow (no page navigation).
@@ -23,7 +23,7 @@ export default function SchoolTeacherDetailModal({
       title={SCHOOL_TEACHER_CARD_ACTION}
       subtitle={subtitle}
       onClose={onClose}
-      closeLabel="סגירה"
+      closeLabel="Close"
       zIndex={zIndex}
       scrollAreaClassName={SCHOOL_PORTAL_MODAL_SCROLL_CLASS}
       testId="school-teacher-detail-modal"

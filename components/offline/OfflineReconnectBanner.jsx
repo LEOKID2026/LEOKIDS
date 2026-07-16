@@ -19,11 +19,11 @@ export default function OfflineReconnectBanner() {
     return (
       <div
         className="rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-900"
-        dir="rtl"
+        dir="ltr"
       >
-        חזר חיבור -{" "}
+        Connection restored -{" "}
         <Link href="/student/login" className="font-bold text-emerald-800 underline underline-offset-2">
-          חזרה לאפליקציה
+          Back to the app
         </Link>
       </div>
     );

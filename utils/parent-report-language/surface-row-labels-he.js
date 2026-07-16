@@ -3,8 +3,8 @@
  */
 
 export const SUBJECT_PHASE3_ROW_LABEL_HE = {
-  /** Was: שורות (מערכת) */
-  topicPatternCounts: "תמונת מצב בשאלות",
-  /** Was: אזהרות מערכת */
-  majorRisks: "נקודות לתשומת לב",
+  /** Was: system-facing "rows" label */
+  topicPatternCounts: "Question snapshot",
+  /** Was: system-facing "warnings" label */
+  majorRisks: "Points to note",
 };

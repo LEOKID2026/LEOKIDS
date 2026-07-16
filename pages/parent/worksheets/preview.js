@@ -15,7 +15,7 @@ import {
   saveWorksheetPreviewSession,
 } from "../../../lib/worksheets/worksheet-preview-session.client.js";
 import { buildWorksheetSessionFingerprint } from "../../../lib/worksheets/worksheet-fingerprint.js";
-import { WORKSHEET_UI_HE } from "../../../lib/worksheets/worksheet-ui.he.js";
+import { WORKSHEET_UI_EN } from "../../../lib/worksheets/worksheet-ui.js";
 
 export default function ParentWorksheetPreviewRoute() {
   const router = useRouter();
@@ -87,13 +87,13 @@ export default function ParentWorksheetPreviewRoute() {
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setAnswerKeyError(data.message || WORKSHEET_UI_HE.answerKeyStale);
+        setAnswerKeyError(data.message || WORKSHEET_UI_EN.answerKeyStale);
         return;
       }
       saveWorksheetAnswerKeySession(data.answerKeyPayload);
       router.push("/parent/worksheets/preview/answers");
     } catch {
-      setAnswerKeyError(WORKSHEET_UI_HE.errorGeneric);
+      setAnswerKeyError(WORKSHEET_UI_EN.errorGeneric);
     } finally {
       setAnswerKeyLoading(false);
     }
@@ -133,7 +133,7 @@ export default function ParentWorksheetPreviewRoute() {
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setRefreshError(data.message || WORKSHEET_UI_HE.refreshQuestionsError);
+        setRefreshError(data.message || WORKSHEET_UI_EN.refreshQuestionsError);
         return;
       }
 
@@ -148,7 +148,7 @@ export default function ParentWorksheetPreviewRoute() {
       saveWorksheetPreviewSession(next);
       setPreviewData(next);
     } catch {
-      setRefreshError(WORKSHEET_UI_HE.refreshQuestionsError);
+      setRefreshError(WORKSHEET_UI_EN.refreshQuestionsError);
     } finally {
       setRefreshLoading(false);
     }
@@ -157,8 +157,8 @@ export default function ParentWorksheetPreviewRoute() {
   if (!previewData) {
     return (
       <Layout {...layoutProps}>
-        <div dir="rtl" className="p-4 text-center text-slate-500">
-          {WORKSHEET_UI_HE.loading}
+        <div dir="ltr" className="p-4 text-center text-slate-500">
+          {WORKSHEET_UI_EN.loading}
         </div>
       </Layout>
     );
@@ -170,12 +170,12 @@ export default function ParentWorksheetPreviewRoute() {
     <Layout {...layoutProps}>
       <div className="worksheet-preview-container px-4 py-4 md:px-6 md:py-6">
         {refreshError ? (
-          <p dir="rtl" className="mb-3 text-center text-sm text-red-600">
+          <p dir="ltr" className="mb-3 text-center text-sm text-red-600">
             {refreshError}
           </p>
         ) : null}
         {answerKeyError ? (
-          <p dir="rtl" className="mb-3 text-center text-sm text-red-600">
+          <p dir="ltr" className="mb-3 text-center text-sm text-red-600">
             {answerKeyError}
           </p>
         ) : null}

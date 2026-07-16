@@ -13,7 +13,7 @@ async function handler(req, res) {
   if (!studentId) {
     return res.status(400).json({
       ok: false,
-      error: "חסר מזהה ילד/ה",
+      error: "Child ID is missing",
       errorCode: "student_id_required",
     });
   }
@@ -44,7 +44,7 @@ async function handler(req, res) {
     console.error("[delete-student] unexpected error", error);
     return res.status(500).json({
       ok: false,
-      error: "שגיאת שרת - נסו שוב",
+      error: "Server error — please try again",
       errorCode: "internal_error",
     });
   }

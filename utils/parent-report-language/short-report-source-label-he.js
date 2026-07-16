@@ -5,10 +5,10 @@
 export function diagnosticPrimarySourceParentLabelHe(source) {
   const s = String(source || "").trim();
   if (s === "diagnosticEngineV2") {
-    return "תובנות לפי השאלות שתורגלו בתקופה שנבחרה.";
+    return "Insights based on the questions practiced in the selected period.";
   }
   if (s === "legacy_patternDiagnostics_fallback") {
-    return "חלק מהמידע מגיע מגרסה קודמת של הדוח - כדאי להתייחס אליו בזהירות.";
+    return "Some of this information comes from an earlier version of the report - it's worth treating it with caution.";
   }
-  return "עדיין אין מספיק נתונים לתובנה ברורה - כדאי להמשיך לתרגל ולבדוק שוב.";
+  return "There still isn't enough data for a clear insight - it's worth continuing to practice and checking again.";
 }

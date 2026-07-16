@@ -106,7 +106,7 @@ export default function LearningBookAudioPlayer({
       setStatus("playing");
     } catch {
       setStatus("error");
-      setErrorMsg("לא ניתן לטעון את השמע כרגע");
+      setErrorMsg("Unable to load audio right now");
     }
   }, [audioMeta?.playbackSrc, status, stopAndResetAudio]);
 
@@ -116,7 +116,7 @@ export default function LearningBookAudioPlayer({
 
   const handleAudioError = useCallback(() => {
     setStatus("error");
-    setErrorMsg("לא ניתן לטעון את השמע כרגע");
+    setErrorMsg("Unable to load audio right now");
   }, []);
 
   if (!enabled || !audioMeta) return null;
@@ -126,15 +126,15 @@ export default function LearningBookAudioPlayer({
   const hasError = status === "error";
 
   const buttonLabel = isLoading
-    ? "טוען שמע..."
+    ? "Loading audio..."
     : isPlaying
-      ? "עצור"
+      ? "Stop"
       : status === "paused"
-        ? "המשך"
-        : "האזנה לעמוד";
+        ? "Resume"
+        : "Listen to this page";
 
   return (
-    <div className="mb-4 flex flex-col items-center gap-2" dir="rtl">
+    <div className="mb-4 flex flex-col items-center gap-2" dir="ltr">
       <audio
         key={`${pageId}:${sectionNumber}:${audioMeta.playbackSrc}`}
         ref={audioRef}
@@ -161,7 +161,7 @@ export default function LearningBookAudioPlayer({
         </p>
       ) : null}
       <span className="sr-only" aria-live="polite">
-        {isLoading ? "טוען שמע..." : isPlaying ? "משמיעים" : ""}
+        {isLoading ? "Loading audio..." : isPlaying ? "Playing" : ""}
       </span>
     </div>
   );

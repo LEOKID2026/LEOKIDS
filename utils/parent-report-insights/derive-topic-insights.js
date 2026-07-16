@@ -53,13 +53,13 @@ function classifyTopicFluency(t, isStrength, isFocusArea) {
 function topicEvidenceHe(t) {
   const totalQ = Math.max(0, Math.round(safeNumber(t?.answers)));
   const acc = Math.max(0, Math.min(100, safeNumber(t?.accuracy)));
-  return `${totalQ} שאלות, דיוק ${Math.round(acc)}%`;
+  return `${totalQ} questions, ${Math.round(acc)}% accuracy`;
 }
 
 function subjectEvidenceHe(s) {
   const totalQ = Math.max(0, Math.round(safeNumber(s?.answers)));
   const acc = Math.max(0, Math.min(100, safeNumber(s?.accuracy)));
-  return `${totalQ} שאלות, דיוק ${Math.round(acc)}%`;
+  return `${totalQ} questions, ${Math.round(acc)}% accuracy`;
 }
 
 function buildDuplicateCanonicalKeysFromAggregate(subjectsObj) {

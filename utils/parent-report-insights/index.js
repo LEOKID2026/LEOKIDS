@@ -111,7 +111,7 @@ function buildThinDataWarnings(overall, subjectInsights) {
   if (overall.dataConfidence === "thin") {
     out.push({
       scope: "overall",
-      displayNameHe: "סך הכול",
+      displayNameHe: "Overall",
       questionCount: overall.totalQuestions,
     });
   }
@@ -130,17 +130,17 @@ function buildThinDataWarnings(overall, subjectInsights) {
 function buildLimitations(overall, subjectInsights) {
   const out = [];
   if (overall.totalQuestions === 0) {
-    out.push("אין מספיק נתונים בתקופה הזאת ליצירת תובנה משמעותית.");
+    out.push("There isn't enough data in this period to form a meaningful insight.");
     return out;
   }
   if (overall.dataConfidence === "thin") {
-    out.push("נתוני התרגול בתקופה דלים - הניסוח נשמר זהיר ומאוזן.");
+    out.push("Practice data for this period is thin - wording stays careful and balanced.");
   } else if (overall.dataConfidence === "low") {
-    out.push("הנתונים בתקופה עדיין מצומצמים - כדאי לחזור ולעקוב לאחר תרגול נוסף.");
+    out.push("Data for this period is still limited - it's worth checking again after more practice.");
   }
   const thinSubjects = subjectInsights.filter((s) => s.dataConfidence === "thin");
   if (thinSubjects.length > 0 && thinSubjects.length <= 3) {
-    out.push(`במקצועות הבאים יש מעט תרגול בתקופה: ${thinSubjects.map((s) => s.displayNameHe).join(", ")}.`);
+    out.push(`These subjects have little practice this period: ${thinSubjects.map((s) => s.displayNameHe).join(", ")}.`);
   }
   return out;
 }
@@ -148,22 +148,22 @@ function buildLimitations(overall, subjectInsights) {
 function buildDeterministicRecommendationsHe(strengths, focusAreas, mistakePatterns, overall) {
   const out = [];
   if (focusAreas.length > 0) {
-    out.push(`מומלץ לתרגל בעדינות בבית את התחומים שכדאי לחזק: ${focusAreas.map((f) => f.displayNameHe).join(", ")}.`);
+    out.push(`It's recommended to gently practice at home the areas that need strengthening: ${focusAreas.map((f) => f.displayNameHe).join(", ")}.`);
   }
   if (strengths.length > 0) {
-    out.push(`כדאי להמשיך לעודד את התחומים שבהם התרגול נראה יציב: ${strengths.map((s) => s.displayNameHe).join(", ")}.`);
+    out.push(`Keep encouraging the areas where practice looks stable: ${strengths.map((s) => s.displayNameHe).join(", ")}.`);
   }
   if (mistakePatterns.length > 0) {
     const top = mistakePatterns[0];
     if (top && top.topicDisplayHe) {
-      out.push(`שמנו לב שטעויות חוזרות מופיעות בנושא ${top.topicDisplayHe} - שווה לשחזר אותו ביחד.`);
+      out.push(`We noticed repeating mistakes in ${top.topicDisplayHe} - it's worth revisiting that topic together.`);
     }
   }
   if (overall.totalQuestions > 0 && overall.totalQuestions < 12) {
-    out.push("מומלץ להמשיך לאסוף נתונים לאורך זמן לפני הסקת מסקנות חזקות.");
+    out.push("It's recommended to keep collecting data over time before drawing firm conclusions.");
   }
   if (out.length === 0) {
-    out.push("לא נמצאו המלצות אוטומטיות חזקות בתקופה זו - כדאי להמשיך עם שגרת תרגול רגילה.");
+    out.push("No strong automatic recommendations were found for this period - keep a regular practice routine.");
   }
   return out;
 }
@@ -326,7 +326,7 @@ export function buildParentReportInsightPacket(args, options = {}) {
     limitations,
     mixedGradePractice,
     mixedGradePracticeNoteHe: mixedGradePractice
-      ? "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד."
+      ? "Some practice was done at a different grade than the registered grade, so it is shown separately."
       : null,
     gradePracticeBreakdown,
     sourceMetadata: {

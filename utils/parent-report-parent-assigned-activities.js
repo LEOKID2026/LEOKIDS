@@ -8,7 +8,7 @@ import {
   formatParentReportStatusHe,
   formatParentReportSubjectHe,
   isTechnicalParentActivityTitleHe,
-} from "./parent-report-language/parent-report-display-labels.he.js";
+} from "./parent-report-language/parent-report-display-labels.js";
 import {
   getEnglishTopicName,
   getHebrewTopicName,
@@ -51,13 +51,13 @@ function topicLabelHe(subjectId, topicKey) {
       /* fall through */
     }
   }
-  return key || "נושא";
+  return key || "Topic";
 }
 
 function formatActivityDateHe(isoOrMs) {
-  if (isoOrMs == null || isoOrMs === "") return "לא זמין";
+  if (isoOrMs == null || isoOrMs === "") return "Not available";
   const ms = typeof isoOrMs === "number" ? isoOrMs : Date.parse(String(isoOrMs));
-  if (!Number.isFinite(ms) || ms <= 0) return "לא זמין";
+  if (!Number.isFinite(ms) || ms <= 0) return "Not available";
   return formatParentReportActivityIsrael(ms);
 }
 
@@ -71,22 +71,22 @@ export function buildParentActivityDisplayLabelHe(p) {
   const subjectLabel = formatParentReportSubjectHe(subjectId);
   const gradeLabel = formatParentReportGradeHe(p?.contentGradeKey ?? p?.gradeKey);
   const titleRaw = String(p?.titleRaw || "").trim();
-  const topicSuffix = topic && topic !== "נושא" ? topic : "";
+  const topicSuffix = topic && topic !== "Topic" && topic !== "נושא" ? topic : "";
   const subjectGradeFallback =
-    subjectLabel && gradeLabel && gradeLabel !== "לא זמין"
-      ? `${subjectLabel} כיתה ${gradeLabel}`
+    subjectLabel && gradeLabel && gradeLabel !== "Not available" && gradeLabel !== "לא זמין"
+      ? `${subjectLabel} grade ${gradeLabel}`
       : subjectLabel || "";
 
   if (!isTechnicalParentActivityTitleHe(titleRaw)) {
-    const base = titleRaw || "פעילות אישית מהורה";
+    const base = titleRaw || "Parent-assigned activity";
     if (topicSuffix) return `${base} - ${topicSuffix}`;
     if (subjectGradeFallback) return `${base} - ${subjectGradeFallback}`;
     return base;
   }
 
-  if (topicSuffix) return `פעילות אישית מהורה - ${topicSuffix}`;
-  if (subjectGradeFallback) return `פעילות אישית מהורה - ${subjectGradeFallback}`;
-  return "פעילות אישית מהורה";
+  if (topicSuffix) return `Parent-assigned activity - ${topicSuffix}`;
+  if (subjectGradeFallback) return `Parent-assigned activity - ${subjectGradeFallback}`;
+  return "Parent-assigned activity";
 }
 
 /**

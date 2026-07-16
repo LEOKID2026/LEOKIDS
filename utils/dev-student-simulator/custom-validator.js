@@ -90,7 +90,7 @@ export function validateCustomSpecBeforeBuild(spec) {
   if (!Number.isFinite(rs) || rs < 0 || rs > 100) errors.push("repeatedMistakeStrengthPct must be 0–100");
 
   if (units.length < 1) {
-    errors.push("בחר לפחות נושא אחד לעדכון.");
+    errors.push("Select at least one topic to update.");
   }
 
   for (const sid of SUBJECTS) {
@@ -115,7 +115,7 @@ export function validateCustomSpecBeforeBuild(spec) {
       const trow = spec.topicSettings?.[sid]?.[topic];
       if (!trow) continue;
       if (trow.enabled && Math.floor(Number(trow.targetQuestions) || 0) <= 0) {
-        errors.push(`נושא מופעל בלי שאלות: ${sid} / ${topic}`);
+        errors.push(`Enabled topic with no questions: ${sid} / ${topic}`);
       }
       if (!trow.enabled) continue;
       const acc = Number(trow.targetAccuracyPct);
@@ -151,10 +151,10 @@ export function validateCustomSpecBeforeBuild(spec) {
   if (units.length >= 1) {
     const tq = Number(spec.totalQuestions);
     const sc = Number(spec.sessionsCount);
-    if (!Number.isFinite(tq) || tq < 1) errors.push("totalQuestions must be >= 1 (מחושב מנושאים)");
-    if (!Number.isFinite(sc) || sc < 1) errors.push("sessionsCount must be >= 1 (מחושב מנושאים)");
+    if (!Number.isFinite(tq) || tq < 1) errors.push("totalQuestions must be >= 1 (computed from topics)");
+    if (!Number.isFinite(sc) || sc < 1) errors.push("sessionsCount must be >= 1 (computed from topics)");
     if (Number.isFinite(sc) && Number.isFinite(tq) && tq < sc) {
-      errors.push("totalQuestions must be >= sessionsCount (לפחות שאלה אחת לכל סשן מחושב)");
+      errors.push("totalQuestions must be >= sessionsCount (at least one question per computed session)");
     }
   }
 

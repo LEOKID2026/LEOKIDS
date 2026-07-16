@@ -406,7 +406,7 @@ export function buildStrictParentReportAIInputFromParentReportV2(report) {
       typeof report?.gradePracticeMeta?.mixedGradePracticeNoteHe === "string"
         ? report.gradePracticeMeta.mixedGradePracticeNoteHe
         : mixedGradePractice
-        ? "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד."
+        ? "Some practice was done in a different grade than the registered grade, so it is shown separately."
         : null,
     plannerNextAction,
     plannerTargetDifficulty,
@@ -422,7 +422,7 @@ export function buildStrictParentReportAIInputFromParentReportV2(report) {
 }
 
 /**
- * Builds the new structured AI narrative ("סיכום חכם להורה") from a V2 parent-report snapshot.
+ * Builds the new structured AI narrative ("smart parent summary") from a V2 parent-report snapshot.
  * Internal helper used by both short and detailed enrichment paths. Always returns either a valid
  * structured object (AI or deterministic fallback) or `null` when the snapshot is unusable.
  *
@@ -456,7 +456,7 @@ async function buildStructuredNarrativeFromV2Snapshot(v2Snapshot, options = {}) 
  * but its presence in the context object guarantees both Parent AI surfaces share one grounding source.
  *
  * Insight Packet phase: in addition to the legacy `text` (single Hebrew paragraph), this function
- * also builds the structured narrative ("סיכום חכם להורה") via the Insight Packet pipeline. The
+ * also builds the structured narrative ("smart parent summary") via the Insight Packet pipeline. The
  * structured object is attached as `parentAiExplanation.structured`. The renderer prefers the
  * structured object when present; the legacy `text` remains as a back-compat field so any external
  * consumer that still reads it keeps working.
@@ -548,7 +548,7 @@ export function getDeterministicDetailedParentAiExplanation(detailedPayload) {
 
 /**
  * Same deterministic baseline as detailed, for the short parent report object (`generateParentReportV2`).
- * Ensures first paint / PDF / Playwright sees תובנה להורה before async enrich resolves.
+ * Ensures first paint / PDF / Playwright sees parent insight before async enrich resolves.
  *
  * @param {Record<string, unknown>|null|undefined} report
  * @returns {{ ok: true; text: string; source: "deterministic_fallback"; structured?: object | null; structuredSource?: "deterministic_fallback" | null } | null}

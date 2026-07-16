@@ -5,39 +5,39 @@
 
 /** Full generic cautious line for subject scope (parent-facing subject cards / detailed.json). */
 export const GENERIC_CAUTIOUS_SUBJECT_LINE_HE =
-  "יש נתוני תרגול מסוימים, אך מה שנראה מהתרגולים עדיין זהיר - כדאי להמשיך לעקוב אחרי עוד תרגול.";
+  "There's some practice data, but what the practice shows is still tentative - it's worth continuing to watch more practice.";
 
-/** Topic-level thin cautious line (short report / בנושא X prefix). */
+/** Topic-level thin cautious line (short report / "in topic X" prefix). */
 export const GENERIC_CAUTIOUS_TOPIC_LINE_HE =
-  "יש נתוני תרגול, אך מה שנראה מהתרגולים עדיין זהיר - כדאי להמשיך לעקוב אחרי עוד תרגול.";
+  "There's practice data, but what the practice shows is still tentative - it's worth continuing to watch more practice.";
 
 const SUBJECT_COPY = {
   richStable:
-    "יש נפח תרגול משמעותי במקצוע, ואפשר לראות תמונה עקבית יותר לפי הדיוק והנושאים שנבדקו.",
+    "There's a significant volume of practice in this subject, and a more consistent picture can be seen based on the accuracy and topics examined.",
   richNoStrength:
-    "יש נפח תרגול משמעותי במקצוע; לא נראה כרגע קושי חד שחוזר על עצמו - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.",
+    "There's a significant volume of practice in this subject; no sharp recurring difficulty is visible right now - it's worth continuing focused practice and watching for what repeats.",
   unstable:
-    "במקצוע רואים תשובות פחות עקביות בין נושאים - כדאי לחזור על בסיס קצר ולבדוק יציבות לפני כיוון ברור.",
+    "In this subject, answers look less consistent across topics - it's worth revisiting a short foundation and checking stability before a clear direction.",
   medium:
-    "יש נפח תרגול מסוים; כדי לצמצם טעות בפרשנות - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.",
+    "There's a certain volume of practice; to reduce misinterpretation - it's worth continuing focused practice and watching for what repeats.",
   multiWeak:
-    "רואים כמה כיוונים שונים בתרגול במקצוע - כדאי להתמקד בהדרגה במה שחוזר כקשה.",
+    "A few different directions appear in this subject's practice - it's worth gradually focusing on what repeats as difficult.",
   weakPattern: (p) =>
-    `במקצוע הזה מופיע קושי יחסי (${p}), ולכן כדאי להתמקד בתרגול קצר וממוקד.`,
+    `In this subject a relative difficulty appears (${p}), so it's worth focusing on short, targeted practice.`,
 };
 
 const TOPIC_COPY = {
   richStable:
-    "יש נפח תרגול משמעותי, ואפשר לראות תמונה עקבית יותר לפי הדיוק ומה שנבדק בפועל.",
+    "There's a significant volume of practice, and a more consistent picture can be seen based on the accuracy and what was actually examined.",
   richNoStrength:
-    "יש נפח תרגול משמעותי; לא נראה כרגע קושי חד שחוזר על עצמו - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.",
+    "There's a significant volume of practice; no sharp recurring difficulty is visible right now - it's worth continuing focused practice and watching for what repeats.",
   unstable:
-    "רואים תשובות פחות עקביות בין חלקי הנושא - כדאי לייצב בסיס קצר לפני כיוון ברור.",
+    "Answers look less consistent across parts of this topic - it's worth stabilizing a short foundation before a clear direction.",
   medium:
-    "יש נפח תרגול; כדי לצמצם טעות בפרשנות - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.",
+    "There's a volume of practice; to reduce misinterpretation - it's worth continuing focused practice and watching for what repeats.",
   multiWeak:
-    "רואים כמה כיוונים שונים בתרגול - כדאי להתמקד בהדרגה במה שחוזר כקשה.",
-  weakPattern: (p) => `מופיע קושי יחסי (${p}) - כדאי להתמקד בתרגול קצר וממוקד.`,
+    "A few different directions appear in the practice - it's worth gradually focusing on what repeats as difficult.",
+  weakPattern: (p) => `A relative difficulty appears (${p}) - it's worth focusing on short, targeted practice.`,
 };
 
 /**
@@ -76,8 +76,8 @@ export function withholdSummaryCopyHe(mode, ctx) {
   const C = m === "topic" ? TOPIC_COPY : SUBJECT_COPY;
   const subjectLabelHe = String(ctx.subjectLabelHe || "").trim();
   const mediumSubjectAware = subjectLabelHe
-    ? `יש נפח תרגול ב${subjectLabelHe}; כדי לצמצם טעות בפרשנות - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.`
-    : "יש נפח תרגול מסוים; כדי לצמצם טעות בפרשנות - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.";
+    ? `There's a volume of practice in ${subjectLabelHe}; to reduce misinterpretation - it's worth continuing focused practice and watching for what repeats.`
+    : "There's a certain volume of practice; to reduce misinterpretation - it's worth continuing focused practice and watching for what repeats.";
   const accMaybe =
     ctx.reportSubjectAccuracy == null ? null : Number(ctx.reportSubjectAccuracy);
   const reportAcc =
@@ -110,12 +110,12 @@ export function withholdSummaryCopyHe(mode, ctx) {
   ) {
     if (m === "subject" && subjectLabelHe) {
       if (weakLabel) {
-        return `ב${subjectLabelHe} נראית נקודת חיזוק ברורה בנושא ${weakLabel} - כדאי לחזק אותו בתרגול קצר וממוקד.`;
+        return `In ${subjectLabelHe} a clear reinforcement point is visible in ${weakLabel} - it's worth reinforcing it with short, targeted practice.`;
       }
-      return `ב${subjectLabelHe} נראית נקודת חיזוק ברורה לפי התרגול - כדאי להתמקד בנושאים שדורשים חיזוק.`;
+      return `In ${subjectLabelHe} a clear reinforcement point is visible based on the practice - it's worth focusing on topics that need reinforcement.`;
     }
     if (m === "topic" && weakLabel) {
-      return `נראית נקודת חיזוק ברורה בנושא ${weakLabel} - כדאי לחזק אותו בתרגול קצר וממוקד.`;
+      return `A clear reinforcement point is visible in ${weakLabel} - it's worth reinforcing it with short, targeted practice.`;
     }
   }
 
@@ -125,7 +125,7 @@ export function withholdSummaryCopyHe(mode, ctx) {
       if (reportAcc != null && reportAcc > 0 && reportAcc <= 55 && volume >= 15) {
         if (m === "subject") {
           return subjectLabelHe
-            ? `ב${subjectLabelHe} נראה קושי יחסי לפי הדיוק בסיכום התרגול - כדאי להתמקד בתרגול קצר וממוקד.`
+            ? `In ${subjectLabelHe} a relative difficulty appears based on the accuracy in the practice summary - it's worth focusing on short, targeted practice.`
             : mediumSubjectAware;
         }
         return TOPIC_COPY.medium;
@@ -148,10 +148,10 @@ export function withholdSummaryCopyHe(mode, ctx) {
 
   if (reportAcc != null && reportAcc > 0 && reportAcc <= 55 && volume >= 25) {
     if (m === "subject" && subjectLabelHe) {
-      return `ב${subjectLabelHe} נראה קושי יחסי לפי הדיוק בסיכום התרגול - כדאי להתמקד בתרגול קצר וממוקד.`;
+      return `In ${subjectLabelHe} a relative difficulty appears based on the accuracy in the practice summary - it's worth focusing on short, targeted practice.`;
     }
     if (m === "topic") {
-      return `נראה קושי יחסי לפי הדיוק בסיכום התרגול - כדאי להתמקד בתרגול קצר וממוקד.`;
+      return `A relative difficulty appears based on the accuracy in the practice summary - it's worth focusing on short, targeted practice.`;
     }
   }
 
@@ -160,7 +160,7 @@ export function withholdSummaryCopyHe(mode, ctx) {
   }
   if (volume >= 90 && su === 0) {
     if (m === "subject" && subjectLabelHe) {
-      return `יש נפח תרגול משמעותי ב${subjectLabelHe}; לא נראה כרגע קושי חד שחוזר על עצמו - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.`;
+      return `There's a significant volume of practice in ${subjectLabelHe}; no sharp recurring difficulty is visible right now - it's worth continuing focused practice and watching for what repeats.`;
     }
     return C.richNoStrength;
   }
@@ -173,9 +173,9 @@ export function withholdSummaryCopyHe(mode, ctx) {
     if (reportAcc != null && reportAcc <= 55) {
       if (m === "subject" && subjectLabelHe) {
         if (weakLabel) {
-          return `ב${subjectLabelHe} נראית נקודת חיזוק ברורה בנושא ${weakLabel} - כדאי לחזק אותו בתרגול קצר וממוקד.`;
+          return `In ${subjectLabelHe} a clear reinforcement point is visible in ${weakLabel} - it's worth reinforcing it with short, targeted practice.`;
         }
-        return `ב${subjectLabelHe} נראית נקודת חיזוק ברורה לפי התרגול - כדאי להתמקד בנושאים שדורשים חיזוק.`;
+        return `In ${subjectLabelHe} a clear reinforcement point is visible based on the practice - it's worth focusing on topics that need reinforcement.`;
       }
     }
     if (globalVolumeSupportsRichCopy) {
@@ -184,9 +184,8 @@ export function withholdSummaryCopyHe(mode, ctx) {
     return thinLine;
   }
 
-  // Grammar fix (was: "אין מספיק מה שרואים בשורות בשלב זה." — broken Hebrew syntax).
-  // Meaning preserved exactly: not enough evidence yet to draw a conclusion at this stage.
-  return "עדיין אין מספיק נתונים בשלב זה כדי לקבוע תמונה ברורה.";
+  // Not enough evidence yet to draw a conclusion at this stage.
+  return "There still isn't enough data at this stage to determine a clear picture.";
 }
 
 /**
@@ -215,25 +214,25 @@ export function withholdConfidenceSummaryFallbackHe(ctx) {
       : null;
 
   if (volume > 0 && volume < 35) {
-    return "יש בסיס תרגול במקצוע, אך העדות עדיין מצומצמת - כדאי להמשיך לאסוף תרגול ולעקוב.";
+    return "There's a practice foundation in this subject, but the evidence is still limited - it's worth continuing to gather practice and watch.";
   }
   if (reportAcc != null && reportAcc > 0 && reportAcc <= 55 && volume >= 25) {
-    return "לפי סיכום התרגול במקצוע נראה דיוק נמוך יחסית - כדאי להתמקד בתרגול קצר וממוקד ואז לבדוק שוב.";
+    return "Based on the practice summary in this subject, accuracy looks relatively low - it's worth focusing on short, targeted practice and then checking again.";
   }
   if (volume >= 90 && su >= 1) {
-    return "יש נפח תרגול משמעותי במקצוע - אפשר לראות כיוון ראשוני עקבי יותר לפי מה שנבדק.";
+    return "There's a significant volume of practice in this subject - a more consistent initial direction can be seen based on what was examined.";
   }
   if (volume >= 40 && dc >= 2) {
-    return "במקצוע רואים כמה דפוסים במקביל - כדאי להתמקד במה שחוזר כקשה, בתנועה קטנה וקבועה.";
+    return "In this subject, a few patterns appear in parallel - it's worth focusing on what repeats as difficult, with small, steady steps.";
   }
   if (volume >= 40) {
     return subjectLabelHe
-      ? `יש נפח תרגול ב${subjectLabelHe} - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.`
-      : "יש נפח תרגול מסוים - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי מה שחוזר.";
+      ? `There's a volume of practice in ${subjectLabelHe} - it's worth continuing focused practice and watching for what repeats.`
+      : "There's a certain volume of practice - it's worth continuing focused practice and watching for what repeats.";
   }
   return subjectLabelHe
-    ? `יש בסיס תרגול ב${subjectLabelHe} - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי התפתחות.`
-    : "יש בסיס תרגול מסוים - כדאי להמשיך בתרגול ממוקד ולעקוב אחרי התפתחות.";
+    ? `There's a practice foundation in ${subjectLabelHe} - it's worth continuing focused practice and watching how it develops.`
+    : "There's a certain practice foundation - it's worth continuing focused practice and watching how it develops.";
 }
 
 /**
@@ -242,7 +241,7 @@ export function withholdConfidenceSummaryFallbackHe(ctx) {
  */
 export function isGenericCautiousPracticeLineHe(text) {
   const t = String(text || "");
-  const hasPractice = /יש\s+נתוני\s+תרגול/.test(t);
-  const hasCautious = /מה\s+שנראה\s+מהתרגולים\s+עדיין\s+זהיר/.test(t);
+  const hasPractice = /יש\s+נתוני\s+תרגול|there'?s?\s+(?:some\s+)?practice\s+data/i.test(t);
+  const hasCautious = /מה\s+שנראה\s+מהתרגולים\s+עדיין\s+זהיר|what\s+the\s+practice\s+shows\s+is\s+still\s+tentative/i.test(t);
   return hasPractice && hasCautious;
 }

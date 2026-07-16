@@ -10,7 +10,7 @@ import {
   REG_SCHOOL_SUBMIT,
   REG_SCHOOL_SUCCESS,
   REG_TEACHER_ALREADY_PENDING,
-} from "../../lib/auth/auth-registration.he.js";
+} from "../../lib/auth/auth-registration.js";
 
 const INPUT_CLASS =
   "mt-0.5 w-full rounded bg-black/40 border border-white/20 px-3 py-1.5 text-sm";
@@ -56,16 +56,16 @@ export default function SchoolRegistrationRequestForm() {
         setSuccess(REG_SCHOOL_SUCCESS);
         return;
       }
-      setError("לא ניתן לשלוח את הבקשה כעת. נסו שנית מאוחר יותר.");
+      setError("Unable to submit the request right now. Please try again later.");
     } catch {
-      setError("שגיאת רשת. נסו שנית.");
+      setError("Network error. Please try again.");
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <div data-testid="school-registration-request-form" dir="rtl" lang="he">
+    <div data-testid="school-registration-request-form" dir="ltr" lang="en">
       {success ? (
         <p className="text-emerald-300 text-sm" role="status">
           {success}
@@ -165,7 +165,7 @@ export default function SchoolRegistrationRequestForm() {
             className="w-full md:w-auto rounded bg-amber-500 text-black font-semibold px-6 py-1.5 md:py-2 disabled:opacity-60"
             data-testid="school-reg-submit"
           >
-            {busy ? "שולח…" : REG_SCHOOL_SUBMIT}
+            {busy ? "Sending…" : REG_SCHOOL_SUBMIT}
           </button>
         </form>
       )}

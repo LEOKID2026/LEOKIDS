@@ -84,11 +84,11 @@ export function validateExplanationOutput({ text, requireUncertainty, evidenceRe
 
     const readiness = canonicalState.assessment?.readiness;
     const confidence = canonicalState.assessment?.confidenceLevel;
-    if (readiness === "insufficient" && t.includes("מוכן להתקדם")) {
+    if (readiness === "insufficient" && (t.includes("מוכן להתקדם") || t.includes("ready to advance"))) {
       readinessConfidenceCoherencePass = false;
       reasonCodes.push("readiness_coherence:ready_text_for_insufficient");
     }
-    if ((confidence === "low" || confidence === "early_signal_only") && t.includes("מידת הוודאות גבוהה")) {
+    if ((confidence === "low" || confidence === "early_signal_only") && (t.includes("מידת הוודאות גבוהה") || t.includes("Certainty is relatively high"))) {
       readinessConfidenceCoherencePass = false;
       reasonCodes.push("confidence_coherence:high_text_for_low_confidence");
     }

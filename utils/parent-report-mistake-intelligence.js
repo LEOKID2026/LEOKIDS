@@ -41,7 +41,7 @@ export function buildMistakeIntelligencePhase9(ctx) {
   const taxonomyMatch = ctx?.taxonomyMatch && typeof ctx.taxonomyMatch === "object" ? ctx.taxonomyMatch : null;
   const rf = ctx?.riskFlags && typeof ctx.riskFlags === "object" ? ctx.riskFlags : {};
   const td = ctx?.trendDer && typeof ctx.trendDer === "object" ? ctx.trendDer : /** @type {Record<string, unknown>} */ ({});
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "the topic").trim();
   const taxonomyPatternFamily = mapTaxonomyToMistakePatternFamily(taxonomyMatch, acc, wr);
 
   /** @type {string[]} */
@@ -60,13 +60,13 @@ export function buildMistakeIntelligencePhase9(ctx) {
 
   if (mC === 0 && q < 10 && wr < 0.08) {
     dominantMistakePattern = "insufficient_mistake_evidence";
-    evidence.push("מעט מדי אירועי טעות מזוהים בטווח לעומת נפח התרגול.");
+    evidence.push("Too few identified mistake events in the range relative to practice volume.");
     mistakePatternConfidence = 0.22;
     mistakeRecurrenceLevel = "isolated";
     mistakeSpecificity = "unknown";
   } else if (weakSignal && mC < 4) {
     dominantMistakePattern = "insufficient_mistake_evidence";
-    evidence.push("האות לגבי דפוס טעות חוזר עדיין חלש - לא מדויקים סוג טעות צר.");
+    evidence.push("The repeating-mistake signal is still weak - not locking a narrow mistake type.");
     mistakePatternConfidence = 0.28;
     mistakeRecurrenceLevel = q >= 8 ? "unclear" : "isolated";
   } else if (
@@ -118,20 +118,20 @@ export function buildMistakeIntelligencePhase9(ctx) {
   } else {
     if (rootCause === "speed_pressure" || behaviorType === "speed_pressure" || (rf.speedOnlyRisk && wr < 0.42)) {
       dominantMistakePattern = "speed_driven_error";
-      evidence.push("מסלול מהירות/לחץ זמן מסביר טעויות שאינן בהכרח פער מושגי.");
+      evidence.push("A speed / time-pressure path explains mistakes that are not necessarily a concept gap.");
       if (behaviorType === "knowledge_gap") secondaryMistakePattern = "procedure_break";
       mistakePatternConfidence = Math.min(0.88, 0.55 + (mC >= 5 ? 0.12 : 0));
     } else if (rootCause === "instruction_friction" || behaviorType === "instruction_friction" || rf.hintDependenceRisk) {
       dominantMistakePattern = "instruction_misread";
-      evidence.push("תלות בהכוונה/קריאת משימה מסבירה טעויות של ניסוח ולא בהכרח עומק ידע.");
+      evidence.push("Dependence on guidance / reading the task explains wording mistakes more than depth of knowledge.");
       mistakePatternConfidence = Math.min(0.85, 0.52 + (mC >= 4 ? 0.1 : 0));
     } else if (rootCause === "weak_independence" || (td.independenceDeteriorating && acc >= 72)) {
       dominantMistakePattern = "support_dependent_success";
-      evidence.push("הצלחה יחסית לצד ירידה בעצמאות - הטעות נראות קשורות לשחרור עזרה.");
+      evidence.push("Relative success alongside falling independence - mistakes look tied to releasing help.");
       mistakePatternConfidence = Math.min(0.82, 0.5 + (mC >= 3 ? 0.08 : 0));
     } else if (rootCause === "careless_execution" || behaviorType === "careless_pattern") {
       dominantMistakePattern = "careless_flip";
-      evidence.push("שיעור טעויות בינוני לעומת דיוק סביר - דפוס רשלני/ביצועי.");
+      evidence.push("Moderate mistake rate versus reasonable accuracy - a careless / execution pattern.");
       mistakePatternConfidence = 0.58;
     } else if (
       rootCause === "knowledge_gap" &&
@@ -141,12 +141,12 @@ export function buildMistakeIntelligencePhase9(ctx) {
       mC >= 6
     ) {
       dominantMistakePattern = wr > 0.38 ? "concept_confusion" : "procedure_break";
-      evidence.push("חוזרות טעויות עם דיוק נמוך ונפח טעויות תומך - נראה פער בסדרי פעולה או במושג.");
+      evidence.push("Repeating mistakes with low accuracy and enough mistake volume - likely a procedure or concept gap.");
       mistakePatternConfidence = Math.min(0.86, 0.58 + mC * 0.02);
     } else if (td.fragileProgressPattern || (behaviorType === "fragile_success" && rf.hintDependenceRisk)) {
       if (accuracyBand === "needs_strengthening" && !taxonomyMatch?.taxonomyMatch) {
         dominantMistakePattern = "mixed_mistake_pattern";
-        evidence.push("מגמה מעורבת (דיוק מול עצמאות) - לא ננעלים על סוג טעות אחד.");
+        evidence.push("Mixed trend (accuracy vs independence) - not locking one mistake type.");
         mistakePatternConfidence = 0.48;
       } else if (accuracyBand === "clear_gap") {
         dominantMistakePattern = acc < 50 ? "concept_confusion" : "procedure_break";
@@ -159,7 +159,7 @@ export function buildMistakeIntelligencePhase9(ctx) {
       }
     } else if (q < 12 && (td.unclearTrend !== false || !td.trendConfOk)) {
       dominantMistakePattern = "early_learning_noise";
-      evidence.push("טווח מוקדם או מגמה לא חדה - הטעויות עדיין \"רעש למידה\".");
+      evidence.push("Early range or unclear trend - mistakes are still \"learning noise\".");
       mistakePatternConfidence = 0.4;
     } else if (accuracyBand === "needs_strengthening" && q >= 10) {
       dominantMistakePattern = "procedure_break";
@@ -171,7 +171,7 @@ export function buildMistakeIntelligencePhase9(ctx) {
       mistakePatternConfidence = 0.54;
     } else {
       dominantMistakePattern = "mixed_mistake_pattern";
-      evidence.push("תערובת אותות - דפוס טעות לא חד משמעי.");
+      evidence.push("Mixed signals - mistake pattern is not clear-cut.");
       mistakePatternConfidence = 0.45;
     }
   }
@@ -194,8 +194,12 @@ export function buildMistakeIntelligencePhase9(ctx) {
   const dominantMistakePatternLabelHe =
     MISTAKE_PATTERN_LABEL_HE[dominantMistakePattern] || MISTAKE_PATTERN_LABEL_HE.insufficient_mistake_evidence;
 
-  const mistakePatternNarrativeHe = `בנושא ${displayName} הדפוס הבולט: ${dominantMistakePatternLabelHe}${
-    mistakeRecurrenceLevel === "persistent" ? " - חוזר לאורך הטווח." : mistakeRecurrenceLevel === "repeating" ? " - חוזר בינונית." : ""
+  const mistakePatternNarrativeHe = `In ${displayName} the standout pattern is: ${dominantMistakePatternLabelHe}${
+    mistakeRecurrenceLevel === "persistent"
+      ? " - repeating across the range."
+      : mistakeRecurrenceLevel === "repeating"
+        ? " - repeating moderately."
+        : ""
   }`.trim();
 
   const mistakeIntelligence = {

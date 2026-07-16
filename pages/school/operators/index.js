@@ -8,7 +8,7 @@ import {
   SCHOOL_LOADING,
   SCHOOL_OPERATORS_TITLE,
   SCHOOL_OPERATOR_NO_TEACHING,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 
 export default function SchoolOperatorsPage() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function SchoolOperatorsPage() {
         portalRole={me?.portalRole}
       >
         {state === "loading" ? (
-          <p className="text-white/60 text-sm text-right">{SCHOOL_LOADING}</p>
+          <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING}</p>
         ) : (
           <SchoolOperatorsManager accessToken={accessToken} enabled={state === "ready" && schoolId} />
         )}

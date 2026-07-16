@@ -13,30 +13,30 @@ import { effectivePracticeAnswerCount } from "../../lib/learning/report-practice
 
 export { SUBJECT_VALID_MIN_QUESTIONS };
 
-/** Card-visible Hebrew labels (+ aliases used in parentFacing insights). */
+/** Card-visible labels (+ aliases used in parentFacing insights). */
 export const SUBJECT_VISIBLE_LABELS_HE = Object.freeze({
-  math: ["מתמטיקה", "חשבון"],
-  geometry: ["גאומטריה"],
-  english: ["אנגלית"],
-  science: ["מדעים"],
-  history: ["היסטוריה"],
-  hebrew: ["עברית"],
-  "moledet-geography": ["מולדת וגאוגרפיה"],
-  moledet: ["מולדת"],
-  geography: ["גאוגרפיה"],
+  math: ["Math", "Arithmetic"],
+  geometry: ["Geometry"],
+  english: ["English"],
+  science: ["Science"],
+  history: ["History"],
+  hebrew: ["Hebrew"],
+  "moledet-geography": ["Social Studies and Geography"],
+  moledet: ["Social Studies"],
+  geography: ["Geography"],
 });
 
 /** Primary label per subject id (matches subject cards). */
 export const SUBJECT_LABEL_BY_ID = Object.freeze({
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  history: "היסטוריה",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
-  moledet: "מולדת",
-  geography: "גאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
+  history: "History",
+  hebrew: "Hebrew",
+  "moledet-geography": "Social Studies and Geography",
+  moledet: "Social Studies",
+  geography: "Geography",
 });
 
 export const SUBJECT_EVIDENCE_TIER = Object.freeze({
@@ -47,11 +47,11 @@ export const SUBJECT_EVIDENCE_TIER = Object.freeze({
 
 /** Subject-specific insight wording forbidden when visible questions = 0. */
 export const ZERO_EVIDENCE_SUBJECT_INSIGHT_RE =
-  /(?:יש\s+(?:עדיין\s+)?מעט\s+(?:נתונ|מידע|תרגול)|טעויות\s+חוזרות|נראה\s+שיש\s+קושי|כדאי\s+לשים\s+לב|נושא\s+לחיזוק|מוקד\s+לתרגול|התקדמות\s+יחסית|מגמת\s|יש\s+מגמה|מגמה\s+(?:חיובית|שלילית|ברורה|כללית))/u;
+  /(?:יש\s+(?:עדיין\s+)?מעט\s+(?:נתונ|מידע|תרגול)|טעויות\s+חוזרות|נראה\s+שיש\s+קושי|כדאי\s+לשים\s+לב|נושא\s+לחיזוק|מוקד\s+לתרגול|התקדמות\s+יחסית|מגמת\s|יש\s+מגמה|מגמה\s+(?:חיובית|שלילית|ברורה|כללית)|there(?:'s| is)\s+(?:still\s+)?(?:little|limited)\s+(?:data|information|practice)|recurring\s+mistakes|(?:looks|there'?s?)\s+like\s+there'?s?\s+difficulty|worth\s+paying\s+attention|topic\s+to\s+reinforce|focus\s+for\s+practice|relative\s+progress|trend)/iu;
 
-/** Wording that must never accompany zero-question subjects (not bare «מגמה» — executive trend lines may quote it). */
+/** Wording that must never accompany zero-question subjects (not a bare "trend" mention — executive trend lines may quote it). */
 export const ZERO_EVIDENCE_FORBIDDEN_RE =
-  /כיוון ראשוני|אפשר לקבל כיוון|תחום לחיזוק|נושא למעקב|כדאי לתרגל עוד כדי לחזק|דורש חיזוק|דורש תשומת לב|מעט מדי לסיכום עשיר/u;
+  /כיוון ראשוני|אפשר לקבל כיוון|תחום לחיזוק|נושא למעקב|כדאי לתרגל עוד כדי לחזק|דורש חיזוק|דורש תשומת לב|מעט מדי לסיכום עשיר|initial direction|can get a direction|area to reinforce|topic to watch|worth practicing more to reinforce|needs reinforcement|needs attention|too little for a rich summary/iu;
 
 /**
  * @param {number} questionCount
@@ -68,7 +68,7 @@ export function classifySubjectEvidenceTier(questionCount) {
  * @param {string} subjectLabel
  */
 export function zeroEvidenceSubjectLineHe(subjectLabel) {
-  return `${subjectLabel}: לא תורגל בתקופה שנבחרה`;
+  return `${subjectLabel}: not practiced in the selected period`;
 }
 
 /**
@@ -77,7 +77,7 @@ export function zeroEvidenceSubjectLineHe(subjectLabel) {
  */
 export function thinEvidenceSubjectLineHe(subjectLabel, q) {
   const n = Math.max(0, Math.floor(Number(q) || 0));
-  return `${subjectLabel}: ${n} שאלות בתקופה שנבחרה - עדיין מעט מידע; כדאי להמשיך לתרגל ולבדוק שוב`;
+  return `${subjectLabel}: ${n} questions in the selected period - still limited information; it's worth continuing to practice and checking again`;
 }
 
 /**
@@ -139,9 +139,9 @@ export function practicedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLab
   const practiced = Object.entries(subjectLabelById)
     .filter(([sid]) => classifySubjectEvidenceTier(subjectQuestionCounts[sid]) !== SUBJECT_EVIDENCE_TIER.none)
     .map(([, label]) => label);
-  if (practiced.length === 0) return "בתקופה שנבחרה לא תועד תרגול במקצועות שבדוח.";
-  if (practiced.length === 1) return `המקצוע שתורגל בתקופה: ${practiced[0]}.`;
-  return `המקצועות שתורגלו בתקופה: ${practiced.join(", ")}.`;
+  if (practiced.length === 0) return "No practice was recorded in the report's subjects for the selected period.";
+  if (practiced.length === 1) return `The subject practiced this period: ${practiced[0]}.`;
+  return `The subjects practiced this period: ${practiced.join(", ")}.`;
 }
 
 /**
@@ -153,14 +153,14 @@ export function notPracticedSubjectsSummaryLineHe(subjectQuestionCounts, subject
     .filter(([sid]) => classifySubjectEvidenceTier(subjectQuestionCounts[sid]) === SUBJECT_EVIDENCE_TIER.none)
     .map(([, label]) => label);
   if (!labels.length) return null;
-  return `מקצועות שלא תורגלו בתקופה: ${labels.join(", ")}.`;
+  return `Subjects not practiced this period: ${labels.join(", ")}.`;
 }
 
 /**
  * @param {string} subjectLabel
  */
 export function zeroEvidenceSubjectCopilotHe(subjectLabel) {
-  return `בתקופה שנבחרה לא נאספו נתוני תרגול ב${subjectLabel}, ולכן אי אפשר לקבוע כיוון לפי הדוח הנוכחי.`;
+  return `No practice data was collected for ${subjectLabel} in the selected period, so no direction can be set based on the current report.`;
 }
 
 /**
@@ -229,6 +229,7 @@ export function lineMentionsSubjectLabelHe(text, label) {
     t.startsWith(`${lab} -`) ||
     t.includes(`${lab}:`) ||
     t.includes(`ב${lab}`) ||
+    t.includes(`in ${lab}`) ||
     t.includes(`${lab},`)
   );
 }

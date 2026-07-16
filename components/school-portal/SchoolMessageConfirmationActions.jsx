@@ -3,7 +3,7 @@ import {
   SC_BTN_MARK_READ,
   SC_BTN_MARK_RECEIVED,
   SC_CONFIRMED_RECEIPT,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 
 export default function SchoolMessageConfirmationActions({ message, busy = false, onMarkRead }) {
   const isRead = Boolean(message?.readAt || message?.isRead);

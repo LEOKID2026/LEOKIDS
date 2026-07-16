@@ -42,8 +42,8 @@ function trimText(value, max) {
 }
 
 /**
- * Deterministic safe Hebrew caution sentence for the AI to copy verbatim into `cautionNote`
- * when the packet has thin-data warnings. ALL branches contain "כיוון ראשוני" so the result
+ * Deterministic safe caution sentence for the AI to copy verbatim into `cautionNote`
+ * when the packet has thin-data warnings. ALL branches contain "initial direction" so the result
  * is guaranteed to satisfy the validator's `SAFE_THIN_DATA_HINTS_RE` (step 7) regardless of
  * the warning scope. Returning `null` when no thin-data warnings exist signals the prompt
  * that the AI may leave `cautionNote` empty.
@@ -54,7 +54,7 @@ function deriveRequiredCautionNoteHe(thinDataWarnings) {
   if (!Array.isArray(thinDataWarnings) || thinDataWarnings.length === 0) return null;
   const hasOverall = thinDataWarnings.some((w) => w?.scope === "overall");
   if (hasOverall) {
-    return "חשוב לזכור שהנתונים בתקופה זו מועטים - מדובר בכיוון ראשוני בלבד וכדאי להימנע ממסקנות חזקות.";
+    return "It's important to remember that there's limited data for this period - this is only an initial direction, and it's worth avoiding firm conclusions.";
   }
   const subjects = thinDataWarnings
     .filter(
@@ -66,9 +66,9 @@ function deriveRequiredCautionNoteHe(thinDataWarnings) {
     .map((w) => w.displayNameHe.trim())
     .slice(0, 3);
   if (subjects.length === 0) {
-    return "חשוב לזכור שהנתונים בחלק מהתחומים מצומצמים - מדובר בכיוון ראשוני בלבד.";
+    return "It's important to remember that data in some areas is limited - this is only an initial direction.";
   }
-  return `חשוב לזכור שבמקצועות ${subjects.join(", ")} הנתונים מצומצמים בתקופה זו - מדובר בכיוון ראשוני בלבד.`;
+  return `It's important to remember that data for ${subjects.join(", ")} is limited this period - this is only an initial direction.`;
 }
 
 export function buildAiNarrativeInput(packet) {

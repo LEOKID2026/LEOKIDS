@@ -2,7 +2,7 @@
  * Raw practice rows outside the student's registered grade - transparency only, no conclusions.
  */
 
-import { subjectLabelHe } from "../lib/teacher-portal/teacher-ui.he.js";
+import { subjectLabelHe } from "../lib/teacher-portal/teacher-ui.js";
 import {
   isCoreParentReportRow,
   resolveParentReportRowGradeRelation,
@@ -11,7 +11,7 @@ import {
 import {
   formatParentReportActivityDisplayLabelHe,
   formatParentReportGradeHe,
-} from "./parent-report-language/parent-report-display-labels.he.js";
+} from "./parent-report-language/parent-report-display-labels.js";
 import { parseCanonicalTopicFromRowKey } from "./parent-report-output-integrity/row-identity-v1.js";
 
 const SUBJECT_TOPIC_MAPS = [
@@ -28,13 +28,13 @@ const SUBJECT_TOPIC_MAPS = [
  * @param {string|null|undefined} iso
  */
 function formatActivityDateHe(iso) {
-  if (!iso) return "לא זמין";
+  if (!iso) return "Unavailable";
   try {
     const d = new Date(String(iso));
-    if (Number.isNaN(d.getTime())) return "לא זמין";
-    return d.toLocaleDateString("he-IL");
+    if (Number.isNaN(d.getTime())) return "Unavailable";
+    return d.toLocaleDateString("en-US");
   } catch {
-    return "לא זמין";
+    return "Unavailable";
   }
 }
 
@@ -104,7 +104,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
         lastActivityAtHe: formatActivityDateHe(
           data.latestActivityAt || data.lastAnswerAt || data.lastSessionAt || null,
         ),
-        sourceLabelHe: formatParentReportActivityDisplayLabelHe(data) || "תרגול",
+        sourceLabelHe: formatParentReportActivityDisplayLabelHe(data) || "Practice",
       };
 
       if (gradeRelation === "higher") advancedPractice.push(item);
@@ -115,7 +115,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
   const sortRows = (a, b) => {
     const qDiff = (Number(b.questions) || 0) - (Number(a.questions) || 0);
     if (qDiff !== 0) return qDiff;
-    return String(a.topicLabelHe || "").localeCompare(String(b.topicLabelHe || ""), "he");
+    return String(a.topicLabelHe || "").localeCompare(String(b.topicLabelHe || ""), "en");
   };
   advancedPractice.sort(sortRows);
   foundationPractice.sort(sortRows);
@@ -123,7 +123,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
   if (!advancedPractice.length && !foundationPractice.length) return null;
 
   return {
-    titleHe: "תרגול מחוץ לכיתה הרשומה",
+    titleHe: "Practice outside registered grade",
     registeredGradeKey,
     advancedPractice,
     foundationPractice,

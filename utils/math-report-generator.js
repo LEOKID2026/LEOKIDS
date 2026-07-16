@@ -1,4 +1,4 @@
-// מערכת יצירת דוחות להורים
+// Parent report generation system
 
 import { STORAGE_KEY } from './math-constants.js';
 import { getTimeByPeriod, getTimeByCustomPeriod, getAllTimeTracking } from './math-time-tracking.js';
@@ -6,61 +6,61 @@ import { getGeometryTimeByPeriod, getGeometryTimeByCustomPeriod } from './math-t
 import { getEnglishTimeByCustomPeriod } from './english-time-tracking.js';
 import { getScienceTimeByCustomPeriod } from './science-time-tracking.js';
 
-// שמות פעולות בעברית (חשבון)
+// Operation display names (math)
 const OPERATION_NAMES = {
-  addition: "חיבור",
-  subtraction: "חיסור",
-  multiplication: "כפל",
-  division: "חילוק",
-  division_with_remainder: "חילוק עם שארית",
-  fractions: "שברים",
-  percentages: "אחוזים",
-  sequences: "סדרות",
-  decimals: "עשרוניים",
-  rounding: "עיגול",
-  divisibility: "סימני התחלקות",
-  prime_composite: "מספרים ראשוניים ופריקים",
-  powers: "חזקות",
-  ratio: "יחס",
-  equations: "משוואות",
-  order_of_operations: "סדר פעולות",
-  zero_one_properties: "תכונות ה-0 וה-1",
-  estimation: "אומדן",
-  scale: "קנה מידה",
-  compare: "השוואה",
-  number_sense: "חוש מספרים",
-  factors_multiples: "גורמים וכפולות",
-  word_problems: "בעיות מילוליות",
-  multiplication_table: "לוח הכפל",
-  place_value: "ערך מקום",
-  comparison: "השוואה",
-  patterns: "דפוסים וסדרות",
-  multiplication_advanced: "כפל מתקדם",
-  mixed: "ערבוב"
+  addition: "Addition",
+  subtraction: "Subtraction",
+  multiplication: "Multiplication",
+  division: "Division",
+  division_with_remainder: "Division with remainder",
+  fractions: "Fractions",
+  percentages: "Percentages",
+  sequences: "Sequences",
+  decimals: "Decimals",
+  rounding: "Rounding",
+  divisibility: "Divisibility rules",
+  prime_composite: "Prime and composite numbers",
+  powers: "Powers",
+  ratio: "Ratio",
+  equations: "Equations",
+  order_of_operations: "Order of operations",
+  zero_one_properties: "Properties of 0 and 1",
+  estimation: "Estimation",
+  scale: "Scale",
+  compare: "Comparison",
+  number_sense: "Number sense",
+  factors_multiples: "Factors and multiples",
+  word_problems: "Word problems",
+  multiplication_table: "Multiplication table",
+  place_value: "Place value",
+  comparison: "Comparison",
+  patterns: "Patterns and sequences",
+  multiplication_advanced: "Advanced multiplication",
+  mixed: "Mixed"
 };
 
-// שמות נושאים בעברית (גאומטריה)
+// Topic display names (geometry)
 const TOPIC_NAMES = {
-  shapes_basic: "צורות בסיסיות",
-  shapes: "צורות",
-  area: "שטח",
-  perimeter: "היקף",
-  volume: "נפח",
-  angles: "זוויות",
-  parallel_perpendicular: "מקבילות ומאונכות",
-  triangles: "משולשים",
-  quadrilaterals: "מרובעים",
-  transformations: "טרנספורמציות",
-  rotation: "סיבוב",
-  symmetry: "סימטרייה",
-  diagonal: "אלכסון",
-  heights: "גבהים",
-  tiling: "ריצוף",
-  circles: "מעגל ועיגול",
-  solids: "גופים",
-  pythagoras: "פיתגורס",
-  coordinates: "נקודות וקואורדינטות",
-  mixed: "ערבוב"
+  shapes_basic: "Basic shapes",
+  shapes: "Shapes",
+  area: "Area",
+  perimeter: "Perimeter",
+  volume: "Volume",
+  angles: "Angles",
+  parallel_perpendicular: "Parallel and perpendicular",
+  triangles: "Triangles",
+  quadrilaterals: "Quadrilaterals",
+  transformations: "Transformations",
+  rotation: "Rotation",
+  symmetry: "Symmetry",
+  diagonal: "Diagonal",
+  heights: "Heights",
+  tiling: "Tiling",
+  circles: "Circle",
+  solids: "Solids",
+  pythagoras: "Pythagoras",
+  coordinates: "Points and coordinates",
+  mixed: "Mixed"
 };
 
 /**
@@ -80,14 +80,14 @@ export function normalizeReportTopicBucketKey(bucketKey) {
 }
 
 /** Fallback when no Hebrew topic label can be resolved for parent-facing math rows. */
-export const MATH_PARENT_TOPIC_FALLBACK_HE = "תרגול";
+export const MATH_PARENT_TOPIC_FALLBACK_HE = "Practice";
 
 const MATH_TOPIC_PLACEHOLDER_KEYS = new Set(["general", "unknown"]);
 
 /** @param {string|null|undefined} label */
 export function isGenericParentTopicLabelHe(label) {
   const t = String(label || "").trim();
-  return !t || t === "נושא" || t === "נושא זה" || t === "general" || t === "unknown";
+  return !t || t === "Topic" || t === "this subject" || t === "general" || t === "unknown";
 }
 
 /**
@@ -108,7 +108,7 @@ export function getOperationName(op) {
   return label || MATH_PARENT_TOPIC_FALLBACK_HE;
 }
 
-/** מפתח טעויות/התקדמות: חלק לפני :: במפתח דוח מורכב (addition::kind → addition) */
+/** Mistakes/progress key: the part before :: in a composite report key (addition::kind → addition) */
 export function mathReportBaseOperationKey(bucketKey) {
   if (bucketKey == null || typeof bucketKey !== "string") return bucketKey;
   const i = bucketKey.indexOf("::");
@@ -116,8 +116,8 @@ export function mathReportBaseOperationKey(bucketKey) {
 }
 
 /**
- * תצוגת דוח הורים לחשבון: שם פעולה בעברית בלבד (פעולה בסיסית), ללא kind מובנה.
- * מפתח אחסון עשוי להישאר operation::kind — כאן רק מציגים את בסיס הפעולה.
+ * Parent report display for math: only the base operation name, without the embedded kind.
+ * The storage key may remain operation::kind — here we only display the base of the operation.
  */
 export function getMathReportBucketDisplayName(bucketKey) {
   if (bucketKey == null || bucketKey === "") return "";
@@ -139,20 +139,20 @@ export function getTopicName(topic) {
 }
 
 const ENGLISH_TOPIC_NAMES = {
-  phonics: "פוניקה",
-  vocabulary: "אוצר מילים",
-  grammar: "דקדוק",
-  grammar_basics: "יסודות דקדוק",
-  translation: "תרגום",
-  sentence: "בניית משפטים",
-  sentences: "בניית משפטים",
-  writing: "כתיבה",
-  reading_comprehension: "הבנת הנקרא",
-  matching: "התאמה",
-  inference: "הסקה",
-  sentence_understanding: "הבנת משפט",
-  simple_sentences: "משפטים פשוטים",
-  mixed: "תרגול משולב",
+  phonics: "Phonics",
+  vocabulary: "Vocabulary",
+  grammar: "Grammar",
+  grammar_basics: "Grammar basics",
+  translation: "Translation",
+  sentence: "Sentence building",
+  sentences: "Sentence building",
+  writing: "Writing",
+  reading_comprehension: "Reading comprehension",
+  matching: "Matching",
+  inference: "Inference",
+  sentence_understanding: "Sentence understanding",
+  simple_sentences: "Simple sentences",
+  mixed: "Mixed practice",
 };
 
 export function getEnglishTopicName(topic) {
@@ -162,19 +162,19 @@ export function getEnglishTopicName(topic) {
 }
 
 const SCIENCE_TOPIC_NAMES = {
-  body: "גוף האדם",
-  animals: "בעלי חיים",
-  plants: "צמחים",
-  materials: "חומרים",
-  earth_space: "כדור הארץ והחלל",
-  environment: "סביבה ואקולוגיה",
-  experiments: "ניסויים ותהליכים",
-  animals_plants: "בעלי חיים וצמחים",
-  basic_experiments: "ניסויים בסיסיים",
-  living_things: "יצורים חיים",
-  matter: "חומרים",
-  forces: "כוחות",
-  mixed: "ערבוב נושאים",
+  body: "Human body",
+  animals: "Animals",
+  plants: "Plants",
+  materials: "Materials",
+  earth_space: "Earth and space",
+  environment: "Environment and ecology",
+  experiments: "Experiments and processes",
+  animals_plants: "Animals and plants",
+  basic_experiments: "Basic experiments",
+  living_things: "Living things",
+  matter: "Materials",
+  forces: "Forces",
+  mixed: "Mixed topics",
 };
 
 export function getScienceTopicName(topic) {
@@ -192,22 +192,22 @@ export function getHistorySubtopicName(_subtopicKey) {
 }
 
 const HEBREW_TOPIC_NAMES = {
-  reading: "קריאה",
-  comprehension: "הבנת הנקרא",
-  reading_comprehension: "הבנת הנקרא",
-  writing: "כתיבה והבעה",
-  grammar: "דקדוק ולשון",
-  vocabulary: "עושר שפתי",
-  speaking: "דיבור ושיח",
-  mixed: "ערבוב",
-  main_idea: "רעיון מרכזי",
-  sequence: "רצף",
-  inference: "הסקה",
-  fact_vs_opinion: "עובדה מול דעה",
-  vowels_reading: "קריאה בניקוד",
-  plurals: "יחיד ורבים",
-  verb_forms: "צורות הפועל",
-  sentence_structure: "מבנה המשפט",
+  reading: "Reading",
+  comprehension: "Reading comprehension",
+  reading_comprehension: "Reading comprehension",
+  writing: "Writing and expression",
+  grammar: "Grammar and language",
+  vocabulary: "Language richness",
+  speaking: "Speaking and discussion",
+  mixed: "Mixed",
+  main_idea: "Main idea",
+  sequence: "Sequence",
+  inference: "Inference",
+  fact_vs_opinion: "Fact vs opinion",
+  vowels_reading: "Reading with vowels",
+  plurals: "Singular and plural",
+  verb_forms: "Verb forms",
+  sentence_structure: "Sentence structure",
 };
 
 export function getHebrewTopicName(topic) {
@@ -217,20 +217,20 @@ export function getHebrewTopicName(topic) {
 }
 
 const MOLEDET_GEOGRAPHY_TOPIC_NAMES = {
-  homeland: "מולדת",
-  community: "קהילה",
-  citizenship: "אזרחות",
-  geography: "גאוגרפיה",
-  basic_geography: "יסודות גאוגרפיה",
-  values: "ערכים",
-  maps: "מפות",
-  map_reading: "קריאת מפה",
-  directions: "הוראות",
-  places: "מקומות",
-  maps_basic: "מפות בסיסיות",
-  regions: "אזורים",
-  history: "היסטוריה",
-  mixed: "ערבוב",
+  homeland: "Homeland Studies",
+  community: "Community",
+  citizenship: "Citizenship",
+  geography: "Geography",
+  basic_geography: "Geography basics",
+  values: "Values",
+  maps: "Maps",
+  map_reading: "Map reading",
+  directions: "Directions",
+  places: "Places",
+  maps_basic: "Basic maps",
+  regions: "Regions",
+  history: "History",
+  mixed: "Mixed",
 };
 
 export function getMoledetGeographyTopicName(topic) {
@@ -239,41 +239,29 @@ export function getMoledetGeographyTopicName(topic) {
   return MOLEDET_GEOGRAPHY_TOPIC_NAMES[key] || "";
 }
 
-/** תווית כיתה בעברית לפי מפתח g1…g6 (דוח הורים / המלצות) */
-const GRADE_LABELS = { g1: "א׳", g2: "ב׳", g3: "ג׳", g4: "ד׳", g5: "ה׳", g6: "ו׳" };
+/** Grade label by internal key g1…g6 (parent report / recommendations) */
+const GRADE_LABELS = { g1: "1st", g2: "2nd", g3: "3rd", g4: "4th", g5: "5th", g6: "6th" };
 
 const HEBREW_GRADE_DISPLAY_AS_IS = new Set([
-  "א'",
-  "ב'",
-  "ג'",
-  "ד'",
-  "ה'",
-  "ו'",
-  "א׳",
-  "ב׳",
-  "ג׳",
-  "ד׳",
-  "ה׳",
-  "ו׳",
+  "1st",
+  "2nd",
+  "3rd",
+  "4th",
+  "5th",
+  "6th",
 ]);
 
 const HEBREW_GRADE_TO_CANON = {
-  "א'": "g1",
-  "ב'": "g2",
-  "ג'": "g3",
-  "ד'": "g4",
-  "ה'": "g5",
-  "ו'": "g6",
-  "א׳": "g1",
-  "ב׳": "g2",
-  "ג׳": "g3",
-  "ד׳": "g4",
-  "ה׳": "g5",
-  "ו׳": "g6",
+  "1st": "g1",
+  "2nd": "g2",
+  "3rd": "g3",
+  "4th": "g4",
+  "5th": "g5",
+  "6th": "g6",
 };
 
 /**
- * מנרמל מפתח כיתה פנימי (g1, gg3, "3" וכו׳) אל g1…g6.
+ * Normalizes an internal grade key (g1, gg3, "3", etc.) to g1…g6.
  * @returns {string|null}
  */
 export function canonicalParentReportGradeKey(raw) {
@@ -289,19 +277,19 @@ export function canonicalParentReportGradeKey(raw) {
 }
 
 /**
- * תווית כיתה לתצוגת דוח הורים בכל המקצועות — עברית בלבד, ללא g1/gg5.
- * אם הערך כבר תווית עברית מוכרת — מחזירים אותו כמו שהוא.
+ * Grade label for parent report display across all subjects — display text only, not g1/gg5.
+ * If the value is already a recognized display label, it is returned as-is.
  */
 export function formatParentReportGradeLabel(raw) {
-  if (raw == null || raw === "") return "לא זמין";
+  if (raw == null || raw === "") return "Unavailable";
   const s0 = String(raw).trim();
   if (HEBREW_GRADE_DISPLAY_AS_IS.has(s0)) return s0;
   const c = canonicalParentReportGradeKey(s0);
   if (c && GRADE_LABELS[c]) return GRADE_LABELS[c];
-  return "לא זמין";
+  return "Unavailable";
 }
 
-const LEVEL_LABELS = { easy: "קל", medium: "בינוני", hard: "קשה" };
+const LEVEL_LABELS = { easy: "Easy", medium: "Medium", hard: "Hard" };
 
 function getMostCommonGradeAndLevel(savedTracking, containerKey, itemKey) {
   let gradeKey = null;
@@ -340,23 +328,23 @@ function getMostCommonGradeAndLevel(savedTracking, containerKey, itemKey) {
     gradeLabel:
       rawGradeDominant != null
         ? formatParentReportGradeLabel(rawGradeDominant)
-        : "לא זמין",
-    levelLabel: levelKey ? (LEVEL_LABELS[levelKey] || levelKey) : "לא זמין",
+        : "Unavailable",
+    levelLabel: levelKey ? (LEVEL_LABELS[levelKey] || levelKey) : "Unavailable",
   };
 }
 
-// יצירת דוח להורים
+// Generate a parent report
 export function generateParentReport(playerName, period = 'week', customStartDate = null, customEndDate = null) {
   if (typeof window === "undefined") return null;
   
   try {
-    // ========== חשבון ==========
-    // איסוף נתוני התקדמות חשבון
+    // ========== Math ==========
+    // Collect math progress data
     const mathProgress = JSON.parse(localStorage.getItem(STORAGE_KEY + "_progress") || "{}");
     const mathProgressData = mathProgress.progress || {};
     
-    // ========== גאומטריה ==========
-    // איסוף נתוני התקדמות גאומטריה
+    // ========== Geometry ==========
+    // Collect geometry progress data
     const geometryProgress = JSON.parse(localStorage.getItem("mleo_geometry_master" + "_progress") || "{}");
     const geometryProgressData = geometryProgress.progress || {};
     
@@ -366,14 +354,14 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     const scienceProgress = JSON.parse(localStorage.getItem("mleo_science_master" + "_progress") || "{}");
     const scienceProgressData = scienceProgress.progress || {};
     
-    // חישוב תקופה
+    // Calculate the period
     const now = new Date();
     let startDate, endDate;
     
     if (period === 'custom' && customStartDate && customEndDate) {
       startDate = new Date(customStartDate);
       endDate = new Date(customEndDate);
-      // וידוא ש-endDate לא אחרי היום
+      // Make sure endDate isn't after today
       if (endDate > now) {
         endDate = now;
       }
@@ -383,38 +371,38 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       endDate = now;
     }
     
-    // איסוף נתוני זמן לפי תקופה מותאמת (חשבון)
+    // Collect time data for the custom period (math)
     const mathTimeData = getTimeByCustomPeriod(startDate, endDate);
     
-    // איסוף נתוני זמן לפי תקופה מותאמת (גאומטריה)
+    // Collect time data for the custom period (geometry)
     const geometryTimeData = getGeometryTimeByCustomPeriod(startDate, endDate);
     const englishTimeData = getEnglishTimeByCustomPeriod(startDate, endDate);
     const scienceTimeData = getScienceTimeByCustomPeriod(startDate, endDate);
     
-    // איסוף שגיאות (חשבון)
+    // Collect mistakes (math)
     const mathMistakes = JSON.parse(localStorage.getItem("mleo_mistakes") || "[]");
     
-    // איסוף שגיאות (גאומטריה) - אם יש
+    // Collect mistakes (geometry) - if any
     const geometryMistakes = JSON.parse(localStorage.getItem("mleo_geometry_mistakes") || "[]");
     
-    // איסוף שגיאות (אנגלית)
+    // Collect mistakes (english)
     const englishMistakes = JSON.parse(localStorage.getItem("mleo_english_mistakes") || "[]");
     const scienceMistakes = JSON.parse(localStorage.getItem("mleo_science_mistakes") || "[]");
     
-    // איסוף אתגרים (חשבון)
+    // Collect challenges (math)
     const dailyChallenge = JSON.parse(localStorage.getItem("mleo_daily_challenge") || "{}");
     const weeklyChallenge = JSON.parse(localStorage.getItem("mleo_weekly_challenge") || "{}");
     
-    // ========== סיכום חשבון ==========
-    // נשתמש בנתוני זמן כדי לסנן רק פעולות שיש להן זמן בתקופה
+    // ========== Math summary ==========
+    // Use time data to filter only operations with time logged in the period
     const mathOperationsSummary = {};
     let mathTotalQuestions = 0;
     let mathTotalCorrect = 0;
     
-    // נסנן רק פעולות שיש להן זמן בתקופה
+    // Filter only operations with time logged in the period
     const mathOperationsWithTime = Object.keys(mathTimeData.operations || {});
     
-    // אם אין נתוני זמן, נשתמש בכל הנתונים (למקרה של דוח כללי)
+    // If there's no time data, use all the data (for a general report)
     const operationsToProcess = mathOperationsWithTime.length > 0 
       ? mathOperationsWithTime 
       : Object.keys(mathProgressData);
@@ -436,7 +424,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       const { gradeKey: mostCommonGradeKey, levelKey: mostCommonLevelKey, gradeLabel: mostCommonGrade, levelLabel: mostCommonLevel } =
         getMostCommonGradeAndLevel(mathTrackingSaved, "operations", op);
       
-      // אם יש זמן בתקופה, נכלול את הנתונים
+      // If there's time in the period, include the data
       if (timeMinutes > 0 || questions > 0) {
         mathTotalQuestions += questions;
         mathTotalCorrect += correct;
@@ -464,16 +452,16 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ? Math.round((mathTotalCorrect / mathTotalQuestions) * 100) 
       : 0;
     
-    // ========== סיכום גאומטריה ==========
-    // נשתמש בנתוני זמן כדי לסנן רק נושאים שיש להם זמן בתקופה
+    // ========== Geometry summary ==========
+    // Use time data to filter only topics with time logged in the period
     const geometryTopicsSummary = {};
     let geometryTotalQuestions = 0;
     let geometryTotalCorrect = 0;
     
-    // נסנן רק נושאים שיש להם זמן בתקופה
+    // Filter only topics with time logged in the period
     const geometryTopicsWithTime = Object.keys(geometryTimeData.topics || {});
     
-    // אם אין נתוני זמן, נשתמש בכל הנתונים (למקרה של דוח כללי)
+    // If there's no time data, use all the data (for a general report)
     const topicsToProcess = geometryTopicsWithTime.length > 0 
       ? geometryTopicsWithTime 
       : Object.keys(geometryProgressData);
@@ -495,7 +483,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       const { gradeKey: mostCommonGradeKey, levelKey: mostCommonLevelKey, gradeLabel: mostCommonGrade, levelLabel: mostCommonLevel } =
         getMostCommonGradeAndLevel(geoTrackingSaved, "topics", topic);
       
-      // אם יש זמן בתקופה, נכלול את הנתונים
+      // If there's time in the period, include the data
       if (timeMinutes > 0 || questions > 0) {
         geometryTotalQuestions += questions;
         geometryTotalCorrect += correct;
@@ -522,7 +510,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ? Math.round((geometryTotalCorrect / geometryTotalQuestions) * 100) 
       : 0;
     
-    // ========== סיכום אנגלית ==========
+    // ========== English summary ==========
     const englishTopicsSummary = {};
     let englishTotalQuestions = 0;
     let englishTotalCorrect = 0;
@@ -576,7 +564,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ? Math.round((englishTotalCorrect / englishTotalQuestions) * 100)
       : 0;
     
-    // ========== סיכום מדעים ==========
+    // ========== Science summary ==========
     const scienceTopicsSummary = {};
     let scienceTotalQuestions = 0;
     let scienceTotalCorrect = 0;
@@ -630,14 +618,14 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ? Math.round((scienceTotalCorrect / scienceTotalQuestions) * 100)
       : 0;
     
-    // ========== סיכום כללי ==========
+    // ========== General summary ==========
     const totalQuestions = mathTotalQuestions + geometryTotalQuestions + englishTotalQuestions + scienceTotalQuestions;
     const totalCorrect = mathTotalCorrect + geometryTotalCorrect + englishTotalCorrect + scienceTotalCorrect;
     const overallAccuracy = totalQuestions > 0 
       ? Math.round((totalCorrect / totalQuestions) * 100) 
       : 0;
     
-    // ========== סינון שגיאות לפי תקופה ==========
+    // ========== Filter mistakes by period ==========
     const filteredMathMistakes = mathMistakes.filter(mistake => {
       if (!mistake.timestamp) return false;
       const mistakeDate = new Date(mistake.timestamp);
@@ -662,7 +650,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       return mistakeDate >= startDate && mistakeDate <= endDate;
     });
     
-    // ניתוח שגיאות (חשבון)
+    // Analyze mistakes (math)
     const mathMistakesByOperation = {};
     filteredMathMistakes.forEach(mistake => {
       const op = mistake.operation;
@@ -680,7 +668,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       }
     });
     
-    // ניתוח שגיאות (גאומטריה)
+    // Analyze mistakes (geometry)
     const geometryMistakesByTopic = {};
     filteredGeometryMistakes.forEach(mistake => {
       const topic = mistake.topic;
@@ -698,7 +686,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       }
     });
     
-    // ניתוח שגיאות (אנגלית)
+    // Analyze mistakes (english)
     const englishMistakesByTopic = {};
     filteredEnglishMistakes.forEach(mistake => {
       const topic = mistake.topic;
@@ -737,7 +725,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       }
     });
     
-    // ========== המלצות ==========
+    // ========== Recommendations ==========
     const mathRecommendations = generateRecommendations(mathOperationsSummary, mathMistakesByOperation);
     const geometryRecommendations = generateRecommendations(geometryTopicsSummary, geometryMistakesByTopic);
     const englishRecommendations = generateRecommendations(englishTopicsSummary, englishMistakesByTopic);
@@ -749,7 +737,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...scienceRecommendations,
     ];
     
-    // ========== הישגים ==========
+    // ========== Achievements ==========
     const mathAchievements = mathProgress.badges || [];
     const geometryAchievements = geometryProgress.badges || [];
     const englishAchievements = englishProgress.badges || [];
@@ -777,14 +765,14 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       (englishProgress.xp || 0) +
       (scienceProgress.xp || 0);
     
-    // פעילות יומית - רק בתקופה שנבחרה
+    // Daily activity - only within the selected period
     const dailyActivity = [];
     const mathDailyData = mathTimeData.daily || {};
     const geometryDailyData = geometryTimeData.daily || {};
     const englishDailyData = englishTimeData.daily || {};
     const scienceDailyData = scienceTimeData.daily || {};
     
-    // איחוד נתונים יומיים
+    // Merge daily data
     const allDailyDates = new Set([
       ...Object.keys(mathDailyData),
       ...Object.keys(geometryDailyData),
@@ -806,7 +794,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
           (englishDay.total || 0) +
           (scienceDay.total || 0);
         const mathQuestions = Object.values(mathDay.operations || {}).reduce((sum, time) => {
-          return sum + Math.round(time / 30); // הערכה: שאלה אחת כל 30 שניות
+          return sum + Math.round(time / 30); // estimate: one question every 30 seconds
         }, 0);
         const geometryQuestions = Object.values(geometryDay.topics || {}).reduce((sum, time) => {
           return sum + Math.round(time / 30);
@@ -830,39 +818,39 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       }
     });
     
-    // מיון לפי תאריך
+    // Sort by date
     dailyActivity.sort((a, b) => new Date(a.date) - new Date(b.date));
     
-    // נושאים שצריך תרגול
+    // Topics that need practice
     const needsPractice = [
       ...Object.entries(mathOperationsSummary)
         .filter(([_, data]) => data.needsPractice)
-        .map(([op, _]) => `מתמטיקה: ${getOperationName(op)}`),
+        .map(([op, _]) => `Math: ${getOperationName(op)}`),
       ...Object.entries(geometryTopicsSummary)
         .filter(([_, data]) => data.needsPractice)
-        .map(([topic, _]) => `גאומטריה: ${getTopicName(topic)}`),
+        .map(([topic, _]) => `Geometry: ${getTopicName(topic)}`),
       ...Object.entries(englishTopicsSummary)
         .filter(([_, data]) => data.needsPractice)
-        .map(([topic, _]) => `אנגלית: ${getEnglishTopicName(topic)}`),
+        .map(([topic, _]) => `English: ${getEnglishTopicName(topic)}`),
       ...Object.entries(scienceTopicsSummary)
         .filter(([_, data]) => data.needsPractice)
-        .map(([topic, _]) => `מדעים: ${getScienceTopicName(topic)}`),
+        .map(([topic, _]) => `Science: ${getScienceTopicName(topic)}`),
     ];
     
-    // נושאים מצוינים
+    // Excellent topics
     const excellent = [
       ...Object.entries(mathOperationsSummary)
         .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([op, _]) => `מתמטיקה: ${getOperationName(op)}`),
+        .map(([op, _]) => `Math: ${getOperationName(op)}`),
       ...Object.entries(geometryTopicsSummary)
         .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([topic, _]) => `גאומטריה: ${getTopicName(topic)}`),
+        .map(([topic, _]) => `Geometry: ${getTopicName(topic)}`),
       ...Object.entries(englishTopicsSummary)
         .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([topic, _]) => `אנגלית: ${getEnglishTopicName(topic)}`),
+        .map(([topic, _]) => `English: ${getEnglishTopicName(topic)}`),
       ...Object.entries(scienceTopicsSummary)
         .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([topic, _]) => `מדעים: ${getScienceTopicName(topic)}`),
+        .map(([topic, _]) => `Science: ${getScienceTopicName(topic)}`),
     ];
     
     return {
@@ -872,7 +860,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       endDate: endDate.toISOString().split('T')[0],
       generatedAt: now.toISOString(),
       
-      // סיכום כללי
+      // General summary
       summary: {
         totalTimeMinutes:
           (mathTimeData.totalMinutes || 0) +
@@ -907,19 +895,19 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         achievements: achievements.length
       },
       
-      // לפי פעולות (חשבון)
+      // By operation (math)
       mathOperations: mathOperationsSummary,
       
-      // לפי נושאים (גאומטריה)
+      // By topic (geometry)
       geometryTopics: geometryTopicsSummary,
       
-      // לפי נושאים (אנגלית)
+      // By topic (english)
       englishTopics: englishTopicsSummary,
       
-      // לפי נושאים (מדעים)
+      // By topic (science)
       scienceTopics: scienceTopicsSummary,
       
-      // כל הפעולות והנושאים יחד (לצורך תצוגה)
+      // All operations and topics together (for display purposes)
       allItems: {
         ...Object.fromEntries(Object.entries(mathOperationsSummary).map(([k, v]) => [`math_${k}`, v])),
         ...Object.fromEntries(Object.entries(geometryTopicsSummary).map(([k, v]) => [`geometry_${k}`, v])),
@@ -927,12 +915,12 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         ...Object.fromEntries(Object.entries(scienceTopicsSummary).map(([k, v]) => [`science_${k}`, v])),
       },
       
-      // פעילות יומית
+      // Daily activity
       dailyActivity: dailyActivity.sort((a, b) => 
         new Date(a.date) - new Date(b.date)
       ),
       
-      // ניתוח
+      // Analysis
       analysis: {
         needsPractice,
         excellent,
@@ -943,7 +931,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         recommendations
       },
       
-      // אתגרים
+      // Challenges
       challenges: {
         daily: {
           questions: dailyChallenge.questions || 0,
@@ -957,7 +945,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         }
       },
       
-      // הישגים
+      // Achievements
       achievements: achievements.map(badge => ({
         name: badge,
         earned: true
@@ -965,9 +953,9 @@ export function generateParentReport(playerName, period = 'week', customStartDat
     };
   } catch (error) {
     console.error("Error generating parent report:", error);
-    // מחזיר דוח ריק במקום null כדי שהמשתמש יוכל לבחור תקופות אחרות
+    // Return an empty report instead of null so the user can still choose other periods
     return {
-      playerName: playerName || "שחקן",
+      playerName: playerName || "Player",
       period: period === 'custom' ? 'custom' : period,
       startDate: customStartDate || new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       endDate: customEndDate || new Date().toISOString().split('T')[0],
@@ -1029,10 +1017,10 @@ export function generateParentReport(playerName, period = 'week', customStartDat
   }
 }
 
-// חישוב שיפור
+// Calculate improvement
 function calculateImprovement(operation, progressData, period) {
-  // זה יכול להיות מורכב יותר - להשוות בין תקופות
-  // כרגע נחזיר null או נתונים בסיסיים
+  // This could be more elaborate - compare between periods
+  // For now, return null or basic data
   return null;
 }
 
@@ -1054,11 +1042,11 @@ function getDisplayNameForEntry(op, data) {
   return getOperationName(keyForLookup);
 }
 
-// יצירת המלצות (משותף לדוח V1 ואל V2)
+// Generate recommendations (shared by report V1 and V2)
 export function generateRecommendations(operations, mistakes) {
   const recommendations = [];
 
-  // ספי "היברידי" (דיוק+שאלות מהכללי, זמן מהתקופה הנבחרת)
+  // "Hybrid" thresholds (accuracy+questions from overall data, time from the selected period)
   const TH = {
     promoteAccuracy: 92,
     promoteQuestions: 40,
@@ -1068,7 +1056,7 @@ export function generateRecommendations(operations, mistakes) {
     superTimeMinutes: 30,
     minDataQuestions: 10,
     minDataTimeMinutes: 5,
-    // כדי לקבל "המלצה כחולה" (טוב) חייבים גם זמן וגם מספיק שאלות
+    // To get a "Blue recommendation" (good), both time and enough questions are required
     goodAccuracy: 85,
     goodQuestions: 15,
     goodTimeMinutes: 10,
@@ -1101,18 +1089,18 @@ export function generateRecommendations(operations, mistakes) {
     const mistakesCount = mistakes?.[mistakeKey]?.count || 0;
     const hasQuestions = questions > 0;
 
-    // נייצר המלצה לכל נושא/פעולה שנלמדו (יש זמן או יש שאלות)
+    // Generate a recommendation for every topic/operation practiced (has time or has questions)
     if (questions <= 0 && timeMinutes <= 0) return;
 
     const baseReasons = hasQuestions
-      ? `דיוק ${accuracy}% על ${questions} שאלות, ${timeMinutes} דקות בתקופה`
-      : `אין נתוני שאלות (רק ${timeMinutes} דקות תרגול בתקופה)`;
+      ? `${accuracy}% accuracy on ${questions} questions, ${timeMinutes} minutes in a period`
+      : `No question data (only ${timeMinutes} practice minutes in the period)`;
 
-    // כדי להוציא "כחול" חייבים גם זמן מינימלי וגם מינימום שאלות
+    // To assign "blue", both a minimum amount of time and a minimum number of questions are required
     const hasEnoughDataForStableRecommendation =
       questions >= TH.minDataQuestions && timeMinutes >= TH.minDataTimeMinutes;
 
-    // המלצה ירוקה לעלייה (רמה/כיתה/שניהם)
+    // Green recommendation to move up (level/grade/both)
     const meetsPromotionBase =
       accuracy >= TH.promoteAccuracy &&
       questions >= TH.promoteQuestions &&
@@ -1138,14 +1126,14 @@ export function generateRecommendations(operations, mistakes) {
 
     if (promoteLevelToKey || promoteGradeToKey) {
       const parts = [];
-      if (promoteLevelToKey) parts.push(`לעלות רמה אל ${LEVEL_LABELS[promoteLevelToKey] || promoteLevelToKey}`);
-      if (promoteGradeToKey) parts.push(`לעלות כיתה אל ${GRADE_LABELS[promoteGradeToKey] || promoteGradeToKey}`);
+      if (promoteLevelToKey) parts.push(`level up to ${LEVEL_LABELS[promoteLevelToKey] || promoteLevelToKey}`);
+      if (promoteGradeToKey) parts.push(`move up a grade to ${GRADE_LABELS[promoteGradeToKey] || promoteGradeToKey}`);
 
       recommendations.push({
         type: "promotion",
         operation: op,
         operationName,
-        message: `מצוין! מומלץ ${parts.join(" וגם ")}. (${baseReasons})`,
+        message: `Excellent! ${parts.join(" and ")} is recommended. (${baseReasons})`,
         priority: "success",
         promoteLevelToKey,
         promoteGradeToKey,
@@ -1153,25 +1141,25 @@ export function generateRecommendations(operations, mistakes) {
       return;
     }
 
-    // אין מספיק נתונים (מעט זמן ו/או מעט שאלות) — לא כחול.
-    // נשאיר את זה בצהוב כדי שלא תהיה תחושה ש"הכל טוב" כשאין זמן/נתונים.
+    // Not enough data (little time and/or few questions) — not blue.
+    // We leave this as yellow so it doesn't feel like "everything is good" when there's no time/data.
     if (!hasEnoughDataForStableRecommendation) {
       recommendations.push({
         type: "insufficient_data",
         operation: op,
         operationName,
-        message: `צריך עוד תרגול (בעיקר זמן/כמות שאלות) כדי לתת המלצה חזקה. (${baseReasons})`,
+        message: `You need more practice (mainly time/quantity of questions) to give a strong recommendation. (${baseReasons})`,
         priority: "medium",
       });
       return;
     }
 
-    // המלצות "לא טובות" (אדום) — דיוק נמוך או הרבה טעויות בתקופה
+    // "Not good" recommendations (red) — low accuracy or many mistakes in the period
     if ((hasQuestions && accuracy < 65 && questions >= TH.minDataQuestions) || mistakesCount >= 10) {
       const msgParts = [];
-      if (accuracy < 65) msgParts.push(`דיוק נמוך (${accuracy}%) - מומלץ לחזור על הבסיס ולעבוד לאט`);
-      if (mistakesCount >= 10) msgParts.push(`${mistakesCount} טעויות בתקופה - כדאי לתרגל את הנושא באופן ממוקד`);
-      if (timeMinutes < 10) msgParts.push("מומלץ גם להגדיל את זמן התרגול לנושא הזה");
+      if (accuracy < 65) msgParts.push(`Low accuracy (${accuracy}%) - it is recommended to repeat the basics and work slowly`);
+      if (mistakesCount >= 10) msgParts.push(`${mistakesCount} Mistakes during the period - you should practice the topic in a focused way`);
+      if (timeMinutes < 10) msgParts.push("It is also recommended to increase the practice time for this subject");
 
       recommendations.push({
         type: "needs_practice",
@@ -1184,19 +1172,19 @@ export function generateRecommendations(operations, mistakes) {
       return;
     }
 
-    // ביניים (צהוב)
+    // In between (yellow)
     if (hasQuestions && accuracy < 80) {
       recommendations.push({
         type: "improve",
         operation: op,
         operationName,
-        message: `יש התקדמות, אבל כדאי לחזק לפני שמעלים קושי. (${baseReasons})`,
+        message: `There is progress, but it is better to strengthen before raising difficulties. (${baseReasons})`,
         priority: "medium",
       });
       return;
     }
 
-    // טוב (כחול) – רק אם עומדים גם ביעד זמן וגם בכמות שאלות + דיוק טוב
+    // Good (blue) - only if both the time target and the question count + good accuracy are met
     if (
       hasQuestions &&
       accuracy >= TH.goodAccuracy &&
@@ -1205,25 +1193,25 @@ export function generateRecommendations(operations, mistakes) {
     ) {
       const hint =
         data.levelKey && data.levelKey !== "hard"
-          ? `אפשר לנסות בהדרגה רמה ${LEVEL_LABELS[nextLevelKey(data.levelKey)] || "גבוהה יותר"}`
-          : "להמשיך לתרגל כדי לשמור על יציבות";
+          ? `You can gradually try level ${LEVEL_LABELS[nextLevelKey(data.levelKey)] || "higher"}`
+          : "Keep practicing to maintain stability";
       recommendations.push({
         type: "good",
         operation: op,
         operationName,
-        message: `מצב טוב. ${hint}. (${baseReasons})`,
+        message: `Good progress. ${hint}. (${baseReasons})`,
         priority: "low",
       });
       return;
     }
 
-    // ברירת מחדל: צהוב (לא כחול) — יש דיוק טוב אבל עדיין חסר זמן/שאלות כדי להגדיר כ"טוב מאוד"
+    // Default: yellow (not blue) — accuracy is good but time/questions are still too low to call it "very good"
     if (hasQuestions) {
       recommendations.push({
         type: "improve_more",
         operation: op,
         operationName,
-        message: `הדיוק טוב, אבל צריך עוד תרגול (זמן/כמות שאלות) לפני שמעלים קושי. (${baseReasons})`,
+        message: `The accuracy is good, but you need more practice (time/amount of questions) before increasing the difficulty. (${baseReasons})`,
         priority: "medium",
       });
       return;
@@ -1233,7 +1221,7 @@ export function generateRecommendations(operations, mistakes) {
       type: "ok",
       operation: op,
       operationName,
-      message: `מומלץ להמשיך לתרגל כדי לקבל גם נתוני דיוק. (${baseReasons})`,
+      message: `It is recommended to keep practicing to get accuracy data as well. (${baseReasons})`,
       priority: "medium",
     });
   });
@@ -1243,22 +1231,22 @@ export function generateRecommendations(operations, mistakes) {
   return recommendations;
 }
 
-// יצירת דוח PDF (HTML → PDF) כדי לשמור עברית/RTL בצורה קריאה
+// Generate a PDF report (HTML → PDF) to keep the layout readable
 export function exportReportToPDF(report, options = {}) {
   if (typeof window === "undefined") return;
   
   const elementId = options.elementId || "parent-report-pdf";
-  const filename = options.filename || `דוח-${report?.playerName || "שחקן"}-${report?.endDate || ""}.pdf`;
-  const method = options.method || "print"; // "print" (מומלץ) | "canvas" (fallback)
+  const filename = options.filename || `Report-${report?.playerName || "Player"}-${report?.endDate || ""}.pdf`;
+  const method = options.method || "print"; // "print" (recommended) | "canvas" (fallback)
 
   try {
     const el = document.getElementById(elementId);
     if (!el) {
-      alert("שגיאה בייצוא PDF: לא נמצא תוכן להדפסה.");
+      alert("PDF export error: No printable content found.");
       return;
     }
 
-    // הדרך המקצועית: הדפסה ל-PDF (וקטורי, חלוקת עמודים נכונה, ללא "צילום מסך")
+    // The professional approach: print to PDF (vector, proper page breaks, no "screenshot")
     if (method === "print") {
       if (window.__mleoPdfExportInProgress) return;
       window.__mleoPdfExportInProgress = true;
@@ -1271,17 +1259,17 @@ export function exportReportToPDF(report, options = {}) {
         background: rgba(0,0,0,0.45);
         display: flex; align-items: center; justify-content: center;
         color: #fff; font: 600 16px/1.4 system-ui, -apple-system, Segoe UI, Arial;
-        direction: rtl; text-align: center;
+        direction: ltr; text-align: center;
         backdrop-filter: blur(2px);
       `;
-      overlay.textContent = "פותח הדפסה… בחר 'Save as PDF'";
+      overlay.textContent = "Opens Print… Select 'Save as PDF'";
       document.body.appendChild(overlay);
 
-      // הרבה דפדפנים משתמשים ב-title לשם ברירת מחדל של ה-PDF
+      // Many browsers use the title as the default PDF name
       const prevTitle = document.title;
       document.title = filename;
 
-      // מצב הדפסה (ה-CSS בדף יתפוס ב-@media print)
+      // Print mode (the page's CSS will kick in via @media print)
       document.documentElement.classList.add("pdf-print-mode");
 
       const cleanup = () => {
@@ -1291,7 +1279,7 @@ export function exportReportToPDF(report, options = {}) {
         window.__mleoPdfExportInProgress = false;
       };
 
-      // לנקות אחרי הדפסה
+      // Clean up after printing
       const prevAfterPrint = window.onafterprint;
       window.onafterprint = () => {
         try { prevAfterPrint?.(); } catch {}
@@ -1299,7 +1287,7 @@ export function exportReportToPDF(report, options = {}) {
         window.onafterprint = prevAfterPrint || null;
       };
 
-      // להבטיח שה-overlay נצבע לפני פתיחת print dialog
+      // Make sure the overlay is painted before opening the print dialog
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           try {
@@ -1307,7 +1295,7 @@ export function exportReportToPDF(report, options = {}) {
           } catch (e) {
             console.error("Print failed:", e);
             cleanup();
-            alert("שגיאה בפתיחת הדפסה. אנא נסה שוב.");
+            alert("Error opening print. Please try again.");
           }
         });
       });
@@ -1315,7 +1303,7 @@ export function exportReportToPDF(report, options = {}) {
       return;
     }
 
-    // תיעוד גדלים של גרפים (Recharts ResponsiveContainer) כדי שלא יתאפסו ב-clone
+    // Record chart sizes (Recharts ResponsiveContainer) so they don't collapse to 0 in the clone
     const chartEls = Array.from(el.querySelectorAll(".recharts-responsive-container"));
     const chartSizes = [];
     chartEls.forEach((node, idx) => {
@@ -1324,7 +1312,7 @@ export function exportReportToPDF(report, options = {}) {
       const h = Math.max(0, Math.round(rect.height));
       const id = `pdfchart-${idx}`;
       node.setAttribute("data-pdf-chart-id", id);
-      // אם הגובה/רוחב יצאו 0 (לפעמים), ננסה מה-parent
+      // If height/width come out 0 (sometimes happens), try the parent instead
       const pRect = node.parentElement?.getBoundingClientRect?.() || { width: 0, height: 0 };
       chartSizes.push({
         id,
@@ -1333,11 +1321,11 @@ export function exportReportToPDF(report, options = {}) {
       });
     });
 
-    // מניעת יצוא כפול שגורם לתקיעה/זיכרון
+    // Prevent duplicate exports that could cause a freeze/memory issue
     if (window.__mleoPdfExportInProgress) return;
     window.__mleoPdfExportInProgress = true;
 
-    // Overlay קטן כדי שהמשתמש יבין שהפעולה בעבודה (לא משנה עיצוב הדף עצמו)
+    // Small overlay so the user knows the action is in progress (doesn't change the page's own styling)
     const overlay = document.createElement("div");
     overlay.setAttribute("data-pdf-overlay", "1");
     overlay.style.cssText = `
@@ -1345,13 +1333,13 @@ export function exportReportToPDF(report, options = {}) {
       background: rgba(0,0,0,0.45);
       display: flex; align-items: center; justify-content: center;
       color: #fff; font: 600 16px/1.4 system-ui, -apple-system, Segoe UI, Arial;
-      direction: rtl; text-align: center;
+      direction: ltr; text-align: center;
       backdrop-filter: blur(2px);
     `;
-    overlay.textContent = "מכין PDF… זה יכול לקחת כמה שניות";
+    overlay.textContent = "Preparing a PDF… This may take a few seconds";
     document.body.appendChild(overlay);
 
-    // תן לדפדפן “לנשום” ולצייר את ה-overlay לפני העבודה הכבדה
+    // Let the browser "breathe" and paint the overlay before the heavy work
     const deferStart = (fn) => {
       if (typeof window.requestIdleCallback === "function") {
         window.requestIdleCallback(fn, { timeout: 300 });
@@ -1360,7 +1348,7 @@ export function exportReportToPDF(report, options = {}) {
       }
     };
 
-    // Dynamic import כדי לא להעמיס על SSR / build
+    // Dynamic import to avoid weighing down SSR / build
     deferStart(() => {
       import("html2pdf.js/dist/html2pdf.js")
         .then((mod) => {
@@ -1370,9 +1358,9 @@ export function exportReportToPDF(report, options = {}) {
             throw new Error("html2pdf import did not return a function");
           }
 
-          // ברירת מחדל: איכות קריאה (טקסט חד יותר) – עדיין לא "וקטורי", אבל הרבה יותר ברור
+          // Default: readable quality (sharper text) — still not "vectorial", but much clearer
           const dpr = window.devicePixelRatio || 1;
-          const scale = Math.min(2, Math.max(1.8, dpr)); // חדות טקסט טובה יותר
+          const scale = Math.min(2, Math.max(1.8, dpr)); // sharper text
 
           const opt = {
             margin: [10, 10, 10, 10],
@@ -1388,13 +1376,13 @@ export function exportReportToPDF(report, options = {}) {
                   const root = clonedDoc.getElementById(elementId);
                   if (!root) return;
 
-                  // החלת גדלים לגרפים כדי ש-ResponsiveContainer לא ייצא 0x0
+                  // Apply chart sizes so ResponsiveContainer doesn't export 0x0
                   chartSizes.forEach(({ id, w, h }) => {
                     const c = root.querySelector(`[data-pdf-chart-id="${id}"]`);
                     if (c) {
                       c.style.setProperty("width", `${w}px`, "important");
                       c.style.setProperty("height", `${h}px`, "important");
-                      // לפעמים ה-parent wrapper קובע – נוודא גם אותו
+                      // Sometimes the parent wrapper is what governs — make sure it matches too
                       const parent = c.parentElement;
                       if (parent) {
                         parent.style.setProperty("width", `${w}px`, "important");
@@ -1403,13 +1391,13 @@ export function exportReportToPDF(report, options = {}) {
                     }
                   });
 
-                  // עיצוב "ידידותי ל-PDF" רק בתוך ה-clone (לא משנה את העיצוב באתר!)
-                  root.setAttribute("dir", "rtl");
+                  // "PDF friendly" styling only inside the clone (doesn't change the site's own styling!)
+                  root.setAttribute("dir", "ltr");
 
-                  // הכי חשוב: html2canvas לא תומך ב-oklab/oklch. נזריק CSS עם !important כדי לאלץ צבעים פשוטים.
+                  // Most important: html2canvas doesn't support oklab/oklch. Inject CSS with !important to force plain colors.
                   const style = clonedDoc.createElement("style");
                   style.textContent = `
-                    /* תבנית PDF לקריאות */
+                    /* PDF template for readability */
                     #${elementId} {
                       background: #fff !important;
                       color: #111 !important;
@@ -1421,8 +1409,8 @@ export function exportReportToPDF(report, options = {}) {
                       padding: 14px !important;
                       max-width: 780px !important;
                       margin: 0 auto !important;
-                      direction: rtl !important;
-                      text-align: right !important;
+                      direction: ltr !important;
+                      text-align: left !important;
                       unicode-bidi: plaintext !important;
                     }
                     #${elementId} h1 { font-size: 22px !important; margin-bottom: 6px !important; }
@@ -1439,40 +1427,38 @@ export function exportReportToPDF(report, options = {}) {
                       text-shadow: none !important;
                       filter: none !important;
                       backdrop-filter: none !important;
-                      direction: rtl !important;
-                      text-align: right !important;
+                      direction: ltr !important;
+                      text-align: left !important;
                       unicode-bidi: plaintext !important;
                     }
                     #${elementId} {
                       background-color: #fff !important;
                     }
 
-                    /* כרטיסים/בלוקים – להפוך למסודר ונקי */
+                    /* Cards/blocks – make them neat and clean */
                     #${elementId} .rounded-lg {
                       background-color: #fff !important;
                       border: 1px solid #e5e7eb !important;
                     }
 
-                    /* טבלאות – ריווחים וגבולות לקריאות */
+                    /* Tables – spacing and borders for readability */
                     #${elementId} table { width: 100% !important; border-collapse: collapse !important; }
                     #${elementId} th, #${elementId} td {
                       padding: 6px 8px !important;
                       border: 1px solid #e5e7eb !important;
                       vertical-align: top !important;
                       font-size: 12.5px !important;
-                      text-align: right !important;
-                      direction: rtl !important;
+                      text-align: left !important;
+                      direction: ltr !important;
                     }
                     #${elementId} thead th { background: #f3f4f6 !important; font-weight: 700 !important; }
 
-                    /* אלמנטים שמסומנים LTR (כמו שורת תאריכים) – נשאיר LTR */
-                    #${elementId} [dir="ltr"], #${elementId} [style*="direction: ltr"] {
-                      direction: ltr !important;
-                      unicode-bidi: isolate !important;
-                      text-align: center !important;
+                    /* Global English PDF: all content LTR */
+                    #${elementId} * {
+                      unicode-bidi: isolate;
                     }
 
-                    /* שבירת עמוד חכמה */
+                    /* Smart page breaks */
                     #${elementId} .avoid-break,
                     #${elementId} .rounded-lg,
                     #${elementId} table,
@@ -1482,7 +1468,7 @@ export function exportReportToPDF(report, options = {}) {
                       page-break-inside: avoid !important;
                     }
 
-                    /* גרפים – כן להציג ב-PDF, אבל בצורה מסודרת וקריאה */
+                    /* Charts – do display in the PDF, but in a neat, readable way */
                     #${elementId} .recharts-wrapper,
                     #${elementId} .recharts-responsive-container {
                       display: block !important;
@@ -1490,12 +1476,12 @@ export function exportReportToPDF(report, options = {}) {
                     #${elementId} .recharts-wrapper {
                       margin: 0 auto !important;
                     }
-                    /* למסגר את אזור הגרף כדי שייראה כמו בדוח */
+                    /* Frame the chart area so it looks like it does in the report */
                     #${elementId} .recharts-wrapper,
                     #${elementId} svg.recharts-surface {
                       background: #fff !important;
                     }
-                    /* לא לשבור עמוד באמצע גרף */
+                    /* Don't break a page in the middle of a chart */
                     #${elementId} .recharts-wrapper,
                     #${elementId} .recharts-responsive-container {
                       break-inside: avoid !important;
@@ -1504,12 +1490,12 @@ export function exportReportToPDF(report, options = {}) {
                   `;
                   clonedDoc.head.appendChild(style);
 
-                  // בנוסף, נוודא במפורש על ה-root (עם important) – למקרה שיש !important מהמקור
+                  // Also explicitly enforce this on the root (with important) — in case there's an !important from the source
                   root.style.setProperty("background-color", "#ffffff", "important");
                   root.style.setProperty("color", "#000000", "important");
                   root.style.setProperty("background-image", "none", "important");
 
-                  // חיזוק לגרפים: לפעמים RTL משפיע על SVG; נוודא שה-SVG נשאר LTR
+                  // Extra safeguard for charts: make sure SVGs stay LTR
                   const svgs = root.querySelectorAll("svg");
                   svgs.forEach((svg) => {
                     svg.setAttribute("direction", "ltr");
@@ -1522,10 +1508,10 @@ export function exportReportToPDF(report, options = {}) {
               ignoreElements: (node) => node?.classList?.contains("no-pdf"),
             },
             jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-            // חלוקת עמודים טובה יותר:
-            // - css: משתמש ב-break rules
+            // Better page breaks:
+            // - css: uses break rules
             // - legacy: fallback
-            // - avoid-all: מנסה להימנע מחיתוך בלוקים (לפעמים)
+            // - avoid-all: tries to avoid cutting blocks (sometimes)
             pagebreak: {
               mode: ["avoid-all", "css", "legacy"],
               avoid: [".avoid-break", ".recharts-wrapper", ".recharts-responsive-container", "table"],
@@ -1537,13 +1523,13 @@ export function exportReportToPDF(report, options = {}) {
         })
         .catch((error) => {
           console.error("Error loading/creating PDF:", error);
-          alert("שגיאה בייצוא PDF. אנא נסה שוב. פרטים: " + (error?.message || "לא ידוע"));
+          alert("Error exporting PDF. Please try again. Details:" + (error?.message || "unknown"));
         })
         .finally(() => {
           try {
             overlay.remove();
           } catch {}
-          // ניקוי attributes זמניים מה-DOM
+          // Clean up temporary attributes from the DOM
           try {
             chartEls.forEach((n) => n.removeAttribute("data-pdf-chart-id"));
           } catch {}
@@ -1552,7 +1538,7 @@ export function exportReportToPDF(report, options = {}) {
     });
   } catch (error) {
     console.error("Error exporting to PDF:", error);
-    alert("שגיאה בייצוא PDF. אנא נסה שוב.");
+    alert("Error exporting PDF. Please try again.");
     try {
       const existing = document.querySelector('[data-pdf-overlay="1"]');
       existing?.remove?.();

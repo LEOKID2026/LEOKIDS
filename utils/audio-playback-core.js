@@ -1,11 +1,11 @@
 /**
- * נגינת stem — static_url או TTS (speechSynthesis).
- * TTS: אין resolve שקט על שגיאה; המתנה אל voices; בחירת voice עברי; fallback והודעות ברורות.
+ * Stem playback — static_url or TTS (speechSynthesis).
+ * TTS: no silent resolve on error; wait for voices; locale voice pick; clear fallbacks and messages.
  */
 
 /**
- * טוען/מעורר את רשימת ה voices בדפדפנים (במיוחד כרום) לפני לחיצת המשתמש — מומלץ ב useEffect.
- * לא מדבר בקול: speak ריק ו cancel או רק getVoices אחרי voiceschanged.
+ * Load/wake the voices list in browsers (especially Chrome) before the user click — recommended in useEffect.
+ * Does not speak audibly: empty speak + cancel, or getVoices after voiceschanged.
  */
 export function primeSpeechSynthesisVoices() {
   if (typeof window === "undefined" || !window.speechSynthesis) return () => {};
@@ -139,7 +139,10 @@ export function createStemPlaybackController(stem, opts = {}) {
 
     if (typeof window === "undefined" || !window.speechSynthesis) {
       return Promise.reject(
-        ttsErr("speech_synthesis_unavailable", "הדפדפן לא תומך בהקראה (Speech Synthesis). נסו דפדפן אחר או מכשיר אחר.")
+        ttsErr(
+          "speech_synthesis_unavailable",
+          "This browser does not support speech synthesis. Try another browser or device."
+        )
       );
     }
 
@@ -180,13 +183,13 @@ export function createStemPlaybackController(stem, opts = {}) {
       u.onend = () => doneOk();
       u.onerror = (ev) => {
         const code = ev.error || "unknown";
-        doneErr(String(code), `שגיאת TTS: ${code}`);
+        doneErr(String(code), `TTS error: ${code}`);
       };
 
       try {
         synth.speak(u);
       } catch (err) {
-        doneErr("speak_throw", err instanceof Error ? err.message : "שגיאה בהפעלת ההקראה.");
+        doneErr("speak_throw", err instanceof Error ? err.message : "Failed to start speech playback.");
       }
     });
   }
@@ -219,7 +222,7 @@ export function createStemPlaybackController(stem, opts = {}) {
       return audioEl.play().catch((err) => {
         console.warn("[hebrew-audio] static_url play failed", stem.stem_audio_url, err);
         opts.onEnded?.();
-        return Promise.reject(ttsErr("audio_element_play_failed", "לא ניתן להשמיע את קובץ האודיו."));
+        return Promise.reject(ttsErr("audio_element_play_failed", "Could not play the audio file."));
       });
     }
 
@@ -230,14 +233,17 @@ export function createStemPlaybackController(stem, opts = {}) {
         hasText: !!text,
       });
       return Promise.reject(
-        ttsErr("tts_not_configured", "אין טקסט להשמעה (TTS). נסו לרענן את השאלה.")
+        ttsErr("tts_not_configured", "No text available for playback (TTS). Try refreshing the question.")
       );
     }
 
     if (typeof window === "undefined" || !window.speechSynthesis) {
       console.warn("[hebrew-audio] speechSynthesis unavailable");
       return Promise.reject(
-        ttsErr("speech_synthesis_unavailable", "הדפדפן לא תומך בהקראה (Speech Synthesis). נסו דפדפן אחר או מכשיר אחר.")
+        ttsErr(
+          "speech_synthesis_unavailable",
+          "This browser does not support speech synthesis. Try another browser or device."
+        )
       );
     }
 
@@ -275,7 +281,7 @@ export function createStemPlaybackController(stem, opts = {}) {
       };
 
       /**
-       * מריצים speak באותו סנכרון ככל האפשר אחרי לחיצה (חשוב אל iOS Safari).
+       * Run speak in the same sync turn as the click when possible (important for iOS Safari).
        * @param {string} reason
        */
       const runSpeak = (reason) => {
@@ -306,23 +312,23 @@ export function createStemPlaybackController(stem, opts = {}) {
           const code = ev.error || "unknown";
           const human =
             code === "not-allowed"
-              ? "ההשמעה נחסמה (הרשאות / מדיניות דפדפן)."
+              ? "Playback was blocked (permissions / browser policy)."
               : code === "synthesis-failed"
-                ? "ההקראה נכשלה. נסו שוב או בדקו שפת ממשק עברית במערכת."
+                ? "Speech failed. Try again or check that a matching voice language pack is installed."
                 : code === "canceled"
-                  ? "ההשמעה בוטלה."
-                  : `שגיאת TTS: ${code}`;
+                  ? "Playback was canceled."
+                  : `TTS error: ${code}`;
           doneErr(String(code), human);
         };
 
         try {
           synth.speak(u);
         } catch (err) {
-          doneErr("speak_throw", err instanceof Error ? err.message : "שגיאה בהפעלת ההקראה.");
+          doneErr("speak_throw", err instanceof Error ? err.message : "Failed to start speech playback.");
           return;
         }
 
-        /** כרום לפעמים לא מתחיל עד ש voices נטענו — מאריכים timeout אם הרשימה הייתה ריקה */
+        /** Chrome sometimes won't start until voices load — extend timeout if the list was empty */
         const gen = ++watchdogGeneration;
         const watchdogMs = initialVoiceCount === 0 && voicesNow().length === 0 ? 5200 : 2800;
         window.setTimeout(() => {
@@ -330,7 +336,7 @@ export function createStemPlaybackController(stem, opts = {}) {
           if (!synth.speaking && !synth.pending) {
             doneErr(
               "tts_no_activity",
-              "לא זוהתה השמעה. אם אתם בכרום: ודאו שמותקנת חבילת עברית; אם ב Safari ב iOS: נסו שוב מיד אחרי טעינת הדף. אפשר גם להשתמש בטקסט שמוצג למעלה."
+              "No playback was detected. In Chrome: make sure a matching language voice pack is installed; on iOS Safari: try again right after the page loads. You can also use the text shown above."
             );
           }
         }, watchdogMs);

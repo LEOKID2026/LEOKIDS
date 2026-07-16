@@ -10,7 +10,7 @@ export default function GuardianChildSelectForm({ students, busy, onSelect, brig
 
   return (
     <div className={`${T.guardianBox} space-y-3`}>
-      <p className={T.guardianText}>לחשבון זה מקושרים מספר ילדים. בחרו את הילד/ה לצפייה בדוח:</p>
+      <p className={T.guardianText}>This account is linked to more than one child. Choose whose report to view:</p>
       <ul className="space-y-2">
         {students.map((s) => (
           <li key={s.studentId}>

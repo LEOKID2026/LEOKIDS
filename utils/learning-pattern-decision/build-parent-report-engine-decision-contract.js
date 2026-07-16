@@ -65,9 +65,9 @@ export function mapEngineRecommendedAction(actionState, engineDecision, metrics)
  */
 function cleanParentFindingPattern(raw) {
   let t = sanitizeParentPatternLabel(String(raw || ""));
-  t = t.replace(/\(נקודת מיקוד:[^)]*\)/gi, "");
-  t = t.replace(/נקודת המיקוד היא[^.]*\.?\s*/gi, "");
-  t = t.replace(/מצביע על דפוס:\s*/gi, "");
+  t = t.replace(/\(focus point:[^)]*\)/gi, "");
+  t = t.replace(/the focus point is[^.]*\.?\s*/gi, "");
+  t = t.replace(/indicates a pattern:\s*/gi, "");
   t = t.replace(/\s{2,}/g, " ").trim();
   return t;
 }
@@ -76,35 +76,35 @@ function cleanParentFindingPattern(raw) {
  * @param {object} p
  */
 function buildParentSafeFindingFromEngine(p) {
-  const name = String(p.topicName || "הנושא").trim() || "הנושא";
+  const name = String(p.topicName || "this topic").trim() || "this topic";
   const q = p.metrics.questions;
   const acc = p.metrics.accuracy;
   const w = p.metrics.wrong;
   const pattern = cleanParentFindingPattern(p.detectedPattern);
   const hasPattern = isUsableParentPatternLabel(p.detectedPattern) && !!pattern;
-  const suffix = q > 0 ? ` מבוסס על ${formatQuestionsTextHe(q)} שנפתרו בנושא.` : "";
+  const suffix = q > 0 ? ` Based on ${formatQuestionsTextHe(q)} solved in this topic.` : "";
   const engineDecision = String(p.engineDecision || "");
 
   if (q <= 0) return "";
 
   if (q <= 2) {
     return q === 1
-      ? `בנושא ${name} יש נתונים ראשוניים בלבד. ככל שיהיו עוד שאלות בנושא, נוכל להציג תמונה מדויקת יותר.`
-      : `בנושא ${name} נפתרו ${formatQuestionsTextHe(q)}. עדיין מוקדם לזהות דפוס ברור בנושא.`;
+      ? `${name} only has preliminary data so far. As more questions are answered in this topic, we'll be able to show a more accurate picture.`
+      : `${formatQuestionsTextHe(q)} were solved in ${name}. It's still early to identify a clear pattern in this topic.`;
   }
 
   if (hasPattern && !p.blockPatternClaim) {
-    return `בנושא ${name} מופיע דפוס חוזר של טעויות (${pattern}). כדאי לחזק את הנושא.${suffix}`;
+    return `A recurring mistake pattern appears in ${name} (${pattern}). This topic is worth reinforcing.${suffix}`;
   }
 
   if (p.misconceptionLabel && isUsableParentPatternLabel(p.misconceptionLabel)) {
     const misc = cleanParentFindingPattern(p.misconceptionLabel);
     if (!misc) return "";
-    return `בנושא ${name} זוהתה טעות חוזרת: ${misc}. כדאי לחזק את הנושא.${suffix}`;
+    return `A recurring mistake was identified in ${name}: ${misc}. This topic is worth reinforcing.${suffix}`;
   }
 
   if (engineDecision === "clear_topic_gap") {
-    return `בנושא ${name} נראה קושי ברור - ${formatWrongOfQuestionsTextHe(w, q)} (${acc}% דיוק). כדאי לחזור ולחזק את ${name} לפני שממשיכים.${suffix}`;
+    return `${name} shows a clear difficulty - ${formatWrongOfQuestionsTextHe(w, q)} (${acc}% accuracy). It's worth going back and reinforcing ${name} before moving on.${suffix}`;
   }
 
   if (engineDecision === "speed_pressure_pattern") {
@@ -115,27 +115,27 @@ function buildParentSafeFindingFromEngine(p) {
   }
 
   if (engineDecision === "topic_needs_strengthening") {
-    return `בנושא ${name} יש נקודת חיזוק שכדאי לעבוד עליה (${formatQuestionsTextHe(q)}, ${acc}% דיוק). כדאי חיזוק ממוקד.${suffix}`;
+    return `${name} has a point worth reinforcing (${formatQuestionsTextHe(q)}, ${acc}% accuracy). Focused reinforcement would help.${suffix}`;
   }
 
   if (engineDecision === "partial_stable") {
-    return `בנושא ${name} יש הבנה חלקית (${acc}% דיוק), אבל עדיין צריך חיזוק כדי להגיע ליציבות.${suffix}`;
+    return `${name} shows partial understanding (${acc}% accuracy), but still needs reinforcement to reach stability.${suffix}`;
   }
 
   if (engineDecision === "mastery_stable") {
-    return `בנושא ${name} נראית הצלחה טובה ויציבה (${formatQuestionsTextHe(q)}, ${acc}% דיוק).${suffix}`;
+    return `${name} shows good, stable success (${formatQuestionsTextHe(q)}, ${acc}% accuracy).${suffix}`;
   }
 
   if (engineDecision === "early_direction_only" || engineDecision === "insufficient_data") {
     if (q <= 4) {
-      return `בנושא ${name} יש ${formatQuestionsTextHe(q)}. עדיין מוקדם להסיק מסקנה ברורה.`;
+      return `${name} has ${formatQuestionsTextHe(q)}. It's still early to draw a clear conclusion.`;
     }
     return "";
   }
 
   if (q >= 5 && w >= 2 && acc < 70) {
-    const volume = acc <= 40 || w / Math.max(q, 1) >= 0.5 ? "הרבה טעויות" : "כמה טעויות";
-    return `בנושא ${name} היו ${volume} בשאלות שנפתרו. כדאי לחזור ולחזק את הנושא.${suffix}`;
+    const volume = acc <= 40 || w / Math.max(q, 1) >= 0.5 ? "a lot of mistakes" : "some mistakes";
+    return `${name} had ${volume} in the questions solved. It's worth going back and reinforcing this topic.${suffix}`;
   }
 
   return "";
@@ -153,7 +153,7 @@ export function resolveEngineDecisionUncertaintyText(q, evidenceStrength, engine
   if (strongEvidence) return null;
   if (questions >= 20) return null;
   if (questions <= 4) {
-    return "עדיין מוקדם לקבוע כיוון סופי - נמשיך לאסוף עוד נתוני תרגול קצרים.";
+    return "It's still early to determine a final direction - we'll keep collecting a bit more practice data.";
   }
   return null;
 }
@@ -205,8 +205,8 @@ export function buildSubjectEngineSummaryOpeningHe(subjectLabelHe, strongest) {
   if (!strongest?.contract) return null;
   const finding = String(strongest.contract.parentSafeFinding || "").trim();
   if (!finding) return null;
-  const lab = String(subjectLabelHe || "המקצוע").trim();
-  return `ב${lab}: ${finding}`;
+  const lab = String(subjectLabelHe || "this subject").trim();
+  return `${lab}: ${finding}`;
 }
 
 /**
@@ -240,7 +240,7 @@ export function buildParentReportEngineDecisionContract(input = {}) {
   const subjectId = String(input.subjectId || "").trim();
   const topicRowKey = String(input.topicRowKey || input.topicKey || "").trim();
   const topicName =
-    String(input.topicName || input.displayName || input.topicLabel || "").trim() || "הנושא";
+    String(input.topicName || input.displayName || input.topicLabel || "").trim() || "this topic";
   const unit = input.unit && typeof input.unit === "object" ? input.unit : null;
   const v3Enrichment =
     input.v3Enrichment && typeof input.v3Enrichment === "object" ? input.v3Enrichment : null;

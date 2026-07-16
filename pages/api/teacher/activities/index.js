@@ -81,7 +81,7 @@ export default async function handler(req, res) {
         });
         if (!rl.allowed) {
           if (rl.retryAfterSec) res.setHeader("Retry-After", String(rl.retryAfterSec));
-          return sendTeacherApiError(res, 429, "rate_limited", "יותר מדי בקשות - המתן מעט ונסה שוב");
+          return sendTeacherApiError(res, 429, "rate_limited", "Too many requests — wait a moment and try again");
         }
       }
 
@@ -109,7 +109,7 @@ export default async function handler(req, res) {
           res,
           403,
           "grade_mismatch",
-          "רמת הכיתה חסרה או אינה תואמת לכיתה המשויכת"
+          "Grade level is missing or does not match the assigned class"
         );
       }
 
@@ -118,7 +118,7 @@ export default async function handler(req, res) {
           res,
           403,
           "subject_mismatch",
-          "המקצוע שנבחר אינו תואם לכיתה המשויכת"
+          "The selected subject does not match the assigned class"
         );
       }
 
@@ -185,9 +185,9 @@ export default async function handler(req, res) {
       });
     }
 
-    return sendTeacherApiError(res, 405, "method_not_allowed", "שיטת בקשה לא נתמכת");
+    return sendTeacherApiError(res, 405, "method_not_allowed", "Request method not supported");
   } catch (err) {
     safeApiLog("teacher/activities", err);
-    return sendTeacherApiError(res, 500, "internal_error", "שגיאת שרת - נסה שוב");
+    return sendTeacherApiError(res, 500, "internal_error", "Server error — please try again");
   }
 }

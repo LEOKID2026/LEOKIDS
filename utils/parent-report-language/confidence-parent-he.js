@@ -1,5 +1,5 @@
 /**
- * Map engine confidence levels → parent-facing Hebrew (no raw enums in UI).
+ * Map engine confidence levels → parent-facing copy (no raw enums in UI).
  */
 import { PARENT_EVIDENCE_VOLUME } from "./parent-evidence-matrix.js";
 
@@ -19,20 +19,20 @@ export function confidenceLevelParentSummaryHe(level, questionCount = null) {
   switch (k) {
     case "high":
       if (belowStrong) {
-        return "יש כיוון ראשוני בנושא הזה, אבל צריך עוד תרגולים כדי לוודא שהוא יציב.";
+        return "There's an early direction on this topic, but more practice is needed to confirm it's stable.";
       }
-      return "כבר רואים כיוון עקבי בנושא הזה.";
+      return "A consistent direction is already visible on this topic.";
     case "moderate":
-      return "יש כיוון ראשוני בנושא הזה, אבל צריך עוד תרגולים כדי לוודא שהוא יציב.";
+      return "There's an early direction on this topic, but more practice is needed to confirm it's stable.";
     case "low":
-      return "עדיין מוקדם לקבוע בנושא הזה, ועוד תרגול יעזור להבין את התמונה.";
+      return "It's still early to draw a conclusion on this topic, and more practice will help clarify the picture.";
     case "early_signal_only":
-      return "זה סימן ראשוני בלבד, ולכן עדיין לא קובעים כיוון סופי בנושא הזה.";
+      return "This is only an early signal, so a final direction on this topic hasn't been set yet.";
     case "insufficient_data":
-      return "בתקופה שנבחרה עדיין מעט חומר לנושא - עוד קצת תרגול ייצר תמונה ברורה יותר.";
+      return "There's still limited material for this topic in the selected period - a bit more practice will create a clearer picture.";
     case "contradictory":
-      return "כרגע התוצאות בנושא הזה לא אחידות, ולכן עוד מוקדם לקבוע כיוון ברור.";
+      return "Results on this topic aren't consistent right now, so it's still early to settle on a clear direction.";
     default:
-      return "עדיין לא ברור מה אפשר לקבוע בנושא הזה - נכון לעכשיו עדיף תרגול קצר ולבדוק שוב בהמשך.";
+      return "It's still not clear what can be concluded on this topic - for now, short practice and checking again later is best.";
   }
 }

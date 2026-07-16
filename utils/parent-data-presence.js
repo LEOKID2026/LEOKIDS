@@ -53,7 +53,7 @@ export function patternDiagnosticsHasGlobalSignal(report) {
 
 /** Unified parent-facing copy when the window has practice but not enough for a clear picture. */
 export const PARENT_THIN_DATA_EXPLAINER_HE =
-  "יש תרגול בתקופה שנבחרה, אבל עדיין אין מספיק בסיס לתובנה ברורה. כדאי להמשיך עוד כמה ימים ולבדוק שוב.";
+  "There is some practice in the selected period, but not yet enough to draw a clear insight. It helps to continue for a few more days and check again.";
 
 /**
  * @param {Record<string, unknown>} report
@@ -156,14 +156,14 @@ export function deriveRawMetricStrengthLinesHe(summary, report = null, weakSubje
   void report;
 
   const rows = [
-    { subjectId: "english", label: "אנגלית", q: summary.englishQuestions, acc: summary.englishAccuracy },
-    { subjectId: "hebrew", label: "עברית", q: summary.hebrewQuestions, acc: summary.hebrewAccuracy },
-    { subjectId: "science", label: "מדעים", q: summary.scienceQuestions, acc: summary.scienceAccuracy },
-    { subjectId: "math", label: "מתמטיקה", q: summary.mathQuestions, acc: summary.mathAccuracy },
-    { subjectId: "geometry", label: "גאומטריה", q: summary.geometryQuestions, acc: summary.geometryAccuracy },
+    { subjectId: "english", label: "English", q: summary.englishQuestions, acc: summary.englishAccuracy },
+    { subjectId: "hebrew", label: "Hebrew", q: summary.hebrewQuestions, acc: summary.hebrewAccuracy },
+    { subjectId: "science", label: "Science", q: summary.scienceQuestions, acc: summary.scienceAccuracy },
+    { subjectId: "math", label: "Math", q: summary.mathQuestions, acc: summary.mathAccuracy },
+    { subjectId: "geometry", label: "Geometry", q: summary.geometryQuestions, acc: summary.geometryAccuracy },
     {
       subjectId: "moledet-geography",
-      label: "מולדת וגאוגרפיה",
+      label: "Social Studies & Geography",
       q: summary.moledetGeographyQuestions,
       acc: summary.moledetGeographyAccuracy,
     },
@@ -207,7 +207,7 @@ export function mergeExecutiveStrengthLinesHe(rawLines, diagnosticLines, max = 5
 }
 
 /** Blocked substrings that must never appear in parent-facing report text (whole-string / UI copy). */
-export const PARENT_REPORT_FORBIDDEN_LEAKAGE_SUBSTRINGS = Object.freeze(["דוגמה לכל סוג"]);
+export const PARENT_REPORT_FORBIDDEN_LEAKAGE_SUBSTRINGS = Object.freeze(["example of every type"]);
 
 /** Demo / placeholder five zeros — must not appear as an isolated token (avoid matching inside #000000 or 100000). */
 export const PARENT_REPORT_STANDALONE_ZERO_LEAK_RE = /(?<![#0-9])00000(?![0-9])/g;

@@ -38,7 +38,7 @@ function VolumeRow({ label, value, onChange }) {
 }
 
 /**
- * Full Hebrew settings panel for in-game fullscreen overlays.
+ * Full settings panel for in-game fullscreen overlays.
  */
 export default function GameAudioSettingsPanel({ onClose, className = "", musicScope = "global" }) {
   const audio = useGameAudioOptional();
@@ -65,34 +65,34 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
   return (
     <div
       className={`rounded-xl border border-white/15 bg-gray-900/95 p-4 text-white shadow-xl backdrop-blur ${className}`}
-      dir="rtl"
+      dir="ltr"
       role="dialog"
-      aria-label="הגדרות שמע"
+      aria-label="Audio settings"
     >
       <div className="mb-3 flex items-center justify-between gap-2">
-        <h3 className="text-base font-semibold">הגדרות שמע</h3>
+        <h3 className="text-base font-semibold">Audio settings</h3>
         <button
           type="button"
           onClick={close}
           className="rounded-lg px-2 py-1 text-sm text-white/70 hover:bg-white/10"
-          aria-label="סגור"
+          aria-label="Close"
         >
           ✕
         </button>
       </div>
 
       <ToggleRow
-        label="כל השמע"
+        label="All audio"
         checked={s.masterEnabled}
         onChange={(v) => audio.updateSettings({ masterEnabled: v })}
       />
       <ToggleRow
-        label="אפקטים"
+        label="Effects"
         checked={s.sfxEnabled}
         onChange={(v) => audio.updateSettings({ sfxEnabled: v })}
       />
       <ToggleRow
-        label="מוזיקה"
+        label="Music"
         checked={isLearningMasterScope ? learningMasterMusicEnabled : s.musicEnabled}
         onChange={(v) => {
           if (isLearningMasterScope) {
@@ -110,7 +110,7 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
         }}
       />
       <ToggleRow
-        label="דיבור / הקראה"
+        label="Speech / narration"
         checked={s.voiceEnabled}
         onChange={(v) => {
           audio.updateSettings({ voiceEnabled: v });
@@ -119,28 +119,28 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
       />
 
       <VolumeRow
-        label="עוצמת אפקטים"
+        label="Effects volume"
         value={s.sfxVolume}
         onChange={(v) => audio.updateSettings({ sfxVolume: v })}
       />
       <VolumeRow
-        label="עוצמת מוזיקה"
+        label="Music volume"
         value={s.musicVolume}
         onChange={(v) => audio.updateSettings({ musicVolume: v })}
       />
       <VolumeRow
-        label="עוצמת דיבור"
+        label="Speech volume"
         value={s.voiceVolume}
         onChange={(v) => audio.updateSettings({ voiceVolume: v })}
       />
 
       <ToggleRow
-        label="השמעת הוראות אוטומטית"
+        label="Auto-play instructions"
         checked={s.autoPlayInstructions}
         onChange={(v) => audio.updateSettings({ autoPlayInstructions: v })}
       />
       <ToggleRow
-        label="השמעת שאלות אוטומטית"
+        label="Auto-play questions"
         checked={s.autoPlayQuestions}
         onChange={(v) => audio.updateSettings({ autoPlayQuestions: v })}
       />
@@ -157,7 +157,7 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
           }
         }}
       >
-        איפוס לברירת מחדל
+        Reset to defaults
       </button>
     </div>
   );

@@ -341,7 +341,7 @@ export default function PwaDebug() {
       </p>
 
       {!data ? (
-        <p style={{ color: "#94a3b8" }}>טוען...</p>
+        <p style={{ color: "#94a3b8" }}>Loading...</p>
       ) : (
         <>
           {/* General */}
@@ -548,7 +548,7 @@ export default function PwaDebug() {
           <section style={{ marginBottom: 20 }}>
             <SectionHead title={`Game Error Log (last ${gameErrors.length})`} />
             {gameErrors.length === 0 ? (
-              <div style={{ fontSize: 12, color: "#4ade80" }}>אין שגיאות שמורות</div>
+              <div style={{ fontSize: 12, color: "#4ade80" }}>No saved errors</div>
             ) : (
               gameErrors.map((e, i) => (
                 <div
@@ -636,7 +636,7 @@ export default function PwaDebug() {
               cursor: "pointer",
             }}
           >
-            {copied ? "✓ הועתק!" : "העתק דוח"}
+            {copied ? "✓ Copied!" : "Copy report"}
           </button>
         </>
       )}

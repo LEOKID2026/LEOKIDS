@@ -72,9 +72,12 @@ export function computeEffectiveMaxPS(p) {
   return Math.max(0, Math.min(3, maxPS));
 }
 
+/** Detection of over-strong HE/EN wording (keep HE for legacy parent copy). */
 const PS3_REGEX =
-  /מומלץ בבירור|בהחלט כדאי|בוודאות|מוכח ש|סגורנו|אין ספק|ודאי ש|בטוח ש|מאסטרי מלא|שליטה מלאה/giu;
-const PS3_PROMO_REGEX = /קפיצת כיתה|שחרור מלא|עצמאות מלאה|העלאת כיתה כעת/giu;
+  /מומלץ בבירור|בהחלט כדאי|בוודאות|מוכח ש|סגורנו|אין ספק|ודאי ש|בטוח ש|מאסטרי מלא|שליטה מלאה|clearly recommended|definitely worth|with certainty|proven that|no doubt|sure that|certain that|full mastery|full control/giu;
+const PS3_PROMO_REGEX =
+  /קפיצת כיתה|שחרור מלא|עצמאות מלאה|העלאת כיתה כעת|grade skip|full release|full independence|raise the grade now/giu;
+const HEDGE_PRESENT_RE = /מוקדם|חלקי|אולי|נאסוף|early|partial|perhaps|maybe|gather more|still early|initial sign/i;
 
 /**
  * @param {string} text
@@ -87,22 +90,22 @@ export function clampHebrewParentTextToMaxPS(text, maxPS, contentClass = "diagno
   if (maxPS >= 3) return out;
 
   if (maxPS <= 0) {
-    out = out.replace(PS3_REGEX, "נאסוף עוד תצפית");
-    out = out.replace(PS3_PROMO_REGEX, "לא משנים הגדרה דרמטית בשלב זה");
-    if (contentClass === "diagnosis" && !/מוקדם|חלקי|אולי|נאסוף/.test(out)) {
-      out = `עדיין מוקדם לנעול כיוון - ${out}`;
+    out = out.replace(PS3_REGEX, "we'll gather more observation");
+    out = out.replace(PS3_PROMO_REGEX, "we are not making a dramatic setting change at this stage");
+    if (contentClass === "diagnosis" && !HEDGE_PRESENT_RE.test(out)) {
+      out = `Still early to lock a direction - ${out}`;
     }
     return out.replace(/\s+/g, " ").trim();
   }
 
   if (maxPS === 1) {
-    out = out.replace(PS3_REGEX, "נראה שכדאי");
-    out = out.replace(PS3_PROMO_REGEX, "לא לדחוף שינוי חד בשלב זה");
-    if (contentClass === "diagnosis" && !/מוקדם|חלקי|אולי/.test(out)) {
-      out = `סימן ראשוני בלבד - ${out}`;
+    out = out.replace(PS3_REGEX, "it seems worth considering");
+    out = out.replace(PS3_PROMO_REGEX, "don't push a sharp change at this stage");
+    if (contentClass === "diagnosis" && !HEDGE_PRESENT_RE.test(out)) {
+      out = `Initial sign only - ${out}`;
     }
   } else if (maxPS === 2) {
-    out = out.replace(/מומלץ בבירור|בהחלט כדאי/giu, "כדאי בזהירות");
+    out = out.replace(/מומלץ בבירור|בהחלט כדאי|clearly recommended|definitely worth/giu, "worth considering carefully");
   }
 
   return out.replace(/\s+/g, " ").trim();
@@ -474,7 +477,7 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
         dataSufficiencyLevel: String(tr?.dataSufficiencyLevel || "low"),
         conclusionStrength: cs,
       });
-      if (band <= 1 && /בטוח|ודאי|מוכח|סגור|יציב לחלוטין/giu.test(combined)) {
+      if (band <= 1 && /בטוח|ודאי|מוכח|סגור|יציב לחלוטין|certain|sure|proven|settled|fully stable/giu.test(combined)) {
         fails.push({ code: "fail_too_early", detail: "decisive wording under E0–E1" });
       }
       const riN = RI_RANK[String(tr?.interventionIntensity)] || 0;
@@ -490,7 +493,7 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
         riN >= 3 &&
         band <= 1 &&
         !/\d/.test(combined) &&
-        !/שאלות|טעויות|תרגול/.test(combined)
+        !/שאלות|טעויות|תרגול|questions|mistakes|practice/i.test(combined)
       ) {
         fails.push({ code: "fail_generic", detail: "RI3 under thin evidence without anchor" });
       }

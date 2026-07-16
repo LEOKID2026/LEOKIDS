@@ -140,9 +140,9 @@ export default function StudentQuestionDisplay({
             <p
               data-testid="student-question-instruction"
               className={`${hierarchyInstructionClass} max-md:mb-1 mb-1.5`.trim()}
-              dir="rtl"
+              dir="ltr"
               style={{
-                direction: "rtl",
+                direction: "ltr",
                 unicodeBidi: "isolate",
                 ...getVerbalInstructionStyle({
                   text: hierarchy.instruction,
@@ -158,9 +158,9 @@ export default function StudentQuestionDisplay({
             <p
               data-testid="student-question-passage"
               className={`${hierarchyPassageClass} max-md:mb-2 mb-2`.trim()}
-              dir="rtl"
+              dir="ltr"
               style={{
-                direction: "rtl",
+                direction: "ltr",
                 unicodeBidi: "isolate",
                 ...learningProseIsolateStyle,
                 ...getVerbalPassageStyle({
@@ -179,9 +179,9 @@ export default function StudentQuestionDisplay({
               <p
                 data-testid="student-question-final"
                 className="m-0 max-w-full w-full px-2 text-center break-words overflow-wrap-anywhere max-md:mt-1 mt-1.5"
-                dir="rtl"
+                dir="ltr"
                 style={{
-                  direction: "rtl",
+                  direction: "ltr",
                   unicodeBidi: "isolate",
                   ...learningProseIsolateStyle,
                   ...getVerbalFinalQuestionStyle({
@@ -198,13 +198,13 @@ export default function StudentQuestionDisplay({
               <div
                 data-testid="student-question-final"
                 className={`${getVerbalFinalQuestionPanelClassName()} max-md:mt-1 mt-1.5`.trim()}
-                dir="rtl"
+                dir="ltr"
                 style={getVerbalFinalQuestionPanelStyle()}
               >
                 <p
                   className="m-0"
                   style={{
-                    direction: "rtl",
+                    direction: "ltr",
                     unicodeBidi: "isolate",
                     ...learningProseIsolateStyle,
                     ...getVerbalFinalQuestionStyle({
@@ -225,9 +225,9 @@ export default function StudentQuestionDisplay({
         <p
           data-testid="student-question-body"
           className={verbalClassName}
-          dir="rtl"
+          dir="ltr"
           style={{
-            direction: "rtl",
+            direction: "ltr",
             unicodeBidi: "isolate",
             ...learningProseIsolateStyle,
             ...(resolveQuestionFontStyle?.({ text: hierarchy.text }) || {}),
@@ -248,9 +248,9 @@ export default function StudentQuestionDisplay({
             <p
               data-testid="student-question-lead"
               className={leadClassName}
-              dir="rtl"
+              dir="ltr"
               style={{
-                direction: "rtl",
+                direction: "ltr",
                 unicodeBidi: "isolate",
                 ...fontLead,
                 ...leadStyle,
@@ -295,9 +295,9 @@ export default function StudentQuestionDisplay({
                 className={`w-full max-w-full flex justify-center overflow-visible ${
                   isEquation ? formulaClassName : `${bodyClassName} break-words`
                 }`}
-                dir={isEquation ? "ltr" : "rtl"}
+                dir="ltr"
                 style={{
-                  direction: isEquation ? "ltr" : "rtl",
+                  direction: "ltr",
                   unicodeBidi: "isolate",
                   ...fontBody,
                   ...(isVerbalBody

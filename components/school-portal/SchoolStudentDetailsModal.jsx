@@ -4,7 +4,7 @@ import { SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi.jsx";
 import {
   SC_BTN_CLOSE_DETAILS,
   SC_DETAILS_MODAL_TITLE,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 
 /**
  * @param {{

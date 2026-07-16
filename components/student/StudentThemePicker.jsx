@@ -56,27 +56,27 @@ export default function StudentThemePicker({
     <div
       className={`${shellClass} ${className} ${shellThemeClass}`}
       role="group"
-      aria-label="בחירת עיצוב מסך"
+      aria-label="Choose screen theme"
     >
       <button
         type="button"
         onClick={() => setTheme(STUDENT_THEME_BRIGHT)}
         aria-pressed={theme === STUDENT_THEME_BRIGHT}
-        aria-label="עיצוב בהיר"
-        title="עיצוב בהיר"
+        aria-label="Light theme"
+        title="Light theme"
         className={`${baseBtn} ${btnClass(theme === STUDENT_THEME_BRIGHT, true)}`}
       >
-        {isIcon ? "🌞" : "🌞 בהיר"}
+        {isIcon ? "🌞" : "🌞 Light"}
       </button>
       <button
         type="button"
         onClick={() => setTheme(STUDENT_THEME_CLASSIC)}
         aria-pressed={theme === STUDENT_THEME_CLASSIC}
-        aria-label="עיצוב קלאסי"
-        title="עיצוב קלאסי"
+        aria-label="Classic theme"
+        title="Classic theme"
         className={`${baseBtn} ${btnClass(theme === STUDENT_THEME_CLASSIC, false)}`}
       >
-        {isIcon ? "🌙" : "🌙 קלאסי"}
+        {isIcon ? "🌙" : "🌙 Classic"}
       </button>
     </div>
   );

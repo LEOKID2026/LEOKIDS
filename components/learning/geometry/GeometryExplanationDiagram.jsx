@@ -208,7 +208,7 @@ function DiagramFrame({ children, compact = false, embedded = false, mini = fals
       </div>
     );
   }
-  /* mini — תצוגה מקדימה קומפקטית בזמן השאלה (לא משפיע על פריסת התשובה) */
+  /* mini — compact preview during the question (does not affect answer layout) */
   if (mini) {
     return (
       <div className="w-full max-w-[140px] sm:max-w-[180px] mx-auto mb-0 rounded-lg bg-emerald-950/50 border border-emerald-400/25 px-0.5 py-0 flex items-center justify-center shadow-inner shadow-black/10 ring-1 ring-emerald-500/10 overflow-hidden">
@@ -340,12 +340,12 @@ export default function GeometryExplanationDiagram({
           </SvgText>
           {spec.mode === "perimeter" && (
             <SvgText x={cx} y={cy - half - 12} variant="note">
-              4 צלעות שוות
+              4 equal sides
             </SvgText>
           )}
           {spec.mode === "volume" && (
             <SvgText x={cx} y={cy - half - 12} variant="note">
-              שלושה ממדים שווים (צלע³)
+              3 equal dimensions (side³)
             </SvgText>
           )}
         </GeometryDiagramFitSvg>
@@ -425,13 +425,13 @@ export default function GeometryExplanationDiagram({
             strokeWidth={leftSw}
           />
           <SvgText x={cx} y={bottom + 20} variant="label">
-            {fmtLen(L, question)} (אורך)
+            {fmtLen(L, question)} (length)
           </SvgText>
           <SvgText x={left - 10} y={cy + 4} variant="label" anchor="end">
             {fmtLen(Wd, question)}
           </SvgText>
           <SvgText x={left - 10} y={cy + 22} variant="caption" anchor="end">
-            רוחב
+            Width
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -451,7 +451,7 @@ export default function GeometryExplanationDiagram({
     const baseHi = emph === "base_height" || emph === "base" || emph === "formula";
     const heightHi = emph === "base_height" || emph === "formula";
     const isRes = emph === "result";
-    const heightLabel = spec.hideHeight ? "גובה ?" : `גובה ${fmtLen(h, question)}`;
+    const heightLabel = spec.hideHeight ? "Height ?" : `Height ${fmtLen(h, question)}`;
     const heightDrawProps =
       showHeightDraw && heightHi
         ? animatedStrokeProps(GEOMETRY_ANIMATION_PRESETS.drawHeight, bh + 40)
@@ -486,13 +486,13 @@ export default function GeometryExplanationDiagram({
             className={heightDrawProps.className || undefined}
           />
           <SvgText x={cx} y={baseY + 20} variant="label">
-            בסיס {fmtLen(b, question)}
+            Base {fmtLen(b, question)}
           </SvgText>
           <SvgText x={xL - 8} y={(apexY + baseY) / 2 + 5} variant="label" anchor="end">
             {heightLabel}
           </SvgText>
           <SvgText x={cx} y={Math.max(16, apexY - 14)} variant="note">
-            הגובה ניצב לבסיס
+            Height is perpendicular to the base
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -509,7 +509,7 @@ export default function GeometryExplanationDiagram({
     const xr = cx + w / 2;
     const yt = yb - ph;
     const bh = emphasis === "base_height" || emphasis === "formula";
-    const heightLabel = spec.hideHeight ? "גובה ?" : `גובה ${fmtLen(h, question)}`;
+    const heightLabel = spec.hideHeight ? "Height ?" : `Height ${fmtLen(h, question)}`;
     return (
       <DiagramFrame {...frameProps}>
         <GeometryDiagramFitSvg variant={fitVariant} measureKey={fitMeasureKey} stepId={stepId}>
@@ -537,13 +537,13 @@ export default function GeometryExplanationDiagram({
             strokeDasharray="6 5"
           />
           <SvgText x={cx} y={yb + 20} variant="label">
-            בסיס {fmtLen(b, question)}
+            Base {fmtLen(b, question)}
           </SvgText>
           <SvgText x={xl + skew - 12} y={(yt + yb) / 2 + 5} variant="label" anchor="end">
             {heightLabel}
           </SvgText>
           <SvgText x={xr + skew + 18} y={(yt + yb) / 2} variant="note" anchor="start">
-            מוסט ≠ גובה
+            Skew ≠ height
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -563,7 +563,7 @@ export default function GeometryExplanationDiagram({
     const xTl = cx - topW / 2;
     const xTr = cx + topW / 2;
     const tri = emphasis === "bases_height" || emphasis === "formula";
-    const heightLabel = spec.hideHeight ? "גובה ?" : `גובה ${fmtLen(ht, question)}`;
+    const heightLabel = spec.hideHeight ? "Height ?" : `Height ${fmtLen(ht, question)}`;
     return (
       <DiagramFrame {...frameProps}>
         <GeometryDiagramFitSvg variant={fitVariant} measureKey={fitMeasureKey} stepId={stepId}>
@@ -599,10 +599,10 @@ export default function GeometryExplanationDiagram({
             strokeDasharray="6 5"
           />
           <SvgText x={cx} y={yb + 20} variant="label">
-            בסיס {fmtLen(b1, question)}
+            Base {fmtLen(b1, question)}
           </SvgText>
           <SvgText x={cx} y={yt - 10} variant="label">
-            בסיס {fmtLen(b2, question)}
+            Base {fmtLen(b2, question)}
           </SvgText>
           <SvgText x={xTl - 8} y={(yt + yb) / 2 + 5} variant="label" anchor="end">
             {heightLabel}
@@ -638,7 +638,7 @@ export default function GeometryExplanationDiagram({
             </>
           )}
           <SvgText x="180" y="36" variant="note">
-            {perp ? "ישרים מאונכים" : "ישרים מקבילים"}
+            {perp ? "Perpendicular lines" : "Parallel lines"}
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -671,7 +671,7 @@ export default function GeometryExplanationDiagram({
             strokeDasharray="7 5"
           />
           <SvgText x={cx} y="28" variant="note">
-            ציר סימטרייה
+            Line of symmetry
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -721,14 +721,14 @@ export default function GeometryExplanationDiagram({
               strokeDasharray="6 4"
             />
             <SvgText x={cx} y={bottom + 22} variant="label">
-              {typeof spec.side === "number" ? fmtLen(spec.side, question) : "אורך"}
+              {typeof spec.side === "number" ? fmtLen(spec.side, question) : "Length"}
             </SvgText>
             <SvgText x={left - 10} y={cy + 4} variant="label" anchor="end">
-              {typeof spec.width === "number" ? fmtLen(spec.width, question) : "רוחב"}
+              {typeof spec.width === "number" ? fmtLen(spec.width, question) : "Width"}
             </SvgText>
             {!spec.hideDiagonal ? (
               <SvgText x={cx + 20} y={cy - 8} variant="note" anchor="start">
-                {spec.diagonal != null ? fmtLen(spec.diagonal, question) : "אלכסון"}
+                {spec.diagonal != null ? fmtLen(spec.diagonal, question) : "Diagonal"}
               </SvgText>
             ) : null}
           </GeometryDiagramFitSvg>
@@ -761,7 +761,7 @@ export default function GeometryExplanationDiagram({
             strokeDasharray="6 4"
           />
           <SvgText x={cx} y={cy + half + 20} variant="label">
-            {typeof spec.side === "number" ? fmtLen(spec.side, question) : "צלע"}
+            {typeof spec.side === "number" ? fmtLen(spec.side, question) : "Side"}
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -791,7 +791,7 @@ export default function GeometryExplanationDiagram({
             <polygon points={points} fill={ST.fillShape} stroke={ST.stroke} strokeWidth="2.5" />
           ) : null}
           <SvgText x={cx} y="28" variant="note">
-            צורה לריצוף
+            Tiling shape
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -834,12 +834,12 @@ export default function GeometryExplanationDiagram({
           </SvgText>
           {spec.mode === "perimeter" && (
             <SvgText x={cx} y={cy - rad - 16} variant="note">
-              היקף - סיבוב מלא על השפה
+              Perimeter — full trip around the edge
             </SvgText>
           )}
           {spec.mode === "area" && (
             <SvgText x={cx} y={cy - rad - 16} variant="note">
-              שטח - הפנים של העיגול (לא הקו החיצוני בלבד)
+              Area — the inside of the circle (not just the outer line)
             </SvgText>
           )}
         </GeometryDiagramFitSvg>
@@ -896,7 +896,7 @@ export default function GeometryExplanationDiagram({
             {fmtLen(c, question)}
           </SvgText>
           <SvgText x={180} y={Math.min(y0, y1, y2) - 12} variant="note">
-            סכום שלוש הצלעות = היקף
+            Sum of three sides = perimeter
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -951,17 +951,17 @@ export default function GeometryExplanationDiagram({
           </SvgText>
           {showInsideFormula ? (
             <SvgText x="180" y="138" variant="label">
-              סכום בפנים = 180°
+              Interior sum = 180°
             </SvgText>
           ) : null}
           {!hideThird ? (
             <SvgText x="180" y="22" variant="note">
-              מחפשים את הזווית שלא נתונה
+              Looking for the missing angle
             </SvgText>
           ) : null}
           {!hideThird && sumRule ? (
             <SvgText x="180" y="272" variant="note">
-              סכום זוויות במשולש = 180°
+              Sum of angles in a triangle = 180°
             </SvgText>
           ) : null}
         </GeometryDiagramFitSvg>
@@ -1103,7 +1103,7 @@ export default function GeometryExplanationDiagram({
             {sideLabel("c", c)}
           </SvgText>
           <SvgText x="180" y="20" variant="note">
-            זווית ישרה - היתר נגדה הוא c
+            Right angle — the hypotenuse opposite it is c
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -1154,7 +1154,7 @@ export default function GeometryExplanationDiagram({
             </marker>
           </defs>
           <SvgText x="180" y="28" variant="note">
-            הזזה - אותה צורה במיקום חדש
+            Translation — same shape in a new place
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -1181,7 +1181,7 @@ export default function GeometryExplanationDiagram({
             />
           ) : null}
           <SvgText x="180" y="28" variant="note">
-            שיקוף - תמונה מול קו המראה
+            Reflection — mirror image across the line
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>
@@ -1214,7 +1214,7 @@ export default function GeometryExplanationDiagram({
             </g>
           ) : null}
           <SvgText x="180" y="28" variant="note">
-            סיבוב {angle}° סביב נקודת מרכז
+            Rotation {angle}° around a center point
           </SvgText>
         </GeometryDiagramFitSvg>
       </DiagramFrame>

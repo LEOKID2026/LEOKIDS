@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
 import TeacherPortalShell from "../../../components/teacher-portal/TeacherPortalShell";
 import SchoolStaffChangePinForm from "../../../components/school-portal/SchoolStaffChangePinForm";
-import { SCHOOL_STAFF_CHANGE_PIN_TITLE } from "../../../lib/school-portal/school-ui.he";
+import { SCHOOL_STAFF_CHANGE_PIN_TITLE } from "../../../lib/school-portal/school-ui.js";
 
 export default function SchoolStaffChangePinPage() {
   const router = useRouter();
@@ -10,7 +10,7 @@ export default function SchoolStaffChangePinPage() {
   return (
     <Layout>
       <TeacherPortalShell title={SCHOOL_STAFF_CHANGE_PIN_TITLE}>
-        <div data-testid="school-staff-change-pin-root" dir="rtl" lang="he">
+        <div data-testid="school-staff-change-pin-root" dir="ltr" lang="en">
           <SchoolStaffChangePinForm
             onSuccess={(redirectPath) => {
               router.replace(redirectPath || "/teacher/dashboard");

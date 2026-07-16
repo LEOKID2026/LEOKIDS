@@ -1,5 +1,5 @@
 /**
- * Phase 2.8 - Read-only daily missions modal for subject lobby "אתגרים".
+ * Phase 2.8 - Read-only daily missions modal for subject lobby "Challenges".
  * Keeps existing modal shell; body shows Phase 2 missions (same as /student/home).
  */
 
@@ -11,10 +11,10 @@ function missionTypeIcon(type) {
 }
 
 function missionProgressLabel(m) {
-  if (m.completed) return "הושלם";
+  if (m.completed) return "Done";
   if (m.type === "minutes") {
     const prog = Math.round(m.progress * 10) / 10;
-    return `${prog} / ${m.target} דק׳`;
+    return `${prog} / ${m.target} min`;
   }
   return `${m.progress} / ${m.target}`;
 }
@@ -25,12 +25,12 @@ function CompactMissionRow({ mission, index }) {
   return (
     <article
       className={[
-        "rounded-xl border p-3 flex flex-col gap-2 text-right min-w-0",
+        "rounded-xl border p-3 flex flex-col gap-2 text-left min-w-0",
         completed
           ? "border-emerald-400/45 bg-emerald-900/25"
           : 'border-white/12 bg-black/30',
       ].join(" ")}
-      aria-label={`משימה ${index + 1}: ${textHe}`}
+      aria-label={`Mission ${index + 1}: ${textHe}`}
     >
       <div className="flex items-start gap-2">
         <span
@@ -67,13 +67,13 @@ function CompactMissionRow({ mission, index }) {
       <div className="flex items-center justify-between gap-2 text-xs">
         {completed ? (
           <span className="text-emerald-300 font-bold">
-            {coinAwarded ? "קיבלת את הפרס" : "הושלם"}
+            {coinAwarded ? "You got the reward" : "Done"}
           </span>
         ) : (
-          <span className="text-white/45">המשיכו ללמוד</span>
+          <span className="text-white/45">Keep learning</span>
         )}
         <span className="rounded-full px-2 py-0.5 bg-amber-500/15 text-amber-200 border border-amber-400/25 font-bold tabular-nums">
-          +{rewardCoins} מטבעות
+          +{rewardCoins} coins
         </span>
       </div>
     </article>
@@ -92,32 +92,32 @@ export default function SubjectDailyMissionsModal({ open, onClose, dailyMissions
     <div
       className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
       onClick={onClose}
-      dir="rtl"
+      dir="ltr"
     >
       <div
         className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-blue-400/60 rounded-2xl p-6 max-w-md w-full text-sm text-white max-h-[90vh] overflow-y-auto"
-        dir="rtl"
+        dir="ltr"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-2xl font-extrabold mb-1 text-center">📅 אתגרים</h2>
-        <p className="text-white/60 text-xs text-center mb-4">המשימות היומיות שלך</p>
+        <h2 className="text-2xl font-extrabold mb-1 text-center">📅 Challenges</h2>
+        <p className="text-white/60 text-xs text-center mb-4">Your daily missions</p>
 
         {loading ? (
-          <p className="text-center text-white/70 py-8">טוען משימות...</p>
+          <p className="text-center text-white/70 py-8">Loading missions...</p>
         ) : total > 0 ? (
           <>
             <div className="flex justify-center mb-3">
               <span className="rounded-full px-3 py-1 text-xs font-semibold bg-white/8 text-white/70 border border-white/10 tabular-nums">
-                {totalCompleted}/{total} הושלמו
+                {totalCompleted}/{total} completed
               </span>
             </div>
             {dailyMissions.allCompleted ? (
               <p className="text-emerald-300 text-sm text-center font-semibold mb-3">
-                כל הכבוד! סיימת את כל המשימות להיום
+                Great job! You finished all of today's missions
               </p>
             ) : (
               <p className="text-white/55 text-xs text-center mb-3">
-                השלימו משימות על ידי למידה - כל משימה שווה מטבעות
+                Complete missions by learning — each mission earns coins
               </p>
             )}
             <div className="space-y-2 mb-4">
@@ -128,7 +128,7 @@ export default function SubjectDailyMissionsModal({ open, onClose, dailyMissions
           </>
         ) : (
           <p className="text-center text-white/60 py-8 text-sm">
-            אין משימות זמינות כרגע. נסו שוב בעוד רגע.
+            No missions available right now. Try again in a moment.
           </p>
         )}
 
@@ -138,7 +138,7 @@ export default function SubjectDailyMissionsModal({ open, onClose, dailyMissions
             onClick={onClose}
             className="px-6 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 font-bold text-sm"
           >
-            סגור
+            Close
           </button>
         </div>
       </div>

@@ -11,7 +11,7 @@ import {
   SC_INBOX_EMPTY,
   SC_INBOX_TITLE_PARENT,
   SC_MESSAGE_FROM_SCHOOL_PARENT,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import { getSchoolMessageId } from "../../lib/school-portal/school-messaging-ui";
 
 export default function ParentSchoolInboxPage() {
@@ -83,7 +83,7 @@ export default function ParentSchoolInboxPage() {
   if (mustChangePin && !pinGateDone) {
     return (
       <Layout>
-        <TeacherPortalShell title="שינוי קוד גישה">
+        <TeacherPortalShell title="Change access code">
           <ParentMustChangePinGate onSuccess={() => setPinGateDone(true)} />
         </TeacherPortalShell>
       </Layout>
@@ -97,11 +97,11 @@ export default function ParentSchoolInboxPage() {
       <TeacherPortalShell title={SC_INBOX_TITLE_PARENT}>
         <div className="mb-4">
           <Link href="/parent/guardian/view" className="text-sm text-amber-300 hover:underline cursor-pointer">
-            ← חזרה לדוח
+            ← Back to report
           </Link>
         </div>
         {loading ? (
-          <p className="text-white/50 text-sm">טוען…</p>
+          <p className="text-white/50 text-sm">Loading…</p>
         ) : messages.length ? (
           <ul className="space-y-3">
             {messages.map((m) => {

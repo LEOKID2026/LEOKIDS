@@ -9,7 +9,7 @@ import {
   SCHOOL_STAFF_CREATE_SUBMIT_OPERATOR,
   SCHOOL_STAFF_CREATE_SUBMIT_TEACHER,
   SCHOOL_STAFF_PIN_SHOWN,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * @param {{
@@ -48,14 +48,14 @@ export default function SchoolStaffCreateForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "יצירה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, "Creation failed"));
         return;
       }
       setCreated(json?.data || null);
       setDisplayName("");
       onSuccess?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -64,9 +64,9 @@ export default function SchoolStaffCreateForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`}>
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-right">{sectionTitle}</h2>
+        <h2 className="text-base font-semibold mb-3 text-left">{sectionTitle}</h2>
         <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl">
-          <label className="block text-sm text-right">
+          <label className="block text-sm text-left">
             <span className="text-white/60 block mb-1">{SCHOOL_STAFF_CREATE_DISPLAY_NAME}</span>
             <input
               type="text"
@@ -96,7 +96,7 @@ export default function SchoolStaffCreateForm({
             </div>
           ) : null}
           <SchoolPrimaryButton type="submit" disabled={busy || !displayName.trim()}>
-            {busy ? "יוצר…" : submitLabel}
+            {busy ? "Creating…" : submitLabel}
           </SchoolPrimaryButton>
         </form>
       </div>

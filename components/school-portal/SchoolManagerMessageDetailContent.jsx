@@ -6,7 +6,7 @@ import {
   SC_RECEIPTS_STATUS_UNREAD,
   SC_RECEIPTS_TAB_PARENTS,
   SC_RECEIPTS_TAB_TEACHERS,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import {
   formatSchoolMessageAudienceLabel,
   schoolMessageHasParentRecipients,
@@ -40,7 +40,7 @@ export default function SchoolManagerMessageDetailContent({
           schoolMessageReadCountForTab(receiptTab, detail).read,
           schoolMessageReadCountForTab(receiptTab, detail).total
         )}
-        {detail.recipientCount != null ? ` · ${detail.recipientCount} נמענים` : ""}
+        {detail.recipientCount != null ? ` · ${detail.recipientCount} recipients` : ""}
       </p>
       {schoolMessageHasParentRecipients(detail) || schoolMessageHasTeacherRecipients(detail) ? (
         <div className="flex flex-wrap gap-2">

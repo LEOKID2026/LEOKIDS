@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
 import { useIOSViewportFix } from "../hooks/useIOSViewportFix";
 import { useGamesHubUi } from "../hooks/useGamesHubUi.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";

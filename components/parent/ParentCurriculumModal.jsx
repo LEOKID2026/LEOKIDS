@@ -34,7 +34,7 @@ export default function ParentCurriculumModal({ open, onClose, bright = false })
     <div
       className="flex flex-wrap gap-2"
       role="tablist"
-      aria-label="בחירת מקצוע"
+      aria-label="Subject selection"
     >
       {PARENT_CURRICULUM_SUBJECTS.map((item) => {
         const active = item.key === activeSubject;
@@ -63,7 +63,7 @@ export default function ParentCurriculumModal({ open, onClose, bright = false })
     <ParentDashboardModal
       bright={bright}
       open={open}
-      title="תוכניות הלימודים"
+      title="Curriculum plans"
       onClose={onClose}
       size="4xl"
       toolbar={toolbar}
@@ -71,7 +71,7 @@ export default function ParentCurriculumModal({ open, onClose, bright = false })
     >
       <div
         className="min-w-0 space-y-3 rounded-xl bg-slate-100/90 p-3 md:p-4 text-slate-800"
-        dir="rtl"
+        dir="ltr"
       >
         <ParentCurriculumContent
           subject={activeSubject}

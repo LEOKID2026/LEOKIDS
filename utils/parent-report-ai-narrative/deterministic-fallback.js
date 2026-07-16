@@ -1,5 +1,5 @@
 /**
- * Deterministic Hebrew narrative builder. Produces the SAME structured shape as the LLM:
+ * Deterministic English narrative builder. Produces the SAME structured shape as the LLM:
  *   { summary, strengths[{textHe, sourceId}], focusAreas[{textHe, sourceId}], homeTips[], cautionNote }
  *
  * The fallback is the safety net for: no API key, LLM disabled, network failure, or AI output
@@ -14,13 +14,13 @@ function trim(s, max) {
 function bandToCopy(band) {
   switch (String(band || "").toLowerCase()) {
     case "high":
-      return "תרגול בוגר ויציב";
+      return "mature, stable practice";
     case "moderate":
-      return "תרגול עקבי עם יציבות סבירה";
+      return "consistent practice with reasonable stability";
     case "mixed":
-      return "תרגול מעורב, חלק מהתחומים יציבים יותר";
+      return "mixed practice, with some areas more stable than others";
     default:
-      return "תרגול שעדיין כדאי להתייחס אליו בזהירות";
+      return "practice that's still worth treating with caution";
   }
 }
 
@@ -40,22 +40,22 @@ function buildSummary(packet) {
   const mixedGrade = packet?.mixedGradePractice === true;
 
   if (total === 0) {
-    return "בתקופה זו לא נאסף תרגול במערכת. כדאי להמשיך לעקוב לאחר תרגול נוסף לפני הסקת מסקנות.";
+    return "No practice was recorded in the system during this period. It's worth continuing to watch after more practice before drawing conclusions.";
   }
   if (mixedGrade && strengths.length === 0 && focusAreas.length === 0) {
-    return "יש מעט תרגול בחומר של הכיתה הרשומה, ולכן כדאי להמשיך לתרגל עוד לפני הסקת מסקנות רחבות.";
+    return "There's only a little practice in the registered grade's material, so it's worth continuing to practice more before drawing broader conclusions.";
   }
   if (dc === "thin" || dc === "low") {
-    const opening = studentName ? `מהתרגול של ${studentName} בתקופה זו` : "מהתרגול בתקופה זו";
+    const opening = studentName ? `From ${studentName}'s practice this period` : "From this period's practice";
     return trim(
-      `${opening} ניתן לקבל כיוון ראשוני בלבד. ${subjectStr ? `המקצועות המרכזיים שתורגלו: ${subjectStr}.` : ""} כדאי להמשיך לעקוב בעדינות ולא לקבוע חד משמעית רק ממפגש בודד.`,
+      `${opening}, only an initial direction can be seen. ${subjectStr ? `The main subjects practiced: ${subjectStr}.` : ""} It's worth continuing to watch gently, and not drawing firm conclusions from a single session.`,
       560
     );
   }
-  const opening = studentName ? `מהתרגול של ${studentName} בתקופה זו` : "מהתרגול בתקופה זו";
+  const opening = studentName ? `From ${studentName}'s practice this period` : "From this period's practice";
   const accuracyDesc = bandToCopy(packet?.overall?.accuracyPct >= 85 ? "high" : packet?.overall?.accuracyPct >= 70 ? "moderate" : packet?.overall?.accuracyPct >= 50 ? "mixed" : "low");
   return trim(
-    `${opening} עולה תמונה של ${accuracyDesc}. ${subjectStr ? `המקצועות שתורגלו בתקופה: ${subjectStr}.` : ""} מומלץ להמשיך עם שגרת תרגול קצרה ושוטפת כדי לחזק את התובנה.`,
+    `${opening}, the picture shows ${accuracyDesc}. ${subjectStr ? `Subjects practiced this period: ${subjectStr}.` : ""} It's recommended to continue with a short, regular practice routine to reinforce this.`,
     560
   );
 }
@@ -68,8 +68,8 @@ function buildStrengthsBullets(packet) {
     if (!s?.sourceId || !s?.displayNameHe) continue;
     const evidence = trim(s.evidenceHe, 60);
     const text = evidence
-      ? `התרגול ב${s.displayNameHe} נראה יציב - ${evidence}.`
-      : `התרגול ב${s.displayNameHe} נראה יציב.`;
+      ? `Practice in ${s.displayNameHe} looks stable - ${evidence}.`
+      : `Practice in ${s.displayNameHe} looks stable.`;
     out.push({ textHe: trim(text, 150), sourceId: s.sourceId });
   }
   return out;
@@ -83,8 +83,8 @@ function buildFocusBullets(packet) {
     if (!f?.sourceId || !f?.displayNameHe) continue;
     const evidence = trim(f.evidenceHe, 60);
     const text = evidence
-      ? `כדאי להמשיך לחזק את ${f.displayNameHe} - ${evidence}.`
-      : `כדאי להמשיך לחזק בעדינות את ${f.displayNameHe}.`;
+      ? `It's worth continuing to strengthen ${f.displayNameHe} - ${evidence}.`
+      : `It's worth continuing to gently strengthen ${f.displayNameHe}.`;
     out.push({ textHe: trim(text, 150), sourceId: f.sourceId });
   }
   return out;
@@ -95,17 +95,17 @@ function buildHomeTips(packet) {
   const focusFirst = (packet?.focusAreas || [])[0];
   const strengthFirst = (packet?.strengths || [])[0];
   if (focusFirst?.displayNameHe) {
-    tips.push(`לקבוע זמן קצר וקבוע בבית לתרגול עדין של ${focusFirst.displayNameHe}, ללא לחץ של זמן.`);
+    tips.push(`Set a short, regular time at home for gentle practice of ${focusFirst.displayNameHe}, without time pressure.`);
   } else {
-    tips.push("לקבוע זמן קצר וקבוע בבית לתרגול שגרתי, ללא לחץ של זמן.");
+    tips.push("Set a short, regular time at home for routine practice, without time pressure.");
   }
   if (strengthFirst?.displayNameHe) {
-    tips.push(`להמשיך לעודד את ${strengthFirst.displayNameHe} בשיחה רגועה ובמשחקים פשוטים בבית.`);
+    tips.push(`Keep encouraging ${strengthFirst.displayNameHe} through calm conversation and simple games at home.`);
   } else {
-    tips.push("להעניק חיזוק חיובי על ניסיון ולא רק על תוצאה, ולשמור על שיח רגוע סביב הלמידה.");
+    tips.push("Give positive reinforcement for effort, not just results, and keep the conversation around learning calm.");
   }
   if (tips.length < 3) {
-    tips.push("לעקוב לאורך זמן ולתת לתמונה להתגבש לפני הסקת מסקנות חזקות.");
+    tips.push("Keep watching over time and let the picture settle before drawing firm conclusions.");
   }
   return tips.slice(0, 3).map((t) => trim(t, 150));
 }
@@ -115,17 +115,17 @@ function buildCautionNote(packet) {
   if (warnings.length === 0) return "";
   const overall = warnings.find((w) => w.scope === "overall");
   if (overall) {
-    return trim("חשוב לזכור שהנתונים בתקופה זו מועטים - מדובר בכיוון ראשוני בלבד וכדאי להימנע ממסקנות חזקות.", 280);
+    return trim("It's important to remember that there's limited data for this period - this is only an initial direction, and it's worth avoiding firm conclusions.", 280);
   }
   const subjects = warnings
     .filter((w) => w.scope === "subject" && w.displayNameHe)
     .map((w) => w.displayNameHe)
     .slice(0, 3);
   if (subjects.length === 0) {
-    return trim("חשוב לזכור שהנתונים בחלק מהתחומים מצומצמים - כדאי להמשיך לעקוב לפני הסקת מסקנות.", 280);
+    return trim("It's important to remember that data in some areas is limited - it's worth continuing to watch before drawing conclusions.", 280);
   }
   return trim(
-    `חשוב לזכור שבמקצועות ${subjects.join(", ")} הנתונים מצומצמים בתקופה זו - מדובר בכיוון ראשוני בלבד.`,
+    `It's important to remember that data for ${subjects.join(", ")} is limited this period - this is only an initial direction.`,
     280
   );
 }

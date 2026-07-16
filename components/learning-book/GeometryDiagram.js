@@ -1,10 +1,25 @@
-import MixedHebrewMathText from "./MixedHebrewMathText";
+﻿import MixedHebrewMathText from "./MixedHebrewMathText";
 import { bookMathIsolateStyle } from "../../lib/learning-book/book-math-display";
-import {
-  GEOMETRY_DIAGRAM_LABELS,
-  isKnownGeometryDiagramType,
-} from "../../lib/learning-book/geometry-diagram-registry";
+import { isKnownGeometryDiagramType } from "../../lib/learning-book/geometry-diagram-registry";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
+
+/** Child-facing diagram labels (US English). */
+const GEOMETRY_DIAGRAM_LABELS = Object.freeze({
+  side: "Side",
+  vertex: "Vertex",
+  angle: "Angle",
+  rightAngle: "Right angle",
+  length: "Length",
+  width: "Width",
+  base: "Base",
+  height: "Height",
+  perimeter: "Perimeter",
+  area: "Area",
+  symmetryLine: "Line of symmetry",
+  parallelLines: "Parallel lines",
+  radius: "Radius",
+  diameter: "Diameter",
+});
 
 const TRIANGLE = "110,28 188,142 32,142";
 const PARALLELOGRAM = "40,120 140,120 170,50 70,50";
@@ -17,7 +32,7 @@ function HebrewLabel({ text, x, y, anchor = "middle" }) {
       y={y}
       textAnchor={anchor}
       className="fill-current text-[11px] font-semibold sm:text-xs"
-      dir="rtl"
+      dir="ltr"
     >
       {text}
     </text>
@@ -86,7 +101,7 @@ function SolidShapeOutline({ points, theme, fillOpacity = 0.06 }) {
 
 function TrianglePartsDiagram({ theme }) {
   return (
-    <DiagramSvg label="משולש עם צלעות וקודקודים">
+    <DiagramSvg label="Triangle with sides and vertices">
       <SolidShapeOutline points={TRIANGLE} theme={theme} fillOpacity={0} />
       <VertexDot cx={110} cy={28} theme={theme} />
       <VertexDot cx={188} cy={142} theme={theme} />
@@ -99,7 +114,7 @@ function TrianglePartsDiagram({ theme }) {
 
 function TrianglePerimeterDiagram({ theme }) {
   return (
-    <DiagramSvg label="היקף משולש">
+    <DiagramSvg label="Triangle perimeter">
       <SolidShapeOutline points={TRIANGLE} theme={theme} fillOpacity={0.04} />
       <DashedPerimeterOutline points={TRIANGLE} theme={theme} />
       <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.perimeter} x={110} y={16} />
@@ -109,7 +124,7 @@ function TrianglePerimeterDiagram({ theme }) {
 
 function TriangleHeightDiagram({ theme }) {
   return (
-    <DiagramSvg label="גובה במשולש">
+    <DiagramSvg label="Height in a triangle">
       <SolidShapeOutline points={TRIANGLE} theme={theme} />
       <line
         x1="110"
@@ -129,7 +144,7 @@ function TriangleHeightDiagram({ theme }) {
 
 function RightTriangleDiagram({ theme }) {
   return (
-    <DiagramSvg label="משולש ישר זווית">
+    <DiagramSvg label="Right triangle">
       <polygon
         points="40,140 170,140 40,50"
         fill="currentColor"
@@ -155,7 +170,7 @@ function RightTriangleDiagram({ theme }) {
 
 function QuadrilateralPartsDiagram({ theme }) {
   return (
-    <DiagramSvg label="מרובע עם צלעות וקודקודים">
+    <DiagramSvg label="Quadrilateral with sides and vertices">
       <SolidShapeOutline points="48,40 172,40 188,140 32,140" theme={theme} fillOpacity={0} />
       <VertexDot cx={48} cy={40} theme={theme} />
       <VertexDot cx={172} cy={40} theme={theme} />
@@ -169,7 +184,7 @@ function QuadrilateralPartsDiagram({ theme }) {
 
 function RectangleSidesDiagram({ theme }) {
   return (
-    <DiagramSvg label="מלבן עם אורך ורוחב">
+    <DiagramSvg label="Rectangle with length and width">
       <rect
         x="50"
         y="42"
@@ -189,7 +204,7 @@ function RectangleSidesDiagram({ theme }) {
 
 function RectangleDiagonalDiagram({ theme }) {
   return (
-    <DiagramSvg label="מלבן עם אלכסון">
+    <DiagramSvg label="Rectangle with a diagonal">
       <rect
         x="50"
         y="42"
@@ -209,7 +224,7 @@ function RectangleDiagonalDiagram({ theme }) {
 
 function SquareSidesDiagram({ theme }) {
   return (
-    <DiagramSvg label="ריבוע עם צלעות">
+    <DiagramSvg label="Square with sides">
       <rect
         x="60"
         y="38"
@@ -228,7 +243,7 @@ function SquareSidesDiagram({ theme }) {
 
 function SquarePerimeterDiagram({ theme }) {
   return (
-    <DiagramSvg label="היקף ריבוע">
+    <DiagramSvg label="Square perimeter">
       <rect
         x="60"
         y="38"
@@ -260,7 +275,7 @@ function SquarePerimeterDiagram({ theme }) {
 
 function SquareDiagonalDiagram({ theme }) {
   return (
-    <DiagramSvg label="ריבוע עם אלכסון">
+    <DiagramSvg label="Square with a diagonal">
       <rect
         x="60"
         y="38"
@@ -303,7 +318,7 @@ function SquareAreaGridDiagram({ theme }) {
     }
   }
   return (
-    <DiagramSvg label="שטח ריבוע - ריבועי יחידה">
+    <DiagramSvg label="Square area - unit squares">
       {cells}
       <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.area} x={110} y={24} />
       <MathMeasure text="4 × 4 = 16" x={110} y={156} />
@@ -317,7 +332,7 @@ function ParallelogramOutline({ theme, fillOpacity = 0.06 }) {
 
 function ParallelogramHeightDiagram({ theme }) {
   return (
-    <DiagramSvg label="גובה במקבילית">
+    <DiagramSvg label="Height in a parallelogram">
       <ParallelogramOutline theme={theme} />
       <line x1="105" y1="50" x2="105" y2="120" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
       <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={122} y={88} />
@@ -328,7 +343,7 @@ function ParallelogramHeightDiagram({ theme }) {
 
 function ParallelogramAreaDiagram({ theme }) {
   return (
-    <DiagramSvg label="שטח מקבילית">
+    <DiagramSvg label="Parallelogram area">
       <ParallelogramOutline theme={theme} />
       <line x1="40" y1="120" x2="140" y2="120" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <line x1="105" y1="50" x2="105" y2="120" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
@@ -341,7 +356,7 @@ function ParallelogramAreaDiagram({ theme }) {
 
 function ParallelogramDiagonalDiagram({ theme }) {
   return (
-    <DiagramSvg label="מקבילית עם אלכסון">
+    <DiagramSvg label="Parallelogram with a diagonal">
       <ParallelogramOutline theme={theme} />
       <line x1="40" y1="120" x2="170" y2="50" stroke="currentColor" strokeWidth="2" strokeDasharray="6 4" className={theme.diagramAccentStrong} />
     </DiagramSvg>
@@ -354,7 +369,7 @@ function TrapezoidOutline({ theme, fillOpacity = 0.06 }) {
 
 function TrapezoidHeightDiagram({ theme }) {
   return (
-    <DiagramSvg label="גובה בטרפז">
+    <DiagramSvg label="Height in a trapezoid">
       <TrapezoidOutline theme={theme} />
       <line x1="110" y1="50" x2="110" y2="130" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
       <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={126} y={92} />
@@ -365,7 +380,7 @@ function TrapezoidHeightDiagram({ theme }) {
 
 function TrapezoidAreaDiagram({ theme }) {
   return (
-    <DiagramSvg label="שטח טרפז">
+    <DiagramSvg label="Trapezoid area">
       <TrapezoidOutline theme={theme} />
       <line x1="60" y1="130" x2="160" y2="130" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <line x1="110" y1="50" x2="110" y2="130" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
@@ -378,7 +393,7 @@ function TrapezoidAreaDiagram({ theme }) {
 
 function RightAngleDiagram({ theme }) {
   return (
-    <DiagramSvg label="זווית ישרה">
+    <DiagramSvg label="Right angle">
       <line x1="40" y1="130" x2="180" y2="130" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="40" y1="130" x2="40" y2="36" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <rect x="40" y="110" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" className={theme.diagramAccentSoft} />
@@ -389,7 +404,7 @@ function RightAngleDiagram({ theme }) {
 
 function AngleBasicDiagram({ theme }) {
   return (
-    <DiagramSvg label="זווית עם שתי קרניים">
+    <DiagramSvg label="Angle with two rays">
       <line x1="110" y1="120" x2="36" y2="48" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="110" y1="120" x2="184" y2="48" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <VertexDot cx={110} cy={120} theme={theme} />
@@ -401,7 +416,7 @@ function AngleBasicDiagram({ theme }) {
 
 function SymmetryLineDiagram({ theme }) {
   return (
-    <DiagramSvg label="קו סימטריה">
+    <DiagramSvg label="Line of symmetry">
       <SolidShapeOutline points={TRIANGLE} theme={theme} />
       <line x1="110" y1="22" x2="110" y2="148" stroke="currentColor" strokeWidth="2" strokeDasharray="6 5" className={theme.diagramAccentStrong} />
       <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.symmetryLine} x={110} y={14} />
@@ -411,7 +426,7 @@ function SymmetryLineDiagram({ theme }) {
 
 function ParallelLinesDiagram({ theme }) {
   return (
-    <DiagramSvg label="קווים מקבילים">
+    <DiagramSvg label="Parallel lines">
       <line x1="32" y1="58" x2="188" y2="58" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="32" y1="108" x2="188" y2="108" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.parallelLines} x={110} y={24} />
@@ -421,7 +436,7 @@ function ParallelLinesDiagram({ theme }) {
 
 function CircleRadiusDiagram({ theme }) {
   return (
-    <DiagramSvg label="מעגל עם רדיוס">
+    <DiagramSvg label="Circle with radius">
       <circle cx="110" cy="92" r="52" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="110" y1="92" x2="162" y2="92" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <VertexDot cx={110} cy={92} theme={theme} />
@@ -432,7 +447,7 @@ function CircleRadiusDiagram({ theme }) {
 
 function CirclePerimeterDiagram({ theme }) {
   return (
-    <DiagramSvg label="היקף מעגל">
+    <DiagramSvg label="Circle perimeter">
       <circle cx="110" cy="92" r="52" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="2" className={theme.diagramSecondary} />
       <circle
         cx="110"
@@ -454,7 +469,7 @@ function CirclePerimeterDiagram({ theme }) {
 
 function CircleAreaDiagram({ theme }) {
   return (
-    <DiagramSvg label="שטח עיגול">
+    <DiagramSvg label="Circle area">
       <circle cx="110" cy="92" r="52" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="110" y1="92" x2="162" y2="92" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <VertexDot cx={110} cy={92} theme={theme} />
@@ -466,7 +481,7 @@ function CircleAreaDiagram({ theme }) {
 
 function CubeBasicDiagram({ theme }) {
   return (
-    <DiagramSvg label="קובייה">
+    <DiagramSvg label="Cube">
       <polygon points="70,90 130,90 150,70 90,70" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="70,90 70,130 130,130 130,90" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="130,90 150,70 150,110 130,130" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="2" className={theme.diagramAccentSoft} />
@@ -480,7 +495,7 @@ function CubeBasicDiagram({ theme }) {
 
 function BoxBasicDiagram({ theme }) {
   return (
-    <DiagramSvg label="תיבה">
+    <DiagramSvg label="Rectangular prism">
       <polygon points="52,96 148,96 168,72 72,72" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="52,96 52,144 148,144 148,96" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="148,96 168,72 168,120 148,144" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="2" className={theme.diagramAccentSoft} />
@@ -533,7 +548,7 @@ export default function GeometryDiagram({ type, options = {} }) {
           className={`my-4 rounded-xl border border-dashed px-4 py-3 text-center text-sm ${theme.diagramPanel}`}
           data-geometry-diagram-unknown={diagramType || "empty"}
         >
-          [פיתוח] דיאגרמת גאומטריה לא מוכרת: {diagramType || "(ריק)"}
+          [dev] Unknown geometry diagram: {diagramType || "(empty)"}
         </div>
       );
     }
@@ -550,7 +565,7 @@ export default function GeometryDiagram({ type, options = {} }) {
       <Renderer theme={theme} />
       {options.caption === "1" || options.caption === "true" ? (
         options.label ? (
-          <figcaption className="mt-3 text-center text-sm font-semibold sm:text-base" dir="rtl">
+          <figcaption className="mt-3 text-center text-sm font-semibold sm:text-base" dir="ltr">
             <MixedHebrewMathText text={options.label} />
           </figcaption>
         ) : null

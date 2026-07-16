@@ -6,20 +6,20 @@ import {
   sanitizeActivityTitleHe,
   SCHOOL_BACK,
   studentLearningStatusBadgeClass,
-} from "../../lib/school-portal/school-ui.he.js";
+} from "../../lib/school-portal/school-ui.js";
 import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi.jsx";
 
-export function SchoolLoadingBlock({ message = "טוען…" }) {
+export function SchoolLoadingBlock({ message = "Loading…" }) {
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right`} role="status" aria-live="polite">
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`} role="status" aria-live="polite">
       <p className="text-white/60 text-sm">{message}</p>
     </div>
   );
 }
 
-export function SchoolErrorBlock({ message, onRetry, retryLabel = "נסו שוב" }) {
+export function SchoolErrorBlock({ message, onRetry, retryLabel = "Try again" }) {
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right`} role="alert">
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`} role="alert">
       <p className="text-red-300 text-sm">{message}</p>
       {typeof onRetry === "function" ? (
         <button
@@ -40,7 +40,7 @@ export function SchoolErrorBlock({ message, onRetry, retryLabel = "נסו שוב
 export function SchoolDrillBreadcrumb({ steps }) {
   if (!steps?.length) return null;
   return (
-    <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-white/55" aria-label="ניווט שכבות">
+    <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-white/55" aria-label="Grade navigation">
       {steps.map((step, index) => (
         <span key={`${step.label}-${index}`} className="inline-flex items-center gap-2">
           {index > 0 ? <span aria-hidden className="text-white/25">/</span> : null}
@@ -87,7 +87,7 @@ export function SchoolManagementCard({
   selected = false,
   ...rest
 }) {
-  const className = `${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right w-full min-w-0 transition-colors ${
+  const className = `${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left w-full min-w-0 transition-colors ${
     selected ? "border-amber-400/50 bg-amber-500/10" : "hover:border-amber-400/30 hover:bg-white/[0.03]"
   }`;
 
@@ -99,9 +99,9 @@ export function SchoolManagementCard({
           {subtitle ? <p className="text-sm text-white/55 mt-1">{subtitle}</p> : null}
           {meta ? <p className="text-xs text-white/45 mt-2">{meta}</p> : null}
           {gradeStatusLabel ? (
-            <BrowseStatusBadge prefix="מצב שכבה" label={gradeStatusLabel} />
+            <BrowseStatusBadge prefix="Grade status" label={gradeStatusLabel} />
           ) : classStatusLabel ? (
-            <BrowseStatusBadge prefix="מצב כיתה" label={classStatusLabel} />
+            <BrowseStatusBadge prefix="Class status" label={classStatusLabel} />
           ) : null}
         </div>
         {action ? <div className="shrink-0">{action}</div> : null}
@@ -150,7 +150,7 @@ export function SchoolBackButton({ onClick, label = SCHOOL_BACK }) {
     <button
       type="button"
       onClick={onClick}
-      className="mb-4 text-sm text-amber-300 hover:underline text-right cursor-pointer"
+      className="mb-4 text-sm text-amber-300 hover:underline text-left cursor-pointer"
     >
       {label}
     </button>
@@ -165,8 +165,8 @@ export function SchoolSubjectClassCard({ cls, onReport, reportLabel }) {
   return (
     <SchoolManagementCard
       title={subject}
-      subtitle={`${cls.teacherName || "-"} · ${cls.memberCount ?? 0} ילדים`}
-      meta={cls.activityCount != null ? `פעילויות: ${cls.activityCount}` : null}
+      subtitle={`${cls.teacherName || "-"} · ${cls.memberCount ?? 0} children`}
+      meta={cls.activityCount != null ? `Activities: ${cls.activityCount}` : null}
       action={
         <button
           type="button"
@@ -205,25 +205,25 @@ export function SchoolActivityCard({ activity }) {
   const badgeClass = statusStyles[statusKey] || statusStyles.draft;
 
   return (
-    <li className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right min-w-0`}>
+    <li className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left min-w-0`}>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0 flex-1 space-y-2">
           <p className="font-semibold text-white break-words">{title}</p>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">מקצוע</dt>
+              <dt className="text-white/45">Subject</dt>
               <dd className="text-white/85">{subject}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">כיתה</dt>
+              <dt className="text-white/45">Class</dt>
               <dd className="text-white/85 break-words">{className}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">מורה</dt>
+              <dt className="text-white/45">Teacher</dt>
               <dd className="text-white/85">{teacher}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">סוג</dt>
+              <dt className="text-white/45">Type</dt>
               <dd className="text-white/85">{mode}</dd>
             </div>
           </dl>
@@ -258,7 +258,7 @@ export function SchoolTeacherCard({
       : "-";
 
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right min-w-0`}>
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left min-w-0`}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <p className="font-semibold text-white break-words">{teacher.displayName || teacher.teacherId}</p>
@@ -267,11 +267,11 @@ export function SchoolTeacherCard({
           {staffCode ? (
             <p className="text-xs text-white/50 mt-1 font-mono" dir="ltr">
               {staffCode}
-              {staffAccessStatus === "suspended" ? " · מושעה" : ""}
+              {staffAccessStatus === "suspended" ? " · Suspended" : ""}
             </p>
           ) : null}
           <p className="text-sm text-white/70 mt-2 break-words">{subjectText}</p>
-          <p className="text-xs text-white/45 mt-2">{teacher.activeClassCount ?? 0} כיתות פעילות</p>
+          <p className="text-xs text-white/45 mt-2">{teacher.activeClassCount ?? 0} active classes</p>
         </div>
         <Link
           href={manageHref}
@@ -298,7 +298,7 @@ export function SchoolStudentCard({
   detailsLabel,
   learningStatusBadge = null,
 }) {
-  const name = student.displayName || "ללא שם";
+  const name = student.displayName || "Unnamed";
   const classLabel = student.physicalClassName || "-";
   return (
     <SchoolManagementCard

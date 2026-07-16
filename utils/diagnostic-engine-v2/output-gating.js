@@ -154,19 +154,19 @@ export function applyOutputGating(p) {
     out.cannotConcludeYet = true;
     if (confidence === "contradictory" || counterEvidenceStrong) {
       out.probeOnly = true;
-      reasons.push("ראיות סותרות או נגד ראיה חזקה");
+      reasons.push("Contradictory evidence or strong counter-evidence");
     } else if (weakEvidence) {
       out.confidenceOnly = true;
       out.probeOnly = true;
-      reasons.push("ראיות חלשות: הסתמכות על ספירה מצטברת ללא רצף אירועים מספק");
+      reasons.push("Weak evidence: relying on cumulative counts without enough event sequence");
     } else if (confidence === "insufficient_data") {
       out.confidenceOnly = true;
       out.probeOnly = true;
-      reasons.push("נתונים לא מספיקים לפי מדיניות הביטחון");
+      reasons.push("Insufficient data per confidence policy");
     } else if (hintInvalidates && confidence === "early_signal_only") {
       out.probeOnly = true;
       out.confidenceOnly = true;
-      reasons.push("אות מוקדם בלבד - כדאי עוד תרגול קצר או מעקב לפני כיוון ברור");
+      reasons.push("Early signal only - short more practice or follow-up before a clear direction");
     }
     out.contractsV1 = buildContractsBundle(true);
     return out;
@@ -177,7 +177,7 @@ export function applyOutputGating(p) {
 
   if (!hasTaxonomyMatch) {
     out.probeOnly = true;
-    reasons.push("אין התאמת טקסונומיה מספקת לצבר");
+    reasons.push("No sufficient taxonomy match for the cluster");
     out.contractsV1 = buildContractsBundle(false);
     return out;
   }
@@ -185,20 +185,20 @@ export function applyOutputGating(p) {
   if (confidence === "early_signal_only") {
     out.probeOnly = true;
     out.confidenceOnly = true;
-    reasons.push("אות מוקדם בלבד - כדאי עוד תרגול קצר או מעקב לפני כיוון ברור");
+    reasons.push("Early signal only - short more practice or follow-up before a clear direction");
   }
 
   if (confidence === "low") {
     out.probeOnly = true;
     out.confidenceOnly = true;
-    reasons.push("ביטחון נמוך - כדאי לאסוף עוד תרגול לפני אבחנה מלאה");
+    reasons.push("Low confidence - gather more practice before a full diagnosis");
   }
 
   if (confidence === "moderate") {
     out.diagnosisAllowed = true;
     if (narrowSample || !recurrenceFull) {
       out.confidenceOnly = true;
-      reasons.push("מדגם צר או חזרתיות חלקית - אבחנה מותנית בלבד");
+      reasons.push("Narrow sample or partial recurrence - conditional diagnosis only");
     }
     if (recurrenceFull && !narrowSample) {
       out.confidenceOnly = false;
@@ -214,17 +214,17 @@ export function applyOutputGating(p) {
     if (priority === "P2" || priority === "P3" || priority === "P4") {
       if (recurrenceFull && !counterEvidenceStrong && confidence === "high") {
         out.interventionAllowed = true;
-        reasons.push("ביטחון גבוה ועדיפות מאשרות כיוון התערבות");
+        reasons.push("High confidence and priority support an intervention direction");
       } else if (recurrenceFull && confidence === "moderate" && (priority === "P3" || priority === "P4")) {
         out.interventionAllowed = true;
-        reasons.push("ביטחון בינוני ועדיפות גבוהה - התערבות ממוקדת");
+        reasons.push("Moderate confidence and high priority - focused intervention");
       }
     }
   }
 
   if (priority === "P4") {
     out.humanReviewRecommended = true;
-    reasons.push("P4: מומלץ סקירה עם מבוגר/מורה לפי המסמך");
+    reasons.push("P4: adult/teacher review recommended per the document");
   }
 
   if (!out.diagnosisAllowed && !out.cannotConcludeYet) {

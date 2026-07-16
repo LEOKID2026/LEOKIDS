@@ -35,7 +35,7 @@ import {
   isSchoolManagerPortal,
   operatorHasAnyGrant,
 } from "../../../lib/school-portal/operator-grants";
-import { SC_BTN_STUDENT_DETAILS } from "../../../lib/school-portal/school-communication.he";
+import { SC_BTN_STUDENT_DETAILS } from "../../../lib/school-portal/school-communication.js";
 import { fetchSchoolJsonSWR, invalidateSchoolCache, readSchoolCache, deleteSchoolCacheEntry, SCHOOL_CACHE_TTL_MS } from "../../../lib/school-portal/school-portal-cache";
 import { fetchSchoolReportCached } from "../../../lib/school-portal/fetch-school-report";
 import { useReportDateRange } from "../../../hooks/useReportDateRange";
@@ -65,7 +65,7 @@ import {
   SCHOOL_STUDENTS_TITLE,
   SCHOOL_VIEW_STUDENT_REPORT,
   studentLearningStatusBadgeClass,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 
 function gradeCountMap(summary) {
   const map = new Map();
@@ -136,7 +136,7 @@ export default function SchoolStudentsPage() {
         const body = result?.body || {};
         setBrowseSummary(null);
         if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-        setSummaryError(apiErrorMessageHe(body?.error, "שגיאה בטעינת נתונים"));
+        setSummaryError(apiErrorMessageHe(body?.error, "Error loading data"));
         return;
       }
       setSummaryError("");
@@ -159,7 +159,7 @@ export default function SchoolStudentsPage() {
     } catch {
       setBrowseSummary(null);
       if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-      setSummaryError("שגיאה בטעינת נתונים");
+      setSummaryError("Error loading data");
     } finally {
       setSummaryLoading(false);
     }
@@ -215,7 +215,7 @@ export default function SchoolStudentsPage() {
         const body = result?.body || {};
         setClassStudents([]);
         if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-        setClassStudentsError(apiErrorMessageHe(body?.error, "שגיאה בטעינת ילדים"));
+        setClassStudentsError(apiErrorMessageHe(body?.error, "Error loading children"));
         return;
       }
       setClassStudentsError("");
@@ -238,7 +238,7 @@ export default function SchoolStudentsPage() {
     } catch {
       setClassStudents([]);
       if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-      setClassStudentsError("שגיאה בטעינת ילדים");
+      setClassStudentsError("Error loading children");
     } finally {
       setClassStudentsLoading(false);
     }
@@ -304,7 +304,7 @@ export default function SchoolStudentsPage() {
           force,
         });
         if (result?.status !== 200) {
-          setReportError(apiErrorMessageHe(result?.body?.error, "שגיאה בטעינת דוח"));
+          setReportError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
           setReportViewModel(null);
           return;
         }
@@ -360,7 +360,7 @@ export default function SchoolStudentsPage() {
       onApplyCustom={() => {
         const result = reportRange.applyCustom();
         if (!result.ok) {
-          alert("אנא בחר תאריכים תקינים");
+          alert("Please select valid dates");
           return;
         }
         refetchStudentReportForRange({ from: result.from, to: result.to });
@@ -472,13 +472,13 @@ export default function SchoolStudentsPage() {
             ) : null}
 
             {isManager ? (
-              <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-right`}>
+              <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`}>
                 <button
                   type="button"
                   onClick={() => setShowEnroll((v) => !v)}
                   className="text-sm text-amber-300 hover:underline"
                 >
-                  {showEnroll ? "הסתר רישום מתקדם" : SCHOOL_ENROLL_SECTION}
+                  {showEnroll ? "Hide advanced enrollment" : SCHOOL_ENROLL_SECTION}
                 </button>
                 {showEnroll ? (
                   <form onSubmit={enroll} className="space-y-3 max-w-xl mt-3">
@@ -492,7 +492,7 @@ export default function SchoolStudentsPage() {
                       />
                     </label>
                     <SchoolPrimaryButton disabled={busy} type="submit">
-                      {busy ? "רושם…" : SCHOOL_ENROLL_STUDENT}
+                      {busy ? "Enrolling…" : SCHOOL_ENROLL_STUDENT}
                     </SchoolPrimaryButton>
                   </form>
                 ) : null}
@@ -508,7 +508,7 @@ export default function SchoolStudentsPage() {
                 ) : (
                   <>
                     {summaryLoading ? (
-                      <p className="text-xs text-white/45 mb-3 text-right">{SCHOOL_LOADING_DATA}</p>
+                      <p className="text-xs text-white/45 mb-3 text-left">{SCHOOL_LOADING_DATA}</p>
                     ) : null}
                     <SchoolCardGrid columns={3}>
                       {SCHOOL_GRADE_OPTIONS.map((grade) => {
@@ -518,7 +518,7 @@ export default function SchoolStudentsPage() {
                             key={grade.level}
                             title={grade.label}
                             subtitle={
-                              count != null ? `${count} ילדים` : summaryLoading ? "…" : "0 ילדים"
+                              count != null ? `${count} children` : summaryLoading ? "…" : "0 children"
                             }
                             gradeStatusLabel={
                               canViewReports ? browseStatus?.gradeStatusByLevel?.[grade.level] || null : null
@@ -556,7 +556,7 @@ export default function SchoolStudentsPage() {
                           <SchoolManagementCard
                             key={group.name}
                             title={group.name}
-                            subtitle={`${group.studentCount} ילדים`}
+                            subtitle={`${group.studentCount} children`}
                             classStatusLabel={
                               canViewReports ? browseStatus?.physicalByKey?.[physKey] || null : null
                             }
@@ -566,7 +566,7 @@ export default function SchoolStudentsPage() {
                       })}
                     </SchoolCardGrid>
                   ) : (
-                    <SchoolEmptyState title="אין ילדים בשכבה זו." />
+                    <SchoolEmptyState title="No children in this grade." />
                   )}
                 </SchoolSection>
               </>
@@ -581,19 +581,19 @@ export default function SchoolStudentsPage() {
                     const classStatus = browseStatus?.physicalByKey?.[`${gradeLevel}::${physicalClassName}`];
                     if (!classStatus) return null;
                     return (
-                      <p className="text-sm mb-3 text-right" data-testid="school-students-class-browse-status">
+                      <p className="text-sm mb-3 text-left" data-testid="school-students-class-browse-status">
                         <span
                           className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full border leading-snug ${studentLearningStatusBadgeClass(
                             classStatus
                           )}`}
                         >
-                          מצב כיתה: {classStatus}
+                          Class status: {classStatus}
                         </span>
                       </p>
                     );
                   })()}
                   <div className="mb-4">
-                    <label className="block text-sm text-white/70 text-right">
+                    <label className="block text-sm text-white/70 text-left">
                       {SCHOOL_SEARCH_STUDENTS}
                       <input
                         value={search}
@@ -637,7 +637,7 @@ export default function SchoolStudentsPage() {
                       ))}
                     </SchoolCardGrid>
                   ) : (
-                    <SchoolEmptyState title="לא נמצאו ילדים בכיתה זו." />
+                    <SchoolEmptyState title="No children found in this class." />
                   )}
                 </SchoolSection>
               </>

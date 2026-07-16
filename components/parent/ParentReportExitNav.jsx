@@ -24,8 +24,8 @@ export function ParentReportThemeIcons({ className = "" }) {
 }
 
 /**
- * Top navigation for parent report pages — opposite corners (RTL):
- * ימין: חזור לדוח הורים | שמאל: חזרה לפורטל הורים
+ * Top navigation for parent report pages — opposite corners:
+ * left: Back to parent report | right: Back to parent portal
  */
 export function ParentReportExitNav({ className = "", showShortReportLink = true, isBright = false }) {
   const btnClass = isBright ? BTN_CLASS_BRIGHT : BTN_CLASS_DARK;
@@ -40,11 +40,11 @@ export function ParentReportExitNav({ className = "", showShortReportLink = true
     return (
       <div className={`no-pdf relative flex items-center justify-between gap-2 w-full ${className}`.trim()}>
         <Link href={`/teacher/student/${remote.studentId}`} className={btnClass}>
-          חזרה לדוח מורה
+          Back to teacher report
         </Link>
         <ParentReportThemeIcons className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
         <Link href="/teacher/dashboard" className={btnClass}>
-          לוח בקרה
+          Dashboard
         </Link>
       </div>
     );
@@ -62,12 +62,12 @@ export function ParentReportExitNav({ className = "", showShortReportLink = true
           prefetch={false}
           className={btnClass}
         >
-          חזור לדוח הורים
+          Back to parent report
         </Link>
       ) : null}
       <ParentReportThemeIcons className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
       <button type="button" onClick={() => navigateToParentDashboard(router)} className={btnClass}>
-        חזרה לפורטל הורים
+        Back to parent portal
       </button>
     </div>
   );

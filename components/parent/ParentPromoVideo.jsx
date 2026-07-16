@@ -87,7 +87,7 @@ export default function ParentPromoVideo({
         src={desktopSrc}
         wrapClassName={`${wrapClass} ${frameClass}`}
         videoClassName="block h-auto w-full aspect-video bg-black object-contain"
-        ariaLabel="סרטון הורים"
+        ariaLabel="Parents video"
         testId="parent-promo-video-desktop"
       />
     </section>

@@ -141,20 +141,20 @@ function subjectsMentionedInUtterance(utterance, payload) {
     const idx = u.indexOf(lab);
     if (idx >= 0) hits.push({ sid, idx, len: lab.length });
   }
-  /** Informal wording parents use (e.g. «קריאה» ≈ עברית / אוריינות). Longer needles first. */
+  /** Informal wording parents use (e.g. "reading" ≈ Hebrew / literacy). Longer needles first. */
   const informalNeedles = [
-    ["hebrew", "קריאת מילים"],
-    ["hebrew", "קריאת משפטים"],
-    ["hebrew", "הבנת הנקרא"],
-    ["math", "מתמטיקה"],
-    ["hebrew", "עברית"],
-    ["english", "אנגלית"],
-    ["science", "מדעים"],
-    ["geometry", "גאומטריה"],
-    ["moledet-geography", "מולדת וגאוגרפיה"],
-    ["moledet-geography", "מולדת"],
-    ["math", "חשבון"],
-    ["hebrew", "קריאה"],
+    ["hebrew", "reading words"],
+    ["hebrew", "Reading sentences"],
+    ["hebrew", "Reading comprehension"],
+    ["math", "Math"],
+    ["hebrew", "Hebrew"],
+    ["english", "English"],
+    ["science", "Science"],
+    ["geometry", "Geometry"],
+    ["moledet-geography", "Homeland & Geography"],
+    ["moledet-geography", "Homeland Studies"],
+    ["math", "Math"],
+    ["hebrew", "Reading"],
   ];
   for (const [sid, needle] of informalNeedles) {
     if (!listed.includes(sid)) continue;
@@ -289,9 +289,9 @@ function buildClarifyReexplainDraft(input) {
   let meaning = "";
 
   if (interpretation.length >= 8) {
-    obs = `${lead}במילים פשוטות, זה אומר: ${interpretation}`;
+    obs = `${lead}In simple words, it means: ${interpretation}`;
   } else if (observation.length >= 8) {
-    obs = `${lead}במילים פשוטות, זה אומר: מה שרואים בדוח הוא ש ${observation.charAt(0).toLowerCase()}${observation.slice(1)}`;
+    obs = `${lead}In simple words, this means: what you see in the report is that ${observation.charAt(0).toLowerCase()}${observation.slice(1)}`;
   } else if (uncertainty.length >= 8) {
     obs = `${lead}${uncertainty}`;
   } else {
@@ -299,16 +299,16 @@ function buildClarifyReexplainDraft(input) {
   }
 
   if (observation.length >= 8 && interpretation.length >= 8 && obs !== `${lead}${uncertainty}`) {
-    meaning = `במסגרת המספרים בדוח: ${observation}`;
+    meaning = `Within the numbers in the report: ${observation}`;
   } else if (uncertainty.length >= 8 && !obs.includes(uncertainty.slice(0, Math.min(24, uncertainty.length)))) {
     meaning = uncertainty;
   } else if (interpretation.length >= 8 && obs.includes(interpretation.slice(0, Math.min(24, interpretation.length))) && observation.length >= 8) {
-    meaning = `רק כדי לעגן לדוח: ${observation}`;
+    meaning = `Just to anchor to the report: ${observation}`;
   } else {
     meaning =
       uncertainty.length >= 8
         ? uncertainty
-        : "זה עדיין תמונה מהדוח עצמו, בלי להוסיף הסבר שלא הופיע שם.";
+        : "This is still a picture from the report itself, without adding an explanation that did not appear there.";
   }
 
   ({ obs, meaning } = ensureRequiredHedges(truthPacket, obs, meaning));
@@ -364,22 +364,22 @@ function buildAdvanceOrHoldDraft(input) {
   let meaning = "";
 
   if (holdStrong) {
-    obs = `${lead}כרגע עדיף להמתין ולא לדחוף התקדמות גדולה: בדוח עדיין אין בסיס מספיק יציב כדי לומר שכדאי "ללחוץ על הגז".`;
+    obs = `${lead}At the moment it is better to wait and not to push for big progress: the report still does not have a sufficiently stable basis to say that it is worth "pressing the gas".`;
     meaning = norm(
       uncertainty ||
         interpretation ||
-        (observation.length >= 8 ? `לפי מה שמופיע בדוח: ${observation}` : "אפשר להמשיך בתרגול רגיל ולבדוק שוב אחרי עוד קצת נתונים."),
+        (observation.length >= 8 ? `According to what appears in the report: ${observation}` : "You can continue with normal practice and check again after some more data."),
     );
   } else if (hasConcreteStep) {
-    obs = `${lead}אפשר להתקדם, אבל בזהירות ובצעדים קטנים - לא לקפוץ צעדים גדולים בבת אחת.`;
+    obs = `${lead}You can move forward, but carefully and in small steps - not to jump big steps at once.`;
     const tail = interpretation.length >= 8 ? ` ${interpretation}` : "";
     meaning = norm(`${action}${tail}`);
   } else {
-    obs = `${lead}אפשר להתקדם רק בקצב איטי: קצת תרגול, עצירה לבדיקה, ואז החלטה שוב לפי מה שיופיע בדוח.`;
+    obs = `${lead}You can only progress at a slow pace: some practice, stopping to check, then deciding again according to what will appear in the report.`;
     meaning = norm(
       interpretation ||
         uncertainty ||
-        (observation.length >= 8 ? observation : "זה עדיין לא שלב לפתיחת יעדים חדשים שלא נבנו מהדוח."),
+        (observation.length >= 8 ? observation : "This is not yet a stage for opening new goals that were not built from the report."),
     );
   }
 
@@ -432,28 +432,28 @@ function buildRecommendationActionDraft(input) {
     obs = `${lead}${action}`;
     if (/השבוע|בשבוע|שבוע\s+הקרוב/.test(t)) {
       meaning = interp
-        ? `${interp} במסגרת השבוע: לפרק את הצעד שמופיע בדוח ליחידות קטנות לאורך הימים, בלי להוסיף יעדים שלא מופיעים שם.`
-        : `במסגרת השבוע: לפרק את הצעד שמופיע בדוח ליחידות קטנות לאורך הימים, בלי להוסיף יעדים שלא מופיעים שם.`;
+        ? `${interp} Within the framework of the week: break down the step that appears in the report into small units throughout the days, without adding goals that do not appear there.`
+        : `As part of the week: break down the step that appears in the report into small units throughout the days, without adding goals that do not appear there.`;
     } else if (/עכשיו|היום|מיד|כרגע/.test(t) || /על\s+מה\s+להתמקד/.test(t)) {
       meaning = interp
-        ? `${interp} כעת: להתחיל מהצעד שמופיע בדוח לפני הרחבה נוספת.`
-        : `כעת: להתחיל מהצעד שמופיע בדוח לפני הרחבה נוספת.`;
+        ? `${interp} Now: start from the step that appears in the report before further expansion.`
+        : `Now: start from the step that appears in the report before further expansion.`;
     } else {
       meaning = interp
-        ? `ההקשר מהדוח: ${interp} זהו הצעד המעשי שמופיע בדוח כרגע, בלי להרחיק מעבר למה שמוסבר שם בשלב הזה.`
-        : `זהו הצעד המעשי שמופיע בדוח כרגע, בלי להרחיק מעבר למה שמוסבר שם בשלב הזה.`;
+        ? `The context from the report: ${interp} This is the practical step that appears in the report at the moment, without going beyond what is explained there at this stage.`
+        : `This is the practical step that appears in the report at the moment, without going beyond what is explained there at this stage.`;
     }
   } else {
     if (dl.cannotConcludeYet === true) {
-      obs = `${lead}עדיין מוקדם מדי בדוח כדי להציע צעד הבית הבא בצורה ברורה - התמונה עדיין לא סגורה.`;
+      obs = `${lead}It is still too early in the report to clearly suggest the next house step - the picture is not yet closed.`;
     } else if (dl.recommendationEligible !== true || dl.recommendationIntensityCap === "RI0") {
-      obs = `${lead}הדוח לא מכוון כרגע להמלצת צעד מוגדרת מהבית; במצב כזה נכון יותר להמשיך לתרגל ולאסוף עוד תמונה לפני שמחליטים מה הלאה.`;
+      obs = `${lead}The report is not currently aimed at recommending a specific step from home; In such a situation it is better to keep practicing and collect another picture before deciding what to do next.`;
     } else if (!action) {
-      obs = `${lead}בדוח אין כרגע ניסוח מעשי של הצעד הבא - רק תיאור של מה שנראה עד כה.`;
+      obs = `${lead}The report currently does not contain a practical formulation of the next step - only a description of what we have seen so far.`;
     } else {
-      obs = `${lead}לא הצלחנו לגזור מהדוח צעד הבית הבא בצורה ברורה; עדיף עוד קצת בסיס לפני שמחליטים.`;
+      obs = `${lead}We were not able to derive from the report the next step clearly; It is better to have a little more basis before deciding.`;
     }
-    meaning = unc || interp || `מומלץ לחזור לנושא אחרי עוד תרגול, או כשתופיע בדוח שורת כיוון ברורה יותר.`;
+    meaning = unc || interp || `It is recommended to return to the subject after more practice, or when a clearer line of direction appears in the report.`;
   }
 
   ({ obs, meaning } = ensureRequiredHedges(truthPacket, obs, meaning));
@@ -531,72 +531,72 @@ export function buildSemanticAggregateDraft(input) {
   if (qc === "subject_listing") {
     const ids = subjectsListedInReport(payload);
     if (!ids.length) {
-      obs = `${lead}בדוח לא מופיעים כרגע מקצועות עם שורות נושא.`;
-      meaning = "כשיופיעו מקצועות בטווח התאריכים, אפשר לשאול שוב ולקבל רשימה מסודרת.";
+      obs = `${lead}The report does not currently show professions with subject lines.`;
+      meaning = "When professions appear in the date range, you can ask again and get an organized list.";
     } else {
       const names = ids.map((sid) => subjectLabelHe(sid)).join(" · ");
-      obs = `${lead}בדוח מופיעים המקצועות הבאים: ${names}.`;
-      meaning = "הרשימה מבוססת על המקצועות שמוצגים בדוח לתקופה הנבחרה, לפי סדר התצוגה.";
+      obs = `${lead}The following professions appear in the report: ${names}.`;
+      meaning = "The list is based on the professions that are shown in the report for the selected period, according to the order of display.";
     }
   } else if (qc === "period_highlight") {
     const es = payload?.executiveSummary && typeof payload.executiveSummary === "object" ? payload.executiveSummary : {};
     const trends = normalizeExecutiveTrendLinesHe(es.majorTrendsHe);
     if (trends.length) {
-      obs = `מה שמסתמן בתקופה: ${trends.slice(0, 4).join(" · ")}.`;
-      meaning = "אלה ניסוחי הסיכום לתקופה כפי שהם מופיעים בדוח; לפרטים לפי מקצוע אפשר לעבור למסך המקצועות.";
+      obs = `What stands out in the period: ${trends.slice(0, 4).join(" · ")}.`;
+      meaning = "These are the summary formulations for the period as they appear in the report; For details by profession, you can go to the professions screen.";
       aggregateContinuity = { questionClass: qc, subjectId: "", role: "period_highlight" };
     } else if (withAvg.length) {
       const sorted = [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ);
       const top = sorted.slice(0, 2);
-      obs = `הכי גבוהים כרגע בממוצע דירוג הדיוק הכללי בדוח: ${top.map((r) => `${r.label} (כ ${r.avg}%)`).join(" · ")}.`;
-      meaning = "הדירוג מבוסס על ממוצעים על פני נושאים עם תרגול בכל מקצוע, לא על ניסוח נושא בודד.";
+      obs = `Currently the highest average overall accuracy rating in the report: ${top.map((r) =>`${r.label} (about ${r.avg}%)`).join(" · ")}.`;
+      meaning = "The ranking is based on averages across subjects with practice in each subject, not on the formulation of a single subject.";
       aggregateContinuity = { questionClass: qc, subjectId: top[0]?.sid || "", role: "period_numeric" };
     } else {
-      obs = `אין כרגע בדוח מספיק תרגול מספרי על פני מקצועות כדי לתאר "מה הכי בולט" בביטחון.`;
-      meaning = "כשמופיעים נתוני תרגול לפחות בנושא אחד עם שאלות, אפשר לחזור לשאלה ולקבל תמונה ברורה יותר.";
+      obs = `There is currently not enough numerical practice across disciplines in the report to describe "what stands out" with confidence.`;
+      meaning = "When practice data appears on at least one topic with questions, you can return to the question and get a clearer picture.";
     }
   } else if (qc === "comparison") {
     const mentioned = subjectsMentionedInUtterance(utterance, payload);
     if (mentioned.length < 2) {
-      obs = `${lead} כדי להשוות בין שני מקצועות צריך לציין את שני השמות כפי שמופיעים אצלך בדוח.`;
-      meaning = "אפשר לנסח שוב עם שני שמות מקצוע, או לשאול שאלה אחת על דירוג לפי קושי מול תוצאות טובות יחסית לפי הנתונים בדוח.";
+      obs = `${lead} To compare two professions you need to specify the two names as they appear in your report.`;
+      meaning = "You can formulate again with two professional names, or ask one question about ranking by difficulty versus relatively good results according to the data in the report.";
     } else {
       const a = roll.find((r) => r.sid === mentioned[0]);
       const b = roll.find((r) => r.sid === mentioned[1]);
       if (!a || !b || a.avg == null || b.avg == null) {
-        obs = `${lead} יש אזכור לשני מקצועות בשאלה, אבל בדוח חסרים מספיק נתוני תרגול מספריים לשניהם כדי להשוות בצורה יציבה.`;
-        meaning = "כשמופיעים שאלות ודיוק לשני המקצועות, אפשר לשאול שוב ולקבל השוואה ישירה לפי הממוצעים בדוח.";
+        obs = `${lead} There is mention of two professions in the question, but the report lacks enough numerical practice data for both to compare in a stable way.`;
+        meaning = "When questions and accuracy appear for both subjects, you can ask again and get a direct comparison according to the averages in the report.";
       } else if (a.avg === b.avg) {
-        obs = `${lead} לפי הממוצעים בדוח, ${a.label} ו ${b.label} נמצאים כרגע על אותו קו מבחינת דיוק כללי (כ ${a.avg}%).`;
-        meaning = "כדי להבדיל בין הכיוונים כדאי להסתכל גם על כמות השאלות בכל מקצוע ובניסוח הנושאים עצמם בדוח.";
+        obs = `${lead} According to the averages in the report, ${a.label} and ${b.label} are currently on the same line in terms of general accuracy (about ${a.avg}%).`;
+        meaning = "In order to differentiate between the directions, it is useful to also look at the number of questions in each subject and the wording of the topics themselves in the report.";
       } else {
         const hi = a.avg > b.avg ? a : b;
         const lo = a.avg > b.avg ? b : a;
-        obs = `${hi.label} גבוה יותר כרגע מ ${lo.label} - לפי ממוצע הדיוק הכללי בדוח (בערך ${hi.avg}% לעומת ${lo.avg}%).`;
-        meaning = "ההשוואה מבוססת על ממוצעים על פני הנושאים שיש להם תרגול בדוח, לא על ניסוח של נושא בודד.";
+        obs = `${hi.label} is currently higher than ${lo.label} - according to the average of the general accuracy in the report (about ${hi.avg}% vs. ${lo.avg}%).`;
+        meaning = "The comparison is based on averages across the topics that have practice in the report, not on the wording of a single topic.";
         aggregateContinuity = { questionClass: qc, subjectId: hi.sid, role: "comparison_hi" };
       }
     }
   } else if (qc === "most_practice") {
     const listed = roll.filter((r) => r.topicRows > 0);
     if (!listed.length) {
-      obs = `${lead}אין כרגע מקצועות פעילים בדוח לתקופה הנבחרה.`;
-      meaning = "כשמופיעים מקצועות עם שורות נושא, אפשר לחזור לשאלה ולקבל דירוג תרגול.";
+      obs = `${lead}There are currently no active professions in the report for the selected period.`;
+      meaning = "When subjects appear with subject lines, you can return to the question and get a practice rating.";
     } else {
       const best = [...listed].sort((a, b) => b.totalQ - a.totalQ || b.topicRows - a.topicRows)[0];
-      obs = `הכי הרבה תרגול בדוח כרגע: ${best.label} (${best.totalQ} שאלות מתועדות).`;
-      meaning = "הדירוג לפי כמות שאלות בפועל בדוח התקופה, לא לפי תחושת עומס.";
+      obs = `Most practice on report right now: ${best.label} (${best.totalQ} documented questions).`;
+      meaning = "The rating is based on the actual amount of questions in the period report, not according to the feeling of being overwhelmed.";
       aggregateContinuity = { questionClass: qc, subjectId: best.sid, role: "most_practice" };
     }
   } else if (qc === "least_data") {
     const listed = roll.filter((r) => r.topicRows > 0);
     if (!listed.length) {
-      obs = `${lead}בדוח אין כרגע מקצועות פעילים עם נתונים להשוואה.`;
-      meaning = "כשיופיעו מקצועות פעילים, אפשר לזהות במדויק איפה הנתונים הכי דלים.";
+      obs = `${lead}There are currently no active professions with data to compare in the report.`;
+      meaning = "When active professions appear, it is possible to identify exactly where the data is the least.";
     } else {
       const weakestData = [...listed].sort((a, b) => a.totalQ - b.totalQ || a.dataTopics - b.dataTopics)[0];
-      obs = `הכי מעט נתונים בדוח כרגע: ${weakestData.label} (${weakestData.totalQ} שאלות מתועדות).`;
-      meaning = "זה סימן שיש מעט מדי נתונים בדוח התקופה; במקרה כזה נכון להיות זהירים במסקנות.";
+      obs = `The least amount of data in the report at the moment: ${weakestData.label} (${weakestData.totalQ} documented questions).`;
+      meaning = "This is a sign that there is too little data in the period report; In such a case, it is correct to be careful in drawing conclusions.";
       aggregateContinuity = { questionClass: qc, subjectId: weakestData.sid, role: "least_data" };
     }
   } else if (qc === "improved") {
@@ -604,19 +604,19 @@ export function buildSemanticAggregateDraft(input) {
     const trends = normalizeExecutiveTrendLinesHe(es.majorTrendsHe);
     const improvementLines = trends.filter((t) => /שיפור|התקדמות|עלייה|התחזק|משתפר/.test(t));
     if (improvementLines.length) {
-      obs = `סימני שיפור שמופיעים בניסוח הסיכום לתקופה: ${improvementLines.slice(0, 3).join(" · ")}.`;
-      meaning = "זו תשובה על בסיס שורות הסיכום בדוח בלבד, בלי להמציא כיוון לאורך זמן שלא הופיע במפורש.";
+      obs = `Signs of improvement that appear in the wording of the summary for the period: ${improvementLines.slice(0, 3).join(" · ")}.`;
+      meaning = "This is an answer based on the summary lines in the report only, without inventing a direction over time that did not appear explicitly.";
       aggregateContinuity = { questionClass: qc, subjectId: "", role: "improved" };
     } else {
       const uImp = norm(utterance).toLowerCase();
       const mathRow = roll.find((r) => r.sid === "math");
       if (/מתמטיקה|חשבון/.test(uImp) && mathRow && mathRow.avg != null && mathRow.totalQ > 0) {
-        obs = `${lead}במתמטיקה נספרו בטווח כ ${mathRow.totalQ} שאלות, עם דיוק ממוצע של כ ${mathRow.avg}% לפי הדוח.`;
+        obs = `${lead}in mathematics, about ${mathRow.totalQ} questions were counted in the range, with an average accuracy of about ${mathRow.avg}% according to the report.`;
         meaning =
-          "סימן שיפור מפורש לא תמיד מופיע כשורה נפרדת בדוח - עדיין אפשר לעגן לנפח ולדיוק במקצוע מתוך הנתונים שמוצגים.";
+          "An explicit sign of improvement does not always appear as a separate line in the report - it is still possible to anchor the volume and accuracy in the profession from the data that is presented.";
       } else {
-        obs = `${lead}בדוח הנוכחי אין שורת סיכום מפורשת שמסמנת שיפור לאורך זמן.`;
-        meaning = "כדי לענות על \"מה השתפר\" באופן חד יותר צריך או שורות סיכום מפורשות בתקופה או השוואת תקופות.";
+        obs = `${lead}In the current report there is no explicit summary line that indicates improvement over time.`;
+        meaning = "To answer \"what has improved\" more clearly, you need either explicit summary lines in a period or a comparison of periods.";
       }
     }
   } else if (qc === "needs_attention") {
@@ -626,38 +626,38 @@ export function buildSemanticAggregateDraft(input) {
       return bRisk - aRisk || a.totalQ - b.totalQ;
     })[0];
     if (!atRisk) {
-      obs = `${lead}אין כרגע נתונים מספיקים בדוח כדי לזהות מוקד תשומת לב ברור.`;
-      meaning = "כשמופיעים נתוני תרגול מלאים לפי מקצוע בדוח, אפשר לזהות מוקד שדורש תשומת לב.";
+      obs = `${lead}There is currently insufficient data in the report to identify a clear focus of attention.`;
+      meaning = "When complete practice data by profession appears in the report, it is possible to identify an area that requires attention.";
     } else {
-      obs = `המוקד שדורש כרגע הכי הרבה חיזוק הוא ${atRisk.label}.`;
+      obs = `The focus that currently requires the most reinforcement is ${atRisk.label}.`;
       meaning =
         atRisk.avg == null
-          ? "הסיבה המרכזית היא שיש מעט מדי נתונים במקצוע הזה בתקופה הנוכחית."
-          : `הדירוג מבוסס על שילוב של דיוק ממוצע (כ ${atRisk.avg}%) יחד עם סימני חוסר יציבות בדוח.`;
+          ? "The main reason is that there is too little data in this profession in the current period."
+          : `The rating is based on a combination of average accuracy (about ${atRisk.avg}%) along with signs of instability in the report.`;
       aggregateContinuity = { questionClass: qc, subjectId: atRisk.sid, role: "needs_attention" };
     }
   } else if (qc === "still_unclear") {
     const unclear = roll.filter((r) => r.cannotConcludeTopics > 0 || r.lowConfidenceTopics > 0 || r.insufficientTopics > 0);
     if (!unclear.length) {
-      obs = `${lead}אין כרגע בדוח סימן חזק לכך שמקצוע שלם עדיין לא ברור.`;
-      meaning = "עדיין נכון להמשיך לתרגל ולבדוק, אבל אין כאן כרגע סימן מובהק מהדוח לחוסר בהירות.";
+      obs = `${lead}There is currently no strong indication in the report that an entire profession is still uncertain.`;
+      meaning = "It is still correct to continue practicing and testing, but there is currently no clear sign from the report of lack of clarity.";
     } else {
       const names = unclear.map((r) => r.label).join(" · ");
-      obs = `${lead}עדיין לא ברור מספיק בעיקר ב: ${names}.`;
-      meaning = "הזיהוי מבוסס על סימנים של ספק לגבי הניסוח, עדיין לא ברור מספיק או מעט מדי נתונים שמופיעים בדוח עצמו.";
+      obs = `${lead}still not clear enough mainly in: ${names}.`;
+      meaning = "The identification is based on signs of doubt regarding the wording, it is still not clear enough or too little data that appears in the report itself.";
     }
   } else if (qc === "most_stable") {
     if (roll.length < 2) {
-      obs = `${lead}בדוח מופיע כרגע מקצוע אחד בלבד, ולכן אי אפשר להשוות יציבות בין מקצועות.`;
-      meaning = "אפשר עדיין לתאר את המצב במקצוע היחיד, אבל לא לקבוע מי \"הכי יציב\" בהשוואה.";
+      obs = `${lead}The report currently shows only one profession, so it is impossible to compare stability between professions.`;
+      meaning = "It is still possible to describe the situation in the single profession, but not to determine who is \"the most stable\" in comparison.";
     } else {
       const stable = mostStableSubject(roll);
       if (!stable || stable.totalQ <= 0) {
-        obs = `${lead}אין כרגע מספיק תרגול בכמה מקצועות כדי לקבוע מי הכי יציב.`;
-        meaning = "צריך עוד שאלות ורצף תרגול רחב יותר כדי לבדוק יציבות בצורה אמינה.";
+        obs = `${lead}There is currently not enough practice in some professions to determine who is the most stable.`;
+        meaning = "More questions and a wider practice sequence are needed to reliably test stability.";
       } else {
-        obs = `המקצוע היציב ביותר כרגע לפי נתוני התקופה בדוח הוא ${stable.label}.`;
-        meaning = `ההערכה מבוססת על שילוב של כמות התרגול, יציבות הביצועים, הביטחון והבשלות לפי הדוח, לא על שורת נושא בודדת.`;
+        obs = `The most stable profession at the moment according to the period data in the report is ${stable.label}.`;
+        meaning = `The assessment is based on a combination of the amount of practice, performance stability, confidence and maturity according to the report, not on a single subject line.`;
         aggregateContinuity = { questionClass: qc, subjectId: stable.sid, role: "most_stable" };
       }
     }
@@ -666,41 +666,41 @@ export function buildSemanticAggregateDraft(input) {
       const only = withAvg[0];
       const pct =
         only.avg == null
-          ? "עדיין בלי ממוצע דיוק יציב שאפשר לסמוך עליו בביטחון"
-          : `עם דיוק ממוצע של כ ${only.avg}%`;
-      obs = `יש כרגע בעיקר מקצוע אחד עם מספיק תרגול מספרי בדוח - ${only.label}, ${pct}.`;
+          ? "Still without a stable accuracy average that can be trusted with confidence"
+          : `with an average accuracy of about ${only.avg}%`;
+      obs = `There is currently mainly one profession with enough numerical practice in the report - ${only.label}, ${pct}.`;
       if (qc === "strongest_subject") {
         meaning =
-          "כשיש מקצוע אחד עם נתונים, \"הכי חזק\" פשוט מתאר את מה שמופיע בפועל במקצוע הזה, בלי השוואה לאחרים. כדי לדרג בין מקצועות צריך שיופיעו לפחות שני מקצועות עם תרגול בדוח.";
+          "When there is one profession with data, \"strongest\" simply describes what actually appears in that profession, without comparison to others. In order to rank between subjects, at least two subjects with practice must appear in the report.";
         aggregateContinuity = { questionClass: qc, subjectId: only.sid, role: "strongest" };
       } else if (qc === "weakest_subject") {
         meaning =
-          "כשיש מקצוע אחד עם נתונים, \"הכי חלש\" לא אומר השוואה בין מקצועות - רק את הרף במקצוע היחיד שמופיע. להשוואה אמיתית צריך שני מקצועות ומעלה עם תרגול.";
+          "When there is one profession with data, \"the weakest\" does not mean a comparison between professions - only the bar in the only profession that appears. A real comparison requires two or more subjects with practice.";
         aggregateContinuity = { questionClass: qc, subjectId: only.sid, role: "weakest" };
       } else {
         meaning =
-          "כשיש רק מקצוע אחד עם נתונים, \"הכי קשה\" מתייחס למצב בתוך המקצוע הזה מהדוח, לא למי נוח יותר לעומת מקצוע אחר.";
+          "When there is only one profession with data, \"hardest\" refers to the situation within that profession from the report, not who is more comfortable compared to another profession.";
         aggregateContinuity = { questionClass: qc, subjectId: only.sid, role: "hardest" };
       }
     } else if (withAvg.length < 2) {
-      obs = `${lead}בדוח אין כרגע מספיק תרגול מספרי על לפחות שני מקצועות שונים, ולכן לא נדרגים כאן מקצועות אחד מול השני.`;
-      meaning = "כשמופיעים נתונים לשני מקצועות ומעלה, אפשר לשאול שוב ולקבל דירוג לפי הממוצעים שמוצגים בדוח.";
+      obs = `${lead}The report currently does not have enough numerical practice on at least two different professions, so professions are not ranked here against each other.`;
+      meaning = "When data appears for two or more subjects, you can ask again and get a rating according to the averages shown in the report.";
     } else {
       const sortedStrength = [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ);
       const sortedWeak = [...withAvg].sort((a, b) => (a.avg || 0) - (b.avg || 0) || a.totalQ - b.totalQ);
       const strongest = sortedStrength[0];
       const weakest = sortedWeak[0];
       if (qc === "strongest_subject") {
-        obs = `המקצוע החזק ביותר כרגע הוא ${strongest.label} - לפי ממוצע הדיוק הכללי על פני הנושאים עם תרגול בדוח (בערך ${strongest.avg}%).`;
-        meaning = `המדד משקף ממוצע על כל שורות הנושא עם תרגול תחת ${strongest.label}, לא ניסוח של נושא בודד.`;
+        obs = `The strongest subject at the moment is ${strongest.label} - according to the average overall accuracy across subjects with practice in the report (about ${strongest.avg}%).`;
+        meaning = `The index reflects an average over all subject lines with practice under ${strongest.label}, not a formulation of a single subject.`;
         aggregateContinuity = { questionClass: qc, subjectId: strongest.sid, role: "strongest" };
       } else if (qc === "weakest_subject") {
-        obs = `המקצוע הנמוך ביותר כרגע הוא ${weakest.label} - לפי אותו ממוצע דיוק כללי על פני נושאים עם תרגול (בערך ${weakest.avg}%).`;
-        meaning = "זה תיאור ברמת מקצוע מהדוח; לפרטים מדויקים לפי נושא צריך לפתוח את המקצוע בדוח.";
+        obs = `The lowest subject right now is ${weakest.label} - by the same overall accuracy average across subjects with practice (about ${weakest.avg}%).`;
+        meaning = "This is a professional level description from the report; For exact details by topic, you should open the profession in the report.";
         aggregateContinuity = { questionClass: qc, subjectId: weakest.sid, role: "weakest" };
       } else {
-        obs = `המקצוע שבו הכי "קשה" כרגע מבחינת התוצאות הוא ${weakest.label} - לפי ממוצע הדיוק הכללי בדוח (בערך ${weakest.avg}%).`;
-        meaning = "כאן \"קשה\" מתורגם לפי הדיוק הממוצע בנושאים עם תרגול בדוח, לא לפי רושם בלי נתונים.";
+        obs = `The profession where the most "difficult" at the moment in terms of results is ${weakest.label} - according to the average overall accuracy in the report (about ${weakest.avg}%).`;
+        meaning = "Here \"hard\" is translated according to the average accuracy in subjects with practice in the report, not according to impression without data.";
         aggregateContinuity = { questionClass: qc, subjectId: weakest.sid, role: "hardest" };
       }
     }

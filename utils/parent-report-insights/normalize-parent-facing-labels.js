@@ -1,5 +1,5 @@
 /**
- * Hebrew display-name resolution for the Insight Packet.
+ * Parent-facing display-name resolution for the Insight Packet.
  *
  * The label dictionaries are inlined here on purpose so the insights module is fully self-contained
  * and can run under plain Node ESM (no Next.js bundler). They mirror the public dictionaries in
@@ -8,115 +8,115 @@
  */
 
 const SUBJECT_LABEL_HE = Object.freeze({
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  hebrew: "עברית",
-  science: "מדעים",
-  moledet_geography: "מולדת וגאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  hebrew: "Hebrew",
+  science: "Science",
+  moledet_geography: "Homeland & geography",
 });
 
 const MATH_OPERATION_NAMES_HE = Object.freeze({
-  addition: "חיבור",
-  subtraction: "חיסור",
-  multiplication: "כפל",
-  division: "חילוק",
-  division_with_remainder: "חילוק עם שארית",
-  fractions: "שברים",
-  percentages: "אחוזים",
-  sequences: "סדרות",
-  decimals: "עשרוניים",
-  rounding: "עיגול",
-  divisibility: "סימני התחלקות",
-  prime_composite: "מספרים ראשוניים ופריקים",
-  powers: "חזקות",
-  ratio: "יחס",
-  equations: "משוואות",
-  order_of_operations: "סדר פעולות",
-  zero_one_properties: "תכונות ה-0 וה-1",
-  estimation: "אומדן",
-  scale: "קנה מידה",
-  compare: "השוואה",
-  number_sense: "חוש מספרים",
-  factors_multiples: "גורמים וכפולות",
-  word_problems: "בעיות מילוליות",
-  multiplication_table: "לוח הכפל",
-  mixed: "ערבוב",
+  addition: "Addition",
+  subtraction: "Subtraction",
+  multiplication: "Multiplication",
+  division: "Division",
+  division_with_remainder: "Division with remainder",
+  fractions: "Fractions",
+  percentages: "Percentages",
+  sequences: "Sequences",
+  decimals: "Decimals",
+  rounding: "Rounding",
+  divisibility: "Divisibility rules",
+  prime_composite: "Prime and composite numbers",
+  powers: "Powers",
+  ratio: "Ratio",
+  equations: "Equations",
+  order_of_operations: "Order of operations",
+  zero_one_properties: "Properties of 0 and 1",
+  estimation: "Estimation",
+  scale: "Scale",
+  compare: "Comparison",
+  number_sense: "Number sense",
+  factors_multiples: "Factors and multiples",
+  word_problems: "Word problems",
+  multiplication_table: "Multiplication table",
+  mixed: "Mixed practice",
 });
 
 const GEOMETRY_TOPIC_NAMES_HE = Object.freeze({
-  shapes_basic: "צורות בסיסיות",
-  shapes: "צורות",
-  area: "שטח",
-  perimeter: "היקף",
-  volume: "נפח",
-  angles: "זוויות",
-  parallel_perpendicular: "מקבילות ומאונכות",
-  triangles: "משולשים",
-  quadrilaterals: "מרובעים",
-  transformations: "טרנספורמציות",
-  rotation: "סיבוב",
-  symmetry: "סימטרייה",
-  diagonal: "אלכסון",
-  heights: "גבהים",
-  tiling: "ריצוף",
-  circles: "מעגל ועיגול",
-  solids: "גופים",
-  pythagoras: "פיתגורס",
-  mixed: "ערבוב",
+  shapes_basic: "Basic shapes",
+  shapes: "Shapes",
+  area: "Area",
+  perimeter: "Perimeter",
+  volume: "Volume",
+  angles: "Angles",
+  parallel_perpendicular: "Parallel and perpendicular",
+  triangles: "Triangles",
+  quadrilaterals: "Quadrilaterals",
+  transformations: "Transformations",
+  rotation: "Rotation",
+  symmetry: "Symmetry",
+  diagonal: "Diagonals",
+  heights: "Heights",
+  tiling: "Tiling",
+  circles: "Circles",
+  solids: "Solid shapes",
+  pythagoras: "Pythagorean theorem",
+  mixed: "Mixed practice",
 });
 
 const ENGLISH_TOPIC_NAMES_HE = Object.freeze({
-  vocabulary: "אוצר מילים",
-  grammar: "דקדוק",
-  grammar_basics: "יסודות דקדוק",
-  translation: "תרגום",
-  sentence: "בניית משפטים",
-  sentences: "בניית משפטים",
-  writing: "כתיבה",
-  reading_comprehension: "הבנת הנקרא",
-  matching: "התאמה",
-  inference: "הסקה",
-  mixed: "תרגול משולב",
+  vocabulary: "Vocabulary",
+  grammar: "Grammar",
+  grammar_basics: "Grammar basics",
+  translation: "Translation",
+  sentence: "Sentence building",
+  sentences: "Sentence building",
+  writing: "Writing",
+  reading_comprehension: "Reading comprehension",
+  matching: "Matching",
+  inference: "Inference",
+  mixed: "Mixed practice",
 });
 
 const SCIENCE_TOPIC_NAMES_HE = Object.freeze({
-  body: "גוף האדם",
-  animals: "בעלי חיים",
-  plants: "צמחים",
-  materials: "חומרים",
-  earth_space: "כדור הארץ והחלל",
-  environment: "סביבה ואקולוגיה",
-  experiments: "ניסויים ותהליכים",
-  mixed: "ערבוב נושאים",
+  body: "Human body",
+  animals: "Animals",
+  plants: "Plants",
+  materials: "Materials",
+  earth_space: "Earth and space",
+  environment: "Environment and ecology",
+  experiments: "Experiments and processes",
+  mixed: "Mixed topics",
 });
 
 const HEBREW_TOPIC_NAMES_HE = Object.freeze({
-  reading: "קריאה",
-  comprehension: "הבנת הנקרא",
-  reading_comprehension: "הבנת הנקרא",
-  writing: "כתיבה והבעה",
-  grammar: "דקדוק ולשון",
-  vocabulary: "עושר שפתי",
-  speaking: "דיבור ושיח",
-  mixed: "ערבוב",
-  main_idea: "רעיון מרכזי",
-  sequence: "רצף",
-  inference: "הסקה",
+  reading: "Reading",
+  comprehension: "Reading comprehension",
+  reading_comprehension: "Reading comprehension",
+  writing: "Writing and expression",
+  grammar: "Grammar and language",
+  vocabulary: "Vocabulary",
+  speaking: "Speaking and discussion",
+  mixed: "Mixed practice",
+  main_idea: "Main idea",
+  sequence: "Sequence",
+  inference: "Inference",
 });
 
 const MOLEDET_GEOGRAPHY_TOPIC_NAMES_HE = Object.freeze({
-  homeland: "מולדת",
-  community: "קהילה",
-  citizenship: "אזרחות",
-  geography: "גאוגרפיה",
-  basic_geography: "יסודות גאוגרפיה",
-  values: "ערכים",
-  maps: "מפות",
-  map_reading: "קריאת מפה",
-  directions: "הוראות",
-  places: "מקומות",
-  mixed: "ערבוב",
+  homeland: "Homeland",
+  community: "Community",
+  citizenship: "Citizenship",
+  geography: "Geography",
+  basic_geography: "Geography basics",
+  values: "Values",
+  maps: "Maps",
+  map_reading: "Map reading",
+  directions: "Directions",
+  places: "Places",
+  mixed: "Mixed practice",
 });
 
 const RAW_KEY_RE = /^[a-z][a-z0-9_]*$/i;
@@ -128,9 +128,9 @@ function stripMathKindSuffix(key) {
 }
 
 export function getSubjectDisplayNameHe(subjectKey) {
-  if (!subjectKey) return "מקצוע";
+  if (!subjectKey) return "Subject";
   const k = String(subjectKey).trim().toLowerCase();
-  return SUBJECT_LABEL_HE[k] || "מקצוע";
+  return SUBJECT_LABEL_HE[k] || "Subject";
 }
 
 export function getTopicDisplayNameHe(subjectKey, topicKey) {
@@ -170,7 +170,7 @@ export function safeHebrewLabel(label, fallback) {
     const t = label.trim();
     if (t && !isLikelyRawKey(t)) return t;
   }
-  return typeof fallback === "string" && fallback.trim() ? fallback.trim() : "נושא";
+  return typeof fallback === "string" && fallback.trim() ? fallback.trim() : "Topic";
 }
 
 export const SUBJECT_LABELS_HE_FOR_TESTS = SUBJECT_LABEL_HE;

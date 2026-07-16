@@ -1,6 +1,6 @@
 /**
- * אותות דיאגנוסטיים לשורת דוח V2 — מקור אחד אל parent-report-v2 ואל topic-next-step-engine.
- * ללא תלות ב parent-report-v2 (מניעת מעגל ייבוא).
+ * V2 report row diagnostic signals — single source for parent-report-v2 and topic-next-step-engine.
+ * No dependency on parent-report-v2 (avoids circular imports).
  */
 
 import { mathReportBaseOperationKey, canonicalParentReportGradeKey } from "./math-report-generator.js";
@@ -9,15 +9,15 @@ import { TOPIC_EVIDENCE_THRESHOLDS } from "./parent-report-topic-evidence.js";
 import { buildEvidenceContractV1, validateEvidenceContractV1 } from "./contracts/parent-report-contracts-v1.js";
 export const TRACK_ROW_MODE_SEP = "\u0001";
 
-/** placeholder פנימי לסשנים/טעויות בלי כיתה או בלי רמה — לא מאחדים כמה ערכים אמיתיים */
+/** Internal placeholder for sessions/mistakes without grade or level — do not merge distinct real values */
 export const MATH_SCOPE_UNKNOWN = "unknown";
 
-/** סיומת מפתח אגרגציה לטעויות מתמטיקה בלי scope מלא — לא נשענים עליו לשורה scoped */
+/** Aggregation key suffix for math mistakes without full scope — do not rely on it for a scoped row */
 export const MATH_MISTAKE_UNSCOPED_MARKER = "__UNSCOPED__";
 
 /**
- * מתמטיקה: מפתח שורה = operation + mode + grade + level (4 מקטעים).
- * שאר המקצועות: operation/topic + mode (2 מקטעים) — תאימות לאחור.
+ * Math: row key = operation + mode + grade + level (4 segments).
+ * Other subjects: operation/topic + mode (2 segments) — backward compatible.
  */
 export function splitTopicRowKey(itemKey) {
   const raw = String(itemKey ?? "");
@@ -39,7 +39,7 @@ export function splitTopicRowKey(itemKey) {
   return { bucketKey: raw, modeKey: null, gradeScope: null, levelScope: null };
 }
 
-/** מפרק מפתח שורה — bucket + mode (תאימות); למתמטיקה מלאה השתמשו ב splitTopicRowKey */
+/** Splits a row key — bucket + mode (compat); for full math use splitTopicRowKey */
 export function splitBucketModeRowKey(itemKey) {
   const s = splitTopicRowKey(itemKey);
   return { bucketKey: s.bucketKey, modeKey: s.modeKey };
@@ -84,7 +84,7 @@ export function normalizeMistakeModeField(mode) {
 }
 
 /**
- * טעות מתמטיקה עם grade+level תקפים (לא unknown) — רק כאלה נכנסות לשורה scoped.
+ * Math mistake with valid grade+level (not unknown) — only these enter a scoped row.
  * @param {Record<string, unknown>|null|undefined} ev
  */
 export function mistakeMathScopeComplete(ev) {
@@ -95,9 +95,9 @@ export function mistakeMathScopeComplete(ev) {
 }
 
 /**
- * מפתח אגרגציה לטעויות מתמטיקה (תואם מפתח שורת דוח scoped).
+ * Aggregation key for math mistakes (matches scoped report row key).
  * @param {Record<string, unknown>|null|undefined} ev
- * @returns {string|null} null אם חסרים נתוני scope — הקורא יפנה אל UNSCOPED
+ * @returns {string|null} null if scope data is missing — caller should use UNSCOPED
  */
 export function buildMathScopedMistakeAggregationKey(ev) {
   if (!ev || typeof ev !== "object") return null;
@@ -136,7 +136,7 @@ export function aggregateMistakeCountsByCanonicalKey(subjectId, mistakesByBucket
 }
 
 /**
- * ספירת אירועי טעות לשורה — תואם אל resolveMistakeEventCount ב topic-next-step-engine.
+ * Mistake event count for a row — aligned with resolveMistakeEventCount in topic-next-step-engine.
  */
 export function rowMistakeEventCount(subjectId, mistakesByBucket, bucketKey, topicRowKey, row) {
   const byCanon = aggregateMistakeCountsByCanonicalKey(subjectId, mistakesByBucket);
@@ -167,7 +167,7 @@ export function rowMistakeEventCount(subjectId, mistakesByBucket, bucketKey, top
 }
 
 /**
- * האם אירוע טעות (מתמטיקה) שייך לשורת דוח scoped לפי כיתה+רמה+מצב.
+ * Whether a math mistake event belongs to a scoped report row by grade+level+mode.
  * @param {string} topicRowKey
  * @param {Record<string, unknown>|null|undefined} ev
  */
@@ -220,7 +220,7 @@ export function computeConfidence01(row, mistakeEventCount, cfg) {
   return Math.round(Math.max(0, Math.min(1, base * noise)) * 100) / 100;
 }
 
-/** 0–100 לפי מרחק בזמן מסוף תקופת הדוח (לא מ "עכשיו") */
+/** 0–100 by time distance from the report period end (not from "now") */
 export function computeRecencyScore(lastSessionMs, periodEndMs) {
   if (!Number.isFinite(periodEndMs)) return 55;
   if (!Number.isFinite(lastSessionMs)) return 55;
@@ -260,21 +260,21 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
   if (q <= 0) {
     return {
       level: "low",
-      labelHe: "לא נאספו שאלות בתקופה שנבחרה - אין בסיס נתונים לשורה זו.",
+      labelHe: "No questions were collected in the selected period - there is no data basis for this row.",
       suppressAggressiveStep: true,
     };
   }
   if (q < 4) {
     return {
       level: "low",
-      labelHe: "מעט מדי שאלות בתקופה - ההסקות לשורה זו חלקיות מאוד.",
+      labelHe: "Too few questions in the period - conclusions for this row are very partial.",
       suppressAggressiveStep: true,
     };
   }
   if (q >= 40) {
     return {
       level: "strong",
-      labelHe: "נאספו הרבה שאלות - אפשר לסמוך יותר על מה שרואים בנושא הזה.",
+      labelHe: "Many questions were collected - you can rely more on what you see for this topic.",
       suppressAggressiveStep: false,
     };
   }
@@ -283,8 +283,8 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
       level: evidenceStrength === "strong" ? "strong" : "medium",
       labelHe:
         evidenceStrength === "strong"
-          ? "יש מספיק שאלות - אפשר לסמוך יותר על מה שרואים בנושא הזה."
-          : "יש מספיק שאלות לנושא הזה - שינויים זהירים בתת מיומנות בלבד.",
+          ? "There are enough questions - you can rely more on what you see for this topic."
+          : "There are enough questions for this topic - cautious changes to sub-skills only.",
       suppressAggressiveStep: false,
     };
   }
@@ -293,34 +293,34 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
       level: evidenceStrength === "strong" ? "strong" : "medium",
       labelHe:
         evidenceStrength === "strong"
-          ? "יש מספיק שאלות - אפשר לסמוך יותר על מה שרואים בנושא הזה."
-          : "יש מספיק שאלות לנושא הזה - שינויים זהירים בתת מיומנות בלבד.",
+          ? "There are enough questions - you can rely more on what you see for this topic."
+          : "There are enough questions for this topic - cautious changes to sub-skills only.",
       suppressAggressiveStep: false,
     };
   }
   if (q < 8 || evidenceStrength === "low" || (confidence01 ?? 0) < 0.22) {
     return {
       level: "medium",
-      labelHe: "המידע עדיין חלקי - לא משנים כיתה או רמה לפי שורה אחת בלבד.",
+      labelHe: "Information is still partial - don't change grade or level based on this row alone.",
       suppressAggressiveStep: true,
     };
   }
   if (evidenceStrength === "strong" && q >= 12) {
     return {
       level: "strong",
-      labelHe: "יש מספיק שאלות - אפשר לסמוך יותר על מה שרואים בנושא הזה.",
+      labelHe: "There are enough questions - you can rely more on what you see for this topic.",
       suppressAggressiveStep: false,
     };
   }
   return {
     level: "medium",
-    labelHe: "נתונים בינוניים - מומלץ שינויים זהירים בלבד.",
+    labelHe: "Moderate data - cautious changes only are recommended.",
     suppressAggressiveStep: evidenceStrength === "low",
   };
 }
 
 /**
- * מסלול החלטה לביקורת JSON — ללא טקסט פדגוגי חדש מעבר לשדות הקיימים.
+ * Decision path for JSON audit — no new pedagogical text beyond existing fields.
  * @param {object} ctx
  * @returns {Array<{ source: "diagnostics", phase: string, detailHe?: string, data: Record<string, unknown> }>}
  */
@@ -349,7 +349,7 @@ export function buildDiagnosticsDecisionTrace(ctx) {
   return [
     data({
       phase: "inputs",
-      detailHe: "קלטים לשורה לפני חישוב אותות.",
+      detailHe: "Row inputs before signal computation.",
       data: {
         subjectId,
         topicRowKey: String(topicRowKey || ""),
@@ -383,7 +383,7 @@ export function buildDiagnosticsDecisionTrace(ctx) {
     }),
     data({
       phase: "data_sufficiency",
-      detailHe: "כמות המידע משפיעה על מידת הזהירות בהמלצה הבאה.",
+      detailHe: "How much information is available affects how cautious the next recommendation is.",
       data: {
         dataSufficiencyLevel,
         suppressAggressiveStep,
@@ -420,11 +420,11 @@ export function computeRowDiagnosticSignals(subjectId, topicRowKey, row, mistake
     evidenceStrength === "strong" && q >= 14 && stability01 >= 0.45 && confidence01 >= 0.35;
   const isEarlySignalOnly = sufficiency.level !== "strong" || evidenceStrength === "low";
 
-  let patternStabilityHe = "עדיין מוקדם - לא ברור אם זה נשמר לאורך זמן רק מהנתונים כאן.";
+  let patternStabilityHe = "It's still early - it's not clear from this data alone whether this pattern will hold over time.";
   if (isStablePattern) {
-    patternStabilityHe = "זה חוזר בכמה תרגולים - התמונה משקפת מגמה ולא רק מפגש בודד.";
+    patternStabilityHe = "This shows up across several practice sessions - the picture reflects a trend, not just a single session.";
   } else if (sufficiency.level === "medium") {
-    patternStabilityHe = "יש כיוון חלקי - כדאי לאסוף עוד תרגול לפני שאומרים משהו חד משמעי.";
+    patternStabilityHe = "There's a partial direction - collect more practice before stating something definitive.";
   }
 
   const decisionTrace = buildDiagnosticsDecisionTrace({
@@ -465,14 +465,14 @@ export function computeRowDiagnosticSignals(subjectId, topicRowKey, row, mistake
     patternStabilityHe,
     isEarlySignalOnly,
     recommendationContextHe: isEarlySignalOnly
-      ? "ההמלצה מבוססת על נתונים חלקיים; עדיף לא לעשות שינוי דרמטי בלי לבדוק שוב אחרי עוד תרגול."
-      : "ההמלצה מבוססת על שילוב דיוק, כמות שאלות, טעויות ועדכניות בתקופה שנבחרה.",
+      ? "The recommendation is based on partial data; avoid making a dramatic change without checking again after more practice."
+      : "The recommendation is based on a combination of accuracy, question count, mistakes, and how recent practice was in the selected period.",
     decisionTrace,
   };
 }
 
 /**
- * מעשיר אובייקטי שורות במפות נושאים (mathOperations וכו').
+ * Enriches row objects in topic maps (mathOperations etc.).
  * @param {Record<string, Record<string, unknown>>} maps
  * @param {Record<string, Record<string, { count?: number }>>} mistakesBySubject
  * @param {number} periodEndMs

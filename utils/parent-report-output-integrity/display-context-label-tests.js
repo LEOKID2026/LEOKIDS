@@ -10,8 +10,8 @@ import {
   narrativeTitleFromRow,
 } from "./row-display-label-context.js";
 
-const GRADE_IN_TABLE_LABEL_RE = /(?:-|\()\s*(?:כיתה|תרגול ב)/u;
-const NARRATIVE_GRADE_TITLE_RE = / - כיתה /u;
+const GRADE_IN_TABLE_LABEL_RE = /(?:-|\()\s*(?:כיתה|תרגול ב|Grade|practice in)/iu;
+const NARRATIVE_GRADE_TITLE_RE = / - (?:כיתה|Grade) /iu;
 
 /**
  * @param {Record<string, unknown>|null|undefined} row
@@ -20,7 +20,7 @@ function narrativeCleanTopicName(row) {
   const dn = String(row?.displayName || row?.rowIdentityV1?.displayName || "").trim();
   if (dn) return cleanTopicLabelHe(dn);
   const title = narrativeTitleFromRow(row);
-  const m = title.match(/^(.+?)\s-\sכיתה\s/u);
+  const m = title.match(/^(.+?)\s-\s(?:כיתה|Grade)\s/iu);
   if (m?.[1]) return cleanTopicLabelHe(m[1]);
   return cleanTopicLabelHe(title);
 }
@@ -141,7 +141,7 @@ export function assertNarrativeSurfacesDisambiguateDuplicates(detailedReport) {
       for (const t of titles) {
         if (!t || !NARRATIVE_GRADE_TITLE_RE.test(t)) {
           failures.push(
-            `${sp.subject}: narrative title for "${clean}" must use short grade title (- כיתה …) (${t || "empty"})`,
+            `${sp.subject}: narrative title for "${clean}" must use short grade title (- Grade …) (${t || "empty"})`,
           );
         }
       }

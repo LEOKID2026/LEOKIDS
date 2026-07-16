@@ -10,7 +10,7 @@ import {
 } from "./parent-topic-tier.js";
 import { parentFacingPatternLabelHe } from "../parent-report-language/index.js";
 
-const UNPRACTICED_SUBJECTS_BULLET_RE = /^מקצועות שלא תורגלו/u;
+const UNPRACTICED_SUBJECTS_BULLET_RE = /^(?:מקצועות שלא תורגלו|Subjects not practiced)/u;
 
 /**
  * @param {object} payload — detailed parent report payload
@@ -107,7 +107,7 @@ export function resolveSubjectPrimaryParentActionHe(sp, baseReport) {
       groups[PARENT_TOPIC_TIER.MONITOR]?.[0];
     if (focus?.narrativeTitleHe) {
       const generic = tryLine(
-        `ב${focus.narrativeTitleHe}: תרגול קצר וברור בבית - דוגמה אחת, שאלה אחת, ובדיקה מהירה בסוף.`
+        `For ${focus.narrativeTitleHe}: short, clear home practice - one example, one question, and a quick check at the end.`
       );
       if (generic) return generic;
     }

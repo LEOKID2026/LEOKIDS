@@ -33,15 +33,15 @@ const ENVELOPE_HEDGE = { WE0: "mandatory", WE1: "mandatory", WE2: "light", WE3: 
 
 const REQUIRED_HEDGES_BY_LEVEL = {
   none: [],
-  light: ["נכון לעכשיו", "כדאי להמשיך לעקוב"],
-  mandatory: ["בשלב זה", "עדיין מוקדם לקבוע"],
+  light: ["right now", "worth continuing to watch"],
+  mandatory: ["at this stage", "still too early to determine"],
 };
 
 const FORBIDDEN_PHRASES = Object.freeze([
-  "בטוח לחלוטין",
-  "בוודאות מלאה",
-  "ללא ספק בכלל",
-  "חד משמעית",
+  "completely certain",
+  "with full certainty",
+  "without any doubt at all",
+  "unequivocally",
 ]);
 
 function normalizeTopicKey(v) {
@@ -56,7 +56,7 @@ function normalizeSubjectId(v) {
 
 function normalizeDisplayName(v) {
   const s = String(v ?? "").trim();
-  return s || "הנושא";
+  return s || "this topic";
 }
 
 function normalizeReadiness(value) {
@@ -159,24 +159,24 @@ function deriveEnvelope(input) {
 function buildObservationSlot(displayName, q, acc, seed) {
   if (q <= 0) {
     return pickVariant(seed, [
-      `ב${displayName} יש עדיין מעט מדי תרגול בתקופה שנבחרה כדי לדעת איך זה באמת הולך.`,
-      `ב${displayName} רואים בינתיים רק מעט ניסיונות - זה בסדר; נוסיף עוד קצת ונחזור לזה.`,
-      `ב${displayName} עדיין מעט תרגול בתקופה שנבחרה, ולכן נשארים עם ניסוח זהיר.`,
+      `In ${displayName} there's still too little practice in the selected period to know how it's really going.`,
+      `In ${displayName} we're only seeing a few attempts so far - that's okay; we'll add a bit more and come back to it.`,
+      `In ${displayName} there's still little practice in the selected period, so we're keeping a cautious wording.`,
     ]);
   }
   return pickVariant(seed, [
-    `ב${displayName} בתקופה שנבחרה יש ${q} שאלות, עם דיוק של כ ${acc}%.`,
-    `ב${displayName} נאספו ${q} שאלות בתקופה, ורמת הדיוק סביב ${acc}%.`,
-    `ב${displayName} נאספו ${q} שאלות בתקופה, עם דיוק ממוצע של כ ${acc}%.`,
+    `In ${displayName} in the selected period there are ${q} questions, with about ${acc}% accuracy.`,
+    `In ${displayName}, ${q} questions were collected this period, with accuracy around ${acc}%.`,
+    `In ${displayName}, ${q} questions were collected this period, with average accuracy of about ${acc}%.`,
   ]);
 }
 
 function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc = 0) {
   if (cannotConcludeYet || envelope === "WE0") {
     return pickVariant(seed, [
-      "עדיין מוקדם לקבוע כאן כיוון ברור - נמשיך לעקוב אחרי התרגול.",
-      "זה מוקדם לנסח סיכום סופי; נוסיף עוד קצת תרגול ונראה איך זה נשמר.",
-      "עדיין אין מספיק נתונים לקבוע כיוון ברור - נמשיך לאט ובזהירות.",
+      "It's still too early to set a clear direction here - we'll keep watching the practice.",
+      "It's too early to write a final summary; we'll add a bit more practice and see how it holds.",
+      "There still isn't enough data to set a clear direction - we'll move slowly and carefully.",
     ]);
   }
   if (envelope === "WE1") {
@@ -184,40 +184,40 @@ function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc =
     const accWeak = Math.max(0, Math.min(100, Math.round(Number(acc) || 0)));
     if (qWeak >= 8 && accWeak <= 54) {
       return pickVariant(seed, [
-        "יש כאן מספיק תרגול כדי לראות דפוס, אבל הדיוק עדיין נמוך יחסית - זה מצב שדורש חיזוק ממוקד.",
-        "נאספו מספיק שאלות לתמונה ראשונית, אך התוצאות עדיין מצביעות על קושי - כדאי חיזוק ממוקד לפני שמסמנים את הנושא כיציב.",
-        "הנתון מראה פעילות בתקופה, אבל הדיוק נמוך יחסית - נשארים עם ניסוח זהיר ותרגול ממוקד.",
+        "There's enough practice here to see a pattern, but accuracy is still relatively low - this calls for focused reinforcement.",
+        "Enough questions were collected for an initial picture, but the results still point to difficulty - focused reinforcement is worth it before marking the topic as stable.",
+        "The data shows activity this period, but accuracy is low - we're keeping a cautious wording and focused practice.",
       ]);
     }
     return pickVariant(seed, [
-      "מתחילים לראות סימנים ראשונים לכיוון, ועדיין צריך עוד קצת תרגול לפני שקובעים כיוון אחד.",
-      "נשמע שיש כאן התחלה טובה, אבל עדיין עדיף לחזק עוד קצת לפני שקובעים כיוון ברור.",
-      "זו תמונה ראשונית בלבד, ועדיין מוקדם לסיכום חד.",
+      "We're starting to see early signs of a direction, but a bit more practice is still needed before settling on one direction.",
+      "Sounds like there's a good start here, but it's still better to reinforce a bit more before setting a clear direction.",
+      "This is only an initial picture, and it's still too early for a sharp summary.",
     ]);
   }
   if (envelope === "WE2") {
     return pickVariant(seed, [
-      "יש כאן כיוון עבודה הגיוני, ונעדיף לראות את זה חוזר עוד פעם לפני שמחמירים בקביעת כיוון.",
-      "הדוח נראה מתקדם לטובה, וכדאי לוודא שזה לא מקרה חד פעמי.",
-      "הכיוון חיובי יחסית; נשארים עם חיזוק קצר וברור לפני שקובעים שהנושא יציב.",
+      "There's a sensible direction here, and we'd prefer to see it repeat once more before firming up the direction.",
+      "The report looks like it's moving in a good direction, and it's worth making sure this isn't a one-time case.",
+      "The direction is relatively positive; we're keeping short, clear reinforcement before calling the topic stable.",
     ]);
   }
   if (envelope === "WE3") {
     return pickVariant(seed, [
-      "הכיוון נראה יציב לאורך התקופה - מספיק להמשיך בתרגול שגרתי.",
-      "נראה שהביצוע נשמר טוב יחסית לתקופה הזו, ונמשיך בעדינות לעקוב.",
-      "יש כאן יציבות טובה יחסית בתוצאות; נמשיך לעודד ולבדוק מדי פעם שהכול נשמר.",
+      "The direction looks stable over the period - it's enough to continue with routine practice.",
+      "Performance looks relatively well maintained for this period, and we'll keep gently watching.",
+      "There's relatively good stability in the results; we'll keep encouraging and checking now and then that it holds.",
     ]);
   }
   // Grammar/claims fix: the two removed variants asserted attention/fatigue/pressure
-  // ("קשב", "עייפות", "לחץ") with zero corresponding evidence input in this contract
+  // with zero corresponding evidence input in this contract
   // (no attention, fatigue, or pressure signal is computed anywhere above). Kept only
   // the WE4 variant whose claim (stability over time) is actually backed by the q/acc
   // evidence gate that produced this envelope.
   return pickVariant(seed, [
-    "ניכר כאן כיוון חזק יחסית; נמשיך באותו קצב ונוודא שההצלחה חוזרת לאורך זמן.",
-    "יש כאן יציבות טובה יחסית בתוצאות; נמשיך מדי פעם לבדוק שהכול נשמר גם בהמשך.",
-    "הדוח מצביע על ביצוע יציב יחסית בתקופה הזו, ונמשיך לעקוב מדי פעם כדי לוודא שזה נשמר.",
+    "There's a relatively strong direction here; we'll keep the same pace and make sure the success keeps repeating over time.",
+    "There's relatively good stability in the results; we'll keep checking now and then that it holds going forward.",
+    "The report points to relatively stable performance this period, and we'll keep watching occasionally to make sure it holds.",
   ]);
 }
 
@@ -225,22 +225,22 @@ function buildActionSlot(capIntensity, eligible, seed) {
   if (!eligible || capIntensity === "RI0") return null;
   if (capIntensity === "RI1") {
     return pickVariant(seed, [
-      "כדאי תרגול קצר וממוקד באותה רמה, ואז לבדוק אם באמת כדאי לשנות משהו.",
-      "נעשה עוד חזרה קצרה וברורה ברמה הנוכחית, לפני שמנסים קפיצה קטנה קדימה.",
-      "כדאי להמשיך לתרגל באותה רמת קושי, ואז לבדוק שוב אם מתאים להתקדם.",
+      "Short, focused practice at the same level is worth it, then check whether it's really worth changing something.",
+      "Do one more short, clear repetition at the current level, before trying a small step forward.",
+      "It's worth continuing to practice at the same difficulty level, then checking again whether it's a good time to advance.",
     ]);
   }
   if (capIntensity === "RI2") {
     return pickVariant(seed, [
-      "כדאי חיזוק ממוקד, ואז ניסיון קצר בלי הכוונה באמצע, לפני שמעלים רמת קושי.",
-      "בואו נתרגל ממוקד ואז נבדוק כמה שאלות קצרות בעצמאות, לפני שמקדמים.",
-      "מוסיפים חיזוק קצר, ובודקים עצמאות קצרה, ורק אז בודקים התקדמות.",
+      "Focused reinforcement is worth it, then a short attempt without guidance in the middle, before raising the difficulty level.",
+      "Let's practice with focus and then check a few short questions independently, before advancing.",
+      "Add short reinforcement, check brief independence, and only then check for progress.",
     ]);
   }
   return pickVariant(seed, [
-    "אפשר לשקול צעד התקדמות מדוד בנושא הספציפי בלבד.",
-    "ניתן לשקול התקדמות קטנה ומבוקרת בנושא הזה בלבד.",
-    "אפשר לעשות צעד התקדמות זהיר ומוגבל רק לנושא הזה.",
+    "A measured step forward can be considered, limited to this specific topic only.",
+    "A small, controlled step forward can be considered, limited to this topic only.",
+    "A careful, limited step forward can be taken, only for this topic.",
   ]);
 }
 
@@ -250,16 +250,16 @@ function buildUncertaintySlot(hedgeLevel, seed, questionCount = 0) {
   if (q >= 20 && hedgeLevel === "mandatory") return null;
   if (hedgeLevel === "mandatory") {
     return pickVariant(seed, [
-      "עדיין מוקדם לקבוע כאן דבר סופי; ממשיכים עם תרגול קצר ורגיל ובודקים שוב בהמשך.",
-      "עדיין מוקדם לקבוע כיוון - כדאי לאסוף עוד נתוני תרגול ואז לבדוק שוב.",
-      "בשלב הזה עדיין מוקדם לקבוע כיוון סופי; נמשיך לאסוף עוד נתוני תרגול לפני שמחליטים.",
+      "It's still too early to draw any final conclusion here; we'll continue with regular short practice and check again later.",
+      "It's still too early to set a direction - it's worth collecting more practice data and checking again.",
+      "At this stage it's still too early to set a final direction; we'll keep collecting more practice data before deciding.",
     ]);
   }
   if (hedgeLevel === "light") {
     return pickVariant(seed, [
-      "נכון לעכשיו כדאי להמשיך לתרגל ולשים לב, ולבדוק שוב אחרי עוד קצת.",
-      "כדאי לבדוק שוב אחרי עוד תרגול קצר, כדי לוודא שהכיוון נשמר לפני שמחמירים בקביעת כיוון.",
-      "נעשה עוד תרגול קצר ואז נחזור לזה - בעיניים פתוחות ובלי למהר.",
+      "Right now it's worth continuing to practice and paying attention, and checking again after a bit more.",
+      "It's worth checking again after a bit more short practice, to make sure the direction holds before firming it up.",
+      "We'll do a bit more short practice and come back to this - with an open mind and no rush.",
     ]);
   }
   return null;
@@ -317,7 +317,7 @@ export function buildNarrativeContractV1(input) {
       uncertainty = uncertainty && hedgeLevel !== "mandatory" ? `${uncertainty} ${skillDetailNote}` : skillDetailNote;
     }
   }
-  if (q >= 50 && uncertainty && /עדיין מוקדם|כדאי לעקוב|מעט נתונים/u.test(uncertainty)) {
+  if (q >= 50 && uncertainty && /עדיין מוקדם|כדאי לעקוב|מעט נתונים|too early|worth (?:watching|continuing)|little data/u.test(uncertainty)) {
     uncertainty = resolveEngineDecisionUncertaintyText(q, evidenceStrength, decisionCode);
   }
 

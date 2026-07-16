@@ -5,11 +5,11 @@ import {
   CONTACT_EMAIL,
   LEGAL_CROSS_LINKS,
   POLICY_LAST_UPDATED,
-} from "../../data/legal/sitePolicies.he";
+} from "../../data/legal/sitePolicies.js";
 
 /**
- * Renders a Hebrew RTL legal/policy page from SITE_POLICIES content.
- * @param {{ policy: import("../../data/legal/sitePolicies.he").SITE_POLICIES[string] }} props
+ * Renders a legal/policy page from SITE_POLICIES content.
+ * @param {{ policy: import("../../data/legal/sitePolicies").SITE_POLICIES[string] }} props
  */
 export default function SitePolicyPage({ policy }) {
   const { pageTitle, metaDescription, intro, sections, route } = policy;
@@ -20,9 +20,9 @@ export default function SitePolicyPage({ policy }) {
         <title>{`${pageTitle} · LEO KIDS`}</title>
         <meta name="description" content={metaDescription} />
       </Head>
-      <article dir="rtl" lang="he" className="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-right">
+      <article dir="ltr" lang="en" className="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-left">
         <header className="mb-8 space-y-3">
-          <p className="text-xs text-white/50">עודכן לאחרונה: {POLICY_LAST_UPDATED}</p>
+          <p className="text-xs text-white/50">Last updated: {POLICY_LAST_UPDATED}</p>
           <h1 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-amber-300 via-amber-200 to-rose-300 bg-clip-text text-transparent">
             {pageTitle}
           </h1>
@@ -33,13 +33,13 @@ export default function SitePolicyPage({ policy }) {
 
         <footer className="mt-10 pt-6 border-t border-white/10 space-y-4 text-sm text-white/65">
           <p>
-            שאלות:{" "}
+            Questions:{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber-300 hover:text-amber-200 underline">
               {CONTACT_EMAIL}
             </a>
           </p>
-          <nav aria-label="קישורים למסמכים משפטיים">
-            <p className="mb-2 font-semibold text-white/80">מסמכים נוספים</p>
+          <nav aria-label="Legal document links">
+            <p className="mb-2 font-semibold text-white/80">Additional documents</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-1">
               {LEGAL_CROSS_LINKS.filter((l) => l.href !== route).map((link) => (
                 <li key={link.href}>
@@ -56,7 +56,7 @@ export default function SitePolicyPage({ policy }) {
   );
 }
 
-/** @param {{ sections: import("../../data/legal/sitePolicies.he").PolicySection[] }} props */
+/** @param {{ sections: import("../../data/legal/sitePolicies").PolicySection[] }} props */
 function PolicySections({ sections }) {
   return (
     <div className="space-y-6">

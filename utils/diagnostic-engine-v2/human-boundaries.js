@@ -11,6 +11,13 @@ const FORBIDDEN_SUBSTRINGS = [
   "אתה חכם",
   "אתה לא חכם",
   "מבחן קליני",
+  "dyslexia",
+  "learning disability",
+  "autism",
+  "attention disorder",
+  "you are smart",
+  "you are not smart",
+  "clinical test",
 ];
 
 /**

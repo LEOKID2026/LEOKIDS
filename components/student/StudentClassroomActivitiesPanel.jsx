@@ -9,7 +9,7 @@ import {
   normalizeStudentActivityScope,
   studentActivityScopeBadgeHe,
 } from "../../lib/classroom-activities/student-activity-scope-labels.client.js";
-import { personalActivitiesSectionTitleHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { personalActivitiesSectionTitleHe } from "../../lib/teacher-portal/teacher-ui.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 
 function ActivityCard({ a, scopeBadge = null }) {
@@ -17,10 +17,10 @@ function ActivityCard({ a, scopeBadge = null }) {
   const href = `/student/activity/${encodeURIComponent(a.activityId)}`;
   const cta =
     a.studentStatus === "submitted"
-      ? "צפייה בתוצאה"
+      ? "View result"
       : a.studentStatus === "in_progress"
-        ? "המשך"
-        : "התחל";
+        ? "Continue"
+        : "Start";
 
   return (
     <div className={T.activityCard}>
@@ -32,7 +32,7 @@ function ActivityCard({ a, scopeBadge = null }) {
           ) : null}
         </div>
         <p className={T.activityCardMeta}>
-          {activityModeLabelHe(a.mode)} · {a.questionCount} שאלות ·{" "}
+          {activityModeLabelHe(a.mode)} · {a.questionCount} questions ·{" "}
           {studentActivityStatusLabelHe(a.studentStatus)}
         </p>
       </div>
@@ -118,11 +118,11 @@ export default function StudentClassroomActivitiesPanel({
   return (
     <>
       <p className={T.panelIntro}>
-        משימות מהמורה, מההורה או מהכיתה - לחצו "התחל" או "המשך" כדי לפתוח.
+        Tasks from your teacher, parent, or class — tap Start or Continue to open.
       </p>
       {classActivities.length > 0 ? (
         <section className={T.activitySection}>
-          <h2 className={T.activitySectionTitle}>פעילויות כיתה</h2>
+          <h2 className={T.activitySectionTitle}>Class activities</h2>
           <div className="grid gap-3">
             {classActivities.map((a) => (
               <ActivityCard key={a.activityId} a={a} />
@@ -151,7 +151,7 @@ export default function StudentClassroomActivitiesPanel({
           className={`${T.activitySection} border-emerald-200 bg-emerald-50/50`}
           data-testid="student-parent-activities"
         >
-          <h2 className={`${T.activitySectionTitle} text-emerald-900`}>פעילות מההורים</h2>
+          <h2 className={`${T.activitySectionTitle} text-emerald-900`}>Parent activities</h2>
           <div className="grid gap-3">
             {parentActivities.map((a) => (
               <ActivityCard

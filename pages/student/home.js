@@ -4,7 +4,7 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import { STUDENT_LAYOUT_CHROME_BOTTOM_CSS } from "../../lib/student-ui/student-ad-slot.client.js";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
 import {
   clearAllStudentScopedBrowserStorage,
   syncStudentLocalStorageIdentity,
@@ -613,7 +613,7 @@ export default function StudentHomePage() {
     return () => {
       mounted = false;
     };
-    // רק isReady + loadHomeDashboard — לא router (משתנה בהידרציה ומבטל fetch באמצע → stuck על "טוען את דף הבית...").
+    // Only isReady + loadHomeDashboard — not router (changes on hydration and aborts fetch mid-flight → stuck on "Loading home...").
   }, [router.isReady, loadHomeDashboard]);
 
   const dashboardView = useMemo(() => {

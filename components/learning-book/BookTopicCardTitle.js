@@ -7,7 +7,7 @@ function titleNeedsMathRenderer(text) {
 }
 
 /**
- * Topic prev/next card titles — plain Hebrew preserves word spaces; math titles stay isolated.
+ * Topic prev/next card titles — plain text preserves word spaces; math titles stay isolated.
  */
 export default function BookTopicCardTitle({ text }) {
   const cleaned = stripStrayMarkdown(String(text || "")).trim();
@@ -18,14 +18,14 @@ export default function BookTopicCardTitle({ text }) {
 
   if (titleNeedsMathRenderer(cleaned)) {
     return (
-      <span className={wrapClass} dir="rtl">
+      <span className={wrapClass} dir="ltr">
         <MixedHebrewMathText text={cleaned} />
       </span>
     );
   }
 
   return (
-    <span className={wrapClass} dir="rtl" lang="he">
+    <span className={wrapClass} dir="ltr" lang="en">
       {cleaned}
     </span>
   );

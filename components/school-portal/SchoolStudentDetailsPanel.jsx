@@ -4,9 +4,9 @@ import {
   SCHOOL_PORTAL_BTN_CURSOR,
   SCHOOL_PORTAL_MODAL_SCROLL_CLASS,
 } from "./SchoolPortalUi";
-import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.he";
+import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.js";
 import { hasSchoolPortalSession } from "../../lib/school-portal/operator-grants.js";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown.js";
 import {
   adminProfileFormToPayload,
@@ -51,7 +51,7 @@ import {
   SC_DETAILS_SECTION_STUDENT,
   SC_DETAILS_SECTION_TRANSPORT,
   SC_LOADING,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 
 const EMPTY_FORM = EMPTY_ADMIN_PROFILE_FORM;
 
@@ -264,19 +264,19 @@ export default function SchoolStudentDetailsPanel({
   };
 
   if (loading) {
-    return <p className="text-sm text-white/60 text-right">{SC_LOADING}</p>;
+    return <p className="text-sm text-white/60 text-left">{SC_LOADING}</p>;
   }
 
   if (loadError) {
     return (
-      <p className="text-sm text-red-300 text-right" role="alert">
+      <p className="text-sm text-red-300 text-left" role="alert">
         {loadError}
       </p>
     );
   }
 
   return (
-    <div className={`space-y-4 text-right ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}>
+    <div className={`space-y-4 text-left ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}>
       {!canEdit ? (
         <p className="text-xs text-white/45">{SC_DETAILS_READONLY_BADGE}</p>
       ) : null}

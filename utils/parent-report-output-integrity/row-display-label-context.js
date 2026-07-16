@@ -1,7 +1,7 @@
 /**
  * Context-aware parent-facing row labels.
  * - TABLE: clean topic name (grade in separate column)
- * - NARRATIVE: short "{topic} - כיתה {grade}" + optional relation subline
+ * - NARRATIVE: short "{topic} - Grade {grade}" + optional relation subline
  */
 
 import { formatParentReportGradeLabel } from "../math-report-generator.js";
@@ -16,13 +16,13 @@ export const ROW_LABEL_DISPLAY_CONTEXT = Object.freeze({
 });
 
 /** Banned in titles — relation belongs in subline only. */
-export const LONG_NARRATIVE_TITLE_RE = /תרגול ב|מעל הכיתה הרשומה|בסיס\/כיתה נמוכה/u;
+export const LONG_NARRATIVE_TITLE_RE = /תרגול ב|מעל הכיתה הרשומה|בסיס\/כיתה נמוכה|practice in|above registered grade|foundation\/lower grade/iu;
 
 /**
  * @param {string} displayName
  */
 export function cleanTopicLabelHe(displayName) {
-  return String(displayName || "").trim() || "נושא";
+  return String(displayName || "").trim() || "Topic";
 }
 
 /**
@@ -30,10 +30,10 @@ export function cleanTopicLabelHe(displayName) {
  */
 export function gradeRelationSublineFromRelation(gradeRelation) {
   const rel = String(gradeRelation || "").trim();
-  if (rel === "higher" || rel === "above_registered_grade") return "מעל הכיתה הרשומה";
-  if (rel === "lower" || rel === "below_registered_grade") return "מתחת לכיתה הרשומה";
-  if (rel === "same" || rel === "at_registered_grade") return "ברמת הכיתה הרשומה";
-  if (rel === "outside_regular_grade_band") return "מחוץ לשכבת הכיתה הרשומה";
+  if (rel === "higher" || rel === "above_registered_grade") return "Above registered grade";
+  if (rel === "lower" || rel === "below_registered_grade") return "Below registered grade";
+  if (rel === "same" || rel === "at_registered_grade") return "At registered grade level";
+  if (rel === "outside_regular_grade_band") return "Outside the registered grade band";
   return "";
 }
 
@@ -73,11 +73,11 @@ export function resolveNarrativeDisplayLabels(args) {
   }
 
   const gradeLabel = formatParentReportGradeLabel(gk);
-  if (!gradeLabel || gradeLabel === "לא זמין") {
+  if (!gradeLabel || gradeLabel === "לא זמין" || gradeLabel === "Unavailable" || gradeLabel === "N/A") {
     return { titleHe: name, gradeRelationSublineHe: null };
   }
-  const gradeShort = gradeLabel.replace(/^כיתה\s+/u, "").trim();
-  const titleHe = `${name} - כיתה ${gradeShort}`;
+  const gradeShort = gradeLabel.replace(/^(?:כיתה|Grade)\s+/iu, "").trim();
+  const titleHe = `${name} - Grade ${gradeShort}`;
   const sub = gradeRelationSublineFromRelation(args?.gradeRelation);
   return { titleHe, gradeRelationSublineHe: sub || null };
 }

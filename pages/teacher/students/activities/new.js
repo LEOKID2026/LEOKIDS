@@ -4,7 +4,7 @@ import Layout from "../../../../components/Layout";
 import TeacherPortalShell from "../../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch, subjectLabelHe, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch, subjectLabelHe, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../lib/classroom-activities/generate-activity-questions-client.js";
 import { activityModeLabelHe } from "../../../../lib/classroom-activities/classroom-activities-labels.client.js";
@@ -98,8 +98,8 @@ export default function TeacherPrivateStudentsNewActivityPage() {
           student.gradeLevel !== currentLocked
         ) {
           setError(
-            `לא ניתן לשלב ילדים מכיתות שונות. הפעילות נועלת לכיתה ${currentLocked}. ` +
-            `ילד/ה זה בכיתה ${student.gradeLevel}.`
+            `You cannot mix students from different grades. This activity is locked to ${currentLocked}. ` +
+            `This student is in ${student.gradeLevel}.`
           );
           return prev;
         }
@@ -143,17 +143,17 @@ export default function TeacherPrivateStudentsNewActivityPage() {
       });
       setPreview(qs || []);
     } catch (e) {
-      setError(e?.message || "יצירת שאלות נכשלה");
+      setError(e?.message || "Could not generate questions");
     } finally {
       setBusy(false);
     }
   }, [subject, gradeKey, topic, displayLevel, mode, questionCount]);
 
   const createActivity = useCallback(async () => {
-    if (selectedIds.size === 0) { setError("נא לבחור לפחות ילד/ה אחד"); return; }
-    if (!title.trim()) { setError("נא למלא כותרת"); return; }
-    if (!preview.length) { setError("נא לייצר שאלות תחילה"); return; }
-    if (mode === "quiz" && !timeLimitSeconds) { setError("שאלון דורש הגבלת זמן"); return; }
+    if (selectedIds.size === 0) { setError("Please select at least one student"); return; }
+    if (!title.trim()) { setError("Please enter a title"); return; }
+    if (!preview.length) { setError("Please generate questions first"); return; }
+    if (mode === "quiz" && !timeLimitSeconds) { setError("A quiz requires a time limit"); return; }
 
     setBusy(true);
     setError("");
@@ -178,7 +178,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "יצירה נכשלה");
+        setError(json?.error?.message || json?.error?.code || "Creation failed");
         return;
       }
 
@@ -199,7 +199,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
         router.push(`/teacher/student/${encodeURIComponent(firstId)}`);
       }
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -224,7 +224,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
   return (
     <Layout>
       <TeacherPortalShell
-        title="פעילות לילדים פרטיים נבחרים"
+        title="Activity for selected private students"
         backHref="/teacher/dashboard"
       >
         {error ? (
@@ -236,26 +236,26 @@ export default function TeacherPrivateStudentsNewActivityPage() {
         {/* Student selection */}
         <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-5">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h2 className="text-base font-semibold">בחר ילדים פרטיים</h2>
+            <h2 className="text-base font-semibold">Select private students</h2>
             <span className="text-sm text-white/60">
-              נבחרו: {selectedIds.size}
+              Selected: {selectedIds.size}
               {lockedGrade ? ` (${formatGradeLevelHe(lockedGrade)})` : ""}
             </span>
           </div>
 
           {multipleGradesExist ? (
             <p className="text-amber-200/80 text-xs mb-3 rounded border border-amber-400/20 bg-amber-500/10 px-3 py-1.5">
-              ⚠ יש לך ילדים מכיתות שונות. ניתן לשלוח פעילות אחת רק לילדים מאותה כיתה.
+              ⚠ You have students from different grades. You can only send one activity to students in the same grade.
               {lockedGrade
-                ? ` הפעילות נעולה ל-${formatGradeLevelHe(lockedGrade)}.`
-                : " בחר ילד/ה ראשון לנעילת הכיתה."}
+                ? ` Activity locked to ${formatGradeLevelHe(lockedGrade)}.`
+                : " Select a first student to lock the grade."}
             </p>
           ) : null}
 
           {!studentsLoaded ? (
-            <p className="text-white/50 text-sm">טוען ילדים…</p>
+            <p className="text-white/50 text-sm">Loading students…</p>
           ) : students.length === 0 ? (
-            <p className="text-white/50 text-sm">אין ילדים פרטיים מקושרים.</p>
+            <p className="text-white/50 text-sm">No linked private students.</p>
           ) : (
             <>
               <div className="flex flex-wrap gap-2 mb-2 text-xs">
@@ -264,14 +264,14 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                   className="underline text-white/60 hover:text-white"
                   onClick={selectAllSameGrade}
                 >
-                  {lockedGrade ? `בחר הכל (${formatGradeLevelHe(lockedGrade)})` : "בחר הכל"}
+                  {lockedGrade ? `Select all (${formatGradeLevelHe(lockedGrade)})` : "Select all"}
                 </button>
                 <button
                   type="button"
                   className="underline text-white/60 hover:text-white"
                   onClick={clearSelected}
                 >
-                  נקה
+                  Clear
                 </button>
               </div>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 max-h-56 overflow-y-auto">
@@ -303,7 +303,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                               gradeMismatch ? "text-red-400/80" : "text-white/40"
                             }`}
                           >
-                            כיתה {s.gradeLevel}
+                            Class {s.gradeLevel}
                           </span>
                         ) : null}
                       </label>
@@ -317,10 +317,10 @@ export default function TeacherPrivateStudentsNewActivityPage() {
 
         {/* Activity configuration */}
         <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-5">
-          <h2 className="text-base font-semibold mb-3">הגדרות פעילות</h2>
+          <h2 className="text-base font-semibold mb-3">Activity settings</h2>
           <div className="grid gap-4 md:grid-cols-2">
             <label className="block text-sm">
-              <span className="text-white/70">כותרת</span>
+              <span className="text-white/70">Title</span>
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={title}
@@ -330,7 +330,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">מקצוע</span>
+              <span className="text-white/70">Subject</span>
               <select
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={subject}
@@ -349,9 +349,9 @@ export default function TeacherPrivateStudentsNewActivityPage() {
 
             <label className="block text-sm">
               <span className="text-white/70">
-                כיתה (לצורך תוכן)
+                Grade (for content)
                 {lockedGrade ? (
-                  <span className="text-emerald-300/80 text-xs mr-1">- נגזר מהילדים הנבחרים</span>
+                  <span className="text-emerald-300/80 text-xs mr-1">- derived from selected students</span>
                 ) : null}
               </span>
               <select
@@ -372,10 +372,10 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">נושא</span>
+              <span className="text-white/70">Topic</span>
               {subject === "science" && topicOpts.length === 0 ? (
                 <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                  לא נמצאו נושאים זמינים לכיתה זו במקצוע מדעים.
+                  No topics available for this grade in Science.
                 </p>
               ) : topicOpts.length > 0 ? (
                 <select
@@ -397,7 +397,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">סוג פעילות</span>
+              <span className="text-white/70">Activity type</span>
               <select
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={mode}
@@ -417,13 +417,13 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                 setPreview([]);
               }}
               variant="select"
-              label="רמה"
+              label="Level"
               inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
             />
 
             {mode !== "discussion" ? (
               <label className="block text-sm">
-                <span className="text-white/70">מספר שאלות</span>
+                <span className="text-white/70">Number of questions</span>
                 <input
                   type="number"
                   min={1}
@@ -436,19 +436,19 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             ) : null}
 
             <label className="block text-sm">
-              <span className="text-white/70">הגבלת זמן (שניות, אופציונלי)</span>
+              <span className="text-white/70">Time limit (seconds, optional)</span>
               <input
                 type="number"
                 min={1}
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={timeLimitSeconds}
                 onChange={(e) => setTimeLimitSeconds(e.target.value)}
-                placeholder={mode === "quiz" ? "חובה בשאלון" : "ריק = ללא הגבלה"}
+                placeholder={mode === "quiz" ? "Required for quiz" : "Blank = no limit"}
               />
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">תאריך הגשה (אופציונלי)</span>
+              <span className="text-white/70">Due date (optional)</span>
               <input
                 type="datetime-local"
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
@@ -467,7 +467,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             onClick={runPreview}
             className="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-sm"
           >
-            {busy ? "מייצר שאלות…" : "הצג תצוגה מקדימה"}
+            {busy ? "Generating questions…" : "Show preview"}
           </button>
           {preview.length > 0 ? (
             <button
@@ -476,7 +476,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
               onClick={createActivity}
               className="px-4 py-2 rounded-xl bg-emerald-600/90 text-white font-semibold text-sm disabled:opacity-50"
             >
-              צור ושלח ({selectedIds.size} ילדים)
+              Create and send ({selectedIds.size} students)
             </button>
           ) : null}
         </div>
@@ -484,7 +484,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
         {preview.length > 0 ? (
           <div className="space-y-3">
             <p className="text-sm text-white/60">
-              {mode === "discussion" ? "שאלה לדיון:" : `${preview.length} שאלות:`}
+              {mode === "discussion" ? "Discussion question:" : `${preview.length} questions:`}
             </p>
             <ul className="space-y-2">
               {preview.slice(0, mode === "discussion" ? 1 : undefined).map((q, i) => {

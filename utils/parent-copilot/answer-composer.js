@@ -14,19 +14,19 @@ import { PEER_COMPARISON_RESPONSE_HE } from "./question-classifier.js";
 
 /** Fixed Copilot-only clinical boundary copy (Task C / Task G). */
 export const CLINICAL_BOUNDARY_LINE_1_HE =
-  "אני יכול להתייחס רק למה שמופיע בנתוני התרגול באתר.";
+  "I can only refer to what appears in the practice data on the website.";
 export const CLINICAL_BOUNDARY_LINE_2_HE =
-  "הדוח יכול לעזור לזהות נושאים שכדאי לחזק בלמידה, אבל הוא לא קובע מסקנות אישיות על הילד.";
+  "The report can help identify topics that should be strengthened in learning, but it does not make personal conclusions about the child.";
 export const CLINICAL_BOUNDARY_LINE_3_HE =
-  "אפשר להמשיך מכאן בצורה מעשית: לבחור נושא אחד מהדוח, לתרגל כמה דקות, ולבדוק אם יש שיפור בתרגול הבא.";
+  "You can continue from here in a practical way: choose one topic from the report, practice for a few minutes, and check if there is an improvement in the next practice.";
 
 /** School placement / non-clinical sensitive education decisions — no diagnosis, no “move/don’t move” from practice data alone. */
 export const SENSITIVE_EDUCATION_LINE_1_HE =
-  "שאלה כזו רחבה יותר ממה שהדוח באתר יכול לקבוע.";
+  "Such a question is broader than the report on the site can determine.";
 export const SENSITIVE_EDUCATION_LINE_2_HE =
-  "הדוח מציג רק נתוני תרגול מהתקופה שנבחרה: מקצועות, נושאים, כמות שאלות ודיוק.";
+  "The report only shows practice data from the selected period: subjects, subjects, number of questions and accuracy.";
 export const SENSITIVE_EDUCATION_LINE_3_HE =
-  "מה שאפשר לעשות כאן הוא לבחור מתוך הדוח נושא אחד לחיזוק, ולבנות סביבו צעד קטן וברור לבית או לשיחה עם הצוות החינוכי.";
+  "What can be done here is to choose from the report one subject for strengthening, and build around it a small and clear step for home or for a conversation with the educational staff.";
 
 /**
  * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }> }}
@@ -106,7 +106,7 @@ function requiredHedgeAlreadyCoveredInDraft(hedge, reason, priorSlots) {
   const bucket = `${priorSlots} ${reason}`.replace(/\s+/g, " ").trim();
   if (!bucket) return false;
   if (bucket.includes(h)) return true;
-  if (h === "עדיין מוקדם לקבוע" && (bucket.includes("מוקדם לקבוע") || bucket.includes("עדיין מוקדם"))) return true;
+  if (h === "Still too early to decide" && (bucket.includes("too early to determine") || bucket.includes("still early"))) return true;
   return false;
 }
 
@@ -140,7 +140,7 @@ function weakSubjectLabelForPlan(truthPacket) {
   return (
     String(truthPacket?.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
     String(truthPacket?.surfaceFacts?.subjectLabelHe || "").trim() ||
-    "מקצוע מהדוח"
+    "Subject from the report"
   );
 }
 
@@ -151,9 +151,9 @@ function weakSubjectLabelForPlan(truthPacket) {
 export function defaultConcretePlanTextHe(intentMain, truthPacket) {
   const subj = weakSubjectLabelForPlan(truthPacket);
   if (intentMain === "what_to_do_today") {
-    return `1) מחר 10 דקות תרגול ממוקד ב${subj}. 2) 5–8 שאלות קצרות ולבדוק מה חוזר. 3) לסיים במשפט אחד עם הילד על מה ניסיתם.`;
+    return `1) Tomorrow 10 minutes practice focused on ${subj}. 2) 5-8 short questions and check what comes back. 3) Finish in one sentence with the child what you tried.`;
   }
-  return `1) לבחור נושא אחד מרכזי ב${subj} ולחלק תרגול לשלושה חלונות קצרים בשבוע. 2) בכל חלון 5–8 שאלות קצרות ולבדוק אם אותה טעות חוזרת. 3) בסוף השבוע: משפט אחד עם הילד - מה התקדם ומה עדיין צריך חיזוק.`;
+  return `1) Choose one central topic in ${subj} and divide practice into three short windows per week. 2) In each window 5-8 short questions and check if the same mistake repeats. 3) At the end of the week: one sentence with the child - what has progressed and what still needs reinforcement.`;
 }
 
 /**
@@ -163,9 +163,9 @@ export function defaultConcretePlanTextHe(intentMain, truthPacket) {
 export function practicalMagnitudeTailHe(intentMain, truthPacket) {
   const subj = weakSubjectLabelForPlan(truthPacket);
   if (intentMain === "what_to_do_today") {
-    return `10 דקות תרגול ממוקד ב${subj}, 5–8 שאלות קצרות.`;
+    return `10 minutes practice focused on ${subj}, 5–8 short questions.`;
   }
-  return `שלושה חלונות קצרים בשבוע; בכל חלון 5–8 שאלות קצרות ב${subj}.`;
+  return `three short windows per week; In each window 5–8 short questions in ${subj}.`;
 }
 
 /**
@@ -241,13 +241,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         {
           type: "observation",
           textHe:
-            "אפשר לשאול כאן שאלות על הדוח והתקדמות הלמידה שמופיעה בו.",
+            "Here you can ask questions about the report and the learning progress that appears in it.",
           source: "composed",
         },
         {
           type: "meaning",
           textHe:
-            "למשל: מה כדאי לתרגל השבוע? או איפה נראו תוצאות טובות יחסית?",
+            "For example: What should you practice this week? Or where relatively good results were seen?",
           source: "composed",
         },
       ],
@@ -260,13 +260,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         {
           type: "observation",
           textHe:
-            "אי אפשר להמציא, לשנות או לשפר נתונים בדוח. אפשר להסביר רק את הנתונים שמופיעים בו.",
+            "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it.",
           source: "composed",
         },
         {
           type: "meaning",
           textHe:
-            "לא ניתן להתעלם מהדוח או לעקוף את מה שנספר מתוך התרגול בטווח שבדוח בלבד. אם משהו נראה לא מסתדר, נכון לבדוק יחד תאריכים ונושאים לפני שקובעים כיוון.",
+            "It is not possible to ignore the report or bypass what was told from the practice within the scope of the report only. If something doesn't seem to be working out, it's right to check dates and topics together before deciding on a direction.",
           source: "composed",
         },
       ],
@@ -279,13 +279,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         {
           type: "observation",
           textHe:
-            "בדוח התרגול שהוצג כאן אין כרגע נתונים על הנושא ששאלת עליו - המערכת מתעדת רק את מקצועות הלימוד המופיעים בדוח.",
+            "In the practice report presented here, there is currently no data on the subject you asked about - the system records only the study subjects that appear in the report.",
           source: "composed",
         },
         {
           type: "meaning",
           textHe:
-            "לכן לא ניתן להעריך כאן מצב לפי דוח זה בנושא הזה; אם ייכנס תרגול רלוונטי לטווח, התמונה תתעדכן.",
+            "Therefore, it is not possible to assess a situation here according to this report on this issue; If a relevant practice enters the range, the image will be updated.",
           source: "composed",
         },
       ],
@@ -383,13 +383,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         const subj =
           String(truthPacket?.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
           String(truthPacket?.surfaceFacts?.subjectLabelHe || "").trim() ||
-          "מקצוע מהדוח";
+          "Subject from the report";
         answerBlocks.push({
           type: "next_step",
           textHe:
             intent === "what_to_do_today"
-              ? `מחר: 1) 8–10 דקות תרגול קצר ב${subj} סביב הנושא שבולט כפער בדוח. 2) אחר כך 3–5 שאלות קצרות לבדיקה. 3) לסיים במשפט אחד לילד על מה ניסיתם יחד.`
-              : `לשבוע הקרוב: 1) לבחור נושא אחד מרכזי ב${subj} לפי מה שבולט בדוח. 2) לחלק לשלושה חלונות קצרים של תרגול (15–20 דקות סה״כ בשבוע). 3) בסוף השבוע לבדוק במשפט אחד מה השתפר לעומת תחילת השבוע.`,
+              ? `Tomorrow: 1) 8–10 minutes short practice in ${subj} around the topic that stands out as a gap in the report. 2) Then 3-5 short test questions. 3) End in one sentence for the child what you tried together.`
+              : `For the coming week: 1) Choose one central topic in ${subj} according to what stands out in the report. 2) Divide into three short windows of practice (15-20 minutes total per week). 3) At the end of the week, check in one sentence what has improved compared to the beginning of the week.`,
           source: "composed",
         });
         continue;
@@ -403,13 +403,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         const subj =
           String(truthPacket?.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
           String(truthPacket?.surfaceFacts?.subjectLabelHe || "").trim() ||
-          "מקצוע מהדוח";
+          "Subject from the report";
         answerBlocks.push({
           type: "next_step",
           textHe:
             intent === "what_to_do_today"
-              ? `מחר: 1) 8–10 דקות תרגול קצר ב${subj} סביב הנושא שבולט כפער בדוח. 2) אחר כך 3–5 שאלות קצרות לבדיקה. 3) לסיים במשפט אחד לילד על מה ניסיתם יחד.`
-              : `לשבוע הקרוב: 1) לבחור נושא אחד מרכזי מהדוח. 2) לחלק לשלושה חלונות קצרים של תרגול. 3) בסוף השבוע לעשות סיכום של משפט אחד מה התקדם.`,
+              ? `Tomorrow: 1) 8–10 minutes short practice in ${subj} around the topic that stands out as a gap in the report. 2) Then 3-5 short test questions. 3) End in one sentence for the child what you tried together.`
+              : `For the coming week: 1) choose one central topic from the report. 2) Divide into three short windows of practice. 3) At the end of the week, make a one-sentence summary of what progressed.`,
           source: "composed",
         });
       }
@@ -432,13 +432,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         /דקים מדי|לא ניתן לקבוע כיוון עקבי|כיוון ברור|שאלות פתוחות|עדיין לא מאפשר לקבוע/u.test(reason)
       ) {
         reason =
-          "יש כאן נפח תרגול משמעותי בדוח; עדיין יש הבדל טבעי בין מה שקורה בבית לבין מה שנספר בטווח - נעדכן שוב אחרי עוד תרגול.";
+          "There is a significant volume of practice in the report; There is still a natural difference between what happens at home and what is told in the range - we will update again after more practice.";
       }
       if (hasIntelligenceSignals && ivConf === "low" && sfQ < 90) {
-        reason = "זו תמונה ראשונית בלבד - " + reason;
+        reason = "This is an initial image only -" + reason;
       }
       if (hasIntelligenceSignals && ivWeak === "tentative" && sfQ < 100) {
-        reason = "יש סימן ראשוני בלבד לחולשה - " + reason;
+        reason = "There is only an initial sign of weakness -" + reason;
       }
       const hedges = Array.isArray(truthPacket.allowedClaimEnvelope?.requiredHedges)
         ? truthPacket.allowedClaimEnvelope.requiredHedges.map((h) => String(h || "").trim()).filter(Boolean)
@@ -498,9 +498,9 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
   if (isMixedGradeReportQuestion(foldUtteranceForHeMatch(parentUtterance)) && gpm?.mixedGradePractice) {
     const note = String(gpm.mixedGradePracticeNoteHe || "").trim();
     const gradeLine = note
-      ? `${note} כל שורה בדוח מציגה את כיתת התוכן שבה בוצע התרגול - לא למזג בין כיתות כשקובעים כיוון.`
-      : "כשאותו נושא מופיע בכיתות תוכן שונות, כל שורה בדוח נספרת בנפרד - לא למזג בין כיתות.";
-    if (!composed.some((b) => String(b.textHe || "").includes("כיתה"))) {
+      ? `${note} Each line in the report shows the content class in which the practice was performed - do not merge between classes when determining direction.`
+      : "When the same subject appears in different content classes, each line in the report is counted separately - do not merge between classes.";
+    if (!composed.some((b) => String(b.textHe || "").includes("Class"))) {
       composed = [...composed, { type: "meaning", textHe: gradeLine, source: "composed" }];
     }
   }

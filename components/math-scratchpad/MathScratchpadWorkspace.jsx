@@ -514,8 +514,8 @@ function TenFrameWorkspace({ operands }) {
       <OperandTenFrame value={a} label={a ?? ""} />
       {showSecond ? <OperandTenFrame value={b} label={b ?? ""} /> : null}
       <div className="flex flex-col items-center gap-2">
-        <span className={C.mutedTextSm} dir="rtl">
-          עבודה
+        <span className={C.mutedTextSm} dir="ltr">
+          Work
         </span>
         <TenFrameWorkspaceEditable />
       </div>
@@ -590,8 +590,8 @@ function BaseTenBlocksWorkspace({ operands }) {
       </div>
 
       <div className={`${C.dividerBorder} pt-4 flex flex-col gap-3 items-center`}>
-        <span className={C.mutedTextSm} dir="rtl">
-          עבודה
+        <span className={C.mutedTextSm} dir="ltr">
+          Work
         </span>
         <div className="flex flex-wrap gap-2 justify-center min-h-[48px]">
           {Array.from({ length: tens }, (_, i) => (
@@ -711,8 +711,8 @@ function ManualNumberLineWorkspace({ operands }) {
           );
         })}
       </div>
-      <p className={`${C.mutedTextXs} mt-2 text-center`} dir="rtl">
-        המספרים מסומנים בקו - לחצו לסימון עבודה
+      <p className={`${C.mutedTextXs} mt-2 text-center`} dir="ltr">
+        Numbers are underlined - tap to mark work
       </p>
     </div>
   );
@@ -784,8 +784,8 @@ function PlaceValueTableWorkspace({ operands, centerOperands = false, fillParent
               </tr>
             )}
             <tr>
-              <th colSpan={spec.cols} className={C.carryLabel} dir="rtl">
-                {centerOperands ? "מנה" : "נשיאה"}
+              <th colSpan={spec.cols} className={C.carryLabel} dir="ltr">
+                {centerOperands ? "Quotient" : "Carry"}
               </th>
             </tr>
           </thead>
@@ -1035,8 +1035,8 @@ function DivisionGroupsWorkspace({ operands }) {
           />
         ))}
       </div>
-      <p className={`${C.mutedTextXs} text-center`} dir="rtl">
-        לחצו לסימון קבוצות - ללא חלוקה אוטומטית
+      <p className={`${C.mutedTextXs} text-center`} dir="ltr">
+        Tap to mark groups - no automatic division
       </p>
     </div>
   );
@@ -1288,8 +1288,8 @@ function PercentGridWorkspace() {
           />
         ))}
       </div>
-      <p className={C.mutedTextXs} dir="rtl">
-        סמנו ריבועים - ללא חישוב אחוז
+      <p className={C.mutedTextXs} dir="ltr">
+        Mark squares - no percent calculation
       </p>
     </div>
   );
@@ -1307,12 +1307,12 @@ function RatioTableWorkspace() {
   }, []);
 
   return (
-    <div className="overflow-x-auto" dir="rtl" onKeyDown={stopKeyBubble}>
+    <div className="overflow-x-auto" dir="ltr" onKeyDown={stopKeyBubble}>
       <table className="mx-auto border-collapse text-center">
         <thead>
           <tr>
-            <th className={C.ratioTh}>צד א׳</th>
-            <th className={C.ratioTh}>צד ב׳</th>
+            <th className={C.ratioTh}>Side A</th>
+            <th className={C.ratioTh}>Side B</th>
           </tr>
         </thead>
         <tbody>
@@ -1372,8 +1372,8 @@ function ManualOrderWorkspace() {
           />
         ))}
       </div>
-      <p className={`${C.mutedTextXs} text-center`} dir="rtl">
-        תיבות ריקות לסדר פעולות - ללא רמז לפעולה
+      <p className={`${C.mutedTextXs} text-center`} dir="ltr">
+        Empty boxes for order of operations - no operation hints
       </p>
     </div>
   );
@@ -1389,17 +1389,17 @@ function WordProblemStructureBoard() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-md" dir="rtl" onKeyDown={stopKeyBubble}>
+    <div className="flex flex-col gap-4 w-full max-w-md" dir="ltr" onKeyDown={stopKeyBubble}>
       <section className={C.sectionBox}>
-        <h4 className={`${C.sectionTitle} mb-2`}>נתונים:</h4>
+        <h4 className={`${C.sectionTitle} mb-2`}>Given:</h4>
         <div className={C.sectionDashed} aria-hidden />
       </section>
       <section className={C.sectionBox}>
-        <h4 className={`${C.sectionTitle} mb-2`}>שאלה:</h4>
+        <h4 className={`${C.sectionTitle} mb-2`}>Question:</h4>
         <div className={C.sectionDashed} aria-hidden />
       </section>
       <section className={C.sectionBox}>
-        <h4 className={`${C.sectionTitle} mb-2`}>חישוב:</h4>
+        <h4 className={`${C.sectionTitle} mb-2`}>Work:</h4>
         <div className="flex flex-wrap gap-2 justify-center" dir="ltr">
           {calcCells.map((cell, i) => (
             <ScratchpadDigitInput

@@ -48,7 +48,7 @@ function rowMetrics(tr) {
   const acc = Math.max(0, Math.min(100, Math.round(Number(tr?.accuracy) || 0)));
   const sid = normalizeSubjectId(tr?.subjectId || tr?.contractsV1?.evidence?.subjectId || "");
   const topicRowKey = String(tr?.topicRowKey || tr?.topicKey || "").trim();
-  const displayName = String(tr?.displayName || "נושא").trim();
+  const displayName = String(tr?.displayName || "Topic").trim();
   const riv = tr?.rowIdentityV1 && typeof tr.rowIdentityV1 === "object" ? tr.rowIdentityV1 : {};
   return {
     q,
@@ -242,13 +242,13 @@ function gradeSplitNarrativeHe(rows) {
   if (rows.length < 2) return "";
   const parts = rows
     .filter((r) => r.q > 0)
-    .map((r) => `${r.label}: ${r.q} שאלות, דיוק כ ${r.acc}%`)
+    .map((r) => `${r.label}: ${r.q} questions, accuracy about ${r.acc}%`)
     .join("; ");
   const weak = pickWeakestRow(rows);
   if (!parts) return "";
-  let text = `באותו נושא יש תרגול בכמה רמות כיתה - ${parts}.`;
+  let text = `In the same subject there is practice in several grade levels - ${parts}.`;
   if (weak) {
-    text += ` הקו החלש יותר הוא ${weak.label} (דיוק ${weak.acc}%).`;
+    text += `The weaker line is ${weak.label} (precision ${weak.acc}%).`;
   }
   return text;
 }
@@ -304,34 +304,34 @@ function composeReportExplanation(params) {
 
   const practicedPhrase =
     subjectLabels.length > 0
-      ? `בטווח התקופה נרשם תרגול ב${subjectLabels.join(", ")} - סה״כ כ ${totalQ} שאלות.`
+      ? `During the period, practice was recorded in ${subjectLabels.join(", ")} - a total of ${totalQ} questions.`
       : totalQ > 0
-        ? `בטווח התקופה נרשמו כ ${totalQ} שאלות תרגול.`
-        : "בטווח התקופה יש עדיין מעט מאוד תרגול - התמונה כללית עדיין חלקית.";
+        ? `During the period, about ${totalQ} practice questions were recorded.`
+        : "In the range of the period there is still very little practice - the general picture is still partial.";
 
   /** @type {string[]} */
   const meaningParts = [];
   if (strong.length) {
     meaningParts.push(
-      `מה שעובד יחסית טוב: ${strong.map((m) => `${subjectLabelHe(m.sid)} - ${m.displayName} (כ ${m.acc}% על ${m.q} שאלות)`).join("; ")}.`,
+      `What works relatively well: ${strong.map((m) =>`${subjectLabelHe(m.sid)} - ${m.displayName} (about ${m.acc}% on ${m.q} questions)`).join("; ")}.`,
     );
   }
   if (weak.length) {
     const lead =
       weak.length === 1
-        ? `הדבר המרכזי שדורש תשומת לב כרגע הוא ${subjectLabelHe(weak[0].sid)} - ${weak[0].displayName}`
-        : `מקומות שדורשים חיזוק: ${weak.map((m) => `${subjectLabelHe(m.sid)} - ${m.displayName} (כ ${m.acc}%)`).join("; ")}`;
+        ? `The main thing that requires attention right now is ${subjectLabelHe(weak[0].sid)} - ${weak[0].displayName}`
+        : `Places that require strengthening: ${weak.map((m) =>`${subjectLabelHe(m.sid)} - ${m.displayName} (about ${m.acc}%)`).join("; ")}`;
     meaningParts.push(`${lead}.`);
   } else if (!strong.length && metas.length) {
-    meaningParts.push("אין עדיין קו חזק מאוד בולט - כדאי להמשיך תרגול קצר ולעקוב אחרי יציבות.");
+    meaningParts.push("There is still no very prominent strong line - you should continue a short practice and follow stability.");
   }
 
   let action =
     weak.length > 0
-      ? `השבוע: תרגול ממוקד 5–10 דקות ביום סביב ${weak[0].displayName}, ואז לבדוק אם הדיוק עולה.`
+      ? `This week: Focused practice 5–10 minutes a day around ${weak[0].displayName}, then check if accuracy increases.`
       : strong.length > 0
-        ? "השבוע: לשמר תרגול קצר ושגרתי בנושאים החזקים, ולעקוב שהכיוון נשמר."
-        : "השבוע: להוסיף תרגול קצר ממוקד בנושא אחד, ואז לחזור לשאול שוב על הדוח.";
+        ? "This week: keep a short and routine practice in the strong subjects, and follow that the direction is maintained."
+        : "This week: add a short practice focused on one subject, then come back to ask again about the report.";
   if (allThin) {
     const primary = metas[0];
     let unc = "";
@@ -349,7 +349,7 @@ function composeReportExplanation(params) {
     if (unc) action = unc;
     else if (primary) {
       meaningParts.push(meaningHeForPolarity(primary.displayName, primary.q, primary.acc));
-      action = "נכון לעכשיו כדאי לאסוף עוד תרגול לפני החלטה.";
+      action = "Right now it's worth gathering more practice before making a decision.";
     }
   }
 
@@ -379,7 +379,7 @@ function composeTopicProblem(params) {
   const primary = pickWeakestRow(rowMetricsList) || rowMetricsList[0];
   if (!primary) return null;
 
-  const displayName = String(truthPacket?.scopeLabel || primary.displayName || "הנושא").trim();
+  const displayName = String(truthPacket?.scopeLabel || primary.displayName || "the topic").trim();
   const q = primary.q;
   const acc = primary.acc;
   const polarity = classifyPracticePolarity(q, acc);
@@ -395,38 +395,38 @@ function composeTopicProblem(params) {
   const meaningParts = [];
   if (gradeNote) meaningParts.push(gradeNote);
   if (registered && primary.gradeRelation === "higher") {
-    meaningParts.push(`חלק מהתרגול בוצע מעל הכיתה הרשומה (${registered}) - כדאי לקרוא את זה בנפרד מביצוע בכיתה הרשומה.`);
+    meaningParts.push(`Part of the practice was performed above the listed class (${registered}) - you should read this separately from performing in the listed class.`);
   } else if (primary.gradeRelation === "lower") {
-    meaningParts.push("חלק מהתרגול בוצע ברמת בסיס/כיתה נמוכה - קושי כאן עשוי להעיד על צורך בחיזוק היסודות בנושא לפני שמתקדמים לרמת הכיתה.");
+    meaningParts.push("Part of the practice was performed at a basic/low grade level - difficulty here may indicate a need to strengthen the basics in the subject before advancing to the grade level.");
   }
   const problemSrcPhrase = evidenceSourcePhraseHe(primary.primaryEvidenceSource);
   if (problemSrcPhrase) {
-    meaningParts.push(`עיקר הראיה בנושא הזה נאספה ${problemSrcPhrase}.`);
+    meaningParts.push(`The bulk of the evidence on this issue was collected ${problemSrcPhrase}.`);
   }
   if (polarity === POLARITY.support_needed) {
     meaningParts.push(
       patternHe
-        ? `ב${displayName} יש ${q} שאלות עם דיוק כ ${acc}% - נראה קושי חוזר: ${patternHe}. מבחינה לימודית, זה אומר שהבסיס עדיין לא יציב מספיק לפני שמוסיפים קושי.`
+        ? `In ${displayName} there are ${q} questions with an accuracy of about ${acc}% - we see a recurring difficulty: ${patternHe}. Academically, this means that the foundation is not yet stable enough before difficulty is added.`
         : meaningHeForPolarity(displayName, q, acc) +
-            " מבחינה לימודית, זה אומר שכדאי לחזק לפני שמסיקים שהכול יציב.",
+            "From an academic point of view, this means that you should strengthen before concluding that everything is stable.",
     );
   } else if (polarity === POLARITY.thin) {
-    meaningParts.push(`ב${displayName} יש עדיין מעט תרגול (${q} שאלות) - מוקדם לקבוע כיוון ברור.`);
+    meaningParts.push(`In ${displayName} there is still a little practice (${q} questions) - it is too early to determine a clear direction.`);
   } else {
     meaningParts.push(
-      `ב${displayName} נראית יציבות יחסית (${acc}% על ${q} שאלות) - עדיין כדאי לוודא שזה חוזר.`,
+      `In ${displayName} seems relative stability (${acc}% on ${q} questions) - it is still worth making sure it returns.`,
     );
   }
 
   const observation =
     rowMetricsList.length >= 2
-      ? `ב${displayName} יש תרגול בכמה רמות כיתה בתקופה - להלן הפירוט לפי שורות בדוח.`
-      : `ב${primary.label} בתקופה הזו יש ${q} שאלות, עם דיוק של כ ${acc}%.`;
+      ? `In ${displayName} there is practice at several grade levels during the period - below is the breakdown by lines in the report.`
+      : `In ${primary.label} during this period there are ${q} questions, with an accuracy of about ${acc}%.`;
 
   const action =
     polarity === POLARITY.support_needed
-      ? `כדאי להתחיל בחיזוק ממוקד ב${displayName}: 5–10 דקות ביום, אותו סוג שאלה, ובדיקה אם הדיוק עולה לפני שמוסיפים רמה.`
-      : `כדאי לשמר תרגול קצר ב${displayName} ולעקוב שהיציבות נשמרת.`;
+      ? `You should start with focused strengthening on ${displayName}: 5-10 minutes a day, the same type of question, and checking if the accuracy increases before adding a level.`
+      : `It is useful to keep a short practice in ${displayName} and monitor that the stability is maintained.`;
 
   return {
     answerBlocks: [
@@ -448,7 +448,7 @@ function composeMistakePattern(params) {
   const scopeType = String(truthPacket?.scopeType || "");
   let subjectId = String(truthPacket?.surfaceFacts?.subjectId || "").trim();
   let scopeId = String(truthPacket?.scopeId || "").trim();
-  let displayName = String(truthPacket?.scopeLabel || truthPacket?.surfaceFacts?.displayName || "הנושא").trim();
+  let displayName = String(truthPacket?.scopeLabel || truthPacket?.surfaceFacts?.displayName || "the topic").trim();
 
   if (scopeType === "subject") {
     subjectId = String(truthPacket.scopeId || subjectId).trim();
@@ -471,7 +471,7 @@ function composeMistakePattern(params) {
   const acc = primaryRow?.acc ?? (Number(truthPacket?.surfaceFacts?.accuracy) || 0);
   const polarity = classifyPracticePolarity(q, acc);
   if (polarity === POLARITY.thin || polarity === POLARITY.none) {
-    const label = String(displayName || primaryRow?.displayName || "הנושא").trim();
+    const label = String(displayName || primaryRow?.displayName || "the topic").trim();
     const unc =
       payload?.subjectProfiles
         ?.flatMap((sp) => sp?.topicRecommendations || [])
@@ -481,7 +481,7 @@ function composeMistakePattern(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `ב${label} יש ${q} שאלות בטווח התקופה - עדיין מעט נתון.`,
+          textHe: `${label} has ${q} questions in the period range - still a little given.`,
           source: "intent_composer",
         },
         {
@@ -491,7 +491,7 @@ function composeMistakePattern(params) {
         },
         {
           type: "next_step",
-          textHe: String(unc || "").trim() || "נכון לעכשיו כדאי לאסוף עוד תרגול לפני החלטה.",
+          textHe: String(unc || "").trim() || "Right now it's worth gathering more practice before making a decision.",
           source: "intent_composer",
         },
       ],
@@ -510,17 +510,17 @@ function composeMistakePattern(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `ב${displayName}, לפי מה שמופיע בדוח על דפוסי טעות:`,
+          textHe: `In ${displayName}, according to what appears in the report on error patterns:`,
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: `הטעות הבולטת שחוזרת היא ${mistakeText}. זה סוג טעות שכדאי לזהות בזמן תרגול - לא רק לספור נכון/לא נכון.`,
+          textHe: `The most prominent error that comes back is ${mistakeText}. This is a type of error that should be identified during practice - not just counting right/wrong.`,
           source: "intent_composer",
         },
         {
           type: "next_step",
-          textHe: `תרגול ממוקד: 2–3 שאלות מאותו סוג, בלי לדלג על שלב - ולשאול את הילד לומר בקול מה הוא עושה לפני התשובה.`,
+          textHe: `Focused practice: 2-3 questions of the same type, without skipping a step - and ask the child to say out loud what he is doing before answering.`,
           source: "intent_composer",
         },
       ],
@@ -533,19 +533,19 @@ function composeMistakePattern(params) {
     answerBlocks: [
       {
         type: "observation",
-        textHe: `ב${displayName} יש מספיק נתוני תרגול כדי לראות שיש קושי, אבל הדוח לא מפרט את סוג הטעות.`,
+        textHe: `${displayName} has enough practice data to see that there is a difficulty, but the report does not specify the type of error.`,
         source: "intent_composer",
       },
       {
         type: "meaning",
         textHe:
-          "בדוח יש מספיק מידע על מצב הנושא, אבל אין פירוט מספיק כדי לזהות את סוג הטעות המדויק.",
+          "The report has enough information about the state of the issue, but not enough detail to identify the exact type of error.",
         source: "intent_composer",
       },
       {
         type: "next_step",
         textHe:
-          "כדי לאסוף את זה: בזמן תרגול, לרשום משפט אחד על מה הילד עשה לפני שטעה - אחרי 3–4 פעמים יופיע דפוס.",
+          "To collect it: during practice, write down one sentence about what the child did before he made a mistake - after 3-4 times a pattern will appear.",
         source: "intent_composer",
       },
     ],
@@ -559,7 +559,7 @@ function composeMistakePattern(params) {
  */
 function composeHomePractice(params) {
   const truthPacket = params.truthPacket;
-  const displayName = String(truthPacket?.scopeLabel || truthPacket?.surfaceFacts?.displayName || "הנושא").trim();
+  const displayName = String(truthPacket?.scopeLabel || truthPacket?.surfaceFacts?.displayName || "the topic").trim();
   const utterance = foldUtteranceForHeMatch(String(params?.utteranceStr || ""));
   const q = Math.max(0, Number(truthPacket?.surfaceFacts?.questions) || 0);
   const acc = Math.max(0, Math.min(100, Math.round(Number(truthPacket?.surfaceFacts?.accuracy) || 0)));
@@ -569,23 +569,23 @@ function composeHomePractice(params) {
     return null;
   }
   const duration =
-    /כמה\s*זמן/u.test(utterance) ? "5–10 דקות ביום, לא יותר" : "בערך 5–10 דקות ביום";
+    /כמה\s*זמן/u.test(utterance) ? "5-10 minutes a day, no more" : "About 5-10 minutes a day";
 
   return {
     answerBlocks: [
       {
         type: "observation",
-        textHe: `תכנית בית מעשית סביב ${displayName}:`,
+        textHe: `A practical house plan around ${displayName}:`,
         source: "intent_composer",
       },
       {
         type: "meaning",
-        textHe: `${duration}: (1) 2–3 שאלות מאותו סוג בלי עזרה; (2) בדיקה קצרה יחד אחרי כל שאלה - מה עשית לפני התשובה; (3) לשים לב אם אותו סוג טעות חוזר.`,
+        textHe: `${duration}: (1) 2–3 questions of the same type without help; (2) a short test together after each question - what did you do before the answer; (3) notice if the same type of error repeats.`,
         source: "intent_composer",
       },
       {
         type: "next_step",
-        textHe: "לעקוב אחרי 3–4 ימים כאלה, ואז לבדוק בדוח אם הדיוק עולה או שהדפוס חוזר.",
+        textHe: "Follow up after 3-4 days like this, then check in the report if the accuracy increases or if the pattern returns.",
         source: "intent_composer",
       },
     ],
@@ -616,14 +616,14 @@ function composeStrength(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `בטווח התקופה תורגל רק ${subjectLabelHe(sid)} (${subQ} שאלות) - אין מספיק נתונים להשוואה בין מקצועות.`,
+          textHe: `During the period, only ${subjectLabelHe(sid)} (${subQ} questions) will be practiced - there is not enough data to compare subjects.`,
           source: "intent_composer",
         },
         {
           type: "meaning",
           textHe: best
-            ? `לפי מה שיש בדוח, ${subjectLabelHe(sid)} הוא המקצוע היחיד עם תרגול - ${best.displayName} בכ ${best.acc}% על ${best.q} שאלות.`
-            : `${subjectLabelHe(sid)} הוא המקצוע היחיד עם תרגול בטווח - אי אפשר לדרג "חזק/חלש" בין מקצועות.`,
+            ? `According to what is in the report, ${subjectLabelHe(sid)} is the only profession with practice - ${best.displayName} about ${best.acc}% on ${best.q} questions.`
+            : `${subjectLabelHe(sid)} is the only profession with practice in the range - it is impossible to rank "strong/weak" between professions.`,
           source: "intent_composer",
         },
       ],
@@ -637,12 +637,12 @@ function composeStrength(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: "לפי מה שמופיע בדוח, אין עדיין נושא עם מספיק תרגול ודיוק גבוה כדי לקרוא לו \"חזק\" בביטחון.",
+          textHe: "According to what appears in the report, there is not yet a topic with enough practice and high accuracy to call it \"strong\" with confidence.",
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "זה לא אומר שאין הצלחות - רק שעדיין מוקדם לסמן חוזק יציב לפי הנתונים בטווח.",
+          textHe: "This does not mean that there are no successes - just that it is still too early to mark stable strength according to the data in the range.",
           source: "intent_composer",
         },
       ],
@@ -652,18 +652,18 @@ function composeStrength(params) {
   }
 
   const list = metas
-    .map((m) => `${subjectLabelHe(m.sid)} - ${m.displayName}: כ ${m.acc}% על ${m.q} שאלות`)
+    .map((m) => `${subjectLabelHe(m.sid)} - ${m.displayName}: about ${m.acc}% on ${m.q} questions`)
     .join("; ");
 
   const singleSubjectNote =
     practicedSubjects.length === 1
-      ? `בטווח התקופה תורגל רק ${subjectLabelHe(practicedSubjects[0])} - אין מספיק נתונים להשוואה בין מקצועות. `
+      ? `During the period, only ${subjectLabelHe(practicedSubjects[0])} was practiced - there is not enough data to compare professions.`
       : "";
 
   const lead = metas[0];
   const srcPhrase = evidenceSourcePhraseHe(lead?.primaryEvidenceSource);
   const meaningHe = srcPhrase
-    ? `${list}. חלק מהראיה ל${lead.displayName} נאספה ${srcPhrase}.`
+    ? `${list}. Part of the evidence for ${lead.displayName} was collected ${srcPhrase}.`
     : `${list}.`;
 
   // gradeRelation-aware next step: higher → consider leveling up; same → advance gradually.
@@ -676,7 +676,7 @@ function composeStrength(params) {
     lead && lead.q >= MASTERY_REALLOCATION_Q_MIN ? masteryReallocationHe(lead.displayName) : "";
   const nextStepHe =
     [relStep, reallocate].filter(Boolean).join(" ") ||
-    "כדאי לשמר תרגול קצר ושגרתי שם, ולעלות רמה רק אם ההצלחה ממשיכה להופיע.";
+    "You should keep a short and routine practice there, and level up only if success continues to appear.";
 
   const utteranceStr = String(params?.utteranceStr || "");
   const isStrongestSubjectQ = detectAggregateQuestionClass(utteranceStr) === "strongest_subject";
@@ -686,12 +686,12 @@ function composeStrength(params) {
       ? [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ)[0]
       : null;
 
-  let observationHe = `${singleSubjectNote}לפי נתוני התרגול בטווח, אלה התחומים החזקים יחסית בתוך מה שתורגל:`;
+  let observationHe = `${singleSubjectNote}According to the practice data in the range, these are the relatively strong areas within what was practiced:`;
   if (strongestSub) {
     observationHe =
       withAvg.length === 1
-        ? `יש כרגע בעיקר מקצוע אחד עם מספיק תרגול מספרי בדוח - ${strongestSub.label}, עם דיוק ממוצע של כ ${strongestSub.avg}%.`
-        : `המקצוע החזק ביותר כרגע הוא ${strongestSub.label} - לפי ממוצע הדיוק הכללי על פני הנושאים עם תרגול בדוח (בערך ${strongestSub.avg}%).`;
+        ? `There is currently mainly one profession with enough numerical practice in the report - ${strongestSub.label}, with an average accuracy of about ${strongestSub.avg}%.`
+        : `The strongest subject at the moment is ${strongestSub.label} - according to the average overall accuracy across subjects with practice in the report (about ${strongestSub.avg}%).`;
   }
 
   return {
@@ -733,13 +733,13 @@ function composeTopicLookup(params) {
         {
           type: "observation",
           textHe: tail
-            ? `בתקופה הזו אין נתוני תרגול על ${tail} בדוח הנוכחי.`
-            : "בתקופה הזו אין נתוני תרגול על הנושא הזה בדוח הנוכחי.",
+            ? `In this period there is no practice data on ${tail} in the current report.`
+            : "During this period there is no practice data on this subject in the current report.",
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "אפשר לבחור נושא אחר מהדוח, או לצבור תרגול בנושא הזה ולשאול שוב.",
+          textHe: "You can choose another topic from the report, or gain practice on this topic and ask again.",
           source: "intent_composer",
         },
       ],
@@ -756,12 +756,12 @@ function composeTopicLookup(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `בתקופה הזו אין נתוני תרגול על ${label || "הנושא"} בדוח הנוכחי.`,
+          textHe: `In this period there is no practice data on ${label || "the topic"} in the current report.`,
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "הנושא מופיע ברשימה, אבל לא נספרו בו שאלות בטווח התאריכים.",
+          textHe: "The subject appears in the list, but no questions have been counted in it in the date range.",
           source: "intent_composer",
         },
       ],
@@ -818,12 +818,12 @@ function composeProgression(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: "בתקופה הזו אין עדיין מספיק נתוני תרגול כדי להמליץ על עלייה או ירידה ברמה.",
+          textHe: "In this period there is still not enough practice data to recommend an increase or decrease in level.",
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "כדאי לאסוף עוד תרגול בנושא לפני החלטה על שינוי רמה.",
+          textHe: "You should gather more practice on the subject before deciding on a level change.",
           source: "intent_composer",
         },
       ],
@@ -844,12 +844,12 @@ function composeProgression(params) {
     const lowerWeak = weak.filter((m) => m.gradeRelation === "lower");
     if (asksBelowGrade) {
       if (lowerWeak.length) {
-        const list = lowerWeak.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (כ ${m.acc}% על ${m.q} שאלות)`).join("; ");
+        const list = lowerWeak.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (about ${m.acc}% on ${m.q} questions)`).join("; ");
         return {
           answerBlocks: [
-            { type: "observation", textHe: `כן - לפי הדוח יש קושי גם מתחת לכיתה הרשומה ב: ${list}.`, source: "intent_composer" },
-            { type: "meaning", textHe: "קושי ברמת בסיס מצביע על צורך לחזק את היסודות בנושא לפני שמתקדמים לרמת הכיתה.", source: "intent_composer" },
-            { type: "next_step", textHe: `כדאי לתרגל ברמת בסיס ב${lowerWeak[0].displayName} עד שהדיוק עולה, ורק אז לחזור לרמת הכיתה.`, source: "intent_composer" },
+            { type: "observation", textHe: `Yes - according to the report there is difficulty even below the class listed in: ${list}.`, source: "intent_composer" },
+            { type: "meaning", textHe: "Difficulty at a basic level indicates a need to strengthen the basics of the subject before advancing to the grade level.", source: "intent_composer" },
+            { type: "next_step", textHe: `You should practice at a basic level in ${lowerWeak[0].displayName} until the accuracy increases, and only then return to the class level.`, source: "intent_composer" },
           ],
           plannerIntent: "what_is_still_difficult",
           answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -857,12 +857,12 @@ function composeProgression(params) {
       }
       return {
         answerBlocks: [
-          { type: "observation", textHe: "לפי הדוח, לא נראה קושי ברמה שמתחת לכיתה הרשומה בתקופה הזו.", source: "intent_composer" },
+          { type: "observation", textHe: "According to the report, no difficulty is seen at a level below the registered class during this period.", source: "intent_composer" },
           {
             type: "meaning",
             textHe: weak.length
-              ? `הקשיים שמופיעים הם ברמת הכיתה עצמה: ${weak.slice(0, 2).map((m) => sttl(m.sid, m.displayName)).join("; ")}.`
-              : "לא בלט קו חלש עם מספיק תרגול בטווח.",
+              ? `The difficulties that appear are at the level of the class itself: ${weak.slice(0, 2).map((m) => sttl(m.sid, m.displayName)).join("; ")}.`
+              : "No weak line stood out with enough practice at the range.",
             source: "intent_composer",
           },
         ],
@@ -875,8 +875,8 @@ function composeProgression(params) {
     if (!weak.length) {
       return {
         answerBlocks: [
-          { type: "observation", textHe: "לפי הדוח אין כרגע נושא עם מספיק תרגול ודיוק נמוך שמצדיק ירידת רמה.", source: "intent_composer" },
-          { type: "meaning", textHe: "ירידת רמה מתאימה כשיש קושי חוזר; כרגע לא רואים כזה בנתונים בטווח.", source: "intent_composer" },
+          { type: "observation", textHe: "According to the report, there is currently no topic with enough practice and low accuracy that justifies a drop in level.", source: "intent_composer" },
+          { type: "meaning", textHe: "Dropping a level is appropriate when there is repeated difficulty; Currently we don't see one in the range data.", source: "intent_composer" },
         ],
         plannerIntent: "why_not_advance",
         answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -885,13 +885,13 @@ function composeProgression(params) {
     const w = weak[0];
     const foundationNote =
       w.gradeRelation === "lower"
-        ? " הקושי כבר ברמת בסיס, ולכן חיזוק יסודות חשוב במיוחד."
+        ? "The difficulty is already at a basic level, so strengthening the basics is especially important."
         : "";
     return {
       answerBlocks: [
-        { type: "observation", textHe: `המקום שבו הכי כדאי לשקול ירידת רמה זמנית לחיזוק הוא ${sttl(w.sid, w.displayName)} (כ ${w.acc}% על ${w.q} שאלות).`, source: "intent_composer" },
-        { type: "meaning", textHe: `ירידת רמה זמנית מאפשרת לבסס את הבסיס לפני שחוזרים לרמת הכיתה.${foundationNote}`, source: "intent_composer" },
-        { type: "next_step", textHe: `כדאי לתרגל ב${w.displayName} רמה אחת נמוכה יותר למספר ימים, ואז לבדוק אם הדיוק עולה.`, source: "intent_composer" },
+        { type: "observation", textHe: `The place where it is best to consider a temporary level drop for reinforcement is ${sttl(w.sid, w.displayName)} (about ${w.acc}% on ${w.q} questions).`, source: "intent_composer" },
+        { type: "meaning", textHe: `A temporary drop in level allows you to establish the foundation before returning to the class level.${foundationNote}`, source: "intent_composer" },
+        { type: "next_step", textHe: `You should practice with ${w.displayName} one level lower for several days, then check if the accuracy increases.`, source: "intent_composer" },
       ],
       plannerIntent: "what_is_still_difficult",
       answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -902,12 +902,12 @@ function composeProgression(params) {
   if (asksAboveGrade) {
     const higherStrong = strong.filter((m) => m.gradeRelation === "higher");
     if (higherStrong.length) {
-      const list = higherStrong.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (כ ${m.acc}% על ${m.q} שאלות)`).join("; ");
+      const list = higherStrong.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (about ${m.acc}% on ${m.q} questions)`).join("; ");
       return {
         answerBlocks: [
-          { type: "observation", textHe: `כן - הילד עבד והצליח גם מעל הכיתה הרשומה ב: ${list}.`, source: "intent_composer" },
-          { type: "meaning", textHe: "הצלחה מעל רמת הכיתה מצביעה על יכולת גבוהה בנושא הזה.", source: "intent_composer" },
-          { type: "next_step", textHe: `אפשר לשקול להעלות קושי או להתקדם לנושא מתקדם יותר ב${higherStrong[0].displayName}.`, source: "intent_composer" },
+          { type: "observation", textHe: `Yes - the child worked and succeeded even above the class listed in: ${list}.`, source: "intent_composer" },
+          { type: "meaning", textHe: "Success above grade level indicates high ability in this subject.", source: "intent_composer" },
+          { type: "next_step", textHe: `You can consider raising the difficulty or progressing to a more advanced topic in ${higherStrong[0].displayName}.`, source: "intent_composer" },
         ],
         plannerIntent: "what_is_going_well",
         answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -918,15 +918,15 @@ function composeProgression(params) {
         {
           type: "observation",
           textHe: strong.length
-            ? "לפי הדוח, ההצלחות נמדדו ברמת הכיתה הרשומה ולא מעליה."
-            : "לפי הדוח, אין עדיין מספיק ראיות לעבודה מעל הכיתה הרשומה.",
+            ? "According to the report, the successes were measured at the level of the registered class and not above it."
+            : "According to the report, there is still insufficient evidence for work above the listed grade.",
           source: "intent_composer",
         },
         {
           type: "meaning",
           textHe: strong.length
-            ? `יש שליטה יפה ברמת הכיתה (למשל ${sttl(strong[0].sid, strong[0].displayName)}) - אפשר לשקול להעלות קושי בהדרגה.`
-            : "כדאי לאסוף עוד תרגול לפני שמסיקים על יכולת מעל הכיתה.",
+            ? `There is a nice control over the class level (eg ${sttl(strong[0].sid, strong[0].displayName)}) - you can consider increasing the difficulty gradually.`
+            : "It is worth gathering more practice before concluding on above-class ability.",
           source: "intent_composer",
         },
       ],
@@ -938,9 +938,9 @@ function composeProgression(params) {
   if (!strong.length) {
     return {
       answerBlocks: [
-        { type: "observation", textHe: "לפי הדוח, אין עדיין נושא עם מספיק תרגול ודיוק גבוה כדי להמליץ על התקדמות בביטחון.", source: "intent_composer" },
-        { type: "meaning", textHe: "זה לא אומר שאין הצלחות - רק שעדיין מוקדם להמליץ על עלייה ברמה לפי הנתונים בטווח.", source: "intent_composer" },
-        { type: "next_step", textHe: "כדאי להמשיך תרגול קצר וקבוע, ואז לשאול שוב כשהדיוק מתייצב.", source: "intent_composer" },
+        { type: "observation", textHe: "According to the report, there is not yet a topic with enough practice and high accuracy to recommend progress with confidence.", source: "intent_composer" },
+        { type: "meaning", textHe: "This does not mean that there are no successes - just that it is still too early to recommend an increase in the level according to the data in the range.", source: "intent_composer" },
+        { type: "next_step", textHe: "You should continue a short and regular practice, then ask again when the accuracy stabilizes.", source: "intent_composer" },
       ],
       plannerIntent: "why_not_advance",
       answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -948,29 +948,29 @@ function composeProgression(params) {
   }
 
   const lead = strong[0];
-  const list = strong.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (כ ${m.acc}% על ${m.q} שאלות)`).join("; ");
+  const list = strong.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (about ${m.acc}% on ${m.q} questions)`).join("; ");
   const relStep =
     gradeScopeMeaningHe({ gradeRelation: lead.gradeRelation, isStrength: true, topicName: lead.displayName }) ||
-    `ב${lead.displayName} יש שליטה טובה - אפשר להעלות קושי בהדרגה או לעבור לנושא הבא.`;
+    `${lead.displayName} has good control - you can increase the difficulty gradually or move to the next topic.`;
   const reallocate = lead.q >= MASTERY_REALLOCATION_Q_MIN ? masteryReallocationHe(lead.displayName) : "";
   const focusElsewhere =
     weak.length && weak[0].topicRowKey !== lead.topicRowKey
-      ? `אם רוצים למקד מאמץ - אפשר להפנות חלק מהזמן מ${lead.displayName} אל ${sttl(weak[0].sid, weak[0].displayName)} שדורש יותר חיזוק.`
+      ? `If you want to focus effort - you can direct part of the time from ${lead.displayName} to ${sttl(weak[0].sid, weak[0].displayName)} which requires more reinforcement.`
       : "";
   const srcPhrase = evidenceSourcePhraseHe(lead.primaryEvidenceSource);
 
   return {
     answerBlocks: [
-      { type: "observation", textHe: `המקום שבו הכי ברור שאפשר להתקדם הוא: ${list}.`, source: "intent_composer" },
+      { type: "observation", textHe: `The most obvious place to move forward is: ${list}.`, source: "intent_composer" },
       {
         type: "meaning",
-        textHe: srcPhrase ? `${relStep} חלק מהראיה נאספה ${srcPhrase}.` : relStep,
+        textHe: srcPhrase ? `${relStep} Some of the evidence was collected ${srcPhrase}.` : relStep,
         source: "intent_composer",
       },
       {
         type: "next_step",
         textHe: [reallocate, focusElsewhere].filter(Boolean).join(" ") ||
-          `כדאי להמשיך לאתגר ב${lead.displayName} ולהעלות קושי בהדרגה כל עוד ההצלחה נשמרת.`,
+          `You should continue to challenge in ${lead.displayName} and increase the difficulty gradually as long as the success is maintained.`,
         source: "intent_composer",
       },
     ],
@@ -991,7 +991,7 @@ function composeZeroEvidence(params) {
       },
       {
         type: "meaning",
-        textHe: "לכן אי אפשר לקבוע כיוון מהדוח הנוכחי על ביצועים במקצוע הזה.",
+        textHe: "It is therefore impossible to determine direction from the current report on performance in this profession.",
         source: "intent_composer",
       },
     ],

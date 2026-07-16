@@ -129,11 +129,11 @@ function topicRowFromOverviewRow(overviewRow, subjectId) {
       narrative: {
         contractVersion: "v1",
         textSlots: {
-          observation: `ב${displayName} נספרו ${q} שאלות בתקופה, עם דיוק של כ-${acc}%.`,
-          interpretation: `לפי נתוני הדוח ב${subjectLabelHe(subjectId)}, זהו המידע שנאסף מהתרגול בתקופה שנבחרה.`,
+          observation: `In ${displayName}, ${q} questions were counted in the period, with an accuracy of about ${acc}%.`,
+          interpretation: `According to the report data in ${subjectLabelHe(subjectId)}, this is the information collected from the practice in the selected period.`,
           uncertainty: cannotConcludeYet
-            ? "עדיין יש מעט נקודות - נבדוק שוב אחרי עוד תרגול."
-            : "כדאי להמשיך לעקוב לאורך כמה ימי תרגול.",
+            ? "There are still a few points - we will check again after more practice."
+            : "You should continue to follow for several days of practice.",
         },
       },
       readiness: { readiness: q >= 28 ? "ready" : q >= 12 ? "forming" : "insufficient" },
@@ -184,20 +184,20 @@ export function findTopicRowByKey(payload, topicRowKey, subjectIdHint = "") {
 }
 
 const SUBJECT_LABEL_HE = {
-  math: "מתמטיקה",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  history: "היסטוריה",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
-  moledet_geography: "מולדת וגאוגרפיה",
-  moledet: "מולדת",
-  geography: "גאוגרפיה",
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
+  history: "History",
+  hebrew: "Hebrew",
+  "moledet-geography": "Homeland & Geography",
+  moledet_geography: "Homeland & Geography",
+  moledet: "Homeland Studies",
+  geography: "Geography",
 };
 
 export function subjectLabelHe(subjectId) {
-  return SUBJECT_LABEL_HE[normalizeSubjectId(subjectId)] || "מקצוע";
+  return SUBJECT_LABEL_HE[normalizeSubjectId(subjectId)] || "Subject";
 }
 
 /** Minimum answered questions in-window before we fabricate subject-level anchors from aggregates alone. */
@@ -240,17 +240,17 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
     const topics = Array.isArray(sp.topicRecommendations) ? sp.topicRecommendations : [];
     const baseTr = topics[0] && typeof topics[0] === "object" ? topics[0] : null;
     const displayName =
-      String(baseTr?.displayName || "").trim() || `${subjectLabelHe(sid)} - סיכום תקופתי`;
+      String(baseTr?.displayName || "").trim() || `${subjectLabelHe(sid)} - Periodic summary`;
     const topicRowKey = String(baseTr?.topicRowKey || baseTr?.topicKey || `aggregate-${sid}`).trim() || `aggregate-${sid}`;
     const cv0 = baseTr?.contractsV1 && typeof baseTr.contractsV1 === "object" ? baseTr.contractsV1 : {};
     const nar0 = cv0.narrative && typeof cv0.narrative === "object" ? cv0.narrative : {};
     const ts0 = nar0.textSlots && typeof nar0.textSlots === "object" ? nar0.textSlots : {};
     const obs =
       String(ts0.observation || "").trim() ||
-      `ב${subjectLabelHe(sid)} נספרו בטווח כ ${qc} שאלות, עם דיוק של כ ${acc}% - זו התמונה שעולה מנתוני הדוח לתקופה הזו.`;
+      `In ${subjectLabelHe(sid)}, about ${qc} questions were counted in the range, with an accuracy of about ${acc}% - this is the picture that emerges from the report data for this period.`;
     const interp =
       String(ts0.interpretation || "").trim() ||
-      `לפי מה שמופיע בדוח תחת ${subjectLabelHe(sid)}, ניתן לראות את נפח התרגול ואת רמת הדיוק בתקופה שנבחרה (בלי להסיק מוקד חולשה מחוץ למה שמוצג שם).`;
+      `According to what appears in the report under ${subjectLabelHe(sid)}, you can see the volume of practice and the level of accuracy in the selected period (without inferring a point of weakness outside of what is shown there).`;
     const readinessRaw =
       qc >= 28 ? "ready" : qc >= 12 ? "forming" : qc >= 6 ? "forming" : "insufficient";
     const confRaw = acc >= 78 ? "high" : acc >= 58 ? "medium" : "low";
@@ -275,8 +275,8 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
             uncertainty:
               String(ts0.uncertainty || "").trim() ||
               (cannotConcludeYet
-                ? "עדיין יש מעט נקודות עם ניסוח זהיר ביחס לנפח - נבדוק שוב אחרי עוד תרגול בטווח."
-                : "עדיין יש פער טבעי בין מה שנראה בבית לבין מה שנספר בדוח; נמשיך לעקוב לאורך כמה ימי תרגול."),
+                ? "There are still a few points with careful wording in relation to the volume - we will check again after more practice at the range."
+                : "There is still a natural gap between what is seen at home and what is told in the report; We will continue to follow throughout several days of practice."),
           },
         },
         readiness: {
@@ -309,7 +309,7 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
       const syntheticTr = {
         topicRowKey: "aggregate-executive-summary",
         topicKey: "aggregate-executive-summary",
-        displayName: "סיכום כללי של התרגול",
+        displayName: "General summary of the practice",
         questions: tq,
         q: tq,
         accuracy: acc,
@@ -317,11 +317,11 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
           narrative: {
             contractVersion: "v1",
             textSlots: {
-              observation: `בתקופה שנבחרה נענו כ ${tq} שאלות, עם דיוק כולל של כ ${acc}%. זהו סיכום כללי של התרגול שנאסף עד עכשיו.`,
-              interpretation: `בשלב הזה אפשר להתייחס בעיקר להיקף התרגול ולדיוק הכללי, לפני שמסיקים מסקנות מפורטות לפי מקצוע או נושא.`,
+              observation: `In the selected period, about ${tq} questions were answered, with an overall accuracy of about ${acc}%. This is a general summary of the practice collected so far.`,
+              interpretation: `At this stage it is possible to refer mainly to the scope of the practice and the general accuracy, before drawing detailed conclusions by profession or subject.`,
               uncertainty: cannotConcludeYet
-                ? "עדיין אין מספיק נתונים כדי לקבוע כיוון ברור. כדאי לבדוק שוב אחרי עוד תרגול."
-                : "ייתכן שיהיה פער בין מה שמרגישים בבית לבין מה שמופיע בדוח, לכן כדאי להמשיך לעקוב לאורך כמה ימי תרגול.",
+                ? "There is still not enough data to determine a clear direction. You should check again after another practice."
+                : "There may be a gap between what you feel at home and what appears in the report, so it's worth continuing to monitor over several days of practice.",
             },
           },
           readiness: { readiness: tq >= 28 ? "ready" : tq >= 12 ? "forming" : "insufficient" },

@@ -97,7 +97,7 @@ function renderSubjectOpeningPriorityTopic0(slots) {
   if (slots.subjectDecision === "speed_check_only_subject") {
     const speedTopic = slots.prioritySpeedTopic0;
     if (!speedTopic || !sn) return "";
-    return `ב${sn} עדיין נדרש לבדוק את הביצוע ללא הגבלת זמן. בנושא ${speedTopic.topicName} הטעויות הופיעו בתרגול מהיר, ולכן עדיין מוקדם לקבוע אם נדרש חיזוק בידע.`;
+    return `In ${sn} it's still worth checking performance without a time limit. In ${speedTopic.topicName} the mistakes showed up during fast practice, so it's still too early to say whether reinforcement of the knowledge itself is needed.`;
   }
 
   if (!t0 || !sn) return "";
@@ -110,16 +110,16 @@ function renderSubjectOpeningPriorityTopic0(slots) {
   // where...), which was imprecise when stable.length===1 (a single stable topic is
   // not "topics", plural).
   if (slots.subjectDecision === "mixed_subject_profile") {
-    return `ב${sn} נראית יציבות בחלק מהנושאים, ולצדה נושא אחד שכדאי לחזק. מומלץ להתחיל ב${t0.topicName}.`;
+    return `In ${sn}, stability is visible in some topics, alongside one topic that's worth reinforcing. It's recommended to start with ${t0.topicName}.`;
   }
   if (slots.subjectDecision === "multiple_topic_gaps") {
     if (hasPattern(t0)) {
-      return `ב${sn} בולטים כמה נושאים שדורשים חיזוק. הנושא הראשון הוא ${t0.topicName}: נפתרו ${t0.questions} שאלות, הדיוק עומד על ${t0.accuracy}%, וזוהה דפוס שחוזר בטעויות: ${t0.detectedPattern}. לכן כדאי להתחיל ממנו.`;
+      return `In ${sn}, a few topics stand out as needing reinforcement. The first topic is ${t0.topicName}: ${t0.questions} questions were solved, accuracy is at ${t0.accuracy}%, and a recurring mistake pattern was found: ${t0.detectedPattern}. So it's worth starting there.`;
     }
-    return `ב${sn} בולטים כמה נושאים שדורשים חיזוק. הנושא הראשון הוא ${t0.topicName}: נפתרו ${t0.questions} שאלות, והדיוק עומד על ${t0.accuracy}%. לכן כדאי להתחיל ממנו.`;
+    return `In ${sn}, a few topics stand out as needing reinforcement. The first topic is ${t0.topicName}: ${t0.questions} questions were solved, and accuracy is at ${t0.accuracy}%. So it's worth starting there.`;
   }
   if (slots.subjectDecision === "focused_strengthening_needed") {
-    return `ב${sn} בולט כרגע נושא אחד שדורש חיזוק: ${t0.topicName}. נפתרו ${t0.questions} שאלות, והדיוק עומד על ${t0.accuracy}%. מומלץ לחזק את הנושא לפני שממשיכים.`;
+    return `In ${sn}, one topic currently stands out as needing reinforcement: ${t0.topicName}. ${t0.questions} questions were solved, and accuracy is at ${t0.accuracy}%. It's recommended to reinforce this topic before moving on.`;
   }
   return "";
 }
@@ -129,9 +129,9 @@ function renderSubjectDiagnosisPriorityTopic0(slots) {
   const t0 = slots.priorityTopic0;
   if (!t0) return "";
   if (hasPattern(t0)) {
-    return `עיקר הקושי כרגע נמצא ב${t0.topicName}. נפתרו ${t0.questions} שאלות בדיוק של ${t0.accuracy}%, וזוהה דפוס שחוזר בטעויות: ${t0.detectedPattern}. זה מצביע על צורך בחיזוק ממוקד באותו נושא.`;
+    return `The main difficulty right now is in ${t0.topicName}. ${t0.questions} questions were solved with ${t0.accuracy}% accuracy, and a recurring mistake pattern was found: ${t0.detectedPattern}. This points to a need for focused reinforcement in that topic.`;
   }
-  return `עיקר הקושי כרגע נמצא ב${t0.topicName}. נפתרו ${t0.questions} שאלות בדיוק של ${t0.accuracy}%. זה מספיק כדי להמליץ על חיזוק ממוקד באותו נושא, ולא רק על המשך תרגול כללי.`;
+  return `The main difficulty right now is in ${t0.topicName}. ${t0.questions} questions were solved with ${t0.accuracy}% accuracy. That's enough to recommend focused reinforcement in that topic, not just continued general practice.`;
 }
 
 /** @param {SubjectOwnerCopySlots} slots */
@@ -139,9 +139,9 @@ function renderSubjectDiagnosisPriorityTopic1(slots) {
   const t1 = slots.priorityTopic1;
   if (!t1) return "";
   if (hasPattern(t1)) {
-    return `נושא נוסף שחשוב לחזק הוא ${t1.topicName}. נפתרו ${t1.questions} שאלות בדיוק של ${t1.accuracy}%, וזוהה דפוס שחוזר בטעויות: ${t1.detectedPattern}.`;
+    return `Another topic worth reinforcing is ${t1.topicName}. ${t1.questions} questions were solved with ${t1.accuracy}% accuracy, and a recurring mistake pattern was found: ${t1.detectedPattern}.`;
   }
-  return `נושא נוסף שחשוב לחזק הוא ${t1.topicName}. נפתרו ${t1.questions} שאלות בדיוק של ${t1.accuracy}%, ולכן כדאי לכלול גם אותו בתרגול הקרוב.`;
+  return `Another topic worth reinforcing is ${t1.topicName}. ${t1.questions} questions were solved with ${t1.accuracy}% accuracy, so it's worth including it in upcoming practice too.`;
 }
 
 /** @param {SubjectOwnerCopySlots} slots */
@@ -150,14 +150,14 @@ function renderRemediatePriorityTopicsSameLevel(slots) {
   if (!t0) return "";
   const t1 = slots.priorityTopic1;
   if (t1) {
-    return `בשבוע הקרוב מומלץ לתרגל באותה רמה, בלי להעלות רמת קושי בינתיים. התחילו ב${t0.topicName}, ולאחר מכן עברו ל${t1.topicName}. בכל פעם תרגלו מספר קטן של שאלות ובדקו שהילד מסביר את דרך הפתרון.`;
+    return `In the coming week it's recommended to practice at the same level, without raising the difficulty for now. Start with ${t0.topicName}, then move on to ${t1.topicName}. Each time, practice a small number of questions and check that the child can explain how they reached the answer.`;
   }
-  return `בשבוע הקרוב מומלץ לתרגל באותה רמה, בלי להעלות רמת קושי בינתיים. התמקדו ב${t0.topicName}, עם מספר קטן של שאלות בכל פעם, ובדקו שהילד מסביר את דרך הפתרון.`;
+  return `In the coming week it's recommended to practice at the same level, without raising the difficulty for now. Focus on ${t0.topicName}, with a small number of questions each time, and check that the child can explain how they reached the answer.`;
 }
 
 /** @param {SubjectOwnerCopySlots} _slots */
 function renderSubjectClosingEngineContract(_slots) {
-  return "עדיף לעבוד קצר וממוקד: לבחור נושא אחד בכל פעם, לפתור 5–8 שאלות, ואז לבקש מהילד להסביר איך הגיע לתשובה. אחרי כמה תרגולים אפשר לבדוק אם הדיוק והיציבות משתפרים.";
+  return "It's better to work short and focused: pick one topic at a time, solve 5-8 questions, and then ask the child to explain how they got to the answer. After a few practice sessions, check whether accuracy and stability are improving.";
 }
 
 /** @type {Record<string, (slots: SubjectOwnerCopySlots) => string>} */

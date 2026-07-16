@@ -126,7 +126,7 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
     scope = {
       scopeType: /** @type {const} */ ("executive"),
       scopeId: "executive",
-      scopeLabel: "הדוח בתקופה הנבחרה",
+      scopeLabel: "the report for the selected period",
       interpretationScope: "executive",
       scopeClass: "executive",
       canonicalIntent: canon,
@@ -164,10 +164,10 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
 
   const label = sid ? subjectLabelHe(sid) : "";
   const hook = label
-    ? `ממשיכים מההשוואה שהוצגה - במיוחד סביב ${label}: `
-    : "ממשיכים מההשוואה על התקופה: ";
+    ? `Continuing from the comparison presented - especially around ${label}:`
+    : "Continuing from the comparison over the period:";
   const oix = answerBlocks.findIndex((b) => b.type === "observation" && String(b.textHe || "").trim());
-  if (oix >= 0 && !String(answerBlocks[oix].textHe || "").includes("ממשיכים מההשוואה")) {
+  if (oix >= 0 && !String(answerBlocks[oix].textHe || "").includes("Continuing from the comparison")) {
     answerBlocks[oix] = {
       ...answerBlocks[oix],
       textHe: `${hook}${String(answerBlocks[oix].textHe || "").trim()}`,

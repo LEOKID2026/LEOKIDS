@@ -6,8 +6,8 @@
 /** @param {string|null|undefined} gradeRelation */
 export function gradeContextShortLabelHe(gradeRelation) {
   const rel = String(gradeRelation || "").trim();
-  if (rel === "higher") return "תרגול מתקדם";
-  if (rel === "lower") return "יסודות קודמים";
+  if (rel === "higher") return "Advanced practice";
+  if (rel === "lower") return "Prior foundations";
   return "";
 }
 
@@ -20,17 +20,17 @@ export function gradeContextExplanationHe(args) {
   const needsSupport = args?.needsSupport === true;
 
   if (rel === "higher") {
-    if (isStrength) return "הילד מתמודד יפה עם חומר מתקדם.";
+    if (isStrength) return "The child is handling advanced material well.";
     if (needsSupport) {
-      return "זהו חומר מתקדם מעל הכיתה הרשומה, ולכן כדאי להתקדם בו בהדרגה.";
+      return "This is advanced material above the registered grade, so it's worth progressing through it gradually.";
     }
-    return "זהו חומר מתקדם מעל הכיתה הרשומה, ולכן כדאי להתקדם בו בהדרגה.";
+    return "This is advanced material above the registered grade, so it's worth progressing through it gradually.";
   }
 
   if (rel === "lower") {
-    if (isStrength) return "יסודות קודמים נראים יציבים.";
-    if (needsSupport) return "כדאי לחזור על יסודות מכיתות קודמות.";
-    return "התרגול בוצע מתחת לכיתה הרשומה - כדאי לקרוא את התוצאה כתמונת בסיס.";
+    if (isStrength) return "Prior foundations look stable.";
+    if (needsSupport) return "It's worth reviewing foundations from earlier grades.";
+    return "This practice was done below the registered grade - it's worth reading the result as a foundation snapshot.";
   }
 
   return "";
@@ -45,12 +45,12 @@ export function gradeContextActionHe(args) {
 
   if (rel === "higher") {
     return isStrength
-      ? "אפשר להמשיך בהדרגה, אחרי שמוודאים שהחומר של הכיתה הרשומה יציב."
-      : "אפשר להמשיך בהדרגה, אחרי שמוודאים שהחומר של הכיתה הרשומה יציב.";
+      ? "It's fine to continue gradually, after making sure the registered grade's material is stable."
+      : "It's fine to continue gradually, after making sure the registered grade's material is stable.";
   }
 
   if (rel === "lower") {
-    return "לתרגל כמה שאלות קצרות של יסודות קודמים לפני שממשיכים קדימה.";
+    return "Practice a few short questions on prior foundations before moving forward.";
   }
 
   return "";

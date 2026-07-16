@@ -24,7 +24,7 @@ export default function GameHubCard({
   ctaClass = "",
   locked = false,
   hidden = false,
-  lockTitle = "נעול על ידי ההורים",
+  lockTitle = "Locked by parents",
   lockHint = "",
 }) {
   if (hidden) return null;
@@ -53,7 +53,7 @@ export default function GameHubCard({
           </div>
         )
       ) : (
-        <span className={ctaClass}>כניסה</span>
+        <span className={ctaClass}>Enter</span>
       )}
     </>
   );

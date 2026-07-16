@@ -3,7 +3,7 @@
  * Distinguishes topic-level conclusion sufficiency vs missing subskill detail.
  */
 
-import { formatParentReportGradeLabel } from "./math-report-generator.js";
+import { formatParentReportGradeHe as formatParentReportGradeLabel } from "./parent-report-language/parent-report-display-labels.js";
 import { splitTopicRowKey } from "./parent-report-row-diagnostics.js";
 import {
   PARENT_EVIDENCE_VOLUME,
@@ -20,7 +20,7 @@ export const TOPIC_EVIDENCE_THRESHOLDS = Object.freeze({
 });
 
 export const SUBSKILL_DETAIL_LIMITATION_HE =
-  "יש מספיק מידע על מצב הנושא, אבל אין מספיק פירוט כדי לזהות את תת המיומנות המדויקת.";
+  "There is enough information about the state of this topic, but not enough detail to identify the exact sub-skill.";
 
 /**
  * @param {number} questionCount
@@ -194,7 +194,7 @@ export function executiveRowDedupeKey(row) {
  * }} args
  */
 export function parentFacingTopicRowLabelHe(args) {
-  const name = String(args?.displayName || "").trim() || "נושא";
+  const name = String(args?.displayName || "").trim() || "Topic";
   let gk =
     args?.contentGradeKey != null && String(args.contentGradeKey).trim()
       ? String(args.contentGradeKey).trim()
@@ -204,12 +204,12 @@ export function parentFacingTopicRowLabelHe(args) {
     gk = p?.gradeKey != null && String(p.gradeKey).trim() ? String(p.gradeKey).trim() : null;
   }
   const gradeLabel = gk ? formatParentReportGradeLabel(gk) : "";
-  if (!gradeLabel || gradeLabel === "לא זמין") return name;
+  if (!gradeLabel || gradeLabel === "Not available") return name;
   const rel = String(args?.gradeRelation || "").trim();
-  if (rel === "higher") return `${name} (תרגול ב${gradeLabel} - מעל הכיתה הרשומה)`;
-  if (rel === "lower") return `${name} (תרגול ב${gradeLabel} - בסיס/כיתה נמוכה)`;
-  if (rel === "same") return `${name} (כיתה ${gradeLabel.replace(/^כיתה\s+/u, "")})`;
-  return `${name} (תרגול ב${gradeLabel})`;
+  if (rel === "higher") return `${name} (practiced at grade ${gradeLabel} - above the registered grade)`;
+  if (rel === "lower") return `${name} (practiced at grade ${gradeLabel} - foundational/lower grade)`;
+  if (rel === "same") return `${name} (grade ${gradeLabel})`;
+  return `${name} (practiced at grade ${gradeLabel})`;
 }
 
 export default {

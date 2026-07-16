@@ -1,4 +1,4 @@
-import MixedHebrewMathText from "./MixedHebrewMathText";
+﻿import MixedHebrewMathText from "./MixedHebrewMathText";
 import BookContentLine from "./BookContentLine";
 import BookVerticalArithmetic from "./BookVerticalArithmetic";
 import { classifyBookLine } from "../../lib/learning-book/book-line-classifier";
@@ -74,7 +74,7 @@ function NumberLineJump({ line }) {
   return (
     <div
       className="mx-auto mt-2 flex max-w-full flex-col items-center gap-1 text-center"
-      dir="rtl"
+      dir="ltr"
     >
       <span
         className={`text-2xl font-bold sm:text-3xl ${theme.diagramAccentStrong}`}
@@ -179,13 +179,13 @@ const DIAGRAM_LINE_LAYOUT_CLASS = [
   "[&_.book-mixed-line-body]:items-baseline",
   "[&_[data-book-label]]:w-[3rem]",
   "[&_[data-book-label]]:shrink-0",
-  "[&_[data-book-label]]:text-right",
+  "[&_[data-book-label]]:text-left",
   "[&_[data-book-label-gap]]:w-[0.5em]",
   "[&_[data-book-label-gap]]:min-w-[0.5em]",
   "[&_[data-book-label-gap]]:shrink-0",
 ].join(" ");
 
-function DiagramCodeLineRow({ children, dir = "rtl", className = "" }) {
+function DiagramCodeLineRow({ children, dir = "ltr", className = "" }) {
   return (
     <div
       className={`book-diagram-line block ${DIAGRAM_LINE_LAYOUT_CLASS} ${className}`.trim()}
@@ -201,7 +201,7 @@ function DiagramEquationLine({ equation }) {
   const theme = useBookGradeTheme().classes;
   if (!equation) return null;
   return (
-    <DiagramCodeLineRow dir="rtl" className={`mt-1 text-base font-bold sm:text-lg ${theme.diagramAccent}`}>
+    <DiagramCodeLineRow dir="ltr" className={`mt-1 text-base font-bold sm:text-lg ${theme.diagramAccent}`}>
       <MixedHebrewMathText text={equation} />
     </DiagramCodeLineRow>
   );
@@ -353,7 +353,7 @@ function ObjectDiagram({ lines }) {
             })}
             </div>
             {tailLabel ? (
-              <p className="text-center text-sm text-[color:var(--book-text-muted)] sm:text-base" dir="rtl">
+              <p className="text-center text-sm text-[color:var(--book-text-muted)] sm:text-base" dir="ltr">
                 <MixedHebrewMathText text={tailLabel} />
               </p>
             ) : null}
@@ -368,7 +368,7 @@ function ObjectDiagram({ lines }) {
 function CardsDiagram({ lines }) {
   const theme = useBookGradeTheme().classes;
   return (
-    <div className="space-y-3" dir="rtl">
+    <div className="space-y-3" dir="ltr">
       {lines.map((line, i) => (
         <div
           key={i}
@@ -437,9 +437,9 @@ function CoinsDiagram({ lines }) {
 
 function FrameTextDiagram({ lines }) {
   return (
-    <div className="space-y-2 rounded-xl border border-[color:var(--book-divider)] bg-[color:var(--book-surface-soft)] p-3 sm:p-4" dir="rtl">
+    <div className="space-y-2 rounded-xl border border-[color:var(--book-divider)] bg-[color:var(--book-surface-soft)] p-3 sm:p-4" dir="ltr">
       {lines.map((line, i) => (
-        <DiagramCodeLineRow key={i} dir="rtl" className="text-right text-base sm:text-lg">
+        <DiagramCodeLineRow key={i} dir="ltr" className="text-left text-base sm:text-lg">
           <MixedHebrewMathText text={line} diagramLayout />
         </DiagramCodeLineRow>
       ))}
@@ -456,7 +456,7 @@ function PlaceValueDiagram({ parsed }) {
       <div
         className="mx-auto flex w-fit max-w-full flex-row items-stretch justify-center gap-2 sm:gap-3"
         role="table"
-        aria-label="טבלת ערך מקום"
+        aria-label="Place value chart"
       >
         {columns.map((col, i) => (
           <div
@@ -466,7 +466,7 @@ function PlaceValueDiagram({ parsed }) {
           >
             <span
               className={`text-center text-sm font-semibold leading-snug sm:text-base ${theme.diagramColumnLabel}`}
-              dir="rtl"
+              dir="ltr"
             >
               {col.label}
             </span>
@@ -540,7 +540,7 @@ function MixedDiagramLine({ line, sizeClass = "" }) {
 
   if (isMixedHebrewMathLine(trimmed)) {
     return (
-      <DiagramCodeLineRow dir="rtl" className={textSize}>
+      <DiagramCodeLineRow dir="ltr" className={textSize}>
         <BookContentLine text={trimmed} context="diagram" />
       </DiagramCodeLineRow>
     );
@@ -548,14 +548,14 @@ function MixedDiagramLine({ line, sizeClass = "" }) {
 
   if (isPureMathDiagramLine(trimmed)) {
     return (
-      <DiagramCodeLineRow dir="rtl" className={textSize}>
+      <DiagramCodeLineRow dir="ltr" className={textSize}>
         <BookContentLine text={trimmed} context="diagram" />
       </DiagramCodeLineRow>
     );
   }
 
   return (
-    <DiagramCodeLineRow dir="rtl" className={`${textSize} ${theme.diagramSecondaryMuted}`}>
+    <DiagramCodeLineRow dir="ltr" className={`${textSize} ${theme.diagramSecondaryMuted}`}>
       <BookContentLine text={trimmed} context="diagram" />
     </DiagramCodeLineRow>
   );
@@ -596,7 +596,7 @@ export default function BookDiagram({ content }) {
     <div
       className={`my-4 rounded-2xl border px-3 py-5 sm:px-6 sm:py-6 ${theme.diagramPanel}`}
       role="img"
-      aria-label="דוגמה"
+      aria-label="Example"
     >
       {verticalArithmetic && <BookVerticalArithmetic content={content} />}
       {!verticalArithmetic && kind === "number_line" && <NumberLineDiagram lines={lines} />}

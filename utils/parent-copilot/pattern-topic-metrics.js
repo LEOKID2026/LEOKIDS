@@ -23,7 +23,7 @@ export function rowMetricsFromTopicRow(tr, subjectIdOverride = "") {
   const acc = Math.max(0, Math.min(100, Math.round(Number(tr?.accuracy) || 0)));
   const sid = normalizeSubjectId(subjectIdOverride || tr?.subjectId || tr?.contractsV1?.evidence?.subjectId || "");
   const topicRowKey = String(tr?.topicRowKey || tr?.topicKey || "").trim();
-  const displayName = String(tr?.displayName || "נושא").trim();
+  const displayName = String(tr?.displayName || "Topic").trim();
   const riv = tr?.rowIdentityV1 && typeof tr.rowIdentityV1 === "object" ? tr.rowIdentityV1 : {};
   return {
     q,

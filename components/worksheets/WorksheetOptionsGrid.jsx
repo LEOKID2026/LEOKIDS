@@ -1,5 +1,5 @@
 /**
- * MCQ options grid — Hebrew labels א/ב/ג/ד, display only.
+ * MCQ options grid — Latin labels A/B/C/D for Global English product.
  */
 
 import { EnglishLtrBlock } from "./renderers/EnglishLtrBlock.jsx";
@@ -8,7 +8,7 @@ import WorksheetMathLtr from "./WorksheetMathLtr.jsx";
 import { isWorksheetNumericOption } from "../../lib/worksheets/worksheet-math-ltr-display.js";
 import { hasStackedFractionToken } from "../../utils/math-fraction-expression-parse.js";
 
-const OPTION_LABELS_HE = ["א", "ב", "ג", "ד", "ה", "ו"];
+const OPTION_LABELS = ["A", "B", "C", "D", "E", "F"];
 
 /**
  * @param {{
@@ -41,10 +41,10 @@ export default function WorksheetOptionsGrid({
 
   return (
     <div className="worksheet-options-section">
-      {showHeading ? <p className="worksheet-options-heading">אפשרויות:</p> : null}
+      {showHeading ? <p className="worksheet-options-heading">Options:</p> : null}
       <ol className={listClass}>
         {optionsHe.map((opt, i) => {
-          const label = OPTION_LABELS_HE[i] || String(i + 1);
+          const label = OPTION_LABELS[i] || String(i + 1);
           const optText = String(opt ?? "");
           const useEnglishLtr =
             englishMode && (optionsLatin?.[i] ?? /[A-Za-z]/.test(optText));

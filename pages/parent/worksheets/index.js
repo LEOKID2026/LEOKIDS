@@ -69,8 +69,8 @@ export default function ParentWorksheetsPage() {
   if (!clientReady || loading || !session) {
     return (
       <Layout {...layoutProps}>
-        <div dir="rtl" className="p-4 text-center text-slate-500">
-          טוען…
+        <div dir="ltr" lang="en" className="p-4 text-center text-slate-500">
+          Loading…
         </div>
       </Layout>
     );

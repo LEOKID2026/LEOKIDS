@@ -10,39 +10,39 @@ import {
 } from "../../utils/dev-student-simulator/index.js";
 
 const LABEL = {
-  student: "\u05E9\u05DD \u05EA\u05DC\u05DE\u05D9\u05D3",
-  grade: "\u05DB\u05D9\u05EA\u05D4",
-  period: "\u05EA\u05E7\u05D5\u05E4\u05EA \u05DC\u05D9\u05DE\u05D5\u05D3",
-  spanDays: "\u05D9\u05DE\u05D9\u05DD \u05D1\u05EA\u05E7\u05D5\u05E4\u05D4 \u05DB\u05D5\u05DC\u05DC\u05D9\u05EA",
-  activeDays: "\u05D9\u05DE\u05D9\u05DD \u05E4\u05E2\u05D9\u05DC\u05D9\u05DD",
-  sessions: "\u05DE\u05E1\u05E4\u05E8 \u05E4\u05D2\u05D9\u05E9\u05D5\u05EA \u2014 \u05DE\u05D7\u05D5\u05E9\u05D1",
-  questions: "\u05E1\u05D4\u05DB \u05E9\u05D0\u05DC\u05D5\u05EA \u2014 \u05DE\u05D7\u05D5\u05E9\u05D1",
-  anchor: "\u05EA\u05D0\u05E8\u05D9\u05DA \u05E2\u05D5\u05D2\u05DF (\u05E1\u05D5\u05E3 \u05D9\u05D5\u05DD)",
-  useNow: "\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1\u05E9\u05E2\u05D4 \u05E0\u05D5\u05DB\u05D7\u05D9\u05EA \u05DB\u05E2\u05D5\u05D2\u05DF",
-  subjects: "\u05DE\u05E7\u05E6\u05D5\u05E2\u05D5\u05EA",
-  weight: "\u05DE\u05E9\u05E7\u05DC (legacy)",
-  acc: "\u05D3\u05D9\u05D5\u05E7 \u05D9\u05E2\u05D3 (% \u05E0\u05DB\u05D5\u05DF)",
-  sessionAvgMin: "משך סשן ממוצע (דקות)",
-  level: "\u05E8\u05DE\u05D4",
-  mode: "\u05DE\u05E6\u05D1",
-  trend: "\u05DE\u05D2\u05DE\u05D4 \u05DB\u05DC\u05DC\u05D9\u05EA",
-  mistakes: "\u05E9\u05D2\u05D9\u05D0\u05D5\u05EA \u05D5\u05E7\u05E6\u05D1",
-  mistakeRate: "\u05E9\u05D9\u05E2\u05D5\u05E8 \u05E9\u05D2\u05D9\u05D0\u05D5\u05EA (% \u05DE\u05D4\u05E9\u05D0\u05DC\u05D5\u05EA)",
-  repeatStr: "\u05D7\u05D6\u05E7\u05EA \u05D7\u05D6\u05E8\u05D5\u05EA \u05D7\u05D5\u05D6\u05E8\u05EA (% \u05DE\u05D4\u05E0\u05D5\u05E9\u05D0)",
-  pace: "\u05D3\u05E4\u05D5\u05E1 \u05D6\u05DE\u05DF \u05EA\u05D2\u05D5\u05D1\u05D4",
-  debug: "\u05DE\u05E6\u05D1 \u05D1\u05D3\u05D9\u05E7\u05D4 \u05E7\u05E6\u05E8\u05D4",
-  showInternalKeys: "\u05D4\u05E6\u05D2 \u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05E4\u05E0\u05D9\u05DE\u05D9\u05D9\u05DD",
-  applyMode: "מצב יישום (Apply)",
-  applyReplaceSelected: "עדכון הנושאים שנבחרו בלבד",
-  applyAppend: "הוספה לנתונים קיימים",
-  applyFull: "החלפת כל הסימולציה",
-  fullReplaceWarn: "אזהרה: מצב זה מוחק ומייצר מחדש את כל נתוני הסימולטור. לא מומלץ.",
-  active: "פעיל",
-  nQuestions: "שאלות",
-  perTopicTopicTrend: "מגמה (נושא)",
-  computedTotals: "מחושב אוטומטית",
-  topicsDisabledHint: "לחצו לפתיחת הטבלה. עדכון (Apply) רק מסומני פעיל עם שאלות > 0 - לא מחייב בחירה בכל מקצוע.",
-  applySourceHint: "רק שורות נושא: פעיל + שאלות קובעות מה ייכלל ב Apply.",
+  student: "Student name",
+  grade: "Grade",
+  period: "Learning period",
+  spanDays: "Total days in period",
+  activeDays: "Active days",
+  sessions: "Session count — computed",
+  questions: "Question count — computed",
+  anchor: "Anchor date (end of day)",
+  useNow: "Use current time as anchor",
+  subjects: "Subjects",
+  weight: "Weight (legacy)",
+  acc: "Target accuracy (% approx.)",
+  sessionAvgMin: "Average session length (minutes)",
+  level: "Level",
+  mode: "Mode",
+  trend: "Overall trend",
+  mistakes: "Mistakes and pace",
+  mistakeRate: "Mistake rate (% of questions)",
+  repeatStr: "Repeated-mistake strength (% of mistakes)",
+  pace: "Response-time pace",
+  debug: "Short debug mode",
+  showInternalKeys: "Show internal keys",
+  applyMode: "Apply mode",
+  applyReplaceSelected: "Update selected topics only",
+  applyAppend: "Append to existing data",
+  applyFull: "Replace entire simulation",
+  fullReplaceWarn: "Warning: this mode deletes and regenerates all simulator data. Not recommended.",
+  active: "Active",
+  nQuestions: "Questions",
+  perTopicTopicTrend: "Trend (topic)",
+  computedTotals: "Computed automatically",
+  topicsDisabledHint: "Click to open the table. Apply only includes active rows with questions > 0 — you do not need to select every subject.",
+  applySourceHint: "Topic rows only: active + questions determines what is included in Apply.",
 };
 
 const FALLBACK_SUBJECT_ROW = {
@@ -56,32 +56,32 @@ const FALLBACK_SUBJECT_ROW = {
 };
 
 const TREND_OPTS = [
-  { v: "stable", l: "\u05D9\u05E6\u05D9\u05D1" },
-  { v: "improving", l: "\u05DE\u05E9\u05EA\u05E4\u05E8" },
-  { v: "declining", l: "\u05D1\u05D9\u05E8\u05D9\u05D3\u05D4" },
-  { v: "jump_decline", l: "\u05E7\u05E4\u05D9\u05E6\u05EA \u05E7\u05D5\u05E9\u05D9 \u05D5\u05D0\u05D7\u05E8 \u05D9\u05E8\u05D9\u05D3\u05D4" },
-  { v: "fast_inattentive", l: "\u05DE\u05D4\u05D9\u05E8 \u05D5\u05D7\u05E1\u05E8 \u05EA\u05E9\u05D5\u05DE\u05EA \u05DC\u05D1" },
-  { v: "slow_accurate", l: "\u05D0\u05D9\u05D8\u05D9 \u05D0\u05D1\u05DC \u05DE\u05D3\u05D5\u05D9\u05E7" },
+  { v: "stable", l: "Stable" },
+  { v: "improving", l: "Improving" },
+  { v: "declining", l: "Declining" },
+  { v: "jump_decline", l: "Sharp drop then decline" },
+  { v: "fast_inattentive", l: "Fast and inattentive" },
+  { v: "slow_accurate", l: "Slow but accurate" },
 ];
 
 const PACE_OPTS = [
-  { v: "fast_wrong", l: "\u05DE\u05D4\u05D9\u05E8 \u05D5\u05E9\u05D2\u05D5\u05D9" },
-  { v: "slow_accurate", l: "\u05D0\u05D9\u05D8\u05D9 \u05D5\u05DE\u05D3\u05D5\u05D9\u05E7" },
-  { v: "slow_wrong", l: "\u05D0\u05D9\u05D8\u05D9 \u05D5\u05E9\u05D2\u05D5\u05D9" },
-  { v: "balanced", l: "\u05DE\u05D0\u05D5\u05D6\u05DF" },
+  { v: "fast_wrong", l: "Fast and wrong" },
+  { v: "slow_accurate", l: "Slow and accurate" },
+  { v: "slow_wrong", l: "Slow and wrong" },
+  { v: "balanced", l: "Balanced" },
 ];
 
 const LEVEL_OPTS = [
-  { v: "easy", l: "\u05E7\u05DC" },
-  { v: "medium", l: "\u05D1\u05D9\u05E0\u05D5\u05E0\u05D9" },
-  { v: "hard", l: "\u05E7\u05E9\u05D4" },
+  { v: "easy", l: "Easy" },
+  { v: "medium", l: "Medium" },
+  { v: "hard", l: "Hard" },
 ];
 
 const MODE_OPTS = [
-  { v: "learning", l: "\u05DC\u05DE\u05D9\u05D3\u05D4" },
-  { v: "practice", l: "\u05EA\u05E8\u05D2\u05D5\u05DC" },
-  { v: "challenge", l: "\u05D0\u05EA\u05D2\u05E8" },
-  { v: "speed", l: "\u05DE\u05D4\u05D9\u05E8\u05D5\u05EA" },
+  { v: "learning", l: "Learning" },
+  { v: "practice", l: "Practice" },
+  { v: "challenge", l: "Challenge" },
+  { v: "speed", l: "Speed" },
 ];
 
 const GRADES = ["g1", "g2", "g3", "g4", "g5", "g6"];
@@ -230,7 +230,7 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ border: "1px solid #cbd5e1", borderRadius: 12, padding: 14, background: "#f8fafc" }}>
-        <h3 style={{ margin: "0 0 12px", fontSize: 16 }}>ילד/ה</h3>
+        <h3 style={{ margin: "0 0 12px", fontSize: 16 }}>Student</h3>
         <label style={fieldStyle}>
           {LABEL.student}
           <input
@@ -282,7 +282,7 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
           <p
             style={{
               margin: "8px 0 0",
-              textAlign: "right",
+              textAlign: "left",
               fontSize: 13,
               color: "#b91c1c",
               fontWeight: 600,
@@ -370,9 +370,9 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
 
       <div style={{ border: "1px solid #cbd5e1", borderRadius: 12, padding: 14, background: "#f8fafc" }}>
         <h3 style={{ margin: "0 0 4px", fontSize: 16 }}>{LABEL.subjects}</h3>
-        <p style={{ margin: "0 0 10px", fontSize: 12, color: "#64748b", textAlign: "right" }}>{LABEL.applySourceHint}</p>
+        <p style={{ margin: "0 0 10px", fontSize: 12, color: "#64748b", textAlign: "left" }}>{LABEL.applySourceHint}</p>
         <label
-          dir="rtl"
+          dir="ltr"
           style={{
             display: "flex",
             alignItems: "center",
@@ -391,7 +391,7 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
             disabled={disabled}
             style={{ width: 14, height: 14, flexShrink: 0 }}
           />
-          <span style={{ textAlign: "right" }}>{LABEL.showInternalKeys}</span>
+          <span style={{ textAlign: "left" }}>{LABEL.showInternalKeys}</span>
         </label>
         {CUSTOM_BUILDER_UI_SUBJECT_ORDER.map((sid) => {
           const row = value.subjects?.[sid] ? { ...FALLBACK_SUBJECT_ROW, ...value.subjects[sid] } : { ...FALLBACK_SUBJECT_ROW };
@@ -408,7 +408,7 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
               }}
             >
               <label
-                dir="rtl"
+                dir="ltr"
                 title={`${hebrewSubjectLabel(sid)} · ${sid}`}
                 style={{
                   display: "flex",
@@ -426,7 +426,7 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
                   onChange={(e) => toggleSubjectEnabled(sid, e.target.checked)}
                   disabled={disabled}
                 />
-                <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2, textAlign: "right" }}>
+                <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2, textAlign: "left" }}>
                   <span style={{ fontWeight: 700, fontSize: 14 }}>{hebrewSubjectLabel(sid)}</span>
                   {showInternalTopicKeys ? (
                     <code dir="ltr" style={{ fontSize: 10, color: "#94a3b8", unicodeBidi: "embed" }}>
@@ -435,7 +435,7 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
                   ) : null}
                 </span>
               </label>
-              {!row.enabled ? <p style={{ margin: "4px 0 0", fontSize: 13, color: "#64748b", textAlign: "right" }}>{LABEL.topicsDisabledHint}</p> : null}
+              {!row.enabled ? <p style={{ margin: "4px 0 0", fontSize: 13, color: "#64748b", textAlign: "left" }}>{LABEL.topicsDisabledHint}</p> : null}
               {row.enabled ? (
                 <div style={{ display: "grid", gap: 8, gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", marginBottom: 8 }}>
                   <label style={fieldStyle}>
@@ -453,20 +453,20 @@ export default function CustomBuilderPanel({ value, setValue, disabled }) {
                 </div>
               ) : null}
               {row.enabled ? (
-                <div style={{ width: "100%", overflowX: "auto" }} dir="rtl">
+                <div style={{ width: "100%", overflowX: "auto" }} dir="ltr">
                   <table
                     style={{
                       borderCollapse: "collapse",
                       width: "100%",
                       fontSize: 11,
                       minWidth: 720,
-                      textAlign: "right",
+                      textAlign: "left",
                     }}
                   >
                     <thead>
                       <tr style={{ background: "#f1f5f9" }}>
                         <th style={{ padding: 4, border: "1px solid #e2e8f0" }}>{LABEL.active}</th>
-                        <th style={{ padding: 4, border: "1px solid #e2e8f0" }}>נושא</th>
+                        <th style={{ padding: 4, border: "1px solid #e2e8f0" }}>Topic</th>
                         {showInternalTopicKeys ? (
                           <th style={{ padding: 4, border: "1px solid #e2e8f0" }} dir="ltr">
                             key

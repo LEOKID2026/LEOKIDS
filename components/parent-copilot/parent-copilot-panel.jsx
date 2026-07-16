@@ -87,7 +87,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
         id: lineId(),
         role: "assistant",
         kind: "processing",
-        text: "מעבד את הדוח…",
+        text: "Processing the report…",
       };
 
       setLines((prev) => [...prev, userLine, processingLine]);
@@ -152,7 +152,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
         const errText =
           e instanceof Error && String(e.message || "").trim()
             ? String(e.message).trim()
-            : "לא ניתן לענות על השאלה כרגע. נסו שוב בעוד רגע.";
+            : "Unable to answer the question right now. Please try again in a moment.";
         setLines((prev) => {
           const withoutProc = prev.filter((l) => l.id !== processingId);
           return [
@@ -195,16 +195,16 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
       onPress: () => {
         const preset =
           a.id === "qa_action_today"
-            ? "מה לעשות היום בבית?"
+            ? "What should we do at home today?"
             : a.id === "qa_action_week"
-              ? "מה לעשות השבוע?"
+              ? "What should we do this week?"
               : a.id === "qa_avoid_now"
-                ? "מה לא לעשות עכשיו?"
+                ? "What should we avoid right now?"
                 : a.id === "qa_advance_or_hold"
-                  ? "להתקדם או להמתין?"
+                  ? "Move forward or wait?"
                   : a.id === "qa_explain_to_child"
-                    ? "איך להסביר לילד?"
-                    : "שאלה למורה";
+                    ? "How should we explain this to the child?"
+                    : "Question for the teacher";
         const familyMap = {
           qa_action_today: "action_today",
           qa_action_week: "action_week",
@@ -239,19 +239,19 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
       style={{ height: "420px", minHeight: "420px" }}
     >
       <div className="flex items-center justify-between gap-2 shrink-0 mb-1">
-        <div className="text-xs font-extrabold tracking-wide text-white/70">שאלו על הדוח</div>
+        <div className="text-xs font-extrabold tracking-wide text-white/70">Ask about the report</div>
         <Link
           href="/ai-disclosure"
           className="text-[10px] text-sky-300/80 hover:text-sky-200 underline whitespace-nowrap shrink-0"
         >
-          מידע על שימוש בבינה מלאכותית
+          Information about AI use
         </Link>
       </div>
       <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-1 pr-0.5" role="note">
-        המידע מבוסס על נתוני התרגול באתר ואינו אבחון או ייעוץ מקצועי.
+        This information is based on practice data on the site and is not a diagnosis or professional advice.
       </p>
       <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-2 pr-0.5">
-        אפשר לשאול כאן בחופשיות על הדוח, למשל: מה הכי חשוב כרגע, במה להתמקד השבוע, מה הולך טוב, או איך להסביר את זה לילד.
+        You can ask freely about the report here, for example: what matters most right now, what to focus on this week, what&apos;s going well, or how to explain it to your child.
       </p>
 
       <div
@@ -297,7 +297,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
                   : "text-white/85 whitespace-pre-wrap"
               }
             >
-              {isUser ? <span className="font-bold text-white/50">אתם: </span> : null}
+              {isUser ? <span className="font-bold text-white/50">You: </span> : null}
               {body}
             </div>
           );
@@ -314,12 +314,12 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
           }}
         >
           <label htmlFor={formId} className="sr-only">
-            שאלה
+            Question
           </label>
           <input
             id={formId}
             className="flex-1 min-w-0 rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2 text-sm text-white placeholder:text-white/35"
-            placeholder="שאלה על הדוח…"
+            placeholder="Question about the report…"
             value={utterance}
             disabled={busy}
             onChange={(e) => setUtterance(e.target.value)}
@@ -329,7 +329,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
             disabled={busy || !utterance.trim()}
             className="shrink-0 rounded-lg border border-sky-400/40 bg-sky-900/35 px-4 py-2 text-sm font-bold text-sky-50 disabled:opacity-40"
           >
-            שלח
+            Send
           </button>
         </form>
       </div>

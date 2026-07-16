@@ -12,36 +12,33 @@ import { NARRATIVE_OUTPUT_SHAPE } from "./output-schema.js";
 
 const HEBREW_LETTER_RE = /[\u0590-\u05FF]/;
 const LATIN_LETTER_RE = /[A-Za-z]/;
-const HEBREW_DOMINANCE_THRESHOLD = 0.6;
+const ENGLISH_DOMINANCE_THRESHOLD = 0.6;
 const RAW_KEY_RE = /[a-z][a-z0-9_]{2,}_[a-z0-9_]{2,}/i;
 const MARKDOWN_LEAD_RE = /^[\s]*[#>*\-`]/;
-const ABSOLUTE_TERMS_RE = /(תמיד|אף פעם|מצוין במיוחד|צריך טיפול|חייב טיפול|לעולם)/;
+const ABSOLUTE_TERMS_RE = /\b(always|never|especially excellent|needs treatment|must be treated)\b/i;
 
 /**
  * Block emotional/confidence assumptions in parent-facing narrative text.
  * Product rule: parent reports must NEVER frame children's progress in terms of
- * "confidence" / "ביטחון" (positive or negative). Prefer wording like
- * "שטף", "עצמאות בתרגול", "ביסוס ההבנה", "תרגול עקבי" - see prompt.js.
+ * "confidence" (positive or negative). Prefer wording like
+ * "fluency", "independence in practice", "building understanding", "consistent practice" - see prompt.js.
  *
- * Hebrew morphology note: `ביטחון` ends with the final-nun `ן`, but with possessive
- * suffixes the same root uses the medial-nun `נ`: `ביטחונו` (his), `ביטחונה` (her),
- * `ביטחונם` (their), `ביטחוני` (my). The regex matches `ביטחו` followed by EITHER
- * final-nun `ן` OR medial-nun `נ` (so any suffix form is caught), plus the alternative
- * spelling `בטחו…` and the English word `confidence` (case-insensitive). The Hebrew
- * adjective `בטוח` ("sure/safe", spelled ב-ט-ו-ח without an inner het+vav-nun) is
- * intentionally NOT matched — it has many legitimate uses.
+ * Matches the English word `confidence` (case-insensitive) plus its legacy Hebrew
+ * equivalents (`ביטחון`/`בטחון`, any possessive-suffix form) in case older cached
+ * content or a misbehaving provider still emits Hebrew.
  */
 const EMOTIONAL_CONFIDENCE_TERMS_RE = /(ביטחו[ןנ]|בטחו[ןנ]|confidence)/iu;
 
-const SAFE_THIN_DATA_HINTS_RE = /(נתונים מועטים|נתונים מצומצמים|תרגול מועט|נתונים מצומצמים|תקופה קצרה|כיוון ראשוני|מעט נתונים)/;
+const SAFE_THIN_DATA_HINTS_RE =
+  /(limited data|little data|limited practice|short period|initial direction|not much data)/i;
 
 /**
- * Hebrew letters / (Hebrew letters + Latin letters). Spaces, digits, and punctuation are excluded
- * from both numerator and denominator so a sentence like "התרגול ב-multiplication_table יציב"
- * can be evaluated for "is this Hebrew narrative" rather than penalized for embedded English
+ * Latin letters / (Hebrew letters + Latin letters). Spaces, digits, and punctuation are excluded
+ * from both numerator and denominator so a sentence like "Practice in multiplication_table is stable"
+ * can be evaluated for "is this English narrative" rather than penalized for embedded raw
  * tokens that are independently flagged by the raw-English-key check.
  */
-function hebrewRatio(text) {
+function englishRatio(text) {
   if (typeof text !== "string") return 0;
   let hebrew = 0;
   let latin = 0;
@@ -51,7 +48,7 @@ function hebrewRatio(text) {
     else if (LATIN_LETTER_RE.test(ch)) latin += 1;
   }
   if (hebrew + latin === 0) return 1;
-  return hebrew / (hebrew + latin);
+  return latin / (hebrew + latin);
 }
 
 function isObjectShape(value) {
@@ -138,7 +135,7 @@ export function validateNarrativeOutput(aiPayload, packet, options = {}) {
     if (t.length > limits.bulletMaxChars) return fail("length_home_tip");
   }
 
-  // 3. Hebrew dominance per text field
+  // 3. English dominance per text field
   const allTexts = [
     summary,
     ...strengthsItems.map((x) => x.textHe),
@@ -147,7 +144,7 @@ export function validateNarrativeOutput(aiPayload, packet, options = {}) {
   ];
   if (cautionNote) allTexts.push(cautionNote);
   for (const text of allTexts) {
-    if (hebrewRatio(text) < HEBREW_DOMINANCE_THRESHOLD) return fail("hebrew_dominance");
+    if (englishRatio(text) < ENGLISH_DOMINANCE_THRESHOLD) return fail("english_dominance");
   }
 
   // 4. No raw English keys in any visible text

@@ -50,7 +50,7 @@ function normalizeWsHe(s) {
 }
 
 /** Filler-only closings (avoid substrings that appear inside approved narrative contract slots). */
-const FILLER_BLACKLIST = ["נמשיך ונראה", "הכול תלוי בהמשך", "נראה בסדר באופן כללי"];
+const FILLER_BLACKLIST = ["We will continue and see", "Everything depends later", "Looks ok in general"];
 
 /** Must never appear in parent-facing answer blocks (product QA + internal labels). */
 const FORBIDDEN_PARENT_SURFACE_TOKENS = [
@@ -113,7 +113,7 @@ const PARENT_META_INSTRUCTION_RE =
 const ROBOTIC_SYSTEM_RE = /(\[object\s+Object\]|TODO:|FIXME:|stack\s*trace|error\s*code\s*\d+)/i;
 
 /** Same family as parent-report narrative — emotional "confidence" framing is product-forbidden. */
-/** Do not match `ביטחון` inside `בביטחון` / `הביטחון` (contract statistical phrasing). */
+/** Do not match `security` inside `with confidence` / `the security` (contract statistical phrasing). */
 const EMOTIONAL_CONFIDENCE_TERMS_RE = /((?<!ב)(?<!ה)ביטחו[ןנ]|בטחו[ןנ]|confidence)/iu;
 
 /**
@@ -122,7 +122,7 @@ const EMOTIONAL_CONFIDENCE_TERMS_RE = /((?<!ב)(?<!ה)ביטחו[ןנ]|בטחו[
  *
  * These phrases are forbidden globally when totalAnswers >= STRONG_GLOBAL_QUESTION_FLOOR,
  * UNLESS they are clearly scoped to a specific subject/topic with low question count.
- * Scoping indicators: "ב[נושא] הזה", "ב[מקצוע] בלבד", "לגבי הנושא הזה"
+ * Scoping indicators: "in this [topic].", "in [profession] only", "Regarding this issue"
  */
 const GLOBAL_SCARCITY_CONTRADICTION_RE =
   /(מוקדם\s+לקבוע(?!\s+(?:לגבי|ב))|אין\s+מספיק\s+נתונים(?!\s+(?:לגבי|ב|על))|נתונים\s+מועטים(?!\s+(?:ב|לגבי|על\s+(?:הנושא|המקצוע)))|כיוון\s+ראשוני\s+בלבד(?!\s+(?:לגבי|ב))|עדיין\s+לא\s+ניתן\s+להסיק(?!\s+(?:לגבי|ב))|יש\s+כרגע\s+מעט\s+נתוני\s+תרגול|נפח\s+הנתונים\s+עדיין\s+מצומצם|אין\s+עדיין\s+מספיק\s+מידע\s+לכיוון\s+ברור|אין\s+מספיק\s+נתונים\s+בכלל|נתונים\s+מועטים\s+בתקופה|מוקדם\s+לקבוע\s+תמונה\s+ברורה\s+מהתרגולים)/u;
@@ -175,10 +175,10 @@ function latinToHebrewLetterRatio(s) {
   return sum ? lat / sum : 0;
 }
 
-/** Preposition + punctuation before a Hebrew topic word (e.g. "ב. חשבון"). */
+/** Preposition + punctuation before a Hebrew topic word (e.g. "on. invoice"). */
 const MALFORMED_PREP_PUNCT_BEFORE_TOPIC_RE =
   /(?:^|[\s,;-])(ב|על|עם|של|ל)\s*[.:]\s+(?=[\u0590-\u05FF])/u;
-/** e.g. "ב ." / "ב-." */
+/** e.g. "b." / "on-." */
 const MALFORMED_PREP_DASH_DOT_RE = /(?:^|[\s,;-])(ב|על|עם|של|ל)\s*[ \-]\s*\./u;
 
 const EXPLICIT_BROKEN_FRAGMENT_RES = [
@@ -203,7 +203,7 @@ function sentenceEndsWithHangingPreposition(segment) {
   if (!t) return false;
   const words = t.split(/\s+/).filter(Boolean);
   const last = words[words.length - 1] || "";
-  return ["ב", "על", "עם", "של", "ל"].includes(last);
+  return ["on", "on", "with", "of", "to"].includes(last);
 }
 
 /**

@@ -117,7 +117,7 @@ export default function StudentAvatarPickerModal({
         onAvatarEmojiPersisted?.(em);
         onAvatarCustomDataUrlPersisted?.(null);
       } catch (e) {
-        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "שמירה נכשלה");
+        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "Save failed");
       } finally {
         setSaving(false);
       }
@@ -129,11 +129,11 @@ export default function StudentAvatarPickerModal({
     const file = e.target.files?.[0];
     if (!file) return;
     if (file.size > 5 * 1024 * 1024) {
-      window.alert("התמונה גדולה מדי. נא לבחור תמונה עד 5MB");
+      window.alert("Image is too large. Please choose an image up to 5MB");
       return;
     }
     if (!file.type.startsWith("image/")) {
-      window.alert("נא לבחור קובץ תמונה בלבד");
+      window.alert("Please choose an image file only");
       return;
     }
     void (async () => {
@@ -151,7 +151,7 @@ export default function StudentAvatarPickerModal({
         await patchLearningProfileAvatarCustomImage(dataUrl);
         onAvatarCustomDataUrlPersisted?.(dataUrl);
       } catch (err) {
-        setSaveError(err && typeof err === "object" && "message" in err ? String(err.message) : "שמירת התמונה נכשלה");
+        setSaveError(err && typeof err === "object" && "message" in err ? String(err.message) : "Saving the image failed");
       } finally {
         setSaving(false);
       }
@@ -176,7 +176,7 @@ export default function StudentAvatarPickerModal({
         onAvatarCustomDataUrlPersisted?.(null);
         onAvatarEmojiPersisted?.(defaultAvatar);
       } catch (e) {
-        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "שמירה נכשלה");
+        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "Save failed");
       } finally {
         setSaving(false);
       }
@@ -206,7 +206,7 @@ export default function StudentAvatarPickerModal({
         await patchLearningProfileAvatarBackground(key);
         onAvatarBackgroundPersisted?.(key);
       } catch (e) {
-        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "שמירה נכשלה");
+        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "Save failed");
       } finally {
         setSaving(false);
       }
@@ -219,7 +219,7 @@ export default function StudentAvatarPickerModal({
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-900/40 p-4"
       onClick={() => onClose()}
-      dir="rtl"
+      dir="ltr"
       role="dialog"
       aria-modal="true"
       aria-labelledby="student-avatar-modal-title"
@@ -234,13 +234,13 @@ export default function StudentAvatarPickerModal({
           onClick={() => onClose()}
           className="absolute left-4 top-4 z-10 text-2xl font-bold text-slate-500 hover:text-slate-800"
           style={{ direction: "ltr" }}
-          aria-label="סגור"
+          aria-label="Close"
         >
           ✖
         </button>
 
         <h2 id="student-avatar-modal-title" className="mb-4 text-center text-2xl font-extrabold text-slate-800">
-          👤 פרופיל שחקן
+          👤 Player profile
         </h2>
 
         <div className="rounded-xl border border-slate-200 bg-sky-50/50 p-3">
@@ -251,13 +251,13 @@ export default function StudentAvatarPickerModal({
               avatarBackgroundKey={playerAvatarBackground}
               sizeClass="h-16 w-16 text-5xl"
             />
-            <div className="min-w-0 flex-1 text-right">
-              <div className="mb-1 text-xs text-slate-500">שם שחקן</div>
-              <div className="truncate text-lg font-bold text-slate-800">{playerName || "שחקן"}</div>
+            <div className="min-w-0 flex-1 text-left">
+              <div className="mb-1 text-xs text-slate-500">Player name</div>
+              <div className="truncate text-lg font-bold text-slate-800">{playerName || "Player"}</div>
             </div>
           </div>
 
-          <div className="text-xs text-slate-500 mb-2">בחר אווטר:</div>
+          <div className="text-xs text-slate-500 mb-2">Choose an avatar:</div>
 
           <div className="mb-3">
             <label className="block w-full cursor-pointer">
@@ -274,7 +274,7 @@ export default function StudentAvatarPickerModal({
                   onClick={() => fileInputRef.current?.click()}
                   className="flex-1 rounded-lg bg-sky-500 px-3 py-2 text-xs font-bold text-white transition-all hover:bg-sky-600 min-h-10"
                 >
-                  📷 בחר תמונה
+                  📷 Choose photo
                 </button>
                 {playerAvatarImage ? (
                   <button
@@ -283,13 +283,13 @@ export default function StudentAvatarPickerModal({
                     disabled={saving}
                     className="rounded-lg bg-rose-500 px-3 py-2 text-xs font-bold text-white transition-all hover:bg-rose-600 disabled:opacity-50 min-h-10"
                   >
-                    🗑️ מחק תמונה
+                    🗑️ Remove photo
                   </button>
                 ) : null}
               </div>
             </label>
             {playerAvatarImage ? (
-              <div className="mt-2 text-center text-xs text-slate-500">תמונה נבחרה ✓</div>
+              <div className="mt-2 text-center text-xs text-slate-500">Photo selected ✓</div>
             ) : null}
           </div>
 
@@ -327,7 +327,7 @@ export default function StudentAvatarPickerModal({
           onClick={() => onClose()}
           className="mt-4 w-full rounded-xl bg-sky-500 py-2.5 text-sm font-bold text-white transition hover:bg-sky-600 min-h-12"
         >
-          סגור
+          Close
         </button>
       </div>
     </div>

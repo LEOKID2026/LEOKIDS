@@ -1,6 +1,6 @@
 /**
  * Grade-aware parent recommendation templates (Phase 1–4 math/geometry/Hebrew/English; Phase 5-B1/B2 Science; Phase 5-C1/C3 moledet-geography MG-01–MG-08 bucketOverrides).
- * Slot-specific Hebrew is editorially approved; do not change without sign-off.
+ * Slot-specific parent copy is editorially approved; do not change without sign-off.
  */
 
 /** @typedef {{ actionTextHe: string | null; goalTextHe: string | null; intentDescriptionEn: string }} GradeAwareBandCopy */
@@ -24,25 +24,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
     "M-09": {
       g1_g2: {
         actionTextHe:
-          "כדאי לתרגל חיסור במספרים קטנים בעזרת חפצים, ציור או קו מספרים קצר, ואז לכתוב את אותו רעיון גם כתרגיל מספרי.",
+          "Early subtraction with concrete objects, drawing, or a short number line, then connecting to symbolic notation. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיסור במספרים קטנים, עם מעבר הדרגתי מעזרים מוחשיים לכתיבה מספרית.",
+          "This week, focus on: Early subtraction with concrete objects, drawing, or a short number line, then connecting to symbolic notation.",
         intentDescriptionEn:
           "Early subtraction with concrete objects, drawing, or a short number line, then connecting to symbolic notation.",
       },
       g3_g4: {
         actionTextHe:
-          "כדאי לתרגל חיסור במאונך עם פריטה, תוך הקפדה על ערך הספרות בכל עמודה. אחרי כל תרגיל בקשו מהילד לבדוק את התשובה בעזרת חיבור הפוך.",
+          "Multi-digit vertical subtraction with regrouping, place-value attention, and inverse addition check. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיסור רב ספרתי במאונך, בפריטה נכונה ובבדיקת התשובה בעזרת חיבור הפוך.",
+          "This week, focus on: Multi-digit vertical subtraction with regrouping, place-value attention, and inverse addition check.",
         intentDescriptionEn:
           "Multi-digit vertical subtraction with regrouping, place-value attention, and inverse addition check.",
       },
       g5_g6: {
         actionTextHe:
-          "כדאי לתרגל חיסור במספרים גדולים או בהקשר רב שלבי, עם אומדן לפני הפתרון ובדיקת סבירות בסיום. בקשו מהילד להסביר את דרך החישוב ולא רק לכתוב תשובה.",
+          "Upper-grade subtraction with larger numbers or multi-step contexts, estimation before solving, reasonableness check, and explanation of strategy. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיסור כחלק מפתרון בעיות, כולל אומדן, בדיקת סבירות והסבר קצר של דרך הפתרון.",
+          "This week, focus on: Upper-grade subtraction with larger numbers or multi-step contexts, estimation before solving, reasonableness check, and explanation of strategy.",
         intentDescriptionEn:
           "Upper-grade subtraction with larger numbers or multi-step contexts, estimation before solving, reasonableness check, and explanation of strategy.",
       },
@@ -50,25 +50,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
     "M-02": {
       g1_g2: {
         actionTextHe:
-          "כדאי לתרגל חיבור במספרים קטנים בעזרת חפצים, ציור או מסגרת עשר, ואז לכתוב את אותו רעיון גם כתרגיל מספרי.",
+          "Early addition with concrete objects, drawing, or ten-frame support, then connecting to symbolic notation. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיבור במספרים קטנים, עם מעבר הדרגתי מעזרים מוחשיים לכתיבה מספרית.",
+          "This week, focus on: Early addition with concrete objects, drawing, or ten-frame support, then connecting to symbolic notation.",
         intentDescriptionEn:
           "Early addition with concrete objects, drawing, or ten-frame support, then connecting to symbolic notation.",
       },
       g3_g4: {
         actionTextHe:
-          "כדאי לתרגל חיבור במאונך עם נשיאה, תוך הקפדה על ערך הספרות בכל עמודה. אחרי כל תרגיל בקשו מהילד להסביר היכן הייתה נשיאה ולבדוק אם התשובה הגיונית.",
+          "Multi-digit vertical addition with carrying, place-value attention, and reasonableness check. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיבור רב ספרתי במאונך, בנשיאה נכונה ובבדיקת הסבירות של התשובה.",
+          "This week, focus on: Multi-digit vertical addition with carrying, place-value attention, and reasonableness check.",
         intentDescriptionEn:
           "Multi-digit vertical addition with carrying, place-value attention, and reasonableness check.",
       },
       g5_g6: {
         actionTextHe:
-          "כדאי לתרגל חיבור במספרים גדולים או בהקשר רב שלבי, עם אומדן לפני הפתרון ובדיקת סבירות בסיום. בקשו מהילד להסביר את דרך החישוב ולא רק לכתוב תשובה.",
+          "Upper-grade addition with larger numbers or multi-step contexts, estimation before solving, reasonableness check, and explanation of strategy. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיבור כחלק מפתרון בעיות, כולל אומדן, בדיקת סבירות והסבר קצר של דרך הפתרון.",
+          "This week, focus on: Upper-grade addition with larger numbers or multi-step contexts, estimation before solving, reasonableness check, and explanation of strategy.",
         intentDescriptionEn:
           "Upper-grade addition with larger numbers or multi-step contexts, estimation before solving, reasonableness check, and explanation of strategy.",
       },
@@ -76,25 +76,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
     "M-06": {
       g1_g2: {
         actionTextHe:
-          "כדאי לתרגל אומדן ועיגול במספרים שלמים קטנים, בעזרת קו מספרים או סימון העשרת הקרובה. בכל תרגיל בקשו מהילד להסביר אם המספר קרוב יותר למספר הקטן או הגדול.",
+          "Early estimation and simple rounding with whole numbers, using number-line distance and nearest ten reasoning. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בהבנה של קירוב מספרים: לאן המספר קרוב יותר, ולמה.",
+          "This week, focus on: Early estimation and simple rounding with whole numbers, using number-line distance and nearest ten reasoning.",
         intentDescriptionEn:
           "Early estimation and simple rounding with whole numbers, using number-line distance and nearest ten reasoning.",
       },
       g3_g4: {
         actionTextHe:
-          "כדאי לתרגל עיגול והשוואת מספרים לפי ערך הספרות, במיוחד עשרות, מאות ואלפים. לפני החישוב בקשו מהילד לומר לאיזה מספר התשובה בערך צריכה להיות קרובה.",
+          "It helps to practice rounding and comparing whole numbers by place value, with estimation before calculating and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בעיגול לפי ערך מקום ובבדיקת סבירות של תשובות במספרים שלמים.",
+          "This week, focus on rounding and comparing whole numbers by place value, with estimation before calculating and reasonableness checks.",
         intentDescriptionEn:
           "Rounding and comparing whole numbers by place value, with estimation before calculating and reasonableness checks.",
       },
       g5_g6: {
         actionTextHe:
-          "כדאי לתרגל עיגול והשוואה במספרים עשרוניים, אחוזים או תרגילים עם אומדן. בקשו מהילד להסביר לפי איזו ספרה הוא מעגל, ואז לבדוק אם התוצאה הסופית סבירה.",
+          "Upper-grade rounding, comparison, and estimation with decimals or percentages, including place-value explanation and final reasonableness check. Ask your child to explain the steps, not only the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בעיגול, השוואה ואומדן במספרים עשרוניים או באחוזים, עם בדיקת סבירות בסיום.",
+          "This week, focus on: Upper-grade rounding, comparison, and estimation with decimals or percentages, including place-value explanation and final reasonableness check.",
         intentDescriptionEn:
           "Upper-grade rounding, comparison, and estimation with decimals or percentages, including place-value explanation and final reasonableness check.",
       },
@@ -108,17 +108,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       },
       g3_g4: {
         actionTextHe:
-          "כדאי לתרגל השוואת שברים בעזרת ציור מדויק או סרגל שברים, ואז להסביר מה מייצג המונה ומה מייצג המכנה. בשברים בעלי אותו מכנה, בקשו מהילד להסביר מדוע משווים לפי מספר החלקים שנלקחו.",
+          "It helps to practice grade 3–4 fraction comparison through visual representation, numerator/denominator meaning, and same-denominator comparison reasoning. After each exercise, ask your child to explain how they got the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בהשוואת שברים ובהבנת תפקיד המונה והמכנה, במיוחד בשברים בעלי אותו מכנה או בייצוגים פשוטים וברורים.",
+          "This week, focus on grade 3–4 fraction comparison through visual representation, numerator/denominator meaning, and same-denominator comparison reasoning.",
         intentDescriptionEn:
           "Grade 3–4 fraction comparison through visual representation, numerator/denominator meaning, and same-denominator comparison reasoning.",
       },
       g5_g6: {
         actionTextHe:
-          "כדאי לתרגל השוואת שברים בעזרת שברים שקולים, מכנה משותף או אומדן ביחס אל 0, חצי ו 1. בקשו מהילד להסביר מדוע שבר אחד גדול מאחר, ולא להסתמך רק על גודל המונה או המכנה.",
+          "It helps to practice grade 5–6 fraction comparison using equivalent fractions, common denominators, benchmark fractions, and explicit reasoning. After each exercise, ask your child to explain how they got the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בהשוואת שברים בעזרת שברים שקולים, מכנה משותף ואומדן, עם נימוק ברור לכל השוואה.",
+          "This week, focus on grade 5–6 fraction comparison using equivalent fractions, common denominators, benchmark fractions, and explicit reasoning.",
         intentDescriptionEn:
           "Grade 5–6 fraction comparison using equivalent fractions, common denominators, benchmark fractions, and explicit reasoning.",
       },
@@ -132,17 +132,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       },
       g3_g4: {
         actionTextHe:
-          "כדאי לתרגל חיבור וחיסור שברים בעלי אותו מכנה. בקשו מהילד להסביר שהמכנה מתאר את גודל החלקים, ולכן מחברים או מחסרים את המונים ובודקים שהתוצאה מתאימה לשלם.",
+          "It helps to practice grade 3–4 fraction addition/subtraction with same denominators, focusing on denominator meaning, numerator operation, and reasonableness. After each exercise, ask your child to explain how they got the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בחיבור וחיסור שברים בעלי אותו מכנה, תוך שמירה על משמעות המכנה ובדיקת סבירות התוצאה.",
+          "This week, focus on grade 3–4 fraction addition/subtraction with same denominators, focusing on denominator meaning, numerator operation, and reasonableness.",
         intentDescriptionEn:
           "Grade 3–4 fraction addition/subtraction with same denominators, focusing on denominator meaning, numerator operation, and reasonableness.",
       },
       g5_g6: {
         actionTextHe:
-          "כדאי לתרגל חיבור וחיסור שברים עם מכנים שונים בעזרת מציאת מכנה משותף, יצירת שברים שקולים ובדיקת התוצאה לאחר הפעולה. בקשו מהילד להסביר כל שלב לפני שהוא מפשט את התשובה.",
+          "It helps to practice grade 5–6 fraction addition/subtraction with unlike denominators, using common denominators, equivalent fractions, step explanation, and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
         goalTextHe:
-          "בשבוע הקרוב התמקדו בפעולות חיבור וחיסור בשברים עם מכנים שונים: מכנה משותף, שברים שקולים, ביצוע הפעולה ובדיקת סבירות.",
+          "This week, focus on grade 5–6 fraction addition/subtraction with unlike denominators, using common denominators, equivalent fractions, step explanation, and reasonableness checks.",
         intentDescriptionEn:
           "Grade 5–6 fraction addition/subtraction with unlike denominators, using common denominators, equivalent fractions, step explanation, and reasonableness checks.",
       },
@@ -178,17 +178,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל כפל דרך קבוצות שוות, מערכים ופירוק תרגילים לעובדות מוכרות. בקשו מהילד להסביר איזו עובדת כפל הוא מזהה ואיך היא עוזרת לו לפתור את התרגיל.",
+              "It helps to practice grade 3–4 multiplication through equal groups, arrays, known facts, and explaining the chosen strategy. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחיזוק עובדות כפל ובהבנת כפל כקבוצות שוות או מערך, עם הסבר קצר של דרך הפתרון.",
+              "This week, focus on grade 3–4 multiplication through equal groups, arrays, known facts, and explaining the chosen strategy.",
             intentDescriptionEn:
               "Grade 3–4 multiplication through equal groups, arrays, known facts, and explaining the chosen strategy.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל כפל במספרים גדולים יותר בעזרת פירוק מספרים, אומדן ובדיקת סבירות. בקשו מהילד להסביר את שלבי החישוב ולבדוק אם התוצאה מתאימה לגודל המספרים.",
+              "It helps to practice grade 5–6 multiplication with decomposition, estimation, multi-step calculation, and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בכפל עם פירוק מספרים, אומדן ובדיקת סבירות של התוצאה.",
+              "This week, focus on grade 5–6 multiplication with decomposition, estimation, multi-step calculation, and reasonableness checks.",
             intentDescriptionEn:
               "Grade 5–6 multiplication with decomposition, estimation, multi-step calculation, and reasonableness checks.",
           },
@@ -201,17 +201,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל כפולות וגורמים דרך סדרות כפל, לוחות כפל וחיפוש דפוסים. בקשו מהילד להסביר מדוע מספר מסוים הוא כפולה או גורם, ולא רק לסמן תשובה.",
+              "It helps to practice grade 3–4 factors and multiples through multiplication patterns, times tables, and verbal explanation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי כפולות וגורמים בעזרת דפוסי כפל והסבר מילולי.",
+              "This week, focus on grade 3–4 factors and multiples through multiplication patterns, times tables, and verbal explanation.",
             intentDescriptionEn:
               "Grade 3–4 factors and multiples through multiplication patterns, times tables, and verbal explanation.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל גורמים וכפולות בהקשרים רחבים יותר, כמו פירוק מספר לגורמים, מציאת כפולות משותפות ובדיקת קשרים בין מספרים. בקשו מהילד לנמק את הבחירה שלו לפי תכונות המספרים.",
+              "It helps to practice grade 5–6 factors and multiples using factorization, common multiples, number properties, and explicit justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בגורמים, כפולות וקשרים בין מספרים, כולל נימוק לפי תכונות המספר.",
+              "This week, focus on grade 5–6 factors and multiples using factorization, common multiples, number properties, and explicit justification.",
             intentDescriptionEn:
               "Grade 5–6 factors and multiples using factorization, common multiples, number properties, and explicit justification.",
           },
@@ -230,9 +230,9 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל חזקות כהכפלה חוזרת, למשל להבין ש 3 בחזקת 4 פירושו 3 כפול עצמו ארבע פעמים. בקשו מהילד לפרק את החזקה לכפל ולבדוק את סדר הפעולות בתרגיל.",
+              "It helps to practice grade 5–6 powers as repeated multiplication, unpacking exponent notation and applying order of operations. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת חזקות כהכפלה חוזרת ובשימוש נכון בהן בתוך תרגילים.",
+              "This week, focus on grade 5–6 powers as repeated multiplication, unpacking exponent notation and applying order of operations.",
             intentDescriptionEn:
               "Grade 5–6 powers as repeated multiplication, unpacking exponent notation and applying order of operations.",
           },
@@ -270,17 +270,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל את הקשר בין כפל לחילוק בעזרת משפחות תרגילים. אחרי פתרון תרגיל, בקשו מהילד לכתוב תרגיל הפוך ולבדוק אם הוא מחזיר לאותו מספר.",
+              "It helps to practice grade 3–4 inverse relationship between multiplication and division using fact families and inverse checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקשר בין כפל לחילוק ובבדיקת תשובות בעזרת פעולה הפוכה.",
+              "This week, focus on grade 3–4 inverse relationship between multiplication and division using fact families and inverse checks.",
             intentDescriptionEn:
               "Grade 3–4 inverse relationship between multiplication and division using fact families and inverse checks.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל בחירה בין כפל לחילוק בבעיות שבהן יש יחס או קשר כפלי בין כמויות. בקשו מהילד להסביר מדוע הפעולה שבחר מתאימה, ולבדוק את התשובה בעזרת הפעולה ההפוכה.",
+              "It helps to practice grade 5–6 choosing multiplication vs division in multiplicative relationships, explaining operation choice, and checking with inverse operation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מתי מתאים להשתמש בכפל ומתי בחילוק, במיוחד בקשרים כפליים ובבדיקה בעזרת פעולה הפוכה.",
+              "This week, focus on grade 5–6 choosing multiplication vs division in multiplicative relationships, explaining operation choice, and checking with inverse operation.",
             intentDescriptionEn:
               "Grade 5–6 choosing multiplication vs division in multiplicative relationships, explaining operation choice, and checking with inverse operation.",
           },
@@ -294,17 +294,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל חילוק דרך חלוקה שווה וקבוצות שוות. בקשו מהילד להסביר מה מייצג כל מספר בתרגיל, ואז לבדוק את התשובה בעזרת כפל.",
+              "It helps to practice grade 3–4 division as equal sharing or equal groups, with multiplication as an inverse check. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחילוק כחלוקה שווה או לקבוצות שוות, ובבדיקת התשובה בעזרת כפל.",
+              "This week, focus on grade 3–4 division as equal sharing or equal groups, with multiplication as an inverse check.",
             intentDescriptionEn:
               "Grade 3–4 division as equal sharing or equal groups, with multiplication as an inverse check.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל חילוק במספרים גדולים יותר או בתוך בעיות מילוליות, עם אומדן לפני הפתרון ובדיקת התשובה בעזרת כפל. בקשו מהילד להסביר מהי הכמות שמחלקים, לכמה חלקים מחלקים, ומה משמעות המנה.",
+              "It helps to practice grade 5–6 division with larger numbers or word problems, estimation, quotient meaning, and multiplication check. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחילוק עם אומדן, פירוש משמעות המנה ובדיקת התשובה בעזרת כפל.",
+              "This week, focus on grade 5–6 division with larger numbers or word problems, estimation, quotient meaning, and multiplication check.",
             intentDescriptionEn:
               "Grade 5–6 division with larger numbers or word problems, estimation, quotient meaning, and multiplication check.",
           },
@@ -317,17 +317,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל חילוק עם שארית בעזרת סיפור קצר או ציור של קבוצות שוות. בקשו מהילד להסביר מה חולק באופן שווה ומה נשאר כשארית.",
+              "It helps to practice grade 3–4 division with remainder using equal groups and explaining what is shared and what remains. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת שארית: מה מתחלק לקבוצות שוות ומה נשאר מחוץ לקבוצות.",
+              "This week, focus on grade 3–4 division with remainder using equal groups and explaining what is shared and what remains.",
             intentDescriptionEn:
               "Grade 3–4 division with remainder using equal groups and explaining what is shared and what remains.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל חילוק עם שארית בתוך בעיות מילוליות, ולבדוק מה משמעות השארית לפי ההקשר. בקשו מהילד להחליט אם צריך להשאיר שארית, לעגל, או לפרש אותה כחלק מהתשובה.",
+              "It helps to practice grade 5–6 division with remainder in context, interpreting whether to keep, round, or explain the remainder. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בפירוש השארית לפי ההקשר ובבדיקת התאמת התשובה לבעיה.",
+              "This week, focus on grade 5–6 division with remainder in context, interpreting whether to keep, round, or explain the remainder.",
             intentDescriptionEn:
               "Grade 5–6 division with remainder in context, interpreting whether to keep, round, or explain the remainder.",
           },
@@ -346,9 +346,9 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל יחס דרך השוואה בין שתי כמויות ושמירה על אותו קשר כפלי. בקשו מהילד להסביר מה משווים, מה נשאר קבוע ביחס, ואיך אפשר לבדוק שהתשובה שומרת על אותו קשר.",
+              "It helps to practice grade 5–6 ratio as a multiplicative relationship between two quantities, preserving the relationship and checking consistency. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת יחס כקשר בין שתי כמויות ובבדיקה שהקשר נשמר לאורך הפתרון.",
+              "This week, focus on grade 5–6 ratio as a multiplicative relationship between two quantities, preserving the relationship and checking consistency.",
             intentDescriptionEn:
               "Grade 5–6 ratio as a multiplicative relationship between two quantities, preserving the relationship and checking consistency.",
           },
@@ -386,17 +386,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל בעיות מילוליות שבהן צריך לכתוב תשובה מלאה עם יחידה מתאימה. לפני הפתרון בקשו מהילד לסמן מה בדיוק שואלים, ובסיום לבדוק שהמספר והיחידה בתשובה מתאימים לשאלה.",
+              "It helps to practice grade 3–4 word-problem answer labeling: identify what is asked, solve, and write a complete answer with the correct unit. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מה נשאל בבעיה מילולית ובכתיבת תשובה מלאה עם יחידה מתאימה.",
+              "This week, focus on grade 3–4 word-problem answer labeling: identify what is asked, solve, and write a complete answer with the correct unit.",
             intentDescriptionEn:
               "Grade 3–4 word-problem answer labeling: identify what is asked, solve, and write a complete answer with the correct unit.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל בעיות מילוליות שבהן מופיעות כמה כמויות או יחידות. לפני החישוב בקשו מהילד להגדיר מה מייצג כל מספר ובאיזו יחידה צריכה להיכתב התשובה, ואז לבדוק שהפתרון מתאים להקשר של הבעיה.",
+              "It helps to practice grade 5–6 word-problem unit/context alignment: track quantities, units, and whether the final answer matches the question. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתאמת התשובה להקשר הבעיה: מה מייצג כל מספר, מהי היחידה הנכונה, והאם התשובה הסופית עונה בדיוק על מה שנשאל.",
+              "This week, focus on grade 5–6 word-problem unit/context alignment: track quantities, units, and whether the final answer matches the question.",
             intentDescriptionEn:
               "Grade 5–6 word-problem unit/context alignment: track quantities, units, and whether the final answer matches the question.",
           },
@@ -434,17 +434,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל בעיות מילוליות בשלב אחד או שניים בעזרת תכנון קצר לפני החישוב. בקשו מהילד לכתוב מה ידוע, מה צריך למצוא, איזו פעולה מתאימה לכל שלב, ורק אז לפתור.",
+              "It helps to practice grade 3–4 word-problem planning: identify known information, target question, and operation choice for one- or two-step problems. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתכנון פתרון לבעיה מילולית: מה ידוע, מה מחפשים, ואיזו פעולה מתאימה לכל שלב.",
+              "This week, focus on grade 3–4 word-problem planning: identify known information, target question, and operation choice for one- or two-step problems.",
             intentDescriptionEn:
               "Grade 3–4 word-problem planning: identify known information, target question, and operation choice for one- or two-step problems.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל בעיות מילוליות רב שלביות בעזרת טבלה, תרשים או משוואה פשוטה. בקשו מהילד להסביר את סדר השלבים, מדוע בחר בכל פעולה, ולבדוק בסיום אם התשובה סבירה ביחס לנתוני הבעיה.",
+              "It helps to practice grade 5–6 multi-step word-problem modeling with tables, diagrams, simple equations, operation choice, and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בפתרון בעיות רב שלביות: תכנון דרך, בחירת פעולות, הסבר סדר השלבים ובדיקת סבירות התשובה.",
+              "This week, focus on grade 5–6 multi-step word-problem modeling with tables, diagrams, simple equations, operation choice, and reasonableness checks.",
             intentDescriptionEn:
               "Grade 5–6 multi-step word-problem modeling with tables, diagrams, simple equations, operation choice, and reasonableness checks.",
           },
@@ -458,17 +458,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל סדרות מספרים על ידי זיהוי החוקיות בין איברים סמוכים. בקשו מהילד להסביר במילים מה משתנה בכל צעד, ואז להשתמש בכלל שמצא כדי להשלים את האיבר הבא.",
+              "It helps to practice grade 3–4 sequences through identifying the change between neighboring terms and explaining the rule. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי חוקיות בסדרות ובהסבר מילולי של הכלל שמוביל מאיבר לאיבר.",
+              "This week, focus on grade 3–4 sequences through identifying the change between neighboring terms and explaining the rule.",
             intentDescriptionEn:
               "Grade 3–4 sequences through identifying the change between neighboring terms and explaining the rule.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל סדרות שבהן צריך לנסח כלל ברור, לבדוק אותו על כמה איברים, ולהשתמש בו כדי למצוא איבר חסר או איבר בהמשך הסדרה. בקשו מהילד להסביר האם הכלל קבוע ולמה הוא מתאים לכל הסדרה.",
+              "It helps to practice grade 5–6 sequence reasoning: formulate and test a rule, then use it to find missing or later terms. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בניסוח כלל לסדרה, בדיקתו על כמה איברים ושימוש בו למציאת איברים חסרים או מתקדמים.",
+              "This week, focus on grade 5–6 sequence reasoning: formulate and test a rule, then use it to find missing or later terms.",
             intentDescriptionEn:
               "Grade 5–6 sequence reasoning: formulate and test a rule, then use it to find missing or later terms.",
           },
@@ -482,17 +482,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל תרגילי נעלם פשוטים בעזרת פעולה הפוכה. בקשו מהילד להסביר מה חסר בתרגיל, איזו פעולה תעזור למצוא אותו, ואז להציב את התשובה בחזרה כדי לבדוק.",
+              "It helps to practice grade 3–4 simple missing-number equations using inverse operations and substitution check. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתרגילי נעלם פשוטים, שימוש בפעולה הפוכה ובדיקת התשובה בתוך התרגיל המקורי.",
+              "This week, focus on grade 3–4 simple missing-number equations using inverse operations and substitution check.",
             intentDescriptionEn:
               "Grade 3–4 simple missing-number equations using inverse operations and substitution check.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל משוואות פשוטות על ידי שמירה על שוויון בין שני האגפים. בקשו מהילד להסביר איזו פעולה הוא מבצע על שני הצדדים, ולבדוק את הפתרון באמצעות הצבה במשוואה המקורית.",
+              "It helps to practice grade 5–6 simple equation solving by preserving equality, applying operations to both sides, and checking by substitution. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בפתרון משוואות פשוטות: שמירה על שוויון, ביצוע פעולות על שני האגפים ובדיקת הפתרון בהצבה.",
+              "This week, focus on grade 5–6 simple equation solving by preserving equality, applying operations to both sides, and checking by substitution.",
             intentDescriptionEn:
               "Grade 5–6 simple equation solving by preserving equality, applying operations to both sides, and checking by substitution.",
           },
@@ -505,17 +505,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל סדר פעולות בתרגילים קצרים, במיוחד כאשר מופיעים סוגריים או שילוב של פעולות. בקשו מהילד לסמן מה פותרים קודם, להסביר למה, ואז לחשב שלב אחר שלב.",
+              "It helps to practice grade 3–4 order of operations in short expressions, especially parentheses and mixed operations, with step-by-step reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בסדר פעולות בתרגילים קצרים: זיהוי מה פותרים קודם וחישוב מסודר שלב אחר שלב.",
+              "This week, focus on grade 3–4 order of operations in short expressions, especially parentheses and mixed operations, with step-by-step reasoning.",
             intentDescriptionEn:
               "Grade 3–4 order of operations in short expressions, especially parentheses and mixed operations, with step-by-step reasoning.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל תרגילים עם כמה פעולות, סוגריים ולעיתים גם חזקות, תוך כתיבת שלבי פתרון מסודרים. בקשו מהילד להצדיק את סדר הפעולות ולבדוק שהתוצאה לא השתנתה בגלל דילוג על שלב.",
+              "It helps to practice grade 5–6 order of operations in more complex expressions, including parentheses and sometimes powers, with written steps and justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בסדר פעולות בתרגילים מורכבים יותר, כולל כתיבת שלבים, הצדקת הסדר ובדיקת התוצאה.",
+              "This week, focus on grade 5–6 order of operations in more complex expressions, including parentheses and sometimes powers, with written steps and justification.",
             intentDescriptionEn:
               "Grade 5–6 order of operations in more complex expressions, including parentheses and sometimes powers, with written steps and justification.",
           },
@@ -547,25 +547,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         compare: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל השוואת מספרים קטנים בעזרת חפצים, ציור או טבלת עשרות ואחדות. בכל פעם בקשו מהילד להסביר איזה מספר גדול יותר ולמה.",
+              "Early number comparison with concrete supports, tens/ones representation, and simple greater-than/less-than reasoning. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואת מספרים קטנים ובהסבר פשוט של גדול, קטן ושווה.",
+              "This week, focus on: Early number comparison with concrete supports, tens/ones representation, and simple greater-than/less-than reasoning.",
             intentDescriptionEn:
               "Early number comparison with concrete supports, tens/ones representation, and simple greater-than/less-than reasoning.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל השוואת מספרים רב ספרתיים לפי ערך הספרות. בקשו מהילד להתחיל מהספרה בעלת הערך הגבוה ביותר ולהסביר באיזו עמודה נקבע ההבדל.",
+              "Multi-digit comparison by place value, starting from the highest place and identifying the first differing place. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואת מספרים לפי ערך מקום, מהספרה הגדולה ביותר ועד העמודה שבה מופיע ההבדל.",
+              "This week, focus on: Multi-digit comparison by place value, starting from the highest place and identifying the first differing place.",
             intentDescriptionEn:
               "Multi-digit comparison by place value, starting from the highest place and identifying the first differing place.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואת מספרים גדולים או ייצוגים מספריים שונים בעזרת ערך מקום ואומדן. בקשו מהילד להסביר מה הופך מספר אחד לגדול או קטן יותר, ולא להסתמך רק על ספירת ספרות.",
+              "Upper-grade comparison of larger numbers or different numeric representations using place value, estimation, and explicit reasoning. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואה מדויקת של מספרים גדולים או ייצוגים שונים, עם נימוק לפי ערך מקום ואומדן.",
+              "This week, focus on: Upper-grade comparison of larger numbers or different numeric representations using place value, estimation, and explicit reasoning.",
             intentDescriptionEn:
               "Upper-grade comparison of larger numbers or different numeric representations using place value, estimation, and explicit reasoning.",
           },
@@ -573,25 +573,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         number_sense: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל בניית מספרים ופירוקם בעזרת חפצים, ציור או עשרות ואחדות. בקשו מהילד להראות למשל שמספר יכול להיות מורכב מעשרת ועוד אחדות.",
+              "Early number sense through composing and decomposing numbers with objects, drawings, tens, and ones. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת מבנה המספר: עשרות, אחדות ופירוק מספרים קטנים לחלקים.",
+              "This week, focus on: Early number sense through composing and decomposing numbers with objects, drawings, tens, and ones.",
             intentDescriptionEn:
               "Early number sense through composing and decomposing numbers with objects, drawings, tens, and ones.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל פירוק מספרים לפי ערך מקום: אחדות, עשרות, מאות ואלפים. בקשו מהילד לכתוב את המספר גם בצורה רגילה וגם כפירוק לפי הערך של כל ספרה.",
+              "Multi-digit number sense through place-value decomposition across ones, tens, hundreds, and thousands. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בערך מקום ובפירוק מספרים רב ספרתיים לפי הספרות שלהם.",
+              "This week, focus on: Multi-digit number sense through place-value decomposition across ones, tens, hundreds, and thousands.",
             intentDescriptionEn:
               "Multi-digit number sense through place-value decomposition across ones, tens, hundreds, and thousands.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מעבר בין ייצוגים של אותו מספר, כמו כתיבה רגילה, פירוק לפי ערך מקום ואומדן גודל. בקשו מהילד להסביר איך כל ייצוג מתאר את אותו מספר.",
+              "Upper-grade number sense through translating between standard notation, place-value decomposition, and magnitude reasoning. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקשר בין ייצוגים שונים של מספרים ובבדיקת משמעות כל ספרה בתוך המספר.",
+              "This week, focus on: Upper-grade number sense through translating between standard notation, place-value decomposition, and magnitude reasoning.",
             intentDescriptionEn:
               "Upper-grade number sense through translating between standard notation, place-value decomposition, and magnitude reasoning.",
           },
@@ -599,25 +599,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         estimation: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל אומדן בכמויות ובמספרים קטנים: לפני הספירה או החישוב בקשו מהילד לומר בערך כמה יש, ואז לבדוק יחד אם ההשערה הייתה קרובה.",
+              "Early estimation with small quantities and numbers, making an approximate guess before counting or calculating and checking closeness. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו באומדן פשוט: האם המספר או התשובה נראים בערך מתאימים.",
+              "This week, focus on: Early estimation with small quantities and numbers, making an approximate guess before counting or calculating and checking closeness.",
             intentDescriptionEn:
               "Early estimation with small quantities and numbers, making an approximate guess before counting or calculating and checking closeness.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל אומדן לפני חישוב במספרים רב ספרתיים. בקשו מהילד לעגל את המספרים בקירוב, לשער מה גודל התשובה, ואז לבדוק אם החישוב הסופי סביר.",
+              "Multi-digit estimation before calculation, using rounded numbers to predict approximate answer size and check reasonableness. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו באומדן לפני חישוב ובבדיקת סבירות של תשובות במספרים רב ספרתיים.",
+              "This week, focus on: Multi-digit estimation before calculation, using rounded numbers to predict approximate answer size and check reasonableness.",
             intentDescriptionEn:
               "Multi-digit estimation before calculation, using rounded numbers to predict approximate answer size and check reasonableness.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל אומדן בתרגילים מורכבים יותר, כולל מספרים גדולים, שברים פשוטים, עשרוניים או אחוזים. לפני הפתרון בקשו מהילד לשער את גודל התשובה ולבדוק בסוף אם היא הגיונית.",
+              "Upper-grade estimation across larger numbers and more complex contexts, including simple fractions, decimals, or percentages, with before-and-after reasonableness checks. Ask your child to explain the steps, not only the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו באומדן ובבדיקת סבירות בתרגילים מורכבים, לפני הפתרון ולאחריו.",
+              "This week, focus on: Upper-grade estimation across larger numbers and more complex contexts, including simple fractions, decimals, or percentages, with before-and-after reasonableness checks.",
             intentDescriptionEn:
               "Upper-grade estimation across larger numbers and more complex contexts, including simple fractions, decimals, or percentages, with before-and-after reasonableness checks.",
           },
@@ -630,17 +630,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הבנת גודל מספרים בעזרת השוואה לכמויות מוכרות: עשרות, מאות או אלפים. בקשו מהילד להסביר האם מספר נראה קטן, בינוני או גדול יחסית לדוגמה שמכירים.",
+              "It helps to practice grade 3–4 number magnitude through comparison to familiar quantities (tens, hundreds, thousands). After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהערכת גודל מספרים רב ספרתיים ובהשוואה לכמויות מוכרות מהחיים.",
+              "This week, focus on grade 3–4 number magnitude through comparison to familiar quantities (tens, hundreds, thousands).",
             intentDescriptionEn:
               "Grade 3–4 number magnitude through comparison to familiar quantities (tens, hundreds, thousands).",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל קריאת מספרים גדולים, עשרוניים או אחוזים תוך שימת לב לסדר הגודל. בקשו מהילד לומר בערך כמה גדול המספר, ולבדוק אם התשובה הסופית מתאימה לסדר גודל זה.",
+              "It helps to practice grade 5–6 order-of-magnitude reasoning with large numbers, decimals, or percentages and answer-size checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת סדר גודל, בקריאה נכונה של מספרים גדולים ובבדיקת סבירות התוצאה.",
+              "This week, focus on grade 5–6 order-of-magnitude reasoning with large numbers, decimals, or percentages and answer-size checks.",
             intentDescriptionEn:
               "Grade 5–6 order-of-magnitude reasoning with large numbers, decimals, or percentages and answer-size checks.",
           },
@@ -653,17 +653,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי מספרים ראשוניים ופריקים במספרים קטנים: לבדוק אם למספר יש בדיוק שני גורמים (1 והמספר עצמו) או יותר. בקשו מהילד להסביר איך יודעים.",
+              "It helps to practice grade 3–4 prime vs composite in a small range using factor-count reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבחנה בין מספר ראשוני לפריק במספרים קטנים, עם הסבר לפי גורמים.",
+              "This week, focus on grade 3–4 prime vs composite in a small range using factor-count reasoning.",
             intentDescriptionEn:
               "Grade 3–4 prime vs composite in a small range using factor-count reasoning.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל פירוק לגורמים ראשוניים וזיהוי מספרים ראשוניים במספרים גדולים יותר. בקשו מהילד לכתוב את הפירוק ולהסביר למה מספר הוא ראשוני או פריק.",
+              "It helps to practice grade 5–6 prime factorization and prime/composite classification with written justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בפירוק לגורמים ראשוניים ובהסבר מדוע מספר הוא ראשוני או פריק.",
+              "This week, focus on grade 5–6 prime factorization and prime/composite classification with written justification.",
             intentDescriptionEn:
               "Grade 5–6 prime factorization and prime/composite classification with written justification.",
           },
@@ -676,17 +676,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מה קורה כשמחברים, מחסירים, מכפילים או מחלקים ב-0 או ב-1. בקשו מהילד לומר את הכלל בכל פעם: \"כפל ב-1 לא משנה\", \"חיבור עם 0 לא משנה\", \"אי אפשר לחלק ב-0\".",
+              "It helps to practice grade 3–4 special properties of 0 and 1 in basic operations with verbal rules. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בכללי 0 ו-1 בפעולות בסיסיות ובהסבר מילולי של כל כלל.",
+              "This week, focus on grade 3–4 special properties of 0 and 1 in basic operations with verbal rules.",
             intentDescriptionEn:
               "Grade 3–4 special properties of 0 and 1 in basic operations with verbal rules.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל תכונות מיוחדות של 0 ו-1 גם בהקשרים מורכבים יותר, כמו שברים, עשרוניים או ביטויים ארוכים. בקשו מהילד לזהות מתי 0 או 1 משנים את התוצאה ומתי לא.",
+              "It helps to practice grade 5–6 zero/one identity and annihilator properties in richer numeric contexts. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי השפעת 0 ו-1 על תוצאות בתרגילים מורכבים יותר.",
+              "This week, focus on grade 5–6 zero/one identity and annihilator properties in richer numeric contexts.",
             intentDescriptionEn:
               "Grade 5–6 zero/one identity and annihilator properties in richer numeric contexts.",
           },
@@ -726,17 +726,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי והשוואת זוויות בעזרת ציור ברור או פינה ישרה. בקשו מהילד להסביר אם הזווית קטנה, שווה או גדולה מזווית ישרה, ולסמן את הזווית שעליה הוא מסתכל.",
+              "It helps to practice grade 3–4 angle recognition and comparison using a clear drawing and right-angle benchmark. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי זוויות ובהשוואה שלהן לזווית ישרה, תוך סימון ברור של הזווית בציור.",
+              "This week, focus on grade 3–4 angle recognition and comparison using a clear drawing and right-angle benchmark.",
             intentDescriptionEn:
               "Grade 3–4 angle recognition and comparison using a clear drawing and right-angle benchmark.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מדידה והערכת גודל של זוויות, כולל שימוש נכון במד זווית כאשר הוא נדרש. בקשו מהילד להסביר מאיפה מתחילים למדוד, איזה קו הוא קו הבסיס, והאם התוצאה הגיונית לפי סוג הזווית.",
+              "It helps to practice grade 5–6 angle measurement and estimation, including correct protractor use and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במדידת זוויות, באומדן גודל הזווית ובבדיקת סבירות המדידה לפי סוג הזווית.",
+              "This week, focus on grade 5–6 angle measurement and estimation, including correct protractor use and reasonableness checks.",
             intentDescriptionEn:
               "Grade 5–6 angle measurement and estimation, including correct protractor use and reasonableness checks.",
           },
@@ -750,17 +750,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי חלקי המעגל בעזרת ציור ברור: מרכז, רדיוס וקוטר. בקשו מהילד לסמן כל חלק בציור ולהסביר מה הקשר שלו למעגל.",
+              "It helps to practice grade 3–4 circle parts: center, radius, diameter, and explaining their role in a clear diagram. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מרכז, רדיוס וקוטר במעגל ובהסבר התפקיד של כל חלק בציור.",
+              "This week, focus on grade 3–4 circle parts: center, radius, diameter, and explaining their role in a clear diagram.",
             intentDescriptionEn:
               "Grade 3–4 circle parts: center, radius, diameter, and explaining their role in a clear diagram.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל קשרים בין רדיוס, קוטר ומדידות במעגל. בקשו מהילד לסמן את הנתונים בציור, להסביר איזה גודל חסר, ולבדוק שהתשובה מתאימה לקשר בין רדיוס לקוטר.",
+              "It helps to practice grade 5–6 circle relationships involving radius, diameter, measurements, diagram marking, and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקשרים בין רדיוס, קוטר ומדידות במעגל, עם סימון נתונים ובדיקת סבירות.",
+              "This week, focus on grade 5–6 circle relationships involving radius, diameter, measurements, diagram marking, and reasonableness checks.",
             intentDescriptionEn:
               "Grade 5–6 circle relationships involving radius, diameter, measurements, diagram marking, and reasonableness checks.",
           },
@@ -792,25 +792,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         transformations: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל הזזה, שיקוף או סיבוב של צורה בעזרת חפץ, ציור או משבצות. בקשו מהילד לבדוק שהצורה עצמה לא השתנתה, אלא רק המקום או הכיוון שלה.",
+              "It helps to practice grade 1–2 concrete transformations: slide, flip, or turn a shape while preserving the shape. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי שינוי מקום או כיוון של צורה, בלי לשנות את הצורה עצמה.",
+              "This week, focus on grade 1–2 concrete transformations: slide, flip, or turn a shape while preserving the shape.",
             intentDescriptionEn:
               "Grade 1–2 concrete transformations: slide, flip, or turn a shape while preserving the shape.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הזזה, שיקוף וסיבוב על רשת משבצות. בקשו מהילד לתאר מה קרה לצורה: לאן זזה, סביב מה הסתובבה, או ביחס לאיזה קו השתקפה.",
+              "It helps to practice grade 3–4 transformations on a grid: translation, reflection, rotation, and describing what changed. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתיאור טרנספורמציות של צורות על רשת: הזזה, שיקוף וסיבוב.",
+              "This week, focus on grade 3–4 transformations on a grid: translation, reflection, rotation, and describing what changed.",
             intentDescriptionEn:
               "Grade 3–4 transformations on a grid: translation, reflection, rotation, and describing what changed.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל תיאור מדויק של טרנספורמציות, כולל כיוון, מרחק, קו שיקוף או מרכז סיבוב. בקשו מהילד להשוות בין הצורה המקורית לתמונה שלה ולנמק מה נשמר ומה השתנה.",
+              "It helps to practice grade 5–6 precise transformation descriptions including direction, distance, reflection line, rotation center, and invariants. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתיאור מדויק של טרנספורמציות ובהשוואה בין הצורה המקורית לתמונה שלה.",
+              "This week, focus on grade 5–6 precise transformation descriptions including direction, distance, reflection line, rotation center, and invariants.",
             intentDescriptionEn:
               "Grade 5–6 precise transformation descriptions including direction, distance, reflection line, rotation center, and invariants.",
           },
@@ -818,25 +818,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         rotation: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל סיבוב של צורה בעזרת חפץ או ציור. בקשו מהילד להראות איך הצורה נראית אחרי סיבוב קטן או חצי סיבוב, ולבדוק שהצורה עצמה נשארה אותה צורה.",
+              "It helps to practice grade 1–2 concrete rotation using objects or drawings, recognizing the same shape after turning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי צורה לפני ואחרי סיבוב, תוך שמירה על אותה צורה.",
+              "This week, focus on grade 1–2 concrete rotation using objects or drawings, recognizing the same shape after turning.",
             intentDescriptionEn:
               "Grade 1–2 concrete rotation using objects or drawings, recognizing the same shape after turning.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל סיבוב של צורה סביב נקודה, למשל רבע סיבוב או חצי סיבוב. בקשו מהילד לסמן את נקודת הסיבוב ולתאר לאיזה כיוון הצורה הסתובבה.",
+              "It helps to practice grade 3–4 rotation around a point, including quarter-turn/half-turn language and direction. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בסיבוב צורות סביב נקודה ובתיאור כיוון וגודל הסיבוב.",
+              "This week, focus on grade 3–4 rotation around a point, including quarter-turn/half-turn language and direction.",
             intentDescriptionEn:
               "Grade 3–4 rotation around a point, including quarter-turn/half-turn language and direction.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל סיבובים מדויקים יותר בעזרת מרכז סיבוב, כיוון וזווית סיבוב. בקשו מהילד לבדוק שכל נקודה בתמונה נמצאת במרחק מתאים ממרכז הסיבוב.",
+              "It helps to practice grade 5–6 precise rotation using center, direction, angle, and point-image consistency. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בסיבוב מדויק של צורות לפי מרכז, כיוון וזווית.",
+              "This week, focus on grade 5–6 precise rotation using center, direction, angle, and point-image consistency.",
             intentDescriptionEn:
               "Grade 5–6 precise rotation using center, direction, angle, and point-image consistency.",
           },
@@ -868,25 +868,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         solids: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל זיהוי גופים בעזרת חפצים מהבית, כמו קובייה, תיבה, גליל או כדור. בקשו מהילד לתאר מה רואים: פאות, קצוות, צורה עגולה או צורה שטוחה.",
+              "It helps to practice grade 1–2 solid recognition using everyday objects and simple spatial language. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי גופים ובהבחנה בין צורות שטוחות לגופים במרחב.",
+              "This week, focus on grade 1–2 solid recognition using everyday objects and simple spatial language.",
             intentDescriptionEn:
               "Grade 1–2 solid recognition using everyday objects and simple spatial language.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי גופים ותיאור התכונות שלהם: פאות, קודקודים, מקצועות וצורת הפאות. בקשו מהילד להסביר לפי אילו סימנים הוא מזהה את הגוף.",
+              "It helps to practice grade 3–4 solid properties: faces, vertices, edges, face shapes, and justification of identification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתיאור גופים לפי פאות, קודקודים, מקצועות וצורת הפאות.",
+              "This week, focus on grade 3–4 solid properties: faces, vertices, edges, face shapes, and justification of identification.",
             intentDescriptionEn:
               "Grade 3–4 solid properties: faces, vertices, edges, face shapes, and justification of identification.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל קשר בין גוף, פריסה ומידות. בקשו מהילד לזהות אילו פאות מרכיבות את הגוף, איך הן מתחברות, ואיך הנתונים בציור קשורים למבנה התלת ממדי.",
+              "It helps to practice grade 5–6 solids, nets, measurements, and connecting 2D representations to 3D structure. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקשר בין גוף, פריסה ומידות, ובהבנת המבנה התלת ממדי מתוך ציור או נתונים.",
+              "This week, focus on grade 5–6 solids, nets, measurements, and connecting 2D representations to 3D structure.",
             intentDescriptionEn:
               "Grade 5–6 solids, nets, measurements, and connecting 2D representations to 3D structure.",
           },
@@ -905,9 +905,9 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל נפח של תיבה או גוף פשוט בעזרת פירוק למידות: אורך, רוחב וגובה. בקשו מהילד להסביר מה מייצגת כל מידה, לבחור יחידות מתאימות, ולבדוק שהתשובה היא ביחידות נפח.",
+              "It helps to practice grade 5–6 volume of simple solids using length, width, height, units, and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחישוב נפח בעזרת אורך, רוחב וגובה, עם הקפדה על יחידות נפח ובדיקת סבירות.",
+              "This week, focus on grade 5–6 volume of simple solids using length, width, height, units, and reasonableness checks.",
             intentDescriptionEn:
               "Grade 5–6 volume of simple solids using length, width, height, units, and reasonableness checks.",
           },
@@ -944,17 +944,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל היקף על ידי סימון כל צלע בציור וחיבור אורכי הצלעות. בקשו מהילד לוודא שלא דילג על צלע, שלא ספר צלע פעמיים, ושכתב יחידת אורך מתאימה.",
+              "It helps to practice grade 3–4 perimeter as sum of side lengths, marking each side and using correct length units. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחישוב היקף על ידי חיבור כל הצלעות ושמירה על יחידות אורך.",
+              "This week, focus on grade 3–4 perimeter as sum of side lengths, marking each side and using correct length units.",
             intentDescriptionEn:
               "Grade 3–4 perimeter as sum of side lengths, marking each side and using correct length units.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל היקף של צורות מורכבות יותר, כולל מציאת צלעות חסרות לפי הנתונים בציור. בקשו מהילד לסמן את כל הצלעות הדרושות, לבדוק יחידות, ולהסביר מדוע כל אורך נכלל בהיקף.",
+              "It helps to practice grade 5–6 perimeter of composite or more complex shapes, missing sides, units, and justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהיקף של צורות מורכבות, מציאת צלעות חסרות ובדיקת יחידות.",
+              "This week, focus on grade 5–6 perimeter of composite or more complex shapes, missing sides, units, and justification.",
             intentDescriptionEn:
               "Grade 5–6 perimeter of composite or more complex shapes, missing sides, units, and justification.",
           },
@@ -986,25 +986,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         symmetry: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל סימטריה בעזרת קיפול נייר או ציור פשוט. בקשו מהילד לבדוק אם שני הצדדים נראים כמו תמונת מראה זה של זה.",
+              "It helps to practice grade 1–2 symmetry through folding, mirror-like matching, and simple visual comparison. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי סימטריה בעזרת קיפול או השוואה בין שני צדדים של צורה.",
+              "This week, focus on grade 1–2 symmetry through folding, mirror-like matching, and simple visual comparison.",
             intentDescriptionEn:
               "Grade 1–2 symmetry through folding, mirror-like matching, and simple visual comparison.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי קו סימטריה והשלמת חצי חסר של צורה. בקשו מהילד לבדוק שכל נקודה בצד אחד מתאימה לנקודה בצד השני באותו מרחק מקו הסימטריה.",
+              "It helps to practice grade 3–4 symmetry lines and completing shapes using equal distance from the line of symmetry. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי קווי סימטריה ובהשלמת צורות לפי מרחק שווה מקו הסימטריה.",
+              "This week, focus on grade 3–4 symmetry lines and completing shapes using equal distance from the line of symmetry.",
             intentDescriptionEn:
               "Grade 3–4 symmetry lines and completing shapes using equal distance from the line of symmetry.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל סימטריה בצורות מורכבות יותר, כולל בדיקה אם יש יותר מקו סימטריה אחד. בקשו מהילד לנמק מדוע קו מסוים הוא קו סימטריה או מדוע הוא אינו מתאים.",
+              "It helps to practice grade 5–6 symmetry in more complex shapes, multiple symmetry lines, and justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בנימוק קווי סימטריה בצורות מורכבות ובבדיקה אם קיימים כמה קווי סימטריה.",
+              "This week, focus on grade 5–6 symmetry in more complex shapes, multiple symmetry lines, and justification.",
             intentDescriptionEn:
               "Grade 5–6 symmetry in more complex shapes, multiple symmetry lines, and justification.",
           },
@@ -1036,25 +1036,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         shapes_basic: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל זיהוי צורות בסיסיות בעזרת ציור או חפצים מוכרים. בקשו מהילד לומר את שם הצורה ולהסביר לפי סימן אחד ברור, למשל מספר צלעות או פינות.",
+              "It helps to practice grade 1–2 basic shape recognition using familiar objects or drawings, with simple properties such as sides and corners. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי צורות בסיסיות ובהסבר פשוט לפי צלעות, פינות וצורה כללית.",
+              "This week, focus on grade 1–2 basic shape recognition using familiar objects or drawings, with simple properties such as sides and corners.",
             intentDescriptionEn:
               "Grade 1–2 basic shape recognition using familiar objects or drawings, with simple properties such as sides and corners.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מיון צורות לפי תכונות ברורות: מספר צלעות, מספר קודקודים, צלעות שוות או זוויות ישרות. בקשו מהילד להסביר לפי איזו תכונה הוא שייך כל צורה לקבוצה.",
+              "It helps to practice grade 3–4 shape classification by clear geometric properties such as sides, vertices, equal sides, and right angles. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במיון צורות לפי תכונות גאומטריות ברורות ובהסבר הבחירה.",
+              "This week, focus on grade 3–4 shape classification by clear geometric properties such as sides, vertices, equal sides, and right angles.",
             intentDescriptionEn:
               "Grade 3–4 shape classification by clear geometric properties such as sides, vertices, equal sides, and right angles.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל ניתוח תכונות של צורות והשוואה בין משפחות של צורות. בקשו מהילד לנמק אילו תכונות משותפות לצורות ואילו תכונות מבדילות ביניהן.",
+              "It helps to practice grade 5–6 analysis and comparison of shape properties and relationships between shape families. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואת צורות לפי תכונות ובנימוק הקשר בין משפחות של צורות.",
+              "This week, focus on grade 5–6 analysis and comparison of shape properties and relationships between shape families.",
             intentDescriptionEn:
               "Grade 5–6 analysis and comparison of shape properties and relationships between shape families.",
           },
@@ -1068,17 +1068,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי מרובעים לפי תכונות: ארבע צלעות, צלעות נגדיות, זוויות ישרות וצלעות שוות. בקשו מהילד להסביר איזו תכונה עזרה לו לזהות את סוג המרובע.",
+              "It helps to practice grade 3–4 quadrilateral identification using properties such as four sides, opposite sides, right angles, and equal sides. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מרובעים לפי תכונות ולא רק לפי המראה הכללי של הצורה.",
+              "This week, focus on grade 3–4 quadrilateral identification using properties such as four sides, opposite sides, right angles, and equal sides.",
             intentDescriptionEn:
               "Grade 3–4 quadrilateral identification using properties such as four sides, opposite sides, right angles, and equal sides.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואה בין סוגי מרובעים לפי תכונות מדויקות, כמו מקבילות, שוויון צלעות, זוויות ואלכסונים. בקשו מהילד לנמק מדוע צורה שייכת למשפחה מסוימת של מרובעים.",
+              "It helps to practice grade 5–6 quadrilateral classification and relationships using parallelism, equal sides, angles, diagonals, and justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקשרים בין משפחות מרובעים ובהוכחת הסיווג לפי תכונות מדויקות.",
+              "This week, focus on grade 5–6 quadrilateral classification and relationships using parallelism, equal sides, angles, diagonals, and justification.",
             intentDescriptionEn:
               "Grade 5–6 quadrilateral classification and relationships using parallelism, equal sides, angles, diagonals, and justification.",
           },
@@ -1091,17 +1091,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי ישרים מקבילים ומאונכים בעזרת ציור ברור. בקשו מהילד להסביר אם הקווים נפגשים, אם הם יוצרים זווית ישרה, או אם הם שומרים על אותו מרחק.",
+              "It helps to practice grade 3–4 identifying parallel and perpendicular lines using drawings, right angles, intersection, and equal distance. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מקבילים ומאונכים בעזרת ציור והסבר של הקשר בין הקווים.",
+              "This week, focus on grade 3–4 identifying parallel and perpendicular lines using drawings, right angles, intersection, and equal distance.",
             intentDescriptionEn:
               "Grade 3–4 identifying parallel and perpendicular lines using drawings, right angles, intersection, and equal distance.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שימוש במקבילים ומאונכים בתוך צורות, במיוחד במרובעים ובשרטוטים מורכבים יותר. בקשו מהילד לנמק איך היחסים בין הקווים עוזרים לזהות את תכונות הצורה.",
+              "It helps to practice grade 5–6 using parallel and perpendicular relationships inside shapes to justify geometric properties. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשימוש במקבילים ומאונכים כדי להסביר תכונות של צורות.",
+              "This week, focus on grade 5–6 using parallel and perpendicular relationships inside shapes to justify geometric properties.",
             intentDescriptionEn:
               "Grade 5–6 using parallel and perpendicular relationships inside shapes to justify geometric properties.",
           },
@@ -1114,17 +1114,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי אלכסון במצולע: קו שמחבר בין שני קודקודים שאינם סמוכים. בקשו מהילד לסמן אלכסון אחד ולהסביר מדוע הוא אינו צלע.",
+              "It helps to practice grade 3–4 identifying diagonals as segments between non-adjacent vertices and distinguishing them from sides. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי אלכסונים ובהבחנה בינם לבין צלעות.",
+              "This week, focus on grade 3–4 identifying diagonals as segments between non-adjacent vertices and distinguishing them from sides.",
             intentDescriptionEn:
               "Grade 3–4 identifying diagonals as segments between non-adjacent vertices and distinguishing them from sides.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שימוש באלכסונים כדי להבין תכונות של מרובעים, כמו חלוקה למשולשים, שוויון או חצייה. בקשו מהילד להסביר מה האלכסון מגלה על הצורה.",
+              "It helps to practice grade 5–6 using diagonals to reason about quadrilateral properties, triangle decomposition, equality, and bisection. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקשר בין אלכסונים לתכונות של מרובעים.",
+              "This week, focus on grade 5–6 using diagonals to reason about quadrilateral properties, triangle decomposition, equality, and bisection.",
             intentDescriptionEn:
               "Grade 5–6 using diagonals to reason about quadrilateral properties, triangle decomposition, equality, and bisection.",
           },
@@ -1132,25 +1132,25 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         tiling: {
           g1_g2: {
             actionTextHe:
-              "כדאי לתרגל ריצוף בעזרת צורות פשוטות: לבדוק אילו צורות מכסות שטח בלי רווחים ובלי חפיפה. בקשו מהילד להסביר מה קרה כשניסו לסדר את הצורות זו ליד זו.",
+              "It helps to practice grade 1–2 simple tiling with shapes, covering space without gaps or overlaps. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בריצוף פשוט של שטח בעזרת צורות, בלי רווחים ובלי חפיפות.",
+              "This week, focus on grade 1–2 simple tiling with shapes, covering space without gaps or overlaps.",
             intentDescriptionEn:
               "Grade 1–2 simple tiling with shapes, covering space without gaps or overlaps.",
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל ריצוף בעזרת מצולעים ולבדוק אילו תכונות מאפשרות לצורות לכסות שטח בלי רווחים. בקשו מהילד להסביר את הדפוס שנוצר ואת הסיבה שהוא עובד.",
+              "It helps to practice grade 3–4 tiling with polygons, patterns, and explaining why shapes cover a region without gaps. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בריצוף, בדפוסים ובבדיקה מדוע צורות מסוימות מכסות שטח באופן מלא.",
+              "This week, focus on grade 3–4 tiling with polygons, patterns, and explaining why shapes cover a region without gaps.",
             intentDescriptionEn:
               "Grade 3–4 tiling with polygons, patterns, and explaining why shapes cover a region without gaps.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל ניתוח ריצופים ודפוסים גאומטריים לפי זוויות, צלעות וחזרות. בקשו מהילד לנמק מדוע הדפוס ממשיך לכסות את השטח בלי רווחים או חפיפות.",
+              "It helps to practice grade 5–6 analyzing tessellations and geometric patterns using angles, sides, repetition, and justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בניתוח ריצופים לפי תכונות גאומטריות ובנימוק הדפוס החוזר.",
+              "This week, focus on grade 5–6 analyzing tessellations and geometric patterns using angles, sides, repetition, and justification.",
             intentDescriptionEn:
               "Grade 5–6 analyzing tessellations and geometric patterns using angles, sides, repetition, and justification.",
           },
@@ -1188,17 +1188,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מרובעים דרך בסיס, גובה ושרטוט מסודר. בקשו מהילד לסמן את הצלע שאליה מתייחסים ואת הגובה המתאים, ולהסביר מדוע הגובה חייב להיות מאונך לבסיס.",
+              "It helps to practice grade 3–4 quadrilateral reasoning with base, height, and the perpendicular relationship between them. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי בסיס וגובה במרובעים ובהבנה שהגובה מאונך לבסיס.",
+              "This week, focus on grade 3–4 quadrilateral reasoning with base, height, and the perpendicular relationship between them.",
             intentDescriptionEn:
               "Grade 3–4 quadrilateral reasoning with base, height, and the perpendicular relationship between them.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל חישובי שטח במרובעים תוך התאמת הנוסחה לצורה ולנתונים. בקשו מהילד לסמן בסיס וגובה, לבדוק שהם מתאימים זה לזה, ולהסביר למה הנוסחה שבחר מתאימה לצורה.",
+              "It helps to practice grade 5–6 quadrilateral area reasoning using matched base-height pairs and selecting the appropriate formula. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשטחי מרובעים, בהתאמת בסיס וגובה ובבחירת נוסחה מתאימה לפי הצורה.",
+              "This week, focus on grade 5–6 quadrilateral area reasoning using matched base-height pairs and selecting the appropriate formula.",
             intentDescriptionEn:
               "Grade 5–6 quadrilateral area reasoning using matched base-height pairs and selecting the appropriate formula.",
           },
@@ -1211,17 +1211,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי גובה בצורות בעזרת סימון בסיס וגובה בציור. בקשו מהילד לבדוק שהגובה יורד אל הבסיס בזווית ישרה ולא סתם מחבר שתי נקודות בציור.",
+              "It helps to practice grade 3–4 identifying height as a perpendicular segment to a base, not just any segment in the diagram. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי גובה כקטע מאונך לבסיס בתוך שרטוט גאומטרי.",
+              "This week, focus on grade 3–4 identifying height as a perpendicular segment to a base, not just any segment in the diagram.",
             intentDescriptionEn:
               "Grade 3–4 identifying height as a perpendicular segment to a base, not just any segment in the diagram.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שימוש בגובה בחישובי שטח, במיוחד כאשר הצורה משורטטת בצורה לא רגילה. בקשו מהילד לסמן בסיס וגובה מתאימים ולבדוק שהנתונים שבחר באמת שייכים לאותה נוסחה.",
+              "It helps to practice grade 5–6 using height correctly in area calculations, matching base and height even in non-standard diagrams. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתאמת גובה לבסיס ובשימוש נכון בהם בחישובי שטח.",
+              "This week, focus on grade 5–6 using height correctly in area calculations, matching base and height even in non-standard diagrams.",
             intentDescriptionEn:
               "Grade 5–6 using height correctly in area calculations, matching base and height even in non-standard diagrams.",
           },
@@ -1234,17 +1234,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל שטח בעזרת כיסוי משבצות או פירוק הצורה לחלקים פשוטים. בקשו מהילד להסביר מה בדיוק סופרים או מודדים, ולבדוק שלא בלבל בין שטח להיקף.",
+              "It helps to practice grade 3–4 area as covering a region, using grid squares or decomposition, and distinguishing area from perimeter. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת שטח ככיסוי של אזור ובהבחנה בין שטח להיקף.",
+              "This week, focus on grade 3–4 area as covering a region, using grid squares or decomposition, and distinguishing area from perimeter.",
             intentDescriptionEn:
               "Grade 3–4 area as covering a region, using grid squares or decomposition, and distinguishing area from perimeter.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל חישובי שטח בצורות מורכבות בעזרת פירוק והרכבה. בקשו מהילד להסביר אילו חלקים חישב, באיזו נוסחה השתמש לכל חלק, ואיך חיבר את התוצאות.",
+              "It helps to practice grade 5–6 area of composite shapes using decomposition, appropriate formulas, and reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחישוב שטחים בצורות מורכבות בעזרת פירוק, נוסחאות מתאימות ובדיקת סבירות.",
+              "This week, focus on grade 5–6 area of composite shapes using decomposition, appropriate formulas, and reasonableness checks.",
             intentDescriptionEn:
               "Grade 5–6 area of composite shapes using decomposition, appropriate formulas, and reasonableness checks.",
           },
@@ -1287,9 +1287,9 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שימוש בנוסחאות שטח תוך התאמת הנוסחה לצורה ולנתונים. בקשו מהילד לסמן את הנתונים בציור, להציב אותם בנוסחה בצורה מסודרת, ולבדוק שהיחידות הן יחידות שטח.",
+              "It helps to practice grade 5–6 formula-based area reasoning: choose the correct formula, substitute values, and check square units. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בבחירת נוסחת שטח מתאימה, הצבת נתונים מסודרת ובדיקת יחידות שטח.",
+              "This week, focus on grade 5–6 formula-based area reasoning: choose the correct formula, substitute values, and check square units.",
             intentDescriptionEn:
               "Grade 5–6 formula-based area reasoning: choose the correct formula, substitute values, and check square units.",
           },
@@ -1303,17 +1303,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי תכונות של משולשים, כמו מספר צלעות, קודקודים וזוויות, והשוואה בין סוגי משולשים פשוטים. בקשו מהילד לנמק לפי איזו תכונה הוא מזהה את המשולש.",
+              "It helps to practice grade 3–4 triangle identification and comparison using clear properties such as sides, vertices, and angles. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי משולשים והשוואה ביניהם לפי תכונות ברורות.",
+              "This week, focus on grade 3–4 triangle identification and comparison using clear properties such as sides, vertices, and angles.",
             intentDescriptionEn:
               "Grade 3–4 triangle identification and comparison using clear properties such as sides, vertices, and angles.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שטח משולש בעזרת בסיס וגובה, ולהבין מדוע מחלקים את מכפלת הבסיס והגובה ב 2. בקשו מהילד לסמן בסיס וגובה מתאימים ולבדוק שהגובה מאונך לבסיס.",
+              "It helps to practice grade 5–6 triangle area using base and height, understanding the divide-by-two relationship to rectangles/parallelograms. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשטח משולש, התאמת בסיס וגובה והבנת הקשר לשטח מלבן או מקבילית.",
+              "This week, focus on grade 5–6 triangle area using base and height, understanding the divide-by-two relationship to rectangles/parallelograms.",
             intentDescriptionEn:
               "Grade 5–6 triangle area using base and height, understanding the divide-by-two relationship to rectangles/parallelograms.",
           },
@@ -1331,9 +1331,9 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל את משפט פיתגורס רק במשולשים ישרי זווית. בקשו מהילד לזהות קודם את הזווית הישרה, לסמן את היתר ואת הניצבים, ואז להציב בזהירות בנוסחה ולבדוק שהתוצאה הגיונית.",
+              "It helps to practice grade 5–6 Pythagoras only in right triangles: identify right angle, hypotenuse, legs, substitute carefully, and check reasonableness. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי משולש ישר זווית, סימון היתר והניצבים, ושימוש מסודר במשפט פיתגורס.",
+              "This week, focus on grade 5–6 Pythagoras only in right triangles: identify right angle, hypotenuse, legs, substitute carefully, and check reasonableness.",
             intentDescriptionEn:
               "Grade 5–6 Pythagoras only in right triangles: identify right angle, hypotenuse, legs, substitute carefully, and check reasonableness.",
           },
@@ -1373,17 +1373,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל איתור מידע מפורש בטקסט בעזרת כותרת, פסקה או מילת מפתח. בקשו מהילד לסמן את המשפט שבו מצא את התשובה ולהסביר איך ידע שזה המקום הנכון.",
+              "It helps to practice grade 3–4 locating explicit information in a text using title, paragraph, or keyword cues, and pointing to the exact sentence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו באיתור תשובות מפורשות בטקסט ובסימון המקום המדויק שממנו נלקחה התשובה.",
+              "This week, focus on grade 3–4 locating explicit information in a text using title, paragraph, or keyword cues, and pointing to the exact sentence.",
             intentDescriptionEn:
               "Grade 3–4 locating explicit information in a text using title, paragraph, or keyword cues, and pointing to the exact sentence.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל איתור מידע בטקסט תוך שימוש בראיות מתוך הכתוב. בקשו מהילד להראות באיזה משפט או פסקה נמצאת התשובה, ולהסביר האם זו עובדה שמופיעה בטקסט או מסקנה שהוא הסיק.",
+              "It helps to practice grade 5–6 locating textual evidence and distinguishing explicit information from an inference. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במציאת ראיות מתוך הטקסט ובהבחנה בין מידע שמופיע במפורש לבין מסקנה מתוך הכתוב.",
+              "This week, focus on grade 5–6 locating textual evidence and distinguishing explicit information from an inference.",
             intentDescriptionEn:
               "Grade 5–6 locating textual evidence and distinguishing explicit information from an inference.",
           },
@@ -1397,17 +1397,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הבנת קטע קצר על ידי קריאה לפי סדר האירועים או הרעיונות. אחרי הקריאה בקשו מהילד לומר מה קרה קודם, מה קרה אחר כך, ואיפה בטקסט הוא מצא את זה.",
+              "It helps to practice grade 3–4 comprehension through sequence of events/ideas and returning to the text for support. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת רצף הדברים בטקסט ובחזרה אל המשפטים שמוכיחים את התשובה.",
+              "This week, focus on grade 3–4 comprehension through sequence of events/ideas and returning to the text for support.",
             intentDescriptionEn:
               "Grade 3–4 comprehension through sequence of events/ideas and returning to the text for support.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הבנת טקסט בעזרת חיבור בין פרטים ממקומות שונים בקטע. בקשו מהילד להסביר אילו פרטים בטקסט תומכים בתשובה שלו, ולא להסתפק בתחושה כללית.",
+              "It helps to practice grade 5–6 comprehension by connecting details across the text and supporting answers with textual evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בחיבור בין פרטים בטקסט ובהסבר תשובה בעזרת ראיות מהכתוב.",
+              "This week, focus on grade 5–6 comprehension by connecting details across the text and supporting answers with textual evidence.",
             intentDescriptionEn:
               "Grade 5–6 comprehension by connecting details across the text and supporting answers with textual evidence.",
           },
@@ -1445,17 +1445,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זוגות מילים שנשמעות דומה או זהות, אבל נכתבות אחרת או בעלות משמעות שונה. בקשו מהילד לקרוא שני משפטים קצרים, לבחור את המילה הנכונה לפי ההקשר, ולהסביר למה.",
+              "It helps to practice grade 3–4 homophone disambiguation using minimal sentence pairs and context-based word choice. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבחנה בין מילים דומות לפי משמעות המשפט, לא רק לפי הצליל.",
+              "This week, focus on grade 3–4 homophone disambiguation using minimal sentence pairs and context-based word choice.",
             intentDescriptionEn:
               "Grade 3–4 homophone disambiguation using minimal sentence pairs and context-based word choice.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הומופונים ומילים שנשמעות דומה בטקסטים קצרים. בקשו מהילד לזהות את המילה המתאימה לפי ההקשר, לכתוב את המילה הנכונה, ולהסביר מה היה עלול לבלבל.",
+              "It helps to practice grade 5–6 homophone/context discrimination in short texts with written justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בבחירת המילה הנכונה לפי הקשר, גם כשמילים נשמעות דומה.",
+              "This week, focus on grade 5–6 homophone/context discrimination in short texts with written justification.",
             intentDescriptionEn:
               "Grade 5–6 homophone/context discrimination in short texts with written justification.",
           },
@@ -1490,17 +1490,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל אוצר מילים בעברית דרך קריאת משפטים קצרים והסבר משמעות של מילים מתוך ההקשר. בקשו מהילד לבחור מילה אחת מהטקסט, להסביר אותה במילים שלו, ולכתוב משפט קצר עם אותה מילה.",
+              "It helps to practice grade 3–4 Hebrew vocabulary through short texts, explaining word meaning from context, and using the word in a sentence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהרחבת אוצר מילים בעברית ובהבנת משמעות מילים מתוך משפט או קטע קצר.",
+              "This week, focus on grade 3–4 Hebrew vocabulary through short texts, explaining word meaning from context, and using the word in a sentence.",
             intentDescriptionEn:
               "Grade 3–4 Hebrew vocabulary through short texts, explaining word meaning from context, and using the word in a sentence.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל אוצר מילים בעברית מתוך טקסטים מגוונים. בקשו מהילד לזהות מילים מרכזיות, להסביר את משמעותן לפי ההקשר, ולבדוק אם אותה מילה יכולה לקבל משמעות שונה במשפט אחר.",
+              "It helps to practice grade 5–6 Hebrew vocabulary in context, key words, nuanced meaning, and possible shifts in meaning across contexts. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו באוצר מילים מתוך הקשר, בדיוק משמעות ובהבחנה בין משמעויות אפשריות של אותה מילה.",
+              "This week, focus on grade 5–6 Hebrew vocabulary in context, key words, nuanced meaning, and possible shifts in meaning across contexts.",
             intentDescriptionEn:
               "Grade 5–6 Hebrew vocabulary in context, key words, nuanced meaning, and possible shifts in meaning across contexts.",
           },
@@ -1513,16 +1513,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מילים וביטויים מתוך קטעים קצרים, ולחבר בין משמעות המילה לבין המשפט שבו היא מופיעה. בקשו מהילד להסביר איך הבין את המילה ולא רק לתת תרגום או מילה דומה.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהבנת מילים וביטויים מתוך ההקשר שבו הם מופיעים.",
+              "It helps to practice grade 3–4 mixed Hebrew vocabulary and expressions through sentence context and explanation. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 3–4 mixed Hebrew vocabulary and expressions through sentence context and explanation.",
             intentDescriptionEn:
               "Grade 3–4 mixed Hebrew vocabulary and expressions through sentence context and explanation.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מילים, ביטויים וצירופים מתוך טקסט, תוך הבחנה בין משמעות מילולית למשמעות לפי ההקשר. בקשו מהילד לנמק מה בטקסט עזר לו להבין את הביטוי.",
+              "It helps to practice grade 5–6 mixed vocabulary/expressions in text, including literal vs contextual meaning and evidence from context. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת מילים וביטויים בתוך טקסט ובהסבר לפי ראיות מההקשר.",
+              "This week, focus on grade 5–6 mixed vocabulary/expressions in text, including literal vs contextual meaning and evidence from context.",
             intentDescriptionEn:
               "Grade 5–6 mixed vocabulary/expressions in text, including literal vs contextual meaning and evidence from context.",
           },
@@ -1556,17 +1556,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל דקדוק בסיסי בעברית בתוך משפטים קצרים: התאמה בין שם עצם, פועל ותיאור מתאים. בקשו מהילד לקרוא את כל המשפט ולבדוק אם הצורה שבחר מתאימה למי או למה שמופיע במשפט.",
+              "It helps to practice grade 3–4 basic Hebrew grammar agreement in short sentences: gender, number, and matching the word form to context. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתאמה בסיסית בתוך משפט בעברית: מין, מספר וצורת המילה המתאימה להקשר.",
+              "This week, focus on grade 3–4 basic Hebrew grammar agreement in short sentences: gender, number, and matching the word form to context.",
             intentDescriptionEn:
               "Grade 3–4 basic Hebrew grammar agreement in short sentences: gender, number, and matching the word form to context.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל דקדוק בעברית דרך משפטים מלאים: התאמה במין ובמספר, צורת פועל מתאימה, ושימוש נכון במילות יחס או קישור. בקשו מהילד להסביר לפי מה בחר את הצורה ולבדוק שהמשפט נשמע תקין וברור.",
+              "It helps to practice grade 5–6 Hebrew grammar accuracy in full sentences: agreement, verb form, function words, and sentence clarity. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בדיוק דקדוקי במשפטים בעברית, כולל התאמה, צורת פועל וקשר תקין בין חלקי המשפט.",
+              "This week, focus on grade 5–6 Hebrew grammar accuracy in full sentences: agreement, verb form, function words, and sentence clarity.",
             intentDescriptionEn:
               "Grade 5–6 Hebrew grammar accuracy in full sentences: agreement, verb form, function words, and sentence clarity.",
           },
@@ -1601,16 +1601,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל כתיבת תשובה קצרה וברורה בעברית. בקשו מהילד לפתוח במשפט שמענה בדיוק על השאלה, להוסיף פרט אחד תומך, ולקרוא שוב כדי לבדוק שהמשפט מובן.",
-            goalTextHe: "בשבוע הקרוב התמקדו בכתיבת תשובה קצרה, ברורה ומדויקת לשאלה.",
+              "It helps to practice grade 3–4 Hebrew writing: short clear answer, direct response to the question, one supporting detail, and rereading for clarity. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 3–4 Hebrew writing: short clear answer, direct response to the question, one supporting detail, and rereading for clarity.",
             intentDescriptionEn:
               "Grade 3–4 Hebrew writing: short clear answer, direct response to the question, one supporting detail, and rereading for clarity.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל כתיבה בעברית עם מבנה ברור: משפט פתיחה, הסבר או דוגמה, וסיום שמחזיר לשאלה. בקשו מהילד לבדוק שהרעיונות מסודרים ושכל משפט מוסיף מידע חדש.",
+              "It helps to practice grade 5–6 Hebrew writing with clear structure: opening, explanation/example, organized ideas, and a clear closing. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בארגון כתיבה בעברית: פתיחה, פיתוח רעיון, דוגמה או הסבר, וסיום ברור.",
+              "This week, focus on grade 5–6 Hebrew writing with clear structure: opening, explanation/example, organized ideas, and a clear closing.",
             intentDescriptionEn:
               "Grade 5–6 Hebrew writing with clear structure: opening, explanation/example, organized ideas, and a clear closing.",
           },
@@ -1644,16 +1644,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל ניתוח של משפטים בעברית לפי חלקי המשפט והקשר ביניהם. בקשו מהילד לזהות מי מבצע את הפעולה, מה נאמר עליו, ואיזו מילה מחברת בין הרעיונות במשפט.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהבנת מבנה המשפט בעברית ובקשר בין חלקי המשפט.",
+              "It helps to practice grade 3–4 Hebrew sentence structure: identify the doer/action and how sentence parts connect. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 3–4 Hebrew sentence structure: identify the doer/action and how sentence parts connect.",
             intentDescriptionEn:
               "Grade 3–4 Hebrew sentence structure: identify the doer/action and how sentence parts connect.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מבנים דקדוקיים מורכבים יותר בעברית, כמו קשר בין שורש, תבנית, צורת פועל ומבנה משפט. בקשו מהילד להסביר מה תפקיד כל חלק במשפט ואיך המבנה משפיע על המשמעות.",
+              "It helps to practice grade 5–6 advanced Hebrew grammar/syntax: root-pattern awareness, verb forms, sentence roles, and meaning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בניתוח מבנה משפטים בעברית ובקשר בין צורות מילים, תפקידים ומשמעות.",
+              "This week, focus on grade 5–6 advanced Hebrew grammar/syntax: root-pattern awareness, verb forms, sentence roles, and meaning.",
             intentDescriptionEn:
               "Grade 5–6 advanced Hebrew grammar/syntax: root-pattern awareness, verb forms, sentence roles, and meaning.",
           },
@@ -1687,16 +1687,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הרחבת תשובה כתובה בעברית בעזרת הסבר, דוגמה או נימוק קצר. בקשו מהילד לבדוק שכל משפט קשור לרעיון המרכזי ושאין קפיצה בין רעיונות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בפיתוח תשובה כתובה: רעיון מרכזי, הסבר ודוגמה קצרה.",
+              "It helps to practice grade 3–4 developed Hebrew writing: main idea, explanation, example, and keeping sentences connected. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 3–4 developed Hebrew writing: main idea, explanation, example, and keeping sentences connected.",
             intentDescriptionEn:
               "Grade 3–4 developed Hebrew writing: main idea, explanation, example, and keeping sentences connected.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל כתיבה של פסקה מסודרת בעברית: רעיון מרכזי, נימוק, דוגמה וקישור בין המשפטים. בקשו מהילד לערוך את הכתיבה בסיום ולבדוק שהרצף ברור ומשכנע.",
+              "It helps to practice grade 5–6 higher Hebrew writing: organized paragraph, reasoning, examples, cohesion, and revision. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בכתיבת פסקה מאורגנת בעברית, עם נימוק, דוגמה, קשר בין משפטים ועריכה עצמית.",
+              "This week, focus on grade 5–6 higher Hebrew writing: organized paragraph, reasoning, examples, cohesion, and revision.",
             intentDescriptionEn:
               "Grade 5–6 higher Hebrew writing: organized paragraph, reasoning, examples, cohesion, and revision.",
           },
@@ -1739,9 +1739,9 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל התאמת ניסוח למצב התקשורת: שיחה יומיומית, הצגה בכיתה, תשובה למורה או כתיבה רשמית. בקשו מהילד לבחור ניסוח מתאים יותר להקשר ולהסביר למה הוא מתאים.",
+              "It helps to practice grade 5–6 context-appropriate speaking/register: choosing wording that fits the situation and explaining why. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתאמת ניסוח להקשר: מתי מתאים ניסוח יומיומי ומתי מתאים ניסוח רשמי או מדויק יותר.",
+              "This week, focus on grade 5–6 context-appropriate speaking/register: choosing wording that fits the situation and explaining why.",
             intentDescriptionEn:
               "Grade 5–6 context-appropriate speaking/register: choosing wording that fits the situation and explaining why.",
           },
@@ -1778,17 +1778,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל אוצר מילים באנגלית דרך התאמה בין מילה, תמונה או משמעות קצרה. בקשו מהילד לומר את המילה בקול, להסביר את המשמעות בעברית, ולזהות אותה שוב בתוך תרגיל קצר.",
+              "It helps to practice grade 3–4 English vocabulary recognition through word-picture/meaning matching and simple reuse. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מילים מוכרות באנגלית ובהבנת המשמעות שלהן בהקשר פשוט.",
+              "This week, focus on grade 3–4 English vocabulary recognition through word-picture/meaning matching and simple reuse.",
             intentDescriptionEn:
               "Grade 3–4 English vocabulary recognition through word-picture/meaning matching and simple reuse.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל אוצר מילים באנגלית לפי נושאים ולפי הופעה בטקסט. בקשו מהילד לכתוב לכל מילה משמעות בעברית ודוגמה קצרה באנגלית, ואז לבדוק אם הוא מזהה את אותה מילה גם במשפט חדש.",
+              "It helps to practice grade 5–6 English vocabulary expansion by topic and text use, with example sentences and recognition in new contexts. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהרחבת אוצר מילים באנגלית ובהבנת מילים חדשות גם כשהן מופיעות במשפט או קטע קצר.",
+              "This week, focus on grade 5–6 English vocabulary expansion by topic and text use, with example sentences and recognition in new contexts.",
             intentDescriptionEn:
               "Grade 5–6 English vocabulary expansion by topic and text use, with example sentences and recognition in new contexts.",
           },
@@ -1822,17 +1822,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מבנים בסיסיים באנגלית בתוך משפטים קצרים, כמו התאמה בין מי שעושה את הפעולה לבין צורת הפועל. בקשו מהילד לקרוא את כל המשפט ולבדוק אם המילה שבחר מתאימה לנושא המשפט.",
+              "It helps to practice grade 3–4 basic English grammar agreement inside short sentences, matching the subject with the correct verb/form. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתאמה בסיסית בתוך משפט באנגלית: מי מבצע את הפעולה ואיזו צורה מתאימה לו.",
+              "This week, focus on grade 3–4 basic English grammar agreement inside short sentences, matching the subject with the correct verb/form.",
             intentDescriptionEn:
               "Grade 3–4 basic English grammar agreement inside short sentences, matching the subject with the correct verb/form.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל דקדוק באנגלית דרך משפטים מלאים: זמן הפעולה, מי מבצע אותה, ואיזו צורת פועל מתאימה. בקשו מהילד להסביר לפי מה בחר את הצורה, ואז לקרוא את המשפט שוב ולבדוק שהוא נשמע נכון ומשמעותי.",
+              "It helps to practice grade 5–6 English grammar with tense, subject, and verb-form agreement in full sentences. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתאמת זמן, נושא וצורת פועל במשפטים באנגלית, עם בדיקה חוזרת של משמעות המשפט.",
+              "This week, focus on grade 5–6 English grammar with tense, subject, and verb-form agreement in full sentences.",
             intentDescriptionEn:
               "Grade 5–6 English grammar with tense, subject, and verb-form agreement in full sentences.",
           },
@@ -1870,17 +1870,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאה מדויקת של טקסט באנגלית על ידי מעקב מסודר אחרי שורה אחת בכל פעם. בקשו מהילד לסמן באצבע או בעיפרון את השורה שהוא קורא, ואז לבדוק שלא דילג לשורה אחרת לפני שענה.",
+              "It helps to practice grade 3–4 English reading layout support: track one line at a time and avoid jumping between lines. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במעקב מסודר אחרי שורות בטקסט באנגלית ובבדיקה שהתשובה נלקחה מהמקום הנכון.",
+              "This week, focus on grade 3–4 English reading layout support: track one line at a time and avoid jumping between lines.",
             intentDescriptionEn:
               "Grade 3–4 English reading layout support: track one line at a time and avoid jumping between lines.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל קריאה של קטעים באנגלית תוך מעקב מדויק אחרי שורות, פסקאות או טורים. בקשו מהילד לעצור לפני תשובה, להראות מאיזו שורה או פסקה לקח את המידע, ולוודא שלא ערבב בין חלקים שונים בטקסט.",
+              "It helps to practice grade 5–6 English reading layout and evidence tracking across lines, paragraphs, or columns. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאה מדויקת של טקסטים באנגלית ובקישור כל תשובה לשורה או פסקה מתאימה.",
+              "This week, focus on grade 5–6 English reading layout and evidence tracking across lines, paragraphs, or columns.",
             intentDescriptionEn:
               "Grade 5–6 English reading layout and evidence tracking across lines, paragraphs, or columns.",
           },
@@ -1914,16 +1914,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל בניית משפטים קצרים באנגלית לפי סדר מילים ברור. בקשו מהילד לזהות מי או מה מופיע במשפט, מה הפעולה, ואיזו מילה מחברת או משלימה את המשמעות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בסדר מילים בסיסי באנגלית ובבניית משפט קצר וברור.",
+              "It helps to practice grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion.",
             intentDescriptionEn:
               "Grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מבנה משפט באנגלית בעזרת סדר מילים, מילות קישור ומילות יחס. בקשו מהילד להסביר איך כל חלק במשפט תורם למשמעות, ולבדוק שהמשפט ברור ולא רק מתורגם מילה במילה.",
+              "It helps to practice grade 5–6 English sentence structure with word order, connectors, prepositions, and meaning clarity. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במבנה משפט באנגלית: סדר מילים, מילות קישור, מילות יחס ובהירות המשמעות.",
+              "This week, focus on grade 5–6 English sentence structure with word order, connectors, prepositions, and meaning clarity.",
             intentDescriptionEn:
               "Grade 5–6 English sentence structure with word order, connectors, prepositions, and meaning clarity.",
           },
@@ -1957,17 +1957,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל בחירת מילה באנגלית לפי משמעות המשפט, ולא רק לפי תרגום בודד. בקשו מהילד לקרוא את כל המשפט, לזהות מילים שעוזרות להבין את ההקשר, ורק אז לבחור את המילה המתאימה.",
+              "It helps to practice grade 3–4 vocabulary in context: choose a word by reading the whole sentence and using context clues. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת מילה לפי המשפט שבו היא מופיעה ובבחירה שמתאימה להקשר.",
+              "This week, focus on grade 3–4 vocabulary in context: choose a word by reading the whole sentence and using context clues.",
             intentDescriptionEn:
               "Grade 3–4 vocabulary in context: choose a word by reading the whole sentence and using context clues.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מילים באנגלית שהמשמעות שלהן משתנה לפי ההקשר או לפי המילים שמופיעות לידן. בקשו מהילד להסביר למה מילה מסוימת מתאימה למשפט הזה, ולא לבחור רק לפי משמעות מוכרת אחת.",
+              "It helps to practice grade 5–6 vocabulary in context, natural word combinations, and choosing meaning based on sentence/text context. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו באוצר מילים לפי הקשר: משמעות במשפט, צירופי מילים טבעיים ובחירה שמתאימה לטקסט.",
+              "This week, focus on grade 5–6 vocabulary in context, natural word combinations, and choosing meaning based on sentence/text context.",
             intentDescriptionEn:
               "Grade 5–6 vocabulary in context, natural word combinations, and choosing meaning based on sentence/text context.",
           },
@@ -2002,17 +2002,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הבנת משפטים באנגלית לפי כל המשפט, ולא לפי מילה בודדת. בקשו מהילד לזהות מי עושה את הפעולה, מה קורה במשפט, ואיזו מילה עוזרת להבין את המשמעות.",
+              "It helps to practice grade 3–4 English sentence comprehension: understand the whole sentence, identify who does the action, what happens, and context clues. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת משפטים באנגלית לפי משמעות המשפט כולו וזיהוי הרמזים שעוזרים להבין אותו.",
+              "This week, focus on grade 3–4 English sentence comprehension: understand the whole sentence, identify who does the action, what happens, and context clues.",
             intentDescriptionEn:
               "Grade 3–4 English sentence comprehension: understand the whole sentence, identify who does the action, what happens, and context clues.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הבנת משפטים באנגלית מתוך הקשר, כולל הסקת משמעות ממילים סמוכות, כינויים או מילות קישור. בקשו מהילד להסביר מה במשפט עזר לו להגיע לתשובה, ולא להסתפק בתרגום מילה במילה.",
+              "It helps to practice grade 5–6 English sentence inference from context, nearby words, pronouns, connectors, and explaining the reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהסקת משמעות מתוך משפטים באנגלית בעזרת הקשר, רמזים לשוניים והסבר של דרך החשיבה.",
+              "This week, focus on grade 5–6 English sentence inference from context, nearby words, pronouns, connectors, and explaining the reasoning.",
             intentDescriptionEn:
               "Grade 5–6 English sentence inference from context, nearby words, pronouns, connectors, and explaining the reasoning.",
           },
@@ -2026,17 +2026,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הבנת משפטים באנגלית לפי כל המשפט, ולא לפי מילה בודדת. בקשו מהילד לזהות מי עושה את הפעולה, מה קורה במשפט, ואיזו מילה עוזרת להבין את המשמעות.",
+              "It helps to practice alias of sentences. Grade 3–4 English sentence comprehension: understand the whole sentence, identify who does the action, what happens, and context clues. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת משפטים באנגלית לפי משמעות המשפט כולו וזיהוי הרמזים שעוזרים להבין אותו.",
+              "This week, focus on alias of sentences. Grade 3–4 English sentence comprehension: understand the whole sentence, identify who does the action, what happens, and context clues.",
             intentDescriptionEn:
               "Alias of sentences. Grade 3–4 English sentence comprehension: understand the whole sentence, identify who does the action, what happens, and context clues.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הבנת משפטים באנגלית מתוך הקשר, כולל הסקת משמעות ממילים סמוכות, כינויים או מילות קישור. בקשו מהילד להסביר מה במשפט עזר לו להגיע לתשובה, ולא להסתפק בתרגום מילה במילה.",
+              "It helps to practice alias of sentences. Grade 5–6 English sentence inference from context, nearby words, pronouns, connectors, and explaining the reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהסקת משמעות מתוך משפטים באנגלית בעזרת הקשר, רמזים לשוניים והסבר של דרך החשיבה.",
+              "This week, focus on alias of sentences. Grade 5–6 English sentence inference from context, nearby words, pronouns, connectors, and explaining the reasoning.",
             intentDescriptionEn:
               "Alias of sentences. Grade 5–6 English sentence inference from context, nearby words, pronouns, connectors, and explaining the reasoning.",
           },
@@ -2074,17 +2074,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל איות באנגלית דרך מילים שיש להן דפוס חוזר, למשל אותיות שנשמעות דומה או סיומות שחוזרות בכמה מילים. בקשו מהילד לכתוב כמה מילים מאותה קבוצה ולהסביר מה הדפוס המשותף.",
+              "It helps to practice grade 3–4 recurring English spelling patterns through word groups and repeated endings or letter patterns. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי דפוסי איות חוזרים באנגלית ובכתיבה מדויקת של מילים מאותה משפחה.",
+              "This week, focus on grade 3–4 recurring English spelling patterns through word groups and repeated endings or letter patterns.",
             intentDescriptionEn:
               "Grade 3–4 recurring English spelling patterns through word groups and repeated endings or letter patterns.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל דיוק באיות באנגלית בתוך משפטים קצרים או תשובות כתובות. בקשו מהילד לבדוק מילים שחוזרות אצלו עם אותה טעות, לזהות את הדפוס, ולתקן באופן עקבי לפני שמגיש תשובה.",
+              "It helps to practice grade 5–6 spelling consistency in English writing, identifying repeated error patterns and correcting them systematically. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בעקביות באיות באנגלית בתוך כתיבה, בזיהוי טעויות שחוזרות ובתיקון מסודר שלהן.",
+              "This week, focus on grade 5–6 spelling consistency in English writing, identifying repeated error patterns and correcting them systematically.",
             intentDescriptionEn:
               "Grade 5–6 spelling consistency in English writing, identifying repeated error patterns and correcting them systematically.",
           },
@@ -2122,17 +2122,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל הבחנה בין צלילים דומים באנגלית: להקריא לאט שתי מילים, לבקש מהילד לומר מה שונה ביניהן, ואז לחזור על אותו זוג צלילים במילים אחרות.",
+              "It helps to practice grade 3–4 English minimal-pair listening through slow reading and repeated sound pairs in different words. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהאזנה לזוגות צלילים דומים באנגלית ובהבחנה ביניהם במילים שונות.",
+              "This week, focus on grade 3–4 English minimal-pair listening through slow reading and repeated sound pairs in different words.",
             intentDescriptionEn:
               "Grade 3–4 English minimal-pair listening through slow reading and repeated sound pairs in different words.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל האזנה לזוגות צלילים באנגלית גם כשהמילים מופיעות במשפט קצר. בקשו מהילד לזהות איזו מילה שמע, להסביר מה שונה בצליל, ולחזור על ההבחנה בזוג מילים חדש.",
+              "It helps to practice grade 5–6 minimal-pair listening in short English sentences with explicit sound-difference explanation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהאזנה מדויקת לצלילים דומים באנגלית, גם בתוך משפטים קצרים.",
+              "This week, focus on grade 5–6 minimal-pair listening in short English sentences with explicit sound-difference explanation.",
             intentDescriptionEn:
               "Grade 5–6 minimal-pair listening in short English sentences with explicit sound-difference explanation.",
           },
@@ -2172,17 +2172,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מיון בעלי חיים לפי סימנים שאפשר לראות או להסביר, כמו מבנה גוף, סביבת חיים, תזונה או דרך תנועה. בקשו מהילד לומר לפי איזה סימן הוא מיין ולא רק לבחור קבוצה לפי זיכרון.",
+              "It helps to practice grade 3–4 animal classification using observable traits such as body structure, habitat, food, or movement. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במיון בעלי חיים לפי סימנים ברורים ובהסבר הסיבה לשיוך לקבוצה.",
+              "This week, focus on grade 3–4 animal classification using observable traits such as body structure, habitat, food, or movement.",
             intentDescriptionEn:
               "Grade 3–4 animal classification using observable traits such as body structure, habitat, food, or movement.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואה בין קבוצות של בעלי חיים לפי כמה מאפיינים יחד. בקשו מהילד להבחין בין מאפיין של בעל החיים לבין תהליך שהוא עובר, ולהסביר אילו ראיות תומכות במיון שלו.",
+              "It helps to practice grade 5–6 animal classification across multiple traits, distinguishing traits from processes and justifying with evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במיון והשוואה של בעלי חיים לפי כמה מאפיינים, תוך נימוק בעזרת ראיות.",
+              "This week, focus on grade 5–6 animal classification across multiple traits, distinguishing traits from processes and justifying with evidence.",
             intentDescriptionEn:
               "Grade 5–6 animal classification across multiple traits, distinguishing traits from processes and justifying with evidence.",
           },
@@ -2196,17 +2196,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מיון צמחים לפי חלקי הצמח ותפקידיהם, כמו שורש, גבעול, עלים, פרח או פרי. בקשו מהילד להסביר איזה חלק הוא מזהה ומה התפקיד שלו בצמח.",
+              "It helps to practice grade 3–4 plant classification using plant parts and their roles. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי חלקי הצמח, תפקידיהם ומיון צמחים לפי מאפיינים ברורים.",
+              "This week, focus on grade 3–4 plant classification using plant parts and their roles.",
             intentDescriptionEn:
               "Grade 3–4 plant classification using plant parts and their roles.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואה בין צמחים לפי מבנה, תנאי חיים ותהליכים כמו גדילה או רבייה. בקשו מהילד להפריד בין תכונה של הצמח לבין תהליך שמתרחש בו, ולנמק לפי מידע מהמשימה.",
+              "It helps to practice grade 5–6 plant comparison by structure, living conditions, and processes, separating traits from processes. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואת צמחים לפי מבנה, תנאי חיים ותהליכים, עם נימוק מתוך הנתונים.",
+              "This week, focus on grade 5–6 plant comparison by structure, living conditions, and processes, separating traits from processes.",
             intentDescriptionEn:
               "Grade 5–6 plant comparison by structure, living conditions, and processes, separating traits from processes.",
           },
@@ -2220,17 +2220,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מיון תופעות טבע לפי מה שמתארים: גוף שמימי, מזג אוויר, סלעים, מים או שינוי שמתרחש בסביבה. בקשו מהילד להסביר לפי איזה סימן הוא זיהה את הקבוצה.",
+              "It helps to practice grade 3–4 earth/space classification by observable categories such as celestial bodies, weather, rocks, water, or environmental changes. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במיון תופעות טבע לפי סימנים ברורים ובהסבר הבחירה.",
+              "This week, focus on grade 3–4 earth/space classification by observable categories such as celestial bodies, weather, rocks, water, or environmental changes.",
             intentDescriptionEn:
               "Grade 3–4 earth/space classification by observable categories such as celestial bodies, weather, rocks, water, or environmental changes.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הבחנה בין מושגים ותהליכים במדעי כדור הארץ והחלל. בקשו מהילד להסביר אם מדובר בעצם, בתופעה או בתהליך, ולהשתמש בנתונים מהשאלה כדי לנמק.",
+              "It helps to practice grade 5–6 earth/space reasoning by distinguishing objects, phenomena, and processes using task evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבחנה בין עצמים, תופעות ותהליכים במדעי כדור הארץ והחלל, עם נימוק לפי נתונים.",
+              "This week, focus on grade 5–6 earth/space reasoning by distinguishing objects, phenomena, and processes using task evidence.",
             intentDescriptionEn:
               "Grade 5–6 earth/space reasoning by distinguishing objects, phenomena, and processes using task evidence.",
           },
@@ -2244,17 +2244,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מיון מושגים במדעים לפי סימן ברור: מה זה, למה הוא שייך, ומה מאפיין אותו. בקשו מהילד להסביר את המיון במילים שלו ולבדוק אם יש פרט בשאלה שתומך בתשובה.",
+              "It helps to practice grade 3–4 mixed science classification by clear traits and explanation using evidence from the question. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במיון מושגים במדעים לפי מאפיינים ברורים ובהסבר הבחירה.",
+              "This week, focus on grade 3–4 mixed science classification by clear traits and explanation using evidence from the question.",
             intentDescriptionEn:
               "Grade 3–4 mixed science classification by clear traits and explanation using evidence from the question.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואה בין מושגים ותהליכים במדעים מתחומים שונים. בקשו מהילד לזהות מה המאפיין המרכזי של כל מושג, מה התהליך אם יש כזה, ואילו נתונים עוזרים להחליט.",
+              "It helps to practice grade 5–6 mixed science concept classification across domains, distinguishing concepts, traits, and processes using evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבחנה בין מושגים, מאפיינים ותהליכים במדעים, תוך שימוש בנתונים מהמשימה.",
+              "This week, focus on grade 5–6 mixed science concept classification across domains, distinguishing concepts, traits, and processes using evidence.",
             intentDescriptionEn:
               "Grade 5–6 mixed science concept classification across domains, distinguishing concepts, traits, and processes using evidence.",
           },
@@ -2292,17 +2292,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל ניסוי פשוט שבו משנים רק דבר אחד בכל פעם. בקשו מהילד לומר מה משנים, מה משאירים קבוע, ומה בודקים בסוף הניסוי.",
+              "It helps to practice grade 3–4 fair-test reasoning: change one variable, keep other conditions the same, and observe the result. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת ניסוי הוגן: שינוי גורם אחד, שמירה על שאר התנאים ובדיקת התוצאה.",
+              "This week, focus on grade 3–4 fair-test reasoning: change one variable, keep other conditions the same, and observe the result.",
             intentDescriptionEn:
               "Grade 3–4 fair-test reasoning: change one variable, keep other conditions the same, and observe the result.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל תכנון ניסוי בעזרת טבלה: מה המשתנה שמשנים, מה מודדים, ומה חייב להישאר קבוע כדי שהבדיקה תהיה הוגנת. בקשו מהילד להסביר למה שינוי של כמה דברים יחד מקשה לדעת מה גרם לתוצאה.",
+              "It helps to practice grade 5–6 experiment planning with isolated variables, controlled conditions, measurement, and causal explanation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתכנון ניסוי הוגן: בידוד משתנה, מדידה מסודרת והסבר הקשר בין השינוי לתוצאה.",
+              "This week, focus on grade 5–6 experiment planning with isolated variables, controlled conditions, measurement, and causal explanation.",
             intentDescriptionEn:
               "Grade 5–6 experiment planning with isolated variables, controlled conditions, measurement, and causal explanation.",
           },
@@ -2337,17 +2337,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאת תרשים פשוט של גוף או מערכת בעזרת סימון חלקים וכיוונים. בקשו מהילד להצביע על כל חלק, לומר מה התפקיד שלו, ולהסביר לאן משהו עובר או זורם בתרשים.",
+              "It helps to practice grade 3–4 reading simple body/system diagrams: identify parts, roles, and direction of flow without medical conclusions. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאת תרשימי גוף פשוטים: זיהוי חלקים, תפקידים וכיוון מעבר או זרימה.",
+              "This week, focus on grade 3–4 reading simple body/system diagrams: identify parts, roles, and direction of flow without medical conclusions.",
             intentDescriptionEn:
               "Grade 3–4 reading simple body/system diagrams: identify parts, roles, and direction of flow without medical conclusions.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל תרשימי מערכות בגוף דרך הקשר בין מבנה לתפקיד. בקשו מהילד להסביר מה כל חלק עושה, איך החלקים קשורים זה לזה, ואיך התרשים עוזר להבין את פעולת המערכת.",
+              "It helps to practice grade 5–6 body systems: connect structure to function and explain relationships between parts in a diagram. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת מערכות בגוף דרך תרשים: מבנה, תפקיד וקשר בין חלקים.",
+              "This week, focus on grade 5–6 body systems: connect structure to function and explain relationships between parts in a diagram.",
             intentDescriptionEn:
               "Grade 5–6 body systems: connect structure to function and explain relationships between parts in a diagram.",
           },
@@ -2382,17 +2382,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מצבי צבירה בעזרת ציור או תרשים שמראה מה משתנה ומה נשאר. בקשו מהילד לתאר את החומר לפני ואחרי השינוי, ולבדוק אם מדובר בשינוי מצב ולא בהיעלמות של החומר.",
+              "It helps to practice grade 3–4 states of matter: track what changes and what remains using diagrams and observations. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת מצבי צבירה ובמעקב אחרי החומר לפני ואחרי שינוי.",
+              "This week, focus on grade 3–4 states of matter: track what changes and what remains using diagrams and observations.",
             intentDescriptionEn:
               "Grade 3–4 states of matter: track what changes and what remains using diagrams and observations.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שינויי מצב בחומר בעזרת תרשים חלקיקים או טבלת לפני אחרי. בקשו מהילד להסביר מה השתנה במצב החומר, מה נשמר, ואיך יודעים שהחומר לא נעלם אלא עבר שינוי.",
+              "It helps to practice grade 5–6 matter changes and conservation reasoning using particle diagrams or before/after tables. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשינויי מצב ובשימור החומר, תוך שימוש בתרשים או טבלת נתונים.",
+              "This week, focus on grade 5–6 matter changes and conservation reasoning using particle diagrams or before/after tables.",
             intentDescriptionEn:
               "Grade 5–6 matter changes and conservation reasoning using particle diagrams or before/after tables.",
           },
@@ -2421,16 +2421,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         materials: {
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל המרת יחידות פשוטות - למשל גרם לקילוגרם או מ\"ל לליטר - בעזרת טבלת המרה. בקשו מהילד להסביר איזו יחידה מתאימה למדידה ולמה.",
+              "It helps to practice grade 3–4 unit conversion with reference table and unit choice justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהמרת יחידות בסיסיות ובהסבר הבחירה ביחידה הנכונה.",
+              "This week, focus on grade 3–4 unit conversion with reference table and unit choice justification.",
             intentDescriptionEn: "Grade 3–4 unit conversion with reference table and unit choice justification.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל המרות יחידות במספר שלבים - כתיבה, חישוב והשוואה - ולבקש מהילד לבדוק אם התוצאה הגיונית לפי סדרי הגודל.",
+              "It helps to practice grade 5–6 multi-step unit conversion with reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהמרת יחידות, בדיקת הגיון התוצאה ובהסבר השלבים.",
+              "This week, focus on grade 5–6 multi-step unit conversion with reasonableness checks.",
             intentDescriptionEn: "Grade 5–6 multi-step unit conversion with reasonableness checks.",
           },
         },
@@ -2458,32 +2458,32 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         earth_space: {
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאת ערך מגרף פשוט: מה מסמל כל ציר, איזו נקודה מתאימה לשאלה, ומה הערך שקוראים ממנה.",
+              "It helps to practice grade 3–4 graph reading: axes, point location, value extraction. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאת ערכים מגרף - זיהוי הצירים, הנקודה והערך.",
+              "This week, focus on grade 3–4 graph reading: axes, point location, value extraction.",
             intentDescriptionEn: "Grade 3–4 graph reading: axes, point location, value extraction.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואה בין שני גרפים או בין נקודות על אותו גרף. בקשו מהילד להסביר מה כל ציר מייצג ואיך יודעים איזו נקודה עונה על השאלה.",
+              "It helps to practice grade 5–6 graph comparison and axis-based reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאת והשוואת נתונים מגרפים עם נימוק לפי הצירים.",
+              "This week, focus on grade 5–6 graph comparison and axis-based reasoning.",
             intentDescriptionEn: "Grade 5–6 graph comparison and axis-based reasoning.",
           },
         },
         experiments: {
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאת טבלה או גרף של תוצאות ניסוי. בקשו מהילד לומר מה כל ציר או עמודה מייצגים ואיזה ערך מתאים לשאלה.",
+              "It helps to practice grade 3–4 experiment data table/graph reading. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאת נתונים מטבלה או גרף של ניסוי.",
+              "This week, focus on grade 3–4 experiment data table/graph reading.",
             intentDescriptionEn: "Grade 3–4 experiment data table/graph reading.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל ניתוח גרף של תוצאות ניסוי: מגמה, נקודות חריגות והסבר הקשר בין המשתנה לתוצאה.",
+              "It helps to practice grade 5–6 experiment graph analysis and variable-result link. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בניתוח גרף ניסוי והסבר הקשר בין משתנה לתוצאה.",
+              "This week, focus on grade 5–6 experiment graph analysis and variable-result link.",
             intentDescriptionEn: "Grade 5–6 experiment graph analysis and variable-result link.",
           },
         },
@@ -2511,32 +2511,32 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
         animals: {
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל שאלות שבהן צריך להצביע על מקור מידע - טקסט, תצפית או תרשים. בקשו מהילד לומר \"לפי מה יודעים?\" לפני התשובה.",
+              "It helps to practice grade 3–4 evidence/source grounding for animal-science claims. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בביסוס תשובות על מקור מידע ברור.",
+              "This week, focus on grade 3–4 evidence/source grounding for animal-science claims.",
             intentDescriptionEn: "Grade 3–4 evidence/source grounding for animal-science claims.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הבחנה בין טענה שמבוססת על נתונים לבין ניחוש. בקשו מהילד לצטט את המשפט או הנתון שתומך בתשובה.",
+              "It helps to practice grade 5–6 claim-evidence distinction in science texts. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בביסוס טענות על ראיות מהטקסט או מהנתונים.",
+              "This week, focus on grade 5–6 claim-evidence distinction in science texts.",
             intentDescriptionEn: "Grade 5–6 claim-evidence distinction in science texts.",
           },
         },
         experiments: {
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל שאלות \"מאין יודעים?\" בניסוי - מה נמדד, מה נצפה, ומה כתוב ביומן הניסוי.",
+              "It helps to practice grade 3–4 experiment evidence sourcing from observation/logs. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בביסוס מסקנות על תצפית או רישום בניסוי.",
+              "This week, focus on grade 3–4 experiment evidence sourcing from observation/logs.",
             intentDescriptionEn: "Grade 3–4 experiment evidence sourcing from observation/logs.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל כתיבת מסקנה שמציינת במפורש את הנתון שעליו היא מבוססת. בקשו מהילד להפריד בין \"חושבים\" לבין \"יודעים לפי הנתונים\".",
+              "It helps to practice grade 5–6 data-backed conclusions vs speculation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במסקנות מבוססות נתונים בניסוי.",
+              "This week, focus on grade 5–6 data-backed conclusions vs speculation.",
             intentDescriptionEn: "Grade 5–6 data-backed conclusions vs speculation.",
           },
         },
@@ -2570,17 +2570,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קשרים בסביבה בעזרת שרשרת מזון פשוטה. בקשו מהילד להסביר מי ניזון ממי, מה מראה כל חץ, ואיך יודעים את התשובה לפי התרשים.",
+              "It helps to practice grade 3–4 simple food-chain reasoning: who eats whom, what arrows show, and using diagram evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת קשרים בסביבה דרך שרשרת מזון פשוטה ושימוש בראיות מהתרשים.",
+              "This week, focus on grade 3–4 simple food-chain reasoning: who eats whom, what arrows show, and using diagram evidence.",
             intentDescriptionEn:
               "Grade 3–4 simple food-chain reasoning: who eats whom, what arrows show, and using diagram evidence.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל רשת מזון או מערכת אקולוגית בעזרת תרשים. בקשו מהילד לזהות יצרנים, צרכנים וקשרים בין יצורים, ולהסביר איך שינוי באחד החלקים יכול להשפיע על חלקים אחרים במערכת.",
+              "It helps to practice grade 5–6 ecosystem reasoning with food webs, producers/consumers, energy flow, and system effects. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת מערכות אקולוגיות: קשרים ברשת מזון, זרימת אנרגיה והשפעה של שינוי במערכת.",
+              "This week, focus on grade 5–6 ecosystem reasoning with food webs, producers/consumers, energy flow, and system effects.",
             intentDescriptionEn:
               "Grade 5–6 ecosystem reasoning with food webs, producers/consumers, energy flow, and system effects.",
           },
@@ -2620,17 +2620,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאת קנה מידה במפה בעזרת סרגל או קו קנה מידה. בקשו מהילד להסביר מה מייצג המרחק במפה, להשוות בין שני מרחקים, ולבדוק שהתשובה מתאימה ליחידות במפה.",
+              "It helps to practice grade 3–4 map scale and distance comparison using scale bars, map units, and simple measurement. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאת קנה מידה במפה ובהשוואת מרחקים בעזרת יחידות המפה.",
+              "This week, focus on grade 3–4 map scale and distance comparison using scale bars, map units, and simple measurement.",
             intentDescriptionEn:
               "Grade 3–4 map scale and distance comparison using scale bars, map units, and simple measurement.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל חישוב והשוואת מרחקים במפות שונות בעזרת קנה מידה. בקשו מהילד לזהות את היחידות, להסביר איך המיר מרחק במפה למרחק במציאות, ולבדוק אם התוצאה סבירה.",
+              "It helps to practice grade 5–6 map scale reasoning: convert and compare distances, track units, and check reasonableness. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשימוש בקנה מידה לחישוב מרחקים ובהסבר הקשר בין המפה למציאות.",
+              "This week, focus on grade 5–6 map scale reasoning: convert and compare distances, track units, and check reasonableness.",
             intentDescriptionEn:
               "Grade 5–6 map scale reasoning: convert and compare distances, track units, and check reasonableness.",
           },
@@ -2643,17 +2643,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל השוואת מרחקים בין מקומות במפה, תוך שימוש בקנה מידה או ביחידות שמופיעות במפה. בקשו מהילד להסביר איזה מקום קרוב יותר או רחוק יותר ולפי מה הוא קבע.",
+              "It helps to practice grade 3–4 geography distance comparison between places on a map using scale or map units. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואת מרחקים בין מקומות במפה בעזרת סימנים ויחידות מתאימות.",
+              "This week, focus on grade 3–4 geography distance comparison between places on a map using scale or map units.",
             intentDescriptionEn:
               "Grade 3–4 geography distance comparison between places on a map using scale or map units.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל ניתוח מרחקים ואזורים במפה תוך שילוב קנה מידה, יחידות ונתונים נוספים. בקשו מהילד לנמק את ההשוואה בין מקומות ולהראות באיזה נתון במפה השתמש.",
+              "It helps to practice grade 5–6 geography map-distance reasoning using scale, units, and evidence from the map. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בניתוח מרחקים במפה ובהצגת ראיה מתוך המפה שמסבירה את התשובה.",
+              "This week, focus on grade 5–6 geography map-distance reasoning using scale, units, and evidence from the map.",
             intentDescriptionEn:
               "Grade 5–6 geography map-distance reasoning using scale, units, and evidence from the map.",
           },
@@ -2666,17 +2666,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל שאלות מפה מעורבות שבהן צריך לזהות מרחק, יחידה או סימן במפה. בקשו מהילד לעצור לפני החישוב, לומר איזה נתון במפה חשוב, ורק אז לענות.",
+              "It helps to practice grade 3–4 mixed map questions: identify the relevant map data before solving distance or comparison tasks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי הנתון המתאים במפה לפני פתרון שאלת מרחק או השוואה.",
+              "This week, focus on grade 3–4 mixed map questions: identify the relevant map data before solving distance or comparison tasks.",
             intentDescriptionEn:
               "Grade 3–4 mixed map questions: identify the relevant map data before solving distance or comparison tasks.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל משימות מפה מעורבות שבהן משלבים קנה מידה, מרחקים ונתונים חזותיים. בקשו מהילד להסביר אילו נתונים בחר ולמה הם מספיקים כדי לענות.",
+              "It helps to practice grade 5–6 mixed map reasoning using scale, distances, visual data, and justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בבחירת נתוני מפה מתאימים ובנימוק הדרך לפתרון.",
+              "This week, focus on grade 5–6 mixed map reasoning using scale, distances, visual data, and justification.",
             intentDescriptionEn:
               "Grade 5–6 mixed map reasoning using scale, distances, visual data, and justification.",
           },
@@ -2714,17 +2714,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל כיוונים במפה בעזרת חץ צפון ומפה פשוטה. בקשו מהילד לסמן איפה הצפון, להסביר לאיזה כיוון צריך ללכת, ולבדוק שהמפה לא סובבה את הכיוונים שהוא רגיל אליהם.",
+              "It helps to practice grade 3–4 map orientation using north arrow, direction choice, and rotated map checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשימוש בחץ צפון ובזיהוי כיוונים במפה גם כשהמפה מסובבת.",
+              "This week, focus on grade 3–4 map orientation using north arrow, direction choice, and rotated map checks.",
             intentDescriptionEn:
               "Grade 3–4 map orientation using north arrow, direction choice, and rotated map checks.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל התמצאות במפות שבהן הכיוונים אינם מוצגים בצורה רגילה. בקשו מהילד לזהות את חץ הצפון, להשוות בין כיוון במפה לכיוון במציאות, ולהסביר למה הבחירה שלו נכונה.",
+              "It helps to practice grade 5–6 map orientation with north reference, rotated maps, and spatial justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהתמצאות במפה לפי צפון, כיוונים וייחוס מרחבי ברור.",
+              "This week, focus on grade 5–6 map orientation with north reference, rotated maps, and spatial justification.",
             intentDescriptionEn:
               "Grade 5–6 map orientation with north reference, rotated maps, and spatial justification.",
           },
@@ -2737,17 +2737,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל זיהוי כיוונים בין מקומות במפה בעזרת חץ צפון. בקשו מהילד להסביר אם מקום נמצא צפונה, דרומה, מזרחה או מערבה ביחס למקום אחר.",
+              "It helps to practice grade 3–4 geography orientation: describe relative directions between places using north reference. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי כיוונים בין מקומות במפה בעזרת חץ צפון.",
+              "This week, focus on grade 3–4 geography orientation: describe relative directions between places using north reference.",
             intentDescriptionEn:
               "Grade 3–4 geography orientation: describe relative directions between places using north reference.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואת מיקום וכיוון בין אזורים במפה. בקשו מהילד להשתמש בצפון כנקודת ייחוס, להסביר את היחס בין המקומות, ולבדוק שלא הסתמך רק על ימין ושמאל בדף.",
+              "It helps to practice grade 5–6 geographic orientation using north as a stable reference, not page-left/page-right. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בתיאור כיוונים ומיקומים במפה בעזרת נקודת ייחוס קבועה.",
+              "This week, focus on grade 5–6 geographic orientation using north as a stable reference, not page-left/page-right.",
             intentDescriptionEn:
               "Grade 5–6 geographic orientation using north as a stable reference, not page-left/page-right.",
           },
@@ -2785,17 +2785,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מצבים מחיי היום יום שבהם צריך להבחין בין זכות, חובה או כלל. בקשו מהילד להסביר מה קרה במצב, מי מעורב, ואיזה סימן בטקסט עוזר לו למיין נכון.",
+              "It helps to practice grade 3–4 citizenship reasoning: sort short scenarios into rights, responsibilities, or rules using evidence from the situation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבחנה בין זכויות, חובות וכללים בעזרת דוגמאות קצרות ונימוק מתוך המצב המתואר.",
+              "This week, focus on grade 3–4 citizenship reasoning: sort short scenarios into rights, responsibilities, or rules using evidence from the situation.",
             intentDescriptionEn:
               "Grade 3–4 citizenship reasoning: sort short scenarios into rights, responsibilities, or rules using evidence from the situation.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל מושגים באזרחות דרך תרחישים קצרים והשוואה בין אפשרויות. בקשו מהילד לנמק האם מדובר בזכות, חובה, כלל או אחריות, ולהצביע על פרט מתוך הטקסט שתומך בתשובה.",
+              "It helps to practice grade 5–6 civic concepts through scenario classification, justification, and evidence from text. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו במיון ונימוק של מצבים אזרחיים: זכות, חובה, כלל או אחריות, תוך שימוש בראיות מהטקסט.",
+              "This week, focus on grade 5–6 civic concepts through scenario classification, justification, and evidence from text.",
             intentDescriptionEn:
               "Grade 5–6 civic concepts through scenario classification, justification, and evidence from text.",
           },
@@ -2833,17 +2833,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל סידור אירועים לפי סדר זמן בעזרת תאריכים, מילים כמו לפני ואחרי, או כרטיסיות אירועים. בקשו מהילד להסביר איזה אירוע קרה קודם ומה הראיה לכך.",
+              "It helps to practice grade 3–4 timeline and event order using dates, before/after clues, and evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בסידור אירועים לפי רצף זמן ובהסבר לפי תאריכים או רמזים בטקסט.",
+              "This week, focus on grade 3–4 timeline and event order using dates, before/after clues, and evidence.",
             intentDescriptionEn:
               "Grade 3–4 timeline and event order using dates, before/after clues, and evidence.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל בניית ציר זמן של אירועים ולנמק את הסדר שלהם לפי תאריכים, מקורות או רמזים בטקסט. בקשו מהילד לבדוק אם שינוי בסדר משנה את ההבנה של הסיפור או התהליך.",
+              "It helps to practice grade 5–6 timeline construction, chronological justification, and understanding event relationships. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בבניית ציר זמן, נימוק סדר האירועים ובדיקת הקשר בין האירועים.",
+              "This week, focus on grade 5–6 timeline construction, chronological justification, and understanding event relationships.",
             intentDescriptionEn:
               "Grade 5–6 timeline construction, chronological justification, and understanding event relationships.",
           },
@@ -2880,17 +2880,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאת מפת אקלים או אזורים בעזרת מקרא המפה. בקשו מהילד לזהות צבע או סימן במפה, לבדוק מה הוא אומר במקרא, ולהסביר לפי זה לאיזה אזור המקום שייך.",
+              "It helps to practice grade 3–4 climate/region map reading using map key colors and symbols. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בשימוש במקרא מפה לזיהוי אזורים, צבעים וסימנים גאוגרפיים.",
+              "This week, focus on grade 3–4 climate/region map reading using map key colors and symbols.",
             intentDescriptionEn:
               "Grade 3–4 climate/region map reading using map key colors and symbols.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל השוואה בין אזורים גאוגרפיים בעזרת מפת אקלים, מקרא ונתונים מהטקסט. בקשו מהילד להסביר מה מאפיין כל אזור ולתמוך בתשובה בעזרת סימן או צבע מהמפה.",
+              "It helps to practice grade 5–6 comparing geographic or climate regions using legend, colors, symbols, and evidence from maps/text. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהשוואת אזורים גאוגרפיים בעזרת מקרא, צבעים, סימנים וראיות מהמפה.",
+              "This week, focus on grade 5–6 comparing geographic or climate regions using legend, colors, symbols, and evidence from maps/text.",
             intentDescriptionEn:
               "Grade 5–6 comparing geographic or climate regions using legend, colors, symbols, and evidence from maps/text.",
           },
@@ -2927,17 +2927,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל שאלות של סיבה ותוצאה בעזרת שני הסברים אפשריים. בקשו מהילד לומר מה קרה, מה יכול היה לגרום לכך, ואיזה פרט בטקסט או במפה תומך בהסבר שלו.",
+              "It helps to practice grade 3–4 homeland cause-effect reasoning using two explanations and evidence from text or map. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקישור בין סיבה לתוצאה ובהבאת ראיה מתוך טקסט או מפה.",
+              "This week, focus on grade 3–4 homeland cause-effect reasoning using two explanations and evidence from text or map.",
             intentDescriptionEn:
               "Grade 3–4 homeland cause-effect reasoning using two explanations and evidence from text or map.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל הסבר של תהליכים באוכלוסייה או בהתיישבות בעזרת ראיות. בקשו מהילד להשוות בין שני הסברים, לבחור את ההסבר שמתאים יותר לנתונים, ולנמק בלי להסתמך על דעה כללית.",
+              "It helps to practice grade 5–6 population/settlement cause-effect reasoning using evidence and avoiding unsupported generalizations. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהסבר סיבה ותוצאה בנושאי אוכלוסייה והתיישבות, תוך שימוש בראיות מהנתונים.",
+              "This week, focus on grade 5–6 population/settlement cause-effect reasoning using evidence and avoiding unsupported generalizations.",
             intentDescriptionEn:
               "Grade 5–6 population/settlement cause-effect reasoning using evidence and avoiding unsupported generalizations.",
           },
@@ -2950,17 +2950,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל מצבים חברתיים או קהילתיים שבהם צריך להסביר למה משהו קרה. בקשו מהילד להפריד בין עובדה שמופיעה בטקסט לבין דעה, ולמצוא פרט שתומך בהסבר שלו.",
+              "It helps to practice grade 3–4 values/community reasoning: distinguish fact from opinion and support explanations with evidence. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבחנה בין עובדה לדעה ובהסבר מצבים בעזרת ראיות.",
+              "This week, focus on grade 3–4 values/community reasoning: distinguish fact from opinion and support explanations with evidence.",
             intentDescriptionEn:
               "Grade 3–4 values/community reasoning: distinguish fact from opinion and support explanations with evidence.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל דיון במצבים חברתיים בעזרת ראיות ולא לפי הכללות. בקשו מהילד להסביר מה העובדות הידועות, מה המסקנה שלו, ואיזה פרט תומך בה.",
+              "It helps to practice grade 5–6 values/social reasoning: use evidence carefully and avoid unsupported generalizations. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהסקת מסקנות זהירה במצבים חברתיים, תוך שימוש בעובדות וראיות.",
+              "This week, focus on grade 5–6 values/social reasoning: use evidence carefully and avoid unsupported generalizations.",
             intentDescriptionEn:
               "Grade 5–6 values/social reasoning: use evidence carefully and avoid unsupported generalizations.",
           },
@@ -2998,17 +2998,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל התאמה בין מוסדות בקהילה לבין התפקיד שלהם, כמו בית ספר, מרפאה, עירייה או ספרייה. בקשו מהילד להסביר מי נעזר במוסד, מה השירות שהוא נותן, ולמה זה מתאים לתפקיד שלו.",
+              "It helps to practice grade 3–4 community institutions: match institutions to roles and explain who uses them and what service they provide. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בזיהוי מוסדות בקהילה ובהבנת התפקיד של כל מוסד לפי דוגמאות מוכרות.",
+              "This week, focus on grade 3–4 community institutions: match institutions to roles and explain who uses them and what service they provide.",
             intentDescriptionEn:
               "Grade 3–4 community institutions: match institutions to roles and explain who uses them and what service they provide.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל ניתוח של מוסדות בקהילה לפי תפקיד, אחריות והשפעה על התושבים. בקשו מהילד להסביר איזה צורך המוסד נותן לו מענה, מי אחראי עליו, ואיך הוא קשור לחיי הקהילה.",
+              "It helps to practice grade 5–6 community institutions: roles, responsibilities, services, and impact on residents. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בהבנת תפקידי מוסדות בקהילה, האחריות שלהם וההשפעה שלהם על התושבים.",
+              "This week, focus on grade 5–6 community institutions: roles, responsibilities, services, and impact on residents.",
             intentDescriptionEn:
               "Grade 5–6 community institutions: roles, responsibilities, services, and impact on residents.",
           },
@@ -3046,17 +3046,17 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           },
           g3_g4: {
             actionTextHe:
-              "כדאי לתרגל קריאת סימנים במפה בעזרת המקרא. בקשו מהילד לבחור סימן אחד, לבדוק מה הוא מייצג במקרא, ולהסביר איך הסימן עוזר להבין את המפה.",
+              "It helps to practice grade 3–4 map symbols and legend reading: match symbols to meanings and explain their role. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בקריאת סימנים ומקרא במפה ובהסבר המשמעות של כל סימן.",
+              "This week, focus on grade 3–4 map symbols and legend reading: match symbols to meanings and explain their role.",
             intentDescriptionEn:
               "Grade 3–4 map symbols and legend reading: match symbols to meanings and explain their role.",
           },
           g5_g6: {
             actionTextHe:
-              "כדאי לתרגל שימוש במקרא מפה כדי לפרש נוף, אזורים וסימנים שונים. בקשו מהילד לזהות כמה סימנים, להסביר מה כל אחד מייצג, ולבדוק איך הם יחד עוזרים להבין את המפה.",
+              "It helps to practice grade 5–6 map-symbol interpretation using legends, multiple symbols, and landscape/region reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
-              "בשבוע הקרוב התמקדו בפירוש סימנים במפה ובהבנת הקשר ביניהם לבין הנוף או האזור.",
+              "This week, focus on grade 5–6 map-symbol interpretation using legends, multiple symbols, and landscape/region reasoning.",
             intentDescriptionEn:
               "Grade 5–6 map-symbol interpretation using legends, multiple symbols, and landscape/region reasoning.",
           },
@@ -3074,15 +3074,15 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         what_is_history: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הבחנה בין מושגים היסטוריים בסיסיים, כמו מקור ראשוני ומקור משני, ולהסביר בפשטות מה כל מושג אומר.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהגדרת מושגים היסטוריים ובהסבר ההבדל ביניהם.",
+            actionTextHe: "It helps to practice grade 6 historical concepts and source terminology. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 historical concepts and source terminology.",
             intentDescriptionEn: "Grade 6 historical concepts and source terminology.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי מושגים היסטוריים במגוון נושאים, ולבקש מהילד להסביר כל מושג במילים שלו.",
-            goalTextHe: "בשבוע הקרוב התמקדו במושגים היסטוריים מתוך תרגול מעורב.",
+            actionTextHe: "It helps to practice grade 6 mixed historical concept identification. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed historical concept identification.",
             intentDescriptionEn: "Grade 6 mixed historical concept identification.",
           },
         },
@@ -3097,22 +3097,22 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         hasmonaeans: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל סידור אירועים בציר זמן של תקופת החשמונאים. בקשו מהילד לסדר כרטיסיות אירועים ולהסביר מה קרה לפני ואחרי.",
-            goalTextHe: "בשבוע הקרוב התמקדו ברצף אירועים וציר זמן בתקופת החשמונאים.",
+            actionTextHe: "It helps to practice grade 6 Hasmonaean timeline sequencing. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Hasmonaean timeline sequencing.",
             intentDescriptionEn: "Grade 6 Hasmonaean timeline sequencing.",
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל סידור אירועים מרכזיים בתקופת רומא והיהודים, כמו עליית רומא, חורבן ויבנה, לפי סדר כרונולוגי.",
-            goalTextHe: "בשבוע הקרוב התמקדו בציר זמן של רומא והיהודים.",
+            actionTextHe: "It helps to practice grade 6 Rome/Judea timeline sequencing. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Rome/Judea timeline sequencing.",
             intentDescriptionEn: "Grade 6 Rome/Judea timeline sequencing.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל סידור אירועים היסטוריים על ציר זמן, תוך שימוש בתאריכים או שלבים ברורים מהשיעור.",
-            goalTextHe: "בשבוע הקרוב התמקדו ברצף אירועים וציר זמן.",
+            actionTextHe: "It helps to practice grade 6 mixed timeline sequencing. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed timeline sequencing.",
             intentDescriptionEn: "Grade 6 mixed timeline sequencing.",
           },
         },
@@ -3127,29 +3127,29 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         hellenism_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל קשרי סיבה ותוצאה במפגש בין ההלניזם ליהדות. בקשו מהילד להסביר מה גרם למה ומה היו התוצאות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בסיבה ותוצאה בתקופת ההלניזם והיהודים.",
+            actionTextHe: "It helps to practice grade 6 Hellenism/Judaism cause-effect. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Hellenism/Judaism cause-effect.",
             intentDescriptionEn: "Grade 6 Hellenism/Judaism cause-effect.",
           },
         },
         hasmonaeans: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הבנת הקשר בין גזרות, מרד ותוצאות בתקופת החשמונאים, עם הסבר מילולי.",
-            goalTextHe: "בשבוע הקרוב התמקדו בסיבה ותוצאה בתקופת החשמונאים.",
+            actionTextHe: "It helps to practice grade 6 Hasmonaean cause-effect. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Hasmonaean cause-effect.",
             intentDescriptionEn: "Grade 6 Hasmonaean cause-effect.",
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל ניתוח סיבות ותוצאות של אירועים מרכזיים, כמו המרד הגדול וחורבן בית המקדש.",
-            goalTextHe: "בשבוע הקרוב התמקדו בסיבה ותוצאה בתקופת רומא והיהודים.",
+            actionTextHe: "It helps to practice grade 6 Rome/Judea cause-effect. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Rome/Judea cause-effect.",
             intentDescriptionEn: "Grade 6 Rome/Judea cause-effect.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי סיבה ותוצאה באירועים היסטוריים, ולבקש מהילד להסביר את הקשר בין שני אירועים.",
-            goalTextHe: "בשבוע הקרוב התמקדו בסיבה ותוצאה בתרגול מעורב.",
+            actionTextHe: "It helps to practice grade 6 mixed cause-effect. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed cause-effect.",
             intentDescriptionEn: "Grade 6 mixed cause-effect.",
           },
         },
@@ -3164,15 +3164,15 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         classical_greece: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל השוואה בין אתונה לספרטה לפי קריטריונים ברורים, כמו שלטון, חיים יומיומיים וערכים.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהשוואה בין אתונה לספרטה.",
+            actionTextHe: "It helps to practice grade 6 Athens/Sparta comparison. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Athens/Sparta comparison.",
             intentDescriptionEn: "Grade 6 Athens/Sparta comparison.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל השוואה בין שני מוסדות, דמויות או תרבויות, תוך הצגת דמיון והבדל.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהשוואה היסטורית מבוססת קריטריונים.",
+            actionTextHe: "It helps to practice grade 6 mixed historical comparison. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed historical comparison.",
             intentDescriptionEn: "Grade 6 mixed historical comparison.",
           },
         },
@@ -3187,22 +3187,22 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         hellenism_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי דמויות מרכזיות והתפקיד שלהן, כמו אלכסנדר מוקדון, ולהסביר מה עשתה כל דמות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בדמויות ותפקידן בתקופת ההלניזם.",
+            actionTextHe: "It helps to practice grade 6 Hellenism figures and roles. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Hellenism figures and roles.",
             intentDescriptionEn: "Grade 6 Hellenism figures and roles.",
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל התאמת דמויות כמו הורדוס או מנהיגי המרד לתפקידם ההיסטורי, עם הסבר קצר.",
-            goalTextHe: "בשבוע הקרוב התמקדו בדמויות ותפקידן בתקופת רומא והיהודים.",
+            actionTextHe: "It helps to practice grade 6 Rome/Judea figures and roles. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Rome/Judea figures and roles.",
             intentDescriptionEn: "Grade 6 Rome/Judea figures and roles.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי דמויות היסטוריות והסבר תפקידן, בלי לבלבל בין דמויות דומות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בדמויות ותפקידן.",
+            actionTextHe: "It helps to practice grade 6 mixed figures and roles. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed figures and roles.",
             intentDescriptionEn: "Grade 6 mixed figures and roles.",
           },
         },
@@ -3217,29 +3217,29 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         classical_greece: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הבנת מוסדות שלטון, כמו דמוקרטיה באתונה, והסבר איך הם פעלו.",
-            goalTextHe: "בשבוע הקרוב התמקדו בשלטון ומוסדות ביוון הקלאסית.",
+            actionTextHe: "It helps to practice grade 6 classical Greece governance. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 classical Greece governance.",
             intentDescriptionEn: "Grade 6 classical Greece governance.",
           },
         },
         hasmonaeans: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הבנת מבנה ממלכת החשמונאים ותפקידי השלטון בה.",
-            goalTextHe: "בשבוע הקרוב התמקדו בשלטון ומוסדות בתקופת החשמונאים.",
+            actionTextHe: "It helps to practice grade 6 Hasmonaean governance. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Hasmonaean governance.",
             intentDescriptionEn: "Grade 6 Hasmonaean governance.",
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הבנת שלטון רומי ומעמד יהודה כפרובינציה, כולל תפקידי שלטון מקומי.",
-            goalTextHe: "בשבוע הקרוב התמקדו בשלטון ומוסדות בתקופת רומא והיהודים.",
+            actionTextHe: "It helps to practice grade 6 Roman/Judean governance. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Roman/Judean governance.",
             intentDescriptionEn: "Grade 6 Roman/Judean governance.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל התאמת מוסדות שלטון לתפקידם, ולהימנע מבלבול בין מערכות שונות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בשלטון ומוסדות.",
+            actionTextHe: "It helps to practice grade 6 mixed governance institutions. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed governance institutions.",
             intentDescriptionEn: "Grade 6 mixed governance institutions.",
           },
         },
@@ -3254,22 +3254,22 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         classical_greece: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי מרכיבי תרבות יוונית והשפעתם על העולם, עם דוגמאות מהשיעור.",
-            goalTextHe: "בשבוע הקרוב התמקדו בתרבות ומורשת יוון הקלאסית.",
+            actionTextHe: "It helps to practice grade 6 Greek culture and legacy. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Greek culture and legacy.",
             intentDescriptionEn: "Grade 6 Greek culture and legacy.",
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הבנת תרבות ומורשת רומית, וכיצד היא השפיעה על ארץ ישראל.",
-            goalTextHe: "בשבוע הקרוב התמקדו בתרבות ומורשת רומית.",
+            actionTextHe: "It helps to practice grade 6 Roman culture and legacy. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 Roman culture and legacy.",
             intentDescriptionEn: "Grade 6 Roman culture and legacy.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי השפעות תרבותיות ומורשת מהעבר, עם דוגמאות קונקרטיות.",
-            goalTextHe: "בשבוע הקרוב התמקדו בתרבות ומורשת.",
+            actionTextHe: "It helps to practice grade 6 mixed culture and heritage. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed culture and heritage.",
             intentDescriptionEn: "Grade 6 mixed culture and heritage.",
           },
         },
@@ -3284,15 +3284,15 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         what_is_history: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל קריאת מקור היסטורי פשוט ולהסביר מה אפשר ללמוד ממנו. בקשו מהילד לציין פרט אחד מהמקור שתומך בתשובה.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהבנת מקור היסטורי פשוט.",
+            actionTextHe: "It helps to practice grade 6 simple historical source reading. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 simple historical source reading.",
             intentDescriptionEn: "Grade 6 simple historical source reading.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל זיהוי מה המקור אומר ומה אפשר להסיק ממנו, בלי להוסיף מידע שלא מופיע.",
-            goalTextHe: "בשבוע הקרוב התמקדו בהבנת מקורות היסטוריים.",
+            actionTextHe: "It helps to practice grade 6 mixed source comprehension. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed source comprehension.",
             intentDescriptionEn: "Grade 6 mixed source comprehension.",
           },
         },
@@ -3307,15 +3307,15 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         rome_jews: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל קישור בין אירועים מהעבר, כמו יבנה ומרכז יהודי בבבל, לבין השפעתם על היום.",
-            goalTextHe: "בשבוע הקרוב התמקדו בקשר בין עבר להווה בתקופת רומא והיהודים.",
+            actionTextHe: "It helps to practice grade 6 past-present link in Rome/Judea period. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 past-present link in Rome/Judea period.",
             intentDescriptionEn: "Grade 6 past-present link in Rome/Judea period.",
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "כדאי לתרגל הסבר איך אירוע היסטורי משפיע על ההווה, עם דוגמה מהשיעור.",
-            goalTextHe: "בשבוע הקרוב התמקדו בקשר בין עבר להווה.",
+            actionTextHe: "It helps to practice grade 6 mixed past-present link. After each exercise, ask your child to explain how they got the answer.",
+            goalTextHe: "This week, focus on grade 6 mixed past-present link.",
             intentDescriptionEn: "Grade 6 mixed past-present link.",
           },
         },

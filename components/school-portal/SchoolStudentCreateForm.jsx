@@ -27,7 +27,7 @@ import {
   SC_DETAILS_FIELD_PARENT_EMAIL,
   SC_DETAILS_FIELD_TRANSPORT_NOTES,
   SC_DETAILS_SAVE_ERROR,
-} from "../../lib/school-portal/school-communication.he";
+} from "../../lib/school-portal/school-communication.js";
 import {
   apiErrorMessageHe,
   schoolAuthFetch,
@@ -40,7 +40,7 @@ import {
   SCHOOL_CREATE_STUDENT_SECTION,
   SCHOOL_CREATE_STUDENT_SUBMIT,
   SCHOOL_CREATE_STUDENT_SUCCESS,
-} from "../../lib/school-portal/school-ui.he";
+} from "../../lib/school-portal/school-ui.js";
 
 function hasAdminProfileInput(form) {
   const payload = adminProfileFormToPayload(form);
@@ -103,7 +103,7 @@ export default function SchoolStudentCreateForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "יצירת ילד/ה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, "Failed to create child"));
         return;
       }
 
@@ -143,7 +143,7 @@ export default function SchoolStudentCreateForm({
       setShowOptionalDetails(false);
       onSuccess?.();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -154,8 +154,8 @@ export default function SchoolStudentCreateForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`} data-testid="school-student-create-form">
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-2 text-right">{SCHOOL_CREATE_STUDENT_SECTION}</h2>
-        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl text-right">
+        <h2 className="text-base font-semibold mb-2 text-left">{SCHOOL_CREATE_STUDENT_SECTION}</h2>
+        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl text-left">
           <label className="block text-sm">
             <span className="text-white/60 block mb-1">{SCHOOL_CREATE_STUDENT_FULL_NAME}</span>
             <input
@@ -175,7 +175,7 @@ export default function SchoolStudentCreateForm({
                 setGradeLevel(v);
                 setPhysicalClassName("");
               }}
-              options={[{ value: "", label: "- בחרו שכבה -" }, ...SCHOOL_GRADE_OPTIONS.map((g) => ({ value: g.level, label: g.label }))]}
+              options={[{ value: "", label: "- Choose grade -" }, ...SCHOOL_GRADE_OPTIONS.map((g) => ({ value: g.level, label: g.label }))]}
             />
           </label>
 
@@ -187,13 +187,13 @@ export default function SchoolStudentCreateForm({
                   data-testid="school-create-student-class"
                   value={physicalClassName}
                   onChange={setPhysicalClassName}
-                  options={[{ value: "", label: "- בחרו כיתה -" }, ...classOptions]}
+                  options={[{ value: "", label: "- Choose class -" }, ...classOptions]}
                 />
               ) : (
                 <input
                   value={physicalClassName}
                   onChange={(e) => setPhysicalClassName(e.target.value)}
-                  placeholder="למשל: 1"
+                  placeholder="e.g. 1"
                   className={inputClass}
                 />
               )}
@@ -333,7 +333,7 @@ export default function SchoolStudentCreateForm({
           ) : null}
 
           <SchoolPrimaryButton type="submit" disabled={busy || !fullName.trim()}>
-            {busy ? "יוצר…" : SCHOOL_CREATE_STUDENT_SUBMIT}
+            {busy ? "Creating…" : SCHOOL_CREATE_STUDENT_SUBMIT}
           </SchoolPrimaryButton>
         </form>
       </div>
