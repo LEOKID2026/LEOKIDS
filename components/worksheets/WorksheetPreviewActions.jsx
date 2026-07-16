@@ -3,7 +3,7 @@
  */
 
 import Link from "next/link";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -25,6 +25,7 @@ export default function WorksheetPreviewActions({
   refreshLoading = false,
   backHref = "/parent/worksheets",
 }) {
+  const ui = useWorksheetUi();
   return (
     <div className="worksheet-preview-actions no-print">
       <button
@@ -32,7 +33,7 @@ export default function WorksheetPreviewActions({
         onClick={onPrint}
         className="worksheet-action-btn worksheet-action-btn-primary"
       >
-        {WORKSHEET_UI_HE.print}
+        {ui.print}
       </button>
 
       {onRefresh ? (
@@ -42,7 +43,7 @@ export default function WorksheetPreviewActions({
           disabled={refreshLoading || answerKeyLoading}
           className="worksheet-action-btn worksheet-action-btn-secondary"
         >
-          {refreshLoading ? WORKSHEET_UI_HE.refreshingQuestions : WORKSHEET_UI_HE.refreshQuestions}
+          {refreshLoading ? ui.refreshingQuestions : ui.refreshQuestions}
         </button>
       ) : null}
 
@@ -53,12 +54,12 @@ export default function WorksheetPreviewActions({
           disabled={answerKeyLoading || refreshLoading}
           className="worksheet-action-btn worksheet-action-btn-secondary"
         >
-          {answerKeyLoading ? WORKSHEET_UI_HE.loading : WORKSHEET_UI_HE.answerKey}
+          {answerKeyLoading ? ui.loading : ui.answerKey}
         </button>
       ) : null}
 
       <Link href={backHref} className="worksheet-action-btn worksheet-action-btn-ghost">
-        {WORKSHEET_UI_HE.back}
+        {ui.back}
       </Link>
     </div>
   );

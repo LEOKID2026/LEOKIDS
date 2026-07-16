@@ -4,7 +4,7 @@
 
 import WorksheetMathPrintPages from "./WorksheetMathPrintPages.jsx";
 import WorksheetQuestionRouter from "./WorksheetQuestionRouter.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 import {
   classifyWorksheetQuestionLayout,
   geometryQuestionPrintModifierClasses,
@@ -22,6 +22,7 @@ import {
  * }} props
  */
 function WorksheetQuestionSection({ question, isPrint, subjectId, index = 0 }) {
+  const ui = useWorksheetUi();
   const normalized = withWorksheetLayoutSubject(question, subjectId);
   const layoutClass = classifyWorksheetQuestionLayout(normalized);
   const breakMods = isPrint
@@ -39,7 +40,7 @@ function WorksheetQuestionSection({ question, isPrint, subjectId, index = 0 }) {
     <section className={sectionClass}>
       <h2 className={isPrint ? "worksheet-question-title" : "worksheet-screen-question-title"}>
         <span className="worksheet-question-number">{question.displayIndex}</span>
-        <span>{WORKSHEET_UI_HE.questionLabel}</span>
+        <span>{ui.questionLabel}</span>
       </h2>
       <div className={isPrint ? "worksheet-question-content" : "worksheet-screen-question-content"}>
         <WorksheetQuestionRouter question={question} />

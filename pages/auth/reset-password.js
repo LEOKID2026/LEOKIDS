@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
@@ -9,30 +9,24 @@ import {
   establishRecoverySession,
 } from "../../lib/auth/auth-recovery-session.client";
 import {
-  mapRecoveryEstablishErrorHe,
-  mapSupabasePasswordUpdateErrorHe,
+  createPasswordResetErrorMappers,
   sanitizeAuthErrorForLog,
 } from "../../lib/auth/auth-reset-errors";
-import {
-  AUTH_RESET_MIN_PASSWORD_LENGTH,
-  AUTH_RESET_PASSWORD_CONFIRM_LABEL,
-  AUTH_RESET_PASSWORD_ERROR_EXPIRED,
-  AUTH_RESET_PASSWORD_ERROR_GENERIC,
-  AUTH_RESET_PASSWORD_ERROR_MISMATCH,
-  AUTH_RESET_PASSWORD_ERROR_NO_SESSION,
-  AUTH_RESET_PASSWORD_ERROR_WEAK,
-  AUTH_RESET_PASSWORD_NEW_LABEL,
-  AUTH_RESET_PASSWORD_REQUEST_NEW,
-  AUTH_RESET_PASSWORD_SUBMIT,
-  AUTH_RESET_PASSWORD_SUCCESS,
-  AUTH_RESET_PASSWORD_TITLE,
-} from "../../lib/auth/auth-reset.he";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
+
+const AUTH_RESET_MIN_PASSWORD_LENGTH = 6;
 
 export default function ResetPasswordPage() {
   const router = useRouter();
   const supabaseRef = useRef(null);
   const recoverySessionRef = useRef(false);
+  const { direction, locale } = useI18n();
+  const t = useT();
+  const { mapRecoveryEstablishError, mapSupabasePasswordUpdateError } = useMemo(
+    () => createPasswordResetErrorMappers(t),
+    [t]
+  );
   const [clientReady, setClientReady] = useState(false);
   const [sessionReady, setSessionReady] = useState(false);
   const [sessionInvalid, setSessionInvalid] = useState(false);
@@ -92,28 +86,28 @@ export default function ResetPasswordPage() {
 
       setSessionInvalid(true);
       setSessionReady(false);
-      setEstablishError(mapRecoveryEstablishErrorHe(result.error));
+      setEstablishError(mapRecoveryEstablishError(result.error));
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [clientReady, router]);
+  }, [clientReady, router, mapRecoveryEstablishError]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     if (newPassword.length < AUTH_RESET_MIN_PASSWORD_LENGTH) {
-      setError(AUTH_RESET_PASSWORD_ERROR_WEAK);
+      setError(t("auth.passwordTooShort", { min: AUTH_RESET_MIN_PASSWORD_LENGTH }));
       return;
     }
     if (newPassword !== confirmPassword) {
-      setError(AUTH_RESET_PASSWORD_ERROR_MISMATCH);
+      setError(t("auth.resetPasswordErrorMismatch"));
       return;
     }
     if (!supabaseRef.current) {
-      setError(AUTH_RESET_PASSWORD_ERROR_GENERIC);
+      setError(t("auth.resetPasswordErrorGeneric"));
       return;
     }
 
@@ -131,11 +125,11 @@ export default function ResetPasswordPage() {
       });
 
       if (!hasSession) {
-        setError(AUTH_RESET_PASSWORD_ERROR_NO_SESSION);
+        setError(t("auth.resetPasswordErrorNoSession"));
         return;
       }
       if (!recoverySession) {
-        setError(AUTH_RESET_PASSWORD_ERROR_NO_SESSION);
+        setError(t("auth.resetPasswordErrorNoSession"));
         return;
       }
 
@@ -149,7 +143,7 @@ export default function ResetPasswordPage() {
           sessionKind: recoverySession ? "recovery" : "normal",
         });
         setError(
-          mapSupabasePasswordUpdateErrorHe(updateError, {
+          mapSupabasePasswordUpdateError(updateError, {
             hasRecoverySession: recoverySession,
           })
         );
@@ -164,7 +158,7 @@ export default function ResetPasswordPage() {
     } catch (caught) {
       console.error("[auth-reset-password] password update threw", sanitizeAuthErrorForLog(caught));
       setError(
-        mapSupabasePasswordUpdateErrorHe(caught, {
+        mapSupabasePasswordUpdateError(caught, {
           hasRecoverySession: recoverySessionRef.current,
         })
       );
@@ -176,8 +170,8 @@ export default function ResetPasswordPage() {
   if (!clientReady) {
     return (
       <Layout>
-        <div className="max-w-md mx-auto px-4 py-10 text-white/60 text-sm" dir="rtl" lang="he">
-          טוען…
+        <div className="max-w-md mx-auto px-4 py-10 text-white/60 text-sm" dir={direction} lang={locale}>
+          {t("auth.loading")}
         </div>
       </Layout>
     );
@@ -188,20 +182,20 @@ export default function ResetPasswordPage() {
       <Layout>
         <div
           className="max-w-md mx-auto px-4 py-10"
-          dir="rtl"
-          lang="he"
+          dir={direction}
+          lang={locale}
           data-testid="auth-reset-password-expired"
         >
-          <h1 className="text-2xl font-bold mb-4">{AUTH_RESET_PASSWORD_TITLE}</h1>
+          <h1 className="text-2xl font-bold mb-4">{t("auth.resetPasswordTitle")}</h1>
           <p className="text-red-300 text-sm mb-6" role="alert">
-            {establishError || AUTH_RESET_PASSWORD_ERROR_EXPIRED}
+            {establishError || t("auth.resetPasswordErrorExpired")}
           </p>
           <Link
             href={`/auth/forgot-password?portal=${portal}`}
             className="text-amber-300 underline text-sm"
             data-testid="auth-reset-password-request-new"
           >
-            {AUTH_RESET_PASSWORD_REQUEST_NEW}
+            {t("auth.resetPasswordRequestNew")}
           </Link>
         </div>
       </Layout>
@@ -211,8 +205,8 @@ export default function ResetPasswordPage() {
   if (!sessionReady) {
     return (
       <Layout>
-        <div className="max-w-md mx-auto px-4 py-10 text-white/60 text-sm" dir="rtl" lang="he">
-          טוען…
+        <div className="max-w-md mx-auto px-4 py-10 text-white/60 text-sm" dir={direction} lang={locale}>
+          {t("auth.loading")}
         </div>
       </Layout>
     );
@@ -222,20 +216,20 @@ export default function ResetPasswordPage() {
     <Layout>
       <div
         className="max-w-md mx-auto px-4 py-10"
-        dir="rtl"
-        lang="he"
+        dir={direction}
+        lang={locale}
         data-testid="auth-reset-password-page"
       >
-        <h1 className="text-2xl font-bold mb-4">{AUTH_RESET_PASSWORD_TITLE}</h1>
+        <h1 className="text-2xl font-bold mb-4">{t("auth.resetPasswordTitle")}</h1>
 
         {success ? (
           <p className="text-emerald-300 text-sm" role="status">
-            {AUTH_RESET_PASSWORD_SUCCESS}
+            {t("auth.resetPasswordSuccess")}
           </p>
         ) : (
           <form onSubmit={(e) => void onSubmit(e)} className="space-y-4">
             <PasswordField
-              label={AUTH_RESET_PASSWORD_NEW_LABEL}
+              label={t("auth.resetPasswordNewLabel")}
               value={newPassword}
               onChange={(ev) => setNewPassword(ev.target.value)}
               required
@@ -244,7 +238,7 @@ export default function ResetPasswordPage() {
               testId="auth-reset-password-new"
             />
             <PasswordField
-              label={AUTH_RESET_PASSWORD_CONFIRM_LABEL}
+              label={t("auth.confirmPassword")}
               value={confirmPassword}
               onChange={(ev) => setConfirmPassword(ev.target.value)}
               required
@@ -263,7 +257,7 @@ export default function ResetPasswordPage() {
               className="w-full rounded bg-amber-500 text-black font-semibold py-2 disabled:opacity-60"
               data-testid="auth-reset-password-submit"
             >
-              {busy ? "שומר…" : AUTH_RESET_PASSWORD_SUBMIT}
+              {busy ? t("auth.saving") : t("auth.resetPasswordSubmit")}
             </button>
           </form>
         )}

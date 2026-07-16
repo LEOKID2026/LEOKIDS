@@ -86,11 +86,14 @@ import {
 } from "../../utils/math-animations";
 import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-hebrew-math";
 import {
-  LIVE_PRACTICE_CORRECT_HE,
-  LIVE_PRACTICE_GAME_OVER_HE,
-  LIVE_PRACTICE_WRONG_HE,
-  formatLearningWrongFeedbackHe,
-} from "../../utils/learning-live-feedback-he";
+  formatLearningWrongFeedback,
+  livePracticeCorrect,
+  livePracticeGameOver,
+  livePracticeWrong,
+  livePracticeTimeUp,
+  livePracticeTimeUpGameOver,
+  livePracticeExcellent,
+} from "../../utils/learning-live-feedback.js";
 import { renderLearningMixedHebrewMathText } from "../../components/learning/LearningMixedHebrewMathText";
 import {
   MathFractionExpression,
@@ -115,7 +118,6 @@ import { useLearningMasterUi } from "../../hooks/useLearningMasterUi.js";
 import SubjectMasterSessionShell from "../../components/learning/SubjectMasterSessionShell.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { useGuestPlayableTopics } from "../../hooks/useGuestPlayableTopics.js";
-import { GUEST_TOPIC_LOCK_MESSAGE_HE } from "../../lib/guest/constants.js";
 import StudentLearningAvatar from "../../components/arcade/club/StudentLearningAvatar.jsx";
 import ProfileBackgroundPickerGrid from "../../components/student/ProfileBackgroundPickerGrid.jsx";
 import { DEFAULT_PROFILE_BACKGROUND_KEY } from "../../lib/student-ui/profile-background-options.js";
@@ -258,12 +260,15 @@ import {
 } from "../../lib/learning-student-defaults";
 import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-identity-client";
 import { useSubjectSessionDefaults } from "../../hooks/useSubjectSessionDefaults";
+import { useLearningMasterStrings } from "../../hooks/useLearningMasterStrings.js";
+import {
+  LEARNING_BADGE,
+  hasLearningBadge,
+  opKingBadgeId,
+  opGeniusBadgeId,
+} from "../../utils/learning-badge-ids.js";
 import MasterSubjectAccessScreen from "../../components/learning/MasterSubjectAccessScreen.jsx";
 import { notifyLearningSessionSaveFailure } from "../../lib/learning-client/learning-session-save-feedback.client.js";
-import {
-  STUDENT_GRADE_REQUIRED_MESSAGE_HE,
-  STUDENT_SUBJECT_LOADING_MESSAGE_HE,
-} from "../../lib/learning-client/student-subject-practice-gate.he.js";
 import { useEscapeCloseModals } from "../../hooks/useEscapeCloseModals.js";
 import { normalizeMistakeEvent } from "../../utils/mistake-event.js";
 import { inferNormalizedTags } from "../../utils/fast-diagnostic-engine/infer-tags.js";
@@ -344,10 +349,38 @@ const AVATAR_OPTIONS = [
 ];
 
 const REFERENCE_CATEGORIES = {
-  operations: { label: "פעולות מתמטיקה", icon: "➕" },
-  formulas: { label: "נוסחאות", icon: "📐" },
-  terms: { label: "מונחים", icon: "📚" },
+  operations: { icon: "➕" },
+  formulas: { icon: "📐" },
+  terms: { icon: "📚" },
 };
+
+const MATH_REFERENCE_OPERATION_KEYS = [
+  "addition",
+  "subtraction",
+  "multiplication",
+  "division",
+  "fractions",
+  "percentages",
+];
+const MATH_REFERENCE_FORMULA_KEYS = [
+  "square_area",
+  "rectangle_area",
+  "triangle_area",
+  "circle_perimeter",
+  "circle_area",
+];
+const MATH_REFERENCE_TERM_KEYS = [
+  "sum",
+  "difference",
+  "product",
+  "quotient",
+  "even",
+  "odd",
+  "prime",
+  "integer",
+  "fraction",
+  "percent",
+];
 
 const REFERENCE_CATEGORY_KEYS = Object.keys(REFERENCE_CATEGORIES);
 
@@ -514,6 +547,7 @@ function boostHorizontalQuestionBodyClass(className, isMobileViewport = true) {
 export default function MathMaster() {
   useIOSViewportFix();
   const { MB, ui, shellClass, shellBgStyle } = useLearningMasterUi();
+  const ms = useLearningMasterStrings("math");
   const learningModalOverlay = ui.learningModalOverlay;
   const learningModalPanel = ui.learningModalPanel;
   const learningModalHeader = ui.learningModalHeader;
@@ -1286,7 +1320,7 @@ export default function MathMaster() {
     if (sessionFullName) {
       setPlayerName(sessionFullName);
     } else if (session?.sessionResolved) {
-      setPlayerName("ילד/ה");
+      setPlayerName(ms.defaultPlayerName);
     }
   }, [sessionFullName, session?.sessionResolved]);
 
@@ -1336,12 +1370,12 @@ export default function MathMaster() {
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      alert("התמונה גדולה מדי. נא לבחור תמונה עד 5MB");
+      alert(ms.imageTooLarge);
       return;
     }
 
     if (!file.type.startsWith("image/")) {
-      alert("נא לבחור קובץ תמונה בלבד");
+      alert(ms.imageTypeOnly);
       return;
     }
 
@@ -1356,7 +1390,7 @@ export default function MathMaster() {
         }
         await patchLearningProfileAvatarCustomImage(dataUrl);
       } catch (err) {
-        alert(err && typeof err === "object" && "message" in err ? String(err.message) : "שמירת התמונה נכשלה");
+        alert(err && typeof err === "object" && "message" in err ? String(err.message) : ms.imageSaveFailed);
       }
     })();
     e.target.value = "";
@@ -2383,7 +2417,7 @@ export default function MathMaster() {
 
   function startGame(opts = {}) {
     if (guestTopics.isGuest && operation !== "mixed" && guestTopics.isLocked(operation)) {
-      alert(GUEST_TOPIC_LOCK_MESSAGE_HE);
+      alert(ms.t('ui.student.guestLock'));
       return;
     }
     if (opts.focusedPracticeMode != null) {
@@ -2524,7 +2558,7 @@ export default function MathMaster() {
     recordSessionProgress();
     setWrong((prev) => prev + 1);
     setStreak(0);
-      setFeedback("הזמן נגמר! המשחק נגמר! ⏰");
+      setFeedback(ms.feedback.timeUpGameOver());
     audio.playSfx("sfx-game-over");
     setGameActive(false);
     mathTrackingOperationKeyRef.current = null;
@@ -2623,7 +2657,7 @@ export default function MathMaster() {
       answer
     );
     if (rejectInvalidNumber) {
-      setFeedback("נא להזין מספר תקין");
+      setFeedback(ms.enterValidNumber);
       setTimeout(() => setFeedback(null), 2000);
       return;
     }
@@ -2867,29 +2901,29 @@ export default function MathMaster() {
       // מערכת תגים משופרת
       
       // תגים לפי רצף
-      if (newStreak === 10 && !badges.includes("🔥 רצף חם")) {
-        const newBadge = "🔥 רצף חם";
+      if (newStreak === 10 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_10)) {
+        const newBadge = LEARNING_BADGE.STREAK_10;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newStreak === 25 && !badges.includes("⚡ מהיר כברק")) {
-        const newBadge = "⚡ מהיר כברק";
+      } else if (newStreak === 25 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_25)) {
+        const newBadge = LEARNING_BADGE.STREAK_25;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newStreak === 50 && !badges.includes("🌟 אלוף") && !badges.includes("🌟 מאסטר")) {
-        const newBadge = "🌟 אלוף";
+      } else if (newStreak === 50 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_50)) {
+        const newBadge = LEARNING_BADGE.STREAK_50;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newStreak === 100 && !badges.includes("👑 מלך החשבון")) {
-        const newBadge = "👑 מלך החשבון";
+      } else if (newStreak === 100 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_100_MATH)) {
+        const newBadge = LEARNING_BADGE.STREAK_100_MATH;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2897,17 +2931,18 @@ export default function MathMaster() {
         saveBadge(newBadge);
       }
       
-      // תגים לפי פעולות ספציפיות
-      const opName = getOperationName(op);
-      if (newOpCorrect === 50 && !badges.includes(`🧮 מלך ה${opName}`)) {
-        const newBadge = `🧮 מלך ה${opName}`;
+      // Operation-specific badges
+      const opKingId = opKingBadgeId(op);
+      const opGeniusId = opGeniusBadgeId(op);
+      if (newOpCorrect === 50 && !hasLearningBadge(badges, opKingId)) {
+        const newBadge = opKingId;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newOpCorrect === 100 && !badges.includes(`🏆 גאון ה${opName}`)) {
-        const newBadge = `🏆 גאון ה${opName}`;
+      } else if (newOpCorrect === 100 && !hasLearningBadge(badges, opGeniusId)) {
+        const newBadge = opGeniusId;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2916,15 +2951,15 @@ export default function MathMaster() {
       }
       
       // תגים לפי ניקוד
-      if (newScore >= 1000 && newScore - points < 1000 && !badges.includes("💎 אלף נקודות")) {
-        const newBadge = "💎 אלף נקודות";
+      if (newScore >= 1000 && newScore - points < 1000 && !hasLearningBadge(badges, LEARNING_BADGE.SCORE_1000)) {
+        const newBadge = LEARNING_BADGE.SCORE_1000;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newScore >= 5000 && newScore - points < 5000 && !badges.includes("🎯 חמשת אלפים")) {
-        const newBadge = "🎯 חמשת אלפים";
+      } else if (newScore >= 5000 && newScore - points < 5000 && !hasLearningBadge(badges, LEARNING_BADGE.SCORE_5000)) {
+        const newBadge = LEARNING_BADGE.SCORE_5000;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2933,15 +2968,15 @@ export default function MathMaster() {
       }
       
       // תגים לפי מספר תשובות נכונות
-      if (newCorrect === 100 && correct < 100 && !badges.includes("⭐ מאה תשובות נכונות")) {
-        const newBadge = "⭐ מאה תשובות נכונות";
+      if (newCorrect === 100 && correct < 100 && !hasLearningBadge(badges, LEARNING_BADGE.CORRECT_100)) {
+        const newBadge = LEARNING_BADGE.CORRECT_100;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newCorrect === 500 && correct < 500 && !badges.includes("🌟 חמש מאות תשובות")) {
-        const newBadge = "🌟 חמש מאות תשובות";
+      } else if (newCorrect === 500 && correct < 500 && !hasLearningBadge(badges, LEARNING_BADGE.CORRECT_500)) {
+        const newBadge = LEARNING_BADGE.CORRECT_500;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -3216,7 +3251,7 @@ export default function MathMaster() {
 
       if (mode === "learning") {
         setFeedback(
-          formatLearningWrongFeedbackHe(
+          ms.feedback.wrongWithAnswer(
             currentQuestion.operation === "compare"
               ? formatCompareFeedbackSign(compareCorrectSignForDisplay(currentQuestion))
               : `\u2066${currentQuestion.correctAnswer}\u2069`
@@ -3231,12 +3266,12 @@ export default function MathMaster() {
           setTimeLeft(null);
         });
       } else if (mode === "challenge") {
-        setFeedback(`${LIVE_PRACTICE_WRONG_HE} (-1 ❤️)`);
+        setFeedback(`${ms.feedback.wrong()} (-1 ❤️)`);
         setLives((prevLives) => {
           const nextLives = prevLives - 1;
 
           if (nextLives <= 0) {
-            setFeedback(LIVE_PRACTICE_GAME_OVER_HE);
+            setFeedback(ms.feedback.gameOver());
             audio.playSfx("sfx-game-over");
             recordSessionProgress();
             saveRunToStorage();
@@ -3260,7 +3295,7 @@ export default function MathMaster() {
           return nextLives;
         });
       } else {
-        setFeedback(LIVE_PRACTICE_WRONG_HE);
+        setFeedback(ms.feedback.wrong());
         scheduleWrongAnswerAdvance(() => {
           generateNewQuestion();
           setSelectedAnswer(null);
@@ -3300,9 +3335,9 @@ export default function MathMaster() {
   // Unified operation name resolver — delegates to the canonical report label map.
   // Falls back to "נושא" for any unknown key to prevent raw English leaking to the UI.
   const getOperationName = (op) => {
-    if (!op) return "נושא";
-    const name = getMathReportBucketDisplayName(String(op));
-    return name && name !== String(op) ? name : "נושא";
+    if (!op) return ms.topic;
+    const name = op;
+    return ms.getMathOperationName(op);
   };
 
   const profileSnap = getCachedStudentLearningProfile();
@@ -3381,7 +3416,7 @@ export default function MathMaster() {
   if (!mounted || session.sessionLoading)
     return <SubjectMasterSessionShell shellClass={shellClass} shellBgStyle={shellBgStyle} />;
   if (!gradeReady)
-    return <StudentLoadingPanel message={STUDENT_GRADE_REQUIRED_MESSAGE_HE} fullPage />;
+    return <StudentLoadingPanel message={ms.gradeRequired} fullPage />;
 
   const accuracy =
     totalQuestions > 0 ? Math.round((correct / totalQuestions) * 100) : 0;
@@ -3575,7 +3610,7 @@ export default function MathMaster() {
     : currentQuestion?.exerciseText;
 
   return (
-    <MasterSubjectAccessScreen permissionKey="math" titleHe="מתמטיקה">
+    <MasterSubjectAccessScreen permissionKey="math" title={ms.getSubjectTitle()}>
     <Layout>
       <style jsx>{`
         @keyframes shake {
@@ -3602,7 +3637,7 @@ export default function MathMaster() {
           animation: confetti 2s ease-out forwards;
         }
       `}</style>
-      <div className={shellClass} style={shellBgStyle} dir="rtl">
+      <div className={shellClass} style={shellBgStyle} dir={ms.direction}>
         <div
           ref={wrapRef}
           className={LEARNING_MASTER_MOBILE_WRAP_CLASS}
@@ -3628,8 +3663,8 @@ export default function MathMaster() {
           MB={MB}
           desktopHeaderRef={desktopHeaderRef}
           titleAnchorRef={desktopScratchpadAnchorRef}
-          title="🧮 מתמטיקה"
-          subtitle={`${playerName || "שחקן"} • ${GRADES[grade].name} • ${studentDisplayLevelLabel(displayLevel)} • ${getOperationName(operation)} • ${MODES[mode].name}`}
+          title={ms.getSubjectTitle()}
+          subtitle={`${playerName || ms.player} • ${ms.getGradeName(grade)} • ${ms.getDisplayLevelLabel(displayLevel)} • ${getOperationName(operation)} • ${ms.getModeName(mode)}`}
           onBack={backSafe}
           onCurriculumClick={() => router.push("/learning/curriculum?subject=math")}
           audio={audio}
@@ -3645,7 +3680,7 @@ export default function MathMaster() {
             compactHeader
             integratedTopRow
             centerSlot={
-              <LearningMasterMobileNavTitle MB={MB} title="🧮 מתמטיקה" audio={audio} />
+              <LearningMasterMobileNavTitle MB={MB} title={ms.getSubjectTitle()} audio={audio} />
             }
           />
         </div>
@@ -3660,9 +3695,9 @@ export default function MathMaster() {
         >
           <div className={LEARNING_MASTER_MOBILE_SUBTITLE_ROW_CLASS} ref={mobileScratchpadAnchorRef}>
             <p className={`${MB.pageSub} max-md:leading-none max-md:mb-0`}>
-              {playerName || "שחקן"} • {GRADES[grade].name} •{" "}
-              {studentDisplayLevelLabel(displayLevel)} • {getOperationName(operation)} •{" "}
-              {MODES[mode].name}
+              {playerName || ms.player} • {ms.getGradeName(grade)} •{" "}
+              {ms.getDisplayLevelLabel(displayLevel)} • {getOperationName(operation)} •{" "}
+              {ms.getModeName(mode)}
             </p>
           </div>
 
@@ -3684,7 +3719,7 @@ export default function MathMaster() {
           {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
           <div
             className={LEARNING_MASTER_MOBILE_MODE_ROW_CLASS}
-            dir="rtl"
+            dir={ms.direction}
           >
             {["practice", "learning", "speed", "marathon", "challenge"].map((m) => (
               <button
@@ -3697,14 +3732,14 @@ export default function MathMaster() {
                 }}
                 className={mode === m ? MB.modeTabActive : MB.modeTabInactive}
               >
-                {MODES[m].name}
+                {ms.getModeName(m)}
               </button>
             ))}
             <div
               className={MB.coinBadgeDesktop}
-              title="מטבעות משחק"
+              title={ms.coinsTitle}
             >
-              <span className={MB.coinBadgeLabel}>מטבעות:</span>
+              <span className={MB.coinBadgeLabel}>{ms.coins}</span>
               <span dir="ltr" className={MB.coinBadgeValue}>
                 {childCoinBalance}
               </span>
@@ -3713,17 +3748,17 @@ export default function MathMaster() {
 
           {/* הודעות מיוחדות */}
           {showBadge && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-bounce">
                 <div className="text-4xl mb-2">🎉</div>
-                <div className="text-2xl font-bold">תג חדש!</div>
-                <div className="text-xl">{showBadge}</div>
+                <div className="text-2xl font-bold">{ms.newBadge}</div>
+                <div className="text-xl">{ms.getBadgeLabel(showBadge)}</div>
               </div>
             </div>
           )}
 
           {showStreakReward && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-orange-400 to-red-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-bounce">
                 <div className="text-4xl mb-2">{showStreakReward.emoji}</div>
                 <div className="text-xl font-bold">{showStreakReward.message}</div>
@@ -3732,11 +3767,11 @@ export default function MathMaster() {
           )}
 
           {showLevelUp && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-pulse">
                 <div className="text-4xl mb-2">🌟</div>
-                <div className="text-2xl font-bold">עלית רמה!</div>
-                <div className="text-base">עכשיו אתה ברמה {playerLevel}!</div>
+                <div className="text-2xl font-bold">{ms.levelUp}</div>
+                <div className="text-base">{ms.t("learning.master.levelUpNow", { level: playerLevel })}</div>
               </div>
             </div>
           )}
@@ -3746,12 +3781,12 @@ export default function MathMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
               onClick={() => setShowPlayerProfile(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto relative"
                 onClick={(e) => e.stopPropagation()}
-                dir="rtl"
+                dir={ms.direction}
                 style={{ 
                   scrollbarGutter: "stable",
                   scrollbarWidth: "thin"
@@ -3765,9 +3800,7 @@ export default function MathMaster() {
                   ✖
                 </button>
                 <div className="text-center mb-4">
-                  <h2 className="text-2xl font-extrabold text-white mb-2">
-                    👤 פרופיל שחקן
-                  </h2>
+                  <h2 className="text-2xl font-extrabold text-white mb-2">{ms.playerProfile}</h2>
                 </div>
 
                 {/* אווטר ונתונים בשורה */}
@@ -3780,21 +3813,21 @@ export default function MathMaster() {
                         sizeClass="h-16 w-16 text-5xl"
                       />
                       <div className="flex-1">
-                        <div className="text-sm text-white/60 mb-1">שם שחקן</div>
-                        <div className="text-lg font-bold text-white">{playerName || "שחקן"}</div>
+                        <div className="text-sm text-white/60 mb-1">{ms.playerName}</div>
+                        <div className="text-lg font-bold text-white">{playerName || ms.player}</div>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       <div className="bg-black/40 border border-white/10 rounded-lg p-2">
-                        <div className="text-xs text-white/60 mb-1">ניקוד שיא</div>
+                        <div className="text-xs text-white/60 mb-1">{ms.peakScore}</div>
                         <div className="text-lg font-bold text-emerald-400">{bestScore}</div>
                       </div>
                       <div className="bg-black/40 border border-white/10 rounded-lg p-2">
-                        <div className="text-xs text-white/60 mb-1">רצף שיא</div>
+                        <div className="text-xs text-white/60 mb-1">{ms.peakStreak}</div>
                         <div className="text-lg font-bold text-amber-400">{bestStreak}</div>
                       </div>
                       <div className="bg-black/40 border border-white/10 rounded-lg p-2">
-                        <div className="text-xs text-white/60 mb-1">כוכבים</div>
+                        <div className="text-xs text-white/60 mb-1">{ms.stars}</div>
                         <div className="text-lg font-bold text-yellow-400">⭐ {stars}</div>
                       </div>
                       <div className="bg-black/40 border border-white/10 rounded-lg p-2">
@@ -3832,24 +3865,18 @@ export default function MathMaster() {
                               type="button"
                               onClick={() => document.getElementById("avatar-image-upload").click()}
                               className="px-3 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 text-white text-xs font-bold transition-all flex-1"
-                            >
-                              📷 בחר תמונה
-                            </button>
+                            >{ms.pickImage}</button>
                             {playerAvatarImage && (
                               <button
                                 type="button"
                                 onClick={handleRemoveAvatarImage}
                                 className="px-3 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold transition-all"
-                              >
-                                🗑️ מחק תמונה
-                              </button>
+                              >{ms.deleteImage}</button>
                             )}
                           </div>
                         </label>
                         {playerAvatarImage && (
-                          <div className="mt-2 text-xs text-white/60 text-center">
-                            תמונה נבחרה ✓
-                          </div>
+                          <div className="mt-2 text-xs text-white/60 text-center">{ms.imageSelected}</div>
                         )}
                       </div>
                       
@@ -3888,7 +3915,7 @@ export default function MathMaster() {
                   
                   {/* Monthly Progress */}
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">התקדמות חודשית</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
                       <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
@@ -3899,14 +3926,14 @@ export default function MathMaster() {
                         style={{ width: `${monthlyPersistenceView?.progressPct ?? 0}%` }}
                       />
                     </div>
-                    {monthlyPersistenceView?.encouragementHe ?? "טוען..."}
+                    {monthlyPersistenceView?.encouragementEn ?? monthlyPersistenceView?.encouragementHe ?? ms.loading}
                   </div>
 
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">דיוק כללי</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.overallAccuracy}</div>
                     <div className="text-2xl font-bold text-blue-400">{accuracy}%</div>
                     <div className="text-xs text-white/60 mt-1">
-                      {correct} נכון מתוך {totalQuestions} שאלות
+                      {ms.t("learning.master.correctOfTotal", { correct, total: totalQuestions })}
                     </div>
                   </div>
 
@@ -3938,7 +3965,7 @@ export default function MathMaster() {
 
                   {mathInsights.weakest && mathInsights.strongest && (
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-sm text-white/60 mb-2">תובנות מהתרגול (מקומי)</div>
+                      <div className="text-sm text-white/60 mb-2">{ms.t('learning.master.localInsights')}</div>
                       <div className="text-xs text-white/85 space-y-1">
                         <div>
                           <span className="text-amber-300 font-semibold">לחזק:</span>{" "}
@@ -3956,7 +3983,7 @@ export default function MathMaster() {
                   )}
 
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">תגים</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.badges}</div>
                     {badges.length > 0 ? (
                       <div className="space-y-2 max-h-[200px] overflow-y-auto">
                         {badges.map((badge, index) => (
@@ -3964,26 +3991,22 @@ export default function MathMaster() {
                             key={index}
                             className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/30"
                           >
-                            <div className="text-3xl">{badge.split(" ")[0]}</div>
+                            <div className="text-3xl">{ms.getBadgeLabel(badge).split(" ")[0]}</div>
                             <div className="flex-1 text-white font-semibold text-lg">
-                              {badge}
+                              {ms.getBadgeLabel(badge)}
                             </div>
                           </div>
                         ))}
                       </div>
                     ) : (
-                      <div className="text-center text-white/60 text-sm py-4">
-                        עדיין לא הרווחת תגים. המשך לתרגל!
-                      </div>
+                      <div className="text-center text-white/60 text-sm py-4">{ms.noBadgesYet}</div>
                     )}
                   </div>
 
                 <button
                   onClick={() => setShowPlayerProfile(false)}
                   className="w-full px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm mt-4"
-                >
-                  סגור
-                </button>
+                >{ms.close}</button>
               </div>
             </div>
           )}
@@ -3993,15 +4016,13 @@ export default function MathMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
               onClick={() => setShowPracticeOptions(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-6 max-w-md w-full"
                 onClick={(e) => e.stopPropagation()}
               >
-                <h2 className="text-2xl font-extrabold text-white mb-4 text-center">
-                  תרגול ממוקד
-                </h2>
+                <h2 className="text-2xl font-extrabold text-white mb-4 text-center">{ms.focusedPractice}</h2>
 
                 <div className="space-y-3 mb-4">
                   <button
@@ -4018,13 +4039,11 @@ export default function MathMaster() {
                         : "bg-gray-500/20 border-gray-400/30 opacity-50 cursor-not-allowed"
                     }`}
                   >
-                    <div className="text-lg font-bold text-white mb-1">
-                      🔄 חזרה על שגיאות
-                    </div>
+                    <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.mistakes')}</div>
                     <div className="text-sm text-white/70">
                       {mistakes.length > 0
                         ? `תרגל את ${mistakes.length} השגיאות שעשית`
-                        : "אין שגיאות לתרגל"}
+                        : ms.noMistakesToPractice}
                     </div>
                   </button>
 
@@ -4035,12 +4054,8 @@ export default function MathMaster() {
                     }}
                     className="w-full p-4 rounded-lg bg-blue-500/20 border border-blue-400/50 hover:bg-blue-500/30 transition-all text-right"
                   >
-                    <div className="text-lg font-bold text-white mb-1">
-                      📈 תרגול מדורג
-                    </div>
-                    <div className="text-sm text-white/70">
-                      תרגול מדורג - מתחיל ברמה נמוכה ומתקדם לרמה שבחרת
-                    </div>
+                    <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.graded')}</div>
+                    <div className="text-sm text-white/70">{ms.t('learning.master.gradedPracticeBlurb')}</div>
                   </button>
                   
                   <button
@@ -4051,12 +4066,8 @@ export default function MathMaster() {
                     }}
                     className="w-full p-4 rounded-lg bg-emerald-500/20 border border-emerald-400/50 hover:bg-emerald-500/30 transition-all text-right"
                   >
-                    <div className="text-lg font-bold text-white mb-1">
-                      🎮 תרגול רגיל
-                    </div>
-                    <div className="text-sm text-white/70">
-                      חזור לתרגול רגיל
-                    </div>
+                    <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.normal')}</div>
+                    <div className="text-sm text-white/70">{ms.t('learning.master.backToRegularPractice')}</div>
                   </button>
                 </div>
 
@@ -4088,9 +4099,7 @@ export default function MathMaster() {
                 <button
                   onClick={() => setShowPracticeOptions(false)}
                   className="w-full px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
-                >
-                  סגור
-                </button>
+                >{ms.close}</button>
               </div>
             </div>
           )}
@@ -4109,21 +4118,21 @@ export default function MathMaster() {
               <div className="w-full flex justify-center mb-3 md:mb-4 overflow-x-auto [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] px-0.5">
                 <div
                   className="inline-flex flex-nowrap items-center justify-center gap-2 md:gap-2.5 lg:gap-3 w-max max-w-full min-w-0"
-                  dir="rtl"
+                  dir={ms.direction}
                 >
                 <div
                   data-testid="math-player-name"
                   className={MB.preGamePlayerBadge}
                   dir={playerName && /[\u0590-\u05FF]/.test(playerName) ? "rtl" : "ltr"}
                   title={playerName.trim() ? playerName.trim() : undefined}
-                  aria-label={playerName.trim() ? `שם ילד/ה: ${playerName.trim()}` : "שם ילד/ה לא זמין"}
+                  aria-label={playerName.trim() ? ms.t("learning.master.childNameAria", { name: playerName.trim() }) : ms.childNameUnavailable}
                 >
-                  {playerName.trim() ? playerName.trim() : "שחקן"}
+                  {playerName.trim() ? playerName.trim() : ms.player}
                 </div>
                 <select
                   data-testid="math-grade-select"
                   value={gradeNumber}
-                  title={`כיתה ${["א", "ב", "ג", "ד", "ה", "ו"][gradeNumber - 1]}`}
+                  title={ms.getGradeName(`g${gradeNumber}`)}
                   disabled={!canPickGrade}
                   aria-disabled={!canPickGrade || undefined}
                   onChange={(e) => {
@@ -4136,14 +4145,14 @@ export default function MathMaster() {
                 >
                   {[1, 2, 3, 4, 5, 6].map((g) => (
                     <option key={g} value={g}>
-                      {`כיתה ${["א","ב","ג","ד","ה","ו"][g - 1]}`}
+                      {ms.getGradeName(`g${g}`)}
                     </option>
                   ))}
                 </select>
                 <StudentDisplayLevelSelect
                   subjectId="math"
                   value={displayLevel}
-                  title={studentDisplayLevelLabel(displayLevel)}
+                  title={ms.getDisplayLevelLabel(displayLevel)}
                   onChange={handleDisplayLevelChange}
                   className={`${MB.selectControl} shrink-0 min-w-0 w-[5rem] max-w-[5.5rem] md:w-[5.75rem] md:max-w-[6.25rem]`}
                 />
@@ -4156,7 +4165,7 @@ export default function MathMaster() {
                     onChange={(e) => {
                       const newOp = e.target.value;
                       if (guestTopics.isGuest && guestTopics.isLocked(newOp)) {
-                        alert(GUEST_TOPIC_LOCK_MESSAGE_HE);
+                        alert(ms.t('ui.student.guestLock'));
                         return;
                       }
                       setGameActive(false);
@@ -4170,15 +4179,15 @@ export default function MathMaster() {
                     }}
                     className={`${MB.selectControl} min-w-0 w-full md:w-[min(22rem,42vw)] md:max-w-[22rem]`}
                   >
-                    <optgroup label="נושאים">
+                    <optgroup label={ms.topics}>
                       {visibleMathOps.map((op) => (
                         <option key={op} value={op} disabled={guestTopics.isLocked(op)}>
                           {guestTopics.label(op, getOperationName(op))}
                         </option>
                       ))}
                     </optgroup>
-                    <optgroup label="תרגול מעורב">
-                      <option value="mixed">🔀 ערבוב נושאים</option>
+                    <optgroup label={ms.mixedPractice}>
+                      <option value="mixed">🔀 {ms.getTopicName("mixed")}</option>
                     </optgroup>
                   </select>
                   {operation === "mixed" && (
@@ -4186,7 +4195,7 @@ export default function MathMaster() {
                       type="button"
                       onClick={() => setShowMixedSelector(true)}
                       className={MB.preGameGearBtn}
-                      title="ערוך פעולות למיקס"
+                      title={ms.editMixOperations}
                     >
                       ⚙️
                     </button>
@@ -4195,10 +4204,10 @@ export default function MathMaster() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-4 gap-1.5 md:gap-2 lg:gap-2.5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto" dir="rtl">
+              <div className="grid grid-cols-4 gap-1.5 md:gap-2 lg:gap-2.5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto" dir={ms.direction}>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>שיא ניקוד</span>
+                    <span className={MB.preGameTileLabel}>{ms.bestScore}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueEmerald} dir="ltr">
@@ -4208,7 +4217,7 @@ export default function MathMaster() {
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>שיא רצף</span>
+                    <span className={MB.preGameTileLabel}>{ms.bestStreak}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueAmber} dir="ltr">
@@ -4218,7 +4227,7 @@ export default function MathMaster() {
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>דיוק</span>
+                    <span className={MB.preGameTileLabel}>{ms.accuracy}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueBlue}>{subjectView.middleTiles.accuracyDisplayHe}</span>
@@ -4226,7 +4235,7 @@ export default function MathMaster() {
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>אתגרים</span>
+                    <span className={MB.preGameTileLabel}>{ms.challenges}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <button
@@ -4246,9 +4255,7 @@ export default function MathMaster() {
                           });
                       }}
                       className={MB.btnOpenSmall}
-                    >
-                      פתיחה
-                    </button>
+                    >{ms.opening}</button>
                   </div>
                 </div>
               </div>
@@ -4267,21 +4274,15 @@ export default function MathMaster() {
                   onClick={startGame}
                   disabled={!playerName.trim()}
                   className={MB.btnPrimary}
-                >
-                  ▶️ התחל
-                </button>
+                >{ms.start}</button>
                 <button
                   onClick={() => setShowMultiplicationTable(true)}
                   className={`${MB.btnAction} ${MB.btnActionBlue}`}
-                >
-                  📊 לוח כפל
-                </button>
+                >{ms.t('learning.math.multiplicationTable')}</button>
                 <button
                   onClick={() => setShowLeaderboard(true)}
                   className={`${MB.btnAction} ${MB.btnActionOrange}`}
-                >
-                  🏆 לוח תוצאות
-                </button>
+                >{ms.leaderboard}</button>
               </div>
 
               {/* כפתורים עזרה ותרגול ממוקד */}
@@ -4289,30 +4290,24 @@ export default function MathMaster() {
                 <button
                   onClick={() => setShowHowTo(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionCyan}`}
-                >
-                  ❓ איך לומדים מתמטיקה כאן?
-                </button>
+                >{ms.howToLearn}</button>
                 <button
                   onClick={() => setShowReferenceModal(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionPurple}`}
-                >
-                  📚 לוח עזרה
-                </button>
+                >{ms.helpBoard}</button>
                 {bookTopicHref ? (
                   <button
                     type="button"
                     data-testid={`math-${grade}-book-topic-button`}
                     onClick={() => router.push(bookTopicHref)}
                     className={`${MB.btnActionHelp} ${MB.btnActionTeal}`}
-                  >
-                    הסבר בספר
-                  </button>
+                  >{ms.explainBook}</button>
                 ) : null}
                 <div
                   className={MB.coinBadgeMobile}
-                  title="מטבעות משחק"
+                  title={ms.coinsTitle}
                 >
-                  <span className={MB.coinBadgeLabel}>מטבעות:</span>
+                  <span className={MB.coinBadgeLabel}>{ms.coins}</span>
                   <span dir="ltr" className={MB.coinBadgeValue}>
                     {childCoinBalance}
                   </span>
@@ -4327,9 +4322,7 @@ export default function MathMaster() {
               </div>
 
               {!playerName.trim() && (
-                <p className={MB.mutedHint}>
-                  הכנס את שמך כדי להתחיל
-                </p>
+                <p className={MB.mutedHint}>{ms.enterNameToStart}</p>
               )}
               </div>
             </div>
@@ -4375,7 +4368,7 @@ export default function MathMaster() {
                                 ? MB.feedbackOkAnim
                                 : showWrongAnimation
                                 ? MB.feedbackBadAnim
-                                : feedback.includes("נכון") ||
+                                : feedback.includes("Great") || feedback.includes("Correct") ||
                                   feedback.includes("∞") ||
                                   feedback.includes("Start")
                                 ? MB.feedbackOk
@@ -4388,9 +4381,7 @@ export default function MathMaster() {
 
                         {errorExplanation && (
                           <div className={MB.errorBox}>
-                            <div className={MB.errorTitle}>
-                              למה הטעות קרתה?
-                            </div>
+                            <div className={MB.errorTitle}>{ms.whyMistake}</div>
                             <div className={MB.errorBody}>
                               {renderMaybeStackedFractionOrMixed(errorExplanation)}
                             </div>
@@ -4410,7 +4401,7 @@ export default function MathMaster() {
                         type="button"
                         onClick={() => setIsVerticalDisplay((prev) => !prev)}
                         className={`${MB.floatBtn} ${MB.floatBtnPurple} ${MB.floatBtnCornerLeft} max-md:hidden pointer-events-auto`}
-                        title={isVerticalDisplay ? "הצג מאוזן" : "הצג מאונך"}
+                        title={isVerticalDisplay ? ms.horizontalDisplay : ms.verticalDisplay}
                       >
                         {isVerticalDisplay ? "↔️ מאוזן" : "↕️ מאונך"}
                       </button>
@@ -4425,10 +4416,8 @@ export default function MathMaster() {
                             data-testid={`math-${grade}-book-question-button`}
                             onClick={() => openBookFromLearning(questionBookHref)}
                             className={`${MB.floatBtnHelper} ${MB.floatBtnBookColors}`}
-                            title="הסבר בספר לנושא הנוכחי"
-                          >
-                            הסבר
-                          </button>
+                            title={ms.explainBook}
+                          >{ms.explain}</button>
                         ) : null}
                         {mathShowMultiplicationTableButton ? (
                           <button
@@ -4464,9 +4453,7 @@ export default function MathMaster() {
                               }
                             }}
                             className={`${MB.floatBtnHelper} ${MB.floatBtnTable}`}
-                          >
-                            📊 לוח הכפל
-                          </button>
+                          >{ms.t('learning.math.multiplicationTable')}</button>
                         ) : null}
                       </div>
                     ) : null}
@@ -4483,10 +4470,8 @@ export default function MathMaster() {
                               data-testid={`math-${grade}-book-question-button`}
                               onClick={() => openBookFromLearning(questionBookHref)}
                               className={`${MB.questionActionBtn} ${MB.floatBtnBookColors}`}
-                              title="הסבר בספר לנושא הנוכחי"
-                            >
-                              הסבר
-                            </button>
+                              title={ms.explainBook}
+                            >{ms.explain}</button>
                           ) : null}
                           {mathShowMultiplicationTableButton ? (
                             <button
@@ -4522,9 +4507,7 @@ export default function MathMaster() {
                                 }
                               }}
                               className={`${MB.questionActionBtn} ${MB.floatBtnTable}`}
-                            >
-                              📊 לוח הכפל
-                            </button>
+                            >{ms.t('learning.math.multiplicationTable')}</button>
                           ) : null}
                           {!questionBookHref && !mathShowMultiplicationTableButton ? (
                             <span className="block h-8 w-full" aria-hidden="true" />
@@ -4548,7 +4531,7 @@ export default function MathMaster() {
                               type="button"
                               onClick={() => setIsVerticalDisplay((prev) => !prev)}
                               className={`${MB.questionActionBtn} ${MB.floatBtnPurple}`}
-                              title={isVerticalDisplay ? "הצג מאוזן" : "הצג מאונך"}
+                              title={isVerticalDisplay ? ms.horizontalDisplay : ms.verticalDisplay}
                               data-testid="activity-math-layout-toggle"
                             >
                               {isVerticalDisplay ? "↔️ מאוזן" : "↕️ מאונך"}
@@ -4603,7 +4586,7 @@ export default function MathMaster() {
                                 questionPressureLayout?.questionLeadClassByPressure ??
                                 MB.questionLead
                               }
-                              dir="rtl"
+                              dir={ms.direction}
                               data-testid="student-question-lead"
                               style={{
                                 direction: "rtl",
@@ -4867,7 +4850,7 @@ export default function MathMaster() {
                               onChange={setTextAnswer}
                               disabled={!!selectedAnswer}
                               testId="math-text-answer"
-                              placeholder="תשובה"
+                              placeholder={ms.answerPlaceholder}
                               autoFocus={!scratchpadOpen}
                               inputClassName={
                                 isMobileViewport
@@ -5030,7 +5013,7 @@ export default function MathMaster() {
                   {/* כפתורי הסבר / עצירה */}
                   {currentQuestion && (
                     <div className="mt-2 flex flex-col gap-2 w-full">
-                      <div className={MB.answerActionsBar} dir="rtl">
+                      <div className={MB.answerActionsBar} dir={ms.direction}>
                         {mode === "learning" && (
                           <button
                             type="button"
@@ -5049,18 +5032,14 @@ export default function MathMaster() {
                           data-testid="learning-stop-game"
                           onClick={stopGame}
                           className={MB.btnStop}
-                        >
-                          ⏹️ עצור
-                        </button>
+                        >{ms.stop}</button>
                         {(mode === "learning" || mode === "practice") &&
                           previousExplanationQuestion && (
                             <button
                               type="button"
                               onClick={openPreviousExplanation}
                               className={MB.btnPrevExercise}
-                            >
-                              🕘 תרגיל קודם
-                            </button>
+                            >{ms.previousExercise}</button>
                           )}
                   </div>
 
@@ -5119,20 +5098,20 @@ export default function MathMaster() {
                                     type="button"
                                     onClick={closeExplanationModal}
                                     className={learningModalCloseBtn}
-                                    aria-label="סגור"
+                                    aria-label={ms.close}
                                   >
                                     ✖
                                   </button>
-                                  <h3 className={learningModalTitle} dir="rtl">
+                                  <h3 className={learningModalTitle} dir={ms.direction}>
                                     {showPreviousSolution
-                                      ? "פתרון התרגיל הקודם"
+                                      ? ms.previousExercise
                                       : "\u200Fאיך פותרים את התרגיל?"}
                                   </h3>
                                   <span className="w-10 shrink-0" aria-hidden />
                                 </div>
                                 
                                 <StepExerciseUiProvider value={stepExerciseUi}>
-                                <div className={learningModalScrollBody} dir="rtl">
+                                <div className={learningModalScrollBody} dir={ms.direction}>
                                   <div className={`mb-3 ${learningQuestionBox}`} dir="ltr">
                                     <div
                                       className={`${learningQuestionText} text-center`}
@@ -5175,9 +5154,7 @@ export default function MathMaster() {
                                       type="button"
                                       onClick={closeExplanationModal}
                                       className={learningPrimaryCloseBtn}
-                                    >
-                                      סגור
-                                    </button>
+                                    >{ms.close}</button>
                                   </div>
                                 </div>
                               </div>
@@ -5258,7 +5235,7 @@ export default function MathMaster() {
                             <div
                               className={learningModalOverlay}
                               onClick={closeExplanationModal}
-                              dir="rtl"
+                              dir={ms.direction}
                             >
                               <div
                                 className={learningModalPanel}
@@ -5270,13 +5247,13 @@ export default function MathMaster() {
                                     type="button"
                                     onClick={closeExplanationModal}
                                     className={learningModalCloseBtn}
-                                    aria-label="סגור"
+                                    aria-label={ms.close}
                                   >
                                     ✖
                                   </button>
                                   <h3 className={learningModalTitle}>
                                     {showPreviousSolution
-                                      ? "פתרון התרגיל הקודם"
+                                      ? ms.previousExercise
                                       : "\u200Fאיך פותרים את התרגיל?"}
                                   </h3>
                                   <span className="w-10 shrink-0" aria-hidden />
@@ -5288,7 +5265,7 @@ export default function MathMaster() {
                                   {exerciseRouter}
                                   
                                   {/* טקסט ההסבר */}
-                                  <div className={learningStepSection} dir="rtl">
+                                  <div className={learningStepSection} dir={ms.direction}>
                                     <h4 className={learningExplTitle}>{activeStep.title}</h4>
                                     {activeStep.content ? (
                                       <div className={learningExplBody}>{activeStep.content}</div>
@@ -5305,7 +5282,7 @@ export default function MathMaster() {
                                 {/* כפתורים ואינדיקטור - קבועים בתחתית */}
                                 <div className={learningModalFooter}>
                                   {/* שליטה באנימציה */}
-                                  <div className={learningStepNavRow} dir="rtl">
+                                  <div className={learningStepNavRow} dir={ms.direction}>
                                     <button
                                       onClick={() => setAnimationStep((s) => (s > 0 ? s - 1 : 0))}
                                       disabled={animationStep === 0}
@@ -5317,7 +5294,7 @@ export default function MathMaster() {
                                       onClick={() => setAutoPlay((p) => !p)}
                                       className={learningStepNavBtnPlay}
                                     >
-                                      {autoPlay ? "עצור" : "נגן"}
+                                      {autoPlay ? ms.stop : ms.play}
                                     </button>
                                     <button
                                       onClick={() => setAnimationStep((s) => (s < animationSteps.length - 1 ? s + 1 : s))}
@@ -5343,7 +5320,7 @@ export default function MathMaster() {
                           <div
                             className={learningModalOverlay}
                             onClick={closeExplanationModal}
-                            dir="rtl"
+                            dir={ms.direction}
                           >
                             <div
                               className={learningModalPanel}
@@ -5355,13 +5332,13 @@ export default function MathMaster() {
                                   type="button"
                                   onClick={closeExplanationModal}
                                   className={learningModalCloseBtn}
-                                  aria-label="סגור"
+                                  aria-label={ms.close}
                                 >
                                   ✖
                                 </button>
                                 <h3 className={learningModalTitle}>
                                   {showPreviousSolution
-                                    ? "פתרון התרגיל הקודם"
+                                    ? ms.previousExercise
                                     : "\u200Fאיך פותרים את התרגיל?"}
                                 </h3>
                                 <span className="w-10 shrink-0" aria-hidden />
@@ -5381,8 +5358,8 @@ export default function MathMaster() {
                                 </div>
                                 
                                 {/* טקסט ההסבר */}
-                                <div className={learningStepSection} dir="rtl">
-                                  <h4 className={learningExplTitle}>{activeStep.title || "הסבר"}</h4>
+                                <div className={learningStepSection} dir={ms.direction}>
+                                  <h4 className={learningExplTitle}>{activeStep.title || ms.explanation}</h4>
                                   {shouldShowStandaloneExerciseView(
                                     activeStep,
                                     explanationQuestion,
@@ -5417,7 +5394,7 @@ export default function MathMaster() {
                               {/* כפתורים ואינדיקטור - קבועים בתחתית */}
                               <div className={learningModalFooter}>
                                 {/* שליטה באנימציה */}
-                                <div className={learningStepNavRow} dir="rtl">
+                                <div className={learningStepNavRow} dir={ms.direction}>
                                   <button
                                     onClick={() => setAnimationStep((s) => (s > 0 ? s - 1 : 0))}
                                     disabled={animationStep === 0}
@@ -5429,7 +5406,7 @@ export default function MathMaster() {
                                     onClick={() => setAutoPlay((p) => !p)}
                                     className={learningStepNavBtnPlay}
                                   >
-                                    {autoPlay ? "עצור" : "נגן"}
+                                    {autoPlay ? ms.stop : ms.play}
                                   </button>
                                   <button
                                     onClick={() => setAnimationStep((s) => (s < animationSteps.length - 1 ? s + 1 : s))}
@@ -5460,7 +5437,7 @@ export default function MathMaster() {
 
           {/* Multiplication Table Modal */}
           {showMultiplicationTable && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" dir="rtl">
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" dir={ms.direction}>
               <div
                 className="absolute inset-0 bg-black/70 backdrop-blur-sm"
                 onClick={() => {
@@ -5506,13 +5483,11 @@ export default function MathMaster() {
                       איפוס
                     </button>
                   </div>
-                  <h2 className="text-xl font-bold text-white">
-                    📊 לוח הכפל
-                  </h2>
+                  <h2 className="text-xl font-bold text-white">{ms.t('learning.math.multiplicationTable')}</h2>
                 </div>
                 <div className="p-4">
                   {/* Mode toggle */}
-                  <div className="mb-4 flex gap-2 justify-center flex-wrap" dir="rtl">
+                  <div className="mb-4 flex gap-2 justify-center flex-wrap" dir={ms.direction}>
                     <button
                       onClick={() => {
                         setTableMode("division");
@@ -5572,9 +5547,7 @@ export default function MathMaster() {
                           ? "bg-emerald-500/80 text-white"
                           : "bg-white/10 text-white/70 hover:bg-white/20"
                       }`}
-                    >
-                      🎯 תרגול
-                    </button>
+                    >{ms.focusedPractice}</button>
                   </div>
 
                   {/* מצב תרגול */}
@@ -5593,7 +5566,7 @@ export default function MathMaster() {
                               checkPracticeAnswer();
                             }
                           }}
-                          placeholder="הכנס תשובה"
+                          placeholder={ms.enterAnswer}
                           className="w-full max-w-[200px] px-4 py-2 rounded-lg bg-black/40 border border-white/20 text-white text-xl font-bold text-center"
                           autoFocus
                         />
@@ -5619,7 +5592,7 @@ export default function MathMaster() {
                   {practiceMode && !practiceQuestion && (
                     <div className="mb-4 p-4 rounded-lg bg-blue-500/20 border border-blue-400/50">
                       <div className="text-center mb-3">
-                        <div className="text-sm text-white/80 mb-2">בחר שורה או עמודה לתרגול:</div>
+                        <div className="text-sm text-white/80 mb-2">{ms.t('learning.math.pickRowOrColumn')}</div>
                         <div className="flex gap-2 justify-center flex-wrap">
                           {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
                             <button
@@ -5665,9 +5638,7 @@ export default function MathMaster() {
                             generatePracticeQuestion();
                           }}
                           className="mt-2 px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
-                        >
-                          תרגול אקראי
-                        </button>
+                        >{ms.t('learning.math.randomPractice')}</button>
                       </div>
                     </div>
                   )}
@@ -6034,9 +6005,7 @@ export default function MathMaster() {
                         setSelectedCell(null);
                       }}
                       className="px-6 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 font-bold text-sm"
-                    >
-                      סגור
-                    </button>
+                    >{ms.close}</button>
                   </div>
                 </div>
               </div>
@@ -6048,21 +6017,19 @@ export default function MathMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
               onClick={() => setShowLeaderboard(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-4 max-w-md w-full max-h-[85svh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="text-center mb-4">
-                  <h2 className="text-2xl font-extrabold text-white mb-1">
-                    🏆 לוח תוצאות
-                  </h2>
-                  <p className="text-white/70 text-xs">שיאים מקומיים</p>
+                  <h2 className="text-2xl font-extrabold text-white mb-1">{ms.leaderboard}</h2>
+                  <p className="text-white/70 text-xs">{ms.localHighScores}</p>
                 </div>
 
                 {/* Level Selection */}
-                <div className="flex gap-2 mb-4 justify-center" dir="rtl">
+                <div className="flex gap-2 mb-4 justify-center" dir={ms.direction}>
                   {studentDisplayLevelKeys("math").slice().reverse().map((dl) => (
                     <button
                       key={dl}
@@ -6091,7 +6058,7 @@ export default function MathMaster() {
                           : "bg-white/10 text-white/70 hover:bg-white/20"
                       }`}
                     >
-                      {studentDisplayLevelLabel(dl)}
+                      {ms.getDisplayLevelLabel(dl)}
                     </button>
                   ))}
                 </div>
@@ -6101,18 +6068,10 @@ export default function MathMaster() {
                   <table className="w-full border-collapse text-center">
                     <thead>
                       <tr className="border-b border-white/20">
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          דירוג
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          שחקן
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          ניקוד
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          רצף
-                        </th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.rank}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.player}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.score}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.streak}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -6123,7 +6082,7 @@ export default function MathMaster() {
                             className="text-white/60 p-4 text-sm"
                           >
                             עדיין אין תוצאות ברמה{" "}
-                            {studentDisplayLevelLabel(leaderboardLevel)}
+                            {ms.getDisplayLevelLabel(leaderboardLevel)}
                           </td>
                         </tr>
                       ) : (
@@ -6173,9 +6132,7 @@ export default function MathMaster() {
                   <button
                     onClick={() => setShowLeaderboard(false)}
                     className="px-6 py-2 rounded-lg bg-amber-500/80 hover:bg-amber-500 font-bold text-sm"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>
@@ -6196,7 +6153,7 @@ export default function MathMaster() {
                   setOperation(allowed[0] || GRADES[grade].operations.find(op => op !== "mixed") || "addition");
                 }
               }}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-lg p-2 max-h-[90vh] flex flex-col"
@@ -6237,7 +6194,7 @@ export default function MathMaster() {
                     ))}
                 </div>
 
-                <div className="flex flex-col gap-1.5 flex-shrink-0" dir="rtl">
+                <div className="flex flex-col gap-1.5 flex-shrink-0" dir={ms.direction}>
                   <button
                     onClick={() => {
                       // בדוק שיש לפחות פעולה אחת נבחרת
@@ -6247,7 +6204,7 @@ export default function MathMaster() {
                       if (hasSelected) {
                         setShowMixedSelector(false);
                       } else {
-                        alert("אנא בחר לפחות פעולה אחת");
+                        alert(ms.selectAtLeastOneOp);
                       }
                     }}
                     className="w-full px-2 py-1 rounded bg-emerald-500/80 hover:bg-emerald-500 font-bold text-[10px]"
@@ -6304,31 +6261,25 @@ export default function MathMaster() {
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-400/60 rounded-2xl p-4 max-w-md w-full text-sm text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
-                <h2 className="text-xl font-extrabold mb-2 text-center">
-                  📘 איך לומדים מתמטיקה כאן?
-                </h2>
+                <h2 className="text-xl font-extrabold mb-2 text-center">{ms.t('learning.math.howToLearnTitle')}</h2>
 
-                <p className="text-white/80 text-xs mb-3 text-center">
-                  המטרה היא לתרגל מתמטיקה בצורה משחקית, עם התאמה לכיתה, נושא ורמת קושי.
-                </p>
+                <p className="text-white/80 text-xs mb-3 text-center">{ms.t('learning.math.howToLearnBlurb')}</p>
 
                 <ul className="list-disc pr-4 space-y-1 text-[13px] text-white/90">
-                  <li>בחר כיתה, רמת קושי ופעולה (חיבור, חיסור, כפל, חילוק, שברים, אחוזים ועוד).</li>
-                  <li>בחר מצב משחק: למידה, אתגר עם טיימר וחיים, מהירות או מרתון.</li>
-                  <li>קרא היטב את השאלה – לפעמים יש תרגילי מילים שצריך להבין את הסיפור.</li>
-                  <li>ניקוד גבוה, רצף תשובות נכון, כוכבים ו Badges עוזרים לך לעלות רמה כשחקן.</li>
+                  <li>{ms.t("learning.math.howToLearnSteps.step1")}</li>
+                  <li>{ms.t("learning.math.howToLearnSteps.step2")}</li>
+                  <li>{ms.t("learning.math.howToLearnSteps.step3")}</li>
+                  <li>{ms.t("learning.math.howToLearnSteps.step4")}</li>
                 </ul>
 
                 <div className="mt-4 flex justify-center">
                   <button
                     onClick={() => setShowHowTo(false)}
                     className="px-5 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 text-sm font-bold"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>
@@ -6341,11 +6292,11 @@ export default function MathMaster() {
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-blue-400/60 rounded-2xl p-5 w-full max-w-lg max-h-[85vh] overflow-y-auto text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">📚 לוח עזרה במתמטיקה</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.t("learning.math.referenceBoardTitle")}</h2>
                   <button
                     onClick={() => setShowReferenceModal(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -6354,7 +6305,7 @@ export default function MathMaster() {
                   </button>
                 </div>
                 <p className="text-sm text-white/70 mb-3">
-                  בחר קטגוריה כדי לראות פעולות, נוסחאות ומונחים חשובים במתמטיקה.
+                  {ms.t("learning.math.referenceBoardBlurb")}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {REFERENCE_CATEGORY_KEYS.map((key) => (
@@ -6367,118 +6318,52 @@ export default function MathMaster() {
                           : "bg-white/5 border-white/20 text-white/70 hover:bg-white/10"
                       }`}
                     >
-                      {REFERENCE_CATEGORIES[key].icon} {REFERENCE_CATEGORIES[key].label}
+                      {REFERENCE_CATEGORIES[key].icon} {ms.getReferenceCategoryLabel(key)}
                     </button>
                   ))}
                 </div>
                 <div className="space-y-3">
-                  {referenceCategory === "operations" && (
-                    <>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">➕ חיבור</div>
-                        <div className="text-sm text-white/80">חיבור מספרים: <span style={{ direction: 'ltr', unicodeBidi: 'bidi-override', display: 'inline-block' }}>a + b = c</span></div>
-                        <div className="text-xs text-white/60 mt-1">דוגמה: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>5 + 3 = 8</span></div>
+                  {referenceCategory === "operations" &&
+                    MATH_REFERENCE_OPERATION_KEYS.map((itemKey) => (
+                      <div key={itemKey} className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="font-bold text-lg mb-2">
+                          {ms.t(`learning.math.reference.operations.${itemKey}.title`)}
+                        </div>
+                        <div className="text-sm text-white/80">
+                          {ms.t(`learning.math.reference.operations.${itemKey}.desc`)}
+                        </div>
+                        <div className="text-xs text-white/60 mt-1">
+                          {ms.t(`learning.math.reference.operations.${itemKey}.example`)}
+                        </div>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">➖ חיסור</div>
-                        <div className="text-sm text-white/80">חיסור מספרים: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>a - b = c</span></div>
-                        <div className="text-xs text-white/60 mt-1">דוגמה: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>8 - 3 = 5</span></div>
+                    ))}
+                  {referenceCategory === "formulas" &&
+                    MATH_REFERENCE_FORMULA_KEYS.map((itemKey) => (
+                      <div key={itemKey} className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="font-bold text-lg mb-2">
+                          {ms.t(`learning.math.reference.formulas.${itemKey}.title`)}
+                        </div>
+                        <div className="text-sm text-white/80">
+                          {ms.t(`learning.math.reference.formulas.${itemKey}.desc`)}
+                        </div>
+                        <div className="text-xs text-white/60 mt-1">
+                          <span dir="ltr" style={{ display: "inline-block" }}>
+                            {ms.t(`learning.math.reference.formulas.${itemKey}.formula`)}
+                          </span>
+                        </div>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">✖️ כפל</div>
-                        <div className="text-sm text-white/80">כפל מספרים: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>a × b = c</span></div>
-                        <div className="text-xs text-white/60 mt-1">דוגמה: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>4 × 3 = 12</span></div>
+                    ))}
+                  {referenceCategory === "terms" &&
+                    MATH_REFERENCE_TERM_KEYS.map((itemKey) => (
+                      <div key={itemKey} className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="font-bold text-lg mb-2">
+                          {ms.t(`learning.math.reference.terms.${itemKey}.title`)}
+                        </div>
+                        <div className="text-sm text-white/80">
+                          {ms.t(`learning.math.reference.terms.${itemKey}.desc`)}
+                        </div>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">➗ חילוק</div>
-                        <div className="text-sm text-white/80">חילוק מספרים: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>a ÷ b = c</span></div>
-                        <div className="text-xs text-white/60 mt-1">דוגמה: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>12 ÷ 3 = 4</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔢 שברים</div>
-                        <div className="text-sm text-white/80">מספר המייצג חלק משלם: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>1/2, 3/4</span></div>
-                        <div className="text-xs text-white/60 mt-1">דוגמה: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>1/2 = 0.5</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">% אחוזים</div>
-                        <div className="text-sm text-white/80">חלק מתוך 100: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>% = חלק/שלם × 100</span></div>
-                        <div className="text-xs text-white/60 mt-1">דוגמה: <span dir="ltr" style={{ display: 'inline-block', textAlign: 'left', unicodeBidi: 'isolate' }}>50% = 0.5</span></div>
-                      </div>
-                    </>
-                  )}
-                  {referenceCategory === "formulas" && (
-                    <>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח ריבוע</div>
-                        <div className="text-sm text-white/80">צלע × צלע</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = a²</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח מלבן</div>
-                        <div className="text-sm text-white/80">אורך × רוחב</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = a × b</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח משולש</div>
-                        <div className="text-sm text-white/80">(בסיס × גובה) ÷ 2</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = (b × h) ÷ 2</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">⭕ היקף מעגל</div>
-                        <div className="text-sm text-white/80">2 × π × רדיוס</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>P = 2πr</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">⭕ שטח מעגל</div>
-                        <div className="text-sm text-white/80">π × רדיוס²</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = πr²</span></div>
-                      </div>
-                    </>
-                  )}
-                  {referenceCategory === "terms" && (
-                    <>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">➕ סכום</div>
-                        <div className="text-sm text-white/80">תוצאת החיבור של מספרים</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">➖ הפרש</div>
-                        <div className="text-sm text-white/80">תוצאת החיסור של מספרים</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">✖️ מכפלה</div>
-                        <div className="text-sm text-white/80">תוצאת הכפל של מספרים</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">➗ מנה</div>
-                        <div className="text-sm text-white/80">תוצאת החילוק של מספרים</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔢 מספר זוגי</div>
-                        <div className="text-sm text-white/80">מספר המתחלק ב-2 ללא שארית (2, 4, 6, 8...)</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔢 מספר אי-זוגי</div>
-                        <div className="text-sm text-white/80">מספר שלא מתחלק ב-2 ללא שארית (1, 3, 5, 7...)</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔢 מספר ראשוני</div>
-                        <div className="text-sm text-white/80">מספר המתחלק רק ב-1 ובעצמו (2, 3, 5, 7, 11...)</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔢 מספר שלם</div>
-                        <div className="text-sm text-white/80">מספר ללא שבר (0, 1, 2, 3, -1, -2...)</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔢 שבר</div>
-                        <div className="text-sm text-white/80">מספר המייצג חלק משלם (1/2, 3/4, 2/3...)</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">% אחוז</div>
-                        <div className="text-sm text-white/80">חלק מתוך 100 (50% = חצי, 25% = רבע)</div>
-                      </div>
-                    </>
-                  )}
+                    ))}
                 </div>
               </div>
             </div>

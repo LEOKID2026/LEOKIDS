@@ -2,7 +2,7 @@ import { getPortalLoadingTheme } from "../../lib/ui/portal-loading-theme.client.
 
 /**
  * Themed loading panel — bright mode uses site sky gradient (same as Layout).
- * @param {{ isBright?: boolean, message: string, fullPage?: boolean, reportPage?: boolean, hubGrid?: boolean, className?: string, textClassName?: string }} props
+ * @param {{ isBright?: boolean, message: string, fullPage?: boolean, reportPage?: boolean, hubGrid?: boolean, className?: string, textClassName?: string, dir?: string, lang?: string }} props
  */
 export default function PortalLoadingPanel({
   isBright = false,
@@ -12,6 +12,8 @@ export default function PortalLoadingPanel({
   hubGrid = false,
   className = "",
   textClassName = "",
+  dir,
+  lang,
 }) {
   const L = getPortalLoadingTheme(isBright);
   const shell = hubGrid
@@ -27,8 +29,8 @@ export default function PortalLoadingPanel({
     <div
       className={`${shell} ${className}`.trim()}
       style={shellStyle}
-      dir="rtl"
-      lang="he"
+      {...(dir ? { dir } : {})}
+      {...(lang ? { lang } : {})}
       role="status"
       aria-live="polite"
     >

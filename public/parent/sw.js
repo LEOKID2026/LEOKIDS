@@ -1,12 +1,26 @@
-// Minimal service worker for P LEO K parent PWA (scope /parent/ only).
+// Minimal service worker for LEO KIDS parent PWA (scope /parent/ only).
 // Keeps parent install separate from the kids SW at scope /.
+// Cache names use lk-global- prefix (aligned with public/student/sw.js).
+
+const CACHE_NAME = "lk-global-parent-v1";
+const CACHE_PREFIX = "lk-global-parent-";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(
+        keys
+          .filter((k) => k.startsWith(CACHE_PREFIX) && k !== CACHE_NAME)
+          .map((k) => caches.delete(k))
+      );
+      await self.clients.claim();
+    })()
+  );
 });
 
 self.addEventListener("fetch", (event) => {

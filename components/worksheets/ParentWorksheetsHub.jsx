@@ -13,7 +13,7 @@ import Link from "next/link";
 import ReadyWorksheetsTab from "./ReadyWorksheetsTab.jsx";
 import CreateWorksheetTab from "./CreateWorksheetTab.jsx";
 import RecommendationsTab from "./RecommendationsTab.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetShellAttrs, useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 import { defaultWorksheetTopicForGrade } from "../../lib/worksheets/worksheet-topic-options.js";
 import { listMathPracticeFormatsForGradeTopic } from "../../lib/worksheets/worksheet-math-practice-format.js";
 import {
@@ -21,18 +21,6 @@ import {
   saveWorksheetIncludeAnswersPref,
 } from "../../lib/worksheets/worksheet-include-answers-pref.client.js";
 import { saveWorksheetPreviewSession, clearWorksheetAnswerKeySession } from "../../lib/worksheets/worksheet-preview-session.client.js";
-
-
-
-const TABS = [
-
-  { id: "ready", label: WORKSHEET_UI_HE.tabReady, hint: "30 דפים · 12 שאלות" },
-
-  { id: "create", label: WORKSHEET_UI_HE.tabGenerator, hint: "התאמה אישית" },
-
-  { id: "recommendations", label: WORKSHEET_UI_HE.tabRecommendations, hint: "לפי תרגול" },
-
-];
 
 
 
@@ -53,6 +41,16 @@ const TABS = [
 export default function ParentWorksheetsHub({ session, students, T }) {
 
   const router = useRouter();
+  const ui = useWorksheetUi();
+  const shell = useWorksheetShellAttrs();
+  const tabs = useMemo(
+    () => [
+      { id: "ready", label: ui.tabReady, hint: ui.tabReadyHint },
+      { id: "create", label: ui.tabGenerator, hint: ui.tabCreateHint },
+      { id: "recommendations", label: ui.tabRecommendations, hint: ui.tabRecommendationsHint },
+    ],
+    [ui]
+  );
 
   const [activeTab, setActiveTab] = useState("ready");
 
@@ -147,7 +145,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
       if (!res.ok || !data.ok) {
 
-        setCatalogError(data.error || WORKSHEET_UI_HE.errorGeneric);
+        setCatalogError(data.error || ui.errorGeneric);
 
         setCatalogItems([]);
 
@@ -159,7 +157,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     } catch {
 
-      setCatalogError(WORKSHEET_UI_HE.errorGeneric);
+      setCatalogError(ui.errorGeneric);
 
     } finally {
 
@@ -225,7 +223,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
         if (!res.ok || !data.ok) {
 
-          setCatalogError(data.error || WORKSHEET_UI_HE.errorGeneric);
+          setCatalogError(data.error || ui.errorGeneric);
 
           return;
 
@@ -235,7 +233,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
       } catch {
 
-        setCatalogError(WORKSHEET_UI_HE.errorGeneric);
+        setCatalogError(ui.errorGeneric);
 
       } finally {
 
@@ -263,7 +261,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
         Array.isArray(createForm.mixedTopicKeys) &&
         createForm.mixedTopicKeys.length === 0
       ) {
-        setCreateError(WORKSHEET_UI_HE.mixedTopicsEmptyError);
+        setCreateError(ui.mixedTopicsEmptyError);
         return;
       }
 
@@ -314,7 +312,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
       if (!res.ok || !data.ok) {
 
-        setCreateError(data.message || data.error || WORKSHEET_UI_HE.errorGeneric);
+        setCreateError(data.message || data.error || ui.errorGeneric);
 
         return;
 
@@ -329,7 +327,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     } catch {
 
-      setCreateError(WORKSHEET_UI_HE.errorGeneric);
+      setCreateError(ui.errorGeneric);
 
     } finally {
 
@@ -363,7 +361,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
       if (!res.ok || !data.ok) {
 
-        setRecError(data.error || WORKSHEET_UI_HE.errorGeneric);
+        setRecError(data.error || ui.errorGeneric);
 
         setRecommendations([]);
 
@@ -379,7 +377,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     } catch {
 
-      setRecError(WORKSHEET_UI_HE.errorGeneric);
+      setRecError(ui.errorGeneric);
 
     } finally {
 
@@ -463,7 +461,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
         if (!res.ok || !data.ok) {
 
-          setRecError(data.message || data.error || WORKSHEET_UI_HE.errorGeneric);
+          setRecError(data.message || data.error || ui.errorGeneric);
 
           return;
 
@@ -473,7 +471,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
       } catch {
 
-        setRecError(WORKSHEET_UI_HE.errorGeneric);
+        setRecError(ui.errorGeneric);
 
       } finally {
 
@@ -521,7 +519,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
   return (
 
-    <div dir="rtl" lang="he" className="worksheet-hub-page space-y-5">
+    <div {...shell} className="worksheet-hub-page space-y-5">
 
       <section className={`worksheet-hub-hero ${T.infoBox}`}>
 
@@ -537,13 +535,13 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
             <h1 className={`text-xl md:text-2xl font-bold ${T.heading}`}>
 
-              {WORKSHEET_UI_HE.hubTitle}
+              {ui.hubTitle}
 
             </h1>
 
-            <p className={`worksheet-hub-intro ${T.subheading}`}>{WORKSHEET_UI_HE.hubSubtitle}</p>
+            <p className={`worksheet-hub-intro ${T.subheading}`}>{ui.hubSubtitle}</p>
 
-            <p className={`mt-2 text-sm ${T.muted}`}>{WORKSHEET_UI_HE.hubIntro}</p>
+            <p className={`mt-2 text-sm ${T.muted}`}>{ui.hubIntro}</p>
 
           </div>
 
@@ -551,7 +549,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
         <Link href="/parent/dashboard" className={`${T.secondaryBtn} shrink-0 self-start`}>
 
-          {WORKSHEET_UI_HE.back}
+          {ui.back}
 
         </Link>
 
@@ -559,9 +557,9 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
 
 
-      <nav className="worksheet-hub-tabs" aria-label="מסלולי דפי עבודה">
+      <nav className="worksheet-hub-tabs" aria-label="Worksheet hub sections">
 
-        {TABS.map((tab) => (
+        {tabs.map((tab) => (
 
           <button
 
@@ -639,7 +637,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
             </div>
 
-            <p className={`worksheet-empty-state-title ${T.heading}`}>{WORKSHEET_UI_HE.noStudents}</p>
+            <p className={`worksheet-empty-state-title ${T.heading}`}>{ui.noStudents}</p>
 
           </div>
 

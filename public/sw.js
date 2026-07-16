@@ -1,7 +1,7 @@
 // Service Worker for LEO K PWA - Full Offline Support
-const CACHE_NAME = 'leo-k-v7';
-const STATIC_CACHE = 'leo-k-static-v7';
-const DYNAMIC_CACHE = 'leo-k-dynamic-v7';
+const CACHE_NAME = 'lk-global-v1';
+const STATIC_CACHE = 'lk-global-static-v1';
+const DYNAMIC_CACHE = 'lk-global-dynamic-v1';
 const REWARD_CARD_PATH_PREFIX = '/rewards/cards/';
 
 // Install-time precache: public chrome only. Game/solo assets cache on first request
@@ -264,7 +264,7 @@ self.addEventListener('fetch', (event) => {
                 
                 // Final fallback - generate basic HTML response inline
                 return new Response(
-                  '<!DOCTYPE html><html dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>אופליין - LEO KIDS</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}button:hover{background:#059669}</style></head><body><h1>🔌 אתה במצב אופליין</h1><p>אנא התחבר לאינטרנט כדי להמשיך.</p><button onclick="location.reload()">נסה שוב</button></body></html>',
+                  '<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offline — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}button:hover{background:#059669}</style></head><body><h1>🔌 You are offline</h1><p>Please connect to the internet to continue.</p><button onclick="location.reload()">Try again</button></body></html>',
                   { 
                     status: 503,
                     headers: { 
@@ -382,7 +382,7 @@ self.addEventListener('push', (event) => {
     icon: '/icons/child/android-chrome-192x192.png',
     badge: '/icons/child/android-chrome-192x192.png',
     vibrate: [200, 100, 200],
-    tag: 'leo-k-notification'
+    tag: 'lk-global-notification'
   };
 
   event.waitUntil(

@@ -1,14 +1,16 @@
 {
   "id": "/pwa-teacher",
-  "name": "T LEO KIDS",
-  "short_name": "T LEO KIDS",
-  "description": "אזור המורים של LEO KIDS — לנהל כיתות, תלמידים ופעילויות בית ספר.",
+  "name": "Leo Kids — Teachers",
+  "short_name": "Leo Teachers",
+  "description": "Leo Kids teacher portal — manage classes, students, and classroom activities.",
   "start_url": "/teacher/login",
   "display": "standalone",
   "background_color": "#1e1b4b",
   "theme_color": "#4338ca",
   "orientation": "any",
   "scope": "/teacher/",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/icons/teacher/pwa-72x72.png",

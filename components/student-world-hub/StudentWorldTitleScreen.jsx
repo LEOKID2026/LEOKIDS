@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import StudentLearningAvatar from "../arcade/club/StudentLearningAvatar.jsx";
 import StudentCopyLeoNumberChip from "../student/StudentCopyLeoNumberChip.jsx";
 import StudentShareFriendsButton from "../student/StudentShareFriendsButton.jsx";
@@ -51,7 +52,7 @@ const heroPromptText =
  */
 export default function StudentWorldTitleScreen({
   greetingHe,
-  promptHe = "מה עושים היום?",
+  promptHe = "",
   coinsDisplay,
   diamondsDisplay = "-",
   leoNumber = "",
@@ -72,7 +73,10 @@ export default function StudentWorldTitleScreen({
   surpriseStatusOverride = null,
   showParentInvite = false,
 }) {
+  const { direction } = useI18n();
+  const t = useT();
   const [parentInviteOpen, setParentInviteOpen] = useState(false);
+  const resolvedPrompt = promptHe || t("ui.student.whatToday");
 
   const coinsLogout = (
     <div className="flex items-center gap-1.5">
@@ -97,7 +101,7 @@ export default function StudentWorldTitleScreen({
         className={`${chipLogout} text-[11px] font-semibold text-rose-800`}
         data-testid="student-world-home-logout"
       >
-        {logoutBusy ? "יוצאים…" : "התנתקות"}
+        {logoutBusy ? t("ui.student.loggingOut") : t("common.logout")}
       </button>
     </div>
   );
@@ -110,7 +114,7 @@ export default function StudentWorldTitleScreen({
         avatarBackgroundKey={avatarBackgroundKey}
         onClick={onOpenAvatar}
         sizeClass="h-24 w-24 text-5xl border-2 border-white/80 shadow-md sm:h-[6.5rem] sm:w-[6.5rem] sm:text-[3.25rem]"
-        ariaLabel="פתח את הפרופיל שלי"
+        ariaLabel={t("ui.student.openProfile")}
       />
       <span className="pointer-events-none absolute -bottom-1 -left-2 text-3xl" aria-hidden>
         🦊
@@ -126,7 +130,7 @@ export default function StudentWorldTitleScreen({
         avatarBackgroundKey={avatarBackgroundKey}
         onClick={onOpenAvatar}
         sizeClass="h-[6rem] w-[6rem] text-4xl border-2 border-sky-200 bg-white shadow-lg lg:h-[6.5rem] lg:w-[6.5rem] lg:text-5xl"
-        ariaLabel="פתח את הפרופיל שלי"
+        ariaLabel={t("ui.student.openProfile")}
       />
       <span className="pointer-events-none absolute -bottom-1 -left-2 text-3xl lg:text-4xl" aria-hidden>
         🦊
@@ -139,7 +143,7 @@ export default function StudentWorldTitleScreen({
       <StudentWorldScene>
         <div
           className="relative flex h-full min-h-0 flex-1 flex-col"
-          dir="rtl"
+          dir={direction}
           data-testid="student-world-title-screen"
         >
         <header className="absolute inset-x-0 top-0 z-20 hidden items-start justify-between gap-2 p-3 md:flex md:p-4">
@@ -171,7 +175,7 @@ export default function StudentWorldTitleScreen({
                 {greetingHe}
               </p>
               <p className={`mt-1 text-base lg:text-lg ${heroPromptText}`}>
-                {promptHe}
+                {resolvedPrompt}
               </p>
             </div>
           </div>
@@ -184,7 +188,7 @@ export default function StudentWorldTitleScreen({
               {greetingHe}
             </p>
             <p className={`text-lg sm:text-xl ${heroPromptText}`}>
-              {promptHe}
+              {resolvedPrompt}
             </p>
           </div>
 
@@ -208,7 +212,7 @@ export default function StudentWorldTitleScreen({
           <div
             className={`absolute left-1/2 z-20 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center justify-center gap-2 ${leoRowBottomClass}`}
           >
-            <StudentShareFriendsButton variant="chip" label="שתף" />
+            <StudentShareFriendsButton variant="chip" label={t("ui.student.share")} />
             <StudentCopyLeoNumberChip
               leoNumber={leoNumber}
               label={leoNumberLabelHe}
@@ -221,7 +225,7 @@ export default function StudentWorldTitleScreen({
                 onClick={() => setParentInviteOpen(true)}
                 data-testid="student-parent-invite-open"
               >
-                הודעה להורה
+                {t("ui.student.messageParent")}
               </button>
             ) : null}
           </div>

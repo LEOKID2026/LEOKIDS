@@ -4,7 +4,7 @@
 
 import WorksheetDocumentHeader from "./WorksheetDocumentHeader.jsx";
 import WorksheetAnswerKeyList from "./WorksheetAnswerKeyList.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi, WORKSHEET_PRINT_DOC_ATTRS } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -12,13 +12,14 @@ import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
  * }} props
  */
 export default function WorksheetAnswerKeyPrintDocument({ answerKeyPayload }) {
+  const ui = useWorksheetUi();
   const { meta, answers } = answerKeyPayload;
 
   return (
     <div className="worksheet-print-document" aria-hidden="true">
-      <article className="worksheet-root answer-key-root">
+      <article className="worksheet-root answer-key-root" {...WORKSHEET_PRINT_DOC_ATTRS}>
         <WorksheetDocumentHeader
-          titleHe={WORKSHEET_UI_HE.answerKeyTitle}
+          titleHe={ui.answerKeyTitle}
           meta={meta}
           variant="answer-key"
         />

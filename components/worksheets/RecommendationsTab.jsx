@@ -6,7 +6,7 @@
 
 
 
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 import WorksheetIncludeAnswersOption from "./WorksheetIncludeAnswersOption.jsx";
 
 
@@ -65,6 +65,7 @@ export default function RecommendationsTab({
   onIncludeAnswersChange,
   T,
 }) {
+  const ui = useWorksheetUi();
 
   const showEmpty =
 
@@ -80,11 +81,11 @@ export default function RecommendationsTab({
 
         <h2 className={`worksheet-hub-panel-title ${T.heading}`}>
 
-          {WORKSHEET_UI_HE.recommendationsTitle}
+          {ui.recommendationsTitle}
 
         </h2>
 
-        <p className={`worksheet-hub-panel-hint ${T.muted}`}>{WORKSHEET_UI_HE.recommendationsHint}</p>
+        <p className={`worksheet-hub-panel-hint ${T.muted}`}>{ui.recommendationsHint}</p>
 
       </div>
 
@@ -94,7 +95,7 @@ export default function RecommendationsTab({
 
         <label className="block max-w-md">
 
-          <span className={T.label}>{WORKSHEET_UI_HE.selectChild}</span>
+          <span className={T.label}>{ui.selectChild}</span>
 
           <select
 
@@ -137,7 +138,7 @@ export default function RecommendationsTab({
 
           <span className="worksheet-loading-dot" aria-hidden="true" />
 
-          {WORKSHEET_UI_HE.loading}
+          {ui.loading}
 
         </p>
 
@@ -161,11 +162,11 @@ export default function RecommendationsTab({
 
           <div>
 
-            <p className={`font-bold ${T.heading}`}>{WORKSHEET_UI_HE.recommendationsEmptyTitle}</p>
+            <p className={`font-bold ${T.heading}`}>{ui.recommendationsEmptyTitle}</p>
 
             <p className={`mt-1 text-sm leading-relaxed ${T.muted}`}>
 
-              {emptyMessageHe || WORKSHEET_UI_HE.recommendationsEmpty}
+              {emptyMessageHe || ui.recommendationsEmpty}
 
             </p>
 
@@ -207,7 +208,7 @@ export default function RecommendationsTab({
 
                 <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>
 
-                  {rec.count} {WORKSHEET_UI_HE.questionCount}
+                  {rec.count} {ui.questionCount}
 
                 </p>
 
@@ -233,9 +234,9 @@ export default function RecommendationsTab({
 
                 {busyId === rec.id
 
-                  ? WORKSHEET_UI_HE.loading
+                  ? ui.loading
 
-                  : WORKSHEET_UI_HE.createFromRecommendation}
+                  : ui.createFromRecommendation}
 
               </button>
 

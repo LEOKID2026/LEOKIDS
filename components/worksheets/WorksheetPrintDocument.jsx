@@ -4,7 +4,7 @@
 
 import WorksheetDocumentHeader from "./WorksheetDocumentHeader.jsx";
 import WorksheetQuestionList from "./WorksheetQuestionList.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi, WORKSHEET_PRINT_DOC_ATTRS } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -12,14 +12,15 @@ import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
  * }} props
  */
 export default function WorksheetPrintDocument({ worksheetPayload }) {
+  const ui = useWorksheetUi();
   const { meta, questions } = worksheetPayload;
   const inkClass = meta.inkSave ? " ink-save" : "";
 
   return (
     <div className="worksheet-print-document">
-      <article className={`worksheet-root${inkClass}`}>
+      <article className={`worksheet-root${inkClass}`} {...WORKSHEET_PRINT_DOC_ATTRS}>
         <WorksheetDocumentHeader
-          titleHe={WORKSHEET_UI_HE.documentTitle}
+          titleHe={ui.documentTitle}
           meta={meta}
           variant="worksheet"
         />

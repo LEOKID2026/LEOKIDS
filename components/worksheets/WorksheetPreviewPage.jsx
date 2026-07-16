@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import WorksheetPreviewActions from "./WorksheetPreviewActions.jsx";
 import WorksheetScreenPreview from "./WorksheetScreenPreview.jsx";
 import WorksheetPrintDocument from "./WorksheetPrintDocument.jsx";
+import { useWorksheetShellAttrs } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -29,13 +30,15 @@ export default function WorksheetPreviewPage({
   refreshLoading,
   backHref,
 }) {
+  const shell = useWorksheetShellAttrs();
+
   useEffect(() => {
     document.body.classList.add("worksheet-print-mode");
     return () => document.body.classList.remove("worksheet-print-mode");
   }, []);
 
   return (
-    <div dir="rtl" lang="he" className="worksheet-preview-shell">
+    <div {...shell} className="worksheet-preview-shell">
       <WorksheetPreviewActions
         includeAnswers={includeAnswers}
         onPrint={onPrint}

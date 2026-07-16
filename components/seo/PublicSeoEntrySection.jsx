@@ -3,12 +3,13 @@ import { getHomeBtnClasses, getHomeTextClasses } from "../home/home-theme";
 import HomeCtaLink from "../home/HomeCtaLink";
 
 const QUICK_LINKS = [
-  { label: "מתמטיקה", href: "/practice/math" },
-  { label: "קריאה והבנת הנקרא", href: "/practice/reading" },
-  { label: "אנגלית", href: "/practice/english" },
-  { label: "תרגול דיגיטלי", href: "/practice/no-print" },
-  { label: "דוחות להורים", href: "/practice/parent-reports" },
-  { label: "איך לבנות שגרת תרגול", href: "/guides/home-practice-routine" },
+  { label: "Math", href: "/practice/math" },
+  { label: "Geometry", href: "/practice/geometry" },
+  { label: "English", href: "/practice/english" },
+  { label: "Science", href: "/practice/science" },
+  { label: "Digital practice", href: "/practice/no-print" },
+  { label: "Parent reports", href: "/practice/parent-reports" },
+  { label: "Home practice routine", href: "/guides/home-practice-routine" },
 ];
 
 /**
@@ -23,23 +24,23 @@ export default function PublicSeoEntrySection({ isBright }) {
       className={`space-y-5 text-center md:space-y-6 ${cls.panel}`}
       data-testid="public-seo-entry-section"
     >
-      <h2 className={cls.sectionTitle}>תחומי תרגול ומדריכים להורים</h2>
+      <h2 className={cls.sectionTitle}>Practice areas and parent guides</h2>
       <p className={`mx-auto max-w-2xl text-sm leading-relaxed md:text-base ${cls.body}`}>
-        רוצים להכיר את תחומי התרגול ב-Leo Kids? אפשר לעבור לדפי התרגול והמדריכים, לקרוא הסבר
-        קצר, ואז להיכנס או להירשם כאזור הורים.
+        Want to explore Leo Kids practice areas? Browse practice pages and guides, read a short
+        overview, then sign in or register in the parent area.
       </p>
 
       <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
         <HomeCtaLink
           href="/practice"
-          label="תחומי תרגול"
+          label="Practice areas"
           className={getHomeBtnClasses("parents", isBright, "primary")}
           size="md"
           testId="public-seo-entry-practice"
         />
         <HomeCtaLink
           href="/guides"
-          label="מדריכים להורים"
+          label="Parent guides"
           className={getHomeBtnClasses("parents", isBright, "secondary")}
           size="md"
           testId="public-seo-entry-guides"

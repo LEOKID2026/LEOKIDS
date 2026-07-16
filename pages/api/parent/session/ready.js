@@ -2,8 +2,20 @@ import { safeApiLog } from "../../../../lib/security/safe-log.js";
 import { getLearningSupabaseServerUserClient } from "../../../../lib/learning-supabase/server.js";
 import { getLearningSupabaseServiceRoleClient } from "../../../../lib/learning-supabase/server.js";
 import { finalizeParentSessionReady } from "../../../../lib/parent-server/parent-session-ready.server.js";
+import {
+  gateMutatingApi,
+} from "../../../../lib/global/apply-write-barrier.js";
+import { respondGlobalWritesDisabled } from "../../../../lib/global/write-barrier.js";
 
-export default async function handler(req, res) {
+function mockParentSessionReady(req, res) {
+  const flow = String(req.body?.flow || "login").trim().toLowerCase();
+  if (flow === "signup" || flow === "google") {
+    return respondGlobalWritesDisabled(res);
+  }
+  return res.status(200).json({ ok: true, isNewSignup: false, mockMode: true });
+}
+
+async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
@@ -61,3 +73,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ ok: false, error: "Unexpected server error" });
   }
 }
+
+export default gateMutatingApi(handler, { onMock: mockParentSessionReady });

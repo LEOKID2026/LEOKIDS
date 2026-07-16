@@ -4,12 +4,13 @@ import Layout from "../../components/Layout";
 import PortalLoginHeading from "../../components/auth/PortalLoginHeading";
 import StudentParentInviteModal from "../../components/student/StudentParentInviteModal";
 import CopyConfirmPopup from "../../components/ui/CopyConfirmPopup.jsx";
-import { buildParentInviteMessageHe } from "../../lib/site/public-site-origin.client.js";
+import { buildParentInviteMessage } from "../../lib/site/public-site-origin.client.js";
 import {
-  COPY_INVITE_ERROR_MESSAGE_HE,
-  COPY_INVITE_SUCCESS_MESSAGE_HE,
+  COPY_INVITE_ERROR_MESSAGE,
+  COPY_INVITE_SUCCESS_MESSAGE,
   copyTextToClipboard,
-} from "../../lib/ui/copy-confirm-message.he.js";
+} from "../../lib/ui/copy-confirm-message.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-identity-client";
@@ -56,6 +57,8 @@ export function redirectAfterStudentLogin(router) {
 export default function StudentLoginPage() {
   const router = useRouter();
   const { theme, tokens: T, isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
+  const t = useT();
   const [username, setUsername] = useState("");
   const [pin, setPin] = useState("");
   const [busy, setBusy] = useState(false);
@@ -110,11 +113,11 @@ export default function StudentLoginPage() {
   if (sessionCheck === "pending") {
     return (
       <Layout {...layoutProps}>
-        <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir="rtl" lang="he">
-          <PortalLoginHeading title="כניסת ילד/ה" bright={isBright} homeHref="/kids" />
+        <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir={direction} lang={locale}>
+          <PortalLoginHeading title={t("auth.studentLoginTitle")} bright={isBright} homeHref="/kids" />
           <div className="py-8 md:py-12 flex flex-col items-center justify-center">
             <div className={T.loadingSpinner} aria-hidden />
-            <p className={T.loadingText}>בודקים חיבור...</p>
+            <p className={T.loadingText}>{t("auth.checkingSession")}</p>
           </div>
         </div>
       </Layout>
@@ -126,7 +129,7 @@ export default function StudentLoginPage() {
     setMessage("");
     try {
       if (shouldBlockGuestStartAfterResumeFailure(guestResumeBanner?.code)) {
-        setMessage(guestResumeBanner?.messageHe || "המספר כבר שויך להורה - התחבר/י עם שם משתמש וקוד.");
+        setMessage(guestResumeBanner?.messageHe || t("auth.invalidStudentCredentials"));
         return;
       }
 
@@ -158,7 +161,7 @@ export default function StudentLoginPage() {
           setGuestResumeBanner(resumeFailure);
           setMessage(resumeFailure.messageHe);
         } else {
-          setMessage(payload?.error || "לא ניתן להיכנס כאורח כרגע");
+          setMessage(payload?.error || t("auth.guestUnavailable"));
         }
         if (shouldClearGuestResumeTokenOnResumeFailure(payload?.code)) {
           localStorage.removeItem(LIOSH_GUEST_RESUME_TOKEN_KEY);
@@ -173,7 +176,7 @@ export default function StudentLoginPage() {
       }
       redirectAfterStudentLogin(router);
     } catch {
-      setMessage("שגיאת רשת");
+      setMessage(t("auth.networkError"));
     } finally {
       setGuestBusy(false);
     }
@@ -197,7 +200,7 @@ export default function StudentLoginPage() {
       });
       const payload = await res.json();
       if (!res.ok) {
-        setMessage("שם המשתמש או הקוד שגויים.");
+        setMessage(t("auth.invalidStudentCredentials"));
         return;
       }
 
@@ -207,28 +210,28 @@ export default function StudentLoginPage() {
 
       redirectAfterStudentLogin(router);
     } catch (_e) {
-      setMessage("שגיאת רשת");
+      setMessage(t("auth.networkError"));
     } finally {
       setBusy(false);
     }
   };
 
   const handleCopyParentMessage = async () => {
-    const ok = await copyTextToClipboard(buildParentInviteMessageHe());
+    const ok = await copyTextToClipboard(buildParentInviteMessage());
     if (ok) {
       setCopyPopupIsError(false);
-      setCopyPopupMessage(COPY_INVITE_SUCCESS_MESSAGE_HE);
+      setCopyPopupMessage(COPY_INVITE_SUCCESS_MESSAGE);
     } else {
       setCopyPopupIsError(true);
-      setCopyPopupMessage(COPY_INVITE_ERROR_MESSAGE_HE);
+      setCopyPopupMessage(COPY_INVITE_ERROR_MESSAGE);
     }
     setCopyPopupOpen(true);
   };
 
   return (
     <Layout {...layoutProps}>
-      <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir="rtl" lang="he">
-        <PortalLoginHeading title="כניסת ילד/ה" bright={isBright} homeHref="/kids" />
+      <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir={direction} lang={locale}>
+        <PortalLoginHeading title={t("auth.studentLoginTitle")} bright={isBright} homeHref="/kids" />
 
         {guestResumeBanner ? (
           <div
@@ -249,25 +252,25 @@ export default function StudentLoginPage() {
 
         <form onSubmit={submitLogin} className="space-y-3">
           <label className="block text-sm">
-            <span className={labelClass}>שם משתמש</span>
+            <span className={labelClass}>{t("auth.username")}</span>
             <input
               data-testid="student-login-username"
               className={inputClass}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="שם משתמש"
+              placeholder={t("auth.username")}
               required
               autoComplete="username"
             />
           </label>
           <label className="block text-sm">
-            <span className={labelClass}>קוד כניסה</span>
+            <span className={labelClass}>{t("auth.loginCode")}</span>
             <input
               data-testid="student-login-pin"
               className={inputClass}
               value={pin}
               onChange={(e) => setPin(e.target.value)}
-              placeholder="קוד כניסה"
+              placeholder={t("auth.loginCode")}
               required
               inputMode="numeric"
               autoComplete="current-password"
@@ -279,7 +282,7 @@ export default function StudentLoginPage() {
             disabled={busy}
             type="submit"
           >
-            {busy ? "מתחבר…" : "כניסה לעולם הילדים של ליאו"}
+            {busy ? t("auth.working") : t("auth.enterKidsWorld")}
           </button>
           <button
             type="button"
@@ -296,13 +299,13 @@ export default function StudentLoginPage() {
             }
             onClick={() => void startGuest()}
           >
-            {guestBusy ? "נכנסים…" : "כניסה כאורח"}
+            {guestBusy ? t("auth.guestEntering") : t("auth.guestSignIn")}
           </button>
           <div className="pt-1 space-y-2 text-center">
             <p className={`text-sm leading-relaxed ${parentInviteHintClass}`}>
-              אין לך חשבון עדיין?
+              {t("auth.noAccountYet")}
               <br />
-              בקש מההורה לפתוח לך חשבון
+              {t("auth.askParentOpenAccount")}
             </p>
             <button
               type="button"
@@ -310,7 +313,7 @@ export default function StudentLoginPage() {
               onClick={() => setParentInviteOpen(true)}
               data-testid="student-parent-invite-open"
             >
-              הצג להורה
+              {t("auth.showParent")}
             </button>
             <button
               type="button"
@@ -318,7 +321,7 @@ export default function StudentLoginPage() {
               onClick={() => void handleCopyParentMessage()}
               data-testid="student-parent-invite-copy-message-inline"
             >
-              העתק הודעה להורה
+              {t("auth.copyMessageForParent")}
             </button>
           </div>
         </form>

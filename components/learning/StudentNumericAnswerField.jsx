@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTouchPrimaryDevice } from "../../hooks/useTouchPrimaryDevice.js";
 import { resolveVirtualAnswerKeyboard } from "../../lib/learning/virtual-answer-keyboard-policy.js";
 import VirtualAnswerKeyboard from "./VirtualAnswerKeyboard.jsx";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const DESKTOP_INPUT_CLASS =
   "w-full px-4 py-4 rounded-lg bg-black/40 border border-white/20 text-white text-2xl font-bold text-center leading-none disabled:opacity-50";
@@ -17,14 +18,14 @@ export default function StudentNumericAnswerField({
   value,
   onChange,
   disabled = false,
-  placeholder = "תשובה",
+  placeholder,
   testId,
   subject,
   onEnterSubmit,
   onSubmit,
   submitDisabled = false,
   submitTestId,
-  submitLabel = "בדוק",
+  submitLabel,
   submitTone = "green",
   className = "",
   inputClassName = "",
@@ -41,6 +42,9 @@ export default function StudentNumericAnswerField({
   embeddedColGapClassName,
   embeddedKeyboardClassName,
 }) {
+  const t = useT();
+  const resolvedPlaceholder = placeholder ?? t("learning.master.answerPlaceholder");
+  const resolvedSubmitLabel = submitLabel ?? t("learning.master.check");
   const isTouch = useTouchPrimaryDevice();
   const policy = resolveVirtualAnswerKeyboard({
     subject,
@@ -97,8 +101,8 @@ export default function StudentNumericAnswerField({
           onFocus={() => {
             onInputFocus?.();
           }}
-          placeholder={placeholder}
-          aria-label={placeholder === "תשובה" ? "תשובה לשאלה" : placeholder}
+          placeholder={resolvedPlaceholder}
+          aria-label={resolvedPlaceholder}
           disabled={disabled}
           readOnly={inputReadOnly}
           autoFocus={autoFocus && !inputReadOnly}
@@ -112,8 +116,8 @@ export default function StudentNumericAnswerField({
             data-testid="virtual-keyboard-toggle"
             onClick={() => setKeyboardOpen((open) => !open)}
             disabled={disabled}
-            title="מקלדת"
-            aria-label="מקלדת"
+            title={t("learning.master.keyboard")}
+            aria-label={t("learning.master.keyboard")}
             aria-expanded={showKeyboard}
             className="shrink-0 h-12 w-12 rounded-lg border border-white/20 bg-black/35 text-xl disabled:opacity-50 hover:bg-white/10"
           >
@@ -148,7 +152,7 @@ export default function StudentNumericAnswerField({
           submitButton={
             embedSubmitInKeyboard
               ? {
-                  label: submitLabel,
+                  label: resolvedSubmitLabel,
                   onClick: onSubmit,
                   disabled: submitDisabled,
                   testId: submitTestId,

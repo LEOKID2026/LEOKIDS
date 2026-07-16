@@ -3,12 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
-import {
-  AUTH_FORGOT_PASSWORD_BACK,
-  AUTH_FORGOT_PASSWORD_EMAIL_LABEL,
-  AUTH_FORGOT_PASSWORD_SUBMIT,
-  AUTH_FORGOT_PASSWORD_TITLE,
-} from "../../lib/auth/auth-reset.he";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
+
+const AUTH_RESET_MIN_PASSWORD_LENGTH = 6;
 
 function loginBackPath(portal) {
   return portal === "teacher" ? "/teacher/login" : "/parent/login";
@@ -17,6 +14,8 @@ function loginBackPath(portal) {
 export default function ForgotPasswordPage() {
   const router = useRouter();
   const supabaseRef = useRef(null);
+  const { direction, locale } = useI18n();
+  const t = useT();
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -53,20 +52,20 @@ export default function ForgotPasswordPage() {
     <Layout>
       <div
         className="max-w-md mx-auto px-4 py-10"
-        dir="rtl"
-        lang="he"
+        dir={direction}
+        lang={locale}
         data-testid="auth-forgot-password-page"
       >
-        <h1 className="text-2xl font-bold mb-2">{AUTH_FORGOT_PASSWORD_TITLE}</h1>
+        <h1 className="text-2xl font-bold mb-2">{t("auth.forgotPasswordTitle")}</h1>
 
         {submitted ? (
           <p className="text-emerald-300 text-sm mb-6" role="status">
-            {`אם קיים חשבון עם הכתובת ${email.trim()}, ישלח קישור לאיפוס הסיסמה.`}
+            {t("auth.forgotPasswordSuccess", { email: email.trim() })}
           </p>
         ) : (
           <form onSubmit={(e) => void onSubmit(e)} className="space-y-4">
             <label className="block text-sm">
-              <span className="text-white/80">{AUTH_FORGOT_PASSWORD_EMAIL_LABEL}</span>
+              <span className="text-white/80">{t("auth.email")}</span>
               <input
                 type="email"
                 value={email}
@@ -83,7 +82,7 @@ export default function ForgotPasswordPage() {
               className="w-full rounded bg-amber-500 text-black font-semibold py-2 disabled:opacity-60"
               data-testid="auth-forgot-password-submit"
             >
-              {busy ? "שולח…" : AUTH_FORGOT_PASSWORD_SUBMIT}
+              {busy ? t("auth.sending") : t("auth.sendResetLink")}
             </button>
           </form>
         )}
@@ -94,7 +93,7 @@ export default function ForgotPasswordPage() {
             className="text-amber-300 underline"
             data-testid="auth-forgot-password-back"
           >
-            {AUTH_FORGOT_PASSWORD_BACK}
+            {t("auth.forgotPasswordBack")}
           </Link>
         </p>
       </div>

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
 import PortalLoginHeading from "../../components/auth/PortalLoginHeading";
 import TeacherRegistrationRequestForm from "../../components/auth/TeacherRegistrationRequestForm";
 import PortalLoadingPanel from "../../components/ui/PortalLoadingPanel.jsx";
@@ -19,13 +19,14 @@ import {
   teacherPostLoginPath,
 } from "../../lib/auth/auth-post-reset-redirect";
 import PasswordField from "../../components/auth/PasswordField";
-import { AUTH_FORGOT_PASSWORD_LINK } from "../../lib/auth/auth-reset.he";
+import { AUTH_FORGOT_PASSWORD_LINK } from "../../lib/auth/auth-reset.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import {
   REG_TEACHER_INVITE_ONLY_LOGIN_NOTE,
   REG_TEACHER_LOGIN_TAB,
   REG_TEACHER_TAB,
-} from "../../lib/auth/auth-registration.he";
+} from "../../lib/auth/auth-registration.js";
 import { resolveTeacherAccessToken } from "../../lib/teacher-portal/use-teacher-portal-session";
 
 const teacherLoginSeo = getPublicPageSeo("teacher-login");
@@ -36,7 +37,7 @@ function portalTabBtnClass(T, active, disabled) {
   } ${disabled ? "opacity-60 pointer-events-none" : ""}`;
 }
 
-function TeacherPortalAuxButtons({ T, className = "", disabled = false }) {
+function TeacherPortalAuxButtons({ T, className = "", disabled = false, t }) {
   return (
     <div className={`grid grid-cols-2 gap-2 w-full md:contents ${className}`}>
       <Link
@@ -45,7 +46,7 @@ function TeacherPortalAuxButtons({ T, className = "", disabled = false }) {
         aria-disabled={disabled || undefined}
         tabIndex={disabled ? -1 : undefined}
       >
-        מורה בית ספר / צוות בית ספר
+        {t("auth.teacherSchoolStaff")}
       </Link>
       <Link
         href="/school/register"
@@ -53,13 +54,13 @@ function TeacherPortalAuxButtons({ T, className = "", disabled = false }) {
         aria-disabled={disabled || undefined}
         tabIndex={disabled ? -1 : undefined}
       >
-        רישום בית ספר
+        {t("auth.teacherSchoolRegister")}
       </Link>
     </div>
   );
 }
 
-function TeacherPortalTopActions({ mode, setMode, T, disabled = false }) {
+function TeacherPortalTopActions({ mode, setMode, T, disabled = false, t }) {
   return (
     <div className="flex flex-col md:flex-row gap-2 mb-1.5 md:mb-3">
       <div
@@ -92,7 +93,7 @@ function TeacherPortalTopActions({ mode, setMode, T, disabled = false }) {
           {REG_TEACHER_TAB}
         </button>
       </div>
-      <TeacherPortalAuxButtons T={T} disabled={disabled} />
+      <TeacherPortalAuxButtons T={T} disabled={disabled} t={t} />
     </div>
   );
 }
@@ -125,6 +126,8 @@ async function postTeacherOnboard(accessToken, payload) {
 export default function TeacherLoginPage({ inviteOnly }) {
   const router = useRouter();
   const { theme, isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
+  const t = useT();
   const layoutProps = getPrivateTeacherLayoutProps(theme);
   const T = getTeacherPortalTheme(isBright);
   const supabaseRef = useRef(null);
@@ -199,7 +202,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
       try {
         supabaseRef.current = getLearningSupabaseBrowserClient();
       } catch (err) {
-        setLoginError("שגיאת חיבור (תצורת לקוח חסרה). רענן את הדף או צור קשר עם התמיכה.");
+        setLoginError(t("auth.teacherConnectionError"));
         return;
       }
     }
@@ -213,9 +216,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
         password,
       });
       if (error || !data?.session?.access_token) {
-        setLoginError(
-          "כתובת הדוא״ל או הסיסמה שגויים. אם אתה מורה רשום - נסה שנית."
-        );
+        setLoginError(t("auth.invalidCredentials"));
         await signOutAndStayOnLogin();
         return;
       }
@@ -230,7 +231,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
       let me = await fetchTeacherMe(token);
 
       if (me.status === 503 && me.body?.error?.code === "feature_disabled") {
-        setLoginError("פורטל המורים אינו זמין כרגע.");
+        setLoginError(t("auth.teacherPortalUnavailable"));
         await signOutAndStayOnLogin();
         return;
       }
@@ -244,9 +245,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
       }
 
       if (me.status === 403 || me.body?.error?.code === "not_a_teacher") {
-        setLoginError(
-          "כתובת הדוא״ל או הסיסמה שגויים. אם אתה מורה רשום - נסה שנית."
-        );
+        setLoginError(t("auth.invalidCredentials"));
         await signOutAndStayOnLogin();
         return;
       }
@@ -258,14 +257,12 @@ export default function TeacherLoginPage({ inviteOnly }) {
           onboard.status !== 201 &&
           onboard.body?.error?.code !== "db_schema_not_ready"
         ) {
-          setLoginError(
-            "כתובת הדוא״ל או הסיסמה שגויים. אם אתה מורה רשום - נסה שנית."
-          );
+          setLoginError(t("auth.invalidCredentials"));
           await signOutAndStayOnLogin();
           return;
         }
         if (onboard.body?.error?.code === "db_schema_not_ready") {
-          setLoginError("המערכת עדיין מתכוננת. נסה שנית בעוד מספר דקות.");
+          setLoginError(t("auth.teacherSystemPreparing"));
           await signOutAndStayOnLogin();
           return;
         }
@@ -285,9 +282,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
         }
       }
 
-      setLoginError(
-        "כתובת הדוא״ל או הסיסמה שגויים. אם אתה מורה רשום - נסה שנית."
-      );
+      setLoginError(t("auth.invalidCredentials"));
       await signOutAndStayOnLogin();
     } finally {
       setBusy(false);
@@ -306,14 +301,14 @@ export default function TeacherLoginPage({ inviteOnly }) {
         className={`mx-auto px-3 md:px-4 py-3 md:py-8 ${
           mode === "request" ? "max-w-4xl" : "max-w-md"
         }`}
-        dir="rtl"
-        lang="he"
+        dir={direction}
+        lang={locale}
       >
-        <PortalLoginHeading title="כניסה למורים" className="!mb-2 md:!mb-4" bright={isBright} homeHref="/teachers" />
+        <PortalLoginHeading title={t("auth.teacherLoginTitle")} className="!mb-2 md:!mb-4" bright={isBright} homeHref="/teachers" />
 
         {sessionCheckPending ? (
           <div data-testid="teacher-login-root" data-state="loading">
-            <PortalLoadingPanel isBright={isBright} message="מאמת חיבור…" />
+            <PortalLoadingPanel isBright={isBright} message={t("auth.verifyingSession")} />
           </div>
         ) : (
           <div
@@ -321,7 +316,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
             data-invite-only={inviteOnly ? "true" : "false"}
             data-state="ready"
           >
-            <TeacherPortalTopActions mode={mode} setMode={setMode} T={T} disabled={busy} />
+            <TeacherPortalTopActions mode={mode} setMode={setMode} T={T} disabled={busy} t={t} />
 
             {mode === "request" ? (
               <TeacherRegistrationRequestForm bright={isBright} />
@@ -332,7 +327,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
                 ) : null}
                 <form onSubmit={onSubmit} className="space-y-3" autoComplete="on" noValidate>
                   <label className="block text-sm">
-                    <span className={T.loginLabel}>כתובת דוא״ל</span>
+                    <span className={T.loginLabel}>{t("auth.teacherEmailLabel")}</span>
                     <input
                       type="email"
                       name="email"
@@ -340,13 +335,13 @@ export default function TeacherLoginPage({ inviteOnly }) {
                       onChange={(ev) => setEmail(ev.target.value)}
                       required
                       autoComplete="username"
-                      placeholder="המייל שלך"
+                      placeholder={t("auth.teacherEmailPlaceholder")}
                       className={T.loginInputMt}
                       disabled={busy}
                     />
                   </label>
                   <PasswordField
-                    label="סיסמה"
+                    label={t("auth.password")}
                     name="password"
                     value={password}
                     onChange={(ev) => setPassword(ev.target.value)}
@@ -357,7 +352,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
                     disabled={busy}
                   />
                   <button type="submit" disabled={busy} className={T.submitBtn}>
-                    {busy ? "מתחבר…" : "כניסה"}
+                    {busy ? t("auth.working") : t("auth.signIn")}
                   </button>
                   <p className="text-sm text-center">
                     <Link

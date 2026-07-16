@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import ReadyWorksheetsTab from "./ReadyWorksheetsTab.jsx";
 import CreateWorksheetTab from "./CreateWorksheetTab.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetShellAttrs, useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 import { getPublicDemoAllowlistEntry } from "../../lib/worksheets/worksheet-public-demo.constants.js";
 import { listMathPracticeFormatsForGradeTopic } from "../../lib/worksheets/worksheet-math-practice-format.js";
 import {
@@ -48,6 +48,8 @@ function defaultPublicDemoForm(subjectId, gradeKey) {
  */
 export default function PublicWorksheetsHub({ T }) {
   const router = useRouter();
+  const ui = useWorksheetUi();
+  const shell = useWorksheetShellAttrs();
 
   const [catalogItems, setCatalogItems] = useState([]);
   const [catalogLoading, setCatalogLoading] = useState(true);
@@ -81,17 +83,17 @@ export default function PublicWorksheetsHub({ T }) {
       const res = await fetch("/api/public/worksheets/catalog");
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setCatalogError(data.error || WORKSHEET_UI_HE.errorGeneric);
+        setCatalogError(data.error || ui.errorGeneric);
         setCatalogItems([]);
         return;
       }
       setCatalogItems(data.items || []);
     } catch {
-      setCatalogError(WORKSHEET_UI_HE.errorGeneric);
+      setCatalogError(ui.errorGeneric);
     } finally {
       setCatalogLoading(false);
     }
-  }, []);
+  }, [ui.errorGeneric]);
 
   useEffect(() => {
     fetchCatalog();
@@ -119,7 +121,7 @@ export default function PublicWorksheetsHub({ T }) {
         const res = await fetch(`/api/public/worksheets/ready/${encodeURIComponent(slug)}`);
         const data = await res.json();
         if (!res.ok || !data.ok) {
-          setCatalogError(data.error || WORKSHEET_UI_HE.errorGeneric);
+          setCatalogError(data.error || ui.errorGeneric);
           return;
         }
         openPreview(
@@ -130,12 +132,12 @@ export default function PublicWorksheetsHub({ T }) {
           slug
         );
       } catch {
-        setCatalogError(WORKSHEET_UI_HE.errorGeneric);
+        setCatalogError(ui.errorGeneric);
       } finally {
         setBusySlug(null);
       }
     },
-    [openPreview, includeAnswers]
+    [openPreview, includeAnswers, ui.errorGeneric]
   );
 
   const handleCreateSubmit = useCallback(async () => {
@@ -165,16 +167,16 @@ export default function PublicWorksheetsHub({ T }) {
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setCreateError(data.message || data.error || WORKSHEET_UI_HE.errorGeneric);
+        setCreateError(data.message || data.error || ui.errorGeneric);
         return;
       }
       openPreview(data.worksheetPayload, data.generation, includeAnswers, "public-demo");
     } catch {
-      setCreateError(WORKSHEET_UI_HE.errorGeneric);
+      setCreateError(ui.errorGeneric);
     } finally {
       setCreateBusy(false);
     }
-  }, [createForm, openPreview, includeAnswers]);
+  }, [createForm, openPreview, includeAnswers, ui.errorGeneric]);
 
   const filteredCatalogItems = useMemo(() => {
     return catalogItems.filter((item) => {
@@ -192,7 +194,7 @@ export default function PublicWorksheetsHub({ T }) {
   }, []);
 
   return (
-    <div dir="rtl" lang="he" className="worksheet-hub-page space-y-8">
+    <div {...shell} className="worksheet-hub-page space-y-8">
       <section id="demo" className="scroll-mt-24 space-y-4">
         <CreateWorksheetTab
           form={createForm}
@@ -206,10 +208,7 @@ export default function PublicWorksheetsHub({ T }) {
           T={T}
           variant="public-demo"
         />
-        <p className={`text-sm leading-relaxed ${T.muted}`}>
-          במערכת המלאה להורים ניתן ליצור דפי עבודה שוב ושוב, ללא הגבלה. הדפים נוצרים מחדש
-          ומשתנים בין יצירה ליצירה.
-        </p>
+        <p className={`text-sm leading-relaxed ${T.muted}`}>{ui.publicFullSystemNote}</p>
       </section>
 
       <section id="catalog" className="scroll-mt-24 space-y-4">
@@ -227,8 +226,8 @@ export default function PublicWorksheetsHub({ T }) {
           includeAnswersReady={includeAnswersReady}
           onIncludeAnswersChange={handleIncludeAnswersChange}
           T={T}
-          titleOverride={WORKSHEET_UI_HE.publicReadyTitle}
-          hintOverride={WORKSHEET_UI_HE.publicReadyHint}
+          titleOverride={ui.publicReadyTitle}
+          hintOverride={ui.publicReadyHint}
         />
       </section>
     </div>

@@ -4,7 +4,7 @@
 
 import WorksheetScreenHeader from "./WorksheetScreenHeader.jsx";
 import WorksheetQuestionList from "./WorksheetQuestionList.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -12,11 +12,12 @@ import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
  * }} props
  */
 export default function WorksheetScreenPreview({ worksheetPayload }) {
+  const ui = useWorksheetUi();
   const { meta, questions } = worksheetPayload;
 
   return (
-    <div className="worksheet-screen-preview" aria-label="תצוגה מקדימה">
-      <WorksheetScreenHeader titleHe={WORKSHEET_UI_HE.documentTitle} meta={meta} variant="worksheet" />
+    <div className="worksheet-screen-preview" aria-label={ui.previewTitle}>
+      <WorksheetScreenHeader titleHe={ui.documentTitle} meta={meta} variant="worksheet" />
       <WorksheetQuestionList questions={questions} mode="screen" />
     </div>
   );

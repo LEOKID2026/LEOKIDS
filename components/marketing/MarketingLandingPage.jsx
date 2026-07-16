@@ -10,6 +10,7 @@ import PublicSeoEntrySection from "../seo/PublicSeoEntrySection";
 import StudentParentInviteModal from "../student/StudentParentInviteModal";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { getPrivateTeacherLayoutProps } from "../../lib/teacher-ui/teacher-portal-theme.client.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 const AUDIENCE_PORTAL = {
   kids: "student",
@@ -199,6 +200,7 @@ function CtaButton({ cta, accent, isBright, size = "lg", onParentInvite }) {
  */
 export default function MarketingLandingPage({ audience, content, showPublicSeoEntrySection = false }) {
   const { theme, isBright } = useStudentTheme();
+  const { direction, locale, t } = useI18n();
   const accent = ACCENT[audience];
   const portal = AUDIENCE_PORTAL[audience];
   const isKidsPage = audience === "kids";
@@ -236,7 +238,7 @@ export default function MarketingLandingPage({ audience, content, showPublicSeoE
         canonicalPath={AUDIENCE_CANONICAL_PATH[audience] || "/"}
       />
       <Layout {...layoutProps}>
-        <div dir="rtl" lang="he" className="mx-auto w-full max-w-5xl px-4 py-8 md:py-12 space-y-12 md:space-y-16">
+        <div dir={direction} lang={locale} className="mx-auto w-full max-w-5xl px-4 py-8 md:py-12 space-y-12 md:space-y-16">
           {/* Hero */}
           <header className="space-y-5 text-center">
             <p
@@ -405,7 +407,7 @@ export default function MarketingLandingPage({ audience, content, showPublicSeoE
                 isBright ? "text-slate-500 hover:text-slate-700" : "text-white/50 hover:text-white/80"
               }`}
             >
-              חזרה לעמוד הבית
+              {t("ui.layout.backHome")}
             </Link>
           </p>
         </div>

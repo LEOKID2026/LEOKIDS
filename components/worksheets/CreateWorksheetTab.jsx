@@ -8,21 +8,20 @@ import { worksheetTopicOptionsForGrade } from "../../lib/worksheets/worksheet-to
 import { listWorksheetMixedTopicOptions } from "../../lib/worksheets/worksheet-mixed-topics.js";
 import { listMathPracticeFormatsForGradeTopic } from "../../lib/worksheets/worksheet-math-practice-format.js";
 import { isWorksheetMcqOffered } from "../../lib/worksheets/worksheet-mcq-preference.js";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import {
+  useWorksheetUi,
+  worksheetGradeLabel,
+  worksheetLevelLabel,
+  worksheetSubjectLabel,
+} from "../../hooks/useWorksheetUi.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   getPublicDemoAllowlistEntry,
 } from "../../lib/worksheets/worksheet-public-demo.constants.js";
 import WorksheetIncludeAnswersOption from "./WorksheetIncludeAnswersOption.jsx";
 import MixedTopicsPicker from "./MixedTopicsPicker.jsx";
 
-const GRADE_OPTIONS = [
-  { key: "g1", label: "כיתה א׳" },
-  { key: "g2", label: "כיתה ב׳" },
-  { key: "g3", label: "כיתה ג׳" },
-  { key: "g4", label: "כיתה ד׳" },
-  { key: "g5", label: "כיתה ה׳" },
-  { key: "g6", label: "כיתה ו׳" },
-];
+const GRADE_KEYS = ["g1", "g2", "g3", "g4", "g5", "g6"];
 
 const COUNT_OPTIONS = [6, 8, 10, 12, 15, 20];
 
@@ -60,6 +59,8 @@ export default function CreateWorksheetTab({
   T,
   variant = "parent",
 }) {
+  const ui = useWorksheetUi();
+  const t = useT();
   const isPublicDemo = variant === "public-demo";
   const subjectId = String(form.subjectId || "math");
   const gradeKey = String(form.gradeKey || "g3");
@@ -132,24 +133,24 @@ export default function CreateWorksheetTab({
   return (
     <div className={`worksheet-hub-panel worksheet-create-panel ${T.panel}`}>
       <h2 className={`worksheet-hub-panel-title ${T.heading}`}>
-        {isPublicDemo ? WORKSHEET_UI_HE.publicDemoTitle : WORKSHEET_UI_HE.createTitle}
+        {isPublicDemo ? ui.publicDemoTitle : ui.createTitle}
       </h2>
       <p className={`worksheet-hub-panel-hint ${T.muted}`}>
-        {isPublicDemo ? WORKSHEET_UI_HE.publicDemoHint : WORKSHEET_UI_HE.createHint}
+        {isPublicDemo ? ui.publicDemoHint : ui.createHint}
       </p>
 
       <div className="worksheet-form-grid">
         <div className="worksheet-form-field">
           <label>
-            <span className={T.label}>מקצוע</span>
+            <span className={T.label}>{ui.subjectField}</span>
             <select
               className={T.inputMt}
               value={subjectId}
               onChange={(e) => patchSubject(e.target.value)}
             >
-              {Object.entries(WORKSHEET_SUBJECT_ALLOWLIST).map(([key, cfg]) => (
+              {Object.keys(WORKSHEET_SUBJECT_ALLOWLIST).map((key) => (
                 <option key={key} value={key}>
-                  {cfg.labelHe}
+                  {worksheetSubjectLabel(t, key)}
                 </option>
               ))}
             </select>
@@ -158,11 +159,11 @@ export default function CreateWorksheetTab({
 
         <div className="worksheet-form-field">
           <label>
-            <span className={T.label}>{WORKSHEET_UI_HE.gradeField}</span>
+            <span className={T.label}>{ui.gradeField}</span>
             <select className={T.inputMt} value={gradeKey} onChange={(e) => patchGrade(e.target.value)}>
-              {GRADE_OPTIONS.map((g) => (
-                <option key={g.key} value={g.key}>
-                  {g.label}
+              {GRADE_KEYS.map((key) => (
+                <option key={key} value={key}>
+                  {worksheetGradeLabel(t, key)}
                 </option>
               ))}
             </select>
@@ -171,17 +172,17 @@ export default function CreateWorksheetTab({
 
         <div className="worksheet-form-field">
           <label>
-            <span className={T.label}>{WORKSHEET_UI_HE.topicField}</span>
+            <span className={T.label}>{ui.topicField}</span>
             <select
               className={T.inputMt}
               value={topicKey}
               onChange={(e) => patchTopic(e.target.value)}
             >
-              {topicOptions.map((t) => {
-                const isAllowed = !isPublicDemo || t.key === allowedTopicKey;
+              {topicOptions.map((topicOpt) => {
+                const isAllowed = !isPublicDemo || topicOpt.key === allowedTopicKey;
                 return (
-                  <option key={t.key} value={t.key} disabled={!isAllowed}>
-                    {isAllowed ? t.label : `${t.label} - ${WORKSHEET_UI_HE.publicDemoLockedTopic}`}
+                  <option key={topicOpt.key} value={topicOpt.key} disabled={!isAllowed}>
+                    {isAllowed ? topicOpt.label : `${topicOpt.label} - ${ui.publicDemoLockedTopic}`}
                   </option>
                 );
               })}
@@ -192,7 +193,7 @@ export default function CreateWorksheetTab({
         {showPracticeFormat ? (
           <div className="worksheet-form-field">
             <label>
-              <span className={T.label}>{WORKSHEET_UI_HE.practiceFormatField}</span>
+              <span className={T.label}>{ui.practiceFormatField}</span>
               <select
                 className={T.inputMt}
                 value={practiceFormatValue}
@@ -212,7 +213,7 @@ export default function CreateWorksheetTab({
 
         <div className="worksheet-form-field">
           <label>
-            <span className={T.label}>{WORKSHEET_UI_HE.levelField}</span>
+            <span className={T.label}>{ui.levelField}</span>
             <select
               className={T.inputMt}
               value={String(form.levelKey || "regular")}
@@ -220,7 +221,7 @@ export default function CreateWorksheetTab({
             >
               {WORKSHEET_LEVEL_OPTIONS.map((l) => (
                 <option key={l.key} value={l.key}>
-                  {l.labelHe}
+                  {worksheetLevelLabel(t, l.key)}
                 </option>
               ))}
             </select>
@@ -230,7 +231,7 @@ export default function CreateWorksheetTab({
         {!isPublicDemo ? (
         <div className="worksheet-form-field">
           <label>
-            <span className={T.label}>{WORKSHEET_UI_HE.countField}</span>
+            <span className={T.label}>{ui.countField}</span>
             <select
               className={T.inputMt}
               value={Number(form.count) || 8}
@@ -264,9 +265,9 @@ export default function CreateWorksheetTab({
                 onChange={(e) => onChange({ preferMcq: e.target.checked })}
               />
               <span className="worksheet-checkbox-card-text">
-                <span className={T.label}>{WORKSHEET_UI_HE.preferMcq}</span>
+                <span className={T.label}>{ui.preferMcq}</span>
                 <span className={`worksheet-checkbox-card-hint ${T.muted}`}>
-                  {WORKSHEET_UI_HE.preferMcqHint}
+                  {ui.preferMcqHint}
                 </span>
               </span>
             </label>
@@ -279,9 +280,9 @@ export default function CreateWorksheetTab({
               onChange={(e) => onChange({ inkSave: e.target.checked })}
             />
             <span className="worksheet-checkbox-card-text">
-              <span className={T.label}>{WORKSHEET_UI_HE.inkSave}</span>
+              <span className={T.label}>{ui.inkSave}</span>
               <span className={`worksheet-checkbox-card-hint ${T.muted}`}>
-                מתאים להדפסה בשחור-לבן עם פחות דיו
+                {ui.inkSaveHint}
               </span>
             </span>
           </label>
@@ -299,7 +300,7 @@ export default function CreateWorksheetTab({
 
       {error ? <p className={`mt-4 ${T.error}`}>{error}</p> : null}
       {mixedEmpty && !error ? (
-        <p className={`mt-4 ${T.error}`}>{WORKSHEET_UI_HE.mixedTopicsEmptyError}</p>
+        <p className={`mt-4 ${T.error}`}>{ui.mixedTopicsEmptyError}</p>
       ) : null}
 
       <div className="mt-5">
@@ -309,7 +310,7 @@ export default function CreateWorksheetTab({
           onClick={onSubmit}
           className={`worksheet-primary-cta ${T.primaryBtn}`}
         >
-          {busy ? WORKSHEET_UI_HE.generating : WORKSHEET_UI_HE.createWorksheet}
+          {busy ? ui.generating : ui.createWorksheet}
         </button>
       </div>
     </div>

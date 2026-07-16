@@ -19,25 +19,29 @@ import {
   mapParentDashboardApiError,
   parentDashboardCreateSuccessHe,
   parentDashboardUpdateSuccessHe,
-} from "../../lib/parent-server/parent-api-errors.he.js";
+} from "../../lib/parent-client/parent-api-errors.js";
 import {
   clearParentBearerSessionAndRedirect,
   resolveParentBearerSession,
 } from "../../lib/parent-client/parent-bearer-session.client.js";
 import { WORKSHEET_HUB_ENTRY_ENABLED } from "../../lib/worksheets/worksheet-hub-entry-enabled.js";
 import PortalLoadingPanel from "../../components/ui/PortalLoadingPanel.jsx";
+import MockModeBanner from "../../components/ui/MockModeBanner.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const GRADE_OPTIONS = [
-  { value: "grade_1", label: "כיתה א׳" },
-  { value: "grade_2", label: "כיתה ב׳" },
-  { value: "grade_3", label: "כיתה ג׳" },
-  { value: "grade_4", label: "כיתה ד׳" },
-  { value: "grade_5", label: "כיתה ה׳" },
-  { value: "grade_6", label: "כיתה ו׳" },
-];
+function getGradeOptions(t) {
+  return [
+    { value: "grade_1", label: t("common.grade1") },
+    { value: "grade_2", label: t("common.grade2") },
+    { value: "grade_3", label: t("common.grade3") },
+    { value: "grade_4", label: t("common.grade4") },
+    { value: "grade_5", label: t("common.grade5") },
+    { value: "grade_6", label: t("common.grade6") },
+  ];
+}
 
-function gradeLabelFromValue(value) {
-  return GRADE_OPTIONS.find((g) => g.value === value)?.label || value || "-";
+function gradeLabelFromValue(value, gradeOptions) {
+  return gradeOptions.find((g) => g.value === value)?.label || value || "-";
 }
 
 /** Neutral action buttons on child cards — theme applied via getParentPortalTheme(). */
@@ -67,6 +71,9 @@ const CHILD_PIN_INPUT_PROPS = {
 
 export default function ParentDashboardPage() {
   const router = useRouter();
+  const { direction, locale } = useI18n();
+  const t = useT();
+  const gradeOptions = getGradeOptions(t);
   const { theme, isBright } = useStudentTheme();
   const T = getParentPortalTheme(isBright);
   const layoutProps = { studentTheme: theme, studentShell: "home" };
@@ -210,25 +217,25 @@ export default function ParentDashboardPage() {
     e.preventDefault();
     if (!session?.access_token) return;
     if (students.length >= studentLimit) {
-      setMessage(`ניתן להוסיף עד ${studentLimit} ילדים בלבד לחשבון הורה`);
+      setMessage(t("parent.childLimitMessage", { limit: studentLimit }));
       return;
     }
     if (!newGrade) {
-      setMessage("יש לבחור כיתה");
+      setMessage(t("parent.gradeRequired"));
       return;
     }
     const initialUsername = String(newChildUsername || "").trim().toLowerCase();
     const initialPin = String(newChildPin || "").trim();
     if (initialPin && !/^\d{4}$/.test(initialPin)) {
-      setMessage("PIN חייב להיות בארבע ספרות");
+      setMessage(t("parent.pinMustBeFourDigits"));
       return;
     }
     if (initialPin && !initialUsername) {
-      setMessage("יש להזין שם משתמש");
+      setMessage(t("parent.usernameRequired"));
       return;
     }
     if (initialUsername && !/^[a-z0-9_-]{3,24}$/.test(initialUsername)) {
-      setMessage("שם משתמש לא תקין");
+      setMessage(t("parent.invalidUsername"));
       return;
     }
     setBusy(true);
@@ -269,9 +276,9 @@ export default function ParentDashboardPage() {
         const linkPayload = await linkRes.json();
         if (!linkRes.ok) {
           credentialMessage =
-            linkPayload.error || "הילד/ה נוצר/ה, אך שיוך מספר האורח נכשל";
+            linkPayload.error || t("parent.guestLinkFailedAfterCreate");
         } else {
-          credentialMessage = linkPayload.message || "המטבעות והקלפים נשמרו לילד.";
+          credentialMessage = linkPayload.message || t("parent.guestLinkCoinsSaved");
         }
       }
 
@@ -291,7 +298,7 @@ export default function ParentDashboardPage() {
         const credPayload = await credRes.json();
         if (!credRes.ok) {
           credentialMessage =
-            credPayload.error || "הילד/ה נוצר/ה, אך הגדרת פרטי כניסה נכשלה - ניתן להגדיר בפרטי הילד/ה";
+            credPayload.error || t("parent.credentialsFailedAfterCreate");
         } else {
           const loginUsername = credPayload.username || initialUsername;
           setCredentialConfirmation({
@@ -366,7 +373,7 @@ export default function ParentDashboardPage() {
     if (leoDigits.length !== 8) {
       setGuestLinkMessageByStudentId((prev) => ({
         ...prev,
-        [studentId]: "יש להזין מספר ליאו בן 8 ספרות.",
+        [studentId]: t("parent.guestLeoEightDigits"),
       }));
       return;
     }
@@ -389,20 +396,20 @@ export default function ParentDashboardPage() {
       if (!linkRes.ok) {
         setGuestLinkMessageByStudentId((prev) => ({
           ...prev,
-          [studentId]: linkPayload.error || "שיוך מספר האורח נכשל.",
+          [studentId]: linkPayload.error || t("parent.guestLinkFailed"),
         }));
         return;
       }
       setGuestLinkMessageByStudentId((prev) => ({
         ...prev,
-        [studentId]: linkPayload.message || "המטבעות והקלפים נשמרו לילד.",
+        [studentId]: linkPayload.message || t("parent.guestLinkCoinsSaved"),
       }));
       setGuestLeoByStudentId((prev) => ({ ...prev, [studentId]: "" }));
       await fetchStudents(session);
     } catch {
       setGuestLinkMessageByStudentId((prev) => ({
         ...prev,
-        [studentId]: "שגיאת רשת בשיוך האורח.",
+        [studentId]: t("parent.guestLinkNetworkError"),
       }));
     } finally {
       setBusy(false);
@@ -416,7 +423,7 @@ export default function ParentDashboardPage() {
     const pin = String(form.pin || "").trim();
 
     if (!username || !pin) {
-      setMessage("יש להזין שם משתמש ו-PIN");
+      setMessage(t("parent.credentialsBothRequired"));
       return;
     }
 
@@ -444,7 +451,7 @@ export default function ParentDashboardPage() {
     });
     const payload = await res.json();
     if (!res.ok) {
-      setMessage(payload.error || "שמירת פרטי כניסה נכשלה");
+      setMessage(payload.error || t("parent.credentialsSaveFailed"));
     } else {
       setCredentialConfirmation({
         studentId,
@@ -465,11 +472,11 @@ export default function ParentDashboardPage() {
     if (!session?.access_token) return;
     const pin = String(credentialsByStudentId[studentId]?.pin || "").trim();
     if (!loginUsername) {
-      setMessage("חסר שם משתמש לכרטיס");
+      setMessage(t("parent.missingCardUsername"));
       return;
     }
     if (!/^\d{4}$/.test(pin)) {
-      setMessage("יש להזין PIN חדש בארבע ספרות");
+      setMessage(t("parent.newPinFourDigits"));
       return;
     }
 
@@ -497,7 +504,7 @@ export default function ParentDashboardPage() {
     });
     const payload = await res.json();
     if (!res.ok) {
-      setMessage(payload.error || "שינוי ה-PIN נכשל");
+      setMessage(payload.error || t("parent.pinChangeFailed"));
     } else {
       setCredentialConfirmation({
         studentId,
@@ -536,7 +543,7 @@ export default function ParentDashboardPage() {
       if (!res.ok) {
         const detail =
           payload.detail && payload.detail !== payload.error ? ` (${payload.detail})` : "";
-        setDeleteError((payload.error || "מחיקה נכשלה") + detail);
+        setDeleteError((payload.error || t("parent.deleteFailed")) + detail);
       } else {
         setDeleteModalStudent(null);
         setDeleteConfirmName("");
@@ -555,10 +562,10 @@ export default function ParentDashboardPage() {
           return next;
         });
         await fetchStudents(session);
-        setMessage("הילד נמחק לצמיתות");
+        setMessage(t("parent.childDeleted"));
       }
     } catch (_err) {
-      setDeleteError("שגיאת רשת - נסה שנית");
+      setDeleteError(t("parent.deleteNetworkError"));
     }
     setBusy(false);
   };
@@ -566,9 +573,9 @@ export default function ParentDashboardPage() {
   const copyUsername = async (username) => {
     try {
       await navigator.clipboard.writeText(username);
-      setMessage("שם המשתמש הועתק ללוח");
+      setMessage(t("parent.usernameCopied"));
     } catch (_e) {
-      setMessage("לא ניתן להעתיק אוטומטית - העתיקו ידנית");
+      setMessage(t("parent.usernameCopyFailed"));
     }
   };
 
@@ -613,16 +620,16 @@ export default function ParentDashboardPage() {
       className={`space-y-2 ${students.length >= studentLimit ? "opacity-60" : ""}`}
     >
       <p className={`text-sm ${T.muted}`}>
-        ילדים בחשבון: {students.length} / {studentLimit}
+        {t("parent.childrenCount", { current: students.length, limit: studentLimit })}
       </p>
       {students.length >= studentLimit ? (
-        <p className={T.warning}>{`הגעת למגבלת ${studentLimit} ילדים לחשבון`}</p>
+        <p className={T.warning}>{t("parent.childLimitReached", { limit: studentLimit })}</p>
       ) : null}
       <input
         className={T.input}
         value={newName}
         onChange={(e) => setNewName(e.target.value)}
-        placeholder="שם הילד"
+        placeholder={t("parent.childNamePlaceholder")}
         autoComplete="name"
         enterKeyHint="next"
         required
@@ -635,52 +642,52 @@ export default function ParentDashboardPage() {
         required
         disabled={busy || students.length >= studentLimit}
       >
-        <option value="">בחר כיתה</option>
-        {GRADE_OPTIONS.map((g) => (
+        <option value="">{t("parent.selectGrade")}</option>
+        {gradeOptions.map((g) => (
           <option key={g.value} value={g.value}>
             {g.label}
           </option>
         ))}
       </select>
       <div>
-        <label className={`text-sm ${T.label}`}>מספר ליאו של אורח (אופציונלי)</label>
+        <label className={`text-sm ${T.label}`}>{t("parent.guestLeoOptional")}</label>
         <input
           className={T.inputMt}
           value={newGuestLeoNumber}
           onChange={(e) => setNewGuestLeoNumber(e.target.value.replace(/\D/g, "").slice(0, 8))}
-          placeholder="מספר ליאו - 8 ספרות"
+          placeholder={t("parent.guestLeoPlaceholder")}
           inputMode="numeric"
           autoComplete="off"
           disabled={busy || students.length >= studentLimit}
         />
       </div>
       <div className={T.panel}>
-        <div className={T.panelTitle}>פרטי כניסת ילד/ה</div>
+        <div className={T.panelTitle}>{t("parent.childLoginDetails")}</div>
         <div>
-          <label className={`text-sm ${T.label}`}>שם משתמש לילד/ה</label>
+          <label className={`text-sm ${T.label}`}>{t("parent.childUsername")}</label>
           <input
             className={T.inputMt}
             value={newChildUsername}
             onChange={(e) => setNewChildUsername(e.target.value)}
-            placeholder="לדוגמה: noam123"
+            placeholder={t("parent.usernameExample")}
             autoComplete="off"
             disabled={busy || students.length >= studentLimit}
           />
         </div>
         <div>
-          <label className={`text-sm ${T.label}`}>PIN לילד/ה</label>
+          <label className={`text-sm ${T.label}`}>{t("parent.childPin")}</label>
           <input
             className={T.inputMt}
             value={newChildPin}
             onChange={(e) => setNewChildPin(e.target.value.replace(/\D/g, "").slice(0, 4))}
-            placeholder="4 ספרות"
+            placeholder={t("parent.pinPlaceholder")}
             disabled={busy || students.length >= studentLimit}
             {...CHILD_PIN_INPUT_PROPS}
           />
         </div>
       </div>
       <button className={`w-full ${T.amberBtn}`} disabled={busy || students.length >= studentLimit}>
-        הוסף ילד
+        {t("parent.addChild")}
       </button>
     </form>
   );
@@ -722,15 +729,15 @@ export default function ParentDashboardPage() {
             }))
           }
         >
-          <option value="">בחר כיתה</option>
-          {GRADE_OPTIONS.map((g) => (
+          <option value="">{t("parent.selectGrade")}</option>
+          {gradeOptions.map((g) => (
             <option key={g.value} value={g.value}>
               {g.label}
             </option>
           ))}
         </select>
         <div>
-          <label className={`text-sm ${T.label}`}>מספר ליאו של אורח (לשיוך)</label>
+          <label className={`text-sm ${T.label}`}>{t("parent.guestLeoLink")}</label>
           <input
             className={T.inputMt}
             value={guestLeoByStudentId[student.id] || ""}
@@ -740,7 +747,7 @@ export default function ParentDashboardPage() {
                 [student.id]: e.target.value.replace(/\D/g, "").slice(0, 8),
               }))
             }
-            placeholder="מספר ליאו - 8 ספרות"
+            placeholder={t("parent.guestLeoPlaceholder")}
             inputMode="numeric"
             autoComplete="off"
             disabled={busy}
@@ -751,7 +758,7 @@ export default function ParentDashboardPage() {
             disabled={busy}
             onClick={() => void linkGuestToStudent(student.id)}
           >
-            שיוך אורח
+            {t("parent.linkGuest")}
           </button>
           {guestLinkMessageByStudentId[student.id] ? (
             <p className={`mt-2 text-sm ${T.muted}`} role="status">
@@ -770,24 +777,24 @@ export default function ParentDashboardPage() {
               }))
             }
           />
-          פעיל
+          {t("parent.active")}
         </label>
-        <div className={`text-sm ${T.muted}`}>יתרת מטבעות: {balance ? balance.balance : 0}</div>
+        <div className={`text-sm ${T.muted}`}>{t("parent.coinBalance", { balance: balance ? balance.balance : 0 })}</div>
 
         <div className={T.panel}>
-          <div className={T.panelTitle}>פרטי כניסת ילד/ה</div>
+          <div className={T.panelTitle}>{t("parent.childLoginDetails")}</div>
 
           {showConfirmationHere ? (
             <div className={T.confirmBox}>
-              <div className={T.confirmTitle}>חשוב לשמור את הפרטים - ה-PIN לא יוצג שוב.</div>
+              <div className={T.confirmTitle}>{t("parent.saveCredentialsImportant")}</div>
               <div>
-                שם משתמש: <strong className={T.confirmStrong}>{credentialConfirmation.username}</strong>
+                {t("parent.username")}: <strong className={T.confirmStrong}>{credentialConfirmation.username}</strong>
               </div>
               <div>
-                PIN חדש: <strong className={T.confirmStrong}>{credentialConfirmation.pin}</strong>
+                {t("parent.newPin")}: <strong className={T.confirmStrong}>{credentialConfirmation.pin}</strong>
               </div>
               <button type="button" className={T.ghostBtn} onClick={() => setCredentialConfirmation(null)}>
-                סגירה
+                {t("common.close")}
               </button>
             </div>
           ) : null}
@@ -796,21 +803,21 @@ export default function ParentDashboardPage() {
             <div className="space-y-2">
               <div className={`flex flex-wrap items-center gap-2 text-sm ${T.muted}`}>
                 <span>
-                  שם משתמש: <strong className={T.confirmStrong}>{visibleLoginUsername}</strong>
+                  {t("parent.username")}: <strong className={T.confirmStrong}>{visibleLoginUsername}</strong>
                 </span>
                 <button
                   type="button"
                   className={T.copyBtn}
                   onClick={() => copyUsername(visibleLoginUsername)}
                 >
-                  העתק שם משתמש
+                  {t("parent.copyUsername")}
                 </button>
               </div>
               <div className={`text-sm ${T.muted}`}>
-                PIN: {student.has_active_access_code ? "מוגדר" : "לא מוגדר"}
+                PIN: {student.has_active_access_code ? t("parent.pinStatusSet") : t("parent.pinStatusUnset")}
               </div>
               <div>
-                <label className={`text-sm ${T.label}`}>PIN חדש (איפוס / שינוי)</label>
+                <label className={`text-sm ${T.label}`}>{t("parent.newPinReset")}</label>
                 <input
                   className={T.inputMt}
                   value={credentialsByStudentId[student.id]?.pin || ""}
@@ -823,7 +830,7 @@ export default function ParentDashboardPage() {
                       },
                     }))
                   }
-                  placeholder="4 ספרות"
+                  placeholder={t("parent.pinPlaceholder")}
                   {...CHILD_PIN_INPUT_PROPS}
                 />
               </div>
@@ -833,27 +840,27 @@ export default function ParentDashboardPage() {
                 onClick={() => savePinReset(student.id, visibleLoginUsername, student.full_name)}
                 type="button"
               >
-                איפוס PIN / שינוי PIN
+                {t("parent.resetPin")}
               </button>
             </div>
           ) : hasHiddenDemoAccess ? (
             <div className="space-y-2">
-              <div className={`text-sm ${T.muted}`}>כניסת ילד/ה פעילה</div>
+              <div className={`text-sm ${T.muted}`}>{t("parent.childLoginActive")}</div>
               <div className={`text-sm ${T.muted}`}>
-                PIN: {student.has_active_access_code ? "מוגדר" : "לא מוגדר"}
+                PIN: {student.has_active_access_code ? t("parent.pinStatusSet") : t("parent.pinStatusUnset")}
               </div>
             </div>
           ) : (
             <div className="space-y-2">
-              <div className={T.warning}>שם משתמש: טרם נקבע שם משתמש</div>
+              <div className={T.warning}>{t("parent.usernameNotSet")}</div>
               <div className={`text-sm ${T.muted}`}>
-                PIN: {student.has_active_access_code ? "מוגדר" : "לא מוגדר"}
+                PIN: {student.has_active_access_code ? t("parent.pinStatusSet") : t("parent.pinStatusUnset")}
               </div>
               <p className={`text-xs ${T.faint}`}>
-                יש להגדיר שם משתמש ו-PIN לכניסת הילד/ה. אם כבר קיימת כניסה ישנה, הגדרה זו תחליף אותה.
+                {t("parent.setUsernamePinHint")}
               </p>
               <div>
-                <label className={`text-sm ${T.label}`}>שם משתמש לילד/ה</label>
+                <label className={`text-sm ${T.label}`}>{t("parent.childUsername")}</label>
                 <input
                   className={T.inputMt}
                   value={credentialsByStudentId[student.id]?.username || ""}
@@ -866,12 +873,12 @@ export default function ParentDashboardPage() {
                       },
                     }))
                   }
-                  placeholder="לדוגמה: noam123"
+                  placeholder={t("parent.usernameExample")}
                   autoComplete="off"
                 />
               </div>
               <div>
-                <label className={`text-sm ${T.label}`}>PIN לילד/ה</label>
+                <label className={`text-sm ${T.label}`}>{t("parent.childPin")}</label>
                 <input
                   className={T.inputMt}
                   value={credentialsByStudentId[student.id]?.pin || ""}
@@ -884,7 +891,7 @@ export default function ParentDashboardPage() {
                       },
                     }))
                   }
-                  placeholder="4 ספרות"
+                  placeholder={t("parent.pinPlaceholder")}
                   {...CHILD_PIN_INPUT_PROPS}
                 />
               </div>
@@ -894,7 +901,7 @@ export default function ParentDashboardPage() {
                 onClick={() => saveStudentCredentials(student.id, student.full_name)}
                 type="button"
               >
-                קביעת שם משתמש ו-PIN
+                {t("parent.setUsernamePin")}
               </button>
             </div>
           )}
@@ -921,7 +928,7 @@ export default function ParentDashboardPage() {
             onClick={() => saveStudent(student.id)}
             type="button"
           >
-            שמור
+            {t("parent.save")}
           </button>
           <button
             type="button"
@@ -936,7 +943,7 @@ export default function ParentDashboardPage() {
               });
             }}
           >
-            מחיקת ילד
+            {t("parent.deleteChild")}
           </button>
         </div>
       </div>
@@ -946,8 +953,13 @@ export default function ParentDashboardPage() {
   if (!session) {
     return (
       <Layout {...layoutProps}>
-        <div className="max-w-md mx-auto px-4 py-8" dir="rtl" lang="he">
-          <PortalLoadingPanel isBright={isBright} message="בודק התחברות הורה..." />
+        <div className="max-w-md mx-auto px-4 py-8" dir={direction} lang={locale}>
+          <PortalLoadingPanel
+            isBright={isBright}
+            message={t("parent.checkingSession")}
+            dir={direction}
+            lang={locale}
+          />
         </div>
       </Layout>
     );
@@ -963,15 +975,16 @@ export default function ParentDashboardPage() {
 
   return (
     <Layout {...layoutProps}>
-      <div className="max-w-6xl mx-auto w-full px-3 py-3 md:px-8 md:py-8 space-y-4 md:space-y-6">
+      <div className="max-w-6xl mx-auto w-full px-3 py-3 md:px-8 md:py-8 space-y-4 md:space-y-6" dir={direction} lang={locale}>
+        <MockModeBanner className="mb-1" />
         <div className="flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-x-4 md:gap-y-3">
           <div className="min-w-0 flex-1">
             <div className="flex min-w-0 items-center justify-between gap-2">
               <h1 className={`text-xl md:text-2xl font-bold leading-tight ${T.heading} min-w-0 truncate`}>
-                פורטל הורים
+                {t("parent.portalTitle")}
               </h1>
               <button type="button" onClick={logout} className={`${T.secondaryBtn} shrink-0 md:hidden`}>
-                יציאה
+                {t("common.logout")}
               </button>
             </div>
             <p className={`${T.subheading} mt-1 min-w-0 truncate text-sm`}>{session.user?.email}</p>
@@ -986,7 +999,7 @@ export default function ParentDashboardPage() {
                 <span aria-hidden="true" className="me-1">
                   🖨️
                 </span>
-                דפי עבודה להדפסה
+                {t("parent.worksheets")}
               </Link>
             ) : (
               <button
@@ -998,7 +1011,7 @@ export default function ParentDashboardPage() {
                 <span aria-hidden="true" className="me-1">
                   🖨️
                 </span>
-                דפי עבודה להדפסה
+                {t("parent.worksheets")}
               </button>
             )}
             <button
@@ -1006,23 +1019,23 @@ export default function ParentDashboardPage() {
               onClick={() => setCurriculumModalOpen(true)}
               className={`${T.headerCurriculumBtn} w-full min-w-0 md:w-auto md:flex-none`}
             >
-              תוכניות הלימודים
+              {t("parent.curriculum")}
             </button>
             <button
               type="button"
               onClick={() => setAddChildModalOpen(true)}
               className={`${T.amberBtn} w-full min-w-0 px-2 text-center text-xs leading-tight md:w-auto md:flex-none md:px-4 md:text-sm`}
             >
-              הוספת ילד
+              {t("parent.addChild")}
             </button>
             <ParentInviteOthersButton
               bright={isBright}
-              label="שתף"
+              label={t("parent.share")}
               inline
               className={`${T.headerShareBtn} w-full min-w-0 md:w-auto md:flex-none`}
             />
             <button type="button" onClick={logout} className={`${T.secondaryBtn} hidden md:inline-flex`}>
-              יציאה
+              {t("common.logout")}
             </button>
           </div>
         </div>
@@ -1031,12 +1044,12 @@ export default function ParentDashboardPage() {
 
         <section>
           {students.length === 0 ? (
-            <p className={`text-sm ${T.faint}`}>עדיין לא נוספו ילדים</p>
+            <p className={`text-sm ${T.faint}`}>{t("ui.empty.noStudents")}</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 md:gap-5">
               {students.map((student) => {
-                const displayName = student.full_name || "ילד";
-                const gradeLabel = gradeLabelFromValue(student.grade_level);
+                const displayName = student.full_name || t("parent.childDefault");
+                const gradeLabel = gradeLabelFromValue(student.grade_level, gradeOptions);
                 const reportHref = `/parent/parent-report?studentId=${encodeURIComponent(student.id)}&source=parent`;
 
                 return (
@@ -1056,7 +1069,7 @@ export default function ParentDashboardPage() {
                         prefetch={false}
                         className={T.cardReportBtn}
                       >
-                        דוח הורים
+                        {t("parent.parentReport")}
                       </Link>
                       <button
                         type="button"
@@ -1070,7 +1083,7 @@ export default function ParentDashboardPage() {
                           })
                         }
                       >
-                        פעילות
+                        {t("parent.activity")}
                       </button>
                       <button
                         type="button"
@@ -1078,7 +1091,7 @@ export default function ParentDashboardPage() {
                         disabled={busy}
                         onClick={() => openDetailsModal(student)}
                       >
-                        פרטים
+                        {t("parent.details")}
                       </button>
                     </div>
                   </div>
@@ -1094,7 +1107,7 @@ export default function ParentDashboardPage() {
               src={PARENT_PROMO_DESKTOP_SRC}
               wrapClassName={`w-[min(62vw,240px)] md:w-[360px] aspect-video overflow-hidden rounded-xl border ${promoFrameClass}`}
               videoClassName="h-full w-full bg-black object-contain"
-              ariaLabel="סרטון הורים"
+              ariaLabel={t("parent.promoVideoLabel")}
               testId="parent-dashboard-promo-video"
             />
           </div>
@@ -1109,7 +1122,7 @@ export default function ParentDashboardPage() {
         <ParentDashboardModal
           bright={isBright}
           open={addChildModalOpen}
-          title="הוספת ילד"
+          title={t("parent.addChildTitle")}
           onClose={closeAddChildModal}
           size="md"
         >
@@ -1119,7 +1132,7 @@ export default function ParentDashboardPage() {
         <ParentDashboardModal
           bright={isBright}
           open={Boolean(detailsStudent)}
-          title={detailsStudent ? `פרטים - ${detailsStudent.full_name || "ילד"}` : "פרטים"}
+          title={detailsStudent ? t("parent.detailsTitle", { name: detailsStudent.full_name || t("parent.childDefault") }) : t("parent.details")}
           onClose={closeDetailsModal}
           size="2xl"
         >
@@ -1135,7 +1148,7 @@ export default function ParentDashboardPage() {
             onClose={() => setActivityModalStudent(null)}
             onSuccess={() => {
               setActivityModalStudent(null);
-              setMessage("הפעילות נשלחה בהצלחה!");
+              setMessage(t("parent.activitySentSuccess"));
               setSentActivitiesRefresh((n) => n + 1);
             }}
           />
@@ -1148,28 +1161,27 @@ export default function ParentDashboardPage() {
             aria-modal="true"
             aria-labelledby="delete-child-title"
           >
-            <div className={T.deletePanel} dir="rtl">
+            <div className={T.deletePanel} dir={direction}>
               <h3 id="delete-child-title" className={T.deleteTitle}>
-                מחיקת ילד לצמיתות
+                {t("parent.deleteChildTitle")}
               </h3>
               <p className={T.deleteText}>
-                מחיקה זו תמחק לצמיתות את הילד, פרטי הכניסה, הסשנים, התשובות, הדוחות, המטבעות וכל הנתונים הקשורים אליו.
-                לא ניתן לשחזר פעולה זו.
+                {t("parent.deleteChildWarning")}
               </p>
               <p className={T.deleteHint}>
-                הקלידו את שם הילד בדיוק:{" "}
+                {t("parent.deleteChildConfirm")}{" "}
                 <strong className={T.deleteStrong}>{deleteModalStudent.full_name}</strong>
               </p>
               <input
                 className={T.input}
                 value={deleteConfirmName}
                 onChange={(e) => setDeleteConfirmName(e.target.value)}
-                placeholder="הקלדת שם לאישור"
-                dir="rtl"
+                placeholder={t("parent.deleteConfirmPlaceholder")}
+                dir={direction}
                 autoComplete="off"
               />
               {deleteError ? (
-                <p className="text-sm text-red-500 text-right" role="alert">{deleteError}</p>
+                <p className="text-sm text-red-500" role="alert">{deleteError}</p>
               ) : null}
               <div className="flex flex-wrap gap-2 justify-end pt-1">
                 <button
@@ -1181,7 +1193,7 @@ export default function ParentDashboardPage() {
                     setDeleteError("");
                   }}
                 >
-                  ביטול
+                  {t("common.cancel")}
                 </button>
                 <button
                   type="button"
@@ -1193,7 +1205,7 @@ export default function ParentDashboardPage() {
                   }
                   onClick={() => void confirmDeleteStudent()}
                 >
-                  מחק לצמיתות
+                  {t("parent.deletePermanently")}
                 </button>
               </div>
             </div>

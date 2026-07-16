@@ -1,10 +1,11 @@
 import StudentThemePicker from "../student/StudentThemePicker";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
 export default function LearningMasterNavBar({
   MB,
   headerRef,
   onCurriculumClick,
-  curriculumLabel = "📋 תוכנית לימודים",
+  curriculumLabel,
   onBack,
   hideCurriculum = false,
   swapControls = false,
@@ -13,6 +14,9 @@ export default function LearningMasterNavBar({
   centerSlot = null,
   backBtnClassName = "",
 }) {
+  const { direction } = useI18n();
+  const t = useT();
+  const resolvedCurriculumLabel = curriculumLabel ?? t("learning.master.curriculum");
   const showCurriculum = Boolean(onCurriculumClick) && !hideCurriculum;
   const shellPadding = compactHeader ? "relative px-2 py-1.5" : "relative px-2 py-3";
   const safeTop = compactHeader
@@ -28,7 +32,7 @@ export default function LearningMasterNavBar({
         <div className={shellPadding} style={{ paddingTop: safeTop }}>
           <div
             className="grid grid-cols-[minmax(3.25rem,auto)_1fr_minmax(2.25rem,auto)] items-center gap-1 px-0.5 min-h-8 pointer-events-auto"
-            dir="rtl"
+            dir={direction}
           >
             <div className="flex items-center justify-start shrink-0 min-w-0">
               <button
@@ -40,7 +44,7 @@ export default function LearningMasterNavBar({
                     : `${MB.backBtn} ${integratedBackBtnClass}`
                 }
               >
-                חזרה
+                {t("learning.master.back")}
               </button>
             </div>
             <div className="flex items-center justify-center min-w-0 gap-1.5 pointer-events-auto">
@@ -62,7 +66,7 @@ export default function LearningMasterNavBar({
           <>
             <div className="absolute right-2 top-2 flex gap-2 pointer-events-auto">
               <button type="button" onClick={onBack} className={MB.backBtn}>
-                חזרה
+                {t("learning.master.back")}
               </button>
             </div>
             <div className="absolute left-2 top-2 flex gap-2 pointer-events-auto items-center">
@@ -74,14 +78,14 @@ export default function LearningMasterNavBar({
             {showCurriculum ? (
               <div className="absolute right-2 top-2 flex gap-2 pointer-events-auto">
                 <button type="button" onClick={onCurriculumClick} className={MB.navBtn}>
-                  {curriculumLabel}
+                  {resolvedCurriculumLabel}
                 </button>
               </div>
             ) : null}
             <div className="absolute left-2 top-2 flex gap-2 pointer-events-auto items-center">
               <StudentThemePicker variant="icon" iconSize="nav" />
               <button type="button" onClick={onBack} className={MB.backBtn}>
-                חזרה
+                {t("learning.master.back")}
               </button>
             </div>
           </>

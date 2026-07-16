@@ -2,7 +2,7 @@
  * Expandable mixed-topic checkboxes for printable worksheet create form.
  */
 
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -13,6 +13,7 @@ import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
  * }} props
  */
 export default function MixedTopicsPicker({ options, selectedKeys, onChange, T }) {
+  const ui = useWorksheetUi();
   const selectedSet = new Set(selectedKeys);
   const allSelected = options.length > 0 && options.every((o) => selectedSet.has(o.key));
 
@@ -31,9 +32,9 @@ export default function MixedTopicsPicker({ options, selectedKeys, onChange, T }
   return (
     <details className="worksheet-mixed-topics" open>
       <summary className={`worksheet-mixed-topics-summary ${T.label}`}>
-        {WORKSHEET_UI_HE.mixedTopicsTitle}
+        {ui.mixedTopicsTitle}
       </summary>
-      <p className={`worksheet-mixed-topics-hint ${T.muted}`}>{WORKSHEET_UI_HE.mixedTopicsHint}</p>
+      <p className={`worksheet-mixed-topics-hint ${T.muted}`}>{ui.mixedTopicsHint}</p>
       <div className="worksheet-mixed-topics-actions">
         <button
           type="button"
@@ -41,7 +42,7 @@ export default function MixedTopicsPicker({ options, selectedKeys, onChange, T }
           onClick={selectAll}
           disabled={allSelected}
         >
-          {WORKSHEET_UI_HE.mixedTopicsSelectAll}
+          {ui.mixedTopicsSelectAll}
         </button>
       </div>
       <ul className="worksheet-mixed-topics-list">

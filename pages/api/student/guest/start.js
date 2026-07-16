@@ -10,8 +10,9 @@ import {
   rejectIfGuestStartRateLimited,
   rejectIfGuestStartDeviceRateLimited,
 } from "../../../../lib/guest/guest-start-rate-limit.server.js";
+import { wrapMutatingApi } from "../../../../lib/global/apply-write-barrier.js";
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
@@ -53,3 +54,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ ok: false, error: "שגיאת שרת" });
   }
 }
+
+export default wrapMutatingApi(handler);

@@ -29,10 +29,14 @@ import {
   LEARNING_MASTER_MOBILE_WRAP_CLASS,
 } from "../../utils/learning-master-mobile.client.js";
 import {
-  LIVE_PRACTICE_GAME_OVER_HE,
-  LIVE_PRACTICE_WRONG_HE,
-  formatLearningWrongFeedbackHe,
-} from "../../utils/learning-live-feedback-he";
+  formatLearningWrongFeedback,
+  livePracticeCorrect,
+  livePracticeGameOver,
+  livePracticeWrong,
+  livePracticeTimeUp,
+  livePracticeTimeUpGameOver,
+  livePracticeExcellent,
+} from "../../utils/learning-live-feedback.js";
 import TrackingDebugPanel from "../../components/TrackingDebugPanel";
 import LearningPlannerRecommendationBlock from "../../components/LearningPlannerRecommendationBlock";
 import { reportModeFromGameState } from "../../utils/report-track-meta";
@@ -89,12 +93,15 @@ import {
   mergePlannerSessionClientMeta,
 } from "../../lib/learning-client/adaptive-planner-recommended-practice";
 import { useSubjectSessionDefaults } from "../../hooks/useSubjectSessionDefaults";
+import { useLearningMasterStrings } from "../../hooks/useLearningMasterStrings.js";
+import {
+  LEARNING_BADGE,
+  hasLearningBadge,
+  topicExpertBadgeId,
+  topicGeniusBadgeId,
+} from "../../utils/learning-badge-ids.js";
 import MasterSubjectAccessScreen from "../../components/learning/MasterSubjectAccessScreen.jsx";
 import { notifyLearningSessionSaveFailure } from "../../lib/learning-client/learning-session-save-feedback.client.js";
-import {
-  STUDENT_GRADE_REQUIRED_MESSAGE_HE,
-  STUDENT_SUBJECT_LOADING_MESSAGE_HE,
-} from "../../lib/learning-client/student-subject-practice-gate.he.js";
 import { useEscapeCloseModals } from "../../hooks/useEscapeCloseModals.js";
 import {
   debounceStudentLearningProfilePatch,
@@ -151,7 +158,6 @@ import { useLearningMasterUi } from "../../hooks/useLearningMasterUi.js";
 import SubjectMasterSessionShell from "../../components/learning/SubjectMasterSessionShell.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { useGuestPlayableTopics } from "../../hooks/useGuestPlayableTopics.js";
-import { GUEST_TOPIC_LOCK_MESSAGE_HE } from "../../lib/guest/constants.js";
 import StudentLearningAvatar from "../../components/arcade/club/StudentLearningAvatar.jsx";
 import ProfileBackgroundPickerGrid from "../../components/student/ProfileBackgroundPickerGrid.jsx";
 import { DEFAULT_PROFILE_BACKGROUND_KEY } from "../../lib/student-ui/profile-background-options.js";
@@ -188,15 +194,16 @@ const GRADES = SCIENCE_GRADES;
 const GRADE_ORDER = SCIENCE_GRADE_ORDER;
 const SCIENCE_BOOK_GRADE_SET = new Set(SCIENCE_BOOK_GRADES);
 
-const TOPICS = {
-  body: { name: "גוף האדם", icon: "🫀" },
-  animals: { name: "בעלי חיים", icon: "🐾" },
-  plants: { name: "צמחים", icon: "🌿" },
-  materials: { name: "חומרים", icon: "🧪" },
-  earth_space: { name: "כדור הארץ והחלל", icon: "🌍" },
-  environment: { name: "סביבה ואקולוגיה", icon: "🌱" },
-  experiments: { name: "ניסויים ותהליכים", icon: "🔬" },
-  mixed: { name: "ערבוב נושאים", icon: "🎲" },
+const TOPIC_KEYS = ["body", "animals", "plants", "materials", "earth_space", "environment", "experiments", "mixed"];
+const TOPIC_ICONS = {
+  body: "🫀",
+  animals: "🐾",
+  plants: "🌿",
+  materials: "🧪",
+  earth_space: "🌍",
+  environment: "🌱",
+  experiments: "🔬",
+  mixed: "🎲",
 };
 
 const PRACTICE_FOCUS_OPTIONS = [
@@ -246,42 +253,29 @@ const RETRY_QUEUE_MAX = 28;
 /** Max extra weight from mistake rate (1 + this). Lower = less topic lock-in. */
 const TOPIC_WEIGHT_MAX_BOOST = 0.72;
 
-const REFERENCE_SECTIONS = {
-  life_science: {
-    label: "מדעי החיים",
-    entries: [
-      { term: "מערכת הנשימה", desc: "מביאה חמצן לגוף ומוציאה פחמן דוחמצני." },
-      { term: "פוטוסינתזה", desc: "תהליך שבו הצמח מייצר מזון בעזרת אור." },
-      { term: "מארג מזון", desc: "רשת של שרשראות מזון שמראות איך אנרגיה עוברת בטבע." },
-      { term: "התאמות", desc: "שינויים בגוף או בהתנהגות שעוזרים לשרוד." },
-    ],
-  },
-  earth_space: {
-    label: "כדור הארץ והחלל",
-    entries: [
-      { term: "אטמוספרה", desc: "מעטפת הגזים שעוטפת את כדור הארץ." },
-      { term: "מחזור המים", desc: "המסלול של המים בין ים, עננים ויבשה." },
-      { term: "קרום כדור הארץ", desc: "השכבה החיצונית הבנויה מסלעים ולוחות טקטוניים." },
-      { term: "כוכב לכת", desc: "גוף שמקיף שמש, למשל כדור הארץ או מאדים." },
-    ],
-  },
-  materials_energy: {
-    label: "חומרים ואנרגיה",
-    entries: [
-      { term: "מצבי צבירה", desc: "מוצק, נוזל וגז – צורות שונות של אותו חומר." },
-      { term: "תערובת לעומת תרכובת", desc: "תערובת – ערבוב חומרים ללא קשר כימי, תרכובת – קשר חזק." },
-      { term: "אנרגיה מתחדשת", desc: "מקורות כמו שמש ורוח שאינם נגמרים." },
-      { term: "שינוי פיזיקלי", desc: "שינוי בצורה או מצב צבירה בלי יצירת חומר חדש." },
-    ],
-  },
+const REFERENCE_SECTION_KEYS = {
+  life_science: ["respiratory", "photosynthesis", "foodWeb", "adaptations"],
+  earth_space: ["atmosphere", "waterCycle", "crust", "planet"],
+  materials_energy: ["states", "mixtureCompound", "renewable", "physicalChange"],
 };
+
+function getReferenceSection(ms, category) {
+  const keys = REFERENCE_SECTION_KEYS[category] || REFERENCE_SECTION_KEYS.life_science;
+  const label = ms.getReferenceCategoryLabel(category);
+  const entries = keys.map((key) => ({
+    term: ms.t(`learning.science.reference.${category}.terms.${key}.term`),
+    desc: ms.t(`learning.science.reference.${category}.terms.${key}.desc`),
+  }));
+  return { label, entries };
+}
 
 const QUESTIONS = SCIENCE_QUESTIONS;
 
-function getTopicLabel(key) {
-  const t = TOPICS[key];
-  if (!t) return key;
-  return `${t.icon} ${t.name}`;
+function getTopicLabel(key, ms) {
+  if (!key) return key;
+  const icon = TOPIC_ICONS[key] || "";
+  const name = ms?.getTopicName ? ms.getTopicName(key) : key;
+  return icon ? `${icon} ${name}` : name;
 }
 
 function loadScienceMistakesFromStorage() {
@@ -331,7 +325,7 @@ function sanitizeTopicAnswerTails(raw) {
   const out = {};
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) return out;
   for (const [k, v] of Object.entries(raw)) {
-    if (!TOPICS[k]) continue;
+    if (!TOPIC_KEYS.includes(k)) continue;
     if (!Array.isArray(v)) continue;
     out[k] = v
       .map((x) => x === true || x === 1 || x === "1")
@@ -521,7 +515,7 @@ function computeScienceProgressInsights(topicStats, answerTail) {
   };
 }
 
-function buildInsightFeedbackLines(insights, topicAnswerTails) {
+function buildInsightFeedbackLines(insights, topicAnswerTails, t) {
   const lines = [];
   const tailMap =
     topicAnswerTails && typeof topicAnswerTails === "object"
@@ -535,13 +529,9 @@ function buildInsightFeedbackLines(insights, topicAnswerTails) {
     w &&
     w.attempts >= INSIGHT_MIN_TOPIC_ATTEMPTS &&
     w.acc <= 0.55 &&
-    TOPICS[w.key]
+    TOPIC_KEYS.includes(w.key)
   ) {
-    lines.push(
-      `כדאי חיזוק בנושא ${TOPICS[w.key].name} (דיוק ~${Math.round(
-        w.acc * 100
-      )}%).`
-    );
+    lines.push(t("learning.science.insights.needsStrengthening", { topic: t(`learning.science.topics.${w.key}`), percent: Math.round(w.acc * 100) }));
   }
 
   const s = insights.strongest;
@@ -550,16 +540,16 @@ function buildInsightFeedbackLines(insights, topicAnswerTails) {
     insights.eligibleTopicCount >= 2 &&
     s.attempts >= INSIGHT_MIN_TOPIC_ATTEMPTS &&
     s.acc >= 0.72 &&
-    TOPICS[s.key] &&
+    TOPIC_KEYS.includes(s.key) &&
     (!w || s.key !== w.key)
   ) {
-    const t = `חוזק יחסי בנושא ${TOPICS[s.key].name}.`;
-    if (!lines.includes(t)) lines.push(t);
+    const line = t("learning.science.insights.relativeStrength", { topic: t(`learning.science.topics.${s.key}`) });
+    if (!lines.includes(line)) lines.push(line);
   }
 
   for (const key of Object.keys(tailMap)) {
     const t = tailMap[key];
-    if (!Array.isArray(t) || t.length < 6 || !TOPICS[key]) continue;
+    if (!Array.isArray(t) || t.length < 6 || !TOPIC_KEYS.includes(key)) continue;
     const mid = Math.floor(t.length / 2);
     if (mid < 1) continue;
     const first = t.slice(0, mid);
@@ -567,18 +557,17 @@ function buildInsightFeedbackLines(insights, topicAnswerTails) {
     const a = first.filter(Boolean).length / first.length;
     const b = second.filter(Boolean).length / second.length;
     if (b - a >= 0.25) {
-      const t2 = `יש שיפור יפה בנושא ${TOPICS[key].name}.`;
+      const t2 = t("learning.science.insights.improving", { topic: t(`learning.science.topics.${key}`) });
       if (!lines.includes(t2)) lines.push(t2);
       break;
     }
   }
 
   if (insights.trend === "up") {
-    const t3 = "מגמת הדיוק ברצף האחרון עולה.";
+    const t3 = t("learning.science.insights.accuracyRising");
     if (!lines.includes(t3)) lines.push(t3);
   } else if (insights.trend === "down") {
-    const t4 =
-      "מגמת הדיוק ברצף האחרון יורדת - כדאי לחזור על החומר.";
+    const t4 = t("learning.science.insights.accuracyFalling");
     if (!lines.includes(t4)) lines.push(t4);
   }
 
@@ -650,55 +639,14 @@ function buildTop10(saved) {
   return sorted;
 }
 
-function getErrorExplanationScience(question, wrongAnswer) {
+function getErrorExplanationScience(question, wrongAnswer, getHint) {
   if (!question) return "";
   const correct = question.options?.[question.correctIndex];
-  switch (question.topic) {
-    case "body":
-      return "בדוק שוב: מה תפקיד המערכת או האיבר? נסה לחשוב איך הוא עוזר לגוף.";
-    case "animals":
-      return "שאל את עצמך: היכן החיה חיה? מה היא אוכלת? אלו סימני זיהוי יש לה?";
-    case "plants":
-      return "זכור את חלקי הצמח ותפקידם: שורש, גבעול, עלים, פרחים.";
-    case "materials":
-      return "חשוב על מצב הצבירה ועל תכונות החומר (מוצק/נוזל/גז, מסיסות וכו').";
-    case "earth_space":
-      return "תזכור: לכדור הארץ יש תנועות קבועות (סיבוב סביב עצמו והקפה סביב השמש).";
-    case "environment":
-      return "חשב האם הפעולה עוזרת לסביבה או פוגעת בה (זיהום, בזבוז, מיחזור).";
-    case "experiments":
-      return "חשוב כמו מדען: מה קורה בניסוי? מי הגורם ומה התוצאה?";
-    default:
-      break;
-  }
-  return correct
-    ? 'נסה לחשוב שוב לפי ניסוח השאלה והנקודות ברשימה "מה חשוב לזכור?" למעלה - בלי לנחש מהר מדי.'
-    : "בדוק שוב את הנתונים ואת ההסבר שלמדת.";
+  return getHint(question.topic, !!correct);
 }
 
-function getSolutionStepsScience(question) {
-  if (!question) return [];
-  const lines = [];
-  lines.push("1. קודם כל נבין את השאלה – על איזה נושא היא מדברת?");
-  if (question.theoryLines && question.theoryLines.length > 0) {
-    question.theoryLines.forEach((line, i) => {
-      lines.push(`${i + 2}. ${line}`);
-    });
-  }
-  const correctText =
-    question.options && question.options[question.correctIndex]
-      ? question.options[question.correctIndex]
-      : "";
-  if (correctText) {
-    const quoted = `\u2066${correctText}\u2069`;
-    lines.push(
-      `${lines.length + 1}. מתוך כל האפשרויות, רק "${quoted}" מתאים להסבר.`
-    );
-  }
-  if (question.explanation) {
-    lines.push(`${lines.length + 1}. סיכום: ${question.explanation}`);
-  }
-  return lines;
+function getSolutionStepsScience(question, getSteps) {
+  return getSteps(question);
 }
 
 // ================== MAIN COMPONENT ==================
@@ -706,6 +654,7 @@ function getSolutionStepsScience(question) {
 export default function ScienceMaster() {
   useIOSViewportFix();
   const { MB, ui, shellClass, shellBgStyle } = useLearningMasterUi();
+  const ms = useLearningMasterStrings("science");
   const learningModalOverlay = ui.learningModalOverlay;
   const learningModalPanel = ui.learningModalPanel;
   const learningModalHeader = ui.learningModalHeader;
@@ -750,7 +699,7 @@ export default function ScienceMaster() {
   } = useStudentDisplayLevelPractice("science");
   const [topic, setTopic] = useState("body");
   const scienceTopicsForGuest = useMemo(
-    () => (GRADES[grade]?.topics || Object.keys(TOPICS)).filter((t) => t !== "mixed"),
+    () => (GRADES[grade]?.topics || TOPIC_KEYS).filter((t) => t !== "mixed"),
     [grade]
   );
   const guestTopics = useGuestPlayableTopics("science", scienceTopicsForGuest);
@@ -906,7 +855,7 @@ export default function ScienceMaster() {
     if (sessionFullName) {
       setPlayerName(sessionFullName);
     } else if (session?.sessionResolved) {
-      setPlayerName("ילד/ה");
+      setPlayerName(ms.defaultPlayerName);
     }
   }, [sessionFullName, session?.sessionResolved]);
 
@@ -1103,12 +1052,12 @@ export default function ScienceMaster() {
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      alert("התמונה גדולה מדי. נא לבחור תמונה עד 5MB");
+      alert(ms.imageTooLarge);
       return;
     }
 
     if (!file.type.startsWith("image/")) {
-      alert("נא לבחור קובץ תמונה בלבד");
+      alert(ms.imageTypeOnly);
       return;
     }
 
@@ -1125,7 +1074,7 @@ export default function ScienceMaster() {
         }
         await patchLearningProfileAvatarCustomImage(dataUrl);
       } catch (err) {
-        alert(err && typeof err === "object" && "message" in err ? String(err.message) : "שמירת התמונה נכשלה");
+        alert(err && typeof err === "object" && "message" in err ? String(err.message) : ms.imageSaveFailed);
       }
     })();
     e.target.value = "";
@@ -1327,7 +1276,7 @@ export default function ScienceMaster() {
   }, []);
 
   useEffect(() => {
-    const allowed = GRADES[grade]?.topics || Object.keys(TOPICS);
+    const allowed = GRADES[grade]?.topics || TOPIC_KEYS;
     if (!allowed.includes(topic)) {
       const fallback = allowed[0] || "body";
       setTopic(fallback);
@@ -1419,7 +1368,7 @@ export default function ScienceMaster() {
   function filterQuestionsForCurrentSettings(levelOverride) {
     const gradeKey = grade;
     const allowedTopicsForGrade =
-      GRADES[gradeKey]?.topics || Object.keys(TOPICS);
+      GRADES[gradeKey]?.topics || TOPIC_KEYS;
     const baseLevel =
       levelOverride !== undefined && levelOverride !== null
         ? levelOverride
@@ -1507,7 +1456,7 @@ export default function ScienceMaster() {
       -INSIGHT_ANSWER_TAIL_MAX
     );
     intel.topicAnswerTails = { ...(intel.topicAnswerTails || {}) };
-    if (TOPICS[topicKey]) {
+    if (TOPIC_KEYS.includes(topicKey)) {
       const tPrev = intel.topicAnswerTails[topicKey] || [];
       intel.topicAnswerTails[topicKey] = [...tPrev, ok].slice(
         -INSIGHT_TOPIC_TAIL_MAX
@@ -1544,7 +1493,7 @@ export default function ScienceMaster() {
       return {
         base: null,
         feedback: [],
-        currentLevelLabel: studentDisplayLevelLabel("regular"),
+        currentLevelLabel: ms.getDisplayLevelLabel("regular"),
         mistakeLogCount: 0,
       };
     }
@@ -1553,11 +1502,11 @@ export default function ScienceMaster() {
       intel.topicStats,
       intel.answerTail
     );
-    const feedback = buildInsightFeedbackLines(base, intel.topicAnswerTails);
+    const feedback = buildInsightFeedbackLines(base, intel.topicAnswerTails, ms.t);
     return {
       base,
       feedback,
-      currentLevelLabel: studentDisplayLevelLabel("regular"),
+      currentLevelLabel: ms.getDisplayLevelLabel("regular"),
       mistakeLogCount: mistakes.length,
     };
   }, [mounted, level, mistakes.length, insightRevision]);
@@ -2023,7 +1972,7 @@ function saveScienceAnswerInParallel({
       scienceTrackingTopicKeyRef.current = null;
       setCurrentQuestion(null);
       setFeedback(
-        "אין עדיין מספיק שאלות לנושא/כיתה/רמה שבחרת. נסה לשנות הגדרה."
+        ms.notEnoughQuestions
       );
       return;
     }
@@ -2231,7 +2180,7 @@ function saveScienceAnswerInParallel({
 
   function startGame(opts = {}) {
     if (guestTopics.isGuest && guestTopics.isLocked(topic)) {
-      alert(GUEST_TOPIC_LOCK_MESSAGE_HE);
+      alert(ms.t('ui.student.guestLock'));
       return;
     }
     if (opts.fromAdaptivePlannerRecommendedPractice && opts.plannerSessionMeta && typeof opts.plannerSessionMeta === "object") {
@@ -2335,7 +2284,7 @@ function saveScienceAnswerInParallel({
     recordSessionProgress();
     setWrong((prev) => prev + 1);
     setStreak(0);
-    setFeedback("הזמן נגמר! ⏰");
+    setFeedback(ms.feedback.timeUp());
     setGameActive(false);
     scienceTrackingTopicKeyRef.current = null;
     setCurrentQuestion(null);
@@ -2507,29 +2456,29 @@ function saveScienceAnswerInParallel({
       
       // Badges
       const newStreak = streak + 1;
-      if (newStreak === 10 && !badges.includes("🔥 רצף חם")) {
-        const newBadge = "🔥 רצף חם";
+      if (newStreak === 10 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_10)) {
+        const newBadge = LEARNING_BADGE.STREAK_10;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newStreak === 25 && !badges.includes("⚡ מהיר כברק")) {
-        const newBadge = "⚡ מהיר כברק";
+      } else if (newStreak === 25 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_25)) {
+        const newBadge = LEARNING_BADGE.STREAK_25;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newStreak === 50 && !badges.includes("🌟 אלוף מדעים") && !badges.includes("🌟 מאסטר מדעים")) {
-        const newBadge = "🌟 אלוף מדעים";
+      } else if (newStreak === 50 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_50)) {
+        const newBadge = LEARNING_BADGE.STREAK_50;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newStreak === 100 && !badges.includes("👑 מלך המדעים")) {
-        const newBadge = "👑 מלך המדעים";
+      } else if (newStreak === 100 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_100_SCIENCE)) {
+        const newBadge = LEARNING_BADGE.STREAK_100_SCIENCE;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2537,20 +2486,20 @@ function saveScienceAnswerInParallel({
         saveBadge(newBadge);
       }
       
-      // Badges לפי נושא
       const topicKey = currentQuestion.topic;
       const topicProgress = progress[topicKey] || { total: 0, correct: 0 };
       const newTopicCorrect = topicProgress.correct + 1;
-      const topicName = TOPICS[topicKey]?.name || "נושא";
-      if (newTopicCorrect === 50 && !badges.includes(`🔬 מומחה ${topicName}`)) {
-        const newBadge = `🔬 מומחה ${topicName}`;
+      const expertBadgeId = topicExpertBadgeId(topicKey);
+      const geniusBadgeId = topicGeniusBadgeId(topicKey);
+      if (newTopicCorrect === 50 && !hasLearningBadge(badges, expertBadgeId)) {
+        const newBadge = expertBadgeId;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newTopicCorrect === 100 && !badges.includes(`🏆 גאון ${topicName}`)) {
-        const newBadge = `🏆 גאון ${topicName}`;
+      } else if (newTopicCorrect === 100 && !hasLearningBadge(badges, geniusBadgeId)) {
+        const newBadge = geniusBadgeId;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2558,17 +2507,16 @@ function saveScienceAnswerInParallel({
         saveBadge(newBadge);
       }
       
-      // Badges לפי ניקוד
       const newScore = score + points;
-      if (newScore >= 1000 && newScore - points < 1000 && !badges.includes("💎 אלף נקודות")) {
-        const newBadge = "💎 אלף נקודות";
+      if (newScore >= 1000 && newScore - points < 1000 && !hasLearningBadge(badges, LEARNING_BADGE.SCORE_1000)) {
+        const newBadge = LEARNING_BADGE.SCORE_1000;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newScore >= 5000 && newScore - points < 5000 && !badges.includes("🎯 חמשת אלפים")) {
-        const newBadge = "🎯 חמשת אלפים";
+      } else if (newScore >= 5000 && newScore - points < 5000 && !hasLearningBadge(badges, LEARNING_BADGE.SCORE_5000)) {
+        const newBadge = LEARNING_BADGE.SCORE_5000;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2576,16 +2524,15 @@ function saveScienceAnswerInParallel({
         saveBadge(newBadge);
       }
       
-      // Badges לפי תשובות נכונות
-      if (newCorrect === 100 && correct < 100 && !badges.includes("⭐ מאה תשובות נכונות")) {
-        const newBadge = "⭐ מאה תשובות נכונות";
+      if (newCorrect === 100 && correct < 100 && !hasLearningBadge(badges, LEARNING_BADGE.CORRECT_100)) {
+        const newBadge = LEARNING_BADGE.CORRECT_100;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
         setTimeout(() => setShowBadge(null), 3000);
         saveBadge(newBadge);
-      } else if (newCorrect === 500 && correct < 500 && !badges.includes("🌟 חמש מאות תשובות")) {
-        const newBadge = "🌟 חמש מאות תשובות";
+      } else if (newCorrect === 500 && correct < 500 && !hasLearningBadge(badges, LEARNING_BADGE.CORRECT_500)) {
+        const newBadge = LEARNING_BADGE.CORRECT_500;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -2630,7 +2577,7 @@ function saveScienceAnswerInParallel({
         return updated;
       });
       
-      setFeedback("מצוין! ✅");
+      setFeedback(ms.feedback.excellent());
       
       // Play sound - different sound for streak milestones
       if ((streak + 1) % 5 === 0 && streak + 1 >= 5) {
@@ -2664,7 +2611,7 @@ function saveScienceAnswerInParallel({
       // Play sound for wrong answer
       audio.playSfx("sfx-wrong");
       
-      const errExpl = getErrorExplanationScience(currentQuestion, answerText);
+      const errExpl = getErrorExplanationScience(currentQuestion, answerText, ms.getScienceHint);
       setErrorExplanation(errExpl);
       if (errExpl) stepByStepViewedRef.current = true;
       logScienceMistakeEntry(currentQuestion, answerText, {
@@ -2691,7 +2638,7 @@ function saveScienceAnswerInParallel({
       if (mode === "learning") {
         const scienceCorrect =
           currentQuestion.options?.[currentQuestion.correctIndex] ?? "";
-        setFeedback(formatLearningWrongFeedbackHe(scienceCorrect));
+        setFeedback(ms.feedback.wrongWithAnswer(scienceCorrect));
         scheduleWrongAnswerAdvance(() => {
           generateNewQuestion();
           setSelectedAnswer(null);
@@ -2699,11 +2646,11 @@ function saveScienceAnswerInParallel({
           setTimeLeft(null);
         });
       } else if (mode === "challenge") {
-        setFeedback(`${LIVE_PRACTICE_WRONG_HE} (-1 ❤️)`);
+        setFeedback(`${ms.feedback.wrong()} (-1 ❤️)`);
         setLives((prev) => {
           const next = prev - 1;
           if (next <= 0) {
-            setFeedback(LIVE_PRACTICE_GAME_OVER_HE);
+            setFeedback(ms.feedback.gameOver());
             audio.playSfx("sfx-game-over");
             recordSessionProgress();
             saveRunToStorage();
@@ -2726,7 +2673,7 @@ function saveScienceAnswerInParallel({
         });
       } else {
         // speed / marathon / practice stay in active gameplay on wrong answers
-        setFeedback(LIVE_PRACTICE_WRONG_HE);
+        setFeedback(ms.feedback.wrong());
         scheduleWrongAnswerAdvance(() => {
           generateNewQuestion();
           setSelectedAnswer(null);
@@ -2894,15 +2841,14 @@ function saveScienceAnswerInParallel({
     return <SubjectMasterSessionShell shellClass={shellClass} shellBgStyle={shellBgStyle} />;
   }
   if (!gradeReady) {
-    return <StudentLoadingPanel message={STUDENT_GRADE_REQUIRED_MESSAGE_HE} fullPage />;
+    return <StudentLoadingPanel message={ms.gradeRequired} fullPage />;
   }
 
   const accuracy =
     totalQuestions > 0 ? Math.round((correct / totalQuestions) * 100) : 0;
-  const referenceSection =
-    REFERENCE_SECTIONS[referenceCategory] || REFERENCE_SECTIONS.life_science;
+  const referenceSection = getReferenceSection(ms, referenceCategory);
   const referenceEntries = referenceSection.entries || [];
-  const allowedTopics = GRADES[grade]?.topics || Object.keys(TOPICS);
+  const allowedTopics = GRADES[grade]?.topics || TOPIC_KEYS;
 
   const showScienceTheoryHelp =
     mode === "learning" &&
@@ -2921,9 +2867,9 @@ function saveScienceAnswerInParallel({
     : null;
 
   return (
-    <MasterSubjectAccessScreen permissionKey="science" titleHe="מדעים">
+    <MasterSubjectAccessScreen permissionKey="science" title={ms.getSubjectTitle()}>
     <Layout>
-      <div className={shellClass} style={shellBgStyle} dir="rtl">
+      <div className={shellClass} style={shellBgStyle} dir={ms.direction}>
         <div
           ref={wrapRef}
           className={LEARNING_MASTER_MOBILE_WRAP_CLASS}
@@ -2949,8 +2895,8 @@ function saveScienceAnswerInParallel({
         <LearningMasterDesktopHeader
           MB={MB}
           desktopHeaderRef={desktopHeaderRef}
-          title="🔬 מדעים"
-          subtitle={`${playerName || "שחקן"} • ${GRADES[grade].name} • ${studentDisplayLevelLabel("regular")} • ${getTopicLabel(topic)} • ${MODES[mode].name}`}
+          title={ms.getSubjectTitle()}
+          subtitle={`${playerName || ms.player} • ${ms.getGradeName(grade)} • ${ms.getDisplayLevelLabel("regular")} • ${getTopicLabel(topic, ms)} • ${ms.getModeName(mode)}`}
           onBack={backSafe}
           onCurriculumClick={() => router.push("/learning/curriculum?subject=science")}
           audio={audio}
@@ -2966,7 +2912,7 @@ function saveScienceAnswerInParallel({
             compactHeader
             integratedTopRow
             centerSlot={
-              <LearningMasterMobileNavTitle MB={MB} title="🔬 מדעים" audio={audio} />
+              <LearningMasterMobileNavTitle MB={MB} title={ms.getSubjectTitle()} audio={audio} />
             }
           />
         </div>
@@ -2982,8 +2928,8 @@ function saveScienceAnswerInParallel({
         >
           <div className={SUBTITLE_ROW_CLASS}>
             <p className={`${MB.pageSub} max-md:leading-none max-md:mb-0`}>
-              {playerName || "שחקן"} • {GRADES[grade].name} • {studentDisplayLevelLabel("regular")} •{" "}
-              {getTopicLabel(topic)} • {MODES[mode].name}
+              {playerName || ms.player} • {ms.getGradeName(grade)} • {ms.getDisplayLevelLabel("regular")} •{" "}
+              {getTopicLabel(topic, ms)} • {ms.getModeName(mode)}
             </p>
           </div>
 
@@ -3005,7 +2951,7 @@ function saveScienceAnswerInParallel({
           {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
           <div
             className={`${MODE_ROW_CLASS} max-md:mb-1`}
-            dir="rtl"
+            dir={ms.direction}
           >
             {["practice", "learning", "speed", "marathon", "challenge"].map((m) => (
               <button
@@ -3018,14 +2964,14 @@ function saveScienceAnswerInParallel({
                 }}
                 className={mode === m ? MB.modeTabActive : MB.modeTabInactive}
               >
-                {MODES[m].name}
+                {ms.getModeName(m)}
               </button>
             ))}
             <div
               className={MB.coinBadgeDesktop}
-              title="מטבעות משחק"
+              title={ms.coinsTitle}
             >
-              <span className={MB.coinBadgeLabel}>מטבעות:</span>
+              <span className={MB.coinBadgeLabel}>{ms.coins}</span>
               <span dir="ltr" className={MB.coinBadgeValue}>
                 {childCoinBalance}
               </span>
@@ -3033,7 +2979,7 @@ function saveScienceAnswerInParallel({
           </div>
 
           {showStreakReward && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-orange-400 to-red-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-bounce">
                 <div className="text-4xl mb-2">{showStreakReward.emoji}</div>
                 <div className="text-xl font-bold">{showStreakReward.message}</div>
@@ -3046,8 +2992,8 @@ function saveScienceAnswerInParallel({
             <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/60">
               <div className="bg-gradient-to-br from-purple-600 to-pink-500 text-white px-6 py-4 rounded-2xl shadow-2xl text-center animate-pulse max-w-xs">
                 <div className="text-4xl mb-2">🌟</div>
-                <div className="text-xl font-bold mb-1">עלית רמה במדעים!</div>
-                <div className="text-sm">כעת אתה ברמה {playerLevel}</div>
+                <div className="text-xl font-bold mb-1">{ms.t("learning.science.levelUp")}</div>
+                <div className="text-sm">{ms.t("learning.science.levelUpNow", { level: playerLevel })}</div>
               </div>
             </div>
           )}
@@ -3067,20 +3013,20 @@ function saveScienceAnswerInParallel({
               <div className="w-full flex justify-center mb-3 md:mb-4 overflow-x-auto [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] px-0.5">
                 <div
                   className="inline-flex flex-nowrap items-center justify-center gap-2 md:gap-2.5 lg:gap-3 w-max max-w-full min-w-0"
-                  dir="rtl"
+                  dir={ms.direction}
                 >
                 <div
                   data-testid="science-player-name"
                   className={MB.preGamePlayerBadge}
                   dir={playerName && /[\u0590-\u05FF]/.test(playerName) ? "rtl" : "ltr"}
                   title={playerName.trim() ? playerName.trim() : undefined}
-                  aria-label={playerName.trim() ? `שם ילד/ה: ${playerName.trim()}` : "שם ילד/ה לא זמין"}
+                  aria-label={playerName.trim() ? ms.t("learning.master.childNameAria", { name: playerName.trim() }) : ms.childNameUnavailable}
                 >
-                  {playerName.trim() ? playerName.trim() : "שחקן"}
+                  {playerName.trim() ? playerName.trim() : ms.player}
                 </div>
                 <select
                   value={grade}
-                  title={GRADES[grade]?.name || grade}
+                  title={ms.getGradeName(grade) || grade}
                   disabled={!canPickGrade}
                   aria-disabled={!canPickGrade || undefined}
                   onChange={(e) => {
@@ -3091,7 +3037,7 @@ function saveScienceAnswerInParallel({
                 >
                   {GRADE_ORDER.map((g) => (
                     <option key={g} value={g}>
-                      {GRADES[g]?.name || g}
+                      {ms.getGradeName(g) || g}
                     </option>
                   ))}
                 </select>
@@ -3102,11 +3048,11 @@ function saveScienceAnswerInParallel({
                   <select
                     data-testid="science-topic-select"
                     value={topic}
-                    title={getTopicLabel(topic)}
+                    title={getTopicLabel(topic, ms)}
                     onChange={(e) => {
                       const nextTopic = e.target.value;
                       if (guestTopics.isGuest && guestTopics.isLocked(nextTopic)) {
-                        alert(GUEST_TOPIC_LOCK_MESSAGE_HE);
+                        alert(ms.t('ui.student.guestLock'));
                         return;
                       }
                       setTopic(nextTopic);
@@ -3124,10 +3070,10 @@ function saveScienceAnswerInParallel({
                 </div>
               </div>
               {/* BEST / ACCURACY */}
-              <div className="grid grid-cols-4 gap-1.5 md:gap-2 lg:gap-2.5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto shrink-0" dir="rtl">
+              <div className="grid grid-cols-4 gap-1.5 md:gap-2 lg:gap-2.5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto shrink-0" dir={ms.direction}>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>שיא ניקוד</span>
+                    <span className={MB.preGameTileLabel}>{ms.bestScore}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueEmerald} dir="ltr">
@@ -3137,7 +3083,7 @@ function saveScienceAnswerInParallel({
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>שיא רצף</span>
+                    <span className={MB.preGameTileLabel}>{ms.bestStreak}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueAmber} dir="ltr">
@@ -3147,7 +3093,7 @@ function saveScienceAnswerInParallel({
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>דיוק</span>
+                    <span className={MB.preGameTileLabel}>{ms.accuracy}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueBlue}>{subjectView.middleTiles.accuracyDisplayHe}</span>
@@ -3155,7 +3101,7 @@ function saveScienceAnswerInParallel({
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>אתגרים</span>
+                    <span className={MB.preGameTileLabel}>{ms.challenges}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <button
@@ -3175,9 +3121,7 @@ function saveScienceAnswerInParallel({
                           });
                       }}
                       className={MB.btnOpenSmall}
-                    >
-                      פתיחה
-                    </button>
+                    >{ms.opening}</button>
                   </div>
                 </div>
               </div>
@@ -3196,15 +3140,11 @@ function saveScienceAnswerInParallel({
                   onClick={startGame}
                   disabled={!playerName.trim()}
                   className={MB.btnPrimary}
-                >
-                  ▶️ התחל
-                </button>
+                >{ms.start}</button>
                 <button
                   onClick={openLeaderboard}
                   className={`${MB.btnAction} ${MB.btnActionOrange}`}
-                >
-                  🏆 לוח תוצאות
-                </button>
+                >{ms.leaderboard}</button>
               </div>
 
               {/* כפתורים עזרה ותרגול ממוקד */}
@@ -3212,30 +3152,24 @@ function saveScienceAnswerInParallel({
                 <button
                   onClick={() => setShowHowTo(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionCyan}`}
-                >
-                  ❓ איך לומדים מדעים כאן?
-                </button>
+                >{ms.howToLearn}</button>
                 <button
                   onClick={() => setShowReferenceModal(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionPurple}`}
-                >
-                  📚 לוח עזרה
-                </button>
+                >{ms.helpBoard}</button>
                 {bookTopicHref ? (
                   <button
                     type="button"
                     data-testid={`science-${grade}-book-topic-button`}
                     onClick={() => router.push(bookTopicHref)}
                     className={`${MB.btnActionHelp} ${MB.btnActionTeal}`}
-                  >
-                    הסבר בספר
-                  </button>
+                  >{ms.explainBook}</button>
                 ) : null}
                 <div
                   className={MB.coinBadgeMobile}
-                  title="מטבעות משחק"
+                  title={ms.coinsTitle}
                 >
-                  <span className={MB.coinBadgeLabel}>מטבעות:</span>
+                  <span className={MB.coinBadgeLabel}>{ms.coins}</span>
                   <span dir="ltr" className={MB.coinBadgeValue}>
                     {childCoinBalance}
                   </span>
@@ -3250,9 +3184,7 @@ function saveScienceAnswerInParallel({
               </div>
 
               {!playerName.trim() && (
-                <p className={MB.mutedHint}>
-                  הכנס את שמך כדי להתחיל
-                </p>
+                <p className={MB.mutedHint}>{ms.enterNameToStart}</p>
               )}
               </div>
             </div>
@@ -3267,7 +3199,7 @@ function saveScienceAnswerInParallel({
                     <div className="flex flex-col gap-2 items-stretch">
                       {feedback && (
                         <div
-                          className={`${feedback.includes("מצוין") ? MB.feedbackOk : MB.feedbackBad}`}
+                          className={`${feedback.includes("Excellent") || feedback.includes("Great") ? MB.feedbackOk : MB.feedbackBad}`}
                         >
                           {renderLearningMixedHebrewMathText(feedback)}
                         </div>
@@ -3277,9 +3209,7 @@ function saveScienceAnswerInParallel({
                           className="px-4 py-3 rounded-lg bg-[#0a1222]/95 border border-rose-300/60 shadow-xl backdrop-blur-sm text-sm leading-relaxed text-right"
                           style={learningMixedHebrewMathStyle}
                         >
-                          <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">
-                            למה הטעות קרתה?
-                          </div>
+                          <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">{ms.whyMistake}</div>
                           <div className="text-rose-50">
                             {renderLearningMixedHebrewMathText(errorExplanation)}
                           </div>
@@ -3294,9 +3224,7 @@ function saveScienceAnswerInParallel({
                       type="button"
                       onClick={() => setShowTheoryHelp(true)}
                       className={`${MB.floatBtn} ${MB.floatBtnTheory} z-[6] max-md:hidden pointer-events-auto`}
-                    >
-                      🧠 מה חשוב לזכור?
-                    </button>
+                    >{ms.rememberTitle}</button>
                   ) : null}
                 {questionBookHref ? (
                   <div className={`${MB.floatBtnStack} max-md:hidden`}>
@@ -3305,10 +3233,8 @@ function saveScienceAnswerInParallel({
                       data-testid={`science-${grade}-book-question-button`}
                       onClick={() => openBookFromLearning(questionBookHref)}
                       className={`${MB.floatBtnHelper} ${MB.floatBtnBookColors}`}
-                      title="הסבר בספר לנושא הנוכחי"
-                    >
-                      הסבר
-                    </button>
+                      title={ms.explainBook}
+                    >{ms.explain}</button>
                   </div>
                 ) : null}
 
@@ -3318,7 +3244,7 @@ function saveScienceAnswerInParallel({
                   <StudentQuestionDisplay
                     testId="science-question-stem"
                     question={
-                      currentQuestion?.stem || "אין שאלה זמינה להגדרה זו."
+                      currentQuestion?.stem || ms.noQuestion
                     }
                     getQuestionFontStyle={getQuestionFontStyle}
                     resolveVerbalSingleStyle={getHebrewApprovedSingleVerbalQuestionStyle}
@@ -3347,10 +3273,8 @@ function saveScienceAnswerInParallel({
                         data-testid={`science-${grade}-book-question-button`}
                         onClick={() => openBookFromLearning(questionBookHref)}
                         className={`${MB.questionActionBtn} ${MB.floatBtnBookColors}`}
-                        title="הסבר בספר לנושא הנוכחי"
-                      >
-                        הסבר
-                      </button>
+                        title={ms.explainBook}
+                      >{ms.explain}</button>
                     ) : null
                   }
                   secondarySlot={
@@ -3359,10 +3283,8 @@ function saveScienceAnswerInParallel({
                         type="button"
                         onClick={() => setShowTheoryHelp(true)}
                         className={`${MB.questionActionBtn} ${MB.floatBtnPurple}`}
-                        title="מה חשוב לזכור?"
-                      >
-                        🧠 חשוב
-                      </button>
+                        title={ms.rememberTitle}
+                      >{ms.remember}</button>
                     ) : null
                   }
                 />
@@ -3406,7 +3328,7 @@ function saveScienceAnswerInParallel({
                     </div>
                   )}
 
-                  <div className="w-full flex justify-center gap-2 flex-wrap mb-2 min-h-[2.75rem]" dir="rtl">
+                  <div className="w-full flex justify-center gap-2 flex-wrap mb-2 min-h-[2.75rem]" dir={ms.direction}>
                     {mode === "learning" && currentQuestion && (
                       <button
                         type="button"
@@ -3416,27 +3338,21 @@ function saveScienceAnswerInParallel({
                           setShowSolution(true);
                         }}
                         className={learningExplainOpenBtn}
-                      >
-                        📘 הסבר מלא
-                      </button>
+                      >{ms.explainFull}</button>
                     )}
                     <button
                       type="button"
                       data-testid="learning-stop-game"
                       onClick={stopGame}
                       className={MB.btnStop}
-                    >
-                      ⏹️ עצור
-                    </button>
+                    >{ms.stop}</button>
                     {(mode === "learning" || mode === "practice") &&
                       previousExplanationQuestion && (
                       <button
                         type="button"
                         onClick={openPreviousExplanation}
                         className={learningExplainOpenBtn}
-                      >
-                        🕘 תרגיל קודם
-                      </button>
+                      >{ms.previousExercise}</button>
                     )}
                   </div>
                 </div>
@@ -3448,7 +3364,7 @@ function saveScienceAnswerInParallel({
                 <div
                   className={learningModalOverlay}
                   onClick={closeExplanationModal}
-                  dir="rtl"
+                  dir={ms.direction}
                 >
                   <div
                     className={`${learningModalPanel} overflow-hidden`}
@@ -3459,20 +3375,20 @@ function saveScienceAnswerInParallel({
                         type="button"
                         onClick={closeExplanationModal}
                         className={learningModalCloseBtn}
-                        aria-label="סגור"
+                        aria-label={ms.close}
                       >
                         ✖
                       </button>
                       <h3 className={learningModalTitle}>
                         {showPreviousSolution
-                          ? "פתרון התרגיל הקודם"
+                          ? ms.previousExercise
                           : "\u200Fאיך פותרים את השאלה?"}
                       </h3>
                       <span className="w-10 shrink-0" aria-hidden />
                     </div>
                     <div
                       className="flex-1 min-h-0 overflow-y-auto px-4 pb-3"
-                      dir="rtl"
+                      dir={ms.direction}
                     >
                       <div className={`mb-3 ${learningQuestionBox}`}>
                         <p
@@ -3494,7 +3410,7 @@ function saveScienceAnswerInParallel({
                         className="space-y-2.5"
                         style={learningMixedHebrewMathStyle}
                       >
-                        {getSolutionStepsScience(explanationQuestion).map(
+                        {getSolutionStepsScience(explanationQuestion, ms.getScienceSolutionSteps).map(
                           (line, idx) => (
                             <div key={idx} className={learningExplBody}>
                               {renderLearningMixedHebrewMathText(line)}
@@ -3509,7 +3425,7 @@ function saveScienceAnswerInParallel({
                           type="button"
                           onClick={closeExplanationModal}
                           className={learningPrimaryCloseBtn}
-                          dir="rtl"
+                          dir={ms.direction}
                         >
                           {"\u200Fסגור"}
                         </button>
@@ -3528,21 +3444,19 @@ function saveScienceAnswerInParallel({
                   <div
                     className={learningModalOverlay}
                     onClick={() => setShowTheoryHelp(false)}
-                    dir="rtl"
+                    dir={ms.direction}
                   >
                     <div
                       className="w-full max-w-md rounded-2xl border border-white/20 bg-[#0a1222]/95 shadow-2xl p-4"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <div className="flex items-center justify-between gap-2 mb-2">
-                        <h3 className="text-base font-extrabold text-white">
-                          מה חשוב לזכור?
-                        </h3>
+                        <h3 className="text-base font-extrabold text-white">{ms.rememberTitle}</h3>
                         <button
                           type="button"
                           onClick={() => setShowTheoryHelp(false)}
                           className="px-2 py-1 rounded-md bg-white/10 text-white/80 hover:bg-white/20 text-xs font-bold"
-                          aria-label="סגור"
+                          aria-label={ms.close}
                         >
                           ✖
                         </button>
@@ -3571,35 +3485,23 @@ function saveScienceAnswerInParallel({
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="text-center mb-4">
-                  <h2 className="text-2xl font-extrabold text-white mb-1">
-                    🏆 לוח תוצאות – מדעים
-                  </h2>
-                  <p className="text-white/70 text-xs">שיאים מקומיים</p>
+                  <h2 className="text-2xl font-extrabold text-white mb-1">{ms.t('learning.science.leaderboardTitle')}</h2>
+                  <p className="text-white/70 text-xs">{ms.localHighScores}</p>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-center">
                     <thead>
                       <tr className="border-b border-white/20">
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          דירוג
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          שחקן
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          ניקוד
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          רצף
-                        </th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.rank}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.player}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.score}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.streak}</th>
                       </tr>
                     </thead>
                     <tbody>
                       {leaderboardData.length === 0 ? (
                         <tr>
-                          <td colSpan={4} className="text-white/60 p-4 text-sm">
-                            עדיין אין תוצאות לשמירה.
-                          </td>
+                          <td colSpan={4} className="text-white/60 p-4 text-sm">{ms.noResultsYet}</td>
                         </tr>
                       ) : (
                         leaderboardData.map((row, idx) => (
@@ -3647,9 +3549,7 @@ function saveScienceAnswerInParallel({
                   <button
                     onClick={() => setShowLeaderboard(false)}
                     className="px-6 py-2 rounded-lg bg-amber-500/80 hover:bg-amber-500 font-bold text-sm"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>
@@ -3662,11 +3562,11 @@ function saveScienceAnswerInParallel({
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-blue-400/60 rounded-2xl p-5 w-full max-w-lg max-h-[85vh] overflow-y-auto text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">📚 לוח המושגים במדעים</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.t("learning.science.referenceBoardTitle")}</h2>
                   <button
                     onClick={() => setShowReferenceModal(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -3674,11 +3574,9 @@ function saveScienceAnswerInParallel({
                     ✖
                   </button>
                 </div>
-                <p className="text-sm text-white/70 mb-3">
-                  בחר קטגוריה כדי לחזור במהירות על נקודות מפתח – כמו דפי העזר במשחקי החשבון והגאומטריה.
-                </p>
+                <p className="text-sm text-white/70 mb-3">{ms.referenceBoardBlurb}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {Object.entries(REFERENCE_SECTIONS).map(([key, section]) => (
+                  {Object.keys(REFERENCE_SECTION_KEYS).map((key) => (
                     <button
                       key={key}
                       onClick={() => setReferenceCategory(key)}
@@ -3688,11 +3586,11 @@ function saveScienceAnswerInParallel({
                           : "bg-white/5 border-white/20 text-white/70 hover:bg-white/10"
                       }`}
                     >
-                      {section.label}
+                      {ms.getReferenceCategoryLabel(key)}
                     </button>
                   ))}
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2" dir="rtl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2" dir={ms.direction}>
                   {referenceEntries.map((entry, idx) => (
                     <div
                       key={`${referenceCategory}-${idx}`}
@@ -3704,7 +3602,7 @@ function saveScienceAnswerInParallel({
                   ))}
                   {referenceEntries.length === 0 && (
                     <div className="text-center text-white/60 py-4 col-span-full">
-                      אין עדיין מושגים להצגה.
+                      {ms.noTermsYet}
                     </div>
                   )}
                 </div>
@@ -3719,11 +3617,11 @@ function saveScienceAnswerInParallel({
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-purple-400/60 rounded-2xl p-5 w-full max-w-lg max-h-[85vh] overflow-y-auto text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">🎯 חזרה על שגיאות</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.mistakeReview}</h2>
                   <button
                     onClick={() => setShowPracticeModal(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -3732,9 +3630,7 @@ function saveScienceAnswerInParallel({
                   </button>
                 </div>
                 {mistakes.length === 0 ? (
-                  <p className="text-sm text-white/70 text-center py-4">
-                    עדיין אין שגיאות לשמור. תרגל, טעה ולחץ כאן כדי לחזור בדיוק על מה שצריך.
-                  </p>
+                  <p className="text-sm text-white/70 text-center py-4">{ms.mistakeReviewEmpty}</p>
                 ) : (
                   <div className="space-y-3">
                     {mistakes.slice(0, 10).map((item, idx) => (
@@ -3745,24 +3641,18 @@ function saveScienceAnswerInParallel({
                         <div className="flex items-center justify-between text-xs text-white/60 mb-1">
                           <span>{getTopicLabel(item.topic)}</span>
                           <span>
-                            {GRADES[item.grade]?.name || "כיתה"} • {studentDisplayLevelLabel("regular")}
+                            {ms.getGradeName(item.grade) || ms.t('learning.master.gradeFallback')} • {ms.getDisplayLevelLabel("regular")}
                           </span>
                         </div>
                         <p className="text-sm font-semibold text-white mb-1">
                           {item.stem}
                         </p>
-                        <p className="text-xs text-emerald-300 mb-1">
-                          תשובה נכונה: {item.correct}
-                        </p>
-                        <p className="text-xs text-rose-300">
-                          התשובה שלך: {item.wrong || "-"}
-                        </p>
+                        <p className="text-xs text-emerald-300 mb-1">{ms.t('learning.master.correctAnswer', { answer: item.correct })}</p>
+                        <p className="text-xs text-rose-300">{ms.t('learning.master.yourAnswer', { answer: item.wrong || '-' })}</p>
                         <button
                           onClick={() => handleMistakePractice(item)}
                           className="mt-2 w-full px-3 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 text-xs font-bold"
-                        >
-                          תרגל שאלה זו
-                        </button>
+                        >{ms.practiceThisQuestion}</button>
                       </div>
                     ))}
                   </div>
@@ -3771,16 +3661,12 @@ function saveScienceAnswerInParallel({
                   <button
                     onClick={() => setShowPracticeModal(false)}
                     className="flex-1 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-sm font-bold"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                   {mistakes.length > 0 && (
                     <button
                       onClick={clearScienceMistakes}
                       className="flex-1 px-4 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 text-sm font-bold"
-                    >
-                      🧹 נקה שגיאות
-                    </button>
+                    >{ms.clearMistakes}</button>
                   )}
                 </div>
               </div>
@@ -3794,11 +3680,11 @@ function saveScienceAnswerInParallel({
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-400/60 rounded-2xl p-5 w-full max-w-md max-h-[85vh] overflow-y-auto text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">🎛️ הגדרות תרגול</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.practiceSettings}</h2>
                   <button
                     onClick={() => setShowPracticeOptions(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -3812,9 +3698,9 @@ function saveScienceAnswerInParallel({
                 <div className="space-y-2 mb-4">
                   <p className="text-xs text-white/60 font-semibold">מצב תרגול</p>
                   {[
-                    { value: "normal", label: "תרגול רגיל" },
-                    { value: "mistakes", label: "חזרה על שגיאות" },
-                    { value: "graded", label: "תרגול מדורג" },
+                    { value: "normal", label: ms.t("learning.master.practiceModes.normal") },
+                    { value: "mistakes", label: ms.t("learning.master.practiceModes.mistakes") },
+                    { value: "graded", label: ms.t("learning.master.practiceModes.graded") },
                   ].map((opt) => (
                     <label key={opt.value} className="flex items-center gap-2 text-sm">
                       <input
@@ -3830,7 +3716,7 @@ function saveScienceAnswerInParallel({
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-white/80">
                   <div className="font-semibold mb-1">מצב נוכחי</div>
-                  <p>מצב: {MODES[mode].name}</p>
+                  <p>{ms.currentMode}: {ms.getModeName(mode)}</p>
                   <p>
                     מיקוד:{" "}
                     {PRACTICE_FOCUS_OPTIONS.find((o) => o.value === practiceFocus)?.label ||
@@ -3839,19 +3725,17 @@ function saveScienceAnswerInParallel({
                   <p>
                     מצב תרגול ממוקד:{" "}
                     {focusedPracticeMode === "normal"
-                      ? "רגיל"
+                      ? ms.t("learning.master.practiceModes.normal")
                       : focusedPracticeMode === "mistakes"
-                      ? "חזרה על שגיאות"
-                      : "מדורג"}
+                      ? ms.t("learning.master.practiceModes.mistakes")
+                      : ms.t("learning.master.practiceModes.graded")}
                   </p>
                 </div>
                 <div className="flex gap-2 mt-4">
                   <button
                     onClick={() => setShowPracticeOptions(false)}
                     className="flex-1 px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 text-sm font-bold"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                   <button
                     onClick={() => {
                       setFocusedPracticeMode("normal");
@@ -3859,9 +3743,7 @@ function saveScienceAnswerInParallel({
                       setShowPracticeOptions(false);
                     }}
                     className="flex-1 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-sm font-bold"
-                  >
-                    איפוס ברירות מחדל
-                  </button>
+                  >{ms.resetDefaults}</button>
                 </div>
               </div>
             </div>
@@ -3871,12 +3753,12 @@ function saveScienceAnswerInParallel({
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
               onClick={() => setShowPlayerProfile(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto relative"
                 onClick={(e) => e.stopPropagation()}
-                dir="rtl"
+                dir={ms.direction}
                 style={{ scrollbarGutter: "stable" }}
               >
                 <button
@@ -3887,9 +3769,7 @@ function saveScienceAnswerInParallel({
                   ✖
                 </button>
                 <div className="text-center mb-4">
-                  <h2 className="text-2xl font-extrabold text-white mb-2">
-                    👤 פרופיל שחקן
-                  </h2>
+                  <h2 className="text-2xl font-extrabold text-white mb-2">{ms.playerProfile}</h2>
                 </div>
 
                 <div className="text-center mb-4">
@@ -3897,14 +3777,14 @@ function saveScienceAnswerInParallel({
                     {playerAvatarImage ? (
                       <img 
                         src={playerAvatarImage} 
-                        alt="אווטר" 
+                        alt={ms.avatarAlt} 
                         className="w-24 h-24 rounded-full object-cover mx-auto"
                       />
                     ) : (
                       playerAvatar
                     )}
                   </div>
-                  <div className="text-sm text-white/60 mb-3">בחר אווטר:</div>
+                  <div className="text-sm text-white/60 mb-3">{ms.chooseAvatar}</div>
                   
                   {/* כפתור לבחירת תמונה */}
                   <div className="mb-3">
@@ -3921,24 +3801,18 @@ function saveScienceAnswerInParallel({
                           type="button"
                           onClick={() => document.getElementById("avatar-image-upload-science").click()}
                           className="px-3 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 text-white text-xs font-bold transition-all flex-1"
-                        >
-                          📷 בחר תמונה
-                        </button>
+                        >{ms.pickImage}</button>
                         {playerAvatarImage && (
                           <button
                             type="button"
                             onClick={handleRemoveAvatarImage}
                             className="px-3 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold transition-all"
-                          >
-                            🗑️ מחק תמונה
-                          </button>
+                          >{ms.deleteImage}</button>
                         )}
                       </div>
                     </label>
                     {playerAvatarImage && (
-                      <div className="mt-2 text-xs text-white/60 text-center">
-                        תמונה נבחרה ✓
-                      </div>
+                      <div className="mt-2 text-xs text-white/60 text-center">{ms.imageSelected}</div>
                     )}
                   </div>
                   
@@ -3977,26 +3851,26 @@ function saveScienceAnswerInParallel({
 
                 <div className="space-y-3 mb-4">
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-1">שם שחקן</div>
-                    <div className="text-lg font-bold text-white">{playerName || "שחקן"}</div>
+                    <div className="text-sm text-white/60 mb-1">{ms.playerName}</div>
+                    <div className="text-lg font-bold text-white">{playerName || ms.player}</div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">ניקוד שיא</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.peakScore}</div>
                       <div className="text-xl font-bold text-emerald-400">{bestScore}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">רצף שיא</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.peakStreak}</div>
                       <div className="text-xl font-bold text-amber-400">{bestStreak}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">כוכבים</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.stars}</div>
                       <div className="text-xl font-bold text-yellow-400">⭐ {stars}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">רמת מדען</div>
-                      <div className="text-xl font-bold text-purple-400">רמה {playerLevel}</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.t("learning.science.scientistLevel")}</div>
+                      <div className="text-xl font-bold text-purple-400">{ms.level} {playerLevel}</div>
                       {/* XP Progress Bar */}
                       <div className="mt-2">
                         <div className="flex justify-between text-xs text-white/60 mb-1">
@@ -4015,8 +3889,8 @@ function saveScienceAnswerInParallel({
                   
                   {/* Daily Streak */}
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">🔥 רצף יומי</div>
-                    <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} ימים</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.dailyStreak}</div>
+                    <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} {ms.days}</div>
                     {dailyStreak.streak >= 3 && (
                       <div className="text-xs text-white/60 mt-1">
                         {dailyStreak.streak >= 30 ? "👑 אלוף!" : dailyStreak.streak >= 14 ? "🌟 מצוין!" : dailyStreak.streak >= 7 ? "⭐ יופי!" : "🔥 המשך כך!"}
@@ -4026,7 +3900,7 @@ function saveScienceAnswerInParallel({
                   
                   {/* Monthly Progress */}
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">התקדמות חודשית</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
                       <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
@@ -4037,20 +3911,19 @@ function saveScienceAnswerInParallel({
                         style={{ width: `${monthlyPersistenceView?.progressPct ?? 0}%` }}
                       />
                     </div>
-                    {monthlyPersistenceView?.encouragementHe ?? "טוען..."}
+                    {monthlyPersistenceView?.encouragementEn ?? monthlyPersistenceView?.encouragementHe ?? ms.loading}
                   </div>
 
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">דיוק כללי</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.overallAccuracy}</div>
                     <div className="text-2xl font-bold text-blue-400">{accuracy}%</div>
                     <div className="text-xs text-white/60 mt-1">
-                      {correct} נכון מתוך {totalQuestions} שאלות
-                    </div>
+                      {ms.t("learning.master.correctOfTotal", { correct, total: totalQuestions })}                    </div>
                   </div>
 
                   {Object.keys(progress).some((topicKey) => progress[topicKey]?.total > 0) && (
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-sm text-white/60 mb-2">התקדמות לפי נושאים</div>
+                      <div className="text-sm text-white/60 mb-2">{ms.topicProgress}</div>
                       <div className="space-y-2 max-h-[200px] overflow-y-auto">
                         {Object.entries(progress)
                           .filter(([, data]) => (data?.total || 0) > 0)
@@ -4089,7 +3962,7 @@ function saveScienceAnswerInParallel({
                 </div>
 
                 <div className="bg-black/30 border border-white/10 rounded-lg p-3 mt-4">
-                  <div className="text-sm text-white/60 mb-2">תגים</div>
+                  <div className="text-sm text-white/60 mb-2">{ms.badges}</div>
                   {badges.length > 0 ? (
                     <div className="space-y-2 max-h-[200px] overflow-y-auto">
                       {badges.map((badge, index) => (
@@ -4097,26 +3970,22 @@ function saveScienceAnswerInParallel({
                           key={index}
                           className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/30"
                         >
-                          <div className="text-3xl">{badge.split(" ")[0]}</div>
+                          <div className="text-3xl">{ms.getBadgeLabel(badge).split(" ")[0]}</div>
                           <div className="flex-1 text-white font-semibold text-lg">
-                            {badge}
+                            {ms.getBadgeLabel(badge)}
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center text-white/60 text-sm py-4">
-                      עדיין לא הרווחת תגים. המשך לתרגל!
-                    </div>
+                    <div className="text-center text-white/60 text-sm py-4">{ms.noBadgesYet}</div>
                   )}
                 </div>
 
                 <button
                   onClick={() => setShowPlayerProfile(false)}
                   className="w-full px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
-                >
-                  סגור
-                </button>
+                >{ms.close}</button>
               </div>
             </div>
           )}
@@ -4128,31 +3997,25 @@ function saveScienceAnswerInParallel({
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-400/60 rounded-2xl p-4 max-w-md w-full text-sm text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
-                <h2 className="text-xl font-extrabold mb-2 text-center">
-                  📘 איך לומדים מדעים כאן?
-                </h2>
+                <h2 className="text-xl font-extrabold mb-2 text-center">{ms.t('learning.science.howToLearnTitle')}</h2>
 
-                <p className="text-white/80 text-xs mb-3 text-center">
-                  המטרה היא לתרגל מדעים בצורה משחקית, עם התאמה לכיתה, נושא ורמת קושי.
-                </p>
+                <p className="text-white/80 text-xs mb-3 text-center">{ms.t("learning.science.howToLearnBlurb")}</p>
 
-                <ul className="list-disc pr-4 space-y-1 text-[13px] text-white/90">
-                  <li>בחר כיתה, רמה ונושא (לדוגמה: גוף האדם, צמחים, בעלי חיים ועוד).</li>
-                  <li>בחר מצב משחק: למידה, אתגר עם טיימר וחיים, מהירות או מרתון.</li>
-                  <li>ענה על שאלות בחירה, נכון/לא נכון ותסריטי ניסוי.</li>
-                  <li>נסה להגיע לרצף תשובות נכון ולקבל כוכבים ונקודות ניסיון.</li>
+                <ul className="list-disc ps-4 space-y-1 text-[13px] text-white/90">
+                  <li>{ms.t("learning.science.howToLearnSteps.step1")}</li>
+                  <li>{ms.t("learning.science.howToLearnSteps.step2")}</li>
+                  <li>{ms.t("learning.science.howToLearnSteps.step3")}</li>
+                  <li>{ms.t("learning.science.howToLearnSteps.step4")}</li>
                 </ul>
 
                 <div className="mt-4 flex justify-center">
                   <button
                     onClick={() => setShowHowTo(false)}
                     className="px-5 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 text-sm font-bold"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>

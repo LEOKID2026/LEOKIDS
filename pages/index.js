@@ -12,13 +12,15 @@ import HomeFinalCta from "../components/home/HomeFinalCta";
 import HomeTeacherSection from "../components/home/HomeTeacherSection";
 import PublicSeoEntrySection from "../components/seo/PublicSeoEntrySection";
 import { HOME_PAGE_MAX, HOME_PAGE_PAD } from "../components/home/home-theme";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
+import { useI18n } from "../lib/i18n/I18nProvider.jsx";
 
 const homeSeo = getPublicPageSeo("home");
 
 export default function HomePage() {
   const { theme, isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
 
   const installBtnClass =
     "inline-flex h-11 min-w-[15rem] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 px-8 text-sm font-bold text-blue-900 shadow-lg transition-all hover:from-yellow-400 hover:via-yellow-500 hover:to-amber-500 hover:shadow-xl sm:min-w-[17rem] sm:text-base";
@@ -30,7 +32,7 @@ export default function HomePage() {
         description={homeSeo.description}
         canonicalPath={homeSeo.canonicalPath}
       />
-      <div dir="rtl" lang="he" data-testid="home-page">
+      <div dir={direction} lang={locale} data-testid="home-page">
         <HomeHero isBright={isBright} />
 
         <div className="space-y-6 py-6 md:space-y-8 md:py-8">

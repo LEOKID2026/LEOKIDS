@@ -1,6 +1,6 @@
 import PromoVideoClickablePreview from "../promo/PromoVideoClickablePreview.jsx";
 import { PARENT_PROMO_DESKTOP_SRC } from "../parent/ParentPromoVideo";
-import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.he";
+import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
 import { WORKSHEET_HUB_ENTRY_ENABLED } from "../../lib/worksheets/worksheet-hub-entry-enabled.js";
 import { getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
@@ -64,7 +64,7 @@ export default function HomeHero({ isBright }) {
     <section data-testid="home-hero" className="w-full">
       <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:gap-12">
-          <div className="flex flex-col gap-4 text-center lg:gap-5 lg:text-right">
+          <div className="flex flex-col gap-4 text-center lg:gap-5 lg:text-left">
             <p
               className={`inline-flex items-center justify-center self-center rounded-full px-4 py-1.5 text-xs font-bold tracking-wide md:text-sm lg:self-start ${cls.heroBadge}`}
             >
@@ -100,7 +100,7 @@ export default function HomeHero({ isBright }) {
               src={PARENT_PROMO_DESKTOP_SRC}
               wrapClassName={videoWrap}
               videoClassName="block h-auto w-full aspect-video bg-black object-contain"
-              ariaLabel="סרטון הורים"
+              ariaLabel="Parent video"
               testId="parent-promo-video-desktop"
             />
           </div>

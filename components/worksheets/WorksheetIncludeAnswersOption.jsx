@@ -2,7 +2,7 @@
  * Shared checkbox — optional separate answer-key print.
  */
 
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -18,6 +18,7 @@ export default function WorksheetIncludeAnswersOption({
   T,
   className = "",
 }) {
+  const ui = useWorksheetUi();
   return (
     <div className={`worksheet-form-checkboxes worksheet-include-answers-option ${className}`.trim()}>
       <label className="worksheet-checkbox-card">
@@ -27,9 +28,9 @@ export default function WorksheetIncludeAnswersOption({
           onChange={(e) => onChange(e.target.checked)}
         />
         <span className="worksheet-checkbox-card-text">
-          <span className={T.label}>{WORKSHEET_UI_HE.includeAnswers}</span>
+          <span className={T.label}>{ui.includeAnswers}</span>
           <span className={`worksheet-checkbox-card-hint ${T.muted}`}>
-            {WORKSHEET_UI_HE.answerKeySeparate}
+            {ui.answerKeySeparate}
           </span>
         </span>
       </label>

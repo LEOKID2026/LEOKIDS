@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
 import PortalLoginHeading from "../../components/auth/PortalLoginHeading";
 import ParentGoogleSignInButton from "../../components/auth/ParentGoogleSignInButton";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
-import { mapParentAuthError } from "../../lib/parent-client/parent-auth-errors.he";
+import { mapParentAuthError } from "../../lib/parent-client/parent-auth-errors.js";
 import {
   completeParentGoogleSession,
   postParentSessionReady,
@@ -24,25 +24,26 @@ import PasswordField from "../../components/auth/PasswordField";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import PortalLoadingPanel from "../../components/ui/PortalLoadingPanel.jsx";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
-import { AUTH_FORGOT_PASSWORD_LINK } from "../../lib/auth/auth-reset.he";
+import { AUTH_FORGOT_PASSWORD_LINK } from "../../lib/auth/auth-reset.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { resolveParentBearerSession } from "../../lib/parent-client/parent-bearer-session.client.js";
 
 const parentLoginSeo = getPublicPageSeo("parent-login");
 
-function ParentPassivePolicyNotice({ bright, className = "" }) {
+function ParentPassivePolicyNotice({ bright, className = "", t }) {
   const T = getParentPortalTheme(bright);
   return (
     <p className={`text-xs leading-relaxed ${T.faint} ${className}`}>
-      בהמשך השימוש ב-Leo Kids, אתם מאשרים את{" "}
+      {t("auth.parentPolicyPrefix")}{" "}
       <Link href="/terms" className={T.linkInline}>
-        תנאי השימוש
+        {t("auth.termsLink")}
       </Link>{" "}
-      ו
+      and{" "}
       <Link href="/privacy" className={T.linkInline}>
-        מדיניות הפרטיות
-      </Link>{" "}
-      שלנו.
+        {t("auth.privacyLink")}
+      </Link>
+      {t("auth.parentPolicySuffix")}
     </p>
   );
 }
@@ -53,6 +54,8 @@ function isEmailIdentifier(value) {
 export default function ParentLoginPage() {
   const router = useRouter();
   const { theme, isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
+  const t = useT();
   const T = getParentPortalTheme(isBright);
   const layoutProps = { studentTheme: theme, studentShell: "home" };
   const supabaseRef = useRef(null);
@@ -109,7 +112,7 @@ export default function ParentLoginPage() {
     const custom =
       typeof router.query.oauth_message === "string" ? router.query.oauth_message.trim() : "";
     setMessage(
-      custom || "לא הצלחנו להשלים התחברות עם Google. נסו שוב או התחברו עם אימייל וסיסמה."
+      custom || t("auth.googleSignInFailed")
     );
     setMessageKind("account");
     router.replace("/parent/login");
@@ -141,17 +144,17 @@ export default function ParentLoginPage() {
       }
 
       if (!supabaseRef.current) {
-        setMessage("המערכת עדיין נטענת. נסו שוב בעוד רגע.");
+        setMessage(t("auth.systemLoading"));
         return;
       }
 
       if (action === "signup" && !isEmailIdentifier(identifier)) {
-        setMessage("להרשמה יש להזין כתובת אימייל תקינה.");
+        setMessage(t("auth.emailRequiredSignup"));
         return;
       }
 
       if (action === "signup" && String(secret || "").length < 6) {
-        setMessage("הסיסמה חייבת להכיל לפחות 6 תווים.");
+        setMessage(t("auth.passwordTooShort", { min: 6 }));
         return;
       }
 
@@ -167,12 +170,12 @@ export default function ParentLoginPage() {
         } else if (data?.session?.access_token) {
           const ready = await postParentSessionReady(data.session.access_token, "signup");
           if (!ready.ok) {
-            setMessage(ready.messageHe || "החשבון נוצר אך לא הצלחנו להשלים את ההגדרה. נסו להתחבר.");
+            setMessage(ready.messageHe || t("auth.signupSetupFailed"));
             return;
           }
           router.push("/parent/dashboard");
         } else {
-          setMessage("ההרשמה הושלמה. לאחר אימות האימייל - התחברו.");
+          setMessage(t("auth.signupCompleteVerify"));
         }
       } else {
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -184,7 +187,7 @@ export default function ParentLoginPage() {
         } else if (data?.session?.access_token) {
           const ready = await postParentSessionReady(data.session.access_token, "login");
           if (!ready.ok) {
-            setMessage(ready.messageHe || "ההתחברות הצליחה אך לא הצלחנו להשלים את ההגדרה. נסו שוב.");
+            setMessage(ready.messageHe || t("auth.loginSetupFailed"));
             return;
           }
           void trackProductEvent({
@@ -242,8 +245,7 @@ export default function ParentLoginPage() {
       if (!finished.ok) {
         await supabaseRef.current.auth.signOut();
         setMessage(
-          finished.messageHe ||
-            "לא הצלחנו להשלים התחברות עם Google. נסו שוב או התחברו עם אימייל וסיסמה."
+          finished.messageHe || t("auth.googleSignInFailed")
         );
         return;
       }
@@ -267,14 +269,14 @@ export default function ParentLoginPage() {
           canonicalPath={parentLoginSeo.canonicalPath}
           noindex={parentLoginSeo.noindex}
         />
-        <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir="rtl" lang="he">
+        <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir={direction} lang={locale}>
           <PortalLoginHeading
-            title="כניסת הורים"
-            subtitle="כניסה והרשמה מהירה להורים."
+            title={t("auth.parentLoginTitle")}
+            subtitle={t("auth.parentLoginSubtitle")}
             bright={isBright}
             homeHref="/parents"
           />
-          <PortalLoadingPanel isBright={isBright} message="בודקים חיבור..." />
+          <PortalLoadingPanel isBright={isBright} message={t("auth.checkingSession")} />
         </div>
       </Layout>
     );
@@ -288,28 +290,23 @@ export default function ParentLoginPage() {
         canonicalPath={parentLoginSeo.canonicalPath}
         noindex={parentLoginSeo.noindex}
       />
-      <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir="rtl" lang="he">
+      <div className="max-w-md mx-auto px-4 py-3 md:py-10" dir={direction} lang={locale}>
         <PortalLoginHeading
-          title="כניסת הורים"
-          subtitle="כניסה והרשמה מהירה להורים."
+          title={t("auth.parentLoginTitle")}
+          subtitle={t("auth.parentLoginSubtitle")}
           bright={isBright}
           homeHref="/parents"
         />
 
-        <section className={T.infoBox} aria-label="מידע לפתיחת חשבון הורה">
-          <h2 className={T.infoTitle}>ברוכים הבאים הורים 👋</h2>
-          <p className={T.infoText}>
-            כאן תוכלו לפתוח חשבון הורה, להוסיף את הילד/ה שלכם, ולאפשר לו/לה להיכנס לאזור הלמידה של
-            LEO KIDS.
-          </p>
-          <p className={T.infoText}>אחרי פתיחת החשבון תוכלו:</p>
-          <p className={T.infoText}>
-            להוסיף ילד/ה, לקבל דוחות ולעקוב אחרי ההתקדמות בלמידה ועוד
-          </p>
+        <section className={T.infoBox} aria-label="Parent account information">
+          <h2 className={T.infoTitle}>{t("auth.parentWelcomeTitle")} 👋</h2>
+          <p className={T.infoText}>{t("auth.parentWelcomeBody")}</p>
+          <p className={T.infoText}>{t("auth.parentWelcomeAfter")}</p>
+          <p className={T.infoText}>{t("auth.parentWelcomeBenefits")}</p>
         </section>
 
         {googleBusy ? (
-          <PortalLoadingPanel isBright={isBright} message="מתחברים עם Google..." />
+          <PortalLoadingPanel isBright={isBright} message={t("auth.signingInGoogle")} />
         ) : (
           <ParentGoogleSignInButton
             disabled={formDisabled}
@@ -323,14 +320,14 @@ export default function ParentLoginPage() {
 
         <form onSubmit={onFormSubmit} className="space-y-3 mt-4">
           <label className="block text-sm">
-            <span className={T.label}>אימייל / שם משתמש</span>
+            <span className={T.label}>{t("auth.emailOrUsername")}</span>
             <input
               data-testid="parent-login-identifier"
               className={T.inputMt}
               type="text"
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
-              placeholder="הקלידו אימייל או שם משתמש שקיבלתם מהמורה"
+              placeholder={t("auth.identifierPlaceholderParent")}
               required
               autoComplete="username"
               disabled={busy}
@@ -338,10 +335,10 @@ export default function ParentLoginPage() {
           </label>
           <PasswordField
             bright={isBright}
-            label="סיסמה / קוד כניסה"
+            label={t("auth.passwordOrCode")}
             value={secret}
             onChange={(e) => setSecret(e.target.value)}
-            placeholder="הקלידו סיסמה או קוד כניסה"
+            placeholder={t("auth.secretPlaceholderParent")}
             required
             autoComplete="current-password"
             testId="parent-login-secret"
@@ -355,7 +352,7 @@ export default function ParentLoginPage() {
               className={`${T.submit} flex-1`}
               disabled={formDisabled}
             >
-              {busy ? "מבצע פעולה..." : "כניסה"}
+              {busy ? t("auth.working") : t("auth.signIn")}
             </button>
             <button
               type="button"
@@ -364,7 +361,7 @@ export default function ParentLoginPage() {
               disabled={formDisabled}
               onClick={() => void runAccountAction("signup")}
             >
-              הרשמה
+              {t("auth.signUp")}
             </button>
           </div>
 
@@ -379,7 +376,7 @@ export default function ParentLoginPage() {
           </p>
         </form>
 
-        <ParentPassivePolicyNotice bright={isBright} className="mt-4" />
+        <ParentPassivePolicyNotice bright={isBright} className="mt-4" t={t} />
 
         {multiStudents?.length ? (
           <div className="mt-4">

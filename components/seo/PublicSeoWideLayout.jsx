@@ -1,6 +1,7 @@
 import Layout from "../Layout";
 import PageSeo from "./PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import PublicSeoPageActions from "./PublicSeoPageActions";
 import PublicSeoParentCta from "./PublicSeoParentCta";
@@ -37,6 +38,7 @@ export default function PublicSeoWideLayout({
   footer,
 }) {
   const { theme, isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
   const seo = getPublicPageSeo(seoKey);
   const cls = getPublicSeoWideClasses(isBright);
 
@@ -45,8 +47,8 @@ export default function PublicSeoWideLayout({
       <PageSeo title={seo.title} description={seo.description} canonicalPath={seo.canonicalPath} />
       <Layout studentTheme={theme} studentShell="home" layoutShowThemePicker>
         <div
-          dir="rtl"
-          lang="he"
+          dir={direction}
+          lang={locale}
           className={`mx-auto w-full ${PUBLIC_SEO_PAGE_MAX} ${PUBLIC_SEO_PAGE_PAD} ${PUBLIC_SEO_PAGE_SPACE}`}
           data-testid="public-seo-wide-layout"
         >

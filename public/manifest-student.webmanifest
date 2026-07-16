@@ -1,8 +1,8 @@
 {
   "id": "/pwa-student",
-  "name": "LEO KIDS",
-  "short_name": "LEO KIDS",
-  "description": "עולם קטן של משחקים ופעילויות למידה לילדים. לרוץ, לעוף, לפתור חידות ולתרגל מתמטיקה, גאומטריה ואנגלית.",
+  "name": "Leo Kids",
+  "short_name": "Leo Kids",
+  "description": "Games and learning activities for kids — run, fly, solve puzzles, and practice math, geometry, and English.",
   "start_url": "/student/login",
   "display": "standalone",
   "offline_enabled": true,
@@ -10,6 +10,8 @@
   "theme_color": "#c9f4ff",
   "orientation": "any",
   "scope": "/student/",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/icons/child/pwa-72x72.png",
@@ -76,9 +78,9 @@
   "screenshots": [],
   "shortcuts": [
     {
-      "name": "בית הילד",
-      "short_name": "בית",
-      "description": "דף הבית של הילד",
+      "name": "Kids home",
+      "short_name": "Home",
+      "description": "Student home page",
       "url": "/student/home",
       "icons": [
         {

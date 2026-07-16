@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
 import { formatCountdownHe } from "../../lib/rewards/rewards-ui.he.js";
 import {
@@ -55,6 +56,7 @@ export default function StudentWorldDock({
   surpriseRefreshToken = 0,
   surpriseStatusOverride = null,
 }) {
+  const t = useT();
   const [surprisePending, setSurprisePending] = useState(0);
   const [surpriseReady, setSurpriseReady] = useState(false);
   const [secondsRemaining, setSecondsRemaining] = useState(null);
@@ -150,17 +152,17 @@ export default function StudentWorldDock({
       className={`${dockBtnClass} ${canOpenSurprise ? "ring-2 ring-amber-400" : ""}`}
       title={
         canOpenSurprise
-          ? "קופסת הפתעה מוכנה"
+          ? t("ui.student.surpriseReady")
           : surpriseCountdownHe
-            ? `הקופסה הבאה תהיה מוכנה בעוד ${surpriseCountdownHe}`
-            : "קופסת הפתעה"
+            ? t("ui.student.surpriseNextIn", { time: surpriseCountdownHe })
+            : t("ui.student.surpriseBox")
       }
       aria-label={
         canOpenSurprise
-          ? "קופסת הפתעה מוכנה לפתיחה"
+          ? t("ui.student.surpriseReadyOpen")
           : surpriseCountdownHe
-            ? `קופסת הפתעה - הקופסה הבאה תהיה מוכנה בעוד ${surpriseCountdownHe}`
-            : "קופסת הפתעה"
+            ? t("ui.student.surpriseNextCountdown", { time: surpriseCountdownHe })
+            : t("ui.student.surpriseBox")
       }
       disabled={!canOpenSurprise}
       onClick={() => {
@@ -280,7 +282,7 @@ export default function StudentWorldDock({
               className="col-span-full hidden max-w-[18rem] justify-self-center text-center text-[10px] font-semibold text-slate-700 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)] sm:text-xs md:block"
               data-testid="student-world-dock-surprise-countdown"
             >
-              הקופסה הבאה בעוד{" "}
+              {t("ui.student.nextBoxIn")}{" "}
               <span className="tabular-nums">{surpriseCountdownHe}</span>
             </p>
           ) : null}
@@ -296,7 +298,7 @@ export default function StudentWorldDock({
 
         {showSurpriseCountdown ? (
           <p className="max-w-[18rem] text-center text-[10px] font-semibold text-slate-700 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)] sm:text-xs md:hidden">
-            הקופסה הבאה בעוד{" "}
+            {t("ui.student.nextBoxIn")}{" "}
             <span className="tabular-nums">{surpriseCountdownHe}</span>
           </p>
         ) : null}

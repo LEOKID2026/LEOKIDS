@@ -5,19 +5,15 @@ import {
   primeSpeechSynthesisVoices,
 } from "../utils/audio-playback-core";
 import { trackProductEvent } from "../lib/analytics/track-event.client.js";
+import { useI18n, useT } from "../lib/i18n/I18nProvider.jsx";
 
 /**
- * Phonics practice listen button — reuses stem playback (mixed he-IL + en-US segments).
- *
- * @param {{
- *   stem: import("../utils/audio-task-contract.js").AudioStem & { tts_segments?: { locale?: string, text: string }[] },
- *   gameActive: boolean,
- *   grade?: string,
- *   topic?: string,
- * }} props
+ * Phonics practice listen button — contentLocale=en for voice selection.
  */
 export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = null, topic = null }) {
   const audio = useGameAudioOptional();
+  const { direction } = useI18n();
+  const t = useT();
   const [replayCount, setReplayCount] = useState(0);
   const [busy, setBusy] = useState(false);
   const [statusMsg, setStatusMsg] = useState("");
@@ -31,7 +27,7 @@ export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = nul
 
   useEffect(() => {
     if (audio) return () => {};
-    ctrlRef.current = createStemPlaybackController(stem, {});
+    ctrlRef.current = createStemPlaybackController(stem, { contentLocale: "en" });
     return () => {
       ctrlRef.current?.dispose();
       ctrlRef.current = null;
@@ -41,17 +37,18 @@ export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = nul
   const playStem = useCallback(async () => {
     if (!gameActive || busy) return;
     if (replayCount >= stem.max_replays) {
-      setStatusMsg("הגעתם למקסימום האזנות לשאלה זו.");
+      setStatusMsg(t("learning.english.audio.maxReplays"));
       return;
     }
     setBusy(true);
-    setStatusMsg("משמיעים…");
+    setStatusMsg(t("learning.english.audio.playing"));
     try {
       if (audio) {
         await audio.playVoice("voice-question-english-phonics", {
           stem,
           text: stem?.narration_plaintext,
           engine: "browser-tts",
+          contentLocale: "en",
         });
       } else {
         await ctrlRef.current?.play();
@@ -75,7 +72,7 @@ export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = nul
       const msg =
         err instanceof Error && err.message
           ? err.message
-          : "לא ניתן להשמיע כרגע. נסו שוב או המשיכו לפי הטקסט.";
+          : t("learning.english.audio.playFailed");
       setStatusMsg(msg);
       if (process.env.NODE_ENV === "development") {
         console.warn("[EnglishPhonicsAudioPanel] play failed", err);
@@ -83,18 +80,22 @@ export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = nul
     } finally {
       setBusy(false);
     }
-  }, [busy, gameActive, replayCount, stem, audio, grade, topic]);
+  }, [busy, gameActive, replayCount, stem, audio, grade, topic, t]);
 
+  const playingLabel = t("learning.english.audio.playing");
   const playTitle =
-    statusMsg && statusMsg !== "משמיעים…"
+    statusMsg && statusMsg !== playingLabel
       ? statusMsg
-      : `האזנה לשאלה (${replayCount}/${stem.max_replays})`;
+      : t("learning.english.audio.listenTitle", {
+          current: replayCount,
+          max: stem.max_replays,
+        });
 
   return (
-    <div className="mb-2 flex w-full justify-center" dir="rtl">
+    <div className="mb-2 flex w-full justify-center" dir={direction}>
       <div className="inline-flex flex-wrap items-center justify-center gap-1.5">
         <span className="sr-only" aria-live="polite">
-          שמע · פוניקה
+          {t("learning.english.audio.srLabel")}
         </span>
         <button
           type="button"
@@ -106,7 +107,7 @@ export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = nul
           aria-label={playTitle}
         >
           <span aria-hidden>🔊</span>
-          <span>האזנה</span>
+          <span>{t("learning.english.audio.listen")}</span>
           <span dir="ltr">
             ({replayCount}/{stem.max_replays})
           </span>

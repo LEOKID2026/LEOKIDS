@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { useGamesHubUi } from "../../hooks/useGamesHubUi.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import GameAccessGuard from "../../components/games/GameAccessGuard.jsx";
 import GamesHubNavBar from "../../components/games/GamesHubNavBar.jsx";
@@ -41,49 +42,14 @@ const OPEN_ROOM_POLL_KEYS = [
   "bingo",
 ];
 
-const LOBBY_GAME_ROWS = [
-  {
-    gameKey: "fourline",
-    title: "ארבע בשורה",
-    blurb: "ארבע בשורה · שניים נגד שניים",
-    playersLine: "שחקנים: 2",
-  },
-  {
-    gameKey: "ludo",
-    title: "לודו",
-    blurb: "לודו · משחק משפחתי",
-    playersLine: "שחקנים: 2–4",
-  },
-  {
-    gameKey: "snakes-and-ladders",
-    title: "נחשים וסולמות",
-    blurb: "לוח 1–100 · סולמות ונחשים",
-    playersLine: "שחקנים: 2–4",
-  },
-  {
-    gameKey: "checkers",
-    title: "דמקה",
-    blurb: "דמקה קלאסית · אכילות חובה",
-    playersLine: "שחקנים: 2",
-  },
-  {
-    gameKey: "chess",
-    title: "שחמט",
-    blurb: "שחמט קלאסי · מלך, מט, ושח-מט",
-    playersLine: "שחקנים: 2",
-  },
-  {
-    gameKey: "dominoes",
-    title: "דומינו",
-    blurb: "דומינו חסימה · סיום ביציאה",
-    playersLine: "שחקנים: 2",
-  },
-  {
-    gameKey: "bingo",
-    title: "בינגו",
-    blurb: "בינגו · קו מלא מנצח",
-    playersLine: "שחקנים: עד 8",
-  },
+const LOBBY_GAME_KEYS = [
+  "fourline",
+  "ludo",
+  "snakes-and-ladders",
+  "checkers",
+  "chess",
+  "dominoes",
+  "bingo",
 ];
 
 const ARCADE_GAME_GRID_CLASS =
@@ -108,31 +74,31 @@ async function readJson(res) {
   return { ok: res.ok, payload, status: res.status };
 }
 
-function apiMessage(result) {
+function apiMessage(result, t) {
   const { payload, status } = result;
   if (payload?.ok === true) {
-    if (payload.alreadyQueued === true) return "כבר רשומים בתור (לא חויב מחדש)";
-    return "בוצע בהצלחה";
+    if (payload.alreadyQueued === true) return t("games.apiAlreadyQueued");
+    return t("games.apiSuccess");
   }
   const msg = typeof payload?.error === "string" ? payload.error : "";
   if (status === 402 || payload?.code === "insufficient_funds") {
-    return msg || "אין מספיק מטבעות לפעולה זו";
+    return msg || t("games.apiInsufficientFunds");
   }
-  return msg || "פעולה נכשלה";
+  return msg || t("games.apiFailed");
 }
 
-function quickMatchMessage(payload) {
-  if (!payload || payload.ok !== true) return apiMessage({ payload, status: 200 });
+function quickMatchMessage(payload, t) {
+  if (!payload || payload.ok !== true) return apiMessage({ payload, status: 200 }, t);
   const m = payload.mode;
-  if (m === "already_in_room") return "כבר נמצא בחדר - אפשר ללחוץ על כניסה למשחק";
-  if (m === "joined") return "הצטרפת לשחקן שמחכה בחדר";
-  if (m === "created") return "נוצר חדר משחק מהיר - מחכה לשחקן נוסף";
-  return "מוכן";
+  if (m === "already_in_room") return t("games.quickAlreadyInRoom");
+  if (m === "joined") return t("games.quickJoined");
+  if (m === "created") return t("games.quickCreated");
+  return t("games.quickReady");
 }
 
-function roomTypeLabel(rt) {
-  if (rt === "quick") return "משחק מהיר";
-  if (rt === "public") return "ציבורי";
+function roomTypeLabel(rt, t) {
+  if (rt === "quick") return t("games.roomTypeQuick");
+  if (rt === "public") return t("games.roomTypePublic");
   return rt || "-";
 }
 
@@ -361,6 +327,8 @@ function ArcadeGameCard({
 export default function StudentArcadePage() {
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
+  const { direction } = useI18n();
+  const t = useT();
   const [balance, setBalance] = useState(null);
   const [diamondBalance, setDiamondBalance] = useState(null);
   const [games, setGames] = useState([]);
@@ -458,8 +426,14 @@ export default function StudentArcadePage() {
   }, [refresh]);
 
   const lobbyGameVm = useMemo(() => {
-    return LOBBY_GAME_ROWS.map((row) => {
-      const meta = games.find((g) => g.gameKey === row.gameKey) || null;
+    return LOBBY_GAME_KEYS.map((gameKey) => {
+      const row = {
+        gameKey,
+        title: t(`games.arcadeGames.${gameKey}.title`),
+        blurb: t(`games.arcadeGames.${gameKey}.blurb`),
+        playersLine: t(`games.arcadeGames.${gameKey}.players`),
+      };
+      const meta = games.find((g) => g.gameKey === gameKey) || null;
       const guestLocked = Boolean(meta?.guestLocked);
       const active = Boolean(meta?.enabled === true && meta?.foundationOnly === false);
       const idleReasonRow = !meta
@@ -473,7 +447,7 @@ export default function StudentArcadePage() {
             : null;
       return { ...row, active, guestLocked, idleReason: idleReasonRow };
     });
-  }, [games]);
+  }, [games, t]);
 
   const openRoomsCountByGame = useMemo(() => {
     /** @type {Record<string, number>} */
@@ -525,7 +499,7 @@ export default function StudentArcadePage() {
     setUserMessage("");
     try {
       const result = await promise;
-      setUserMessage(apiMessage(result));
+      setUserMessage(apiMessage(result, t));
       await refresh();
       await refreshOpenRooms();
       return result;
@@ -540,9 +514,9 @@ export default function StudentArcadePage() {
     try {
       const result = await promise;
       if (result.payload?.ok) {
-        setUserMessage(quickMatchMessage(result.payload));
+        setUserMessage(quickMatchMessage(result.payload, t));
       } else {
-        setUserMessage(apiMessage(result));
+        setUserMessage(apiMessage(result, t));
       }
       await refresh();
       await refreshOpenRooms();
@@ -684,14 +658,14 @@ export default function StudentArcadePage() {
     <Layout studentTheme={theme} studentShell="home">
     <GameAccessGuard category="online">
       <Head>
-        <title>מועדון המשחקים של ליאו - LEO K</title>
+        <title>{t("games.arcadeHubTitle")} · Leo Kids</title>
       </Head>
-      <div className={GH.pageWrap} dir="rtl">
+      <div className={GH.pageWrap} dir={direction}>
         <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-8 pb-6 overflow-x-hidden space-y-4">
           <GamesHubNavBar
             backHref="/student/games"
-            backLabel="משחקים"
-            badge="מועדון המשחקים של ליאו"
+            backLabel={t("games.back")}
+            badge={t("games.arcadeBadge")}
             backBtnClass={GH.backBtn}
             badgeClass={GH.arcadeNavTitle || GH.arcadeNavBadge || GH.badge}
             showAudioSettings={false}
@@ -770,7 +744,7 @@ export default function StudentArcadePage() {
                     costDisabledReason={costDisabledReason}
                     busy={busy}
                     className="mt-0 min-w-0"
-                    label="בחר סכום כניסה"
+                    label={t("games.selectEntryCost")}
                     entryLabel={GH.arcadeEntryLabel || GH.entryLabel}
                     entryBtnSelected={GH.entryBtnSelected}
                     entryBtnDefault={GH.entryBtnDefault}
@@ -848,7 +822,7 @@ export default function StudentArcadePage() {
                               </p>
                               <p>
                                 עלות {costLabel} · {row.playerCount}/{row.maxPlayers} שחקנים ·{" "}
-                                {roomTypeLabel(row.roomType)} · ממתין
+                                {roomTypeLabel(row.roomType, t)} · waiting
                               </p>
                             </div>
                             <button

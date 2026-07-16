@@ -1,11 +1,12 @@
 import React from "react";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   studentDisplayLevelKeys,
-  studentDisplayLevelLabel,
 } from "../../lib/learning-client/student-display-level-practice.js";
+import { useLearningMasterStrings } from "../../hooks/useLearningMasterStrings.js";
 
 /**
- * Student-facing display level selector (רגיל / מתקדם). Science: hidden (regular-only).
+ * Student-facing display level selector (Regular / Advanced). Science: hidden (regular-only).
  */
 export function StudentDisplayLevelSelect({
   subjectId,
@@ -15,13 +16,14 @@ export function StudentDisplayLevelSelect({
   className = "",
   title,
 }) {
+  const { getDisplayLevelLabel } = useLearningMasterStrings(subjectId);
   const keys = studentDisplayLevelKeys(subjectId);
   if (keys.length <= 1) return null;
 
   return (
     <select
       value={value}
-      title={title || studentDisplayLevelLabel(value)}
+      title={title || getDisplayLevelLabel(value)}
       disabled={disabled}
       onChange={(e) => onChange?.(e.target.value)}
       className={className}
@@ -29,7 +31,7 @@ export function StudentDisplayLevelSelect({
     >
       {keys.map((dl) => (
         <option key={dl} value={dl}>
-          {studentDisplayLevelLabel(dl)}
+          {getDisplayLevelLabel(dl)}
         </option>
       ))}
     </select>
@@ -39,10 +41,11 @@ export function StudentDisplayLevelSelect({
 /**
  * Read-only label when only regular is available (science).
  */
-export function StudentDisplayLevelRegularOnly({ className = "" }) {
+export function StudentDisplayLevelRegularOnly({ className = "", subjectId = "science" }) {
+  const { getDisplayLevelLabel } = useLearningMasterStrings(subjectId);
   return (
     <span className={className} data-testid="student-display-level-regular-only">
-      {studentDisplayLevelLabel("regular")}
+      {getDisplayLevelLabel("regular")}
     </span>
   );
 }

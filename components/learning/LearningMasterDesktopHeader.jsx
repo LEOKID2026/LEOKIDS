@@ -1,5 +1,6 @@
 import StudentThemePicker from "../student/StudentThemePicker";
 import LearningMasterAudioButton from "./LearningMasterAudioButton.jsx";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Integrated desktop top row: back + title + curriculum (md+ only).
@@ -14,9 +15,11 @@ export default function LearningMasterDesktopHeader({
   subtitle,
   onBack,
   onCurriculumClick,
-  curriculumLabel = "📋 תוכנית לימודים",
+  curriculumLabel,
   audio,
 }) {
+  const t = useT();
+  const resolvedCurriculumLabel = curriculumLabel ?? t("learning.master.curriculum");
   const audioOn =
     audio?.settings?.masterEnabled &&
     audio?.settings?.sfxEnabled;
@@ -30,14 +33,14 @@ export default function LearningMasterDesktopHeader({
         {onCurriculumClick ? (
           <div className="absolute right-2 md:right-4 top-0 flex gap-2 pointer-events-auto">
             <button type="button" onClick={onCurriculumClick} className={MB.navBtn}>
-              {curriculumLabel}
+              {resolvedCurriculumLabel}
             </button>
           </div>
         ) : null}
         <div className="absolute left-2 md:left-4 top-0 flex gap-2 pointer-events-auto items-center">
           <StudentThemePicker variant="icon" iconSize="nav" />
           <button type="button" onClick={onBack} className={MB.backBtn}>
-            חזרה
+            {t("learning.master.back")}
           </button>
         </div>
         <div

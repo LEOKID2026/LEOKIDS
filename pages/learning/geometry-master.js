@@ -90,11 +90,14 @@ import {
   buildLearningMasterMobileNumericFieldProps,
 } from "../../utils/learning-master-mobile.client.js";
 import {
-  LIVE_PRACTICE_CORRECT_HE,
-  LIVE_PRACTICE_GAME_OVER_HE,
-  LIVE_PRACTICE_WRONG_HE,
-  formatLearningWrongFeedbackHe,
-} from "../../utils/learning-live-feedback-he";
+  formatLearningWrongFeedback,
+  livePracticeCorrect,
+  livePracticeGameOver,
+  livePracticeWrong,
+  livePracticeTimeUp,
+  livePracticeTimeUpGameOver,
+  livePracticeExcellent,
+} from "../../utils/learning-live-feedback.js";
 import { STEP_BY_STEP_AUTO_PLAY_DELAY_MS } from "../../utils/learning-step-by-step-config";
 import TrackingDebugPanel from "../../components/TrackingDebugPanel";
 import LearningPlannerRecommendationBlock from "../../components/LearningPlannerRecommendationBlock";
@@ -109,7 +112,6 @@ import { useLearningMasterUi } from "../../hooks/useLearningMasterUi.js";
 import SubjectMasterSessionShell from "../../components/learning/SubjectMasterSessionShell.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { useGuestPlayableTopics } from "../../hooks/useGuestPlayableTopics.js";
-import { GUEST_TOPIC_LOCK_MESSAGE_HE } from "../../lib/guest/constants.js";
 import StudentLearningAvatar from "../../components/arcade/club/StudentLearningAvatar.jsx";
 import ProfileBackgroundPickerGrid from "../../components/student/ProfileBackgroundPickerGrid.jsx";
 import { DEFAULT_PROFILE_BACKGROUND_KEY } from "../../lib/student-ui/profile-background-options.js";
@@ -185,12 +187,13 @@ import {
   gradeKeyToNumber,
 } from "../../lib/learning-student-defaults";
 import { useSubjectSessionDefaults } from "../../hooks/useSubjectSessionDefaults";
+import { useLearningMasterStrings } from "../../hooks/useLearningMasterStrings.js";
+import {
+  LEARNING_BADGE,
+  hasLearningBadge,
+} from "../../utils/learning-badge-ids.js";
 import MasterSubjectAccessScreen from "../../components/learning/MasterSubjectAccessScreen.jsx";
 import { notifyLearningSessionSaveFailure } from "../../lib/learning-client/learning-session-save-feedback.client.js";
-import {
-  STUDENT_GRADE_REQUIRED_MESSAGE_HE,
-  STUDENT_SUBJECT_LOADING_MESSAGE_HE,
-} from "../../lib/learning-client/student-subject-practice-gate.he.js";
 import { useEscapeCloseModals } from "../../hooks/useEscapeCloseModals.js";
 import { listVisibleTopicsForSelfPractice } from "../../lib/launch-readiness/topic-launch-policy.js";
 import {
@@ -265,9 +268,44 @@ const AVATAR_OPTIONS = [
 
 const GEOMETRY_BOOK_GRADES = new Set(["g1", "g2", "g3", "g4", "g5", "g6"]);
 
+const GEOMETRY_REFERENCE_CATEGORY_KEYS = ["shapes", "formulas", "terms"];
+const GEOMETRY_REFERENCE_SHAPE_KEYS = [
+  "square",
+  "rectangle",
+  "triangle",
+  "circle",
+  "box",
+  "cube",
+];
+const GEOMETRY_REFERENCE_FORMULA_KEYS = [
+  "square_area",
+  "rectangle_area",
+  "triangle_area",
+  "square_perimeter",
+  "rectangle_perimeter",
+  "box_volume",
+  "cube_volume",
+  "circle_perimeter",
+  "circle_area",
+];
+const GEOMETRY_REFERENCE_TERM_KEYS = [
+  "area",
+  "perimeter",
+  "volume",
+  "angle",
+  "right_angle",
+  "acute_angle",
+  "obtuse_angle",
+  "parallel",
+  "perpendicular",
+  "diagonal",
+  "symmetry",
+];
+
 export default function GeometryMaster() {
   useIOSViewportFix();
   const { MB, ui, shellClass, shellBgStyle } = useLearningMasterUi();
+  const ms = useLearningMasterStrings("geometry");
   const learningModalOverlay = ui.learningModalOverlay;
   const learningModalPanel = ui.learningModalPanel;
   const learningModalHeader = ui.learningModalHeader;
@@ -610,7 +648,7 @@ export default function GeometryMaster() {
     if (sessionFullName) {
       setPlayerName(sessionFullName);
     } else if (session?.sessionResolved) {
-      setPlayerName("ילד/ה");
+      setPlayerName(ms.defaultPlayerName);
     }
   }, [sessionFullName, session?.sessionResolved]);
 
@@ -754,12 +792,12 @@ export default function GeometryMaster() {
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      alert("התמונה גדולה מדי. נא לבחור תמונה עד 5MB");
+      alert(ms.imageTooLarge);
       return;
     }
 
     if (!file.type.startsWith("image/")) {
-      alert("נא לבחור קובץ תמונה בלבד");
+      alert(ms.imageTypeOnly);
       return;
     }
 
@@ -774,7 +812,7 @@ export default function GeometryMaster() {
         }
         await patchLearningProfileAvatarCustomImage(dataUrl);
       } catch (err) {
-        alert(err && typeof err === "object" && "message" in err ? String(err.message) : "שמירת התמונה נכשלה");
+        alert(err && typeof err === "object" && "message" in err ? String(err.message) : ms.imageSaveFailed);
       }
     })();
     e.target.value = "";
@@ -1035,7 +1073,7 @@ export default function GeometryMaster() {
     if (!GRADES[grade]) {
       console.error("כיתה לא תקינה:", grade);
       setCurrentQuestion({
-        question: "כיתה לא תקינה. אנא בחר כיתה אחרת.",
+        question: ms.t("learning.geometry.errors.invalidGrade"),
         correctAnswer: 0,
         answers: [0],
         params: { kind: "no_question" },
@@ -1105,7 +1143,7 @@ export default function GeometryMaster() {
     if (allowedTopics.length === 0) {
       console.error("אין נושאים זמינים לכיתה:", grade);
       setCurrentQuestion({
-        question: "אין נושאים זמינים עבור הכיתה הזו. אנא בחר כיתה אחרת.",
+        question: ms.t("learning.geometry.errors.noTopics"),
         correctAnswer: 0,
         answers: [0],
         params: { kind: "no_question" },
@@ -1128,7 +1166,7 @@ export default function GeometryMaster() {
         setTopic(validTopic); // עדכון הנושא
       } else {
         setCurrentQuestion({
-          question: "אין נושאים זמינים עבור הכיתה הזו. אנא בחר כיתה אחרת.",
+          question: ms.t("learning.geometry.errors.noTopics"),
           correctAnswer: 0,
           answers: [0],
           params: { kind: "no_question" },
@@ -1140,7 +1178,7 @@ export default function GeometryMaster() {
     // בדיקה סופית שהנושא תקין
     if (!validTopic || !allowedTopics.includes(validTopic)) {
       setCurrentQuestion({
-        question: "אין נושאים זמינים. אנא בחר נושא אחר.",
+        question: ms.t("learning.geometry.errors.noTopics"),
         correctAnswer: 0,
         answers: [0],
         params: { kind: "no_question" },
@@ -1172,7 +1210,7 @@ export default function GeometryMaster() {
       
       if (selectedTopics.length === 0) {
         question = {
-          question: "אין נושאים זמינים. אנא בחר נושא אחר.",
+          question: ms.t("learning.geometry.errors.noTopics"),
           correctAnswer: 0,
           answers: [0],
           params: { kind: "no_question" },
@@ -1245,7 +1283,7 @@ export default function GeometryMaster() {
         } else {
           // אם אין נושאים אחרים, נעצור
           question = {
-            question: "אין שאלות זמינות עבור הנושא והכיתה שנבחרו.",
+            question: ms.t("learning.geometry.errors.noQuestions"),
             correctAnswer: 0,
             answers: [0],
             params: { kind: "no_question" },
@@ -1327,7 +1365,7 @@ export default function GeometryMaster() {
       console.error("Failed to generate valid question");
       decrementPendingProbeExpiry(geometryPendingDiagnosticProbeRef);
       setCurrentQuestion({
-        question: "שגיאה ביצירת שאלה. אנא נסה שוב או בחר נושא אחר.",
+        question: ms.t("learning.geometry.errors.generateError"),
         correctAnswer: 0,
         answers: [0],
         params: { kind: "no_question" },
@@ -1767,8 +1805,8 @@ export default function GeometryMaster() {
 
       // מערכת תגים
       const newStreak = streak + 1;
-      if (newStreak === 10 && !badges.includes("🔥 Hot Streak")) {
-        const newBadge = "🔥 Hot Streak";
+      if (newStreak === 10 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_10)) {
+        const newBadge = LEARNING_BADGE.STREAK_10;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -1780,8 +1818,8 @@ export default function GeometryMaster() {
             safeSetJson(STORAGE_KEY + "_progress", saved);
           } catch {}
         }
-      } else if (newStreak === 25 && !badges.includes("⚡ Lightning Fast")) {
-        const newBadge = "⚡ Lightning Fast";
+      } else if (newStreak === 25 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_25)) {
+        const newBadge = LEARNING_BADGE.STREAK_25;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -1793,8 +1831,8 @@ export default function GeometryMaster() {
             safeSetJson(STORAGE_KEY + "_progress", saved);
           } catch {}
         }
-      } else if (newStreak === 50 && !badges.includes("🌟 אלוף") && !badges.includes("🌟 מאסטר") && !badges.includes("🌟 Master")) {
-        const newBadge = "🌟 אלוף";
+      } else if (newStreak === 50 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_50)) {
+        const newBadge = LEARNING_BADGE.STREAK_50;
         setBadges((prev) => [...prev, newBadge]);
         setShowBadge(newBadge);
         audio.playSfx("sfx-badge");
@@ -1882,7 +1920,7 @@ export default function GeometryMaster() {
       setShowCorrectAnimation(true);
       setTimeout(() => setShowCorrectAnimation(false), 1000);
 
-      setFeedback(LIVE_PRACTICE_CORRECT_HE);
+      setFeedback(ms.feedback.correct());
       
       // Play sound - different sound for streak milestones
       if ((streak + 1) % 5 === 0 && streak + 1 >= 5) {
@@ -2062,7 +2100,7 @@ export default function GeometryMaster() {
 
       if (mode === "learning") {
         setFeedback(
-          formatLearningWrongFeedbackHe(`\u2066${currentQuestion.correctAnswer}\u2069`)
+          ms.feedback.wrongWithAnswer(`\u2066${currentQuestion.correctAnswer}\u2069`)
         );
         scheduleWrongAnswerAdvance(() => {
           generateNewQuestion();
@@ -2071,12 +2109,12 @@ export default function GeometryMaster() {
           setTimeLeft(null);
         });
       } else if (mode === "challenge") {
-        setFeedback(`${LIVE_PRACTICE_WRONG_HE} (-1 ❤️)`);
+        setFeedback(`${ms.feedback.wrong()} (-1 ❤️)`);
         setLives((prevLives) => {
           const nextLives = prevLives - 1;
 
           if (nextLives <= 0) {
-            setFeedback(LIVE_PRACTICE_GAME_OVER_HE);
+            setFeedback(ms.feedback.gameOver());
             audio.playSfx("sfx-game-over");
             recordSessionProgress();
             saveRunToStorage();
@@ -2099,7 +2137,7 @@ export default function GeometryMaster() {
           return nextLives;
         });
       } else {
-        setFeedback(LIVE_PRACTICE_WRONG_HE);
+        setFeedback(ms.feedback.wrong());
         scheduleWrongAnswerAdvance(() => {
           generateNewQuestion();
           setSelectedAnswer(null);
@@ -2239,7 +2277,7 @@ export default function GeometryMaster() {
 
   function startGame(opts = {}) {
     if (guestTopics.isGuest && topic !== "mixed" && guestTopics.isLocked(topic)) {
-      alert(GUEST_TOPIC_LOCK_MESSAGE_HE);
+      alert(ms.t('ui.student.guestLock'));
       return;
     }
     clearActiveDiagnosticState(
@@ -2357,7 +2395,7 @@ export default function GeometryMaster() {
     recordSessionProgress();
     setWrong((prev) => prev + 1);
     setStreak(0);
-    setFeedback("הזמן נגמר! המשחק נגמר! ⏰");
+    setFeedback(ms.feedback.timeUpGameOver());
     audio.playSfx("sfx-game-over");
     gameActiveRef.current = false;
     setGameActive(false);
@@ -2392,9 +2430,9 @@ export default function GeometryMaster() {
 
   const getTopicName = (t) => {
     const meta = TOPICS[t];
-    if (!meta) return "נושא";
+    if (!meta) return ms.topic;
     const icon = meta.icon ? `${meta.icon} ` : "";
-    return `${icon}${meta.name || "נושא"}`.trim();
+    return `${icon}${ms.getTopicName(t)}`.trim();
   };
 
   const isShowingAnySolution = showSolution || showPreviousSolution;
@@ -2567,7 +2605,7 @@ export default function GeometryMaster() {
   if (!mounted || session.sessionLoading)
     return <SubjectMasterSessionShell shellClass={shellClass} shellBgStyle={shellBgStyle} />;
   if (!gradeReady)
-    return <StudentLoadingPanel message={STUDENT_GRADE_REQUIRED_MESSAGE_HE} fullPage />;
+    return <StudentLoadingPanel message={ms.gradeRequired} fullPage />;
 
   const accuracy =
     totalQuestions > 0 ? Math.round((correct / totalQuestions) * 100) : 0;
@@ -2640,7 +2678,7 @@ export default function GeometryMaster() {
   );
 
   return (
-    <MasterSubjectAccessScreen permissionKey="geometry" titleHe="גאומטריה">
+    <MasterSubjectAccessScreen permissionKey="geometry" title={ms.getSubjectTitle()}>
     <Layout>
       <style jsx>{`
         @keyframes shake {
@@ -2671,7 +2709,7 @@ export default function GeometryMaster() {
           100% { opacity: 1; transform: scale(1); }
         }
       `}</style>
-      <div className={shellClass} style={shellBgStyle} dir="rtl">
+      <div className={shellClass} style={shellBgStyle} dir={ms.direction}>
         <div
           ref={wrapRef}
           className={LEARNING_MASTER_MOBILE_WRAP_CLASS}
@@ -2696,8 +2734,8 @@ export default function GeometryMaster() {
         <LearningMasterDesktopHeader
           MB={MB}
           desktopHeaderRef={desktopHeaderRef}
-          title="📐 גאומטריה"
-          subtitle={`${playerName || "שחקן"} • ${GRADES[grade]?.name || ""} • ${displayLevelLabel()} • ${getTopicName(topic)} • ${MODES[mode].name}`}
+          title={ms.getSubjectTitle()}
+          subtitle={`${playerName || ms.player} • ${GRADES[grade]?.name || ""} • ${displayLevelLabel()} • ${getTopicName(topic)} • ${ms.getModeName(mode)}`}
           onBack={backSafe}
           onCurriculumClick={() => router.push("/learning/geometry-curriculum")}
           audio={audio}
@@ -2712,7 +2750,7 @@ export default function GeometryMaster() {
             hideCurriculum
             compactHeader
             integratedTopRow
-            centerSlot={<LearningMasterMobileNavTitle MB={MB} title="📐 גאומטריה" audio={audio} />}
+            centerSlot={<LearningMasterMobileNavTitle MB={MB} title={ms.getSubjectTitle()} audio={audio} />}
           />
         </div>
 
@@ -2726,7 +2764,7 @@ export default function GeometryMaster() {
         >
           <div className={LEARNING_MASTER_MOBILE_SUBTITLE_ROW_CLASS}>
             <p className={`${MB.pageSub} max-md:leading-none max-md:mb-0`}>
-              {playerName || "שחקן"} • {GRADES[grade]?.name || ""} • {displayLevelLabel()} • {getTopicName(topic)} • {MODES[mode].name}
+              {playerName || ms.player} • {GRADES[grade]?.name || ""} • {displayLevelLabel()} • {getTopicName(topic)} • {ms.getModeName(mode)}
             </p>
           </div>
 
@@ -2748,7 +2786,7 @@ export default function GeometryMaster() {
           {/* בחירת מצב (תרגול / למידה / מהירות / מרתון / אתגר) */}
           <div
             className={LEARNING_MASTER_MOBILE_MODE_ROW_CLASS}
-            dir="rtl"
+            dir={ms.direction}
           >
             {["practice", "learning", "speed", "marathon", "challenge"].map((m) => (
               <button
@@ -2761,14 +2799,14 @@ export default function GeometryMaster() {
                 }}
                 className={mode === m ? MB.modeTabActive : MB.modeTabInactive}
               >
-                {MODES[m].name}
+                {ms.getModeName(m)}
               </button>
             ))}
             <div
               className={MB.coinBadgeDesktop}
-              title="מטבעות משחק"
+              title={ms.coinsTitle}
             >
-              <span className={MB.coinBadgeLabel}>מטבעות:</span>
+              <span className={MB.coinBadgeLabel}>{ms.coins}</span>
               <span dir="ltr" className={MB.coinBadgeValue}>
                 {childCoinBalance}
               </span>
@@ -2776,7 +2814,7 @@ export default function GeometryMaster() {
           </div>
 
           {showStreakReward && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-orange-400 to-red-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-bounce">
                 <div className="text-4xl mb-2">{showStreakReward.emoji}</div>
                 <div className="text-xl font-bold">{showStreakReward.message}</div>
@@ -2785,21 +2823,21 @@ export default function GeometryMaster() {
           )}
 
           {showBadge && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-bounce">
                 <div className="text-4xl mb-2">🎉</div>
-                <div className="text-2xl font-bold">תג חדש!</div>
-                <div className="text-xl">{showBadge}</div>
+                <div className="text-2xl font-bold">{ms.newBadge}</div>
+                <div className="text-xl">{ms.getBadgeLabel(showBadge)}</div>
               </div>
             </div>
           )}
 
           {showLevelUp && (
-            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir="rtl">
+            <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none" dir={ms.direction}>
               <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white px-8 py-6 rounded-2xl shadow-2xl text-center animate-pulse">
                 <div className="text-4xl mb-2">🌟</div>
-                <div className="text-2xl font-bold">עלית רמה!</div>
-                <div className="text-base">עכשיו אתה ברמה {playerLevel}!</div>
+                <div className="text-2xl font-bold">{ms.levelUp}</div>
+                <div className="text-base">{ms.t("learning.master.levelUpNow", { level: playerLevel })}</div>
               </div>
             </div>
           )}
@@ -2820,16 +2858,16 @@ export default function GeometryMaster() {
               <div className="w-full flex justify-center mb-3 md:mb-4 overflow-x-auto [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] px-0.5">
                 <div
                   className="inline-flex flex-nowrap items-center justify-center gap-2 md:gap-2.5 lg:gap-3 w-max max-w-full min-w-0"
-                  dir="rtl"
+                  dir={ms.direction}
                 >
                 <div
                   data-testid="geometry-player-name"
                   className={MB.preGamePlayerBadge}
                   dir={playerName && /[\u0590-\u05FF]/.test(playerName) ? "rtl" : "ltr"}
                   title={playerName.trim() ? playerName.trim() : undefined}
-                  aria-label={playerName.trim() ? `שם ילד/ה: ${playerName.trim()}` : "שם ילד/ה לא זמין"}
+                  aria-label={playerName.trim() ? ms.t("learning.master.childNameAria", { name: playerName.trim() }) : ms.childNameUnavailable}
                 >
-                  {playerName.trim() ? playerName.trim() : "שחקן"}
+                  {playerName.trim() ? playerName.trim() : ms.player}
                 </div>
                 <select
                   value={grade}
@@ -2911,7 +2949,7 @@ export default function GeometryMaster() {
                     onChange={(e) => {
                       const newTopic = e.target.value;
                       if (guestTopics.isGuest && guestTopics.isLocked(newTopic)) {
-                        alert(GUEST_TOPIC_LOCK_MESSAGE_HE);
+                        alert(ms.t('ui.student.guestLock'));
                         return;
                       }
                       setGameActive(false);
@@ -2938,10 +2976,10 @@ export default function GeometryMaster() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-4 gap-1.5 md:gap-2 lg:gap-2.5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto" dir="rtl">
+              <div className="grid grid-cols-4 gap-1.5 md:gap-2 lg:gap-2.5 mb-3 md:mb-4 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto" dir={ms.direction}>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>שיא ניקוד</span>
+                    <span className={MB.preGameTileLabel}>{ms.bestScore}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueEmerald} dir="ltr">
@@ -2951,7 +2989,7 @@ export default function GeometryMaster() {
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>שיא רצף</span>
+                    <span className={MB.preGameTileLabel}>{ms.bestStreak}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueAmber} dir="ltr">
@@ -2961,7 +2999,7 @@ export default function GeometryMaster() {
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>דיוק</span>
+                    <span className={MB.preGameTileLabel}>{ms.accuracy}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <span className={MB.preGameTileValueBlue}>{subjectView.middleTiles.accuracyDisplayHe}</span>
@@ -2969,7 +3007,7 @@ export default function GeometryMaster() {
                 </div>
                 <div className={MB.preGameTile}>
                   <div className="flex shrink-0 items-center justify-center md:min-h-[28px] lg:min-h-[30px] px-0.5">
-                    <span className={MB.preGameTileLabel}>אתגרים</span>
+                    <span className={MB.preGameTileLabel}>{ms.challenges}</span>
                   </div>
                   <div className="flex flex-1 items-center justify-center min-h-0">
                     <button
@@ -2989,9 +3027,7 @@ export default function GeometryMaster() {
                           });
                       }}
                       className={MB.btnOpenSmall}
-                    >
-                      פתיחה
-                    </button>
+                    >{ms.opening}</button>
                   </div>
                 </div>
               </div>
@@ -3010,15 +3046,11 @@ export default function GeometryMaster() {
                   onClick={startGame}
                   disabled={!playerName.trim()}
                   className={MB.btnPrimary}
-                >
-                  ▶️ התחל
-                </button>
+                >{ms.start}</button>
                 <button
                   onClick={() => setShowLeaderboard(true)}
                   className={`${MB.btnAction} ${MB.btnActionOrange}`}
-                >
-                  🏆 לוח תוצאות
-                </button>
+                >{ms.leaderboard}</button>
               </div>
 
               {/* כפתורים עזרה ותרגול ממוקד */}
@@ -3026,30 +3058,24 @@ export default function GeometryMaster() {
                 <button
                   onClick={() => setShowHowTo(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionCyan}`}
-                >
-                  ❓ איך לומדים גאומטריה כאן?
-                </button>
+                >{ms.howToLearn}</button>
                 <button
                   onClick={() => setShowReferenceModal(true)}
                   className={`${MB.btnActionHelp} ${MB.btnActionPurple}`}
-                >
-                  📚 לוח עזרה
-                </button>
+                >{ms.helpBoard}</button>
                 {bookTopicHref ? (
                   <button
                     type="button"
                     data-testid={`geometry-${grade}-book-topic-button`}
                     onClick={() => router.push(bookTopicHref)}
                     className={`${MB.btnActionHelp} ${MB.btnActionTeal}`}
-                  >
-                    הסבר בספר
-                  </button>
+                  >{ms.explainBook}</button>
                 ) : null}
                 <div
                   className={MB.coinBadgeMobile}
-                  title="מטבעות משחק"
+                  title={ms.coinsTitle}
                 >
-                  <span className={MB.coinBadgeLabel}>מטבעות:</span>
+                  <span className={MB.coinBadgeLabel}>{ms.coins}</span>
                   <span dir="ltr" className={MB.coinBadgeValue}>
                     {childCoinBalance}
                   </span>
@@ -3064,9 +3090,7 @@ export default function GeometryMaster() {
               </div>
 
               {!playerName.trim() && (
-                <p className={MB.mutedHint}>
-                  הכנס את שמך כדי להתחיל
-                </p>
+                <p className={MB.mutedHint}>{ms.enterNameToStart}</p>
               )}
               </div>
             </div>
@@ -3104,7 +3128,7 @@ export default function GeometryMaster() {
                               feedback.includes("Correct") ||
                               feedback.includes("∞") ||
                               feedback.includes("Start") ||
-                              feedback.includes("נכון")
+                              feedback.includes("Great") || feedback.includes("Correct")
                                 ? "bg-emerald-500/20 text-emerald-200"
                                 : "bg-red-500/20 text-red-200"
                             }`}
@@ -3118,9 +3142,7 @@ export default function GeometryMaster() {
                             className="px-4 py-3 rounded-lg bg-[#0a1222]/95 border border-rose-300/60 shadow-xl backdrop-blur-sm text-sm leading-relaxed text-center w-full"
                             style={{ direction: "rtl", unicodeBidi: "isolate" }}
                           >
-                            <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">
-                              למה הטעות קרתה?
-                            </div>
+                            <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">{ms.whyMistake}</div>
                             <div className="text-rose-50">
                               {renderLearningMixedHebrewMathText(errorExplanation)}
                             </div>
@@ -3140,9 +3162,7 @@ export default function GeometryMaster() {
                         type="button"
                         onClick={() => setShowTheoryHelp(true)}
                         className={`${MB.floatBtn} ${MB.floatBtnTheory} z-[6] max-md:hidden pointer-events-auto`}
-                      >
-                        🧠 מה חשוב לזכור?
-                      </button>
+                      >{ms.rememberTitle}</button>
                     ) : null}
                   {questionBookHref ? (
                     <div className={`${MB.floatBtnStack} max-md:hidden`}>
@@ -3151,10 +3171,8 @@ export default function GeometryMaster() {
                         data-testid={`geometry-${grade}-book-question-button`}
                         onClick={() => openBookFromLearning(questionBookHref)}
                         className={`${MB.floatBtnHelper} ${MB.floatBtnBookColors}`}
-                        title="הסבר בספר לנושא הנוכחי"
-                      >
-                        הסבר
-                      </button>
+                        title={ms.explainBook}
+                      >{ms.explain}</button>
                     </div>
                   ) : null}
 
@@ -3225,10 +3243,8 @@ export default function GeometryMaster() {
                           data-testid={`geometry-${grade}-book-question-button`}
                           onClick={() => openBookFromLearning(questionBookHref)}
                           className={`${MB.questionActionBtn} ${MB.floatBtnBookColors}`}
-                          title="הסבר בספר לנושא הנוכחי"
-                        >
-                          הסבר
-                        </button>
+                          title={ms.explainBook}
+                        >{ms.explain}</button>
                       ) : null
                     }
                     secondarySlot={
@@ -3237,10 +3253,8 @@ export default function GeometryMaster() {
                           type="button"
                           onClick={() => setShowTheoryHelp(true)}
                           className={`${MB.questionActionBtn} ${MB.floatBtnPurple}`}
-                          title="מה חשוב לזכור?"
-                        >
-                          🧠 חשוב
-                        </button>
+                          title={ms.rememberTitle}
+                        >{ms.remember}</button>
                       ) : null
                     }
                   />
@@ -3309,7 +3323,7 @@ export default function GeometryMaster() {
                                 onChange={setTextAnswer}
                                 disabled={!!selectedAnswer}
                                 testId="geometry-text-answer"
-                                placeholder="תשובה"
+                                placeholder={ms.answerPlaceholder}
                                 autoFocus
                                 inputClassName={
                                   isMobileViewport
@@ -3389,7 +3403,7 @@ export default function GeometryMaster() {
                       {/* כפתורי הסבר / עצירה */}
                       {currentQuestion && (
                         <div className="mt-2 flex flex-col gap-2 w-full">
-                          <div className={MB.answerActionsBar} dir="rtl">
+                          <div className={MB.answerActionsBar} dir={ms.direction}>
                             {mode === "learning" &&
                               currentQuestion.params?.kind !== "no_question" && (
                                 <button
@@ -3410,9 +3424,7 @@ export default function GeometryMaster() {
                               data-testid="learning-stop-game"
                               onClick={stopGame}
                               className={MB.btnStop}
-                            >
-                              ⏹️ עצור
-                            </button>
+                            >{ms.stop}</button>
                             {(mode === "learning" || mode === "practice") &&
                               previousExplanationQuestion &&
                               currentQuestion.params?.kind !== "no_question" && (
@@ -3420,9 +3432,7 @@ export default function GeometryMaster() {
                                   type="button"
                                   onClick={openPreviousExplanation}
                                   className={MB.btnPrevExercise}
-                                >
-                                  🕘 תרגיל קודם
-                                </button>
+                                >{ms.previousExercise}</button>
                               )}
                           </div>
 
@@ -3449,7 +3459,7 @@ export default function GeometryMaster() {
                             <div
                               className={learningModalOverlay}
                               onClick={closeExplanationModal}
-                              dir="rtl"
+                              dir={ms.direction}
                             >
                               <div
                                 className={learningModalPanel}
@@ -3460,13 +3470,13 @@ export default function GeometryMaster() {
                                     type="button"
                                     onClick={closeExplanationModal}
                                     className={learningModalCloseBtn}
-                                    aria-label="סגור"
+                                    aria-label={ms.close}
                                   >
                                     ✖
                                   </button>
                                   <h3 className={learningModalTitle}>
                                     {showPreviousSolution
-                                      ? "פתרון התרגיל הקודם"
+                                      ? ms.previousExercise
                                       : "\u200Fאיך פותרים את התרגיל?"}
                                   </h3>
                                   <span className="w-10 shrink-0" aria-hidden />
@@ -3486,7 +3496,7 @@ export default function GeometryMaster() {
                                   </div>
 
                                   <StepExerciseUiProvider value={stepExerciseUi}>
-                                  <div className={learningModalScrollBody} dir="rtl">
+                                  <div className={learningModalScrollBody} dir={ms.direction}>
                                   {(() => {
                                     const diagramSpec =
                                       getGeometryDiagramSpec(explanationQuestion);
@@ -3524,7 +3534,7 @@ export default function GeometryMaster() {
                                 <div className={learningModalFooter}>
                                   <div
                                     className={learningStepNavRow}
-                                    dir="rtl"
+                                    dir={ms.direction}
                                   >
                                     <button
                                       type="button"
@@ -3543,7 +3553,7 @@ export default function GeometryMaster() {
                                       onClick={() => setAutoPlay((p) => !p)}
                                       className={learningStepNavBtnPlay}
                                     >
-                                      {autoPlay ? "עצור" : "נגן"}
+                                      {autoPlay ? ms.stop : ms.play}
                                     </button>
                                     <button
                                       type="button"
@@ -3581,21 +3591,19 @@ export default function GeometryMaster() {
                               <div
                                 className={learningModalOverlay}
                                 onClick={() => setShowTheoryHelp(false)}
-                                dir="rtl"
+                                dir={ms.direction}
                               >
                                 <div
                                   className="w-full max-w-md rounded-2xl border border-white/20 bg-[#0a1222]/95 shadow-2xl p-4"
                                   onClick={(e) => e.stopPropagation()}
                                 >
                                   <div className="flex items-center justify-between gap-2 mb-2">
-                                    <h3 className="text-base font-extrabold text-white">
-                                      מה חשוב לזכור?
-                                    </h3>
+                                    <h3 className="text-base font-extrabold text-white">{ms.rememberTitle}</h3>
                                     <button
                                       type="button"
                                       onClick={() => setShowTheoryHelp(false)}
                                       className="px-2 py-1 rounded-md bg-white/10 text-white/80 hover:bg-white/20 text-xs font-bold"
-                                      aria-label="סגור"
+                                      aria-label={ms.close}
                                     >
                                       ✖
                                     </button>
@@ -3624,20 +3632,18 @@ export default function GeometryMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
               onClick={() => setShowLeaderboard(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-4 max-w-md w-full max-h-[85svh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="text-center mb-4">
-                  <h2 className="text-2xl font-extrabold text-white mb-1">
-                    🏆 לוח תוצאות
-                  </h2>
-                  <p className="text-white/70 text-xs">שיאים מקומיים</p>
+                  <h2 className="text-2xl font-extrabold text-white mb-1">{ms.leaderboard}</h2>
+                  <p className="text-white/70 text-xs">{ms.localHighScores}</p>
                 </div>
 
-                <div className="flex gap-2 mb-4 justify-center" dir="rtl">
+                <div className="flex gap-2 mb-4 justify-center" dir={ms.direction}>
                   {studentDisplayLevelKeys("geometry").slice().reverse().map((dl) => (
                     <button
                       key={dl}
@@ -3659,7 +3665,7 @@ export default function GeometryMaster() {
                           : "bg-white/10 text-white/70 hover:bg-white/20"
                       }`}
                     >
-                      {studentDisplayLevelLabel(dl)}
+                      {ms.getDisplayLevelLabel(dl)}
                     </button>
                   ))}
                 </div>
@@ -3668,18 +3674,10 @@ export default function GeometryMaster() {
                   <table className="w-full border-collapse text-center">
                     <thead>
                       <tr className="border-b border-white/20">
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          דירוג
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          שחקן
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          ניקוד
-                        </th>
-                        <th className="text-white/80 p-2 font-bold text-xs">
-                          רצף
-                        </th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.rank}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.player}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.score}</th>
+                        <th className="text-white/80 p-2 font-bold text-xs">{ms.streak}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -3689,7 +3687,7 @@ export default function GeometryMaster() {
                             colSpan={4}
                             className="text-white/60 p-4 text-sm"
                           >
-                            עדיין אין תוצאות ברמה {studentDisplayLevelLabel(leaderboardLevel)}
+                            עדיין אין תוצאות ברמה {ms.getDisplayLevelLabel(leaderboardLevel)}
                           </td>
                         </tr>
                       ) : (
@@ -3739,9 +3737,7 @@ export default function GeometryMaster() {
                   <button
                     onClick={() => setShowLeaderboard(false)}
                     className="px-6 py-2 rounded-lg bg-amber-500/80 hover:bg-amber-500 font-bold text-sm"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>
@@ -3763,7 +3759,7 @@ export default function GeometryMaster() {
                   }
                 }
               }}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-6 max-w-md w-full max-h-[90vh] flex flex-col"
@@ -3802,7 +3798,7 @@ export default function GeometryMaster() {
                     ))}
                 </div>
 
-                <div className="flex gap-2 flex-shrink-0" dir="rtl">
+                <div className="flex gap-2 flex-shrink-0" dir={ms.direction}>
                   <button
                     onClick={() => {
                       const availableTopics = visibleGeometryTopics;
@@ -3862,12 +3858,12 @@ export default function GeometryMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
               onClick={() => setShowPlayerProfile(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto relative"
                 onClick={(e) => e.stopPropagation()}
-                dir="rtl"
+                dir={ms.direction}
                 style={{ scrollbarGutter: "stable" }}
               >
                 <button
@@ -3878,9 +3874,7 @@ export default function GeometryMaster() {
                   ✖
                 </button>
                 <div className="text-center mb-4">
-                  <h2 className="text-2xl font-extrabold text-white mb-2">
-                    👤 פרופיל שחקן
-                  </h2>
+                  <h2 className="text-2xl font-extrabold text-white mb-2">{ms.playerProfile}</h2>
                 </div>
 
                 {/* אווטר */}
@@ -3889,14 +3883,14 @@ export default function GeometryMaster() {
                     {playerAvatarImage ? (
                       <img 
                         src={playerAvatarImage} 
-                        alt="אווטר" 
+                        alt={ms.avatarAlt} 
                         className="w-24 h-24 rounded-full object-cover mx-auto"
                       />
                     ) : (
                       playerAvatar
                     )}
                   </div>
-                  <div className="text-sm text-white/60 mb-3">בחר אווטר:</div>
+                  <div className="text-sm text-white/60 mb-3">{ms.chooseAvatar}</div>
                   
                   {/* כפתור לבחירת תמונה */}
                   <div className="mb-3">
@@ -3913,24 +3907,18 @@ export default function GeometryMaster() {
                           type="button"
                           onClick={() => document.getElementById("avatar-image-upload-geometry").click()}
                           className="px-3 py-2 rounded-lg bg-blue-500/80 hover:bg-blue-500 text-white text-xs font-bold transition-all flex-1"
-                        >
-                          📷 בחר תמונה
-                        </button>
+                        >{ms.pickImage}</button>
                         {playerAvatarImage && (
                           <button
                             type="button"
                             onClick={handleRemoveAvatarImage}
                             className="px-3 py-2 rounded-lg bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold transition-all"
-                          >
-                            🗑️ מחק תמונה
-                          </button>
+                          >{ms.deleteImage}</button>
                         )}
                       </div>
                     </label>
                     {playerAvatarImage && (
-                      <div className="mt-2 text-xs text-white/60 text-center">
-                        תמונה נבחרה ✓
-                      </div>
+                      <div className="mt-2 text-xs text-white/60 text-center">{ms.imageSelected}</div>
                     )}
                   </div>
                   
@@ -3968,26 +3956,26 @@ export default function GeometryMaster() {
                 {/* סטטיסטיקות */}
                 <div className="space-y-3 mb-4">
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-1">שם שחקן</div>
-                    <div className="text-lg font-bold text-white">{playerName || "שחקן"}</div>
+                    <div className="text-sm text-white/60 mb-1">{ms.playerName}</div>
+                    <div className="text-lg font-bold text-white">{playerName || ms.player}</div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-2">
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">ניקוד שיא</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.peakScore}</div>
                       <div className="text-xl font-bold text-emerald-400">{bestScore}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">רצף שיא</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.peakStreak}</div>
                       <div className="text-xl font-bold text-amber-400">{bestStreak}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-xs text-white/60 mb-1">כוכבים</div>
+                      <div className="text-xs text-white/60 mb-1">{ms.stars}</div>
                       <div className="text-xl font-bold text-yellow-400">⭐ {stars}</div>
                     </div>
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
                       <div className="text-xs text-white/60 mb-1">רמה</div>
-                      <div className="text-xl font-bold text-purple-400">רמה {playerLevel}</div>
+                      <div className="text-xl font-bold text-purple-400">{ms.level} {playerLevel}</div>
                       {/* XP Progress Bar */}
                       <div className="mt-2">
                         <div className="flex justify-between text-xs text-white/60 mb-1">
@@ -4006,8 +3994,8 @@ export default function GeometryMaster() {
                   
                   {/* Daily Streak */}
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">🔥 רצף יומי</div>
-                    <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} ימים</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.dailyStreak}</div>
+                    <div className="text-2xl font-bold text-orange-400">{dailyStreak.streak || 0} {ms.days}</div>
                     {dailyStreak.streak >= 3 && (
                       <div className="text-xs text-white/60 mt-1">
                         {dailyStreak.streak >= 30 ? "👑 אלוף!" : dailyStreak.streak >= 14 ? "🌟 מצוין!" : dailyStreak.streak >= 7 ? "⭐ יופי!" : "🔥 המשך כך!"}
@@ -4017,7 +4005,7 @@ export default function GeometryMaster() {
                   
                   {/* Monthly Progress */}
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">התקדמות חודשית</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.monthlyProgress}</div>
                     <div className="flex justify-between text-xs text-white/60 mb-1">
                       <span>{Math.round(monthlyPersistenceView?.currentMinutes ?? 0)} / {monthlyPersistenceView?.goalMinutes ?? "-"} דק׳</span>
                       <span>{monthlyPersistenceView?.progressPct ?? 0}%</span>
@@ -4028,21 +4016,20 @@ export default function GeometryMaster() {
                         style={{ width: `${monthlyPersistenceView?.progressPct ?? 0}%` }}
                       />
                     </div>
-                    {monthlyPersistenceView?.encouragementHe ?? "טוען..."}
+                    {monthlyPersistenceView?.encouragementEn ?? monthlyPersistenceView?.encouragementHe ?? ms.loading}
                   </div>
 
                   <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                    <div className="text-sm text-white/60 mb-2">דיוק כללי</div>
+                    <div className="text-sm text-white/60 mb-2">{ms.overallAccuracy}</div>
                     <div className="text-2xl font-bold text-blue-400">{accuracy}%</div>
                     <div className="text-xs text-white/60 mt-1">
-                      {correct} נכון מתוך {totalQuestions} שאלות
-                    </div>
+                      {ms.t("learning.master.correctOfTotal", { correct, total: totalQuestions })}                    </div>
                   </div>
 
                   {/* התקדמות לפי נושאים */}
                   {Object.keys(progress).some(topic => progress[topic].total > 0) && (
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-sm text-white/60 mb-2">התקדמות לפי נושאים</div>
+                      <div className="text-sm text-white/60 mb-2">{ms.topicProgress}</div>
                       <div className="space-y-2 max-h-[200px] overflow-y-auto">
                         {Object.entries(progress)
                           .filter(([_, data]) => data.total > 0)
@@ -4067,7 +4054,7 @@ export default function GeometryMaster() {
 
                   {geometryInsights.weakest && geometryInsights.strongest && (
                     <div className="bg-black/30 border border-white/10 rounded-lg p-3">
-                      <div className="text-sm text-white/60 mb-2">תובנות מהתרגול (מקומי)</div>
+                      <div className="text-sm text-white/60 mb-2">{ms.t('learning.master.localInsights')}</div>
                       <div className="text-xs text-white/85 space-y-1">
                         <div>
                           <span className="text-amber-300 font-semibold">לחזק:</span>{" "}
@@ -4086,7 +4073,7 @@ export default function GeometryMaster() {
                 </div>
 
                 <div className="bg-black/30 border border-white/10 rounded-lg p-3 mt-4">
-                  <div className="text-sm text-white/60 mb-2">תגים</div>
+                  <div className="text-sm text-white/60 mb-2">{ms.badges}</div>
                   {badges.length > 0 ? (
                     <div className="space-y-2 max-h-[200px] overflow-y-auto">
                       {badges.map((badge, index) => (
@@ -4094,17 +4081,15 @@ export default function GeometryMaster() {
                           key={index}
                           className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/30"
                         >
-                          <div className="text-3xl">{badge.split(" ")[0]}</div>
+                          <div className="text-3xl">{ms.getBadgeLabel(badge).split(" ")[0]}</div>
                           <div className="flex-1 text-white font-semibold text-lg">
-                            {badge}
+                            {ms.getBadgeLabel(badge)}
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center text-white/60 text-sm py-4">
-                      עדיין לא הרווחת תגים. המשך לתרגל!
-                    </div>
+                    <div className="text-center text-white/60 text-sm py-4">{ms.noBadgesYet}</div>
                   )}
                 </div>
 
@@ -4112,9 +4097,7 @@ export default function GeometryMaster() {
                   <button
                     onClick={() => setShowPlayerProfile(false)}
                     className="px-6 py-2 rounded-lg bg-purple-500/80 hover:bg-purple-500 font-bold text-sm"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>
@@ -4125,15 +4108,13 @@ export default function GeometryMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[200] p-4"
               onClick={() => setShowPracticeOptions(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-white/20 rounded-2xl p-6 max-w-md w-full"
                 onClick={(e) => e.stopPropagation()}
               >
-                <h2 className="text-2xl font-extrabold text-white mb-4 text-center">
-                  תרגול ממוקד
-                </h2>
+                <h2 className="text-2xl font-extrabold text-white mb-4 text-center">{ms.focusedPractice}</h2>
 
                 <div className="space-y-3 mb-4">
                   <button
@@ -4150,13 +4131,11 @@ export default function GeometryMaster() {
                         : "bg-gray-500/20 border-gray-400/30 opacity-50 cursor-not-allowed"
                     }`}
                   >
-                    <div className="text-lg font-bold text-white mb-1">
-                      🔄 חזרה על שגיאות
-                    </div>
+                    <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.mistakes')}</div>
                     <div className="text-sm text-white/70">
                       {mistakes.length > 0
                         ? `תרגל את ${mistakes.length} השגיאות שעשית`
-                        : "אין שגיאות לתרגל"}
+                        : ms.noMistakesToPractice}
                     </div>
                   </button>
 
@@ -4167,12 +4146,8 @@ export default function GeometryMaster() {
                     }}
                     className="w-full p-4 rounded-lg bg-blue-500/20 border border-blue-400/50 hover:bg-blue-500/30 transition-all text-right"
                   >
-                    <div className="text-lg font-bold text-white mb-1">
-                      📈 תרגול מדורג
-                    </div>
-                    <div className="text-sm text-white/70">
-                      תרגול מדורג - מתחיל ברמה נמוכה ומתקדם לרמה שבחרת
-                    </div>
+                    <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.graded')}</div>
+                    <div className="text-sm text-white/70">{ms.t('learning.master.gradedPracticeBlurb')}</div>
                   </button>
                   
                   <button
@@ -4183,12 +4158,8 @@ export default function GeometryMaster() {
                     }}
                     className="w-full p-4 rounded-lg bg-emerald-500/20 border border-emerald-400/50 hover:bg-emerald-500/30 transition-all text-right"
                   >
-                    <div className="text-lg font-bold text-white mb-1">
-                      🎮 תרגול רגיל
-                    </div>
-                    <div className="text-sm text-white/70">
-                      חזור לתרגול רגיל
-                    </div>
+                    <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.normal')}</div>
+                    <div className="text-sm text-white/70">{ms.t('learning.master.backToRegularPractice')}</div>
                   </button>
                 </div>
 
@@ -4220,9 +4191,7 @@ export default function GeometryMaster() {
                 <button
                   onClick={() => setShowPracticeOptions(false)}
                   className="w-full px-4 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm"
-                >
-                  סגור
-                </button>
+                >{ms.close}</button>
               </div>
             </div>
           )}
@@ -4231,35 +4200,31 @@ export default function GeometryMaster() {
             <div
               role="dialog" aria-modal="true" className="fixed inset-0 bg-black/80 flex items-center justify-center z-[180] p-4"
               onClick={() => setShowHowTo(false)}
-              dir="rtl"
+              dir={ms.direction}
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-400/60 rounded-2xl p-4 max-w-md w-full text-sm text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
-                <h2 className="text-xl font-extrabold mb-2 text-center">
-                  📘 איך לומדים גאומטריה כאן?
-                </h2>
+                <h2 className="text-xl font-extrabold mb-2 text-center">{ms.t('learning.geometry.howToLearnTitle')}</h2>
 
                 <p className="text-white/80 text-xs mb-3 text-center">
-                  המטרה היא לתרגל גאומטריה בצורה משחקית, עם התאמה לכיתה, נושא ורמת קושי.
+                  {ms.t("learning.geometry.howToLearnBlurb")}
                 </p>
 
                 <ul className="list-disc pr-4 space-y-1 text-[13px] text-white/90">
-                  <li>בחר כיתה, רמת קושי ונושא (שטח, היקף, נפח, זוויות, פיתגורס ועוד).</li>
-                  <li>בחר מצב משחק: למידה, אתגר עם טיימר וחיים, מהירות או מרתון.</li>
-                  <li>קרא היטב את השאלה – לפעמים יש תרגילי מילים על גינות, גדרות וארגזים.</li>
-                  <li>ניקוד גבוה, רצף תשובות נכון, כוכבים ו Badges עוזרים לך לעלות רמה כשחקן.</li>
+                  <li>{ms.t("learning.geometry.howToLearnSteps.step1")}</li>
+                  <li>{ms.t("learning.geometry.howToLearnSteps.step2")}</li>
+                  <li>{ms.t("learning.geometry.howToLearnSteps.step3")}</li>
+                  <li>{ms.t("learning.geometry.howToLearnSteps.step4")}</li>
                 </ul>
 
                 <div className="mt-4 flex justify-center">
                   <button
                     onClick={() => setShowHowTo(false)}
                     className="px-5 py-2 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 text-sm font-bold"
-                  >
-                    סגור
-                  </button>
+                  >{ms.close}</button>
                 </div>
               </div>
             </div>
@@ -4278,7 +4243,7 @@ export default function GeometryMaster() {
               <div
                 className="w-full max-w-[min(96vw,720px)] bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-500/50 rounded-2xl p-3 sm:p-4 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
-                dir="rtl"
+                dir={ms.direction}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-emerald-300 font-bold text-sm">שרטוט</span>
@@ -4310,11 +4275,11 @@ export default function GeometryMaster() {
             >
               <div
                 className="bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-blue-400/60 rounded-2xl p-5 w-full max-w-lg max-h-[85vh] overflow-y-auto text-white"
-                dir="rtl"
+                dir={ms.direction}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-2xl font-extrabold">📐 לוח צורות ונוסחאות</h2>
+                  <h2 className="text-2xl font-extrabold">{ms.t("learning.geometry.referenceBoardTitle")}</h2>
                   <button
                     onClick={() => setShowReferenceModal(false)}
                     className="text-white/80 hover:text-white text-xl px-2"
@@ -4323,153 +4288,62 @@ export default function GeometryMaster() {
                   </button>
                 </div>
                 <p className="text-sm text-white/70 mb-3">
-                  בחר קטגוריה כדי לראות צורות, נוסחאות ומונחים חשובים בגאומטריה.
+                  {ms.t("learning.geometry.referenceBoardBlurb")}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {[
-                    { key: "shapes", label: "צורות" },
-                    { key: "formulas", label: "נוסחאות" },
-                    { key: "terms", label: "מונחים" },
-                  ].map((cat) => (
+                  {GEOMETRY_REFERENCE_CATEGORY_KEYS.map((catKey) => (
                     <button
-                      key={cat.key}
-                      onClick={() => setReferenceCategory(cat.key)}
+                      key={catKey}
+                      onClick={() => setReferenceCategory(catKey)}
                       className={`px-3 py-1 rounded-full text-xs font-bold border ${
-                        referenceCategory === cat.key
+                        referenceCategory === catKey
                           ? "bg-blue-500/80 border-blue-300 text-white"
                           : "bg-white/5 border-white/20 text-white/70 hover:bg-white/10"
                       }`}
                     >
-                      {cat.label}
+                      {ms.getReferenceCategoryLabel(catKey)}
                     </button>
                   ))}
                 </div>
                 <div className="space-y-3">
-                  {referenceCategory === "shapes" && (
-                    <>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔷 ריבוע</div>
-                        <div className="text-sm text-white/80">4 צלעות שוות, 4 זוויות ישרות</div>
+                  {referenceCategory === "shapes" &&
+                    GEOMETRY_REFERENCE_SHAPE_KEYS.map((itemKey) => (
+                      <div key={itemKey} className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="font-bold text-lg mb-2">
+                          {ms.t(`learning.geometry.reference.shapes.${itemKey}.title`)}
+                        </div>
+                        <div className="text-sm text-white/80">
+                          {ms.t(`learning.geometry.reference.shapes.${itemKey}.desc`)}
+                        </div>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">⬜ מלבן</div>
-                        <div className="text-sm text-white/80">2 זוגות של צלעות שוות, 4 זוויות ישרות</div>
+                    ))}
+                  {referenceCategory === "formulas" &&
+                    GEOMETRY_REFERENCE_FORMULA_KEYS.map((itemKey) => (
+                      <div key={itemKey} className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="font-bold text-lg mb-2">
+                          {ms.t(`learning.geometry.reference.formulas.${itemKey}.title`)}
+                        </div>
+                        <div className="text-sm text-white/80">
+                          {ms.t(`learning.geometry.reference.formulas.${itemKey}.desc`)}
+                        </div>
+                        <div className="text-xs text-white/60 mt-1">
+                          <span dir="ltr" style={{ display: "inline-block" }}>
+                            {ms.t(`learning.geometry.reference.formulas.${itemKey}.formula`)}
+                          </span>
+                        </div>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔺 משולש</div>
-                        <div className="text-sm text-white/80">3 צלעות, 3 זוויות</div>
+                    ))}
+                  {referenceCategory === "terms" &&
+                    GEOMETRY_REFERENCE_TERM_KEYS.map((itemKey) => (
+                      <div key={itemKey} className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        <div className="font-bold text-lg mb-2">
+                          {ms.t(`learning.geometry.reference.terms.${itemKey}.title`)}
+                        </div>
+                        <div className="text-sm text-white/80">
+                          {ms.t(`learning.geometry.reference.terms.${itemKey}.desc`)}
+                        </div>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">⭕ מעגל</div>
-                        <div className="text-sm text-white/80">צורה עגולה, כל הנקודות במרחק שווה מהמרכז</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📦 תיבה</div>
-                        <div className="text-sm text-white/80">גוף תלת-מימדי עם 6 פאות מלבניות</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">🔲 קובייה</div>
-                        <div className="text-sm text-white/80">תיבה עם כל הצלעות שוות</div>
-                      </div>
-                    </>
-                  )}
-                  {referenceCategory === "formulas" && (
-                    <>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח ריבוע</div>
-                        <div className="text-sm text-white/80">צלע × צלע</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = a²</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח מלבן</div>
-                        <div className="text-sm text-white/80">אורך × רוחב</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = a × b</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח משולש</div>
-                        <div className="text-sm text-white/80">(בסיס × גובה) ÷ 2</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = (b × h) ÷ 2</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📏 היקף ריבוע</div>
-                        <div className="text-sm text-white/80">4 × צלע</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>P = 4a</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📏 היקף מלבן</div>
-                        <div className="text-sm text-white/80">2 × (אורך + רוחב)</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>P = 2(a + b)</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📦 נפח תיבה</div>
-                        <div className="text-sm text-white/80">אורך × רוחב × גובה</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>V = a × b × c</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📦 נפח קובייה</div>
-                        <div className="text-sm text-white/80">צלע × צלע × צלע</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>V = a³</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">⭕ היקף מעגל</div>
-                        <div className="text-sm text-white/80">2 × π × רדיוס</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>P = 2πr</span></div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">⭕ שטח מעגל</div>
-                        <div className="text-sm text-white/80">π × רדיוס²</div>
-                        <div className="text-xs text-white/60 mt-1"><span dir="ltr" style={{ display: 'inline-block' }}>S = πr²</span></div>
-                      </div>
-                    </>
-                  )}
-                  {referenceCategory === "terms" && (
-                    <>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 שטח</div>
-                        <div className="text-sm text-white/80">המקום שצורה תופסת במישור</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📏 היקף</div>
-                        <div className="text-sm text-white/80">אורך הקו המקיף את הצורה</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📦 נפח</div>
-                        <div className="text-sm text-white/80">המקום שגוף תופס במרחב</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 זווית</div>
-                        <div className="text-sm text-white/80">המקום בין שתי קרניים היוצאות מאותה נקודה</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 זווית ישרה</div>
-                        <div className="text-sm text-white/80">90 מעלות</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 זווית חדה</div>
-                        <div className="text-sm text-white/80">פחות מ-90 מעלות</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 זווית קהה</div>
-                        <div className="text-sm text-white/80">יותר מ-90 מעלות</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 מקבילות</div>
-                        <div className="text-sm text-white/80">קווים שלא נפגשים לעולם</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 מאונכות</div>
-                        <div className="text-sm text-white/80">קווים שנפגשים בזווית ישרה</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 אלכסון</div>
-                        <div className="text-sm text-white/80">קו המחבר שני קודקודים לא סמוכים</div>
-                      </div>
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
-                        <div className="font-bold text-lg mb-2">📐 סימטרייה</div>
-                        <div className="text-sm text-white/80">כאשר צורה נראית זהה משני צדדים</div>
-                      </div>
-                    </>
-                  )}
+                    ))}
                 </div>
               </div>
             </div>

@@ -2,18 +2,21 @@ import { useEffect, useId, useRef, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import CopyConfirmPopup from "../ui/CopyConfirmPopup.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
-  buildParentInviteMessageHe,
+  buildParentInviteMessage,
   getParentPortalUrl,
 } from "../../lib/site/public-site-origin.client.js";
 import {
-  COPY_INVITE_ERROR_MESSAGE_HE,
-  COPY_INVITE_SUCCESS_MESSAGE_HE,
+  COPY_INVITE_ERROR_MESSAGE,
+  COPY_INVITE_SUCCESS_MESSAGE,
   copyTextToClipboard,
-} from "../../lib/ui/copy-confirm-message.he.js";
+} from "../../lib/ui/copy-confirm-message.js";
 
 export default function StudentParentInviteModal({ open, onClose }) {
   const { homeModalShell, isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
+  const t = useT();
   const titleId = useId();
   const closeRef = useRef(null);
   const [copyFeedback, setCopyFeedback] = useState("");
@@ -59,17 +62,17 @@ export default function StudentParentInviteModal({ open, onClose }) {
 
   const handleCopyLink = async () => {
     const ok = await copyTextToClipboard(parentUrl);
-    if (ok) setCopyFeedback("הקישור הועתק");
+    if (ok) setCopyFeedback(t("ui.toast.copied"));
   };
 
   const handleCopyMessage = async () => {
-    const ok = await copyTextToClipboard(buildParentInviteMessageHe());
+    const ok = await copyTextToClipboard(buildParentInviteMessage());
     if (ok) {
       setCopyPopupIsError(false);
-      setCopyPopupMessage(COPY_INVITE_SUCCESS_MESSAGE_HE);
+      setCopyPopupMessage(COPY_INVITE_SUCCESS_MESSAGE);
     } else {
       setCopyPopupIsError(true);
-      setCopyPopupMessage(COPY_INVITE_ERROR_MESSAGE_HE);
+      setCopyPopupMessage(COPY_INVITE_ERROR_MESSAGE);
     }
     setCopyPopupOpen(true);
   };
@@ -87,8 +90,8 @@ export default function StudentParentInviteModal({ open, onClose }) {
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          dir="rtl"
-          lang="he"
+          dir={direction}
+          lang={locale}
           onClick={(e) => e.stopPropagation()}
         >
           <header
@@ -101,23 +104,23 @@ export default function StudentParentInviteModal({ open, onClose }) {
               type="button"
               onClick={onClose}
               className={homeModalShell.closeBtn}
-              aria-label="סגור"
+              aria-label={t("common.close")}
               data-testid="student-parent-invite-close"
             >
               ✕
             </button>
-            <h2 id={titleId} className={`text-lg font-bold text-right flex-1 ${bodyText}`}>
-              הורה יקר 👋
+            <h2 id={titleId} className={`text-lg font-bold text-left flex-1 ${bodyText}`}>
+              Dear parent 👋
             </h2>
           </header>
 
           <div
-            className={`${homeModalShell.body} space-y-4 text-center md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-4 md:overflow-visible md:flex-none md:space-y-0 md:text-right`}
+            className={`${homeModalShell.body} space-y-4 text-center md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-4 md:overflow-visible md:flex-none md:space-y-0 md:text-left`}
           >
-            <p className={`text-sm leading-relaxed ${bodyText} md:col-start-1 md:row-start-1 md:text-right`}>
-              כדי לפתוח חשבון לילד/ה,
+            <p className={`text-sm leading-relaxed ${bodyText} md:col-start-1 md:row-start-1 md:text-left`}>
+              To open an account for your child,
               <br />
-              סרקו את הקוד עם הטלפון:
+              scan this code with your phone:
             </p>
 
             <div className="flex justify-center md:col-start-2 md:row-start-1 md:row-span-4 md:self-center">
@@ -131,13 +134,13 @@ export default function StudentParentInviteModal({ open, onClose }) {
                   size={200}
                   level="M"
                   includeMargin
-                  aria-label="קוד QR לעמוד ההורים"
+                  aria-label="QR code for parent page"
                 />
               </div>
             </div>
 
-            <div className="space-y-1 text-sm md:col-start-1 md:row-start-2 md:text-right">
-              <p className={mutedText}>או היכנסו ל:</p>
+            <div className="space-y-1 text-sm md:col-start-1 md:row-start-2 md:text-left">
+              <p className={mutedText}>Or go to:</p>
               <a
                 href={parentUrl}
                 target="_blank"
@@ -156,7 +159,7 @@ export default function StudentParentInviteModal({ open, onClose }) {
                 onClick={() => void handleCopyLink()}
                 data-testid="student-parent-invite-copy-link"
               >
-                העתק קישור
+                Copy link
               </button>
               <button
                 type="button"
@@ -164,10 +167,10 @@ export default function StudentParentInviteModal({ open, onClose }) {
                 onClick={() => void handleCopyMessage()}
                 data-testid="student-parent-invite-copy-message"
               >
-                העתק הודעה להורה
+                {t("auth.copyMessageForParent")}
               </button>
               <button type="button" className={closeBtn} onClick={onClose}>
-                סגור
+                {t("common.close")}
               </button>
             </div>
 

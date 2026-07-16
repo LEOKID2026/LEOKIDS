@@ -1,8 +1,8 @@
 import Link from "next/link";
-
-export const PORTAL_HOME_BACK_LABEL = "חזרה לדף הבית";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 export function PortalHomeBackLink({ className = "", bright = false, homeHref = "/" }) {
+  const t = useT();
   return (
     <Link
       href={homeHref}
@@ -11,7 +11,7 @@ export function PortalHomeBackLink({ className = "", bright = false, homeHref = 
       } ${className}`}
       data-testid="portal-home-back-link"
     >
-      {PORTAL_HOME_BACK_LABEL}
+      {t("ui.layout.backHome")}
     </Link>
   );
 }

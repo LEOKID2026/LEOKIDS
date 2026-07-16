@@ -2,7 +2,7 @@
  * Screen-only worksheet info card — wide preview header, not print layout.
  */
 
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -17,10 +17,12 @@ import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
  * }} props
  */
 export default function WorksheetScreenHeader({
-  titleHe = WORKSHEET_UI_HE.documentTitle,
+  titleHe,
   meta,
   variant = "worksheet",
 }) {
+  const ui = useWorksheetUi();
+  const title = titleHe || ui.documentTitle;
   const showFields = variant === "worksheet";
 
   return (
@@ -35,18 +37,18 @@ export default function WorksheetScreenHeader({
           className="worksheet-screen-brand-logo"
         />
       </div>
-      <h1 className="worksheet-screen-title">{titleHe}</h1>
+      <h1 className="worksheet-screen-title">{title}</h1>
       <p className="worksheet-screen-meta">
         {meta.subjectHe} · {meta.gradeHe} · {meta.topicHe} · {meta.levelHe}
       </p>
       {showFields ? (
         <div className="worksheet-screen-fields">
           <div className="worksheet-screen-field-row">
-            <span className="worksheet-screen-field-label">{WORKSHEET_UI_HE.nameField}:</span>
+            <span className="worksheet-screen-field-label">{ui.nameField}:</span>
             <span className="worksheet-screen-field-line" aria-hidden="true" />
           </div>
           <div className="worksheet-screen-field-row">
-            <span className="worksheet-screen-field-label">{WORKSHEET_UI_HE.dateField}:</span>
+            <span className="worksheet-screen-field-label">{ui.dateField}:</span>
             <span className="worksheet-screen-field-line" aria-hidden="true" />
           </div>
         </div>

@@ -1,14 +1,16 @@
 {
   "id": "/pwa-parent",
-  "name": "P LEO KIDS",
-  "short_name": "P LEO KIDS",
-  "description": "אזור ההורים של LEO KIDS — לעקוב אחר ההתקדמות, לנהל את הילדים ולהישאר מחוברים.",
+  "name": "Leo Kids — Parents",
+  "short_name": "Leo Parents",
+  "description": "Leo Kids parent portal — track progress, manage children, and stay connected.",
   "start_url": "/parent/login",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0d9488",
   "orientation": "any",
   "scope": "/parent/",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/icons/parent/pwa-72x72.png",

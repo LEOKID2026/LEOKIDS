@@ -1,4 +1,4 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.he";
+import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
 import { ACCENT, getHomeTextClasses } from "./home-theme";
 
 function getStepBadge(isBright, index) {

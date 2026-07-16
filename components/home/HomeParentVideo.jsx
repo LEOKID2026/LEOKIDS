@@ -1,5 +1,5 @@
 import ParentPromoVideo from "../parent/ParentPromoVideo";
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.he";
+import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
 import { getHomeTextClasses } from "./home-theme";
 
 /**

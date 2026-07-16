@@ -17,10 +17,13 @@ import SoloGameHelpButton from "../../components/solo-games/SoloGameHelpButton.j
 import SoloGameHelpModal from "../../components/solo-games/SoloGameHelpModal.jsx";
 import GamesHubLockFooter from "../../components/games/GamesHubLockFooter.jsx";
 import { useSoloGameHelp } from "../../hooks/solo-games/useSoloGameHelp.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
 export default function StudentSoloGamesPage() {
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
+  const { direction } = useI18n();
+  const t = useT();
   const { state, playableGames, enabledGames, isGuest } = useStudentGameAccess();
   const accessRows = isGuest ? enabledGames("solo") : playableGames("solo");
   const { helpGame, openSoloGameHelp, closeSoloGameHelp } = useSoloGameHelp();
@@ -32,19 +35,19 @@ export default function StudentSoloGamesPage() {
   return (
     <Layout studentTheme={theme} studentShell="home">
       <GameAccessGuard category="solo">
-        <main className={GH.pageWrap} dir="rtl">
+        <main className={GH.pageWrap} dir={direction}>
           <div className={`${GH.container} space-y-4`}>
             <GamesHubNavBar
               backHref="/student/games"
-              backLabel="משחקים"
-              badge="🎮 משחקי ליאו"
+              backLabel={t("games.back")}
+              badge={`🎮 ${t("games.soloHubBadge")}`}
               backBtnClass={GH.backBtn}
               badgeClass={GH.badge}
             />
 
             <GamesHubHeader
-              title="משחקי ליאו - עולם הילד"
-              subtitle="שחקו, צברו ניקוד וקבלו מטבעות ויהלומים לעולם הילד!"
+              title={t("games.soloHubTitle")}
+              subtitle={t("games.soloHubSubtitle")}
               titleClass={GH.hubTitle}
               subtitleClass={GH.hubSub}
             />
@@ -68,14 +71,14 @@ export default function StudentSoloGamesPage() {
                           <div className={GH.cardEmoji}>{game.emoji}</div>
                           <div>
                             <h2 className={GH.cardTitle}>{game.titleHe}</h2>
-                            <p className={GH.cardMeta}>משחק יחיד · מטבעות · יהלומים</p>
+                            <p className={GH.cardMeta}>{t("games.soloMeta")}</p>
                           </div>
                         </div>
                         <p className={`${GH.cardBlurb} flex-1`}>{game.blurbHe}</p>
                         {locked ? (
                           <GamesHubLockFooter ctaClass={GH.cardCta} />
                         ) : (
-                          <span className={GH.cardCta}>שחק עכשיו</span>
+                          <span className={GH.cardCta}>{t("games.playNow")}</span>
                         )}
                       </>
                     );

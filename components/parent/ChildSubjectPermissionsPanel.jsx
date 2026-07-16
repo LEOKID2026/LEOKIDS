@@ -1,16 +1,28 @@
 import { useEffect, useMemo, useState } from "react";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
-import { mapParentPanelApiError } from "../../lib/parent-server/parent-api-errors.he.js";
+import { mapParentPanelApiError } from "../../lib/parent-client/parent-api-errors.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const FILTER_OPTIONS = [
-  { id: "all", label: "הכול" },
-  { id: "enabled", label: "פתוחים" },
-  { id: "disabled", label: "נעולים" },
-  { id: "suitable", label: "מתאימים לכיתה" },
-];
+function getFilterOptions(t) {
+  return [
+    { id: "all", label: t("ui.parent.filterAll") },
+    { id: "enabled", label: t("ui.parent.filterEnabled") },
+    { id: "disabled", label: t("ui.parent.filterDisabled") },
+    { id: "suitable", label: t("ui.parent.filterSuitable") },
+  ];
+}
+
+const SUBJECT_LABELS = {
+  math: "Math",
+  geometry: "Geometry",
+  english: "English",
+  science: "Science",
+};
 
 export default function ChildSubjectPermissionsPanel({ studentId, accessToken, bright = false }) {
   const T = getParentPortalTheme(bright);
+  const t = useT();
+  const filterOptions = useMemo(() => getFilterOptions(t), [t]);
   const [subjects, setSubjects] = useState([]);
   const [allowStudentGradePicker, setAllowStudentGradePicker] = useState(false);
   const [filter, setFilter] = useState("all");
@@ -108,23 +120,23 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
   if (loading) {
     return (
       <div className={T.permissionsBox}>
-        <p className={`${T.permissionsHint} text-right`}>טוען הרשאות מקצועות...</p>
+        <p className={`${T.permissionsHint} text-right`}>{t("ui.parent.subjectPermissionsLoading")}</p>
       </div>
     );
   }
 
   return (
     <div className={`${T.permissionsBox} space-y-3`}>
-      <h3 className={T.permissionsTitle}>מקצועות לימוד</h3>
+      <h3 className={T.permissionsTitle}>{t("ui.parent.subjectPermissionsTitle")}</h3>
       <p className={T.permissionsHint}>
-        נעילת מקצוע חוסמת את הילד מלמידה חדשה במקצוע. היסטוריית למידה קודמת נשמרת.
+        {t("ui.parent.subjectPermissionsHint")}
       </p>
       {error ? (
         <p className={`text-xs text-right ${bright ? "text-rose-600" : "text-red-300"}`}>{error}</p>
       ) : null}
 
       <div className="flex flex-wrap gap-2 justify-end">
-        {FILTER_OPTIONS.map((opt) => (
+        {filterOptions.map((opt) => (
           <button
             key={opt.id}
             type="button"
@@ -165,14 +177,14 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
                 />
               </button>
               <div className="flex-1 text-right">
-                <span className={T.permissionsLabel}>{row.labelHe || row.subjectKey}</span>
+                <span className={T.permissionsLabel}>{SUBJECT_LABELS[row.subjectKey] || row.labelHe || row.subjectKey}</span>
                 {row.isGradeSuitable ? (
                   <span
                     className={`mr-2 text-[10px] rounded px-1.5 py-0.5 ${
                       bright ? "bg-emerald-100 text-emerald-800" : "bg-emerald-500/20 text-emerald-200"
                     }`}
                   >
-                    מתאים לכיתה
+                    {t("ui.parent.gradeSuitable")}
                   </span>
                 ) : null}
               </div>
@@ -190,7 +202,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
             bright ? "bg-slate-800 text-white" : "bg-white/15 text-white hover:bg-white/25"
           }`}
         >
-          פתיחת הכול
+          {t("ui.parent.enableAllSubjects")}
         </button>
       </div>
 
@@ -210,7 +222,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
             }`}
           />
         </button>
-        <span className={T.permissionsLabel}>לאפשר לילד לבחור כיתה בדפי הלימוד</span>
+        <span className={T.permissionsLabel}>{t("ui.parent.allowGradePicker")}</span>
       </div>
     </div>
   );

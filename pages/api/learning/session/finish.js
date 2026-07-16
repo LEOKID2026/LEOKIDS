@@ -27,6 +27,7 @@ import { evaluateAndGrantAchievementCards } from "../../../../lib/rewards/server
 import { syncIncrementalMonthlyPersistenceRewards } from "../../../../lib/learning-supabase/monthly-persistence-reward.server";
 import { deriveSessionSummaryFromAnswers } from "../../../../lib/learning-supabase/learning-session-finish.server";
 import { resolveSessionFinishCreditedDuration } from "../../../../lib/learning-supabase/learning-time-monthly-aggregate.server";
+import { wrapMutatingApi } from "../../../../lib/global/apply-write-barrier.js";
 
 async function loadLearningSession(supabase, learningSessionId) {
   const { data, error } = await supabase
@@ -51,7 +52,7 @@ async function updateLearningSessionWithFallback(supabase, learningSessionId, fu
     .eq("id", learningSessionId);
 }
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
@@ -284,3 +285,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ ok: false, error: "Server error" });
   }
 }
+
+export default wrapMutatingApi(handler);

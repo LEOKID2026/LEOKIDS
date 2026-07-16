@@ -1,4 +1,5 @@
 import { formatMathHudNumber } from "../../utils/math-master-hud-number.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const HUD_GRID =
   "mx-auto grid grid-cols-8 gap-0.5 md:gap-1 lg:gap-1.5 mb-3 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl";
@@ -39,28 +40,29 @@ export default function LearningMasterHud({
   formatValue = formatMathHudNumber,
   className = "",
 }) {
+  const t = useT();
   const timerActive =
     gameActive && timerModes.includes(mode);
   const timerUrgent = timerActive && timeLeft <= 5;
 
   return (
     <div ref={controlsRef} className={`${HUD_GRID} ${className}`.trim()}>
-      <HudCell MB={MB} label="ניקוד" valueClass={MB.hudValueScore}>
+      <HudCell MB={MB} label={t("learning.master.score")} valueClass={MB.hudValueScore}>
         {formatValue(topHud.score)}
       </HudCell>
-      <HudCell MB={MB} label="רצף" valueClass={MB.hudValueStreak}>
+      <HudCell MB={MB} label={t("learning.master.streak")} valueClass={MB.hudValueStreak}>
         {formatValue(topHud.streak)}
       </HudCell>
-      <HudCell MB={MB} label="כוכבים" valueClass={MB.hudValueStars}>
+      <HudCell MB={MB} label={t("learning.master.stars")} valueClass={MB.hudValueStars}>
         {formatValue(topHud.stars)}
       </HudCell>
-      <HudCell MB={MB} label="רמה" valueClass={MB.hudValueLevel}>
+      <HudCell MB={MB} label={t("learning.master.level")} valueClass={MB.hudValueLevel}>
         {formatValue(topHud.level)}
       </HudCell>
       <HudCell MB={MB} label="✅" valueClass={MB.hudValueCorrect}>
         {formatValue(topHud.correct)}
       </HudCell>
-      <HudCell MB={MB} label="חיים" valueClass={MB.hudValueLives}>
+      <HudCell MB={MB} label={t("learning.master.hudLives")} valueClass={MB.hudValueLives}>
         {mode === "challenge" ? `${formatValue(lives)} ❤️` : "∞"}
       </HudCell>
       <div
@@ -69,7 +71,7 @@ export default function LearningMasterHud({
         }`}
       >
         <div className="flex shrink-0 items-center justify-center mb-0.5 md:mb-1 md:min-h-[26px] lg:min-h-[28px] px-0.5">
-          <div className={MB.hudLabel}>טיימר</div>
+          <div className={MB.hudLabel}>{t("learning.master.hudTimer")}</div>
         </div>
         <div className="flex flex-1 items-center justify-center min-h-0">
           <div
@@ -89,10 +91,10 @@ export default function LearningMasterHud({
         type="button"
         onClick={onAvatarClick}
         className={MB.hudAvatarBtn}
-        title="פרופיל שחקן"
+        title={t("learning.master.playerProfile")}
       >
         <div className="flex shrink-0 items-center justify-center mb-0.5 md:mb-1 md:min-h-[26px] lg:min-h-[28px] px-0.5">
-          <div className={MB.hudLabel}>אווטר</div>
+          <div className={MB.hudLabel}>{t("learning.master.avatar")}</div>
         </div>
         <div className="flex flex-1 items-center justify-center min-h-0">
           <StudentLearningAvatar

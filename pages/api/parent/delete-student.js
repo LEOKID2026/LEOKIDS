@@ -1,8 +1,9 @@
 import { requireParentApiContext } from "../../../lib/auth/persona-guard.server.js";
 import { deleteParentOwnedStudent } from "../../../lib/parent-server/delete-parent-owned-student.server.js";
 import { safeApiLog } from "../../../lib/security/safe-log.js";
+import { wrapMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ ok: false, error: "Method not allowed", errorCode: "method_not_allowed" });
@@ -48,3 +49,5 @@ export default async function handler(req, res) {
     });
   }
 }
+
+export default wrapMutatingApi(handler);

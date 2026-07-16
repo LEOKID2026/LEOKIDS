@@ -2,7 +2,7 @@
  * Printable worksheet document header — centered branding + meta + name/date.
  */
 
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi, WORKSHEET_PRINT_DOC_ATTRS } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -17,14 +17,16 @@ import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
  * }} props
  */
 export default function WorksheetDocumentHeader({
-  titleHe = WORKSHEET_UI_HE.documentTitle,
+  titleHe,
   meta,
   variant = "worksheet",
 }) {
+  const ui = useWorksheetUi();
+  const title = titleHe || ui.documentTitle;
   const showFields = variant === "worksheet";
 
   return (
-    <header className="worksheet-header worksheet-header-centered">
+    <header className="worksheet-header worksheet-header-centered" {...WORKSHEET_PRINT_DOC_ATTRS}>
       <div className="worksheet-header-top">
         <div className="worksheet-brand-center">
           <img
@@ -36,7 +38,7 @@ export default function WorksheetDocumentHeader({
           />
           <span className="worksheet-brand-name">LEO KIDS</span>
         </div>
-        <h1 className="worksheet-title">{titleHe}</h1>
+        <h1 className="worksheet-title">{title}</h1>
       </div>
       <p className="worksheet-meta">
         {meta.subjectHe} · {meta.gradeHe} · {meta.topicHe} · {meta.levelHe}
@@ -44,11 +46,11 @@ export default function WorksheetDocumentHeader({
       {showFields ? (
         <div className="worksheet-fields worksheet-fields-centered">
           <div className="worksheet-field-row">
-            <span className="worksheet-field-label">{WORKSHEET_UI_HE.nameField}:</span>
+            <span className="worksheet-field-label">{ui.nameField}:</span>
             <span className="worksheet-field-line" aria-hidden="true" />
           </div>
           <div className="worksheet-field-row">
-            <span className="worksheet-field-label">{WORKSHEET_UI_HE.dateField}:</span>
+            <span className="worksheet-field-label">{ui.dateField}:</span>
             <span className="worksheet-field-line" aria-hidden="true" />
           </div>
         </div>

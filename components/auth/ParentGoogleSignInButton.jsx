@@ -39,7 +39,7 @@ export default function ParentGoogleSignInButton({
     const clientId = getParentGoogleClientId();
 
     if (!clientId) {
-      setInitError("התחברות עם Google אינה מוגדרת כרגע. התחברו עם אימייל וסיסמה.");
+      setInitError("Google sign-in is not configured right now. Sign in with email and password.");
       setReady(false);
       return undefined;
     }
@@ -62,7 +62,7 @@ export default function ParentGoogleSignInButton({
             const usedNonce = nonceRef.current;
             nonceRef.current = null;
             if (!credential) {
-              onErrorRef.current?.("לא הצלחנו להשלים התחברות עם Google. נסו שוב.");
+              onErrorRef.current?.("Could not complete Google sign-in. Please try again.");
               return;
             }
             void onCredentialRef.current?.({ credential, nonce: usedNonce || "" });
@@ -84,7 +84,7 @@ export default function ParentGoogleSignInButton({
           shape: "pill",
           logo_alignment: "left",
           width,
-          locale: "he",
+          locale: "en",
         });
 
         if (!cancelled) {
@@ -94,9 +94,9 @@ export default function ParentGoogleSignInButton({
       } catch {
         if (!cancelled) {
           setReady(false);
-          setInitError("לא ניתן לטעון את התחברות Google כרגע. נסו שוב בעוד רגע.");
+          setInitError("Could not load Google sign-in right now. Please try again in a moment.");
           onErrorRef.current?.(
-            "לא ניתן לטעון את התחברות Google כרגע. נסו שוב בעוד רגע."
+            "Could not load Google sign-in right now. Please try again in a moment."
           );
         }
       }

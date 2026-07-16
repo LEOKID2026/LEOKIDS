@@ -17,8 +17,8 @@ const GENERATED = self.__STUDENT_OFFLINE_PRECACHE__ || {
 };
 
 const CACHE_NAME = STUDENT_OFFLINE_FULL_SW_ENABLED
-  ? "student-offline-v10-full"
-  : "student-offline-v1";
+  ? "lk-global-student-offline-v1-full"
+  : "lk-global-student-offline-v1";
 
 /** Cache API only supports full 200 responses — not 206 Partial Content (audio/video range). */
 function isCacheableResponse(response) {
@@ -34,7 +34,7 @@ function safeCachePut(cache, request, response) {
     console.warn("[SW student] cache.put skipped:", request?.url || request, err?.message || err);
   });
 }
-const CACHE_PREFIX = "student-";
+const CACHE_PREFIX = "lk-global-student-";
 
 const OFFLINE_HTML = "/student/offline.html";
 const OFFLINE_HUB = "/student/offline";
@@ -76,11 +76,11 @@ const OFFLINE_DATA_SET = new Set(FULL_DATA_URLS);
 const OFFLINE_ASSET_SET = new Set(FULL_ASSET_URLS);
 
 const OFFLINE_HTML_FALLBACK = `<!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>אין חיבור - LEO K</title>
+<title>No connection — Leo Kids</title>
 <style>
 body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;background:#050816;color:#fff;font-family:system-ui,sans-serif;padding:1.5rem}
 .card{max-width:22rem;text-align:center}
@@ -89,9 +89,9 @@ body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:
 </head>
 <body>
 <div class="card">
-<h1>אין חיבור לאינטרנט</h1>
-<p>ניתן לשחק במשחקים הבאים גם בלי אינטרנט</p>
-<a href="/student/offline" class="btn">🎮 משחקים ללא אינטרנט</a>
+<h1>No internet connection</h1>
+<p>You can still play offline games below</p>
+<a href="/student/offline" class="btn">🎮 Offline games</a>
 </div>
 </body>
 </html>`;

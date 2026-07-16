@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SiteLegalFooterBar from "./layout/SiteLegalFooterBar.jsx";
 import StudentAdSlot from "./student/StudentAdSlot.jsx";
 import StudentThemePicker from "./student/StudentThemePicker.jsx";
+import { useI18n } from "../lib/i18n/I18nProvider.jsx";
 import {
   getAreaHomeHref,
   getContextNav,
@@ -11,7 +12,6 @@ import {
   isPurePublicMarketingPath,
   NAV_AREAS,
   resolveNavArea,
-  shouldLayoutUseRtl,
   shouldShowLayoutStudentAdSlot,
   shouldShowLayoutThemePicker,
 } from "../lib/site-nav";
@@ -40,6 +40,7 @@ export default function Layout({
   layoutNavArea = null,
 }) {
   const router = useRouter();
+  const { direction, locale, t } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePortal, setActivePortal] = useState(() =>
     typeof window !== "undefined" ? readSiteNavPortal() : null
@@ -90,7 +91,6 @@ export default function Layout({
   };
   const { links: menuLinks } = getContextNav(pathname, navOptions);
   const areaHomeHref = getAreaHomeHref(pathname, navOptions);
-  const layoutRtlHebrew = shouldLayoutUseRtl(pathname);
   const showThemePicker = layoutShowThemePicker || shouldShowLayoutThemePicker(pathname);
 
   const resolvedTheme =
@@ -150,8 +150,8 @@ export default function Layout({
     <div
       className={shellClass}
       style={isStudentBright ? STUDENT_BRIGHT_PAGE_BG_STYLE : undefined}
-      dir={layoutRtlHebrew ? "rtl" : undefined}
-      lang={layoutRtlHebrew ? "he" : undefined}
+      dir={direction}
+      lang={locale}
     >
       <header className={headerClass}>
         <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 md:gap-3">
@@ -163,7 +163,7 @@ export default function Layout({
           >
             <img
               src="/images/coin.png"
-              alt="לוגו LEO KIDS"
+              alt="LEO KIDS logo"
               width={32}
               height={32}
               className="w-8 h-8 object-contain"
@@ -191,7 +191,7 @@ export default function Layout({
             <button
               className={`${menuBtnClass} md:hidden`}
               onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label="פתיחת תפריט"
+              aria-label={t("ui.layout.openMenu")}
             >
               ☰
             </button>
@@ -204,12 +204,12 @@ export default function Layout({
           <div className={mobileMenuPanel}>
             <div className="flex items-center justify-between mb-3">
               <span className={`text-sm uppercase tracking-[0.3em] ${mobileMenuLabel}`}>
-                תפריט
+                {t("ui.layout.menu")}
               </span>
               <button
                 onClick={closeMenu}
                 className={`${mobileMenuClose} text-lg`}
-                aria-label="סגור תפריט"
+                aria-label={t("ui.layout.closeMenu")}
               >
                 ✕
               </button>

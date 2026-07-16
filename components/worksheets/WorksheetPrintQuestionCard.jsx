@@ -3,7 +3,7 @@
  */
 
 import WorksheetQuestionRouter from "./WorksheetQuestionRouter.jsx";
-import { WORKSHEET_UI_HE } from "../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 import { classifyWorksheetQuestionLayout } from "../../lib/worksheets/worksheet-print-layout.js";
 
 /**
@@ -13,6 +13,7 @@ import { classifyWorksheetQuestionLayout } from "../../lib/worksheets/worksheet-
  * }} props
  */
 export default function WorksheetPrintQuestionCard({ question, variant = "default" }) {
+  const ui = useWorksheetUi();
   const layoutClass = classifyWorksheetQuestionLayout(question);
   const sectionClass =
     variant === "math-page"
@@ -23,7 +24,7 @@ export default function WorksheetPrintQuestionCard({ question, variant = "defaul
     <section className={sectionClass}>
       <h2 className="worksheet-question-title">
         <span className="worksheet-question-number">{question.displayIndex}</span>
-        <span>{WORKSHEET_UI_HE.questionLabel}</span>
+        <span>{ui.questionLabel}</span>
       </h2>
       <div className="worksheet-question-content">
         <WorksheetQuestionRouter question={question} />

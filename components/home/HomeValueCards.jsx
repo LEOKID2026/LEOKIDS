@@ -1,4 +1,4 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.he";
+import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
 
 const CARD_SHELLS_BRIGHT = [
   "from-teal-400 to-cyan-500",
@@ -24,7 +24,7 @@ export default function HomeValueCards({ isBright }) {
     <section
       className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8"
       data-testid="home-value-cards"
-      aria-label="ערכי המוצר"
+      aria-label="Product values"
     >
       <div className="grid gap-4 md:grid-cols-3 md:gap-5">
         {cards.map((card, index) => (

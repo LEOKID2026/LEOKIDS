@@ -1,5 +1,5 @@
 import InstallAppChoiceButton from "../InstallAppChoiceButton";
-import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.he";
+import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
 import { WORKSHEET_HUB_ENTRY_ENABLED } from "../../lib/worksheets/worksheet-hub-entry-enabled.js";
 import { getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
@@ -23,7 +23,7 @@ export default function HomePrimaryActions({ isBright }) {
     <section
       className={`space-y-4 text-center ${cls.actionsBand}`}
       data-testid="home-primary-actions"
-      aria-label="כניסה והרשמה"
+      aria-label="Sign in and registration"
     >
       <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:flex-nowrap lg:gap-4">
         <HomeCtaLink

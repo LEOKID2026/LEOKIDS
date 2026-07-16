@@ -1,4 +1,4 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.he";
+import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
 
 const STEP_COLORS_BRIGHT = [
   "from-cyan-400 to-sky-500",

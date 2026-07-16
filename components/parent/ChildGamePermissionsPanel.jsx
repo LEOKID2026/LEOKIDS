@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
-import { mapParentPanelApiError } from "../../lib/parent-server/parent-api-errors.he.js";
+import { mapParentPanelApiError } from "../../lib/parent-client/parent-api-errors.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const CATEGORY_LABELS = {
-  online: "משחקים מקוונים",
-  offline: "משחקים לא מקוונים",
-  solo: "משחקים עצמאיים",
-};
+function getCategoryLabels(t) {
+  return {
+    online: t("ui.parent.gameCategoryOnline"),
+    offline: t("ui.parent.gameCategoryOffline"),
+    solo: t("ui.parent.gameCategorySolo"),
+  };
+}
 
 export default function ChildGamePermissionsPanel({ studentId, accessToken, bright = false }) {
   const T = getParentPortalTheme(bright);
+  const t = useT();
+  const categoryLabels = getCategoryLabels(t);
   const [permissions, setPermissions] = useState({
     onlineEnabled: true,
     offlineEnabled: true,
@@ -73,16 +78,16 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
   if (loading) {
     return (
       <div className={T.permissionsBox}>
-        <p className={`${T.permissionsHint} text-right`}>טוען הרשאות משחקים...</p>
+        <p className={`${T.permissionsHint} text-right`}>{t("ui.parent.gamePermissionsLoading")}</p>
       </div>
     );
   }
 
   return (
     <div className={`${T.permissionsBox} space-y-3`}>
-      <h3 className={T.permissionsTitle}>הרשאות משחקים</h3>
+      <h3 className={T.permissionsTitle}>{t("ui.parent.gamePermissionsTitle")}</h3>
       <p className={T.permissionsHint}>
-        כיבוי קטגוריה נועל את כל המשחקים בה. הילד יראה את הקטגוריה עם הודעת נעילה.
+        {t("ui.parent.gamePermissionsHint")}
       </p>
       {error ? <p className={`text-xs text-right ${bright ? "text-rose-600" : "text-red-300"}`}>{error}</p> : null}
       <div className="space-y-2">
@@ -106,7 +111,7 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
                   }`}
                 />
               </button>
-              <span className={T.permissionsLabel}>{CATEGORY_LABELS[key]}</span>
+              <span className={T.permissionsLabel}>{categoryLabels[key]}</span>
             </div>
           );
         })}

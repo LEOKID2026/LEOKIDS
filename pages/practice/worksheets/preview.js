@@ -12,7 +12,7 @@ import {
   saveWorksheetPublicPreviewSession,
 } from "../../../lib/worksheets/worksheet-public-preview-session.client.js";
 import { buildWorksheetSessionFingerprint } from "../../../lib/worksheets/worksheet-fingerprint.js";
-import { WORKSHEET_UI_HE } from "../../../lib/worksheets/worksheet-ui.he.js";
+import { useWorksheetShellAttrs, useWorksheetUi } from "../../../hooks/useWorksheetUi.js";
 
 const BACK_HREF = "/practice/worksheets";
 
@@ -20,6 +20,8 @@ export default function PublicWorksheetPreviewRoute() {
   const router = useRouter();
   const { theme } = useStudentTheme();
   const layoutProps = { studentTheme: theme, studentShell: "home" };
+  const ui = useWorksheetUi();
+  const shell = useWorksheetShellAttrs();
 
   const [previewData, setPreviewData] = useState(null);
   const [sessionChecked, setSessionChecked] = useState(false);
@@ -70,17 +72,17 @@ export default function PublicWorksheetPreviewRoute() {
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setAnswerKeyError(data.message || WORKSHEET_UI_HE.answerKeyStale);
+        setAnswerKeyError(data.message || ui.answerKeyStale);
         return;
       }
       saveWorksheetPublicAnswerKeySession(data.answerKeyPayload);
       router.push("/practice/worksheets/preview/answers");
     } catch {
-      setAnswerKeyError(WORKSHEET_UI_HE.errorGeneric);
+      setAnswerKeyError(ui.errorGeneric);
     } finally {
       setAnswerKeyLoading(false);
     }
-  }, [previewData, router]);
+  }, [previewData, router, ui.answerKeyStale, ui.errorGeneric]);
 
   const handleRefresh = useCallback(async () => {
     if (previewData?.source !== "public-demo" || !previewData?.generation) return;
@@ -106,7 +108,7 @@ export default function PublicWorksheetPreviewRoute() {
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setRefreshError(data.message || WORKSHEET_UI_HE.refreshQuestionsError);
+        setRefreshError(data.message || ui.refreshQuestionsError);
         return;
       }
 
@@ -120,17 +122,17 @@ export default function PublicWorksheetPreviewRoute() {
       saveWorksheetPublicPreviewSession(next);
       setPreviewData(next);
     } catch {
-      setRefreshError(WORKSHEET_UI_HE.refreshQuestionsError);
+      setRefreshError(ui.refreshQuestionsError);
     } finally {
       setRefreshLoading(false);
     }
-  }, [previewData]);
+  }, [previewData, ui.refreshQuestionsError]);
 
   if (!sessionChecked) {
     return (
       <Layout {...layoutProps}>
-        <div dir="rtl" className="p-4 text-center text-slate-500">
-          {WORKSHEET_UI_HE.loading}
+        <div {...shell} className="p-4 text-center text-slate-500">
+          {ui.loading}
         </div>
       </Layout>
     );
@@ -140,19 +142,19 @@ export default function PublicWorksheetPreviewRoute() {
     return (
       <>
         <PageSeo
-          title="תצוגת דף עבודה · LEO KIDS"
-          description="תצוגה מקדימה של דף עבודה."
+          title={ui.seoPreviewTitle}
+          description={ui.seoPreviewDescription}
           canonicalPath="/practice/worksheets/preview"
           noindex
         />
         <Layout {...layoutProps}>
-          <div dir="rtl" className="mx-auto max-w-lg px-4 py-10 text-center">
-            <p className="mb-6 text-base text-slate-700">{WORKSHEET_UI_HE.publicPreviewLost}</p>
+          <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
+            <p className="mb-6 text-base text-slate-700">{ui.publicPreviewLost}</p>
             <Link
               href={BACK_HREF}
               className="inline-flex rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
             >
-              {WORKSHEET_UI_HE.publicPreviewLostCta}
+              {ui.publicPreviewLostCta}
             </Link>
           </div>
         </Layout>
@@ -165,20 +167,20 @@ export default function PublicWorksheetPreviewRoute() {
   return (
     <>
       <PageSeo
-        title="תצוגת דף עבודה · LEO KIDS"
-        description="תצוגה מקדימה של דף עבודה."
+        title={ui.seoPreviewTitle}
+        description={ui.seoPreviewDescription}
         canonicalPath="/practice/worksheets/preview"
         noindex
       />
       <Layout {...layoutProps}>
         <div className="worksheet-preview-container px-4 py-4 md:px-6 md:py-6">
           {refreshError ? (
-            <p dir="rtl" className="mb-3 text-center text-sm text-red-600">
+            <p {...shell} className="mb-3 text-center text-sm text-red-600">
               {refreshError}
             </p>
           ) : null}
           {answerKeyError ? (
-            <p dir="rtl" className="mb-3 text-center text-sm text-red-600">
+            <p {...shell} className="mb-3 text-center text-sm text-red-600">
               {answerKeyError}
             </p>
           ) : null}

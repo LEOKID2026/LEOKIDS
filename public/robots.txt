@@ -22,4 +22,4 @@ Disallow: /offline/
 Allow: /games
 Disallow: /game
 
-Sitemap: https://www.leokids.co.il/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml

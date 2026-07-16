@@ -20,10 +20,40 @@ import {
 } from "../../../lib/security/login-rate-limit.js";
 import { safeApiLog } from "../../../lib/security/safe-log.js";
 import { trackServerAnalyticsEvent } from "../../../lib/analytics/track-event.server.js";
+import { gateMutatingApi } from "../../../lib/global/apply-write-barrier.js";
+import { findMockStudentByAccessCode } from "../../../lib/global/mock-fixtures.js";
 
 const GENERIC_LOGIN_FAILURE = { ok: false, error: "שם משתמש או PIN שגויים" };
 
-export default async function handler(req, res) {
+function mockStudentLogin(req, res) {
+  const usernameNormalized = normalizeStudentUsername(req.body?.username);
+  const codeFallback = normalizeStudentCode(req.body?.code);
+  const pin = normalizeStudentPin(req.body?.pin);
+  const credential = usernameNormalized || codeFallback;
+
+  if (!credential || pin.length !== 4) {
+    return res.status(401).json(GENERIC_LOGIN_FAILURE);
+  }
+
+  const mock = findMockStudentByAccessCode(credential);
+  if (!mock) {
+    return res.status(401).json(GENERIC_LOGIN_FAILURE);
+  }
+
+  setStudentSessionCookie(res, "mock-student-session");
+  return res.status(200).json({
+    ok: true,
+    mockMode: true,
+    student: {
+      id: mock.id,
+      full_name: mock.displayName,
+      grade_level: mock.grade,
+      is_active: true,
+    },
+  });
+}
+
+async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
@@ -165,3 +195,5 @@ export default async function handler(req, res) {
     return res.status(401).json(GENERIC_LOGIN_FAILURE);
   }
 }
+
+export default gateMutatingApi(handler, { onMock: mockStudentLogin });

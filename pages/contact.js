@@ -1,15 +1,16 @@
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.he";
+import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useSharedShellUi } from "../hooks/useSharedShellUi.js";
+import { useI18n } from "../lib/i18n/I18nProvider.jsx";
 import {
   CONTACT_EMAIL,
   LEGAL_CONTACT_PAGE_LINKS,
-} from "../data/legal/sitePolicies.he";
+} from "../data/legal/sitePolicies.js";
 import {
   CONTACT_FORM_DELIVERY_PENDING,
   CONTACT_FORM_EMAIL_LABEL,
@@ -27,7 +28,7 @@ import {
   CONTACT_FORM_SUBMIT,
   CONTACT_FORM_SUBMITTING,
   CONTACT_FORM_SUCCESS,
-} from "../lib/contact/contact-form.he";
+} from "../lib/contact/contact-form.js";
 
 const INSTAGRAM_URL = "https://www.instagram.com/leotheshiba21";
 const YOUTUBE_URL = "https://www.youtube.com/@LEO-KIDS-2026";
@@ -38,39 +39,37 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const btnBase =
   "px-5 py-2.5 rounded-xl transition hover:scale-105 text-center shadow-md text-sm sm:text-base font-semibold";
 
-/** כפתורי רשת — רוחב אחיד; גובה טבעי לפי תוכן */
 const socialBtnBase =
   "w-full h-full px-3 py-2.5 rounded-xl transition hover:scale-105 text-center shadow-md text-sm font-semibold leading-tight flex items-center justify-center";
 
 const contactSeo = getPublicPageSeo("contact");
 
-/** טופס יצירת קשר — מוסתר עד שמערכת הדואר תוגדר לסביבת הפרודקשן */
 const CONTACT_FORM_VISIBLE = false;
 
 const faqs = [
   {
-    q: "למי האתר מיועד?",
-    a: "האתר מיועד לילדים שרוצים לתרגל ולהתקדם, ולהורים ולמורים שרוצים לקבל תמונה ברורה יותר על ההתקדמות, החוזקות והנושאים שכדאי לחזק.",
+    q: "Who is the site for?",
+    a: "The site is for children who want to practice and progress, and for parents and teachers who want a clearer picture of progress, strengths, and topics worth reinforcing.",
   },
   {
-    q: "באילו מקצועות אפשר לתרגל?",
-    a: "האתר כולל תרגול במתמטיקה, גאומטריה, עברית, אנגלית, מדעים, מולדת, גאוגרפיה והיסטוריה - לפי מה שפתוח וזמין לילד באתר.",
+    q: "Which subjects can you practice?",
+    a: "The site includes practice in math, geometry, English, and science — based on what is open and available for your child.",
   },
   {
-    q: "מה ההורים יכולים לראות?",
-    a: "ההורים יכולים לקבל דוחות שמציגים ביצועים, טעויות חוזרות, נקודות חוזק ונושאים שכדאי להמשיך לתרגל.",
+    q: "What can parents see?",
+    a: "Parents can view reports showing performance, repeating mistakes, strengths, and topics to keep practicing.",
   },
   {
-    q: "האם האתר מתאים גם לילדים שצריכים חיזוק?",
-    a: "כן. המטרה היא לאפשר תרגול הדרגתי וברור, כך שכל ילד/ה יוכל להתקדם בקצב שמתאים לו ולחזק את הנושאים שבהם הוא מתקשה.",
+    q: "Is the site good for children who need reinforcement?",
+    a: "Yes. The goal is gradual, clear practice so every child can move at their own pace and reinforce topics where they struggle.",
   },
   {
-    q: "האם יש באתר גם משחקים?",
-    a: "כן. לצד התרגול הלימודי יש משחקים חינוכיים, משחקי ליאו, אפשרות למשחקים עם חברים, וגם מטבעות וקלפים בעולם הילדים.",
+    q: "Are there games on the site?",
+    a: "Yes. Alongside academic practice there are educational games, Leo games, play-with-friends options, and coins and cards in the kids world.",
   },
   {
-    q: "איך אפשר לדווח על תקלה או לשלוח רעיון?",
-    a: "אפשר לפנות אלינו דרך כפתור האימייל בעמוד הזה. נשמח לקבל הערות, רעיונות ודיווחים שיעזרו לשפר את האתר.",
+    q: "How can I report a bug or send an idea?",
+    a: "Contact us using the email button on this page. We welcome feedback, ideas, and reports that help improve the site.",
   },
 ];
 
@@ -89,6 +88,7 @@ function validateContactForm({ name, email, message }) {
 export default function Contact() {
   const { theme } = useStudentTheme();
   const { SP } = useSharedShellUi();
+  const { direction, locale, t } = useI18n();
   const [activeAnswer, setActiveAnswer] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -164,32 +164,32 @@ export default function Contact() {
     {
       key: "email",
       href: `mailto:${CONTACT_EMAIL}`,
-      label: "המייל של ליאו",
-      ariaLabel: `שליחת אימייל לכתובת ${CONTACT_EMAIL}`,
+      label: "Leo's email",
+      ariaLabel: `Send email to ${CONTACT_EMAIL}`,
       className: `${socialBtnBase} bg-amber-500/90 hover:bg-amber-400 border border-amber-300/40 text-black`,
       external: false,
     },
     {
       key: "instagram",
       href: INSTAGRAM_URL,
-      label: "האינסטגרם של ליאו",
-      ariaLabel: "פתיחת עמוד האינסטגרם בחלון חדש",
+      label: "Leo's Instagram",
+      ariaLabel: "Open Instagram page in a new window",
       className: `${socialBtnBase} bg-pink-600/90 hover:bg-pink-500 border border-pink-400/30 text-white`,
       external: true,
     },
     {
       key: "youtube",
       href: YOUTUBE_URL,
-      label: "היוטיוב של ליאו",
-      ariaLabel: "פתיחת היוטיוב של ליאו בחלון חדש",
+      label: "Leo's YouTube",
+      ariaLabel: "Open Leo Kids YouTube in a new window",
       className: `${socialBtnBase} bg-red-600/90 hover:bg-red-500 border border-red-400/30 text-white`,
       external: true,
     },
     {
       key: "facebook",
       href: FACEBOOK_URL,
-      label: "הפייסבוק של ליאו",
-      ariaLabel: "פתיחת הפייסבוק של ליאו בחלון חדש",
+      label: "Leo's Facebook",
+      ariaLabel: "Open Leo Kids Facebook in a new window",
       className: `${socialBtnBase} bg-blue-600/90 hover:bg-blue-500 border border-blue-400/30 text-white`,
       external: true,
     },
@@ -219,14 +219,14 @@ export default function Contact() {
         </>
       ) : null}
 
-      <div dir="rtl" className={SP.pageWrap}>
+      <div dir={direction} lang={locale} className={SP.pageWrap}>
         <motion.h1
           className={SP.contactH1}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          צור קשר
+          Contact us
         </motion.h1>
 
         <motion.p
@@ -235,7 +235,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
         >
-          יש לכם שאלה, רעיון, הערה או תקלה? נשמח לשמוע מכם ולעזור. אפשר לפנות אלינו בנושאים שקשורים ללמידה, לחשבון הילד, לדוחות ההורים, למשחקים, לקלפים או לחוויית השימוש באתר.
+          Have a question, idea, comment, or bug to report? We would love to hear from you. Reach out about learning, your child's account, parent reports, games, cards, or your experience using the site.
         </motion.p>
 
         {CONTACT_FORM_VISIBLE && <motion.section
@@ -243,7 +243,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          aria-label="טופס יצירת קשר"
+          aria-label="Contact form"
         >
           {formSuccess ? (
             <p className="text-emerald-300 text-sm sm:text-base leading-relaxed" role="status">
@@ -374,7 +374,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          שאלות נפוצות
+          Frequently asked questions
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pb-8">
@@ -395,12 +395,12 @@ export default function Contact() {
 
         <motion.nav
           className="w-full max-w-2xl mx-auto pb-8 text-center space-y-3"
-          aria-label="מסמכים משפטיים ויצירת קשר"
+          aria-label="Legal documents and contact"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.35 }}
         >
-          <p className={SP.navLabel}>מסמכים משפטיים</p>
+          <p className={SP.navLabel}>Legal documents</p>
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
             {LEGAL_CONTACT_PAGE_LINKS.map((link) => (
               <li key={link.href}>
@@ -419,7 +419,7 @@ export default function Contact() {
       </div>
 
       {activeAnswer && (
-        <div className={SP.faqModalOverlay} dir="rtl" onClick={handleClose}>
+        <div className={SP.faqModalOverlay} dir={direction} onClick={handleClose}>
           <motion.div
             className={SP.faqModalPanel}
             initial={{ opacity: 0, scale: 0.92 }}
@@ -436,10 +436,10 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={handleClose}
-                aria-label="סגור חלון תשובה"
+                aria-label={t("common.close")}
                 className="self-start mb-4 bg-amber-500/90 hover:bg-amber-400 text-black px-3 py-1.5 text-sm rounded-lg font-bold"
               >
-                סגור
+                {t("common.close")}
               </button>
               <p className={SP.faqModalText}>{activeAnswer}</p>
             </div>
