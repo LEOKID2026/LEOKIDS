@@ -5,7 +5,7 @@ import SoloGamePortraitRecommendationModal from "../SoloGamePortraitRecommendati
 import { useSoloGameMobileFullscreen } from "../../../hooks/solo-games/useSoloGameMobileFullscreen.js";
 import { useSoloEngineAudio } from "../../../hooks/solo-games/useSoloGameAudio.js";
 
-const DEFAULT_PLAYER_NAME = "שחקן";
+const DEFAULT_PLAYER_NAME = "Player";
 
 /**
  * @param {{ autoStart?: boolean, onSessionEnd?: (metrics: object) => void }} props
@@ -119,7 +119,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
     gameOver,
   });
 
-  /** Trimmed field → localStorage `mleo_player_name` → default `שחקן`. Never blocks starting. */
+  /** Trimmed field → localStorage `mleo_player_name` → default `Player`. Never blocks starting. */
   const resolveEffectivePlayerName = () => {
     const fromField = String(playerName || "").trim();
     if (fromField) return fromField;
@@ -408,12 +408,12 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
     ctx.fillStyle = "rgba(255,255,255,0.92)";
     ctx.textAlign = "left";
     ctx.textBaseline = "alphabetic";
-    ctx.fillText(`ניקוד: ${currentScoreRef.current}`, hudPadX, hudY);
+    ctx.fillText(`Score: ${currentScoreRef.current}`, hudPadX, hudY);
     hudY += hudLine;
-    ctx.fillText(`רמה: ${diff.level}`, hudPadX, hudY);
+    ctx.fillText(`Level: ${diff.level}`, hudPadX, hudY);
     if (highScoreRef.current > 0) {
       hudY += hudLine;
-      ctx.fillText(`שיא: ${highScoreRef.current}`, hudPadX, hudY);
+      ctx.fillText(`High: ${highScoreRef.current}`, hudPadX, hudY);
     }
 
     rafRef.current = requestAnimationFrame(updateGame);
@@ -503,7 +503,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
       <div
         id="game-wrapper"
         className="relative isolate flex h-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-        dir="rtl"
+        dir="ltr"
       >
         {!showIntro && (
           <div className="flex min-h-0 w-full flex-1 flex-col px-1 pb-2 pt-1">
@@ -528,7 +528,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
 
               {gameOver && !onSessionEnd && (
                 <div className="pointer-events-auto absolute inset-0 z-40 flex flex-col items-center justify-center bg-black/70">
-                  <h2 className="mb-4 text-4xl font-bold text-red-500 sm:text-5xl">סיום משחק</h2>
+                  <h2 className="mb-4 text-4xl font-bold text-red-500 sm:text-5xl">Game Over</h2>
                 </div>
               )}
 
@@ -568,7 +568,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
                     if (e.buttons === 0) setPad("left", false);
                   }}
                 >
-                  ◀ שמאל
+                  ◀ Left
                 </button>
                 <button
                   type="button"
@@ -596,7 +596,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
                     if (e.buttons === 0) setPad("right", false);
                   }}
                 >
-                  ימין ▶
+                  Right ▶
                 </button>
               </>
             )}

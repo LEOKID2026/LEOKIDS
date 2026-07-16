@@ -7,7 +7,7 @@ import { useArcadeRoomExit } from "../../../hooks/arcade/useArcadeRoomExit";
 import ArcadeGameSocialDock from "../club/ArcadeGameSocialDock.jsx";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "דומינו";
+const GAME_TITLE = "Dominoes";
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -25,7 +25,7 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 disabled:opacity-50 sm:max-w-sm"
       >
-        {busy ? "יוצא…" : "עזוב"}
+        {busy ? "Leaving…" : "Leave"}
       </button>
     </div>
   );
@@ -35,11 +35,11 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
 function Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header
-      dir="rtl"
+      dir="ltr"
       className="relative z-20 flex w-full shrink-0 items-center gap-1.5 rounded-xl border border-white/[0.14] bg-gradient-to-b from-zinc-700/90 via-zinc-900/95 to-black/90 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_28px_rgba(0,0,0,0.45)] sm:gap-2 sm:px-2.5 sm:py-2"
     >
       <button type="button" onClick={onBack} className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}>
-        <span className="text-xs font-extrabold text-white sm:text-sm">חזרה</span>
+        <span className="text-xs font-extrabold text-white sm:text-sm">Back</span>
       </button>
       <div className="min-w-0 flex-1 text-center">
         <h1 className="truncate text-base font-extrabold text-white sm:text-lg">{GAME_TITLE}</h1>
@@ -50,7 +50,7 @@ function Hud({ onBack, balance, onOpenHelp }) {
         <img src="/images/coin.png" alt="" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
         <span className="font-mono text-sm font-bold text-amber-100 sm:text-base">{balance === null ? "…" : balance}</span>
       </div>
-      <button type="button" onClick={onOpenHelp} className={HUD_BTN_SQUARE} aria-label="עזרה">
+      <button type="button" onClick={onOpenHelp} className={HUD_BTN_SQUARE} aria-label="Help">
         <span className="text-lg text-white/95">?</span>
       </button>
     </header>
@@ -62,23 +62,23 @@ function HowToModal({ open, onClose }) {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm" role="dialog">
-      <button type="button" className="absolute inset-0" aria-label="סגור" onClick={onClose} />
+      <button type="button" className="absolute inset-0" aria-label="Close" onClick={onClose} />
       <div
-        dir="rtl"
+        dir="ltr"
         className="relative z-[1] max-h-[85vh] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-zinc-900 p-4 shadow-2xl"
       >
         <div className="mb-3 flex justify-between border-b border-white/10 pb-2">
-          <h2 className="text-lg font-bold text-white">איך משחקים</h2>
+          <h2 className="text-lg font-bold text-white">How to play</h2>
           <button type="button" onClick={onClose} className="text-sm text-zinc-300">
-            סגור
+            Close
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm text-zinc-200">
-          <li>זוג 6 - שני שחקנים, שבעה קלפים לכל אחד.</li>
-          <li>הפותח נקבע לפי הכפול הגבוה ביותר (או סכום הנקודות).</li>
-          <li>חיבור קלף לקצוות השרשרת לפי מספר התואם.</li>
-          <li>אין מהלך חוקי - מדלגים; שני דילוגים ברצף מסיימים בחסימה (סכום נקודות נמוך מנצח).</li>
-          <li>יציאה מלאה - ניצחון.</li>
+          <li>Double-6 set — two players, seven tiles each.</li>
+          <li>Opener is the highest double (or highest pip total).</li>
+          <li>Play a tile matching an open end of the chain.</li>
+          <li>No legal move — pass; two passes in a row end in a block (lowest pip total wins).</li>
+          <li>Empty your hand to win.</li>
         </ul>
       </div>
     </div>
@@ -157,9 +157,9 @@ export default function DominoesScreen({ roomId }) {
     for (const m of players || []) {
       const si = Number(m?.seat_index);
       if (si !== 0 && si !== 1) continue;
-      out[si] = String(m?.display_name ?? "").trim() || `שחקן ${si + 1}`;
+      out[si] = String(m?.display_name ?? "").trim() || `Player ${si + 1}`;
     }
-    return [out[0] || "שחקן 1", out[1] || "שחקן 2"];
+    return [out[0] || "Player 1", out[1] || "Player 2"];
   }, [players]);
 
   const playsForTile = useCallback(
@@ -205,7 +205,7 @@ export default function DominoesScreen({ roomId }) {
 
   const endsLine =
     vm.openEnds && typeof vm.openEnds === "object"
-      ? `קצוות פתוחים: ${vm.openEnds.left} · ${vm.openEnds.right}`
+      ? `Open ends: ${vm.openEnds.left} · ${vm.openEnds.right}`
       : null;
 
   return (
@@ -220,32 +220,32 @@ export default function DominoesScreen({ roomId }) {
 
         {showLobbyWait ? (
           <div className="mt-6 rounded-xl border border-amber-500/30 bg-amber-950/25 px-4 py-6 text-center text-amber-100">
-            <p className="text-lg font-bold">ממתינים לשחקן…</p>
-            <p className="mt-2 text-sm text-amber-200/90">דומינו - נדרשים שני שחקנים</p>
+            <p className="text-lg font-bold">Waiting for a player…</p>
+            <p className="mt-2 text-sm text-amber-200/90">Dominoes — two players required</p>
           </div>
         ) : null}
 
         {showSessionInitError ? (
-          <p className="mt-4 text-center text-sm text-rose-200">לא ניתן לטעון את המשחק - נסה לרענן</p>
+          <p className="mt-4 text-center text-sm text-rose-200">Couldn't load the game — try refreshing</p>
         ) : null}
-        {showBoardLoading ? <p className="mt-6 text-center text-zinc-400">טוען…</p> : null}
+        {showBoardLoading ? <p className="mt-6 text-center text-zinc-400">Loading…</p> : null}
 
         {!showLobbyWait && snapshot ? (
           <>
             <div className="mt-2 flex flex-wrap justify-between gap-2 text-xs text-zinc-400 sm:text-sm">
               <span className="max-w-[48%] truncate font-semibold text-amber-100/90">
-                {seatLabels[0]} · קלפים: {vm.mySeat === 0 ? vm.myHand.length : vm.opponentHandCount}
+                {seatLabels[0]} · tiles: {vm.mySeat === 0 ? vm.myHand.length : vm.opponentHandCount}
               </span>
               <span className="max-w-[48%] truncate font-semibold text-zinc-200">
-                {seatLabels[1]} · קלפים: {vm.mySeat === 1 ? vm.myHand.length : vm.opponentHandCount}
+                {seatLabels[1]} · tiles: {vm.mySeat === 1 ? vm.myHand.length : vm.opponentHandCount}
               </span>
             </div>
 
             <div className="mt-3 rounded-xl border border-amber-900/35 bg-zinc-900/40 p-2">
-              <p className="mb-2 text-center text-[11px] font-semibold text-zinc-500">שרשרת</p>
+              <p className="mb-2 text-center text-[11px] font-semibold text-zinc-500">Chain</p>
               <div className="flex min-h-[3.5rem] flex-wrap items-center justify-center gap-1.5 overflow-x-auto py-1">
                 {vm.chain.length === 0 ? (
-                  <span className="text-sm text-zinc-500">הקלף הראשון יוצב כאן</span>
+                  <span className="text-sm text-zinc-500">The first tile goes here</span>
                 ) : (
                   vm.chain.map((seg) => (
                     <DominoGlyph key={`${seg.tileId}-${seg.leftPip}-${seg.rightPip}`} a={seg.leftPip} b={seg.rightPip} />
@@ -256,7 +256,7 @@ export default function DominoesScreen({ roomId }) {
             </div>
 
             <div className="mx-auto mt-4 w-full max-w-[min(96vw,520px)] space-y-3">
-              <p className="text-center text-xs font-semibold text-zinc-500">היד שלי</p>
+              <p className="text-center text-xs font-semibold text-zinc-500">My hand</p>
               <div className="flex flex-wrap items-end justify-center gap-2">
                 {vm.myHand.map((t) => {
                   const plays = playsForTile(t.id);
@@ -278,14 +278,14 @@ export default function DominoesScreen({ roomId }) {
 
               {sidePickTileId != null && playsForTile(sidePickTileId).length > 1 ? (
                 <div className="flex flex-wrap items-center justify-center gap-2">
-                  <span className="w-full text-center text-xs text-zinc-400">בחר צד לחיבור:</span>
+                  <span className="w-full text-center text-xs text-zinc-400">Choose which end to play:</span>
                   <button
                     type="button"
                     disabled={busy}
                     onClick={() => void onPickSide("left")}
                     className="rounded-lg border border-emerald-500/40 bg-emerald-950/35 px-4 py-2 text-sm font-bold text-emerald-100"
                   >
-                    לקצה שמאל
+                    Left end
                   </button>
                   <button
                     type="button"
@@ -293,7 +293,7 @@ export default function DominoesScreen({ roomId }) {
                     onClick={() => void onPickSide("right")}
                     className="rounded-lg border border-sky-500/40 bg-sky-950/35 px-4 py-2 text-sm font-bold text-sky-100"
                   >
-                    לקצה ימין
+                    Right end
                   </button>
                 </div>
               ) : null}
@@ -306,7 +306,7 @@ export default function DominoesScreen({ roomId }) {
                     onClick={() => void onPassClick()}
                     className="rounded-xl border border-amber-500/45 bg-amber-950/40 px-8 py-3 text-base font-extrabold text-amber-100"
                   >
-                    דילוג (אין מהלך)
+                    Pass (no move)
                   </button>
                 </div>
               ) : null}
@@ -317,24 +317,24 @@ export default function DominoesScreen({ roomId }) {
               {finished ? (
                 <div className="space-y-1">
                   <p className="text-lg font-bold text-amber-200">
-                    {isDraw ? "תיקו (חסימה)" : didIWin ? "ניצחת!" : `הפסדת - ניצח ${seatLabels[vm.winnerSeat ?? -1] ?? ""}`}
+                    {isDraw ? "Draw (blocked)" : didIWin ? "You won!" : `You lost — ${seatLabels[vm.winnerSeat ?? -1] ?? ""} won`}
                   </p>
                   {vm.mySettlementAmount != null ? (
                     <p className="text-sm text-zinc-400">
-                      סיכום מטבעות: {vm.mySettlementAmount}
-                      {vm.prizePoolAmount != null ? ` (סכום סירה: ${vm.prizePoolAmount})` : ""}
+                      Coin settlement: {vm.mySettlementAmount}
+                      {vm.prizePoolAmount != null ? ` (pot: ${vm.prizePoolAmount})` : ""}
                     </p>
                   ) : null}
                 </div>
               ) : (
                 <p className="text-sm text-zinc-400">
                   {busy
-                    ? "שולח…"
+                    ? "Sending…"
                     : vm.canClientAct
                       ? vm.mustPass
-                        ? "אין לך מהלך חוקי - דלג"
-                        : "בחר קלף (או צד אם מוצג)"
-                      : "המתן לתורך"}
+                        ? "No legal move — pass"
+                        : "Pick a tile (or an end if shown)"
+                      : "Wait for your turn"}
                 </p>
               )}
             </div>

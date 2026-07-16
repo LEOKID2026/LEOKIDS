@@ -3300,7 +3300,7 @@ function saveScienceAnswerInParallel({
                               isWrong,
                               revealResults: showResult,
                             })}`}
-                            style={{ direction: "rtl", unicodeBidi: "isolate" }}
+                            style={{ direction: "ltr", unicodeBidi: "isolate" }}
                           >
                             {opt}
                           </button>
@@ -3375,7 +3375,7 @@ function saveScienceAnswerInParallel({
                         <p
                           className={`${learningQuestionText} text-center`}
                           style={{
-                            direction: "rtl",
+                            direction: "ltr",
                             unicodeBidi: "isolate",
                           }}
                         >

@@ -7,7 +7,7 @@ export const SHELF_SIZE_BY_DIFFICULTY = {
   hard: 12,
 };
 
-/** 8 — צבעים בלבד */
+/** 8 — colors only */
 export const COLOR_SHELF = [
   "paint_red",
   "paint_yellow",
@@ -19,7 +19,7 @@ export const COLOR_SHELF = [
   "paint_white",
 ];
 
-/** 8 — בדיקת מגנט (ללא מגנט על המדף) */
+/** 8 — magnet test (no magnet on shelf) */
 export const MAGNET_SHELF_EASY = [
   "nail",
   "metal_spoon",
@@ -31,10 +31,10 @@ export const MAGNET_SHELF_EASY = [
   "paper",
 ];
 
-/** 8 — משקל / חומרים / מגנט */
+/** 8 — weight / materials / magnet */
 export const PHYSICAL_SHELF_EASY = MAGNET_SHELF_EASY;
 
-/** 8 — ציפה / שקיעה */
+/** 8 — float / sink */
 export const FLOAT_SHELF_EASY = [
   "wood",
   "plant",
@@ -46,7 +46,7 @@ export const FLOAT_SHELF_EASY = [
   "key",
 ];
 
-/** 8 — צמח / גינה / טבע */
+/** 8 — plant / garden / nature */
 export const PLANT_SHELF_EASY = [
   "plant",
   "water",
@@ -58,7 +58,7 @@ export const PLANT_SHELF_EASY = [
   "paper",
 ];
 
-/** 8 — אור / צל */
+/** 8 — light / shadow */
 export const LIGHT_SHELF_EASY = [
   "sun",
   "wood",
@@ -70,7 +70,7 @@ export const LIGHT_SHELF_EASY = [
   "nail",
 ];
 
-/** 8 — חום */
+/** 8 — heat */
 export const HEAT_SHELF_EASY = [
   "sun",
   "nail",
@@ -82,7 +82,7 @@ export const HEAT_SHELF_EASY = [
   "water",
 ];
 
-/** 10 — חשמל / הולכה */
+/** 10 — electricity / conduction */
 export const ELECTRIC_SHELF_MEDIUM = [
   "battery",
   "bulb",
@@ -96,7 +96,7 @@ export const ELECTRIC_SHELF_MEDIUM = [
   "key",
 ];
 
-/** 10 — מגנט + כלי בדיקה */
+/** 10 — magnet + test tool */
 export const MAGNET_TOOL_SHELF_MEDIUM = [
   "magnet",
   "nail",
@@ -110,7 +110,7 @@ export const MAGNET_TOOL_SHELF_MEDIUM = [
   "paper",
 ];
 
-/** 10 — לא נמשך למגנט */
+/** 10 — not attracted to magnet */
 export const MAGNET_NON_SHELF_MEDIUM = [
   "plant",
   "water",
@@ -124,7 +124,7 @@ export const MAGNET_NON_SHELF_MEDIUM = [
   "can",
 ];
 
-/** 10 — צמח */
+/** 10 — plant */
 export const PLANT_SHELF_MEDIUM = [
   "plant",
   "water",
@@ -138,7 +138,7 @@ export const PLANT_SHELF_MEDIUM = [
   "ice",
 ];
 
-/** 10 — קרח / שינוי מצב */
+/** 10 — ice / state change */
 export const ICE_STATE_SHELF_MEDIUM = [
   "ice",
   "sun",
@@ -152,7 +152,7 @@ export const ICE_STATE_SHELF_MEDIUM = [
   "nail",
 ];
 
-/** 10 — קרח במים */
+/** 10 — ice in water */
 export const ICE_WATER_SHELF_MEDIUM = [
   "ice",
   "water",
@@ -166,7 +166,7 @@ export const ICE_WATER_SHELF_MEDIUM = [
   "nail",
 ];
 
-/** 10 — קור */
+/** 10 — cold */
 export const COLD_SHELF_MEDIUM = [
   "ice",
   "bowl",
@@ -180,7 +180,7 @@ export const COLD_SHELF_MEDIUM = [
   "nail",
 ];
 
-/** 10 — אור */
+/** 10 — light */
 export const LIGHT_SHELF_MEDIUM = [
   "sun",
   "plant",
@@ -194,7 +194,7 @@ export const LIGHT_SHELF_MEDIUM = [
   "nail",
 ];
 
-/** 10 — מים */
+/** 10 — water */
 export const WATER_SHELF_MEDIUM = [
   "water",
   "bowl",
@@ -208,7 +208,7 @@ export const WATER_SHELF_MEDIUM = [
   "nail",
 ];
 
-/** 10 — טמפרטורה */
+/** 10 — temperature */
 export const TEMP_SHELF_MEDIUM = [
   "ice",
   "sun",
@@ -222,7 +222,7 @@ export const TEMP_SHELF_MEDIUM = [
   "nail",
 ];
 
-/** 10 — השוואת חומרים */
+/** 10 — compare materials */
 export const MATERIALS_COMPARE_SHELF_MEDIUM = [
   "nail",
   "plant",
@@ -236,7 +236,7 @@ export const MATERIALS_COMPARE_SHELF_MEDIUM = [
   "stone",
 ];
 
-/** 12 — חשמל / הולכה */
+/** 12 — electricity / conduction */
 export const ELECTRIC_SHELF_HARD = [
   "battery",
   "bulb",
@@ -252,7 +252,7 @@ export const ELECTRIC_SHELF_HARD = [
   "can",
 ];
 
-/** 12 — מגנט + כלי בדיקה */
+/** 12 — magnet + test tool */
 export const MAGNET_TOOL_SHELF_HARD = [
   "magnet",
   "nail",
@@ -268,7 +268,7 @@ export const MAGNET_TOOL_SHELF_HARD = [
   "bowl",
 ];
 
-/** 12 — לא נמשך למגנט */
+/** 12 — not attracted to magnet */
 export const MAGNET_NON_SHELF_HARD = [
   "plant",
   "water",
@@ -284,7 +284,7 @@ export const MAGNET_NON_SHELF_HARD = [
   "key",
 ];
 
-/** 12 — צמח / גינה / אדמה */
+/** 12 — plant / garden / soil */
 export const PLANT_SHELF_HARD = [
   "plant",
   "soil",
@@ -300,7 +300,7 @@ export const PLANT_SHELF_HARD = [
   "key",
 ];
 
-/** 12 — חום */
+/** 12 — heat */
 export const HEAT_SHELF_HARD = [
   "sun",
   "soil",
@@ -316,7 +316,7 @@ export const HEAT_SHELF_HARD = [
   "metal_spoon",
 ];
 
-/** 12 — ציפה / שקיעה */
+/** 12 — float / sink */
 export const FLOAT_SHELF_HARD = [
   "water",
   "stone",
@@ -332,7 +332,7 @@ export const FLOAT_SHELF_HARD = [
   "key",
 ];
 
-/** 12 — טבע */
+/** 12 — nature */
 export const NATURE_SHELF_HARD = [
   "stone",
   "soil",
@@ -348,7 +348,7 @@ export const NATURE_SHELF_HARD = [
   "key",
 ];
 
-/** 12 — אור / צל */
+/** 12 — light / shadow */
 export const LIGHT_SHELF_HARD = [
   "sun",
   "stone",

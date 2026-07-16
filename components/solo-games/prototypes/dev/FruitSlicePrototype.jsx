@@ -257,8 +257,8 @@ export default function FruitSlicePrototype() {
 
   return (
     <DevPrototypeShell
-      title="חיתוך פירות"
-      subtitle="אבטיפוס · swipe / חיתוך · ללא ניקוד מלא"
+      title="Fruit Slice"
+      subtitle="Prototype · swipe / slice · no full scoring"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-bold text-amber-200">
           {score} · {sliced}✂️
@@ -279,7 +279,7 @@ export default function FruitSlicePrototype() {
           onPointerCancel={onPointerUp}
         />
         <p className="pointer-events-none absolute bottom-4 left-1/2 max-w-[90%] -translate-x-1/2 rounded-lg bg-black/55 px-3 py-1.5 text-center text-[11px] font-semibold text-white/75 sm:text-xs">
-          חתכו פירות · הימנעו מ💣 · עכבר או אצבע
+          Slice fruit · avoid 💣 · mouse or finger
         </p>
       </div>
     </DevPrototypeShell>

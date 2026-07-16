@@ -73,9 +73,9 @@ export function buildGeometryMcqAnswers({
     return geometryIndexLabelAnswers(correctAnswer, labelCount);
   }
 
-  // זיהוי גוף: 4 כפתורים בעברית — תשובה נכונה + 3 מסיחים מתוך 6 הגופים
+  // Solid identification: 4 EN buttons — correct + 3 distractors from the 6 solids
   if (baseKind === "solids") {
-    const allSolids = ["קובייה", "תיבה", "גליל", "פירמידה", "חרוט", "כדור"];
+    const allSolids = ["Cube", "Cuboid", "Cylinder", "Pyramid", "Cone", "Sphere"];
     const ca4 = String(correctAnswer);
     const others = allSolids.filter((n) => n !== ca4);
     shuffleMcqList(others);
@@ -1315,7 +1315,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                   ? "shapes_basic_square_g1_medium"
                   : "shapes_basic_square_g1_hard",
           };
-          correctAnswer = "ריבוע";
+          correctAnswer = "Square";
           const sqW = Math.floor(Math.random() * 3);
           question =
             levelKey === "easy"
@@ -1349,7 +1349,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                   ? "shapes_basic_rect_g1_medium"
                   : "shapes_basic_rect_g1_hard",
           };
-          correctAnswer = "מלבן";
+          correctAnswer = "Rectangle";
           const rectW = Math.floor(Math.random() * 3);
           question =
             levelKey === "easy"
@@ -1384,7 +1384,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
             kind: "shapes_basic_square",
             patternFamily: `shapes_basic_square_${gradeKey}_${levelKey}`,
           };
-          correctAnswer = "ריבוע";
+          correctAnswer = "Square";
           question =
             levelKey === "easy"
               ? [
@@ -1417,7 +1417,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
             kind: "shapes_basic_rectangle",
             patternFamily: `shapes_basic_rect_${gradeKey}_${levelKey}`,
           };
-          correctAnswer = "מלבן";
+          correctAnswer = "Rectangle";
           question =
             levelKey === "easy"
               ? [
@@ -1538,9 +1538,9 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== PARALLEL PERPENDICULAR =====================
     case "parallel_perpendicular": {
-      const types = ["מקבילות", "מאונכות"];
+      const types = ["Parallel", "Perpendicular"];
       const selectedType = types[Math.floor(Math.random() * types.length)];
-      const isParallel = selectedType === "מקבילות";
+      const isParallel = selectedType === "Parallel";
 
       params = {
         type: selectedType,
@@ -1570,7 +1570,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== TRIANGLES =====================
     case "triangles": {
-      const types = ["שווה צלעות", "שווה שוקיים", "שונה צלעות"];
+      const types = ["Equilateral", "Isosceles", "Scalene"];
       const selectedType = types[Math.floor(Math.random() * types.length)];
       const triW = Math.floor(Math.random() * 10); // 10 stem variants
 
@@ -1688,7 +1688,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== QUADRILATERALS =====================
     case "quadrilaterals": {
-      const types = ["ריבוע", "מלבן", "מקבילית", "טרפז"];
+      const types = ["Square", "Rectangle", "Parallelogram", "Trapezoid"];
       const selectedType = types[Math.floor(Math.random() * types.length)];
       const quadW = Math.floor(Math.random() * 10); // 10 stem variants
       const pickQuad = (variants) => variants[quadW % variants.length];
@@ -1780,7 +1780,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     case "transformations": {
       const scenarios = [
         {
-          answer: "הזזה",
+          answer: "Translation",
           subtype: "translation",
           stems: {
             easy: [
@@ -1810,7 +1810,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           },
         },
         {
-          answer: "שיקוף",
+          answer: "Reflection",
           subtype: "reflection",
           stems: {
             easy: [
@@ -1840,7 +1840,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           },
         },
         {
-          answer: "סיבוב",
+          answer: "Rotation",
           subtype: "rotation",
           stems: {
             easy: [
@@ -1870,7 +1870,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           },
         },
         {
-          answer: "ללא תנועה",
+          answer: "No movement",
           subtype: "identity",
           stems: {
             easy: [
@@ -2396,82 +2396,82 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     case "solids": {
       const solidsList = [
         {
-          name: "קובייה", solidKey: "cube", num: 1, faces: 6, vertices: 8, edges: 12,
+          name: "Cube", solidKey: "cube", num: 1, faces: 6, vertices: 8, edges: 12,
           curved: false,
           descs: [
-            "6 פאות ריבועיות שוות",
-            "כל פאותיו ריבועים שווים",
-            "8 קודקודים ו-6 פאות ריבועיות",
-            "כל צלעותיו שוות",
-            "6 פנים ריבועיים שווים",
-            "נראה כמו קוביית משחק",
+            "6 equal square faces",
+            "All faces are equal squares",
+            "8 vertices and 6 square faces",
+            "All edges are equal",
+            "6 equal square faces",
+            "Looks like a dice",
           ],
-          dailyLife: ["קוביית משחק", "קוביית קרח", "קוביית רובי"],
+          dailyLife: ["dice", "ice cube", "Rubik's cube"],
         },
         {
-          name: "תיבה", solidKey: "rectangular_prism", num: 2, faces: 6, vertices: 8, edges: 12,
+          name: "Cuboid", solidKey: "rectangular_prism", num: 2, faces: 6, vertices: 8, edges: 12,
           curved: false,
           descs: [
-            "6 פאות מלבניות",
-            "בסיסים מלבניים ופאות מלבניות",
-            "8 קודקודים ו-6 פאות מלבניות",
-            "אורכו, רוחבו וגובהו שונים",
-            "כמו קופסת קרטון",
-            "שש פאות, לא כולן שוות",
+            "6 rectangular faces",
+            "Rectangular bases and rectangular faces",
+            "8 vertices and 6 rectangular faces",
+            "Length, width, and height can differ",
+            "Like a cardboard box",
+            "Six faces, not all equal",
           ],
-          dailyLife: ["קופסת נעליים", "קופסת קרטון", "לבנה"],
+          dailyLife: ["shoe box", "cardboard box", "brick"],
         },
         {
-          name: "גליל", solidKey: "cylinder", num: 3, faces: 3, vertices: 0, edges: 2,
+          name: "Cylinder", solidKey: "cylinder", num: 3, faces: 3, vertices: 0, edges: 2,
           curved: true,
           descs: [
-            "2 בסיסים עגולים ומעטפת עגולה",
-            "בסיס עגול ומעטפת גלילית",
-            "נראה כמו פחית",
-            "גלגל מוארך מצידיו",
-            "פחית שימורים",
-            "שני עיגולים בראשים",
+            "2 circular bases and a curved side",
+            "Circular base and cylindrical surface",
+            "Looks like a can",
+            "An elongated round shape",
+            "Like a food can",
+            "Two circles at the ends",
           ],
-          dailyLife: ["פחית קולה", "גליל נייר", "בול עץ"],
+          dailyLife: ["soda can", "paper roll", "log"],
         },
         {
-          name: "פירמידה", solidKey: "pyramid", num: 4, faces: 5, vertices: 5, edges: 8,
+          name: "Pyramid", solidKey: "pyramid", num: 4, faces: 5, vertices: 5, edges: 8,
           curved: false,
           descs: [
-            "בסיס מרובע ו-4 פאות משולשות",
-            "בסיס מצולע ופאות משולשות",
-            "קודקוד עליון ובסיס מרובע",
-            "נראה כמו פירמידה במצרים",
-            "5 פאות - בסיס ו-4 משולשים",
-            "פאות משולשות שמתכנסות לנקודה",
+            "Square base and 4 triangular faces",
+            "Polygon base and triangular faces",
+            "Top vertex and square base",
+            "Looks like an Egyptian pyramid",
+            "5 faces — a base and 4 triangles",
+            "Triangular faces meeting at a point",
           ],
-          dailyLife: ["פירמידה מצרית", "אוהל", "גג מחודד"],
+          dailyLife: ["Egyptian pyramid", "tent", "pointed roof"],
         },
         {
-          name: "חרוט", solidKey: "cone", num: 5, faces: 2, vertices: 1, edges: 1,
+          name: "Cone", solidKey: "cone", num: 5, faces: 2, vertices: 1, edges: 1,
           curved: true,
           descs: [
-            "בסיס עגול וקודקוד חד",
-            "בסיס עגול ומעטפת חלקה",
-            "גלידה שאוחזים בה",
-            "בסיס עגול ופסגה מחודדת",
-            "נראה כמו כובע ליצן",
-            "קודקוד אחד ובסיס עגול",
+            "Circular base and a sharp tip",
+            "Circular base and smooth surface",
+            "Like an ice-cream cone",
+            "Circular base and pointed top",
+            "Looks like a party hat",
+            "One vertex and a circular base",
           ],
-          dailyLife: ["גביע גלידה", "כובע קסמים", "חרוט בטיחות"],
+          dailyLife: ["ice-cream cone", "party hat", "traffic cone"],
         },
         {
-          name: "כדור", solidKey: "sphere", num: 6, faces: 1, vertices: 0, edges: 0,
+          name: "Sphere", solidKey: "sphere", num: 6, faces: 1, vertices: 0, edges: 0,
           curved: true,
           descs: [
-            "כל הנקודות במרחק שווה מהמרכז",
-            "עגול בכל הכיוונים",
-            "אין פינות ואין צלעות",
-            "מעטפת עגולה מכל כיוון",
-            "ניתן לגלגל לכל כיוון",
-            "רדיוס שווה מהמרכז לכל נקודה",
+            "All points are the same distance from the center",
+            "Round in every direction",
+            "No corners and no edges",
+            "A round surface from every angle",
+            "Can roll in any direction",
+            "Equal radius from center to every point",
           ],
-          dailyLife: ["כדורגל", "תפוח", "כדור טניס"],
+          dailyLife: ["soccer ball", "apple", "tennis ball"],
         },
       ];
 

@@ -43,7 +43,7 @@ const ENGINE_MAP = {
   "fruit-slice": MleoFruitSliceEngine,
 };
 
-const OFFLINE_FINISH_SUBTITLE = "משחק מקומי - ללא שמירה וללא פרסים";
+const OFFLINE_FINISH_SUBTITLE = "Local game — no saving and no rewards";
 
 const PLAY_SHELL =
   "flex h-dvh max-h-dvh min-h-0 flex-col overflow-hidden bg-gray-950 text-white";
@@ -105,8 +105,8 @@ export default function OfflineSoloGameShell({ gameKey }) {
 
   if (!game || !Engine) {
     return (
-      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="rtl">
-        <p>משחק לא נמצא</p>
+      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
+        <p>Game not found</p>
       </div>
     );
   }
@@ -114,12 +114,12 @@ export default function OfflineSoloGameShell({ gameKey }) {
   return (
     <>
       <Head>
-        <title>{game.titleHe} - משחקים ללא אינטרנט</title>
+        <title>{game.titleHe} - Offline Games</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}
         style={themedShell ? pageBgStyle : undefined}
-        dir="rtl"
+        dir="ltr"
         data-solo-game-shell=""
       >
         <header
@@ -137,7 +137,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
                 : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"
             }
           >
-            רשימה
+            List
           </Link>
           <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>
             {game.titleHe}
@@ -150,7 +150,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
                 : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"
             }
           >
-            אופליין
+            Offline
           </Link>
         </header>
 
@@ -190,7 +190,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
               busy={false}
               subtitleHe={finishData.subtitleHe}
               gamesHubHref={OFFLINE_SOLO_HUB_ROUTE}
-              gamesHubLabel="חזרה לרשימה"
+              gamesHubLabel="Back to List"
             />
           ) : null}
         </main>

@@ -9,7 +9,7 @@ import LudoBoardView from "../../../lib/arcade/ludo/LudoBoardView";
 import LudoSeatStrip from "./LudoSeatStrip";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "לודו";
+const GAME_TITLE = "Ludo";
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -27,7 +27,7 @@ function LudoLeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-rose-950/55 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 sm:max-w-sm sm:text-base"
       >
-        {busy ? "יוצא…" : "עזוב"}
+        {busy ? "Leaving…" : "Leave"}
       </button>
     </div>
   );
@@ -37,17 +37,17 @@ function LudoLeaveRow({ onLeave, disabled = false, busy = false }) {
 function LudoOv2Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header
-      dir="rtl"
+      dir="ltr"
       className="relative z-20 flex w-full shrink-0 items-center gap-1.5 rounded-xl border border-white/[0.14] bg-gradient-to-b from-zinc-700/90 via-zinc-900/95 to-black/90 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_28px_rgba(0,0,0,0.45)] sm:gap-2 sm:px-2.5 sm:py-2"
     >
       <button
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="חזרה"
-        title="חזרה"
+        aria-label="Back"
+        title="Back"
       >
-        <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">חזרה</span>
+        <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">Back</span>
       </button>
 
       <div className="min-w-0 flex-1 px-0.5 text-center">
@@ -59,7 +59,7 @@ function LudoOv2Hud({ onBack, balance, onOpenHelp }) {
       <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <div
           className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-          title="יתרת מטבעות"
+          title="Coin balance"
         >
           <img src="/images/coin.png" alt="" className="h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7" />
           <span className="min-w-0 truncate font-mono text-sm font-bold tabular-nums leading-none text-amber-100 sm:text-base">
@@ -70,8 +70,8 @@ function LudoOv2Hud({ onBack, balance, onOpenHelp }) {
           type="button"
           onClick={onOpenHelp}
           className={HUD_BTN_SQUARE}
-          aria-label="איך משחקים"
-          title="איך משחקים"
+          aria-label="How to play"
+          title="How to play"
         >
           <span className="text-lg leading-none text-white/95">?</span>
         </button>
@@ -90,15 +90,15 @@ function LudoHowToModal({ open, onClose }) {
       aria-modal="true"
       aria-labelledby="ludo-howto-title"
     >
-      <button type="button" className="absolute inset-0 cursor-default" aria-label="סגור" onClick={onClose} />
+      <button type="button" className="absolute inset-0 cursor-default" aria-label="Close" onClick={onClose} />
       <div
-        dir="rtl"
-        className="relative z-[1] max-h-[min(85vh,540px)] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 text-right shadow-2xl sm:p-5"
+        dir="ltr"
+        className="relative z-[1] max-h-[min(85vh,540px)] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 text-left shadow-2xl sm:p-5"
       >
         <div className="mb-3 flex items-start justify-between gap-3 border-b border-white/10 pb-3">
           <div>
             <h2 id="ludo-howto-title" className="text-lg font-bold text-white">
-              איך משחקים
+              How to play
             </h2>
             <p className="mt-0.5 text-xs text-amber-300/90">{GAME_TITLE}</p>
           </div>
@@ -107,14 +107,14 @@ function LudoHowToModal({ open, onClose }) {
             onClick={onClose}
             className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 text-sm text-zinc-200 hover:bg-white/10"
           >
-            סגור
+            Close
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm leading-relaxed text-zinc-200">
-          <li>בתורך - קוביה נזרקת (בממשק OV2 גם נפתחת זריקה אוטומטית עם אנימציה), ואז בוחרים איזה חייל להזיז.</li>
-          <li>רק 6 מוציא כלי מהחצר לשביל.</li>
-          <li>6, אכילה או כניסה לבית מהשביל - לפי חוקי המשחק במנוע - תור נוסף.</li>
-          <li>כלי שמגיע ליעד הבית מסיים; ארבעה כלים בבית - ניצחון.</li>
+          <li>On your turn the dice are rolled (OV2 also auto-opens a roll animation), then pick which piece to move.</li>
+          <li>Only a 6 gets a piece out of the yard onto the path.</li>
+          <li>A 6, a capture, or entering home from the path — per engine rules — grants an extra turn.</li>
+          <li>A piece that reaches home finishes; four pieces home wins.</li>
         </ul>
       </div>
     </div>
@@ -191,9 +191,9 @@ export default function LudoScreen({ roomId }) {
       const si = Number(m?.seat_index);
       if (!Number.isInteger(si) || si < 0 || si > 3) continue;
       const dn = String(m?.display_name ?? "").trim();
-      out[si] = dn || `שחקן ${si + 1}`;
+      out[si] = dn || `Player ${si + 1}`;
     }
-    return out.map((label, i) => label || `מושב ${i + 1}`);
+    return out.map((label, i) => label || `Seat ${i + 1}`);
   }, [players]);
 
   const onDice = useCallback(async () => {
@@ -244,39 +244,39 @@ export default function LudoScreen({ roomId }) {
                 onClick={() => void router.replace("/student/arcade")}
                 className="rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15"
               >
-                חזרה למשחקים
+                Back to games
               </button>
             </div>
           ) : !room ? (
-            <div className="flex min-h-[40vh] flex-col items-center justify-center text-sm text-zinc-400">טוען חדר…</div>
+            <div className="flex min-h-[40vh] flex-col items-center justify-center text-sm text-zinc-400">Loading room…</div>
           ) : showLobbyWait ? (
             <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-hidden px-0.5 sm:gap-1">
               <LudoSeatStrip count={4} labels={seatLabels} activeIndex={null} selfIndex={vm.mySeat} />
               <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-2 text-center text-sm text-zinc-400">
-                <p>ממתין לשחקנים…</p>
-                <p className="mt-2 text-xs text-zinc-500">כשהחדר מתמלא, המשחק ייפתח אוטומטית.</p>
+                <p>Waiting for players…</p>
+                <p className="mt-2 text-xs text-zinc-500">When the room fills, the game opens automatically.</p>
               </div>
             </div>
           ) : showSessionInitError ? (
             <div className="flex min-h-[40vh] flex-col items-center justify-center px-4 text-center text-sm text-red-300">
-              <p className="font-medium">שגיאה: המשחק לא אותחל לחדר הזה</p>
+              <p className="font-medium">Error: this room's game was not initialized</p>
               <button
                 type="button"
                 onClick={goBack}
                 className="mt-4 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15"
               >
-                חזרה
+                Back
               </button>
             </div>
           ) : showBoardLoading ? (
-            <div className="flex min-h-[40vh] items-center justify-center text-sm text-zinc-400">טוען לוח…</div>
+            <div className="flex min-h-[40vh] items-center justify-center text-sm text-zinc-400">Loading board…</div>
           ) : (
             <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-hidden px-0.5 sm:gap-1">
               {err ? (
                 <div className="shrink-0 rounded-md border border-red-500/20 bg-red-950/20 px-2 py-1.5 text-[11px] text-red-200/95">
                   <span>{err}</span>{" "}
                   <button type="button" className="text-red-300 underline" onClick={() => setErr("")}>
-                    סגור
+                    Close
                   </button>
                 </div>
               ) : null}
@@ -307,8 +307,8 @@ export default function LudoScreen({ roomId }) {
 
               {finished ? (
                 <div className="shrink-0 rounded-lg border border-white/10 bg-zinc-900/80 px-3 py-3 text-center">
-                  <p className="text-lg font-bold text-zinc-100">{didIWin ? "ניצחת!" : "הפסדת"}</p>
-                  <p className="mt-1 text-sm text-zinc-400">סיום משחק · ללא פרס מטבעות בארקייד זה</p>
+                  <p className="text-lg font-bold text-zinc-100">{didIWin ? "You won!" : "You lost"}</p>
+                  <p className="mt-1 text-sm text-zinc-400">Game over · no coin prize in this arcade build</p>
                 </div>
               ) : null}
             </div>

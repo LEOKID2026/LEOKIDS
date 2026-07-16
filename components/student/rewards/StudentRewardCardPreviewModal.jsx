@@ -202,7 +202,7 @@ export default function StudentRewardCardPreviewModal({
         cardKey: currentCard.cardKey,
       });
     } catch {
-      setDownloadError("לא הצלחנו להוריד את הקלף. נסו שוב.");
+      setDownloadError("We couldn't download the card. Try again.");
     } finally {
       setDownloadBusy(false);
     }
@@ -238,7 +238,7 @@ export default function StudentRewardCardPreviewModal({
       <div
         className="relative flex flex-col items-center gap-2 sm:gap-3 max-w-full min-w-0 bg-transparent p-0 m-0 touch-pan-y"
         onClick={(event) => event.stopPropagation()}
-        dir="rtl"
+        dir="ltr"
       >
         <div className="flex flex-col items-center max-w-full min-w-0 gap-1.5">
           <div className="flex items-center justify-center gap-1 sm:gap-2 max-w-full min-w-0">
@@ -247,7 +247,7 @@ export default function StudentRewardCardPreviewModal({
               onClick={goPrev}
               disabled={!canPrev}
               className={navBtnClass}
-              aria-label="קלף קודם"
+              aria-label="Previous card"
             >
               ‹
             </button>
@@ -263,14 +263,14 @@ export default function StudentRewardCardPreviewModal({
                 onClick={onClose}
                 className="absolute -top-2 -left-2 z-20 inline-flex items-center justify-center rounded-lg border border-white/20 bg-black/35 text-[#FFE8A3] text-2xl leading-none min-h-11 min-w-11 hover:bg-black/50 transition"
                 style={{ direction: "ltr" }}
-                aria-label="סגור"
+                aria-label="Close"
               >
                 ×
               </button>
               <StudentRewardCardModalImage
                 thumbSrc={thumbSrc}
                 displaySrc={displaySrc}
-                alt={currentCard.nameHe || "תמונת קלף"}
+                alt={currentCard.nameHe || "Card image"}
                 showLocked={showLocked}
                 preBaked={currentCard.imageVariantsReady === true}
               />
@@ -281,7 +281,7 @@ export default function StudentRewardCardPreviewModal({
               onClick={goNext}
               disabled={!canNext}
               className={navBtnClass}
-              aria-label="קלף הבא"
+              aria-label="Next card"
             >
               ›
             </button>
@@ -294,8 +294,8 @@ export default function StudentRewardCardPreviewModal({
             {currentCard.rarityHe || currentCard.seriesNameHe ? (
               <p className={`${SUB_CAPTION_CLASS} truncate`}>
                 {[
-                  currentCard.rarityHe ? `נדירות: ${currentCard.rarityHe}` : null,
-                  currentCard.seriesNameHe ? `סדרה: ${currentCard.seriesNameHe}` : null,
+                  currentCard.rarityHe ? `Rarity: ${currentCard.rarityHe}` : null,
+                  currentCard.seriesNameHe ? `Series: ${currentCard.seriesNameHe}` : null,
                 ]
                   .filter(Boolean)
                   .join(" · ")}
@@ -312,7 +312,7 @@ export default function StudentRewardCardPreviewModal({
               onClick={() => void handleDownload()}
               className={`${T.ctaSecondary} text-sm w-full max-w-xs disabled:opacity-50`}
             >
-              {downloadBusy ? "מוריד..." : "הורד את הקלף שלי"}
+              {downloadBusy ? "Downloading..." : "Download my card"}
             </button>
             {downloadError ? (
               <p className={`text-xs text-center ${SUB_CAPTION_CLASS}`}>{downloadError}</p>

@@ -19,11 +19,11 @@ export default function ArcadeClubShopPanel({
   const { tokens: T } = useStudentTheme();
 
   return (
-    <div className={`${gh.arcadePanelShop || gh.card} space-y-4 text-right min-w-0`} dir="rtl">
+    <div className={`${gh.arcadePanelShop || gh.card} space-y-4 text-left min-w-0`} dir="ltr">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>חנות קלפים</h3>
+        <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>Card shop</h3>
         <Link href="/student/cards" className={gh.btnJoinCode || gh.btnSecondary}>
-          לאוסף שלי
+          My collection
         </Link>
       </div>
       <StudentCardsShopView

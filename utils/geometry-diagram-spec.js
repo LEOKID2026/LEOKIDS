@@ -484,7 +484,7 @@ export function getGeometryDiagramSpec(question, options = {}) {
 
 /**
  * Emphasis drives stroke/fill highlight on the diagram for the current step index.
- * Aligns with typical 4-step flow: נוסחה → הצבה → חישוב → תוצאה.
+ * Aligns with typical 4-step flow: formula → substitution → calculation → result.
  */
 export function getDiagramEmphasisForStep(question, stepIndex, totalSteps) {
   return getDiagramEmphasisFromMetadata(question, stepIndex, totalSteps);
@@ -584,7 +584,7 @@ export function getAssessmentDiagramVisibleValues(spec) {
     const labels = [`${spec.angle1}°`, `${spec.angle2}°`];
     labels.push(spec.hideAngle3 ? "?" : `${spec.angle3}°`);
     if (!spec.hideAngle3) {
-      labels.push("סכום זוויות במשולש = 180°");
+      labels.push("Sum of angles in a triangle = 180°");
     }
     return labels;
   }

@@ -35,11 +35,11 @@ export function buildLeoPizzeriaMetrics(state) {
     completedAllCustomers,
     positiveProgress: successfulCustomers,
     statsLines: [
-      { label: "לקוחות שהגעתם אליהם", value: String(customersReached) },
-      { label: "פיצות שהוגשו נכון", value: String(successfulCustomers) },
-      { label: "טעויות", value: String(mistakes) },
-      { label: "דיוק", value: `${Math.round(accuracy * 100)}%` },
-      { label: "רצף הכי טוב", value: String(bestStreak) },
+      { label: "Customers reached", value: String(customersReached) },
+      { label: "Pizzas served correctly", value: String(successfulCustomers) },
+      { label: "Mistakes", value: String(mistakes) },
+      { label: "Accuracy", value: `${Math.round(accuracy * 100)}%` },
+      { label: "Best streak", value: String(bestStreak) },
     ],
   };
 }

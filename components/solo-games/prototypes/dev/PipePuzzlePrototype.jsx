@@ -136,7 +136,7 @@ export default function PipePuzzlePrototype() {
   const checkWater = () => {
     const result = simulateWater(grid);
     setFlow(result.order.map(([r, c]) => `${r},${c}`));
-    setStatus(result.reachedEnd ? "המים זורמים! 💧" : "אין חיבור מלא - סובבו עוד צינורות");
+    setStatus(result.reachedEnd ? "Water is flowing! 💧" : "No full connection — rotate more pipes");
   };
 
   const resetPuzzle = () => {
@@ -147,21 +147,21 @@ export default function PipePuzzlePrototype() {
 
   return (
     <DevPrototypeShell
-      title="צינורות מים"
-      subtitle="אבטיפוס · לחיצה לסיבוב · בדיקת זרימה"
+      title="Water Pipes"
+      subtitle="Prototype · tap to rotate · check flow"
       headerExtra={
         <button
           type="button"
           onClick={resetPuzzle}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
         >
-          איפוס
+          Reset
         </button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-3 overflow-auto p-3 sm:p-4">
         <p className="text-center text-xs font-semibold text-sky-200 sm:text-sm">
-          🚰 התחלה ↖ · 🏁 סיום ↘ · לחצו על צינור לסיבוב
+          🚰 Start ↖ · 🏁 End ↘ · Tap a pipe to rotate
         </p>
 
         <div
@@ -193,7 +193,7 @@ export default function PipePuzzlePrototype() {
                       : "border-slate-600/60 bg-slate-800/80 hover:bg-slate-700/80"
                   } ${cell.fixed ? "cursor-default" : "cursor-pointer active:scale-95"}`}
                   style={{ touchAction: "manipulation" }}
-                  aria-label={`צינור ${r + 1},${c + 1}`}
+                  aria-label={`Pipe ${r + 1},${c + 1}`}
                 >
                   {isStart ? (
                     <span className="text-lg sm:text-xl">🚰</span>
@@ -224,12 +224,12 @@ export default function PipePuzzlePrototype() {
           onClick={checkWater}
           className="min-h-[48px] rounded-xl bg-sky-500 px-8 py-2.5 text-base font-bold text-white shadow-lg active:scale-[0.98]"
         >
-          בדוק מים 💧
+          Check water 💧
         </button>
 
         {status ? (
           <p
-            className={`text-center text-sm font-bold ${status.includes("זורמים") ? "text-emerald-300" : "text-amber-200"}`}
+            className={`text-center text-sm font-bold ${status.includes("flowing") ? "text-emerald-300" : "text-amber-200"}`}
           >
             {status}
           </p>

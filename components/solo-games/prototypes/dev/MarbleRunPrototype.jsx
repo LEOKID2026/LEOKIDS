@@ -19,10 +19,10 @@ const MASK = {
 };
 
 const PALETTE = [
-  { type: "straight", label: "ישר", emoji: "➖", count: 5 },
-  { type: "corner", label: "פינה", emoji: "↪️", count: 4 },
-  { type: "ramp", label: "ירידה", emoji: "↘️", count: 3 },
-  { type: "goal", label: "יעד", emoji: "🎯", count: 1 },
+  { type: "straight", label: "Straight", emoji: "➖", count: 5 },
+  { type: "corner", label: "Corner", emoji: "↪️", count: 4 },
+  { type: "ramp", label: "Ramp", emoji: "↘️", count: 3 },
+  { type: "goal", label: "Goal", emoji: "🎯", count: 1 },
 ];
 
 /** @typedef {{ type: string, rot: number, id: string } | null} Cell */
@@ -138,7 +138,7 @@ export default function MarbleRunPrototype() {
     if (grid[r][c]) return;
     if ((stock[type] ?? 0) <= 0) return;
     if (type === "goal" && (r !== GOAL.r || c !== GOAL.c)) {
-      setStatus("יעד - רק בתא הסיום 🎯");
+      setStatus("Goal — end cell only 🎯");
       return;
     }
 
@@ -181,7 +181,7 @@ export default function MarbleRunPrototype() {
     setBallPath(result.path);
     setBallStep(0);
     setRunning(true);
-    setStatus(result.reached ? "…הכדור רץ" : "…הכדור נעצר");
+    setStatus(result.reached ? "…ball rolling" : "…ball stopped");
 
     let step = 0;
     const timer = window.setInterval(() => {
@@ -190,7 +190,7 @@ export default function MarbleRunPrototype() {
       if (step >= result.path.length - 1) {
         window.clearInterval(timer);
         setRunning(false);
-        setStatus(result.reached ? "הגעתם ליעד! 🎉" : "אין מסלול מלא - נסו שוב");
+        setStatus(result.reached ? "You reached the goal! 🎉" : "No complete path — try again");
       }
     }, 280);
   }, [grid]);
@@ -209,21 +209,21 @@ export default function MarbleRunPrototype() {
 
   return (
     <DevPrototypeShell
-      title="מסילת כדור"
-      subtitle="אבטיפוס · בחרו חלק · הניחו · הפעילו"
+      title="Marble Run"
+      subtitle="Prototype · pick a piece · place · run"
       headerExtra={
         <button
           type="button"
           onClick={resetBoard}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
         >
-          איפוס
+          Reset
         </button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-2 overflow-auto p-3 sm:gap-3 sm:p-4">
         <p className="text-center text-xs font-semibold text-amber-200 sm:text-sm">
-          🔴 התחלה למעלה · 🎯 יעד למטה · לחיצה על חלק = סיבוב
+          🔴 Start at top · 🎯 Goal at bottom · Tap a piece = rotate
         </p>
 
         <div
@@ -319,13 +319,13 @@ export default function MarbleRunPrototype() {
           disabled={running}
           className="min-h-[48px] rounded-xl bg-amber-500 px-8 py-2.5 text-base font-bold text-slate-900 shadow-lg active:scale-[0.98] disabled:opacity-50"
         >
-          הפעל ⚪
+          Run ⚪
         </button>
 
         {status ? (
           <p
             className={`text-center text-sm font-bold ${
-              status.includes("יעד") ? "text-emerald-300" : "text-amber-200"
+              /goal/i.test(status) ? "text-emerald-300" : "text-amber-200"
             }`}
           >
             {status}

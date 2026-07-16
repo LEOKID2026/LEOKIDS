@@ -103,11 +103,11 @@ export default function MleoPicturePuzzleSlidingPlay({
   return (
     <div className="flex min-h-0 w-full flex-1 flex-col overflow-hidden px-1 pb-1 pt-1">
       <div className="pointer-events-none absolute left-1/2 top-2 z-[80] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-3 py-2 text-center text-[11px] font-bold leading-snug sm:text-sm">
-        <span className="text-amber-300">ניקוד: {won ? computeWinScore(timeLeft, moves) : 0}</span>
+        <span className="text-amber-300">Score: {won ? computeWinScore(timeLeft, moves) : 0}</span>
         {" · "}
-        <span>מהלכים: {moves}</span>
+        <span>Moves: {moves}</span>
         {" · "}
-        <span>{timeLeft} שנ׳</span>
+        <span>{timeLeft} sec</span>
         {" · "}
         <span>{gridSize}×{gridSize}</span>
       </div>
@@ -120,7 +120,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                 isEasy ? "ring-2 ring-sky-400/50" : ""
               }`}
             >
-              <p className="mb-1 text-xs font-bold text-yellow-200 sm:text-sm">תמונת היעד 🐶</p>
+              <p className="mb-1 text-xs font-bold text-yellow-200 sm:text-sm">Target picture 🐶</p>
               <img
                 src={puzzleImage}
                 alt=""
@@ -137,7 +137,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                 className="min-h-[44px] rounded-xl border-2 border-sky-400 bg-sky-950/60 px-4 py-2 text-sm font-bold text-sky-100 disabled:opacity-40"
                 style={{ touchAction: "manipulation" }}
               >
-                💡 רמז - תמונה מלאה
+                💡 Hint — full picture
               </button>
             ) : null}
           </div>
@@ -163,7 +163,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                           ? "border-sky-400 bg-sky-950/50 ring-2 ring-sky-400/40"
                           : "border-white/30 bg-white/8"
                       } ${tileMinClass}`}
-                      aria-label="מקום ריק"
+                      aria-label="Empty space"
                     />
                   );
                 }
@@ -179,7 +179,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                     }`}
                     style={tileBg(tile)}
                     onClick={() => onTryMove(index)}
-                    aria-label={`חלק ${tile + 1}${movable ? " - ניתן להזיז" : ""}`}
+                    aria-label={`Piece ${tile + 1}${movable ? " — movable" : ""}`}
                   />
                 );
               })}
@@ -195,7 +195,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                 alt=""
                 className="mx-auto max-h-[min(50vh,280px)] max-w-[min(85vw,280px)] rounded-xl object-contain ring-4 ring-sky-400"
               />
-              <p className="mt-2 text-sm font-bold text-sky-200">כך צריכה להיראות התמונה!</p>
+              <p className="mt-2 text-sm font-bold text-sky-200">This is how the picture should look!</p>
             </div>
           </div>
         ) : null}

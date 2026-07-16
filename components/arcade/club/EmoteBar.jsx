@@ -69,7 +69,7 @@ export default function EmoteBar({ roomId, emotes = [], className = "" }) {
   if (locked || !roomId) return null;
 
   return (
-    <div className={`relative text-right ${className}`} dir="rtl">
+    <div className={`relative text-left ${className}`} dir="ltr">
       {visibleEmotes.length ? (
         <div className="mb-2 flex flex-wrap gap-2 justify-center">
           {visibleEmotes.slice(-3).map((e, i) => (
@@ -90,12 +90,12 @@ export default function EmoteBar({ roomId, emotes = [], className = "" }) {
         onClick={() => setOpen((v) => !v)}
         className="rounded-full border border-white/20 bg-zinc-800/80 px-3 py-1.5 text-xs font-semibold text-zinc-100 hover:bg-zinc-700"
       >
-        😊 הודעה
+        😊 Message
       </button>
 
       {open ? (
         <div className="absolute bottom-full left-0 right-0 z-30 mb-2 rounded-xl border border-white/15 bg-zinc-900 p-2 shadow-xl">
-          <div className="flex flex-wrap gap-1.5 justify-end">
+          <div className="flex flex-wrap gap-1.5 justify-start">
             {messages.map((m) => (
               <button
                 key={m.id}

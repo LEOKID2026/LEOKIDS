@@ -104,14 +104,14 @@ export function buildComparisonSignWrongAnswerRuns(q) {
   const { a: left, b: right } = coerceComparisonOperands(params.a ?? q?.a, params.b ?? q?.b);
   const sign = getCanonicalComparisonSign(left, right);
   if (left == null || right == null || !sign) {
-    return [proseRun("בדקו איזה מספר גדול יותר ואיזה סימן מתאים ביניהם.")];
+    return [proseRun("Check which number is greater and which sign fits between them.")];
   }
 
   const relation = sign === ">" ? "gt" : sign === "<" ? "lt" : "eq";
   const signInProse = embedComparisonSignInRtlProse(sign);
   return [
     ...buildComparisonConclusionRuns({ left, right, relation }),
-    proseRun(` הסימן הנכון הוא ${signInProse}.`),
+    proseRun(` The correct sign is ${signInProse}.`),
   ];
 }
 

@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const body = typeof req.body === "object" && req.body ? req.body : {};
   const roomId = String(body.roomId || "").trim();
   if (!roomId) {
-    return res.status(400).json({ ok: false, error: "חסר מזהה חדר", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Missing room ID", code: "bad_request" });
   }
 
   const result = await leaveArcadeRoom(auth.supabase, auth.studentId, roomId);

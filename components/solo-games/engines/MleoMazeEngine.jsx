@@ -302,7 +302,7 @@ export default function MleoMazeEngine({
     scoreRef.current += bonus;
     setScore(scoreRef.current);
     setMazesCompleted(mc);
-    flashMsg("מבוך הושלם! 🎉", 900);
+    flashMsg("Maze complete! 🎉", 900);
     loadNextMaze();
   }, [flashMsg, loadNextMaze, sfx]);
 
@@ -330,7 +330,7 @@ export default function MleoMazeEngine({
   const addMistake = useCallback(() => {
     mistakesRef.current += 1;
     setMistakes(mistakesRef.current);
-    flashMsg("יש קיר!");
+    flashMsg("There's a wall!");
     pulseHint(player);
     if (mistakesRef.current >= settings.maxMistakes) {
       endGame(mazesCompletedRef.current >= 1, timeLeftRef.current);
@@ -419,7 +419,7 @@ export default function MleoMazeEngine({
       scoreRef.current += SCORE_KEY;
       setScore(scoreRef.current);
       sfx.playKey();
-      flashMsg("מצאתם מפתח! 🔑", 1000);
+      flashMsg("You found a key! 🔑", 1000);
     }
 
     const starIdx = stars.findIndex((s) => !s.taken && s.r === nr && s.c === nc);
@@ -441,12 +441,12 @@ export default function MleoMazeEngine({
       setScore(scoreRef.current);
       setBonusDiamond(null);
       sfx.playDiamond();
-      flashMsg("יהלום! +50 💎", 1000);
+      flashMsg("Diamond! +50 💎", 1000);
     }
 
     if (nr === exit.r && nc === exit.c) {
       if (!hasKeyRef.current) {
-        flashMsg("צריך למצוא את המפתח קודם!");
+        flashMsg("Find the key first!");
         return;
       }
       completeMaze();
@@ -519,26 +519,26 @@ export default function MleoMazeEngine({
     <div
       id="game-wrapper"
       className="relative isolate flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       {showIntro ? (
         <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-4 text-center">
           <img src={IMG_LEO} alt="" className="h-20 w-20 object-contain drop-shadow-lg" />
-          <h2 className="text-xl font-extrabold text-yellow-300">מרוץ מבוכים - ליאו</h2>
+          <h2 className="text-xl font-extrabold text-yellow-300">Leo's Maze Race</h2>
           <p className="max-w-sm text-sm font-semibold text-lime-100">
-            פתרו כמה שיותר מבוכים לפני שנגמר הזמן!
+            Solve as many mazes as you can before time runs out!
           </p>
           <ul className="max-w-sm space-y-1 text-sm text-gray-300">
-            <li>🔑 מצאו מפתח → 🚪 הגיעו לשער</li>
-            <li>⭐ +20 · 💎 +50 · מבוך +100</li>
-            <li>כל מבוך חדש - אספו ורוצו הלאה!</li>
+            <li>🔑 Find a key → 🚪 Reach the gate</li>
+            <li>⭐ +20 · 💎 +50 · Maze +100</li>
+            <li>Each new maze — collect and race on!</li>
           </ul>
           <button
             type="button"
             onClick={startGame}
             className="min-h-[48px] rounded-xl bg-yellow-400 px-8 py-3 text-base font-bold text-black"
           >
-            התחל משחק
+            Start Game
           </button>
         </div>
       ) : (
@@ -554,14 +554,14 @@ export default function MleoMazeEngine({
 
           <div className="pointer-events-none absolute left-1/2 top-1.5 z-[80] w-[98vw] max-w-lg -translate-x-1/2 rounded-xl border border-yellow-400/30 bg-black/70 px-2 py-2 text-center text-xs font-bold leading-relaxed sm:text-sm md:top-0">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
-              <span className="text-amber-300">ניקוד: {score}</span>
-              <span>⏱ {timeLeft} שנ׳</span>
-              <span className="text-emerald-300">מבוכים: {mazesCompleted}</span>
+              <span className="text-amber-300">Score: {score}</span>
+              <span>⏱ {timeLeft} sec</span>
+              <span className="text-emerald-300">Mazes: {mazesCompleted}</span>
             </div>
             <div className="mt-0.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-[11px] sm:text-xs">
-              <span>{hasKey ? "🔑 יש מפתח!" : "🔑 אין מפתח"}</span>
+              <span>{hasKey ? "🔑 Got the key!" : "🔑 No key"}</span>
               <span>⭐ {starsTaken}</span>
-              <span>טעויות: {mistakes}/{settings.maxMistakes}</span>
+              <span>Misses: {mistakes}/{settings.maxMistakes}</span>
               {bonusDiamond?.active ? (
                 <span className="animate-pulse text-cyan-300">💎 {bonusDiamond.secondsLeft}s</span>
               ) : null}
@@ -569,9 +569,9 @@ export default function MleoMazeEngine({
           </div>
 
           <p className="pointer-events-none absolute left-1/2 top-[5.25rem] z-[80] max-w-[95vw] -translate-x-1/2 px-2 text-center text-[11px] font-semibold leading-snug text-lime-200 sm:top-[4.4rem] sm:text-xs md:top-[3.25rem]">
-            🎯 {hasKey ? "הגיעו לשער!" : "מצאו את המפתח!"}
-            {isEasy ? ` כיוון: ${goalArrow()}` : ""}
-            {mazeId ? ` · מבוך #${mazeId}` : ""}
+            🎯 {hasKey ? "Reach the gate!" : "Find the key!"}
+            {isEasy ? ` Direction: ${goalArrow()}` : ""}
+            {mazeId ? ` · Maze #${mazeId}` : ""}
           </p>
 
           <div className="relative z-0 mx-auto mt-16 flex h-full min-h-0 w-full max-w-[1180px] flex-1 flex-col overflow-hidden rounded-lg border-4 border-yellow-400 bg-gradient-to-b from-emerald-950/80 to-slate-950 shadow-lg sm:mt-[4.25rem] md:mt-9 md:max-w-[min(92vw,1360px)] lg:max-w-[min(94vw,1480px)]">
@@ -584,7 +584,7 @@ export default function MleoMazeEngine({
 
               {diamondBanner ? (
                 <div className="pointer-events-none absolute left-1/2 top-12 z-30 -translate-x-1/2 animate-pulse rounded-xl border border-cyan-300/60 bg-cyan-950/90 px-4 py-2 text-sm font-extrabold text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.45)]">
-                  יהלום הופיע! 💎
+                  A diamond appeared! 💎
                 </div>
               ) : null}
 
@@ -690,7 +690,7 @@ export default function MleoMazeEngine({
                             <div className="flex flex-col items-center">
                               <span className="text-lg sm:text-xl">{hasKey ? "🚪" : "🔒"}</span>
                               <span className="text-[7px] font-extrabold text-amber-100 sm:text-[8px]">
-                                {hasKey ? "שער" : "נעול"}
+                                {hasKey ? "Gate" : "Locked"}
                               </span>
                             </div>
                           ) : null}
@@ -726,7 +726,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(-1, 0)}
-                  aria-label="למעלה"
+                  aria-label="Up"
                 >
                   ↑
                 </button>
@@ -736,7 +736,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(0, -1)}
-                  aria-label="שמאלה"
+                  aria-label="Left"
                 >
                   ←
                 </button>
@@ -745,7 +745,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(1, 0)}
-                  aria-label="למטה"
+                  aria-label="Down"
                 >
                   ↓
                 </button>
@@ -754,7 +754,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(0, 1)}
-                  aria-label="ימינה"
+                  aria-label="Right"
                 >
                   →
                 </button>

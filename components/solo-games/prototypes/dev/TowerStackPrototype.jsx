@@ -118,17 +118,17 @@ export default function TowerStackPrototype() {
 
   return (
     <DevPrototypeShell
-      title="מגדל קוביות"
-      subtitle="אבטיפוס · לחיצה להנחה · דיוק = מגדל גבוה"
+      title="Block Tower"
+      subtitle="Prototype · tap to place · precision = taller tower"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-bold text-amber-200">
-          {score} קומות
+          {score} floors
         </span>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-3 p-3 sm:p-4">
         <p className="text-center text-xs font-semibold text-sky-200 sm:text-sm">
-          לחצו כשהקובייה מעל המגדל · חפיפה קטנה = קובייה צרה יותר
+          Tap when the block is over the tower · small overlap = narrower block
         </p>
 
         <div
@@ -145,7 +145,7 @@ export default function TowerStackPrototype() {
           }}
           role="button"
           tabIndex={0}
-          aria-label="הניחו קובייה"
+          aria-label="Place block"
         >
           {!gameOver ? (
             <div
@@ -184,9 +184,9 @@ export default function TowerStackPrototype() {
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/55">
               <p className="text-xl font-extrabold text-rose-300">Game Over</p>
               <p className="mt-1 text-sm font-semibold text-white/80">
-                {flash === "tiny" ? "הקובייה קטנה מדי" : "פספסתם - אין חפיפה"}
+                {flash === "tiny" ? "Block too small" : "Missed — no overlap"}
               </p>
-              <p className="mt-2 text-xs text-white/60">לחצו לשחק שוב</p>
+              <p className="mt-2 text-xs text-white/60">Tap to play again</p>
             </div>
           ) : null}
         </div>
@@ -196,7 +196,7 @@ export default function TowerStackPrototype() {
           onClick={placeBlock}
           className="min-h-[48px] rounded-xl bg-sky-500 px-8 py-2.5 text-base font-bold text-white shadow-lg active:scale-[0.98]"
         >
-          {gameOver ? "שחק שוב" : "הניחו 👆"}
+          {gameOver ? "Play Again" : "Place 👆"}
         </button>
 
         <button
@@ -204,7 +204,7 @@ export default function TowerStackPrototype() {
           onClick={reset}
           className="rounded-lg border border-white/25 px-3 py-1.5 text-xs font-bold text-white/75"
         >
-          איפוס
+          Reset
         </button>
       </div>
     </DevPrototypeShell>

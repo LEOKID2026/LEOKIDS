@@ -150,21 +150,21 @@ export default function TrafficJamPrototype() {
 
   return (
     <DevPrototypeShell
-      title="פקק תנועה"
-      subtitle="אבטיפוס · גררו רכבים בכיוון שלהם · הוציאו את האדום"
+      title="Traffic Jam"
+      subtitle="Prototype · drag cars along their axis · free the red one"
       headerExtra={
         <button
           type="button"
           onClick={reset}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
         >
-          איפוס
+          Reset
         </button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-3 overflow-auto p-3 sm:p-4">
         <p className="text-center text-xs font-semibold text-rose-200 sm:text-sm">
-          🚗 האדום צריך לצאת דרך היציאה → · גררו רק לאורך הרכב
+          🚗 Red car must exit through → · drag only along the car
         </p>
 
         <div className="relative w-full max-w-[min(100%,420px)]">
@@ -228,7 +228,7 @@ export default function TrafficJamPrototype() {
                     backgroundColor: car.color,
                     touchAction: "none",
                   }}
-                  aria-label={car.target ? "רכב מטרה" : "רכב"}
+                  aria-label={car.target ? "Target car" : "Car"}
                 >
                   <span className="flex h-full items-center justify-center text-lg sm:text-xl">
                     {car.target ? "🚗" : "🚙"}
@@ -240,10 +240,10 @@ export default function TrafficJamPrototype() {
         </div>
 
         {won ? (
-          <p className="text-center text-base font-bold text-emerald-300">יצאתם! הרכב האדום בחוץ 🎉</p>
+          <p className="text-center text-base font-bold text-emerald-300">You did it! Red car is out 🎉</p>
         ) : (
           <p className="text-center text-xs font-semibold text-white/55">
-            תאים תפוסים: {occupancy.flat().filter(Boolean).length} · שלב אחד לבדיקה
+            Occupied cells: {occupancy.flat().filter(Boolean).length} · one stage for testing
           </p>
         )}
       </div>

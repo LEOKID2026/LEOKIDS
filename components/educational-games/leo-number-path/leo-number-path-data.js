@@ -24,9 +24,9 @@ import {
 export { TASKS_PER_SESSION };
 
 export const DIFFICULTIES = {
-  easy: { id: "easy", label: "קל", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.easy },
-  medium: { id: "medium", label: "בינוני", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.medium },
-  hard: { id: "hard", label: "קשה", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.hard },
+  easy: { id: "easy", label: "Easy", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.easy },
+  medium: { id: "medium", label: "Medium", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.medium },
+  hard: { id: "hard", label: "Hard", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.hard },
 };
 
 export const SCORE = {
@@ -112,8 +112,8 @@ function buildParityTask(difficulty, cfg, guard) {
     correctPath: correct.sort((a, b) => a - b),
     orderMatters: false,
     promptHe: isEven
-      ? "בחרו את כל המספרים הזוגיים על המסלול"
-      : "בחרו את כל המספרים האי-זוגיים על המסלול",
+      ? "Choose all the even numbers on the path"
+      : "Choose all the odd numbers on the path",
   };
 }
 
@@ -143,7 +143,7 @@ function buildSkipTask(difficulty, cfg, guard) {
     numbers,
     correctPath: correct,
     orderMatters: true,
-    promptHe: `בחרו לפי הסדר: ${correct.slice(0, 4).join(" → ")}${correct.length > 4 ? "…" : ""}`,
+    promptHe: `Choose in order: ${correct.slice(0, 4).join(" → ")}${correct.length > 4 ? "…" : ""}`,
   };
 }
 
@@ -176,7 +176,7 @@ function buildMultiplesTask(difficulty, cfg, guard) {
     numbers,
     correctPath: correctOnBoard,
     orderMatters: false,
-    promptHe: `בחרו את כל הכפולות של ${multiple} על המסלול`,
+    promptHe: `Choose all multiples of ${multiple} on the path`,
   };
 }
 
@@ -206,7 +206,7 @@ function buildSequenceTask(difficulty, cfg, guard) {
     numbers: numbersSeq,
     correctPath: correctSeq,
     orderMatters: true,
-    promptHe: `המשיכו לפי הסדר: ${correctSeq.slice(0, 3).join(" → ")} → ?`,
+    promptHe: `Continue the sequence: ${correctSeq.slice(0, 3).join(" → ")} → ?`,
   };
 }
 
@@ -266,7 +266,7 @@ export function validatePath(task, selected) {
 
 /** @param {boolean} ok */
 export function pathFeedback(ok) {
-  return ok ? "מעולה! בחרתם מסלול נכון." : "כמעט! בדקו את הקפיצות בין המספרים.";
+  return ok ? "Great! You picked the right path." : "Almost! Check the jumps between the numbers.";
 }
 
 /** @param {number[]} selected @param {boolean} orderMatters */

@@ -297,7 +297,7 @@ export default function MleoSmartBlocksEngine({
     <div
       id="game-wrapper"
       className="relative isolate flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 text-white select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       {showFullscreenButton ? (
         <div className="pointer-events-auto absolute right-2 top-2 z-[70]">

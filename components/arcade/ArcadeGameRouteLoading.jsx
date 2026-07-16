@@ -5,7 +5,7 @@ import StudentLoadingPanel from "../ui/StudentLoadingPanel.jsx";
  * Full-page loading shell for arcade game routes (router.isReady gate).
  * @param {{ title?: string, message?: string }} props
  */
-export default function ArcadeGameRouteLoading({ title = "ארקייד", message = "טוען…" }) {
+export default function ArcadeGameRouteLoading({ title = "Arcade", message = "Loading…" }) {
   return (
     <>
       <Head>

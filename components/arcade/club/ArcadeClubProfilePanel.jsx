@@ -49,7 +49,7 @@ export default function ArcadeClubProfilePanel({ gh }) {
         body: JSON.stringify({ displayName }),
       });
       const json = await res.json().catch(() => ({}));
-      setMessage(json.ok ? "שם תצוגה עודכן" : json.error || "שגיאה");
+      setMessage(json.ok ? "Display name updated" : json.error || "Error");
       if (json.ok) await load();
     } finally {
       setBusy(false);
@@ -61,8 +61,8 @@ export default function ArcadeClubProfilePanel({ gh }) {
   }
 
   return (
-    <div className={`${gh.arcadePanelProfile || gh.card} space-y-4 text-right`} dir="rtl">
-      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>כרטיס שחקן</h3>
+    <div className={`${gh.arcadePanelProfile || gh.card} space-y-4 text-left`} dir="ltr">
+      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>Player card</h3>
 
       <div className="flex items-start gap-3">
         <div className="flex shrink-0 flex-col items-center gap-1">
@@ -73,24 +73,24 @@ export default function ArcadeClubProfilePanel({ gh }) {
             sizeClass="h-14 w-14 text-2xl"
           />
           <Link href="/student/home" className={`text-[11px] font-semibold underline ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-            שנה תמונה בדף הבית
+            Change photo on the home page
           </Link>
         </div>
-        <div className="min-w-0 flex-1 text-right">
+        <div className="min-w-0 flex-1 text-left">
           <p className={`text-lg font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{profile.displayName}</p>
           {profile.fullName ? (
-            <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>שם רשמי (הורה): {profile.fullName}</p>
+            <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Official name (parent): {profile.fullName}</p>
           ) : null}
           <p className={`mt-1 text-sm ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-            ניצחונות: {profile.totalWins} · משחקים: {profile.totalGames}
+            Wins: {profile.totalWins} · Games: {profile.totalGames}
           </p>
         </div>
       </div>
 
       <div className="space-y-2 border-t border-emerald-200/80 pt-4">
-        <label className={`block text-sm font-semibold ${gh.arcadeEntryLabel || gh.entryLabel}`}>שם משחק:</label>
+        <label className={`block text-sm font-semibold ${gh.arcadeEntryLabel || gh.entryLabel}`}>Game name:</label>
         <p className={`text-[11px] ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-          שם תצוגה למשחקים בלבד - לא משנה את השם הרשמי או מספר ליאו.
+          Display name for games only — doesn't change your official name or Leo number.
         </p>
         <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-stretch">
           <input
@@ -98,7 +98,7 @@ export default function ArcadeClubProfilePanel({ gh }) {
             maxLength={20}
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
-            placeholder="שם תצוגה"
+            placeholder="Display name"
           />
           <button
             type="button"
@@ -106,23 +106,23 @@ export default function ArcadeClubProfilePanel({ gh }) {
             onClick={() => void saveName()}
             className={`${gh.btnJoinCode} w-full sm:w-auto sm:shrink-0`}
           >
-            שמור שם
+            Save name
           </button>
         </div>
         {message ? <p className={`text-sm ${gh.userMessage}`}>{message}</p> : null}
       </div>
 
       <div className="border-t border-emerald-200/80 pt-4">
-        <h4 className={`mb-2 font-semibold ${gh.arcadeSectionTitle || gh.sectionTitle}`}>היסטוריה אחרונה</h4>
+        <h4 className={`mb-2 font-semibold ${gh.arcadeSectionTitle || gh.sectionTitle}`}>Recent history</h4>
         {!history.length ? (
-          <p className={gh.arcadeEmptyText || gh.emptyText}>אין משחקים עדיין</p>
+          <p className={gh.arcadeEmptyText || gh.emptyText}>No games yet</p>
         ) : (
           <ul className="space-y-2">
             {history.map((h) => (
               <li key={h.id} className={gh.arcadeRoomItem || gh.roomItem}>
-                <span>{h.gameKey || "משחק"} · </span>
+                <span>{h.gameKey || "Game"} · </span>
                 <span>{h.resultType || "-"} · </span>
-                <span>+{h.rewardAmount || 0} מטבעות</span>
+                <span>+{h.rewardAmount || 0} coins</span>
               </li>
             ))}
           </ul>

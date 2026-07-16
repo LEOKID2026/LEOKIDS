@@ -72,7 +72,7 @@ export default function RhythmPrototype() {
 
     if (!best || Math.abs(bestDelta) > HIT_WINDOW + 80) {
       setStats((s) => ({ ...s, miss: s.miss + 1 }));
-      showFeedback("❌ פספוס");
+      showFeedback("❌ Miss");
       return;
     }
 
@@ -82,13 +82,13 @@ export default function RhythmPrototype() {
 
     if (Math.abs(bestDelta) <= HIT_WINDOW * 0.35) {
       setStats((s) => ({ ...s, perfect: s.perfect + 1 }));
-      showFeedback("🎯 מדויק!");
+      showFeedback("🎯 Perfect!");
     } else if (bestDelta < 0) {
       setStats((s) => ({ ...s, early: s.early + 1 }));
-      showFeedback("⏪ מוקדם");
+      showFeedback("⏪ Early");
     } else {
       setStats((s) => ({ ...s, late: s.late + 1 }));
-      showFeedback("⏩ מאוחר");
+      showFeedback("⏩ Late");
     }
   };
 
@@ -99,8 +99,8 @@ export default function RhythmPrototype() {
 
   return (
     <DevPrototypeShell
-      title="משחק קצב"
-      subtitle="אבטיפוס · לחצו כשהסימן מגיע לקו"
+      title="Rhythm Game"
+      subtitle="Prototype · tap when the mark hits the line"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-[10px] font-bold text-amber-200">
           🎯{stats.perfect}
@@ -109,7 +109,7 @@ export default function RhythmPrototype() {
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-2 p-3 sm:p-4">
         <p className="text-center text-xs font-semibold text-violet-200 sm:text-sm">
-          3 מסלולים · BPM {BPM} · לחצו בקו הצהוב
+          3 lanes · BPM {BPM} · tap on the yellow line
         </p>
 
         <div
@@ -161,7 +161,7 @@ export default function RhythmPrototype() {
           <p className="text-center text-lg font-extrabold text-white">{feedback}</p>
         ) : (
           <p className="text-center text-xs text-white/50">
-            מדויק {stats.perfect} · מוקדם {stats.early} · מאוחר {stats.late} · פספוס {stats.miss}
+            Perfect {stats.perfect} · Early {stats.early} · Late {stats.late} · Miss {stats.miss}
           </p>
         )}
       </div>

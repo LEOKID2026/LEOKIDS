@@ -43,19 +43,19 @@ import {
   isLowerGradeG1G2Key,
 } from "./lower-grade-practice-runtime-quality.js";
 export const ENGLISH_LEVELS = {
-  easy: { name: "קל", maxWords: 5, complexity: "basic" },
-  medium: { name: "בינוני", maxWords: 10, complexity: "intermediate" },
-  hard: { name: "קשה", maxWords: 15, complexity: "advanced" },
+  easy: { name: "Easy", maxWords: 5, complexity: "basic" },
+  medium: { name: "Medium", maxWords: 10, complexity: "intermediate" },
+  hard: { name: "Hard", maxWords: 15, complexity: "advanced" },
 };
 
 export const ENGLISH_TOPICS = {
-  phonics: { name: "פוניקה", description: "Phonics foundation", icon: "🔤" },
-  vocabulary: { name: "אוצר מילים", description: "Vocabulary practice", icon: "📚" },
-  grammar: { name: "דקדוק", description: "Grammar focus", icon: "✏️" },
-  translation: { name: "תרגום", description: "Sentence translation", icon: "🌐" },
-  sentences: { name: "משפטים", description: "Sentence building", icon: "💬" },
-  writing: { name: "כתיבה", description: "Free typing practice", icon: "✍️" },
-  mixed: { name: "ערבוב", description: "Blend topics", icon: "🎲" },
+  phonics: { name: "Phonics", description: "Phonics foundation", icon: "🔤" },
+  vocabulary: { name: "Vocabulary", description: "Vocabulary practice", icon: "📚" },
+  grammar: { name: "Grammar", description: "Grammar focus", icon: "✏️" },
+  translation: { name: "Translation", description: "Sentence translation", icon: "🌐" },
+  sentences: { name: "Sentences", description: "Sentence building", icon: "💬" },
+  writing: { name: "Writing", description: "Free typing practice", icon: "✍️" },
+  mixed: { name: "Mixed", description: "Blend topics", icon: "🎲" },
 };
 
 const GRADES = ENGLISH_GRADES;
@@ -73,24 +73,24 @@ const GRADE_FACTORS = {
 
 
 const WRITING_SENTENCES_BASIC = [
-  { en: "Good morning", he: "בוקר טוב" },
-  { en: "Good night", he: "לילה טוב" },
-  { en: "I love my dog", he: "אני אוהב את הכלב שלי" },
-  { en: "I am happy", he: "אני שמח" },
+  { en: "Good morning", he: "a greeting used in the morning" },
+  { en: "Good night", he: "a greeting used at night" },
+  { en: "I love my dog", he: "say that you love your dog" },
+  { en: "I am happy", he: "say that you are happy" },
 ];
 
 const WRITING_SENTENCES_ADVANCED = [
-  { en: "I will visit my grandparents tomorrow", he: "אני אבקר את סבא וסבתא מחר" },
-  { en: "We are going to start a science project", he: "אנחנו הולכים להתחיל פרויקט מדעים" },
-  { en: "If it rains, we will stay at home", he: "אם ירד גשם, נישאר בבית" },
-  { en: "I have already finished my homework", he: "כבר סיימתי את שיעורי הבית שלי" },
+  { en: "I will visit my grandparents tomorrow", he: "say you will visit your grandparents tomorrow" },
+  { en: "We are going to start a science project", he: "say you are going to start a science project" },
+  { en: "If it rains, we will stay at home", he: "say if it rains you will stay at home" },
+  { en: "I have already finished my homework", he: "say you have already finished your homework" },
 ];
 
 const WRITING_SENTENCES_MASTER = [
-  { en: "We should protect the forest to keep animals safe", he: "אנחנו צריכים להגן על היער כדי לשמור על החיות" },
-  { en: "By working together, we can solve difficult problems", he: "בעבודה משותפת נוכל לפתור בעיות קשות" },
-  { en: "I have never forgotten the trip to the science park", he: "מעולם לא שכחתי את הטיול לפארק המדע" },
-  { en: "If we recycle plastic, the beach stays beautiful", he: "אם נמחזר פלסטיק, החוף יישאר יפה" },
+  { en: "We should protect the forest to keep animals safe", he: "say we should protect the forest to keep animals safe" },
+  { en: "By working together, we can solve difficult problems", he: "say that by working together we can solve difficult problems" },
+  { en: "I have never forgotten the trip to the science park", he: "say you have never forgotten the trip to the science park" },
+  { en: "If we recycle plastic, the beach stays beautiful", he: "say if we recycle plastic the beach stays beautiful" },
 ];
 
 const DEFAULT_GRADE_PROFILE = {
@@ -346,7 +346,7 @@ export function generateQuestion(
     params = {};
   /** @type {Record<string, unknown>|null} */
   let englishSourceRow = null;
-  let qType = "choice"; // ייקבע אחרי הבנייה לפי כללים דטרמיניסטיים
+  let qType = "choice"; // set after building, using deterministic rules
   const buildAcceptedAnswers = (baseAnswer) => {
     const normalizeQuotes = (value) =>
       String(value ?? "")
@@ -402,7 +402,7 @@ export function generateQuestion(
   const randomWord =
     wordEntries[Math.floor(Math.random() * wordEntries.length)] || [
       "sun",
-      "שמש",
+      "the sun",
     ];
 
   switch (selectedTopic) {
@@ -413,7 +413,7 @@ export function generateQuestion(
         vocabDirections[Math.floor(Math.random() * vocabDirections.length)];
       const directionIsEnglish = directionKey === "en_to_he";
       if (directionIsEnglish) {
-        question = `מה פירוש המילה "${randomWord[0]}"\u200F?`;
+        question = `What does "${randomWord[0]}" mean?`;
         correctAnswer = randomWord[1];
         params = {
           word: randomWord[0],
@@ -423,7 +423,7 @@ export function generateQuestion(
           patternFamily: "vocab_translation",
         };
       } else {
-        question = `כתוב את המילה "${randomWord[1]}"\u200F באנגלית`;
+        question = `Write the English word for "${randomWord[1]}"`;
         correctAnswer = randomWord[0];
         params = {
           word: randomWord[1],
@@ -506,11 +506,11 @@ export function generateQuestion(
           console.warn("[english] no grammar item after gating", gradeKey);
         }
         question =
-          "אין כרגע שאלת דקדוק מתאימה לכיתה הזו. נסו רמה אחרת או חזרו לתפריט.";
-        correctAnswer = "הבנתי";
+          "No grammar question is available for this grade. Try another level or return to the menu.";
+        correctAnswer = "Got it";
         params = {
           patternFamily: "english_empty_pool",
-          grammarOptionSet: ["הבנתי", "אנסה שוב", "אחזור לתפריט", "בחרו נושא אחר"],
+          grammarOptionSet: ["Got it", "Try again", "Back to menu", "Choose another topic"],
         };
         break;
       }
@@ -583,8 +583,8 @@ export function generateQuestion(
           console.warn("[english] translation pool still empty", gradeKey);
         }
         question =
-          "אין כרגע משפטי תרגום מתאימים לכיתה. נסו נושא אחר או רמה אחרת.";
-        correctAnswer = "הבנתי";
+          "No translation sentences are available for this grade. Try another topic or level.";
+        correctAnswer = "Got it";
         params = {
           patternFamily: "english_empty_pool",
           direction: "en_to_he",
@@ -603,7 +603,7 @@ export function generateQuestion(
           ? "translation_clause"
           : "translation_production");
       if (direction === "en_to_he") {
-        question = `תרגם: "${sentence.en}"`;
+        question = `Translate: "${sentence.en}"`;
         correctAnswer = sentence.he;
         params = mergeDiagnosticContractIntoParams(
           {
@@ -617,7 +617,7 @@ export function generateQuestion(
           sentence
         );
       } else {
-        question = `תרגם: "${sentence.he}"`;
+        question = `Translate: "${sentence.he}"`;
         correctAnswer = sentence.en;
         params = mergeDiagnosticContractIntoParams(
           {
@@ -677,16 +677,16 @@ export function generateQuestion(
           console.warn("[english] sentence pool still empty", gradeKey);
         }
         question =
-          "אין כרגע תבניות משפט מתאימות לכיתה. נסו נושא אחר או רמה אחרת.";
-        correctAnswer = "הבנתי";
+          "No sentence templates are available for this grade. Try another topic or level.";
+        correctAnswer = "Got it";
         params = {
           patternFamily: "english_empty_pool",
-          sentenceOptionSet: ["הבנתי", "אנסה שוב", "אחזור לתפריט", "נושא אחר"],
+          sentenceOptionSet: ["Got it", "Try again", "Back to menu", "Another topic"],
         };
         break;
       }
       englishSourceRow = template;
-      question = `השלם את המשפט: "${template.template}"`;
+      question = `Complete the sentence: "${template.template}"`;
       correctAnswer = template.correct;
       params = mergeDiagnosticContractIntoParams(
         {
@@ -719,7 +719,7 @@ export function generateQuestion(
       const mode = modes[Math.floor(Math.random() * modes.length)] || "word";
       if (mode === "word") {
         const [en, he] = randomWord;
-        question = `כתוב באנגלית: "${he}"`;
+        question = `Write in English: "${he}"`;
         correctAnswer = en;
         params = {
           type: "word",
@@ -743,7 +743,7 @@ export function generateQuestion(
           if (gated.length) pickPool = gated;
         }
         const s = pickPool[Math.floor(Math.random() * pickPool.length)];
-        question = `כתוב באנגלית: "${s.he}"`;
+        question = `Write in English: "${s.he}"`;
         correctAnswer = s.en;
         params = {
           type: "sentence",
@@ -773,11 +773,11 @@ export function generateQuestion(
           console.warn("[english] phonics pool empty after runtime gating", gradeKey, phonicsForceKind);
         }
         question =
-          "אין כרגע תרגיל פוניקה מתאים לכיתה הזו. נסו עמוד אחר או חזרו לתפריט.";
-        correctAnswer = "הבנתי";
+          "No phonics exercise is available for this grade. Try another page or return to the menu.";
+        correctAnswer = "Got it";
         params = {
           patternFamily: "english_empty_pool",
-          phonicsOptionSet: ["הבנתי", "אנסה שוב", "אחזור לתפריט", "בחרו נושא אחר"],
+          phonicsOptionSet: ["Got it", "Try again", "Back to menu", "Choose another topic"],
           promotionEligible: false,
           diagnosticContribution: "manual_only",
           topic: "phonics",
@@ -927,7 +927,7 @@ export function generateQuestion(
               ? allHebrewWords[
                   Math.floor(Math.random() * allHebrewWords.length)
                 ]
-              : "מילה";
+              : "word";
         }
         if (wrong !== correctAnswer && !wrongAnswers.has(wrong)) {
           wrongAnswers.add(wrong);

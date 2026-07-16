@@ -235,7 +235,7 @@
   object-fit: contain;
 }
 
-/* צבעים — כולם אותו גודל, אותה צורה (ריבוע) */
+/* Colors — same size, same shape (square) */
 .paintSwatch {
   display: block;
   width: min(72cqw, 76cqh);

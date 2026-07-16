@@ -103,7 +103,7 @@ export default function BalanceScalePrototype() {
           }}
           onClick={() => removeFromSide(side, p.id)}
           className="flex h-11 w-11 flex-col items-center justify-center rounded-xl border-2 border-white/20 bg-slate-700/90 text-lg shadow-md active:scale-95 sm:h-12 sm:w-12"
-          title="לחצו להחזרה למגש"
+          title="Tap to return to tray"
         >
           {item.emoji}
           {showWeights ? (
@@ -115,15 +115,15 @@ export default function BalanceScalePrototype() {
 
   return (
     <DevPrototypeShell
-      title="מאזניים"
-      subtitle="אבטיפוס · גררו חפצים · אזנו את המאזניים"
+      title="Balance Scale"
+      subtitle="Prototype · drag items · balance the scale"
       headerExtra={
         <button
           type="button"
           onClick={reset}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
         >
-          איפוס
+          Reset
         </button>
       }
     >
@@ -135,13 +135,13 @@ export default function BalanceScalePrototype() {
             onChange={(e) => setShowWeights(e.target.checked)}
             className="h-4 w-4"
           />
-          הצג משקלים (לבדיקה)
+          Show weights (debug)
         </label>
 
         <div className="relative flex w-full max-w-[400px] flex-1 flex-col items-center justify-center">
           {balancedFlash ? (
             <div className="absolute top-2 z-20 rounded-xl bg-emerald-500/90 px-4 py-2 text-sm font-extrabold text-white shadow-lg">
-              מאוזן! ⚖️🎉
+              Balanced! ⚖️🎉
             </div>
           ) : null}
 
@@ -165,7 +165,7 @@ export default function BalanceScalePrototype() {
                 onPointerEnter={() => dragRef.current && setDragOver("left")}
                 onPointerLeave={() => setDragOver(null)}
               >
-                <span className="text-[10px] font-bold text-white/50">שמאל · {leftWeight}</span>
+                <span className="text-[10px] font-bold text-white/50">Left · {leftWeight}</span>
                 <div className="flex flex-wrap justify-center gap-1.5">{renderSideItems(left, "left")}</div>
               </div>
 
@@ -179,7 +179,7 @@ export default function BalanceScalePrototype() {
                 onPointerEnter={() => dragRef.current && setDragOver("right")}
                 onPointerLeave={() => setDragOver(null)}
               >
-                <span className="text-[10px] font-bold text-white/50">ימין · {rightWeight}</span>
+                <span className="text-[10px] font-bold text-white/50">Right · {rightWeight}</span>
                 <div className="flex flex-wrap justify-center gap-1.5">{renderSideItems(right, "right")}</div>
               </div>
             </div>
@@ -187,16 +187,16 @@ export default function BalanceScalePrototype() {
 
           <p className="mt-3 text-center text-xs font-semibold text-white/55">
             {Math.abs(diff) < 0.01
-              ? "שוויון!"
+              ? "It's a tie!"
               : diff > 0
-                ? "הצד ימין כבד יותר ↘"
-                : "הצד שמאל כבד יותר ↙"}
+                ? "Right side is heavier ↘"
+                : "Left side is heavier ↙"}
           </p>
         </div>
 
         {/* item tray */}
         <div className="w-full max-w-[400px] shrink-0 rounded-2xl border-4 border-yellow-400 bg-slate-950/80 p-3">
-          <p className="mb-2 text-center text-xs font-bold text-amber-200">מגש חפצים - גררו לצד</p>
+          <p className="mb-2 text-center text-xs font-bold text-amber-200">Item tray — drag to a side</p>
           <div className="flex flex-wrap justify-center gap-2">
             {pool.map((itemId) => {
               const item = itemMap[itemId];
@@ -221,11 +221,11 @@ export default function BalanceScalePrototype() {
               );
             })}
             {!pool.length ? (
-              <p className="py-2 text-xs text-white/45">כל החפצים על המאזניים</p>
+              <p className="py-2 text-xs text-white/45">All items are on the scale</p>
             ) : null}
           </div>
           <p className="mt-2 text-center text-[10px] text-white/45">
-            לחצו על חפץ במאזניים להחזרה · או גררו מהמגש
+            Tap an item on the scale to return it · or drag from the tray
           </p>
         </div>
       </div>

@@ -10,33 +10,33 @@ export function buildVerticalOperation(topNumber, bottomNumber, operator = "-") 
   const top = String(topNumber);
   const bottom = String(bottomNumber);
   
-  // טיפול מיוחד לחילוק ארוך - המחולק משמאל עם סוגר, המחלק מימין
+  // Special handling for long division — the dividend on the left with a bracket, the divisor on the right
   if (operator === "÷") {
-    // בחילוק ארוך התצוגה הנכונה היא:
+    // In long division the correct display is:
     // ────┐
     // 1320│6
-    // הקו המאוזן מתחבר לפינה עם הקו המאונך (┐ מעל │).
-    // הפרמטרים: topNumber = divisor (מחלק), bottomNumber = dividend (מחולק)
+    // The horizontal line meets the corner with the vertical line (┐ above │).
+    // the parameters: topNumber = divisor (divisor), bottomNumber = dividend (dividend)
 
-    const divisor = String(topNumber); // המחלק (6)
-    const dividend = String(bottomNumber); // המחולק (1320)
+    const divisor = String(topNumber); // the divisor (6)
+    const dividend = String(bottomNumber); // the dividend (1320)
     const dividendLen = Math.max(1, dividend.length);
 
     const line1 = `${"─".repeat(dividendLen)}┐`;
     const line2 = `${dividend}│${divisor}`;
 
     const raw = `${line1}\n${line2}`;
-    // עוטפים את כל הבלוק בסימון LTR כדי שלא יתבלגן בתוך טקסט עברי
+    // wrap the whole block in a marker LTR so it does not get scrambled inside Hebrew text
     return pureMathLtrDisplay(raw);
   }
   
-  // לפעולות אחרות - התצוגה המקורית
-  // טיפול מיוחד בעשרוניים - יישור לפי הנקודה העשרונית
+  // for other operations — the original display
+  // Special handling for decimals — align by the decimal point
   const topHasDecimal = top.includes(".");
   const bottomHasDecimal = bottom.includes(".");
   
   if (topHasDecimal || bottomHasDecimal) {
-    // יישור לפי הנקודה העשרונית
+    // align by the decimal point
     const topParts = top.split(".");
     const bottomParts = bottom.split(".");
     const topInt = topParts[0] || "";
@@ -44,11 +44,11 @@ export function buildVerticalOperation(topNumber, bottomNumber, operator = "-") 
     const bottomInt = bottomParts[0] || "";
     const bottomDec = bottomParts[1] || "";
     
-    // אורך החלק השלם והחלק העשרוני
+    // length of the whole part and the decimal part
     const maxIntLen = Math.max(topInt.length, bottomInt.length);
     const maxDecLen = Math.max(topDec.length, bottomDec.length);
     
-    // יישור החלק השלם (מימין) והחלק העשרוני (משמאל)
+    // Align the whole part (right) and the decimal part (left)
     const topIntPadded = topInt.padStart(maxIntLen, " ");
     const bottomIntPadded = bottomInt.padStart(maxIntLen, " ");
     const topDecPadded = topDec.padEnd(maxDecLen, "0");
@@ -57,7 +57,7 @@ export function buildVerticalOperation(topNumber, bottomNumber, operator = "-") 
     const topFormatted = topHasDecimal ? `${topIntPadded}.${topDecPadded}` : topIntPadded;
     const bottomFormatted = bottomHasDecimal ? `${bottomIntPadded}.${bottomDecPadded}` : bottomIntPadded;
     
-    const totalWidth = maxIntLen + 1 + maxDecLen + 2; // 1 לנקודה, 2 לתו הפעולה ולרווח
+    const totalWidth = maxIntLen + 1 + maxDecLen + 2; // 1 for the point, 2 for the operator and a space
     
     const line1 = " ".repeat(totalWidth - topFormatted.length) + topFormatted;
     const line2 = operator + " " + " ".repeat(maxIntLen + 1 + maxDecLen - bottomFormatted.length) + bottomFormatted;
@@ -67,9 +67,9 @@ export function buildVerticalOperation(topNumber, bottomNumber, operator = "-") 
     return pureMathLtrDisplay(raw);
   }
   
-  // לפעולות רגילות (ללא עשרוניים)
+  // for regular operations (without decimals)
   const maxLen = Math.max(top.length, bottom.length);
-  const width = maxLen + 2; // 2 לתו הפעולה ולרווח
+  const width = maxLen + 2; // 2 for the operator and a space
 
   const line1 = " ".repeat(width - top.length) + top;
   const line2 = operator + " " + " ".repeat(maxLen - bottom.length) + bottom;
@@ -77,17 +77,17 @@ export function buildVerticalOperation(topNumber, bottomNumber, operator = "-") 
 
   const raw = `${line1}\n${line2}\n${line3}`;
 
-  // עוטפים את כל הבלוק בסימון LTR כדי שלא יתבלגן בתוך טקסט עברי
+  // wrap the whole block in a marker LTR so it does not get scrambled inside Hebrew text
   return pureMathLtrDisplay(raw);
 }
 
-// פונקציה כללית לטיפול בתרגילי השלמה
+// General function that handles fill-in exercises
 export function convertMissingNumberEquation(op, kind, params) {
   if (!params || !kind) return null;
   
   const { a, b, c } = params;
   
-  // חיבור: __ + b = c או a + __ = c → חיסור
+  // addition: __ + b = c or a + __ = c → subtraction
   if (op === "addition" && (kind === "add_missing_first" || kind === "add_missing_second")) {
     if (kind === "add_missing_first") {
       // __ + b = c  →  c - b = __
@@ -108,10 +108,10 @@ export function convertMissingNumberEquation(op, kind, params) {
     }
   }
   
-  // חיסור: __ - b = c או a - __ = c
+  // subtraction: __ - b = c or a - __ = c
   if (op === "subtraction" && (kind === "sub_missing_first" || kind === "sub_missing_second")) {
     if (kind === "sub_missing_first") {
-      // __ - b = c  →  c + b = __ (חיבור)
+      // __ - b = c  →  c + b = __ (addition)
       return {
         effectiveOp: "addition",
         top: c,
@@ -119,7 +119,7 @@ export function convertMissingNumberEquation(op, kind, params) {
         answer: a
       };
     } else {
-      // a - __ = c  →  a - c = __ (חיסור)
+      // a - __ = c  →  a - c = __ (subtraction)
       return {
         effectiveOp: "subtraction",
         top: a,
@@ -129,7 +129,7 @@ export function convertMissingNumberEquation(op, kind, params) {
     }
   }
   
-  // כפל: __ × b = c או a × __ = c → חילוק
+  // multiplication: __ × b = c or a × __ = c → division
   if (op === "multiplication" && (kind === "mul_missing_first" || kind === "mul_missing_second")) {
     if (kind === "mul_missing_first") {
       // __ × b = c  →  c ÷ b = __
@@ -150,12 +150,12 @@ export function convertMissingNumberEquation(op, kind, params) {
     }
   }
   
-  // חילוק: __ ÷ divisor = quotient או dividend ÷ __ = quotient
+  // division: __ ÷ divisor = quotient or dividend ÷ __ = quotient
   if (op === "division" && (kind === "div_missing_dividend" || kind === "div_missing_divisor")) {
     const { dividend, divisor, quotient } = params;
     
     if (kind === "div_missing_dividend") {
-      // __ ÷ divisor = quotient  →  quotient × divisor = __ (כפל)
+      // __ ÷ divisor = quotient  →  quotient × divisor = __ (multiplication)
       return {
         effectiveOp: "multiplication",
         top: quotient,
@@ -163,7 +163,7 @@ export function convertMissingNumberEquation(op, kind, params) {
         answer: dividend
       };
     } else {
-      // dividend ÷ __ = quotient  →  dividend ÷ quotient = __ (חילוק)
+      // dividend ÷ __ = quotient  →  dividend ÷ quotient = __ (division)
       return {
         effectiveOp: "division",
         top: dividend,
@@ -176,7 +176,7 @@ export function convertMissingNumberEquation(op, kind, params) {
   return null;
 }
 
-// פונקציה לבניית צעדי אנימציה לחיבור וחיסור
+// Function that builds animation steps for addition and subtraction
 export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
   const steps = [];
   const aStr = String(a);
@@ -227,13 +227,13 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     const answerLen = answerStr.length;
     const carryMarks = []; // positions in printable width where carry should appear
     
-    // צעד 1: מיישרים את הספרות
+    // Step 1: Line up the digits
     steps.push({
       id: "place-value",
-      title: "מיישרים את הספרות",
-      ...learningStepFields(mix`כותבים את המספרים אחד מעל השני כך שסַפְרות האחדות נמצאות באותה עמודה.`),
+      title: "Line up the digits",
+      ...learningStepFields(mix`Write the numbers one above the other so the ones digits line up in the same column.`),
       highlights: ["aAll", "bAll"],
-      revealDigits: 0, // עדיין לא מראים כלום
+      revealDigits: 0, // nothing revealed yet
       pre: makeVerticalSnapshot({
         operator: "+",
         top: a,
@@ -244,18 +244,18 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       }),
     });
 
-    // חישוב ספרה ספרה
+    // digit-by-digit calculation
     let carry = 0;
     let stepIndex = 2;
-    let revealedCount = 0; // כמה ספרות כבר נחשפו
+    let revealedCount = 0; // how many digits are already revealed
 
-    // הכנה: רוחב הציור (כדי שנוכל למקם נשיאות)
+    // Setup: drawing width (so we can position carries)
     const topS = String(a);
     const bottomS = String(Math.abs(b));
     const ansS = String(answer);
     const maxDigits = Math.max(topS.length, bottomS.length, ansS.length);
     const w = maxDigits + 2;
-    const digitsStart = w - maxLen; // איפה מתחילים הספרות (ימין-מיושר)
+    const digitsStart = w - maxLen; // where the digits start (right-aligned)
     const carryRowArr = Array(w).fill(" ");
 
     for (let i = maxLen - 1; i >= 0; i--) {
@@ -267,17 +267,17 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
 
       const placeName =
         i === maxLen - 1
-          ? "אחדות"
+          ? "ones"
           : i === maxLen - 2
-          ? "עשרות"
-          : "מאות";
+          ? "tens"
+          : "hundreds";
 
       const highlightKey = i === maxLen - 1 ? "Units" : i === maxLen - 2 ? "Tens" : "Hundreds";
       const columnFromRight = maxLen - 1 - i;
 
-      revealedCount++; // חושפים ספרה נוספת
+      revealedCount++; // reveal one more digit
 
-      // עדכון שורת נשיאות: הנשיאה עוברת לעמודה שמשמאל (i-1)
+      // Update the carry row: the carry moves to the column on the left (i-1)
       if (newCarry) {
         const targetDigitIndex = i - 1;
         const pos = targetDigitIndex >= 0 ? digitsStart + targetDigitIndex : digitsStart - 1;
@@ -289,15 +289,15 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       const carryRowStr = carryRowArr.join("");
       steps.push({
         id: `step-${stepIndex}`,
-        title: `ספרת ה${placeName}`,
-        ...learningStepFields(mix`מחברים את ספרת ה${placeName}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. כותבים ${ones} בעמודת ה${placeName}${newCarry ? " ומעבירים 1 לעמודה הבאה" : ""}.`),
+        title: `the ${placeName}`,
+        ...learningStepFields(mix`add the ${placeName}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. write ${ones} in the ${placeName}${newCarry ? " and carry 1 to the next column" : ""}.`),
         highlights: [
           `aCol${columnFromRight}`,
           `bCol${columnFromRight}`,
           `resultCol${columnFromRight}`,
         ],
         carry: newCarry,
-        revealDigits: revealedCount, // כמה ספרות מימין חשופות
+        revealDigits: revealedCount, // how many digits from the right are revealed
         pre: makeVerticalSnapshot({
           operator: "+",
           top: a,
@@ -313,11 +313,11 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     }
 
     if (carry) {
-      revealedCount++; // אם יש carry, יש ספרה נוספת
+      revealedCount++; // if there is carry, there is an extra digit
       steps.push({
         id: "final-carry",
-        title: "העברה נוספת",
-        ...learningStepFields(mix`בסוף החיבור נשאר לנו 1 נוסף, כותבים אותו משמאל כמספר חדש בעמודת המאות/אלפים.`),
+        title: "Extra carry",
+        ...learningStepFields(mix`At the end of the addition we have one extra 1 — write it on the left as a new digit in the hundreds/thousands column.`),
         highlights: ["resultAll"],
         revealDigits: revealedCount,
         pre: makeVerticalSnapshot({
@@ -331,13 +331,13 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       });
     }
 
-    // צעד אחרון: התוצאה הסופית
+    // Last step: the final result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`המספר שנוצר הוא ${answer}. זהו התשובה הסופית לתרגיל.`),
+      title: "Final result",
+      ...learningStepFields(mix`the number formed is ${answer}. This is the final answer to the exercise.`),
       highlights: ["resultAll"],
-      revealDigits: answerLen, // מראים את כל הספרות
+      revealDigits: answerLen, // reveal all the digits
       pre: makeVerticalSnapshot({
         operator: "+",
         top: a,
@@ -351,13 +351,13 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     const answerStr = String(answer);
     const answerLen = answerStr.length;
     
-    // צעד 1: מיישרים את הספרות
+    // Step 1: Line up the digits
     steps.push({
       id: "place-value",
-      title: "מיישרים את הספרות",
-      ...learningStepFields(mix`כותבים את המספרים אחד מעל השני כך שסַפְרות האחדות, העשרות וכו' נמצאות באותו טור.`),
+      title: "Line up the digits",
+      ...learningStepFields(mix`Write the numbers one above the other so the ones, tens, etc. line up in the same column.`),
       highlights: ["aAll", "bAll"],
-      revealDigits: 0, // עדיין לא מראים כלום
+      revealDigits: 0, // nothing revealed yet
       pre: makeVerticalSnapshot({
         operator: "−",
         top: a,
@@ -367,10 +367,10 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       }),
     });
 
-    // חישוב ספרה ספרה
+    // digit-by-digit calculation
     let borrow = 0;
     let stepIndex = 2;
-    let revealedCount = 0; // כמה ספרות כבר נחשפו
+    let revealedCount = 0; // how many digits are already revealed
 
     for (let i = maxLen - 1; i >= 0; i--) {
       let da = Number(pa[i]);
@@ -379,10 +379,10 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
 
       const placeName =
         i === maxLen - 1
-          ? "אחדות"
+          ? "ones"
           : i === maxLen - 2
-          ? "עשרות"
-          : "מאות";
+          ? "tens"
+          : "hundreds";
 
       const highlightKey = i === maxLen - 1 ? "Units" : i === maxLen - 2 ? "Tens" : "Hundreds";
       const columnFromRight = maxLen - 1 - i;
@@ -390,10 +390,10 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       if (da < db) {
         steps.push({
           id: `borrow-${stepIndex}`,
-          title: `השאלה מעמודת ה${placeName}`,
-          ...learningStepFields(mix`בעמודת ה${placeName} ${da} קטן מ-${db}, לכן לוקחים "השאלה" מהעמודה הבאה (מוסיפים 10 לספרה הזו ומפחיתים 1 בעמודה הבאה).`),
+          title: `borrow from the ${placeName}`,
+          ...learningStepFields(mix`in the ${placeName} ${da} less than ${db}, so we take "a borrow" from the next column (add 10 to this digit and subtract 1 from the next column).`),
           highlights: [`aCol${columnFromRight}`, `bCol${columnFromRight}`],
-          revealDigits: revealedCount, // לא חושפים ספרה חדשה בשלב ההשאלה
+          revealDigits: revealedCount, // do not reveal a new digit during the borrow step
           pre: makeVerticalSnapshot({
             operator: "−",
             top: a,
@@ -410,17 +410,17 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       }
 
       const diff = da - db;
-      revealedCount++; // חושפים ספרה נוספת
+      revealedCount++; // reveal one more digit
       steps.push({
         id: `step-${stepIndex}`,
-        title: `ספרת ה${placeName}`,
-        ...learningStepFields(mix`כעת מחשבים בעמודת ה${placeName}: ${M(`${da} - ${db} = ${diff}`)} וכותבים ${diff} בעמודה זו.`),
+        title: `the ${placeName}`,
+        ...learningStepFields(mix`now compute in the ${placeName}: ${M(`${da} - ${db} = ${diff}`)} and write ${diff} in this column.`),
         highlights: [
           `aCol${columnFromRight}`,
           `bCol${columnFromRight}`,
           `resultCol${columnFromRight}`,
         ],
-        revealDigits: revealedCount, // כמה ספרות מימין חשופות
+        revealDigits: revealedCount, // how many digits from the right are revealed
         pre: makeVerticalSnapshot({
           operator: "−",
           top: a,
@@ -433,13 +433,13 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       stepIndex++;
     }
 
-    // צעד אחרון: התוצאה הסופית
+    // Last step: the final result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`המספר שקיבלנו בסוף הוא ${answer}. זו התוצאה של החיסור.`),
+      title: "Final result",
+      ...learningStepFields(mix`the number we got at the end is ${answer}. This is the subtraction result.`),
       highlights: ["resultAll"],
-      revealDigits: answerLen, // מראים את כל הספרות
+      revealDigits: answerLen, // reveal all the digits
       pre: makeVerticalSnapshot({
         operator: "−",
         top: a,
@@ -453,7 +453,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לכפל (עם תרגיל מאונך)
+// Function that builds animation steps for multiplication (with a vertical exercise)
 export function buildMultiplicationAnimation(a, b, answer) {
   const steps = [];
 
@@ -506,30 +506,30 @@ export function buildMultiplicationAnimation(a, b, answer) {
     return `${blanks}${known}${repeat("0", shiftZeros)}`;
   };
 
-  // צעד 1: סידור בעמודות
+  // Step 1: arrange in columns
   steps.push({
     id: "place-value",
-    title: "מיישרים את הספרות",
-    ...learningStepFields(mix`כותבים את שני המספרים אחד מתחת לשני, כך שסַפְרות האחדות נמצאות באותה עמודה.`),
+    title: "Line up the digits",
+    ...learningStepFields(mix`Write both numbers one under the other so the ones digits line up in the same column.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
     pre: makeSnapshot({ partialRows: [] }),
   });
 
-  // אם זה חד-ספרתי×חד-ספרתי: עדיין נפרט אבל קצר
+  // if this is single-digit×single-digit: still detailed but short
   if (A < 10 && B < 10) {
     steps.push({
       id: "single-digit",
-      title: "כפל חד-ספרתי",
-      ...learningStepFields(mix`מכפילים: ${M(`${A} × ${B} = ${ansNum}`)}.`),
+      title: "Single-digit multiplication",
+      ...learningStepFields(mix`multiply: ${M(`${A} × ${B} = ${ansNum}`)}.`),
       highlights: ["aAll", "bAll", "resultAll"],
       revealDigits: answerStr.length,
       pre: makeSnapshot({ partialRows: [], sumRow: String(ansNum) }),
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${ansNum}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${ansNum}.`),
       highlights: ["resultAll"],
       revealDigits: answerStr.length,
       pre: makeSnapshot({ partialRows: [], sumRow: String(ansNum) }),
@@ -539,14 +539,14 @@ export function buildMultiplicationAnimation(a, b, answer) {
 
   steps.push({
     id: "explain",
-    title: "מה עושים בכפל ארוך?",
-    ...learningStepFields(mix`נכפיל קודם את המספר העליון בכל ספרה של המספר התחתון (מימין לשמאל). כל שורה היא 'מכפלה חלקית'. אחר כך נחבר את כל המכפלות החלקיות.`),
+    title: "What do we do in long multiplication?",
+    ...learningStepFields(mix`First multiply the top number by each digit of the bottom number (right to left). Each row is 'partial product'. then add all the partial products.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
     pre: makeSnapshot({ partialRows: [] }),
   });
 
-  const aDigits = digitsRev(A); // אחדות קודם
+  const aDigits = digitsRev(A); // ones first
   const bDigits = digitsRev(B);
 
   const partials = []; // numbers as strings already shifted
@@ -563,10 +563,10 @@ export function buildMultiplicationAnimation(a, b, answer) {
       id: `row-${j}-start`,
       title: flattenTemplateRuns(
       unwrapLearningRuns(
-        mix`שורה ${M(String(j + 1))}: כופלים ב-${M(String(bd))}${j === 0 ? " (אחדות)" : j === 1 ? " (עשרות)" : " (מקום גבוה)"}`
+        mix`row ${M(String(j + 1))}: multiply by ${M(String(bd))}${j === 0 ? " (ones)" : j === 1 ? " (tens)" : " (higher place)"}`
       )
     ),
-      ...learningStepFields(mix`כופלים את ${A} בספרה ${bd} של ${B}. מתחילים מימין (אחדות).`),
+      ...learningStepFields(mix`multiply ${A} by the digit ${bd} of ${B}. start from the right (ones).`),
       highlights: ["aAll", "bAll"],
       revealDigits: 0,
       pre: makeSnapshot({ partialRows: partials.map((p) => p) }),
@@ -578,16 +578,16 @@ export function buildMultiplicationAnimation(a, b, answer) {
       const digit = prod % 10;
       const nextCarry = Math.floor(prod / 10);
       const place =
-        i === 0 ? "ספרת האחדות" : i === 1 ? "ספרת העשרות" : i === 2 ? "ספרת המאות" : `ספרה במקום ${i + 1} מימין`;
+        i === 0 ? "ones digit" : i === 1 ? "tens digit" : i === 2 ? "hundreds digit" : `digit in place ${i + 1} from the right`;
 
       rowDigits.push(digit);
 
-      const carryText = carry ? ` + נשיאה ${carry}` : "";
+      const carryText = carry ? ` + carry ${carry}` : "";
       const inProgressRow = formatInProgressRow(rowDigits, aDigits.length + 1, j);
       steps.push({
         id: `row-${j}-mul-${i}`,
-        title: `כפל ${place}`,
-        ...learningStepFields(mix`מכפילים ${ad} × ${bd}${carryText} = ${prod}. כותבים ${digit} במקום הזה${nextCarry ? ` ונושאים ${nextCarry} לשלב הבא.` : " (אין נשיאה)."
+        title: `multiplication ${place}`,
+        ...learningStepFields(mix`multiply ${ad} × ${bd}${carryText} = ${prod}. write ${digit} in this place${nextCarry ? ` and carry ${nextCarry} to the next step.` : " (no carry)."
           }`),
         highlights: ["aAll", "bAll"],
         revealDigits: 0,
@@ -603,8 +603,8 @@ export function buildMultiplicationAnimation(a, b, answer) {
       const inProgressRow = formatInProgressRow(rowDigits, aDigits.length + 1, j);
       steps.push({
         id: `row-${j}-carry-end`,
-        title: "נשיאה אחרונה",
-        ...learningStepFields(mix`בסוף השורה נשארה נשיאה ${carry}. כותבים אותה משמאל לשורה.`),
+        title: "Final carry",
+        ...learningStepFields(mix`at the end of the row a carry remains ${carry}. write it to the left of the row.`),
         highlights: ["aAll", "bAll"],
         revealDigits: 0,
         pre: makeSnapshot({ partialRows: partials.map((p) => p), inProgressRow }),
@@ -619,25 +619,25 @@ export function buildMultiplicationAnimation(a, b, answer) {
 
     steps.push({
       id: `row-${j}-done`,
-      title: `מכפלה חלקית ${j + 1}`,
-      ...(j === 0 ? learningStepFields(mix`קיבלנו מכפלה חלקית: \${rowValue}.`) : learningStepFields(mix`קיבלנו \${rowValue}. כי כפלנו בספרת מקום גבוה (×\${repeat("10", j).replace(/10/g, "10") || 10}), מוסיפים \${j} אפסים בסוף ⇒ \${shifted}.`)),
+      title: `partial product ${j + 1}`,
+      ...(j === 0 ? learningStepFields(mix`we got a partial product: \${rowValue}.`) : learningStepFields(mix`we got \${rowValue}. because we multiplied by a higher-place digit (×\${repeat("10", j).replace(/10/g, "10") || 10}), add \${j} zeros at the end ⇒ \${shifted}.`)),
       highlights: ["aAll", "bAll"],
       revealDigits: 0,
       pre: makeSnapshot({ partialRows: partials.map((p) => p) }),
     });
   }
 
-  // חיבור מכפלות חלקיות
+  // adding partial products
   steps.push({
     id: "sum-start",
-    title: "מחברים את המכפלות החלקיות",
-    ...learningStepFields(mix`עכשיו מחברים את כל השורות שקיבלנו כדי לקבל את התוצאה הסופית.`),
+    title: "Add the partial products",
+    ...learningStepFields(mix`Now add all the rows we got to reach the final result.`),
     highlights: ["resultAll"],
     revealDigits: 0,
     pre: makeSnapshot({ partialRows: partials.map((p) => p) }),
   });
 
-  // פירוט חיבור עמודות (כמו חיבור ארוך), על בסיס מספרים מיושרים
+  // Column addition breakdown (like long addition), based on aligned numbers
   const maxW = Math.max(...partials.map((p) => p.length), String(ansNum || answerStr).length);
   const padded = partials.map((p) => p.padStart(maxW, "0").split("").reverse().map((d) => Number(d)));
   const resDigits = [];
@@ -649,11 +649,11 @@ export function buildMultiplicationAnimation(a, b, answer) {
     resDigits[col] = digit;
 
     const place =
-      col === 0 ? "אחדות" : col === 1 ? "עשרות" : col === 2 ? "מאות" : `מקום ${col + 1} מימין`;
+      col === 0 ? "ones" : col === 1 ? "tens" : col === 2 ? "hundreds" : `place ${col + 1} from the right`;
     steps.push({
       id: `sum-col-${col}`,
-      title: `חיבור בעמודת ה${place}`,
-      ...learningStepFields(mix`מחברים בעמודת ה${place}: סכום הספרות בעמודה${carryAdd ? ` + נשיאה ${carryAdd}` : ""} = ${colSum}. כותבים ${digit}${nextCarry ? ` ונושאים ${nextCarry}.` : "."}`),
+      title: `add in the ${place}`,
+      ...learningStepFields(mix`add in the ${place}: the digit sum in the column${carryAdd ? ` + carry ${carryAdd}` : ""} = ${colSum}. write ${digit}${nextCarry ? ` and carry ${nextCarry}.` : "."}`),
       highlights: ["resultAll"],
       revealDigits: 0,
       pre: makeSnapshot({ partialRows: partials.map((p) => p), sumRow: padLeft(String(resDigits.slice().reverse().join("")).replace(/^0+/, "") || "0", maxW) }),
@@ -665,8 +665,8 @@ export function buildMultiplicationAnimation(a, b, answer) {
     resDigits.push(carryAdd);
     steps.push({
       id: "sum-carry-end",
-      title: "נשיאה אחרונה בחיבור",
-      ...learningStepFields(mix`נשארה נשיאה ${carryAdd} בסוף, כותבים אותה משמאל.`),
+      title: "Final carry in addition",
+      ...learningStepFields(mix`a carry remains ${carryAdd} at the end, write it on the left.`),
       highlights: ["resultAll"],
       revealDigits: 0,
       pre: makeSnapshot({ partialRows: partials.map((p) => p), sumRow: String(resDigits.slice().reverse().join("")).replace(/^0+/, "") || "0" }),
@@ -677,19 +677,19 @@ export function buildMultiplicationAnimation(a, b, answer) {
 
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`אחרי שחיברנו את כל המכפלות החלקיות קיבלנו: ${M(`${A} × ${B} = ${sumStr}.`)}`),
+    title: "Final result",
+    ...learningStepFields(mix`After adding all the partial products we got: ${M(`${A} × ${B} = ${sumStr}.`)}`),
     highlights: ["resultAll"],
     revealDigits: answerStr.length,
     pre: makeSnapshot({ partialRows: partials.map((p) => p), sumRow: sumStr }),
   });
 
-  // בדיקה קצרה (אם יש תשובה צפויה)
+  // quick check (if there is an expected answer)
   if (!Number.isNaN(ansNum) && sumStr !== String(ansNum)) {
     steps.push({
       id: "note",
-      title: "בדיקה",
-      ...learningStepFields(mix`שימו לב: לפי השלבים יצא ${sumStr} אבל התשובה השמורה לשאלה היא ${ansNum}. אם זה קורה, כנראה שיש פרמטרים מיוחדים בשאלה (למשל מספרים עם סימן/המרה).`),
+      title: "Check",
+      ...learningStepFields(mix`Note: the steps produced ${sumStr} but the stored answer for the question is ${ansNum}. If that happens, the question probably uses special parameters (for example signed numbers or a conversion).`),
       highlights: ["resultAll"],
       revealDigits: answerStr.length,
       pre: makeSnapshot({ partialRows: partials.map((p) => p), sumRow: sumStr }),
@@ -699,7 +699,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לחילוק ארוך (עם תרגיל מאונך)
+// Function that builds animation steps for long division (with a vertical exercise)
 export function buildDivisionAnimation(dividend, divisor, quotient) {
   const steps = [];
   const dividendStr = String(dividend);
@@ -708,7 +708,7 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
   const dividendLen = dividendStr.length;
   const repeat = (ch, n) => Array(Math.max(0, n)).fill(ch).join("");
 
-  // בניית ASCII של חילוק ארוך (LTR) כשהמחולק משמאל כמו שהיה אצלך:
+  // building ASCII of long division (LTR) when the dividend is on the left as you had it:
   //    31
   //   ____
   // 94│3
@@ -718,9 +718,9 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
   //  3
   // --
   //  1
-  // שימו לב: יש קו אנכי (│) רק בשורת הבסיס "מחולק│מחלק" — בלי קווים מיותרים בשאר השורות.
-  // כדי שהמנה והקו יהיו בדיוק מעל המחולק (גם כשמיישרים למרכז), כל השורות חייבות להיות באותו רוחב:
-  // רוחב = אורך המחולק + "│" + אורך המחלק
+  // Note: there is a vertical line (│) only on the base row "dividend│divisor" — without extra lines in the other rows.
+  // So the quotient and the line sit exactly above the dividend (even when centered), all rows must be the same width:
+  // width = length of the dividend + "│" + length of the divisor
   const totalWidth = dividendLen + 1 + divisorStr.length;
   const padToWidth = (s, width = totalWidth) => String(s).padEnd(width, " ");
 
@@ -740,26 +740,26 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
   const workLines = [];
   const makePre = (opts = {}) => {
     const remainderSuffix = opts.remainderSuffix || "";
-    // אם מוסיפים "(שארית)" ליד המנה, נרחיב את הרוחב כדי שכל השורות יישארו מיושרות
+    // if we add "(remainder)" next to the quotient, we widen the layout so all rows stay aligned
     const width = totalWidth + (remainderSuffix ? remainderSuffix.length : 0);
-    // מנה מעל המחולק (רק מעל אזור המחולק) + שארית בסוגריים ליד הספרה האחרונה במנה
+    // quotient above the dividend (only above the dividend area) + remainder in parentheses next to the last digit of the quotient
     const line1 = padToWidth(quotientLineArr.join("") + remainderSuffix, width);
-    // קו המנה - אותו אורך כמו המחולק, ומרופד לרוחב מלא כדי שלא "יזוז" במרכז
+    // the quotient line — same length as the dividend, padded to full width so it does not "shift" when centered
     const line2 = padToWidth(repeat("_", dividendLen), width);
     const line3 = padToWidth(dividendStr + "│" + divisorStr, width);
     const paddedWork = workLines.map((l) => padToWidth(l, width));
-    // עוטפים ב-LTR markers כדי שלא יתבלגן בתוך טקסט עברי
+    // wrap in LTR markers so it does not get scrambled inside Hebrew text
     return pureMathLtrBlock([line1, line2, line3, ...paddedWork]);
   };
   
-  // חישוב חילוק ארוך צעד אחר צעד
+  // long-division calculation step by step
   const divisionSteps = [];
   let workingNumber = 0;
   let quotientPos = 0;
-  let startPos = 0; // מיקום ההתחלה של workingNumber
+  let startPos = 0; // start position of workingNumber
   
   for (let i = 0; i < dividendStr.length; i++) {
-    // אם workingNumber הוא 0, זה תחילת מספר חדש
+    // if workingNumber is 0, this is the start of a new number
     if (workingNumber === 0) {
       startPos = i;
     }
@@ -773,8 +773,8 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
       const wNumLen = String(workingNumber).length;
       
       divisionSteps.push({
-        position: i, // מיקום הספרה האחרונה (הימנית ביותר)
-        startPosition: startPos, // מיקום הספרה הראשונה (השמאלית ביותר)
+        position: i, // position of the last (rightmost) digit
+        startPosition: startPos, // position of the first (leftmost) digit
         workingNumber,
         quotientDigit: qDigit,
         product,
@@ -785,16 +785,16 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
       
       quotientPos++;
       workingNumber = remainder;
-      // אם יש שארית, המיקום הבא יתחיל מהמיקום הנוכחי + 1
+      // If there is a remainder, the next position starts from the current position + 1
       startPos = remainder > 0 ? i : i + 1;
     }
   }
   
-  // צעד 1: הצגת השאלה
+  // Step 1: Show the question
   steps.push({
     id: "place-value",
-    title: "הצגת השאלה",
-    ...learningStepFields(mix`נחלק ${dividend} ב-${divisor}. נכתוב את המחולק והמחלק בצורת חילוק ארוך.`),
+    title: "Show the question",
+    ...learningStepFields(mix`divide ${dividend} by ${divisor}. Write the dividend and the divisor in long-division form.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
     type: "division",
@@ -804,17 +804,17 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
     pre: makePre(),
   });
   
-  // יצירת צעדים מפורטים לכל שלב בחילוק
+  // create detailed steps for each stage of the division
   for (let stepIndex = 0; stepIndex < divisionSteps.length; stepIndex++) {
     const step = divisionSteps[stepIndex];
     const { position, workingNumber: wNum, quotientDigit: qDigit, product, remainder, quotientPosition } = step;
     
-    // צעד: כתיבה במנה
+    // Step: write in the quotient
     quotientLineArr[position] = String(qDigit);
     steps.push({
       id: `step-${stepIndex + 1}-write`,
-      title: `צעד ${stepIndex + 1}: כתיבה במנה`,
-      ...learningStepFields(mix`${divisor} נכנס ב-${wNum} בדיוק ${qDigit} פעמים. כותבים ${qDigit} במנה מעל הספרה ${dividendStr[position]}.`),
+      title: `step ${stepIndex + 1}: write in the quotient`,
+      ...learningStepFields(mix`${divisor} goes into${wNum} exactly ${qDigit} times. Write ${qDigit} in the quotient above the digit ${dividendStr[position]}.`),
       highlights: [`result${quotientPosition}`, `a${position}`],
       revealDigits: quotientPosition + 1,
       type: "division",
@@ -827,15 +827,15 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
       pre: makePre(),
     });
     
-    // צעד: כפל וחיסור
-    // מוסיפים שורות עבודה: מכפלה, קו, שארית (מיושר מתחת לחלק הרלוונטי במחולק)
+    // Step: multiply and subtract
+    // Add working rows: product, line, remainder (aligned under the relevant part of the dividend)
     workLines.push(makeWorkLineAt(position, product));
     workLines.push(makeWorkLineAt(position, repeat("-", String(product).length)));
     workLines.push(makeWorkLineAt(position, remainder));
     steps.push({
       id: `step-${stepIndex + 1}-subtract`,
-      title: `צעד ${stepIndex + 1}: כפל וחיסור`,
-      ...learningStepFields(mix`מכפילים: ${qDigit} × ${divisor} = ${product}. מחסרים: ${wNum} - ${product} = ${remainder}. ${remainder === 0 ? 'אין שארית.' : `השארית היא ${remainder}.`}`),
+      title: `step ${stepIndex + 1}: multiply and subtract`,
+      ...learningStepFields(mix`multiply: ${qDigit} × ${divisor} = ${product}. subtract: ${wNum} - ${product} = ${remainder}. ${remainder === 0 ? 'No remainder.' : `the remainder is ${remainder}.`}`),
       highlights: [`a${position}`, "bAll", `result${quotientPosition}`, `product${stepIndex}`, `remainder${stepIndex}`],
       revealDigits: quotientPosition + 1,
       type: "division",
@@ -849,17 +849,17 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
       pre: makePre(),
     });
     
-    // אם לא זה הצעד האחרון, מורידים את הספרה הבאה
+    // If this is not the last step, bring down the next digit
     if (stepIndex < divisionSteps.length - 1 && position < dividendStr.length - 1) {
       const nextStep = divisionSteps[stepIndex + 1];
       const nextDigitPos = nextStep.position;
-      // שורת עבודה: המספר החדש לחלוקה (השארית + הספרה שהורדנו) — מציגים גם 0 מוביל כשצריך (למשל 04)
+      // working row: the new number to divide (the remainder + the digit we brought down) — show a leading 0 when needed (for example 04)
       const bringDownStr = `${remainder}${dividendStr[nextDigitPos]}`;
       workLines.push(makeWorkLineAt(nextDigitPos, bringDownStr));
       steps.push({
         id: `step-${stepIndex + 1}-bring-down`,
-        title: `צעד ${stepIndex + 1}: הורדת ספרה`,
-        ...learningStepFields(mix`מורידים את הספרה הבאה (${dividendStr[nextDigitPos]}). המספר החדש לחלוקה הוא ${bringDownStr}.`),
+        title: `step ${stepIndex + 1}: Bring down a digit`,
+        ...learningStepFields(mix`bring down the next digit (${dividendStr[nextDigitPos]}). the new number to divide is ${bringDownStr}.`),
         highlights: [`a${nextDigitPos}`],
         revealDigits: quotientPosition + 1,
         type: "division",
@@ -874,15 +874,15 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
     }
   }
   
-  // צעד אחרון: התוצאה הסופית
+  // Last step: the final result
   const finalRemainder = divisionSteps.length > 0 ? divisionSteps[divisionSteps.length - 1].remainder : 0;
   const remainderSuffix = finalRemainder > 0 ? `(${finalRemainder})` : "";
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
+    title: "Final result",
     ...(finalRemainder > 0
-        ? learningStepFields(mix`סיימנו! התשובה היא ${M(`${quotient}${remainderSuffix}`)}.`)
-        : learningStepFields(mix`סיימנו! המנה היא ${quotient} בלי שארית.`)),
+        ? learningStepFields(mix`Done! The answer is ${M(`${quotient}${remainderSuffix}`)}.`)
+        : learningStepFields(mix`Done! The quotient is ${quotient} with no remainder.`)),
     highlights: ["resultAll"],
     revealDigits: quotientStr.length,
     type: "division",
@@ -890,14 +890,14 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
     divisor,
     quotient,
     remainder: finalRemainder,
-    // מוסיפים את השארית ליד המנה (ליד הספרה האחרונה), כמו בתמונה
+    // Add the remainder next to the quotient (next to the last digit), as in the picture
     pre: makePre({ remainderSuffix }),
   });
   
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לשברים
+// Function that builds animation steps for fractions
 export function buildFractionsAnimation(params, answer) {
   const steps = [];
   const gcd = (a, b) => {
@@ -928,11 +928,11 @@ export function buildFractionsAnimation(params, answer) {
     const improper = simplified.n >= simplified.d;
     const mixed = improper ? toMixed(simplified.n, simplified.d) : null;
     
-    // צעד 1: הצגת השברים
+    // Step 1: Show the fractions
     steps.push({
       id: "show-fractions",
-      title: "הצגת השברים",
-      ...learningStepFields(mix`יש לנו שני שברים עם אותו מכנה: ${M(`${n1}/${den} ${isAdd ? "+" : "-"} ${n2}/${den}`)}`),
+      title: "Show the fractions",
+      ...learningStepFields(mix`We have two fractions with the same denominator: ${M(`${n1}/${den} ${isAdd ? "+" : "-"} ${n2}/${den}`)}`),
       highlights: ["fraction1", "fraction2"],
       type: "fractions",
       params,
@@ -942,11 +942,11 @@ export function buildFractionsAnimation(params, answer) {
       ]),
     });
     
-    // צעד 2: הסבר על מכנה משותף
+    // Step 2: explain the common denominator
     steps.push({
       id: "same-denominator",
-      title: "מכנה משותף",
-      ...learningStepFields(mix`יש לנו אותו מכנה (${den}). במכנה לא נוגעים – עובדים רק על המונים.`),
+      title: "Common denominator",
+      ...learningStepFields(mix`we have the same denominator (${den}). Leave the denominator alone — work only with the numerators.`),
       highlights: ["denominator"],
       type: "fractions",
       params,
@@ -957,12 +957,12 @@ export function buildFractionsAnimation(params, answer) {
       ]),
     });
     
-    // צעד 3: חיבור/חיסור המונים
+    // Step 3: add/subtract the numerators
     const resNum = rawNum;
     steps.push({
       id: "calculate-numerators",
-      title: "חישוב המונים",
-      ...learningStepFields(mix`${isAdd ? "מחברים" : "מחסרים"} את המונים: ${M(`${n1} ${isAdd ? "+" : "-"} ${n2} = ${resNum}`)}`),
+      title: "Compute the numerators",
+      ...learningStepFields(mix`${isAdd ? "add" : "subtract"} the numerators: ${M(`${n1} ${isAdd ? "+" : "-"} ${n2} = ${resNum}`)}`),
       highlights: ["numerators"],
       type: "fractions",
       params,
@@ -974,12 +974,12 @@ export function buildFractionsAnimation(params, answer) {
       ]),
     });
 
-    // צעד 4: פישוט (אם אפשר)
+    // Step 4: simplify (if possible)
     if (canSimplify) {
       steps.push({
         id: "simplify",
-        title: "פישוט השבר",
-        ...learningStepFields(mix`אפשר לפשט כי גם ${resNum} וגם ${den} מתחלקים ב-${simplified.g}. נחלק את המונה והמכנה ב-${simplified.g}.`),
+        title: "Simplify the fraction",
+        ...learningStepFields(mix`we can simplify because both ${resNum} and ${den} are divisible by ${simplified.g}. divide the numerator and denominator by ${simplified.g}.`),
         highlights: ["simplify"],
         type: "fractions",
         params,
@@ -992,12 +992,12 @@ export function buildFractionsAnimation(params, answer) {
       });
     }
 
-    // צעד 5: מספר מעורב (אם זה שבר גדול מ-1)
+    // Step 5: mixed number (if this is a fraction greater than 1)
     if (mixed && mixed.rem !== 0) {
       steps.push({
         id: "mixed",
-        title: "המרה למספר מעורב",
-        ...learningStepFields(mix`אם המונה גדול מהמכנה, אפשר לכתוב כמספר מעורב: ${M(`${simplified.n} ÷ ${simplified.d} = ${mixed.whole} `)}ושארית ${mixed.rem}.`),
+        title: "Convert to a mixed number",
+        ...learningStepFields(mix`If the numerator is larger than the denominator, you can write a mixed number: ${M(`${simplified.n} ÷ ${simplified.d} = ${mixed.whole} `)}remainder ${mixed.rem}.`),
         highlights: ["mixed"],
         type: "fractions",
         params,
@@ -1009,11 +1009,11 @@ export function buildFractionsAnimation(params, answer) {
       });
     }
     
-    // צעד אחרון: התוצאה
+    // last step: the result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`המכנה נשאר ${den} (ואם פישטנו/המרנו – משתמשים בצורה הפשוטה). התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the denominator stays ${den} (and if we simplified/converted — use the simplified form). The answer is ${answer}`),
       highlights: ["result"],
       type: "fractions",
       params,
@@ -1032,11 +1032,11 @@ export function buildFractionsAnimation(params, answer) {
     const improper = simplified.n >= simplified.d;
     const mixed = improper ? toMixed(simplified.n, simplified.d) : null;
     
-    // צעד 1: הצגת השברים
+    // Step 1: Show the fractions
     steps.push({
       id: "show-fractions",
-      title: "הצגת השברים",
-      ...learningStepFields(mix`יש לנו שני שברים עם מכנים שונים: ${M(`${n1}/${den1} ${isAdd ? "+" : "-"} ${n2}/${den2}`)}`),
+      title: "Show the fractions",
+      ...learningStepFields(mix`We have two fractions with different denominators: ${M(`${n1}/${den1} ${isAdd ? "+" : "-"} ${n2}/${den2}`)}`),
       highlights: ["fraction1", "fraction2"],
       type: "fractions",
       params,
@@ -1046,11 +1046,11 @@ export function buildFractionsAnimation(params, answer) {
       ]),
     });
     
-    // צעד 2: מציאת מכנה משותף
+    // Step 2: Find a common denominator
     steps.push({
       id: "find-common",
-      title: "מציאת מכנה משותף",
-      ...learningStepFields(mix`מוצאים מכנה משותף – כאן ${commonDen}`),
+      title: "Find a common denominator",
+      ...learningStepFields(mix`find a common denominator — here ${commonDen}`),
       highlights: ["commonDen"],
       type: "fractions",
       params,
@@ -1058,17 +1058,17 @@ export function buildFractionsAnimation(params, answer) {
       pre: pureMathLtrBlock([
         flattenTemplateRuns(
         unwrapLearningRuns(
-          mix`מכנה משותף ל-${M(String(den1))} ו-${M(String(den2))} הוא ${M(String(commonDen))}`
+          mix`a common denominator for ${M(String(den1))} and ${M(String(den2))} is ${M(String(commonDen))}`
         )
       ),
       ]),
     });
     
-    // צעד 3: המרה למכנה משותף
+    // Step 3: Rewrite with a common denominator
     steps.push({
       id: "convert",
-      title: "המרה למכנה משותף",
-      ...learningStepFields(mix`כדי להגיע למכנה ${commonDen} נכפיל מונה ומכנה באותו מספר:`),
+      title: "Rewrite with a common denominator",
+      ...learningStepFields(mix`to reach the denominator ${commonDen} multiply numerator and denominator by the same number:`),
       highlights: ["convert1", "convert2"],
       type: "fractions",
       params,
@@ -1079,12 +1079,12 @@ export function buildFractionsAnimation(params, answer) {
       ]),
     });
     
-    // צעד 4: חיבור/חיסור
+    // Step 4: add/subtract
     const resNum = rawNum;
     steps.push({
       id: "calculate",
-      title: "חישוב",
-      ...learningStepFields(mix`עכשיו שהמכנים זהים – עובדים רק על המונים: ${M(`${nn1} ${isAdd ? "+" : "-"} ${nn2} = ${resNum}`)}`),
+      title: "Calculation",
+      ...learningStepFields(mix`Now that the denominators match — work only with the numerators: ${M(`${nn1} ${isAdd ? "+" : "-"} ${nn2} = ${resNum}`)}`),
       highlights: ["calculation"],
       type: "fractions",
       params,
@@ -1096,12 +1096,12 @@ export function buildFractionsAnimation(params, answer) {
       ]),
     });
 
-    // צעד 5: פישוט (אם אפשר)
+    // Step 5: simplify (if possible)
     if (canSimplify) {
       steps.push({
         id: "simplify",
-        title: "פישוט השבר",
-        ...learningStepFields(mix`אפשר לפשט כי גם ${resNum} וגם ${commonDen} מתחלקים ב-${simplified.g}.`),
+        title: "Simplify the fraction",
+        ...learningStepFields(mix`we can simplify because both ${resNum} and ${commonDen} are divisible by ${simplified.g}.`),
         highlights: ["simplify"],
         type: "fractions",
         params,
@@ -1114,12 +1114,12 @@ export function buildFractionsAnimation(params, answer) {
       });
     }
 
-    // צעד 6: מספר מעורב (אם צריך)
+    // Step 6: mixed number (if needed)
     if (mixed && mixed.rem !== 0) {
       steps.push({
         id: "mixed",
-        title: "המרה למספר מעורב",
-        ...learningStepFields(mix`אם יצא שבר גדול מ-1, אפשר לכתוב כמספר מעורב.`),
+        title: "Convert to a mixed number",
+        ...learningStepFields(mix`If the result is a fraction greater than 1, you can write it as a mixed number.`),
         highlights: ["mixed"],
         type: "fractions",
         params,
@@ -1131,11 +1131,11 @@ export function buildFractionsAnimation(params, answer) {
       });
     }
     
-    // צעד אחרון: התוצאה
+    // last step: the result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "fractions",
       params,
@@ -1145,8 +1145,8 @@ export function buildFractionsAnimation(params, answer) {
     const { improperNum, den, whole, num } = params;
     steps.push({
       id: "show",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`נמיר את השבר ${improperNum}/${den} למספר מעורב.`),
+      title: "Show the question",
+      ...learningStepFields(mix`convert the fraction ${improperNum}/${den} to a mixed number.`),
       type: "fractions",
       params,
       answer,
@@ -1154,20 +1154,20 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "divide",
-      title: "מחלקים כדי למצוא את השלם",
-      ...learningStepFields(mix`מחלקים: ${M(`${improperNum} ÷ ${den} = ${whole} `)}ושארית ${num}.`),
+      title: "Divide to find the whole",
+      ...learningStepFields(mix`divide: ${M(`${improperNum} ÷ ${den} = ${whole} `)}remainder ${num}.`),
       type: "fractions",
       params,
       answer,
       pre: pureMathLtrBlock([
-        `${improperNum} ÷ ${den} = ${whole} שארית ${num}`,
+        `${improperNum} ÷ ${den} = ${whole} remainder ${num}`,
         `${improperNum}/${den} = ${whole} ${num}/${den}`,
       ]),
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}.`),
       type: "fractions",
       params,
       answer,
@@ -1176,8 +1176,8 @@ export function buildFractionsAnimation(params, answer) {
     const { whole, num, den, improperNum } = params;
     steps.push({
       id: "show",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`נמיר את המספר המעורב ${whole} ${num}/${den} לשבר.`),
+      title: "Show the question",
+      ...learningStepFields(mix`convert the mixed number ${whole} ${num}/${den} to a fraction.`),
       type: "fractions",
       params,
       answer,
@@ -1185,8 +1185,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "כלל ההמרה",
-      ...learningStepFields(mix`מכפילים את השלם במכנה ומוסיפים את המונה: (${whole}×${den}) + ${num}.`),
+      title: "Conversion rule",
+      ...learningStepFields(mix`Multiply the whole number by the denominator and add the numerator: (${whole}×${den}) + ${num}.`),
       type: "fractions",
       params,
       answer,
@@ -1197,8 +1197,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "מחשבים",
-      ...learningStepFields(mix`${whole}×${den} = ${M(`${whole * den}, `)}ואז ${whole * den} + ${num} = ${M(`${improperNum}.`)}`),
+      title: "compute",
+      ...learningStepFields(mix`${whole}×${den} = ${M(`${whole * den}, `)}then ${whole * den} + ${num} = ${M(`${improperNum}.`)}`),
       type: "fractions",
       params,
       answer,
@@ -1210,8 +1210,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}.`),
       type: "fractions",
       params,
       answer,
@@ -1220,8 +1220,8 @@ export function buildFractionsAnimation(params, answer) {
     const { num, den, factor, expandedNum, expandedDen } = params;
     steps.push({
       id: "show",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`נרחיב את ${num}/${den} ב-${factor} (כלומר נכפיל מונה ומכנה באותו מספר).`),
+      title: "Show the question",
+      ...learningStepFields(mix`expand ${num}/${den} by ${factor} (that is, multiply numerator and denominator by the same number).`),
       type: "fractions",
       params,
       answer,
@@ -1229,8 +1229,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "multiply",
-      title: "מכפילים מונה ומכנה",
-      ...learningStepFields(mix`מונה: ${M(`${num}×${factor} = ${expandedNum}. `)}מכנה: ${M(`${den}×${factor} = ${expandedDen}.`)}`),
+      title: "Multiply numerator and denominator",
+      ...learningStepFields(mix`numerator: ${M(`${num}×${factor} = ${expandedNum}. `)}denominator: ${M(`${den}×${factor} = ${expandedDen}.`)}`),
       type: "fractions",
       params,
       answer,
@@ -1241,8 +1241,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`השבר השווה הוא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the equivalent fraction is ${answer}.`),
       type: "fractions",
       params,
       answer,
@@ -1252,8 +1252,8 @@ export function buildFractionsAnimation(params, answer) {
     const simp = simplifyFraction(num, den);
     steps.push({
       id: "show",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`נצמצם את השבר ${num}/${den}.`),
+      title: "Show the question",
+      ...learningStepFields(mix`simplify the fraction ${num}/${den}.`),
       type: "fractions",
       params,
       answer,
@@ -1261,16 +1261,16 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "gcd",
-      title: "מחלק משותף גדול",
-      ...learningStepFields(mix`מחפשים מספר שמחלק גם את ${num} וגם את ${den}. כאן המחלק הוא ${simp.g}.`),
+      title: "Greatest common divisor",
+      ...learningStepFields(mix`find a number that divides both ${num} and also ${den}. here the divisor is ${simp.g}.`),
       type: "fractions",
       params,
       answer,
     });
     steps.push({
       id: "divide",
-      title: "מחלקים מונה ומכנה",
-      ...learningStepFields(mix`מונה: ${M(`${num}÷${simp.g} = ${reducedNum}. `)}מכנה: ${M(`${den}÷${simp.g} = ${reducedDen}.`)}`),
+      title: "Divide numerator and denominator",
+      ...learningStepFields(mix`numerator: ${M(`${num}÷${simp.g} = ${reducedNum}. `)}denominator: ${M(`${den}÷${simp.g} = ${reducedDen}.`)}`),
       type: "fractions",
       params,
       answer,
@@ -1282,8 +1282,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`השבר המצומצם הוא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the simplified fraction is ${answer}.`),
       type: "fractions",
       params,
       answer,
@@ -1292,8 +1292,8 @@ export function buildFractionsAnimation(params, answer) {
     const { dividend, divisor, num, den } = params;
     steps.push({
       id: "show",
-      title: "שבר כמנת חילוק",
-      ...learningStepFields(mix`חילוק אפשר לכתוב כשבר: ${M(`${dividend} ÷ ${divisor} = ${dividend}/${divisor}`)}.`),
+      title: "Fraction as a quotient",
+      ...learningStepFields(mix`division can be written as a fraction: ${M(`${dividend} ÷ ${divisor} = ${dividend}/${divisor}`)}.`),
       type: "fractions",
       params,
       answer,
@@ -1303,8 +1303,8 @@ export function buildFractionsAnimation(params, answer) {
     if (simp.g > 1) {
       steps.push({
         id: "simplify",
-        title: "מצמצמים",
-        ...learningStepFields(mix`מצמצמים את ${dividend}/${divisor} ב-${simp.g}.`),
+        title: "Simplify",
+        ...learningStepFields(mix`simplify ${dividend}/${divisor} by ${simp.g}.`),
         type: "fractions",
         params,
         answer,
@@ -1317,8 +1317,8 @@ export function buildFractionsAnimation(params, answer) {
     }
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`לכן התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`so the answer is ${answer}.`),
       type: "fractions",
       params,
       answer,
@@ -1330,8 +1330,8 @@ export function buildFractionsAnimation(params, answer) {
     const simp = simplifyFraction(rawNum, rawDen);
     steps.push({
       id: "show",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`כפל שברים: מכפילים מונה במונה ומכנה במכנה.`),
+      title: "Show the question",
+      ...learningStepFields(mix`Multiplying fractions: multiply numerator by numerator and denominator by denominator.`),
       type: "fractions",
       params,
       answer,
@@ -1339,8 +1339,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "mul",
-      title: "כפל מונים ומכנים",
-      ...learningStepFields(mix`מונה: ${M(`${n1}×${n2} = ${rawNum}. `)}מכנה: ${M(`${den1}×${den2} = ${rawDen}.`)}`),
+      title: "Multiply numerators and denominators",
+      ...learningStepFields(mix`numerator: ${M(`${n1}×${n2} = ${rawNum}. `)}denominator: ${M(`${den1}×${den2} = ${rawDen}.`)}`),
       type: "fractions",
       params,
       answer,
@@ -1353,8 +1353,8 @@ export function buildFractionsAnimation(params, answer) {
     if (simp.g > 1) {
       steps.push({
         id: "simplify",
-        title: "מצמצמים",
-        ...learningStepFields(mix`מצמצמים ב-${simp.g}: ${M(`${rawNum}/${rawDen} = ${finalNum}/${finalDen}.`)}`),
+        title: "Simplify",
+        ...learningStepFields(mix`simplify by ${simp.g}: ${M(`${rawNum}/${rawDen} = ${finalNum}/${finalDen}.`)}`),
         type: "fractions",
         params,
         answer,
@@ -1365,7 +1365,7 @@ export function buildFractionsAnimation(params, answer) {
         ]),
       });
     }
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "fractions", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "fractions", params, answer });
   } else if (params.kind === "frac_divide") {
     const { n1, den1, n2, den2, finalNum, finalDen } = params;
     const rawNum = n1 * den2;
@@ -1373,8 +1373,8 @@ export function buildFractionsAnimation(params, answer) {
     const simp = simplifyFraction(rawNum, rawDen);
     steps.push({
       id: "show",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`חילוק שברים: הופכים את המחלק וכופלים.`),
+      title: "Show the question",
+      ...learningStepFields(mix`Dividing fractions: flip the divisor and multiply.`),
       type: "fractions",
       params,
       answer,
@@ -1382,7 +1382,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "flip",
-      title: "הופכים וכופלים",
+      title: "Flip and multiply",
       ...learningStepFields(mix`${M(`${n1}/${den1} ÷ ${n2}/${den2} = ${n1}/${den1} × ${den2}/${n2}`)}`),
       type: "fractions",
       params,
@@ -1394,8 +1394,8 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "mul",
-      title: "כפל מונים ומכנים",
-      ...learningStepFields(mix`מונה: ${M(`${n1}×${den2} = ${rawNum}. `)}מכנה: ${M(`${den1}×${n2} = ${rawDen}.`)}`),
+      title: "Multiply numerators and denominators",
+      ...learningStepFields(mix`numerator: ${M(`${n1}×${den2} = ${rawNum}. `)}denominator: ${M(`${den1}×${n2} = ${rawDen}.`)}`),
       type: "fractions",
       params,
       answer,
@@ -1408,8 +1408,8 @@ export function buildFractionsAnimation(params, answer) {
     if (simp.g > 1) {
       steps.push({
         id: "simplify",
-        title: "מצמצמים",
-        ...learningStepFields(mix`מצמצמים ב-${simp.g}: ${M(`${rawNum}/${rawDen} = ${finalNum}/${finalDen}.`)}`),
+        title: "Simplify",
+        ...learningStepFields(mix`simplify by ${simp.g}: ${M(`${rawNum}/${rawDen} = ${finalNum}/${finalDen}.`)}`),
         type: "fractions",
         params,
         answer,
@@ -1420,39 +1420,39 @@ export function buildFractionsAnimation(params, answer) {
         ]),
       });
     }
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "fractions", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "fractions", params, answer });
   } else if (params.kind === "frac_half") {
     const { whole } = params;
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`מהו חצי מ-${whole}?`), type: "fractions", params, answer, pre: pureMathLtrBlock([`1/2 של ${whole}`]) });
-    steps.push({ id: "rule", title: "חצי = לחלק ב-2", ...learningStepFields(mix`חצי ממספר זה המספר ÷ 2.`), type: "fractions", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`What is half of ${whole}?`), type: "fractions", params, answer, pre: pureMathLtrBlock([`1/2 of ${whole}`]) });
+    steps.push({ id: "rule", title: "half = divide by 2", ...learningStepFields(mix`half of a number is the number ÷ 2.`), type: "fractions", params, answer });
     const res = whole / 2;
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${whole} ÷ 2 = ${res}`)}`), type: "fractions", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "fractions", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${whole} ÷ 2 = ${res}`)}`), type: "fractions", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "fractions", params, answer });
   } else if (params.kind === "frac_half_reverse") {
     const { half, whole } = params;
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`חצי מ-__ הוא ${half}. מה המספר השלם?`), type: "fractions", params, answer });
-    steps.push({ id: "rule", title: "הפוך מחצי", ...learningStepFields(mix`אם חצי מהמספר הוא ${half}, אז המספר השלם הוא פי 2.`), type: "fractions", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${half} × 2 = ${whole}`)}`), type: "fractions", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "fractions", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`half of __ is ${half}. What is the whole number?`), type: "fractions", params, answer });
+    steps.push({ id: "rule", title: "Undo a half", ...learningStepFields(mix`if half of the number is ${half}, then the whole number is 2 times that.`), type: "fractions", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${half} × 2 = ${whole}`)}`), type: "fractions", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "fractions", params, answer });
   } else if (params.kind === "frac_quarter") {
     const { whole } = params;
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`מהו רבע מ-${whole}?`), type: "fractions", params, answer, pre: pureMathLtrBlock([`1/4 של ${whole}`]) });
-    steps.push({ id: "rule", title: "רבע = לחלק ב-4", ...learningStepFields(mix`רבע ממספר זה המספר ÷ 4.`), type: "fractions", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`What is a quarter of ${whole}?`), type: "fractions", params, answer, pre: pureMathLtrBlock([`1/4 of ${whole}`]) });
+    steps.push({ id: "rule", title: "a quarter = divide by 4", ...learningStepFields(mix`a quarter of a number is the number ÷ 4.`), type: "fractions", params, answer });
     const res = whole / 4;
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${whole} ÷ 4 = ${res}`)}`), type: "fractions", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "fractions", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${whole} ÷ 4 = ${res}`)}`), type: "fractions", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "fractions", params, answer });
   } else if (params.kind === "frac_quarter_reverse") {
     const { quarter, whole } = params;
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`רבע מ-__ הוא ${quarter}. מה המספר השלם?`), type: "fractions", params, answer });
-    steps.push({ id: "rule", title: "הפוך מרבע", ...learningStepFields(mix`אם רבע מהמספר הוא ${quarter}, אז המספר השלם הוא פי 4.`), type: "fractions", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${quarter} × 4 = ${whole}`)}`), type: "fractions", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "fractions", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`a quarter of __ is ${quarter}. What is the whole number?`), type: "fractions", params, answer });
+    steps.push({ id: "rule", title: "Undo a quarter", ...learningStepFields(mix`if a quarter of the number is ${quarter}, then the whole number is 4 times that.`), type: "fractions", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${quarter} × 4 = ${whole}`)}`), type: "fractions", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "fractions", params, answer });
   }
   
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לעשרוניים (עם תרגיל מאונך)
+// Function that builds animation steps for decimals (with a vertical exercise)
 export function buildDecimalsAnimation(params, answer) {
   const steps = [];
   const { a, b, kind } = params;
@@ -1509,42 +1509,42 @@ export function buildDecimalsAnimation(params, answer) {
   };
 
   const placeName = (idxFromRight) => {
-    // idxFromRight=0 הוא המקום הקטן ביותר (למשל מאיות כשיש 2 ספרות אחרי נקודה)
+    // idxFromRight=0 is the smallest place (for example hundredths when there are 2 digits after the decimal point)
     if (idxFromRight < places) {
-      if (places === 1) return "עשיריות";
-      if (places === 2) return idxFromRight === 0 ? "מאיות" : "עשיריות";
-      // כללי
-      return `מקום ${idxFromRight + 1} אחרי הנקודה`;
+      if (places === 1) return "tenths";
+      if (places === 2) return idxFromRight === 0 ? "hundredths" : "tenths";
+      // general
+      return `place ${idxFromRight + 1} after the decimal point`;
     }
-    const k = idxFromRight - places; // 0=אחדות, 1=עשרות...
-    if (k === 0) return "אחדות";
-    if (k === 1) return "עשרות";
-    if (k === 2) return "מאות";
-    return `מקום ${k + 1} משמאל לנקודה`;
+    const k = idxFromRight - places; // 0=ones, 1=tens...
+    if (k === 0) return "ones";
+    if (k === 1) return "tens";
+    if (k === 2) return "hundreds";
+    return `place ${k + 1} left of the decimal point`;
   };
 
-  // צעד 1: יישור נקודות
+  // Step 1: line up decimal points
   steps.push({
     id: "place-value",
-    title: "מיישרים את הנקודות העשרוניות",
-    ...learningStepFields(mix`כותבים את המספרים אחד מעל השני כך שהנקודות העשרוניות נמצאות באותה עמודה.`),
+    title: "Line up the decimal points",
+    ...learningStepFields(mix`Write the numbers one above the other so the decimal points line up in the same column.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
     pre: makePre(0),
   });
   
-  // צעד 2: מסבירים מה עושים עם הנקודה
+  // Step 2: explain what to do with the decimal point
   const mul = Math.pow(10, places);
   steps.push({
     id: "dot-note",
-    title: "מה עושים עם הנקודה?",
-    ...learningStepFields(mix`כדי שיהיה קל לחשב בעמודות, מדמיינים שמזיזים את הנקודה ${places} מקומות ימינה (כופלים ב-${mul}). מחשבים עם מספרים שלמים, ובסוף מחזירים את הנקודה ${places} מקומות שמאלה.`),
+    title: "What do we do with the decimal point?",
+    ...learningStepFields(mix`To make column math easier, imagine shifting the decimal point ${places} places to the right (multiply by ${mul}). Compute with whole numbers, then put the decimal point back ${places} places to the left.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
     pre: makePre(0),
   });
 
-  // צעד 3+: חישוב ספרה-ספרה (כמו חיבור/חיסור)
+  // Step 3+: digit-by-digit calculation (like addition/subtraction)
   let revealedCount = 0;
   let stepIndex = 3;
 
@@ -1563,8 +1563,8 @@ export function buildDecimalsAnimation(params, answer) {
       revealedCount++;
   steps.push({
         id: `step-${stepIndex}`,
-        title: `עמודת ה${place}`,
-        ...learningStepFields(mix`מחברים בעמודת ה${place}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. כותבים ${digit}${newCarry ? " ונושאים 1 לעמודה הבאה." : "."}`),
+        title: `the column ${place}`,
+        ...learningStepFields(mix`add in the ${place}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. write ${digit}${newCarry ? " and carry 1 to the next column." : "."}`),
     highlights: ["aAll", "bAll", "resultAll"],
         revealDigits: revealedCount,
         pre: makePre(revealedCount),
@@ -1578,8 +1578,8 @@ export function buildDecimalsAnimation(params, answer) {
       revealedCount++;
       steps.push({
         id: "final-carry",
-        title: "נשיאה אחרונה",
-        ...learningStepFields(mix`נשארה נשיאה 1 בסוף, כותבים אותה משמאל.`),
+        title: "Final carry",
+        ...learningStepFields(mix`A carry of 1 remains at the end — write it on the left.`),
         highlights: ["resultAll"],
         revealDigits: revealedCount,
         pre: makePre(revealedCount),
@@ -1599,8 +1599,8 @@ export function buildDecimalsAnimation(params, answer) {
       if (da < db) {
         steps.push({
           id: `borrow-${stepIndex}`,
-          title: `השאלה בעמודת ה${place}`,
-          ...learningStepFields(mix`בעמודת ה${place} ${da} קטן מ-${db}, לכן מוסיפים 10 לעמודה הזו ולוקחים 1 מהעמודה הבאה (השאלה).`),
+          title: `borrow in the ${place}`,
+          ...learningStepFields(mix`in the ${place} ${da} less than ${db}, so add 10 to this column and take 1 from the next column (borrow).`),
           highlights: ["aAll", "bAll"],
           revealDigits: revealedCount,
           pre: makePre(revealedCount),
@@ -1616,8 +1616,8 @@ export function buildDecimalsAnimation(params, answer) {
       revealedCount++;
       steps.push({
         id: `step-${stepIndex}`,
-        title: `עמודת ה${place}`,
-        ...learningStepFields(mix`מחסרים בעמודת ה${place}: ${M(`${da} − ${db} = ${diff}. `)}כותבים ${diff}.`),
+        title: `the column ${place}`,
+        ...learningStepFields(mix`subtract in the ${place}: ${M(`${da} − ${db} = ${diff}. `)}write ${diff}.`),
         highlights: ["aAll", "bAll", "resultAll"],
         revealDigits: revealedCount,
         pre: makePre(revealedCount),
@@ -1628,8 +1628,8 @@ export function buildDecimalsAnimation(params, answer) {
 
   steps.push({
     id: "final",
-    title: "מחזירים את הנקודה למקום",
-    ...learningStepFields(mix`זוכרים: מחזירים את הנקודה לאותה עמודה. התוצאה הסופית היא ${answerStr}.`),
+    title: "Put the decimal point back",
+    ...learningStepFields(mix`Remember: put the decimal point back in the same column. The final result is ${answerStr}.`),
     highlights: ["resultAll"],
     revealDigits: answerDigitsCount,
     pre: makePre(answerDigitsCount),
@@ -1638,7 +1638,7 @@ export function buildDecimalsAnimation(params, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לאחוזים
+// Function that builds animation steps for percentages
 export function buildPercentagesAnimation(params, answer) {
   const steps = [];
   const { base, p, kind } = params;
@@ -1660,8 +1660,8 @@ export function buildPercentagesAnimation(params, answer) {
     const den = 100 / g;
     local.push({
       id: `${idPrefix}-show`,
-      title: "מה מבקשים?",
-      ...learningStepFields(mix`מחשבים ${perc}% מתוך ${baseVal}.`),
+      title: "What is asked?",
+      ...learningStepFields(mix`compute ${perc}% of ${baseVal}.`),
       type: "percentages",
       params,
       answer,
@@ -1669,8 +1669,8 @@ export function buildPercentagesAnimation(params, answer) {
     });
     local.push({
       id: `${idPrefix}-fraction`,
-      title: "אחוז כשבר",
-      ...learningStepFields(mix`${perc}% = ${perc}/100. אפשר לצמצם: ${M(`${perc}/100 = ${num}/${den}`)}.`),
+      title: "Percent as a fraction",
+      ...learningStepFields(mix`${perc}% = ${perc}/100. you can simplify: ${M(`${perc}/100 = ${num}/${den}`)}.`),
       type: "percentages",
       params,
       answer,
@@ -1678,22 +1678,22 @@ export function buildPercentagesAnimation(params, answer) {
     });
     local.push({
       id: `${idPrefix}-formula`,
-      title: "כותבים תרגיל",
-      ...learningStepFields(mix`חלק = מספר × השבר ⇒ ${M(`${baseVal} × ${num}/${den}`)}.`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`part = number × the fraction ⇒ ${M(`${baseVal} × ${num}/${den}`)}.`),
       type: "percentages",
       params,
       answer,
       pre: pureMathLtrBlock([`${baseVal} × ${num}/${den}`]),
     });
 
-    // מעדיפים לחלק קודם כדי לשמור על מספרים שלמים (כמו שביקשת)
+    // Prefer dividing first to keep whole numbers (as you asked)
     const divisibleFirst = baseVal % den === 0;
     if (divisibleFirst) {
       const reducedBase = baseVal / den;
       local.push({
         id: `${idPrefix}-divide-first`,
-        title: "מחלקים קודם (נוח יותר)",
-        ...learningStepFields(mix`נחלק קודם את ${baseVal} ב-${den}: ${M(`${baseVal} ÷ ${den} = ${reducedBase}`)}.`),
+        title: "Divide first (easier)",
+        ...learningStepFields(mix`first divide ${baseVal} by ${den}: ${M(`${baseVal} ÷ ${den} = ${reducedBase}`)}.`),
       type: "percentages",
       params,
       answer,
@@ -1701,7 +1701,7 @@ export function buildPercentagesAnimation(params, answer) {
       });
       local.push({
         id: `${idPrefix}-multiply`,
-        title: "כופלים",
+        title: "Multiply",
         ...learningStepFields(mix`${M(`${reducedBase} × ${num} = ${resultVal}`)}.`),
         type: "percentages",
         params,
@@ -1710,8 +1710,8 @@ export function buildPercentagesAnimation(params, answer) {
     } else {
       local.push({
         id: `${idPrefix}-multiply-first`,
-        title: "כופלים ואז מחלקים",
-        ...learningStepFields(mix`מחשבים: ${M(`${baseVal} × ${num} ÷ ${den} = ${resultVal}`)}.`),
+        title: "Multiply, then divide",
+        ...learningStepFields(mix`compute: ${M(`${baseVal} × ${num} ÷ ${den} = ${resultVal}`)}.`),
         type: "percentages",
         params,
         answer,
@@ -1720,8 +1720,8 @@ export function buildPercentagesAnimation(params, answer) {
 
     local.push({
       id: `${idPrefix}-final`,
-      title: "תוצאה",
-      ...learningStepFields(mix`לכן ${perc}% מתוך ${baseVal} הוא ${resultVal}.`),
+      title: "Result",
+      ...learningStepFields(mix`so ${perc}% of ${baseVal} is ${resultVal}.`),
       type: "percentages",
       params,
       answer,
@@ -1733,8 +1733,8 @@ export function buildPercentagesAnimation(params, answer) {
     const result = Number(answer);
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`כמה זה ${p}% מתוך ${base}?`),
+      title: "Show the question",
+      ...learningStepFields(mix`how much is ${p}% of ${base}?`),
       type: "percentages",
       params,
       answer,
@@ -1742,8 +1742,8 @@ export function buildPercentagesAnimation(params, answer) {
     steps.push(...buildPartOfSteps(base, p, result, "part"));
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}.`),
       type: "percentages",
       params,
       answer,
@@ -1752,16 +1752,16 @@ export function buildPercentagesAnimation(params, answer) {
     const { discount, finalPrice } = params;
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`מחיר מוצר הוא ${base}₪ ויש הנחה של ${p}%. מה המחיר אחרי ההנחה?`),
+      title: "Show the question",
+      ...learningStepFields(mix`a product costs ${base} and there is a discount of ${p}%. What is the price after the discount?`),
       type: "percentages",
       params,
       answer,
     });
     steps.push({
       id: "idea",
-      title: "מה עושים?",
-      ...learningStepFields(mix`שלב 1: מחשבים כמה שווה ההנחה. שלב 2: מחסרים אותה מהמחיר.`),
+      title: "What do we do?",
+      ...learningStepFields(mix`Step 1: compute the discount amount. Step 2: subtract it from the price.`),
       type: "percentages",
       params,
       answer,
@@ -1769,13 +1769,13 @@ export function buildPercentagesAnimation(params, answer) {
     steps.push(...buildPartOfSteps(base, p, discount, "disc"));
     steps.push({
       id: "subtract",
-      title: "מחיר אחרי הנחה",
-      ...learningStepFields(mix`מורידים את ההנחה: ${M(`${base} − ${discount} = ${finalPrice}`)}.`),
+      title: "Price after discount",
+      ...learningStepFields(mix`subtract the discount: ${M(`${base} − ${discount} = ${finalPrice}`)}.`),
       type: "percentages",
       params,
       answer,
     });
-    // חישוב מאונך כמו בחיסור
+    // vertical calculation like subtraction
     steps.push(
       ...buildAdditionOrSubtractionAnimation(base, discount, finalPrice, "subtraction").map((s) => ({
         ...s,
@@ -1787,8 +1787,8 @@ export function buildPercentagesAnimation(params, answer) {
     );
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`המחיר אחרי ההנחה הוא ${answer}₪.`),
+      title: "Final result",
+      ...learningStepFields(mix`the price after the discount is ${answer}.`),
       type: "percentages",
       params,
       answer,
@@ -1798,28 +1798,28 @@ export function buildPercentagesAnimation(params, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לסדרות
+// Function that builds animation steps for sequences
 export function buildSequencesAnimation(params, answer) {
   const steps = [];
   const { seq, step, posOfBlank } = params;
-  // צעד 1: הצגת הסדרה
+  // Step 1: Show the sequence
   const display = seq.map((v, idx) => (idx === posOfBlank ? "__" : v)).join(", ");
   steps.push({
     id: "show-sequence",
-    title: "הצגת הסדרה",
-    ...learningStepFields(mix`הסדרה היא: ${M(`${display}`)}`),
+    title: "Show the sequence",
+    ...learningStepFields(mix`the sequence is: ${M(`${display}`)}`),
     highlights: ["sequence"],
     type: "sequences",
     params,
     answer,
   });
   
-  // צעד 2: מציאת ההפרש (בודקים כמה זוגות כדי לוודא שזה קבוע)
+  // Step 2: find the difference (check a few pairs to confirm it is constant)
   const firstDiff = seq[1] - seq[0];
   steps.push({
     id: "find-difference",
-    title: "מציאת ההפרש",
-    ...learningStepFields(mix`נסתכל על ההפרש בין שני מספרים סמוכים: ${M(`${seq[1]} - ${seq[0]} = ${firstDiff}`)}`),
+    title: "Find the difference",
+    ...learningStepFields(mix`Look at the difference between two neighboring numbers: ${M(`${seq[1]} - ${seq[0]} = ${firstDiff}`)}`),
     highlights: ["difference"],
     type: "sequences",
     params,
@@ -1829,8 +1829,8 @@ export function buildSequencesAnimation(params, answer) {
     const secondDiff = seq[2] - seq[1];
     steps.push({
       id: "confirm",
-      title: "מאשרים שזה קבוע",
-      ...learningStepFields(mix`בודקים עוד פעם: ${M(`${seq[2]} - ${seq[1]} = ${secondDiff}`)}. זה אותו הפרש ⇒ הצעד קבוע.`),
+      title: "Confirm it is constant",
+      ...learningStepFields(mix`check again: ${M(`${seq[2]} - ${seq[1]} = ${secondDiff}`)}. it is the same difference ⇒ the step is constant.`),
       highlights: ["difference"],
       type: "sequences",
       params,
@@ -1838,18 +1838,18 @@ export function buildSequencesAnimation(params, answer) {
     });
   }
   
-  // צעד 3: הסבר על הצעד הקבוע
+  // Step 3: explain the constant step
   steps.push({
     id: "explain-step",
-    title: "הצעד הקבוע",
-    ...learningStepFields(mix`זה הצעד הקבוע של הסדרה: ${M(`${step > 0 ? "מוסיפים" : "מחסרים"} ${Math.abs(step)} `)}בכל צעד`),
+    title: "The constant step",
+    ...learningStepFields(mix`This is the constant step of the sequence: ${M(`${step > 0 ? "add" : "subtract"} ${Math.abs(step)} `)}each step`),
     highlights: ["step"],
     type: "sequences",
     params,
     answer,
   });
   
-  // צעד 4: חישוב המספר החסר
+  // Step 4: Find the missing number
   const beforeBlank = posOfBlank > 0 ? seq[posOfBlank - 1] : null;
   const afterBlank = posOfBlank < seq.length - 1 ? seq[posOfBlank + 1] : null;
   
@@ -1859,14 +1859,14 @@ export function buildSequencesAnimation(params, answer) {
     const res = beforeBlank + step;
     steps.push({
       id: "calculate",
-      title: "חישוב המספר החסר",
-      ...learningStepFields(mix`המספר שאחרי ${beforeBlank} מתקבל ע״י ${step >= 0 ? "הוספת" : "החסרת"} ${amt}: ${M(`${beforeBlank} ${step >= 0 ? "+" : "−"} ${amt} = ${res}`)}`),
+      title: "Find the missing number",
+      ...learningStepFields(mix`the number after ${beforeBlank} is obtained by ${step >= 0 ? "adding" : "subtracting"} ${amt}: ${M(`${beforeBlank} ${step >= 0 ? "+" : "−"} ${amt} = ${res}`)}`),
       highlights: ["calculation"],
       type: "sequences",
       params,
       answer,
     });
-    // צעדים מאונכים כמו בחיבור/חיסור
+    // vertical steps like in addition/subtraction
     steps.push(
       ...buildAdditionOrSubtractionAnimation(beforeBlank, amt, res, opKind).map((s) => ({
         ...s,
@@ -1882,8 +1882,8 @@ export function buildSequencesAnimation(params, answer) {
     const res = afterBlank - step;
     steps.push({
       id: "calculate",
-      title: "חישוב המספר החסר",
-      ...learningStepFields(mix`המספר שלפני ${afterBlank} מתקבל ע״י ${step >= 0 ? "החסרת" : "הוספת"} ${amt}: ${M(`${afterBlank} ${step >= 0 ? "−" : "+"} ${amt} = ${res}`)}`),
+      title: "Find the missing number",
+      ...learningStepFields(mix`the number before ${afterBlank} is obtained by ${step >= 0 ? "subtracting" : "adding"} ${amt}: ${M(`${afterBlank} ${step >= 0 ? "−" : "+"} ${amt} = ${res}`)}`),
       highlights: ["calculation"],
       type: "sequences",
       params,
@@ -1900,11 +1900,11 @@ export function buildSequencesAnimation(params, answer) {
     );
   }
   
-  // צעד 5: התוצאה
+  // Step 5: The result
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`המספר החסר הוא ${answer}`),
+    title: "Final result",
+    ...learningStepFields(mix`the missing number is ${answer}`),
     highlights: ["result"],
     type: "sequences",
     params,
@@ -1914,7 +1914,7 @@ export function buildSequencesAnimation(params, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה למשוואות
+// Function that builds animation steps for equations
 export function buildEquationsAnimation(params, answer) {
   const steps = [];
   const { kind, form, a, b, c, exerciseText } = params;
@@ -1931,22 +1931,22 @@ export function buildEquationsAnimation(params, answer) {
     });
   };
   
-  // צעד 1: הצגת המשוואה
+  // Step 1: Show the equation
   steps.push({
     id: "show-equation",
-    title: "הצגת המשוואה",
-    ...learningStepFields(mix`המשוואה היא: ${M(`${exerciseText}`)}`),
+    title: "Show the equation",
+    ...learningStepFields(mix`the equation is: ${M(`${exerciseText}`)}`),
     type: "equations",
     params,
     answer,
   });
   
-  // כיתה א' - משוואות פשוטות
+  // Grade 1 - simple equations
   if (kind === "eq_add_simple") {
     steps.push({
       id: "idea",
-      title: "איך פותרים?",
-      ...learningStepFields(mix`אם ${M(`${a} + __ = ${c}`)} אז המספר החסר הוא ${M(`${c} − ${a}`)}.`),
+      title: "How do we solve it?",
+      ...learningStepFields(mix`if ${M(`${a} + __ = ${c}`)} then the missing number is ${M(`${c} − ${a}`)}.`),
       type: "equations",
       params,
       answer,
@@ -1955,8 +1955,8 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_sub_simple") {
     steps.push({
       id: "idea",
-      title: "איך פותרים?",
-      ...learningStepFields(mix`אם ${M(`${a} − __ = ${c}`)} אז המספר החסר הוא ${M(`${a} − ${c}`)}.`),
+      title: "How do we solve it?",
+      ...learningStepFields(mix`if ${M(`${a} − __ = ${c}`)} then the missing number is ${M(`${a} − ${c}`)}.`),
       type: "equations",
       params,
       answer,
@@ -1965,8 +1965,8 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_add") {
     steps.push({
       id: "inverse",
-      title: "פעולה הפוכה",
-      ...learningStepFields(mix`בחיבור הפעולה ההפוכה היא חיסור.`),
+      title: "Inverse operation",
+      ...learningStepFields(mix`In addition, the inverse operation is subtraction.`),
       type: "equations",
       params,
       answer,
@@ -1976,8 +1976,8 @@ export function buildEquationsAnimation(params, answer) {
     const subB = form === "a_plus_x" ? a : b;
     steps.push({
       id: "calc",
-      title: "מחשבים את החסר",
-      ...learningStepFields(mix`נחשב: ${M(`${subA} − ${subB} = ${missing}`)}.`),
+      title: "Find the missing number",
+      ...learningStepFields(mix`compute: ${M(`${subA} − ${subB} = ${missing}`)}.`),
       type: "equations",
       params,
       answer,
@@ -1986,8 +1986,8 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_sub") {
     steps.push({
       id: "inverse",
-      title: "פעולה הפוכה",
-      ...learningStepFields(mix`בחיסור – לפעמים משתמשים בחיסור ולפעמים בחיבור, תלוי איפה החסר.`),
+      title: "Inverse operation",
+      ...learningStepFields(mix`In subtraction — sometimes we use subtraction and sometimes addition, depending on where the blank is.`),
       type: "equations",
       params,
       answer,
@@ -1996,8 +1996,8 @@ export function buildEquationsAnimation(params, answer) {
     if (form === "a_minus_x") {
     steps.push({
         id: "calc",
-        title: "מחשבים את החסר",
-        ...learningStepFields(mix`אם ${M(`${a} − __ = ${c}`)} אז ${M(`${a} − ${c} = ${missing}`)}.`),
+        title: "Find the missing number",
+        ...learningStepFields(mix`if ${M(`${a} − __ = ${c}`)} then ${M(`${a} − ${c} = ${missing}`)}.`),
       type: "equations",
       params,
       answer,
@@ -2006,8 +2006,8 @@ export function buildEquationsAnimation(params, answer) {
     } else {
       steps.push({
         id: "calc",
-        title: "מחשבים את החסר",
-        ...learningStepFields(mix`אם ${M(`__ − ${b} = ${c}`)} אז ${M(`${c} + ${b} = ${missing}`)}.`),
+        title: "Find the missing number",
+        ...learningStepFields(mix`if ${M(`__ − ${b} = ${c}`)} then ${M(`${c} + ${b} = ${missing}`)}.`),
         type: "equations",
         params,
         answer,
@@ -2017,8 +2017,8 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_mul") {
     steps.push({
       id: "inverse",
-      title: "פעולה הפוכה",
-      ...learningStepFields(mix`בכפל הפעולה ההפוכה היא חילוק.`),
+      title: "Inverse operation",
+      ...learningStepFields(mix`In multiplication, the inverse operation is division.`),
       type: "equations",
       params,
       answer,
@@ -2027,8 +2027,8 @@ export function buildEquationsAnimation(params, answer) {
     const known = form === "a_times_x" ? a : b;
     steps.push({
       id: "calc",
-      title: "מחשבים את החסר",
-      ...learningStepFields(mix`נחשב: ${M(`${c} ÷ ${known} = ${missing}`)}.`),
+      title: "Find the missing number",
+      ...learningStepFields(mix`compute: ${M(`${c} ÷ ${known} = ${missing}`)}.`),
       type: "equations",
       params,
       answer,
@@ -2038,8 +2038,8 @@ export function buildEquationsAnimation(params, answer) {
     const { dividend, divisor, quotient } = params;
     steps.push({
       id: "inverse",
-      title: "רעיון",
-      ...learningStepFields(mix`בחילוק משתמשים בכפל/חילוק כדי למצוא את המספר החסר.`),
+      title: "Idea",
+      ...learningStepFields(mix`In division we use multiplication/division to find the missing number.`),
       type: "equations",
       params,
       answer,
@@ -2049,8 +2049,8 @@ export function buildEquationsAnimation(params, answer) {
       // dividend ÷ __ = quotient  => __ = dividend ÷ quotient
     steps.push({
         id: "calc",
-        title: "מחשבים את המחלק החסר",
-        ...learningStepFields(mix`אם ${M(`${dividend} ÷ __ = ${quotient}`)} אז ${M(`${dividend} ÷ ${quotient} = ${missing}`)}.`),
+        title: "Find the missing divisor",
+        ...learningStepFields(mix`if ${M(`${dividend} ÷ __ = ${quotient}`)} then ${M(`${dividend} ÷ ${quotient} = ${missing}`)}.`),
       type: "equations",
       params,
       answer,
@@ -2060,8 +2060,8 @@ export function buildEquationsAnimation(params, answer) {
       // __ ÷ divisor = quotient => __ = quotient × divisor
       steps.push({
         id: "calc",
-        title: "מחשבים את המחולק החסר",
-        ...learningStepFields(mix`אם ${M(`__ ÷ ${divisor} = ${quotient}`)} אז ${M(`${quotient} × ${divisor} = ${missing}`)}.`),
+        title: "Find the missing dividend",
+        ...learningStepFields(mix`if ${M(`__ ÷ ${divisor} = ${quotient}`)} then ${M(`${quotient} × ${divisor} = ${missing}`)}.`),
         type: "equations",
         params,
         answer,
@@ -2072,8 +2072,8 @@ export function buildEquationsAnimation(params, answer) {
 
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`התשובה היא ${answer}.`),
+    title: "Final result",
+    ...learningStepFields(mix`the answer is ${answer}.`),
     type: "equations",
     params,
     answer,
@@ -2082,7 +2082,7 @@ export function buildEquationsAnimation(params, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה להשוואה
+// Function that builds animation steps for comparison
 export function buildCompareAnimation(params, _answerIgnored) {
   const steps = [];
   const { a: numA, b: numB } = coerceComparisonOperands(params?.a, params?.b);
@@ -2097,51 +2097,51 @@ export function buildCompareAnimation(params, _answerIgnored) {
 
   steps.push({
     id: "show-question",
-    title: "הצגת השאלה",
-    ...learningStepFields(mix`השלם את הסימן: ${M(`${aLabel} `)}__ ${bLabel}`),
+    title: "Show the question",
+    ...learningStepFields(mix`fill in the sign: ${M(`${aLabel} `)}__ ${bLabel}`),
     highlights: ["question"],
     type: "compare",
     params,
     answer: sign,
   });
   
-  // צעד 2: הסבר על השוואה
+  // Step 2: explain the comparison
   steps.push({
     id: "explain",
-    title: "איך משווים?",
-    ...learningStepFields(mix`נסתכל על שני המספרים: ${M(`${aLabel} `)}ו-${bLabel}.`),
+    title: "How do we compare?",
+    ...learningStepFields(mix`Look at the two numbers: ${M(`${aLabel} `)}and ${bLabel}.`),
     highlights: ["explanation"],
     type: "compare",
     params,
     answer: sign,
   });
   
-  // צעד 3: החישוב
+  // Step 3: The calculation
   const mathExpr = formatCompareMathExpression(numA, numB, sign);
   let comparison = "";
   if (sign === "<") {
-    comparison = `${mathExpr} כי ${numA} קטן מ-${numB}.`;
+    comparison = `${mathExpr} because ${numA} less than ${numB}.`;
   } else if (sign === ">") {
-    comparison = `${mathExpr} כי ${numA} גדול מ-${numB}.`;
+    comparison = `${mathExpr} because ${numA} greater than ${numB}.`;
   } else {
-    comparison = `${mathExpr} כי המספרים שווים.`;
+    comparison = `${mathExpr} because the numbers are equal.`;
   }
 
   steps.push({
     id: "calculate",
-    title: "החישוב",
-    ...learningStepFields(mix`${comparison} לכן בוחרים את הסימן ${signInProse}.`),
+    title: "The calculation",
+    ...learningStepFields(mix`${comparison} so we choose the sign ${signInProse}.`),
     highlights: ["calculation"],
     type: "compare",
     params,
     answer: sign,
   });
   
-  // צעד 4: התוצאה
+  // Step 4: The result
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`הסימן הנכון הוא ${signInProse}`),
+    title: "Final result",
+    ...learningStepFields(mix`the correct sign is ${signInProse}`),
     highlights: ["result"],
     type: "compare",
     params,
@@ -2151,42 +2151,42 @@ export function buildCompareAnimation(params, _answerIgnored) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לחוש מספרים
+// Function that builds animation steps for number sense
 export function buildNumberSenseAnimation(params, answer) {
   const steps = [];
   const { kind } = params;
   if (kind === "ns_neighbors") {
     const { n, dir } = params;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
+      title: "Show the question",
       ...(dir === "after"
-        ? learningStepFields(mix`מה המספר שבא אחרי ${n}?`)
-        : learningStepFields(mix`מה המספר שבא לפני ${n}?`)),
+        ? learningStepFields(mix`What number comes after ${n}?`)
+        : learningStepFields(mix`What number comes before ${n}?`)),
       highlights: ["question"],
       type: "number_sense",
       params,
       answer,
     });
     
-    // צעד 2: הסבר
+    // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "איך מוצאים שכן?",
-      ...learningStepFields(dir === "after" ? mix`מספר אחד אחרי – מוסיפים 1: ${n} + 1 = ${answer}` : mix`מספר אחד לפני – מחסרים 1: ${n} - 1 = ${answer}`),
+      title: "How do we find a neighbor?",
+      ...learningStepFields(dir === "after" ? mix`one after — add 1: ${n} + 1 = ${answer}` : mix`one before — subtract 1: ${n} - 1 = ${answer}`),
       highlights: ["explanation"],
       type: "number_sense",
       params,
       answer,
     });
     
-    // צעד 3: התוצאה
+    // Step 3: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
       params,
@@ -2195,21 +2195,21 @@ export function buildNumberSenseAnimation(params, answer) {
   } else if (kind === "ns_place_tens_units" || kind === "ns_place_hundreds") {
     const { n, askTens, tens, units, hundreds } = params;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     let questionText = "";
     if (kind === "ns_place_tens_units") {
       questionText = askTens 
-        ? `מהי ספרת העשרות במספר ${n}?`
-        : `מהי ספרת האחדות במספר ${n}?`;
+        ? `What is the tens digit in ${n}?`
+        : `What is the ones digit in ${n}?`;
     } else {
       const partType = params.partType;
-      const label = partType === "hundreds" ? "המאות" : partType === "tens" ? "העשרות" : "האחדות";
-      questionText = `מהי ספרת ${label} במספר ${n}?`;
+      const label = partType === "hundreds" ? "the hundreds" : partType === "tens" ? "the tens" : "the ones";
+      questionText = `What is the digit ${label} in ${n}?`;
     }
     
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
+      title: "Show the question",
       ...learningStepFields(mix`${questionText}`),
       highlights: ["question"],
       type: "number_sense",
@@ -2217,12 +2217,12 @@ export function buildNumberSenseAnimation(params, answer) {
       answer,
     });
     
-    // צעד 2: פירוק המספר
+    // Step 2: Break apart the number
     if (kind === "ns_place_tens_units") {
       steps.push({
         id: "breakdown",
-        title: "פירוק המספר",
-        ...learningStepFields(mix`${M(`${tens * 10} + ${units} = ${n}`)} (${tens} עשרות + ${units} אחדות)`),
+        title: "Break apart the number",
+        ...learningStepFields(mix`${M(`${tens * 10} + ${units} = ${n}`)} (${tens} tens + ${units} ones)`),
         highlights: ["breakdown"],
         type: "number_sense",
         params,
@@ -2231,8 +2231,8 @@ export function buildNumberSenseAnimation(params, answer) {
     } else {
       steps.push({
         id: "breakdown",
-        title: "פירוק המספר",
-        ...learningStepFields(mix`${M(`${hundreds * 100} + ${tens * 10} + ${units} = ${n}`)} (${hundreds} מאות + ${tens} עשרות + ${units} אחדות)`),
+        title: "Break apart the number",
+        ...learningStepFields(mix`${M(`${hundreds * 100} + ${tens * 10} + ${units} = ${n}`)} (${hundreds} hundreds + ${tens} tens + ${units} ones)`),
         highlights: ["breakdown"],
         type: "number_sense",
         params,
@@ -2240,11 +2240,11 @@ export function buildNumberSenseAnimation(params, answer) {
       });
     }
     
-    // צעד 3: התוצאה
+    // Step 3: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
       params,
@@ -2254,10 +2254,10 @@ export function buildNumberSenseAnimation(params, answer) {
     const { b, c } = params;
     const target = c;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
+      title: "Show the question",
       ...learningStepFields(mix`__ + ${b} = ${M(`${target}`)}`),
       highlights: ["question"],
       type: "number_sense",
@@ -2265,33 +2265,33 @@ export function buildNumberSenseAnimation(params, answer) {
       answer,
     });
     
-    // צעד 2: הסבר
+    // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "השלמה",
-      ...learningStepFields(mix`מחפשים כמה חסר מ-${b} כדי להגיע ל-${target}`),
+      title: "Complete / make a ten",
+      ...learningStepFields(mix`find how much is missing from ${b} to reach${target}`),
       highlights: ["explanation"],
       type: "number_sense",
       params,
       answer,
     });
     
-    // צעד 3: החישוב
+    // Step 3: The calculation
     steps.push({
       id: "calculate",
-      title: "החישוב",
-      ...learningStepFields(mix`נחשב: ${M(`${target} - ${b} = ${answer}`)}`),
+      title: "The calculation",
+      ...learningStepFields(mix`compute: ${M(`${target} - ${b} = ${answer}`)}`),
       highlights: ["calculation"],
       type: "number_sense",
       params,
       answer,
     });
     
-    // צעד 4: התוצאה
+    // Step 4: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
       params,
@@ -2300,33 +2300,33 @@ export function buildNumberSenseAnimation(params, answer) {
   } else if (kind === "ns_even_odd") {
     const { n, isEven } = params;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`האם המספר ${n} הוא זוגי או אי-זוגי?`),
+      title: "Show the question",
+      ...learningStepFields(mix`Is the number ${n} is it even or odd?`),
       highlights: ["question"],
       type: "number_sense",
       params,
       answer,
     });
     
-    // צעד 2: הסבר
+    // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "איך בודקים?",
-      ...learningStepFields(mix`מסתכלים על ספרת האחדות של ${n}. אם הספרה היא 0,2,4,6,8 – המספר זוגי. אם 1,3,5,7,9 – אי-זוגי.`),
+      title: "How do we check?",
+      ...learningStepFields(mix`Look at the ones digit of ${n}. If the digit is 0,2,4,6,8 — the number is even. If 1,3,5,7,9 — it is odd.`),
       highlights: ["explanation"],
       type: "number_sense",
       params,
       answer,
     });
     
-    // צעד 3: התוצאה
+    // Step 3: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`המספר ${n} הוא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the number ${n} is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
       params,
@@ -2336,23 +2336,23 @@ export function buildNumberSenseAnimation(params, answer) {
     const { start, next } = params;
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`מה המספר הבא אחרי ${start}?`),
+      title: "Show the question",
+      ...learningStepFields(mix`What is the next number after ${start}?`),
       type: "number_sense",
       params,
       answer,
     });
     steps.push({
       id: "rule",
-      title: "כלל",
-      ...learningStepFields(mix`כדי למצוא את המספר הבא – מוסיפים 1.`),
+      title: "Rule",
+      ...learningStepFields(mix`To find the next number — add 1.`),
       type: "number_sense",
       params,
       answer,
     });
     steps.push({
       id: "calc",
-      title: "מחשבים",
+      title: "compute",
       ...learningStepFields(mix`${M(`${start} + 1 = ${next}`)}.`),
       type: "number_sense",
       params,
@@ -2361,8 +2361,8 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}.`),
       type: "number_sense",
       params,
       answer,
@@ -2371,23 +2371,23 @@ export function buildNumberSenseAnimation(params, answer) {
     const { start, prev } = params;
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`מה המספר שלפני ${start}?`),
+      title: "Show the question",
+      ...learningStepFields(mix`What number comes before ${start}?`),
       type: "number_sense",
       params,
       answer,
     });
     steps.push({
       id: "rule",
-      title: "כלל",
-      ...learningStepFields(mix`כדי למצוא את המספר שלפני – מחסרים 1.`),
+      title: "Rule",
+      ...learningStepFields(mix`To find the previous number — subtract 1.`),
       type: "number_sense",
       params,
       answer,
     });
     steps.push({
       id: "calc",
-      title: "מחשבים",
+      title: "compute",
       ...learningStepFields(mix`${M(`${start} − 1 = ${prev}`)}.`),
       type: "number_sense",
       params,
@@ -2396,8 +2396,8 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}.`),
       type: "number_sense",
       params,
       answer,
@@ -2409,8 +2409,8 @@ export function buildNumberSenseAnimation(params, answer) {
     const step = arr.length >= 2 ? arr[1] - arr[0] : 1;
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`מה המספר החסר על קו המספרים?`),
+      title: "Show the question",
+      ...learningStepFields(mix`What is the missing number on the number line?`),
       type: "number_sense",
       params,
       answer,
@@ -2418,20 +2418,20 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "range",
-      title: "טווח וקפיצה קבועה",
-      ...learningStepFields(mix`הקו מ-${start} עד ${end}. ההפרש בין נקודות סמוכות הוא ${step}.`),
+      title: "Range and constant jump",
+      ...learningStepFields(mix`the line from ${start} up to ${end}. the difference between neighboring points is ${step}.`),
       type: "number_sense",
       params,
       answer,
     });
-    // מוצאים את הקודם למקום החסר אם אפשר
+    // find the value before the missing place if possible
     const idx = arr.findIndex((v) => v === missing);
     const prevVal = idx > 0 ? arr[idx - 1] : null;
     if (prevVal != null) {
       steps.push({
         id: "calc",
-        title: "מחשבים את החסר",
-        ...learningStepFields(mix`מוסיפים קפיצה אחת: ${M(`${prevVal} + ${step} = ${missing}`)}.`),
+        title: "Find the missing number",
+        ...learningStepFields(mix`add one jump: ${M(`${prevVal} + ${step} = ${missing}`)}.`),
         type: "number_sense",
         params,
         answer,
@@ -2440,8 +2440,8 @@ export function buildNumberSenseAnimation(params, answer) {
     }
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}.`),
       type: "number_sense",
       params,
       answer,
@@ -2451,7 +2451,7 @@ export function buildNumberSenseAnimation(params, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לגורמים/כפולות
+// Function that builds animation steps for factors/multiples
 export function buildFactorsMultiplesAnimation(params, answer) {
   const steps = [];
   const { kind } = params;
@@ -2459,44 +2459,44 @@ export function buildFactorsMultiplesAnimation(params, answer) {
   if (kind === "fm_factor") {
     const { n, correct } = params;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`איזה מהמספרים הבאים הוא מחלק (גורם) של ${n}?`),
+      title: "Show the question",
+      ...learningStepFields(mix`Which of the following numbers is a divisor (factor) of ${n}?`),
       highlights: ["question"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 2: הסבר
+    // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "מה זה גורם?",
-      ...learningStepFields(mix`גורם הוא מספר שמתחלק במספר בלי שארית. נבדוק אילו מספרים מתחלקים ב-${n} בלי שארית.`),
+      title: "What is a factor?",
+      ...learningStepFields(mix`A factor is a number that divides another number with no remainder. Check which numbers divide ${n} with no remainder.`),
       highlights: ["explanation"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 3: בדיקה
+    // Step 3: Check
     steps.push({
       id: "check",
-      title: "בדיקה",
-      ...learningStepFields(mix`נחלק את ${n} ב-${correct}: ${M(`${n} ÷ ${correct} = ${n / correct}. `)}זה מספר שלם, לכן ${correct} הוא גורם של ${n}`),
+      title: "Check",
+      ...learningStepFields(mix`divide ${n} by ${correct}: ${M(`${n} ÷ ${correct} = ${n / correct}. `)}that is a whole number, so ${correct} is a factor of ${n}`),
       highlights: ["check"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 4: התוצאה
+    // Step 4: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "factors_multiples",
       params,
@@ -2505,44 +2505,44 @@ export function buildFactorsMultiplesAnimation(params, answer) {
   } else if (kind === "fm_multiple") {
     const { base, correct } = params;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`איזה מהמספרים הבאים הוא כפולה של ${base}?`),
+      title: "Show the question",
+      ...learningStepFields(mix`Which of the following numbers is a multiple of ${base}?`),
       highlights: ["question"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 2: הסבר
+    // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "מה זה כפולה?",
-      ...learningStepFields(mix`כפולה מתקבלת כשמכפילים את המספר במספר שלם. כפולות של ${base} הן: ${M(`${base} × 1, ${base} × 2, ${base} × 3, ...`)}`),
+      title: "What is a multiple?",
+      ...learningStepFields(mix`A multiple is what you get when multiplying the number by a whole number. Multiples of ${base} are: ${M(`${base} × 1, ${base} × 2, ${base} × 3, ...`)}`),
       highlights: ["explanation"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 3: בדיקה
+    // Step 3: Check
     steps.push({
       id: "check",
-      title: "בדיקה",
-      ...learningStepFields(mix`נבדוק: ${M(`${correct} ÷ ${base} = ${correct / base}. `)}זה מספר שלם, לכן ${correct} הוא כפולה של ${base}`),
+      title: "Check",
+      ...learningStepFields(mix`check: ${M(`${correct} ÷ ${base} = ${correct / base}. `)}that is a whole number, so ${correct} is a multiple of ${base}`),
       highlights: ["check"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 4: התוצאה
+    // Step 4: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "factors_multiples",
       params,
@@ -2551,44 +2551,44 @@ export function buildFactorsMultiplesAnimation(params, answer) {
   } else if (kind === "fm_gcd") {
     const { a, b, gcd } = params;
     
-    // צעד 1: הצגת השאלה
+    // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "הצגת השאלה",
-      ...learningStepFields(mix`מהו המחלק המשותף הגדול ביותר של ${a} ו-${b}?`),
+      title: "Show the question",
+      ...learningStepFields(mix`What is the greatest common factor of ${a} and ${b}?`),
       highlights: ["question"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 2: הסבר
+    // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "מה זה מ.א.ח?",
-      ...learningStepFields(mix`מחלק משותף גדול ביותר (מ.א.ח) הוא המספר הגדול ביותר שמחלק את שני המספרים בלי שארית.`),
+      title: "What is GCF?",
+      ...learningStepFields(mix`The greatest common factor (GCF) is the largest number that divides both numbers with no remainder.`),
       highlights: ["explanation"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 3: חישוב
+    // Step 3: Calculation
     steps.push({
       id: "calculate",
-      title: "חישוב",
-      ...learningStepFields(mix`נפרק את ${a} ו-${b} לגורמים ונראה מי הגדול ביותר – כאן ${gcd}`),
+      title: "Calculation",
+      ...learningStepFields(mix`factor ${a} and ${b} into factors and see which is largest — here ${gcd}`),
       highlights: ["calculation"],
       type: "factors_multiples",
       params,
       answer,
     });
     
-    // צעד 4: התוצאה
+    // Step 4: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "factors_multiples",
       params,
@@ -2599,7 +2599,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
   return steps;
 }
 
-// פונקציה לבניית צעדי אנימציה לתרגילי מילים
+// Function that builds animation steps for word problems
 export function buildWordProblemsAnimation(params, answer) {
   const steps = [];
   const { kind } = params;
@@ -2610,7 +2610,7 @@ export function buildWordProblemsAnimation(params, answer) {
       steps.push({
         ...s,
         id: `${prefixId}-${s.id || idx}`,
-        // כדי שהמודל הכללי ידע שזה עדיין "שאלת מילים"
+        // so the general model knows this is still "a word problem"
         type: s.type || "word_problems",
         params,
         answer,
@@ -2622,47 +2622,47 @@ export function buildWordProblemsAnimation(params, answer) {
     const { a, b } = params;
     const sum = a + b;
     
-    // צעד 1: קריאת הסיפור
+    // Step 1: Read the story
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו יש ${a} כדורים והוא מקבל עוד ${b} כדורים. כמה כדורים יש לליאו בסך הכל?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo has ${a} balls and gets ${b} balls. How many balls does Leo have in total?`),
       highlights: ["story"],
       type: "word_problems",
       params,
       answer,
     });
     
-    // צעד 2: זיהוי הפעולה
+    // Step 2: Identify the operation
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`מזהים שהשאלה מבקשת כמה יש בסך הכל – פעולה של חיבור.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`Recognize the question asks for a total — that is addition.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
       answer,
     });
     
-    // צעד 3: כתיבת התרגיל
+    // Step 3: Write the exercise
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`כותבים תרגיל: ${M(`${a} + ${b}`)}`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`Write the exercise: ${M(`${a} + ${b}`)}`),
       highlights: ["equation"],
       type: "word_problems",
       params,
       answer,
     });
     
-    // צעדי החישוב בפירוט (כמו בחיבור)
+    // the calculation steps in detail (like addition)
     pushMathSteps(buildAdditionOrSubtractionAnimation(a, b, sum, "addition"), "math");
     
-    // צעד 5: התוצאה
+    // Step 5: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה: לליאו יש ${answer} כדורים.`),
+      title: "Final result",
+      ...learningStepFields(mix`Answer: Leo has ${answer} balls.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2673,8 +2673,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const left = total - give;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו יש ${total} מדבקות. הוא נותן לחבר ${give} מדבקות. כמה מדבקות נשארות לליאו?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo has ${total} stickers. He gives a friend ${give} stickers. How many stickers does Leo have left?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2682,8 +2682,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`נותנים/מורידים → חיסור.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`give away / take away → subtraction.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
@@ -2691,8 +2691,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`כותבים תרגיל: ${M(`${total} − ${give}`)}`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`Write the exercise: ${M(`${total} − ${give}`)}`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -2701,8 +2701,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(total, give, left, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`נשארות לליאו ${answer} מדבקות.`),
+      title: "Final result",
+      ...learningStepFields(mix`Leo has left ${answer} stickers.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2713,8 +2713,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const left = money - toy;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו יש ${money}₪ דמי כיס. הוא קונה משחק ב-${toy}₪. כמה כסף נשאר לו?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo has ${money} in pocket money. He buys a game for${toy}. How much money does he have left?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2722,8 +2722,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`קנייה מורידה כסף → חיסור.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`buying spends money → subtraction.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
@@ -2731,8 +2731,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`כותבים תרגיל: ${M(`${money} − ${toy}`)}`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`Write the exercise: ${M(`${money} − ${toy}`)}`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -2741,8 +2741,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(money, toy, left, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`יישאר לליאו ${answer}₪.`),
+      title: "Final result",
+      ...learningStepFields(mix`Leo will have left ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2752,8 +2752,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { days } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת השאלה",
-      ...learningStepFields(mix`שאלה על ימים בשבוע: כמה ימים יעברו עד יום מסוים?`),
+      title: "Read the question",
+      ...learningStepFields(mix`A question about days of the week: how many days until a certain day?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2761,8 +2761,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "method",
-      title: "איך פותרים?",
-      ...learningStepFields(mix`סופרים יום-יום קדימה בלוח השנה. כל מעבר ליום הבא הוא +1.`),
+      title: "How do we solve it?",
+      ...learningStepFields(mix`Count day by day forward on the calendar. Each move to the next day is +1.`),
       highlights: ["explanation"],
       type: "word_problems",
       params,
@@ -2770,8 +2770,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "count",
-      title: "סופרים ימים",
-      ...learningStepFields(mix`ספרנו ${days} ימים עד היום המבוקש.`),
+      title: "Count the days",
+      ...learningStepFields(mix`we counted ${days} days until the requested day.`),
       highlights: ["calculation"],
       type: "word_problems",
       params,
@@ -2779,8 +2779,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer} ימים.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer} days.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2791,8 +2791,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const res = today + daysLater;
     steps.push({
       id: "read-story",
-      title: "קריאת השאלה",
-      ...learningStepFields(mix`אם היום ה-${today} לחודש, איזה תאריך יהיה בעוד ${daysLater} ימים?`),
+      title: "Read the question",
+      ...learningStepFields(mix`if today is the${today} of the month, what date will it be in ${daysLater} days?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2800,8 +2800,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "equation",
-      title: "כותבים תרגיל",
-      ...learningStepFields(mix`תאריך עתידי = תאריך היום + מספר ימים ⇒ ${M(`${today} + ${daysLater}`)}.`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`future date = today's date + number of days ⇒ ${M(`${today} + ${daysLater}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -2810,8 +2810,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(today, daysLater, res, "addition"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התאריך יהיה ה-${answer} לחודש.`),
+      title: "Final result",
+      ...learningStepFields(mix`the date will be the${answer} of the month.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2821,47 +2821,47 @@ export function buildWordProblemsAnimation(params, answer) {
     const { per, groups } = params;
     const prod = per * groups;
     
-    // צעד 1: קריאת הסיפור
+    // Step 1: Read the story
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`בכל קופסה יש ${per} עפרונות. יש ${groups} קופסאות כאלה. כמה עפרונות יש בסך הכל?`),
+      title: "Read the story",
+      ...learningStepFields(mix`each box has ${per} pencils. There are ${groups} such boxes. How many pencils are there in total?`),
       highlights: ["story"],
       type: "word_problems",
       params,
       answer,
     });
     
-    // צעד 2: זיהוי הפעולה
+    // Step 2: Identify the operation
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`בכל קופסה יש ${per} עפרונות ויש ${groups} קופסאות – מדובר בחיבור חוזר, כלומר כפל.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`each box has ${per} pencils and there are ${groups} boxes — this is repeated addition, that is multiplication.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
       answer,
     });
     
-    // צעד 3: כתיבת התרגיל
+    // Step 3: Write the exercise
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`נרשום תרגיל כפל: ${M(`${per} × ${groups}`)}`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`Write a multiplication: ${M(`${per} × ${groups}`)}`),
       highlights: ["equation"],
       type: "word_problems",
       params,
       answer,
     });
     
-    // צעדי החישוב בפירוט (כמו בכפל)
+    // the calculation steps in detail (like multiplication)
     pushMathSteps(buildMultiplicationAnimation(per, groups, prod), "math");
     
-    // צעד 5: התוצאה
+    // Step 5: The result
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה: ${M(`${answer} `)}עפרונות.`),
+      title: "Final result",
+      ...learningStepFields(mix`Answer: ${M(`${answer} `)}pencils.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2871,8 +2871,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { total, perGroup, groups } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`יש ${total} תפוחים. מחלקים אותם לקבוצות של ${perGroup} תפוחים בכל קבוצה. כמה קבוצות יש?`),
+      title: "Read the story",
+      ...learningStepFields(mix`there is ${total} apples. Split them into groups of ${perGroup} apples in each group. How many groups are there?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2880,8 +2880,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`מחלקים לכמה קבוצות שוות → חילוק.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`split into equal groups → division.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
@@ -2889,19 +2889,19 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`נכתוב תרגיל: ${M(`${total} ÷ ${perGroup}`)}`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`write the exercise: ${M(`${total} ÷ ${perGroup}`)}`),
       highlights: ["equation"],
       type: "word_problems",
       params,
       answer,
     });
-    // צעדי החישוב בפירוט (כמו חילוק ארוך)
+    // the calculation steps in detail (like long division)
     pushMathSteps(buildDivisionAnimation(total, perGroup, groups), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`יש ${answer} קבוצות.`),
+      title: "Final result",
+      ...learningStepFields(mix`there is ${answer} groups.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2911,8 +2911,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { total, groupSize, groups, leftover } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`יש ${total} תלמידים והם מתחלקים לקבוצות של ${groupSize} תלמידים בכל קבוצה. כמה תלמידים יישארו בלי קבוצה מלאה?`),
+      title: "Read the story",
+      ...learningStepFields(mix`there is ${total} students split into groups of ${groupSize} students in each group. How many students will be left without a full group?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2920,8 +2920,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`זה חילוק עם שארית: השארית היא כמה נשאר בלי קבוצה.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`This is division with a remainder: the remainder is what is left without a full group.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
@@ -2929,8 +2929,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`נכתוב תרגיל: ${M(`${total} ÷ ${groupSize}`)} ונחפש את השארית.`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`write the exercise: ${M(`${total} ÷ ${groupSize}`)} and find the remainder.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -2939,8 +2939,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildDivisionAnimation(total, groupSize, groups), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`השארית היא ${leftover}, לכן ${answer} תלמידים יישארו בלי קבוצה מלאה.`),
+      title: "Final result",
+      ...learningStepFields(mix`the remainder is ${leftover}, so ${answer} students will be left without a full group.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2951,8 +2951,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const sum = value1 + value2;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו יש ${coins1} מטבעות של שקל ו-${coins2} מטבעות של 2 שקלים. כמה כסף יש לו בסך הכל?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo has ${coins1} shekel coins and ${coins2} $2 coins. How much money does he have in total?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2960,8 +2960,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "find-values",
-      title: "מחשבים כל חלק",
-      ...learningStepFields(mix`שווי המטבעות: ${M(`${coins1}×1=${value1}`)} וגם ${M(`${coins2}×2=${value2}`)}.`),
+      title: "Compute each part",
+      ...learningStepFields(mix`coin values: ${M(`${coins1}×1=${value1}`)} and ${M(`${coins2}×2=${value2}`)}.`),
       highlights: ["calculation"],
       type: "word_problems",
       params,
@@ -2970,8 +2970,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(value1, value2, sum, "addition"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`בסך הכול יש לליאו ${answer}₪.`),
+      title: "Final result",
+      ...learningStepFields(mix`in total Leo has ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -2982,8 +2982,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const left = total - spent;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו יש ${total}₪. הוא קונה ממתק ב-${spent}₪. כמה כסף נשאר לו?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo has ${total}. he buys a candy for ${spent}. How much money does he have left?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -2991,8 +2991,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`אם קונים משהו - מורידים מהסכום, כלומר חיסור.`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`If you buy something — subtract from the amount, that is subtraction.`),
       highlights: ["operation"],
       type: "word_problems",
       params,
@@ -3001,8 +3001,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(total, spent, left, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`נשאר לליאו ${answer}₪.`),
+      title: "Final result",
+      ...learningStepFields(mix`Leo has left ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3012,8 +3012,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { price, discPerc, discount, finalPrice } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`חולצה עולה ${price}₪ ויש עליה הנחה של ${discPerc}%. כמה תשלם אחרי ההנחה?`),
+      title: "Read the story",
+      ...learningStepFields(mix`a shirt costs ${price} and it has a discount of ${discPerc}%. How much will you pay after the discount?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3021,8 +3021,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "find-discount",
-      title: "מחשבים כמה ההנחה",
-      ...learningStepFields(mix`מחשבים ${discPerc}% מתוך ${price}: ${M(`${price} × ${discPerc} ÷ 100 = ${discount}`)}.`),
+      title: "Compute the discount amount",
+      ...learningStepFields(mix`compute ${discPerc}% of ${price}: ${M(`${price} × ${discPerc} ÷ 100 = ${discount}`)}.`),
       highlights: ["calculation"],
       type: "word_problems",
       params,
@@ -3030,8 +3030,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "מחשבים מחיר אחרי הנחה",
-      ...learningStepFields(mix`מורידים את ההנחה מהמחיר: ${M(`${price} − ${discount} = ${finalPrice}`)}.`),
+      title: "Compute the price after discount",
+      ...learningStepFields(mix`subtract the discount from the price: ${M(`${price} − ${discount} = ${finalPrice}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3040,8 +3040,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(price, discount, finalPrice, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`אחרי ההנחה משלמים ${answer}₪.`),
+      title: "Final result",
+      ...learningStepFields(mix`after the discount you pay ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3051,8 +3051,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { speed, hours, distance } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`ילד הולך במהירות קבועה של ${speed} ק"מ בשעה במשך ${hours} שעות. כמה קילומטרים יעבור?`),
+      title: "Read the story",
+      ...learningStepFields(mix`A child walks at a steady speed of ${speed} km per hour for ${hours} hours. How many kilometers will he travel?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3060,8 +3060,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "equation",
-      title: "כותבים תרגיל",
-      ...learningStepFields(mix`מרחק = מהירות × זמן ⇒ ${M(`${speed} × ${hours}`)}.`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`distance = speed × time ⇒ ${M(`${speed} × ${hours}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3070,8 +3070,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildMultiplicationAnimation(speed, hours, distance), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`הוא יעבור ${answer} ק"מ.`),
+      title: "Final result",
+      ...learningStepFields(mix`he will travel ${answer} km.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3082,8 +3082,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const sum = l1 + l2;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`סרט ראשון נמשך ${l1} דקות וסרטון נוסף נמשך ${l2} דקות. כמה דקות נמשך הצפייה ביחד?`),
+      title: "Read the story",
+      ...learningStepFields(mix`the first video lasts ${l1} minutes and another clip lasts ${l2} minutes. How many minutes of watching altogether?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3091,8 +3091,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "equation",
-      title: "כותבים תרגיל",
-      ...learningStepFields(mix`ביחד זה חיבור: ${M(`${l1} + ${l2}`)}.`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`together means addition: ${M(`${l1} + ${l2}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3101,8 +3101,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(l1, l2, sum, "addition"), "math");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`ביחד זה ${answer} דקות.`),
+      title: "Final result",
+      ...learningStepFields(mix`together that is ${answer} minutes.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3112,8 +3112,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { cm, meters } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת השאלה",
-      ...learningStepFields(mix`כמה מטרים הם ${cm} סנטימטרים?`),
+      title: "Read the question",
+      ...learningStepFields(mix`how many meters is ${cm} centimeters?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3121,8 +3121,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "כלל המרה",
-      ...learningStepFields(mix`1 מטר = 100 ס״מ. כדי להמיר מס״מ למטרים מחלקים ב-100.`),
+      title: "Conversion rule",
+      ...learningStepFields(mix`1 meter = 100 cm. to convert from cm to meters, divide by 100.`),
       highlights: ["explanation"],
       type: "word_problems",
       params,
@@ -3130,7 +3130,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "מחשבים",
+      title: "compute",
       ...learningStepFields(mix`${M(`${cm} ÷ 100 = ${meters}`)}`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3139,8 +3139,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer} מטרים.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer} meters.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3150,8 +3150,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { g, kg } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת השאלה",
-      ...learningStepFields(mix`כמה קילוגרמים הם ${g} גרם?`),
+      title: "Read the question",
+      ...learningStepFields(mix`how many kilograms is ${g} grams?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3159,8 +3159,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "כלל המרה",
-      ...learningStepFields(mix`1 ק״ג = 1000 גרם. כדי להמיר מגרם לק״ג מחלקים ב-1000.`),
+      title: "Conversion rule",
+      ...learningStepFields(mix`1 kg = 1000 grams. To convert grams to kg divide by 1000.`),
       highlights: ["explanation"],
       type: "word_problems",
       params,
@@ -3168,7 +3168,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "מחשבים",
+      title: "compute",
       ...learningStepFields(mix`${M(`${g} ÷ 1000 = ${kg}`)}`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3177,8 +3177,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer} קילוגרמים.`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer} kilograms.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3191,8 +3191,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const rounded = Number(answer);
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו ציונים ${s1}, ${s2} ו-${s3}. מה הממוצע (מעוגל למספר שלם)?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo's scores are ${s1}, ${s2} and ${s3}. What is the average (rounded to a whole number)?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3200,8 +3200,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step1",
-      title: "שלב 1: מחברים ציונים",
-      ...learningStepFields(mix`מחשבים סכום: ${M(`${s1} + ${s2} + ${s3} = ${sum}`)}.`),
+      title: "Step 1: add the scores",
+      ...learningStepFields(mix`compute the sum: ${M(`${s1} + ${s2} + ${s3} = ${sum}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3209,8 +3209,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step2",
-      title: "שלב 2: מחלקים במספר הציונים",
-      ...learningStepFields(mix`ממוצע = סכום ÷ 3 ⇒ ${M(`${sum} ÷ 3 = ${exact}`)}.`),
+      title: "Step 2: divide by the number of scores",
+      ...learningStepFields(mix`average = sum ÷ 3 ⇒ ${M(`${sum} ÷ 3 = ${exact}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3218,8 +3218,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step3",
-      title: "שלב 3: מעגלים",
-      ...learningStepFields(mix`מעגלים למספר שלם: ${M(`${exact} ≈ ${rounded}`)}.`),
+      title: "Step 3: Round",
+      ...learningStepFields(mix`round to a whole number: ${M(`${exact} ≈ ${rounded}`)}.`),
       highlights: ["calculation"],
       type: "word_problems",
       params,
@@ -3227,8 +3227,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`הממוצע המעוגל הוא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`the rounded average is ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3238,8 +3238,8 @@ export function buildWordProblemsAnimation(params, answer) {
     const { a, b, price, totalQty, totalCost, money } = params;
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`לליאו יש ${money}₪. הוא קונה ${a} עטים ו-${b} עפרונות, וכל פריט עולה ${price}₪. כמה כסף יישאר לו אחרי הקנייה?`),
+      title: "Read the story",
+      ...learningStepFields(mix`Leo has ${money}. he buys ${a} pens and${b} pencils, and each item costs ${price}. How much money will he have left after shopping?`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3247,8 +3247,8 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step1",
-      title: "שלב 1: כמה פריטים קונים?",
-      ...learningStepFields(mix`מחברים כמויות: ${M(`${a} + ${b} = ${totalQty}`)} פריטים.`),
+      title: "Step 1: How many items are bought?",
+      ...learningStepFields(mix`add the amounts: ${M(`${a} + ${b} = ${totalQty}`)} items.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3257,8 +3257,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(a, b, totalQty, "addition"), "math1");
     steps.push({
       id: "step2",
-      title: "שלב 2: כמה זה עולה ביחד?",
-      ...learningStepFields(mix`כפול מחיר לפריט: ${M(`${totalQty} × ${price} = ${totalCost}`)}₪.`),
+      title: "Step 2: What is the total cost?",
+      ...learningStepFields(mix`times the price per item: ${M(`${totalQty} × ${price} = ${totalCost}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3267,8 +3267,8 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildMultiplicationAnimation(totalQty, price, totalCost), "math2");
     steps.push({
       id: "step3",
-      title: "שלב 3: כמה כסף נשאר?",
-      ...learningStepFields(mix`מחסרים מהכסף שיש: ${M(`${money} − ${totalCost} = ${answer}`)}₪.`),
+      title: "Step 3: How much money is left?",
+      ...learningStepFields(mix`subtract from the money you have: ${M(`${money} − ${totalCost} = ${answer}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3277,19 +3277,19 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(money, totalCost, Number(answer), "subtraction"), "math3");
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`יישאר לליאו ${answer}₪.`),
+      title: "Final result",
+      ...learningStepFields(mix`Leo will have left ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
       params,
       answer,
     });
   } else {
-    // תרגילי מילים כלליים (fallback)
+    // general word problems (fallback)
     steps.push({
       id: "read-story",
-      title: "קריאת הסיפור",
-      ...learningStepFields(mix`קוראים את הסיפור בקפידה ומזהים את המספרים והפעולה הנדרשת.`),
+      title: "Read the story",
+      ...learningStepFields(mix`Read the story carefully and identify the numbers and the required operation.`),
       highlights: ["story"],
       type: "word_problems",
       params,
@@ -3298,8 +3298,8 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "identify-operation",
-      title: "זיהוי הפעולה",
-      ...learningStepFields(mix`מזהים מה שואלים – כמה ביחד? כמה נשאר? כמה בכל קבוצה?`),
+      title: "Identify the operation",
+      ...learningStepFields(mix`Identify what is asked — how many altogether? how many are left? how many in each group?`),
       highlights: ["operation"],
       type: "word_problems",
       params,
@@ -3308,8 +3308,8 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "write-equation",
-      title: "כתיבת התרגיל",
-      ...learningStepFields(mix`כותבים תרגיל מתמטיקה שמתאים לסיפור.`),
+      title: "Write the exercise",
+      ...learningStepFields(mix`Write a math exercise that matches the story.`),
       highlights: ["equation"],
       type: "word_problems",
       params,
@@ -3318,8 +3318,8 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "calculate",
-      title: "החישוב",
-      ...learningStepFields(mix`פותרים את התרגיל.`),
+      title: "The calculation",
+      ...learningStepFields(mix`Solve the exercise.`),
       highlights: ["calculation"],
       type: "word_problems",
       params,
@@ -3328,8 +3328,8 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`התשובה היא ${answer}`),
+      title: "Final result",
+      ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "word_problems",
       params,
@@ -3340,35 +3340,35 @@ export function buildWordProblemsAnimation(params, answer) {
   return steps;
 }
 
-// ===== נושאים נוספים: אנימציות מפורטות (כמו בחיבור/כפל) =====
+// ===== More topics: detailed animations (like addition/multiplication) =====
 
 export function buildRoundingAnimation(params, answer) {
   const steps = [];
   const { n, toWhat } = params;
-  const targetLabel = toWhat === "tens" ? "עשרות" : "מאות";
+  const targetLabel = toWhat === "tens" ? "tens" : "hundreds";
   const digitToCheck = toWhat === "tens" ? Math.floor((n % 10) / 1) : Math.floor((n % 100) / 10);
-  const checkLabel = toWhat === "tens" ? "ספרת האחדות" : "ספרת העשרות";
+  const checkLabel = toWhat === "tens" ? "ones digit" : "tens digit";
 
   steps.push({
     id: "show",
-    title: "מה מעגלים?",
-    ...learningStepFields(mix`מעגלים את ${n} ל-${targetLabel}.`),
+    title: "What are we rounding?",
+    ...learningStepFields(mix`round ${n} to ${targetLabel}.`),
     type: "rounding",
     params,
     answer,
   });
   steps.push({
     id: "find-digit",
-    title: "איזו ספרה קובעת?",
-    ...learningStepFields(mix`כדי לעגל ל-${targetLabel} מסתכלים על ${checkLabel}. כאן היא ${digitToCheck}.`),
+    title: "Which digit decides?",
+    ...learningStepFields(mix`to round to ${targetLabel} look at ${checkLabel}. here it is ${digitToCheck}.`),
     type: "rounding",
     params,
     answer,
   });
   steps.push({
     id: "rule",
-    title: "כלל העיגול",
-    ...learningStepFields(mix`אם הספרה הקובעת היא 0–4 מעגלים למטה. אם 5–9 מעגלים למעלה.`),
+    title: "Rounding rule",
+    ...learningStepFields(mix`If the deciding digit is 0–4, round down. If 5–9, round up.`),
     type: "rounding",
     params,
     answer,
@@ -3376,16 +3376,16 @@ export function buildRoundingAnimation(params, answer) {
   const rounded = Number(answer);
   steps.push({
     id: "calc",
-    title: "מחשבים",
-    ...learningStepFields(mix`${digitToCheck >= 5 ? "מעגלים למעלה" : "מעגלים למטה"} ⇒ ${M(`${n} ≈ ${rounded}`)}.`),
+    title: "compute",
+    ...learningStepFields(mix`${digitToCheck >= 5 ? "round up" : "round down"} ⇒ ${M(`${n} ≈ ${rounded}`)}.`),
     type: "rounding",
     params,
     answer,
   });
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`התשובה היא ${answer}.`),
+    title: "Final result",
+    ...learningStepFields(mix`the answer is ${answer}.`),
     type: "rounding",
     params,
     answer,
@@ -3398,8 +3398,8 @@ export function buildDivisibilityAnimation(params, answer) {
   const { num, divisor } = params;
   steps.push({
     id: "show",
-    title: "הצגת השאלה",
-    ...learningStepFields(mix`האם ${num} מתחלק ב-${divisor}?`),
+    title: "Show the question",
+    ...learningStepFields(mix`is ${num} divisible by ${divisor}?`),
     type: "divisibility",
     params,
     answer,
@@ -3413,16 +3413,16 @@ export function buildDivisibilityAnimation(params, answer) {
   if (divisor === 2) {
     steps.push({
       id: "rule",
-      title: "כלל התחלקות ב-2",
-      ...learningStepFields(mix`מספר מתחלק ב-2 אם ספרת האחדות זוגית (0,2,4,6,8).`),
+      title: "Divisibility rule for 2",
+      ...learningStepFields(mix`a number is divisible by 2 if the ones digit is even (0,2,4,6,8).`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "check",
-      title: "בודקים",
-      ...learningStepFields(mix`ספרת האחדות היא ${lastDigit}. לכן ${M(`${answer === "כן" ? "כן" : "לא"}.`)}`),
+      title: "Check",
+      ...learningStepFields(mix`the ones digit is ${lastDigit}. so ${M(`${answer === "Yes" ? "Yes" : "No"}.`)}`),
       type: "divisibility",
       params,
       answer,
@@ -3430,16 +3430,16 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 5) {
     steps.push({
       id: "rule",
-      title: "כלל התחלקות ב-5",
-      ...learningStepFields(mix`מספר מתחלק ב-5 אם ספרת האחדות היא 0 או 5.`),
+      title: "Divisibility rule for 5",
+      ...learningStepFields(mix`a number is divisible by 5 if the ones digit is 0 or 5.`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "check",
-      title: "בודקים",
-      ...learningStepFields(mix`ספרת האחדות היא ${lastDigit}. לכן ${M(`${answer === "כן" ? "כן" : "לא"}.`)}`),
+      title: "Check",
+      ...learningStepFields(mix`the ones digit is ${lastDigit}. so ${M(`${answer === "Yes" ? "Yes" : "No"}.`)}`),
       type: "divisibility",
       params,
       answer,
@@ -3447,16 +3447,16 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 10) {
     steps.push({
       id: "rule",
-      title: "כלל התחלקות ב-10",
-      ...learningStepFields(mix`מספר מתחלק ב-10 אם ספרת האחדות היא 0.`),
+      title: "Divisibility rule for 10",
+      ...learningStepFields(mix`a number is divisible by 10 if the ones digit is 0.`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "check",
-      title: "בודקים",
-      ...learningStepFields(mix`ספרת האחדות היא ${lastDigit}. לכן ${M(`${answer === "כן" ? "כן" : "לא"}.`)}`),
+      title: "Check",
+      ...learningStepFields(mix`the ones digit is ${lastDigit}. so ${M(`${answer === "Yes" ? "Yes" : "No"}.`)}`),
       type: "divisibility",
       params,
       answer,
@@ -3464,24 +3464,24 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 3 || divisor === 9) {
     steps.push({
       id: "rule",
-      title: `כלל התחלקות ב-${divisor}`,
-      ...learningStepFields(mix`מספר מתחלק ב-${divisor} אם סכום ספרותיו מתחלק ב-${divisor}.`),
+      title: `divisibility rule for ${divisor}`,
+      ...learningStepFields(mix`a number is divisible by ${divisor} if the sum of its digits is divisible by ${divisor}.`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "sum",
-      title: "סכום הספרות",
-      ...learningStepFields(mix`סכום הספרות: ${M(`${String(num).split("").join(" + ")} = ${sumDigits}`)}.`),
+      title: "Sum of digits",
+      ...learningStepFields(mix`digit sum: ${M(`${String(num).split("").join(" + ")} = ${sumDigits}`)}.`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "check",
-      title: "בודקים",
-      ...learningStepFields(mix`${sumDigits} ${M(`${sumDigits % divisor === 0 ? "מתחלק" : "לא מתחלק"} `)}ב-${divisor} ⇒ התשובה: ${M(`${answer}.`)}`),
+      title: "Check",
+      ...learningStepFields(mix`${sumDigits} ${M(`${sumDigits % divisor === 0 ? "divisible" : "not divisible"} `)}by ${divisor} ⇒ Answer: ${M(`${answer}.`)}`),
       type: "divisibility",
       params,
       answer,
@@ -3489,44 +3489,44 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 6) {
     steps.push({
       id: "rule",
-      title: "כלל התחלקות ב-6",
-      ...learningStepFields(mix`מספר מתחלק ב-6 אם הוא מתחלק גם ב-2 וגם ב-3.`),
+      title: "Divisibility rule for 6",
+      ...learningStepFields(mix`a number is divisible by 6 if it is divisible by both 2 and 3.`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "check2",
-      title: "בודקים התחלקות ב-2",
-      ...learningStepFields(mix`ספרת האחדות היא ${lastDigit} ⇒ ${M(`${lastDigit % 2 === 0 ? "מתחלק ב-2" : "לא מתחלק ב-2"}.`)}`),
+      title: "Check divisibility by 2",
+      ...learningStepFields(mix`the ones digit is ${lastDigit} ⇒ ${M(`${lastDigit % 2 === 0 ? "divisible by 2" : "not divisible by 2"}.`)}`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "check3",
-      title: "בודקים התחלקות ב-3",
-      ...learningStepFields(mix`סכום הספרות הוא ${sumDigits} ⇒ ${M(`${sumDigits % 3 === 0 ? "מתחלק ב-3" : "לא מתחלק ב-3"}.`)}`),
+      title: "Check divisibility by 3",
+      ...learningStepFields(mix`the digit sum is ${sumDigits} ⇒ ${M(`${sumDigits % 3 === 0 ? "divisible by 3" : "not divisible by 3"}.`)}`),
       type: "divisibility",
       params,
       answer,
     });
     steps.push({
       id: "final",
-      title: "מסקנה",
-      ...learningStepFields(mix`רק אם שני התנאים נכונים ⇒ מתחלק ב-6. התשובה: ${M(`${answer}.`)}`),
+      title: "Conclusion",
+      ...learningStepFields(mix`only if both conditions are true ⇒ divisible by 6. Answer: ${M(`${answer}.`)}`),
       type: "divisibility",
       params,
       answer,
     });
   } else {
-    // fallback: בדיקה בחלוקה (מסביר עדיין)
+    // fallback: check with division (still explaining)
     const q = Math.floor(num / divisor);
     const r = num % divisor;
     steps.push({
       id: "fallback",
-      title: "בדיקה בחלוקה",
-      ...learningStepFields(mix`בודקים בחלוקה: ${M(`${num} = ${divisor}×${q} + ${r}`)}. אם השארית 0 אז מתחלק.`),
+      title: "Check with division",
+      ...learningStepFields(mix`check with division: ${M(`${num} = ${divisor}×${q} + ${r}`)}. if the remainder is 0, it is divisible.`),
       type: "divisibility",
       params,
       answer,
@@ -3535,8 +3535,8 @@ export function buildDivisibilityAnimation(params, answer) {
 
   steps.push({
     id: "final-answer",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`התשובה היא ${answer}.`),
+    title: "Final result",
+    ...learningStepFields(mix`the answer is ${answer}.`),
     type: "divisibility",
     params,
     answer,
@@ -3549,24 +3549,24 @@ export function buildPrimeCompositeAnimation(params, answer) {
   const { num, isPrime } = params;
   steps.push({
     id: "show",
-    title: "מה שואלים?",
-    ...learningStepFields(mix`האם ${num} הוא ראשוני או פריק?`),
+    title: "What is the question asking?",
+    ...learningStepFields(mix`is ${num} is it prime or composite?`),
     type: "prime_composite",
     params,
     answer,
   });
   steps.push({
     id: "define",
-    title: "הגדרה",
-    ...learningStepFields(mix`מספר ראשוני מתחלק רק ב-1 ובעצמו. מספר פריק מתחלק גם במספר נוסף.`),
+    title: "Definition",
+    ...learningStepFields(mix`A prime number is divisible only by 1 and itself. A composite number is also divisible by another number.`),
     type: "prime_composite",
     params,
     answer,
   });
   steps.push({
     id: "check-small",
-    title: "מה בודקים?",
-    ...learningStepFields(mix`מספיק לבדוק מחלקים עד u221A${num} (כי אם יש מחלק גדול, יש גם מחלק קטן).`),
+    title: "What are we checking?",
+    ...learningStepFields(mix`it is enough to check divisors up to u221A${num} (because if there is a large divisor, there is also a small one).`),
     type: "prime_composite",
     params,
     answer,
@@ -3575,8 +3575,8 @@ export function buildPrimeCompositeAnimation(params, answer) {
   if (num === 2) {
     steps.push({
       id: "two",
-      title: "מקרה מיוחד",
-      ...learningStepFields(mix`2 הוא מספר ראשוני.`),
+      title: "Special case",
+      ...learningStepFields(mix`2 is a prime number.`),
       type: "prime_composite",
       params,
       answer,
@@ -3593,8 +3593,8 @@ export function buildPrimeCompositeAnimation(params, answer) {
       if (explainedTries < 6) {
         steps.push({
           id: `try-${d}`,
-          title: `בודקים חלוקה ב-${d}`,
-          ...learningStepFields(mix`${M(`${num} ÷ ${d}`)} לא יוצא מספר שלם ⇒ ממשיכים.`),
+          title: `check division by ${d}`,
+          ...learningStepFields(mix`${M(`${num} ÷ ${d}`)} is not a whole number ⇒ continue.`),
           type: "prime_composite",
           params,
           answer,
@@ -3605,8 +3605,8 @@ export function buildPrimeCompositeAnimation(params, answer) {
     if (found != null) {
       steps.push({
         id: "found",
-        title: "מצאנו מחלק",
-        ...learningStepFields(mix`${M(`${num} ÷ ${found} = ${num / found}`)} (מספר שלם) ⇒ ${num} פריק.`),
+        title: "We found a divisor",
+        ...learningStepFields(mix`${M(`${num} ÷ ${found} = ${num / found}`)} (whole number) ⇒ ${num} composite.`),
         type: "prime_composite",
         params,
         answer,
@@ -3614,8 +3614,8 @@ export function buildPrimeCompositeAnimation(params, answer) {
     } else {
       steps.push({
         id: "none",
-        title: "לא מצאנו מחלקים",
-        ...learningStepFields(mix`לא מצאנו מחלק עד u221A${num} ⇒ ${num} ראשוני.`),
+        title: "No divisors found",
+        ...learningStepFields(mix`no divisor found up to u221A${num} ⇒ ${num} prime.`),
         type: "prime_composite",
         params,
         answer,
@@ -3625,8 +3625,8 @@ export function buildPrimeCompositeAnimation(params, answer) {
 
   steps.push({
     id: "final",
-    title: "התוצאה הסופית",
-    ...learningStepFields(mix`התשובה היא ${answer}.`),
+    title: "Final result",
+    ...learningStepFields(mix`the answer is ${answer}.`),
     type: "prime_composite",
     params,
     answer,
@@ -3639,8 +3639,8 @@ export function buildPowersAnimation(params, answer) {
   const { kind, base, exp, result } = params;
   steps.push({
     id: "show",
-    title: "מה זו חזקה?",
-    ...learningStepFields(mix`חזקה היא כפל חוזר: ${M(`${base}^${exp} = ${base} × ${base} × ...`)} (${exp} פעמים).`),
+    title: "What is a power?",
+    ...learningStepFields(mix`a power is repeated multiplication: ${M(`${base}^${exp} = ${base} × ${base} × ...`)} (${exp} times).`),
     type: "powers",
     params,
     answer,
@@ -3649,8 +3649,8 @@ export function buildPowersAnimation(params, answer) {
   if (kind === "power_calc") {
     steps.push({
       id: "expand",
-      title: "פותחים את החזקה",
-      ...learningStepFields(mix`נרשום ככפל חוזר: ${M(`${base}^${exp} = ${Array(exp).fill(base).join(" × ")}`)}.`),
+      title: "expand the power",
+      ...learningStepFields(mix`write as repeated multiplication: ${M(`${base}^${exp} = ${Array(exp).fill(base).join(" × ")}`)}.`),
       type: "powers",
       params,
       answer,
@@ -3661,8 +3661,8 @@ export function buildPowersAnimation(params, answer) {
       const next = acc * base;
       steps.push({
         id: `mul-${i}`,
-        title: `כפל מספר ${i}`,
-        ...learningStepFields(mix`מחשבים: ${M(`${acc} × ${base} = ${next}`)}.`),
+        title: `multiply number ${i}`,
+        ...learningStepFields(mix`compute: ${M(`${acc} × ${base} = ${next}`)}.`),
         type: "powers",
         params,
         answer,
@@ -3672,8 +3672,8 @@ export function buildPowersAnimation(params, answer) {
 
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`לכן ${M(`${base}^${exp} = ${result}`)}.`),
+      title: "Final result",
+      ...learningStepFields(mix`so ${M(`${base}^${exp} = ${result}`)}.`),
       type: "powers",
       params,
       answer,
@@ -3681,24 +3681,24 @@ export function buildPowersAnimation(params, answer) {
   } else if (kind === "power_base") {
     steps.push({
       id: "goal",
-      title: "מה מחפשים?",
-      ...learningStepFields(mix`מחפשים את הבסיס כך ש-${M(`(בסיס)^${exp} = ${result}`)}.`),
+      title: "What are we looking for?",
+      ...learningStepFields(mix`find the base so that ${M(`(base)^${exp} = ${result}`)}.`),
       type: "powers",
       params,
       answer,
     });
     steps.push({
       id: "trial",
-      title: "בודקים אפשרויות",
-      ...learningStepFields(mix`בודקים מספרים קטנים: למשל 2^${exp}, 3^${exp}, 4^${exp}... עד שמקבלים ${result}.`),
+      title: "Check options",
+      ...learningStepFields(mix`check small numbers: for example 2^${exp}, 3^${exp}, 4^${exp}... until you get ${result}.`),
       type: "powers",
       params,
       answer,
     });
     steps.push({
       id: "final",
-      title: "התוצאה הסופית",
-      ...learningStepFields(mix`מצאנו ש-${M(`${answer}^${exp} = ${result}`)}, לכן הבסיס הוא ${answer}.`),
+      title: "Final result",
+      ...learningStepFields(mix`we found that ${M(`${answer}^${exp} = ${result}`)}, so the base is ${answer}.`),
       type: "powers",
       params,
       answer,
@@ -3724,24 +3724,24 @@ export function buildRatioAnimation(params, answer) {
   if (kind === "ratio_find") {
     const { a, b, simplifiedA, simplifiedB } = params;
     const g = gcd(a, b);
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`מה היחס בין ${a} ל-${b}?`), type: "ratio", params, answer });
-    steps.push({ id: "gcd", title: "מצמצמים את היחס", ...learningStepFields(mix`מחלקים את שני המספרים באותו מחלק משותף. כאן המחלק הוא ${g}.`), type: "ratio", params, answer });
-    steps.push({ id: "calc", title: "חישוב", ...learningStepFields(mix`${M(`${a} ÷ ${g} = ${simplifiedA}`)} וגם ${M(`${b} ÷ ${g} = ${simplifiedB}`)}.`), type: "ratio", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`לכן היחס המצומצם הוא ${simplifiedA}:${M(`${simplifiedB}.`)}`), type: "ratio", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`What is the ratio of ${a} to ${b}?`), type: "ratio", params, answer });
+    steps.push({ id: "gcd", title: "Simplify the ratio", ...learningStepFields(mix`Divide both numbers by the same common divisor. Here the divisor is ${g}.`), type: "ratio", params, answer });
+    steps.push({ id: "calc", title: "Calculation", ...learningStepFields(mix`${M(`${a} ÷ ${g} = ${simplifiedA}`)} and ${M(`${b} ÷ ${g} = ${simplifiedB}`)}.`), type: "ratio", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`so the simplified ratio is ${simplifiedA}:${M(`${simplifiedB}.`)}`), type: "ratio", params, answer });
   } else if (kind === "ratio_first") {
     const { firstNum, secondNum, simplifiedA, simplifiedB } = params;
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`היחס הוא ${simplifiedA}:${M(`${simplifiedB}. `)}המספר השני הוא ${secondNum}. מה המספר הראשון?`), type: "ratio", params, answer });
-    steps.push({ id: "scale", title: "מוצאים מקדם", ...learningStepFields(mix`אם ${simplifiedB} מתאימים ל-${secondNum}, אז המקדם הוא ${M(`${secondNum} ÷ ${simplifiedB}`)}.`), type: "ratio", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`the ratio is ${simplifiedA}:${M(`${simplifiedB}. `)}the second number is ${secondNum}. What is the first number?`), type: "ratio", params, answer });
+    steps.push({ id: "scale", title: "Find the coefficient", ...learningStepFields(mix`if ${simplifiedB} correspond to${secondNum}, then the scale factor is ${M(`${secondNum} ÷ ${simplifiedB}`)}.`), type: "ratio", params, answer });
     const k = secondNum / simplifiedB;
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`המספר הראשון: ${M(`${simplifiedA} × ${k} = ${firstNum}`)}.`), type: "ratio", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "ratio", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`the first number: ${M(`${simplifiedA} × ${k} = ${firstNum}`)}.`), type: "ratio", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "ratio", params, answer });
   } else if (kind === "ratio_second") {
     const { firstNum, secondNum, simplifiedA, simplifiedB } = params;
-    steps.push({ id: "show", title: "הצגת השאלה", ...learningStepFields(mix`היחס הוא ${simplifiedA}:${M(`${simplifiedB}. `)}המספר הראשון הוא ${firstNum}. מה המספר השני?`), type: "ratio", params, answer });
-    steps.push({ id: "scale", title: "מוצאים מקדם", ...learningStepFields(mix`אם ${simplifiedA} מתאימים ל-${firstNum}, אז המקדם הוא ${M(`${firstNum} ÷ ${simplifiedA}`)}.`), type: "ratio", params, answer });
+    steps.push({ id: "show", title: "Show the question", ...learningStepFields(mix`the ratio is ${simplifiedA}:${M(`${simplifiedB}. `)}the first number is ${firstNum}. What is the second number?`), type: "ratio", params, answer });
+    steps.push({ id: "scale", title: "Find the coefficient", ...learningStepFields(mix`if ${simplifiedA} correspond to${firstNum}, then the scale factor is ${M(`${firstNum} ÷ ${simplifiedA}`)}.`), type: "ratio", params, answer });
     const k = firstNum / simplifiedA;
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`המספר השני: ${M(`${simplifiedB} × ${k} = ${secondNum}`)}.`), type: "ratio", params, answer });
-    steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "ratio", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`the second number: ${M(`${simplifiedB} × ${k} = ${secondNum}`)}.`), type: "ratio", params, answer });
+    steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "ratio", params, answer });
   }
   return steps;
 }
@@ -3751,34 +3751,34 @@ export function buildOrderOfOperationsAnimation(params, answer) {
   const { kind, a, b, c } = params;
   steps.push({
     id: "rule",
-    title: "סדר פעולות",
-    ...learningStepFields(mix`סדר פעולות: סוגריים → כפל/חילוק → חיבור/חיסור.`),
+    title: "Order of operations",
+    ...learningStepFields(mix`order of operations: parentheses → multiplication/division → addition/subtraction.`),
     type: "order_of_operations",
     params,
     answer,
   });
 
   if (kind === "order_parentheses") {
-    steps.push({ id: "show", title: "התרגיל", ...learningStepFields(mix`${M(`${a} × (${b} + ${c})`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "show", title: "The exercise", ...learningStepFields(mix`${M(`${a} × (${b} + ${c})`)}`), type: "order_of_operations", params, answer });
     const inside = b + c;
-    steps.push({ id: "par", title: "סוגריים קודם", ...learningStepFields(mix`${M(`${b} + ${c} = ${inside}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "par", title: "Parentheses first", ...learningStepFields(mix`${M(`${b} + ${c} = ${inside}`)}`), type: "order_of_operations", params, answer });
     const res = a * inside;
-    steps.push({ id: "mul", title: "אחר כך כפל", ...learningStepFields(mix`${M(`${a} × ${inside} = ${res}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "mul", title: "Then multiplication", ...learningStepFields(mix`${M(`${a} × ${inside} = ${res}`)}`), type: "order_of_operations", params, answer });
   } else if (kind === "order_add_mul") {
-    steps.push({ id: "show", title: "התרגיל", ...learningStepFields(mix`${M(`${a} + ${b} × ${c}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "show", title: "The exercise", ...learningStepFields(mix`${M(`${a} + ${b} × ${c}`)}`), type: "order_of_operations", params, answer });
     const mul = b * c;
-    steps.push({ id: "mul", title: "כפל קודם", ...learningStepFields(mix`${M(`${b} × ${c} = ${mul}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "mul", title: "Multiply first", ...learningStepFields(mix`${M(`${b} × ${c} = ${mul}`)}`), type: "order_of_operations", params, answer });
     const res = a + mul;
-    steps.push({ id: "add", title: "אחר כך חיבור", ...learningStepFields(mix`${M(`${a} + ${mul} = ${res}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "add", title: "Then addition", ...learningStepFields(mix`${M(`${a} + ${mul} = ${res}`)}`), type: "order_of_operations", params, answer });
   } else if (kind === "order_mul_sub") {
-    steps.push({ id: "show", title: "התרגיל", ...learningStepFields(mix`${M(`${a} × ${b} − ${c}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "show", title: "The exercise", ...learningStepFields(mix`${M(`${a} × ${b} − ${c}`)}`), type: "order_of_operations", params, answer });
     const mul = a * b;
-    steps.push({ id: "mul", title: "כפל קודם", ...learningStepFields(mix`${M(`${a} × ${b} = ${mul}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "mul", title: "Multiply first", ...learningStepFields(mix`${M(`${a} × ${b} = ${mul}`)}`), type: "order_of_operations", params, answer });
     const res = mul - c;
-    steps.push({ id: "sub", title: "אחר כך חיסור", ...learningStepFields(mix`${M(`${mul} − ${c} = ${res}`)}`), type: "order_of_operations", params, answer });
+    steps.push({ id: "sub", title: "Then subtraction", ...learningStepFields(mix`${M(`${mul} − ${c} = ${res}`)}`), type: "order_of_operations", params, answer });
   }
 
-  steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "order_of_operations", params, answer });
+  steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "order_of_operations", params, answer });
   return steps;
 }
 
@@ -3795,79 +3795,79 @@ export function buildZeroOnePropertiesAnimation(params, answer) {
           : `${a} × 1`;
   steps.push({
     id: "show",
-    title: "הצגת השאלה",
-    ...learningStepFields(mix`נחשב: ${M(`${pureMathLtrDisplay(expr)}`)}`),
+    title: "Show the question",
+    ...learningStepFields(mix`compute: ${M(`${pureMathLtrDisplay(expr)}`)}`),
     type: "zero_one_properties",
     params,
     answer,
   });
 
   if (kind === "zero_mul") {
-    steps.push({ id: "rule", title: "כלל כפל ב-0", ...learningStepFields(mix`כל מספר כפול 0 שווה 0.`), type: "zero_one_properties", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${a} × 0 = 0`)}`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "rule", title: "Rule: multiply by 0", ...learningStepFields(mix`Any number times 0 equals 0.`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${a} × 0 = 0`)}`), type: "zero_one_properties", params, answer });
   } else if (kind === "zero_add") {
-    steps.push({ id: "rule", title: "כלל חיבור עם 0", ...learningStepFields(mix`חיבור 0 לא משנה את המספר.`), type: "zero_one_properties", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${a} + 0 = ${a}`)}`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "rule", title: "Rule: add 0", ...learningStepFields(mix`Adding 0 does not change the number.`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${a} + 0 = ${a}`)}`), type: "zero_one_properties", params, answer });
   } else if (kind === "zero_sub") {
-    steps.push({ id: "rule", title: "כלל חיסור 0", ...learningStepFields(mix`חיסור 0 לא משנה את המספר.`), type: "zero_one_properties", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${a} − 0 = ${a}`)}`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "rule", title: "Rule: subtract 0", ...learningStepFields(mix`Subtracting 0 does not change the number.`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${a} − 0 = ${a}`)}`), type: "zero_one_properties", params, answer });
   } else if (kind === "one_mul") {
-    steps.push({ id: "rule", title: "כלל כפל ב-1", ...learningStepFields(mix`כל מספר כפול 1 שווה לעצמו.`), type: "zero_one_properties", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${a} × 1 = ${a}`)}`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "rule", title: "Rule: multiply by 1", ...learningStepFields(mix`Any number times 1 equals itself.`), type: "zero_one_properties", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${a} × 1 = ${a}`)}`), type: "zero_one_properties", params, answer });
   }
-  steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "zero_one_properties", params, answer });
+  steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "zero_one_properties", params, answer });
   return steps;
 }
 
 export function buildEstimationAnimation(params, answer) {
   const steps = [];
   const { kind } = params;
-  steps.push({ id: "show", title: "מה זה אומדן?", ...learningStepFields(mix`אומדן הוא תשובה קרובה (לא מדויקת), כדי לחשב מהר.`), type: "estimation", params, answer });
+  steps.push({ id: "show", title: "What is an estimate?", ...learningStepFields(mix`An estimate is a nearby (not exact) answer, so you can compute quickly.`), type: "estimation", params, answer });
 
   if (kind === "est_add") {
     const { a, b, exact, estimate } = params;
-    steps.push({ id: "round", title: "מעגלים", ...learningStepFields(mix`מעגלים את התוצאה לעשרות הקרובות.`), type: "estimation", params, answer });
-    steps.push({ id: "calc", title: "חישוב מדויק", ...learningStepFields(mix`${M(`${a} + ${b} = ${exact}`)}`), type: "estimation", params, answer });
-    steps.push({ id: "est", title: "אומדן", ...learningStepFields(mix`מעגלים: ${M(`${exact} ≈ ${estimate}`)}`), type: "estimation", params, answer });
+    steps.push({ id: "round", title: "Round", ...learningStepFields(mix`Round the result to the nearest tens.`), type: "estimation", params, answer });
+    steps.push({ id: "calc", title: "Exact calculation", ...learningStepFields(mix`${M(`${a} + ${b} = ${exact}`)}`), type: "estimation", params, answer });
+    steps.push({ id: "est", title: "Estimate", ...learningStepFields(mix`round: ${M(`${exact} ≈ ${estimate}`)}`), type: "estimation", params, answer });
   } else if (kind === "est_mul") {
     const { a, b, exact, estimate } = params;
-    steps.push({ id: "round", title: "מעגלים", ...learningStepFields(mix`מעגלים את התוצאה למאות הקרובות.`), type: "estimation", params, answer });
-    steps.push({ id: "calc", title: "חישוב מדויק", ...learningStepFields(mix`${M(`${a} × ${b} = ${exact}`)}`), type: "estimation", params, answer });
-    steps.push({ id: "est", title: "אומדן", ...learningStepFields(mix`מעגלים: ${M(`${exact} ≈ ${estimate}`)}`), type: "estimation", params, answer });
+    steps.push({ id: "round", title: "Round", ...learningStepFields(mix`Round the result to the nearest hundreds.`), type: "estimation", params, answer });
+    steps.push({ id: "calc", title: "Exact calculation", ...learningStepFields(mix`${M(`${a} × ${b} = ${exact}`)}`), type: "estimation", params, answer });
+    steps.push({ id: "est", title: "Estimate", ...learningStepFields(mix`round: ${M(`${exact} ≈ ${estimate}`)}`), type: "estimation", params, answer });
   } else if (kind === "est_quantity") {
     const { quantity, estimate } = params;
-    steps.push({ id: "round", title: "מעגלים לעשרות", ...learningStepFields(mix`${M(`${quantity} ≈ ${estimate}`)}`), type: "estimation", params, answer });
+    steps.push({ id: "round", title: "Round to tens", ...learningStepFields(mix`${M(`${quantity} ≈ ${estimate}`)}`), type: "estimation", params, answer });
   }
 
-  steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`האומדן הוא ${answer}.`), type: "estimation", params, answer });
+  steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the estimate is ${answer}.`), type: "estimation", params, answer });
   return steps;
 }
 
 export function buildScaleAnimation(params, answer) {
   const steps = [];
   const { kind } = params;
-  steps.push({ id: "show", title: "קנה מידה", ...learningStepFields(mix`בקנה מידה 1:${M(`${params.scale || "?"} `)}– כל 1 ס״מ במפה מייצג ${params.scale || "?"} ס״מ במציאות.`), type: "scale", params, answer });
+  steps.push({ id: "show", title: "scale", ...learningStepFields(mix`at scale 1:${M(`${params.scale || "?"} `)}– each 1 cm on the map represents ${params.scale || "?"} cm in reality.`), type: "scale", params, answer });
 
   if (kind === "scale_map_to_real") {
     const { mapLength, scale, realLength } = params;
-    steps.push({ id: "eq", title: "כותבים תרגיל", ...learningStepFields(mix`מציאות = מפה × קנה מידה`), type: "scale", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${mapLength} × ${scale} = ${realLength}`)}`), type: "scale", params, answer });
+    steps.push({ id: "eq", title: "Write the exercise", ...learningStepFields(mix`reality = map × scale`), type: "scale", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${mapLength} × ${scale} = ${realLength}`)}`), type: "scale", params, answer });
   } else if (kind === "scale_real_to_map") {
     const { realLength, scale, mapLength } = params;
-    steps.push({ id: "eq", title: "כותבים תרגיל", ...learningStepFields(mix`מפה = מציאות ÷ קנה מידה`), type: "scale", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${realLength} ÷ ${scale} = ${mapLength}`)}`), type: "scale", params, answer });
+    steps.push({ id: "eq", title: "Write the exercise", ...learningStepFields(mix`map = reality ÷ scale`), type: "scale", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${realLength} ÷ ${scale} = ${mapLength}`)}`), type: "scale", params, answer });
   } else if (kind === "scale_find") {
     const { mapLength, realLength, scale } = params;
-    steps.push({ id: "eq", title: "כותבים תרגיל", ...learningStepFields(mix`קנה מידה = מציאות ÷ מפה`), type: "scale", params, answer });
-    steps.push({ id: "calc", title: "מחשבים", ...learningStepFields(mix`${M(`${realLength} ÷ ${mapLength} = ${scale}`)}`), type: "scale", params, answer });
-    steps.push({ id: "format", title: "כותבים בצורה 1:X", ...learningStepFields(mix`לכן קנה המידה הוא 1:${M(`${scale}.`)}`), type: "scale", params, answer });
+    steps.push({ id: "eq", title: "Write the exercise", ...learningStepFields(mix`scale = reality ÷ map`), type: "scale", params, answer });
+    steps.push({ id: "calc", title: "compute", ...learningStepFields(mix`${M(`${realLength} ÷ ${mapLength} = ${scale}`)}`), type: "scale", params, answer });
+    steps.push({ id: "format", title: "write in the form 1:X", ...learningStepFields(mix`so the scale is 1:${M(`${scale}.`)}`), type: "scale", params, answer });
   }
 
-  steps.push({ id: "final", title: "התוצאה הסופית", ...learningStepFields(mix`התשובה היא ${answer}.`), type: "scale", params, answer });
+  steps.push({ id: "final", title: "Final result", ...learningStepFields(mix`the answer is ${answer}.`), type: "scale", params, answer });
   return steps;
 }
 
-// פונקציה כללית לבניית אנימציה לפי נושא
+// General function that builds an animation by topic
 export function buildAnimationForOperation(question, operation, gradeKey) {
   if (!question || !question.params) return null;
   
@@ -3885,7 +3885,7 @@ export function buildAnimationForOperation(question, operation, gradeKey) {
       
     case "division":
     case "division_with_remainder":
-      // בחלק מהתרגילים אין params.quotient (הוא פשוט התשובה). עדיין נרצה אנימציה.
+      // some exercises have no params.quotient (is simply the answer). We still want an animation.
       if (params.dividend != null && params.divisor != null) {
         const q =
           params.quotient != null

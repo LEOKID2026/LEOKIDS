@@ -180,7 +180,7 @@ export default function LeoPizzeriaGame({
     setCurrentStreak(0);
     addScore(SCORE.timeout);
     setCheckState("bad");
-    const timeoutText = "הלקוח חיכה יותר מדי";
+    const timeoutText = "The customer waited too long";
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -350,7 +350,7 @@ export default function LeoPizzeriaGame({
             className={`${styles.slicePath} ${filled ? styles.sliceFilled : styles.sliceEmpty} ${selectedTopping ? styles.sliceHover : ""}`}
             onClick={() => onSliceTap(i)}
             role="button"
-            aria-label={`חלק ${i + 1}${topping ? ` · ${topping.name}` : ""}`}
+            aria-label={`Slice ${i + 1}${topping ? ` · ${topping.name}` : ""}`}
           />
           {!filled && sliceCount === 4 ? (
             <text x={center.x} y={center.y + 2} textAnchor="middle" className={styles.sliceHint}>
@@ -422,11 +422,11 @@ export default function LeoPizzeriaGame({
   return (
     <div
       className={`${frame.shell} ${frame.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`}
-      dir="rtl"
+      dir="ltr"
     >
       <header className={frame.header}>
         <Link href={backHref} className={frame.hudChip}>
-          חזרה
+          Back
         </Link>
         {phase === "play" ? (
           <div className={frame.hud}>
@@ -438,13 +438,13 @@ export default function LeoPizzeriaGame({
               ❌ {mistakes}/{diffConfig.maxMistakes}
             </span>
             <span className={`${frame.hudChip} ${styles.hudTime} ${timeLeft <= 8 ? styles.hudTimeWarn : ""}`}>
-              ⏱ {timeLeft} שנ׳
+              ⏱ {timeLeft}s
             </span>
             <span className={frame.hudChip}>{diffConfig.label}</span>
           </div>
         ) : (
           <div className={frame.hud}>
-            <span className={frame.hudChip}>{productionMode ? "🍕" : "🍕 אבטיפוס"}</span>
+            <span className={frame.hudChip}>{productionMode ? "🍕" : "🍕 Prototype"}</span>
           </div>
         )}
         {showFullscreenButton && onFullscreenToggle ? (
@@ -459,9 +459,9 @@ export default function LeoPizzeriaGame({
       {!productionMode && phase === "intro" ? (
         <div className={frame.screenCenter}>
           <p className={frame.introHero}>🍕🦁</p>
-          <h1 className={frame.introTitle}>הפיצרייה של ליאו</h1>
+          <h1 className={frame.introTitle}>Leo&apos;s Pizzeria</h1>
           <p className={frame.introText}>
-            לקוחות נכנסים לפיצרייה - הכינו להם בדיוק את הפיצה שהם הזמינו!
+            Customers walk into the pizzeria — make them exactly the pizza they ordered!
           </p>
           <div className={frame.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -480,10 +480,10 @@ export default function LeoPizzeriaGame({
             style={{ fontSize: "0.72rem" }}
           />
           <p className={frame.introText} style={{ fontSize: "0.78rem" }}>
-            {CUSTOMERS_PER_LEVEL} לקוחות · טיימר לכל לקוח · גרירה או לחיצה על תוספות
+            {CUSTOMERS_PER_LEVEL} customers · timer per customer · drag or tap toppings
           </p>
           <button type="button" className={frame.startBtn} onClick={startGame}>
-            פתיחת משמרת 🍕
+            Open shift 🍕
           </button>
         </div>
       ) : null}
@@ -496,7 +496,7 @@ export default function LeoPizzeriaGame({
           onPointerCancel={onPointerUp}
         >
           <p className={shop.counterLabel}>
-            🍕 דלפק הכנה · לקוח {customerIndex + 1} מתוך {customers.length}
+            🍕 Prep counter · Customer {customerIndex + 1} of {customers.length}
           </p>
 
           <div className={shop.shopGrid} data-educational-workplace-grid="">
@@ -526,7 +526,7 @@ export default function LeoPizzeriaGame({
                 <svg
                   viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
                   className={styles.pizzaSvg}
-                  aria-label="פיצה לעבודה"
+                  aria-label="Pizza in progress"
                 >
                   <circle cx={CX} cy={CY} r={R + 6} fill="#92400e" />
                   <circle cx={CX} cy={CY} r={R} fill="#dc2626" opacity="0.92" />
@@ -539,7 +539,7 @@ export default function LeoPizzeriaGame({
 
             <aside className={shop.sideCol}>
               <div className={`${frame.panel} ${shop.toolsPanel}`}>
-                <p className={shop.toolsTitle}>🧺 מדף תוספות</p>
+                <p className={shop.toolsTitle}>🧺 Topping shelf</p>
                 <div className={shop.toolsGrid}>
                   {TOPPINGS.map((t) => (
                     <button
@@ -577,10 +577,10 @@ export default function LeoPizzeriaGame({
                   disabled={checkState === "ok"}
                   onClick={servePizza}
                 >
-                  הגש פיצה 🍕
+                  Serve pizza 🍕
                 </button>
                 <button type="button" className={shop.secondaryBtn} onClick={resetPizza}>
-                  נקה פיצה
+                  Clear pizza
                 </button>
               </div>
             </div>
@@ -591,15 +591,15 @@ export default function LeoPizzeriaGame({
       {phase === "won" && !productionMode ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🎉 סיימתם את המשמרת!</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
+            <h2 className={frame.endTitle}>🎉 You finished the shift!</h2>
+            <p className={frame.endStat}>⭐ Score: {score}</p>
             <p className={frame.endStat}>
-              ✅ לקוחות: {successCount}/{customers.length}
+              ✅ Customers: {successCount}/{customers.length}
             </p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={() => setPhase("intro")}>
-                משחק חדש
+                New game
               </button>
             </div>
           </div>
@@ -609,13 +609,13 @@ export default function LeoPizzeriaGame({
       {phase === "lost" && !productionMode ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🍕 סיום משמרת</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ פיצות נכונות: {successCount}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🍕 Shift over</h2>
+            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>✅ Correct pizzas: {successCount}</p>
+            <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={startGame}>
-                משחק חדש
+                New game
               </button>
             </div>
           </div>

@@ -26,7 +26,7 @@ export default function OfflineHubTileCard({
   href,
   locked = false,
   GH,
-  ctaLabel = "שחק",
+  ctaLabel = "Play",
   titleOneLine = false,
 }) {
   const shell = `${GH.card} ${TILE_MIN_H}${locked ? " opacity-80" : ""}`;

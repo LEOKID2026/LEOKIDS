@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   const studentId = String(req.query.studentId || "").trim();
   if (!studentId) {
-    return res.status(400).json({ ok: false, error: "חסר מזהה שחקן", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Missing player ID", code: "bad_request" });
   }
 
   const profile = await getArcadePlayerProfileView(auth.supabase, studentId, {
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   });
 
   if (!profile) {
-    return res.status(404).json({ ok: false, error: "שחקן לא נמצא", code: "not_found" });
+    return res.status(404).json({ ok: false, error: "Player not found", code: "not_found" });
   }
 
   return res.status(200).json({ ok: true, profile });

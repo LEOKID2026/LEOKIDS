@@ -10,7 +10,7 @@ export default function OfflineHubPageShell({ children }) {
 
   return (
     <Layout studentTheme={OFFLINE_HUB_LAYOUT_THEME} studentShell="home">
-      <main className={`${GH.pageWrap} ${pageMainClass}`} style={pageBgStyle} dir="rtl">
+      <main className={`${GH.pageWrap} ${pageMainClass}`} style={pageBgStyle} dir="ltr">
         {children}
       </main>
     </Layout>

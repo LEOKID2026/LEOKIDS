@@ -9,7 +9,7 @@ import { LADDERS, SNAKES } from "../../../lib/arcade/snakes-ladders/snakesLadder
 import { Ov2ArcadeSnakesPlayfield } from "./ov2ArcadeSnakesBoardView";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "נחשים וסולמות";
+const GAME_TITLE = "Snakes and Ladders";
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -27,7 +27,7 @@ function SnakesLeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-rose-950/55 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 sm:max-w-sm sm:text-base"
       >
-        {busy ? "יוצא…" : "עזוב"}
+        {busy ? "Leaving…" : "Leave"}
       </button>
     </div>
   );
@@ -37,17 +37,17 @@ function SnakesLeaveRow({ onLeave, disabled = false, busy = false }) {
 function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header
-      dir="rtl"
+      dir="ltr"
       className="relative z-20 flex w-full shrink-0 items-center gap-1.5 rounded-xl border border-white/[0.14] bg-gradient-to-b from-zinc-700/90 via-zinc-900/95 to-black/90 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_28px_rgba(0,0,0,0.45)] sm:gap-2 sm:px-2.5 sm:py-2"
     >
       <button
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="חזרה"
-        title="חזרה"
+        aria-label="Back"
+        title="Back"
       >
-        <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">חזרה</span>
+        <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">Back</span>
       </button>
 
       <div className="min-w-0 flex-1 px-0.5 text-center">
@@ -59,7 +59,7 @@ function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
       <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <div
           className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-          title="יתרת מטבעות"
+          title="Coin balance"
         >
           <img src="/images/coin.png" alt="" className="h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7" />
           <span className="min-w-0 truncate font-mono text-sm font-bold tabular-nums leading-none text-amber-100 sm:text-base">
@@ -70,8 +70,8 @@ function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
           type="button"
           onClick={onOpenHelp}
           className={HUD_BTN_SQUARE}
-          aria-label="איך משחקים"
-          title="איך משחקים"
+          aria-label="How to play"
+          title="How to play"
         >
           <span className="text-lg leading-none text-white/95">?</span>
         </button>
@@ -90,15 +90,15 @@ function SnakesHowToModal({ open, onClose }) {
       aria-modal="true"
       aria-labelledby="snakes-howto-title"
     >
-      <button type="button" className="absolute inset-0 cursor-default" aria-label="סגור" onClick={onClose} />
+      <button type="button" className="absolute inset-0 cursor-default" aria-label="Close" onClick={onClose} />
       <div
-        dir="rtl"
-        className="relative z-[1] max-h-[min(85vh,540px)] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 text-right shadow-2xl sm:p-5"
+        dir="ltr"
+        className="relative z-[1] max-h-[min(85vh,540px)] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 text-left shadow-2xl sm:p-5"
       >
         <div className="mb-3 flex items-start justify-between gap-3 border-b border-white/10 pb-3">
           <div>
             <h2 id="snakes-howto-title" className="text-lg font-bold text-white">
-              איך משחקים
+              How to play
             </h2>
             <p className="mt-0.5 text-xs text-amber-300/90">{GAME_TITLE}</p>
           </div>
@@ -107,16 +107,16 @@ function SnakesHowToModal({ open, onClose }) {
             onClick={onClose}
             className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 text-sm text-zinc-200 hover:bg-white/10"
           >
-            סגור
+            Close
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm leading-relaxed text-zinc-200">
-          <li>כל שחקן בתורו מזריק קוביה ומתקדם על הלוח לפי המספר.</li>
-          <li>נחש מוריד, סולם מעלה - לפי המפה הקלאסית.</li>
-          <li>מי שמגיע בדיוק ל-100 מנצח.</li>
-          <li>זריקה שחורגת מ-100 לא מזיזה אותך (נשאר באותו משבצת).</li>
+          <li>On your turn, roll the dice and move forward by that number.</li>
+          <li>Snakes send you down, ladders send you up — classic board.</li>
+          <li>Reach exactly 100 to win.</li>
+          <li>A roll past 100 doesn't move you (you stay put).</li>
           <li>
-            שש בקובייה נותן תור נוסף - עד שני ששים ברצף. בשש השלישי ברצף אין תזוזה והתור עובר; אם אחרי שני ששים יוצא מספר אחר - משחקים אותו והתור עובר.
+            A six gives an extra turn — up to two sixes in a row. A third six in a row doesn't move you and ends your turn; after two sixes, any other number is played and then the turn ends.
           </li>
         </ul>
       </div>
@@ -263,27 +263,27 @@ export default function SnakesLaddersScreen({ roomId }) {
             {hasFlexDeadline && waitSecondsLeft != null ? (
               <>
                 <p className="text-lg font-bold tabular-nums">
-                  המשחק יתחיל בעוד {waitSecondsLeft} {waitSecondsLeft === 1 ? "שנייה" : "שניות"}
+                  Game starts in {waitSecondsLeft} {waitSecondsLeft === 1 ? "second" : "seconds"}
                 </p>
                 <p className="mt-2 text-sm text-amber-200/90">
-                  אם החדר יתמלא לפני כן - המשחק יתחיל מיד
+                  If the room fills before then, the game starts right away
                 </p>
               </>
             ) : (
               <>
-                <p className="text-lg font-bold">ממתינים לשחקן נוסף…</p>
-                <p className="mt-2 text-sm text-amber-200/90">כשהחדר יתמלא המשחק יתחיל אוטומטית</p>
+                <p className="text-lg font-bold">Waiting for another player…</p>
+                <p className="mt-2 text-sm text-amber-200/90">When the room fills, the game starts automatically</p>
               </>
             )}
           </div>
         ) : null}
 
         {showSessionInitError ? (
-          <p className="mt-4 text-center text-sm text-rose-200">לא ניתן לטעון את מצב המשחק - נסה לרענן</p>
+          <p className="mt-4 text-center text-sm text-rose-200">Couldn't load game state — try refreshing</p>
         ) : null}
 
         {showBoardLoading ? (
-          <p className="mt-6 text-center text-zinc-400">טוען לוח…</p>
+          <p className="mt-6 text-center text-zinc-400">Loading board…</p>
         ) : null}
 
         {!showLobbyWait && snapshot ? (
@@ -304,7 +304,7 @@ export default function SnakesLaddersScreen({ roomId }) {
             />
             {finished ? (
               <p className="mt-2 shrink-0 text-center text-lg font-bold text-amber-200">
-                {didIWin ? "ניצחת!" : `מנצח: מושב ${(vm.winnerSeat ?? 0) + 1}`}
+                {didIWin ? "You won!" : `Winner: Seat ${(vm.winnerSeat ?? 0) + 1}`}
               </p>
             ) : null}
           </div>

@@ -36,12 +36,12 @@ export default async function handler(req, res) {
       return res.status(200).json(result);
     }
 
-    return res.status(400).json({ ok: false, error: "פעולה לא תקינה", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Invalid action", code: "bad_request" });
   }
 
   if (req.method === "DELETE") {
     const friendId = String(req.query.friendId || req.body?.friendId || "").trim();
-    if (!friendId) return res.status(400).json({ ok: false, error: "חסר מזהה חבר", code: "bad_request" });
+    if (!friendId) return res.status(400).json({ ok: false, error: "Missing friend ID", code: "bad_request" });
     const result = await removeArcadeFriend(auth.supabase, auth.studentId, friendId);
     return res.status(200).json(result);
   }

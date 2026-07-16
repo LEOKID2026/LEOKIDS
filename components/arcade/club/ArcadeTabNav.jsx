@@ -1,8 +1,8 @@
 const TABS = [
-  { id: "games", label: "משחקים" },
-  { id: "friends", label: "חברים" },
-  { id: "shop", label: "חנות" },
-  { id: "profile", label: "פרופיל" },
+  { id: "games", label: "Games" },
+  { id: "friends", label: "Friends" },
+  { id: "shop", label: "Shop" },
+  { id: "profile", label: "Profile" },
 ];
 
 /** @param {{ activeTab: string, onChange: (id: string) => void, className?: string, gh?: Record<string, string>, compact?: boolean }} props */
@@ -17,7 +17,7 @@ export default function ArcadeTabNav({ activeTab, onChange, className = "", gh =
       "rounded-full border border-sky-200 bg-white px-4 py-1.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-sky-50";
 
   return (
-    <div className={`flex flex-wrap gap-2 justify-end ${className}`} dir="rtl">
+    <div className={`flex flex-wrap gap-2 justify-start ${className}`} dir="ltr">
       {TABS.map((tab) => {
         const active = activeTab === tab.id;
         return (

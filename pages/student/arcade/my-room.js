@@ -42,7 +42,7 @@ export default function ArcadeMyRoomPage() {
         body: JSON.stringify({ roomName }),
       });
       const json = await res.json().catch(() => ({}));
-      setMessage(json.ok ? "נשמר!" : json.message || json.error || "שגיאה");
+      setMessage(json.ok ? "Saved!" : json.message || json.error || "Error");
       if (json.ok) await load();
     } finally {
       setBusy(false);
@@ -53,41 +53,41 @@ export default function ArcadeMyRoomPage() {
     <Layout studentTheme={theme} studentShell="home">
       <GameAccessGuard category="online">
         <Head>
-          <title>החדר שלי - מועדון ליאו</title>
+          <title>My Room - Leo Club</title>
         </Head>
-        <div className={GH.pageWrap} dir="rtl">
+        <div className={GH.pageWrap} dir="ltr">
           <div className={`${GH.container} max-w-3xl space-y-4`}>
             <div className="flex items-center justify-between gap-3">
               <Link href="/student/arcade" className={GH.backBtn}>
-                ← חזרה למועדון
+                ← Back to club
               </Link>
             </div>
 
             {locked ? (
               <div className={`${GH.card} p-4 text-right`}>
-                <p className={GH.cardBlurb}>חדר אישי - נשלט דרך Admin. כרגע לא פתוח לאורחים.</p>
+                <p className={GH.cardBlurb}>Personal room — controlled via Admin. Not open to guests yet.</p>
               </div>
             ) : (
               <div className={`${GH.card} space-y-4 p-4 text-right`}>
-                <h1 className={GH.sectionTitle}>החדר שלי</h1>
-                <p className={`text-sm ${GH.cardBlurb}`}>קישוטים, גביעים והזמנת חברים - מרחב אישי בלבד</p>
+                <h1 className={GH.sectionTitle}>My Room</h1>
+                <p className={`text-sm ${GH.cardBlurb}`}>Decorations, trophies, and inviting friends — personal space only</p>
 
                 <label className="block space-y-1">
-                  <span className={`text-sm ${GH.entryLabel}`}>שם החדר</span>
+                  <span className={`text-sm ${GH.entryLabel}`}>Room name</span>
                   <input className={GH.input} maxLength={40} value={roomName} onChange={(e) => setRoomName(e.target.value)} />
                 </label>
 
                 <div className={`rounded-lg border border-white/10 p-4 ${GH.roomItem}`}>
-                  <p className={`font-semibold ${GH.cardTitle}`}>מדף גביעים</p>
+                  <p className={`font-semibold ${GH.cardTitle}`}>Trophy shelf</p>
                   <p className={`mt-1 text-xs ${GH.cardBlurb}`}>
                     {(room?.decorationSlots || []).length
-                      ? `${room.decorationSlots.length} פריטים מוצגים`
-                      : "אין גביעים עדיין - השלם משימות וטורנירים"}
+                      ? `${room.decorationSlots.length} items on display`
+                      : "No trophies yet — complete missions and tournaments"}
                   </p>
                 </div>
 
                 <button type="button" disabled={busy} onClick={() => void save()} className={GH.btnJoinCode}>
-                  שמור
+                  Save
                 </button>
                 {message ? <p className={`text-sm ${GH.userMessage}`}>{message}</p> : null}
               </div>

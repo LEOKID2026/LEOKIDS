@@ -87,10 +87,10 @@ export default async function handler(req, res) {
     const metrics = normalizeMetrics(body?.metrics);
 
     if (!sessionId) {
-      return res.status(400).json({ ok: false, error: "חסר מזהה משחק" });
+      return res.status(400).json({ ok: false, error: "Game ID is missing" });
     }
     if (!metrics || !Number.isFinite(metrics.score)) {
-      return res.status(400).json({ ok: false, error: "נתוני משחק לא תקינים" });
+      return res.status(400).json({ ok: false, error: "Invalid game data" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();

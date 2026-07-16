@@ -10,7 +10,7 @@ import WindowedStudentCardsGrid from "../../components/student/rewards/WindowedS
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
-import { formatCoinAmountHe, formatCoinAmountNumberHe, SHOP_CARD_ALREADY_OWNED_HE, SHOP_CARD_SELL_DUPLICATE_HE, CATALOG_CARD_OWNED_HE } from "../../lib/rewards/rewards-ui.he.js";
+import { formatCoinAmountHe, formatCoinAmountNumberHe, SHOP_CARD_ALREADY_OWNED_HE, SHOP_CARD_SELL_DUPLICATE_HE, CATALOG_CARD_OWNED_HE } from "../../lib/rewards/rewards-ui.js";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 
 const CARDS_ENDPOINTS = {
@@ -24,10 +24,10 @@ const PURCHASE_PATH = "/api/student/rewards/shop/purchase";
 const SELL_DUPLICATE_PATH = "/api/student/rewards/shop/sell-duplicate";
 
 const TABS = [
-  { id: "collection", label: "האוסף שלי", shortLabel: "אוסף" },
-  { id: "shop", label: "חנות קלפים", shortLabel: "חנות" },
-  { id: "catalog", label: "כל הקלפים", shortLabel: "הכל" },
-  { id: "series", label: "סדרות", shortLabel: "סדרות" },
+  { id: "collection", label: "My collection", shortLabel: "Collection" },
+  { id: "shop", label: "Card shop", shortLabel: "Shop" },
+  { id: "catalog", label: "All cards", shortLabel: "All" },
+  { id: "series", label: "Series", shortLabel: "Series" },
 ];
 
 const TAB_STYLES = {
@@ -146,7 +146,7 @@ function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games
   return (
     <div dir="ltr" className={`grid ${gridCols} gap-1 sm:gap-2 w-full sm:w-auto min-w-0 items-stretch`}>
       <Link href="/student/home" className={cardsBackButtonClass(theme, backVariant)}>
-        עולם הילד
+        Kids World
       </Link>
       {coinBalanceAmount != null ? (
         <span
@@ -238,7 +238,7 @@ export default function StudentCardsPage() {
       await Promise.all([loadSummary(), loadTabData("collection")]);
       setCardsPhase("ok");
     } catch {
-      setCardsError("לא הצלחנו לטעון את הקלפים.");
+      setCardsError("We couldn't load the cards.");
       setCardsPhase("error");
     }
   }, [loadSummary, loadTabData]);
@@ -315,18 +315,18 @@ export default function StudentCardsPage() {
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
         setMessageIsError(true);
-        setMessageHe(json?.code === "insufficient_coins" ? "אין מספיק מטבעות לרכישה." : "הרכישה לא הצליחה - נסו שוב.");
+        setMessageHe(json?.code === "insufficient_coins" ? "Not enough coins to buy this." : "Purchase failed — try again.");
         return;
       }
       setMessageIsError(false);
-      setMessageHe(`קניתם את ${json.card?.name_he || json.card?.nameHe || "הקלף"}!`);
+      setMessageHe(`You bought ${json.card?.name_he || json.card?.nameHe || "the card"}!`);
       if (json.balanceAfter != null) {
         setStudent((prev) => (prev ? { ...prev, coin_balance: json.balanceAfter } : prev));
       }
       await refreshAfterCardAction();
     } catch {
       setMessageIsError(true);
-      setMessageHe("שגיאת רשת ברכישה.");
+      setMessageHe("Network error while purchasing.");
     } finally {
       setActionBusy("");
     }
@@ -336,8 +336,8 @@ export default function StudentCardsPage() {
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `למכור עותק כפול של ${card.nameHe} ולקבל ${formatCoinAmountHe(card.sellbackCoins)}?\n` +
-        "יישאר לך עותק אחד באוסף."
+      `Sell a duplicate of ${card.nameHe} for ${formatCoinAmountHe(card.sellbackCoins)}?\n` +
+        "You'll keep one copy in your collection."
     );
     if (!confirmed) return;
 
@@ -360,14 +360,14 @@ export default function StudentCardsPage() {
         setMessageIsError(true);
         setMessageHe(
           json?.code === "no_duplicate"
-            ? "אין עותק כפול למכירה."
-            : "מכירת העותק הכפול לא הצליחה - נסו שוב."
+            ? "No duplicate copy to sell."
+            : "Couldn't sell the duplicate — try again."
         );
         return;
       }
       setMessageIsError(false);
       setMessageHe(
-        `מכרתם עותק כפול של ${json.card?.name_he || json.card?.nameHe || card.nameHe} וקיבלתם ${formatCoinAmountHe(json.sellbackCoins || 0)}!`
+        `You sold a duplicate of ${json.card?.name_he || json.card?.nameHe || card.nameHe} and got ${formatCoinAmountHe(json.sellbackCoins || 0)}!`
       );
       if (json.balanceAfter != null) {
         setStudent((prev) => (prev ? { ...prev, coin_balance: json.balanceAfter } : prev));
@@ -375,7 +375,7 @@ export default function StudentCardsPage() {
       await refreshAfterCardAction();
     } catch {
       setMessageIsError(true);
-      setMessageHe("שגיאת רשת במכירה.");
+      setMessageHe("Network error while selling.");
     } finally {
       setActionBusy("");
     }
@@ -393,7 +393,7 @@ export default function StudentCardsPage() {
     return (
       <Layout studentTheme={theme} studentShell="home">
         <div className={`max-w-6xl mx-auto px-3 sm:px-4 py-8 text-right overflow-x-hidden ${T.pageWrap}`}>
-          <p className={T.emptyText}>אוסף הקלפים עדיין לא זמין.</p>
+          <p className={T.emptyText}>The card collection isn't available yet.</p>
           <div className="w-full min-w-0 sm:w-auto">
             <CardsPageHeaderActions
               theme={theme}
@@ -410,7 +410,7 @@ export default function StudentCardsPage() {
 
   const renderTabContent = () => {
     if (cardsPhase === "loading") {
-      return <StudentLoadingPanel message="טוען קלפים..." reportPage />;
+      return <StudentLoadingPanel message="Loading cards..." reportPage />;
     }
 
     if (cardsPhase === "error") {
@@ -418,7 +418,7 @@ export default function StudentCardsPage() {
         <div className={T.errorBox}>
           <p className={T.errorTitle}>{cardsError}</p>
           <button type="button" onClick={() => void loadInitialCards()} className={T.errorBtn}>
-            נסו שוב
+            Try again
           </button>
         </div>
       );
@@ -427,7 +427,7 @@ export default function StudentCardsPage() {
     if (cardsPhase !== "ok") return null;
 
     if (tabLoading[activeTab] || !loadedTabs.has(activeTab)) {
-      return <StudentLoadingPanel message="טוען קלפים..." reportPage />;
+      return <StudentLoadingPanel message="Loading cards..." reportPage />;
     }
 
     if (activeTab === "collection") {
@@ -435,7 +435,7 @@ export default function StudentCardsPage() {
       return (
         <WindowedStudentCardsGrid
           items={collectionList}
-          emptyMessage="עדיין אין קלפים באוסף - פתחו קופסת הפתעה בעולם הילד או קנו בחנות!"
+          emptyMessage="No cards in your collection yet — open a surprise box in Kids World or buy from the shop!"
           T={T}
           previewCards={collectionList}
           studentFullName={studentDisplayName}
@@ -456,7 +456,7 @@ export default function StudentCardsPage() {
       return (
         <WindowedStudentCardsGrid
           items={shopList}
-          emptyMessage="אין קלפים זמינים לרכישה כרגע."
+          emptyMessage="No cards available to buy right now."
           T={T}
           previewCards={shopPreviewCards}
           studentFullName={studentDisplayName}
@@ -465,7 +465,7 @@ export default function StudentCardsPage() {
             const canBuy = card.canAfford === true && !card.alreadyOwned;
             const canSell = card.canSellDuplicate === true && card.sellbackCoins > 0;
             const ownedOnly = card.alreadyOwned && !canSell;
-            const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("he-IL");
+            const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("en-US");
             const sellBusy = actionBusy === `sell:${card.id}`;
             const buyBusy = actionBusy === card.id;
             return {
@@ -474,11 +474,11 @@ export default function StudentCardsPage() {
               footer: (
                 <>
                   <p className={`text-sm font-semibold ${T.statValue}`}>
-                    מחיר קנייה: {formatCoinAmountHe(card.priceCoins)}
+                    Buy price: {formatCoinAmountHe(card.priceCoins)}
                   </p>
                   {card.sellbackCoins > 0 ? (
                     <p className={`text-xs leading-snug ${T.tileSub}`}>
-                      שווי מכירה: {formatCoinAmountHe(card.sellbackCoins)}
+                      Sell value: {formatCoinAmountHe(card.sellbackCoins)}
                     </p>
                   ) : (
                     <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -486,8 +486,8 @@ export default function StudentCardsPage() {
                   <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
                     {!card.alreadyOwned && !canBuy
                       ? card.missingCoins > 0
-                        ? `חסרים לך ${formatCoinAmountHe(card.missingCoins)}`
-                        : "אין מספיק מטבעות"
+                        ? `You need ${formatCoinAmountHe(card.missingCoins)} more`
+                        : "Not enough coins"
                       : "\u00a0"}
                   </p>
                   <button
@@ -507,13 +507,13 @@ export default function StudentCardsPage() {
                   >
                     {canSell
                       ? sellBusy
-                        ? "מוכר..."
+                        ? "Selling..."
                         : SHOP_CARD_SELL_DUPLICATE_HE
                       : card.alreadyOwned
                         ? SHOP_CARD_ALREADY_OWNED_HE
                         : buyBusy
-                          ? "קונה..."
-                          : `קנה ב-${priceLabel}`}
+                          ? "Buying..."
+                          : `Buy for ${priceLabel}`}
                   </button>
                 </>
               ),
@@ -531,7 +531,7 @@ export default function StudentCardsPage() {
       return (
         <WindowedStudentCardsGrid
           items={catalogList}
-          emptyMessage="אין קלפים להצגה."
+          emptyMessage="No cards to show."
           T={T}
           previewCards={catalogPreviewCards}
           studentFullName={studentDisplayName}
@@ -552,7 +552,7 @@ export default function StudentCardsPage() {
     if (activeTab === "series") {
       const series = payload?.seriesProgress || [];
       if (!series.length) {
-        return <p className={`text-right py-6 ${T.emptyText}`}>עדיין אין סדרות קלפים.</p>;
+        return <p className={`text-left py-6 ${T.emptyText}`}>No card series yet.</p>;
       }
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 w-full min-w-0">
@@ -576,8 +576,8 @@ export default function StudentCardsPage() {
       <div className={`w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-8 pb-8 overflow-x-hidden ${T.pageWrap}`}>
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 text-right min-w-0">
           <div className="min-w-0">
-            <h1 className={T.heroTitle}>הקלפים שלי</h1>
-            <p className={T.heroSub}>אוסף, חנות, כל הקלפים וסדרות</p>
+            <h1 className={T.heroTitle}>My cards</h1>
+            <p className={T.heroSub}>Collection, shop, all cards, and series</p>
           </div>
           <div className="w-full min-w-0 sm:w-auto">
             <CardsPageHeaderActions theme={theme} coinBalanceAmount={coinBalanceAmount} />
@@ -599,7 +599,7 @@ export default function StudentCardsPage() {
 
         <nav
           className="grid grid-cols-4 gap-1 sm:gap-2 w-full min-w-0 mb-4"
-          aria-label="לשוניות קלפים"
+          aria-label="Card tabs"
         >
           {TABS.map((tab) => (
             <button

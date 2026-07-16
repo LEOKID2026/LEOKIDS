@@ -504,17 +504,17 @@ export default function MleoFruitSliceEngine({
     <div
       id="game-wrapper"
       className="relative isolate flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       {!showIntro && (
         <div className="relative flex min-h-0 w-full flex-1 flex-col px-1 pb-1 pt-1">
           <div className="pointer-events-none absolute left-1/2 top-2 z-[80] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-3 py-2 text-center text-[11px] font-bold leading-snug sm:text-sm">
-            <span className="text-amber-300">ניקוד: {score}</span>
+            <span className="text-amber-300">Score: {score}</span>
             {" · "}
-            <span>יעד: {targetScore}</span>
+            <span>Goal: {targetScore}</span>
             {" · "}
             <span>
-              פסילות: {strikes}/{FRUIT_SLICE_MAX_STRIKES}
+              Strikes: {strikes}/{FRUIT_SLICE_MAX_STRIKES}
             </span>
           </div>
 

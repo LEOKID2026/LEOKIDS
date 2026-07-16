@@ -70,7 +70,7 @@ export default function SoloGameShell({ gameKey }) {
   const { onSessionStart, onSessionWon, onSessionLost, onExit } = useSoloGameShellAudio(gameKey);
 
   const handleStart = useCallback(async () => {
-    // Preserve the "התחל משחק" click gesture for autoStart engines (landscape mobile only).
+    // Preserve the "Start Game" click gesture for autoStart engines (landscape mobile only).
     if (typeof document !== "undefined") {
       enterMobileGameFullscreenFromUserGesture(
         document.querySelector("[data-solo-game-shell]"),
@@ -119,8 +119,8 @@ export default function SoloGameShell({ gameKey }) {
 
   if (!game || !Engine) {
     return (
-      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="rtl">
-        <p>משחק לא נמצא</p>
+      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
+        <p>Game not found</p>
       </div>
     );
   }
@@ -129,12 +129,12 @@ export default function SoloGameShell({ gameKey }) {
     <GameAccessGuard gameKey={gameKey}>
     <>
       <Head>
-        <title>{game.titleHe} - משחקי ליאו</title>
+        <title>{game.titleHe} - Leo's Games</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}
         style={themedShell ? pageBgStyle : undefined}
-        dir="rtl"
+        dir="ltr"
         data-solo-game-shell=""
       >
         <header className={`${themedShell ? SG.header : "flex shrink-0 items-center justify-between gap-2 border-b border-white/10 px-3 py-2 sm:px-4"} relative`}>
@@ -142,7 +142,7 @@ export default function SoloGameShell({ gameKey }) {
             href="/student/game"
             className={themedShell ? SG.navLink : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"}
           >
-            משחקים
+            Games
           </Link>
           <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>
             {game.titleHe}
@@ -151,7 +151,7 @@ export default function SoloGameShell({ gameKey }) {
             href="/student/home"
             className={themedShell ? SG.navLink : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"}
           >
-            בית
+            Home
           </Link>
         </header>
 

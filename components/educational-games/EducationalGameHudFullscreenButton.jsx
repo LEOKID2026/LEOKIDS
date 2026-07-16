@@ -23,9 +23,9 @@ export default function EducationalGameHudFullscreenButton({
       onPointerDown={(e) => e.stopPropagation()}
       className={className ? className : styles.btn}
       style={{ touchAction: "manipulation" }}
-      aria-label={isFullscreen ? "יציאה ממסך מלא" : "מסך מלא"}
+      aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
     >
-      {isFullscreen ? "יציאה" : "⛶ מסך מלא"}
+      {isFullscreen ? "Exit" : "⛶ Fullscreen"}
     </button>
   );
 }

@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   const entryCost = body.entryCost;
 
   if (!gameKey) {
-    return res.status(400).json({ ok: false, error: "חסר משחק", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Missing game", code: "bad_request" });
   }
 
   const access = await assertStudentCanPlayGame(auth.supabase, auth.studentId, gameKey);

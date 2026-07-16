@@ -568,7 +568,7 @@ export default function MleoJumpEngine({ autoStart = false, onSessionEnd }) {
       ctx.fillStyle = "#fde047";
       ctx.font = `bold ${Math.round(36 * scale)}px sans-serif`;
       ctx.textAlign = "center";
-      ctx.fillText(`רמה ${levelRef.current}!`, w / 2, h * 0.28);
+      ctx.fillText(`Level ${levelRef.current}!`, w / 2, h * 0.28);
       ctx.restore();
     }
 
@@ -613,16 +613,16 @@ export default function MleoJumpEngine({ autoStart = false, onSessionEnd }) {
     <div
       id="game-wrapper"
       className="relative isolate flex h-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       {!showIntro && (
         <div className="flex min-h-0 w-full flex-1 flex-col px-1 pb-2 pt-1">
           <div className="pointer-events-none absolute left-1/2 top-2 z-20 hidden max-w-[95vw] -translate-x-1/2 rounded-lg bg-black/60 px-4 py-2 text-sm font-bold sm:text-lg">
-            ניקוד: {score} | רמה: {level} | מטבעות: {coinsCollected}
-            {magnetSec > 0 ? ` | 🧲 מגנט: ${magnetSec}s` : ""}
+            Score: {score} | Level: {level} | Coins: {coinsCollected}
+            {magnetSec > 0 ? ` | 🧲 Magnet: ${magnetSec}s` : ""}
           </div>
           <div className="pointer-events-none absolute bottom-36 left-1/2 z-20 max-w-[95vw] -translate-x-1/2 rounded-md bg-black/60 px-3 py-1 text-xs font-bold sm:hidden">
-            ניקוד: {score} | רמה: {level} | 🪙 {coinsCollected}
+            Score: {score} | Level: {level} | 🪙 {coinsCollected}
             {magnetSec > 0 ? ` | 🧲 ${magnetSec}s` : ""}
           </div>
 
@@ -649,7 +649,7 @@ export default function MleoJumpEngine({ autoStart = false, onSessionEnd }) {
             {levelFlash ? (
               <div className="pointer-events-none absolute inset-0 z-30 flex items-start justify-center pt-[18%]">
                 <span className="rounded-xl bg-yellow-400/90 px-4 py-2 text-lg font-extrabold text-black shadow-lg">
-                  רמה {level}!
+                  Level {level}!
                 </span>
               </div>
             ) : null}
@@ -672,7 +672,7 @@ export default function MleoJumpEngine({ autoStart = false, onSessionEnd }) {
                 jump();
               }}
             >
-              קפיצה 🦘
+              Jump 🦘
             </button>
           ) : null}
         </div>

@@ -21,9 +21,9 @@ import {
 export { TASKS_PER_SESSION };
 
 export const DIFFICULTIES = {
-  easy: { id: "easy", label: "קל" },
-  medium: { id: "medium", label: "בינוני" },
-  hard: { id: "hard", label: "קשה" },
+  easy: { id: "easy", label: "Easy" },
+  medium: { id: "medium", label: "Medium" },
+  hard: { id: "hard", label: "Hard" },
 };
 
 /** @type {Record<DifficultyId, [number, number, number]>} */
@@ -34,11 +34,11 @@ export const GIFTS_TIME_LIMITS_BY_BAND = {
 };
 
 const ITEM_TYPES = [
-  { itemLabel: "מתנות", itemEmoji: "🎁" },
-  { itemLabel: "סוכריות", itemEmoji: "🍬" },
-  { itemLabel: "מדבקות", itemEmoji: "⭐" },
-  { itemLabel: "כוכבים", itemEmoji: "🌟" },
-  { itemLabel: "ממתקים", itemEmoji: "🍭" },
+  { itemLabel: "gifts", itemEmoji: "🎁" },
+  { itemLabel: "candies", itemEmoji: "🍬" },
+  { itemLabel: "stickers", itemEmoji: "⭐" },
+  { itemLabel: "stars", itemEmoji: "🌟" },
+  { itemLabel: "sweets", itemEmoji: "🍭" },
 ];
 
 /** @param {number} min @param {number} max */
@@ -205,20 +205,20 @@ export function validateGiftsDivision(task, perChild, remainder) {
 export function giftsPrompt(task) {
   const remainder = task.total % task.children;
   if (remainder > 0) {
-    return `לליאו יש ${task.total} ${task.itemLabel}. הגיעו ${task.children} ילדים. כמה כל ילד מקבל וכמה נשאר לליאו?`;
+    return `Leo has ${task.total} ${task.itemLabel}. ${task.children} kids arrived. How many does each kid get, and how many are left for Leo?`;
   }
-  return `לליאו יש ${task.total} ${task.itemLabel}. הגיעו ${task.children} ילדים. כמה יקבל כל ילד?`;
+  return `Leo has ${task.total} ${task.itemLabel}. ${task.children} kids arrived. How many does each kid get?`;
 }
 
 /** @param {boolean} ok @param {number} perChild @param {number} remainder */
 export function giftsFeedback(ok, perChild, remainder) {
   if (ok) {
     if (remainder > 0) {
-      return `יפה! כל ילד קיבל ${perChild} ולליאו נשארו ${remainder}.`;
+      return `Nice! Each kid got ${perChild} and Leo has ${remainder} left.`;
     }
-    return "מעולה! כל ילד קיבל אותו מספר.";
+    return "Great! Every kid got the same amount.";
   }
-  return "כמעט! בדקו שכל הילדים קיבלו שווה בשווה ושלא נשאר יותר מדי לליאו.";
+  return "Almost! Check that every kid got an equal share and Leo isn't left with too many.";
 }
 
 const CHILD_EMOJIS = ["👧", "👦", "🧒", "👧🏽", "👦🏽", "🧒🏻", "👧🏻", "👦🏻", "🧒🏽", "👧🏼", "👦🏼", "🧒🏼"];

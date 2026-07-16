@@ -151,9 +151,9 @@ export default function MleoMemoryEngine({
   }, [initialDifficulty]);
 
   const difficultySettings = {
-    easy: { pairs: 6, score: 1000, time: 120, label: "קל" },
-    medium: { pairs: 8, score: 3000, time: 240, label: "בינוני" },
-    hard: { pairs: 12, score: 6000, time: 360, label: "קשה" },
+    easy: { pairs: 6, score: 1000, time: 120, label: "Easy" },
+    medium: { pairs: 8, score: 3000, time: 240, label: "Medium" },
+    hard: { pairs: 12, score: 6000, time: 360, label: "Hard" },
   };
 
   const fireSessionEnd = (finalScore, won, timeLeft) => {
@@ -407,7 +407,7 @@ export default function MleoMemoryEngine({
                   style={{ width: `${(time / difficultySettings[difficulty].time) * 100}%` }}
                 />
               </div>
-              <div className="rounded-lg bg-black/60 px-2 py-1 text-sm font-bold">⏳ {time} שנ׳</div>
+              <div className="rounded-lg bg-black/60 px-2 py-1 text-sm font-bold">⏳ {time} sec</div>
               <div className="rounded-lg bg-black/60 px-2 py-1 text-sm font-bold">⭐ {score}</div>
             </div>
           ) : null}
@@ -426,17 +426,17 @@ export default function MleoMemoryEngine({
             ) : null}
 
             {deckLoading ? (
-              <p className={SG.preGameLoading}>טוען קלפים מהחנות…</p>
+              <p className={SG.preGameLoading}>Loading cards from the shop…</p>
             ) : deckError ? (
               <div className="flex max-w-sm flex-col items-center gap-4 px-4 text-center">
                 <p className={SG.preGameErrorTitle}>
-                  לא נמצאו מספיק קלפי חנות למשחק זיכרון
+                  Not enough shop cards for Memory
                 </p>
                 <p className={SG.preGameErrorSub}>
-                  חזור לחנות הקלפים ובדוק שיש קלפים זמינים
+                  Go back to the card shop and make sure cards are available
                 </p>
                 <SoloGameNavButtons
-                  primaryLabel="נסה שוב"
+                  primaryLabel="Try again"
                   onPrimary={() => initGameWithDifficulty(difficulty)}
                 />
               </div>
@@ -468,7 +468,7 @@ export default function MleoMemoryEngine({
                         isFocused ? "ring-4 ring-sky-400" : isMatched ? "border-emerald-400/80" : "border-yellow-400/30"
                       } ${isFlipped ? "border-yellow-300/70 bg-transparent" : "border-amber-500/40 bg-slate-900"}`}
                       style={{ width: `${cardWidth}px`, height: `${cardHeight}px` }}
-                      aria-label={isFlipped ? card.nameHe || "קלף פתוח" : "קלף סגור"}
+                      aria-label={isFlipped ? card.nameHe || "Face-up card" : "Face-down card"}
                     >
                       {isFlipped ? (
                         <RewardCardImage
@@ -477,7 +477,7 @@ export default function MleoMemoryEngine({
                           size="tile"
                           fit="cover"
                           loading="eager"
-                          alt={card.nameHe || "קלף"}
+                          alt={card.nameHe || "Card"}
                           wrapperClassName="absolute inset-0 h-full w-full"
                           className="h-full w-full"
                         />

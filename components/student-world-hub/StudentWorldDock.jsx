@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
-import { formatCountdownHe } from "../../lib/rewards/rewards-ui.he.js";
+import { formatCountdownHe } from "../../lib/rewards/rewards-ui.js";
 import {
   STUDENT_WORLD_DOCK_PRIMARY,
   STUDENT_WORLD_MORE_PANELS,

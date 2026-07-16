@@ -26,29 +26,29 @@ export default function ArcadeClubMissionsPanel({ gh, className = "" }) {
 
   if (locked) {
     return (
-      <div className={`${gh.arcadePanelMissions || gh.card} text-right ${className}`} dir="rtl">
-        <p className={gh.arcadePanelBlurb || gh.cardBlurb}>משימות יומיות - נשלט דרך Admin. כרגע לא פתוח לאורחים.</p>
+      <div className={`${gh.arcadePanelMissions || gh.card} text-left ${className}`} dir="ltr">
+        <p className={gh.arcadePanelBlurb || gh.cardBlurb}>Daily missions — controlled via Admin. Not open to guests yet.</p>
       </div>
     );
   }
 
   return (
-    <div className={`${gh.arcadePanelMissions || gh.card} space-y-4 text-right ${className}`} dir="rtl">
-      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>משימות היום</h3>
+    <div className={`${gh.arcadePanelMissions || gh.card} space-y-4 text-left ${className}`} dir="ltr">
+      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>Today's missions</h3>
       <ul className="space-y-2">
         {missions.map((m) => (
           <li key={m.missionId} className={gh.arcadeRoomItem || gh.roomItem}>
             <p className={`font-medium ${gh.arcadePanelTitle || gh.cardTitle}`}>{m.descriptionHe}</p>
             <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-              {m.progress}/{m.goalCount} · +{m.rewardCoins} מטבעות {m.completed ? "✓" : ""}
+              {m.progress}/{m.goalCount} · +{m.rewardCoins} coins {m.completed ? "✓" : ""}
             </p>
           </li>
         ))}
-        {!missions.length ? <li className={gh.arcadeEmptyText || gh.emptyText}>אין משימות היום</li> : null}
+        {!missions.length ? <li className={gh.arcadeEmptyText || gh.emptyText}>No missions today</li> : null}
       </ul>
 
       <div>
-        <h4 className={`mb-2 font-semibold ${gh.arcadeSectionTitle || gh.sectionTitle}`}>הישגים</h4>
+        <h4 className={`mb-2 font-semibold ${gh.arcadeSectionTitle || gh.sectionTitle}`}>Achievements</h4>
         <ul className="space-y-2">
           {achievements.map((a) => (
             <li key={a.achievementId || a.key} className={gh.arcadeRoomItem || gh.roomItem}>
@@ -56,7 +56,7 @@ export default function ArcadeClubMissionsPanel({ gh, className = "" }) {
               {a.unlocked ? " 🏅" : ""}
             </li>
           ))}
-          {!achievements.length ? <li className={gh.arcadeEmptyText || gh.emptyText}>אין הישגים עדיין</li> : null}
+          {!achievements.length ? <li className={gh.arcadeEmptyText || gh.emptyText}>No achievements yet</li> : null}
         </ul>
       </div>
     </div>

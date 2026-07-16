@@ -319,7 +319,7 @@ export default function MleoPuzzleEngine({
       <div
         id="game-wrapper"
         className="relative isolate flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gray-900 text-white w-full select-none solo-game-mobile-fullscreen-shell"
-        dir="rtl"
+        dir="ltr"
       >
         {!showIntro ? (
           <div className="flex min-h-0 w-full flex-1 flex-col">
@@ -333,7 +333,7 @@ export default function MleoPuzzleEngine({
             ) : null}
 
             <div className="z-10 flex shrink-0 items-center justify-center gap-3 py-2 text-base font-bold max-lg:gap-2 max-lg:py-1 sm:text-lg">
-              <div className="rounded bg-black/60 px-3 py-1">⏳ {time} שנ׳</div>
+              <div className="rounded bg-black/60 px-3 py-1">⏳ {time} sec</div>
               <div className="rounded bg-black/60 px-3 py-1">⭐ {score}</div>
             </div>
 

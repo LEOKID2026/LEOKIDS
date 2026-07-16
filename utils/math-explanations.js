@@ -20,81 +20,81 @@ export function getHint(question, operation, gradeKey) {
   switch (operation) {
     case "addition":
       if (p.kind === "add_three") {
-        return `חבר שני מספרים ואז הוסף את השלישי: ${M("(a + b) + c")}.`;
+        return `Add two numbers, then add the third: ${M("(a + b) + c")}.`;
       }
       if (p.kind === "add_complement10" || p.kind === "add_complement_round10") {
-        return "חפש כמה חסר כדי להגיע לעשר/מספר עגול – לא צריך לחשב את כל החיבור הארוך.";
+        return "Find how much is needed to reach ten / a round number – you do not need the full long addition.";
       }
       if (p.kind === "add_missing_first" || p.kind === "add_missing_second") {
-        return `אם יש לך __ + b = c, אז המספר החסר הוא ${M("c - b")}. אם יש לך a + __ = c, אז המספר החסר הוא ${M("c - a")}.`;
+        return `If you have __ + b = c, the missing number is ${M("c - b")}. If you have a + __ = c, the missing number is ${M("c - a")}.`;
       }
-      return "השתמש בשיטת \"עמודות\" או בקפיצות על ציר המספרים: חיבור = הוספה.";
+      return "Use the \"column\" method or hops on a number line: addition = putting amounts together.";
     case "subtraction":
       if (p.kind === "sub_missing_first" || p.kind === "sub_missing_second") {
-        return `אם יש לך __ - b = c, אז המספר החסר הוא ${M("c + b")}. אם יש לך a - __ = c, אז המספר החסר הוא ${M("a - c")}.`;
+        return `If you have __ - b = c, the missing number is ${M("c + b")}. If you have a - __ = c, the missing number is ${M("a - c")}.`;
       }
-      return "בדוק מי המספר הגדול יותר. חיסור = כמה חסר מהקטן לגדול או כמה מורידים מהגדול.";
+      return "Check which number is larger. Subtraction = how much is needed from the smaller to the larger, or how much you take away from the larger.";
     case "multiplication":
-      return `מחשבים כפל כמו חיבור חוזר: ${M("a × b")} זה כמו לחבר את ${M("a")} לעצמו ${M("b")} פעמים.`;
+      return `Think of multiplication as repeated addition: ${M("a × b")} means adding ${M("a")} to itself ${M("b")} times.`;
     case "division":
-      return "חילוק = כמה פעמים המספר הקטן נכנס בגדול, או כמה יש בכל קבוצה כשמחלקים שווה בשווה.";
+      return "Division = how many times the smaller number fits into the larger, or how many are in each group when sharing equally.";
     case "fractions":
       if (p.kind === "frac_same_den") {
-        return "כשיש אותו מכנה – המכנה נשאר אותו דבר, עובדים רק על המונים.";
+        return "When denominators are the same – keep the denominator and work only with the numerators.";
       }
-      return "כשיש מכנים שונים – מוצאים מכנה משותף, מעבירים את השברים ואז מחברים או מחסרים.";
+      return "When denominators differ – find a common denominator, rewrite the fractions, then add or subtract.";
     case "percentages":
-      return `אחוזים הם חלק מ-${M("100")}. ${M("10%")} זה עשירית, ${M("25%")} זה רבע, ${M("50%")} זה חצי. נסה לתרגם לחלק פשוט.`;
+      return `Percents are parts of ${M("100")}. ${M("10%")} is one tenth, ${M("25%")} is one fourth, ${M("50%")} is one half. Try rewriting as a simple part.`;
     case "sequences":
-      return "בדוק מה קורה בין כל שני מספרים סמוכים – מה מוסיפים או מחסרים בכל צעד.";
+      return "Check what happens between each pair of neighboring numbers – what is added or subtracted each step.";
     case "decimals":
-      return "יישר את הנקודות העשרוניות וחשב כאילו היו מספרים רגילים, ואז החזר את הנקודה למקום הנכון.";
+      return "Line up the decimal points and compute as if they were whole numbers, then put the decimal point back in the right place.";
     case "rounding":
-      return `חפש את הספרה שמקיפים (עשרות/מאות) והסתכל על הספרה שאחריה: ${M("0–4")} עיגול למטה, ${M("5–9")} למעלה.`;
+      return `Find the place you are rounding to (tens/hundreds) and look at the next digit: ${M("0–4")} round down, ${M("5–9")} round up.`;
     case "equations":
-      return "במשוואות עם מספר חסר משתמשים בפעולה ההפוכה: בחיבור נעזרים בחיסור, בכפל – בחילוק וכדומה.";
+      return "For equations with a missing number, use the inverse operation: addition uses subtraction, multiplication uses division, and so on.";
     case "compare":
-      return "דמיין את המספרים על ציר מספרים: מי שמימין גדול יותר. במספרים עשרוניים משווים קודם את החלק השלם.";
+      return "Picture the numbers on a number line: farther right means larger. For decimals, compare the whole-number parts first.";
     case "number_sense":
       if (p.kind?.startsWith("ns_place")) {
-        return `פרק את המספר לעשרות/מאות/אחדות: למשל ${M("57")} זה ${M("5")} עשרות ו-${M("7")} אחדות.`;
+        return `Break the number into tens/hundreds/ones: for example ${M("57")} is ${M("5")} tens and ${M("7")} ones.`;
       }
       if (p.kind === "ns_neighbors") {
-        return `מספר אחד לפני – מורידים ${M("1")}. מספר אחד אחרי – מוסיפים ${M("1")}.`;
+        return `One before – subtract ${M("1")}. One after – add ${M("1")}.`;
       }
       if (p.kind === "ns_complement10" || p.kind === "ns_complement100") {
-        return "חפש כמה חסר כדי להשלים לעשר/מאה – זה ההפרש בין שני המספרים.";
+        return "Find how much is needed to complete ten/one hundred – that is the difference between the two numbers.";
       }
       if (p.kind === "ns_even_odd") {
-        return `הסתכל על ספרת האחדות: ${M("0,2,4,6,8")} – זוגי. ${M("1,3,5,7,9")} – אי-זוגי.`;
+        return `Look at the ones digit: ${M("0,2,4,6,8")} – even. ${M("1,3,5,7,9")} – odd.`;
       }
-      return "נסה לחשוב על \"תחושת מספר\" – עשרות, אחדות, שכנים, זוגי/אי-זוגי.";
+      return "Think about number sense – tens, ones, neighbors, even/odd.";
     case "factors_multiples":
-      return "מחלק (גורם) מתחלק במספר בלי שארית. כפולה מתקבלת כשמכפילים את המספר במספר שלם.";
+      return "A factor divides a number with no remainder. A multiple is what you get when you multiply the number by a whole number.";
     case "word_problems":
-      return "קרא לאט, סמן את המספרים ותרגם את הסיפור לתרגיל פשוט (חיבור, חיסור, כפל או חילוק).";
+      return "Read slowly, mark the numbers, and turn the story into a simple exercise (add, subtract, multiply, or divide).";
     case "ratio":
-      return "מחפשים בכמה להכפיל את שני חלקי היחס כדי לקבל את המספרים בשאלה.";
+      return "Find what to multiply both parts of the ratio by to match the numbers in the question.";
     case "scale":
-      return `קנה מידה 1:X אומר שכל ס"מ במפה = X ס"מ במציאות. כפל/חלק בהתאם.`;
+      return `A scale of 1:X means every cm on the map = X cm in real life. Multiply or divide accordingly.`;
     case "divisibility":
-      return "נסה לחלק את המספר במחלק ולבדוק אם יוצא שלם (ללא שארית).";
+      return "Try dividing the number by the divisor and check whether you get a whole number (no remainder).";
     case "powers":
-      return "חזקה = כפל חוזר של הבסיס בעצמו. לדוגמה: 3² = 3 × 3 = 9, 2³ = 2 × 2 × 2 = 8.";
+      return "A power = repeated multiplication of the base by itself. For example: 3² = 3 × 3 = 9, 2³ = 2 × 2 × 2 = 8.";
     case "order_of_operations":
-      return "זכור סדר פעולות: סוגריים קודם, כפל/חילוק לפני חיבור/חיסור.";
+      return "Remember order of operations: parentheses first, multiply/divide before add/subtract.";
     case "estimation":
-      return "עגל כל מספר לעשרות/מאות הקרובות, ואז חשב בקירוב.";
+      return "Round each number to the nearest tens/hundreds, then compute an estimate.";
     case "zero_one_properties":
-      return "מספר × 0 = 0. מספר × 1 = אותו מספר. מספר + 0 = אותו מספר.";
+      return "A number × 0 = 0. A number × 1 = the same number. A number + 0 = the same number.";
     case "division_with_remainder":
-      return "חשב כמה פעמים המחלק נכנס - ומה נשאר. בדיקה: מחלק × מנה + שארית = מחולק.";
+      return "Find how many times the divisor fits in – and what is left. Check: divisor × quotient + remainder = dividend.";
     default:
-      return "נסה לפתור את השאלה לפי הנושא המתאים.";
+      return "Try solving the question using the matching topic.";
   }
 }
 
-// פונקציה עזר: הסבר חיבור בעמודה עם העברה
+// Helper: column-addition explanation with carrying
 export function getAdditionStepsColumn(a, b) {
   const sum = a + b;
   const aStr = String(a);
@@ -103,25 +103,25 @@ export function getAdditionStepsColumn(a, b) {
   const maxLen = Math.max(aStr.length, bStr.length, resultStr.length);
   const pad = (s) => s.toString().padStart(maxLen, " ");
   const line1 = pad(aStr);
-  const line2 = "+" + pad(bStr).slice(1);  // לשים +
+  const line2 = "+" + pad(bStr).slice(1);  // place +
   const line3 = "-".repeat(maxLen);
   const digitsA = pad(aStr).split("").map((d) => (d === " " ? 0 : Number(d)));
   const digitsB = pad(bStr).split("").map((d) => (d === " " ? 0 : Number(d)));
 
   const ltr = M;
 
-  // פונקציה שנותנת שם מקום (אחדות/עשרות/מאות...)
+  // Place-value name (ones/tens/hundreds...)
   const placeName = (idxFromRight) => {
-    if (idxFromRight === 0) return "ספרת האחדות";
-    if (idxFromRight === 1) return "ספרת העשרות";
-    if (idxFromRight === 2) return "ספרת המאות";
-    return `המקום ה-${idxFromRight + 1} מימין`;
+    if (idxFromRight === 0) return "the ones digit";
+    if (idxFromRight === 1) return "the tens digit";
+    if (idxFromRight === 2) return "the hundreds digit";
+    return `place ${idxFromRight + 1} from the right`;
   };
 
   let carry = 0;
   const steps = [];
 
-  // שלב 1 – מציגים את החיבור בעמודה
+  // Step 1 – show the column addition
   steps.push(
     React.createElement(
       "div",
@@ -132,14 +132,14 @@ export function getAdditionStepsColumn(a, b) {
     )
   );
 
-  // שלב 2 – מסבירים חיבור ספרות מימין לשמאל
+  // Step 2 – add digits right to left
   const len = digitsA.length;
   for (let i = len - 1; i >= 0; i--) {
     const idxFromRight = len - 1 - i;
     const da = digitsA[i];
     const db = digitsB[i];
 
-    // אם שתי הספרות 0 וגם אין העברה – אין מה להסביר כאן
+    // Skip if both digits are 0 and no carry
     if (da === 0 && db === 0 && carry === 0) continue;
 
     const raw = da + db + carry;
@@ -147,7 +147,7 @@ export function getAdditionStepsColumn(a, b) {
     const nextCarry = Math.floor(raw / 10);
     const place = placeName(idxFromRight);
 
-    // הביטוי המתמטי כולו בתוך בלוק LTR אחד
+    // Entire math expression in one LTR block
     const parts = [da, "+", db];
     if (carry > 0) {
       parts.push("+", carry);
@@ -156,12 +156,12 @@ export function getAdditionStepsColumn(a, b) {
 
     const carryNote =
       nextCarry > 0
-        ? ` ומעבירים ${nextCarry} לעמודה הבאה.`
-        : `. אין העברה לעמודה הבאה.`;
+        ? ` and carry ${nextCarry} to the next column.`
+        : `. No carry to the next column.`;
 
     steps.push(
       toSpan(
-        mix`ב${place}: ${M(expr)}. כותבים ${digit}${carryNote}`,
+        mix`In ${place}: ${M(expr)}. Write ${digit}${carryNote}`,
         `step-${i}`
       )
     );
@@ -169,15 +169,15 @@ export function getAdditionStepsColumn(a, b) {
     carry = nextCarry;
   }
 
-  // שלב אחרון – מסכמים
+  // Final step – summarize
   steps.push(
-    toSpan(mix`בסוף מקבלים את המספר המלא: ${M(String(sum))}.`, "final")
+    toSpan(mix`In the end we get the full number: ${M(String(sum))}.`, "final")
   );
 
   return steps;
 }
 
-// הסבר מפורט צעד-אחר-צעד לפי סוג תרגיל וכיתה
+// Detailed step-by-step explanation by exercise type and grade
 export function getSolutionSteps(question, operation, gradeKey) {
   if (!question || !question.params) return [];
   const p = question.params;
@@ -186,10 +186,10 @@ export function getSolutionSteps(question, operation, gradeKey) {
   // Structured math embed (use inside mix`...` templates — not free strings).
   const ltr = M;
 
-  // אם יש params.op, נשתמש בו; אחרת נשתמש ב-operation
+  // Prefer params.op when present; otherwise use operation
   const op = p.op || operation;
 
-  // אם זה חיבור רגיל עם שני מספרים - נשתמש בהסבר בעמודה
+  // For ordinary two-number addition, use column explanation
   if (op === "add" && typeof p.a === "number" && typeof p.b === "number" && p.kind === "add_two") {
     return getAdditionStepsColumn(p.a, p.b);
   }
@@ -199,52 +199,52 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "add_three") {
         const s1 = p.a + p.b;
         return [
-          toSpan(mix`1. נכתוב את התרגיל: ${M(`${p.a} + ${p.b} + ${p.c}`)}.`, "1"),
-          toSpan(mix`2. נחבר את שני הראשונים: ${M(`${p.a} + ${p.b} = ${s1}`)}.`, "2"),
-          toSpan(mix`3. נוסיף את האחרון: ${M(`${s1} + ${p.c} = ${ans}`)}.`, "3"),
-          toSpan(mix`4. התשובה: ${ans}.`, "4"),
+          toSpan(mix`1. Write the exercise: ${M(`${p.a} + ${p.b} + ${p.c}`)}.`, "1"),
+          toSpan(mix`2. Add the first two: ${M(`${p.a} + ${p.b} = ${s1}`)}.`, "2"),
+          toSpan(mix`3. Add the last one: ${M(`${s1} + ${p.c} = ${ans}`)}.`, "3"),
+          toSpan(mix`4. The answer: ${ans}.`, "4"),
         ];
       }
       if (p.kind === "add_complement10" || p.kind === "add_complement_round10") {
       return [
           toSpan(
-            mix`1. זה תרגיל השלמה: מחפשים כמה חסר כדי להגיע ל-${p.c ?? p.tens}.`,
+            mix`1. This is a make-ten / completion exercise: find how much is needed to reach ${p.c ?? p.tens}.`,
             "1"
           ),
           toSpan(
-            mix`2. נחשב: ${M(`${p.c ?? p.tens} - ${p.b ?? p.base} = ${ans}`)}.`,
+            mix`2. Compute: ${M(`${p.c ?? p.tens} - ${p.b ?? p.base} = ${ans}`)}.`,
             "2"
           ),
-          toSpan(mix`3. נבדוק שחיבור התוצאה נותן את המספר העגול.`, "3"),
+          toSpan(mix`3. Check that adding the result gives the round number.`, "3"),
         ];
       }
       if (p.kind === "add_missing_first") {
         // __ + b = c
         return [
-          toSpan(mix`1. נבין: מחפשים מספר שכשמוסיפים לו ${p.b}, מקבלים ${p.c}.`, "1"),
-          toSpan(mix`2. נחשב: ${M(`${p.c} - ${p.b} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. נבדוק: ${M(`${ans} + ${p.b} = ${p.c}`)}? כן!`, "3"),
-          toSpan(mix`4. התשובה: ${ans}.`, "4"),
+          toSpan(mix`1. Understand: Find a number that when you add ${p.b} to it, you get ${p.c}.`, "1"),
+          toSpan(mix`2. Compute: ${M(`${p.c} - ${p.b} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. Check: ${M(`${ans} + ${p.b} = ${p.c}`)}? Yes!`, "3"),
+          toSpan(mix`4. The answer: ${ans}.`, "4"),
         ];
       }
       if (p.kind === "add_missing_second") {
         // a + __ = c
         return [
-          toSpan(mix`1. נבין: מחפשים מספר שכשמוסיפים ל-${p.a}, מקבלים ${p.c}.`, "1"),
-          toSpan(mix`2. נחשב: ${M(`${p.c} - ${p.a} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. נבדוק: ${M(`${p.a} + ${ans} = ${p.c}`)}? כן!`, "3"),
-          toSpan(mix`4. התשובה: ${ans}.`, "4"),
+          toSpan(mix`1. Understand: Find a number that when added to ${p.a}, you get ${p.c}.`, "1"),
+          toSpan(mix`2. Compute: ${M(`${p.c} - ${p.a} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. Check: ${M(`${p.a} + ${ans} = ${p.c}`)}? Yes!`, "3"),
+          toSpan(mix`4. The answer: ${ans}.`, "4"),
         ];
       }
-      // אם זה חיבור רגיל עם שני מספרים - נשתמש בהסבר בעמודה
+      // For ordinary two-number addition, use column explanation
       if (typeof p.a === "number" && typeof p.b === "number") {
         return getAdditionStepsColumn(p.a, p.b);
       }
       const sum = p.a + p.b;
       return [
-        toSpan(mix`1. נכתוב את התרגיל: ${M(`${p.a} + ${p.b}`)}.`, "1"),
-        toSpan(mix`2. נחבר: ${M(`${p.a} + ${p.b} = ${sum}`)}.`, "2"),
-        toSpan(mix`3. התוצאה: ${ans}.`, "3"),
+        toSpan(mix`1. Write the exercise: ${M(`${p.a} + ${p.b}`)}.`, "1"),
+        toSpan(mix`2. Add: ${M(`${p.a} + ${p.b} = ${sum}`)}.`, "2"),
+        toSpan(mix`3. The result: ${ans}.`, "3"),
       ];
     }
 
@@ -252,26 +252,26 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "sub_missing_first") {
         // __ - b = c
         return [
-          toSpan(mix`1. נבין: מחפשים מספר שכשמחסרים ממנו ${p.b}, מקבלים ${p.c}.`, "1"),
-          toSpan(mix`2. נחשב: ${M(`${p.c} + ${p.b} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. נבדוק: ${M(`${ans} - ${p.b} = ${p.c}`)}? כן!`, "3"),
-          toSpan(mix`4. התשובה: ${ans}.`, "4"),
+          toSpan(mix`1. Understand: Find a number that when you subtract ${p.b} from it, you get ${p.c}.`, "1"),
+          toSpan(mix`2. Compute: ${M(`${p.c} + ${p.b} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. Check: ${M(`${ans} - ${p.b} = ${p.c}`)}? Yes!`, "3"),
+          toSpan(mix`4. The answer: ${ans}.`, "4"),
         ];
       }
       if (p.kind === "sub_missing_second") {
         // a - __ = c
       return [
-          toSpan(mix`1. נבין: מחפשים מספר שכשמחסרים אותו מ-${p.a}, מקבלים ${p.c}.`, "1"),
-          toSpan(mix`2. נחשב: ${M(`${p.a} - ${p.c} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. נבדוק: ${M(`${p.a} - ${ans} = ${p.c}`)}? כן!`, "3"),
-          toSpan(mix`4. התשובה: ${ans}.`, "4"),
+          toSpan(mix`1. Understand: Find a number that when subtracted from ${p.a}, you get ${p.c}.`, "1"),
+          toSpan(mix`2. Compute: ${M(`${p.a} - ${p.c} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. Check: ${M(`${p.a} - ${ans} = ${p.c}`)}? Yes!`, "3"),
+          toSpan(mix`4. The answer: ${ans}.`, "4"),
         ];
       }
       return [
-        toSpan(mix`1. נכתוב את התרגיל: ${M(`${p.a} - ${p.b}`)}.`, "1"),
-        toSpan(mix`2. נבדוק מי המספר הגדול ומי הקטן (משפיע על הסימן).`, "2"),
-        toSpan(mix`3. נחשב: ${M(`${p.a} - ${p.b} = ${ans}`)}.`, "3"),
-        toSpan(mix`4. נעשה בדיקה מהירה: ${M(`${ans} + ${p.b} = ${p.a}`)}?`, "4"),
+        toSpan(mix`1. Write the exercise: ${M(`${p.a} - ${p.b}`)}.`, "1"),
+        toSpan(mix`2. Check which number is larger and which is smaller (this affects the sign).`, "2"),
+        toSpan(mix`3. Compute: ${M(`${p.a} - ${p.b} = ${ans}`)}.`, "3"),
+        toSpan(mix`4. Do a quick check: ${M(`${ans} + ${p.b} = ${p.a}`)}?`, "4"),
       ];
 
     case "multiplication":
@@ -283,92 +283,92 @@ export function getSolutionSteps(question, operation, gradeKey) {
         const isSmall = Math.abs(A) < 10 && Math.abs(B) < 10;
         if (isSmall) {
           return [
-            toSpan(mix`1. זה כפל חד-ספרתי: ${M(`${A} × ${B}`)}.`, "1"),
-            toSpan(mix`2. מחשבים: ${M(`${A} × ${B} = ${ans}`)}.`, "2"),
-            toSpan(mix`3. התשובה: ${ans}.`, "3"),
+            toSpan(mix`1. This is single-digit multiplication: ${M(`${A} × ${B}`)}.`, "1"),
+            toSpan(mix`2. Compute: ${M(`${A} × ${B} = ${ans}`)}.`, "2"),
+            toSpan(mix`3. The answer: ${ans}.`, "3"),
           ];
         }
         return [
-          toSpan(mix`1. בכפל ארוך כופלים את ${A} בכל ספרה של ${B} מימין לשמאל.`, "1"),
-          toSpan(mix`2. כל שורה היא מכפלה חלקית (ולפעמים מוסיפים 0 בסוף בגלל עשרות/מאות).`, "2"),
-          toSpan(mix`3. בסוף מחברים את כל המכפלות החלקיות.`, "3"),
-          toSpan(mix`4. התוצאה הסופית: ${M(`${A} × ${B} = ${ans}`)}.`, "4"),
+          toSpan(mix`1. In long multiplication, multiply ${A} by each digit of ${B} from right to left.`, "1"),
+          toSpan(mix`2. Each row is a partial product (sometimes you add a 0 at the end for tens/hundreds).`, "2"),
+          toSpan(mix`3. Finally, add all the partial products.`, "3"),
+          toSpan(mix`4. The final result: ${M(`${A} × ${B} = ${ans}`)}.`, "4"),
         ];
       }
       return [
-        toSpan(mix`1. בכפל ארוך: כפל ספרה-ספרה + נשיאות, אחר כך חיבור מכפלות חלקיות.`, "1"),
-        toSpan(mix`2. התשובה: ${ans}.`, "2"),
+        toSpan(mix`1. In long multiplication: digit-by-digit multiply + carries, then add partial products.`, "1"),
+        toSpan(mix`2. The answer: ${ans}.`, "2"),
       ];
 
     case "division":
       return [
         toSpan(
-          mix`1. נכתוב: ${M(`${p.dividend} ÷ ${p.divisor}`)} – כמה קבוצות של ${p.divisor} נכנסות בתוך ${p.dividend}?`,
+          mix`1. Write: ${M(`${p.dividend} ÷ ${p.divisor}`)} – how many groups of ${p.divisor} fit into ${p.dividend}?`,
           "1"
         ),
         toSpan(
-          mix`2. נבדוק: ${M(`${p.divisor} × ${ans} = ${p.dividend}`)}. אם כן – זה המספר הנכון.`,
+          mix`2. Check: ${M(`${p.divisor} × ${ans} = ${p.dividend}`)}. If yes – that is the correct number.`,
           "2"
         ),
-        toSpan(mix`3. לכן התשובה: ${ans}.`, "3"),
+        toSpan(mix`3. So the answer: ${ans}.`, "3"),
       ];
 
     case "fractions":
       if (p.kind === "frac_same_den") {
         return [
           toSpan(
-            mix`1. יש לנו אותו מכנה (${p.den}). במכנה לא נוגעים – עובדים רק על המונים.`,
+            mix`1. We have the same denominator (${p.den}). Do not change the denominator – work only with the numerators.`,
             "1"
           ),
           toSpan(
-            mix`2. ${p.op === "add" ? "מחברים" : "מחסרים"} את המונים: ${M(
+            mix`2. ${p.op === "add" ? "Add" : "Subtract"} the numerators: ${M(
               `${p.n1} ${p.op === "add" ? "+" : "-"} ${p.n2}`)}.`,
             "2"
           ),
-          toSpan(mix`3. התוצאה במונה: ${ans.split("/")[0]}.`, "3"),
-          toSpan(mix`4. המכנה נשאר ${p.den} – לכן התשובה: ${ans}.`, "4"),
+          toSpan(mix`3. The numerator result: ${ans.split("/")[0]}.`, "3"),
+          toSpan(mix`4. The denominator stays ${p.den} – so the answer: ${ans}.`, "4"),
         ];
       }
 
       if (p.kind === "frac_diff_den") {
       return [
           toSpan(
-            mix`1. יש מכנים שונים (${p.den1} ו-${p.den2}). נמצא מכנה משותף – כאן ${p.commonDen}.`,
+            mix`1. The denominators are different (${p.den1} and ${p.den2}). Find a common denominator – here ${p.commonDen}.`,
             "1"
           ),
-          toSpan(mix`2. נעביר כל שבר למכנה המשותף.`, "2"),
-          toSpan(mix`3. אחרי שהמכנים זהים – עובדים על המונים בלבד.`, "3"),
-          toSpan(mix`4. כך נקבל את ${ans}.`, "4"),
+          toSpan(mix`2. Rewrite each fraction with the common denominator.`, "2"),
+          toSpan(mix`3. Once the denominators match – work only with the numerators.`, "3"),
+          toSpan(mix`4. That gives us ${ans}.`, "4"),
         ];
       }
 
       return [
-        toSpan(mix`1. מוצאים מכנה משותף.`, "1"),
-        toSpan(mix`2. מעבירים את השברים למכנה הזה.`, "2"),
-        toSpan(mix`3. מחברים או מחסרים את המונים.`, "3"),
-        toSpan(mix`4. מצמצמים אם אפשר ומקבלים ${ans}.`, "4"),
+        toSpan(mix`1. Find a common denominator.`, "1"),
+        toSpan(mix`2. Rewrite the fractions with that denominator.`, "2"),
+        toSpan(mix`3. Add or subtract the numerators.`, "3"),
+        toSpan(mix`4. Simplify if possible and get ${ans}.`, "4"),
       ];
 
     case "percentages":
       if (p.kind === "perc_discount") {
         return [
           toSpan(
-            mix`1. מחשבים את גובה ההנחה: ${M(`${p.base} × ${p.p}/100 = ${p.discount}`)}.`,
+            mix`1. Compute the discount amount: ${M(`${p.base} × ${p.p}/100 = ${p.discount}`)}.`,
             "1"
           ),
           toSpan(
-            mix`2. מפחיתים מהמחיר: ${M(`${p.base} - ${p.discount} = ${ans}`)}.`,
+            mix`2. Subtract from the price: ${M(`${p.base} - ${p.discount} = ${ans}`)}.`,
             "2"
           ),
         ];
       }
       return [
         toSpan(
-          mix`1. ${p.p}% מתוך ${p.base} זה ${p.base} כפול ${p.p}/100.`,
+          mix`1. ${p.p}% of ${p.base} is ${p.base} times ${p.p}/100.`,
           "1"
         ),
         toSpan(
-          mix`2. נחשב: ${M(`${p.base} × ${p.p}/100 = ${ans}`)}.`,
+          mix`2. Compute: ${M(`${p.base} × ${p.p}/100 = ${ans}`)}.`,
           "2"
         ),
       ];
@@ -376,23 +376,23 @@ export function getSolutionSteps(question, operation, gradeKey) {
     case "sequences":
       return [
         toSpan(
-          mix`1. נסתכל על ההפרש בין שני מספרים סמוכים: למשל ${M(
+          mix`1. Look at the difference between two neighboring numbers: for example ${M(
             `${p.seq[1]} - ${p.seq[0]} = ${p.step}`)}.`,
           "1"
         ),
-        toSpan(mix`2. זה הצעד הקבוע של הסדרה.`, "2"),
+        toSpan(mix`2. That is the constant step of the sequence.`, "2"),
         toSpan(
-          mix`3. נשתמש באותו צעד כדי להשלים את המקום הריק.`,
+          mix`3. Use the same step to fill in the blank.`,
           "3"
         ),
       ];
 
     case "decimals":
       return [
-        toSpan(mix`1. ניישר את הנקודות העשרוניות אחת מתחת לשנייה.`, "1"),
-        toSpan(mix`2. נחשב כאילו זה מספרים שלמים.`, "2"),
+        toSpan(mix`1. Line up the decimal points one under the other.`, "1"),
+        toSpan(mix`2. Compute as if they were whole numbers.`, "2"),
         toSpan(
-          "3. נחזיר את הנקודה למקום לפי מספר הספרות אחרי הנקודה.",
+          "3. Put the decimal point back based on how many digits are after the decimal.",
           "3"
         ),
       ];
@@ -400,29 +400,29 @@ export function getSolutionSteps(question, operation, gradeKey) {
     case "rounding":
       return [
         toSpan(
-          mix`1. נזהה אם מעגלים לעשרות או למאות ומסתכלים על הספרה שאחרי.`,
+          mix`1. Decide whether rounding to tens or hundreds and look at the next digit.`,
           "1"
         ),
         toSpan(
-          "2. אם הספרה שאחרי היא 0–4 – מעגלים למטה. אם 5–9 – למעלה.",
+          "2. If the next digit is 0–4 – round down. If 5–9 – round up.",
           "2"
         ),
-        toSpan(mix`3. כך נקבל את ${ans}.`, "3"),
+        toSpan(mix`3. That gives us ${ans}.`, "3"),
       ];
 
     case "equations": {
       if (p.kind === "eq_add") {
         return [
           toSpan(
-            mix`1. זוכרים שבחיבור הפעולה ההפוכה היא חיסור.`,
+            mix`1. Remember: for addition, the inverse operation is subtraction.`,
             "1"
           ),
           toSpan(
-            mix`2. במקום לנחש את המספר ב-${BLANK}, נחשב ${M(`${p.c} - ${p.a}`)} או ${M(`${p.c} - ${p.b}`)}.`,
+            mix`2. Instead of guessing the number in ${BLANK}, compute ${M(`${p.c} - ${p.a}`)} or ${M(`${p.c} - ${p.b}`)}.`,
             "2"
           ),
           toSpan(
-            mix`3. קבלת התוצאה: ${ans}.`,
+            mix`3. You get: ${ans}.`,
             "3"
           ),
         ];
@@ -431,15 +431,15 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "eq_sub") {
       return [
           toSpan(
-            mix`1. בחיסור הפעולה ההפוכה היא חיבור.`,
+            mix`1. For subtraction, the inverse operation is addition.`,
             "1"
           ),
           toSpan(
-            mix`2. אם יש ${M(`${p.a} - ${BLANK} = ${p.c}`)}, נחשב ${M(`${p.a} - ${p.c}`)}.`,
+            mix`2. If you have ${M(`${p.a} - ${BLANK} = ${p.c}`)}, compute ${M(`${p.a} - ${p.c}`)}.`,
             "2"
           ),
           toSpan(
-            mix`3. התוצאה היא ${ans} – נבדוק: ${M(`${p.a} - ${ans} = ${p.c}`)}.`,
+            mix`3. The result is ${ans} – check: ${M(`${p.a} - ${ans} = ${p.c}`)}.`,
             "3"
           ),
         ];
@@ -448,15 +448,15 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "eq_mul") {
       return [
           toSpan(
-            mix`1. בכפל הפעולה ההפוכה היא חילוק.`,
+            mix`1. For multiplication, the inverse operation is division.`,
             "1"
           ),
           toSpan(
-            mix`2. נחשב ${M(`${p.c} ÷ ${p.a}`)} או ${M(`${p.c} ÷ ${p.b}`)} לפי המקום של ${BLANK}.`,
+            mix`2. Compute ${M(`${p.c} ÷ ${p.a}`)} or ${M(`${p.c} ÷ ${p.b}`)} depending on where the blank is.`,
             "2"
           ),
           toSpan(
-            mix`3. מקבלים ${ans} ובודקים: ${M(`${p.a} × ${ans} = ${p.c}`)} או ${M(`${ans} × ${p.b} = ${p.c}`)}.`,
+            mix`3. You get ${ans} and check: ${M(`${p.a} × ${ans} = ${p.c}`)} or ${M(`${ans} × ${p.b} = ${p.c}`)}.`,
             "3"
           ),
         ];
@@ -465,15 +465,15 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "eq_div") {
         return [
           toSpan(
-            mix`1. בחילוק הפעולה ההפוכה היא כפל.`,
+            mix`1. For division, the inverse operation is multiplication.`,
             "1"
           ),
           toSpan(
-            mix`2. אם ${M(`${BLANK} ÷ ${p.divisor} = ${p.quotient}`)}, נכפול ${M(`${p.quotient} × ${p.divisor}`)}.`,
+            mix`2. If ${M(`${BLANK} ÷ ${p.divisor} = ${p.quotient}`)}, multiply ${M(`${p.quotient} × ${p.divisor}`)}.`,
             "2"
           ),
           toSpan(
-            mix`3. מקבלים ${ans} ובודקים חזרה בחילוק.`,
+            mix`3. You get ${ans} and check by dividing again.`,
             "3"
           ),
         ];
@@ -485,8 +485,8 @@ export function getSolutionSteps(question, operation, gradeKey) {
     case "compare": {
       const sign = getCanonicalComparisonSign(p.a, p.b);
       const steps = [
-        toSpan(mix`1. נסתכל על שני המספרים: ${M(String(p.a))} ו-${M(String(p.b))}.`, "1"),
-        toSpan(mix`2. נבדוק מי גדול יותר (או אם שווים).`, "2"),
+        toSpan(mix`1. Look at the two numbers: ${M(String(p.a))} and ${M(String(p.b))}.`, "1"),
+        toSpan(mix`2. Check which is larger (or if they are equal).`, "2"),
       ];
       if (sign === ">") {
         steps.push(
@@ -504,7 +504,7 @@ export function getSolutionSteps(question, operation, gradeKey) {
         );
       } else {
         steps.push(
-          toSpan(mix`3. ${M(String(p.a))} = ${M(String(p.b))} - המספרים שווים.`, "3")
+          toSpan(mix`3. ${M(String(p.a))} = ${M(String(p.b))} - the numbers are equal.`, "3")
         );
       }
       return steps;
@@ -514,15 +514,15 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "ns_place_tens_units" || p.kind === "ns_place_hundreds") {
         return [
           toSpan(
-            mix`1. מפרקים את המספר לעשרות/מאות/אחדות.`,
+            mix`1. Break the number into tens/hundreds/ones.`,
             "1"
           ),
           toSpan(
-            mix`2. לדוגמה ${M(String(p.n))} = ${p.hundreds ?? ""}${p.hundreds != null ? " מאות," : ""} ${p.tens ?? ""}${p.tens != null ? " עשרות," : ""} ${p.units ?? ""}${p.units != null ? " אחדות" : ""}.`,
+            mix`2. For example ${M(String(p.n))} = ${p.hundreds ?? ""}${p.hundreds != null ? " hundreds," : ""} ${p.tens ?? ""}${p.tens != null ? " tens," : ""} ${p.units ?? ""}${p.units != null ? " ones" : ""}.`,
             "2"
           ),
           toSpan(
-            mix`3. בוחרים את הספרה לפי מה ששאלו.`,
+            mix`3. Choose the digit based on what was asked.`,
             "3"
           ),
         ];
@@ -531,11 +531,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "ns_neighbors") {
         return [
           toSpan(
-            mix`1. מספר אחד אחרי – מוסיפים 1. מספר אחד לפני – מחסרים 1.`,
+            mix`1. One after – add 1. One before – subtract 1.`,
             "1"
           ),
           toSpan(
-            mix`2. למשל אחרי ${p.n} מגיע ${p.n + 1}, ולפניו ${p.n - 1}.`,
+            mix`2. For example, after ${p.n} comes ${p.n + 1}, and before it ${p.n - 1}.`,
             "2"
           ),
         ];
@@ -545,11 +545,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
         const target = p.c;
         return [
           toSpan(
-            mix`1. מחפשים כמה חסר מ-${p.b} כדי להגיע ל-${target}.`,
+            mix`1. Find how much is needed from ${p.b} to reach ${target}.`,
             "1"
           ),
           toSpan(
-            mix`2. נחשב: ${M(`${target} - ${p.b} = ${ans}`)}.`,
+            mix`2. Compute: ${M(`${target} - ${p.b} = ${ans}`)}.`,
             "2"
           ),
         ];
@@ -558,11 +558,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "ns_even_odd") {
         return [
           toSpan(
-            mix`1. מסתכלים על ספרת האחדות של ${p.n}.`,
+            mix`1. Look at the ones digit of ${p.n}.`,
             "1"
           ),
           toSpan(
-            mix`2. אם הספרה היא 0,2,4,6,8 – המספר זוגי. אם 1,3,5,7,9 – אי-זוגי.`,
+            mix`2. If the digit is 0,2,4,6,8 – the number is even. If 1,3,5,7,9 – odd.`,
             "2"
           ),
         ];
@@ -570,25 +570,25 @@ export function getSolutionSteps(question, operation, gradeKey) {
 
       if (p.kind === "ns_counting_forward") {
         return [
-          toSpan(mix`1. בספירה קדימה מוסיפים 1 למספר שמופיע.`, "1"),
-          toSpan(mix`2. ${M(String(p.start))} ועוד 1 הוא ${M(String(ans))}.`, "2"),
-          toSpan(mix`3. לכן המספר הבא הוא ${ans}.`, "3"),
+          toSpan(mix`1. When counting forward, add 1 to the number shown.`, "1"),
+          toSpan(mix`2. ${M(String(p.start))} plus 1 is ${M(String(ans))}.`, "2"),
+          toSpan(mix`3. So the next number is ${ans}.`, "3"),
         ];
       }
 
       if (p.kind === "ns_counting_backward") {
         return [
-          toSpan(mix`1. בספירה אחורה מחסרים 1 מהמספר שמופיע.`, "1"),
-          toSpan(mix`2. ${M(String(p.start))} פחות 1 הוא ${M(String(ans))}.`, "2"),
-          toSpan(mix`3. לכן המספר הקודם הוא ${ans}.`, "3"),
+          toSpan(mix`1. When counting backward, subtract 1 from the number shown.`, "1"),
+          toSpan(mix`2. ${M(String(p.start))} minus 1 is ${M(String(ans))}.`, "2"),
+          toSpan(mix`3. So the previous number is ${ans}.`, "3"),
         ];
       }
 
       if (p.kind === "ns_number_line") {
         return [
-          toSpan(mix`1. על ישר המספרים המספרים עולים ב-1 בכל צעד.`, "1"),
-          toSpan(mix`2. מסתכלים בין ${M(String(p.start))} ל-${M(String(p.end))} ומאתרים את המקום החסר.`, "2"),
-          toSpan(mix`3. המספר החסר הוא ${ans}.`, "3"),
+          toSpan(mix`1. On the number line, numbers go up by 1 each step.`, "1"),
+          toSpan(mix`2. Look between ${M(String(p.start))} and ${M(String(p.end))} and find the missing place.`, "2"),
+          toSpan(mix`3. The missing number is ${ans}.`, "3"),
         ];
       }
 
@@ -599,11 +599,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "fm_factor") {
         return [
           toSpan(
-            mix`1. נבדוק אילו מספרים מתחלקים ב-${p.n} בלי שארית.`,
+            mix`1. Check which numbers divide ${p.n} with no remainder.`,
             "1"
           ),
           toSpan(
-            mix`2. נחלק את ${p.n} במספרים האפשריים עד שנמצא מי שמתחלק בדיוק.`,
+            mix`2. Divide ${p.n} by the possible numbers until we find an exact divisor.`,
             "2"
           ),
         ];
@@ -611,11 +611,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "fm_multiple") {
         return [
           toSpan(
-            mix`1. כפולות של ${p.base} מתקבלות כשמכפילים את המספר ב-1,2,3,...`,
+            mix`1. Multiples of ${p.base} come from multiplying the number by 1,2,3,...`,
             "1"
           ),
           toSpan(
-            mix`2. נבדוק מי מהרשימה מתאים לצורה ${p.base} × מספר שלם.`,
+            mix`2. Check which item in the list matches the form ${p.base} × a whole number.`,
             "2"
           ),
         ];
@@ -623,11 +623,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "fm_gcd") {
         return [
           toSpan(
-            mix`1. נפרק את ${p.a} ו-${p.b} לגורמים.`,
+            mix`1. Factor ${p.a} and ${p.b} into factors.`,
             "1"
           ),
           toSpan(
-            mix`2. נמצא גורמים משותפים ונראה מי הגדול ביותר – כאן ${ans}.`,
+            mix`2. Find common factors and see which is greatest – here ${ans}.`,
             "2"
           ),
         ];
@@ -644,30 +644,30 @@ export function getSolutionSteps(question, operation, gradeKey) {
       }
       if (p.subKind === "pc_factor_count") {
         return [
-          toSpan(mix`1. מחלקים הם מספרים שמחלקים את ${M(String(p.num))} בלי שארית.`, "1"),
-          toSpan(mix`2. סופרים את כל המחלקים, כולל 1 והמספר עצמו.`, "2"),
-          toSpan(mix`3. מתקבלים ${ans} מחלקים.`, "3"),
+          toSpan(mix`1. Divisors are numbers that divide ${M(String(p.num))} with no remainder.`, "1"),
+          toSpan(mix`2. Count all divisors, including 1 and the number itself.`, "2"),
+          toSpan(mix`3. That gives ${ans} divisors.`, "3"),
         ];
       }
       if (p.subKind === "pc_smallest_prime") {
         return [
-          toSpan(mix`1. מחפשים גורם ראשוני שמחלק את ${M(String(p.num))}.`, "1"),
-          toSpan(mix`2. בודקים מהקטן לגדול: 2, 3, 5, 7 וכן הלאה.`, "2"),
-          toSpan(mix`3. הגורם הראשוני הקטן ביותר הוא ${ans}.`, "3"),
+          toSpan(mix`1. Find a prime factor that divides ${M(String(p.num))}.`, "1"),
+          toSpan(mix`2. Check from small to large: 2, 3, 5, 7, and so on.`, "2"),
+          toSpan(mix`3. The smallest prime factor is ${ans}.`, "3"),
         ];
       }
       if (p.subKind === "pc_divisor_pick") {
         return [
-          toSpan(mix`1. בודקים אם ${M(String(p.divisorCandidate))} מחלק את ${M(String(p.num))} בלי שארית.`, "1"),
-          toSpan(mix`2. אם אין שארית התשובה היא כן; אם יש שארית התשובה היא לא.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Check whether ${M(String(p.divisorCandidate))} divides ${M(String(p.num))} with no remainder.`, "1"),
+          toSpan(mix`2. If there is no remainder the answer is yes; if there is a remainder the answer is no.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       const divisorsText = divisors.length ? `: ${divisors.join(", ")}` : "";
       return [
-        toSpan(mix`1. מספר ראשוני מתחלק רק ב-1 ובעצמו.`, "1"),
-        toSpan(mix`2. בודקים את המחלקים של ${M(String(p.num))}${divisorsText}.`, "2"),
-        toSpan(mix`3. לכן המספר הוא ${ans}.`, "3"),
+        toSpan(mix`1. A prime number is divisible only by 1 and itself.`, "1"),
+        toSpan(mix`2. Check the divisors of ${M(String(p.num))}${divisorsText}.`, "2"),
+        toSpan(mix`3. So the number is ${ans}.`, "3"),
       ];
     }
 
@@ -675,48 +675,48 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "wp_simple_add") {
         const sum = p.a + p.b;
         return [
-          toSpan(mix`1. מזהים שהשאלה מבקשת כמה יש בסך הכל – פעולה של חיבור.`, "1"),
-          toSpan(mix`2. כותבים תרגיל: ${M(`${p.a} + ${p.b}`)}.`, "2"),
-          toSpan(mix`3. מחשבים: ${M(`${p.a} + ${p.b} = ${sum}`)}.`, "3"),
-          toSpan(mix`4. התשובה: לליאו יש ${ans} כדורים.`, "4"),
+          toSpan(mix`1. Identify that the question asks for a total – an addition.`, "1"),
+          toSpan(mix`2. Write the exercise: ${M(`${p.a} + ${p.b}`)}.`, "2"),
+          toSpan(mix`3. Compute: ${M(`${p.a} + ${p.b} = ${sum}`)}.`, "3"),
+          toSpan(mix`4. The answer: Leo has ${ans} balls.`, "4"),
         ];
       }
 
       if (p.kind === "wp_simple_sub") {
         return [
-          toSpan(mix`1. מזהים שהשאלה מבקשת כמה נשאר – פעולה של חיסור.`, "1"),
-          toSpan(mix`2. כותבים תרגיל: ${M(`${p.total} - ${p.give}`)}.`, "2"),
-          toSpan(mix`3. מחשבים: ${M(`${p.total} - ${p.give} = ${ans}`)}.`, "3"),
-          toSpan(mix`4. התשובה: נשארו לליאו ${ans} מדבקות.`, "4"),
+          toSpan(mix`1. Identify that the question asks how many are left – a subtraction.`, "1"),
+          toSpan(mix`2. Write the exercise: ${M(`${p.total} - ${p.give}`)}.`, "2"),
+          toSpan(mix`3. Compute: ${M(`${p.total} - ${p.give} = ${ans}`)}.`, "3"),
+          toSpan(mix`4. The answer: Leo has ${ans} stickers left.`, "4"),
         ];
       }
 
       if (p.kind === "wp_pocket_money") {
         return [
-          toSpan(mix`1. מזהים שהשאלה מבקשת כמה כסף נשאר אחרי קנייה – פעולה של חיסור.`, "1"),
-          toSpan(mix`2. כותבים תרגיל: ${M(`${p.money} - ${p.toy}`)}.`, "2"),
-          toSpan(mix`3. מחשבים: ${M(`${p.money} - ${p.toy} = ${ans}`)}.`, "3"),
-          toSpan(mix`4. התשובה: נשאר לליאו ${ans}₪.`, "4"),
+          toSpan(mix`1. Identify that the question asks how much money is left after buying – a subtraction.`, "1"),
+          toSpan(mix`2. Write the exercise: ${M(`${p.money} - ${p.toy}`)}.`, "2"),
+          toSpan(mix`3. Compute: ${M(`${p.money} - ${p.toy} = ${ans}`)}.`, "3"),
+          toSpan(mix`4. The answer: Leo has ${ans} left.`, "4"),
         ];
       }
 
       if (p.kind === "wp_time_sum") {
         const sum = p.l1 + p.l2;
         return [
-          toSpan(mix`1. מזהים שהשאלה מבקשת כמה זמן נמשך ביחד – פעולה של חיבור.`, "1"),
-          toSpan(mix`2. כותבים תרגיל: ${M(`${p.l1} + ${p.l2}`)}.`, "2"),
-          toSpan(mix`3. מחשבים: ${M(`${p.l1} + ${p.l2} = ${sum}`)}.`, "3"),
-          toSpan(mix`4. התשובה: הצפייה נמשכה ${ans} דקות.`, "4"),
+          toSpan(mix`1. Identify that the question asks for total time – an addition.`, "1"),
+          toSpan(mix`2. Write the exercise: ${M(`${p.l1} + ${p.l2}`)}.`, "2"),
+          toSpan(mix`3. Compute: ${M(`${p.l1} + ${p.l2} = ${sum}`)}.`, "3"),
+          toSpan(mix`4. The answer: The watching lasted ${ans} minutes.`, "4"),
         ];
       }
 
       if (p.kind === "wp_average") {
         const sum = p.s1 + p.s2 + p.s3;
         return [
-          toSpan(mix`1. ממוצע מחושב על ידי חיבור כל הציונים וחילוק במספר המבחנים.`, "1"),
-          toSpan(mix`2. נחבר את הציונים: ${M(`${p.s1} + ${p.s2} + ${p.s3} = ${sum}`)}.`, "2"),
-          toSpan(mix`3. נחלק ב-3: ${M(`${sum} ÷ 3 = ${ans}`)}.`, "3"),
-          toSpan(mix`4. התשובה: הממוצע הוא ${ans}.`, "4"),
+          toSpan(mix`1. An average is found by adding all the scores and dividing by the number of tests.`, "1"),
+          toSpan(mix`2. Add the scores: ${M(`${p.s1} + ${p.s2} + ${p.s3} = ${sum}`)}.`, "2"),
+          toSpan(mix`3. Divide by 3: ${M(`${sum} ÷ 3 = ${ans}`)}.`, "3"),
+          toSpan(mix`4. The answer: The average is ${ans}.`, "4"),
         ];
       }
 
@@ -724,45 +724,45 @@ export function getSolutionSteps(question, operation, gradeKey) {
         const prod = p.per * p.groups;
         return [
           toSpan(
-            mix`1. בכל קופסה יש ${p.per} עפרונות ויש ${p.groups} קופסאות – מדובר בחיבור חוזר.`,
+            mix`1. Each box has ${p.per} pencils and there are ${p.groups} boxes – this is repeated addition.`,
             "1"
           ),
-          toSpan(mix`2. נרשום תרגיל כפל: ${M(`${p.per} × ${p.groups}`)}.`, "2"),
-          toSpan(mix`3. נחשב: ${M(`${p.per} × ${p.groups} = ${prod}`)}.`, "3"),
-          toSpan(mix`4. התשובה: ${ans} עפרונות.`, "4"),
+          toSpan(mix`2. Write a multiplication: ${M(`${p.per} × ${p.groups}`)}.`, "2"),
+          toSpan(mix`3. Compute: ${M(`${p.per} × ${p.groups} = ${prod}`)}.`, "3"),
+          toSpan(mix`4. The answer: ${ans} pencils.`, "4"),
         ];
       }
 
       if (p.kind === "wp_leftover") {
         return [
           toSpan(
-            mix`1. יש ${p.total} תלמידים ומחלקים לקבוצות של ${p.groupSize}.`,
+            mix`1. There are ${p.total} students divided into groups of ${p.groupSize}.`,
             "1"
           ),
           toSpan(
-            mix`2. נחשב כמה קבוצות שלמות: ${M(`${p.total} ÷ ${p.groupSize} = ${p.groups}`)}.`,
+            mix`2. Find how many full groups: ${M(`${p.total} ÷ ${p.groupSize} = ${p.groups}`)}.`,
             "2"
           ),
           toSpan(
-            mix`3. נבדוק כמה נשארו: ${M(`${p.total} - (${p.groups} × ${p.groupSize}) = ${p.leftover}`)}.`,
+            mix`3. Check how many are left: ${M(`${p.total} - (${p.groups} × ${p.groupSize}) = ${p.leftover}`)}.`,
             "3"
           ),
-          toSpan(mix`4. לכן ${ans} תלמידים נשארים בלי קבוצה מלאה.`, "4"),
+          toSpan(mix`4. So ${ans} students are left without a full group.`, "4"),
         ];
       }
 
       if (p.kind === "wp_multi_step") {
         return [
           toSpan(
-            mix`1. נחשב כמה פריטים קונים בסך הכל: ${p.a} + ${p.b} = ${p.totalQty}.`,
+            mix`1. Find how many items are bought in total: ${p.a} + ${p.b} = ${p.totalQty}.`,
             "1"
           ),
           toSpan(
-            mix`2. נמצא את עלות הקנייה: ${M(`${p.price} × ${p.totalQty} = ${p.totalCost}`)}.`,
+            mix`2. Find the purchase cost: ${M(`${p.price} × ${p.totalQty} = ${p.totalCost}`)}.`,
             "2"
           ),
           toSpan(
-            mix`3. נחסר מהסכום שהיה לליאו: ${M(`${p.money} - ${p.totalCost} = ${ans}`)}.`,
+            mix`3. Subtract from the amount Leo had: ${M(`${p.money} - ${p.totalCost} = ${ans}`)}.`,
             "3"
           ),
         ];
@@ -771,11 +771,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "wp_shop_discount") {
         return [
           toSpan(
-            mix`1. נחשב את ההנחה: ${M(`${p.price} × ${p.discPerc}/100 = ${p.discount}`)}.`,
+            mix`1. Compute the discount: ${M(`${p.price} × ${p.discPerc}/100 = ${p.discount}`)}.`,
             "1"
           ),
           toSpan(
-            mix`2. נפחית מהמחיר: ${M(`${p.price} - ${p.discount} = ${ans}`)}.`,
+            mix`2. Subtract from the price: ${M(`${p.price} - ${p.discount} = ${ans}`)}.`,
             "2"
           ),
         ];
@@ -784,11 +784,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "wp_unit_cm_to_m") {
         return [
           toSpan(
-            mix`1. יודעים ש-1 מ' = 100 ס"מ.`,
+            mix`1. We know that 1 m = 100 cm.`,
             "1"
           ),
           toSpan(
-            mix`2. לכן מחלקים ב-100: ${M(`${p.cm} ÷ 100 = ${ans}`)}.`,
+            mix`2. So divide by 100: ${M(`${p.cm} ÷ 100 = ${ans}`)}.`,
             "2"
           ),
         ];
@@ -797,11 +797,11 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "wp_unit_g_to_kg") {
         return [
           toSpan(
-            mix`1. יודעים ש-1 ק\"ג = 1000 גרם.`,
+            mix`1. We know that 1 kg = 1000 grams.`,
             "1"
           ),
           toSpan(
-            mix`2. לכן מחלקים ב-1000: ${M(`${p.g} ÷ 1000 = ${ans}`)}.`,
+            mix`2. So divide by 1000: ${M(`${p.g} ÷ 1000 = ${ans}`)}.`,
             "2"
           ),
         ];
@@ -810,81 +810,81 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "wp_distance_time") {
         return [
           toSpan(
-            mix`1. נוסחת הדרך: דרך = מהירות × זמן.`,
+            mix`1. Distance formula: distance = speed × time.`,
             "1"
           ),
           toSpan(
-            mix`2. נחשב: ${M(`${p.speed} × ${p.hours} = ${ans}`)} ק\"מ.`,
+            mix`2. Compute: ${M(`${p.speed} × ${p.hours} = ${ans}`)} km.`,
             "2"
           ),
         ];
       }
 
       return [
-        toSpan(mix`1. לזהות מה שואלים – כמה ביחד? כמה נשאר? כמה בכל קבוצה?`, "1"),
-        toSpan(mix`2. לכתוב תרגיל מתמטיקה שמתאים לסיפור.`, "2"),
-        toSpan(mix`3. לפתור את התרגיל ולקשר אותו למילים.`, "3"),
+        toSpan(mix`1. Identify what is asked – how many altogether? how many left? how many in each group?`, "1"),
+        toSpan(mix`2. Write a math exercise that matches the story.`, "2"),
+        toSpan(mix`3. Solve the exercise and connect it back to the words.`, "3"),
       ];
 
     case "ratio": {
       if (p.kind === "ratio_find") {
         return [
-          toSpan(mix`1. נמצא את המחלק המשותף הגדול (מ.מ.ג) של ${M(String(p.a))} ו-${M(String(p.b))}.`, "1"),
-          toSpan(mix`2. נחלק שניהם במ.מ.ג: ${M(`${p.a}÷${p.a/p.simplifiedA}`)} ו-${M(`${p.b}÷${p.b/p.simplifiedB}`)}.`, "2"),
-          toSpan(mix`3. היחס המצומצם: ${ans}.`, "3"),
+          toSpan(mix`1. Find the greatest common divisor (GCD) of ${M(String(p.a))} and ${M(String(p.b))}.`, "1"),
+          toSpan(mix`2. Divide both by the GCD: ${M(`${p.a}÷${p.a/p.simplifiedA}`)} and ${M(`${p.b}÷${p.b/p.simplifiedB}`)}.`, "2"),
+          toSpan(mix`3. The simplified ratio: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "ratio_first") {
         return [
-          toSpan(mix`1. היחס ${M(`${p.simplifiedA}:${p.simplifiedB}`)} אומר: ראשון = ${M(String(p.simplifiedA))} חלקים, שני = ${M(String(p.simplifiedB))} חלקים.`, "1"),
-          toSpan(mix`2. השני הוא ${M(String(p.secondNum))} = ${M(`${p.k} × ${p.simplifiedB}`)}, לכן k=${M(String(p.k))}.`, "2"),
-          toSpan(mix`3. הראשון: ${M(`${p.k} × ${p.simplifiedA} = ${ans}`)}.`, "3"),
+          toSpan(mix`1. The ratio ${M(`${p.simplifiedA}:${p.simplifiedB}`)} means: first = ${M(String(p.simplifiedA))} parts, second = ${M(String(p.simplifiedB))} parts.`, "1"),
+          toSpan(mix`2. The second is ${M(String(p.secondNum))} = ${M(`${p.k} × ${p.simplifiedB}`)}, so k=${M(String(p.k))}.`, "2"),
+          toSpan(mix`3. The first: ${M(`${p.k} × ${p.simplifiedA} = ${ans}`)}.`, "3"),
         ];
       }
       if (p.kind === "ratio_second") {
         return [
-          toSpan(mix`1. היחס ${M(`${p.simplifiedA}:${p.simplifiedB}`)} אומר: ראשון = ${M(String(p.simplifiedA))} חלקים, שני = ${M(String(p.simplifiedB))} חלקים.`, "1"),
-          toSpan(mix`2. הראשון הוא ${M(String(p.firstNum))} = ${M(`${p.k} × ${p.simplifiedA}`)}, לכן k=${M(String(p.k))}.`, "2"),
-          toSpan(mix`3. השני: ${M(`${p.k} × ${p.simplifiedB} = ${ans}`)}.`, "3"),
+          toSpan(mix`1. The ratio ${M(`${p.simplifiedA}:${p.simplifiedB}`)} means: first = ${M(String(p.simplifiedA))} parts, second = ${M(String(p.simplifiedB))} parts.`, "1"),
+          toSpan(mix`2. The first is ${M(String(p.firstNum))} = ${M(`${p.k} × ${p.simplifiedA}`)}, so k=${M(String(p.k))}.`, "2"),
+          toSpan(mix`3. The second: ${M(`${p.k} × ${p.simplifiedB} = ${ans}`)}.`, "3"),
         ];
       }
       return [
-        toSpan(mix`1. מזהים את שני הכמויות ומחשבים יחס.`, "1"),
-        toSpan(mix`2. מצמצמים על ידי חלוקה במ.מ.ג.`, "2"),
-        toSpan(mix`3. התשובה: ${ans}.`, "3"),
+        toSpan(mix`1. Identify the two quantities and compute a ratio.`, "1"),
+        toSpan(mix`2. Simplify by dividing by the GCD.`, "2"),
+        toSpan(mix`3. The answer: ${ans}.`, "3"),
       ];
     }
 
     case "scale": {
       if (p.kind === "scale_map_to_real") {
         return [
-          toSpan(mix`1. קנה מידה 1:${M(String(p.scale))} - כל ס"מ במפה = ${M(String(p.scale))} ס"מ במציאות.`, "1"),
-          toSpan(mix`2. נכפול: ${M(`${p.mapLength} × ${p.scale} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. המרחק במציאות: ${ans} ס"מ.`, "3"),
+          toSpan(mix`1. Scale 1:${M(String(p.scale))} - every cm on the map = ${M(String(p.scale))} cm in real life.`, "1"),
+          toSpan(mix`2. Multiply: ${M(`${p.mapLength} × ${p.scale} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. The real-life distance: ${ans} cm.`, "3"),
         ];
       }
       if (p.kind === "scale_find") {
         return [
-          toSpan(mix`1. מחפשים בכמה לכפול כדי לעבור מהמפה למציאות.`, "1"),
-          toSpan(mix`2. נחלק: ${M(`${p.realLength} ÷ ${p.mapLength} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. קנה המידה: 1:${ans}.`, "3"),
+          toSpan(mix`1. Find what to multiply by to go from the map to real life.`, "1"),
+          toSpan(mix`2. Divide: ${M(`${p.realLength} ÷ ${p.mapLength} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. The scale: 1:${ans}.`, "3"),
         ];
       }
       return [
-        toSpan(mix`1. קנה מידה 1:X - כל יחידה במפה = X יחידות במציאות.`, "1"),
-        toSpan(mix`2. מציאות = מפה × X. מפה = מציאות ÷ X.`, "2"),
-        toSpan(mix`3. התשובה: ${ans}.`, "3"),
+        toSpan(mix`1. Scale 1:X - every unit on the map = X units in real life.`, "1"),
+        toSpan(mix`2. Real = map × X. Map = real ÷ X.`, "2"),
+        toSpan(mix`3. The answer: ${ans}.`, "3"),
       ];
     }
 
     case "divisibility": {
       return [
-        toSpan(mix`1. בודקים: האם ${M(String(p.num))} מתחלק ב-${M(String(p.divisor))} בלי שארית?`, "1"),
-        toSpan(mix`2. מחשבים: ${M(`${p.num} ÷ ${p.divisor}`)}.`, "2"),
+        toSpan(mix`1. Check: is ${M(String(p.num))} divisible by ${M(String(p.divisor))} with no remainder?`, "1"),
+        toSpan(mix`2. Compute: ${M(`${p.num} ÷ ${p.divisor}`)}.`, "2"),
         toSpan(
           p.isDivisible
-            ? mix`3. יוצא שלם - ${M(String(p.num))} כן מתחלק ב-${M(String(p.divisor))}.`
-            : mix`3. לא יוצא שלם - ${M(String(p.num))} לא מתחלק ב-${M(String(p.divisor))}.`,
+            ? mix`3. It comes out whole - ${M(String(p.num))} is divisible by ${M(String(p.divisor))}.`
+            : mix`3. It does not come out whole - ${M(String(p.num))} is not divisible by ${M(String(p.divisor))}.`,
           "3"
         ),
       ];
@@ -894,22 +894,22 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "power_calc") {
         const factors = Array.from({ length: p.exp }, () => p.base);
         return [
-          toSpan(mix`1. חזקה: ${M(`${p.base}^${p.exp}`)} = ${M(String(p.base))} כפול עצמו ${M(String(p.exp))} פעמים.`, "1"),
-          toSpan(mix`2. נחשב: ${M(factors.join(" × "))} = ${M(String(p.result))}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Power: ${M(`${p.base}^${p.exp}`)} = ${M(String(p.base))} times itself ${M(String(p.exp))} times.`, "1"),
+          toSpan(mix`2. Compute: ${M(factors.join(" × "))} = ${M(String(p.result))}.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "power_base") {
         return [
-          toSpan(mix`1. מחפשים בסיס: איזה מספר בחזקת ${M(String(p.exp))} נותן ${M(String(p.result))}?`, "1"),
-          toSpan(mix`2. נסה: ${M(String(p.base))}^${M(String(p.exp))} = ${M(String(p.result))}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Find the base: which number to the power of ${M(String(p.exp))} gives ${M(String(p.result))}?`, "1"),
+          toSpan(mix`2. Try: ${M(String(p.base))}^${M(String(p.exp))} = ${M(String(p.result))}.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       return [
-        toSpan(mix`1. חזקה = כפל חוזר של הבסיס בעצמו.`, "1"),
-        toSpan(mix`2. לדוגמה: 3² = 3 × 3 = 9.`, "2"),
-        toSpan(mix`3. התשובה: ${ans}.`, "3"),
+        toSpan(mix`1. A power = repeated multiplication of the base by itself.`, "1"),
+        toSpan(mix`2. For example: 3² = 3 × 3 = 9.`, "2"),
+        toSpan(mix`3. The answer: ${ans}.`, "3"),
       ];
     }
 
@@ -917,31 +917,31 @@ export function getSolutionSteps(question, operation, gradeKey) {
       if (p.kind === "order_add_mul") {
         const prod = p.b * p.c;
         return [
-          toSpan(mix`1. כפל לפני חיבור: ${M(`${p.a} + ${p.b} × ${p.c}`)} - כופלים קודם.`, "1"),
-          toSpan(mix`2. ${M(`${p.b} × ${p.c} = ${prod}`)}, ואז ${M(`${p.a} + ${prod} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Multiply before add: ${M(`${p.a} + ${p.b} × ${p.c}`)} - multiply first.`, "1"),
+          toSpan(mix`2. ${M(`${p.b} × ${p.c} = ${prod}`)}, then ${M(`${p.a} + ${prod} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "order_mul_sub") {
         const prod = p.a * p.b;
         return [
-          toSpan(mix`1. כפל לפני חיסור: ${M(`${p.a} × ${p.b} - ${p.c}`)} - כופלים קודם.`, "1"),
-          toSpan(mix`2. ${M(`${p.a} × ${p.b} = ${prod}`)}, ואז ${M(`${prod} - ${p.c} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Multiply before subtract: ${M(`${p.a} × ${p.b} - ${p.c}`)} - multiply first.`, "1"),
+          toSpan(mix`2. ${M(`${p.a} × ${p.b} = ${prod}`)}, then ${M(`${prod} - ${p.c} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "order_parentheses") {
         const sum = p.a + p.b;
         return [
-          toSpan(mix`1. סוגריים קודם: ${M(`(${p.a} + ${p.b}) × ${p.c}`)} - חישוב הסוגריים תחילה.`, "1"),
-          toSpan(mix`2. ${M(`${p.a} + ${p.b} = ${sum}`)}, ואז ${M(`${sum} × ${p.c} = ${ans}`)}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Parentheses first: ${M(`(${p.a} + ${p.b}) × ${p.c}`)} - compute the parentheses first.`, "1"),
+          toSpan(mix`2. ${M(`${p.a} + ${p.b} = ${sum}`)}, then ${M(`${sum} × ${p.c} = ${ans}`)}.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       return [
-        toSpan(mix`1. הסדר: סוגריים → כפל/חילוק → חיבור/חיסור.`, "1"),
-        toSpan(mix`2. מחשבים לפי הסדר הנכון.`, "2"),
-        toSpan(mix`3. התשובה: ${ans}.`, "3"),
+        toSpan(mix`1. Order: parentheses → multiply/divide → add/subtract.`, "1"),
+        toSpan(mix`2. Compute in the correct order.`, "2"),
+        toSpan(mix`3. The answer: ${ans}.`, "3"),
       ];
     }
 
@@ -950,69 +950,69 @@ export function getSolutionSteps(question, operation, gradeKey) {
         const roundA = Math.round(p.a / 10) * 10;
         const roundB = Math.round(p.b / 10) * 10;
         return [
-          toSpan(mix`1. מעגלים לעשרות: ${M(String(p.a))} ≈ ${M(String(roundA))}, ${M(String(p.b))} ≈ ${M(String(roundB))}.`, "1"),
-          toSpan(mix`2. מחברים בקירוב: ${M(`${roundA} + ${roundB} = ${roundA + roundB}`)}.`, "2"),
-          toSpan(mix`3. האומדן: ${ans}.`, "3"),
+          toSpan(mix`1. Round to tens: ${M(String(p.a))} ≈ ${M(String(roundA))}, ${M(String(p.b))} ≈ ${M(String(roundB))}.`, "1"),
+          toSpan(mix`2. Add the estimates: ${M(`${roundA} + ${roundB} = ${roundA + roundB}`)}.`, "2"),
+          toSpan(mix`3. The estimate: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "est_mul") {
         const roundA = Math.round(p.a / 10) * 10;
         const roundB = Math.round(p.b / 10) * 10;
         return [
-          toSpan(mix`1. מעגלים לעשרות: ${M(String(p.a))} ≈ ${M(String(roundA))}, ${M(String(p.b))} ≈ ${M(String(roundB))}.`, "1"),
-          toSpan(mix`2. כופלים בקירוב: ${M(`${roundA} × ${roundB} = ${roundA * roundB}`)}.`, "2"),
-          toSpan(mix`3. האומדן: ${ans}.`, "3"),
+          toSpan(mix`1. Round to tens: ${M(String(p.a))} ≈ ${M(String(roundA))}, ${M(String(p.b))} ≈ ${M(String(roundB))}.`, "1"),
+          toSpan(mix`2. Multiply the estimates: ${M(`${roundA} × ${roundB} = ${roundA * roundB}`)}.`, "2"),
+          toSpan(mix`3. The estimate: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "est_quantity") {
         const rounded = Math.round(p.quantity / 10) * 10;
         return [
-          toSpan(mix`1. מעגלים ${M(String(p.quantity))} לעשרות הקרובות: ${M(String(rounded))}.`, "1"),
-          toSpan(mix`2. האומדן: ${ans}.`, "2"),
+          toSpan(mix`1. Round ${M(String(p.quantity))} to the nearest tens: ${M(String(rounded))}.`, "1"),
+          toSpan(mix`2. The estimate: ${ans}.`, "2"),
         ];
       }
       return [
-        toSpan(mix`1. מעגלים את המספרים לעשרות/מאות הקרובות.`, "1"),
-        toSpan(mix`2. מחשבים בקירוב.`, "2"),
-        toSpan(mix`3. האומדן: ${ans}.`, "3"),
+        toSpan(mix`1. Round the numbers to the nearest tens/hundreds.`, "1"),
+        toSpan(mix`2. Compute an estimate.`, "2"),
+        toSpan(mix`3. The estimate: ${ans}.`, "3"),
       ];
     }
 
     case "zero_one_properties": {
       if (p.kind === "zero_mul" || p.kind === "zero_mul_eq" || p.kind === "zero_mul_word") {
         return [
-          toSpan(mix`1. תכונה: כל מספר × 0 = 0.`, "1"),
+          toSpan(mix`1. Property: any number × 0 = 0.`, "1"),
           toSpan(mix`2. ${M(`${p.a} × 0 = 0`)}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "zero_add_expr" || p.kind === "zero_add_swap" || p.kind === "zero_sub_line") {
         return [
-          toSpan(mix`1. תכונה: חיבור/חיסור 0 לא משנה את המספר.`, "1"),
-          toSpan(mix`2. ${M(`${p.a} + 0 = ${p.a}`)} ו-${M(`${p.a} - 0 = ${p.a}`)}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`1. Property: adding/subtracting 0 does not change the number.`, "1"),
+          toSpan(mix`2. ${M(`${p.a} + 0 = ${p.a}`)} and ${M(`${p.a} - 0 = ${p.a}`)}.`, "2"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       if (p.kind === "one_mul_identity" || p.kind === "one_mul_comm") {
         return [
-          toSpan(mix`1. תכונה: כל מספר × 1 = אותו המספר.`, "1"),
+          toSpan(mix`1. Property: any number × 1 = the same number.`, "1"),
           toSpan(mix`2. ${M(`${p.a} × 1 = ${p.a}`)}.`, "2"),
-          toSpan(mix`3. התשובה: ${ans}.`, "3"),
+          toSpan(mix`3. The answer: ${ans}.`, "3"),
         ];
       }
       return [
-        toSpan(mix`1. מספר × 0 = 0. מספר × 1 = אותו מספר. מספר ± 0 = אותו מספר.`, "1"),
-        toSpan(mix`2. התשובה: ${ans}.`, "2"),
+        toSpan(mix`1. Number × 0 = 0. Number × 1 = same number. Number ± 0 = same number.`, "1"),
+        toSpan(mix`2. The answer: ${ans}.`, "2"),
       ];
     }
 
     case "division_with_remainder": {
       const remainder = p.remainder ?? 0;
       return [
-        toSpan(mix`1. נחלק: ${M(`${p.dividend} ÷ ${p.divisor}`)}.`, "1"),
-        toSpan(mix`2. כמה פעמים ${M(String(p.divisor))} נכנס? ${M(String(p.quotient))} פעמים.`, "2"),
-        toSpan(mix`3. שארית: ${M(`${p.dividend} − (${p.quotient} × ${p.divisor}) = ${remainder}`)}.`, "3"),
-        toSpan(mix`4. בדיקה: ${M(`${p.divisor} × ${p.quotient} + ${remainder} = ${p.dividend}`)} ✓`, "4"),
+        toSpan(mix`1. Divide: ${M(`${p.dividend} ÷ ${p.divisor}`)}.`, "1"),
+        toSpan(mix`2. How many times does ${M(String(p.divisor))} fit in? ${M(String(p.quotient))} times.`, "2"),
+        toSpan(mix`3. Remainder: ${M(`${p.dividend} − (${p.quotient} × ${p.divisor}) = ${remainder}`)}.`, "3"),
+        toSpan(mix`4. Check: ${M(`${p.divisor} × ${p.quotient} + ${remainder} = ${p.dividend}`)} ✓`, "4"),
       ];
     }
 
@@ -1021,8 +1021,8 @@ export function getSolutionSteps(question, operation, gradeKey) {
   }
 }
 
-// "למה טעיתי?" – הסבר קצר לטעות נפוצה
-// פונקציה להסבר מותאם לגיל - הסברים פשוטים יותר לכיתות נמוכות
+// "Why was I wrong?" – short common-mistake explanation
+// Age-appropriate explanation – simpler wording for lower grades
 function getAgeAppropriateExplanation(operation, gradeKey, question, correctAnswer) {
   if (shouldUseComparisonSignErrorExplanation(question, operation)) {
     return buildComparisonSignWrongAnswerLine(question);
@@ -1038,15 +1038,15 @@ function getAgeAppropriateExplanation(operation, gradeKey, question, correctAnsw
 
     switch (operation) {
       case "addition":
-        return mix`💡 נסה לחשוב על זה כך: יש לך ${M(String(a))} עיגולים, ואתה מוסיף ${M(String(b))} עיגולים נוספים. כמה עיגולים יש לך עכשיו? נסה לספור: ${M(`${a}... ${a + 1}... ${a + 2}...`)} עד ${M(String(correctAnswer))}!`;
+        return mix`💡 Try thinking of it this way: you have ${M(String(a))} circles, and you add ${M(String(b))} more circles. How many circles do you have now? Try counting: ${M(`${a}... ${a + 1}... ${a + 2}...`)} up to ${M(String(correctAnswer))}!`;
       case "subtraction":
-        return mix`💡 נסה לחשוב על זה כך: יש לך ${M(String(a))} עיגולים, ואתה לוקח ${M(String(b))} עיגולים. כמה עיגולים נשארו? נסה לספור לאחור: ${M(`${a}... ${a - 1}... ${a - 2}...`)} עד ${M(String(correctAnswer))}!`;
+        return mix`💡 Try thinking of it this way: you have ${M(String(a))} circles, and you take away ${M(String(b))} circles. How many circles are left? Try counting backward: ${M(`${a}... ${a - 1}... ${a - 2}...`)} up to ${M(String(correctAnswer))}!`;
       case "multiplication":
-        return mix`💡 כפל זה כמו חיבור חוזר! ${M(`${a} × ${b}`)} זה כמו ${M(`${a} + ${a} + ${a}`)}... (${M(String(b))} פעמים). נסה לספור: ${M(`${a}, ${a * 2}, ${a * 3}...`)} עד ${M(String(correctAnswer))}!`;
+        return mix`💡 Multiplication is like repeated addition! ${M(`${a} × ${b}`)} is like ${M(`${a} + ${a} + ${a}`)}... (${M(String(b))} times). Try counting: ${M(`${a}, ${a * 2}, ${a * 3}...`)} up to ${M(String(correctAnswer))}!`;
       case "division":
-        return mix`💡 חילוק זה כמו חלוקה לקבוצות! ${M(`${a} ÷ ${b}`)} זה כמו לקחת ${M(String(a))} עיגולים ולחלק אותם ל-${M(String(b))} קבוצות שוות. כמה עיגולים בכל קבוצה? ${M(String(correctAnswer))}!`;
+        return mix`💡 Division is like sharing into groups! ${M(`${a} ÷ ${b}`)} is like taking ${M(String(a))} circles and sharing them into ${M(String(b))} equal groups. How many circles in each group? ${M(String(correctAnswer))}!`;
       default:
-        return mix`💡 נסה לחשוב על התרגיל בצורה פשוטה. התשובה הנכונה היא ${M(String(displayCorrectAnswer))}.`;
+        return mix`💡 Try thinking about the exercise in a simple way. The correct answer is ${M(String(displayCorrectAnswer))}.`;
     }
   }
 
@@ -1059,18 +1059,18 @@ function getAgeAppropriateExplanation(operation, gradeKey, question, correctAnsw
         if (a && b) {
           const tens = Math.floor(b / 10) * 10;
           const ones = b % 10;
-          return mix`💡 נסה לחשוב על חיבור: ${M(`${a} + ${b} = ${correctAnswer}`)}. אם קשה, נסה לפרק: ${M(`${a} + ${b} = ${a} + ${tens} + ${ones} = ${a + tens} + ${ones} = ${correctAnswer}`)}`;
+          return mix`💡 Try thinking about addition: ${M(`${a} + ${b} = ${correctAnswer}`)}. If it is hard, try breaking it apart: ${M(`${a} + ${b} = ${a} + ${tens} + ${ones} = ${a + tens} + ${ones} = ${correctAnswer}`)}`;
         }
-        return mix`💡 נסה לחשוב על התרגיל בצורה שיטתית. התשובה הנכונה היא ${M(String(displayCorrectAnswer))}.`;
+        return mix`💡 Try thinking about the exercise step by step. The correct answer is ${M(String(displayCorrectAnswer))}.`;
       case "subtraction":
         if (a && b) {
           const tens = Math.floor(b / 10) * 10;
           const ones = b % 10;
-          return mix`💡 נסה לחשוב על חיסור: ${M(`${a} - ${b} = ${displayCorrectAnswer}`)}. אם קשה, נסה לפרק: ${M(`${a} - ${b} = ${a} - ${tens} - ${ones} = ${a - tens} - ${ones} = ${displayCorrectAnswer}`)}`;
+          return mix`💡 Try thinking about subtraction: ${M(`${a} - ${b} = ${displayCorrectAnswer}`)}. If it is hard, try breaking it apart: ${M(`${a} - ${b} = ${a} - ${tens} - ${ones} = ${a - tens} - ${ones} = ${displayCorrectAnswer}`)}`;
         }
-        return mix`💡 נסה לחשוב על התרגיל בצורה שיטתית. התשובה הנכונה היא ${M(String(displayCorrectAnswer))}.`;
+        return mix`💡 Try thinking about the exercise step by step. The correct answer is ${M(String(displayCorrectAnswer))}.`;
       default:
-        return mix`💡 נסה לחשוב על התרגיל בצורה שיטתית. התשובה הנכונה היא ${M(String(displayCorrectAnswer))}.`;
+        return mix`💡 Try thinking about the exercise step by step. The correct answer is ${M(String(displayCorrectAnswer))}.`;
     }
   }
 
@@ -1110,38 +1110,38 @@ export function getErrorExplanation(question, operation, wrongAnswer, gradeKey, 
   switch (operation) {
     case "addition":
       if (!Number.isNaN(userAnsNum) && userAnsNum < correctNum) {
-        return "נראה שלא חיברת את כל החלקים או פספסת מספר אחד בדרך.";
+        return "It looks like you did not add all the parts, or you missed a number along the way.";
       }
       if (!Number.isNaN(userAnsNum) && userAnsNum > correctNum) {
-        return "נראה שחיברת משהו פעמיים או טעית בחיבור ביניים.";
+        return "It looks like you added something twice or made a mistake in a middle sum.";
       }
-      return "כדאי לבדוק שוב את החיבור לפי שלבים - אפשר לפרק לעשרות ויחידות ולחבר חלק-חלק.";
+      return "It helps to check the addition step by step - you can break into tens and ones and add part by part.";
     case "subtraction":
-      return "בחיסור קל להתבלבל בסדר המספרים. בדוק שוב שהקטנת את המספר הגדול ולא להפך.";
+      return "In subtraction it is easy to mix up the order of the numbers. Check that you reduced the larger number, not the other way around.";
     case "multiplication":
-      return "בכפל לפעמים מערבבים בין כפל לחיבור. ודא שחזרת על המספר הנכון מספר הפעמים הנכון.";
+      return "In multiplication people sometimes mix multiply and add. Make sure you repeated the correct number the correct number of times.";
     case "division":
-      return "בחילוק בדוק שהתוצאה כפול המחלק מחזירה את המספר המקורי.";
+      return "In division, check that the result times the divisor returns the original number.";
     case "fractions":
-      return "בשברים לרוב שוכחים מכנה משותף או עובדים גם על המכנה במקום רק על המונה.";
+      return "With fractions people often forget a common denominator or change the denominator instead of only the numerator.";
     case "percentages":
-      return mix`באחוזים טעות נפוצה היא להתבלבל בין חלק מתוך 100 לבין חיבור/חיסור רגיל. נסה לכתוב קודם את השבר (למשל ${M("25% = 1/4")}).`;
+      return mix`With percents a common mistake is confusing a part of 100 with ordinary add/subtract. Try writing the fraction first (for example ${M("25% = 1/4")}).`;
     case "sequences":
-      return "בסדרות רבים מפספסים את ההפרש הקבוע. בדוק שוב מה קורה בין שני איברים סמוכים.";
+      return "In sequences many people miss the constant difference. Check again what happens between two neighboring terms.";
     case "decimals":
-      return "בעשרוניים באגים קורים כשלא מיישרים את הנקודות או שוכחים את מספר הספרות אחרי הנקודה.";
+      return "With decimals mistakes happen when you do not line up the points or forget how many digits are after the decimal.";
     case "rounding":
-      return mix`בעיגול קל להתבלבל בספרה שאחריה. בדוק אם היא ${M("0–4")} (למטה) או ${M("5–9")} (למעלה).`;
+      return mix`When rounding it is easy to mix up the next digit. Check whether it is ${M("0–4")} (round down) or ${M("5–9")} (round up).`;
     case "equations":
-      return "במשוואות מספר חסר רבים מנסים לנחש. כדאי להשתמש בפעולה ההפוכה ולהחזיר את שני הצדדים לאותו מספר.";
+      return "In missing-number equations many people guess. Use the inverse operation and bring both sides back to the same number.";
     case "compare":
-      return "בהשוואת מספרים הטעות הנפוצה היא להתבלבל מי גדול יותר, במיוחד בעשרוניים. נסה להשוות קודם את החלק השלם.";
+      return "When comparing numbers the common mistake is mixing up which is larger, especially with decimals. Try comparing the whole-number parts first.";
     case "number_sense":
-      return "בדוק שוב את פירוק המספר לעשרות/מאות/אחדות או אם המספר זוגי/אי-זוגי. אלה דברים שקל להתבלבל בהם כשממהרים.";
+      return "Check the place-value breakdown (tens/hundreds/ones) again, or whether the number is even/odd. These are easy to mix up when rushing.";
     case "factors_multiples":
-      return "בגורמים וכפולות קל להתבלבל בין \"מה מחלק את המספר\" לבין \"מה מתקבל כשמכפילים\". נסה לכתוב את כל הגורמים או הכפולות בצד.";
+      return "With factors and multiples it is easy to mix up \"what divides the number\" and \"what you get when multiplying\". Try listing all factors or multiples on the side.";
     case "word_problems":
-      return "בתרגילי מילים הטעות הנפוצה היא לבחור פעולה לא נכונה (חיבור במקום חיסור וכו'). נסה לכתוב תרגיל פשוט שמתאים לסיפור.";
+      return "In word problems the common mistake is choosing the wrong operation (add instead of subtract, etc.). Try writing a simple exercise that matches the story.";
     default:
       return "";
   }
@@ -1169,23 +1169,23 @@ export function buildStepExplanation(question) {
   let vertical = "";
   const steps = [];
 
-  // נריץ את ההסבר על פעולה "אפקטיבית" – למשל:
-  // 53 + (-3) → פעולה אפקטיבית: חיסור 53 - 3
+  // Explain using an "effective" operation – e.g.:
+  // 53 + (-3) → effective op: subtraction 53 - 3
   let effectiveOp = op;
   let aEff = a;
   let bEff = b;
 
-  // אם זה חיבור עם מספר שני שלילי – נמיר לחיסור רגיל
+  // If adding a negative second number – convert to ordinary subtraction
   if (op === "addition" && typeof b === "number" && b < 0) {
     effectiveOp = "subtraction";
     bEff = Math.abs(b);
 
     pushMixStep(steps,
-      mix`0. שמים לב שתרגיל החיבור ${M(`${a} + (${b})`)} הוא בעצם כמו חיסור: ${M(`${a} - ${Math.abs(b)}`)}.`
+      mix`0. Notice that the addition exercise ${M(`${a} + (${b})`)} is really like subtraction: ${M(`${a} - ${Math.abs(b)}`)}.`
     );
   }
 
-  // טיפול בתרגילי השלמה - משתמש בפונקציה הכללית
+  // Missing-number exercises – use the shared converter
   const missingConversion = convertMissingNumberEquation(op, p.kind, p);
   if (missingConversion) {
     effectiveOp = missingConversion.effectiveOp;
@@ -1193,12 +1193,12 @@ export function buildStepExplanation(question) {
     bEff = missingConversion.bottom;
   }
 
-  // טיפול בתרגילי השלמה בחיבור - הופכים לחיסור (להסבר מפורט)
+  // Missing-number addition – rewrite as subtraction (detailed explanation)
   if (
     op === "addition" &&
     (p.kind === "add_missing_first" || p.kind === "add_missing_second")
   ) {
-    const c = p.c; // התוצאה הסופית
+    const c = p.c; // final result
     let leftNum, rightNum;
 
     if (p.kind === "add_missing_first") {
@@ -1217,12 +1217,12 @@ export function buildStepExplanation(question) {
     vertical = buildVerticalOperation(leftNum, rightNum, "-");
 
     pushMixStep(steps,
-      mix`1. הופכים את התרגיל לחיסור: במקום ${exercise} כותבים ${M(`${c} - ${rightNum} = ${BLANK}`)}.`
+      mix`1. Rewrite the exercise as subtraction: instead of ${exercise} write ${M(`${c} - ${rightNum} = ${BLANK}`)}.`
     );
     pushMixStep(steps,
-      mix`2. כותבים את המספרים זה מתחת לזה בעמודות: עשרות מעל עשרות ואחדות מעל אחדות.`);
+      mix`2. Write the numbers one under the other in columns: tens above tens and ones above ones.`);
 
-    // חישוב ספרה ספרה
+    // Digit-by-digit calculation
     const topStr = String(leftNum);
     const bottomStr = String(rightNum);
     const maxLen = Math.max(topStr.length, bottomStr.length);
@@ -1240,14 +1240,14 @@ export function buildStepExplanation(question) {
 
       const placeName =
         i === maxLen - 1
-          ? "אחדות"
+          ? "ones"
           : i === maxLen - 2
-          ? "עשרות"
-          : "מאות";
+          ? "tens"
+          : "hundreds";
 
       if (topDigit < bottomDigit) {
         pushMixStep(steps,
-          mix`${stepIndex}. בעמודת ה${placeName} ${topDigit} קטן מ-${bottomDigit}, לכן לוקחים "השאלה" מהעמודה הבאה (מוסיפים 10 לספרה הזו ומפחיתים 1 בעמודה הבאה).`
+          mix`${stepIndex}. In the ${placeName} column ${topDigit} is less than ${bottomDigit}, so borrow from the next column (add 10 to this digit and subtract 1 from the next column).`
         );
         topDigit += 10;
         borrow = 1;
@@ -1259,13 +1259,13 @@ export function buildStepExplanation(question) {
       const diff = topDigit - bottomDigit;
       resultDigits.unshift(diff);
       pushMixStep(steps,
-        mix`${stepIndex}. כעת מחשבים בעמודת ה${placeName}: ${M(`${topDigit} - ${bottomDigit} = ${diff}`)} וכותבים ${diff} בעמודה זו.`
+        mix`${stepIndex}. Now compute in the ${placeName} column: ${M(`${topDigit} - ${bottomDigit} = ${diff}`)} and write ${diff} in this column.`
       );
       stepIndex++;
     }
 
     pushMixStep(steps,
-      mix`5. המספר שנוצר הוא ${missing}. זה המספר שחסר בתרגיל: ${
+      mix`5. The number you get is ${missing}. That is the missing number in the exercise: ${
         p.kind === "add_missing_first"
           ? pureMathLtrDisplay(`${missing} + ${p.b} = ${c}`)
           : pureMathLtrDisplay(`${p.a} + ${missing} = ${c}`)
@@ -1279,12 +1279,12 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // טיפול בתרגילי השלמה בכפל - הופכים לחילוק (להסבר מפורט)
+  // Missing-number multiplication – rewrite as division (detailed explanation)
   if (
     op === "multiplication" &&
     (p.kind === "mul_missing_first" || p.kind === "mul_missing_second")
   ) {
-    const c = p.c; // התוצאה הסופית
+    const c = p.c; // final result
     let leftNum, rightNum;
 
     if (p.kind === "mul_missing_first") {
@@ -1303,18 +1303,18 @@ export function buildStepExplanation(question) {
     vertical = buildVerticalOperation(leftNum, rightNum, "÷");
 
     pushMixStep(steps,
-      mix`1. הופכים את התרגיל לחילוק: במקום ${exercise} כותבים ${M(`${c} ÷ ${rightNum} = ${BLANK}`)}.`
+      mix`1. Rewrite the exercise as division: instead of ${exercise} write ${M(`${c} ÷ ${rightNum} = ${BLANK}`)}.`
     );
     pushMixStep(steps,
-      mix`2. חילוק הוא בעצם הפוך מהכפל: כמה פעמים המספר ${rightNum} נכנס ב-${c}?`
+      mix`2. Division is the inverse of multiplication: how many times does ${rightNum} fit into ${c}?`
     );
     
     if (typeof answer === "number") {
       pushMixStep(steps,
-        mix`3. בודקים: ${M(`${rightNum} × ${answer} = ${rightNum * answer}`)}. זה נותן לנו ${rightNum * answer}, שזה בדיוק ${c}.`
+        mix`3. Check: ${M(`${rightNum} × ${answer} = ${rightNum * answer}`)}. That gives us ${rightNum * answer}, which is exactly ${c}.`
       );
       pushMixStep(steps,
-        mix`4. לכן המספר החסר הוא ${missing}. זה המספר שחסר בתרגיל: ${
+        mix`4. So the missing number is ${missing}. That is the missing number in the exercise: ${
           p.kind === "mul_missing_first"
             ? pureMathLtrDisplay(`${missing} × ${p.b} = ${c}`)
             : pureMathLtrDisplay(`${p.a} × ${missing} = ${c}`)
@@ -1329,7 +1329,7 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // טיפול בתרגילי השלמה בחילוק (להסבר מפורט)
+  // Missing-number division (detailed explanation)
   if (
     op === "division" &&
     (p.kind === "div_missing_dividend" || p.kind === "div_missing_divisor")
@@ -1338,22 +1338,22 @@ export function buildStepExplanation(question) {
     let leftNum, rightNum, opSymbol;
 
     if (p.kind === "div_missing_dividend") {
-      // __ ÷ divisor = quotient  →  quotient × divisor = __ (כפל)
+      // __ ÷ divisor = quotient  →  quotient × divisor = __ (multiply)
       leftNum = quotient;
       rightNum = divisor;
       opSymbol = "×";
       exercise = pureMathLtrDisplay(`${BLANK} ÷ ${divisor} = ${quotient}`);
       pushMixStep(steps,
-        mix`1. הופכים את התרגיל לכפל: במקום ${exercise} כותבים ${M(`${quotient} × ${divisor} = ${BLANK}`)}.`
+        mix`1. Rewrite the exercise as multiplication: instead of ${exercise} write ${M(`${quotient} × ${divisor} = ${BLANK}`)}.`
       );
     } else {
-      // dividend ÷ __ = quotient  →  dividend ÷ quotient = __ (חילוק)
+      // dividend ÷ __ = quotient  →  dividend ÷ quotient = __ (divide)
       leftNum = dividend;
       rightNum = quotient;
       opSymbol = "÷";
       exercise = pureMathLtrDisplay(`${dividend} ÷ ${BLANK} = ${quotient}`);
       pushMixStep(steps,
-        mix`1. הופכים את התרגיל לחילוק: במקום ${exercise} כותבים ${M(`${dividend} ÷ ${quotient} = ${BLANK}`)}.`
+        mix`1. Rewrite the exercise as division: instead of ${exercise} write ${M(`${dividend} ÷ ${quotient} = ${BLANK}`)}.`
       );
     }
 
@@ -1362,21 +1362,21 @@ export function buildStepExplanation(question) {
 
     if (p.kind === "div_missing_dividend") {
       pushMixStep(steps,
-        mix`2. כפל הוא בעצם חיבור חוזר: ${M(`${quotient} × ${divisor} = ${Array(quotient).fill(divisor).join(" + ")} = ${dividend}`)}.`
+        mix`2. Multiplication is repeated addition: ${M(`${quotient} × ${divisor} = ${Array(quotient).fill(divisor).join(" + ")} = ${dividend}`)}.`
       );
       pushMixStep(steps,
-        mix`3. לכן המספר החסר הוא ${missing}. זה המספר שחסר בתרגיל: ${M(`${missing} ÷ ${divisor} = ${quotient}`)}.`
+        mix`3. So the missing number is ${missing}. That is the missing number in the exercise: ${M(`${missing} ÷ ${divisor} = ${quotient}`)}.`
       );
     } else {
       pushMixStep(steps,
-        mix`2. חילוק הוא בעצם הפוך מהכפל: כמה פעמים המספר ${quotient} נכנס ב-${dividend}?`
+        mix`2. Division is the inverse of multiplication: how many times does ${quotient} fit into ${dividend}?`
       );
       if (typeof answer === "number") {
         pushMixStep(steps,
-          mix`3. בודקים: ${M(`${quotient} × ${answer} = ${quotient * answer}`)}. זה נותן לנו ${quotient * answer}, שזה בדיוק ${dividend}.`
+          mix`3. Check: ${M(`${quotient} × ${answer} = ${quotient * answer}`)}. That gives us ${quotient * answer}, which is exactly ${dividend}.`
         );
         pushMixStep(steps,
-          mix`4. לכן המספר החסר הוא ${missing}. זה המספר שחסר בתרגיל: ${M(`${dividend} ÷ ${missing} = ${quotient}`)}.`
+          mix`4. So the missing number is ${missing}. That is the missing number in the exercise: ${M(`${dividend} ÷ ${missing} = ${quotient}`)}.`
         );
       }
     }
@@ -1388,7 +1388,7 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // תצוגת תרגיל בסיסית (אופקית) – רק חשבון
+  // Basic exercise display (horizontal) – math only
   if (aEff != null && bEff != null && typeof aEff === "number" && typeof bEff === "number") {
     let symbol = "";
     if (effectiveOp === "addition") symbol = "+";
@@ -1402,9 +1402,9 @@ export function buildStepExplanation(question) {
     exercise = raw ? pureMathLtrDisplay(raw) : "";
   }
 
-  // טיפוסי הסבר לפי פעולה
+  // Explanation types by operation
 
-  // חיבור
+  // Addition
   if (effectiveOp === "addition" && typeof aEff === "number" && typeof bEff === "number") {
     vertical = buildVerticalOperation(aEff, bEff, "+");
     const aStr = String(aEff);
@@ -1414,7 +1414,7 @@ export function buildStepExplanation(question) {
     const pb = bStr.padStart(maxLen, "0");
 
     pushMixStep(steps,
-      mix`1. כותבים את המספרים אחד מעל השני, כך שסַפְרות האחדות נמצאות באותה עמודה: ${M(`${aEff}\n+ ${bEff}`)}.`
+      mix`1. Write the numbers one above the other so the ones digits are in the same column: ${M(`${aEff}\n+ ${bEff}`)}.`
     );
 
     let carry = 0;
@@ -1429,12 +1429,12 @@ export function buildStepExplanation(question) {
 
       const placeName =
         i === maxLen - 1
-          ? "אחדות"
+          ? "ones"
           : i === maxLen - 2
-          ? "עשרות"
-          : "מאות";
+          ? "tens"
+          : "hundreds";
 
-      pushMixStep(steps, mix`${stepIndex}. מחברים את ספרת ה${placeName}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. כותבים ${ones} בעמודת ה${placeName}${newCarry ? ` ומעבירים 1 לעמודת ה${placeName} הבאה.` : ""}`);
+      pushMixStep(steps, mix`${stepIndex}. Add the ${placeName} digits: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. Write ${ones} in the ${placeName} column${newCarry ? ` and carry 1 to the next column.` : ""}`);
 
       carry = newCarry;
       stepIndex++;
@@ -1442,14 +1442,14 @@ export function buildStepExplanation(question) {
 
     if (carry) {
       pushMixStep(steps,
-        mix`${stepIndex}. בסוף החיבור נשאר לנו 1 נוסף, כותבים אותו משמאל כמספר חדש בעמודת המאות/אלפים.`
+        mix`${stepIndex}. At the end of the addition there is 1 left over; write it on the left as a new hundreds/thousands digit.`
       );
       stepIndex++;
     }
 
     if (typeof answer === "number") {
       pushMixStep(steps,
-        mix`${stepIndex}. המספר שנוצר בסוף הוא ${answer}. זהו התשובה הסופית לתרגיל.`
+        mix`${stepIndex}. The final number is ${answer}. That is the final answer to the exercise.`
       );
     }
 
@@ -1460,7 +1460,7 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // חיסור
+  // Subtraction
   if (effectiveOp === "subtraction" && typeof aEff === "number" && typeof bEff === "number") {
     vertical = buildVerticalOperation(aEff, bEff, "-");
     const aStr = String(aEff);
@@ -1470,7 +1470,7 @@ export function buildStepExplanation(question) {
     const pb = bStr.padStart(maxLen, "0");
 
     pushMixStep(steps,
-      mix`1. כותבים את המספרים אחד מעל השני, כך שסַפְרות האחדות, העשרות וכו' נמצאות באותו טור: ${M(`${aEff}\n- ${bEff}`)}.`
+      mix`1. Write the numbers one above the other so the ones, tens, etc. are in the same column: ${M(`${aEff}\n- ${bEff}`)}.`
     );
 
     let borrow = 0;
@@ -1483,14 +1483,14 @@ export function buildStepExplanation(question) {
 
       const placeName =
         i === maxLen - 1
-          ? "אחדות"
+          ? "ones"
           : i === maxLen - 2
-          ? "עשרות"
-          : "מאות";
+          ? "tens"
+          : "hundreds";
 
       if (da < db) {
         pushMixStep(steps,
-          mix`${stepIndex}. בעמודת ה${placeName} ${da} קטן מ-${db}, לכן לוקחים "השאלה" מהעמודה הבאה (מוסיפים 10 לספרה הזו ומפחיתים 1 בעמודה הבאה).`
+          mix`${stepIndex}. In the ${placeName} column ${da} is less than ${db}, so borrow from the next column (add 10 to this digit and subtract 1 from the next column).`
         );
         da += 10;
         borrow = 1;
@@ -1502,14 +1502,14 @@ export function buildStepExplanation(question) {
       stepIndex++;
 
       pushMixStep(steps,
-        mix`${stepIndex}. כעת מחשבים בעמודת ה${placeName}: ${M(`${da} - ${db} = ${diff}`)} וכותבים ${diff} בעמודה זו.`
+        mix`${stepIndex}. Now compute in the ${placeName} column: ${M(`${da} - ${db} = ${diff}`)} and write ${diff} in this column.`
       );
       stepIndex++;
     }
 
     if (typeof answer === "number") {
       pushMixStep(steps,
-        mix`${stepIndex}. המספר שקיבלנו בסוף הוא ${answer}. זו התוצאה של החיסור.`
+        mix`${stepIndex}. The number we got at the end is ${answer}. That is the result of the subtraction.`
       );
     }
 
@@ -1520,7 +1520,7 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // כפל
+  // Multiplication
   if (
     effectiveOp === "multiplication" &&
     typeof aEff === "number" &&
@@ -1529,27 +1529,27 @@ export function buildStepExplanation(question) {
     vertical = pureMathLtrDisplay(`${aEff}\n× ${bEff}`);
 
     pushMixStep(steps,
-      mix`1. מבינים שהכפל הוא חיבור חוזר: למשל 3 × 4 זה כמו 4 + 4 + 4.`);
+      mix`1. Understand that multiplication is repeated addition: for example 3 × 4 is like 4 + 4 + 4.`);
     pushMixStep(steps,
-      mix`2. במקרה שלנו מחשבים: ${M(`${aEff} × ${bEff}`)}. אפשר לחשב כ-${aEff} פעמים המספר ${bEff} או ${bEff} פעמים המספר ${aEff}.`
+      mix`2. In our case we compute: ${M(`${aEff} × ${bEff}`)}. You can think of it as ${aEff} times the number ${bEff} or ${bEff} times the number ${aEff}.`
     );
 
     if (aEff <= 12 && bEff <= 12) {
       const smaller = Math.min(aEff, bEff);
       const bigger = Math.max(aEff, bEff);
       pushMixStep(steps,
-        mix`3. למשל: ${M(`${smaller} × ${bigger} = ${Array(smaller)
+        mix`3. For example: ${M(`${smaller} × ${bigger} = ${Array(smaller)
             .fill(bigger)
             .join(" + ")} = ${answer}`)}.`
       );
     } else if (typeof answer === "number") {
       pushMixStep(steps,
-        mix`3. משתמשים בטבלת כפל או פירוק לגורמים כדי להגיע לתוצאה ${answer}.`
+        mix`3. Use a multiplication table or factoring to reach the result ${answer}.`
       );
     }
 
     if (typeof answer === "number") {
-      pushMixStep(steps, mix`4. לכן ${M(`${aEff} × ${bEff} = ${answer}`)}.`);
+      pushMixStep(steps, mix`4. So ${M(`${aEff} × ${bEff} = ${answer}`)}.`);
     }
 
     return {
@@ -1559,9 +1559,9 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // חילוק ארוך - צעד אחר צעד כמו בחיבור וחיסור
+  // Long division – step by step like addition and subtraction
   if (effectiveOp === "division" && typeof aEff === "number" && typeof bEff === "number") {
-    // שימוש בפרמטרים של השאלה לחילוק (dividend, divisor, quotient)
+    // Use question params for division (dividend, divisor, quotient)
     const dividend = p.dividend || aEff;
     const divisor = p.divisor || bEff;
     const quotient = p.quotient || answer;
@@ -1572,10 +1572,10 @@ export function buildStepExplanation(question) {
     const divisorNum = divisor;
     
     pushMixStep(steps,
-      mix`1. כותבים את המחולק (${dividend}) והמחלק (${divisor}) בצורת חילוק ארוך.`
+      mix`1. Write the dividend (${dividend}) and the divisor (${divisor}) in long-division form.`
     );
     
-    // ביצוע חילוק ארוך צעד אחר צעד
+    // Perform long division step by step
     let workingNumber = 0;
     let stepIndex = 2;
     let quotientDigits = [];
@@ -1602,44 +1602,44 @@ export function buildStepExplanation(question) {
       }
     }
     
-    // יצירת צעדים מפורטים
+    // Build detailed steps
     for (let idx = 0; idx < divisionSteps.length; idx++) {
       const step = divisionSteps[idx];
       const { position, workingNumber: wNum, quotientDigit: qDigit, product, remainder } = step;
       
-      // צעד: כתיבה במנה
+      // Step: write quotient digit
       pushMixStep(steps,
-        mix`${stepIndex}. ${divisorNum} נכנס ב-${wNum} בדיוק ${qDigit} פעמים. כותבים ${qDigit} במנה מעל הספרה ${dividendStr[position]}.`
+        mix`${stepIndex}. ${divisorNum} fit into ${wNum} exactly ${qDigit} times. Write ${qDigit} in the quotient above the digit ${dividendStr[position]}.`
       );
       stepIndex++;
       
-      // צעד: כפל וחיסור
+      // Step: multiply and subtract
       pushMixStep(steps,
-        mix`${stepIndex}. מכפילים: ${M(`${qDigit} × ${divisorNum} = ${product}`)}. מחסרים: ${M(`${wNum} - ${product} = ${remainder}`)}. ${remainder === 0 ? 'אין שארית.' : `השארית היא ${remainder}.`}`
+        mix`${stepIndex}. Multiply: ${M(`${qDigit} × ${divisorNum} = ${product}`)}. Subtract: ${M(`${wNum} - ${product} = ${remainder}`)}. ${remainder === 0 ? 'No remainder.' : `The remainder is ${remainder}.`}`
       );
       stepIndex++;
       
-      // אם לא זה הצעד האחרון, מורידים את הספרה הבאה
+      // If not the last step, bring down the next digit
       if (idx < divisionSteps.length - 1 && position < dividendStr.length - 1) {
         const nextPos = divisionSteps[idx + 1].position;
         const nextDigit = parseInt(dividendStr[nextPos]);
         pushMixStep(steps,
-          mix`${stepIndex}. מורידים את הספרה הבאה (${nextDigit}). המספר החדש לחלוקה הוא ${remainder * 10 + nextDigit}.`
+          mix`${stepIndex}. Bring down the next digit (${nextDigit}). The new number to divide is ${remainder * 10 + nextDigit}.`
         );
         stepIndex++;
       }
     }
     
-    // צעד אחרון
+    // Final step
     const finalRemainder = divisionSteps.length > 0 ? divisionSteps[divisionSteps.length - 1].remainder : 0;
     if (typeof quotient === "number") {
       if (finalRemainder > 0) {
         pushMixStep(steps,
-          mix`${stepIndex}. סיימנו! המנה היא ${quotient} והשארית היא ${finalRemainder}.`
+          mix`${stepIndex}. Done! The quotient is ${quotient} and the remainder is ${finalRemainder}.`
         );
       } else {
         pushMixStep(steps,
-          mix`${stepIndex}. סיימנו! המנה היא ${quotient} בלי שארית.`
+          mix`${stepIndex}. Done! The quotient is ${quotient} with no remainder.`
         );
       }
     }
@@ -1651,15 +1651,15 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // תרגיל מילים – הסבר כללי
+  // Word problem – general explanation
   if (op === "word_problems") {
-    pushMixStep(steps, mix`1. קוראים את שאלת המילים לאט ומסמנים את הנתונים החשובים.`);
+    pushMixStep(steps, mix`1. Read the word problem slowly and mark the important information.`);
     pushMixStep(steps,
-      mix`2. מחליטים אם צריך לחבר, לחסר, לכפול או לחלק לפי הסיפור (האם הכמות גדלה, קטנה, חוזרת על עצמה או מתחלקת?).`);
+      mix`2. Decide whether to add, subtract, multiply, or divide based on the story (did the amount grow, shrink, repeat, or get shared?).`);
     pushMixStep(steps,
-      mix`3. כותבים תרגיל חשבוני שמתאים לסיפור, פותרים אותו ואז עונים במשפט מלא.`);
+      mix`3. Write a number sentence that matches the story, solve it, then answer in a full sentence.`);
     if (typeof answer === "number") {
-      pushMixStep(steps, mix`4. החישוב נותן לנו ${answer}, ולכן זו התשובה לשאלה.`);
+      pushMixStep(steps, mix`4. The calculation gives us ${answer}, so that is the answer to the question.`);
     }
 
     return {
@@ -1669,12 +1669,12 @@ export function buildStepExplanation(question) {
     };
   }
 
-  // כל השאר (שברים, אחוזים וכו') – הסבר כללי
+  // Everything else (fractions, percentages, etc.) – general explanation
   pushMixStep(steps,
-    mix`1. בודקים איזה סוג פעולה זו (חיבור, חיסור, כפל או חילוק) ומסדרים את המספרים בצורה נוחה על הדף.`);
-  pushMixStep(steps, mix`2. פותרים שלבאחר שלב, בלי לדלג, ומסמנים כל שלב בדרך.`);
+    mix`1. Check which kind of operation this is (add, subtract, multiply, or divide) and arrange the numbers clearly on the page.`);
+  pushMixStep(steps, mix`2. Solve step by step without skipping, and mark each step along the way.`);
   if (typeof answer === "number") {
-    pushMixStep(steps, mix`3. בסוף מקבלים את התוצאה ${answer}.`);
+    pushMixStep(steps, mix`3. In the end we get the result ${answer}.`);
   }
 
   return {

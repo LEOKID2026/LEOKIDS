@@ -419,22 +419,22 @@ export default function MleoBalloonsEngine({ autoStart = false, onSessionEnd }) 
     <div
       id="game-wrapper"
       className="relative isolate flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       {!showIntro && (
         <div className="relative flex min-h-0 w-full flex-1 flex-col px-1 pb-1 pt-1">
           <div className="pointer-events-none absolute left-1/2 top-2 z-[80] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-3 py-2 text-center text-[11px] font-bold leading-snug sm:text-sm">
-            <span className="text-amber-300">ניקוד: {score}</span>
+            <span className="text-amber-300">Score: {score}</span>
             {" · "}
-            <span>יעד: {pops}/{target}</span>
+            <span>Goal: {pops}/{target}</span>
             {" · "}
-            <span>רמה: {level}</span>
+            <span>Level: {level}</span>
             {" · "}
             <span>{"❤️".repeat(Math.max(0, lives)) || "-"}</span>
             {" · "}
-            <span>פספוסים: {misses}</span>
+            <span>Misses: {misses}</span>
             {" · "}
-            <span>{timeLeft} שנ׳</span>
+            <span>{timeLeft} sec</span>
           </div>
 
           <div
@@ -479,7 +479,7 @@ export default function MleoBalloonsEngine({ autoStart = false, onSessionEnd }) 
             {levelFlash ? (
               <div className="pointer-events-none absolute inset-0 z-30 flex items-start justify-center bg-black/35 pt-[20%]">
                 <span className="rounded-xl bg-yellow-400 px-5 py-2 text-xl font-extrabold text-black shadow-lg sm:text-2xl">
-                  רמה {level}!
+                  Level {level}!
                 </span>
               </div>
             ) : null}

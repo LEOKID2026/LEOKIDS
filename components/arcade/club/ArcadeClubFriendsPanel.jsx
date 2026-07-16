@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 
 function friendRequestFeedback(json) {
-  if (json?.ok) return "בקשת חברות נשלחה";
-  if (json?.code === "already_friends") return "אתם כבר חברים";
-  if (json?.code === "pending_exists") return "כבר נשלחה בקשת חברות";
-  if (json?.code === "self") return "לא ניתן להוסיף את עצמך";
-  if (json?.code === "not_found") return "שחקן לא נמצא";
-  return json?.message || json?.error || "שגיאה";
+  if (json?.ok) return "Friend request sent";
+  if (json?.code === "already_friends") return "You're already friends";
+  if (json?.code === "pending_exists") return "Friend request already pending";
+  if (json?.code === "self") return "You can't add yourself";
+  if (json?.code === "not_found") return "Player not found";
+  return json?.message || json?.error || "Error";
 }
 
 /** @param {{ gh: Record<string, string>, leoNumber?: string|null, leoNumberLoading?: boolean }} props */
@@ -65,11 +65,11 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
       });
       const json = await res.json().catch(() => ({}));
       if (json?.ok && accept) {
-        setMessage("החבר נוסף לרשימה!");
+        setMessage("Friend added!");
       } else if (json?.ok && !accept) {
-        setMessage("הבקשה נדחתה");
+        setMessage("Request declined");
       } else {
-        setMessage(json?.message || json?.error || "שגיאה");
+        setMessage(json?.message || json?.error || "Error");
       }
       await load();
     } finally {
@@ -102,7 +102,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
         window.location.href = `${base}?roomId=${encodeURIComponent(String(json.room.id))}`;
         return;
       }
-      setMessage(json.ok ? "הזמנה נשלחה" : json.message || json.error || "שגיאה");
+      setMessage(json.ok ? "Invite sent" : json.message || json.error || "Error");
     } finally {
       setBusy(false);
     }
@@ -139,7 +139,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
       setCopiedLeo(true);
       window.setTimeout(() => setCopiedLeo(false), 2000);
     } catch {
-      setMessage("לא הצלחנו להעתיק - נסו לסמן ולהעתיק ידנית");
+      setMessage("Couldn't copy — select and copy manually");
     }
   };
 
@@ -147,52 +147,52 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
 
   if (locked) {
     return (
-      <div className={`${gh.arcadePanelFriends || gh.card} p-4 text-right`} dir="rtl">
-        <p className={gh.arcadePanelBlurb || gh.cardBlurb}>חברים - נשלט דרך Admin. כרגע לא פתוח לאורחים.</p>
+      <div className={`${gh.arcadePanelFriends || gh.card} p-4 text-left`} dir="ltr">
+        <p className={gh.arcadePanelBlurb || gh.cardBlurb}>Friends — controlled via Admin. Not open to guests yet.</p>
       </div>
     );
   }
 
   return (
-    <div className={`${gh.arcadePanelFriends || gh.card} space-y-4`} dir="rtl">
-      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>חברים</h3>
+    <div className={`${gh.arcadePanelFriends || gh.card} space-y-4`} dir="ltr">
+      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>Friends</h3>
 
-      <div className={`space-y-2 p-3 text-right ${gh.arcadeRoomItem || gh.roomItem}`}>
-        <p className={`text-sm font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>מספר ליאו שלי</p>
+      <div className={`space-y-2 p-3 text-left ${gh.arcadeRoomItem || gh.roomItem}`}>
+        <p className={`text-sm font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>My Leo number</p>
         <p className={`text-xs leading-relaxed ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-          זה המספר שאתה נותן לחבר - הוא יכול להקליד אותו למטה כדי לשלוח לך בקשת חברות.
+          This is the number you give a friend — they can type it below to send you a friend request.
         </p>
         {leoNumberLoading ? (
-          <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>מכינים לך מספר ליאו...</p>
+          <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Setting up your Leo number…</p>
         ) : leoDisplay ? (
-          <div className="flex flex-wrap items-center justify-end gap-2">
+          <div className="flex flex-wrap items-center justify-start gap-2">
             <span className="font-mono text-lg font-bold tracking-wide text-indigo-800">{leoDisplay}</span>
             <button type="button" onClick={() => void copyLeoNumber()} className={gh.btnJoinCode}>
-              {copiedLeo ? "הועתק!" : "העתק"}
+              {copiedLeo ? "Copied!" : "Copy"}
             </button>
           </div>
         ) : (
           <p className={`text-xs ${gh.arcadeEmptyText || gh.emptyText}`}>
-            לא הצלחנו להציג מספר ליאו - נסו לרענן את הדף.
+            Couldn't show your Leo number — try refreshing the page.
           </p>
         )}
       </div>
 
-      <div className={`space-y-2 p-3 text-right ${gh.arcadeRoomItem || gh.roomItem}`}>
-        <p className={`text-sm font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>הוסף חבר</p>
+      <div className={`space-y-2 p-3 text-left ${gh.arcadeRoomItem || gh.roomItem}`}>
+        <p className={`text-sm font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>Add friend</p>
         <p className={`text-xs leading-relaxed ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-          הקלד מספר ליאו או שם תצוגה - תישלח בקשת חברות, והחבר יצטרך לאשר.
+          Enter a Leo number or display name — a friend request will be sent for them to approve.
         </p>
-        <div className="flex flex-wrap gap-2 justify-end">
+        <div className="flex flex-wrap gap-2 justify-start">
           <input
             className={gh.input}
-            placeholder="מספר ליאו (8 ספרות) או שם תצוגה"
+            placeholder="Leo number (8 digits) or display name"
             maxLength={32}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="button" disabled={busy} onClick={() => void sendRequest()} className={gh.btnJoinCode}>
-            הוסף חבר
+            Add friend
           </button>
         </div>
       </div>
@@ -200,11 +200,11 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
       {message ? <p className={`text-sm ${gh.userMessage}`}>{message}</p> : null}
 
       <div className="space-y-3">
-        <p className={`text-sm font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>בקשות וחברים</p>
+        <p className={`text-sm font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>Requests & friends</p>
 
         {pending.length ? (
           <div className="space-y-2">
-            <p className={`text-sm font-semibold ${gh.arcadePanelTitle || gh.cardTitle}`}>בקשות חברות</p>
+            <p className={`text-sm font-semibold ${gh.arcadePanelTitle || gh.cardTitle}`}>Friend requests</p>
             <ul className="space-y-2">
               {pending.map((p) => (
                 <li
@@ -226,7 +226,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                       onClick={() => void respond(p.requestId, true)}
                       className={gh.btnJoinRoom}
                     >
-                      אשר
+                      Approve
                     </button>
                     <button
                       type="button"
@@ -234,7 +234,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                       onClick={() => void respond(p.requestId, false)}
                       className={gh.btnSecondaryOutline}
                     >
-                      דחה
+                      Decline
                     </button>
                   </div>
                 </li>
@@ -244,7 +244,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
         ) : null}
 
         <div className="space-y-2">
-          <p className={`text-sm font-semibold ${gh.arcadePanelTitle || gh.cardTitle}`}>החברים שלי</p>
+          <p className={`text-sm font-semibold ${gh.arcadePanelTitle || gh.cardTitle}`}>My friends</p>
           <ul className="space-y-2">
             {friends.map((f) => (
               <li
@@ -252,11 +252,11 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                 className={`flex flex-wrap items-center justify-between gap-2 ${gh.arcadeRoomItem || gh.roomItem}`}
               >
                 <span>
-                  {f.displayName} {f.online ? "● מחובר" : "○ לא מחובר"}
+                  {f.displayName} {f.online ? "● Online" : "○ Offline"}
                 </span>
                 {confirmRemoveId === f.studentId ? (
                   <div className="flex flex-col items-end gap-1">
-                    <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>להסיר את החבר מהרשימה?</p>
+                    <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Remove this friend from your list?</p>
                     <div className="flex gap-2">
                       <button
                         type="button"
@@ -264,7 +264,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                         onClick={() => setConfirmRemoveId(null)}
                         className={gh.btnSecondaryOutline}
                       >
-                        בטל
+                        Cancel
                       </button>
                       <button
                         type="button"
@@ -272,7 +272,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                         onClick={() => void removeFriend(f.studentId)}
                         className={gh.btnSecondaryOutline}
                       >
-                        מחק
+                        Delete
                       </button>
                     </div>
                   </div>
@@ -284,7 +284,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                       onClick={() => void inviteFriend(f.studentId)}
                       className={gh.btnJoinRoom}
                     >
-                      הזמן
+                      Invite
                     </button>
                     <button
                       type="button"
@@ -292,13 +292,13 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
                       onClick={() => setConfirmRemoveId(f.studentId)}
                       className={gh.btnSecondaryOutline}
                     >
-                      מחק חבר
+                      Remove friend
                     </button>
                   </div>
                 )}
               </li>
             ))}
-            {!friends.length ? <li className={gh.arcadeEmptyText || gh.emptyText}>אין חברים עדיין</li> : null}
+            {!friends.length ? <li className={gh.arcadeEmptyText || gh.emptyText}>No friends yet</li> : null}
           </ul>
         </div>
       </div>

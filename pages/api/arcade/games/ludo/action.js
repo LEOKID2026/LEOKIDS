@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   const pieceIndex = body.pieceIndex;
 
   if (!roomId || !action) {
-    return res.status(400).json({ ok: false, error: "בקשה לא תקינה", code: "invalid_action" });
+    return res.status(400).json({ ok: false, error: "Invalid request", code: "invalid_action" });
   }
 
   try {
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       const status = typeof e.status === "number" ? e.status : 400;
       return res.status(status).json({
         ok: false,
-        error: e.message || "שגיאה",
+        error: e.message || "Error",
         code: e.code || "error",
         revision: e.revision,
       });
@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     const snap = await getArcadeRoomSnapshot(auth.supabase, auth.studentId, roomId);
 
     if (snap.error) {
-      return res.status(500).json({ ok: false, error: snap.error.message || "שגיאה", code: snap.error.code });
+      return res.status(500).json({ ok: false, error: snap.error.message || "Error", code: snap.error.code });
     }
 
     return res.status(200).json({
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
     return res.status(500).json({
       ok: false,
       code: "server_error",
-      error: "שגיאת שרת בלודו",
+      error: "Ludo server error",
     });
   }
 }

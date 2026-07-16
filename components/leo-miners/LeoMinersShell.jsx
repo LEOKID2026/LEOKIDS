@@ -11,7 +11,7 @@ import { createLeoMinersEconomyClient } from "../../lib/leo-miners/leo-miners-ec
 
 import { getDefaultGameplayTuning } from "../../lib/leo-miners/leo-miners-gameplay-config.client.js";
 
-import { LEO_MINERS_DB_NOT_READY_MESSAGE_HE, LEO_MINERS_ERROR_CODES, LEO_MINERS_GAME_KEY } from "../../lib/leo-miners/leo-miners-constants.js";
+import { LEO_MINERS_ERROR_CODES, LEO_MINERS_GAME_KEY } from "../../lib/leo-miners/leo-miners-constants.js";
 
 
 
@@ -109,17 +109,20 @@ export default function LeoMinersShell({ skipAccessGuard = false }) {
 
         if (code === LEO_MINERS_ERROR_CODES.miners_db_not_ready) {
 
-          setStatusMessage(message || LEO_MINERS_DB_NOT_READY_MESSAGE_HE);
+          setStatusMessage(
+            message ||
+              "Leo Miners tables are not set up yet — run migration 095_leo_miners_foundation.sql"
+          );
 
         } else if (!ready) {
 
-          setStatusMessage(message || "שגיאת שרת - נסו לרענן את הדף.");
+          setStatusMessage(message || "Server error — try refreshing the page.");
 
         } else if (!gameOn) {
 
           setStatusMessage(
 
-            "המשחק כבוי כרגע - אפשר לשחק מקומית. להפעלה מלאה: לוח הבקרה → ליאו הכורה."
+            "The game is currently off — you can still play locally. For full play: Admin → Leo the Miner."
 
           );
 
@@ -157,7 +160,7 @@ export default function LeoMinersShell({ skipAccessGuard = false }) {
 
       .catch(() => {
 
-        setStatusMessage("שגיאת רשת - נסו לרענן את הדף.");
+        setStatusMessage("Network error — try refreshing the page.");
 
         setGameplayConfig(getDefaultGameplayTuning());
 
@@ -193,16 +196,16 @@ export default function LeoMinersShell({ skipAccessGuard = false }) {
 
       <Head>
 
-        <title>ליאו הכורה - משחקי ליאו</title>
+        <title>Leo the Miner - Leo Games</title>
 
         <meta name="robots" content="noindex,nofollow" />
 
       </Head>
 
       {!configHydrated ? (
-        <div className="relative py-8 text-center" dir="rtl">
+        <div className="relative py-8 text-center" dir="ltr">
           <GameAudioSettingsButton className="absolute left-4 top-4 z-20 sm:left-6 sm:top-6" />
-          <p className="text-white/70 text-sm">טוען הגדרות משחק…</p>
+          <p className="text-white/70 text-sm">Loading game settings…</p>
         </div>
       ) : (
 

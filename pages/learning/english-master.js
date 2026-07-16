@@ -3729,14 +3729,14 @@ export default function EnglishMaster() {
                     <div className={`mb-3 ${learningQuestionBox}`}>
                       <p
                         className={`${learningQuestionText} text-center`}
-                        style={{ direction: "rtl", unicodeBidi: "plaintext" }}
+                        style={{ direction: "ltr", unicodeBidi: "plaintext" }}
                       >
                         {explanationQuestion.stem || explanationQuestion.question}
                       </p>
                     </div>
                     <div
                       className="space-y-2"
-                      style={{ direction: "rtl", unicodeBidi: "plaintext" }}
+                      style={{ direction: "ltr", unicodeBidi: "plaintext" }}
                     >
                       {ms.getEnglishSolutionSteps(
                         explanationQuestion,

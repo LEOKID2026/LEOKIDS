@@ -181,21 +181,21 @@ export default function ConnectColorsPrototype() {
 
   return (
     <DevPrototypeShell
-      title="חיבור צבעים"
-      subtitle="אבטיפוס · חברו זוגות בלי התנגשות"
+      title="Connect Colors"
+      subtitle="Prototype · connect pairs without crossing"
       headerExtra={
         <button
           type="button"
           onClick={resetAll}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
         >
-          נקה
+          Clear
         </button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-3 overflow-auto p-3 sm:p-4">
         <p className="text-center text-xs font-semibold text-violet-200 sm:text-sm">
-          גררו מנקודה לנקודה · {completed}/{PAIRS.length} זוגות מחוברים
+          Drag from point to point · {completed}/{PAIRS.length} pairs connected
         </p>
 
         <div
@@ -293,7 +293,7 @@ export default function ConnectColorsPrototype() {
           {PAIRS.map((p) => (
             <span key={p.id} className="inline-flex items-center gap-1.5 rounded-lg bg-black/40 px-2 py-1">
               <span className="inline-block h-3 w-3 rounded-full" style={{ backgroundColor: p.color }} />
-              {p.id === "red" ? "אדום" : p.id === "blue" ? "כחול" : "ירוק"}
+              {p.id === "red" ? "Red" : p.id === "blue" ? "Blue" : "Green"}
             </span>
           ))}
         </div>

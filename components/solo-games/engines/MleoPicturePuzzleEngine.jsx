@@ -355,7 +355,7 @@ export default function MleoPicturePuzzleEngine({
 
     if (!canMoveTile(tiles, index, gridSize)) {
       sfx.playWarning();
-      setBlockedMsg("אי אפשר להזיז את האריח הזה");
+      setBlockedMsg("You can't move that tile");
       window.setTimeout(() => setBlockedMsg(""), 1200);
       return;
     }
@@ -464,13 +464,13 @@ export default function MleoPicturePuzzleEngine({
       id="game-wrapper"
       className={showPicker ? SG.preGameWrap : playWrap}
       style={showPicker ? pageBgStyle : undefined}
-      dir="rtl"
+      dir="ltr"
     >
       {showPicker ? (
         <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden px-1 py-0.5 sm:px-2 sm:py-1">
           <div className="shrink-0 py-0.5 text-center leading-tight">
-            <h2 className={SG.preGameTitle}>בחרו תמונה לפאזל</h2>
-            <p className={SG.preGameSub}>לחצו על תמונה ובחרו</p>
+            <h2 className={SG.preGameTitle}>Choose a puzzle picture</h2>
+            <p className={SG.preGameSub}>Tap a picture to select it</p>
           </div>
 
           <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden py-1">
@@ -486,7 +486,7 @@ export default function MleoPicturePuzzleEngine({
                       selected ? SG.preGameImageBorderSelected : SG.preGameImageBorderDefault
                     }`}
                     style={{ touchAction: "manipulation" }}
-                    aria-label={`${img.label}${selected ? " - נבחרה" : ""}`}
+                    aria-label={`${img.label}${selected ? " — selected" : ""}`}
                   >
                     <img
                       src={img.src}
@@ -509,13 +509,13 @@ export default function MleoPicturePuzzleEngine({
               className="fixed inset-0 z-[100] flex items-center justify-center bg-black/88 p-3"
               role="dialog"
               aria-modal="true"
-              aria-label={`תצוגת ${previewImage.label}`}
+              aria-label={`Preview of ${previewImage.label}`}
               onClick={closePreview}
             >
               <div
                 className="flex w-full max-w-2xl flex-col items-center gap-3 sm:max-w-3xl"
                 onClick={(event) => event.stopPropagation()}
-                dir="rtl"
+                dir="ltr"
               >
                 <div className="flex w-full items-center justify-center gap-1 sm:gap-2">
                   <button
@@ -523,7 +523,7 @@ export default function MleoPicturePuzzleEngine({
                     onClick={goPreviewPrev}
                     disabled={!canPreviewPrev}
                     className={PREVIEW_NAV_BTN_CLASS}
-                    aria-label="תמונה קודמת"
+                    aria-label="Previous picture"
                   >
                     ‹
                   </button>
@@ -547,7 +547,7 @@ export default function MleoPicturePuzzleEngine({
                     onClick={goPreviewNext}
                     disabled={!canPreviewNext}
                     className={PREVIEW_NAV_BTN_CLASS}
-                    aria-label="תמונה הבאה"
+                    aria-label="Next picture"
                   >
                     ›
                   </button>
@@ -560,7 +560,7 @@ export default function MleoPicturePuzzleEngine({
                     className="min-h-[44px] flex-1 rounded-xl bg-yellow-400 px-3 py-2 text-sm font-bold text-black"
                     style={{ touchAction: "manipulation" }}
                   >
-                    בחר תמונה
+                    Select picture
                   </button>
                   <button
                     type="button"
@@ -568,7 +568,7 @@ export default function MleoPicturePuzzleEngine({
                     className="min-h-[44px] flex-1 rounded-xl border-2 border-white/40 bg-black/50 px-3 py-2 text-sm font-bold text-white"
                     style={{ touchAction: "manipulation" }}
                   >
-                    סגור
+                    Close
                   </button>
                 </div>
               </div>
@@ -626,7 +626,7 @@ export default function MleoPicturePuzzleEngine({
       ) : null}
       <SoloGamePortraitRecommendationModal
         show={showPortraitPrompt}
-        subtitle="הלוח והמגש יוצגו בצורה נוחה יותר."
+        subtitle="The board and tray will display more comfortably."
         onDismissRotate={() => {
           dismissPortraitPrompt(false);
           enterFromUserGesture();

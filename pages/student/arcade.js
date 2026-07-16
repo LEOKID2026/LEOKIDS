@@ -27,11 +27,11 @@ import {
   ARCADE_TILE_BADGE_ACTIVE,
   ARCADE_TILE_BADGE_INACTIVE,
 } from "../../components/arcade/club/arcadeGameTileThemes.js";
-import { displayArcadeGameTitle } from "../../components/arcade/club/arcadeGameTitles.he.js";
+import { displayArcadeGameTitle } from "../../components/arcade/club/arcadeGameTitles.js";
 
 const POLL_MS = 5000;
 
-/** חדרים ציבוריים לריענון רשימה */
+/** Public rooms for list refresh */
 const OPEN_ROOM_POLL_KEYS = [
   "fourline",
   "ludo",
@@ -113,7 +113,7 @@ function EntryCostSelector({
   entryBtnSelected,
   entryBtnDefault,
   entryBtnDisabled,
-  label = "עלות כניסה",
+  label = "Entry cost",
 }) {
   return (
     <div className={className}>
@@ -167,20 +167,20 @@ function ArcadeGameActionPanel({
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div className="text-right">
           <p className={actionTitle}>
-            משחק נבחר: <span className="font-bold">{selectedTitle || "-"}</span>
+            Selected game: <span className="font-bold">{selectedTitle || "-"}</span>
           </p>
-          <p className={`mt-0.5 ${actionMeta}`}>סכום כניסה: {entryCostLabel} מטבעות</p>
+          <p className={`mt-0.5 ${actionMeta}`}>Entry amount: {entryCostLabel} coins</p>
         </div>
       </div>
       <div className="mt-2 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap">
         <button
           type="button"
           disabled={busy || !canAct || costBlocked}
-          title={costBlocked ? costBlockedMessage : !canAct ? "בחרו משחק פעיל" : undefined}
+          title={costBlocked ? costBlockedMessage : !canAct ? "Pick an available game" : undefined}
           onClick={onQuickGame}
           className={`w-full sm:flex-1 ${cardCta} py-2 text-sm disabled:cursor-not-allowed disabled:opacity-45`}
         >
-          משחק מהיר
+          Quick match
         </button>
         <button
           type="button"
@@ -188,7 +188,7 @@ function ArcadeGameActionPanel({
           onClick={onCreatePublic}
           className={`w-full sm:w-auto sm:min-w-[7.5rem] ${btnSecondary} py-2 text-xs`}
         >
-          צור חדר ציבורי
+          Create public room
         </button>
         <button
           type="button"
@@ -196,7 +196,7 @@ function ArcadeGameActionPanel({
           onClick={onCreatePrivate}
           className={`w-full sm:w-auto sm:min-w-[7.5rem] ${btnSecondaryOutline} py-2 text-xs`}
         >
-          צור חדר פרטי
+          Create private room
         </button>
       </div>
     </div>
@@ -230,8 +230,8 @@ function ArcadeGameCard({
   const statusLabel = guestLocked
     ? GUEST_GAME_LOCK_LABEL_HE
     : active
-      ? "פעיל"
-      : "לא זמין";
+      ? "Active"
+      : "Unavailable";
 
   const shellClasses = selected
     ? tile.selected
@@ -288,7 +288,7 @@ function ArcadeGameCard({
           </p>
         ) : null}
         {openRoomCount > 0 ? (
-          <p className={`truncate text-xs leading-tight ${tile.meta}`}>חדרים פתוחים: {openRoomCount}</p>
+          <p className={`truncate text-xs leading-tight ${tile.meta}`}>Open rooms: {openRoomCount}</p>
         ) : null}
         {idleReason && !active ? (
           <p
@@ -315,7 +315,7 @@ function ArcadeGameCard({
             selected ? tile.btnSelected : tile.btn
           }`}
         >
-          {selected ? "נבחר" : "בחר"}
+          {selected ? "Selected" : "Select"}
         </button>
       ) : (
         <span className="mt-auto block h-[22px] shrink-0" aria-hidden="true" />
@@ -437,13 +437,13 @@ export default function StudentArcadePage() {
       const guestLocked = Boolean(meta?.guestLocked);
       const active = Boolean(meta?.enabled === true && meta?.foundationOnly === false);
       const idleReasonRow = !meta
-        ? "טוען משחקים…"
+        ? "Loading games…"
         : guestLocked
           ? null
         : !meta.enabled
-          ? "המשחק כבוי בשרת"
+          ? "Game disabled on server"
           : meta.foundationOnly
-            ? "עדיין לא פעיל (ממתין להפעלה)"
+            ? "Not active yet (waiting to enable)"
             : null;
       return { ...row, active, guestLocked, idleReason: idleReasonRow };
     });
@@ -585,7 +585,7 @@ export default function StudentArcadePage() {
       (async () => {
         const code = String(joinCode || "").trim();
         if (!code) {
-          setUserMessage("הזן קוד חדר");
+          setUserMessage("Enter a room code");
           return { ok: false, payload: {}, status: 400 };
         }
         const res = await fetch("/api/arcade/rooms/join-by-code", {
@@ -605,22 +605,22 @@ export default function StudentArcadePage() {
   const balanceNum = balance !== null && balance !== undefined ? Number(balance) : null;
   const costDisabledReason = (cost) => {
     if (balanceNum === null || Number.isNaN(balanceNum)) return null;
-    if (balanceNum < cost) return "אין מספיק מטבעות";
+    if (balanceNum < cost) return "Not enough coins";
     return null;
   };
 
   const balanceDisplay =
     balance === null || balance === undefined
       ? initialSyncDone
-        ? "לא זמין"
-        : "טוען…"
+        ? "Unavailable"
+        : "Loading…"
       : String(balance);
 
   const diamondDisplay =
     diamondBalance === null || diamondBalance === undefined
       ? initialSyncDone
-        ? "לא זמין"
-        : "טוען…"
+        ? "Unavailable"
+        : "Loading…"
       : String(diamondBalance);
 
   const hlRoom = roomHighlight?.room;
@@ -638,7 +638,7 @@ export default function StudentArcadePage() {
   const hlPlayHref = playHrefForArcadeRoom(hlGameKey, hlRoomId);
 
   const waitingCopy =
-    hlStatus === "waiting" ? "ממתין לשחקן נוסף" : hlStatus === "active" ? "המשחק פעיל" : hlStatus;
+    hlStatus === "waiting" ? "Waiting for another player" : hlStatus === "active" ? "Game in progress" : hlStatus;
 
   const entryCostLabel =
     entryOptions.find((o) => o.value === entryCost)?.label || String(entryCost);
@@ -672,7 +672,7 @@ export default function StudentArcadePage() {
           />
 
           <ArcadeLobbyHeader
-            displayName={clubProfile?.displayName || "שחקן"}
+            displayName={clubProfile?.displayName || "Player"}
             coinBalance={balanceDisplay}
             diamondBalance={diamondDisplay}
             isGuest={Boolean(clubProfile?.isGuest)}
@@ -725,11 +725,11 @@ export default function StudentArcadePage() {
             <div className="space-y-4">
               <ArcadeClubProfilePanel gh={GH} />
               <ArcadeClubMissionsPanel gh={GH} />
-              <div className={`${GH.arcadePanelMyRoom || GH.card} text-right`}>
-                <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>חדר אישי</h3>
-                <p className={`mt-1 text-sm ${GH.arcadePanelBlurb || GH.cardBlurb}`}>מרחב אישי עם גביעים וקישוטים</p>
+              <div className={`${GH.arcadePanelMyRoom || GH.card} text-left`}>
+                <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Personal room</h3>
+                <p className={`mt-1 text-sm ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Your space with trophies and decorations</p>
                 <Link href="/student/arcade/my-room" className={`mt-3 inline-block ${GH.btnJoinCode}`}>
-                  לחדר שלי
+                  My room
                 </Link>
               </div>
             </div>
@@ -798,12 +798,12 @@ export default function StudentArcadePage() {
 
               <div className="mt-5 grid gap-3 lg:mt-6 lg:grid-cols-3 lg:gap-4">
                 <div className={`${GH.arcadePanelOpenRooms || GH.card} lg:col-span-2`}>
-                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>חדרים פתוחים</h3>
-                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>חדרים ציבוריים ומשחק מהיר שמחכים לשחקן</p>
+                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Open rooms</h3>
+                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Public rooms and quick matches waiting for a player</p>
                   {!openRoomsPollActive ? (
-                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>אין רשימה - המשחק לא פעיל</p>
+                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>No list — game isn't active</p>
                   ) : openRooms.length === 0 ? (
-                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>אין חדרים פתוחים כרגע</p>
+                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>No open rooms right now</p>
                   ) : (
                     <ul className="mt-3 max-h-64 space-y-2 overflow-y-auto pr-0.5 sm:max-h-72">
                       {openRooms.map((row) => {
@@ -821,18 +821,18 @@ export default function StudentArcadePage() {
                                 {displayArcadeGameTitle(row.gameKey, row.gameTitle)}
                               </p>
                               <p>
-                                עלות {costLabel} · {row.playerCount}/{row.maxPlayers} שחקנים ·{" "}
+                                Cost {costLabel} · {row.playerCount}/{row.maxPlayers} players ·{" "}
                                 {roomTypeLabel(row.roomType, t)} · waiting
                               </p>
                             </div>
                             <button
                               type="button"
                               disabled={busy || full || Boolean(costDisabledReason(row.entryCost))}
-                              title={full ? "החדר מלא" : costDisabledReason(row.entryCost) || undefined}
+                              title={full ? "Room is full" : costDisabledReason(row.entryCost) || undefined}
                               onClick={() => void onJoinPublicRoom(row.roomId)}
                               className={`shrink-0 ${GH.btnJoinRoom}`}
                             >
-                              הצטרף
+                              Join
                             </button>
                           </li>
                         );
@@ -842,13 +842,13 @@ export default function StudentArcadePage() {
                 </div>
 
                 <div className={GH.arcadePanelJoinCode || GH.card}>
-                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>חדר פרטי - הצטרפות בקוד</h3>
-                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>הזן את הקוד שקיבלת מחבר</p>
+                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Private room — join with code</h3>
+                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Enter the code you got from a friend</p>
                   <div className="mt-3 flex flex-col gap-2">
                     <input
                       type="text"
                       autoComplete="off"
-                      placeholder="קוד החדר"
+                      placeholder="Room code"
                       value={joinCode}
                       onChange={(e) => setJoinCode(e.target.value)}
                       className={GH.input}
@@ -859,7 +859,7 @@ export default function StudentArcadePage() {
                       onClick={() => void onJoinByCodeSubmit()}
                       className={GH.btnJoinCode}
                     >
-                      הצטרף לפי קוד
+                      Join with code
                     </button>
                   </div>
                 </div>
@@ -869,18 +869,18 @@ export default function StudentArcadePage() {
 
           {activeTab === "games" && roomHighlight && hlRoomId ? (
             <div className={`mt-5 ${GH.roomReadyPanel}`}>
-              <h3 className={GH.roomReadyTitle}>חדר מוכן</h3>
+              <h3 className={GH.roomReadyTitle}>Room ready</h3>
               <p className={`mt-1 ${GH.roomReadySub}`}>{waitingCopy}</p>
               <dl className={`mt-3 space-y-2 ${GH.roomReadyDl}`}>
                 <div className={`flex justify-between gap-2 border-b pb-2 ${GH.roomReadyDlBorder}`}>
-                  <dt className="font-semibold">עלות כניסה</dt>
+                  <dt className="font-semibold">Entry cost</dt>
                   <dd className="font-mono">{hlEntry}</dd>
                 </div>
                 {hlPrivate && hlJoinCode ? (
                   <div className={GH.roomReadyCodeBox}>
-                    <p className={GH.roomReadyCodeLabel}>קוד חדר</p>
+                    <p className={GH.roomReadyCodeLabel}>Room code</p>
                     <p className={`mt-1 ${GH.roomReadyCodeValue}`}>{hlJoinCode}</p>
-                    <p className={`mt-1.5 ${GH.roomReadyCodeHint}`}>שלח את הקוד לחבר כדי שיצטרף</p>
+                    <p className={`mt-1.5 ${GH.roomReadyCodeHint}`}>Send the code to a friend so they can join</p>
                   </div>
                 ) : null}
               </dl>
@@ -888,7 +888,7 @@ export default function StudentArcadePage() {
                 href={hlPlayHref}
                 className="mt-4 flex w-full items-center justify-center rounded-lg bg-emerald-600 px-3 py-2.5 text-center text-sm font-bold text-white shadow-md transition hover:bg-emerald-500 sm:text-base"
               >
-                כניסה למשחק
+                Enter game
               </Link>
             </div>
           ) : null}

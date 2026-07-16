@@ -3,5 +3,5 @@
  * Intentional dark game shell — not a full-page site loader.
  */
 export default function ArcadeRouteHoldShell() {
-  return <div className="min-h-screen bg-zinc-950" dir="rtl" aria-busy="true" />;
+  return <div className="min-h-screen bg-zinc-950" dir="ltr" aria-busy="true" />;
 }

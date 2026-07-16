@@ -46,13 +46,13 @@ function clip(s, max) {
   return t.slice(0, max).trim();
 }
 
-/** Child-friendly Hebrew instruction (no בחר/י slash forms). */
+/** Child-friendly English instruction (normalize legacy Hebrew slash forms if present). */
 export function normalizePhonicsHebrewInstruction(text) {
   return String(text || "")
-    .replace(/בחר\/י/gu, "בחרו")
-    .replace(/שמע\/י/gu, "שמעו")
-    .replace(/קרא\/י/gu, "קראו")
-    .replace(/האזינ\/י/gu, "האזינו")
+    .replace(/בחר\/י/gu, "Choose")
+    .replace(/שמע\/י/gu, "Listen")
+    .replace(/קרא\/י/gu, "Read")
+    .replace(/האזינ\/י/gu, "Listen")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -155,7 +155,7 @@ export function buildPhonicsPracticeTtsSegments(p) {
   const segments = [];
 
   if (instruction) {
-    segments.push({ locale: "he-IL", text: instruction });
+    segments.push({ locale: "en-US", text: instruction });
   }
 
   const target = buildPhonicsEnglishTargetSpeech(stimulus, itemType);
@@ -172,7 +172,7 @@ export function buildPhonicsPracticeTtsSegments(p) {
   if (p.includeOptions !== false) {
     const opts = buildPhonicsOptionsSpeech(p.answers, itemType);
     if (opts) {
-      segments.push({ locale: "he-IL", text: "אפשרויות:" });
+      segments.push({ locale: "en-US", text: "Options:" });
       segments.push({ locale: "en-US", text: opts });
     }
   }
@@ -281,22 +281,20 @@ export function attachEnglishVocabPracticeAudio(question, ctx) {
   const segments = [];
 
   if (direction === "en_to_he") {
-    // Q: "מה פירוש המילה 'dog'?" → say English word; answers are Hebrew
-    segments.push({ locale: "he-IL", text: "מה פירוש המילה" });
+    segments.push({ locale: "en-US", text: "What is the meaning of the word" });
     segments.push({ locale: "en-US", text: word });
     const heAnswers = question.answers.slice(0, 4).map(String).filter(Boolean);
     if (heAnswers.length > 0) {
-      segments.push({ locale: "he-IL", text: "אפשרויות: " + heAnswers.join(", ") });
+      segments.push({ locale: "en-US", text: "Options: " + heAnswers.join(", ") });
     }
   } else {
-    // direction === "he_to_en": Q: 'כתוב את המילה "כלב" באנגלית' → answers are English
     segments.push({
-      locale: "he-IL",
-      text: `כתוב את המילה ${word} באנגלית`,
+      locale: "en-US",
+      text: `Write the word ${word} in English`,
     });
     const enAnswers = question.answers.slice(0, 4).map(String).filter(Boolean);
     if (enAnswers.length > 0) {
-      segments.push({ locale: "he-IL", text: "אפשרויות:" });
+      segments.push({ locale: "en-US", text: "Options:" });
       segments.push({ locale: "en-US", text: enAnswers.join(", ") });
     }
   }
@@ -316,7 +314,7 @@ export function attachEnglishVocabPracticeAudio(question, ctx) {
     schema_version: 1,
     audio_asset_id: `en.vocab.${g}.${listKey}.${word.replace(/\s+/g, "_")}`,
     transcript,
-    locale: direction === "en_to_he" ? "en-US" : "he-IL",
+    locale: "en-US",
     task_mode: "listen_and_choose",
     recording_required: false,
     playback_kind: "tts",

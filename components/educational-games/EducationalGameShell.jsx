@@ -112,8 +112,8 @@ export default function EducationalGameShell({ gameKey }) {
 
   if (!game || !Engine) {
     return (
-      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="rtl">
-        <p>משחק לא נמצא</p>
+      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
+        <p>Game not found</p>
       </div>
     );
   }
@@ -122,7 +122,7 @@ export default function EducationalGameShell({ gameKey }) {
     <GameAccessGuard gameKey={gameKey}>
       <>
         <Head>
-          <title>{game.titleHe} - משחקים חינוכיים</title>
+          <title>{game.titleHe} - Educational Games</title>
         </Head>
         <div
           className={
@@ -133,7 +133,7 @@ export default function EducationalGameShell({ gameKey }) {
                 : PLAY_SHELL
           }
           style={themedShell && !warmShopPlay ? pageBgStyle : undefined}
-          dir="rtl"
+          dir="ltr"
           data-educational-game-shell=""
         >
           {!warmShopPlay ? (
@@ -152,7 +152,7 @@ export default function EducationalGameShell({ gameKey }) {
                   : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300"
               }
             >
-              חזרה
+              Back
             </Link>
             <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>{game.titleHe}</h1>
             <Link
@@ -163,7 +163,7 @@ export default function EducationalGameShell({ gameKey }) {
                   : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300"
               }
             >
-              בית
+              Home
             </Link>
           </header>
           ) : null}
@@ -206,7 +206,7 @@ export default function EducationalGameShell({ gameKey }) {
                 subtitleHe={finishData.subtitleHe}
                 statsLines={finishData.statsLines}
                 gamesHubHref="/student/educational-games"
-                gamesHubLabel="חזרה למשחקים החינוכיים"
+                gamesHubLabel="Back to educational games"
               />
             ) : null}
           </main>

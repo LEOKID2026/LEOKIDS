@@ -34,13 +34,13 @@ export default function StudentRewardCard({
     <>
       <article
         data-testid="student-reward-card"
-        className={`rounded-xl border shadow-sm p-2.5 sm:p-3 flex flex-col h-full min-h-[240px] text-right overflow-hidden min-w-0 ${T.subjectCard}`}
+        className={`rounded-xl border shadow-sm p-2.5 sm:p-3 flex flex-col h-full min-h-[240px] text-left overflow-hidden min-w-0 ${T.subjectCard}`}
       >
         <button
           type="button"
           className="relative aspect-[2/3] w-full shrink-0 mb-2 p-0 border-0 bg-transparent cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70"
           onClick={openPreview}
-          aria-label={`הגדלת תמונת הקלף ${card.nameHe || ""}`.trim()}
+          aria-label={`Enlarge card image ${card.nameHe || ""}`.trim()}
         >
           <RewardCardImage
             src={card.imageThumbUrl || card.imageUrl || "/rewards/cards/placeholders/regular/default.svg"}
@@ -64,7 +64,7 @@ export default function StudentRewardCard({
           ) : null}
           {card.duplicateCount > 0 ? (
             <p className="text-xs text-amber-700 dark:text-amber-300">
-              כפילויות: {card.duplicateCount}
+              Duplicates: {card.duplicateCount}
             </p>
           ) : null}
           {footer ? <div className="mt-auto pt-2 flex flex-col gap-2 min-w-0">{footer}</div> : null}
@@ -121,7 +121,7 @@ function VirtualizedSeriesThumb({ card, index, imageSrc, onOpen, keepMounted }) 
           className="relative w-full h-full p-0 border-0 bg-transparent cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70"
           onClick={() => onOpen(index)}
           aria-label={
-            card.owned ? `הגדלת תמונת הקלף ${card.nameHe}` : `${card.nameHe} - נעול`
+            card.owned ? `Enlarge card image ${card.nameHe}` : `${card.nameHe} — locked`
           }
         >
           <RewardCardImage
@@ -155,26 +155,26 @@ export function StudentSeriesProgressCard({ series, T, studentFullName = "" }) {
   return (
     <>
       <article
-        className={`rounded-xl border shadow-sm p-3 sm:p-4 flex flex-col min-h-[120px] text-right min-w-0 overflow-hidden ${T.subjectCard}`}
+        className={`rounded-xl border shadow-sm p-3 sm:p-4 flex flex-col min-h-[120px] text-left min-w-0 overflow-hidden ${T.subjectCard}`}
       >
         <div className="flex justify-between items-start gap-2 mb-2 min-w-0">
           <span className={`font-bold text-sm sm:text-base leading-snug min-w-0 ${T.subjectTitle}`}>
             {series.nameHe}
           </span>
           <span className={`text-xs sm:text-sm tabular-nums shrink-0 ${T.tileSub}`}>
-            {series.ownedCount} מתוך {series.totalCount}
+            {series.ownedCount} of {series.totalCount}
           </span>
         </div>
         <div className={`${T.progressTrack} w-full`}>
           <div className={T.progressFill} style={{ width: `${pct}%` }} />
         </div>
-        <p className={`text-xs mt-2 ${T.tileSub}`}>{pct}% מהסדרה</p>
+        <p className={`text-xs mt-2 ${T.tileSub}`}>{pct}% of the series</p>
 
         {cards.length > 0 ? (
           <div
             className="mt-3 flex flex-wrap gap-1.5 sm:gap-2 w-full min-w-0"
             role="list"
-            aria-label={`קלפים בסדרה ${series.nameHe}`}
+            aria-label={`Cards in series ${series.nameHe}`}
             data-testid="series-card-thumbs"
           >
             {cards.map((card, index) => {
@@ -215,7 +215,7 @@ export function StudentSeriesProgressCard({ series, T, studentFullName = "" }) {
 export function StudentCardsGrid({ children, emptyMessage, T }) {
   const items = Children.toArray(children);
   if (!items.length) {
-    return <p className={`text-right py-6 ${T.emptyText}`}>{emptyMessage}</p>;
+    return <p className={`text-left py-6 ${T.emptyText}`}>{emptyMessage}</p>;
   }
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-3 md:gap-4 w-full min-w-0">

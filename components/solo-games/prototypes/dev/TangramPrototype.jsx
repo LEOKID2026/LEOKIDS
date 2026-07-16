@@ -8,7 +8,7 @@ import DevPrototypeShell from "./DevPrototypeShell.jsx";
 const INITIAL_PIECES = /** @type {Piece[]} */ ([
   {
     id: "tri1",
-    name: "משולש גדול",
+    name: "Large triangle",
     color: "#f87171",
     w: 90,
     h: 90,
@@ -19,7 +19,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "tri2",
-    name: "משולש בינוני",
+    name: "Medium triangle",
     color: "#60a5fa",
     w: 64,
     h: 64,
@@ -30,7 +30,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "tri3",
-    name: "משולש קטן",
+    name: "Small triangle",
     color: "#4ade80",
     w: 46,
     h: 46,
@@ -41,7 +41,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "sq",
-    name: "ריבוע",
+    name: "Square",
     color: "#fbbf24",
     w: 46,
     h: 46,
@@ -52,7 +52,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "para",
-    name: "מקבילית",
+    name: "Parallelogram",
     color: "#c084fc",
     w: 70,
     h: 40,
@@ -63,7 +63,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "tri4",
-    name: "משולש 2",
+    name: "Triangle 2",
     color: "#fb923c",
     w: 46,
     h: 46,
@@ -138,21 +138,21 @@ export default function TangramPrototype() {
 
   return (
     <DevPrototypeShell
-      title="טנגרם"
-      subtitle="אבטיפוס · גררו חלקים · לחיצה כפולה לסיבוב"
+      title="Tangram"
+      subtitle="Prototype · drag pieces · double-tap to rotate"
       headerExtra={
         <button
           type="button"
           onClick={resetPieces}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
         >
-          איפוס
+          Reset
         </button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-2 p-2 sm:p-4">
         <p className="text-center text-xs font-semibold text-emerald-200 sm:text-sm">
-          מלאו את צורת היעד · לחיצה כפולה = סיבוב 45°
+          Fill the target shape · double-tap = rotate 45°
         </p>
 
         <div
@@ -184,7 +184,7 @@ export default function TangramPrototype() {
               strokeDasharray="6 5"
             />
             <text x="100" y="130" textAnchor="middle" fill="#fbbf24" fontSize="14" fontWeight="bold">
-              יעד
+              Goal
             </text>
           </svg>
 
@@ -218,12 +218,12 @@ export default function TangramPrototype() {
             onClick={() => rotatePiece(selected)}
             className="min-h-[44px] rounded-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 text-sm font-bold text-sky-100"
           >
-            ↻ סובב חלק נבחר
+            ↻ Rotate selected piece
           </button>
         ) : null}
 
         <p className="text-center text-[10px] text-white/45 sm:text-xs">
-          אין בדיקת התאמה מושלמת - רק תחושת גרירה ו-layout
+          No perfect-fit check — just drag feel and layout
         </p>
       </div>
     </DevPrototypeShell>

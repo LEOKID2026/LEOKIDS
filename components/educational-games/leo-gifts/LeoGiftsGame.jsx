@@ -174,7 +174,7 @@ export default function LeoGiftsGame({
     timeoutHandledRef.current = true;
     timerPausedRef.current = true;
     setCheckState("bad");
-    const timeoutText = "הזמן נגמר! ננסה שאלה חדשה.";
+    const timeoutText = "Time's up! Let's try a new question.";
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -292,19 +292,19 @@ export default function LeoGiftsGame({
   ].join(" ");
 
   const idleFeedback = showRemainder
-    ? "בחרו כמה כל ילד מקבל וכמה נשאר לליאו"
-    : "בחרו כמה ממתקים כל ילד מקבל";
+    ? "Choose how many each kid gets and how many Leo keeps"
+    : "Choose how many treats each kid gets";
 
   return (
-    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="rtl">
+    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="ltr">
       <header className={s.header}>
         <Link href={backHref} className={s.hudChip}>
-          חזרה
+          Back
         </Link>
         {phase === "play" ? (
           <div className={s.hud}>
             <span className={`${s.hudChip} ${s.hudScore}`}>⭐ {score}</span>
-            <span className={s.hudChip}>שלב {internalStage}</span>
+            <span className={s.hudChip}>Stage {internalStage}</span>
             <span className={`${s.hudChip} ${styles.hudTime} ${timeLeft <= 8 ? styles.hudTimeWarn : ""}`}>
               ⏱ {timeLeft}
             </span>
@@ -314,7 +314,7 @@ export default function LeoGiftsGame({
           </div>
         ) : (
           <div className={s.hud}>
-            <span className={s.hudChip}>{productionMode ? "🍬" : "🍬 אבטיפוס"}</span>
+            <span className={s.hudChip}>{productionMode ? "🍬" : "🍬 Prototype"}</span>
           </div>
         )}
         {showFullscreenButton && onFullscreenToggle ? (
@@ -329,8 +329,8 @@ export default function LeoGiftsGame({
       {!productionMode && phase === "intro" ? (
         <div className={styles.screenCenter}>
           <p className={styles.introHero}>🍬🦁</p>
-          <h1 className={styles.introTitle}>חנות הממתקים של ליאו</h1>
-          <p className={styles.introText}>עזרו לליאו לחלק ממתקים בין הילדים בצורה שווה!</p>
+          <h1 className={styles.introTitle}>Leo&apos;s Candy Shop</h1>
+          <p className={styles.introText}>Help Leo share treats evenly among the kids!</p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
@@ -345,7 +345,7 @@ export default function LeoGiftsGame({
           </div>
           <EducationalDifficultyGradeHint className={`${styles.introText} opacity-70`} style={{ fontSize: "0.72rem" }} />
           <button type="button" className={styles.startBtn} onClick={startGame}>
-            התחל משחק
+            Start game
           </button>
         </div>
       ) : null}
@@ -353,7 +353,7 @@ export default function LeoGiftsGame({
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🍬 חנות הממתקים · שלב {internalStage}
+            🍬 Candy Shop · Stage {internalStage}
           </p>
 
           <div className={`${shop.shopGrid} ${styles.giftsShopGrid}`} data-educational-workplace-grid="">
@@ -364,7 +364,7 @@ export default function LeoGiftsGame({
                 </span>
                 <div className={shop.customerSpeechWrap}>
                   <div className={shop.missionRow}>
-                    <p className={shop.customerName}>משימה</p>
+                    <p className={shop.customerName}>Mission</p>
                     <EducationalGameInstructionReplay
                       text={instructionText}
                       onReplay={replayInstruction}
@@ -378,12 +378,12 @@ export default function LeoGiftsGame({
             <section className={`${shop.workCol} ${styles.giftsWorkCol}`}>
               <div className={shop.workFrame}>
                 <div className={shop.workSurface}>
-                  <p className={shop.workSurfaceTitle}>👧👦 הילדים</p>
+                  <p className={shop.workSurfaceTitle}>👧👦 The kids</p>
                   <div className={`${shop.workSurfaceBody} ${styles.childrenGridFit}`}>
                     <div className={`${gameUi.childrenGrid} ${gridClass} ${styles.childrenGridInner}`}>
                       {Array.from({ length: task.children }, (_, i) => (
                         <div key={i} className={gameUi.childCard}>
-                          <span className={gameUi.childLabel}>ילד {i + 1}</span>
+                          <span className={gameUi.childLabel}>Kid {i + 1}</span>
                           <span className={gameUi.childEmoji}>{childEmojiAt(i)}</span>
                           <span className={gameUi.childGift}>{task.itemEmoji}</span>
                           <span className={gameUi.childCount}>{perChild}</span>
@@ -397,12 +397,12 @@ export default function LeoGiftsGame({
 
             <aside className={shop.sideCol}>
               <div className={`${s.panel} ${shop.toolsPanel} ${shop.toolsPanelLarge}`}>
-                <p className={shop.toolsTitle}>🎛️ חלוקה</p>
+                <p className={shop.toolsTitle}>🎛️ Share</p>
                 <div
                   className={`${shop.controlsStackInline} ${!showRemainder ? shop.controlsStackSingle : ""}`}
                 >
                   <div className={shop.controlRow}>
-                    <span className={shop.controlLabel}>לכל ילד</span>
+                    <span className={shop.controlLabel}>Each kid</span>
                     <div className={shop.stepperRow}>
                       <button
                         type="button"
@@ -431,7 +431,7 @@ export default function LeoGiftsGame({
                   </div>
                   {showRemainder ? (
                     <div className={shop.controlRow}>
-                      <span className={shop.controlLabel}>נשאר לליאו 🧺</span>
+                      <span className={shop.controlLabel}>Left for Leo 🧺</span>
                       <div className={shop.stepperRow}>
                         <button
                           type="button"
@@ -470,10 +470,10 @@ export default function LeoGiftsGame({
             <div className={shop.bottomBar}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} onClick={runCheck}>
-                  בדוק חלוקה
+                  Check share
                 </button>
                 <button type="button" className={shop.secondaryBtn} onClick={resetTaskUi}>
-                  איפוס
+                  Reset
                 </button>
               </div>
             </div>
@@ -485,23 +485,23 @@ export default function LeoGiftsGame({
         <div className={styles.screenCenter}>
           <div className={styles.endCard}>
             <h2 className={styles.endTitle}>
-              {phase === "won" ? "🎉 סיימתם את חנות הממתקים!" : "🍬 סיום משחק"}
+              {phase === "won" ? "🎉 You finished the candy shop!" : "🍬 Game over"}
             </h2>
-            <p className={styles.endStat}>⭐ ניקוד: {score}</p>
+            <p className={styles.endStat}>⭐ Score: {score}</p>
             <p className={styles.endStat}>
-              ✅ תשובות נכונות: {successCount}/{TASKS_PER_SESSION}
+              ✅ Correct answers: {successCount}/{TASKS_PER_SESSION}
             </p>
-            <p className={styles.endStat}>❌ טעויות: {mistakes}</p>
-            <p className={styles.endStat}>📈 שלב הכי גבוה: {highestStage}</p>
-            <p className={styles.endStat}>📊 התחלתם ב: {diffConfig.label}</p>
-            <p className={styles.endStat}>⏱ זמן ממוצע: {avgDisplay} שניות</p>
+            <p className={styles.endStat}>❌ Mistakes: {mistakes}</p>
+            <p className={styles.endStat}>📈 Highest stage: {highestStage}</p>
+            <p className={styles.endStat}>📊 Started at: {diffConfig.label}</p>
+            <p className={styles.endStat}>⏱ Average time: {avgDisplay} seconds</p>
             <div className={styles.endActions}>
               <button type="button" className={styles.startBtn} onClick={startGame}>
-                משחק חדש
+                New game
               </button>
               {!productionMode ? (
                 <Link href={backHref} className={styles.secondaryBtn}>
-                  חזרה למשחקים
+                  Back to games
                 </Link>
               ) : null}
             </div>

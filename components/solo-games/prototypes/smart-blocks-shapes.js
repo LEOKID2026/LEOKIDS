@@ -4,14 +4,14 @@
 export const SMART_BLOCKS_SHAPE_LIBRARY = [
   {
     id: "dot",
-    labelHe: "נקודה",
+    labelHe: "Dot",
     cells: [[0, 0]],
     color: "bg-rose-400",
     glow: "shadow-rose-400/40",
   },
   {
     id: "pair-h",
-    labelHe: "זוג",
+    labelHe: "Pair",
     cells: [
       [0, 0],
       [0, 1],
@@ -21,7 +21,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "line-3",
-    labelHe: "קו 3",
+    labelHe: "Line of 3",
     cells: [
       [0, 0],
       [0, 1],
@@ -32,7 +32,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "line-4",
-    labelHe: "קו 4",
+    labelHe: "Line of 4",
     cells: [
       [0, 0],
       [0, 1],
@@ -44,7 +44,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "square-2",
-    labelHe: "ריבוע 2×2",
+    labelHe: "2×2 square",
     cells: [
       [0, 0],
       [0, 1],

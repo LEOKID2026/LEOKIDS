@@ -51,10 +51,10 @@ export default function OfflineIndicator() {
           </svg>
           <div className="flex-1">
             <p className="text-sm font-semibold text-white">
-              🔌 אתה במצב Offline
+              🔌 You are offline
             </p>
             <p className="text-xs text-white/90">
-              האתר זמין גם ללא אינטרנט
+              The site is still available without internet
             </p>
           </div>
           <button

@@ -39,26 +39,26 @@ export default function SoloGameEndInterstitialOverlay({
   return (
     <div
       className="pointer-events-auto absolute inset-0 z-[100] flex flex-col items-center justify-center gap-4 bg-black/55 px-4 py-6 text-center"
-      dir="rtl"
+      dir="ltr"
       role="dialog"
       aria-live="polite"
-      aria-label={didWin ? "כל הכבוד" : "המשחק נגמר"}
+      aria-label={didWin ? "Great job" : "Game over"}
     >
       <h2
         className={`text-3xl font-extrabold sm:text-4xl ${
           didWin ? "text-emerald-300" : "text-amber-100"
         }`}
       >
-        {didWin ? "כל הכבוד!" : "המשחק נגמר"}
+        {didWin ? "Great job!" : "Game over"}
       </h2>
-      <p className="text-sm font-semibold text-white/85 sm:text-base">מחשבים את התוצאה...</p>
+      <p className="text-sm font-semibold text-white/85 sm:text-base">Calculating your score...</p>
       <button
         type="button"
         onClick={handleSkip}
         className="mt-1 min-h-[44px] rounded-xl border-2 border-white/40 bg-white/10 px-8 py-2 text-sm font-bold text-white"
         style={{ touchAction: "manipulation" }}
       >
-        דלג
+        Skip
       </button>
     </div>
   );

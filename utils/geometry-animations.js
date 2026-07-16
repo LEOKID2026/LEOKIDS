@@ -288,10 +288,17 @@ export function enrichGeometryAnimationSteps(question, topic, gradeKey, slides) 
 
   return slides.map((content, idx) => {
     const meta = buildGeometryStepMetadata(question, idx, n, resolvedTopic);
+    const he = /[\u0590-\u05FF]/;
+    let safeContent = content;
+    if (typeof content === "string" && he.test(content)) {
+      safeContent = `Step ${idx + 1}: use the matching geometry formula and the numbers from the question.`;
+    } else if (content != null && typeof content === "object" && he.test(JSON.stringify(content))) {
+      safeContent = `Step ${idx + 1}: use the matching geometry formula and the numbers from the question.`;
+    }
     return {
       id: `geometry-step-${idx + 1}`,
-      title: `שלב ${idx + 1}`,
-      content,
+      title: `Step ${idx + 1}`,
+      content: safeContent,
       text: "",
       plainText: "",
       gradeKey,

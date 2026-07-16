@@ -64,7 +64,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
   const gravityRef = useRef(0.08);        //
   const flapPowerRef = useRef(-2.2);      //
 
-  // press-and-hold (mobile) – בלי בוסט חד
+  // press-and-hold (mobile) – no sharp boost
   const isFlyingRef = useRef(false);
   const keyFlyRef = useRef(false);
 
@@ -84,7 +84,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
   });
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // Block context/selection/long-press (scoped; לא חוסם UI)
+  // Block context/selection/long-press (scoped; doesn't block UI)
   useEffect(() => {
     const wrapper = document.getElementById("game-wrapper");
     if (!wrapper) return;
@@ -139,7 +139,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
       setHighScore(hs);
       const lb = JSON.parse(localStorage.getItem("mleoFlyerLeaderboard") || "[]");
       setLeaderboard(lb);
-      // טעינת שם משתמש שמור
+      // Load saved username
       const savedName = localStorage.getItem("mleo_player_name") || "";
       setPlayerName(savedName);
     }
@@ -173,7 +173,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
     const itemSpeed     = Math.min(2.6 + level * 0.4, 7.8);
     const bombBias      = Math.min(0.08 + level * 0.05, 0.55);
 
-    // עדין יותר (קפיצה/נפילה איטיים)
+    // Gentler (slower jump/fall)
     const gravity    = Math.min(0.06 + level * 0.004, 0.12);
     const flapPower  = Math.max(-1.8 - level * 0.03, -2.8);
 
@@ -270,25 +270,25 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
     // update dog
     const dog = dogRef.current;
 
-    // גרביטציה עדינה
+    // Gentle gravity
     dog.vy += gravityRef.current * scale;
 
-    // press-and-hold – דחיפה רציפה (עכבר/מגע + מקלדת)
+    // press-and-hold – Continuous push (mouse/touch + keyboard)
     if (isFlyingRef.current || keyFlyRef.current) {
       const lift = keyFlyRef.current && !isFlyingRef.current ? 0.52 : 0.42;
       dog.vy += (flapPowerRef.current * lift) * scale;
     }
 
-    // חיכוך/החלקה
+    // Friction/glide
     dog.vy *= Math.pow(0.99, scale);
 
-    // הגבלת מהירות (נפילה ועלייה איטיות)
+    // Speed cap (slow fall and rise)
     dog.vy = Math.max(Math.min(dog.vy, 2.4), -3.2);
 
-    // עדכון מיקום
+    // Update position
     dog.y  += dog.vy * scale;
 
-    // גבולות
+    // Bounds
     const floor = canvas.height - dog.h - 12;
     if (dog.y < 8) { dog.y = 8; dog.vy = Math.max(dog.vy, 0); }
     if (dog.y > floor) { dog.y = floor; dog.vy = Math.min(dog.vy, 0); }
@@ -474,7 +474,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
       <div
         id="game-wrapper"
         className="relative isolate flex h-full min-h-0 flex-1 flex-col items-center justify-center overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-        dir="rtl"
+        dir="ltr"
       >
         {!showIntro && (
           <div className="flex min-h-0 w-full flex-1 flex-col px-1 pb-2 pt-1">
@@ -492,7 +492,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
               ) : null}
 
               <div className="pointer-events-none absolute left-1/2 top-2 z-20 max-w-[95vw] -translate-x-1/2 rounded-lg bg-black/60 px-4 py-2 text-base font-bold sm:text-lg">
-                ניקוד: {score}
+                Score: {score}
               </div>
               <canvas
                 ref={canvasRef}
@@ -512,7 +512,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
               onPointerDown={(e) => { e.preventDefault(); }}
               className="sm:hidden fixed bottom-8 left-1/2 z-[200010] min-h-[48px] -translate-x-1/2 select-none rounded-lg bg-yellow-400 px-8 py-3 text-lg font-bold text-black"
             >
-              החזק לטוס
+              Hold to fly
             </button>
           </div>
         )}

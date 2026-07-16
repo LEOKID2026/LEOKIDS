@@ -27,7 +27,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center bg-black/55 p-4"
-      dir="rtl"
+      dir="ltr"
       role="presentation"
       onClick={onClose}
     >
@@ -42,7 +42,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
           ref={closeBtnRef}
           type="button"
           className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-lg font-bold text-slate-500 transition hover:bg-slate-100 hover:text-slate-800"
-          aria-label="סגור"
+          aria-label="Close"
           onClick={onClose}
         >
           ×
@@ -52,24 +52,24 @@ export default function SoloGameHelpModal({ game, onClose }) {
           id="solo-game-help-title"
           className="mb-4 pr-8 text-lg font-extrabold leading-snug text-slate-900 sm:text-xl"
         >
-          איך משחקים ב{game.titleHe}?
+          How to play {game.titleHe}?
         </h2>
 
         <div className="space-y-3 text-sm leading-relaxed text-slate-700 sm:text-[15px]">
           <section>
-            <p className="font-bold text-slate-900">🎮 איך משחקים?</p>
+            <p className="font-bold text-slate-900">🎮 How to play?</p>
             <p className="mt-1">{help.howToPlay}</p>
           </section>
           <section>
-            <p className="font-bold text-slate-900">⭐ איך צוברים ניקוד?</p>
+            <p className="font-bold text-slate-900">⭐ How do you score?</p>
             <p className="mt-1">{help.scoring}</p>
           </section>
           <section>
-            <p className="font-bold text-slate-900">💎 פרסים ויהלומים</p>
+            <p className="font-bold text-slate-900">💎 Rewards & diamonds</p>
             <p className="mt-1">{help.rewards}</p>
           </section>
           <section>
-            <p className="font-bold text-slate-900">💡 טיפ קטן</p>
+            <p className="font-bold text-slate-900">💡 Quick tip</p>
             <p className="mt-1">{help.tip}</p>
           </section>
         </div>
@@ -79,7 +79,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
           className="mt-5 w-full min-h-[44px] rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-sky-700"
           onClick={onClose}
         >
-          הבנתי, בואו נשחק
+          Got it, let's play
         </button>
       </div>
     </div>

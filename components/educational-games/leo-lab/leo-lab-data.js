@@ -33,69 +33,69 @@ import { SHELF_SIZE_BY_DIFFICULTY } from "./leo-lab-shelf-presets.js";
 export const EXPERIMENTS_PER_LEVEL = 20;
 
 export const EASY_LEVEL_CONTENT_GUIDELINES = {
-  audience: "כיתות א׳–ב׳",
+  audience: "Grades 1–2",
   minColorExperimentsInEasyPool: 6,
 };
 
 const EASY_BANNED_PROMPT_RE =
-  /חוסמ(?:ים|)\s*אור|עציר(?:ה|)\s*של\s*אור|מתאימ(?:ים|)\s*ליצירת\s*צל|מאפשר(?:ים|)\s*לאור\s*לעבור|שקוף\s*לאור|אור\s*וצל|ניסוי\s*אור/i;
+  /block(?:s|ing)?\s*light|stop(?:s|ping)?\s*light|make\s*a?\s*shadow|let\s*light\s*through|transparent\s*to\s*light|light\s*and\s*shadow|light\s*experiment/i;
 
 export const DIFFICULTIES = {
   easy: {
     id: "easy",
-    label: "קל",
+    label: "Easy",
     shelfCount: 8,
-    itemHint: "8 חפצים · בוחרים 2",
+    itemHint: "8 items · pick 2",
     maxMistakes: 6,
   },
   medium: {
     id: "medium",
-    label: "בינוני",
+    label: "Medium",
     shelfCount: 10,
-    itemHint: "10 חפצים · 2–3",
+    itemHint: "10 items · pick 2–3",
     maxMistakes: 5,
   },
   hard: {
     id: "hard",
-    label: "קשה",
+    label: "Hard",
     shelfCount: 12,
-    itemHint: "12 חפצים · 2–4",
+    itemHint: "12 items · pick 2–4",
     maxMistakes: 4,
   },
 };
 
 /** @type {Record<string, LabItem>} */
 export const LAB_ITEMS = {
-  water: { id: "water", name: "מים", icon: "💧", category: "נוזל" },
-  wood: { id: "wood", name: "עץ", icon: "🪵", category: "מוצק" },
-  nail: { id: "nail", name: "מסמר", icon: "🔩", category: "מתכת" },
-  magnet: { id: "magnet", name: "מגנט", icon: "🧲", category: "מגנט" },
-  plant: { id: "plant", name: "צמח", icon: "🌱", category: "חי" },
-  mirror: { id: "mirror", name: "מראה", icon: "🪞", category: "אור" },
-  light: { id: "light", name: "אור", icon: "🔦", category: "אור" },
-  ice: { id: "ice", name: "קרח", icon: "🧊", category: "קר" },
-  battery: { id: "battery", name: "סוללה", icon: "🔋", category: "חשמל" },
-  bulb: { id: "bulb", name: "נורה", icon: "💡", category: "חשמל" },
-  wire: { id: "wire", name: "חוט", icon: "🧵", category: "חשמל" },
-  sun: { id: "sun", name: "שמש", icon: "☀️", category: "אור" },
-  soil: { id: "soil", name: "אדמה", icon: "🟫", category: "טבע" },
-  bowl: { id: "bowl", name: "קערה", icon: "🥣", category: "כלי" },
-  stone: { id: "stone", name: "אבן", icon: "🪨", category: "מוצק" },
-  wall: { id: "wall", name: "קיר", icon: "🧱", category: "מוצק" },
-  switch: { id: "switch", name: "מתג", icon: "🎛️", category: "חשמל" },
-  metal_spoon: { id: "metal_spoon", name: "כפית מתכת", icon: "🥄", category: "מתכת" },
-  plastic: { id: "plastic", name: "פלסטיק", icon: "🧴", category: "חומר" },
-  paper: { id: "paper", name: "נייר", icon: "📄", category: "חומר" },
-  can: { id: "can", name: "פחית", icon: "🥫", category: "מתכת" },
-  key: { id: "key", name: "מפתח", icon: "🔑", category: "מתכת" },
-  paint_red: { id: "paint_red", name: "אדום", icon: "🟥", category: "צבע" },
-  paint_yellow: { id: "paint_yellow", name: "צהוב", icon: "🟨", category: "צבע" },
-  paint_blue: { id: "paint_blue", name: "כחול", icon: "🟦", category: "צבע" },
-  paint_green: { id: "paint_green", name: "ירוק", icon: "🟩", category: "צבע" },
-  paint_orange: { id: "paint_orange", name: "כתום", icon: "🟧", category: "צבע" },
-  paint_purple: { id: "paint_purple", name: "סגול", icon: "🟪", category: "צבע" },
-  paint_pink: { id: "paint_pink", name: "ורוד", icon: "🩷", category: "צבע" },
-  paint_white: { id: "paint_white", name: "לבן", icon: "⬜", category: "צבע" },
+  water: { id: "water", name: "Water", icon: "💧", category: "Liquid" },
+  wood: { id: "wood", name: "Wood", icon: "🪵", category: "Solid" },
+  nail: { id: "nail", name: "Nail", icon: "🔩", category: "Metal" },
+  magnet: { id: "magnet", name: "Magnet", icon: "🧲", category: "Magnet" },
+  plant: { id: "plant", name: "Plant", icon: "🌱", category: "Living" },
+  mirror: { id: "mirror", name: "Mirror", icon: "🪞", category: "Light" },
+  light: { id: "light", name: "Light", icon: "🔦", category: "Light" },
+  ice: { id: "ice", name: "Ice", icon: "🧊", category: "Cold" },
+  battery: { id: "battery", name: "Battery", icon: "🔋", category: "Electricity" },
+  bulb: { id: "bulb", name: "Bulb", icon: "💡", category: "Electricity" },
+  wire: { id: "wire", name: "Wire", icon: "🧵", category: "Electricity" },
+  sun: { id: "sun", name: "Sun", icon: "☀️", category: "Light" },
+  soil: { id: "soil", name: "Soil", icon: "🟫", category: "Nature" },
+  bowl: { id: "bowl", name: "Bowl", icon: "🥣", category: "Tool" },
+  stone: { id: "stone", name: "Stone", icon: "🪨", category: "Solid" },
+  wall: { id: "wall", name: "Wall", icon: "🧱", category: "Solid" },
+  switch: { id: "switch", name: "Switch", icon: "🎛️", category: "Electricity" },
+  metal_spoon: { id: "metal_spoon", name: "Metal spoon", icon: "🥄", category: "Metal" },
+  plastic: { id: "plastic", name: "Plastic", icon: "🧴", category: "Material" },
+  paper: { id: "paper", name: "Paper", icon: "📄", category: "Material" },
+  can: { id: "can", name: "Can", icon: "🥫", category: "Metal" },
+  key: { id: "key", name: "Key", icon: "🔑", category: "Metal" },
+  paint_red: { id: "paint_red", name: "Red", icon: "🟥", category: "Color" },
+  paint_yellow: { id: "paint_yellow", name: "Yellow", icon: "🟨", category: "Color" },
+  paint_blue: { id: "paint_blue", name: "Blue", icon: "🟦", category: "Color" },
+  paint_green: { id: "paint_green", name: "Green", icon: "🟩", category: "Color" },
+  paint_orange: { id: "paint_orange", name: "Orange", icon: "🟧", category: "Color" },
+  paint_purple: { id: "paint_purple", name: "Purple", icon: "🟪", category: "Color" },
+  paint_pink: { id: "paint_pink", name: "Pink", icon: "🩷", category: "Color" },
+  paint_white: { id: "paint_white", name: "White", icon: "⬜", category: "Color" },
 };
 
 /** @type {Record<DifficultyId, LabExperiment[]>} */
@@ -106,7 +106,7 @@ export const EXPERIMENTS_BY_DIFFICULTY = {
 };
 
 const EASY_COLOR_TOPIC_RE =
-  /צבע|ערבב|כתום|ירוק|סגול|אדום|צהוב|כחול|paint_/i;
+  /color|mix|orange|green|purple|red|yellow|blue|paint_/i;
 const ELECTRICITY_ITEM_IDS = new Set(["battery", "bulb", "wire", "switch"]);
 
 /** @returns {{ easyTotal: number, colorExperimentCount: number, electricityOnEasyCount: number, gaps: string[] }} */
@@ -123,12 +123,12 @@ export function auditEasyLevelContent() {
   const gaps = [];
   if (colorExperimentCount < EASY_LEVEL_CONTENT_GUIDELINES.minColorExperimentsInEasyPool) {
     gaps.push(
-      `רמת קל: חסרים ניסויי צבעים (${colorExperimentCount}/${EASY_LEVEL_CONTENT_GUIDELINES.minColorExperimentsInEasyPool}).`,
+      `Easy level: missing color experiments (${colorExperimentCount}/${EASY_LEVEL_CONTENT_GUIDELINES.minColorExperimentsInEasyPool}).`,
     );
   }
   if (electricityOnEasyCount > 0) {
     gaps.push(
-      `רמת קל: ${electricityOnEasyCount} ניסוי(ים) עם חשמל - להעביר לבינוני/קשה או להסיר.`,
+      `Easy level: ${electricityOnEasyCount} electricity experiment(s) - move to medium/hard or remove.`,
     );
   }
   const abstractLightExperiments = easy.filter((exp) =>
@@ -136,7 +136,7 @@ export function auditEasyLevelContent() {
   );
   if (abstractLightExperiments.length > 0) {
     gaps.push(
-      `רמת קל: ניסויי אור/צל מופשטים: ${abstractLightExperiments.map((e) => e.id).join(", ")}`,
+      `Easy level: abstract light/shadow experiments: ${abstractLightExperiments.map((e) => e.id).join(", ")}`,
     );
   }
   return {
@@ -332,19 +332,19 @@ export function validateExperimentSelection(selectedIds, experiment) {
 export function feedbackMessageForReason(reason, pickCount) {
   switch (reason) {
     case "missing":
-      return `בחרו ${pickCount} חפצים לניסוי`;
+      return `Pick ${pickCount} items for the experiment`;
     case "partial":
-      return `בחרו ${pickCount} חפצים לניסוי`;
+      return `Pick ${pickCount} items for the experiment`;
     case "wrong":
-      return "כמעט! משהו בבחירה לא מתאים";
+      return "Almost! Something in your selection doesn't fit";
     case "too_many":
-      return `בחרו ${pickCount} חפצים לניסוי`;
+      return `Pick ${pickCount} items for the experiment`;
     default:
-      return "נסו לבחור חפצים שמתאימים למשימה";
+      return "Try picking items that match the mission";
   }
 }
 
 /** @param {boolean} firstTry */
 export function successFeedbackMessage(firstTry) {
-  return firstTry ? "יפה! בחרת חפצים מתאימים" : "מעולה! הניסוי הצליח";
+  return firstTry ? "Nice! You picked the right items" : "Awesome! The experiment worked";
 }

@@ -68,7 +68,7 @@ export default function ArcadeClubEventsPanel({ gh, className = "" }) {
 
       const json = await res.json().catch(() => ({}));
 
-      setMessage(json.ok ? "פרס נאסף!" : json.message || json.error || "שגיאה");
+      setMessage(json.ok ? "Reward collected!" : json.message || json.error || "Error");
 
       if (json.ok) await load();
 
@@ -102,7 +102,7 @@ export default function ArcadeClubEventsPanel({ gh, className = "" }) {
 
       const json = await res.json().catch(() => ({}));
 
-      setMessage(json.ok ? "נרשמת לטורניר!" : json.message || json.error || "שגיאה");
+      setMessage(json.ok ? "You're registered for the tournament!" : json.message || json.error || "Error");
 
       if (json.ok) await load();
 
@@ -122,33 +122,33 @@ export default function ArcadeClubEventsPanel({ gh, className = "" }) {
 
   return (
 
-    <div className={`${gh.arcadePanelEvents || gh.card} space-y-3 p-4 text-right ${className}`} dir="rtl">
+    <div className={`${gh.arcadePanelEvents || gh.card} space-y-3 p-4 text-left ${className}`} dir="ltr">
 
       {event ? (
 
         <div>
 
-          <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>אירוע יומי</p>
+          <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Daily event</p>
 
-          <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{event.titleHe || "אתגר היום"}</p>
+          <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{event.titleHe || "Today's challenge"}</p>
 
-          <p className={`text-sm ${gh.arcadePanelBlurb || gh.cardBlurb}`}>+{event.rewardCoins || 0} מטבעות</p>
+          <p className={`text-sm ${gh.arcadePanelBlurb || gh.cardBlurb}`}>+{event.rewardCoins || 0} coins</p>
 
           {event.claimed ? (
 
-            <p className="mt-1 text-xs font-semibold text-emerald-700">נאסף ✓</p>
+            <p className="mt-1 text-xs font-semibold text-emerald-700">Collected ✓</p>
 
           ) : event.canClaim ? (
 
             <button type="button" disabled={busy} onClick={() => void claimEvent()} className={`mt-2 ${gh.btnJoinRoom}`}>
 
-              אסוף פרס
+              Collect reward
 
             </button>
 
           ) : (
 
-            <p className={`mt-1 text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>שחק משחק ארקייד כדי להשלים את האתגר</p>
+            <p className={`mt-1 text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Play an arcade game to complete the challenge</p>
 
           )}
 
@@ -160,25 +160,25 @@ export default function ArcadeClubEventsPanel({ gh, className = "" }) {
 
         <div className="border-t border-violet-200 pt-3">
 
-          <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>טורניר</p>
+          <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Tournament</p>
 
           <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{tournament.titleHe}</p>
 
           {tournament.registered ? (
 
-            <p className="mt-1 text-xs font-semibold text-emerald-700">רשום ✓</p>
+            <p className="mt-1 text-xs font-semibold text-emerald-700">Registered ✓</p>
 
           ) : tournament.registrationOpen ? (
 
             <button type="button" disabled={busy} onClick={() => void registerTournament()} className={`mt-2 ${gh.btnSecondary}`}>
 
-              הרשמה
+              Register
 
             </button>
 
           ) : (
 
-            <p className={`mt-1 text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>ההרשמה סגורה</p>
+            <p className={`mt-1 text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Registration closed</p>
 
           )}
 

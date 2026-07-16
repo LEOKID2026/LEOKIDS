@@ -23,21 +23,26 @@ function assignedActivityMcqAnswersMatch(a, b) {
 /** Reserved for legacy index-label MCQ kinds (none in current child-facing geometry UI). */
 export const GEOMETRY_INDEX_LABEL_KINDS = {};
 
-/** Hebrew solid names pool used for 4-option MCQ in identification questions. */
-export const GEOMETRY_SOLID_NAMES_HE = ["קובייה", "תיבה", "גליל", "פירמידה", "חרוט", "כדור"];
+/** Solid names pool used for 4-option MCQ in identification questions (Global EN). */
+export const GEOMETRY_SOLID_NAMES_EN = ["Cube", "Cuboid", "Cylinder", "Pyramid", "Cone", "Sphere"];
+/** @deprecated Use GEOMETRY_SOLID_NAMES_EN — kept as alias for legacy imports. */
+export const GEOMETRY_SOLID_NAMES_HE = GEOMETRY_SOLID_NAMES_EN;
 
-export const GEOMETRY_HEBREW_LABEL_OPTIONS = {
-  parallel_perpendicular: ["מקבילות", "מאונכות"],
-  triangles: ["שווה צלעות", "שווה שוקיים", "שונה צלעות"],
-  quadrilaterals: ["ריבוע", "מלבן", "מקבילית", "טרפז"],
-  transformations: ["הזזה", "שיקוף", "סיבוב", "ללא תנועה"],
-  concept_transform: ["הזזה", "שיקוף", "סיבוב", "ללא תנועה"],
-  shapes_basic_square: ["ריבוע", "מלבן"],
-  shapes_basic_rectangle: ["ריבוע", "מלבן"],
-  shapes_basic_properties_square: ["2", "3", "4", "אין צלעות שוות"],
+/** MCQ choice labels for geometry kinds (Global EN — no Hebrew fallback). */
+export const GEOMETRY_LABEL_OPTIONS = {
+  parallel_perpendicular: ["Parallel", "Perpendicular"],
+  triangles: ["Equilateral", "Isosceles", "Scalene"],
+  quadrilaterals: ["Square", "Rectangle", "Parallelogram", "Trapezoid"],
+  transformations: ["Translation", "Reflection", "Rotation", "No movement"],
+  concept_transform: ["Translation", "Reflection", "Rotation", "No movement"],
+  shapes_basic_square: ["Square", "Rectangle"],
+  shapes_basic_rectangle: ["Square", "Rectangle"],
+  shapes_basic_properties_square: ["2", "3", "4", "No equal sides"],
   shapes_basic_properties_rectangle: ["1", "2", "3", "4"],
-  shapes_basic_properties_angles: ["2", "3", "4", "אין זוויות ישרות"],
+  shapes_basic_properties_angles: ["2", "3", "4", "No right angles"],
 };
+/** @deprecated Use GEOMETRY_LABEL_OPTIONS — kept as alias for generator imports. */
+export const GEOMETRY_HEBREW_LABEL_OPTIONS = GEOMETRY_LABEL_OPTIONS;
 
 /** Same tolerances as geometry-master learning/practice numeric input. */
 export const GEOMETRY_ACTIVITY_NUMERIC_SCALE_FLOOR = 1e-6;

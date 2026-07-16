@@ -6,14 +6,14 @@ import { repairMcqObviousAnswerContent } from "./mcq-fail-content-repair.js";
 import { ensureMcqFourOptions, NORMAL_MCQ_OPTION_COUNT } from "./mcq-four-options.js";
 
 /**
- * שאלות גיאומטריה קונספטואליות — הסקה, השוואה, סיווג, בלבול שטח/היקף, רב-שלבי מושגי.
- * תשובות טקסט; בינאריות = 2 אופציות בלבד.
+ * Conceptual geometry questions — inference, comparison, classification,
+ * area/perimeter confusion, multi-step concept items. Text answers; binary = 2 options.
  */
 
 function shuffleOptions(correct, options) {
   const arr = [...new Set(options.map((s) => String(s).trim()))].filter(Boolean);
   if (!arr.includes(correct)) arr.push(correct);
-  const isBinaryTf = arr.every((t) => t === "נכון" || t === "לא נכון");
+  const isBinaryTf = arr.every((t) => t === "True" || t === "False");
   if (isBinaryTf) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -34,10 +34,10 @@ function shuffleOptions(correct, options) {
     }
     if (isBinaryTf) {
       const tfPool =
-        correct === "נכון"
-          ? ["לא נכון", "רק במקרים מיוחדים", "תלוי בצורה"]
-          : correct === "לא נכון"
-            ? ["נכון", "נכון בכל מקרה", "תמיד נכון"]
+        correct === "True"
+          ? ["False", "Only in special cases", "Depends on the shape"]
+          : correct === "False"
+            ? ["True", "True in every case", "Always true"]
             : [];
       const next = tfPool.find((t) => t !== correct && !arr.includes(t));
       if (next) {
@@ -45,7 +45,7 @@ function shuffleOptions(correct, options) {
         continue;
       }
     }
-    const synth = ["אפשרות אחרת", "לא מתאים", "בדרך כלל לא", "לא נכון כאן"].find(
+    const synth = ["Another option", "Does not fit", "Usually not", "Not correct here"].find(
       (t) => t !== correct && !arr.includes(t)
     );
     if (synth) arr.push(synth);
@@ -72,7 +72,7 @@ export function renderGeometryConceptualRowToQuestion(row, ctx) {
   const isTrueFalseRow =
     rowKind === "concept_tf" ||
     row.binary === true ||
-    (/נכון/u.test(qText) && /לא\s+נכון/u.test(qText));
+    (/\bTrue\b/i.test(qText) && /\bFalse\b/i.test(qText));
   let answers;
   const baseParams = {
     kind: rowKind || "conceptual_mcq",
@@ -94,7 +94,7 @@ export function renderGeometryConceptualRowToQuestion(row, ctx) {
   }
 
   if (isTrueFalseRow) {
-    const opts = ["נכון", "לא נכון"];
+    const opts = ["True", "False"];
     const sh = shuffleOptions(correct, opts);
     answers = sh.answers;
     params.optionCount = answers.length;
@@ -106,10 +106,10 @@ export function renderGeometryConceptualRowToQuestion(row, ctx) {
 
   const levelFr =
     lv === "easy"
-      ? "מושגים (קל)"
+      ? "Concepts (easy)"
       : lv === "medium"
-        ? "מושגים (בינוני)"
-        : "מושגים (אתגר)";
+        ? "Concepts (medium)"
+        : "Concepts (challenge)";
   const correctIdx = answers.findIndex((a) => String(a).trim() === correct);
   const skipLabelRepair = rowKind === "concept_transform" || isTrueFalseRow;
   const repaired = skipLabelRepair
@@ -176,7 +176,7 @@ export function pickGeometryConceptualQuestion(ctx) {
   };
 }
 
-/** הסתברות לנסות בנק קונספטואלי לפני נוסחתית */
+/** Probability of trying the conceptual bank before a formulaic item */
 export function geometryConceptualProbability(gradeKey, topic) {
   const p = {
     g1: { shapes_basic: 0.35, transformations: 0.35, default: 0 },
@@ -225,7 +225,7 @@ export function geometryConceptualProbability(gradeKey, topic) {
   return map[topic] ?? map.default ?? 0;
 }
 
-/** ייצוא לסקריפט אודיט (`scripts/audit-question-banks.mjs`) */
+/** Export for audit script (`scripts/audit-question-banks.mjs`) */
 // Metadata enrichment (safe pass): difficulty, cognitiveLevel, expectedErrorTypes, prerequisiteSkillIds (confidence/taxonomy-gated). See reports/question-metadata-qa/geometry-metadata-apply-report.json.
 export const GEOMETRY_CONCEPTUAL_ITEMS = [
   {
@@ -249,13 +249,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "יש ריבוע עם צלע 5 ס״מ. אם שואלים 'כמה נייר צריך לכסות את כל הפנים', איזה מושג מחפשים?",
-    "correct": "שטח",
+    "question": "There is a square with side 5 cm. If we ask 'how much paper is needed to cover the whole face,' which concept are we looking for?",
+    "correct": "Area",
     "options": [
-      "שטח",
-      "היקף",
-      "נפח",
-      "אורך אלכסון בלבד"
+      "Area",
+      "Perimeter",
+      "Volume",
+      "Diagonal length only"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -285,13 +285,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "ריצוף ריבועי לחדר: צלע הריצוף 5 מ׳. כדי לדעת כמה מ״ר צריך לרכוש - איזה מושג מחשבים?",
-    "correct": "שטח",
+    "question": "Square tiling for a room: tile side 5 m. To know how many square meters to buy — which concept do we compute?",
+    "correct": "Area",
     "options": [
-      "שטח",
-      "היקף",
-      "נפח",
-      "אורך אלכסון בלבד"
+      "Area",
+      "Perimeter",
+      "Volume",
+      "Diagonal length only"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -321,13 +321,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "רוצים גדר סביב מגרש מלבני (רק סביב הגבול החיצוני). מה בדרך כלל מחשבים כדי לדעת כמה חומר גדר לקנות?",
-    "correct": "היקף",
+    "question": "You want a fence around a rectangular field (only the outer boundary). What do you usually compute to know how much fencing to buy?",
+    "correct": "Perimeter",
     "options": [
-      "היקף",
-      "שטח",
-      "נפח",
-      "זווית פנימית"
+      "Perimeter",
+      "Area",
+      "Volume",
+      "Interior angle"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -357,13 +357,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "פרויקט תכנון: גדר סביב מגרש מלבני (רק החיצון). כדי להזמין אורך גדר - מה מודדים?",
-    "correct": "היקף",
+    "question": "Planning project: a fence around a rectangular field (outer edge only). To order fence length — what do you measure?",
+    "correct": "Perimeter",
     "options": [
-      "היקף",
-      "שטח",
-      "נפח",
-      "זווית פנימית"
+      "Perimeter",
+      "Area",
+      "Volume",
+      "Interior angle"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -392,13 +392,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_formula_choice",
-    "question": "מלבן באורך 8 מ׳ וברוחב 3 מ׳. מה השלב הנכון הראשון כדי למצוא את שטח הרצפה?",
-    "correct": "להכפיל אורך ברוחב",
+    "question": "A rectangle is 8 m long and 3 m wide. What is the correct first step to find the floor area?",
+    "correct": "Multiply length by width",
     "options": [
-      "להכפיל אורך ברוחב",
-      "לחבר את כל הצלעות (כמו היקף)",
-      "להכפיל אורך ב 4",
-      "לחלק אורך ב 2 בלבד"
+      "Multiply length by width",
+      "Add all the sides (like perimeter)",
+      "Multiply length by 4",
+      "Divide length by 2 only"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "application",
@@ -431,13 +431,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_formula_choice",
-    "question": "שטיח מלבני לחדר גדול: אורך 8 מ׳ ורוחב 3 מ׳. לפני חישוב שטח החלל - מה צעד ראשון מתאים?",
-    "correct": "להכפיל אורך ברוחב",
+    "question": "A rectangular rug for a large room: length 8 m and width 3 m. Before computing the space area — what is a good first step?",
+    "correct": "Multiply length by width",
     "options": [
-      "להכפיל אורך ברוחב",
-      "לחבר את כל הצלעות (כמו היקף)",
-      "להכפיל אורך ב 4",
-      "לחלק אורך ב 2 בלבד"
+      "Multiply length by width",
+      "Add all the sides (like perimeter)",
+      "Multiply length by 4",
+      "Divide length by 2 only"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "application",
@@ -470,13 +470,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "same_perimeter_area_trap",
       "visual_reasoning_error"
     ],
-    "question": "שני מלבנים שונים עם אותו היקף. מה נכון לגבי השטח שלהם?",
-    "correct": "השטחים יכולים להיות שונים",
+    "question": "Two different rectangles with the same perimeter. What is true about their areas?",
+    "correct": "The areas can be different",
     "options": [
-      "השטחים יכולים להיות שונים",
-      "השטחים תמיד שווים",
-      "תמיד למלבן הגבוה יותר יש שטח גדול יותר בלי קשר לרוחב",
-      "ההיקף קובע את השטח בצורה חד משמעית"
+      "The areas can be different",
+      "The areas are always equal",
+      "The taller rectangle always has larger area regardless of width",
+      "The perimeter determines the area uniquely"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "analysis",
@@ -498,13 +498,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "inference",
     "conceptTag": "tri_sum_180",
     "distractorFamily": "angle_misconception",
-    "question": "במשולש ידועות שתי זוויות: 50° ו 60°. מה אפשר להסיק על הזווית השלישית בלי לחשב עדיין את המספר?",
-    "correct": "סכום שלוש הזוויות במשולש הוא 180°",
+    "question": "In a triangle, two angles are known: 50° and 60°. What can you conclude about the third angle before computing the number yet?",
+    "correct": "The sum of the three angles in a triangle is 180°",
     "options": [
-      "סכום שלוש הזוויות במשולש הוא 180°",
-      "הזווית השלישית תמיד 90°",
-      "סכום הזוויות במשולש הוא 360°",
-      "אין מספיק מידע בלי לדעת אורכי צלעות"
+      "The sum of the three angles in a triangle is 180°",
+      "The third angle is always 90°",
+      "The sum of angles in a triangle is 360°",
+      "There is not enough information without side lengths"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "understanding",
@@ -533,13 +533,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "triangle_angle_sum_error",
       "angle_measure_error"
     ],
-    "question": "במשולש, שתי זוויות פנימיות ידועות (למשל 50° ו 60°). לפני חישוב המספר המדויק - איזה עיקרון גיאומטרי מאפשר להסיק על השלישית?",
-    "correct": "סכום שלוש הזוויות במשולש הוא 180°",
+    "question": "In a triangle, two interior angles are known (for example 50° and 60°). Before computing the exact number — which geometry principle lets you reason about the third?",
+    "correct": "The sum of the three angles in a triangle is 180°",
     "options": [
-      "סכום שלוש הזוויות במשולש הוא 180°",
-      "הזווית השלישית תמיד 90°",
-      "סכום הזוויות במשולש הוא 360°",
-      "אין מספיק מידע בלי לדעת אורכי צלעות"
+      "The sum of the three angles in a triangle is 180°",
+      "The third angle is always 90°",
+      "The sum of angles in a triangle is 360°",
+      "There is not enough information without side lengths"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "understanding",
@@ -569,7 +569,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_identify_shape_property",
-    "question": "זווית ישרה היא בערך:",
+    "question": "A right angle is about:",
     "correct": "90°",
     "options": [
       "90°",
@@ -602,7 +602,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_identify_shape_property",
-    "question": "במדידה מדויקת, זווית ישרת מעשית קרובה ל:",
+    "question": "In an accurate measurement, a practical right angle is close to:",
     "correct": "90°",
     "options": [
       "90°",
@@ -635,13 +635,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "parallel_corresponding_angle_error",
       "angle_equality_error"
     ],
-    "question": "שני ישרים מקבילים חותכים על ידי קו חוצה. זוג זוויות מתאימות (באותו מיקום יחסי) - מה הקשר ביניהן?",
-    "correct": "שוות בגודל",
+    "question": "Two parallel lines are cut by a transversal. A pair of corresponding angles (same relative position) — how are they related?",
+    "correct": "Equal in measure",
     "options": [
-      "שוות בגודל",
-      "תמיד משלימות אל 180° זו עם זו",
-      "תמיד סכומן 90°",
-      "אין קשר קבוע"
+      "Equal in measure",
+      "They always add to 180° with each other",
+      "Their sum is always 90°",
+      "There is no fixed relationship"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -664,13 +664,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "equal_sides",
     "conceptTag": "equilateral",
     "distractorFamily": "class_mislabel",
-    "question": "משולש שבו כל שלוש הצלעות שוות - איך נקרא?",
-    "correct": "משולש שווה צלעות",
+    "question": "A triangle with all three sides equal — what is it called?",
+    "correct": "Equilateral triangle",
     "options": [
-      "משולש שווה צלעות",
-      "משולש שווה שוקיים",
-      "משולש ישר זווית תמיד",
-      "ריבוע"
+      "Equilateral triangle",
+      "Isosceles triangle",
+      "Always a right triangle",
+      "Square"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -693,13 +693,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "equal_sides_review",
     "conceptTag": "equilateral_late",
     "distractorFamily": "class_mislabel",
-    "question": "בסיווג לפי צלעות: משולש עם שלוש צלעות שוות - השם המתאים הוא:",
-    "correct": "משולש שווה צלעות",
+    "question": "Classifying by sides: a triangle with three equal sides — the matching name is:",
+    "correct": "Equilateral triangle",
     "options": [
-      "משולש שווה צלעות",
-      "משולש שווה שוקיים",
-      "משולש ישר זווית תמיד",
-      "ריבוע"
+      "Equilateral triangle",
+      "Isosceles triangle",
+      "Always a right triangle",
+      "Square"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -728,13 +728,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "opposite_sides_parallel_error",
       "shape_property_misread"
     ],
-    "question": "במקבילית, כל זוג צלעות נגדיות:",
-    "correct": "מקבילות ושוות באורך",
+    "question": "In a parallelogram, each pair of opposite sides:",
+    "correct": "Parallel and equal in length",
     "options": [
-      "מקבילות ושוות באורך",
-      "תמיד מאונכות",
-      "תמיד באותו אורך כמו האלכסונים",
-      "יוצרות זווית ישרה בכל חיבור"
+      "Parallel and equal in length",
+      "Always perpendicular",
+      "Always the same length as the diagonals",
+      "Form a right angle at every join"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -764,13 +764,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "opposite_sides_parallel_error",
       "shape_property_misread"
     ],
-    "question": "במקבילית - לגבי זוגות צלעות נגדיות נכון לומר שהם:",
-    "correct": "מקבילות ושוות באורך",
+    "question": "In a parallelogram — about pairs of opposite sides it is correct to say they are:",
+    "correct": "Parallel and equal in length",
     "options": [
-      "מקבילות ושוות באורך",
-      "תמיד מאונכות",
-      "תמיד באותו אורך כמו האלכסונים",
-      "יוצרות זווית ישרה בכל חיבור"
+      "Parallel and equal in length",
+      "Always perpendicular",
+      "Always the same length as the diagonals",
+      "Form a right angle at every join"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -799,13 +799,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "hierarchy_inclusion_error",
       "shape_family_mislabel"
     ],
-    "question": "כל ריבוע הוא גם:",
-    "correct": "מלבן",
+    "question": "Every square is also a:",
+    "correct": "Rectangle",
     "options": [
-      "מלבן",
-      "טרפז בלבד",
-      "מעגל",
-      "משולש"
+      "Rectangle",
+      "Only a trapezoid",
+      "Circle",
+      "Triangle"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -834,13 +834,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "hierarchy_inclusion_error",
       "shape_family_mislabel"
     ],
-    "question": "במושגי הכללה: לכל ריבוע יש תכונות של:",
-    "correct": "מלבן",
+    "question": "In terms of inclusion: every square has the properties of a:",
+    "correct": "Rectangle",
     "options": [
-      "מלבן",
-      "טרפז בלבד",
-      "מעגל",
-      "משולש"
+      "Rectangle",
+      "Only a trapezoid",
+      "Circle",
+      "Triangle"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -870,13 +870,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "reflection_vs_rotation_confusion",
       "transform_confusion"
     ],
-    "question": "שיקוף מול ציר סימטרייה דומה בעיקר ל:",
-    "correct": "תמונה במראה",
+    "question": "Reflection across a line of symmetry is most like:",
+    "correct": "A mirror image",
     "options": [
-      "תמונה במראה",
-      "סיבוב סביב מרכז",
-      "הזזה בלי סיבוב",
-      "הגדלת הצורה"
+      "A mirror image",
+      "Rotation about a center",
+      "Translation without rotation",
+      "Enlarging the shape"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -906,13 +906,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "reflection_vs_rotation_confusion",
       "transform_confusion"
     ],
-    "question": "שיקוף ביחס לציר סימטרייה - הדימוי הקרוב ביותר הוא:",
-    "correct": "תמונה במראה",
+    "question": "Reflection across a line of symmetry — the closest image is:",
+    "correct": "A mirror image",
     "options": [
-      "תמונה במראה",
-      "סיבוב סביב מרכז",
-      "הזזה בלי סיבוב",
-      "הגדלת הצורה"
+      "A mirror image",
+      "Rotation about a center",
+      "Translation without rotation",
+      "Enlarging the shape"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -942,13 +942,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "congruence_vs_similarity_error",
       "transform_confusion"
     ],
-    "question": "שתי צורות חופפות אומרות ש:",
-    "correct": "אותו צורה ואותו גודל (אפשר להניח אחת על השנייה)",
+    "question": "Two congruent shapes mean that:",
+    "correct": "Same shape and same size (you can place one on the other)",
     "options": [
-      "אותו צורה ואותו גודל (אפשר להניח אחת על השנייה)",
-      "רק אותו שטח אבל צורה שונה",
-      "רק אותו היקף",
-      "רק זוויות שוות בלי קשר לצלעות"
+      "Same shape and same size (you can place one on the other)",
+      "Only the same area but a different shape",
+      "Only the same perimeter",
+      "Only equal angles with no regard to sides"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -971,13 +971,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "definition",
     "conceptTag": "perp_meeting",
     "distractorFamily": "line_relation",
-    "question": "שני קווים מאונכים זה לזה - מה נכון?",
-    "correct": "הם נפגשים בזווית של 90°",
+    "question": "Two lines perpendicular to each other — what is true?",
+    "correct": "They meet at a 90° angle",
     "options": [
-      "הם נפגשים בזווית של 90°",
-      "הם לעולם לא נפגשים",
-      "הם תמיד באותו אורך",
-      "הם תמיד מקבילים"
+      "They meet at a 90° angle",
+      "They never meet",
+      "They are always the same length",
+      "They are always parallel"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1000,13 +1000,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "definition_late",
     "conceptTag": "perp_meeting_late",
     "distractorFamily": "line_relation",
-    "question": "שני ישרים מאונכים זה לזה - מה תכונה נכונה בנקודת החיתוך?",
-    "correct": "הם נפגשים בזווית של 90°",
+    "question": "Two lines perpendicular to each other — what is a correct property at the intersection?",
+    "correct": "They meet at a 90° angle",
     "options": [
-      "הם נפגשים בזווית של 90°",
-      "הם לעולם לא נפגשים",
-      "הם תמיד באותו אורך",
-      "הם תמיד מקבילים"
+      "They meet at a 90° angle",
+      "They never meet",
+      "They are always the same length",
+      "They are always parallel"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1029,13 +1029,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_def",
     "conceptTag": "parallel_never_meet",
     "distractorFamily": "line_relation",
-    "question": "שני קווים מקבילים באותו מישור - מה תכונה נכונה?",
-    "correct": "אין להם נקודת חיתוך ונשארים באותו מרחק",
+    "question": "Two parallel lines in the same plane — what is a correct property?",
+    "correct": "They have no intersection point and stay the same distance apart",
     "options": [
-      "אין להם נקודת חיתוך ונשארים באותו מרחק",
-      "הם חייבים להיפגש בנקודה אחת",
-      "הם תמיד מאונכים",
-      "הם תמיד שווים באורך"
+      "They have no intersection point and stay the same distance apart",
+      "They must meet at one point",
+      "They are always perpendicular",
+      "They are always equal in length"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1058,13 +1058,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_def_late",
     "conceptTag": "parallel_never_meet_late",
     "distractorFamily": "line_relation",
-    "question": "שני ישרים מקבילים באותו מישור - לגבי חיתוך ביניהם נכון ש:",
-    "correct": "אין להם נקודת חיתוך ונשארים באותו מרחק",
+    "question": "Two parallel lines in the same plane — about intersection between them it is true that:",
+    "correct": "They have no intersection point and stay the same distance apart",
     "options": [
-      "אין להם נקודת חיתוך ונשארים באותו מרחק",
-      "הם חייבים להיפגש בנקודה אחת",
-      "הם תמיד מאונכים",
-      "הם תמיד שווים באורך"
+      "They have no intersection point and stay the same distance apart",
+      "They must meet at one point",
+      "They are always perpendicular",
+      "They are always equal in length"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1088,13 +1088,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_symbol",
     "conceptTag": "parallel_symbol",
     "distractorFamily": "line_relation",
-    "question": "סמל ∥ מסמן בדרך כלל:",
-    "correct": "ישרים מקבילים",
+    "question": "The symbol ∥ usually marks:",
+    "correct": "Parallel lines",
     "options": [
-      "ישרים מקבילים",
-      "ישרים מאונכים",
-      "ישרים שווים באורך",
-      "ישרים שחותכים זווית 45°"
+      "Parallel lines",
+      "Perpendicular lines",
+      "Lines equal in length",
+      "Lines that cut a 45° angle"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1116,13 +1116,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare_relation_mid",
     "conceptTag": "parallel_vs_perp_mid",
     "distractorFamily": "line_relation",
-    "question": "מה נכון לגבי ישרים מקבילים באותו מישור?",
-    "correct": "הם לא נפגשים ושומרים על מרחק קבוע",
+    "question": "What is true about parallel lines in the same plane?",
+    "correct": "They do not meet and keep a constant distance",
     "options": [
-      "הם לא נפגשים ושומרים על מרחק קבוע",
-      "הם תמיד נפגשים בזווית 90°",
-      "הם חייבים להיות באותו אורך",
-      "הם תמיד מאונכים"
+      "They do not meet and keep a constant distance",
+      "They always meet at a 90° angle",
+      "They must be the same length",
+      "They are always perpendicular"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -1143,13 +1143,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "perp_symbol_mid",
     "conceptTag": "perp_symbol_mid",
     "distractorFamily": "line_relation",
-    "question": "סמל ⊥ מסמן בדרך כלל:",
-    "correct": "ישרים מאונכים",
+    "question": "The symbol ⊥ usually marks:",
+    "correct": "Perpendicular lines",
     "options": [
-      "ישרים מאונכים",
-      "ישרים מקבילים",
-      "ישרים שווים באורך",
-      "ישרים שאינם בני השוואה"
+      "Perpendicular lines",
+      "Parallel lines",
+      "Lines equal in length",
+      "Lines that cannot be compared"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "recall",
@@ -1170,7 +1170,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "perp_angle_mid",
     "conceptTag": "perp_angle_mid",
     "distractorFamily": "line_relation",
-    "question": "כששני ישרים מאונכים, זווית החיתוך ביניהם היא:",
+    "question": "When two lines are perpendicular, their intersection angle is:",
     "correct": "90°",
     "options": [
       "90°",
@@ -1204,13 +1204,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "dimension_confusion",
       "measurement_error"
     ],
-    "question": "נפח של תיבה מבטא בעיקר:",
-    "correct": "כמה מקום תפוס בתוך התיבה בשלושה ממדים",
+    "question": "The volume of a box mainly expresses:",
+    "correct": "How much space is occupied inside the box in three dimensions",
     "options": [
-      "כמה מקום תפוס בתוך התיבה בשלושה ממדים",
-      "אורך הקצה הארוך ביותר בלבד",
-      "שטח של פאה אחת בלבד",
-      "היקף הבסיס בלבד"
+      "How much space is occupied inside the box in three dimensions",
+      "Only the length of the longest edge",
+      "Only the area of one face",
+      "Only the perimeter of the base"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1239,13 +1239,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "dimension_confusion",
       "measurement_error"
     ],
-    "question": "כשמדברים על נפח של תיבה סגורה - מה המשמעות הגיאומטרית העיקרית?",
-    "correct": "כמה מקום תפוס בתוך התיבה בשלושה ממדים",
+    "question": "When we talk about the volume of a closed box — what is the main geometric meaning?",
+    "correct": "How much space is occupied inside the box in three dimensions",
     "options": [
-      "כמה מקום תפוס בתוך התיבה בשלושה ממדים",
-      "אורך הקצה הארוך ביותר בלבד",
-      "שטח של פאה אחת בלבד",
-      "היקף הבסיס בלבד"
+      "How much space is occupied inside the box in three dimensions",
+      "Only the length of the longest edge",
+      "Only the area of one face",
+      "Only the perimeter of the base"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1274,13 +1274,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "formula_selection_error",
       "volume_unit_error"
     ],
-    "question": "תיבה מלבנית: קודם כל רוצים את הנפח. מה סדר חישוב סביר?",
-    "correct": "אורך × רוחב × גובה",
+    "question": "Rectangular box: first you want the volume. What is a reasonable calculation order?",
+    "correct": "length × width × height",
     "options": [
-      "אורך × רוחב × גובה",
-      "אורך + רוחב + גובה",
-      "(אורך + רוחב) × 2",
-      "אורך × גובה בלבד בלי רוחב"
+      "length × width × height",
+      "length + width + height",
+      "(length + width) × 2",
+      "length × height only without width"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "application",
@@ -1305,13 +1305,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "relation",
     "conceptTag": "d_2r",
     "distractorFamily": "circle_terms",
-    "question": "במעגל, הקשר בין קוטר לרדיוס הוא:",
-    "correct": "הקוטר פי 2 מהרדיוס",
+    "question": "In a circle, the relationship between diameter and radius is:",
+    "correct": "The diameter is twice the radius",
     "options": [
-      "הקוטר פי 2 מהרדיוס",
-      "הרדיוס פי 2 מהקוטר",
-      "הם תמיד שווים",
-      "אין קשר קבוע"
+      "The diameter is twice the radius",
+      "The radius is twice the diameter",
+      "They are always equal",
+      "There is no fixed relationship"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1343,13 +1343,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "circumference_vs_area_confusion",
       "measurement_error"
     ],
-    "question": "כמה מטרים עובר גלגל אופניים במסלול מעגלי אחד מלא - זה קשור בעיקר ל:",
-    "correct": "היקף המעגל",
+    "question": "How many meters a bicycle wheel travels in one full circular path is mainly related to:",
+    "correct": "The circumference of the circle",
     "options": [
-      "היקף המעגל",
-      "שטח העיגול",
-      "נפח הצמיג",
-      "רדיוס בלבד בלי כפל"
+      "The circumference of the circle",
+      "The area of the circle",
+      "The volume of the tire",
+      "Radius alone without multiplication"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -1374,13 +1374,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "hypotenuse_side",
     "conceptTag": "hyp_opposite_right",
     "distractorFamily": "pythagoras_misconception",
-    "question": "במשולש ישר זווית, היתר הוא:",
-    "correct": "הצלע שמול זווית הישר",
+    "question": "In a right triangle, the hypotenuse is:",
+    "correct": "The side opposite the right angle",
     "options": [
-      "הצלע שמול זווית הישר",
-      "הצלע הקצרה ביותר תמיד",
-      "כל צלע שלא נבחרה",
-      "הצלע שליד זווית הישר תמיד"
+      "The side opposite the right angle",
+      "Always the shortest side",
+      "Any side that was not chosen",
+      "Always a side next to the right angle"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1404,13 +1404,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "first_step",
     "conceptTag": "when_pyth",
     "distractorFamily": "strategy_error",
-    "question": "במשולש ישר זווית ידועים שני ניצבים ורוצים את היתר. מה הכלי המתאים?",
-    "correct": "משפט פיתגורס (סכום ריבועי ניצבים = ריבוע היתר)",
+    "question": "In a right triangle, two legs are known and you want the hypotenuse. What is the right tool?",
+    "correct": "The Pythagorean theorem (sum of squares of the legs = square of the hypotenuse)",
     "options": [
-      "משפט פיתגורס (סכום ריבועי ניצבים = ריבוע היתר)",
-      "סכום ישר של שלוש הצלעות",
-      "שטח משולש (חצי בסיס כפול גובה) בלבד",
-      "היקף המשולש בלבד"
+      "The Pythagorean theorem (sum of squares of the legs = square of the hypotenuse)",
+      "A straight sum of the three sides",
+      "Triangle area (half base times height) only",
+      "The perimeter of the triangle only"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "application",
@@ -1433,7 +1433,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "cube",
     "conceptTag": "cube_faces",
     "distractorFamily": "solid_confusion",
-    "question": "לקובייה יש בדרך כלל כמה פאות מרובעות?",
+    "question": "A cube usually has how many square faces?",
     "correct": "6",
     "options": [
       "6",
@@ -1462,7 +1462,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "cube_faces_late",
     "conceptTag": "cube_faces_late",
     "distractorFamily": "solid_confusion",
-    "question": "בגוף תלת ממדי מסוג קובייה - כמה פאות מרובעות יש בדרך כלל?",
+    "question": "In a 3D solid of type cube — how many square faces are there usually?",
     "correct": "6",
     "options": [
       "6",
@@ -1491,13 +1491,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare",
     "conceptTag": "apex",
     "distractorFamily": "solid_confusion",
-    "question": "מה נכון לגבי פירמידה לעומת מנסרה עם אותו בסיס?",
-    "correct": "לפירמידה יש קודקוד אחד; למנסרה שתי בסיסים מקבילים דומים",
+    "question": "What is true about a pyramid versus a prism with the same base?",
+    "correct": "A pyramid has one apex; a prism has two similar parallel bases",
     "options": [
-      "לפירמידה יש קודקוד אחד; למנסרה שתי בסיסים מקבילים דומים",
-      "שתיהן חייבות להיות עגולות",
-      "אין הבדל בין פירמידה למנסרה",
-      "למנסרה תמיד אין פאות"
+      "A pyramid has one apex; a prism has two similar parallel bases",
+      "Both must be round",
+      "There is no difference between a pyramid and a prism",
+      "A prism always has no faces"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1520,13 +1520,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare_late",
     "conceptTag": "apex_late",
     "distractorFamily": "solid_confusion",
-    "question": "בהשוואה גיאומטרית: פירמידה לעומת מנסרה עם אותו צורת בסיס - מה נכון?",
-    "correct": "לפירמידה יש קודקוד אחד; למנסרה שתי בסיסים מקבילים דומים",
+    "question": "Geometric comparison: pyramid versus prism with the same base shape — what is true?",
+    "correct": "A pyramid has one apex; a prism has two similar parallel bases",
     "options": [
-      "לפירמידה יש קודקוד אחד; למנסרה שתי בסיסים מקבילים דומים",
-      "שתיהן חייבות להיות עגולות",
-      "אין הבדל בין פירמידה למנסרה",
-      "למנסרה תמיד אין פאות"
+      "A pyramid has one apex; a prism has two similar parallel bases",
+      "Both must be round",
+      "There is no difference between a pyramid and a prism",
+      "A prism always has no faces"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1550,13 +1550,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "angles_around_point",
     "conceptTag": "360_at_vertex",
     "distractorFamily": "tiling_angle",
-    "question": "בריצוף סביב כל נקודת מפגש של צורות משוכללות, סכום הזוויות סביב הנקודה הוא:",
+    "question": "In a tiling around every meeting point of regular shapes, the sum of angles around the point is:",
     "correct": "360°",
     "options": [
       "360°",
       "180°",
       "90°",
-      "תלוי רק בצבע הריצוף"
+      "Depends only on the tiling color"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1578,7 +1578,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "square_tile_angle",
     "conceptTag": "square_tile_90",
     "distractorFamily": "tiling_angle",
-    "question": "בריצוף משוכלל של ריבועים, זווית פנימית אופיינית בכל ריבוע היא:",
+    "question": "In a regular tiling of squares, a typical interior angle in each square is:",
     "correct": "90°",
     "options": [
       "90°",
@@ -1607,7 +1607,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "triangle_tile_angle",
     "conceptTag": "triangle_tile_60",
     "distractorFamily": "tiling_angle",
-    "question": "בריצוף משוכלל של משולשים שווי צלעות, זווית פנימית אופיינית בכל משולש היא:",
+    "question": "In a regular tiling of equilateral triangles, a typical interior angle in each triangle is:",
     "correct": "60°",
     "options": [
       "60°",
@@ -1635,13 +1635,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "triangle",
     "conceptTag": "perpendicular_to_base",
     "distractorFamily": "height_confusion",
-    "question": "גובה במשולש (ביחס לבסיס נתון) הוא:",
-    "correct": "קטע מאונך מהקודקוד הנגדי לבסיס או להארכתו",
+    "question": "An altitude in a triangle (relative to a given base) is:",
+    "correct": "A perpendicular segment from the opposite vertex to the base or its extension",
     "options": [
-      "קטע מאונך מהקודקוד הנגדי לבסיס או להארכתו",
-      "תמיד אחת מצלעות המשולש",
-      "האלכסון של המשולש",
-      "הממוצע של שלוש הצלעות"
+      "A perpendicular segment from the opposite vertex to the base or its extension",
+      "Always one of the triangle's sides",
+      "The diagonal of the triangle",
+      "The average of the three sides"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -1664,13 +1664,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "property",
     "conceptTag": "diag_equal_rect",
     "distractorFamily": "diagonal_confusion",
-    "question": "במלבן, שני האלכסונים:",
-    "correct": "שווים באורך וחוצים זה את זה",
+    "question": "In a rectangle, the two diagonals:",
+    "correct": "Equal in length and bisect each other",
     "options": [
-      "שווים באורך וחוצים זה את זה",
-      "תמיד מאונכים זה לזה בזווית 90° זה לזה במרכז בלבד במלבן כללי",
-      "תמיד שונים באורך",
-      "תמיד שווים לצלע"
+      "Equal in length and bisect each other",
+      "Always perpendicular at 90° to each other at the center only in a general rectangle",
+      "Always different in length",
+      "Always equal to a side"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -1692,13 +1692,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare_relation",
     "conceptTag": "parallel_vs_perp",
     "distractorFamily": "line_relation",
-    "question": "מה ההבדל העיקרי בין ישרים מקבילים לישרים מאונכים?",
-    "correct": "מקבילים לא נפגשים; מאונכים נפגשים בזווית 90°",
+    "question": "What is the main difference between parallel lines and perpendicular lines?",
+    "correct": "Parallel lines do not meet; perpendicular lines meet at 90°",
     "options": [
-      "מקבילים לא נפגשים; מאונכים נפגשים בזווית 90°",
-      "מקבילים תמיד קצרים יותר",
-      "מאונכים לעולם לא נפגשים",
-      "אין הבדל - זה אותו דבר"
+      "Parallel lines do not meet; perpendicular lines meet at 90°",
+      "Parallel lines are always shorter",
+      "Perpendicular lines never meet",
+      "There is no difference — they are the same"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -1719,13 +1719,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "symbol_recognition",
     "conceptTag": "perp_symbol",
     "distractorFamily": "line_relation",
-    "question": "סמל ⊥ מסמן בדרך כלל:",
-    "correct": "ישרים מאונכים",
+    "question": "The symbol ⊥ usually marks:",
+    "correct": "Perpendicular lines",
     "options": [
-      "ישרים מאונכים",
-      "ישרים מקבילים",
-      "ישרים שווים באורך",
-      "ישרים שאינם בני השוואה"
+      "Perpendicular lines",
+      "Parallel lines",
+      "Lines equal in length",
+      "Lines that cannot be compared"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1747,7 +1747,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "perp_def_late",
     "conceptTag": "perp_def_late",
     "distractorFamily": "line_relation",
-    "question": "כששני ישרים מאונכים, זווית החיתוך ביניהם היא:",
+    "question": "When two lines are perpendicular, their intersection angle is:",
     "correct": "90°",
     "options": [
       "90°",
@@ -1774,13 +1774,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_symbol_late",
     "conceptTag": "parallel_symbol_late",
     "distractorFamily": "line_relation",
-    "question": "סמל ∥ מסמן בדרך כלל:",
-    "correct": "ישרים מקבילים",
+    "question": "The symbol ∥ usually marks:",
+    "correct": "Parallel lines",
     "options": [
-      "ישרים מקבילים",
-      "ישרים מאונכים",
-      "ישרים שווים באורך",
-      "ישרים שחותכים זווית 45°"
+      "Parallel lines",
+      "Perpendicular lines",
+      "Lines equal in length",
+      "Lines that cut a 45° angle"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "recall",
@@ -1802,13 +1802,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "property_late",
     "conceptTag": "diag_equal_rect_late",
     "distractorFamily": "diagonal_confusion",
-    "question": "במלבן - לגבי שני האלכסונים נכון ש:",
-    "correct": "שווים באורך וחוצים זה את זה",
+    "question": "In a rectangle — about the two diagonals it is true that:",
+    "correct": "Equal in length and bisect each other",
     "options": [
-      "שווים באורך וחוצים זה את זה",
-      "תמיד מאונכים זה לזה בזווית 90° זה לזה במרכז בלבד במלבן כללי",
-      "תמיד שונים באורך",
-      "תמיד שווים לצלע"
+      "Equal in length and bisect each other",
+      "Always perpendicular at 90° to each other at the center only in a general rectangle",
+      "Always different in length",
+      "Always equal to a side"
     ],
     "difficulty": "standard",
     "cognitiveLevel": "understanding",
@@ -1831,7 +1831,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "degrees",
     "conceptTag": "quarter_90",
     "distractorFamily": "rotation_confusion",
-    "question": "סיבוב של רבע סיבוב מלא סביב מרכז נקרא לרוב:",
+    "question": "A rotation of one-quarter of a full turn about a center is usually called:",
     "correct": "90°",
     "options": [
       "90°",
@@ -1866,7 +1866,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "polygon_side_count_error",
       "careless_error"
     ],
-    "question": "לריבוע יש כמה צלעות?",
+    "question": "How many sides does a square have?",
     "correct": "4",
     "options": [
       "4",
@@ -1901,7 +1901,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "polygon_side_count_error",
       "careless_error"
     ],
-    "question": "בצורה מרובעת עם כל הצלעות שוות (ריבוע) - כמה צלעות יש?",
+    "question": "In a quadrilateral with all sides equal (a square) — how many sides are there?",
     "correct": "4",
     "options": [
       "4",
@@ -1937,13 +1937,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_property_misread"
     ],
     "binary": false,
-    "question": "במלבן כל ארבע הזוויות הפנימיות ישרות (90°). נכון או לא נכון?",
-    "correct": "נכון",
+    "question": "In a rectangle, all four interior angles are right angles (90°). True or false?",
+    "correct": "True",
     "options": [
-      "נכון",
-      "לא נכון",
-      "רק שלוש זוויות ישרות",
-      "תלוי בגודל המלבן"
+      "True",
+      "False",
+      "Only three right angles",
+      "Depends on the size of the rectangle"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -1973,13 +1973,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_property_misread"
     ],
     "binary": false,
-    "question": "במלבן, כל ארבע הזוויות הפנימיות ישרות (90°). נכון או לא נכון?",
-    "correct": "נכון",
+    "question": "In a rectangle, all four interior angles are right angles (90°). True or false?",
+    "correct": "True",
     "options": [
-      "נכון",
-      "לא נכון",
-      "רק בזווית אחת",
-      "לא בכל מלבן"
+      "True",
+      "False",
+      "Only at one angle",
+      "Not in every rectangle"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2009,13 +2009,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_family_mislabel"
     ],
     "binary": false,
-    "question": "כל מעוין הוא תמיד גם מלבן. נכון או לא נכון?",
-    "correct": "לא נכון",
+    "question": "Every rhombus is always also a rectangle. True or false?",
+    "correct": "False",
     "options": [
-      "לא נכון",
-      "נכון",
-      "נכון רק כשכל הצלעות שוות",
-      "נכון בכל מעוין"
+      "False",
+      "True",
+      "True only when all sides are equal",
+      "True for every rhombus"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "analysis",
@@ -2045,13 +2045,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_family_mislabel"
     ],
     "binary": false,
-    "question": "טענה: כל מעוין הוא בהכרח גם מלבן. נכון או לא נכון?",
-    "correct": "לא נכון",
+    "question": "Claim: every rhombus is necessarily also a rectangle. True or false?",
+    "correct": "False",
     "options": [
-      "לא נכון",
-      "נכון",
-      "נכון רק במלבן",
-      "נכון תמיד"
+      "False",
+      "True",
+      "True only for a rectangle",
+      "Always true"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "analysis",
@@ -2081,13 +2081,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "triangle_angle_type_error"
     ],
     "binary": false,
-    "question": "במשולש יכולות להיות שתי זוויות כהות (גדולות מ 90°). נכון או לא נכון?",
-    "correct": "לא נכון",
+    "question": "A triangle can have two obtuse angles (greater than 90°). True or false?",
+    "correct": "False",
     "options": [
-      "לא נכון",
-      "נכון",
-      "שתי זוויות כהות תמיד",
-      "שלוש זוויות כהות אפשריות"
+      "False",
+      "True",
+      "Always two obtuse angles",
+      "Three obtuse angles are possible"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "analysis",
@@ -2110,13 +2110,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "translation",
     "conceptTag": "slide",
     "distractorFamily": "transform_confusion",
-    "question": "הצורה זזה למקום חדש בלי סיבוב ובלי שינוי גודל - איזו תנועה זו?",
-    "correct": "הזזה",
+    "question": "The shape moved to a new place with no rotation and no size change — which move is this?",
+    "correct": "Translation",
     "options": [
-      "הזזה",
-      "שיקוף",
-      "סיבוב",
-      "ללא תנועה"
+      "Translation",
+      "Reflection",
+      "Rotation",
+      "No movement"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2139,13 +2139,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "reflection",
     "conceptTag": "mirror_flip",
     "distractorFamily": "transform_confusion",
-    "question": "הצורה מתהפכת כמו במראה ליד קו - איזו תנועה זו?",
-    "correct": "שיקוף",
+    "question": "The shape flips like a mirror across a line — which move is this?",
+    "correct": "Reflection",
     "options": [
-      "שיקוף",
-      "הזזה",
-      "סיבוב",
-      "ללא תנועה"
+      "Reflection",
+      "Translation",
+      "Rotation",
+      "No movement"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2169,13 +2169,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "rotation",
     "conceptTag": "turn",
     "distractorFamily": "transform_confusion",
-    "question": "הצורה מסתובבת סביב נקודה בלי לשנות גודל - איזו תנועה זו?",
-    "correct": "סיבוב",
+    "question": "The shape rotates about a point without changing size — which move is this?",
+    "correct": "Rotation",
     "options": [
-      "סיבוב",
-      "הזזה",
-      "שיקוף",
-      "ללא תנועה"
+      "Rotation",
+      "Translation",
+      "Reflection",
+      "No movement"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2199,13 +2199,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "identity",
     "conceptTag": "no_motion",
     "distractorFamily": "transform_confusion",
-    "question": "הצורה נשארה באותו מקום ובאותו כיוון - איזו טרנספורמציה מתאימה?",
-    "correct": "ללא תנועה",
+    "question": "The shape stayed in the same place and orientation — which transformation fits?",
+    "correct": "No movement",
     "options": [
-      "ללא תנועה",
-      "הזזה",
-      "שיקוף",
-      "סיבוב"
+      "No movement",
+      "Translation",
+      "Reflection",
+      "Rotation"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2227,13 +2227,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "reflection_hard",
     "conceptTag": "mirror_axis",
     "distractorFamily": "transform_confusion",
-    "question": "אתגר: רק הכיוון משתנה כמו במראה מול ציר, הגודל נשמר - איזו טרנספורמציה?",
-    "correct": "שיקוף",
+    "question": "Challenge: only the orientation changes like a mirror across an axis, size preserved — which transformation?",
+    "correct": "Reflection",
     "options": [
-      "שיקוף",
-      "הזזה",
-      "סיבוב",
-      "ללא תנועה"
+      "Reflection",
+      "Translation",
+      "Rotation",
+      "No movement"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -2255,13 +2255,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "translation_hard",
     "conceptTag": "slide_only",
     "distractorFamily": "transform_confusion",
-    "question": "אתגר: רק המיקום משתנה, בלי סיבוב ובלי שינוי גודל - איזו תנועה?",
-    "correct": "הזזה",
+    "question": "Challenge: only the position changes, with no rotation and no size change — which move?",
+    "correct": "Translation",
     "options": [
-      "הזזה",
-      "שיקוף",
-      "סיבוב",
-      "ללא תנועה"
+      "Translation",
+      "Reflection",
+      "Rotation",
+      "No movement"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -2283,13 +2283,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "rotation_hard",
     "conceptTag": "turn_center",
     "distractorFamily": "transform_confusion",
-    "question": "אתגר: הצורה מסתובבת סביב מרכז קבוע בלי שינוי גודל - איזו טרנספורמציה?",
-    "correct": "סיבוב",
+    "question": "Challenge: the shape rotates about a fixed center with no size change — which transformation?",
+    "correct": "Rotation",
     "options": [
-      "סיבוב",
-      "הזזה",
-      "שיקוף",
-      "ללא תנועה"
+      "Rotation",
+      "Translation",
+      "Reflection",
+      "No movement"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -2312,13 +2312,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "square_units",
     "conceptTag": "unit_squares",
     "distractorFamily": "measure_confusion",
-    "question": "כשסופרים 'ריבועי יחידה' בתוך צורה, מה מודדים בערך?",
-    "correct": "שטח",
+    "question": "When counting 'unit squares' inside a shape, what are you roughly measuring?",
+    "correct": "Area",
     "options": [
-      "שטח",
-      "היקף",
-      "זווית",
-      "אורך בלבד"
+      "Area",
+      "Perimeter",
+      "Angle",
+      "Length only"
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2347,13 +2347,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "side_from_perimeter_error",
       "formula_selection_error"
     ],
-    "question": "לריבוע היקף 20 ס״מ. מה נכון לגבי אורך צלע?",
-    "correct": "אורך צלע הוא 5 ס״מ כי 20 ÷ 4 = 5",
+    "question": "A square has perimeter 20 cm. What is true about the side length?",
+    "correct": "The side length is 5 cm because 20 ÷ 4 = 5",
     "options": [
-      "אורך צלע הוא 5 ס״מ כי 20 ÷ 4 = 5",
-      "אורך צלע הוא 20 ס״מ",
-      "אי אפשר לדעת בלי השטח",
-      "אורך צלע הוא 10 ס״מ"
+      "The side length is 5 cm because 20 ÷ 4 = 5",
+      "The side length is 20 cm",
+      "You cannot tell without the area",
+      "The side length is 10 cm"
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "analysis",

@@ -9,7 +9,7 @@ export default function StudentLearningAvatar({
   className = "",
   sizeClass = "h-11 w-11 text-xl",
   onClick,
-  ariaLabel = "פרופיל שחקן",
+  ariaLabel = "Player profile",
 }) {
   const { background } = resolveProfileBackgroundStyle(avatarBackgroundKey);
   const interactive =

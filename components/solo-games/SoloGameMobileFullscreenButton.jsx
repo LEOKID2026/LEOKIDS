@@ -25,9 +25,9 @@ export default function SoloGameMobileFullscreenButton({
       onPointerDown={(e) => e.stopPropagation()}
       className={`${baseClass} ${className}`.trim()}
       style={{ touchAction: "manipulation" }}
-      aria-label={isFullscreen ? "יציאה ממסך מלא" : "מסך מלא"}
+      aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
     >
-      {isFullscreen ? "יציאה" : "מסך מלא"}
+      {isFullscreen ? "Exit" : "Fullscreen"}
     </button>
   );
 }

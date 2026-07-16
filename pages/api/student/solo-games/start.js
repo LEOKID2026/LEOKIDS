@@ -32,10 +32,10 @@ export default async function handler(req, res) {
       body?.difficulty != null ? String(body.difficulty).trim().toLowerCase() : null;
 
     if (!isValidSoloGameKey(gameKey)) {
-      return res.status(400).json({ ok: false, error: "משחק לא תקין" });
+      return res.status(400).json({ ok: false, error: "Invalid game" });
     }
     if (difficulty && !isValidSoloDifficulty(difficulty)) {
-      return res.status(400).json({ ok: false, error: "רמת קושי לא תקינה" });
+      return res.status(400).json({ ok: false, error: "Invalid difficulty level" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();

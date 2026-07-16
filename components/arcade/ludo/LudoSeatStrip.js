@@ -34,7 +34,7 @@ export default function LudoSeatStrip({
   return (
     <div className="flex min-h-0 w-full shrink-0 gap-1 overflow-hidden pb-0.5 pt-0 sm:gap-1 sm:pb-0.5 sm:pt-0">
       {Array.from({ length: count }).map((_, idx) => {
-        const label = labels[idx] ?? `מושב ${idx + 1}`;
+        const label = labels[idx] ?? `Seat ${idx + 1}`;
         const isSelf = selfIndex === idx;
         const isActive = activeIndex === idx;
         const isEliminated = Array.isArray(eliminatedIndices) && eliminatedIndices.includes(idx);

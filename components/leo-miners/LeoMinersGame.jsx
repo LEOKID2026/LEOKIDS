@@ -34,7 +34,7 @@ function useIOSViewportFix() {
       root.style.setProperty("--app-100vh", `${Math.round(h)}px`);
     };
 
-    // init + “התייצבות” אחרי שינוי אוריינטציה
+    // init + settle after orientation change
     const onOrient = () => requestAnimationFrame(() => setTimeout(setVH, 250));
 
     setVH();
@@ -123,7 +123,7 @@ const UI_SPAWN_ICON_SHIFT_Y =
 const UI_ACTION_BTN_W_PX = 220; //
 const UI_ACTION_BTN_H_PX = 64;  //      2  
 
-// מחלקות Tailwind (ערכים שרירותיים) מתוך הקבועים למעלה
+// Tailwind classes (arbitrary values) from the constants above
 const BTN_W_FIX = `w-[${UI_ACTION_BTN_W_PX}px]`;
 const BTN_H_FIX = `h-[${UI_ACTION_BTN_H_PX}px]`;
 
@@ -182,14 +182,14 @@ function currentGiftIntervalSec(s, now = Date.now()) {
 
 
 
-// פרסים
+// Prizes
 const DIAMOND_PRIZES = [
-  { key: "coins_x10",   label: "מטבעות ×10" },
-  { key: "dog+3",       label: "ליאו +3 רמות" },
-  { key: "coins_x100",  label: "מטבעות ×100" },
-  { key: "dog+5",       label: "ליאו +5 רמות" },
-  { key: "coins_x1000", label: "מטבעות ×1000" },
-  { key: "dog+7",       label: "ליאו +7 רמות" },
+  { key: "coins_x10",   label: "Coins ×10" },
+  { key: "dog+3",       label: "Leo +3 levels" },
+  { key: "coins_x100",  label: "Coins ×100" },
+  { key: "dog+5",       label: "Leo +5 levels" },
+  { key: "coins_x1000", label: "Coins ×1000" },
+  { key: "dog+7",       label: "Leo +7 levels" },
 ];
 function rollDiamondPrize() {
   const r = Math.random();
@@ -201,11 +201,11 @@ function rollDiamondPrize() {
 
 // ===== Formatting =====
 
-// בסיס קיצורים (אלפים עד טריליון)
+// Abbreviation bases (thousands through trillion)
 const SUFFIXES_BASE = ["", "K", "M", "B", "T"];
 
 
-// קיצור עם ספרה אחת אחרי הנקודה (חיתוך, לא עיגול) — לשימוש HUD/כפתורים בלבד
+// Abbreviate with 1 digit after the decimal (truncate, don't round) — HUD/buttons only
 function formatAbbrevInt1(n) {
   const sign = (n || 0) < 0 ? "-" : "";
   const abs  = Math.abs(Number(n) || 0);
@@ -225,11 +225,11 @@ const formatShort1 = formatAbbrevInt1;     // / -HUD
 function formatPointsShort1(n){ return formatAbbrevInt1(n); } //  -HUD
 
 
-// ממפה דרגת אלפים לסיומת: 0→"" , 1→K, 2→M, 3→B, 4→T, 5→AA, 6→AB, ... עד אינסוף
+// Map thousand-tier to suffix: 0→"" , 1→K, 2→M, 3→B, 4→T, 5→AA, 6→AB, ... forever
 function suffixFromTier(tier) {
   if (tier < SUFFIXES_BASE.length) return SUFFIXES_BASE[tier];
   const idx = tier - SUFFIXES_BASE.length; // 0→AA, 1→AB ...
-  // ממיר למחרוזת אותיות בסגנון גיליון (A..Z, AA..), ומבריח ל-2+ אותיות
+  // Convert to spreadsheet-style letters (A..Z, AA..), force 2+ letters
   let n = idx + 26; // 26→"AA"
   let s = "";
   while (n >= 0) {
@@ -242,7 +242,7 @@ function suffixFromTier(tier) {
   return s;
 }
 
-// קיצור מספרים כללי עם 2 ספרות אחרי הנקודה (חיתוך, לא עיגול)
+// General number abbreviate with 2 digits after decimal (truncate, don't round)
 function formatAbbrevInt(n) {
   const sign = (n || 0) < 0 ? "-" : "";
   const abs  = Math.abs(Number(n) || 0);
@@ -257,10 +257,10 @@ function formatAbbrevInt(n) {
   let div  = Math.pow(1000, tier);
   let val  = abs / div;
 
-  // חיתוך ל-2 ספרות
+  // Truncate to 2 digits
   let trimmed = Math.trunc(val * p) / p;
 
-  // נרמול קצה: 1000.00 → קפיצה לדרגה הבאה
+  // Edge normalize: 1000.00 → jump to next tier
   if (trimmed >= 1000) {
     tier += 1;
     trimmed = 1;
@@ -270,10 +270,10 @@ function formatAbbrevInt(n) {
 }
 
 
-// שמירה על השם הקיים בקוד
+// Keep existing name used in code
 const formatShort = formatAbbrevInt;
 
-// נקודות — 3 ספרות אחרי הנקודה בכל טווח (בלי קיצור), חיתוך לא עיגול
+// Points — 3 digits after decimal at all ranges (no abbreviate), truncate don't round
 function formatPoints(n) {
   const num = Number(n || 0);
   const sign = num < 0 ? "-" : "";
@@ -284,12 +284,12 @@ function formatPoints(n) {
 }
 
 
-// נקודות קצר — קיצור עם 2 ספרות (ל-HUD/טוסטים/פופאפים)
+// Short points — abbreviate with 2 digits (for HUD/toasts/popups)
 function formatPointsShort(n) {
   return formatAbbrevInt(n);
 }
 
-// נקודות — 2 ספרות אחרי הנקודה (חיתוך, לא עיגול)
+// Points — 2 digits after decimal (truncate, don't round)
 function formatPoints2(n) {
   const num = Number(n || 0);
   const sign = num < 0 ? "-" : "";
@@ -618,11 +618,11 @@ export default function LeoMinersGame({
   async function claimBalanceToVaultDemo() {
     try { playMinersClick(); } catch {}
     if (!dbReady || !rewardsEnabled || !economy) {
-      setGiftToastWithTTL(statusMessage || "שמירת פרסים בשרת לא זמינה עדיין.");
+      setGiftToastWithTTL(statusMessage || "Saving rewards on the server isn't available yet.");
       return;
     }
     if (Number(pendingPoints || 0) < 1) {
-      setGiftToastWithTTL("צריך לפחות 1 נקודה למימוש.");
+      setGiftToastWithTTL("You need at least 1 point to redeem.");
       return;
     }
     setClaiming(true);
@@ -631,14 +631,14 @@ export default function LeoMinersGame({
       if (resp?.ok) {
         setGiftToastWithTTL(
           resp.coinsGranted
-            ? `מימוש הצליח! +${resp.coinsGranted} מטבעות ליאו`
-            : "הנקודות מומשו בהצלחה."
+            ? `Redeemed! +${resp.coinsGranted} Leo coins`
+            : "Points redeemed successfully."
         );
       } else {
-        setGiftToastWithTTL(resp?.message || resp?.error || "לא ניתן לממש כרגע.");
+        setGiftToastWithTTL(resp?.message || resp?.error || "Can't redeem right now.");
       }
     } catch {
-      setGiftToastWithTTL("שגיאת רשת - נסו שוב.");
+      setGiftToastWithTTL("Network error - try again.");
     } finally {
       setClaiming(false);
     }
@@ -706,22 +706,22 @@ export default function LeoMinersGame({
       const gain = Math.round(base * 0.10);
       s.gold += gain;
       setUi((u) => ({ ...u, gold: s.gold }));
-      setCenterPopup({ text: `🎁 +${formatShort(gain)} מטבעות`, id: Math.random() });
+      setCenterPopup({ text: `🎁 +${formatShort(gain)} coins`, id: Math.random() });
     } else if (type === "coins40") {
       const base = Math.max(10, expectedGiftCoinReward(s));
       const gain = Math.round(base * 0.20);
       s.gold += gain;
       setUi((u) => ({ ...u, gold: s.gold }));
-      setCenterPopup({ text: `🎁 +${formatShort(gain)} מטבעות`, id: Math.random() });
+      setCenterPopup({ text: `🎁 +${formatShort(gain)} coins`, id: Math.random() });
     } else if (type === "dps") {
       s.dpsMult = +((s.dpsMult || 1) * gp().dps_upgrade_multiplier).toFixed(2);
-      setCenterPopup({ text: `🎁 כוח שבירה +10% (×${(s.dpsMult || 1).toFixed(2)})`, id: Math.random() });
+      setCenterPopup({ text: `🎁 Break power +10% (×${(s.dpsMult || 1).toFixed(2)})`, id: Math.random() });
     } else if (type === "gold") {
       s.goldMult = +((s.goldMult || 1) * gp().gold_upgrade_multiplier).toFixed(2);
-      setCenterPopup({ text: `🎁 זהב +10% (×${(s.goldMult || 1).toFixed(2)})`, id: Math.random() });
+      setCenterPopup({ text: `🎁 Gold +10% (×${(s.goldMult || 1).toFixed(2)})`, id: Math.random() });
     } else if (type === "diamond") {
       s.diamonds = (s.diamonds || 0) + 1;
-      setCenterPopup({ text: `🎁 +1 💎 (יהלומים: ${s.diamonds})`, id: Math.random() });
+      setCenterPopup({ text: `🎁 +1 💎 (diamonds: ${s.diamonds})`, id: Math.random() });
     }
     s.giftReady = false;
     const now = Date.now();
@@ -947,7 +947,7 @@ export default function LeoMinersGame({
 }, [gameplayConfig]);
 
 
-// רנדר/סנכרון מתנות — 500ms heartbeat
+// Gift render/sync — 500ms heartbeat
 useEffect(() => {
   const id = setInterval(() => {
     const s = stateRef.current;
@@ -964,7 +964,7 @@ useEffect(() => {
 
     if (!s.giftReady && s.giftNextAt && s.giftNextAt <= now) {
       s.giftReady = true;
-      // חשוב: לא מאבדים את זמן ה־ready האמיתי
+      // Important: don't lose the real ready timestamp
       s.giftFirstReadyAt = s.giftFirstReadyAt || s.giftNextAt;
       if (!giftReadyUiRef.current) {
         giftReadyUiRef.current = true;
@@ -978,7 +978,7 @@ useEffect(() => {
 }, []);
 
 
-// פולס UI לטבעות מתנה/כלב — 1000ms (מונע re-render כבד במובייל)
+// UI pulse for gift/dog rings — 1000ms (avoids heavy re-render on mobile)
 useEffect(() => {
   const id = setInterval(() => {
     uiPulseAccumRef.current += 1;
@@ -987,7 +987,7 @@ useEffect(() => {
   return () => clearInterval(id);
 }, []);
 
-// הגדרת helpers לפני השימוש (בתוך הקומפוננטה)
+// Define helpers before use (inside the component)
 const _currentGiftIntervalSec = typeof currentGiftIntervalSec==="function"?currentGiftIntervalSec:(s)=>Math.max(5,Math.floor(s?.lastGiftIntervalSec||20));
 const _getPhaseInfo = typeof getPhaseInfo==="function"?getPhaseInfo:(s,now=Date.now())=>{ 
   const sec=_currentGiftIntervalSec(s,now); 
@@ -998,7 +998,7 @@ const DOG_INTERVAL_SEC_LOCAL =
 const DOG_BANK_CAP_LOCAL =
   (typeof window !== "undefined" && window.DOG_BANK_CAP) || gp().auto_dog_bank_cap;
 
-// חישוב giftProgress ו-dogProgress (מתעדכן בכל רנדר בגלל forceUiPulse)
+// Compute giftProgress and dogProgress (updates every render due to forceUiPulse)
 const giftProgress = (() => { 
   const s = stateRef.current; if (!s) return 0; 
   if (s.giftReady) return 1; 
@@ -1083,7 +1083,7 @@ function scheduleGoldUiSync() {
 
 // === START PART 4 ===
 
-// ---------- קנבס/ציור ----------
+// ---------- Canvas / drawing ----------
 function setupCanvasAndLoop(cnv){
   const ctx = cnv.getContext("2d"); if (!ctx) return () => {};
 
@@ -1213,7 +1213,7 @@ function setupCanvasAndLoop(cnv){
   };
 }
 
-// ----- גיאומטריה -----
+// ----- Geometry -----
 const PILL_H = UI_BTN_H_PX;
 function boardRect(){
   const c = canvasRef.current;
@@ -1261,7 +1261,7 @@ function pushRockBreakFx(lane, coinsGain, pointsGain) {
     x: rr.x + rr.w * 0.5,
     y: rr.y + rr.h * 0.38,
     line1: `+${formatShort(coinsGain)}`,
-    line2: pointsGain > 0 ? `+${formatPointsShort(pointsGain)} נק׳` : "",
+    line2: pointsGain > 0 ? `+${formatPointsShort(pointsGain)} pts` : "",
     age: 0,
     life: ROCK_FX_LIFE_SEC,
   });
@@ -1353,7 +1353,7 @@ function pickMiner(x,y){
 
 // === START PART 5 ===
 
-// ----- ציור -----
+// ----- Drawing -----
 function drawBg(ctx,b){
   let src = resolveBgSrc(boardBgSrcRef.current);
   let img = getImg(src);
@@ -1377,24 +1377,24 @@ function drawBg(ctx,b){
 }
 
 function drawRock(ctx, rect, rock){
-  // בלי צללים
+  // No shadows
   ctx.shadowColor = "transparent";
   ctx.shadowBlur  = 0;
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
 
-  // מצב הסלע
+  // Rock state
   const pct   = Math.max(0, rock.hp / rock.maxHp);
   const scale = 0.35 + 0.65 * pct;
 
-  // מסגרות ומידות
+  // Frames and sizes
   const rockSrc = resolveRockSrc(rockImgSrcRef.current);
   const img   = getImg(rockSrc);
   const pad   = 6;
   const fullW = rect.w - pad*2;
   const fullH = rect.h - pad*2;
 
-  // גודל/מיקום הסלע (אותו חישוב כמו קודם)
+  // Rock size/position (same calc as before)
   const rw = fullW * scale;
   const rh = fullH * scale;
   const cx = rect.x + rect.w / 2;
@@ -1402,7 +1402,7 @@ function drawRock(ctx, rect, rock){
   const dx = cx - rw / 2;
   const dy = cy - rh / 2;
 
-  // ציור הסלע
+  // Draw rock
   let drawSrc = rockSrc;
   let drawImg = img;
   if (!drawImg.complete || drawImg.naturalWidth <= 0) {
@@ -1418,7 +1418,7 @@ function drawRock(ctx, rect, rock){
     ctx.fillRect(dx, dy, rw, rh);
   }
 
-  // === מיקומים קבועים בתוך הסלע ===
+  // === Fixed positions inside the rock ===
   const INNER_PAD = 6;              //
   const BAR_H = 18;                           // ↑    ( 10)
   const BAR_W = Math.min(fullW * 0.75, rw - 12);
@@ -1429,21 +1429,21 @@ function drawRock(ctx, rect, rock){
 
 
 
-  // רקע הבר
+  // Bar background
   ctx.fillStyle = "rgba(0,0,0,.35)";
   ctx.fillRect(BAR_X, BAR_Y, BAR_W, BAR_H);
 
-  // מילוי הבר
+  // Bar fill
   ctx.fillStyle = "#0ea5e9";
   ctx.fillRect(BAR_X, BAR_Y, Math.max(0, BAR_W * pct), BAR_H);
 
-  // מסגרת
+  // Border
   ctx.strokeStyle = "#082f49";
   ctx.lineWidth   = 1;
   ctx.strokeRect(BAR_X, BAR_Y, BAR_W, BAR_H);
 
-  // === טקסט בתוך הבר ===
-  const TXT = `סלע ${rock.idx + 1}`;
+  // === Text inside the bar ===
+  const TXT = `Rock ${rock.idx + 1}`;
   ctx.font         = "bold 12px system-ui";
   ctx.textAlign    = "center";
   ctx.textBaseline = "middle";
@@ -1531,7 +1531,7 @@ function draw(){
       if (!cell) {
         const pr = pillRect(l,k);
         const canAfford = (s.gold ?? 0) >= (s.spawnCost ?? 0) && countMiners(s) < MAX_MINERS;
-        drawPill(ctx, pr.x, pr.y, pr.w, pr.h, "הוסף", canAfford);
+        drawPill(ctx, pr.x, pr.y, pr.w, pr.h, "Add", canAfford);
       }
     }
     drawRock(ctx, rockRect(l), s.lanes[l].rock);
@@ -1578,7 +1578,7 @@ function draw(){
   drawRockFx(ctx);
 }
 
-// ----- לוגיקת tick בסיסית -----
+// ----- Basic tick logic -----
 function tick(dt){
   const s = stateRef.current; if (!s) return;
   s.anim.t += dt;
@@ -1587,7 +1587,7 @@ function tick(dt){
   const now = Date.now();
   if (s.paused){ s.lastSeen = now; return; }
 
-  // אם 🎁 מוכנה מעל 5 דק' ולא נלקחה — עוברים ל־idle-offline
+  // If 🎁 ready over 5 min and not claimed — switch to idle-offline
 if (s.giftReady && (s.giftFirstReadyAt || s.giftNextAt)) {
   const readySince = s.giftFirstReadyAt || s.giftNextAt;   // ←  
   if ((now - readySince) >= IDLE_OFFLINE_MS && !s.isIdleOffline) {
@@ -1597,7 +1597,7 @@ if (s.giftReady && (s.giftFirstReadyAt || s.giftNextAt)) {
 }
 
 
-  // עדכון סלעים/מטבעות
+  // Update rocks/coins
   for (let l = 0; l < LANES; l++){
     let dps = 0;
     for (let k = 0; k < SLOTS_PER_LANE; k++){
@@ -1615,12 +1615,12 @@ if (s.giftReady && (s.giftFirstReadyAt || s.giftNextAt)) {
         try { playMinersRock(); playMinersCoin(); } catch {}
       }
       const coinsGain = Math.floor(rock.maxHp * gp().gold_factor * (s.goldMult || 1));
-// נשמור מצב לפני – כדי לוודא POP לפי תוצאה אמיתית
-// GOLD כרגיל
+// Save state before – ensure POP matches real result
+// GOLD as usual
 s.gold += coinsGain;
 scheduleGoldUiSync();
 
-// מעניקים נקודות לפי שלב הסלע עצמו (בלתי תלוי בסלעים אחרים)
+// Award points by this rock stage (independent of other rocks)
 const stageNow = rockStageNow(rock);
 const pointsForBreak = pointsBaseForStage(stageNow);
 const eff = addPlayerScorePoints(s, pointsForBreak);
@@ -1634,11 +1634,11 @@ if (eff > 0) {
   }
 }
 
-// ה-POP מציג את הזכייה - המשתמש כבר קיבל אותה ב-local state
-// השרת יסתנכרן ויתקן אם יש סתירות
+// POP shows the win - user already got it in local state
+// Server will sync and correct if there are conflicts
 const pointsTxt = formatPointsShort(eff || 0);
 pushRockBreakFx(l, coinsGain, eff || 0);
-scheduleCenterPopup(`⛏️ +${formatShort(coinsGain)} מטבעות • +${pointsTxt} נקודות`);
+scheduleCenterPopup(`⛏️ +${formatShort(coinsGain)} coins • +${pointsTxt} points`);
 
 
       s.lanes[l].rockCount += 1;
@@ -1647,7 +1647,7 @@ scheduleCenterPopup(`⛏️ +${formatShort(coinsGain)} מטבעות • +${point
     }
   }
 
-  // עדכון טיימר מתנות
+  // Update gift timer
   if (!s.giftReady && (s.giftNextAt || 0) <= now) {
     s.giftReady = true;
     if (!giftReadyUiRef.current) {
@@ -1656,7 +1656,7 @@ scheduleCenterPopup(`⛏️ +${formatShort(coinsGain)} מטבעות • +${point
     }
   }
 
-  // הנחת כלב יהלום ממתין
+  // Place pending diamond dog
   if (s.pendingDiamondDogLevel && countMiners(s) < MAX_MINERS) {
     const placed = spawnMiner(s, s.pendingDiamondDogLevel);
     if (placed) {
@@ -1664,12 +1664,12 @@ scheduleCenterPopup(`⛏️ +${formatShort(coinsGain)} מטבעות • +${point
       s.pendingDiamondDogLevel = null;
       s.giftReady  = false;
       s.giftNextAt = now + currentGiftIntervalSec(s) * 1000;
-      setGiftToastWithTTL(`💎 כלב (רמה ${placedLvl}) הוצב`);
+      setGiftToastWithTTL(`💎 Dog (level ${placedLvl}) placed`);
       save?.();
     }
   }
 
-  // אוטו־דוג + חיתוך יומי ל-נקודות
+  // Auto-dog + daily points clamp
   accrueBankDogsUpToNow(s);
   tryDistributeBankDog(s);
   finalizeDailyRewardOncePerTick();
@@ -1999,7 +1999,7 @@ function afterPurchaseBump(s) {
 }
 function trySpawnAtSlot(lane, slot) {
   const s = stateRef.current; if (!s) return;
-  if (countMiners(s) >= MAX_MINERS) { try{playMinersClick();}catch{}; alert(`מקסימום ${MAX_MINERS} כלבים על הלוח.`); return; }
+  if (countMiners(s) >= MAX_MINERS) { try{playMinersClick();}catch{}; alert(`Maximum ${MAX_MINERS} dogs on the board.`); return; }
   if (s.spawnCost == null || s.gold < s.spawnCost) { try{playMinersClick();}catch{}; return; }
   const ok = spawnMinerAt(s, lane, slot, s.spawnLevel);
   if (!ok) return;
@@ -2014,7 +2014,7 @@ function trySpawnAtSlot(lane, slot) {
 }
 function addMiner() {
   const s = stateRef.current; if (!s) return;
-  if (countMiners(s) >= MAX_MINERS) { try{playMinersClick();}catch{}; alert(`מקסימום ${MAX_MINERS} כלבים על הלוח.`); return; }
+  if (countMiners(s) >= MAX_MINERS) { try{playMinersClick();}catch{}; alert(`Maximum ${MAX_MINERS} dogs on the board.`); return; }
   if (s.spawnCost == null || s.gold < s.spawnCost) return;
   const ok = spawnMiner(s, s.spawnLevel);
   if (!ok) return;
@@ -2047,13 +2047,13 @@ async function onOfflineCollect() {
   const addPoints = Math.max(0, Number(s.pendingOfflinePoints || 0));
   const stageCountsCopy = { ...(s.pendingOfflineStageCounts || {}) };
 
-  // 1) זיכוי מיידי בלקוח - coins
+  // 1) Immediate client credit - coins
   if (addCoins > 0) {
     s.gold += addCoins;
     setUi((u) => ({ ...u, gold: s.gold }));
   }
 
-  // מאפסים pending של offline במסך המשחק
+  // Clear offline pending on the game screen
   s.pendingOfflineGold = 0;
   s.pendingOfflinePoints = 0;
   s.pendingOfflineStageCounts = {};
@@ -2070,7 +2070,7 @@ async function onOfflineCollect() {
   // 3) popup
   if (addCoins > 0 || addPoints > 0) {
     setCenterPopup({
-      text: `⛏️ +${formatShort(addCoins)} מטבעות • +${formatPointsShort(addPoints)} נקודות`,
+      text: `⛏️ +${formatShort(addCoins)} coins • +${formatPointsShort(addPoints)} points`,
       id: Math.random(),
     });
   }
@@ -2092,7 +2092,7 @@ async function onOfflineCollect() {
   })();
 }
 
-// ===== אוטו־דוג/אופליין/מתנות =====
+// ===== Auto-dog / offline / gifts =====
 
 function chooseAutoDogLevel(s) {
   const sl = Math.max(1, s.spawnLevel || 1);
@@ -2140,13 +2140,13 @@ function lowestExistingLevelOnBoard(s) {
   return levels[0]; // lowest existing level
 }
 
-// "can merge at buy level" = יש לפחות כלב אחד ברמת הקנייה על הלוח (אפשרות לזוג/מיזוג)
+// "can merge at buy level" = at least one dog at buy level on the board (pair/merge possible)
 function canMergeAtBuyLevel(s) {
   const bl = Math.max(1, s.spawnLevel || 1);
   return Object.values(s.miners || {}).some(m => m && m.level === bl);
 }
 
-// בחירת דרגה למתנה רגילה: ברירת־מחדל דרגת קנייה; אם אין שום אפשרות מיזוג — הדרגה הנמוכה ביותר שקיימת על הלוח
+// Pick level for regular gift: default buy level; if no merge possible — lowest level on the board
 function chooseGiftDogPlacementLevel(s) {
   const buyLevel = Math.max(1, s.spawnLevel || 1);
   if (canMergeAtBuyLevel(s)) return buyLevel;
@@ -2164,7 +2164,7 @@ function tryDistributeBankDog(s) {
   const ok = spawnMiner(s, lvl);
   if (ok) {
     s.autoDogBank = Math.max(0, (s.autoDogBank || 0) - 1);
-    setCenterPopup?.({ text: `🦊 כלב אוטומטי (רמה ${lvl})`, id: Math.random() });
+    setCenterPopup?.({ text: `🦊 Auto dog (level ${lvl})`, id: Math.random() });
     save?.();
   }
 }
@@ -2172,7 +2172,7 @@ function tryDistributeBankDog(s) {
 function handleOfflineAccrual(s, elapsedMs) {
   if (!s) return 0;
 
-  // --- Auto-dog accrual (נשאר כמו אצלך) ---
+  // --- Auto-dog accrual (unchanged) ---
   {
     const period = DOG_INTERVAL_SEC * 1000;
     const now = Date.now();
@@ -2203,7 +2203,7 @@ function handleOfflineAccrual(s, elapsedMs) {
     }
   }
 
-  // --- סימולציית אופליין לשבירות ---
+  // --- Offline break simulation ---
   const CAP_MS = 12 * 60 * 60 * 1000;
   const simMs = Math.min(elapsedMs, CAP_MS);
 
@@ -2226,10 +2226,10 @@ function handleOfflineAccrual(s, elapsedMs) {
         hp -= dps * timeLeft;
         timeLeft = 0;
       } else {
-        // שבירה מתרחשת:
+        // Break happens:
         totalCoins += Math.floor(maxHp * gp().gold_factor * (s.goldMult || 1));
 
-        // ערך נקודות לפי שלב הסלע בנתיב זה ברגע השבירה
+        // Points value by rock stage on this lane at break time
         const stageNow = (idx + 1);
         const pointsForBreak = pointsBaseForStage(stageNow);
         const eff = round2(addPlayerScorePoints(s, pointsForBreak));
@@ -2237,7 +2237,7 @@ function handleOfflineAccrual(s, elapsedMs) {
         offlineAddedPoints += eff;
         finalizeDailyRewardOncePerTick();
 
-        // מעבר לסלע הבא בנתיב
+        // Advance to next rock on the lane
         timeLeft -= timeToBreak;
         idx += 1;
         const rk = newRock(lane, idx);
@@ -2249,7 +2249,7 @@ function handleOfflineAccrual(s, elapsedMs) {
     s.lanes[lane].rockCount = idx;
   }
 
-  // מצטברים למסך ה-COLLECT (האיזון של ה-Mining עודכן תוך כדי)
+  // Accrue for COLLECT screen (Mining balance updated along the way)
   if (totalCoins > 0) {
     s.pendingOfflineGold = (s.pendingOfflineGold || 0) + totalCoins;
   }
@@ -2328,22 +2328,22 @@ async function resetGame() {
 // ===== Diamonds chest (3×💎 to claim when you choose) =====
 function grantDiamondPrize(s, key) {
   const base = Math.max(20, expectedGiftCoinReward(s));
-  if (key === "coins_x10")   { const g = base * 10;   s.gold += Math.round(g); setGiftToastWithTTL(`💎 +${formatShort(g)} מטבעות`); }
-  else if (key === "coins_x100") { const g = base * 100; s.gold += Math.round(g); setGiftToastWithTTL(`💎 +${formatShort(g)} מטבעות`); }
-  else if (key === "coins_x1000"){ const g = base * 1000; s.gold += Math.round(g); setGiftToastWithTTL(`💎 +${formatShort(g)} מטבעות`); }
+  if (key === "coins_x10")   { const g = base * 10;   s.gold += Math.round(g); setGiftToastWithTTL(`💎 +${formatShort(g)} coins`); }
+  else if (key === "coins_x100") { const g = base * 100; s.gold += Math.round(g); setGiftToastWithTTL(`💎 +${formatShort(g)} coins`); }
+  else if (key === "coins_x1000"){ const g = base * 1000; s.gold += Math.round(g); setGiftToastWithTTL(`💎 +${formatShort(g)} coins`); }
   else if (key.startsWith("dog+")) {
     const delta = parseInt(key.split("+")[1] || "3", 10);
     const lvl = Math.max(1, (stateRef.current?.spawnLevel || 1) + delta);
     if (countMiners(s) < MAX_MINERS) {
       const placed = spawnMiner(s, lvl);
       if (placed) {
-        setGiftToastWithTTL(`💎 כלב (רמה ${lvl})`);
+        setGiftToastWithTTL(`💎 Dog (level ${lvl})`);
         s.giftReady  = false;
         s.giftNextAt = Date.now() + currentGiftIntervalSec(s) * 1000;
       }
     } else {
       s.pendingDiamondDogLevel = lvl;
-      setGiftToastWithTTL(`💎 כלב (רמה ${lvl}) ממתין - פנו מקום בלוח`);
+      setGiftToastWithTTL(`💎 Dog (level ${lvl}) waiting - free up a board slot`);
     }
   }
   setUi(u => ({ ...u, gold: s.gold }));
@@ -2377,7 +2377,7 @@ const onlineMode = (() => {
   return "online";
 })();
 const isOnline = onlineMode === "online";
-const onlineDotTitle = isOnline ? "מחובר" : (stateRef.current?.isIdleOffline ? "ממתין (יעילות מופחתת)" : "לא מחובר");
+const onlineDotTitle = isOnline ? "Online" : (stateRef.current?.isIdleOffline ? "Waiting (reduced efficiency)" : "Offline");
 
 
 function ringBg(progress){
@@ -2400,7 +2400,7 @@ const addRemainMs=mounted?Math.max(0,cooldownUntil-nowMs):Number.POSITIVE_INFINI
 const addProgress=mounted?1-Math.min(1,addRemainMs/(10*60*1000)):0;
 const addRemainLabel=(()=>{ 
   if(!mounted) return "…"; 
-  if(addRemainMs<=0) return "מוכן"; 
+  if(addRemainMs<=0) return "Ready"; 
   const m=Math.floor(addRemainMs/60000); 
   const s=Math.floor((addRemainMs%60000)/1000); 
   return `${m}:${String(s).padStart(2,"0")}`;
@@ -2416,7 +2416,7 @@ function onAdd(){
     const m=Math.floor(remain/60),sec=String(remain%60).padStart(2,"0"); 
     if(typeof setGiftToast==="function"){ 
       const id=Math.random().toString(36).slice(2); 
-      setGiftToast({text:`בונוס פרסומת בעוד ${m}:${sec}`,id}); 
+      setGiftToast({text:`Ad bonus in ${m}:${sec}`,id}); 
       setTimeout(()=>{setGiftToast(cur=>(cur&&cur.id===id?null:cur));},2000);
     } 
     return; 
@@ -2428,55 +2428,55 @@ function onAdd(){
 // Coins modal (details + claim-to-mining)
 const [showCoinsModal, setShowCoinsModal] = useState(false);
 
-// Legacy shim: in the new engine נקודות accrues only on rock breaks.
+// Legacy shim: in the new engine points accrue only on rock breaks.
 // Keep a no-op to avoid ReferenceError if older UI paths still call it.
 function previewPointsFromCoins() { return 0; }
 
 function claimCoinsToMining() {
   try { playMinersClick(); } catch {}
-  setGiftToastWithTTL("נקודות כרייה נצברות רק דרך השרת - לא ניתן להמיר מטבעות מקומית.");
+  setGiftToastWithTTL("Mining points only accrue via the server - can't convert coins locally.");
 }
 
 // ===== HUD Info modal state & content =====
 const [hudModal, setHudModal] = useState(null);
 function getHudModalTitle(k){
   switch(k){
-    case 'coins': return 'מטבעות';
-    case 'dps': return 'מכפיל כוח שבירה';
-    case 'gold': return 'מכפיל זהב';
-    case 'spawn': return 'רמת כלב חדש';
-    case 'lvCounter': return 'מונה רמת כלב חדש';
-    case 'gifts': return 'שלבי מתנות';
-    case 'giftRing': return 'טיימר מתנה';
-    case 'dogRing': return 'כלב אוטומטי';
-    default: return 'מידע';
+    case 'coins': return 'Coins';
+    case 'dps': return 'Break power multiplier';
+    case 'gold': return 'Gold multiplier';
+    case 'spawn': return 'New dog level';
+    case 'lvCounter': return 'New dog level counter';
+    case 'gifts': return 'Gift stages';
+    case 'giftRing': return 'Gift timer';
+    case 'dogRing': return 'Auto dog';
+    default: return 'Info';
   }
 }
 function getHudModalText(k){
   switch(k){
     case 'coins':
-      return 'סך המטבעות שלך. שבירת סלעים מוסיפה מטבעות; בונוסים: 🎁 מתנה רגילה (10%), פרסומת (50%), ויהלומים עם מכפילים גדולים.';
+      return 'Your total coins. Breaking rocks adds coins; bonuses: 🎁 regular gift (10%), ad (50%), and diamonds with big multipliers.';
     case 'dps':
-      return '🪓 מכפיל כוח שבירה מגדיל את קצב איבוד ה-HP של הסלע ב-10% בכל שדרוג.';
+      return '🪓 Break power multiplier increases how fast the rock loses HP by 10% per upgrade.';
     case 'gold':
-      return '🟡 מכפיל זהב מגדיל את המטבעות שמתקבלים מכל סלע ב-10% בכל שדרוג.';
+      return '🟡 Gold multiplier increases coins from every rock by 10% per upgrade.';
     case 'spawn':
-      return `🦊 רמה מציגה את רמת הכלב בקנייה/בונוס.
-עולה אוטומטית אחרי 30 קניות.
+      return `🦊 Level shows the dog level for buy/bonus.
+Goes up automatically after 30 purchases.
 
-קניות עד לרמה הבאה: ${toNextLv}.`;
+Purchases until next level: ${toNextLv}.`;
     case 'gifts':
-      return '⏳ המרווח בין מתנות. כשהטיימר נגמר מקבלים מתנה: מטבעות/כלב/בוסטים/יהלום.';
+      return '⏳ Time between gifts. When the timer ends you get a gift: coins/dog/boosts/diamond.';
     case 'giftRing':
-      return 'הטבע סביב 🎁 מראה התקדמות למתנה הבאה לפי הזמנים המוצגים.';
+      return 'The ring around 🎁 shows progress to the next gift based on the times shown.';
     case 'dogRing':
-      return 'הטבע סביב 🦊 מראה התקדמות לכלב אוטומטי. כשהבנק מלא (עד 6), הוא יוצא כשיש מקום פנוי.';
+      return 'The ring around 🦊 shows progress to an auto dog. When the bank is full (up to 6), it appears when a slot is free.';
     default:
       return '';
   }
 }
 
-// prices & יכולת קנייה לשורת הפעולות
+// prices & affordability for the action row
 const spawnCostNow=sNow?.spawnCost??ui.spawnCost;
 const dpsCostNow=(typeof _dpsCost==="function")?_dpsCost(sNow):160;
 const goldCostNow=(typeof _goldCost==="function")?_goldCost(sNow):160;
@@ -2503,8 +2503,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   const HUD_TOP_IOS_PX = 10;
   const HUD_TOP_ANDROID_PX = 15;
 
-  // ——— Track fullscreen state (מתחבר ל-PART 2) ———
-  // יש לנו כבר isFullscreen + מאזין ב-PART 2
+  // ——— Track fullscreen state (hooks into PART 2) ———
+  // We already have isFullscreen + listener in PART 2
 
   useEffect(() => {
     try {
@@ -2518,7 +2518,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
   const hudTop = `calc(env(safe-area-inset-top, 0px) + ${(isIOS ? HUD_TOP_IOS_PX : HUD_TOP_ANDROID_PX)}px)`;
 
-  // ==== אל תסגור את הקומפוננטה ב-PART 8! המשך PART 9/10 יושב באותו return ====
+  // ==== Do not close the component in PART 8! PART 9/10 continues in the same return ====
   return (
     <>
       <div
@@ -2555,9 +2555,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             <div className="absolute left-2 top-0 flex gap-2 pointer-events-auto">
               <button
                onClick={backSafe}
-                aria-label="חזרה"
+                aria-label="Back"
                 className="h-10 w-10 rounded-xl bg-black/40 hover:bg-black/60 text-white grid place-items-center shadow"
-                title="חזרה"
+                title="Back"
               >
                 ←
               </button>
@@ -2575,19 +2575,19 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                     document.exitFullscreen?.().catch(()=>{});
                   }
                 }}
-                aria-label="מסך מלא"
+                aria-label="Fullscreen"
                 className="h-10 px-3 rounded-xl bg-black/40 hover:bg-black/60 text-white flex items-center gap-2 shadow"
-                title={isFullscreen ? "יציאה ממסך מלא" : "מסך מלא"}
+                title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
               >
                 <span className="text-base">⤢</span>
-                <span className="text-xs opacity-80">{isFullscreen ? "יציאה" : "מלא"}</span>
+                <span className="text-xs opacity-80">{isFullscreen ? "Exit" : "Full"}</span>
               </button>
 
               <button
                 onClick={() => { try { playMinersClick(); } catch {}; setMenuOpen(true); }}
-                aria-label="תפריט"
+                aria-label="Menu"
                 className="h-10 w-10 rounded-xl bg-black/40 hover:bg-black/60 text-white grid place-items-center shadow"
-                title="תפריט"
+                title="Menu"
               >
                 ≡
               </button>
@@ -2603,21 +2603,21 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   >
     <div
       className="
-        w-[86vw] max-w-[250px]   /* רוחב מקס' */
-        max-h-[70vh]             /* גובה מקס' */
+        w-[86vw] max-w-[250px]   /* max width */
+        max-h-[70vh]             /* max height */
         bg-[#0b1220] text-white
         shadow-2xl rounded-2xl
-        p-4 md:p-5               /* ריווח קטן יותר */
+        p-4 md:p-5               /* tighter padding */
         overflow-y-auto
       "
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex items-center justify-between mb-2 md:mb-3">
-        <h2 className="text-xl font-extrabold">הגדרות</h2>
+        <h2 className="text-xl font-extrabold">Settings</h2>
         <button
           onClick={() => setMenuOpen(false)}
           className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/20 grid place-items-center"
-          title="סגור"
+          title="Close"
         >
           ✕
         </button>
@@ -2625,13 +2625,13 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
       {/* Sound */}
       <div className="mb-4 space-y-2">
-        <h3 className="text-sm font-semibold opacity-80">צלילים</h3>
-        <p className="text-xs opacity-70">הגדרות השמע הגלובליות זמינות במסך הטעינה לפני המשחק.</p>
+        <h3 className="text-sm font-semibold opacity-80">Sounds</h3>
+        <p className="text-xs opacity-70">Global audio settings are available on the loading screen before the game.</p>
       </div>
 
 
-      <div className="mt-4 text-xs opacity-70" dir="rtl">
-        <p>ליאו הכורה - גרסת HUD</p>
+      <div className="mt-4 text-xs opacity-70" dir="ltr">
+        <p>Leo the Miner - HUD version</p>
       </div>
     </div>
   </div>
@@ -2643,15 +2643,15 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         {isMobileLandscape && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white text-center p-6">
             <div>
-              <h2 className="text-2xl font-extrabold mb-3">סובבו את המכשיר לאורך (לא לרוחב).</h2>
-              <p className="opacity-80">מצב לרוחב לא נתמך.</p>
+              <h2 className="text-2xl font-extrabold mb-3">Please rotate your device to portrait (not landscape).</h2>
+              <p className="opacity-80">Landscape mode is not supported.</p>
             </div>
           </div>
         )}
 
 
-        {/* --- אל תסגור כאן את </div> / </> / );  ---
-             המשך PART 9/10 נכנס ישר אחרי זה בתוך אותו wrapper */}
+        {/* --- Do not close </div> / </> / ); here  ---
+             PART 9/10 continues right after this inside the same wrapper */}
         
 {/* === END PART 8 (OPEN) === */}
 
@@ -2662,7 +2662,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       {showAdModal && (
         <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
           <div className="bg-white text-slate-900 max-w-md w-full rounded-2xl p-5">
-            <h2 className="text-xl font-extrabold mb-3">צפייה לבונוס</h2>
+            <h2 className="text-xl font-extrabold mb-3">Watch for bonus</h2>
 
             <video
               src="/ads/ad1.mp4"
@@ -2677,7 +2677,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 onClick={() => { setShowAdModal(false); setAdVideoEnded(false); }}
                 className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900"
               >
-                סגור
+                Close
               </button>
 
               <button
@@ -2697,7 +2697,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                     localStorage.setItem(LS_KEY, JSON.stringify(data));
                   } catch {}
 
-                  setCenterPopup({ text: `🎬 +${formatShort(gain)} מטבעות`, id: Math.random() });
+                  setCenterPopup({ text: `🎬 +${formatShort(gain)} coins`, id: Math.random() });
                   save();
                   setShowAdModal(false);
                   setAdVideoEnded(false);
@@ -2706,9 +2706,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 className={`px-4 py-2 rounded-lg font-bold ${
                   adVideoEnded ? "bg-yellow-400 hover:bg-yellow-300 text-black" : "bg-slate-300 text-slate-500 cursor-not-allowed"
                 }`}
-                title={adVideoEnded ? "איסוף הפרס" : "צפו עד הסוף כדי לפתוח"}
+                title={adVideoEnded ? "Collect reward" : "Watch to the end to unlock"}
               >
-                אסוף
+                Collect
               </button>
             </div>
           </div>
@@ -2722,10 +2722,10 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
   style={{
     maxWidth: isDesktop ? "1024px" : "680px",
-    // שמירה על גובה מלא-מסך גם ב-iOS (עם פולבאקים בטוחים)
+    // Keep full-screen height on iOS too (with safe fallbacks)
     height: "calc(var(--app-100vh, 100svh) - var(--header-h, 0px))",
     minHeight: "min(100vh, var(--app-100vh, 100svh))",
-    // בדסקטופ יחס קלאסי; במובייל מחזירים 9/16 כמו בגרסה היציבה
+    // Classic aspect on desktop; on mobile keep 9/16 like the stable version
     aspectRatio: isDesktop ? "4 / 3" : "9 / 16",
   }}
 >
@@ -2743,9 +2743,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
     <button
       onClick={() => setShowResetConfirm(true)}
       className="px-3 py-2 rounded-xl bg-rose-500 hover:bg-rose-400 ring-2 ring-rose-300 text-white font-extrabold text-xs shadow-md active:scale-95"
-      title="איפוס כל ההתקדמות"
+      title="Reset all progress"
     >
-      איפוס
+      Reset
     </button>
   </div>
 )}
@@ -2757,10 +2757,10 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   >
     <div className="flex flex-col items-end gap-0.5">
       <span className="text-[9px] font-bold text-white/90 drop-shadow-md bg-black/45 px-1.5 py-0.5 rounded">
-        רקע (פיתוח)
+        Background (dev)
       </span>
       <select
-        aria-label={`בחירת רקע 1–${DEV_BG_VARIANT_COUNT}`}
+        aria-label={`Choose background 1–${DEV_BG_VARIANT_COUNT}`}
         value={devBgIndex}
         onChange={(e) => {
           const n = parseInt(e.target.value, 10);
@@ -2778,20 +2778,20 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         }}
         className="max-w-[140px] text-[11px] font-bold rounded-lg border border-slate-500 bg-slate-900/90 text-amber-200 px-2 py-1 shadow-md"
       >
-        <option value={0}>ברירת מחדל</option>
+        <option value={0}>Default</option>
         {Array.from({ length: DEV_BG_VARIANT_COUNT }, (_, i) => i + 1).map((i) => (
           <option key={i} value={i}>
-            רקע {i}
+            BG {i}
           </option>
         ))}
       </select>
     </div>
     <div className="flex flex-col items-end gap-0.5">
       <span className="text-[9px] font-bold text-white/90 drop-shadow-md bg-black/45 px-1.5 py-0.5 rounded">
-        סלע (פיתוח)
+        Rock (dev)
       </span>
       <select
-        aria-label={`בחירת סלע 1–${DEV_ROCK_VARIANT_COUNT}`}
+        aria-label={`Choose rock 1–${DEV_ROCK_VARIANT_COUNT}`}
         value={devRockIndex}
         onChange={(e) => {
           const n = parseInt(e.target.value, 10);
@@ -2809,10 +2809,10 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         }}
         className="max-w-[120px] text-[11px] font-bold rounded-lg border border-slate-500 bg-slate-900/90 text-emerald-200 px-2 py-1 shadow-md"
       >
-        <option value={0}>ברירת מחדל</option>
+        <option value={0}>Default</option>
         {Array.from({ length: DEV_ROCK_VARIANT_COUNT }, (_, i) => i + 1).map((i) => (
           <option key={i} value={i}>
-            סלע {i}
+            Rock {i}
           </option>
         ))}
       </select>
@@ -2828,7 +2828,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
            style={{ top: hudTop }}
          >
           <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-center mb-2">
-            ליאו - כורים
+            Leo Miners
           </h1>
 
           {/* keep glow keyframes for diamonds + global UI pulses */}
@@ -2861,7 +2861,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             <button
               onClick={()=>setHudModal('coins')}
               className="px-2 py-1 rounded-lg flex items-center gap-2 hover:bg-white/10"
-              aria-label="מידע על מטבעות"
+              aria-label="Coins info"
             >
 
 {/* ONLINE/OFFLINE dot - placed to the LEFT of the coin */}
@@ -2870,9 +2870,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 title={onlineDotTitle}
                 style={{ backgroundColor: isOnline ? "#22c55e" : (stateRef.current?.isIdleOffline ? "#f59e0b" : "#94a3b8") }}
               />
-              <div className="relative w-8 h-8 rounded-full grid place-items-center" title={addRemainMs > 0 ? `פרסומת בעוד ${addRemainLabel}` : "בונוס פרסומת מוכן"}>
+              <div className="relative w-8 h-8 rounded-full grid place-items-center" title={addRemainMs > 0 ? `Ad in ${addRemainLabel}` : "Ad bonus ready"}>
                 <div className="absolute inset-0 rounded-full" style={ringBg(addProgress)} />
-                <img src={IMG_COIN} alt="מטבע" className="w-7 h-7" />
+                <img src={IMG_COIN} alt="Coin" className="w-7 h-7" />
               </div>
               <b>{formatShort1(stateRef.current?.gold ?? 0)}</b>
             </button>
@@ -2891,10 +2891,10 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             <button
               onClick={()=>setHudModal('spawn')}
               className="px-2 py-1 rounded-lg hover:bg-white/10"
-              title={`רמת כלב הבאה בעוד ${toNextLv} קניות`}
+              title={`Next dog level in ${toNextLv} purchases`}
             >
               <span className="inline-flex items-baseline gap-1 leading-none">
-                <span>🦊 רמה</span>
+                <span>🦊 Level</span>
                 <b className="leading-none">{stateRef.current?.spawnLevel || 1}</b>
                 <span className="text-[11px] leading-none opacity-80 relative -top-[1px]">
                   ({toNextLv})
@@ -2906,8 +2906,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             <button
               onClick={() => setShowDiamondInfo(true)}
               className="relative px-2 py-1 rounded-lg flex items-center gap-1 active:scale-95 transition hover:bg-white/10"
-              aria-label="מידע על יהלומים"
-              title="לחצו לפתיחת ארגז יהלומים"
+              aria-label="Diamonds info"
+              title="Tap to open diamond chest"
             >
               {diamondsReady && (
                 <>
@@ -2935,7 +2935,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             {/* Phase label - avoid Date.now() before mount (hydration mismatch vs SSR) */}
             <button onClick={()=>setHudModal('gifts')} className="px-2 py-1 rounded-lg hover:bg-white/10">
               {mounted
-                ? `⏳ ${(_getPhaseInfo(stateRef.current, Date.now()).intervalSec)} שנ׳ `
+                ? `⏳ ${(_getPhaseInfo(stateRef.current, Date.now()).intervalSec)}s `
                 : "⏳ - "}
             </button>
 
@@ -2946,10 +2946,10 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 className="relative w-8 h-8 rounded-full grid place-items-center hover:opacity-90 active:scale-95 transition"
                 title={
                   mounted
-                    ? `⏳ מתנות כל ${(_getPhaseInfo(stateRef.current, Date.now()).intervalSec)} שניות`
-                    : "טיימר מתנות"
+                    ? `⏳ Gifts every ${(_getPhaseInfo(stateRef.current, Date.now()).intervalSec)} seconds`
+                    : "Gift timer"
                 }
-                aria-label="מידע על טיימר מתנות"
+                aria-label="Gift timer info"
               >
                 <div className="absolute inset-0 rounded-full" style={ringBg(giftProgress)} />
                 <div className="text-[22px] font-extrabold leading-none">🎁</div>
@@ -2959,8 +2959,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               <button
                 onClick={()=>setHudModal('dogRing')}
                 className="relative w-8 h-8 rounded-full grid place-items-center hover:opacity-90 active:scale-95 transition"
-                title={`כלב אוטומטי כל ${Math.round(DOG_INTERVAL_SEC/60)} דקות (בנק עד ${DOG_BANK_CAP})`}
-                aria-label="מידע על כלב אוטומטי"
+                title={`Auto dog every ${Math.round(DOG_INTERVAL_SEC/60)} minutes (bank up to ${DOG_BANK_CAP})`}
+                aria-label="Auto dog info"
               >
                 <div className="absolute inset-0 rounded-full" style={ringBg(dogProgress)} />
                 <div className="text-[22px] font-extrabold leading-none">🦊</div>
@@ -2970,8 +2970,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 <button
   onClick={() => setShowGainModal(true)}
   className="relative w-8 h-8 rounded-full grid place-items-center hover:opacity-90 active:scale-95 transition"
-  title={`בונוס צפייה ${addRemainMs > 0 ? `בעוד ${addRemainLabel}` : "מוכן"}`}
-  aria-label="מידע על בונוס צפייה"
+  title={`Watch bonus ${addRemainMs > 0 ? `in ${addRemainLabel}` : "Ready"}`}
+  aria-label="Watch bonus info"
 >
   {/* */}
   <div className="absolute inset-0 rounded-full" style={ringBg(addProgress)} />
@@ -3013,7 +3013,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
       <img
         src={IMG_SPAWN_ICON}
-        alt="כלב"
+        alt="Dog"
         className="pointer-events-none object-cover block"
         style={{
           width: "100%",
@@ -3027,7 +3027,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
     {/* */}
     <span className="font-extrabold">+</span>
 
-    <b className="tracking-tight">(רמה {stateRef.current?.spawnLevel || 1})</b>
+    <b className="tracking-tight">(Lv {stateRef.current?.spawnLevel || 1})</b>
   </div>
 
 {/* */}
@@ -3093,8 +3093,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   onClick={() => setShowPointsModal(true)}
   className={`relative inline-flex items-center gap-2 px-2 py-1 rounded-md transition
     ${(Number(mining?.balance || 0) > 0) ? "hover:bg-white/10 active:scale-95 cursor-pointer" : "opacity-90"}`}
-  aria-label="פרטי נקודות"
-  title="פרטי נקודות כרייה"
+  aria-label="Points details"
+  title="Mining points details"
 >
   <div className="relative w-6 h-6 rounded-full grid place-items-center">
     {(Number(mining?.balance || 0) >= 1) && (
@@ -3108,7 +3108,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         }}
       />
     )}
-    <img src={IMG_SPAWN_ICON} alt="נקודות" className="w-6 h-6 rounded-full pointer-events-none" />
+    <img src={IMG_SPAWN_ICON} alt="Points" className="w-6 h-6 rounded-full pointer-events-none" />
   </div>
 
   <span
@@ -3117,7 +3117,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
     }`}
     style={(Number(mining?.balance || 0) >= 1) ? { animation: "nudge 1.8s ease-in-out infinite" } : undefined}
   >
-    {formatPointsShort1(mining?.balance || 0)} נקודות
+    {formatPointsShort1(mining?.balance || 0)} points
 
   </span>
 </button>
@@ -3131,7 +3131,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       ? "bg-yellow-400 hover:bg-yellow-300 text-black cursor-pointer"
       : "bg-slate-500 text-white/70 cursor-not-allowed"
     }`}
-  title={Number(mining?.balance || 0) >= 1 ? "מימוש כל הנקודות" : "צריך לפחות נקודה אחת למימוש"}
+  title={Number(mining?.balance || 0) >= 1 ? "Redeem all points" : "Need at least one point to redeem"}
 >
   {Number(mining?.balance || 0) >= 1 && (
     <span
@@ -3140,7 +3140,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       style={{ animation: "btnPulse 1.8s ease-in-out infinite" }}
     />
   )}
-  {claiming ? "מממש…" : "מימוש"}
+  {claiming ? "Redeeming…" : "Redeem"}
 </button>
 
             </div>
@@ -3197,9 +3197,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               type="button"
               onClick={grantGift}
               className="pointer-events-auto touch-manipulation min-w-[11rem] min-h-[3rem] px-6 py-3 rounded-2xl font-extrabold text-black shadow-2xl bg-gradient-to-br from-yellow-300 to-amber-400 border border-yellow-200 hover:from-yellow-200 hover:to-amber-300 active:scale-95 relative"
-              aria-label="אסוף מתנה"
+              aria-label="Collect gift"
             >
-              🎁 אסוף מתנה
+              🎁 Collect gift
               <span aria-hidden className="pointer-events-none absolute -inset-3 rounded-3xl blur-3xl bg-yellow-400/30" />
             </button>
           </div>
@@ -3209,24 +3209,23 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       {/* */}
       {showCollect && (
         <div className="fixed inset-0 z-[9998] flex items-center justify-center bg-black/85 px-6 text-center">
-          <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 shadow-2xl max-w-sm w-full" dir="rtl">
+          <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 shadow-2xl max-w-sm w-full" dir="ltr">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <img src={IMG_COIN} alt="מטבע" className="w-6 h-6" />
-              <h3 className="text-xl font-extrabold text-white">בזמן שלא הייתם כאן…</h3>
+              <img src={IMG_COIN} alt="Coin" className="w-6 h-6" />
+              <h3 className="text-xl font-extrabold text-white">While you were away…</h3>
             </div>
             <p className="text-gray-200 mb-4">
-              הערכת רווחים מחוץ למשחק:{" "}
+              Estimated offline earnings:{" "}
               <b className="text-yellow-300">
                 {formatShort(stateRef.current?.pendingOfflineGold || 0)}
               </b>{" "}
-              מטבעות ו-
-             <b className="text-yellow-300">
-  {formatPointsShort(stateRef.current?.pendingOfflinePoints || 0)}
-
-</b>{" "}
-נקודות
+              coins and{" "}
+              <b className="text-yellow-300">
+                {formatPointsShort(stateRef.current?.pendingOfflinePoints || 0)}
+              </b>{" "}
+              points
               <span className="block text-[11px] text-gray-400 mt-2">
-                הנקודות הסופיות מאושרות בשרת אחרי האיסוף.
+                Final points are confirmed on the server after you collect.
               </span>
 
             </p>
@@ -3235,7 +3234,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               onClick={onOfflineCollect}
               className="mx-auto px-6 py-3 rounded-xl bg-yellow-400 text-black font-extrabold text-lg shadow active:scale-95"
             >
-              אסוף
+              Collect
             </button>
           </div>
         </div>
@@ -3245,9 +3244,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       {showResetConfirm && (
         <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
           <div className="bg-white text-slate-900 max-w-md w-full rounded-2xl p-6 shadow-2xl">
-            <h2 className="text-2xl font-extrabold mb-2">לאפס את ההתקדמות?</h2>
+            <h2 className="text-2xl font-extrabold mb-2">Reset all progress?</h2>
             <p className="text-sm text-slate-700 mb-4">
-              פעולה זו תמחק את השמירה ותחזיר אתכם להתחלה.
+              This will erase your save and send you back to the start.
             </p>
 
             <div className="flex items-center justify-end gap-2">
@@ -3255,13 +3254,13 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 onClick={() => setShowResetConfirm(false)}
                 className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900 font-semibold"
               >
-                ביטול
+                Cancel
               </button>
               <button
                 onClick={resetGame}
                 className="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-extrabold"
               >
-                כן, לאפס
+                Yes, reset
               </button>
             </div>
           </div>
@@ -3272,53 +3271,53 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       {showHowTo && (
         <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
           <div className="bg-white text-slate-900 max-w-md w-full rounded-2xl p-6 shadow-2xl overflow-auto max-h-[85vh]">
-            <h2 className="text-2xl font-extrabold mb-3">איך משחקים?</h2>
+            <h2 className="text-2xl font-extrabold mb-3">How to play?</h2>
 
-            <div className="space-y-4 text-sm text-slate-700" dir="rtl">
+            <div className="space-y-4 text-sm text-slate-700" dir="ltr">
               <section>
-                <h3 className="font-bold text-slate-900 mb-1">המטרה</h3>
+                <h3 className="font-bold text-slate-900 mb-1">Goal</h3>
                 <p>
-                  למזג כלבי כורים, לשבור סלעים ולצבור <b>מטבעות</b>. המטבעות משמשים לשדרוגים ולקניית כלבים נוספים.
-                  חלק מהפעילות גם צוברת <b>נקודות כרייה</b> (ראו למטה).
+                  Merge miner dogs, break rocks, and earn <b>coins</b>. Coins are used for upgrades and buying more dogs.
+                  Some activity also earns <b>mining points</b> (see below).
                 </p>
               </section>
 
               <section>
-                <h3 className="font-bold text-slate-900 mb-1">לוח ומיזוג</h3>
+                <h3 className="font-bold text-slate-900 mb-1">Board & merge</h3>
                 <ol className="list-decimal mr-5 space-y-1">
-                  <li>לחצו <b>הוסף</b> על משבצת ריקה כדי להוסיף כלב. המחיר עולה עם הזמן.</li>
-                  <li>גררו שני כלבים באותה רמה כדי למזג לרמה גבוהה יותר.</li>
-                  <li>3 נתיבים, 4 כלבים בכל נתיב (מקסימום 12 כלבים).</li>
-                  <li>כל כלב מוסיף נזק לשנייה לנתיב שלו. כשסלע נשבר מקבלים מטבעות.</li>
+                  <li>Tap <b>Add</b> on an empty slot to add a dog. The price goes up over time.</li>
+                  <li>Drag two dogs of the same level together to merge into a higher level.</li>
+                  <li>3 lanes, 4 dogs per lane (max 12 dogs).</li>
+                  <li>Each dog adds damage per second to its lane. When a rock breaks you get coins.</li>
                 </ol>
               </section>
 
               <section>
-                <h3 className="font-bold text-slate-900 mb-1">שדרוגים ובונוסים</h3>
+                <h3 className="font-bold text-slate-900 mb-1">Upgrades & bonuses</h3>
                 <ul className="list-disc mr-5 space-y-1">
-                  <li><b>כוח שבירה</b> - שוברים סלעים מהר יותר.</li>
-                  <li><b>זהב</b> - יותר מטבעות מכל סלע (+10% לשדרוג).</li>
-                  <li>מתנות, כלבים אוטומטיים ובונוסים נוספים מופיעים מעת לעת.</li>
-                  <li>אפשר לאסוף יהלומים ולפתוח ארגזים מיוחדים.</li>
+                  <li><b>Break power</b> - break rocks faster.</li>
+                  <li><b>Gold</b> - more coins from every rock (+10% per upgrade).</li>
+                  <li>Gifts, auto dogs, and other bonuses show up from time to time.</li>
+                  <li>Collect diamonds and open special chests.</li>
                 </ul>
               </section>
 
               <section>
-                <h3 className="font-bold text-slate-900 mb-1">נקודות כרייה</h3>
+                <h3 className="font-bold text-slate-900 mb-1">Mining points</h3>
                 <ul className="list-disc mr-5 space-y-1">
-                  <li>רק שבירת סלעים יכולה לצבור נקודות כרייה.</li>
-                  <li>יש תקרה יומית והאטה הדרגתית ככל שמתקרבים אליה.</li>
-                  <li>התקדמות offline מוגבלת וביעילות מופחתת.</li>
-                  <li><b>מימוש:</b> הנקודות שנצברו מומשות למטבעות ליאו דרך השרת.</li>
-                  <li>נקודות הן לבידור בלבד - אין להן ערך כספי מובטח.</li>
+                  <li>Only breaking rocks can earn mining points.</li>
+                  <li>There is a daily cap and a gradual slowdown as you near it.</li>
+                  <li>Offline progress is limited and at reduced efficiency.</li>
+                  <li><b>Redeem:</b> earned points are redeemed for Leo coins via the server.</li>
+                  <li>Points are for fun only - they have no guaranteed cash value.</li>
                 </ul>
               </section>
 
               <section>
-                <h3 className="font-bold text-slate-900 mb-1">חשוב לדעת</h3>
+                <h3 className="font-bold text-slate-900 mb-1">Good to know</h3>
                 <ul className="list-disc mr-5 space-y-1">
-                  <li>איזון המשחק, מתנות ומגבלות יומיות עשויים להשתנות לצורך הוגנות ותחזוקה.</li>
-                  <li>זה משחק כיף לילדים - לא ייעוץ פיננסי.</li>
+                  <li>Game balance, gifts, and daily limits may change for fairness and upkeep.</li>
+                  <li>This is a fun kids game - not financial advice.</li>
                 </ul>
               </section>
             </div>
@@ -3328,7 +3327,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 onClick={() => setShowHowTo(false)}
                 className="px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
               >
-                סגור
+                Close
               </button>
             </div>
           </div>
@@ -3349,7 +3348,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 onClick={() => setHudModal(null)}
                 className="px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 font-extrabold"
               >
-                סגור
+                Close
               </button>
             </div>
           </div>
@@ -3361,42 +3360,42 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   <div className="fixed inset-0 z-[10060] bg-black/60 backdrop-blur-sm grid place-items-center p-4">
     <div className="w-full max-w-md rounded-2xl bg-zinc-900 text-white border border-white/10 shadow-lg">
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
-        <h3 className="text-lg font-semibold">בונוס צפייה - איך זה עובד?</h3>
+        <h3 className="text-lg font-semibold">Watch bonus - how does it work?</h3>
         <button
           onClick={() => setShowGainModal(false)}
           className="px-2 py-1 rounded hover:bg-white/10"
-          aria-label="סגור"
-          title="סגור"
+          aria-label="Close"
+          title="Close"
         >
           ✕
         </button>
       </div>
 
-      <div className="px-4 py-4 space-y-3 text-sm leading-6" dir="rtl">
+      <div className="px-4 py-4 space-y-3 text-sm leading-6" dir="ltr">
         <p>
-          בונוס הצפייה הוא בונוס מיוחד. עקבו אחרי השלבים כדי להפעיל אותו ולקבל את הפרס.
+          The watch bonus is a special bonus. Follow the steps to activate it and claim your reward.
         </p>
 
         <div className="rounded-lg bg-black/40 border border-white/10 p-3">
           <div className="flex items-center justify-between">
-            <span className="font-medium">סטטוס</span>
+            <span className="font-medium">Status</span>
             <span className={`px-2 py-0.5 rounded text-xs ${!addDisabled ? "bg-green-500 text-black" : "bg-zinc-700 text-white/80"}`}>
-  {!addDisabled ? "זמין" : "לא זמין"}
+  {!addDisabled ? "Available" : "Unavailable"}
 </span>
 
           </div>
           <p className="mt-2 text-white/80">
             {!addDisabled
-  ? "הבונוס מוכן! לחצו צפייה כדי להמשיך ולקבל אותו."
-  : `הבונוס יהיה זמין בעוד ${addRemainLabel}.`}
+  ? "Bonus ready! Tap Watch to continue and claim it."
+  : `Bonus available in ${addRemainLabel}.`}
 
           </p>
         </div>
 
         <ul className="list-disc list-inside space-y-1 text-white/80">
-          <li>השלימו את הפעולה הנדרשת כדי להפעיל את הבונוס.</li>
-          <li>כשמוכן, לחצו צפייה כדי לקבל את הפרס.</li>
-          <li>אם כבוי - המתינו עד שהתנאים יתמלאו.</li>
+          <li>Complete the required action to activate the bonus.</li>
+          <li>When ready, tap Watch to claim the reward.</li>
+          <li>If it's off - wait until the conditions are met.</li>
         </ul>
       </div>
 
@@ -3405,7 +3404,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
           onClick={() => setShowGainModal(false)}
           className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-white/10"
         >
-          סגור
+          Close
         </button>
 
 <button
@@ -3420,9 +3419,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       ? "bg-emerald-500 text-black border-emerald-400"
       : "bg-zinc-700 text-white/50 border-white/10 cursor-not-allowed"
   }`}
-  title={!addDisabled ? "צפייה וקבלת בונוס" : "עדיין לא זמין"}
+  title={!addDisabled ? "Watch and claim bonus" : "Not available yet"}
 >
-  {!addDisabled ? "צפייה" : "צפייה (לא זמין)"}
+  {!addDisabled ? "Watch" : "Watch (unavailable)"}
 </button>
 
 
@@ -3436,38 +3435,38 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
          {/* Diamonds modal */}
       {showPointsModal && (
         <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
-          <div className="bg-white text-slate-900 max-w-sm w-full rounded-2xl p-6 shadow-2xl overflow-auto max-h-[85vh]" dir="rtl">
-            <h2 className="text-xl font-extrabold mb-3">נקודות כרייה</h2>
+          <div className="bg-white text-slate-900 max-w-sm w-full rounded-2xl p-6 shadow-2xl overflow-auto max-h-[85vh]" dir="ltr">
+            <h2 className="text-xl font-extrabold mb-3">Mining points</h2>
 
             <div className="grid grid-cols-2 gap-2 text-sm mb-3">
               <div className="p-3 rounded-xl bg-slate-100">
-                <div className="text-slate-500 text-xs">יתרה למימוש</div>
+                <div className="text-slate-500 text-xs">Balance to redeem</div>
                 <div className="font-extrabold text-slate-900 tabular-nums">
-                  {formatPointsShort1(Number(mining?.balance || 0))} נקודות
+                  {formatPointsShort1(Number(mining?.balance || 0))} points
                 </div>
               </div>
               <div className="p-3 rounded-xl bg-slate-100">
-                <div className="text-slate-500 text-xs">נצברו היום</div>
+                <div className="text-slate-500 text-xs">Earned today</div>
                 <div className="font-extrabold text-slate-900 tabular-nums">
-                  {formatPointsShort1(Number(mining?.minedToday || 0))} נקודות
+                  {formatPointsShort1(Number(mining?.minedToday || 0))} points
                 </div>
               </div>
               <div className="p-3 rounded-xl bg-slate-100">
-                <div className="text-slate-500 text-xs">מומשו היום</div>
+                <div className="text-slate-500 text-xs">Redeemed today</div>
                 <div className="font-extrabold text-slate-900 tabular-nums">
-                  {formatShort(Number(mining?.claimedToday || 0))} מטבעות
+                  {formatShort(Number(mining?.claimedToday || 0))} coins
                 </div>
               </div>
               <div className="p-3 rounded-xl bg-slate-100">
-                <div className="text-slate-500 text-xs">מומשו (סה״כ)</div>
+                <div className="text-slate-500 text-xs">Redeemed (total)</div>
                 <div className="font-extrabold text-slate-900 tabular-nums">
-                  {formatShort(Number(mining?.claimedTotal || 0))} מטבעות
+                  {formatShort(Number(mining?.claimedTotal || 0))} coins
                 </div>
               </div>
             </div>
 
             <p className="text-xs text-slate-600 mb-3">
-              נקודות נצברות רק משבירת סלעים. לחצו <b>מימוש</b> כדי להמיר אותן למטבעות ליאו דרך השרת.
+              Points only accrue from breaking rocks. Tap <b>Redeem</b> to convert them to Leo coins via the server.
             </p>
 
             <div className="flex justify-between gap-2">
@@ -3475,7 +3474,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 onClick={() => setShowPointsModal(false)}
                 className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900 font-extrabold"
               >
-                סגור
+                Close
               </button>
               <button
                 onClick={() => { setShowPointsModal(false); claimBalanceToVaultDemo(); }}
@@ -3485,9 +3484,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                     ? "bg-yellow-400 hover:bg-yellow-300 text-black"
                     : "bg-slate-300 text-slate-500 cursor-not-allowed"
                 }`}
-                title={(Number(mining?.balance || 0) >= 1) ? "מימוש כל הנקודות" : "צריך לפחות נקודה אחת"}
+                title={(Number(mining?.balance || 0) >= 1) ? "Redeem all points" : "Need at least one point"}
               >
-                {claiming ? "מממש…" : "מימוש"}
+                {claiming ? "Redeeming…" : "Redeem"}
               </button>
             </div>
           </div>
@@ -3501,12 +3500,12 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
         const prizeLabel = (() => {
           switch (s.nextDiamondPrize) {
-            case "coins_x10":   return "מתנה ×10";
-            case "coins_x100":  return "מתנה ×100";
-            case "coins_x1000": return "מתנה ×1000";
-            case "dog+3":       return "כלב +3 רמות";
-            case "dog+5":       return "כלב +5 רמות";
-            case "dog+7":       return "כלב +7 רמות";
+            case "coins_x10":   return "Gift ×10";
+            case "coins_x100":  return "Gift ×100";
+            case "coins_x1000": return "Gift ×1000";
+            case "dog+3":       return "Dog +3 levels";
+            case "dog+5":       return "Dog +5 levels";
+            case "dog+7":       return "Dog +7 levels";
             default:            return s.nextDiamondPrize || "";
           }
         })();
@@ -3516,20 +3515,20 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         return (
           <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
             <div className="bg-white text-slate-900 max-w-sm w-full rounded-2xl p-6 shadow-2xl overflow-auto max-h-[85vh]">
-              <h2 className="text-xl font-extrabold mb-1">יהלומים</h2>
+              <h2 className="text-xl font-extrabold mb-1">Diamonds</h2>
 
-              <p className="text-xs text-slate-600 mb-3" dir="rtl">
-                אספו <b>3</b> יהלומים כדי לפתוח ארגז. אפשר להחזיק יותר מ-3 ולפתוח מתי שרוצים.
-                פרסים אפשריים: מתנות מטבעות <b>×10/×100/×1000</b> או בוסט כלב (+3/+5/+7 רמות).
+              <p className="text-xs text-slate-600 mb-3" dir="ltr">
+                Collect <b>3</b> diamonds to open a chest. You can hold more than 3 and open whenever you want.
+                Possible rewards: coin gifts <b>×10/×100/×1000</b> or a dog boost (+3/+5/+7 levels).
               </p>
 
-              <div className="grid grid-cols-2 gap-2 text-sm mb-3" dir="rtl">
+              <div className="grid grid-cols-2 gap-2 text-sm mb-3" dir="ltr">
                 <div className="p-3 rounded-xl bg-slate-100">
-                  <div className="text-slate-500 text-xs">יהלומים</div>
+                  <div className="text-slate-500 text-xs">Diamonds</div>
                   <div className="font-extrabold text-slate-900">{diamonds} / 3</div>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-100">
-                  <div className="text-slate-500 text-xs">הפרס הבא</div>
+                  <div className="text-slate-500 text-xs">Next prize</div>
                   <div className="font-extrabold text-slate-900">{prizeLabel}</div>
                 </div>
               </div>
@@ -3539,15 +3538,15 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                   onClick={() => setShowDiamondInfo(false)}
                   className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900 font-extrabold"
                 >
-                  סגור
+                  Close
                 </button>
                 <button
                   onClick={() => { openDiamondChestIfReady(); }}
                   disabled={!ready}
                   className={`px-4 py-2 rounded-lg font-extrabold ${ready ? "bg-yellow-400 hover:bg-yellow-300 text-black" : "bg-slate-300 text-slate-500 cursor-not-allowed"}`}
-                  title={ready ? "פתיחת ארגז" : "צריך 3 יהלומים"}
+                  title={ready ? "Open chest" : "Need 3 diamonds"}
                 >
-                  פתח ארגז
+                  Open chest
                 </button>
               </div>
             </div>

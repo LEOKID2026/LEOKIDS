@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   const gameKey = String(req.query.gameKey || "").trim();
   if (!gameKey) {
-    return res.status(400).json({ ok: false, error: "חסר משחק", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Missing game", code: "bad_request" });
   }
 
   const result = await listOpenArcadeRooms(auth.supabase, gameKey);
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   if (result.error) {
     return res.status(400).json({
       ok: false,
-      error: result.error.message || "שגיאה",
+      error: result.error.message || "Error",
       code: result.error.code || "bad_request",
     });
   }

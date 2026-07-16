@@ -36,7 +36,7 @@ export default async function handler(req, res) {
 
   if (!roomId || action !== "play_column") {
 
-    return res.status(400).json({ ok: false, error: "בקשה לא תקינה", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Invalid request", code: "bad_request" });
 
   }
 
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
 
       ok: false,
 
-      error: e.message || "שגיאה",
+      error: e.message || "Error",
 
       code: e.code || "error",
 
@@ -82,7 +82,7 @@ export default async function handler(req, res) {
 
   if (snap.error) {
 
-    return res.status(500).json({ ok: false, error: snap.error.message || "שגיאה", code: snap.error.code });
+    return res.status(500).json({ ok: false, error: snap.error.message || "Error", code: snap.error.code });
 
   }
 

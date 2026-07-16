@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const { data: rows, error } = gamesQuery;
 
     if (error) {
-      return res.status(500).json({ ok: false, error: "טעינת משחקים נכשלה", code: "db_error" });
+      return res.status(500).json({ ok: false, error: "Failed to load games", code: "db_error" });
     }
 
     const catalogAmounts = new Set(entryCostOptions.map((o) => o.amount));
@@ -101,6 +101,6 @@ export default async function handler(req, res) {
         unavailable: true,
       });
     }
-    return res.status(500).json({ ok: false, error: "שגיאת שרת" });
+    return res.status(500).json({ ok: false, error: "Server error" });
   }
 }

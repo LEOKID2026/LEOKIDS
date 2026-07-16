@@ -481,18 +481,18 @@ function Ov2SnakesHudSeatChip({ si, memberBySeat, positions, turnSeat, mySeat })
   const occupied = Boolean(m) || Number.isFinite(pos);
   const isTurn = turnSeat === si;
   const rawName = m?.display_name != null ? String(m.display_name).trim() : "";
-  const label = rawName || (occupied ? `מושב ${si + 1}` : "");
+  const label = rawName || (occupied ? `Seat ${si + 1}` : "");
   if (!occupied) {
     return <div className="h-12 min-h-12 w-[4.5rem] min-w-0 max-w-full shrink sm:w-[5rem]" aria-hidden />;
   }
   const isYou = mySeat != null && Number(mySeat) === si;
-  const nameLine = isYou ? `${label || `מושב ${si + 1}`} (אתה)` : label;
+  const nameLine = isYou ? `${label || `Seat ${si + 1}`} (You)` : label;
   return (
     <div
       className={`flex h-12 min-w-0 max-w-[min(100%,9rem)] shrink items-center gap-1 rounded-lg bg-black/35 py-1 pl-1 pr-1.5 ring-2 ring-inset ${
         isTurn ? SEAT_TURN_RING[si] ?? "ring-amber-300/80" : "ring-transparent"
       }`}
-      title={m?.display_name || `מושב ${si + 1}`}
+      title={m?.display_name || `Seat ${si + 1}`}
     >
       <img src={ludoPawnSrc(si)} alt="" className="h-12 w-12 shrink-0 object-contain" draggable={false} />
       <div className="flex min-w-0 flex-1 flex-col justify-center leading-tight">
@@ -517,7 +517,7 @@ function PawnWithTurnRing({ seat, turnSeat, dense, edgeHang }) {
       <img
         src={ludoPawnSrc(seat)}
         alt=""
-        title={`מושב ${seat + 1}`}
+        title={`Seat ${seat + 1}`}
         draggable={false}
         className={`m-auto block h-full w-full max-h-full max-w-full origin-center object-contain ${sc}`}
       />
@@ -526,7 +526,7 @@ function PawnWithTurnRing({ seat, turnSeat, dense, edgeHang }) {
 }
 
 /**
- * לוח + HUD פנימיים מהקוד של OV2 (`MLEO-GAME/.../Ov2SnakesScreen.js`) - רכיב תצוגה בלבד.
+ * Inner board + HUD from OV2 (`MLEO-GAME/.../Ov2SnakesScreen.js`) — display-only component.
  *
  * @param {{
  *   edges: { ladders: Record<string, number>, snakes: Record<string, number> },
@@ -644,15 +644,15 @@ export function Ov2ArcadeSnakesPlayfield({
         <div className="flex w-12 shrink-0 items-center justify-center sm:w-[3.25rem]">
           <Ov2SnakesDiceFace value={diceValue} emphasized={Boolean(diceEmphasized)} />
         </div>
-        <div className="flex min-h-12 min-w-0 flex-1 items-center justify-end gap-1 overflow-hidden pr-0.5 sm:gap-1.5 sm:pr-0">
+        <div className="flex min-h-12 min-w-0 flex-1 items-center justify-start gap-1 overflow-hidden pr-0.5 sm:gap-1.5 sm:pr-0">
           <Ov2SnakesHudSeatChip si={1} memberBySeat={memberBySeat} positions={positions} turnSeat={turnSeat} mySeat={mySeat} />
           <Ov2SnakesHudSeatChip si={3} memberBySeat={memberBySeat} positions={positions} turnSeat={turnSeat} mySeat={mySeat} />
         </div>
       </div>
 
       {/*
-        דף הארקייד עוטף ב-dir=rtl; grid ו-SVG ב-Ov2SnakesScreen מניחים LTR (עמודה 0 = שמאל).
-        בלי dir=ltr הלוח מתהפך ונחשים/סולמות לא נופלים על המשבצות הנכונות.
+        Arcade page may wrap dir=rtl; Ov2SnakesScreen grid/SVG assume LTR (column 0 = left).
+        Without dir=ltr the board flips and snakes/ladders miss the correct squares.
       */}
       <div
         dir="ltr"
@@ -731,7 +731,7 @@ export function Ov2ArcadeSnakesPlayfield({
             onClick={() => onRoll()}
             className="min-h-[2.75rem] min-w-[8.5rem] rounded-lg border-2 border-emerald-500/55 bg-emerald-900/55 px-4 py-2.5 text-sm font-extrabold text-emerald-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-emerald-800/55 active:scale-[0.99] active:bg-emerald-950/55 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-emerald-900/55 sm:min-h-[3rem] sm:min-w-[10rem] sm:px-5 sm:py-3 sm:text-base"
           >
-            זרוק קוביה
+            Roll dice
           </button>
         </div>
       ) : null}

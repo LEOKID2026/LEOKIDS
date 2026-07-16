@@ -21,9 +21,9 @@ import {
 export { TASKS_PER_SESSION };
 
 export const DIFFICULTIES = {
-  easy: { id: "easy", label: "קל" },
-  medium: { id: "medium", label: "בינוני" },
-  hard: { id: "hard", label: "קשה" },
+  easy: { id: "easy", label: "Easy" },
+  medium: { id: "medium", label: "Medium" },
+  hard: { id: "hard", label: "Hard" },
 };
 
 /** @type {Record<DifficultyId, [number, number, number]>} */
@@ -34,11 +34,11 @@ export const BAKERY_TIME_LIMITS_BY_BAND = {
 };
 
 const ITEM_TYPES = [
-  { itemLabel: "עוגיות", itemEmoji: "🍪" },
-  { itemLabel: "קאפקייקס", itemEmoji: "🧁" },
-  { itemLabel: "לחמניות", itemEmoji: "🥖" },
-  { itemLabel: "מאפינס", itemEmoji: "🧁" },
-  { itemLabel: "קרואסונים", itemEmoji: "🥐" },
+  { itemLabel: "cookies", itemEmoji: "🍪" },
+  { itemLabel: "cupcakes", itemEmoji: "🧁" },
+  { itemLabel: "rolls", itemEmoji: "🥖" },
+  { itemLabel: "muffins", itemEmoji: "🧁" },
+  { itemLabel: "croissants", itemEmoji: "🥐" },
 ];
 
 /** @param {unknown[]} arr */
@@ -263,29 +263,29 @@ export function bakeryTaskKey(task) {
 /** @param {BakeryTask} task */
 export function bakeryPrompt(task) {
   if (task.mode === "build") {
-    return `הגדירו ${task.trays} מגשים עם ${task.perTray} ${task.itemLabel} בכל מגש`;
+    return `Set up ${task.trays} trays with ${task.perTray} ${task.itemLabel} on each tray`;
   }
   if (task.mode === "findTrays") {
-    return `יש ${task.total} ${task.itemLabel}. בכל מגש ${task.perTray}. כמה מגשים צריך?`;
+    return `There are ${task.total} ${task.itemLabel}. Each tray holds ${task.perTray}. How many trays do you need?`;
   }
   if (task.mode === "findPerTray") {
-    return `יש ${task.total} ${task.itemLabel} ל-${task.trays} מגשים. כמה בכל מגש?`;
+    return `There are ${task.total} ${task.itemLabel} for ${task.trays} trays. How many on each tray?`;
   }
-  return `יש ${task.trays} מגשים, בכל מגש ${task.perTray} ${task.itemLabel}. כמה סך הכול?`;
+  return `There are ${task.trays} trays with ${task.perTray} ${task.itemLabel} on each. What's the total?`;
 }
 
 /** @param {BakeryTask} task */
 export function bakeryInfoBar(task) {
   if (task.mode === "findTrays") {
-    return `${task.total} ${task.itemLabel} · בכל מגש ${task.perTray}`;
+    return `${task.total} ${task.itemLabel} · ${task.perTray} per tray`;
   }
   if (task.mode === "findPerTray") {
-    return `${task.total} ${task.itemLabel} · ${task.trays} מגשים`;
+    return `${task.total} ${task.itemLabel} · ${task.trays} trays`;
   }
   if (task.mode === "findTotal") {
-    return `${task.trays} מגשים · בכל מגש ${task.perTray} ${task.itemLabel}`;
+    return `${task.trays} trays · ${task.perTray} ${task.itemLabel} per tray`;
   }
-  return `${task.trays} מגשים · בכל מגש ${task.perTray} ${task.itemLabel}`;
+  return `${task.trays} trays · ${task.perTray} ${task.itemLabel} per tray`;
 }
 
 /** @param {BakeryTask} task */
@@ -322,7 +322,7 @@ export function validateBakery(task, answer) {
 
 /** @param {boolean} ok */
 export function bakeryFeedback(ok) {
-  return ok ? "מעולה! הכנתם בדיוק את ההזמנה." : "כמעט! בדקו כמה מגשים יש וכמה יש בכל מגש.";
+  return ok ? "Great! You made the order exactly." : "Almost! Check how many trays there are and how many are on each tray.";
 }
 
 /** @param {number} count @param {string} emoji */

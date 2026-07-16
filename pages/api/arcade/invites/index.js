@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       return res.status(200).json(result);
     }
 
-    return res.status(400).json({ ok: false, error: "פעולה לא תקינה", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Invalid action", code: "bad_request" });
   }
 
   return res.status(405).json({ ok: false, error: "Method not allowed" });

@@ -30,9 +30,9 @@ import {
 } from "../../../lib/educational-games/language-game-config.js";
 
 const GRADE_BANDS = {
-  easy: "א׳–ב׳",
-  medium: "ג׳–ד׳",
-  hard: "ה׳–ו׳",
+  easy: "Grades 1–2",
+  medium: "Grades 3–4",
+  hard: "Grades 5–6",
 };
 
 const EASY_TYPES = new Set(["upper_to_lower", "lower_to_upper", "first_letter", "one_gap"]);
@@ -217,7 +217,7 @@ function wrapTrainTask(level, taskType, base) {
     correctAnswer: solutionToAnswer(base.solution),
     gradeBand: GRADE_BANDS[level],
     difficultyWeight: DIFFICULTY_WEIGHT[taskType] ?? 50,
-    feedbackShort: base.feedbackShort ?? "🚂 הרכבת יוצאת מהתחנה!",
+    feedbackShort: base.feedbackShort ?? "🚂 The train is leaving the station!",
   };
 }
 
@@ -228,14 +228,14 @@ function upperToLowerTask(id, stationLabel, letter) {
   return wrapTrainTask("easy", "upper_to_lower", {
     id,
     stationLabel,
-    missionHe: `העמיסו אות קטנה ליד ${upper}`,
+    missionHe: `Load a lowercase letter next to ${upper}`,
     carriages: [
       { id: "ref", kind: "fixed", content: upper },
       { id: "slot", kind: "slot" },
     ],
     pieces: letterPieces([lower], 3),
     solution: { slot: lower },
-    feedbackShort: "מצוין! האות הקטנה עלה לקרון.",
+    feedbackShort: "Nice! The lowercase letter is on the car.",
   });
 }
 
@@ -246,14 +246,14 @@ function lowerToUpperTask(id, stationLabel, letter) {
   return wrapTrainTask("easy", "lower_to_upper", {
     id,
     stationLabel,
-    missionHe: `העמיסו אות גדולה ליד ${lower}`,
+    missionHe: `Load an uppercase letter next to ${lower}`,
     carriages: [
       { id: "ref", kind: "fixed", content: lower },
       { id: "slot", kind: "slot" },
     ],
     pieces: letterPieces([upper], 3),
     solution: { slot: upper },
-    feedbackShort: "כל הכבוד! האות הגדולה במקום.",
+    feedbackShort: "Great job! The uppercase letter is in place.",
   });
 }
 
@@ -263,14 +263,14 @@ function firstLetterTask(id, stationLabel, word) {
   return wrapTrainTask("easy", "first_letter", {
     id,
     stationLabel,
-    missionHe: `איזו אות פותחת את ${word}?`,
+    missionHe: `Which letter starts ${word}?`,
     carriages: [
       { id: "word", kind: "fixed", content: word },
       { id: "slot", kind: "slot" },
     ],
     pieces: letterPieces([letter], 3),
     solution: { slot: letter },
-    feedbackShort: "נכון! האות הראשונה על הקרון.",
+    feedbackShort: "Correct! The first letter is on the car.",
   });
 }
 
@@ -283,7 +283,7 @@ function oneMissingLetterTask(id, stationLabel, word, blankIdx) {
   return wrapTrainTask("easy", "one_gap", {
     id,
     stationLabel,
-    missionHe: "מלאו אות אחת חסרה בקרון",
+    missionHe: "Fill in the missing letter on the car",
     carriages: letters.map((ch, i) =>
       i === blankIdx
         ? { id: `s${i}`, kind: "slot" }
@@ -291,7 +291,7 @@ function oneMissingLetterTask(id, stationLabel, word, blankIdx) {
     ),
     pieces: letterPieces([letters[blankIdx]], 4),
     solution: { [`s${blankIdx}`]: letters[blankIdx] },
-    feedbackShort: "יופי! האות החסרה הושלמה.",
+    feedbackShort: "Awesome! You filled in the missing letter.",
   });
 }
 
@@ -306,7 +306,7 @@ function buildWordTask(id, stationLabel, missionHe, emoji, word) {
     carriages: letters.map((_, i) => ({ id: `s${i}`, kind: "slot" })),
     pieces: letterPieces(letters, 4),
     solution: Object.fromEntries(letters.map((ch, i) => [`s${i}`, ch])),
-    feedbackShort: "מעולה! בניתם את המילה על הקרונות.",
+    feedbackShort: "Excellent! You built the word on the cars.",
   });
 }
 
@@ -328,7 +328,7 @@ function fillWordTask(id, stationLabel, missionHe, word, blankIdx, emoji) {
       4,
     ),
     solution: Object.fromEntries(blankIdx.map((i) => [`s${i}`, letters[i]])),
-    feedbackShort: "נהדר! השלמתם את האותיות החסרות.",
+    feedbackShort: "Great! You completed the missing letters.",
   });
 }
 
@@ -338,11 +338,11 @@ function dualPhraseTask(id, stationLabel, pair) {
   return wrapTrainTask("medium", "dual_phrase", {
     id,
     stationLabel,
-    missionHe: missionHe ?? `העמיסו שני קרונות: ${color} + ${noun}`,
+    missionHe: missionHe ?? `Load two cars: a color, then a noun`,
     emoji,
     carriages: [
-      { id: "c1", kind: "slot", hint: "צבע" },
-      { id: "c2", kind: "slot", hint: "חפץ" },
+      { id: "c1", kind: "slot", hint: "color" },
+      { id: "c2", kind: "slot", hint: "noun" },
     ],
     pieces: shuffleLanguageTasks([
       { id: "r1", label: color },
@@ -352,7 +352,7 @@ function dualPhraseTask(id, stationLabel, pair) {
       { id: "x3", label: "book" },
     ]),
     solution: { c1: color, c2: noun },
-    feedbackShort: "שני הקרונות במקום - יוצאים!",
+    feedbackShort: "Both cars are ready - all aboard!",
   });
 }
 
@@ -361,12 +361,12 @@ function imageWordTask(id, stationLabel, word, emoji) {
   return wrapTrainTask("medium", "image_word", {
     id,
     stationLabel,
-    missionHe: "העמיסו את המילה שמתאימה לתמונה",
+    missionHe: "Load the word that matches the picture",
     emoji,
     carriages: [{ id: "slot", kind: "slot", emoji }],
     pieces: wordPieces(word, 3),
     solution: { slot: word },
-    feedbackShort: "המילה הנכונה על הקרון!",
+    feedbackShort: "The right word is on the car!",
   });
 }
 
@@ -384,7 +384,7 @@ function wordOrderTask(id, stationLabel, missionHe, words, distractor) {
     carriages: slots,
     pieces,
     solution: Object.fromEntries(words.map((w, i) => [`w${i}`, w])),
-    feedbackShort: "סדר המילים נכון - הרכבת יוצאת!",
+    feedbackShort: "Word order looks good - the train is leaving!",
   });
 }
 
@@ -406,7 +406,7 @@ function sentenceGapTask(id, stationLabel, missionHe, prefix, gapWord, suffix, d
     carriages,
     pieces: wordPieces(gapWord, 3),
     solution: { gap: gapWord },
-    feedbackShort: "המילה החסרה במקום!",
+    feedbackShort: "The missing word is in place!",
   });
 }
 
@@ -415,7 +415,7 @@ function contextWordTask(id, stationLabel, clue, word) {
   return wrapTrainTask("hard", "context_word", {
     id,
     stationLabel,
-    missionHe: `${clue} - העמיסו מילת הקשר`,
+    missionHe: `${clue} - load the matching word`,
     carriages: [
       { id: "p1", kind: "fixed", content: clue.split(" ")[0] ?? clue },
       { id: "gap", kind: "slot" },
@@ -427,7 +427,7 @@ function contextWordTask(id, stationLabel, clue, word) {
       { id: "d", label: "run" },
     ]),
     solution: { gap: word },
-    feedbackShort: "מילת הקשר מתאימה לסיטואציה!",
+    feedbackShort: "That word fits the situation!",
   });
 }
 
@@ -436,7 +436,7 @@ function imageSentenceTask(id, stationLabel, emoji, words, distractor) {
   return wrapTrainTask("hard", "image_sentence", {
     id,
     stationLabel,
-    missionHe: "סדרו משפט שמתאר את התמונה",
+    missionHe: "Arrange a sentence that describes the picture",
     emoji,
     carriages: words.map((_, i) => ({ id: `w${i}`, kind: "slot", hint: String(i + 1) })),
     pieces: shuffleLanguageTasks([
@@ -444,7 +444,7 @@ function imageSentenceTask(id, stationLabel, emoji, words, distractor) {
       { id: "d", label: distractor },
     ]),
     solution: Object.fromEntries(words.map((w, i) => [`w${i}`, w])),
-    feedbackShort: "המשפט מתאר את התמונה - יוצאים!",
+    feedbackShort: "The sentence matches the picture - all aboard!",
   });
 }
 
@@ -454,10 +454,10 @@ function buildEasyTrainTasks() {
   /** @type {TrainTask[]} */
   const tasks = [];
   letters.slice(0, 8).forEach((letter, i) => {
-    tasks.push(upperToLowerTask(`wt-e-u2l-${i + 1}`, `תחנה ${i + 1}`, letter));
+    tasks.push(upperToLowerTask(`wt-e-u2l-${i + 1}`, `Station ${i + 1}`, letter));
   });
   letters.slice(0, 8).forEach((letter, i) => {
-    tasks.push(lowerToUpperTask(`wt-e-l2u-${i + 1}`, `תחנה ${i + 9}`, letter.toLowerCase()));
+    tasks.push(lowerToUpperTask(`wt-e-l2u-${i + 1}`, `Station ${i + 9}`, letter.toLowerCase()));
   });
   const words3 = [
     "sun",
@@ -476,10 +476,10 @@ function buildEasyTrainTasks() {
     "fun",
   ];
   words3.slice(0, 7).forEach((word, i) => {
-    tasks.push(firstLetterTask(`wt-e-fl-${i + 1}`, `תחנה ${i + 17}`, word));
+    tasks.push(firstLetterTask(`wt-e-fl-${i + 1}`, `Station ${i + 17}`, word));
   });
   words3.slice(7, 14).forEach((word, i) => {
-    tasks.push(oneMissingLetterTask(`wt-e-gap-${i + 1}`, `תחנה ${i + 24}`, word, i % 3));
+    tasks.push(oneMissingLetterTask(`wt-e-gap-${i + 1}`, `Station ${i + 24}`, word, i % 3));
   });
   return tasks;
 }
@@ -487,47 +487,47 @@ function buildEasyTrainTasks() {
 /** @returns {TrainTask[]} */
 function buildMediumTrainTasks() {
   const buildWords = [
-    ["🥛", "milk", "חלב"],
-    ["📚", "book", "ספר"],
-    ["🪑", "chair", "כיסא"],
-    ["📝", "desk", "שולחן"],
-    ["💧", "water", "מים"],
-    ["🏫", "school", "בית ספר"],
-    ["🟢", "green", "ירוק"],
-    ["🍎", "apple", "תפוח"],
+    ["🥛", "milk"],
+    ["📚", "book"],
+    ["🪑", "chair"],
+    ["📝", "desk"],
+    ["💧", "water"],
+    ["🏫", "school"],
+    ["🟢", "green"],
+    ["🍎", "apple"],
   ];
   /** @type {TrainTask[]} */
-  const tasks = buildWords.map(([emoji, word, hebrew], i) =>
-    buildWordTask(`wt-m-bw-${i + 1}`, `תחנה ${i + 1}`, `בנו את המילה: ${hebrew}`, emoji, word),
+  const tasks = buildWords.map(([emoji, word], i) =>
+    buildWordTask(`wt-m-bw-${i + 1}`, `Station ${i + 1}`, "Build the word that matches the picture", emoji, word),
   );
 
   const fillWords = [
-    ["👕", "shirt", "חולצה", [2]],
-    ["🪑", "table", "שולחן", [1]],
-    ["⬛", "black", "שחור", [2]],
-    ["🚂", "train", "רכבת", [3]],
-    ["☁️", "cloud", "ענן", [2]],
-    ["🍇", "grape", "ענב", [2]],
-    ["🏠", "house", "בית", [2]],
-    ["💡", "light", "אור", [2]],
+    ["👕", "shirt", [2]],
+    ["🪑", "table", [1]],
+    ["⬛", "black", [2]],
+    ["🚂", "train", [3]],
+    ["☁️", "cloud", [2]],
+    ["🍇", "grape", [2]],
+    ["🏠", "house", [2]],
+    ["💡", "light", [2]],
   ];
-  fillWords.forEach(([emoji, word, hebrew, blanks], i) => {
+  fillWords.forEach(([emoji, word, blanks], i) => {
     tasks.push(
-      fillWordTask(`wt-m-fg-${i + 1}`, `תחנה ${i + 9}`, `השלימו את המילה: ${hebrew}`, word, blanks, emoji),
+      fillWordTask(`wt-m-fg-${i + 1}`, `Station ${i + 9}`, "Fill in the missing letter", word, blanks, emoji),
     );
   });
 
   const dualPairs = [
-    { color: "red", noun: "hat", emoji: "🎩", missionHe: "העמיסו שני קרונות: אדום + כובע" },
-    { color: "blue", noun: "bag", emoji: "👜", missionHe: "העמיסו שני קרונות: כחול + תיק" },
-    { color: "green", noun: "tree", emoji: "🌳", missionHe: "העמיסו שני קרונות: ירוק + עץ" },
-    { color: "yellow", noun: "sun", emoji: "☀️", missionHe: "העמיסו שני קרונות: צהוב + שמש" },
-    { color: "black", noun: "cat", emoji: "🐈", missionHe: "העמיסו שני קרונות: שחור + חתול" },
-    { color: "white", noun: "snow", emoji: "❄️", missionHe: "העמיסו שני קרונות: לבן + שלג" },
-    { color: "brown", noun: "bear", emoji: "🐻", missionHe: "העמיסו שני קרונות: חום + דוב" },
+    { color: "red", noun: "hat", emoji: "🎩", missionHe: "Load two cars: a color, then a noun" },
+    { color: "blue", noun: "bag", emoji: "👜", missionHe: "Load two cars: a color, then a noun" },
+    { color: "green", noun: "tree", emoji: "🌳", missionHe: "Load two cars: a color, then a noun" },
+    { color: "yellow", noun: "sun", emoji: "☀️", missionHe: "Load two cars: a color, then a noun" },
+    { color: "black", noun: "cat", emoji: "🐈", missionHe: "Load two cars: a color, then a noun" },
+    { color: "white", noun: "snow", emoji: "❄️", missionHe: "Load two cars: a color, then a noun" },
+    { color: "brown", noun: "bear", emoji: "🐻", missionHe: "Load two cars: a color, then a noun" },
   ];
   dualPairs.forEach((pair, i) => {
-    tasks.push(dualPhraseTask(`wt-m-dp-${i + 1}`, `תחנה ${i + 17}`, pair));
+    tasks.push(dualPhraseTask(`wt-m-dp-${i + 1}`, `Station ${i + 17}`, pair));
   });
 
   const imageWords = [
@@ -540,7 +540,7 @@ function buildMediumTrainTasks() {
     ["🚗", "car"],
   ];
   imageWords.forEach(([emoji, word], i) => {
-    tasks.push(imageWordTask(`wt-m-iw-${i + 1}`, `תחנה ${i + 24}`, word, emoji));
+    tasks.push(imageWordTask(`wt-m-iw-${i + 1}`, `Station ${i + 24}`, word, emoji));
   });
 
   return tasks;
@@ -552,17 +552,17 @@ function buildHardTrainTasks() {
   const tasks = [];
 
   const orders = [
-    { missionHe: "סדרו משפט: אני אוהב פיצה", words: ["I", "like", "pizza"], distractor: "milk" },
-    { missionHe: "סדרו משפט: הכלב רץ", words: ["The", "dog", "runs"], distractor: "cat" },
-    { missionHe: "סדרו משפט: אנחנו הולכים לבית ספר", words: ["We", "go", "to", "school"], distractor: "home" },
-    { missionHe: "סדרו משפט: היא אוהבת אדום", words: ["She", "likes", "red"], distractor: "blue" },
-    { missionHe: "סדרו משפט: אני קורא ספר", words: ["I", "read", "a", "book"], distractor: "milk" },
-    { missionHe: "סדרו משפט: הוא אוכל תפוח", words: ["He", "eats", "an", "apple"], distractor: "chair" },
-    { missionHe: "סדרו משפט: הם משחקים בפארק", words: ["They", "play", "in", "park"], distractor: "desk" },
-    { missionHe: "סדרו משפט: החתול שלי קטן", words: ["My", "cat", "is", "small"], distractor: "big" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["I", "like", "pizza"], distractor: "milk" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["The", "dog", "runs"], distractor: "cat" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["We", "go", "to", "school"], distractor: "home" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["She", "likes", "red"], distractor: "blue" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["I", "read", "a", "book"], distractor: "milk" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["He", "eats", "an", "apple"], distractor: "chair" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["They", "play", "in", "park"], distractor: "desk" },
+    { missionHe: "Arrange the words into a correct sentence", words: ["My", "cat", "is", "small"], distractor: "big" },
   ];
   orders.forEach(({ missionHe, words, distractor }, i) => {
-    tasks.push(wordOrderTask(`wt-h-wo-${i + 1}`, `תחנה ${i + 1}`, missionHe, words, distractor));
+    tasks.push(wordOrderTask(`wt-h-wo-${i + 1}`, `Station ${i + 1}`, missionHe, words, distractor));
   });
 
   const gaps = [
@@ -579,8 +579,8 @@ function buildHardTrainTasks() {
     tasks.push(
       sentenceGapTask(
         `wt-h-sg-${i + 1}`,
-        `תחנה ${i + 9}`,
-        `העמיסו מילה חסרה - ${mission}`,
+        `Station ${i + 9}`,
+        `Fill in the missing word - ${mission}`,
         prefix,
         word,
         suffix,
@@ -599,7 +599,7 @@ function buildHardTrainTasks() {
     ["We need light", "lamp"],
   ];
   contexts.forEach(([clue, word], i) => {
-    tasks.push(contextWordTask(`wt-h-cw-${i + 1}`, `תחנה ${i + 17}`, clue, word));
+    tasks.push(contextWordTask(`wt-h-cw-${i + 1}`, `Station ${i + 17}`, clue, word));
   });
 
   const imageSentences = [
@@ -612,7 +612,7 @@ function buildHardTrainTasks() {
     ["🚌", ["The", "bus", "stops"], "fly"],
   ];
   imageSentences.forEach(([emoji, words, dist], i) => {
-    tasks.push(imageSentenceTask(`wt-h-is-${i + 1}`, `תחנה ${i + 24}`, emoji, words, dist));
+    tasks.push(imageSentenceTask(`wt-h-is-${i + 1}`, `Station ${i + 24}`, emoji, words, dist));
   });
 
   return tasks;
@@ -639,7 +639,7 @@ export function validateTrainTask(task, fills) {
 
 /** @param {boolean} ok */
 export function trainFeedback(ok) {
-  return ok ? "🚂 הרכבת יוצאת מהתחנה!" : "הקרונות רועדים - בדקו שוב";
+  return ok ? "🚂 The train is leaving the station!" : "The cars are shaking - check again";
 }
 
 /** @param {DifficultyId} difficulty */
@@ -675,46 +675,46 @@ export function auditWordTrainContent() {
     byType[level] = countByType(tasks);
 
     if (tasks.length < LANGUAGE_MIN_POOL_PER_LEVEL) {
-      gaps.push(`רמת ${level}: ${tasks.length}/${LANGUAGE_MIN_POOL_PER_LEVEL} משימות`);
+      gaps.push(`Level ${level}: ${tasks.length}/${LANGUAGE_MIN_POOL_PER_LEVEL} tasks`);
     }
 
     for (const task of tasks) {
-      if (seenIds.has(task.id)) gaps.push(`${task.id}: id כפול`);
+      if (seenIds.has(task.id)) gaps.push(`${task.id}: duplicate id`);
       else seenIds.add(task.id);
 
-      if (task.level !== level) gaps.push(`${task.id}: level לא תואם`);
-      if (task.taskType !== task.type) gaps.push(`${task.id}: taskType/type לא תואמים`);
-      if (task.prompt !== task.missionHe) gaps.push(`${task.id}: prompt/missionHe לא תואמים`);
-      if (task.gradeBand !== GRADE_BANDS[level]) gaps.push(`${task.id}: gradeBand שגוי`);
-      if (!task.correctAnswer) gaps.push(`${task.id}: חסר correctAnswer`);
-      if (!task.feedbackShort) gaps.push(`${task.id}: חסר feedbackShort`);
-      if (typeof task.difficultyWeight !== "number") gaps.push(`${task.id}: חסר difficultyWeight`);
+      if (task.level !== level) gaps.push(`${task.id}: level mismatch`);
+      if (task.taskType !== task.type) gaps.push(`${task.id}: taskType/type mismatch`);
+      if (task.prompt !== task.missionHe) gaps.push(`${task.id}: prompt/missionHe mismatch`);
+      if (task.gradeBand !== GRADE_BANDS[level]) gaps.push(`${task.id}: bad gradeBand`);
+      if (!task.correctAnswer) gaps.push(`${task.id}: missing correctAnswer`);
+      if (!task.feedbackShort) gaps.push(`${task.id}: missing feedbackShort`);
+      if (typeof task.difficultyWeight !== "number") gaps.push(`${task.id}: missing difficultyWeight`);
 
       const type = task.taskType;
       if (level === "easy") {
-        if (!EASY_TYPES.has(type)) gaps.push(`${task.id}: סוג ${type} לא מותר ברמה קלה`);
-        if (EASY_BANNED.has(type)) gaps.push(`${task.id}: סוג ${type} אסור ברמה קלה`);
+        if (!EASY_TYPES.has(type)) gaps.push(`${task.id}: type ${type} not allowed on easy`);
+        if (EASY_BANNED.has(type)) gaps.push(`${task.id}: type ${type} banned on easy`);
         if (trainEasySlotCount(task) !== 1) {
-          gaps.push(`${task.id}: קל - צריך בדיוק קרון ריק אחד`);
+          gaps.push(`${task.id}: easy - need exactly one empty car`);
         }
       }
       if (level === "medium" && !MEDIUM_TYPES.has(type)) {
-        gaps.push(`${task.id}: סוג ${type} לא מותר ברמה בינונית`);
+        gaps.push(`${task.id}: type ${type} not allowed on medium`);
       }
       if (level === "hard" && !HARD_TYPES.has(type)) {
-        gaps.push(`${task.id}: סוג ${type} לא מותר ברמה קשה`);
+        gaps.push(`${task.id}: type ${type} not allowed on hard`);
       }
 
-      if (trainCanCopy(task)) gaps.push(`${task.id}: העתקה מהשאלה`);
-      if (trainAnswerInPrompt(task)) gaps.push(`${task.id}: התשובה מופיעה ב-prompt`);
+      if (trainCanCopy(task)) gaps.push(`${task.id}: answer copyable from prompt`);
+      if (trainAnswerInPrompt(task)) gaps.push(`${task.id}: answer appears in prompt`);
       if (type === "fill_gaps" && !trainGapHasSingleBlank(task)) {
-        gaps.push(`${task.id}: fill_gaps - צריך בדיוק חלל אחד`);
+        gaps.push(`${task.id}: fill_gaps - need exactly one blank`);
       }
       if (!trainSolutionInPieces(task)) {
-        gaps.push(`${task.id}: אין מספיק קלפים לפתרון (multiset)`);
+        gaps.push(`${task.id}: not enough pieces for solution (multiset)`);
       }
       if (!trainSolutionMatchesSlots(task)) {
-        gaps.push(`${task.id}: solution לא תואם ל-slots`);
+        gaps.push(`${task.id}: solution does not match slots`);
       }
     }
   }

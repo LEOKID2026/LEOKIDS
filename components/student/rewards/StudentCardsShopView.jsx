@@ -5,7 +5,7 @@ import {
   formatCoinAmountHe,
   SHOP_CARD_ALREADY_OWNED_HE,
   SHOP_CARD_SELL_DUPLICATE_HE,
-} from "../../../lib/rewards/rewards-ui.he.js";
+} from "../../../lib/rewards/rewards-ui.js";
 
 const SHOP_PATH = "/api/student/rewards/cards/shop";
 const PURCHASE_PATH = "/api/student/rewards/shop/purchase";
@@ -76,17 +76,17 @@ export default function StudentCardsShopView({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setMessageHe(json?.code === "insufficient_coins" ? "אין מספיק מטבעות לרכישה." : "הרכישה לא הצליחה - נסו שוב.");
+        setMessageHe(json?.code === "insufficient_coins" ? "Not enough coins to buy this." : "Purchase failed — try again.");
         return;
       }
-      setMessageHe(`קניתם את ${json.card?.name_he || json.card?.nameHe || "הקלף"}!`);
+      setMessageHe(`You bought ${json.card?.name_he || json.card?.nameHe || "the card"}!`);
       if (json.balanceAfter != null && onCoinBalanceChange) {
         onCoinBalanceChange(Math.floor(Number(json.balanceAfter)));
       }
       await loadShop();
       if (onAfterMutation) await onAfterMutation();
     } catch {
-      setMessageHe("שגיאת רשת ברכישה.");
+      setMessageHe("Network error while purchasing.");
     } finally {
       setActionBusy("");
     }
@@ -96,8 +96,8 @@ export default function StudentCardsShopView({
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `למכור עותק כפול של ${card.nameHe} ולקבל ${formatCoinAmountHe(card.sellbackCoins)}?\n` +
-        "יישאר לך עותק אחד באוסף."
+      `Sell a duplicate of ${card.nameHe} for ${formatCoinAmountHe(card.sellbackCoins)}?\n` +
+        "You'll keep one copy in your collection."
     );
     if (!confirmed) return;
 
@@ -118,13 +118,13 @@ export default function StudentCardsShopView({
       if (!res.ok || json?.ok !== true) {
         setMessageHe(
           json?.code === "no_duplicate"
-            ? "אין עותק כפול למכירה."
-            : "מכירת העותק הכפול לא הצליחה - נסו שוב."
+            ? "No duplicate copy to sell."
+            : "Couldn't sell the duplicate — try again."
         );
         return;
       }
       setMessageHe(
-        `מכרתם עותק כפול של ${json.card?.name_he || json.card?.nameHe || card.nameHe} וקיבלתם ${formatCoinAmountHe(json.sellbackCoins || 0)}!`
+        `You sold a duplicate of ${json.card?.name_he || json.card?.nameHe || card.nameHe} and got ${formatCoinAmountHe(json.sellbackCoins || 0)}!`
       );
       if (json.balanceAfter != null && onCoinBalanceChange) {
         onCoinBalanceChange(Math.floor(Number(json.balanceAfter)));
@@ -132,22 +132,22 @@ export default function StudentCardsShopView({
       await loadShop();
       if (onAfterMutation) await onAfterMutation();
     } catch {
-      setMessageHe("שגיאת רשת במכירה.");
+      setMessageHe("Network error while selling.");
     } finally {
       setActionBusy("");
     }
   };
 
   if (phase === "loading") {
-    return <StudentLoadingPanel message="טוען חנות קלפים..." reportPage />;
+    return <StudentLoadingPanel message="Loading card shop..." reportPage />;
   }
 
   if (phase === "error") {
     return (
       <div className={T.errorBox}>
-        <p className={T.errorTitle}>לא הצלחנו לטעון את חנות הקלפים.</p>
+        <p className={T.errorTitle}>We couldn't load the card shop.</p>
         <button type="button" onClick={() => void loadShop()} className={T.errorBtn}>
-          נסו שוב
+          Try again
         </button>
       </div>
     );
@@ -159,13 +159,13 @@ export default function StudentCardsShopView({
     <div className="space-y-3 min-w-0">
       {coinBalance != null ? (
         <p className={`text-sm font-semibold ${T.statValue}`}>
-          יתרת מטבעות: {formatCoinAmountHe(coinBalance)}
+          Coin balance: {formatCoinAmountHe(coinBalance)}
         </p>
       ) : null}
       {messageHe ? <p className={`text-sm ${T.userMessage || T.tileSub}`}>{messageHe}</p> : null}
       <WindowedStudentCardsGrid
         items={shop}
-        emptyMessage="אין קלפים זמינים לרכישה כרגע."
+        emptyMessage="No cards available to buy right now."
         T={T}
         previewCards={shopPreviewCards}
         studentFullName={studentFullName}
@@ -175,7 +175,7 @@ export default function StudentCardsShopView({
           const canBuy = card.canAfford === true && !card.alreadyOwned;
           const canSell = card.canSellDuplicate === true && card.sellbackCoins > 0;
           const ownedOnly = card.alreadyOwned && !canSell;
-          const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("he-IL");
+          const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("en-US");
           const sellBusy = actionBusy === `sell:${card.id}`;
           const buyBusy = actionBusy === card.id;
           return {
@@ -184,11 +184,11 @@ export default function StudentCardsShopView({
             footer: (
               <>
                 <p className={`text-sm font-semibold ${T.statValue}`}>
-                  מחיר קנייה: {formatCoinAmountHe(card.priceCoins)}
+                  Buy price: {formatCoinAmountHe(card.priceCoins)}
                 </p>
                 {card.sellbackCoins > 0 ? (
                   <p className={`text-xs leading-snug ${T.tileSub}`}>
-                    שווי מכירה: {formatCoinAmountHe(card.sellbackCoins)}
+                    Sell value: {formatCoinAmountHe(card.sellbackCoins)}
                   </p>
                 ) : (
                   <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -196,8 +196,8 @@ export default function StudentCardsShopView({
                 <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
                   {!card.alreadyOwned && !canBuy
                     ? card.missingCoins > 0
-                      ? `חסרים לך ${formatCoinAmountHe(card.missingCoins)}`
-                      : "אין מספיק מטבעות"
+                      ? `You need ${formatCoinAmountHe(card.missingCoins)} more`
+                      : "Not enough coins"
                     : "\u00a0"}
                 </p>
                 <button
@@ -218,13 +218,13 @@ export default function StudentCardsShopView({
                 >
                   {canSell
                     ? sellBusy
-                      ? "מוכר..."
+                      ? "Selling..."
                       : SHOP_CARD_SELL_DUPLICATE_HE
                     : card.alreadyOwned
                       ? SHOP_CARD_ALREADY_OWNED_HE
                       : buyBusy
-                        ? "קונה..."
-                        : `קנה ב-${priceLabel}`}
+                        ? "Buying..."
+                        : `Buy for ${priceLabel}`}
                 </button>
               </>
             ),

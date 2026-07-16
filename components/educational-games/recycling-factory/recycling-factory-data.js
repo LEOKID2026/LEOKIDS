@@ -23,7 +23,7 @@ export { TASKS_PER_SESSION as ITEMS_PER_SESSION };
 export const BINS = {
   paper: {
     id: "paper",
-    label: "נייר",
+    label: "Paper",
     emoji: "📄",
     accent: "#2563eb",
     lid: "#1d4ed8",
@@ -31,7 +31,7 @@ export const BINS = {
   },
   plastic: {
     id: "plastic",
-    label: "פלסטיק",
+    label: "Plastic",
     emoji: "🧴",
     accent: "#ca8a04",
     lid: "#a16207",
@@ -39,7 +39,7 @@ export const BINS = {
   },
   glass: {
     id: "glass",
-    label: "זכוכית",
+    label: "Glass",
     emoji: "🫙",
     accent: "#16a34a",
     lid: "#15803d",
@@ -47,7 +47,7 @@ export const BINS = {
   },
   metal: {
     id: "metal",
-    label: "מתכת",
+    label: "Metal",
     emoji: "🥫",
     accent: "#64748b",
     lid: "#475569",
@@ -55,7 +55,7 @@ export const BINS = {
   },
   trash: {
     id: "trash",
-    label: "רגיל",
+    label: "Trash",
     emoji: "🗑️",
     accent: "#dc2626",
     lid: "#991b1b",
@@ -68,76 +68,76 @@ export const ITEMS = [
   {
     id: "newspaper",
     emoji: "📰",
-    name: "עיתון",
+    name: "Newspaper",
     bin: "paper",
     imageSrc: "/images/recycling-items/newspaper.svg",
   },
   {
     id: "page",
     emoji: "📄",
-    name: "דף",
+    name: "Paper",
     bin: "paper",
     imageSrc: "/images/recycling-items/paper-page.svg",
   },
   {
     id: "box",
     emoji: "📦",
-    name: "קרטון",
+    name: "Cardboard",
     bin: "paper",
     imageSrc: "/images/recycling-items/cardboard-box.svg",
   },
-  { id: "notebook", emoji: "📓", name: "מחברת", bin: "paper" },
+  { id: "notebook", emoji: "📓", name: "Notebook", bin: "paper" },
   {
     id: "bottle-plastic",
     emoji: "🧴",
-    name: "בקבוק פלסטיק",
+    name: "Plastic bottle",
     bin: "plastic",
     imageSrc: "/images/recycling-items/plastic-bottle.svg",
   },
   {
     id: "bag",
     emoji: "🛍️",
-    name: "שקית",
+    name: "Plastic bag",
     bin: "plastic",
     imageSrc: "/images/recycling-items/plastic-bag.svg",
   },
-  { id: "yogurt", emoji: "🥛", name: "גביע יוגורט", bin: "plastic" },
-  { id: "plastic-box", emoji: "🥡", name: "קופסה מפלסטיק", bin: "plastic" },
-  { id: "bottle-glass", emoji: "🍾", name: "בקבוק זכוכית", bin: "glass" },
+  { id: "yogurt", emoji: "🥛", name: "Yogurt cup", bin: "plastic" },
+  { id: "plastic-box", emoji: "🥡", name: "Plastic container", bin: "plastic" },
+  { id: "bottle-glass", emoji: "🍾", name: "Glass bottle", bin: "glass" },
   {
     id: "jar",
     emoji: "🫙",
-    name: "צנצנת",
+    name: "Jar",
     bin: "glass",
     imageSrc: "/images/recycling-items/glass-jar.svg",
   },
-  { id: "cup", emoji: "🥃", name: "כוס זכוכית", bin: "glass" },
+  { id: "cup", emoji: "🥃", name: "Glass cup", bin: "glass" },
   {
     id: "can",
     emoji: "🥫",
-    name: "פחית שתייה",
+    name: "Soda can",
     bin: "metal",
     imageSrc: "/images/recycling-items/metal-can.svg",
   },
-  { id: "tin", emoji: "🍲", name: "קופסת שימורים", bin: "metal" },
-  { id: "lid", emoji: "⭕", name: "מכסה מתכת", bin: "metal" },
+  { id: "tin", emoji: "🍲", name: "Tin can", bin: "metal" },
+  { id: "lid", emoji: "⭕", name: "Metal lid", bin: "metal" },
   {
     id: "banana",
     emoji: "🍌",
-    name: "קליפת בננה",
+    name: "Banana peel",
     bin: "trash",
     imageSrc: "/images/recycling-items/banana-peel.svg",
   },
-  { id: "tissue", emoji: "🧻", name: "טישו מלוכלך", bin: "trash" },
-  { id: "toy", emoji: "🧸", name: "צעצוע שבור", bin: "trash" },
-  { id: "food", emoji: "🍎", name: "שאריות אוכל", bin: "trash" },
+  { id: "tissue", emoji: "🧻", name: "Dirty tissue", bin: "trash" },
+  { id: "toy", emoji: "🧸", name: "Broken toy", bin: "trash" },
+  { id: "food", emoji: "🍎", name: "Food scraps", bin: "trash" },
 ];
 
 /** @type {Record<DifficultyId, { id: DifficultyId, label: string, bins: BinId[], itemsTarget: number, maxMistakes: number, beltDurationMs: number, dualChance: number }>} */
 export const DIFFICULTIES = {
   easy: {
     id: "easy",
-    label: "קל",
+    label: "Easy",
     bins: ["paper", "plastic", "trash"],
     itemsTarget: TASKS_PER_SESSION,
     maxMistakes: 5,
@@ -146,7 +146,7 @@ export const DIFFICULTIES = {
   },
   medium: {
     id: "medium",
-    label: "בינוני",
+    label: "Medium",
     bins: ["paper", "plastic", "glass", "trash"],
     itemsTarget: TASKS_PER_SESSION,
     maxMistakes: 4,
@@ -155,7 +155,7 @@ export const DIFFICULTIES = {
   },
   hard: {
     id: "hard",
-    label: "קשה",
+    label: "Hard",
     bins: ["paper", "plastic", "glass", "metal", "trash"],
     itemsTarget: TASKS_PER_SESSION,
     maxMistakes: 3,
@@ -165,13 +165,13 @@ export const DIFFICULTIES = {
 };
 
 export const FACTS = [
-  "נייר ממוחזר יכול להפוך שוב לנייר חדש.",
-  "בקבוקי פלסטיק יכולים להפוך למוצרים חדשים.",
-  "זכוכית אפשר למחזר הרבה פעמים.",
-  "פחיות מתכת מתאימות למיחזור.",
-  "מיון נכון עוזר לשמור על הסביבה.",
-  "מיחזור חוסך משאבי טבע יקרים.",
-  "כל פריט במקום הנכון עוזר לכדור הארץ.",
+  "Recycled paper can become new paper again.",
+  "Plastic bottles can be made into new products.",
+  "Glass can be recycled many times.",
+  "Metal cans are great for recycling.",
+  "Sorting correctly helps protect the environment.",
+  "Recycling saves precious natural resources.",
+  "Every item in the right place helps the Earth.",
 ];
 
 /** @param {BinId[]} activeBins */
@@ -276,11 +276,11 @@ export function pickNextRecyclingItem(queue, usedIds) {
 /** @param {BinId} binId */
 export function pickFactForBin(binId) {
   const binFacts = {
-    paper: "נייר ממוחזר יכול להפוך שוב לנייר חדש.",
-    plastic: "בקבוקי פלסטיק יכולים להפוך למוצרים חדשים.",
-    glass: "זכוכית אפשר למחזר הרבה פעמים.",
-    metal: "פחיות מתכת מתאימות למיחזור.",
-    trash: "מיון נכון עוזר לשמור על הסביבה.",
+    paper: "Recycled paper can become new paper again.",
+    plastic: "Plastic bottles can be made into new products.",
+    glass: "Glass can be recycled many times.",
+    metal: "Metal cans are great for recycling.",
+    trash: "Sorting correctly helps protect the environment.",
   };
   if (Math.random() < 0.65) return binFacts[binId];
   return FACTS[Math.floor(Math.random() * FACTS.length)];

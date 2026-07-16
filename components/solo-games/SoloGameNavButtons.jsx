@@ -19,10 +19,10 @@ export default function SoloGameNavButtons({
   onPrimary,
   primaryDisabled = false,
   primaryBusy = false,
-  primaryBusyLabel = "טוען…",
+  primaryBusyLabel = "Loading…",
   compact = false,
   gamesHubHref = "/game",
-  gamesHubLabel = "חזרה למשחקים",
+  gamesHubLabel = "Back to Games",
 }) {
   const { SG, tokens: T } = useSoloGameShellUi();
   const minH = compact ? "min-h-[44px] landscape:min-h-[36px]" : "min-h-[48px]";
@@ -49,7 +49,7 @@ export default function SoloGameNavButtons({
         href="/student/home"
         className={`${SG.navHomeBtn} ${minH} w-full flex items-center justify-center ${textSize}`}
       >
-        חזרה לעולם הילד
+        Back to Kid's World
       </Link>
     </div>
   );

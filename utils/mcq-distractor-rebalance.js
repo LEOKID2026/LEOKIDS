@@ -1,21 +1,21 @@
 /**
- * Rebalance obvious MCQ distractors (generic "רק …" placeholders) at runtime.
- * Used by moledet/science generators — not UI copy.
+ * Rebalance obvious MCQ distractors (generic "only …" placeholders) at runtime.
+ * Used by moledet/science generators — student-visible option text.
  */
 
-const GENERIC_ONLY_RE = /^רק\s+/u;
+const GENERIC_ONLY_RE = /^(?:only|רק)\s+/iu;
 
 const FALLBACK_DISTRACTORS = [
-  "אזור עם הרבה אנשים",
-  "מקום עם מים",
-  "אזור בטבע",
-  "אזור בעיר",
-  "מבנה גבוה",
-  "דרך ראשית",
-  "שטח פתוח",
-  "אגם קטן",
-  "יער קטן",
-  "גבעה נמוכה",
+  "an area with many people",
+  "a place with water",
+  "an area in nature",
+  "an area in the city",
+  "a tall building",
+  "a main road",
+  "an open field",
+  "a small lake",
+  "a small forest",
+  "a low hill",
 ];
 
 /** @param {string} text */

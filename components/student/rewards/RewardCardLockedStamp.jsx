@@ -1,4 +1,4 @@
-/** Soft "נעול" watermark for cards not owned by the student. */
+/** Soft "Locked" watermark for cards not owned by the student. */
 
 export function lockedCardDimClassName(_compact = false) {
   return "";
@@ -48,7 +48,7 @@ export default function RewardCardLockedStamp({ compact = false, modal = false }
           WebkitTextStroke: WATERMARK_STROKE,
         }}
       >
-        נעול
+        Locked
       </span>
     </div>
   );

@@ -194,7 +194,7 @@ export default function LeoBakeryGame({
     timeoutHandledRef.current = true;
     timerPausedRef.current = true;
     setCheckState("bad");
-    const timeoutText = "הזמן נגמר! ננסה שאלה חדשה.";
+    const timeoutText = "Time's up! Let's try a new question.";
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -324,15 +324,15 @@ export default function LeoBakeryGame({
   ].join(" ");
 
   return (
-    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="rtl">
+    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="ltr">
       <header className={s.header}>
         <Link href={backHref} className={s.hudChip}>
-          חזרה
+          Back
         </Link>
         {phase === "play" ? (
           <div className={s.hud}>
             <span className={`${s.hudChip} ${s.hudScore}`}>⭐ {score}</span>
-            <span className={s.hudChip}>שלב {internalStage}</span>
+            <span className={s.hudChip}>Stage {internalStage}</span>
             <span className={`${s.hudChip} ${styles.hudTime} ${timeLeft <= 8 ? styles.hudTimeWarn : ""}`}>
               ⏱ {timeLeft}
             </span>
@@ -342,7 +342,7 @@ export default function LeoBakeryGame({
           </div>
         ) : (
           <div className={s.hud}>
-            <span className={s.hudChip}>{productionMode ? "🥐" : "🥐 אבטיפוס"}</span>
+            <span className={s.hudChip}>{productionMode ? "🥐" : "🥐 Prototype"}</span>
           </div>
         )}
         {showFullscreenButton && onFullscreenToggle ? (
@@ -357,8 +357,8 @@ export default function LeoBakeryGame({
       {!productionMode && phase === "intro" ? (
         <div className={styles.screenCenter}>
           <p className={styles.introHero}>🥐🦁</p>
-          <h1 className={styles.introTitle}>המאפייה של ליאו</h1>
-          <p className={styles.introText}>בנו מגשים עם כמות שווה של מאפים - כפל וקבוצות שוות!</p>
+          <h1 className={styles.introTitle}>Leo&apos;s Bakery</h1>
+          <p className={styles.introText}>Build trays with equal amounts of treats — multiplication and equal groups!</p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
@@ -373,7 +373,7 @@ export default function LeoBakeryGame({
           </div>
           <EducationalDifficultyGradeHint className={`${styles.introText} opacity-70`} style={{ fontSize: "0.72rem" }} />
           <button type="button" className={styles.startBtn} onClick={startGame}>
-            התחל משחק
+            Start game
           </button>
         </div>
       ) : null}
@@ -381,7 +381,7 @@ export default function LeoBakeryGame({
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🥐 מאפיית ליאו · שלב {internalStage}
+            🥐 Leo&apos;s Bakery · Stage {internalStage}
           </p>
 
           <div className={`${shop.shopGrid} ${styles.bakeryShopGrid}`} data-educational-workplace-grid="">
@@ -392,7 +392,7 @@ export default function LeoBakeryGame({
                 </span>
                 <div className={shop.customerSpeechWrap}>
                   <div className={shop.missionRow}>
-                    <p className={shop.customerName}>הזמנה</p>
+                    <p className={shop.customerName}>Order</p>
                     <EducationalGameInstructionReplay
                       text={instructionText}
                       onReplay={replayInstruction}
@@ -406,7 +406,7 @@ export default function LeoBakeryGame({
             <section className={`${shop.workCol} ${styles.bakeryWorkCol}`}>
               <div className={shop.workFrame}>
                 <div className={shop.workSurface}>
-                  <p className={shop.workSurfaceTitle}>🧁 המגשים שלכם</p>
+                  <p className={shop.workSurfaceTitle}>🧁 Your trays</p>
                   <div className={`${shop.workSurfaceBody} ${styles.trayGridFit}`}>
                     <div
                       className={`${gameUi.trayGrid} ${styles.trayGridInner} ${trayGridSizeClass}`}
@@ -415,7 +415,7 @@ export default function LeoBakeryGame({
                         const disp = trayItemDisplay(tr.count, task.itemEmoji);
                         return (
                           <div key={tr.id} className={gameUi.trayCard}>
-                            <span className={gameUi.trayLabel}>מגש {tr.id + 1}</span>
+                            <span className={gameUi.trayLabel}>Tray {tr.id + 1}</span>
                             <span className={`${gameUi.trayItems} ${styles.bakeryTrayItems}`}>{disp.text}</span>
                           </div>
                         );
@@ -428,10 +428,10 @@ export default function LeoBakeryGame({
 
             <aside className={shop.sideCol}>
               <div className={`${s.panel} ${shop.toolsPanel} ${shop.toolsPanelLarge}`}>
-                <p className={shop.toolsTitle}>🎛️ הגדרות</p>
+                <p className={shop.toolsTitle}>🎛️ Settings</p>
                 <div className={shop.controlsStackInline}>
                   <div className={shop.controlRow}>
-                    <span className={shop.controlLabel}>מגשים</span>
+                    <span className={shop.controlLabel}>Trays</span>
                     <div className={shop.stepperRow}>
                       <button
                         type="button"
@@ -459,7 +459,7 @@ export default function LeoBakeryGame({
                     </div>
                   </div>
                   <div className={shop.controlRow}>
-                    <span className={shop.controlLabel}>בכל מגש</span>
+                    <span className={shop.controlLabel}>Per tray</span>
                     <div className={shop.stepperRow}>
                       <button
                         type="button"
@@ -489,7 +489,7 @@ export default function LeoBakeryGame({
                 </div>
                 {!lockTotal ? (
                   <div className={shop.controlRow}>
-                    <span className={shop.controlLabel}>סך הכול</span>
+                    <span className={shop.controlLabel}>Total</span>
                     <span className={shop.totalBadge}>{total}</span>
                   </div>
                 ) : null}
@@ -497,7 +497,7 @@ export default function LeoBakeryGame({
 
               <div className={feedbackBarClass}>
                 <p className={shop.feedbackText}>
-                  {feedback || "הגדירו מגשים וכמות בכל מגש, ואז לחצו בדיקה"}
+                  {feedback || "Set the trays and amount per tray, then tap Check"}
                 </p>
               </div>
             </aside>
@@ -505,10 +505,10 @@ export default function LeoBakeryGame({
             <div className={shop.bottomBar}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} onClick={runCheck}>
-                  בדוק הזמנה
+                  Check order
                 </button>
                 <button type="button" className={shop.secondaryBtn} onClick={resetTaskUi}>
-                  איפוס
+                  Reset
                 </button>
               </div>
             </div>
@@ -520,23 +520,23 @@ export default function LeoBakeryGame({
         <div className={styles.screenCenter}>
           <div className={styles.endCard}>
             <h2 className={styles.endTitle}>
-              {phase === "won" ? "🎉 סיימתם את המאפייה!" : "🥐 סיום משחק"}
+              {phase === "won" ? "🎉 You finished the bakery!" : "🥐 Game over"}
             </h2>
-            <p className={styles.endStat}>⭐ ניקוד: {score}</p>
+            <p className={styles.endStat}>⭐ Score: {score}</p>
             <p className={styles.endStat}>
-              ✅ תשובות נכונות: {successCount}/{TASKS_PER_SESSION}
+              ✅ Correct answers: {successCount}/{TASKS_PER_SESSION}
             </p>
-            <p className={styles.endStat}>❌ טעויות: {mistakes}</p>
-            <p className={styles.endStat}>📈 שלב הכי גבוה: {highestStage}</p>
-            <p className={styles.endStat}>📊 התחלתם ב: {diffConfig.label}</p>
-            <p className={styles.endStat}>⏱ זמן ממוצע: {avgDisplay} שניות</p>
+            <p className={styles.endStat}>❌ Mistakes: {mistakes}</p>
+            <p className={styles.endStat}>📈 Highest stage: {highestStage}</p>
+            <p className={styles.endStat}>📊 Started at: {diffConfig.label}</p>
+            <p className={styles.endStat}>⏱ Average time: {avgDisplay} seconds</p>
             <div className={styles.endActions}>
               <button type="button" className={styles.startBtn} onClick={startGame}>
-                משחק חדש
+                New game
               </button>
               {!productionMode ? (
                 <Link href={backHref} className={styles.secondaryBtn}>
-                  חזרה למשחקים
+                  Back to games
                 </Link>
               ) : null}
             </div>

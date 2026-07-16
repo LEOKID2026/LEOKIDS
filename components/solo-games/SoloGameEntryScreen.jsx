@@ -31,7 +31,7 @@ export default function SoloGameEntryScreen({
   return (
     <div
       className="relative flex h-full min-h-0 flex-col items-center justify-center overflow-hidden overflow-x-hidden px-4 py-2 sm:py-3 text-center"
-      dir="rtl"
+      dir="ltr"
     >
       <GameAudioSettingsButton className="absolute left-4 top-4 z-20 sm:left-6 sm:top-6" />
       {onOpenHelp ? (
@@ -56,7 +56,7 @@ export default function SoloGameEntryScreen({
 
         {game.hasDifficultyPicker ? (
           <div className="space-y-2">
-            <p className={SG.diffLabel}>בחרו רמת קושי</p>
+            <p className={SG.diffLabel}>Choose difficulty</p>
             <div className="flex flex-wrap justify-center gap-2">
               {SOLO_DIFFICULTY_OPTIONS.map((opt) => {
                 const selected = difficulty === opt.id;
@@ -81,11 +81,11 @@ export default function SoloGameEntryScreen({
         {error ? <p className={SG.errorBox}>{error}</p> : null}
 
         <SoloGameNavButtons
-          primaryLabel="התחל משחק"
+          primaryLabel="Start Game"
           onPrimary={onStart}
           primaryDisabled={busy}
           primaryBusy={busy}
-          primaryBusyLabel="טוען…"
+          primaryBusyLabel="Loading…"
         />
       </div>
     </div>

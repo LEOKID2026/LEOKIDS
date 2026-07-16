@@ -64,7 +64,7 @@ function TrayShapeSlot({ shape, slotIndex, dragSlotIndex, onPointerDown, disable
         disabled={disabled}
         className="flex h-full w-full items-center justify-center rounded-2xl p-1.5 active:scale-[0.98] disabled:pointer-events-none"
         style={{ touchAction: "none" }}
-        aria-label={`גרור ${shape.labelHe}`}
+        aria-label={`Drag ${shape.labelHe}`}
       >
         <div
           className={`flex shrink-0 items-center justify-center transition-opacity ${isDragging ? "opacity-40" : "opacity-100"}`}
@@ -113,9 +113,9 @@ export default function SmartBlocksPlayView({
   return (
     <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
       <div className="pointer-events-none absolute left-1/2 top-2 z-[60] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-3 py-2 text-center text-[11px] font-bold leading-snug sm:text-sm">
-        <span className="text-amber-300">ניקוד: {score}</span>
+        <span className="text-amber-300">Score: {score}</span>
         {" · "}
-        <span className="text-sky-200">יעד: {scoreTarget}</span>
+        <span className="text-sky-200">Goal: {scoreTarget}</span>
       </div>
 
       <main
@@ -187,7 +187,7 @@ export default function SmartBlocksPlayView({
           </div>
 
           <p className="mt-1 h-5 shrink-0 text-center text-[11px] font-semibold leading-5 text-white/55 sm:text-xs">
-            גררו צורה מהמגש · {gridSize}×{gridSize}
+            Drag a shape from the tray · {gridSize}×{gridSize}
           </p>
         </section>
 
@@ -199,7 +199,7 @@ export default function SmartBlocksPlayView({
               className={`${layout.trayToolbar} flex h-10 shrink-0 items-center justify-center gap-2 max-lg:landscape:flex-col max-lg:landscape:justify-center max-lg:landscape:gap-1.5`}
             >
               <p className="truncate text-sm font-extrabold text-sky-200 max-lg:landscape:text-center max-lg:landscape:text-xs">
-                מגש
+                Tray
               </p>
             </div>
 

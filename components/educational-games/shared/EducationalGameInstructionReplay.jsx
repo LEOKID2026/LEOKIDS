@@ -10,8 +10,8 @@ export default function EducationalGameInstructionReplay({ text, onReplay, class
       type="button"
       className={`${shop.instructionReplayBtn} ${className}`.trim()}
       onClick={() => onReplay(text)}
-      aria-label="השמע הוראה שוב"
-      title="השמע הוראה שוב"
+      aria-label="Replay instruction"
+      title="Replay instruction"
     >
       🔊
     </button>

@@ -53,7 +53,7 @@ export default function WindowedStudentCardsGrid({
   const closePreview = useCallback(() => setPreviewIndex(null), []);
 
   if (!items.length) {
-    return <p className={`text-right py-6 ${T.emptyText}`}>{emptyMessage}</p>;
+    return <p className={`text-left py-6 ${T.emptyText}`}>{emptyMessage}</p>;
   }
 
   const previewCard =

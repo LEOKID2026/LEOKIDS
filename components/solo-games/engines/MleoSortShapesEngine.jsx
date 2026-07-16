@@ -23,12 +23,12 @@ const SCORE_PER_SORT = 50;
 
 /** @type {Record<string, { labelHe: string, ring: string }>} */
 const COLOR_META = Object.freeze({
-  red: { labelHe: "אדום", ring: "ring-rose-400" },
-  orange: { labelHe: "כתום", ring: "ring-orange-400" },
-  blue: { labelHe: "כחול", ring: "ring-sky-400" },
-  purple: { labelHe: "סגול", ring: "ring-violet-400" },
-  yellow: { labelHe: "צהוב", ring: "ring-yellow-400" },
-  green: { labelHe: "ירוק", ring: "ring-emerald-400" },
+  red: { labelHe: "Red", ring: "ring-rose-400" },
+  orange: { labelHe: "Orange", ring: "ring-orange-400" },
+  blue: { labelHe: "Blue", ring: "ring-sky-400" },
+  purple: { labelHe: "Purple", ring: "ring-violet-400" },
+  yellow: { labelHe: "Yellow", ring: "ring-yellow-400" },
+  green: { labelHe: "Green", ring: "ring-emerald-400" },
 });
 
 /**
@@ -401,20 +401,20 @@ export default function MleoSortShapesEngine({
     <div
       id="game-wrapper"
       className="relative isolate flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gray-900 text-white w-full select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       <div className="flex min-h-0 w-full flex-1 flex-col gap-2 px-2 py-2 max-lg:gap-1 max-lg:px-0 max-lg:py-0">
         <div className="w-full shrink-0 max-lg:[&>p]:mx-0 max-lg:[&>p]:mb-1 max-lg:[&>p]:w-full max-lg:[&>p]:max-w-none max-lg:[&>p]:rounded-none max-lg:[&>p]:border-x-0">
-          <SoloV2Goal text="גררו את הצורה לקבוצה הנכונה! +50 על כל מיון נכון." />
+          <SoloV2Goal text="Drag the shape to the right group! +50 for each correct sort." />
         </div>
         {!showIntro ? (
           <div className="w-full shrink-0 max-lg:[&>div]:w-full max-lg:[&>div]:max-w-none max-lg:[&>div]:rounded-none max-lg:[&>div]:border-x-0">
             <SoloV2Hud
               rows={[
-                { label: "ניקוד", value: score, accent: "text-amber-300" },
-                { label: "ממוין", value: `${sortedCount}/${settings.itemCount}` },
-                { label: "חיים", value: "❤️".repeat(Math.max(0, lives)) },
-                { label: "זמן", value: `${timeLeft} שנ׳` },
+                { label: "Score", value: score, accent: "text-amber-300" },
+                { label: "Sorted", value: `${sortedCount}/${settings.itemCount}` },
+                { label: "Lives", value: "❤️".repeat(Math.max(0, lives)) },
+                { label: "Time", value: `${timeLeft} sec` },
               ]}
             />
           </div>
@@ -426,12 +426,12 @@ export default function MleoSortShapesEngine({
         >
         {showIntro ? (
           <SoloV2Intro
-            title="מיון צורות"
+            title="Sort Shapes"
             lines={[
-              "בחרו את התיבה הנכונה לכל צורה",
-              "+50 על מיון נכון בלבד",
-              "טעות = מאבדים חיים",
-              "סיימו את כל הפריטים לפני שהזמן נגמר",
+              "Pick the right box for each shape",
+              "+50 for correct sorts only",
+              "Mistake = lose a life",
+              "Finish all items before time runs out",
             ]}
             onStart={startGame}
           />
@@ -447,13 +447,13 @@ export default function MleoSortShapesEngine({
             ) : null}
 
             <div className="flex shrink-0 flex-col items-center gap-2 rounded-2xl border border-yellow-400/40 bg-black/40 p-4">
-              <p className="text-sm font-semibold text-yellow-100">הפריט הבא:</p>
+              <p className="text-sm font-semibold text-yellow-100">Next item:</p>
               {currentItem ? (
                 <div className="flex h-24 w-24 items-center justify-center rounded-2xl border-4 border-yellow-300 bg-white/10 shadow-lg">
                   <SortShapeIcon item={currentItem} />
                 </div>
               ) : (
-                <span className="text-lg font-bold text-emerald-300">סיימתם!</span>
+                <span className="text-lg font-bold text-emerald-300">You're done!</span>
               )}
             </div>
 
@@ -485,7 +485,7 @@ export default function MleoSortShapesEngine({
             {shuffleWarning ? (
               <div className="pointer-events-none absolute inset-x-3 top-3 z-30 flex justify-center">
                 <span className="rounded-xl bg-amber-400 px-4 py-2 text-sm font-extrabold text-black shadow-lg sm:text-base">
-                  מערבבים!
+                  Shuffling!
                 </span>
               </div>
             ) : null}

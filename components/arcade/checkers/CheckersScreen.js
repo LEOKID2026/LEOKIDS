@@ -13,7 +13,7 @@ import {
 } from "../../../lib/arcade/board-orientation";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "דמקה";
+const GAME_TITLE = "Checkers";
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -31,7 +31,7 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 disabled:opacity-50 sm:max-w-sm"
       >
-        {busy ? "יוצא…" : "עזוב"}
+        {busy ? "Leaving…" : "Leave"}
       </button>
     </div>
   );
@@ -41,11 +41,11 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
 function Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header
-      dir="rtl"
+      dir="ltr"
       className="relative z-20 flex w-full shrink-0 items-center gap-1.5 rounded-xl border border-white/[0.14] bg-gradient-to-b from-zinc-700/90 via-zinc-900/95 to-black/90 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_28px_rgba(0,0,0,0.45)] sm:gap-2 sm:px-2.5 sm:py-2"
     >
       <button type="button" onClick={onBack} className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}>
-        <span className="text-xs font-extrabold text-white sm:text-sm">חזרה</span>
+        <span className="text-xs font-extrabold text-white sm:text-sm">Back</span>
       </button>
       <div className="min-w-0 flex-1 text-center">
         <h1 className="truncate text-base font-extrabold text-white sm:text-lg">{GAME_TITLE}</h1>
@@ -56,7 +56,7 @@ function Hud({ onBack, balance, onOpenHelp }) {
         <img src="/images/coin.png" alt="" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
         <span className="font-mono text-sm font-bold text-amber-100 sm:text-base">{balance === null ? "…" : balance}</span>
       </div>
-      <button type="button" onClick={onOpenHelp} className={HUD_BTN_SQUARE} aria-label="עזרה">
+      <button type="button" onClick={onOpenHelp} className={HUD_BTN_SQUARE} aria-label="Help">
         <span className="text-lg text-white/95">?</span>
       </button>
     </header>
@@ -68,22 +68,22 @@ function HowToModal({ open, onClose }) {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm" role="dialog">
-      <button type="button" className="absolute inset-0" aria-label="סגור" onClick={onClose} />
+      <button type="button" className="absolute inset-0" aria-label="Close" onClick={onClose} />
       <div
-        dir="rtl"
+        dir="ltr"
         className="relative z-[1] max-h-[85vh] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-zinc-900 p-4 shadow-2xl"
       >
         <div className="mb-3 flex justify-between border-b border-white/10 pb-2">
-          <h2 className="text-lg font-bold text-white">איך משחקים</h2>
+          <h2 className="text-lg font-bold text-white">How to play</h2>
           <button type="button" onClick={onClose} className="text-sm text-zinc-300">
-            סגור
+            Close
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm text-zinc-200">
-          <li>שחור (מושב שמאלי ברשימה) מתחיל; תורות לסירוגין.</li>
-          <li>זזים אלכסונית קדימה; מלכים זזים בכל האלכסונים.</li>
-          <li>חובה לאכול אם יש קפיצה זמינה.</li>
-          <li>אכילות רצופות עם אותו כלי - ימשיכו את התור עד שאין המשך.</li>
+          <li>Black (left seat in the list) goes first; turns alternate.</li>
+          <li>Move diagonally forward; kings move on all diagonals.</li>
+          <li>Captures are mandatory when available.</li>
+          <li>Multi-jumps with the same piece continue until no more captures.</li>
         </ul>
       </div>
     </div>
@@ -163,9 +163,9 @@ export default function CheckersScreen({ roomId }) {
     for (const m of players || []) {
       const si = Number(m?.seat_index);
       if (si !== 0 && si !== 1) continue;
-      out[si] = String(m?.display_name ?? "").trim() || `שחקן ${si + 1}`;
+      out[si] = String(m?.display_name ?? "").trim() || `Player ${si + 1}`;
     }
-    return [out[0] || "שחור", out[1] || "לבן"];
+    return [out[0] || "Black", out[1] || "White"];
   }, [players]);
 
   const onCellClick = useCallback(
@@ -213,8 +213,8 @@ export default function CheckersScreen({ roomId }) {
   const didIWin = vm.mySeat != null && vm.winnerSeat != null && vm.winnerSeat === vm.mySeat;
   const flipBoard = shouldFlipCheckersBoard(vm.mySeat);
   const sideLabels = boardSideLabels(seatLabels, vm.mySeat, [
-    { seat: 0, color: "שחור" },
-    { seat: 1, color: "לבן" },
+    { seat: 0, color: "Black" },
+    { seat: 1, color: "White" },
   ]);
 
   return (
@@ -229,15 +229,15 @@ export default function CheckersScreen({ roomId }) {
 
         {showLobbyWait ? (
           <div className="mt-6 rounded-xl border border-amber-500/30 bg-amber-950/25 px-4 py-6 text-center text-amber-100">
-            <p className="text-lg font-bold">ממתינים לשחקן…</p>
-            <p className="mt-2 text-sm text-amber-200/90">דמקה - שני שחקנים</p>
+            <p className="text-lg font-bold">Waiting for a player…</p>
+            <p className="mt-2 text-sm text-amber-200/90">Checkers — two players</p>
           </div>
         ) : null}
 
         {showSessionInitError ? (
-          <p className="mt-4 text-center text-sm text-rose-200">לא ניתן לטעון את הלוח - נסה לרענן</p>
+          <p className="mt-4 text-center text-sm text-rose-200">Couldn't load the board — try refreshing</p>
         ) : null}
-        {showBoardLoading ? <p className="mt-6 text-center text-zinc-400">טוען…</p> : null}
+        {showBoardLoading ? <p className="mt-6 text-center text-zinc-400">Loading…</p> : null}
 
         {!showLobbyWait && snapshot ? (
           <>
@@ -273,21 +273,21 @@ export default function CheckersScreen({ roomId }) {
             </div>
 
             <p className="mt-2 text-center text-xs font-semibold text-amber-100/90 sm:text-sm">
-              {sideLabels.bottom.name} · {sideLabels.bottom.color} (אתה)
+              {sideLabels.bottom.name} · {sideLabels.bottom.color} (You)
             </p>
 
             <div className="mt-4 space-y-2 text-center">
               {vm.mustContinueFrom ? (
-                <p className="text-sm font-bold text-amber-200">יש להמשיך אכילה מאותו כלי</p>
+                <p className="text-sm font-bold text-amber-200">Continue capturing with the same piece</p>
               ) : null}
               {err ? <p className="text-sm text-rose-300">{err}</p> : null}
               {finished ? (
                 <p className="text-lg font-bold text-amber-200">
-                  {didIWin ? "ניצחת!" : vm.winnerSeat != null ? `מנצח: מושב ${vm.winnerSeat + 1}` : "המשחק נגמר"}
+                  {didIWin ? "You won!" : vm.winnerSeat != null ? `Winner: Seat ${vm.winnerSeat + 1}` : "Game over"}
                 </p>
               ) : (
                 <p className="text-sm text-zinc-400">
-                  {vm.canClientMove ? "בחר כלי ואז יעד" : busy ? "שולח…" : "המתן לתורך"}
+                  {vm.canClientMove ? "Pick a piece, then a target" : busy ? "Sending…" : "Wait for your turn"}
                 </p>
               )}
             </div>

@@ -90,7 +90,7 @@ export function SoloV2Intro({ title, lines, onStart }) {
         ))}
       </ul>
       <button type="button" onClick={onStart} className={SG.introStartBtn}>
-        התחל משחק
+        Start Game
       </button>
     </div>
   );

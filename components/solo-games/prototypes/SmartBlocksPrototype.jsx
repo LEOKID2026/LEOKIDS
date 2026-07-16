@@ -13,9 +13,9 @@ import { pickTrayShapes, placeShape } from "./smart-blocks-shapes.js";
 import layout from "./smart-blocks-prototype-layout.module.css";
 
 const GRID_OPTIONS = [
-  { size: 7, label: "7×7", hint: "קטנים" },
-  { size: 8, label: "8×8", hint: "בינוני" },
-  { size: 10, label: "10×10", hint: "גדולים" },
+  { size: 7, label: "7×7", hint: "Small" },
+  { size: 8, label: "8×8", hint: "Medium" },
+  { size: 10, label: "10×10", hint: "Large" },
 ];
 
 /** Fixed tray geometry — outer sizes never depend on active shapes. */
@@ -83,7 +83,7 @@ function TrayShapeSlot({ shape, slotIndex, dragSlotIndex, onPointerDown }) {
         onPointerDown={onPointerDown}
         className="flex h-full w-full items-center justify-center rounded-2xl p-1.5 active:scale-[0.98]"
         style={{ touchAction: "none" }}
-        aria-label={`גרור ${shape.labelHe}`}
+        aria-label={`Drag ${shape.labelHe}`}
       >
         <div
           className={`flex shrink-0 items-center justify-center transition-opacity ${isDragging ? "opacity-40" : "opacity-100"}`}
@@ -231,18 +231,18 @@ export default function SmartBlocksPrototype() {
     <div
       id="game-wrapper"
       className="flex h-dvh max-h-dvh min-h-0 flex-col overflow-hidden bg-gray-900 text-white select-none solo-game-mobile-fullscreen-shell"
-      dir="rtl"
+      dir="ltr"
     >
       <header className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-white/10 px-3 sm:px-4">
         <Link
           href="/game"
           className="min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"
         >
-          חזרה
+          Back
         </Link>
         <div className="min-w-0 flex-1 text-center">
-          <h1 className="truncate text-lg font-extrabold text-yellow-300 sm:text-xl">בלוקים חכמים</h1>
-          <p className="text-[11px] font-semibold leading-4 text-white/60 sm:text-xs">אבטיפוס ויזואלי · ללא ניקוד</p>
+          <h1 className="truncate text-lg font-extrabold text-yellow-300 sm:text-xl">Smart Blocks</h1>
+          <p className="text-[11px] font-semibold leading-4 text-white/60 sm:text-xs">Visual prototype · no scoring</p>
         </div>
         <button
           type="button"
@@ -250,12 +250,12 @@ export default function SmartBlocksPrototype() {
           className="min-h-[44px] shrink-0 rounded-lg border border-white/20 px-3 py-2 text-sm font-bold text-white/85 hover:bg-white/5"
           style={{ touchAction: "manipulation" }}
         >
-          נקה לוח
+          Clear board
         </button>
       </header>
 
       <div className="flex min-h-12 shrink-0 flex-wrap items-center justify-center gap-2 border-b border-white/10 px-3 py-1.5">
-        <span className="shrink-0 text-xs font-bold text-white/70 sm:text-sm">גודל לוח:</span>
+        <span className="shrink-0 text-xs font-bold text-white/70 sm:text-sm">Board size:</span>
         {GRID_OPTIONS.map((opt) => {
           const active = gridSize === opt.size;
           return (
@@ -339,7 +339,7 @@ export default function SmartBlocksPrototype() {
           </div>
 
           <p className="mt-1 h-5 shrink-0 text-center text-[11px] font-semibold leading-5 text-white/55 sm:text-xs">
-            גררו צורה מהמגש · {gridSize}×{gridSize}
+            Drag a shape from the tray · {gridSize}×{gridSize}
           </p>
         </section>
 
@@ -347,7 +347,7 @@ export default function SmartBlocksPrototype() {
           <div className="flex h-full w-full flex-col max-lg:landscape:justify-center">
             <div className={`${layout.trayToolbar} flex h-10 shrink-0 items-center justify-between gap-2 max-lg:landscape:flex-col max-lg:landscape:justify-center max-lg:landscape:gap-1.5`}>
               <p className="truncate text-sm font-extrabold text-sky-200 max-lg:landscape:text-center max-lg:landscape:text-xs">
-                מגש
+                Tray
               </p>
               <button
                 type="button"
@@ -355,7 +355,7 @@ export default function SmartBlocksPrototype() {
                 className="min-h-[32px] shrink-0 rounded-lg border border-sky-400/50 bg-sky-950/50 px-2.5 py-1 text-[11px] font-bold text-sky-100 hover:bg-sky-900/60 sm:text-xs max-lg:landscape:w-full"
                 style={{ touchAction: "manipulation" }}
               >
-                החלף צורות
+                Swap shapes
               </button>
             </div>
 
@@ -376,7 +376,7 @@ export default function SmartBlocksPrototype() {
 
       <SoloGamePortraitRecommendationModal
         show={showPortraitPrompt}
-        subtitle="הלוח והמגש יוצגו בצורה נוחה יותר."
+        subtitle="The board and tray will display more comfortably."
         onDismissRotate={() => {
           dismissPortraitPrompt(false);
           enterFromUserGesture();

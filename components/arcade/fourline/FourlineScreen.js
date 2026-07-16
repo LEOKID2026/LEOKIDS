@@ -17,7 +17,7 @@ const DROP_MS = 155;
 const WIN_FREEZE_MS = 280;
 const MOVE_PULSE_MS = 220;
 
-const GAME_TITLE = "ארבע בשורה";
+const GAME_TITLE = "Four in a Row";
 
 /**
  * @param {{ onLeave: () => void, disabled?: boolean, busy?: boolean }} props
@@ -31,13 +31,13 @@ function FourlineLeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-rose-950/55 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 sm:max-w-sm sm:text-base"
       >
-        {busy ? "יוצא…" : "עזוב"}
+        {busy ? "Leaving…" : "Leave"}
       </button>
     </div>
   );
 }
 
-/** מסגרת אחידה — גובה נמוך יותר (ציר Y), רוחב קומפקטי (ציר X) */
+/** Shared chrome — shorter height (Y), compact width (X) */
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
   "rounded-lg border border-white/20 bg-white/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-white/[0.11] active:scale-[0.97]";
@@ -45,24 +45,24 @@ const HUD_BTN_BASE = `flex ${HUD_CONTROL_H} shrink-0 items-center justify-center
 const HUD_BTN_SQUARE = `${HUD_BTN_BASE} w-9`;
 
 /**
- * סרגל עליון בסגנון OV2: חזרה, שם משחק בעברית, מטבעות, עזרה
+ * OV2-style top bar: back, game title, coins, help
  * @param {{ onBack: () => void, balance: number | null, onOpenHelp: () => void }} props
  */
 function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header
-      dir="rtl"
+      dir="ltr"
       className="relative z-20 flex w-full shrink-0 items-center gap-1.5 rounded-xl border border-white/[0.14] bg-gradient-to-b from-zinc-700/90 via-zinc-900/95 to-black/90 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_28px_rgba(0,0,0,0.45)] sm:gap-2 sm:px-2.5 sm:py-2"
     >
       <button
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="חזרה"
-        title="חזרה"
+        aria-label="Back"
+        title="Back"
       >
         <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">
-          חזרה
+          Back
         </span>
       </button>
 
@@ -75,7 +75,7 @@ function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
       <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <div
           className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-          title="יתרת מטבעות"
+          title="Coin balance"
         >
           <img
             src="/images/coin.png"
@@ -90,8 +90,8 @@ function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
           type="button"
           onClick={onOpenHelp}
           className={HUD_BTN_SQUARE}
-          aria-label="איך משחקים"
-          title="איך משחקים"
+          aria-label="How to play"
+          title="How to play"
         >
           <span
             className="font-serif text-[17px] font-semibold italic leading-none text-zinc-50 sm:text-[19px]"
@@ -120,17 +120,17 @@ function FourlineHowToModal({ open, onClose }) {
       <button
         type="button"
         className="absolute inset-0 cursor-default"
-        aria-label="סגור"
+        aria-label="Close"
         onClick={onClose}
       />
       <div
-        dir="rtl"
-        className="relative z-[1] max-h-[min(85vh,540px)] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 text-right shadow-2xl sm:p-5"
+        dir="ltr"
+        className="relative z-[1] max-h-[min(85vh,540px)] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 text-left shadow-2xl sm:p-5"
       >
         <div className="mb-3 flex items-start justify-between gap-3 border-b border-white/10 pb-3">
           <div>
             <h2 id="fourline-howto-title" className="text-lg font-bold text-white">
-              איך משחקים
+              How to play
             </h2>
             <p className="mt-0.5 text-xs text-amber-300/90">{GAME_TITLE}</p>
           </div>
@@ -139,14 +139,14 @@ function FourlineHowToModal({ open, onClose }) {
             onClick={onClose}
             className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 text-sm text-zinc-200 hover:bg-white/10"
           >
-            סגור
+            Close
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm leading-relaxed text-zinc-200">
-          <li>כל שחקן בוחר עמודה; הדיסקית נופלת לתחתית העמודה.</li>
-          <li>מטרת המשחק: לחבר ארבע דיסקיות בשורה - אופקית, אנכית או אלכסון.</li>
-          <li>כחול מתחיל; אחרי כל מהלך התור עובר לזהב והחזרה.</li>
-          <li>אם הלוח מתמלא ואין ארבע בשורה - תיקו.</li>
+          <li>Each player picks a column; the disc drops to the bottom.</li>
+          <li>Goal: connect four discs in a row — horizontal, vertical, or diagonal.</li>
+          <li>Blue goes first; after each move the turn passes to Gold and back.</li>
+          <li>If the board fills with no four-in-a-row — it's a draw.</li>
         </ul>
       </div>
     </div>
@@ -254,10 +254,10 @@ function FourLinePlayerHeader({ seat0Label, seat1Label, mySeat, indicatorSeat, p
   const active1 = playing && indicatorSeat === 1;
 
   const lineForSeat = (seat) => {
-    if (phase === "finished") return "סיום";
+    if (phase === "finished") return "Finished";
     if (!playing) return "";
-    if (indicatorSeat !== seat) return "ממתין";
-    return "תורך";
+    if (indicatorSeat !== seat) return "Waiting";
+    return "Your turn";
   };
 
   const line0 = lineForSeat(0);
@@ -279,11 +279,11 @@ function FourLinePlayerHeader({ seat0Label, seat1Label, mySeat, indicatorSeat, p
           />
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-1">
-              <span className="text-[10px] font-bold uppercase tracking-wide text-sky-200/95">כחול</span>
+              <span className="text-[10px] font-bold uppercase tracking-wide text-sky-200/95">Blue</span>
               {mySeat === 0 ? (
-                <span className="rounded bg-sky-500/25 px-1 py-px text-[9px] font-semibold uppercase text-sky-100">אתה</span>
+                <span className="rounded bg-sky-500/25 px-1 py-px text-[9px] font-semibold uppercase text-sky-100">You</span>
               ) : mySeat === 1 ? (
-                <span className="rounded bg-zinc-700/50 px-1 py-px text-[9px] font-medium text-zinc-400">יריב</span>
+                <span className="rounded bg-zinc-700/50 px-1 py-px text-[9px] font-medium text-zinc-400">Opponent</span>
               ) : null}
             </div>
             <p className="truncate text-[11px] font-medium leading-tight text-zinc-100 sm:text-xs" title={seat0Label}>
@@ -317,11 +317,11 @@ function FourLinePlayerHeader({ seat0Label, seat1Label, mySeat, indicatorSeat, p
           />
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-1">
-              <span className="text-[10px] font-bold uppercase tracking-wide text-amber-200/95">זהב</span>
+              <span className="text-[10px] font-bold uppercase tracking-wide text-amber-200/95">Gold</span>
               {mySeat === 1 ? (
-                <span className="rounded bg-amber-500/25 px-1 py-px text-[9px] font-semibold uppercase text-amber-100">אתה</span>
+                <span className="rounded bg-amber-500/25 px-1 py-px text-[9px] font-semibold uppercase text-amber-100">You</span>
               ) : mySeat === 0 ? (
-                <span className="rounded bg-zinc-700/50 px-1 py-px text-[9px] font-medium text-zinc-400">יריב</span>
+                <span className="rounded bg-zinc-700/50 px-1 py-px text-[9px] font-medium text-zinc-400">Opponent</span>
               ) : null}
             </div>
             <p className="truncate text-[11px] font-medium leading-tight text-zinc-100 sm:text-xs" title={seat1Label}>
@@ -425,7 +425,7 @@ export default function FourlineScreen({ roomId }) {
       const si = m?.seat_index;
       if (si !== 0 && si !== 1) continue;
       const dn = String(m?.display_name ?? "").trim();
-      out[si] = dn || `שחקן ${si + 1}`;
+      out[si] = dn || `Player ${si + 1}`;
     }
     return out;
   }, [players]);
@@ -438,7 +438,7 @@ export default function FourlineScreen({ roomId }) {
       if (vm.phase !== "playing" || busy) return;
       if (vm.mySeat == null || vm.turnSeat !== vm.mySeat) return;
       if (!fourLineColumnPlayable(col, cells)) {
-        setErr("העמודה מלאה.");
+        setErr("That column is full.");
         return;
       }
       setErr("");
@@ -451,7 +451,7 @@ export default function FourlineScreen({ roomId }) {
   const didIWin = vm.mySeat != null && vm.winnerSeat != null && vm.winnerSeat === vm.mySeat;
   const isDraw = finished && vm.winnerSeat == null;
 
-  /** אחרי סיום עם זיכוי — רענון יתרה בתצוגת ה-HUD */
+  /** After finish with credit — refresh balance in the HUD */
   useEffect(() => {
     if (!finished) return;
     const credited =
@@ -597,13 +597,13 @@ export default function FourlineScreen({ roomId }) {
       : "";
 
   const showLobbyWait = room?.status === "waiting";
-  /** חדר active בלי session — מצב שבור; לא להציג "טוען לוח…" לנצח */
+  /** חדר active בלי session — מצב שבור; לא להציג "Loading board…" לנצח */
   const showSessionInitError =
     bundleLoaded && room?.status === "active" && !snapshot && !gameSession;
   const showBoardLoading =
     !showLobbyWait && room?.status === "active" && !snapshot && !showSessionInitError;
 
-  /** לוח + עזוב מתחתיו — במצבים אחרים נראה עזוב בתחתית גלילת התוכן */
+  /** Board + Leave below — otherwise Leave sits at the bottom of content scroll */
   const showGameBoardUi =
     Boolean(room) && !showLobbyWait && !showSessionInitError && !showBoardLoading;
 
@@ -627,39 +627,39 @@ export default function FourlineScreen({ roomId }) {
                 onClick={() => void router.replace("/student/arcade")}
                 className="rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15"
               >
-                חזרה למשחקים
+                Back to games
               </button>
             </div>
           ) : !room ? (
             <div className="flex min-h-[40vh] flex-col items-center justify-center text-sm text-zinc-400">
-              טוען חדר…
+              Loading room…
             </div>
           ) : showLobbyWait ? (
             <div className="flex min-h-[40vh] flex-col items-center justify-center px-2 text-center text-sm text-zinc-400">
-              <p>ממתין לשחקן שני…</p>
-              <p className="mt-2 text-xs text-zinc-500">כשהיריב מצטרף, המשחק ייפתח אוטומטית.</p>
+              <p>Waiting for a second player…</p>
+              <p className="mt-2 text-xs text-zinc-500">When your opponent joins, the game opens automatically.</p>
             </div>
           ) : showSessionInitError ? (
             <div className="flex min-h-[40vh] flex-col items-center justify-center px-4 text-center text-sm text-red-300">
-              <p className="font-medium">שגיאה: המשחק לא אותחל לחדר הזה</p>
-              <p className="mt-2 text-xs text-zinc-500">נסה שוב מאוחר יותר או חזור אחורה.</p>
+              <p className="font-medium">Error: this room's game was not initialized</p>
+              <p className="mt-2 text-xs text-zinc-500">Try again later or go back.</p>
               <button
                 type="button"
                 onClick={goBack}
                 className="mt-4 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15"
               >
-                חזרה
+                Back
               </button>
             </div>
           ) : showBoardLoading ? (
-            <div className="flex min-h-[40vh] items-center justify-center text-sm text-zinc-400">טוען לוח…</div>
+            <div className="flex min-h-[40vh] items-center justify-center text-sm text-zinc-400">Loading board…</div>
           ) : (
             <>
               {err ? (
                 <div className="rounded-md border border-red-500/20 bg-red-950/20 px-2 py-1.5 text-[11px] text-red-200/95">
                   <span>{err}</span>{" "}
                   <button type="button" className="text-red-300 underline" onClick={() => setErr("")}>
-                    סגור
+                    Close
                   </button>
                 </div>
               ) : null}
@@ -682,7 +682,7 @@ export default function FourlineScreen({ roomId }) {
                     }`}
                   >
                     <p className="mb-1.5 text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 sm:mb-1">
-                      לוח 7×6
+                      7×6 board
                     </p>
                     <div className="grid grid-cols-7 gap-0.5 sm:gap-1 md:gap-1.5">
                       {Array.from({ length: OV2_FOURLINE_COLS }, (_, c) => {
@@ -714,7 +714,7 @@ export default function FourlineScreen({ roomId }) {
                             <button
                               type="button"
                               disabled={!playable}
-                              aria-label={`עמודה ${c + 1}`}
+                              aria-label={`Column ${c + 1}`}
                               onClick={() => void onColumn(c)}
                               className={`relative z-10 flex h-8 min-h-[2rem] items-center justify-center rounded-md border text-[11px] font-bold transition sm:h-9 ${
                                 playable
@@ -777,25 +777,25 @@ export default function FourlineScreen({ roomId }) {
                 {finished ? (
                   <div className="mt-3 rounded-lg border border-white/10 bg-zinc-900/80 px-3 py-3 text-center sm:mt-4">
                     <p className="text-lg font-bold text-zinc-100">
-                      {isDraw ? "תיקו" : didIWin ? "ניצחת!" : "הפסדת"}
+                      {isDraw ? "Draw" : didIWin ? "You won!" : "You lost"}
                     </p>
                     <p className="mt-1 text-sm text-zinc-400">
                       {isDraw
-                        ? "הלוח התמלא."
+                        ? "The board is full."
                         : didIWin
                           ? snapshot?.walkaway
-                            ? "היריב יצא מהמשחק - ניצחון טכני."
-                            : "ארבע בשורה."
-                          : "היריב חיבר ארבע."}
+                            ? "Opponent left — technical win."
+                            : "Four in a row."
+                          : "Opponent connected four."}
                     </p>
                     {didIWin && Number(snapshot?.mySettlementAmount) > 0 ? (
                       <div className="mt-3 space-y-1">
                         <p className="text-base font-extrabold text-amber-200">
-                          +{snapshot.mySettlementAmount} מטבעות זכייה
+                          +{snapshot.mySettlementAmount} win coins
                         </p>
                         {Number(snapshot?.entryCost) > 0 ? (
                           <p className="text-[11px] font-medium text-amber-100/75">
-                            קופה מלאה: {snapshot.mySettlementAmount} מטבעות (כניסה {snapshot.entryCost} לכל שחקן)
+                            Full pot: {snapshot.mySettlementAmount} coins (entry {snapshot.entryCost} per player)
                           </p>
                         ) : null}
                       </div>
@@ -804,7 +804,7 @@ export default function FourlineScreen({ roomId }) {
                     snapshot?.mySettlementAmount != null &&
                     Number(snapshot.mySettlementAmount) > 0 ? (
                       <p className="mt-3 text-sm font-semibold text-amber-100/95">
-                        הוחזרו {snapshot.mySettlementAmount} מטבעות (תיקו)
+                        Refunded {snapshot.mySettlementAmount} coins (draw)
                       </p>
                     ) : null}
                   </div>

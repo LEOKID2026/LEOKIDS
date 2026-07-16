@@ -4589,7 +4589,7 @@ export default function MathMaster() {
                               dir={ms.direction}
                               data-testid="student-question-lead"
                               style={{
-                                direction: "rtl",
+                                direction: "ltr",
                                 unicodeBidi: "isolate",
                                 lineHeight:
                                   questionPressureLayout?.questionLineHeightByPressure,
@@ -5137,7 +5137,7 @@ export default function MathMaster() {
                                   )}
                                   <div
                                     className="space-y-2"
-                                    style={{ direction: "rtl", unicodeBidi: "isolate" }}
+                                    style={{ direction: "ltr", unicodeBidi: "isolate" }}
                                   >
                                     {info.steps.map((step, idx) => (
                                       <div key={idx} className={learningExplBody}>

@@ -7,19 +7,19 @@ export default function SoloLandscapeGate({ show }) {
   return (
     <div
       className="fixed inset-0 z-[500] flex flex-col items-center justify-center bg-gray-950/95 px-6 text-center text-white"
-      dir="rtl"
+      dir="ltr"
       role="dialog"
       aria-modal="true"
-      aria-label="סובבו את המכשיר"
+      aria-label="Rotate your device"
     >
       <div className="mb-6 text-6xl animate-pulse" aria-hidden>
         📱↻
       </div>
       <h2 className="mb-3 text-2xl font-extrabold text-yellow-300 sm:text-3xl">
-        סובבו את המכשיר לרוחב כדי לשחק
+        Rotate your device to landscape to play
       </h2>
       <p className="max-w-sm text-base text-gray-300 sm:text-lg">
-        המשחק הזה עובד הכי טוב במצב רוחב. סובבו את הטלפון או הטאבלט ואז תוכלו להמשיך.
+        This game works best in landscape. Rotate your phone or tablet, then you can continue.
       </p>
     </div>
   );

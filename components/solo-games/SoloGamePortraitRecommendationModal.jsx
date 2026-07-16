@@ -10,7 +10,7 @@ export default function SoloGamePortraitRecommendationModal({
   show,
   onDismissRotate,
   onContinueAnyway,
-  subtitle = "המשחק יוצג בצורה נוחה יותר.",
+  subtitle = "The game will display more comfortably.",
 }) {
   if (!show) return null;
 
@@ -19,7 +19,7 @@ export default function SoloGamePortraitRecommendationModal({
       <div className="max-w-sm rounded-2xl border-2 border-yellow-400 bg-slate-900 p-5 text-center shadow-xl">
         <p className="text-3xl">📱↔️</p>
         <p className="mt-3 text-base font-bold leading-snug text-yellow-100">
-          כדי לשחק בנוחות, מומלץ לסובב את המסך לרוחב.
+          For the best experience, rotate your screen to landscape.
         </p>
         <p className="mt-2 text-sm text-white/75">{subtitle}</p>
         <div className="mt-4 flex flex-col gap-2">
@@ -29,7 +29,7 @@ export default function SoloGamePortraitRecommendationModal({
             className="min-h-[44px] rounded-xl bg-yellow-400 px-4 py-2 text-sm font-bold text-black"
             style={{ touchAction: "manipulation" }}
           >
-            הבנתי - אסובב
+            Got it — I'll rotate
           </button>
           <button
             type="button"
@@ -37,7 +37,7 @@ export default function SoloGamePortraitRecommendationModal({
             className="min-h-[44px] rounded-xl border-2 border-white/35 bg-black/40 px-4 py-2 text-sm font-bold text-white"
             style={{ touchAction: "manipulation" }}
           >
-            המשך בכל זאת
+            Continue anyway
           </button>
         </div>
       </div>

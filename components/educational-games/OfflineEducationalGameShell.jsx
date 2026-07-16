@@ -36,7 +36,7 @@ const ENGINE_MAP = {
   "leo-word-detective": MleoLeoWordDetectiveEngine,
 };
 
-const OFFLINE_FINISH_SUBTITLE = "משחק מקומי - ללא שמירה וללא פרסים";
+const OFFLINE_FINISH_SUBTITLE = "Local game — no saving and no rewards";
 
 const PLAY_SHELL =
   "flex h-dvh max-h-dvh min-h-0 flex-col overflow-hidden bg-gray-950 text-white";
@@ -96,8 +96,8 @@ export default function OfflineEducationalGameShell({ gameKey }) {
 
   if (!game || !Engine) {
     return (
-      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="rtl">
-        <p>משחק לא נמצא</p>
+      <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
+        <p>Game not found</p>
       </div>
     );
   }
@@ -105,12 +105,12 @@ export default function OfflineEducationalGameShell({ gameKey }) {
   return (
     <>
       <Head>
-        <title>{game.titleHe} - משחקים ללא אינטרנט</title>
+        <title>{game.titleHe} - Offline Games</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}
         style={themedShell ? pageBgStyle : undefined}
-        dir="rtl"
+        dir="ltr"
         data-educational-game-shell=""
       >
         <header
@@ -128,7 +128,7 @@ export default function OfflineEducationalGameShell({ gameKey }) {
                 : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300"
             }
           >
-            רשימה
+            List
           </Link>
           <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>{game.titleHe}</h1>
           <Link
@@ -139,7 +139,7 @@ export default function OfflineEducationalGameShell({ gameKey }) {
                 : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300"
             }
           >
-            אופליין
+            Offline
           </Link>
         </header>
 
@@ -177,7 +177,7 @@ export default function OfflineEducationalGameShell({ gameKey }) {
               subtitleHe={finishData.subtitleHe}
               statsLines={finishData.statsLines}
               gamesHubHref={OFFLINE_EDUCATIONAL_HUB_ROUTE}
-              gamesHubLabel="חזרה לרשימה"
+              gamesHubLabel="Back to list"
             />
           ) : null}
         </main>

@@ -24,25 +24,25 @@
 
 /** @type {GroceryProduct[]} */
 export const PRODUCTS = [
-  { id: "apple", name: "תפוח", price: 3, requestIcon: "🍎", shelfIcon: "🍎" },
-  { id: "banana", name: "בננה", price: 4, requestIcon: "🍌", shelfIcon: "🍌" },
-  { id: "tomato", name: "עגבניה", price: 4, requestIcon: "🍅", shelfIcon: "🍅" },
-  { id: "water", name: "מים", price: 2, requestIcon: "💧", shelfIcon: "💧" },
-  { id: "bread", name: "לחם", price: 5, requestIcon: "🍞", shelfIcon: "🍞" },
-  { id: "milk", name: "חלב", price: 6, requestIcon: "🥛", shelfIcon: "🥛" },
+  { id: "apple", name: "Apple", price: 3, requestIcon: "🍎", shelfIcon: "🍎" },
+  { id: "banana", name: "Banana", price: 4, requestIcon: "🍌", shelfIcon: "🍌" },
+  { id: "tomato", name: "Tomato", price: 4, requestIcon: "🍅", shelfIcon: "🍅" },
+  { id: "water", name: "Water", price: 2, requestIcon: "💧", shelfIcon: "💧" },
+  { id: "bread", name: "Bread", price: 5, requestIcon: "🍞", shelfIcon: "🍞" },
+  { id: "milk", name: "Milk", price: 6, requestIcon: "🥛", shelfIcon: "🥛" },
   {
     id: "juice",
-    name: "מיץ",
+    name: "Juice",
     price: 7,
     requestIcon: "🧃",
     shelfIcon: "🧃",
     imageSrc: "/images/grocery-items/juice.svg",
   },
-  { id: "eggs", name: "ביצים", price: 8, requestIcon: "🥚", shelfIcon: "🥚" },
-  { id: "cookies", name: "עוגיות", price: 9, requestIcon: "🍪", shelfIcon: "🍪" },
-  { id: "rice", name: "אורז", price: 10, requestIcon: "🍚", shelfIcon: "🍚" },
-  { id: "cheese", name: "גבינה", price: 12, requestIcon: "🧀", shelfIcon: "🧀" },
-  { id: "fish", name: "דג", price: 15, requestIcon: "🐟", shelfIcon: "🐟" },
+  { id: "eggs", name: "Eggs", price: 8, requestIcon: "🥚", shelfIcon: "🥚" },
+  { id: "cookies", name: "Cookies", price: 9, requestIcon: "🍪", shelfIcon: "🍪" },
+  { id: "rice", name: "Rice", price: 10, requestIcon: "🍚", shelfIcon: "🍚" },
+  { id: "cheese", name: "Cheese", price: 12, requestIcon: "🧀", shelfIcon: "🧀" },
+  { id: "fish", name: "Fish", price: 15, requestIcon: "🐟", shelfIcon: "🐟" },
 ];
 
 export const CUSTOMER_AVATARS = ["👧", "👦", "🧒", "👨", "👩", "🧑", "👴", "👵"];
@@ -53,7 +53,7 @@ export const CUSTOMERS_PER_LEVEL = 20;
 export const DIFFICULTIES = {
   easy: {
     id: "easy",
-    label: "קל",
+    label: "Easy",
     customerCount: CUSTOMERS_PER_LEVEL,
     maxPrice: 15,
     baseProductCount: 1,
@@ -66,7 +66,7 @@ export const DIFFICULTIES = {
   },
   medium: {
     id: "medium",
-    label: "בינוני",
+    label: "Medium",
     customerCount: CUSTOMERS_PER_LEVEL,
     maxPrice: 20,
     baseProductCount: 2,
@@ -79,7 +79,7 @@ export const DIFFICULTIES = {
   },
   hard: {
     id: "hard",
-    label: "קשה",
+    label: "Hard",
     customerCount: CUSTOMERS_PER_LEVEL,
     maxPrice: 50,
     baseProductCount: 3,
@@ -209,11 +209,11 @@ export function customerRequestText(customer) {
   const items = customer.items;
   if (items.length === 1) {
     const item = items[0];
-    return `אני רוצה ${item.name} ${item.requestIcon}`;
+    return `I'd like ${item.name} ${item.requestIcon}`;
   }
   const parts = items.map((item) => `${item.name} ${item.requestIcon}`);
   const last = parts.pop();
-  return `אני רוצה ${parts.join(", ")} ו-${last}`;
+  return `I'd like ${parts.join(", ")} and ${last}`;
 }
 
 /** @param {SupermarketCustomer} customer */
@@ -235,17 +235,17 @@ export function isChangeAmountCorrect(customer, changeDenoms) {
 
 /** @param {number} value */
 export function formatShekel(value) {
-  return `${value} ₪`;
+  return `$${value}`;
 }
 
 export const LEO_CASHIER_IMAGE = "/images/leo-supermarket/leo-cashier.png";
 
 /** @type {Record<number, { label: string, color: string, text: string }>} */
 export const DENOM_STYLES = {
-  1: { label: "1₪", color: "#fde68a", text: "#78350f" },
-  2: { label: "2₪", color: "#fcd34d", text: "#78350f" },
-  5: { label: "5₪", color: "#86efac", text: "#14532d" },
-  10: { label: "10₪", color: "#93c5fd", text: "#1e3a8a" },
-  20: { label: "20₪", color: "#c4b5fd", text: "#4c1d95" },
-  50: { label: "50₪", color: "#fda4af", text: "#881337" },
+  1: { label: "$1", color: "#fde68a", text: "#78350f" },
+  2: { label: "$2", color: "#fcd34d", text: "#78350f" },
+  5: { label: "$5", color: "#86efac", text: "#14532d" },
+  10: { label: "$10", color: "#93c5fd", text: "#1e3a8a" },
+  20: { label: "$20", color: "#c4b5fd", text: "#4c1d95" },
+  50: { label: "$50", color: "#fda4af", text: "#881337" },
 };

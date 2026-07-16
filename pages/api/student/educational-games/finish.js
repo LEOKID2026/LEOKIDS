@@ -389,7 +389,7 @@ export default async function handler(req, res) {
     const rawMetrics = body?.metrics;
 
     if (!sessionId) {
-      return res.status(400).json({ ok: false, error: "חסר מזהה משחק" });
+      return res.status(400).json({ ok: false, error: "Missing game ID" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();
@@ -400,13 +400,13 @@ export default async function handler(req, res) {
 
     const metrics = normalizeMetrics(rawMetrics, loaded.session.game_key);
     if (!metrics) {
-      return res.status(400).json({ ok: false, error: "נתוני משחק לא תקינים" });
+      return res.status(400).json({ ok: false, error: "Invalid game data" });
     }
     if (metrics.gameKey !== loaded.session.game_key) {
-      return res.status(400).json({ ok: false, error: "משחק לא תואם לסשן" });
+      return res.status(400).json({ ok: false, error: "Game does not match this session" });
     }
     if (metrics.category !== "educational") {
-      return res.status(400).json({ ok: false, error: "קטגוריה לא תקינה" });
+      return res.status(400).json({ ok: false, error: "Invalid category" });
     }
 
     const access = await assertStudentCanPlayGame(supabase, auth.studentId, loaded.session.game_key);

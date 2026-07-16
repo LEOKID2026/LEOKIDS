@@ -192,15 +192,15 @@ export default function BrickBreakerPrototype() {
 
   return (
     <DevPrototypeShell
-      title="שובר לבנים"
-      subtitle="אבטיפוס · הזיזו מחבט · שברו לבנים"
+      title="Brick Breaker"
+      subtitle="Prototype · move paddle · break bricks"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-bold text-amber-200">{score}</span>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-2 p-2 sm:p-3">
         <p className="text-center text-xs font-semibold text-sky-200 sm:text-sm">
-          גררו/הזיזו למטה · אל תפספסו את הכדור
+          Drag/move below · don't miss the ball
         </p>
 
         <div
@@ -223,15 +223,15 @@ export default function BrickBreakerPrototype() {
 
           {gameOver ? (
             <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-black/55">
-              <p className="text-xl font-extrabold text-rose-300">הכדור נפל!</p>
-              <p className="mt-1 text-sm text-white/75">לחצו לשחק שוב</p>
+              <p className="text-xl font-extrabold text-rose-300">Ball dropped!</p>
+              <p className="mt-1 text-sm text-white/75">Tap to play again</p>
             </div>
           ) : null}
 
           {won ? (
             <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-black/55">
-              <p className="text-xl font-extrabold text-emerald-300">כל הלבנים נשברו! 🎉</p>
-              <p className="mt-1 text-sm text-white/75">לחצו לשחק שוב</p>
+              <p className="text-xl font-extrabold text-emerald-300">All bricks cleared! 🎉</p>
+              <p className="mt-1 text-sm text-white/75">Tap to play again</p>
             </div>
           ) : null}
         </div>

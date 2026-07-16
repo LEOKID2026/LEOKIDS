@@ -54,15 +54,15 @@ const ENGLISH_GRAMMAR_FALLBACK = [
   "should",
 ];
 
-const HEBREW_FALLBACK_DISTRACTORS = [
-  "לא תמיד",
-  "רק לפעמים",
-  "בדרך כלל לא",
-  "תלוי במצב",
-  "אפשר גם אחרת",
-  "לא בהכרח",
-  "לעיתים קרובות",
-  "לרוב לא",
+const ENGLISH_FALLBACK_DISTRACTORS = [
+  "not always",
+  "only sometimes",
+  "usually not",
+  "it depends",
+  "could be different",
+  "not necessarily",
+  "often",
+  "mostly not",
 ];
 
 /** @param {unknown} q */
@@ -149,8 +149,8 @@ function synthesizeDistractor(correct, usedKeys, ctx = {}) {
     const en = synthesizeEnglishDistractor(correct, usedKeys);
     if (en) return en;
   }
-  const he = pickFromPool(correct, usedKeys, HEBREW_FALLBACK_DISTRACTORS);
-  if (he) return he;
+  const en = pickFromPool(correct, usedKeys, ENGLISH_FALLBACK_DISTRACTORS);
+  if (en) return en;
 
   const ca = String(correct ?? "").trim();
   if (!ca) return null;
@@ -165,7 +165,7 @@ function synthesizeDistractor(correct, usedKeys, ctx = {}) {
     }
   }
 
-  const suffixes = [" (לא)", " - אחר", " - לא", " · א", " · ב"];
+  const suffixes = [" (not)", " - other", " - no", " · A", " · B"];
   for (const suf of suffixes) {
     const cand = `${ca}${suf}`;
     const key = normalizeOptionForCompare(cand);

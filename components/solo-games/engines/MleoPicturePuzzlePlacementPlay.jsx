@@ -162,7 +162,7 @@ function TrayGrid({
 
         {label} ({pieces.length})
 
-        {returnTarget ? " · לחצו להחזיר" : ""}
+        {returnTarget ? " · Tap to return" : ""}
 
       </p>
       ) : null}
@@ -237,7 +237,7 @@ function TrayGrid({
 
               }`}
 
-              aria-label={`חלק ${piece.pieceId + 1}${selected ? " - נבחר" : ""}`}
+              aria-label={`Piece ${piece.pieceId + 1}${selected ? " — selected" : ""}`}
 
             >
 
@@ -454,7 +454,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
           }`}
 
-          aria-label={`חלק ${slot.placedPieceId + 1}${isSelected ? " - נבחר" : ""}`}
+          aria-label={`Piece ${slot.placedPieceId + 1}${isSelected ? " — selected" : ""}`}
 
         >
 
@@ -508,7 +508,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
         }`}
 
-        aria-label="משבצת ריקה"
+        aria-label="Empty slot"
 
       />
 
@@ -532,15 +532,15 @@ export default function MleoPicturePuzzlePlacementPlay({
 
       <div className="picture-puzzle-score-bar pointer-events-none absolute left-1/2 top-1 z-[80] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-2 py-1 text-center text-[10px] font-bold leading-snug sm:top-1.5 sm:px-3 sm:py-1.5 sm:text-sm">
 
-        <span className="text-amber-300">ניקוד: {won ? computeWinScore(timeLeft, moves) : 0}</span>
+        <span className="text-amber-300">Score: {won ? computeWinScore(timeLeft, moves) : 0}</span>
 
         {" · "}
 
-        <span>מהלכים: {moves}</span>
+        <span>Moves: {moves}</span>
 
         {" · "}
 
-        <span>{timeLeft} שנ׳</span>
+        <span>{timeLeft} sec</span>
 
         {" · "}
 
@@ -572,13 +572,13 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               <p className="text-center text-xs font-bold leading-tight text-sky-200">
 
-                {selectedPiece.source === "tray" ? "לחצו על משבצת" : "הזיזו או החזירו למגש"}
+                {selectedPiece.source === "tray" ? "Tap a slot" : "Move it or return it to the tray"}
 
               </p>
 
             ) : (
 
-              <p className="text-center text-xs font-semibold leading-tight text-white/60">בחרו חלק</p>
+              <p className="text-center text-xs font-semibold leading-tight text-white/60">Pick a piece</p>
 
             )}
 
@@ -596,7 +596,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
             >
 
-              💡 הצג תמונה
+              💡 Show picture
 
             </button>
 
@@ -646,7 +646,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               >
 
-                💡 הצג תמונה
+                💡 Show picture
 
               </button>
 
@@ -670,7 +670,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={trayCols}
 
-              label="מגש עליון 🧩"
+              label="Top tray 🧩"
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -712,7 +712,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={2}
 
-              label="מגש 🧩"
+              label="Tray 🧩"
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -750,7 +750,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
             >
 
-              💡 הצג תמונה
+              💡 Show picture
 
             </button>
 
@@ -834,7 +834,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={trayCols}
 
-              label="מגש תחתון 🧩"
+              label="Bottom tray 🧩"
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -874,7 +874,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={2}
 
-              label="מגש 🧩"
+              label="Tray 🧩"
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -910,7 +910,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={trayCols}
 
-              label="מגש 🧩"
+              label="Tray 🧩"
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -942,7 +942,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
                 style={{ touchAction: "manipulation" }}
 
-                aria-label="סגור תמונה"
+                aria-label="Close picture"
 
               >
 

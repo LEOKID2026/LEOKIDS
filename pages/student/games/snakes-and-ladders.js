@@ -19,12 +19,12 @@ export default function StudentSnakesAndLaddersPage() {
     return (
       <>
         <Head>
-          <title>נחשים וסולמות - ארקייד</title>
+          <title>Snakes & Ladders - Arcade</title>
         </Head>
         <div className="min-h-screen bg-zinc-950 px-4 py-8 text-zinc-300 space-y-3">
-          <p>חסר מזהה חדר.</p>
+          <p>Missing room ID.</p>
           <Link href="/student/arcade" className="text-sky-400 underline">
-            חזרה לארקייד
+            Back to arcade
           </Link>
         </div>
       </>
@@ -34,11 +34,11 @@ export default function StudentSnakesAndLaddersPage() {
   return (
     <>
       <Head>
-        <title>נחשים וסולמות - ארקייד</title>
+        <title>Snakes & Ladders - Arcade</title>
       </Head>
       <div
         className="flex h-dvh max-h-dvh min-h-0 flex-col overflow-hidden bg-zinc-950 text-zinc-100"
-        dir="rtl"
+        dir="ltr"
       >
         <div
           className="game-page-mobile learning-master-fill relative flex w-full flex-1 min-h-0 flex-col overflow-hidden max-md:pl-0 max-md:pr-0 md:pl-[clamp(8px,2vw,32px)] md:pr-[clamp(8px,2vw,32px)]"

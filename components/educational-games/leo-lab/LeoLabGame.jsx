@@ -110,7 +110,7 @@ export default function LeoLabGame({
   const maxPick = currentExperiment?.pickCount ?? 2;
   const instructionText =
     phase === "play" && currentExperiment
-      ? `${currentExperiment.prompt} בחרו ${maxPick} חפצים`
+      ? `${currentExperiment.prompt} Pick ${maxPick} items`
       : "";
 
   const {
@@ -455,11 +455,11 @@ export default function LeoLabGame({
   return (
     <div
       className={`${frame.shell} ${frame.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`}
-      dir="rtl"
+      dir="ltr"
     >
       <header className={frame.header}>
         <Link href={backHref} className={frame.hudChip}>
-          חזרה
+          Back
         </Link>
         {phase === "play" ? (
           <div className={frame.hud}>
@@ -474,7 +474,7 @@ export default function LeoLabGame({
           </div>
         ) : (
           <div className={frame.hud}>
-            <span className={frame.hudChip}>{productionMode ? "🔬" : "🔬 אבטיפוס"}</span>
+            <span className={frame.hudChip}>{productionMode ? "🔬" : "🔬 Prototype"}</span>
           </div>
         )}
         {showFullscreenButton && onFullscreenToggle ? (
@@ -489,10 +489,10 @@ export default function LeoLabGame({
       {!productionMode && phase === "intro" ? (
         <div className={frame.screenCenter}>
           <p className={frame.introHero}>🔬🧪</p>
-          <h1 className={frame.introTitle}>מעבדת הניסויים של ליאו</h1>
+          <h1 className={frame.introTitle}>Leo&apos;s Science Lab</h1>
           <p className={frame.introText}>
-            בחרו חפצים מהמדף, שימו על שולחן הניסוי ולחצו &quot;בדוק ניסוי&quot; - גלו איך העולם
-            עובד!
+            Pick items from the shelf, put them on the experiment table, and tap &quot;Check
+            experiment&quot; — discover how the world works!
           </p>
           <div className={frame.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -511,10 +511,10 @@ export default function LeoLabGame({
             style={{ fontSize: "0.72rem" }}
           />
           <p className={frame.introText} style={{ fontSize: "0.78rem" }}>
-            {EXPERIMENTS_PER_LEVEL} ניסויים · גרירה או לחיצה על חפצים
+            {EXPERIMENTS_PER_LEVEL} experiments · drag or tap items
           </p>
           <button type="button" className={frame.startBtn} onClick={startGame}>
-            כניסה למעבדה
+            Enter the lab
           </button>
         </div>
       ) : null}
@@ -522,7 +522,7 @@ export default function LeoLabGame({
       {phase === "play" && currentExperiment ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🔬 שולחן ניסוי · ניסוי {experimentIndex + 1} מתוך {EXPERIMENTS_PER_LEVEL}
+            🔬 Experiment table · Experiment {experimentIndex + 1} of {EXPERIMENTS_PER_LEVEL}
           </p>
 
           <div className={`${shop.shopGrid} ${styles.labShopGrid}`} data-educational-workplace-grid="">
@@ -541,7 +541,7 @@ export default function LeoLabGame({
                   </div>
                   <p className={shop.missionText}>
                     {currentExperiment.prompt}
-                    <span className={shop.missionTicket}>🧾 בחרו {maxPick} חפצים</span>
+                    <span className={shop.missionTicket}>🧾 Pick {maxPick} items</span>
                   </p>
                 </div>
               </div>
@@ -567,7 +567,7 @@ export default function LeoLabGame({
                             type="button"
                             className={styles.benchItemBtn}
                             onClick={() => toggleItem(id)}
-                            aria-label={`הסר ${item.name}`}
+                            aria-label={`Remove ${item.name}`}
                           >
                             {!isDragging ? (
                               <LabItemVisual item={item} size="bench" showName />
@@ -578,7 +578,7 @@ export default function LeoLabGame({
                     </div>
                   ) : (
                     <p className={styles.benchEmptyHint}>
-                      גררו או לחצו על חפצים · בחרו {maxPick}
+                      Drag or tap items · pick {maxPick}
                     </p>
                   )}
                 </div>
@@ -587,7 +587,7 @@ export default function LeoLabGame({
 
             <aside className={shop.sideCol}>
               <div className={`${frame.panel} ${shop.toolsPanel}`}>
-                <p className={shop.toolsTitle}>🗄️ מדף החפצים</p>
+                <p className={shop.toolsTitle}>🗄️ Item shelf</p>
                 <div className={`${shop.toolsGrid} ${shelfGridClass}`}>
                   {shelfItems.map((item) => {
                     const onBench = selectedIds.includes(item.id);
@@ -631,7 +631,7 @@ export default function LeoLabGame({
                   disabled={showResult || selectedIds.length !== maxPick}
                   onClick={runCheck}
                 >
-                  בדוק ניסוי 🧪
+                  Check experiment 🧪
                 </button>
                 <button
                   type="button"
@@ -639,7 +639,7 @@ export default function LeoLabGame({
                   disabled={showResult || selectedIds.length === 0}
                   onClick={clearSelection}
                 >
-                  נקה בחירה
+                  Clear selection
                 </button>
               </div>
             </div>
@@ -650,17 +650,17 @@ export default function LeoLabGame({
       {phase === "won" && !productionMode ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🎉 סיימתם את המעבדה!</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
+            <h2 className={frame.endTitle}>🎉 You finished the lab!</h2>
+            <p className={frame.endStat}>⭐ Score: {score}</p>
             <p className={frame.endStat}>
-              ✅ הצלחות: {successCount}/{experiments.length}
+              ✅ Successes: {successCount}/{experiments.length}
             </p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
-            <p className={frame.endStat}>📊 דיוק: {accuracyPct}%</p>
-            <p className={frame.endStat}>📊 רמה: {diffConfig.label}</p>
+            <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
+            <p className={frame.endStat}>📊 Accuracy: {accuracyPct}%</p>
+            <p className={frame.endStat}>📊 Level: {diffConfig.label}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={() => setPhase("intro")}>
-                משחק חדש
+                New game
               </button>
             </div>
           </div>

@@ -1,6 +1,13 @@
 /**
  * Repair MCQ rows that trigger FAIL-tier obvious-answer heuristics.
  * Used at static-bank export and generator output — not UI copy.
+ *
+ * HE keys kept for matching (do not translate):
+ * - HEBREW_STOP_TOKENS: Hebrew stopwords used when tokenizing stems that still contain Hebrew
+ * - LENGTH_PAD_HE: reserved Hebrew length pads (unused for EN display; kept for HE content paths)
+ * - EXACT map keys in lengthenHebrewOption: match short Hebrew distractors before expanding
+ * - Weak-distractor regexes /^לא\s/ and /^אין\s/: detect Hebrew weak options
+ * - Stem-token skip regex /^(ראשוני|פריק|זוגי|אי)$/ + /או/: Hebrew math-stem matching
  */
 
 const HEBREW_STOP_TOKENS = new Set([
@@ -45,6 +52,7 @@ const HEBREW_STOP_TOKENS = new Set([
   "from",
 ]);
 
+/** Kept for Hebrew content-length paths; not shown on GLOBAL EN UI. */
 const LENGTH_PAD_HE = [
   " באופן שונה",
   " במקרה אחר",
@@ -241,23 +249,24 @@ function lengthenHebrewOption(text, minLen) {
   let t = String(text ?? "").trim();
   if (t.length >= minLen) return t;
 
+  // HE keys match short Hebrew distractors; EN values are what may be shown after expansion.
   const EXACT = {
-    כלב: "כלב מבית",
-    חתול: "חתול פרוותי",
-    דג: "דג שוחה במים",
-    זכוכית: "זכוכית שקופה",
-    אבן: "אבן אטומה",
-    מתכת: "מתכת כבדה",
-    עץ: "עץ מוצק",
-    לראות: "לראות בעיניים",
-    לשמוע: "לשמוע באוזניים",
-    לרוץ: "לרוץ במגרש",
-    תרנגול: "תרנגול עם נוצות",
+    כלב: "house dog",
+    חתול: "fluffy cat",
+    דג: "fish swimming in water",
+    זכוכית: "clear glass",
+    אבן: "solid stone",
+    מתכת: "heavy metal",
+    עץ: "solid wood",
+    לראות: "see with eyes",
+    לשמוע: "hear with ears",
+    לרוץ: "run on the field",
+    תרנגול: "rooster with feathers",
   };
   if (EXACT[t]) t = EXACT[t];
   if (t.length >= minLen) return t;
 
-  const suffixes = [" בדרך כלל", " בגוף", " במקרה"];
+  const suffixes = [" usually", " in the body", " in a case"];
   for (const s of suffixes) {
     if (t.length + s.length >= minLen && !t.includes(s.trim())) {
       t += s;
@@ -282,10 +291,10 @@ function repairWeakPlausibleDistractors(answers, ci) {
   if (plausibleCount >= 2) return answers;
 
   const REPLACEMENTS = [
-    "אפשרות שגויה אך סבירה",
-    "תשובה אפשרית אחרת",
-    "הסבר חלקי בלבד",
-    "רק במקרים נדירים",
+    "A plausible but incorrect option",
+    "Another possible answer",
+    "Only a partial explanation",
+    "Only in rare cases",
   ];
   let ri = 0;
   for (const i of weakIdx) {

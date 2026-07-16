@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   const action = String(body.action || "").trim().toLowerCase();
 
   if (!roomId || !action) {
-    return res.status(400).json({ ok: false, message: "בקשה לא תקינה", code: "invalid_action" });
+    return res.status(400).json({ ok: false, message: "Invalid request", code: "invalid_action" });
   }
 
   try {
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       const status = typeof e.status === "number" ? e.status : 400;
       return res.status(status).json({
         ok: false,
-        message: e.message || "שגיאה",
+        message: e.message || "Error",
         code: e.code || "error",
         revision: e.revision,
         next_call_at: e.next_call_at,
@@ -43,12 +43,12 @@ export default async function handler(req, res) {
 
     const snapshot = await getBingoOv2RpcPayload(auth.supabase, roomId, auth.studentId);
     if (!snapshot) {
-      return res.status(500).json({ ok: false, message: "לא ניתן לטעון מצב משחק", code: "snapshot_failed" });
+      return res.status(500).json({ ok: false, message: "Could not load game state", code: "snapshot_failed" });
     }
 
     return res.status(200).json({ ok: true, snapshot });
   } catch (err) {
     console.error("[api/arcade/games/bingo/action] unexpected error", err);
-    return res.status(500).json({ ok: false, code: "server_error", message: "שגיאת שרת" });
+    return res.status(500).json({ ok: false, code: "server_error", message: "Server error" });
   }
 }

@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { displayArcadeGameTitle } from "./arcadeGameTitles.he.js";
+import { displayArcadeGameTitle } from "./arcadeGameTitles.js";
 
 /** @param {{ invite: object|null, onDismiss?: () => void, className?: string }} props */
 export default function ArcadeInviteBanner({ invite, onDismiss, className = "" }) {
@@ -41,16 +41,16 @@ export default function ArcadeInviteBanner({ invite, onDismiss, className = "" }
   if (!invite?.inviteId) return null;
 
   return (
-    <div className={`rounded-xl border border-sky-400/35 bg-sky-500/10 p-3 text-right ${className}`} dir="rtl">
+    <div className={`rounded-xl border border-sky-400/35 bg-sky-500/10 p-3 text-left ${className}`} dir="ltr">
       <p className="text-sm font-semibold text-sky-100">
-        {invite.fromDisplayName || "חבר"} מזמין אותך ל{invite.gameKey ? ` ${displayArcadeGameTitle(invite.gameKey)}` : " משחק"}
+        {invite.fromDisplayName || "Friend"} invites you to{invite.gameKey ? ` ${displayArcadeGameTitle(invite.gameKey)}` : " a game"}
       </p>
-      <div className="mt-2 flex flex-wrap gap-2 justify-end">
+      <div className="mt-2 flex flex-wrap gap-2 justify-start">
         <button type="button" disabled={busy} onClick={() => void respond(true)} className="rounded-lg bg-emerald-500 px-3 py-1 text-sm font-bold text-black">
-          קבל
+          Accept
         </button>
         <button type="button" disabled={busy} onClick={() => void respond(false)} className="rounded-lg border border-white/25 px-3 py-1 text-sm">
-          דחה
+          Decline
         </button>
       </div>
     </div>

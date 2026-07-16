@@ -35,11 +35,11 @@ export function buildLeoWordTrainMetrics(state) {
     completedAllTasks,
     positiveProgress: successfulTasks,
     statsLines: [
-      { label: "משימות שהגעתם אליהן", value: String(tasksReached) },
-      { label: "תחנות שהושלמו", value: String(successfulTasks) },
-      { label: "טעויות", value: String(mistakes) },
-      { label: "דיוק", value: `${Math.round(accuracy * 100)}%` },
-      { label: "רצף הכי טוב", value: String(bestStreak) },
+      { label: "Tasks reached", value: String(tasksReached) },
+      { label: "Stations completed", value: String(successfulTasks) },
+      { label: "Mistakes", value: String(mistakes) },
+      { label: "Accuracy", value: `${Math.round(accuracy * 100)}%` },
+      { label: "Best streak", value: String(bestStreak) },
     ],
   };
 }

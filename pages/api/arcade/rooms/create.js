@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   if (!gameKey || !allowedTypes.has(roomType)) {
     return res.status(400).json({
       ok: false,
-      error: "סוג חדר לא תקין (מותר public או private)",
+      error: "Invalid room type (must be public or private)",
       code: "bad_request",
     });
   }

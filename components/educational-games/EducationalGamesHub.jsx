@@ -40,7 +40,7 @@ export default function EducationalGamesHub() {
             <section className="grid sm:grid-cols-2 gap-3 md:gap-4">
               {state === "loading" ? null : games.length === 0 ? (
                 <p className={`col-span-full text-center text-sm ${GH.muted}`}>
-                  אין משחקים חינוכיים זמינים כרגע
+                  No educational games available right now
                 </p>
               ) : (
                 games.map((row) => {
@@ -51,14 +51,14 @@ export default function EducationalGamesHub() {
                         <div className={GH.cardEmoji}>{row.emoji || "📚"}</div>
                         <div>
                           <h2 className={GH.cardTitle}>{row.titleHe}</h2>
-                          <p className={GH.cardMeta}>משחק חינוכי · מטבעות</p>
+                          <p className={GH.cardMeta}>Educational game · Coins</p>
                         </div>
                       </div>
                       <p className={`${GH.cardBlurb} flex-1`}>{row.blurbHe}</p>
                       {locked ? (
                         <GamesHubLockFooter ctaClass={GH.cardCta} />
                       ) : (
-                        <span className={GH.cardCta}>שחק עכשיו</span>
+                        <span className={GH.cardCta}>Play now</span>
                       )}
                     </>
                   );

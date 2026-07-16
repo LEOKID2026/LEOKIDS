@@ -67,20 +67,20 @@ export default function Ov2BingoFinishModal({
 
   const claimsTotal = (claims || []).reduce((s, c) => s + Math.floor(Number(c.amount) || 0), 0);
 
-  const finishTitle = isWalkover ? "ניצחון" : winner?.participantKey ? "הסיבוב הסתיים" : "המשחק הסתיים";
+  const finishTitle = isWalkover ? "Victory" : winner?.participantKey ? "Round over" : "The game has ended";
   const finishMultiplier = 1;
 
   const settlementText = () => {
-    if (isWalkover) return `+${walkoverAmt} מטבעות`;
-    if (claimsTotal > 0) return `+${claimsTotal.toLocaleString()} מטבעות (פרסים)`;
+    if (isWalkover) return `+${walkoverAmt} coins`;
+    if (claimsTotal > 0) return `+${claimsTotal.toLocaleString()} coins (prizes)`;
     return "-";
   };
 
   const reasonLine = isWalkover
-    ? `נשאר אחרון - ${winner?.name || winner?.participantKey || "מנצח"}`
+    ? `Last one standing — ${winner?.name || winner?.participantKey || "Winner"}`
     : winner?.participantKey
-      ? `מנצח: ${winner.name || winner.participantKey}`
-      : "המשחק הסתיים";
+      ? `Winner: ${winner.name || winner.participantKey}`
+      : "The game has ended";
 
   const finishLocked = vaultClaimBusy;
 
@@ -108,7 +108,7 @@ export default function Ov2BingoFinishModal({
             {isWalkover ? "🏆" : "⎔"}
           </span>
           <div className="min-w-0 flex-1 text-left">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">תוצאת הסיבוב</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Round result</p>
             <h2
               id="ov2-bingo-finish-title"
               className={[
@@ -121,10 +121,10 @@ export default function Ov2BingoFinishModal({
             >
               {finishTitle}
             </h2>
-            <p className="mt-2 text-[10px] font-medium uppercase tracking-wide text-zinc-500">מכפיל שולחן</p>
+            <p className="mt-2 text-[10px] font-medium uppercase tracking-wide text-zinc-500">Table multiplier</p>
             <p className="mt-0.5 text-sm font-semibold tabular-nums text-zinc-400">×{finishMultiplier}</p>
             <div className="mt-3 rounded-lg border border-white/[0.1] bg-black/25 px-2.5 py-2.5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">תשלום</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Payout</p>
               <p
                 className={`mt-2 text-center text-xl font-bold tabular-nums leading-tight sm:text-2xl ${
                   isWalkover || claimsTotal > 0 ? "font-semibold tabular-nums text-amber-200/95" : "text-zinc-500"
@@ -135,13 +135,13 @@ export default function Ov2BingoFinishModal({
             </div>
             <p className="mt-3 text-center text-[11px] leading-snug text-zinc-400">{reasonLine}</p>
             <p className="mt-2 text-center text-[10px] leading-snug text-zinc-500">
-              {finishLocked ? "שולח תוצאות ליתרה שלך…" : "הסיבוב הסתיים - בקשו משחק חוזר, ואז המארח מתחיל את הבא."}
+              {finishLocked ? "Sending results to your balance…" : "Round over — request a rematch, then the host starts the next one."}
             </p>
           </div>
         </div>
       </div>
       <div className="max-h-[min(50dvh,320px)] min-h-0 overflow-y-auto border-b border-white/[0.06] px-4 py-3">
-        <div className="font-semibold text-[10px] uppercase tracking-wide text-zinc-500">פרסים שנתבעו</div>
+        <div className="font-semibold text-[10px] uppercase tracking-wide text-zinc-500">Prizes claimed</div>
         <ul className="mt-2 space-y-1 text-[11px] leading-snug text-zinc-300 sm:text-xs">
           {BINGO_PRIZE_KEYS.map(pk => {
             const c = byKey[pk];
@@ -150,7 +150,7 @@ export default function Ov2BingoFinishModal({
               return (
                 <li key={pk} className="flex justify-between gap-2 border-b border-white/[0.06] py-0.5">
                   <span>{label}</span>
-                  <span className="text-zinc-500">לא נתבע</span>
+                  <span className="text-zinc-500">Unclaimed</span>
                 </li>
               );
             }
@@ -158,9 +158,9 @@ export default function Ov2BingoFinishModal({
             return (
               <li key={pk} className="flex justify-between gap-2 border-b border-white/[0.06] py-0.5">
                 <span>{label}</span>
-                <span className="text-right">
-                  <span className="text-zinc-100">{c.claimedByName || "שחקן"}</span>
-                  <span className="ml-1 font-mono text-amber-200/90">{amt} מטבעות</span>
+                <span className="text-left">
+                  <span className="text-zinc-100">{c.claimedByName || "Player"}</span>
+                  <span className="ml-1 font-mono text-amber-200/90">{amt} coins</span>
                 </span>
               </li>
             );
@@ -174,7 +174,7 @@ export default function Ov2BingoFinishModal({
           disabled={rematchBusy || !canRequestRematch || finishLocked}
           onClick={() => void onRequestRematch()}
         >
-          {rematchBusy ? "שולח בקשה…" : "בקש משחק חוזר"}
+          {rematchBusy ? "Sending request…" : "Request rematch"}
         </button>
         <button
           type="button"
@@ -182,25 +182,25 @@ export default function Ov2BingoFinishModal({
           disabled={rematchBusy || !canCancelRematch}
           onClick={() => void onCancelRematch()}
         >
-          בטל משחק חוזר
+          Cancel rematch
         </button>
         <div className="w-full overflow-hidden rounded-xl border border-emerald-500/20 bg-emerald-950/15 pt-2">
-          <p className="mb-1.5 px-2 text-[10px] font-semibold uppercase tracking-wide text-emerald-200/85">למארח בלבד</p>
+          <p className="mb-1.5 px-2 text-[10px] font-semibold uppercase tracking-wide text-emerald-200/85">Host only</p>
           <button
             type="button"
             className={BTN_PRIMARY + " w-full rounded-none"}
             disabled={startNextBusy || !canStartNextMatch || finishLocked}
-            title={!isHost ? "רק המארח יכול להתחיל את המשחק הבא" : undefined}
+            title={!isHost ? "Only the host can start the next game" : undefined}
             onClick={() => void onStartNext()}
           >
-            {startNextBusy ? "מתחיל…" : "התחל הבא (מארח)"}
+            {startNextBusy ? "Starting…" : "Start next (host)"}
           </button>
           <p className="px-2 py-1.5 text-center text-[11px] text-zinc-500">
-            המארח מתחיל משחק חדש כשכל השחקנים היושבים מבקשים משחק חוזר.
+            The host starts a new game when all seated players request a rematch.
           </p>
         </div>
         <button type="button" className={BTN_SECONDARY + " w-full"} onClick={onDismiss}>
-          סגור
+          Close
         </button>
         <button
           type="button"
@@ -208,7 +208,7 @@ export default function Ov2BingoFinishModal({
           disabled={exitBusy || !selfKey}
           onClick={() => void onLeaveTable()}
         >
-          {exitBusy ? "יוצא…" : "עזוב שולחן"}
+          {exitBusy ? "Leaving…" : "Leave table"}
         </button>
         {exitErr ? <p className="text-center text-[11px] text-red-300">{exitErr}</p> : null}
       </div>

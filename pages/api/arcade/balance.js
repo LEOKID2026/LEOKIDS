@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       .maybeSingle();
 
     if (error) {
-      return res.status(500).json({ ok: false, error: "לא ניתן לטעון יתרה", code: "db_error" });
+      return res.status(500).json({ ok: false, error: "Could not load balance", code: "db_error" });
     }
 
     const balance = row?.balance ?? 0;
@@ -28,6 +28,6 @@ export default async function handler(req, res) {
       lifetimeSpent: row?.lifetime_spent ?? 0,
     });
   } catch (_e) {
-    return res.status(500).json({ ok: false, error: "שגיאת שרת" });
+    return res.status(500).json({ ok: false, error: "Server error" });
   }
 }

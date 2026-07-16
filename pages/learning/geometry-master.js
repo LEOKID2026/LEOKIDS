@@ -3140,7 +3140,7 @@ export default function GeometryMaster() {
                         {errorExplanation && (
                           <div
                             className="px-4 py-3 rounded-lg bg-[#0a1222]/95 border border-rose-300/60 shadow-xl backdrop-blur-sm text-sm leading-relaxed text-center w-full"
-                            style={{ direction: "rtl", unicodeBidi: "isolate" }}
+                            style={{ direction: "ltr", unicodeBidi: "isolate" }}
                           >
                             <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">{ms.whyMistake}</div>
                             <div className="text-rose-50">
@@ -3180,7 +3180,7 @@ export default function GeometryMaster() {
                   {currentQuestion.params?.kind === "no_question" ? (
                     <div
                       className="text-xl font-bold text-red-400 mb-4 text-center p-4 bg-red-500/20 rounded-lg border border-red-400/50"
-                      style={{ direction: "rtl", unicodeBidi: "isolate" }}
+                      style={{ direction: "ltr", unicodeBidi: "isolate" }}
                     >
                       {currentQuestion.question}
                     </div>

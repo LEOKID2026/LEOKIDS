@@ -1,6 +1,7 @@
 /**
- * קשירת הקראה סטטית לתוכן שאלה (first-pass) — hash דטרמיניסטי על טקסט מלא.
- * משותף לקליינט (attach) ולשרת (api/hebrew-audio-ensure).
+ * Static narration binding for question content (first-pass) — deterministic hash of full text.
+ * Shared by client (attach) and server (api/hebrew-audio-ensure).
+ * Global product: English narration scaffolding (no Hebrew user-facing copy).
  */
 
 import { sha256 } from "js-sha256";
@@ -15,7 +16,7 @@ function clip(s, max) {
 }
 
 /**
- * נורמליזציה זהה בקליינט ובשרת לפני hash.
+ * Same normalization on client and server before hashing.
  * @param {string} plaintext
  */
 export function normalizeNarrationForHash(plaintext) {
@@ -26,7 +27,7 @@ export function normalizeNarrationForHash(plaintext) {
 }
 
 /**
- * 16 תווים hex — מפתח קובץ/זרם (ensure + /api/hebrew-audio-stream).
+ * 16 hex chars — file/stream key (ensure + /api/hebrew-audio-stream).
  * @param {string} plaintext
  */
 export function narrationContentHash16(plaintext) {
@@ -34,8 +35,8 @@ export function narrationContentHash16(plaintext) {
 }
 
 /**
- * טקסט מלא להקראה: שם תחום + הנחיה + תוכן השאלה + אפשרויות + סיום - ללא prefix של כיתה (למשל "כיתה א׳").
- * `gradeKey` נשאר לתאימות קוראים ואינו נכנס לטקסט.
+ * Full narration text: topic + prompt + question body + options + closing.
+ * `gradeKey` remains for callers and is not included in the text.
  * @param {{
  *   gradeKey: string,
  *   topic: string,
@@ -55,17 +56,16 @@ export function buildFirstPassNarrationPlaintext(p) {
         500
       )
     : "";
-  const topicLabel = p.topic === "reading" ? "קריאה" : "הבנת הנקרא";
-  const ansPart = ansLine ? ` האפשרויות: ${ansLine}.` : "";
-  /** פתיח אחרי שם התחום — הנחיה מלאה; לא כולל ציון כיתה */
-  const afterTopic = "האזינו לשאלה וענו לפי מה ששמעתם.";
-  const lead = `${topicLabel}. ${afterTopic} תוכן השאלה: `;
+  const topicLabel = p.topic === "reading" ? "Reading" : "Reading comprehension";
+  const ansPart = ansLine ? ` Options: ${ansLine}.` : "";
+  const afterTopic = "Listen to the question and answer based on what you hear.";
+  const lead = `${topicLabel}. ${afterTopic} Question: `;
   if (p.task_mode === "oral_comprehension_mcq") {
-    return `${lead}${body}.${ansPart} בחרו את התשובה הנכונה לפי מה ששמעתם.`;
+    return `${lead}${body}.${ansPart} Choose the correct answer based on what you heard.`;
   }
   if (p.task_mode === "phonological_discrimination_he") {
-    const phonLead = `${topicLabel}. האזינו לצליל המילה; ענו לפי מה ששמעתם. תוכן השאלה: `;
-    return `${phonLead}${body}.${ansPart} בחרו את האפשרות המתאימה לפי מה ששמעתם.`;
+    const phonLead = `${topicLabel}. Listen to the word sound; answer based on what you heard. Question: `;
+    return `${phonLead}${body}.${ansPart} Choose the matching option based on what you heard.`;
   }
-  return `${lead}${body}.${ansPart} בחרו את התשובה הנכונה.`;
+  return `${lead}${body}.${ansPart} Choose the correct answer.`;
 }

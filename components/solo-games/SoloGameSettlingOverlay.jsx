@@ -9,10 +9,10 @@ export default function SoloGameSettlingOverlay({ open = false }) {
   if (!open) return null;
 
   return (
-    <div className={SG.settlingOverlay} dir="rtl" role="status" aria-live="polite">
+    <div className={SG.settlingOverlay} dir="ltr" role="status" aria-live="polite">
       <div className={SG.settlingSpinner} />
-      <p className={SG.settlingTitle}>מחשבים תוצאה…</p>
-      <p className={SG.settlingSub}>רגע קטן, שומרים את המטבעות שלך</p>
+      <p className={SG.settlingTitle}>Calculating score…</p>
+      <p className={SG.settlingSub}>Just a moment — saving your coins</p>
     </div>
   );
 }

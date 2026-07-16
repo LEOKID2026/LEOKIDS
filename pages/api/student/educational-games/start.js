@@ -35,10 +35,10 @@ export default async function handler(req, res) {
       body?.difficulty != null ? String(body.difficulty).trim().toLowerCase() : null;
 
     if (!isValidEducationalGameKey(gameKey)) {
-      return res.status(400).json({ ok: false, error: "משחק לא תקין" });
+      return res.status(400).json({ ok: false, error: "Invalid game" });
     }
     if (difficulty && !isValidEducationalDifficulty(difficulty)) {
-      return res.status(400).json({ ok: false, error: "רמת קושי לא תקינה" });
+      return res.status(400).json({ ok: false, error: "Invalid difficulty level" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
     }
 
     if (access.catalogRow?.category !== "educational") {
-      return res.status(400).json({ ok: false, error: "משחק לא שייך לקטגוריה חינוכית" });
+      return res.status(400).json({ ok: false, error: "Game is not in the educational category" });
     }
 
     const result = await createEducationalGameSession(supabase, {
