@@ -234,6 +234,7 @@ async function testSqlPackageSafety() {
   const codeOnly = all.replace(/--[^\n]*/g, "");
   const fSql = fs.readFileSync(path.join(dir, "F_rls_restrictive_il_only.sql"), "utf8");
   const aSql = fs.readFileSync(path.join(dir, "A_students_product_id.sql"), "utf8");
+  const cSql = fs.readFileSync(path.join(dir, "C_product_parent_account_settings.sql"), "utf8");
   const g = fs.readFileSync(path.join(dir, "G_verification_assertions.sql"), "utf8");
   const h = fs.readFileSync(path.join(dir, "H_il_compat_checks.sql"), "utf8");
   const preflight = fs.readFileSync(path.join(dir, "00_preflight_inventory.sql"), "utf8");
@@ -259,8 +260,17 @@ async function testSqlPackageSafety() {
   assert.match(fSql, /s\.product_id = 'leokids_il'/);
   assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), /s\.product_id IS NULL OR/);
 
-  // Stage A NOT NULL
+  // Stage A: no unused enum; access-code trigger covers product_id; CHECK present
+  assert.doesNotMatch(aSql.replace(/--[^\n]*/g, ""), /CREATE TYPE\s+public\.leokids_product_id/);
+  assert.doesNotMatch(aSql, /AS ENUM/);
+  assert.match(aSql, /BEFORE INSERT OR UPDATE OF student_id,\s*product_id/);
+  assert.match(aSql, /student_access_codes_product_id_check/);
   assert.match(aSql, /ALTER COLUMN product_id SET NOT NULL/);
+
+  // Stage C: DROP matches CREATE policy name
+  assert.match(cSql, /DROP POLICY IF EXISTS v3_ppas_authenticated_il_select/);
+  assert.match(cSql, /CREATE POLICY v3_ppas_authenticated_il_select/);
+  assert.doesNotMatch(cSql, /v3_ppas_authenticated_deny_global/);
 
   // Preflight + F cover discovered private tables
   const discovered = [
@@ -279,19 +289,68 @@ async function testSqlPackageSafety() {
     assert.match(fSql, new RegExp(t));
   }
 
+  // G verifies all F-protected private tables (no Arcade / shared catalogs)
+  const fProtected = [
+    "students",
+    "student_access_codes",
+    "student_sessions",
+    "learning_sessions",
+    "answers",
+    "parent_reports",
+    "student_coin_balances",
+    "coin_transactions",
+    "student_inventory",
+    "diamond_transactions",
+    "student_diamond_balances",
+    "reward_card_transactions",
+    "student_reward_cards",
+    "surprise_box_openings",
+    "student_game_category_permissions",
+    "student_game_permissions_change_log",
+    "teacher_students",
+    "teacher_class_students",
+    "student_subject_permissions",
+    "student_learning_access_preferences",
+    "student_subject_permissions_change_log",
+    "parent_assigned_activities",
+    "parent_activity_status",
+    "parent_activity_attempts",
+    "parent_activity_learning_visits",
+    "worksheet_assignments",
+    "worksheet_student_answers",
+    "private_worksheet_assignments",
+    "parent_copilot_usage_log",
+    "product_parent_account_settings",
+    "product_guest_mode_settings",
+  ];
+  for (const t of fProtected) {
+    assert.match(fSql, new RegExp(t));
+    assert.match(g, new RegExp(t));
+  }
+  // Arcade / catalogs must not be in G verification table list (G9 only asserts arcade has no product_id)
+  const vTablesBlock = g.slice(g.indexOf("v_tables"), g.indexOf("];", g.indexOf("v_tables")));
+  assert.doesNotMatch(vTablesBlock, /arcade_/i);
+  assert.doesNotMatch(vTablesBlock, /coin_reward_rules|coin_spend_rules|shop_items|teacher_plans/);
+  assert.match(g, /Arcade must not have product_id/);
+  assert.match(g, /G11d FAIL: shared catalog/);
+
   // Shared catalogs must not get restrict policies
   for (const t of ["coin_reward_rules", "coin_spend_rules", "shop_items", "teacher_plans"]) {
     assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), new RegExp(`v3_restrict_.*${t}|ON public\\.${t}`));
   }
   assert.match(fSql, /coin_reward_rules/); // mentioned as excluded
 
-  // G15 must use UPDATE (not duplicate INSERT)
+  // G15/G16: no blanket OR OTHERS success
   assert.match(g, /G15/);
   assert.match(g, /UPDATE public\.user_product_memberships/);
   assert.doesNotMatch(
     g.slice(g.indexOf("G15"), g.indexOf("G16")),
     /INSERT INTO public\.user_product_memberships/
   );
+  assert.doesNotMatch(g.slice(g.indexOf("G15"), g.indexOf("G16")), /OR OTHERS/);
+  assert.match(g.slice(g.indexOf("G15"), g.indexOf("G16")), /insufficient_privilege/);
+  assert.match(g.slice(g.indexOf("-- G16"), g.indexOf("EXECUTE 'RESET ROLE'")), /insufficient_privilege/);
+  assert.match(g.slice(g.indexOf("-- G16"), g.indexOf("EXECUTE 'RESET ROLE'")), /permission denied/);
   assert.match(g, /students\.product_id is nullable|is_nullable/);
   assert.match(g, /v3_product_is_il\(NULL\)/);
 

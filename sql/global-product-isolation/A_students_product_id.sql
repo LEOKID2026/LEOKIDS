@@ -6,17 +6,6 @@
 
 BEGIN;
 
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_type t
-    JOIN pg_namespace n ON n.oid = t.typnamespace
-    WHERE t.typname = 'leokids_product_id' AND n.nspname = 'public'
-  ) THEN
-    CREATE TYPE public.leokids_product_id AS ENUM ('leokids_il', 'leokids_global');
-  END IF;
-END $$;
-
 CREATE OR REPLACE FUNCTION public.is_valid_leokids_product_id(p text)
 RETURNS boolean
 LANGUAGE sql
@@ -74,6 +63,7 @@ WHERE product_id IS NULL;
 CREATE INDEX IF NOT EXISTS idx_v3_sac_product_code_hash
   ON public.student_access_codes (product_id, code_hash);
 
+-- Always load product_id from students; client/API values are overwritten.
 CREATE OR REPLACE FUNCTION public.trg_v3_sync_access_code_product_id()
 RETURNS trigger
 LANGUAGE plpgsql
@@ -90,9 +80,22 @@ $$;
 
 DROP TRIGGER IF EXISTS trg_v3_sync_access_code_product_id ON public.student_access_codes;
 CREATE TRIGGER trg_v3_sync_access_code_product_id
-  BEFORE INSERT OR UPDATE OF student_id ON public.student_access_codes
+  BEFORE INSERT OR UPDATE OF student_id, product_id ON public.student_access_codes
   FOR EACH ROW
   EXECUTE FUNCTION public.trg_v3_sync_access_code_product_id();
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint
+    WHERE conname = 'student_access_codes_product_id_check'
+      AND conrelid = 'public.student_access_codes'::regclass
+  ) THEN
+    ALTER TABLE public.student_access_codes
+      ADD CONSTRAINT student_access_codes_product_id_check
+      CHECK (public.is_valid_leokids_product_id(product_id));
+  END IF;
+END $$;
 
 -- Safe after backfill + sync trigger on all write paths.
 ALTER TABLE public.student_access_codes

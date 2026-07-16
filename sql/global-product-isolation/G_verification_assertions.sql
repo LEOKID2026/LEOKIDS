@@ -17,6 +17,7 @@ DECLARE
   v_tables text[] := ARRAY[
     'students',
     'student_access_codes',
+    'student_sessions',
     'learning_sessions',
     'answers',
     'parent_reports',
@@ -31,7 +32,19 @@ DECLARE
     'student_game_category_permissions',
     'student_game_permissions_change_log',
     'teacher_students',
-    'teacher_class_students'
+    'teacher_class_students',
+    'student_subject_permissions',
+    'student_learning_access_preferences',
+    'student_subject_permissions_change_log',
+    'parent_assigned_activities',
+    'parent_activity_status',
+    'parent_activity_attempts',
+    'parent_activity_learning_visits',
+    'worksheet_assignments',
+    'worksheet_student_answers',
+    'private_worksheet_assignments',
+    'product_parent_account_settings',
+    'product_guest_mode_settings'
   ];
 BEGIN
   -- G1: no NULL product_id on students
@@ -167,6 +180,30 @@ BEGIN
     END IF;
   END LOOP;
 
+  -- G11c2: parent_copilot_usage_log only when product_id column exists
+  IF EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+      AND table_name = 'parent_copilot_usage_log'
+      AND column_name = 'product_id'
+  ) THEN
+    IF NOT EXISTS (
+      SELECT 1 FROM pg_policies p
+      WHERE p.schemaname = 'public'
+        AND p.tablename = 'parent_copilot_usage_log'
+        AND p.permissive = 'RESTRICTIVE'
+        AND p.roles::text ILIKE '%authenticated%'
+        AND (
+          coalesce(p.qual, '') ILIKE '%v3_product_is_il%'
+          OR coalesce(p.qual, '') ILIKE '%leokids_il%'
+          OR coalesce(p.with_check, '') ILIKE '%v3_product_is_il%'
+          OR coalesce(p.with_check, '') ILIKE '%leokids_il%'
+        )
+    ) THEN
+      RAISE EXCEPTION 'ASSERT G11c2 FAIL: missing RESTRICTIVE IL policy on parent_copilot_usage_log';
+    END IF;
+  END IF;
+
   -- G11d: shared catalogs must NOT have v3_restrict policies
   SELECT count(*) INTO v_cnt FROM pg_policies
   WHERE schemaname = 'public'
@@ -226,7 +263,8 @@ BEGIN
     RAISE EXCEPTION 'ASSERT G14b FAIL: dual-membership user sees Global via authenticated path';
   END IF;
 
-  -- G15: prove authenticated cannot mutate membership (UPDATE, not duplicate INSERT)
+  -- G15: prove authenticated cannot mutate membership (UPDATE, not duplicate INSERT).
+  -- Success = 0 rows updated under RLS, or real permission denial (42501).
   BEGIN
     UPDATE public.user_product_memberships
     SET interface_language = 'xx-g15-probe', updated_at = now()
@@ -236,19 +274,29 @@ BEGIN
       RAISE EXCEPTION 'ASSERT G15 FAIL: authenticated updated membership (% rows)', v_upd_count;
     END IF;
   EXCEPTION
-    WHEN insufficient_privilege OR OTHERS THEN
-      IF SQLERRM LIKE 'ASSERT G15%' THEN RAISE; END IF;
-      -- permission / RLS denial is success
+    WHEN insufficient_privilege THEN
       NULL;
+    WHEN OTHERS THEN
+      RAISE;
   END;
 
+  -- G16: authenticated must not EXECUTE ensure_user_product_membership.
+  -- Success = permission denied / service_role-only only.
   BEGIN
     PERFORM public.ensure_user_product_membership(v_uid, 'leokids_global', 'en', 'en');
     RAISE EXCEPTION 'ASSERT G16 FAIL: authenticated executed ensure_user_product_membership';
   EXCEPTION
-    WHEN OTHERS THEN
-      IF SQLERRM LIKE 'ASSERT G16%' THEN RAISE; END IF;
+    WHEN insufficient_privilege THEN
       NULL;
+    WHEN OTHERS THEN
+      IF SQLSTATE = '42501' THEN
+        NULL;
+      ELSIF SQLERRM ILIKE '%permission denied%'
+         OR SQLERRM ILIKE '%service_role%' THEN
+        NULL;
+      ELSE
+        RAISE;
+      END IF;
   END;
 
   EXECUTE 'RESET ROLE';

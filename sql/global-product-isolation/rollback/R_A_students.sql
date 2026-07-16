@@ -13,9 +13,18 @@ DROP INDEX IF EXISTS idx_v3_students_product_id;
 DROP INDEX IF EXISTS idx_v3_students_parent_product;
 DROP INDEX IF EXISTS idx_v3_sac_product_code_hash;
 
+ALTER TABLE IF EXISTS public.student_access_codes
+  DROP CONSTRAINT IF EXISTS student_access_codes_product_id_check;
+
+ALTER TABLE IF EXISTS public.students
+  DROP CONSTRAINT IF EXISTS students_product_id_check;
+
 -- Reverse NOT NULL (columns kept; safer than DROP COLUMN).
 ALTER TABLE IF EXISTS public.students
   ALTER COLUMN product_id DROP NOT NULL;
 
 ALTER TABLE IF EXISTS public.student_access_codes
   ALTER COLUMN product_id DROP NOT NULL;
+
+-- Legacy unused enum from earlier Stage A drafts (columns use text + CHECK).
+DROP TYPE IF EXISTS public.leokids_product_id;

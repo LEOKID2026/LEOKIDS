@@ -51,9 +51,8 @@ CREATE TRIGGER trg_v3_ppas_updated_at
 
 ALTER TABLE public.product_parent_account_settings ENABLE ROW LEVEL SECURITY;
 
--- Authenticated: no access to Global product settings rows (RESTRICTIVE + no permissive write).
--- Service role bypasses RLS for Global APIs.
-DROP POLICY IF EXISTS v3_ppas_authenticated_deny_global ON public.product_parent_account_settings;
+-- Authenticated: IL-scoped select only (Global rows via service role / RESTRICTIVE in F).
+DROP POLICY IF EXISTS v3_ppas_authenticated_il_select ON public.product_parent_account_settings;
 CREATE POLICY v3_ppas_authenticated_il_select
   ON public.product_parent_account_settings
   FOR SELECT
