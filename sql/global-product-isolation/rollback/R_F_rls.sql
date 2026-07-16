@@ -4,6 +4,7 @@ DO $$ BEGIN
   END IF;
 END $$;
 
+-- Drops every policy named v3_restrict_% (including diamonds/rewards/teacher tables).
 DO $$
 DECLARE r record;
 BEGIN

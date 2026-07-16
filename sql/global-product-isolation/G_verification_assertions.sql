@@ -1,5 +1,6 @@
 -- =============================================================================
 -- Stage G — Hard-fail verification (assertions + role/JWT dry-runs)
+-- All probe writes roll back via exception subtransaction.
 -- =============================================================================
 
 DO $$
@@ -10,11 +11,41 @@ DECLARE
   v_g_sid uuid;
   v_can_exec boolean;
   v_seen bigint;
+  v_upd_count bigint;
+  v_is_nullable text;
+  t text;
+  v_tables text[] := ARRAY[
+    'students',
+    'student_access_codes',
+    'learning_sessions',
+    'answers',
+    'parent_reports',
+    'student_coin_balances',
+    'coin_transactions',
+    'student_inventory',
+    'diamond_transactions',
+    'student_diamond_balances',
+    'reward_card_transactions',
+    'student_reward_cards',
+    'surprise_box_openings',
+    'student_game_category_permissions',
+    'student_game_permissions_change_log',
+    'teacher_students',
+    'teacher_class_students'
+  ];
 BEGIN
   -- G1: no NULL product_id on students
   SELECT count(*) INTO v_cnt FROM public.students WHERE product_id IS NULL;
   IF v_cnt <> 0 THEN
     RAISE EXCEPTION 'ASSERT G1 FAIL: % students with NULL product_id', v_cnt;
+  END IF;
+
+  -- G1b: students.product_id is NOT NULL
+  SELECT is_nullable INTO v_is_nullable
+  FROM information_schema.columns
+  WHERE table_schema = 'public' AND table_name = 'students' AND column_name = 'product_id';
+  IF v_is_nullable IS DISTINCT FROM 'NO' THEN
+    RAISE EXCEPTION 'ASSERT G1b FAIL: students.product_id is nullable';
   END IF;
 
   -- G2: no duplicate memberships
@@ -46,7 +77,7 @@ BEGIN
     RAISE EXCEPTION 'ASSERT G4 FAIL: guest_mode_settings PK altered (IL break risk)';
   END IF;
 
-  -- G5: product_* tables exist with composite PKs
+  -- G5: product_* tables exist
   IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='product_parent_account_settings') THEN
     RAISE EXCEPTION 'ASSERT G5 FAIL: product_parent_account_settings missing';
   END IF;
@@ -61,7 +92,7 @@ BEGIN
     RAISE EXCEPTION 'ASSERT G6 FAIL: authenticated can EXECUTE ensure_user_product_membership';
   END IF;
 
-  -- G7: no jwt_product_id() IS NULL escape in live policies
+  -- G7: no jwt_product_id() IS NULL escape
   SELECT count(*) INTO v_cnt FROM pg_policies
   WHERE schemaname='public'
     AND (qual ILIKE '%jwt_product_id() IS NULL%' OR with_check ILIKE '%jwt_product_id() IS NULL%');
@@ -70,10 +101,6 @@ BEGIN
   END IF;
 
   -- G8: no answers.session_id in policies
-  SELECT count(*) INTO v_cnt FROM pg_policies
-  WHERE schemaname='public' AND tablename='answers'
-    AND (qual ILIKE '%answers.session_id%' OR with_check ILIKE '%session_id%' AND qual NOT ILIKE '%learning_session_id%');
-  -- Stricter: explicit bad column
   SELECT count(*) INTO v_cnt FROM pg_policies
   WHERE schemaname='public' AND tablename='answers'
     AND (qual ILIKE '%answers.session_id%' OR with_check ILIKE '%answers.session_id%');
@@ -88,7 +115,7 @@ BEGIN
     RAISE EXCEPTION 'ASSERT G9 FAIL: arcade_* has product_id';
   END IF;
 
-  -- G10: RESTRICTIVE policies exist for students
+  -- G10: RESTRICTIVE students policy
   IF NOT EXISTS (
     SELECT 1 FROM pg_policies
     WHERE schemaname='public' AND tablename='students'
@@ -108,9 +135,50 @@ BEGIN
     RAISE EXCEPTION 'ASSERT G11 FAIL: unsafe v1/v2 product policies still present';
   END IF;
 
-  RAISE NOTICE 'STATIC ASSERTIONS G1-G11 PASSED';
+  -- G11b: helpers reject NULL-as-IL
+  IF public.v3_product_is_il(NULL) IS DISTINCT FROM false THEN
+    RAISE EXCEPTION 'ASSERT G11b FAIL: v3_product_is_il(NULL) must be false';
+  END IF;
+  IF public.v3_product_is_il('leokids_il') IS DISTINCT FROM true THEN
+    RAISE EXCEPTION 'ASSERT G11b FAIL: v3_product_is_il(leokids_il) must be true';
+  END IF;
 
-  -- -------- Role / JWT dry-runs (must use non-bypass role; rolled back) --------
+  -- G11c: each existing private table has RESTRICTIVE authenticated IL policy
+  FOREACH t IN ARRAY v_tables
+  LOOP
+    IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name=t) THEN
+      IF NOT EXISTS (
+        SELECT 1 FROM pg_policies p
+        WHERE p.schemaname = 'public'
+          AND p.tablename = t
+          AND p.permissive = 'RESTRICTIVE'
+          AND p.roles::text ILIKE '%authenticated%'
+          AND (
+            coalesce(p.qual, '') ILIKE '%v3_student_is_il_visible%'
+            OR coalesce(p.qual, '') ILIKE '%v3_product_is_il%'
+            OR coalesce(p.qual, '') ILIKE '%leokids_il%'
+            OR coalesce(p.with_check, '') ILIKE '%v3_student_is_il_visible%'
+            OR coalesce(p.with_check, '') ILIKE '%v3_product_is_il%'
+            OR coalesce(p.with_check, '') ILIKE '%leokids_il%'
+          )
+      ) THEN
+        RAISE EXCEPTION 'ASSERT G11c FAIL: missing RESTRICTIVE IL policy on %', t;
+      END IF;
+    END IF;
+  END LOOP;
+
+  -- G11d: shared catalogs must NOT have v3_restrict policies
+  SELECT count(*) INTO v_cnt FROM pg_policies
+  WHERE schemaname = 'public'
+    AND tablename IN ('coin_reward_rules', 'coin_spend_rules', 'shop_items', 'teacher_plans')
+    AND policyname LIKE 'v3_restrict_%';
+  IF v_cnt <> 0 THEN
+    RAISE EXCEPTION 'ASSERT G11d FAIL: shared catalog got product restrict policies';
+  END IF;
+
+  RAISE NOTICE 'STATIC ASSERTIONS G1-G11d PASSED';
+
+  -- -------- Role / JWT dry-runs (rolled back) --------
   SELECT id INTO v_uid FROM public.parent_profiles LIMIT 1;
   IF v_uid IS NULL THEN
     RAISE NOTICE 'JWT dry-run skipped: no parent_profiles';
@@ -138,7 +206,6 @@ BEGIN
   VALUES (v_uid, '__v3_global_probe__', 'g3', 'leokids_global')
   RETURNING id INTO v_g_sid;
 
-  -- Superuser bypasses RLS — switch to authenticated for real checks.
   EXECUTE 'SET LOCAL ROLE authenticated';
   PERFORM set_config('request.jwt.claim.sub', v_uid::text, true);
   PERFORM set_config('request.jwt.claim.role', 'authenticated', true);
@@ -153,20 +220,25 @@ BEGIN
     RAISE EXCEPTION 'ASSERT G14 FAIL: authenticated cannot see IL student (got %)', v_seen;
   END IF;
 
-  -- Dual membership must NOT expose Global rows on the same authenticated path
   SELECT count(*) INTO v_seen FROM public.students
   WHERE parent_id = v_uid AND product_id = 'leokids_global';
   IF v_seen <> 0 THEN
     RAISE EXCEPTION 'ASSERT G14b FAIL: dual-membership user sees Global via authenticated path';
   END IF;
 
+  -- G15: prove authenticated cannot mutate membership (UPDATE, not duplicate INSERT)
   BEGIN
-    INSERT INTO public.user_product_memberships (user_id, product_id, status)
-    VALUES (v_uid, 'leokids_global', 'active');
-    RAISE EXCEPTION 'ASSERT G15 FAIL: authenticated inserted membership';
+    UPDATE public.user_product_memberships
+    SET interface_language = 'xx-g15-probe', updated_at = now()
+    WHERE user_id = v_uid AND product_id = 'leokids_global';
+    GET DIAGNOSTICS v_upd_count = ROW_COUNT;
+    IF v_upd_count <> 0 THEN
+      RAISE EXCEPTION 'ASSERT G15 FAIL: authenticated updated membership (% rows)', v_upd_count;
+    END IF;
   EXCEPTION
-    WHEN OTHERS THEN
+    WHEN insufficient_privilege OR OTHERS THEN
       IF SQLERRM LIKE 'ASSERT G15%' THEN RAISE; END IF;
+      -- permission / RLS denial is success
       NULL;
   END;
 

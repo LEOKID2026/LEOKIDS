@@ -18,11 +18,15 @@ WHERE n.nspname = 'public'
     'student_subject_permissions','student_learning_access_preferences',
     'student_subject_permissions_change_log','parent_assigned_activities',
     'parent_activity_status','parent_activity_attempts',
-    'worksheet_assignments','worksheet_student_answers','private_worksheet_assignments'
+    'worksheet_assignments','worksheet_student_answers','private_worksheet_assignments',
+    'diamond_transactions','student_diamond_balances',
+    'reward_card_transactions','student_reward_cards','surprise_box_openings',
+    'student_game_category_permissions','student_game_permissions_change_log',
+    'teacher_class_students','teacher_students'
   )
 ORDER BY 1;
 
--- Full policy inventory (Tier A/B/C focus + anything product-related)
+-- Full policy inventory
 SELECT schemaname, tablename, policyname, permissive, roles, cmd, qual, with_check
 FROM pg_policies
 WHERE schemaname = 'public'
@@ -44,6 +48,10 @@ WHERE schemaname = 'public'
   AND roles::text ILIKE '%authenticated%'
   AND tablename IN (
     'students','student_access_codes','learning_sessions','answers',
-    'parent_reports','student_coin_balances','coin_transactions','student_inventory'
+    'parent_reports','student_coin_balances','coin_transactions','student_inventory',
+    'diamond_transactions','student_diamond_balances',
+    'reward_card_transactions','student_reward_cards','surprise_box_openings',
+    'student_game_category_permissions','student_game_permissions_change_log',
+    'teacher_class_students','teacher_students'
   )
 ORDER BY 1, 2;

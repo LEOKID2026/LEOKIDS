@@ -6,7 +6,44 @@
 
 ---
 
-## Package layout (single active package)
+## HEAD
+
+| When | SHA |
+|------|-----|
+| Before this fix | `7a9eb2a751efea651e96b2f62d5cc7b06117ffcc` |
+| After | `edcc17e61d271f2f176778fe47c1df0a52fb2ce5` |
+
+---
+
+## Preflight follow-up (this change)
+
+### Tables added to Stage F (RESTRICTIVE IL-only via `student_id`)
+
+- `diamond_transactions`
+- `student_diamond_balances`
+- `reward_card_transactions`
+- `student_reward_cards`
+- `surprise_box_openings`
+- `student_game_category_permissions`
+- `student_game_permissions_change_log`
+- `teacher_students` (has `student_id`)
+- `teacher_class_students` (has `student_id`)
+
+### Explicitly not restricted
+
+- Arcade / Tier D
+- Shared catalogs: `coin_reward_rules`, `coin_spend_rules`, `shop_items`, `teacher_plans`
+
+### Other fixes
+
+- `students.product_id` / `student_access_codes.product_id` → **NOT NULL** after backfill (NULL is not IL)
+- `v3_product_is_il(NULL)` → **false**; visibility requires `product_id = 'leokids_il'`
+- G15 proves authenticated cannot **UPDATE** membership (not duplicate INSERT)
+- H3 uses a real `parent_profiles` row inside a rolled-back probe
+
+---
+
+## Package layout
 
 ```
 sql/global-product-isolation/
@@ -21,65 +58,40 @@ sql/global-product-isolation/
   G_verification_assertions.sql
   H_il_compat_checks.sql
   rollback/
-    README.md
-    R_A_students.sql
-    R_B_memberships.sql
-    R_C_settings.sql
-    R_D_guest.sql
-    R_E_rpc.sql
-    R_F_rls.sql
 ```
 
-**Execution order:** `00 → A → B → C → D → E → F → G → H`
-
-Older versioned package folders and versioned isolation reports were removed from the working tree; Git history retains them.
+**Order:** `00 → A → B → C → D → E → F → G → H`
 
 ---
 
-## Model (final)
+## Files changed (this commit)
 
-| Entity | Role |
-|--------|------|
-| `auth.users` | Shared identity; may hold IL + Global memberships |
-| `parent_profiles` | Shared profile — not membership SoT |
-| `user_product_memberships` | Membership SoT — PK `(user_id, product_id)` |
-| `students` | Explicit `product_id`; IL default + backfill; Global creates = `leokids_global` |
-| `parent_account_settings` / `guest_mode_settings` | **Legacy IL** — PKs unchanged |
-| `product_parent_account_settings` / `product_guest_mode_settings` | **Global** product-scoped settings |
-| Arcade / Tier D | No blanket product isolation |
-
-App product id: server-only via `getServerProductId()` → `leokids_global`.
-
----
-
-## Design guarantees
-
-1. Legacy IL settings tables are not PK-migrated.
-2. Membership RPC is **service_role only**; suspended is not auto-reactivated.
-3. Authenticated clients see **IL-only** via RESTRICTIVE RLS; Global private data via service-role APIs.
-4. New IL users: default `leokids_il` + auto IL membership trigger on student insert.
-5. Global create refuses IL product and requires active Global membership.
+- `sql/global-product-isolation/A_students_product_id.sql`
+- `sql/global-product-isolation/F_rls_restrictive_il_only.sql`
+- `sql/global-product-isolation/00_preflight_inventory.sql`
+- `sql/global-product-isolation/G_verification_assertions.sql`
+- `sql/global-product-isolation/H_il_compat_checks.sql`
+- `sql/global-product-isolation/rollback/R_A_students.sql`
+- `sql/global-product-isolation/rollback/R_F_rls.sql`
+- `sql/global-product-isolation/README.md`
+- `tests/product-isolation/product-isolation.test.mjs`
+- `GLOBAL-PRODUCT-ISOLATION-REPORT.md`
 
 ---
 
-## App surfaces (product-aware)
+## Test results
 
-- `lib/global/product-context.server.js`
-- `lib/global/product-membership.server.js`
-- `lib/global/product-student.server.js`
-- `lib/global/product-settings.server.js`
-- Parent/student/learning/guest APIs gated to `leokids_global`
-- Write barrier: `GLOBAL_DATA_WRITES_ENABLED` default **false**
+| Suite | Result |
+|-------|--------|
+| `npm run test:product-isolation` | **PASS** — 12 tests |
+| `npm run build` | **PASS** |
 
 ---
 
 ## Confirmations
 
-- [x] SQL not executed from this cleanup  
+- [x] SQL not executed  
 - [x] Supabase not changed  
 - [x] Israeli sites not modified  
 - [x] `GLOBAL_DATA_WRITES_ENABLED` remains default false  
-- [x] Exactly one Product Isolation SQL directory under `sql/`  
-- [x] No auto-apply of this package via package.json / CI / build  
-
-See cleanup commit for HEAD tip after push.
+- [x] Package is staged only — not auto-applied via CI/build  

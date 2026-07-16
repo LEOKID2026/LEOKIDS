@@ -54,6 +54,10 @@ END $$;
 CREATE INDEX IF NOT EXISTS idx_v3_students_product_id ON public.students (product_id);
 CREATE INDEX IF NOT EXISTS idx_v3_students_parent_product ON public.students (parent_id, product_id);
 
+-- After full backfill: refuse NULL (NULL is not IL).
+ALTER TABLE public.students
+  ALTER COLUMN product_id SET NOT NULL;
+
 -- Optional denorm on access codes
 ALTER TABLE IF EXISTS public.student_access_codes
   ADD COLUMN IF NOT EXISTS product_id text;
@@ -77,6 +81,9 @@ AS $$
 BEGIN
   SELECT s.product_id INTO NEW.product_id
   FROM public.students s WHERE s.id = NEW.student_id;
+  IF NEW.product_id IS NULL THEN
+    RAISE EXCEPTION 'student_access_codes.product_id required (student missing or unlabeled)';
+  END IF;
   RETURN NEW;
 END;
 $$;
@@ -86,6 +93,13 @@ CREATE TRIGGER trg_v3_sync_access_code_product_id
   BEFORE INSERT OR UPDATE OF student_id ON public.student_access_codes
   FOR EACH ROW
   EXECUTE FUNCTION public.trg_v3_sync_access_code_product_id();
+
+-- Safe after backfill + sync trigger on all write paths.
+ALTER TABLE public.student_access_codes
+  ALTER COLUMN product_id SET DEFAULT 'leokids_il';
+
+ALTER TABLE public.student_access_codes
+  ALTER COLUMN product_id SET NOT NULL;
 
 -- Optional label on parent_reports / copilot (no PK changes)
 DO $$

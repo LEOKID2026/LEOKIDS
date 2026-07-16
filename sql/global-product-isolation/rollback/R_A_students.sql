@@ -12,4 +12,10 @@ DROP FUNCTION IF EXISTS public.trg_v3_sync_access_code_product_id();
 DROP INDEX IF EXISTS idx_v3_students_product_id;
 DROP INDEX IF EXISTS idx_v3_students_parent_product;
 DROP INDEX IF EXISTS idx_v3_sac_product_code_hash;
--- Keep product_id columns by default (safer).
+
+-- Reverse NOT NULL (columns kept; safer than DROP COLUMN).
+ALTER TABLE IF EXISTS public.students
+  ALTER COLUMN product_id DROP NOT NULL;
+
+ALTER TABLE IF EXISTS public.student_access_codes
+  ALTER COLUMN product_id DROP NOT NULL;

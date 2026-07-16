@@ -2,13 +2,12 @@
 -- Stage F — Transitional RLS: authenticated = IL-only (RESTRICTIVE)
 -- Global private data: service-role APIs only (bypasses RLS).
 -- Does NOT drop IL permissive ownership policies.
--- Does NOT touch Arcade / Tier D.
--- Drops unsafe v1/v2 permissive product policies that used jwt IS NULL escapes.
+-- Does NOT touch Arcade / Tier D / shared catalogs (coin_*_rules, shop_items, teacher_plans).
 -- =============================================================================
 
 BEGIN;
 
--- Helpers -------------------------------------------------------------------
+-- Helpers: NULL is NOT IL -------------------------------------------------
 CREATE OR REPLACE FUNCTION public.v3_student_is_il_visible(p_student_id uuid)
 RETURNS boolean
 LANGUAGE sql
@@ -19,7 +18,7 @@ AS $$
   SELECT EXISTS (
     SELECT 1 FROM public.students s
     WHERE s.id = p_student_id
-      AND (s.product_id IS NULL OR s.product_id = 'leokids_il')
+      AND s.product_id = 'leokids_il'
   );
 $$;
 
@@ -28,7 +27,7 @@ RETURNS boolean
 LANGUAGE sql
 IMMUTABLE
 AS $$
-  SELECT p_product_id IS NULL OR p_product_id = 'leokids_il';
+  SELECT p_product_id = 'leokids_il';
 $$;
 
 -- Drop unsafe v1/v2 permissive product policies (if present) ----------------
@@ -99,7 +98,7 @@ CREATE POLICY v3_restrict_learning_sessions_il_only
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
 
--- Tier B: answers (via student_id; learning_session_id is adjunct) ---------
+-- Tier B: answers ----------------------------------------------------------
 ALTER TABLE public.answers ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY v3_restrict_answers_il_only
@@ -142,7 +141,70 @@ CREATE POLICY v3_restrict_inventory_il_only
   USING (public.v3_student_is_il_visible(student_id))
   WITH CHECK (public.v3_student_is_il_visible(student_id));
 
--- Subject permissions (Tier A/B adjunct) -----------------------------------
+-- Diamonds / reward cards / surprise / game permissions (preflight gaps) ---
+DO $$
+DECLARE t text;
+BEGIN
+  FOREACH t IN ARRAY ARRAY[
+    'diamond_transactions',
+    'student_diamond_balances',
+    'reward_card_transactions',
+    'student_reward_cards',
+    'surprise_box_openings',
+    'student_game_category_permissions',
+    'student_game_permissions_change_log'
+  ]
+  LOOP
+    IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name=t)
+       AND EXISTS (
+         SELECT 1 FROM information_schema.columns
+         WHERE table_schema='public' AND table_name=t AND column_name='student_id'
+       ) THEN
+      EXECUTE format('ALTER TABLE public.%I ENABLE ROW LEVEL SECURITY', t);
+      EXECUTE format(
+        'CREATE POLICY v3_restrict_%s_il_only AS RESTRICTIVE ON public.%I
+         FOR ALL TO authenticated
+         USING (public.v3_student_is_il_visible(student_id))
+         WITH CHECK (public.v3_student_is_il_visible(student_id))',
+        t, t
+      );
+    END IF;
+  END LOOP;
+END $$;
+
+-- Teacher links (student_id present in real schema) ------------------------
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='teacher_students')
+     AND EXISTS (
+       SELECT 1 FROM information_schema.columns
+       WHERE table_schema='public' AND table_name='teacher_students' AND column_name='student_id'
+     ) THEN
+    EXECUTE 'ALTER TABLE public.teacher_students ENABLE ROW LEVEL SECURITY';
+    EXECUTE $p$
+      CREATE POLICY v3_restrict_teacher_students_il_only AS RESTRICTIVE ON public.teacher_students
+      FOR ALL TO authenticated
+      USING (public.v3_student_is_il_visible(student_id))
+      WITH CHECK (public.v3_student_is_il_visible(student_id))
+    $p$;
+  END IF;
+
+  IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='teacher_class_students')
+     AND EXISTS (
+       SELECT 1 FROM information_schema.columns
+       WHERE table_schema='public' AND table_name='teacher_class_students' AND column_name='student_id'
+     ) THEN
+    EXECUTE 'ALTER TABLE public.teacher_class_students ENABLE ROW LEVEL SECURITY';
+    EXECUTE $p$
+      CREATE POLICY v3_restrict_teacher_class_students_il_only AS RESTRICTIVE ON public.teacher_class_students
+      FOR ALL TO authenticated
+      USING (public.v3_student_is_il_visible(student_id))
+      WITH CHECK (public.v3_student_is_il_visible(student_id))
+    $p$;
+  END IF;
+END $$;
+
+-- Subject permissions ------------------------------------------------------
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='student_subject_permissions') THEN
@@ -210,7 +272,6 @@ DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema='public' AND table_name='parent_copilot_usage_log') THEN
     EXECUTE 'ALTER TABLE public.parent_copilot_usage_log ENABLE ROW LEVEL SECURITY';
-    -- Prefer product_id column when present
     IF EXISTS (
       SELECT 1 FROM information_schema.columns
       WHERE table_schema='public' AND table_name='parent_copilot_usage_log' AND column_name='product_id'
@@ -225,7 +286,7 @@ BEGIN
   END IF;
 END $$;
 
--- New product settings tables: block Global from authenticated -------------
+-- Product settings tables --------------------------------------------------
 DROP POLICY IF EXISTS v3_restrict_ppas_il_only ON public.product_parent_account_settings;
 CREATE POLICY v3_restrict_ppas_il_only
   AS RESTRICTIVE ON public.product_parent_account_settings
@@ -240,8 +301,7 @@ CREATE POLICY v3_restrict_pgms_il_only
   USING (product_id = 'leokids_il')
   WITH CHECK (product_id = 'leokids_il');
 
--- Membership: authenticated cannot INSERT/UPDATE/DELETE (no permissive write policies)
--- Restrictive belt: block writes for authenticated
+-- Membership: authenticated cannot INSERT/UPDATE/DELETE
 DROP POLICY IF EXISTS v3_restrict_upm_no_write ON public.user_product_memberships;
 CREATE POLICY v3_restrict_upm_no_write
   AS RESTRICTIVE ON public.user_product_memberships
@@ -259,9 +319,8 @@ CREATE POLICY v3_restrict_upm_no_delete
   FOR DELETE TO authenticated
   USING (false);
 
--- Legacy IL settings tables: leave as-is (no product_id). Do not add Global rows there.
-
 COMMIT;
 
--- EXPLICITLY EXCLUDED (Tier D) — do not add product RLS:
--- arcade_*, matchmaking, friendships, invites, rooms, presence
+-- EXPLICITLY EXCLUDED:
+-- arcade_* / Tier D
+-- Shared catalogs: coin_reward_rules, coin_spend_rules, shop_items, teacher_plans

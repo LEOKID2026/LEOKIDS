@@ -232,6 +232,11 @@ async function testSqlPackageSafety() {
   ];
   const all = stages.map((f) => fs.readFileSync(path.join(dir, f), "utf8")).join("\n");
   const codeOnly = all.replace(/--[^\n]*/g, "");
+  const fSql = fs.readFileSync(path.join(dir, "F_rls_restrictive_il_only.sql"), "utf8");
+  const aSql = fs.readFileSync(path.join(dir, "A_students_product_id.sql"), "utf8");
+  const g = fs.readFileSync(path.join(dir, "G_verification_assertions.sql"), "utf8");
+  const h = fs.readFileSync(path.join(dir, "H_il_compat_checks.sql"), "utf8");
+  const preflight = fs.readFileSync(path.join(dir, "00_preflight_inventory.sql"), "utf8");
 
   assert.doesNotMatch(codeOnly, /answers\.session_id/);
   assert.match(codeOnly, /learning_session_id|v3_student_is_il_visible/);
@@ -248,7 +253,52 @@ async function testSqlPackageSafety() {
   assert.match(codeOnly, /AS RESTRICTIVE/);
   assert.match(codeOnly, /create_global_parent_student_with_subject_defaults/);
 
-  const g = fs.readFileSync(path.join(dir, "G_verification_assertions.sql"), "utf8");
+  // NULL is not IL
+  assert.match(fSql, /SELECT p_product_id = 'leokids_il'/);
+  assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), /p_product_id IS NULL OR/);
+  assert.match(fSql, /s\.product_id = 'leokids_il'/);
+  assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), /s\.product_id IS NULL OR/);
+
+  // Stage A NOT NULL
+  assert.match(aSql, /ALTER COLUMN product_id SET NOT NULL/);
+
+  // Preflight + F cover discovered private tables
+  const discovered = [
+    "diamond_transactions",
+    "student_diamond_balances",
+    "reward_card_transactions",
+    "student_reward_cards",
+    "surprise_box_openings",
+    "student_game_category_permissions",
+    "student_game_permissions_change_log",
+    "teacher_class_students",
+    "teacher_students",
+  ];
+  for (const t of discovered) {
+    assert.match(preflight, new RegExp(t));
+    assert.match(fSql, new RegExp(t));
+  }
+
+  // Shared catalogs must not get restrict policies
+  for (const t of ["coin_reward_rules", "coin_spend_rules", "shop_items", "teacher_plans"]) {
+    assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), new RegExp(`v3_restrict_.*${t}|ON public\\.${t}`));
+  }
+  assert.match(fSql, /coin_reward_rules/); // mentioned as excluded
+
+  // G15 must use UPDATE (not duplicate INSERT)
+  assert.match(g, /G15/);
+  assert.match(g, /UPDATE public\.user_product_memberships/);
+  assert.doesNotMatch(
+    g.slice(g.indexOf("G15"), g.indexOf("G16")),
+    /INSERT INTO public\.user_product_memberships/
+  );
+  assert.match(g, /students\.product_id is nullable|is_nullable/);
+  assert.match(g, /v3_product_is_il\(NULL\)/);
+
+  // H3 uses parent_profiles (not random auth.users without profile)
+  assert.match(h, /FROM public\.parent_profiles/);
+  assert.doesNotMatch(h, /FROM auth\.users/);
+
   assert.match(g, /exactly 2/);
   assert.match(g, /SET LOCAL ROLE authenticated/);
   assert.match(g, /has_function_privilege/);
