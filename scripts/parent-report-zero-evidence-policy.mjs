@@ -102,18 +102,23 @@ for (const msg of assertZeroEvidencePolicyOnReports(mathOnlyBase, mathOnlyDetail
 }
 
 const ov = mathOnlyBase.summary.diagnosticOverviewHe;
-assert.ok(String(ov.practicedSubjectsSummaryHe || "").includes("מתמטיקה"), "practiced summary mentions math");
+assert.ok(
+  (SUBJECT_VISIBLE_LABELS_HE.math || []).some((label) =>
+    String(ov.practicedSubjectsSummaryHe || "").includes(label),
+  ),
+  "practiced summary mentions math",
+);
 assert.equal(ov.notPracticedSubjectsSummaryHe, undefined, "public overview omits notPracticedSubjectsSummaryHe");
 assert.ok(
-  !JSON.stringify(ov).includes("לא תורגל"),
-  "overview JSON must not include לא תורגל",
+  !/not practiced/i.test(JSON.stringify(ov)),
+  "overview JSON must not include not-practiced copy",
 );
 assert.ok(
-  !JSON.stringify(ov).includes("מקצועות שלא תורגל"),
-  "overview JSON must not include מקצועות שלא תורגל",
+  !/subjects not practiced/i.test(JSON.stringify(ov)),
+  "overview JSON must not include subjects-not-practiced copy",
 );
 assert.equal(
-  (ov.insufficientDataSubjectsHe || []).filter((l) => /כיוון ראשוני|0 שאלות/u.test(l)).length,
+  (ov.insufficientDataSubjectsHe || []).filter((l) => /initial direction|0 questions/i.test(l)).length,
   0,
   "no forbidden/zero-q lines in insufficientDataSubjectsHe",
 );
@@ -128,19 +133,19 @@ assert.ok(
   (SUBJECT_VISIBLE_LABELS_HE.math || []).some((label) => insightText.includes(label)),
   "insights mention practiced math",
 );
-assert.ok(!/גאומטריה:/u.test(insightText), "geometry not in insight lines");
-assert.ok(!/אנגלית:/u.test(insightText), "english not in insight lines");
+assert.ok(!/geometry:/i.test(insightText), "geometry not in insight lines");
+assert.ok(!/english:/i.test(insightText), "english not in insight lines");
 
 const copilotPayload = detailedReportToCopilotPayload(mathOnlyDetailed);
 for (const sid of ["english", "geometry", "science"]) {
   const res = parentCopilot.runParentCopilotTurn({
     audience: "parent",
     payload: copilotPayload,
-    utterance: `איך הוא ב${SUBJECT_LABEL_HE[sid]}?`,
+    utterance: `How is my child doing in ${SUBJECT_LABEL_HE[sid]}?`,
     sessionId: `zero-ev-${sid}`,
   });
   for (const msg of assertCopilotZeroEvidenceClarification(res, sid)) {
-    assert.fail(msg);
+    assert.fail(`${msg}; response=${JSON.stringify(res)}`);
   }
 }
 

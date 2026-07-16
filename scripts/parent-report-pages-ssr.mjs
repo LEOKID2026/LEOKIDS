@@ -168,7 +168,11 @@ function runDetailedPageChunks() {
   };
   const trendStripHtml = render("topic-strip:trend-v1", h(TopicRecommendationExplainStrip, { tr: trTrendV1 }));
   assert.match(trendStripHtml, /parent-report-topic-trend-v1/u);
-  assert.match(trendStripHtml, /מגמה בתקופה: משתפר/u);
+  assert.match(
+    trendStripHtml,
+    /trend for this period:\s*improving/i,
+    "trend strip should render the English improving-trend meaning",
+  );
 
   const trSparseSignals = {
     ...tr,
@@ -351,16 +355,23 @@ function runContractBindingChunks() {
     assert.ok(!topHtml.toLowerCase().includes(String(token).toLowerCase()), `forbidden token leaked in top ui: ${token}`);
   }
   assert.ok(
-    topHtml.includes("מה חשוב קודם") || topHtml.includes("מיקוד עיקרי"),
+    topHtml.includes("What matters first") || topHtml.includes("Main focus"),
     "top contract priority label should render"
   );
-  assert.ok(!topHtml.includes("פער ידע"), "stable mastery top area should avoid remediation wording");
+  assert.ok(!/knowledge gap/i.test(topHtml), "stable mastery top area should avoid remediation wording");
 
   const trendScenario = PARENT_REPORT_PRODUCT_SCENARIOS.find((s) => s.id === "trend_insufficient");
   assert.ok(trendScenario && typeof trendScenario.buildBaseReport === "function", "trend_insufficient scenario missing");
   const trendReport = buildDetailedParentReportFromBaseReport(trendScenario.buildBaseReport(), { period: "week" });
   const trendTopHtml = render("contract-ui:top-trend-insufficient", h(ParentTopContractSummaryBlock, { top: trendReport?.parentProductContractV1?.top }));
-  const strongTrendWords = ["משתפר", "בירידה", "מגמה חיובית", "מגמה שלילית", "שיפור מבוסס", "ירידה מבוססת"];
+  const strongTrendWords = [
+    "improving",
+    "declining",
+    "positive trend",
+    "negative trend",
+    "established improvement",
+    "established decline",
+  ];
   for (const word of strongTrendWords) {
     assert.ok(!trendTopHtml.includes(word), `trend-insufficient top area contains strong trend wording: ${word}`);
   }
@@ -371,7 +382,7 @@ function runContractBindingChunks() {
     "contract-ui:subject-stable",
     h(ParentSubjectContractSummaryBlock, { contractRow: firstSubjectContract, compact: false })
   );
-  assert.ok(subjectHtml.includes("סיכום להורה"), "subject contract block should render");
+  assert.ok(subjectHtml.includes("Parent summary"), "subject contract block should render");
 
   const legacyFallbackHtml = renderToStaticMarkup(h(ParentTopContractSummaryBlock, { top: null }));
   assert.equal(legacyFallbackHtml, "", "missing top contract should render empty safely");
@@ -380,9 +391,9 @@ function runContractBindingChunks() {
     "contract-ui:short-preview",
     h(ParentReportShortContractPreview, { top })
   );
-  assert.ok(shortPreviewHtml.includes("סיכום קצר להורה"), "short preview title should render");
-  assert.ok(shortPreviewHtml.includes("מה עושים עכשיו"), "short preview should include do-now line");
-  assert.ok(!shortPreviewHtml.includes("פער ידע"), "stable short preview should avoid remediation wording");
+  assert.ok(shortPreviewHtml.includes("Short parent summary"), "short preview title should render");
+  assert.ok(shortPreviewHtml.includes("What to do now"), "short preview should include do-now line");
+  assert.ok(!/knowledge gap/i.test(shortPreviewHtml), "stable short preview should avoid remediation wording");
   const shortFallbackHtml = renderToStaticMarkup(h(ParentReportShortContractPreview, { top: null }));
   assert.equal(shortFallbackHtml, "", "missing short contract preview should render empty safely");
 }
@@ -421,7 +432,7 @@ function runParentReportPageChunks() {
 
   const rowTrendV1 = {
     rowKey: "k2b",
-    label: "חיבור",
+    label: "Addition",
     questions: 12,
     topicEngineRowSignals: null,
     trend: null,
@@ -429,13 +440,13 @@ function runParentReportPageChunks() {
       ok: true,
       direction: "stable",
       parentLineHe:
-        "מגמה בתקופה: ללא שינוי משמעותי — עדיין כדאי לחזק את הנושא בתרגול קצר.",
+        "Trend for this period: no significant change — short practice can help reinforce the topic.",
     },
   };
   const trendRowHtml = renderToStaticMarkup(h(ParentReportTopicExplainRow, { row: rowTrendV1, compact: true }));
   assert.match(trendRowHtml, /parent-report-topic-trend-v1/u);
-  assert.match(trendRowHtml, /מגמה בתקופה: ללא שינוי משמעותי/u);
-  assert.match(trendRowHtml, /מה כדאי לעשות ביחד/u);
+  assert.match(trendRowHtml, /trend for this period:\s*no significant change/i);
+  assert.match(trendRowHtml, /what to do together/i);
   render("parent-report:explain-row-trend-v1", h(ParentReportTopicExplainRow, { row: rowTrendV1, compact: true }));
 
   const rowChartLive = {
@@ -447,12 +458,12 @@ function runParentReportPageChunks() {
     correct: 6,
   };
   const chartLiveHtml = renderToStaticMarkup(h(ParentReportTopicExplainRow, { row: rowChartLive }));
-  assert.match(chartLiveHtml, /מה רואים/u, "chart live row should render מה רואים");
-  assert.match(chartLiveHtml, /הנתונים/u, "chart live row should render הנתונים");
-  assert.match(chartLiveHtml, /מה זה אומר/u, "chart live row should render מה זה אומר");
+  assert.match(chartLiveHtml, /what we see/i, "chart live row should render What we see");
+  assert.match(chartLiveHtml, /the data/i, "chart live row should render The data");
+  assert.match(chartLiveHtml, /what it means/i, "chart live row should render What it means");
   assert.ok(
-    /מה כדאי לעשות ביחד/u.test(chartLiveHtml) ||
-      /כדאי להוסיף תרגול קצר/u.test(chartLiveHtml),
+    /what to do together/i.test(chartLiveHtml) ||
+      /add a short practice/i.test(chartLiveHtml),
     "chart live row should render home action or practice_focus meaning-only explain",
   );
   assert.match(chartLiveHtml, /parent-report-topic-diagnostic-explain/u);
@@ -563,12 +574,12 @@ function runParentReportInsightChunk() {
     h(ParentReportInsight, {
       explanation: {
         ok: true,
-        text: "טקסט בדיקה להורה — תובנה מבוססת דוח בטוחה לווידוא SSR והדפסה.".repeat(3),
+        text: "Parent test copy — a report-grounded insight for SSR and print verification.".repeat(3),
       },
     })
   );
-  assert.ok(html.includes("תובנה להורה"), "insight title should render");
-  assert.ok(html.includes("טקסט בדיקה"), "insight body should render");
+  assert.ok(html.includes("Insight for parents"), "insight title should render");
+  assert.ok(html.includes("Parent test copy"), "insight body should render");
 }
 
 function runParentAssignedActivitiesSectionChunk() {
@@ -593,7 +604,7 @@ function runParentAssignedActivitiesSectionChunk() {
   assert.ok(!/\bdetails[^>]*\sopen[\s=>]/i.test(html), "parent activities must be collapsed by default");
   assert.ok(html.includes("no-pdf"), "parent activities must be no-pdf");
   assert.ok(html.includes("no-print"), "parent activities must be no-print");
-  assert.ok(html.includes("פעילויות אישיות מהורה (1)"), "parent activities summary shows count");
+  assert.ok(html.includes("Personal activities from parent (1)"), "parent activities summary shows count");
 
   const emptyHtml = renderToStaticMarkup(h(ParentAssignedActivitiesSection, { rows: [] }));
   assert.equal(emptyHtml, "", "empty parent activities render nothing");

@@ -92,14 +92,14 @@ for (const key of SCENARIO_KEYS) {
   const html = render("exec-guard:english-strength", h(ExecutiveSummarySection, { es, compact: false }));
   assertNoForbiddenInHtml(html, "english-strength");
   assert.ok(
-    html.includes("אנגלית") &&
-      (html.includes("תוצאות טובות") || html.includes("יציבות") || html.includes("חוזקה")),
+    /english/i.test(html) &&
+      /good results|stable|stability|strength|going well/i.test(html),
     "english-strength: expected strength wording in executive HTML"
   );
   const totalQ = Number(detailed.overallSnapshot?.totalQuestions) || 0;
   if (totalQ > 10) {
     assert.ok(
-      !html.includes("אין נתונים להצגה"),
+      !/no data to display/i.test(html),
       "english-strength: must not show generic no-data bullets when window has volume"
     );
   }

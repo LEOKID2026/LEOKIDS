@@ -26,9 +26,12 @@ import {
  */
 function parentFacingEngineLine(raw) {
   let s = sanitizeEngineSnippetHe(String(raw || ""));
-  s = s.replace(/\b([a-z][a-z0-9_]{2,})\b/g, (match) => resolveParentFacingPatternLabelHe(match) || "");
+  s = s.replace(
+    /\b([a-z][a-z0-9]*_[a-z0-9_]+)\b/gi,
+    (match) => resolveParentFacingPatternLabelHe(match) || "",
+  );
   s = s.replace(/\bdefault_[a-z0-9_]+\b/gi, "");
-  s = s.replace(/\b[a-z][a-z0-9_]{8,}\b/g, "");
+  s = s.replace(/\b[a-z][a-z0-9]*_[a-z0-9_]{7,}\b/gi, "");
   s = s.replace(/\s{2,}/g, " ").trim();
   return normalizeParentFacingHe(s);
 }

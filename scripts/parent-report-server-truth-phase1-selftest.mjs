@@ -157,7 +157,7 @@ function readSrc(rel) {
   assert.equal(fakeReport.summary.totalTimeMinutes, 10, "uses server totalDurationSeconds not client estimate");
   assert.equal(fakeReport.math[0].timeMinutes, 0, "row time zeroed when duration unavailable in bridge");
   assert.equal(fakeReport.math[0].modeKey, null);
-  assert.equal(fakeReport.math[0].modeStr, "לא זמין");
+  assert.equal(fakeReport.math[0].modeStr, "Unavailable");
   assert.equal(fakeReport.math[0].levelKey, null);
 }
 

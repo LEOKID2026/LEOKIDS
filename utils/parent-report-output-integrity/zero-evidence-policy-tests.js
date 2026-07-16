@@ -141,11 +141,15 @@ export function assertCopilotZeroEvidenceClarification(res, subjectId) {
   if (res?.resolutionStatus !== "clarification_required") {
     failures.push(`copilot: expected clarification_required for ${subjectId}, got ${res?.resolutionStatus}`);
   }
-  if (!/אין נתוני תרגול|לא נאספו נתוני תרגול|אי אפשר להסיק מסקנה|אי אפשר לקבוע כיוון/u.test(text)) {
+  if (
+    !/no practice data|practice data (?:was|were|has|have)?\s*not (?:been )?(?:collected|recorded)|impossible to (?:conclude|determine)|cannot (?:conclude|determine)|not enough (?:practice )?data/i.test(
+      text,
+    )
+  ) {
     failures.push(`copilot: missing no-data wording for ${label}`);
   }
-  if (/כיוון ראשוני/u.test(text)) {
-    failures.push(`copilot: forbidden כיוון ראשוני for zero-evidence ${label}`);
+  if (/initial direction/i.test(text)) {
+    failures.push(`copilot: forbidden initial-direction wording for zero-evidence ${label}`);
   }
   return failures;
 }
@@ -155,7 +159,7 @@ export function assertEvidenceTierClassification() {
   if (classifySubjectEvidenceTier(0) !== SUBJECT_EVIDENCE_TIER.none) failures.push("0 q must be none");
   if (classifySubjectEvidenceTier(7) !== SUBJECT_EVIDENCE_TIER.thin) failures.push("7 q must be thin");
   if (classifySubjectEvidenceTier(8) !== SUBJECT_EVIDENCE_TIER.valid) failures.push("8 q must be valid");
-  const zeroLine = zeroEvidenceSubjectLineHe("אנגלית");
+  const zeroLine = zeroEvidenceSubjectLineHe("English");
   if (textViolatesZeroEvidencePolicy(zeroLine)) failures.push("zero line must not self-violate");
   if (ZERO_EVIDENCE_FORBIDDEN_RE.test(zeroLine)) failures.push("zero line matched forbidden re");
   return failures;
@@ -166,14 +170,14 @@ export function assertPublicReportPayloadStripsZeroEvidenceFields() {
   const cleaned = stripZeroEvidenceFromPublicReportPayload({
     summary: {
       diagnosticOverviewHe: {
-        notPracticedSubjectsSummaryHe: "מקצועות שלא תורגלו בתקופה: גאומטריה.",
-        practicedSubjectsSummaryHe: "מקצועות שתורגלו: חשבון.",
+        notPracticedSubjectsSummaryHe: "Subjects not practiced in this period: Geometry.",
+        practicedSubjectsSummaryHe: "Practiced subjects: Math.",
       },
     },
   });
   const text = JSON.stringify(cleaned);
-  if (text.includes("לא תורגל")) failures.push("public payload still contains לא תורגל");
-  if (text.includes("מקצועות שלא תורגל")) failures.push("public payload still contains summary line");
+  if (/not practiced/i.test(text)) failures.push("public payload still contains not-practiced copy");
+  if (/subjects not practiced/i.test(text)) failures.push("public payload still contains summary line");
   if (cleaned?.summary?.diagnosticOverviewHe?.notPracticedSubjectsSummaryHe != null) {
     failures.push("notPracticedSubjectsSummaryHe should be stripped");
   }

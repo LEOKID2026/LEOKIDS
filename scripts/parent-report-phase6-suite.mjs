@@ -2814,7 +2814,13 @@ function runPhase8InterventionPriorityAndCalibration() {
     displayName: "חיבור",
   });
   assert.notEqual(sparseObs.interventionPlanHe, speed.interventionPlanHe);
-  assert.ok(String(speed.avoidNowHe).includes("מהירות") || String(speed.doNowHe).includes("טיימר"));
+  assert.ok(
+    /speed|record/i.test(String(speed.avoidNowHe)) ||
+      /untimed|timer|clock/i.test(
+        [speed.doNowHe, ...(speed.interventionPlan?.stepsHe || [])].join(" "),
+      ),
+    "speed-pressure plan must explicitly reduce speed or timer pressure",
+  );
 
   const weakInd = buildInterventionPlanPhase8({
     rootCause: "weak_independence",
