@@ -10,17 +10,17 @@
 | When | SHA |
 |------|-----|
 | Start (matched `origin/main`) | `5077f97e1a7e1d7f06e71dde30197875ae7bfb60` |
-| End | *(see tip after push — feature commits below)* |
+| End | `17928a0189c529d575c020e7d05d95750aefe56a` |
 
 ---
 
 ## Commits
 
-| Summary |
-|---------|
-| App: product_* settings tables + membership hardening |
-| SQL: `sql/global-product-isolation-v3/` + supersede v2 |
-| Tests + this report |
+| SHA | Summary |
+|-----|---------|
+| `36a2e2b` | `feat(global): use product_* settings tables and harden membership` |
+| `be7ddb5` | `feat(sql): add global-product-isolation-v3 staged package` |
+| `17928a0` | `test(global): update product-isolation suite for v3 and add report` |
 
 ---
 
