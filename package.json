@@ -300,6 +300,7 @@
     "test:i18n:curriculum": "node scripts/i18n/check-curriculum-pack.mjs",
     "test:i18n:learning-questions": "node scripts/i18n/check-learning-questions-english.mjs",
     "test:i18n": "npm run test:i18n:locales && npm run test:i18n:write-barrier && npm run test:i18n:curriculum && npm run test:i18n:learning-questions && npm run test:i18n:hebrew-scan",
+    "test:product-isolation": "node tests/product-isolation/product-isolation.test.mjs",
     "test:worksheets": "node tests/worksheets/run-all.mjs",
     "test:learning-pattern-decision:foundation": "node tests/learning-pattern-decision/pattern-visibility-foundation.test.mjs",
     "test:learning-pattern-decision:scenarios": "node tests/learning-pattern-decision/scenarios.test.mjs",
