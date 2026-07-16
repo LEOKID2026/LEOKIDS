@@ -7,8 +7,8 @@
 | **HEAD at start** | `480738f` (`chore: trigger fresh Vercel Next.js deployment`) |
 | **Branch** | `main` |
 | **Remote** | `origin` → `https://github.com/LEOKID2026/LEOKIDS.git` (global; not Israeli) |
-| **HEAD at end** | `f8d3d17` |
-| **Commits** | `a66dc3a` foundation · `cc42401` English UI/PWA/SQL package · `f8d3d17` report HEAD |
+| **HEAD at end** | `f421dfd` (pushed to `origin/main`) |
+| **Commits** | `a66dc3a` → `cc42401` → `f8d3d17` → `f421dfd` |
 
 ## Scope confirmations
 
