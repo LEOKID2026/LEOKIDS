@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
 import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
