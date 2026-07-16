@@ -1,6 +1,9 @@
-# Global Product Isolation — Staged SQL Package
+# Global Product Isolation — Staged SQL Package (v1 — SUPERSEDED)
 
-**Status:** Staged only — **do not execute** on production without owner review, staging run, and backup.
+> **SUPERSEDED by `sql/global-product-isolation-v2/`.**  
+> Do not apply this v1 package. Known defects: index on nonexistent `code`, `answers.session_id` in RLS, `parent_profiles.product_id` as membership SoT, `jwt_product_id() IS NULL` Production escape.
+
+**Status:** Historical / do not execute.
 
 **Products:** `leokids_il` (Israeli site) · `leokids_global` (international site)
 
