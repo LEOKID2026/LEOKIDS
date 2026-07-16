@@ -9,8 +9,8 @@
 | **HEAD before this round** | `c9a4066` (`docs: align fast-track report with pushed HEAD`) — local and `origin/main` matched |
 | **Prior report error** | Fast-track report briefly claimed `f421dfd` while delivered HEAD was `c9a4066` — report was stale |
 | **Acceptance code commit** | `6a72952` (`fix: Production acceptance — English chrome, login crash, Hebrew CI hard-fail`) |
-| **HEAD / origin/main** | `cc75d72` (includes report HEAD note) |
-| **Vercel** | Deploy from GitHub `leo-kids-global`; verify Production SHA matches `cc75d72` after deploy succeeds |
+| **HEAD / origin/main** | `a2fc76c` (docs tip; includes `6a72952`) |
+| **Vercel** | Deploy from GitHub `leo-kids-global`; verify Production SHA matches `a2fc76c` after deploy succeeds |
 
 ## Scope confirmations
 
