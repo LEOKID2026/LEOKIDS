@@ -27,7 +27,7 @@ RETURNS boolean
 LANGUAGE sql
 IMMUTABLE
 AS $$
-  SELECT p_product_id = 'leokids_il';
+  SELECT COALESCE(p_product_id = 'leokids_il', false);
 $$;
 
 -- Drop unsafe v1/v2 permissive product policies (if present) ----------------

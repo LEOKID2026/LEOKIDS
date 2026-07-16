@@ -259,8 +259,8 @@ async function testSqlPackageSafety() {
   assert.match(fSql, /CREATE POLICY v3_restrict_%s_il_only ON public\.%I\s+AS RESTRICTIVE/);
   assert.match(codeOnly, /create_global_parent_student_with_subject_defaults/);
 
-  // NULL is not IL
-  assert.match(fSql, /SELECT p_product_id = 'leokids_il'/);
+  // NULL is not IL — comparison alone yields NULL in PG; must coerce to false
+  assert.match(fSql, /COALESCE\s*\(\s*p_product_id\s*=\s*'leokids_il'\s*,\s*false\s*\)/);
   assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), /p_product_id IS NULL OR/);
   assert.match(fSql, /s\.product_id = 'leokids_il'/);
   assert.doesNotMatch(fSql.replace(/--[^\n]*/g, ""), /s\.product_id IS NULL OR/);
