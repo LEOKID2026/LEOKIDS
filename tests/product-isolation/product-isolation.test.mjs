@@ -205,7 +205,7 @@ async function testArcadeHasNoBlanketProductFilter() {
     assert.equal(/\.eq\(\s*["']product_id["']/.test(src), false, f);
   }
   const rls = fs.readFileSync(
-    path.join(root, "sql", "global-product-isolation-v3", "F_rls_restrictive_il_only.sql"),
+    path.join(root, "sql", "global-product-isolation", "F_rls_restrictive_il_only.sql"),
     "utf8"
   );
   assert.match(rls, /EXPLICITLY EXCLUDED/);
@@ -213,8 +213,15 @@ async function testArcadeHasNoBlanketProductFilter() {
   assert.match(rls, /AS RESTRICTIVE/);
 }
 
-async function testSqlV3PackageSafety() {
-  const dir = path.join(root, "sql", "global-product-isolation-v3");
+async function testSqlPackageSafety() {
+  const sqlRoot = path.join(root, "sql");
+  const isolationDirs = fs
+    .readdirSync(sqlRoot, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && d.name.startsWith("global-product-isolation"))
+    .map((d) => d.name);
+  assert.deepEqual(isolationDirs, ["global-product-isolation"], "exactly one isolation package dir");
+
+  const dir = path.join(sqlRoot, "global-product-isolation");
   const stages = [
     "A_students_product_id.sql",
     "B_user_product_memberships.sql",
@@ -247,8 +254,16 @@ async function testSqlV3PackageSafety() {
   assert.match(g, /has_function_privilege/);
   assert.match(g, /parent_account_settings PK altered/);
 
-  const v2 = fs.readFileSync(path.join(root, "sql", "global-product-isolation-v2", "README.md"), "utf8");
-  assert.match(v2, /SUPERSEDED/);
+  const readme = fs.readFileSync(path.join(dir, "README.md"), "utf8");
+  assert.match(readme, /00 → A → B → C → D → E → F → G → H/);
+  for (const suffix of ["v2", "v3"]) {
+    assert.equal(
+      isolationDirs.includes(`global-product-isolation-${suffix}`),
+      false,
+      `must not keep isolation package suffix ${suffix}`
+    );
+    assert.equal(readme.includes(`global-product-isolation-${suffix}`), false);
+  }
 }
 
 async function testParentSessionReady() {
@@ -292,7 +307,7 @@ const tests = [
   ["Global uses product_* settings tables", testProductSettingsTables],
   ["guest system parent separated", testGuestProductSeparation],
   ["arcade no blanket product filter", testArcadeHasNoBlanketProductFilter],
-  ["SQL v3 package safety", testSqlV3PackageSafety],
+  ["SQL package safety", testSqlPackageSafety],
   ["parent session ready Global", testParentSessionReady],
   ["create/list/login product-aware", testCreateListLoginSources],
   ["provision writes product_parent_account_settings", testProvisionUsesProductTable],

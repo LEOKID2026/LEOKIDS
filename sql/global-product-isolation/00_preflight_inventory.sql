@@ -1,6 +1,6 @@
 -- =============================================================================
 -- Stage 0 — Preflight inventory (READ ONLY)
--- Package: sql/global-product-isolation-v3/
+-- Package: sql/global-product-isolation/
 -- Capture before applying A–F. Does not mutate schema.
 -- =============================================================================
 
