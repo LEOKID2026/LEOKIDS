@@ -279,7 +279,7 @@ function buildNoScopeCategorySpecificClarification(utterance) {
     return "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it. It is also possible to build a clear formulation for the parent according to what is currently in the learning data.";
   }
   if (/מה\s*מצב.*במוזיקה|במוזיקה|באמנות|בספורט|במחול/i.test(t)) {
-    return "At the moment, there is no practice data for this profession in the report, so it is impossible to conclude a situation about it. If you wish, we can focus on professions that do appear in the report.";
+    return "At the moment, there is no practice data for this subject in the report, so it is impossible to conclude a situation about it. If you wish, we can focus on subjects that do appear in the report.";
   }
   if (/למה\s*כתבת\s*שהוא\s*חלש|לא\s*מסכים\s*עם\s*הדוח|הדוח\s*טועה/i.test(t)) {
     return "There can be a gap between success at home and performance in practice in the app. That is why we look at a repeating pattern in the report over time, and not at a single answer.";
@@ -1194,7 +1194,7 @@ function runDeterministicCore(input, options) {
   if (scopeRes.resolutionStatus === "clarification_required") {
     if (String(scopeRes.scopeReason || "") === "subject_zero_evidence_in_period") {
       const r = buildClarificationParentCopilotResponse({
-        clarificationQuestionHe: scopeRes.clarificationQuestionHe || "In this period there is no practice data in this profession.",
+        clarificationQuestionHe: scopeRes.clarificationQuestionHe || "In this period there is no practice data in this subject.",
         intent,
         priorRepeated,
         metadata: scopeMeta,

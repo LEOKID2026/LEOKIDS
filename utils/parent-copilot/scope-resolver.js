@@ -378,7 +378,7 @@ export function resolveScope(input) {
     if (!subjectHasAnchor) {
       return {
         resolutionStatus: "clarification_required",
-        clarificationQuestionHe: "In this profession there is not yet a topic with enough practice to talk about - you can try another profession.",
+        clarificationQuestionHe: "In this subject there is not yet a topic with enough practice to talk about - you can try another subject.",
         scopeConfidence: 0.24,
         scopeReason: "selected_context_subject_missing_anchor",
         stageA,

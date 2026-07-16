@@ -56,12 +56,24 @@ export function detectAggregateQuestionClass(utterance) {
   }
 
   if (
-    /לא\s+הבנתי|לא\s+הבנתי\.|תסביר\s+פשוט|מה\s+זה\s+אומר\s+בעצם|^למה\s*\??$|^למה\?$|למה\s+זה\s+אומר/.test(t)
+    /לא\s+הבנתי|לא\s+הבנתי\.|תסביר\s+פשוט|מה\s+זה\s+אומר\s+בעצם|^למה\s*\??$|^למה\?$|למה\s+זה\s+אומר/.test(t) ||
+    /\bi\s+(?:did\s+not|didn'?t|don'?t)\s+understand\b/.test(t) ||
+    /\bplease\s+explain\b/.test(t) ||
+    /\bexplain\s+(?:it\s+)?(?:simply|in\s+simple\s+terms)\b/.test(t) ||
+    /\bwhat\s+does\s+(?:that|this)\s+mean\b/.test(t) ||
+    /\bwhy\s*\??$/.test(t)
   ) {
     return "clarify_reexplain";
   }
 
-  if (/להתקדם\s+או\s+להמתין|כדאי\s+להתקדם|לחכות\s+או\s+להמשיך|להמשיך\s+או\s+להמתין|להמתין\s+או\s+להתקדם/.test(t)) {
+  if (
+    /להתקדם\s+או\s+להמתין|כדאי\s+להתקדם|לחכות\s+או\s+להמשיך|להמשיך\s+או\s+להמתין|להמתין\s+או\s+להתקדם/.test(t) ||
+    /\b(?:should\s+(?:we|i)\s+(?:move\s+forward|wait)|wait\s+or\s+continue|continue\s+or\s+wait|advance\s+or\s+hold)\b/.test(
+      t,
+    ) ||
+    /\bis\s+it\s+worth\s+moving\s+forward\b/.test(t) ||
+    /\bworth\s+(?:it\s+to\s+)?(?:move\s+forward|advance)\b/.test(t)
+  ) {
     return "advance_or_hold_question";
   }
 
@@ -70,10 +82,18 @@ export function detectAggregateQuestionClass(utterance) {
     /מה\s+לעשות\s+עכשיו|מה\s+עושים\s+עכשיו|מה\s+לעשות\s+היום/.test(t) ||
     /מה\s+לעשות\s+בשבוע|מה\s+לעשות\s+השבוע|מה\s+לעשות\s+בשבוע\s+הקרוב/.test(t) ||
     /מה\s+כדאי\s+לעשות\s+בשבוע|מה\s+כדאי\s+לעשות\s+השבוע|מה\s+כדאי\s+לעשות\s+בשבוע\s+הקרוב/.test(t) ||
-    /תכנון\s+לשבוע/u.test(t) && /מה\s+מתחילים/u.test(t) ||
+    (/תכנון\s+לשבוע/u.test(t) && /מה\s+מתחילים/u.test(t)) ||
     /מה\s+הצעד\s+הבא|הצעד\s+הבא/.test(t) ||
     /על\s+מה\s+להתמקד\s+עכשיו|על\s+מה\s+להתמקד/.test(t) ||
-    /מה\s+הכי\s+חשוב\s+(?:כרגע|עכשיו|היום|לתרגל)/.test(t)
+    /מה\s+הכי\s+חשוב\s+(?:כרגע|עכשיו|היום|לתרגל)/.test(t) ||
+    /\bwhat\s+should\s+(?:we|i)\s+do\s+(?:right\s+now|today|this\s+week)\b/.test(t) ||
+    /\bwhat\s+(?:should\s+(?:we|i)\s+)?(?:do|practice)\s+this\s+week\b/.test(t) ||
+    /\bwhat\s+is\s+(?:the\s+)?next\s+step\b/.test(t) ||
+    /\bwhat\s+are\s+(?:the\s+)?next\s+recommendations?\b/.test(t) ||
+    /\bwhat\s+(?:should\s+(?:we|i)\s+)?focus\s+on\s+(?:right\s+now|today|now|this\s+week)\b/.test(t) ||
+    /\bwhat\s+is\s+(?:the\s+)?most\s+important(?:\s+(?:thing|to\s+practice))?(?:\s+(?:right\s+now|today|now|this\s+week))?\b/.test(
+      t,
+    )
   ) {
     return "recommendation_action";
   }
@@ -109,20 +129,36 @@ export function detectAggregateQuestionClass(utterance) {
     return "most_stable";
   }
 
-  if (/(הכי|הכי\s+)(קשה|מאתגר|מאתגרת)/.test(t) && hasSubjectWord) return "hardest_subject";
-  if (/באיזה\s+מקצוע\s+הכי\s+קשה|באיזה\s+מקצוע\s+קשה|מקצוע\s+הכי\s+קשה/.test(t)) return "hardest_subject";
-  if (/\b(?:which|what)\s+subject\b.*\b(?:hardest|most\s+difficult|most\s+challenging)\b/.test(t)) return "hardest_subject";
+  if (
+    (/(הכי|הכי\s+)(קשה|מאתגר|מאתגרת)/.test(t) && hasSubjectWord) ||
+    /באיזה\s+מקצוע\s+הכי\s+קשה|באיזה\s+מקצוע\s+קשה|מקצוע\s+הכי\s+קשה/.test(t) ||
+    /\b(?:which|what)\s+subject\b.*\b(?:hardest|most\s+difficult|most\s+challenging)\b/.test(t) ||
+    /\b(?:hardest|most\s+difficult|most\s+challenging)\s+subject\b/.test(t) ||
+    /\bsubject\b.*\b(?:is\s+the\s+)?(?:hardest|most\s+difficult|most\s+challenging)\b/.test(t)
+  ) {
+    return "hardest_subject";
+  }
 
-  if (/(הכי|הכי\s+)(חלש|חלשה|חלשים|נמוך|נמוכה)/.test(t) && hasSubjectWord) return "weakest_subject";
-  if (/מקצוע\s+החלש|המקצוע\s+החלש|חלש\s+ביותר/.test(t)) return "weakest_subject";
-  if (/\b(?:which|what)\s+subject\b.*\b(?:weakest|lowest|lowest\s+accuracy)\b/.test(t)) return "weakest_subject";
+  if (
+    (/(הכי|הכי\s+)(חלש|חלשה|חלשים|נמוך|נמוכה)/.test(t) && hasSubjectWord) ||
+    /מקצוע\s+החלש|המקצוע\s+החלש|חלש\s+ביותר/.test(t) ||
+    /\b(?:which|what)\s+subject\b.*\b(?:weakest|lowest|lowest\s+accuracy)\b/.test(t) ||
+    /\b(?:weakest|lowest)\s+subject\b/.test(t) ||
+    /\bsubject\b.*\b(?:is\s+the\s+)?(?:weakest|lowest)\b/.test(t)
+  ) {
+    return "weakest_subject";
+  }
 
-  if (/(הכי|הכי\s+)(חזק|חזקה|חזקים|טוב|טובה|טובים)/.test(t) && hasSubjectWord) return "strongest_subject";
-  if (/מקצוע\s+החזק|המקצוע\s+החזק|חזק\s+ביותר|הכי\s+חזק/.test(t) && (hasSubjectWord || t.includes("subject"))) {
+  if (
+    (/(הכי|הכי\s+)(חזק|חזקה|חזקים|טוב|טובה|טובים)/.test(t) && hasSubjectWord) ||
+    (/מקצוע\s+החזק|המקצוע\s+החזק|חזק\s+ביותר|הכי\s+חזק/.test(t) && (hasSubjectWord || t.includes("subject"))) ||
+    /מה\s+המקצוע\s+החזק|איזה\s+מקצוע\s+החזק/.test(t) ||
+    /\b(?:which|what)\s+subject\b.*\b(?:strongest|best|highest|going\s+well)\b/.test(t) ||
+    /\b(?:strongest|best|highest)\s+subject\b/.test(t) ||
+    /\bsubject\b.*\b(?:is\s+the\s+)?(?:strongest|best|highest|going\s+well)\b/.test(t)
+  ) {
     return "strongest_subject";
   }
-  if (/מה\s+המקצוע\s+החזק|איזה\s+מקצוע\s+החזק/.test(t)) return "strongest_subject";
-  if (/\b(?:which|what)\s+subject\b.*\b(?:strongest|best|highest|going\s+well)\b/.test(t)) return "strongest_subject";
 
   if (
     /(לעומת|מול|בהשוואה|יותר\s+מ|פחות\s+מ).*(מקצוע|חשבון|עברית|גאומטריה|גיאומטריה|אנגלית|מדעים|מולדת)/.test(t) ||

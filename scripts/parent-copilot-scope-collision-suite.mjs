@@ -7,27 +7,27 @@ const payload = syntheticPayload();
 
 const cases = [
   {
-    utterance: "מה הכי בולט בתקופה בשברים?",
+    utterance: "What stands out most this period in Fractions?",
     expectedStatus: "resolved",
     expectedScopeType: "executive",
   },
   {
-    utterance: "מה המשמעות בנושא שברים?",
+    utterance: "What is the meaning for Fractions?",
     expectedStatus: "resolved",
     expectedScopeType: "topic",
   },
   {
-    utterance: "אני רוצה להבין חשבון",
+    utterance: "I want to understand Math",
     expectedStatus: "resolved",
     expectedScopeType: "subject",
   },
   {
-    utterance: "אפשר הסבר נוסף?",
+    utterance: "Can I get another explanation?",
     expectedStatus: "resolved",
     expectedScopeType: "executive",
   },
   {
-    utterance: "מה המקצוע החזק בשברים?",
+    utterance: "What is the strongest subject regarding Fractions?",
     expectedStatus: "resolved",
     expectedScopeType: "executive",
   },
@@ -36,7 +36,9 @@ const cases = [
 let pass = 0;
 for (const tc of cases) {
   const out = scopeResolver.resolveScope({ payload, utterance: tc.utterance, selectedContextRef: null });
-  const ok = out.resolutionStatus === tc.expectedStatus && (tc.expectedScopeType == null || out.scope?.scopeType === tc.expectedScopeType);
+  const ok =
+    out.resolutionStatus === tc.expectedStatus &&
+    (tc.expectedScopeType == null || out.scope?.scopeType === tc.expectedScopeType);
   if (ok) pass += 1;
 }
 

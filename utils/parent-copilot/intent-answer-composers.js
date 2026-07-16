@@ -622,8 +622,8 @@ function composeStrength(params) {
         {
           type: "meaning",
           textHe: best
-            ? `According to what is in the report, ${subjectLabelHe(sid)} is the only profession with practice - ${best.displayName} about ${best.acc}% on ${best.q} questions.`
-            : `${subjectLabelHe(sid)} is the only profession with practice in the range - it is impossible to rank "strong/weak" between professions.`,
+            ? `According to what is in the report, ${subjectLabelHe(sid)} is the only subject with practice - ${best.displayName} about ${best.acc}% on ${best.q} questions.`
+            : `${subjectLabelHe(sid)} is the only subject with practice in the range - it is impossible to rank "strong/weak" between subjects.`,
           source: "intent_composer",
         },
       ],
@@ -637,7 +637,7 @@ function composeStrength(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: "According to what appears in the report, there is not yet a topic with enough practice and high accuracy to call it \"strong\" with confidence.",
+          textHe: "According to what appears in the report, there is not yet a topic with enough practice and high accuracy to call it \"strong\" reliably.",
           source: "intent_composer",
         },
         {
@@ -657,7 +657,7 @@ function composeStrength(params) {
 
   const singleSubjectNote =
     practicedSubjects.length === 1
-      ? `During the period, only ${subjectLabelHe(practicedSubjects[0])} was practiced - there is not enough data to compare professions.`
+      ? `During the period, only ${subjectLabelHe(practicedSubjects[0])} was practiced - there is not enough data to compare subjects.`
       : "";
 
   const lead = metas[0];
@@ -690,7 +690,7 @@ function composeStrength(params) {
   if (strongestSub) {
     observationHe =
       withAvg.length === 1
-        ? `There is currently mainly one profession with enough numerical practice in the report - ${strongestSub.label}, with an average accuracy of about ${strongestSub.avg}%.`
+        ? `There is currently mainly one subject with enough numerical practice in the report - ${strongestSub.label}, with an average accuracy of about ${strongestSub.avg}%.`
         : `The strongest subject at the moment is ${strongestSub.label} - according to the average overall accuracy across subjects with practice in the report (about ${strongestSub.avg}%).`;
   }
 
@@ -938,7 +938,7 @@ function composeProgression(params) {
   if (!strong.length) {
     return {
       answerBlocks: [
-        { type: "observation", textHe: "According to the report, there is not yet a topic with enough practice and high accuracy to recommend progress with confidence.", source: "intent_composer" },
+        { type: "observation", textHe: "According to the report, there is not yet a topic with enough practice and high accuracy to recommend progress reliably.", source: "intent_composer" },
         { type: "meaning", textHe: "This does not mean that there are no successes - just that it is still too early to recommend an increase in the level according to the data in the range.", source: "intent_composer" },
         { type: "next_step", textHe: "You should continue a short and regular practice, then ask again when the accuracy stabilizes.", source: "intent_composer" },
       ],
@@ -991,7 +991,7 @@ function composeZeroEvidence(params) {
       },
       {
         type: "meaning",
-        textHe: "It is therefore impossible to determine direction from the current report on performance in this profession.",
+        textHe: "It is therefore impossible to determine direction from the current report on performance in this subject.",
         source: "intent_composer",
       },
     ],

@@ -318,7 +318,7 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
             contractVersion: "v1",
             textSlots: {
               observation: `In the selected period, about ${tq} questions were answered, with an overall accuracy of about ${acc}%. This is a general summary of the practice collected so far.`,
-              interpretation: `At this stage it is possible to refer mainly to the scope of the practice and the general accuracy, before drawing detailed conclusions by profession or subject.`,
+              interpretation: `At this stage it is possible to refer mainly to the scope of the practice and the general accuracy, before drawing detailed conclusions by subject or subject.`,
               uncertainty: cannotConcludeYet
                 ? "There is still not enough data to determine a clear direction. You should check again after another practice."
                 : "There may be a gap between what you feel at home and what appears in the report, so it's worth continuing to monitor over several days of practice.",

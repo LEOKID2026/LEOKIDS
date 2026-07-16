@@ -190,6 +190,7 @@ const INTENT_PARAPHRASES = {
     /what\s+(?:do|does)\s+(?:the\s+)?(?:data|numbers|report)\s+(?:show|mean|say)/i,
     /what\s+do\s+we\s+see\s+in\s+(?:the\s+)?data/i,
     /explain\s+(?:the\s+)?(?:report|numbers|data)/i,
+    /explain\s+what\s+(?:appears|is\s+shown)\s+in\s+(?:the\s+)?report/i,
     /what\s+is\s+(?:the\s+)?(?:status|picture|situation)\s+(?:in|on|about|for)/i,
     /what\s+is\s+going\s+on\s+(?:in|on|about|with)/i,
     /summary\s+of\s+(?:the\s+)?report|report\s+summary/i,
@@ -201,6 +202,8 @@ const INTENT_PARAPHRASES = {
   ],
   // what_is_most_important: /^במה להתמקד/ must not match "What to focus on this week" (prefix-only false positive).
   what_is_most_important: [
+    /what\s+is\s+(?:the\s+)?most\s+important\s+(?:right\s+now|today)/i,
+    /what\s+should\s+(?:we|i)\s+focus\s+on\s+(?:right\s+now|today)/i,
     /^במה\s*להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))/u,
     /^במה\s*כדאי\s*להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))/u,
     /^איפה\s*להתמקד(?!\s*(?:השבוע|בשבוע|שבוע\s*הקרוב|הימים\s*הקרובים|לימים\s*הקרובים))/u,
@@ -226,6 +229,8 @@ const INTENT_PARAPHRASES = {
     /איפה\s*כדאי\s*לשים/u,
   ],
   what_to_do_today: [
+    /what\s+should\s+(?:we|i)\s+do\s+(?:right\s+now|today)/i,
+    /what\s+is\s+(?:the\s+)?next\s+step/i,
     /מה\s*הצעד\s*להיום|הצעד\s*להיום|צעד\s*קטן\s*להיום|פעולה\s*להיום|משימה\s*קטנה\s*להיום/u,
     /מה\s*מומלץ\s*לעשות\s*היום|מומלץ\s*לעשות\s*היום|מה\s*מומלץ\s*היום/u,
     /מה\s*לעשות\s*היום|מה\s*עושים\s*היום|מה\s*הצעד\s*היום|צעד\s*קטן\s*היום|היום\s*מה\s*לעשות|מה\s*לעשות\s*עכשיו/u,
@@ -238,6 +243,10 @@ const INTENT_PARAPHRASES = {
     /מה\s*המלצה\s*להיום|מה\s*מומלץ\s*היום/u,
   ],
   what_to_do_this_week: [
+    /what\s+should\s+(?:we|i)\s+(?:do|practice)\s+this\s+week/i,
+    /what\s+is\s+(?:the\s+)?most\s+important(?:\s+(?:thing|to\s+practice))?\s+this\s+week/i,
+    /what\s+to\s+practice\s+this\s+week/i,
+    /what\s+are\s+(?:the\s+)?next\s+recommendations?/i,
     /^מחר\s*\??$/u,
     /כמה\s*לתרגל/u,
     /כמה\s*זמן\s*לתרגל/u,
@@ -472,6 +481,11 @@ const INTENT_PARAPHRASES = {
     /תסביר\s*לי\s*במשפט\s*אחד/u,
     /תן\s*לי\s*רק\s*3\s*נקודות/u,
     /במילים\s*פשוטות\s*בלי\s*ז׳רגון/u,
+    /explain\s+(?:it\s+|this\s+|what\s+appears\s+in\s+the\s+report\s+)?(?:to\s+me\s+)?(?:like|as)\s+(?:i\s+am\s+a\s+|a\s+|you\s+would\s+to\s+a\s+)?parent/i,
+    /explain\s+(?:in\s+)?(?:plain|simple)\s+(?:language|words|terms)(?:\s+without\s+jargon)?/i,
+    /without\s+(?:professional\s+)?jargon/i,
+    /give\s+me\s+(?:just\s+)?3\s+points/i,
+    /in\s+one\s+sentence/i,
   ],
   unclear: [/^$/u],
 };
@@ -618,7 +632,14 @@ export function interpretFreeformStageA(utteranceRaw, payload) {
   if (/מה\s*לעשות\s*מחר|מחר\s*מה\s*לעשות/u.test(t) || /מה\s*לעשות\s*מחר/u.test(folded)) {
     scores.what_to_do_today += 6;
   }
-  if (/תסביר\s*לי\s*כמו\s*להורה|בלי\s*מושגים\s*מקצועיים/u.test(t) || /תסביר\s*לי\s*כמו\s*להורה/u.test(folded)) {
+  if (
+    /תסביר\s*לי\s*כמו\s*להורה|בלי\s*מושגים\s*מקצועיים/u.test(t) ||
+    /תסביר\s*לי\s*כמו\s*להורה/u.test(folded) ||
+    /explain\s+(?:it\s+|this\s+|what\s+appears\s+in\s+the\s+report\s+)?(?:to\s+me\s+)?(?:like|as)\s+(?:i\s+am\s+a\s+|a\s+|you\s+would\s+to\s+a\s+)?parent/i.test(
+      t,
+    ) ||
+    /explain\s+(?:in\s+)?(?:plain|simple)\s+(?:language|words|terms)/i.test(t)
+  ) {
     scores.simple_parent_explanation += 10;
   }
   if (/מה\s*המקצוע\s*(הכי\s*)?טוב|המקצוע\s*(הכי\s*)?טוב/u.test(t) || /מה\s*המקצוע\s*(הכי\s*)?טוב/u.test(folded)) {

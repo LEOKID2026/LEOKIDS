@@ -6,8 +6,9 @@ import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 const eligiblePayload = syntheticPayload({ eligible: true });
 const insufficientPayload = syntheticPayload({ eligible: false });
 
-const insufficientCue = /לא\s+ניתן|אין\s+מספיק\s+נתונים|מוקדם\s+לקבוע|כדאי\s+להמשיך\s+לעקוב/u;
-const overAuthorityCue = /בוודאות|חד\s+משמעית|בטוח\s+לחלוטין/u;
+const insufficientCue =
+  /לא\s+ניתן|אין\s+מספיק\s+נתונים|מוקדם\s+לקבוע|כדאי\s+להמשיך\s+לעקוב|not enough evidence|too early|continue(?:\s+to)?\s+monitor|still early|insufficient/iu;
+const overAuthorityCue = /בוודאות|חד\s+משמעית|בטוח\s+לחלוטין|completely certain|with certainty|unequivocally/iu;
 
 let insufficientRequired = 0;
 let insufficientPresent = 0;
@@ -18,14 +19,14 @@ for (let i = 0; i < 80; i++) {
   const good = parentCopilot.runParentCopilotTurn({
     audience: "parent",
     payload: eligiblePayload,
-    utterance: "מה המשמעות בנושא שברים?",
+    utterance: "What is the meaning for Fractions?",
     sessionId: `auth-good-${i}`,
     selectedContextRef: null,
   });
   const bad = parentCopilot.runParentCopilotTurn({
     audience: "parent",
     payload: insufficientPayload,
-    utterance: "מה המשמעות בנושא שברים?",
+    utterance: "What is the meaning for Fractions?",
     sessionId: `auth-ins-${i}`,
     selectedContextRef: null,
   });

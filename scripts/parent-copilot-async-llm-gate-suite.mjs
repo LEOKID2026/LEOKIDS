@@ -49,7 +49,7 @@ function syntheticPayload({ eligible = true } = {}) {
       };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "Fractions",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -81,15 +81,15 @@ function syntheticPayload({ eligible = true } = {}) {
         wordingEnvelope: eligible ? "WE2" : "WE0",
         hedgeLevel: eligible ? "light" : "mandatory",
         allowedTone: "parent_professional_warm",
-        forbiddenPhrases: ["בטוח לחלוטין"],
-        requiredHedges: ["נכון לעכשיו"],
+        forbiddenPhrases: ["completely certain"],
+        requiredHedges: ["right now"],
         allowedSections: ["summary", "finding", "recommendation", "limitations"],
         recommendationIntensityCap: eligible ? "RI2" : "RI0",
         textSlots: {
-          observation: "נכון לעכשיו בשברים נצפו 12 שאלות עם דיוק של כ־75%.",
-          interpretation: "נכון לעכשיו יש כיוון עבודה סביר אך עדיין נדרש אישור נוסף.",
-          action: eligible ? "נכון לעכשיו מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה." : null,
-          uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+          observation: "Right now, 12 questions in Fractions were observed with about 75% accuracy.",
+          interpretation: "Right now, there is a reasonable practice direction, but further confirmation is still needed.",
+          action: eligible ? "Right now, focused practice and a short independence check are recommended." : null,
+          uncertainty: "Right now, it is worth continuing to monitor and verify the direction in the next round.",
         },
       },
     },
@@ -97,7 +97,7 @@ function syntheticPayload({ eligible = true } = {}) {
   return {
     version: 2,
     subjectProfiles: [{ subject: "math", topicRecommendations: [tr] }],
-    executiveSummary: { majorTrendsHe: ["קו ראשון לתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First line for the period"] },
   };
 }
 
@@ -124,7 +124,7 @@ try {
     asyncGateFetchCalls += 1;
     throw new Error("fetch must not run when LLM rollout gate is disabled");
   };
-  const a = await runAsyncWith(syntheticPayload({ eligible: true }), "מה הכי חשוב לתרגל השבוע?", "llm-gate-a");
+  const a = await runAsyncWith(syntheticPayload({ eligible: true }), "What is most important to practice this week?", "llm-gate-a");
   assert.equal(asyncGateFetchCalls, 0, "no network when gate disables LLM");
   assert.notEqual(a?.telemetry?.generationPath, "llm_grounded", "gate off must not use LLM-grounded path");
   if (a?.telemetry?.llmAttempt != null) {
@@ -143,7 +143,7 @@ try {
     calledB = true;
     throw new Error("fetch must not be called when force deterministic is true");
   };
-  const b = await runAsyncWith(syntheticPayload({ eligible: true }), "מה הכי חשוב לתרגל השבוע?", "llm-gate-b");
+  const b = await runAsyncWith(syntheticPayload({ eligible: true }), "What is most important to practice this week?", "llm-gate-b");
   assert.equal(calledB, false);
   assert.notEqual(b?.telemetry?.generationPath, "llm_grounded");
   if (b?.telemetry?.llmAttempt != null) {
@@ -159,7 +159,7 @@ try {
     calledC = true;
     throw new Error("fetch must not be called without explicit experiment flag");
   };
-  const c = await runAsyncWith(syntheticPayload({ eligible: true }), "מה הכי חשוב לתרגל השבוע?", "llm-gate-c");
+  const c = await runAsyncWith(syntheticPayload({ eligible: true }), "What is most important to practice this week?", "llm-gate-c");
   assert.equal(calledC, false);
   assert.notEqual(c?.telemetry?.generationPath, "llm_grounded");
   const cLlm = c?.telemetry?.llmAttempt ?? c?.telemetry?.trace?.branchOutcomes?.llmAttempt;
@@ -177,7 +177,7 @@ try {
   setEnv("PARENT_COPILOT_LLM_ENABLED", "true");
   setEnv("PARENT_COPILOT_LLM_API_KEY", "test-key");
   setEnv("PARENT_COPILOT_LLM_PROVIDER", "openai");
-  const llmPathUtterance = "תסביר לי כמו להורה מה שמופיע בדוח";
+  const llmPathUtterance = "Explain what appears in the report as you would to a parent.";
   let calledD = 0;
   globalThis.fetch = async () => {
     calledD += 1;
@@ -200,8 +200,8 @@ try {
       return {
         output_text: JSON.stringify({
           answerBlocks: [
-            { type: "bad_type", textHe: "נכון לעכשיו טקסט ראשון" },
-            { type: "meaning", textHe: "נכון לעכשיו טקסט שני" },
+            { type: "bad_type", textHe: "Right now, this is the first text." },
+            { type: "meaning", textHe: "Right now, this is the second text." },
           ],
         }),
       };
@@ -218,14 +218,14 @@ try {
       return {
         output_text: JSON.stringify({
           answerBlocks: [
-            { type: "observation", textHe: "נכון לעכשיו זה מה שרואים בדוח." },
-            { type: "next_step", textHe: "נכון לעכשיו מומלץ להתקדם מיד." },
+            { type: "observation", textHe: "Right now, this is what appears in the report." },
+            { type: "next_step", textHe: "Right now, moving forward immediately is recommended." },
           ],
         }),
       };
     },
   });
-  const f = await runAsyncWith(syntheticPayload({ eligible: false }), "מה הכי חשוב לתרגל השבוע?", "llm-gate-f");
+  const f = await runAsyncWith(syntheticPayload({ eligible: false }), "What is most important to practice this week?", "llm-gate-f");
   assert.equal(f?.telemetry?.llmAttempt?.ok, false);
   assert.equal(f?.telemetry?.llmAttempt?.reason, "llm_answer_too_short");
 
@@ -239,12 +239,12 @@ try {
             {
               type: "observation",
               textHe:
-                "נכון לעכשיו השבוע כדאי להתמקד בעיקר בשברים ובגאומטריה לפי מה שמופיע בדוח — תמונה ברורה יחסית לשני המוקדים האלה.",
+                "Right now, this week it is worth focusing mainly on Fractions and Geometry according to the report; the picture is relatively clear for those two areas.",
             },
             {
               type: "meaning",
               textHe:
-                "נכון לעכשיו בשברים רואים צורך בחיזוק בהמרות; בגאומטריה יש כיוון עבודה אך עדיין צריך ייצוב. מומלץ לתרגל בערך 10 דקות, 3 פעמים בשבוע, עם 5–8 שאלות קצרות בכל פעם.",
+                "Right now, Fractions could use more practice on conversions; Geometry has a practice direction but still needs stabilization. Practice for about 10 minutes, three times a week, with 5-8 short questions each time.",
             },
           ],
         }),

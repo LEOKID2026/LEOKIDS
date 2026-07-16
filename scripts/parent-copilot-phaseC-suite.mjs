@@ -23,15 +23,15 @@ function syntheticPayload() {
     wordingEnvelope: "WE2",
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
-    forbiddenPhrases: ["בטוח לחלוטין"],
-    requiredHedges: ["נכון לעכשיו"],
+    forbiddenPhrases: ["completely certain"],
+    requiredHedges: ["right now"],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI2",
     textSlots: {
-      observation: "בשברים נצפו 12 שאלות, עם דיוק של כ־75%.",
-      interpretation: "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.",
-      action: "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.",
-      uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+      observation: "In Fractions, 12 questions were observed with about 75% accuracy.",
+      interpretation: "There is a reasonable practice direction, but further confirmation is still needed before drawing a clear conclusion.",
+      action: "Focused practice and a short independence check are recommended before moving forward.",
+      uncertainty: "Right now, it is worth continuing to monitor and verify the direction in the next round.",
     },
   };
   const decision = {
@@ -66,7 +66,7 @@ function syntheticPayload() {
   };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "Fractions",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -81,7 +81,7 @@ function syntheticPayload() {
   return {
     version: 2,
     subjectProfiles: [{ subject: "math", topicRecommendations: [tr] }],
-    executiveSummary: { majorTrendsHe: ["קו ראשון בתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First line for the period"] },
   };
 }
 
@@ -89,7 +89,7 @@ const payload = syntheticPayload();
 const tp = truthPacket.buildTruthPacketV1(payload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "Fractions",
 });
 assert.ok(tp);
 
@@ -102,9 +102,9 @@ const draftC = composeAnswerDraft(plan, tp, {
   conversationState: { priorIntents: [], repeatedPhraseHits: 0 },
 });
 const obs0 = String(draftC.answerBlocks.find((b) => b.type === "observation")?.textHe || "");
-assert.ok(/בקצרה|הנה מה שכדאי לשים לב|זה מה שהדוח מסכם|בשברים נצפו/u.test(obs0), "expected direct parent-facing opener on primary observation");
+assert.ok(/in short|here is what to notice|this is what the report summarizes|fractions.*12 questions/i.test(obs0), "expected direct parent-facing opener on primary observation");
 const joinedDraftC = draftC.answerBlocks.map((b) => b.textHe).join(" ");
-assert.ok(!joinedDraftC.includes("מבחינה הורית אפשר לשאול"), "parent-visible draft must not include meta-coaching filler");
+assert.ok(!/from a parent'?s perspective.*ask|\bprofession\b/i.test(joinedDraftC), "parent-visible draft must not include meta-coaching filler");
 
 const v = validateAnswerDraft(draftC, tp);
 assert.ok(v.ok, v.failCodes.join(","));
@@ -121,7 +121,7 @@ sessionMemory.resetParentCopilotSessionForTests("phaseC-e2e");
 const r = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload,
-  utterance: "מה המשמעות של המספרים בשברים?",
+  utterance: "What do the numbers in Fractions mean?",
   sessionId: "phaseC-e2e",
   selectedContextRef: null,
 });

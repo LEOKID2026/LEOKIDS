@@ -1,5 +1,5 @@
 /**
- * Semantic answer-first path for recommendation / next-step Hebrew questions.
+ * Semantic answer-first path for recommendation / next-step English questions.
  */
 import assert from "node:assert/strict";
 import parentCopilot from "../utils/parent-copilot/index.js";
@@ -13,20 +13,20 @@ function baseTopicRow(overrides = {}) {
     wordingEnvelope: "WE2",
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
-    forbiddenPhrases: ["בטוח לחלוטין"],
-    requiredHedges: ["נכון לעכשיו"],
+    forbiddenPhrases: ["completely certain"],
+    requiredHedges: ["right now"],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI2",
     textSlots: {
-      observation: "בשברים נצפו 12 שאלות, עם דיוק של כ־75%.",
-      interpretation: "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.",
-      action: "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.",
-      uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+      observation: "In Fractions, 12 questions were observed with about 75% accuracy.",
+      interpretation: "There is a reasonable practice direction, but further confirmation is still needed before drawing a clear conclusion.",
+      action: "Focused practice and a short independence check are recommended before moving forward.",
+      uncertainty: "Right now, it is worth continuing to monitor and verify the direction in the next round.",
     },
   };
   return {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "Fractions",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -85,15 +85,15 @@ const ineligiblePayload = {
               wordingEnvelope: "WE0",
               hedgeLevel: "mandatory",
               allowedTone: "parent_professional_warm",
-              forbiddenPhrases: ["בטוח לחלוטין"],
-              requiredHedges: ["נכון לעכשיו", "בשלב זה"],
+              forbiddenPhrases: ["completely certain"],
+              requiredHedges: ["right now", "at this stage"],
               allowedSections: ["summary", "finding", "limitations"],
               recommendationIntensityCap: "RI0",
               textSlots: {
-                observation: "אין מספיק תרגול.",
-                interpretation: "בשלב זה לא קובעים כיוון עקבי.",
+                observation: "There is not enough practice yet.",
+                interpretation: "At this stage, a consistent direction cannot be determined.",
                 action: null,
-                uncertainty: "בשלב זה ועדיין מוקדם לקבוע סופית, לכן ממשיכים במעקב זהיר.",
+                uncertainty: "Right now, it is still too early to decide, so continue careful monitoring.",
               },
             },
           },
@@ -105,12 +105,12 @@ const ineligiblePayload = {
 };
 
 const questions = [
-  "המלצות להמשך?",
-  "מה לעשות עכשיו?",
-  "מה לעשות השבוע?",
-  "מה הצעד הבא?",
-  "על מה להתמקד עכשיו?",
-  "מה הכי חשוב כרגע?",
+  "What are the next recommendations?",
+  "What should I do right now?",
+  "What should we do this week?",
+  "What is the next step?",
+  "What should we focus on right now?",
+  "What is most important right now?",
 ];
 
 for (const q of questions) {
@@ -126,10 +126,10 @@ for (const q of questions) {
   assert.equal(r.suggestedFollowUp, null);
   const body = r.answerBlocks.map((b) => b.textHe).join(" ");
   assert.ok(
-    body.includes("מומלץ חיזוק ממוקד") || body.includes("אפשר לבחור צעד תמיכה"),
+    /focused practice|short.*practice|recommend(?:ed|ation)|start.*activity/i.test(body),
     `${q} must lead with concrete recommendation text from contracts (topic or executive aggregate)`,
   );
-  assert.ok(!/^מהצד ההורי|^כהורה|^לפי הדוח:\s*$/m.test(r.answerBlocks[0]?.textHe || ""), `${q} must not be coaching-first`);
+  assert.ok(!/^(from a parent'?s perspective|as a parent|according to the report):?\s*$/im.test(r.answerBlocks[0]?.textHe || ""), `${q} must not be coaching-first`);
 }
 
 for (const q of questions) {
@@ -145,14 +145,14 @@ for (const q of questions) {
   assert.equal(r.suggestedFollowUp, null);
   const body = r.answerBlocks.map((b) => b.textHe).join(" ");
   assert.ok(
-    /עדיין מוקדם מדי|לא מכוון כרגע|אין כרגע ניסוח מעשי|לא הצלחנו לגזור|לא סגורה|עדיין לא ניתן לסגור|לא ניתן לסגור|לא קובעים כיוון|מוקדם לקבוע|לא ניתן לקבוע כיוון/.test(
+    /too early|cannot (?:yet )?determine|not enough practice|clear direction.*not|picture is not yet closed/i.test(
       body,
     ),
     `${q} must state insufficiency in parent-facing language when contract blocks concrete recommendation`,
   );
   assert.ok(!/\bRI0\b|\bRI1\b|\bRI2\b|\bRI3\b/.test(body), `${q} must not expose intensity codes in parent copy`);
   assert.ok(
-    !/חוזי ההמלצה|לא מסומנת כזמינה|אין שורת פעולה/.test(body),
+    !/recommendation contract|not marked as available|no action line|\bprofession\b/i.test(body),
     `${q} must not use internal/contract insufficiency wording`,
   );
 }

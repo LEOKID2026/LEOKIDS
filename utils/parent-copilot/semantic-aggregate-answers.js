@@ -531,19 +531,19 @@ export function buildSemanticAggregateDraft(input) {
   if (qc === "subject_listing") {
     const ids = subjectsListedInReport(payload);
     if (!ids.length) {
-      obs = `${lead}The report does not currently show professions with subject lines.`;
-      meaning = "When professions appear in the date range, you can ask again and get an organized list.";
+      obs = `${lead}The report does not currently show subjects with subject lines.`;
+      meaning = "When subjects appear in the date range, you can ask again and get an organized list.";
     } else {
       const names = ids.map((sid) => subjectLabelHe(sid)).join(" · ");
-      obs = `${lead}The following professions appear in the report: ${names}.`;
-      meaning = "The list is based on the professions that are shown in the report for the selected period, according to the order of display.";
+      obs = `${lead}The following subjects appear in the report: ${names}.`;
+      meaning = "The list is based on the subjects that are shown in the report for the selected period, according to the order of display.";
     }
   } else if (qc === "period_highlight") {
     const es = payload?.executiveSummary && typeof payload.executiveSummary === "object" ? payload.executiveSummary : {};
     const trends = normalizeExecutiveTrendLinesHe(es.majorTrendsHe);
     if (trends.length) {
       obs = `What stands out in the period: ${trends.slice(0, 4).join(" · ")}.`;
-      meaning = "These are the summary formulations for the period as they appear in the report; For details by profession, you can go to the professions screen.";
+      meaning = "These are the summary formulations for the period as they appear in the report; For details by subject, you can go to the subjects screen.";
       aggregateContinuity = { questionClass: qc, subjectId: "", role: "period_highlight" };
     } else if (withAvg.length) {
       const sorted = [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ);
@@ -552,19 +552,19 @@ export function buildSemanticAggregateDraft(input) {
       meaning = "The ranking is based on averages across subjects with practice in each subject, not on the formulation of a single subject.";
       aggregateContinuity = { questionClass: qc, subjectId: top[0]?.sid || "", role: "period_numeric" };
     } else {
-      obs = `There is currently not enough numerical practice across disciplines in the report to describe "what stands out" with confidence.`;
+      obs = `There is currently not enough numerical practice across disciplines in the report to describe "what stands out" reliably.`;
       meaning = "When practice data appears on at least one topic with questions, you can return to the question and get a clearer picture.";
     }
   } else if (qc === "comparison") {
     const mentioned = subjectsMentionedInUtterance(utterance, payload);
     if (mentioned.length < 2) {
-      obs = `${lead} To compare two professions you need to specify the two names as they appear in your report.`;
-      meaning = "You can formulate again with two professional names, or ask one question about ranking by difficulty versus relatively good results according to the data in the report.";
+      obs = `${lead} To compare two subjects you need to specify the two names as they appear in your report.`;
+      meaning = "You can formulate again with two subject names, or ask one question about ranking by difficulty versus relatively good results according to the data in the report.";
     } else {
       const a = roll.find((r) => r.sid === mentioned[0]);
       const b = roll.find((r) => r.sid === mentioned[1]);
       if (!a || !b || a.avg == null || b.avg == null) {
-        obs = `${lead} There is mention of two professions in the question, but the report lacks enough numerical practice data for both to compare in a stable way.`;
+        obs = `${lead} There is mention of two subjects in the question, but the report lacks enough numerical practice data for both to compare in a stable way.`;
         meaning = "When questions and accuracy appear for both subjects, you can ask again and get a direct comparison according to the averages in the report.";
       } else if (a.avg === b.avg) {
         obs = `${lead} According to the averages in the report, ${a.label} and ${b.label} are currently on the same line in terms of general accuracy (about ${a.avg}%).`;
@@ -580,7 +580,7 @@ export function buildSemanticAggregateDraft(input) {
   } else if (qc === "most_practice") {
     const listed = roll.filter((r) => r.topicRows > 0);
     if (!listed.length) {
-      obs = `${lead}There are currently no active professions in the report for the selected period.`;
+      obs = `${lead}There are currently no active subjects in the report for the selected period.`;
       meaning = "When subjects appear with subject lines, you can return to the question and get a practice rating.";
     } else {
       const best = [...listed].sort((a, b) => b.totalQ - a.totalQ || b.topicRows - a.topicRows)[0];
@@ -591,8 +591,8 @@ export function buildSemanticAggregateDraft(input) {
   } else if (qc === "least_data") {
     const listed = roll.filter((r) => r.topicRows > 0);
     if (!listed.length) {
-      obs = `${lead}There are currently no active professions with data to compare in the report.`;
-      meaning = "When active professions appear, it is possible to identify exactly where the data is the least.";
+      obs = `${lead}There are currently no active subjects with data to compare in the report.`;
+      meaning = "When active subjects appear, it is possible to identify exactly where the data is the least.";
     } else {
       const weakestData = [...listed].sort((a, b) => a.totalQ - b.totalQ || a.dataTopics - b.dataTopics)[0];
       obs = `The least amount of data in the report at the moment: ${weakestData.label} (${weakestData.totalQ} documented questions).`;
@@ -613,7 +613,7 @@ export function buildSemanticAggregateDraft(input) {
       if (/מתמטיקה|חשבון/.test(uImp) && mathRow && mathRow.avg != null && mathRow.totalQ > 0) {
         obs = `${lead}in mathematics, about ${mathRow.totalQ} questions were counted in the range, with an average accuracy of about ${mathRow.avg}% according to the report.`;
         meaning =
-          "An explicit sign of improvement does not always appear as a separate line in the report - it is still possible to anchor the volume and accuracy in the profession from the data that is presented.";
+          "An explicit sign of improvement does not always appear as a separate line in the report - it is still possible to anchor the volume and accuracy in the subject from the data that is presented.";
       } else {
         obs = `${lead}In the current report there is no explicit summary line that indicates improvement over time.`;
         meaning = "To answer \"what has improved\" more clearly, you need either explicit summary lines in a period or a comparison of periods.";
@@ -627,19 +627,19 @@ export function buildSemanticAggregateDraft(input) {
     })[0];
     if (!atRisk) {
       obs = `${lead}There is currently insufficient data in the report to identify a clear focus of attention.`;
-      meaning = "When complete practice data by profession appears in the report, it is possible to identify an area that requires attention.";
+      meaning = "When complete practice data by subject appears in the report, it is possible to identify an area that requires attention.";
     } else {
       obs = `The focus that currently requires the most reinforcement is ${atRisk.label}.`;
       meaning =
         atRisk.avg == null
-          ? "The main reason is that there is too little data in this profession in the current period."
+          ? "The main reason is that there is too little data in this subject in the current period."
           : `The rating is based on a combination of average accuracy (about ${atRisk.avg}%) along with signs of instability in the report.`;
       aggregateContinuity = { questionClass: qc, subjectId: atRisk.sid, role: "needs_attention" };
     }
   } else if (qc === "still_unclear") {
     const unclear = roll.filter((r) => r.cannotConcludeTopics > 0 || r.lowConfidenceTopics > 0 || r.insufficientTopics > 0);
     if (!unclear.length) {
-      obs = `${lead}There is currently no strong indication in the report that an entire profession is still uncertain.`;
+      obs = `${lead}There is currently no strong indication in the report that an entire subject is still uncertain.`;
       meaning = "It is still correct to continue practicing and testing, but there is currently no clear sign from the report of lack of clarity.";
     } else {
       const names = unclear.map((r) => r.label).join(" · ");
@@ -648,16 +648,16 @@ export function buildSemanticAggregateDraft(input) {
     }
   } else if (qc === "most_stable") {
     if (roll.length < 2) {
-      obs = `${lead}The report currently shows only one profession, so it is impossible to compare stability between professions.`;
-      meaning = "It is still possible to describe the situation in the single profession, but not to determine who is \"the most stable\" in comparison.";
+      obs = `${lead}The report currently shows only one subject, so it is impossible to compare stability between subjects.`;
+      meaning = "It is still possible to describe the situation in the single subject, but not to determine who is \"the most stable\" in comparison.";
     } else {
       const stable = mostStableSubject(roll);
       if (!stable || stable.totalQ <= 0) {
-        obs = `${lead}There is currently not enough practice in some professions to determine who is the most stable.`;
+        obs = `${lead}There is currently not enough practice in some subjects to determine who is the most stable.`;
         meaning = "More questions and a wider practice sequence are needed to reliably test stability.";
       } else {
-        obs = `The most stable profession at the moment according to the period data in the report is ${stable.label}.`;
-        meaning = `The assessment is based on a combination of the amount of practice, performance stability, confidence and maturity according to the report, not on a single subject line.`;
+        obs = `The most stable subject at the moment according to the period data in the report is ${stable.label}.`;
+        meaning = `The assessment is based on a combination of the amount of practice, performance stability, readiness and maturity according to the report, not on a single subject line.`;
         aggregateContinuity = { questionClass: qc, subjectId: stable.sid, role: "most_stable" };
       }
     }
@@ -666,24 +666,24 @@ export function buildSemanticAggregateDraft(input) {
       const only = withAvg[0];
       const pct =
         only.avg == null
-          ? "Still without a stable accuracy average that can be trusted with confidence"
+          ? "Still without a stable accuracy average that can be trusted reliably"
           : `with an average accuracy of about ${only.avg}%`;
-      obs = `There is currently mainly one profession with enough numerical practice in the report - ${only.label}, ${pct}.`;
+      obs = `There is currently mainly one subject with enough numerical practice in the report - ${only.label}, ${pct}.`;
       if (qc === "strongest_subject") {
         meaning =
-          "When there is one profession with data, \"strongest\" simply describes what actually appears in that profession, without comparison to others. In order to rank between subjects, at least two subjects with practice must appear in the report.";
+          "When there is one subject with data, \"strongest\" simply describes what actually appears in that subject, without comparison to others. In order to rank between subjects, at least two subjects with practice must appear in the report.";
         aggregateContinuity = { questionClass: qc, subjectId: only.sid, role: "strongest" };
       } else if (qc === "weakest_subject") {
         meaning =
-          "When there is one profession with data, \"the weakest\" does not mean a comparison between professions - only the bar in the only profession that appears. A real comparison requires two or more subjects with practice.";
+          "When there is one subject with data, \"the weakest\" does not mean a comparison between subjects - only the bar in the only subject that appears. A real comparison requires two or more subjects with practice.";
         aggregateContinuity = { questionClass: qc, subjectId: only.sid, role: "weakest" };
       } else {
         meaning =
-          "When there is only one profession with data, \"hardest\" refers to the situation within that profession from the report, not who is more comfortable compared to another profession.";
+          "When there is only one subject with data, \"hardest\" refers to the situation within that subject from the report, not who is more comfortable compared to another subject.";
         aggregateContinuity = { questionClass: qc, subjectId: only.sid, role: "hardest" };
       }
     } else if (withAvg.length < 2) {
-      obs = `${lead}The report currently does not have enough numerical practice on at least two different professions, so professions are not ranked here against each other.`;
+      obs = `${lead}The report currently does not have enough numerical practice on at least two different subjects, so subjects are not ranked here against each other.`;
       meaning = "When data appears for two or more subjects, you can ask again and get a rating according to the averages shown in the report.";
     } else {
       const sortedStrength = [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ);
@@ -696,10 +696,10 @@ export function buildSemanticAggregateDraft(input) {
         aggregateContinuity = { questionClass: qc, subjectId: strongest.sid, role: "strongest" };
       } else if (qc === "weakest_subject") {
         obs = `The lowest subject right now is ${weakest.label} - by the same overall accuracy average across subjects with practice (about ${weakest.avg}%).`;
-        meaning = "This is a professional level description from the report; For exact details by topic, you should open the profession in the report.";
+        meaning = "This is a subject-level description from the report; For exact details by topic, you should open the subject in the report.";
         aggregateContinuity = { questionClass: qc, subjectId: weakest.sid, role: "weakest" };
       } else {
-        obs = `The profession where the most "difficult" at the moment in terms of results is ${weakest.label} - according to the average overall accuracy in the report (about ${weakest.avg}%).`;
+        obs = `The subject where the most "difficult" at the moment in terms of results is ${weakest.label} - according to the average overall accuracy in the report (about ${weakest.avg}%).`;
         meaning = "Here \"hard\" is translated according to the average accuracy in subjects with practice in the report, not according to impression without data.";
         aggregateContinuity = { questionClass: qc, subjectId: weakest.sid, role: "hardest" };
       }

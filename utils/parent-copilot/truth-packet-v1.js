@@ -405,9 +405,9 @@ function buildExecutiveIntentNarrativeSlots(x) {
     const sub = subjectLabelHe(m.sid);
     const topic = parentFacingTopicTitleHe(m.dn);
     if (topic && topic !== sub) {
-      return `The profession where the best results were seen is ${sub}, and especially in the subject ${topic}.`;
+      return `The subject where the best results were seen is ${sub}, and especially in the subject ${topic}.`;
     }
-    return `The profession where the best results were seen is ${sub}.`;
+    return `The subject where the best results were seen is ${sub}.`;
   };
 
   const sparseExecutive = metas.length <= 1;
@@ -510,7 +510,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
             const rs = subjectLabelHe(rel.sid);
             const rt = parentFacingTopicTitleHe(rel.dn);
             const topicBit = rt && rt !== rs ? `, and especially about ${rt}` : "";
-            interp = `In relation to the other subjects in the report, the profession where the best results were seen is ${rs}${topicBit} (${rel.acc}%).`;
+            interp = `In relation to the other subjects in the report, the subject where the best results were seen is ${rs}${topicBit} (${rel.acc}%).`;
           } else {
             interp = `In relation to the other subjects in the report, ${labelPair(rel)} currently shows the highest numbers (${rel.acc}%).`;
           }
@@ -771,7 +771,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
           const core = m.obs ? clipHe(m.obs, 95) : "There is short information without long details";
           return `${labelPair(m)} - ${core}`;
         });
-        obs = `${scarcityLead ? `${scarcityLead} `: ""}According to what is now shown in the report, these are the professions and subjects that can be relied on at the moment: ${chunks.join(" · ")}.`;
+        obs = `${scarcityLead ? `${scarcityLead} `: ""}According to what is now shown in the report, these are the subjects and subjects that can be relied on at the moment: ${chunks.join(" · ")}.`;
       }
       const interpParts = [];
       const explainInterpPick = sparseExecutive ? metas : pickExplainReportMetas(metas, rankedWorstFirst, 4);
@@ -806,7 +806,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       if (worst && worst.acc < 55) {
         interp += `The place where it seems less stable is around ${subjectLabelHe(worst.sid)} - where you should strengthen at a short and constant rate.`;
       } else if (best && best.acc >= 75) {
-        interp += `In ${subjectLabelHe(best.sid)}, relatively better results were seen during this period - you can gradually build confidence on this.`;
+        interp += `In ${subjectLabelHe(best.sid)}, relatively better results were seen during this period - you can gradually build on this.`;
       }
       return { observation: obs, interpretation: interp };
     }
@@ -880,7 +880,7 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
       recommendationIntensityCap: "RI0",
       textSlots: {
         observation:
-          "At the moment there is not enough practice data anchored in the report to determine a clear weakness in a certain profession, so it is impossible to build a concrete picture of difficulty here with certainty.",
+          "At the moment there is not enough practice data anchored in the report to determine a clear weakness in a certain subject, so it is impossible to build a concrete picture of difficulty here with certainty.",
         interpretation:
           "According to the few data that do appear, it is possible to talk only about initial signs, and not to conclude beyond what is actually shown in the report during this period.",
         action: null,

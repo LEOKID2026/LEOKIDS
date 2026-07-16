@@ -162,13 +162,15 @@ test("diagnose_only canonical state has intensityCap RI2, not RI3", () => {
 console.log("\n--- Test group 5: Confidence templates match oracle exactly ---");
 
 const EXPECTED_CONFIDENCE = {
-  high: "כבר רואים כיוון עקבי בנושא הזה.",
-  moderate: "יש כיוון ראשוני בנושא הזה, אבל צריך עוד תרגולים כדי לוודא שהוא יציב.",
-  low: "עדיין מוקדם לקבוע בנושא הזה, ועוד תרגול יעזור להבין את התמונה.",
-  early_signal_only: "זה סימן ראשוני בלבד, ולכן עדיין לא קובעים כיוון סופי בנושא הזה.",
-  insufficient_data: "בתקופה שנבחרה עדיין מעט חומר לנושא - עוד קצת תרגול ייצר תמונה ברורה יותר.",
-  contradictory: "כרגע התוצאות בנושא הזה לא אחידות, ולכן עוד מוקדם לקבוע כיוון ברור.",
-  default: "עדיין לא ברור מה אפשר לקבוע בנושא הזה - נכון לעכשיו עדיף תרגול קצר ולבדוק שוב בהמשך.",
+  high: "A consistent direction is already visible on this topic.",
+  moderate: "There's an early direction on this topic, but more practice is needed to confirm it's stable.",
+  low: "It's still early to draw a conclusion on this topic, and more practice will help clarify the picture.",
+  early_signal_only: "This is only an early signal, so a final direction on this topic hasn't been set yet.",
+  insufficient_data:
+    "There's still limited material for this topic in the selected period - a bit more practice will create a clearer picture.",
+  contradictory: "Results on this topic aren't consistent right now, so it's still early to settle on a clear direction.",
+  default:
+    "It's still not clear what can be concluded on this topic - for now, short practice and checking again later is best.",
 };
 
 for (const [level, expected] of Object.entries(EXPECTED_CONFIDENCE)) {
@@ -189,24 +191,23 @@ test("maintain unit produces correct home action text", () => {
   const unit = makeUnit("maintain", { readiness: "emerging", confidenceLevel: "moderate", positiveAuthorityLevel: "good" });
   const result = resolveUnitParentActionHe(unit);
   assert.ok(result, "maintain must produce home action text");
-  assert.ok(result.includes("להמשיך באותה רמה"), `expected maintain template, got: ${result}`);
-  assert.ok(!result.includes("לשמר עקביות"), "must not contain old wording");
-  assert.ok(!result.includes("שימור יציבות"), "must not contain old wording");
+  assert.ok(/stay at the same level|continue at the same level/i.test(result), `expected maintain template, got: ${result}`);
+  assert.ok(!/לשמר עקביות|שימור יציבות/.test(result), "must not contain old wording");
 });
 
 test("expand_cautiously unit produces correct home action text", () => {
   const unit = makeUnit("expand_cautiously", { readiness: "ready", confidenceLevel: "high", positiveAuthorityLevel: "excellent" });
   const result = resolveUnitParentActionHe(unit);
   assert.ok(result, "expand must produce home action text");
-  assert.ok(result.includes("להישאר בינתיים באותה רמה"), `expected expand template, got: ${result}`);
-  assert.ok(!result.includes("לשמר את אותה רמת מורכבות"), "must not contain old wording");
+  assert.ok(/stay at the same level for now|same level for now/i.test(result), `expected expand template, got: ${result}`);
+  assert.ok(!/לשמר את אותה רמת מורכבות/.test(result), "must not contain old wording");
 });
 
 console.log("\n--- Test group 7: mainHomeRecommendationHe fallback ---");
 
 test("executive fallback text is correct when no eligible topics", () => {
-  const expected = "כרגע אין המלצה ביתית אחת מרכזית, כי עדיין צריך עוד מידע.";
-  const old = "להמשיך עם תרגול ממוקד לפני שינוי רחב בבית.";
+  const expected = "Right now there is no single central home recommendation, because more information is still needed.";
+  const old = "Continue with focused practice before a broad change at home.";
   assert.notEqual(expected, old, "fallback text must have changed");
 });
 

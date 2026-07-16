@@ -4,17 +4,17 @@ import telemetryStore from "../utils/parent-copilot/telemetry-store.js";
 
 function makePayload({ forceFallback = false } = {}) {
   const observation = forceFallback
-    ? "בשברים נצפו 12 שאלות, עם דיוק של כ־75%."
-    : "נכון לעכשיו בשברים נצפו 12 שאלות, עם דיוק של כ־75%.";
+    ? "In Fractions, 12 questions were observed with about 75% accuracy."
+    : "Right now, 12 questions in Fractions were observed with about 75% accuracy.";
   const interpretation = forceFallback
-    ? "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור."
-    : "נכון לעכשיו יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.";
+    ? "There is a reasonable practice direction, but further confirmation is still needed before drawing a clear conclusion."
+    : "Right now, there is a reasonable practice direction, but further confirmation is still needed before drawing a clear conclusion.";
   const action = forceFallback
-    ? "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום."
-    : "נכון לעכשיו מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.";
+    ? "Focused practice and a short independence check are recommended before moving forward."
+    : "Right now, focused practice and a short independence check are recommended before moving forward.";
   const uncertainty = forceFallback
-    ? "כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב."
-    : "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.";
+    ? "It is worth continuing to monitor and verify the direction in the next round."
+    : "Right now, it is worth continuing to monitor and verify the direction in the next round.";
 
   return {
     version: 2,
@@ -24,7 +24,7 @@ function makePayload({ forceFallback = false } = {}) {
         topicRecommendations: [
           {
             topicRowKey: "t1",
-            displayName: "שברים",
+            displayName: "Fractions",
             questions: 12,
             accuracy: 75,
             contractsV1: {
@@ -49,8 +49,8 @@ function makePayload({ forceFallback = false } = {}) {
                 wordingEnvelope: "WE2",
                 hedgeLevel: "light",
                 allowedTone: "parent_professional_warm",
-                forbiddenPhrases: ["בטוח לחלוטין"],
-                requiredHedges: ["נכון לעכשיו"],
+                forbiddenPhrases: ["completely certain"],
+                requiredHedges: ["right now"],
                 allowedSections: ["summary", "finding", "recommendation", "limitations"],
                 recommendationIntensityCap: "RI2",
                 textSlots: { observation, interpretation, action, uncertainty },
@@ -60,7 +60,7 @@ function makePayload({ forceFallback = false } = {}) {
         ],
       },
     ],
-    executiveSummary: { majorTrendsHe: ["קו ראשון לתקופה"] },
+    executiveSummary: { majorTrendsHe: ["First line for the period"] },
   };
 }
 
@@ -69,7 +69,7 @@ telemetryStore.resetTurnTelemetryTraceStoreForTests();
 const resolved = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: makePayload({ forceFallback: false }),
-  utterance: "מה המשמעות בנושא השברים?",
+  utterance: "What is the meaning for Fractions?",
   sessionId: "telemetry-resolved",
 });
 assert.equal(resolved.resolutionStatus, "resolved");
@@ -78,7 +78,7 @@ assert.ok(resolved.telemetry?.traceId);
 const clarification = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: null,
-  utterance: "מה קורה כאן?",
+  utterance: "What is happening here?",
   sessionId: "telemetry-clarification",
 });
 assert.equal(clarification.resolutionStatus, "clarification_required");
@@ -87,7 +87,7 @@ assert.ok(clarification.telemetry?.traceId);
 const fallback = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: makePayload({ forceFallback: true }),
-  utterance: "מה המשמעות בנושא השברים?",
+  utterance: "What is the meaning for Fractions?",
   sessionId: "telemetry-fallback",
 });
 assert.equal(fallback.resolutionStatus, "resolved");

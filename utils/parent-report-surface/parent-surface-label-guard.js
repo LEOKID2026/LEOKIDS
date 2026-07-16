@@ -4,7 +4,8 @@
 
 import { normalizeParentFacingHe } from "../parent-report-language/index.js";
 
-const ENGLISH_TOKEN = /\b[a-z][a-z0-9_]{4,}\b/i;
+/** Internal/engine identifiers (snake_case), not ordinary parent-facing English words. */
+const INTERNAL_SNAKE_TOKEN = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/i;
 const ENGINE_STEP =
   /\b(advance_level|advance_grade_topic_only|maintain_and_strengthen|remediate_same_level|drop_one_level_topic_only|drop_one_grade_topic_only|undetermined)\b/i;
 
@@ -48,7 +49,7 @@ export function parentSubskillSurfaceLabelHe(taxonomyId, subjectId, rawSubskill,
   if (id && SUBSKILL_SURFACE_HE[id]) return SUBSKILL_SURFACE_HE[id];
   const raw = String(rawSubskill || "").trim();
   if (!raw) return "";
-  if (ENGLISH_TOKEN.test(raw)) return "";
+  if (INTERNAL_SNAKE_TOKEN.test(raw) || ENGINE_STEP.test(raw)) return "";
   if (isForbiddenParentSurfaceLabel(raw, { subjectId, taxonomyId: id })) return "";
   return normalizeParentFacingHe(raw);
 }
@@ -60,7 +61,8 @@ export function parentSubskillSurfaceLabelHe(taxonomyId, subjectId, rawSubskill,
 export function isForbiddenParentSurfaceLabel(text, ctx = {}) {
   const t = String(text || "").trim();
   if (!t) return false;
-  if (ENGLISH_TOKEN.test(t)) return true;
+  // Global product surfaces are English — block internal identifiers, not ordinary English copy.
+  if (INTERNAL_SNAKE_TOKEN.test(t)) return true;
   if (ENGINE_STEP.test(t)) return true;
   if (PROBE_SPECIFICATION_HE.test(t)) return true;
   if (/^probeHe$|^interventionHe$|^escalationHe$|^specificationHe$/i.test(t)) return true;

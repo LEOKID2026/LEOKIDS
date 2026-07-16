@@ -273,17 +273,21 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
     }
   }
 
-  if (intent !== "clinical_boundary") {
-    for (const hedge of truthPacket?.allowedClaimEnvelope?.requiredHedges || []) {
-      if (hedge && !joined.includes(String(hedge))) return { ok: false, reason: "llm_missing_required_hedge" };
-    }
-  }
   for (const b of blocks) {
     const type = String(b?.type || "");
     const textHe = String(b?.textHe || "").trim();
     if (!allowedTypes.has(type) || !textHe) return { ok: false, reason: "llm_invalid_block_shape" };
     for (const ph of truthPacket?.allowedClaimEnvelope?.forbiddenPhrases || []) {
-      if (ph && textHe.includes(String(ph))) return { ok: false, reason: "llm_forbidden_phrase" };
+      if (ph && textHe.toLowerCase().includes(String(ph).toLowerCase())) {
+        return { ok: false, reason: "llm_forbidden_phrase" };
+      }
+    }
+  }
+  if (intent !== "clinical_boundary") {
+    const joinedLower = joined.toLowerCase();
+    for (const hedge of truthPacket?.allowedClaimEnvelope?.requiredHedges || []) {
+      const h = String(hedge || "").trim().toLowerCase();
+      if (h && !joinedLower.includes(h)) return { ok: false, reason: "llm_missing_required_hedge" };
     }
   }
   const qualityIssues = collectParentFacingOutputQualityIssues(joined, intent);

@@ -13,20 +13,20 @@ function baseTopicRow(overrides = {}) {
     wordingEnvelope: "WE2",
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
-    forbiddenPhrases: ["בטוח לחלוטין"],
-    requiredHedges: ["נכון לעכשיו"],
+    forbiddenPhrases: ["completely certain"],
+    requiredHedges: ["right now"],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI2",
     textSlots: {
-      observation: "בשברים נצפו 12 שאלות, עם דיוק של כ־75%.",
-      interpretation: "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.",
-      action: "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.",
-      uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+      observation: "In Fractions, 12 questions were observed with about 75% accuracy.",
+      interpretation: "There is a reasonable practice direction, but further confirmation is still needed before drawing a clear conclusion.",
+      action: "Focused practice and a short independence check are recommended before moving forward.",
+      uncertainty: "Right now, it is worth continuing to monitor and verify the direction in the next round.",
     },
   };
   return {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "Fractions",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -85,15 +85,15 @@ const ineligiblePayload = {
               wordingEnvelope: "WE0",
               hedgeLevel: "mandatory",
               allowedTone: "parent_professional_warm",
-              forbiddenPhrases: ["בטוח לחלוטין"],
-              requiredHedges: ["נכון לעכשיו", "בשלב זה"],
+              forbiddenPhrases: ["completely certain"],
+              requiredHedges: ["right now", "at this stage"],
               allowedSections: ["summary", "finding", "limitations"],
               recommendationIntensityCap: "RI0",
               textSlots: {
-                observation: "אין מספיק תרגול.",
-                interpretation: "בשלב זה לא קובעים כיוון עקבי.",
+                observation: "There is not enough practice yet.",
+                interpretation: "At this stage, a consistent direction cannot be determined.",
                 action: null,
-                uncertainty: "בשלב זה ועדיין מוקדם לקבוע סופית, לכן ממשיכים במעקב זהיר.",
+                uncertainty: "Right now, it is still too early to decide, so continue careful monitoring.",
               },
             },
           },
@@ -106,10 +106,10 @@ const ineligiblePayload = {
 
 function assertNoInternalJargon(body, label) {
   assert.ok(!/\bRI0\b|\bRI1\b|\bRI2\b|\bRI3\b/.test(body), `${label}: no RI codes in parent copy`);
-  assert.ok(!/חוזי ההמלצה|לא מסומנת כזמינה|אין שורת פעולה/.test(body), `${label}: no contract insufficiency jargon`);
+  assert.ok(!/recommendation contract|not marked as available|no action line|\bprofession\b/i.test(body), `${label}: no contract insufficiency jargon`);
 }
 
-const recQs = ["מה ההמלצות להמשך?", "מה לעשות עכשיו?", "מה הכי חשוב כרגע?"];
+const recQs = ["What are the next recommendations?", "What should I do right now?", "What is most important right now?"];
 for (const q of recQs) {
   const r = parentCopilot.runParentCopilotTurn({
     audience: "parent",
@@ -127,17 +127,17 @@ for (const q of recQs) {
 const rStrong = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: eligiblePayload,
-  utterance: "מה המקצוע החזק?",
+  utterance: "Which subject is strongest?",
   sessionId: "plang-strongest-one-subject",
   selectedContextRef: null,
 });
 assert.equal(rStrong.resolutionStatus, "resolved");
 assert.ok(guardrail.validateParentCopilotResponseV1(rStrong).ok);
 const strongBody = rStrong.answerBlocks.map((b) => b.textHe).join(" ");
-assert.ok(/מקצוע אחד|בלי השוואה|מתמטיקה|חשבון/.test(strongBody), "single-subject strongest uses warm parent explanation");
-assert.ok(!/לא נדרגים כאן מקצועות אחד מול השני/.test(strongBody), "single-subject strongest must not use dry multi-subject-only boilerplate");
+assert.ok(/one subject|without comparison|math|fractions/i.test(strongBody), "single-subject strongest uses warm parent explanation");
+assert.ok(!/we do not rank subjects against each other/i.test(strongBody), "single-subject strongest must not use dry multi-subject-only boilerplate");
 
-const clarifyQs = ["לא הבנתי. תסביר", "תסביר פשוט", "מה זה אומר בעצם", "למה?"];
+const clarifyQs = ["I did not understand. Please explain.", "Explain simply.", "What does this mean?", "Why?"];
 for (const q of clarifyQs) {
   const r = parentCopilot.runParentCopilotTurn({
     audience: "parent",
@@ -149,14 +149,14 @@ for (const q of clarifyQs) {
   assert.equal(r.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(r).ok);
   const body = r.answerBlocks.map((b) => b.textHe).join(" ");
-  assert.ok(/במילים פשוטות/.test(body), `${q}: clarify path uses plain-language framing`);
+  assert.ok(/in simple words|simply put|plain language/i.test(body), `${q}: clarify path uses plain-language framing`);
   assert.ok(
-    /בדוח התקופתי נספרו|הדיוק הממוצע בתקופה|יש כיוון עבודה סביר|שברים|נצפו\s+\d+\s+שאלות/.test(body),
+    /report.*(?:12|questions)|accuracy|reasonable practice direction|fractions|12\s+questions/i.test(body),
     `${q}: must anchor to narrative slots (executive or topic), not empty boilerplate`,
   );
 }
 
-const advanceQs = ["להתקדם או להמתין?", "כדאי להתקדם?", "לחכות או להמשיך?"];
+const advanceQs = ["Should we move forward or wait?", "Is it worth moving forward?", "Should we wait or continue?"];
 for (const q of advanceQs) {
   const rHold = parentCopilot.runParentCopilotTurn({
     audience: "parent",
@@ -168,7 +168,7 @@ for (const q of advanceQs) {
   assert.equal(rHold.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(rHold).ok);
   const bHold = rHold.answerBlocks.map((b) => b.textHe).join(" ");
-  assert.ok(/להמתין|לא לדחוף/.test(bHold), `${q} ineligible: bounded hold-first answer`);
+  assert.ok(/wait|hold off|not push/i.test(bHold), `${q} ineligible: bounded hold-first answer`);
 
   const rGo = parentCopilot.runParentCopilotTurn({
     audience: "parent",
@@ -180,7 +180,7 @@ for (const q of advanceQs) {
   assert.equal(rGo.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(rGo).ok);
   const bGo = rGo.answerBlocks.map((b) => b.textHe).join(" ");
-  assert.ok(/להתקדם|בזהירות|צעדים קטנים/.test(bGo), `${q} eligible: bounded advance-with-care answer`);
+  assert.ok(/move forward|carefully|small steps/i.test(bGo), `${q} eligible: bounded advance-with-care answer`);
 }
 
 console.log("parent-copilot-parent-language-semantic-suite: OK");

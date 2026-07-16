@@ -15,7 +15,13 @@ function mkTopic(subjectId, topicRowKey, displayName, questions, accuracy, opts 
     accuracy,
     contractsV1: {
       evidence: { contractVersion: "v1", topicKey: topicRowKey, subjectId },
-      decision: { contractVersion: "v1", topicKey: topicRowKey, subjectId, decisionTier: cannotConcludeYet ? 0 : 2, cannotConcludeYet },
+      decision: {
+        contractVersion: "v1",
+        topicKey: topicRowKey,
+        subjectId,
+        decisionTier: cannotConcludeYet ? 0 : 2,
+        cannotConcludeYet,
+      },
       readiness: { contractVersion: "v1", topicKey: topicRowKey, subjectId, readiness },
       confidence: { contractVersion: "v1", topicKey: topicRowKey, subjectId, confidenceBand },
       recommendation: {
@@ -35,15 +41,15 @@ function mkTopic(subjectId, topicRowKey, displayName, questions, accuracy, opts 
         wordingEnvelope: cannotConcludeYet ? "WE0" : "WE2",
         hedgeLevel: "light",
         allowedTone: "parent_professional_warm",
-        forbiddenPhrases: ["בטוח לחלוטין"],
-        requiredHedges: ["נכון לעכשיו"],
+        forbiddenPhrases: ["completely certain"],
+        requiredHedges: ["right now"],
         allowedSections: ["summary", "finding", "recommendation", "limitations"],
         recommendationIntensityCap: eligible ? intensity : "RI0",
         textSlots: {
-          observation: `נכון לעכשיו ב${displayName} נצפו ${questions} שאלות עם דיוק של כ־${accuracy}%.`,
-          interpretation: `נכון לעכשיו זה מתאר תמונת מצב ראשונית ב${displayName}.`,
-          action: eligible ? "נכון לעכשיו אפשר לתרגל צעד קצר." : null,
-          uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב.",
+          observation: `Right now in ${displayName}, ${questions} questions were observed with about ${accuracy}% accuracy.`,
+          interpretation: `Right now this describes an initial picture in ${displayName}.`,
+          action: eligible ? "Right now a short practice step is possible." : null,
+          uncertainty: "Right now it is worth continuing to monitor.",
         },
       },
     },
@@ -56,7 +62,12 @@ function payloadOneSubject() {
     subjectProfiles: [
       {
         subject: "math",
-        topicRecommendations: [mkTopic("math", "m-add", "חיבור", 24, 78, { readiness: "emerging", confidenceBand: "medium" })],
+        topicRecommendations: [
+          mkTopic("math", "m-add", "Addition", 24, 78, {
+            readiness: "emerging",
+            confidenceBand: "medium",
+          }),
+        ],
       },
     ],
     executiveSummary: { majorTrendsHe: [] },
@@ -69,15 +80,37 @@ function payloadMultiSubject() {
     subjectProfiles: [
       {
         subject: "math",
-        topicRecommendations: [mkTopic("math", "m-mul", "כפל", 30, 60, { readiness: "forming", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        topicRecommendations: [
+          mkTopic("math", "m-mul", "Multiplication", 30, 60, {
+            readiness: "forming",
+            confidenceBand: "low",
+            cannotConcludeYet: true,
+            eligible: false,
+          }),
+        ],
       },
       {
         subject: "english",
-        topicRecommendations: [mkTopic("english", "e-voc", "אוצר מילים", 18, 92, { readiness: "ready", confidenceBand: "high", cannotConcludeYet: false, eligible: true, intensity: "RI2" })],
+        topicRecommendations: [
+          mkTopic("english", "e-voc", "Vocabulary", 18, 92, {
+            readiness: "ready",
+            confidenceBand: "high",
+            cannotConcludeYet: false,
+            eligible: true,
+            intensity: "RI2",
+          }),
+        ],
       },
       {
         subject: "science",
-        topicRecommendations: [mkTopic("science", "s-bio", "ביולוגיה", 12, 45, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        topicRecommendations: [
+          mkTopic("science", "s-bio", "Biology", 12, 45, {
+            readiness: "insufficient",
+            confidenceBand: "low",
+            cannotConcludeYet: true,
+            eligible: false,
+          }),
+        ],
       },
     ],
     executiveSummary: { majorTrendsHe: [] },
@@ -90,11 +123,25 @@ function payloadSparseData() {
     subjectProfiles: [
       {
         subject: "math",
-        topicRecommendations: [mkTopic("math", "m-sparse", "סדר פעולות", 0, 0, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        topicRecommendations: [
+          mkTopic("math", "m-sparse", "Order of operations", 0, 0, {
+            readiness: "insufficient",
+            confidenceBand: "low",
+            cannotConcludeYet: true,
+            eligible: false,
+          }),
+        ],
       },
       {
         subject: "english",
-        topicRecommendations: [mkTopic("english", "e-sparse", "הבנת הנקרא", 2, 50, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        topicRecommendations: [
+          mkTopic("english", "e-sparse", "Reading comprehension", 2, 50, {
+            readiness: "insufficient",
+            confidenceBand: "low",
+            cannotConcludeYet: true,
+            eligible: false,
+          }),
+        ],
       },
     ],
     executiveSummary: { majorTrendsHe: [] },
@@ -105,9 +152,9 @@ function payloadWithTrends() {
   const p = payloadMultiSubject();
   p.executiveSummary = {
     majorTrendsHe: [
-      "נראית התקדמות עקבית באנגלית לאורך התקופה",
-      "נדרשת זהירות בפרשנות בחשבון בגלל תנודתיות",
-      "קיים שיפור נקודתי בדיוק בקריאה",
+      "Consistent progress appears in English over the period",
+      "Caution is needed when interpreting Math because of variability",
+      "There is a localized improvement in reading accuracy",
     ],
   };
   return p;
@@ -125,15 +172,32 @@ function payloadImbalancedCounts() {
     subjectProfiles: [
       {
         subject: "math",
-        topicRecommendations: [mkTopic("math", "m-heavy", "כפל", 120, 70, { readiness: "forming", confidenceBand: "medium" })],
+        topicRecommendations: [
+          mkTopic("math", "m-heavy", "Multiplication", 120, 70, {
+            readiness: "forming",
+            confidenceBand: "medium",
+          }),
+        ],
       },
       {
         subject: "english",
-        topicRecommendations: [mkTopic("english", "e-light", "אוצר מילים", 8, 92, { readiness: "ready", confidenceBand: "high" })],
+        topicRecommendations: [
+          mkTopic("english", "e-light", "Vocabulary", 8, 92, {
+            readiness: "ready",
+            confidenceBand: "high",
+          }),
+        ],
       },
       {
         subject: "science",
-        topicRecommendations: [mkTopic("science", "s-tiny", "ביולוגיה", 3, 40, { readiness: "insufficient", confidenceBand: "low", cannotConcludeYet: true, eligible: false })],
+        topicRecommendations: [
+          mkTopic("science", "s-tiny", "Biology", 3, 40, {
+            readiness: "insufficient",
+            confidenceBand: "low",
+            cannotConcludeYet: true,
+            eligible: false,
+          }),
+        ],
       },
     ],
     executiveSummary: { majorTrendsHe: [] },
@@ -141,53 +205,67 @@ function payloadImbalancedCounts() {
 }
 
 const MATRIX_QUESTIONS = [
-  "מה המקצוע החזק?",
-  "מה המקצוע החלש?",
-  "באיזה מקצוע הכי קשה?",
-  "יש עוד מקצועות?",
-  "מה הכי בולט בתקופה?",
-  "חשבון מול אנגלית",
-  "איפה יש הכי הרבה תרגול?",
-  "איפה יש הכי מעט נתונים?",
-  "מה השתפר?",
-  "מה דורש תשומת לב?",
-  "מה עדיין לא ברור?",
-  "איזה מקצוע הכי יציב?",
+  "What is the strongest subject?",
+  "What is the weakest subject?",
+  "Which subject is the most difficult?",
+  "Are there any other subjects?",
+  "What stands out most this period?",
+  "Math versus English",
+  "Where is there the most practice?",
+  "Where is there the least data?",
+  "What improved?",
+  "What needs attention?",
+  "What is still unclear?",
+  "Which subject is most stable?",
 ];
 
 const FAMILIES_WITHOUT_TOPIC_LEAK = new Set([
-  "מה המקצוע החזק?",
-  "מה המקצוע החלש?",
-  "באיזה מקצוע הכי קשה?",
+  "What is the strongest subject?",
+  "What is the weakest subject?",
+  "Which subject is the most difficult?",
 ]);
 
-const coachingPrefix = /^(מהצד ההורי|כהורה|לפי הדוח:\s*$|אם זה ברור)/;
-const internalLeak = /(מבט על התקופה|scope|executive)/;
+const coachingPrefix = /^(from the parenting side|as a parent|according to the report:\s*$|if this is clear)/i;
+const internalLeak = /(period overview|scope|executive)/i;
+const forbiddenProfessionWording = /\bprofession(?:s)?\b/i;
 
 function expectedPatternForQuestion(q) {
-  if (q === "מה המקצוע החזק?")
-    return /המקצוע החזק ביותר|מקצוע אחד עם תרגול|יש כרגע בעיקר מקצוע אחד|מקצוע אחד עם מספיק|לא .*מספיק תרגול.*שני מקצועות|לא נדרגים כאן מקצועות|אין מספיק נתונים להשוואה בין מקצועות|תורגל רק|התחומים החזקים יחסית/;
-  if (q === "מה המקצוע החלש?")
-    return /המקצוע הנמוך ביותר|מקצוע אחד עם תרגול|מקצוע אחד עם נתונים|לא .*מספיק תרגול.*שני מקצועות|לא נדרגים כאן מקצועות|אין מספיק נתונים להשוואה בין מקצועות|תורגל רק|«הכי חלש» לא אומר|דורש חיזוק|הכי «קשה»/;
-  if (q === "באיזה מקצוע הכי קשה?")
-    return /המקצוע שבו הכי [«"]קשה[»"]|מקצוע אחד עם תרגול|מקצוע אחד עם נתונים|[«"]קשה[»"] מתורגם|[«"]הכי קשה[»"] מתייחס|לא .*מספיק תרגול.*שני מקצועות|לא נדרגים כאן מקצועות|אין מספיק נתונים להשוואה בין מקצועות|תורגל רק|דורש חיזוק/;
-  if (q === "יש עוד מקצועות?")
-    return /בדוח מופיעים המקצועות הבאים|לא מופיעים כרגע מקצועות|מקצוע אחד|תורגל רק|אין מספיק נתונים להשוואה/;
-  if (q === "מה הכי בולט בתקופה?")
-    return /מה שמסתמן|לפי שורות הסיכום|בולטים במיוחד|אין כרגע בדוח מספיק תרגול|הכי גבוהים|ממוצע|דירוג הדיוק|התקדמות|כיוון|בולט|סיכום התקופה/;
-  if (q === "חשבון מול אנגלית")
-    return /גבוה יותר|על אותו קו דיוק|חסרים מספיק נתוני תרגול|צריך לציין בבירור שני מקצועות|כדי להשוות בין שני מקצועות|צריך לציין את שני השמות|מעט נתוני תרגול|אין עדיין מספיק מידע|מה שעובד יחסית טוב|ההשוואה מבוססת/;
-  if (q === "איפה יש הכי הרבה תרגול?")
-    return /הכי הרבה תרגול|אין כרגע מקצועות פעילים|שאלות מתועדות/;
-  if (q === "איפה יש הכי מעט נתונים?")
-    return /הכי מעט נתונים|אין כרגע מקצועות פעילים|שאלות מתועדות|מעט מדי נתונים/;
-  if (q === "מה השתפר?") return /סימני שיפור|אין שורת סיכום מפורשת|מה השתפר|כיוון/;
-  if (q === "מה דורש תשומת לב?")
-    return /דורש כרגע הכי הרבה תשומת לב|דורש.*חיזוק|המוקד שדורש|אין כרגע נתונים מספיקים/;
-  if (q === "מה עדיין לא ברור?")
-    return /עדיין לא ברור|אין כרגע בדוח|חוסר בהירות|מקצוע שלם|סימן מובהק|למקד את התרגול|עדיין לא מיושבים|הדוח מציג כמה תחומים/;
-  if (q === "איזה מקצוע הכי יציב?")
-    return /המקצוע היציב ביותר|מקצוע אחד בלבד|אין כרגע מספיק תרגול עקבי|אי אפשר להשוות יציבות/;
+  if (q === "What is the strongest subject?") {
+    return /strongest subject|mainly one subject|one subject with(?: enough)?(?: numerical)? practice|not enough(?: numerical)? practice|not ranked|not enough data to compare|only .+ was practiced|relatively strong/i;
+  }
+  if (q === "What is the weakest subject?") {
+    return /weakest subject|lowest subject|mainly one subject|one subject with(?: enough)?(?: numerical)? practice|not enough(?: numerical)? practice|not ranked|not enough data to compare|only .+ was practiced|needs? (?:attention|reinforcement|strengthening)|most \"?difficult\"?/i;
+  }
+  if (q === "Which subject is the most difficult?") {
+    return /most \"?difficult\"?|hardest|mainly one subject|one subject with(?: enough)?(?: numerical)? practice|not enough(?: numerical)? practice|not ranked|not enough data to compare|only .+ was practiced|needs? (?:attention|reinforcement|strengthening)/i;
+  }
+  if (q === "Are there any other subjects?") {
+    return /following subjects appear|does not currently show subjects|one subject|only .+ was practiced|not enough data to compare/i;
+  }
+  if (q === "What stands out most this period?") {
+    return /stands out|summary formulations|highest average|not enough(?: numerical)? practice|accuracy|progress|direction|period/i;
+  }
+  if (q === "Math versus English") {
+    return /higher than|same line|not enough(?: numerical)? practice|lacks enough numerical practice|specify the two names|compare two subjects|little(?: practice)? data|not enough information|comparison is based|working relatively well/i;
+  }
+  if (q === "Where is there the most practice?") {
+    return /most practice|no active subjects|documented questions|questions/i;
+  }
+  if (q === "Where is there the least data?") {
+    return /least data|least information|no active subjects|documented questions|too little data/i;
+  }
+  if (q === "What improved?") {
+    return /improvement|no explicit summary line|improved|direction|progress/i;
+  }
+  if (q === "What needs attention?") {
+    return /needs? (?:attention|reinforcement|strengthening)|focus that currently requires|not enough data/i;
+  }
+  if (q === "What is still unclear?") {
+    return /still (?:not )?clear|no strong indication|uncertainty|entire subject|not enough|focus practice|not yet settled|several areas/i;
+  }
+  if (q === "Which subject is most stable?") {
+    return /most stable subject|only one subject|not enough(?: consistent)? practice|impossible to compare stability/i;
+  }
   return /.+/;
 }
 
@@ -204,10 +282,22 @@ function topicDisplayNames(payload) {
   return out;
 }
 
+function assertOneSubjectStrongestSemantics(joined, payloadName, question) {
+  assert.ok(/one subject|mainly one subject|only .+ with practice|without comparison/i.test(joined), `${payloadName}: "${question}" must state single-subject limitation`);
+  assert.ok(/Math/i.test(joined), `${payloadName}: "${question}" must name Math`);
+  assert.ok(
+    /without comparison|at least two subjects|not enough data to compare|impossible to rank|not ranked/i.test(joined),
+    `${payloadName}: "${question}" must deny reliable multi-subject ranking`,
+  );
+}
+
 function assertSemanticAnswerShape(payloadName, payload, question, response) {
   assert.equal(response.resolutionStatus, "resolved", `${payloadName}: "${question}" must resolve`);
   assert.ok(guardrail.validateParentCopilotResponseV1(response).ok, `${payloadName}: "${question}" guardrail invalid`);
-  assert.ok(Array.isArray(response.answerBlocks) && response.answerBlocks.length >= 2, `${payloadName}: "${question}" answer must have at least 2 blocks`);
+  assert.ok(
+    Array.isArray(response.answerBlocks) && response.answerBlocks.length >= 2,
+    `${payloadName}: "${question}" answer must have at least 2 blocks`,
+  );
   assert.equal(response.answerBlocks[0]?.type, "observation", `${payloadName}: "${question}" first block must be observation`);
   assert.equal(response.suggestedFollowUp, null, `${payloadName}: "${question}" should not emit follow-up`);
 
@@ -216,7 +306,12 @@ function assertSemanticAnswerShape(payloadName, payload, question, response) {
   assert.ok(first.length > 10, `${payloadName}: "${question}" first block too short`);
   assert.ok(!coachingPrefix.test(first), `${payloadName}: "${question}" must be answer-first, not coaching-first`);
   assert.ok(!internalLeak.test(joined), `${payloadName}: "${question}" leaked internal label`);
-  assert.ok(expectedPatternForQuestion(question).test(joined), `${payloadName}: "${question}" wrong answer class content`);
+  assert.ok(!forbiddenProfessionWording.test(joined), `${payloadName}: "${question}" must use subject, not profession`);
+  assert.ok(expectedPatternForQuestion(question).test(joined), `${payloadName}: "${question}" wrong answer class content: ${joined}`);
+
+  if (payloadName === "one-subject-report" && question === "What is the strongest subject?") {
+    assertOneSubjectStrongestSemantics(joined, payloadName, question);
+  }
 
   if (FAMILIES_WITHOUT_TOPIC_LEAK.has(question) && payloadName === "multi-subject-report") {
     const topics = topicDisplayNames(payload);
@@ -227,8 +322,9 @@ function assertSemanticAnswerShape(payloadName, payload, question, response) {
 
 function runCase(payloadName, payloadFactory) {
   const payload = payloadFactory();
-  for (const q of MATRIX_QUESTIONS) {
-    const sessionId = `matrix-${payloadName}-${Buffer.from(q).toString("base64url").slice(0, 18)}`;
+  MATRIX_QUESTIONS.forEach((q, index) => {
+    // Include index so truncated base64 prefixes cannot collide across similar English questions.
+    const sessionId = `matrix-${payloadName}-${index}-${Buffer.from(q).toString("base64url").slice(0, 24)}`;
     const res = parentCopilot.runParentCopilotTurn({
       audience: "parent",
       payload,
@@ -237,7 +333,7 @@ function runCase(payloadName, payloadFactory) {
       selectedContextRef: null,
     });
     assertSemanticAnswerShape(payloadName, payload, q, res);
-  }
+  });
 }
 
 runCase("one-subject-report", payloadOneSubject);
