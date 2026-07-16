@@ -26,7 +26,7 @@ import {
   formatTopicLineHe,
   groupTierHe,
   subjectLabelHe,
-} from "../../../lib/teacher-portal/teacher-ui.he.js";
+} from "../../../lib/teacher-portal/teacher-ui.js";
 
 export async function getServerSideProps(context) {
   const classId = String(context.params?.classId || "").trim();
@@ -54,8 +54,8 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="דוח כיתה"
-          message="מזהה כיתה שגוי."
+          title="Class report"
+          message="Invalid class ID."
         />
       </Layout>
     );
@@ -66,7 +66,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportLoading
           backHref="/teacher/dashboard"
-          title="דוח כיתה"
+          title="Class report"
           hint={loadingHint}
         />
       </Layout>
@@ -78,8 +78,8 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="דוח כיתה"
-          message="אין לך הרשאה לצפות בדוח כיתה זו."
+          title="Class report"
+          message="You do not have permission to view this class report."
         />
       </Layout>
     );
@@ -90,7 +90,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportError
           backHref="/teacher/dashboard"
-          title="דוח כיתה"
+          title="Class report"
           message={errorMessage}
           onRetry={reload}
         />
@@ -98,7 +98,7 @@ export default function TeacherClassReportPage({ classId }) {
     );
   }
 
-  const className = report.class?.name || "כיתה";
+  const className = report.class?.name || "Class";
   const cohort = report.cohortSummary || {};
   const guidance = report.teacherGuidanceBlock || {};
   const teacherSummary = guidance.teacherSummary || {};
@@ -130,7 +130,7 @@ export default function TeacherClassReportPage({ classId }) {
     : (guidance.reinforcementSuggestions || [])
         .map((t) => {
           const line = formatTopicLineHe(t.subject, t.topic);
-          return line ? `מומלץ לחזק: ${line}` : null;
+          return line ? `Recommended to reinforce: ${line}` : null;
         })
         .filter(Boolean);
   const extension = isGuidanceV2
@@ -139,7 +139,7 @@ export default function TeacherClassReportPage({ classId }) {
         .map((t) => {
           const line = formatTopicLineHe(t.subject, t.topic);
           if (!line) return null;
-          return `${line} - ביצועים טובים בכיתה (${formatPercent(t.accuracy)})`;
+          return `${line} - strong class performance (${formatPercent(t.accuracy)})`;
         })
         .filter(Boolean);
 
@@ -152,7 +152,7 @@ export default function TeacherClassReportPage({ classId }) {
         data-report-ok="true"
         data-member-count={String(memberCount)}
       >
-        <TeacherPortalShell backHref="/teacher/dashboard" title={`דוח כיתה: ${className}`}>
+        <TeacherPortalShell backHref="/teacher/dashboard" title={`Class report: ${className}`}>
           <TeacherClassActivitiesNav classId={classId} />
           <ReportDateRangeControl
             presetDays={reportRange.presetDays}
@@ -167,43 +167,43 @@ export default function TeacherClassReportPage({ classId }) {
             onEnableCustom={() => reportRange.setCustomDates(true)}
             onApplyCustom={() => {
               const result = reportRange.applyCustom();
-              if (!result.ok) alert("אנא בחר תאריכים תקינים");
+              if (!result.ok) alert("Please select valid dates");
             }}
             className="mb-4"
           />
           <p className="text-white/60 text-sm mb-2">
-            {memberCount} ילדים פעילים
+            {memberCount} active students
           </p>
 
           {memberCount === 0 ? (
             <p className="text-amber-200 text-sm mb-6">
-              הכיתה ריקה - הוסף ילדים כדי לראות דוח.
+              This class is empty — add students to see a report.
             </p>
           ) : null}
 
           <section className="rounded-xl border border-white/15 bg-black/30 p-5 mb-6">
-            <h2 className="text-lg font-semibold mb-3">סיכום כיתה</h2>
+            <h2 className="text-lg font-semibold mb-3">Class summary</h2>
             {guidance.insufficientData && cohort.totalAnswers < 10 ? (
               <p className="text-white/70 text-sm">
-                לא ניתן לחשב המלצות - אין מספיק נתונים בתקופה זו.
+                Cannot compute recommendations — not enough data in this period.
               </p>
             ) : (
               <>
                 <dl className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm mb-3">
                   <div>
-                    <dt className="text-white/60">סה״כ מפגשי תרגול</dt>
+                    <dt className="text-white/60">Total practice sessions</dt>
                     <dd>{cohort.totalSessions ?? 0}</dd>
                   </div>
                   <div>
-                    <dt className="text-white/60">סה״כ תשובות</dt>
+                    <dt className="text-white/60">Total answers</dt>
                     <dd>{cohort.totalAnswers ?? 0}</dd>
                   </div>
                   <div>
-                    <dt className="text-white/60">אחוז הצלחה ממוצע</dt>
+                    <dt className="text-white/60">Average success rate</dt>
                     <dd>{formatPercent(cohort.accuracy)}</dd>
                   </div>
                   <div>
-                    <dt className="text-white/60">ילדים עם נתונים</dt>
+                    <dt className="text-white/60">Students with data</dt>
                     <dd>{cohort.studentsWithActivity ?? 0}</dd>
                   </div>
                 </dl>
@@ -215,12 +215,12 @@ export default function TeacherClassReportPage({ classId }) {
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-3">ביצועי הכיתה לפי מקצוע</h2>
+            <h2 className="text-lg font-semibold mb-3">Class performance by subject</h2>
             <SubjectSummaryCards subjects={report.subjects} showTopics />
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">נושאים שדורשים חיזוק</h2>
+            <h2 className="text-lg font-semibold mb-2">Topics that need reinforcement</h2>
             {weaknessTopics.length ? (
               <ul className="text-sm text-white/80 space-y-2">
                 {weaknessTopics.slice(0, 10).map((t, i) => {
@@ -233,8 +233,8 @@ export default function TeacherClassReportPage({ classId }) {
                           className="rounded border border-white/10 px-3 py-2"
                         >
                           <span className="font-medium">{t.headlineHe}</span>
-                          : {t.affectedStudentCount ?? 0}/{memberCount} ילדים ·{" "}
-                          {formatPercent(t.cohortAccuracyPct)} הצלחה
+                          : {t.affectedStudentCount ?? 0}/{memberCount} Students ·{" "}
+                          {formatPercent(t.cohortAccuracyPct)} Success
                           {t.actionHe ? ` · ${t.actionHe}` : action ? ` · ${action}` : ""}
                         </li>
                       );
@@ -256,8 +256,8 @@ export default function TeacherClassReportPage({ classId }) {
                         <span className="font-medium">
                           {subj ? `${subj} - ${headline}` : headline}
                         </span>
-                        : {t.affectedStudentCount ?? 0}/{memberCount} ילדים ·{" "}
-                        {formatPercent(t.cohortAccuracyPct)} הצלחה · שיעור טעות {errPct}
+                        : {t.affectedStudentCount ?? 0}/{memberCount} Students ·{" "}
+                        {formatPercent(t.cohortAccuracyPct)} success · error rate {errPct}
                         {action ? ` · ${action}` : ""}
                       </li>
                     );
@@ -270,8 +270,8 @@ export default function TeacherClassReportPage({ classId }) {
                       : "-";
                   return (
                     <li key={i}>
-                      {line}: {acc} שגיאות ממוצע
-                      {t.studentCount ? ` · ${t.studentCount} ילדים` : ""}
+                      {line}: {acc} avg errors
+                      {t.studentCount ? ` · ${t.studentCount} students` : ""}
                     </li>
                   );
                 }).filter(Boolean)}
@@ -279,7 +279,7 @@ export default function TeacherClassReportPage({ classId }) {
             ) : (
               <p className="text-white/60 text-sm">
                 {showCalmWeakTopics
-                  ? "לא זוהו נושאים בעייתיים בתקופה זו."
+                  ? "No problematic topics found in this period."
                   : CLASS_WEAK_TOPICS_FALLBACK_BANNER}
               </p>
             )}
@@ -287,7 +287,7 @@ export default function TeacherClassReportPage({ classId }) {
 
           {isGuidanceV2 && smallGroupClusters.length > 0 ? (
             <section className="mb-6">
-              <h2 className="text-lg font-semibold mb-2">קבוצות תמיכה מוצעות</h2>
+              <h2 className="text-lg font-semibold mb-2">Suggested support groups</h2>
               <ul className="text-sm text-white/80 space-y-2">
                 {smallGroupClusters
                   .filter((c) => c.topicLabelHe)
@@ -296,7 +296,7 @@ export default function TeacherClassReportPage({ classId }) {
                     <span className="font-medium">{c.topicLabelHe}</span>
                     : {(c.studentNamesMasked || []).join(", ")}
                     {c.avgAccuracyPct != null
-                      ? ` · ממוצע ${formatPercent(c.avgAccuracyPct)}`
+                      ? ` · avg ${formatPercent(c.avgAccuracyPct)}`
                       : ""}
                   </li>
                 ))}
@@ -305,7 +305,7 @@ export default function TeacherClassReportPage({ classId }) {
           ) : null}
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">ילדים שדורשים מעקב</h2>
+            <h2 className="text-lg font-semibold mb-2">Students who need monitoring</h2>
             {attentionList.length ? (
               <ul className="space-y-2">
                 {attentionList.map((s) => (
@@ -328,27 +328,27 @@ export default function TeacherClassReportPage({ classId }) {
                       href={`/teacher/student/${s.studentId}`}
                       className="text-amber-300 hover:underline shrink-0"
                     >
-                      צפייה בדוח
+                      View report
                     </Link>
                   </li>
                 ))}
               </ul>
             ) : memberCount > 0 ? (
               <p className="text-white/60 text-sm">
-                כל ילדי הכיתה בסדר - אין צורך בהתערבות מיוחדת.
+                All students in the class are on track — no special intervention needed.
               </p>
             ) : null}
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">קבוצות עבודה מוצעות</h2>
+            <h2 className="text-lg font-semibold mb-2">Suggested work groups</h2>
             {["struggling", "on_track", "advanced"].map((tier) => {
               const list = groups[tier] || [];
               if (!list.length) return null;
               return (
                 <div key={tier} className="mb-2 text-sm">
                   <span className="font-semibold text-amber-200">
-                    {groupTierHe(tier)} ({list.length} ילדים):
+                    {groupTierHe(tier)} ({list.length} Students):
                   </span>{" "}
                   <span className="text-white/70 break-words">
                     {list.map((x) => x.studentFullName || x.studentFullNameMasked).join("، ")}
@@ -361,19 +361,19 @@ export default function TeacherClassReportPage({ classId }) {
             !groups.advanced?.length ? (
               <p className="text-white/60 text-sm">
                 {memberCount < 3
-                  ? "אין מספיק ילדים עם נתונים להרכבת קבוצות."
-                  : "אין מספיק נתונים להרכבת קבוצות."}
+                  ? "Not enough students with data to form groups."
+                  : "Not enough data to form groups."}
               </p>
             ) : (
               <p className="text-xs text-white/50 mt-2">
-                *קבוצות מחושבות על בסיס ביצועים - המורה מחליט סופית.
+                *Groups are computed from performance — the teacher makes the final call.
               </p>
             )}
           </section>
 
           {!isGuidanceV2 ? (
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">מיקוד השיעור הבא</h2>
+            <h2 className="text-lg font-semibold mb-2">Focus for next lesson</h2>
             {(guidance.nextLessonFocus || []).length ? (
               <ul className="list-disc list-inside text-sm text-white/80 space-y-1">
                 {guidance.nextLessonFocus
@@ -384,7 +384,7 @@ export default function TeacherClassReportPage({ classId }) {
                       <li key={i}>
                         {line}
                         {f.affectedStudents
-                          ? ` - ${f.affectedStudents} ילדים התקשו בנושא זה`
+                          ? ` - ${f.affectedStudents} students struggled with this topic`
                           : ""}
                       </li>
                     );
@@ -393,7 +393,7 @@ export default function TeacherClassReportPage({ classId }) {
               </ul>
             ) : (
               <p className="text-white/60 text-sm">
-                אין נושא בולט לשיעור הבא - המשך לפי תכנית הלימודים.
+                No standout topic for the next lesson — continue with the curriculum.
               </p>
             )}
           </section>
@@ -401,7 +401,7 @@ export default function TeacherClassReportPage({ classId }) {
 
           {!isGuidanceV2 ? (
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">הצעות לחיזוק</h2>
+            <h2 className="text-lg font-semibold mb-2">Reinforcement suggestions</h2>
             {reinforcement.length ? (
               <ul className="list-disc list-inside text-sm text-white/80">
                 {reinforcement.map((t, i) => (
@@ -409,14 +409,14 @@ export default function TeacherClassReportPage({ classId }) {
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">אין הצעות חיזוק מיוחדות לתקופה זו.</p>
+              <p className="text-white/60 text-sm">No special reinforcement suggestions for this period.</p>
             )}
           </section>
           ) : null}
 
           {!isGuidanceV2 ? (
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">הצעות להעשרה</h2>
+            <h2 className="text-lg font-semibold mb-2">Enrichment suggestions</h2>
             {extension.length ? (
               <ul className="list-disc list-inside text-sm text-white/80">
                 {extension.map((t, i) => (
@@ -424,7 +424,7 @@ export default function TeacherClassReportPage({ classId }) {
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">אין הצעות העשרה לתקופה זו.</p>
+              <p className="text-white/60 text-sm">No enrichment suggestions for this period.</p>
             )}
           </section>
           ) : null}

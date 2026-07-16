@@ -23,8 +23,8 @@ export default function TeacherStudentParentReportPage({ studentId }) {
 
   return (
     <Layout>
-      <div className="min-h-[40vh] flex items-center justify-center" dir="rtl">
-        <p className="text-white/70 text-sm">טוען דוח להורים…</p>
+      <div className="min-h-[40vh] flex items-center justify-center" dir="ltr">
+        <p className="text-white/70 text-sm">Loading parent report…</p>
       </div>
     </Layout>
   );

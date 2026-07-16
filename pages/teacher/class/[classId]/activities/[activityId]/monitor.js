@@ -6,7 +6,7 @@ import TeacherPortalShell from "../../../../../../components/teacher-portal/Teac
 import TeacherClassActivitiesNav from "../../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   activityModeLabelHe,
   activityStatusLabelHe,
@@ -46,14 +46,14 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "טעינה נכשלה");
+        setError(body?.error?.message || body?.error?.code || "Load failed");
         setData(null);
         return;
       }
       setData(body.data);
       setError("");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [activityId, router]);
 
@@ -116,7 +116,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title={activity?.title ? `מעקב: ${activity.title}` : "מעקב פעילות"}
+        title={activity?.title ? `Monitor: ${activity.title}` : "Activity monitor"}
         backHref={`/teacher/class/${classId}/activities`}
       >
         <TeacherClassActivitiesNav classId={classId} />
@@ -133,7 +133,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
             </span>
             {summary ? (
               <span className="px-2 py-1 rounded bg-white/10 tabular-nums">
-                דיוק כיתה: {summary.classAccuracy}%
+                Class accuracy: {summary.classAccuracy}%
               </span>
             ) : null}
           </div>
@@ -147,7 +147,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
               onClick={() => patchStatus("activate")}
               className="px-3 py-1.5 rounded-lg bg-emerald-600/90 text-white text-sm font-medium"
             >
-              הפעלה
+              Launch
             </button>
           ) : null}
           {activity?.status === "active" && activity?.mode === "live_lesson" ? (
@@ -158,7 +158,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
                 onClick={() => patchStatus("pause")}
                 className="px-3 py-1.5 rounded-lg border border-white/20 text-sm"
               >
-                השהיה
+                Pause
               </button>
               <button
                 type="button"
@@ -166,7 +166,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
                 onClick={advanceQuestion}
                 className="px-3 py-1.5 rounded-lg border border-amber-400/40 text-amber-200 text-sm"
               >
-                שאלה הבאה
+                Next question
               </button>
             </>
           ) : null}
@@ -177,7 +177,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
               onClick={() => patchStatus("resume")}
               className="px-3 py-1.5 rounded-lg bg-emerald-600/90 text-white text-sm"
             >
-              המשך
+              Resume
             </button>
           ) : null}
           {activity?.status === "active" || activity?.status === "paused" ? (
@@ -187,7 +187,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
               onClick={() => patchStatus("close")}
               className="px-3 py-1.5 rounded-lg bg-red-600/80 text-white text-sm"
             >
-              סגירה
+              Close
             </button>
           ) : null}
           {activity?.status === "closed" ? (
@@ -195,35 +195,35 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
               href={`/teacher/class/${classId}/activities/${activityId}/report`}
               className="px-3 py-1.5 rounded-lg bg-amber-500/90 text-black text-sm font-medium"
             >
-              דוח סופי
+              Final report
             </Link>
           ) : null}
         </div>
 
         {data?.stuckStudents?.length ? (
           <div className="mb-4 rounded-lg border border-orange-400/30 bg-orange-500/10 px-3 py-2 text-sm text-orange-100">
-            ילדים תקועים:{" "}
+            Stuck students:{" "}
             {data.stuckStudents.map((s) => s.studentFullNameMasked).join(", ")}
           </div>
         ) : null}
 
         {summary ? (
           <p className="text-white/70 text-sm mb-4 tabular-nums">
-            לא התחילו: {summary.notStartedCount} · בתהליך: {summary.inProgressCount} ·
-            הגישו: {summary.submittedCount} / {summary.rosterCount}
+            Not started: {summary.notStartedCount} · In progress: {summary.inProgressCount} ·
+            Submitted: {summary.submittedCount} / {summary.rosterCount}
           </p>
         ) : null}
 
         {data?.students?.length ? (
           <div className="overflow-x-auto rounded-xl border border-white/10 mb-6">
-            <table className="w-full text-sm text-right">
+            <table className="w-full text-sm text-left">
               <thead className="bg-white/5 text-white/70">
                 <tr>
-                  <th className="px-3 py-2">ילד/ה</th>
-                  <th className="px-3 py-2">סטטוס</th>
-                  <th className="px-3 py-2">תשובות</th>
-                  <th className="px-3 py-2">נכונות</th>
-                  <th className="px-3 py-2">פירוט</th>
+                  <th className="px-3 py-2">Student</th>
+                  <th className="px-3 py-2">Status</th>
+                  <th className="px-3 py-2">Answers</th>
+                  <th className="px-3 py-2">Correct</th>
+                  <th className="px-3 py-2">Details</th>
                 </tr>
               </thead>
               <tbody>
@@ -246,7 +246,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
                         data-testid="teacher-view-student-answers"
                         onClick={() => setAnswersStudent(s)}
                       >
-                        צפה בתשובות
+                        View answers
                       </button>
                     </td>
                   </tr>
@@ -267,14 +267,14 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
 
         {data?.perQuestion?.length ? (
           <div className="space-y-3">
-            <h2 className="text-lg font-semibold">לפי שאלה</h2>
+            <h2 className="text-lg font-semibold">By question</h2>
             {data.perQuestion.map((pq) => (
               <details
                 key={pq.questionIndex}
                 className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2"
               >
                 <summary className="cursor-pointer text-sm">
-                  שאלה {pq.questionIndex + 1}: דיוק {pq.accuracyPct}% ({pq.correctCount}/
+                  Question {pq.questionIndex + 1}: accuracy {pq.accuracyPct}% ({pq.correctCount}/
                   {pq.totalAnswers})
                 </summary>
                 {pq.prompt ? (
@@ -284,7 +284,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
                 ) : null}
                 {pq.wrongStudentIds?.length ? (
                   <p className="text-red-200/90 text-xs mt-2">
-                    טעו: {pq.wrongStudentIds.length} ילדים
+                    Missed: {pq.wrongStudentIds.length} students
                   </p>
                 ) : null}
               </details>

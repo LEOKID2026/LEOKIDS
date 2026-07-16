@@ -7,7 +7,7 @@ import PdfUploader from "../../../../../../components/worksheet-activities/PdfUp
 import TeacherQuestionBuilder from "../../../../../../components/worksheet-activities/TeacherQuestionBuilder";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   worksheetModeLabelHe,
   worksheetStatusLabelHe,
@@ -45,14 +45,14 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "שגיאה");
+        setError(body?.error?.code || "Error");
         return;
       }
       setWorksheet(body.data.worksheet);
       setQuestions(body.data.questions || []);
       setHasPdf((body.data.files || []).some((f) => f.fileRole === "worksheet" && !f.isDeleted));
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [worksheetId, router]);
 
@@ -64,7 +64,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
     async (file) => {
       const supabase = getLearningSupabaseBrowserClient();
       const session = await resolveTeacherAccessToken(supabase);
-      if (!session.ok) return { ok: false, error: "לא מחובר" };
+      if (!session.ok) return { ok: false, error: "Not signed in" };
       const pdfBase64 = await new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => {
@@ -156,8 +156,8 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
   if (!worksheet) {
     return (
       <Layout>
-        <TeacherPortalShell title="דף עבודה" backHref={`/teacher/class/${classId}/worksheets`}>
-          <p className="text-white/60">{error || "טוען…"}</p>
+        <TeacherPortalShell title="Worksheet" backHref={`/teacher/class/${classId}/worksheets`}>
+          <p className="text-white/60">{error || "Loading…"}</p>
         </TeacherPortalShell>
       </Layout>
     );
@@ -169,7 +169,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
         {error ? <p className="text-red-300 text-sm mb-4">{error}</p> : null}
 
-        <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-right mb-6">
+        <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-left mb-6">
           <p className="text-white/80 text-sm">
             {worksheetModeLabelHe(worksheet.worksheetMode)} · {worksheetStatusLabelHe(worksheet.status)}
           </p>
@@ -182,7 +182,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
               onClick={() => void openPdf()}
               className="px-3 py-1.5 rounded-lg border border-white/20 text-white text-sm"
             >
-              פתח PDF
+              Open PDF
             </button>
             {worksheet.status === "draft" ? (
               <button
@@ -191,7 +191,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
                 onClick={() => void setStatus("activate")}
                 className="px-3 py-1.5 rounded-lg bg-violet-500/90 text-black text-sm font-semibold"
               >
-                הפעל
+                Launch
               </button>
             ) : null}
             {worksheet.status === "active" ? (
@@ -201,7 +201,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
                 onClick={() => void setStatus("close")}
                 className="px-3 py-1.5 rounded-lg border border-amber-400/40 text-amber-200 text-sm"
               >
-                סגור
+                Close
               </button>
             ) : null}
           </div>
@@ -220,7 +220,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
               onClick={() => void saveQuestions()}
               className="mt-4 px-4 py-2 rounded-xl bg-cyan-600/90 text-white font-semibold"
             >
-              שמור שאלות
+              Save questions
             </button>
           </div>
         ) : null}

@@ -26,14 +26,14 @@ export default function StudentWorksheetPage({ worksheetId }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error || "שגיאה");
+        setError(json?.error || "Error");
         return;
       }
       setWorksheet(json.worksheet);
       setQuestions(json.questions || []);
       setStudentStatus(json.studentStatus);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [worksheetId]);
 
@@ -53,7 +53,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
         window.open(json.signedUrl, "_blank", "noopener");
         await load();
       } else {
-        setError(json?.error || "לא ניתן לפתוח");
+        setError(json?.error || "Unable to open");
       }
     } finally {
       setBusy(false);
@@ -61,7 +61,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
   }, [worksheetId, load]);
 
   const markComplete = useCallback(async () => {
-    if (!window.confirm("לסמן שסיימתם את דף העבודה?")) return;
+    if (!window.confirm("Mark this worksheet as finished?")) return;
     setBusy(true);
     setMsg("");
     try {
@@ -71,10 +71,10 @@ export default function StudentWorksheetPage({ worksheetId }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error || "שגיאה");
+        setError(json?.error || "Error");
         return;
       }
-      setMsg("ההגשה נקלטה. אנא הגש פיזית למורה עד המועד הנקוב.");
+      setMsg("Submission received. Please turn in the physical worksheet to your teacher by the due date.");
       await load();
     } finally {
       setBusy(false);
@@ -82,7 +82,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
   }, [worksheetId, load]);
 
   const submitAnswers = useCallback(async () => {
-    if (!window.confirm("להגיש את התשובות?")) return;
+    if (!window.confirm("Submit your answers?")) return;
     setBusy(true);
     setMsg("");
     setError("");
@@ -104,13 +104,13 @@ export default function StudentWorksheetPage({ worksheetId }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error || "שגיאה");
+        setError(json?.error || "Error");
         return;
       }
       setMsg(
         json.hasManualQuestions
-          ? "כל הכבוד, ההגשה נקלטה ותיבדק על ידי המורה."
-          : "ההגשה נקלטה וממתינה לאישור המורה."
+          ? "Great job — your submission was received and will be reviewed by your teacher."
+          : "Submission received and waiting for teacher approval."
       );
       await load();
     } finally {
@@ -122,7 +122,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
     return (
       <Layout>
         <div className="min-h-[50vh] flex items-center justify-center text-white/70">
-          {error || "טוען…"}
+          {error || "Loading…"}
         </div>
       </Layout>
     );
@@ -136,14 +136,14 @@ export default function StudentWorksheetPage({ worksheetId }) {
     <Layout>
       <div className="max-w-2xl mx-auto px-4 py-8 text-right">
         <Link href="/student/home" className="text-sm text-cyan-300 hover:underline">
-          ← חזרה לדף הבית
+          ← Back to home
         </Link>
 
-        <h1 className="text-2xl font-bold text-white mt-4">דף עבודה: {worksheet.title}</h1>
+        <h1 className="text-2xl font-bold text-white mt-4">Worksheet: {worksheet.title}</h1>
         <p className="text-white/65 text-sm mt-1">
           {worksheetGradingStatusLabelHe(studentStatus?.gradingStatus || "not_submitted")}
           {worksheet.physicalDueAt
-            ? ` · מועד הגשה פיזית: ${new Date(worksheet.physicalDueAt).toLocaleString("he-IL")}`
+            ? ` · Physical due date: ${new Date(worksheet.physicalDueAt).toLocaleString("en-US")}`
             : ""}
         </p>
 
@@ -160,15 +160,15 @@ export default function StudentWorksheetPage({ worksheetId }) {
           onClick={() => void openPdf()}
           className="mt-6 w-full py-3 rounded-xl bg-violet-500/90 text-black font-bold hover:bg-violet-400"
         >
-          פתח/הורד את דף העבודה
+          Open / download worksheet
         </button>
 
         {published && studentStatus?.finalScorePct != null ? (
-          <p className="mt-6 text-xl font-bold text-amber-200">ציון: {studentStatus.finalScorePct}%</p>
+          <p className="mt-6 text-xl font-bold text-amber-200">Score: {studentStatus.finalScorePct}%</p>
         ) : null}
 
         {waiting ? (
-          <p className="mt-6 text-white/80">ממתין לבדיקת מורה</p>
+          <p className="mt-6 text-white/80">Waiting for teacher review</p>
         ) : null}
 
         {worksheet.worksheetMode === "pdf_only" && !studentStatus?.markedCompletedAt ? (
@@ -178,7 +178,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
             onClick={() => void markComplete()}
             className="mt-4 w-full py-3 rounded-xl border border-white/25 text-white font-semibold hover:bg-white/10"
           >
-            סיימתי את דף העבודה
+            I finished this worksheet
           </button>
         ) : null}
 
@@ -198,7 +198,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
               onClick={() => void submitAnswers()}
               className="mt-4 w-full py-3 rounded-xl bg-cyan-500/90 text-black font-bold hover:bg-cyan-400"
             >
-              הגש תשובות
+              Submit answers
             </button>
           </>
         ) : null}

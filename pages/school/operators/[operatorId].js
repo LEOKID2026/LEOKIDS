@@ -11,7 +11,7 @@ import {
   SCHOOL_LOADING,
   SCHOOL_OPERATOR_IDENTITY,
   SCHOOL_OPERATOR_NO_TEACHING,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "../../../components/school-portal/SchoolPortalUi";
 
 export default function SchoolOperatorDetailPage() {
@@ -34,7 +34,7 @@ export default function SchoolOperatorDetailPage() {
     const res = await schoolAuthFetch(accessToken, "/api/school/operators");
     const json = await res.json().catch(() => ({}));
     if (!res.ok) {
-      setError(apiErrorMessageHe(json?.error, "שגיאה בטעינה"));
+      setError(apiErrorMessageHe(json?.error, "Error loading"));
       return;
     }
     const match = (json?.data?.operators || []).find((o) => o.operatorUserId === operatorId);
@@ -56,7 +56,7 @@ export default function SchoolOperatorDetailPage() {
       );
       if (!res.ok) {
         const json = await res.json().catch(() => ({}));
-        setError(apiErrorMessageHe(json?.error, "עדכון הרשאות נכשל"));
+        setError(apiErrorMessageHe(json?.error, "Failed to update permissions"));
         return;
       }
       await load();
@@ -70,20 +70,20 @@ export default function SchoolOperatorDetailPage() {
   return (
     <Layout>
       <SchoolPortalShell
-        title={operator?.displayName || operator?.email || "מזכיר/ה"}
+        title={operator?.displayName || operator?.email || "Secretary"}
         subtitle={SCHOOL_OPERATOR_NO_TEACHING}
         schoolName={me?.school?.name}
         portalRole={me?.portalRole}
       >
         <Link href="/school/operators" className="text-amber-300 text-sm hover:underline inline-block mb-4">
-          ← חזרה
+          ← Back
         </Link>
         {state === "loading" ? (
           <p className="text-white/60 text-sm">{SCHOOL_LOADING}</p>
         ) : error ? (
           <p className="text-red-300 text-sm">{error}</p>
         ) : !operator ? (
-          <p className="text-white/60 text-sm">לא נמצא/ה.</p>
+          <p className="text-white/60 text-sm">Not found.</p>
         ) : (
           <section className={SCHOOL_CARD}>
             <div className={SCHOOL_CARD_INNER}>

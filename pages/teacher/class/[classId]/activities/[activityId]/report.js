@@ -5,7 +5,7 @@ import TeacherPortalShell from "../../../../../../components/teacher-portal/Teac
 import TeacherClassActivitiesNav from "../../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   activityModeLabelHe,
   studentActivityStatusLabelHe,
@@ -43,7 +43,7 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
     );
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
-      setError(body?.error?.message || body?.error?.code || "שגיאת ייצוא");
+      setError(body?.error?.message || body?.error?.code || "Export error");
       return null;
     }
     return body.data;
@@ -57,7 +57,7 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
       const data = await fetchEnrichedExportPayload();
       if (data) downloadEnrichedActivityReportXlsx(data);
     } catch {
-      setError("שגיאת ייצוא");
+      setError("Export error");
     } finally {
       setExportingXlsx(false);
     }
@@ -77,12 +77,12 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "טעינה נכשלה");
+        setError(body?.error?.message || body?.error?.code || "Load failed");
         return;
       }
       setData(body.data);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [activityId, router]);
 
@@ -95,7 +95,7 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title={data?.activity?.title ? `דוח: ${data.activity.title}` : "דוח פעילות"}
+        title={data?.activity?.title ? `Report: ${data.activity.title}` : "Activity report"}
         backHref={`/teacher/class/${classId}/activities`}
       >
         <TeacherClassActivitiesNav classId={classId} />
@@ -108,8 +108,8 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
               <span>{activityModeLabelHe(data.activity.mode)}</span>
               {summary ? (
                 <>
-                  <span>· השלמה: {summary.completionRate}%</span>
-                  <span>· דיוק כיתה: {summary.classAccuracy}%</span>
+                  <span>· Completion: {summary.completionRate}%</span>
+                  <span>· Class accuracy: {summary.classAccuracy}%</span>
                 </>
               ) : null}
             </div>
@@ -120,14 +120,14 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
                 onClick={handleExportXlsx}
                 className="px-3 py-1.5 rounded-lg border border-white/20 text-sm hover:bg-white/10 disabled:opacity-50"
               >
-                ייצוא Excel
+                Export Excel
               </button>
               <button
                 type="button"
                 onClick={() => downloadActivityReportCsv(data)}
                 className="px-3 py-1.5 rounded-lg border border-white/20 text-sm hover:bg-white/10"
               >
-                ייצוא CSV
+                Export CSV
               </button>
             </div>
           </>
@@ -135,11 +135,11 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
 
         {data?.weakSkills?.length ? (
           <div className="mb-6 rounded-xl border border-amber-400/20 bg-amber-500/10 p-4">
-            <h2 className="font-semibold mb-2">מיומנויות חלשות</h2>
+            <h2 className="font-semibold mb-2">Weak skills</h2>
             <ul className="text-sm space-y-1">
               {data.weakSkills.map((w) => (
                 <li key={w.skillKey}>
-                  {w.skillLabelHe || "מיומנות לתרגול"}: {w.accuracyPct}% ({w.correct}/{w.answers})
+                  {w.skillLabelHe || "Practice skill"}: {w.accuracyPct}% ({w.correct}/{w.answers})
                 </li>
               ))}
             </ul>
@@ -148,13 +148,13 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
 
         {data?.students?.length ? (
           <div className="overflow-x-auto rounded-xl border border-white/10">
-            <table className="w-full text-sm text-right">
+            <table className="w-full text-sm text-left">
               <thead className="bg-white/5 text-white/70">
                 <tr>
-                  <th className="px-3 py-2">ילד/ה</th>
-                  <th className="px-3 py-2">סטטוס</th>
-                  <th className="px-3 py-2">ציון</th>
-                  <th className="px-3 py-2">נכונות</th>
+                  <th className="px-3 py-2">Student</th>
+                  <th className="px-3 py-2">Status</th>
+                  <th className="px-3 py-2">Score</th>
+                  <th className="px-3 py-2">Correct</th>
                 </tr>
               </thead>
               <tbody>

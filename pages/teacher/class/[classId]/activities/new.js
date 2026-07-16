@@ -5,8 +5,8 @@ import TeacherPortalShell from "../../../../../components/teacher-portal/Teacher
 import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.he.js";
-import { REPORT_SUBJECTS, subjectLabelHe, activitySubjectsForGrade } from "../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabelHe, activitySubjectsForGrade } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../../lib/classroom-activities/generate-activity-questions-client.js";
 import { activityModeLabelHe } from "../../../../../lib/classroom-activities/classroom-activities-labels.client.js";
@@ -76,13 +76,13 @@ export default function TeacherNewActivityPage({ classId }) {
         const json = await res.json().catch(() => ({}));
         if (cancelled) return;
         if (res.status === 403) {
-          setContextError("אין לך הרשאה ליצור פעילויות לכיתה זו. פנה למנהל בית הספר.");
+          setContextError("You do not have permission to create activities for this class. Contact your school admin.");
           setCreationBlocked(true);
           setClassContext((prev) => ({ ...prev, loaded: true }));
           return;
         }
         if (!res.ok) {
-          setContextError(json?.error?.message || "טעינת כיתה נכשלה");
+          setContextError(json?.error?.message || "Could not load class");
           setClassContext((prev) => ({ ...prev, loaded: true }));
           return;
         }
@@ -93,7 +93,7 @@ export default function TeacherNewActivityPage({ classId }) {
         }
         const ctx = loadClassActivityContextFromApiClass(cls);
         if (ctx.gradeLocked && !ctx.gradeKey) {
-          setContextError("רמת הכיתה של הכיתה אינה תקינה. פנה למנהל בית הספר.");
+          setContextError("This class grade level is invalid. Contact your school admin.");
           setClassContext({ ...ctx, loaded: true });
           return;
         }
@@ -108,7 +108,7 @@ export default function TeacherNewActivityPage({ classId }) {
         setClassContext({ ...ctx, loaded: true });
       } catch {
         if (!cancelled) {
-          setContextError("שגיאת רשת");
+          setContextError("Network error");
           setClassContext((prev) => ({ ...prev, loaded: true }));
         }
       }
@@ -152,7 +152,7 @@ export default function TeacherNewActivityPage({ classId }) {
       });
       setPreview(qs);
     } catch (e) {
-      setError(e?.message || "יצירת תצוגה מקדימה נכשלה");
+      setError(e?.message || "Could not create question preview");
       setPreview([]);
     } finally {
       setBusy(false);
@@ -161,11 +161,11 @@ export default function TeacherNewActivityPage({ classId }) {
 
   const createDraft = useCallback(async () => {
     if (!title.trim()) {
-      setError("נא למלא כותרת");
+      setError("Please enter a title");
       return;
     }
     if (!preview.length) {
-      setError("נא ליצור תצוגה מקדימה של שאלות לפני שמירה");
+      setError("Please preview the questions before saving");
       return;
     }
     setBusy(true);
@@ -193,7 +193,7 @@ export default function TeacherNewActivityPage({ classId }) {
       if (timeLimitSeconds) body.timeLimitSeconds = Number(timeLimitSeconds);
       if (dueAt) body.dueAt = new Date(dueAt).toISOString();
       if (mode === "quiz" && !timeLimitSeconds) {
-        setError("במצב בוחן נדרש מגבלת זמן (שניות)");
+        setError("Quiz mode requires a time limit (seconds)");
         setBusy(false);
         return;
       }
@@ -204,7 +204,7 @@ export default function TeacherNewActivityPage({ classId }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "שמירה נכשלה");
+        setError(json?.error?.message || json?.error?.code || "Save failed");
         return;
       }
       const activityId = json?.data?.activityId;
@@ -214,7 +214,7 @@ export default function TeacherNewActivityPage({ classId }) {
         );
       }
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -236,7 +236,7 @@ export default function TeacherNewActivityPage({ classId }) {
 
   return (
     <Layout>
-      <TeacherPortalShell title="פעילות חדשה" backHref={`/teacher/class/${classId}/activities`}>
+      <TeacherPortalShell title="New activity" backHref={`/teacher/class/${classId}/activities`}>
         <TeacherClassActivitiesNav classId={classId} />
 
         {error || contextError ? (
@@ -249,7 +249,7 @@ export default function TeacherNewActivityPage({ classId }) {
         <>
         <div className="grid gap-4 md:grid-cols-2 mb-6">
           <label className="block text-sm">
-            <span className="text-white/70">כותרת</span>
+            <span className="text-white/70">Title</span>
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={title}
@@ -258,7 +258,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">מקצוע</span>
+            <span className="text-white/70">Subject</span>
             {classContext.subjectLocked ? (
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
@@ -287,14 +287,14 @@ export default function TeacherNewActivityPage({ classId }) {
             )}
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">נושא</span>
+            <span className="text-white/70">Topic</span>
             {subject === "science" && topicOpts.length === 0 ? (
               <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                לא נמצאו נושאים זמינים לכיתה זו במקצוע מדעים.
+                No topics available for this grade in Science.
               </p>
             ) : subject !== "science" && topicOpts.length === 0 ? (
               <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                לא נמצאו נושאים זמינים עבור מקצוע ורמת כיתה אלו.
+                No topics available for this subject and grade level.
               </p>
             ) : subject === "geometry" ? (
               <select
@@ -353,7 +353,7 @@ export default function TeacherNewActivityPage({ classId }) {
             )}
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">תת-נושא (אופציונלי)</span>
+            <span className="text-white/70">Subtopic (optional)</span>
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={subtopic}
@@ -361,7 +361,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">כיתה (ליצירת שאלות)</span>
+            <span className="text-white/70">Grade (for question generation)</span>
             {classContext.gradeLocked ? (
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
@@ -388,7 +388,7 @@ export default function TeacherNewActivityPage({ classId }) {
             )}
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">מצב פעילות</span>
+            <span className="text-white/70">Activity mode</span>
             <select
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={mode}
@@ -409,12 +409,12 @@ export default function TeacherNewActivityPage({ classId }) {
               setPreview([]);
             }}
             variant="select"
-            label="רמה"
+            label="Level"
             className=""
             inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
           />
           <label className="block text-sm">
-            <span className="text-white/70">מספר שאלות</span>
+            <span className="text-white/70">Number of questions</span>
             <input
               type="number"
               min={1}
@@ -425,7 +425,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">מגבלת זמן (שניות, אופציונלי)</span>
+            <span className="text-white/70">Time limit (seconds, optional)</span>
             <input
               type="number"
               min={30}
@@ -435,7 +435,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm md:col-span-2">
-            <span className="text-white/70">מועד אחרון (שיעורי בית, אופציונלי)</span>
+            <span className="text-white/70">Due date (homework, optional)</span>
             <input
               type="datetime-local"
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
@@ -452,7 +452,7 @@ export default function TeacherNewActivityPage({ classId }) {
             onClick={runPreview}
             className="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-sm"
           >
-            {busy ? "מייצר…" : "תצוגה מקדימה של שאלות"}
+            {busy ? "Generating…" : "Preview questions"}
           </button>
           <button
             type="button"
@@ -460,18 +460,18 @@ export default function TeacherNewActivityPage({ classId }) {
             onClick={createDraft}
             className="px-4 py-2 rounded-xl bg-amber-500/90 text-black font-semibold text-sm disabled:opacity-50"
           >
-            שמירה כטיוטה
+            Save as draft
           </button>
         </div>
 
         {preview.length > 0 ? (
           <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-            <h2 className="text-lg font-semibold mb-3">תצוגה מקדימה ({preview.length} שאלות)</h2>
+            <h2 className="text-lg font-semibold mb-3">Preview ({preview.length} questions)</h2>
             <ol className="list-decimal list-inside space-y-3 text-sm text-white/90">
               {preview.map((q, i) => (
                 <li key={i} className="list-item">
                   <AssignedActivityQuestionDisplay question={q} variant="preview" />
-                  <span className="text-white/40 text-xs mr-2"> (לא נשלח לילד/ה)</span>
+                  <span className="text-white/40 text-xs mr-2"> (not sent to student)</span>
                 </li>
               ))}
             </ol>

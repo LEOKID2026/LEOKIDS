@@ -60,11 +60,11 @@ function buildSavedAttemptsMap(attempts) {
 function feedbackFromSavedAttempt(attempt, activity) {
   if (!attempt) return null;
   if (activity?.mode === "discussion") {
-    return { type: "submitted", message: "התשובה נשלחה" };
+    return { type: "submitted", message: "Answer submitted" };
   }
   return {
     type: attempt.isCorrect ? "correct" : "wrong",
-    message: attempt.isCorrect ? "נכון!" : "לא נכון",
+    message: attempt.isCorrect ? "Correct!" : "Incorrect",
   };
 }
 
@@ -141,7 +141,7 @@ export default function StudentActivityPage({ activityId }) {
       }
       if (!res.ok || json?.ok !== true) {
         setError(
-          resolveStudentActivityApiErrorHe(json, "לא ניתן להתחיל את הפעילות")
+          resolveStudentActivityApiErrorHe(json, "Could not start the activity")
         );
         setPhase("error");
         return;
@@ -192,7 +192,7 @@ export default function StudentActivityPage({ activityId }) {
       }
       setPhase("ready");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
       setPhase("error");
     }
   }, [activityId, router]);
@@ -219,7 +219,7 @@ export default function StudentActivityPage({ activityId }) {
           setCurrentIdx(json.currentQuestionIdx);
         }
         if (json?.activityStatus === "paused") {
-          setFeedback({ type: "wait", message: "המורה השהה את השיעור - המתינו" });
+          setFeedback({ type: "wait", message: "The teacher paused the lesson — please wait" });
         }
       } catch {
         /* ignore */
@@ -361,7 +361,7 @@ export default function StudentActivityPage({ activityId }) {
 
   const displayQuestion = currentQuestion;
 
-  // שמע vocabulary אנגלית G1/G2 — stem כבר בנוי בגנרטור ונשמר ב-params
+  // English G1/G2 vocabulary audio — stem already built in generator and stored in params
   const currentEnglishVocabAudioStem =
     currentQuestion?.subject === "english" &&
     currentQuestion?.topic === "vocabulary" &&
@@ -403,7 +403,7 @@ export default function StudentActivityPage({ activityId }) {
     [usesMathScratchpad, currentQuestion, activity]
   );
 
-  /** שרטוט בזמן השאלה — גאומטריה בלבד, לא חושף correctAnswer */
+  /** Live diagram while answering — geometry only; does not expose correctAnswer */
   const questionDiagramSpec = useMemo(() => {
     if (currentQuestion?.subject !== "geometry") return null;
     return getGeometryDiagramSpec(currentQuestion, { hideUnknownValues: true });
@@ -489,7 +489,7 @@ export default function StudentActivityPage({ activityId }) {
       if (!res.ok || json?.ok !== true) {
         setFeedback({
           type: "error",
-          message: resolveStudentActivityApiErrorHe(json, "שמירת תשובה נכשלה"),
+          message: resolveStudentActivityApiErrorHe(json, "Could not save the answer"),
         });
         return;
       }
@@ -501,7 +501,7 @@ export default function StudentActivityPage({ activityId }) {
       if (isDiscussion) {
         setFeedback({
           type: "submitted",
-          message: "התשובה נשלחה",
+          message: "Answer submitted",
         });
       } else {
         explanationText = showExplanation ? json.explanation : undefined;
@@ -509,7 +509,7 @@ export default function StudentActivityPage({ activityId }) {
         if (explanationText) explanationViewedRef.current = true;
         setFeedback({
           type: json.isCorrect ? "correct" : "wrong",
-          message: json.isCorrect ? "נכון!" : "לא נכון",
+          message: json.isCorrect ? "Correct!" : "Incorrect",
           explanation: explanationText,
         });
       }
@@ -581,10 +581,10 @@ export default function StudentActivityPage({ activityId }) {
   if (phase === "error") {
     return (
       <Layout {...layoutProps}>
-        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir="rtl">
+        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir="ltr">
           <p className={`${L.errorText} mb-4`}>{error}</p>
           <Link href="/student/home" className={L.errorLink}>
-            חזרה לבית
+            Back home
           </Link>
         </div>
       </Layout>
@@ -599,15 +599,15 @@ export default function StudentActivityPage({ activityId }) {
       isDiscussionDone && !isExplanationOnly && (finished.questionCount ?? questionSet.length) > 1;
     return (
       <Layout {...layoutProps}>
-        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir="rtl">
+        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir="ltr">
           <h1 className={`${L.doneTitle} mb-4`}>
             {isExplanationOnly
-              ? "קראת את ההסבר"
+              ? "You read the explanation"
               : isDiscussionDone
                 ? multiQuestionDiscussion
-                  ? "סיימת את הדיון"
-                  : "התשובה נשלחה"
-                : "סיימת את הפעילות!"}
+                  ? "You finished the discussion"
+                  : "Answer submitted"
+                : "You finished the activity!"}
           </h1>
           {!isDiscussionDone ? (
             <p className={`${L.doneScore} mb-6`}>
@@ -617,16 +617,16 @@ export default function StudentActivityPage({ activityId }) {
               )}
             </p>
           ) : isExplanationOnly ? (
-            <p className={`${L.doneBody} mb-6`}>קראת את ההסבר של המורה. תודה!</p>
+            <p className={`${L.doneBody} mb-6`}>You read the teacher's explanation. Thank you!</p>
           ) : multiQuestionDiscussion ? (
             <p className={`${L.doneBody} mb-6`}>
-              סיימת {finished.questionCount ?? questionSet.length} שאלות דיון. תודה על המענה!
+              You finished {finished.questionCount ?? questionSet.length} discussion questions. Thank you!
             </p>
           ) : (
-            <p className={`${L.doneBody} mb-6`}>תודה על המענה. המורה יראה את התשובה בכיתה.</p>
+            <p className={`${L.doneBody} mb-6`}>Thanks for your response. Your teacher will see the answer in class.</p>
           )}
           <Link href="/student/home" className={L.doneButton}>
-            חזרה לבית
+            Back home
           </Link>
         </div>
       </Layout>
@@ -644,7 +644,7 @@ export default function StudentActivityPage({ activityId }) {
     { textualAssigned }
   );
 
-  const activitySubtitle = `${activityModeLabelHe(activity?.mode)} · שאלה ${effectiveIdx + 1} מתוך ${questionSet.length}`;
+  const activitySubtitle = `${activityModeLabelHe(activity?.mode)} · Question ${effectiveIdx + 1} of ${questionSet.length}`;
 
   const feedbackToneClass =
     feedback?.type === "correct"
@@ -708,7 +708,7 @@ export default function StudentActivityPage({ activityId }) {
         submitButton={
           mobileEmbeddedNumericSubmit
             ? {
-                label: isCurrentQuestionAnswered ? "התשובה נשמרה" : "שליחת תשובה",
+                label: isCurrentQuestionAnswered ? "Answer saved" : "Submit answer",
                 onClick: () => {
                   if (!busy && !isCurrentQuestionAnswered && String(answerInput).trim() !== "") {
                     void submitAnswer();
@@ -728,7 +728,7 @@ export default function StudentActivityPage({ activityId }) {
       testId === "math-scratchpad-toggle-dock-desktop"
         ? L.scratchpadDockDesktopScratchpadButtonOpen
         : L.scratchpadDockScratchpadButtonOpen;
-    const label = scratchpadOpen ? "סגור טיוטה" : "דף טיוטה";
+    const label = scratchpadOpen ? "Close draft" : "Scratch pad";
     return (
       <button
         type="button"
@@ -737,7 +737,7 @@ export default function StudentActivityPage({ activityId }) {
         data-testid={testId}
       >
         <span className="invisible select-none" aria-hidden="true">
-          דף טיוטה
+          Scratch pad
         </span>
         <span className="absolute inset-0 flex items-center justify-center overflow-hidden px-3">
           {label}
@@ -758,7 +758,7 @@ export default function StudentActivityPage({ activityId }) {
               }}
               className={L.scratchpadDockSecondaryButton}
             >
-              שאלה קודמת
+              Previous question
             </button>
           ) : null}
           {showDockNextQuestion ? (
@@ -769,7 +769,7 @@ export default function StudentActivityPage({ activityId }) {
               }}
               className={L.scratchpadDockSecondaryButton}
             >
-              שאלה הבאה
+              Next question
             </button>
           ) : null}
           {includeScratchpadToggle
@@ -784,7 +784,7 @@ export default function StudentActivityPage({ activityId }) {
             onClick={openSubmitConfirm}
             className={L.scratchpadDockFinishButton}
           >
-            סיום והגשה
+            Finish and submit
           </button>
         </div>
       ) : (
@@ -797,7 +797,7 @@ export default function StudentActivityPage({ activityId }) {
               }}
               className={L.footerButton}
             >
-              שאלה קודמת
+              Previous question
             </button>
           ) : null}
           {showDockNextQuestion ? (
@@ -808,7 +808,7 @@ export default function StudentActivityPage({ activityId }) {
               }}
               className={L.footerButton}
             >
-              שאלה הבאה
+              Next question
             </button>
           ) : null}
           <button
@@ -817,7 +817,7 @@ export default function StudentActivityPage({ activityId }) {
             onClick={openSubmitConfirm}
             className={L.footerSubmit}
           >
-            סיום והגשה
+            Finish and submit
           </button>
         </>
       )
@@ -828,7 +828,7 @@ export default function StudentActivityPage({ activityId }) {
       {isExplanationOnly ? (
         <>
           <p className={L.explanationBanner}>
-            אין צורך להגיש תשובה - קרא/י את התוכן
+            No need to submit an answer — read the content
           </p>
           <button
             type="button"
@@ -842,7 +842,7 @@ export default function StudentActivityPage({ activityId }) {
             }}
             className={L.submitButton}
           >
-            {effectiveIdx < questionSet.length - 1 ? "קראתי - המשך" : "סיימתי לקרוא"}
+            {effectiveIdx < questionSet.length - 1 ? "I read it — continue" : "I finished reading"}
           </button>
         </>
       ) : assignedActivityQuestionUsesChoiceUi(currentQuestion) ? (
@@ -892,7 +892,7 @@ export default function StudentActivityPage({ activityId }) {
                   ? "activity-geometry-numeric-answer"
                   : "activity-math-numeric-answer"
               }
-              placeholder="הקלידו תשובה"
+              placeholder="Type your answer"
               autoFocus={!scratchpadOpen || currentQuestion.subject !== "math"}
               suppressEmbeddedKeyboard={sharedScratchpadKeyboard}
               onInputFocus={() => setActiveScratchpadCell(null)}
@@ -926,7 +926,7 @@ export default function StudentActivityPage({ activityId }) {
                 busy || String(answerInput).trim() === "" || isCurrentQuestionAnswered
               }
               submitTestId="activity-submit-answer"
-              submitLabel={isCurrentQuestionAnswered ? "התשובה נשמרה" : "שליחת תשובה"}
+              submitLabel={isCurrentQuestionAnswered ? "Answer saved" : "Submit answer"}
             />
           </div>
           {includeInlineKeyboard && sharedScratchpadKeyboard
@@ -939,7 +939,7 @@ export default function StudentActivityPage({ activityId }) {
             className={L.textInput}
             value={answerInput}
             onChange={(e) => setAnswerInput(e.target.value)}
-            placeholder="הקלידו תשובה"
+            placeholder="Type your answer"
             dir="auto"
             readOnly={isCurrentQuestionAnswered}
             disabled={isCurrentQuestionAnswered}
@@ -960,7 +960,7 @@ export default function StudentActivityPage({ activityId }) {
           className={L.submitButton}
           data-testid="activity-submit-answer"
         >
-          {isCurrentQuestionAnswered ? "התשובה נשמרה" : "שליחת תשובה"}
+          {isCurrentQuestionAnswered ? "Answer saved" : "Submit answer"}
         </button>
       ) : null}
     </>
@@ -983,7 +983,7 @@ export default function StudentActivityPage({ activityId }) {
         className={className}
         data-testid="activity-submit-answer"
       >
-        {isCurrentQuestionAnswered ? "התשובה נשמרה" : "שליחת תשובה"}
+        {isCurrentQuestionAnswered ? "Answer saved" : "Submit answer"}
       </button>
     ) : null;
 
@@ -1001,7 +1001,7 @@ export default function StudentActivityPage({ activityId }) {
             }}
             className={L.scratchpadDockDesktopSecondaryButton}
           >
-            שאלה קודמת
+            Previous question
           </button>
         ) : null}
         {showDockNextQuestion ? (
@@ -1012,7 +1012,7 @@ export default function StudentActivityPage({ activityId }) {
             }}
             className={L.scratchpadDockDesktopSecondaryButton}
           >
-            שאלה הבאה
+            Next question
           </button>
         ) : null}
         {includeScratchpadToggle
@@ -1028,7 +1028,7 @@ export default function StudentActivityPage({ activityId }) {
           onClick={openSubmitConfirm}
           className={L.scratchpadDockDesktopFinishButton}
         >
-          סיום והגשה
+          Finish and submit
         </button>
       </div>
     ) : null;
@@ -1087,7 +1087,7 @@ export default function StudentActivityPage({ activityId }) {
             ) : showEnglishVocabAudio ? (
               <div
                 className="flex flex-col gap-0.5 w-full shrink-0"
-                dir="rtl"
+                dir="ltr"
                 data-testid="activity-english-audio-wrap"
               >
                 <div className="flex justify-start leading-none">
@@ -1148,13 +1148,13 @@ export default function StudentActivityPage({ activityId }) {
     <StudentActivityLayoutVariantProvider textualAssigned={textualAssigned}>
       <Layout {...layoutProps}>
         {activity?.mode === "live_lesson" && activity?.activityStatus === "paused" ? (
-          <div className={L.page} dir="rtl" lang="he">
-            <p className={`${L.waitText} text-center py-4`}>ממתינים למורה…</p>
+          <div className={L.page} dir="ltr" lang="en">
+            <p className={`${L.waitText} text-center py-4`}>Waiting for the teacher…</p>
           </div>
         ) : assignedActivityShell ? (
           wrapScratchpadVirtualInput(assignedActivityShell)
         ) : (
-          <div className={L.page} dir="rtl" lang="he" />
+          <div className={L.page} dir="ltr" lang="en" />
         )}
         {/* */}
         {showDiagramModal && questionDiagramSpec && currentQuestion && (
@@ -1163,20 +1163,20 @@ export default function StudentActivityPage({ activityId }) {
             onClick={() => setShowDiagramModal(false)}
             role="dialog"
             aria-modal="true"
-            aria-label="שרטוט מוגדל"
+            aria-label="Enlarged diagram"
           >
             <div
               className="w-full max-w-lg bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-500/50 rounded-2xl p-4 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
-              dir="rtl"
+              dir="ltr"
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="text-emerald-300 font-bold text-sm">שרטוט</span>
+                <span className="text-emerald-300 font-bold text-sm">Diagram</span>
                 <button
                   type="button"
                   onClick={() => setShowDiagramModal(false)}
                   className="text-slate-400 hover:text-white text-lg leading-none px-1"
-                  aria-label="סגור שרטוט"
+                  aria-label="Close diagram"
                 >
                   ✕
                 </button>

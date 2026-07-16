@@ -6,7 +6,7 @@ import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/
 import TeacherDiscussionQuestionPicker from "../../../../../components/teacher-portal/TeacherDiscussionQuestionPicker";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { loadClassActivityContextFromApiClass } from "../../../../../lib/teacher-portal/teacher-class-grade.js";
 
 export async function getServerSideProps(context) {
@@ -42,7 +42,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
         );
         const json = await res.json().catch(() => ({}));
         if (!res.ok) {
-          setError(json?.error?.message || "טעינת כיתה נכשלה");
+          setError(json?.error?.message || "Could not load class");
           return;
         }
         const cls = json?.data?.class;
@@ -50,14 +50,14 @@ export default function TeacherNewDiscussionPage({ classId }) {
         if (ctx.gradeKey) {
           setGradeLevel(ctx.gradeKey);
         } else if (ctx.gradeLocked) {
-          setError("רמת הכיתה של הכיתה אינה תקינה. פנה למנהל בית הספר.");
+          setError("This class grade level is invalid. Contact your school admin.");
         }
         if (ctx.subjectFocus) {
           setLockedSubject(ctx.subjectFocus);
           setSubjectLocked(true);
         }
       } catch {
-        if (!cancelled) setError("שגיאת רשת");
+        if (!cancelled) setError("Network error");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -70,7 +70,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title="פעילות דיון חדשה"
+        title="New discussion activity"
         backHref={`/teacher/class/${encodeURIComponent(classId)}/activities`}
       >
         <TeacherClassActivitiesNav classId={classId} active="discussion" />
@@ -82,7 +82,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
         ) : null}
 
         {loading ? (
-          <p className="text-white/60 text-sm">טוען…</p>
+          <p className="text-white/60 text-sm">Loading…</p>
         ) : accessToken ? (
           <TeacherDiscussionQuestionPicker
             accessToken={accessToken}

@@ -6,7 +6,7 @@ import TeacherPortalShell from "../../../../../components/teacher-portal/Teacher
 import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   worksheetModeLabelHe,
   worksheetStatusLabelHe,
@@ -43,14 +43,14 @@ export default function TeacherClassWorksheetsPage({ classId }) {
         return;
       }
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "שגיאה בטעינה");
+        setError(body?.error?.message || body?.error?.code || "Error loading");
         setPhase("error");
         return;
       }
       setWorksheets(body?.data?.worksheets || []);
       setPhase("ready");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
       setPhase("error");
     }
   }, [classId, router]);
@@ -62,27 +62,27 @@ export default function TeacherClassWorksheetsPage({ classId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title="דפי עבודה"
+        title="Worksheets"
         backHref="/teacher/dashboard"
-        backLabel="← חזרה ללוח הבקרה"
+        backLabel="← Back to dashboard"
       >
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
 
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <p className="text-white/70 text-sm">יצירה, הפעלה ומעקב אחר דפי עבודה PDF.</p>
+          <p className="text-white/70 text-sm">Create, launch, and track PDF worksheets.</p>
           <Link
             href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/new`}
             className="inline-flex items-center px-4 py-2 rounded-xl bg-violet-500/90 text-black font-semibold text-sm hover:bg-violet-400"
           >
-            יצירת דף עבודה חדש
+            Create new worksheet
           </Link>
         </div>
 
-        {phase === "loading" ? <p className="text-white/60">טוען…</p> : null}
+        {phase === "loading" ? <p className="text-white/60">Loading…</p> : null}
         {phase === "error" ? <p className="text-red-300">{error}</p> : null}
 
         {phase === "ready" && worksheets.length === 0 ? (
-          <p className="text-white/60">אין דפי עבודה עדיין.</p>
+          <p className="text-white/60">No worksheets yet.</p>
         ) : null}
 
         {phase === "ready" && worksheets.length > 0 ? (
@@ -90,14 +90,14 @@ export default function TeacherClassWorksheetsPage({ classId }) {
             {worksheets.map((w) => (
               <div
                 key={w.worksheetId}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-right"
+                className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-left"
               >
                 <div>
                   <h3 className="font-bold text-white">{w.title}</h3>
                   <p className="text-sm text-white/65 mt-1">
                     {worksheetModeLabelHe(w.worksheetMode)} · {worksheetStatusLabelHe(w.status)}
                     {w.physicalDueAt
-                      ? ` · מועד הגשה: ${new Date(w.physicalDueAt).toLocaleString("he-IL")}`
+                      ? ` · Due: ${new Date(w.physicalDueAt).toLocaleString("en-US")}`
                       : ""}
                   </p>
                 </div>
@@ -106,13 +106,13 @@ export default function TeacherClassWorksheetsPage({ classId }) {
                     href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(w.worksheetId)}`}
                     className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
                   >
-                    ניהול
+                    Manage
                   </Link>
                   <Link
                     href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(w.worksheetId)}/report`}
                     className="text-sm px-3 py-1.5 rounded-lg bg-violet-500/20 text-violet-100 border border-violet-400/30"
                   >
-                    דוח
+                    Report
                   </Link>
                 </div>
               </div>

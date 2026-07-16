@@ -4,7 +4,7 @@ import Layout from "../../../../../../components/Layout";
 import TeacherPortalShell from "../../../../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   activityModeLabelHe,
   studentActivityStatusLabelHe,
@@ -34,13 +34,13 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "טעינה נכשלה");
+        setError(body?.error?.message || body?.error?.code || "Load failed");
         return;
       }
       setData(body.data);
       setError("");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [batchId, router]);
 
@@ -57,7 +57,7 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title={activity?.title ? `מעקב: ${activity.title}` : "מעקב פעילות - ילדים פרטיים"}
+        title={activity?.title ? `Monitor: ${activity.title}` : "Activity monitor — private students"}
         backHref="/teacher/dashboard"
       >
         {error ? (
@@ -76,21 +76,21 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
 
         {summary ? (
           <p className="text-white/70 text-sm mb-4 tabular-nums">
-            לא התחילו: {summary.notStartedCount} · בתהליך: {summary.inProgressCount} ·
-            הגישו: {summary.submittedCount} / {summary.rosterCount}
+            Not started: {summary.notStartedCount} · In progress: {summary.inProgressCount} ·
+            Submitted: {summary.submittedCount} / {summary.rosterCount}
           </p>
         ) : null}
 
         {roster.length > 0 ? (
           <div className="overflow-x-auto rounded-xl border border-white/10 mb-6">
-            <table className="w-full text-sm text-right">
+            <table className="w-full text-sm text-left">
               <thead className="bg-white/5 text-white/70">
                 <tr>
-                  <th className="px-3 py-2">ילד/ה</th>
-                  <th className="px-3 py-2">סטטוס</th>
-                  <th className="px-3 py-2">תשובות</th>
-                  <th className="px-3 py-2">נכונות</th>
-                  <th className="px-3 py-2">דוח</th>
+                  <th className="px-3 py-2">Student</th>
+                  <th className="px-3 py-2">Status</th>
+                  <th className="px-3 py-2">Answers</th>
+                  <th className="px-3 py-2">Correct</th>
+                  <th className="px-3 py-2">Report</th>
                 </tr>
               </thead>
               <tbody>
@@ -111,7 +111,7 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
                         href={`/api/teacher/student-activities/${encodeURIComponent(s.activityId)}/report`}
                         className="text-amber-200/90 hover:text-amber-100 text-sm underline-offset-2 hover:underline"
                       >
-                        דוח
+                        Report
                       </a>
                     </td>
                   </tr>
@@ -120,7 +120,7 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
             </table>
           </div>
         ) : !error && !data ? (
-          <p className="text-white/50 text-sm">טוען…</p>
+          <p className="text-white/50 text-sm">Loading…</p>
         ) : null}
       </TeacherPortalShell>
     </Layout>

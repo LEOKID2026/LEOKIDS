@@ -75,7 +75,7 @@ export default async function handler(req, res) {
     }
     const student = owned.student;
     if (student.account_kind === "guest") {
-      return res.status(403).json({ ok: false, error: "לא זמין לאורח", code: "guest_not_eligible" });
+      return res.status(403).json({ ok: false, error: "Not available for guest accounts", code: "guest_not_eligible" });
     }
 
     const fromYmd = fromDate.toISOString().slice(0, 10);

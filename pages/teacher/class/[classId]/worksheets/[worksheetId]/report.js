@@ -6,7 +6,7 @@ import TeacherClassActivitiesNav from "../../../../../../components/teacher-port
 import TeacherWorksheetReport from "../../../../../../components/worksheet-activities/TeacherWorksheetReport";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 
 export async function getServerSideProps(context) {
   return {
@@ -36,12 +36,12 @@ export default function TeacherWorksheetReportPage({ classId, worksheetId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "שגיאה");
+        setError(body?.error?.code || "Error");
         return;
       }
       setReport(body.data.report);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [worksheetId, router]);
 
@@ -51,13 +51,13 @@ export default function TeacherWorksheetReportPage({ classId, worksheetId }) {
 
   return (
     <Layout>
-      <TeacherPortalShell title="דוח דף עבודה" backHref={`/teacher/class/${classId}/worksheets/${worksheetId}`}>
+      <TeacherPortalShell title="Worksheet report" backHref={`/teacher/class/${classId}/worksheets/${worksheetId}`}>
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
         {error ? <p className="text-red-300">{error}</p> : null}
         {report ? (
           <TeacherWorksheetReport classId={classId} worksheetId={worksheetId} report={report} />
         ) : (
-          <p className="text-white/60">טוען…</p>
+          <p className="text-white/60">Loading…</p>
         )}
       </TeacherPortalShell>
     </Layout>

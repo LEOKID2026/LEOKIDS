@@ -37,12 +37,12 @@ import {
   STUDENT_FOCUS_FALLBACK_BANNER,
   subjectLabelHe,
   supportSuggestionHe,
-} from "../../../lib/teacher-portal/teacher-ui.he.js";
+} from "../../../lib/teacher-portal/teacher-ui.js";
 import {
   SC_BTN_CLOSE_DETAILS,
   SC_BTN_STUDENT_DETAILS,
   SC_DETAILS_MODAL_TITLE,
-} from "../../../lib/school-portal/school-communication.he";
+} from "../../../lib/school-portal/school-communication.js";
 
 export async function getServerSideProps(context) {
   const studentId = String(context.params?.studentId || "").trim();
@@ -72,8 +72,8 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="דוח ילד/ה"
-          message="מזהה ילד/ה שגוי."
+          title="Student report"
+          message="Invalid student ID."
         />
       </Layout>
     );
@@ -84,7 +84,7 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportLoading
           backHref="/teacher/dashboard"
-          title="דוח ילד/ה"
+          title="Student report"
           hint={loadingHint}
         />
       </Layout>
@@ -96,8 +96,8 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="דוח ילד/ה"
-          message="אין לך הרשאה לצפות בדוח ילד/ה זה."
+          title="Student report"
+          message="You do not have permission to view this student's report."
         />
       </Layout>
     );
@@ -108,7 +108,7 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportError
           backHref="/teacher/dashboard"
-          title="דוח ילד/ה"
+          title="Student report"
           message={errorMessage}
           onRetry={reload}
         />
@@ -117,7 +117,7 @@ export default function TeacherStudentReportPage({ studentId }) {
   }
 
   const studentName =
-    report?.student?.full_name || report?.accountSnapshot?.displayName || "ילד/ה";
+    report?.student?.full_name || report?.accountSnapshot?.displayName || "Student";
   const guidance = report?.teacherGuidanceBlock || {};
   const tg = guidance.teacherGuidance || {};
   const summary = report?.summary || {};
@@ -134,12 +134,12 @@ export default function TeacherStudentReportPage({ studentId }) {
         .filter((s) => s.topicLabelHe)
         .map((s) => {
           const subj = subjectLabelHe(s.subject);
-          return `${subj ? `${subj} - ` : ""}${s.topicLabelHe} - ${formatPercent(s.accuracyPct)} הצלחה`;
+          return `${subj ? `${subj} - ` : ""}${s.topicLabelHe} - ${formatPercent(s.accuracyPct)} success`;
         })
     : (guidance.strengthsForTeacher || [])
         .map((s) => {
           const line = formatTopicLineHe(s.subject, s.topic);
-          return line ? `${line} - ${formatPercent(s.accuracy)} הצלחה` : null;
+          return line ? `${line} - ${formatPercent(s.accuracy)} success` : null;
         })
         .filter(Boolean);
 
@@ -148,7 +148,7 @@ export default function TeacherStudentReportPage({ studentId }) {
         .filter((s) => s.topicLabelHe)
         .map((s) => {
           const action = actionTypeLabelHe(s.code);
-          return action ? `${action} ב${s.topicLabelHe}` : null;
+          return action ? `${action} in ${s.topicLabelHe}` : null;
         })
         .filter(Boolean)
     : (guidance.supportSuggestions || []).map(supportSuggestionHe).filter(Boolean);
@@ -173,7 +173,7 @@ export default function TeacherStudentReportPage({ studentId }) {
           const headline = u.subtopicLabelHe
             ? `${u.topicLabelHe} - ${u.subtopicLabelHe}`
             : u.topicLabelHe;
-          const stats = `${u.evidenceSummary?.wrongCount ?? 0} טעויות מ-${u.evidenceSummary?.totalAnswers ?? 0} תשובות · ${formatPercent(u.evidenceSummary?.accuracyPct)} הצלחה`;
+          const stats = `${u.evidenceSummary?.wrongCount ?? 0} mistakes out of ${u.evidenceSummary?.totalAnswers ?? 0} answers · ${formatPercent(u.evidenceSummary?.accuracyPct)} success`;
           return subj ? `${subj} - ${headline} · ${stats}` : `${headline} · ${stats}`;
         })
     : (guidance.nextPracticeFocus || [])
@@ -191,7 +191,7 @@ export default function TeacherStudentReportPage({ studentId }) {
         data-student-id={studentId}
         data-report-ok="true"
       >
-        <TeacherPortalShell backHref="/teacher/dashboard" title={`דוח ילד/ה: ${studentName}`}>
+        <TeacherPortalShell backHref="/teacher/dashboard" title={`Student report: ${studentName}`}>
           <div className="mb-4 flex flex-wrap gap-3">
             <Link
               href={`/teacher/student/${encodeURIComponent(studentId)}/parent-report`}
@@ -199,14 +199,14 @@ export default function TeacherStudentReportPage({ studentId }) {
               rel="noopener noreferrer"
               className="inline-flex rounded border border-white/25 text-sm font-semibold px-4 py-2 hover:bg-white/10"
             >
-              דוח להורים
+              Parent report
             </Link>
             <Link
               href={`/teacher/worksheets/new?studentId=${encodeURIComponent(studentId)}`}
               className="inline-flex rounded border border-violet-400/40 bg-violet-500/15 text-sm font-semibold px-4 py-2 text-violet-100 hover:bg-violet-500/25"
               data-testid="teacher-student-new-worksheet-link"
             >
-              דף עבודה חדש
+              New worksheet
             </Link>
             <button
               type="button"
@@ -230,28 +230,28 @@ export default function TeacherStudentReportPage({ studentId }) {
             onEnableCustom={() => reportRange.setCustomDates(true)}
             onApplyCustom={() => {
               const result = reportRange.applyCustom();
-              if (!result.ok) alert("אנא בחר תאריכים תקינים");
+              if (!result.ok) alert("Please select valid dates");
             }}
             className="mb-6"
           />
 
           <section className="rounded-xl border border-white/15 bg-black/30 p-5 mb-6">
-            <h2 className="text-lg font-semibold mb-3">סיכום</h2>
+            <h2 className="text-lg font-semibold mb-3">Summary</h2>
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
               <div>
-                <dt className="text-white/60">מפגשי תרגול</dt>
+                <dt className="text-white/60">Practice sessions</dt>
                 <dd className="font-semibold">{summary.totalSessions ?? 0}</dd>
               </div>
               <div>
-                <dt className="text-white/60">תשובות</dt>
+                <dt className="text-white/60">Answers</dt>
                 <dd className="font-semibold">{summary.totalAnswers ?? 0}</dd>
               </div>
               <div>
-                <dt className="text-white/60">אחוז הצלחה</dt>
+                <dt className="text-white/60">Success rate</dt>
                 <dd className="font-semibold">{formatPercent(summary.accuracy)}</dd>
               </div>
               <div>
-                <dt className="text-white/60">פעילות אחרונה</dt>
+                <dt className="text-white/60">Last activity</dt>
                 <dd className="font-semibold">
                   {tg.lastActivityDate ? formatDateHe(tg.lastActivityDate) : "-"}
                 </dd>
@@ -259,20 +259,20 @@ export default function TeacherStudentReportPage({ studentId }) {
             </dl>
             {inactiveDays != null && inactiveDays >= 7 ? (
               <p className="mt-3 text-amber-200 text-sm">
-                הילד/ה לא תרגל ביותר מ-7 ימים.
+                This student has not practiced in over 7 days.
               </p>
             ) : null}
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-3">ביצועים לפי מקצוע</h2>
+            <h2 className="text-lg font-semibold mb-3">Performance by subject</h2>
             <SubjectSummaryCards subjects={report.subjects} />
           </section>
 
           <section className="rounded-xl border border-white/15 bg-black/30 p-5 mb-6">
-            <h2 className="text-lg font-semibold mb-3">המלצות לי כמורה</h2>
+            <h2 className="text-lg font-semibold mb-3">Recommendations for me as teacher</h2>
             {guidance.insufficientData ? (
-              <p className="text-white/70 text-sm">אין מספיק נתונים לניתוח</p>
+              <p className="text-white/70 text-sm">Not enough data to analyze</p>
             ) : isGuidanceV2 && (hasActionableGuidanceV2(guidance) || tierHeadline) ? (
               <div className="space-y-3">
                 {tierHeadline ? (
@@ -280,7 +280,7 @@ export default function TeacherStudentReportPage({ studentId }) {
                 ) : null}
                 {inactiveDays != null && inactiveDays >= 7 ? (
                   <p className="text-amber-200 text-sm mb-2">
-                    הילד/ה לא תרגל ביותר מ-7 ימים - מומלץ לעקוב.
+                    This student has not practiced in over 7 days — monitoring recommended.
                   </p>
                 ) : null}
                 {recommendationUnits.slice(0, 5).map((u) => {
@@ -313,9 +313,9 @@ export default function TeacherStudentReportPage({ studentId }) {
                     : u.topicLabelHe;
                   let recurrenceLine = null;
                   if (ev.recurrenceSignal === "full" && ev.recurrenceDays) {
-                    recurrenceLine = `חוזר ב-${ev.recurrenceDays} מפגשים`;
+                    recurrenceLine = `Recurring across ${ev.recurrenceDays} sessions`;
                   } else if (ev.recurrenceSignal === "partial" && ev.recurrenceDays) {
-                    recurrenceLine = `נראה ב-${ev.recurrenceDays} מפגשים`;
+                    recurrenceLine = `Seen across ${ev.recurrenceDays} sessions`;
                   }
                   const action = actionTypeLabelHe(u.recommendedActionType);
                   const assignment = assignmentTypeLabelHe(u.suggestedAssignmentType);
@@ -328,8 +328,8 @@ export default function TeacherStudentReportPage({ studentId }) {
                         {subj ? `${subj} - ${headline}` : headline}
                       </p>
                       <p className="text-white/75">
-                        {ev.wrongCount ?? 0} טעויות מ-{ev.totalAnswers ?? 0} תשובות ·{" "}
-                        {formatPercent(ev.accuracyPct)} הצלחה
+                        {ev.wrongCount ?? 0} mistakes out of {ev.totalAnswers ?? 0} answers ·{" "}
+                        {formatPercent(ev.accuracyPct)} Success
                       </p>
                       {recurrenceLine ? (
                         <p className="text-white/60">{recurrenceLine}</p>
@@ -349,7 +349,7 @@ export default function TeacherStudentReportPage({ studentId }) {
                 ) : null}
                 {inactiveDays != null && inactiveDays >= 7 ? (
                   <p className="text-amber-200 text-sm mb-2">
-                    הילד/ה לא תרגל ביותר מ-7 ימים - מומלץ לעקוב.
+                    This student has not practiced in over 7 days — monitoring recommended.
                   </p>
                 ) : null}
               </>
@@ -360,7 +360,7 @@ export default function TeacherStudentReportPage({ studentId }) {
           topUnit?.recentMistakeExamples?.length > 0 &&
           !guidance.insufficientData ? (
             <section className="mb-6">
-              <h2 className="text-lg font-semibold mb-2">דוגמאות טעויות אחרונות</h2>
+              <h2 className="text-lg font-semibold mb-2">Recent mistake examples</h2>
               <ul className="text-sm text-white/80 space-y-2">
                 {topUnit.recentMistakeExamples.slice(0, 2).map((ex, i) => {
                   const prompt =
@@ -369,7 +369,7 @@ export default function TeacherStudentReportPage({ studentId }) {
                       : ex.prompt || "-";
                   return (
                     <li key={i} className="rounded border border-white/10 px-3 py-2">
-                      {prompt} → {ex.userAnswer || "-"} (נכון: {ex.expectedAnswer || "-"})
+                      {prompt} → {ex.userAnswer || "-"} (correct: {ex.expectedAnswer || "-"})
                       {ex.date ? ` · ${formatDateHe(ex.date)}` : ""}
                     </li>
                   );
@@ -379,7 +379,7 @@ export default function TeacherStudentReportPage({ studentId }) {
           ) : null}
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">על מה להתמקד בתרגול הבא</h2>
+            <h2 className="text-lg font-semibold mb-2">What to focus on next</h2>
             {focusItems.length ? (
               <ul className="list-disc list-inside text-white/80 text-sm space-y-1">
                 {focusItems.map((item, i) => (
@@ -394,7 +394,7 @@ export default function TeacherStudentReportPage({ studentId }) {
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">אותות אזהרה</h2>
+            <h2 className="text-lg font-semibold mb-2">Warning signals</h2>
             {riskSignals.length ? (
               <ul className="list-disc list-inside text-white/80 text-sm space-y-1">
                 {riskSignals.map((t, i) => (
@@ -402,12 +402,12 @@ export default function TeacherStudentReportPage({ studentId }) {
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">לא זוהו אותות אזהרה בתקופה זו.</p>
+              <p className="text-white/60 text-sm">No warning signals detected in this period.</p>
             )}
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">חוזקות</h2>
+            <h2 className="text-lg font-semibold mb-2">Strengths</h2>
             {strengths.length ? (
               <ul className="list-disc list-inside text-white/80 text-sm space-y-1">
                 {strengths.map((t, i) => (
@@ -415,12 +415,12 @@ export default function TeacherStudentReportPage({ studentId }) {
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">אין מספיק נתונים להצגת חוזקות.</p>
+              <p className="text-white/60 text-sm">Not enough data to show strengths.</p>
             )}
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">הצעות לתמיכה</h2>
+            <h2 className="text-lg font-semibold mb-2">Support suggestions</h2>
             {suggestions.length ? (
               <ul className="list-disc list-inside text-white/80 text-sm space-y-1">
                 {suggestions.map((t, i) => (
@@ -428,20 +428,20 @@ export default function TeacherStudentReportPage({ studentId }) {
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">אין הצעות מיוחדות לתקופה זו.</p>
+              <p className="text-white/60 text-sm">No special suggestions for this period.</p>
             )}
           </section>
 
           <section className="rounded-xl border border-white/15 bg-black/30 p-5 mb-6">
-            <h2 className="text-lg font-semibold mb-2">גישת הורה - סיכום</h2>
+            <h2 className="text-lg font-semibold mb-2">Parent access — summary</h2>
             {gas.active > 0 ? (
-              <p className="text-emerald-300 text-sm">גישה פעילה ({gas.active})</p>
+              <p className="text-emerald-300 text-sm">Access active ({gas.active})</p>
             ) : gas.expired > 0 ? (
-              <p className="text-amber-300 text-sm">גישה פגת תוקף</p>
+              <p className="text-amber-300 text-sm">Access expired</p>
             ) : gas.revoked > 0 ? (
-              <p className="text-white/60 text-sm">גישה בוטלה</p>
+              <p className="text-white/60 text-sm">Access revoked</p>
             ) : (
-              <p className="text-white/70 text-sm">לא הוגדרה גישת הורה לילד/ה זה.</p>
+              <p className="text-white/70 text-sm">No parent access has been set up for this student.</p>
             )}
           </section>
 

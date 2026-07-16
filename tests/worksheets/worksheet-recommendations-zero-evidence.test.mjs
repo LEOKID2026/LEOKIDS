@@ -22,7 +22,7 @@ describe("worksheet-recommendations-zero-evidence", () => {
   test("zero evidence message matches spec", () => {
     assert.equal(
       WORKSHEET_RECOMMENDATIONS_ZERO_EVIDENCE_HE,
-      "אחרי עוד קצת תרגול נוכל להציע דפי עבודה אישיים לילד."
+      "After a bit more practice we can suggest personalized worksheets."
     );
   });
 
@@ -56,6 +56,6 @@ describe("worksheet-recommendations-zero-evidence", () => {
 
   test("recommendations API exposes empty message when no evidence", () => {
     const src = WORKSHEET_RECOMMENDATIONS_ZERO_EVIDENCE_HE;
-    assert.ok(src.includes("אחרי עוד קצת תרגול"));
+    assert.ok(src.includes("After a bit more practice"));
   });
 });

@@ -20,9 +20,9 @@ export default function StudentOfflineEducationalGamePage() {
     return (
       <div
         className="flex min-h-dvh items-center justify-center bg-gray-950 text-white"
-        dir="rtl"
+        dir="ltr"
       >
-        <p>משחק לא נמצא</p>
+        <p>Game not found</p>
       </div>
     );
   }

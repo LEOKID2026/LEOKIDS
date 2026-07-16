@@ -5,7 +5,7 @@ import TeacherPortalShell from "../../../../../components/teacher-portal/Teacher
 import TeacherGradingScreen from "../../../../../components/worksheet-activities/TeacherGradingScreen";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 
 export async function getServerSideProps(context) {
   return {
@@ -38,13 +38,13 @@ export default function TeacherDirectWorksheetGradePage({ worksheetId, studentId
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "שגיאה");
+        setError(body?.error?.code || "Error");
         return;
       }
       setQuestions(body.data.questions || []);
       setAnswers(body.data.answers || []);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     }
   }, [worksheetId, studentId, router]);
 
@@ -72,10 +72,10 @@ export default function TeacherDirectWorksheetGradePage({ worksheetId, studentId
         );
         const body = await res.json().catch(() => ({}));
         if (!res.ok) {
-          setError(body?.error?.code || "שגיאה");
+          setError(body?.error?.code || "Error");
           return;
         }
-        setMsg(markChecked ? "נשמר וסומן כנבדק" : "התקדמות נשמרה");
+        setMsg(markChecked ? "Saved and marked as reviewed" : "Progress saved");
         await load();
       } finally {
         setBusy(false);
@@ -101,7 +101,7 @@ export default function TeacherDirectWorksheetGradePage({ worksheetId, studentId
         setError(body?.error?.code || "grading_incomplete");
         return;
       }
-      setMsg(`פורסם לילד/ה · ציון: ${body?.data?.finalScorePct ?? "-"}%`);
+      setMsg(`Published to student · Score: ${body?.data?.finalScorePct ?? "-"}%`);
       await load();
     } finally {
       setBusy(false);
@@ -112,7 +112,7 @@ export default function TeacherDirectWorksheetGradePage({ worksheetId, studentId
 
   return (
     <Layout>
-      <TeacherPortalShell title="בדיקת ילד/ה" backHref={reportHref}>
+      <TeacherPortalShell title="Grade student" backHref={reportHref}>
         {error ? <p className="text-red-300 text-sm mb-2">{error}</p> : null}
         {msg ? <p className="text-emerald-300 text-sm mb-2">{msg}</p> : null}
         {questions.length ? (
@@ -124,7 +124,7 @@ export default function TeacherDirectWorksheetGradePage({ worksheetId, studentId
             onPublish={() => void publish()}
           />
         ) : (
-          <p className="text-white/60">טוען…</p>
+          <p className="text-white/60">Loading…</p>
         )}
       </TeacherPortalShell>
     </Layout>

@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   const messageId = String(req.body?.messageId || "").trim();
 
   if (!roomId || !messageId) {
-    return res.status(400).json({ ok: false, error: "חסר חדר או הודעה", code: "bad_request" });
+    return res.status(400).json({ ok: false, error: "Missing room or message", code: "bad_request" });
   }
 
   const result = await sendSafeMessageToRoom(auth.supabase, auth.studentId, roomId, messageId);

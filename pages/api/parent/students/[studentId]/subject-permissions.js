@@ -1,7 +1,7 @@
 import { getLearningSupabaseServiceRoleClient } from "../../../../../lib/learning-supabase/server";
 import { requireParentApiContext } from "../../../../../lib/auth/persona-guard.server.js";
 import { safeString } from "../../../../../lib/parent-server/report-data-aggregate.server.js";
-import { mapParentPanelApiError } from "../../../../../lib/parent-server/parent-api-errors.he.js";
+import { mapParentPanelApiError } from "../../../../../lib/parent-client/parent-api-errors.js";
 import {
   callEnableAllParentStudentSubjectsRpc,
   callEnsureParentStudentLearningPermissionsRpc,
@@ -11,21 +11,21 @@ import {
   isSchemaNotReadyError,
 } from "../../../../../lib/learning/subject-permissions/subject-access.server.js";
 import { isSubjectPermissionKey } from "../../../../../lib/learning/subject-permissions/subject-key-map.js";
-import { getSubjectPermissionLabelHe } from "../../../../../lib/learning/subject-permissions/subject-permission-labels.he.js";
+import { getSubjectPermissionLabelHe } from "../../../../../lib/learning/subject-permissions/subject-permission-labels.js";
 
 function mapRpcError(error) {
   if (isSchemaNotReadyError(error)) {
-    return { status: 503, message: "מערכת ההרשאות עדיין לא הופעלה במסד הנתונים" };
+    return { status: 503, message: "The permissions system is not enabled in the database yet" };
   }
   const message = String(error?.message || "");
   if (message.includes("SUBJECT_PERM_PARENT_MISMATCH")) {
-    return { status: 404, message: "הילד לא שייך להורה זה" };
+    return { status: 404, message: "This child is not linked to this parent" };
   }
   if (
     message.includes("SUBJECT_PERM_CATALOG_INCOMPLETE") ||
     message.includes("SUBJECT_CATALOG_GRADE_INCOMPLETE")
   ) {
-    return { status: 500, message: "קטלוג המקצועות אינו שלם" };
+    return { status: 500, message: "The subject catalog is incomplete" };
   }
   return { status: 500, message: mapParentPanelApiError(error?.message, "save") };
 }
@@ -119,7 +119,7 @@ export default async function handler(req, res) {
       } else if (body.subjectKey != null && typeof body.isEnabled === "boolean") {
         const subjectKey = String(body.subjectKey).trim();
         if (!isSubjectPermissionKey(subjectKey)) {
-          return res.status(400).json({ ok: false, error: "מקצוע לא תקין" });
+          return res.status(400).json({ ok: false, error: "Invalid subject" });
         }
         const { error } = await callSetParentStudentSubjectPermissionRpc(supabase, {
           parentId: ctx.parentUserId,

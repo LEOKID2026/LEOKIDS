@@ -10,7 +10,7 @@ import {
   activityModeLabelHe,
   activityStatusLabelHe,
 } from "../../../../../lib/classroom-activities/classroom-activities-labels.client.js";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.he.js";
+import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 
 export async function getServerSideProps(context) {
   const classId = String(context.params?.classId || "").trim();
@@ -43,14 +43,14 @@ export default function TeacherClassActivitiesPage({ classId }) {
         return;
       }
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "שגיאה בטעינה");
+        setError(body?.error?.message || body?.error?.code || "Error loading");
         setPhase("error");
         return;
       }
       setActivities(body?.data?.activities || []);
       setPhase("ready");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
       setPhase("error");
     }
   }, [classId, router]);
@@ -62,51 +62,51 @@ export default function TeacherClassActivitiesPage({ classId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title="פעילויות כיתה"
+        title="Class activities"
         backHref="/teacher/dashboard"
-        backLabel="← חזרה ללוח הבקרה"
+        backLabel="← Back to dashboard"
       >
         <TeacherClassActivitiesNav classId={classId} />
 
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <p className="text-white/70 text-sm">יצירה, הפעלה ומעקב אחר פעילויות לכיתה.</p>
+          <p className="text-white/70 text-sm">Create, launch, and track class activities.</p>
           <Link
             href={`/teacher/class/${encodeURIComponent(classId)}/activities/new`}
             className="inline-flex items-center px-4 py-2 rounded-xl bg-amber-500/90 text-black font-semibold text-sm hover:bg-amber-400"
           >
-            פעילות חדשה
+            New activity
           </Link>
         </div>
 
         {phase === "loading" ? (
-          <p className="text-white/70">טוען פעילויות…</p>
+          <p className="text-white/70">Loading activities…</p>
         ) : null}
         {phase === "error" ? (
           <div className="rounded-xl border border-red-400/30 bg-red-500/10 p-4 text-red-100">
             <p>{error}</p>
             <button type="button" onClick={load} className="mt-2 text-sm underline">
-              נסו שוב
+              Try again
             </button>
           </div>
         ) : null}
         {phase === "forbidden" ? (
-          <p className="text-red-200">אין הרשאה לצפות בפעילויות כיתה זו.</p>
+          <p className="text-red-200">You do not have permission to view this class's activities.</p>
         ) : null}
 
         {phase === "ready" && activities.length === 0 ? (
-          <p className="text-white/60 text-sm">אין פעילויות עדיין. צרו פעילות חדשה.</p>
+          <p className="text-white/60 text-sm">No activities yet. Create a new activity.</p>
         ) : null}
 
         {phase === "ready" && activities.length > 0 ? (
           <div className="overflow-x-auto rounded-xl border border-white/10">
-            <table className="w-full text-sm text-right">
+            <table className="w-full text-sm text-left">
               <thead className="bg-white/5 text-white/70">
                 <tr>
-                  <th className="px-3 py-2">כותרת</th>
-                  <th className="px-3 py-2">מצב</th>
-                  <th className="px-3 py-2">סוג</th>
-                  <th className="px-3 py-2">התקדמות</th>
-                  <th className="px-3 py-2">פעולות</th>
+                  <th className="px-3 py-2">Title</th>
+                  <th className="px-3 py-2">Status</th>
+                  <th className="px-3 py-2">Type</th>
+                  <th className="px-3 py-2">Progress</th>
+                  <th className="px-3 py-2">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -126,7 +126,7 @@ export default function TeacherClassActivitiesPage({ classId }) {
                       </td>
                       <td className="px-3 py-2">
                         <Link href={href} className="text-amber-300 hover:underline">
-                          {a.status === "draft" ? "עריכה / הפעלה" : "צפייה"}
+                          {a.status === "draft" ? "Edit / launch" : "View"}
                         </Link>
                       </td>
                     </tr>

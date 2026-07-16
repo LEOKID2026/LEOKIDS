@@ -9,7 +9,7 @@ import {
   SCHOOL_LOADING_DATA,
   SCHOOL_SUBJECTS_TITLE,
   schoolAuthFetch,
-} from "../../../lib/school-portal/school-ui.he";
+} from "../../../lib/school-portal/school-ui.js";
 
 export default function SchoolTeacherDetailPage() {
   const router = useRouter();
@@ -65,18 +65,18 @@ export default function SchoolTeacherDetailPage() {
         showTeacherDashboardLink={me?.hasTeacherActivity}
       >
         {state === "error" ? (
-          <p className="text-red-300 text-sm text-right" role="alert">
-            {portalError || "שגיאה בטעינת הפורטל"}
+          <p className="text-red-300 text-sm text-left" role="alert">
+            {portalError || "Error loading portal"}
           </p>
         ) : null}
         {state !== "error" && portalBlocking ? (
-          <p className="text-white/60 text-sm text-right">{SCHOOL_LOADING}</p>
+          <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING}</p>
         ) : null}
         {state !== "error" && !portalBlocking && hydrationWaiting ? (
-          <p className="text-white/60 text-sm text-right">{SCHOOL_LOADING_DATA}</p>
+          <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING_DATA}</p>
         ) : null}
         {state !== "error" && !portalBlocking && !hydrationWaiting && routeInvalid ? (
-          <p className="text-white/60 text-sm text-right">לא נמצא מזהה מורה בכתובת.</p>
+          <p className="text-white/60 text-sm text-left">No teacher ID found in the URL.</p>
         ) : null}
         {state !== "error" && !portalBlocking && !hydrationWaiting && !routeInvalid ? (
           <SchoolTeacherDetailContent

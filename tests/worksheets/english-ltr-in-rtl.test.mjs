@@ -58,12 +58,13 @@ describe("english-ltr-in-rtl", () => {
     assert.ok(printable.ltrSpans?.length);
   });
 
-  test("HTML root is RTL with embedded english-ltr spans", () => {
+  test("HTML root is LTR with embedded english-ltr spans", () => {
     const payload = buildWorksheetPayload([TRANSLATION_RAW], META, {
       subjectId: "english",
     });
     const html = worksheetPayloadToPreviewHtml(payload);
-    assert.ok(html.includes('dir="rtl"'));
+    assert.ok(html.includes('dir="ltr"'));
+    assert.ok(!html.includes('dir="rtl"'));
     assert.ok(html.includes('class="english-ltr"'));
     assert.ok(html.includes("dog"));
   });
