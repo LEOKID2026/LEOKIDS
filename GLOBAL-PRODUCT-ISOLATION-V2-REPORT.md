@@ -11,7 +11,7 @@
 | When | SHA |
 |------|-----|
 | Start (matched `origin/main`) | `fafd195a48e3144bac194fdac566f49af4234c26` |
-| End | `82b4c8907b129604d6def601fbecf25aeb8c59b6` |
+| End | `9f256026c5846ee6f69dc09effdf686c37141786` |
 
 ---
 
@@ -23,6 +23,7 @@
 | `4630a57` | `feat(sql): add global-product-isolation-v2 staged package` |
 | `9afd956` | `test(global): add product-isolation suite and v2 completion report` |
 | `82b4c89` | `docs: finalize product-isolation v2 report HEAD and commit SHAs` |
+| `9f25602` | `docs: set product-isolation v2 report tip HEAD to 82b4c89` (tip itself is this commit) |
 
 ---
 
