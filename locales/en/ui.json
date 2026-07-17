@@ -259,6 +259,8 @@
     "surpriseBox": "Surprise box",
     "surpriseReadyOpen": "Surprise box ready to open",
     "surpriseNextCountdown": "Surprise box — next box ready in {time}",
-    "nextBoxIn": "Next box in"
+    "nextBoxIn": "Next box in",
+    "youHaveOneBox": "You have 1 box",
+    "youHaveBoxes": "You have {count} boxes"
   }
 }
