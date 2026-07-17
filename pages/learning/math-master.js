@@ -864,6 +864,9 @@ export default function MathMaster() {
   const bookContextRef = useRef(null);
   const bookContextConsumedRef = useRef(false);
   const [previousExplanationQuestion, setPreviousExplanationQuestion] = useState(null);
+  useEffect(() => {
+    if (mode !== "learning") setShowPreviousSolution(false);
+  }, [mode]);
   const [animationStep, setAnimationStep] = useState(0);
   const [autoPlay, setAutoPlay] = useState(false);
   const [scratchpadCloseSignal, setScratchpadCloseSignal] = useState(0);
@@ -955,9 +958,10 @@ export default function MathMaster() {
     return null;
   };
   
-  const isShowingAnySolution = showSolution || showPreviousSolution;
+  const isShowingAnySolution =
+    showSolution || (mode === "learning" && showPreviousSolution);
   const explanationQuestion =
-    showPreviousSolution && previousExplanationQuestion
+    mode === "learning" && showPreviousSolution && previousExplanationQuestion
       ? previousExplanationQuestion
       : currentQuestion;
 
@@ -5033,7 +5037,7 @@ export default function MathMaster() {
                           onClick={stopGame}
                           className={MB.btnStop}
                         >{ms.stop}</button>
-                        {(mode === "learning" || mode === "practice") &&
+                        {mode === "learning" &&
                           previousExplanationQuestion && (
                             <button
                               type="button"
@@ -5045,7 +5049,7 @@ export default function MathMaster() {
 
                       {/* */}
                       {(((mode === "learning" && showSolution && currentQuestion) ||
-                        ((mode === "learning" || mode === "practice") &&
+                        (mode === "learning" &&
                           showPreviousSolution &&
                           previousExplanationQuestion)) &&
                         explanationQuestion) && (() => {

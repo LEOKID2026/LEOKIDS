@@ -730,6 +730,9 @@ export default function ScienceMaster() {
     clearWrongAnswerAdvanceState,
   } = useLearningWrongAnswerAdvance(showSolution, showPreviousSolution);
   const [previousExplanationQuestion, setPreviousExplanationQuestion] = useState(null);
+  useEffect(() => {
+    if (mode !== "learning") setShowPreviousSolution(false);
+  }, [mode]);
   const [showTheoryHelp, setShowTheoryHelp] = useState(false);
   const [showHowTo, setShowHowTo] = useState(false);
   const [errorExplanation, setErrorExplanation] = useState("");
@@ -2666,10 +2669,12 @@ function saveScienceAnswerInParallel({
     }
   }
 
-  const isShowingAnySolution = showSolution || showPreviousSolution;
-  const explanationQuestion = showPreviousSolution
-    ? previousExplanationQuestion
-    : currentQuestion;
+  const isShowingAnySolution =
+    showSolution || (mode === "learning" && showPreviousSolution);
+  const explanationQuestion =
+    mode === "learning" && showPreviousSolution && previousExplanationQuestion
+      ? previousExplanationQuestion
+      : currentQuestion;
 
   const closeExplanationModal = () => {
     setShowSolution(false);
@@ -3327,7 +3332,7 @@ function saveScienceAnswerInParallel({
                       onClick={stopGame}
                       className={MB.btnStop}
                     >{ms.stop}</button>
-                    {(mode === "learning" || mode === "practice") &&
+                    {mode === "learning" &&
                       previousExplanationQuestion && (
                       <button
                         type="button"

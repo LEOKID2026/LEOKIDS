@@ -484,6 +484,9 @@ export default function EnglishMaster() {
     clearWrongAnswerAdvanceState,
   } = useLearningWrongAnswerAdvance(showSolution, showPreviousSolution);
   const [previousExplanationQuestion, setPreviousExplanationQuestion] = useState(null);
+  useEffect(() => {
+    if (mode !== "learning") setShowPreviousSolution(false);
+  }, [mode]);
   // Phase 2: tracks whether any explanation/hint/step-by-step was viewed for the current question
   const stepByStepViewedRef = useRef(false);
   const bookContextRef = useRef(null);
@@ -1717,10 +1720,12 @@ export default function EnglishMaster() {
     saveRunToStorage();
   }
 
-  const isShowingAnySolution = showSolution || showPreviousSolution;
-  const explanationQuestion = showPreviousSolution
-    ? previousExplanationQuestion
-    : currentQuestion;
+  const isShowingAnySolution =
+    showSolution || (mode === "learning" && showPreviousSolution);
+  const explanationQuestion =
+    mode === "learning" && showPreviousSolution && previousExplanationQuestion
+      ? previousExplanationQuestion
+      : currentQuestion;
 
   const closeExplanationModal = () => {
     setShowSolution(false);
@@ -2544,7 +2549,7 @@ export default function EnglishMaster() {
                 </div>
                 <select
                   value={gradeNumber}
-                  title={ms.t("learning.master.gradeTitle", { grade: gradeLabels[gradeNumber - 1] })}
+                  title={ms.getGradeName(`g${gradeNumber}`)}
                   disabled={!canPickGrade}
                   aria-disabled={!canPickGrade || undefined}
                   onChange={(e) => handleGradeNumberChange(e.target.value)}
@@ -2552,7 +2557,7 @@ export default function EnglishMaster() {
                 >
                   {GRADE_ORDER.map((_, idx) => (
                     <option key={`grade-${idx + 1}`} value={idx + 1}>
-                      {ms.t("learning.master.gradeTitle", { grade: gradeLabels[idx] })}
+                      {ms.getGradeName(`g${idx + 1}`)}
                     </option>
                   ))}
                 </select>
@@ -2947,7 +2952,7 @@ export default function EnglishMaster() {
                         onClick={stopGame}
                         className={MB.btnStop}
                       >{ms.stop}</button>
-                      {(mode === "learning" || mode === "practice") &&
+                      {mode === "learning" &&
                         previousExplanationQuestion && (
                           <button
                             type="button"

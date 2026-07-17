@@ -519,6 +519,9 @@ export default function GeometryMaster() {
     clearWrongAnswerAdvanceState,
   } = useLearningWrongAnswerAdvance(showSolution, showPreviousSolution);
   const [previousExplanationQuestion, setPreviousExplanationQuestion] = useState(null);
+  useEffect(() => {
+    if (mode !== "learning") setShowPreviousSolution(false);
+  }, [mode]);
   // Phase 2: tracks whether any explanation/hint/step-by-step was viewed for the current question
   const stepByStepViewedRef = useRef(false);
   const bookContextRef = useRef(null);
@@ -2435,10 +2438,12 @@ export default function GeometryMaster() {
     return `${icon}${ms.getTopicName(t)}`.trim();
   };
 
-  const isShowingAnySolution = showSolution || showPreviousSolution;
-  const explanationQuestion = showPreviousSolution
-    ? previousExplanationQuestion
-    : currentQuestion;
+  const isShowingAnySolution =
+    showSolution || (mode === "learning" && showPreviousSolution);
+  const explanationQuestion =
+    mode === "learning" && showPreviousSolution && previousExplanationQuestion
+      ? previousExplanationQuestion
+      : currentQuestion;
 
   const geometryAnimationSteps = useMemo(() => {
     if (!isShowingAnySolution || !explanationQuestion) return null;
@@ -3425,7 +3430,7 @@ export default function GeometryMaster() {
                               onClick={stopGame}
                               className={MB.btnStop}
                             >{ms.stop}</button>
-                            {(mode === "learning" || mode === "practice") &&
+                            {mode === "learning" &&
                               previousExplanationQuestion &&
                               currentQuestion.params?.kind !== "no_question" && (
                                 <button
