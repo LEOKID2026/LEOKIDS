@@ -57,46 +57,48 @@ function translateEnglishPhrase(text) {
 function rebuildEnglishStem(question) {
   const p = question?.params || {};
   const topic = String(p.topic || question?.topic || "");
+  const patternFamily = String(p.patternFamily || "");
 
-  if (topic === "vocabulary" || p.patternFamily?.startsWith("vocab_")) {
-    const en =
+  if (topic === "vocabulary" || patternFamily.startsWith("vocab_")) {
+    const enWord =
       p.word && !containsHebrew(String(p.word))
-        ? p.word
+        ? String(p.word).trim()
         : p.translation && !containsHebrew(String(p.translation))
-          ? p.translation
-          : null;
-    if (p.direction === "he_to_en" && en) {
-      return `Write the English word: "${en}"`;
+          ? String(p.translation).trim()
+          : "";
+    if (p.direction === "en_to_he" && enWord) {
+      return `What does "${enWord}" mean? Choose the best English match.`;
     }
-    if (p.direction === "en_to_he" && en) {
-      return `What does "${en}" mean? Choose the best English match.`;
+    if (p.direction === "he_to_en" && enWord) {
+      // Global writing-style recall: instruction first, quoted English word second.
+      return `Write the English word: "${enWord}"`;
     }
-    if (en) return `Which word is "${en}"?`;
+    if (enWord) return `What does "${enWord}" mean? Choose the best English match.`;
   }
 
-  if (topic === "translation" || p.patternFamily?.startsWith("translation_")) {
-    if (p.direction === "en_to_he" && p.sentence && !containsHebrew(String(p.sentence))) {
-      return `Write in English: "${p.sentence}"`;
-    }
-    if (p.direction === "he_to_en" && p.sentence && !containsHebrew(String(p.sentence))) {
-      return `Choose the correct English sentence: "${p.sentence}"`;
-    }
+  if (topic === "translation" || patternFamily.startsWith("translation_")) {
     if (p.sentence && !containsHebrew(String(p.sentence))) {
-      return `Choose the correct option for: "${p.sentence}"`;
+      return `Choose the correct English sentence.`;
     }
     if (p.translation && !containsHebrew(String(p.translation))) {
       return `Write in English: "${p.translation}"`;
     }
   }
 
-  if (topic === "writing") {
-    if (p.type === "word" && p.wordEn) {
-      return `Write the English word: ${p.wordEn}`;
+  if (topic === "writing" || patternFamily.startsWith("writing_")) {
+    if (p.type === "word" && p.wordEn && !containsHebrew(String(p.wordEn))) {
+      return `Write the English word: "${String(p.wordEn).trim()}"`;
     }
-    if (p.type === "sentence" && p.sentenceEn) {
-      return `Write this sentence in English.`;
+    if (p.type === "sentence") {
+      return `Complete the sentence.`;
     }
-    if (p.wordEn) return `Write the English word: ${p.wordEn}`;
+    if (p.wordEn && !containsHebrew(String(p.wordEn))) {
+      return `Write the English word: "${String(p.wordEn).trim()}"`;
+    }
+  }
+
+  if (topic === "sentences" || patternFamily.startsWith("sentence_")) {
+    return `Choose the correct English sentence.`;
   }
 
   if (topic === "grammar" && question?.question && !containsHebrew(String(question.question))) {

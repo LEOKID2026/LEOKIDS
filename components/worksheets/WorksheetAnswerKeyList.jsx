@@ -25,8 +25,8 @@ export default function WorksheetAnswerKeyList({ answers, mode }) {
           className={isPrint ? "answer-key-item" : "worksheet-screen-answer-card"}
         >
           <div className={isPrint ? "answer-key-item-head" : "worksheet-screen-answer-head"}>
+            <span>Answer</span>{" "}
             <span className="worksheet-question-number">{row.displayIndex}</span>
-            <span>Answer</span>
           </div>
           <WorksheetAnswerKeyAnswer row={row} />
           {row.explanationHe ? (

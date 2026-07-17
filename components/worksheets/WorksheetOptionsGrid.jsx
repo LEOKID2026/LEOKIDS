@@ -40,7 +40,7 @@ export default function WorksheetOptionsGrid({
       : "worksheet-options worksheet-options-grid";
 
   return (
-    <div className="worksheet-options-section">
+    <div className="worksheet-options-section" dir="ltr">
       {showHeading ? <p className="worksheet-options-heading">Options:</p> : null}
       <ol className={listClass}>
         {optionsHe.map((opt, i) => {
@@ -64,7 +64,7 @@ export default function WorksheetOptionsGrid({
             : `worksheet-option-text${caseClass}`;
 
           return (
-            <li key={`${i}-${optText}`} className="worksheet-option-cell">
+            <li key={`${i}-${optText}`} className="worksheet-option-cell" dir="ltr">
               <span className="worksheet-option-label" aria-hidden="true">
                 {label}.
               </span>

@@ -23,8 +23,8 @@ export default function WorksheetPrintQuestionCard({ question, variant = "defaul
   return (
     <section className={sectionClass}>
       <h2 className="worksheet-question-title">
+        <span>{ui.questionLabel}</span>{" "}
         <span className="worksheet-question-number">{question.displayIndex}</span>
-        <span>{ui.questionLabel}</span>
       </h2>
       <div className="worksheet-question-content">
         <WorksheetQuestionRouter question={question} />

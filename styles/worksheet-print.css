@@ -1,5 +1,5 @@
 /**
- * Print + preview document styles for parent worksheets — A4, RTL.
+ * Print + preview document styles for Global worksheets — A4, LTR.
  */
 
 @page {
@@ -9,8 +9,10 @@
 
 /* ── Document root ── */
 .worksheet-root {
-  direction: rtl;
-  font-family: "Noto Sans Hebrew", system-ui, "Segoe UI", sans-serif;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  font-family: "Segoe UI", system-ui, sans-serif;
   color: #111;
   background: #fff;
   line-height: 1.55;
@@ -315,12 +317,15 @@
 
 .worksheet-math-answer-line {
   display: flex;
+  flex-direction: row;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.45rem;
   margin-top: auto;
   padding-top: 0.55rem;
   width: 100%;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .worksheet-math-answer-line-label {
@@ -328,6 +333,8 @@
   font-weight: 700;
   color: #334155;
   white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .worksheet-math-answer-line-blank {
@@ -369,8 +376,9 @@
   margin: 0;
   width: 100%;
   display: block;
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
   align-self: stretch;
   line-height: 1.5;
   font-size: 0.95rem;
@@ -409,8 +417,9 @@
   margin: 0;
   width: 100%;
   display: block;
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
   align-self: stretch;
   line-height: 1.55;
   font-size: 0.95rem;
@@ -562,8 +571,8 @@
   white-space: pre-wrap;
   line-height: 1.55;
   font-size: 0.92rem;
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
   unicode-bidi: isolate;
 }
 
@@ -594,8 +603,8 @@
 .worksheet-remainder-prompt {
   margin: 0.25rem 0 0;
   width: 100%;
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
   unicode-bidi: isolate;
   font-size: 0.92rem;
   line-height: 1.4;
@@ -623,6 +632,9 @@
   font-size: 0.82rem;
   font-weight: 700;
   color: #334155;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
 }
 
 .worksheet-options {
@@ -647,6 +659,7 @@
 
 .worksheet-option-cell {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.35rem;
   padding: 0.4rem 0.5rem;
@@ -656,6 +669,8 @@
   line-height: 1.35;
   background: #fff;
   box-shadow: none;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .worksheet-option-label {
@@ -663,6 +678,8 @@
   color: #334155;
   flex-shrink: 0;
   min-width: 1.35rem;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .worksheet-option-text {
@@ -915,10 +932,11 @@
   text-align: left;
 }
 
-/* English phonics: Hebrew instruction + large LTR letter/word stimulus */
+/* English phonics: English instruction + large LTR letter/word stimulus */
 .worksheet-phonics-instruction {
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
   margin-bottom: 0.35rem;
 }
 

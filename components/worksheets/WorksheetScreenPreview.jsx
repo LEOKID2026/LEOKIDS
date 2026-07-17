@@ -16,9 +16,14 @@ export default function WorksheetScreenPreview({ worksheetPayload }) {
   const { meta, questions } = worksheetPayload;
 
   return (
-    <div className="worksheet-screen-preview" aria-label={ui.previewTitle}>
+    <div
+      className="worksheet-screen-preview"
+      aria-label={ui.previewTitle}
+      dir="ltr"
+      lang="en"
+    >
       <WorksheetScreenHeader titleHe={ui.documentTitle} meta={meta} variant="worksheet" />
-      <WorksheetQuestionList questions={questions} mode="screen" />
+      <WorksheetQuestionList questions={questions} mode="screen" subjectId={meta.subjectId} />
     </div>
   );
 }

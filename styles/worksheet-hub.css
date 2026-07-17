@@ -537,6 +537,9 @@
 /* ── Screen preview (on-site, wide) ── */
 .worksheet-screen-preview {
   width: 100%;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
 }
 
 .worksheet-screen-info-card {

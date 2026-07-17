@@ -1,5 +1,5 @@
 /**
- * English stem with LTR Latin runs inside an RTL worksheet page.
+ * English stem with LTR Latin runs inside a Global LTR worksheet page.
  */
 
 import { EnglishLtrBlock } from "./renderers/EnglishLtrBlock.jsx";
@@ -14,7 +14,11 @@ import { EnglishLtrBlock } from "./renderers/EnglishLtrBlock.jsx";
 export default function EnglishStemText({ stemHe = "", ltrSpans = [], className = "worksheet-stem" }) {
   const text = String(stemHe || "");
   if (!ltrSpans?.length) {
-    return <p className={className}>{text}</p>;
+    return (
+      <p className={className} dir="ltr">
+        {text}
+      </p>
+    );
   }
 
   const sorted = [...ltrSpans].sort((a, b) => a.start - b.start);
@@ -37,5 +41,9 @@ export default function EnglishStemText({ stemHe = "", ltrSpans = [], className 
     parts.push(text.slice(cursor));
   }
 
-  return <p className={className}>{parts}</p>;
+  return (
+    <p className={className} dir="ltr">
+      {parts}
+    </p>
+  );
 }

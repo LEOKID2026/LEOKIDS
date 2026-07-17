@@ -28,6 +28,7 @@ const TEST_FILES = [
   "worksheet-mixed-topics.test.mjs",
   "english-all-topics-selector.test.mjs",
   "english-ltr-in-rtl.test.mjs",
+  "worksheet-global-ltr-direction.test.mjs",
   "english-phonics-blocked.test.mjs",
   "parent-worksheets-hub.test.mjs",
   "worksheet-include-answers-option.test.mjs",

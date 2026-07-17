@@ -39,8 +39,8 @@ function WorksheetQuestionSection({ question, isPrint, subjectId, index = 0 }) {
   return (
     <section className={sectionClass}>
       <h2 className={isPrint ? "worksheet-question-title" : "worksheet-screen-question-title"}>
+        <span>{ui.questionLabel}</span>{" "}
         <span className="worksheet-question-number">{question.displayIndex}</span>
-        <span>{ui.questionLabel}</span>
       </h2>
       <div className={isPrint ? "worksheet-question-content" : "worksheet-screen-question-content"}>
         <WorksheetQuestionRouter question={question} />
