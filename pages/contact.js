@@ -44,9 +44,9 @@ const socialBtnBase =
 
 const contactSeo = getPublicPageSeo("contact");
 
+/** Contact form hidden until mail delivery is configured (IL parity — opt-in via env only). */
 const CONTACT_FORM_VISIBLE =
-  process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED !== "false" &&
-  process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED !== "0";
+  process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true";
 
 const faqs = [
   {
