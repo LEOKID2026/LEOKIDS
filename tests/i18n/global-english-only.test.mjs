@@ -48,6 +48,8 @@ const PATH_ALLOW = [
   /^components\/admin\//,
   /^lib\/admin-server\//,
   /^lib\/admin-portal\//,
+  // Admin-only public worksheet visit metric labels (Hebrew admin dashboard cards; never rendered to public users)
+  /^lib\/analytics\/public-worksheet-analytics\.server\.js$/,
   // Admin video media metadata index (not student UI)
   /^data\/admin-video-builder\//,
   // Curriculum spine / audit catalogs used for tooling

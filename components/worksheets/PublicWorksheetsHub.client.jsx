@@ -17,6 +17,8 @@ import {
   clearWorksheetPublicAnswerKeySession,
   saveWorksheetPublicPreviewSession,
 } from "../../lib/worksheets/worksheet-public-preview-session.client.js";
+import { getPublicWorksheetVisitSessionId } from "../../lib/analytics/public-worksheet-session.client.js";
+import { trackPublicWorksheetPageViewedOnce } from "../../lib/analytics/track-public-worksheet-page-view.client.js";
 
 /**
  * @param {string} subjectId
@@ -99,6 +101,10 @@ export default function PublicWorksheetsHub({ T }) {
     fetchCatalog();
   }, [fetchCatalog]);
 
+  useEffect(() => {
+    trackPublicWorksheetPageViewedOnce();
+  }, []);
+
   const openPreview = useCallback(
     (worksheetPayload, generation, includeAnswersValue, source, slug) => {
       clearWorksheetPublicAnswerKeySession();
@@ -145,6 +151,7 @@ export default function PublicWorksheetsHub({ T }) {
     setCreateError("");
     try {
       const newSeed = Math.floor(Math.random() * 1_000_000);
+      const visitSessionId = getPublicWorksheetVisitSessionId();
       /** @type {Record<string, unknown>} */
       const body = {
         subjectId: createForm.subjectId,
@@ -158,6 +165,7 @@ export default function PublicWorksheetsHub({ T }) {
             ? createForm.mathPracticeFormat
             : undefined,
         preferMcq: createForm.preferMcq === true,
+        ...(visitSessionId ? { visitSessionId } : {}),
       };
 
       const res = await fetch("/api/public/worksheets/generate", {
