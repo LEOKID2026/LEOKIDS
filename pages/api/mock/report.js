@@ -6,10 +6,16 @@ import {
   getMockLocalizedReport,
 } from "../../../lib/global/mock-fixtures.js";
 import { createTranslator } from "../../../lib/i18n/create-translator.js";
+import { isGlobalMockModeEnabled } from "../../../lib/global/write-barrier.js";
 
 export default function handler(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
+  }
+
+  const isProd = process.env.NODE_ENV === "production";
+  if (isProd && !isGlobalMockModeEnabled()) {
+    return res.status(404).json({ ok: false, error: "not_found" });
   }
 
   const locale = String(req.query?.locale || "en").trim() || "en";
