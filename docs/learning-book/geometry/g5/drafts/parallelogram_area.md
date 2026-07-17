@@ -1,4 +1,4 @@
-﻿# שטח מקבילית
+# Area of a Parallelogram
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח מקבילית `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Parallelogram |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שטח = בסיס × גובה; 8, 5 ס״מ; 40 סמ״ר
+**Content scope:** area = base × height; 8, 5 cm; 40 cm²
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שטח מקבילית.
-שטח = בסיס × גובה.
-הגובה — מרחק מאונך לבסיס (לא הצלע הנטויה!).
+Today we'll learn the area of a parallelogram.
+Area = base × height.
+The height — the perpendicular distance to the base (not the slanted side!).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallelogram_area
 :::
 
-במקבילית:
-- בסיס — צלע שבחרנו (למשל 8 ס״מ)
-- גובה — קטע מאונך מהבסיס לצלע המקבילה (5 ס״מ)
-שטח = בסיס × גובה
-לא משתמשים בצלע אלכסונית — רק בגובה.
+In a parallelogram:
+- base — the side we choose (for example 8 cm)
+- height — the perpendicular segment from the base to the parallel side (5 cm)
+Area = base × height
+Don't use the slanted side — only the height.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס 8 ס״מ, גובה 5 ס״מ:
-8 × 5 = 40 סמ״ר
+Base 8 cm, height 5 cm:
+8 × 5 = 40 cm²
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מקבילית — בסיס 8 ס״מ, גובה 5 ס״מ. מה השטח?
+Parallelogram — base 8 cm, height 5 cm. What is the area?
 8 × 5 = 40
-40 סמ״ר.
+40 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מקבילית: בסיס 6 ס״מ, גובה 7 ס״מ — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Parallelogram: base 6 cm, height 7 cm — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-מקבילית: בסיס 6 ס״מ, גובה 7 ס״מ — מה השטח?
-הכפלת בסיס בגובה המאונך:
+Parallelogram: base 6 cm, height 7 cm — what is the area?
+Multiply base by the perpendicular height:
 6 × 7 = 42
-שטח = 42 סמ״ר
+Area = 42 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח מקבילית = בסיס × גובה.
-בתרגול תמצאו שטחי מקביליות — וודאו שהמרחק מאונך!
+Area of a parallelogram = base × height.
+In practice you'll find parallelogram areas — make sure the distance is perpendicular!

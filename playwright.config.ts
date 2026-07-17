@@ -24,7 +24,7 @@ export default defineConfig({
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "off",
-    locale: "he-IL",
+    locale: "en-US",
   },
   projects: [
     {

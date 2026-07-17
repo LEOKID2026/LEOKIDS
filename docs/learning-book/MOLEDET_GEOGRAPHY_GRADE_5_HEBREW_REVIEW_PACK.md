@@ -39,8 +39,7 @@
 |-------|-------|
 | **File** | `mg_g5_coordinates.md` |
 | **learning_page_id** | `geography:g5:mg_g5_coordinates` |
-| **skill_id** | `geography:g5:geography:geography_0_קואורדינטות` |
-| **title_hebrew** | קואורדינטות במפה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -142,8 +141,7 @@
 |-------|-------|
 | **File** | `mg_g5_climate.md` |
 | **learning_page_id** | `geography:g5:mg_g5_climate` |
-| **skill_id** | `geography:g5:geography:geography_1_אקלים_ישראל` |
-| **title_hebrew** | אקלים ישראל `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -245,8 +243,7 @@
 |-------|-------|
 | **File** | `mg_g5_natural_hazards.md` |
 | **learning_page_id** | `geography:g5:mg_g5_natural_hazards` |
-| **skill_id** | `geography:g5:geography:geography_2_סכנות_טבע` |
-| **title_hebrew** | סכנות טבע `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -351,8 +348,7 @@
 |-------|-------|
 | **File** | `mg_g5_resources.md` |
 | **learning_page_id** | `geography:g5:mg_g5_resources` |
-| **skill_id** | `geography:g5:geography:geography_3_משאבים` |
-| **title_hebrew** | משאבים וניהולם `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -453,8 +449,7 @@
 |-------|-------|
 | **File** | `mg_g5_government_institutions.md` |
 | **learning_page_id** | `geography:g5:mg_g5_government_institutions` |
-| **skill_id** | `geography:g5:citizenship:citizenship_0_מוסדות_שלטון` |
-| **title_hebrew** | מוסדות שלטון `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -558,8 +553,7 @@
 |-------|-------|
 | **File** | `mg_g5_law_society.md` |
 | **learning_page_id** | `geography:g5:mg_g5_law_society` |
-| **skill_id** | `geography:g5:citizenship:citizenship_1_חוק_וכללי_חברה` |
-| **title_hebrew** | חוק וכללי חברה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -663,8 +657,7 @@
 |-------|-------|
 | **File** | `mg_g5_identity.md` |
 | **learning_page_id** | `geography:g5:mg_g5_identity` |
-| **skill_id** | `geography:g5:citizenship:citizenship_2_זהות_אישית_וקהילתית` |
-| **title_hebrew** | זהות אישית וקהילתית `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g5:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

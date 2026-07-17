@@ -1,4 +1,4 @@
-# חילוק עם שארית
+# Division with a Remainder
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק עם שארית `[DRAFT — not owner-approved]` |
+| **title_english** | Division with a Remainder |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מנה ושארית; מספרים קטנים-בינוניים. ללא חילוק ארוך.
+**Content scope:** Quotient and remainder; small-to-medium numbers. No long division.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק עם שארית — כשלא מחלקים בדיוק, נשאר משהו.
-יש מנה (כמה בכל קבוצה) ושארית (מה שנשאר).
-
----
-
-## 2. הסבר
-
-23 ÷ 5 — 23 עוגיות, 5 בכל קופסה:
-5 × 4 = 20 — 4 בכל קופסה (4 קופסאות מלאות).
-23 − 20 = 3 — 3 עוגיות נשארו.
-23 ÷ 5 = 4 ושארית 3
-בדיקה: 5 × 4 + 3 = 23  — שארית תמיד קטנה מהמחלק (3 < 5).
+Today we will learn division with a remainder — when it doesn't divide evenly, something is left over.
+There is a quotient (how many in each group) and a remainder (what's left).
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-17 ÷ 4 — 17 עוגיות ב-4 קופסאות:
-4 × 4 = 16 — בכל קופסה 4
-17 − 16 = 1 — 1 עוגייה נשארה
-17 ÷ 4 = 4 ושארית 1
+23 ÷ 5 — 23 cookies, 5 in each box:
+5 × 4 = 20 — 4 in each box (4 full boxes).
+23 − 20 = 3 — 3 cookies left over.
+23 ÷ 5 = 4 remainder 3
+Check: 5 × 4 + 3 = 23 — the remainder is always smaller than the divisor (3 < 5).
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-חשבו: 29 ÷ 6 = ? (עם שארית)
+17 ÷ 4 — 17 cookies in 4 boxes:
+4 × 4 = 16 — 4 in each box
+17 − 16 = 1 — 1 cookie left over
+17 ÷ 4 = 4 remainder 1
+
+---
+
+## 4. Let's solve together
+
+Calculate: 29 ÷ 6 = ? (with remainder)
 6 × 4 = 24
 29 − 24 = 5
-בדיקה: 6 × 4 + 5 = 29
-4 ושארית 5
+Check: 6 × 4 + 5 = 29
+4 remainder 5
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 19 ÷ 3 = ? (מנה ושארית)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-חשבו: 19 ÷ 3
-3 × 6 = 18 — 6 קבוצות מלאות.
-19 − 18 = 1 — 1 נשאר.
-בדיקה: 3 × 6 + 1 = 19
-19 ÷ 3 = 6 ושארית 1
+Calculate: 19 ÷ 3 = ? (quotient and remainder)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-חילוק עם שארית כאן — מספרים קטנים בינוניים.
-בתרגול תמצאו חילוק שלא יוצא שלם — חפשו מנה ושארית!
+Calculate: 19 ÷ 3
+3 × 6 = 18 — 6 full groups.
+19 − 18 = 1 — 1 left over.
+Check: 3 × 6 + 1 = 19
+19 ÷ 3 = 6 remainder 1
+
+---
+
+## 7. Let's practice!
+
+Division with a remainder here — small to medium numbers.
+In practice you'll find division that doesn't come out even — look for the quotient and remainder!

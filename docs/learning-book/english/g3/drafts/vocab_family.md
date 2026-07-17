@@ -1,4 +1,4 @@
-# משפחה — פעולות במשפחה
+# Family — Actions in the Family
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | משפחה — פעולות במשפחה |
+| **title_english** | Family — Actions in the Family |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד על בני משפחה ופעולות שלהם.
-My brother reads — אחי קורא.
+Today we will learn about family members and their actions.
+My brother reads.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 My brother reads.
 
-אחי קורא.
+My brother reads.
 
 My sister sings.
 
-אחותי שרה.
+My sister sings.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-אח קורא ספר.
+A brother reading a book.
 
 My brother reads.
 
-אחי קורא.
+My brother reads.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אחי קורא"?
+Question: how do we say "my brother reads"?
 
 My brother reads
 
-תשובה: My brother reads
+Answer: My brother reads
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אמא עומדת ליד הכיריים.
+Mom standing by the stove.
 
 My mother cooks.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: אמא עומדת ליד הכיריים.
+Exercise: mom standing by the stove.
 
-הפתרון:
+The solution:
 
 My mother cooks.
 
-אמי מבשלת.
+My mother cooks.
 
-כל הכבוד! my mother = כינוי + שם + פועל עם s: cooks, ולא cook.
+Well done! my mother = pronoun + noun + verb with s: cooks, not cook.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים פעולות של בני משפחה.
-בתרגול תמצאו My brother reads ו-My sister sings.
+Now you describe actions of family members.
+In practice, you'll find My brother reads and My sister sings.

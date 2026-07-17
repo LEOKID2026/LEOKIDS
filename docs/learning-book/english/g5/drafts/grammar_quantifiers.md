@@ -1,4 +1,4 @@
-# much/many — חיזוק כיתה ה׳
+# much/many — Grade 5 Review
 
 ## Metadata
 
@@ -11,83 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | much/many — חיזוק כיתה ה׳ |
+| **title_english** | much/many — Grade 5 Review |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** many people / much time — בהקשר עבר ועתיד
+**Content scope:** many people / much time — in the past and future
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק much/many — כמות בעבר ועתיד.
-There were many people at the park — היו הרבה אנשים בפארק.
+Today we will review much/many — quantity in the past and future.
+There were many people at the park.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-many + שם רבים:
+many + a plural noun:
 many people, many books
 
-much + שם יחיד (לא ספיר):
+much + a singular noun that can't be counted:
 much time, much water
 
 There were many people at the park.
 
-היו הרבה אנשים בפארק.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-יום שמש בפארק — הרבה מבקרים.
+A sunny day at the park — many visitors.
 
 There were many people at the park.
 
-היו הרבה אנשים בפארק.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היו הרבה אנשים בפארק"?
+Question: How do you say this?
 
 There were many people at the park
 
-תשובה: There were many people at the park
+Answer: There were many people at the park
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בקבוק מים מלא.
+A full water bottle.
 
 There was much water in the bottle.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "היה הרבה מים בבקבוק."
+Exercise: "There was much water in the bottle."
 
-water — שם עצם לא ספיר (לא ניתן לספור) — משתמשים ב much.
+"Water" is an uncountable noun — we use much.
 
-was (עבר, יחיד לא ספיר).
+"Was" is the past, singular form.
 
-היה הרבה מים בבקבוק.
-
- There was much water in the bottle.
+So the full sentence is: There was much water in the bottle.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים ב-much/many בעבר ועתיד.
-בתרגול תמצאו There were many people at the park.
+Now you will use much/many in the past and future.
+In the practice, you'll find: There were many people at the park.

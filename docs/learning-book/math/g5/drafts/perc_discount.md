@@ -1,4 +1,4 @@
-# הנחה באחוזים
+# Percent Discount
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הנחה באחוזים `[DRAFT — not owner-approved]` |
+| **title_english** | Percent Discount |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מחיר אחרי הנחה
+**Content scope:** Price after discount
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחשב מחיר אחרי הנחה באחוזים.
-הנחה = מורידים אחוז מהמחיר.
+Today we'll learn to find the price after a percent discount.
+A discount = you take away a percent of the price.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מחיר 150 ₪, הנחה 20%:
-20% מ-150 = 150 × 20 ÷ 100 = 30
+Price $150, discount 20%:
+20% of 150 = 150 × 20 ÷ 100 = 30
 150 − 30 = 120
-מחיר אחרי הנחה: 120 ₪
-(או: 80% מ-150 = 120)
+Price after discount: $120
+(or: 80% of 150 = 120)
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-200 ₪, הנחה 10%:
-10% מ-200 = 20
-200 − 20 = 180 ₪
+$200, discount 10%:
+10% of 200 = 20
+200 − 20 = $180
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חולצה 150 ₪, הנחה 20%. מה המחיר?
-20% מ-150 = 30
+A shirt costs $150, discount 20%. What is the price?
+20% of 150 = 30
 150 − 30 = 120
-120 ₪
+$120
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מחיר 240 ₪, הנחה 25% — מה המחיר אחרי ההנחה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Price $240, discount 25% — what is the price after the discount?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-מחיר 240 ₪, הנחה 25% — מה המחיר אחרי ההנחה?
-25% מ-240 = 240 × 25 ÷ 100 = 60
+Price $240, discount 25% — what is the price after the discount?
+25% of 240 = 240 × 25 ÷ 100 = 60
 240 − 60 = 180
-המחיר אחרי ההנחה: 180 ₪
+The price after the discount: $180
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחשב מחיר אחרי הנחה.
-בתרגול תמצאו שאלות הנחה.
-חשבו קודם את סכום ההנחה!
+Now you know how to find the price after a discount.
+In practice you'll find discount questions.
+First find the amount of the discount!

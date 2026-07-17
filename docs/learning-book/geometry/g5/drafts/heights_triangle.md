@@ -1,4 +1,4 @@
-﻿# גובה במשולש
+# Height of a Triangle
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גובה במשולש `[DRAFT — not owner-approved]` |
+| **title_english** | Height of a Triangle |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** גובה מהשטח והבסיס
+**Content scope:** height from area and base
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד למצוא גובה במשולש כשיודעים שטח ובסיס.
-לדוגמה:
-משולש עם בסיס 10 וגובה 6
+Today we'll learn to find the height of a triangle when we know the area and base.
+For example:
+Triangle with base 10 and height 6
 10 × 6 ÷ 2 = 30
-גובה = 30 × 2 ÷ 10 = 6
+Height = 30 × 2 ÷ 10 = 6
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: triangle_height
 :::
 
-הגובה — מרחק מאונך מהקדקוד לבסיס.
-מהנוסחה:
-גובה = (שטח × 2) ÷ בסיס
+The height — the perpendicular distance from the vertex to the base.
+From the formula:
+Height = (area × 2) ÷ base
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס 10 ס״מ, שטח 30 סמ״ר:
-גובה = (30 × 2) ÷ 10 = 60 ÷ 10 = 6 ס״מ
+Base 10 cm, area 30 cm²:
+Height = (30 × 2) ÷ 10 = 60 ÷ 10 = 6 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-משולש — בסיס 10 ס״מ, שטח 30 סמ״ר. מה הגובה?
+Triangle — base 10 cm, area 30 cm². What is the height?
 30 × 2 = 60
 60 ÷ 10 = 6
-6 ס״מ.
+6 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש: בסיס 12 ס״מ, שטח 30 סמ״ר — מה הגובה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Triangle: base 12 cm, area 30 cm² — what is the height?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש: בסיס 12 ס״מ, שטח 30 סמ״ר — מה הגובה?
-הכפלת השטח ב-2:
+Triangle: base 12 cm, area 30 cm² — what is the height?
+Multiply the area by 2:
 30 × 2 = 60
-חלוקה בבסיס:
+Divide by the base:
 60 ÷ 12 = 5
-גובה = 5 ס״מ
+Height = 5 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-גובה במשולש = (שטח × 2) ÷ בסיס.
-בתרגול תמצאו גבהים — היפוך נוסחת השטח!
+Height of a triangle = (area × 2) ÷ base.
+In practice you'll find heights — the reverse of the area formula!

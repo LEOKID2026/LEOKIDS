@@ -1,4 +1,4 @@
-# חיות — Past Continuous
+# Animals — Past Continuous
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | חיות — Past Continuous |
+| **title_english** | Animals — Past Continuous |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** The whales were swimming — פעולה בעבר במקביל
+**Content scope:** The whales were swimming — an action happening in the past
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק אוצר מילים על חיות עם Past Continuous — פעולה שהתרחשה בעבר במקביל.
-The whales were swimming when we saw them — הלווייתנים שחו כשראינו אותם.
-
----
-
-## 2. הסבר
-
-Past Continuous — משתמשים ב-was או were, ואחריהם פועל עם ing:
-
+Today we will review animal vocabulary with Past Continuous — an action that was happening in the past.
 The whales were swimming when we saw them.
 
-הלווייתנים שחו כשראינו אותם.
+---
+
+## 2. Simple explanation
+
+Past Continuous — we use was or were with a verb + ing:
+
+The whales were swimming when we saw them.
 
 The dolphins were jumping near the boat.
 
-הדולפינים קפצו ליד הסירה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-טיול בסירה — רואים לווייתנים.
+A boat trip — seeing whales.
 
 The whales were swimming when we saw them.
 
-הלווייתנים שחו כשראינו אותם.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הלווייתנים שחו כשראינו אותם"?
+Question: How do you say this?
 
 The whales were swimming when we saw them
 
-תשובה: The whales were swimming when we saw them
+Answer: The whales were swimming when we saw them
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-טיול בהרים — נשרים מעל.
+A mountain trip — eagles above.
 
 The eagles were flying over the mountains when we arrived.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הנשרים עפו מעל ההרים כשהגענו."
+Exercise: "The eagles were flying over the mountains when we arrived."
 
-פעולה מתמשכת בעבר — Past Continuous: were flying.
+An ongoing action in the past uses Past Continuous: were flying.
 
-when we arrived = כשהגענו (Past Simple, פעולה שקרתה).
+"When we arrived" uses Past Simple, for an action that happened at one moment.
 
-הנשרים עפו מעל ההרים כשהגענו.
-
- The eagles were flying over the mountains when we arrived.
+So the full sentence is: The eagles were flying over the mountains when we arrived.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים חיות עם Past Continuous.
-בתרגול תמצאו The whales were swimming when we saw them.
+Now you will describe animals using Past Continuous.
+In the practice, you'll find: The whales were swimming when we saw them.

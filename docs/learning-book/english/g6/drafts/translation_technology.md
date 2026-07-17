@@ -1,4 +1,4 @@
-# טכנולוגיה — תרגום מתקדם
+# Technology — Advanced Translation
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | טכנולוגיה — תרגום מתקדם |
+| **title_english** | Technology — Advanced Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** Scientists might discover… — תרגום דו-כיווני
+**Content scope:** Scientists might discover… — two-way translation
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום בנושא טכנולוגיה עם might ועם משפטים ארוכים.
-Scientists might discover new ways to save energy — מדענים אולי יגלו דרכים חדשות לחסוך אנרגיה.
-
----
-
-## 2. הסבר
-
-might discover — אולי יגלו:
-
+Today we will practice translation about technology with might and longer sentences.
 Scientists might discover new ways to save energy.
 
-מדענים אולי יגלו דרכים חדשות לחסוך אנרגיה.
+---
+
+## 2. Simple explanation
+
+might discover — maybe will discover:
+
+Scientists might discover new ways to save energy.
 
 Engineers could build safer batteries soon.
 
-מהנדסים יוכלו לבנות סוללות בטוחות יותר בקרוב.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מעבדה — מדענים עובדים על אנרגיה נקייה.
+A lab — scientists working on clean energy.
 
 Scientists might discover new ways to save energy.
 
-מדענים אולי יגלו דרכים חדשות לחסוך אנרגיה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "מדענים אולי יגלו דרכים חדשות לחסוך אנרגיה"?
+Question: How do you say this?
 
 Scientists might discover new ways to save energy
 
-תשובה: Scientists might discover new ways to save energy
+Answer: Scientists might discover new ways to save energy
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מדענים עובדים על תרופות חדשות.
+Scientists working on new medicines.
 
 Researchers might find a new medicine in the coming years.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "חוקרים אולי ימצאו תרופה חדשה בשנים הקרובות."
+Exercise: "Researchers might find a new medicine in the coming years."
 
-might + פועל = אולי (אפשרות, לא ודאות).
+might + a verb means maybe — a possibility, not something certain.
 
-find = למצוא; in the coming years = בשנים הקרובות.
+"Find" means to discover; "in the coming years" tells us when.
 
-חוקרים אולי ימצאו תרופה חדשה בשנים הקרובות.
-
- Researchers might find a new medicine in the coming years.
+So the full sentence is: Researchers might find a new medicine in the coming years.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום דו-כיווני על טכנולוגיה.
-בתרגול תמצאו Scientists might discover new ways to save energy.
+Now you will practice two-way translation about technology.
+In the practice, you'll find: Scientists might discover new ways to save energy.

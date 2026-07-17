@@ -1,4 +1,4 @@
-﻿# היקף מעגל
+# Circumference of a Circle
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף מעגל `[DRAFT — not owner-approved]` |
+| **title_english** | Circumference of a Circle `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,61 +22,61 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד היקף מעגל בגאומטריה — נושא חדש.
-היקף = 2 × π × רדיוס.
-בשיעור: π ≈ 3.14
+Today we will learn circumference of a circle in geometry — a new topic.
+Circumference = 2 × π × radius.
+In class: π ≈ 3.14
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: circle_perimeter
 :::
 
-הרדיוס — המרחק ממרכז המעגל לכל נקודה על המעגל.
-נוסחה:
-היקף = 2 × 3.14 × r
-יחידה: ס״מ (אורך).
+The radius — the distance from the center of the circle to any point on the circle.
+Formula:
+Circumference = 2 × 3.14 × r
+Unit: cm (length).
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-רדיוס 5 ס״מ:
-2 × 3.14 × 5 = 6.28 × 5 = 31.4 ס״מ
+Radius 5 cm:
+2 × 3.14 × 5 = 6.28 × 5 = 31.4 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מעגל רדיוס 5 ס״מ (π = 3.14) מה ההיקף?
+Circle radius 5 cm (π = 3.14) — what is the circumference?
 2 × 3.14 = 6.28
 6.28 × 5 = 31.4
-31.4 ס״מ.
+31.4 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מעגל רדיוס 7 ס״מ (π = 3.14)— מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Circle radius 7 cm (π = 3.14) — what is the circumference?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-מעגל רדיוס 7 ס״מ (π = 3.14)— מה ההיקף?
+Circle radius 7 cm (π = 3.14) — what is the circumference?
 2 × 3.14 = 6.28
 6.28 × 7 = 43.96
-43.96 ס״מ
+43.96 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-היקף מעגל = 2 × π × רדיוס.
-בתרגול תמצאו היקפי מעגלים — אל תשכחו את ה-2!
+Circumference of a circle = 2 × π × radius.
+In practice you'll find circle circumferences — don't forget the 2!

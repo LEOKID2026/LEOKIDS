@@ -1,4 +1,4 @@
-# שמות האותיות
+# Letter Names
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | שמות האותיות |
+| **title_english** | Letter Names |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** שם האות (letter name) מול צליל; audio_required: yes — שמות A–Z
+**Content scope:** Letter name vs. sound; audio_required: yes — names A–Z
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד את שמות האותיות באנגלית.
-יש הבדל בין שם האות לבין צליל שהאות עושה במילה — נלמד את שניהם בהמשך.
-
----
-
-## 2. הסבר
-
-כשמדברים על אותיות, יש שני דברים שונים:
-שם האות — איך קוראים לאות.
-צליל במילה — הקול שהאות משמיעה בתוך מילה.
-נכיר שלוש אותיות ראשונות:
-A היא האות הראשונה.
-B היא האות השנייה.
-C היא האות השלישית.
-במילה cat האות C משמיעה צליל ק.
-זה הצליל שלה במילה, והוא שונה משם האות.
+Today we will learn the names of the letters in English.
+There's a difference between a letter's name and the sound the letter makes in a word — we'll learn both later on.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מתרגלים זיהוי לפי שמיעה.
-כששומעים את שם האות A — מחפשים את A.
-כששומעים את שם האות M — מחפשים את M.
-מקשיבים לשם האות ומצביעים על הצורה הנכונה.
+When we talk about letters, there are two different things:
+The letter's name — what we call the letter.
+The sound in a word — the sound the letter makes inside a word.
+Let's meet the first three letters:
+A is the first letter.
+B is the second letter.
+C is the third letter.
+In the word cat, the letter C makes the "k" sound.
+That's its sound in the word, and it's different from the letter's name.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה שם האות?
+We practice recognizing letters by listening.
+When we hear the name of the letter A — we look for A.
+When we hear the name of the letter M — we look for M.
+We listen to the letter's name and point to the correct shape.
+
+---
+
+## 4. Let's solve together
+
+What is the letter's name?
 F
-מזהים את הצורה F.
-זו האות F.
+We recognize the shape F.
+This is the letter F.
 F
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מה שם האות J?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה שם האות J?
-מזהים את הצורה J.
-זו האות J.
-נכון.
+What is the name of the letter J?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו מכירים שמות אותיות.
-בעמוד הבא נלמד צלילי אותיות — הקול שהן עושות.
+What is the name of the letter J?
+We recognize the shape J.
+This is the letter J.
+That's right.
+
+---
+
+## 7. Let's practice!
+
+Now you know letter names.
+On the next page, we'll learn letter sounds — the sound each one makes.

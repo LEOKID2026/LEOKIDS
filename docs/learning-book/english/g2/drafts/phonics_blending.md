@@ -1,4 +1,4 @@
-# חיבור צלילים
+# Blending Sounds
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | חיבור צלילים |
+| **title_english** | Blending Sounds |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,60 +20,60 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר צלילים למילה.
-מקשיבים לצלילים לפי הסדר, ואז אומרים את כל המילה.
-
----
-
-## 2. הסבר
-
-במילה cat מחברים את הצלילים לפי הסדר, ואז אומרים cat.
-במילה hat מחברים את הצלילים לפי הסדר, ואז אומרים hat.
-במילה sit מחברים את הצלילים לפי הסדר, ואז אומרים sit.
-במילה run מחברים את הצלילים לפי הסדר, ואז אומרים run.
-במילה big מחברים את הצלילים לפי הסדר, ואז אומרים big.
-במילה red מחברים את הצלילים לפי הסדר, ואז אומרים red.
-במילה hot מחברים את הצלילים לפי הסדר, ואז אומרים hot.
-במילה sun מחברים את הצלילים לפי הסדר, ואז אומרים sun.
+Today we will learn to blend sounds into a word.
+We listen to the sounds in order, and then say the whole word.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-במילה cat מפרידים את הצלילים, ואז מחברים אותם שוב.
-אומרים לאט, ואז אומרים את המילה השלמה: cat.
+In the word cat, we blend the sounds in order, and then say cat.
+In the word hat, we blend the sounds in order, and then say hat.
+In the word sit, we blend the sounds in order, and then say sit.
+In the word run, we blend the sounds in order, and then say run.
+In the word big, we blend the sounds in order, and then say big.
+In the word red, we blend the sounds in order, and then say red.
+In the word hot, we blend the sounds in order, and then say hot.
+In the word sun, we blend the sounds in order, and then say sun.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו מילה מקבלים כשמחברים את הצלילים של sun?
-מחברים לפי הסדר.
+In the word cat, we separate the sounds, and then blend them back together.
+We say it slowly, and then say the whole word: cat.
+
+---
+
+## 4. Let's solve together
+
+What word do we get when we blend the sounds of sun?
+We blend them in order.
 sun.
 sun
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזו מילה מקבלים כשמחברים את הצלילים של pig?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: איזו מילה מקבלים כשמחברים את הצלילים של pig?
-מחברים לפי הסדר.
-מקבלים pig.
-התשובה היא pig.
+What word do we get when we blend the sounds of pig?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו יודעים לחבר צלילים.
-בעמוד הבא נחזק את הקשר בין צליל לאות.
+The question: what word do we get when we blend the sounds of pig?
+We blend them in order.
+We get pig.
+The answer is pig.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to blend sounds.
+On the next page, we'll strengthen the connection between sound and letter.

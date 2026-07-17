@@ -1,4 +1,4 @@
-# ספורט באנגלית
+# Sports in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | ספורט באנגלית |
+| **title_english** | Sports in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד ספורט באנגלית.
+Today we will learn sports in English.
 football, swim, run — I play football.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-football — כדורגל
-swim — לשחות
-run — לרוץ
-
-I play football.
-
-אני משחק כדורגל.
-
----
-
-## 3. דוגמה
-
-ילד משחק כדורגל.
+football
+swim
+run
 
 I play football.
 
-אני משחק כדורגל.
+I play football.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-שאלה: איך אומרים "אני משחק כדורגל"?
+A child playing football.
+
+I play football.
+
+I play football.
+
+---
+
+## 4. Let's solve together
+
+Question: how do we say "I play football"?
 
 I play football
 
-תשובה: I play football
+Answer: I play football
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד קופץ לבריכה.
+A child jumping into the pool.
 
 I swim in the pool.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: ילד קופץ לבריכה.
+Exercise: a child jumping into the pool.
 
-הפתרון:
+The solution:
 
 I swim in the pool.
 
-אני שוחה בבריכה.
+I swim in the pool.
 
-כל הכבוד! swim היא פעולת ספורט — I swim, ללא s אחרי I.
+Well done! swim is a sports action — I swim, no s after I.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים ספורט.
-בתרגול תמצאו I play football ו-swim, run.
+Now you describe sports.
+In practice, you'll find I play football and swim, run.

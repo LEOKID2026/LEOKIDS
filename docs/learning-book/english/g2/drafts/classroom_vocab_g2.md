@@ -1,4 +1,4 @@
-# אוצר מילים בכיתה
+# Classroom Vocabulary
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | אוצר מילים בכיתה |
+| **title_english** | Classroom Vocabulary |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,59 +20,59 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום מילים חדשות על כיתה וחברים — באנגלית.
-נשמע, נראה, נחבר — מילה אחר מילה.
-
----
-
-## 2. הסבר
-
-classroom — כיתה (החדר)
-playground — מגרש משחקים
-friend — חבר או חברה
-read — לקרוא
-write — לכתוב
-listen — להקשיב
+Today we have new words about the classroom and friends — in English.
+We'll listen, look, and connect — word by word.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ב-classroom — לומדים.
-ב-playground — משחקים.
-friend — חבר טוב.
-
----
-
-## 4. בואו נפתור
-
-מה זה listen?
-פעולה — אוזניים.
-listen — להקשיב.
-listen (להקשיב)
+classroom
+playground
+friend
+read
+write
+listen
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-מה זה write?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: מה זה write?
-write היא פעולה של כתיבה.
-כשיד כותבת, אומרים write.
-התשובה היא: לכתוב.
+In the classroom — we learn.
+On the playground — we play.
+friend — a good friend.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו מכירים מילים חדשות.
-בעמוד הבא — הבנת הנשמע.
+What is listen?
+An action — ears.
+listen.
+listen
+
+---
+
+## 5. Try it yourself
+
+What is write?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: what is write?
+Write is the action of putting words on paper.
+When a hand is writing, we say write.
+The answer is: to write.
+
+---
+
+## 7. Let's practice!
+
+Now you know new words.
+On the next page — listening comprehension.

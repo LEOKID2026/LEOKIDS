@@ -1,4 +1,4 @@
-# שאלה מילולית — סכום זמנים
+# Word Problem — Adding Times
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_3_4 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problem — Adding Times |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור **דקות** (משך צפייה). ללא שעון analog. ללא המרת שעות↔דקות מורכבת.
+**Content scope:** Adding **minutes** (watching time). No analog clock. No complex hours↔minutes conversion.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה מילולית על סכום זמנים — כמה דקות ביחד נמשכים שני קטעים.
-
----
-
-## 2. הסבר
-
-כאן עובדים רק עם דקות — בלי שעות.
-קראו את השאלה: יש שני משכים, ושואלים כמה ביחד או סה״כ.
-זה סימן לחיבור — מחברים את מספר הדקות של הקטע הראשון עם השני.
-מילים שעוזרות: ביחד, סה״כ, משך כולל — כולן אומרות +, לא −.
+Today we will solve a word problem about adding times — how many minutes two parts last together.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-סרטון חינוכי: חלק א 18 דקות, חלק ב 12 דקות.
-כמה דקות צפייה בסך הכל?
-18 + 12 = 30 דקות
-30 דקות.
+Here we work only with minutes — no hours.
+Read the question: there are two parts, and it asks how many together or in total.
+That's a sign to add — we add the minutes from the first part and the second.
+Helpful words: together, in total, total length — they all mean +, not −.
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-תרגול בית נמשך 22 דקות, ואחריו משחק חשיבה 16 דקות. כמה דקות ביחד?
+Educational video: part A is 18 minutes, part B is 12 minutes.
+How many minutes of watching in all?
+18 + 12 = 30 minutes
+30 minutes.
+
+---
+
+## 4. Let's solve together
+
+Homework practice lasts 22 minutes, and then a thinking game lasts 16 minutes. How many minutes together?
 22 + 16 = 38
-38 דקות.
+38 minutes.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שני קטעי וידאו נמשכים 35 דקות ו-25 דקות.
-מה סה״כ זמן הצפייה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-35 דקות + 25 דקות — כמה בסך הכל?
-שואלים "סה״כ" → מחברים.
-35 + 25 = 60 דקות
-60 דקות = שעה אחת שלמה!
-סה״כ זמן הצפייה: 60 דקות
+Two video clips last 35 minutes and 25 minutes.
+What is the total watching time?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לחבר זמני צפייה בדקות.
-בתרגול תמצאו שאלות על סכום זמנים. חברו את הדקות!
+35 minutes + 25 minutes — how many in all?
+It asks "in total" → we add.
+35 + 25 = 60 minutes
+60 minutes = one whole hour!
+Total watching time: 60 minutes
+
+---
+
+## 7. Let's practice!
+
+Now you know how to add watching times in minutes.
+In practice you'll find questions about adding times. Add the minutes!

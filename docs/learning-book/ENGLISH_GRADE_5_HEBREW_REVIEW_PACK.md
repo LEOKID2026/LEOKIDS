@@ -42,7 +42,6 @@
 | **File** | `vocab_animals.md` |
 | **learning_page_id** | `english:g5:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
-| **title_hebrew** | חיות — Past Simple `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -146,7 +145,6 @@ walked = הלך (עבר).
 | **File** | `vocab_community.md` |
 | **learning_page_id** | `english:g5:vocab_community` |
 | **skill_id** | `english:vocabulary:wordlist:community` |
-| **title_hebrew** | קהילה — visited, museum `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -250,7 +248,6 @@ visited = ביקרנו (עבר).
 | **File** | `vocab_emotions.md` |
 | **learning_page_id** | `english:g5:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
-| **title_hebrew** | רגשות — felt proud `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -354,7 +351,6 @@ felt = הרגישה (עבר).
 | **File** | `vocab_environment.md` |
 | **learning_page_id** | `english:g5:vocab_environment` |
 | **skill_id** | `english:vocabulary:wordlist:environment` |
-| **title_hebrew** | סביבה — planted trees `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -458,7 +454,6 @@ planted = נטעו (עבר).
 | **File** | `vocab_family.md` |
 | **learning_page_id** | `english:g5:vocab_family` |
 | **skill_id** | `english:vocabulary:wordlist:family` |
-| **title_hebrew** | משפחה — grandparents `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -562,7 +557,6 @@ grandparents = סבא וסבתא.
 | **File** | `vocab_food.md` |
 | **learning_page_id** | `english:g5:vocab_food` |
 | **skill_id** | `english:vocabulary:wordlist:food` |
-| **title_hebrew** | מזון — cooked healthy food `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -666,7 +660,6 @@ cooked = בישלנו (עבר).
 | **File** | `vocab_school.md` |
 | **learning_page_id** | `english:g5:vocab_school` |
 | **skill_id** | `english:vocabulary:wordlist:school` |
-| **title_hebrew** | בית ספר — class project `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -770,7 +763,6 @@ won = ניצחה (עבר).
 | **File** | `vocab_sports.md` |
 | **learning_page_id** | `english:g5:vocab_sports` |
 | **skill_id** | `english:vocabulary:wordlist:sports` |
-| **title_hebrew** | ספורט — scored a goal `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -874,7 +866,6 @@ scored = הבקיע (עבר).
 | **File** | `vocab_travel.md` |
 | **learning_page_id** | `english:g5:vocab_travel` |
 | **skill_id** | `english:vocabulary:wordlist:travel` |
-| **title_hebrew** | נסיעות — will travel `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -978,7 +969,6 @@ will travel = ננסע (עתיד).
 | **File** | `vocab_health.md` |
 | **learning_page_id** | `english:g5:vocab_health` |
 | **skill_id** | `english:vocabulary:wordlist:health` |
-| **title_hebrew** | בריאות באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1083,7 +1073,6 @@ need to = צריך ל…
 | **File** | `vocab_technology.md` |
 | **learning_page_id** | `english:g5:vocab_technology` |
 | **skill_id** | `english:vocabulary:wordlist:technology` |
-| **title_hebrew** | טכנולוגיה באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1187,7 +1176,6 @@ uses = משתמשת.
 | **File** | `grammar_past_simple.md` |
 | **learning_page_id** | `english:g5:grammar_past_simple` |
 | **skill_id** | `english:pool:grammar:past_simple` |
-| **title_hebrew** | Past Simple — עבר פשוט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1295,7 +1283,6 @@ played = שיחקתי (עבר).
 | **File** | `grammar_future_forms.md` |
 | **learning_page_id** | `english:g5:grammar_future_forms` |
 | **skill_id** | `english:pool:grammar:future_forms` |
-| **title_hebrew** | Future — will / going to `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1399,7 +1386,6 @@ going to = תוכנית קרובה.
 | **File** | `grammar_modals.md` |
 | **learning_page_id** | `english:g5:grammar_modals` |
 | **skill_id** | `english:pool:grammar:modals` |
-| **title_hebrew** | Modals — can, must, have to `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1503,7 +1489,6 @@ must + פועל (בלי to).
 | **File** | `grammar_comparatives.md` |
 | **learning_page_id** | `english:g5:grammar_comparatives` |
 | **skill_id** | `english:pool:grammar:comparatives` |
-| **title_hebrew** | Comparatives — bigger, more interesting `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1608,7 +1593,6 @@ more + שם תואר ארוך.
 | **File** | `grammar_quantifiers.md` |
 | **learning_page_id** | `english:g5:grammar_quantifiers` |
 | **skill_id** | `english:pool:grammar:quantifiers` |
-| **title_hebrew** | much/many — חיזוק כיתה ה׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1712,7 +1696,6 @@ many + people → were.
 | **File** | `sentence_narrative.md` |
 | **learning_page_id** | `english:g5:sentence_narrative` |
 | **skill_id** | `english:pool:sentence:narrative` |
-| **title_hebrew** | סיפור — Then we arrived `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1816,7 +1799,6 @@ arrived = הגענו (עבר).
 | **File** | `sentence_advanced.md` |
 | **learning_page_id** | `english:g5:sentence_advanced` |
 | **skill_id** | `english:pool:sentence:advanced` |
-| **title_hebrew** | משפטים מורחבים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1920,7 +1902,6 @@ learned = למדנו (עבר).
 | **File** | `translation_community.md` |
 | **learning_page_id** | `english:g5:translation_community` |
 | **skill_id** | `english:pool:translation:community` |
-| **title_hebrew** | קהילה — תרגום מורחב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2024,7 +2005,6 @@ next to = ליד, לא בתוך.
 | **File** | `translation_technology.md` |
 | **learning_page_id** | `english:g5:translation_technology` |
 | **skill_id** | `english:pool:translation:technology` |
-| **title_hebrew** | טכנולוגיה — תרגום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2128,7 +2108,6 @@ will send = אשלח (עתיד).
 | **File** | `translation_global.md` |
 | **learning_page_id** | `english:g5:translation_global` |
 | **skill_id** | `english:pool:translation:global` |
-| **title_hebrew** | עולם — תרגום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

@@ -1,4 +1,4 @@
-# תכנון ניסוי
+# Planning an Experiment
 
 ## Metadata
 
@@ -11,85 +11,85 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | draft |
-| **title_hebrew** | תכנון ניסוי `[DRAFT — not owner-approved]` |
+| **title_english** | Planning an Experiment `[DRAFT — not owner-approved]` |
 
-**Content scope:** שאלה → חיזוי → שיטה → תוצאות → מסקנה — בטוח בלבד
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים לתכנן ניסוי שלם — משאלה ועד מסקנה.
+**Content scope:** Question → prediction → method → results → conclusion — safe only
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-תכנון ניסוי טוב כולל:
-שאלת מחקר — מה בודקים?
-חיזוי (השערה) — מה נראה לנו שיקרה?
-שיטה — מה עושים, מה המשתנה, מה נשאר זהה
-רישום — טבלה או יומן
-מסקנה — האם החיזוי התאים?
-מה למדנו?
-ניסוי בטוח בלבד — עם מורה, בלי חומרים מסוכנים, בלי מכשירי חשמל.
-דמיינו מתכננים לפני שמתחילים — כמו מפה לפני הליכה.
+Today in science we will learn to plan a complete experiment — from question to conclusion.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-האם צמח בחדר חם גדל מהר יותר מצמח בחדר קר?
-חיזוי:
-בחדר חם — גדילה מהירה יותר.
-שיטה:
-שני עציצים זהים, אותה כמות מים ואותו אור; רק טמפרטורה שונה (משתנה).
-רישום:
-גובה כל יום בטבלה.
-מסקנה:
-לפי המספרים — האם הנתונים תומכים בחיזוי?
-
----
-
-## 4. בואו נפתור
-
-מה בא אחרי תוצאות הניסוי?
-יש נתונים בטבלה.
-מפרשים וכותבים מסקנה.
-מסקנה
+Good experiment planning includes:
+Research question — what are we testing?
+Prediction (hypothesis) — what do we think will happen?
+Method — what we do, what is the variable, what stays the same
+Recording — table or journal
+Conclusion — did the prediction match?
+What did we learn?
+Safe experiments only — with a teacher, no dangerous materials, no electrical devices.
+Imagine planning before you start — like a map before a walk.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-תכננו ניסוי בטוח:
-איזה ספוג סופג יותר מים — גדול או קטן?
-מה השערה?
-מה המשתנה?
-איזו מסקנה תרצו לכתוב אחרי הטבלה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: תכננו ניסוי בטוח — איזה ספוג סופג יותר מים: גדול או קטן?
-הסבר מדעי:
-בניסוי זה, המשתנה הוא גודל הספוג — זה מה שמשנים בין הניסויים.
-שאר התנאים נשארים זהים:
-אותו סוג ספוג, אותה כמות מים לבדיקה.
-השערה אפשרית:
-ספוג גדול מכיל יותר חלל — לכן יספוג יותר מים.
-שיטה:
-מודדים כמה מיליליטר מים ספג כל ספוג — ומשווים.
-מסקנה:
-אם הספוג הגדול ספג יותר — הנתונים תומכים בהשערה.
-משתנה — גודל הספוג. השערה — ספוג גדול סופג יותר. מסקנה — לפי המדידות.
+Does a plant in a warm room grow faster than a plant in a cold room?
+Prediction:
+In a warm room — faster growth.
+Method:
+Two identical pots, same amount of water and same light; only temperature different (variable).
+Recording:
+Height every day in a table.
+Conclusion:
+According to the numbers — do the data support the prediction?
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לתכנן ניסוי במדעים.
-בתרגול חפשו שאלות על שלבי חקר ומסקנה.
+What comes after experiment results?
+There is data in the table.
+We interpret and write a conclusion.
+Conclusion
+
+---
+
+## 5. Try it yourself
+
+Plan a safe experiment:
+Which sponge absorbs more water — large or small?
+What is the hypothesis?
+What is the variable?
+What conclusion would you want to write after the table?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: plan a safe experiment — which sponge absorbs more water: large or small?
+Scientific explanation:
+In this experiment, the variable is sponge size — that is what changes between trials.
+Other conditions stay the same:
+Same type of sponge, same amount of water to test.
+Possible hypothesis:
+A large sponge holds more space — so it will absorb more water.
+Method:
+Measure how many milliliters of water each sponge absorbed — and compare.
+Conclusion:
+If the large sponge absorbed more — the data support the hypothesis.
+Variable — sponge size. Hypothesis — large sponge absorbs more. Conclusion — based on measurements.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to plan an experiment in science.
+When you practice, look for questions about research steps and conclusion.

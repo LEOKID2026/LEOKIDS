@@ -1,4 +1,4 @@
-# חיבור במאונך
+# Vertical Addition
 
 ## Metadata
 
@@ -11,47 +11,44 @@
 | **age_band** | grades_1_2 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור במאונך `[DRAFT — not owner-approved]` |
+| **title_english** | Vertical Addition |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור במאונך (עמודות). נשיאה בעדינות. עד 100, ללא דוגמות כבדות במאות.
+**Content scope:** Vertical addition (columns). Carrying gently. Up to 100, no heavy hundreds examples.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חיבור במאונך — כותבים מספרים אחד מתחת לשני ומחברים עמודה אחר עמודה.
-כך קל לחבר גם כשיש נשיאה מאחדות לעשרות.
-
----
-
-## 2. הסבר
-
-איך כותבים במאונך?
-- אחדות מתחת לאחדות
-- עשרות מתחת לעשרות
-- סימן + משמאל
-איך מחברים?
-1.
-מתחילים מאחדות (ימין)
-2.
-אם באחדות קיבלנו 10 או יותר, כותבים את ספרת האחדות ומעבירים 1 לעמודת העשרות.
-לזה קוראים גם נשיאה.
-3.
-מחברים את העשרות (כולל נשיאה אם יש)
+Today we're going to learn vertical addition — write numbers one under the other and add column by column.
+This makes it easy to add even when you carry from ones to tens.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-47 + 28 במאונך:
-מה קורה?
-- אחדות: 7 + 8 = 15 → כותבים 5, מעבירים 1 לעשרות
-- עשרות: 4 + 2 + 1 (נשיאה) = 7
+How do you write vertically?
+- Ones under ones
+- Tens under tens
+- + sign on the left
+How do you add?
+1. Start with ones (right)
+2. If ones add up to 10 or more, write the ones digit and carry 1 to the tens column.
+This is also called carrying.
+3. Add the tens (including carry if there is one)
+
+---
+
+## 3. Visual / concrete example
+
+47 + 28 vertically:
+What happens?
+- Ones: 7 + 8 = 15 → write 5, carry 1 to tens
+- Tens: 4 + 2 + 1 (carry) = 7
 47 + 28 = 75
 ¹
 47
@@ -61,35 +58,35 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו במאונך: 47 + 28 = ?
-כותבים 47 ו-28 — אחדות מתחת לאחדות, עשרות מתחת לעשרות.
-אחדות: 7 + 8 = 15 → כותבים 5, נשיאה 1 לעשרות.
-עשרות: 4 + 2 + 1 = 7
+Calculate vertically: 47 + 28 = ?
+Write 47 and 28 — ones under ones, tens under tens.
+Ones: 7 + 8 = 15 → write 5, carry 1 to tens.
+Tens: 4 + 2 + 1 = 7
 47 + 28 = 75
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו במאונך: 36 + 27 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate vertically: 36 + 27 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו במאונך: 36 + 27 = ?
-שלב 1 — אחדות: 6 + 7 = 13 → כותבים 3, נשיאה 1 לעשרות
-שלב 2 — עשרות: 3 + 2 + 1 (נשיאה) = 6
+Calculate vertically: 36 + 27 = ?
+Step 1 — ones: 6 + 7 = 13 → write 3, carry 1 to tens
+Step 2 — tens: 3 + 2 + 1 (carry) = 6
 36 + 27 = 63
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר במאונך — עם נשיאה.
-בתרגול תמצאו חיבורים במאונך.
-התחילו תמיד מאחדות!
+Now you know how to add vertically — with carrying.
+In practice you'll find vertical additions.
+Always start with the ones!

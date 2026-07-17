@@ -1,4 +1,4 @@
-# משוואת חיסור
+# Subtraction Equations
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת חיסור `[DRAFT — not owner-approved]` |
+| **title_english** | Subtraction Equations |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקום ריק __ — משוואות חיסור עם מספרים גדולים.
+**Content scope:** Blank __ — subtraction equations with large numbers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לפתור משוואת חיסור עם מקום ריק — __.
-צריך למצוא את המספר החסר.
+Today we'll learn to solve a subtraction equation with a blank — __.
+We need to find the missing number.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 __ − 1,875 = 4,200
-שואלים: ממספר כלשהו חיסרו 1,875 וקיבלו 4,200 — מה המספר?
+Ask: from some number you subtract 1,875 and get 4,200 — what is the number?
 __ = 4,200 + 1,875 = 6,075
-בדיקה: 6,075 − 1,875 = 4,200
+Check: 6,075 − 1,875 = 4,200
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 9,000 − __ = 3,500
 __ = 9,000 − 3,500 = 5,500
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-__ − 1,875 = 4,200 — מה החסר?
+__ − 1,875 = 4,200 — what is missing?
 __ = 4,200 + 1,875
 __ = 6,075
 6,075.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-15,000 − __ = 6,500 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+15,000 − __ = 6,500 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-15,000 − __ = 6,500 — מה המספר החסר?
-שואלים: 15,000 פחות כמה = 6,500?
+15,000 − __ = 6,500 — what is the missing number?
+Ask: 15,000 minus what equals 6,500?
 __ = 15,000 − 6,500 = 8,500
-בדיקה: 15,000 − 8,500 = 6,500
+Check: 15,000 − 8,500 = 6,500
 __ = 8,500
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור משוואות חיסור.
-בתרגול תמצאו משוואות עם __. חברו כדי למצוא את החסר!
+Now you know how to solve subtraction equations.
+In practice you'll find equations with __. Add to find what's missing!

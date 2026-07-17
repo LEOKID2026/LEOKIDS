@@ -1,4 +1,4 @@
-# התחלקות — כללי 2, 3, 5, 6, 9 ו-10
+# Divisibility — Rules for 2, 3, 5, 6, 9, and 10
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | התחלקות — כללי 2, 3, 5, 6, 9 ו-10 `[DRAFT — not owner-approved]` |
+| **title_english** | Divisibility — Rules for 2, 3, 5, 6, 9, and 10 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סימני התחלקות 2, 3, 5, 6, 9, 10. כולל 3, 6, 9 (חדש בכיתה ד׳). מספרים עד ~1,000.
+**Content scope:** Divisibility tests for 2, 3, 5, 6, 9, 10. Includes 3, 6, 9 (new in Grade 4). Numbers up to ~1,000.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבדוק מתי מספר מתחלק ב-2, 3, 5, 6, 9 או 10 בלי שארית — לפי כללים מהירים.
-
----
-
-## 2. הסבר
-
-כאן מרחיבים לששה מחלקים — כולל 3, 6, 9 (לפי סכום הספרות).
-÷2 / ÷5 / ÷10: לפי ספרת האחדות — כמו שלמדנו קודם.
-÷3 (או ÷9): סכום הספרות מתחלק ב-3 (או ב-9).
-÷6: חייב להתחלק גם ב-2 וגם ב-3.
+Today we'll check when a number divides evenly by 2, 3, 5, 6, 9, or 10 — using quick rules.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+Here we expand to six divisors — including 3, 6, 9 (by the sum of the digits).
+÷2 / ÷5 / ÷10: by the ones digit — like we learned before.
+÷3 (or ÷9): the sum of the digits divides by 3 (or by 9).
+÷6: must divide evenly by both 2 and 3.
+
+---
+
+## 3. Visual / concrete example
 
 450
-ספרת אחדות: 0 → ÷2  ÷5  ÷10
-סכום ספרות: 4+5+0 = 9 → ÷3  ÷9  → ÷6
+Ones digit: 0 → ÷2  ÷5  ÷10
+Sum of digits: 4+5+0 = 9 → ÷3  ÷9  → ÷6
 450 ÷ 10 = 45
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-האם 126 מתחלק ב-2? ב-3? ב-6? ב-9?
-אחדות 6 (זוגי) → ÷2 כן.
-1+2+6 = 9 → ÷3 כן, ÷9 כן.
-÷2 ו-÷3 → ÷6 כן.
-÷2, ÷3, ÷6, ÷9 — כולם כן.
-
----
-
-## 5. נסו בעצמכם
-
-האם 234 מתחלק ב-2, ב-3, ב-5, ב-6, ב-9 וב-10? (כן/לא לכל אחד)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Is 126 divisible by 2? By 3? By 6? By 9?
+Ones digit 6 (even) → ÷2 yes.
+1+2+6 = 9 → ÷3 yes, ÷9 yes.
+÷2 and ÷3 → ÷6 yes.
+÷2, ÷3, ÷6, ÷9 — all yes.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-האם 234 מתחלק ב-2, ב-3, ב-5, ב-6, ב-9 וב-10?
-÷2: ספרת אחדות 4 (זוגי) → כן.
-÷3: סכום ספרות 2+3+4 = 9 — מתחלק ב-3 → כן.
-÷5: ספרת אחדות 4 (לא 0 ולא 5) → לא.
-÷6: מתחלק גם ב-2 וגם ב-3 → כן.
-÷9: סכום ספרות 9 — מתחלק ב-9 → כן.
-÷10: ספרת אחדות 4 (לא 0) → לא.
-÷2 כן, ÷3 כן, ÷5 לא, ÷6 כן, ÷9 כן, ÷10 לא
+Is 234 divisible by 2, 3, 5, 6, 9, and 10? (yes/no for each)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לבדוק התחלקות ב-2, 3, 5, 6, 9 ו-10.
-בתרגול תמצאו מתחלק? — השתמשו בכללים!
+Is 234 divisible by 2, 3, 5, 6, 9, and 10?
+÷2: ones digit 4 (even) → yes.
+÷3: sum of digits 2+3+4 = 9 — divides by 3 → yes.
+÷5: ones digit 4 (not 0 or 5) → no.
+÷6: divides by both 2 and 3 → yes.
+÷9: sum of digits 9 — divides by 9 → yes.
+÷10: ones digit 4 (not 0) → no.
+÷2 yes, ÷3 yes, ÷5 no, ÷6 yes, ÷9 yes, ÷10 no
+
+---
+
+## 7. Let's practice!
+
+Now you know how to check divisibility by 2, 3, 5, 6, 9, and 10.
+In practice you'll find does it divide evenly? — use the rules!

@@ -71,7 +71,7 @@ export default function LeoWordDetectiveGame({
   const diffConfig = LANGUAGE_DIFFICULTIES[difficulty];
   const task = tasks[taskIndex] ?? null;
   const tasksPerSession = tasks.length || LANGUAGE_SESSION_TASKS;
-  const instructionText = phase === "play" && task ? task.missionHe : "";
+  const instructionText = phase === "play" && task ? task.mission : "";
 
   const {
     onCorrect,
@@ -120,7 +120,7 @@ export default function LeoWordDetectiveGame({
 
   const loadTaskTimer = useCallback(() => {
     const limit = taskTimeLimitSec(difficulty, {
-      isHebrew: true,
+      isHebrew: false,
       hasPassage: Boolean(task?.passage),
     });
     setTimeLimitSec(limit);
@@ -170,7 +170,7 @@ export default function LeoWordDetectiveGame({
     timerPausedRef.current = true;
     setCheckState("bad");
     setBoardAnim("shake");
-    const timeoutText = "הזמן נגמר! התיק נשאר פתוח.";
+    const timeoutText = "Time's up! The case stays open.";
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -265,7 +265,7 @@ export default function LeoWordDetectiveGame({
     if (!task || timerPausedRef.current) return;
     const required = Object.keys(task.solution);
     if (required.some((z) => !zoneFills[z])) {
-      setFeedback("מלאו את כל מקומות הראיות בלוח");
+      setFeedback("Fill every evidence spot on the board");
       return;
     }
 
@@ -372,20 +372,20 @@ export default function LeoWordDetectiveGame({
 
   const cardsPanel = (
     <>
-      <p className={proto.cardsPanelTitle}>🧾 כרטיסי ראיות</p>
+      <p className={proto.cardsPanelTitle}>🧾 Evidence cards</p>
       <div className={proto.cardGrid}>{evidenceButtons}</div>
     </>
   );
 
   const feedbackBar = (
-    <p className={shop.feedbackText}>{feedback || "גררו ראיות ללוח ולחצו פתור תיק"}</p>
+    <p className={shop.feedbackText}>{feedback || "Drag evidence onto the board and tap Solve Case"}</p>
   );
 
   return (
-    <div className={`${frame.shell} ${frame.shellLavender}`} dir="rtl">
+    <div className={`${frame.shell} ${frame.shellLavender}`} dir="ltr">
       <header className={frame.header}>
         <Link href={backHref} className={frame.hudChip}>
-          חזרה
+          Back
         </Link>
         {phase === "play" ? (
           <div className={frame.hud}>
@@ -397,17 +397,17 @@ export default function LeoWordDetectiveGame({
               ❌ {mistakes}/{diffConfig.maxMistakes}
             </span>
             <span className={`${frame.hudChip} ${styles.hudTime} ${timeLeft <= 8 ? styles.hudTimeWarn : ""}`}>
-              ⏱ {timeLeft} שנ׳
+              ⏱ {timeLeft}s
             </span>
           </div>
         ) : (
           <div className={frame.hud}>
-            <span className={frame.hudChip}>{productionMode ? "🕵️" : "🕵️ אבטיפוס"}</span>
+            <span className={frame.hudChip}>{productionMode ? "🕵️" : "🕵️ Prototype"}</span>
           </div>
         )}
         {phase === "play" ? (
           <button type="button" className={frame.hudChip} onClick={exitToIntro}>
-            יציאה
+            Exit
           </button>
         ) : (
           <div style={{ minWidth: 40 }} aria-hidden />
@@ -424,9 +424,9 @@ export default function LeoWordDetectiveGame({
       {!productionMode && phase === "intro" ? (
         <div className={frame.screenCenter}>
           <p className={frame.introHero}>🕵️🔍</p>
-          <h1 className={frame.introTitle}>בלש המילים של ליאו</h1>
+          <h1 className={frame.introTitle}>Leo's Word Detective</h1>
           <p className={frame.introText}>
-            גררו ראיות ללוח החקירה - אותיות, מילים וכרטיסי אירועים. כשהתיק מוכן, חותמים נפתר!
+            Drag evidence onto the investigation board — letters, words, and event cards. When the case is ready, stamp it solved!
           </p>
           <div className={frame.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -442,10 +442,10 @@ export default function LeoWordDetectiveGame({
           </div>
           <EducationalDifficultyGradeHint className={`${frame.introText} opacity-70`} style={{ fontSize: "0.72rem" }} />
           <p className={frame.introText} style={{ fontSize: "0.78rem" }}>
-            {LANGUAGE_SESSION_TASKS} תיקים · לוח חקירה · בלי הקלדה
+            {LANGUAGE_SESSION_TASKS} cases · investigation board · no typing
           </p>
           <button type="button" className={frame.startBtn} onClick={startGame}>
-            פתח תיק חקירה 🕵️
+            Open a case 🕵️
           </button>
         </div>
       ) : null}
@@ -453,7 +453,7 @@ export default function LeoWordDetectiveGame({
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🔍 {task.caseLabel} · תיק {taskIndex + 1}/{tasksPerSession}
+            🔍 {task.caseLabel} · Case {taskIndex + 1}/{tasksPerSession}
           </p>
           <div className={`${shop.shopGrid} ${proto.protoShopGrid}`} data-educational-workplace-grid="">
             <aside className={`${shop.customerCol} ${proto.missionMobile}`}>
@@ -463,26 +463,26 @@ export default function LeoWordDetectiveGame({
                 </span>
                 <div className={shop.customerSpeechWrap}>
                   <div className={shop.missionRow}>
-                    <p className={shop.customerName}>תיק חקירה</p>
+                    <p className={shop.customerName}>Investigation case</p>
                     <EducationalGameInstructionReplay
                       text={instructionText}
                       onReplay={replayInstruction}
                     />
                   </div>
-                  <p className={shop.missionText}>{task.missionHe}</p>
+                  <p className={shop.missionText}>{task.mission}</p>
                 </div>
               </div>
             </aside>
 
             <div key={`desk-${taskKey}`} className={proto.missionDesktop}>
               <div className={shop.missionRow}>
-                <p className={proto.missionDesktopTitle}>תיק חקירה</p>
+                <p className={proto.missionDesktopTitle}>Investigation case</p>
                 <EducationalGameInstructionReplay
                   text={instructionText}
                   onReplay={replayInstruction}
                 />
               </div>
-              <p className={proto.missionDesktopText}>{task.missionHe}</p>
+              <p className={proto.missionDesktopText}>{task.mission}</p>
             </div>
 
             <section className={`${shop.workCol} ${proto.protoWorkCol}`}>
@@ -495,7 +495,7 @@ export default function LeoWordDetectiveGame({
                 >
                   {boardAnim === "stamp" ? (
                     <div className={styles.stampOverlay}>
-                      <span className={styles.stamp}>התיק נפתר ✓</span>
+                      <span className={styles.stamp}>Case closed ✓</span>
                     </div>
                   ) : null}
                   {task.zones.map((zone) => {
@@ -532,10 +532,10 @@ export default function LeoWordDetectiveGame({
             <div className={`${shop.bottomBar} ${proto.protoBottomBar}`}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} disabled={boardAnim === "stamp"} onClick={solveCase}>
-                  פתור תיק 🕵️
+                  Solve case 🕵️
                 </button>
                 <button type="button" className={shop.secondaryBtn} disabled={boardAnim === "stamp"} onClick={clearBoard}>
-                  נקה לוח
+                  Clear board
                 </button>
               </div>
             </div>
@@ -546,13 +546,13 @@ export default function LeoWordDetectiveGame({
       {phase === "won" && !productionMode ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🎉 כל התיקים נפתרו!</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ הצלחות: {successCount}/{tasksPerSession}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🎉 All cases solved!</h2>
+            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>✅ Successes: {successCount}/{tasksPerSession}</p>
+            <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={() => setPhase("intro")}>
-                משחק חדש
+                New game
               </button>
             </div>
           </div>
@@ -562,16 +562,16 @@ export default function LeoWordDetectiveGame({
       {phase === "lost" && !productionMode ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🕵️ החקירה נעצרה</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ הצלחות: {successCount}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🕵️ Investigation stopped</h2>
+            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>✅ Successes: {successCount}</p>
+            <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={startGame}>
-                נסו שוב
+                Try again
               </button>
               <button type="button" className={frame.secondaryBtn} onClick={() => setPhase("intro")}>
-                בחירת רמה
+                Choose level
               </button>
             </div>
           </div>

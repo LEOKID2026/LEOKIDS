@@ -1,4 +1,4 @@
-# סדר האלף בית
+# The Order of the Alphabet
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | סדר האלף בית |
+| **title_english** | The Order of the Alphabet |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** סדר A—Z; audio_required: yes — שיר/רצף
+**Content scope:** Order A—Z; audio_required: yes — song/sequence
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד את סדר האותיות באנגלית.
-מתחילים ב-A, ממשיכים ל-B ול-C, ומתקדמים עד Z.
-זה כמו אלף־בית — אבל באנגלית.
-
----
-
-## 2. הסבר
-
-נחזור על סדר האותיות בקבוצות.
-הקבוצה הראשונה מתחילה ב-A וממשיכה עד G.
-הקבוצה השנייה מתחילה ב-H וממשיכה עד N.
-הקבוצה השלישית מתחילה ב-O וממשיכה עד T.
-הקבוצה הרביעית מתחילה ב-U וממשיכה עד Z.
-אחרי M באה N.
-אחרי S באה T.
+Today we will learn the order of the letters in English.
+We start with A, continue to B and C, and go all the way to Z.
+It's like an alphabet — but in English.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מה בא אחרי C?
+Let's review the order of the letters in groups.
+The first group starts with A and continues to G.
+The second group starts with H and continues to N.
+The third group starts with O and continues to T.
+The fourth group starts with U and continues to Z.
+After M comes N.
+After S comes T.
+
+---
+
+## 3. Example
+
+What comes after C?
 D
-מה בא לפני F?
+What comes before F?
 E
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה בא אחרי K?
-בסדר האותיות, אחרי K באה L.
+What comes after K?
+In the letter order, after K comes L.
 L
 L
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מה בא לפני W?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: מה בא לפני W?
-בסדר האותיות, לפני W באה V.
-התשובה היא V.
+What comes before W?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו מכירים סדר האותיות.
-בעמוד הבא — חזרה על צלילים.
+The question: what comes before W?
+In the letter order, before W comes V.
+The answer is V.
+
+---
+
+## 7. Let's practice!
+
+Now you know the order of the letters.
+On the next page — a review of sounds.

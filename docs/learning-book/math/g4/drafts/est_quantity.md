@@ -1,4 +1,4 @@
-# הערכת כמות
+# Estimating a Quantity
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הערכת כמות `[DRAFT — not owner-approved]` |
+| **title_english** | Estimating a Quantity |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** **הערכה** של כמות בחיים — עיגול לעשרות/מאות/אלפים **קרובים**. ללא ספירה מדויקת. ללא מדידה.
+**Content scope:** **Estimate** a real-life quantity — round to nearest tens/hundreds/thousands. No exact counting. No measuring.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להעריך כמות — כשאי אפשר (או לא צריך) לספור בדיוק.
-≈ אומר: בערך, קרוב ל.
+Today we'll learn to estimate a quantity — when you can't (or don't need to) count exactly.
+≈ means: about, close to.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-בקופסה יש בערך 987 ממתקים.
-כמה זה בערך?
-987 קרוב מאוד ל-1,000.
+A box has about 987 candies.
+About how many is that?
+987 is very close to 1,000.
 987 ≈ 1,000
-למה? 987 רק 13 פחות מ-1,000 — קל יותר לחשוב "בערך אלף".
-כלל: מחפשים מספר עגול קרוב — 10, 100, 1,000 — שמתאים לסדר גודל.
+Why? 987 is only 13 less than 1,000 — easier to think "about a thousand."
+Rule: find a round number close by — 10, 100, 1,000 — that fits the size.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-בסל יש בערך 412 תפוחים.
-הערכה לעשרות?
-412 קרוב ל-410 (או ל-400).
-412 ≈ 410 (או 412 ≈ 400)
+A basket has about 412 apples.
+Estimate to the nearest ten?
+412 is close to 410 (or to 400).
+412 ≈ 410 (or 412 ≈ 400)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-במחסן יש בערך 1,876 חבילות. העריכו למאה הקרובה.
-1,876 — הספרה בעשרות היא 7 (≥ 5) → עולים במאות.
+A warehouse has about 1,876 packages. Estimate to the nearest hundred.
+1,876 — the tens digit is 7 (≥ 5) → round up in the hundreds place.
 1,876 ≈ 1,900.
 1,876 ≈ 1,900
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-במחסן יש 1,543 כסאות. העריכו — כמה זה בערך למאה הקרובה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A warehouse has 1,543 chairs. Estimate — about how many to the nearest hundred?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-במחסן יש 1,543 כסאות.
-העריכו — כמה זה בערך למאה הקרובה?
-מסתכלים על ספרת העשרות: 4 (4 < 5 → מעגלים למטה).
+A warehouse has 1,543 chairs.
+Estimate — about how many to the nearest hundred?
+Look at the tens digit: 4 (4 < 5 → round down).
 1,543 → 1,500
 1,543 ≈ 1,500
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להעריך כמויות בחיים.
-חפשו מספר עגול — 100, 1,000 — שקרוב לכמות!
+Now you know how to estimate quantities in real life.
+Find a round number — 100, 1,000 — that's close to the amount!

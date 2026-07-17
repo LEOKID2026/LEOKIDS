@@ -1,4 +1,4 @@
-﻿# מציאת השלם כשיש רבע
+# Finding the Whole When You Know the Quarter
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מציאת השלם כשיש רבע `[DRAFT — not owner-approved]` |
+| **title_english** | Finding the Whole When You Know the Quarter |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** יודעים רבע — מוצאים שלם. 4 חלקים שווים. חיבור חוזר או כפל כתמיכה. ללא משתנים.
+**Content scope:** Know the quarter — find the whole. 4 equal parts. Repeated addition or multiplication as support. No variables.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד למצוא את השלם כשידוע לנו רבע.
-רבע = חלק אחד מתוך ארבעה חלקים שווים — כשידוע לנו רבע, השלם הוא ארבעה רבעים שווים.
-
----
-
-## 2. הסבר
-
-אם רבע מהשלם הוא מספר מסוים — השלם = 4 פעמים אותו מספר.
-רבע מהשלם הוא 4 → השלם הוא 16 — כי 4 + 4 + 4 + 4 = 16.
-איך מוצאים?
-- מחברים ארבע פעמים: 4 + 4 + 4 + 4
-- או 4 × 4 = 16 (4 קבוצות של 4)
-חשוב: 4 חלקים שווים — כל אחד = רבע.
+Today we're going to learn to find the whole when we know the quarter.
+A quarter = one part out of four equal parts — when we know one quarter, the whole is four equal quarters.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-רבע מהשלם הוא 4 — כמה השלם?
+If a quarter of the whole is a certain number — the whole = 4 times that number.
+A quarter of the whole is 4 → the whole is 16 — because 4 + 4 + 4 + 4 = 16.
+How do you find it?
+- Add four times: 4 + 4 + 4 + 4
+- Or 4 × 4 = 16 (4 groups of 4)
+Important: 4 equal parts — each one = a quarter.
+
+---
+
+## 3. Visual / concrete example
+
+A quarter of the whole is 4 — what is the whole?
 4 + 4 + 4 + 4 = 16
-או: 4 × 4 = 16
+Or: 4 × 4 = 16
 [4] | [4] | [4] | [4]
-רבע רבע רבע רבע
-= 16 שלם
+quarter quarter quarter quarter
+= 16 whole
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-רבע מהשלם הוא 4. מה השלם?
-רבע = 4 — חלק אחד מתוך 4 שווים.
-עוד 3 רבעים — כל אחד 4.
-4 + 4 + 4 + 4 = 16 (או 4 × 4 = 16).
-השלם הוא 16
-
----
-
-## 5. נסו בעצמכם
-
-רבע מהשלם הוא 5.
-מה השלם?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A quarter of the whole is 4. What is the whole?
+Quarter = 4 — one part out of 4 equal parts.
+Three more quarters — each is 4.
+4 + 4 + 4 + 4 = 16 (or 4 × 4 = 16).
+The whole is 16
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-רבע מהשלם הוא 5.
-מה השלם?
-רבע = 5 — חלק אחד מתוך 4 שווים.
-עוד 3 רבעים — כל אחד 5.
-5 + 5 + 5 + 5 = 20 (או 4 × 5 = 20)
-השלם הוא 20
+A quarter of the whole is 5.
+What is the whole?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים למצוא שלם כשיש רבע.
-בתרגול תמצאו רבע הוא … — מה השלם? חברו 4 פעמים או 4 × הרבע!
+A quarter of the whole is 5.
+What is the whole?
+Quarter = 5 — one part out of 4 equal parts.
+Three more quarters — each is 5.
+5 + 5 + 5 + 5 = 20 (or 4 × 5 = 20)
+The whole is 20
+
+---
+
+## 7. Let's practice!
+
+Now you know how to find the whole when you know the quarter.
+In practice you'll find: the quarter is … — what is the whole? Add 4 times or 4 × the quarter!

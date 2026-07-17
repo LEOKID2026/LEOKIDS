@@ -1,4 +1,4 @@
-# הוראות בכיתה
+# Classroom Instructions
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | הוראות בכיתה |
+| **title_english** | Classroom Instructions |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** Stand up, Sit down, Open your book, Close your book; audio_required: yes — פקודות
+**Content scope:** Stand up, Sit down, Open your book, Close your book; audio_required: yes — commands
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להקשיב להוראות קצרות באנגלית בכיתה.
-שלב אחד בכל פעם — קודם שומעים.
-
----
-
-## 2. הסבר
-
-Stand up. — קום.
-Sit down. — שב.
-Open your book. — פתח את הספר.
-Close your book. — סגור את הספר.
+Today we will learn to listen to short instructions in English in the classroom.
+One step at a time — first we listen.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-המורה אומרת: "Stand up."
-עומדים — זו ההוראה.
-המורה אומרת: "Sit down."
-יושבים.
-
----
-
-## 4. בואו נפתור
-
-מה עושים כששומעים "Open your book"?
-Open פירושו לפתוח.
-Book פירושו ספר.
-לכן פותחים את הספר.
-Open your book פירושו: פתחו את הספר.
+Stand up. — Get up.
+Sit down. — Sit down.
+Open your book. — Open your book.
+Close your book. — Close your book.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-מה עושים כששומעים "Close your book"?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה עושים כששומעים "Close your book"?
-Close פירושו לסגור.
-Book פירושו ספר.
-לכן סוגרים את הספר.
-Close your book פירושו: סגרו את הספר.
+The teacher says: "Stand up."
+We stand up — that's the instruction.
+The teacher says: "Sit down."
+We sit down.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו מכירים הוראות כיתה.
-בעמוד הבא — עוד הוראות קצרות.
+What do we do when we hear "Open your book"?
+Open means to open.
+Book means a book.
+So we open our book.
+Open your book means: open the book.
+
+---
+
+## 5. Try it yourself
+
+What do we do when we hear "Close your book"?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+What do we do when we hear "Close your book"?
+Close means to close.
+Book means a book.
+So we close the book.
+Close your book means: close the book.
+
+---
+
+## 7. Let's practice!
+
+Now you know classroom instructions.
+On the next page — more short instructions.

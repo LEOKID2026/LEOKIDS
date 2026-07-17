@@ -11,85 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | Modals — can, must, have to |
+| **title_english** | Modals — can, must, have to |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:מודאליים_בסיסיים_future_will_going_to_והשוואתיים`
+**Linked skill_ids:** `english``
 
 **Content scope:** You must… / I can… / We have to…
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד Modals — can, must, have to.
-You must wear a helmet — אתה חייב לחבוש קסדה.
+Today we will learn Modals — can, must, have to.
+You must wear a helmet.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-can — יכול או מותר:
+can — ability or permission:
 I can swim.
 
-אני יודע לשחות.
-
-must ו-have to — חובה:
+must and have to — an obligation:
 You must wear a helmet.
-
-אתה חייב לחבוש קסדה.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-רוכב אופניים — קסדה.
+A bike rider — a helmet.
 
 You must wear a helmet.
 
-אתה חייב לחבוש קסדה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אתה חייב לחבוש קסדה"?
+Question: How do you say this?
 
 You must wear a helmet
 
-תשובה: You must wear a helmet
+Answer: You must wear a helmet
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-נסיעה בלוח זמנים — אסור להתאחר.
+A trip with a schedule — no being late.
 
 We have to arrive on time.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אנחנו חייבים להגיע בזמן."
+Exercise: "We have to arrive on time."
 
-have to = חובה (חלופה ל must).
+have to = an obligation (an alternative to must).
 
-we have to + פועל (בלי to נוסף).
+we have to + verb (without an extra "to").
 
-אנחנו חייבים להגיע בזמן.
-
- We have to arrive on time.
+So the full sentence is: We have to arrive on time.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים ב-can, must ו-have to.
-בתרגול תמצאו You must wear a helmet.
+Now you will use can, must, and have to.
+In the practice, you'll find: You must wear a helmet.

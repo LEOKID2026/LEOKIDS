@@ -1,4 +1,4 @@
-﻿# גופים — גליל, פירמידה, חרוט, כדור
+# Solids — Cylinder, Pyramid, Cone, Sphere
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גופים — גליל, פירמידה, חרוט, כדור `[DRAFT — not owner-approved]` |
+| **title_english** | Solids — Cylinder, Pyramid, Cone, Sphere `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שמות ותכונות; G6 solids
+**Content scope:** Names and properties; G6 solids
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נרחיב גופים תלת ממדיים בגאומטריה.
-מלבד קובייה ותיבה — נכיר גליל, פירמידה, חרוט וכדור.
-
----
-
-## 2. הסבר
-
-קובייה — 6 פאות ריבועיות שוות.
-תיבה — 6 פאות מלבניות.
-גליל — שני בסיסים עגולים.
-פירמידה — בסיס מצולע + קדקוד אחד.
-חרוט — בסיס עגול + קדקוד.
-כדור — כל הנקודות במרחק שווה מהמרכז.
+Today we will expand our knowledge of three-dimensional solids in geometry.
+Besides cube and rectangular prism — we'll meet cylinder, pyramid, cone, and sphere.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-גליל — כמו פחית.
-פירמידה — כמו אוהל עם בסיס מרובע.
-
----
-
-## 4. בואו נפתור
-
-איזה גוף יש לו שני בסיסים עגולים?
-בסיס עגול → מעגל.
-גליל.
+Cube — 6 equal square faces.
+Rectangular prism — 6 rectangular faces.
+Cylinder — two circular bases.
+Pyramid — polygon base + one apex.
+Cone — circular base + apex.
+Sphere — all points the same distance from the center.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-איזה גוף — חרוט או גליל — יש לו קדקוד אחד ובסיס עגול?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-איזה גוף — חרוט או גליל — יש לו קדקוד אחד ובסיס עגול?
-גליל — שני בסיסים עגולים, ללא קדקוד.
-חרוט — בסיס עגול אחד + קדקוד אחד בראש.
-חרוט
+Cylinder — like a can.
+Pyramid — like a tent with a square base.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-הכרת גופים מכינה לחישוב נפח.
-בתרגול תמצאו גליל, פירמידה, חרוט וכדור — בדקו את צורת הבסיס!
+Which solid has two circular bases?
+Circular base → circle.
+Cylinder.
+
+---
+
+## 5. Try it yourself
+
+Which solid — cone or cylinder — has one apex and a circular base?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Which solid — cone or cylinder — has one apex and a circular base?
+Cylinder — two circular bases, no apex.
+Cone — one circular base + one apex at the top.
+Cone
+
+---
+
+## 7. Let's practice!
+
+Learning solids prepares you for volume calculations.
+In practice you'll find cylinder, pyramid, cone, and sphere — check the shape of the base!

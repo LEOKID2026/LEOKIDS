@@ -91,7 +91,7 @@ if (typeof window !== "undefined") {
   try { localStorage.removeItem("offline_game_err_log"); } catch {}
 }
 
-/** Internal dev tools â€” admin-only via DevPrototypeAdminGate in render. */
+/** Internal dev tools — admin-only via DevPrototypeAdminGate in render. */
 function pathnameIsInternalDevRoute(pathname) {
   const p = pathname || "";
   return (
@@ -303,7 +303,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta
           name="description"
-          content="Leo Kids â€” practice math, geometry, English, and science with progress tracking for parents."
+          content="Leo Kids — practice math, geometry, English, and science with progress tracking for parents."
         />
         {isStudentPwaInstallMode ? (
           <>

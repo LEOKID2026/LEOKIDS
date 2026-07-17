@@ -1,4 +1,4 @@
-# בית ספר — class project
+# School — class project
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בית ספר — class project |
+| **title_english** | School — class project |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בית ספר — פרויקט כיתתי.
-Our class won the project — הכיתה שלנו ניצחה בפרויקט.
+Today we will learn about school — a class project.
+Our class won the project.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-won — ניצח (עבר):
+won — the past form of win:
 
 Our class won the project.
-
-הכיתה שלנו ניצחה בפרויקט.
 
 We worked hard last month.
 
-עבדנו קשה בחודש שעבר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-כיתה מציגה פרויקט.
+A class presenting a project.
 
 Our class won the project.
 
-הכיתה שלנו ניצחה בפרויקט.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הכיתה שלנו ניצחה בפרויקט"?
+Question: How do you say this?
 
 Our class won the project
 
-תשובה: Our class won the project
+Answer: Our class won the project
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-הכיתה מציגה פרויקט מדע.
+The class presenting a science project.
 
 Our class presented a science project.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הכיתה שלנו הציגה פרויקט מדעי."
+Exercise: "Our class presented a science project."
 
-פועל סדיר בעבר: present הופך ל-presented.
+A regular verb in the past: present becomes presented.
 
-a science project = פרויקט מדעי.
+"A science project" tells us what they presented.
 
-הכיתה שלנו הציגה פרויקט מדעי.
-
- Our class presented a science project.
+So the full sentence is: Our class presented a science project.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים הצלחות בבית הספר.
-בתרגול תמצאו Our class won the project.
+Now you will describe successes at school.
+In the practice, you'll find: Our class won the project.

@@ -1,4 +1,4 @@
-# ערך המקום — עד 200,000
+# Place Value — Up to 200,000
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ערך המקום — עד 200,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Place Value — Up to 200,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מאות אלפים, עשרות אלפים, אלפים; עד 200,000
+**Content scope:** hundred thousands, ten thousands, thousands; up to 200,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק ערך מקום במספרים גדולים — עד 200,000.
-נזהה מאות אלפים, עשרות אלפים, אלפים, מאות, עשרות ואחדות.
-
----
-
-## 2. הסבר
-
-125,480 = מאה אלף אחת + 2 עשרות אלפים + 5 אלפים + 4 מאות + 8 עשרות + 0 אחדות
-כשקוראים מספר גדול — מתחילים משמאל (הספרה הגדולה ביותר).
-48,650 — הספרה 4 במקום עשרות אלפים (40,000).
+Today we will strengthen place value with big numbers — up to 200,000.
+We will identify hundred thousands, ten thousands, thousands, hundreds, tens, and ones.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+125,480 = one hundred thousand + 2 ten thousands + 5 thousands + 4 hundreds + 8 tens + 0 ones
+When you read a big number — start from the left (the largest digit).
+48,650 — the digit 4 is in the ten thousands place (40,000).
+
+---
+
+## 3. Visual / concrete example
 
 73,205:
-- 7 במקום עשרות אלפים → 70,000
-- 3 במקום אלפים → 3,000
-- 2 במקום מאות → 200
-- 0 במקום עשרות
-- 5 במקום אחדות
+- 7 in the ten thousands place → 70,000
+- 3 in the thousands place → 3,000
+- 2 in the hundreds place → 200
+- 0 in the tens place
+- 5 in the ones place
 70,000 + 3,000 + 200 + 5 = 73,205
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-ב-125,480 — מה ערך הספרה 5?
-הספרה 5 נמצאת במקום אלפים.
-ערך = 5 × 1,000 = 5,000.
-הספרה 5 שווה 5,000.
-
----
-
-## 5. נסו בעצמכם
-
-ב-125,480 — מה ערך הספרה 2?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In 125,480 — what is the value of the digit 5?
+The digit 5 is in the thousands place.
+Value = 5 × 1,000 = 5,000.
+The digit 5 is worth 5,000.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-ב-125,480 — מה ערך הספרה 2?
-סדר המקומות: 1 = מאות אלפים, 2 = עשרות אלפים, 5 = אלפים, 4 = מאות, 8 = עשרות, 0 = אחדות.
-הספרה 2 נמצאת במקום עשרות אלפים.
-ערך = 2 × 10,000 = 20,000.
-התשובה: 20,000
+In 125,480 — what is the value of the digit 2?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לפרק מספרים גדולים לפי ערך מקום.
-בתרגול תמצאו שאלות על ספרות במאות אלפים ועשרות אלפים.
-עבדו לפי מקום ואז ערך!
+In 125,480 — what is the value of the digit 2?
+Place order: 1 = hundred thousands, 2 = ten thousands, 5 = thousands, 4 = hundreds, 8 = tens, 0 = ones.
+The digit 2 is in the ten thousands place.
+Value = 2 × 10,000 = 20,000.
+The answer: 20,000
+
+---
+
+## 7. Let's practice!
+
+Now you know how to break big numbers apart by place value.
+In practice you will find questions about digits in hundred thousands and ten thousands.
+Work by place first, then by value!

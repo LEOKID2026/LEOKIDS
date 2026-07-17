@@ -1,4 +1,4 @@
-# גוף האדם — נשימה ועיכול
+# The Human Body — Breathing and Digestion
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | גוף האדם — נשימה ועיכול `[DRAFT — not owner-approved]` |
+| **title_english** | The Human Body — Breathing and Digestion `[DRAFT — not owner-approved]` |
 
-**Content scope:** חילופי גזים בנשימה; מסלול עיכול — פשוט
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על מערכת הנשימה ומערכת העיכול — איך הגוף מקבל חמצן ומפרק מזון.
+**Content scope:** Gas exchange in breathing; digestive path — simple
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-נשימה — כשאנחנו נושמים, האוויר נכנס לריאות.
-הריאות מעבירות חמצן לדם; הדם מביא חמצן לכל הגוף.
-הדם מחזיר לריאות פחמן דו חמצני, ואנחנו מוציאים אותו בנשיפה.
-עיכול — מזון עובר מסלול:
-פה לועס ומרטיב את המזון, הוושט מעביר אותו לקיבה, הקיבה מערבבת, ובמעיים נספגים חומרים לגוף.
-חמצן וחומרים מהמזון עוזרים לגוף לקבל אנרגיה לפעילות.
+Today in science we will learn about the respiratory system and the digestive system — how the body gets oxygen and breaks down food.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-אחרי ריצה — נשימה מהירה.
-הגוף צריך יותר חמצן לשרירים.
-אחרי ארוחה — העיכול עובד בקיבה ובמעיים.
-הגוף מפרק לחם וירקות לחומרים שהדם מוביל.
-
----
-
-## 4. בואו נפתור
-
-איזה גז נכנס לריאות בנשימה?
-אוויר מכיל חמצן.
-הריאות קולטות חמצן לדם.
-חמצן
+Breathing — when we breathe, air enters the lungs.
+The lungs pass oxygen to the blood; the blood brings oxygen to the whole body.
+The blood returns carbon dioxide to the lungs, and we breathe it out.
+Digestion — food follows a path:
+The mouth chews and moistens food, the esophagus carries it to the stomach, the stomach mixes it, and in the intestines nutrients are absorbed into the body.
+Oxygen and nutrients from food help the body get energy for activity.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-לעסו לחם לרגע — שימו לב לשיניים וללשון.
-מה קורה למזון בפה?
-לאן הוא ממשיך אחרי הבליעה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: מה קורה למזון בפה — ולאן הוא ממשיך אחרי הבליעה?
-הסבר מדעי:
-מערכת העיכול מתחילה בפה.
-השיניים לועסות את המזון ומפרקות אותו לחתיכות קטנות.
-הלשון מערבבת; הרוק מרכך ומתחיל לפרק את המזון.
-אחרי הבליעה, המזון עובר דרך הלוע והוושט אל הקיבה — שם נמשך הפירוק.
-מהקיבה הוא עובר למעיים, שם נספגים לדם החומרים שהגוף צריך.
-בפה — לעיסה ורוק. אחרי בליעה — לוע, ושט, קיבה ומעיים.
+After running — fast breathing.
+The body needs more oxygen for the muscles.
+After a meal — digestion works in the stomach and intestines.
+The body breaks down bread and vegetables into materials the blood carries.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים נשימה ועיכול במדעים.
-בתרגול חפשו שאלות על ריאות, חמצן ומסלול המזון.
+Which gas enters the lungs when we breathe?
+Air contains oxygen.
+The lungs absorb oxygen into the blood.
+Oxygen
+
+---
+
+## 5. Try it yourself
+
+Chew bread for a moment — notice your teeth and tongue.
+What happens to food in the mouth?
+Where does it go after swallowing?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: what happens to food in the mouth — and where does it go after swallowing?
+Scientific explanation:
+The digestive system starts in the mouth.
+Teeth chew food and break it into small pieces.
+The tongue mixes; saliva softens and starts to break down food.
+After swallowing, food passes through the pharynx and esophagus to the stomach — where breakdown continues.
+From the stomach it goes to the intestines, where nutrients are absorbed into the blood.
+In the mouth — chewing and saliva. After swallowing — pharynx, esophagus, stomach, and intestines.
+
+---
+
+## 7. Let's practice!
+
+Now you know about breathing and digestion in science.
+When you practice, look for questions about lungs, oxygen, and the path of food.

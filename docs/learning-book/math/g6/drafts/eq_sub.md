@@ -1,4 +1,4 @@
-# משוואת חיסור — מספר חסר
+# Subtraction Equation — Missing Number
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת חיסור — מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Subtraction Equation — Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקום ריק __ — משוואות חיסור עם מספרים גדולים.
+**Content scope:** blank __ — subtraction equations with large numbers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור משוואות חיסור — מספר חסר עם מספרים גדולים.
+Today we will solve subtraction equations — a missing number with large numbers.
 5,000 − ? = 3,725
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-200,000 − ? = 175,000 — מספר חסר באמצע:
-? = מחוסר − תוצאה = 200,000 − 175,000
-כלל: כשה-__ אחרי המינוס — מחסרים את התוצאה מהמחוסר.
+200,000 − ? = 175,000 — missing number in the middle:
+? = minuend − result = 200,000 − 175,000
+Rule: when __ comes after the minus sign — subtract the result from the minuend.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 350,000 − __ = 218,000
 __ = 350,000 − 218,000 = 132,000
-בדיקה: 350,000 − 132,000 = 218,000
+Check: 350,000 − 132,000 = 218,000
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 200,000 − ? = 175,000
 ? = 200,000 − 175,000 = 25,000
-בדיקה: 200,000 − 25,000 = 175,000
+Check: 200,000 − 25,000 = 175,000
 25,000.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פתרו: 5,000 − ? = 3,725
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-פתרו: 5,000 − ? = 3,725
-? = מחוסר − תוצאה = 5,000 − 3,725 = 1,275.
-בדיקה: 5,000 − 1,275 = 3,725
-התשובה: ? = 1,275
+Solve: 5,000 − ? = 3,725
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-משוואות חיסור עם מספרים גדולים דורשות דיוק.
-בתרגול תמצאו משוואות חיסור — בדקו בהחלפה!
+Solve: 5,000 − ? = 3,725
+? = minuend − result = 5,000 − 3,725 = 1,275.
+Check: 5,000 − 1,275 = 3,725
+The answer: ? = 1,275
+
+---
+
+## 7. Let's practice!
+
+Subtraction equations with large numbers require accuracy.
+In practice you will find subtraction equations — check by substituting back!

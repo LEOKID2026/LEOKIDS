@@ -1,4 +1,4 @@
-﻿# לוח הכפל — קבוצות שוות
+# Times Table — Equal Groups
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | לוח הכפל — קבוצות שוות `[DRAFT — not owner-approved]` |
+| **title_english** | Times Table — Equal Groups |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל כקבוצות שוות ולוח כפל. חיבור חוזר כגשר. גורמים עד 10. ללא חילוק מפורט (נושא נפרד).
+**Content scope:** Multiplication as equal groups and times table. Repeated addition as a bridge. Factors up to 10. No detailed division (separate topic).
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד כפל — כאן זה גם קבוצות שוות וגם לוח הכפל.
-כפל עוזר לספור מהר כשיש כמה קבוצות באותו גודל.
-
----
-
-## 2. הסבר
-
-כפל = כמה קבוצות שוות × כמה בכל קבוצה.
-4 × 6 אומר:
-- 4 קבוצות
-- 6 בכל קבוצה
-- סה״כ: 6 + 6 + 6 + 6 = 24
-אפשר גם לחשוב: 4 × 6 = 24 — שורה בלוח הכפל.
-גשר מחיבור חוזר: 4 × 6 = 6 + 6 + 6 + 6 = 24
-(בדף הבא על חילוק — נראה שחילוק קשור לכפל.)
+Today we're going to learn multiplication — here it's both equal groups and the times table.
+Multiplication helps you count fast when there are several same-size groups.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-4 קבוצות של 6 כוכבים:
+Multiplication = how many equal groups × how many in each group.
+4 × 6 means:
+- 4 groups
+- 6 in each group
+- Total: 6 + 6 + 6 + 6 = 24
+You can also think: 4 × 6 = 24 — a row in the times table.
+Bridge from repeated addition: 4 × 6 = 6 + 6 + 6 + 6 = 24
+(On the next division page — we'll see that division is related to multiplication.)
+
+---
+
+## 3. Visual / concrete example
+
+4 groups of 6 stars:
 4 × 6 = 24
-חיבור חוזר: 6 + 6 + 6 + 6 = 24
+Repeated addition: 6 + 6 + 6 + 6 = 24
 ★★★★★★ ★★★★★★ ★★★★★★ ★★★★★★
-קבוצה 1 קבוצה 2 קבוצה 3 קבוצה 4
+group 1  group 2  group 3  group 4
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 4 × 6 = ?
-4 קבוצות, 6 בכל קבוצה.
-חיבור חוזר: 6 + 6 + 6 + 6 = 24
-בלוח הכפל: שורת 4, עמודת 6 → 24.
+Calculate: 4 × 6 = ?
+4 groups, 6 in each group.
+Repeated addition: 6 + 6 + 6 + 6 = 24
+In the times table: row 4, column 6 → 24.
 4 × 6 = 24
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 7 × 3 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 7 × 3 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 7 × 3 = ?
-7 קבוצות, 3 בכל קבוצה.
-שלב 2 — חיבור חוזר: 3 + 3 + 3 + 3 + 3 + 3 + 3 = 21
-שלב 3 — בלוח הכפל: שורת 7, עמודת 3 → 21
+Calculate: 7 × 3 = ?
+7 groups, 3 in each group.
+Step 2 — repeated addition: 3 + 3 + 3 + 3 + 3 + 3 + 3 = 21
+Step 3 — in the times table: row 7, column 3 → 21
 7 × 3 = 21
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שכפל = קבוצות שוות, וגם שורה בלוח הכפל.
-בתרגול תמצאו כפל עד 10 × 10.
-התחילו מקבוצות או מלוח הכפל!
+Now you know that multiplication = equal groups, and also a row in the times table.
+In practice you'll find multiplication up to 10 × 10.
+Start with groups or the times table!

@@ -1,4 +1,4 @@
-# חומרים — מצבי צבירה
+# Materials — States of Matter
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | חומרים — מצבי צבירה `[DRAFT — not owner-approved]` |
+| **title_english** | Materials — States of Matter `[DRAFT — not owner-approved]` |
 
-**Content scope:** מוצק/נוזל/גז ביומי; קרח נמס — ללא ניסוי מסוכן
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על מצבי צבירה — מוצק, נוזל וגז — בדברים שאנחנו רואים כל יום.
+**Content scope:** Solid/liquid/gas in daily life; ice melts — no dangerous experiments
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-לחומרים יש שלושה מצבים עיקריים:
-מוצק — קשיח, שומר צורה (אבן, עץ, קרח)
-נוזל — זורם, לוקח את צורת הכלי (מים, מיץ)
-גז — אוויר שאנחנו נושמים; לא רואים אותו אבל הוא שם
-קרח — מוצק.
-כשחם — הקרח נמס והופך למים (נוזל).
-זה שינוי שאפשר לראות בבית או בכיתה — בלי ניסוי מסוכן.
+Today in science we will learn about states of matter — solid, liquid, and gas — in things we see every day.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בקיץ — קוביית קרח בכוס.
-אחרי זמן — מים בכוס.
-הקרח (מוצק) הפך למים (נוזל).
-בבקבוק — מים זורמים.
-באוויר — גז שאנחנו נושמים.
-
----
-
-## 4. בואו נפתור
-
-קרח שנמס — מוצק או נוזל?
-לפני — קרח קשיח.
-אחרי — מים זורמים.
-קודם מוצק, אחר כך נוזל (מים)
+Materials have three main states:
+Solid — hard, keeps its shape (rock, wood, ice)
+Liquid — flows, takes the shape of its container (water, juice)
+Gas — air we breathe; we cannot see it but it is there
+Ice is a solid.
+When it is warm — ice melts and becomes water (a liquid).
+This is a change you can see at home or in class — without a dangerous experiment.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-כוס מיץ על השולחן — איזה מצב צבירה?
-ובקבוק שנראה ריק — מה יש בו?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה הייתה:
-כוס מיץ — איזה מצב צבירה?
-ובקבוק שנראה ריק — מה יש בו?
-מיץ זורם ולוקח את צורת הכוס — זהו נוזל.
-בקבוק שנראה ריק מלא באוויר שאיננו רואים — זהו גז.
-התשובה: מיץ הוא נוזל.
-בקבוק שנראה ריק מלא באוויר, שהוא גז.
+In summer — an ice cube in a cup.
+After a while — water in the cup.
+The ice (solid) turned into water (liquid).
+In a bottle — water flows.
+In the air — gas that we breathe.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים מוצק, נוזל וגז במדעים.
-בתרגול חפשו שאלות על קרח, מים ומצבי צבירה.
+Melted ice — solid or liquid?
+Before — hard ice.
+After — flowing water.
+First solid, then liquid (water)
+
+---
+
+## 5. Try it yourself
+
+A cup of juice on the table — which state of matter?
+And a bottle that looks empty — what is inside?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question was:
+A cup of juice — which state of matter?
+And a bottle that looks empty — what is inside?
+Juice flows and takes the shape of the cup — that is a liquid.
+A bottle that looks empty is full of air we cannot see — that is a gas.
+The answer: juice is a liquid.
+A bottle that looks empty is full of air, which is a gas.
+
+---
+
+## 7. Let's practice!
+
+Now you know about solid, liquid, and gas in science.
+When you practice, look for questions about ice, water, and states of matter.

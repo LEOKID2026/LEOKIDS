@@ -1,4 +1,4 @@
-﻿# נפח מנסרה — בסיס משולש
+# Volume of a Prism — Triangular Base
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח מנסרה — בסיס משולש `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Prism — Triangular Base `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שטח משולש × גובה
+**Content scope:** Triangle area × height
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח מנסרה — בסיס משולש.
-נפח = שטח בסיס × גובה.
-לדוגמה (בסיס 10, גובה 4):
+Today we will learn volume of a prism — triangular base.
+Volume = base area × height.
+For example (base 10, height 4):
 10 × 4 ÷ 2 = 20
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים:
+Steps:
 1.
-שטח בסיס (בסיס 10, גובה 4):
+Base area (base 10, height 4):
 10 × 4 ÷ 2 = 20
 2.
-נפח = שטח בסיס × גובה המנסרה
+Volume = base area × height of the prism
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס 6 ס״מ, גובה משולש 4 ס״מ, גובה מנסרה 10 ס״מ:
+Base 6 cm, triangle height 4 cm, prism height 10 cm:
 (6×4)÷2 = 12
-12 × 10 = 120 (ס״מ³)
+12 × 10 = 120 (cm³)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מנסרה — בסיס משולש 6 ס״מ, גובה משולש 4 ס״מ, גובה מנסרה 10 ס״מ. נפח?
+Prism — triangular base 6 cm, triangle height 4 cm, prism height 10 cm. Volume?
 (6×4)÷2 = 12
 12 × 10 = 120
-120 ס״מ³.
+120 cm³.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מנסרה: בסיס 8 ס״מ, גובה משולש 6 ס״מ, גובה מנסרה 7 ס״מ — מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מנסרה — בסיס 8 ס״מ, גובה משולש 6 ס״מ, גובה מנסרה 7 ס״מ — מה הנפח?
-שטח בסיס (משולש) — (8 × 6) ÷ 2 = 24.
-נפח — 24 × 7 = 168.
-168 ס״מ³
+Prism: base 8 cm, triangle height 6 cm, prism height 7 cm — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-נפח מנסרה משולש = שטח משולש × גובה.
-בתרגול תמצאו מנסרות — אל תשכחו ÷2 בשטח!
+Prism — base 8 cm, triangle height 6 cm, prism height 7 cm — what is the volume?
+Base area (triangle) — (8 × 6) ÷ 2 = 24.
+Volume — 24 × 7 = 168.
+168 cm³
+
+---
+
+## 7. Let's practice!
+
+Volume of a triangular prism = triangle area × height.
+In practice you'll find prisms — don't forget ÷2 for the area!

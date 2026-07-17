@@ -1,4 +1,4 @@
-# שבר כחילוק
+# A Fraction as Division
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שבר כחילוק `[DRAFT — not owner-approved]` |
+| **title_english** | A Fraction as Division |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,14 +22,14 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד: שבר = חילוק.
-3/4 פירושו 3 ÷ 4.
+Today we will learn: a fraction = division.
+3/4 means 3 ÷ 4.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 a/b = a ÷ b
 3/4: 3 ÷ 4 = 0.75
@@ -37,39 +37,39 @@ a/b = a ÷ b
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 1/2 = 1 ÷ 2 = 0.5
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה ערך 3/4 כעשרוני?
+What is the value of 3/4 as a decimal?
 3 ÷ 4 = 0.75
-0.75 (או 3/4).
+0.75 (or 3/4).
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 5/8 = ? (כעשרוני)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 5/8 = ? (as a decimal)
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 5/8 כעשרוני
-שבר = חילוק → 5 ÷ 8.
+Calculate: 5/8 as a decimal
+Fraction = division → 5 ÷ 8.
 5 ÷ 8 = 0.625
-בדיקה: 0.625 × 8 = 5
-התשובה: 0.625
+Check: 0.625 × 8 = 5
+The answer: 0.625
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-קשר שבר חילוק הוא בסיס לכפל וחילוק שברים.
-בתרגול תמצאו שברים כחילוק — מונה חלקי מכנה!
+The fraction-as-division connection is the foundation for multiplying and dividing fractions.
+In practice you will find fractions as division — numerator divided by denominator!

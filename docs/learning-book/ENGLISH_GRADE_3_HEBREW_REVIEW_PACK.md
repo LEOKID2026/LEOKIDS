@@ -42,7 +42,6 @@
 | **File** | `vocab_actions.md` |
 | **learning_page_id** | `english:g3:vocab_actions` |
 | **skill_id** | `english:vocabulary:wordlist:actions` |
-| **title_hebrew** | פעולות — Present Simple `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -146,7 +145,6 @@ I play = אני משחק.
 | **File** | `vocab_animals.md` |
 | **learning_page_id** | `english:g3:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
-| **title_hebrew** | חיות — במשפט מלא `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -250,7 +248,6 @@ runs = רץ (he/she/it).
 | **File** | `vocab_colors.md` |
 | **learning_page_id** | `english:g3:vocab_colors` |
 | **skill_id** | `english:vocabulary:wordlist:colors` |
-| **title_hebrew** | צבעים — תיאור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -354,7 +351,6 @@ is = הוא/היא/זה.
 | **File** | `vocab_emotions.md` |
 | **learning_page_id** | `english:g3:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
-| **title_hebrew** | רגשות — She feels… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -458,7 +454,6 @@ feels = מרגיש/ה (he/she/it).
 | **File** | `vocab_family.md` |
 | **learning_page_id** | `english:g3:vocab_family` |
 | **skill_id** | `english:vocabulary:wordlist:family` |
-| **title_hebrew** | משפחה — פעולות במשפחה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -562,7 +557,6 @@ reads = קורא (he/she/it).
 | **File** | `vocab_food.md` |
 | **learning_page_id** | `english:g3:vocab_food` |
 | **skill_id** | `english:vocabulary:wordlist:food` |
-| **title_hebrew** | מזון — I eat… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -666,7 +660,6 @@ an = לפני תחילת תנועה.
 | **File** | `vocab_house.md` |
 | **learning_page_id** | `english:g3:vocab_house` |
 | **skill_id** | `english:vocabulary:wordlist:house` |
-| **title_hebrew** | בית — חפצים ומיקום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -770,7 +763,6 @@ on = על.
 | **File** | `vocab_numbers.md` |
 | **learning_page_id** | `english:g3:vocab_numbers` |
 | **skill_id** | `english:vocabulary:wordlist:numbers` |
-| **title_hebrew** | מספרים — There are… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -874,7 +866,6 @@ are = יש (רבים).
 | **File** | `vocab_school.md` |
 | **learning_page_id** | `english:g3:vocab_school` |
 | **skill_id** | `english:vocabulary:wordlist:school` |
-| **title_hebrew** | בית ספר — We learn… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -978,7 +969,6 @@ We = אנחנו.
 | **File** | `vocab_body.md` |
 | **learning_page_id** | `english:g3:vocab_body` |
 | **skill_id** | `english:vocabulary:wordlist:body` |
-| **title_hebrew** | גוף האדם באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1083,7 +1073,6 @@ hurts = כואב (he/she/it).
 | **File** | `vocab_sports.md` |
 | **learning_page_id** | `english:g3:vocab_sports` |
 | **skill_id** | `english:vocabulary:wordlist:sports` |
-| **title_hebrew** | ספורט באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1187,7 +1176,6 @@ play football = משחק כדורגל.
 | **File** | `vocab_weather.md` |
 | **learning_page_id** | `english:g3:vocab_weather` |
 | **skill_id** | `english:vocabulary:wordlist:weather` |
-| **title_hebrew** | מזג אוויר באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1291,7 +1279,6 @@ It is = זה/בחוץ.
 | **File** | `grammar_present_simple.md` |
 | **learning_page_id** | `english:g3:grammar_present_simple` |
 | **skill_id** | `english:pool:grammar:present_simple` |
-| **title_hebrew** | Present Simple — חיובי, שלילי ושאלה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1393,8 +1380,7 @@ He plays — הוא כן מקבל s.
 |-------|-------|
 | **File** | `grammar_articles_prepositions.md` |
 | **learning_page_id** | `english:g3:grammar_articles_prepositions` |
-| **skill_id** | `english:grammar:line:תארים_בסיסיים_יידוע_a_an_the_ומילות_יחס_מקום_in_on_under` |
-| **title_hebrew** | a / an / the ו-in / on / under `[DRAFT — not owner-approved]` |
+| **skill_id** | `english:grammar:line:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1496,7 +1482,6 @@ under = מתחת ל-.
 | **File** | `grammar_question_frames.md` |
 | **learning_page_id** | `english:g3:grammar_question_frames` |
 | **skill_id** | `english:pool:grammar:question_frames` |
-| **title_hebrew** | שאלות — חיזוק כיתה ג׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1600,7 +1585,6 @@ Do = האם (בשאלה).
 | **File** | `sentence_routine.md` |
 | **learning_page_id** | `english:g3:sentence_routine` |
 | **skill_id** | `english:pool:sentence:routine` |
-| **title_hebrew** | שגרת יום — משפטים מלאים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1704,7 +1688,6 @@ my teeth = השיניים שלי.
 | **File** | `sentence_descriptive.md` |
 | **learning_page_id** | `english:g3:sentence_descriptive` |
 | **skill_id** | `english:pool:sentence:descriptive` |
-| **title_hebrew** | משפטים תיאוריים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1806,7 +1789,6 @@ big dog = כלב גדול.
 | **File** | `translation_routines.md` |
 | **learning_page_id** | `english:g3:translation_routines` |
 | **skill_id** | `english:pool:translation:routines` |
-| **title_hebrew** | שגרה — תרגום מורחב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1908,7 +1890,6 @@ go to bed = לישון.
 | **File** | `translation_hobbies.md` |
 | **learning_page_id** | `english:g3:translation_hobbies` |
 | **skill_id** | `english:pool:translation:hobbies` |
-| **title_hebrew** | תחביבים — תרגום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

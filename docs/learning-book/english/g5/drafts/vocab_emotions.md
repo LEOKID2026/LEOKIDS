@@ -1,4 +1,4 @@
-# רגשות — felt proud
+# Emotions — felt proud
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | רגשות — felt proud |
+| **title_english** | Emotions — felt proud |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** She felt proud — רגשות בעבר
+**Content scope:** She felt proud — emotions in the past
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד רגשות עם Past Simple.
-She felt proud after the test — היא הרגישה גאה אחרי המבחן.
-
----
-
-## 2. הסבר
-
-felt — הרגיש (עבר):
-
+Today we will learn about emotions with Past Simple.
 She felt proud after the test.
 
-היא הרגישה גאה אחרי המבחן.
+---
+
+## 2. Simple explanation
+
+felt — the past form of feel:
+
+She felt proud after the test.
 
 He felt happy yesterday.
 
-הוא הרגיש שמח אתמול.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה אחרי מבחן.
+A girl after a test.
 
 She felt proud after the test.
 
-היא הרגישה גאה אחרי המבחן.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היא הרגישה גאה אחרי המבחן"?
+Question: How do you say this?
 
 She felt proud after the test
 
-תשובה: She felt proud after the test
+Answer: She felt proud after the test
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אחרי משחק ארוך — כולם עייפים.
+After a long game — everyone is tired.
 
 They felt tired after the game.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם הרגישו עייפים אחרי המשחק."
+Exercise: "They felt tired after the game."
 
-feel הופך ל-felt בעבר, כי זה פועל חריג.
+"Feel" becomes "felt" in the past, because it's an irregular verb.
 
-tired פירושו עייפים; after the game פירושו אחרי המשחק.
+"Tired" describes how they felt; "after the game" tells us when.
 
-הם הרגישו עייפים אחרי המשחק.
-
- They felt tired after the game.
+So the full sentence is: They felt tired after the game.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים רגשות בעבר.
-בתרגול תמצאו She felt proud after the test.
+Now you will describe emotions in the past.
+In the practice, you'll find: She felt proud after the test.

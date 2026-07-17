@@ -46,7 +46,6 @@
 | **File** | `ns_place_hundreds.md` |
 | **learning_page_id** | `math:g6:ns_place_hundreds` |
 | **skill_id** | `math:kind:ns_place_hundreds` |
-| **title_hebrew** | ערך המקום — עד 200,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -149,7 +148,6 @@
 | **File** | `ns_neighbors.md` |
 | **learning_page_id** | `math:g6:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
-| **title_hebrew** | שכנים — מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -249,7 +247,6 @@
 | **File** | `ns_complement100.md` |
 | **learning_page_id** | `math:g6:ns_complement100` |
 | **skill_id** | `math:kind:ns_complement100` |
-| **title_hebrew** | השלמה ל-100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -347,7 +344,6 @@
 | **File** | `cmp.md` |
 | **learning_page_id** | `math:g6:cmp` |
 | **skill_id** | `math:kind:cmp` |
-| **title_hebrew** | השוואת מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -448,7 +444,6 @@
 | **File** | `sequence.md` |
 | **learning_page_id** | `math:g6:sequence` |
 | **skill_id** | `math:kind:sequence` |
-| **title_hebrew** | סדרות מספרים — קפיצות גדולות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -549,7 +544,6 @@
 | **File** | `round.md` |
 | **learning_page_id** | `math:g6:round` |
 | **skill_id** | `math:kind:round` |
-| **title_hebrew** | עיגול — עשרות, מאות, אלפים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -650,7 +644,6 @@
 | **File** | `add_two.md` |
 | **learning_page_id** | `math:g6:add_two` |
 | **skill_id** | `math:kind:add_two` |
-| **title_hebrew** | חיבור שני מספרים — עד 200,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -750,7 +743,6 @@
 | **File** | `sub_two.md` |
 | **learning_page_id** | `math:g6:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
-| **title_hebrew** | חיסור שני מספרים — עד 200,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -849,7 +841,6 @@
 | **File** | `add_three.md` |
 | **learning_page_id** | `math:g6:add_three` |
 | **skill_id** | `math:kind:add_three` |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -946,7 +937,6 @@
 | **File** | `mul.md` |
 | **learning_page_id** | `math:g6:mul` |
 | **skill_id** | `math:kind:mul` |
-| **title_hebrew** | כפל — אסטרטגיות ומספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1044,7 +1034,6 @@
 | **File** | `div.md` |
 | **learning_page_id** | `math:g6:div` |
 | **skill_id** | `math:kind:div` |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1143,7 +1132,6 @@
 | **File** | `div_with_remainder.md` |
 | **learning_page_id** | `math:g6:div_with_remainder` |
 | **skill_id** | `math:kind:div_with_remainder` |
-| **title_hebrew** | חילוק עם שארית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1241,7 +1229,6 @@
 | **File** | `fm_factor.md` |
 | **learning_page_id** | `math:g6:fm_factor` |
 | **skill_id** | `math:kind:fm_factor` |
-| **title_hebrew** | גורמים של מספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1334,7 +1321,6 @@
 | **File** | `fm_multiple.md` |
 | **learning_page_id** | `math:g6:fm_multiple` |
 | **skill_id** | `math:kind:fm_multiple` |
-| **title_hebrew** | כפולות של מספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1430,7 +1416,6 @@
 | **File** | `fm_gcd.md` |
 | **learning_page_id** | `math:g6:fm_gcd` |
 | **skill_id** | `math:kind:fm_gcd` |
-| **title_hebrew** | המחלק המשותף הגדול ביותר (מ.א.ח) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1526,7 +1511,6 @@
 | **File** | `eq_add.md` |
 | **learning_page_id** | `math:g6:eq_add` |
 | **skill_id** | `math:kind:eq_add` |
-| **title_hebrew** | משוואת חיבור — מספר חסר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1621,7 +1605,6 @@
 | **File** | `eq_sub.md` |
 | **learning_page_id** | `math:g6:eq_sub` |
 | **skill_id** | `math:kind:eq_sub` |
-| **title_hebrew** | משוואת חיסור — מספר חסר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1716,7 +1699,6 @@
 | **File** | `eq_mul.md` |
 | **learning_page_id** | `math:g6:eq_mul` |
 | **skill_id** | `math:kind:eq_mul` |
-| **title_hebrew** | משוואת כפל — מספר חסר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1811,7 +1793,6 @@
 | **File** | `eq_div.md` |
 | **learning_page_id** | `math:g6:eq_div` |
 | **skill_id** | `math:kind:eq_div` |
-| **title_hebrew** | משוואת חילוק — מספר חסר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1908,7 +1889,6 @@
 | **File** | `dec_add.md` |
 | **learning_page_id** | `math:g6:dec_add` |
 | **skill_id** | `math:kind:dec_add` |
-| **title_hebrew** | חיבור מספרים עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2005,7 +1985,6 @@
 | **File** | `dec_sub.md` |
 | **learning_page_id** | `math:g6:dec_sub` |
 | **skill_id** | `math:kind:dec_sub` |
-| **title_hebrew** | חיסור מספרים עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2100,7 +2079,6 @@
 | **File** | `dec_multiply.md` |
 | **learning_page_id** | `math:g6:dec_multiply` |
 | **skill_id** | `math:kind:dec_multiply` |
-| **title_hebrew** | כפל מספרים עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2196,7 +2174,6 @@
 | **File** | `dec_multiply_10_100.md` |
 | **learning_page_id** | `math:g6:dec_multiply_10_100` |
 | **skill_id** | `math:kind:dec_multiply_10_100` |
-| **title_hebrew** | כפל עשרוני ב-10 או ב-100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2289,7 +2266,6 @@
 | **File** | `dec_divide.md` |
 | **learning_page_id** | `math:g6:dec_divide` |
 | **skill_id** | `math:kind:dec_divide` |
-| **title_hebrew** | חילוק מספרים עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2385,7 +2361,6 @@
 | **File** | `dec_divide_10_100.md` |
 | **learning_page_id** | `math:g6:dec_divide_10_100` |
 | **skill_id** | `math:kind:dec_divide_10_100` |
-| **title_hebrew** | חילוק עשרוני ב-10 או ב-100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2478,7 +2453,6 @@
 | **File** | `dec_repeating.md` |
 | **learning_page_id** | `math:g6:dec_repeating` |
 | **skill_id** | `math:kind:dec_repeating` |
-| **title_hebrew** | עשרוניים מחזוריים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2575,7 +2549,6 @@
 | **File** | `frac_as_division.md` |
 | **learning_page_id** | `math:g6:frac_as_division` |
 | **skill_id** | `math:kind:frac_as_division` |
-| **title_hebrew** | שבר כחילוק `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2670,7 +2643,6 @@
 | **File** | `frac_multiply.md` |
 | **learning_page_id** | `math:g6:frac_multiply` |
 | **skill_id** | `math:kind:frac_multiply` |
-| **title_hebrew** | כפל שברים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2766,7 +2738,6 @@
 | **File** | `frac_divide.md` |
 | **learning_page_id** | `math:g6:frac_divide` |
 | **skill_id** | `math:kind:frac_divide` |
-| **title_hebrew** | חילוק שברים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2861,7 +2832,6 @@
 | **File** | `ratio_first.md` |
 | **learning_page_id** | `math:g6:ratio_first` |
 | **skill_id** | `math:kind:ratio_first` |
-| **title_hebrew** | יחס — מה זה אומר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2956,7 +2926,6 @@
 | **File** | `ratio_second.md` |
 | **learning_page_id** | `math:g6:ratio_second` |
 | **skill_id** | `math:kind:ratio_second` |
-| **title_hebrew** | יחס בין שתי כמויות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3051,7 +3020,6 @@
 | **File** | `ratio_find.md` |
 | **learning_page_id** | `math:g6:ratio_find` |
 | **skill_id** | `math:kind:ratio_find` |
-| **title_hebrew** | מציאת כמות חסרה ביחס `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3148,7 +3116,6 @@
 | **File** | `scale_find.md` |
 | **learning_page_id** | `math:g6:scale_find` |
 | **skill_id** | `math:kind:scale_find` |
-| **title_hebrew** | קנה מידה — מציאת מרחק `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3243,7 +3210,6 @@
 | **File** | `scale_map_to_real.md` |
 | **learning_page_id** | `math:g6:scale_map_to_real` |
 | **skill_id** | `math:kind:scale_map_to_real` |
-| **title_hebrew** | ממפה למציאות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3338,7 +3304,6 @@
 | **File** | `scale_real_to_map.md` |
 | **learning_page_id** | `math:g6:scale_real_to_map` |
 | **skill_id** | `math:kind:scale_real_to_map` |
-| **title_hebrew** | ממציאות למפה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3433,7 +3398,6 @@
 | **File** | `perc_part_of.md` |
 | **learning_page_id** | `math:g6:perc_part_of` |
 | **skill_id** | `math:kind:perc_part_of` |
-| **title_hebrew** | אחוז מכמות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3530,7 +3494,6 @@
 | **File** | `perc_discount.md` |
 | **learning_page_id** | `math:g6:perc_discount` |
 | **skill_id** | `math:kind:perc_discount` |
-| **title_hebrew** | הנחה באחוזים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3625,7 +3588,6 @@
 | **File** | `wp_comparison_more.md` |
 | **learning_page_id** | `math:g6:wp_comparison_more` |
 | **skill_id** | `math:kind:wp_comparison_more` |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3718,7 +3680,6 @@
 | **File** | `wp_leftover.md` |
 | **learning_page_id** | `math:g6:wp_leftover` |
 | **skill_id** | `math:kind:wp_leftover` |
-| **title_hebrew** | שאלה מילולית — מה נשאר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3811,7 +3772,6 @@
 | **File** | `wp_time_sum.md` |
 | **learning_page_id** | `math:g6:wp_time_sum` |
 | **skill_id** | `math:kind:wp_time_sum` |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3909,7 +3869,6 @@
 | **File** | `wp_distance_time.md` |
 | **learning_page_id** | `math:g6:wp_distance_time` |
 | **skill_id** | `math:kind:wp_distance_time` |
-| **title_hebrew** | מרחק, זמן ומהירות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -4002,7 +3961,6 @@
 | **File** | `wp_shop_discount.md` |
 | **learning_page_id** | `math:g6:wp_shop_discount` |
 | **skill_id** | `math:kind:wp_shop_discount` |
-| **title_hebrew** | שאלה מילולית — מבצע בחנות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -4097,7 +4055,6 @@
 | **File** | `wp_unit_cm_to_m.md` |
 | **learning_page_id** | `math:g6:wp_unit_cm_to_m` |
 | **skill_id** | `math:kind:wp_unit_cm_to_m` |
-| **title_hebrew** | המרת יחידות — ס״מ ומטר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -4190,7 +4147,6 @@
 | **File** | `wp_unit_g_to_kg.md` |
 | **learning_page_id** | `math:g6:wp_unit_g_to_kg` |
 | **skill_id** | `math:kind:wp_unit_g_to_kg` |
-| **title_hebrew** | המרת יחידות — גרם וקילוגרם `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

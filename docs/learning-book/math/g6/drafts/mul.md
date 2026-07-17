@@ -1,4 +1,4 @@
-# כפל — אסטרטגיות ומספרים גדולים
+# Multiplication — Strategies and Large Numbers
 
 ## Metadata
 
@@ -11,41 +11,41 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל — אסטרטגיות ומספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplication — Strategies and Large Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** לוח כפל; פירוק; כפל עד 500×500
+**Content scope:** times table; breaking apart; multiplication up to 500×500
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק כפל — לוח הכפל, פירוק ואסטרטגיות.
-כאן מתרגלים כפל עד 500×500.
+Today we will strengthen multiplication — the times table, breaking numbers apart, and strategies.
+Here we practice multiplication up to 500×500.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 24 × 15:
-פירוק: 10 + 5 = 15
+Break apart: 10 + 5 = 15
 24 × 10 = 240
 24 × 5 = 120
 240 + 120 = 360
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 35 × 12 = 35 × 10 + 35 × 2 = 350 + 70 = 420
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 24 × 15 = ?
 24 × 10 = 240
@@ -54,27 +54,27 @@
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 36 × 14 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 36 × 14 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 36 × 14
-פירוק: 10 + 4 = 14
+Calculate: 36 × 14
+Break apart: 10 + 4 = 14
 36 × 10 = 360
 36 × 4 = 144
 360 + 144 = 504
-בדיקה: 504 ÷ 36 = 14
-התשובה: 504
+Check: 504 ÷ 36 = 14
+The answer: 504
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-כפל מהיר עוזר בכל נושאי החשבון.
-בתרגול תמצאו כפל בני ספרתי — השתמשו בפירוק!
+Fast multiplication helps in every math topic.
+In practice you will multiply two-digit numbers — use breaking apart!

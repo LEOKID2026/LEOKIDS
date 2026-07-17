@@ -1,4 +1,4 @@
-# גוף האדם — תיאום בין מערכות
+# The Human Body — Coordination Between Systems
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | גוף האדם — תיאום בין מערכות `[DRAFT — not owner-approved]` |
+| **title_english** | The Human Body — Coordination Between Systems `[DRAFT — not owner-approved]` |
 
-**Content scope:** מערכות עובדות יחד; תזונה/שינה/פעילות — דורש איור: מערכות גוף מחוברות
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים איך מערכות שונות בגוף מתואמות — ואיך תזונה, שינה ופעילות משפיעות על בריאות.
+**Content scope:** Systems working together; nutrition/sleep/activity — requires illustration: connected body systems
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-הגוף — מערכת של מערכות:
-- עיכול — מפרק מזון לחומרים שהגוף יכול להשתמש בהם
-- דם ולב — מעביר חמצן וחומרים לכל הגוף
-- נשימה — מביאה חמצן, מוציאה גזים מיותרים
-- עצבים ומוח — מתאמים תגובות
-תיאום:
-אחרי ארוחה — העיכול מפרק; הדם מוביל; המוח מרגיש שובע.
-בפעילות — שרירים עובדים, נשימה מהירה יותר, דופק עולה.
-תזונה מאוזנת, שינה מספקת ופעילות גופנית — תומכים בכל המערכות.
+Today in science we will learn how different systems in the body are coordinated — and how nutrition, sleep, and activity affect health.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-רץ למרחק בינוני:
-- שרירים — אנרגיה מהמזון
-- נשימה — יותר חמצן
-- לב — דופק גבוה יותר
-- מוח — שומר על קצב ושיווי משקל
-כל המערכות — יחד.
-
----
-
-## 4. בואו נפתור
-
-למה חשובה שינה לגוף?
-בלילה הגוף נח.
-מערכות מתאוששות — מוח, שרירים.
-כדי לתת למערכות להתאושש
+The body — a system of systems:
+- Digestion — breaks food into materials the body can use
+- Blood and heart — carry oxygen and materials to the whole body
+- Breathing — brings in oxygen, removes extra gases
+- Nerves and brain — coordinate responses
+Coordination:
+After a meal — digestion breaks down food; blood carries it; the brain feels full.
+During activity — muscles work, breathing speeds up, pulse rises.
+Balanced nutrition, enough sleep, and physical activity — support all systems.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-חשבו על ארוחת ערב שאכלתם.
-אילו מערכות עבדו כדי שהמזון יגיע לתאי הגוף?
-מה עשתה כל אחת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: אחרי ארוחת ערב — אילו מערכות עבדו כדי שהמזון יגיע לתאי הגוף?
-הסבר מדעי:
-אחרי אכילה, מספר מערכות עובדות יחד:
-מערכת העיכול — מפרקת את המזון בקיבה ובמעיים לחומרים שניתן לספוג.
-מערכת הדם — הלב שואב ומזרים דם; הדם מוביל את חומרי המזון לכל תאי הגוף.
-מערכת הנשימה — מביאה חמצן שהתאים צריכים כדי להפיק אנרגיה מהמזון.
-מערכת העצבים — מתאמת ומודיעה למוח מתי הגוף שבע ומתי צריך אנרגיה.
-מערכות שעובדות אחרי ארוחה: עיכול, דם, נשימה ועצבים — כולן מחוברות.
+Running a medium distance:
+- Muscles — energy from food
+- Breathing — more oxygen
+- Heart — higher pulse
+- Brain — keeps pace and balance
+All systems — together.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מבינים תיאום בין מערכות בגוף במדעים.
-בתרגול חפשו שאלות על קשר בין תזונה, שינה ופעילות.
+Why is sleep important for the body?
+At night the body rests.
+Systems recover — brain, muscles.
+To let systems recover
+
+---
+
+## 5. Try it yourself
+
+Think about a dinner you ate.
+Which systems worked so food could reach your body's cells?
+What did each one do?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: after dinner — which systems worked so food could reach your body's cells?
+Scientific explanation:
+After eating, several systems work together:
+The digestive system — breaks down food in the stomach and intestines into absorbable materials.
+The blood system — the heart pumps and circulates blood; blood carries nutrients to every cell.
+The respiratory system — brings oxygen that cells need to produce energy from food.
+The nervous system — coordinates and tells the brain when the body is full and when it needs energy.
+Systems that work after a meal: digestion, blood, breathing, and nerves — all connected.
+
+---
+
+## 7. Let's practice!
+
+Now you understand coordination between body systems in science.
+When you practice, look for questions about the link between nutrition, sleep, and activity.

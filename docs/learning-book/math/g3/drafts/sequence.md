@@ -1,4 +1,4 @@
-# סדרות מספרים
+# Number Sequences
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סדרות מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Number Sequences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סדרות עם קפיצה קבועה (+ או −). עד 1,000. ללא כפל בסדרה.
+**Content scope:** Sequences with a fixed step (+ or −). Up to 1,000. No multiplication in the sequence.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד סדרות מספרים — רשימה של מספרים שעולים (או יורדים) לפי חוק קבוע.
-קודם מגלים מה הקפיצה, ואז ממשיכים את הסדרה — גם עם מספרים עד 1,000.
+Today we will learn number sequences — a list of numbers that go up (or down) by one steady rule.
+First we find the step, then we continue the sequence — even with numbers up to 1,000.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-סדרה = מספרים ברצף לפי כלל אחד.
-קפיצה קבועה: בכל צעד מוסיפים (או מחסירים) אותו מספר.
+A sequence = numbers in a row following one rule.
+A fixed step: each time we add (or subtract) the same number.
 5, 10, 15, 20, …
 - 10 − 5 = 5
 - 15 − 10 = 5
-- הקפיצה: +5 בכל פעם
-המספר הבא: 20 + 5 = 25
-על ציר המספרים: כל קפיצה = צעד באותו גודל.
+- The step: +5 each time
+The next number: 20 + 5 = 25
+On the number line: each step = a jump of the same size.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 235, 240, 245, 250, ?
 240 − 235 = 5
 245 − 240 = 5
 250 − 245 = 5
-קפיצה: +5
+Step: +5
 250 + 5 = 255
-התשובה: 255
+The answer: 255
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-המשיכו: 180, 185, 190, 195, ?
-185 − 180 = 5 הקפיצה +5.
+Continue: 180, 185, 190, 195, ?
+185 − 180 = 5 The step is +5.
 195 + 5 = 200
 200
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-המשיכו את הסדרה: 310, 320, 330, ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Continue the sequence: 310, 320, 330, ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-המשיכו: 310, 320, 330, ?
+Continue: 310, 320, 330, ?
 320 − 310 = 10
 330 − 320 = 10
-הקפיצה: +10 בכל פעם.
+The step: +10 each time.
 330 + 10 = 340
-המספר הבא הוא 340
+The next number is 340
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להמשיך סדרות עם קפיצה קבועה.
-בתרגול תמצאו מה המספר הבא?
-מצאו קודם את הקפיצה!
+Now you know how to continue sequences with a fixed step.
+In practice you'll find what is the next number?
+Find the step first!

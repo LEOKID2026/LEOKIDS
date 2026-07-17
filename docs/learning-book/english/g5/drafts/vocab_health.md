@@ -1,4 +1,4 @@
-# בריאות באנגלית
+# Health in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בריאות באנגלית |
+| **title_english** | Health in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,74 +21,68 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים על בריאות.
-I need to rest and drink water — אני צריך לנוח ולשתות מים.
+Today we will learn words about health.
+I need to rest and drink water.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים חשובות:
+Important words:
 
-rest — לנוח
-water — מים
-doctor — רופא
-exercise — פעילות גופנית
+rest — to relax and stop being active
+water — the liquid we drink
+doctor — a person who helps sick people
+exercise — physical activity
 
 I need to rest and drink water.
 
-אני צריך לנוח ולשתות מים.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד לא מרגיש טוב.
+A child who isn't feeling well.
 
 I need to rest and drink water.
 
-אני צריך לנוח ולשתות מים.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אני צריך לנוח ולשתות מים"?
+Question: How do you say this?
 
 I need to rest and drink water
 
-תשובה: I need to rest and drink water
+Answer: I need to rest and drink water
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-לא מרגיש טוב — צריך פעילות גופנית.
+Not feeling well — needing exercise.
 
 I need to exercise every day.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אני צריך פעילות גופנית כל יום."
+Exercise: "I need to exercise every day."
 
-need to + פועל = צריך ל + פועל.
+"Need to" + a verb means we must do something.
 
-exercise כאן פירושו להתאמן; every day פירושו כל יום.
+"Exercise" here means physical activity; "every day" tells us how often.
 
-אני צריך להתאמן כל יום.
-
- I need to exercise every day.
+So the full sentence is: I need to exercise every day.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים בריאות ומנוחה.
-בתרגול תמצאו I need to rest and drink water.
+Now you will describe health and rest.
+In the practice, you'll find: I need to rest and drink water.

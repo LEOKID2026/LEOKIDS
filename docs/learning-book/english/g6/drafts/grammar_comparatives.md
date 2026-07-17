@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | Superlatives — the most interesting |
+| **title_english** | Superlatives — the most interesting |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** the best / the most interesting — חיזוק כיתה ו׳
+**Content scope:** the best / the most interesting — Grade 6 review
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד Superlatives — למשל the most או the best.
-This is the most interesting book I have read — זה הספר המעניין ביותר שקראתי.
-
----
-
-## 2. הסבר
-
-Superlative — the + most + שם תואר ארוך:
-
+Today we will learn Superlatives — for example, the most or the best.
 This is the most interesting book I have read.
 
-זה הספר המעניין ביותר שקראתי.
+---
+
+## 2. Simple explanation
+
+Superlative — the + most + a long adjective:
+
+This is the most interesting book I have read.
 
 She is the best player on the team.
 
-היא השחקנית הטובה ביותר בקבוצה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בוחרים ספר מהספרייה.
+Choosing a book from the library.
 
 This is the most interesting book I have read.
 
-זה הספר המעניין ביותר שקראתי.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "זה הספר המעניין ביותר שקראתי"?
+Question: How do you say this?
 
 This is the most interesting book I have read
 
-תשובה: This is the most interesting book I have read
+Answer: This is the most interesting book I have read
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חושבים על סרט מצחיק — הכי טוב שראיתם.
+Thinking of a funny movie — the best you've seen.
 
 This is the funniest film I have watched.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "זה הסרט המצחיק ביותר שראיתי."
+Exercise: "This is the funniest film I have watched."
 
-funny = קצר — superlative: the + funniest (כפול y — iest).
+"Funny" is a short adjective — the superlative is the + funniest (double the y, add iest).
 
-I have watched = שראיתי (Present Perfect).
+"I have watched" uses Present Perfect.
 
-זה הסרט המצחיק ביותר שראיתי.
-
- This is the funniest film I have watched.
+So the full sentence is: This is the funniest film I have watched.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משווים עם superlatives.
-בתרגול תמצאו This is the most interesting book I have read.
+Now you will compare things using superlatives.
+In the practice, you'll find: This is the most interesting book I have read.

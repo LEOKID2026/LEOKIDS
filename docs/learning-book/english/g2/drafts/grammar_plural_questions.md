@@ -1,4 +1,4 @@
-# ריבוי ושאלות פשוטות
+# Plurals and Simple Questions
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | ריבוי ושאלות פשוטות |
+| **title_english** | Plurals and Simple Questions |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
-**Linked skill_ids:** `english:grammar:line:ריבוי_שמות_עצם_והיכרות_עם_מבני_שאלות_פשוטים`
+**Linked skill_ids:** `english``
 
-**Content scope:** cat/cats; What is this? — שאלות קצרות
-
----
-
-## 1. מה לומדים?
-
-היום נלמד ריבוי — cat ו-cats.
-וגם שאלה קצרה: What is this?
+**Content scope:** cat/cats; What is this? — short questions
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-ריבוי — מוסיפים s:
-cat — חתול
-cats — חתולים
+Today we will learn plurals — cat and cats.
+And also a short question: What is this?
+
+---
+
+## 2. Simple explanation
+
+Plural — we add s:
+cat — one cat
+cats — more than one cat
 What is this?
-מה זה?
+What is this?
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-שני חתולים.
+Two cats.
 cats
-המילה cats פירושה חתולים.
+The word cats means more than one cat.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה המילה ל"חתולים"?
+What is the word for "cats" (plural)?
 cats
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-רואים שני כלבים.
+We see two dogs.
 dogs
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: רואים שני כלבים — באנגלית?
-dog אחד — שניים הם dogs.
-מוסיפים s.
-התשובה היא dogs.
+The question: we see two dogs — in English?
+One dog — two are dogs.
+We add s.
+The answer is dogs.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים ריבוי ושאלות קצרות.
-בתרגול תמצאו cats ו-What is this?
+Now you know plurals and short questions.
+In practice, you'll find cats and What is this?

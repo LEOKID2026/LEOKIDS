@@ -1,4 +1,4 @@
-# נסיעות — will travel
+# Travel — will travel
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | נסיעות — will travel |
+| **title_english** | Travel — will travel |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** We will travel by train — קישור לעתיד
+**Content scope:** We will travel by train — connects to the future tense
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נסיעות עם Future — will.
-We will travel by train — ננסע ברכבת (בעתיד).
-
----
-
-## 2. הסבר
-
-will + פועל — עתיד:
-
+Today we will learn about travel with the future — will.
 We will travel by train.
 
-ננסע ברכבת.
+---
+
+## 2. Simple explanation
+
+will + verb — the future:
+
+We will travel by train.
 
 They will visit Paris next month.
 
-הם יבקרו בפריז בחודש הבא.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-תוכנית לנסיעה — רכבת.
+A travel plan — a train.
 
 We will travel by train.
 
-ננסע ברכבת.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "ננסע ברכבת"?
+Question: How do you say this?
 
 We will travel by train
 
-תשובה: We will travel by train
+Answer: We will travel by train
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-קיץ מתקרב — טסים לחו"ל.
+Summer is coming — flying abroad.
 
 We will fly abroad in summer.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אנחנו נטוס לחו"ל בקיץ."
+Exercise: "We will fly abroad in summer."
 
-will + פועל = עתיד.
+will + verb shows the future.
 
-fly abroad = לטוס לחו"ל; in summer = בקיץ.
+"Abroad" means to another country; "in summer" tells us when.
 
-אנחנו נטוס לחו"ל בקיץ.
-
- We will fly abroad in summer.
+So the full sentence is: We will fly abroad in summer.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים נסיעות עתידיות.
-בתרגול תמצאו We will travel by train.
+Now you will describe future travel plans.
+In the practice, you'll find: We will travel by train.

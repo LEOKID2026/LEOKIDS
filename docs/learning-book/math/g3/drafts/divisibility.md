@@ -1,4 +1,4 @@
-# התחלקות ב-2, ב-5 וב-10
+# Divisibility by 2, 5, and 10
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | התחלקות ב-2, ב-5 וב-10 `[DRAFT — not owner-approved]` |
+| **title_english** | Divisibility by 2, 5, and 10 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -19,67 +19,67 @@
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סימני התחלקות 2, 5, 10 לפי ספרת אחדות. **לא** 3, 6, 9 (→ G4). מספרים עד 1,000.
+**Content scope:** Divisibility signs for 2, 5, 10 by the ones digit. **Not** 3, 6, 9 (→ G4). Numbers up to 1,000.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבדוק מתי מספר מתחלק ב-2, ב-5 או ב-10 בלי שארית — לפי ספרת האחדות.
-
----
-
-## 2. הסבר
-
-כאן בודקים התחלקות לפי ספרת האחדות — בלי לחשב חילוק ארוך.
-÷2: אחדות זוגית (0, 2, 4, 6, 8).
-÷5: אחדות 0 או 5.
-÷10: אחדות 0 בלבד.
-350: אחדות 0 → מתחלק ב-2, 5, ו-10
-35: אחדות 5 → מתחלק ב-5, לא ב-10
-כאן לא מתרגלים 3, 6, 9 — נכיר אותם בהמשך.
+Today we will check when a number divides evenly by 2, 5, or 10 — by looking at the ones digit.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+Here we check divisibility by the ones digit — without doing long division.
+÷2: even ones digit (0, 2, 4, 6, 8).
+÷5: ones digit 0 or 5.
+÷10: ones digit 0 only.
+350: ones digit 0 → divisible by 2, 5, and 10
+35: ones digit 5 → divisible by 5, not by 10
+We don't practice 3, 6, 9 here — we'll learn those later.
+
+---
+
+## 3. Visual / concrete example
 
 840
-ספרת אחדות: 0
+Ones digit: 0
 ÷2  ÷5  ÷10
 840 ÷ 10 = 84
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-האם 120 מתחלק ב-2? ב-5? ב-10?
-אחדות 0.
-÷2 — כן (0 זוגי). ÷5 — כן (נגמר ב-0). ÷10 — כן.
-בדיקה: 120 ÷ 10 = 12
-120 מתחלק ב-2, ב-5 וב-10.
-
----
-
-## 5. נסו בעצמכם
-
-האם 76 מתחלק ב-2, ב-5 וב-10? (כן/לא לכל אחד)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Is 120 divisible by 2? By 5? By 10?
+Ones digit 0.
+÷2 — yes (0 is even). ÷5 — yes (ends in 0). ÷10 — yes.
+Check: 120 ÷ 10 = 12
+120 is divisible by 2, 5, and 10.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-האם 76 מתחלק ב-2, ב-5 וב-10?
-ספרת האחדות של 76 היא 6.
-÷2: אחדות 6 — זוגית → כן
-÷5: אחדות 6 — לא 0 ולא 5 → לא ✗
-÷10: אחדות 6 — לא 0 → לא ✗
-76 מתחלק ב-2 בלבד
+Is 76 divisible by 2, 5, and 10? (yes/no for each)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לבדוק התחלקות ב-2, 5 ו-10.
-בתרגול תמצאו מתחלק? — הסתכלו על ספרת האחדות!
+Is 76 divisible by 2, 5, and 10?
+The ones digit of 76 is 6.
+÷2: ones digit 6 — even → yes
+÷5: ones digit 6 — not 0 and not 5 → no ✗
+÷10: ones digit 6 — not 0 → no ✗
+76 is divisible by 2 only
+
+---
+
+## 7. Let's practice!
+
+Now you know how to check divisibility by 2, 5, and 10.
+In practice you'll find is it divisible? — look at the ones digit!

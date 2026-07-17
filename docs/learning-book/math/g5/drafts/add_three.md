@@ -1,4 +1,4 @@
-# חיבור שלושה מספרים
+# Adding Three Numbers
 
 ## Metadata
 
@@ -11,37 +11,37 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Three Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שלושה מספרים; סכום עד ~100,000
+**Content scope:** Three numbers; sum up to ~100,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר שלושה מספרים — עד סכום של כ-100,000.
-אפשר לחבר שניים קודם, ואז את השלישי — שלב אחר שלב.
+Today we'll learn to add three numbers — up to a total of about 100,000.
+You can add two first, then the third — step by step.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים:
-מחברים שלושה מספרים — קודם שניים, אחר כך השלישי
-עובדים מאחדות — נשיאה כשצריך
-ממשיכים בעשרות, מאות, אלפים, עשרות אלפים
+Steps:
+Add three numbers — first two, then the third
+Work from the ones — carry when you need to
+Continue with tens, hundreds, thousands, ten-thousands
 2,000 + 1,500 + 800:
 2,000 + 1,500 = 3,500
 3,500 + 800 = 4,300
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 12,000 + 8,500 + 3,200:
 12,000 + 8,500 = 20,500
@@ -49,33 +49,33 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו 15,000 + 9,500 + 5,500 = ?
-9,500 + 5,500 = 15,000 (זוג נוח).
+Work out 15,000 + 9,500 + 5,500 = ?
+9,500 + 5,500 = 15,000 (a handy pair).
 15,000 + 15,000 = 30,000
 30,000.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 5,000 + 3,500 + 1,200 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 5,000 + 3,500 + 1,200 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 5,000 + 3,500 + 1,200 = ?
-מחברים שניים קודם: 5,000 + 3,500 = 8,500
-מוסיפים את השלישי: 8,500 + 1,200 = 9,700
+Work out: 5,000 + 3,500 + 1,200 = ?
+Add two first: 5,000 + 3,500 = 8,500
+Add the third: 8,500 + 1,200 = 9,700
 5,000 + 3,500 + 1,200 = 9,700
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר שלושה מספרים.
-בתרגול תמצאו חיבורים של שלושה מספרים. חברו שלב אחר שלב!
+Now you know how to add three numbers.
+In practice you'll find addition of three numbers. Add step by step!

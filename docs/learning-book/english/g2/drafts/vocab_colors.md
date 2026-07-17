@@ -1,4 +1,4 @@
-# צבעים — שימוש במשפט
+# Colors — Using Them in a Sentence
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | צבעים — שימוש במשפט |
+| **title_english** | Colors — Using Them in a Sentence |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** חזרה ומילים במשפט קצר; כתיבה ראשונית
+**Content scope:** Review and words in a short sentence; early writing
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזור על צבעים — ונשתמש בהם במשפט קצר.
-כבר למדנו red ו-blue — עכשיו נחבר.
+Today we review colors — and use them in a short sentence.
+We already learned red and blue — now let's combine them.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילת צבע יכולה להיות במשפט:
+A color word can be in a sentence:
 The book is blue.
-הספר כחול.
+The book is blue.
 The pen is red.
-העט אדום.
+The pen is red.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-עט כחול.
+A blue pen.
 The pen is blue.
-משפט קצר עם blue.
+A short sentence with blue.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "העט כחול"?
+How do we say "the pen is blue"?
 The pen
 is blue
 The pen is blue
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-הספר אדום.
+The book is red.
 The book is red
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: הספר אדום — באנגלית?
-The book פירושו הספר.
-is red פירושו אדום.
-התשובה היא: The book is red.
+The question: the book is red — in English?
+The book means the book.
+is red means is red.
+The answer is: The book is red.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים בצבעים במשפט.
-בתרגול תמצאו משפטים עם blue, red ו-green.
+Now you're using colors in a sentence.
+In practice, you'll find sentences with blue, red, and green.

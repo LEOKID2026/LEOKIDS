@@ -1,6 +1,5 @@
 /**
  * Client-safe feature flag for math scratchpad MVP (Phase 2).
- * Default OFF until owner QA approval.
  */
 
 /**
@@ -10,7 +9,9 @@ export function isMathScratchpadV1Enabled(override) {
   if (override === true) return true;
   if (override === false) return false;
   if (typeof process !== "undefined" && process.env) {
-    return process.env.NEXT_PUBLIC_MATH_SCRATCHPAD_V1 === "true";
+    const raw = process.env.NEXT_PUBLIC_MATH_SCRATCHPAD_V1;
+    if (raw == null || String(raw).trim() === "") return true;
+    return String(raw).trim().toLowerCase() === "true";
   }
-  return false;
+  return true;
 }

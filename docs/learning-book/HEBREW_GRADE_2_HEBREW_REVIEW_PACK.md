@@ -43,7 +43,6 @@
 | **File** | `g2.fluent_words.md` |
 | **learning_page_id** | `hebrew:g2:g2.fluent_words` |
 | **skill_id** | `hebrew:g2:reading:g2.fluent_words` |
-| **title_hebrew** | קריאת מילים בשטף `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -146,7 +145,6 @@
 | **File** | `g2.short_sentence.md` |
 | **learning_page_id** | `hebrew:g2:g2.short_sentence` |
 | **skill_id** | `hebrew:g2:reading:g2.short_sentence` |
-| **title_hebrew** | קריאת משפט קצר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -249,7 +247,6 @@
 | **File** | `g2.simple_punctuation_read.md` |
 | **learning_page_id** | `hebrew:g2:g2.simple_punctuation_read` |
 | **skill_id** | `hebrew:g2:reading:g2.simple_punctuation_read` |
-| **title_hebrew** | סימני פיסוק בקריאה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -351,7 +348,6 @@
 | **File** | `spelling_choice_niqqud.md` |
 | **learning_page_id** | `hebrew:g2:spelling_choice_niqqud` |
 | **skill_id** | `hebrew:rich:reading:word_level_early_g2:spelling_choice_niqqud` |
-| **title_hebrew** | בחירת איות נכון `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -455,7 +451,6 @@
 | **File** | `g2.pos_basic.md` |
 | **learning_page_id** | `hebrew:g2:g2.pos_basic` |
 | **skill_id** | `hebrew:g2:grammar:g2.pos_basic` |
-| **title_hebrew** | שם עצם, פועל ותואר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -557,7 +552,6 @@
 | **File** | `g2.simple_tense.md` |
 | **learning_page_id** | `hebrew:g2:g2.simple_tense` |
 | **skill_id** | `hebrew:g2:grammar:g2.simple_tense` |
-| **title_hebrew** | זמן פשוט — עבר, הווה ועתיד `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -658,7 +652,6 @@
 | **File** | `g2.number_gender_light.md` |
 | **learning_page_id** | `hebrew:g2:g2.number_gender_light` |
 | **skill_id** | `hebrew:g2:grammar:g2.number_gender_light` |
-| **title_hebrew** | זכר, נקבה, יחיד ורבים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -762,7 +755,6 @@
 | **File** | `agreement_boy_plural.md` |
 | **learning_page_id** | `hebrew:g2:agreement_boy_plural` |
 | **skill_id** | `hebrew:rich:grammar:gender_number_early_g2:agreement_boy_plural` |
-| **title_hebrew** | התאמה — ילדים רצים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -868,7 +860,6 @@
 | **File** | `g2.detail_main_idea.md` |
 | **learning_page_id** | `hebrew:g2:g2.detail_main_idea` |
 | **skill_id** | `hebrew:g2:comprehension:g2.detail_main_idea` |
-| **title_hebrew** | רעיון מרכזי ופרטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -969,7 +960,6 @@
 | **File** | `g2.light_inference.md` |
 | **learning_page_id** | `hebrew:g2:g2.light_inference` |
 | **skill_id** | `hebrew:g2:comprehension:g2.light_inference` |
-| **title_hebrew** | הסקה קלה מטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1068,7 +1058,6 @@
 | **File** | `g2.simple_sequence.md` |
 | **learning_page_id** | `hebrew:g2:g2.simple_sequence` |
 | **skill_id** | `hebrew:g2:comprehension:g2.simple_sequence` |
-| **title_hebrew** | רצף פשוט — קודם ואחר כך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1172,7 +1161,6 @@
 | **File** | `where_from_sentence.md` |
 | **learning_page_id** | `hebrew:g2:where_from_sentence` |
 | **skill_id** | `hebrew:rich:comprehension:binary_fact_early_g2:where_from_sentence` |
-| **title_hebrew** | מאיפה יודעים? — מהמשפט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1272,7 +1260,6 @@
 | **File** | `g2.synonyms_basic.md` |
 | **learning_page_id** | `hebrew:g2:g2.synonyms_basic` |
 | **skill_id** | `hebrew:g2:vocabulary:g2.synonyms_basic` |
-| **title_hebrew** | מילים נרדפות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1374,7 +1361,6 @@
 | **File** | `g2.context_clue_easy.md` |
 | **learning_page_id** | `hebrew:g2:g2.context_clue_easy` |
 | **skill_id** | `hebrew:g2:vocabulary:g2.context_clue_easy` |
-| **title_hebrew** | רמז מההקשר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1475,7 +1461,6 @@
 | **File** | `cloze_school.md` |
 | **learning_page_id** | `hebrew:g2:cloze_school` |
 | **skill_id** | `hebrew:rich:vocabulary:word_context_early_g2:cloze_school` |
-| **title_hebrew** | מילה חסרה — בית ספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1577,7 +1562,6 @@
 | **File** | `g2.sentence_wellformed.md` |
 | **learning_page_id** | `hebrew:g2:g2.sentence_wellformed` |
 | **skill_id** | `hebrew:g2:writing:g2.sentence_wellformed` |
-| **title_hebrew** | משפט תקין `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1679,7 +1663,6 @@
 | **File** | `g2.punctuation_choice.md` |
 | **learning_page_id** | `hebrew:g2:g2.punctuation_choice` |
 | **skill_id** | `hebrew:g2:writing:g2.punctuation_choice` |
-| **title_hebrew** | סימני פיסוק בכתיבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1780,7 +1763,6 @@
 | **File** | `g2.short_paragraph_choice.md` |
 | **learning_page_id** | `hebrew:g2:g2.short_paragraph_choice` |
 | **skill_id** | `hebrew:g2:writing:g2.short_paragraph_choice` |
-| **title_hebrew** | פסקה קצרה — שלושה משפטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1880,7 +1862,6 @@
 | **File** | `object_riddle.md` |
 | **learning_page_id** | `hebrew:g2:object_riddle` |
 | **skill_id** | `hebrew:rich:writing:spell_word_early_ab_writing:object_riddle` |
-| **title_hebrew** | חידת מילה — חפץ (כיתה ב׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1984,7 +1965,6 @@
 | **File** | `role_meaning.md` |
 | **learning_page_id** | `hebrew:g2:role_meaning` |
 | **skill_id** | `hebrew:rich:writing:spell_word_early_ab_writing:role_meaning` |
-| **title_hebrew** | תפקיד המילה — מה היא עושה במשפט? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2088,7 +2068,6 @@
 | **File** | `g2.describe_prompt_choice.md` |
 | **learning_page_id** | `hebrew:g2:g2.describe_prompt_choice` |
 | **skill_id** | `hebrew:g2:speaking:g2.describe_prompt_choice` |
-| **title_hebrew** | תיאור קצר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2186,7 +2165,6 @@
 | **File** | `g2.situation_register.md` |
 | **learning_page_id** | `hebrew:g2:g2.situation_register` |
 | **skill_id** | `hebrew:g2:speaking:g2.situation_register` |
-| **title_hebrew** | דיבור מתאים למצב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2288,7 +2266,6 @@
 | **File** | `thanks_response.md` |
 | **learning_page_id** | `hebrew:g2:thanks_response` |
 | **skill_id** | `hebrew:rich:speaking:social_reply_early_g2:thanks_response` |
-| **title_hebrew** | תודה — איך עונים? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

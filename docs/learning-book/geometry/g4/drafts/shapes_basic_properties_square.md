@@ -1,4 +1,4 @@
-﻿# תכונות הריבוע — צלעות
+# Properties of a Square — Sides
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | תכונות הריבוע — צלעות `[DRAFT — not owner-approved]` |
+| **title_english** | Properties of a Square — Sides `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** 4 צלעות שוות; g4-only skill
+**Content scope:** 4 equal sides; g4-only skill
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נעמיק בגאומטריה בתכונות הריבוע.
-נלמד שבריבוע יש 4 צלעות — וכולן באותו אורך.
+Today in geometry we will go deeper into the properties of a square.
+We will learn that a square has 4 sides — and they are all the same length.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_sides
 :::
 
-ריבוע הוא מרובע עם ארבע צלעות.
-תכונה מרכזית כאן:
-כל 4 הצלעות שוות זו לזו.
-אם מודדים צלע אחת — כל שאר הצלעות באותו מספר.
-זה מה שמבדיל ריבוע ממלבן רגיל — במלבן לא בהכרח כל הצלעות שוות.
+A square is a quadrilateral with four sides.
+The key property here:
+All 4 sides are equal to each other.
+If you measure one side — all the other sides have the same number.
+That is what makes a square different from a regular rectangle — in a rectangle not all sides are necessarily equal.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע עם צלע 5 ס״מ:
-- צלע עליונה: 5
-- צלע ימנית: 5
-- צלע תחתונה: 5
-- צלע שמאלית: 5
-סה״כ 4 צלעות — כולן 5.
-
----
-
-## 4. בואו נפתור
-
-לריבוע יש צלע באורך 7. מה אורך שאר הצלעות?
-בריבוע כל הצלעות שוות.
-אם אחת היא 7 — גם השלוש האחרות 7.
-כל הצלעות 7
+A square with side 5 cm:
+- Top side: 5
+- Right side: 5
+- Bottom side: 5
+- Left side: 5
+4 sides in total — all are 5.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-ריבוע עם צלע 4 — כמה צלעות יש לו, ומה אורך כל אחת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-ריבוע עם צלע 4 — כמה צלעות יש לו, ומה אורך כל אחת?
-בריבוע כל הצלעות שוות.
-הצלע הנתונה היא 4, ולכן גם שלוש הצלעות האחרות הן 4.
-4 צלעות, כולן באורך 4
+A square has a side of length 7. What is the length of the other sides?
+In a square all sides are equal.
+If one is 7 — the other three are also 7.
+All sides are 7
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם יודעים לזהות את תכונת הצלעות בריבוע בגאומטריה.
-בתרגול תמצאו ריבוע — בדקו שיש 4 צלעות שוות!
+A square with side 4 — how many sides does it have, and what is the length of each one?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A square with side 4 — how many sides does it have, and what is the length of each one?
+In a square all sides are equal.
+The given side is 4, so the other three sides are also 4.
+4 sides, all of length 4
+
+---
+
+## 7. Let's practice!
+
+Now you know how to identify the side property of a square in geometry.
+In practice you will find a square — check that it has 4 equal sides!

@@ -34,7 +34,7 @@ const UI_FILES = [
   "components/worksheets/RecommendationsTab.jsx",
   "components/worksheets/WorksheetPreviewPage.jsx",
   "components/worksheets/ParentWorksheetsHub.jsx",
-  "lib/worksheets/worksheet-ui.he.js",
+  "lib/worksheets/worksheet-ui.js",
 ];
 
 describe("worksheet-public-level-labels", () => {

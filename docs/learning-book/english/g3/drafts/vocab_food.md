@@ -1,4 +1,4 @@
-# מזון — I eat…
+# Food — I eat…
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מזון — I eat… |
+| **title_english** | Food — I eat… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מזון במשפט מלא.
-I eat an apple — אני אוכל תפוח.
+Today we will learn food words in a full sentence.
+I eat an apple.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 I eat an apple.
 
-אני אוכל תפוח.
+I eat an apple.
 
 I drink milk.
 
-אני שותה חלב.
+I drink milk.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד אוכל תפוח.
+A child eating an apple.
 
 I eat an apple.
 
-אני אוכל תפוח.
+I eat an apple.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אני אוכל תפוח"?
+Question: how do we say "I eat an apple"?
 
 I eat an apple
 
-תשובה: I eat an apple
+Answer: I eat an apple
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בננה צהובה על השולחן.
+A yellow banana on the table.
 
 I eat a banana.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: בננה צהובה על השולחן.
+Exercise: a yellow banana on the table.
 
-הפתרון:
+The solution:
 
 I eat a banana.
 
-אני אוכל בננה.
+I eat a banana.
 
-כל הכבוד! לפני banana משתמשים ב-a (עיצור) — לא an.
+Well done! Before banana we use a (a consonant sound) — not an.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים אוכל ושתייה.
-בתרגול תמצאו I eat an apple ו-I drink milk.
+Now you describe food and drink.
+In practice, you'll find I eat an apple and I drink milk.

@@ -1,4 +1,4 @@
-# מילים בכיתה
+# Classroom Words
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | מילים בכיתה |
+| **title_english** | Classroom Words |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** book, pen, desk, chair, door, teacher, hello, bye; audio_required: yes — כל מילה וביטוי קצר
+**Content scope:** book, pen, desk, chair, door, teacher, hello, bye; audio_required: yes — every word and short phrase
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים מהכיתה באנגלית.
-נשמע, נראה, ונחבר מילה לתמונה — קודם שומעים.
-
----
-
-## 2. הסבר
-
-מילים שימושיות:
-book — ספר
-pen — עט
-desk — שולחן כתיבה
-chair — כיסא
-door — דלת
-teacher — מורה
-hello — שלום
-bye — להתראות
+Today we will learn classroom words in English.
+We'll listen, look, and connect a word to a picture — first by listening.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מורה מחזיקה book — ספר.
-תלמיד יושב על chair — כיסא.
-שומעים: "hello" — אומרים hello בחזרה.
-
----
-
-## 4. בואו נפתור
-
-מה זה pen?
-חושבים — כלי כתיבה.
-pen — עט.
-pen (עט)
+Useful words:
+book
+pen
+desk
+chair
+door
+teacher
+hello
+bye
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-מה זה door?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה זה door?
-שומעים את המילה door.
-חושבים — door הוא הדבר שדרכו נכנסים לחדר.
-door פירושו: דלת.
+A teacher is holding a book.
+A student is sitting on a chair.
+We hear: "hello" — we say hello back.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו מכירים מילים מהכיתה.
-בעמוד הבא — מילים פשוטות נוספות: cat, dog, sun.
+What is a pen?
+Think — a writing tool.
+It's a pen.
+pen
+
+---
+
+## 5. Try it yourself
+
+What is a door?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+What is a door?
+We hear the word door.
+Think — a door is the thing we walk through to enter a room.
+Door means the thing we open to go in or out.
+
+---
+
+## 7. Let's practice!
+
+Now you know classroom words.
+On the next page — more simple words: cat, dog, sun.

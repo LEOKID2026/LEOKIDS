@@ -1,4 +1,4 @@
-# מספרים — There are…
+# Numbers — There are…
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מספרים — There are… |
+| **title_english** | Numbers — There are… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** There are ten books — מספר + שם עצם
+**Content scope:** There are ten books — number + noun
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לספור ולומר כמה יש.
-There are ten books — יש עשרה ספרים.
+Today we will learn to count and say how many there are.
+There are ten books.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 There are ten books.
 
-יש עשרה ספרים.
+There are ten books.
 
 There are five pens.
 
-יש חמישה עטים.
+There are five pens.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-עשרה ספרים על המדף.
+Ten books on the shelf.
 
 There are ten books.
 
-יש עשרה ספרים.
+There are ten books.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "יש עשרה ספרים"?
+Question: how do we say "there are ten books"?
 
 There are ten books
 
-תשובה: There are ten books
+Answer: There are ten books
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שלושה כיסאות בחדר.
+Three chairs in the room.
 
 There are three chairs.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: שלושה כיסאות בחדר.
+Exercise: three chairs in the room.
 
-הפתרון:
+The solution:
 
 There are three chairs.
 
-יש שלושה כיסאות.
+There are three chairs.
 
-כל הכבוד! לרבים תמיד משתמשים ב-There are — לא There is.
+Well done! For plurals, we always use There are — not There is.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם סופרים עם There are.
-בתרגול תמצאו There are ten books ו-There are five pens.
+Now you count with There are.
+In practice, you'll find There are ten books and There are five pens.

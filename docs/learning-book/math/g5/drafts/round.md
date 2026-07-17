@@ -1,4 +1,4 @@
-# עיגול — עשרות, מאות, אלפים ועשרות אלפים
+# Rounding — Tens, Hundreds, Thousands, and Ten-Thousands
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | עיגול — עשרות, מאות, אלפים ועשרות אלפים `[DRAFT — not owner-approved]` |
+| **title_english** | Rounding — Tens, Hundreds, Thousands, and Ten-Thousands |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** עיגול מספרים שלמים; לא עשרוניים
+**Content scope:** Rounding whole numbers; not decimals
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לעגל מספרים שלמים לעשרות, מאות, אלפים ועשרות אלפים הקרובים.
-עיגול עוזר להעריך תשובות בחשבון ולחשב מהר בראש.
-
----
-
-## 2. הסבר
-
-שלבים לעיגול:
-מסתכלים על הספרה שמימין למקום שאליו מעגלים
-אם היא 0, 1, 2, 3 או 4 — מעגלים למטה (נשארים)
-אם היא 5, 6, 7, 8 או 9 — מעגלים למעלה (מוסיפים 1)
-עיגול לעשרות:
-מסתכלים על אחדות
-עיגול למאות:
-מסתכלים על עשרות
-עיגול לאלפים:
-מסתכלים על מאות
-עיגול לעשרות אלפים:
-מסתכלים על אלפים
-38,750 לעשרות אלפים:
-אלפים 8 → למעלה → 40,000
+Today we'll learn to round whole numbers to the nearest ten, hundred, thousand, and ten-thousand.
+Rounding helps you estimate answers in math and do quick mental math.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-38,750 לעשרות הקרובות:
-- אחדות 0 → 38,750
-38,750 לאלפים הקרובים:
-- מאות 7 → למעלה → 39,000
-38,750 לעשרות אלפים:
-- אלפים 8 → למעלה → 40,000
+Steps for rounding:
+Look at the digit to the right of the place you're rounding to
+If it's 0, 1, 2, 3, or 4 — round down (stay the same)
+If it's 5, 6, 7, 8, or 9 — round up (add 1)
+Rounding to the nearest ten:
+Look at the ones
+Rounding to the nearest hundred:
+Look at the tens
+Rounding to the nearest thousand:
+Look at the hundreds
+Rounding to the nearest ten-thousand:
+Look at the thousands
+38,750 to the nearest ten-thousand:
+Thousands digit 8 → round up → 40,000
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-עגלו 38,750 לאלפים הקרובים.
-ספרת המאות: 7 → מעגלים למעלה.
+38,750 to the nearest ten:
+- Ones digit 0 → 38,750
+38,750 to the nearest thousand:
+- Hundreds digit 7 → round up → 39,000
+38,750 to the nearest ten-thousand:
+- Thousands digit 8 → round up → 40,000
+
+---
+
+## 4. Let's solve together
+
+Round 38,750 to the nearest thousand.
+Hundreds digit: 7 → round up.
 38,750 → 39,000
 39,000
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-עגלו 46,380 לאלפים הקרובים.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Round 46,380 to the nearest thousand.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-עגלו 46,380 לאלפים הקרובים.
-מסתכלים על ספרת המאות: 3
-3 < 5 → מעגלים למטה (נשארים באלף הקרוב למטה)
+Round 46,380 to the nearest thousand.
+Look at the hundreds digit: 3
+3 < 5 → round down (stay at the lower thousand)
 46,380 → 46,000
 46,380 ≈ 46,000
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לעגל לעשרות, מאות, אלפים ועשרות אלפים.
-בתרגול תמצאו שאלות עיגול.
-בדקו קודם איזו ספרה קובעת!
+Now you know how to round to tens, hundreds, thousands, and ten-thousands.
+In practice you'll find rounding questions.
+First check which digit decides!

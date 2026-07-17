@@ -1,4 +1,4 @@
-# סוגיות גלובליות
+# Global Issues
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | סוגיות גלובליות |
+| **title_english** | Global Issues |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים על סוגיות גלובליות — peace, cooperation.
-Many countries work together on global issues — מדינות רבות עובדות יחד על סוגיות גלובליות.
+Today we will learn words about global issues — peace, cooperation.
+Many countries work together on global issues.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-global issues — סוגיות גלובליות; work together — עובדות יחד:
+global issues — problems that affect the whole world; work together — cooperate:
 
 Many countries work together on global issues.
-
-מדינות רבות עובדות יחד על סוגיות גלובליות.
 
 Peace helps people live safely.
 
-שלום עוזר לאנשים לחיות בבטחה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-דיון בכיתה על עולם משותף.
+A classroom discussion about a shared world.
 
 Many countries work together on global issues.
 
-מדינות רבות עובדות יחד על סוגיות גלובליות.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "מדינות רבות עובדות יחד על סוגיות גלובליות"?
+Question: How do you say this?
 
 Many countries work together on global issues
 
-תשובה: Many countries work together on global issues
+Answer: Many countries work together on global issues
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שיתוף פעולה בינלאומי לפתרון בעיות.
+International cooperation to solve problems.
 
 International organizations help solve global problems.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "ארגונים בינלאומיים עוזרים לפתור בעיות גלובליות."
+Exercise: "International organizations help solve global problems."
 
-organizations הוא ריבוי — משתמשים ב-help ללא s.
+"Organizations" is plural — we use help without s.
 
-help + פועל (בלי to): help solve.
+help + a verb (without "to"): help solve.
 
-ארגונים בינלאומיים עוזרים לפתור בעיות גלובליות.
-
- International organizations help solve global problems.
+So the full sentence is: International organizations help solve global problems.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מדברים על סוגיות גלובליות.
-בתרגול תמצאו Many countries work together on global issues.
+Now you will talk about global issues.
+In the practice, you'll find: Many countries work together on global issues.

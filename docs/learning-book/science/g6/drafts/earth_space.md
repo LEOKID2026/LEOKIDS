@@ -1,4 +1,4 @@
-# כדור הארץ — אקלים וחלל
+# Earth — Climate and Space
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | כדור הארץ — אקלים וחלל `[DRAFT — not owner-approved]` |
+| **title_english** | Earth — Climate and Space `[DRAFT — not owner-approved]` |
 
-**Content scope:** שינויי אקלים — עובדתי, לא מפחיד; מערכת שמש — דורש איור: כדור הארץ במערכת השמש
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על אקלים, שינויי אקלים — בעובדות — ועל מקום כדור הארץ במערכת השמש.
+**Content scope:** Climate change — factual, not scary; solar system — requires illustration: Earth in the solar system
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-אקלים — דפוס מזג אוויר לאורך שנים באזור:
-ימים חמים או קרים, תקופות גשומות או יבשות.
-שינויי אקלים — מדענים עוקבים אחרי שינויים בממוצע הטמפרטורה בעולם לאורך זמן:
-- גזים באוויר שומרים חום
-- שימוש בדלקים וכריתת יערות — תורמים לכך
-- מדענים מודדים טמפרטורה, קרחונים, גובה הים — בעשורים
-זה אתגר שאפשר לפעול נגדו — אנרגיה נקייה, פחות בזבוז, שמירה על יערות.
-מערכת השמש:
-- השמש — כוכב במרכז
-- כדור הארץ — כוכב לכת שלישי, עם מים ואוויר
-- ירח — לוויין; כוכבי לכת אחרים — רחוקים יותר
+Today in science we will learn about climate, climate change — in facts — and Earth's place in the solar system.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בישראל — קיץ חם ויבש, חורף גשום — אקלים מקומי.
-בעולם — מדענים רואים שנים חמות יותר בממוצע.
-כדור הארץ מסתובב סביב השמש — שנה אחת; יום אחד — סיבוב על הציר.
-
----
-
-## 4. בואו נפתור
-
-מה מקור האור והחום העיקרי לכדור הארץ?
-ביום — חם ומואר.
-האור מגיע מהשמש.
-השמש
-
----
-
-## 5. נסו בעצמכם
-
-חשבו:
-איך אקלים משפיע על חיים?
-(גשם — מים לצמחים)
-מה יודעים על שמש וכדור הארץ מהלימודים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Climate — weather pattern over years in an area:
+Hot or cold days, rainy or dry periods.
+Climate change — scientists track changes in average world temperature over time:
+- Gases in the air trap heat
+- Using fuels and cutting forests — contribute to this
+- Scientists measure temperature, glaciers, sea level — over decades
+This is a challenge we can act on — clean energy, less waste, protecting forests.
+The solar system:
+- The sun — star at the center
+- Earth — third planet, with water and air
+- Moon — satellite; other planets — farther away
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-השאלה: איך אקלים משפיע על חיים — ומה תפקיד השמש בכל זה?
-הסבר מדעי:
-אקלים הוא דפוס מזג האוויר לאורך שנים באזור מסוים.
-גשם — מים לצמחים ולבעלי חיים; יובש ממושך — פחות גידולים; חום — מגדיל אידוי ומשפיע על מים.
-השמש היא מקור האנרגיה העיקרי לכדור הארץ:
-היא מחממת את האדמה, גורמת לאידוי מים ומשפיעה על מחזור המים והאקלים.
-הנטייה של כדור הארץ ותנועתו סביב השמש משפיעות על כמות האור והחום שמגיעה לאזורים שונים בעונות השנה.
-אקלים — גשם ויובש משפיעים על חיים. השמש — מקור אנרגיה חשוב למחזור המים ולאקלים.
+In Israel — hot dry summer, rainy winter — local climate.
+Worldwide — scientists see warmer years on average.
+Earth orbits the sun — one year; one day — rotation on its axis.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים אקלים, שינויי אקלים ומערכת השמש במדעים.
-בתרגול חפשו שאלות על קשר בין שמש, אקלים וחיים.
+What is the main source of light and heat for Earth?
+During the day — warm and bright.
+Light comes from the sun.
+The sun
+
+---
+
+## 5. Try it yourself
+
+Think:
+How does climate affect life?
+(rain — water for plants)
+What do you know about the sun and Earth from your lessons?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: how does climate affect life — and what is the sun's role in all of this?
+Scientific explanation:
+Climate is the weather pattern over years in a certain area.
+Rain — water for plants and animals; long drought — fewer crops; heat — increases evaporation and affects water.
+The sun is Earth's main energy source:
+It heats the land, causes water to evaporate, and affects the water cycle and climate.
+Earth's tilt and its movement around the sun affect how much light and heat reach different areas in the seasons.
+Climate — rain and drought affect life. The sun — important energy source for the water cycle and climate.
+
+---
+
+## 7. Let's practice!
+
+Now you know about climate, climate change, and the solar system in science.
+When you practice, look for questions about the link between sun, climate, and life.

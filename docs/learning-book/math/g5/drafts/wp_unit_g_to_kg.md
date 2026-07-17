@@ -1,4 +1,4 @@
-# המרת יחידות — גרם וקילוגרם
+# Unit Conversion — Grams and Kilograms
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | המרת יחידות — גרם וקילוגרם `[DRAFT — not owner-approved]` |
+| **title_english** | Unit Conversion — Grams and Kilograms |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** 1,000 גרם = 1 ק״ג
+**Content scope:** 1,000 g = 1 kg
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להמיר יחידות משקל — גרם וקילוגרם.
-1,000 גרם = 1 ק״ג
-
----
-
-## 2. הסבר
-
-המרה:
-ק״ג → גרם: × 1,000
-גרם → ק״ג: ÷ 1,000
-3,500 g = 3,500 ÷ 1,000 = 3.5 ק״ג
-(3 ק״ג ו-500 גרם)
+Today we'll learn to convert weight units — grams and kilograms.
+1,000 g = 1 kg
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-2,000 g = 2 ק״ג
-1.5 ק״ג = 1,500 g
+Conversion:
+kg → g: × 1,000
+g → kg: ÷ 1,000
+3,500 g = 3,500 ÷ 1,000 = 3.5 kg
+(3 kg and 500 g)
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-כמה ק״ג ב-3,500 g?
+2,000 g = 2 kg
+1.5 kg = 1,500 g
+
+---
+
+## 4. Let's solve together
+
+How many kg in 3,500 g?
 3,500 ÷ 1,000 = 3.5
-3.5 ק״ג
+3.5 kg
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-4,250 g — כמה קילוגרם?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+4,250 g — how many kilograms?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-4,250 g — כמה קילוגרם?
-1,000 g = 1 ק״ג — מחלקים ב-1,000
+4,250 g — how many kilograms?
+1,000 g = 1 kg — divide by 1,000
 4,250 ÷ 1,000 = 4.25
-4,250 g = 4.25 ק״ג (4 ק״ג ו-250 גרם)
+4,250 g = 4.25 kg (4 kg and 250 g)
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להמיר גרם לק״ג ולהיפך.
-בתרגול תמצאו המרות משקל. 1,000 g = 1 ק״ג!
+Now you know how to convert g to kg and back.
+In practice you'll find weight conversions. 1,000 g = 1 kg!

@@ -1,4 +1,4 @@
-﻿# משפט פיתגורס — מציאת ניצב
+# Pythagorean Theorem — Finding a Leg
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משפט פיתגורס — מציאת ניצב `[DRAFT — not owner-approved]` |
+| **title_english** | Pythagorean Theorem — Finding a Leg `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,63 +22,63 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד משפט פיתגורס — מציאת ניצב חסר.
-כשיודעים יתר וניצב אחד:
-הניצב החסר² = היתר² − הניצב הידוע²
+Today we will learn the Pythagorean theorem — finding a missing leg.
+When you know the hypotenuse and one leg:
+Missing leg² = hypotenuse² − known leg²
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: right_triangle
 :::
 
-מבודדים את הריבוע של הניצב החסר:
+Isolate the square of the missing leg:
 1.
-ריבוע היתר
-2. מינוס ריבוע הניצב הידוע
-3. שורש = הניצב החסר
+Square of the hypotenuse
+2. Minus square of the known leg
+3. Square root = the missing leg
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-יתר 13 ס״מ, ניצב 12 ס״מ:
+Hypotenuse 13 cm, leg 12 cm:
 13² − 12² = 169 − 144 = 25
-√25 = 5 ס״מ
+√25 = 5 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-משולש ישר זווית — יתר 13 ס״מ, ניצב 12 ס״מ. מה אורך הניצב השני?
+Right triangle — hypotenuse 13 cm, leg 12 cm. What is the length of the other leg?
 169 − 144 = 25
 √25 = 5
-5 ס״מ.
+5 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש ישר זווית: יתר 10 ס״מ, ניצב 6 ס״מ — מה הניצב השני?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Right triangle: hypotenuse 10 cm, leg 6 cm — what is the other leg?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש ישר זווית: יתר 10 ס״מ, ניצב 6 ס״מ — מה הניצב השני?
+Right triangle: hypotenuse 10 cm, leg 6 cm — what is the other leg?
 10² − 6² = 100 − 36 = 64
 √64 = 8
-8 ס״מ
+8 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-ניצב חסר = √(c² − a²).
-בתרגול תמצאו ניצבים — ריבוע היתר מינוס ריבוע הניצב הידוע!
+Missing leg = √(c² − a²).
+In practice you'll find legs — square of hypotenuse minus square of the known leg!

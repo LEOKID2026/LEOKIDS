@@ -1,4 +1,4 @@
-# שאלות מילוליות — כמה ימים בין יום ליום
+# Word Problems — How Many Days Between Days
 
 ## Metadata
 
@@ -11,87 +11,87 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — כמה ימים בין יום ליום `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — How Many Days Between Days
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ספירת ימים קדימה/אחורה בשבוע — כמה ימים בין ימים, כמה ימים לפני/אחרי. טווח של שבוע אחד. ללא שעון, ללא חודשים או שנים, ללא שאלות מרובות שלבים.
+**Content scope:** Counting days forward/backward in the week — how many days between days, how many days before/after. Range of one week. No clock, no months or years, no multi-step questions.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לענות: כמה ימים עוברים מיום אחד עד יום אחר — או כמה ימים לפני / אחרי יום מסוים.
-סופרים צעדים על שורת ימי השבוע, כמו קפיצות על ציר המספרים.
-
----
-
-## 2. הסבר פשוט
-
-שורת ימי השבוע:
-כמה ימים עד יום מסוים? → סופרים קפיצות קדימה מיום ליום.
-כמה ימים לפני יום מסוים? → סופרים אחורה.
-לפני שעונים:
-1. מה יודעים? — מאיזה יום מתחילים
-2. מה מבקשים? — כמה ימים (או איזה יום, אם שואלים "מתי")
-3. מה עושים? — סופרים צעדים על שורת הימים
-[ראשון] [שני] [שלישי] [רביעי] [חמישי] [שישי] [שבת]
+Today we're going to learn to answer: how many days pass from one day to another — or how many days before / after a certain day.
+Count steps on the row of weekdays, like hops on a number line.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-כמה ימים מיום ראשון עד יום רביעי?
-3 צעדים → 3 ימים.
-2 ימים לפני יום שישי — איזה יום?
-2 ימים לפני שישי → יום רביעי.
-[●ראשון] → [שני] → [שלישי] → [●רביעי]
+Row of weekdays:
+How many days until a certain day? → count hops forward from day to day.
+How many days before a certain day? → count backward.
+Before you answer:
+1. What do we know? — which day we start from
+2. What are we asked? — how many days (or which day, if they ask "when")
+3. What do we do? — count steps on the row of days
+[Sunday] [Monday] [Tuesday] [Wednesday] [Thursday] [Friday] [Saturday]
+
+---
+
+## 3. Visual / concrete example
+
+How many days from Sunday to Wednesday?
+3 steps → 3 days.
+2 days before Friday — which day?
+2 days before Friday → Wednesday.
+[●Sunday] → [Monday] → [Tuesday] → [●Wednesday]
 ① ② ③
-[●רביעי] ← [חמישי] ← [●שישי]
+[●Wednesday] ← [Thursday] ← [●Friday]
 ② ①
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-אם היום יום ראשון, כמה ימים יעברו עד יום רביעי?
-שלב 1 — מה יודעים?
-מתחילים: יום ראשון
-מגיעים ל: יום רביעי
-שלב 2 — מה מבקשים?
-כמה ימים יעברו — צריך לספור צעדים קדימה.
-שלב 3 — סופרים:
-ראשון → (1) שני → (2) שלישי → (3) רביעי
-יעברו 3 ימים.
-
----
-
-## 5. נסו בעצמכם
-
-היום יום שישי. לפני 2 ימים — איזה יום היה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+If today is Sunday, how many days will pass until Wednesday?
+Step 1 — What do we know?
+Start: Sunday
+End: Wednesday
+Step 2 — What are we asked?
+How many days will pass — count steps forward.
+Step 3 — Count:
+Sunday → (1) Monday → (2) Tuesday → (3) Wednesday
+3 days will pass.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-היום יום שישי.
-לפני 2 ימים — איזה יום היה?
-שלב 1 — מה יודעים?
-היום: יום שישי.
-שלב 2 — מה מבקשים?
-איזה יום היה לפני 2 ימים — צריך לספור 2 צעדים אחורה.
-שלב 3 — סופרים:
-שישי → (1) חמישי → (2) רביעי.
-לפני 2 ימים היה יום רביעי.
+Today is Friday. 2 days ago — which day was it?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לספור ימים על שורת השבוע.
-ספרו קדימה או אחורה בין ימי השבוע!
+Today is Friday.
+2 days ago — which day was it?
+Step 1 — What do we know?
+Today: Friday.
+Step 2 — What are we asked?
+Which day was it 2 days ago — count 2 steps backward.
+Step 3 — Count:
+Friday → (1) Thursday → (2) Wednesday.
+2 days ago it was Wednesday.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to count days on the week row.
+Count forward or backward between weekdays!

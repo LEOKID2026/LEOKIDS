@@ -1,4 +1,4 @@
-# זוגי ואי-זוגי
+# Even and Odd Numbers
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגי ואי-זוגי `[DRAFT — not owner-approved]` |
+| **title_english** | Even and Odd Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מספרים 1–20. ללא חוקי התחלקות, ללא כפל/חילוק של זוגי/אי-זוגי.
+**Content scope:** Numbers 1–20. No divisibility rules, no multiplying/dividing even and odd.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד על מספרים זוגיים ואי זוגיים.
-אפשר לבדוק אם אפשר לסדר חפצים בזוגות — או אם נשאר חפץ אחד לבד.
-
----
-
-## 2. הסבר פשוט
-
-מספר זוגי — אפשר לסדר בזוגות, ולכל אחד יש שותף.
-אין אף אחד שנשאר לבד.
-מספר אי זוגי — מסדרים בזוגות, ונשאר אחד בלי שותף.
-לדוגמה:
-- 6 כוכבים → 3 זוגות → זוגי (כולם עם שותף)
-- 7 כוכבים → 3 זוגות, ונשאר כוכב אחד לבד → אי זוגי
+Today we're going to learn about even and odd numbers.
+You can check if you can pair up objects — or if one object is left alone.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-6 כוכבים — זוגי (כל אחד עם שותף):
-7 כוכבים — אי זוגי (אחד לבד):
-טיפ (אחרי שמסדרים בזוגות): מסתכלים על הספרה האחרונה:
-0, 2, 4, 6, 8 → זוגי | 1, 3, 5, 7, 9 → אי זוגי
+An even number — you can arrange in pairs, and everyone has a partner.
+Nobody is left alone.
+An odd number — you arrange in pairs, and one is left without a partner.
+For example:
+- 6 stars → 3 pairs → even (everyone has a partner)
+- 7 stars → 3 pairs, and one star left alone → odd
+
+---
+
+## 3. Visual / concrete example
+
+6 stars — even (everyone has a partner):
+7 stars — odd (one alone):
+Tip (after pairing up): look at the last digit:
+0, 2, 4, 6, 8 → even | 1, 3, 5, 7, 9 → odd
 ★ ★ ★ ★ ★ ★
 ★ ★ ★ ★ ★ ★ ★
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-האם 8 זוגי או אי זוגי?
-מסדרים 8 כוכבים בזוגות: ★★ ★★ ★★ ★★
-לכל כוכב יש שותף — לא נשאר אף אחד לבד
-8 הוא זוגי.
-
----
-
-## 5. נסו בעצמכם
-
-האם 9 זוגי או אי זוגי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Is 8 even or odd?
+Arrange 8 stars in pairs: ★★ ★★ ★★ ★★
+Every star has a partner — nobody is left alone
+8 is even.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-האם 9 זוגי או אי זוגי?
-מסדרים 9 כוכבים בזוגות: ★★ ★★ ★★ ★★ ★
-יש 4 זוגות, ונשאר כוכב אחד בלי שותף.
-כשנשאר אחד לבד — המספר הוא אי זוגי.
-9 הוא אי זוגי.
+Is 9 even or odd?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים להבדיל בין זוגי לאי זוגי.
-בתרגול תמצאו שאלות זוגי או אי זוגי?
-קודם סדרו בזוגות!
+Is 9 even or odd?
+Arrange 9 stars in pairs: ★★ ★★ ★★ ★★ ★
+There are 4 pairs, and one star is left without a partner.
+When one is left alone — the number is odd.
+9 is odd.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to tell even from odd.
+In practice you'll find questions: even or odd?
+First, pair them up!

@@ -42,7 +42,6 @@
 | **File** | `square_perimeter.md` |
 | **learning_page_id** | `geometry:g6:square_perimeter` |
 | **skill_id** | `geometry:kind:square_perimeter` |
-| **title_hebrew** | היקף ריבוע — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -140,7 +139,6 @@
 | **File** | `triangle_perimeter.md` |
 | **learning_page_id** | `geometry:g6:triangle_perimeter` |
 | **skill_id** | `geometry:kind:triangle_perimeter` |
-| **title_hebrew** | היקף משולש — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -236,7 +234,6 @@
 | **File** | `square_area.md` |
 | **learning_page_id** | `geometry:g6:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
-| **title_hebrew** | שטח ריבוע — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -333,7 +330,6 @@
 | **File** | `parallelogram_area.md` |
 | **learning_page_id** | `geometry:g6:parallelogram_area` |
 | **skill_id** | `geometry:kind:parallelogram_area` |
-| **title_hebrew** | שטח מקבילית — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -431,7 +427,6 @@
 | **File** | `trapezoid_area.md` |
 | **learning_page_id** | `geometry:g6:trapezoid_area` |
 | **skill_id** | `geometry:kind:trapezoid_area` |
-| **title_hebrew** | שטח טרפז — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -530,7 +525,6 @@
 | **File** | `triangle_angles.md` |
 | **learning_page_id** | `geometry:g6:triangle_angles` |
 | **skill_id** | `geometry:kind:triangle_angles` |
-| **title_hebrew** | זוויות במשולש — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -626,7 +620,6 @@
 | **File** | `circle_perimeter.md` |
 | **learning_page_id** | `geometry:g6:circle_perimeter` |
 | **skill_id** | `geometry:kind:circle_perimeter` |
-| **title_hebrew** | היקף מעגל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -727,7 +720,6 @@
 | **File** | `circle_area.md` |
 | **learning_page_id** | `geometry:g6:circle_area` |
 | **skill_id** | `geometry:kind:circle_area` |
-| **title_hebrew** | שטח עיגול `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -828,7 +820,6 @@
 | **File** | `pythagoras_hyp.md` |
 | **learning_page_id** | `geometry:g6:pythagoras_hyp` |
 | **skill_id** | `geometry:kind:pythagoras_hyp` |
-| **title_hebrew** | משפט פיתגורס — מציאת יתר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -927,7 +918,6 @@
 | **File** | `pythagoras_leg.md` |
 | **learning_page_id** | `geometry:g6:pythagoras_leg` |
 | **skill_id** | `geometry:kind:pythagoras_leg` |
-| **title_hebrew** | משפט פיתגורס — מציאת ניצב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1027,7 +1017,6 @@
 | **File** | `solids.md` |
 | **learning_page_id** | `geometry:g6:solids` |
 | **skill_id** | `geometry:kind:solids` |
-| **title_hebrew** | גופים — גליל, פירמידה, חרוט, כדור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1124,7 +1113,6 @@
 | **File** | `rectangular_prism_volume.md` |
 | **learning_page_id** | `geometry:g6:rectangular_prism_volume` |
 | **skill_id** | `geometry:kind:rectangular_prism_volume` |
-| **title_hebrew** | נפח תיבה — כיתה ו׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1222,7 +1210,6 @@
 | **File** | `prism_volume_rectangular.md` |
 | **learning_page_id** | `geometry:g6:prism_volume_rectangular` |
 | **skill_id** | `geometry:kind:prism_volume_rectangular` |
-| **title_hebrew** | נפח מנסרה — בסיס מלבן `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1321,7 +1308,6 @@
 | **File** | `prism_volume_triangle.md` |
 | **learning_page_id** | `geometry:g6:prism_volume_triangle` |
 | **skill_id** | `geometry:kind:prism_volume_triangle` |
-| **title_hebrew** | נפח מנסרה — בסיס משולש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1420,7 +1406,6 @@
 | **File** | `pyramid_volume_square.md` |
 | **learning_page_id** | `geometry:g6:pyramid_volume_square` |
 | **skill_id** | `geometry:kind:pyramid_volume_square` |
-| **title_hebrew** | נפח פירמידה — בסיס ריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1519,7 +1504,6 @@
 | **File** | `pyramid_volume_rectangular.md` |
 | **learning_page_id** | `geometry:g6:pyramid_volume_rectangular` |
 | **skill_id** | `geometry:kind:pyramid_volume_rectangular` |
-| **title_hebrew** | נפח פירמידה — בסיס מלבן `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1616,7 +1600,6 @@
 | **File** | `cylinder_volume.md` |
 | **learning_page_id** | `geometry:g6:cylinder_volume` |
 | **skill_id** | `geometry:kind:cylinder_volume` |
-| **title_hebrew** | נפח גליל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1716,7 +1699,6 @@
 | **File** | `cone_volume.md` |
 | **learning_page_id** | `geometry:g6:cone_volume` |
 | **skill_id** | `geometry:kind:cone_volume` |
-| **title_hebrew** | נפח חרוט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1815,7 +1797,6 @@
 | **File** | `sphere_volume.md` |
 | **learning_page_id** | `geometry:g6:sphere_volume` |
 | **skill_id** | `geometry:kind:sphere_volume` |
-| **title_hebrew** | נפח כדור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

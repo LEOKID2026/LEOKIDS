@@ -1,4 +1,4 @@
-﻿# היקף ריבוע
+# Perimeter of a Square
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף ריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Square |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** נימוק — למה 4 × צלע; 9 ס״מ, 36 ס״מ
+**Content scope:** reasoning — why 4 × side; 9 cm, 36 cm
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבין למה היקף ריבוע = 4 × צלע — ונחשב עם 9 ס״מ.
-נימוק: הולכים פעם אחת סביב הריבוע — עוברים על 4 צלעות, כל אחת 9 ס״מ.
+Today we'll understand why the perimeter of a square = 4 × side — and calculate with 9 cm.
+Reasoning: walk once around the square — you pass 4 sides, each 9 cm long.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_perimeter
 :::
 
-היקף = מסלול סביב הצורה.
-בריבוע:
-- צלע 1: 9 ס״מ
-- צלע 2: 9 ס״מ
-- צלע 3: 9 ס״מ
-- צלע 4: 9 ס״מ
-9 + 9 + 9 + 9 = 4 × 9 = 36 ס״מ
+Perimeter = the path around the shape.
+In a square:
+- side 1: 9 cm
+- side 2: 9 cm
+- side 3: 9 cm
+- side 4: 9 cm
+9 + 9 + 9 + 9 = 4 × 9 = 36 cm
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע צלע 9 ס״מ:
-- נימוק: 4 צלעות, וכל צלע באורך 9 ס״מ.
-לכן 4 × 9 = 36 ס״מ.
-- לא 9×9 — זה שטח!
+Square with side 9 cm:
+- Reasoning: 4 sides, and each side is 9 cm long.
+So 4 × 9 = 36 cm.
+- Not 9×9 — that's area!
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-ריבוע צלע 9 ס״מ. מה ההיקף?
-שלב 1 (נימוק): 4 צלעות של 9 ס״מ.
+Square with side 9 cm. What is the perimeter?
+Step 1 (reasoning): 4 sides of 9 cm.
 4 × 9 = 36
-36 ס״מ.
+36 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריבוע צלע 7 ס״מ — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Square with side 7 cm — what is the perimeter?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-ריבוע צלע 7 ס״מ — מה ההיקף?
-שלב 1 (נימוק): לריבוע 4 צלעות שוות, כל אחת באורך 7 ס״מ.
+Square with side 7 cm — what is the perimeter?
+Step 1 (reasoning): a square has 4 equal sides, each 7 cm long.
 4 × 7 = 28
-היקף = 28 ס״מ
+Perimeter = 28 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-היקף = 4 × צלע — כי 4 צלעות שוות סביב הריבוע.
-בתרגול תמצאו היקפים — אל תבלבלו עם שטח!
+Perimeter = 4 × side — because 4 equal sides go around the square.
+In practice you'll find perimeters — don't mix them up with area!

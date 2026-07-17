@@ -1,4 +1,4 @@
-# שאלה מילולית — סכום זמנים
+# Word Problems — Adding Times
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Adding Times |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שעות ודקות — חיבור משכים בפורמט שעות:דקות.
+**Content scope:** Hours and minutes — adding durations in hours:minutes format.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה מילולית על סכום זמנים — שעות ודקות ביחד.
-כששואלים "סה״כ" או "ביחד" — מחברים, לא מחסרים!
+Today we'll solve a word problem about adding times — hours and minutes together.
+When the question says "total" or "altogether" — you add, you don't subtract!
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כאן כותבים זמן שעות:דקות (למשל 1:25 = שעה ו-25 דקות).
-איך מחברים:
-1. מחברים דקות — אם יוצא 60 ומעלה, ממירים לשעה (60 דק' = 1:00).
-2. מחברים שעות — כולל שעה שנוספה מהדקות.
+Here we write time as hours:minutes (for example 1:25 = 1 hour and 25 minutes).
+How to add:
+1. Add the minutes — if you get 60 or more, change to an hour (60 min = 1:00).
+2. Add the hours — including any hour from the minutes.
 0:55 + 1:20:
-- דקות: 55 + 20 = 75 → 1:15
-- שעות: 0 + 1 + 1 = 2 → 2:15
+- Minutes: 55 + 20 = 75 → 1:15
+- Hours: 0 + 1 + 1 = 2 → 2:15
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-טיול: נסיעה 0:40, הליכה 1:15.
-דקות: 40 + 15 = 55 → 0:55 (פחות מ-60 — אין המרה).
-שעות: 0 + 1 = 1
+A hike: drive 0:40, walk 1:15.
+Minutes: 40 + 15 = 55 → 0:55 (less than 60 — no change).
+Hours: 0 + 1 = 1
 1:55.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שיעור מוזיקה 1:25 + חזרה 0:45. מה סה״כ זמן הפעילות?
-שלב 1 — דקות: 25 + 45 = 70 → 1:10 (70 דק' = שעה ו-10).
-שלב 2 — שעות: 1 + 0 + 1 = 2
+Music lesson 1:25 + practice 0:45. What is the total activity time?
+Step 1 — minutes: 25 + 45 = 70 → 1:10 (70 min = 1 hour and 10).
+Step 2 — hours: 1 + 0 + 1 = 2
 2:10.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שני קטעים נמשכים 1:25 ו-0:45.
-מה סה״כ זמן הצפייה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Two segments last 1:25 and 0:45.
+What is the total watching time?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-שני קטעים: 1:25 ו-0:45.
-מה סה״כ זמן הצפייה?
-שלב 1 — דקות: 25 + 45 = 70 → 70 דקות = 1 שעה ו-10 דקות (1:10)
-שלב 2 — שעות: 1 + 0 + 1 (נוספה מהדקות) = 2
+Two segments: 1:25 and 0:45.
+What is the total watching time?
+Step 1 — minutes: 25 + 45 = 70 → 70 minutes = 1 hour and 10 minutes (1:10)
+Step 2 — hours: 1 + 0 + 1 (added from minutes) = 2
 2:10
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר זמנים (שעות ודקות).
-בתרגול תמצאו סכום זמנים. חברו דקות קודם!
+Now you know how to add times (hours and minutes).
+In practice you'll find adding times. Add the minutes first!

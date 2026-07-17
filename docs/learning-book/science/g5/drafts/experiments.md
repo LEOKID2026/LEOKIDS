@@ -1,4 +1,4 @@
-# חקר מלא — תיעוד
+# Full Investigation — Documentation
 
 ## Metadata
 
@@ -11,80 +11,80 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | draft |
-| **title_hebrew** | חקר מלא — תיעוד `[DRAFT — not owner-approved]` |
+| **title_english** | Full Investigation — Documentation `[DRAFT — not owner-approved]` |
 
-**Content scope:** יומן חקר; גרף; הערכת תוצאות — בטוח — דורש איור: דוגמת גרף פשוט
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים לנהל חקר מלא — עם יומן, גרף והערכת תוצאות.
+**Content scope:** Investigation journal; graph; evaluating results — safe — requires illustration: simple graph example
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-חקר מלא כולל:
-שאלת מחקר — מה בודקים?
-משתנה — מה משנים (למשל כמות מים)
-תנאים קבועים — מה נשאר זהה (סוג צמח, אור)
-יומן — רישום מדי יום:
-תאריך, מדידה, הערות
-גרף — ציר אופקי (זמן), ציר אנכי (גובה, מספר)
-הערכה — האם הנתונים תומכים בחיזוי?
-מה למדנו?
-ניסוי בטוח בלבד — עם מורה, בלי חומרים מסוכנים, בלי מכשירי חשמל.
+Today in science we will learn to run a full investigation — with a journal, graph, and evaluation of results.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-האם צמח שמקבל כמות מים מתאימה גדל יותר מצמח שכמעט לא מקבל מים אחרי שבוע?
-יומן:
-כל יום — גובה בסנטימטרים.
-גרף:
-יום 1 עד 7 על הציר האופקי, גובה על הציר האנכי.
-הערכה:
-אם הקו עולה יותר בצמח שקיבל מים במידה מתאימה — החיזוי מתאים לנתונים.
-
----
-
-## 4. בואו נפתור
-
-למה כותבים ביומן כל יום?
-בלי רישום — שוכחים מספרים.
-יומן שומר נתונים מדויקים לגרף.
-כדי לתעד נתונים לאורך זמן
+A full investigation includes:
+Research question — what are we testing?
+Variable — what we change (for example amount of water)
+Controlled conditions — what stays the same (plant type, light)
+Journal — daily recording:
+Date, measurement, notes
+Graph — horizontal axis (time), vertical axis (height, number)
+Evaluation — do the data support the prediction?
+What did we learn?
+Safe experiments only — with a teacher, no dangerous materials, no electrical devices.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-תכננו חקר בטוח:
-איזה ספוג סופג יותר מים?
-מה תרשמו ביומן?
-איך ייראה הגרף (צירים, נקודות)?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: תכננו חקר — איזה ספוג סופג יותר מים? מה כותבים ביומן ואיך בונים גרף?
-הסבר מדעי:
-ביומן רושמים כל נתון:
-מספר הניסוי, כמה מיליליטרים של מים ספג כל ספוג, והערות.
-הגרף ממיר את הנתונים לתמונה — קל יותר לראות הבדלים.
-ציר אופקי — מספר הניסוי, למשל ספוג ראשון וספוג שני.
-ציר אנכי — כמות המים שנספגה, במיליליטרים.
-כל מדידה הופכת לנקודה על הגרף; אפשר לראות איזה ספוג ספג יותר.
-יומן — תאריך וכמות מים בכל מדידה. גרף — ציר אופקי לניסויים, ציר אנכי לכמות המים במיליליטרים, ונקודות.
+Does a plant that gets the right amount of water grow more than a plant that gets almost no water after a week?
+Journal:
+Every day — height in centimeters.
+Graph:
+Day 1 to 7 on the horizontal axis, height on the vertical axis.
+Evaluation:
+If the line rises more for the plant that got proper water — the prediction matches the data.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לתעד חקר עם יומן וגרף במדעים.
-בתרגול חפשו שאלות על משתנים וגרפים.
+Why write in a journal every day?
+Without recording — you forget numbers.
+A journal keeps accurate data for the graph.
+To record data over time
+
+---
+
+## 5. Try it yourself
+
+Plan a safe investigation:
+Which sponge absorbs more water?
+What will you write in the journal?
+What will the graph look like (axes, points)?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: plan an investigation — which sponge absorbs more water? What do you write in the journal and how do you build a graph?
+Scientific explanation:
+In the journal you record every data point:
+Trial number, how many milliliters of water each sponge absorbed, and notes.
+A graph turns data into a picture — easier to see differences.
+Horizontal axis — trial number, for example first sponge and second sponge.
+Vertical axis — amount of water absorbed, in milliliters.
+Each measurement becomes a point on the graph; you can see which sponge absorbed more.
+Journal — date and amount of water in each measurement. Graph — horizontal axis for trials, vertical axis for water amount in milliliters, and points.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to document an investigation with a journal and graph in science.
+When you practice, look for questions about variables and graphs.

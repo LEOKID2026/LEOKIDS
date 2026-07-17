@@ -1,4 +1,4 @@
-﻿# מקבילות ומאונכות
+# Parallel and Perpendicular Lines
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מקבילות ומאונכות `[DRAFT — not owner-approved]` |
+| **title_english** | Parallel and Perpendicular Lines `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקבילים; מסילת רכבת; זווית ישרה 90°
+**Content scope:** Parallel lines; train tracks; right angle 90°
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על קווים מקבילים וקווים מאונכים.
-נראה דוגמה מהחיים: מסילת רכבת — קווים מקבילים.
+Today in geometry we will learn about parallel lines and perpendicular lines.
+We will see an example from life: train tracks — parallel lines.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallel_lines
 :::
 
-מקבילים — שני קווים באותו כיוון שלא נפגשים לעולם.
-דוגמה: שני פסי מסילת רכבת — מקבילים.
-מאונכים — שני קווים נפגשים בזווית ישרה — 90°.
-דוגמה: פינת חדר — שני קירות.
-מקביל ≠ מאונך
+Parallel — two lines going the same direction that never meet.
+Example: two rails of a train track — parallel.
+Perpendicular — two lines that meet at a right angle — 90°.
+Example: the corner of a room — two walls.
+Parallel ≠ perpendicular
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מסילת רכבת — שני פסים זו לצד זו:
-- אותו כיוון
-- לא נפגשים
-→ הקווים מקבילים.
-
----
-
-## 4. בואו נפתור
-
-שני פסי מסילת רכבת — מה הקשר ביניהם?
-באותו כיוון, לא נפגשים.
-→ מקבילים.
-מקבילים
+Train tracks — two rails side by side:
+- Same direction
+- They do not meet
+→ The lines are parallel.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-שני קירות בפינת חדר — נפגשים בזווית ישרה. מקבילים או מאונכים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-שני קירות בפינת חדר — נפגשים בזווית ישרה.
-מקבילים או מאונכים?
-בודקים — האם הקווים נפגשים? כן, הקירות נפגשים בפינה.
-הם נפגשים בזווית ישרה (90°) → מאונכים.
-הקירות מאונכים
+Two rails of a train track — what is the relationship between them?
+Same direction, they do not meet.
+→ Parallel.
+Parallel
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מבחינים מקבילים (מסילת רכבת) ממאונכים (פינת חדר)!
-בתרגול:
-נפגשים? → מאונכים.
-לא נפגשים? → מקבילים!
+Two walls in the corner of a room — they meet at a right angle. Parallel or perpendicular?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Two walls in the corner of a room — they meet at a right angle.
+Parallel or perpendicular?
+Check — do the lines meet? Yes, the walls meet at the corner.
+They meet at a right angle (90°) → perpendicular.
+The walls are perpendicular
+
+---
+
+## 7. Let's practice!
+
+Now you can tell parallel lines (train tracks) apart from perpendicular lines (room corner)!
+In practice:
+Do they meet? → perpendicular.
+Do they not meet? → parallel!

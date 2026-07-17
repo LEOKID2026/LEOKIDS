@@ -1,4 +1,4 @@
-﻿# זוגי ואי-זוגי — חזרה ותרגול
+# Even and Odd — Review and Practice
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_1_2 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגי ואי-זוגי — חזרה ותרגול `[DRAFT — not owner-approved]` |
+| **title_english** | Even and Odd — Review and Practice |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חזרה על זוגי ואי-זוגי. מספרים גדולים יותר (עד כמה מאות). ללא חוקי התחלקות.
+**Content scope:** Review of even and odd. Bigger numbers (up to hundreds). No divisibility rules.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזור על מספרים זוגיים ואי זוגיים.
-גם מספרים גדולים — כמו 24 או 35 — אפשר לבדוק באותה דרך: סידור בזוגות.
-
----
-
-## 2. הסבר
-
-מספר זוגי — אפשר לסדר בזוגות, ולכל אחד יש שותף.
-אף אחד לא נשאר לבד.
-מספר אי זוגי — מסדרים בזוגות, ונשאר אחד בלי שותף.
-שתי דרכים לבדוק:
-1. סידור בזוגות — הדרך הכי ברורה
-2. הספרה האחרונה — 0, 2, 4, 6, 8 → זוגי | 1, 3, 5, 7, 9 → אי זוגי
+Today we're going to review even and odd numbers.
+Even big numbers — like 24 or 35 — can be checked the same way: pairing up.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-24 — זוגי:
-לכל כוכב יש שותף → 24 זוגי.
-35 — אי זוגי:
-נשאר כוכב אחד לבד → 35 אי זוגי.
-טיפ: ב-35 הספרה האחרונה היא 5 → אי זוגי.
-★ ★ ★ ★ ★ ★ … (12 זוגות)
+An even number — you can arrange in pairs, and everyone has a partner.
+No one is left alone.
+An odd number — you arrange in pairs, and one is left without a partner.
+Two ways to check:
+1. Pair up — the clearest way
+2. Last digit — 0, 2, 4, 6, 8 → even | 1, 3, 5, 7, 9 → odd
+
+---
+
+## 3. Visual / concrete example
+
+24 — even:
+Every star has a partner → 24 is even.
+35 — odd:
+One star is left alone → 35 is odd.
+Tip: in 35 the last digit is 5 → odd.
+★ ★ ★ ★ ★ ★ … (12 pairs)
 ★ ★ ★ ★ ★ ★ … ★
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-האם 24 זוגי או אי זוגי?
-מסדרים 24 בזוגות — לכל אחד יש שותף.
-לא נשאר אף אחד לבד.
-הספרה האחרונה ב-24 היא 4 → זוגי.
-24 הוא זוגי.
-
----
-
-## 5. נסו בעצמכם
-
-האם 46 זוגי או אי זוגי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Is 24 even or odd?
+Pair up 24 — everyone has a partner.
+No one is left alone.
+The last digit in 24 is 4 → even.
+24 is even.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-האם 46 זוגי או אי זוגי?
-שלב 1 — סידור בזוגות: מסדרים 46 בזוגות — לכל אחד יש שותף, אף אחד לא נשאר לבד.
-שלב 2 — ספרה אחרונה: הספרה האחרונה ב-46 היא 6 → זוגי.
-46 הוא זוגי
+Is 46 even or odd?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לבדוק זוגי ואי זוגי גם במספרים גדולים.
-בתרגול תמצאו שאלות זוגי או אי זוגי?
-קודם סדרו בזוגות!
+Is 46 even or odd?
+Step 1 — Pair up: arrange 46 in pairs — everyone has a partner, no one is left alone.
+Step 2 — Last digit: the last digit in 46 is 6 → even.
+46 is even
+
+---
+
+## 7. Let's practice!
+
+Now you know how to check even and odd in bigger numbers too.
+In practice you'll find questions: even or odd?
+Pair up first!

@@ -41,7 +41,6 @@
 | **File** | `vocab_colors.md` |
 | **learning_page_id** | `english:g2:vocab_colors` |
 | **skill_id** | `english:vocabulary:wordlist:colors` |
-| **title_hebrew** | צבעים — שימוש במשפט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -148,7 +147,6 @@ blue בתוך משפט — לא לבד.
 | **File** | `vocab_numbers.md` |
 | **learning_page_id** | `english:g2:vocab_numbers` |
 | **skill_id** | `english:vocabulary:wordlist:numbers` |
-| **title_hebrew** | מספרים — עד 20 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -252,7 +250,6 @@ seven זה 7.
 | **File** | `vocab_family.md` |
 | **learning_page_id** | `english:g2:vocab_family` |
 | **skill_id** | `english:vocabulary:wordlist:family` |
-| **title_hebrew** | משפחה — מילים במשפט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -356,7 +353,6 @@ dad = אבא.
 | **File** | `vocab_animals.md` |
 | **learning_page_id** | `english:g2:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
-| **title_hebrew** | חיות — שמות ומשפטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -460,7 +456,6 @@ dog = כלב.
 | **File** | `vocab_emotions.md` |
 | **learning_page_id** | `english:g2:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
-| **title_hebrew** | רגשות — במשפט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -559,7 +554,6 @@ sad = עצוב.
 | **File** | `vocab_actions.md` |
 | **learning_page_id** | `english:g2:vocab_actions` |
 | **skill_id** | `english:vocabulary:wordlist:actions` |
-| **title_hebrew** | פעולות — פועל במשפט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -663,7 +657,6 @@ jump = לקפוץ.
 | **File** | `vocab_school.md` |
 | **learning_page_id** | `english:g2:vocab_school` |
 | **skill_id** | `english:vocabulary:wordlist:school` |
-| **title_hebrew** | בית ספר — חפצים במשפט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -767,7 +760,6 @@ pen = עט.
 | **File** | `vocab_food.md` |
 | **learning_page_id** | `english:g2:vocab_food` |
 | **skill_id** | `english:vocabulary:wordlist:food` |
-| **title_hebrew** | מזון באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -868,7 +860,6 @@ apple זה תפוח.
 | **File** | `vocab_house.md` |
 | **learning_page_id** | `english:g2:vocab_house` |
 | **skill_id** | `english:vocabulary:wordlist:house` |
-| **title_hebrew** | בית — חדרים וחפצים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -969,7 +960,6 @@ bed זה מיטה.
 | **File** | `grammar_be.md` |
 | **learning_page_id** | `english:g2:grammar_be` |
 | **skill_id** | `english:pool:grammar:be_basic` |
-| **title_hebrew** | am / is / are — חיזוק `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1075,7 +1065,6 @@ She is = היא.
 | **File** | `grammar_plural_questions.md` |
 | **learning_page_id** | `english:g2:grammar_plural_questions` |
 | **skill_id** | `english:pool:grammar:question_frames` |
-| **title_hebrew** | ריבוי ושאלות פשוטות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1179,7 +1168,6 @@ cats = חתולים.
 | **File** | `sentence_base.md` |
 | **learning_page_id** | `english:g2:sentence_base` |
 | **skill_id** | `english:pool:sentence:base` |
-| **title_hebrew** | משפטים קצרים — כיתה ב׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1281,7 +1269,6 @@ I am seven = אני בן שבע.
 | **File** | `sentence_routine.md` |
 | **learning_page_id** | `english:g2:sentence_routine` |
 | **skill_id** | `english:pool:sentence:routine` |
-| **title_hebrew** | שגרת יום — משפטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1385,7 +1372,6 @@ wake up ו-go to school — שני שלבים.
 | **File** | `translation_classroom.md` |
 | **learning_page_id** | `english:g2:translation_classroom` |
 | **skill_id** | `english:pool:translation:classroom` |
-| **title_hebrew** | ביטויי כיתה — משפטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1487,7 +1473,6 @@ Thank you = תודה.
 | **File** | `translation_routines.md` |
 | **learning_page_id** | `english:g2:translation_routines` |
 | **skill_id** | `english:pool:translation:routines` |
-| **title_hebrew** | שגרת יום — תרגום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

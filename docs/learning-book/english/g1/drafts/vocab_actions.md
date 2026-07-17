@@ -1,4 +1,4 @@
-# פעולות באנגלית
+# Actions in English
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | פעולות באנגלית |
+| **title_english** | Actions in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** run, jump, read, eat — פעלים פשוטים
+**Content scope:** run, jump, read, eat — simple verbs
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים באנגלית לפעולות.
-פעולות — מה שאנחנו עושים כל יום.
-
----
-
-## 2. הסבר
-
-פעלים פשוטים:
-run — לרוץ
-jump — לקפוץ
-read — לקרוא
-eat — לאכול
+Today we will learn English words for actions.
+Actions — the things we do every day.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ילד רץ במגרש.
-באנגלית אומרים:
+Simple verbs:
 run
-המילה run פירושה לרוץ.
-
----
-
-## 4. בואו נפתור
-
-מה המילה לרוץ באנגלית?
-לרוץ.
-run
-
----
-
-## 5. נסו בעצמכם
-
-ילד קופץ גבוה באוויר.
-מה המילה באנגלית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה המילה באנגלית לקפוץ?
-לקפוץ — פעולה שבה עולים באוויר.
-לקפוץ באנגלית:
 jump
-jump פירושו: לקפוץ.
+read
+eat
 
 ---
 
-## 7. בואו נתרגל!
+## 3. Example
 
-עכשיו אתם מכירים פעולות באנגלית.
-בתרגול תמצאו שאלות על run, jump, read ו-eat.
+A child runs on the field.
+In English we say:
+run
+The word run means to run.
+
+---
+
+## 4. Let's solve together
+
+What is the word for run in English?
+Run.
+run
+
+---
+
+## 5. Try it yourself
+
+A child jumps high in the air.
+What is the word in English?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+What is the English word for jump?
+Jump — an action where you go up in the air.
+Jump in English:
+jump
+jump means to jump.
+
+---
+
+## 7. Let's practice!
+
+Now you know actions in English.
+In practice, you'll find questions about run, jump, read, and eat.

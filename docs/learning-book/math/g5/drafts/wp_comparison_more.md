@@ -1,4 +1,4 @@
-# שאלה מילולית — כמה יותר?
+# Word Problems — How Many More?
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — How Many More? |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הפרש; מספרים גדולים
+**Content scope:** Difference; large numbers
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה מילולית — כששואלים כמה יותר יש לאחד מאשר לשני.
-צריך הפרש — גדול פחות קטן, לא סכום!
-
----
-
-## 2. הסבר
-
-מסגרת לבעיות השוואה:
-מה יודעים? שתי כמויות — למשל 420 ליטר ו-275 ליטר
-מה מבקשים? מה ההפרש — מי יותר?
-מה עושים? תמיד: גדול − קטן
-420 − 275 = 145 — יש 145 ליטר יותר.
-"יותר" = הפרש — לא סכום!
+Today we'll solve a word problem — when the question asks how many more one person has than another.
+You need the difference — bigger minus smaller, not the total!
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-לדני 4,800 ₪ חיסכון ולמיה 4,200 ₪.
-כמה יותר לדני?
-4,800 − 4,200 = 600 ₪ יותר
+Frame for comparison problems:
+What do you know? Two amounts — for example 420 liters and 275 liters
+What are you asked? What is the difference — who has more?
+What do you do? Always: bigger − smaller
+420 − 275 = 145 — there are 145 liters more.
+"More" = difference — not the total!
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-לדני 3,200 ₪ ולמיה 2,850 ₪. כמה יותר לדני?
+Danny has $4,800 in savings and Mia has $4,200.
+How much more does Danny have?
+4,800 − 4,200 = $600 more
+
+---
+
+## 4. Let's solve together
+
+Danny has $3,200 and Mia has $2,850. How much more does Danny have?
 3,200 > 2,850.
 3,200 − 2,850 = 350
-350 ₪ יותר.
+$350 more.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-לדני 3,200 ₪ ולמיה 2,850 ₪.
-כמה יותר יש לדני?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Danny has $3,200 and Mia has $2,850.
+How much more does Danny have?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-לדני 3,200 ₪ ולמיה 2,850 ₪.
-כמה יותר יש לדני?
-"כמה יותר" = הפרש → מחסרים גדול פחות קטן
+Danny has $3,200 and Mia has $2,850.
+How much more does Danny have?
+"How many more" = difference → subtract bigger minus smaller
 3,200 − 2,850 = 350
-לדני יש 350 ₪ יותר
+Danny has $350 more
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור כמה יותר?
-בשאלה מילולית.
-בתרגול תמצאו שאלות הפרש.
-חפשו הפרש — לא סכום!
+Now you know how to solve how many more?
+In a word problem.
+In practice you'll find difference questions.
+Look for the difference — not the total!

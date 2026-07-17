@@ -35,11 +35,11 @@ export function buildLeoWordDetectiveMetrics(state) {
     completedAllTasks,
     positiveProgress: successfulTasks,
     statsLines: [
-      { label: "תיקים שהגעתם אליהם", value: String(tasksReached) },
-      { label: "תיקים שנפתרו", value: String(successfulTasks) },
-      { label: "טעויות", value: String(mistakes) },
-      { label: "דיוק", value: `${Math.round(accuracy * 100)}%` },
-      { label: "רצף הכי טוב", value: String(bestStreak) },
+      { label: "Cases reached", value: String(tasksReached) },
+      { label: "Cases solved", value: String(successfulTasks) },
+      { label: "Mistakes", value: String(mistakes) },
+      { label: "Accuracy", value: `${Math.round(accuracy * 100)}%` },
+      { label: "Best streak", value: String(bestStreak) },
     ],
   };
 }

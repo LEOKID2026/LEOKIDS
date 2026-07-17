@@ -1,4 +1,4 @@
-﻿# זוויות במשולש
+# Angles in a Triangle
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוויות במשולש `[DRAFT — not owner-approved]` |
+| **title_english** | Angles in a Triangle `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זווית במשולש — קרניים, קודקוד; השוואת גדלים; 50°, 60°, 70°
+**Content scope:** Angle in a triangle — rays, vertex; comparing sizes; 50°, 60°, 70°
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נכיר בגאומטריה את הזוויות במשולש.
-בכל משולש יש שלוש זוויות — אחת בכל קודקוד.
-נלמד לקרוא מעלות ולהשוות:
-איזו זווית גדולה יותר ואיזו קטנה יותר.
+Today in geometry we will learn about angles in a triangle.
+Every triangle has three angles — one at each vertex.
+We will learn to read degrees and compare:
+which angle is bigger and which is smaller.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: angle_basic
 :::
 
-זווית נוצרת בקודקוד — שתי קרניים (צלעות) יוצאות ממנו.
-במשולש יש 3 קודקודים → 3 זוויות.
-מודדים זווית במעלות (°):
-- זווית קטנה — פתיחה צרה (למשל 50°)
-- זווית בינונית — (למשל 60°)
-- זווית גדולה יותר — פתיחה רחבה (למשל 70°)
-50° < 60° < 70° — ככל שהמספר גדול, הזווית רחבה יותר.
+An angle is formed at a vertex — two rays (sides) come out from it.
+A triangle has 3 vertices → 3 angles.
+We measure an angle in degrees (°):
+- A small angle — a narrow opening (for example 50°)
+- A medium angle — (for example 60°)
+- A larger angle — a wider opening (for example 70°)
+50° < 60° < 70° — the bigger the number, the wider the angle.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משולש עם זוויות 50°, 60° ו-70°:
-- 50° — הזווית הקטנה ביותר
-- 60° — באמצע
-- 70° — הזווית הגדולה ביותר
-שלוש הזוויות "יושבות" בשלושה קודקודים שונים — כל אחת במקום שלה.
+A triangle with angles 50°, 60°, and 70°:
+- 50° — the smallest angle
+- 60° — in the middle
+- 70° — the largest angle
+All three angles "sit" at three different vertices — each in its own place.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-במשולש יש זוויות 50°, 60° ו-70°. איזו זווית הגדולה ביותר?
-משווים את המספרים — 50, 60, 70.
-70 הוא הגדול → 70° היא הזווית הגדולה ביותר.
+A triangle has angles 50°, 60°, and 70°. Which angle is the largest?
+Compare the numbers — 50, 60, 70.
+70 is the biggest → 70° is the largest angle.
 70°
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-במשולש עם זוויות 40°, 65° ו-75° — איזו זווית הגדולה ביותר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-במשולש עם זוויות 40°, 65° ו-75° — איזו זווית הגדולה ביותר?
-משווים את המספרים — 40, 65, 75.
-75 הוא הגדול ביותר → 75° היא הזווית הגדולה ביותר.
-הזווית הגדולה = 75°
+In a triangle with angles 40°, 65°, and 75° — which angle is the largest?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו אתם מזהים זוויות במשולש ומשווים ביניהן בגאומטריה.
-בתרגול תמצאו מעלות — בדקו איזו זווית גדולה, קטנה או בינונית!
+In a triangle with angles 40°, 65°, and 75° — which angle is the largest?
+Compare the numbers — 40, 65, 75.
+75 is the biggest → 75° is the largest angle.
+The largest angle = 75°
+
+---
+
+## 7. Let's practice!
+
+Now you can identify angles in a triangle and compare them in geometry.
+In practice you will find degrees — check which angle is large, small, or in the middle!

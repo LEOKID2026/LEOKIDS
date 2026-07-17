@@ -1,4 +1,4 @@
-# השוואת מספרים — עד 100,000
+# Comparing Numbers — Up to 100,000
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | השוואת מספרים — עד 100,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Comparing Numbers — Up to 100,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** > , < , = ; עשרות אלפים
+**Content scope:** > , < , = ; ten-thousands
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להשוות מספרים גדולים עד 100,000 — לדעת מי גדול יותר, מי קטן יותר, או אם הם שווים.
-נשתמש בסימנים > (גדול מ), < (קטן מ), = (שווה).
-
----
-
-## 2. הסבר
-
-איך משווים מספרים גדולים?
-בודקים קודם את ספרת עשרות האלפים — המספר עם הספרה הגדולה יותר, גדול יותר (קוראים משמאל לימין)
-אם שוות — בודקים אלפים
-אם שוות — בודקים מאות, עשרות, אחדות
-52,400 ו-52,390:
-- עשרות אלפים: 5 = 5
-- אלפים: 2 = 2
-- מאות: 4 > 3 → 52,400 > 52,390
+Today we'll learn to compare large numbers up to 100,000 — to know which is bigger, which is smaller, or if they are equal.
+We'll use the symbols > (greater than), < (less than), = (equal to).
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-השוו: 67,820 ו-67,802
-עשרות אלפים: 6 = 6
-אלפים: 7 = 7
-מאות: 8 = 8
-עשרות: 2 > 0 → 67,820 > 67,802
+How do you compare large numbers?
+First check the ten-thousands digit — the number with the bigger digit is larger (read from left to right)
+If they're equal — check the thousands
+If they're equal — check the hundreds, tens, ones
+52,400 and 52,390:
+- ten-thousands: 5 = 5
+- thousands: 2 = 2
+- hundreds: 4 > 3 → 52,400 > 52,390
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-השוו 41,500 ו-41,580 — איזה סימן נכון?
-עשרות אלפים, אלפים, מאות — שווים (41,5__).
-עשרות: 0 < 8.
+Compare: 67,820 and 67,802
+Ten-thousands: 6 = 6
+Thousands: 7 = 7
+Hundreds: 8 = 8
+Tens: 2 > 0 → 67,820 > 67,802
+
+---
+
+## 4. Let's solve together
+
+Compare 41,500 and 41,580 — which symbol is correct?
+Ten-thousands, thousands, hundreds — all equal (41,5__).
+Tens: 0 < 8.
 41,500 < 41,580.
 41,500 < 41,580
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-השוו: 83,750 ? 83,705 — איזה סימן (> , < , =) מתאים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Compare: 83,750 ? 83,705 — which symbol (> , < , =) fits?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-השוו: 83,750 ? 83,705
-עשרות אלפים: 8 = 8
-אלפים: 3 = 3
-מאות: 7 = 7
-עשרות: 5 > 0 → 83,750 גדול יותר
+Compare: 83,750 ? 83,705
+Ten-thousands: 8 = 8
+Thousands: 3 = 3
+Hundreds: 7 = 7
+Tens: 5 > 0 → 83,750 is greater
 83,750 > 83,705
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להשוות מספרים עד 100,000.
-בתרגול תמצאו השוואות עם > , < , =.
-התחילו מעשרות האלפים!
+Now you know how to compare numbers up to 100,000.
+In practice you'll find comparisons with > , < , =.
+Start with the ten-thousands!

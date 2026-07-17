@@ -1104,7 +1104,7 @@ export default function ParentReportDetailedPage() {
             border-radius: 0.35rem;
             white-space: normal;
             max-width: 11rem;
-            text-align: right;
+            text-align: left;
           }
           .pr-detailed-topic-badge--advance {
             border: 1px solid rgba(74, 222, 128, 0.5);
@@ -1566,7 +1566,7 @@ export default function ParentReportDetailedPage() {
               opacity: 1 !important;
               font-weight: 800 !important;
               max-width: 11rem !important;
-              text-align: right !important;
+              text-align: left !important;
             }
             #parent-report-detailed-print .pr-detailed-topic-badge--advance {
               background: #d1fae5 !important;

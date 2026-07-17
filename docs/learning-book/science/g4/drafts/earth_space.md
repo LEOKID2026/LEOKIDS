@@ -1,4 +1,4 @@
-# כדור הארץ — סלעים, קרקע ועונות
+# Earth — Rocks, Soil, and Seasons
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | כדור הארץ — סלעים, קרקע ועונות `[DRAFT — not owner-approved]` |
+| **title_english** | Earth — Rocks, Soil, and Seasons `[DRAFT — not owner-approved]` |
 
-**Content scope:** סוגי סלע/קרקע; עונות — הטיה מושגית
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על סלעים, קרקע — ואיך מזג אוויר ועונות משפיעים עליהם.
+**Content scope:** Types of rock/soil; seasons — conceptual tilt
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-סלע — חומר קשה מהטבע.
-קרקע — שכבה על פני כדור הארץ; מכילה חלקיקים, חומר מפורק ומים — צמחים גדלים בה.
-סוגי קרקע שונים:
-- חול — גרגרים, מים חודרים מהר
-- חימר — דביק, שומר מים
-- אדמה כהה — פורייה לצמיחה
-גשם ושמש משנים את הקרקע והסלע לאורך השנה:
-- גשם חזק — מים זורמים, לפעמים סוחפים חלקיקי קרקע
-- שמש חזקה — קרקע יבשה יותר; סלע חשוף מתחמם
-- קור — מים עלולים לקפוא; סלעים עלולים להתפורר לאט
-כדור הארץ מוטה — לכן באזורים שונים יש דפוסי אור וחום שונים לאורך השנה (רקע מושגי).
+Today in science we will learn about rocks and soil — and how weather and seasons affect them.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בהרים — סלעים חשופים; גשם ורוח מעודדים סדקים קטנים לאורך זמן.
-בעמק — שכבת קרקע עבה; גשמים מזינים את האדמה, שמש מייבשת את השכבה העליונה.
-אותו מקום — סלע, קרקע ומים — משתנים עם מזג האוויר.
-
----
-
-## 4. בואו נפתור
-
-איפה בעיקר גדלים צמחים — בסלע או בקרקע?
-צמחים צריכים מים וחומרים מהשכבה העליונה.
-קרקע תומכת בצמיחה.
-בקרקע
-
----
-
-## 5. נסו בעצמכם
-
-חשבו על חוף:
-חול, סלעים, מים.
-איזה חומר הוא סלע?
-איזה דומה לקרקע?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Rock — hard material from nature.
+Soil — a layer on Earth's surface; contains particles, broken-down material, and water — plants grow in it.
+Different soil types:
+- Sand — grains, water drains quickly
+- Clay — sticky, holds water
+- Dark soil — fertile for growth
+Rain and sun change soil and rock throughout the year:
+- Heavy rain — water flows, sometimes carries soil particles
+- Strong sun — soil dries more; exposed rock heats up
+- Cold — water may freeze; rocks may slowly break apart
+Earth is tilted — so different areas get different patterns of light and heat during the year (conceptual background).
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-השאלה: חשבו על חוף — חול, סלעים, מים. איזה חומר הוא סלע? איזה דומה לקרקע?
-הסבר מדעי:
-סלע הוא חומר קשה שנוצר בטבע — גוש שלם שאינו מתפורר בקלות.
-חול נוצר כשסלעים מתפוררים לאורך שנים רבות בגלל גשם, רוח וגלים — ומתפרקים לגרגרים קטנים.
-לכן חול דומה יותר לקרקע:
-הוא בנוי מחלקיקים, ומים חודרים דרכו — בדיוק כמו קרקע.
-הסלע על החוף — קשה, גוש שלם, סלע. החול — גרגרים קטנים שמגיעים מסלע; דומה לקרקע.
+In the mountains — exposed rocks; rain and wind encourage small cracks over time.
+In a valley — a thick soil layer; rains nourish the soil, sun dries the top layer.
+Same place — rock, soil, and water — change with the weather.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים סלע, קרקע וקשר למזג אוויר במדעים.
-בתרגול חפשו שאלות על סוגי קרקע ושינוי בקרקע.
+Where do plants mainly grow — in rock or in soil?
+Plants need water and materials from the top layer.
+Soil supports growth.
+In soil
+
+---
+
+## 5. Try it yourself
+
+Think about a beach:
+Sand, rocks, water.
+Which material is rock?
+Which is similar to soil?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: think about a beach — sand, rocks, water. Which material is rock? Which is similar to soil?
+Scientific explanation:
+Rock is hard material formed in nature — a whole piece that does not break apart easily.
+Sand forms when rocks break down over many years because of rain, wind, and waves — into small grains.
+So sand is more like soil:
+It is made of particles, and water passes through it — just like soil.
+The rock on the beach — hard, whole piece, rock. Sand — small grains from rock; similar to soil.
+
+---
+
+## 7. Let's practice!
+
+Now you know about rock, soil, and their connection to weather in science.
+When you practice, look for questions about soil types and changes in soil.

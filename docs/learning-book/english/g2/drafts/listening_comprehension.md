@@ -1,4 +1,4 @@
-# הבנת הנשמע
+# Listening Comprehension
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | הבנת הנשמע |
+| **title_english** | Listening Comprehension |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,59 +20,59 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום שומעים משפט קצר — ובוחרים תמונה נכונה.
-לא מתרגמים לעברית — מבינים ממה ששומעים.
-
----
-
-## 2. הסבר
-
-דוגמה 1: "I see a cat." — רואה חתול — בוחרים תמונה של cat.
-דוגמה 2: "My friend is happy." — חבר שמח.
-דוגמה 3: "We read in the classroom." — קוראים בכיתה.
-דוגמה 4: "Listen to the teacher." — מקשיבים למורה.
+Today we hear a short sentence — and choose the right picture.
+We don't translate to Hebrew — we understand from what we hear.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-שומעים: "I see a dog."
-מה רואים?
-dog — כלב — תמונה של dog.
+Example 1: "I see a cat." — seeing a cat — choose a picture of a cat.
+Example 2: "My friend is happy." — a happy friend.
+Example 3: "We read in the classroom." — reading in the classroom.
+Example 4: "Listen to the teacher." — listening to the teacher.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-שומעים "We play in the playground."
-איפה משחקים?
-playground — מגרש משחקים.
-תמונה של playground.
+We hear: "I see a dog."
+What do we see?
+dog — choose a picture of a dog.
+
+---
+
+## 4. Let's solve together
+
+We hear "We play in the playground."
+Where do we play?
+playground — a playground.
+Picture of a playground.
 playground
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שומעים: "We read a book."
-מה עושים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: שומעים "We read a book." — מה עושים?
-המילה החשובה: read — לקרוא.
-We read — אנחנו קוראים.
-התשובה היא: קוראים ספר — read a book.
+We hear: "We read a book."
+What are we doing?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו מתרגלים הבנת הנשמע.
-בעמוד הבא — תמונה, שמע ומילה יחד.
+The question: we hear "We read a book." — what are we doing?
+The key word: read — to read.
+We read — we are reading.
+The answer is: reading a book — read a book.
+
+---
+
+## 7. Let's practice!
+
+Now you're practicing listening comprehension.
+On the next page — picture, sound, and word together.

@@ -1,4 +1,4 @@
-# סביבה — climate, protect
+# Environment — climate, protect
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | סביבה — climate, protect |
+| **title_english** | Environment — climate, protect |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** Climate change affects… — נושאים סביבתיים
+**Content scope:** Climate change affects… — environmental topics
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים על סביבה ושינוי אקלים.
-Climate change affects people around the world — שינוי האקלים משפיע על אנשים ברחבי העולם.
-
----
-
-## 2. הסבר
-
-climate change — שינוי אקלים; affects — משפיע:
-
+Today we will learn words about the environment and climate change.
 Climate change affects people around the world.
 
-שינוי האקלים משפיע על אנשים ברחבי העולם.
+---
+
+## 2. Simple explanation
+
+climate change — a long-term change in the world's weather; affects — has an effect on:
+
+Climate change affects people around the world.
 
 We should protect forests and oceans.
 
-כדאי להגן על יערות ואוקיינוסים.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-דיון בכיתה על כדור הארץ.
+A classroom discussion about the Earth.
 
 Climate change affects people around the world.
 
-שינוי האקלים משפיע על אנשים ברחבי העולם.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "שינוי האקלים משפיע על אנשים ברחבי העולם"?
+Question: How do you say this?
 
 Climate change affects people around the world
 
-תשובה: Climate change affects people around the world
+Answer: Climate change affects people around the world
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-עולם מתחמם — הטמפרטורות עולות.
+A warming world — temperatures rising.
 
 Temperatures are rising due to climate change.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הטמפרטורות עולות בגלל שינוי האקלים."
+Exercise: "Temperatures are rising due to climate change."
 
-temperatures הוא ריבוי — משתמשים ב-are rising ב-Present Continuous.
+"Temperatures" is plural — we use are rising in Present Continuous.
 
-due to = בגלל; climate change = שינוי האקלים.
+"Due to" means because of.
 
-הטמפרטורות עולות בגלל שינוי האקלים.
-
- Temperatures are rising due to climate change.
+So the full sentence is: Temperatures are rising due to climate change.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מדברים על סביבה ואקלים.
-בתרגול תמצאו Climate change affects people around the world.
+Now you will talk about the environment and climate.
+In the practice, you'll find: Climate change affects people around the world.

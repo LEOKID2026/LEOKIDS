@@ -39,7 +39,6 @@
 | **File** | `shapes_basic_square.md` |
 | **learning_page_id** | `geometry:g1:shapes_basic_square` |
 | **skill_id** | `geometry:kind:shapes_basic_square` |
-| **title_hebrew** | הכרת הריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -144,7 +143,6 @@
 | **File** | `shapes_basic_rectangle.md` |
 | **learning_page_id** | `geometry:g1:shapes_basic_rectangle` |
 | **skill_id** | `geometry:kind:shapes_basic_rectangle` |
-| **title_hebrew** | הכרת המלבן `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -248,7 +246,6 @@
 | **File** | `transformations.md` |
 | **learning_page_id** | `geometry:g1:transformations` |
 | **skill_id** | `geometry:kind:transformations` |
-| **title_hebrew** | הזזה ושיקוף — היכרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

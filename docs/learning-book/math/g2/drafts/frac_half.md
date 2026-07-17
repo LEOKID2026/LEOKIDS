@@ -1,4 +1,4 @@
-﻿# חצי מהשלם
+# Half of the Whole
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חצי מהשלם `[DRAFT — not owner-approved]` |
+| **title_english** | Half of the Whole |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חצי כחלק ויזואלי. חצי = חלק אחד מתוך שני חלקים שווים. ללא חישוב שברים מתקדם, ללא מונה/מכנה.
+**Content scope:** Half as a visual part. Half = one part out of two equal parts. No advanced fraction calculation, no numerator/denominator.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מה זה חצי — חצי מהשלם.
-חצי = חלק אחד מתוך שני חלקים שווים.
-
----
-
-## 2. הסבר
-
-כשמחלקים משהו לשני חלקים שווים, כל חלק הוא חצי.
-חצי = חלק אחד מתוך שני חלקים שווים.
-דוגמאות:
-- פיצה שנחתכה לשניים — כל חתיכה = חצי
-- 10 מדבקות בשתי קופסאות שוות — 5 בכל קופסה = חצי מ 10
-חשוב: החלקים צריכים להיות שווים!
+Today we're going to learn what a half is — half of the whole.
+Half = one part out of two equal parts.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-12 מדבקות — שתי קבוצות שוות:
-חצי מ 12 = 6
-דוגמה עם נייר:
-מקפלים דף לשניים — כל צד = חצי מהדף.
+When you split something into two equal parts, each part is a half.
+Half = one part out of two equal parts.
+Examples:
+- A pizza cut in two — each slice = a half
+- 10 stickers in two equal boxes — 5 in each box = half of 10
+Important: the parts must be equal!
+
+---
+
+## 3. Visual / concrete example
+
+12 stickers — two equal groups:
+Half of 12 = 6
+Example with paper:
+Fold a sheet in two — each side = half of the sheet.
 ●●●●●● | ●●●●●●
-6 6
+6        6
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה זה חצי מ 12?
-12 מדבקות — מחלקים לשתי קבוצות שוות.
-6 + 6 = 12 — בכל קבוצה 6.
-חצי מ 12 = 6
-
----
-
-## 5. נסו בעצמכם
-
-מה זה חצי מ 16?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What is half of 12?
+12 stickers — split into two equal groups.
+6 + 6 = 12 — 6 in each group.
+Half of 12 = 6
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-מה זה חצי מ 16?
-16 מדבקות — מחלקים ל שתי קבוצות שוות.
-8 + 8 = 16 — בכל קבוצה 8.
-חצי מ-16 = 8
-חצי מ 16 = 8
+What is half of 16?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים שחצי = חלק אחד מתוך שני חלקים שווים.
-בתרגול תמצאו חצי מ…?
-חלקו לשני חלקים שווים!
+What is half of 16?
+16 stickers — split into two equal groups.
+8 + 8 = 16 — 8 in each group.
+Half of 16 = 8
+Half of 16 = 8
+
+---
+
+## 7. Let's practice!
+
+Now you know that half = one part out of two equal parts.
+In practice you'll find questions: half of…?
+Split into two equal parts!

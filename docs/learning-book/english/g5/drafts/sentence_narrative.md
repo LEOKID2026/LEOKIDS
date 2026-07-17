@@ -1,4 +1,4 @@
-# סיפור — Then we arrived
+# Story — Then we arrived
 
 ## Metadata
 
@@ -11,83 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | סיפור — Then we arrived |
+| **title_english** | Story — Then we arrived |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** First… Then… After that… — רצף בעבר
+**Content scope:** First… Then… After that… — a sequence in the past
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד סיפור בעבר — First, Then, After that.
-Then we arrived at the station — אז הגענו לתחנה.
+Today we will learn to tell a story in the past — First, Then, After that.
+Then we arrived at the station.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילות קישור לסיפור:
+Connecting words for a story:
 
-First — קודם
-Then — אחר כך
-After that — אחרי זה
+First — the first step
+Then — the next step
+After that — the step after that
 
 Then we arrived at the station.
 
-אז הגענו לתחנה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מסע — הגעה לתחנה.
+A journey — arriving at the station.
 
 Then we arrived at the station.
 
-אז הגענו לתחנה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אז הגענו לתחנה"?
+Question: How do you say this?
 
 Then we arrived at the station
 
-תשובה: Then we arrived at the station
+Answer: Then we arrived at the station
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מסיבה — אכלו ארוחת ערב.
+A party — having dinner.
 
 After that we had dinner.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אחרי זה אכלנו ארוחת ערב."
+Exercise: "After that we had dinner."
 
-After that = אחרי זה (מילת קישור לרצף בעבר).
+After that connects one step to the next in a past-tense story.
 
-have הופך ל-had בעבר, כי זה פועל חריג.
+"Have" becomes "had" in the past, because it's an irregular verb.
 
-אחרי זה אכלנו ארוחת ערב.
-
- After that we had dinner.
+So the full sentence is: After that we had dinner.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים סיפור עם First, Then ו-After that.
-בתרגול תמצאו Then we arrived at the station.
+Now you will build a story with First, Then, and After that.
+In the practice, you'll find: Then we arrived at the station.

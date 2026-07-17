@@ -1,4 +1,4 @@
-# חילוק עם שארית
+# Division with a Remainder
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק עם שארית `[DRAFT — not owner-approved]` |
+| **title_english** | Division with a Remainder |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מנה ושארית; מספרים גדולים (850÷7). משוואת אימות: מחולק = מחלק × מנה + שארית.
+**Content scope:** quotient and remainder; large numbers (850÷7). Check equation: dividend = divisor × quotient + remainder.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק חילוק עם שארית — עם אימות רב שלבי.
-850 ÷ 7 — לא מתחלק בדיוק.
-נשאר שארית.
-נבנה משוואת בדיקה מלאה.
-
----
-
-## 2. הסבר
-
-126,000 ÷ 9 — שלב א: מציאת מנה
-9 × 14,000 = 126,000 — יוצא שלם, אין שארית.
-משוואת אימות: 126,000 = 9 × 14,000
-850 ÷ 7 (להשוואה — עם שארית): 7 × 121 = 847; 850 − 847 = 3 → 121 ושארית 3.
+Today we will strengthen division with a remainder — with full multi-step checking.
+850 ÷ 7 — does not divide evenly.
+A remainder is left.
+We will build a complete check equation.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-78,400 ÷ 11 — אימות:
-11 × 7,127 = 78,397 — קרוב; 11 × 7,128 = 78,408 — גדול מדי.
-11 × 7,127 = 78,397; 78,400 − 78,397 = 3 → 7,127 ושארית 3.
-אימות: 11 × 7,127 + 3 = 78,400
+126,000 ÷ 9 — Step A: find the quotient
+9 × 14,000 = 126,000 — divides evenly, no remainder.
+Check equation: 126,000 = 9 × 14,000
+850 ÷ 7 (for comparison — with remainder): 7 × 121 = 847; 850 − 847 = 3 → 121 with remainder 3.
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-חשבו: 92,500 ÷ 7 = ? (מנה ושארית)
+78,400 ÷ 11 — check:
+11 × 7,127 = 78,397 — close; 11 × 7,128 = 78,408 — too big.
+11 × 7,127 = 78,397; 78,400 − 78,397 = 3 → 7,127 with remainder 3.
+Check: 11 × 7,127 + 3 = 78,400
+
+---
+
+## 4. Let's solve together
+
+Calculate: 92,500 ÷ 7 = ? (quotient and remainder)
 7 × 13,214 = 92,498
 92,500 − 92,498 = 2
-שלב 3 — משוואת אימות: 92,500 = 7 × 13,214 + 2
-13,214 ושארית 2
+Step 3 — check equation: 92,500 = 7 × 13,214 + 2
+13,214 with remainder 2
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 968 ÷ 9 — מה המנה ומה השארית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-חשבו: 968 ÷ 9
-מצאו 9 × ? קרוב ל-968: 9 × 107 = 963.
-שארית: 968 − 963 = 5
-שלב 3 — משוואת אימות: 9 × 107 + 5 = 963 + 5 = 968
-בדיקה:
-שארית 5 < מחלק 9
-התשובה: 107 ושארית 5
+Calculate: 968 ÷ 9 — what is the quotient and what is the remainder?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-שארית מופיעה בשאלות מילוליות — כמה נשאר.
-בתרגול תמצאו חילוק עם שארית — בנו משוואת אימות וודאו שהשארית קטנה מהמחלק!
+Calculate: 968 ÷ 9
+Find 9 × ? close to 968: 9 × 107 = 963.
+Remainder: 968 − 963 = 5
+Step 3 — check equation: 9 × 107 + 5 = 963 + 5 = 968
+Check:
+Remainder 5 < divisor 9
+The answer: 107 with remainder 5
+
+---
+
+## 7. Let's practice!
+
+Remainders appear in word problems — how much is left over.
+In practice you will find division with a remainder — build a check equation and make sure the remainder is smaller than the divisor!

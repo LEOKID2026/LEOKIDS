@@ -1,4 +1,4 @@
-# מילים עם שלוש אותיות
+# Three-Letter Words
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | מילים עם שלוש אותיות |
+| **title_english** | Three-Letter Words |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** מילים מוגבלות: cat, hat, sit, sun, pen, bed; audio_required: yes — blend איטי
+**Content scope:** Limited word set: cat, hat, sit, sun, pen, bed; audio_required: yes — slow blending
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים קצרות של שלוש אותיות.
-למשל, במילה cat יש שלוש אותיות.
-כשמחברים את הצלילים שלהן, מקבלים את המילה cat.
+Today we will learn short, three-letter words.
+For example, the word cat has three letters.
+When we blend their sounds together, we get the word cat.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-אלה מילים קצרות של שלוש אותיות:
+These are short, three-letter words:
 cat
 hat
 sit
 sun
 pen
 bed
-בכל מילה מחברים את הצלילים לפי הסדר.
+In every word, we blend the sounds in order.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-במילה cat מחברים את הצלילים לפי הסדר, ואז אומרים cat.
-במילה sit מחברים את הצלילים לפי הסדר, ואז אומרים sit.
+In the word cat, we blend the sounds in order, and then we say cat.
+In the word sit, we blend the sounds in order, and then we say sit.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איזו מילה שומעים כשמחברים את הצלילים של pen?
-מחברים את הצלילים לפי הסדר.
+What word do we hear when we blend the sounds of pen?
+We blend the sounds in order.
 pen.
 pen
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזו מילה מקבלים מהאותיות b, e, d?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What word do we get from the letters b, e, d?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-איזו מילה מקבלים מהאותיות b, e, d?
-מחברים את הצלילים לפי הסדר.
-מקבלים את המילה:
+What word do we get from the letters b, e, d?
+We blend the sounds in order.
+We get the word:
 bed
-bed פירושו: מיטה.
+bed means a bed for sleeping.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו שמעתם מילים קצרות — כמו cat, sit ו-sun.
-בעמוד הבא — נחבר תמונה למילה.
+Now you've heard short words — like cat, sit, and sun.
+On the next page — we'll connect a picture to a word.

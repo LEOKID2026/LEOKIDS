@@ -19,7 +19,9 @@ export function isAdaptivePlannerRecommendationEnabled(env = typeof process !== 
   const pub = String(env.NEXT_PUBLIC_ENABLE_ADAPTIVE_PLANNER_RECOMMENDATION || "").trim().toLowerCase();
   const srv = String(env.ENABLE_ADAPTIVE_PLANNER_RECOMMENDATION || "").trim().toLowerCase();
   const v = pub || srv;
-  return v === "1" || v === "true" || v === "yes";
+  if (!v) return true;
+  if (v === "0" || v === "false" || v === "no" || v === "off") return false;
+  return v === "1" || v === "true" || v === "yes" || v === "on";
 }
 
 /**

@@ -1,4 +1,4 @@
-# כדור הארץ ומזג אוויר
+# Earth and Weather
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | כדור הארץ ומזג אוויר `[DRAFT — not owner-approved]` |
+| **title_english** | Earth and Weather `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/SCIENCE_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** יום/לילה; שמש, גשם, רוח, חם/קר
+**Content scope:** Day/night; sun, rain, wind, hot/cold
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד במדעים על כדור הארץ שלנו — מה רואים בשמיים ואיך מזג האוויר משתנה.
-
----
-
-## 2. הסבר
-
-אנחנו חיים על כדור הארץ.
-בשמיים יש שמש, עננים ורוח.
-ביום — השמש מאירה ומחממת.
-בלילה — חשוך יותר, רואים ירח וכוכבים.
-מזג האוויר משתנה:
-- יום שמש — חם ובהיר
-- יום גשם — יורדות טיפות מים
-- יום רוח — העלים מתנועעים
-אפשר לציין במחברת:
-היום שמש, גשם או רוח?
+Today in science we will learn about our Earth — what we see in the sky and how the weather changes.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בבוקר יצאה שמש.
-הילדים יצאו לחצר — חם ובהיר.
-אחר הצהריים עלו עננים וירד גשם.
-אחרי הגשם — קריר יותר.
-כך מזג האוויר משתנה במהלך היום.
-
----
-
-## 4. בואו נפתור
-
-מה רואים בשמיים ביום בהיר?
-ביום יש אור — השמש מאירה.
-בלילה רואים ירח, לא שמש בולטת.
-שמש
+We live on Earth.
+In the sky there is the sun, clouds, and wind.
+During the day — the sun shines and warms us.
+At night — it is darker, and we see the moon and stars.
+The weather changes:
+- A sunny day — warm and bright
+- A rainy day — drops of water fall
+- A windy day — the leaves move around
+You can write in your notebook:
+Today is it sunny, rainy, or windy?
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-דמיינו יום שבו יורד גשם בחוץ.
-מה הרגשתם כשיצאתם ללא מטרייה?
-מה ראיתם בשמיים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה הרגשתם ביום גשם כשיצאתם ללא מטרייה?
-ביום גשם יש עננים כהים בשמיים.
-מים יורדים מהעננים לאדמה.
-בלי מטרייה — מרגישים קר ורטוב, כי הגשם נוגע בגוף.
-גשם יורד כאשר טיפות מים בעננים נעשות כבדות מספיק ונופלות אל הקרקע.
-ביום גשם — קר ורטוב בחוץ, ובשמיים עננים כהים.
+In the morning the sun came out.
+The children went to the yard — warm and bright.
+In the afternoon clouds came and it rained.
+After the rain — it felt cooler.
+That is how the weather changes during the day.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים מזג אוויר וההבדל בין יום ללילה במדעים.
-בתרגול חפשו שאלות על שמש, גשם ומה קורה בשמיים.
+What do we see in the sky on a bright day?
+During the day there is light — the sun shines.
+At night we see the moon, not a bright sun.
+Sun
+
+---
+
+## 5. Try it yourself
+
+Imagine a day when it is raining outside.
+How did you feel when you went out without an umbrella?
+What did you see in the sky?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+How did you feel on a rainy day when you went out without an umbrella?
+On a rainy day there are dark clouds in the sky.
+Water falls from the clouds to the ground.
+Without an umbrella — you feel cold and wet, because the rain touches your body.
+Rain falls when water drops in the clouds become heavy enough and fall to the ground.
+On a rainy day — it is cold and wet outside, and there are dark clouds in the sky.
+
+---
+
+## 7. Let's practice!
+
+Now you know about weather and the difference between day and night in science.
+In practice, look for questions about the sun, rain, and what happens in the sky.

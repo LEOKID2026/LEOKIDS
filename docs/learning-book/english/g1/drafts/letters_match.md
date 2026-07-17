@@ -1,4 +1,4 @@
-# התאמת אות גדולה וקטנה
+# Matching Uppercase and Lowercase Letters
 
 ## Metadata
 
@@ -11,66 +11,66 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | התאמת אות גדולה וקטנה |
+| **title_english** | Matching Uppercase and Lowercase Letters |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** התאמת A—a … Z—z; audio_required: yes — "A, a" וזוגות נוספים
+**Content scope:** Matching A—a … Z—z; audio_required: yes — "A, a" and additional pairs
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר בין אות גדולה לאות קטנה של אותה אות.
-A ו-a — אותה אות, רק בגודל שונה.
-
----
-
-## 2. הסבר
-
-לכל אות יש זוג — אות גדולה ואות קטנה של אותה אות.
-A מתאימה ל-a, B מתאימה ל-b, C מתאימה ל-c.
-יש 26 זוגות כאלה — מ-A ו-a ועד Z ו-z.
+Today we will learn to connect an uppercase letter to the lowercase letter of the same letter.
+A and a — the same letter, just a different size.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-רואים M גדולה — הזוג שלה: m קטנה.
-M גדולה מתאימה ל-m קטנה.
-רואים f קטנה — הזוג שלה: F גדולה.
-F גדולה מתאימה ל-f קטנה.
+Every letter has a pair — an uppercase letter and a lowercase letter of the same letter.
+A matches a, B matches b, C matches c.
+There are 26 pairs like this — from A and a all the way to Z and z.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה הזוג של H?
-H גדולה — מחפשים h קטנה.
-h — אותה אות.
+We see an uppercase M — its pair is lowercase m.
+Uppercase M matches lowercase m.
+We see a lowercase f — its pair is uppercase F.
+Uppercase F matches lowercase f.
+
+---
+
+## 4. Let's solve together
+
+What is the pair of H?
+Uppercase H — we look for lowercase h.
+h — the same letter.
 h
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מה הזוג של k קטנה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה הזוג של k קטנה?
-k היא אות קטנה.
-מחפשים את האות הגדולה המקבילה — K.
-k מתאימה ל-K.
+What is the pair of lowercase k?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו יודעים לחבר גדולות וקטנות.
-בעמוד הבא נשמע את שמות האותיות — לא רק נראה אותן.
+What is the pair of lowercase k?
+k is a lowercase letter.
+We look for its matching uppercase letter — K.
+k matches K.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to connect uppercase and lowercase letters.
+On the next page, we'll hear the letter names — not just see them.

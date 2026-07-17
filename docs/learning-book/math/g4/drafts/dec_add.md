@@ -1,4 +1,4 @@
-# חיבור עשרוניים — שתי ספרות אחרי הנקודה
+# Adding Decimals — Two Digits After the Point
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור עשרוניים — שתי ספרות אחרי הנקודה `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Decimals — Two Digits After the Point |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור עם **שתי ספרות** אחרי הנקודה (מאיות ועשיריות). יישור נקודות. נשיאה בעשיריות ובמאיות. ללא שלוש ספרות עשרוניות.
+**Content scope:** Addition with **two digits** after the decimal point (hundredths and tenths). Line up decimal points. Regrouping in tenths and hundredths. No three decimal digits.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר מספרים עשרוניים עם שתי ספרות אחרי הנקודה — למשל 3.45 + 2.30.
-חשוב: מיישרים נקודות — מאיות מתחת למאיות, עשיריות מתחת לעשיריות, שלם מתחת לשלם.
+Today we'll learn to add decimal numbers with two digits after the point — for example 3.45 + 2.30.
+Important: line up the decimal points — hundredths under hundredths, tenths under tenths, whole numbers under whole numbers.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 3.45 + 2.30
 3.45
 + 2.30
 ——
-מאיות: 5 + 0 = 5
-עשיריות: 4 + 3 = 7
-שלם: 3 + 2 = 5
+Hundredths: 5 + 0 = 5
+Tenths: 4 + 3 = 7
+Whole: 3 + 2 = 5
 3.45 + 2.30 = 5.75
-כלל: מחברים עמודה אחר עמודה — כמו בחיבור שלם, רק עם נקודה באותו מקום.
+Rule: add column by column — like whole-number addition, just with the point in the same place.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 2.18 + 4.06
-מאיות: 8 + 6 = 14 → כותבים 4, נושאים 1 לעשיריות
-עשיריות: 1 + 0 + 1 = 2
-שלם: 2 + 4 = 6
+Hundredths: 8 + 6 = 14 → write 4, carry 1 to tenths
+Tenths: 1 + 0 + 1 = 2
+Whole: 2 + 4 = 6
 2.18 + 4.06 = 6.24
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 1.35 + 3.42 = ?
-מאיות: 5 + 2 = 7
-עשיריות: 3 + 4 = 7
-שלם: 1 + 3 = 4
+Work out: 1.35 + 3.42 = ?
+Hundredths: 5 + 2 = 7
+Tenths: 3 + 4 = 7
+Whole: 1 + 3 = 4
 1.35 + 3.42 = 4.77
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 4.63 + 1.25 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 4.63 + 1.25 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 4.63 + 1.25 = ?
-מאיות: 3 + 5 = 8
-עשיריות: 6 + 2 = 8
-שלם: 4 + 1 = 5
+Work out: 4.63 + 1.25 = ?
+Hundredths: 3 + 5 = 8
+Tenths: 6 + 2 = 8
+Whole: 4 + 1 = 5
 4.63 + 1.25 = 5.88
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר מספרים עשרוניים עם שתי ספרות אחרי הנקודה.
-יישרו נקודות ועבדו עמודה אחר עמודה!
+Now you know how to add decimal numbers with two digits after the point.
+Line up the points and work column by column!

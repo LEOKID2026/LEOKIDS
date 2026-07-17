@@ -1,4 +1,4 @@
-# המחלק המשותף הגדול ביותר (מ.א.ח)
+# Greatest Common Factor (GCF)
 
 ## Metadata
 
@@ -11,66 +11,66 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | המחלק המשותף הגדול ביותר (מ.א.ח) `[DRAFT — not owner-approved]` |
+| **title_english** | Greatest Common Factor (GCF) |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** המחלק המשותף הגדול ביותר (מ.א.ח) של שני מספרים
+**Content scope:** greatest common factor (GCF) of two numbers
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד את המחלק המשותף הגדול ביותר (מ.א.ח) — הגורם המשותף הגדול ביותר של שני מספרים.
-30 ו-45.
-
----
-
-## 2. הסבר
-
-גורמים של 30: 1,2,3,5,6,10,15,30
-גורמים של 45: 1,3,5,9,15,45
-משותפים: 1,3,5,15 → מ.א.ח = 15
+Today we will learn the greatest common factor (GCF) — the largest factor that two numbers share.
+30 and 45.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-18 ו-24: משותפים 1,2,3,6 → מ.א.ח = 6
+Factors of 30: 1,2,3,5,6,10,15,30
+Factors of 45: 1,3,5,9,15,45
+Shared: 1,3,5,15 → GCF = 15
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-מ.א.ח של 30 ו-45?
-גורמים משותפים: 1, 3, 5, 15.
-הגדול = 15.
+18 and 24: shared factors 1,2,3,6 → GCF = 6
+
+---
+
+## 4. Let's solve together
+
+GCF of 30 and 45?
+Shared factors: 1, 3, 5, 15.
+The largest = 15.
 15.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מה המ.א.ח של 24 ו-36?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מ.א.ח של 24 ו-36
-גורמים של 24: 1, 2, 3, 4, 6, 8, 12, 24.
-גורמים של 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.
-גורמים משותפים: 1, 2, 3, 4, 6, 12 → הגדול = 12.
-התשובה: מ.א.ח = 12
+What is the GCF of 24 and 36?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-מ.א.ח שימושי בצמצום שברים.
-בתרגול תמצאו מ.א.ח — רשמו קודם גורמים משותפים!
+GCF of 24 and 36
+Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.
+Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.
+Shared factors: 1, 2, 3, 4, 6, 12 → the largest = 12.
+The answer: GCF = 12
+
+---
+
+## 7. Let's practice!
+
+The GCF is useful for simplifying fractions.
+In practice you will find the GCF — list shared factors first!

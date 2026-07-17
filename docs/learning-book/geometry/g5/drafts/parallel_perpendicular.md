@@ -1,4 +1,4 @@
-﻿# קווים מקבילים ומאונכים
+# Parallel and Perpendicular Lines
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | קווים מקבילים ומאונכים `[DRAFT — not owner-approved]` |
+| **title_english** | Parallel and Perpendicular Lines |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** AB ∥ CD; בטרפז ומרובעים
+**Content scope:** AB ∥ CD; in trapezoids and quadrilaterals
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד קווים מקבילים ומאונכים — עם סימון: AB ∥ CD.
-בטרפז — הבסיסים AB ו-CD מקבילים.
+Today we'll learn about parallel and perpendicular lines — with the notation: AB ∥ CD.
+In a trapezoid, the bases AB and CD are parallel.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallel_lines
 :::
 
-מקבילים — לא נפגשים (באותו מישור).
-סימון: AB ∥ CD — קו AB מקביל לקו CD.
-מאונכים — 90° ביניהם.
-בטרפז ABCD: AB ו-CD — הבסיסים — מקבילים.
-במלבן: AB ∥ CD, BC ∥ AD; AB ⊥ BC.
+Parallel lines — they never meet (in the same plane).
+Notation: AB ∥ CD — line AB is parallel to line CD.
+Perpendicular lines — 90° between them.
+In trapezoid ABCD: AB and CD — the bases — are parallel.
+In a rectangle: AB ∥ CD, BC ∥ AD; AB ⊥ BC.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-טרפז ABCD:
-- AB — בסיס עליון
-- CD — בסיס תחתון
+Trapezoid ABCD:
+- AB — top base
+- CD — bottom base
 - AB ∥ CD
-צלעות BC ו-AD — לא בהכרח מקבילות ל-AB.
+Sides BC and AD — are not necessarily parallel to AB.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-בטרפז ABCD — מה הקשר בין AB ל-CD?
-AB ו-CD — הבסיסים.
-בסיסים → מקבילים: AB ∥ CD.
-AB מקביל ל-CD
-
----
-
-## 5. נסו בעצמכם
-
-במלבן ABCD — מה הקשר בין AB ל-BC?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In trapezoid ABCD — what is the relationship between AB and CD?
+AB and CD — the bases.
+Bases → parallel: AB ∥ CD.
+AB is parallel to CD
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-במלבן ABCD — מה הקשר בין AB ל-BC?
-במלבן — כל הזוויות הן 90°.
-AB ו-BC הן צלעות סמוכות במלבן — הן נפגשות בזווית 90°.
-AB ⊥ BC (מאונכות)
+In rectangle ABCD — what is the relationship between AB and BC?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-AB ∥ CD — סימון חשוב בטרפז ובמרובעים.
-בתרגול תמצאו AB ו-CD — מקבילים או מאונכים?
+In rectangle ABCD — what is the relationship between AB and BC?
+In a rectangle — all angles are 90°.
+AB and BC are adjacent sides in a rectangle — they meet at a 90° angle.
+AB ⊥ BC (perpendicular)
+
+---
+
+## 7. Let's practice!
+
+AB ∥ CD — important notation in trapezoids and quadrilaterals.
+In practice you'll find AB and CD — parallel or perpendicular?

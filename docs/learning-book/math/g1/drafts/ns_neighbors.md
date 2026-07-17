@@ -1,4 +1,4 @@
-# שכנים של מספר
+# Number Neighbors
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שכנים של מספר `[DRAFT — not owner-approved]` |
+| **title_english** | Number Neighbors |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מספרים 1–20 (עד 30 במקרים קשים). שכן אחד לפני ושכן אחד אחרי בלבד.
+**Content scope:** Numbers 1–20 (up to 30 in harder cases). One neighbor before and one neighbor after only.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד על שכנים של מספר.
-לכל מספר יש מספר שבא לפניו ומספר שבא אחריו — כמו שכנים שגרים ממש ליד.
-
----
-
-## 2. הסבר פשוט
-
-שכן לפני = המספר שבא מיד לפני (צעד שמאלה בציר המספרים).
-שכן אחרי = המספר שבא מיד אחרי (צעד ימינה בציר המספרים).
-על ציר המספרים: שמאלה = אחד פחות, ימינה = אחד יותר.
-לשכנים של 5:
-- שכן לפני: 4
-- שכן אחרי: 6
+Today we're going to learn about number neighbors.
+Every number has a number that comes before it and a number that comes after it — like neighbors who live right next door.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ציר מספרים — השכנים של 8:
-7 כוכבים, 8 כוכבים, 9 כוכבים — 8 באמצע, 7 לפניו, 9 אחריו.
+Neighbor before = the number that comes right before (one step left on the number line).
+Neighbor after = the number that comes right after (one step right on the number line).
+On the number line: left = one less, right = one more.
+For the neighbors of 5:
+- Neighbor before: 4
+- Neighbor after: 6
+
+---
+
+## 3. Visual / concrete example
+
+Number line — the neighbors of 8:
+7 stars, 8 stars, 9 stars — 8 is in the middle, 7 before it, 9 after it.
 … 6 — 7 — [8] — 9 — 10 …
-שכן לפני שכן אחרי
+neighbor before   neighbor after
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-מה השכנים של 8?
-מצאו את 8 על ציר המספרים.
-צעד אחד שמאלה → 7 (שכן לפני)
-צעד אחד ימינה → 9 (שכן אחרי)
-השכנים של 8 הם 7 ו-9.
-
----
-
-## 5. נסו בעצמכם
-
-מה השכנים של 12?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What are the neighbors of 8?
+Find 8 on the number line.
+One step to the left → 7 (neighbor before)
+One step to the right → 9 (neighbor after)
+The neighbors of 8 are 7 and 9.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-מה השכנים של 12?
-מצאו את 12 על ציר המספרים.
-צעד אחד שמאלה → 11 (שכן לפני).
-צעד אחד ימינה → 13 (שכן אחרי).
-השכנים של 12 הם 11 ו-13.
+What are the neighbors of 12?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים למצוא שכנים של מספר.
-בתרגול תמצאו שאלות מה לפני?
-ומה אחרי?
-קפצו צעד אחד בלבד!
+What are the neighbors of 12?
+Find 12 on the number line.
+One step to the left → 11 (neighbor before).
+One step to the right → 13 (neighbor after).
+The neighbors of 12 are 11 and 13.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to find number neighbors.
+In practice you'll find questions: what comes before?
+And what comes after?
+Hop just one step!

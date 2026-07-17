@@ -1,4 +1,4 @@
-# חילוק — חלוקה שווה
+# Division — Equal Sharing
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
+| **title_english** | Division — Equal Sharing |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חילוק בלי שארית. מספרים עד ~1,000. קשר לכפל ולוח הכפל. שארית → `div_with_remainder`. חילוק ארוך → `div_long`.
+**Content scope:** Division with no remainder. Numbers up to ~1,000. Link to multiplication and the times table. Remainder → `div_with_remainder`. Long division → `div_long`.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק חילוק — חלוקה שווה — עם מספרים עד כ-1,000.
-כשאין שארית — החילוק יוצא שלם בדיוק.
+Today we'll strengthen division — equal sharing — with numbers up to about 1,000.
+When there's no remainder, the division comes out evenly.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-480 ÷ 6 — 480 עפרונות ב6 קופסאות זהות:
+480 ÷ 6 — 480 pencils in 6 equal boxes:
 6 × 80 = 480 → 480 ÷ 6 = 80
 720 ÷ 8: 8 × 90 = 720 → 720 ÷ 8 = 90
-טיפ: חפשו בלוח הכפל — 6 × ? = 480
-בדיקה: מחלק × מנה = מחולק. שארית — רק בדף חילוק עם שארית.
+Tip: look in the times table — 6 × ? = 480
+Check: divisor × quotient = dividend. Remainder — only on the division-with-remainder page.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-480 ÷ 6 — 480 עפרונות ב-6 קופסאות:
+480 ÷ 6 — 480 pencils in 6 boxes:
 480 ÷ 6 = 80
-בדיקה: 6 × 80 = 480
-קופסה 1–6: 80 עפרונות בכל אחת
+Check: 6 × 80 = 480
+Box 1–6: 80 pencils in each
 80 + 80 + 80 + 80 + 80 + 80 = 480
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 720 ÷ 8 = ?
-שואלים: 8 × ? = 720
-8 × 90 = 720 (כי 8 × 9 = 72, ו-72 × 10 = 720).
-בדיקה: 8 × 90 = 720
+Work out: 720 ÷ 8 = ?
+Ask: 8 × ? = 720
+8 × 90 = 720 (because 8 × 9 = 72, and 72 × 10 = 720).
+Check: 8 × 90 = 720
 720 ÷ 8 = 90
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 360 ÷ 9 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 360 ÷ 9 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 360 ÷ 9 = ?
-שואלים: 9 × ? = 360
-9 × 4 = 36, ולכן 9 × 40 = 360.
-בדיקה: 9 × 40 = 360
+Work out: 360 ÷ 9 = ?
+Ask: 9 × ? = 360
+9 × 4 = 36, so 9 × 40 = 360.
+Check: 9 × 40 = 360
 360 ÷ 9 = 40
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-חילוק שווה כאן — מספרים גדולים יותר, אותה בדיקת כפל.
-בתרגול תמצאו חילוק בלי שארית — אמתו עם כפל!
+Equal sharing here — bigger numbers, same multiplication check.
+In practice you'll find division with no remainder — check with multiplication!

@@ -1,4 +1,4 @@
-# קהילה — תרגום
+# Community — Translation
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | קהילה — תרגום |
+| **title_english** | Community — Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,63 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום על מקומות בקהילה.
-The library is near the school — הספרייה ליד בית הספר.
+Today we will practice places in the community.
+The library is near the school.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דוגמה:
+Example:
 
 The library is near the school.
-
-הספרייה ליד בית הספר.
 
 The park is in our town.
 
-הפארק בעיירה שלנו.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ספרייה ליד בית ספר.
+A library next to a school.
 
 The library is near the school.
 
-הספרייה ליד בית הספר.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הספרייה ליד בית הספר"?
+Question: How do you say this?
 
 The library is near the school
 
-תשובה: The library is near the school
+Answer: The library is near the school
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדים הולכים לבית הספר.
+Children walking to school.
 
 The school is near the park.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "בית הספר ליד הפארק."
+Exercise: "The school is near the park."
 
-near = ליד (מרחק קצר, לא בתוך).
+"Near" means close to, but not inside.
 
-The school is near the park.
-
-בית הספר ליד הפארק.
-
- The school is near the park.
+So the full sentence is: The school is near the park.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום על קהילה.
-בתרגול תמצאו The library is near the school.
+Now you will practice sentences about the community.
+In the practice, you'll find: The library is near the school.

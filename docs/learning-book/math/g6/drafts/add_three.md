@@ -1,4 +1,4 @@
-# חיבור שלושה מספרים
+# Adding Three Numbers
 
 ## Metadata
 
@@ -11,34 +11,34 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Three Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שלושה מספרים; סכום עד ~200,000
+**Content scope:** three numbers; sum up to ~200,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חיבור שלושה מספרים — עד 200,000.
-אפשר מימין לשמאל, או לחבר שניים קודם.
-
----
-
-## 2. הסבר
-
-85,000 + 12,500 + 2,500 — שלושה מספרים גדולים:
-דרך 1: (85,000 + 12,500) + 2,500 = 97,500 + 2,500 = 100,000
-דרך 2: 12,500 + 2,500 = 15,000; 85,000 + 15,000 = 100,000
-חשוב: לחבר את כל שלושת המספרים — לא לעצור אחרי שניים!
+Today we will learn to add three numbers — up to 200,000.
+You can work from right to left, or add two numbers first.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+85,000 + 12,500 + 2,500 — three large numbers:
+Way 1: (85,000 + 12,500) + 2,500 = 97,500 + 2,500 = 100,000
+Way 2: 12,500 + 2,500 = 15,000; 85,000 + 15,000 = 100,000
+Important: add all three numbers — do not stop after two!
+
+---
+
+## 3. Visual / concrete example
 
 62,000 + 18,500 + 9,500:
 62,000 + 18,500 = 80,500
@@ -46,34 +46,34 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 45,000 + 27,500 + 7,500 = ?
-27,500 + 7,500 = 35,000 (זוג נוח).
+27,500 + 7,500 = 35,000 (a convenient pair).
 45,000 + 35,000 = 80,000
 80,000.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 1,200 + 350 + 450 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 1,200 + 350 + 450 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 1,200 + 350 + 450
-בחרו זוג נוח: 350 + 450 = 800
+Calculate: 1,200 + 350 + 450
+Pick a convenient pair: 350 + 450 = 800
 1,200 + 800 = 2,000
-בדיקה: שלושת המספרים נחברו — 1,200, 350 ו-450.
-התשובה: 2,000
+Check: all three numbers were added — 1,200, 350, and 450.
+The answer: 2,000
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-חיבור שלושה מספרים מופיע בשאלות מילוליות.
-בתרגול תמצאו שלושה מחוברים — בחרו זוג נוח לחיבור ראשון!
+Adding three numbers appears in word problems.
+In practice you will add three numbers — pick a convenient pair to add first!

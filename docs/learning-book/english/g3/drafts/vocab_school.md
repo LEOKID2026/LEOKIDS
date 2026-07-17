@@ -1,4 +1,4 @@
-# בית ספר — We learn…
+# School — We learn…
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בית ספר — We learn… |
+| **title_english** | School — We learn… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים מבית הספר.
-We learn English — אנחנו לומדים אנגלית.
+Today we will learn school words.
+We learn English.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 We learn English.
 
-אנחנו לומדים אנגלית.
+We learn English.
 
 We read books.
 
-אנחנו קוראים ספרים.
+We read books.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-כיתה לומדת אנגלית.
+A class learning English.
 
 We learn English.
 
-אנחנו לומדים אנגלית.
+We learn English.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אנחנו לומדים אנגלית"?
+Question: how do we say "we learn English"?
 
 We learn English
 
-תשובה: We learn English
+Answer: We learn English
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שיעור אמנות. כולם מציירים.
+Art class. Everyone is drawing.
 
 We draw pictures.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: שיעור אמנות. כולם מציירים.
+Exercise: art class. Everyone is drawing.
 
-הפתרון:
+The solution:
 
 We draw pictures.
 
-אנחנו מציירים תמונות.
+We draw pictures.
 
-כל הכבוד! אחרי We משתמשים בפועל הבסיסי ללא s — draw, ולא draws.
+Well done! After We, we use the basic verb without s — draw, not draws.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים פעילויות בבית ספר.
-בתרגול תמצאו We learn English ו-We read books.
+Now you describe activities at school.
+In practice, you'll find We learn English and We read books.

@@ -1,4 +1,4 @@
-﻿# גופים — פאות, קדקודים ומקצועות
+# Solids — Faces, Vertices, and Edges
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גופים — פאות, קדקודים ומקצועות `[DRAFT — not owner-approved]` |
+| **title_english** | Solids — Faces, Vertices, and Edges `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** קובייה: 6 פאות, 8 קדקודים, 12 מקצועות; ללא נפח
+**Content scope:** Cube: 6 faces, 8 vertices, 12 edges; no volume
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נעמיק בגאומטריה בקובייה — גוף שכבר הכרנו בכיתות קודמות.
-נלמד לספור פאות, קדקודים ומקצועות בקובייה.
+Today in geometry we will go deeper into the cube — a solid we already know from earlier grades.
+We will learn to count faces, vertices, and edges on a cube.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: cube_basic
 :::
 
-קובייה:
-גוף עם 6 פאות ריבועיות שוות.
-פאה:
-משטח שטוח של הגוף — בקובייה יש 6 פאות.
-קדקוד:
-נקודת מפגש של מקצועות — בקובייה יש 8 קדקודים.
-מקצוע:
-הקו שבו שתי פאות נפגשות — בקובייה יש 12 מקצועות.
-כאן לא מחשבים נפח — רק סופרים חלקים.
+Cube:
+A solid with 6 equal square faces.
+Face:
+A flat surface of the solid — a cube has 6 faces.
+Vertex:
+A point where edges meet — a cube has 8 vertices.
+Edge:
+The line where two faces meet — a cube has 12 edges.
+Here we do not calculate volume — only count parts.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-קוביית משחק:
-- 6 פאות (כל אחת ריבוע)
-- 8 קדקודים (פינות)
-- 12 מקצועות (קווים בין הפאות)
-
----
-
-## 4. בואו נפתור
-
-לקובייה יש כמה קדקודים וכמה מקצועות?
-קדקודים — הפינות של הקובייה: 8.
-מקצועות — הקווים שבין שתי פאות: 12.
-8 קדקודים, 12 מקצועות
+A dice:
+- 6 faces (each one a square)
+- 8 vertices (corners)
+- 12 edges (lines between the faces)
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-לפניכם קוביית משחק.
-כמה מקצועות יש לה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+How many vertices and how many edges does a cube have?
+Vertices — the corners of the cube: 8.
+Edges — the lines between two faces: 12.
+8 vertices, 12 edges
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-קוביית משחק — כמה מקצועות יש לה?
-כל מקצוע הוא קו בין שתי פאות.
-סופרים:
-4 מקצועות למעלה, 4 למטה, 4 בצדדים →
+You have a dice in front of you.
+How many edges does it have?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A dice — how many edges does it have?
+Each edge is a line between two faces.
+Count:
+4 edges on top, 4 on the bottom, 4 on the sides →
 4 + 4 + 4 = 12
-לקובייה 12 מקצועות
+A cube has 12 edges
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לספור חלקים בקובייה בגאומטריה.
-בתרגול תמצאו שאלות על קובייה — בדקו אם שואלים על פאות, קדקודים או מקצועות!
+Now you know how to count parts of a cube in geometry.
+In practice you will find questions about a cube — check if they ask about faces, vertices, or edges!

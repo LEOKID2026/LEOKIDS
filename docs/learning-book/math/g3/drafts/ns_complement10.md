@@ -1,4 +1,4 @@
-# זוגות שמרכיבים 10 — גשר ל-100
+# Pairs That Make 10 — Review
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגות שמרכיבים 10 — חזרה `[DRAFT — not owner-approved]` |
+| **title_english** | Pairs That Make 10 — Review |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוגות מספרים שסכומם 10. חזרה קצרה לפני complement100. ללא מסגרת עשר מורכבת.
+**Content scope:** Pairs of numbers that add up to 10. Short review before complement100. No complex ten-frame.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזור על זוגות שמרכיבים 10 — בסיס לחיבור מהיר ולהשלמה ל-100.
-יודעים 7 + 3 = 10?
-אותו רעיון עובד גם ב37 + 63 = 100.
+Today we will review pairs that make 10 — a foundation for fast addition and making 100.
+Know that 7 + 3 = 10?
+The same idea works for 37 + 63 = 100 too.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-זוג ל-10: שני מספרים שסכומם 10.
-כל הזוגות:
+A pair for 10: two numbers that add up to 10.
+All the pairs:
 1+9, 2+8, 3+7, 4+6, 5+5
-שימוש בחיבור: "קודם ל-10" — ואז ממשיכים.
-דוגמה: 9 + 6
-- 9 + 1 = 10, נשאר 5
+Using it in addition: "make 10 first" — then keep going.
+Example: 9 + 6
+- 9 + 1 = 10, 5 left over
 10 + 5 = 15
-קשר לנושא ג׳: 7 + 3 = 10 → 67 + 33 = 100 (אותו רעיון בעשרות).
+Link to Grade 3: 7 + 3 = 10 → 67 + 33 = 100 (the same idea with tens).
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 8 + 5 = ?
-8 צריך 2 כדי להגיע ל-10 → 8 + 2 = 10
-נשאר 3 מ-5 → 10 + 3 = 13
+8 needs 2 to reach 10 → 8 + 2 = 10
+3 left from 5 → 10 + 3 = 13
 8 + 5 = 13
-הזוג: 8 ו-2 מרכיבים 10.
+The pair: 8 and 2 make 10.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-6 + ? = 10 — מה המספר החסר?
-יש 6. רוצים להגיע ל-10.
-6 + 4 = 10 — הזוג הוא 6 ו-4.
-המספר החסר הוא 4.
-
----
-
-## 5. נסו בעצמכם
-
-7 + ? = 10 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+6 + ? = 10 — what is the missing number?
+You have 6. You want to reach 10.
+6 + 4 = 10 — the pair is 6 and 4.
+The missing number is 4.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-7 + ? = 10 — מה המספר החסר?
-יש 7.
-רוצים להגיע ל-10.
-7 + 3 = 10 — הזוג הוא 7 ו-3.
-בדיקה: 7 + 3 = 10
-המספר החסר הוא 3
+7 + ? = 10 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם זוכרים זוגות ל-10 — גשר להשלמה ל-100.
-בתרגול תמצאו כמה חסר ל-10? חפשו את הזוג המוכר!
+7 + ? = 10 — what is the missing number?
+You have 7.
+You want to reach 10.
+7 + 3 = 10 — the pair is 7 and 3.
+Check: 7 + 3 = 10
+The missing number is 3
+
+---
+
+## 7. Let's practice!
+
+Now you remember pairs for 10 — a bridge to making 100.
+In practice you'll find how much is missing to reach 10? Look for the familiar pair!

@@ -51,7 +51,6 @@
 | **File** | `g5.multi_layer_read.md` |
 | **learning_page_id** | `hebrew:g5:g5.multi_layer_read` |
 | **skill_id** | `hebrew:g5:reading:g5.multi_layer_read` |
-| **title_hebrew** | קריאה בשכבות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | עובדה, רמז, משמעות עמוקה יותר; לא ניתוח אקדמי |
 
@@ -155,7 +154,6 @@
 | **File** | `g5.position_in_text.md` |
 | **learning_page_id** | `hebrew:g5:g5.position_in_text` |
 | **skill_id** | `hebrew:g5:reading:g5.position_in_text` |
-| **title_hebrew** | מיקום בטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | איפה מופיע רעיון: התחלה, אמצע, סוף |
 
@@ -260,7 +258,6 @@
 | **File** | `reading_structural_paragraph_role.md` |
 | **learning_page_id** | `hebrew:g5:reading_structural_paragraph_role` |
 | **skill_id** | `hebrew:rich:reading:structural:paragraph_role` |
-| **title_hebrew** | תפקיד הפסקה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | פתיחה / פירוט / סיכום בפסקה |
 
@@ -367,7 +364,6 @@
 | **File** | `g5.inference.md` |
 | **learning_page_id** | `hebrew:g5:g5.inference` |
 | **skill_id** | `hebrew:g5:comprehension:g5.inference` |
-| **title_hebrew** | הסקה מהטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | מסקנה מרמזים; לא ניחוש חופשי |
 
@@ -469,7 +465,6 @@
 | **File** | `g5.multiple_perspectives_light.md` |
 | **learning_page_id** | `hebrew:g5:g5.multiple_perspectives_light` |
 | **skill_id** | `hebrew:g5:comprehension:g5.multiple_perspectives_light` |
-| **title_hebrew** | נקודות מבט שונות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | דמויות שונות חושבות אחרת; קל |
 
@@ -571,7 +566,6 @@
 | **File** | `comprehension_main_idea_summary.md` |
 | **learning_page_id** | `hebrew:g5:comprehension_main_idea_summary` |
 | **skill_id** | `hebrew:rich:comprehension:main_idea:summary` |
-| **title_hebrew** | רעיון מרכזי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | משפט אחד שמסכם את הקטע |
 
@@ -673,7 +667,6 @@
 | **File** | `comprehension_supporting_detail_evidence.md` |
 | **learning_page_id** | `hebrew:g5:comprehension_supporting_detail_evidence` |
 | **skill_id** | `hebrew:rich:comprehension:supporting_detail:evidence` |
-| **title_hebrew** | פרטים תומכים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | איזה משפט תומך ברעיון המרכזי |
 
@@ -775,7 +768,6 @@
 | **File** | `comprehension_compare_statements_contrast.md` |
 | **learning_page_id** | `hebrew:g5:comprehension_compare_statements_contrast` |
 | **skill_id** | `hebrew:rich:comprehension:compare_statements:contrast` |
-| **title_hebrew** | השוואה בין קביעות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | ניגוד בין שני משפטים בטקסט |
 
@@ -877,7 +869,6 @@
 | **File** | `comprehension_implicit_tone_attitude.md` |
 | **learning_page_id** | `hebrew:g5:comprehension_implicit_tone_attitude` |
 | **skill_id** | `hebrew:rich:comprehension:implicit_tone:attitude` |
-| **title_hebrew** | נימה ויחס `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | איך הכותב נשמע: מתלהב, דואג; לא מונחים כבדים |
 
@@ -979,7 +970,6 @@
 | **File** | `comprehension_reference_pronoun.md` |
 | **learning_page_id** | `hebrew:g5:comprehension_reference_pronoun` |
 | **skill_id** | `hebrew:rich:comprehension:reference:pronoun` |
-| **title_hebrew** | כינוי גוף — למי זה מתייחס? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | הוא/היא/הם מצביעים על מי בטקסט |
 
@@ -1081,7 +1071,6 @@
 | **File** | `comprehension_sequence_order.md` |
 | **learning_page_id** | `hebrew:g5:comprehension_sequence_order` |
 | **skill_id** | `hebrew:rich:comprehension:sequence:order` |
-| **title_hebrew** | סדר אירועים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | לפני ואחרי; סדר כרונולוגי |
 
@@ -1185,7 +1174,6 @@
 | **File** | `g5.syntax_agreement.md` |
 | **learning_page_id** | `hebrew:g5:g5.syntax_agreement` |
 | **skill_id** | `hebrew:g5:grammar:g5.syntax_agreement` |
-| **title_hebrew** | התאמה תחבירית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | נושא–נשוא, שם–תואר; דוגמאות |
 
@@ -1287,7 +1275,6 @@
 | **File** | `g5.verb_patterns.md` |
 | **learning_page_id** | `hebrew:g5:g5.verb_patterns` |
 | **skill_id** | `hebrew:g5:grammar:g5.verb_patterns` |
-| **title_hebrew** | תבניות פועל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | צורות פועל נפוצות; בלי שיעור בניינים |
 
@@ -1391,7 +1378,6 @@
 | **File** | `grammar_sentence_correction_choose_correct.md` |
 | **learning_page_id** | `hebrew:g5:grammar_sentence_correction_choose_correct` |
 | **skill_id** | `hebrew:rich:grammar:sentence_correction:choose_correct` |
-| **title_hebrew** | איזה משפט נכון? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | בחירת ניסוח תקין כללי |
 
@@ -1497,7 +1483,6 @@
 | **File** | `grammar_sentence_correction_sv_agreement_plural.md` |
 | **learning_page_id** | `hebrew:g5:grammar_sentence_correction_sv_agreement_plural` |
 | **skill_id** | `hebrew:rich:grammar:sentence_correction:sv_agreement_plural` |
-| **title_hebrew** | תיקון: נושא ופועל ברבים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | התאמת פועל לנושא ברבים; שונה מעמוד בחירה כללית |
 
@@ -1597,7 +1582,6 @@
 | **File** | `grammar_verb_agreement_plural_subject.md` |
 | **learning_page_id** | `hebrew:g5:grammar_verb_agreement_plural_subject` |
 | **skill_id** | `hebrew:rich:grammar:verb_agreement:plural_subject` |
-| **title_hebrew** | נושא ברבים — איזה פועל? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | ילדים רצים — לא רץ |
 
@@ -1698,7 +1682,6 @@
 | **File** | `grammar_tense_shift_past_present.md` |
 | **learning_page_id** | `hebrew:g5:grammar_tense_shift_past_present` |
 | **skill_id** | `hebrew:rich:grammar:tense_shift:past_present` |
-| **title_hebrew** | עבר והווה — מעבר נכון `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | עקביות זמן בסיפור קצר |
 
@@ -1798,7 +1781,6 @@
 | **File** | `grammar_transform_negation.md` |
 | **learning_page_id** | `hebrew:g5:grammar_transform_negation` |
 | **skill_id** | `hebrew:rich:grammar:transform:negation` |
-| **title_hebrew** | הפיכה לשלילה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | הוספת לא / אין במשפט |
 
@@ -1898,7 +1880,6 @@
 | **File** | `grammar_binary_grammar_tf.md` |
 | **learning_page_id** | `hebrew:g5:grammar_binary_grammar_tf` |
 | **skill_id** | `hebrew:rich:grammar:binary_grammar:tf` |
-| **title_hebrew** | נכון או לא נכון — דקדוק `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | בדיקת משפט תקין |
 
@@ -1998,7 +1979,6 @@
 | **File** | `g5.academic_starter_words.md` |
 | **learning_page_id** | `hebrew:g5:g5.academic_starter_words` |
 | **skill_id** | `hebrew:g5:vocabulary:g5.academic_starter_words` |
-| **title_hebrew** | מילים לכתיבה ולטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | לכן, לעומת זאת, לדוגמה — בסיסי |
 
@@ -2101,7 +2081,6 @@
 | **File** | `g5.semantic_fields.md` |
 | **learning_page_id** | `hebrew:g5:g5.semantic_fields` |
 | **skill_id** | `hebrew:g5:vocabulary:g5.semantic_fields` |
-| **title_hebrew** | שדות מילים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | קבוצות: רגש, טבע, בית ספר |
 
@@ -2201,7 +2180,6 @@
 | **File** | `vocabulary_collocation_verb_noun_fit.md` |
 | **learning_page_id** | `hebrew:g5:vocabulary_collocation_verb_noun_fit` |
 | **skill_id** | `hebrew:rich:vocabulary:collocation:verb_noun_fit` |
-| **title_hebrew** | צירוף נכון `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | פועל + שם עצם שמתחברים |
 
@@ -2301,7 +2279,6 @@
 | **File** | `vocabulary_category_exclusion_odd_out.md` |
 | **learning_page_id** | `hebrew:g5:vocabulary_category_exclusion_odd_out` |
 | **skill_id** | `hebrew:rich:vocabulary:category_exclusion:odd_out` |
-| **title_hebrew** | מה לא שייך לקבוצה? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | אוצר מילים לפי קטגוריה |
 
@@ -2401,7 +2378,6 @@
 | **File** | `vocabulary_context_fit_register.md` |
 | **learning_page_id** | `hebrew:g5:vocabulary_context_fit_register` |
 | **skill_id** | `hebrew:rich:vocabulary:context_fit:register` |
-| **title_hebrew** | מילה מתאימה למצב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | רשמי / יומיומי — קל |
 
@@ -2501,7 +2477,6 @@
 | **File** | `g5.full_composition_scaffold_choice.md` |
 | **learning_page_id** | `hebrew:g5:g5.full_composition_scaffold_choice` |
 | **skill_id** | `hebrew:g5:writing:g5.full_composition_scaffold_choice` |
-| **title_hebrew** | כתיבת חיבור מלא `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | פתיחה–גוף–סיכום; תבנית ברורה |
 
@@ -2603,7 +2578,6 @@
 | **File** | `g5.genre_variety.md` |
 | **learning_page_id** | `hebrew:g5:g5.genre_variety` |
 | **skill_id** | `hebrew:g5:writing:g5.genre_variety` |
-| **title_hebrew** | סוגות כתיבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | תיאור, הסבר, טיעון — הבדלים קצרים |
 
@@ -2706,7 +2680,6 @@
 | **File** | `writing_rephrase_clarity.md` |
 | **learning_page_id** | `hebrew:g5:writing_rephrase_clarity` |
 | **skill_id** | `hebrew:rich:writing:rephrase:clarity` |
-| **title_hebrew** | ניסוח ברור יותר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | שיפור משפט בלי לשנות רעיון |
 
@@ -2806,7 +2779,6 @@
 | **File** | `g5.argument_scaffold_choice.md` |
 | **learning_page_id** | `hebrew:g5:g5.argument_scaffold_choice` |
 | **skill_id** | `hebrew:g5:speaking:g5.argument_scaffold_choice` |
-| **title_hebrew** | בניית טיעון `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Scope** | טענה + נימוק + דוגמה; בעל פה וכתיבה קצרה |
 

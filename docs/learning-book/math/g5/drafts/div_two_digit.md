@@ -1,4 +1,4 @@
-# חילוק במחלק דו-ספרתי
+# Division by a Two-Digit Number
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק במחלק דו-ספרתי `[DRAFT — not owner-approved]` |
+| **title_english** | Division by a Two-Digit Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** אלגוריתם חילוק; מחלק דו-ספרתי
+**Content scope:** Long division algorithm; two-digit divisor
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחלק במחלק דו ספרתי — אלגוריתם חילוק ארוך.
-זו מיומנות חשובה לפתרון תרגילים.
+Today we'll learn to divide by a two-digit number — the long division algorithm.
+This is an important skill for solving problems.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-2,450 ÷ 35 — מחלק דו ספרתי:
-הערכה — 35 × 70 = 2,450
+2,450 ÷ 35 — two-digit divisor:
+Estimate — 35 × 70 = 2,450
 2,450 ÷ 35 = 70
-אלגוריתם ארוך: מתחילים מהספרות הגבוהות, מעריכים כמה פעמים 35 נכנס, מורידים וממשיכים.
-בדיקה: 70 × 35 = 2,450
+Long algorithm: start from the highest digits, estimate how many times 35 fits, bring down and continue.
+Check: 70 × 35 = 2,450
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 3,675 ÷ 49:
 49 × 75 = 3,675 → 3,675 ÷ 49 = 75
-בדיקה: 75 × 49 = 3,675
+Check: 75 × 49 = 3,675
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו 2,450 ÷ 35 = ?
+Work out 2,450 ÷ 35 = ?
 35 × 70 = 2,450
 2,450 ÷ 35 = 70
 70
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 3,360 ÷ 48 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-חשבו: 3,360 ÷ 48 = ?
-הערכה — 48 × 70 = 3,360
-3,360 ÷ 48 = 70
-בדיקה: 70 × 48 = 3,360
-3,360 ÷ 48 = 70
+Work out: 3,360 ÷ 48 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לחלק במחלק דו ספרתי.
-בתרגול תמצאו חילוק ארוך.
-בדקו עם כפל!
+Work out: 3,360 ÷ 48 = ?
+Estimate — 48 × 70 = 3,360
+3,360 ÷ 48 = 70
+Check: 70 × 48 = 3,360
+3,360 ÷ 48 = 70
+
+---
+
+## 7. Let's practice!
+
+Now you know how to divide by a two-digit number.
+In practice you'll find long division.
+Check with multiplication!

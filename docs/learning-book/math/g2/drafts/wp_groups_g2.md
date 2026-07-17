@@ -1,4 +1,4 @@
-﻿# שאלות מילוליות — קבוצות שוות
+# Word Problems — Equal Groups
 
 ## Metadata
 
@@ -11,87 +11,87 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — קבוצות שוות `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Equal Groups |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל בשאלות מילוליות — קבוצות שוות. שלב אחד. גורמים בטווח כיתה ב׳. ללא חילוק, ללא שאלות מרובות שלבים.
+**Content scope:** Multiplication in word problems — equal groups. One step. Grade 2 factor range. No division, no multi-step questions.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שאלות מילוליות על קבוצות שוות.
-כשיש כמה קבוצות באותו גודל, אפשר לחשב כמה יש ביחד — בכפל.
-(כבר למדנו כפל וקבוצות שוות בדף לוח הכפל — כאן נשתמש בזה בסיפור.)
-
----
-
-## 2. הסבר
-
-קבוצות שוות = כמה קבוצות, ובכל קבוצה אותה כמות.
-5 × 4 אומר:
-- 5 קבוצות
-- 4 בכל קבוצה
-- סה״כ: 5 × 4 = 20
-לפני שעונים:
-1. מה יודעים? — כמה קבוצות, וכמה בכל קבוצה
-2. מה מבקשים? — כמה ביחד
-3. מה עושים? — כופלים
-חשוב: שלב אחד בלבד. בלי חילוק — זה נושא אחר.
+Today we're going to learn word problems about equal groups.
+When there are several groups of the same size, you can find how many there are altogether — with multiplication.
+(We already learned multiplication and equal groups on the times table page — here we'll use it in a story.)
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-5 קופסאות, בכל אחת 4 עפרונות:
-5 × 4 = 20 → 20 עפרונות ביחד.
+Equal groups = how many groups, and the same amount in each group.
+5 × 4 means:
+- 5 groups
+- 4 in each group
+- Total: 5 × 4 = 20
+Before you answer:
+1. What do we know? — how many groups, and how many in each group
+2. What are we asked? — how many altogether
+3. What do we do? — multiply
+Important: one step only. No division — that's a different topic.
+
+---
+
+## 3. Visual / concrete example
+
+5 boxes, 4 pencils in each:
+5 × 4 = 20 → 20 pencils altogether.
 [4] [4] [4] [4] [4]
 4 + 4 + 4 + 4 + 4 = 20
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-יש 5 קופסאות. בכל קופסה 4 עפרונות. כמה עפרונות יש יחד?
-שלב 1 — מה יודעים?
-5 קופסאות, 4 עפרונות בכל קופסה.
-שלב 2 — מה מבקשים?
-כמה עפרונות ביחד.
-שלב 3 — מה עושים?
+There are 5 boxes. Each box has 4 pencils. How many pencils are there altogether?
+Step 1 — What do we know?
+5 boxes, 4 pencils in each box.
+Step 2 — What are we asked?
+How many pencils altogether.
+Step 3 — What do we do?
 5 × 4 = 20
-יש 20 עפרונות ביחד.
+There are 20 pencils altogether.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יש 6 שקיות.
-בכל שקית 3 תפוחים.
-כמה תפוחים יש יחד?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-יש 6 שקיות.
-בכל שקית 3 תפוחים.
-כמה תפוחים יש יחד?
-שלב 1 — מה יודעים? 6 שקיות, 3 תפוחים בכל שקית.
-שלב 2 — מה מבקשים? כמה תפוחים ביחד.
-שלב 3 — מה עושים? 6 × 3 = 18
-יש 18 תפוחים ביחד
+There are 6 bags.
+Each bag has 3 apples.
+How many apples are there altogether?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לפתור שאלות על קבוצות שוות — כמו בלוח הכפל, רק בסיפור.
-מה יודעים?
-מה מבקשים?
-כפל!
+There are 6 bags.
+Each bag has 3 apples.
+How many apples are there altogether?
+Step 1 — What do we know? 6 bags, 3 apples in each bag.
+Step 2 — What are we asked? How many apples altogether.
+Step 3 — What do we do? 6 × 3 = 18
+There are 18 apples altogether
+
+---
+
+## 7. Let's practice!
+
+Now you know how to solve equal-group problems — like the times table, but in a story.
+What do we know?
+What are we asked?
+Multiply!

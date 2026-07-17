@@ -1,4 +1,4 @@
-# השלמה ל-100 — קשר לאומדן
+# Pairs That Make 100 — Link to Estimation
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | השלמה ל-100 `[DRAFT — not owner-approved]` |
+| **title_english** | Pairs That Make 100 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוגות ל-100; בסיס לחישוב מהיר
+**Content scope:** Pairs that make 100; foundation for mental math
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נראה איך זוגות ל-100 עוזרים גם באומדן — כשלא צריך תשובה מדויקת, אלא קרובה.
-הזוג 37 + 63 = 100 שימושי גם כשמעגלים מספרים.
+Today we'll see how pairs that make 100 also help with estimation — when you don't need an exact answer, just one that's close.
+The pair 37 + 63 = 100 is useful even when you round numbers.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-37 + 63 = 100 — זוג שכדאי לזכור.
-קשר לאומדן:
-- 37 קרוב ל-40 (עיגול לעשרה הקרוב)
-- 63 קרוב ל-60
-- 40 + 60 = 100 — אומדן מהיר!
-אומדן חיבור: 37 + 58 ≈ ?
+37 + 63 = 100 — a pair worth remembering.
+Link to estimation:
+- 37 is close to 40 (round to the nearest ten)
+- 63 is close to 60
+- 40 + 60 = 100 — a quick estimate!
+Estimating addition: 37 + 58 ≈ ?
 - 37 ≈ 40, 58 ≈ 60
-- 40 + 60 = 100 — התשובה האמיתית (95) קרובה ל-100
-משלימים ל-100 = בסיס לחשיבה על "כמה חסר ל-100" — גם באומדן.
+- 40 + 60 = 100 — the real answer (95) is close to 100
+Pairs that make 100 = a base for thinking "how much is missing to reach 100" — also in estimation.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-אומדן: כמה בערך 52 + 49?
-52 קרוב ל-50. 49 קרוב ל-50.
-50 + 50 = 100 — אומדן: בערך 100.
-בדיקה: 52 + 49 = 101 — קרוב מאוד!
-52 + 48 = 100 בדיוק — 52 ו-48 הם זוג ל-100.
+Estimate: about how much is 52 + 49?
+52 is close to 50. 49 is close to 50.
+50 + 50 = 100 — estimate: about 100.
+Check: 52 + 49 = 101 — very close!
+52 + 48 = 100 exactly — 52 and 48 are a pair that make 100.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-37 + ? = 100 — מה המספר החסר?
+37 + ? = 100 — what is the missing number?
 100 − 37 = 63
-בדיקה: 30 + 70 = 100, ו-7 + 3 = 10 → 100
-שלב 3 (אומדן): 37 ≈ 40, 63 ≈ 60 → 40 + 60 = 100 — הזוג מתאים.
-המספר החסר הוא 63.
+Check: 30 + 70 = 100, and 7 + 3 = 10 → 100
+Step 3 (estimation): 37 ≈ 40, 63 ≈ 60 → 40 + 60 = 100 — the pair fits.
+The missing number is 63.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-8 + ? = 15 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+8 + ? = 15 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-64 + ? = 100 — מה המספר החסר?
+64 + ? = 100 — what is the missing number?
 ? = 100 − 64 = 36
-בדיקה: 64 + 36 = 100
-שלב 3 (אומדן): 64 ≈ 60, 36 ≈ 40 → 60 + 40 = 100 — הזוג מתאים
+Check: 64 + 36 = 100
+Step 3 (estimation): 64 ≈ 60, 36 ≈ 40 → 60 + 40 = 100 — the pair fits
 64 + 36 = 100
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים זוגות ל-100 וקשר לאומדן.
-בתרגול תמצאו השלמות ל-100 ושאלות אומדן!
+Now you know pairs that make 100 and how they connect to estimation.
+In practice you'll find complements to 100 and estimation questions!

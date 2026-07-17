@@ -1,4 +1,4 @@
-# זוגות ל-10 — אסטרטגיה לחיבורים גדולים
+# Pairs That Make 10 — Strategy for Big Additions
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגות ל-10 — חזרה `[DRAFT — not owner-approved]` |
+| **title_english** | Pairs That Make 10 — Review |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוגות מספרים שסכומם 10. חזרה אחרונה בכיתה ד׳. ללא complement ל-100 בדף זה.
+**Content scope:** Number pairs that add to 10. Final review in Grade 4. No complement to 100 on this page.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום חזרה קצרה על זוגות ל-10 — ואיך משתמשים בהם בחיבורים גדולים.
-8 + 2 = 10 — זוג שצריך לזכור בעל פה, בלי מסגרת עשר.
+Today we'll do a quick review of pairs that make 10 — and how to use them in big additions.
+8 + 2 = 10 — a pair to know by heart, without a ten-frame.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-זוג ל-10: שני מספרים שסכומם 10.
+A pair that makes 10: two numbers that add to 10.
 8 + 2 = 10 | 7 + 3 = 10 | 6 + 4 = 10 | 5 + 5 = 10
-אסטרטגיה — "משלימים ל-10" בחיבור גדול:
+Strategy — "make 10" in a big addition:
 28 + 15 = ?
-1. 28 + 2 = 30 (הזוג 8+2 בעשרות האחרונות)
+1. 28 + 2 = 30 (the pair 8+2 in the last digits)
 2.
-נשאר 13 מ-15 → 2 + 13 = 15
+13 left from 15 → 2 + 13 = 15
 30 + 13 = 43
 48 + 27 = ?
-- 48 + 2 = 50, נשאר 25 → 50 + 25 = 75
-לא צריך מסגרת עשר — רק זוגות בעל פה.
+- 48 + 2 = 50, 25 left → 50 + 25 = 75
+No ten-frame needed — just pairs from memory.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 38 + 9 = ?
 8 + 2 = 10 → 38 + 2 = 40
-נשאר 7 מ-9 → 40 + 7 = 47
+7 left from 9 → 40 + 7 = 47
 38 + 9 = 47
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-8 + ? = 10 — מה המספר החסר?
-יש 8. רוצים 10.
-8 + 2 = 10 — הזוג 8 ו-2.
-המספר החסר הוא 2.
-
----
-
-## 5. נסו בעצמכם
-
-11 + ? = 15 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+8 + ? = 10 — what is the missing number?
+You have 8. You want 10.
+8 + 2 = 10 — the pair 8 and 2.
+The missing number is 2.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-6 + ? = 10 — מה המספר החסר?
-יש 6. רוצים להגיע ל-10.
+11 + ? = 15 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+6 + ? = 10 — what is the missing number?
+You have 6. You want to reach 10.
 10 − 6 = 4
-בדיקה: 6 + 4 = 10
-המספר החסר הוא 4
+Check: 6 + 4 = 10
+The missing number is 4
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים זוגות ל-10 ואסטרטגיה לחיבורים גדולים.
-בתרגול תמצאו כמה חסר ל-10? וחיבורים עם השלמה ל-10!
+Now you know pairs that make 10 and a strategy for big additions.
+In practice you'll find how much to make 10? And additions using make-10!

@@ -1,4 +1,4 @@
-# בריאות — should rest
+# Health — should rest
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בריאות — should rest |
+| **title_english** | Health — should rest |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** You should drink water — עצות בריאות
+**Content scope:** You should drink water — health advice
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק בריאות עם should — עצה.
-You should drink water and rest when you are tired — כדאי לשתות מים ולנוח כשאתם עייפים.
-
----
-
-## 2. הסבר
-
-should + פועל — כדאי או מומלץ:
-
+Today we will review health vocabulary with should — advice.
 You should drink water and rest when you are tired.
 
-כדאי לשתות מים ולנוח כשאתם עייפים.
+---
+
+## 2. Simple explanation
+
+should + verb — advice or a recommendation:
+
+You should drink water and rest when you are tired.
 
 You should sleep eight hours every night.
 
-כדאי לישון שמונה שעות בכל לילה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-אחרי יום ארוך בבית הספר.
+After a long day at school.
 
 You should drink water and rest when you are tired.
 
-כדאי לשתות מים ולנוח כשאתם עייפים.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "כדאי לשתות מים ולנוח כשאתם עייפים"?
+Question: How do you say this?
 
 You should drink water and rest when you are tired
 
-תשובה: You should drink water and rest when you are tired
+Answer: You should drink water and rest when you are tired
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-הרגלי אכילה טובים.
+Good eating habits.
 
 You should eat fruits and vegetables every day.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "כדאי לאכול פירות וירקות כל יום."
+Exercise: "You should eat fruits and vegetables every day."
 
-should + פועל פירושו כדאי או מומלץ. לא מוסיפים to אחרי should.
+should + verb means it's a good idea or recommendation. We don't add "to" after should.
 
-eat fruits and vegetables = לאכול פירות וירקות; every day = כל יום.
+"Every day" tells us how often.
 
-כדאי לאכול פירות וירקות כל יום.
-
- You should eat fruits and vegetables every day.
+So the full sentence is: You should eat fruits and vegetables every day.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם נותנים עצות בריאות עם should.
-בתרגול תמצאו You should drink water and rest when you are tired.
+Now you will give health advice using should.
+In the practice, you'll find: You should drink water and rest when you are tired.

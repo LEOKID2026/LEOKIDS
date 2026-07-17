@@ -1,4 +1,4 @@
-# רגשות — They feel…
+# Emotions — They feel…
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | רגשות — They feel… |
+| **title_english** | Emotions — They feel… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד רגשות עם They.
-They feel excited — הם/הן מרגישים/ות נרגשים/ות.
+Today we will learn about emotions using "They."
+They feel excited — they are excited.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 They feel excited.
-
-הם/הן נרגשים/ות.
 
 They feel happy.
 
-הם/הן שמחים/ות.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדים לפני טיול.
+Children before a trip.
 
 They feel excited.
 
-הם/הן נרגשים/ות.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הם/הן נרגשים/ות"?
+Question: How do you say this?
 
 They feel excited
 
-תשובה: They feel excited
+Answer: They feel excited
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדים בסוף יום גשום.
+Children at the end of a rainy day.
 
 They feel sad.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם/הן עצובים/ות."
+Exercise: "They feel sad."
 
-they = ריבוי — אחרי they לא מוסיפים s לפועל feel.
+"They" is plural — after "they" we do not add s to the verb feel.
 
-sad = עצוב/ה.
+"Sad" describes how they feel.
 
-הם/הן עצובים/ות.
-
- They feel sad.
+So the full sentence is: They feel sad.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים רגשות עם They.
-בתרגול תמצאו They feel excited.
+Now you will describe emotions using "They."
+In the practice, you'll find: They feel excited.

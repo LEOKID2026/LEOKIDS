@@ -1,4 +1,4 @@
-# חיסור עשרוניים
+# Subtracting Decimals
 
 ## Metadata
 
@@ -11,35 +11,35 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור עשרוניים `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Decimals |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור עם ספרה עשרונית אחת. ללא השאלה מורכבת בעשיריות.
+**Content scope:** Subtraction with one decimal digit. No complex borrowing in tenths.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר מספרים עשרוניים — למשל 5.7 − 2.2.
-שוב: מיישרים נקודות — שלם מתחת לשלם, עשיריות מתחת לעשיריות.
+Today we will learn to subtract decimal numbers — for example 5.7 − 2.2.
+Again: line up the decimal points — whole under whole, tenths under tenths.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 5.7 − 2.2
 5 − 2 = 3
 0.7 − 0.2 = 0.5
 5.7 − 2.2 = 3.5
-בדיקה: 3.5 + 2.2 = 5.7
+Check: 3.5 + 2.2 = 5.7
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 8.4 − 3.1
 8 − 3 = 5
@@ -48,34 +48,34 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 6.8 − 2.3 = ?
-שלם: 6 − 2 = 4
-עשיריות: 8 − 3 = 5 → 0.5
+Calculate: 6.8 − 2.3 = ?
+Whole: 6 − 2 = 4
+Tenths: 8 − 3 = 5 → 0.5
 6.8 − 2.3 = 4.5
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 9.6 − 3.4 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 9.6 − 3.4 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 9.6 − 3.4
-שלם: 9 − 3 = 6
-עשיריות: 6 − 4 = 2 → 0.2
+Calculate: 9.6 − 3.4
+Whole: 9 − 3 = 6
+Tenths: 6 − 4 = 2 → 0.2
 9.6 − 3.4 = 6.2
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר מספרים עשרוניים.
-בתרגול תמצאו חיסור עם נקודה.
-יישרו וחסרו!
+Now you know how to subtract decimal numbers.
+In practice you'll find subtraction with a decimal point.
+Line up and subtract!

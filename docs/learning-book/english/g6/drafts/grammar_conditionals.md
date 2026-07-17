@@ -1,4 +1,4 @@
-# Conditionals — type 0 ו-1
+# Conditionals — Type 0 and 1
 
 ## Metadata
 
@@ -11,83 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | Conditionals — type 0 ו-1 |
+| **title_english** | Conditionals — Type 0 and 1 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:conditionals_type_0_1_ומודאליים_should_might_could`
+**Linked skill_ids:** `english``
 
 **Content scope:** If it rains, we will stay / If you heat ice, it melts
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד Conditionals — type 0 (חוק) ו-type 1 (עתיד אפשרי).
-If it rains, we will stay at home — אם ירד גשם, נישאר בבית.
-
----
-
-## 2. הסבר
-
-Type 0 — אמת תמיד: If you heat ice, it melts.
-אם מחממים קרח, הוא נמס.
-
-Type 1 — If + Present, will + פועל:
+Today we will learn Conditionals — Type 0 (a rule that's always true) and Type 1 (a possible future).
 If it rains, we will stay at home.
 
-אם ירד גשם, נישאר בבית.
+---
+
+## 2. Simple explanation
+
+Type 0 — always true: If you heat ice, it melts.
+
+Type 1 — If + Present, will + verb:
+If it rains, we will stay at home.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בוקר מעונן — מכינים מטריה.
+A cloudy morning — getting an umbrella ready.
 
 If it rains, we will stay at home.
 
-אם ירד גשם, נישאר בבית.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אם ירד גשם, נישאר בבית"?
+Question: How do you say this?
 
 If it rains, we will stay at home
 
-תשובה: If it rains, we will stay at home
+Answer: If it rains, we will stay at home
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-תכנון לשיעורים — ציון טוב מחכה.
+Planning for homework — a good grade waiting.
 
 If you do your homework, you will get a good grade.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אם תעשה שיעורים, תקבל ציון טוב."
+Exercise: "If you do your homework, you will get a good grade."
 
-Type 1: If + Present Simple, will + פועל.
+Type 1: If + Present Simple, will + verb.
 
-do your homework = תעשה שיעורים (Present); will get = תקבל (עתיד).
+"Do your homework" is Present; "will get" is the future result.
 
-אם תעשה שיעורים, תקבל ציון טוב.
-
- If you do your homework, you will get a good grade.
+So the full sentence is: If you do your homework, you will get a good grade.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטי תנאי type 0 ו-1.
-בתרגול תמצאו If it rains, we will stay at home.
+Now you will build conditional sentences — Type 0 and 1.
+In the practice, you'll find: If it rains, we will stay at home.

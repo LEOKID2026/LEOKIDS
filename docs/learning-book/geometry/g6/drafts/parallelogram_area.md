@@ -1,4 +1,4 @@
-﻿# שטח מקבילית — כיתה ו׳
+# Area of a Parallelogram — Grade 6
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח מקבילית — כיתה ו׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Parallelogram — Grade 6 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** בסיס×גובה; השוואה למלבן; 10, 6 ס״מ; 60 סמ״ר
+**Content scope:** base × height; comparison to rectangle; 10, 6 cm; 60 cm²
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נעמיק שטח מקבילית — ונשווה למלבן.
-מקבילית "נטויה" — אבל שטח = בסיס × גובה — כמו מלבן עם אותו בסיס וגובה!
+Today we will go deeper into area of a parallelogram — and compare it to a rectangle.
+A parallelogram is "slanted" — but area = base × height — just like a rectangle with the same base and height!
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallelogram_area
 :::
 
-מקבילית לעומת מלבן — אותה נוסחת שטח: בסיס × גובה.
-מלבן — זוויות 90°.
-מקבילית — "נטויה" — אבל גובה עדיין מאונך לבסיס.
-גובה — תמיד מאונך — לא הצלע הנטויה.
+Parallelogram vs. rectangle — same area formula: base × height.
+Rectangle — 90° angles.
+Parallelogram — "slanted" — but height is still perpendicular to the base.
+Height — always perpendicular — not the slanted side.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-השוואה:
-- מלבן: בסיס 10, גובה 6 → 10 × 6 = 60
-- מקבילית נטויה עם אותו בסיס 10 וגובה 6 → גם 60!
-"גזירת" המשולשים מהצדדים — לא משנה את השטח.
-בסיס 10 ס״מ, גובה 6 ס״מ → 60 סמ״ר
+Comparison:
+- Rectangle: base 10, height 6 → 10 × 6 = 60
+- Slanted parallelogram with the same base 10 and height 6 → also 60!
+"Cutting" triangles from the sides — does not change the area.
+Base 10 cm, height 6 cm → 60 cm²
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מקבילית — בסיס 10 ס״מ, גובה 6 ס״מ. מה השטח?
-שטח = בסיס × גובה (כמו מלבן).
+Parallelogram — base 10 cm, height 6 cm. What is the area?
+Area = base × height (like a rectangle).
 10 × 6 = 60
-60 סמ״ר.
+60 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מקבילית: בסיס 8 ס״מ, גובה 7 ס״מ — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Parallelogram: base 8 cm, height 7 cm — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-מקבילית — בסיס 8 ס״מ, גובה 7 ס״מ — מה השטח?
-שטח = בסיס × גובה (כמו מלבן).
+Parallelogram — base 8 cm, height 7 cm — what is the area?
+Area = base × height (like a rectangle).
 8 × 7 = 56
-56 סמ״ר
+56 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח מקבילית = שטח מלבן דמיוני עם אותו בסיס וגובה.
-בתרגול תמצאו מקביליות — גובה מאונך, לא צלע נטויה!
+Area of a parallelogram = area of an imaginary rectangle with the same base and height.
+In practice you'll find parallelograms — height is perpendicular, not a slanted side!

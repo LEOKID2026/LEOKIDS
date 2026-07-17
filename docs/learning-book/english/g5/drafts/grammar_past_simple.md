@@ -1,4 +1,4 @@
-# Past Simple — עבר פשוט
+# Past Simple
 
 ## Metadata
 
@@ -11,89 +11,79 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | approved |
-| **title_hebrew** | Past Simple — עבר פשוט |
+| **title_english** | Past Simple |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:past_simple_סדירים_חריגים_נפוצים`
+**Linked skill_ids:** `english``
 
-**Content scope:** played/went/saw — חיובי ושאלה; סדירים וחריגים נפוצים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד Past Simple — עבר פשוט.
-I played football yesterday — שיחקתי כדורגל אתמול.
+**Content scope:** played/went/saw — statements and questions; common regular and irregular verbs
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-Past Simple — פועל + ed (סדיר) או צורה חריגה:
-
+Today we will learn Past Simple.
 I played football yesterday.
 
-שיחקתי כדורגל אתמול.
+---
+
+## 2. Simple explanation
+
+Past Simple — verb + ed (regular) or an irregular form:
+
+I played football yesterday.
 
 She went to school.
 
-היא הלכה לבית הספר.
-
 Did you see the movie?
-
-ראית את הסרט?
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד משחק כדורגל אתמול.
+A child playing football yesterday.
 
 I played football yesterday.
 
-שיחקתי כדורגל אתמול.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "שיחקתי כדורגל אתמול"?
+Question: How do you say this?
 
 I played football yesterday
 
-תשובה: I played football yesterday
+Answer: I played football yesterday
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בוקר — קבוצה משחקת כדורסל.
+Morning — a team playing basketball.
 
 We played basketball in the morning.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "שיחקנו כדורסל בבוקר."
+Exercise: "We played basketball in the morning."
 
-פעולה שהסתיימה בעבר — Past Simple: play הופך ל-played.
+An action that finished in the past uses Past Simple: play becomes played.
 
-in the morning = בבוקר.
+"In the morning" tells us when.
 
-שיחקנו כדורסל בבוקר.
-
- We played basketball in the morning.
+So the full sentence is: We played basketball in the morning.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים ב-Past Simple — סדירים וחריגים.
-בתרגול תמצאו I played football yesterday.
+Now you will build sentences in Past Simple — regular and irregular verbs.
+In the practice, you'll find: I played football yesterday.

@@ -1,4 +1,4 @@
-# שאלות מילוליות — כמה נשאר?
+# Word Problems — How Much Is Left?
 
 ## Metadata
 
@@ -11,94 +11,94 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — כמה נשאר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — How Much Is Left?
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שאלות מילוליות על הוצאה / נשאר / עודף — חיסור בלבד. סכומים עד 30. ללא קנייה מרובת פריטים, ללא כפל, ללא חילוק.
+**Content scope:** Word problems about spending / what's left / change — subtraction only. Amounts up to 30. No buying multiple items, no multiplication, no division.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לקרוא שאלה מילולית על הוצאה.
-כשקונים משהו — מורידים מהכסף שהיה לנו.
-אחרי שקונים, בודקים כמה כסף נשאר.
-לפעמים קוראים לזה גם עודף.
-
----
-
-## 2. הסבר פשוט
-
-בשאלות כאלה יש שלושה חלקים:
-- היה — כמה כסף היה לפני
-- הוציאו / שילמו / עלה — כמה שילמו או כמה עלה הדבר
-- נשאר / עודף — מה נותר
-לפני שמחשבים — קוראים בקול:
-1. מה יודעים? — כמה היה, כמה הוציאו (או כמה עלה)
-2. מה מבקשים? — כמה נשאר או כמה עודף
-3. מה עושים? — מחסרים: היה − הוציאו = נשאר
-לדוגמה: היו 12, הוציאו 5 → 12 − 5 = 7 נשארו.
-עודף פשוט: שילמו 10, עלה 7 → 10 − 7 = 3 עודף.
+Today we're going to learn to read a word problem about spending.
+When you buy something — you take away from the money you had.
+After buying, we check how much money is left.
+Sometimes we call this change too.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-היו 12 שקלים, קנו ממתק ב-5 שקלים:
-12 − 5 = 7 → נשארו 7 שקלים.
-עודף — שילמו 10, עלה 7:
-[●●●●●●●●●●●●] ← 12 היו
-✕ ✕ ✕ ✕ ✕ ← 5 הוציאו
-[●●●●●●●] ← 7 נשארו
-שילמו: 10₪ עלה: 7₪ עודף: 3₪
+In these problems there are three parts:
+- Had — how much money there was before
+- Spent / paid / cost — how much was paid or how much the thing cost
+- Left / change — what remains
+Before you calculate — read out loud:
+1. What do we know? — how much there was, how much was spent (or how much it cost)
+2. What are we asked? — how much is left or how much change
+3. What do we do? — subtract: had − spent = left
+For example: had 12, spent 5 → 12 − 5 = 7 left.
+Simple change: paid 10, cost 7 → 10 − 7 = 3 change.
+
+---
+
+## 3. Visual / concrete example
+
+Had 12 shekels, bought candy for 5 shekels:
+12 − 5 = 7 → 7 shekels are left.
+Change — paid 10, cost 7:
+[●●●●●●●●●●●●] ← 12 had
+✕ ✕ ✕ ✕ ✕ ← 5 spent
+[●●●●●●●] ← 7 left
+Paid: 10₪  Cost: 7₪  Change: 3₪
 10 − 7 = 3
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-ליעל היו 15 שקלים. היא קנתה עט ב-6 שקלים. כמה כסף נשאר לה?
-שלב 1 — מה יודעים?
-היה: 15 שקלים
-הוציאה: 6 שקלים
-שלב 2 — מה מבקשים?
-כמה נשאר — צריך לחסר.
-שלב 3 — מחשבים:
+Yaël had 15 shekels. She bought a pen for 6 shekels. How much money does she have left?
+Step 1 — What do we know?
+Had: 15 shekels
+Spent: 6 shekels
+Step 2 — What are we asked?
+How much is left — we need to subtract.
+Step 3 — Calculate:
 15 − 6 = 9
-ליעל נשארו 9 שקלים.
-(אפשר לסמן: 15 חפצים, "לקחו" 6, ספרו מה נשאר)
+Yaël has 9 shekels left.
+(You can mark: 15 objects, "take away" 6, count what's left)
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-נועה שילמה 15 שקלים על ספר שעלה 8 שקלים.
-כמה עודף היא מקבלת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Noa paid 15 shekels for a book that cost 8 shekels.
+How much change does she get?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-נועה שילמה 15 שקלים על ספר שעלה 8 שקלים.
-כמה עודף היא מקבלת?
-שלב 1 — מה יודעים?
-שילמה: 15 שקלים
-עלה: 8 שקלים
-שלב 2 — מה מבקשים?
-כמה עודף — צריך לחסר: שילמה − עלה = עודף.
-שלב 3 — מחשבים:
+Noa paid 15 shekels for a book that cost 8 shekels.
+How much change does she get?
+Step 1 — What do we know?
+Paid: 15 shekels
+Cost: 8 shekels
+Step 2 — What are we asked?
+How much change — subtract: paid − cost = change.
+Step 3 — Calculate:
 15 − 8 = 7
-נועה מקבלת 7 שקלים עודף.
+Noa gets 7 shekels in change.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לקרוא שאלה על הוצאה ועודף.
-בדקו כמה היה, כמה שילמו או הוציאו, ואז חסרו.
+Now you know how to read a problem about spending and change.
+Check how much there was, how much was paid or spent, then subtract.

@@ -1,4 +1,4 @@
-# חיבור עשרות שלמות
+# Adding Whole Tens
 
 ## Metadata
 
@@ -11,80 +11,80 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור עשרות שלמות `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Whole Tens |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור עשרות שלמות בלבד. **בכיתה א׳ נשתמש בעשרות 10, 20 ו-30.** סכום עד 30. ללא אחדות, ללא חיבור במאונך.
+**Content scope:** Adding whole tens only. **In Grade 1 we use tens 10, 20, and 30.** Sum up to 30. No ones, no vertical addition.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר עשרות שלמות.
-כאן נשתמש בעשרות 10, 20 ו-30 — בלי אחדות בודדות.
-
----
-
-## 2. הסבר פשוט
-
-עשרת שלמה = קבוצה של 10, בלי אחדות בודדות.
-כאן נשתמש רק ב 10, 20 ו 30 בדף הזה.
-כשמחברים עשרות — מחברים קבוצות של 10:
-- 10 + 10 = 20 (קבוצה + קבוצה = 2 קבוצות)
-- 10 + 20 = 30 (1 עשרה + 2 עשרות = 3 עשרות)
-כלל: מחברים רק עשרות שלמות. בדוגמה הזאת התוצאה לא עוברת 30.
+Today we're going to learn to add whole tens.
+Here we'll use tens 10, 20, and 30 — with no single ones.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-10 + 20 = 30 — שלושה מקלי עשרת (3 עשרות):
-מה רואים בדוגמה?
-- מקל עשרת אחד = 10
-- 1 מקל עשרת + 2 מקלי עשרת = 3 מקלי עשרת = 30
-דוגמה עם עפרונות:
-2 חבילות של 10 עפרונות + 1 חבילה של 10 = 3 חבילות = 30 עפרונות.
-[==========] 10 ← מקל עשרת 1
-[==========] 10 ← מקל עשרת 2
-[==========] 10 ← מקל עשרת 3
+A whole ten = a group of 10, with no single ones.
+On this page we only use 10, 20, and 30.
+When you add tens — you add groups of 10:
+- 10 + 10 = 20 (one group + one group = 2 groups)
+- 10 + 20 = 30 (1 ten + 2 tens = 3 tens)
+Rule: add whole tens only. In this example the answer does not go past 30.
+
+---
+
+## 3. Visual / concrete example
+
+10 + 20 = 30 — three ten-sticks (3 tens):
+What do you see in the example?
+- One ten-stick = 10
+- 1 ten-stick + 2 ten-sticks = 3 ten-sticks = 30
+Example with pencils:
+2 bundles of 10 pencils + 1 bundle of 10 = 3 bundles = 30 pencils.
+[==========] 10 ← ten-stick 1
+[==========] 10 ← ten-stick 2
+[==========] 10 ← ten-stick 3
 = 30
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
 20 + 10 = ?
-20 = 2 מקלי עשרת
-10 = מקל עשרת אחד
-2 מקלי עשרת ועוד מקל עשרת אחד = 3 מקלי עשרת → 30
+20 = 2 ten-sticks
+10 = 1 ten-stick
+2 ten-sticks plus 1 ten-stick = 3 ten-sticks → 30
 20 + 10 = 30
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
 10 + 10 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
 10 + 10 = ?
-10 = מקל עשרת אחד
-עוד 10 = מקל עשרת נוסף.
-1 מקל עשרת + 1 מקל עשרת = 2 מקלי עשרת = 20.
+10 = 1 ten-stick
+Another 10 = one more ten-stick.
+1 ten-stick + 1 ten-stick = 2 ten-sticks = 20.
 10 + 10 = 20
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר עשרות שלמות.
-בתרגול תמצאו חיבורים של 10, 20, 30.
-חשבו במקלי עשרת!
+Now you know how to add whole tens.
+In practice you'll find additions of 10, 20, 30.
+Think in ten-sticks!

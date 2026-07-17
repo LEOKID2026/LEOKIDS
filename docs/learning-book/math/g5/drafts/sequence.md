@@ -1,4 +1,4 @@
-# סדרות מספרים — קפיצות גדולות
+# Number Sequences — Large Steps
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סדרות מספרים — קפיצות גדולות `[DRAFT — not owner-approved]` |
+| **title_english** | Number Sequences — Large Steps |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** קפיצה קבועה; מספרים עד 100,000
+**Content scope:** Constant step; numbers up to 100,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לזהות סדרות עם קפיצה קבועה — גם כשהמספרים גדולים מאוד, עד 100,000.
-הקפיצה יכולה להיות +500, +1,000, +2,000 ועוד — חשוב לגלות איזה גודל חוזר.
+Today we'll learn to spot sequences with a constant step — even when the numbers are very large, up to 100,000.
+The step might be +500, +1,000, +2,000 and more — it's important to find what size repeats.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-בסדרה עם קפיצה קבועה — כל מספר גדול (או קטן) מהקודם באותו גודל.
+In a sequence with a constant step — each number is bigger (or smaller) than the one before by the same amount.
 1,000 → 1,500 → 2,000
 - 1,500 − 1,000 = 500
 - 2,000 − 1,500 = 500
-- הקפיצה: +500
-איך מוצאים את הקפיצה? מחסירים שני מספרים סמוכים — לא את הראשון והאחרון בלבד.
-דוגמה גדולה: 48,000, 50,000, 52,000, 54,000 — קפיצה +2,000 בכל פעם.
+- The step: +500
+How do you find the step? Subtract two numbers next to each other — not just the first and last.
+Large example: 48,000, 50,000, 52,000, 54,000 — step of +2,000 each time.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-סדרה: 75,000, 76,000, 77,000, 78,000, ?
+Sequence: 75,000, 76,000, 77,000, 78,000, ?
 76,000 − 75,000 = 1,000
 77,000 − 76,000 = 1,000
-קפיצה: +1,000
+Step: +1,000
 78,000 + 1,000 = 79,000
-התשובה: 79,000
+The answer: 79,000
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-המשיכו: 1,000, 1,500, 2,000, ?
-קפיצה = 1,500 − 1,000 = 500
+Continue: 1,000, 1,500, 2,000, ?
+Step = 1,500 − 1,000 = 500
 2,000 + 500 = 2,500
 2,500
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-המשיכו: 20,000, 25,000, 30,000, 35,000, ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-המשיכו: 20,000, 25,000, 30,000, 35,000, ?
-מחשבים הפרש בין שני מספרים עוקבים: 25,000 − 20,000 = 5,000
-בדיקה: 30,000 − 25,000 = 5,000 — הקפיצה קבועה
-הבא: 35,000 + 5,000 = 40,000
-הקפיצה: +5,000; המספר הבא: 40,000
+Continue: 20,000, 25,000, 30,000, 35,000, ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים להמשיך סדרות עם קפיצה קבועה.
-בתרגול תמצאו סדרות עד 100,000.
-מצאו קודם את הקפיצה!
+Continue: 20,000, 25,000, 30,000, 35,000, ?
+Find the difference between two numbers in a row: 25,000 − 20,000 = 5,000
+Check: 30,000 − 25,000 = 5,000 — the step stays the same
+Next: 35,000 + 5,000 = 40,000
+The step: +5,000; the next number: 40,000
+
+---
+
+## 7. Let's practice!
+
+Now you know how to continue sequences with a constant step.
+In practice you'll find sequences up to 100,000.
+Find the step first!

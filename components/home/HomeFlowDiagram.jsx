@@ -54,4 +54,4 @@ export default function HomeFlowDiagram({ steps, isBright, variant = "default" }
     </div>
   );
 }
-
+

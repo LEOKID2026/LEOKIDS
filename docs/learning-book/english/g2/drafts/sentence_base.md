@@ -1,4 +1,4 @@
-# משפטים קצרים — כיתה ב׳
+# Short Sentences — Grade 2
 
 ## Metadata
 
@@ -11,66 +11,66 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | משפטים קצרים — כיתה ב׳ |
+| **title_english** | Short Sentences — Grade 2 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** 3–4 מילים; סימן פיסוק בסיסי
+**Content scope:** 3–4 words; basic punctuation
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבנה משפטים של 3–4 מילים.
-כבר יודעים I am — נוסיף עוד מילה.
+Today we will build sentences of 3–4 words.
+We already know I am — let's add another word.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-משפטים קצרים:
+Short sentences:
 I am seven.
 I have a book.
 My pen is blue.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד בן 7.
+A 7-year-old child.
 I am seven.
-משפט של 3 מילים.
+A 3-word sentence.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-בנו "אני בן שבע".
+Build "I am seven."
 I am seven
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד עם ספר.
+A child with a book.
 I have a book
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: ילד עם ספר — באנגלית?
-I have a book פירושו: יש לי ספר.
-התשובה היא: I have a book.
+The question: a child with a book — in English?
+I have a book means: I have a book.
+The answer is: I have a book.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים של 3–4 מילים.
-בתרגול תמצאו I am seven ו-I have a book.
+Now you build sentences of 3–4 words.
+In practice, you'll find I am seven and I have a book.

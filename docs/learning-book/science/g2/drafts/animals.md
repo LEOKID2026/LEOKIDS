@@ -1,4 +1,4 @@
-# בעלי חיים — מחזור חיים
+# Animals — Life Cycle
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | בעלי חיים — מחזור חיים `[DRAFT — not owner-approved]` |
+| **title_english** | Animals — Life Cycle `[DRAFT — not owner-approved]` |
 
-**Content scope:** ביצה → בוגר; צאצא דומה להורים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על מחזור חיים — איך בעלי חיים גדלים ומשתנים מדור לדור.
+**Content scope:** Egg → adult; offspring similar to parents
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-מחזור חיים — השלבים שבעל חיים עובר מהתחלה ועד בוגר:
-פרפר:
-ביצה, אחר כך זחל, אחר כך גולם, ולבסוף פרפר בוגר.
-צפרדע:
-ביצה, אחר כך ראשן, ולבסוף צפרדע בוגרת.
-כלב:
-גור קטן, ואחר כך כלב בוגר.
-הצאצא דומה להורים — גור כלב נראה כמו כלב, לא כמו חתול.
-כך המין נמשך.
+Today in science we will learn about the life cycle — how animals grow and change from generation to generation.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בגינה רואים פרפר על פרח.
-לפני כן היה זחל, ולפני זה ביצה על עלה.
-כל שלב — חלק ממחזור החיים של הפרפר.
-
----
-
-## 4. בואו נפתור
-
-מה בא ראשון במחזור חיים של פרפר?
-פרפר מטיל ביצים.
-הביצה נפתחת — מתחיל הזחל.
-ביצה
+A life cycle — the stages an animal goes through from start to adult:
+Butterfly:
+Egg, then caterpillar, then chrysalis, and finally an adult butterfly.
+Frog:
+Egg, then tadpole, and finally an adult frog.
+Dog:
+A small puppy, then an adult dog.
+Offspring are similar to their parents — a puppy looks like a dog, not like a cat.
+That is how the species continues.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-מה השלב הראשון במחזור החיים של צפרדע?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה הייתה:
-מה השלב הראשון במחזור החיים של צפרדע?
-הצפרדע מתחילה כביצה קטנה שמונחת במים.
-מהביצה יוצא ראשן קטן שנושם במים, ולאחר מכן הוא גדל והופך לצפרדע בוגרת שנושמת גם באוויר.
-התשובה: ביצה.
+In the garden you see a butterfly on a flower.
+Before that it was a caterpillar, and before that an egg on a leaf.
+Each stage is part of the butterfly's life cycle.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים מחזור חיים במדעים.
-בתרגול חפשו שאלות על ביצה, גור ודמיון להורים.
+What comes first in a butterfly's life cycle?
+A butterfly lays eggs.
+The egg opens — the caterpillar begins.
+Egg
+
+---
+
+## 5. Try it yourself
+
+What is the first stage in a frog's life cycle?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question was:
+What is the first stage in a frog's life cycle?
+A frog starts as a small egg placed in water.
+From the egg comes a small tadpole that breathes in water, and later it grows and becomes an adult frog that also breathes air.
+The answer: egg.
+
+---
+
+## 7. Let's practice!
+
+Now you know about life cycles in science.
+When you practice, look for questions about eggs, young animals, and similarity to parents.

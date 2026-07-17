@@ -1,4 +1,4 @@
-# סדר פעולות — כפל וחיסור
+# Order of Operations — Multiplication and Subtraction
 
 ## Metadata
 
@@ -11,34 +11,34 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סדר פעולות — כפל וחיסור `[DRAFT — not owner-approved]` |
+| **title_english** | Order of Operations — Multiplication and Subtraction |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל לפני חיסור. תרגילים קצרים. ללא סוגריים.
+**Content scope:** Multiply before subtract. Short problems. No parentheses.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד סדר פעולות כשיש חיסור וכפל — קודם כופלים, אחר כך מחסרים.
+Today we will learn order of operations when there is subtraction and multiplication — multiply first, then subtract.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 30 − 3 × 4
-קודם כפל: 3 × 4 = 12
-אחר כך חיסור: 30 − 12 = 18
+Multiply first: 3 × 4 = 12
+Then subtract: 30 − 12 = 18
 30 − 3 × 4 = 18
-כלל: × לפני − (כמו עם +)
+Rule: × before − (just like with +)
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 50 − 2 × 7
 2 × 7 = 14
@@ -47,34 +47,34 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 40 − 5 × 3 = ?
+Calculate: 40 − 5 × 3 = ?
 5 × 3 = 15
 40 − 15 = 25
 40 − 5 × 3 = 25
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 40 − 4 × 6 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 40 − 4 × 6 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 40 − 4 × 6
-קודם כפל: 4 × 6 = 24
-אחר כך חיסור: 40 − 24 = 16
+Calculate: 40 − 4 × 6
+Multiply first: 4 × 6 = 24
+Then subtract: 40 − 24 = 16
 40 − 4 × 6 = 16
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים: בכפל וחיסור — קודם כופלים.
-בתרגול תמצאו תרגילים עם − ו-×.
-כפל קודם!
+Now you know: in multiplication and subtraction — multiply first.
+In practice you'll find problems with − and ×.
+Multiplication first!

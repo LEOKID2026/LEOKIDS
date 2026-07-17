@@ -1,4 +1,4 @@
-﻿# אלכסון בריבוע
+# Diagonal of a Square
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | אלכסון בריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Diagonal of a Square |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** אלכסון = צלע × √2
+**Content scope:** diagonal = side × √2
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד אלכסון בריבוע.
-אלכסון — קטע שמחבר שני קדקודים שאינם על אותה צלע.
+Today we'll learn the diagonal of a square.
+A diagonal — a segment that connects two vertices that are not on the same side.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_diagonal
 :::
 
-בריבוע האלכסון יוצר משולש ישר זווית.
-נוסחה:
-אלכסון = צלע × √2
-או: √(צלע² + צלע²)
+In a square the diagonal forms a right triangle.
+Formula:
+Diagonal = side × √2
+Or: √(side² + side²)
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע צלע 6 ס״מ:
-אלכסון = 6 × √2 ס״מ
-(≈ 8.5 ס״מ)
+Square with side 6 cm:
+Diagonal = 6 × √2 cm
+(≈ 8.5 cm)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-ריבוע צלע 6 ס״מ. מה אורך האלכסון? (ביטוי עם √2)
+Square with side 6 cm. What is the length of the diagonal? (expression with √2)
 √(6² + 6²) = √(72)
-= 6√2 ס״מ.
-6√2 ס״מ.
+= 6√2 cm.
+6√2 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריבוע צלע 5 ס״מ — מה האלכסון?
-(עם √2)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-ריבוע צלע 5 ס״מ — מה אורך האלכסון?
-(עם √2)
-נוסחת אלכסון בריבוע:
-אלכסון = צלע × √2
-הצבת הצלע:
-5 × √2 = 5√2 ס״מ
-אלכסון = 5√2 ס״מ
+Square with side 5 cm — what is the diagonal?
+(with √2)
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-אלכסון בריבוע = צלע × √2.
-בתרגול תמצאו אלכסונים — אל תכפילו ב-2 בלבד!
+Square with side 5 cm — what is the length of the diagonal?
+(with √2)
+Diagonal of a square formula:
+Diagonal = side × √2
+Substitute the side:
+5 × √2 = 5√2 cm
+Diagonal = 5√2 cm
+
+---
+
+## 7. Let's practice!
+
+Diagonal of a square = side × √2.
+In practice you'll find diagonals — don't just multiply by 2!

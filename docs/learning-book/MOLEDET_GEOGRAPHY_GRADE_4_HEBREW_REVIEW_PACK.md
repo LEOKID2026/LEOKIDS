@@ -36,8 +36,7 @@
 |-------|-------|
 | **File** | `mg_g4_settlement_types.md` |
 | **learning_page_id** | `geography:g4:mg_g4_settlement_types` |
-| **skill_id** | `geography:g4:geography:geography_0_סוגי_יישובים` |
-| **title_hebrew** | סוגי יישובים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -139,8 +138,7 @@
 |-------|-------|
 | **File** | `mg_g4_settlement_development.md` |
 | **learning_page_id** | `geography:g4:mg_g4_settlement_development` |
-| **skill_id** | `geography:g4:skills:skills_1_הבנת_התפתחות_היישובים` |
-| **title_hebrew** | התפתחות היישובים בישראל `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -242,8 +240,7 @@
 |-------|-------|
 | **File** | `mg_g4_map_scale_symbols.md` |
 | **learning_page_id** | `geography:g4:mg_g4_map_scale_symbols` |
-| **skill_id** | `geography:g4:geography:geography_1_מפות_קנה_מידה_סימנים` |
-| **title_hebrew** | מפות — קנה מידה וסימנים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -346,8 +343,7 @@
 |-------|-------|
 | **File** | `mg_g4_natural_resources.md` |
 | **learning_page_id** | `geography:g4:mg_g4_natural_resources` |
-| **skill_id** | `geography:g4:geography:geography_2_משאבי_טבע` |
-| **title_hebrew** | משאבי טבע `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -449,8 +445,7 @@
 |-------|-------|
 | **File** | `mg_g4_government_structure.md` |
 | **learning_page_id** | `geography:g4:mg_g4_government_structure` |
-| **skill_id** | `geography:g4:citizenship:citizenship_0_מבנה_ממשל` |
-| **title_hebrew** | מבנה הממשל `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -550,8 +545,7 @@
 |-------|-------|
 | **File** | `mg_g4_organizations.md` |
 | **learning_page_id** | `geography:g4:mg_g4_organizations` |
-| **skill_id** | `geography:g4:citizenship:citizenship_1_ארגונים` |
-| **title_hebrew** | ארגונים בקהילה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -652,8 +646,7 @@
 |-------|-------|
 | **File** | `mg_g4_government_institutions.md` |
 | **learning_page_id** | `geography:g4:mg_g4_government_institutions` |
-| **skill_id** | `geography:g4:citizenship:citizenship_2_מוסדות_שלטון` |
-| **title_hebrew** | מוסדות שלטון `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g4:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

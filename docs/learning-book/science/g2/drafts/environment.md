@@ -1,4 +1,4 @@
-# סביבה — שמירה על הטבע
+# Environment — Protecting Nature
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | סביבה — שמירה על הטבע `[DRAFT — not owner-approved]` |
+| **title_english** | Environment — Protecting Nature `[DRAFT — not owner-approved]` |
 
-**Content scope:** פחות פסולת; הגנה על צמחים ובעלי חיים מקומיים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים איך לשמור על הטבע — פחות פסולת, יותר דאגה לצמחים ולבעלי חיים.
+**Content scope:** Less waste; protecting local plants and animals
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-הטבע סביבנו — עצים, פרחים, בעלי חיים, מים נקיים.
-אנחנו יכולים לעזור:
-לזרוק פסולת בפח — לא על האדמה
-לא לקטוף פרחים בלי רשות
-לא להפריע לבעלי חיים בטבע
-לחסוך — פחות נייר ופלסטיק כשאפשר
-שמירה על הטבע — גם בגינה, גם בבית ספר, גם בפארק.
+Today in science we will learn how to protect nature — less waste, more care for plants and animals.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בגינת בית הספר — כיתה שותלת עגבניות.
-הילדים לא קוטפים פרחים בר — רק בגינה המותרת.
-הם משתמשים בפחים לנייר ולפלסטיק, ולא מפריעים לחרקים ולציפורים.
-כך שומרים על הטבע — לא רק ניקיון, גם דאגה לחיים סביבנו.
-
----
-
-## 4. בואו נפתור
-
-למה לא קוטפים פרחים בר בלי רשות?
-פרחים בטבע — מזון ומחסה לחרקים ולציפורים.
-אם כולם קוטפים — פחות פרחים לחיות.
-כדי לא לפגוע בחיים בטבע
+Nature around us — trees, flowers, animals, clean water.
+We can help:
+Throw trash in a bin — not on the ground
+Do not pick wildflowers without permission
+Do not disturb animals in nature
+Save resources — less paper and plastic when possible
+Protecting nature — in the garden, at school, and in the park.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-בשכונה יש עץ גדול שציפורים בונות בו קן.
-מה עלינו לעשות כשאנחנו משחקים ליד העץ?
-למה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-בשכונה יש עץ גדול שציפורים בונות בו קן.
-מה עלינו לעשות כשאנחנו משחקים ליד העץ?
-למה?
-ציפורים בונות קן כדי לגדל את הגוזלים שלהן.
-אם נגרום לרעש גדול או נתקרב מאוד — זה עלול להפריע לציפורים ולגוזלים.
-לכן:
-משחקים בשקט ולא מתקרבים לעץ.
-שמירה על הטבע — גם פירושה לא להפריע לבעלי חיים כשהם גדלים ומטפלים בצאצאיהם.
+In the school garden — a class plants tomatoes.
+The children do not pick wildflowers — only in the allowed garden.
+They use bins for paper and plastic, and do not disturb insects and birds.
+That is how we protect nature — not just cleanliness, but care for life around us.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לשמור על הטבע במדעים.
-בתרגול חפשו שאלות על פסולת והגנה על הטבע.
+Why should we not pick wildflowers without permission?
+Wildflowers in nature — food and shelter for insects and birds.
+If everyone picks them — fewer flowers for living things.
+So we do not harm life in nature
+
+---
+
+## 5. Try it yourself
+
+In the neighborhood there is a big tree where birds build a nest.
+What should we do when we play near the tree?
+Why?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+In the neighborhood there is a big tree where birds build a nest.
+What should we do when we play near the tree?
+Why?
+Birds build a nest to raise their chicks.
+If we make loud noise or get too close — it can disturb the birds and the chicks.
+So:
+Play quietly and do not get too close to the tree.
+Protecting nature also means not disturbing animals when they are raising their young.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to protect nature in science.
+When you practice, look for questions about waste and protecting the environment.

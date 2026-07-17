@@ -1,4 +1,4 @@
-# משפטים תיאוריים
+# Descriptive Sentences
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | משפטים תיאוריים |
+| **title_english** | Descriptive Sentences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** The big dog runs fast — תאר + שם עצם + פועל
+**Content scope:** The big dog runs fast — adjective + noun + verb
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבנה משפטים תיאוריים.
-The big dog runs fast — הכלב הגדול רץ מהר.
+Today we will build descriptive sentences.
+The big dog runs fast.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית: תאר + שם עצם + פועל
+Pattern: adjective + noun + verb
 
 The big dog runs fast.
 
-הכלב הגדול רץ מהר.
+The big dog runs fast.
 
 The small cat sleeps.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-כלב גדול רץ.
+A big dog running.
 
 The big dog runs fast.
 
-הכלב הגדול רץ מהר.
+The big dog runs fast.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הכלב הגדול רץ מהר"?
+Question: how do we say "the big dog runs fast"?
 
 The big dog runs fast
 
-תשובה: The big dog runs fast
+Answer: The big dog runs fast
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדה גבוהה קופצת בגינה.
+A tall girl jumping in the garden.
 
 The tall girl jumps.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: ילדה גבוהה קופצת בגינה.
+Exercise: a tall girl jumping in the garden.
 
-הפתרון:
+The solution:
 
 The tall girl jumps.
 
-הילדה הגבוהה קופצת.
+The tall girl jumps.
 
-כל הכבוד! הסדר: The + תאר (tall) + שם עצם (girl) + פועל (jumps).
+Well done! The order: The + adjective (tall) + noun (girl) + verb (jumps).
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים תיאוריים.
-בתרגול תמצאו The big dog runs fast.
+Now you build descriptive sentences.
+In practice, you'll find The big dog runs fast.

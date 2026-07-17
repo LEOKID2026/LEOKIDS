@@ -1,4 +1,4 @@
-# חיסור עם מספר חסר
+# Subtraction with a Missing Number
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור עם מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Subtraction with a Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** משפט חיסור עם **מקום ריק אחד** (מספר חסר). לא מתחת ל-0. ללא משתנים, ללא אלגברה.
+**Content scope:** Subtraction sentence with **one blank** (missing number). Not below 0. No variables, no algebra.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לפתור חידה במשפט חיסור.
-יש מקום ריק — צריך למצוא את המספר החסר.
+Today we're going to learn to solve a puzzle in a subtraction sentence.
+There is a blank — you need to find the missing number.
 
 ---
 
-## 2. הסבר פשוט
+## 2. Simple explanation
 
-לפעמים בתרגיל חיסור יש מקום ריק:
+Sometimes in a subtraction problem there is a blank:
 8 − __ = 3
-שואלים: "כמה לקחו?" — כמה צעדים מ-8 עד 3?
-או:
+The question is: "How many were taken?" — how many steps from 8 down to 3?
+Or:
 __ − 2 = 6
-שואלים: "כמה היה בהתחלה?" — מחזירים את מה שנלקח.
+The question is: "How many were there at the start?" — put back what was taken.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-8 − __ = 3 — כמה לקחו?
-5 נלקחו, 3 נשארו.
-על ציר המספרים:
-מקום ריק: 8 − 5 = 3
-● ● ● ● ● ● ● ● ← 8 היו
-● ● ● ✕ ✕ ✕ ✕ ✕ ← 3 נשארו, 5 נלקחו
+8 − __ = 3 — how many were taken?
+5 were taken, 3 are left.
+On the number line:
+Blank: 8 − 5 = 3
+● ● ● ● ● ● ● ● ← 8 were there
+● ● ● ✕ ✕ ✕ ✕ ✕ ← 3 left, 5 taken
 0 — 1 — 2 — [3] — 4 — 5 — 6 — 7 — [8]
-5 צעדים_______↑
+5 steps_______↑
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-__ − 2 = 6 — מה המספר החסר?
-נשארו 6 אחרי שלקחו 2.
-6 נשארו, ו-2 נלקחו. אם מחזירים את ה-2, מקבלים 8.
+__ − 2 = 6 — what is the missing number?
+6 are left after 2 were taken.
+6 left, and 2 taken. If you put the 2 back, you get 8.
 8 − 2 = 6
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-10 − __ = 7 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+10 − __ = 7 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-10 − __ = 7 — מה המספר החסר?
-היה לנו 10, ונשארו 7.
-על ציר המספרים — כמה צעדים מ-10 ל-7? 3 צעדים: 9, 8, 7.
-המספר החסר הוא 3 — כי 10 − 3 = 7.
+10 − __ = 7 — what is the missing number?
+We had 10, and 7 are left.
+On the number line — how many steps from 10 to 7? 3 steps: 9, 8, 7.
+The missing number is 3 — because 10 − 3 = 7.
 10 − 3 = 7
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא מספר חסר במשפט חיסור.
-בתרגול תמצאו מקום ריק (__).
-בדקו מה חסר:
-כמה לקחו, או כמה היה בהתחלה.
+Now you know how to find a missing number in a subtraction sentence.
+In practice you'll find blanks (__).
+Check what's missing:
+how many were taken, or how many there were at the start.

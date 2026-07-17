@@ -1,4 +1,4 @@
-# פרויקט מדעי
+# Science Project
 
 ## Metadata
 
@@ -11,92 +11,92 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | draft |
-| **title_hebrew** | פרויקט מדעי `[DRAFT — not owner-approved]` |
+| **title_english** | Science Project `[DRAFT — not owner-approved]` |
 
-**Content scope:** שאלת מחקר; השוואה; משתנים; גרף; הצגה — בטוח
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים לתכנן פרויקט מדעי שלם — משאלת מחקר ועד הצגה לכיתה.
+**Content scope:** Research question; comparison; variables; graph; presentation — safe
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-פרויקט מדעי כולל:
-שאלת מחקר — ברורה וניתנת למדידה
-השערה — מה נראה שיקרה?
-השוואה — שני מצבים או יותר, למשל עם אור ובלי אור
-משתנה — מה משנים; קבוע — מה נשאר זהה
-יומן וגרף — נתונים לאורך זמן
-מסקנה — מה למדנו מהנתונים?
-הצגה — הסבר קצר לכיתה:
-שאלה, שיטה, תוצאות, מסקנה
-ניסוי בטוח בלבד — עם מורה, בלי חומרים מסוכנים, בלי מכשירי חשמל.
+Today in science we will learn to plan a complete science project — from research question to class presentation.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-האם זרעים בחושך נובטים לאט יותר?
-השערה:
-בחושך — נביטה איטית.
-השוואה:
-עציץ באור מלא מול עציץ בחדר חשוך.
-משתנה:
-כמות אור.
-קבוע:
-זרעים, מים, סוג עציץ.
-גרף:
-אחוז נביטה לפי יום.
-הצגה:
-תמונה של הגרף עם הסבר בעל פה.
+A science project includes:
+Research question — clear and measurable
+Hypothesis — what seems likely to happen?
+Comparison — two or more situations, for example with light and without light
+Variable — what we change; constant — what stays the same
+Journal and graph — data over time
+Conclusion — what did we learn from the data?
+Presentation — short explanation to the class:
+Question, method, results, conclusion
+Safe experiments only — with a teacher, no dangerous materials, no electrical devices.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה ההבדל בין השוואה לבין משתנה?
-משתנה — מה משנים (אור).
-השוואה — שני המצבים זה לצד זה.
-משתנה — מה שונה; השוואה — בין המצבים
-
----
-
-## 5. נסו בעצמכם
-
-תכננו פרויקט בטוח:
-איזה חומר מבודד חום טוב יותר — בד או נייר?
-מה תציגו בכיתה?
-(גרף, תמונות, מסקנה)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Do seeds in darkness sprout more slowly?
+Hypothesis:
+In darkness — slower sprouting.
+Comparison:
+Pot in full light versus pot in a dark room.
+Variable:
+Amount of light.
+Constant:
+Seeds, water, pot type.
+Graph:
+Sprouting percentage by day.
+Presentation:
+Picture of the graph with an oral explanation.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-השאלה: תכננו פרויקט — איזה חומר מבודד חום טוב יותר: בד או נייר? מה מציגים בכיתה?
-הסבר מדעי:
-מבודד חום הוא חומר שמאט את מעבר החום.
-בד מורכב מסיבים וביניהם אוויר; האוויר הכלוא יכול להאט מעבר חום.
-נייר דק לרוב לוכד פחות אוויר, ולכן הוא יכול להיות פחות יעיל כמבודד.
-שיטה:
-שתי כוסות עם מים חמימים בלבד, בהשגחת מורה — עטיפה אחת בבד, אחת בנייר.
-מדידת טמפרטורה כל שתי דקות, בלי לגעת במים חמים בידיים.
-גרף:
-ציר אופקי — זמן; ציר אנכי — טמפרטורה.
-שני קווים:
-קו אחד לכוס עטופה בבד, וקו אחד לכוס עטופה בנייר.
-הצגה בכיתה:
-שאלת המחקר, הגרף והמסקנה.
-בד יכול לבודד חום טוב יותר אם הוא לוכד יותר אוויר. בהצגה מציגים את שאלת המחקר, הגרף והמסקנה.
+What is the difference between comparison and variable?
+Variable — what we change (light).
+Comparison — the two situations side by side.
+Variable — what differs; comparison — between the situations
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם יודעים לתכנן פרויקט מדעי עם הצגה במדעים.
-בתרגול חפשו שאלות על משתנים, גרפים והצגת תוצאות.
+Plan a safe project:
+Which material insulates heat better — cloth or paper?
+What will you present in class?
+(graph, pictures, conclusion)
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: plan a project — which material insulates heat better: cloth or paper? What do you present in class?
+Scientific explanation:
+A heat insulator is a material that slows the passage of heat.
+Cloth is made of fibers with air between them; trapped air can slow heat transfer.
+Paper is usually thin and traps less air, so it may be a less effective insulator.
+Method:
+Two cups with warm water only, with teacher supervision — one wrapped in cloth, one in paper.
+Measure temperature every two minutes, without touching hot water with your hands.
+Graph:
+Horizontal axis — time; vertical axis — temperature.
+Two lines:
+One for the cloth-wrapped cup, one for the paper-wrapped cup.
+Class presentation:
+Research question, graph, and conclusion.
+Cloth may insulate heat better if it traps more air. In the presentation show the research question, graph, and conclusion.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to plan a science project with presentation in science.
+When you practice, look for questions about variables, graphs, and presenting results.

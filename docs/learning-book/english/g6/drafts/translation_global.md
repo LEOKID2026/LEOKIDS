@@ -1,4 +1,4 @@
-# עולם — תרגום עם תנאי
+# World — Translation with a Conditional
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | עולם — תרגום עם תנאי |
+| **title_english** | World — Translation with a Conditional |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** If we protect the oceans… — משפטים ארוכים
+**Content scope:** If we protect the oceans… — longer sentences
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום על העולם — תנאי type 1 ומשפטים ארוכים.
-If we protect the oceans, future generations will benefit — אם נגן על האוקיינוסים, דורות עתידיים ירוויחו.
-
----
-
-## 2. הסבר
-
-If + Present, will — תוצאה בעתיד:
-
+Today we will practice translation about the world — Type 1 conditionals and longer sentences.
 If we protect the oceans, future generations will benefit.
 
-אם נגן על האוקיינוסים, דורות עתידיים ירוויחו.
+---
+
+## 2. Simple explanation
+
+If + Present, will — a future result:
+
+If we protect the oceans, future generations will benefit.
 
 If people work together, the world will improve.
 
-אם אנשים יעבדו יחד, העולם ישתפר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ניקוי חוף — שומרים על הים.
+Cleaning a beach — protecting the sea.
 
 If we protect the oceans, future generations will benefit.
 
-אם נגן על האוקיינוסים, דורות עתידיים ירוויחו.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אם נגן על האוקיינוסים, דורות עתידיים ירוויחו"?
+Question: How do you say this?
 
 If we protect the oceans, future generations will benefit
 
-תשובה: If we protect the oceans, future generations will benefit
+Answer: If we protect the oceans, future generations will benefit
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פרויקט על שמירת היערות.
+A project about protecting forests.
 
 If we protect the forests, animals will survive.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אם נגן על היערות, בעלי החיים יינצלו."
+Exercise: "If we protect the forests, animals will survive."
 
-Type 1: If + Present Simple, will + פועל.
+Type 1: If + Present Simple, will + verb.
 
-protect = נגן (Present); will survive = יינצלו (עתיד).
+"Protect" is Present; "will survive" is the future result.
 
-אם נגן על היערות, בעלי החיים יינצלו.
-
- If we protect the forests, animals will survive.
+So the full sentence is: If we protect the forests, animals will survive.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום עם תנאי ומשפטים ארוכים.
-בתרגול תמצאו If we protect the oceans, future generations will benefit.
+Now you will practice conditionals and longer sentences.
+In the practice, you'll find: If we protect the oceans, future generations will benefit.

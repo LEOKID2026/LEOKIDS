@@ -1,4 +1,4 @@
-# Present Simple — חיזוק
+# Present Simple — Review
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | Present Simple — חיזוק |
+| **title_english** | Present Simple — Review |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** habit, fact — He walks every day; לא Continuous
+**Content scope:** habit, fact — He walks every day; not Continuous
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק Present Simple — הרגל ועובדות.
-He walks to school — הוא הולך לבית ספר (כל יום).
+Today we will review Present Simple — habits and facts.
+He walks to school — something he does every day.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Present Simple — הרגל:
+Present Simple — a habit:
 
 He walks to school.
-
-הוא הולך לבית ספר.
 
 She reads every day.
 
-היא קוראת כל יום.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד הולך לבית ספר.
+A child walking to school.
 
 He walks to school.
 
-הוא הולך לבית ספר.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הוא הולך לבית ספר"?
+Question: How do you say this?
 
 He walks to school
 
-תשובה: He walks to school
+Answer: He walks to school
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שבת — משחקים בחוץ.
+Saturday — playing outside.
 
 They play football every Saturday.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם משחקים כדורגל בכל שבת."
+Exercise: "They play football every Saturday."
 
-הפועל: play — אחרי they (ריבוי) לא מוסיפים s.
+The verb is "play" — after "they" (plural) we do not add s.
 
-every Saturday פירושו כל שבת — זה הרגל, ולכן משתמשים ב-Present Simple.
+"Every Saturday" means this is a habit, so we use Present Simple.
 
-הם משחקים כדורגל בכל שבת.
-
- They play football every Saturday.
+So the full sentence is: They play football every Saturday.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מחזקים Present Simple — הרגל, לא עכשיו.
-בתרגול תמצאו He walks to school.
+Now you will review Present Simple — a habit, not something happening right now.
+In the practice, you'll find: He walks to school.

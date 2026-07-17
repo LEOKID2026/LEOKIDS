@@ -1,4 +1,4 @@
-﻿# היקף משולש — כיתה ד׳
+# Perimeter of a Triangle — Grade 4
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף משולש — כיתה ד׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Triangle — Grade 4 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סכום שלוש צלעות; 5, 6, 7, 18
+**Content scope:** Sum of three sides; 5, 6, 7, 18
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק היקף משולש בכאן — עם צלעות 5, 6 ו-7 ס״מ.
-היקף = חיבור שלוש הצלעות — גם כשהן שונות.
+Today we will strengthen the perimeter of a triangle here — with sides 5, 6, and 7 cm.
+Perimeter = adding all three sides — even when they are different.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: triangle_perimeter
 :::
 
-היקף = 5 + 6 + 7 — כל שלוש הצלעות.
-אפשר לחשב בשלבים: קודם 5 + 6, ואז מוסיפים 7.
-יחידה: ס״מ, מ'.
+Perimeter = 5 + 6 + 7 — all three sides.
+You can calculate in steps: first 5 + 6, then add 7.
+Unit: cm, m.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משולש 5, 6, 7 ס״מ:
-5 + 6 + 7 = 18 ס״מ
+Triangle 5, 6, 7 cm:
+5 + 6 + 7 = 18 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-למשולש צלעות 5, 6 ו-7 ס״מ. מה ההיקף?
+A triangle has sides 5, 6, and 7 cm. What is the perimeter?
 5 + 6 = 11
 11 + 7 = 18
-18 ס״מ
+18 cm
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש עם צלעות 4, 7 ו-9 — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A triangle with sides 4, 7, and 9 — what is the perimeter?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש עם צלעות 4, 7 ו-9 — מה ההיקף?
-מחברים את שתי הצלעות הראשונות:
+A triangle with sides 4, 7, and 9 — what is the perimeter?
+Add the first two sides:
 4 + 7 = 11
-מוסיפים את הצלע השלישית:
+Add the third side:
 11 + 9 = 20
-היקף = 20 ס״מ
+Perimeter = 20 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים היקף משולש בכאן — 5, 6, 7!
-בתרגול חברו שלוש צלעות — בדקו שלא חסרה אף אחת!
+Now you know the perimeter of a triangle here — 5, 6, 7!
+In practice add three sides — check that none is missing!

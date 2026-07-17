@@ -1,4 +1,4 @@
-# כפל שברים
+# Multiplying Fractions
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל שברים `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplying Fractions |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מונה × מונה, מכנה × מכנה
+**Content scope:** numerator × numerator, denominator × denominator
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד כפל שברים.
-2/3 × 3/4 — מונה × מונה, מכנה × מכנה.
+Today we will learn to multiply fractions.
+2/3 × 3/4 — numerator × numerator, denominator × denominator.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 2/3 × 3/4:
-מונה: 2×3 = 6
-מכנה: 3×4 = 12
-= 6/12 = 1/2 (צמצום)
+Numerator: 2×3 = 6
+Denominator: 3×4 = 12
+= 6/12 = 1/2 (simplify)
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 1/2 × 1/3 = 1/6
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 2/3 × 3/4 = ?
 2×3=6, 3×4=12 → 6/12
-צמצום → 1/2.
+Simplify → 1/2.
 1/2.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 3/4 × 2/5 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-חשבו: 3/4 × 2/5
-מונה × מונה: 3 × 2 = 6.
-מכנה × מכנה: 4 × 5 = 20.
-6/20 → צמצום ב-2: 3/10.
-התשובה: 3/10
+Calculate: 3/4 × 2/5 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-כפל שברים = חלק מחלק.
-בתרגול תמצאו כפל שברים — צמצמו בסוף!
+Calculate: 3/4 × 2/5
+Numerator × numerator: 3 × 2 = 6.
+Denominator × denominator: 4 × 5 = 20.
+6/20 → simplify by 2: 3/10.
+The answer: 3/10
+
+---
+
+## 7. Let's practice!
+
+Multiplying fractions = part of a part.
+In practice you will multiply fractions — simplify at the end!

@@ -1,4 +1,4 @@
-# חילוק — חלוקה שווה
+# Division — Fair Sharing
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
+| **title_english** | Division — Fair Sharing |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חילוק כחלוקה שווה. קשר לכפל. מספרים קטנים (עד ~20). ללא שארית, ללא חילוק ארוך, ללא אלגוריתם פורמלי.
+**Content scope:** Division as fair sharing. Connection to multiplication. Small numbers (up to ~20). No remainder, no long division, no formal algorithm.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק — חלוקה שווה לכולם.
-כשמחלקים בצורה הוגנת, כל אחד מקבל אותה כמות.
-
----
-
-## 2. הסבר
-
-חילוק = לחלק את כל הכמות לקבוצות שוות (או לתת לכל אחד אותו חלק).
-12 ÷ 3 = 4 אומר:
-- יש 12 חפצים
-- מחלקים ל-3 קבוצות שוות
-- בכל קבוצה יש 4
-קשר לכפל: 3 × 4 = 12, אז 12 ÷ 3 = 4.
-חשוב: כאן לא מתרגלים שארית ולא חילוק ארוך — רק חלוקה שווה פשוטה.
+Today we're going to learn division — sharing equally among everyone.
+When you divide fairly, each person gets the same amount.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-15 מדבקות — מחלקים ל-3 ילדים:
-15 ÷ 3 = 5 — לכל ילד 5 מדבקות.
-בדיקה בכפל: 3 × 5 = 15
-ילד א: ★★★★★ ילד ב: ★★★★★ ילד ג: ★★★★★
+Division = split the whole amount into equal groups (or give each person the same share).
+12 ÷ 3 = 4 means:
+- There are 12 objects
+- Split into 3 equal groups
+- Each group has 4
+Connection to multiplication: 3 × 4 = 12, so 12 ÷ 3 = 4.
+Important: here we don't practice remainders or long division — only simple fair sharing.
+
+---
+
+## 3. Visual / concrete example
+
+15 stickers — shared among 3 children:
+15 ÷ 3 = 5 — each child gets 5 stickers.
+Check with multiplication: 3 × 5 = 15
+Child A: ★★★★★  Child B: ★★★★★  Child C: ★★★★★
 5 5 5
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 12 ÷ 3 = ?
-יש 12 חפצים, מחלקים ל-3 קבוצות שוות.
-מחלקים: 4 + 4 + 4 = 12 — 3 קבוצות של 4.
-בדיקה: 3 × 4 = 12
+Calculate: 12 ÷ 3 = ?
+There are 12 objects, split into 3 equal groups.
+Split: 4 + 4 + 4 = 12 — 3 groups of 4.
+Check: 3 × 4 = 12
 12 ÷ 3 = 4
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 20 ÷ 5 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 20 ÷ 5 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 20 ÷ 5 = ?
-יש 20 חפצים, מחלקים ל-5 קבוצות שוות.
-5 + 5 + 5 + 5 = 20 — 4 קבוצות של 5.
-שלב 3 — בדיקה בכפל: 5 × 4 = 20
+Calculate: 20 ÷ 5 = ?
+There are 20 objects, split into 5 equal groups.
+5 + 5 + 5 + 5 = 20 — 4 groups of 5.
+Step 3 — check with multiplication: 5 × 4 = 20
 20 ÷ 5 = 4
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שחילוק = חלוקה שווה, וקשור לכפל.
-בתרגול תמצאו חילוק פשוט.
-חפשו כמה בכל קבוצה, או כמה קבוצות!
+Now you know that division = fair sharing, and it's connected to multiplication.
+In practice you'll find simple division.
+Find how many in each group, or how many groups!

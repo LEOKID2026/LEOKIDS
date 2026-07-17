@@ -1,4 +1,4 @@
-# השוואת מספרים
+# Comparing Numbers
 
 ## Metadata
 
@@ -11,84 +11,84 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | השוואת מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Comparing Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** השוואת שני מספרים בלבד, עד 30. ללא שברים, עשרוניים, או מספרים שליליים.
+**Content scope:** Comparing two numbers only, up to 30. No fractions, decimals, or negative numbers.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד להשוות בין שני מספרים.
-נגיד מי גדול יותר, מי קטן יותר, או אם הם שווים.
-
----
-
-## 2. הסבר פשוט
-
-כשמשווים מספרים — מסתכלים על ציר המספרים.
-ימינה = גדול יותר.
-שמאלה = קטן יותר.
-יש שלושה סימני השוואה:
-- < — סימן קטן מ
-- > — סימן גדול מ
-- = — סימן שווה
-בדוגמאות נראה איך כותבים אותם נכון.
-טיפ: דמיינו תנין רעב — הפתח של הסימן פונה תמיד אל המספר הגדול יותר!
+Today we're going to learn to compare two numbers.
+We'll say which is bigger, which is smaller, or if they are equal.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ציר מספרים — 12 ו-18:
-כתיבה:
-- 12 < 18 — "12 קטן מ-18"
-- 18 > 12 — "18 גדול מ-12"
-כשהם שווים:
-- 15 = 15 — "15 שווה ל-15"
+When we compare numbers — we look at the number line.
+Right = bigger.
+Left = smaller.
+There are three comparison symbols:
+- < — less than
+- > — greater than
+- = — equal to
+In the examples we'll see how to write them correctly.
+Tip: Imagine a hungry alligator — the open side of the symbol always points to the bigger number!
+
+---
+
+## 3. Visual / concrete example
+
+Number line — 12 and 18:
+Writing:
+- 12 < 18 — "12 is less than 18"
+- 18 > 12 — "18 is greater than 12"
+When they are equal:
+- 15 = 15 — "15 equals 15"
 0 — … — 10 — 11 — 12 — 13 — 14 — 15 — 16 — 17 — 18 — 19 — 20
 ↑ ↑
 12 18
-(שמאלה) (ימינה = גדול יותר)
+(left) (right = bigger)
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-השוו בין 22 ל-17. איזה סימן נכון? 22 __ 17
-22 נמצא ימינה מ-17 על ציר המספרים.
-22 גדול מ-17.
-הפה של התנין פונה ל-22 (הגדול): 22 > 17
+Compare 22 and 17. Which symbol is correct? 22 __ 17
+22 is to the right of 17 on the number line.
+22 is greater than 17.
+The alligator's mouth points to 22 (the bigger one): 22 > 17
 22 > 17
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-השוו: 14 __ 9
-איזה סימן נכון — <, >, או =?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Compare: 14 __ 9
+Which symbol is correct — <, >, or =?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-השוו: 14 __ 9
-14 נמצא ימינה מ-9 על ציר המספרים.
-14 גדול מ-9.
-הפה של התנין פונה אל 14 (הגדול): 14 > 9.
+Compare: 14 __ 9
+14 is to the right of 9 on the number line.
+14 is greater than 9.
+The alligator's mouth points to 14 (the bigger one): 14 > 9.
 14 > 9
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להשוות מספרים עם <, >, =.
-בתרגול תמצאו שאלות מי גדול יותר?
-השתמשו בציר המספרים או בתנין!
+Now you know how to compare numbers with <, >, =.
+In practice you'll find questions: which is bigger?
+Use the number line or the alligator!

@@ -1,4 +1,4 @@
-# משפטים מורכבים — While… was…
+# Complex Sentences — While… was…
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | משפטים מורכבים — While… was… |
+| **title_english** | Complex Sentences — While… was… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** 8–10 מילים; While I was studying…
+**Content scope:** 8–10 words; While I was studying…
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבנה משפטים מורכבים של 8–10 מילים עם While ו Past Continuous.
-While I was studying, my sister was listening to music — בזמן שלמדתי, אחותי האזינה למוזיקה.
-
----
-
-## 2. הסבר
-
-While + Past Continuous (שתי פעולות במקביל):
-
+Today we will build complex sentences of 8 to 10 words with While and Past Continuous.
 While I was studying, my sister was listening to music.
 
-בזמן שלמדתי, אחותי האזינה למוזיקה.
+---
+
+## 2. Simple explanation
+
+While + Past Continuous (two actions happening at the same time):
+
+While I was studying, my sister was listening to music.
 
 While they were playing outside, it started to rain.
 
-בזמן שהם שיחקו בחוץ, התחיל לרדת גשם.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ערב בבית — לימודים ומוזיקה.
+An evening at home — studying and music.
 
 While I was studying, my sister was listening to music.
 
-בזמן שלמדתי, אחותי האזינה למוזיקה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "בזמן שלמדתי, אחותי האזינה למוזיקה"?
+Question: How do you say this?
 
 While I was studying, my sister was listening to music
 
-תשובה: While I was studying, my sister was listening to music
+Answer: While I was studying, my sister was listening to music
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ערב בבית — כל אחד עסוק בדבר שלו.
+An evening at home — everyone busy with their own thing.
 
 While my mother was cooking, my father was reading a book.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "בזמן שאמא בישלה, אבא קרא ספר."
+Exercise: "While my mother was cooking, my father was reading a book."
 
-שתי פעולות שהתרחשו במקביל — משתמשים ב-Past Continuous לשתיהן.
+Two actions happening at the same time — we use Past Continuous for both.
 
-was cooking + was reading = שתי פעולות במקביל.
+"Was cooking" and "was reading" show two things happening together.
 
-בזמן שאמא בישלה, אבא קרא ספר.
-
- While my mother was cooking, my father was reading a book.
+So the full sentence is: While my mother was cooking, my father was reading a book.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים ארוכים עם While.
-בתרגול תמצאו While I was studying, my sister was listening to music.
+Now you will build longer sentences with While.
+In the practice, you'll find: While I was studying, my sister was listening to music.

@@ -1,4 +1,4 @@
-# קהילה — park, town, library
+# Community — park, town, library
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | קהילה — park, town, library |
+| **title_english** | Community — park, town, library |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מקומות בקהילה.
+Today we will learn about places in our community.
 park, town, library — The park is in our town.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-park — פארק
-town — עיירה
-library — ספרייה
-
-The park is in our town.
-
-הפארק בעיירה שלנו.
-
----
-
-## 3. דוגמה
-
-פארק בעיירה.
+park — a place with grass and trees to play in
+town — a small city
+library — a place with many books
 
 The park is in our town.
 
-הפארק בעיירה שלנו.
+---
+
+## 3. Example
+
+A park in a town.
+
+The park is in our town.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הפארק בעיירה שלנו"?
+Question: How do you say this?
 
 The park is in our town
 
-תשובה: The park is in our town
+Answer: The park is in our town
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בניין בית הספר בעיירה.
+The school building in town.
 
 The school is in our town.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "בית הספר בעיירה שלנו."
+Exercise: "The school is in our town."
 
-in פירושו בתוך או ב־. כשמדברים על מיקום בתוך מקום כמו town משתמשים ב-in.
+"In" means inside a place. When we talk about being inside a place like a town, we use "in."
 
-The school is in our town.
-
-בית הספר בעיירה שלנו.
-
- The school is in our town.
+So the full sentence is: The school is in our town.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים מקומות בקהילה.
-בתרגול תמצאו The park is in our town.
+Now you will describe places in the community.
+In the practice, you'll find: The park is in our town.

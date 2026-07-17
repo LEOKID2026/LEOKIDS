@@ -1,4 +1,4 @@
-﻿# גובה במקבילית
+# Height of a Parallelogram
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גובה במקבילית `[DRAFT — not owner-approved]` |
+| **title_english** | Height of a Parallelogram |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** גובה = שטח ÷ בסיס
+**Content scope:** height = area ÷ base
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד גובה במקבילית משטח ובסיס.
-שטח = בסיס × גובה → גובה = שטח ÷ בסיס
+Today we'll learn the height of a parallelogram from area and base.
+Area = base × height → height = area ÷ base
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallelogram_height
 :::
 
-במקבילית אין חלוקה ב-2 בשטח.
-גובה = שטח ÷ בסיס
+In a parallelogram there is no division by 2 in the area formula.
+Height = area ÷ base
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס 8 ס״מ, שטח 40 סמ״ר:
-40 ÷ 8 = 5 ס״מ
+Base 8 cm, area 40 cm²:
+40 ÷ 8 = 5 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מקבילית — בסיס 8 ס״מ, שטח 40 סמ״ר. גובה?
+Parallelogram — base 8 cm, area 40 cm². Height?
 40 ÷ 8 = 5
-5 ס״מ.
+5 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מקבילית: בסיס 6 ס״מ, שטח 54 סמ״ר — מה הגובה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Parallelogram: base 6 cm, area 54 cm² — what is the height?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-מקבילית: בסיס 6 ס״מ, שטח 54 סמ״ר — מה הגובה?
-חלוקת השטח בבסיס:
+Parallelogram: base 6 cm, area 54 cm² — what is the height?
+Divide the area by the base:
 54 ÷ 6 = 9
-גובה = 9 ס״מ
+Height = 9 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-גובה במקבילית = שטח ÷ בסיס.
-בתרגול תמצאו גבהים — אל תערבבו עם נוסחת המשולש!
+Height of a parallelogram = area ÷ base.
+In practice you'll find heights — don't mix up with the triangle formula!

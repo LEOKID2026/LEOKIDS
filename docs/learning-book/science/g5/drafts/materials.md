@@ -1,4 +1,4 @@
-# חומרים — תערובות ואור
+# Materials — Mixtures and Light
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | חומרים — תערובות ואור `[DRAFT — not owner-approved]` |
+| **title_english** | Materials — Mixtures and Light `[DRAFT — not owner-approved]` |
 
-**Content scope:** תערובות/תמיסות; צל, החזר, שקיפות — דורש איור: מסלול אור
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על תערובות — ועל איך אור יוצר צל, החזר ושקיפות.
+**Content scope:** Mixtures/solutions; shadow, reflection, transparency — requires illustration: path of light
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-תערובת — שני חומרים או יותר יחד, בלי תגובה חדשה.
-מים ומלח יוצרים מי מלח (תמיסה) — עדיין אפשר להפריד ביניהם בדרך מתאימה, למשל אידוי מים בהשגחת מורה.
-אור:
-- צל — כשחומר חוסם אור
-- החזר — אור קופץ ממשטח (מראה, מים)
-- שקיפות — אור עובר (זכוכית); אטימות — אור לא עובר (קיר)
-דמיינו פנס על קיר — צל; על מראה — החזר.
+Today in science we will learn about mixtures — and how light creates shadow, reflection, and transparency.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-כוס מים עם מלח — תערובת.
-חלון שמש — אור עובר (שקוף).
-קרטון על השולחן — צל מתחתיו.
-שלוש תופעות אור שונות — באותו יום.
-
----
-
-## 4. בואו נפתור
-
-מה קורה לאור שפוגע במראה?
-מראה חלקה.
-האור חוזר אלינו — רואים את עצמנו.
-החזר
+A mixture — two or more materials together, without a new reaction.
+Water and salt make salt water (a solution) — you can still separate them in a suitable way, for example evaporating water with teacher supervision.
+Light:
+- Shadow — when a material blocks light
+- Reflection — light bounces off a surface (mirror, water)
+- Transparency — light passes through (glass); opacity — light does not pass (wall)
+Imagine a flashlight on a wall — shadow; on a mirror — reflection.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-החזיקו מראה מולכם בשמש.
-לאיזה כיוון האור חוזר?
-מה ההבדל בין מראה לזכוכית שקופה — באיזה האור עובר ובאיזה הוא חוזר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: מה ההבדל בין מראה לזכוכית שקופה — באיזה האור עובר ובאיזה הוא חוזר?
-הסבר מדעי:
-אור נע בקו ישר.
-כשהוא פוגע במשטח — הוא יכול להתנהג בשלוש דרכים:
-לעבור, לחזור, או להיבלע.
-מראה — משטח חלק ומבריק; האור חוזר ממנה בזווית שווה לזווית הפגיעה.
-זהו החזר.
-זכוכית שקופה — מאפשרת לאור לעבור דרכה כמעט ללא הפרעה.
-זו שקיפות.
-לכן:
-מראה — מחזירה אור (רואים את עצמנו); זכוכית — מעבירה אור (רואים מה מאחור).
-מראה — מחזירה אור (החזר). זכוכית שקופה — מעבירה אור (שקיפות).
+A cup of water with salt — a mixture.
+A sun window — light passes through (transparent).
+Cardboard on the table — shadow underneath.
+Three different light effects — on the same day.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים תערובות ותופעות אור במדעים.
-בתרגול חפשו שאלות על צל והחזר.
+What happens to light that hits a mirror?
+A mirror is smooth.
+The light comes back to us — we see ourselves.
+Reflection
+
+---
+
+## 5. Try it yourself
+
+Hold a mirror in front of you in the sun.
+Which direction does the light return?
+What is the difference between a mirror and clear glass — in which does light pass and in which does it return?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: what is the difference between a mirror and clear glass — in which does light pass and in which does it return?
+Scientific explanation:
+Light travels in a straight line.
+When it hits a surface — it can behave in three ways:
+pass through, bounce back, or be absorbed.
+A mirror — smooth shiny surface; light bounces off at an equal angle to the angle it hit.
+That is reflection.
+Clear glass — allows light to pass through with almost no disturbance.
+That is transparency.
+So:
+Mirror — returns light (we see ourselves); glass — passes light (we see what is behind).
+Mirror — returns light (reflection). Clear glass — passes light (transparency).
+
+---
+
+## 7. Let's practice!
+
+Now you know about mixtures and light effects in science.
+When you practice, look for questions about shadow and reflection.

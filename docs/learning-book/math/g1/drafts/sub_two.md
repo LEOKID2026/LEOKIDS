@@ -1,4 +1,4 @@
-# חיסור של שני מספרים
+# Subtracting Two Numbers
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור של שני מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Two Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור שני מספרים, הפרש עד 30. לא מתחת ל-0. ללא חיסור במאונך, ללא "שאילה".
+**Content scope:** Subtracting two numbers, difference up to 30. Not below 0. No vertical subtraction, no borrowing.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר שני מספרים.
-חיסור זה כשלוקחים חלק מקבוצה — או קופצים אחורה על ציר המספרים.
-
----
-
-## 2. הסבר פשוט
-
-כשמחסרים — מורידים כמות.
-− אומר "פחות", "הורידו" או "לקחו".
-= אומר "נשאר".
-לדוגמה: 8 − 3 = 5
-היו שמונה, לקחו שלושה — נשארו חמישה.
+Today we're going to learn to subtract two numbers.
+Subtraction is when you take part of a group — or hop backward on the number line.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-היו 8 מדבקות.
-לקחו 3 מדבקות.
-נחשב כמה נשאר:
+When you subtract — you take away an amount.
+− means "less", "take away", or "remove".
+= means "what's left".
+For example: 8 − 3 = 5
+There were eight, three were taken — five are left.
+
+---
+
+## 3. Visual / concrete example
+
+There were 8 stickers.
+3 stickers were taken.
+Let's find how many are left:
 8 − 3 = 5
-לכן נשארו 5 מדבקות.
-אפשר לבדוק:
+So 5 stickers are left.
+You can check:
 5 + 3 = 8
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
 9 − 4 = ?
-שימו 9 חפצים (למשל כוכבים).
-סמנו 4 חפצים כחפצים שנלקחו.
-ספרו מה נשאר → 5
+Put out 9 objects (like stars).
+Mark 4 objects as ones that were taken.
+Count what's left → 5
 9 − 4 = 5
-(אפשר גם: על ציר המספרים — התחילו מ-9, קפצו 4 צעדים שמאלה → 5)
+(You can also: on the number line — start at 9, hop 4 steps to the left → 5)
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
 10 − 3 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
 10 − 3 = ?
-מתחילים מ-10.
-קופצים 3 צעדים שמאלה: 9, 8, 7.
-לאחר 3 צעדים מגיעים ל-7.
+Start at 10.
+Hop 3 steps to the left: 9, 8, 7.
+After 3 steps you land on 7.
 10 − 3 = 7
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר שני מספרים.
-בתרגול תמצאו חיסורים.
-סמנו חפצים שנלקחו או קפצו שמאלה על ציר המספרים!
+Now you know how to subtract two numbers.
+In practice you'll find subtraction problems.
+Mark what was taken or hop to the left on the number line!

@@ -1,4 +1,4 @@
-# חיסור שני מספרים — עד 10,000
+# Subtracting Two Numbers — Up to 10,000
 
 ## Metadata
 
@@ -11,82 +11,82 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור שני מספרים — עד 10,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Two Numbers — Up to 10,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור עד 10,000. השאלה (borrow) באלפים, מאות, עשרות ואחדות. ללא שליליים בתוצאה.
+**Content scope:** Subtraction up to 10,000. Borrowing in thousands, hundreds, tens, and ones. No negative answers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר שני מספרים עד 10,000.
-כשאין מספיק באחדות, עשרות, מאות או אלפים — שואלים מהמקום שמשמאל (השאלה).
+Today we'll learn to subtract two numbers up to 10,000.
+When there aren't enough in the ones, tens, hundreds, or thousands — borrow from the place to the left.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 3,002 − 1,487:
-אחדות: 2 < 7 — שואלים מ-0 בעשרות → 0 בעשרות, שואלים מ-3 במאות → נשאר 2 במאות, 10 בעשרות, 12 באחדות.
-אחדות: 12 − 7 = 5
-עשרות: 9 − 8 = 1
-מאות: 2 − 4 — שואלים מאלפים → 12 במאות, 2 באלפים
-מאות: 12 − 4 = 8
-אלפים: 2 − 1 = 1
+Ones: 2 < 7 — borrow from 0 tens → 0 tens, borrow from 3 hundreds → 2 hundreds left, 10 tens, 12 ones.
+Ones: 12 − 7 = 5
+Tens: 9 − 8 = 1
+Hundreds: 2 − 4 — borrow from thousands → 12 hundreds, 2 thousands
+Hundreds: 12 − 4 = 8
+Thousands: 2 − 1 = 1
 3,002 − 1,487 = 1,515
-בדיקה: 1,515 + 1,487 = 3,002
+Check: 1,515 + 1,487 = 3,002
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 4,620 − 2,385:
-אחדות: 0 < 5 → שואלים → 10 − 5 = 5
-עשרות: אחרי ההשאלה נשארה עשרת אחת, והיא לא מספיקה. שואלים מהמאות → 11 − 8 = 3
-מאות: אחרי ההשאלה נשארו 5 מאות → 5 − 3 = 2
-אלפים: 4 − 2 = 2
+Ones: 0 < 5 → borrow → 10 − 5 = 5
+Tens: after borrowing one ten remains, and it's not enough. Borrow from hundreds → 11 − 8 = 3
+Hundreds: after borrowing, 5 hundreds remain → 5 − 3 = 2
+Thousands: 4 − 2 = 2
 4,620 − 2,385 = 2,235
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 5,412 − 2,178 = ?
-אחדות: 12 − 8 = 4 (שואלים מ-1 בעשרות).
-עשרות: 0 − 7 — שואלים → 10 − 7 = 3 (מאות נהיות 4).
-מאות: 4 − 1 = 3
-אלפים: 5 − 2 = 3
+Work out: 5,412 − 2,178 = ?
+Ones: 12 − 8 = 4 (borrow from 1 ten).
+Tens: 0 − 7 — borrow → 10 − 7 = 3 (hundreds become 4).
+Hundreds: 4 − 1 = 3
+Thousands: 5 − 2 = 3
 5,412 − 2,178 = 3,234
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 2,503 − 876 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 2,503 − 876 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 2,503 − 876 = ?
-אחדות: 3 < 6 — שואלים מ-0 בעשרות. 0 בעשרות — שואלים מ-5 במאות. נשאר 4 במאות, 10 בעשרות, 13 באחדות.
-אחדות: 13 − 6 = 7
-עשרות: 9 − 7 = 2
-מאות: 4 − 8 — שואלים מאלפים. 14 − 8 = 6, נשאר 1 באלפים.
-אלפים: 1 − 0 = 1
+Work out: 2,503 − 876 = ?
+Ones: 3 < 6 — borrow from 0 tens. 0 tens — borrow from 5 hundreds. 4 hundreds left, 10 tens, 13 ones.
+Ones: 13 − 6 = 7
+Tens: 9 − 7 = 2
+Hundreds: 4 − 8 — borrow from thousands. 14 − 8 = 6, 1 thousand left.
+Thousands: 1 − 0 = 1
 1,627
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר עד 10,000 עם השאלה.
-בתרגול תמצאו חיסורים.
-כשאין מספיק — שואלים!
+Now you know how to subtract up to 10,000 with borrowing.
+In practice you'll find subtractions.
+When there aren't enough — borrow!

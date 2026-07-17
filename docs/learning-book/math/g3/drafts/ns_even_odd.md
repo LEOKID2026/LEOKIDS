@@ -1,4 +1,4 @@
-# זוגי ואי-זוגי — חלוקה לשתי קבוצות
+# Even and Odd — Larger Numbers
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגי ואי-זוגי — מספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Even and Odd — Larger Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוגי/אי-זוגי לפי **ספרת האחדות**. מספרים עד 1,000. ללא חוקי התחלקות.
+**Content scope:** Even/odd by the **ones digit**. Numbers up to 1,000. No divisibility rules.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נזהה מספרים זוגיים ואי זוגיים — גם כשהמספר גדול (עד 1,000).
-שואלים: אפשר לחלק ל-2 קבוצות שוות בלי שארית?
-
----
-
-## 2. הסבר
-
-מספר זוגי — אפשר לחלק ל-2 קבוצות שוות (בלי שארית).
-לדוגמה: 248 = 124 + 124 → זוגי.
-מספר אי זוגי — בחלוקה ל-2 נשאר 1 בחוץ.
-לדוגמה: 351 = 175 + 175 + 1 → אי זוגי.
-קיצור מהיר: מסתכלים רק על ספרת האחדות (הספרה הימנית ביותר):
-- 0, 2, 4, 6, 8 → זוגי
-- 1, 3, 5, 7, 9 → אי זוגי
-לא משנה כמה מאות או עשרות יש — רק האחדות קובעת.
+Today we will spot even and odd numbers — even when the number is big (up to 1,000).
+Ask: can we split into 2 equal groups with nothing left over?
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-712 — זוגי או אי זוגי?
-דרך 1 (חלוקה): 712 ÷ 2 = 356 — בלי שארית → זוגי.
-דרך 2 (אחדות): ספרת האחדות 2 → זוגי.
+An even number — you can split it into 2 equal groups (with no remainder).
+For example: 248 = 124 + 124 → even.
+An odd number — when you split into 2, 1 is left over.
+For example: 351 = 175 + 175 + 1 → odd.
+Quick shortcut: look only at the ones digit (the rightmost digit):
+- 0, 2, 4, 6, 8 → even
+- 1, 3, 5, 7, 9 → odd
+It doesn't matter how many hundreds or tens — only the ones digit decides.
+
+---
+
+## 3. Visual / concrete example
+
+712 — even or odd?
+Way 1 (splitting): 712 ÷ 2 = 356 — no remainder → even.
+Way 2 (ones digit): the ones digit is 2 → even.
 356 + 356 = 712
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-האם 905 זוגי או אי זוגי?
-ספרת האחדות: 5.
-5 הוא אי זוגי (1, 3, 5, 7, 9).
-בחלוקה ל-2 יישאר 1 → 905 אי זוגי.
-905 הוא אי זוגי.
-
----
-
-## 5. נסו בעצמכם
-
-האם 48 זוגי או אי זוגי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Is 905 even or odd?
+Ones digit: 5.
+5 is odd (1, 3, 5, 7, 9).
+When divided by 2, 1 will be left over → 905 is odd.
+905 is odd.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-האם 48 זוגי או אי זוגי?
-ספרת האחדות של 48 היא 8.
-8 שייכת ל-0, 2, 4, 6, 8 — זוגי
-בדיקה: 48 ÷ 2 = 24 — בלי שארית.
-48 הוא זוגי
+Is 48 even or odd?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לזהות זוגי ואי זוגי גם במספרים גדולים.
-בתרגול תמצאו זוגי או אי זוגי?
-בדקו ספרת האחדות!
+Is 48 even or odd?
+The ones digit of 48 is 8.
+8 belongs to 0, 2, 4, 6, 8 — even
+Check: 48 ÷ 2 = 24 — no remainder.
+48 is even
+
+---
+
+## 7. Let's practice!
+
+Now you know how to tell even and odd in big numbers too.
+In practice you'll find even or odd?
+Check the ones digit!

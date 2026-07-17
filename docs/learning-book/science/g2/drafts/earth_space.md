@@ -1,4 +1,4 @@
-# כדור הארץ — עונות ושמיים
+# Earth — Seasons and the Sky
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | כדור הארץ — עונות ושמיים `[DRAFT — not owner-approved]` |
+| **title_english** | Earth — Seasons and the Sky `[DRAFT — not owner-approved]` |
 
-**Content scope:** עונות; שמש כמקור אור וחום — ללא מנגנונים מדעיים מורכבים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על עונות השנה — ועל השמש בשמיים כמקור לאור וחום.
+**Content scope:** Seasons; the sun as a source of light and heat — no complex scientific mechanisms
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-במהלך השנה יש עונות:
-קיץ — חם, יום ארוך, הרבה שמש
-חורף — קריר יותר, לפעמים גשם
-אביב — מתחיל להתחמם, פרחים
-סתיו — מתקרר, עלים נושרים
-השמש — כוכב בשמיים שנותן אור וחום.
-ביום — השמש מאירה ומחממת.
-בלילה — איננו רואים את השמש בשמיים; הירח והכוכבים נראים באור חלש יותר.
-עונות משתנות — אבל השמש תמיד מקור האור העיקרי ביום.
+Today in science we will learn about the seasons of the year — and about the sun in the sky as a source of light and heat.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בקיץ — ילדים משחקים בחוץ בחום, חולצות קצרות.
-בחורף — מעיל, לפעמים גשם.
-בשתי העונות — ביום רואים שמש בשמיים.
-
----
-
-## 4. בואו נפתור
-
-מה נותן אור וחום ביום?
-ביום — בהיר וחם.
-האור מגיע מהשמש.
-השמש
+During the year there are seasons:
+Summer — hot, long days, lots of sun
+Winter — cooler, sometimes rain
+Spring — starts to warm up, flowers bloom
+Autumn — gets cooler, leaves fall
+The sun — a star in the sky that gives light and heat.
+During the day — the sun shines and warms us.
+At night — we do not see the sun in the sky; the moon and stars appear with weaker light.
+Seasons change — but the sun is always the main source of light during the day.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-בלילה — מי או מה נותן לנו אור בשמיים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה הייתה:
-בלילה — מי או מה נותן לנו אור בשמיים?
-בלילה השמש אינה נראית מהצד שלנו של כדור הארץ.
-אנחנו רואים את הירח ואת הכוכבים.
-הירח אינו מייצר אור בעצמו — הוא מחזיר חלק מאור השמש אלינו.
-הכוכבים הם כוכבים רחוקים מאוד שמאירים בעצמם, אבל אורם חלש מרחוק.
-התשובה: בלילה רואים את הירח ואת הכוכבים. הירח מחזיר אור שמש, והכוכבים מאירים בעצמם.
+In summer — children play outside in the heat, wearing short sleeves.
+In winter — a coat, sometimes rain.
+In both seasons — during the day we see the sun in the sky.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים עונות ושמש במדעים.
-בתרגול חפשו שאלות על קיץ, חורף ומקור האור.
+What gives light and heat during the day?
+During the day — it is bright and warm.
+The light comes from the sun.
+The sun
+
+---
+
+## 5. Try it yourself
+
+At night — who or what gives us light in the sky?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question was:
+At night — who or what gives us light in the sky?
+At night the sun is not visible from our side of Earth.
+We see the moon and the stars.
+The moon does not make its own light — it reflects some of the sun's light back to us.
+Stars are very distant stars that shine on their own, but their light is weak from far away.
+The answer: at night we see the moon and the stars. The moon reflects sunlight, and stars shine on their own.
+
+---
+
+## 7. Let's practice!
+
+Now you know about seasons and the sun in science.
+When you practice, look for questions about summer, winter, and the source of light.

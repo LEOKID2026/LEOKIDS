@@ -1,4 +1,4 @@
-# צמצום שבר
+# Simplifying Fractions
 
 ## Metadata
 
@@ -11,72 +11,71 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | צמצום שבר `[DRAFT — not owner-approved]` |
+| **title_english** | Simplifying Fractions |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מ.א.ח; שבר פשוט
+**Content scope:** GCF; simplest form
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לצמצם שבר — לכתוב אותו בצורה הפשוטה ביותר.
-צמצום עוזר להשוות ולחבר שברים.
+Today we'll learn to simplify a fraction — write it in its simplest form.
+Simplifying helps you compare and add fractions.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-צמצום = חלוקת מונה ומכנה באותו מספר (מ.
-א.
+Simplifying = divide the numerator and denominator by the same number (GCF).
 12/18:
-מ.א.ח של 12 ו-18 = 6
+GCF of 12 and 18 = 6
 12 ÷ 6 = 2, 18 ÷ 6 = 3
 12/18 = 2/3
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 15/25:
-מ.א.ח(15, 25) = 5
+GCF(15, 25) = 5
 15/25 = 3/5
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-צמצמו 12/18
-מ.א.ח(12, 18) = 6
+Simplify 12/18
+GCF(12, 18) = 6
 12÷6=2, 18÷6=3
 2/3
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-צמצמו: 20/30
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Simplify: 20/30
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-צמצמו: 20/30
-מ.א.ח(20, 30) = 10
-מונה: 20 ÷ 10 = 2
-מכנה: 30 ÷ 10 = 3
+Simplify: 20/30
+GCF(20, 30) = 10
+Numerator: 20 ÷ 10 = 2
+Denominator: 30 ÷ 10 = 3
 20/30 = 2/3
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לצמצם שברים.
-בתרגול תמצאו צמצום שבר.
-מצאו קודם מ.א.ח!
+Now you know how to simplify fractions.
+In practice you'll find fraction simplification.
+Find the GCF first!

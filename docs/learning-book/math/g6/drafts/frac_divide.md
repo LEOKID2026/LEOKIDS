@@ -1,4 +1,4 @@
-# חילוק שברים
+# Dividing Fractions
 
 ## Metadata
 
@@ -11,38 +11,38 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק שברים `[DRAFT — not owner-approved]` |
+| **title_english** | Dividing Fractions |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל בהופכי
+**Content scope:** multiply by the reciprocal
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק שברים.
-1/2 ÷ 1/4 — כופלים בהופכי של המחלק.
+Today we will learn to divide fractions.
+1/2 ÷ 1/4 — multiply by the reciprocal of the divisor.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 1/2 ÷ 1/4 = 1/2 × 4/1 = 4/2 = 2
-כלל: ÷ שבר = × הופכי
+Rule: ÷ a fraction = × its reciprocal
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 3/2
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 1/2 ÷ 1/4 = ?
 1/2 × 4/1 = 4/2
@@ -51,25 +51,25 @@
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 2/3 ÷ 1/6 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 2/3 ÷ 1/6 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 2/3 ÷ 1/6
-÷ שבר = × הופכי: 2/3 × 6/1.
-מונה × מונה: 2 × 6 = 12. מכנה × מכנה: 3 × 1 = 3.
+Calculate: 2/3 ÷ 1/6
+÷ fraction = × reciprocal: 2/3 × 6/1.
+Numerator × numerator: 2 × 6 = 12. Denominator × denominator: 3 × 1 = 3.
 12/3 = 4
-התשובה: 4
+The answer: 4
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-חילוק שברים = כמה פעמים שבר נכנס בשני.
-בתרגול תמצאו חילוק שברים — הפכו וכפלו!
+Dividing fractions = how many times one fraction fits into another.
+In practice you will divide fractions — flip and multiply!

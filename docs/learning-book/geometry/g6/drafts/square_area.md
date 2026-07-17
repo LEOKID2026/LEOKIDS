@@ -1,4 +1,4 @@
-﻿# שטח ריבוע — כיתה ו׳
+# Area of a Square — Grade 6
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח ריבוע — כיתה ו׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Square — Grade 6 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** צלע²; ממדים גדולים; 9 ס״מ, 81 סמ״ר
+**Content scope:** side²; larger dimensions; 9 cm, 81 cm²
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק שטח ריבוע — עם ממדים גדולים ויחידות סמ״ר.
-שטח = צלע × צלע.
-ככל שהצלע גדולה — השטח גדל מהר (ריבועי).
+Today we will strengthen area of a square — with larger dimensions and cm² units.
+Area = side × side.
+The bigger the side — the area grows fast (squared).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_area_grid
 :::
 
-שטח = צלע × צלע (צלע בריבוע)
-15 ס״מ: 15 × 15 = 225 סמ״ר
-20 ס״מ: 20 × 20 = 400 סמ״ר
-צלע 20 — שטח 400 — כמעט פי 4 מצלע 10 (100), לא פי 2!
+Area = side × side (side squared)
+15 cm: 15 × 15 = 225 cm²
+20 cm: 20 × 20 = 400 cm²
+Side 20 — area 400 — almost 4 times side 10 (100), not 2 times!
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע גינה: צלע 15 ס״מ → 15 × 15 = 225 סמ״ר.
-ריבוע שולחן: צלע 20 ס״מ → 20 × 20 = 400 סמ״ר.
-400 > 225 — ככל שהצלע גדלה, השטח גדל מהר (ריבועי).
+Garden square: side 15 cm → 15 × 15 = 225 cm².
+Table square: side 20 cm → 20 × 20 = 400 cm².
+400 > 225 — as the side grows, the area grows fast (squared).
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-ריבוע צלע 20 ס״מ. מה השטח?
+Square with side 20 cm. What is the area?
 20 × 20 = 400
-400 סמ״ר.
+400 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בפרק הזה:
-ריבוע צלע 9 ס״מ — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In this chapter:
+Square with side 9 cm — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-ריבוע צלע 9 ס״מ — מה השטח?
-שטח = צלע × צלע.
+Square with side 9 cm — what is the area?
+Area = side × side.
 9 × 9 = 81
-81 סמ״ר
+81 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח ריבוע גדל מהר — 12×12 = 144, לא 12!
-בתרגול תמצאו שטחים — הכפילו צלע בעצמה!
+Area of a square grows fast — 12×12 = 144, not 12!
+In practice you'll find areas — multiply the side by itself!

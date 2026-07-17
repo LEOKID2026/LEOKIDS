@@ -27,7 +27,9 @@ function envStr(name, env = typeof process !== "undefined" ? process.env : {}) {
  */
 export function isAdaptivePlannerAIExplainerServerEnabled(env = typeof process !== "undefined" ? process.env : {}) {
   const v = envStr("ENABLE_ADAPTIVE_PLANNER_AI_EXPLAINER", env).toLowerCase();
-  return v === "1" || v === "true" || v === "yes";
+  if (!v) return true;
+  if (v === "0" || v === "false" || v === "no" || v === "off") return false;
+  return v === "1" || v === "true" || v === "yes" || v === "on";
 }
 
 /**

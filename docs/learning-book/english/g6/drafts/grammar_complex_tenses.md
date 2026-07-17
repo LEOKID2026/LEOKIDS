@@ -1,4 +1,4 @@
-# Past Continuous + Past Simple + היכרות Present Perfect
+# Past Continuous, Past Simple, and an Intro to Present Perfect
 
 ## Metadata
 
@@ -11,87 +11,79 @@
 | **age_band** | grades_5_6 |
 | **page_type** | contrast_page |
 | **approval_status** | approved |
-| **title_hebrew** | Past Continuous + Past Simple + היכרות Present Perfect |
+| **title_english** | Past Continuous, Past Simple, and an Intro to Present Perfect |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:past_continuous_לצד_past_simple_היכרות_עם_present_perfect`
+**Linked skill_ids:** `english``
 
 **Content scope:** I was reading when…; I have visited — intro only
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד Past Continuous לצד Past Simple, והיכרות קצרה ב-Present Perfect.
-I was reading when my friend called — קראתי כשחבר התקשר.
+Today we will learn Past Continuous alongside Past Simple, and get a short introduction to Present Perfect.
+I was reading when my friend called.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Past Continuous — משתמשים ב-was או were עם ing, לפעולה שהייתה באמצע:
+Past Continuous — we use was or were with a verb + ing, for an action that was in progress:
 I was reading when my friend called.
 
-קראתי כשחבר התקשר.
-
-Past Simple — called (אירוע קצר):
+Past Simple — called (a short event):
 She was cooking when the phone rang.
 
-היא בישלה כשהטלפון צלצל.
-
-Present Perfect (היכרות): I have visited London.
+Present Perfect (an introduction): I have visited London.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בחדר — קוראים ופתאום שיחה.
+In a room — reading, then suddenly a call.
 
 I was reading when my friend called.
 
-קראתי כשחבר התקשר.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "קראתי כשחבר התקשר"?
+Question: How do you say this?
 
 I was reading when my friend called
 
-תשובה: I was reading when my friend called
+Answer: I was reading when my friend called
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בגינה — ישבו בחוץ כשהגשם הפתיע.
+In the garden — sitting outside when the rain surprised them.
 
 They were sitting in the garden when it started to rain.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם ישבו בגינה כשהתחיל לרדת גשם."
+Exercise: "They were sitting in the garden when it started to rain."
 
-פעולה מתמשכת ברקע — Past Continuous: were sitting.
+An ongoing background action — Past Continuous: were sitting.
 
-אירוע שקרה באמצע — Past Simple: started.
+An event that happened in the middle — Past Simple: started.
 
-הם ישבו בגינה כשהתחיל לרדת גשם.
-
- They were sitting in the garden when it started to rain.
+So the full sentence is: They were sitting in the garden when it started to rain.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משווים Past Continuous, Past Simple ו-have visited (היכרות).
-בתרגול תמצאו I was reading when my friend called.
+Now you will compare Past Continuous, Past Simple, and have visited (an introduction).
+In the practice, you'll find: I was reading when my friend called.

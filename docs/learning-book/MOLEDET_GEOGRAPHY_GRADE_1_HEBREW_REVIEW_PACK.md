@@ -39,8 +39,7 @@
 |-------|-------|
 | **File** | `mg_g1_family.md` |
 | **learning_page_id** | `geography:g1:mg_g1_family` |
-| **skill_id** | `geography:g1:skills:skills_0_הכרת_המשפחה_ותפקידיה` |
-| **title_hebrew** | המשפחה ותפקידיה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g1:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -144,8 +143,7 @@
 |-------|-------|
 | **File** | `mg_g1_close_community.md` |
 | **learning_page_id** | `geography:g1:mg_g1_close_community` |
-| **skill_id** | `geography:g1:skills:skills_1_הבנת_הקהילה_הקרובה` |
-| **title_hebrew** | הקהילה הקרובה — כיתה ובית ספר `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g1:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -248,8 +246,7 @@
 |-------|-------|
 | **File** | `mg_g1_class_map.md` |
 | **learning_page_id** | `geography:g1:mg_g1_class_map` |
-| **skill_id** | `geography:g1:geography:geography_0_מפת_כיתה` |
-| **title_hebrew** | מפת הכיתה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g1:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -353,8 +350,7 @@
 |-------|-------|
 | **File** | `mg_g1_school_map.md` |
 | **learning_page_id** | `geography:g1:mg_g1_school_map` |
-| **skill_id** | `geography:g1:geography:geography_1_מפת_בית_ספר` |
-| **title_hebrew** | מפת בית הספר `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g1:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -458,8 +454,7 @@
 |-------|-------|
 | **File** | `mg_g1_directions.md` |
 | **learning_page_id** | `geography:g1:mg_g1_directions` |
-| **skill_id** | `geography:g1:geography:geography_2_כיוונים_בסיסיים` |
-| **title_hebrew** | כיוונים בסיסיים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g1:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -563,8 +558,7 @@
 |-------|-------|
 | **File** | `mg_g1_behavior_cooperation.md` |
 | **learning_page_id** | `geography:g1:mg_g1_behavior_cooperation` |
-| **skill_id** | `geography:g1:skills:skills_3_הבנת_כללי_התנהגות_ושיתוף_פעולה` |
-| **title_hebrew** | כללי התנהגות ושיתוף פעולה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g1:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

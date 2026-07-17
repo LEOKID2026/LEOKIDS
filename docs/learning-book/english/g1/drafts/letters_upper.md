@@ -1,4 +1,4 @@
-# אותיות גדולות A–Z
+# Uppercase Letters A–Z
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | אותיות גדולות A–Z |
+| **title_english** | Uppercase Letters A–Z |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 
-**Content scope:** זיהוי ושם אותיות גדולות A–Z בקבוצות; audio_required: yes — שמות אותיות לכל קבוצה
+**Content scope:** Recognizing and naming uppercase letters A–Z in groups; audio_required: yes — letter names for each group
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד אותיות גדולות באנגלית — A, B, C ועד Z.
-אות גדולה היא צורה מיוחדת של האות. באנגלית משתמשים באותיות גדולות בתחילת משפטים ובשמות, וכאן קודם נכיר את הצורה שלהן.
-זה הצעד הראשון לקריאה באנגלית.
-
----
-
-## 2. הסבר
-
-באנגלית יש 26 אותיות.
-נכיר אותן לאט, בקבוצות קטנות.
-נתחיל בשלוש האותיות הראשונות:
-A היא האות הראשונה.
-B היא האות השנייה.
-C היא האות השלישית.
-בכל עמוד נזהה את צורת האות ונשמע את השם שלה.
+Today we will learn uppercase letters in English — A, B, C, all the way to Z.
+An uppercase letter is a special shape of a letter. In English, uppercase letters are used at the start of sentences and for names. Here, we will first get to know their shape.
+This is the first step toward reading in English.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נכיר שתי אותיות גדולות: B ו-M.
-B היא אות אחת.
-M היא אות אחרת.
-נזהה כל אות לפי הצורה שלה.
+English has 26 letters.
+We will meet them slowly, in small groups.
+Let's start with the first three letters:
+A is the first letter.
+B is the second letter.
+C is the third letter.
+On each page, we will recognize the letter's shape and hear its name.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו אות גדולה זו?
+Let's meet two uppercase letters: B and M.
+B is one letter.
+M is another letter.
+We recognize each letter by its shape.
+
+---
+
+## 4. Let's solve together
+
+Which uppercase letter is this?
 K
-ל-K יש קו ישר וקווים אלכסוניים שנפגשים באמצע.
-זו האות K.
+K has a straight line and two slanted lines that meet in the middle.
+This is the letter K.
 K
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזו אות גדולה זו?
+Which uppercase letter is this?
 S
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-איזו אות גדולה זו?
+Which uppercase letter is this?
 S
-ל-S יש צורה מתפתלת, כמו קו שמתעגל לשני צדדים.
-זו האות S.
-האות הגדולה היא S.
+S has a curvy shape, like a line that curves both ways.
+This is the letter S.
+The uppercase letter is S.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו התחלתם להכיר אותיות גדולות באנגלית.
-בעמודים הבאים נלמד אותיות קטנות ונשמע את השמות.
+Now you're starting to know uppercase letters in English.
+On the next pages, we'll learn lowercase letters and hear their names.

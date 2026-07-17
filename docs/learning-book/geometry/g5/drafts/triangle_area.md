@@ -1,4 +1,4 @@
-﻿# שטח משולש
+# Area of a Triangle
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח משולש `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Triangle |
 
 **Source references:**
-- `kita5.pdf` — § ה. מדידות שטחים, עמ׳ 114–115
+- `kita5.pdf` — Section E: Area Measurements, pp. 114–115
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שטח = בסיס × גובה ÷ 2; 10, 6 ס״מ; 30 סמ״ר
+**Content scope:** area = base × height ÷ 2; 10, 6 cm; 30 cm²
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שטח משולש.
-שטח = בסיס × גובה ÷ 2.
-הגובה — מרחק מאונך לבסיס (למדנו בפרק הגבהים).
+Today we'll learn the area of a triangle.
+Area = base × height ÷ 2.
+The height — the perpendicular distance to the base (we learned this in the heights chapter).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: triangle_height
 :::
 
-במשולש:
-- בסיס — צלע שבחרנו (למשל 10 ס״מ)
-- גובה — קטע מאונך מהבסיס לקדקוד (6 ס״מ)
-שטח = בסיס × גובה ÷ 2
-קשר לשטח מלבן: שטח המשולש הוא חצי משטח מלבן באותו בסיס וגובה.
+In a triangle:
+- base — the side we choose (for example 10 cm)
+- height — the perpendicular segment from the base to the vertex (6 cm)
+Area = base × height ÷ 2
+Connection to rectangle area: the triangle's area is half the area of a rectangle with the same base and height.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס 10 ס״מ, גובה 6 ס״מ:
-10 × 6 ÷ 2 = 30 סמ״ר
+Base 10 cm, height 6 cm:
+10 × 6 ÷ 2 = 30 cm²
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-משולש — בסיס 10 ס״מ, גובה 6 ס״מ. מה השטח?
+Triangle — base 10 cm, height 6 cm. What is the area?
 10 × 6 = 60
 60 ÷ 2 = 30
-30 סמ״ר.
+30 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש: בסיס 8 ס״מ, גובה 5 ס״מ — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Triangle: base 8 cm, height 5 cm — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש: בסיס 8 ס״מ, גובה 5 ס״מ — מה השטח?
-הכפלת בסיס בגובה:
+Triangle: base 8 cm, height 5 cm — what is the area?
+Multiply base by height:
 8 × 5 = 40
-חלוקה ב-2 (משולש = חצי מלבן):
+Divide by 2 (triangle = half a rectangle):
 40 ÷ 2 = 20
-שטח = 20 סמ״ר
+Area = 20 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח משולש = בסיס × גובה ÷ 2.
-בתרגול תמצאו שטחי משולשים — וודאו שהגובה מאונך לבסיס!
+Area of a triangle = base × height ÷ 2.
+In practice you'll find triangle areas — make sure the height is perpendicular to the base!

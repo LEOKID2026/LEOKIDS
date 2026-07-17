@@ -1,4 +1,4 @@
-# שאלה מילולית — מבצע בחנות
+# Word Problems — Store Sale
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — מבצע בחנות `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Store Sale |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הנחה באחוזים בהקשר קניות
+**Content scope:** percent discount in a shopping context
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור מבצע בחנות.
-חולצה 150 ש״ח, 15% הנחה.
-
----
-
-## 2. הסבר
-
-15% מ-150 = 150 × 15 ÷ 100 = 22.50 ש״ח.
-150 − 22.50 = 127.50 ש״ח
+Today we will solve store sale problems.
+A shirt costs 150 shekels, 15% off.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מילות מפתח: הנחה, מבצע, אחוז הנחה.
+15% of 150 = 150 × 15 ÷ 100 = 22.50 shekels.
+150 − 22.50 = 127.50 shekels
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-150 ש״ח, 15% הנחה. מחיר סופי?
+Key words: discount, sale, percent off.
+
+---
+
+## 4. Let's solve together
+
+150 shekels, 15% off. Final price?
 150 × 15 ÷ 100 = 22.50
 150 − 22.50 = 127.50
-127.50 ש״ח.
+127.50 shekels.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מכנסיים 200 ש״ח, 25% הנחה — מה המחיר הסופי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מכנסיים 200 ש״ח, 25% הנחה
-הנחה = 200 × 25 ÷ 100 = 50 ש״ח.
-מחיר סופי = 200 − 50 = 150 ש״ח.
-התשובה: 150 ש״ח
+Pants 200 shekels, 25% off — what is the final price?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-שאלות חנות = אחוזים + חיסור.
-בתרגול תמצאו מבצעים — חשבו הנחה קודם!
+Pants 200 shekels, 25% off
+Discount = 200 × 25 ÷ 100 = 50 shekels.
+Final price = 200 − 50 = 150 shekels.
+The answer: 150 shekels
+
+---
+
+## 7. Let's practice!
+
+Store questions = percents + subtraction.
+In practice you will find sales — calculate the discount first!

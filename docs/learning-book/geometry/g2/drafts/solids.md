@@ -1,4 +1,4 @@
-﻿# גופים תלת ממדיים — שמות והיכרות
+# Three-Dimensional Solids — Names and Introduction
 
 ## Metadata
 
@@ -11,90 +11,90 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גופים תלת ממדיים — שמות והיכרות `[DRAFT — not owner-approved]` |
+| **title_english** | Three-Dimensional Solids — Names and Introduction `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** קובייה, תיבה, גליל, פירמידה, חרוט, כדור — זיהוי; ללא נפח
+**Content scope:** Cube, rectangular prism, cylinder, pyramid, cone, sphere — identification; no volume
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על גופים תלת ממדיים — צורות שיש להן אורך, רוחב וגובה.
-נכיר שמות:
-קובייה, תיבה, גליל, פירמידה, חרוט וכדור.
+Today in geometry we will learn about three-dimensional solids — shapes that have length, width, and height.
+We will learn their names:
+cube, rectangular prism, cylinder, pyramid, cone, and sphere.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: cube_basic
 :::
 
-גוף תלת ממדי הוא צורה שלא שטוחה על הדף — אפשר להחזיק אותה ביד.
-קובייה: 6 פאות ריבועיות שוות (כמו קוביית משחק).
-תיבה: 6 פאות מלבניות (כמו קופסת נעליים).
-גליל:
-שני בסיסים עגולים (כמו פחית).
-פירמידה:
-בסיס מצולע ופאות משולשות (כמו אוהל).
-חרוט:
-בסיס עגול וקודקוד (כמו כובע מסיבה).
-כדור:
-עגול מכל הצדדים (כמו כדורגל).
-כאן מתמקדים בשם ובתיאור — לא בחישוב נפח.
+A three-dimensional solid is a shape that is not flat on the page — you can hold it in your hand.
+Cube: 6 equal square faces (like a dice).
+Rectangular prism: 6 rectangular faces (like a shoe box).
+Cylinder:
+Two round bases (like a can).
+Pyramid:
+A polygon base and triangular faces (like a tent).
+Cone:
+A round base and one point at the top (like a party hat).
+Sphere:
+Round from every side (like a soccer ball).
+Here we focus on the name and description — not on calculating volume.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-דמיינו קוביית משחק:
-- יש לה 6 פאות
-- כל הפאות ריבועיות ושוות
-שם הגוף:
-קובייה.
-דמיינו קופסת נעליים — פאות מלבניות, לא כולן זהות.
-שם הגוף:
-תיבה.
-
----
-
-## 4. בואו נפתור
-
-לגוף יש 6 פאות ריבועיות שוות. מה שמו?
-6 פאות — כמו קובייה.
-כל הפאות ריבועיות ושוות — זו קובייה, לא תיבה.
-קובייה
+Imagine a dice:
+- It has 6 faces
+- All the faces are equal squares
+The name of this solid:
+Cube.
+Imagine a shoe box — rectangular faces, not all the same.
+The name of this solid:
+Rectangular prism.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-בחרו שם לגוף:
-שני בסיסים עגולים ושטח צדדי מעוגל (כמו פחית שתייה).
-מה שם הגוף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-גוף עם שני בסיסים עגולים ושטח צדדי מעוגל — כמו פחית שתייה.
-מה שם הגוף?
-הבסיסים עגולים — לא ריבועיים ולא מלבניים.
-השטח הצדדי מעוגל — לא שטוח כמו בקובייה או תיבה.
-שני בסיסים עגולים ושטח צדדי מעוגל — זה גליל.
-גליל
+A solid has 6 equal square faces. What is it called?
+6 faces — like a cube.
+All the faces are equal squares — that is a cube, not a rectangular prism.
+Cube
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים שמות של גופים בגאומטריה.
-בתרגול תמצאו תיאור של גוף — חפשו כמה פאות ואיזה צורה לכל פאה!
+Pick a name for this solid:
+Two round bases and a curved side (like a soda can).
+What is the name of this solid?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A solid with two round bases and a curved side — like a soda can.
+What is the name of this solid?
+The bases are round — not square or rectangular.
+The side is curved — not flat like a cube or rectangular prism.
+Two round bases and a curved side — that is a cylinder.
+Cylinder
+
+---
+
+## 7. Let's practice!
+
+Now you know the names of solids in geometry.
+In practice you will read a description of a solid — look for how many faces it has and what shape each face is!

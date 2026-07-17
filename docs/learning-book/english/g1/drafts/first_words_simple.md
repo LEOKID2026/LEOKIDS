@@ -1,4 +1,4 @@
-# מילים פשוטות ראשונות
+# First Simple Words
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | מילים פשוטות ראשונות |
+| **title_english** | First Simple Words |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** cat, dog, sun, red, blue, mom, dad; audio_required: yes — כל מילה
+**Content scope:** cat, dog, sun, red, blue, mom, dad; audio_required: yes — every word
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים פשוטות באנגלית — חיות, שמש, צבעים, משפחה.
-נשמע את המילה ונחבר לתמונה.
-
----
-
-## 2. הסבר
-
-cat — חתול
-dog — כלב
-sun — שמש
-red — אדום
-blue — כחול
-mom — אמא
-dad — אבא
+Today we will learn simple words in English — animals, the sun, colors, family.
+We'll hear the word and connect it to a picture.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-תמונה של חתול — cat.
-שמש בחלון — sun.
-הכדור red — אדום.
+cat
+dog
+sun
+red
+blue
+mom
+dad
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו מילה מתאימה לכלב?
-חושבים — כלב באנגלית.
+A picture of a cat — cat.
+The sun in the window — sun.
+A red ball — red.
+
+---
+
+## 4. Let's solve together
+
+Which word means dog?
+Think — a dog in English.
 dog.
 dog
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזו מילה — אמא?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Which word means mom?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-איזו מילה באנגלית פירושה אמא?
-חושבים — אמא.
-המילה באנגלית:
+Which English word means mom?
+Think — mom.
+The English word:
 mom
-mom פירושו: אמא.
+mom means mom.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו מכירים מילים פשוטות.
-בעמוד הבא — מילים קצרות עם שלוש אותיות.
+Now you know simple words.
+On the next page — short words with three letters.

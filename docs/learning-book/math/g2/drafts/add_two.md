@@ -1,4 +1,4 @@
-# חיבור של שני מספרים — עד 100
+# Adding Two Numbers — Up to 100
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_1_2 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור של שני מספרים — עד 100 `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Two Numbers — Up to 100 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור בשורה / בראש עד 100. פירוק לעשרות ואחדות. ללא חיבור במאונך, ללא נשיאה כנושא מרכזי.
+**Content scope:** Horizontal / mental addition up to 100. Breaking into tens and ones. No vertical addition, no carrying as main topic.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר שני מספרים עד 100 — בשורה, בראש או בכתב.
-נפרק כל מספר לעשרות ואחדות כדי שיהיה קל יותר.
+Today we're going to learn to add two numbers up to 100 — in a row, in your head, or in writing.
+We'll break each number into tens and ones to make it easier.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כשמחברים שני מספרים, אפשר לחשוב כך:
+When adding two numbers, you can think like this:
 1.
-מחברים את העשרות עם העשרות
+Add the tens to the tens
 2.
-מחברים את האחדות עם האחדות
+Add the ones to the ones
 3.
-מחברים את שתי התוצאות
-דוגמה: 34 + 25
-- עשרות: 30 + 20 = 50
-- אחדות: 4 + 5 = 9
-- סה״כ: 50 + 9 = 59
-חשוב: בדף הזה מחברים בשורה. חיבור במאונך נלמד בדף נפרד.
+Add the two results together
+Example: 34 + 25
+- Tens: 30 + 20 = 50
+- Ones: 4 + 5 = 9
+- Total: 50 + 9 = 59
+Important: on this page we add in a row. Vertical addition is learned on a separate page.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-58 + 37 — פירוק לעשרות ואחדות:
+58 + 37 — breaking into tens and ones:
 58 + 37 = 95
 50 + 8 = 58
 30 + 7 = 37
-עשרות: 50 + 30 = 80
-אחדות: 8 + 7 = 15 → 5, נשיאה 1
+Tens: 50 + 30 = 80
+Ones: 8 + 7 = 15 → 5, carry 1
 80 + 15 = 95
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 47 + 45 = ?
-עשרות: 40 + 40 = 80
-אחדות: 7 + 5 = 12 → 2, נשיאה 1.
+Calculate: 47 + 45 = ?
+Tens: 40 + 40 = 80
+Ones: 7 + 5 = 12 → 2, carry 1.
 80 + 12 = 92
 47 + 45 = 92
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 52 + 36 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 52 + 36 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 52 + 36 = ?
-שלב 1 — עשרות: 50 + 30 = 80
-שלב 2 — אחדות: 2 + 6 = 8
-שלב 3 — חיבור: 80 + 8 = 88
+Calculate: 52 + 36 = ?
+Step 1 — Tens: 50 + 30 = 80
+Step 2 — Ones: 2 + 6 = 8
+Step 3 — Add: 80 + 8 = 88
 52 + 36 = 88
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר שני מספרים עד 100 — בשורה.
-בתרגול תמצאו חיבורים עד 100.
-פרקו לעשרות ואחדות!
+Now you know how to add two numbers up to 100 — in a row.
+In practice you'll find additions up to 100.
+Break into tens and ones!

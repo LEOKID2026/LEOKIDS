@@ -1,4 +1,4 @@
-# טכנולוגיה באנגלית
+# Technology in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | טכנולוגיה באנגלית |
+| **title_english** | Technology in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,67 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים על טכנולוגיה.
-She uses a computer for homework — היא משתמשת במחשב לשיעורי בית.
+Today we will learn words about technology.
+She uses a computer for homework.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-computer — מחשב
-email — דוא"ל
-internet — אינטרנט
+computer — a machine used for work and study
+email — a message sent over the internet
+internet — a network connecting computers around the world
 
 She uses a computer for homework.
 
-היא משתמשת במחשב לשיעורי בית.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה לומדת עם מחשב.
+A girl studying with a computer.
 
 She uses a computer for homework.
 
-היא משתמשת במחשב לשיעורי בית.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היא משתמשת במחשב לשיעורי בית"?
+Question: How do you say this?
 
 She uses a computer for homework
 
-תשובה: She uses a computer for homework
+Answer: She uses a computer for homework
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שיעורים — גולשים באינטרנט.
+Lessons — browsing the internet.
 
 We use the internet for lessons.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אנחנו גולשים באינטרנט לשיעורים."
+Exercise: "We use the internet for lessons."
 
-we = אנחנו — אחרי we לא מוסיפים s לפועל use.
+"We" — after we we do not add s to the verb use.
 
-the internet = האינטרנט; for lessons = לשיעורים.
+"The internet" is what we use; "for lessons" tells us why.
 
-אנחנו גולשים באינטרנט לשיעורים.
-
- We use the internet for lessons.
+So the full sentence is: We use the internet for lessons.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים שימוש בטכנולוגיה.
-בתרגול תמצאו She uses a computer for homework.
+Now you will describe using technology.
+In the practice, you'll find: She uses a computer for homework.

@@ -1,4 +1,4 @@
-﻿# הכרת הריבוע
+# Getting to Know the Square
 
 ## Metadata
 
@@ -11,84 +11,84 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הכרת הריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Getting to Know the Square `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זיהוי ריבוע; ארבע צלעות שוות; זוויות ישרות; ללא מדידות
+**Content scope:** Identifying a square; four equal sides; right angles; no measurements
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה להכיר את הריבוע.
-ריבוע הוא צורה שאנחנו רואים בכל מקום — אריחים, חלונות ומשחקים.
+Today in geometry we will learn about the square.
+A square is a shape we see everywhere — tiles, windows, and games.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_sides
 :::
 
-לריבוע יש 4 צלעות — כולן באותו אורך.
-לריבוע יש 4 פינות — בכל פינה זווית ישרה (פינה של קופסה).
-אם כל הצלעות שוות וכל הפינות ישרות — זו צורה של ריבוע.
-דוגמאות מחיי היומיום:
-אריח רצפה מרובע, חלון מרובע, משבצת במשחק.
+A square has 4 sides — they are all the same length.
+A square has 4 corners — at each corner there is a right angle (like the corner of a box).
+If all the sides are equal and all the corners are right angles — the shape is a square.
+Everyday examples:
+a square floor tile, a square window, a square on a game board.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-דמיינו אריח רצפה מרובע:
-- 4 צדדים שווים
-- 4 פינות ישרות
-זה ריבוע.
-אם מישהו שואל:
-האם זה ריבוע? — בודקים:
-כל הצלעות שוות?
-כל הפינות ישרות?
-
----
-
-## 4. בואו נפתור
-
-יש צורה עם 4 צלעות שוות ו-4 זוויות ישרות. מה שמה?
-4 צלעות שוות — כמו ריבוע.
-4 זוויות ישרות — גם כמו ריבוע.
-ריבוע
+Imagine a square floor tile:
+- 4 equal sides
+- 4 right corners
+That is a square.
+If someone asks:
+Is this a square? — check:
+Are all the sides equal?
+Are all the corners right angles?
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-הסתכלו על מדבקה:
-יש לה 4 צלעות וכל הפינות ישרות.
-כשמודדים — כל הצלעות שוות זו לזו.
-האם המדבקה היא ריבוע?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+There is a shape with 4 equal sides and 4 right angles. What is it called?
+4 equal sides — like a square.
+4 right angles — also like a square.
+Square
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-מדבקה: 4 צלעות, כל הפינות ישרות, וכל הצלעות שוות זו לזו.
-האם המדבקה היא ריבוע?
-כמה צלעות? 4 צלעות — כמו לריבוע.
-האם הפינות ישרות? כן — כמו בריבוע.
-האם כל הצלעות שוות זו לזו? כן — כולן באותו אורך.
-כן, המדבקה היא ריבוע
+Look at a sticker:
+It has 4 sides and all the corners are right angles.
+When you measure — all the sides are equal to each other.
+Is the sticker a square?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו אתם מכירים את הריבוע בגאומטריה.
-בתרגול תמצאו שאלות על זיהוי ריבוע.
-בדקו שכל הצלעות שוות!
+Sticker: 4 sides, all right corners, and all sides equal to each other.
+Is the sticker a square?
+How many sides? 4 sides — like a square.
+Are the corners right angles? Yes — like a square.
+Are all the sides equal to each other? Yes — they are all the same length.
+Yes, the sticker is a square
+
+---
+
+## 7. Let's practice!
+
+Now you know the square in geometry.
+In practice you will find questions about identifying squares.
+Check that all the sides are equal!

@@ -40,7 +40,6 @@
 | **File** | `solids.md` |
 | **learning_page_id** | `geometry:g2:solids` |
 | **skill_id** | `geometry:kind:solids` |
-| **title_hebrew** | גופים תלת־ממדיים — שמות והיכרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -147,7 +146,6 @@
 | **File** | `square_area.md` |
 | **learning_page_id** | `geometry:g2:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
-| **title_hebrew** | שטח של ריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -249,7 +247,6 @@
 | **File** | `transformations.md` |
 | **learning_page_id** | `geometry:g2:transformations` |
 | **skill_id** | `geometry:kind:transformations` |
-| **title_hebrew** | הזזה ושיקוף — המשך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

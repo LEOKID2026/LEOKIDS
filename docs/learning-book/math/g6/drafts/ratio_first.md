@@ -1,4 +1,4 @@
-# יחס — מה זה אומר?
+# Ratios — What Do They Mean?
 
 ## Metadata
 
@@ -11,66 +11,65 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | יחס — מה זה אומר? `[DRAFT — not owner-approved]` |
+| **title_english** | Ratios — What Do They Mean? |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כתיבה וקריאה של יחס a:b
+**Content scope:** writing and reading a ratio a:b
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד יחס — השוואה בין שני חלקים מאותו סוג.
-כותבים 3:2 (3 ל-2).
-
----
-
-## 2. הסבר
-
-3:2 = לכל 3 יחידות מצד אחד, 2 מהצד השני.
-דוגמה: 6 תפוחים ו-4 תפוזים → יחס תפוחים:תפוזים = 6:4 = 3:2 (צמצום).
+Today we will learn about ratios — a comparison between two parts of the same kind.
+We write 3:2 (3 to 2).
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-10:5 = 2:1 — חילקו ב-5.
+3:2 = for every 3 units on one side, 2 on the other side.
+Example: 6 apples and 4 oranges → ratio apples:oranges = 6:4 = 3:2 (simplify).
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-בקבוצה 6 בנים ו-4 בנות — מה היחס בנים:בנות?
+10:5 = 2:1 — divide both by 5.
+
+---
+
+## 4. Let's solve together
+
+In a group of 6 boys and 4 girls — what is the ratio boys:girls?
 6:4.
-צמצום ב-2 → 3:2.
+Simplify by 2 → 3:2.
 3:2.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-10 עגבניות ו-6 מלפפונים — כתבו את היחס עגבניות:
-מלפפונים.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-10 עגבניות ו-6 מלפפונים — יחס עגבניות:מלפפונים
-כותבים: 10:6.
-צמצום ב-2: 10/2 : 6/2 = 5:3.
-בדיקה: סדר — עגבניות ראשון, מלפפונים שני
-התשובה: 5:3
+10 tomatoes and 6 cucumbers — write the ratio tomatoes:cucumbers.
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-יחס מתאר חלוקה והשוואה.
-בתרגול תמצאו יחסים — שימו לב לסדר!
+10 tomatoes and 6 cucumbers — ratio tomatoes:cucumbers
+Write: 10:6.
+Simplify by 2: 10/2 : 6/2 = 5:3.
+Check: order — tomatoes first, cucumbers second
+The answer: 5:3
+
+---
+
+## 7. Let's practice!
+
+A ratio describes sharing and comparing.
+In practice you will find ratios — pay attention to the order!

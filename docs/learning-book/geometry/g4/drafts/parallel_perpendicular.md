@@ -1,4 +1,4 @@
-﻿# מקבילות ומאונכות — במצולעים
+# Parallel and Perpendicular — in Polygons
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מקבילות ומאונכות — במצולעים `[DRAFT — not owner-approved]` |
+| **title_english** | Parallel and Perpendicular — in Polygons `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקבילות במלבן; 90°
+**Content scope:** Parallel sides in a rectangle; 90°
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום ניישם מקבילות ומאונכות על צלעות מלבן.
-נזהה מקבילות (צלעות ממול) ו90° (פינות).
+Today we will apply parallel and perpendicular to the sides of a rectangle.
+We will identify parallel sides (opposite sides) and 90° (corners).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallel_lines
 :::
 
-במלבן:
-- צלע עליונה ∥ צלע תחתונה — מקבילות
-- צלע שמאל ∥ צלע ימין — מקבילות
-- צלע עליונה ⊥ צלע ימנית — מאונכות, 90°
-מקבילות = לא נפגשים, אותו כיוון.
-מאונכות = נפגשים ב-90°.
+In a rectangle:
+- Top side ∥ bottom side — parallel
+- Left side ∥ right side — parallel
+- Top side ⊥ right side — perpendicular, 90°
+Parallel = they do not meet, same direction.
+Perpendicular = they meet at 90°.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מלבן 6 × 4:
-- 6 למעלה ∥ 6 למטה — מקבילות
-- 4 משמאל ∥ 4 מימין — מקבילות
-- עליונה + ימנית — 90°, מאונכות
-
----
-
-## 4. בואו נפתור
-
-במלבן — צלע עליונה וצלע ימנית. מקבילות או מאונכות?
-נפגשות בפינה — לא מקבילות.
-זווית 90° → מאונכות.
-מאונכות
+Rectangle 6 × 4:
+- 6 on top ∥ 6 on bottom — parallel
+- 4 on left ∥ 4 on right — parallel
+- Top + right — 90°, perpendicular
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-במלבן — עליונה ותחתונה: מקבילות או מאונכות? עליונה וימנית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-במלבן — עליונה ותחתונה: מקבילות או מאונכות?
-עליונה וימנית?
-צלע עליונה וצלע תחתונה — ממול, אינן נפגשות, אותו כיוון:
-עליונה ∥ תחתונה — מקבילות
-צלע עליונה וצלע ימנית — נפגשות בפינה בזווית 90°:
-עליונה ⊥ ימנית — מאונכות
-עליונה ∥ תחתונה — מקבילות; עליונה ⊥ ימנית — מאונכות
+In a rectangle — top side and right side. Parallel or perpendicular?
+They meet at a corner — not parallel.
+Angle 90° → perpendicular.
+Perpendicular
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מזהים מקבילות ו90° במלבן!
-בתרגול: ממול → מקביל; פינה → 90° מאונך!
+In a rectangle — top and bottom: parallel or perpendicular? Top and right?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+In a rectangle — top and bottom: parallel or perpendicular?
+Top and right?
+Top side and bottom side — opposite, they do not meet, same direction:
+Top ∥ bottom — parallel
+Top side and right side — meet at a corner at 90°:
+Top ⊥ right — perpendicular
+Top ∥ bottom — parallel; top ⊥ right — perpendicular
+
+---
+
+## 7. Let's practice!
+
+Now you can identify parallel sides and 90° in a rectangle!
+In practice: opposite → parallel; corner → 90° perpendicular!

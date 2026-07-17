@@ -1,4 +1,4 @@
-﻿# מרובעים — תכונות וסיווג
+# Quadrilaterals — Properties and Classification
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מרובעים — תכונות וסיווג `[DRAFT — not owner-approved]` |
+| **title_english** | Quadrilaterals — Properties and Classification `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ריבוע ⊂ מלבן; מקבילית; טרפז; G4 depth
+**Content scope:** Square ⊂ rectangle; parallelogram; trapezoid; G4 depth
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נעמיק בגאומטריה בסיווג מרובעים — לפי תכונות מדויקות.
-נבין: ריבוע ⊂ מלבן — ריבוע הוא מלבן מיוחד.
+Today in geometry we will go deeper into classifying quadrilaterals — by exact properties.
+We will understand: square ⊂ rectangle — a square is a special rectangle.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: quadrilateral_parts
 :::
 
-מלבן: 4 זוויות 90°, 2 זוגות צלעות שוות.
-ריבוע: מלבן + כל 4 הצלעות שוות.
-מקבילית: 2 זוגות צלעות מקבילות.
-טרפז: זוג אחד של צלעות מקבילות.
-בכאן — בודקים תכונות, לא רק שם.
+Rectangle: 4 angles of 90°, 2 pairs of equal sides.
+Square: rectangle + all 4 sides equal.
+Parallelogram: 2 pairs of parallel sides.
+Trapezoid: one pair of parallel sides.
+Here — we check properties, not just the name.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מסגרת תמונה — צלעות 4 ס״מ ו-9 ס״מ, זוויות 90°:
-- מלבן  — זוגות שווים, זוויות ישרות
-- לא ריבוע — צלעות לא כולן שוות
-
----
-
-## 4. בואו נפתור
-
-מרובע עם 4 זוויות 90° וכל 4 הצלעות 5 ס״מ. ריבוע או מלבן?
-90° → מתאים למלבן.
-כל הצלעות 5 → גם ריבוע.
-ריבוע (וגם מלבן)
+A picture frame — sides 4 cm and 9 cm, angles 90°:
+- Rectangle — equal pairs, right angles
+- Not a square — not all sides equal
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-מרובע עם זוויות 90° וצלעות 3 ו-7 — מלבן או ריבוע?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מרובע עם זוויות 90° וצלעות 3 ו-7 — מלבן או ריבוע?
-כל הזוויות הן 90° — מתאים למלבן.
-הצלעות אינן שוות (3 ≠ 7) — לכן אינו ריבוע.
-מלבן
+A quadrilateral with 4 angles of 90° and all 4 sides 5 cm. Square or rectangle?
+90° → fits a rectangle.
+All sides 5 → also a square.
+Square (and also a rectangle)
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מסווגים מרובעים לפי תכונות בגאומטריה.
-בתרגול בדקו: 90°?
-צלעות שוות?
-כמה זוגות מקבילים?
+A quadrilateral with angles 90° and sides 3 and 7 — rectangle or square?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A quadrilateral with angles 90° and sides 3 and 7 — rectangle or square?
+All angles are 90° — fits a rectangle.
+The sides are not equal (3 ≠ 7) — so it is not a square.
+Rectangle
+
+---
+
+## 7. Let's practice!
+
+Now you classify quadrilaterals by properties in geometry.
+In practice check: 90°?
+Equal sides?
+How many parallel pairs?

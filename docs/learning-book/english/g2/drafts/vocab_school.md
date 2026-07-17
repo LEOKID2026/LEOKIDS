@@ -1,4 +1,4 @@
-# בית ספר — חפצים במשפט
+# School — Objects in a Sentence
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בית ספר — חפצים במשפט |
+| **title_english** | School — Objects in a Sentence |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,56 +22,56 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשתמש במילים מהכיתה במשפט.
-כבר מכירים book ו-pen — נחבר.
+Today we will use classroom words in a sentence.
+We already know book and pen — let's connect them.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דוגמאות:
+Examples:
 I have a book.
-יש לי ספר.
+I have a book.
 My pen is blue.
-העט שלי כחול.
+My pen is blue.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-עט כחול על השולחן.
+A blue pen on the desk.
 My pen is blue.
-העט כחול.
+The pen is blue.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "יש לי ספר"?
+How do we say "I have a book"?
 I have a book
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יש לי עט.
+I have a pen.
 I have a pen
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: יש לי עט — באנגלית?
-I have a pen פירושו: יש לי עט.
-התשובה היא: I have a pen.
+The question: I have a pen — in English?
+I have a pen means: I have a pen.
+The answer is: I have a pen.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים על הכיתה.
-בתרגול תמצאו I have a book ו-My pen is blue.
+Now you build sentences about the classroom.
+In practice, you'll find I have a book and My pen is blue.

@@ -1,4 +1,4 @@
-# קריאת מילים ראשונה
+# Reading Your First Words
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | קריאת מילים ראשונה |
+| **title_english** | Reading Your First Words |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** cat, sit, run, the, I, a, is; audio_required: yes — קריאת מילה
+**Content scope:** cat, sit, run, the, I, a, is; audio_required: yes — reading a word
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום קוראים מילים קצרות ומילים שחוזרות הרבה באנגלית.
-יש מילים שמחברים לפי צלילים, ויש מילים שפשוט מכירים מרוב תרגול.
+Today we read short words and words that appear a lot in English.
+Some words we blend by sound, and some words we just recognize from lots of practice.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים קצרות:
+Short words:
 cat, sit, run.
-מילים שרואים הרבה באנגלית:
-the — מילה קטנה לפני שם, למשל: the cat
-I — אני
-a — מילה קטנה לפני שם עצם, למשל: a cat
-is — מופיעה במשפטים כמו: it is red
+Words we see a lot in English:
+the — a small word before a name, for example: the cat
+I — I
+a — a small word before a noun, for example: a cat
+is — appears in sentences like: it is red
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-קוראים את המילה cat.
-קוראים את המילה I — אני.
-בשלב הזה מתרגלים כל מילה בנפרד.
-
----
-
-## 4. בואו נפתור
-
-קראו sit
-אומרים את הצלילים לאט: s, i, t.
-מחברים יחד: sit
+We read the word cat.
+We read the word I.
+At this stage, we practice each word separately.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-קראו run
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: קראו — run
-אומרים את הצלילים לאט: r, u, n.
-מחברים יחד.
-התשובה היא run.
+Read sit
+Say the sounds slowly: s, i, t.
+Blend them together: sit
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-התחלתם לקרוא מילים קצרות.
-בעמוד הבא נלמד משפחות מילים כמו at ו-an.
+Read run
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: read — run
+Say the sounds slowly: r, u, n.
+Blend them together.
+The answer is run.
+
+---
+
+## 7. Let's practice!
+
+You've started reading short words.
+On the next page, we'll learn word families like at and an.

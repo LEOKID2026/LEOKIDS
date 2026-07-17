@@ -1,4 +1,4 @@
-﻿# היקף משולש — כיתה ו׳
+# Perimeter of a Triangle — Grade 6
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף משולש — כיתה ו׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Triangle — Grade 6 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סכום שלוש צלעות; 8, 9, 10 ס״מ; 27 ס״מ
+**Content scope:** Sum of three sides; 8, 9, 10 cm; 27 cm
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק היקף משולש — עם מידות גדולות יותר: 8, 9, 10 ס״מ.
-היקף = 8 + 9 + 10 = 27 ס״מ.
+Today we will strengthen perimeter of a triangle — with bigger measurements: 8, 9, 10 cm.
+Perimeter = 8 + 9 + 10 = 27 cm.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: triangle_perimeter
 :::
 
-היקף = a + b + c — סכום שלוש הצלעות.
-כאן — חיבור ישיר או בשלבים:
+Perimeter = a + b + c — the sum of all three sides.
+Here — add directly or in steps:
 8 + 9 = 17
 17 + 10 = 27
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משולש 8, 9, 10 ס״מ:
-8 + 9 + 10 = 27 ס״מ
-בדיקה: 8 + 9 = 17; 17 + 10 = 27
+Triangle 8, 9, 10 cm:
+8 + 9 + 10 = 27 cm
+Check: 8 + 9 = 17; 17 + 10 = 27
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-משולש עם צלעות 8 ס״מ, 9 ס״מ, 10 ס״מ. מה ההיקף?
+Triangle with sides 8 cm, 9 cm, 10 cm. What is the perimeter?
 8 + 9 = 17
 17 + 10 = 27
-27 ס״מ.
+27 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש: צלעות 7 ס״מ, 11 ס״מ, 12 ס״מ — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Triangle: sides 7 cm, 11 cm, 12 cm — what is the perimeter?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש עם צלעות 7 ס״מ, 11 ס״מ, 12 ס״מ — מה ההיקף?
+Triangle with sides 7 cm, 11 cm, 12 cm — what is the perimeter?
 7 + 11 = 18
 18 + 12 = 30
-30 ס״מ
+30 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-היקף משולש = a + b + c — עם מידות גדולות יותר.
-בתרגול תמצאו 8, 9, 10 או צלעות אחרות — חברו שלוש!
+Perimeter of a triangle = a + b + c — with bigger measurements.
+In practice you'll find 8, 9, 10 or other sides — add all three!

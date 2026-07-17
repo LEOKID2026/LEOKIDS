@@ -1,4 +1,4 @@
-﻿# שטח עיגול
+# Area of a Circle
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח עיגול `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Circle `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,64 +22,64 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שטח עיגול בגאומטריה.
-שטח = π × רדיוס².
-בשיעור: π ≈ 3.14
-יחידה: סמ״ר.
+Today we will learn area of a circle in geometry.
+Area = π × radius².
+In class: π ≈ 3.14
+Unit: cm².
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: circle_area
 :::
 
-שלבים:
+Steps:
 1.
-מחשבים r² (רדיוס × רדיוס)
+Calculate r² (radius × radius)
 2.
-מכפילים ב-3.14
+Multiply by 3.14
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-רדיוס 4 ס״מ:
+Radius 4 cm:
 4 × 4 = 16
-3.14 × 16 = 50.24 סמ״ר
+3.14 × 16 = 50.24 cm²
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-עיגול רדיוס 4 ס״מ (π = 3.14) מה השטח?
+Circle radius 4 cm (π = 3.14) — what is the area?
 4² = 16
 3.14 × 16 = 50.24
-50.24 סמ״ר.
+50.24 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-עיגול רדיוס 6 ס״מ (π = 3.14)— מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Circle radius 6 cm (π = 3.14) — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-עיגול רדיוס 6 ס״מ (π = 3.14)— מה השטח?
+Circle radius 6 cm (π = 3.14) — what is the area?
 r² = 6 × 6 = 36
 3.14 × 36 = 113.04
-113.04 סמ״ר
+113.04 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח עיגול = π × רדיוס².
-בתרגול תמצאו שטחי עיגולים — העלו את הרדיוס בריבוע קודם!
+Area of a circle = π × radius².
+In practice you'll find circle areas — square the radius first!

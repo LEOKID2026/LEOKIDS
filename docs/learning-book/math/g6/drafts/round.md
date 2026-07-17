@@ -1,4 +1,4 @@
-# עיגול — עשרות, מאות, אלפים
+# Rounding — Tens, Hundreds, and Thousands
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | עיגול — עשרות, מאות, אלפים `[DRAFT — not owner-approved]` |
+| **title_english** | Rounding — Tens, Hundreds, and Thousands |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** עיגול מספרים שלמים; לא עשרוניים
+**Content scope:** rounding whole numbers; not decimals
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד עיגול מספרים שלמים — לעשרות, מאות או אלפים הקרובים.
-בודקים את הספרה שמימין למקום שאליו מעגלים.
+Today we will learn to round whole numbers — to the nearest ten, hundred, or thousand.
+Look at the digit to the right of the place you are rounding to.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-עיגול לאלפים — מסתכלים על מאות.
-47,832 → עיגול לאלפים:
-- מאות = 8 (≥ 5) → מעגלים מעלה
+Rounding to the nearest thousand — look at the hundreds digit.
+47,832 → round to the nearest thousand:
+- hundreds = 8 (≥ 5) → round up
 - 47,832 ≈ 48,000
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-1,247 לעשרות:
-- אחדות = 7 (≥ 5) → 1,250
-1,247 למאות:
-- עשרות = 4 (< 5) → 1,200
+1,247 to the nearest ten:
+- ones = 7 (≥ 5) → 1,250
+1,247 to the nearest hundred:
+- tens = 4 (< 5) → 1,200
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-עגלו 47,832 לאלפים.
-ספרת מאות = 8.
-8 ≥ 5 → מעגלים מעלה.
+Round 47,832 to the nearest thousand.
+The hundreds digit = 8.
+8 ≥ 5 → round up.
 48,000.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-עגלו 63,417 לאלפים.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-עגלו 63,417 לאלפים
-מסתכלים על ספרת מאות: 4.
-4 < 5 → מעגלים מטה.
-אלפים נשאר 3, מאות ומטה הופכות לאפס.
-התשובה: 63,000
+Round 63,417 to the nearest thousand.
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עיגול עוזר לאומדן מהיר.
-בתרגול תמצאו עיגול לעשרות, מאות ואלפים — זיהו נכון את ספרת ההחלטה!
+Round 63,417 to the nearest thousand
+Look at the hundreds digit: 4.
+4 < 5 → round down.
+Thousands stay 3, hundreds and below become zero.
+The answer: 63,000
+
+---
+
+## 7. Let's practice!
+
+Rounding helps you estimate quickly.
+In practice you will round to tens, hundreds, and thousands — identify the deciding digit correctly!

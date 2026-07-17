@@ -1,4 +1,4 @@
-# זוגי/אי-זוגי — סיווג מהיר
+# Even and Odd — Quick Sorting
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגי/אי-זוגי — מספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Even and Odd — Large Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוגי/אי-זוגי לפי ספרת האחדות. מספרים עד 10,000. ללא חוקי התחלקות.
+**Content scope:** Even/odd by the ones digit. Numbers up to 10,000. No divisibility rules.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לסווג במהירות מספרים זוגיים ואי זוגיים — גם עד 10,000.
-לא צריך לחשב את כל המספר: מספיק ספרת האחדות.
-
----
-
-## 2. הסבר
-
-חוק הספרה האחרונה:
-246 — האחדות 6 → זוגי (מיד!)
-8,731 — האחדות 1 → אי זוגי (מיד!)
-למה זה עובד? כל עשרות, מאות ואלפים הם זוגיים — רק האחדות יכולה "להשאיר אחד בחוץ".
+Today we'll learn to quickly sort numbers as even or odd — even up to 10,000.
+You don't need to figure out the whole number: just look at the ones digit.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-3,512 — זוגי או אי זוגי?
-סיווג מהיר: ספרת האחדות 2 → 2 הוא זוגי → 3,512 זוגי.
-בדיקה: 3,512 = 1,756 + 1,756
-לא צריך לחשב את 3,512 כולו — רק הספרה האחרונה.
-
----
-
-## 4. בואו נפתור
-
-האם 7,905 זוגי או אי זוגי?
-ספרת האחדות: 5.
-5 → אי זוגי.
-7,905 הוא אי זוגי.
+The last-digit rule:
+246 — ones digit 6 → even (right away!)
+8,731 — ones digit 1 → odd (right away!)
+Why does this work? Every ten, hundred, and thousand is even — only the ones can "leave one left over."
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-האם 3,578 זוגי או אי זוגי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-האם 3,578 זוגי או אי זוגי?
-מסתכלים רק על ספרת האחדות: 8.
-8 נמצא ברשימה 0, 2, 4, 6, 8 → זוגי.
-3,578 זוגי
+3,512 — even or odd?
+Quick sort: ones digit 2 → 2 is even → 3,512 is even.
+Check: 3,512 = 1,756 + 1,756
+You don't need to figure out all of 3,512 — just the last digit.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לסווג במהירות זוגי ואי זוגי.
-בתרגול תמצאו זוגי או אי זוגי?
-בדקו רק את ספרת האחדות!
+Is 7,905 even or odd?
+Ones digit: 5.
+5 → odd.
+7,905 is odd.
+
+---
+
+## 5. Try it yourself
+
+Is 3,578 even or odd?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+Is 3,578 even or odd?
+Look only at the ones digit: 8.
+8 is in the list 0, 2, 4, 6, 8 → even.
+3,578 is even
+
+---
+
+## 7. Let's practice!
+
+Now you know how to quickly sort even and odd.
+In practice you'll find even or odd?
+Check only the ones digit!

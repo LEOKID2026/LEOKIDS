@@ -1,4 +1,4 @@
-# חומרים — כוחות ותנועה
+# Materials — Forces and Motion
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | חומרים — כוחות ותנועה `[DRAFT — not owner-approved]` |
+| **title_english** | Materials — Forces and Motion `[DRAFT — not owner-approved]` |
 
-**Content scope:** דחיפה/משיכה; חיכוך; מגנט — ללא חשמל
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על כוחות — דחיפה ומשיכה — ואיך הם מזיזים חפצים.
-נכיר גם חיכוך ומגנט.
+**Content scope:** Push/pull; friction; magnet — no electricity
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-כוח הוא דחיפה או משיכה שגורמת לחפץ לזוז או לעצור.
-דחיפה — מרחיקים את החפץ (דחיפת דלת)
-משיכה — מקרבים את החפץ (משיכת מגירה)
-חיכוך הוא כוח שמתנגד לתנועה כששני משטחים נוגעים.
-על משטח חלק — פחות חיכוך; על משטח מחוספס — יותר.
-מגנט יכול למשוך חומרים מסוימים, כמו ברזל, בלי לגעת בהם.
+Today in science we will learn about forces — push and pull — and how they move objects.
+We will also learn about friction and magnets.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ילד דוחף עגלת משחק על דשא ואחר כך על מדרכה.
-על דשא — קשה יותר לדחוף (יותר חיכוך).
-על מדרכה חלקה — קל יותר.
-אותה דחיפה — תוצאה שונה בגלל המשטח.
-
----
-
-## 4. בואו נפתור
-
-מה עושה פעולת משיכה?
-משיכה מקרבת חפץ.
-דוגמה — פתיחת מגירה כלפי עצמנו.
-מקרבת חפץ אלינו
+A force is a push or pull that makes an object move or stop.
+Push — moves the object away (pushing a door)
+Pull — brings the object closer (pulling a drawer)
+Friction is a force that resists motion when two surfaces touch.
+On a smooth surface — less friction; on a rough surface — more.
+A magnet can pull certain materials, like iron, without touching them.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-דחפו ספר על שולחן חלק.
-האם הכוח הוא דחיפה או משיכה?
-מה קורה כשמפסיקים לדחוף — למה הספר עוצר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-דחיפת ספר על שולחן — מרחיקים את הספר מאיתנו, זהו כוח דחיפה.
-כשמפסיקים לדחוף, חיכוך בין הספר לשולחן מאט אותו ועוצר אותו.
-אם אין כוח שממשיך לדחוף, החיכוך גורם לספר להאט ולעצור.
-הכוח הוא דחיפה; הספר עוצר בגלל חיכוך בין הספר לשטח השולחן.
-דחיפה מרחיקה. חיכוך מאט ועוצר.
+A child pushes a toy cart on grass and then on a sidewalk.
+On grass — harder to push (more friction).
+On a smooth sidewalk — easier.
+Same push — different result because of the surface.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים דחיפה, משיכה וחיכוך במדעים.
-בתרגול חפשו שאלות על כוחות ומגנט.
+What does a pulling action do?
+Pulling brings an object closer.
+Example — opening a drawer toward yourself.
+Brings an object toward us
+
+---
+
+## 5. Try it yourself
+
+Push a book on a smooth table.
+Is the force a push or a pull?
+What happens when you stop pushing — why does the book stop?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Pushing a book on a table — you move the book away from you, that is a push force.
+When you stop pushing, friction between the book and the table slows it down and stops it.
+If no force keeps pushing, friction makes the book slow down and stop.
+The force is a push; the book stops because of friction between the book and the table surface.
+Push moves away. Friction slows and stops.
+
+---
+
+## 7. Let's practice!
+
+Now you know about push, pull, and friction in science.
+When you practice, look for questions about forces and magnets.

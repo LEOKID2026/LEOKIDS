@@ -1,4 +1,4 @@
-# חיבור שלושה מספרים
+# Adding Three Numbers
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Three Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור שלושה מספרים ברצף. סכום עד ~10,000. אסטרטגיות קיבוץ. ללא ארבעה מספרים.
+**Content scope:** Adding three numbers in a row. Sum up to ~10,000. Grouping strategies. No four numbers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-בפרק הזה נלמד לחבר שלושה מספרים — בזה אחר זה או בקבוצות נוחות.
-למשל: 350 + 120 + 80.
+In this section we'll learn to add three numbers — one after another or in friendly groups.
+For example: 350 + 120 + 80.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דרכים לחבר שלושה מספרים:
-בזה אחר זה: (350 + 120) + 80
-זוג נוח קודם: 350 + (120 + 80) — כש-120 + 80 = 200
-עיגול: 398 + 102 + 50 → (398 + 102) + 50 = 500 + 50
-חשוב: לחבר את כל שלושת המספרים — לא לעצור אחרי שניים!
+Ways to add three numbers:
+One after another: (350 + 120) + 80
+Friendly pair first: 350 + (120 + 80) — when 120 + 80 = 200
+Rounding: 398 + 102 + 50 → (398 + 102) + 50 = 500 + 50
+Important: add all three numbers — don't stop after two!
 350 + 120 + 80:
 350 + 120 = 470
 470 + 80 = 550
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 2,450 + 350 + 1,200
-2,450 + 1,200 = 3,650 (שני המספרים הגדולים קודם)
+2,450 + 1,200 = 3,650 (the two bigger numbers first)
 3,650 + 350 = 4,000
 2,450 + 350 + 1,200 = 4,000
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 820 + 180 + 500 = ?
-820 + 180 = 1,000 (זוג נוח — מסתיים ב-0).
+Work out: 820 + 180 + 500 = ?
+820 + 180 = 1,000 (friendly pair — ends in 0).
 1,000 + 500 = 1,500
 820 + 180 + 500 = 1,500
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 450 + 120 + 80 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 450 + 120 + 80 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 450 + 120 + 80 = ?
-מחפשים זוג נוח: 120 + 80 = 200
+Work out: 450 + 120 + 80 = ?
+Look for a friendly pair: 120 + 80 = 200
 450 + 200 = 650
 450 + 120 + 80 = 650
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר שלושה מספרים גדולים יותר.
-בתרגול תמצאו חיבור של שלושה מספרים — לפעמים עם עשרות ומאות.
-זכרו לחבר לפי סדר נוח, ואל תשכחו את המספר השלישי.
+Now you know how to add three bigger numbers.
+In practice you'll find adding three numbers — sometimes with tens and hundreds.
+Add in a handy order, and don't forget the third number!

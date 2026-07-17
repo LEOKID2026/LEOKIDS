@@ -1,4 +1,4 @@
-# שאלה מילולית — כמה שלבים
+# Word Problems — Multi-Step
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — כמה שלבים `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Multi-Step |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שני שלבים ומעלה
+**Content scope:** Two steps or more
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה מילולית עם שני שלבים ומעלה.
-קודם מבינים מה השלב הראשון, ואז את השני.
-
----
-
-## 2. הסבר
-
-מסגרת:
-קוראים את השאלה — מה השלב הראשון?
-פותרים שלב 1
-משתמשים בתוצאה לשלב 2
-450 − 120 = 330 (נשאר)
-330 − 80 = 250 (עוד פחות)
+Today we'll solve a word problem with two steps or more.
+First understand step one, then step two.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-300 + 150 = 450, ואז 450 − 100 = 350
+Frame:
+Read the question — what is step one?
+Solve step 1
+Use the result for step 2
+450 − 120 = 330 (what's left)
+330 − 80 = 250 (subtract again)
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-היו 450 ₪, הוציאו 120 ₪, ואז עוד 80 ₪. כמה נשאר?
+300 + 150 = 450, then 450 − 100 = 350
+
+---
+
+## 4. Let's solve together
+
+There were $450, they spent $120, then another $80. How much is left?
 450 − 120 = 330
 330 − 80 = 250
-250 ₪
+$250
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-היו 600 ₪, הוציאו 180 ₪, ואז עוד 95 ₪.
-כמה נשאר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+There were $600, they spent $180, then another $95.
+How much is left?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-היו 600 ₪, הוציאו 180 ₪, ואז עוד 95 ₪.
-כמה נשאר?
+There were $600, they spent $180, then another $95.
+How much is left?
 600 − 180 = 420
 420 − 95 = 325
-נשארו 325 ₪
+$325 left
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור שאלות מילוליות רב שלביות.
-בתרגול תמצאו שאלות עם שני שלבים.
-פתרו שלב אחר שלב!
+Now you know how to solve multi-step word problems.
+In practice you'll find two-step questions.
+Solve step by step!

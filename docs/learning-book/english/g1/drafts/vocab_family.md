@@ -1,4 +1,4 @@
-# משפחה באנגלית
+# Family in English
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | משפחה באנגלית |
+| **title_english** | Family in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** mom, dad, sister, brother — מילים בסיסיות
+**Content scope:** mom, dad, sister, brother — basic words
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים באנגלית לבני משפחה.
-כולנו חלק ממשפחה — ויש לה שמות באנגלית.
-
----
-
-## 2. הסבר
-
-מילים בסיסיות:
-mom — אמא
-dad — אבא
-sister — אחות
-brother — אח
+Today we will learn English words for family members.
+We're all part of a family — and it has names in English.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-אמא שלי בבית.
-באנגלית אומרים:
+Basic words:
 mom
-המילה mom פירושה אמא.
+dad
+sister
+brother
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה המילה לאבא באנגלית?
-חושבים על אבא.
+My mom is at home.
+In English we say:
+mom
+The word mom means mom.
+
+---
+
+## 4. Let's solve together
+
+What is the word for dad in English?
+Think about dad.
 dad
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יש לי אחות.
-היא הבת הנוספת במשפחה.
-מה המילה באנגלית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+I have a sister.
+She is another daughter in the family.
+What is the word in English?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-אחות — מה המילה באנגלית?
-חושבים — אחות.
-אחות באנגלית:
+Sister — what is the word in English?
+Think — sister.
+Sister in English:
 sister
-sister פירושו: אחות.
+sister means sister.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים מילים למשפחה באנגלית.
-בתרגול תמצאו שאלות על mom, dad, sister ו-brother.
+Now you know English words for family.
+In practice, you'll find questions about mom, dad, sister, and brother.

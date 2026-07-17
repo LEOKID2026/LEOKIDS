@@ -1,91 +1,91 @@
-# a / an / the ו-in / on / under
+# a / an / the and in / on / under
 
 ## Metadata
 
 | Field | Value |
 |-------|-------|
 | **learning_page_id** | `english:g3:grammar_articles_prepositions` |
-| **skill_id** | `english:grammar:line:תארים_בסיסיים_יידוע_a_an_the_ומילות_יחס_מקום_in_on_under` |
+  | **skill_id** | `english:grammar:line:articles_prepositions_in_on_under` |
 | **subject** | english |
 | **grade** | g3 |
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | a / an / the ו-in / on / under |
+| **title_english** | a / an / the and in / on / under |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** יידוע בסיסי + מיקום; The cat is under the bed
+**Content scope:** Basic articles + location; The cat is under the bed
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד a, an, the ומילות מיקום.
-in, on, under — בתוך, על, מתחת.
+Today we will learn a, an, the, and location words.
+in, on, under.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-a — לפני עצם כללי (a cat)
-an — לפני תנועה (an apple)
-the — ידוע (the cat)
+a — before a general object (a cat)
+an — before a vowel sound (an apple)
+the — a specific, known object (the cat)
 
 The cat is under the bed.
 
-החתול מתחת למיטה.
+The cat is under the bed.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-חתול מתחת למיטה.
+A cat under a bed.
 
 The cat is under the bed.
 
-החתול מתחת למיטה.
+The cat is under the bed.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "החתול מתחת למיטה"?
+Question: how do we say "the cat is under the bed"?
 
 The cat is under the bed
 
-תשובה: The cat is under the bed
+Answer: The cat is under the bed
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-כדור צבעוני בתוך קופסה.
+A colorful ball inside a box.
 
 The ball is in the box.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: כדור צבעוני בתוך קופסה.
+Exercise: a colorful ball inside a box.
 
-הפתרון:
+The solution:
 
 The ball is in the box.
 
-הכדור בתוך הקופסה.
+The ball is in the box.
 
-כל הכבוד! in = בתוך. המבנה: The + שם עצם + is + מילת מיקום כמו in, on או under + the + שם עצם.
+Well done! in means inside. The structure: The + noun + is + a location word like in, on, or under + the + noun.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים ב-a, an ו-the, וגם במילים in, on ו-under.
-בתרגול תמצאו The cat is under the bed.
+Now you use a, an, and the, along with in, on, and under.
+In practice, you'll find The cat is under the bed.

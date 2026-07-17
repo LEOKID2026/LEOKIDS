@@ -1,4 +1,4 @@
-﻿# היקף ריבוע — כיתה ד׳
+# Perimeter of a Square — Grade 4
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף ריבוע — כיתה ד׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Square — Grade 4 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** נוסחה 4 × צלע; 8, 32
+**Content scope:** Formula 4 × side; 8, 32
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשתמש בנוסחה לחישוב היקף ריבוע:
-היקף = 4 × צלע.
-כאן עובדים עם מספרים גדולים יותר — למשל צלע 8 ס״מ.
+Today we will use a formula to find the perimeter of a square:
+Perimeter = 4 × side.
+Here we work with bigger numbers — for example side 8 cm.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_perimeter
 :::
 
-נוסחה: היקף = 4 × צלע
-למה 4? בריבוע יש 4 צלעות שוות — כל אחת באורך הצלע.
-יחידה: ס״מ, מ' — לא סמ״ר.
+Formula: Perimeter = 4 × side
+Why 4? A square has 4 equal sides — each one is the length of the side.
+Unit: cm, m — not cm².
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע עם צלע 8 ס״מ:
-- נוסחה: 4 × 8 = 32
-היקף: 32 ס״מ.
+A square with side 8 cm:
+- Formula: 4 × 8 = 32
+Perimeter: 32 cm.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-לריבוע יש צלע באורך 8 ס״מ. מה ההיקף?
-נוסחה — היקף = 4 × צלע.
+A square has a side of length 8 cm. What is the perimeter?
+Formula — Perimeter = 4 × side.
 4 × 8 = 32
-32 ס״מ
+32 cm
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריבוע עם צלע 6 ס״מ — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A square with side 6 cm — what is the perimeter?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-ריבוע עם צלע 6 ס״מ — מה ההיקף?
-נוסחה — היקף = 4 × צלע.
-מציבים:
+A square with side 6 cm — what is the perimeter?
+Formula — Perimeter = 4 × side.
+Substitute:
 4 × 6 = 24
-היקף = 24 ס״מ
+Perimeter = 24 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים את הנוסחה 4 × צלע לחישוב היקף ריבוע!
-בתרגול תמצאו צלע — הכפילו ב-4!
+Now you know the formula 4 × side for the perimeter of a square!
+In practice you will find a side — multiply by 4!

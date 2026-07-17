@@ -1,4 +1,4 @@
-﻿# משפט פיתגורס — מציאת יתר
+# Pythagorean Theorem — Finding the Hypotenuse
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משפט פיתגורס — מציאת יתר `[DRAFT — not owner-approved]` |
+| **title_english** | Pythagorean Theorem — Finding the Hypotenuse `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** a²+b²=c²; יתר
+**Content scope:** a²+b²=c²; hypotenuse
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד משפט פיתגורס בגאומטריה — מציאת היתר.
-במשולש ישר זווית: a² + b² = c².
-c — היתר (הצלע הארוכה, נגד הזווית הישרה).
+Today we will learn the Pythagorean theorem in geometry — finding the hypotenuse.
+In a right triangle: a² + b² = c².
+c — the hypotenuse (the longest side, opposite the right angle).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: right_triangle
 :::
 
-שלבים למציאת יתר:
+Steps to find the hypotenuse:
 1.
-ריבוע ניצב1 + ריבוע ניצב2
-2. שורש של הסכום = היתר
+Square of leg 1 + square of leg 2
+2. Square root of the sum = hypotenuse
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ניצבים 3 ס״מ ו-4 ס״מ:
+Legs 3 cm and 4 cm:
 3² + 4² = 9 + 16 = 25
-√25 = 5 ס״מ
+√25 = 5 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-משולש ישר זווית — ניצבים 3 ס״מ ו-4 ס״מ. מה אורך היתר?
+Right triangle — legs 3 cm and 4 cm. What is the length of the hypotenuse?
 9 + 16 = 25
 √25 = 5
-5 ס״מ.
+5 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש ישר זווית: ניצבים 5 ס״מ ו-12 ס״מ — מה אורך היתר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Right triangle: legs 5 cm and 12 cm — what is the length of the hypotenuse?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש ישר זווית: ניצבים 5 ס״מ ו-12 ס״מ — מה אורך היתר?
+Right triangle: legs 5 cm and 12 cm — what is the length of the hypotenuse?
 5² + 12² = 25 + 144 = 169
 √169 = 13
-13 ס״מ
+13 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-משפט פיתגורס: a² + b² = c².
-בתרגול תמצאו יתר — העלו כל ניצב בריבוע ואז חברו!
+Pythagorean theorem: a² + b² = c².
+In practice you'll find the hypotenuse — square each leg and then add!

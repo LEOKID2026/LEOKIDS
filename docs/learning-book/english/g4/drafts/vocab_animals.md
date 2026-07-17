@@ -1,4 +1,4 @@
-# חיות — פעולה עכשיו
+# Animals — Action Happening Now
 
 ## Metadata
 
@@ -11,83 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | חיות — פעולה עכשיו |
+| **title_english** | Animals — Action Happening Now |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** The birds are flying — קישור ל-Continuous
+**Content scope:** The birds are flying — connects to Present Continuous
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חיות עם פעולה שקורית עכשיו.
-The birds are flying — הציפורים עפות (עכשיו).
+Today we will learn about animals doing something right now.
+The birds are flying — happening right now.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Present Continuous — פעולה עכשיו:
+Present Continuous — action happening now:
 
 The birds are flying.
-
-הציפורים עפות.
 
 The dog is running.
 
-הכלב רץ (עכשיו).
+Both sentences describe something happening right now.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ציפורים בשמיים.
+Birds in the sky.
 
 The birds are flying.
 
-הציפורים עפות.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הציפורים עפות" (עכשיו)?
+Question: How do you say this?
 
 The birds are flying
 
-תשובה: The birds are flying
+Answer: The birds are flying
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-דגים בים.
+Fish in the sea.
 
 The fish are swimming in the sea.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הדגים שוחים בים (עכשיו)."
+Exercise: "The fish are swimming in the sea (right now)."
 
-פעולה שקורית עכשיו — Present Continuous: are + swimming.
+An action happening right now uses Present Continuous: are + swimming.
 
-the fish הוא ריבוי — משתמשים ב-are swimming.
+"The fish" is plural, so we use are swimming.
 
-הדגים שוחים בים.
-
- The fish are swimming in the sea.
+So the full sentence is: The fish are swimming in the sea.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים חיות בפעולה עכשיו.
-בתרגול תמצאו The birds are flying.
+Now you will describe animals in action happening right now.
+In the practice, you'll find: The birds are flying.

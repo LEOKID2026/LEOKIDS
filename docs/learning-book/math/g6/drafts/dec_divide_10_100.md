@@ -1,4 +1,4 @@
-# חילוק עשרוני ב-10 או ב-100
+# Dividing a Decimal by 10 or 100
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק עשרוני ב-10 או ב-100 `[DRAFT — not owner-approved]` |
+| **title_english** | Dividing a Decimal by 10 or 100 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הזזת הנקודה שמאלה
+**Content scope:** moving the decimal point to the left
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק עשרוני ב-10 או ב-100.
-45.6 ÷ 10 — הנקודה זזה שמאלה.
-
----
-
-## 2. הסבר
-
-45.6 ÷ 10 = 4.56 — מקום אחד שמאלה.
-45.6 ÷ 100 = 0.456 — שני מקומות שמאלה.
+Today we will learn to divide a decimal by 10 or 100.
+45.6 ÷ 10 — the decimal point moves to the left.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+45.6 ÷ 10 = 4.56 — one place to the left.
+45.6 ÷ 100 = 0.456 — two places to the left.
+
+---
+
+## 3. Visual / concrete example
 
 320 ÷ 100 = 3.2
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 45.6 ÷ 10 = ?
-÷10 → הנקודה מקום אחד שמאלה.
+÷10 → the decimal point moves one place to the left.
 4.56.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 83.5 ÷ 10 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 83.5 ÷ 10 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 83.5 ÷ 10
-÷10 → הנקודה זזה מקום אחד שמאלה.
+Calculate: 83.5 ÷ 10
+÷10 → the decimal point moves one place to the left.
 83.5 → 8.35
-בדיקה: 8.35 × 10 = 83.5
-התשובה: 8.35
+Check: 8.35 × 10 = 83.5
+The answer: 8.35
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-חילוק ב-10/100 הוא כלי מהיר.
-בתרגול תמצאו חילוק ב-10 וב-100 — כיוון הנקודה!
+Dividing by 10/100 is a quick tool.
+In practice you will divide by 10 and 100 — watch the direction of the decimal point!

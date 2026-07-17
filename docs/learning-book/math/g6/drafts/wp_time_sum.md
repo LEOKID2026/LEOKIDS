@@ -1,4 +1,4 @@
-# שאלה מילולית — סכום זמנים
+# Word Problems — Adding Times
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Adding Times |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור שעות ודקות — לוח זמנים, משך פעילות, סה״כ יום.
+**Content scope:** adding hours and minutes — schedules, activity length, total for the day.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור סכום זמנים — למשל כמה ביחד נמשכים שיעור וחוג, או שני קטעי נסיעה.
+Today we will solve adding times — for example, how long a class and an activity take together, or two parts of a trip.
 2:25 + 1:40 = ?
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כאן מחברים משכי יום — חוגים, נסיעות, הפסקות — בפורמט ש:ד.
-שיטה מסודרת:
-1. דקות בנפרד — אם ≥ 60, מעבירים שעה (65 דק' → 1:05).
-2. שעות בנפרד — מוסיפים שעה שהגיעה מהדקות.
-3. בדיקה — התוצאה חייבת להיות בפורמט חוקי (דקות 0–59).
+Here we add parts of the day — clubs, trips, breaks — in h:mm format.
+Organized method:
+1. Minutes separately — if ≥ 60, carry an hour (65 min → 1:05).
+2. Hours separately — add the hour that came from the minutes.
+3. Check — the result must be in valid format (minutes 0–59).
 1:55 + 2:30:
-- דקות: 55 + 30 = 85 → 1:25
-- שעות: 1 + 2 + 1 = 4 → 4:25
+- Minutes: 55 + 30 = 85 → 1:25
+- Hours: 1 + 2 + 1 = 4 → 4:25
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-לוח יומי: שיעור 2:10 + מטלה ביתית 0:50.
-דקות: 10 + 50 = 60 → 1:00 (שעה שלמה מהדקות).
-שעות: 2 + 0 + 1 = 3
+Daily schedule: class 2:10 + homework 0:50.
+Minutes: 10 + 50 = 60 → 1:00 (a full hour from the minutes).
+Hours: 2 + 0 + 1 = 3
 3:00.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-אימון כדורגל 2:25 + אימון כושר 1:40. כמה ביחד?
-שלב 1 — דקות: 25 + 40 = 65 → 1:05
-שלב 2 — שעות: 2 + 1 + 1 = 4
+Soccer practice 2:25 + fitness training 1:40. How long altogether?
+Step 1 — minutes: 25 + 40 = 65 → 1:05
+Step 2 — hours: 2 + 1 + 1 = 4
 4:05.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 1:45 + 2:30 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-חשבו: 1:45 + 2:30
-שלב 1 — דקות: 45 + 30 = 75 → 75 ≥ 60 → 75 − 60 = 15 דקות, נשיאה שעה אחת.
-שלב 2 — שעות: 1 + 2 + 1 = 4
-4 שעות ו-15 דקות → 4:15.
-התשובה: 4:15
+Calculate: 1:45 + 2:30 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-סכום זמנים = חיבור עם המרה — כמו חישוב סה״כ בלוח יומי.
-בתרגול תמצאו סכום שעות — חברו דקות, והמירו 60 דקות לשעה!
+Calculate: 1:45 + 2:30
+Step 1 — minutes: 45 + 30 = 75 → 75 ≥ 60 → 75 − 60 = 15 minutes, carry 1 hour.
+Step 2 — hours: 1 + 2 + 1 = 4
+4 hours and 15 minutes → 4:15.
+The answer: 4:15
+
+---
+
+## 7. Let's practice!
+
+Adding times = addition with conversion — like finding a daily total.
+In practice you will add hours — add the minutes, then convert 60 minutes to 1 hour!

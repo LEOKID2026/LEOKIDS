@@ -1,4 +1,4 @@
-# הנחה באחוזים
+# Percent Discount
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הנחה באחוזים `[DRAFT — not owner-approved]` |
+| **title_english** | Percent Discount |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חישוב הנחה ומחיר סופי
+**Content scope:** calculating discount and final price
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד הנחה באחוזים.
-מחיר 180 ש״ח, 20% הנחה.
-
----
-
-## 2. הסבר
-
-20% מ-180 = 180 × 20 ÷ 100 = 36 ש״ח הנחה.
-מחיר סופי = 180 − 36 = 144 ש״ח
+Today we will learn percent discount.
+Price 180 shekels, 20% off.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-15% מ-200 = 30 → 200 − 30 = 170
+20% of 180 = 180 × 20 ÷ 100 = 36 shekels discount.
+Final price = 180 − 36 = 144 shekels
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-מחיר 180, 20% הנחה. מחיר סופי?
-הנחה = 180 × 20 ÷ 100 = 36.
+15% of 200 = 30 → 200 − 30 = 170
+
+---
+
+## 4. Let's solve together
+
+Price 180, 20% off. Final price?
+Discount = 180 × 20 ÷ 100 = 36.
 180 − 36 = 144
-144 ש״ח.
+144 shekels.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מחיר 250 ש״ח, 10% הנחה — מה המחיר הסופי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מחיר 250 ש״ח, 10% הנחה
-הנחה = 250 × 10 ÷ 100 = 25 ש״ח.
-מחיר סופי = 250 − 25 = 225 ש״ח.
-התשובה: 225 ש״ח
+Price 250 shekels, 10% off — what is the final price?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-הנחות מופיעות בחנויות ובשאלות.
-בתרגול תמצאו הנחות — חשבו אחוז מהמחיר!
+Price 250 shekels, 10% off
+Discount = 250 × 10 ÷ 100 = 25 shekels.
+Final price = 250 − 25 = 225 shekels.
+The answer: 225 shekels
+
+---
+
+## 7. Let's practice!
+
+Discounts appear in stores and in word problems.
+In practice you will find discounts — calculate the percent of the price!

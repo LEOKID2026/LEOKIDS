@@ -1,4 +1,4 @@
-# גורמים של מספר
+# Factors of a Number
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גורמים של מספר `[DRAFT — not owner-approved]` |
+| **title_english** | Factors of a Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מציאת גורמים; מספרים גדולים יותר
+**Content scope:** Finding factors; larger numbers
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד למצוא את כל הגורמים של מספר — בחשבון ותורת המספרים.
-גורם = מספר שמחלק את המספר בלי שארית.
+Today we'll learn to find all the factors of a number — in math and number theory.
+A factor = a number that divides the number exactly with no remainder.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-גורמים של 36:
+Factors of 36:
 1 × 36 = 36
 2 × 18 = 36
 3 × 12 = 36
 4 × 9 = 36
 6 × 6 = 36
-גורמים של 36: 1, 2, 3, 4, 6, 9, 12, 18, 36
+Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-גורמים של 24: 1, 2, 3, 4, 6, 8, 12, 24
+Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מצאו את כל הגורמים של 36
+Find all the factors of 36
 1×36, 2×18, 3×12, 4×9, 6×6
-רשימה: 1, 2, 3, 4, 6, 9, 12, 18, 36
+List: 1, 2, 3, 4, 6, 9, 12, 18, 36
 1, 2, 3, 4, 6, 9, 12, 18, 36
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מצאו את כל הגורמים של 48.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Find all the factors of 48.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-מצאו את כל הגורמים של 48.
-חיפוש זוגות כפל:
+Find all the factors of 48.
+Look for multiplication pairs:
 1 × 48 = 48
 2 × 24 = 48
 3 × 16 = 48
 4 × 12 = 48
 6 × 8 = 48
-רשימה מסודרת: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
-גורמים של 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
+Ordered list: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
+Factors of 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-בפרק הזה חיזקנו את הידע למצוא גורמים של מספר.
-בתרגול תמצאו גם מספרים גדולים יותר מה הגורמים? — חפשו זוגות כפל!
+In this chapter we strengthened finding factors of a number.
+In practice you'll find larger numbers too. What are the factors? — look for multiplication pairs!

@@ -10,7 +10,6 @@
 | **grade** | g2 |
 | **page_type** | placeholder |
 | **approval_status** | draft |
-| **title_hebrew** | ספר בהכנה |
 
 ---
 

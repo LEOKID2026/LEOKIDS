@@ -1,4 +1,4 @@
-# היסטוריה באנגלית
+# History in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | היסטוריה באנגלית |
+| **title_english** | History in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים על היסטוריה — ancient, century.
-We learned about ancient history in class — למדנו על היסטוריה עתיקה בכיתה.
+Today we will learn words about history — ancient, century.
+We learned about ancient history in class.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-ancient history — היסטוריה עתיקה; learned — למדנו:
+ancient history — history from long ago; learned — the past form of learn:
 
 We learned about ancient history in class.
-
-למדנו על היסטוריה עתיקה בכיתה.
 
 The castle is hundreds of years old.
 
-הטירה בת מאות שנים.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-שיעור היסטוריה — תמונות של מצרים העתיקה.
+A history lesson — pictures of ancient Egypt.
 
 We learned about ancient history in class.
 
-למדנו על היסטוריה עתיקה בכיתה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "למדנו על היסטוריה עתיקה בכיתה"?
+Question: How do you say this?
 
 We learned about ancient history in class
 
-תשובה: We learned about ancient history in class
+Answer: We learned about ancient history in class
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מוזיאון — כלי עתיקים מלפני אלפי שנים.
+A museum — ancient tools from thousands of years ago.
 
 Researchers discovered ancient tools from thousands of years ago.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "חוקרים גילו כלים עתיקים מלפני אלפי שנים."
+Exercise: "Researchers discovered ancient tools from thousands of years ago."
 
-פועל סדיר בעבר: discover הופך ל-discovered.
+A regular verb in the past: discover becomes discovered.
 
-ancient tools = כלים עתיקים; thousands of years ago = לפני אלפי שנים.
+"Ancient tools" tells us what; "thousands of years ago" tells us when.
 
-חוקרים גילו כלים עתיקים מלפני אלפי שנים.
-
- Researchers discovered ancient tools from thousands of years ago.
+So the full sentence is: Researchers discovered ancient tools from thousands of years ago.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מדברים על היסטוריה באנגלית.
-בתרגול תמצאו We learned about ancient history in class.
+Now you will talk about history in English.
+In the practice, you'll find: We learned about ancient history in class.

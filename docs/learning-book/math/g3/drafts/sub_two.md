@@ -1,4 +1,4 @@
-# חיסור שני מספרים — עד 1,000
+# Subtracting Two Numbers — Up to 1,000
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור שני מספרים — עד 1,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Two Numbers — Up to 1,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור עד 1,000. השאלה (borrow). ללא שליליים בתוצאה.
+**Content scope:** Subtraction up to 1,000. Borrowing. No negative answers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר שני מספרים עד 1,000.
-כשאין מספיק אחדות (או עשרות) — שואלים מהמקום שמשמאל (השאלה).
+Today we will learn to subtract two numbers up to 1,000.
+When there aren't enough ones (or tens) — we borrow from the place to the left.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 503 − 287:
-אחדות: 3 < 7 — לא מספיק! שואלים 1 מ-0 בעשרות…
-0 בעשרות — שואלים מ-5 במאות → נשאר 4 במאות, 10 בעשרות.
-אחדות: 13 − 7 = 6
-עשרות: 9 − 8 = 1 (9 כי "10" אחרי השאלה מ-0)
-מאות: 4 − 2 = 2
+ones: 3 < 7 — not enough! Borrow 1 from 0 in the tens…
+0 in the tens — borrow from 5 in the hundreds → 4 left in hundreds, 10 in tens.
+ones: 13 − 7 = 6
+tens: 9 − 8 = 1 (9 because we had "10" after borrowing from 0)
+hundreds: 4 − 2 = 2
 503 − 287 = 216
-בדיקה: 216 + 287 = 503
+Check: 216 + 287 = 503
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 620 − 385:
-אחדות: 0 < 5 → שואלים → 10 − 5 = 5
-עשרות: אחרי ההשאלה נשארה עשרת אחת, והיא לא מספיקה. שואלים מהמאות → 11 − 8 = 3
-מאות: אחרי ההשאלה נשארו 5 מאות → 5 − 3 = 2
+ones: 0 < 5 → borrow → 10 − 5 = 5
+tens: after borrowing one ten remains, and it's not enough. Borrow from hundreds → 11 − 8 = 3
+hundreds: after borrowing, 5 hundreds remain → 5 − 3 = 2
 620 − 385 = 235
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 412 − 178 = ?
-אחדות: 12 − 8 = 4 (שואלים מ-1 בעשרות).
-עשרות: 0 − 7 — שואלים → 10 − 7 = 3 (מאות נהיות 3).
-מאות: 3 − 1 = 2
+Calculate: 412 − 178 = ?
+ones: 12 − 8 = 4 (borrow from 1 in the tens).
+tens: 0 − 7 — borrow → 10 − 7 = 3 (hundreds become 3).
+hundreds: 3 − 1 = 2
 412 − 178 = 234
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 704 − 356 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 704 − 356 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 704 − 356
-אחדות: 4 < 6 — שואלים. 0 בעשרות — שואלים מ-7 במאות → נשאר 6 במאות, 10 בעשרות.
-אחדות: 14 − 6 = 8
-עשרות: 9 − 5 = 4 (9 כי העשרות קיבלו 10 ונתנו 1 לאחדות)
-מאות: 6 − 3 = 3
+Calculate: 704 − 356
+ones: 4 < 6 — borrow. 0 in the tens — borrow from 7 in the hundreds → 6 left in hundreds, 10 in tens.
+ones: 14 − 6 = 8
+tens: 9 − 5 = 4 (9 because the tens got 10 and gave 1 to the ones)
+hundreds: 6 − 3 = 3
 704 − 356 = 348
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר עד 1,000 עם השאלה.
-בתרגול תמצאו חיסורים.
-כשאין מספיק — שואלים!
+Now you know how to subtract up to 1,000 with borrowing.
+In practice you'll find subtractions.
+When there isn't enough — borrow!

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
-import { formatBookShellTitleHe } from "../../lib/learning-book/format-book-shell-title-he";
+import { formatBookShellTitle } from "../../lib/learning-book/format-book-shell-title";
 import { BookGradeThemeProvider } from "./BookGradeThemeContext";
 import BookShellHeader from "./BookShellHeader";
 import BookTocModal from "./BookTocModal";
@@ -69,7 +69,7 @@ export default function LearningBookShell({
             onReturn={handleReturnClick}
             onOpenToc={() => setTocOpen(true)}
             themeClasses={theme.classes}
-            titleHe={formatBookShellTitleHe(bookMeta.bookTitleHe)}
+            title={formatBookShellTitle(bookMeta.bookTitle || bookMeta.bookTitleHe)}
             isIndex={isIndex}
             pageMeta={pageMeta}
             indexSubtitle={`${bookMeta.gradeShortLabel} · Pick a topic and read page by page`}

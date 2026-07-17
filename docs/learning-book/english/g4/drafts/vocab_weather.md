@@ -1,4 +1,4 @@
-# מזג אוויר — היום
+# Weather — today
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מזג אוויר — היום |
+| **title_english** | Weather — today |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מזג אוויר עם today.
-It is raining today — היום יורד גשם.
+Today we will learn about the weather using "today."
+It is raining today.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 It is raining today.
-
-היום יורד גשם.
 
 It is sunny today.
 
-היום שמש.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-גשם בחוץ.
+Rain outside.
 
 It is raining today.
 
-היום יורד גשם.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היום יורד גשם"?
+Question: How do you say this?
 
 It is raining today
 
-תשובה: It is raining today
+Answer: It is raining today
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שמיים מכוסים בעננים.
+The sky covered in clouds.
 
 It is snowing today.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "היום יורד שלג."
+Exercise: "It is snowing today."
 
-מזג אוויר שמתרחש עכשיו — Present Continuous: is + פועל + ing.
+Weather happening right now uses Present Continuous: is + verb + ing.
 
-snow הופך ל-snowing; today פירושו היום.
+"Snow" becomes "snowing"; "today" tells us when.
 
-היום יורד שלג.
-
- It is snowing today.
+So the full sentence is: It is snowing today.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים מזג אוויר היום.
-בתרגול תמצאו It is raining today.
+Now you will describe today's weather.
+In the practice, you'll find: It is raining today.

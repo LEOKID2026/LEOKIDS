@@ -1,4 +1,4 @@
-# שגרת יום — משפטים מלאים
+# Daily Routine — Full Sentences
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | שגרת יום — משפטים מלאים |
+| **title_english** | Daily Routine — Full Sentences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבנה משפטי שגרה.
-I brush my teeth every morning — אני מצחצח שיניים כל בוקר.
+Today we will build routine sentences.
+I brush my teeth every morning.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 I brush my teeth.
 
-אני מצחצח שיניים.
+I brush my teeth.
 
 I wake up early.
 
-אני קם מוקדם.
+I wake up early.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד מצחצח שיניים.
+A child brushing their teeth.
 
 I brush my teeth.
 
-אני מצחצח שיניים.
+I brush my teeth.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אני מצחצח שיניים"?
+Question: how do we say "I brush my teeth"?
 
 I brush my teeth
 
-תשובה: I brush my teeth
+Answer: I brush my teeth
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בוקר — שולחן אוכל מוכן.
+Morning — the breakfast table is set.
 
 I eat breakfast.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: בוקר — שולחן אוכל מוכן.
+Exercise: morning — the breakfast table is set.
 
-הפתרון:
+The solution:
 
 I eat breakfast.
 
-אני אוכל ארוחת בוקר.
+I eat breakfast.
 
-כל הכבוד! breakfast = ארוחת בוקר — מילה אחת באנגלית, ללא the לפניה בדרך כלל.
+Well done! breakfast is one word in English, usually without the before it.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים שגרת יום.
-בתרגול תמצאו I brush my teeth ו-I wake up early.
+Now you describe a daily routine.
+In practice, you'll find I brush my teeth and I wake up early.

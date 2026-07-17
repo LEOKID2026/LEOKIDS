@@ -1,4 +1,4 @@
-# סביבה — planted trees
+# Environment — planted trees
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | סביבה — planted trees |
+| **title_english** | Environment — planted trees |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד סביבה עם Past Simple.
-They planted trees last year — הם נטעו עצים בשנה שעברה.
+Today we will learn about the environment with Past Simple.
+They planted trees last year.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-planted — נטעו (עבר):
+planted — the past form of plant:
 
 They planted trees last year.
-
-הם נטעו עצים בשנה שעברה.
 
 We cleaned the park yesterday.
 
-ניקינו את הפארק אתמול.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדים נוטעים עצים.
+Children planting trees.
 
 They planted trees last year.
 
-הם נטעו עצים בשנה שעברה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הם נטעו עצים בשנה שעברה"?
+Question: How do you say this?
 
 They planted trees last year
 
-תשובה: They planted trees last year
+Answer: They planted trees last year
 
 ---
 
-## 5. נסו בעצמכם
-
-ילדים שתלו פרחים ביער.
+## 5. Try it yourself
 
 Children planted flowers in the forest.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Children planted flowers in the forest.
+
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "ילדים שתלו פרחים ביער."
+Exercise: "Children planted flowers in the forest."
 
-פועל סדיר בעבר: plant הופך ל-planted.
+A regular verb in the past: plant becomes planted.
 
-in the forest = ביער.
+"In the forest" tells us where.
 
-ילדים שתלו פרחים ביער.
-
- Children planted flowers in the forest.
+So the full sentence is: Children planted flowers in the forest.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים פעולות לסביבה בעבר.
-בתרגול תמצאו They planted trees last year.
+Now you will describe things people did for the environment in the past.
+In the practice, you'll find: They planted trees last year.

@@ -1,4 +1,4 @@
-# משוואת חיבור — מספר חסר
+# Addition Equation — Missing Number
 
 ## Metadata
 
@@ -11,36 +11,36 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת חיבור — מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Addition Equation — Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** משוואת חיבור עם מקום ריק __. עד ~100. ללא משתנה x.
+**Content scope:** Addition equation with a blank __. Up to ~100. No variable x.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור משוואת חיבור — תרגיל עם מספר חסר (__).
-צריך למצוא מה חסר כדי שהשוויון יהיה נכון.
+Today we will solve an addition equation — a problem with a missing number (__).
+We need to find what's missing so the equation is true.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 45 + __ = 72
-שואלים: מה צריך להוסיף ל-45 כדי להגיע ל-72?
+Ask: what do we add to 45 to reach 72?
 72 − 45 = 27
 45 + 27 = 72
-או: חושבים — 45 + 20 = 65, עוד 7 → 27.
-המספר החסר הוא 27 — לא 72!
+Or: think — 45 + 20 = 65, plus 7 more → 27.
+The missing number is 27 — not 72!
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 38 + __ = 65
 65 − 38 = 27
@@ -48,36 +48,36 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-52 + __ = 80 — מה המספר החסר?
+52 + __ = 80 — what is the missing number?
 80 − 52 = 28
-בדיקה: 52 + 28 = 80
-המספר החסר הוא 28.
+Check: 52 + 28 = 80
+The missing number is 28.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-56 + __ = 83 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+56 + __ = 83 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-56 + __ = 83 — מה המספר החסר?
-שואלים:
-מה צריך להוסיף ל-56 כדי להגיע ל-83?
+56 + __ = 83 — what is the missing number?
+Ask:
+What do we add to 56 to reach 83?
 83 − 56 = 27
-בדיקה: 56 + 27 = 83
-המספר החסר הוא 27
+Check: 56 + 27 = 83
+The missing number is 27
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור משוואת חיבור עם מספר חסר.
-בתרגול תמצאו __ במשוואות חיבור.
-חפשו מה חסר!
+Now you know how to solve an addition equation with a missing number.
+In practice you'll find __ in addition equations.
+Look for what's missing!

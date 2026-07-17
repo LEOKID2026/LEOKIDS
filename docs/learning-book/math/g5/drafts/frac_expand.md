@@ -1,4 +1,4 @@
-# הרחבת שבר
+# Expanding Fractions
 
 ## Metadata
 
@@ -11,35 +11,35 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הרחבת שבר `[DRAFT — not owner-approved]` |
+| **title_english** | Expanding Fractions |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל מונה ומכנה באותו מספר
+**Content scope:** Multiply numerator and denominator by the same number
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להרחיב שבר — לכפול מונה ומכנה באותו מספר.
-הרחבה עוזרת להשוות מכנים לפני חיבור.
+Today we'll learn to expand a fraction — multiply the numerator and denominator by the same number.
+Expanding helps you get a common denominator before adding.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-הרחבה = כפל מונה ומכנה באותו מספר
-2/3 עם מכנה 12:
-12 ÷ 3 = 4 → מכפילים ב-4
+Expanding = multiply the numerator and denominator by the same number
+2/3 with denominator 12:
+12 ÷ 3 = 4 → multiply by 4
 2/3 = 8/12
-בדיקה: 2/3 = 8/12  (אותו ערך)
+Check: 2/3 = 8/12  (same value)
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 3/5 = ?/20
 20 ÷ 5 = 4 → 3×4=12
@@ -47,35 +47,35 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-הרחיבו 2/3 למכנה 12
+Expand 2/3 to have denominator 12
 12 ÷ 3 = 4
 2 × 4 = 8
 8/12
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-הרחיבו 3/4 למכנה 20.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Expand 3/4 to have denominator 20.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-הרחיבו 3/4 למכנה 20.
-20 ÷ 4 = 5 — זה המספר שמכפילים בו
-מונה: 3 × 5 = 15
-מכנה: 4 × 5 = 20
+Expand 3/4 to have denominator 20.
+20 ÷ 4 = 5 — that's the number you multiply by
+Numerator: 3 × 5 = 15
+Denominator: 4 × 5 = 20
 3/4 = 15/20
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להרחיב שברים.
-בתרגול תמצאו הרחבת שבר.
-כפלו מונה ומכנה!
+Now you know how to expand fractions.
+In practice you'll find fraction expansion.
+Multiply numerator and denominator!

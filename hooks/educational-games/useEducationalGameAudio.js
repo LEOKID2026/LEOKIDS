@@ -60,7 +60,7 @@ export function useEducationalGameAudio() {
   const playInstruction = useCallback((text) => {
     if (!text) return Promise.resolve();
     return (
-      audioRef.current.playVoice("voice-edu-instruction", { text, locale: "he-IL" }) ??
+      audioRef.current.playVoice("voice-edu-instruction", { text, locale: "en-US" }) ??
       Promise.resolve()
     );
   }, []);
@@ -68,7 +68,7 @@ export function useEducationalGameAudio() {
   const playFeedback = useCallback((text) => {
     if (!text) return Promise.resolve();
     return (
-      audioRef.current.playVoice("voice-edu-feedback", { text, locale: "he-IL" }) ??
+      audioRef.current.playVoice("voice-edu-feedback", { text, locale: "en-US" }) ??
       Promise.resolve()
     );
   }, []);

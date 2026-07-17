@@ -1,4 +1,4 @@
-# חילוק עם שארית
+# Division with a Remainder
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק עם שארית `[DRAFT — not owner-approved]` |
+| **title_english** | Division with a Remainder |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מנה ושארית; מספרים בינוניים. ללא חילוק ארוך (→ `div_long`).
+**Content scope:** Quotient and remainder; medium-sized numbers. No long division (→ `div_long`).
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק עם שארית — כשהחלוקה לא יוצאת שלמה.
-מקבלים מנה ושארית — ובודקים עם כפל.
-
----
-
-## 2. הסבר
-
-47 ÷ 6 — 47 מטבעות, 6 בכל שקית:
-6 × 7 = 42 — 7 בכל שקית (7 שקיות מלאות).
-47 − 42 = 5 — 5 מטבעות נשארו.
-47 ÷ 6 = 7 ושארית 5
-בדיקה: 6 × 7 + 5 = 47  — שארית 5 < 6.
+Today we'll learn division with a remainder — when the division doesn't come out evenly.
+You get a quotient and a remainder — and check with multiplication.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-53 ÷ 8 — 53 מטבעות ב-8 שקיות:
-8 × 6 = 48 — בכל שקית 6
-53 − 48 = 5 — 5 מטבעות נשארו
-53 ÷ 8 = 6 ושארית 5
+47 ÷ 6 — 47 coins, 6 in each bag:
+6 × 7 = 42 — 7 in each bag (7 full bags).
+47 − 42 = 5 — 5 coins left over.
+47 ÷ 6 = 7 remainder 5
+Check: 6 × 7 + 5 = 47 — remainder 5 < 6.
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-חשבו: 65 ÷ 7 = ? (עם שארית)
+53 ÷ 8 — 53 coins in 8 bags:
+8 × 6 = 48 — 6 in each bag
+53 − 48 = 5 — 5 coins left over
+53 ÷ 8 = 6 remainder 5
+
+---
+
+## 4. Let's solve together
+
+Work out: 65 ÷ 7 = ? (with remainder)
 7 × 9 = 63
 65 − 63 = 2
-בדיקה: 7 × 9 + 2 = 65
-9 ושארית 2
+Check: 7 × 9 + 2 = 65
+9 remainder 2
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 59 ÷ 7 = ? (מנה ושארית)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-חשבו: 59 ÷ 7 = ? (מנה ושארית)
-7 × 8 = 56 (8 קבוצות מלאות).
-59 − 56 = 3 — נשארו 3.
-בדיקה: 7 × 8 + 3 = 59
-8 ושארית 3
+Work out: 59 ÷ 7 = ? (quotient and remainder)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-חילוק עם שארית כאן — מספרים עד ~100.
-בתרגול תמצאו חילוק עם שארית — כתבו תמיד ושארית!
+Work out: 59 ÷ 7 = ? (quotient and remainder)
+7 × 8 = 56 (8 full groups).
+59 − 56 = 3 — 3 left over.
+Check: 7 × 8 + 3 = 59
+8 remainder 3
+
+---
+
+## 7. Let's practice!
+
+Division with a remainder here — numbers up to ~100.
+In practice you'll find division with a remainder — always write quotient and remainder!

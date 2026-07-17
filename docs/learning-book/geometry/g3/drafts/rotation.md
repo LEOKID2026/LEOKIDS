@@ -1,4 +1,4 @@
-﻿# סיבוב במישור
+# Rotation in the Plane
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סיבוב במישור `[DRAFT — not owner-approved]` |
+| **title_english** | Rotation in the Plane `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** רבע סיבוב 90°; היכרות; ללא מרכז פורמלי
+**Content scope:** Quarter turn 90°; introduction; no formal center
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נכיר בגאומטריה סיבוב במישור.
-נלמד מהו רבע סיבוב — סיבוב של 90° — כמו כשמסובבים חץ רבע מסביב.
-
----
-
-## 2. הסבר
-
-סיבוב:
-מסובבים צורה סביב נקודה — הצורה נשארת באותו גודל, רק משנה כיוון.
-רבע סיבוב = 90° — רבע מסלול מלא (360°).
-דוגמה: חץ מצביע למעלה — אחרי רבע סיבוב (90°) הוא מצביע ימינה.
-כאן מתמקדים בהיכרות — לא בחישוב מרכז סיבוב.
+Today in geometry we will learn about rotation in the plane.
+We will learn what a quarter turn is — a rotation of 90° — like when you turn an arrow a quarter of the way around.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-דמיינו חץ על שעון:
-- מ-12 ל-3 — זה רבע סיבוב
-- זווית הסיבוב: 90°
+Rotation:
+We turn a shape around a point — the shape stays the same size, only the direction changes.
+A quarter turn = 90° — one quarter of a full path (360°).
+Example: an arrow pointing up — after a quarter turn (90°) it points to the right.
+Here we focus on getting to know rotation — not on calculating the center of rotation.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-סובבנו צורה רבע סיבוב. כמה מעלות סובבנו?
-רבע סיבוב = רבע מ-360°.
+Imagine an arrow on a clock:
+- From 12 to 3 — that is a quarter turn
+- The angle of rotation: 90°
+
+---
+
+## 4. Let's solve together
+
+We rotated a shape a quarter turn. How many degrees did we rotate?
+A quarter turn = one quarter of 360°.
 360° ÷ 4 = 90°
 90°
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-כמה מעלות יש בחצי סיבוב?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+How many degrees are in a half turn?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-כמה מעלות יש בחצי סיבוב?
-סיבוב מלא = 360°.
-חצי סיבוב =
+How many degrees are in a half turn?
+A full turn = 360°.
+A half turn =
 360° ÷ 2 = 180°
-חצי סיבוב = 180°
+A half turn = 180°
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים רבע סיבוב בגאומטריה.
-בתרגול תמצאו שאלות על סיבוב — בדקו אם מדובר ברבע (90°) או בחלק אחר מהמסלול!
+Now you know a quarter turn in geometry.
+In practice you will find questions about rotation — check if it is a quarter (90°) or another part of the path!

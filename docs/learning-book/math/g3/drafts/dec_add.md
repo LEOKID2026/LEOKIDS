@@ -1,4 +1,4 @@
-# חיבור עשרוניים
+# Adding Decimals
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור עשרוניים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Decimals |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור עם **נקודה עשרונית** — ספרה אחת אחרי הנקודה. ללא שתי ספרות עשרוניות.
+**Content scope:** Addition with **decimal point** — one digit after the point. No two decimal digits.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר מספרים עשרוניים — עם נקודה (למשל 2.3 + 1.4).
-חשוב: ליישר את הנקודות — חלק שלם מתחת לשלם, עשיריות מתחת לעשיריות.
+Today we will learn to add decimal numbers — with a decimal point (for example 2.3 + 1.4).
+Important: line up the decimal points — whole part under whole part, tenths under tenths.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 2.3 + 1.4
-2 + 1 = 3 (שלם)
-0.3 + 0.4 = 0.7 (אחרי הנקודה)
+2 + 1 = 3 (whole)
+0.3 + 0.4 = 0.7 (after the point)
 2.3 + 1.4 = 3.7
-כלל: מחברים כאילו אין נקודה, ואז שמים נקודה באותו מקום.
+Rule: add as if there's no point, then put the point in the same place.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 4.2 + 3.5
-שלם: 4 + 3 = 7
-עשיריות: 2 + 5 = 7
+Whole: 4 + 3 = 7
+Tenths: 2 + 5 = 7
 4.2 + 3.5 = 7.7
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 1.6 + 2.2 = ?
-שלם: 1 + 2 = 3
-עשיריות: 6 + 2 = 8 → 0.8
+Calculate: 1.6 + 2.2 = ?
+Whole: 1 + 2 = 3
+Tenths: 6 + 2 = 8 → 0.8
 1.6 + 2.2 = 3.8
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 3.6 + 2.1 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 3.6 + 2.1 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 3.6 + 2.1
-שלם: 3 + 2 = 5
-עשיריות: 6 + 1 = 7 → 0.7
+Calculate: 3.6 + 2.1
+Whole: 3 + 2 = 5
+Tenths: 6 + 1 = 7 → 0.7
 3.6 + 2.1 = 5.7
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר מספרים עשרוניים.
-בתרגול תמצאו חיבור עם נקודה.
-יישרו נקודות!
+Now you know how to add decimal numbers.
+In practice you'll find addition with a decimal point.
+Line up the points!

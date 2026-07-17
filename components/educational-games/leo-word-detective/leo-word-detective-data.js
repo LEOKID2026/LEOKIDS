@@ -10,7 +10,7 @@
  *   type: string,
  *   prompt: string,
  *   caseLabel: string,
- *   missionHe: string,
+ *   mission: string,
  *   passage?: string,
  *   emoji?: string,
  *   zones: DetectiveZone[],
@@ -31,9 +31,9 @@ import {
 } from "../../../lib/educational-games/language-game-config.js";
 
 const GRADE_BANDS = {
-  easy: "א׳–ב׳",
-  medium: "ג׳–ד׳",
-  hard: "ה׳–ו׳",
+  easy: "Grades 1–2",
+  medium: "Grades 3–4",
+  hard: "Grades 5–6",
 };
 
 const EASY_TYPES = new Set(["letter_drop", "fill_gap", "image_word", "sort_letter"]);
@@ -41,13 +41,13 @@ const MEDIUM_TYPES = new Set(["fill_sentence", "sort_plural", "sort_gender", "me
 const HARD_TYPES = new Set(["event_order", "title_stamp", "conclusion", "meaning"]);
 
 const MEANING_WORD_LEXICON = {
-  שמח: "מרגיש טוב",
-  עייף: "צריך מנוחה",
-  רעב: "רוצה לאכול",
-  אמיץ: "לא מפחד",
-  נדיב: "נותן לאחרים",
-  זהיר: "שומר על עצמו",
-  לח: "רטוב",
+  happy: "feeling good",
+  tired: "needs rest",
+  hungry: "wants to eat",
+  brave: "not afraid",
+  generous: "gives to others",
+  careful: "keeps safe",
+  wet: "not dry",
 };
 
 const DIFFICULTY_WEIGHT = {
@@ -86,7 +86,7 @@ function taskCorrectAnswer(task) {
 /**
  * @param {DifficultyId} level
  * @param {string} taskType
- * @param {Omit<DetectiveTask, 'level'|'taskType'|'type'|'prompt'|'correctAnswer'|'gradeBand'|'difficultyWeight'> & { missionHe: string, pieces: DetectivePiece[] }} base
+ * @param {Omit<DetectiveTask, 'level'|'taskType'|'type'|'prompt'|'correctAnswer'|'gradeBand'|'difficultyWeight'> & { mission: string, pieces: DetectivePiece[] }} base
  */
 function wrapDetectiveTask(level, taskType, base) {
   const task = {
@@ -94,10 +94,10 @@ function wrapDetectiveTask(level, taskType, base) {
     level,
     taskType,
     type: taskType,
-    prompt: base.missionHe,
+    prompt: base.mission,
     gradeBand: GRADE_BANDS[level],
     difficultyWeight: DIFFICULTY_WEIGHT[taskType] ?? 50,
-    feedbackShort: base.feedbackShort ?? "🔖 התיק נפתר!",
+    feedbackShort: base.feedbackShort ?? "🔖 Case closed!",
   };
   return { ...task, correctAnswer: taskCorrectAnswer(task) };
 }
@@ -120,12 +120,12 @@ function letterDropTask(id, caseLabel, spec) {
   return wrapDetectiveTask("easy", "letter_drop", {
     id,
     caseLabel,
-    missionHe: `גררו אות פותחת - ${word}`,
+    mission: `Drag the starting letter — ${word}`,
     emoji,
-    zones: [{ id: "z1", label: "אות פותחת", icon: "🔤" }],
+    zones: [{ id: "z1", label: "Starting letter", icon: "🔤" }],
     pieces,
     solution: { z1: "p1" },
-    feedbackShort: "האות הפותחת במקום!",
+    feedbackShort: "Starting letter in place!",
   });
 }
 
@@ -139,11 +139,11 @@ function fillGapTask(id, caseLabel, spec) {
   return wrapDetectiveTask("easy", "fill_gap", {
     id,
     caseLabel,
-    missionHe: `השלימו: ${fragment} - גררו אות`,
-    zones: [{ id: "z1", label: "אות חסרה", icon: "🧩" }],
+    mission: `Complete: ${fragment} — drag a letter`,
+    zones: [{ id: "z1", label: "Missing letter", icon: "🧩" }],
     pieces,
     solution: { z1: "p1" },
-    feedbackShort: "האות החסרה הושלמה!",
+    feedbackShort: "Missing letter filled in!",
   });
 }
 
@@ -155,12 +155,12 @@ function imageWordTask(id, caseLabel, spec) {
   return wrapDetectiveTask("easy", "image_word", {
     id,
     caseLabel,
-    missionHe: "גררו את המילה המתאימה לתמונה",
+    mission: "Drag the word that matches the picture",
     emoji,
-    zones: [{ id: "z1", label: "ראיה", icon: "📌" }],
+    zones: [{ id: "z1", label: "Evidence", icon: "📌" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "המילה מתאימה לתמונה!",
+    feedbackShort: "Word matches the picture!",
   });
 }
 
@@ -172,11 +172,11 @@ function sortLetterTask(id, caseLabel, spec) {
   return wrapDetectiveTask("easy", "sort_letter", {
     id,
     caseLabel,
-    missionHe: `גררו מילה שמתחילה ב-${letter}`,
-    zones: [{ id: "zL", label: `מתחיל ב-${letter}`, icon: "📁" }],
+    mission: `Drag a word that starts with ${letter}`,
+    zones: [{ id: "zL", label: `Starts with ${letter}`, icon: "📁" }],
     pieces,
     solution: { zL: correctId },
-    feedbackShort: "מילה נכונה לתיקייה!",
+    feedbackShort: "Right word for the folder!",
   });
 }
 
@@ -188,11 +188,11 @@ function fillSentenceTask(id, caseLabel, spec) {
   return wrapDetectiveTask("medium", "fill_sentence", {
     id,
     caseLabel,
-    missionHe: `גררו מילה חסרה: ${sentence}`,
-    zones: [{ id: "z1", label: "חלל במשפט", icon: "📝" }],
+    mission: `Drag the missing word: ${sentence}`,
+    zones: [{ id: "z1", label: "Gap in sentence", icon: "📝" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "המילה משלימה את המשפט!",
+    feedbackShort: "Word completes the sentence!",
   });
 }
 
@@ -204,11 +204,11 @@ function sortPluralTask(id, caseLabel, spec) {
   return wrapDetectiveTask("medium", "sort_plural", {
     id,
     caseLabel,
-    missionHe: `גררו את הרבים של "${base}"`,
-    zones: [{ id: "zPlural", label: "רבים", icon: "📁" }],
+    mission: `Drag the plural of "${base}"`,
+    zones: [{ id: "zPlural", label: "Plural", icon: "📁" }],
     pieces,
     solution: { zPlural: correctId },
-    feedbackShort: "צורת הרבים נכונה!",
+    feedbackShort: "Correct plural form!",
   });
 }
 
@@ -220,11 +220,11 @@ function sortGenderTask(id, caseLabel, spec) {
   return wrapDetectiveTask("medium", "sort_gender", {
     id,
     caseLabel,
-    missionHe: `גררו נקבה של "${base}"`,
-    zones: [{ id: "zFem", label: "נקבה", icon: "📁" }],
+    mission: `Drag the female form of "${base}"`,
+    zones: [{ id: "zFem", label: "Female form", icon: "📁" }],
     pieces,
     solution: { zFem: correctId },
-    feedbackShort: "צורת הנקבה נכונה!",
+    feedbackShort: "Correct female form!",
   });
 }
 
@@ -236,11 +236,11 @@ function wordFamilyTask(id, caseLabel, spec) {
   return wrapDetectiveTask("medium", "word_family", {
     id,
     caseLabel,
-    missionHe: `גררו מילה ממשפחת "${root}"`,
-    zones: [{ id: "zFam", label: `משפחת ${root}`, icon: "🧬" }],
+    mission: `Drag a word from the "${root}" family`,
+    zones: [{ id: "zFam", label: `${root} family`, icon: "🧬" }],
     pieces,
     solution: { zFam: correctId },
-    feedbackShort: "מילה מאותה משפחה!",
+    feedbackShort: "Word from the same family!",
   });
 }
 
@@ -252,11 +252,11 @@ function meaningWordTask(id, caseLabel, spec) {
   return wrapDetectiveTask("medium", "meaning_word", {
     id,
     caseLabel,
-    missionHe: `מה הפירוש של "${word}"?`,
-    zones: [{ id: "z1", label: "פירוש", icon: "📖" }],
+    mission: `What does "${word}" mean?`,
+    zones: [{ id: "z1", label: "Meaning", icon: "📖" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "הפירוש מתאים!",
+    feedbackShort: "Meaning matches!",
   });
 }
 
@@ -265,20 +265,20 @@ function eventOrderTask(id, caseLabel, spec) {
   const { passage, labels, answerIds } = spec;
   const pieces = shufflePieces(labels.map((label, i) => ({ id: `p${i + 1}`, label })));
   const zones = [
-    { id: "z0", label: "קודם", icon: "1️⃣" },
-    { id: "z1", label: "אחר כך", icon: "2️⃣" },
-    { id: "z2", label: "בסוף", icon: "3️⃣" },
+    { id: "z0", label: "First", icon: "1️⃣" },
+    { id: "z1", label: "Next", icon: "2️⃣" },
+    { id: "z2", label: "Last", icon: "3️⃣" },
   ];
   const solution = Object.fromEntries(zones.map((z, i) => [z.id, answerIds[i]]));
   return wrapDetectiveTask("hard", "event_order", {
     id,
     caseLabel,
-    missionHe: "סדרו אירועים - גררו ללוח",
+    mission: "Put events in order — drag to the board",
     passage,
     zones,
     pieces,
     solution,
-    feedbackShort: "סדר האירועים נכון!",
+    feedbackShort: "Event order is correct!",
   });
 }
 
@@ -290,12 +290,12 @@ function titleStampTask(id, caseLabel, spec) {
   return wrapDetectiveTask("hard", "title_stamp", {
     id,
     caseLabel,
-    missionHe: "גררו כותרת מתאימה לראש התיק",
+    mission: "Drag a title that fits the passage",
     passage,
-    zones: [{ id: "zTitle", label: "כותרת התיק", icon: "📋" }],
+    zones: [{ id: "zTitle", label: "Case title", icon: "📋" }],
     pieces,
     solution: { zTitle: correctId },
-    feedbackShort: "כותרת מתאימה לקטע!",
+    feedbackShort: "Title fits the passage!",
   });
 }
 
@@ -307,12 +307,12 @@ function conclusionTask(id, caseLabel, spec) {
   return wrapDetectiveTask("hard", "conclusion", {
     id,
     caseLabel,
-    missionHe: question,
+    mission: question,
     passage,
-    zones: [{ id: "z1", label: "מסקנה", icon: "🎯" }],
+    zones: [{ id: "z1", label: "Conclusion", icon: "🎯" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "מסקנה נכונה מהקטע!",
+    feedbackShort: "Correct conclusion from the passage!",
   });
 }
 
@@ -324,12 +324,12 @@ function meaningPassageTask(id, caseLabel, spec) {
   return wrapDetectiveTask("hard", "meaning", {
     id,
     caseLabel,
-    missionHe: `פירוש "${word}" לפי הקטע`,
+    mission: `Meaning of "${word}" from the passage`,
     passage,
-    zones: [{ id: "z1", label: "פירוש", icon: "📖" }],
+    zones: [{ id: "z1", label: "Meaning", icon: "📖" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "הפירוש מתאים לקטע!",
+    feedbackShort: "Meaning fits the passage!",
   });
 }
 
@@ -339,57 +339,57 @@ function buildEasyDetectiveTasks() {
   const tasks = [];
 
   const letterDrops = [
-    { word: "כלב", emoji: "🐕", letter: "כ", distractors: ["ל", "ב", "ח"] },
-    { word: "חתול", emoji: "🐱", letter: "ח", distractors: ["ת", "ל", "ב"] },
-    { word: "בית", emoji: "🏠", letter: "ב", distractors: ["י", "ת", "ש"] },
-    { word: "ספר", emoji: "📚", letter: "ס", distractors: ["פ", "ר", "מ"] },
-    { word: "עץ", emoji: "🌳", letter: "ע", distractors: ["ץ", "ר", "נ"] },
-    { word: "מים", emoji: "💧", letter: "מ", distractors: ["י", "ם", "ש"] },
-    { word: "שמש", emoji: "☀️", letter: "ש", distractors: ["מ", "ס", "ר"] },
-    { word: "פרח", emoji: "🌸", letter: "פ", distractors: ["ר", "ח", "ל"] },
+    { word: "dog", emoji: "🐕", letter: "d", distractors: ["g", "o", "c"] },
+    { word: "cat", emoji: "🐱", letter: "c", distractors: ["a", "t", "b"] },
+    { word: "house", emoji: "🏠", letter: "h", distractors: ["o", "u", "s"] },
+    { word: "book", emoji: "📚", letter: "b", distractors: ["o", "k", "m"] },
+    { word: "tree", emoji: "🌳", letter: "t", distractors: ["r", "e", "n"] },
+    { word: "water", emoji: "💧", letter: "w", distractors: ["a", "t", "s"] },
+    { word: "sun", emoji: "☀️", letter: "s", distractors: ["u", "n", "r"] },
+    { word: "flower", emoji: "🌸", letter: "f", distractors: ["l", "o", "w"] },
   ];
   letterDrops.forEach((spec, i) => {
-    tasks.push(letterDropTask(`wd-e-ld-${i + 1}`, `תיק #${i + 1}`, spec));
+    tasks.push(letterDropTask(`wd-e-ld-${i + 1}`, `Case #${i + 1}`, spec));
   });
 
   const fillGaps = [
-    { fragment: "שו_חן", letter: "ל", distractors: ["ר", "מ", "נ"] },
-    { fragment: "י_ד", letter: "ל", distractors: ["ר", "ש", "ח"] },
-    { fragment: "ס_פר", letter: "פ", distractors: ["ב", "מ", "כ"] },
-    { fragment: "ע_נן", letter: "נ", distractors: ["מ", "ל", "ש"] },
-    { fragment: "מ_ים", letter: "י", distractors: ["ל", "ש", "ר"] },
-    { fragment: "כ_סא", letter: "י", distractors: ["ל", "ב", "ח"] },
-    { fragment: "ג_שם", letter: "ש", distractors: ["מ", "ל", "ר"] },
-    { fragment: "ח_לון", letter: "ל", distractors: ["נ", "מ", "ש"] },
+    { fragment: "ta_le", letter: "b", distractors: ["g", "m", "n"] },
+    { fragment: "wi_dow", letter: "n", distractors: ["r", "m", "l"] },
+    { fragment: "bo_k", letter: "o", distractors: ["a", "e", "u"] },
+    { fragment: "clou_", letter: "d", distractors: ["m", "l", "s"] },
+    { fragment: "wate_", letter: "r", distractors: ["l", "s", "n"] },
+    { fragment: "chai_", letter: "r", distractors: ["n", "m", "l"] },
+    { fragment: "rai_", letter: "n", distractors: ["m", "l", "s"] },
+    { fragment: "appl_", letter: "e", distractors: ["a", "i", "o"] },
   ];
   fillGaps.forEach((spec, i) => {
-    tasks.push(fillGapTask(`wd-e-fg-${i + 1}`, `תיק #${i + 9}`, spec));
+    tasks.push(fillGapTask(`wd-e-fg-${i + 1}`, `Case #${i + 9}`, spec));
   });
 
   const imageWords = [
-    { emoji: "🏠", answer: "בית", options: ["בית", "כיסא", "ענן", "רכב"] },
-    { emoji: "🍎", answer: "תפוח", options: ["תפוח", "שולחן", "גשם", "עץ"] },
-    { emoji: "✏️", answer: "עיפרון", options: ["עיפרון", "כדור", "מים", "ענן"] },
-    { emoji: "🐟", answer: "דג", options: ["דג", "ספר", "ענף", "רוח"] },
-    { emoji: "🎈", answer: "בלון", options: ["בלון", "שולחן", "ענן", "מפתח"] },
-    { emoji: "🚌", answer: "אוטובוס", options: ["אוטובוס", "אופניים", "מטריה", "כובע"] },
-    { emoji: "🌙", answer: "ירח", options: ["ירח", "שמש", "ענן", "כוכב"] },
+    { emoji: "🏠", answer: "house", options: ["house", "chair", "cloud", "car"] },
+    { emoji: "🍎", answer: "apple", options: ["apple", "table", "rain", "tree"] },
+    { emoji: "✏️", answer: "pencil", options: ["pencil", "ball", "water", "cloud"] },
+    { emoji: "🐟", answer: "fish", options: ["fish", "book", "branch", "wind"] },
+    { emoji: "🎈", answer: "balloon", options: ["balloon", "table", "cloud", "key"] },
+    { emoji: "🚌", answer: "bus", options: ["bus", "bike", "umbrella", "hat"] },
+    { emoji: "🌙", answer: "moon", options: ["moon", "sun", "cloud", "star"] },
   ];
   imageWords.forEach((spec, i) => {
-    tasks.push(imageWordTask(`wd-e-iw-${i + 1}`, `תיק #${i + 17}`, spec));
+    tasks.push(imageWordTask(`wd-e-iw-${i + 1}`, `Case #${i + 17}`, spec));
   });
 
   const sortLetters = [
-    { letter: "מ׳", answer: "מים", options: ["מים", "כלב", "מלך", "ספר"] },
-    { letter: "ס׳", answer: "ספר", options: ["ספר", "כלב", "מים", "ענן"] },
-    { letter: "ב׳", answer: "בית", options: ["בית", "עץ", "גשם", "שמש"] },
-    { letter: "כ׳", answer: "כיסא", options: ["כיסא", "ספר", "ענן", "דג"] },
-    { letter: "ש׳", answer: "שמש", options: ["שמש", "ענן", "מים", "פרח"] },
-    { letter: "ע׳", answer: "ענן", options: ["ענן", "בית", "ספר", "כלב"] },
-    { letter: "פ׳", answer: "פרח", options: ["פרח", "מים", "כיסא", "עץ"] },
+    { letter: "M", answer: "moon", options: ["moon", "dog", "king", "book"] },
+    { letter: "B", answer: "book", options: ["book", "dog", "water", "cloud"] },
+    { letter: "H", answer: "house", options: ["house", "tree", "rain", "sun"] },
+    { letter: "C", answer: "chair", options: ["chair", "book", "cloud", "fish"] },
+    { letter: "S", answer: "sun", options: ["sun", "cloud", "water", "flower"] },
+    { letter: "T", answer: "tree", options: ["tree", "house", "book", "dog"] },
+    { letter: "F", answer: "flower", options: ["flower", "water", "chair", "tree"] },
   ];
   sortLetters.forEach((spec, i) => {
-    tasks.push(sortLetterTask(`wd-e-sl-${i + 1}`, `תיק #${i + 24}`, spec));
+    tasks.push(sortLetterTask(`wd-e-sl-${i + 1}`, `Case #${i + 24}`, spec));
   });
 
   return tasks;
@@ -401,82 +401,82 @@ function buildMediumDetectiveTasks() {
   const tasks = [];
 
   const fillSentences = [
-    { sentence: "הילדה ___ ספר", answer: "קוראת", options: ["קוראת", "רצה", "כחול", "שולחן"] },
-    { sentence: "הגשם ירד - לקחתי ___", answer: "מטרייה", options: ["מטרייה", "גלידה", "כדור", "ספר"] },
-    { sentence: "היה קר - לבשתי ___", answer: "מעיל", options: ["מעיל", "בגד ים", "כובע קיץ", "גלידה"] },
-    { sentence: "אמא ___ אוכל", answer: "מבשלת", options: ["מבשלת", "רצה", "כחול", "גשם"] },
-    { sentence: "הכלב ___ בגינה", answer: "רץ", options: ["רץ", "ירוק", "שולחן", "ספר"] },
-    { sentence: "השמש ___ בחוץ", answer: "זורחת", options: ["זורחת", "שותה", "כחול", "ענן"] },
+    { sentence: "The girl ___ a book", answer: "reads", options: ["reads", "runs", "blue", "table"] },
+    { sentence: "It rained — I took an ___", answer: "umbrella", options: ["umbrella", "ice cream", "ball", "book"] },
+    { sentence: "It was cold — I wore a ___", answer: "coat", options: ["coat", "swimsuit", "sun hat", "sandals"] },
+    { sentence: "Mom ___ dinner", answer: "cooks", options: ["cooks", "runs", "blue", "rain"] },
+    { sentence: "The dog ___ in the yard", answer: "runs", options: ["runs", "green", "table", "book"] },
+    { sentence: "The sun ___ outside", answer: "shines", options: ["shines", "drinks", "blue", "cloud"] },
   ];
   fillSentences.forEach((spec, i) => {
-    tasks.push(fillSentenceTask(`wd-m-fs-${i + 1}`, `תיק #${i + 1}`, spec));
+    tasks.push(fillSentenceTask(`wd-m-fs-${i + 1}`, `Case #${i + 1}`, spec));
   });
 
   const plurals = [
-    { base: "ילד", answer: "ילדים", options: ["ילדים", "ילדה", "ילדות", "ילד"] },
-    { base: "ספר", answer: "ספרים", options: ["ספרים", "ספרה", "ספרות", "ספר"] },
-    { base: "כלב", answer: "כלבים", options: ["כלבים", "כלבה", "כלבות", "כלב"] },
-    { base: "פרח", answer: "פרחים", options: ["פרחים", "פרחה", "פרחות", "פרח"] },
-    { base: "כיסא", answer: "כיסאות", options: ["כיסאות", "כיסא", "כיסאה", "כיסאים"] },
-    { base: "עץ", answer: "עצים", options: ["עצים", "עץ", "עצה", "עצות"] },
+    { base: "child", answer: "children", options: ["children", "childs", "childes", "child"] },
+    { base: "book", answer: "books", options: ["books", "bookes", "bookies", "book"] },
+    { base: "dog", answer: "dogs", options: ["dogs", "doges", "dogies", "dog"] },
+    { base: "flower", answer: "flowers", options: ["flowers", "flower", "floweries", "flowes"] },
+    { base: "chair", answer: "chairs", options: ["chairs", "chair", "chaires", "chares"] },
+    { base: "tree", answer: "trees", options: ["trees", "tree", "treees", "tres"] },
   ];
   plurals.forEach((spec, i) => {
-    tasks.push(sortPluralTask(`wd-m-sp-${i + 1}`, `תיק #${i + 7}`, spec));
+    tasks.push(sortPluralTask(`wd-m-sp-${i + 1}`, `Case #${i + 7}`, spec));
   });
 
   const genders = [
-    { base: "גדול", answer: "גדולה", options: ["גדולה", "גדולים", "גדל", "גדול"] },
-    { base: "חכם", answer: "חכמה", options: ["חכמה", "חכמים", "חכמו", "חכם"] },
-    { base: "חמוד", answer: "חמודה", options: ["חמודה", "חמודים", "חמוד", "חמדה"] },
-    { base: "קטן", answer: "קטנה", options: ["קטנה", "קטנים", "קטן", "קטנטן"] },
-    { base: "חזק", answer: "חזקה", options: ["חזקה", "חזקים", "חזק", "חוזק"] },
-    { base: "עייף", answer: "עייפה", options: ["עייפה", "עייפים", "עייף", "עייפות"] },
+    { base: "lion", answer: "lioness", options: ["lioness", "lions", "lionet", "lion"] },
+    { base: "actor", answer: "actress", options: ["actress", "actors", "acted", "actor"] },
+    { base: "hero", answer: "heroine", options: ["heroine", "heroes", "heroic", "hero"] },
+    { base: "prince", answer: "princess", options: ["princess", "princes", "princely", "prince"] },
+    { base: "tiger", answer: "tigress", options: ["tigress", "tigers", "tiger", "tigresses"] },
+    { base: "waiter", answer: "waitress", options: ["waitress", "waiters", "waited", "waiter"] },
   ];
   genders.forEach((spec, i) => {
-    tasks.push(sortGenderTask(`wd-m-sg-${i + 1}`, `תיק #${i + 13}`, spec));
+    tasks.push(sortGenderTask(`wd-m-sg-${i + 1}`, `Case #${i + 13}`, spec));
   });
 
   const mediumReplacements = [
     {
       taskType: "fill_sentence",
-      sentence: "הילד ___ מים",
-      answer: "שותה",
-      options: ["שותה", "רץ", "כחול", "שולחן"],
+      sentence: "The boy ___ water",
+      answer: "drinks",
+      options: ["drinks", "runs", "blue", "table"],
     },
     {
       taskType: "fill_sentence",
-      sentence: "הכלב ___ על הרצפה",
-      answer: "ישן",
-      options: ["ישן", "רץ", "ירוק", "שולחן"],
+      sentence: "The dog ___ on the floor",
+      answer: "sleeps",
+      options: ["sleeps", "runs", "green", "table"],
     },
     {
       taskType: "sort_plural",
-      base: "תפוח",
-      answer: "תפוחים",
-      options: ["תפוחים", "תפוח", "תפוחה", "תפוחות"],
+      base: "apple",
+      answer: "apples",
+      options: ["apples", "apple", "applie", "applis"],
     },
     {
       taskType: "sort_plural",
-      base: "שולחן",
-      answer: "שולחנות",
-      options: ["שולחנות", "שולחן", "שולחנה", "שולחנים"],
+      base: "box",
+      answer: "boxes",
+      options: ["boxes", "box", "boxs", "boxies"],
     },
     {
       taskType: "sort_gender",
-      base: "חדש",
-      answer: "חדשה",
-      options: ["חדשה", "חדשים", "חדש", "חדשות"],
+      base: "host",
+      answer: "hostess",
+      options: ["hostess", "hosts", "hosted", "hosting"],
     },
     {
       taskType: "meaning_word",
-      word: "לח",
-      answer: "רטוב",
-      options: ["רטוב", "יבש", "חם מאוד", "קר מדי"],
+      word: "wet",
+      answer: "not dry",
+      options: ["not dry", "very dry", "very hot", "too cold"],
     },
   ];
   mediumReplacements.forEach((entry, i) => {
     const id = `wd-m-wf-${i + 1}`;
-    const caseLabel = `תיק #${i + 19}`;
+    const caseLabel = `Case #${i + 19}`;
     const { taskType, ...spec } = entry;
     if (taskType === "fill_sentence") tasks.push(fillSentenceTask(id, caseLabel, spec));
     else if (taskType === "sort_plural") tasks.push(sortPluralTask(id, caseLabel, spec));
@@ -485,15 +485,15 @@ function buildMediumDetectiveTasks() {
   });
 
   const meanings = [
-    { word: "שמח", answer: "מרגיש טוב", options: ["מרגיש טוב", "ישן", "אוכל", "רץ"] },
-    { word: "עייף", answer: "צריך מנוחה", options: ["צריך מנוחה", "רעב", "שמח", "קופץ"] },
-    { word: "רעב", answer: "רוצה לאכול", options: ["רוצה לאכול", "רוצה לישון", "רוצה לרקוד", "רוצה לשחק"] },
-    { word: "אמיץ", answer: "לא מפחד", options: ["לא מפחד", "מפחד", "ישן", "אוכל"] },
-    { word: "נדיב", answer: "נותן לאחרים", options: ["נותן לאחרים", "לוקח הכל", "בוכה", "צוחק"] },
-    { word: "זהיר", answer: "שומר על עצמו", options: ["שומר על עצמו", "נופל", "רץ מהר", "צועק"] },
+    { word: "happy", answer: "feeling good", options: ["feeling good", "sleepy", "eating", "running"] },
+    { word: "tired", answer: "needs rest", options: ["needs rest", "hungry", "happy", "jumping"] },
+    { word: "hungry", answer: "wants to eat", options: ["wants to eat", "wants to sleep", "wants to dance", "wants to play"] },
+    { word: "brave", answer: "not afraid", options: ["not afraid", "scared", "sleepy", "eating"] },
+    { word: "generous", answer: "gives to others", options: ["gives to others", "takes everything", "crying", "laughing"] },
+    { word: "careful", answer: "keeps safe", options: ["keeps safe", "falls down", "runs fast", "yells"] },
   ];
   meanings.forEach((spec, i) => {
-    tasks.push(meaningWordTask(`wd-m-mw-${i + 1}`, `תיק #${i + 25}`, spec));
+    tasks.push(meaningWordTask(`wd-m-mw-${i + 1}`, `Case #${i + 25}`, spec));
   });
 
   return tasks;
@@ -506,191 +506,191 @@ function buildHardDetectiveTasks() {
 
   const events = [
     {
-      passage: "דני יצא מהבית. הלך לגן ושיחק. אחר כך חזר לארוחת צהריים.",
-      labels: ["יצא מהבית", "שיחק בגן", "חזר לארוחה", "הלך לישון"],
+      passage: "Dan left the house. He walked to the park and played. Then he came home for lunch.",
+      labels: ["Left the house", "Played in the park", "Came home for lunch", "Went to sleep"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "הגשם ירד. הילדים שיחקו בבית. אחרי הגשם יצאה קשת.",
-      labels: ["ירד גשם", "שיחקו בבית", "יצאה קשת", "הלכו לים"],
+      passage: "Rain fell. The kids played inside. After the rain, a rainbow appeared.",
+      labels: ["Rain fell", "Played inside", "Rainbow appeared", "Went to the beach"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "מיה קמה בבוקר. אכלה ארוחת בוקר. לבשה תיק ויצאה לבית הספר.",
-      labels: ["קמה בבוקר", "אכלה ארוחה", "יצאה לבית הספר", "הלכה לים"],
+      passage: "Mia woke up in the morning. She ate breakfast. She packed her bag and went to school.",
+      labels: ["Woke up", "Ate breakfast", "Went to school", "Went swimming"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "יואב שתה מים. התלבש ויצא. רכב על אופניים לגן.",
-      labels: ["שתה מים", "יצא מהבית", "רכב לגן", "קנה נעליים"],
+      passage: "Jo drank water. He got dressed and went out. He rode his bike to the park.",
+      labels: ["Drank water", "Went outside", "Rode to the park", "Bought shoes"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "אמא הדליקה תנור. אפתה עוגה. כולם אכלו יחד.",
-      labels: ["הדליקה תנור", "אפתה עוגה", "אכלו יחד", "הלכו לקניות"],
+      passage: "Mom turned on the oven. She baked a cake. Everyone ate together.",
+      labels: ["Turned on oven", "Baked a cake", "Ate together", "Went shopping"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "השמש שקעה. הכוכבים הופיעו. הילדים הלכו לישון.",
-      labels: ["השמש שקעה", "הכוכבים הופיעו", "הלכו לישון", "יצאו לטיול"],
+      passage: "The sun set. Stars came out. The children went to bed.",
+      labels: ["Sun set", "Stars came out", "Went to bed", "Went hiking"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "נועה פתחה ספר. קראה שני עמודים. סגרה ושמרה על המדף.",
-      labels: ["פתחה ספר", "קראה עמודים", "שמרה על המדף", "ציירה תמונה"],
+      passage: "Noa opened a book. She read two pages. She closed it and put it on the shelf.",
+      labels: ["Opened a book", "Read pages", "Put it on shelf", "Drew a picture"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "הרוח נשבה חזק. העלים נשרו. אחר כך ירד גשם קל.",
-      labels: ["הרוח נשבה", "העלים נשרו", "ירד גשם", "יצאה שמש"],
+      passage: "The wind blew hard. Leaves fell. Then light rain came down.",
+      labels: ["Wind blew", "Leaves fell", "Rain came", "Sun came out"],
       answerIds: ["p1", "p2", "p3"],
     },
   ];
   events.forEach((spec, i) => {
-    tasks.push(eventOrderTask(`wd-h-eo-${i + 1}`, `תיק #${i + 1}`, spec));
+    tasks.push(eventOrderTask(`wd-h-eo-${i + 1}`, `Case #${i + 1}`, spec));
   });
 
   const titles = [
     {
-      passage: "מיה אהבה לקרוא ספרים. כל ערב ישבה בפינה עם ספר חדש.",
-      answer: "מיה אוהבת לקרוא",
-      options: ["מיה אוהבת לקרוא", "מיה הולכת לים", "מיה קונה נעליים", "יום גשום"],
+      passage: "Mia loved to read books. Every evening she sat in a corner with a new book.",
+      answer: "Mia loves to read",
+      options: ["Mia loves to read", "Mia goes to the beach", "Mia buys shoes", "A rainy day"],
     },
     {
-      passage: "יואב למד לרכוב על אופניים. בהתחלה נפל, אבל המשיך. בסוף רכב לבד.",
-      answer: "יואב לומד לרכוב",
-      options: ["יואב לומד לרכוב", "יואב קונה בגדים", "יואב אוכל צהריים", "טיול ביער"],
+      passage: "Jo learned to ride a bike. At first he fell, but he kept trying. In the end he rode alone.",
+      answer: "Jo learns to ride",
+      options: ["Jo learns to ride", "Jo buys clothes", "Jo eats lunch", "A forest hike"],
     },
     {
-      passage: "הגשם ירד חזק. הילדים שיחקו במשחקי קופסה. אחרי הגשם יצאה קשת.",
-      answer: "יום גשום ומשחקים",
-      options: ["יום גשום ומשחקים", "טיול ביער", "קנייה בחנות", "שיעור שחייה"],
+      passage: "Heavy rain fell. The kids played board games. After the rain, a rainbow appeared.",
+      answer: "Rainy day and games",
+      options: ["Rainy day and games", "Forest hike", "Shopping trip", "Swimming lesson"],
     },
     {
-      passage: "דני טיפל בגינה. השקה פרחים וקצץ עשב. הגינה נראתה יפה.",
-      answer: "דני בגינה",
-      options: ["דני בגינה", "דני בים", "דני בחנות", "דני בבית הספר"],
+      passage: "Dan took care of the garden. He watered flowers and pulled weeds. The garden looked beautiful.",
+      answer: "Dan in the garden",
+      options: ["Dan in the garden", "Dan at the beach", "Dan at the store", "Dan at school"],
     },
     {
-      passage: "המשפחה הכינה פיצה ביחד. כל אחד בחר תוספת. אכלו יחד בשמחה.",
-      answer: "ערב פיצה במשפחה",
-      options: ["ערב פיצה במשפחה", "בוקר בבית הספר", "טיול בהרים", "קנייה בחנות"],
+      passage: "The family made pizza together. Each person picked a topping. They ate happily together.",
+      answer: "Family pizza night",
+      options: ["Family pizza night", "Morning at school", "Mountain hike", "Shopping trip"],
     },
     {
-      passage: "נועה למדה שיר חדש. חזרה עליו שוב ושוב. שרה בפני הכיתה.",
-      answer: "נועה לומדת שיר",
-      options: ["נועה לומדת שיר", "נועה קונה שעון", "נועה רוקדת", "נועה ישנה"],
+      passage: "Noa learned a new song. She practiced again and again. She sang in front of the class.",
+      answer: "Noa learns a song",
+      options: ["Noa learns a song", "Noa buys a clock", "Noa dances", "Noa sleeps"],
     },
     {
-      passage: "החתול ישן על הספה. התעורר, אכל וחזר לישון. היה יום שקט.",
-      answer: "יום של חתול",
-      options: ["יום של חתול", "יום של כלב", "יום בים", "יום בחנות"],
+      passage: "The cat slept on the sofa. It woke up, ate, and went back to sleep. It was a quiet day.",
+      answer: "A day with the cat",
+      options: ["A day with the cat", "A day with the dog", "A day at the beach", "A day at the store"],
     },
   ];
   titles.forEach((spec, i) => {
-    tasks.push(titleStampTask(`wd-h-ts-${i + 1}`, `תיק #${i + 9}`, spec));
+    tasks.push(titleStampTask(`wd-h-ts-${i + 1}`, `Case #${i + 9}`, spec));
   });
 
   const conclusions = [
     {
-      passage: "דני יצא מהבית עם תיק. הלך לגן ושיחק עם חברים. אחר כך חזר הביתה לארוחת צהריים.",
-      question: "למה דני חזר הביתה?",
-      answer: "לארוחת צהריים",
-      options: ["לארוחת צהריים", "לישון", "לקנות נעליים", "לשחות בים"],
+      passage: "Dan left the house with a bag. He walked to the park and played with friends. Then he came home for lunch.",
+      question: "Why did Dan come home?",
+      answer: "For lunch",
+      options: ["For lunch", "To sleep", "To buy shoes", "To swim"],
     },
     {
-      passage: "הגשם ירד חזק. הילדים נשארו בבית ושיחקו במשחקי קופסה.",
-      question: "מה אפשר להבין מהקטע?",
-      answer: "נשארו בבית בגלל הגשם",
-      options: ["נשארו בבית בגלל הגשם", "שחו בים", "טסו לחו״ל", "קנו אופניים"],
+      passage: "Heavy rain fell. The kids stayed inside and played board games.",
+      question: "What can we learn from the passage?",
+      answer: "They stayed inside because of rain",
+      options: ["They stayed inside because of rain", "They swam in the sea", "They flew abroad", "They bought bikes"],
     },
     {
-      passage: "סבתא ביקשה עזרה בשוק. נועה ליוותה אותה וסייעה לשאת שקיות.",
-      question: "מי עזר לסבתא?",
-      answer: "נועה",
-      options: ["נועה", "הכלב", "השכן", "אף אחד"],
+      passage: "Grandma asked for help at the market. Noa went with her and helped carry bags.",
+      question: "Who helped Grandma?",
+      answer: "Noa",
+      options: ["Noa", "The dog", "The neighbor", "Nobody"],
     },
     {
-      passage: "יואב נפל מהאופניים אבל המשיך להתאמן עד שרכב לבד.",
-      question: "מה למדנו על יואב?",
-      answer: "הוא לא ויתר",
-      options: ["הוא לא ויתר", "הוא מכר את האופניים", "הוא נשאר בבית", "הוא פחד ממים"],
+      passage: "Jo fell off his bike but kept practicing until he could ride on his own.",
+      question: "What did we learn about Jo?",
+      answer: "He did not give up",
+      options: ["He did not give up", "He sold his bike", "He stayed home", "He was afraid of water"],
     },
     {
-      passage: "המורה סיפרה סיפור. הילדים הקשיבו בשקט. בסוף כולם מחאו כפיים.",
-      question: "איך הגיבו הילדים?",
-      answer: "מחאו כפיים",
-      options: ["מחאו כפיים", "בכו", "יצאו החוצה", "ישנו"],
+      passage: "The teacher told a story. The children listened quietly. At the end everyone clapped.",
+      question: "How did the children react?",
+      answer: "They clapped",
+      options: ["They clapped", "They cried", "They went outside", "They fell asleep"],
     },
     {
-      passage: "הכלב חיכה ליד הדלת. כשדני חזר, זנבו כעכב בשמחה.",
-      question: "איך הרגיש הכלב?",
-      answer: "שמח לראות את דני",
-      options: ["שמח לראות את דני", "כועס", "עייף", "רעב מאוד"],
+      passage: "The dog waited by the door. When Dan came back, its tail wagged with joy.",
+      question: "How did the dog feel?",
+      answer: "Happy to see Dan",
+      options: ["Happy to see Dan", "Angry", "Tired", "Very hungry"],
     },
     {
-      passage: "אמא הכינה מרק. כולם ישבו לשולחן. אכלו ביחד בחום.",
-      question: "מה עשתה המשפחה?",
-      answer: "אכלה יחד",
-      options: ["אכלה יחד", "יצאה לטיול", "צפתה בטלוויזיה", "שיחקה בחוץ"],
+      passage: "Mom made soup. Everyone sat at the table. They ate together warmly.",
+      question: "What did the family do?",
+      answer: "Ate together",
+      options: ["Ate together", "Went hiking", "Watched TV", "Played outside"],
     },
     {
-      passage: "הילדים שתלו עציץ. השקו אותו כל יום. אחרי שבועיים צמח פרח.",
-      question: "מה קרה לעציץ?",
-      answer: "צמח פרח",
-      options: ["צמח פרח", "נשבר", "נעלם", "התייבש"],
+      passage: "The kids planted a pot. They watered it every day. After two weeks a flower grew.",
+      question: "What happened to the pot?",
+      answer: "A flower grew",
+      options: ["A flower grew", "It broke", "It disappeared", "It dried out"],
     },
   ];
   conclusions.forEach((spec, i) => {
-    tasks.push(conclusionTask(`wd-h-co-${i + 1}`, `תיק #${i + 16}`, spec));
+    tasks.push(conclusionTask(`wd-h-co-${i + 1}`, `Case #${i + 16}`, spec));
   });
 
   const meaningPassages = [
     {
-      passage: "יואב למד לרכוב. נפל, אבל המשיך להתאמן. בסוף רכב לבד.",
-      word: "התאמן",
-      answer: "תרגל שוב ושוב",
-      options: ["תרגל שוב ושוב", "ישן", "אכל", "רקד"],
+      passage: "Jo learned to ride. He fell, but kept practicing. In the end he rode on his own.",
+      word: "practiced",
+      answer: "tried again and again",
+      options: ["tried again and again", "slept", "ate", "danced"],
     },
     {
-      passage: "הילדה חייכה לכולם. עזרה לחברה שנפלה. כולם אהבו אותה.",
-      word: "נדיבה",
-      answer: "עוזרת לאחרים",
-      options: ["עוזרת לאחרים", "בוכה", "צועקת", "בורחת"],
+      passage: "The girl smiled at everyone. She helped a friend who fell. Everyone liked her.",
+      word: "kind",
+      answer: "helps others",
+      options: ["helps others", "cries", "yells", "runs away"],
     },
     {
-      passage: "הוא הסתכל סביב בזהירות. חיכה לפני שחצה את הכביש.",
-      word: "זהיר",
-      answer: "שומר על עצמו",
-      options: ["שומר על עצמו", "רץ מהר", "צועק", "ישן"],
+      passage: "He looked around carefully. He waited before crossing the street.",
+      word: "careful",
+      answer: "keeps safe",
+      options: ["keeps safe", "runs fast", "yells", "sleeps"],
     },
     {
-      passage: "היא לא ויתרה על החידה. ניסתה שוב ושוב עד שנפתרה.",
-      word: "התמדה",
-      answer: "המשיכה לנסות",
-      options: ["המשיכה לנסות", "ויתרה מיד", "הלכה לישון", "אכלה"],
+      passage: "She did not give up on the puzzle. She tried again and again until it was solved.",
+      word: "persisted",
+      answer: "kept trying",
+      options: ["kept trying", "gave up right away", "went to sleep", "ate lunch"],
     },
     {
-      passage: "הוא שיתף את הממתקים עם כולם. לא שמר לעצמו.",
-      word: "שיתף",
-      answer: "נתן גם לאחרים",
-      options: ["נתן גם לאחרים", "אכל הכל", "זרק", "הסתיר"],
+      passage: "He shared his candy with everyone. He did not keep it all for himself.",
+      word: "shared",
+      answer: "gave to others too",
+      options: ["gave to others too", "ate it all", "threw it away", "hid it"],
     },
     {
-      passage: "היא הקשיבה בשקט. לא הפריעה לחברים.",
-      word: "מכבדת",
-      answer: "מתחשבת באחרים",
-      options: ["מתחשבת באחרים", "צועקת", "בורחת", "ישנה"],
+      passage: "She listened quietly. She did not bother her friends.",
+      word: "respectful",
+      answer: "thinks of others",
+      options: ["thinks of others", "yells", "runs away", "sleeps"],
     },
     {
-      passage: "הוא סידר את החדר לפני שיצא. הכל היה במקום.",
-      word: "מסודר",
-      answer: "דואג שהכל במקום",
-      options: ["דואג שהכל במקום", "זורק הכל", "ישן", "אוכל"],
+      passage: "He cleaned his room before going out. Everything was in its place.",
+      word: "tidy",
+      answer: "keeps things in place",
+      options: ["keeps things in place", "throws things around", "sleeps", "eats"],
     },
   ];
   meaningPassages.forEach((spec, i) => {
-    tasks.push(meaningPassageTask(`wd-h-me-${i + 1}`, `תיק #${i + 24}`, spec));
+    tasks.push(meaningPassageTask(`wd-h-me-${i + 1}`, `Case #${i + 24}`, spec));
   });
 
   return tasks;
@@ -713,7 +713,7 @@ export function validateDetectiveTask(task, zoneFills) {
 
 /** @param {boolean} ok */
 export function detectiveFeedback(ok) {
-  return ok ? "🔖 התיק נפתר!" : "הראיה לא מתאימה - נסו שוב";
+  return ok ? "🔖 Case closed!" : "That evidence does not fit — try again";
 }
 
 /** @param {DifficultyId} difficulty */
@@ -749,51 +749,51 @@ export function auditWordDetectiveContent() {
     byType[level] = countByType(tasks);
 
     if (tasks.length < LANGUAGE_MIN_POOL_PER_LEVEL) {
-      gaps.push(`רמת ${level}: ${tasks.length}/${LANGUAGE_MIN_POOL_PER_LEVEL} משימות`);
+      gaps.push(`${level} level: ${tasks.length}/${LANGUAGE_MIN_POOL_PER_LEVEL} tasks`);
     }
 
     for (const task of tasks) {
-      if (seenIds.has(task.id)) gaps.push(`${task.id}: id כפול`);
+      if (seenIds.has(task.id)) gaps.push(`${task.id}: duplicate id`);
       seenIds.add(task.id);
 
-      if (task.level !== level) gaps.push(`${task.id}: level לא תואם`);
-      if (task.taskType !== task.type) gaps.push(`${task.id}: taskType/type לא תואמים`);
-      if (task.prompt !== task.missionHe) gaps.push(`${task.id}: prompt/missionHe לא תואמים`);
-      if (task.gradeBand !== GRADE_BANDS[level]) gaps.push(`${task.id}: gradeBand שגוי`);
-      if (!task.correctAnswer) gaps.push(`${task.id}: חסר correctAnswer`);
-      if (!task.feedbackShort) gaps.push(`${task.id}: חסר feedbackShort`);
+      if (task.level !== level) gaps.push(`${task.id}: level mismatch`);
+      if (task.taskType !== task.type) gaps.push(`${task.id}: taskType/type mismatch`);
+      if (task.prompt !== task.mission) gaps.push(`${task.id}: prompt/mission mismatch`);
+      if (task.gradeBand !== GRADE_BANDS[level]) gaps.push(`${task.id}: wrong gradeBand`);
+      if (!task.correctAnswer) gaps.push(`${task.id}: missing correctAnswer`);
+      if (!task.feedbackShort) gaps.push(`${task.id}: missing feedbackShort`);
 
       const type = task.taskType;
       if (level === "easy") {
-        if (!EASY_TYPES.has(type)) gaps.push(`${task.id}: סוג ${type} לא מותר ברמה קלה`);
-        if (task.passage) gaps.push(`${task.id}: passage אסור ברמה קלה`);
-        if (type === "fill_sentence") gaps.push(`${task.id}: fill_sentence אסור ברמה קלה`);
-        if (task.missionHe.length > MAX_EASY_MISSION_CHARS) {
-          gaps.push(`${task.id}: משימה ארוכה מדי לרמה קלה`);
+        if (!EASY_TYPES.has(type)) gaps.push(`${task.id}: type ${type} not allowed on easy`);
+        if (task.passage) gaps.push(`${task.id}: passage not allowed on easy`);
+        if (type === "fill_sentence") gaps.push(`${task.id}: fill_sentence not allowed on easy`);
+        if (task.mission.length > MAX_EASY_MISSION_CHARS) {
+          gaps.push(`${task.id}: mission too long for easy`);
         }
       }
       if (level === "medium") {
-        if (!MEDIUM_TYPES.has(type)) gaps.push(`${task.id}: סוג ${type} לא מותר ברמה בינונית`);
-        if (type === "word_family") gaps.push(`${task.id}: word_family אסור ברמה בינונית`);
-        if (task.passage) gaps.push(`${task.id}: passage אסור ברמה בינונית`);
+        if (!MEDIUM_TYPES.has(type)) gaps.push(`${task.id}: type ${type} not allowed on medium`);
+        if (type === "word_family") gaps.push(`${task.id}: word_family not allowed on medium`);
+        if (task.passage) gaps.push(`${task.id}: passage not allowed on medium`);
         if (type === "meaning_word") {
-          const match = task.missionHe.match(/מה הפירוש של "(.+?)"\?/);
+          const match = task.mission.match(/What does "(.+?)" mean\?/);
           if (match) {
             const word = match[1];
             const lexiconAnswer = MEANING_WORD_LEXICON[word];
             if (lexiconAnswer === undefined) {
-              gaps.push(`${task.id}: "${word}" חסר ב-MEANING_WORD_LEXICON`);
+              gaps.push(`${task.id}: "${word}" missing from MEANING_WORD_LEXICON`);
             } else if (task.correctAnswer !== lexiconAnswer) {
-              gaps.push(`${task.id}: פירוש "${word}" (${task.correctAnswer}) לא תואם ללקסיקון (${lexiconAnswer})`);
+              gaps.push(`${task.id}: meaning of "${word}" (${task.correctAnswer}) does not match lexicon (${lexiconAnswer})`);
             }
           }
         }
       }
       if (level === "hard") {
-        if (!HARD_TYPES.has(type)) gaps.push(`${task.id}: סוג ${type} לא מותר ברמה קשה`);
-        if (!task.passage) gaps.push(`${task.id}: חסר passage ברמה קשה`);
+        if (!HARD_TYPES.has(type)) gaps.push(`${task.id}: type ${type} not allowed on hard`);
+        if (!task.passage) gaps.push(`${task.id}: missing passage on hard`);
         if (task.passage && countSentences(task.passage) > MAX_HARD_PASSAGE_SENTENCES) {
-          gaps.push(`${task.id}: passage ארוך מדי (${countSentences(task.passage)} משפטים)`);
+          gaps.push(`${task.id}: passage too long (${countSentences(task.passage)} sentences)`);
         }
       }
     }

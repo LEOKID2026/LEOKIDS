@@ -1,4 +1,4 @@
-# חילוק — חלוקה שווה
+# Division — Equal Sharing
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
+| **title_english** | Division — Equal Sharing |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חילוק בלי שארית. פירוק רב-שלבי ואימות (1,440÷12). לא אותה אסטרטגיה כמו G5.
+**Content scope:** division with no remainder. Multi-step breaking apart and checking (1,440÷12). Not the same strategy as G5.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק חילוק — חלוקה שווה ללא שארית — עם פירוק רב שלבי ואימות.
-מחפשים: כמה פעמים המחלק נכנס במחולק? ובודקים כל שלב.
+Today we will strengthen division — equal sharing with no remainder — using multi-step breaking apart and checking.
+We ask: how many times does the divisor fit into the dividend? And we check each step.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-144,000 ÷ 12 — פירוק לשלבים (מספרים גדולים):
-שלב א: 12 × 10,000 = 120,000 → נשאר 24,000
-שלב ב: 12 × 2,000 = 24,000 → נשאר 0
-סיכום: 10,000 + 2,000 = 12,000
+144,000 ÷ 12 — break apart in steps (large numbers):
+Step A: 12 × 10,000 = 120,000 → remainder 24,000
+Step B: 12 × 2,000 = 24,000 → remainder 0
+Summary: 10,000 + 2,000 = 12,000
 144,000 ÷ 12 = 12,000
-אימות: 12,000 × 12 = 144,000
+Check: 12,000 × 12 = 144,000
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-360,000 ÷ 15 — פירוק:
-15 × 20,000 = 300,000 → נשאר 60,000
-15 × 4,000 = 60,000 → נשאר 0
+360,000 ÷ 15 — break apart:
+15 × 20,000 = 300,000 → remainder 60,000
+15 × 4,000 = 60,000 → remainder 0
 20,000 + 4,000 = 24,000
 360,000 ÷ 15 = 24,000
-אימות: 24,000 × 15 = 360,000
+Check: 24,000 × 15 = 360,000
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 96,000 ÷ 8 = ?
+Calculate: 96,000 ÷ 8 = ?
 - 8 × 10,000 = 80,000
-- נשאר: 96,000 − 80,000 = 16,000
-8 × 2,000 = 16,000 נשאר: 0.
-שלב 3 — אימות: (10,000 + 2,000) × 8 = 12,000 × 8 = 96,000
+- Remainder: 96,000 − 80,000 = 16,000
+8 × 2,000 = 16,000 remainder: 0.
+Step 3 — check: (10,000 + 2,000) × 8 = 12,000 × 8 = 96,000
 12,000
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 1,440 ÷ 12 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 1,440 ÷ 12 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 1,440 ÷ 12
-12 × 100 = 1,200 → נשאר 1,440 − 1,200 = 240.
-12 × 20 = 240 → נשאר 0.
+Calculate: 1,440 ÷ 12
+12 × 100 = 1,200 → remainder 1,440 − 1,200 = 240.
+12 × 20 = 240 → remainder 0.
 100 + 20 = 120
-אימות: 120 × 12 = 1,440
-התשובה: 120
+Check: 120 × 12 = 1,440
+The answer: 120
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-חילוק מדויק נדרש לשברים וליחס.
-בתרגול תמצאו חילוקים גדולים — פרקו לשלבים ואמתו בכפל!
+Accurate division is needed for fractions and ratios.
+In practice you will find large divisions — break apart in steps and check with multiplication!

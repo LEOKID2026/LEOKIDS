@@ -1,4 +1,4 @@
-﻿# שטח של ריבוע
+# Area of a Square
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח של ריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Square `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** רשת יחידות; כיסוי; 4, 16
+**Content scope:** Unit grid; covering; 4, 16
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה מהו שטח של ריבוע — כמה מקום תופס הריבוע על המשטח.
-נמלא את הריבוע בריבועים קטנים ונספור.
+Today in geometry we will learn what the area of a square is — how much space the square takes up on a surface.
+We will fill the square with small squares and count them.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_area_grid
 :::
 
-רשת יחידות: ריבועים קטנים בגודל 1×1.
-דרך ראשונה — כיסוי: ממלאים את הריבוע הגדול בריבועים קטנים וסופרים כמה נכנסו.
-דרך שנייה — שורות: בכל שורה יש כמה ריבועים; כמה שורות? כפל.
-שטח = יחידות ריבוע — לא אורך צלע אחת.
+Unit grid: small squares that are 1×1 in size.
+First way — covering: fill the big square with small squares and count how many fit inside.
+Second way — rows: each row has a certain number of squares; how many rows? Multiply.
+Area = square units — not the length of one side.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע עם צלע 4:
-- שורה אחת: 4 ריבועים קטנים
-- 4 שורות: 4 × 4 = 16 ריבועים.
-שטח: 16 יחידות ריבוע.
-
----
-
-## 4. בואו נפתור
-
-לריבוע יש צלע באורך 4. מה השטח?
-ממלאים בשורות — 4 ריבועים בכל שורה.
-4 שורות — 4 × 4 = 16.
-16 יחידות ריבוע
+A square with a side of 4:
+- One row: 4 small squares
+- 4 rows: 4 × 4 = 16 squares.
+Area: 16 square units.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-ריבוע עם צלע 3 — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A square has a side of length 4. What is the area?
+Fill it in rows — 4 squares in each row.
+4 rows — 4 × 4 = 16.
+16 square units
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-ריבוע עם צלע 3 — מה השטח?
-ממלאים בשורות — 3 ריבועים קטנים בכל שורה.
-כמה שורות? 3 שורות.
-צלע = 3
+A square with a side of 3 — what is the area?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A square with a side of 3 — what is the area?
+Fill it in rows — 3 small squares in each row.
+How many rows? 3 rows.
+Side = 3
 3 × 3 = 9
-9 יחידות ריבוע
+9 square units
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא שטח ריבוע — ברשת או בכפל!
-בתרגול מלאו ריבועים קטנים וספרו!
+Now you know how to find the area of a square — with a grid or by multiplying!
+In practice, fill in small squares and count!

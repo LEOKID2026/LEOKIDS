@@ -1,4 +1,4 @@
-# משפטים קצרים — בסיס
+# Short Sentences — The Basics
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | משפטים קצרים — בסיס |
+| **title_english** | Short Sentences — The Basics |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** משפטים בני 2–3 מילים מתוך מילים שנלמדו
+**Content scope:** 2–3 word sentences from words already learned
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר מילים למשפט קצר באנגלית.
-משפט קצר — 2 או 3 מילים.
-
----
-
-## 2. הסבר
-
-לוקחים מילים שלמדנו — ומחברים.
-I am happy — אני שמח.
-I am sad — אני עצוב.
-You are happy — אתה שמח.
+Today we will learn to connect words into a short sentence in English.
+A short sentence — 2 or 3 words.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ילד שמח.
+We take words we've learned — and connect them.
+I am happy — I am happy.
+I am sad — I am sad.
+You are happy — You are happy.
+
+---
+
+## 3. Example
+
+A happy child.
 I am happy
-משפט של 3 מילים.
+A 3-word sentence.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-בנו משפט "אני עצוב".
+Build the sentence "I am sad".
 I am
 sad
 I am sad
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בנו משפט:
-אתה עצוב.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Build the sentence:
+You are sad.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-בנו משפט: אתה עצוב.
-אתה —
+Build the sentence: You are sad.
+You —
 You are
-מוסיפים עצוב — sad.
+We add sad.
 You are sad
-You are sad פירושו: אתה עצוב.
+You are sad means: you are sad.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לבנות משפטים קצרים.
-בתרגול תמצאו משפטים כמו I am happy.
+Now you know how to build short sentences.
+In practice, you'll find sentences like I am happy.

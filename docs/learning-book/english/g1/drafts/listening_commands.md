@@ -1,4 +1,4 @@
-# עוד הוראות קצרות
+# More Short Instructions
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | עוד הוראות קצרות |
+| **title_english** | More Short Instructions |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** Point to the door, Show me your pen; audio_required: yes — פקודות ובחירת תמונה
+**Content scope:** Point to the door, Show me your pen; audio_required: yes — commands and picture choice
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד עוד הוראות — עם מילים שלמדנו.
-שומעים — בוחרים תמונה של הפעולה או החפץ.
-
----
-
-## 2. הסבר
-
-Point to the door. — הצביעו על הדלת.
-Show me your pen. — הראו לי את העט.
-Listen. — הקשיבו.
-Look. — הסתכלו.
+Today we will learn more instructions — with words we've already learned.
+We listen — and choose the picture of the action or object.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-שומעים: "Show me your pen."
-מחפשים pen — עט — ומראים.
-שומעים: "Point to the door."
-מצביעים על door — דלת.
-
----
-
-## 4. בואו נפתור
-
-איזו תמונה מתאימה ל-"Point to the door"?
-door — דלת.
-בוחרים תמונה של דלת.
-תמונה של door
+Point to the door. — Point to the door.
+Show me your pen. — Show me your pen.
+Listen. — Listen.
+Look. — Look.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-מה עושים כששומעים "Look."?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+We hear: "Show me your pen."
+We look for pen — a pen — and show it.
+We hear: "Point to the door."
+We point to door — a door.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-מה עושים כששומעים "Look."?
+Which picture matches "Point to the door"?
+door — a door.
+We choose a picture of a door.
+picture of a door
+
+---
+
+## 5. Try it yourself
+
+What do we do when we hear "Look."?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+What do we do when we hear "Look."?
 Look.
-פירוש המילה הוא: הסתכלו.
-מסתכלים — זו הפעולה.
-Look פירושו: הסתכלו.
+This word means: look.
+We look — that's the action.
+Look means: look.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-סיימתם את יסודות האותיות, הצלילים, המילים וההאזנה.
-כל הכבוד!
-בעמודים הבאים נפגוש עוד מילים ונחזור על מה שלמדנו.
+You've finished the basics of letters, sounds, words, and listening.
+Well done!
+On the next pages, we'll meet more words and review what we've learned.

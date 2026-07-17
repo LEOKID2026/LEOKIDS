@@ -1,4 +1,4 @@
-# ערך המקום — אלפים ועד 10,000
+# Place Value — Thousands Up to 10,000
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ערך המקום — אלפים ועד 10,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Place Value — Thousands Up to 10,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ערך מיקום עד 10,000 — אלפים, מאות, עשרות, אחדות. ללא עשרות אלפים.
+**Content scope:** Place value up to 10,000 — thousands, hundreds, tens, and ones. No ten-thousands.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לקרוא מספרים גדולים עד 10,000 ולזהות מה כל ספרה אומרת לפי מיקומה.
-במספר ארבע ספרות יש אלפים, מאות, עשרות ואחדות.
-
----
-
-## 2. הסבר
-
-כל ספרה במספר יושבת במקום משלה:
-ספרת אלפים — כמה אלפים יש (1,000, 2,000, 3,000…)
-ספרת מאות — כמה מאות יש (100, 200, 300…)
-ספרת עשרות — כמה עשרות יש (10, 20, 30…)
-ספרת אחדות — כמה יחידות בודדות (1, 2, 3…)
-3,482 = 3 אלפים + 4 מאות + 8 עשרות + 2 אחדות = 3,000 + 400 + 80 + 2
-חשוב:
-הספרה 3 ב-3,482 היא אלפים (3,000), לא 3 אחדות.
-כשכותבים מספר גדול, לפעמים מוסיפים פסיק אחרי האלפים: 3,482.
+Today we're going to learn to read big numbers up to 10,000 and figure out what each digit means by its place.
+In a four-digit number there are thousands, hundreds, tens, and ones.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-7,056 — פירוק לפי מיקום:
+Each digit in a number sits in its own place:
+Thousands digit — how many thousands (1,000, 2,000, 3,000…)
+Hundreds digit — how many hundreds (100, 200, 300…)
+Tens digit — how many tens (10, 20, 30…)
+Ones digit — how many single units (1, 2, 3…)
+3,482 = 3 thousands + 4 hundreds + 8 tens + 2 ones = 3,000 + 400 + 80 + 2
+Important:
+The 3 in 3,482 is thousands (3,000), not 3 ones.
+When we write a big number, we sometimes put a comma after the thousands: 3,482.
+
+---
+
+## 3. Visual / concrete example
+
+7,056 — broken apart by place:
 7,000 + 0 + 50 + 6 = 7,056
-7 במקום אלפים → 7,000
-0 במקום מאות → 0 (אין מאות)
-5 במקום עשרות → 50
-6 במקום אחדות → 6
-7,056 = שבעת אלפים חמישים ושש.
+7 in the thousands place → 7,000
+0 in the hundreds place → 0 (no hundreds)
+5 in the tens place → 50
+6 in the ones place → 6
+7,056 = seven thousand fifty-six.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-במספר 5,218 — מה ערך ספרת האלפים?
-מזהים ספרות: 5 | 2 | 1 | 8
-ספרת האלפים היא 5.
-5 במקום אלפים = 5,000.
-ערך ספרת האלפים ב-5,218 הוא 5,000.
-
----
-
-## 5. נסו בעצמכם
-
-במספר 6,729 — כמה אלפים יש?
-(מה ערך ספרת האלפים?)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In the number 5,218 — what is the value of the thousands digit?
+Find the digits: 5 | 2 | 1 | 8
+The thousands digit is 5.
+5 in the thousands place = 5,000.
+The value of the thousands digit in 5,218 is 5,000.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-במספר 6,729 — כמה אלפים יש?
-מזהים ספרות: 6 | 7 | 2 | 9 (אלפים | מאות | עשרות | אחדות).
-ספרת האלפים היא 6.
-6 במקום אלפים = 6,000.
-ערך ספרת האלפים ב-6,729 הוא 6,000
+In the number 6,729 — how many thousands are there?
+(What is the value of the thousands digit?)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לפרק מספר עד 10,000 לאלפים, מאות, עשרות ואחדות.
-בתרגול תמצאו שאלות על ערך ספרה לפי מיקום.
-בדקו תמיד את המקום!
+In the number 6,729 — how many thousands are there?
+Find the digits: 6 | 7 | 2 | 9 (thousands | hundreds | tens | ones).
+The thousands digit is 6.
+6 in the thousands place = 6,000.
+The value of the thousands digit in 6,729 is 6,000
+
+---
+
+## 7. Let's practice!
+
+Now you know how to break a number up to 10,000 into thousands, hundreds, tens, and ones.
+In practice you'll find questions about a digit's value by its place.
+Always check the place!

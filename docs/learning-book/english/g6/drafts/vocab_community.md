@@ -1,4 +1,4 @@
-# קהילה — festival, celebrate
+# Community — festival, celebrate
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | קהילה — festival, celebrate |
+| **title_english** | Community — festival, celebrate |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** Our community celebrated — אירועים בקהילה
+**Content scope:** Our community celebrated — community events
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק אוצר מילים על קהילה — festival, celebrate.
-Our community celebrated the festival last month — הקהילה שלנו חגגה את הפסטיבל בחודש שעבר.
-
----
-
-## 2. הסבר
-
-celebrate — לחגוג; festival — פסטיבל:
-
+Today we will review community vocabulary — festival, celebrate.
 Our community celebrated the festival last month.
 
-הקהילה שלנו חגגה את הפסטיבל בחודש שעבר.
+---
+
+## 2. Simple explanation
+
+celebrate — to mark a special occasion; festival — a special event:
+
+Our community celebrated the festival last month.
 
 Many families joined the parade.
 
-משפחות רבות הצטרפו למצעד.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-פסטיבל רחוב בקהילה.
+A street festival in the community.
 
 Our community celebrated the festival last month.
 
-הקהילה שלנו חגגה את הפסטיבל בחודש שעבר.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הקהילה שלנו חגגה את הפסטיבל בחודש שעבר"?
+Question: How do you say this?
 
 Our community celebrated the festival last month
 
-תשובה: Our community celebrated the festival last month
+Answer: Our community celebrated the festival last month
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פסטיבל — ריקוד ושמחה לכולם.
+A festival — dancing and joy for everyone.
 
 Children and adults danced together at the festival.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "ילדים ומבוגרים ריקדו יחד בפסטיבל."
+Exercise: "Children and adults danced together at the festival."
 
-פועל סדיר בעבר: dance — danced.
+A regular verb in the past: dance becomes danced.
 
-together = יחד; at the festival = בפסטיבל.
+"Together" tells us how; "at the festival" tells us where.
 
-ילדים ומבוגרים ריקדו יחד בפסטיבל.
-
- Children and adults danced together at the festival.
+So the full sentence is: Children and adults danced together at the festival.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים אירועים בקהילה.
-בתרגול תמצאו Our community celebrated the festival last month.
+Now you will describe community events.
+In the practice, you'll find: Our community celebrated the festival last month.

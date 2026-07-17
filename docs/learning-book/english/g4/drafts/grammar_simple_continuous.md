@@ -1,4 +1,4 @@
-# Present Simple לעומת Continuous
+# Present Simple vs. Continuous
 
 ## Metadata
 
@@ -11,85 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | contrast_page |
 | **approval_status** | approved |
-| **title_hebrew** | Present Simple לעומת Continuous |
+| **title_english** | Present Simple vs. Continuous |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:present_simple_לעומת_present_continuous`
+**Linked skill_ids:** `english``
 
 **Content scope:** I read every day / I am reading now — now vs usually
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד את ההבדל בין Simple ל-Continuous.
-I read every day לעומת I am reading now.
+Today we will learn the difference between Simple and Continuous.
+I read every day compared to I am reading now.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Simple — הרגל:
+Simple — a habit:
 He walks every day.
 
-Continuous — עכשיו:
+Continuous — happening now:
 She is reading now.
-
-She is reading now.
-
-היא קוראת עכשיו.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה קוראת ספר עכשיו.
+A girl reading a book right now.
 
 She is reading now.
 
-היא קוראת עכשיו.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היא קוראת עכשיו"?
+Question: How do you say this?
 
 She is reading now
 
-תשובה: She is reading now
+Answer: She is reading now
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדים במגרש — עכשיו.
+Children on the field — right now.
 
 They are playing football now.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם משחקים כדורגל עכשיו."
+Exercise: "They are playing football now."
 
-המילה now מראה פעולה שקורית עכשיו — Present Continuous.
+The word "now" shows an action happening right now — Present Continuous.
 
-they פירושו הם — משתמשים ב-are + playing.
+"They" is plural — we use are + playing.
 
-הם משחקים כדורגל עכשיו.
-
- They are playing football now.
+So the full sentence is: They are playing football now.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מבדילים Simple (הרגל) מ-Continuous (עכשיו).
-בתרגול תמצאו She is reading now.
+Now you will tell apart Simple (a habit) from Continuous (happening now).
+In the practice, you'll find: She is reading now.

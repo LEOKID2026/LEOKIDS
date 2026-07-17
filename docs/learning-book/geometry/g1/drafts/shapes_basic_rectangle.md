@@ -1,4 +1,4 @@
-﻿# הכרת המלבן
+# Getting to Know the Rectangle
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הכרת המלבן `[DRAFT — not owner-approved]` |
+| **title_english** | Getting to Know the Rectangle `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זיהוי מלבן; אורך ורוחב שונים; זוגות צלעות נגדיות; ללא מדידות
+**Content scope:** Identifying a rectangle; different length and width; opposite side pairs; no measurements
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה להכיר את המלבן.
-מלבן דומה לריבוע — אבל לרוב יש לו אורך ורוחב שונים.
+Today in geometry we will learn about the rectangle.
+A rectangle is like a square — but it usually has a different length and width.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: rectangle_sides
 :::
 
-למלבן יש 4 צלעות ו-4 פינות ישרות — כמו לריבוע.
-ההבדל:
-במלבן יש אורך (צד ארוך יותר) ורוחב (צד קצר יותר).
-הצלעות הנגדיות שוות זו לזו — הארוך מול הארוך, הקצר מול הקצר.
-דוגמאות:
-דלת, דף נייר, מסך טלוויזיה.
+A rectangle has 4 sides and 4 right corners — like a square.
+The difference:
+In a rectangle there is a length (a longer side) and a width (a shorter side).
+Opposite sides are equal to each other — long opposite long, short opposite short.
+Examples:
+a door, a sheet of paper, a TV screen.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-דמיינו דף נייר:
-- הצד הארוך — אורך
-- הצד הקצר — רוחב
-- 4 פינות ישרות
-זה מלבן (לא ריבוע, כי האורך והרוחב שונים).
-
----
-
-## 4. בואו נפתור
-
-לצורה יש אורך ורוחב שונים, 4 פינות ישרות, וזוגות צלעות נגדיות שוות. מה שמה?
-אורך ורוחב שונים — לא ריבוע (בריבוע הכל שווה).
-4 פינות ישרות — כמו מלבן.
-מלבן
+Imagine a sheet of paper:
+- The longer side — length
+- The shorter side — width
+- 4 right corners
+That is a rectangle (not a square, because the length and width are different).
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-דמיינו לוח גיר בכיתה:
-הצד הארוך (רוחב הלוח) שונה מהצד הקצר (גובה הלוח), וכל 4 הפינות ישרות.
-האם הלוח הוא מלבן?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-לוח גיר בכיתה: הצד הארוך שונה מהצד הקצר, וכל 4 הפינות ישרות.
-האם הלוח הוא מלבן?
-האם יש 4 פינות ישרות? כן — כמו במלבן.
-האם הצד הארוך שונה מהצד הקצר? כן — יש אורך ורוחב שונים.
-הצלעות הנגדיות שוות זו לזו — הארוך מול הארוך, הקצר מול הקצר.
-כן, הלוח הוא מלבן
+A shape has a different length and width, 4 right corners, and equal opposite sides. What is it called?
+Different length and width — not a square (in a square everything is equal).
+4 right corners — like a rectangle.
+Rectangle
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים את המלבן בגאומטריה.
-בתרגול תמצאו שאלות על זיהוי מלבן.
-בדקו אורך ורוחב!
+Imagine a chalkboard in the classroom:
+The long side (the width of the board) is different from the short side (the height of the board), and all 4 corners are right angles.
+Is the board a rectangle?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Chalkboard in the classroom: the long side is different from the short side, and all 4 corners are right angles.
+Is the board a rectangle?
+Does it have 4 right corners? Yes — like a rectangle.
+Is the long side different from the short side? Yes — it has a different length and width.
+Opposite sides are equal to each other — long opposite long, short opposite short.
+Yes, the board is a rectangle
+
+---
+
+## 7. Let's practice!
+
+Now you know the rectangle in geometry.
+In practice you will find questions about identifying rectangles.
+Check the length and width!

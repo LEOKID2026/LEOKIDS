@@ -1,4 +1,4 @@
-# סביבה — משאבי טבע
+# Environment — Natural Resources
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | סביבה — משאבי טבע `[DRAFT — not owner-approved]` |
+| **title_english** | Environment — Natural Resources `[DRAFT — not owner-approved]` |
 
-**Content scope:** מתחדש/לא מתחדש; סוגי זיהום — עובדתי, לא מפחיד
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על משאבי טבע — מה מתחדש ומה לא — ועל זיהום ודרכים לעזור.
+**Content scope:** Renewable/non-renewable; types of pollution — factual, not scary
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-משאב מתחדש — נוצר מחדש בטבע בזמן סביר:
-- אנרגיית שמש ורוח
-- מים (במחזור)
-- יערות — אם שומרים ולא כורתים יותר מדי
-משאב לא מתחדש (או לאט מאוד):
-- נפט, פחם, גז — נוצרים מיליוני שנים
-- מתכות — מוגבלות בקרום
-זיהום — חומר מזיק שנכנס לסביבה:
-- אוויר — עשן, ריחות חזקים
-- מים — פסולת, שמנים
-- קרקע — פסולת פלסטיק שלא מתפרקת
-מה אפשר לעשות:
-מיחזור, חיסכון באנרגיה, פחות פלסטיק חד פעמי, שמירה על יערות.
+Today in science we will learn about natural resources — what is renewable and what is not — and about pollution and ways to help.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-פאנל סולארי — אנרגיה מתחדשת מהשמש.
-מכונית ששורפת דלק משתמשת במשאב שאינו מתחדש, ופולטת חומרים שמזהמים את האוויר.
-מיחזור נייר — פחות כריתת יערות, פחות זיהום.
-
----
-
-## 4. בואו נפתור
-
-האם אנרגיית רוח — מתחדשת או לא מתחדשת?
-הרוח חוזרת — הטבע מייצר אותה שוב.
-לא נגמרת כמו נפט.
-מתחדש
-
----
-
-## 5. נסו בעצמכם
-
-בבית:
-איזה משאב מתחדש אתם משתמשים בו?
-(מים, שמש)
-איפה רואים זיהום — אוויר, מים, או קרקע?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Renewable resource — recreated in nature in a reasonable time:
+- Solar and wind energy
+- Water (in a cycle)
+- Forests — if protected and not cut down too much
+Non-renewable resource (or very slow):
+- Oil, coal, gas — formed over millions of years
+- Metals — limited in the crust
+Pollution — harmful material entering the environment:
+- Air — smoke, strong smells
+- Water — waste, oils
+- Soil — plastic waste that does not break down
+What we can do:
+Recycle, save energy, less single-use plastic, protect forests.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-השאלה: בבית — איזה משאב מתחדש אתם משתמשים? ואיפה רואים זיהום — באוויר, במים, או בקרקע?
-הסבר מדעי:
-משאב מתחדש הוא משאב שהטבע מייצר מחדש בזמן סביר.
-מים — מתחדשים במחזור הטבע:
-אידוי, עננים, גשם, נהרות.
-שמש — מקור אנרגיה שחוזר כל יום; פאנלים סולריים ממירים אותה לחשמל.
-זיהום קיים בכל הסביבות:
-עשן ממכוניות — אוויר; פסולת לנחל — מים; שקיות פלסטיק שנשארות בקרקע — קרקע.
-משאב מתחדש בבית — מים, שמש. זיהום — אוויר (עשן), מים (פסולת), קרקע (פלסטיק).
+A solar panel — renewable energy from the sun.
+A car burning fuel uses a non-renewable resource, and releases materials that pollute the air.
+Recycling paper — less forest cutting, less pollution.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים משאבים מתחדשים, לא מתחדשים וזיהום במדעים.
-בתרגול חפשו שאלות על שמירה על הסביבה.
+Is wind energy — renewable or non-renewable?
+Wind returns — nature produces it again.
+It does not run out like oil.
+Renewable
+
+---
+
+## 5. Try it yourself
+
+At home:
+Which renewable resource do you use?
+(water, sun)
+Where do you see pollution — air, water, or soil?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: at home — which renewable resource do you use? And where do you see pollution — in air, water, or soil?
+Scientific explanation:
+A renewable resource is one that nature recreates in a reasonable time.
+Water — renews in nature's cycle:
+evaporation, clouds, rain, rivers.
+Sun — an energy source that returns every day; solar panels convert it to electricity.
+Pollution exists in all environments:
+Smoke from cars — air; waste in a stream — water; plastic bags left in soil — soil.
+Renewable resource at home — water, sun. Pollution — air (smoke), water (waste), soil (plastic).
+
+---
+
+## 7. Let's practice!
+
+Now you know about renewable, non-renewable resources and pollution in science.
+When you practice, look for questions about protecting the environment.

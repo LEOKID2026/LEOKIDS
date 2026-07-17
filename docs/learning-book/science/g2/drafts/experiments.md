@@ -1,4 +1,4 @@
-# תצפית וחקירה
+# Observation and Investigation
 
 ## Metadata
 
@@ -11,80 +11,80 @@
 | **age_band** | grades_1_2 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | draft |
-| **title_hebrew** | תצפית וחקירה `[DRAFT — not owner-approved]` |
+| **title_english** | Observation and Investigation `[DRAFT — not owner-approved]` |
 
-**Content scope:** תצפית; השוואה; משתנה אחד — בטוח בלבד; ללא חומרים מסוכנים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים איך לחקור כמו מדענים — עם תצפית, השוואה ומשתנה אחד.
+**Content scope:** Observation; comparison; one variable — safe only; no dangerous materials
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-חקירה מדעית מתחילה בפשטות:
-תצפית — רואים ומתארים (מה קורה?)
-השוואה — משווים בין שני מצבים (מה שונה?)
-משתנה אחד — משנים דבר אחד בלבד; השאר נשאר זהה (בדיקה הוגנת)
-דוגמה בטוחה:
-שני עציצים זהים — באחד יש אור, בשני חושך.
-רק האור משתנה — כל השאר אותו דבר.
-עם מורה בלבד.
-בלי אש, בלי כימיקלים, בלי חשמל.
+Today in science we will learn how to investigate like scientists — with observation, comparison, and one variable.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-האם צמח ליד החלון גבוה יותר?
-תצפית:
-מודדים גובה כל יום.
-השוואה:
-עציץ בחלון מול עציץ בפינה חשוכה.
-משתנה:
-מקום (אור).
-זהה:
-אותה כמות מים, אותו עציץ, אותו זרע.
-רושמים מה רואים — בלי לנחש.
-
----
-
-## 4. בואו נפתור
-
-למה משנים רק דבר אחד בבדיקה?
-אם משנים גם מים וגם אור — לא יודעים מה השפיע.
-משתנה אחד — תוצאה ברורה.
-כדי לדעת מה גרם לשינוי
+Scientific investigation starts simply:
+Observation — we look and describe (what is happening?)
+Comparison — we compare two situations (what is different?)
+One variable — change only one thing; everything else stays the same (a fair test)
+Safe example:
+Two identical pots — one gets light, one gets darkness.
+Only the light changes — everything else is the same.
+With a teacher only.
+No fire, no chemicals, no electricity.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-רוצים לבדוק:
-האם צמח ליד חלון גדל גבוה יותר מצמח בפינה חשוכה?
-מה יהיה המשתנה בבדיקה הזאת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה הייתה:
-מה יהיה המשתנה בבדיקה של צמח בחלון מול צמח בפינה חשוכה?
-בבדיקה הוגנת משנים רק דבר אחד — זהו המשתנה.
-כאן:
-המיקום (ליד חלון עם אור מול פינה חשוכה) הוא הדבר היחיד שמשתנה.
-כל השאר נשאר זהה:
-אותו עציץ, אותם מים, אותו זרע.
-התשובה: המשתנה הוא כמות האור (מיקום הצמח).
+Does a plant by the window grow taller?
+Observation:
+Measure the height every day.
+Comparison:
+Pot by the window versus pot in a dark corner.
+Variable:
+Location (light).
+Same:
+Same amount of water, same pot, same seed.
+Write down what you see — without guessing.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים על תצפית וחקירה במדעים.
-בתרגול חפשו שאלות על תצפית, השוואה ומשתנה אחד.
+Why change only one thing in a test?
+If you change both water and light — you do not know what made the difference.
+One variable — a clear result.
+So we know what caused the change
+
+---
+
+## 5. Try it yourself
+
+You want to test:
+Does a plant by a window grow taller than a plant in a dark corner?
+What will be the variable in this test?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question was:
+What will be the variable in a test of a plant by a window versus a plant in a dark corner?
+In a fair test you change only one thing — that is the variable.
+Here:
+The location (by a window with light versus a dark corner) is the only thing that changes.
+Everything else stays the same:
+Same pot, same water, same seed.
+The answer: the variable is the amount of light (the plant's location).
+
+---
+
+## 7. Let's practice!
+
+Now you know about observation and investigation in science.
+When you practice, look for questions about observation, comparison, and one variable.

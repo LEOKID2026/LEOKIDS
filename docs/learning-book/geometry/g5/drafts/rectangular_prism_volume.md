@@ -1,4 +1,4 @@
-﻿# נפח תיבה
+# Volume of a Rectangular Prism
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח תיבה `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Rectangular Prism |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שכבות וממדים; 4, 3, 5 ס״מ; 60 ס״מ³
+**Content scope:** layers and dimensions; 4, 3, 5 cm; 60 cm³
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח תיבה — דרך שכבות וממדים.
-דמיינו יחידות קוביות: שכבה אחת = רשת של קוביות; 5 שכבות = הנפח המלא.
+Today we'll learn the volume of a rectangular prism — through layers and dimensions.
+Imagine unit cubes: one layer = a grid of cubes; 5 layers = the full volume.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: box_basic
 :::
 
-שלב 1 — שכבת בסיס:
-רוחב 4 × אורך 3 = 12 קוביות בשכבה אחת.
-שלב 2 — שכבות:
-גובה 5 → 5 שכבות כאלה.
-נפח = 4 × 3 × 5 = 60 (ס״מ³)
-או: 12 × 5 = 60 — שטח שכבה × מספר שכבות.
+Step 1 — base layer:
+width 4 × length 3 = 12 cubes in one layer.
+Step 2 — layers:
+height 5 → 5 such layers.
+Volume = 4 × 3 × 5 = 60 (cm³)
+Or: 12 × 5 = 60 — area of one layer × number of layers.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-תיבה 4 ס״מ × 3 ס״מ × 5 ס״מ:
-- שכבה: 4 × 3 = 12 קוביות
-- 5 שכבות: 12 × 5 = 60 ס״מ³
-
----
-
-## 4. בואו נפתור
-
-תיבה 4 ס״מ × 3 ס״מ × 5 ס״מ. מה הנפח?
-שכבת בסיס — 4 × 3 = 12.
-5 שכבות — 12 × 5 = 60.
-60 ס״מ³.
+Rectangular prism 4 cm × 3 cm × 5 cm:
+- one layer: 4 × 3 = 12 cubes
+- 5 layers: 12 × 5 = 60 cm³
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-תיבה 2 ס״מ × 6 ס״מ × 3 ס״מ — מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Rectangular prism 4 cm × 3 cm × 5 cm. What is the volume?
+Base layer — 4 × 3 = 12.
+5 layers — 12 × 5 = 60.
+60 cm³.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-תיבה 2 ס״מ × 6 ס״מ × 3 ס״מ — מה הנפח?
-שכבת בסיס:
-2 × 6 = 12 קוביות
-כפלו במספר השכבות (גובה):
+Rectangular prism 2 cm × 6 cm × 3 cm — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Rectangular prism 2 cm × 6 cm × 3 cm — what is the volume?
+Base layer:
+2 × 6 = 12 cubes
+Multiply by the number of layers (height):
 12 × 3 = 36
-נפח = 36 ס״מ³
+Volume = 36 cm³
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נפח תיבה = שכבה × גובה = אורך × רוחב × גובה.
-בתרגול תמצאו ממדים — חשבו שכבה, ואז הכפילו בגובה!
+Volume of a rectangular prism = one layer × height = length × width × height.
+In practice you'll find dimensions — calculate one layer, then multiply by the height!

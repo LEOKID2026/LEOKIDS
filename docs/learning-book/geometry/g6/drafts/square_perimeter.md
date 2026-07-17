@@ -1,4 +1,4 @@
-﻿# היקף ריבוע — כיתה ו׳
+# Perimeter of a Square — Grade 6
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף ריבוע — כיתה ו׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Square — Grade 6 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** היקף מול שטח — נימוק; 12 ס״מ, 48 ס״מ
+**Content scope:** Perimeter vs. area — reasoning; 12 cm, 48 cm
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק היקף ריבוע — ונבדיל בבירור משטח.
-ריבוע צלע 12 ס״מ: היקף 48 ס״מ, שטח 144 סמ״ר — מספרים שונים!
+Today we will strengthen perimeter of a square — and clearly tell it apart from area.
+A square with side 12 cm: perimeter 48 cm, area 144 cm² — different numbers!
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_perimeter
 :::
 
-היקף — אורך הגבול — 4 × צלע — יחידה: ס״מ, מ'.
-שטח — כמה בפנים — צלע × צלע — יחידה: סמ״ר.
-צלע 12: היקף = 4×12 = 48 ס״מ; שטח = 12×12 = 144 סמ״ר.
-היקף — "מסלול הליכה" סביב; שטח — "ריצוף" בפנים.
+Perimeter — the length around the border — 4 × side — unit: cm, m.
+Area — how much is inside — side × side — unit: cm².
+Side 12: perimeter = 4×12 = 48 cm; area = 12×12 = 144 cm².
+Perimeter — a "walking path" around; area — "flooring" inside.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע 12 ס״מ:
-- היקף: 4 × 12 = 48 ס״מ.
-- שטח: 12 × 12 = 144 סמ״ר.
-48 ≠ 144 — אל תבלבלו!
+Square 12 cm:
+- Perimeter: 4 × 12 = 48 cm.
+- Area: 12 × 12 = 144 cm².
+48 ≠ 144 — don't mix them up!
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-ריבוע צלע 12 ס״מ. מה ההיקף? (לא השטח!)
-היקף = 4 × צלע.
+Square with side 12 cm. What is the perimeter? (Not the area!)
+Perimeter = 4 × side.
 4 × 12 = 48
-48 ס״מ.
+48 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריבוע צלע 15 ס״מ — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Square with side 15 cm — what is the perimeter?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-ריבוע צלע 15 ס״מ — מה ההיקף?
-היקף = 4 × צלע.
+Square with side 15 cm — what is the perimeter?
+Perimeter = 4 × side.
 4 × 15 = 60
-60 ס״מ
+60 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-היקף ושטח — נוסחאות שונות, יחידות שונות.
-בתרגול שאלו:
-היקף או שטח? — ואז 4 × צלע או צלע × צלע!
+Perimeter and area — different formulas, different units.
+In practice you'll be asked:
+Perimeter or area? — and then 4 × side or side × side!

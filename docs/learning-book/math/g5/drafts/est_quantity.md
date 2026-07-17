@@ -1,4 +1,4 @@
-# אומדן כמות
+# Estimating Quantity
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | אומדן כמות `[DRAFT — not owner-approved]` |
+| **title_english** | Estimating Quantity |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הערכת כמות בלי ספירה מדויקת
+**Content scope:** Estimating quantity without exact counting
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להעריך כמות — בלי לספור בדיוק.
-אומדן כמות עוזר בחיי היום ובחשבון.
+Today we'll learn to estimate a quantity — without counting exactly.
+Estimating quantity helps in everyday life and in math.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כמה בערך 12,000 עלים?
-לא סופרים אחד אחד — מעריכים:
-- קבוצה קטנה ≈ 100
-- כמה קבוצות כאלה? ≈ 120 קבוצות
+About how many are 12,000 leaves?
+You don't count one by one — you estimate:
+- A small group ≈ 100
+- How many groups like that? ≈ 120 groups
 - 120 × 100 ≈ 12,000
-אומדן:
-בערך 12,000
+Estimate:
+About 12,000
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-כמה בערך 500 כדורים בקופסה?
-מסתכלים על שכבה — ≈ 50, ו-10 שכבות → ≈ 500
-
----
-
-## 4. בואו נפתור
-
-באולם יש בערך 12,000 מושבים. האם 8,000 מושבים זה "בערך"?
-8,000 רחוק מ-12,000
-10,000 או 12,000 — קרוב יותר
-12,000 — אומדן סביר; 8,000 — רחוק מדי
+About how many are 500 marbles in a box?
+Look at one layer — ≈ 50, and 10 layers → ≈ 500
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-באולם יש בערך 9,000 כסאות.
-האם 8,800 זה אומדן סביר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-באולם יש בערך 9,000 כסאות.
-האם 8,800 זה אומדן סביר?
-בודקים סדר גודל: 8,800 קרוב ל-9,000
-ההפרש: 9,000 − 8,800 = 200 — הפרש קטן יחסית
-8,800 הוא אומדן סביר — אותו סדר גודל כמו 9,000
-כן, 8,800 הוא אומדן סביר
+A hall has about 12,000 seats. Is 8,000 seats "about" right?
+8,000 is far from 12,000
+10,000 or 12,000 — closer
+12,000 — a reasonable estimate; 8,000 — too far off
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם יודעים להעריך כמות.
-בתרגול תמצאו אומדן כמות.
-חשבו על סדר גודל!
+A hall has about 9,000 chairs.
+Is 8,800 a reasonable estimate?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+A hall has about 9,000 chairs.
+Is 8,800 a reasonable estimate?
+Check the order of magnitude: 8,800 is close to 9,000
+The difference: 9,000 − 8,800 = 200 — a relatively small gap
+8,800 is a reasonable estimate — same order of magnitude as 9,000
+Yes, 8,800 is a reasonable estimate
+
+---
+
+## 7. Let's practice!
+
+Now you know how to estimate a quantity.
+In practice you'll find quantity estimation.
+Think about order of magnitude!

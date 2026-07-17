@@ -1,4 +1,4 @@
-# בעלי חיים — חי לעומת דומם
+# Animals — Living vs Non-Living
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | בעלי חיים — חי לעומת דומם `[DRAFT — not owner-approved]` |
+| **title_english** | Animals — Living vs Non-Living `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/SCIENCE_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חי לעומת דומם; צרכים: מזון, מים, אוויר
+**Content scope:** Living vs non-living; needs: food, water, air
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד במדעים להבדיל בין דברים חיים לדברים דוממים.
-נכיר גם מה בעלי חיים צריכים כדי לחיות.
-
----
-
-## 2. הסבר
-
-דבר חי גדל, מגיב לסביבה וצריך תנאים מתאימים כדי לחיות.
-כלב, חתול, דג וציפור — אלה בעלי חיים.
-דבר דומם לא גדל ולא נושם.
-אבן, כיסא ועיפרון — אלה דוממים.
-לבעלי חיים יש שלושה צרכים בסיסיים:
-- מזון — כדי לקבל כוח
-- מים — כדי לשתות ולחיות
-- אוויר — כדי לנשום
+Today in science we will learn to tell living things apart from non-living things.
+We will also learn what animals need to stay alive.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בגינה יש כלב, עץ ואבן.
-הכלב רץ, שותה מים ואוכל — הוא חי.
-העץ גדל וצריך מים ואור — גם הוא חי (צמח).
-האבן לא זזה ולא גדלה — היא דוממת.
-
----
-
-## 4. בואו נפתור
-
-האם אבן בחוף הים היא בעל חיים?
-בעל חיים גדל ונושם.
-אבן לא גדלה ולא נושמת.
-לא — אבן היא דומם.
+A living thing grows, responds to its surroundings, and needs the right conditions to live.
+A dog, cat, fish, and bird — these are animals.
+A non-living thing does not grow and does not breathe.
+A rock, chair, and pencil — these are non-living.
+Animals have three basic needs:
+- Food — to get energy
+- Water — to drink and stay alive
+- Air — to breathe
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-דמיינו אוגר בכלוב בכיתה.
-האם הוא חי?
-מה הוא צריך כדי לחיות?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-האם אוגר הוא חי?
-מה הוא צריך?
-אוגר הוא בעל חיים — הוא גדל, נושם ואוכל.
-כדי לחיות, האוגר צריך:
-- מזון — גרעינים וירקות קטנים לאכול
-- מים — כדי לשתות ולא להתייבש
-- אוויר — כדי לנשום
-אוגר — חי! הוא צריך מזון, מים ואוויר.
+In a garden there is a dog, a tree, and a rock.
+The dog runs, drinks water, and eats — it is alive.
+The tree grows and needs water and light — it is also alive (a plant).
+The rock does not move and does not grow — it is non-living.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים להבדיל חי מדומם במדעים.
-בתרגול חפשו שאלות על צרכים של בעלי חיים.
+Is a rock on the beach a living thing?
+A living thing grows and breathes.
+A rock does not grow and does not breathe.
+No — a rock is non-living.
+
+---
+
+## 5. Try it yourself
+
+Imagine a hamster in a cage in the classroom.
+Is it alive?
+What does it need to stay alive?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Is a hamster alive?
+What does it need?
+A hamster is an animal — it grows, breathes, and eats.
+To stay alive, a hamster needs:
+- Food — seeds and small vegetables to eat
+- Water — to drink and not dry out
+- Air — to breathe
+Hamster — alive! It needs food, water, and air.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to tell living from non-living in science.
+In practice, look for questions about what animals need.

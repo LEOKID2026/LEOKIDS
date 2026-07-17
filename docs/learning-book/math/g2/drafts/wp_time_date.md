@@ -1,4 +1,4 @@
-﻿# שאלות מילוליות — ימי השבוע
+# Word Problems — Days of the Week
 
 ## Metadata
 
@@ -11,84 +11,84 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — ימי השבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Days of the Week |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ימי השבוע בלבד. קפיצות קדימה/אחורה. ללא שעון, חודשים, תאריכים או שנים.
+**Content scope:** Days of the week only. Forward/backward hops. No clock, months, dates, or years.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שאלות מילוליות על ימי השבוע.
-היום, מחר, בעוד כמה ימים — קופצים על שורת ימי השבוע.
-
----
-
-## 2. הסבר
-
-שורת ימי השבוע:
-בעוד יום = קפיצה אחת קדימה.
-בעוד 2 ימים = שתי קפיצות קדימה.
-לפני שעונים:
-1. מה יודעים? — איזה יום היום
-2. מה מבקשים? — איזה יום יהיה (אחרי קפיצות)
-3. מה עושים? — סופרים קפיצות על השורה
-חשוב: רק ימי השבוע — בלי שעון, בלי תאריכים בחודש.
-[ראשון] [שני] [שלישי] [רביעי] [חמישי] [שישי] [שבת]
+Today we're going to learn word problems about days of the week.
+Today, tomorrow, in how many days — hop along the row of days.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-היום יום שני.
-בעוד 3 ימים — איזה יום?
-3 קפיצות → יום חמישי.
-[●שני] → [שלישי] → [רביעי] → [●חמישי]
+Row of days of the week:
+In one day = one hop forward.
+In 2 days = two hops forward.
+Before you answer:
+1. What do we know? — which day is today
+2. What are we asked? — which day it will be (after hops)
+3. What do we do? — count hops on the row
+Important: days of the week only — no clock, no dates in the month.
+[Sunday] [Monday] [Tuesday] [Wednesday] [Thursday] [Friday] [Saturday]
+
+---
+
+## 3. Visual / concrete example
+
+Today is Monday.
+In 3 days — which day?
+3 hops → Thursday.
+[●Monday] → [Tuesday] → [Wednesday] → [●Thursday]
 ① ② ③
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-היום יום שני. בעוד 3 ימים — איזה יום יהיה?
-שלב 1 — מה יודעים?
-היום: יום שני.
-שלב 2 — מה מבקשים?
-איזה יום בעוד 3 ימים.
-שלב 3 — מה עושים?
-שני → (1) שלישי → (2) רביעי → (3) חמישי
-יום חמישי
-
----
-
-## 5. נסו בעצמכם
-
-היום יום רביעי.
-בעוד 2 ימים — איזה יום יהיה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Today is Monday. In 3 days — which day will it be?
+Step 1 — What do we know?
+Today: Monday.
+Step 2 — What are we asked?
+Which day in 3 days.
+Step 3 — What do we do?
+Monday → (1) Tuesday → (2) Wednesday → (3) Thursday
+Thursday
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-היום יום רביעי.
-בעוד 2 ימים — איזה יום יהיה?
-שלב 1 — מה יודעים? היום יום רביעי.
-שלב 2 — מה מבקשים? איזה יום בעוד 2 ימים.
-שלב 3 — ספירת קפיצות: רביעי → (1) חמישי → (2) שישי
-בעוד 2 ימים יהיה יום שישי
+Today is Wednesday.
+In 2 days — which day will it be?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים למצוא יום בעוד כמה ימים על שורת השבוע.
-מה יודעים?
-מה מבקשים?
-ספרו קפיצות!
+Today is Wednesday.
+In 2 days — which day will it be?
+Step 1 — What do we know? Today is Wednesday.
+Step 2 — What are we asked? Which day in 2 days.
+Step 3 — Count hops: Wednesday → (1) Thursday → (2) Friday
+In 2 days it will be Friday
+
+---
+
+## 7. Let's practice!
+
+Now you know how to find a day in so many days on the week row.
+What do we know?
+What are we asked?
+Count the hops!

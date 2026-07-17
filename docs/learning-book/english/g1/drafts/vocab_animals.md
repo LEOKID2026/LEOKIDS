@@ -1,4 +1,4 @@
-# חיות באנגלית
+# Animals in English
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | חיות באנגלית |
+| **title_english** | Animals in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** cat, dog, bird, fish — שמות חיות נפוצות
+**Content scope:** cat, dog, bird, fish — common animal names
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שמות של חיות באנגלית.
-חיות יש בבית, בגינה ובגן חיות.
-
----
-
-## 2. הסבר
-
-מילים נפוצות:
-cat — חתול
-dog — כלב
-bird — ציפור
-fish — דג
+Today we will learn animal names in English.
+There are animals at home, in the garden, and at the zoo.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-חתול רך על הספה.
-באנגלית אומרים:
+Common words:
 cat
-המילה cat פירושה חתול.
+dog
+bird
+fish
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה המילה לכלב באנגלית?
-כלב.
+A soft cat on the couch.
+In English we say:
+cat
+The word cat means cat.
+
+---
+
+## 4. Let's solve together
+
+What is the word for dog in English?
+Dog.
 dog
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יש חיה שיש לה כנפיים ועפה בשמיים.
-מה המילה באנגלית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+There's an animal that has wings and flies in the sky.
+What is the word in English?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-חיה שעפה בשמיים — מה המילה באנגלית?
-חיה עם כנפיים — ציפור.
-ציפור באנגלית:
+An animal that flies in the sky — what is the word in English?
+An animal with wings — a bird.
+Bird in English:
 bird
-bird פירושו: ציפור.
+bird means bird.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים שמות חיות באנגלית.
-בתרגול תמצאו שאלות על cat, dog, bird ו-fish.
+Now you know animal names in English.
+In practice, you'll find questions about cat, dog, bird, and fish.

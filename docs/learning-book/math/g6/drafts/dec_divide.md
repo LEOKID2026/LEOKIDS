@@ -1,4 +1,4 @@
-# חילוק מספרים עשרוניים
+# Dividing Decimal Numbers
 
 ## Metadata
 
@@ -11,39 +11,39 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק מספרים עשרוניים `[DRAFT — not owner-approved]` |
+| **title_english** | Dividing Decimal Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חילוק עשרוניים; הנקודה במנה
+**Content scope:** dividing decimals; decimal point in the quotient
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק עשרוניים.
-4.8 ÷ 1.2 — מעבירים למספרים שלמים.
+Today we will learn to divide decimals.
+4.8 ÷ 1.2 — change to whole numbers.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 4.8 ÷ 1.2:
-מכפילים מחלק ומחולק ב-10:
+Multiply divisor and dividend by 10:
 48 ÷ 12 = 4
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 6.3 ÷ 0.7 = 9 — ×10: 63 ÷ 7 = 9
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 4.8 ÷ 1.2 = ?
 ×10 → 48 ÷ 12
@@ -52,25 +52,25 @@
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 6.3 ÷ 0.9 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 6.3 ÷ 0.9 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 6.3 ÷ 0.9
-מכפילים מחלק ומחולק ב-10: 63 ÷ 9.
+Calculate: 6.3 ÷ 0.9
+Multiply divisor and dividend by 10: 63 ÷ 9.
 63 ÷ 9 = 7
-בדיקה: 7 × 0.9 = 6.3
-התשובה: 7
+Check: 7 × 0.9 = 6.3
+The answer: 7
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-חילוק עשרוניים דומה לשברים.
-בתרגול תמצאו חילוק עשרוניים — הפכו לשלמים קודם!
+Dividing decimals is similar to fractions.
+In practice you will divide decimals — change to whole numbers first!

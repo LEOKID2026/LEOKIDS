@@ -1,4 +1,4 @@
-﻿# זוויות במשולש — כיתה ד׳
+# Angles in a Triangle — Grade 4
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוויות במשולש — כיתה ד׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Angles in a Triangle — Grade 4 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סכום זוויות 180°; מציאת זווית חסרה; 45°, 75°, 60°
+**Content scope:** Sum of angles 180°; finding a missing angle; 45°, 75°, 60°
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה כלל חשוב: סכום זוויות במשולש = 180°.
-אם יודעים שתי זוויות — אפשר למצוא את השלישית, החסרה.
+Today in geometry we will learn an important rule: the sum of angles in a triangle = 180°.
+If you know two angles — you can find the third, missing one.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: angle_basic
 :::
 
-בכל משולש:
-זווית1 + זווית2 + זווית3 = 180°
-שתי זוויות ידועות?
-מחשבים את השלישית:
-זווית חסרה = 180° − (זווית1 + זווית2)
-קודם מחברים את שתי הידועות, ואז מחסירים מ-180°.
+In every triangle:
+angle1 + angle2 + angle3 = 180°
+Two angles known?
+Find the third:
+Missing angle = 180° − (angle1 + angle2)
+First add the two known angles, then subtract from 180°.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משולש עם זוויות 45° ו-75°:
+A triangle with angles 45° and 75°:
 - 45° + 75° = 120°
 - 180° − 120° = 60°
-הזווית השלישית: 60°.
-בדיקה: 45° + 75° + 60° = 180°
+The third angle: 60°.
+Check: 45° + 75° + 60° = 180°
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-במשולש זווית אחת 45° וזווית שנייה 75°. מה הזווית השלישית?
+In a triangle one angle is 45° and another is 75°. What is the third angle?
 45° + 75° = 120°
 180° − 120° = 60°
 60°
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-במשולש: זווית 60° וזווית 80° — מה הזווית השלישית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In a triangle: angle 60° and angle 80° — what is the third angle?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-במשולש: זווית 60° וזווית 80° — מה הזווית השלישית?
-מחברים את שתי הזוויות הידועות:
+In a triangle: angle 60° and angle 80° — what is the third angle?
+Add the two known angles:
 60° + 80° = 140°
-מחסירים מ-180°:
+Subtract from 180°:
 180° − 140° = 40°
-הזווית השלישית = 40°
+The third angle = 40°
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא זווית חסרה במשולש בגאומטריה.
-בתרגול תמצאו שתי זוויות ידועות — חברו אותן וחסרו מ-180°!
+Now you know how to find a missing angle in a triangle in geometry.
+In practice you will find two known angles — add them and subtract from 180°!

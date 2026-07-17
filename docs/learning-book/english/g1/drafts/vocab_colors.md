@@ -1,4 +1,4 @@
-# צבעים באנגלית
+# Colors in English
 
 ## Metadata
 
@@ -11,74 +11,73 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | צבעים באנגלית |
+| **title_english** | Colors in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** red, blue, green, yellow — זיהוי והחלפה עם עברית; ללא איות
+**Content scope:** red, blue, green, yellow — recognition and matching; no spelling
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים באנגלית לצבעים.
-צבעים מסביבנו — בגדים, צעצועים וציורים.
-
----
-
-## 2. הסבר
-
-כל צבע יש לו שם באנגלית.
-כששומעים את השם — מחברים אותו לצבע שאנחנו מכירים בעברית.
-red — אדום
-blue — כחול
-green — ירוק
-yellow — צהוב
+Today we will learn English words for colors.
+Colors are all around us — on clothes, toys, and drawings.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-דמיינו תפוח אדום.
-באנגלית אומרים:
+Every color has a name in English.
 red
-התפוח הוא red.
+blue
+green
+yellow
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה הצבע של שמיים בהירים ביום יפה?
-חושבים על הצבע — כחול.
-בוחרים את המילה באנגלית:
+Imagine a red apple.
+In English we say:
+red
+The apple is red.
+
+---
+
+## 4. Let's solve together
+
+What color is the sky on a bright, sunny day?
+Think about the color — blue.
+Choose the English word:
 blue
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מה צבע הדשא?
-מה המילה לצבע הזה באנגלית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What color is grass?
+What is the English word for this color?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-דשא — איזה צבע?
-מה המילה באנגלית?
-הדשא ירוק.
-ירוק באנגלית:
+Grass — what color is it?
+What is the English word?
+Grass is green.
+Green in English:
 green
-green פירושו: ירוק.
+green means green.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים כמה צבעים באנגלית.
-בתרגול תמצאו שאלות על צבעים — red, blue, green ו-yellow.
+Now you know some colors in English.
+In practice, you'll find questions about colors — red, blue, green, and yellow.

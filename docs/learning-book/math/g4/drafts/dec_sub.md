@@ -1,4 +1,4 @@
-# חיסור עשרוניים — שתי ספרות אחרי הנקודה
+# Subtracting Decimals — Two Digits After the Point
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור עשרוניים — שתי ספרות אחרי הנקודה `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Decimals — Two Digits After the Point |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור עם **שתי ספרות** אחרי הנקודה. יישור נקודות. **הלוואה** מעשיריות למאיות. ללא שלוש ספרות עשרוניות.
+**Content scope:** Subtraction with **two digits** after the decimal point. Line up decimal points. **Borrowing** from tenths to hundredths. No three decimal digits.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר מספרים עשרוניים עם שתי ספרות אחרי הנקודה — למשל 5.80 − 2.35.
-שוב: מיישרים נקודות — ולפעמים צריך הלוואה מעשיריות למאיות.
+Today we'll learn to subtract decimal numbers with two digits after the point — for example 5.80 − 2.35.
+Again: line up the decimal points — and sometimes you need to borrow from tenths to hundredths.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 5.80 − 2.35
 5.80
 − 2.35
 ——
-מאיות: 0 − 5 — לא מספיק! לווים 1 מ-8 → 10 − 5 = 5 (נשאר 7 בעשיריות)
-עשיריות: 7 − 3 = 4
-שלם: 5 − 2 = 3
+Hundredths: 0 − 5 — not enough! Borrow 1 from 8 → 10 − 5 = 5 (7 tenths left)
+Tenths: 7 − 3 = 4
+Whole: 5 − 2 = 3
 5.80 − 2.35 = 3.45
-בדיקה: 3.45 + 2.35 = 5.80
+Check: 3.45 + 2.35 = 5.80
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 7.20 − 3.08
-מאיות: 0 − 8 — לווים → 10 − 8 = 2
-עשיריות: 1 − 0 = 1
-שלם: 7 − 3 = 4
+Hundredths: 0 − 8 — borrow → 10 − 8 = 2
+Tenths: 1 − 0 = 1
+Whole: 7 − 3 = 4
 7.20 − 3.08 = 4.12
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 6.50 − 2.27 = ?
-מאיות: 0 − 7 — לווים → 10 − 7 = 3.
-עשיריות: 4 − 2 = 2
-שלם: 6 − 2 = 4
+Work out: 6.50 − 2.27 = ?
+Hundredths: 0 − 7 — borrow → 10 − 7 = 3.
+Tenths: 4 − 2 = 2
+Whole: 6 − 2 = 4
 6.50 − 2.27 = 4.23
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 8.40 − 3.15 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 8.40 − 3.15 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 8.40 − 3.15 = ?
-מאיות: 0 < 5 — לווים 1 מעשיריות → 10 − 5 = 5 (נשאר 3 בעשיריות).
-עשיריות: 3 − 1 = 2
-שלם: 8 − 3 = 5
+Work out: 8.40 − 3.15 = ?
+Hundredths: 0 < 5 — borrow 1 from tenths → 10 − 5 = 5 (3 tenths left).
+Tenths: 3 − 1 = 2
+Whole: 8 − 3 = 5
 8.40 − 3.15 = 5.25
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר מספרים עשרוניים עם שתי ספרות אחרי הנקודה.
-יישרו נקודות, וזכרו הלוואה כשצריך!
+Now you know how to subtract decimal numbers with two digits after the point.
+Line up the points, and remember to borrow when you need to!

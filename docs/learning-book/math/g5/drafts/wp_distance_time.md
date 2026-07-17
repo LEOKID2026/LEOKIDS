@@ -1,4 +1,4 @@
-# מרחק, זמן ומהירות
+# Distance, Time, and Speed
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מרחק, זמן ומהירות `[DRAFT — not owner-approved]` |
+| **title_english** | Distance, Time, and Speed |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מהירות × זמן = מרחק
+**Content scope:** Speed × time = distance
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד קשר בין מרחק, זמן ומהירות בחשבון.
-מהירות × זמן = מרחק
-
----
-
-## 2. הסבר
-
-לדוגמה: 60 קמ"ש במשך 2 שעות
-60 × 2 = 120 ק"מ
-מהירות 60 קמ״ש, זמן 3 שעות:
-60 × 3 = 180 ק״מ
-מהירות = ק״מ לשעה (קמ״ש)
+Today we'll learn the link between distance, time, and speed in math.
+Speed × time = distance
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-80 קמ״ש × 2 שעות = 160 ק״מ
+For example: 60 km/h for 2 hours
+60 × 2 = 120 km
+Speed 60 km/h, time 3 hours:
+60 × 3 = 180 km
+Speed = kilometers per hour (km/h)
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-רכב נוסע 60 קמ״ש במשך 3 שעות. מה המרחק?
+80 km/h × 2 hours = 160 km
+
+---
+
+## 4. Let's solve together
+
+A car travels 60 km/h for 3 hours. What is the distance?
 60 × 3 = 180
-180 ק״מ
+180 km
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אופניים נוסעים במהירות 15 קמ״ש במשך 4 שעות.
-מה המרחק?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A bike travels at 15 km/h for 4 hours.
+What is the distance?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-אופניים נוסעים 15 קמ״ש במשך 4 שעות.
-מה המרחק?
-מרחק = מהירות × זמן
+A bike travels 15 km/h for 4 hours.
+What is the distance?
+Distance = speed × time
 15 × 4 = 60
-המרחק: 60 ק״מ
+The distance: 60 km
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחשב מרחק ממהירות וזמן.
-בתרגול תמצאו שאלות מרחק זמן.
-כפלו מהירות בזמן!
+Now you know how to find distance from speed and time.
+In practice you'll find distance-time questions.
+Multiply speed by time!

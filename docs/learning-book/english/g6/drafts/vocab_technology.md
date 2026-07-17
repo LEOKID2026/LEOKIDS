@@ -1,4 +1,4 @@
-# טכנולוגיה — if / could
+# Technology — if / could
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | טכנולוגיה — if / could |
+| **title_english** | Technology — if / could |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** If the internet stops… — טכנולוגיה בתנאי
+**Content scope:** If the internet stops… — technology with a conditional
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק טכנולוגיה עם תנאי type 1 ו-could.
-If the internet stops, we could use books instead — אם האינטרנט נפסק, נוכל להשתמש בספרים.
-
----
-
-## 2. הסבר
-
-If + Present, could — אפשרות:
-
+Today we will review technology vocabulary with a Type 1 conditional and could.
 If the internet stops, we could use books instead.
 
-אם האינטרנט נפסק, נוכל להשתמש בספרים במקום.
+---
+
+## 2. Simple explanation
+
+If + Present, could — a possibility:
+
+If the internet stops, we could use books instead.
 
 If the computer breaks, we could write by hand.
 
-אם המחשב נשבר, נוכל לכתוב ביד.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בית ספר בלי Wi‑Fi.
+A school without Wi-Fi.
 
 If the internet stops, we could use books instead.
 
-אם האינטרנט נפסק, נוכל להשתמש בספרים במקום.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אם האינטרנט נפסק, נוכל להשתמש בספרים"?
+Question: How do you say this?
 
 If the internet stops, we could use books instead
 
-תשובה: If the internet stops, we could use books instead
+Answer: If the internet stops, we could use books instead
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשמל כבוי — מה עושים?
+The power goes out — what do we do?
 
 If the electricity goes off, we could use candles.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אם החשמל נכבה, נוכל להשתמש בנרות."
+Exercise: "If the electricity goes off, we could use candles."
 
-If + Present Simple, could + פועל = אפשרות.
+If + Present Simple, could + verb shows a possibility.
 
-goes off = נכבה (Present); could use = נוכל להשתמש.
+"Goes off" is Present tense; "could use" is the possible result.
 
-אם החשמל נכבה, נוכל להשתמש בנרות.
-
- If the electricity goes off, we could use candles.
+So the full sentence is: If the electricity goes off, we could use candles.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מדברים על טכנולוגיה בתנאי.
-בתרגול תמצאו If the internet stops, we could use books instead.
+Now you will talk about technology using a conditional.
+In the practice, you'll find: If the internet stops, we could use books instead.

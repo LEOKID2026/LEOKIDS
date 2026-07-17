@@ -1,4 +1,4 @@
-# חילוק ארוך
+# Long Division
 
 ## Metadata
 
@@ -11,84 +11,84 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק ארוך `[DRAFT — not owner-approved]` |
+| **title_english** | Long Division |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** אלגוריתם חילוק ארוך — מחולק עד 3 ספרות, מחלק חד-ספרתי. בלי שארית בדף זה. מחלק דו-ספרתי → כיתה ה׳.
+**Content scope:** Long division algorithm — dividend up to 3 digits, one-digit divisor. No remainder on this page. Two-digit divisor → Grade 5.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק ארוך — שיטה שלב אחר שלב לחלק מספר גדול במספר קטן.
-כותבים את המחולק, מחלקים קבוצה אחר קבוצה משמאל לימין.
+Today we'll learn long division — a step-by-step way to divide a big number by a smaller one.
+Write the dividend, divide group by group from left to right.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-156 ÷ 6 — שלבים:
-6 נכנס ב-15 (שתי ספרות ראשונות)?
-כן — 6 × 2 = 12.
-כותבים 2 בתוצאה.
-15 − 12 = 3 מורידים את 6 → 36.
-6 נכנס ב-36?
-כן — 6 × 6 = 36.
-כותבים 6 בתוצאה.
-36 − 36 = 0 — אין שארית.
+156 ÷ 6 — steps:
+Does 6 go into 15 (the first two digits)?
+Yes — 6 × 2 = 12.
+Write 2 in the answer.
+15 − 12 = 3, bring down 6 → 36.
+Does 6 go into 36?
+Yes — 6 × 6 = 36.
+Write 6 in the answer.
+36 − 36 = 0 — no remainder.
 156 ÷ 6 = 26
-בדיקה: 6 × 26 = 156
+Check: 6 × 26 = 156
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 248 ÷ 4
-4 נכנס ב-24? כן — 4 × 6 = 24.
-תוצאה: 6
+Does 4 go into 24? Yes — 4 × 6 = 24.
+Answer so far: 6
 24 − 24 = 0
-מורידים 8 → 8
-4 נכנס ב-8? כן — 4 × 2 = 8.
-תוצאה: 62
+Bring down 8 → 8
+Does 4 go into 8? Yes — 4 × 2 = 8.
+Answer: 62
 248 ÷ 4 = 62
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 189 ÷ 3 = ?
-3 נכנס ב-18? כן — 3 × 6 = 18. כותבים 6.
-18 − 18 = 0 מורידים 9 → 9.
-3 נכנס ב-9? כן — 3 × 3 = 9. כותבים 3.
+Work out: 189 ÷ 3 = ?
+Does 3 go into 18? Yes — 3 × 6 = 18. Write 6.
+18 − 18 = 0, bring down 9 → 9.
+Does 3 go into 9? Yes — 3 × 3 = 9. Write 3.
 189 ÷ 3 = 63
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 196 ÷ 7 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 196 ÷ 7 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 196 ÷ 7 = ?
-7 נכנס ב-19 (שתי ספרות ראשונות)? 7 × 2 = 14. כותבים 2 בתוצאה.
-19 − 14 = 5 מורידים את 6 → 56.
-7 נכנס ב-56? 7 × 8 = 56. כותבים 8 בתוצאה.
-56 − 56 = 0, אין שארית.
+Work out: 196 ÷ 7 = ?
+Does 7 go into 19 (the first two digits)? 7 × 2 = 14. Write 2 in the answer.
+19 − 14 = 5, bring down 6 → 56.
+Does 7 go into 56? 7 × 8 = 56. Write 8 in the answer.
+56 − 56 = 0, no remainder.
 196 ÷ 7 = 28
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים חילוק ארוך.
-בתרגול תמצאו חילוק ארוך.
-עבדו שלב אחר שלב!
+Now you know long division.
+In practice you'll find long division.
+Work step by step!

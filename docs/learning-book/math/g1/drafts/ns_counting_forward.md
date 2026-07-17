@@ -1,4 +1,4 @@
-# ספירה קדימה על ציר המספרים
+# Counting Forward on the Number Line
 
 ## Metadata
 
@@ -11,86 +11,86 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ספירה קדימה על ציר המספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Counting Forward on the Number Line |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מספרים 0–20 בלבד. ללא ספירה בקפיצות, ללא מספרים שליליים.
+**Content scope:** Numbers 0–20 only. No skip-counting, no negative numbers.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לספור קדימה על ציר המספרים.
-כשאנחנו סופרים קדימה — אומרים מספר אחרי מספר, וכל פעם המספר גדל ב-1.
-
----
-
-## 2. הסבר פשוט
-
-ספירה קדימה זה כמו ללכת ימינה על ציר המספרים.
-כל צעד ימינה = מספר אחד יותר גדול.
-לדוגמה: 3, 4, 5, 6 — כל מספר הוא אחד יותר מהקודם.
-לא חייבים להתחיל מ 1.
-אפשר להתחיל גם ממספר אחר:
-7, 8, 9, 10 — זה גם ספירה קדימה!
+Today we're going to learn to count forward on the number line.
+When we count forward, we say one number after another, and each time the number gets 1 bigger.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ציר מספרים מ-0 עד 10:
-מה רואים בדוגמה?
-- קו ישר עם נקודות מסומנות
-- חץ ימינה מעל הקו
-- כיתוב: "קדימה = ימינה = מספר גדול יותר"
-דוגמה עם חיפושית:
-חיפושית עומדת על 4.
-היא הולכת צעד צעד ימינה:
+Counting forward is like walking to the right on the number line.
+Each step to the right = one number bigger.
+For example: 3, 4, 5, 6 — each number is one more than the one before it.
+You don't have to start at 1.
+You can start at another number too:
+7, 8, 9, 10 — that's counting forward too!
+
+---
+
+## 3. Visual / concrete example
+
+Number line from 0 to 10:
+What do you see in the example?
+- A straight line with marked dots
+- An arrow pointing right above the line
+- A label: "Forward = right = bigger number"
+Example with a ladybug:
+A ladybug stands on 4.
+She walks step by step to the right:
 4 → 5 → 6 → 7
 0 — 1 — 2 — 3 — 4 — 5 — 6 — 7 — 8 — 9 — 10
-קדימה = ימינה = מספר גדול יותר
+Forward = right = bigger number
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-ספרו קדימה מ-5. מה שלושת המספרים הבאים?
-שימו אצבע על 5 בציר המספרים.
-קפצו צעד אחד ימינה → 6
-עוד צעד ימינה → 7
-עוד צעד ימינה → 8
-שלושת המספרים הבאים הם 6, 7, 8.
-אם כותבים את כל הסדרה מההתחלה: 5, 6, 7, 8.
-
----
-
-## 5. נסו בעצמכם
-
-ספרו קדימה מ 8.
-מה שני המספרים הבאים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Count forward from 5. What are the next three numbers?
+Put your finger on 5 on the number line.
+Hop one step to the right → 6
+Another step to the right → 7
+Another step to the right → 8
+The next three numbers are 6, 7, 8.
+If you write the whole sequence from the start: 5, 6, 7, 8.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-ספרו קדימה מ-8.
-מה שני המספרים הבאים?
-שימו אצבע על 8 בציר המספרים.
-קפצו צעד אחד ימינה → 9.
-עוד צעד ימינה → 10.
-שני המספרים הבאים הם 9, 10.
+Count forward from 8.
+What are the next two numbers?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לספור קדימה על ציר המספרים.
-בתרגול תמצאו שאלות שבהן צריך להמשיך סדרה של מספרים.
-זכרו:
-בכל פעם מתקדמים צעד אחד ימינה.
+Count forward from 8.
+What are the next two numbers?
+Put your finger on 8 on the number line.
+Hop one step to the right → 9.
+Another step to the right → 10.
+The next two numbers are 9, 10.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to count forward on the number line.
+In practice you'll find questions where you need to continue a number sequence.
+Remember:
+Each time you move one step to the right.

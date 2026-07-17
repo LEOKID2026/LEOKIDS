@@ -1,4 +1,4 @@
-# חזרה: אותיות ושמות
+# Review: Letters and Names
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | חזרה: אותיות ושמות |
+| **title_english** | Review: Letters and Names |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** חזרה A–Z גדולות, קטנות ושמות; audio_required: yes
+**Content scope:** Review of A–Z uppercase, lowercase, and names; audio_required: yes
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום חוזרים על אותיות באנגלית — גדולות, קטנות ושמות.
-נמשיך מהיסודות שכבר הכרנו.
-
----
-
-## 2. הסבר
-
-נחזור על זוגות של אות גדולה ואות קטנה.
-A מתאימה ל-a, B מתאימה ל-b, C מתאימה ל-c, וכך ממשיכים עד Z ו-z.
-A היא האות הראשונה.
-Z היא האות האחרונה.
-M גדולה מתאימה ל-m קטנה.
-S גדולה מתאימה ל-s קטנה.
+Today we review letters in English — uppercase, lowercase, and names.
+We'll continue from the basics we already know.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נכיר שתי אותיות: G ו-R.
-G גדולה מתאימה ל-g קטנה.
-R גדולה מתאימה ל-r קטנה.
-נזהה את האות לפי הצורה שלה.
+Let's review pairs of uppercase and lowercase letters.
+A matches a, B matches b, C matches c, and so on all the way to Z and z.
+A is the first letter.
+Z is the last letter.
+Uppercase M matches lowercase m.
+Uppercase S matches lowercase s.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-מה הזוג של N?
-N גדולה.
-n קטנה.
+Let's meet two letters: G and R.
+Uppercase G matches lowercase g.
+Uppercase R matches lowercase r.
+We recognize the letter by its shape.
+
+---
+
+## 4. Let's solve together
+
+What is the pair of N?
+Uppercase N.
+Lowercase n.
 n
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מה הזוג הקטן של Q?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: מה הזוג הקטן של Q?
-לכל אות גדולה יש זוג קטן.
-הזוג הקטן של Q הוא q.
-התשובה היא q.
+What is the lowercase pair of Q?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-חזרתם על אותיות.
-בעמוד הבא — סדר האלף בית.
+The question: what is the lowercase pair of Q?
+Every uppercase letter has a lowercase pair.
+The lowercase pair of Q is q.
+The answer is q.
+
+---
+
+## 7. Let's practice!
+
+You've reviewed letters.
+On the next page — the order of the alphabet.

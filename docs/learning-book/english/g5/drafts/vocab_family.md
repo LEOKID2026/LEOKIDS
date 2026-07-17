@@ -1,4 +1,4 @@
-# משפחה — grandparents
+# Family — grandparents
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | משפחה — grandparents |
+| **title_english** | Family — grandparents |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד משפחה — grandparents ומשפחה רחוקה.
-My grandparents live far away — סבא וסבתא שלי גרים רחוק.
+Today we will learn about family — grandparents and relatives who live far away.
+My grandparents live far away.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-grandparents — סבא וסבתא:
+grandparents — a grandmother and grandfather:
 
 My grandparents live far away.
-
-סבא וסבתא שלי גרים רחוק.
 
 We visited them last summer.
 
-ביקרנו אצלם בקיץ שעבר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משפחה גדולה — סבים רחוקים.
+A big family — grandparents far away.
 
 My grandparents live far away.
 
-סבא וסבתא שלי גרים רחוק.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "סבא וסבתא שלי גרים רחוק"?
+Question: How do you say this?
 
 My grandparents live far away
 
-תשובה: My grandparents live far away
+Answer: My grandparents live far away
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מכתב מגיע מרחוק — מהסבים.
+A letter arrives from far away — from the grandparents.
 
 My grandparents send me letters.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הסבים שלי שולחים לי מכתבים."
+Exercise: "My grandparents send me letters."
 
-grandparents הוא ריבוי — משתמשים ב-send ללא s.
+"Grandparents" is plural — we use send without s.
 
-me = לי; letters = מכתבים.
+"Me" means to me; "letters" is what they send.
 
-הסבים שלי שולחים לי מכתבים.
-
- My grandparents send me letters.
+So the full sentence is: My grandparents send me letters.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים משפחה וקרובים.
-בתרגול תמצאו My grandparents live far away.
+Now you will describe family and relatives.
+In the practice, you'll find: My grandparents live far away.

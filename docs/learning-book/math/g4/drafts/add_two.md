@@ -1,4 +1,4 @@
-# חיבור שני מספרים — עד 10,000
+# Adding Two Numbers — Up to 10,000
 
 ## Metadata
 
@@ -11,87 +11,87 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור שני מספרים — עד 10,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Two Numbers — Up to 10,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור עד 10,000. אלפים, מאות, עשרות, אחדות. נשיאה. ללא חיבור שלושה מספרים (→ `add_three`).
+**Content scope:** Addition up to 10,000. Thousands, hundreds, tens, and ones. Regrouping (carrying). No adding three numbers (→ `add_three`).
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר שני מספרים עד 10,000.
-נפרק לאלפים, מאות, עשרות ואחדות — ונזכור נשיאה כשסכום עובר 10.
+Today we'll learn to add two numbers up to 10,000.
+We'll break them into thousands, hundreds, tens, and ones — and remember to carry when a column goes past 10.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים לחיבור בראש:
-מפרקים כל מספר:
-אלפים + מאות + עשרות + אחדות
-מחברים אחדות — אם יוצא 10 ומעלה, נושאים 1 לעשרות
-מחברים עשרות (כולל נשיאה) — אם יוצא 10 ומעלה, נושאים 1 למאות
-מחברים מאות (כולל נשיאה) — אם יוצא 10 ומעלה, נושאים 1 לאלפים
-מחברים אלפים
+Steps for mental addition:
+Break each number apart:
+thousands + hundreds + tens + ones
+Add ones — if you get 10 or more, carry 1 to the tens
+Add tens (including carry) — if you get 10 or more, carry 1 to the hundreds
+Add hundreds (including carry) — if you get 10 or more, carry 1 to the thousands
+Add thousands
 2,450 + 1,380:
-- אחדות: 0 + 0 = 0
-- עשרות: 5 + 8 = 13 → 3, נשיאה 1
-- מאות: 4 + 3 + 1 = 8
-- אלפים: 2 + 1 = 3
-- תשובה: 3,830
+- ones: 0 + 0 = 0
+- tens: 5 + 8 = 13 → 3, carry 1
+- hundreds: 4 + 3 + 1 = 8
+- thousands: 2 + 1 = 3
+- answer: 3,830
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 3,125 + 2,648:
 3,000 + 100 + 20 + 5 = 3,125
 2,000 + 600 + 40 + 8 = 2,648
-אחדות: 5 + 8 = 13 → 3, נשיאה 1
-עשרות: 2 + 4 + 1 = 7
-מאות: 1 + 6 = 7
-אלפים: 3 + 2 = 5
+Ones: 5 + 8 = 13 → 3, carry 1
+Tens: 2 + 4 + 1 = 7
+Hundreds: 1 + 6 = 7
+Thousands: 3 + 2 = 5
 3,125 + 2,648 = 5,773
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 6,847 + 2,956 = ?
-אחדות: 7 + 6 = 13 → 3, נשיאה 1.
-עשרות: 4 + 5 + 1 = 10 → 0, נשיאה 1.
-מאות: 8 + 9 + 1 = 18 → 8, נשיאה 1.
-אלפים: 6 + 2 + 1 = 9
+Work out: 6,847 + 2,956 = ?
+Ones: 7 + 6 = 13 → 3, carry 1.
+Tens: 4 + 5 + 1 = 10 → 0, carry 1.
+Hundreds: 8 + 9 + 1 = 18 → 8, carry 1.
+Thousands: 6 + 2 + 1 = 9
 6,847 + 2,956 = 9,803
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 1,240 + 375 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 1,240 + 375 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 1,240 + 375 = ?
-אחדות: 0 + 5 = 5
-עשרות: 4 + 7 = 11 → 1, נשיאה 1.
-מאות: 2 + 3 + 1 = 6
-אלפים: 1 + 0 = 1
+Work out: 1,240 + 375 = ?
+Ones: 0 + 5 = 5
+Tens: 4 + 7 = 11 → 1, carry 1.
+Hundreds: 2 + 3 + 1 = 6
+Thousands: 1 + 0 = 1
 1,240 + 375 = 1,615
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר שני מספרים עד 10,000.
-בתרגול תמצאו חיבורים עם נשיאה.
-עבדו לפי שלבים!
+Now you know how to add two numbers up to 10,000.
+In practice you'll find additions with carrying.
+Work step by step!

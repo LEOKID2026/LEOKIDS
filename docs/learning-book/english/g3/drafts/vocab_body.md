@@ -1,4 +1,4 @@
-# גוף האדם באנגלית
+# The Human Body in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | גוף האדם באנגלית |
+| **title_english** | The Human Body in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,74 +21,74 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חלקי גוף באנגלית.
+Today we will learn body parts in English.
 head, hand, leg, eye — My head hurts.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-head — ראש
-hand — יד
-leg — רגל
-eye — עין
-
-My head hurts.
-
-הראש שלי כואב.
-
----
-
-## 3. דוגמה
-
-ילד אוחז בראש.
+head
+hand
+leg
+eye
 
 My head hurts.
 
-הראש שלי כואב.
+My head hurts.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-שאלה: איך אומרים "הראש שלי כואב"?
+A child holding their head.
+
+My head hurts.
+
+My head hurts.
+
+---
+
+## 4. Let's solve together
+
+Question: how do we say "my head hurts"?
 
 My head hurts
 
-תשובה: My head hurts
+Answer: My head hurts
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד נפל ומחזיק את רגלו.
+A child fell and is holding their leg.
 
 My leg hurts.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: ילד נפל ומחזיק את רגלו.
+Exercise: a child fell and is holding their leg.
 
-הפתרון:
+The solution:
 
 My leg hurts.
 
-הרגל שלי כואבת.
+My leg hurts.
 
-כל הכבוד! My + חלק גוף + hurts — hurts עם s כי leg הוא he/she/it.
+Well done! My + body part + hurts — hurts with s because leg is he/she/it.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים חלקי גוף במשפט.
-בתרגול תמצאו My head hurts ו-hand, leg.
+Now you know body parts in a sentence.
+In practice, you'll find My head hurts and hand, leg.

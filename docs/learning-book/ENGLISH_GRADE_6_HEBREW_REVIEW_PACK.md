@@ -42,7 +42,6 @@
 | **File** | `vocab_animals.md` |
 | **learning_page_id** | `english:g6:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
-| **title_hebrew** | חיות — Past Continuous `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -146,7 +145,6 @@ were swimming = שחו (באמצע), saw = ראינו (באותו רגע).
 | **File** | `vocab_community.md` |
 | **learning_page_id** | `english:g6:vocab_community` |
 | **skill_id** | `english:vocabulary:wordlist:community` |
-| **title_hebrew** | קהילה — festival, celebrate `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -250,7 +248,6 @@ celebrated = חגגה (Past Simple).
 | **File** | `vocab_emotions.md` |
 | **learning_page_id** | `english:g6:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
-| **title_hebrew** | רגשות — might feel `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -354,7 +351,6 @@ might = אולי, לא בטוח.
 | **File** | `vocab_environment.md` |
 | **learning_page_id** | `english:g6:vocab_environment` |
 | **skill_id** | `english:vocabulary:wordlist:environment` |
-| **title_hebrew** | סביבה — climate, protect `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -458,7 +454,6 @@ change → affects.
 | **File** | `vocab_health.md` |
 | **learning_page_id** | `english:g6:vocab_health` |
 | **skill_id** | `english:vocabulary:wordlist:health` |
-| **title_hebrew** | בריאות — should rest `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -562,7 +557,6 @@ should + פועל (בלי to).
 | **File** | `vocab_technology.md` |
 | **learning_page_id** | `english:g6:vocab_technology` |
 | **skill_id** | `english:vocabulary:wordlist:technology` |
-| **title_hebrew** | טכנולוגיה — if / could `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -666,7 +660,6 @@ If + Present, could + פועל.
 | **File** | `vocab_travel.md` |
 | **learning_page_id** | `english:g6:vocab_travel` |
 | **skill_id** | `english:vocabulary:wordlist:travel` |
-| **title_hebrew** | נסיעות — Present Perfect intro `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -770,7 +763,6 @@ have visited = עד כה, so far.
 | **File** | `vocab_culture.md` |
 | **learning_page_id** | `english:g6:vocab_culture` |
 | **skill_id** | `english:vocabulary:wordlist:culture` |
-| **title_hebrew** | תרבות באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -874,7 +866,6 @@ our culture = התרבות שלנו.
 | **File** | `vocab_global_issues.md` |
 | **learning_page_id** | `english:g6:vocab_global_issues` |
 | **skill_id** | `english:vocabulary:wordlist:global_issues` |
-| **title_hebrew** | סוגיות גלובליות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -978,7 +969,6 @@ countries → work.
 | **File** | `vocab_history.md` |
 | **learning_page_id** | `english:g6:vocab_history` |
 | **skill_id** | `english:vocabulary:wordlist:history` |
-| **title_hebrew** | היסטוריה באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1082,7 +1072,6 @@ learned = למדנו.
 | **File** | `grammar_complex_tenses.md` |
 | **learning_page_id** | `english:g6:grammar_complex_tenses` |
 | **skill_id** | `english:pool:grammar:complex_tenses` |
-| **title_hebrew** | Past Continuous + Past Simple + היכרות Present Perfect `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1188,7 +1177,6 @@ was reading = באמצע, called = באותו רגע.
 | **File** | `grammar_conditionals.md` |
 | **learning_page_id** | `english:g6:grammar_conditionals` |
 | **skill_id** | `english:pool:grammar:conditionals` |
-| **title_hebrew** | Conditionals — type 0 ו-1 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1290,7 +1278,6 @@ If + Present, will + פועל.
 | **File** | `grammar_modals.md` |
 | **learning_page_id** | `english:g6:grammar_modals` |
 | **skill_id** | `english:pool:grammar:modals` |
-| **title_hebrew** | should / might / could `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1398,7 +1385,6 @@ should + פועל (בלי to).
 | **File** | `grammar_comparatives.md` |
 | **learning_page_id** | `english:g6:grammar_comparatives` |
 | **skill_id** | `english:pool:grammar:comparatives` |
-| **title_hebrew** | Superlatives — the most interesting `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1502,7 +1488,6 @@ the most + שם תואר ארוך.
 | **File** | `sentence_advanced.md` |
 | **learning_page_id** | `english:g6:sentence_advanced` |
 | **skill_id** | `english:pool:sentence:advanced` |
-| **title_hebrew** | משפטים מורכבים — While… was… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1606,7 +1591,6 @@ While + was…ing, was…ing.
 | **File** | `translation_technology.md` |
 | **learning_page_id** | `english:g6:translation_technology` |
 | **skill_id** | `english:pool:translation:technology` |
-| **title_hebrew** | טכנולוגיה — תרגום מתקדם `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1710,7 +1694,6 @@ might = אולי.
 | **File** | `translation_global.md` |
 | **learning_page_id** | `english:g6:translation_global` |
 | **skill_id** | `english:pool:translation:global` |
-| **title_hebrew** | עולם — תרגום עם תנאי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

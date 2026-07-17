@@ -1,4 +1,4 @@
-﻿# אלכסון במקבילית
+# Diagonal of a Parallelogram
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | אלכסון במקבילית `[DRAFT — not owner-approved]` |
+| **title_english** | Diagonal of a Parallelogram |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** אלכסון במקבילית — רעיונות; לא נוסחת √(a²+b²) לכל מקבילית
+**Content scope:** diagonal in a parallelogram — concepts; not the √(a²+b²) formula for every parallelogram
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד אלכסון במקבילית בגאומטריה — רעיונות, לא נוסחת אחת לכל מקרה.
-אלכסון — קטע שמחבר שתי קדקודים מנוגדים.
+Today we'll learn about the diagonal of a parallelogram in geometry — ideas, not one formula for every case.
+A diagonal — a segment that connects two opposite vertices.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: parallelogram_diagonal
 :::
 
-האלכסון מחלק את המקבילית לשני משולשים שווים (קונגרואנטיים).
-לא ניתן למצוא אורך אלכסון רק משתי צלעות סמוכות — צריך עוד מידע:
-זווית, גובה, זווית ישרה (כמו במלבן), או נתון נוסף.
-במלבן — יש זוויות ישרות; שם נלמד אלכסון בנפרד.
+The diagonal divides the parallelogram into two equal (congruent) triangles.
+You can't find the diagonal length from just two adjacent sides — you need more information:
+an angle, a height, a right angle (like in a rectangle), or another given value.
+In a rectangle — there are right angles; we learn the diagonal separately there.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-במקבילית, אלכסון אחד יוצר שני משולשים — אותו שטח בכל אחד (חצי מהמרובע).
-אם יודעים רק 5 ס״מ ו-12 ס״מ כצלעות סמוכות — אין מספיק כדי לחשב את האלכסון.
-
----
-
-## 4. בואו נפתור
-
-במקבילית, מה עושה האלכסון?
-מחבר קדקודים מנוגדים.
-מחלק לשני משולשים שווים.
-האלכסון מחלק את המקבילית לשני חלקים שווים.
+In a parallelogram, one diagonal creates two triangles — the same area in each (half of the quadrilateral).
+If you only know 5 cm and 12 cm as adjacent sides — that's not enough to calculate the diagonal.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-במקבילית — האם תמיד אפשר לחשב אלכסון כמו במלבן, רק משתי צלעות סמוכות?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-במקבילית — האם תמיד אפשר לחשב אלכסון כמו במלבן, רק משתי צלעות סמוכות?
-במלבן יש זוויות ישרות — לכן √(a²+b²) עובד.
-במקבילית כללית — הזווית בין הצלעות אינה בהכרח 90°.
-ללא זווית ישרה — לא ניתן להשתמש בנוסחת מלבן.
-לא — במקבילית כללית צריך נתון נוסף (זווית או גובה).
+In a parallelogram, what does the diagonal do?
+Connects opposite vertices.
+Divides into two equal triangles.
+The diagonal splits the parallelogram into two equal parts.
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-אלכסון במקבילית — קודם מבינים מה הוא עושה.
-בתרגול תזהו מתי יש מספיק נתונים — ומתי לא להשתמש בנוסחת מלבן!
+In a parallelogram — can you always calculate the diagonal like in a rectangle, using only two adjacent sides?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+In a parallelogram — can you always calculate the diagonal like in a rectangle, using only two adjacent sides?
+In a rectangle there are right angles — so √(a²+b²) works.
+In a general parallelogram — the angle between the sides is not necessarily 90°.
+Without a right angle — you can't use the rectangle formula.
+No — in a general parallelogram you need extra information (an angle or a height).
+
+---
+
+## 7. Let's practice!
+
+Diagonal of a parallelogram — first understand what it does.
+In practice you'll recognize when there's enough information — and when not to use the rectangle formula!

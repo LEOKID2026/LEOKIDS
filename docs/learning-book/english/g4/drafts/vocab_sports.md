@@ -1,4 +1,4 @@
-# ספורט — עכשיו במגרש
+# Sports — happening now on the field
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | ספורט — עכשיו במגרש |
+| **title_english** | Sports — happening now on the field |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד ספורט בפעולה עכשיו.
-She is swimming now — היא שוחה עכשיו.
+Today we will learn about sports actions happening right now.
+She is swimming now.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 Present Continuous:
 
 She is swimming now.
 
-היא שוחה עכשיו.
-
 He is running now.
-
-הוא רץ עכשיו.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה בבריכה.
+A girl in the pool.
 
 She is swimming now.
 
-היא שוחה עכשיו.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היא שוחה עכשיו"?
+Question: How do you say this?
 
 She is swimming now
 
-תשובה: She is swimming now
+Answer: She is swimming now
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדים במגרש כדורסל עכשיו.
+Children on the basketball court right now.
 
 They are playing basketball now.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם משחקים כדורסל עכשיו."
+Exercise: "They are playing basketball now."
 
-now פירושו עכשיו — פעולה מתמשכת בזמן הווה — Present Continuous.
+The word "now" shows an action happening right now — Present Continuous.
 
-they הוא ריבוי — משתמשים ב-are + playing.
+"They" is plural — we use are + playing.
 
-הם משחקים כדורסל עכשיו.
-
- They are playing basketball now.
+So the full sentence is: They are playing basketball now.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים ספורט בפעולה עכשיו.
-בתרגול תמצאו She is swimming now.
+Now you will describe sports actions happening right now.
+In the practice, you'll find: She is swimming now.

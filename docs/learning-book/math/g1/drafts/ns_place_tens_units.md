@@ -1,4 +1,4 @@
-# עשרות ואחדות
+# Tens and Ones
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | עשרות ואחדות `[DRAFT — not owner-approved]` |
+| **title_english** | Tens and Ones |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מספרים דו-ספרתיים עד 30. עשרות ואחדות בלבד — ללא מאות.
+**Content scope:** Two-digit numbers up to 30. Tens and ones only — no hundreds.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד שכל מספר דו ספרתי בנוי מעשרות ואחדות.
-אפשר לחשוב על זה כמו חבילות של 10 וקוביות בודדות.
-
----
-
-## 2. הסבר פשוט
-
-מקל עשרת = קבוצה אחת של 10.
-קוביות בודדות = קוביות שלא הצטרפו לקבוצה של 10.
-לדוגמה:
-- ב-15 יש 1 מקל עשרת ו-5 קוביות בודדות
-- ב-20 יש 2 מקלי עשרת ו-0 קוביות בודדות
+Today we're going to learn that every two-digit number is made of tens and ones.
+You can think of it like bundles of 10 and single cubes.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-תרשים ערך מקום — המספר 14:
-מה רואים בדוגמה?
-- 1 מקל עשרת + 4 קוביות בודדות = 14
-- טבלה עם שתי עמודות:
-עשרות | אחדות
-דוגמה עם עפרונות:
-2 חבילות של 10 עפרונות + 3 עפרונות בודדים = 23 עפרונות.
-ב-23 יש 2 מקלי עשרת ו-3 קוביות בודדות.
+A ten-stick = one group of 10.
+Single cubes = cubes that didn't join a group of 10.
+For example:
+- In 15 there is 1 ten-stick and 5 single cubes
+- In 20 there are 2 ten-sticks and 0 single cubes
+
+---
+
+## 3. Visual / concrete example
+
+Place value chart — the number 14:
+What do you see in the example?
+- 1 ten-stick + 4 single cubes = 14
+- A table with two columns:
+tens | ones
+Example with pencils:
+2 bundles of 10 pencils + 3 single pencils = 23 pencils.
+In 23 there are 2 ten-sticks and 3 single cubes.
 ┌─────────┬─────────┐
-│ עשרות │ אחדות │
+│ tens │ ones │
 │ 1 │ 4 │
 └─────────┴─────────┘
 = 14
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-כמה עשרות וכמה אחדות יש במספר 17?
-ב-17 יש מקל עשרת אחד ו-7 קוביות בודדות.
-ב 17 יש עשרת אחת ו 7 אחדות.
-17 = 1 עשרה ו-7 אחדות.
-
----
-
-## 5. נסו בעצמכם
-
-כמה עשרות וכמה אחדות יש במספר 29?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+How many tens and how many ones are in 17?
+In 17 there is one ten-stick and 7 single cubes.
+In 17 there is 1 ten and 7 ones.
+17 = 1 ten and 7 ones.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-כמה עשרות וכמה אחדות יש במספר 29?
-ב-29 יש 2 מקלי עשרת (20) ו-9 קוביות בודדות.
-הספרה השמאלית (2) מספרת עשרות, הספרה הימנית (9) מספרת אחדות.
-ב-29 יש 2 עשרות ו-9 אחדות.
+How many tens and how many ones are in 29?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לפרק מספר לעשרות ואחדות.
-בתרגול תמצאו שאלות כמה עשרות?
-כמה אחדות?
-חפשו מקלי עשרת וקוביות בודדות!
+How many tens and how many ones are in 29?
+In 29 there are 2 ten-sticks (20) and 9 single cubes.
+The left digit (2) counts tens, the right digit (9) counts ones.
+In 29 there are 2 tens and 9 ones.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to break a number into tens and ones.
+In practice you'll find questions: how many tens?
+How many ones?
+Look for ten-sticks and single cubes!

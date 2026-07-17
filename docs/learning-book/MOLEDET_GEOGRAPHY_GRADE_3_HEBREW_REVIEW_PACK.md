@@ -35,8 +35,7 @@
 |-------|-------|
 | **File** | `mg_g3_israel_map.md` |
 | **learning_page_id** | `geography:g3:mg_g3_israel_map` |
-| **skill_id** | `geography:g3:geography:geography_0_מפת_ישראל` |
-| **title_hebrew** | מפת ישראל `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -138,8 +137,7 @@
 |-------|-------|
 | **File** | `mg_g3_regions_cities.md` |
 | **learning_page_id** | `geography:g3:mg_g3_regions_cities` |
-| **skill_id** | `geography:g3:geography:geography_1_אזורים_וערים` |
-| **title_hebrew** | אזורים וערים גדולות `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -242,8 +240,7 @@
 |-------|-------|
 | **File** | `mg_g3_landscapes.md` |
 | **learning_page_id** | `geography:g3:mg_g3_landscapes` |
-| **skill_id** | `geography:g3:geography:geography_2_סוגי_נופים` |
-| **title_hebrew** | סוגי נופים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -345,8 +342,7 @@
 |-------|-------|
 | **File** | `mg_g3_water_sources.md` |
 | **learning_page_id** | `geography:g3:mg_g3_water_sources` |
-| **skill_id** | `geography:g3:geography:geography_3_מקורות_מים` |
-| **title_hebrew** | מקורות מים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -450,8 +446,7 @@
 |-------|-------|
 | **File** | `mg_g3_districts_borders.md` |
 | **learning_page_id** | `geography:g3:mg_g3_districts_borders` |
-| **skill_id** | `geography:g3:skills:skills_3_הבנת_מחוזות_וגבולות` |
-| **title_hebrew** | מחוזות וגבולות `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -552,8 +547,7 @@
 |-------|-------|
 | **File** | `mg_g3_citizenship_basics.md` |
 | **learning_page_id** | `geography:g3:mg_g3_citizenship_basics` |
-| **skill_id** | `geography:g3:citizenship:citizenship_0_כללי_אזרחות_בסיסיים` |
-| **title_hebrew** | כללי אזרחות בסיסיים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -657,8 +651,7 @@
 |-------|-------|
 | **File** | `mg_g3_rights_duties.md` |
 | **learning_page_id** | `geography:g3:mg_g3_rights_duties` |
-| **skill_id** | `geography:g3:citizenship:citizenship_2_זכויות_וחובות` |
-| **title_hebrew** | זכויות וחובות `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -759,8 +752,7 @@
 |-------|-------|
 | **File** | `mg_g3_social_participation.md` |
 | **learning_page_id** | `geography:g3:mg_g3_social_participation` |
-| **skill_id** | `geography:g3:citizenship:citizenship_1_השתתפות_חברתית` |
-| **title_hebrew** | השתתפות חברתית `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g3:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

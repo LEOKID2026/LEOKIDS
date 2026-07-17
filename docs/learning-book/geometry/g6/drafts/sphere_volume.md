@@ -1,4 +1,4 @@
-﻿# נפח כדור
+# Volume of a Sphere
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח כדור `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Sphere `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,59 +22,59 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח כדור בגאומטריה.
-נפח = (4/3) × π ×r³.
-r³ = רדיוס × רדיוס × רדיוס.
+Today we will learn volume of a sphere in geometry.
+Volume = (4/3) × π × r³.
+r³ = radius × radius × radius.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים:
+Steps:
 1. r³ = r × r × r
 2.
 (4/3) × 3.14 × r³
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-רדיוס 3 ס״מ:
+Radius 3 cm:
 3 × 3 × 3 = 27
-(4/3) × 3.14 × 27 = 113.04 (ס״מ³)
+(4/3) × 3.14 × 27 = 113.04 (cm³)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-כדור רדיוס 3 ס״מ (π = 3.14) מה הנפח?
+Sphere radius 3 cm (π = 3.14) — what is the volume?
 3³ = 27
 3.14 × 27 = 84.78; (4/3) × 84.78 = 113.04
-113.04 ס״מ³.
+113.04 cm³.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-כדור רדיוס 6 ס״מ (π = 3.14)— מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Sphere radius 6 cm (π = 3.14) — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-כדור רדיוס 6 ס״מ (π = 3.14) — מה הנפח?
+Sphere radius 6 cm (π = 3.14) — what is the volume?
 r³ = 6 × 6 × 6 = 216
 3.14 × 216 = 678.24
 (4/3) × 678.24 = 904.32
-904.32 ס״מ³
+904.32 cm³
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נפח כדור = (4/3) × π ×r³.
-בתרגול תמצאו כדורים — חשבו r³ קודם!
+Volume of a sphere = (4/3) × π × r³.
+In practice you'll find spheres — calculate r³ first!

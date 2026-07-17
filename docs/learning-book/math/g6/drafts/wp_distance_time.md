@@ -1,4 +1,4 @@
-# מרחק, זמן ומהירות
+# Distance, Time, and Speed
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מרחק, זמן ומהירות `[DRAFT — not owner-approved]` |
+| **title_english** | Distance, Time, and Speed |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מרחק = מהירות × זמן
+**Content scope:** distance = speed × time
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור: מרחק, זמן, מהירות.
-מרחק = מהירות × זמן
-
----
-
-## 2. הסבר
-
-רץ 60 קמ״ש למשך 2 שעות.
-מרחק = 60 × 2 = 120 ק״מ
+Today we will solve problems about distance, time, and speed.
+Distance = speed × time
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מהירות = מרחק ÷ זמן.
-זמן = מרחק ÷ מהירות.
+A runner goes 60 km/h for 2 hours.
+Distance = 60 × 2 = 120 km
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-60 קמ״ש, 2 שעות. מרחק?
+Speed = distance ÷ time.
+Time = distance ÷ speed.
+
+---
+
+## 4. Let's solve together
+
+60 km/h, 2 hours. Distance?
 60 × 2 = 120
-120 ק״מ.
+120 km.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-80 קמ״ש, 3 שעות — מה המרחק?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+80 km/h, 3 hours — what is the distance?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-80 קמ״ש, 3 שעות — מה המרחק?
-נוסחה: מרחק = מהירות × זמן.
+80 km/h, 3 hours — what is the distance?
+Formula: distance = speed × time.
 80 × 3 = 240
-התשובה: 240 ק״מ
+The answer: 240 km
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נוסחת מרחק זמן חשובה.
-בתרגול תמצאו מרחק/מהירות/זמן — זהו מה מחפשים!
+The distance-time formula is important.
+In practice you will find distance/speed/time — figure out what you are looking for!

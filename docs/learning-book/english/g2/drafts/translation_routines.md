@@ -1,4 +1,4 @@
-# שגרת יום — תרגום
+# Daily Routine — Translation
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_1_2 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | שגרת יום — תרגום |
+| **title_english** | Daily Routine — Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** תרגום משפטי שגרה 3–4 מילים
+**Content scope:** Translating routine sentences of 3–4 words
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום משפטי שגרה.
-3–4 מילים — בוקר עד בית ספר.
+Today we practice translating routine sentences.
+3–4 words — from morning to school.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דוגמה:
+Example:
 I eat breakfast.
-אני אוכל ארוחת בוקר.
-מעברית לאנגלית, וגם מאנגלית לעברית.
-
----
-
-## 3. דוגמה
-
-יושבים לשולחן בבוקר.
 I eat breakfast.
-אני אוכל ארוחת בוקר.
+From Hebrew to English, and also from English to Hebrew.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איך אומרים "אני אוכל ארוחת בוקר"?
+Sitting at the table in the morning.
+I eat breakfast.
+I eat breakfast.
+
+---
+
+## 4. Let's solve together
+
+How do we say "I eat breakfast"?
 I eat breakfast
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אני הולך לבית ספר.
+I go to school.
 I go to school
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: איך אומרים "אני הולך לבית ספר" באנגלית?
-go to school פירושו ללכת לבית ספר.
-אומרים: I go to school.
-התשובה היא: I go to school.
+The question: how do we say "I go to school" in English?
+Go to school means to go to school.
+We say: I go to school.
+The answer is: I go to school.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום שגרה.
-בתרגול תמצאו I eat breakfast ו-I go to school.
+Now you're practicing translating routine sentences.
+In practice, you'll find I eat breakfast and I go to school.

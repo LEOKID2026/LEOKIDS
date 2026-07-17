@@ -550,7 +550,7 @@ export default function ParentReportDetailedPage() {
             border-radius: 0.35rem;
             white-space: normal;
             max-width: 11rem;
-            text-align: right;
+            text-align: left;
           }
           .pr-detailed-topic-badge--advance {
             border: 1px solid rgba(74, 222, 128, 0.5);
@@ -972,7 +972,7 @@ export default function ParentReportDetailedPage() {
               opacity: 1 !important;
               font-weight: 800 !important;
               max-width: 11rem !important;
-              text-align: right !important;
+              text-align: left !important;
             }
             #parent-report-detailed-print .pr-detailed-topic-badge--advance {
               background: #d1fae5 !important;
@@ -1413,7 +1413,7 @@ export default function ParentReportDetailedPage() {
                 <SectionCard title="What repeats across several subjects" compact={displayMode === "summary"}>
                 <Bullets
                   items={(payload.crossSubjectInsights.bulletsHe || []).filter(
-                    (line) => !/^(Subjects not practiced|מקצועות שלא תורגלו)/u.test(String(line || "")),
+                    (line) => !/^Subjects not practiced/u.test(String(line || "")),
                   )}
                   volumeQuestionsTotal={Number(payload.overallSnapshot?.totalQuestions) || 0}
                 />

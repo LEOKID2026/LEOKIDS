@@ -1,4 +1,4 @@
-# משוואת כפל
+# Multiplication Equations
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת כפל `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplication Equations |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקום ריק __; גורם חסר
+**Content scope:** Blank __; missing factor
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לפתור משוואת כפל — למצוא גורם חסר.
+Today we'll learn to solve a multiplication equation — find the missing factor.
 __ × 12 = 480
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 __ × 12 = 480
 __ = 480 ÷ 12 = 40
-בדיקה: 40 × 12 = 480
-כלל:
-גורם חסר = תוצאה ÷ גורם ידוע
+Check: 40 × 12 = 480
+Rule:
+Missing factor = product ÷ known factor
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 7 × __ = 350
 __ = 350 ÷ 7 = 50
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-__ × 12 = 480 — מה החסר?
+__ × 12 = 480 — what is missing?
 __ = 480 ÷ 12
 __ = 40
 40
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-__ × 15 = 600 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+__ × 15 = 600 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-__ × 15 = 600 — מה המספר החסר?
-גורם חסר = תוצאה ÷ גורם ידוע
+__ × 15 = 600 — what is the missing number?
+Missing factor = product ÷ known factor
 __ = 600 ÷ 15 = 40
-בדיקה: 40 × 15 = 600
+Check: 40 × 15 = 600
 __ = 40
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור משוואות כפל.
-בתרגול תמצאו משוואות עם גורם חסר.
-חלקו!
+Now you know how to solve multiplication equations.
+In practice you'll find equations with a missing factor.
+Divide!

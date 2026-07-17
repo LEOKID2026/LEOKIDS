@@ -1,4 +1,4 @@
-# כפל ב-0
+# Multiplying by 0
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל ב-0 `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplying by 0 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל מספר ב-0. תכונת האפס בכפל. ללא שליליים.
+**Content scope:** Multiplying a number by 0. The zero property of multiplication. No negatives.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מה קורה כשכופלים מספר ב-0.
-0 בכפל הוא מיוחד — התוצאה תמיד 0.
+Today we'll learn what happens when you multiply a number by 0.
+0 in multiplication is special — the answer is always 0.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כלל:
-כל מספר × 0 = 0.
+Rule:
+Any number × 0 = 0.
 52 × 0 = 0
 0 × 347 = 0
-למה?
-כפל ב-0 אומר "אפס קבוצות" או "אפס פעמים".
-אין כלום — התוצאה 0.
-גם מספר גדול × 0 = 0:
+Why?
+Multiplying by 0 means "zero groups" or "zero times."
+There's nothing — the answer is 0.
+Even a big number × 0 = 0:
 9,999 × 0 = 0
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 125 × 0 = ?
 125 × 0 = 0
-0 קבוצות של 125 = אין כלום = 0.
-0 × 125 = 0 — גם כש-0 הוא הראשון, התוצאה 0.
+0 groups of 125 = nothing = 0.
+0 × 125 = 0 — even when 0 comes first, the answer is 0.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 840 × 0 = ?
-כופלים ב-0 — התוצאה תמיד 0.
+Work out: 840 × 0 = ?
+Multiplying by 0 — the answer is always 0.
 840 × 0 = 0
 0
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 375 × 0 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 375 × 0 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 375 × 0 = ?
-כופלים ב-0 — התוצאה תמיד 0, לא משנה כמה גדול המספר.
+Work out: 375 × 0 = ?
+Multiplying by 0 — the answer is always 0, no matter how big the number is.
 375 × 0 = 0
 0
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שכפל ב-0 תמיד נותן 0.
-בתרגול תמצאו כפל ב-0.
-התשובה תמיד 0!
+Now you know that multiplying by 0 always gives 0.
+In practice you'll find multiplication by 0.
+The answer is always 0!

@@ -1,4 +1,4 @@
-# חיבור שלושה מספרים
+# Adding Three Numbers
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Three Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור שלושה מספרים ברצף. סכום עד ~1,000. ללא ארבעה מספרים.
+**Content scope:** Adding three numbers in a row. Total up to ~1,000. No four numbers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-בפרק הזה נלמד לחבר שלושה מספרים — בזה אחר זה או בקבוצות נוחות.
-למשל: 125 + 40 + 35.
+In this chapter we will learn to add three numbers — one after another or in friendly groups.
+For example: 125 + 40 + 35.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דרכים לחבר שלושה מספרים:
-בזה אחר זה: (125 + 40) + 35
-זוג נוח קודם: 125 + (40 + 35) — כש-40 + 35 = 75
-חשוב: לחבר את כל שלושת המספרים — לא לעצור אחרי שניים!
+Ways to add three numbers:
+One after another: (125 + 40) + 35
+A friendly pair first: 125 + (40 + 35) — when 40 + 35 = 75
+Important: add all three numbers — don't stop after two!
 125 + 40 + 35:
 125 + 40 = 165
 165 + 35 = 200
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 185 + 55 + 160
-185 + 160 = 345 (שני המספרים הגדולים קודם)
+185 + 160 = 345 (the two bigger numbers first)
 345 + 55 = 400
 185 + 55 + 160 = 400
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 210 + 35 + 55 = ?
-35 + 55 = 90 (זוג נוח — מסתיים ב-0).
+Calculate: 210 + 35 + 55 = ?
+35 + 55 = 90 (a friendly pair — ends in 0).
 210 + 90 = 300
 210 + 35 + 55 = 300
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 230 + 45 + 55 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 230 + 45 + 55 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 230 + 45 + 55
-זוג נוח קודם: 45 + 55 = 100 (מסתיים ב-0)
-אחר כך: 230 + 100 = 330
+Calculate: 230 + 45 + 55
+Friendly pair first: 45 + 55 = 100 (ends in 0)
+Then: 230 + 100 = 330
 230 + 45 + 55 = 330
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר שלושה מספרים.
-בתרגול תמצאו חיבור של שלושה מספרים.
-אל תשכחו את השלישי!
+Now you know how to add three numbers.
+In practice you'll find adding three numbers.
+Don't forget the third one!

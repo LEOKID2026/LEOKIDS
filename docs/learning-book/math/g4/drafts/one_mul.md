@@ -1,4 +1,4 @@
-# כפל ב-1
+# Multiplying by 1
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל ב-1 `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplying by 1 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל מספר ב-1. תכונת הזהות בכפל. ללא שליליים.
+**Content scope:** Multiplying a number by 1. The identity property of multiplication. No negatives.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מה קורה כשכופלים מספר ב-1.
-1 הוא מספר מיוחד בכפל — הוא לא משנה את התוצאה.
+Today we'll learn what happens when you multiply a number by 1.
+1 is a special number in multiplication — it doesn't change the answer.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כלל:
-כל מספר × 1 = אותו מספר.
+Rule:
+Any number × 1 = the same number.
 347 × 1 = 347
 1 × 892 = 892
-למה?
-כפל ב-1 אומר "קבוצה אחת" או "פעם אחת".
-יש לכם את המספר פעם אחת — הוא נשאר כמו שהוא.
-גם עם מספרים גדולים — הכלל זהה.
+Why?
+Multiplying by 1 means "one group" or "one time."
+You have the number once — it stays the same.
+Even with big numbers — the rule is the same.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 2,150 × 1 = ?
 2,150 × 1 = 2,150
 1 × 2,150 = 2,150
-בשני המקרים התשובה זהה — 2,150.
+In both cases the answer is the same — 2,150.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 6,003 × 1 = ?
-כופלים ב-1 — לא משנה כלום.
+Work out: 6,003 × 1 = ?
+Multiplying by 1 — nothing changes.
 6,003 × 1 = 6,003
 6,003
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 5,280 × 1 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 5,280 × 1 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 5,280 × 1 = ?
-כופלים ב-1 — קבוצה אחת של המספר, לא משנה כלום.
+Work out: 5,280 × 1 = ?
+Multiplying by 1 — one group of the number, nothing changes.
 5,280 × 1 = 5,280
 5,280
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שכפל ב-1 לא משנה את התוצאה.
-בתרגול תמצאו כפל ב-1.
-המספר נשאר כמו שהוא!
+Now you know that multiplying by 1 doesn't change the answer.
+In practice you'll find multiplication by 1.
+The number stays the same!

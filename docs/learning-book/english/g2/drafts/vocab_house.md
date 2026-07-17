@@ -1,4 +1,4 @@
-# בית — חדרים וחפצים
+# House — Rooms and Objects
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בית — חדרים וחפצים |
+| **title_english** | House — Rooms and Objects |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** bed, room, door, table — מילים בבית
+**Content scope:** bed, room, door, table — words for the home
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים לדברים בבית.
-בכל בית יש חדרים וחפצים.
-
----
-
-## 2. הסבר
-
-מילים בבית:
-bed — מיטה
-room — חדר
-door — דלת
-table — שולחן
+Today we will learn words for things at home.
+Every house has rooms and objects.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מיטה בחדר.
+Words for the home:
 bed
-המילה bed פירושה מיטה.
-
----
-
-## 4. בואו נפתור
-
-מה המילה למיטה?
-bed
-
----
-
-## 5. נסו בעצמכם
-
-שולחן בחדר.
+room
+door
 table
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-השאלה: שולחן בחדר — באנגלית?
-המילה table פירושה שולחן.
-התשובה היא table.
+A bed in a room.
+bed
+The word bed means a bed.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים מילים מהבית.
-בתרגול תמצאו bed, room, door ו-table.
+What is the word for bed?
+bed
+
+---
+
+## 5. Try it yourself
+
+A table in a room.
+table
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: a table in a room — in English?
+The word table means a table.
+The answer is table.
+
+---
+
+## 7. Let's practice!
+
+Now you know words for the home.
+In practice, you'll find bed, room, door, and table.

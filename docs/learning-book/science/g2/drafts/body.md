@@ -1,4 +1,4 @@
-# גוף האדם — בריאות והרגלים
+# The Human Body — Health and Habits
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | גוף האדם — בריאות והרגלים `[DRAFT — not owner-approved]` |
+| **title_english** | The Human Body — Health and Habits `[DRAFT — not owner-approved]` |
 
-**Content scope:** היגיינה; אוכל ופעילות; שינה — ללא מערכות גוף
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על בריאות והרגלים טובים — איך לשמור על הגוף חזק ושמח.
+**Content scope:** Hygiene; food and activity; sleep — no body systems
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-גוף בריא צריך הרגלים טובים:
-היגיינה — שטיפת ידיים לפני אוכל, צחצוח שיניים בבוקר ובערב
-אוכל ושתייה מגוונים — פירות, ירקות ומים — נותנים כוח לגוף
-פעילות — ריצה, משחק, הליכה — שרירים חזקים
-שינה — מנוחה בלילה — הגוף מתחדש
-כשאנחנו שומרים על ההרגלים — מרגישים טוב יותר.
+Today in science we will learn about health and good habits — how to keep our body strong and happy.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נועה קמה בבוקר, שטפה ידיים, צחצחה שיניים ואכלה ארוחת בוקר.
-בצהריים שתתה מים ורצה בחצר.
-בערב ישנה מוקדם.
-כך הגוף שלה קיבל מנוחה, מזון וניקיון.
-
----
-
-## 4. בואו נפתור
-
-מתי חשוב לשטוף ידיים?
-ידיים נוגעות בדברים רבים.
-לפני אוכל — כדי לא להכניס חיידקים לפה.
-לפני אוכל (וגם אחרי שירותים)
+A healthy body needs good habits:
+Hygiene — washing hands before eating, brushing teeth in the morning and evening
+Varied food and drink — fruits, vegetables, and water give the body energy
+Activity — running, playing, walking — strong muscles
+Sleep — rest at night — the body recovers
+When we keep these habits — we feel better.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-ילד שיחק בגינה ואכל עוגיות בלי לשטוף ידיים.
-למחרת הרגיש לא טוב.
-מה אפשר היה לעשות אחרת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה הייתה:
-ילד שאכל בלי לשטוף ידיים — מה אפשר היה לעשות אחרת?
-כשמשחקים בגינה — הידיים אוספות חיידקים.
-כשאוכלים עם ידיים מלוכלכות — החיידקים נכנסים לגוף ועלולים לגרום למחלה.
-שטיפת ידיים עם סבון לפני אכילה מורידה חיידקים ושומרת על בריאות.
-התשובה: לשטוף ידיים עם סבון לפני האכילה.
+Noa woke up in the morning, washed her hands, brushed her teeth, and ate breakfast.
+At noon she drank water and ran in the yard.
+In the evening she went to sleep early.
+That way her body got rest, food, and cleanliness.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים הרגלי בריאות במדעים.
-בתרגול חפשו שאלות על ידיים, שיניים ושינה.
+When is it important to wash your hands?
+Hands touch many things.
+Before eating — so germs do not get into your mouth.
+Before eating (and also after using the bathroom)
+
+---
+
+## 5. Try it yourself
+
+A child played in the garden and ate cookies without washing hands.
+The next day they did not feel well.
+What could they have done differently?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question was:
+A child who ate without washing hands — what could they have done differently?
+When you play in the garden — your hands pick up germs.
+When you eat with dirty hands — germs get into your body and can make you sick.
+Washing hands with soap before eating removes germs and keeps you healthy.
+The answer: wash hands with soap before eating.
+
+---
+
+## 7. Let's practice!
+
+Now you know about health habits in science.
+When you practice, look for questions about hands, teeth, and sleep.

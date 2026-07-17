@@ -1,4 +1,4 @@
-# נסיעות — Present Perfect intro
+# Travel — Present Perfect intro
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | נסיעות — Present Perfect intro |
+| **title_english** | Travel — Present Perfect intro |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** We have visited three countries — היכרות בלבד
+**Content scope:** We have visited three countries — introduction only
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נסיעות עם היכרות בלבד ב-Present Perfect — have + V3.
-We have visited three countries so far — ביקרנו בשלוש מדינות עד כה.
-
----
-
-## 2. הסבר
-
-have visited — ביקרנו (עד עכשיו, לא מתי בדיוק):
-
+Today we will learn about travel, with a first look at Present Perfect — have + past participle.
 We have visited three countries so far.
 
-ביקרנו בשלוש מדינות עד כה.
+---
+
+## 2. Simple explanation
+
+have visited — describes something up to now, without saying exactly when:
+
+We have visited three countries so far.
 
 I have never flown alone.
 
-מעולם לא טסתי לבד.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-אלבום תמונות מטיולים.
+A photo album from trips.
 
 We have visited three countries so far.
 
-ביקרנו בשלוש מדינות עד כה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "ביקרנו בשלוש מדינות עד כה"?
+Question: How do you say this?
 
 We have visited three countries so far
 
-תשובה: We have visited three countries so far
+Answer: We have visited three countries so far
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שנה מרתקת — ביקרו בהרבה מדינות.
+An exciting year — visiting many countries.
 
 They have already visited five countries this year.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם כבר ביקרו בחמש מדינות השנה."
+Exercise: "They have already visited five countries this year."
 
-Present Perfect: have + V3 (visited).
+Present Perfect: have + the past participle (visited).
 
-already = כבר; this year = השנה (עד עכשיו).
+"Already" means before now; "this year" means up to now.
 
-הם כבר ביקרו בחמש מדינות השנה.
-
- They have already visited five countries this year.
+So the full sentence is: They have already visited five countries this year.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים נסיעות עם have visited (היכרות).
-בתרגול תמצאו We have visited three countries so far.
+Now you will describe travel using have visited (an introduction).
+In the practice, you'll find: We have visited three countries so far.

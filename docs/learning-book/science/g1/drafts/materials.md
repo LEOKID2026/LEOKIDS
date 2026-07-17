@@ -1,4 +1,4 @@
-# חומרים — תכונות יומיומיות
+# Materials — Everyday Properties
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | draft |
-| **title_hebrew** | חומרים — תכונות יומיומיות `[DRAFT — not owner-approved]` |
+| **title_english** | Materials — Everyday Properties `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/SCIENCE_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** קשה/רך; חלק/מחוספס; חם/קר במגע
+**Content scope:** Hard/soft; smooth/rough; hot/cold to the touch
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד במדעים על חומרים — דברים שמהם עשויים חפצים.
-נלמד לתאר אותם לפי מה שמרגישים במגע.
-
----
-
-## 2. הסבר
-
-לכל חומר יש תכונות — דרכים לתאר איך הוא מרגיש:
-קשה או רך — אבן קשה, ספוג רך
-חלק או מחוספס — שולחן חלק, קליפת תפוז מחוספסת
-חם או קר — כוס תה חמה, קרח קר
-אפשר לבדוק תכונות במגע ובמבט — בלי לעשות ניסויים מסוכנים.
-מים מהברז הם נוזל — הם זורמים בכוס.
+Today in science we will learn about materials — the things objects are made from.
+We will learn to describe them by how they feel when we touch them.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בכיתה יש עט, ספוג ואבן קטנה.
-העט — חלק וקשיח.
-הספוג — רך וקל ללחוץ.
-האבן — קשה ומחוספסת.
-כל חומר שונה.
-
----
-
-## 4. בואו נפתור
-
-איזה חומר הוא רך?
-רך — קל ללחוץ ולשנות צורה.
-ספוג רך, אבן קשה.
-ספוג
+Every material has properties — ways to describe how it feels:
+Hard or soft — a rock is hard, a sponge is soft
+Smooth or rough — a table is smooth, an orange peel is rough
+Hot or cold — a cup of hot tea, ice is cold
+You can check properties by touch and by looking — without doing dangerous experiments.
+Water from the tap is a liquid — it flows in a cup.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-חשבו על כרית שמניחים על הספה.
-האם הכרית קשה או רכה?
-מה קורה כשלוחצים עליה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-האם כרית קשה או רכה?
-כרית עשויה מחומר רך כמו נוצות או קצף.
-כשלוחצים על כרית — היא נכנסת פנימה ומשנה צורה, כי היא רכה.
-זה שונה מאבן, שקשה ולא משתנה כשלוחצים עליה.
-כרית — רכה. כשלוחצים — היא נכנסת פנימה.
+In the classroom there is a pen, a sponge, and a small rock.
+The pen — smooth and hard.
+The sponge — soft and easy to squeeze.
+The rock — hard and rough.
+Every material is different.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לתאר חומרים במדעים.
-בתרגול חפשו שאלות על קשה, רך, חם וקר.
+Which material is soft?
+Soft — easy to squeeze and change shape.
+A sponge is soft, a rock is hard.
+Sponge
+
+---
+
+## 5. Try it yourself
+
+Think about a pillow you put on the sofa.
+Is the pillow hard or soft?
+What happens when you press on it?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Is a pillow hard or soft?
+A pillow is made from soft material like feathers or foam.
+When you press on a pillow — it sinks in and changes shape, because it is soft.
+That is different from a rock, which is hard and does not change when you press on it.
+Pillow — soft. When you press — it sinks in.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to describe materials in science.
+In practice, look for questions about hard, soft, hot, and cold.

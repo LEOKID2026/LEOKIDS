@@ -1,4 +1,4 @@
-# שאלה מילולית — כמה יותר?
+# Word Problems — How Many More?
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — How Many More? |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הפרש בין שתי כמויות — **"כמה יותר"**. שלב אחד. מספרים עד **1,000**. ללא חיסור מרובה שלבים.
+**Content scope:** Difference between two amounts — **"how many more"**. One step. Numbers up to **1,000**. No multi-step subtraction.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה מילולית — כששואלים כמה יותר יש לאחד מאשר לשני.
-צריך הפרש — גדול פחות קטן.
-
----
-
-## 2. הסבר
-
-מסגרת לבעיות "כמה יותר":
-מה יודעים? שתי כמויות — למשל 156 ו-89
-מה מבקשים? כמה יותר לזה שיש יותר
-מה עושים? מחסרים: גדול − קטן
-156 − 89 = 67 — המספר הגדול יותר ב-67.
-"יותר" = הפרש — לא סכום!
+Today we'll solve a word problem — when the question asks how many more one person has than another.
+You need the difference — bigger minus smaller.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-לנועם 125 נקודות ולדנה 89 נקודות.
-כמה נקודות יש לנועם יותר?
-יודעים: 125, 89
-מבקשים:
-הפרש (יותר)
-עושים: 125 − 89 = 36
-36 נקודות יותר.
+Frame for "how many more" problems:
+What do you know? Two amounts — for example 156 and 89
+What are you asked? How many more the one with more has
+What do you do? Subtract: bigger − smaller
+156 − 89 = 67 — the bigger number is 67 more.
+"More" = difference — not a sum!
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-לרוני 342 מדבקות וליעל 218 מדבקות. כמה מדבקות יש לרוני יותר?
-רוני יותר — 342 > 218.
+Noah has 125 points and Dana has 89 points.
+How many more points does Noah have?
+Know: 125, 89
+Asked for:
+Difference (more)
+Do: 125 − 89 = 36
+36 more points.
+
+---
+
+## 4. Let's solve together
+
+Ron has 342 stickers and Maya has 218 stickers. How many more stickers does Ron have?
+Ron has more — 342 > 218.
 342 − 218 = 124
-124 מדבקות יותר.
+124 more stickers.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-לנועם 180 נקודות ולדנה 95 נקודות.
-כמה נקודות יש לנועם יותר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Noah has 180 points and Dana has 95 points.
+How many more points does Noah have?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-לנועם 180 נקודות ולדנה 95 נקודות.
-כמה נקודות יש לנועם יותר?
-נועם יותר — 180 > 95.
+Noah has 180 points and Dana has 95 points.
+How many more points does Noah have?
+Noah has more — 180 > 95.
 180 − 95 = 85
-85 נקודות יותר
+85 more points
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-בפרק הזה חיזקנו את הידע לפתור כמה יותר?
-בשאלה מילולית.
-בתרגול תמצאו גם מספרים גדולים יותר שאלות השוואה.
-חפשו הפרש — לא סכום!
+In this section we strengthened solving how many more?
+In word problems.
+In practice you'll also find bigger comparison questions.
+Look for the difference — not the sum!

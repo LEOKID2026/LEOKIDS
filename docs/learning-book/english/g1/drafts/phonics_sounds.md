@@ -1,4 +1,4 @@
-# צלילי אותיות
+# Letter Sounds
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | צלילי אותיות |
+| **title_english** | Letter Sounds |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** צלילי a,e,i וצלילי b,m,s; audio_required: yes — כל צליל בנפרד
+**Content scope:** Sounds of a, e, i and sounds of b, m, s; audio_required: yes — each sound separately
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד צלילים — הקול שהאות עושה.
-לא שם האות, אלא הצליל ששומעים בתחילת מילה.
-
----
-
-## 2. הסבר
-
-היום נשמע צלילים שאותיות משמיעות במילים.
-במילה bat שומעים בהתחלה צליל ב.
-במילה mom שומעים בהתחלה צליל מ.
-במילה sun שומעים בהתחלה צליל ס.
-במילים cat, bed ו-sit יש צליל קצר באמצע.
+Today we will learn sounds — the sound a letter makes.
+Not the letter's name, but the sound we hear at the start of a word.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-במילה mom שומעים בתחילת המילה צליל מ.
-במילה top שומעים בתחילת המילה צליל ט.
-מקשיבים לצליל הראשון ומחברים אותו לאות.
-
----
-
-## 4. בואו נפתור
-
-איזה צליל שומעים בתחילת המילה sun?
-אומרים sun לאט.
-שומעים בהתחלה צליל ס.
-ס
+Today we'll listen to sounds that letters make in words.
+In the word bat, we hear a "b" sound at the start.
+In the word mom, we hear an "m" sound at the start.
+In the word sun, we hear an "s" sound at the start.
+In the words cat, bed, and sit, there's a short sound in the middle.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-איזה צליל עושה p?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-איזה צליל שומעים בתחילת המילה pen?
-אומרים pen לאט.
-המילה pen מתחילה בצליל פ.
-התשובה היא הצליל פ.
+In the word mom, we hear an "m" sound at the start of the word.
+In the word top, we hear a "t" sound at the start of the word.
+We listen to the first sound and connect it to the letter.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו התחלתם לשמוע צלילי אותיות.
-בעמוד הבא נשמע את הצליל הראשון במילה.
+What sound do we hear at the start of the word sun?
+Say sun slowly.
+We hear an "s" sound at the start.
+s
+
+---
+
+## 5. Try it yourself
+
+What sound does p make?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+What sound do we hear at the start of the word pen?
+Say pen slowly.
+The word pen starts with a "p" sound.
+The answer is the "p" sound.
+
+---
+
+## 7. Let's practice!
+
+Now you're starting to hear letter sounds.
+On the next page, we'll listen for the first sound in a word.

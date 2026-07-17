@@ -1,4 +1,4 @@
-# שאלה מילולית — כמה יותר?
+# Word Problems — How Many More?
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — How Many More?
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הפרש בין שתי כמויות גדולות
+**Content scope:** difference between two large quantities
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה: כמה יותר? (הפרש)
-מזהים שתי כמויות — מחפשים הפרש, לא סה״כ!
-
----
-
-## 2. הסבר
-
-"כמה יותר?" = הפרש — לא סה״כ!
-עיר א: 250,000 תושבים. עיר ב: 198,000 תושבים.
-כמה יותר בא'? → 250,000 − 198,000 (הגדול − הקטן).
-לא מחברים — מחסרים!
+Today we will solve a question: how many more? (the difference)
+Identify two quantities — look for the difference, not the total!
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-מפעל א: 180,000 יחידות. מפעל ב: 142,500 יחידות.
-180,000 − 142,500 = 37,500 יחידות יותר אצל א'.
+"How many more?" = the difference — not the total!
+City A: 250,000 people. City B: 198,000 people.
+How many more in A? → 250,000 − 198,000 (larger − smaller).
+Do not add — subtract!
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-250,000 תושבים בעיר א', 198,000 בעיר ב'. כמה יותר בא'?
+Factory A: 180,000 units. Factory B: 142,500 units.
+180,000 − 142,500 = 37,500 more units at A.
+
+---
+
+## 4. Let's solve together
+
+250,000 people in City A, 198,000 in City B. How many more in A?
 250,000 > 198,000.
 250,000 − 198,000 = 52,000
-52,000 תושבים יותר.
+52,000 more people.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-א' 12,450 ספרים, ב' 9,875.
-כמה יותר אצל א'?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A has 12,450 books, B has 9,875.
+How many more at A?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-א' 12,450 ספרים, ב' 9,875 — כמה יותר אצל א'?
-"כמה יותר?" = הפרש → חיסור.
+A has 12,450 books, B has 9,875 — how many more at A?
+"How many more?" = difference → subtraction.
 12,450 − 9,875 = 2,575
-בדיקה: 9,875 + 2,575 = 12,450
-התשובה: 2,575 ספרים יותר
+Check: 9,875 + 2,575 = 12,450
+The answer: 2,575 more books
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שאלות הפרש מופיעות הרבה — עם מספרים גדולים.
-בתרגול תמצאו כמה יותר? — חסרו את הקטן מהגדול!
+Difference questions appear often — with large numbers.
+In practice you will find "how many more?" — subtract the smaller from the larger!

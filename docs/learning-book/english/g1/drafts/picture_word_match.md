@@ -1,4 +1,4 @@
-# תמונה ומילה
+# Picture and Word
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | תמונה ומילה |
+| **title_english** | Picture and Word |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** חיבור תמונה—מילה ממילים שנלמדו; audio_required: yes — שמיעת מילה
+**Content scope:** Connecting picture—word from words already learned; audio_required: yes — hearing the word
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחבר תמונה למילה באנגלית.
-רק מילים שלמדנו — cat, book, sun, pen ועוד.
-
----
-
-## 2. הסבר
-
-רואים תמונה — בוחרים את המילה הנכונה.
-תמונה של חתול — cat
-תמונה של ספר — book
-תמונה של שמש — sun
-שומעים מילה — מוצאים את התמונה.
+Today we will connect a picture to a word in English.
+Only words we've already learned — cat, book, sun, pen, and more.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-תמונה:
-עט.
-המילה: pen.
-תמונה:
-כיסא.
-המילה: chair.
+We see a picture — we choose the correct word.
+A picture of a cat — cat
+A picture of a book — book
+A picture of the sun — sun
+We hear a word — we find the picture.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו מילה מתאימה לתמונה של dog?
-מזהים — כלב.
+Picture:
+a pen.
+The word: pen.
+Picture:
+a chair.
+The word: chair.
+
+---
+
+## 4. Let's solve together
+
+Which word matches the picture of a dog?
+We recognize it — a dog.
 dog.
 dog
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזו מילה — תמונה של hat?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Which word — a picture of a hat?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-איזו מילה מתאימה לתמונה של hat?
-רואים תמונה — מה יש בה? כובע.
-בוחרים את המילה:
+Which word matches the picture of a hat?
+We see a picture — what's in it? A hat.
+We choose the word:
 hat
-hat פירושו: כובע.
+hat means a hat.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו יודעים לחבר תמונה ומילה.
-בעמוד הבא — הוראות קצרות באנגלית.
+Now you know how to connect a picture and a word.
+On the next page — short instructions in English.

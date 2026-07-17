@@ -1,4 +1,4 @@
-# תיאור — תאר + תואר פועל
+# Description — Adjective + Adverb
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | תיאור — תאר + תואר פועל |
+| **title_english** | Description — Adjective + Adverb |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,71 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבנה משפטים תיאוריים עם תואר פועל.
-The tall girl runs quickly — הילדה הגבוהה רצה מהר.
+Today we will build descriptive sentences with an adverb.
+The tall girl runs quickly.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית: תאר + שם עצם + פועל + תואר פועל
+Pattern: adjective + noun + verb + adverb
 
 The tall girl runs quickly.
-
-הילדה הגבוהה רצה מהר.
 
 The fast boy jumps high.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה גבוהה רצה.
+A tall girl running.
 
 The tall girl runs quickly.
 
-הילדה הגבוהה רצה מהר.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הילדה הגבוהה רצה מהר"?
+Question: How do you say this?
 
 The tall girl runs quickly
 
-תשובה: The tall girl runs quickly
+Answer: The tall girl runs quickly
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד חכם כותב בפנקס.
+A smart boy writing in a notebook.
 
 The smart boy writes nicely.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הילד החכם כותב יפה."
+Exercise: "The smart boy writes nicely."
 
-תבנית: תאר + שם עצם + פועל + תואר פועל.
+Pattern: adjective + noun + verb + adverb.
 
-smart = חכם (תאר שם עצם); nicely = יפה (תאר פועל, מסביר איך).
+"Smart" describes the boy (adjective); "nicely" describes how he writes (adverb).
 
-הילד החכם כותב יפה.
-
- The smart boy writes nicely.
+So the full sentence is: The smart boy writes nicely.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים עם תואר פועל.
-בתרגול תמצאו The tall girl runs quickly.
+Now you will build sentences with an adverb.
+In the practice, you'll find: The tall girl runs quickly.

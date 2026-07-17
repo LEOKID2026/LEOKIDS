@@ -1,4 +1,4 @@
-# כפל — לוח הכפל ואסטרטגיות
+# Multiplication — Times Table and Strategies
 
 ## Metadata
 
@@ -11,65 +11,65 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל — לוח הכפל ואסטרטגיות `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplication — Times Table and Strategies |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** לוח הכפל 1–12. אסטרטגיות: פירוק, סדר חילופי, כפל בעשרות. ללא כפל במאונך (→ `mul_vertical`).
+**Content scope:** Times table 1–12. Strategies: breaking apart, commutative order, multiplying by tens. No vertical multiplication (→ `mul_vertical`).
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק את לוח הכפל ונלמד אסטרטגיות לכפל מהיר.
-כפל = חיבור חוזר של קבוצות שוות — וגם כלי לחישובים גדולים יותר.
+Today we'll strengthen the times table and learn strategies for fast multiplication.
+Multiplication = adding equal groups again and again — and also a tool for bigger calculations.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-אסטרטגיות שימושיות:
-פירוק: 12 × 8 = (10 × 8) + (2 × 8) = 80 + 16 = 96
-סדר חילופי: 7 × 9 = 9 × 7 = 63
-כפל ב-10: 10 × 6 = 60 — מוסיפים 0 בסוף
-כפל ב-5: 5 × 8 = חצי מ-10 × 8 = 80 ÷ 2 = 40
+Useful strategies:
+Break apart: 12 × 8 = (10 × 8) + (2 × 8) = 80 + 16 = 96
+Switch the order: 7 × 9 = 9 × 7 = 63
+Multiply by 10: 10 × 6 = 60 — add a 0 at the end
+Multiply by 5: 5 × 8 = half of 10 × 8 = 80 ÷ 2 = 40
 11 × 4 = (10 × 4) + (1 × 4) = 40 + 4 = 44
-טיפ: לוח חזק עוזר בכפל במאונך ובשאלות מילוליות.
+Tip: a strong times table helps with vertical multiplication and word problems.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-9 × 7 — 9 קבוצות של 7:
+9 × 7 — 9 groups of 7:
 (10 × 7) − 7 = 70 − 7 = 63
 9 × 7 = 63
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 15 × 6 = ?
+Work out: 15 × 6 = ?
 15 × 6 = (10 × 6) + (5 × 6)
 60 + 30 = 90
 15 × 6 = 90
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 11 × 7 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 11 × 7 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 11 × 7 = ?
-פירוק: 11 × 7 = (10 × 7) + (1 × 7)
+Work out: 11 × 7 = ?
+Break apart: 11 × 7 = (10 × 7) + (1 × 7)
 10 × 7 = 70
 1 × 7 = 7
 70 + 7 = 77
@@ -77,8 +77,8 @@
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים לוח הכפל ואסטרטגיות.
-בתרגול תמצאו כפל 1–12.
-נסו לפרק לחלקים נוחים!
+Now you're practicing the times table and strategies.
+In practice you'll find multiplication 1–12.
+Try breaking numbers into easy parts!

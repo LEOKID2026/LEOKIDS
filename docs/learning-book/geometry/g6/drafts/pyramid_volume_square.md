@@ -1,4 +1,4 @@
-﻿# נפח פירמידה — בסיס ריבוע
+# Volume of a Pyramid — Square Base
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח פירמידה — בסיס ריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Pyramid — Square Base `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** (1/3)×שטח בסיס×גובה
+**Content scope:** (1/3)×base area×height
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח פירמידה — בסיס ריבוע.
-נפח = (1/3) × שטח בסיס × גובה.
-פירמידה — קדקוד אחד מעל הבסיס.
+Today we will learn volume of a pyramid — square base.
+Volume = (1/3) × base area × height.
+A pyramid — one apex above the base.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים:
+Steps:
 1.
-שטח בסיס = צלע × צלע
+Base area = side × side
 2.
-נפח = (1/3) × שטח בסיס × גובה
+Volume = (1/3) × base area × height
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס ריבוע 6 ס״מ, גובה 9 ס״מ:
+Square base 6 cm, height 9 cm:
 6×6 = 36
-(1/3) × 36 × 9 = 108 (ס״מ³)
+(1/3) × 36 × 9 = 108 (cm³)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-פירמידה — בסיס ריבוע 6 ס״מ, גובה 9 ס״מ. נפח?
+Pyramid — square base 6 cm, height 9 cm. Volume?
 6×6 = 36
 36×9 = 324; 324÷3 = 108
-108 ס״מ³.
+108 cm³.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פירמידה: בסיס ריבוע 4 ס״מ, גובה 12 ס״מ — מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Pyramid: square base 4 cm, height 12 cm — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-פירמידה — בסיס ריבוע 4 ס״מ, גובה 12 ס״מ — מה הנפח?
-שטח בסיס — 4 × 4 = 16.
+Pyramid — square base 4 cm, height 12 cm — what is the volume?
+Base area — 4 × 4 = 16.
 16 × 12 = 192 ; 192 ÷ 3 = 64
-64 ס״מ³
+64 cm³
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נפח פירמידה = (1/3) × שטח בסיס × גובה.
-בתרגול תמצאו פירמידות — חלקו ב-3 בסוף!
+Volume of a pyramid = (1/3) × base area × height.
+In practice you'll find pyramids — divide by 3 at the end!

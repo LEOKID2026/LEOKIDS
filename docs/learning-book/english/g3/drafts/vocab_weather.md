@@ -1,4 +1,4 @@
-# מזג אוויר באנגלית
+# Weather in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מזג אוויר באנגלית |
+| **title_english** | Weather in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מזג אוויר באנגלית.
+Today we will learn weather words in English.
 sunny, rainy, cloudy — It is sunny.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-sunny — שמשי
-rainy — גשום
-cloudy — מעונן
-
-It is sunny.
-
-בחוץ שמש.
-
----
-
-## 3. דוגמה
-
-שמש בחוץ.
+sunny
+rainy
+cloudy
 
 It is sunny.
 
-בחוץ שמש.
+It is sunny outside.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-שאלה: איך אומרים "בחוץ שמש"?
+Sun outside.
+
+It is sunny.
+
+It is sunny outside.
+
+---
+
+## 4. Let's solve together
+
+Question: how do we say "it is sunny outside"?
 
 It is sunny
 
-תשובה: It is sunny
+Answer: It is sunny
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יום חורפי. גשם יורד בחוץ.
+A winter day. Rain is falling outside.
 
 It is rainy.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: יום חורפי. גשם יורד בחוץ.
+Exercise: a winter day. Rain is falling outside.
 
-הפתרון:
+The solution:
 
 It is rainy.
 
-בחוץ גשום.
+It is rainy outside.
 
-כל הכבוד! המבנה הוא It is + תיאור מזג האוויר — it is rainy, it is cloudy וכדומה.
+Well done! The structure is It is + weather description — it is rainy, it is cloudy, and so on.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים מזג אוויר.
-בתרגול תמצאו It is sunny ו-rainy, cloudy.
+Now you describe the weather.
+In practice, you'll find It is sunny and rainy, cloudy.

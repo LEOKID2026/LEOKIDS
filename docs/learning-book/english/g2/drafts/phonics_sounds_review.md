@@ -1,4 +1,4 @@
-# חזרה: צלילים
+# Review: Sounds
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | חזרה: צלילים |
+| **title_english** | Review: Sounds |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 
-**Content scope:** חזרה צלילים; b/p, d/t; audio_required: yes
+**Content scope:** Sound review; b/p, d/t; audio_required: yes
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום חוזרים על צלילים באנגלית.
-נקשיב לצלילים בתחילת מילים, ונבדיל בין מילים שנשמעות דומות.
-למשל: bat ו-pen, dog ו-top.
-
----
-
-## 2. הסבר
-
-במילה bat שומעים בהתחלה צליל ב.
-במילה pen שומעים בהתחלה צליל פ.
-במילה dog שומעים בהתחלה צליל ד.
-במילה top שומעים בהתחלה צליל ט.
-גם הצליל שבאמצע המילה חשוב, למשל ב-cat, bed ו-sit.
+Today we review sounds in English.
+We'll listen to sounds at the start of words, and tell apart words that sound similar.
+For example: bat and pen, dog and top.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-אם שומעים בתחילת מילה צליל ב, זה לא אותו דבר כמו צליל פ.
-אם שומעים בתחילת מילה צליל ט, זה לא אותו דבר כמו צליל ד.
-מקשיבים לאט ומזהים את הצליל הראשון.
-
----
-
-## 4. בואו נפתור
-
-איזה צליל שומעים בתחילת המילה pen?
-אומרים pen לאט.
-שומעים בהתחלה צליל פ.
-פ
+In the word bat, we hear a "b" sound at the start.
+In the word pen, we hear a "p" sound at the start.
+In the word dog, we hear a "d" sound at the start.
+In the word top, we hear a "t" sound at the start.
+The sound in the middle of a word matters too, like in cat, bed, and sit.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-איזה צליל — den — d או t?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: איזה צליל שומעים בתחילת den?
-מקשיבים לצליל הראשון.
-den מתחילה בצליל ד, כמו dog.
-התשובה היא הצליל ד.
+If we hear a "b" sound at the start of a word, that's not the same as a "p" sound.
+If we hear a "t" sound at the start of a word, that's not the same as a "d" sound.
+We listen slowly and recognize the first sound.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-חזרתם על צלילים.
-בעמוד הבא — חיבור צלילים למילה.
+What sound do we hear at the start of the word pen?
+Say pen slowly.
+We hear a "p" sound at the start.
+p
+
+---
+
+## 5. Try it yourself
+
+Which sound — den — d or t?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: what sound do we hear at the start of den?
+We listen to the first sound.
+Den starts with a "d" sound, like dog.
+The answer is the "d" sound.
+
+---
+
+## 7. Let's practice!
+
+You've reviewed sounds.
+On the next page — blending sounds into a word.

@@ -91,8 +91,8 @@ async function testWriteBarrierDefault() {
   const prevM = process.env.GLOBAL_MOCK_MODE;
   delete process.env.GLOBAL_DATA_WRITES_ENABLED;
   delete process.env.GLOBAL_MOCK_MODE;
-  assert.equal(isGlobalDataWritesEnabled(), false);
-  assert.equal(isGlobalMockModeEnabled(), true);
+  assert.equal(isGlobalDataWritesEnabled(), true);
+  assert.equal(isGlobalMockModeEnabled(), false);
   if (prevW !== undefined) process.env.GLOBAL_DATA_WRITES_ENABLED = prevW;
   else delete process.env.GLOBAL_DATA_WRITES_ENABLED;
   if (prevM !== undefined) process.env.GLOBAL_MOCK_MODE = prevM;

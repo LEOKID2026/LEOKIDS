@@ -1,4 +1,4 @@
-# המרת יחידות — ס״מ ומטר
+# Unit Conversion — Centimeters and Meters
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | המרת יחידות — ס״מ ומטר `[DRAFT — not owner-approved]` |
+| **title_english** | Unit Conversion — Centimeters and Meters |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** 100 ס״מ = 1 מ׳
+**Content scope:** 100 cm = 1 m
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להמיר יחידות אורך — סנטימטרים ומטרים.
-100 ס״מ = 1 מ׳
-
----
-
-## 2. הסבר
-
-המרה:
-מטר → ס״מ: × 100
-ס״מ → מטר: ÷ 100
-250 ס״מ = 250 ÷ 100 = 2.5 מ׳
-(2 מטר ו-50 ס״מ)
+Today we'll learn to convert length units — centimeters and meters.
+100 cm = 1 m
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-350 ס״מ = 3.5 מ׳
-1.2 מ׳ = 120 ס״מ
+Conversion:
+Meters → cm: × 100
+cm → meters: ÷ 100
+250 cm = 250 ÷ 100 = 2.5 m
+(2 meters and 50 cm)
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-כמה מטרים ב-250 ס״מ?
+350 cm = 3.5 m
+1.2 m = 120 cm
+
+---
+
+## 4. Let's solve together
+
+How many meters in 250 cm?
 250 ÷ 100 = 2.5
-2.5 מ׳
+2.5 m
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-430 ס״מ — כמה מטרים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+430 cm — how many meters?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-430 ס״מ — כמה מטרים?
-100 ס״מ = 1 מ׳ — מחלקים ב-100
+430 cm — how many meters?
+100 cm = 1 m — divide by 100
 430 ÷ 100 = 4.3
-430 ס״מ = 4.3 מ׳ (4 מטר ו-30 ס״מ)
+430 cm = 4.3 m (4 meters and 30 cm)
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להמיר ס״מ למטר ולהיפך.
-בתרגול תמצאו המרות יחידות. 100 ס״מ = 1 מ׳!
+Now you know how to convert cm to meters and back.
+In practice you'll find unit conversions. 100 cm = 1 m!

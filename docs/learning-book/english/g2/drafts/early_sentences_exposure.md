@@ -1,4 +1,4 @@
-# משפטים קצרים
+# Short Sentences
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | משפטים קצרים |
+| **title_english** | Short Sentences |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,60 +20,60 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום שומעים וקוראים משפטים קצרים — 3–5 מילים.
-שומעים — חוזרים — בוחרים תמונה.
-
----
-
-## 2. הסבר
-
-I see a cat. — אני רואה חתול.
-It is red. — זה אדום.
-I am happy. — אני שמח או שמחה.
-We listen. — אנחנו מקשיבים.
-שומעים — חוזרים — בוחרים תמונה.
+Today we hear and read short sentences — 3–5 words.
+We listen — repeat — choose a picture.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
 I see a cat.
-תמונה:
-חתול.
-לא כותבים עברית — מבינים מ cat ו-see.
+It is red.
+I am happy.
+We listen.
+We listen — repeat — choose a picture.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו תמונה ל-"It is red"?
-red — אדום.
-בוחרים תמונה של משהו אדום, כמו תפוח או כדור.
-תמונה של משהו red
-
----
-
-## 5. נסו בעצמכם
-
-We read. — מה עושים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+I see a cat.
+Picture:
+a cat.
+We don't write anything else — we understand from cat and see.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-השאלה: "We read." — מה עושים?
-המילה read פירושה לקרוא.
-המילה We פירושה אנחנו.
-התשובה היא: אנחנו קוראים — We read.
+Which picture matches "It is red"?
+red.
+We choose a picture of something red, like an apple or a ball.
+picture of something red
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-סיימתם את יסודות הקריאה וההאזנה.
-כל הכבוד!
-בעמודים הבאים נפגוש עוד מילים ונחזור על מה שלמדנו.
+We read. — what are we doing?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: "We read." — what are we doing?
+The word read means to read.
+The word We means we.
+The answer is: we are reading — We read.
+
+---
+
+## 7. Let's practice!
+
+You've finished the basics of reading and listening.
+Well done!
+On the next pages, we'll meet more words and review what we've learned.

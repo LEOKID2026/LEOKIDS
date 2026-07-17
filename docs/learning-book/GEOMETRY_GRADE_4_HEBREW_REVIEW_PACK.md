@@ -42,7 +42,6 @@
 | **File** | `shapes_basic_properties_square.md` |
 | **learning_page_id** | `geometry:g4:shapes_basic_properties_square` |
 | **skill_id** | `geometry:kind:shapes_basic_properties_square` |
-| **title_hebrew** | תכונות הריבוע — צלעות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -144,7 +143,6 @@
 | **File** | `shapes_basic_properties_rectangle.md` |
 | **learning_page_id** | `geometry:g4:shapes_basic_properties_rectangle` |
 | **skill_id** | `geometry:kind:shapes_basic_properties_rectangle` |
-| **title_hebrew** | תכונות המלבן — זוגות צלעות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -244,7 +242,6 @@
 | **File** | `shapes_basic_properties_angles.md` |
 | **learning_page_id** | `geometry:g4:shapes_basic_properties_angles` |
 | **skill_id** | `geometry:kind:shapes_basic_properties_angles` |
-| **title_hebrew** | זוויות ישרות במרובע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -346,7 +343,6 @@
 | **File** | `symmetry.md` |
 | **learning_page_id** | `geometry:g4:symmetry` |
 | **skill_id** | `geometry:kind:symmetry` |
-| **title_hebrew** | סימטרייה במישור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -449,7 +445,6 @@
 | **File** | `quadrilaterals.md` |
 | **learning_page_id** | `geometry:g4:quadrilaterals` |
 | **skill_id** | `geometry:kind:quadrilaterals` |
-| **title_hebrew** | מרובעים — תכונות וסיווג `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -553,7 +548,6 @@
 | **File** | `parallel_perpendicular.md` |
 | **learning_page_id** | `geometry:g4:parallel_perpendicular` |
 | **skill_id** | `geometry:kind:parallel_perpendicular` |
-| **title_hebrew** | מקבילות ומאונכות — במצולעים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -653,7 +647,6 @@
 | **File** | `square_perimeter.md` |
 | **learning_page_id** | `geometry:g4:square_perimeter` |
 | **skill_id** | `geometry:kind:square_perimeter` |
-| **title_hebrew** | היקף ריבוע — כיתה ד׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -753,7 +746,6 @@
 | **File** | `square_area.md` |
 | **learning_page_id** | `geometry:g4:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
-| **title_hebrew** | שטח ריבוע — כיתה ד׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -853,7 +845,6 @@
 | **File** | `triangle_perimeter.md` |
 | **learning_page_id** | `geometry:g4:triangle_perimeter` |
 | **skill_id** | `geometry:kind:triangle_perimeter` |
-| **title_hebrew** | היקף משולש — כיתה ד׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -952,7 +943,6 @@
 | **File** | `triangle_angles.md` |
 | **learning_page_id** | `geometry:g4:triangle_angles` |
 | **skill_id** | `geometry:kind:triangle_angles` |
-| **title_hebrew** | זוויות במשולש — כיתה ד׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1051,7 +1041,6 @@
 | **File** | `diagonal_square.md` |
 | **learning_page_id** | `geometry:g4:diagonal_square` |
 | **skill_id** | `geometry:kind:diagonal_square` |
-| **title_hebrew** | אלכסון בריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1150,7 +1139,6 @@
 | **File** | `diagonal_rectangle.md` |
 | **learning_page_id** | `geometry:g4:diagonal_rectangle` |
 | **skill_id** | `geometry:kind:diagonal_rectangle` |
-| **title_hebrew** | אלכסון במלבן `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1248,7 +1236,6 @@
 | **File** | `solids.md` |
 | **learning_page_id** | `geometry:g4:solids` |
 | **skill_id** | `geometry:kind:solids` |
-| **title_hebrew** | גופים — פאות במישור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1349,7 +1336,6 @@
 | **File** | `rectangular_prism_volume.md` |
 | **learning_page_id** | `geometry:g4:rectangular_prism_volume` |
 | **skill_id** | `geometry:kind:rectangular_prism_volume` |
-| **title_hebrew** | נפח תיבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

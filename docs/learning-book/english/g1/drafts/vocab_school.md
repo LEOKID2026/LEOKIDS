@@ -1,4 +1,4 @@
-# בית ספר באנגלית
+# School in English
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בית ספר באנגלית |
+| **title_english** | School in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** book, pen, desk, teacher — חפצי כיתה
+**Content scope:** book, pen, desk, teacher — classroom objects
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים באנגלית לדברים בכיתה.
-בבית ספר משתמשים בהם כל יום.
-
----
-
-## 2. הסבר
-
-מילים בכיתה:
-book — ספר
-pen — עט
-desk — שולחן כתיבה
-teacher — מורה
+Today we will learn English words for things in the classroom.
+We use them every day at school.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ספר על השולחן.
-באנגלית אומרים:
+Classroom words:
 book
-המילה book פירושה ספר.
-
----
-
-## 4. בואו נפתור
-
-מה המילה לספר באנגלית?
-ספר.
-book
-
----
-
-## 5. נסו בעצמכם
-
-מי מלמד את הכיתה ועוזר לתלמידים?
-מה המילה באנגלית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מי מלמד את הכיתה?
-מה המילה באנגלית?
-מי מלמד בכיתה? מורה.
-מורה באנגלית:
+pen
+desk
 teacher
-teacher פירושו: מורה.
 
 ---
 
-## 7. בואו נתרגל!
+## 3. Example
 
-עכשיו אתם מכירים מילים מהכיתה באנגלית.
-בתרגול תמצאו שאלות על book, pen, desk ו-teacher.
+A book on the desk.
+In English we say:
+book
+The word book means book.
+
+---
+
+## 4. Let's solve together
+
+What is the word for book in English?
+Book.
+book
+
+---
+
+## 5. Try it yourself
+
+Who teaches the class and helps students?
+What is the word in English?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+Who teaches the class?
+What is the word in English?
+Who teaches the class? A teacher.
+Teacher in English:
+teacher
+teacher means teacher.
+
+---
+
+## 7. Let's practice!
+
+Now you know classroom words in English.
+In practice, you'll find questions about book, pen, desk, and teacher.

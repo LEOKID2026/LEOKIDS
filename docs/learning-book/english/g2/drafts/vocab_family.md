@@ -1,4 +1,4 @@
-# משפחה — מילים במשפט
+# Family — Words in a Sentence
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | משפחה — מילים במשפט |
+| **title_english** | Family — Words in a Sentence |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** This is my mom — תבנית קצרה
+**Content scope:** This is my mom — short pattern
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשתמש במילים של משפחה במשפט.
-כבר מכירים mom ו-dad — נחבר משפט.
+Today we will use family words in a sentence.
+We already know mom and dad — let's build a sentence.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית קצרה:
+Short pattern:
 This is my mom.
-זאת אמא שלי.
+This is my mom.
 This is my dad.
-זה אבא שלי.
+This is my dad.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מצביעים על אמא.
+Pointing at mom.
 This is my mom.
-זאת אמא שלי.
+This is my mom.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "זה אבא שלי"?
+How do we say "this is my dad"?
 This is my dad
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מחזיקים בספר שלכם.
+Holding your book.
 This is my book
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: איך אומרים "זה הספר שלי" באנגלית?
-אומרים: This is my book.
-התשובה היא: This is my book.
+The question: how do we say "this is my book" in English?
+We say: This is my book.
+The answer is: This is my book.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים על משפחה.
-בתרגול תמצאו This is my mom ו-This is my dad.
+Now you build sentences about family.
+In practice, you'll find This is my mom and This is my dad.

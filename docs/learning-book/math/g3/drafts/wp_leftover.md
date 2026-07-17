@@ -1,4 +1,4 @@
-# שאלה מילולית — מה נשאר?
+# Word Problem — What's Left Over?
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_3_4 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — מה נשאר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problem — What's Left Over? |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** **שארית** בהקשר — קבוצות מלאות + מה שנשאר. שלב אחד.
+**Content scope:** **Remainder** in context — full groups plus what's left. One step.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור: כמה נשאר? — כשמחלקים חפצים לקבוצות שוות ולא הכל נכנס.
-התשובה היא השארית — מה שנשאר מחוץ לקבוצות המלאות.
-
----
-
-## 2. הסבר
-
-דמיינו 47 ילדים שיוצאים לטיול — מחלקים לקבוצות של 6.
-כמה קבוצות מלאות? 6 × 7 = 42 (7 קבוצות).
-מה נשאר? 47 − 42 = 5 — 5 ילדים בלי קבוצה מלאה.
-5 = השארית — זו התשובה ל"כמה נשאר?", לא 7 (מספר הקבוצות).
+Today we will solve: how many are left over? — when we split things into equal groups and not everything fits.
+The answer is the remainder — what's left outside the full groups.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-31 בלונים — מחלקים לזוגות (2 בכל קבוצה).
-2 × 15 = 30 — 15 זוגות מלאים.
-31 − 30 = 1 — 1 בלון נשאר (שארית).
-1 בלון (שארית).
-
----
-
-## 4. בואו נפתור
-
-יש 43 מדבקות. מדביקים 5 על כל דף. כמה מדבקות יישארו בלי דף מלא?
-5 × 8 = 40 (8 דפים מלאים).
-43 − 40 = 3 — 3 מדבקות נשארו (שארית).
-3 מדבקות (שארית).
+Imagine 47 children going on a trip — split into groups of 6.
+How many full groups? 6 × 7 = 42 (7 groups).
+What's left over? 47 − 42 = 5 — 5 children without a full group.
+5 = the remainder — that's the answer to "how many are left over?", not 7 (the number of groups).
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-יש 38 ילדים.
-מתחלקים לקבוצות של 5.
-כמה ילדים יישארו בלי קבוצה מלאה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-38 ילדים בקבוצות של 5 — כמה נשארו?
-5 × 7 = 35 — 7 קבוצות מלאות.
-38 − 35 = 3 — 3 ילדים נשארו בלי קבוצה מלאה.
-בדיקה: 5 × 7 + 3 = 38
-3 ילדים נשארו
+31 balloons — split into pairs (2 in each group).
+2 × 15 = 30 — 15 full pairs.
+31 − 30 = 1 — 1 balloon left over (remainder).
+1 balloon (remainder).
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לפתור שאלות על מה נשאר.
-בתרגול תמצאו חילוק עם שארית במילים.
-חפשו את השארית!
+There are 43 stickers. You put 5 on each page. How many stickers will be left without a full page?
+5 × 8 = 40 (8 full pages).
+43 − 40 = 3 — 3 stickers left over (remainder).
+3 stickers (remainder).
+
+---
+
+## 5. Try it yourself
+
+There are 38 children.
+They split into groups of 5.
+How many children will be left without a full group?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+38 children in groups of 5 — how many are left over?
+5 × 7 = 35 — 7 full groups.
+38 − 35 = 3 — 3 children left without a full group.
+Check: 5 × 7 + 3 = 38
+3 children left over
+
+---
+
+## 7. Let's practice!
+
+Now you know how to solve questions about what's left over.
+In practice you'll find division with a remainder in words.
+Look for the remainder!

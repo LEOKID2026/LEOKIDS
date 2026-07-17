@@ -1,4 +1,4 @@
-# בית — חפצים ומיקום
+# House — Objects and Location
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | בית — חפצים ומיקום |
+| **title_english** | House — Objects and Location |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** The book is on the table — הכנה ל-in/on/under
+**Content scope:** The book is on the table — preparation for in/on/under
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חפצים בבית ומיקום.
-The book is on the table — הספר על השולחן.
+Today we will learn objects at home and their location.
+The book is on the table.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 The book is on the table.
 
-הספר על השולחן.
+The book is on the table.
 
 The ball is under the chair.
 
-הכדור מתחת לכיסא.
+The ball is under the chair.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ספר על שולחן.
+A book on a table.
 
 The book is on the table.
 
-הספר על השולחן.
+The book is on the table.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הספר על השולחן"?
+Question: how do we say "the book is on the table"?
 
 The book is on the table
 
-תשובה: The book is on the table
+Answer: The book is on the table
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-תיק ירוק בחדר.
+A green bag in the room.
 
 The bag is in the room.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: תיק ירוק בחדר.
+Exercise: a green bag in the room.
 
-הפתרון:
+The solution:
 
 The bag is in the room.
 
-התיק בחדר.
+The bag is in the room.
 
-כל הכבוד! in פירושו בתוך או ב־. זוכרים: The + שם עצם + is + מילת מיקום.
+Well done! in means inside. Remember: The + noun + is + a location word.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים מיקום של חפצים.
-בתרגול תמצאו The book is on the table ו-under the chair.
+Now you describe the location of objects.
+In practice, you'll find The book is on the table and under the chair.

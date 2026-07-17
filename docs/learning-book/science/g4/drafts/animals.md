@@ -1,4 +1,4 @@
-# בעלי חיים — יחסי גומלין
+# Animals — Interactions
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | בעלי חיים — יחסי גומלין `[DRAFT — not owner-approved]` |
+| **title_english** | Animals — Interactions `[DRAFT — not owner-approved]` |
 
-**Content scope:** טורף/טרף; תחרות; קבוצות (יונקים, ציפורים)
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על יחסי גומלין בין בעלי חיים — מי אוכל את מי, ומי מתחרה על משאבים.
+**Content scope:** Predator/prey; competition; groups (mammals, birds)
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-יחסי גומלין — הקשרים בין יצורים באותה סביבה.
-טורף — בעל חיים שאוכל בעל חיים אחר.
-טרף — בעל החיים שנאכל.
-תחרות — כששני יצורים רוצים אותו מזון, מים או מקום מחסה.
-סיווג בסיסי לקבוצות:
-- יונקים — ממליטים ומניקים (כלב, דולפין)
-- ציפורים — נוצות, ביצים עם קליפה
-- זוחלים — קשקשים, מטילים ביצים בדרך כלל
-כל הקבוצות חלק מאותה מערכת — שינוי אחד משפיע על אחרים.
+Today in science we will learn about interactions between animals — who eats whom, and who competes for resources.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בשמורה:
-ארנבים (טרף) ונמר (טורף).
-גם שני סוגי צמחים מתחרים על מים באותה בקעה.
-פחות גשם גורם לפחות עשב; פחות עשב גורם לפחות ארנבים; ופחות ארנבים משאיר פחות מזון לנמרים.
-
----
-
-## 4. בואו נפתור
-
-מה ההבדל בין טורף לטרף?
-טורף — אוכל בעלי חיים.
-טרף — נאכל על ידי טורף.
-טורף אוכל; טרף נאכל
+Interactions — the relationships between living things in the same environment.
+Predator — an animal that eats another animal.
+Prey — the animal that is eaten.
+Competition — when two living things want the same food, water, or shelter.
+Basic grouping:
+- Mammals — give birth to live young and nurse them (dog, dolphin)
+- Birds — feathers, eggs with shells
+- Reptiles — scales, usually lay eggs
+All groups are part of the same system — one change affects others.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-חשבו על שלדג ודג קטן בנהר.
-מי טורף ומי טרף?
-יש גם תחרות — על מה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: שלדג ודג קטן בנהר — מי טורף ומי טרף? ויש גם תחרות — על מה?
-הסבר מדעי:
-טורף הוא בעל חיים שניזון מבעלי חיים אחרים.
-טרף הוא בעל החיים שנאכל.
-השלדג ניזון מדגים קטנים — לכן הוא הטורף, והדג הקטן הוא הטרף.
-תחרות קורית כששני יצורים רוצים אותו משאב.
-בנהר, שלדגים שונים וציפורי מים אחרות מתחרות על אותם דגים קטנים כמקור מזון.
-שלדג — טורף; דג קטן — טרף. תחרות — על מזון (דגים קטנים).
+In a nature reserve:
+Rabbits (prey) and tigers (predators).
+Two types of plants also compete for water in the same valley.
+Less rain means less grass; less grass means fewer rabbits; and fewer rabbits means less food for tigers.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מבינים טורף, טרף ותחרות במדעים.
-בתרגול חפשו שאלות על יחסים בין בעלי חיים.
+What is the difference between predator and prey?
+Predator — eats animals.
+Prey — is eaten by a predator.
+Predator eats; prey is eaten
+
+---
+
+## 5. Try it yourself
+
+Think about a kingfisher and a small fish in a river.
+Who is the predator and who is the prey?
+There is also competition — for what?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: a kingfisher and a small fish in a river — who is predator and who is prey? And there is also competition — for what?
+Scientific explanation:
+A predator is an animal that feeds on other animals.
+Prey is the animal that is eaten.
+The kingfisher feeds on small fish — so it is the predator, and the small fish is the prey.
+Competition happens when two living things want the same resource.
+In a river, different kingfishers and other water birds compete for the same small fish as a food source.
+Kingfisher — predator; small fish — prey. Competition — for food (small fish).
+
+---
+
+## 7. Let's practice!
+
+Now you understand predator, prey, and competition in science.
+When you practice, look for questions about relationships between animals.

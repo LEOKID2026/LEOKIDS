@@ -1,4 +1,4 @@
-# אותיות קטנות a–z
+# Lowercase Letters a–z
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | אותיות קטנות a–z |
+| **title_english** | Lowercase Letters a–z |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 
-**Content scope:** זיהוי ושם אותיות קטנות a–z; audio_required: yes — שמות אותיות
+**Content scope:** Recognizing and naming lowercase letters a–z; audio_required: yes — letter names
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד אותיות קטנות באנגלית — a, b, c ועד z.
-לכל אות גדולה יש גם אות קטנה. למשל: A גדולה מתאימה ל-a קטנה, ו-B גדולה מתאימה ל-b קטנה.
-
----
-
-## 2. הסבר
-
-אותיות קטנות הן הצורה הקטנה של אותיות גדולות.
-למשל: A גדולה מתאימה ל-a קטנה, ו-B גדולה מתאימה ל-b קטנה.
-אותיות קטנות נמצאות במילים שאנחנו קוראים.
-אות קטנה היא הצורה שרואים הרבה בתוך מילים.
+Today we will learn lowercase letters in English — a, b, c, all the way to z.
+Every uppercase letter also has a lowercase letter. For example: uppercase A matches lowercase a, and uppercase B matches lowercase b.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נכיר שתי אותיות קטנות: d ו-t.
-d היא הצורה הקטנה של D.
-t היא הצורה הקטנה של T.
-היום מזהים את הצורה, ולא מתבלבלים בין האותיות.
+Lowercase letters are the small form of uppercase letters.
+For example: uppercase A matches lowercase a, and uppercase B matches lowercase b.
+Lowercase letters appear in the words we read.
+A lowercase letter is the shape we see a lot inside words.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו אות קטנה זו?
+Let's meet two lowercase letters: d and t.
+d is the lowercase form of D.
+t is the lowercase form of T.
+Today we recognize the shape, and we don't mix up the letters.
+
+---
+
+## 4. Let's solve together
+
+Which lowercase letter is this?
 p
-ל-p יש קו שיורד מתחת לשורה, ועיגול קטן בצד ימין של הקו.
-כך נראית האות p.
+p has a line that goes down below the line, and a small circle on the right side of the line.
+That's what the letter p looks like.
 p
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזו אות קטנה זו?
+Which lowercase letter is this?
 b
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-איזו אות קטנה זו?
+Which lowercase letter is this?
 b
-ל-b יש קו ישר בצד שמאל, ועיגול קטן בצד ימין.
-זו האות b.
-האות הקטנה היא b.
+b has a straight line on the left side, and a small circle on the right side.
+This is the letter b.
+The lowercase letter is b.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו מכירים גם אותיות קטנות.
-בעמוד הבא נתאים בין גדולות לקטנות — A עם a.
+Now you know lowercase letters too.
+On the next page, we'll match uppercase and lowercase letters — A with a.

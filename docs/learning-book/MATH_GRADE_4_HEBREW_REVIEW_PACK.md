@@ -44,7 +44,6 @@
 | **File** | `ns_place_hundreds.md` |
 | **learning_page_id** | `math:g4:ns_place_hundreds` |
 | **skill_id** | `math:kind:ns_place_hundreds` |
-| **title_hebrew** | ערך המקום — אלפים ועד 10,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -158,7 +157,6 @@
 | **File** | `ns_neighbors.md` |
 | **learning_page_id** | `math:g4:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
-| **title_hebrew** | שכנים — מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -268,7 +266,6 @@
 | **File** | `ns_complement100.md` |
 | **learning_page_id** | `math:g4:ns_complement100` |
 | **skill_id** | `math:kind:ns_complement100` |
-| **title_hebrew** | השלמה ל-100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -377,7 +374,6 @@
 | **File** | `ns_complement10.md` |
 | **learning_page_id** | `math:g4:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
-| **title_hebrew** | זוגות ל-10 — חזרה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -486,7 +482,6 @@
 | **File** | `ns_even_odd.md` |
 | **learning_page_id** | `math:g4:ns_even_odd` |
 | **skill_id** | `math:kind:ns_even_odd` |
-| **title_hebrew** | זוגי/אי-זוגי — מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -593,7 +588,6 @@
 | **File** | `cmp.md` |
 | **learning_page_id** | `math:g4:cmp` |
 | **skill_id** | `math:kind:cmp` |
-| **title_hebrew** | השוואת מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -706,7 +700,6 @@
 | **File** | `sequence.md` |
 | **learning_page_id** | `math:g4:sequence` |
 | **skill_id** | `math:kind:sequence` |
-| **title_hebrew** | סדרות — קפיצות גדולות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -816,7 +809,6 @@
 | **File** | `round.md` |
 | **learning_page_id** | `math:g4:round` |
 | **skill_id** | `math:kind:round` |
-| **title_hebrew** | עיגול לעשרות/מאות/אלפים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -926,7 +918,6 @@
 | **File** | `zero_add.md` |
 | **learning_page_id** | `math:g4:zero_add` |
 | **skill_id** | `math:kind:zero_add` |
-| **title_hebrew** | חיבור עם 0 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1033,7 +1024,6 @@
 | **File** | `zero_sub.md` |
 | **learning_page_id** | `math:g4:zero_sub` |
 | **skill_id** | `math:kind:zero_sub` |
-| **title_hebrew** | חיסור 0 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1136,7 +1126,6 @@
 | **File** | `zero_mul.md` |
 | **learning_page_id** | `math:g4:zero_mul` |
 | **skill_id** | `math:kind:zero_mul` |
-| **title_hebrew** | כפל ב-0 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1242,7 +1231,6 @@
 | **File** | `one_mul.md` |
 | **learning_page_id** | `math:g4:one_mul` |
 | **skill_id** | `math:kind:one_mul` |
-| **title_hebrew** | כפל ב-1 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1347,7 +1335,6 @@
 | **File** | `add_two.md` |
 | **learning_page_id** | `math:g4:add_two` |
 | **skill_id** | `math:kind:add_two` |
-| **title_hebrew** | חיבור שני מספרים — עד 10,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1466,7 +1453,6 @@
 | **File** | `sub_two.md` |
 | **learning_page_id** | `math:g4:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
-| **title_hebrew** | חיסור שני מספרים — עד 10,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1581,7 +1567,6 @@
 | **File** | `add_three.md` |
 | **learning_page_id** | `math:g4:add_three` |
 | **skill_id** | `math:kind:add_three` |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1688,7 +1673,6 @@
 | **File** | `mul.md` |
 | **learning_page_id** | `math:g4:mul` |
 | **skill_id** | `math:kind:mul` |
-| **title_hebrew** | כפל — לוח הכפל ואסטרטגיות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1793,7 +1777,6 @@
 | **File** | `mul_vertical.md` |
 | **learning_page_id** | `math:g4:mul_vertical` |
 | **skill_id** | `math:kind:mul_vertical` |
-| **title_hebrew** | כפל במאונך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1904,7 +1887,6 @@
 | **File** | `div.md` |
 | **learning_page_id** | `math:g4:div` |
 | **skill_id** | `math:kind:div` |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2012,7 +1994,6 @@
 | **File** | `div_with_remainder.md` |
 | **learning_page_id** | `math:g4:div_with_remainder` |
 | **skill_id** | `math:kind:div_with_remainder` |
-| **title_hebrew** | חילוק עם שארית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2120,7 +2101,6 @@
 | **File** | `div_long.md` |
 | **learning_page_id** | `math:g4:div_long` |
 | **skill_id** | `math:kind:div_long` |
-| **title_hebrew** | חילוק ארוך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2229,7 +2209,6 @@
 | **File** | `divisibility.md` |
 | **learning_page_id** | `math:g4:divisibility` |
 | **skill_id** | `math:kind:divisibility` |
-| **title_hebrew** | התחלקות — כללי 2, 3, 5, 6, 9 ו-10 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2337,7 +2316,6 @@
 | **File** | `prime_composite.md` |
 | **learning_page_id** | `math:g4:prime_composite` |
 | **skill_id** | `math:kind:prime_composite` |
-| **title_hebrew** | מספרים ראשוניים ופריקים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2442,7 +2420,6 @@
 | **File** | `fm_factor.md` |
 | **learning_page_id** | `math:g4:fm_factor` |
 | **skill_id** | `math:kind:fm_factor` |
-| **title_hebrew** | גורמים של מספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2553,7 +2530,6 @@
 | **File** | `fm_multiple.md` |
 | **learning_page_id** | `math:g4:fm_multiple` |
 | **skill_id** | `math:kind:fm_multiple` |
-| **title_hebrew** | כפולות של מספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2660,7 +2636,6 @@
 | **File** | `fm_gcd.md` |
 | **learning_page_id** | `math:g4:fm_gcd` |
 | **skill_id** | `math:kind:fm_gcd` |
-| **title_hebrew** | מ.א.ח — המחלק המשותף הגדול ביותר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2769,7 +2744,6 @@
 | **File** | `dec_add.md` |
 | **learning_page_id** | `math:g4:dec_add` |
 | **skill_id** | `math:kind:dec_add` |
-| **title_hebrew** | חיבור עשרוניים — שתי ספרות אחרי הנקודה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2883,7 +2857,6 @@
 | **File** | `dec_sub.md` |
 | **learning_page_id** | `math:g4:dec_sub` |
 | **skill_id** | `math:kind:dec_sub` |
-| **title_hebrew** | חיסור עשרוניים — שתי ספרות אחרי הנקודה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2995,7 +2968,6 @@
 | **File** | `eq_add.md` |
 | **learning_page_id** | `math:g4:eq_add` |
 | **skill_id** | `math:kind:eq_add` |
-| **title_hebrew** | משוואת חיבור — מספר חסר (מאות) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3099,7 +3071,6 @@
 | **File** | `eq_sub.md` |
 | **learning_page_id** | `math:g4:eq_sub` |
 | **skill_id** | `math:kind:eq_sub` |
-| **title_hebrew** | משוואת חיסור — מספר חסר (מאות) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3203,7 +3174,6 @@
 | **File** | `est_add.md` |
 | **learning_page_id** | `math:g4:est_add` |
 | **skill_id** | `math:kind:est_add` |
-| **title_hebrew** | הערכת תוצאה — חיבור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3319,7 +3289,6 @@
 | **File** | `est_mul.md` |
 | **learning_page_id** | `math:g4:est_mul` |
 | **skill_id** | `math:kind:est_mul` |
-| **title_hebrew** | הערכת תוצאה — כפל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3433,7 +3402,6 @@
 | **File** | `est_quantity.md` |
 | **learning_page_id** | `math:g4:est_quantity` |
 | **skill_id** | `math:kind:est_quantity` |
-| **title_hebrew** | הערכת כמות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3537,7 +3505,6 @@
 | **File** | `power_base.md` |
 | **learning_page_id** | `math:g4:power_base` |
 | **skill_id** | `math:kind:power_base` |
-| **title_hebrew** | חזקה — בסיס ומעריך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3645,7 +3612,6 @@
 | **File** | `power_calc.md` |
 | **learning_page_id** | `math:g4:power_calc` |
 | **skill_id** | `math:kind:power_calc` |
-| **title_hebrew** | חזקה — חישוב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3758,7 +3724,6 @@
 | **File** | `wp_comparison_more.md` |
 | **learning_page_id** | `math:g4:wp_comparison_more` |
 | **skill_id** | `math:kind:wp_comparison_more` |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3862,7 +3827,6 @@
 | **File** | `wp_leftover.md` |
 | **learning_page_id** | `math:g4:wp_leftover` |
 | **skill_id** | `math:kind:wp_leftover` |
-| **title_hebrew** | שאלה מילולית — מה נשאר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3964,7 +3928,6 @@
 | **File** | `wp_time_sum.md` |
 | **learning_page_id** | `math:g4:wp_time_sum` |
 | **skill_id** | `math:kind:wp_time_sum` |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

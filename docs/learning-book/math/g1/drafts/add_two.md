@@ -1,4 +1,4 @@
-# חיבור של שני מספרים
+# Adding Two Numbers
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור של שני מספרים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Two Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור שני מספרים, סכום עד 30. ללא חיבור במאונך, ללא נשיאה, ללא חיבור של שלושה מספרים.
+**Content scope:** Adding two numbers, sum up to 30. No vertical addition, no carrying, no adding three numbers.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר שני מספרים.
-חיבור זה כשמאחדים שתי קבוצות לקבוצה אחת גדולה יותר.
-
----
-
-## 2. הסבר פשוט
-
-כשמחברים — שמים יחד שתי כמויות.
-+ אומר "ועוד".
-= אומר "זה ביחד".
-לדוגמה: 4 + 3 = 7
-ארבעה ועוד שלושה — ביחד שבעה.
+Today we're going to learn to add two numbers.
+Addition is when you put two groups together to make one bigger group.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-9 גולות + 12 גולות:
-נחשב בשלבים נוחים.
-קודם נוסיף 10:
+When you add — you put two amounts together.
++ means "and more".
+= means "that's the total".
+For example: 4 + 3 = 7
+Four and three more — together that's seven.
+
+---
+
+## 3. Visual / concrete example
+
+9 marbles + 12 marbles:
+Let's break it into easy steps.
+First we add 10:
 9 + 10 = 19
-נשאר להוסיף עוד 2:
+Still need to add 2 more:
 19 + 2 = 21
-לכן:
+So:
 9 + 12 = 21
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
 17 + 11 = ?
-התחילו מ-17.
-הוסיפו 11 — 18, 19, 20, … עד 28.
+Start at 17.
+Add 11 — 18, 19, 20, … up to 28.
 17 + 11 = 28
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
 7 + 4 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
 7 + 4 = ?
-מתחילים מ-7.
-מוסיפים 4 צעדים קדימה: 8, 9, 10, 11.
+Start at 7.
+Add 4 steps forward: 8, 9, 10, 11.
 7 + 4 = 11
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר שני מספרים.
-בתרגול תמצאו חיבורים.
-חברו קבוצות או קפצו ימינה על ציר המספרים!
+Now you know how to add two numbers.
+In practice you'll find addition problems.
+Join groups or hop to the right on the number line!

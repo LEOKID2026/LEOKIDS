@@ -1,4 +1,4 @@
-# חילוק עם שארית — מספרים גדולים
+# Division with Remainder — Large Numbers
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חילוק עם שארית — מספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Division with Remainder — Large Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מנה ושארית; מספרים גדולים (1,247÷8). בדיקת שארית: מחלק × מנה + שארית = מחולק.
+**Content scope:** Quotient and remainder; large numbers (1,247÷8). Remainder check: divisor × quotient + remainder = dividend.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חילוק עם שארית — כשהחלוקה לא יוצאת בדיוק.
-מקבלים מנה ושארית, ובודקים עם בדיקת שארית.
+Today we'll learn division with a remainder — when the division doesn't come out exactly.
+You get a quotient and a remainder, and you check with the remainder check.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 1,247 ÷ 8:
 8 × 155 = 1,240
 1,247 − 1,240 = 7
-1,247 ÷ 8 = 155 ושארית 7
-בדיקת שארית: 8 × 155 + 7 = 1,247
-שארית תמיד קטנה מהמחלק (7 < 8).
+1,247 ÷ 8 = 155 remainder 7
+Remainder check: 8 × 155 + 7 = 1,247
+The remainder is always less than the divisor (7 < 8).
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 523 ÷ 6:
 6 × 87 = 522
 523 − 522 = 1
-523 ÷ 6 = 87 ושארית 1
-בדיקה: 6 × 87 + 1 = 523
+523 ÷ 6 = 87 remainder 1
+Check: 6 × 87 + 1 = 523
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 1,247 ÷ 8 = ? (עם שארית)
+Work out: 1,247 ÷ 8 = ? (with remainder)
 8 × 155 = 1,240
 1,247 − 1,240 = 7
-שלב 3 — בדיקת שארית: 8 × 155 + 7 = 1,247
-155 ושארית 7
+Step 3 — remainder check: 8 × 155 + 7 = 1,247
+155 remainder 7
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 937 ÷ 7 = ? (מנה ושארית)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 937 ÷ 7 = ? (quotient and remainder)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 937 ÷ 7 = ? (מנה ושארית)
+Work out: 937 ÷ 7 = ? (quotient and remainder)
 7 × 133 = 931
-937 − 931 = 6 (שארית)
-שלב 3 — בדיקת שארית: 7 × 133 + 6 = 931 + 6 = 937
-937 ÷ 7 = 133 ושארית 6
+937 − 931 = 6 (remainder)
+Step 3 — remainder check: 7 × 133 + 6 = 931 + 6 = 937
+937 ÷ 7 = 133 remainder 6
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחלק עם שארית במספרים גדולים.
-בתרגול תמצאו חילוקים עם שארית.
-בדקו:
-מחלק × מנה + שארית = מחולק!
+Now you know how to divide with a remainder in large numbers.
+In practice you'll find division with remainders.
+Check:
+divisor × quotient + remainder = dividend!

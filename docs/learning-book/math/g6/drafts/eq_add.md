@@ -1,4 +1,4 @@
-# משוואת חיבור — מספר חסר
+# Addition Equation — Missing Number
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת חיבור — מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Addition Equation — Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקום ריק; מספרים גדולים
+**Content scope:** blank space; large numbers
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור משוואות חיבור — מספר חסר עם מספרים גדולים.
+Today we will solve addition equations — a missing number with large numbers.
 2,450 + ? = 4,030
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-150,000 + ? = 400,000 — מספר חסר בחיבור:
-? = סכום − מספר ידוע = 400,000 − 150,000
-כלל: חסר = סכום − ידוע — לא חיבור של שני המספרים!
+150,000 + ? = 400,000 — missing number in addition:
+? = sum − known number = 400,000 − 150,000
+Rule: missing = sum − known — not adding the two numbers you see!
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 250,000 + __ = 500,000
 __ = 500,000 − 250,000 = 250,000
-בדיקה: 250,000 + 250,000 = 500,000
+Check: 250,000 + 250,000 = 500,000
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 150,000 + ? = 400,000
 ? = 400,000 − 150,000 = 250,000
-בדיקה: 150,000 + 250,000 = 400,000
+Check: 150,000 + 250,000 = 400,000
 250,000.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פתרו: 2,450 + ? = 4,030
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-פתרו: 2,450 + ? = 4,030
-? = סכום − מספר ידוע = 4,030 − 2,450 = 1,580.
-בדיקה: 2,450 + 1,580 = 4,030
-התשובה: ? = 1,580
+Solve: 2,450 + ? = 4,030
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-משוואות חיבור מופיעות בשאלות מילוליות.
-בתרגול תמצאו משוואות — בדקו בהחלפה!
+Solve: 2,450 + ? = 4,030
+? = sum − known number = 4,030 − 2,450 = 1,580.
+Check: 2,450 + 1,580 = 4,030
+The answer: ? = 1,580
+
+---
+
+## 7. Let's practice!
+
+Addition equations appear in word problems.
+In practice you will find equations — check by substituting back!

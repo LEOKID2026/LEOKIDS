@@ -1,4 +1,4 @@
-# פעולות — פועל במשפט
+# Actions — A Verb in a Sentence
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | פעולות — פועל במשפט |
+| **title_english** | Actions — A Verb in a Sentence |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,57 +22,57 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשתמש בפועל במשפט.
-כבר מכירים run ו-jump — נחבר עם I.
+Today we will use a verb in a sentence.
+We already know run and jump — let's connect them with I.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 I run.
-אני רץ.
+I run.
 I jump.
-אני קופץ.
+I jump.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד קופץ.
+A child jumping.
 I jump.
-אני קופץ.
+I jump.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "אני קופץ"?
+How do we say "I jump"?
 I jump
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אני רץ.
+I run.
 I run
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: איך אומרים "אני רץ" באנגלית?
-המילה run פירושה לרוץ.
-אומרים: I run.
-התשובה היא: I run.
+The question: how do we say "I run" in English?
+The word run means to run.
+We say: I run.
+The answer is: I run.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים עם פעולות.
-בתרגול תמצאו I run ו-I jump.
+Now you build sentences with actions.
+In practice, you'll find I run and I jump.

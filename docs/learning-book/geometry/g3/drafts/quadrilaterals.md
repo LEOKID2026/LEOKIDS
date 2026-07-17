@@ -1,4 +1,4 @@
-﻿# סוגי מרובעים
+# Types of Quadrilaterals
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סוגי מרובעים `[DRAFT — not owner-approved]` |
+| **title_english** | Types of Quadrilaterals `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ריבוע, מלבן, מקבילית, טרפז — שמות בסיסיים
+**Content scope:** Square, rectangle, parallelogram, trapezoid — basic names
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נכיר בגאומטריה שמות של מרובעים נפוצים.
-נזהה ריבוע, מלבן, מקבילית וטרפז — לפי תיאור קצר.
+Today in geometry we will learn the names of common quadrilaterals.
+We will identify a square, rectangle, parallelogram, and trapezoid — from a short description.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: quadrilateral_parts
 :::
 
-ריבוע — 4 צלעות שוות, 4 זוויות ישרות.
-מלבן — 4 זוויות ישרות; צלעות ממול שוות (לא בהכרח כולן).
-מקבילית — 2 זוגות של צלעות מקבילות.
-טרפז — זוג אחד של צלעות מקבילות (הבסיסים).
-כאן נתמקד בשם ובזיהוי — לא בחישובים.
+Square — 4 equal sides, 4 right angles.
+Rectangle — 4 right angles; opposite sides equal (not necessarily all sides).
+Parallelogram — 2 pairs of parallel sides.
+Trapezoid — one pair of parallel sides (the bases).
+Here we focus on the name and identification — not on calculations.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-חלון בצורת מלבן — רוחב קצר, גובה ארוך:
-- 4 זוויות ישרות
-- לא כל הצלעות שוות
-שם: מלבן (לא ריבוע).
-
----
-
-## 4. בואו נפתור
-
-אריח רצפה — 4 צלעות שוות ו-4 זוויות ישרות. מה שמו?
-זוויות ישרות — מתאים למלבן.
-גם כל הצלעות שוות → ריבוע.
-ריבוע
+A window shaped like a rectangle — short width, long height:
+- 4 right angles
+- Not all sides equal
+Name: rectangle (not a square).
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-דלת — 4 זוויות ישרות, אבל רוחב וגובה שונים.
-ריבוע או מלבן?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-דלת — 4 זוויות ישרות, אבל רוחב וגובה שונים.
-ריבוע או מלבן?
-בודקים זוויות — יש 4 זוויות ישרות  → מתאים למלבן וגם לריבוע.
-בודקים צלעות — הרוחב והגובה שונים → לא ריבוע.
-הדלת היא מלבן
+A floor tile — 4 equal sides and 4 right angles. What is it called?
+Right angles — fits a rectangle.
+All sides equal too → square.
+Square
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים שמות מרובעים בגאומטריה.
-בתרגול תמצאו תיאור — בחרו:
-ריבוע, מלבן, מקבילית או טרפז!
+A door — 4 right angles, but different width and height.
+Square or rectangle?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A door — 4 right angles, but different width and height.
+Square or rectangle?
+Check angles — there are 4 right angles → fits a rectangle and also a square.
+Check sides — width and height are different → not a square.
+The door is a rectangle
+
+---
+
+## 7. Let's practice!
+
+Now you know the names of quadrilaterals in geometry.
+In practice you will read a description — choose:
+square, rectangle, parallelogram, or trapezoid!

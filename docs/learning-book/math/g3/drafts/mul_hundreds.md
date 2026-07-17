@@ -1,4 +1,4 @@
-# כפל במאות
+# Multiplying by Hundreds
 
 ## Metadata
 
@@ -11,36 +11,36 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל במאות `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplying by Hundreds |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפל מספר חד-ספרתי × מאות (100, 200, …). `maxGrade = 3` בלבד ב-spine.
+**Content scope:** One-digit number × hundreds (100, 200, …). `maxGrade = 3` only in spine.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לכפול במאות — למשל 5 × 200.
-דומה לכפל בעשרות — רק עם שני אפסים בסוף.
+Today we will learn to multiply by hundreds — for example 5 × 200.
+It's like multiplying by tens — but with two zeros at the end.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 5 × 200:
 5 × 2 = 10
-מוסיפים 00 (מאות): 1000
+Add 00 (hundreds): 1000
 5 × 200 = 1000
 3 × 400: 3 × 4 = 12 → 1200
-כלל: כופלים את הספרה (בלי האפסים), מצמידים שני אפסים.
+Rule: multiply the digit (without the zeros), then put two zeros at the end.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 6 × 300
 6 × 3 = 18
@@ -48,33 +48,33 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 4 × 500 = ?
+Calculate: 4 × 500 = ?
 4 × 5 = 20
 4 × 500 = 2000
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 7 × 200 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 7 × 200 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 7 × 200
+Calculate: 7 × 200
 7 × 2 = 14
-מוסיפים 00 (מאות): 1400
+Add 00 (hundreds): 1400
 7 × 200 = 1400
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לכפול במאות.
-בתרגול תמצאו כפל במאות.
-כפלו את הספרה, הוסיפו שני אפסים!
+Now you know how to multiply by hundreds.
+In practice you'll find multiplying by hundreds.
+Multiply the digit, add two zeros!

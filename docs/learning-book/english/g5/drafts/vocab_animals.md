@@ -1,4 +1,4 @@
-# חיות — Past Simple
+# Animals — Past Simple
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | חיות — Past Simple |
+| **title_english** | Animals — Past Simple |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** The elephant walked slowly — פועל בעבר
+**Content scope:** The elephant walked slowly — a past-tense verb
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חיות עם Past Simple — פעולה שהסתיימה.
-The elephant walked slowly — הפיל הלך לאט (אתמול).
+Today we will learn about animals with Past Simple — an action that already finished.
+The elephant walked slowly — yesterday.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Past Simple — פועל בעבר:
+Past Simple — a past-tense verb:
 
 The elephant walked slowly.
-
-הפיל הלך לאט.
 
 The lion ran fast.
 
-האריה רץ מהר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-פיל גדול בג'ונגל.
+A big elephant in the jungle.
 
 The elephant walked slowly.
 
-הפיל הלך לאט.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הפיל הלך לאט"?
+Question: How do you say this?
 
 The elephant walked slowly
 
-תשובה: The elephant walked slowly
+Answer: The elephant walked slowly
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-דולפין קופץ מהמים.
+A dolphin jumping out of the water.
 
 The dolphin jumped high.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הדולפין קפץ גבוה."
+Exercise: "The dolphin jumped high."
 
-פועל סדיר בעבר: jump הופך ל-jumped.
+A regular verb in the past: jump becomes jumped.
 
-high = גבוה (תואר פועל).
+"High" is an adverb.
 
-הדולפין קפץ גבוה.
-
- The dolphin jumped high.
+So the full sentence is: The dolphin jumped high.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים חיות ב-Past Simple.
-בתרגול תמצאו The elephant walked slowly.
+Now you will describe animals using Past Simple.
+In the practice, you'll find: The elephant walked slowly.

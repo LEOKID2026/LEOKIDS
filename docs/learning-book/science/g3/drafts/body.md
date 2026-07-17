@@ -1,4 +1,4 @@
-# גוף האדם — מערכות בסיסיות
+# The Human Body — Basic Systems
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | גוף האדם — מערכות בסיסיות `[DRAFT — not owner-approved]` |
+| **title_english** | The Human Body — Basic Systems `[DRAFT — not owner-approved]` |
 
-**Content scope:** שלד, שרירים; עיכול כמזון→אנרגיה — ללא פירוט מערכות מתקדם
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על מערכות בגוף האדם — שלד, שרירים ועיכול.
-נראה איך חלקים שונים עובדים יחד.
+**Content scope:** Skeleton, muscles; digestion as food → energy — no advanced system detail
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-השלד הוא מבנה העצמות שתומך בגוף ומגן על איברים חשובים.
-השרירים מחוברים לעצמות ומאפשרים תנועה — הליכה, ריצה, כתיבה.
-מערכת העיכול מפרקת מזון לחלקים קטנים.
-הגוף משתמש במזון כדי לקבל אנרגיה לפעילות.
-אפשר לחשוב על השלד כמו מסגרת שתומכת בגוף, ועל השרירים כחלקים שעוזרים לנו לזוז.
-המזון נותן לגוף אנרגיה לפעילות.
+Today in science we will learn about systems in the human body — skeleton, muscles, and digestion.
+We will see how different parts work together.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נועה אוכלת ארוחת בוקר.
-המזון עובר בפה, בוושט, בקיבה ובמעיים.
-הגוף סופג חומרים מזינים ומשתמש בהם כדי לקבל אנרגיה.
-במקביל השרירים בידיים עוזרים לה להחזיק כוס — השלד והשרירים עובדים יחד.
-
----
-
-## 4. בואו נפתור
-
-מה תפקיד השלד בגוף?
-השלד בנוי מעצמות.
-העצמות נותנות תמיכה ומגנות על איברים.
-תמיכה והגנה על הגוף
+The skeleton is the structure of bones that supports the body and protects important organs.
+Muscles are connected to bones and allow movement — walking, running, writing.
+The digestive system breaks food into small parts.
+The body uses food to get energy for activity.
+You can think of the skeleton like a frame that supports the body, and muscles as parts that help us move.
+Food gives the body energy for activity.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-כופפו מרפק — השרירים בזרוע מתכווצים.
-העצם בזרוע נשארת ישרה — השלד מחזיק את הצורה.
-אילו שני חלקים עובדים כאן — שלד או שרירים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-כשכופפים מרפק, שני חלקים עובדים יחד:
-השריר בזרוע מתכווץ ומושך את העצם כלפי מעלה.
-העצמות (שלד) מספקות את המסגרת והתמיכה לתנועה.
-שלד ושרירים — שניהם עובדים יחד.
-שלד נותן תמיכה ומסגרת. שרירים יוצרים תנועה. יחד הם מאפשרים כל פעולה גופנית.
+Noa eats breakfast.
+The food passes through the mouth, esophagus, stomach, and intestines.
+The body absorbs nutrients and uses them to get energy.
+At the same time the muscles in her hands help her hold a cup — skeleton and muscles work together.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים שלד, שרירים ועיכול במדעים.
-בתרגול חפשו שאלות על תפקידי מערכות בגוף.
+What is the role of the skeleton in the body?
+The skeleton is made of bones.
+Bones give support and protect organs.
+Support and protection for the body
+
+---
+
+## 5. Try it yourself
+
+Bend your elbow — the muscles in your arm contract.
+The bone in your arm stays straight — the skeleton holds the shape.
+Which two parts are working here — skeleton or muscles?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+When you bend your elbow, two parts work together:
+The muscle in the arm contracts and pulls the bone upward.
+The bones (skeleton) provide the frame and support for movement.
+Skeleton and muscles — both work together.
+The skeleton gives support and structure. Muscles create movement. Together they allow every physical action.
+
+---
+
+## 7. Let's practice!
+
+Now you know about skeleton, muscles, and digestion in science.
+When you practice, look for questions about the roles of body systems.

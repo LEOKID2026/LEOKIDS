@@ -1,4 +1,4 @@
-# מספר מעורב לשבר
+# Mixed Number to Improper Fraction
 
 ## Metadata
 
@@ -11,39 +11,39 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מספר מעורב לשבר `[DRAFT — not owner-approved]` |
+| **title_english** | Mixed Number to Improper Fraction |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שבר לא נכון
+**Content scope:** Improper fraction
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להמיר מספר מעורב לשבר לא נכון.
-זה עוזר בחישובים עם שברים.
+Today we'll learn to change a mixed number to an improper fraction.
+This helps when you work with fractions in calculations.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מספר מעורב = שלם + שבר
-2 1/3 → שבר לא נכון:
+Mixed number = whole + fraction
+2 1/3 → improper fraction:
 1.
-מכפילים שלם במכנה: 2 × 3 = 6
+Multiply the whole by the denominator: 2 × 3 = 6
 2.
-מוסיפים מונה: 6 + 1 = 7
+Add the numerator: 6 + 1 = 7
 3.
-מכנה נשאר: 7/3
+Denominator stays the same: 7/3
 2 1/3 = 7/3
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 3 2/5:
 3 × 5 + 2 = 17
@@ -51,35 +51,35 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-המירו 2 1/3 לשבר
+Change 2 1/3 to a fraction
 2 × 3 = 6
 6 + 1 = 7
 7/3
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-המירו 4 1/3 לשבר לא נכון.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Change 4 1/3 to an improper fraction.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-המירו 4 1/3 לשבר לא נכון.
-שלם × מכנה: 4 × 3 = 12
-מוסיפים מונה: 12 + 1 = 13
-מכנה נשאר: 3
+Change 4 1/3 to an improper fraction.
+Whole × denominator: 4 × 3 = 12
+Add the numerator: 12 + 1 = 13
+Denominator stays: 3
 4 1/3 = 13/3
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להמיר מספר מעורב לשבר.
-בתרגול תמצאו המרות.
-כפלו שלם במכנה והוסיפו מונה!
+Now you know how to change a mixed number to a fraction.
+In practice you'll find conversions.
+Multiply the whole by the denominator and add the numerator!

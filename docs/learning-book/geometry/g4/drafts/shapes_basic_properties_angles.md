@@ -1,4 +1,4 @@
-﻿# זוויות ישרות במרובע
+# Right Angles in a Quadrilateral
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוויות ישרות במרובע `[DRAFT — not owner-approved]` |
+| **title_english** | Right Angles in a Quadrilateral `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** 4 זוויות ישרות; 90°; g4-only
+**Content scope:** 4 right angles; 90°; g4-only
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נעמיק בגאומטריה בזוויות בריבוע.
-נלמד שבריבוע יש 4 זוויות ישרות — כל אחת 90°.
+Today in geometry we will go deeper into angles in a square.
+We will learn that a square has 4 right angles — each one is 90°.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: right_angle
 :::
 
-זווית ישרה = זווית של 90° — כמו פינת חדר.
-בריבוע:
-כל 4 הפינות הן זוויות ישרות.
-סכום הזוויות בריבוע: 4 × 90° = 360°
-במלבן גם יש 4 זוויות ישרות — אבל בריבוע גם כל הצלעות שוות.
+A right angle = an angle of 90° — like the corner of a room.
+In a square:
+All 4 corners are right angles.
+Sum of angles in a square: 4 × 90° = 360°
+A rectangle also has 4 right angles — but in a square all the sides are equal too.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע על דף:
-- פינה עליונה שמאל: 90°
-- פינה עליונה ימין: 90°
-- פינה תחתונה ימין: 90°
-- פינה תחתונה שמאל: 90°
-4 זוויות ישרות — כולן 90°.
-
----
-
-## 4. בואו נפתור
-
-כמה זוויות ישרות יש בריבוע, ומה גודל כל אחת?
-לכל מרובע יש 4 פינות.
-בריבוע כל פינה היא 90°.
-4 זוויות ישרות, כל אחת 90°
+A square on a page:
+- Top-left corner: 90°
+- Top-right corner: 90°
+- Bottom-right corner: 90°
+- Bottom-left corner: 90°
+4 right angles — all are 90°.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-ריבוע עם 4 פינות — מה סכום כל הזוויות שלו?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+How many right angles does a square have, and what is the size of each one?
+Every quadrilateral has 4 corners.
+In a square every corner is 90°.
+4 right angles, each 90°
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-ריבוע עם 4 פינות — מה סכום כל הזוויות שלו?
-בריבוע כל פינה היא זווית ישרה:
+A square with 4 corners — what is the sum of all its angles?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A square with 4 corners — what is the sum of all its angles?
+In a square every corner is a right angle:
 ∠ = 90°
-יש 4 פינות — מחברים את כולן:
+There are 4 corners — add them all:
 4 × 90° = 360°
-סכום הזוויות = 360°
+Sum of angles = 360°
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לזהות זוויות ישרות בריבוע בגאומטריה.
-בתרגול תמצאו ריבוע — ספרו 4 זוויות של 90°!
+Now you know how to identify right angles in a square in geometry.
+In practice you will find a square — count 4 angles of 90°!

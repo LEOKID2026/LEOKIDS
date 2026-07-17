@@ -1,4 +1,4 @@
-﻿# שטח טרפז
+# Area of a Trapezoid
 
 ## Metadata
 
@@ -11,82 +11,82 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח טרפז `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Trapezoid |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שטח = (בסיס1 + בסיס2) × גובה ÷ 2; 6, 10, 4 ס״מ
+**Content scope:** area = (base1 + base2) × height ÷ 2; 6, 10, 4 cm
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שטח טרפז — למשל חלקת גינה בצורת טרפז.
-שטח = (בסיס1 + בסיס2) × גובה ÷ 2.
-הבסיסים — שתי הצלעות המקבילות.
+Today we'll learn the area of a trapezoid — for example a garden plot shaped like a trapezoid.
+Area = (base1 + base2) × height ÷ 2.
+The bases — the two parallel sides.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: trapezoid_area
 :::
 
-שלבים:
+Steps:
 1.
-מחברים את שני הבסיסים (הצלעות המקבילות)
+Add the two bases (the parallel sides)
 2.
-מכפילים בגובה — המרחק מאונך בין הבסיסים
-3. מחלקים ב-2
-רעיון: "ממוצע" של שני הבסיסים × גובה.
+Multiply by the height — the perpendicular distance between the bases
+3. Divide by 2
+Idea: "average" of the two bases × height.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-טרפז בגינה: בסיסים 6 ס״מ ו-10 ס״מ, גובה 4 ס״מ:
-- (6 + 10) = 16 — ממוצע הבסיסים לפני ÷2
+Garden trapezoid: bases 6 cm and 10 cm, height 4 cm:
+- (6 + 10) = 16 — average of the bases before ÷2
 - 16 × 4 = 64
-- 64 ÷ 2 = 32 סמ״ר
+- 64 ÷ 2 = 32 cm²
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-טרפז — בסיסים 6 ס״מ ו-10 ס״מ, גובה 4 ס״מ. מה השטח?
+Trapezoid — bases 6 cm and 10 cm, height 4 cm. What is the area?
 6 + 10 = 16
 16 × 4 = 64
 64 ÷ 2 = 32
-32 סמ״ר.
+32 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-טרפז: בסיסים 4 ס״מ ו-8 ס״מ, גובה 6 ס״מ — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Trapezoid: bases 4 cm and 8 cm, height 6 cm — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-טרפז: בסיסים 4 ס״מ ו-8 ס״מ, גובה 6 ס״מ — מה השטח?
-חיבור הבסיסים:
+Trapezoid: bases 4 cm and 8 cm, height 6 cm — what is the area?
+Add the bases:
 4 + 8 = 12
-הכפלה בגובה:
+Multiply by the height:
 12 × 6 = 72
-חלוקה ב-2:
+Divide by 2:
 72 ÷ 2 = 36
-שטח = 36 סמ״ר
+Area = 36 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח טרפז = ממוצע הבסיסים × גובה.
-בתרגול תמצאו שטחי טרפזים — חברו בסיסים, כפלו בגובה, וחלקו ב-2!
+Area of a trapezoid = average of the bases × height.
+In practice you'll find trapezoid areas — add bases, multiply by height, and divide by 2!

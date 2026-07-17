@@ -1,4 +1,4 @@
-# קנה מידה — מציאת מרחק
+# Scale — Finding a Distance
 
 ## Metadata
 
@@ -11,65 +11,65 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | קנה מידה — מציאת מרחק `[DRAFT — not owner-approved]` |
+| **title_english** | Scale — Finding a Distance |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** 1:50,000 ודומיו
+**Content scope:** 1:50,000 and similar scales
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד קנה מידה — יחס בין מפה למציאות.
-1:50,000 = 1 ס״מ במפה = 50,000 ס״מ באמת.
-
----
-
-## 2. הסבר
-
-1:50,000 → 1 ס״מ = 500 מ' (50,000 ס״מ = 500 מ').
-3 ס״מ במפה = 3 × 500 מ' = 1,500 מ'
+Today we will learn about scale — the ratio between a map and real life.
+1:50,000 = 1 cm on the map = 50,000 cm in real life.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-1:25,000 → 1 ס״מ = 250 מ'
-
----
-
-## 4. בואו נפתור
-
-קנה מידה 1:50,000. 2 ס״מ במפה = ? במציאות.
-1 ס״מ = 500 מ'.
-2 × 500 = 1,000 מ' (1 ק״מ).
-1,000 מ'.
+1:50,000 → 1 cm = 500 m (50,000 cm = 500 m).
+3 cm on the map = 3 × 500 m = 1,500 m
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-קנה מידה 1:50,000 — 5 ס״מ במפה = ? במציאות.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+1:25,000 → 1 cm = 250 m
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-קנה מידה 1:50,000 — 5 ס״מ במפה
-1:50,000 → 1 ס״מ = 50,000 ס״מ = 500 מ'.
-5 ס״מ = 5 × 500 = 2,500 מ'.
-2,500 מ' = 2.5 ק״מ.
-התשובה: 2,500 מ' (2.5 ק״מ)
+Scale 1:50,000. 2 cm on the map = ? in real life.
+1 cm = 500 m.
+2 × 500 = 1,000 m (1 km).
+1,000 m.
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-קנה מידה מחבר מפות למרחקים.
-בתרגול תמצאו קנה מידה — המירו יחידות בזהירות!
+Scale 1:50,000 — 5 cm on the map = ? in real life.
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+Scale 1:50,000 — 5 cm on the map
+1:50,000 → 1 cm = 50,000 cm = 500 m.
+5 cm = 5 × 500 = 2,500 m.
+2,500 m = 2.5 km.
+The answer: 2,500 m (2.5 km)
+
+---
+
+## 7. Let's practice!
+
+Scale connects maps to distances.
+In practice you will find scale problems — convert units carefully!

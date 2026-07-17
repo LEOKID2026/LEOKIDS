@@ -1,4 +1,4 @@
-# המחלק המשותף הגדול ביותר (מ.א.ח)
+# Greatest Common Factor (GCF)
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | המחלק המשותף הגדול ביותר (מ.א.ח) `[DRAFT — not owner-approved]` |
+| **title_english** | Greatest Common Factor (GCF) |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** המחלק המשותף הגדול ביותר (מ.א.ח) של שני מספרים
+**Content scope:** Greatest common factor (GCF) of two numbers
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד למצוא את המחלק המשותף הגדול ביותר (מ.א.ח) של שני מספרים.
-זה הגורם המשותף הכי גדול.
-
----
-
-## 2. הסבר
-
-המחלק המשותף הגדול ביותר (מ.א.ח) של 30 ו-45:
-גורמים של 30: 1, 2, 3, 5, 6, 10, 15, 30
-גורמים של 45: 1, 3, 5, 9, 15, 45
-גורמים משותפים: 1, 3, 5, 15
-הגדול: 15
-מ.א.ח(30, 45) = 15
+Today we'll learn to find the greatest common factor (GCF) of two numbers.
+It's the largest factor they share.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-המחלק המשותף הגדול ביותר (מ.א.ח) של 24 ו-36 הוא 12.
+GCF of 30 and 45:
+Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30
+Factors of 45: 1, 3, 5, 9, 15, 45
+Common factors: 1, 3, 5, 15
+Largest: 15
+GCF(30, 45) = 15
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-מצאו את המחלק המשותף הגדול ביותר (מ.א.ח) של 30 ו-45
-גורמים משותפים: 1, 3, 5, 15
-הגדול: 15
+The GCF of 24 and 36 is 12.
+
+---
+
+## 4. Let's solve together
+
+Find the GCF of 30 and 45
+Common factors: 1, 3, 5, 15
+Largest: 15
 15
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מצאו את מ.א.ח של 40 ו-60.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מצאו את מ.א.ח של 40 ו-60.
-גורמים של 40: 1, 2, 4, 5, 8, 10, 20, 40
-גורמים של 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60
-גורמים משותפים: 1, 2, 4, 5, 10, 20
-הגדול: 20
-מ.א.ח(40, 60) = 20
+Find the GCF of 40 and 60.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים למצוא את המחלק המשותף הגדול ביותר (מ.א.ח).
-בתרגול תמצאו מה מ.א.ח? — חפשו גורמים משותפים!
+Find the GCF of 40 and 60.
+Factors of 40: 1, 2, 4, 5, 8, 10, 20, 40
+Factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60
+Common factors: 1, 2, 4, 5, 10, 20
+Largest: 20
+GCF(40, 60) = 20
+
+---
+
+## 7. Let's practice!
+
+Now you know how to find the greatest common factor (GCF).
+In practice you'll find what is the GCF? — look for common factors!

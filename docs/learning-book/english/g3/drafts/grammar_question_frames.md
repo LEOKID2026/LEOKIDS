@@ -1,4 +1,4 @@
-# שאלות — חיזוק כיתה ג׳
+# Questions — Grade 3 Practice
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | שאלות — חיזוק כיתה ג׳ |
+| **title_english** | Questions — Grade 3 Practice |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** Do you…? / What is…? — חזרה עם Present Simple
+**Content scope:** Do you…? / What is…? — review with Present Simple
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק שאלות באנגלית.
-Do you like music? — האם אתה אוהב מוזיקה?
+Today we will strengthen questions in English.
+Do you like music?
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שאלות עם Do:
+Questions with Do:
 
 Do you like music?
 
-האם אתה אוהב מוזיקה?
+Do you like music?
 
 What is your name?
 
-מה שמך?
+What is your name?
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד שואל על מוזיקה.
+A child asking about music.
 
 Do you like music?
 
-האם אתה אוהב מוזיקה?
+Do you like music?
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך שואלים "האם אתה אוהב מוזיקה"?
+Question: how do we ask "do you like music"?
 
 Do you like music?
 
-תשובה: Do you like music?
+Answer: Do you like music?
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חבר שואל אם אתה אוהב ספרים.
+A friend asks if you like books.
 
 Do you like books?
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: חבר שואל אם אתה אוהב ספרים.
+Exercise: a friend asks if you like books.
 
-הפתרון:
+The solution:
 
 Do you like books?
 
-האם אתה אוהב ספרים?
+Do you like books?
 
-כל הכבוד! שאלת Do you — Do בתחילה, אחריו you + פועל בסיסי ללא s.
+Well done! A Do you question — Do at the start, followed by you + the basic verb, without s.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם שואלים שאלות עם Do.
-בתרגול תמצאו Do you like music? ו-What is…?
+Now you ask questions with Do.
+In practice, you'll find Do you like music? and What is…?

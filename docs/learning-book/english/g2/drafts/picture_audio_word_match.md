@@ -1,4 +1,4 @@
-# תמונה, שמע ומילה
+# Picture, Sound, and Word
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | תמונה, שמע ומילה |
+| **title_english** | Picture, Sound, and Word |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,57 +20,57 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום מחברים שלושה דברים: שומעים מילה, רואים תמונה, רואים את המילה בכתב.
-סיכום של מה שלמדנו ביסודות.
-
----
-
-## 2. הסבר
-
-שומעים: "cat"
-תמונה:
-חתול
-כתוב: cat
-שלושתם — אותו דבר.
+Today we connect three things: hearing a word, seeing a picture, and seeing the word written.
+A summary of what we've learned so far.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-sun — שומעים את הצלילים לאט: s, u, n. המילה היא sun, תמונה של שמש.
-book — ספר — book.
-
----
-
-## 4. בואו נפתור
-
-שומעים "pen" — איזו תמונה? איזו מילה?
-pen פירושו עט.
-בוחרים תמונה של עט ואת המילה pen.
-כך מחברים בין המילה לבין התמונה.
+We hear: "cat"
+Picture:
+a cat
+Written: cat
+All three — the same thing.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-שומעים "friend" — מה המילה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: שומעים "friend" — מה המילה?
-מכירים את המילה friend.
-friend פירושה חבר או חברה.
-התשובה היא friend.
+sun — we hear the sounds slowly: s, u, n. The word is sun, a picture of the sun.
+book — a book.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו מחברים שמע, תמונה ומילה.
-בעמוד הבא — משפטים קצרים — חשיפה בלבד.
+We hear "pen" — which picture? Which word?
+pen means a pen.
+We choose a picture of a pen and the word pen.
+This is how we connect the word to the picture.
+
+---
+
+## 5. Try it yourself
+
+We hear "friend" — what is the word?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: we hear "friend" — what is the word?
+We know the word friend.
+Friend means a friend.
+The answer is friend.
+
+---
+
+## 7. Let's practice!
+
+Now you connect sound, picture, and word.
+On the next page — short sentences, just for exposure.

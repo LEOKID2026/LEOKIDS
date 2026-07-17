@@ -1,4 +1,4 @@
-﻿# חיסור של שני מספרים — עד 100
+# Subtracting Two Numbers — Up to 100
 
 ## Metadata
 
@@ -11,85 +11,82 @@
 | **age_band** | grades_1_2 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור של שני מספרים — עד 100 `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Two Numbers — Up to 100 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור בשורה / בראש עד 100. פירוק לעשרות ואחדות. ללא חיסור במאונך, ללא השאלה כנושא מרכזי.
+**Content scope:** Subtraction in a row / mentally up to 100. Break apart into tens and ones. No vertical subtraction, no borrowing as main topic.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר שני מספרים עד 100 — בשורה, בראש או בכתב.
-נפרק כל מספר לעשרות ואחדות כדי שיהיה קל יותר.
-
----
-
-## 2. הסבר
-
-כשמחסרים שני מספרים, אפשר לחשוב כך:
-1.
-מחסרים עשרות מעשרות
-2.
-מחסרים אחדות מאחדות
-3.
-מחברים את התוצאות
-דוגמה: 68 − 24
-- עשרות: 60 − 20 = 40
-- אחדות: 8 − 4 = 4
-- סה״כ: 40 + 4 = 44
-חשוב: בדף הזה מחסרים בשורה. חיסור במאונך נלמד בדף נפרד.
+Today we're going to learn to subtract two numbers up to 100 — in a row, in your head, or in writing.
+We'll break each number into tens and ones to make it easier.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-68 − 24 — פירוק לעשרות ואחדות:
+When subtracting two numbers, you can think like this:
+1. Subtract tens from tens
+2. Subtract ones from ones
+3. Add the results together
+Example: 68 − 24
+- Tens: 60 − 20 = 40
+- Ones: 8 − 4 = 4
+- Total: 40 + 4 = 44
+Important: on this page we subtract in a row. Vertical subtraction is learned on a separate page.
+
+---
+
+## 3. Visual / concrete example
+
+68 − 24 — break into tens and ones:
 68 − 24 = 44
-אפשר גם לחשוב: 68 − 20 = 48, ואז 48 − 4 = 44.
+You can also think: 68 − 20 = 48, then 48 − 4 = 44.
 60 + 8 = 68
 20 + 4 = 24
-עשרות: 60 − 20 = 40
-אחדות: 8 − 4 = 4
+Tens: 60 − 20 = 40
+Ones: 8 − 4 = 4
 40 + 4 = 44
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 68 − 24 = ?
-מפרקים — 60 + 8 = 68, ו-20 + 4 = 24.
-מחסרים עשרות: 60 − 20 = 40
-מחסרים אחדות: 8 − 4 = 4
+Calculate: 68 − 24 = ?
+Break apart — 60 + 8 = 68, and 20 + 4 = 24.
+Subtract tens: 60 − 20 = 40
+Subtract ones: 8 − 4 = 4
 40 + 4 = 44
 68 − 24 = 44
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 75 − 33 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 75 − 33 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 75 − 33 = ?
-שלב 1 — עשרות: 70 − 30 = 40
-שלב 2 — אחדות: 5 − 3 = 2
-שלב 3 — חיבור: 40 + 2 = 42
+Calculate: 75 − 33 = ?
+Step 1 — tens: 70 − 30 = 40
+Step 2 — ones: 5 − 3 = 2
+Step 3 — add: 40 + 2 = 42
 75 − 33 = 42
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר שני מספרים עד 100 — בשורה.
-בתרגול תמצאו חיסורים עד 100.
-פרקו לעשרות ואחדות!
+Now you know how to subtract two numbers up to 100 — in a row.
+In practice you'll find subtractions up to 100.
+Break apart into tens and ones!

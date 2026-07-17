@@ -1,4 +1,4 @@
-﻿# סיווג מרובעים — כיתה ה׳
+# Classifying Quadrilaterals — Grade 5
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סיווג מרובעים — כיתה ה׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Classifying Quadrilaterals — Grade 5 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקבילית, טרפז, מלבן, ריבוע; קשרי הכלה
+**Content scope:** parallelogram, trapezoid, rectangle, square; inclusion relationships
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נסווג מרובעים — מקבילית, טרפז, מלבן, ריבוע.
-כאן — קשרי הכלה: מי "יושב בתוך" מי?
+Today we'll classify quadrilaterals — parallelogram, trapezoid, rectangle, square.
+Here — inclusion relationships: which shape "fits inside" which?
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: quadrilateral_parts
 :::
 
-מקבילית ← מלבן ← ריבוע (שרשרת הכלה)
-טרפז — נפרד: רק זוג אחד מקביל (לא 2 זוגות).
-מקבילית — 2 זוגות מקבילים.
-טרפז — 1 זוג (בסיסים).
-מלבן — 2 זוגות + 90°.
-ריבוע — 2 זוגות + צלעות שוות.
+Parallelogram ← rectangle ← square (inclusion chain)
+Trapezoid — separate: only one pair parallel (not 2 pairs).
+Parallelogram — 2 pairs of parallel sides.
+Trapezoid — 1 pair (the bases).
+Rectangle — 2 pairs + 90°.
+Square — 2 pairs + equal sides.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-גג בית — צורת טרפז: בסיסים מקבילים, צלעות צד לא מקבילות.
-→ טרפז — לא מקבילית (רק זוג אחד).
-מגרש משחק — מקבילית "נטויה": 2 זוגות מקבילים.
-
----
-
-## 4. בואו נפתור
-
-מרובע עם בסיסים מקבילים בלבד — טרפז או מקבילית?
-רק זוג אחד מקביל → טרפז.
-טרפז
+A house roof — trapezoid shape: parallel bases, non-parallel side edges.
+→ Trapezoid — not a parallelogram (only one pair).
+A playground — a "tilted" parallelogram: 2 pairs of parallel sides.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-מרובע PQRS — PQ ∥ SR בלבד. טרפז או מקבילית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מרובע PQRS — PQ ∥ SR בלבד.
-טרפז או מקבילית?
-ספרו זוגות מקבילים:
-רק זוג אחד — PQ ∥ SR.
-זוג אחד מקביל → טרפז
-(מקבילית = 2 זוגות; כאן רק 1.)
-טרפז
+A quadrilateral with only parallel bases — trapezoid or parallelogram?
+Only one parallel pair → trapezoid.
+Trapezoid
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-סיווג מרובעים — בסיס לשטח וגובה.
-בתרגול תמצאו מקבילית וטרפז — כמה זוגות מקבילים?
+Quadrilateral PQRS — only PQ ∥ SR. Trapezoid or parallelogram?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Quadrilateral PQRS — only PQ ∥ SR.
+Trapezoid or parallelogram?
+Count parallel pairs:
+Only one pair — PQ ∥ SR.
+One parallel pair → trapezoid
+(A parallelogram = 2 pairs; here only 1.)
+Trapezoid
+
+---
+
+## 7. Let's practice!
+
+Classifying quadrilaterals — a foundation for area and height.
+In practice you'll find parallelograms and trapezoids — how many parallel pairs?

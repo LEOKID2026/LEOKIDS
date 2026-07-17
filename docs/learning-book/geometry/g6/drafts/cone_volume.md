@@ -1,4 +1,4 @@
-﻿# נפח חרוט
+# Volume of a Cone
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח חרוט `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Cone `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,60 +22,60 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח חרוט בגאומטריה.
-נפח = (1/3) × π ×r² × h.
-חרוט — כמו גליל אבל עם קדקוד.
+Today we will learn volume of a cone in geometry.
+Volume = (1/3) × π × r² × h.
+A cone — like a cylinder but with an apex.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים:
+Steps:
 1.
-שטח בסיס = π ×r²
+Base area = π × r²
 2.
-נפח = (1/3) × שטח בסיס × גובה
+Volume = (1/3) × base area × height
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-רדיוס 3 ס״מ, גובה 9 ס״מ:
+Radius 3 cm, height 9 cm:
 3.14 × 9 = 28.26
-(1/3) × 28.26 × 9 = 84.78 (ס״מ³)
+(1/3) × 28.26 × 9 = 84.78 (cm³)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חרוט — רדיוס 3 ס״מ, גובה 9 ס״מ (π = 3.14) נפח?
+Cone — radius 3 cm, height 9 cm (π = 3.14). Volume?
 3.14 × 9 = 28.26
 28.26 × 9 = 254.34; ÷3 = 84.78
-84.78 ס״מ³.
+84.78 cm³.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חרוט: רדיוס 5 ס״מ, גובה 6 ס״מ (π = 3.14)— מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Cone: radius 5 cm, height 6 cm (π = 3.14) — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-חרוט — רדיוס 5 ס״מ, גובה 6 ס״מ (π = 3.14)— מה הנפח?
+Cone — radius 5 cm, height 6 cm (π = 3.14) — what is the volume?
 r² = 5 × 5 = 25
 3.14 × 25 = 78.5
 78.5 × 6 = 471 ; 471 ÷ 3 = 157
-157 ס״מ³
+157 cm³
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נפח חרוט = (1/3) × π ×r² × h.
-בתרגול תמצאו חרוטים — אל תשכחו ÷3!
+Volume of a cone = (1/3) × π × r² × h.
+In practice you'll find cones — don't forget ÷3!

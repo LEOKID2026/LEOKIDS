@@ -1,4 +1,4 @@
-# סביבה — מערכות קטנות
+# Environment — Small Ecosystems
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | סביבה — מערכות קטנות `[DRAFT — not owner-approved]` |
+| **title_english** | Environment — Small Ecosystems `[DRAFT — not owner-approved]` |
 
-**Content scope:** שרשרת מזון מקומית; צמח → אוכל צמחים → טורף
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על מערכות קטנות בטבע — מי אוכל את מי.
-נכיר שרשרת מזון.
+**Content scope:** Local food chain; plant → herbivore → predator
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-בכל מקום בטבע יש יצורים שתלויים זה בזה.
-שרשרת מזון מראה מי נאכל על ידי מי, וכך אנרגיה עוברת בין יצורים:
-- צמח — מייצר מזון בעזרת אור
-- ארנב — אוכל צמחים
-- נמר — אוכל ארנב
-בשרשרת מזון אומרים:
-צמח נאכל על ידי אוכל צמחים, ואוכל הצמחים נאכל על ידי טורף.
-אם נעלם צמח — פחות מזון לבעלי חיים.
-אם נעלם טורף — אוכלי הצמחים עלולים להתרבות יותר מדי.
+Today in science we will learn about small ecosystems in nature — who eats whom.
+We will learn about food chains.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-באגם קטן:
-אצות נאכלות על ידי דג קטן, והדג הקטן נאכל על ידי שלדג.
-שינוי אחד — פחות אצות — משפיע על כל השרשרת.
-
----
-
-## 4. בואו נפתור
-
-מי בדרך כלל נמצא ראשון בשרשרת מזון?
-צריך מקור מזון.
-צמחים מייצרים מזון בעזרת אור.
-צמח
+In every place in nature there are living things that depend on each other.
+A food chain shows who is eaten by whom, and how energy passes between living things:
+- Plant — makes food with light
+- Rabbit — eats plants
+- Tiger — eats rabbits
+In a food chain we say:
+A plant is eaten by a herbivore, and the herbivore is eaten by a predator.
+If plants disappear — less food for animals.
+If predators disappear — herbivores may multiply too much.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-בנו שרשרת מזון מגינה:
-עשב, אחריו חיפושית, ואחריה ציפור.
-מי נותן מזון למי?
-איזה קישור בשרשרת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In a small pond:
+Algae are eaten by a small fish, and the small fish is eaten by a kingfisher.
+One change — fewer algae — affects the whole chain.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-בשרשרת שבה עשב נאכל על ידי חיפושית, והחיפושית נאכלת על ידי ציפור, המזון זורם כך:
-העשב מייצר מזון בעזרת אור — החיפושית אוכלת את העשב — הציפור ניזונה מהחיפושית.
-עשב נותן מזון לחיפושית; חיפושית נותנת מזון לציפור.
-בשרשרת המזון הפשוטה הזאת — צמח ראשון, אחריו אוכל צמחים ואז טורף.
+Who is usually first in a food chain?
+You need a food source.
+Plants make food with light.
+Plant
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים שרשרת מזון במדעים.
-בתרגול חפשו שאלות על מי אוכל את מי בטבע.
+Build a food chain from a garden:
+Grass, then a beetle, then a bird.
+Who gives food to whom?
+Which link in the chain?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+In a chain where grass is eaten by a beetle, and the beetle is eaten by a bird, food flows like this:
+Grass makes food with light — the beetle eats the grass — the bird feeds on the beetle.
+Grass gives food to the beetle; the beetle gives food to the bird.
+In this simple food chain — plant first, then herbivore, then predator.
+
+---
+
+## 7. Let's practice!
+
+Now you know about food chains in science.
+When you practice, look for questions about who eats whom in nature.

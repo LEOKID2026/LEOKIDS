@@ -11,85 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | Future — will / going to |
+| **title_english** | Future — will / going to |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:מודאליים_בסיסיים_future_will_going_to_והשוואתיים`
+**Linked skill_ids:** `english``
 
 **Content scope:** I will call you / We are going to visit
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד Future — will ו-going to.
-We are going to visit grandma — אנחנו הולכים לבקר את סבתא.
+Today we will learn the Future — will and going to.
+We are going to visit grandma.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-will עוזר לדבר על פעולה שתקרה בעתיד, למשל החלטה או הבטחה:
+will helps us talk about something that will happen in the future, like a decision or a promise:
 I will call you.
 
-אני אתקשר אליך.
-
-going to — תוכנית:
+going to — a plan:
 We are going to visit grandma.
-
-אנחנו הולכים לבקר את סבתא.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-סוף שבוע — ביקור אצל סבתא.
+The weekend — visiting grandma.
 
 We are going to visit grandma.
 
-אנחנו הולכים לבקר את סבתא.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אנחנו הולכים לבקר את סבתא"?
+Question: How do you say this?
 
 We are going to visit grandma
 
-תשובה: We are going to visit grandma
+Answer: We are going to visit grandma
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-תוכנית לחופשה — טסים לחו"ל.
+A holiday plan — flying abroad.
 
 They are going to fly abroad.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם הולכים לטוס לחו"ל (תוכנית)."
+Exercise: "They are going to fly abroad (a plan)."
 
-going to מראה תוכנית קרובה — משתמשים ב-are going to + פועל.
+going to shows a plan for the near future — we use are going to + verb.
 
-they הוא ריבוי — משתמשים ב-are going to fly.
+"They" is plural — we use are going to fly.
 
-הם הולכים לטוס לחו"ל.
-
- They are going to fly abroad.
+So the full sentence is: They are going to fly abroad.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בוחרים will או going to לעתיד.
-בתרגול תמצאו We are going to visit grandma.
+Now you will choose will or going to for the future.
+In the practice, you'll find: We are going to visit grandma.

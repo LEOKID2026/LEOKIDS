@@ -1,4 +1,4 @@
-# מספרים — עד 20
+# Numbers — Up to 20
 
 ## Metadata
 
@@ -11,70 +11,70 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מספרים — עד 20 |
+| **title_english** | Numbers — Up to 20 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** eleven–twenty; שימוש במשפט
+**Content scope:** eleven–twenty; using them in a sentence
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מספרים נוספים באנגלית — עד 20.
-נשתמש במספרים במשפט קצר.
+Today we will learn more numbers in English — up to 20.
+We'll use numbers in a short sentence.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מספרים 11–20:
+Numbers 11–20:
 eleven, twelve, thirteen, fourteen, fifteen
 sixteen, seventeen, eighteen, nineteen, twenty
-דוגמה:
+Example:
 I am seven.
-אני בן שבע.
+I am seven.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד בן שבע.
-באנגלית אומרים:
+A seven-year-old child.
+In English we say:
 I am seven.
-המילה seven פירושה שבע.
+The word seven means the number 7.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "אני בן שבע"?
+How do we say "I am seven"?
 I am seven
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד בן 12.
+A 12-year-old child.
 I am twelve
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: ילד בן 12 — באנגלית?
-המספר 12 באנגלית הוא twelve.
-אומרים: I am twelve.
-התשובה היא: I am twelve.
+The question: a 12-year-old child — in English?
+The number 12 in English is twelve.
+We say: I am twelve.
+The answer is: I am twelve.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים מספרים עד 20.
-בתרגול תמצאו seven, twelve ו-fifteen.
+Now you know numbers up to 20.
+In practice, you'll find seven, twelve, and fifteen.

@@ -1,4 +1,4 @@
-# ממפה למציאות
+# From Map to Real Life
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ממפה למציאות `[DRAFT — not owner-approved]` |
+| **title_english** | From Map to Real Life |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מרחק במפה → מרחק אמיתי
+**Content scope:** map distance → real distance
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד: מרחק במפה → מרחק אמיתי.
-4 ס״מ במפה, קנה מידה 1:25,000.
-
----
-
-## 2. הסבר
-
-1:25,000 → 1 ס״מ = 25,000 ס״מ = 250 מ'.
-4 ס״מ = 4 × 250 = 1,000 מ' = 1 ק״מ
+Today we will learn: map distance → real distance.
+4 cm on the map, scale 1:25,000.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-5 ס״מ, 1:20,000 → 5 × 200 = 1,000 מ'
-
----
-
-## 4. בואו נפתור
-
-4 ס״מ במפה, 1:25,000. מרחק אמיתי?
-1 ס״מ = 250 מ'.
-4 × 250 = 1,000 מ'.
-1,000 מ' (1 ק״מ).
+1:25,000 → 1 cm = 25,000 cm = 250 m.
+4 cm = 4 × 250 = 1,000 m = 1 km
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-6 ס״מ במפה, 1:25,000 — מה המרחק האמיתי?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+5 cm, 1:20,000 → 5 × 200 = 1,000 m
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-6 ס״מ במפה, 1:25,000
-1:25,000 → 1 ס״מ = 25,000 ס״מ = 250 מ'.
-6 ס״מ = 6 × 250 = 1,500 מ'.
-התשובה: 1,500 מ'
+4 cm on the map, 1:25,000. Real distance?
+1 cm = 250 m.
+4 × 250 = 1,000 m.
+1,000 m (1 km).
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-המרה ממפה למציאות = כפל.
-בתרגול תמצאו מפה→מציאות — חשבו קודם 1 ס״מ!
+6 cm on the map, 1:25,000 — what is the real distance?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+6 cm on the map, 1:25,000
+1:25,000 → 1 cm = 25,000 cm = 250 m.
+6 cm = 6 × 250 = 1,500 m.
+The answer: 1,500 m
+
+---
+
+## 7. Let's practice!
+
+Converting from map to real life = multiplication.
+In practice you will find map→real life — first figure out what 1 cm equals!

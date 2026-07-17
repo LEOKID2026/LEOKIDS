@@ -1,4 +1,4 @@
-# בעלי חיים — רבייה והתאמות
+# Animals — Reproduction and Adaptations
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | בעלי חיים — רבייה והתאמות `[DRAFT — not owner-approved]` |
+| **title_english** | Animals — Reproduction and Adaptations `[DRAFT — not owner-approved]` |
 
-**Content scope:** רבייה; תכונות מורשות — ללא נוסחאות גנטיות
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על רבייה של בעלי חיים — ועל תכונות שעוברות מדור לדור.
+**Content scope:** Reproduction; inherited traits — no genetics formulas
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-רבייה — יצירת דור חדש:
-- ביצים — דגים, ציפורים, זוחלים רבים
-- לידה חיה — יונקים רבים
-- התפתחות בשלבים — חרקים, למשל פרפר: ביצה, זחל, גולם ובוגר; דו חיים, למשל צפרדע: ביצה, ראשן ובוגר
-צאצא דומה להורה — עיניים, צבע, צורה.
-חלק מהתכונות מגיעות מהורים (תכונות מורשות).
-התאמות עוזרות לשרוד:
-צבע, גודל, צורת גוף.
-דוגמה: ארנב בצבע חום ביער — פחות בולט לטורף.
+Today in science we will learn about animal reproduction — and traits that pass from generation to generation.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-כלבלב גדל אצל משפחה — דומה לאמא ולאבא בצבע הפרווה ובגודל בערך.
-גור חתול — עיניים, זנב, התנהגות — שילוב מהורים.
-רבייה ותכונות מורשות עוזרות להמשך המין.
-
----
-
-## 4. בואו נפתור
-
-מה דומה בין גור כלב להוריו?
-תכונות מורשות — מה שהצאצאים מקבלים מההורים.
-צבע, גודל, צורה — לעיתים דומים.
-תכונות מורשות (למשל צבע פרווה)
+Reproduction — creating a new generation:
+- Eggs — fish, birds, many reptiles
+- Live birth — many mammals
+- Development in stages — insects, for example butterfly: egg, caterpillar, chrysalis, adult; amphibians, for example frog: egg, tadpole, adult
+Offspring are similar to their parents — eyes, color, shape.
+Some traits come from parents (inherited traits).
+Adaptations help survival:
+Color, size, body shape.
+Example: a brown rabbit in a forest — less visible to a predator.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-חשבו על פרפר וזחל — שלבים שונים במחזור החיים.
-תכונות כמו צבע הכנף מגיעות מהורים.
-מה משתנה בשלבים?
-מה נשאר אותו מין?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A puppy grows in a family — similar to mom and dad in fur color and roughly in size.
+A kitten — eyes, tail, behavior — a mix from parents.
+Reproduction and inherited traits help the species continue.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-השאלה: בפרפר וזחל — מה משתנה בשלבי החיים? ומה נשאר אותו מין?
-הסבר מדעי:
-פרפרים עוברים מחזור חיים בארבעה שלבים:
-ביצה, אחר כך זחל, אחר כך גולם, ולבסוף בוגר — פרפר.
-בכל שלב — הצורה, הגודל וההתנהגות משתנים מאוד.
-מה נשאר?
-המין נשאר פרפר.
-בתוך הגולם מתרחש שינוי מבני; הפרפר הבוגר נושא תכונות מורשות כמו צבע כנפיים שהגיעו מהוריו.
-משתנה — צורה, גודל והתנהגות בכל שלב. נשאר — המין ותכונות מורשות כמו צבע כנף.
+What is similar between a puppy and its parents?
+Inherited traits — what offspring receive from parents.
+Color, size, shape — sometimes similar.
+Inherited traits (for example fur color)
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מבינים רבייה ותכונות מורשות במדעים.
-בתרגול חפשו שאלות על דמיון בין הורים וצאצא.
+Think about a butterfly and caterpillar — different stages in the life cycle.
+Traits like wing color come from parents.
+What changes in the stages?
+What stays the same species?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: in a butterfly and caterpillar — what changes in the life stages? And what stays the same species?
+Scientific explanation:
+Butterflies go through a life cycle in four stages:
+Egg, then caterpillar, then chrysalis, and finally adult — butterfly.
+At each stage — shape, size, and behavior change a lot.
+What stays?
+The species remains butterfly.
+Inside the chrysalis a structural change happens; the adult butterfly carries inherited traits like wing color from its parents.
+Changes — shape, size, and behavior at each stage. Stays — species and inherited traits like wing color.
+
+---
+
+## 7. Let's practice!
+
+Now you understand reproduction and inherited traits in science.
+When you practice, look for questions about similarity between parents and offspring.

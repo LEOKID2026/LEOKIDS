@@ -1,4 +1,4 @@
-# גורמים של מספר
+# Factors of a Number
 
 ## Metadata
 
@@ -11,27 +11,27 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גורמים של מספר `[DRAFT — not owner-approved]` |
+| **title_english** | Factors of a Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מציאת כל הגורמים של מספר עד ~100. זוגות כפל. 1 והמספר עצמו תמיד גורמים. כפולות → `fm_multiple`. מ.א.ח → `fm_gcd`.
+**Content scope:** Finding all factors of a number up to ~100. Multiplication pairs. 1 and the number itself are always factors. Multiples → `fm_multiple`. GCF → `fm_gcd`.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד למצוא את הגורמים של מספר.
-גורם = מספר שמחלק את המספר בלי שארית.
+Today we'll learn to find the factors of a number.
+A factor = a number that divides evenly with no remainder.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-גורמים של 24:
+Factors of 24:
 24 ÷ 1 = 24
 24 ÷ 2 = 12
 24 ÷ 3 = 8
@@ -40,47 +40,47 @@
 24 ÷ 8 = 3
 24 ÷ 12 = 2
 24 ÷ 24 = 1
-גורמים של 24: 1, 2, 3, 4, 6, 8, 12, 24
-טיפ: חפשו זוגות כפל — 1×24, 2×12, 3×8, 4×6.
-1 והמספר עצמו — תמיד גורמים.
+Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24
+Tip: look for multiplication pairs — 1×24, 2×12, 3×8, 4×6.
+1 and the number itself — always factors.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-גורמים של 18
+Factors of 18
 18 = 1×18, 2×9, 3×6
-גורמים של 18: 1, 2, 3, 6, 9, 18
+Factors of 18: 1, 2, 3, 6, 9, 18
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מצאו את כל הגורמים של 30.
+Find all the factors of 30.
 30 = 1×30, 2×15, 3×10, 5×6
-רשימה: 1, 2, 3, 5, 6, 10, 15, 30.
+List: 1, 2, 3, 5, 6, 10, 15, 30.
 1, 2, 3, 5, 6, 10, 15, 30
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מצאו את כל הגורמים של 36.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Find all the factors of 36.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-מצאו את כל הגורמים של 36.
-חפשו זוגות כפל: 1×36, 2×18, 3×12, 4×9, 6×6.
-כל המספרים מהזוגות: 1, 2, 3, 4, 6, 9, 12, 18, 36.
+Find all the factors of 36.
+Look for multiplication pairs: 1×36, 2×18, 3×12, 4×9, 6×6.
+All the numbers from the pairs: 1, 2, 3, 4, 6, 9, 12, 18, 36.
 1, 2, 3, 4, 6, 9, 12, 18, 36
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא גורמים של מספר.
-בתרגול תמצאו מה הגורמים? — חפשו זוגות כפל!
+Now you know how to find the factors of a number.
+In practice you'll find what are the factors? — look for multiplication pairs!

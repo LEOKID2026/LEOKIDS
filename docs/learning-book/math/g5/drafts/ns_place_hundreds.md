@@ -1,4 +1,4 @@
-# ערך המקום — עד 100,000
+# Place Value — Up to 100,000
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ערך המקום — עד 100,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Place Value — Up to 100,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** עשרות אלפים, אלפים, מאות, עשרות, אחדות; עד 100,000
+**Content scope:** Ten-thousands, thousands, hundreds, tens, ones; up to 100,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בחשבון לקרוא מספרים גדולים עד 100,000 ולזהות מה כל ספרה אומרת לפי מיקומה.
-במספר חמש ספרות יש עשרות אלפים, אלפים, מאות, עשרות ואחדות.
+Today we'll learn to read large numbers up to 100,000 and figure out what each digit means by its place.
+In a five-digit number there are ten-thousands, thousands, hundreds, tens, and ones.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כל ספרה במספר יושבת במקום משלה:
-ספרת עשרות אלפים — כמה עשרות אלפים (10,000, 20,000, 30,000…)
-ספרת אלפים — כמה אלפים (1,000, 2,000, 3,000…)
-ספרת מאות — כמה מאות (100, 200, 300…)
-ספרת עשרות — כמה עשרות (10, 20, 30…)
-ספרת אחדות — כמה יחידות בודדות (1, 2, 3…)
+Each digit in a number sits in its own place:
+Ten-thousands digit — how many ten-thousands (10,000, 20,000, 30,000…)
+Thousands digit — how many thousands (1,000, 2,000, 3,000…)
+Hundreds digit — how many hundreds (100, 200, 300…)
+Tens digit — how many tens (10, 20, 30…)
+Ones digit — how many single units (1, 2, 3…)
 40,000 + 8,000 + 700 + 20 + 6 = 48,726
-חשוב:
-הספרה 4 ב-48,726 היא עשרות אלפים (40,000), לא 4 אחדות.
-כשכותבים מספר גדול, מוסיפים פסיקים: 48,726.
+Important:
+The 4 in 48,726 is in the ten-thousands place (40,000), not 4 ones.
+When you write a large number, use commas: 48,726.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-63,405 — פירוק לפי מיקום:
+63,405 — broken apart by place:
 60,000 + 3,000 + 400 + 0 + 5 = 63,405
-6 במקום עשרות אלפים → 60,000
-3 במקום אלפים → 3,000
-4 במקום מאות → 400
-0 במקום עשרות → 0
-5 במקום אחדות → 5
-63,405 = שישים ושלושה אלף ארבע מאות וחמש.
+6 in the ten-thousands place → 60,000
+3 in the thousands place → 3,000
+4 in the hundreds place → 400
+0 in the tens place → 0
+5 in the ones place → 5
+63,405 = sixty-three thousand four hundred five.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-במספר 48,726 — מה ערך ספרת האלפים?
-מזהים ספרות: 4 | 8 | 7 | 2 | 6
-ספרת האלפים היא 8.
-8 במקום אלפים = 8,000.
-ערך ספרת האלפים ב-48,726 הוא 8,000.
-
----
-
-## 5. נסו בעצמכם
-
-במספר 75,294 — כמה מאות יש?
-(מה ערך ספרת המאות?)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In the number 48,726 — what is the value of the thousands digit?
+Find the digits: 4 | 8 | 7 | 2 | 6
+The thousands digit is 8.
+8 in the thousands place = 8,000.
+The value of the thousands digit in 48,726 is 8,000.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-במספר 75,294 — מה ערך ספרת המאות?
-מזהים ספרות לפי מקום: 7 | 5 | 2 | 9 | 4
-ספרת המאות היא 2
-2 במקום מאות = 200
-ערך ספרת המאות ב-75,294 הוא 200
+In the number 75,294 — how many hundreds are there?
+(What is the value of the hundreds digit?)
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לפרק מספר עד 100,000 לפי ערך המקום.
-בתרגול תמצאו שאלות על ערך ספרה לפי מיקום.
-בדקו תמיד את המקום!
+In the number 75,294 — what is the value of the hundreds digit?
+Find the digits by place: 7 | 5 | 2 | 9 | 4
+The hundreds digit is 2
+2 in the hundreds place = 200
+The value of the hundreds digit in 75,294 is 200
+
+---
+
+## 7. Let's practice!
+
+Now you know how to break apart a number up to 100,000 by place value.
+In practice you'll find questions about the value of a digit by its place.
+Always check the place!

@@ -1,4 +1,4 @@
-# זוגות שמרכיבים 100
+# Pairs That Make 100
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגות שמרכיבים 100 `[DRAFT — not owner-approved]` |
+| **title_english** | Pairs That Make 100 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** השלמה ל-100. זוגות שסכומם 100. ללא complement ל-1,000.
+**Content scope:** Making 100. Pairs that add up to 100. No complement to 1,000.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד זוגות שמרכיבים 100 — שני מספרים שיחד נותנים 100.
-כשיודעים את הזוגות, קל למצוא מה חסר כדי להגיע ל-100.
+Today we will learn pairs that make 100 — two numbers that together give 100.
+When you know the pairs, it's easy to find what's missing to reach 100.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-זוג ל-100: שני מספרים שסכומם 100.
-זוגות מוכרים:
+A pair for 100: two numbers that add up to 100.
+Familiar pairs:
 20 + 80 = 100
 35 + 65 = 100
 45 + 55 = 100
 72 + 28 = 100
-משלימים ל-100: שואלים — כמה צריך להוסיף?
-63 + ? = 100 → הזוג: 63 ו-37 (כי 63 + 37 = 100)
-קשר: כמו זוגות ל-10 — רק עם 100.
+Making 100: ask — how much do we need to add?
+63 + ? = 100 → the pair: 63 and 37 (because 63 + 37 = 100)
+Connection: like pairs for 10 — but with 100.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 45 + ? = 100
 40 + 5 = 45
-מ-45 ל-100 חסרים 55
-בדיקה: 45 + 55 = 100
-הזוג: 45 ו-55 מרכיבים 100.
+From 45 to 100 we're missing 55
+Check: 45 + 55 = 100
+The pair: 45 and 55 make 100.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-72 + ? = 100 — מה המספר החסר?
-כמה חסר מ-72 ל-100?
+72 + ? = 100 — what is the missing number?
+How much is missing from 72 to 100?
 72 + 28 = 100
-בדיקה: 70 + 30 = 100, ו-2 + 8 = 10 → 100
-המספר החסר הוא 28.
+Check: 70 + 30 = 100, and 2 + 8 = 10 → 100
+The missing number is 28.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-78 + ? = 100 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-78 + ? = 100 — מה המספר החסר?
-כמה חסר מ-78 ל-100?
-78 + 2 = 80, ו-80 + 20 = 100 → 2 + 20 = 22
-בדיקה: 78 + 22 = 100
-המספר החסר הוא 22
+78 + ? = 100 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים למצוא מה חסר ל-100.
-בתרגול תמצאו השלמות ל-100.
-חפשו זוגות נוחים!
+78 + ? = 100 — what is the missing number?
+How much is missing from 78 to 100?
+78 + 2 = 80, and 80 + 20 = 100 → 2 + 20 = 22
+Check: 78 + 22 = 100
+The missing number is 22
+
+---
+
+## 7. Let's practice!
+
+Now you know how to find what's missing to reach 100.
+In practice you'll find complements to 100.
+Look for friendly pairs!

@@ -1,4 +1,4 @@
-﻿# היקף משולש
+# Perimeter of a Triangle
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף משולש `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Triangle |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** סכום שלוש צלעות; 5, 6, 7 ס״מ; 18 ס״מ
+**Content scope:** sum of three sides; 5, 6, 7 cm; 18 cm
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד היקף משולש — מסלול סביב שלוש הצלעות.
-משולש עם צלעות 5, 6, 7 ס״מ — היקף 18 ס״מ.
+Today we'll learn the perimeter of a triangle — the path around all three sides.
+A triangle with sides 5, 6, 7 cm — perimeter 18 cm.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: triangle_perimeter
 :::
 
-היקף = אורך כל המסלול סביב המשולש.
-5 + 6 = 11 (שתי צלעות)
-11 + 7 = 18 (הצלע השלישית)
-היקף = 5 + 6 + 7 = 18 ס״מ
+Perimeter = the length of the entire path around the triangle.
+5 + 6 = 11 (two sides)
+11 + 7 = 18 (the third side)
+Perimeter = 5 + 6 + 7 = 18 cm
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משולש שונה — צלעות 4, 8, 9 ס״מ:
-4 + 8 + 9 = 21 ס״מ
-המשולש שלנו: 5 + 6 + 7 = 18 ס״מ.
+Different triangle — sides 4, 8, 9 cm:
+4 + 8 + 9 = 21 cm
+Our triangle: 5 + 6 + 7 = 18 cm.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-משולש עם צלעות 5 ס״מ, 6 ס״מ, 7 ס״מ. מה ההיקף?
+Triangle with sides 5 cm, 6 cm, 7 cm. What is the perimeter?
 5 + 6 = 11
 11 + 7 = 18
-18 ס״מ.
+18 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משולש: צלעות 3 ס״מ, 7 ס״מ, 9 ס״מ — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Triangle: sides 3 cm, 7 cm, 9 cm — what is the perimeter?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-משולש: צלעות 3 ס״מ, 7 ס״מ, 9 ס״מ — מה ההיקף?
-חיבור שתי צלעות ראשונות:
+Triangle: sides 3 cm, 7 cm, 9 cm — what is the perimeter?
+Add the first two sides:
 3 + 7 = 10
-הוספת הצלע השלישית:
+Add the third side:
 10 + 9 = 19
-היקף = 19 ס״מ
+Perimeter = 19 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-היקף משולש = מסלול של 3 צלעות.
-בתרגול תמצאו היקפי משולשים — חברו את כולן!
+Perimeter of a triangle = the path of 3 sides.
+In practice you'll find triangle perimeters — add them all up!

@@ -140,9 +140,9 @@ export function resolveEnglishTopicBucketKeyFromUnit(unit, topicBucketKeys) {
  * Facet `displayName` (Hebrew geometry master labels) → `geometryTopics` bucket key.
  * Only labels that appear in real report artifacts; cross-check with `topicBucketKeys`.
  */
-const GEOMETRY_HEBREW_DISPLAY_TO_TOPIC_BUCKET = {
-  היקף: "perimeter",
-  "מקבילות ומאונכות": "parallel_perpendicular",
+const GEOMETRY_LEGACY_DISPLAY_TO_TOPIC_BUCKET = {
+  "\u05d4\u05d9\u05e7\u05e3": "perimeter",
+  "\u05de\u05e7\u05d1\u05d9\u05dc\u05d5\u05ea \u05d5\u05de\u05d0\u05d5\u05e0\u05db\u05d5\u05ea": "parallel_perpendicular",
 };
 
 /**
@@ -152,7 +152,7 @@ const GEOMETRY_HEBREW_DISPLAY_TO_TOPIC_BUCKET = {
  */
 export function resolveGeometryTopicBucketKeyFromUnit(unit, topicBucketKeys) {
   const display = String(unit?.displayName || "").trim();
-  const bucket = GEOMETRY_HEBREW_DISPLAY_TO_TOPIC_BUCKET[display] || "";
+  const bucket = GEOMETRY_LEGACY_DISPLAY_TO_TOPIC_BUCKET[display] || "";
   if (!bucket) return "";
   const keys = Array.isArray(topicBucketKeys)
     ? topicBucketKeys.map((x) => String(x || "").trim().toLowerCase()).filter(Boolean)

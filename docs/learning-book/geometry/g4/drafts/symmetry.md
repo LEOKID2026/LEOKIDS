@@ -1,4 +1,4 @@
-﻿# סימטרייה במישור
+# Symmetry in the Plane
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סימטרייה במישור `[DRAFT — not owner-approved]` |
+| **title_english** | Symmetry in the Plane `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ציר סימטרייה; ריבוע 4 צירים; g4-only
+**Content scope:** Line of symmetry; square has 4 lines; g4-only
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על סימטרייה במישור.
-נבין מהו ציר סימטרייה — ונראה שלריבוע יש 4 צירי סימטרייה.
+Today in geometry we will learn about symmetry in the plane.
+We will understand what a line of symmetry is — and see that a square has 4 lines of symmetry.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: symmetry_line
 :::
 
-ציר סימטרייה:
-קו שמחלק צורה לשני חלקים שווים — כמו מראה.
-אם מקפלים את הדף על הציר — שני החצאים נופלים אחד על השני.
-בריבוע: 4 צירי סימטרייה.
-- שניים עוברים דרך אמצע הצלעות (אופקי ואנכי)
-- שניים עוברים דרך הפינות (אלכסונים)
-במלבן שאינו ריבוע — בדרך כלל 2 צירים בלבד.
+Line of symmetry:
+A line that divides a shape into two equal parts — like a mirror.
+If you fold the paper on the line — the two halves match exactly.
+In a square: 4 lines of symmetry.
+- Two pass through the midpoints of the sides (horizontal and vertical)
+- Two pass through the corners (diagonals)
+In a rectangle that is not a square — usually only 2 lines.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע על דף:
-- קיפול אופקי דרך האמצע — חצי עליון = חצי תחתון
-- קיפול אנכי — חצי שמאל = חצי ימין
-- קיפול באלכסון — שני משולשים שווים
-סה״כ 4 דרכים לקפל בצורה סימטרית.
-
----
-
-## 4. בואו נפתור
-
-כמה צירי סימטרייה יש לריבוע?
-בודקים קיפול דרך אמצע צלע — עובד.
-בודקים קיפול דרך פינה לפינה — גם עובד. יש 4 כאלה.
-4 צירי סימטרייה
+A square on a page:
+- Horizontal fold through the middle — top half = bottom half
+- Vertical fold — left half = right half
+- Diagonal fold — two equal triangles
+4 ways to fold with symmetry in total.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-מלבן שאינו ריבוע — כמה צירי סימטרייה יש לו?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מלבן שאינו ריבוע — כמה צירי סימטרייה יש לו?
-בודקים קיפול דרך אמצע הצלעות — אופקי ואנכי. שני קיפולים עובדים.
-בודקים קיפול באלכסון — במלבן שאינו ריבוע הצלעות אינן שוות, ולכן הקיפול האלכסוני אינו יוצר שני חצאים זהים.
-2 צירי סימטרייה
+How many lines of symmetry does a square have?
+Check folding through the middle of a side — it works.
+Check folding corner to corner — that works too. There are 4 of these.
+4 lines of symmetry
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים סימטרייה וצירי סימטרייה בגאומטריה.
-בתרגול תמצאו ריבוע — חפשו את כל 4 צירי הסימטרייה!
+A rectangle that is not a square — how many lines of symmetry does it have?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A rectangle that is not a square — how many lines of symmetry does it have?
+Check folding through the midpoints of the sides — horizontal and vertical. Two folds work.
+Check folding on a diagonal — in a rectangle that is not a square the sides are not equal, so the diagonal fold does not make two matching halves.
+2 lines of symmetry
+
+---
+
+## 7. Let's practice!
+
+Now you know symmetry and lines of symmetry in geometry.
+In practice you will find a square — look for all 4 lines of symmetry!

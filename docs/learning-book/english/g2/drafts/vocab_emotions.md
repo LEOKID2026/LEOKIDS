@@ -1,4 +1,4 @@
-# רגשות — במשפט
+# Emotions — In a Sentence
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | רגשות — במשפט |
+| **title_english** | Emotions — In a Sentence |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,55 +22,55 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחבר רגשות למשפט I am.
-כבר למדנו happy — נוסיף sad במשפט.
-
----
-
-## 2. הסבר
-
-I am happy — אני שמח.
-I am sad — אני עצוב.
-אותה תבנית — מילה אחרת.
+Today we will connect emotions to the sentence I am.
+We already learned happy — let's add sad in a sentence.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ילד עצוב.
+I am happy — I am happy.
+I am sad — I am sad.
+Same pattern — different word.
+
+---
+
+## 3. Example
+
+A sad child.
 I am sad.
-אני עצוב.
+I am sad.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "אני עצוב"?
+How do we say "I am sad"?
 I am sad
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אני שמח.
+I am happy.
 I am happy
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: איך אומרים "אני שמח" באנגלית?
-המילה happy פירושה שמח.
-אומרים: I am happy.
-התשובה היא: I am happy.
+The question: how do we say "I am happy" in English?
+The word happy means happy.
+We say: I am happy.
+The answer is: I am happy.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים ב-happy ו-sad במשפט.
-בתרגול תמצאו I am happy ו-I am sad.
+Now you use happy and sad in a sentence.
+In practice, you'll find I am happy and I am sad.

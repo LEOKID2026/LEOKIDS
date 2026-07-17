@@ -1,4 +1,4 @@
-﻿# זוגות שמרכיבים 10 — עזר לחיבור
+# Pairs That Make 10 — Addition Helper
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | זוגות שמרכיבים 10 — עזר לחיבור `[DRAFT — not owner-approved]` |
+| **title_english** | Pairs That Make 10 — Addition Helper |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוגות שמסתכמים ל-10. חיבור מנטלי קל יותר. ללא אלגוריתם נשיאה במאונך.
+**Content scope:** Pairs that add up to 10. Easier mental addition. No vertical carrying algorithm.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזור על זוגות שמרכיבים 10 — שני מספרים שיחד נותנים 10.
-יודעים את הזוגות? חיבור בראש הופך לקל יותר!
+Today we're going to review pairs that make 10 — two numbers that together give 10.
+Know the pairs? Adding in your head gets easier!
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-זוגות ל-10:
+Pairs for 10:
 1 + 9, 2 + 8, 3 + 7, 4 + 6, 5 + 5
-חשוב: הסדר לא משנה!
-7 + 3 = 10 וגם 3 + 7 = 10
-איך זה עוזר בחיבור?
-ב-8 + 5 אפשר לחשוב: 8 צריך 2 כדי להגיע ל-10, ואז נשאר 3.
+Important: the order doesn't matter!
+7 + 3 = 10 and also 3 + 7 = 10
+How does this help with addition?
+In 8 + 5 you can think: 8 needs 2 to reach 10, and then 3 is left.
 8 + 5 = 8 + 2 + 3 = 10 + 3 = 13
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-מסגרת עשר — 7 מקומות מלאים, 3 מקומות ריקים:
-כיתוב: 7 + 3 = 10 הזוג של 7 הוא 3.
-דוגמה בחיבור:
+Ten-frame — 7 spots filled, 3 spots empty:
+Label: 7 + 3 = 10. The partner of 7 is 3.
+Example in addition:
 7 + 6 = ?
-קודם משלימים ל-10: 7 + 3 = 10, נשאר 3 → 10 + 3 = 13
+First make 10: 7 + 3 = 10, 3 left → 10 + 3 = 13
 ┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
 │ ●│ ●│ ●│ ●│ ●│ ●│ ●│ ○│ ○│ ○│
 └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘
-7 מקומות מלאים 3 מקומות ריקים
+7 spots filled   3 spots empty
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-7 + ? = 10 — מה המספר החסר?
-במסגרת עשר — ממלאים 7 מקומות.
-נשארו 3 מקומות ריקים.
-הזוג של 7 הוא 3 — כי 7 + 3 = 10.
+7 + ? = 10 — what is the missing number?
+In the ten-frame — 7 spots are filled.
+3 spots are left empty.
+The partner of 7 is 3 — because 7 + 3 = 10.
 7 + 3 = 10
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-6 + ? = 10 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+6 + ? = 10 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-6 + ? = 10 — מה המספר החסר?
-ממלאים 6 מקומות במסגרת עשר.
-נשארו 4 מקומות ריקים.
-הזוג של 6 הוא 4 — כי 6 + 4 = 10.
+6 + ? = 10 — what is the missing number?
+Fill 6 spots in the ten-frame.
+4 spots are left empty.
+The partner of 6 is 4 — because 6 + 4 = 10.
 6 + 4 = 10
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם זוכרים זוגות שמרכיבים 10 — ויודעים להשתמש בהם בחיבור בראש.
-בתרגול תמצאו שאלות כמה חסר ל-10? השתמשו במסגרת עשר!
+Now you remember pairs that make 10 — and you know how to use them in mental addition.
+In practice you'll find questions: how much is missing to make 10? Use the ten-frame!

@@ -24,7 +24,6 @@
 | **File** | `ns_counting_forward.md` |
 | **learning_page_id** | `math:g1:ns_counting_forward` |
 | **skill_id** | `math:kind:ns_counting_forward` |
-| **title_hebrew** | ספירה קדימה על ציר המספרים `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -140,7 +139,6 @@
 | **File** | `ns_counting_backward.md` |
 | **learning_page_id** | `math:g1:ns_counting_backward` |
 | **skill_id** | `math:kind:ns_counting_backward` |
-| **title_hebrew** | ספירה לאחור על ציר המספרים `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -253,7 +251,6 @@
 | **File** | `ns_number_line.md` |
 | **learning_page_id** | `math:g1:ns_number_line` |
 | **skill_id** | `math:kind:ns_number_line` |
-| **title_hebrew** | ציר המספרים `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -366,7 +363,6 @@
 | **File** | `ns_neighbors.md` |
 | **learning_page_id** | `math:g1:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
-| **title_hebrew** | שכנים של מספר `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -480,7 +476,6 @@
 | **File** | `cmp.md` |
 | **learning_page_id** | `math:g1:cmp` |
 | **skill_id** | `math:kind:cmp` |
-| **title_hebrew** | השוואת מספרים `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -599,7 +594,6 @@
 | **File** | `ns_place_tens_units.md` |
 | **learning_page_id** | `math:g1:ns_place_tens_units` |
 | **skill_id** | `math:kind:ns_place_tens_units` |
-| **title_hebrew** | עשרות ואחדות `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -711,7 +705,6 @@
 | **File** | `ns_even_odd.md` |
 | **learning_page_id** | `math:g1:ns_even_odd` |
 | **skill_id** | `math:kind:ns_even_odd` |
-| **title_hebrew** | זוגי ואי-זוגי `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -822,7 +815,6 @@
 | **File** | `ns_complement10.md` |
 | **learning_page_id** | `math:g1:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
-| **title_hebrew** | זוגות שמרכיבים 10 `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -931,7 +923,6 @@
 | **File** | `add_second_decade.md` |
 | **learning_page_id** | `math:g1:add_second_decade` |
 | **skill_id** | `math:kind:add_second_decade` |
-| **title_hebrew** | חיבור בעשרייה השנייה — מספרים בין 11 ל־19 `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1038,7 +1029,6 @@
 | **File** | `add_tens_only.md` |
 | **learning_page_id** | `math:g1:add_tens_only` |
 | **skill_id** | `math:kind:add_tens_only` |
-| **title_hebrew** | חיבור עשרות שלמות `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1152,7 +1142,6 @@
 | **File** | `add_two.md` |
 | **learning_page_id** | `math:g1:add_two` |
 | **skill_id** | `math:kind:add_two` |
-| **title_hebrew** | חיבור של שני מספרים `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1267,7 +1256,6 @@
 | **File** | `sub_two.md` |
 | **learning_page_id** | `math:g1:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
-| **title_hebrew** | חיסור של שני מספרים `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1384,7 +1372,6 @@
 | **File** | `eq_add_simple.md` |
 | **learning_page_id** | `math:g1:eq_add_simple` |
 | **skill_id** | `math:kind:eq_add_simple` |
-| **title_hebrew** | חיבור עם מספר חסר `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1493,7 +1480,6 @@
 | **File** | `eq_sub_simple.md` |
 | **learning_page_id** | `math:g1:eq_sub_simple` |
 | **skill_id** | `math:kind:eq_sub_simple` |
-| **title_hebrew** | חיסור עם מספר חסר `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1608,7 +1594,6 @@
 | **File** | `mul.md` |
 | **learning_page_id** | `math:g1:mul` |
 | **skill_id** | `math:kind:mul` |
-| **title_hebrew** | כפל — חיבור חוזר `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1717,7 +1702,6 @@
 | **File** | `wp_coins.md` |
 | **learning_page_id** | `math:g1:wp_coins` |
 | **skill_id** | `math:kind:wp_coins` |
-| **title_hebrew** | שאלות מילוליות — ערך מטבעות `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1841,7 +1825,6 @@
 | **File** | `wp_coins_spent.md` |
 | **learning_page_id** | `math:g1:wp_coins_spent` |
 | **skill_id** | `math:kind:wp_coins_spent` |
-| **title_hebrew** | שאלות מילוליות — כמה נשאר? `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -1969,7 +1952,6 @@
 | **File** | `wp_time_date.md` |
 | **learning_page_id** | `math:g1:wp_time_date` |
 | **skill_id** | `math:kind:wp_time_date` |
-| **title_hebrew** | שאלות מילוליות — ימי השבוע `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 
@@ -2088,7 +2070,6 @@
 | **File** | `wp_time_days.md` |
 | **learning_page_id** | `math:g1:wp_time_days` |
 | **skill_id** | `math:kind:wp_time_days` |
-| **title_hebrew** | שאלות מילוליות — כמה ימים בין יום ליום `[DRAFT — not owner-approved]` |
 
 ### Section 1. מה אנחנו לומדים?
 

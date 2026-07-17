@@ -1,4 +1,4 @@
-﻿# הזזה ושיקוף — המשך
+# Translation and Reflection — More Practice
 
 ## Metadata
 
@@ -11,80 +11,80 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הזזה ושיקוף — המשך `[DRAFT — not owner-approved]` |
+| **title_english** | Translation and Reflection — More Practice `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הבחנה מדויקת יותר; הזזה מול שיקוף; ללא סיבוב
+**Content scope:** More precise distinction; translation vs reflection; no rotation
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק בגאומטריה את ההבדל בין הזזה לשיקוף.
-כאן בודקים יותר בקפידה:
-האם הצורה רק עברה מקום, או שהפכה כמו במראה?
-
----
-
-## 2. הסבר
-
-הזזה:
-אותה צורה, אותו כיוון — רק במקום חדש.
-דוגמה: מזיזים עפרון על המחברת שמאלה — העפרון נשאר עפרון, לא מתהפך.
-שיקוף:
-צורה כמו תמונת מראה — ימין ושמאל מתחלפים.
-דוגמה: מדבקה על החלון — רואים אותה במראה מבחוץ.
-שאלה טובה לשאול:
-האם הכיוון של האותיות או החץ נשאר?
-אם כן — לרוב הזזה.
-אם הם מתהפכים — שיקוף.
-סיבוב נכיר בשלב מתקדם יותר.
+Today in geometry we will strengthen the difference between translation and reflection.
+Here we check more carefully:
+Did the shape only move to a new place, or did it flip like in a mirror?
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-חץ מצויר על דף:
-- מזיזים את הדף — החץ עדיין מצביע לאותו כיוון → הזזה
-- מחזיקים מראה ליד החץ — החץ נראה הפוך → שיקוף
-
----
-
-## 4. בואו נפתור
-
-הדבקנו מדבקה של לב על זכוכית ורואים אותה מבחוץ במראה. איזו תנועה זו?
-הלב נראה הפוך — ימין ושמאל התחלפו.
-זו לא הזזה — זו שיקוף.
-שיקוף
-
----
-
-## 5. נסו בעצמכם
-
-מחליקים ספר קטן על שולחן שמאלה — הספר עובר מקום אבל לא מתהפך.
-הזזה או שיקוף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Translation:
+Same shape, same direction — just in a new place.
+Example: move a pencil on a notebook to the left — the pencil stays a pencil, it does not flip over.
+Reflection:
+A shape like a mirror image — left and right swap places.
+Example: a sticker on a window — you see it in a mirror from outside.
+A good question to ask:
+Does the direction of the letters or the arrow stay the same?
+If yes — it is usually a translation.
+If they flip over — it is a reflection.
+We will learn about rotation at a more advanced stage.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-מחליקים ספר קטן על שולחן שמאלה — הספר עובר מקום אבל לא מתהפך.
-הזזה או שיקוף?
-האם הספר התהפך? לא — הוא נשאר אותו ספר באותו כיוון.
-האם ימין ושמאל התחלפו? לא — זו לא תמונת מראה.
-הצורה רק עברה ממקום למקום בלי שינוי כיוון.
-הזזה
+An arrow drawn on a page:
+- Move the page — the arrow still points the same way → translation
+- Hold a mirror next to the arrow — the arrow looks flipped → reflection
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מבחינים טוב יותר בין הזזה לשיקוף בגאומטריה.
-בתרגול תמצאו:
-האם הצורה רק עברה מקום, או נראית במראה?
+We stick a heart sticker on glass and see it from outside in a mirror. What kind of move is this?
+The heart looks flipped — left and right swapped places.
+This is not a translation — it is a reflection.
+Reflection
+
+---
+
+## 5. Try it yourself
+
+You slide a small book across a table to the left — the book moves to a new place but does not flip over.
+Translation or reflection?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+You slide a small book across a table to the left — the book moves to a new place but does not flip over.
+Translation or reflection?
+Did the book flip over? No — it stays the same book facing the same way.
+Did left and right swap places? No — this is not a mirror image.
+The shape only moved from one place to another without changing direction.
+Translation
+
+---
+
+## 7. Let's practice!
+
+Now you can tell translation and reflection apart better in geometry.
+In practice you will find:
+Did the shape only move to a new place, or does it look like a mirror image?

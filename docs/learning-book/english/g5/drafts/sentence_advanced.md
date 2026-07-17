@@ -1,4 +1,4 @@
-# משפטים מורחבים
+# Extended Sentences
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | משפטים מורחבים |
+| **title_english** | Extended Sentences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** 6–8 מילים; Last week we learned…
+**Content scope:** 6–8 words; Last week we learned…
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד משפטים מורחבים — 6–8 מילים.
-Last week we learned about the environment — בשבוע שעבר למדנו על הסביבה.
-
----
-
-## 2. הסבר
-
-משפט ארוך — נושא + פועל + פרטים:
-
+Today we will learn extended sentences — 6 to 8 words.
 Last week we learned about the environment.
 
-בשבוע שעבר למדנו על הסביבה.
+---
+
+## 2. Simple explanation
+
+A longer sentence — subject + verb + details:
+
+Last week we learned about the environment.
 
 Yesterday our class visited the science museum.
 
-אתמול הכיתה שלנו ביקרה במוזיאון המדע.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-שיעור על הסביבה.
+A lesson about the environment.
 
 Last week we learned about the environment.
 
-בשבוע שעבר למדנו על הסביבה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "בשבוע שעבר למדנו על הסביבה"?
+Question: How do you say this?
 
 Last week we learned about the environment
 
-תשובה: Last week we learned about the environment
+Answer: Last week we learned about the environment
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-הכיתה עסוקה בפרויקט שנה שעברה.
+The class working on a project last year.
 
 Last year our class made a project about the environment.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "בשנה שעברה כיתתנו עשתה פרויקט על הסביבה."
+Exercise: "Last year our class made a project about the environment."
 
-Last year פירושו בשנה שעברה — לכן משתמשים בפועל בעבר.
+"Last year" tells us this is the past, so we use a past-tense verb.
 
-make — made (פועל חריג בעבר).
+make becomes made (an irregular verb in the past).
 
-בשנה שעברה כיתתנו עשתה פרויקט על הסביבה.
-
- Last year our class made a project about the environment.
+So the full sentence is: Last year our class made a project about the environment.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים ארוכים וברורים.
-בתרגול תמצאו Last week we learned about the environment.
+Now you will build longer, clearer sentences.
+In the practice, you'll find: Last week we learned about the environment.

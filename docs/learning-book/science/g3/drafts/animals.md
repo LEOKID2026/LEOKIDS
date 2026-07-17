@@ -1,4 +1,4 @@
-# בעלי חיים — התאמה לסביבה
+# Animals — Adaptation to the Environment
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | בעלי חיים — התאמה לסביבה `[DRAFT — not owner-approved]` |
+| **title_english** | Animals — Adaptation to the Environment `[DRAFT — not owner-approved]` |
 
-**Content scope:** הסוואה, פרווה, סנפירים; בית גידול ↔ צרכים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים איך בעלי חיים מותאמים לסביבה שבה הם חיים.
-נקרא לזה התאמה לסביבה.
+**Content scope:** Camouflage, fur, fins; habitat ↔ needs
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-בית גידול הוא המקום שבו בעל החיים מוצא מזון, מים ומקום מחסה.
-לכל בעל חיים יש התאמות — תכונות שעוזרות לו לשרוד:
-דג — סנפירים לשחייה, זימים לנשימה במים
-דוב קוטב — פרווה עבה לחום בקור
-זיקית — צבע גוף שעוזר לה להשתלב בסביבה (הסוואה)
-אם הסביבה משתנה, בעל חיים צריך התאמות מתאימות או מקום אחר.
+Today in science we will learn how animals are adapted to the environment where they live.
+We call this adaptation to the environment.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ג'ירפה בסוואנה אוכלת עלים גבוהים — צוואר ארוך הוא התאמה.
-נמר ביער או בסבך מתמזג בין העצים — צבע וכתמים עוזרים בהסוואה.
-לכל חיה סביבה משלה, ולכל אחת התאמות שונות.
-
----
-
-## 4. בואו נפתור
-
-למה לדג יש סנפירים?
-דג חי במים.
-סנפירים עוזרים לשחות ולנוע במים.
-כדי לשחות בסביבה המימית
+A habitat is the place where an animal finds food, water, and shelter.
+Every animal has adaptations — features that help it survive:
+Fish — fins for swimming, gills for breathing in water
+Polar bear — thick fur for warmth in the cold
+Chameleon — body color that helps it blend into the environment (camouflage)
+If the environment changes, an animal needs suitable adaptations or a different place.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-חשבו על פינגווין בקרח — נוצות דחוסות, שומן לחום.
-איזו סביבה מתאימה לו?
-מה ההתאמה העיקרית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A giraffe in the savanna eats high leaves — a long neck is an adaptation.
+A tiger in a forest or thicket blends among the trees — color and markings help with camouflage.
+Each animal has its own environment, and each has different adaptations.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-הפינגווין חי בסביבה קרה מאוד — קרח ומים קפואים.
-נוצות דחוסות יוצרות שכבת אוויר שמבודדת את גופו מהקור.
-שומן מתחת לעור מספק חום נוסף ושומר על חום הגוף.
-הסביבה המתאימה — קרח ומים קרים; ההתאמה העיקרית — נוצות דחוסות ושומן לחום.
-כל תכונה בגוף הפינגווין מותאמת לסביבת הקור הקיצוני.
+Why does a fish have fins?
+A fish lives in water.
+Fins help it swim and move in water.
+To swim in a water environment
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מבינים התאמה לסביבה במדעים.
-בתרגול חפשו שאלות על בית גידול ותכונות מיוחדות.
+Think about a penguin on ice — dense feathers, fat for warmth.
+Which environment suits it?
+What is the main adaptation?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The penguin lives in a very cold environment — ice and frozen water.
+Dense feathers create a layer of air that insulates its body from the cold.
+Fat under the skin provides extra warmth and keeps body heat in.
+The suitable environment — ice and cold water; the main adaptation — dense feathers and fat for warmth.
+Every feature of the penguin's body is adapted to the extreme cold environment.
+
+---
+
+## 7. Let's practice!
+
+Now you understand adaptation to the environment in science.
+When you practice, look for questions about habitat and special features.

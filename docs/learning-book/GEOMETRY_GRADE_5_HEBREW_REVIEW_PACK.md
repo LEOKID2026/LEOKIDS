@@ -42,7 +42,6 @@
 | **File** | `parallel_perpendicular.md` |
 | **learning_page_id** | `geometry:g5:parallel_perpendicular` |
 | **skill_id** | `geometry:kind:parallel_perpendicular` |
-| **title_hebrew** | קווים מקבילים ומאונכים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -142,7 +141,6 @@
 | **File** | `quadrilaterals.md` |
 | **learning_page_id** | `geometry:g5:quadrilaterals` |
 | **skill_id** | `geometry:kind:quadrilaterals` |
-| **title_hebrew** | סיווג מרובעים — כיתה ה׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -239,7 +237,6 @@
 | **File** | `triangle_angles.md` |
 | **learning_page_id** | `geometry:g5:triangle_angles` |
 | **skill_id** | `geometry:kind:triangle_angles` |
-| **title_hebrew** | זוויות במשולש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -335,7 +332,6 @@
 | **File** | `square_perimeter.md` |
 | **learning_page_id** | `geometry:g5:square_perimeter` |
 | **skill_id** | `geometry:kind:square_perimeter` |
-| **title_hebrew** | היקף ריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -431,7 +427,6 @@
 | **File** | `triangle_perimeter.md` |
 | **learning_page_id** | `geometry:g5:triangle_perimeter` |
 | **skill_id** | `geometry:kind:triangle_perimeter` |
-| **title_hebrew** | היקף משולש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -527,7 +522,6 @@
 | **File** | `square_area.md` |
 | **learning_page_id** | `geometry:g5:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
-| **title_hebrew** | שטח ריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -624,7 +618,6 @@
 | **File** | `parallelogram_area.md` |
 | **learning_page_id** | `geometry:g5:parallelogram_area` |
 | **skill_id** | `geometry:kind:parallelogram_area` |
-| **title_hebrew** | שטח מקבילית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -722,7 +715,6 @@
 | **File** | `trapezoid_area.md` |
 | **learning_page_id** | `geometry:g5:trapezoid_area` |
 | **skill_id** | `geometry:kind:trapezoid_area` |
-| **title_hebrew** | שטח טרפז `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -821,7 +813,6 @@
 | **File** | `heights_triangle.md` |
 | **learning_page_id** | `geometry:g5:heights_triangle` |
 | **skill_id** | `geometry:kind:heights_triangle` |
-| **title_hebrew** | גובה במשולש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -918,7 +909,6 @@
 | **File** | `heights_parallelogram.md` |
 | **learning_page_id** | `geometry:g5:heights_parallelogram` |
 | **skill_id** | `geometry:kind:heights_parallelogram` |
-| **title_hebrew** | גובה במקבילית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1012,7 +1002,6 @@
 | **File** | `heights_trapezoid.md` |
 | **learning_page_id** | `geometry:g5:heights_trapezoid` |
 | **skill_id** | `geometry:kind:heights_trapezoid` |
-| **title_hebrew** | גובה בטרפז `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1108,7 +1097,6 @@
 | **File** | `diagonal_square.md` |
 | **learning_page_id** | `geometry:g5:diagonal_square` |
 | **skill_id** | `geometry:kind:diagonal_square` |
-| **title_hebrew** | אלכסון בריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1208,7 +1196,6 @@
 | **File** | `diagonal_rectangle.md` |
 | **learning_page_id** | `geometry:g5:diagonal_rectangle` |
 | **skill_id** | `geometry:kind:diagonal_rectangle` |
-| **title_hebrew** | אלכסון במלבן `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1305,7 +1292,6 @@
 | **File** | `diagonal_parallelogram.md` |
 | **learning_page_id** | `geometry:g5:diagonal_parallelogram` |
 | **skill_id** | `geometry:kind:diagonal_parallelogram` |
-| **title_hebrew** | אלכסון במקבילית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1405,7 +1391,6 @@
 | **File** | `solids.md` |
 | **learning_page_id** | `geometry:g5:solids` |
 | **skill_id** | `geometry:kind:solids` |
-| **title_hebrew** | גופים תלת-ממדיים — חזרה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1500,7 +1485,6 @@
 | **File** | `rectangular_prism_volume.md` |
 | **learning_page_id** | `geometry:g5:rectangular_prism_volume` |
 | **skill_id** | `geometry:kind:rectangular_prism_volume` |
-| **title_hebrew** | נפח תיבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1598,7 +1582,6 @@
 | **File** | `tiling.md` |
 | **learning_page_id** | `geometry:g5:tiling` |
 | **skill_id** | `geometry:kind:tiling` |
-| **title_hebrew** | ריצוף במישור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

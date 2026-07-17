@@ -45,7 +45,6 @@
 | **File** | `ns_place_hundreds.md` |
 | **learning_page_id** | `math:g5:ns_place_hundreds` |
 | **skill_id** | `math:kind:ns_place_hundreds` |
-| **title_hebrew** | ערך המקום — עד 100,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -161,7 +160,6 @@
 | **File** | `ns_neighbors.md` |
 | **learning_page_id** | `math:g5:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
-| **title_hebrew** | שכנים של מספר — עד 100,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -264,7 +262,6 @@
 | **File** | `ns_complement100.md` |
 | **learning_page_id** | `math:g5:ns_complement100` |
 | **skill_id** | `math:kind:ns_complement100` |
-| **title_hebrew** | השלמה ל-100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -372,7 +369,6 @@
 | **File** | `cmp.md` |
 | **learning_page_id** | `math:g5:cmp` |
 | **skill_id** | `math:kind:cmp` |
-| **title_hebrew** | השוואת מספרים — עד 100,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -478,7 +474,6 @@
 | **File** | `sequence.md` |
 | **learning_page_id** | `math:g5:sequence` |
 | **skill_id** | `math:kind:sequence` |
-| **title_hebrew** | סדרות מספרים — קפיצות גדולות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -579,7 +574,6 @@
 | **File** | `round.md` |
 | **learning_page_id** | `math:g5:round` |
 | **skill_id** | `math:kind:round` |
-| **title_hebrew** | עיגול — עשרות, מאות, אלפים ועשרות אלפים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -689,7 +683,6 @@
 | **File** | `add_two.md` |
 | **learning_page_id** | `math:g5:add_two` |
 | **skill_id** | `math:kind:add_two` |
-| **title_hebrew** | חיבור שני מספרים — עד 100,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -804,7 +797,6 @@
 | **File** | `sub_two.md` |
 | **learning_page_id** | `math:g5:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
-| **title_hebrew** | חיסור שני מספרים — עד 100,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -912,7 +904,6 @@
 | **File** | `add_three.md` |
 | **learning_page_id** | `math:g5:add_three` |
 | **skill_id** | `math:kind:add_three` |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1015,7 +1006,6 @@
 | **File** | `mul.md` |
 | **learning_page_id** | `math:g5:mul` |
 | **skill_id** | `math:kind:mul` |
-| **title_hebrew** | כפל — אסטרטגיות ומספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1121,7 +1111,6 @@
 | **File** | `div.md` |
 | **learning_page_id** | `math:g5:div` |
 | **skill_id** | `math:kind:div` |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1222,7 +1211,6 @@
 | **File** | `div_with_remainder.md` |
 | **learning_page_id** | `math:g5:div_with_remainder` |
 | **skill_id** | `math:kind:div_with_remainder` |
-| **title_hebrew** | חילוק עם שארית — מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1323,7 +1311,6 @@
 | **File** | `div_two_digit.md` |
 | **learning_page_id** | `math:g5:div_two_digit` |
 | **skill_id** | `math:kind:div_two_digit` |
-| **title_hebrew** | חילוק במחלק דו-ספרתי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1425,7 +1412,6 @@
 | **File** | `frac_reduce.md` |
 | **learning_page_id** | `math:g5:frac_reduce` |
 | **skill_id** | `math:kind:frac_reduce` |
-| **title_hebrew** | צמצום שבר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1524,7 +1510,6 @@
 | **File** | `frac_expand.md` |
 | **learning_page_id** | `math:g5:frac_expand` |
 | **skill_id** | `math:kind:frac_expand` |
-| **title_hebrew** | הרחבת שבר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1624,7 +1609,6 @@
 | **File** | `frac_add_sub.md` |
 | **learning_page_id** | `math:g5:frac_add_sub` |
 | **skill_id** | `math:kind:frac_add_sub` |
-| **title_hebrew** | חיבור וחיסור שברים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1721,7 +1705,6 @@
 | **File** | `mixed_to_frac.md` |
 | **learning_page_id** | `math:g5:mixed_to_frac` |
 | **skill_id** | `math:kind:mixed_to_frac` |
-| **title_hebrew** | מספר מעורב לשבר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1822,7 +1805,6 @@
 | **File** | `frac_to_mixed.md` |
 | **learning_page_id** | `math:g5:frac_to_mixed` |
 | **skill_id** | `math:kind:frac_to_mixed` |
-| **title_hebrew** | שבר למספר מעורב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1920,7 +1902,6 @@
 | **File** | `dec_add.md` |
 | **learning_page_id** | `math:g5:dec_add` |
 | **skill_id** | `math:kind:dec_add` |
-| **title_hebrew** | חיבור עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2023,7 +2004,6 @@
 | **File** | `dec_sub.md` |
 | **learning_page_id** | `math:g5:dec_sub` |
 | **skill_id** | `math:kind:dec_sub` |
-| **title_hebrew** | חיסור עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2126,7 +2106,6 @@
 | **File** | `eq_add.md` |
 | **learning_page_id** | `math:g5:eq_add` |
 | **skill_id** | `math:kind:eq_add` |
-| **title_hebrew** | משוואת חיבור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2223,7 +2202,6 @@ __ = 9,500 − 4,200 = 5,300
 | **File** | `eq_sub.md` |
 | **learning_page_id** | `math:g5:eq_sub` |
 | **skill_id** | `math:kind:eq_sub` |
-| **title_hebrew** | משוואת חיסור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2320,7 +2298,6 @@ __ − 1,875 = 4,200 — מה המספר החסר?
 | **File** | `eq_mul.md` |
 | **learning_page_id** | `math:g5:eq_mul` |
 | **skill_id** | `math:kind:eq_mul` |
-| **title_hebrew** | משוואת כפל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2419,7 +2396,6 @@ __ × 12 = 480 — מה המספר החסר?
 | **File** | `eq_div.md` |
 | **learning_page_id** | `math:g5:eq_div` |
 | **skill_id** | `math:kind:eq_div` |
-| **title_hebrew** | משוואת חילוק `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2518,7 +2494,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `fm_factor.md` |
 | **learning_page_id** | `math:g5:fm_factor` |
 | **skill_id** | `math:kind:fm_factor` |
-| **title_hebrew** | גורמים של מספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2618,7 +2593,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `fm_multiple.md` |
 | **learning_page_id** | `math:g5:fm_multiple` |
 | **skill_id** | `math:kind:fm_multiple` |
-| **title_hebrew** | כפולות של מספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2716,7 +2690,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `fm_gcd.md` |
 | **learning_page_id** | `math:g5:fm_gcd` |
 | **skill_id** | `math:kind:fm_gcd` |
-| **title_hebrew** | המחלק המשותף הגדול ביותר (מ.א.ח) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2816,7 +2789,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `est_add.md` |
 | **learning_page_id** | `math:g5:est_add` |
 | **skill_id** | `math:kind:est_add` |
-| **title_hebrew** | אומדן חיבור — כיתה ה׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2918,7 +2890,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `est_mul.md` |
 | **learning_page_id** | `math:g5:est_mul` |
 | **skill_id** | `math:kind:est_mul` |
-| **title_hebrew** | אומדן כפל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3019,7 +2990,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `est_quantity.md` |
 | **learning_page_id** | `math:g5:est_quantity` |
 | **skill_id** | `math:kind:est_quantity` |
-| **title_hebrew** | אומדן כמות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3119,7 +3089,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `perc_part_of.md` |
 | **learning_page_id** | `math:g5:perc_part_of` |
 | **skill_id** | `math:kind:perc_part_of` |
-| **title_hebrew** | אחוז מכמות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3219,7 +3188,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `perc_discount.md` |
 | **learning_page_id** | `math:g5:perc_discount` |
 | **skill_id** | `math:kind:perc_discount` |
-| **title_hebrew** | הנחה באחוזים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3320,7 +3288,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_comparison_more.md` |
 | **learning_page_id** | `math:g5:wp_comparison_more` |
 | **skill_id** | `math:kind:wp_comparison_more` |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3420,7 +3387,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_leftover.md` |
 | **learning_page_id** | `math:g5:wp_leftover` |
 | **skill_id** | `math:kind:wp_leftover` |
-| **title_hebrew** | שאלה מילולית — מה נשאר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3518,7 +3484,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_time_sum.md` |
 | **learning_page_id** | `math:g5:wp_time_sum` |
 | **skill_id** | `math:kind:wp_time_sum` |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3619,7 +3584,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_multi_step.md` |
 | **learning_page_id** | `math:g5:wp_multi_step` |
 | **skill_id** | `math:kind:wp_multi_step` |
-| **title_hebrew** | שאלה מילולית — כמה שלבים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3718,7 +3682,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_distance_time.md` |
 | **learning_page_id** | `math:g5:wp_distance_time` |
 | **skill_id** | `math:kind:wp_distance_time` |
-| **title_hebrew** | מרחק, זמן ומהירות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3813,7 +3776,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_shop_discount.md` |
 | **learning_page_id** | `math:g5:wp_shop_discount` |
 | **skill_id** | `math:kind:wp_shop_discount` |
-| **title_hebrew** | קניות והנחה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3911,7 +3873,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_unit_cm_to_m.md` |
 | **learning_page_id** | `math:g5:wp_unit_cm_to_m` |
 | **skill_id** | `math:kind:wp_unit_cm_to_m` |
-| **title_hebrew** | המרת יחידות — ס״מ ומטר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -4008,7 +3969,6 @@ __ = 3,600 ÷ 90 = 40
 | **File** | `wp_unit_g_to_kg.md` |
 | **learning_page_id** | `math:g5:wp_unit_g_to_kg` |
 | **skill_id** | `math:kind:wp_unit_g_to_kg` |
-| **title_hebrew** | המרת יחידות — גרם וקילוגרם `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

@@ -1,4 +1,4 @@
-# צליל — אות
+# Sound and Letter
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | צליל — אות |
+| **title_english** | Sound and Letter |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,58 +20,58 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק את הקשר בין צליל לאות.
-כששומעים צליל מ בתחילת מילה, מחפשים את האות המתאימה.
-כשמסתכלים על אות, חושבים איזה צליל היא יכולה להשמיע במילה.
-
----
-
-## 2. הסבר
-
-שומעים צליל מ בתחילת מילה — מחפשים את האות M.
-שומעים צליל ס בתחילת מילה — מחפשים את האות S.
-במילה cat שומעים בהתחלה צליל ק — מחפשים את האות C.
-רואים B — חושבים על צליל ב בתחילת מילה.
-רואים T — חושבים על צליל ט בתחילת מילה.
+Today we will strengthen the connection between sound and letter.
+When we hear an "m" sound at the start of a word, we look for the matching letter.
+When we look at a letter, we think about what sound it can make in a word.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-שומעים צליל מ בתחילת מילה — מחפשים M.
-רואים F — חושבים על צליל פ בתחילת מילה.
+We hear an "m" sound at the start of a word — we look for the letter M.
+We hear an "s" sound at the start of a word — we look for the letter S.
+In the word cat, we hear a "k" sound at the start — we look for the letter C.
+We see B — we think of a "b" sound at the start of a word.
+We see T — we think of a "t" sound at the start of a word.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איזו אות מתאימה לצליל הראשון במילה cat?
-cat מתחילה בצליל ק.
-במילה cat הצליל הזה נכתב באות C.
+We hear an "m" sound at the start of a word — we look for M.
+We see F — we think of a "f" sound at the start of a word.
+
+---
+
+## 4. Let's solve together
+
+Which letter matches the first sound in the word cat?
+Cat starts with a "k" sound.
+In the word cat, this sound is written with the letter C.
 C
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזה צליל — H?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: איזה צליל יכולה להשמיע H בתחילת מילה?
-חושבים על המילה hat.
-ב-hat שומעים בהתחלה צליל ה.
-התשובה היא הצליל ה.
+Which sound — H?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Let's check together
 
-עכשיו מחברים צליל ואות בביטחון.
-בעמוד הבא — קריאת מילים ראשונה.
+The question: what sound can H make at the start of a word?
+Think of the word hat.
+In hat, we hear an "h" sound at the start.
+The answer is the "h" sound.
+
+---
+
+## 7. Let's practice!
+
+Now you connect sound and letter with confidence.
+On the next page — reading your first words.

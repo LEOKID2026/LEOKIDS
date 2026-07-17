@@ -1,4 +1,4 @@
-# הערכת תוצאה — כפל
+# Estimating an Answer — Multiplication
 
 ## Metadata
 
@@ -11,38 +11,38 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הערכת תוצאה — כפל `[DRAFT — not owner-approved]` |
+| **title_english** | Estimating an Answer — Multiplication |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** **הערכה** (≈) של תוצאת **כפל** — עיגול לעשרות קרובות. ללא חישוב מדויק חובה.
+**Content scope:** **Estimate** (≈) of a **multiplication** answer — round to nearest tens. No exact calculation required.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להעריך תוצאת כפל — בערך, לא בדיוק.
-מעגלים כל מספר למספר נוח — ואז מכפילים.
+Today we'll learn to estimate a multiplication answer — about right, not exact.
+Round each number to a friendly number — then multiply.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 48 × 51 ≈ ?
-עיגול לעשרות:
+Round to tens:
 48 ≈ 50
 51 ≈ 50
 50 × 50 = 2,500
 48 × 51 ≈ 2,500
-(בדיוק: 2,448 — קרוב ל-2,500!)
-טיפ: כששני המספרים קרובים לעשרות, עיגול ל-50 נוח מאוד.
+(Exactly: 2,448 — close to 2,500!)
+Tip: when both numbers are close to tens, rounding to 50 works very well.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 29 × 31 ≈ ?
 29 ≈ 30
@@ -52,7 +52,7 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 62 × 38 ≈ ?
 62 ≈ 60.
@@ -62,25 +62,25 @@
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
 27 × 33 ≈ ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
 27 × 33 ≈ ?
-עיגול: 27 ≈ 30.
-עיגול: 33 ≈ 30.
+Round: 27 ≈ 30.
+Round: 33 ≈ 30.
 30 × 30 = 900
 27 × 33 ≈ 900
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להעריך תוצאת כפל.
-עגלו לעשרות נוחות — וכפלו!
+Now you know how to estimate a multiplication answer.
+Round to friendly tens — and multiply!

@@ -1,4 +1,4 @@
-# שאלות מילוליות — ימי השבוע
+# Word Problems — Days of the Week
 
 ## Metadata
 
@@ -11,86 +11,86 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — ימי השבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Days of the Week |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שאלות על ימי השבוע — אתמול/היום/מחר, ובעוד יום-יומיים. ללא שעון, ללא חישוב חודשים או שנים, ללא שאלות מרובות שלבים.
+**Content scope:** Questions about days of the week — yesterday/today/tomorrow, and in one or two days. No clock, no months or years, no multi-step questions.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לקרוא שאלה מילולית על ימי השבוע.
-יודעים את סדר ימי השבוע — ואז אפשר לענות: מה יום מחר? או איזה יום יהיה בעוד יומיים?
-
----
-
-## 2. הסבר פשוט
-
-ימי השבוע הולכים בסדר קבוע:
-אתמול = היום שלפני היום
-מחר = היום שאחרי היום
-בעוד 2 ימים = קופצים 2 צעדים קדימה בימים
-לפני שעונים — קוראים בקול:
-1. מה יודעים? — איזה יום היום
-2. מה מבקשים? — איזה יום מחר, אתמול, או בעוד כמה ימים
-3. מה עושים? — סופרים קדימה או אחורה על שורת הימים
-ראשון → שני → שלישי → רביעי → חמישי → שישי → שבת → (שוב ראשון)
+Today we're going to learn to read a word problem about days of the week.
+You know the order of the days — then you can answer: what day is tomorrow? Or which day will it be in two days?
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-היום יום שלישי:
-מחר → יום רביעי
-בעוד 2 ימים → יום חמישי
-[ראשון] [שני] [●שלישי●] [רביעי] [חמישי] [שישי] [שבת]
-↑ היום
-↑ מחר
-↑ בעוד 2 ימים
-
----
-
-## 4. בואו נפתור יחד
-
-היום יום שני. איזה יום יהיה בעוד 2 ימים?
-שלב 1 — מה יודעים?
-היום: יום שני
-שלב 2 — מה מבקשים?
-איזה יום בעוד 2 ימים — צריך לספור 2 צעדים קדימה.
-שלב 3 — סופרים:
-יום שני → (1) יום שלישי → (2) יום רביעי
-בעוד 2 ימים יהיה יום רביעי.
+The days of the week go in a fixed order:
+Yesterday = the day before today
+Tomorrow = the day after today
+In 2 days = hop 2 steps forward on the days
+Before you answer — read out loud:
+1. What do we know? — which day is today
+2. What are we asked? — which day is tomorrow, yesterday, or in how many days
+3. What do we do? — count forward or backward on the row of days
+Sunday → Monday → Tuesday → Wednesday → Thursday → Friday → Saturday → (Sunday again)
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-היום יום חמישי. מחר — איזה יום?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-היום יום חמישי.
-מחר — איזה יום?
-שלב 1 — מה יודעים?
-היום: יום חמישי.
-שלב 2 — מה מבקשים?
-איזה יום מחר — צריך לספור צעד אחד קדימה.
-שלב 3 — סופרים:
-חמישי → (1) שישי.
-מחר יהיה יום שישי.
+Today is Tuesday:
+Tomorrow → Wednesday
+In 2 days → Thursday
+[Sunday] [Monday] [●Tuesday●] [Wednesday] [Thursday] [Friday] [Saturday]
+↑ today
+↑ tomorrow
+↑ in 2 days
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם יודעים לקרוא שאלה על ימי השבוע.
-מצאו את היום, וספרו קדימה או אחורה על שורת הימים!
+Today is Monday. Which day will it be in 2 days?
+Step 1 — What do we know?
+Today: Monday
+Step 2 — What are we asked?
+Which day in 2 days — count 2 steps forward.
+Step 3 — Count:
+Monday → (1) Tuesday → (2) Wednesday
+In 2 days it will be Wednesday.
+
+---
+
+## 5. Try it yourself
+
+Today is Thursday. Tomorrow — which day?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+Today is Thursday.
+Tomorrow — which day?
+Step 1 — What do we know?
+Today: Thursday.
+Step 2 — What are we asked?
+Which day is tomorrow — count one step forward.
+Step 3 — Count:
+Thursday → (1) Friday.
+Tomorrow will be Friday.
+
+---
+
+## 7. Let's practice!
+
+Now you know how to read a problem about days of the week.
+Find today's day, and count forward or backward on the row of days!

@@ -1,4 +1,4 @@
-# קהילה — visited, museum
+# Community — visited, museum
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | קהילה — visited, museum |
+| **title_english** | Community — visited, museum |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** We visited the museum — מקומות בקהילה בעבר
+**Content scope:** We visited the museum — places in the community, in the past
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מקומות בקהילה בעבר.
-We visited the museum yesterday — ביקרנו במוזיאון אתמול.
-
----
-
-## 2. הסבר
-
-Past Simple — ביקור במקום:
-
+Today we will learn about places in the community in the past.
 We visited the museum yesterday.
 
-ביקרנו במוזיאון אתמול.
+---
+
+## 2. Simple explanation
+
+Past Simple — visiting a place:
+
+We visited the museum yesterday.
 
 They went to the library last week.
 
-הלכו לספרייה בשבוע שעבר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משפחה במוזיאון.
+A family at the museum.
 
 We visited the museum yesterday.
 
-ביקרנו במוזיאון אתמול.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "ביקרנו במוזיאון אתמול"?
+Question: How do you say this?
 
 We visited the museum yesterday
 
-תשובה: We visited the museum yesterday
+Answer: We visited the museum yesterday
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יום כיף בחופשה — גן חיות.
+A fun day on holiday — the zoo.
 
 We visited the zoo on holiday.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "ביקרנו בגן חיות בחופשה."
+Exercise: "We visited the zoo on holiday."
 
-פועל סדיר בעבר: visit הופך ל-visited.
+A regular verb in the past: visit becomes visited.
 
-on holiday = בחופשה.
+"On holiday" tells us when.
 
-ביקרנו בגן חיות בחופשה.
-
- We visited the zoo on holiday.
+So the full sentence is: We visited the zoo on holiday.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים מקומות בקהילה בעבר.
-בתרגול תמצאו We visited the museum yesterday.
+Now you will describe places in the community in the past.
+In the practice, you'll find: We visited the museum yesterday.

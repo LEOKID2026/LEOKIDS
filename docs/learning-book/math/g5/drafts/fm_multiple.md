@@ -1,4 +1,4 @@
-# כפולות של מספר
+# Multiples of a Number
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפולות של מספר `[DRAFT — not owner-approved]` |
+| **title_english** | Multiples of a Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** כפולות ראשונות
+**Content scope:** First multiples
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד למצוא כפולות של מספר — מספרים שהמספר מחלק אותם.
-כפולות = תוצאות של כפל במספר.
+Today we'll learn to find multiples of a number — numbers that the number divides evenly.
+Multiples = results of multiplying by the number.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כפולות של 7:
+Multiples of 7:
 7 × 1 = 7
 7 × 2 = 14
 7 × 3 = 21
 7 × 4 = 28
 7 × 5 = 35
-בתרגול שלנו, כשמבקשים את הכפולות הראשונות, מתחילים בדרך כלל מהכפולות החיוביות: 7, 14, 21, 28, 35…
+In our practice, when we ask for the first multiples, we usually start with the positive ones: 7, 14, 21, 28, 35…
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-כפולות של 12: 12, 24, 36, 48, 60…
+Multiples of 12: 12, 24, 36, 48, 60…
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-כתבו 5 כפולות ראשונות של 7
+Write the first 5 multiples of 7
 7×1=7, 7×2=14, 7×3=21, 7×4=28, 7×5=35
 7, 14, 21, 28, 35
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-כתבו 5 כפולות ראשונות של 9.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Write the first 5 multiples of 9.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-כתבו 5 כפולות ראשונות של 9.
+Write the first 5 multiples of 9.
 9 × 1 = 9
 9 × 2 = 18
 9 × 3 = 27
 9 × 4 = 36
 9 × 5 = 45
-5 הכפולות הראשונות של 9: 9, 18, 27, 36, 45
+The first 5 multiples of 9: 9, 18, 27, 36, 45
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-כפולות עוזרות למצוא כפולות משותפות ולפתור שאלות על מחזורים, קבוצות וזמנים.
-בתרגול תמצאו כפולות — הכפילו במספר 1, 2, 3…
+Multiples help you find common multiples and solve problems about cycles, groups, and time.
+In practice you'll find multiples — multiply by 1, 2, 3…

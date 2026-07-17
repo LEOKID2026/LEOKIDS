@@ -1,4 +1,4 @@
-# ביטויי כיתה
+# Classroom Phrases
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_1_2 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | ביטויי כיתה |
+| **title_english** | Classroom Phrases |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** Hello, Thank you, Please — תרגום מילה/ביטוי קצר
+**Content scope:** Hello, Thank you, Please — short word/phrase translation
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד ביטויים קצרים באנגלית לכיתה.
-ביטויים שימושיים כשפוגשים חברים ומורים.
-
----
-
-## 2. הסבר
-
-ביטויים נפוצים:
-Hello — שלום
-Thank you — תודה
-Please — בבקשה
+Today we will learn short classroom phrases in English.
+Useful phrases for when you meet friends and teachers.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נכנסים לכיתה ואומרים:
+Common phrases:
 Hello
-שלום.
-
----
-
-## 4. בואו נפתור
-
-איך אומרים "שלום" באנגלית?
-Hello
-
----
-
-## 5. נסו בעצמכם
-
-המורה עזרה לך.
-מה אומרים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-המורה עזרה לך — מה אומרים באנגלית?
-רוצים להגיד תודה.
-תודה באנגלית:
 Thank you
-Thank you פירושו: תודה.
+Please
 
 ---
 
-## 7. בואו נתרגל!
+## 3. Example
 
-עכשיו אתם מכירים ביטויי כיתה.
-בתרגול תמצאו מילים כמו Hello ו-Thank you.
+We walk into the classroom and say:
+Hello
+Hello.
+
+---
+
+## 4. Let's solve together
+
+How do we say "Hello" in English?
+Hello
+
+---
+
+## 5. Try it yourself
+
+The teacher helped you.
+What do you say?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The teacher helped you — what do you say in English?
+We want to say thank you.
+Thank you in English:
+Thank you
+Thank you means: thank you.
+
+---
+
+## 7. Let's practice!
+
+Now you know classroom phrases.
+In practice, you'll find words like Hello and Thank you.

@@ -1,4 +1,4 @@
-# סביבה — שמירת משאבים
+# Environment — Conserving Resources
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | סביבה — שמירת משאבים `[DRAFT — not owner-approved]` |
+| **title_english** | Environment — Conserving Resources `[DRAFT — not owner-approved]` |
 
-**Content scope:** משאבי טבע; השפעת אדם; שימור
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על משאבי טבע — מה הטבע נותן לנו — ואיך לשמור עליהם.
+**Content scope:** Natural resources; human impact; conservation
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-משאב טבע — דבר שמגיע מהטבע ואנשים משתמשים בו:
-- מים — לשתייה ולחקלאות
-- קרקע — לגידול צמחים
-- יערות — לעץ, לאוויר נקי ולבתי גידול לחיות
-- אנרגיה מהטבע — למשל אנרגיית מים בתחנות כוח
-שימוש נכון:
-לא לבזבז, לא לזהם, לשמור על יערות ומים נקיים.
-השפעת אדם:
-- זיהום מים ואוויר — מזיק לבעלי חיים ולבריאות
-- כריתת יערות — פחות מקום לחיות
-- מיחזור — מפחית פסולת ושומר משאבים
-כל אחד יכול לעזור:
-מיחזור, חיסכון במים, שמירה על טבע.
+Today in science we will learn about natural resources — what nature gives us — and how to protect them.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בעיר:
-גן עם עצים — משאב טבע בתוך העיר.
-אם זורקים פסולת לנחל — המים נפגעים, דגים סובלים.
-מיחזור בקבוקים — פחות פסולת, פחות צורך בחומר חדש.
-
----
-
-## 4. בואו נפתור
-
-למה חשוב לשמור על מים נקיים?
-מים — משאב טבע לשתייה ולצמחים.
-מים מזוהמים — פחות מים טובים לשימוש.
-כי מים נקיים נחוצים לחיים
-
----
-
-## 5. נסו בעצמכם
-
-חשבו על בית:
-איפה אפשר לחסוך מים?
-איזה משאב טבע זה שומר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A natural resource — something that comes from nature and people use:
+- Water — for drinking and farming
+- Soil — for growing plants
+- Forests — for wood, clean air, and habitats for animals
+- Energy from nature — for example water power at power stations
+Proper use:
+Do not waste, do not pollute, protect forests and clean water.
+Human impact:
+- Polluting water and air — harms animals and health
+- Cutting down forests — less space for living things
+- Recycling — reduces waste and saves resources
+Everyone can help:
+Recycle, save water, protect nature.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-השאלה: איפה בבית אפשר לחסוך מים? ואיזה משאב טבע זה שומר?
-הסבר מדעי:
-מים הם משאב טבע — הם מגיעים מהטבע ואנחנו תלויים בהם לשתייה, לבישול ולניקיון.
-מאגרי המים בטבע מוגבלים — גשם לא תמיד מספיק לחדש אותם.
-בבית אפשר לחסוך:
-סגירת ברז בזמן צחצוח שיניים, מקלחת קצרה, תיקון נזילות.
-כל חיסכון שומר על מאגרי המים הטבעיים.
-חיסכון מים בבית — ברז, מקלחת, תיקון נזילות. המשאב שנשמר — מים.
+In a city:
+A park with trees — a natural resource inside the city.
+If people throw trash in a stream — the water is harmed, fish suffer.
+Recycling bottles — less waste, less need for new material.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים משאבי טבע ושימור במדעים.
-בתרגול חפשו שאלות על השפעת אדם על הסביבה.
+Why is it important to keep water clean?
+Water — a natural resource for drinking and for plants.
+Polluted water — less good water for use.
+Because clean water is needed for life
+
+---
+
+## 5. Try it yourself
+
+Think about your home:
+Where can you save water?
+Which natural resource does that protect?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: where at home can you save water? And which natural resource does that protect?
+Scientific explanation:
+Water is a natural resource — it comes from nature and we depend on it for drinking, cooking, and cleaning.
+Natural water supplies are limited — rain does not always refill them enough.
+At home you can save:
+Turn off the tap while brushing teeth, take shorter showers, fix leaks.
+Every saving helps protect natural water supplies.
+Saving water at home — tap, shower, fixing leaks. The resource protected — water.
+
+---
+
+## 7. Let's practice!
+
+Now you know about natural resources and conservation in science.
+When you practice, look for questions about human impact on the environment.

@@ -1,4 +1,4 @@
-# בעלי חיים — מערכות אקולוגיות
+# Animals — Ecological Systems
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | בעלי חיים — מערכות אקולוגיות `[DRAFT — not owner-approved]` |
+| **title_english** | Animals — Ecological Systems `[DRAFT — not owner-approved]` |
 
-**Content scope:** רשתות מזון; מגוון ביולוגי; תפקיד האדם — דורש איור: רשת מזון
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על רשתות מזון, מגוון ביולוגי — ועל תפקידנו בשמירה על מערכות אקולוגיות.
+**Content scope:** Food webs; biodiversity; role of humans — requires illustration: food web
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-רשת מזון — קשרים בין יצורים:
-מי אוכל את מי, ומי נותן מזון למי.
-דוגמה: עשב נאכל על ידי ארנב, וארנב יכול להיאכל על ידי נמר. אם חסר קישור — הרשת נפגעת.
-מגוון ביולוגי — מספר רב של מינים באותו מקום:
-- יותר מגוון — מערכת יציבה יותר
-- פחות מגוון — קשה יותר להתאושש משינוי
-תפקיד האדם:
-- שמירה על יערות ומים — בתי גידול
-- זיהום וכריתה — פוגעים במגוון
-- שמירה על טבע — עוזרת לרשת המזון
+Today in science we will learn about food webs, biodiversity — and our role in protecting ecological systems.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-באגם:
-אצות נאכלות על ידי דג קטן, והדג הקטן נאכל על ידי שלדג.
-אם המים מזוהמים — פחות אצות, פחות דגים, פחות מגוון.
-שמירה על המים — שומרת על הרשת.
-
----
-
-## 4. בואו נפתור
-
-מה קורה לרשת המזון אם נעלמים כל הנמרים?
-נמרים אוכלים ארנבים.
-יותר ארנבים — פחות עשב — שינוי בכל הרשת.
-הרשת משתנה — לא בהכרח לטובה
+A food web — connections between living things:
+Who eats whom, and who provides food for whom.
+Example: grass is eaten by a rabbit, and a rabbit can be eaten by a tiger. If one link is missing — the web is harmed.
+Biodiversity — a large number of species in the same place:
+- More diversity — a more stable system
+- Less diversity — harder to recover from change
+Human role:
+- Protecting forests and water — habitats
+- Pollution and deforestation — harm diversity
+- Protecting nature — helps the food web
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-ציירו רשת מזון קצרה:
-שלושה קישורים — צמח, חיה שאוכלת צמח, וטורף.
-איפה רואים מגוון ביולוגי בפארק?
-(ציפורים, חרקים, צמחים)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+In a pond:
+Algae are eaten by a small fish, and the small fish is eaten by a kingfisher.
+If the water is polluted — fewer algae, fewer fish, less diversity.
+Protecting the water — protects the web.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-השאלה: ציירו רשת מזון עם שלושה קישורים — ואיפה רואים מגוון ביולוגי בפארק?
-הסבר מדעי:
-רשת מזון מציגה מי אוכל את מי בסביבה.
-דוגמה לשרשרת:
-עשב נאכל על ידי חגב, והחגב נאכל על ידי ציפור.
-כל חוליה תלויה בזו שלפניה — אם החגב נעלם, הציפור תסבול מחוסר מזון.
-מגוון ביולוגי בפארק ניכר בציפורים מסוגים שונים, חרקים שונים, ופרחים ועצים ממינים שונים.
-ככל שיש יותר מינים — הרשת חזקה ועמידה יותר לשינויים.
-דוגמת רשת: עשב, חגב וציפור. מגוון בפארק — ציפורים, חרקים, צמחים שונים.
+What happens to the food web if all tigers disappear?
+Tigers eat rabbits.
+More rabbits — less grass — change in the whole web.
+The web changes — not necessarily for the better
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים רשתות מזון ומגוון ביולוגי במדעים.
-בתרגול חפשו שאלות על קשרים בין יצורים בטבע.
+Draw a short food web:
+Three links — plant, animal that eats plants, predator.
+Where do you see biodiversity in a park?
+(birds, insects, plants)
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: draw a food web with three links — and where do you see biodiversity in a park?
+Scientific explanation:
+A food web shows who eats whom in an environment.
+Example chain:
+Grass is eaten by a grasshopper, and the grasshopper is eaten by a bird.
+Each link depends on the one before it — if the grasshopper disappears, the bird will suffer from lack of food.
+Biodiversity in a park shows in different types of birds, different insects, and flowers and trees of different species.
+The more species there are — the stronger and more resilient the web is to changes.
+Example web: grass, grasshopper, bird. Biodiversity in a park — different birds, insects, plants.
+
+---
+
+## 7. Let's practice!
+
+Now you know about food webs and biodiversity in science.
+When you practice, look for questions about connections between living things in nature.

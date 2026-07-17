@@ -1,4 +1,4 @@
-# משוואת חילוק — מספר חסר
+# Division Equation — Missing Number
 
 ## Metadata
 
@@ -11,65 +11,65 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת חילוק — מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Division Equation — Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקום ריק; מחלק או מחולק
+**Content scope:** blank space; missing divisor or dividend
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור משוואות חילוק.
-96 ÷ ? = 8 — מחפשים מחלק.
-? ÷ 8 = 12 — מחפשים מחולק.
-
----
-
-## 2. הסבר
-
-96 ÷ ? = 8 → ? = 96 ÷ 8 = 12 (מחלק)
-? ÷ 8 = 12 → ? = 12 × 8 = 96 (מחולק)
+Today we will solve division equations.
+96 ÷ ? = 8 — find the divisor.
+? ÷ 8 = 12 — find the dividend.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+96 ÷ ? = 8 → ? = 96 ÷ 8 = 12 (divisor)
+? ÷ 8 = 12 → ? = 12 × 8 = 96 (dividend)
+
+---
+
+## 3. Visual / concrete example
 
 72 ÷ ? = 9 → ? = 8
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 96 ÷ ? = 8
 ? = 96 ÷ 8 = 12
-בדיקה: 96 ÷ 12 = 8
+Check: 96 ÷ 12 = 8
 12.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פתרו: 60 ÷ ? = 5
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-פתרו: 60 ÷ ? = 5
-מחלק חסר → ? = מחולק ÷ מנה = 60 ÷ 5 = 12.
-בדיקה: 60 ÷ 12 = 5
-התשובה: ? = 12
+Solve: 60 ÷ ? = 5
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-משוואות חילוק מכינות לשברים.
-בתרגול תמצאו משוואות חילוק — זהו מה חסר!
+Solve: 60 ÷ ? = 5
+Missing divisor → ? = dividend ÷ quotient = 60 ÷ 5 = 12.
+Check: 60 ÷ 12 = 5
+The answer: ? = 12
+
+---
+
+## 7. Let's practice!
+
+Division equations prepare you for fractions.
+In practice you will find division equations — figure out what is missing!

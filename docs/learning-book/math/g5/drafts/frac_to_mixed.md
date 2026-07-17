@@ -1,4 +1,4 @@
-# שבר למספר מעורב
+# Improper Fraction to Mixed Number
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שבר למספר מעורב `[DRAFT — not owner-approved]` |
+| **title_english** | Improper Fraction to Mixed Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שבר לא נכון → שלם + שבר
+**Content scope:** Improper fraction → whole + fraction
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להמיר שבר לא נכון למספר מעורב.
-שבר לא נכון = מונה גדול או שווה למכנה.
+Today we'll learn to change an improper fraction to a mixed number.
+An improper fraction = numerator is greater than or equal to the denominator.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-7/3 → מספר מעורב:
-מחלקים: 7 ÷ 3 = 2 ושארית 1
-שלם = 2, שבר = 1/3
+7/3 → mixed number:
+Divide: 7 ÷ 3 = 2 remainder 1
+Whole = 2, fraction = 1/3
 7/3 = 2 1/3
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 11/4:
-11 ÷ 4 = 2 ושארית 3
+11 ÷ 4 = 2 remainder 3
 11/4 = 2 3/4
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-המירו 7/3 למספר מעורב
-7 ÷ 3 = 2 ושארית 1
+Change 7/3 to a mixed number
+7 ÷ 3 = 2 remainder 1
 2 1/3
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-המירו 13/5 למספר מעורב.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Change 13/5 to a mixed number.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-המירו 13/5 למספר מעורב.
-13 ÷ 5 = 2 ושארית 3
-שלם = 2, שבר = 3/5
+Change 13/5 to a mixed number.
+13 ÷ 5 = 2 remainder 3
+Whole = 2, fraction = 3/5
 13/5 = 2 3/5
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להמיר שבר למספר מעורב.
-בתרגול תמצאו המרות.
-חלקו מונה במכנה!
+Now you know how to change a fraction to a mixed number.
+In practice you'll find conversions.
+Divide the numerator by the denominator!

@@ -1,4 +1,4 @@
-# נסיעות — bus, travel
+# Travel — bus, travel
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | נסיעות — bus, travel |
+| **title_english** | Travel — bus, travel |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,72 +21,64 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נסיעות באנגלית.
+Today we will learn about travel in English.
 bus, travel — We travel by bus.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-bus — אוטובוס
-travel — לנסוע
-
-We travel by bus.
-
-אנחנו נוסעים באוטובוס.
-
----
-
-## 3. דוגמה
-
-משפחה באוטובוס.
+bus — a large vehicle that carries many people
+travel — to go from one place to another
 
 We travel by bus.
 
-אנחנו נוסעים באוטובוס.
+---
+
+## 3. Example
+
+A family on a bus.
+
+We travel by bus.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אנחנו נוסעים באוטובוס"?
+Question: How do you say this?
 
 We travel by bus
 
-תשובה: We travel by bus
+Answer: We travel by bus
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-תחנת רכבת.
+A train station.
 
 We travel by train.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אנחנו נוסעים ברכבת."
+Exercise: "We travel by train."
 
-by + אמצעי תחבורה = ב- (train, bus, car...).
+"By" + a mode of transportation is used for train, bus, car, and more.
 
-We travel by train.
-
-אנחנו נוסעים ברכבת.
-
- We travel by train.
+So the full sentence is: We travel by train.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים נסיעות.
-בתרגול תמצאו We travel by bus.
+Now you will describe travel.
+In the practice, you'll find: We travel by bus.

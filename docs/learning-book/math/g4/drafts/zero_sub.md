@@ -1,4 +1,4 @@
-# חיסור 0
+# Subtracting 0
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור 0 `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting 0 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור 0 ממספר. מספר פחות 0. ללא שליליים.
+**Content scope:** Subtracting 0 from a number. A number minus 0. No negatives.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מה קורה כשמחסירים 0 ממספר.
-0 לא "לוקח" כלום — המספר נשאר כמו שהוא.
+Today we'll learn what happens when you subtract 0 from a number.
+0 doesn't "take" anything — the number stays the same.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כלל:
-כל מספר − 0 = אותו מספר.
+Rule:
+Any number − 0 = the same number.
 789 − 0 = 789
 3,200 − 0 = 3,200
-למה? 0 אומר "אין כלום לקחת".
-אם יש לכם 789 חפצים ומורידים 0 — עדיין יש 789.
-שימו לב:
-זה שונה מ-789 − 789 (שזה 0).
-כאן מחסירים 0, לא את המספר עצמו.
+Why? 0 means "nothing to take away."
+If you have 789 things and take away 0 — you still have 789.
+Watch out:
+This is different from 789 − 789 (which is 0).
+Here you subtract 0, not the number itself.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 5,640 − 0 = ?
 5,640 − 0 = 5,640
-מחסירים "כלום" — נשאר 5,640.
+Subtracting "nothing" — 5,640 stays.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 2,501 − 0 = ?
-מחסירים 0 — לא משנה כלום.
+Work out: 2,501 − 0 = ?
+Subtracting 0 — nothing changes.
 2,501 − 0 = 2,501
 2,501
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 4,125 − 0 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 4,125 − 0 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 4,125 − 0 = ?
-מחסירים 0 — 0 לא לוקח כלום, המספר נשאר.
+Work out: 4,125 − 0 = ?
+Subtracting 0 — 0 takes nothing away, the number stays.
 4,125 − 0 = 4,125
 4,125
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שחיסור 0 לא משנה את התוצאה.
-בתרגול תמצאו חיסורים עם 0.
-המספר נשאר כמו שהוא!
+Now you know that subtracting 0 doesn't change the answer.
+In practice you'll find subtractions with 0.
+The number stays the same!

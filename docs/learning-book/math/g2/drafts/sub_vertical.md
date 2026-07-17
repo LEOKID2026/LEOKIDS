@@ -1,4 +1,4 @@
-﻿# חיסור במאונך
+# Vertical Subtraction
 
 ## Metadata
 
@@ -11,46 +11,44 @@
 | **age_band** | grades_1_2 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור במאונך `[DRAFT — not owner-approved]` |
+| **title_english** | Vertical Subtraction |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיסור במאונך (עמודות). החלפת עשרה ב 10 אחדות. ללא תוצאות שליליות, ללא מאות כבדות.
+**Content scope:** Vertical subtraction (columns). Trading one ten for 10 ones. No negative results, no heavy hundreds.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד חיסור במאונך — כותבים מספרים אחד מתחת לשני ומחסרים עמודה אחר עמודה.
-לפעמים צריך להחליף עשרה אחת ב 10 אחדות — וזה בסדר!
-
----
-
-## 2. הסבר
-
-איך כותבים במאונך?
-- אחדות מתחת לאחדות
-- עשרות מתחת לעשרות
-איך מחסרים?
-1.
-מתחילים מאחדות (ימין)
-2. כשאין מספיק אחדות, מחליפים עשרה אחת ב 10 אחדות (למשל 52 → 4 עשרות ו 12 אחדות)
-3.
-מחסרים אחדות, ואז עשרות
-(בכיתה לפעמים קוראים לזה גם השאלה — אבל כאן נשתמש במילים: מחליפים עשרה אחת ב 10 אחדות.)
+Today we're going to learn vertical subtraction — write numbers one under the other and subtract column by column.
+Sometimes you need to trade one ten for 10 ones — and that's okay!
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-52 − 27 במאונך:
-מה קורה?
-- באחדות 2 קטן מ-7 → מחליפים עשרה: 52 → 42 + 12 (4 עשרות, 12 אחדות)
-- אחדות: 12 − 7 = 5
-- עשרות: 4 − 2 = 2
+How do you write vertically?
+- Ones under ones
+- Tens under tens
+How do you subtract?
+1. Start with ones (right)
+2. When there aren't enough ones, trade one ten for 10 ones (for example 52 → 4 tens and 12 ones)
+3. Subtract ones, then tens
+(In class this is sometimes called borrowing — but here we'll say: trade one ten for 10 ones.)
+
+---
+
+## 3. Visual / concrete example
+
+52 − 27 vertically:
+What happens?
+- In ones, 2 is less than 7 → trade a ten: 52 → 42 + 12 (4 tens, 12 ones)
+- Ones: 12 − 7 = 5
+- Tens: 4 − 2 = 2
 - 52 − 27 = 25
 4 12
 52
@@ -60,36 +58,36 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו במאונך: 52 − 27 = ?
-כותבים 52 ו-27 — אחדות מתחת לאחדות.
-באחדות 2 < 7 → מחליפים עשרה: 52 → 4 עשרות ו-12 אחדות.
-אחדות: 12 − 7 = 5 עשרות: 4 − 2 = 2
+Calculate vertically: 52 − 27 = ?
+Write 52 and 27 — ones under ones.
+In ones 2 < 7 → trade a ten: 52 → 4 tens and 12 ones.
+Ones: 12 − 7 = 5  Tens: 4 − 2 = 2
 52 − 27 = 25
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו במאונך: 64 − 38 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate vertically: 64 − 38 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו במאונך: 64 − 38 = ?
-באחדות 4 < 8 → מחליפים עשרה: 64 → 5 עשרות ו-14 אחדות.
-שלב 2 — אחדות: 14 − 8 = 6
-שלב 3 — עשרות: 5 − 3 = 2
+Calculate vertically: 64 − 38 = ?
+In ones 4 < 8 → trade a ten: 64 → 5 tens and 14 ones.
+Step 2 — ones: 14 − 8 = 6
+Step 3 — tens: 5 − 3 = 2
 64 − 38 = 26
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר במאונך — עם החלפת עשרה ב 10 אחדות.
-בתרגול תמצאו חיסורים במאונך.
-התחילו תמיד מאחדות!
+Now you know how to subtract vertically — trading one ten for 10 ones.
+In practice you'll find vertical subtractions.
+Always start with the ones!

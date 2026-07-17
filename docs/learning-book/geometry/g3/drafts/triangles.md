@@ -1,4 +1,4 @@
-﻿# סוגי משולשים
+# Types of Triangles
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סוגי משולשים `[DRAFT — not owner-approved]` |
+| **title_english** | Types of Triangles `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שווה צלעות, שווה שוקיים, שונה צלעות; זיהוי
+**Content scope:** Equilateral, isosceles, scalene; identification
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה לסווג משולשים לפי אורך הצלעות.
-נכיר שלושה סוגים:
-משולש שווה צלעות, משולש שווה שוקיים ומשולש שונה צלעות.
+Today in geometry we will learn to sort triangles by the length of their sides.
+We will learn three types:
+equilateral triangle, isosceles triangle, and scalene triangle.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: triangle_parts
 :::
 
-משולש שווה צלעות:
-שלוש הצלעות באותו אורך.
-משולש שווה שוקיים:
-שתי צלעות באותו אורך, והשלישית שונה.
-משולש שונה צלעות:
-שלוש הצלעות באורכים שונים — אף זוג לא שווה.
-כדי לזהות סוג — בודקים כמה צלעות שוות, לא את גודל הזוויות.
+Equilateral triangle:
+All three sides are the same length.
+Isosceles triangle:
+Two sides are the same length, and the third is different.
+Scalene triangle:
+All three sides are different lengths — no pair is equal.
+To identify the type — check how many sides are equal, not the size of the angles.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משולש עם צלעות 4, 4 ו-6:
-- שתי צלעות שוות (4 ו-4)
-- צלע שלישית שונה (6)
-סוג המשולש:
-משולש שווה שוקיים.
-
----
-
-## 4. בואו נפתור
-
-למשולש יש שלוש צלעות באורך 5, 5 ו-5. לאיזה סוג הוא שייך?
-בודקים — כל שלוש הצלעות שוות.
-שלוש צלעות שוות → משולש שווה צלעות.
-משולש שווה צלעות
+A triangle with sides 4, 4, and 6:
+- Two equal sides (4 and 4)
+- A third side that is different (6)
+The type of triangle:
+Isosceles triangle.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-משולש עם צלעות 3, 3 ו-5 — איזה סוג משולש זה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-משולש עם צלעות 3, 3 ו-5 — איזה סוג משולש זה?
-בודקים אם כל שלוש הצלעות שוות — 3, 3, 5: לא כולן שוות.
-בודקים אם יש שתי צלעות שוות — הצלע 3 מופיעה פעמיים: כן, שתי צלעות שוות.
-המשולש הוא משולש שווה שוקיים
+A triangle has three sides of length 5, 5, and 5. What type is it?
+Check — all three sides are equal.
+Three equal sides → equilateral triangle.
+Equilateral triangle
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם יודעים לזהות סוגי משולשים בגאומטריה.
-בתרגול תמצאו משולש ותבדקו כמה צלעות שוות — כך תדעו אם הוא שווה צלעות, שווה שוקיים או שונה צלעות.
+A triangle with sides 3, 3, and 5 — what type of triangle is it?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A triangle with sides 3, 3, and 5 — what type of triangle is it?
+Check if all three sides are equal — 3, 3, 5: not all equal.
+Check if there are two equal sides — the side 3 appears twice: yes, two equal sides.
+The triangle is an isosceles triangle
+
+---
+
+## 7. Let's practice!
+
+Now you know how to identify types of triangles in geometry.
+In practice you will see a triangle and check how many sides are equal — that tells you if it is equilateral, isosceles, or scalene.

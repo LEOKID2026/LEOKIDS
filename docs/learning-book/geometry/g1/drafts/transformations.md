@@ -1,4 +1,4 @@
-﻿# הזזה ושיקוף — היכרות
+# Translation and Reflection — Introduction
 
 ## Metadata
 
@@ -11,78 +11,78 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | הזזה ושיקוף — היכרות `[DRAFT — not owner-approved]` |
+| **title_english** | Translation and Reflection — Introduction `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הזזה (מעבר בלי היפוך); שיקוף (מראה); ללא סיבוב בכיתה א׳
+**Content scope:** Translation (moving without flipping); reflection (mirror image); no rotation in grade 1
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על שני סוגי תנועה של צורה:
-הזזה — מעבירים את הצורה ממקום למקום.
-שיקוף — עושים ממנה מראה, כמו במראה.
-
----
-
-## 2. הסבר
-
-הזזה:
-מזיזים צורה בלי להפוך אותה.
-דוגמה: מחליקים ספר על השולחן ימינה — הספר נשאר אותו ספר, רק במקום אחר.
-שיקוף:
-מקבלים צורה כמו במראה — ימין ושמאל מתחלפים.
-דוגמה: ציור פרפר — אם מקפלים דף על האמצע, הצד השני נראה כמו מראה.
-כאן נכיר הזזה ושיקוף.
-סיבוב נכיר בשלב מתקדם יותר.
+Today in geometry we will learn about two ways a shape can move:
+Translation — we move the shape from one place to another.
+Reflection — we make a mirror image of it, like in a mirror.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-צעצוע על שולחן:
-- דוחפים אותו קדימה — הזזה
-- מחזיקים מראה לידו — רואים שיקוף (מראה)
-אותו צעצוע — שני סוגי שינוי שונים.
-
----
-
-## 4. בואו נפתור
-
-מחליקים מדבקה של משולש על הדף ימינה בלי להפוך אותה. איזו תנועה זו?
-הצורה עברה ממקום — אבל לא התהפכה.
-זו לא מראה — זו הזזה.
-הזזה
+Translation:
+We move a shape without flipping it over.
+Example: slide a book across the table to the right — the book stays the same book, just in a different place.
+Reflection:
+We get a shape that looks like it does in a mirror — left and right swap places.
+Example: a butterfly drawing — if you fold the paper down the middle, the other side looks like a mirror image.
+Here we will learn translation and reflection.
+We will learn about rotation at a more advanced stage.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-מניחים ציור של מכונית על שולחן ומחליקים אותו קדימה — המכונית עוברת מקום אבל לא מתהפכת.
-איזו תנועה זו — הזזה או שיקוף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מניחים ציור של מכונית על שולחן ומחליקים אותו קדימה — המכונית עוברת מקום אבל לא מתהפכת.
-איזו תנועה זו?
-האם המכונית התהפכה? לא — היא נשארת אותה מכונית, כמו שהייתה.
-האם ימין ושמאל התחלפו? לא — זו לא תמונת מראה.
-הצורה רק עברה ממקום למקום בלי שינוי כיוון.
-הזזה
+A toy on a table:
+- Push it forward — translation
+- Hold a mirror next to it — you see a reflection (mirror image)
+Same toy — two different kinds of change.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים הזזה ושיקוף בגאומטריה.
-בתרגול תמצאו שאלות:
-האם הצורה עברה מקום או נראית במראה?
+You slide a triangle sticker across the page to the right without flipping it over. What kind of move is this?
+The shape moved to a new place — but it did not flip over.
+This is not a mirror image — it is a translation.
+Translation
+
+---
+
+## 5. Try it yourself
+
+You place a drawing of a car on a table and slide it forward — the car moves to a new place but does not flip over.
+What kind of move is this — translation or reflection?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+You place a drawing of a car on a table and slide it forward — the car moves to a new place but does not flip over.
+What kind of move is this?
+Did the car flip over? No — it stays the same car, just as it was.
+Did left and right swap places? No — this is not a mirror image.
+The shape only moved from one place to another without changing direction.
+Translation
+
+---
+
+## 7. Let's practice!
+
+Now you know translation and reflection in geometry.
+In practice you will find questions like:
+Did the shape move to a new place, or does it look like a mirror image?

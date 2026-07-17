@@ -1,4 +1,4 @@
-# תחביבים — תרגום עם Continuous
+# Hobbies — Translation with Continuous
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | תחביבים — תרגום עם Continuous |
+| **title_english** | Hobbies — Translation with Continuous |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** He is playing guitar — תרגום דו-כיווני
+**Content scope:** He is playing guitar — two-way translation
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום תחביבים ב-Continuous.
-He is playing guitar — הוא מנגן בגיטרה (עכשיו).
+Today we will practice hobbies in the Continuous form.
+He is playing guitar — right now.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Present Continuous בתרגום:
+Present Continuous:
 
 He is playing guitar.
-
-הוא מנגן בגיטרה.
 
 She is drawing a picture.
 
-היא מציירת תמונה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד מנגן בגיטרה.
+A boy playing guitar.
 
 He is playing guitar.
 
-הוא מנגן בגיטרה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הוא מנגן בגיטרה" (עכשיו)?
+Question: How do you say this?
 
 He is playing guitar
 
-תשובה: He is playing guitar
+Answer: He is playing guitar
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד על במה שר.
+A boy singing on stage.
 
 He is singing a song.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הוא שר שיר (עכשיו)."
+Exercise: "He is singing a song (right now)."
 
-פעולה עכשיו — Present Continuous: is + פועל + ing.
+An action happening right now uses Present Continuous: is + verb + ing.
 
-he = יחיד — is singing.
+"He" is singular — is singing.
 
-הוא שר שיר עכשיו.
-
- He is singing a song.
+So the full sentence is: He is singing a song.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום תחביבים ב-Continuous.
-בתרגול תמצאו He is playing guitar.
+Now you will practice hobbies in the Continuous form.
+In the practice, you'll find: He is playing guitar.

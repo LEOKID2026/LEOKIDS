@@ -1,4 +1,4 @@
-# תחביבים — תרגום
+# Hobbies — Translation
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | תחביבים — תרגום |
+| **title_english** | Hobbies — Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום על תחביבים.
-I like to draw — אני אוהב/ת לצייר.
+Today we practice translating hobbies.
+I like to draw.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דוגמה:
+Example:
 
 I like to draw.
 
-אני אוהב/ת לצייר.
+I like to draw.
 
 She plays the piano.
 
-היא מנגנת בפסנתר.
+She plays the piano.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה מציירת.
+A girl drawing.
 
 I like to draw.
 
-אני אוהב/ת לצייר.
+I like to draw.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אני אוהב/ת לצייר"?
+Question: how do we say "I like to draw"?
 
 I like to draw
 
-תשובה: I like to draw
+Answer: I like to draw
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד עם ספר פתוח.
+A child with an open book.
 
 He likes to read.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: ילד עם ספר פתוח.
+Exercise: a child with an open book.
 
-הפתרון:
+The solution:
 
 He likes to read.
 
-הוא אוהב לקרוא.
+He likes to read.
 
-כל הכבוד! אחרי he מוסיפים s — likes (לא like), ואחריו to read.
+Well done! After he, we add s — likes (not like), followed by to read.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום תחביבים.
-בתרגול תמצאו I like to draw ו-She plays the piano.
+Now you practice translating hobbies.
+In practice, you'll find I like to draw and She plays the piano.

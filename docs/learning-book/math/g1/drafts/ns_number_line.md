@@ -1,4 +1,4 @@
-# ציר המספרים
+# The Number Line
 
 ## Metadata
 
@@ -11,80 +11,80 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ציר המספרים `[DRAFT — not owner-approved]` |
+| **title_english** | The Number Line |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ציר מ-0 עד 20. ללא שברים, ללא עשרוניים, ללא מספרים שליליים.
+**Content scope:** Number line from 0 to 20. No fractions, no decimals, no negative numbers.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד מה זה ציר מספרים.
-זה כלי שעוזר לנו לראות את כל המספרים בסדר — מקטן לגדול.
-
----
-
-## 2. הסבר פשוט
-
-ציר המספרים הוא קו עם סימונים.
-כל סימון מראה מספר אחד.
-המספרים מסודרים משמאל לימין: 0 בצד שמאל, ואז 1, 2, 3...
-כלל חשוב: ככל שמספר נמצא יותר ימינה — הוא יותר גדול.
+Today we're going to learn what a number line is.
+It's a tool that helps us see all the numbers in order — from small to big.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-ציר מספרים מ-0 עד 10 (כל המספרים מסומנים):
-מה רואים בדוגמה?
-- קו ישר
-- נקודות קטנות במרחקים שווים
-- מספר מעל כל נקודה
-- חץ קטן ימינה עם הכיתוב "גדול יותר"
-איך להשתמש:
-- שימו אצבע על מספר — "אני על 4"
-- ספרו כמה צעדים ימינה — "2 צעדים מ-4 מגיעים ל-6"
+A number line is a line with marks on it.
+Each mark shows one number.
+The numbers go from left to right: 0 on the left side, then 1, 2, 3...
+Important rule: The farther right a number is — the bigger it is.
+
+---
+
+## 3. Visual / concrete example
+
+Number line from 0 to 10 (every number is marked):
+What do you see in the example?
+- A straight line
+- Small dots at equal distances
+- A number above each dot
+- A small arrow pointing right with the label "bigger"
+How to use it:
+- Put your finger on a number — "I'm on 4"
+- Count how many steps to the right — "2 steps from 4 gets you to 6"
 0 — 1 — 2 — 3 — 4 — 5 — 6 — 7 — 8 — 9 — 10
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-איזה מספר נמצא 2 צעדים ימינה מ-4?
-מצאו את 4 על ציר המספרים.
-קפצו צעד אחד ימינה → 5
-עוד צעד ימינה → 6
+Which number is 2 steps to the right of 4?
+Find 4 on the number line.
+Hop one step to the right → 5
+Another step to the right → 6
 6
-בדיקה: 6 נמצא ימינה מ-4, אז 6 גדול מ-4. נכון!
+Check: 6 is to the right of 4, so 6 is bigger than 4. Correct!
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-איזה מספר נמצא 3 צעדים ימינה מ-2?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-איזה מספר נמצא 3 צעדים ימינה מ-2?
-מצאו את 2 על ציר המספרים.
-קפצו צעד אחד ימינה → 3.
-עוד צעד ימינה → 4.
-עוד צעד ימינה → 5.
-3 צעדים ימינה מ-2 מגיעים ל-5.
+Which number is 3 steps to the right of 2?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם מכירים את ציר המספרים.
-בתרגול תמצאו שאלות על מיקום מספרים וקפיצות.
-השתמשו בציר!
+Which number is 3 steps to the right of 2?
+Find 2 on the number line.
+Hop one step to the right → 3.
+Another step to the right → 4.
+Another step to the right → 5.
+3 steps to the right of 2 gets you to 5.
+
+---
+
+## 7. Let's practice!
+
+Now you know the number line.
+In practice you'll find questions about where numbers are and about jumps.
+Use the number line!

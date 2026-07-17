@@ -44,7 +44,6 @@
 | **File** | `g4.genre_mix.md` |
 | **learning_page_id** | `hebrew:g4:g4.genre_mix` |
 | **skill_id** | `hebrew:g4:reading:g4.genre_mix` |
-| **title_hebrew** | סוגות שונות — סיפור ומידע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -157,7 +156,6 @@
 | **File** | `g4.info_lit_intro.md` |
 | **learning_page_id** | `hebrew:g4:g4.info_lit_intro` |
 | **skill_id** | `hebrew:g4:reading:g4.info_lit_intro` |
-| **title_hebrew** | אוריינות מידע — מקור אמין `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -267,7 +265,6 @@
 | **File** | `meaning.md` |
 | **learning_page_id** | `hebrew:g4:meaning` |
 | **skill_id** | `hebrew:rich:reading:sentence_read:meaning` |
-| **title_hebrew** | קריאת משפט — משמעות (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -375,7 +372,6 @@
 | **File** | `g4.summary_intro.md` |
 | **learning_page_id** | `hebrew:g4:g4.summary_intro` |
 | **skill_id** | `hebrew:g4:comprehension:g4.summary_intro` |
-| **title_hebrew** | סיכום בסיסי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -481,7 +477,6 @@
 | **File** | `g4.text_structure.md` |
 | **learning_page_id** | `hebrew:g4:g4.text_structure` |
 | **skill_id** | `hebrew:g4:comprehension:g4.text_structure` |
-| **title_hebrew** | מבנה טקסט — פתיחה, גוף וסיום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -587,7 +582,6 @@
 | **File** | `detail.md` |
 | **learning_page_id** | `hebrew:g4:detail` |
 | **skill_id** | `hebrew:rich:comprehension:passage_explicit:detail` |
-| **title_hebrew** | פרט מתוך הטקסט (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -688,7 +682,6 @@
 | **File** | `implied.md` |
 | **learning_page_id** | `hebrew:g4:implied` |
 | **skill_id** | `hebrew:rich:comprehension:passage_inference:implied` |
-| **title_hebrew** | מה משתמע מהטקסט? (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -789,7 +782,6 @@
 | **File** | `because.md` |
 | **learning_page_id** | `hebrew:g4:because` |
 | **skill_id** | `hebrew:rich:comprehension:cause_effect:because` |
-| **title_hebrew** | סיבה ותוצאה — כי (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -892,7 +884,6 @@
 | **File** | `parallel.md` |
 | **learning_page_id** | `hebrew:g4:parallel` |
 | **skill_id** | `hebrew:rich:comprehension:analogy_reasoning:parallel` |
-| **title_hebrew** | השוואה ודמיון (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -994,7 +985,6 @@
 | **File** | `tf.md` |
 | **learning_page_id** | `hebrew:g4:tf` |
 | **skill_id** | `hebrew:rich:comprehension:binary_fact_mid_grammar:tf` |
-| **title_hebrew** | נכון או לא — לפי הטקסט (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1095,7 +1085,6 @@
 | **File** | `context_clue.md` |
 | **learning_page_id** | `hebrew:g4:context_clue` |
 | **skill_id** | `hebrew:rich:comprehension:completion:context_clue` |
-| **title_hebrew** | השלמה לפי הקשר (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1196,7 +1185,6 @@
 | **File** | `g4.root_pattern_intro.md` |
 | **learning_page_id** | `hebrew:g4:g4.root_pattern_intro` |
 | **skill_id** | `hebrew:g4:grammar:g4.root_pattern_intro` |
-| **title_hebrew** | שורש ותבנית — היכרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1305,7 +1293,6 @@
 | **File** | `g4.dictation_spot_error.md` |
 | **learning_page_id** | `hebrew:g4:g4.dictation_spot_error` |
 | **skill_id** | `hebrew:g4:grammar:g4.dictation_spot_error` |
-| **title_hebrew** | זיהוי שגיאת כתיב והכתבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1408,7 +1395,6 @@
 | **File** | `plural.md` |
 | **learning_page_id** | `hebrew:g4:plural` |
 | **skill_id** | `hebrew:rich:grammar:gender_number:plural` |
-| **title_hebrew** | יחיד ורבים — התאמה (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1511,7 +1497,6 @@
 | **File** | `binyan_fit.md` |
 | **learning_page_id** | `hebrew:g4:binyan_fit` |
 | **skill_id** | `hebrew:rich:grammar:morphology:binyan_fit` |
-| **title_hebrew** | בחירת פועל מתאים (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1614,7 +1599,6 @@
 | **File** | `verb_noun.md` |
 | **learning_page_id** | `hebrew:g4:verb_noun` |
 | **skill_id** | `hebrew:rich:grammar:part_of_speech:verb_noun` |
-| **title_hebrew** | פועל ושם עצם — הבחנה (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1717,7 +1701,6 @@
 | **File** | `collocation.md` |
 | **learning_page_id** | `hebrew:g4:collocation` |
 | **skill_id** | `hebrew:rich:grammar:prep_choice:collocation` |
-| **title_hebrew** | מילים שיוצאות יחד (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1820,7 +1803,6 @@
 | **File** | `g4.literary_lexicon_light.md` |
 | **learning_page_id** | `hebrew:g4:g4.literary_lexicon_light` |
 | **skill_id** | `hebrew:g4:vocabulary:g4.literary_lexicon_light` |
-| **title_hebrew** | אוצר מילים ספרותי קל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1922,7 +1904,6 @@
 | **File** | `g4.idiom_light.md` |
 | **learning_page_id** | `hebrew:g4:g4.idiom_light` |
 | **skill_id** | `hebrew:g4:vocabulary:g4.idiom_light` |
-| **title_hebrew** | מילים וביטויים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2024,7 +2005,6 @@
 | **File** | `near_meaning.md` |
 | **learning_page_id** | `hebrew:g4:near_meaning` |
 | **skill_id** | `hebrew:rich:vocabulary:synonym:near_meaning` |
-| **title_hebrew** | מילים קרובות במשמעות (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2124,7 +2104,6 @@
 | **File** | `opposite.md` |
 | **learning_page_id** | `hebrew:g4:opposite` |
 | **skill_id** | `hebrew:rich:vocabulary:antonym:opposite` |
-| **title_hebrew** | מילים הפוכות (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2227,7 +2206,6 @@
 | **File** | `best_word.md` |
 | **learning_page_id** | `hebrew:g4:best_word` |
 | **skill_id** | `hebrew:rich:vocabulary:precision:best_word` |
-| **title_hebrew** | המילה המדויקת ביותר (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2329,7 +2307,6 @@
 | **File** | `education_lexicon.md` |
 | **learning_page_id** | `hebrew:g4:education_lexicon` |
 | **skill_id** | `hebrew:rich:vocabulary:semantic_field:education_lexicon` |
-| **title_hebrew** | מילים מעולם הלימוד (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2431,7 +2408,6 @@
 | **File** | `g4.intro_body_conclusion_choice.md` |
 | **learning_page_id** | `hebrew:g4:g4.intro_body_conclusion_choice` |
 | **skill_id** | `hebrew:g4:writing:g4.intro_body_conclusion_choice` |
-| **title_hebrew** | פתיחה, גוף וסיום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2535,7 +2511,6 @@
 | **File** | `g4.genre_appropriate_language.md` |
 | **learning_page_id** | `hebrew:g4:g4.genre_appropriate_language` |
 | **skill_id** | `hebrew:g4:writing:g4.genre_appropriate_language` |
-| **title_hebrew** | שפה מתאימה לסוגה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2634,7 +2609,6 @@
 | **File** | `conclusion.md` |
 | **learning_page_id** | `hebrew:g4:conclusion` |
 | **skill_id** | `hebrew:rich:writing:logic_completion:conclusion` |
-| **title_hebrew** | סיום ומסקנה (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2739,7 +2713,6 @@
 | **File** | `polite_phrase.md` |
 | **learning_page_id** | `hebrew:g4:polite_phrase` |
 | **skill_id** | `hebrew:rich:writing:structured_completion:polite_phrase` |
-| **title_hebrew** | ניסוח מנומס (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2843,7 +2816,6 @@
 | **File** | `g4.present_text_based_choice.md` |
 | **learning_page_id** | `hebrew:g4:g4.present_text_based_choice` |
 | **skill_id** | `hebrew:g4:speaking:g4.present_text_based_choice` |
-| **title_hebrew** | הצגת רעיון מתוך טקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2944,7 +2916,6 @@
 | **File** | `request.md` |
 | **learning_page_id** | `hebrew:g4:request` |
 | **skill_id** | `hebrew:rich:speaking:social_reply_mid_help:request` |
-| **title_hebrew** | בקשת עזרה — ניסוח (כיתה ד׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

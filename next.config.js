@@ -276,6 +276,7 @@ const nextConfig = {
         destination: "/student/offline/:path*",
         permanent: false,
       },
+      // Legacy `.he` page stripping is handled in middleware.js (admin + /api excluded).
     ];
   },
 };

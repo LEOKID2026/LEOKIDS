@@ -648,7 +648,7 @@ button.hudChip {
   font-weight: 900;
   color: #334155;
   line-height: 1.15;
-  text-align: right;
+  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -1,4 +1,4 @@
-# משפחות מילים
+# Word Families
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_1_2 |
 | **page_type** | phonics_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | משפחות מילים |
+| **title_english** | Word Families |
 
 **Source references:**
 - `docs/qa/ENGLISH_G1_G2_PHONICS_CONTENT_MAP.md`
@@ -20,59 +20,59 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד משפחות מילים — מילים עם סוף דומה.
-למשל: cat, hat ו-bat מסתיימות באותו צליל.
-גם man, can ו-fan מסתיימות באותו צליל.
-
----
-
-## 2. הסבר
-
-משפחות מילים:
-cat, hat, bat — סוף דומה.
-man, can, fan — סוף דומה.
-sit, hit, bit — סוף דומה.
-dog, log, fog — סוף דומה.
-משנים את ההתחלה, והסוף נשאר דומה.
+Today we will learn word families — words with a similar ending.
+For example: cat, hat, and bat end with the same sound.
+Also man, can, and fan end with the same sound.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-cat ו-hat נשמעות דומות בסוף.
-sit ו-hit נשמעות דומות בסוף.
-dog ו-log נשמעות דומות בסוף.
-
----
-
-## 4. בואו נפתור
-
-איזו מילה נשמעת כמו cat בסוף, אבל היא לא cat?
-hat נשמעת דומה בסוף.
-גם bat מתאימה.
+Word families:
+cat, hat, bat — similar ending.
+man, can, fan — similar ending.
+sit, hit, bit — similar ending.
+dog, log, fog — similar ending.
+We change the beginning, and the ending stays similar.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-איזו מילה נשמעת כמו man בסוף, אבל היא לא man?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: איזו מילה נשמעת כמו man בסוף, אבל היא לא man?
-אפשר לבחור can או fan.
-שתיהן נשמעות דומות ל-man בסוף.
-התשובות המתאימות הן can או fan.
+cat and hat sound similar at the end.
+sit and hit sound similar at the end.
+dog and log sound similar at the end.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו מכירים משפחות מילים.
-בעמוד הבא — אוצר מילים חדש מהכיתה.
+Which word sounds like cat at the end, but isn't cat?
+hat sounds similar at the end.
+bat also works.
+
+---
+
+## 5. Try it yourself
+
+Which word sounds like man at the end, but isn't man?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: which word sounds like man at the end, but isn't man?
+You can choose can or fan.
+Both sound similar to man at the end.
+The matching answers are can or fan.
+
+---
+
+## 7. Let's practice!
+
+Now you know word families.
+On the next page — new classroom vocabulary.

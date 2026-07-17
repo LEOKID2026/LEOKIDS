@@ -39,8 +39,7 @@
 |-------|-------|
 | **File** | `mg_g2_neighborhood.md` |
 | **learning_page_id** | `geography:g2:mg_g2_neighborhood` |
-| **skill_id** | `geography:g2:skills:skills_0_הכרת_השכונה_ומבניה` |
-| **title_hebrew** | השכונה ומבניה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -144,8 +143,7 @@
 |-------|-------|
 | **File** | `mg_g2_neighborhood_map.md` |
 | **learning_page_id** | `geography:g2:mg_g2_neighborhood_map` |
-| **skill_id** | `geography:g2:geography:geography_0_מפת_שכונה` |
-| **title_hebrew** | מפת השכונה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -249,8 +247,7 @@
 |-------|-------|
 | **File** | `mg_g2_community_services.md` |
 | **learning_page_id** | `geography:g2:mg_g2_community_services` |
-| **skill_id** | `geography:g2:geography:geography_2_שירותים_בקהילה` |
-| **title_hebrew** | שירותים בקהילה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -353,8 +350,7 @@
 |-------|-------|
 | **File** | `mg_g2_israel_basics.md` |
 | **learning_page_id** | `geography:g2:mg_g2_israel_basics` |
-| **skill_id** | `geography:g2:skills:skills_3_הבנת_מושגים_בסיסיים_על_ארץ_ישראל` |
-| **title_hebrew** | ארץ ישראל — מושגים בסיסיים `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:skills:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -457,8 +453,7 @@
 |-------|-------|
 | **File** | `mg_g2_group_decisions.md` |
 | **learning_page_id** | `geography:g2:mg_g2_group_decisions` |
-| **skill_id** | `geography:g2:citizenship:citizenship_0_קבלת_החלטות_בקבוצה` |
-| **title_hebrew** | קבלת החלטות בקבוצה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -562,8 +557,7 @@
 |-------|-------|
 | **File** | `mg_g2_society_responsibility.md` |
 | **learning_page_id** | `geography:g2:mg_g2_society_responsibility` |
-| **skill_id** | `geography:g2:citizenship:citizenship_1_חברה_ואחריות` |
-| **title_hebrew** | חברה ואחריות `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -667,8 +661,7 @@
 |-------|-------|
 | **File** | `mg_g2_community_participation.md` |
 | **learning_page_id** | `geography:g2:mg_g2_community_participation` |
-| **skill_id** | `geography:g2:citizenship:citizenship_2_השתתפות_בקהילה` |
-| **title_hebrew** | השתתפות בקהילה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g2:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

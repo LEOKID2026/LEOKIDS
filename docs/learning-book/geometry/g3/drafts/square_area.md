@@ -1,4 +1,4 @@
-﻿# שטח ריבוע — כיתה ג׳
+# Area of a Square — Grade 3
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח ריבוע — כיתה ג׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Square — Grade 3 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** רשת יחידות; 5, 25
+**Content scope:** Unit grid; 5, 25
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק בגאומטריה שטח ריבוע — עם רשת ומספרים גדולים יותר.
-נמלא ריבוע צלע 5 ב25 יחידות ריבוע.
+Today in geometry we will strengthen the area of a square — with a grid and bigger numbers.
+We will fill a square with side 5 using 25 square units.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_area_grid
 :::
 
-שטח = כמה יחידות ריבוע (1×1) נכנסות בפנים.
-דרך ראשונה — רשת: 5 ריבועים בכל שורה, 5 שורות → 25 סה״כ.
-דרך שנייה — כפל: שטח = צלע × צלע = 5 × 5 = 25.
-יחידה: סמ״ר (סנטימטר רבוע).
+Area = how many square units (1×1) fit inside.
+First way — grid: 5 squares in each row, 5 rows → 25 total.
+Second way — multiply: area = side × side = 5 × 5 = 25.
+Unit: cm² (square centimeters).
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע צלע 5:
-- 5 ריבועים בכל שורה
-- 5 שורות
-- 5 × 5 = 25 יחידות ריבוע (25 סמ״ר)
-
----
-
-## 4. בואו נפתור
-
-לריבוע יש צלע באורך 5. מה השטח?
-שורה — 5 ריבועים קטנים.
-5 שורות — 5 × 5 = 25.
-25 יחידות ריבוע
+Square with side 5:
+- 5 squares in each row
+- 5 rows
+- 5 × 5 = 25 square units (25 cm²)
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-ריבוע עם צלע 6 — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A square has a side of length 5. What is the area?
+One row — 5 small squares.
+5 rows — 5 × 5 = 25.
+25 square units
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-ריבוע עם צלע 6 — מה השטח?
-בכל שורה יש 6 ריבועים קטנים.
-יש 6 שורות →
+A square with side 6 — what is the area?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A square with side 6 — what is the area?
+Each row has 6 small squares.
+There are 6 rows →
 6 × 6 = 36
-שטח = 36 סמ״ר
+Area = 36 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שטח ריבוע — ברשת או 5×5!
-בתרגול ספרו יחידות ריבוע או כפלו צלע בצלע!
+Now you know the area of a square — with a grid or 5×5!
+In practice count square units or multiply side by side!

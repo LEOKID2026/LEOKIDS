@@ -1,4 +1,4 @@
-# תרבות באנגלית
+# Culture in English
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | תרבות באנגלית |
+| **title_english** | Culture in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מילים חדשות על תרבות — culture, tradition, identity.
-Music is an important part of our culture — מוזיקה היא חלק חשוב מהתרבות שלנו.
+Today we will learn new words about culture — culture, tradition, identity.
+Music is an important part of our culture.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-culture — תרבות; tradition — מסורת:
+culture — the customs and ideas of a group of people; tradition — a custom passed down over time:
 
 Music is an important part of our culture.
-
-מוזיקה היא חלק חשוב מהתרבות שלנו.
 
 Every country has its own traditions.
 
-לכל מדינה יש מסורות משלה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-הופעת מוזיקה מסורתית.
+A traditional music performance.
 
 Music is an important part of our culture.
 
-מוזיקה היא חלק חשוב מהתרבות שלנו.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "מוזיקה היא חלק חשוב מהתרבות שלנו"?
+Question: How do you say this?
 
 Music is an important part of our culture
 
-תשובה: Music is an important part of our culture
+Answer: Music is an important part of our culture
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריקוד מסורתי בחג.
+A traditional dance at a holiday.
 
 Dance is an important part of our tradition.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הריקוד הוא חלק חשוב מהמסורת שלנו."
+Exercise: "Dance is an important part of our tradition."
 
-an important part of = חלק חשוב מ-.
+"An important part of" means a valuable piece of something.
 
-tradition = מסורת (יחיד, ספציפי לתרבות שלנו).
+"Tradition" is singular here, specific to our culture.
 
-הריקוד הוא חלק חשוב מהמסורת שלנו.
-
- Dance is an important part of our tradition.
+So the full sentence is: Dance is an important part of our tradition.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מדברים על תרבות ומסורות.
-בתרגול תמצאו Music is an important part of our culture.
+Now you will talk about culture and traditions.
+In the practice, you'll find: Music is an important part of our culture.

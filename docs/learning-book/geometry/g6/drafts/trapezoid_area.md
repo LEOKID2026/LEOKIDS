@@ -1,4 +1,4 @@
-﻿# שטח טרפז — כיתה ו׳
+# Area of a Trapezoid — Grade 6
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח טרפז — כיתה ו׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Trapezoid — Grade 6 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** (b1+b2)×h÷2; 8, 12, 5 ס״מ; יישום מעשי
+**Content scope:** (b1+b2)×h÷2; 8, 12, 5 cm; practical application
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחשב שטח טרפז — למשל פאה של גג בצורת טרפז.
-נוסחה: (בסיס1 + בסיס2) × גובה ÷ 2.
-כאן עובדים עם מידות גדולות יותר ומפרקים לשלבים ברורים.
+Today we will calculate area of a trapezoid — for example a roof face shaped like a trapezoid.
+Formula: (base1 + base2) × height ÷ 2.
+Here we work with larger measurements and break it into clear steps.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: trapezoid_area
 :::
 
-שלבים:
-1. ב1 + ב2 — סכום שני הבסיסים המקבילים
-2. × גובה — המרחק המאונך בין הבסיסים
-3. ÷ 2 — חצי מהמלבן "הדמיוני" שמקיף את הטרפז
+Steps:
+1. b1 + b2 — add the two parallel bases
+2. × height — the perpendicular distance between the bases
+3. ÷ 2 — half of the "imaginary" rectangle that wraps the trapezoid
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-גג טרפזי: בסיסים 8 ס״מ ו-12 ס״מ, גובה 5 ס״מ:
+Trapezoid roof: bases 8 cm and 12 cm, height 5 cm:
 8 + 12 = 20
 - 20 × 5 = 100
-- 100 ÷ 2 = 50 סמ״ר
-"ממוצע" הבסיסים: (8+12)÷2 = 10 → 10 × 5 = 50 — אותה תוצאה.
+- 100 ÷ 2 = 50 cm²
+"Average" of the bases: (8+12)÷2 = 10 → 10 × 5 = 50 — same result.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-טרפז — בסיסים 8 ס״מ ו-12 ס״מ, גובה 5 ס״מ. מה השטח?
+Trapezoid — bases 8 cm and 12 cm, height 5 cm. What is the area?
 8 + 12 = 20
 20 × 5 = 100
 100 ÷ 2 = 50
-50 סמ״ר.
+50 cm².
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-טרפז: בסיסים 6 ס״מ ו-10 ס״מ, גובה 4 ס״מ — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Trapezoid: bases 6 cm and 10 cm, height 4 cm — what is the area?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-טרפז — בסיסים 6 ס״מ ו-10 ס״מ, גובה 4 ס״מ — מה השטח?
+Trapezoid — bases 6 cm and 10 cm, height 4 cm — what is the area?
 6 + 10 = 16
 16 × 4 = 64
 64 ÷ 2 = 32
-32 סמ״ר
+32 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-שטח טרפז = ממוצע הבסיסים × גובה.
-בתרגול תמצאו טרפזים עם בסיסים וגובה — חברו, כפלו, וחלקו ב-2!
+Area of a trapezoid = average of the bases × height.
+In practice you'll find trapezoids with bases and height — add, multiply, and divide by 2!

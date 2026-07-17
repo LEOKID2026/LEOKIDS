@@ -44,7 +44,6 @@
 | **File** | `g6.compare_genres.md` |
 | **learning_page_id** | `hebrew:g6:g6.compare_genres` |
 | **skill_id** | `hebrew:g6:reading:g6.compare_genres` |
-| **title_hebrew** | השוואת סוגות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -161,7 +160,6 @@
 | **File** | `g6.complex_text_analysis.md` |
 | **learning_page_id** | `hebrew:g6:g6.complex_text_analysis` |
 | **skill_id** | `hebrew:g6:reading:g6.complex_text_analysis` |
-| **title_hebrew** | ניתוח טקסט מורכב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -268,7 +266,6 @@
 | **File** | `paragraph_role.md` |
 | **learning_page_id** | `hebrew:g6:paragraph_role` |
 | **skill_id** | `hebrew:rich:reading:structural:paragraph_role` |
-| **title_hebrew** | תפקיד הפסקה (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -385,7 +382,6 @@
 | **File** | `g6.critical_evaluation_light.md` |
 | **learning_page_id** | `hebrew:g6:g6.critical_evaluation_light` |
 | **skill_id** | `hebrew:g6:comprehension:g6.critical_evaluation_light` |
-| **title_hebrew** | הערכה ביקורתית קלה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -495,7 +491,6 @@
 | **File** | `g6.evidence_from_text.md` |
 | **learning_page_id** | `hebrew:g6:g6.evidence_from_text` |
 | **skill_id** | `hebrew:g6:comprehension:g6.evidence_from_text` |
-| **title_hebrew** | הבאת ראיה מהטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -604,7 +599,6 @@
 | **File** | `main_summary.md` |
 | **learning_page_id** | `hebrew:g6:main_summary` |
 | **skill_id** | `hebrew:rich:comprehension:main_idea:summary` |
-| **title_hebrew** | רעיון מרכזי וסיכום (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -714,7 +708,6 @@
 | **File** | `supporting_evidence.md` |
 | **learning_page_id** | `hebrew:g6:supporting_evidence` |
 | **skill_id** | `hebrew:rich:comprehension:supporting_detail:evidence` |
-| **title_hebrew** | פרטים כראיה (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -823,7 +816,6 @@
 | **File** | `contrast.md` |
 | **learning_page_id** | `hebrew:g6:contrast` |
 | **skill_id** | `hebrew:rich:comprehension:compare_statements:contrast` |
-| **title_hebrew** | השוואה והנגדה (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -931,7 +923,6 @@
 | **File** | `attitude.md` |
 | **learning_page_id** | `hebrew:g6:attitude` |
 | **skill_id** | `hebrew:rich:comprehension:implicit_tone:attitude` |
-| **title_hebrew** | גישה וטון (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1039,7 +1030,6 @@
 | **File** | `pronoun.md` |
 | **learning_page_id** | `hebrew:g6:pronoun` |
 | **skill_id** | `hebrew:rich:comprehension:reference:pronoun` |
-| **title_hebrew** | למי מתייחסים? — כינוי (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1147,7 +1137,6 @@
 | **File** | `order.md` |
 | **learning_page_id** | `hebrew:g6:order` |
 | **skill_id** | `hebrew:rich:comprehension:sequence:order` |
-| **title_hebrew** | סדר אירועים (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1254,7 +1243,6 @@
 | **File** | `g6.complex_syntax_spot.md` |
 | **learning_page_id** | `hebrew:g6:g6.complex_syntax_spot` |
 | **skill_id** | `hebrew:g6:grammar:g6.complex_syntax_spot` |
-| **title_hebrew** | תחביר מורכב — זיהוי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1363,7 +1351,6 @@
 | **File** | `g6.subject_verb_advanced.md` |
 | **learning_page_id** | `hebrew:g6:g6.subject_verb_advanced` |
 | **skill_id** | `hebrew:g6:grammar:g6.subject_verb_advanced` |
-| **title_hebrew** | התאמת נושא ונשוא — מתקדם `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1472,7 +1459,6 @@
 | **File** | `g6.possession_prep.md` |
 | **learning_page_id** | `hebrew:g6:g6.possession_prep` |
 | **skill_id** | `hebrew:g6:grammar:g6.possession_prep` |
-| **title_hebrew** | שייכות ומילות יחס `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1581,7 +1567,6 @@
 | **File** | `choose_correct.md` |
 | **learning_page_id** | `hebrew:g6:choose_correct` |
 | **skill_id** | `hebrew:rich:grammar:sentence_correction:choose_correct` |
-| **title_hebrew** | בחירת משפט מתוקן (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1689,7 +1674,6 @@
 | **File** | `sv_agreement_plural.md` |
 | **learning_page_id** | `hebrew:g6:sv_agreement_plural` |
 | **skill_id** | `hebrew:rich:grammar:sentence_correction:sv_agreement_plural` |
-| **title_hebrew** | התאמת נושא–נשוא ברבים (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1792,7 +1776,6 @@
 | **File** | `plural_subject.md` |
 | **learning_page_id** | `hebrew:g6:plural_subject` |
 | **skill_id** | `hebrew:rich:grammar:verb_agreement:plural_subject` |
-| **title_hebrew** | נושא ברבים ופועל (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1897,7 +1880,6 @@
 | **File** | `past_present.md` |
 | **learning_page_id** | `hebrew:g6:past_present` |
 | **skill_id** | `hebrew:rich:grammar:tense_shift:past_present` |
-| **title_hebrew** | מעבר בין עבר להווה (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2004,7 +1986,6 @@
 | **File** | `negation.md` |
 | **learning_page_id** | `hebrew:g6:negation` |
 | **skill_id** | `hebrew:rich:grammar:transform:negation` |
-| **title_hebrew** | שלילה במשפט (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2111,7 +2092,6 @@
 | **File** | `grammar_tf.md` |
 | **learning_page_id** | `hebrew:g6:grammar_tf` |
 | **skill_id** | `hebrew:rich:grammar:binary_grammar:tf` |
-| **title_hebrew** | נכון או לא — דקדוק (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2215,7 +2195,6 @@
 | **File** | `g6.academic_vocab.md` |
 | **learning_page_id** | `hebrew:g6:g6.academic_vocab` |
 | **skill_id** | `hebrew:g6:vocabulary:g6.academic_vocab` |
-| **title_hebrew** | אוצר מילים אקדמי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2321,7 +2300,6 @@
 | **File** | `g6.discipline_words_light.md` |
 | **learning_page_id** | `hebrew:g6:g6.discipline_words_light` |
 | **skill_id** | `hebrew:g6:vocabulary:g6.discipline_words_light` |
-| **title_hebrew** | מילים מקצועיות קלות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2428,7 +2406,6 @@
 | **File** | `register.md` |
 | **learning_page_id** | `hebrew:g6:register` |
 | **skill_id** | `hebrew:rich:vocabulary:context_fit:register` |
-| **title_hebrew** | רישום ושפה מתאימה (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2535,7 +2512,6 @@
 | **File** | `verb_noun_fit.md` |
 | **learning_page_id** | `hebrew:g6:verb_noun_fit` |
 | **skill_id** | `hebrew:rich:vocabulary:collocation:verb_noun_fit` |
-| **title_hebrew** | פועל ושם — צירוף נכון (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2642,7 +2618,6 @@
 | **File** | `odd_out.md` |
 | **learning_page_id** | `hebrew:g6:odd_out` |
 | **skill_id** | `hebrew:rich:vocabulary:category_exclusion:odd_out` |
-| **title_hebrew** | מי שונה בקבוצה? (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2749,7 +2724,6 @@
 | **File** | `g6.argumentative_full_scaffold.md` |
 | **learning_page_id** | `hebrew:g6:g6.argumentative_full_scaffold` |
 | **skill_id** | `hebrew:g6:writing:g6.argumentative_full_scaffold` |
-| **title_hebrew** | כתיבה טיעונית מלאה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2862,7 +2836,6 @@
 | **File** | `g6.research_literacy_choice.md` |
 | **learning_page_id** | `hebrew:g6:g6.research_literacy_choice` |
 | **skill_id** | `hebrew:g6:writing:g6.research_literacy_choice` |
-| **title_hebrew** | אוריינות מחקרית — מקורות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2972,7 +2945,6 @@
 | **File** | `rephrase.md` |
 | **learning_page_id** | `hebrew:g6:rephrase` |
 | **skill_id** | `hebrew:rich:writing:rephrase:clarity` |
-| **title_hebrew** | ניסוח מחדש לבהירות (כיתה ו׳) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -3077,7 +3049,6 @@
 | **File** | `g6.debate_scaffold_choice.md` |
 | **learning_page_id** | `hebrew:g6:g6.debate_scaffold_choice` |
 | **skill_id** | `hebrew:g6:speaking:g6.debate_scaffold_choice` |
-| **title_hebrew** | דיבייט — הצגת עמדה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

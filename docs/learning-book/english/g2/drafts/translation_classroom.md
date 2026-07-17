@@ -1,4 +1,4 @@
-# ביטויי כיתה — משפטים
+# Classroom Phrases — Sentences
 
 ## Metadata
 
@@ -11,66 +11,66 @@
 | **age_band** | grades_1_2 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | ביטויי כיתה — משפטים |
+| **title_english** | Classroom Phrases — Sentences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** תרגום ביטוי קצר דו-כיווני
+**Content scope:** Two-way short phrase translation
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום ביטויי כיתה — גם במשפט קצר.
-כבר מכירים Hello — נוסיף Thank you.
+Today we practice translating classroom phrases — even in a short sentence.
+We already know Hello — let's add Thank you.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Thank you — תודה.
+Thank you.
 Thank you, teacher.
-תודה לך, המורה.
+Thank you, teacher.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-המורה עזרה לך.
-מה אומרים?
+The teacher helped you.
+What do you say?
 Thank you
-תודה.
+Thank you.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "תודה"?
+How do we say "thank you"?
 Thank you
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פוגשים חבר בבוקר.
+You meet a friend in the morning.
 Hello
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: פוגשים חבר בבוקר — מה אומרים?
-Hello היא מילת ברכה לפגישה.
-התשובה היא Hello.
+The question: you meet a friend in the morning — what do you say?
+Hello is a greeting word for meeting someone.
+The answer is Hello.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים Thank you במשפט.
-בתרגול תמצאו Thank you ו-Thank you, teacher.
+Now you're practicing Thank you in a sentence.
+In practice, you'll find Thank you and Thank you, teacher.

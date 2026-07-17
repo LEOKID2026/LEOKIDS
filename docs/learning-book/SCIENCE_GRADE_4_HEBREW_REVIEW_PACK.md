@@ -36,7 +36,6 @@
 | **File** | `body.md` |
 | **learning_page_id** | `science:g4:body` |
 | **skill_id** | `science:topic:body` |
-| **title_hebrew** | גוף האדם — נשימה ועיכול `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -141,7 +140,6 @@
 | **File** | `animals.md` |
 | **learning_page_id** | `science:g4:animals` |
 | **skill_id** | `science:topic:animals` |
-| **title_hebrew** | בעלי חיים — יחסי גומלין `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -250,7 +248,6 @@
 | **File** | `materials.md` |
 | **learning_page_id** | `science:g4:materials` |
 | **skill_id** | `science:topic:materials` |
-| **title_hebrew** | חומרים — שינויים וחשמל (מושגי) `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -361,7 +358,6 @@
 | **File** | `earth_space.md` |
 | **learning_page_id** | `science:g4:earth_space` |
 | **skill_id** | `science:topic:earth_space` |
-| **title_hebrew** | כדור הארץ — סלעים, קרקע ועונות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -470,7 +466,6 @@
 | **File** | `environment.md` |
 | **learning_page_id** | `science:g4:environment` |
 | **skill_id** | `science:topic:environment` |
-| **title_hebrew** | סביבה — שמירת משאבים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -579,7 +574,6 @@
 | **File** | `experiments.md` |
 | **learning_page_id** | `science:g4:experiments` |
 | **skill_id** | `science:topic:experiments` |
-| **title_hebrew** | תכנון ניסוי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

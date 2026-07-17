@@ -1,4 +1,4 @@
-# חיבור עם 0
+# Adding with 0
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור עם 0 `[DRAFT — not owner-approved]` |
+| **title_english** | Adding with 0 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור 0 למספר. תכונת הזהות בחיבור. ללא שליליים.
+**Content scope:** Adding 0 to a number. The identity property of addition. No negatives.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מה קורה כשמחברים 0 למספר.
-0 הוא מספר מיוחד — הוא לא משנה את התוצאה בחיבור.
+Today we'll learn what happens when you add 0 to a number.
+0 is a special number — it doesn't change the answer in addition.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כלל:
-כל מספר + 0 = אותו מספר.
-0 לא מוסיף כלום — המספר נשאר כמו שהוא.
+Rule:
+Any number + 0 = the same number.
+0 doesn't add anything — the number stays the same.
 456 + 0 = 456
 0 + 789 = 789
-למה? 0 אומר "אין כלום להוסיף".
-אם יש לכם 456 חפצים ומוסיפים 0 — עדיין יש 456.
-גם עם מספרים גדולים — הכלל זהה.
+Why? 0 means "nothing to add."
+If you have 456 things and add 0 — you still have 456.
+Even with big numbers — the rule is the same.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 2,350 + 0 = ?
 2,350 + 0 = 2,350
 0 + 2,350 = 2,350
-בשני המקרים התשובה זהה — 2,350.
+In both cases the answer is the same — 2,350.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: 1,008 + 0 = ?
-מוסיפים 0 — לא משנה כלום.
+Work out: 1,008 + 0 = ?
+Adding 0 — nothing changes.
 1,008 + 0 = 1,008
 1,008
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 1,789 + 0 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 1,789 + 0 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 1,789 + 0 = ?
-מוסיפים 0 — 0 לא מוסיף כלום, המספר נשאר.
+Work out: 1,789 + 0 = ?
+Adding 0 — 0 doesn't add anything, the number stays.
 1,789 + 0 = 1,789
 1,789
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שחיבור עם 0 לא משנה את התוצאה.
-בתרגול תמצאו חיבורים עם 0.
-המספר נשאר כמו שהוא!
+Now you know that adding 0 doesn't change the answer.
+In practice you'll find additions with 0.
+The number stays the same!

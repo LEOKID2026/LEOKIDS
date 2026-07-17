@@ -1,4 +1,4 @@
-# חיבור עשרוניים
+# Adding Decimals
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור עשרוניים `[DRAFT — not owner-approved]` |
+| **title_english** | Adding Decimals |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שתי ספרות אחרי הנקודה; יישור
+**Content scope:** Two digits after the decimal point; lining up
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחבר מספרים עשרוניים עם שתי ספרות אחרי הנקודה.
-חשוב:
-מיישרים נקודות — מאיות מתחת למאיות, עשיריות לעשיריות.
+Today we'll learn to add decimal numbers with two digits after the decimal point.
+Important:
+Line up the decimal points — hundredths under hundredths, tenths under tenths.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 12.45 + 3.60:
 12.45
 + 3.60
 ———
-מאיות: 5+0=5
-עשיריות: 4+6=10→0, נשיאה 1
-שלם: 12+3+1=16
+Hundredths: 5+0=5
+Tenths: 4+6=10→0, carry 1
+Whole: 12+3+1=16
 12.45 + 3.60 = 16.05
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 5.28 + 2.14 = 7.42
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו 12.45 + 3.60 = ?
-מאיות 5+0=5
-עשיריות 4+6=10 → 0, נשיאה 1
-שלם 12+3+1=16
+Work out 12.45 + 3.60 = ?
+Hundredths 5+0=5
+Tenths 4+6=10 → 0, carry 1
+Whole 12+3+1=16
 16.05
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 8.37 + 4.45 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 8.37 + 4.45 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 8.37 + 4.45 = ?
-מאיות: 7 + 5 = 12 → 2, נשיאה 1
-עשיריות: 3 + 4 + 1 = 8
-שלם: 8 + 4 = 12
+Work out: 8.37 + 4.45 = ?
+Hundredths: 7 + 5 = 12 → 2, carry 1
+Tenths: 3 + 4 + 1 = 8
+Whole: 8 + 4 = 12
 8.37 + 4.45 = 12.82
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחבר מספרים עשרוניים.
-בתרגול תמצאו חיבור עשרוניים.
-יישרו נקודות!
+Now you know how to add decimal numbers.
+In practice you'll find decimal addition.
+Line up the decimal points!

@@ -9,7 +9,7 @@ export default function BookShellHeader({
   onReturn,
   onOpenToc,
   themeClasses,
-  titleHe,
+  title,
   isIndex,
   pageMeta = null,
   indexSubtitle,
@@ -32,7 +32,7 @@ export default function BookShellHeader({
       </div>
 
       <div className="text-center">
-        <h1 className="text-base font-black leading-tight sm:text-lg">{titleHe}</h1>
+        <h1 className="text-base font-black leading-tight sm:text-lg">{title}</h1>
         {!isIndex && pageMeta ? (
           <p className={`mt-0.5 text-sm font-bold leading-snug sm:text-base ${activePageTitleClass}`}>
             <MixedHebrewMathText text={pageMeta.displayTitle} />

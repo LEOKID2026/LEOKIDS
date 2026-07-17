@@ -1,4 +1,4 @@
-# שכנים — מספרים עד 200,000
+# Neighbors — Numbers Up to 200,000
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שכנים — מספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Neighbors — Numbers Up to 200,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מספר שלפני ואחרי עד 200,000
+**Content scope:** the number before and after, up to 200,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שכנים במספרים עד 200,000.
-±1 — גם כשעשרות האלפים משתנות, כמו ב-48,650.
+Today we will learn neighbors with numbers up to 200,000.
+±1 — even when the ten thousands change, like with 48,650.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שכן שלפני = −1
-שכן אחרי = +1
+The neighbor before = −1
+The neighbor after = +1
 48,650:
-- שלפני: 48,649
-- אחרי: 48,651
-199,999 → 200,000: השכן שאחרי 199,999 הוא 200,000 — מעבר למאה אלף, אבל עדיין +1.
-92,000 − 1 = 91,999 — כל הספרות "מתגלגלות", אבל הקפיצה היא 1.
+- before: 48,649
+- after: 48,651
+199,999 → 200,000: the neighbor after 199,999 is 200,000 — you cross a hundred thousand, but it is still +1.
+92,000 − 1 = 91,999 — all the digits "roll over," but the jump is still 1.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 125,000:
-- שלפני: 124,999
-- אחרי: 125,001
-48,649 → 48,650 → 48,651 — 50 באמצע, ±1 באחדות בלבד.
+- before: 124,999
+- after: 125,001
+48,649 → 48,650 → 48,651 — 50 in the middle, ±1 in the ones place only.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה השכנים של 48,650?
-שלפני — 48,650 − 1 = 48,649
-אחרי — 48,650 + 1 = 48,651
-48,649 ו-48,651
-
----
-
-## 5. נסו בעצמכם
-
-מה השכנים של 75,300?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What are the neighbors of 48,650?
+Before — 48,650 − 1 = 48,649
+After — 48,650 + 1 = 48,651
+48,649 and 48,651
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-מה השכנים של 75,300?
-שכן שלפני: 75,300 − 1 = 75,299
-שכן אחרי: 75,300 + 1 = 75,301
-התשובה: 75,299 ו-75,301
+What are the neighbors of 75,300?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים שכנים עד 200,000.
-בתרגול תמצאו שכנים של מספרים גדולים — בדקו ±1, לא ±10!
+What are the neighbors of 75,300?
+Neighbor before: 75,300 − 1 = 75,299
+Neighbor after: 75,300 + 1 = 75,301
+The answer: 75,299 and 75,301
+
+---
+
+## 7. Let's practice!
+
+Now you know neighbors up to 200,000.
+In practice you will find neighbors of big numbers — check ±1, not ±10!

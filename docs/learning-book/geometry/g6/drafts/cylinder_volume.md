@@ -1,4 +1,4 @@
-﻿# נפח גליל
+# Volume of a Cylinder
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח גליל `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Cylinder `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -22,59 +22,59 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח גליל בגאומטריה.
-נפח = π ×r² × h.
-בשיעור: π ≈ 3.14
-
----
-
-## 2. הסבר
-
-שלבים:
-1. r² = רדיוס × רדיוס
-2. π × r² = שטח בסיס עגול
-3. שטח בסיס × גובה = נפח
+Today we will learn volume of a cylinder in geometry.
+Volume = π × r² × h.
+In class: π ≈ 3.14
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-רדיוס 3 ס״מ, גובה 10 ס״מ:
+Steps:
+1. r² = radius × radius
+2. π × r² = circular base area
+3. Base area × height = volume
+
+---
+
+## 3. Example
+
+Radius 3 cm, height 10 cm:
 3×3 = 9
-3.14 × 9 × 10 = 282.6 (ס״מ³)
+3.14 × 9 × 10 = 282.6 (cm³)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-גליל — רדיוס 3 ס״מ, גובה 10 ס״מ (π = 3.14) נפח?
+Cylinder — radius 3 cm, height 10 cm (π = 3.14). Volume?
 3.14 × 9 = 28.26
 28.26 × 10 = 282.6
-282.6 ס״מ³.
+282.6 cm³.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-גליל: רדיוס 5 ס״מ, גובה 8 ס״מ (π = 3.14)— מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Cylinder: radius 5 cm, height 8 cm (π = 3.14) — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-גליל — רדיוס 5 ס״מ, גובה 8 ס״מ (π = 3.14)— מה הנפח?
+Cylinder — radius 5 cm, height 8 cm (π = 3.14) — what is the volume?
 r² = 5 × 5 = 25
 3.14 × 25 = 78.5
 78.5 × 8 = 628
-628 ס״מ³
+628 cm³
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נפח גליל = π × r² × h.
-בתרגול תמצאו גלילים — העלו את הרדיוס בריבוע קודם!
+Volume of a cylinder = π × r² × h.
+In practice you'll find cylinders — square the radius first!

@@ -1,4 +1,4 @@
-# שגרת יום — משפטים
+# Daily Routine — Sentences
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | שגרת יום — משפטים |
+| **title_english** | Daily Routine — Sentences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** I wake up / I go to school — שגרה יומית
+**Content scope:** I wake up / I go to school — daily routine
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד משפטים על שגרת יום.
-מה עושים בבוקר — באנגלית.
+Today we will learn sentences about a daily routine.
+What we do in the morning — in English.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-משפטי שגרה:
+Routine sentences:
 I wake up.
-אני מתעורר.
+I wake up.
 I go to school.
-אני הולך לבית ספר.
+I go to school.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בוקר.
-קמים מהמיטה.
+Morning.
+Getting out of bed.
 I wake up.
-אני מתעורר.
+I wake up.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "אני מתעורר"?
+How do we say "I wake up"?
 I wake up
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אני הולך לבית ספר.
+I go to school.
 I go to school
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: איך אומרים "אני הולך לבית ספר" באנגלית?
-go to school פירושו ללכת לבית ספר.
-אומרים: I go to school.
-התשובה היא: I go to school.
+The question: how do we say "I go to school" in English?
+Go to school means to go to school.
+We say: I go to school.
+The answer is: I go to school.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים משפטי שגרה.
-בתרגול תמצאו I wake up ו-I go to school.
+Now you know routine sentences.
+In practice, you'll find I wake up and I go to school.

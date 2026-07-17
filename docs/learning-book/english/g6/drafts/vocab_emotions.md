@@ -1,4 +1,4 @@
-# רגשות — might feel
+# Emotions — might feel
 
 ## Metadata
 
@@ -11,83 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | רגשות — might feel |
+| **title_english** | Emotions — might feel |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** He might feel nervous — רגשות עם modal
+**Content scope:** He might feel nervous — emotions with a modal
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק רגשות עם might — אפשרות, לא ודאות.
-He might feel nervous before the presentation — אולי הוא ירגיש לחוץ לפני ההצגה.
-
----
-
-## 2. הסבר
-
-might + feel — אולי ירגיש:
-
+Today we will review emotions with might — a possibility, not something certain.
 He might feel nervous before the presentation.
 
-אולי הוא ירגיש לחוץ לפני ההצגה.
+---
+
+## 2. Simple explanation
+
+might + feel — maybe will feel:
+
+He might feel nervous before the presentation.
 
 She might feel excited about the trip.
 
-אולי היא תרגיש מתרגשת מהטיול.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-לפני הצגה בכיתה.
+Before a presentation in class.
 
 He might feel nervous before the presentation.
 
-אולי הוא ירגיש לחוץ לפני ההצגה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אולי הוא ירגיש לחוץ לפני ההצגה"?
+Question: How do you say this?
 
 He might feel nervous before the presentation
 
-תשובה: He might feel nervous before the presentation
+Answer: He might feel nervous before the presentation
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ניצחון בתחרות — שמחים וגאים.
+Winning a competition — happy and proud.
 
 They might feel proud after a win.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם אולי ירגישו גאים אחרי ניצחון."
+Exercise: "They might feel proud after a win."
 
-might + feel = אולי ירגישו (אפשרות, לא ודאות).
+might + feel means maybe they will feel this way — it's a possibility, not something certain.
 
-proud פירושו גאים; after a win פירושו אחרי ניצחון.
+"Proud" describes the feeling; "after a win" tells us when.
 
-הם אולי ירגישו גאים אחרי ניצחון.
-
- They might feel proud after a win.
+So the full sentence is: They might feel proud after a win.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים רגשות עם might.
-בתרגול תמצאו He might feel nervous before the presentation.
+Now you will describe emotions using might.
+In the practice, you'll find: He might feel nervous before the presentation.

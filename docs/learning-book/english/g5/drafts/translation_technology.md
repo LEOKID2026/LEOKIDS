@@ -1,4 +1,4 @@
-# טכנולוגיה — תרגום
+# Technology — Translation
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | טכנולוגיה — תרגום |
+| **title_english** | Technology — Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום על טכנולוגיה.
-I will send an email tomorrow — אשלח דוא"ל מחר.
+Today we will practice sentences about technology.
+I will send an email tomorrow.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 Future — will:
 
 I will send an email tomorrow.
 
-אשלח דוא"ל מחר.
-
 She will use the computer later.
-
-היא תשתמש במחשב מאוחר יותר.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-תוכנית לשלוח הודעה.
+A plan to send a message.
 
 I will send an email tomorrow.
 
-אשלח דוא"ל מחר.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אשלח דוא"ל מחר"?
+Question: How do you say this?
 
 I will send an email tomorrow
 
-תשובה: I will send an email tomorrow
+Answer: I will send an email tomorrow
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שיעור מחר — משתמשים באינטרנט.
+A lesson tomorrow — using the internet.
 
 They will use the internet in class.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הם ישתמשו באינטרנט בשיעור."
+Exercise: "They will use the internet in class."
 
-will + פועל = עתיד (החלטה או תוכנית).
+will + a verb = the future.
 
-they will use = הם ישתמשו.
+"They will use" tells us who and what.
 
-הם ישתמשו באינטרנט בשיעור.
-
- They will use the internet in class.
+So the full sentence is: They will use the internet in class.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום על טכנולוגיה.
-בתרגול תמצאו I will send an email tomorrow.
+Now you will practice sentences about technology.
+In the practice, you'll find: I will send an email tomorrow.

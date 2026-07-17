@@ -1,4 +1,4 @@
-# סיפור קצר — First… Then…
+# Short Story — First… Then…
 
 ## Metadata
 
@@ -11,84 +11,78 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | סיפור קצר — First… Then… |
+| **title_english** | Short Story — First… Then… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** First we pack. Then we go. — רצף פשוט
+**Content scope:** First we pack. Then we go. — a simple sequence
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לספר סיפור קצר.
-First we pack our bags — קודם אנחנו אורזים את התיקים.
-
----
-
-## 2. הסבר
-
-מילות קישור:
-
-First — קודם
-Then — אחר כך
-
+Today we will learn to tell a short story.
 First we pack our bags.
 
-קודם אנחנו אורזים תיקים.
+---
+
+## 2. Simple explanation
+
+Connecting words:
+
+First — the first step
+Then — the next step
+
+First we pack our bags.
 
 Then we go.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מכינים לטיול.
+Getting ready for a trip.
 
 First we pack our bags.
 
-קודם אנחנו אורזים תיקים.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "קודם אנחנו אורזים תיקים"?
+Question: How do you say this?
 
 First we pack our bags
 
-תשובה: First we pack our bags
+Answer: First we pack our bags
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יוצאים לדרך — תחנת האוטובוס.
+Heading out — the bus stop.
 
 Then we go to the bus stop.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אחר כך אנחנו הולכים לתחנת האוטובוס."
+Exercise: "Then we go to the bus stop."
 
-Then = אחר כך (מילת קישור לרצף).
+"Then" connects one step to the next.
 
-go to the bus stop = הולכים לתחנת האוטובוס.
+"Go to the bus stop" tells us where we are going.
 
-אחר כך אנחנו הולכים לתחנת האוטובוס.
-
- Then we go to the bus stop.
+So the full sentence is: Then we go to the bus stop.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים סיפור עם First ו-Then.
-בתרגול תמצאו First we pack our bags.
+Now you will build a story with "First" and "Then."
+In the practice, you'll find: First we pack our bags.

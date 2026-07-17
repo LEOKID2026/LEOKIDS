@@ -1,4 +1,4 @@
-# ממציאות למפה
+# From Real Life to Map
 
 ## Metadata
 
@@ -11,65 +11,65 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ממציאות למפה `[DRAFT — not owner-approved]` |
+| **title_english** | From Real Life to Map |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מרחק אמיתי → מרחק במפה
+**Content scope:** real distance → map distance
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד: מרחק אמיתי → מרחק במפה.
-2 ק״מ במציאות, קנה מידה 1:50,000.
-
----
-
-## 2. הסבר
-
-1:50,000 → 1 ס״מ = 500 מ'.
-2,000 מ' = 2,000 ÷ 500 = 4 ס״מ במפה
+Today we will learn: real distance → map distance.
+2 km in real life, scale 1:50,000.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-750 מ' → 750 ÷ 250 = 3 ס״מ (ב-1:25,000)
-
----
-
-## 4. בואו נפתור
-
-2 ק״מ (=2,000 מ'), 1:50,000. כמה ס״מ במפה?
-1 ס״מ = 500 מ'.
-2,000 ÷ 500 = 4 ס״מ.
-4 ס״מ.
+1:50,000 → 1 cm = 500 m.
+2,000 m = 2,000 ÷ 500 = 4 cm on the map
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-3 ק״מ במציאות, 1:50,000 — כמה ס״מ במפה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+750 m → 750 ÷ 250 = 3 cm (at 1:25,000)
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-3 ק״מ במציאות, 1:50,000
-המרת ק״מ למ': 3 ק״מ = 3,000 מ'.
-1:50,000 → 1 ס״מ = 500 מ'.
-3,000 ÷ 500 = 6 ס״מ.
-התשובה: 6 ס״מ
+2 km (=2,000 m), 1:50,000. How many cm on the map?
+1 cm = 500 m.
+2,000 ÷ 500 = 4 cm.
+4 cm.
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-המרה למפה = חילוק.
-בתרגול תמצאו מציאות→מפה — המירו ק״מ למ' קודם!
+3 km in real life, 1:50,000 — how many cm on the map?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+3 km in real life, 1:50,000
+Convert km to m: 3 km = 3,000 m.
+1:50,000 → 1 cm = 500 m.
+3,000 ÷ 500 = 6 cm.
+The answer: 6 cm
+
+---
+
+## 7. Let's practice!
+
+Converting to the map = division.
+In practice you will find real life→map — convert km to m first!

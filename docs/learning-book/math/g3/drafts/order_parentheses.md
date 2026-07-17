@@ -1,4 +1,4 @@
-# סוגריים בחישוב
+# Parentheses in Calculations
 
 ## Metadata
 
@@ -11,36 +11,36 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | סוגריים בחישוב `[DRAFT — not owner-approved]` |
+| **title_english** | Parentheses in Calculations |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מה **בתוך סוגריים** קודם. תרגילים קצרים עם ( ).
+**Content scope:** What's **inside parentheses** first. Short problems with ( ).
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד סוגריים — ( ) — בתרגיל חישוב.
-מה שבתוך הסוגריים — קודם!
+Today we will learn parentheses — ( ) — in a calculation problem.
+What's inside the parentheses — first!
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 (8 + 2) × 3
-קודם סוגריים: 8 + 2 = 10
-אחר כך כפל: 10 × 3 = 30
+Parentheses first: 8 + 2 = 10
+Then multiply: 10 × 3 = 30
 (8 + 2) × 3 = 30
-בלי סוגריים היה: 8 + 2 × 3 = 8 + 6 = 14 — שונה!
-סוגריים = "תעשו את זה קודם".
+Without parentheses it would be: 8 + 2 × 3 = 8 + 6 = 14 — different!
+Parentheses = "do this first."
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 (12 − 4) ÷ 2
 12 − 4 = 8
@@ -49,34 +49,34 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו: (5 + 3) × 4 = ?
+Calculate: (5 + 3) × 4 = ?
 5 + 3 = 8
 8 × 4 = 32
 (5 + 3) × 4 = 32
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: (15 − 6) × 4 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: (15 − 6) × 4 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: (15 − 6) × 4
-קודם סוגריים: 15 − 6 = 9
-אחר כך כפל: 9 × 4 = 36
+Calculate: (15 − 6) × 4
+Parentheses first: 15 − 6 = 9
+Then multiply: 9 × 4 = 36
 (15 − 6) × 4 = 36
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים: סוגריים קודם.
-בתרגול תמצאו ( ).
-חשבו בתוך הסוגריים לפני השאר!
+Now you know: parentheses first.
+In practice you'll find ( ).
+Calculate inside the parentheses before the rest!

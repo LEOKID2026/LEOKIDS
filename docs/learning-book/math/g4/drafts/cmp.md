@@ -1,4 +1,4 @@
-# השוואת מספרים גדולים
+# Comparing Large Numbers
 
 ## Metadata
 
@@ -11,80 +11,80 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | השוואת מספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Comparing Large Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** >, <, = עד 10,000. השוואה לפי אלפים, מאות, עשרות, אחדות. ללא שליליים.
+**Content scope:** >, <, = up to 10,000. Compare by thousands, hundreds, tens, and ones. No negatives.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשווה מספרים גדולים עד 10,000 ונבחר את הסימן הנכון: > (גדול מ), < (קטן מ), = (שווה).
-
----
-
-## 2. הסבר
-
-איך משווים מספרים גדולים?
-קודם אלפים — למי יש יותר אלפים?
-אם שווה — מאות
-אם שווה — עשרות
-אם שווה — אחדות
-5,582 > 5,579 — אלפים 5=5, מאות 5=5, עשרות 8>7 → 5,582 גדול יותר
-4,560 ו-4,650:
-אלפים 4=4, מאות 5 < 6 → 4,560 < 4,650
-הפה של הסימן פונה למספר הגדול יותר.
+Today we'll compare big numbers up to 10,000 and pick the right symbol: > (greater than), < (less than), = (equal).
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+How do we compare big numbers?
+First thousands — who has more thousands?
+If equal — hundreds
+If equal — tens
+If equal — ones
+5,582 > 5,579 — thousands 5=5, hundreds 5=5, tens 8>7 → 5,582 is greater
+4,560 and 4,650:
+thousands 4=4, hundreds 5 < 6 → 4,560 < 4,650
+The open side of the symbol points to the bigger number.
+
+---
+
+## 3. Visual / concrete example
 
 8,934 ? 8,943
-אלפים: 8 = 8
-מאות: 9 = 9
-עשרות: 3 < 4
+Thousands: 8 = 8
+Hundreds: 9 = 9
+Tens: 3 < 4
 8,934 < 8,943
-סימן: 8,934 < 8,943
+Symbol: 8,934 < 8,943
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-השוו: 5,307 ? 5,370
-אלפים: 5 = 5 — שווה, ממשיכים.
-מאות: 3 = 3 — שווה, ממשיכים.
-עשרות: 0 < 7.
+Compare: 5,307 ? 5,370
+Thousands: 5 = 5 — equal, keep going.
+Hundreds: 3 = 3 — equal, keep going.
+Tens: 0 < 7.
 5,307 < 5,370.
 5,307 < 5,370
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-השוו: 7,234 ? 7,243 — איזה סימן?
+Compare: 7,234 ? 7,243 — which symbol?
 (<, >, =)
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-השוו: 7,234 ? 7,243 — איזה סימן?
-אלפים: 7 = 7 — שווה, ממשיכים.
-מאות: 2 = 2 — שווה, ממשיכים.
-עשרות: 3 < 4.
+Compare: 7,234 ? 7,243 — which symbol?
+Thousands: 7 = 7 — equal, keep going.
+Hundreds: 2 = 2 — equal, keep going.
+Tens: 3 < 4.
 7,234 < 7,243
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להשוות מספרים עד 10,000.
-בתרגול תמצאו >, <, =.
-קודם אלפים, אחר כך מאות, עשרות ואחדות!
+Now you know how to compare numbers up to 10,000.
+In practice you'll find >, <, =.
+First thousands, then hundreds, tens, and ones!

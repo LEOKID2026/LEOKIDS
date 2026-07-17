@@ -1,4 +1,4 @@
-# פעולות — Present Simple
+# Actions — Present Simple
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | פעולות — Present Simple |
+| **title_english** | Actions — Present Simple |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** פועל בזמן הווה פשוט; actions בשנה אחרונה
+**Content scope:** Verbs in present simple tense; actions for the older grade
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד פעולות באנגלית בזמן הווה פשוט.
-כבר מכירים run ו-play — נחבר אותם במשפטים מלאים.
+Today we will learn actions in English in the present simple tense.
+We already know run and play — let's use them in full sentences.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-בזמן הווה פשוט משתמשים בפועל הבסיסי:
+In the present simple tense, we use the basic verb form:
 
 I play.
 
-אני משחק.
+I play.
 
 He runs.
 
-הוא רץ.
+He runs.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד משחק בכדור.
+A child playing with a ball.
 
 I play.
 
-אני משחק.
+I play.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אני משחק"?
+Question: how do we say "I play"?
 
 I play
 
-תשובה: I play
+Answer: I play
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדה קופצת בחצר.
+A girl jumping in the yard.
 
 She jumps.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: ילדה קופצת בחצר.
+Exercise: a girl jumping in the yard.
 
-הפתרון:
+The solution:
 
 She jumps.
 
-היא קופצת.
+She jumps.
 
-כל הכבוד! אחרי she (היא), he (הוא) או it (זה) מוסיפים s לפועל — jumps, לא jump.
+Well done! After she, he, or it, we add s to the verb — jumps, not jump.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים עם פעולות בזמן הווה פשוט.
-בתרגול תמצאו I play ו-He runs.
+Now you build sentences with actions in the present simple tense.
+In practice, you'll find I play and He runs.

@@ -10,7 +10,6 @@
 | **grade** | g3 |
 | **page_type** | placeholder |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ספר בהכנה |
 
 ---
 

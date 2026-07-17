@@ -11,87 +11,81 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | some/any, much/many, my, slowly |
+| **title_english** | some/any, much/many, my, slowly |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:some_any_much_many_כינויי_שייכות_ותוארי_פועל_slowly_quickly`
+**Linked skill_ids:** `english``
 
-**Content scope:** כמות, שייכות, תואר פועל — I have some apples; She runs quickly
+**Content scope:** quantity, possession, adverb — I have some apples; She runs quickly
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד כמות, שייכות ותוארי פועל.
+Today we will learn quantity, possession, and adverbs.
 some, any, my, slowly — I have some apples.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כמות:
-some apples — כמה תפוחים
-many books — הרבה ספרים
+Quantity:
+some apples — a few apples
+many books — a lot of books
 
-שייכות: my, your, his
+Possession: my, your, his
 
-תואר פועל: quickly, slowly
-
-I have some apples.
-
-יש לי כמה תפוחים.
-
----
-
-## 3. דוגמה
-
-תפוחים בקערה.
+Adverb: quickly, slowly
 
 I have some apples.
 
-יש לי כמה תפוחים.
+---
+
+## 3. Example
+
+Apples in a bowl.
+
+I have some apples.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "יש לי כמה תפוחים"?
+Question: How do you say this?
 
 I have some apples
 
-תשובה: I have some apples
+Answer: I have some apples
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מדף עם ספרים רבים.
+A shelf with many books.
 
 I have many books.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "יש לי הרבה ספרים."
+Exercise: "I have many books."
 
-books הוא שם עצם ספיר, כלומר אפשר לספור אותו, ולכן משתמשים ב-many.
+"Books" is a countable noun, meaning we can count it, so we use "many."
 
-I have — יש לי.
+"I have" tells us who has the books.
 
-יש לי הרבה ספרים.
-
- I have many books.
+So the full sentence is: I have many books.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים ב-some, my, slowly ו-quickly.
-בתרגול תמצאו I have some apples.
+Now you will use some, my, slowly, and quickly.
+In the practice, you'll find: I have some apples.

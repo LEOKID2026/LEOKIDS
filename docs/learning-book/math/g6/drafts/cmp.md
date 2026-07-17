@@ -1,4 +1,4 @@
-# השוואת מספרים גדולים
+# Comparing Large Numbers
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | השוואת מספרים גדולים `[DRAFT — not owner-approved]` |
+| **title_english** | Comparing Large Numbers |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** >, <, = עד 200,000
+**Content scope:** >, <, = up to 200,000
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להשוות שני מספרים גדולים — עד 200,000.
-משתמשים ב>, <, =.
-
----
-
-## 2. הסבר
-
-משווים משמאל לימין — מהספרה הגדולה ביותר.
-185,420 מול 185,240:
-- מאות אלפים: 1 = 1
-- עשרות אלפים: 8 = 8
-- אלפים: 5 = 5
-- מאות: 4 > 2 → 185,420 > 185,240
+Today we will learn to compare two large numbers — up to 200,000.
+We use >, <, and =.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-142,880 מול 142,808 → 142,880 > 142,808 (בעשרות: 8 > 0)
-99,999 מול 100,000 → 99,999 < 100,000 (מאות אלפים: 0 < 1)
+Compare from left to right — starting with the largest digit.
+185,420 and 185,240:
+- hundred thousands: 1 = 1
+- ten thousands: 8 = 8
+- thousands: 5 = 5
+- hundreds: 4 > 2 → 185,420 > 185,240
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-השוו: 95,600 ? 95,650
-מאות אלפים, עשרות אלפים, אלפים, מאות — שווים (95,6__).
-עשרות: 0 < 5.
+142,880 and 142,808 → 142,880 > 142,808 (in the tens place: 8 > 0)
+99,999 and 100,000 → 99,999 < 100,000 (hundred thousands: 0 < 1)
+
+---
+
+## 4. Let's solve together
+
+Compare: 95,600 ? 95,650
+Hundred thousands, ten thousands, thousands, and hundreds — equal (95,6__).
+Tens: 0 < 5.
 95,600 < 95,650.
 95,600 < 95,650
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-השוו: 173,650 ? 173,560
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השוו: 173,650 ? 173,560
-מאות אלפים: 1 = 1
-עשרות אלפים: 7 = 7
-אלפים: 3 = 3
-מאות: 6 > 5 → 173,650 גדול יותר.
-התשובה: 173,650 > 173,560
+Compare: 173,650 ? 173,560
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-השוואה נכונה עוזרת לבחור אסטרטגיה בחישוב.
-בתרגול תמצאו השוואות של מספרים גדולים — עבדו משמאל!
+Compare: 173,650 ? 173,560
+Hundred thousands: 1 = 1
+Ten thousands: 7 = 7
+Thousands: 3 = 3
+Hundreds: 6 > 5 → 173,650 is greater.
+The answer: 173,650 > 173,560
+
+---
+
+## 7. Let's practice!
+
+Comparing correctly helps you choose a strategy when calculating.
+In practice you will compare large numbers — work from the left!

@@ -1,4 +1,4 @@
-# סביבה — trees, protect
+# Environment — trees, protect
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | סביבה — trees, protect |
+| **title_english** | Environment — trees, protect |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,72 +21,66 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד על סביבה וטבע.
+Today we will learn about nature and the environment.
 trees, protect — We protect the trees.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-מילים:
+Words:
 
-trees — עצים
-protect — לשמור או להגן
-
-We protect the trees.
-
-אנחנו שומרים על העצים.
-
----
-
-## 3. דוגמה
-
-ילדים שותלים עצים.
+trees — plants with a trunk and branches
+protect — to keep something safe
 
 We protect the trees.
 
-אנחנו שומרים על העצים.
+---
+
+## 3. Example
+
+Children planting trees.
+
+We protect the trees.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אנחנו שומרים על העצים"?
+Question: How do you say this?
 
 We protect the trees
 
-תשובה: We protect the trees
+Answer: We protect the trees
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חוף ים נקי.
+A clean seashore.
 
 We protect the sea.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אנחנו שומרים על הים."
+Exercise: "We protect the sea."
 
-we פירושו אנחנו — אחרי we לא מוסיפים s לפועל protect.
+"We" means us — after "we" we do not add s to the verb protect.
 
-the sea = הים.
+"The sea" is what we protect.
 
-אנחנו שומרים על הים.
-
- We protect the sea.
+So the full sentence is: We protect the sea.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים שמירה על הסביבה.
-בתרגול תמצאו We protect the trees.
+Now you will describe protecting the environment.
+In the practice, you'll find: We protect the trees.

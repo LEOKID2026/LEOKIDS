@@ -1,4 +1,4 @@
-# ספורט — scored a goal
+# Sports — scored a goal
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | ספורט — scored a goal |
+| **title_english** | Sports — scored a goal |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד ספורט עם Past Simple.
-He scored a goal yesterday — הוא הבקיע שער אתמול.
+Today we will learn about sports with Past Simple.
+He scored a goal yesterday.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-scored — הבקיע (עבר):
+scored — the past form of score:
 
 He scored a goal yesterday.
-
-הוא הבקיע שער אתמול.
 
 They played football last week.
 
-שיחקו כדורגל בשבוע שעבר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משחק כדורגל — שער!
+A football game — a goal!
 
 He scored a goal yesterday.
 
-הוא הבקיע שער אתמול.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הוא הבקיע שער אתמול"?
+Question: How do you say this?
 
 He scored a goal yesterday
 
-תשובה: He scored a goal yesterday
+Answer: He scored a goal yesterday
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-משחק מרגש — שני שערים.
+An exciting game — two goals.
 
 The footballer scored two goals in the game.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הכדורגלן הכניס שני שערים במשחק."
+Exercise: "The footballer scored two goals in the game."
 
-פועל סדיר בעבר: score — scored.
+A regular verb in the past: score becomes scored.
 
-two goals = שני שערים; in the game = במשחק.
+"Two goals" tells us what he scored; "in the game" tells us where.
 
-הכדורגלן הכניס שני שערים במשחק.
-
- The footballer scored two goals in the game.
+So the full sentence is: The footballer scored two goals in the game.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים ספורט בעבר.
-בתרגול תמצאו He scored a goal yesterday.
+Now you will describe sports in the past.
+In the practice, you'll find: He scored a goal yesterday.

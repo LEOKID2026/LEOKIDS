@@ -1,4 +1,4 @@
-# צמחים — מה צמחים צריכים
+# Plants — What Plants Need
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | צמחים — מה צמחים צריכים `[DRAFT — not owner-approved]` |
+| **title_english** | Plants — What Plants Need `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/SCIENCE_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שורש, גבעול, עלה; שמש, מים, אדמה
+**Content scope:** Root, stem, leaf; sun, water, soil
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד במדעים על צמחים — איך הם נראים ומה הם צריכים כדי לגדול.
-
----
-
-## 2. הסבר
-
-לצמח יש חלקים עיקריים:
-- שורש — מתחת לאדמה, שואב מים
-- גבעול — מחזיק את הצמח זקוף
-- עלה — ירוק, עוזר לצמח לגדול
-צמח צריך שלושה דברים כדי לחיות ולגדול:
-- שמש — אור וחום
-- מים — הצמח קולט דרך השורש
-- אדמה — מקום להיאחז בו ולקבל מים וחומרים חשובים
-בלי אחד מהם הצמח עלול לנבול או לא לגדול.
+Today in science we will learn about plants — what they look like and what they need to grow.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בכיתה יש עציץ עם צמח קטן.
-השורשים באדמה שואבים מים.
-הגבעול מחזיק את העלים למעלה.
-השמש מהחלון נותנת אור.
-כך הצמח גדל לאט.
-
----
-
-## 4. בואו נפתור
-
-מה הצמח צריך כדי לגדול?
-חושבים על מה רואים בגינה — שמש, מים, אדמה.
-שלושת אלה חשובים לצמח.
-שמש, מים ואדמה
+A plant has main parts:
+- Root — under the soil, takes in water
+- Stem — holds the plant upright
+- Leaf — green, helps the plant grow
+A plant needs three things to live and grow:
+- Sun — light and warmth
+- Water — the plant takes it in through the roots
+- Soil — a place to hold on and get water and important nutrients
+Without one of these, the plant may wilt or stop growing.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-דמיינו עציץ על חלון שמש.
-מה יקרה אם לא נשפוך מים שבוע שלם?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-מה יקרה לעציץ אם לא נשפוך מים שבוע שלם?
-צמח שואב מים דרך השורשים שלו.
-המים עוברים לגבעול ולעלים ועוזרים לצמח לגדול ולחיות.
-בלי מים שבוע שלם — השורשים יתייבשו, העלים ינבלו ויצהיבו.
-הצמח ייחלש מאוד, כי מים חיוניים לו.
-בלי מים — הצמח ינבול ועלול למות.
+In the classroom there is a pot with a small plant.
+The roots in the soil take in water.
+The stem holds the leaves up high.
+The sun from the window gives light.
+That is how the plant grows slowly.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים חלקי צמח וצרכי גדילה במדעים.
-בתרגול חפשו שאלות על שורש, עלה ומה צמח צריך.
+What does a plant need to grow?
+Think about what you see in a garden — sun, water, soil.
+All three of these are important for a plant.
+Sun, water, and soil
+
+---
+
+## 5. Try it yourself
+
+Imagine a pot on a sunny windowsill.
+What will happen if we do not pour water for a whole week?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+What will happen to the pot if we do not pour water for a whole week?
+A plant takes in water through its roots.
+The water moves to the stem and leaves and helps the plant grow and stay alive.
+Without water for a whole week — the roots will dry out, the leaves will wilt and turn yellow.
+The plant will become very weak, because water is essential for it.
+Without water — the plant will wilt and may die.
+
+---
+
+## 7. Let's practice!
+
+Now you know plant parts and what plants need to grow in science.
+In practice, look for questions about roots, leaves, and what a plant needs.

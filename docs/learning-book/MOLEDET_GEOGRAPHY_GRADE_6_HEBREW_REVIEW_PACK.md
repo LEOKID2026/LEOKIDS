@@ -28,8 +28,7 @@
 |-------|-------|
 | **File** | `mg_g6_population.md` |
 | **learning_page_id** | `geography:g6:mg_g6_population` |
-| **skill_id** | `geography:g6:geography:geography_0_אוכלוסיית_ישראל` |
-| **title_hebrew** | מגוון האוכלוסייה בישראל `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -133,8 +132,7 @@
 |-------|-------|
 | **File** | `mg_g6_natural_phenomena.md` |
 | **learning_page_id** | `geography:g6:mg_g6_natural_phenomena` |
-| **skill_id** | `geography:g6:geography:geography_1_תופעות_טבע` |
-| **title_hebrew** | תופעות טבע `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -236,8 +234,7 @@
 |-------|-------|
 | **File** | `mg_g6_environment_quality.md` |
 | **learning_page_id** | `geography:g6:mg_g6_environment_quality` |
-| **skill_id** | `geography:g6:geography:geography_2_איכות_הסביבה` |
-| **title_hebrew** | איכות הסביבה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -341,8 +338,7 @@
 |-------|-------|
 | **File** | `mg_g6_human_environment.md` |
 | **learning_page_id** | `geography:g6:mg_g6_human_environment` |
-| **skill_id** | `geography:g6:geography:geography_3_יחסי_אדם_סביבה` |
-| **title_hebrew** | יחסי אדם–סביבה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:geography:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -448,8 +444,7 @@
 |-------|-------|
 | **File** | `mg_g6_democracy.md` |
 | **learning_page_id** | `geography:g6:mg_g6_democracy` |
-| **skill_id** | `geography:g6:citizenship:citizenship_0_דמוקרטיה_בישראל` |
-| **title_hebrew** | דמוקרטיה בישראל `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -552,8 +547,7 @@
 |-------|-------|
 | **File** | `mg_g6_values.md` |
 | **learning_page_id** | `geography:g6:mg_g6_values` |
-| **skill_id** | `geography:g6:citizenship:citizenship_1_ערכים` |
-| **title_hebrew** | ערכי המדינה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -656,8 +650,7 @@
 |-------|-------|
 | **File** | `mg_g6_state_institutions.md` |
 | **learning_page_id** | `geography:g6:mg_g6_state_institutions` |
-| **skill_id** | `geography:g6:citizenship:citizenship_2_מוסדות_המדינה` |
-| **title_hebrew** | מוסדות המדינה `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -761,8 +754,7 @@
 |-------|-------|
 | **File** | `mg_g6_social_involvement.md` |
 | **learning_page_id** | `geography:g6:mg_g6_social_involvement` |
-| **skill_id** | `geography:g6:citizenship:citizenship_3_מעורבות_חברתית` |
-| **title_hebrew** | קבלת החלטות ומעורבות חברתית `[DRAFT — not owner-approved]` |
+| **skill_id** | `geography:g6:citizenship:content` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

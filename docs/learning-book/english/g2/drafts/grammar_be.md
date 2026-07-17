@@ -1,4 +1,4 @@
-# am / is / are — חיזוק
+# am / is / are — Strengthening
 
 ## Metadata
 
@@ -11,72 +11,72 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | am / is / are — חיזוק |
+| **title_english** | am / is / are — Strengthening |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
-**Linked skill_ids:** `english:grammar:line:חיזוק_to_be_am_is_are_וכינויי_גוף`
+**Linked skill_ids:** `english``
 
-**Content scope:** I am / You are / He is / She is — ללא מונחים פורמליים
-
----
-
-## 1. מה לומדים?
-
-היום נחזק את התבניות I am, You are — ונוסיף He is ו-She is.
-כבר למדנו I am — עכשיו יותר כינויים.
+**Content scope:** I am / You are / He is / She is — no formal terminology
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-תבניות:
-I am — אני
-You are — אתה או את
-He is — הוא
-She is — היא
-דוגמה:
+Today we will strengthen the patterns I am, You are — and add He is and She is.
+We already learned I am — now let's add more pronouns.
+
+---
+
+## 2. Simple explanation
+
+Patterns:
+I am — I
+You are — you
+He is — he
+She is — she
+Example:
 She is happy.
-היא שמחה.
-
----
-
-## 3. דוגמה
-
-ילדה שמחה.
 She is happy.
-היא שמחה.
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-איך אומרים "היא שמחה"?
+A happy girl.
+She is happy.
+She is happy.
+
+---
+
+## 4. Let's solve together
+
+How do we say "she is happy"?
 She is happy
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילד עצוב.
+A sad boy.
 He is sad
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: ילד עצוב — באנגלית?
-He פירושו הוא.
-sad פירושו עצוב.
-התשובה היא: He is sad.
+The question: a sad boy — in English?
+He means he.
+sad means sad.
+The answer is: He is sad.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים I am, You are, He is, She is.
-בתרגול תמצאו She is happy ו-He is sad.
+Now you know I am, You are, He is, She is.
+In practice, you'll find She is happy and He is sad.

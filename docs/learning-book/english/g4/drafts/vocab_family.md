@@ -1,4 +1,4 @@
-# משפחה — parents, work
+# Family — parents, work
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | משפחה — parents, work |
+| **title_english** | Family — parents, work |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד על הורים ועבודה.
-My parents work hard — ההורים שלי עובדים קשה.
+Today we will learn about parents and work.
+My parents work hard.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 My parents work hard.
-
-ההורים שלי עובדים קשה.
 
 My father works every day.
 
-אבי עובד כל יום.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-הורים עובדים.
+Parents working.
 
 My parents work hard.
 
-ההורים שלי עובדים קשה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "ההורים שלי עובדים קשה"?
+Question: How do you say this?
 
 My parents work hard
 
-תשובה: My parents work hard
+Answer: My parents work hard
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-הורים עוזרים לילד בשיעורים.
+Parents helping a child with homework.
 
 My parents help me.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "ההורים שלי עוזרים לי."
+Exercise: "My parents help me."
 
-parents הם הורים ברבים — אחרי ריבוי לא מוסיפים s לפועל help.
+"Parents" is plural — after a plural subject we do not add s to the verb help.
 
-me = לי (מושא ראשון).
+"Me" is the object of the sentence.
 
-ההורים שלי עוזרים לי.
-
- My parents help me.
+So the full sentence is: My parents help me.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים משפחה ועבודה.
-בתרגול תמצאו My parents work hard.
+Now you will describe family and work.
+In the practice, you'll find: My parents work hard.

@@ -1,4 +1,4 @@
-# רגשות — She feels…
+# Emotions — She feels…
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | רגשות — She feels… |
+| **title_english** | Emotions — She feels… |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,73 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד רגשות באנגלית.
-She feels happy — היא מרגישה שמחה.
+Today we will learn emotions in English.
+She feels happy.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 She feels happy.
 
-היא מרגישה שמחה.
+She feels happy.
 
 He feels sad.
 
-הוא מרגיש עצוב.
+He feels sad.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילדה מחייכת.
+A smiling girl.
 
 She feels happy.
 
-היא מרגישה שמחה.
+She feels happy.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "היא מרגישה שמחה"?
+Question: how do we say "she feels happy"?
 
 She feels happy
 
-תשובה: She feels happy
+Answer: She feels happy
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדה אחרי ריצה ארוכה.
+A girl after a long run.
 
 She feels tired.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: ילדה אחרי ריצה ארוכה.
+Exercise: a girl after a long run.
 
-הפתרון:
+The solution:
 
 She feels tired.
 
-היא מרגישה עייפה.
+She feels tired.
 
-כל הכבוד! אחרי she (היא), he (הוא) או it (זה) מוסיפים s לפועל — feels, לא feel.
+Well done! After she, he, or it, we add s to the verb — feels, not feel.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים רגשות עם feels.
-בתרגול תמצאו She feels happy ו-He feels sad.
+Now you describe emotions with feels.
+In practice, you'll find She feels happy and He feels sad.

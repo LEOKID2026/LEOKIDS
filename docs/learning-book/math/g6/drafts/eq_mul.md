@@ -1,4 +1,4 @@
-# משוואת כפל — מספר חסר
+# Multiplication Equation — Missing Number
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת כפל — מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplication Equation — Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מקום ריק; גורם חסר
+**Content scope:** blank space; missing factor
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור משוואות כפל — גורם חסר.
+Today we will solve multiplication equations — a missing factor.
 48 × ? = 576
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-? = תוצאה ÷ גורם ידוע
+? = result ÷ known factor
 48 × ? = 576 → ? = 576 ÷ 48
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 7 × __ = 84 → __ = 12
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 48 × ? = 576
 ? = 576 ÷ 48 = 12
-בדיקה: 48 × 12 = 576
+Check: 48 × 12 = 576
 12.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פתרו: 9 × ? = 756
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-פתרו: 9 × ? = 756
-? = תוצאה ÷ גורם ידוע = 756 ÷ 9 = 84.
-בדיקה: 9 × 84 = 756
-התשובה: ? = 84
+Solve: 9 × ? = 756
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-משוואות כפל קשורות לשברים כחילוק.
-בתרגול תמצאו משוואות כפל — חלקו את התוצאה בגורם!
+Solve: 9 × ? = 756
+? = result ÷ known factor = 756 ÷ 9 = 84.
+Check: 9 × 84 = 756
+The answer: ? = 84
+
+---
+
+## 7. Let's practice!
+
+Multiplication equations connect to fractions as division.
+In practice you will find multiplication equations — divide the result by the known factor!

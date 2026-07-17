@@ -1,4 +1,4 @@
-﻿# נפח פירמידה — בסיס מלבן
+# Volume of a Pyramid — Rectangular Base
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | נפח פירמידה — בסיס מלבן `[DRAFT — not owner-approved]` |
+| **title_english** | Volume of a Pyramid — Rectangular Base `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** (1/3)×שטח בסיס×גובה
+**Content scope:** (1/3)×base area×height
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד נפח פירמידה — בסיס מלבן.
-נפח = (1/3) × שטח בסיס × גובה.
+Today we will learn volume of a pyramid — rectangular base.
+Volume = (1/3) × base area × height.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שלבים:
+Steps:
 1.
-שטח בסיס = אורך × רוחב
+Base area = length × width
 2.
-נפח = (1/3) × שטח בסיס × גובה
+Volume = (1/3) × base area × height
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיס 4 ס״מ × 6 ס״מ, גובה 9 ס״מ:
+Base 4 cm × 6 cm, height 9 cm:
 4×6 = 24
-(1/3) × 24 × 9 = 72 (ס״מ³)
+(1/3) × 24 × 9 = 72 (cm³)
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-פירמידה — בסיס 4 ס״מ × 6 ס״מ, גובה 9 ס״מ. נפח?
+Pyramid — base 4 cm × 6 cm, height 9 cm. Volume?
 4×6 = 24
 24×9 = 216; 216÷3 = 72
-72 ס״מ³.
+72 cm³.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-פירמידה: בסיס 5 ס״מ × 9 ס״מ, גובה 6 ס״מ — מה הנפח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Pyramid: base 5 cm × 9 cm, height 6 cm — what is the volume?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-פירמידה — בסיס 5 ס״מ × 9 ס״מ, גובה 6 ס״מ — מה הנפח?
-שטח בסיס — 5 × 9 = 45.
+Pyramid — base 5 cm × 9 cm, height 6 cm — what is the volume?
+Base area — 5 × 9 = 45.
 45 × 6 = 270 ; 270 ÷ 3 = 90
-90 ס״מ³
+90 cm³
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-נפח פירמידה מלבנית = (1/3) × אורך × רוחב × גובה.
-בתרגול תמצאו פירמידות — שטח בסיס, ואז שליש!
+Volume of a rectangular pyramid = (1/3) × length × width × height.
+In practice you'll find pyramids — base area, then one third!

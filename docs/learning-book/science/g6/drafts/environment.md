@@ -1,4 +1,4 @@
-# סביבה — שינויי אקלים ופעולה
+# Environment — Climate Change and Action
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | סביבה — שינויי אקלים ופעולה `[DRAFT — not owner-approved]` |
+| **title_english** | Environment — Climate Change and Action `[DRAFT — not owner-approved]` |
 
-**Content scope:** טביעת רגל; בחירות בר-קיימא; ללא ניסוח מפחיד
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים על טביעת רגל, בחירות יומיומיות — ועל פעולה לשמירה על הסביבה.
+**Content scope:** Carbon footprint; sustainable choices; no scary wording
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-טביעת רגל — סכום ההשפעה שלנו על כדור הארץ:
-- אנרגיה — חשמל, נסיעות
-- מזון — בזבוז, אריזות
-- מים — צריכה, פסולת
-בחירות בר קיימא — דרך לחיות ששומרת על הטבע לדורות הבאים:
-- מיחזור וצמצום פלסטיק
-- חיסכון במים ובחשמל
-- הליכה, אופניים, תחבורה ציבורית — כשאפשר
-- תמיכה ביוזמות ירוקות בקהילה
-פעולה — לא מספיק רק לדעת:
-- פרויקט בית ספר — גינה, מיחזור
-- שיחה עם משפחה — מה אפשר לשנות בבית
-המסר:
-אתגר אמיתי — אבל יש מה לעשות, וכל בחירה קטנה משנה.
+Today in science we will learn about carbon footprint, daily choices — and action to protect the environment.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-בקבוק פלסטיק חד פעמי — אריזה, שינוע, פסולת.
-בקבוק רב פעמי — פחות טביעת רגל.
-כיבוי אור בחדר ריק — פחות חשמל, פחות פליטות.
-
----
-
-## 4. בואו נפתור
-
-מה מקטין טביעת רגל — הליכה ברגל או נסיעה במכונית לבד?
-מכונית משתמשת בדלק ויוצרת פליטות.
-הליכה ברגל כמעט לא יוצרת פליטות.
-הליכה ברגל
-
----
-
-## 5. נסו בעצמכם
-
-רשמו שלוש בחירות יומיומיות שאפשר לשנות (מים, חשמל, מיחזור).
-איזו פעולה תתחילו השבוע?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Carbon footprint — the sum of our impact on Earth:
+- Energy — electricity, travel
+- Food — waste, packaging
+- Water — use, waste
+Sustainable choices — a way of living that protects nature for future generations:
+- Recycle and reduce plastic
+- Save water and electricity
+- Walk, bike, public transport — when possible
+- Support green initiatives in the community
+Action — knowing is not enough:
+- School project — garden, recycling
+- Talk with family — what can change at home
+The message:
+A real challenge — but there is something to do, and every small choice matters.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 3. Example
 
-השאלה: מהן שלוש בחירות יומיומיות שאפשר לשנות — ואיזו טביעת רגל הן מקטינות?
-הסבר מדעי:
-טביעת רגל מודדת את ההשפעה הכוללת שלנו על הסביבה — אנרגיה, מים ופסולת.
-כיבוי אור כשיוצאים מחדר — פחות חשמל, פחות פליטות ממתקני כוח.
-סגירת ברז בזמן צחצוח שיניים — פחות צריכת מים.
-מיחזור בקבוק פלסטיק — פחות פסולת ופחות ייצור חדש שדורש אנרגיה.
-כל אחת מהבחירות מקטינה חלק בטביעת הרגל האישית.
-שלוש דוגמאות: כיבוי אור, חיסכון במים, מיחזור. כל אחת מקטינה חלק בטביעת הרגל.
+A single-use plastic bottle — packaging, transport, waste.
+A reusable bottle — smaller footprint.
+Turning off a light in an empty room — less electricity, fewer emissions.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים טביעת רגל, בחירות ופעולה סביבתית במדעים.
-בתרגול חפשו שאלות על דרכים לשמור על הסביבה.
+What reduces carbon footprint — walking or driving alone in a car?
+A car uses fuel and creates emissions.
+Walking creates almost no emissions.
+Walking
+
+---
+
+## 5. Try it yourself
+
+List three daily choices you can change (water, electricity, recycling).
+Which action will you start this week?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: what are three daily choices you can change — and which footprint do they reduce?
+Scientific explanation:
+Carbon footprint measures our overall impact on the environment — energy, water, and waste.
+Turning off a light when leaving a room — less electricity, fewer emissions from power plants.
+Closing the tap while brushing teeth — less water use.
+Recycling a plastic bottle — less waste and less new production that requires energy.
+Each choice reduces part of your personal footprint.
+Three examples: turn off lights, save water, recycle. Each reduces part of the footprint.
+
+---
+
+## 7. Let's practice!
+
+Now you know about carbon footprint, choices, and environmental action in science.
+When you practice, look for questions about ways to protect the environment.

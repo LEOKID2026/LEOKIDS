@@ -1,4 +1,4 @@
-# קניות והנחה
+# Shopping and Discounts
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | קניות והנחה `[DRAFT — not owner-approved]` |
+| **title_english** | Shopping and Discounts |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מחיר אחרי אחוז הנחה
+**Content scope:** Price after percent discount
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלת קניות עם הנחה באחוזים.
-קודם מחשבים את ההנחה, ואז מורידים מהמחיר.
-
----
-
-## 2. הסבר
-
-מחיר 200 ₪, הנחה 15%:
-15% מ-200 = 200 × 15 ÷ 100 = 30
-200 − 30 = 170 ₪
-מחיר אחרי הנחה: 170 ₪
+Today we'll solve a shopping question with a percent discount.
+First find the discount, then subtract from the price.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-350 ₪, הנחה 10%:
-10% = 35; 350 − 35 = 315 ₪
+Price $200, discount 15%:
+15% of 200 = 200 × 15 ÷ 100 = 30
+200 − 30 = $170
+Price after discount: $170
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-מוצר 200 ₪, הנחה 15%. מה המחיר?
-15% מ-200 = 30
+$350, discount 10%:
+10% = 35; 350 − 35 = $315
+
+---
+
+## 4. Let's solve together
+
+An item costs $200, discount 15%. What is the price?
+15% of 200 = 30
 200 − 30 = 170
-170 ₪
+$170
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מוצר עולה 300 ₪, יש הנחה של 20%.
-מה המחיר אחרי ההנחה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+An item costs $300, there is a 20% discount.
+What is the price after the discount?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-מוצר 300 ₪, הנחה 20% — מה המחיר אחרי ההנחה?
-20% מ-300 = 300 × 20 ÷ 100 = 60
+An item $300, discount 20% — what is the price after the discount?
+20% of 300 = 300 × 20 ÷ 100 = 60
 300 − 60 = 240
-המחיר אחרי ההנחה: 240 ₪
+The price after the discount: $240
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור שאלות קניות עם הנחה.
-בתרגול תמצאו שאלות חנות והנחה.
-חשבו קודם את ההנחה!
+Now you know how to solve shopping questions with a discount.
+In practice you'll find store and discount questions.
+First find the discount!

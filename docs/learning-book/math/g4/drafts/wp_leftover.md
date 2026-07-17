@@ -1,4 +1,4 @@
-# שאלה מילולית — מה נשאר?
+# Word Problems — What's Left Over?
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_3_4 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — מה נשאר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — What's Left Over? |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** **שארית** בהקשר — קבוצות מלאות + מה שנשאר. שלב אחד. מספרים עד ~100. ללא חילוק ארוך.
+**Content scope:** **Remainder** in context — full groups + what's left. One step. Numbers up to ~100. No long division.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלת שארית — כמה נשאר אחרי שממלאים אריזות (או קבוצות) שוות.
-53 ספרים, 8 על כל מדף — כמה יישארו בלי מדף מלא?
-
----
-
-## 2. הסבר
-
-ספרייה: יש 53 ספרים חדשים. על כל מדף נכנסים 8 ספרים.
-כמה מדפים מלאים? 8 × 6 = 48 (6 מדפים).
-מה נשאר? 53 − 48 = 5 — 5 ספרים בלי מדף מלא.
-5 = השארית — התשובה ל"כמה נשאר?".
+Today we'll solve a remainder word problem — how many are left after filling equal boxes (or groups).
+53 books, 8 on each shelf — how many won't fill a full shelf?
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-72 עטים — 9 בכל קופסה.
-9 × 8 = 72 — יוצא בדיוק, אין שארית (0 נשאר).
-72 ÷ 9 = 8 בלי שארית.
-
----
-
-## 4. בואו נפתור
-
-67 גוליות. שמים 7 בכל שקית. כמה גוליות יישארו בלי שקית מלאה?
-7 × 9 = 63 (9 שקיות מלאות).
-67 − 63 = 4 — 4 גוליות נשארו (שארית).
-4 גוליות (שארית).
+Library: there are 53 new books. Each shelf holds 8 books.
+How many full shelves? 8 × 6 = 48 (6 shelves).
+What's left? 53 − 48 = 5 — 5 books without a full shelf.
+5 = the remainder — the answer to "how many are left?"
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Visual / concrete example
 
-יש 61 תלמידים.
-מתחלקים לקבוצות של 9.
-כמה תלמידים יישארו בלי קבוצה מלאה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+72 pens — 9 in each box.
+9 × 8 = 72 — comes out exactly, no remainder (0 left).
+72 ÷ 9 = 8 with no remainder.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-יש 61 תלמידים.
-מתחלקים לקבוצות של 9.
-כמה תלמידים יישארו בלי קבוצה מלאה?
-כמה קבוצות מלאות? 9 × 6 = 54 (6 קבוצות מלאות).
-מה נשאר? 61 − 54 = 7 — 7 תלמידים בלי קבוצה מלאה.
-7 תלמידים (שארית)
+67 marbles. Put 7 in each bag. How many marbles won't fill a full bag?
+7 × 9 = 63 (9 full bags).
+67 − 63 = 4 — 4 marbles left (remainder).
+4 marbles (remainder).
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-בפרק הזה חיזקנו את הידע לפתור שאלות על מה נשאר.
-בתרגול תמצאו גם מספרים גדולים יותר חילוק עם שארית במילים.
-חפשו את השארית!
+There are 61 students.
+They split into groups of 9.
+How many students won't be in a full group?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+There are 61 students.
+They split into groups of 9.
+How many students won't be in a full group?
+How many full groups? 9 × 6 = 54 (6 full groups).
+What's left? 61 − 54 = 7 — 7 students without a full group.
+7 students (remainder)
+
+---
+
+## 7. Let's practice!
+
+In this section we strengthened solving what's left over?
+In practice you'll also find bigger division-with-remainder word problems.
+Look for the remainder!

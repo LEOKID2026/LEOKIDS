@@ -1,4 +1,4 @@
-# חיבור עם מספר חסר
+# Addition with a Missing Number
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיבור עם מספר חסר `[DRAFT — not owner-approved]` |
+| **title_english** | Addition with a Missing Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** משפט חיבור עם **מקום ריק אחד** (מספר חסר). עד 30. ללא משתנים, ללא אלגברה.
+**Content scope:** Addition sentence with **one blank** (missing number). Up to 30. No variables, no algebra.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לפתור חידה במשפט חיבור.
-יש מקום ריק — צריך למצוא את המספר החסר.
+Today we're going to learn to solve a puzzle in an addition sentence.
+There is a blank — you need to find the missing number.
 
 ---
 
-## 2. הסבר פשוט
+## 2. Simple explanation
 
-לפעמים בתרגיל חיבור יש מקום ריק:
+Sometimes in an addition problem there is a blank:
 3 + __ = 7
-המקום הריק (__) = מספר חסר.
-שואלים: "כמה צריך להוסיף כדי להגיע ל-7?"
+The blank (__) = a missing number.
+The question is: "How much do you need to add to get to 7?"
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-3 + __ = 7 על ציר המספרים:
-מה רואים בדוגמה?
-- 3 כוכבים כבר יש
-- צריך עוד כוכבים עד 7
-- סופרים: 4, 5, 6, 7 → 4 קפיצות
-מקום ריק: 3 + 4 = 7
+3 + __ = 7 on the number line:
+What do you see in the example?
+- 3 stars already
+- Need more stars until 7
+- Count: 4, 5, 6, 7 → 4 jumps
+Blank: 3 + 4 = 7
 0 — 1 — 2 — [3] — 4 — 5 — 6 — [7]
-4 קפיצות_______↑
+4 jumps_______↑
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-6 + __ = 10 — מה המספר החסר?
-יש לנו 6. רוצים להגיע ל-10.
-על מסגרת עשר — 6 מלאים, 4 חסרים.
-המספר החסר הוא 4 — כי 6 + 4 = 10.
+6 + __ = 10 — what is the missing number?
+We have 6. We want to get to 10.
+On a ten-frame — 6 filled, 4 empty.
+The missing number is 4 — because 6 + 4 = 10.
 6 + 4 = 10
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-2 + __ = 8 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+2 + __ = 8 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-2 + __ = 8 — מה המספר החסר?
-יש לנו 2. רוצים להגיע ל-8.
-על ציר המספרים — מ-2 ל-8 יש 6 קפיצות: 3, 4, 5, 6, 7, 8.
-המספר החסר הוא 6 — כי 2 + 6 = 8.
+2 + __ = 8 — what is the missing number?
+We have 2. We want to get to 8.
+On the number line — from 2 to 8 there are 6 jumps: 3, 4, 5, 6, 7, 8.
+The missing number is 6 — because 2 + 6 = 8.
 2 + 6 = 8
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא מספר חסר במשפט חיבור.
-בתרגול תמצאו מקום ריק (__).
-חפשו כמה חסר!
+Now you know how to find a missing number in an addition sentence.
+In practice you'll find blanks (__).
+Find what's missing!

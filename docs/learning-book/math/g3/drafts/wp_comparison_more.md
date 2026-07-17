@@ -1,4 +1,4 @@
-# שאלה מילולית — כמה יותר?
+# Word Problem — How Many More?
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problem — How Many More? |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הפרש בין שתי כמויות — "כמה יותר". שלב אחד. עד ~100.
+**Content scope:** Difference between two amounts — "how many more." One step. Up to ~100.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור שאלה מילולית — כששואלים כמה יותר יש לאחד מאשר לשני.
-צריך למצוא את ההפרש — גדול פחות קטן.
-
----
-
-## 2. הסבר
-
-מסגרת:
-מה יודעים? שתי כמויות
-מה מבקשים? כמה יותר לזה שיש יותר
-מה עושים? מחסרים: גדול − קטן
-"יותר" = הפרש — לא סכום!
+Today we will solve a word problem — when the question asks how many more one person has than another.
+We need to find the difference — bigger minus smaller.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-לנועה 52 קלפים וליובל 37 קלפים.
-כמה קלפים יש לנועה יותר מליובל?
-יודעים: 52, 37
-מבקשים:
-הפרש (יותר)
-עושים: 52 − 37 = 15
-15 קלפים יותר.
+Framework:
+What do we know? Two amounts
+What are we asked? How many more for the one who has more
+What do we do? Subtract: bigger − smaller
+"More" = difference — not a total!
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-לדנה 68 מדבקות ולרוני 45 מדבקות. כמה מדבקות יש לדנה יותר?
-דנה יותר — 68 > 45.
+Noa has 52 cards and Yuval has 37 cards.
+How many more cards does Noa have than Yuval?
+We know: 52, 37
+We're asked:
+The difference (more)
+We do: 52 − 37 = 15
+15 more cards.
+
+---
+
+## 4. Let's solve together
+
+Dana has 68 stickers and Roni has 45 stickers. How many more stickers does Dana have?
+Dana has more — 68 > 45.
 68 − 45 = 23
-23 מדבקות יותר.
+23 more stickers.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-לגל 75 מדבקות ולאלה 48 מדבקות.
-כמה מדבקות יש לגל יותר מאלה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Gal has 75 stickers and Ella has 48 stickers.
+How many more stickers does Gal have than Ella?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-לגל 75 ולאלה 48 — כמה יותר לגל?
-גל יותר: 75 > 48.
+Gal has 75 and Ella has 48 — how many more does Gal have?
+Gal has more: 75 > 48.
 75 − 48 = 27
-בדיקה: 48 + 27 = 75
-לגל יש 27 מדבקות יותר
+Check: 48 + 27 = 75
+Gal has 27 more stickers
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור כמה יותר?
-בשאלה מילולית.
-בתרגול תמצאו שאלות השוואה.
-חפשו הפרש — לא סכום!
+Now you know how to solve how many more?
+In a word problem.
+In practice you'll find comparison questions.
+Look for the difference — not the total!

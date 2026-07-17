@@ -1,4 +1,4 @@
-# עולם — תרגום
+# World — Translation
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | עולם — תרגום |
+| **title_english** | World — Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום על העולם.
-People around the world speak many languages — אנשים ברחבי העולם מדברים הרבה שפות.
+Today we will practice sentences about the world.
+People around the world speak many languages.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-around the world — ברחבי העולם:
+around the world — everywhere in the world:
 
 People around the world speak many languages.
-
-אנשים ברחבי העולם מדברים הרבה שפות.
 
 Many countries have different cultures.
 
-בהרבה מדינות יש תרבויות שונות.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מפה עולמית — שפות שונות.
+A world map — different languages.
 
 People around the world speak many languages.
 
-אנשים ברחבי העולם מדברים הרבה שפות.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אנשים ברחבי העולם מדברים הרבה שפות"?
+Question: How do you say this?
 
 People around the world speak many languages
 
-תשובה: People around the world speak many languages
+Answer: People around the world speak many languages
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ילדים מכל העולם לומדים.
+Children from all over the world learning.
 
 Children around the world learn English.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "ילדים ברחבי העולם לומדים אנגלית."
+Exercise: "Children around the world learn English."
 
-around the world = ברחבי העולם.
+around the world means everywhere in the world.
 
-children הוא ריבוי — משתמשים ב-learn ללא s.
+"Children" is plural — we use learn without s.
 
-ילדים ברחבי העולם לומדים אנגלית.
-
- Children around the world learn English.
+So the full sentence is: Children around the world learn English.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום על העולם.
-בתרגול תמצאו People around the world speak many languages.
+Now you will practice sentences about the world.
+In the practice, you'll find: People around the world speak many languages.

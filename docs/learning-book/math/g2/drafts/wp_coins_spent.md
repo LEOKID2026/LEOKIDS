@@ -1,4 +1,4 @@
-﻿# שאלות מילוליות — קניות ועודף
+# Word Problems — Shopping and Change
 
 ## Metadata
 
@@ -11,85 +11,85 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — קניות ועודף `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Shopping and Change |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שילם / עלה / עודף. חיסור בשקלים שלמים. שלב אחד. עד ~100. ללא אגורות, ללא קנייה מרובת שלבים.
+**Content scope:** Paid / cost / change. Subtraction in whole shekels. One step. Up to ~100. No agorot, no multi-step buying.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שאלות מילוליות על קניות ועודף.
-כששילמתם יותר מהמחיר, מקבלים עודף — צריך לחסר.
-
----
-
-## 2. הסבר
-
-בשאלות כאלה יש בדרך כלל:
-- כמה שילמתם
-- כמה עלה (המחיר)
-- כמה עודף נשאר
-לפני שמחשבים:
-1. מה יודעים? — סכום ששילמתם ומחיר
-2. מה מבקשים? — כמה עודף
-3. מה עושים? — מחסירים: שילמתם − עלה = עודף
-חשוב: רק שקלים שלמים. שלב אחד — קנייה אחת.
+Today we're going to learn word problems about shopping and change.
+When you pay more than the price, you get change back — you need to subtract.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-נועה שילמה 50 ₪, הספר עלה 35 ₪:
-15 שקלים עודף
-שילמה: 50 ₪
-עלה: 35 ₪
-עודף: ? ₪
+In these problems you usually have:
+- How much you paid
+- How much it cost (the price)
+- How much change is left
+Before you calculate:
+1. What do we know? — amount paid and price
+2. What are we asked? — how much change
+3. What do we do? — subtract: paid − cost = change
+Important: whole shekels only. One step — one purchase.
+
+---
+
+## 3. Visual / concrete example
+
+Noa paid 50 ₪, the book cost 35 ₪:
+15 shekels change
+Paid: 50 ₪
+Cost: 35 ₪
+Change: ? ₪
 50 − 35 = 15
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-נועה שילמה 50 שקלים על ספר שעלה 35 שקלים. כמה עודף קיבלה?
-שלב 1 — מה יודעים?
-שילמה 50 ₪, הספר עלה 35 ₪.
-שלב 2 — מה מבקשים?
-כמה עודף קיבלה.
-שלב 3 — מה עושים?
+Noa paid 50 shekels for a book that cost 35 shekels. How much change did she get?
+Step 1 — What do we know?
+Paid 50 ₪, the book cost 35 ₪.
+Step 2 — What are we asked?
+How much change she got.
+Step 3 — What do we do?
 50 − 35 = 15
-נועה קיבלה 15 שקלים עודף.
+Noa got 15 shekels change.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אמיר שילם 40 שקלים על משחק שעלה 28 שקלים.
-כמה עודף קיבל?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-אמיר שילם 40 שקלים על משחק שעלה 28 שקלים.
-כמה עודף קיבל?
-שלב 1 — מה יודעים? שילם 40 ₪, עלה 28 ₪.
-שלב 2 — מה מבקשים? כמה עודף קיבל.
-שלב 3 — מה עושים? 40 − 28 = 12
-אמיר קיבל 12 שקלים עודף
+Amir paid 40 shekels for a game that cost 28 shekels.
+How much change did he get?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים למצוא עודף בשאלות קנייה.
-מה יודעים?
-מה מבקשים?
-חיסור!
+Amir paid 40 shekels for a game that cost 28 shekels.
+How much change did he get?
+Step 1 — What do we know? Paid 40 ₪, cost 28 ₪.
+Step 2 — What are we asked? How much change he got.
+Step 3 — What do we do? 40 − 28 = 12
+Amir got 12 shekels change
+
+---
+
+## 7. Let's practice!
+
+Now you know how to find change in shopping problems.
+What do we know?
+What are we asked?
+Subtract!

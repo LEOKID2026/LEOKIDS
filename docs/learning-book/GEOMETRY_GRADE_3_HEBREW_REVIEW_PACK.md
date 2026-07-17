@@ -42,7 +42,6 @@
 | **File** | `triangles.md` |
 | **learning_page_id** | `geometry:g3:triangles` |
 | **skill_id** | `geometry:kind:triangles` |
-| **title_hebrew** | סוגי משולשים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -144,7 +143,6 @@
 | **File** | `quadrilaterals.md` |
 | **learning_page_id** | `geometry:g3:quadrilaterals` |
 | **skill_id** | `geometry:kind:quadrilaterals` |
-| **title_hebrew** | סוגי מרובעים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -248,7 +246,6 @@
 | **File** | `parallel_perpendicular.md` |
 | **learning_page_id** | `geometry:g3:parallel_perpendicular` |
 | **skill_id** | `geometry:kind:parallel_perpendicular` |
-| **title_hebrew** | מקבילות ומאונכות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -349,7 +346,6 @@
 | **File** | `square_area.md` |
 | **learning_page_id** | `geometry:g3:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
-| **title_hebrew** | שטח ריבוע — כיתה ג׳ `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -451,7 +447,6 @@
 | **File** | `square_perimeter.md` |
 | **learning_page_id** | `geometry:g3:square_perimeter` |
 | **skill_id** | `geometry:kind:square_perimeter` |
-| **title_hebrew** | היקף ריבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -553,7 +548,6 @@
 | **File** | `triangle_perimeter.md` |
 | **learning_page_id** | `geometry:g3:triangle_perimeter` |
 | **skill_id** | `geometry:kind:triangle_perimeter` |
-| **title_hebrew** | היקף משולש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -655,7 +649,6 @@
 | **File** | `triangle_angles.md` |
 | **learning_page_id** | `geometry:g3:triangle_angles` |
 | **skill_id** | `geometry:kind:triangle_angles` |
-| **title_hebrew** | זוויות במשולש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -756,7 +749,6 @@
 | **File** | `rotation.md` |
 | **learning_page_id** | `geometry:g3:rotation` |
 | **skill_id** | `geometry:kind:rotation` |
-| **title_hebrew** | סיבוב במישור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -856,7 +848,6 @@
 | **File** | `solids.md` |
 | **learning_page_id** | `geometry:g3:solids` |
 | **skill_id** | `geometry:kind:solids` |
-| **title_hebrew** | גופים — פאות, קדקודים ומקצועות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

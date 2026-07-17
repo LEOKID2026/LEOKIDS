@@ -1,4 +1,4 @@
-﻿# גופים — פאות במישור
+# Solids — Faces in the Plane
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גופים — פאות במישור `[DRAFT — not owner-approved]` |
+| **title_english** | Solids — Faces in the Plane `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** תיבה: 6 מלבנים; זיהוי; ללא נפח מורכב
+**Content scope:** Rectangular prism: 6 rectangles; identification; no complex volume
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על תיבה — גוף תלת ממדי.
-נראה שלתיבה יש 6 פאות — וכל פאה היא מלבן (או ריבוע).
+Today in geometry we will learn about a rectangular prism — a three-dimensional solid.
+We will see that a rectangular prism has 6 faces — and each face is a rectangle (or a square).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: cube_basic
 :::
 
-תיבה (מנסרה מלבנית):
-גוף עם 6 פאות.
-כל פאה = משטח שטוח — בדרך כלל מלבן.
-3 זוגות של פאות ממול — כמו במלבן, אבל במרחב.
-כאן מזהים את הפאות — לפני חישוב נפח.
+Rectangular prism:
+A solid with 6 faces.
+Each face = a flat surface — usually a rectangle.
+3 pairs of opposite faces — like a rectangle, but in space.
+Here we identify the faces — before calculating volume.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-קופסת נעליים (תיבה):
-- פאה עליונה — מלבן
-- פאה תחתונה — מלבן
-- 4 פאות צד — מלבנים
-6 פאות מלבניות.
-
----
-
-## 4. בואו נפתור
-
-לתיבה יש כמה פאות, ומה צורת כל פאה?
-סופרים — למעלה, למטה, וארבע צדדים.
-6 פאות — כולן מלבנים (או ריבועים).
-6 פאות, כל אחת מלבן
+A shoe box (rectangular prism):
+- Top face — rectangle
+- Bottom face — rectangle
+- 4 side faces — rectangles
+6 rectangular faces.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-לתיבה — כמה זוגות פאות שוות יש?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-לתיבה — כמה זוגות פאות שוות יש?
-לתיבה 6 פאות — עליונה, תחתונה, וארבעה צדדים.
-פאה עליונה = פאה תחתונה — זוג אחד.
-פאה קדמית = פאה אחורית — זוג שני.
-פאה ימנית = פאה שמאלית — זוג שלישי.
-3 זוגות פאות שוות
+How many faces does a rectangular prism have, and what shape is each face?
+Count — top, bottom, and four sides.
+6 faces — all rectangles (or squares).
+6 faces, each a rectangle
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מזהים פאות של תיבה בגאומטריה.
-בתרגול תמצאו תיבה — ספרו 6 פאות מלבניות!
+For a rectangular prism — how many pairs of equal faces are there?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+For a rectangular prism — how many pairs of equal faces are there?
+A rectangular prism has 6 faces — top, bottom, and four sides.
+Top face = bottom face — one pair.
+Front face = back face — second pair.
+Right face = left face — third pair.
+3 pairs of equal faces
+
+---
+
+## 7. Let's practice!
+
+Now you can identify the faces of a rectangular prism in geometry.
+In practice you will find a rectangular prism — count 6 rectangular faces!

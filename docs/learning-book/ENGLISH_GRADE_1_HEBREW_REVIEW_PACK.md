@@ -40,7 +40,6 @@
 | **File** | `vocab_colors.md` |
 | **learning_page_id** | `english:g1:vocab_colors` |
 | **skill_id** | `english:vocabulary:wordlist:colors` |
-| **title_hebrew** | צבעים באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -148,7 +147,6 @@ red
 | **File** | `vocab_numbers.md` |
 | **learning_page_id** | `english:g1:vocab_numbers` |
 | **skill_id** | `english:vocabulary:wordlist:numbers` |
-| **title_hebrew** | מספרים 0–10 באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -262,7 +260,6 @@ five זה חמש.
 | **File** | `vocab_family.md` |
 | **learning_page_id** | `english:g1:vocab_family` |
 | **skill_id** | `english:vocabulary:wordlist:family` |
-| **title_hebrew** | משפחה באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -369,7 +366,6 @@ mom
 | **File** | `vocab_animals.md` |
 | **learning_page_id** | `english:g1:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
-| **title_hebrew** | חיות באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -476,7 +472,6 @@ cat זה חתול.
 | **File** | `vocab_emotions.md` |
 | **learning_page_id** | `english:g1:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
-| **title_hebrew** | רגשות באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -581,7 +576,6 @@ happy זה שמח.
 | **File** | `vocab_actions.md` |
 | **learning_page_id** | `english:g1:vocab_actions` |
 | **skill_id** | `english:vocabulary:wordlist:actions` |
-| **title_hebrew** | פעולות באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -688,7 +682,6 @@ run זה לרוץ.
 | **File** | `vocab_school.md` |
 | **learning_page_id** | `english:g1:vocab_school` |
 | **skill_id** | `english:vocabulary:wordlist:school` |
-| **title_hebrew** | בית ספר באנגלית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -795,7 +788,6 @@ book זה ספר.
 | **File** | `grammar_be.md` |
 | **learning_page_id** | `english:g1:grammar_be` |
 | **skill_id** | `english:pool:grammar:be_basic` |
-| **title_hebrew** | I am / You are — היכרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -901,7 +893,6 @@ I am happy
 | **File** | `sentence_base.md` |
 | **learning_page_id** | `english:g1:sentence_base` |
 | **skill_id** | `english:pool:sentence:base` |
-| **title_hebrew** | משפטים קצרים — בסיס `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1004,7 +995,6 @@ I am happy זה "אני שמח".
 | **File** | `translation_classroom.md` |
 | **learning_page_id** | `english:g1:translation_classroom` |
 | **skill_id** | `english:pool:translation:classroom` |
-| **title_hebrew** | ביטויי כיתה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

@@ -49,7 +49,6 @@
 | **File** | `g3.multi_sentence.md` |
 | **learning_page_id** | `hebrew:g3:g3.multi_sentence` |
 | **skill_id** | `hebrew:g3:reading:g3.multi_sentence` |
-| **title_hebrew** | קריאה של כמה משפטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | טקסט קצר מכמה משפטים; זרימת קריאה; לא רומן |
 
@@ -152,7 +151,6 @@
 | **File** | `g3.genre_tag_info_vs_story.md` |
 | **learning_page_id** | `hebrew:g3:g3.genre_tag_info_vs_story` |
 | **skill_id** | `hebrew:g3:reading:g3.genre_tag_info_vs_story` |
-| **title_hebrew** | מידע או סיפור? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | הבחנה בסיסית בין טקסט מידע לטקסט סיפורי |
 
@@ -254,7 +252,6 @@
 | **File** | `reading_sentence_read_meaning.md` |
 | **learning_page_id** | `hebrew:g3:reading_sentence_read_meaning` |
 | **skill_id** | `hebrew:rich:reading:sentence_read:meaning` |
-| **title_hebrew** | משפט שלם — מה המשמעות? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | קריאת משפט ובחירת משמעות; לא פסקה ארוכה |
 
@@ -356,7 +353,6 @@
 | **File** | `g3.explicit_only.md` |
 | **learning_page_id** | `hebrew:g3:g3.explicit_only` |
 | **skill_id** | `hebrew:g3:comprehension:g3.explicit_only` |
-| **title_hebrew** | רק מה שכתוב בטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | כלל: לא ממציאים פרטים; רק מפורש |
 
@@ -457,7 +453,6 @@
 | **File** | `comprehension_passage_explicit_detail.md` |
 | **learning_page_id** | `hebrew:g3:comprehension_passage_explicit_detail` |
 | **skill_id** | `hebrew:rich:comprehension:passage_explicit:detail` |
-| **title_hebrew** | פרטים בטקסט `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | מציאת פרט מפורש בקטע קצר; שונה מעמוד הכלל |
 
@@ -558,7 +553,6 @@
 | **File** | `g3.cause_effect.md` |
 | **learning_page_id** | `hebrew:g3:g3.cause_effect` |
 | **skill_id** | `hebrew:g3:comprehension:g3.cause_effect` |
-| **title_hebrew** | סיבה ותוצאה — היכרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | קשר סיבה→תוצאה בדוגמה; לא תרגיל כי בלבד |
 
@@ -659,7 +653,6 @@
 | **File** | `comprehension_cause_effect_because.md` |
 | **learning_page_id** | `hebrew:g3:comprehension_cause_effect_because` |
 | **skill_id** | `hebrew:rich:comprehension:cause_effect:because` |
-| **title_hebrew** | למה? — כי ובגלל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | זיהוי סיבה במילים כי/בגלל בטקסט; שונה מהיכרות סיבה-תוצאה |
 
@@ -760,7 +753,6 @@
 | **File** | `g3.compare_light.md` |
 | **learning_page_id** | `hebrew:g3:g3.compare_light` |
 | **skill_id** | `hebrew:g3:comprehension:g3.compare_light` |
-| **title_hebrew** | השוואה קלה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | דמיון והבדל פשוט בין שני דברים |
 
@@ -861,7 +853,6 @@
 | **File** | `comprehension_passage_inference_implied.md` |
 | **learning_page_id** | `hebrew:g3:comprehension_passage_inference_implied` |
 | **skill_id** | `hebrew:rich:comprehension:passage_inference:implied` |
-| **title_hebrew** | מה משתמע מהטקסט? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | הסקה קלה מרמזים; לא ניחוש חופשי |
 
@@ -962,7 +953,6 @@
 | **File** | `comprehension_completion_context_clue.md` |
 | **learning_page_id** | `hebrew:g3:comprehension_completion_context_clue` |
 | **skill_id** | `hebrew:rich:comprehension:completion:context_clue` |
-| **title_hebrew** | השלמת משפט לפי הקשר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | מילת רמז מהמשפט; השלמה הגיונית |
 
@@ -1063,7 +1053,6 @@
 | **File** | `comprehension_analogy_reasoning_parallel.md` |
 | **learning_page_id** | `hebrew:g3:comprehension_analogy_reasoning_parallel` |
 | **skill_id** | `hebrew:rich:comprehension:analogy_reasoning:parallel` |
-| **title_hebrew** | דומה כמו... `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | יחס דמיון פשוט בין זוגות מילים |
 
@@ -1165,7 +1154,6 @@
 | **File** | `comprehension_binary_fact_mid_grammar_tf.md` |
 | **learning_page_id** | `hebrew:g3:comprehension_binary_fact_mid_grammar_tf` |
 | **skill_id** | `hebrew:rich:comprehension:binary_fact_mid_grammar:tf` |
-| **title_hebrew** | נכון לפי הטקסט? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | אמת/שקר על פי קטע; לא ידע כללי |
 
@@ -1266,7 +1254,6 @@
 | **File** | `g3.tense_system_intro.md` |
 | **learning_page_id** | `hebrew:g3:g3.tense_system_intro` |
 | **skill_id** | `hebrew:g3:grammar:g3.tense_system_intro` |
-| **title_hebrew** | עבר, הווה ועתיד — היכרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | שלושה זמנים בדוגמאות; לא טבלת נטיות |
 
@@ -1369,7 +1356,6 @@
 | **File** | `g3.connectors.md` |
 | **learning_page_id** | `hebrew:g3:g3.connectors` |
 | **skill_id** | `hebrew:g3:grammar:g3.connectors` |
-| **title_hebrew** | מילות קישור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | ו, אבל, כי, אז, אחר כך — במשפט |
 
@@ -1471,7 +1457,6 @@
 | **File** | `g3.binyan_light.md` |
 | **learning_page_id** | `hebrew:g3:g3.binyan_light` |
 | **skill_id** | `hebrew:g3:grammar:g3.binyan_light` |
-| **title_hebrew** | משפחת פעלים — היכרות קלה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | אותו שורש — צורות שונות; בלי מונח כבד; לא כמו עמוד התאמת בניין |
 
@@ -1573,7 +1558,6 @@
 | **File** | `grammar_morphology_binyan_fit.md` |
 | **learning_page_id** | `hebrew:g3:grammar_morphology_binyan_fit` |
 | **skill_id** | `hebrew:rich:grammar:morphology:binyan_fit` |
-| **title_hebrew** | איזו צורת פועל מתאימה? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | בחירת צורת פועל במשפט; תרגול — לא הגדרת משפחת פעלים |
 
@@ -1675,7 +1659,6 @@
 | **File** | `grammar_part_of_speech_verb_noun.md` |
 | **learning_page_id** | `hebrew:g3:grammar_part_of_speech_verb_noun` |
 | **skill_id** | `hebrew:rich:grammar:part_of_speech:verb_noun` |
-| **title_hebrew** | שם או פועל? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | הבחנה פשוטה; דוגמאות לפני מונחים |
 
@@ -1777,7 +1760,6 @@
 | **File** | `grammar_gender_number_plural.md` |
 | **learning_page_id** | `hebrew:g3:grammar_gender_number_plural` |
 | **skill_id** | `hebrew:rich:grammar:gender_number:plural` |
-| **title_hebrew** | רבים ורבות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | התאמה בסיסית במשפט |
 
@@ -1879,7 +1861,6 @@
 | **File** | `grammar_prep_choice_collocation.md` |
 | **learning_page_id** | `hebrew:g3:grammar_prep_choice_collocation` |
 | **skill_id** | `hebrew:rich:grammar:prep_choice:collocation` |
-| **title_hebrew** | מילת יחס מתאימה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | ב, ל, על, עם — צירוף נכון |
 
@@ -1981,7 +1962,6 @@
 | **File** | `g3.context_meaning.md` |
 | **learning_page_id** | `hebrew:g3:g3.context_meaning` |
 | **skill_id** | `hebrew:g3:vocabulary:g3.context_meaning` |
-| **title_hebrew** | משמעות לפי ההקשר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | אותה מילה — משמעות שונה במשפטים שונים |
 
@@ -2084,7 +2064,6 @@
 | **File** | `g3.word_families.md` |
 | **learning_page_id** | `hebrew:g3:g3.word_families` |
 | **skill_id** | `hebrew:g3:vocabulary:g3.word_families` |
-| **title_hebrew** | משפחות מילים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | שורש משותף; מילים קרובות; שפה פשוטה |
 
@@ -2186,7 +2165,6 @@
 | **File** | `vocabulary_synonym_near_meaning.md` |
 | **learning_page_id** | `hebrew:g3:vocabulary_synonym_near_meaning` |
 | **skill_id** | `hebrew:rich:vocabulary:synonym:near_meaning` |
-| **title_hebrew** | מילים דומות במשמעות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | נרדפות בסיסיות; לא מילים נדירות |
 
@@ -2287,7 +2265,6 @@
 | **File** | `vocabulary_antonym_opposite.md` |
 | **learning_page_id** | `hebrew:g3:vocabulary_antonym_opposite` |
 | **skill_id** | `hebrew:rich:vocabulary:antonym:opposite` |
-| **title_hebrew** | מילים מנוגדות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | ניגודיות פשוטה: גדול/קטן |
 
@@ -2388,7 +2365,6 @@
 | **File** | `vocabulary_semantic_field_education_lexicon.md` |
 | **learning_page_id** | `hebrew:g3:vocabulary_semantic_field_education_lexicon` |
 | **skill_id** | `hebrew:rich:vocabulary:semantic_field:education_lexicon` |
-| **title_hebrew** | מילים מעולם הבית ספר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | שדה לקסיקלי: כיתה, מורה, ספר |
 
@@ -2489,7 +2465,6 @@
 | **File** | `vocabulary_precision_best_word.md` |
 | **learning_page_id** | `hebrew:g3:vocabulary_precision_best_word` |
 | **skill_id** | `hebrew:rich:vocabulary:precision:best_word` |
-| **title_hebrew** | המילה הכי מתאימה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | בחירת מילה מדויקת יותר בהקשר |
 
@@ -2590,7 +2565,6 @@
 | **File** | `g3.two_three_sentences_structure.md` |
 | **learning_page_id** | `hebrew:g3:g3.two_three_sentences_structure` |
 | **skill_id** | `hebrew:g3:writing:g3.two_three_sentences_structure` |
-| **title_hebrew** | כותבים שני–שלושה משפטים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | פסקה קצרה; התחלה–אמצע–סיום פשוט |
 
@@ -2692,7 +2666,6 @@
 | **File** | `g3.connector_use_choice.md` |
 | **learning_page_id** | `hebrew:g3:g3.connector_use_choice` |
 | **skill_id** | `hebrew:g3:writing:g3.connector_use_choice` |
-| **title_hebrew** | מחברים משפטים בכתיבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | שימוש במילות קישור בטקסט שלי |
 
@@ -2793,7 +2766,6 @@
 | **File** | `writing_logic_completion_conclusion.md` |
 | **learning_page_id** | `hebrew:g3:writing_logic_completion_conclusion` |
 | **skill_id** | `hebrew:rich:writing:logic_completion:conclusion` |
-| **title_hebrew** | סיום הגיוני `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | משפט סיום שמתאים לרעיון; לא חיבור מלא |
 
@@ -2893,7 +2865,6 @@
 | **File** | `writing_structured_completion_polite_phrase.md` |
 | **learning_page_id** | `hebrew:g3:writing_structured_completion_polite_phrase` |
 | **skill_id** | `hebrew:rich:writing:structured_completion:polite_phrase` |
-| **title_hebrew** | ביטוי מנומס בכתיבה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | השלמת ביטוח מנומס במשפט |
 
@@ -2994,7 +2965,6 @@
 | **File** | `g3.discussion_prompt_choice.md` |
 | **learning_page_id** | `hebrew:g3:g3.discussion_prompt_choice` |
 | **skill_id** | `hebrew:g3:speaking:g3.discussion_prompt_choice` |
-| **title_hebrew** | שיח בכיתה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | תגובה לשאלת דיון; משפט אחד–שניים |
 
@@ -3095,7 +3065,6 @@
 | **File** | `speaking_social_reply_mid_help_request.md` |
 | **learning_page_id** | `hebrew:g3:speaking_social_reply_mid_help_request` |
 | **skill_id** | `hebrew:rich:speaking:social_reply_mid_help:request` |
-| **title_hebrew** | בקשת עזרה בנימוס `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 | **Overlap note** | אפשר בבקשה? עזרה; תגובה חברתית |
 

@@ -1,4 +1,4 @@
-﻿# ריצוף במישור
+# Tiling a Plane
 
 ## Metadata
 
@@ -11,67 +11,67 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | ריצוף במישור `[DRAFT — not owner-approved]` |
+| **title_english** | Tiling a Plane |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** זוויות ריצוף; ריבוע 90°
+**Content scope:** tiling angles; square 90°
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד ריצוף במישור — כיסוי המישור באריחים בלי חורים ובלי חפיפה.
-כאן — זווית האריח חשובה.
-
----
-
-## 2. הסבר
-
-סביב כל נקודה שבה נפגשים אריחים — סכום הזוויות = 360°.
-ריבוע: זווית 90° → 4 × 90° = 360°
+Today we'll learn about tiling a plane — covering the surface with tiles with no gaps and no overlaps.
+Here — the angle of each tile matters.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-4 ריבועים בפינה: 4 × 90° = 360° — ריצוף אפשרי.
-משולש שווה צלעות: 60° — 6 × 60° = 360°
+Around every point where tiles meet — the sum of the angles = 360°.
+Square: angle 90° → 4 × 90° = 360°
 
 ---
 
-## 4. בואו נפתור
+## 3. Example
 
-ריצוף בריבועים — מה זווית הבסיס של כל אריח?
-ריבוע → זווית ישרה.
+4 squares at a corner: 4 × 90° = 360° — tiling is possible.
+Equilateral triangle: 60° — 6 × 60° = 360°
+
+---
+
+## 4. Let's solve together
+
+Tiling with squares — what is the base angle of each tile?
+Square → right angle.
 90°.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריצוף משולשים שווה צלעות — מה זווית כל אריח?
-כמה אריחים נפגשים בנקודה אחת?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Tiling with equilateral triangles — what is the angle of each tile?
+How many tiles meet at one point?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-ריצוף משולשים שווה צלעות — מה זווית כל אריח?
-כמה אריחים נפגשים בנקודה?
-זווית במשולש שווה צלעות = 60°.
-סכום הזוויות סביב נקודה = 360°.
+Tiling with equilateral triangles — what is the angle of each tile?
+How many tiles meet at one point?
+Angle in an equilateral triangle = 60°.
+Sum of angles around a point = 360°.
 360° ÷ 60° = 6
-6 אריחים נפגשים בכל נקודה
+6 tiles meet at every point
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-ריצוף תלוי בזוויות האריח.
-בתרגול תמצאו ריצוף — זווית הריבוע 90°!
+Tiling depends on the angles of the tile.
+In practice you'll find tiling patterns — a square's angle is 90°!

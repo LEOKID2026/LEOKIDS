@@ -1,4 +1,4 @@
-# חיות — שמות ומשפטים
+# Animals — Names and Sentences
 
 ## Metadata
 
@@ -11,68 +11,68 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | חיות — שמות ומשפטים |
+| **title_english** | Animals — Names and Sentences |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** I see a cat — תבנית קצרה
+**Content scope:** I see a cat — short pattern
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשתמש בשמות חיות במשפט.
-כבר מכירים cat ו-dog — נוסיף משפט קצר.
+Today we will use animal names in a sentence.
+We already know cat and dog — let's add a short sentence.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 I see a cat.
-אני רואה חתול.
+I see a cat.
 I see a dog.
-אני רואה כלב.
+I see a dog.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-רואים כלב בגינה.
+Seeing a dog in the garden.
 I see a dog.
-אני רואה כלב.
+I see a dog.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-איך אומרים "אני רואה כלב"?
+How do we say "I see a dog"?
 I see a dog
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-אני רואה חתול.
+I see a cat.
 I see a cat
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-השאלה: איך אומרים "אני רואה חתול" באנגלית?
-המילה cat פירושה חתול.
-אומרים: I see a cat.
-התשובה היא: I see a cat.
+The question: how do we say "I see a cat" in English?
+The word cat means a cat.
+We say: I see a cat.
+The answer is: I see a cat.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם בונים משפטים על חיות.
-בתרגול תמצאו I see a cat ו-I see a dog.
+Now you build sentences about animals.
+In practice, you'll find I see a cat and I see a dog.

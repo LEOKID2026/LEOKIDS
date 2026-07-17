@@ -1,4 +1,4 @@
-﻿# שטח ריבוע — כיתה ד׳
+# Area of a Square — Grade 4
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שטח ריבוע — כיתה ד׳ `[DRAFT — not owner-approved]` |
+| **title_english** | Area of a Square — Grade 4 `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** נוסחה צלע × צלע; 7, 49
+**Content scope:** Formula side × side; 7, 49
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נשתמש בנוסחה לשטח ריבוע:
-שטח = צלע × צלע.
-בכאן — למשל ריבוע צלע 7 → שטח 49 סמ״ר.
+Today we will use a formula for the area of a square:
+Area = side × side.
+Here — for example a square with side 7 → area 49 cm².
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_area_grid
 :::
 
-נוסחה: שטח = צלע × צלע
-למה? בכל שורה 7 יחידות, 7 שורות → 7 × 7.
-יחידה: סמ״ר.
-שטח ≠ היקף — שטח בפנים, היקף סביב.
+Formula: Area = side × side
+Why? In each row there are 7 units, 7 rows → 7 × 7.
+Unit: cm².
+Area ≠ perimeter — area is inside, perimeter is around.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע צלע 7:
+Square with side 7:
 - 7 × 7 = 49
-שטח: 49 סמ״ר.
+Area: 49 cm².
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-לריבוע יש צלע באורך 7. מה השטח?
-נוסחה — צלע × צלע.
+A square has a side of length 7. What is the area?
+Formula — side × side.
 7 × 7 = 49
-49 סמ״ר
+49 cm²
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ריבוע עם צלע 9 — מה השטח?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A square with side 9 — what is the area?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-ריבוע עם צלע 9 — מה השטח?
-נוסחה — שטח = צלע × צלע.
-מציבים:
+A square with side 9 — what is the area?
+Formula — Area = side × side.
+Substitute:
 9 × 9 = 81
-שטח = 81 סמ״ר
+Area = 81 cm²
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים שטח = צלע × צלע!
-בתרגול תמצאו צלע — הכפילו בעצמה!
+Now you know Area = side × side!
+In practice you will find a side — multiply it by itself!

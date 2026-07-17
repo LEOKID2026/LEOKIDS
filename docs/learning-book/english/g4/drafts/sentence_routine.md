@@ -1,4 +1,4 @@
-# שגרה — every day
+# Routine — every day
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | approved |
-| **title_hebrew** | שגרה — every day |
+| **title_english** | Routine — every day |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נבנה משפטי שגרה עם every day.
-Every day I help at home — כל יום אני עוזר/ת בבית.
+Today we will build routine sentences with "every day."
+Every day I help at home.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 Every day I help at home.
-
-כל יום אני עוזר/ת בבית.
 
 Every day she walks to school.
 
-כל יום היא הולכת לבית ספר.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד/ה עוזר/ת בבית.
+A child helping at home.
 
 Every day I help at home.
 
-כל יום אני עוזר/ת בבית.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "כל יום אני עוזר/ת בבית"?
+Question: How do you say this?
 
 Every day I help at home
 
-תשובה: Every day I help at home
+Answer: Every day I help at home
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בוקר — שותים מים.
+Morning — drinking water.
 
 Every day he drinks water.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "כל יום הוא שותה מים."
+Exercise: "Every day he drinks water."
 
-Every day פירושו כל יום — זה הרגל, ולכן משתמשים ב-Present Simple.
+"Every day" means this is a habit, so we use Present Simple.
 
-he הוא יחיד זכר — מוסיפים s לפועל: drink הופך ל-drinks.
+"He" is singular — we add s to the verb: drink becomes drinks.
 
-כל יום הוא שותה מים.
-
- Every day he drinks water.
+So the full sentence is: Every day he drinks water.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים שגרה עם Every day.
-בתרגול תמצאו Every day I help at home.
+Now you will describe a routine with "Every day."
+In the practice, you'll find: Every day I help at home.

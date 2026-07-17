@@ -1,4 +1,4 @@
-# צבעים — תיאור
+# Colors — Description
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | צבעים — תיאור |
+| **title_english** | Colors — Description |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** The sky is blue — תיאור עם is
+**Content scope:** The sky is blue — description with is
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לתאר צבעים במשפט.
-The sky is blue — השמיים כחולים.
+Today we will learn to describe colors in a sentence.
+The sky is blue.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית עם is:
+Pattern with is:
 
 The sky is blue.
 
-השמיים כחולים.
+The sky is blue.
 
 The flower is red.
 
-הפרח אדום.
+The flower is red.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-שמיים בהירים.
+A clear sky.
 
 The sky is blue.
 
-השמיים כחולים.
+The sky is blue.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "השמיים כחולים"?
+Question: how do we say "the sky is blue"?
 
 The sky is blue
 
-תשובה: The sky is blue
+Answer: The sky is blue
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-דשא בפארק.
+Grass in a park.
 
 The grass is green.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: דשא בפארק.
+Exercise: grass in a park.
 
-הפתרון:
+The solution:
 
 The grass is green.
 
-הדשא ירוק.
+The grass is green.
 
-כל הכבוד! המבנה: The + שם עצם + is + צבע — ה-is הכרחי.
+Well done! The structure: The + noun + is + color — the is is necessary.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים צבעים עם is.
-בתרגול תמצאו The sky is blue ו-The flower is red.
+Now you describe colors with is.
+In practice, you'll find The sky is blue and The flower is red.

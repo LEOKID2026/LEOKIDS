@@ -1,4 +1,4 @@
-# משוואת חיסור — מספר חסר (מאות)
+# Subtraction Equation — Missing Number (Hundreds)
 
 ## Metadata
 
@@ -11,35 +11,35 @@
 | **age_band** | grades_3_4 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | משוואת חיסור — מספר חסר (מאות) `[DRAFT — not owner-approved]` |
+| **title_english** | Subtraction Equation — Missing Number (Hundreds) |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** משוואת חיסור עם **__** לפני המינוס — מספרים עד **1,000**. ללא משתנה x.
+**Content scope:** Subtraction equation with **__** before the minus — numbers up to **1,000**. No variable x.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור משוואת חיסור עם מספר חסר — למשל __ − 45 = 120.
-צריך למצוא את המספר הגדול — ממנו מחסרים.
+Today we'll solve subtraction equations with a missing number — for example __ − 45 = 120.
+We need to find the bigger number — the one we subtract from.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 __ − 45 = 120
-שואלים: ממספר כלשהו חיסרו 45 וקיבלו 120 — מה המספר?
+Ask: from some number we subtracted 45 and got 120 — what's the number?
 120 + 45 = 165
 165 − 45 = 120
-כלל: מספר חסר לפני המינוס = חיבור של התוצאה והמחוסר.
+Rule: missing number before the minus = result + the number being subtracted.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 __ − 72 = 208
 208 + 72 = 280
@@ -47,34 +47,34 @@ __ − 72 = 208
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-__ − 38 = 142 — מה המספר החסר?
+__ − 38 = 142 — what is the missing number?
 142 + 38 = 180
 180 − 38 = 142
-המספר החסר הוא 180.
+The missing number is 180.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-__ − 63 = 175 — מה המספר החסר?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+__ − 63 = 175 — what is the missing number?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-__ − 63 = 175 — מה המספר החסר?
-המספר החסר לפני המינוס — מחברים את התוצאה והמחוסר.
+__ − 63 = 175 — what is the missing number?
+Missing number before the minus — add the result and the number being subtracted.
 175 + 63 = 238
-בדיקה: 238 − 63 = 175
-המספר החסר הוא 238
+Check: 238 − 63 = 175
+The missing number is 238
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לפתור משוואת חיסור עם מספר חסר עד 1,000.
-כשה-__ לפני המינוס — חברו תוצאה + מחוסר!
+Now you know how to solve subtraction equations with a missing number up to 1,000.
+When __ is before the minus — add result + subtrahend!

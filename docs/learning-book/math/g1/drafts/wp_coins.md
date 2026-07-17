@@ -1,4 +1,4 @@
-# שאלות מילוליות — ערך מטבעות
+# Word Problems — Coin Values
 
 ## Metadata
 
@@ -11,90 +11,90 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — ערך מטבעות `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Coin Values |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שאלות מילוליות על ערך מטבעות — חיבור בלבד. סכומים עד 30. ללא עודף/הוצאה, ללא כפל, ללא חילוק, ללא קנייה מרובת פריטים.
+**Content scope:** Word problems about coin values — addition only. Sums up to 30. No change/spending, no multiplication, no division, no buying multiple items.
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. What are we learning?
 
-היום נלמד לקרוא שאלה מילולית על כסף.
-לכל מטבע יש ערך — הערך אומר כמה שקלים המטבע שווה.
-כשמחברים את הערכים, מגלים כמה כסף יש יחד.
-
----
-
-## 2. הסבר פשוט
-
-לכל מטבע יש ערך.
-הערך אומר כמה שקלים המטבע שווה.
-בשאלה על מטבעות שואלים בדרך כלל: כמה כסף יש יחד?
-לפני שמחשבים — קוראים בקול:
-1. מה יודעים? — אילו מטבעות יש ומה כל אחד שווה
-2. מה מבקשים? — את הסכום הכולל
-3. מה עושים? — מחברים את הערכים
-לדוגמה: מטבע של 5 ועוד מטבע של 5 → 5 + 5 = 10
+Today we're going to learn to read a word problem about money.
+Each coin has a value — the value tells how many shekels the coin is worth.
+When you add the values, you find out how much money there is altogether.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-2 מטבעות של 5 שקלים + 1 מטבע של 2 שקלים:
-5 + 5 + 2 = 12 → יש 12 שקלים ביחד.
-טיפ לקריאה:
+Each coin has a value.
+The value tells how many shekels the coin is worth.
+In a coin problem we usually ask: how much money is there altogether?
+Before you calculate — read out loud:
+1. What do we know? — which coins there are and what each is worth
+2. What are we asked? — the total amount
+3. What do we do? — add the values
+For example: a 5 coin and another 5 coin → 5 + 5 = 10
+
+---
+
+## 3. Visual / concrete example
+
+2 coins of 5 shekels + 1 coin of 2 shekels:
+5 + 5 + 2 = 12 → there are 12 shekels altogether.
+Reading tip:
 [5₪] [5₪] + [2₪] = ?
 5 5 2
-מה יודעים? → 2 מטבעות של 5, מטבע אחד של 2
-מה מבקשים? → כמה כסף ביחד?
-מה עושים? → חיבור: 5 + 5 + 2
+What do we know? → 2 coins of 5, one coin of 2
+What are we asked? → how much money altogether?
+What do we do? → addition: 5 + 5 + 2
 
 ---
 
-## 4. בואו נפתור יחד
+## 4. Let's solve together
 
-לנועה יש 2 מטבעות של 5 שקלים ו-3 מטבעות של 1 שקל. כמה כסף יש לה יחד?
-שלב 1 — מה יודעים?
-יש 2 מטבעות של 5 → 5 + 5
-ויש 3 מטבעות של 1 → 1 + 1 + 1
-שלב 2 — מה מבקשים?
-כמה כסף בסך הכל — צריך לחבר.
-שלב 3 — מחשבים:
+Noa has 2 coins of 5 shekels and 3 coins of 1 shekel. How much money does she have altogether?
+Step 1 — What do we know?
+There are 2 coins of 5 → 5 + 5
+And 3 coins of 1 → 1 + 1 + 1
+Step 2 — What are we asked?
+How much money in total — we need to add.
+Step 3 — Calculate:
 5 + 5 + 1 + 1 + 1 = 13
-לנועה יש 13 שקלים ביחד.
+Noa has 13 shekels altogether.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-לדני יש מטבע אחד של 10 שקלים ו-2 מטבעות של 2 שקלים.
-כמה כסף יש לו ביחד?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Danny has one coin of 10 shekels and 2 coins of 2 shekels.
+How much money does he have altogether?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-לדני יש מטבע אחד של 10 שקלים ו-2 מטבעות של 2 שקלים.
-כמה כסף יש לו ביחד?
-שלב 1 — מה יודעים?
-מטבע של 10 → 10
-שני מטבעות של 2 → 2 + 2
-שלב 2 — מה מבקשים?
-כמה כסף בסך הכל — צריך לחבר.
-שלב 3 — מחשבים:
+Danny has one coin of 10 shekels and 2 coins of 2 shekels.
+How much money does he have altogether?
+Step 1 — What do we know?
+One coin of 10 → 10
+Two coins of 2 → 2 + 2
+Step 2 — What are we asked?
+How much money in total — we need to add.
+Step 3 — Calculate:
 10 + 2 + 2 = 14
-לדני יש 14 שקלים ביחד.
+Danny has 14 shekels altogether.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לקרוא שאלה על ערך מטבעות.
-קראו מה יודעים, מה מבקשים, וחברו את הערכים!
+Now you know how to read a problem about coin values.
+Read what you know, what you're asked, and add the values!

@@ -1,4 +1,4 @@
-﻿# רבע מהשלם
+# A Quarter of the Whole
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_1_2 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | רבע מהשלם `[DRAFT — not owner-approved]` |
+| **title_english** | A Quarter of the Whole |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** רבע כחלק ויזואלי. רבע = חלק אחד מתוך ארבעה חלקים שווים. ללא שליש/שמינית, ללא חישוב שברים.
+**Content scope:** A quarter as a visual part. A quarter = one part out of four equal parts. No thirds/eighths, no fraction calculation.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מה זה רבע — רבע מהשלם.
-רבע = חלק אחד מתוך ארבעה חלקים שווים.
-
----
-
-## 2. הסבר
-
-כשמחלקים משהו לארבעה חלקים שווים, כל חלק הוא רבע.
-רבע = חלק אחד מתוך ארבעה חלקים שווים.
-דוגמאות:
-- שוקולד שנשבר ל4 חתיכות שוות — כל חתיכה = רבע
-- נייר מקופל ל4 — כל חלק = רבע
-חשוב: 4 חלקים — וכולם שווים!
-(כאן לומדים חצי ורבע — לא שליש או שמינית.)
+Today we're going to learn what a quarter is — a quarter of the whole.
+A quarter = one part out of four equal parts.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-12 עוגיות — ארבע קבוצות שוות:
-רבע מ 12 = 3
-דוגמה עם פיצה:
-פיצה ל4 חתיכות שוות — כל חתיכה = רבע מהפיצה.
+When you split something into four equal parts, each part is a quarter.
+A quarter = one part out of four equal parts.
+Examples:
+- Chocolate broken into 4 equal pieces — each piece = a quarter
+- Paper folded into 4 — each part = a quarter
+Important: 4 parts — and all equal!
+(Here we learn half and quarter — not third or eighth.)
+
+---
+
+## 3. Visual / concrete example
+
+12 cookies — four equal groups:
+A quarter of 12 = 3
+Example with pizza:
+Pizza cut into 4 equal slices — each slice = a quarter of the pizza.
 ●●● | ●●● | ●●● | ●●●
 3 3 3 3
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה זה רבע מ 12?
-12 עוגיות — מחלקים לארבע קבוצות שוות.
-3 + 3 + 3 + 3 = 12 — בכל קבוצה 3.
-רבע מ 12 = 3
-
----
-
-## 5. נסו בעצמכם
-
-מה זה רבע מ 20?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What is a quarter of 12?
+12 cookies — split into four equal groups.
+3 + 3 + 3 + 3 = 12 — 3 in each group.
+A quarter of 12 = 3
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-מה זה רבע מ 20?
-20 עוגיות — מחלקים ל ארבע קבוצות שוות.
-5 + 5 + 5 + 5 = 20 — בכל קבוצה 5.
-רבע מ-20 = 5
-רבע מ 20 = 5
+What is a quarter of 20?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים שרבע = חלק אחד מתוך ארבעה חלקים שווים.
-בתרגול תמצאו רבע מ…?
-חלקו לארבעה חלקים שווים!
+What is a quarter of 20?
+20 cookies — split into four equal groups.
+5 + 5 + 5 + 5 = 20 — 5 in each group.
+A quarter of 20 = 5
+A quarter of 20 = 5
+
+---
+
+## 7. Let's practice!
+
+Now you know that a quarter = one part out of four equal parts.
+In practice you'll find: a quarter of…?
+Split into four equal parts!

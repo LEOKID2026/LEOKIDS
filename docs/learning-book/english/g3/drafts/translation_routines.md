@@ -1,4 +1,4 @@
-# שגרה — תרגום מורחב
+# Routine — Extended Translation
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_3_4 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | שגרה — תרגום מורחב |
+| **title_english** | Routine — Extended Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** תרגום משפטי שגרה 4–5 מילים
+**Content scope:** Translating routine sentences of 4–5 words
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום משפטי שגרה.
-4–5 מילים — מבוקר עד לילה.
+Today we practice translating routine sentences.
+4–5 words — from morning until night.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-דוגמה:
+Example:
 
 I go to bed.
 
-אני הולך/ת לישון.
+I go to bed.
 
-בעברית — באנגלית, ובהפך.
+Both directions — into English, and back again.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד הולך לישון.
+A child going to bed.
 
 I go to bed.
 
-אני הולך/ת לישון.
+I go to bed.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אני הולך/ת לישון"?
+Question: how do we say "I go to bed"?
 
 I go to bed
 
-תשובה: I go to bed
+Answer: I go to bed
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שעון מעורר מצלצל בבוקר.
+An alarm clock rings in the morning.
 
 I wake up early.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: שעון מעורר מצלצל בבוקר.
+Exercise: an alarm clock rings in the morning.
 
-הפתרון:
+The solution:
 
 I wake up early.
 
-אני קם/ת מוקדם.
+I wake up early.
 
-כל הכבוד! wake up = לקום — זוג פעלים יחד. early = מוקדם.
+Well done! wake up is a phrasal verb — two words together. early means early.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום שגרה.
-בתרגול תמצאו I go to bed ו-I wake up early.
+Now you practice translating routine sentences.
+In practice, you'll find I go to bed and I wake up early.

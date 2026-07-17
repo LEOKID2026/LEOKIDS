@@ -44,7 +44,9 @@ const socialBtnBase =
 
 const contactSeo = getPublicPageSeo("contact");
 
-const CONTACT_FORM_VISIBLE = false;
+const CONTACT_FORM_VISIBLE =
+  process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED !== "false" &&
+  process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED !== "0";
 
 const faqs = [
   {

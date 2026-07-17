@@ -42,7 +42,6 @@
 | **File** | `vocab_animals.md` |
 | **learning_page_id** | `english:g4:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
-| **title_hebrew** | חיות — פעולה עכשיו `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -146,7 +145,6 @@ are flying = עכשיו.
 | **File** | `vocab_body.md` |
 | **learning_page_id** | `english:g4:vocab_body` |
 | **skill_id** | `english:vocabulary:wordlist:body` |
-| **title_hebrew** | גוף — פעולות יומיומיות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -250,7 +248,6 @@ washes = שוטף (he/she/it).
 | **File** | `vocab_emotions.md` |
 | **learning_page_id** | `english:g4:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
-| **title_hebrew** | רגשות — They feel… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -354,7 +351,6 @@ They = הם/הן.
 | **File** | `vocab_family.md` |
 | **learning_page_id** | `english:g4:vocab_family` |
 | **skill_id** | `english:vocabulary:wordlist:family` |
-| **title_hebrew** | משפחה — parents, work `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -458,7 +454,6 @@ parents = הורים (רבים).
 | **File** | `vocab_food.md` |
 | **learning_page_id** | `english:g4:vocab_food` |
 | **skill_id** | `english:vocabulary:wordlist:food` |
-| **title_hebrew** | מזון — healthy food `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -562,7 +557,6 @@ We = אנחנו.
 | **File** | `vocab_school.md` |
 | **learning_page_id** | `english:g4:vocab_school` |
 | **skill_id** | `english:vocabulary:wordlist:school` |
-| **title_hebrew** | בית ספר — students, read `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -666,7 +660,6 @@ students = תלמידים (רבים).
 | **File** | `vocab_sports.md` |
 | **learning_page_id** | `english:g4:vocab_sports` |
 | **skill_id** | `english:vocabulary:wordlist:sports` |
-| **title_hebrew** | ספורט — עכשיו במגרש `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -770,7 +763,6 @@ is swimming = עכשיו.
 | **File** | `vocab_weather.md` |
 | **learning_page_id** | `english:g4:vocab_weather` |
 | **skill_id** | `english:vocabulary:wordlist:weather` |
-| **title_hebrew** | מזג אוויר — היום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -874,7 +866,6 @@ is raining = עכשיו/היום.
 | **File** | `vocab_community.md` |
 | **learning_page_id** | `english:g4:vocab_community` |
 | **skill_id** | `english:vocabulary:wordlist:community` |
-| **title_hebrew** | קהילה — park, town, library `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -978,7 +969,6 @@ in = בתוך/ב-.
 | **File** | `vocab_environment.md` |
 | **learning_page_id** | `english:g4:vocab_environment` |
 | **skill_id** | `english:vocabulary:wordlist:environment` |
-| **title_hebrew** | סביבה — trees, protect `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1081,7 +1071,6 @@ We = אנחנו.
 | **File** | `vocab_travel.md` |
 | **learning_page_id** | `english:g4:vocab_travel` |
 | **skill_id** | `english:vocabulary:wordlist:travel` |
-| **title_hebrew** | נסיעות — bus, travel `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1184,7 +1173,6 @@ by bus = באמצעות אוטובוס.
 | **File** | `grammar_present_simple.md` |
 | **learning_page_id** | `english:g4:grammar_present_simple` |
 | **skill_id** | `english:pool:grammar:present_simple` |
-| **title_hebrew** | Present Simple — חיזוק `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1288,7 +1276,6 @@ walks = הולך (he/she/it).
 | **File** | `grammar_simple_continuous.md` |
 | **learning_page_id** | `english:g4:grammar_simple_continuous` |
 | **skill_id** | `english:pool:grammar:progressive` |
-| **title_hebrew** | Present Simple לעומת Continuous `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1392,7 +1379,6 @@ is reading = עכשיו.
 | **File** | `grammar_quantifiers.md` |
 | **learning_page_id** | `english:g4:grammar_quantifiers` |
 | **skill_id** | `english:pool:grammar:quantifiers` |
-| **title_hebrew** | some/any, much/many, my, slowly `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1498,7 +1484,6 @@ some = כמה (בחיוב).
 | **File** | `sentence_descriptive.md` |
 | **learning_page_id** | `english:g4:sentence_descriptive` |
 | **skill_id** | `english:pool:sentence:descriptive` |
-| **title_hebrew** | תיאור — תאר + תואר פועל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1600,7 +1585,6 @@ quickly = בצורה מהירה.
 | **File** | `sentence_routine.md` |
 | **learning_page_id** | `english:g4:sentence_routine` |
 | **skill_id** | `english:pool:sentence:routine` |
-| **title_hebrew** | שגרה — every day `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1704,7 +1688,6 @@ help = עוזר/ת (I/you/we/they).
 | **File** | `sentence_narrative.md` |
 | **learning_page_id** | `english:g4:sentence_narrative` |
 | **skill_id** | `english:pool:sentence:narrative` |
-| **title_hebrew** | סיפור קצר — First… Then… `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1809,7 +1792,6 @@ our bags = התיקים שלנו.
 | **File** | `translation_hobbies.md` |
 | **learning_page_id** | `english:g4:translation_hobbies` |
 | **skill_id** | `english:pool:translation:hobbies` |
-| **title_hebrew** | תחביבים — תרגום עם Continuous `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1913,7 +1895,6 @@ is playing = עכשיו.
 | **File** | `translation_community.md` |
 | **learning_page_id** | `english:g4:translation_community` |
 | **skill_id** | `english:pool:translation:community` |
-| **title_hebrew** | קהילה — תרגום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

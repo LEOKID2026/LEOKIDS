@@ -1,4 +1,4 @@
-# שכנים של מספר — גבולות מאות
+# Number Neighbors — Up to 1,000
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | visual_intuition |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שכנים של מספר — עד 1,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Number Neighbors — Up to 1,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מספר **שלפני** ו**אחרי** על ציר המספרים. עד 1,000. ללא קפיצות גדולות.
+**Content scope:** The number **before** and **after** on the number line. Up to 1,000. No big jumps.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נמצא שכנים של מספר — ±1 — גם כשעוברים גבול מאה.
-לדוגמה: 399 → 400 → 401 — כל צעד הוא 1 בלבד.
+Today we will find number neighbors — ±1 — even when we cross a hundred boundary.
+For example: 399 → 400 → 401 — each step is only 1.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-שכן שלפני = −1 (צעד אחורה).
-שכן אחרי = +1 (צעד קדימה).
+Neighbor before = −1 (one step back).
+Neighbor after = +1 (one step forward).
 350:
-- שלפני: 349
-- אחרי: 351
-מעבר מאה:
-- 499 → אחרי = 500
-- 500 → שלפני = 499
-999 → אחרי = 1,000 (עוברים מאה חדשה!)
+- before: 349
+- after: 351
+Crossing a hundred:
+- 499 → after = 500
+- 500 → before = 499
+999 → after = 1,000 (we cross into a new hundred!)
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
-628 על ציר המספרים:
+628 on the number line:
 628 − 1 = 627
 628 + 1 = 629
-399 → 400: שכן אחרי ל-399 = 400 — גבול מאה, אבל עדיין +1.
+399 → 400: the neighbor after 399 = 400 — a hundred boundary, but still +1.
 626 — 627 — [628] — 629 — 630
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה השכן שלפני 415? מה השכן אחרי 415?
-שלפני = 415 − 1 = 414
-אחרי = 415 + 1 = 416
-414 ו-416
-
----
-
-## 5. נסו בעצמכם
-
-מה השכן שלפני ואחרי המספר 499?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+What is the neighbor before 415? What is the neighbor after 415?
+Before = 415 − 1 = 414
+After = 415 + 1 = 416
+414 and 416
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-מה השכנים של 499?
-שלפני: 499 − 1 = 498
-אחרי: 499 + 1 = 500 — מעבר מאה!
-אבל עדיין +1 בלבד.
-שלפני 499 = 498, אחרי 499 = 500
+What are the neighbors before and after the number 499?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים שכנים עד 1,000, כולל גבולות מאה.
-בתרגול תמצאו מה לפני?
-ומה אחרי? ±1 בכל פעם!
+What are the neighbors of 499?
+Before: 499 − 1 = 498
+After: 499 + 1 = 500 — crossing a hundred!
+But still only +1.
+Before 499 = 498, after 499 = 500
+
+---
+
+## 7. Let's practice!
+
+Now you know number neighbors up to 1,000, including hundred boundaries.
+In practice you'll find what comes before?
+And what comes after? ±1 every time!

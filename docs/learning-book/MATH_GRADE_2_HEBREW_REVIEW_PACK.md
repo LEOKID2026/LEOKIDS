@@ -41,7 +41,6 @@
 | **File** | `ns_place_tens_units.md` |
 | **learning_page_id** | `math:g2:ns_place_tens_units` |
 | **skill_id** | `math:kind:ns_place_tens_units` |
-| **title_hebrew** | מאות, עשרות ואחדות — עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -165,7 +164,6 @@
 | **File** | `ns_neighbors.md` |
 | **learning_page_id** | `math:g2:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
-| **title_hebrew** | שכנים של מספר — מספרים גדולים יותר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -282,7 +280,6 @@
 | **File** | `ns_complement10.md` |
 | **learning_page_id** | `math:g2:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
-| **title_hebrew** | זוגות שמרכיבים 10 — עזר לחיבור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -397,7 +394,6 @@
 | **File** | `ns_even_odd.md` |
 | **learning_page_id** | `math:g2:ns_even_odd` |
 | **skill_id** | `math:kind:ns_even_odd` |
-| **title_hebrew** | זוגי ואי-זוגי — חזרה ותרגול `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -514,7 +510,6 @@
 | **File** | `cmp.md` |
 | **learning_page_id** | `math:g2:cmp` |
 | **skill_id** | `math:kind:cmp` |
-| **title_hebrew** | השוואת מספרים עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -636,7 +631,6 @@
 | **File** | `add_two.md` |
 | **learning_page_id** | `math:g2:add_two` |
 | **skill_id** | `math:kind:add_two` |
-| **title_hebrew** | חיבור של שני מספרים — עד 100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -755,7 +749,6 @@
 | **File** | `sub_two.md` |
 | **learning_page_id** | `math:g2:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
-| **title_hebrew** | חיסור של שני מספרים — עד 100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -874,7 +867,6 @@
 | **File** | `add_vertical.md` |
 | **learning_page_id** | `math:g2:add_vertical` |
 | **skill_id** | `math:kind:add_vertical` |
-| **title_hebrew** | חיבור במאונך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -989,7 +981,6 @@
 | **File** | `sub_vertical.md` |
 | **learning_page_id** | `math:g2:sub_vertical` |
 | **skill_id** | `math:kind:sub_vertical` |
-| **title_hebrew** | חיסור במאונך `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1106,7 +1097,6 @@
 | **File** | `mul.md` |
 | **learning_page_id** | `math:g2:mul` |
 | **skill_id** | `math:kind:mul` |
-| **title_hebrew** | לוח הכפל — קבוצות שוות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1220,7 +1210,6 @@
 | **File** | `div.md` |
 | **learning_page_id** | `math:g2:div` |
 | **skill_id** | `math:kind:div` |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1332,7 +1321,6 @@
 | **File** | `divisibility.md` |
 | **learning_page_id** | `math:g2:divisibility` |
 | **skill_id** | `math:kind:divisibility` |
-| **title_hebrew** | מתי מספר מתחלק ב־2, ב־5 וב־10? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1445,7 +1433,6 @@
 | **File** | `frac_half.md` |
 | **learning_page_id** | `math:g2:frac_half` |
 | **skill_id** | `math:kind:frac_half` |
-| **title_hebrew** | חצי מהשלם `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1557,7 +1544,6 @@
 | **File** | `frac_half_reverse.md` |
 | **learning_page_id** | `math:g2:frac_half_reverse` |
 | **skill_id** | `math:kind:frac_half_reverse` |
-| **title_hebrew** | מציאת השלם כשיש חצי `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1669,7 +1655,6 @@
 | **File** | `frac_quarter.md` |
 | **learning_page_id** | `math:g2:frac_quarter` |
 | **skill_id** | `math:kind:frac_quarter` |
-| **title_hebrew** | רבע מהשלם `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1783,7 +1768,6 @@
 | **File** | `frac_quarter_reverse.md` |
 | **learning_page_id** | `math:g2:frac_quarter_reverse` |
 | **skill_id** | `math:kind:frac_quarter_reverse` |
-| **title_hebrew** | מציאת השלם כשיש רבע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1895,7 +1879,6 @@
 | **File** | `wp_coins.md` |
 | **learning_page_id** | `math:g2:wp_coins` |
 | **skill_id** | `math:kind:wp_coins` |
-| **title_hebrew** | שאלות מילוליות — מטבעות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2008,7 +1991,6 @@
 | **File** | `wp_coins_spent.md` |
 | **learning_page_id** | `math:g2:wp_coins_spent` |
 | **skill_id** | `math:kind:wp_coins_spent` |
-| **title_hebrew** | שאלות מילוליות — קניות ועודף `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2125,7 +2107,6 @@
 | **File** | `wp_time_date.md` |
 | **learning_page_id** | `math:g2:wp_time_date` |
 | **skill_id** | `math:kind:wp_time_date` |
-| **title_hebrew** | שאלות מילוליות — ימי השבוע `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2243,7 +2224,6 @@
 | **File** | `wp_time_days.md` |
 | **learning_page_id** | `math:g2:wp_time_days` |
 | **skill_id** | `math:kind:wp_time_days` |
-| **title_hebrew** | שאלות מילוליות — כמה ימים בין יום ליום `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2359,7 +2339,6 @@
 | **File** | `wp_groups_g2.md` |
 | **learning_page_id** | `math:g2:wp_groups_g2` |
 | **skill_id** | `math:kind:wp_groups_g2` |
-| **title_hebrew** | שאלות מילוליות — קבוצות שוות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2477,7 +2456,6 @@
 | **File** | `wp_division_simple.md` |
 | **learning_page_id** | `math:g2:wp_division_simple` |
 | **skill_id** | `math:kind:wp_division_simple` |
-| **title_hebrew** | שאלות מילוליות — חלוקה שווה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

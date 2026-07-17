@@ -1,4 +1,4 @@
-# גורמים של מספר
+# Factors of a Number
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גורמים של מספר `[DRAFT — not owner-approved]` |
+| **title_english** | Factors of a Number |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מציאת כל הגורמים
+**Content scope:** finding all factors
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק גורמים — מספרים שמכפילים לתוצאה נתונה.
+Today we will strengthen factors — numbers that multiply to give a given result.
 36 = 1×36 = 2×18 = 3×12 = 4×9 = 6×6
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-גורמים של 36: 1, 2, 3, 4, 6, 9, 12, 18, 36
-בודקים מ-1 עד √36 = 6.
+Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36
+Check from 1 up to √36 = 6.
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 24: 1, 2, 3, 4, 6, 8, 12, 24
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-רשמו את כל הגורמים של 36.
+List all the factors of 36.
 1×36, 2×18, 3×12, 4×9, 6×6.
 1, 2, 3, 4, 6, 9, 12, 18, 36.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-רשמו את כל הגורמים של 48.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+List all the factors of 48.
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-רשמו את כל הגורמים של 48
-מחפשים זוגות כפל עד √48 ≈ 6.9:
+List all the factors of 48
+Look for multiplication pairs up to √48 ≈ 6.9:
 1 × 48, 2 × 24, 3 × 16, 4 × 12, 6 × 8.
-כותבים לפי סדר: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.
-התשובה: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
+Write in order: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.
+The answer: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-גורמים עוזרים בצמצום שברים ובמ.א.ח.
-בתרגול תמצאו גורמים — רשמו בזוגות!
+Factors help with simplifying fractions and finding the GCF.
+In practice you will find factors — write them in pairs!

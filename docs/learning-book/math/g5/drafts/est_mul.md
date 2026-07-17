@@ -1,4 +1,4 @@
-# אומדן כפל
+# Estimating Multiplication
 
 ## Metadata
 
@@ -11,25 +11,25 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | אומדן כפל `[DRAFT — not owner-approved]` |
+| **title_english** | Estimating Multiplication |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** עיגול גורמים
+**Content scope:** Rounding factors
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להעריך תוצאת כפל — עיגול הגורמים ואז כפל.
-אומדן עוזר לבדוק אם תשובה הגיונית.
+Today we'll learn to estimate a multiplication answer — round the factors, then multiply.
+Estimation helps you check if an answer makes sense.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 48 × 52 ≈ ?
 48 ≈ 50
@@ -39,7 +39,7 @@
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 23 × 41 ≈ ?
 23 ≈ 20; 41 ≈ 40
@@ -47,7 +47,7 @@
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 48 × 52 ≈ ?
 48 ≈ 50; 52 ≈ 50
@@ -56,25 +56,25 @@
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
 37 × 63 ≈ ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
 37 × 63 ≈ ?
-עיגול: 37 ≈ 40; 63 ≈ 60
+Round: 37 ≈ 40; 63 ≈ 60
 40 × 60 = 2,400
 37 × 63 ≈ 2,400
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להעריך תוצאת כפל.
-בתרגול תמצאו אומדן כפל.
-עגלו את שני הגורמים!
+Now you know how to estimate a multiplication answer.
+In practice you'll find multiplication estimation.
+Round both factors!

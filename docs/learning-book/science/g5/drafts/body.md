@@ -1,4 +1,4 @@
-# גוף האדם — שלד, שרירים וחושים
+# The Human Body — Skeleton, Muscles, and Senses
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | draft |
-| **title_hebrew** | גוף האדם — שלד, שרירים וחושים `[DRAFT — not owner-approved]` |
+| **title_english** | The Human Body — Skeleton, Muscles, and Senses `[DRAFT — not owner-approved]` |
 
-**Content scope:** שלד/שרירים; מערכת עצבים כרשת מסרים — דורש איור: שלד ושרירים
-
----
-
-## 1. מה לומדים?
-
-היום נלמד במדעים איך שלד, שרירים וחושים עובדים יחד — ואיך המוח מקבל מסרים מהגוף.
+**Content scope:** Skeleton/muscles; nervous system as a message network — requires illustration: skeleton and muscles
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-כבר למדנו ששלד ושרירים עוזרים לתנועה.
-היום נוסיף את רשת העצבים — איך החושים, המוח והשרירים עובדים יחד.
-מערכת העצבים — כמו רשת מסרים:
-- חושים כמו עיניים ואוזניים שולחים מידע למוח
-- המוח מחליט מה לעשות
-- העצבים מעבירים פקודה לשרירים
-כשאתם תופסים כדור — עיניים רואות, מוח מחשב, שרירים זזים.
-הכל מתואם.
+Today in science we will learn how skeleton, muscles, and senses work together — and how the brain receives messages from the body.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-רץ למרחק קצר:
-- רגליים — שרירים מתכווצים ונעים בזכות העצמות
-- לב — דופק עולה (קשר למערכות אחרות)
-- מוח — שומר על שיווי משקל
-שלד, שרירים ועצבים עובדים יחד ומאפשרים תנועה מדויקת.
-
----
-
-## 4. בואו נפתור
-
-מה תפקיד השרירים בזריקת כדור?
-היד צריכה לזוז במהירות.
-שרירים בזרוע מתכווצים ומושכים את העצמות, וכך נוצרת תנועה.
-לייצר את התנועה
+We already learned that skeleton and muscles help with movement.
+Today we add the nerve network — how senses, brain, and muscles work together.
+The nervous system — like a message network:
+- Senses like eyes and ears send information to the brain
+- The brain decides what to do
+- Nerves carry the command to muscles
+When you catch a ball — eyes see, brain calculates, muscles move.
+Everything is coordinated.
 
 ---
 
-## 5. נסו בעצמכם
+## 3. Example
 
-כופפו ברך — שרירים בירך עובדים; עצם ירך נשארת יציבה.
-איזה חלק נותן את הצורה?
-איזה חלק מזיז?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-השאלה: כשכופפים ברך — איזה חלק נותן את הצורה? ואיזה חלק מזיז?
-הסבר מדעי:
-השלד הוא המבנה הקשיח של הגוף — העצמות נותנות לגוף צורה ותמיכה ומאפשרות עמידה.
-השרירים עוטפים את העצמות ומחוברים אליהן בגידים.
-כשהשריר מתכווץ — הוא מושך את העצם וגורם לתנועה.
-בכיפוף ברך:
-עצם הירך — נשארת יציבה ונותנת צורה.
-שריר הירך — מתכווץ ומזיז את עצם הרגל התחתונה.
-שלד (עצם) — נותן צורה ויציבות. שריר — מזיז את העצם.
+Running a short distance:
+- Legs — muscles contract and move thanks to the bones
+- Heart — pulse rises (connection to other systems)
+- Brain — keeps balance
+Skeleton, muscles, and nerves work together and allow precise movement.
 
 ---
 
-## 7. בואו נתרגל!
+## 4. Let's solve together
 
-עכשיו אתם מכירים שלד, שרירים ורשת עצבים במדעים.
-בתרגול חפשו שאלות על תיאום בין מערכות בגוף.
+What is the role of muscles in throwing a ball?
+The hand needs to move quickly.
+Muscles in the arm contract and pull the bones, creating movement.
+To create the movement
+
+---
+
+## 5. Try it yourself
+
+Bend your knee — muscles in the thigh work; the thigh bone stays stable.
+Which part gives the shape?
+Which part moves?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+The question: when you bend your knee — which part gives the shape? And which part moves?
+Scientific explanation:
+The skeleton is the rigid structure of the body — bones give the body shape and support and allow standing.
+Muscles wrap around bones and are connected to them by tendons.
+When a muscle contracts — it pulls the bone and causes movement.
+When bending the knee:
+The thigh bone — stays stable and gives shape.
+The thigh muscle — contracts and moves the lower leg bone.
+Skeleton (bone) — gives shape and stability. Muscle — moves the bone.
+
+---
+
+## 7. Let's practice!
+
+Now you know about skeleton, muscles, and the nerve network in science.
+When you practice, look for questions about coordination between body systems.

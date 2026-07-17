@@ -1,4 +1,4 @@
-﻿# שאלות מילוליות — חלוקה שווה
+# Word Problems — Fair Sharing
 
 ## Metadata
 
@@ -11,85 +11,85 @@
 | **age_band** | grades_1_2 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלות מילוליות — חלוקה שווה `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Fair Sharing |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חילוק בשאלות מילוליות — חלוקה שווה. שלב אחד. ללא שארית, ללא חילוק ארוך. סיפור בלבד.
+**Content scope:** Division in word problems — fair sharing. One step. No remainder, no long division. Story only.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד שאלות מילוליות על חלוקה שווה.
-כשמחלקים כמות בצורה הוגנת, כל אחד מקבל חלק שווה.
-(כבר למדנו חילוק — חלוקה שווה — כאן נשתמש בזה בסיפור.)
-
----
-
-## 2. הסבר
-
-חלוקה שווה = לחלק את כל הכמות לחלקים שווים.
-18 ÷ 3 = 6 אומר:
-- יש 18 חפצים
-- מחלקים ל-3 ילדים בצורה שווה
-- כל ילד מקבל 6
-לפני שעונים:
-1. מה יודעים? — כמה ביחד, ולכמה מחלקים
-2. מה מבקשים? — כמה מקבל כל אחד
-3. מה עושים? — מחלקים (חילוק)
-חשוב: בלי שארית. שלב אחד — חלוקה אחת.
+Today we're going to learn word problems about fair sharing.
+When you divide an amount fairly, each person gets an equal share.
+(We already learned division — fair sharing — here we use it in a story.)
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-18 עוגיות — 3 ילדים:
-18 ÷ 3 = 6 → כל ילד מקבל 6 עוגיות.
-[18 עוגיות] → [6] [6] [6]
-ילד ילד ילד
+Fair sharing = split the whole amount into equal parts.
+18 ÷ 3 = 6 means:
+- There are 18 objects
+- Split equally among 3 children
+- Each child gets 6
+Before you answer:
+1. What do we know? — how many altogether, and how many groups
+2. What are we asked? — how many each person gets
+3. What do we do? — divide
+Important: no remainder. One step — one sharing.
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-יש 18 עוגיות ומחלקים אותן באופן שווה בין 3 ילדים. כמה עוגיות יקבל כל ילד?
-שלב 1 — מה יודעים?
-18 עוגיות, 3 ילדים.
-שלב 2 — מה מבקשים?
-כמה עוגיות יקבל כל ילד.
-שלב 3 — מה עושים?
+18 cookies — 3 children:
+18 ÷ 3 = 6 → each child gets 6 cookies.
+[18 cookies] → [6] [6] [6]
+child child child
+
+---
+
+## 4. Let's solve together
+
+There are 18 cookies shared equally among 3 children. How many cookies does each child get?
+Step 1 — What do we know?
+18 cookies, 3 children.
+Step 2 — What are we asked?
+How many cookies each child gets.
+Step 3 — What do we do?
 18 ÷ 3 = 6
-כל ילד יקבל 6 עוגיות.
+Each child gets 6 cookies.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-יש 20 מדבקות ומחלקים אותן באופן שווה בין 5 ילדים.
-כמה מדבקות יקבל כל ילד?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-יש 20 מדבקות ומחלקים אותן באופן שווה בין 5 ילדים.
-כמה מדבקות יקבל כל ילד?
-שלב 1 — מה יודעים? 20 מדבקות, 5 ילדים.
-שלב 2 — מה מבקשים? כמה מדבקות לכל ילד.
-שלב 3 — מה עושים? 20 ÷ 5 = 4
-כל ילד יקבל 4 מדבקות
+There are 20 stickers shared equally among 5 children.
+How many stickers does each child get?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 7. בואו נתרגל!
+## 6. Common mistake — watch out!
 
-עכשיו אתם יודעים לפתור שאלות על חלוקה שווה — כמו בחילוק, רק בסיפור.
-מה יודעים?
-מה מבקשים?
-חילוק!
+There are 20 stickers shared equally among 5 children.
+How many stickers does each child get?
+Step 1 — What do we know? 20 stickers, 5 children.
+Step 2 — What are we asked? How many stickers per child.
+Step 3 — What do we do? 20 ÷ 5 = 4
+Each child gets 4 stickers
+
+---
+
+## 7. Let's practice!
+
+Now you know how to solve fair-sharing word problems — like division, but in a story.
+What do we know?
+What are we asked?
+Divide!

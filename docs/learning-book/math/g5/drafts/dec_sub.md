@@ -1,4 +1,4 @@
-# חיסור עשרוניים
+# Subtracting Decimals
 
 ## Metadata
 
@@ -11,73 +11,73 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | חיסור עשרוניים `[DRAFT — not owner-approved]` |
+| **title_english** | Subtracting Decimals |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** שתי ספרות אחרי הנקודה
+**Content scope:** Two digits after the decimal point
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לחסר מספרים עשרוניים עם שתי ספרות אחרי הנקודה.
-מיישרים נקודות ועובדים עמודה אחר עמודה.
+Today we'll learn to subtract decimal numbers with two digits after the decimal point.
+Line up the decimal points and work column by column.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 8.70 − 2.35:
 8.70
 − 2.35
 ———
-מאיות: 0−5 — שואלים → 10−5=5
-עשיריות: 6−3=3
-שלם: 8−2=6
+Hundredths: 0−5 — borrow → 10−5=5
+Tenths: 6−3=3
+Whole: 8−2=6
 8.70 − 2.35 = 6.35
 
 ---
 
-## 3. דוגמה
+## 3. Visual / concrete example
 
 15.20 − 4.85 = 10.35
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-חשבו 8.70 − 2.35 = ?
-מאיות 0−5 — שואלים → 5
-עשיריות 6−3=3
-שלם 8−2=6
+Work out 8.70 − 2.35 = ?
+Hundredths 0−5 — borrow → 5
+Tenths 6−3=3
+Whole 8−2=6
 6.35
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 14.60 − 5.38 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Work out: 14.60 − 5.38 = ?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 14.60 − 5.38 = ?
-מאיות: 0 − 8 — שואלים → 10 − 8 = 2
-עשיריות: 5 (אחרי השאלה) − 3 = 2
-שלם: 14 − 5 = 9
+Work out: 14.60 − 5.38 = ?
+Hundredths: 0 − 8 — borrow → 10 − 8 = 2
+Tenths: 5 (after borrowing) − 3 = 2
+Whole: 14 − 5 = 9
 14.60 − 5.38 = 9.22
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לחסר מספרים עשרוניים.
-בתרגול תמצאו חיסור עשרוניים.
-יישרו נקודות!
+Now you know how to subtract decimal numbers.
+In practice you'll find decimal subtraction.
+Line up the decimal points!

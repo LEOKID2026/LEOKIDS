@@ -41,7 +41,6 @@
 | **File** | `ns_place_hundreds.md` |
 | **learning_page_id** | `math:g3:ns_place_hundreds` |
 | **skill_id** | `math:kind:ns_place_hundreds` |
-| **title_hebrew** | מאות, עשרות ואחדות — עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -151,7 +150,6 @@
 | **File** | `ns_neighbors.md` |
 | **learning_page_id** | `math:g3:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
-| **title_hebrew** | שכנים של מספר — עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -259,7 +257,6 @@
 | **File** | `ns_complement10.md` |
 | **learning_page_id** | `math:g3:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
-| **title_hebrew** | זוגות שמרכיבים 10 — חזרה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -368,7 +365,6 @@
 | **File** | `ns_complement100.md` |
 | **learning_page_id** | `math:g3:ns_complement100` |
 | **skill_id** | `math:kind:ns_complement100` |
-| **title_hebrew** | זוגות שמרכיבים 100 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -477,7 +473,6 @@
 | **File** | `ns_even_odd.md` |
 | **learning_page_id** | `math:g3:ns_even_odd` |
 | **skill_id** | `math:kind:ns_even_odd` |
-| **title_hebrew** | זוגי ואי-זוגי — מספרים גדולים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -584,7 +579,6 @@
 | **File** | `cmp.md` |
 | **learning_page_id** | `math:g3:cmp` |
 | **skill_id** | `math:kind:cmp` |
-| **title_hebrew** | השוואת מספרים עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -693,7 +687,6 @@
 | **File** | `sequence.md` |
 | **learning_page_id** | `math:g3:sequence` |
 | **skill_id** | `math:kind:sequence` |
-| **title_hebrew** | סדרות מספרים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -803,7 +796,6 @@
 | **File** | `add_two.md` |
 | **learning_page_id** | `math:g3:add_two` |
 | **skill_id** | `math:kind:add_two` |
-| **title_hebrew** | חיבור שני מספרים — עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -917,7 +909,6 @@
 | **File** | `sub_two.md` |
 | **learning_page_id** | `math:g3:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
-| **title_hebrew** | חיסור שני מספרים — עד 1,000 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1028,7 +1019,6 @@
 | **File** | `add_three.md` |
 | **learning_page_id** | `math:g3:add_three` |
 | **skill_id** | `math:kind:add_three` |
-| **title_hebrew** | חיבור שלושה מספרים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1134,7 +1124,6 @@
 | **File** | `mul.md` |
 | **learning_page_id** | `math:g3:mul` |
 | **skill_id** | `math:kind:mul` |
-| **title_hebrew** | כפל — לוח הכפל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1236,7 +1225,6 @@
 | **File** | `mul_tens.md` |
 | **learning_page_id** | `math:g3:mul_tens` |
 | **skill_id** | `math:kind:mul_tens` |
-| **title_hebrew** | כפל בעשרות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1342,7 +1330,6 @@
 | **File** | `mul_hundreds.md` |
 | **learning_page_id** | `math:g3:mul_hundreds` |
 | **skill_id** | `math:kind:mul_hundreds` |
-| **title_hebrew** | כפל במאות `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1446,7 +1433,6 @@
 | **File** | `div.md` |
 | **learning_page_id** | `math:g3:div` |
 | **skill_id** | `math:kind:div` |
-| **title_hebrew** | חילוק — חלוקה שווה `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1552,7 +1538,6 @@
 | **File** | `div_with_remainder.md` |
 | **learning_page_id** | `math:g3:div_with_remainder` |
 | **skill_id** | `math:kind:div_with_remainder` |
-| **title_hebrew** | חילוק עם שארית `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1660,7 +1645,6 @@
 | **File** | `divisibility.md` |
 | **learning_page_id** | `math:g3:divisibility` |
 | **skill_id** | `math:kind:divisibility` |
-| **title_hebrew** | התחלקות ב-2, ב-5 וב-10 `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1766,7 +1750,6 @@
 | **File** | `eq_add.md` |
 | **learning_page_id** | `math:g3:eq_add` |
 | **skill_id** | `math:kind:eq_add` |
-| **title_hebrew** | משוואת חיבור — מספר חסר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1872,7 +1855,6 @@
 | **File** | `eq_sub.md` |
 | **learning_page_id** | `math:g3:eq_sub` |
 | **skill_id** | `math:kind:eq_sub` |
-| **title_hebrew** | משוואת חיסור — מספר חסר `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -1976,7 +1958,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `dec_add.md` |
 | **learning_page_id** | `math:g3:dec_add` |
 | **skill_id** | `math:kind:dec_add` |
-| **title_hebrew** | חיבור עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2080,7 +2061,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `dec_sub.md` |
 | **learning_page_id** | `math:g3:dec_sub` |
 | **skill_id** | `math:kind:dec_sub` |
-| **title_hebrew** | חיסור עשרוניים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2184,7 +2164,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `order_add_mul.md` |
 | **learning_page_id** | `math:g3:order_add_mul` |
 | **skill_id** | `math:kind:order_add_mul` |
-| **title_hebrew** | סדר פעולות — חיבור וכפל `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2289,7 +2268,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `order_mul_sub.md` |
 | **learning_page_id** | `math:g3:order_mul_sub` |
 | **skill_id** | `math:kind:order_mul_sub` |
-| **title_hebrew** | סדר פעולות — כפל וחיסור `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2392,7 +2370,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `order_parentheses.md` |
 | **learning_page_id** | `math:g3:order_parentheses` |
 | **skill_id** | `math:kind:order_parentheses` |
-| **title_hebrew** | סוגריים בחישוב `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2498,7 +2475,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `wp_comparison_more.md` |
 | **learning_page_id** | `math:g3:wp_comparison_more` |
 | **skill_id** | `math:kind:wp_comparison_more` |
-| **title_hebrew** | שאלה מילולית — כמה יותר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2602,7 +2578,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `wp_leftover.md` |
 | **learning_page_id** | `math:g3:wp_leftover` |
 | **skill_id** | `math:kind:wp_leftover` |
-| **title_hebrew** | שאלה מילולית — מה נשאר? `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?
@@ -2704,7 +2679,6 @@ __ − 18 = 42 — מה המספר החסר?
 | **File** | `wp_time_sum.md` |
 | **learning_page_id** | `math:g3:wp_time_sum` |
 | **skill_id** | `math:kind:wp_time_sum` |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
 | **approval_status** | `draft` |
 
 ### Section 1. מה לומדים?

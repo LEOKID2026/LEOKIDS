@@ -1,4 +1,4 @@
-﻿# גופים תלת-ממדיים — חזרה
+# Three-Dimensional Solids — Review
 
 ## Metadata
 
@@ -11,69 +11,69 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גופים תלת-ממדיים — חזרה `[DRAFT — not owner-approved]` |
+| **title_english** | Three-Dimensional Solids — Review |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** קובייה, תיבה, גליל, כדור — שמות ותכונות
+**Content scope:** cube, rectangular prism, cylinder, sphere — names and properties
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק גופים תלת ממדיים בגאומטריה.
-גוף — צורה עם אורך, רוחב וגובה (לא רק שטח!).
+Today we'll review three-dimensional solids in geometry.
+A solid — a shape with length, width, and height (not just area!).
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: cube_basic
 :::
 
-קובייה — כל 6 הפאות ריבועים שווים.
-תיבה (תיבת מלבן) — 6 פאות מלבנים.
-גם: גליל, פירמידה, חרוט, כדור — שמות ותכונות כלליות.
+Cube — all 6 faces are equal squares.
+Rectangular prism (box) — 6 rectangular faces.
+Also: cylinder, pyramid, cone, sphere — names and general properties.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-קובייה — 12 צלעות שוות, 8 קדקודים.
-תיבה — פאות מלבניות — אורך, רוחב, גובה שונים.
-
----
-
-## 4. בואו נפתור
-
-איזה גוף לכל הפאות ריבועים שווים?
-ריבוע בכל פאה → קובייה.
-קובייה.
+Cube — 12 equal edges, 8 vertices.
+Rectangular prism — rectangular faces — different length, width, and height.
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-איזה גוף — קובייה או תיבה — יש לו פאות מלבניות שאינן ריבועים?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-איזה גוף — קובייה או תיבה — יש לו פאות מלבניות שאינן ריבועים?
-בקובייה — כל 6 הפאות הן ריבועים שווים (כל הצלעות שוות).
-בתיבה — הפאות מלבניות, ולרוב אורך ≠ רוחב ≠ גובה, ולכן הפאות אינן ריבועים.
-תיבה
+Which solid has all faces as equal squares?
+Square on every face → cube.
+Cube.
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-הכרת גופים מכינה לחישוב נפח.
-בתרגול תמצאו קובייה ותיבה — בדקו את צורת הפאות!
+Which solid — cube or rectangular prism — has rectangular faces that are not squares?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+Which solid — cube or rectangular prism — has rectangular faces that are not squares?
+In a cube — all 6 faces are equal squares (all edges equal).
+In a rectangular prism — the faces are rectangles, and usually length ≠ width ≠ height, so the faces are not squares.
+Rectangular prism
+
+---
+
+## 7. Let's practice!
+
+Knowing solids prepares you for volume calculations.
+In practice you'll find cubes and rectangular prisms — check the shape of the faces!

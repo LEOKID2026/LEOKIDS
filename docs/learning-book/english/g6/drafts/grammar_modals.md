@@ -11,89 +11,79 @@
 | **age_band** | grades_5_6 |
 | **page_type** | concept_foundation |
 | **approval_status** | approved |
-| **title_hebrew** | should / might / could |
+| **title_english** | should / might / could |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Linked skill_ids:** `english:grammar:line:conditionals_type_0_1_ומודאליים_should_might_could`
+**Linked skill_ids:** `english``
 
-**Content scope:** You should… / It might… / We could… — לא חזרה על can/must בלבד
-
----
-
-## 1. מה לומדים?
-
-היום נלמד should, might, could — לא חוזרים על can/must כנושא מרכזי.
-You should ask the teacher for help — כדאי לשאול את המורה לעזרה.
+**Content scope:** You should… / It might… / We could… — not just a repeat of can/must
 
 ---
 
-## 2. הסבר
+## 1. What are we learning?
 
-should — עצה; might — אולי; could — אפשרות:
-
+Today we will learn should, might, and could — not just repeating can/must.
 You should ask the teacher for help.
 
-כדאי לשאול את המורה לעזרה.
+---
+
+## 2. Simple explanation
+
+should — advice; might — maybe; could — a possibility:
+
+You should ask the teacher for help.
 
 It might rain later.
 
-אולי ירד גשם מאוחר יותר.
-
 We could meet after school.
-
-נוכל להיפגש אחרי בית הספר.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-שאלה קשה בשיעור.
+A hard question in class.
 
 You should ask the teacher for help.
 
-כדאי לשאול את המורה לעזרה.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "כדאי לשאול את המורה לעזרה"?
+Question: How do you say this?
 
 You should ask the teacher for help
 
-תשובה: You should ask the teacher for help
+Answer: You should ask the teacher for help
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שבת — אולי נלך לים.
+Saturday — maybe going to the beach.
 
 We might go to the beach on Saturday.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אולי נלך לים בשבת."
+Exercise: "We might go to the beach on Saturday."
 
-might = אולי (אפשרות, לא ודאות).
+might means maybe — a possibility, not something certain.
 
-might + פועל (בלי to): might go.
+might + a verb (without "to"): might go.
 
-אולי נלך לים בשבת.
-
- We might go to the beach on Saturday.
+So the full sentence is: We might go to the beach on Saturday.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם משתמשים ב-should, might ו-could.
-בתרגול תמצאו You should ask the teacher for help.
+Now you will use should, might, and could.
+In the practice, you'll find: You should ask the teacher for help.

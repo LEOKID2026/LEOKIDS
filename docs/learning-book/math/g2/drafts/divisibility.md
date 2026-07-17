@@ -1,4 +1,4 @@
-﻿# מתי מספר מתחלק ב 2, ב 5 וב 10?
+# When Does a Number Divide by 2, 5, and 10?
 
 ## Metadata
 
@@ -11,79 +11,79 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | מתי מספר מתחלק ב 2, ב 5 וב 10? `[DRAFT — not owner-approved]` |
+| **title_english** | When Does a Number Divide by 2, 5, and 10?
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** התחלקות ב 2, ב 5 וב 10 בלבד. בכיתה ב׳. ללא 3, 6, 9. ללא הסבר עמוק על שארית.
+**Content scope:** Divisibility by 2, 5, and 10 only. Grade 2 level. No 3, 6, 9. No deep remainder explanation.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מתי מספר מתחלק ב 2, ב 5 וב 10.
-זה עוזר לדעת אם אפשר לחלק בלי שארית — בקבוצות שוות.
-
----
-
-## 2. הסבר
-
-מתחלק ב 2 = אפשר לחלק לשתי קבוצות שוות בלי שארית.
-(לרוב:
-מתחלק ב 5 = הספרה האחרונה היא 0 או 5.
-מתחלק ב 10 = הספרה האחרונה היא 0.
-חשוב: כאן לומדים רק 2, 5 ו 10 — לא 3, 6 או 9.
+Today we're going to learn when a number divides by 2, 5, and 10.
+This helps you know if you can divide with no remainder — into equal groups.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-המספר 40:
-40 מתחלק ב 2 — 20 + 20 (שתי קבוצות שוות)
-40 מתחלק ב 5 — נגמר ב 0
-40 מתחלק ב 10 — נגמר ב 0
-40 מתחלק ב 2, ב 5 וב 10.
-דוגמה נוספת — 24:
-- נגמר ב 4 → מתחלק ב 2
-- לא נגמר ב 0 או 5 → לא מתחלק ב 5 או ב 10
+Divisible by 2 = you can split into two equal groups with no remainder.
+(Usually:
+Divisible by 5 = the last digit is 0 or 5.
+Divisible by 10 = the last digit is 0.
+Important: here we only learn 2, 5, and 10 — not 3, 6, or 9.
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-האם 30 מתחלק ב 2? ב 5? ב 10?
-30 — הספרה האחרונה 0.
-מתחלק ב 2? כן — אפשר 15 + 15.
-מתחלק ב 5? כן — נגמר ב 0.
-מתחלק ב 10? כן — נגמר ב 0.
-30 מתחלק ב 2, ב 5 וב 10.
-
----
-
-## 5. נסו בעצמכם
-
-האם 35 מתחלק ב 2? ב 5? ב 10?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+The number 40:
+40 divides by 2 — 20 + 20 (two equal groups)
+40 divides by 5 — ends in 0
+40 divides by 10 — ends in 0
+40 divides by 2, 5, and 10.
+Another example — 24:
+- Ends in 4 → divides by 2
+- Does not end in 0 or 5 → does not divide by 5 or 10
 
 ---
 
-## 6. בואו נבדוק יחד
+## 4. Let's solve together
 
-האם 35 מתחלק ב 2? ב 5? ב 10?
-שלב 1 — ספרה אחרונה: ב-35 הספרה האחרונה היא 5.
-שלב 2 — מתחלק ב 2? לא — הספרה האחרונה 5 אינה 0, 2, 4, 6 או 8.
-שלב 3 — מתחלק ב 5? כן — הספרה האחרונה היא 5.
-שלב 4 — מתחלק ב 10? לא — הספרה האחרונה אינה 0.
-35 מתחלק רק ב 5
+Does 30 divide by 2? By 5? By 10?
+30 — last digit is 0.
+Divisible by 2? Yes — you can do 15 + 15.
+Divisible by 5? Yes — ends in 0.
+Divisible by 10? Yes — ends in 0.
+30 divides by 2, 5, and 10.
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם יודעים לבדוק התחלקות ב 2, ב 5 וב 10.
-בתרגול תמצאו שאלות מתחלק ב…?
-הסתכלו על הספרה האחרונה!
+Does 35 divide by 2? By 5? By 10?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
+
+---
+
+## 6. Common mistake — watch out!
+
+Does 35 divide by 2? By 5? By 10?
+Step 1 — last digit: in 35 the last digit is 5.
+Step 2 — divisible by 2? No — last digit 5 is not 0, 2, 4, 6, or 8.
+Step 3 — divisible by 5? Yes — last digit is 5.
+Step 4 — divisible by 10? No — last digit is not 0.
+35 divides only by 5
+
+---
+
+## 7. Let's practice!
+
+Now you know how to check divisibility by 2, 5, and 10.
+In practice you'll find questions: divisible by…?
+Look at the last digit!

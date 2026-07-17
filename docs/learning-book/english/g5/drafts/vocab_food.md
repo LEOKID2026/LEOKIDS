@@ -1,4 +1,4 @@
-# מזון — cooked healthy food
+# Food — cooked healthy food
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מזון — cooked healthy food |
+| **title_english** | Food — cooked healthy food |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מזון בריא עם Past Simple.
-We cooked healthy soup — בישלנו מרק בריא.
+Today we will learn about healthy food with Past Simple.
+We cooked healthy soup.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-cooked — בישלנו (עבר):
+cooked — the past form of cook:
 
 We cooked healthy soup.
-
-בישלנו מרק בריא.
 
 She ate vegetables yesterday.
 
-היא אכלה ירקות אתמול.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מטבח ביתי — מרק בריא.
+A home kitchen — healthy soup.
 
 We cooked healthy soup.
 
-בישלנו מרק בריא.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "בישלנו מרק בריא"?
+Question: How do you say this?
 
 We cooked healthy soup
 
-תשובה: We cooked healthy soup
+Answer: We cooked healthy soup
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-ארוחת ערב בבית — אורז ועוף.
+Dinner at home — rice and chicken.
 
 We cooked rice with chicken for dinner.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "בישלנו אורז עם עוף לארוחת ערב."
+Exercise: "We cooked rice with chicken for dinner."
 
-פועל סדיר בעבר: cook הופך ל-cooked.
+A regular verb in the past: cook becomes cooked.
 
-for dinner = לארוחת ערב.
+"For dinner" tells us when.
 
-בישלנו אורז עם עוף לארוחת ערב.
-
- We cooked rice with chicken for dinner.
+So the full sentence is: We cooked rice with chicken for dinner.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים אוכל בריא בעבר.
-בתרגול תמצאו We cooked healthy soup.
+Now you will describe healthy food in the past.
+In the practice, you'll find: We cooked healthy soup.

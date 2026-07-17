@@ -1,4 +1,4 @@
-﻿# אלכסון במלבן
+# Diagonal of a Rectangle
 
 ## Metadata
 
@@ -11,77 +11,77 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | אלכסון במלבן `[DRAFT — not owner-approved]` |
+| **title_english** | Diagonal of a Rectangle `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** מלבן 3×4; אלכסון 5 (משולש 3-4-5)
+**Content scope:** Rectangle 3×4; diagonal 5 (3-4-5 triangle)
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על אלכסון במלבן.
-נראה שבמלבן 3 על 4 — האלכסון מאפינה לפינה הוא 5.
+Today in geometry we will learn about the diagonal of a rectangle.
+We will see that in a 3 by 4 rectangle — the diagonal from corner to corner is 5.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: rectangle_diagonal
 :::
 
-אלכסון במלבן = קו מפינה לפינה נגדית.
-במלבן 3 על 4 — האלכסון יוצר משולש עם צלעות 3 ו-4.
-זוג מספרים מוכר: 3, 4, 5 — האלכסון הוא 5.
-כאן לומדים את הקשר הזה — בלי חובה לנוסחת שורש.
+Diagonal of a rectangle = a line from one corner to the opposite corner.
+In a 3 by 4 rectangle — the diagonal forms a triangle with sides 3 and 4.
+A familiar set of numbers: 3, 4, 5 — the diagonal is 5.
+Here we learn this relationship — without requiring the square root formula.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מלבן:
-אורך 4, רוחב 3.
-- אלכסון מפינה לפינה: 5
-- המשולש שנוצר:
-צלעות 3, 4, 5
+Rectangle:
+length 4, width 3.
+- Diagonal from corner to corner: 5
+- The triangle formed:
+sides 3, 4, 5
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-למלבן 3 על 4 — מה אורך האלכסון?
-מזהים צלעות 3 ו-4.
-במלבן כזה האלכסון = 5.
+For a 3 by 4 rectangle — what is the length of the diagonal?
+Identify sides 3 and 4.
+In such a rectangle the diagonal = 5.
 5
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מלבן 6 על 8 — מה אורך האלכסון?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Rectangle 6 by 8 — what is the length of the diagonal?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-מלבן 6 על 8 — מה אורך האלכסון?
-מזהים את הצלעות:
-6 ו-8
-אלו כפולות של המשולש הידוע 3-4-5:
-3 × 2 = 6, ו-4 × 2 = 8, לכן האלכסון:
+Rectangle 6 by 8 — what is the length of the diagonal?
+Identify the sides:
+6 and 8
+These are multiples of the well-known 3-4-5 triangle:
+3 × 2 = 6, and 4 × 2 = 8, so the diagonal:
 5 × 2 = 10
-האלכסון = 10
+The diagonal = 10
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא אלכסון במלבן בגאומטריה.
-בתרגול תמצאו מלבן 3 על 4 — חפשו את האלכסון 5!
+Now you know how to find the diagonal of a rectangle in geometry.
+In practice you will find a 3 by 4 rectangle — look for the diagonal 5!

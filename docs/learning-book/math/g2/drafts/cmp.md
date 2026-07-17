@@ -1,4 +1,4 @@
-# השוואת מספרים עד 1,000
+# Comparing Numbers Up to 1,000
 
 ## Metadata
 
@@ -11,83 +11,83 @@
 | **age_band** | grades_1_2 |
 | **page_type** | concept_foundation |
 | **approval_status** | launch_ready |
-| **title_hebrew** | השוואת מספרים עד 1,000 `[DRAFT — not owner-approved]` |
+| **title_english** | Comparing Numbers Up to 1,000 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** השוואת שני מספרים עד 1,000. לפי מאות, עשרות, אחדות. ללא שברים, עשרוניים או מספרים שליליים.
+**Content scope:** Comparing two numbers up to 1,000. By hundreds, tens, ones. No fractions, decimals, or negative numbers.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד להשוות בין שני מספרים גדולים — עד 1,000.
-נגיד מי גדול יותר, מי קטן יותר, או אם הם שווים.
-
----
-
-## 2. הסבר
-
-כשמשווים מספרים עם כמה ספרות — בודקים מאות, אחר כך עשרות, ואז אחדות.
-שלב 1 — מאות: למי יש יותר מאות?
-שלב 2 — עשרות: אם המאות שוות, בודקים עשרות.
-שלב 3 — אחדות: אם גם העשרות שוות, בודקים אחדות.
-סימני השוואה:
-- < — קוראים: קטן מ
-- > — קוראים: גדול מ
-- = — קוראים: שווה אל
-טיפ קצר: בכתיבה, הפתח של הסימן > או < פונה לעבר המספר הגדול יותר.
+Today we're going to learn to compare two big numbers — up to 1,000.
+We'll say which is greater, which is smaller, or if they are equal.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-השוואת 612 ו-628:
-מאות: 6 = 6 → שוות, ממשיכים
-עשרות: 1 < 2
-612 קטן מ-628, לכן: 612 < 628
-כתיבה:
+When comparing numbers with several digits — check hundreds first, then tens, then ones.
+Step 1 — Hundreds: who has more hundreds?
+Step 2 — Tens: if hundreds are equal, check tens.
+Step 3 — Ones: if tens are also equal, check ones.
+Comparison symbols:
+- < — read: less than
+- > — read: greater than
+- = — read: equal to
+Quick tip: when writing, the open side of > or < points toward the bigger number.
+
+---
+
+## 3. Visual / concrete example
+
+Comparing 612 and 628:
+Hundreds: 6 = 6 → equal, keep going
+Tens: 1 < 2
+612 is less than 628, so: 612 < 628
+Writing:
 - 612 < 628
 - 628 > 612
-כשהם שווים:
+When they are equal:
 - 700 = 700
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-השוו בין 735 ל-708. איזה סימן נכון? 735 __ 708
-מאות — 7 ו-7, שוות.
-עשרות — 3 ו-0. 3 גדול מ-0.
-735 גדול מ-708, לכן: 735 > 708
+Compare 735 and 708. Which symbol is correct? 735 __ 708
+Hundreds — 7 and 7, equal.
+Tens — 3 and 0. 3 is greater than 0.
+735 is greater than 708, so: 735 > 708
 735 > 708
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-השוו: 518 __ 485
-איזה סימן נכון — <, >, או =?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Compare: 518 __ 485
+Which symbol is correct — <, >, or =?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-השוו: 518 __ 485
-שלב 1 — מאות: ב-518 יש 5 מאות. ב-485 יש 4 מאות.
-שלב 2 — השוואה: 5 > 4 — ל-518 יש יותר מאות.
-שלב 3 — תשובה: 518 > 485
+Compare: 518 __ 485
+Step 1 — Hundreds: 518 has 5 hundreds. 485 has 4 hundreds.
+Step 2 — Compare: 5 > 4 — 518 has more hundreds.
+Step 3 — Answer: 518 > 485
 518 > 485
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים להשוות מספרים עד 1,000 לפי ערך המקום.
-בתרגול תמצאו שאלות מי גדול יותר?
-התחילו תמיד מהמאות!
+Now you know how to compare numbers up to 1,000 by place value.
+In practice you'll find questions: which is greater?
+Always start with the hundreds!

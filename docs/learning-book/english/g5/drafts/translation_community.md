@@ -1,4 +1,4 @@
-# קהילה — תרגום מורחב
+# Community — Extended Translation
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_5_6 |
 | **page_type** | practice_bridge |
 | **approval_status** | approved |
-| **title_hebrew** | קהילה — תרגום מורחב |
+| **title_english** | Community — Extended Translation |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,63 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נתרגל תרגום מורחב על קהילה.
-The hospital is next to the park — בית החולים ליד הפארק.
+Today we will practice extended sentences about the community.
+The hospital is next to the park.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-next to — ליד:
+next to — right beside:
 
 The hospital is next to the park.
-
-בית החולים ליד הפארק.
 
 The school is near the library.
 
-בית הספר ליד הספרייה.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-מפה של העיירה.
+A map of the town.
 
 The hospital is next to the park.
 
-בית החולים ליד הפארק.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "בית החולים ליד הפארק"?
+Question: How do you say this?
 
 The hospital is next to the park
 
-תשובה: The hospital is next to the park
+Answer: The hospital is next to the park
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-מוצאים את השוק על המפה.
+Finding the market on the map.
 
 The main street is next to the market.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הרחוב הראשי ליד השוק."
+Exercise: "The main street is next to the market."
 
-next to = ליד (מרחק קרוב, לא בתוך).
+next to means very close, but not inside.
 
-The main street is next to the market.
-
-הרחוב הראשי ליד השוק.
-
- The main street is next to the market.
+So the full sentence is: The main street is next to the market.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתרגלים תרגום על מקומות בקהילה.
-בתרגול תמצאו The hospital is next to the park.
+Now you will practice sentences about the community.
+In the practice, you'll find: The hospital is next to the park.

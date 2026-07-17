@@ -1,4 +1,4 @@
-# מזון — healthy food
+# Food — healthy food
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מזון — healthy food |
+| **title_english** | Food — healthy food |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,65 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד על מזון בריא.
-We eat healthy food — אנחנו אוכלים מזון בריא.
+Today we will learn about healthy food.
+We eat healthy food.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-תבנית:
+Pattern:
 
 We eat healthy food.
-
-אנחנו אוכלים מזון בריא.
 
 We drink water.
 
-אנחנו שותים מים.
-
 ---
 
-## 3. דוגמה
+## 3. Example
 
-משפחה אוכלת ירקות.
+A family eating vegetables.
 
 We eat healthy food.
 
-אנחנו אוכלים מזון בריא.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "אנחנו אוכלים מזון בריא"?
+Question: How do you say this?
 
 We eat healthy food
 
-תשובה: We eat healthy food
+Answer: We eat healthy food
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שוק ירקות טריים.
+A market with fresh vegetables.
 
 We eat fresh vegetables.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "אנחנו אוכלים ירקות טריים."
+Exercise: "We eat fresh vegetables."
 
-we פירושו אנחנו — אחרי we לא מוסיפים s לפועל eat.
+"We" means us — after "we" we do not add s to the verb eat.
 
-fresh vegetables = ירקות טריים.
+"Fresh vegetables" tells us what we eat.
 
-אנחנו אוכלים ירקות טריים.
-
- We eat fresh vegetables.
+So the full sentence is: We eat fresh vegetables.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים אכילה בריאה.
-בתרגול תמצאו We eat healthy food.
+Now you will describe healthy eating.
+In the practice, you'll find: We eat healthy food.

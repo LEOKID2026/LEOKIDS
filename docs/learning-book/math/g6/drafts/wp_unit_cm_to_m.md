@@ -1,4 +1,4 @@
-# המרת יחידות — ס״מ ומטר
+# Unit Conversion — Centimeters and Meters
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | המרת יחידות — ס״מ ומטר `[DRAFT — not owner-approved]` |
+| **title_english** | Unit Conversion — Centimeters and Meters |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** 100 ס״מ = 1 מ'
+**Content scope:** 100 cm = 1 m
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נפתור המרת יחידות: ס״מ ↔ מטר.
-100 ס״מ = 1 מ'
-
----
-
-## 2. הסבר
-
-350 ס״מ = 350 ÷ 100 = 3.5 מ' (3 מ' ו-50 ס״מ)
-2 מ' = 2 × 100 = 200 ס״מ
+Today we will solve unit conversion: cm ↔ meters.
+100 cm = 1 m
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-1,000 ס״מ = 10 מ'
+350 cm = 350 ÷ 100 = 3.5 m (3 m and 50 cm)
+2 m = 2 × 100 = 200 cm
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-350 ס״מ = ? מ'
+1,000 cm = 10 m
+
+---
+
+## 4. Let's solve together
+
+350 cm = ? m
 350 ÷ 100 = 3.5
-3.5 מ'.
+3.5 m.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-850 ס״מ = ? מ'
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+850 cm = ? m
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-850 ס״מ = ? מ'
-100 ס״מ = 1 מ' → ס״מ→מ' = ÷100.
+850 cm = ? m
+100 cm = 1 m → cm→m = ÷100.
 850 ÷ 100 = 8.5
-בדיקה: 8.5 × 100 = 850
-התשובה: 8.5 מ'
+Check: 8.5 × 100 = 850
+The answer: 8.5 m
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-המרת יחידות חשובה במדידות.
-בתרגול תמצאו ס״מ/מ' — זכרו 100!
+Unit conversion is important in measurement.
+In practice you will find cm/m — remember 100!

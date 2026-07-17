@@ -1,4 +1,4 @@
-﻿# גובה בטרפז
+# Height of a Trapezoid
 
 ## Metadata
 
@@ -11,74 +11,74 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | גובה בטרפז `[DRAFT — not owner-approved]` |
+| **title_english** | Height of a Trapezoid |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** גובה מהשטח ושני הבסיסים
+**Content scope:** height from area and two bases
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד גובה בטרפז משטח ושני בסיסים.
-שטח = ((ב1 + ב2) × גובה) ÷ 2
+Today we'll learn the height of a trapezoid from area and two bases.
+Area = ((base1 + base2) × height) ÷ 2
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: trapezoid_height
 :::
 
-מבודדים גובה:
-גובה = (שטח × 2) ÷ (בסיס1 + בסיס2)
+Isolate the height:
+Height = (area × 2) ÷ (base1 + base2)
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-בסיסים 5 ס״מ ו-9 ס״מ, שטח 28 סמ״ר:
+Bases 5 cm and 9 cm, area 28 cm²:
 5 + 9 = 14
-גובה = (28 × 2) ÷ 14 = 56 ÷ 14 = 4 ס״מ
+Height = (28 × 2) ÷ 14 = 56 ÷ 14 = 4 cm
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-טרפז — בסיסים 5 ס״מ ו-9 ס״מ, שטח 28 סמ״ר. גובה?
+Trapezoid — bases 5 cm and 9 cm, area 28 cm². Height?
 5 + 9 = 14
 (28 × 2) ÷ 14 = 4
-4 ס״מ.
+4 cm.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-טרפז: בסיסים 3 ס״מ ו-7 ס״מ, שטח 30 סמ״ר — מה הגובה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Trapezoid: bases 3 cm and 7 cm, area 30 cm² — what is the height?
+Try to solve by yourself.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-טרפז: בסיסים 3 ס״מ ו-7 ס״מ, שטח 30 סמ״ר — מה הגובה?
-חיבור הבסיסים:
+Trapezoid: bases 3 cm and 7 cm, area 30 cm² — what is the height?
+Add the bases:
 3 + 7 = 10
-הכפלת השטח ב-2:
+Multiply the area by 2:
 30 × 2 = 60
-חלוקה בסכום הבסיסים:
+Divide by the sum of the bases:
 60 ÷ 10 = 6
-גובה = 6 ס״מ
+Height = 6 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-גובה בטרפז = (שטח × 2) ÷ (בסיס 1 + בסיס 2).
-בתרגול תמצאו גבהים בטרפז — חברו בסיסים קודם!
+Height of a trapezoid = (area × 2) ÷ (base 1 + base 2).
+In practice you'll find trapezoid heights — add the bases first!

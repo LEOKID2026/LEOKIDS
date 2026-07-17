@@ -1,4 +1,4 @@
-# עיגול לעשרות/מאות/אלפים
+# Rounding to Tens, Hundreds, and Thousands
 
 ## Metadata
 
@@ -11,81 +11,81 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | עיגול לעשרות/מאות/אלפים `[DRAFT — not owner-approved]` |
+| **title_english** | Rounding to Tens, Hundreds, and Thousands |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** עיגול לעשרות, מאות ואלפים הקרובים. מספרים עד 10,000. ללא עשרוניים.
+**Content scope:** Rounding to the nearest ten, hundred, and thousand. Numbers up to 10,000. No decimals.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד לעגל מספר לעשרות, מאות או אלפים הקרובים.
-עיגול עוזר להעריך תשובות ולחשב מהר בראש.
-
----
-
-## 2. הסבר
-
-שלבים לעיגול:
-מסתכלים על הספרה שמימין למקום שאליו מעגלים
-אם היא 0, 1, 2, 3 או 4 — מעגלים למטה (נשארים)
-אם היא 5, 6, 7, 8 או 9 — מעגלים למעלה (מוסיפים 1)
-עיגול לעשרות:
-מסתכלים על ספרת האחדות
-עיגול למאות:
-מסתכלים על ספרת העשרות
-עיגול לאלפים:
-מסתכלים על ספרת המאות
-3,847 לעשרות הקרובות:
-אחדות 7 → למעלה → 3,850
+Today we'll learn to round a number to the nearest ten, hundred, or thousand.
+Rounding helps you estimate answers and do quick mental math.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-2,635 לעשרות הקרובות:
-ספרת האחדות: 5 → מעגלים למעלה
+Steps for rounding:
+Look at the digit to the right of the place you're rounding to
+If it's 0, 1, 2, 3, or 4 — round down (stay the same)
+If it's 5, 6, 7, 8, or 9 — round up (add 1)
+Rounding to tens:
+Look at the ones digit
+Rounding to hundreds:
+Look at the tens digit
+Rounding to thousands:
+Look at the hundreds digit
+3,847 to the nearest ten:
+Ones digit 7 → round up → 3,850
+
+---
+
+## 3. Visual / concrete example
+
+2,635 to the nearest ten:
+Ones digit: 5 → round up
 2,635 → 2,640
-2,635 למאות הקרובות:
-ספרת העשרות: 3 → מעגלים למטה
+2,635 to the nearest hundred:
+Tens digit: 3 → round down
 2,635 → 2,600
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-עגלו 4,582 לעשרות הקרובות.
-ספרת האחדות: 2 → מעגלים למטה.
+Round 4,582 to the nearest ten.
+Ones digit: 2 → round down.
 4,582 → 4,580
 4,580
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-עגלו 1,247 למאות הקרובות.
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Round 1,247 to the nearest hundred.
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-עגלו 1,247 למאות הקרובות.
-מעגלים למאות — מסתכלים על ספרת העשרות.
-ספרת העשרות ב-1,247 היא 4 (4 < 5 → מעגלים למטה).
+Round 1,247 to the nearest hundred.
+Rounding to hundreds — look at the tens digit.
+The tens digit in 1,247 is 4 (4 < 5 → round down).
 1,247 → 1,200
 1,200
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים לעגל לעשרות, מאות ואלפים.
-בתרגול תמצאו שאלות עיגול.
-בדקו קודם איזו ספרה קובעת!
+Now you know how to round to tens, hundreds, and thousands.
+In practice you'll find rounding questions.
+First check which digit decides!

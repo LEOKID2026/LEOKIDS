@@ -1,4 +1,4 @@
-﻿# אלכסון בריבוע
+# Diagonal of a Square
 
 ## Metadata
 
@@ -11,76 +11,76 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | אלכסון בריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Diagonal of a Square `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** קו מפינה לפינה; ארוך מהצלע; ללא שורש רשמי בכיתה ד׳
+**Content scope:** Line from corner to corner; longer than a side; no formal square root in grade 4
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה על אלכסון בריבוע.
-אלכסון = קו ישר מפינה לפינה נגדית — והוא ארוך יותר מצלע הריבוע.
+Today in geometry we will learn about the diagonal of a square.
+Diagonal = a straight line from one corner to the opposite corner — and it is longer than a side of the square.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_diagonal
 :::
 
-בריבוע אפשר לשרטט קו מפינה אחת לפינה שממול — זה אלכסון.
-לריבוע יש 2 אלכסונים — שניהם באותו אורך.
-האלכסון ארוך יותר מכל צלע — אבל קצר יותר מסכום שתי צלעות.
-כאן משווים לאורך הצלע — לא חייבים נוסחת שורש.
+In a square you can draw a line from one corner to the opposite corner — that is a diagonal.
+A square has 2 diagonals — both the same length.
+The diagonal is longer than any side — but shorter than the sum of two sides.
+Here we compare to the side length — no square root formula required.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע עם צלע 6:
-- כל צלע: 6
-- אלכסון:
-מפינה לפינה — ארוך יותר מ-6
-- אפשר לומר:
-האלכסון גדול מ-6 (בערך 8–9, תלוי במדידה)
-
----
-
-## 4. בואו נפתור
-
-לריבוע צלע 6. האם האלכסון קצר מ-6, שווה ל-6, או ארוך מ-6?
-צלע = קו ישר מצלע לצלע — אורך 6.
-אלכסון = קו אלכסוני — חוצה את הריבוע. ארוך יותר מ-6.
-ארוך מ-6
+A square with side 6:
+- Each side: 6
+- Diagonal:
+from corner to corner — longer than 6
+- You can say:
+the diagonal is greater than 6 (about 8–9, depending on measurement)
 
 ---
 
-## 5. נסו בעצמכם
+## 4. Let's solve together
 
-ריבוע עם צלע 8 — האלכסון קצר מ-8, שווה ל-8, או ארוך מ-8?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
-
----
-
-## 6. בואו נבדוק יחד
-
-ריבוע עם צלע 8 — האלכסון קצר מ-8, שווה ל-8, או ארוך מ-8?
-הצלע היא קו ישר לאורך צד הריבוע:
-צלע = 8
-האלכסון הוא קו אלכסוני מפינה לפינה — חוצה את הריבוע בצורה אלכסונית, ולכן ארוך יותר מהצלע.
-האלכסון ארוך מ-8
+A square has side 6. Is the diagonal shorter than 6, equal to 6, or longer than 6?
+Side = a straight line from side to side — length 6.
+Diagonal = a slanted line — crosses the square. Longer than 6.
+Longer than 6
 
 ---
 
-## 7. בואו נתרגל!
+## 5. Try it yourself
 
-עכשיו אתם מכירים אלכסון בריבוע בגאומטריה.
-בתרגול תמצאו ריבוע — השוו את האלכסון לאורך הצלע!
+A square with side 8 — is the diagonal shorter than 8, equal to 8, or longer than 8?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A square with side 8 — is the diagonal shorter than 8, equal to 8, or longer than 8?
+The side is a straight line along the edge of the square:
+Side = 8
+The diagonal is a slanted line from corner to corner — it crosses the square diagonally, so it is longer than the side.
+The diagonal is longer than 8
+
+---
+
+## 7. Let's practice!
+
+Now you know the diagonal of a square in geometry.
+In practice you will find a square — compare the diagonal to the side length!

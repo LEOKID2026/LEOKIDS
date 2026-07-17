@@ -1,4 +1,4 @@
-# מספרים 0–10 באנגלית
+# Numbers 0–10 in English
 
 ## Metadata
 
@@ -11,27 +11,27 @@
 | **age_band** | grades_1_2 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | מספרים 0–10 באנגלית |
+| **title_english** | Numbers 0–10 in English |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Content scope:** zero–ten; זיהוי מספר באנגלית מתוך עברית
+**Content scope:** zero–ten; recognizing English numbers
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד מספרים באנגלית מ-0 עד 10.
-מספרים עוזרים לספור חפצים ולדבר על כמות.
+Today we will learn numbers in English from 0 to 10.
+Numbers help us count things and talk about how many.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-כל מספר יש לו שם באנגלית.
+Every number has a name in English.
 zero — 0
 one — 1
 two — 2
@@ -46,47 +46,47 @@ ten — 10
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-יש חמש אצבעות ביד אחת.
-באנגלית אומרים:
+There are five fingers on one hand.
+In English we say:
 five
-המילה five פירושה חמש.
+The word five means 5.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-מה המספר 3 באנגלית?
-3 בעברית.
-המילה באנגלית:
+What is the number 3 in English?
+3.
+The word in English:
 three
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-כמה ימים יש בשבוע?
-שבעה.
-מה המילה לשבעה באנגלית?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+How many days are in a week?
+Seven.
+What is the word for seven in English?
+Try to solve it yourself.
+On the next page, we'll check the way and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-כמה ימים יש בשבוע?
-שבעה.
-מה המספר באנגלית?
-7 בעברית — שבעה.
-שבעה באנגלית:
+How many days are in a week?
+Seven.
+What is the number in English?
+7 — seven.
+Seven in English:
 seven
-seven פירושו: שבעה, המספר 7.
+seven means the number 7.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מכירים מספרים 0–10 באנגלית.
-בתרגול תמצאו שאלות על מספרים כמו five, three ו-seven.
+Now you know numbers 0–10 in English.
+In practice, you'll find questions about numbers like five, three, and seven.

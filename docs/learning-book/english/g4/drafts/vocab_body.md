@@ -1,4 +1,4 @@
-# גוף — פעולות יומיומיות
+# Body — Everyday Actions
 
 ## Metadata
 
@@ -11,7 +11,7 @@
 | **age_band** | grades_3_4 |
 | **page_type** | vocabulary_theme |
 | **approval_status** | approved |
-| **title_hebrew** | גוף — פעולות יומיומיות |
+| **title_english** | Body — Everyday Actions |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
@@ -21,73 +21,67 @@
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נחזק פעולות יומיומיות עם חלקי גוף.
-He washes his hands — הוא שוטף את ידיו.
+Today we will review everyday actions with parts of the body.
+He washes his hands — something he does every day.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
-Present Simple — הרגל:
+Present Simple — a habit:
 
 He washes his hands.
-
-הוא שוטף את ידיו.
 
 She brushes her teeth.
 
-היא מצחצחת שיניים.
+Both sentences describe things we do every day.
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ילד שוטף ידיים.
+A child washing his hands.
 
 He washes his hands.
 
-הוא שוטף את ידיו.
-
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-שאלה: איך אומרים "הוא שוטף את ידיו"?
+Question: How do you say this?
 
 He washes his hands
 
-תשובה: He washes his hands
+Answer: He washes his hands
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-בבוקר — מסרקים שיער.
+In the morning — brushing hair.
 
 He brushes his hair.
 
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Let's check together
 
-תרגיל: "הוא מסרק את שיערו."
+Exercise: "He brushes his hair."
 
-he הוא יחיד זכר — מוסיפים es לפועל brush: brush הופך ל-brushes.
+"He" is singular, so we add es to the verb brush: brush becomes brushes.
 
-his hair = שיערו.
+"His hair" tells us whose hair it is.
 
-הוא מסרק את שיערו.
-
- He brushes his hair.
+So the full sentence is: He brushes his hair.
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם מתארים פעולות גוף יומיומיות.
-בתרגול תמצאו He washes his hands.
+Now you will describe everyday actions with the body.
+In the practice, you'll find: He washes his hands.

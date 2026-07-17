@@ -1,4 +1,4 @@
-# שאלה מילולית — סכום זמנים
+# Word Problems — Adding Times Together
 
 ## Metadata
 
@@ -11,71 +11,71 @@
 | **age_band** | grades_3_4 |
 | **page_type** | word_problem_strategy |
 | **approval_status** | launch_ready |
-| **title_hebrew** | שאלה מילולית — סכום זמנים `[DRAFT — not owner-approved]` |
+| **title_english** | Word Problems — Adding Times Together |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** חיבור **דקות** (משך צפייה). סכום עד ~120 דקות. ללא שעון analog. ללא המרת שעות↔דקות מורכבת.
+**Content scope:** Adding **minutes** (watching time). Sum up to ~120 minutes. No analog clock. No complex hours↔minutes conversion.
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-בפרק הזה:
-היום נפתור שאלה מילולית על סכום זמנים — כמה דקות ביחד נמשכים שני קטעים.
-
----
-
-## 2. הסבר
-
-שלב א — זיהוי: האם השאלה מבקשת סה״כ או הפרש?
-שלב ב — חיבור: אם מדובר בסה״כ — מחברים את שני המשכים בדקות.
-בתרגילים האלה המספרים יכולים להיות גדולים יותר (עד כ-120 דקות), אבל הכלל זהה:
-משך ראשון + משך שני = משך כולל.
-אם כתוב "כמה יותר" — זו חיסור, לא דף זה.
+In this section:
+Today we'll solve a word problem about adding times — how many minutes two parts last together.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
 
-יום ספר: סדנה 38 דקות + הרצאה 42 דקות.
-כמה דקות נמשך היום ביחד?
-38 + 42 = 80 דקות
-80 דקות.
+Step A — identify: does the question ask for total or difference?
+Step B — add: if it's a total — add the two lengths in minutes.
+In these problems the numbers can be bigger (up to about 120 minutes), but the rule is the same:
+first length + second length = total length.
+If it says "how many more" — that's subtraction, not this page.
 
 ---
 
-## 4. בואו נפתור
+## 3. Visual / concrete example
 
-מסיבת כיתה: הופעה 55 דקות, ואחריה סרט 25 דקות. מה סה״כ זמן ההופעה והסרט?
+Book day: workshop 38 minutes + talk 42 minutes.
+How many minutes did the day last altogether?
+38 + 42 = 80 minutes
+80 minutes.
+
+---
+
+## 4. Let's solve together
+
+Class party: show 55 minutes, then a video 25 minutes. What's the total time for the show and video?
 55 + 25 = 80
-80 דקות.
+80 minutes.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-שני קטעי וידאו נמשכים 45 דקות ו-35 דקות.
-מה סה״כ זמן הצפייה?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Two video clips last 45 minutes and 35 minutes.
+What's the total watching time?
+Try to solve it on your own.
+On the next page we'll check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-שני קטעי וידאו נמשכים 45 דקות ו-35 דקות.
-מה סה״כ זמן הצפייה?
-השאלה מבקשת סה״כ — מחברים.
+Two video clips last 45 minutes and 35 minutes.
+What's the total watching time?
+The question asks for a total — add.
 45 + 35 = 80
-80 דקות
+80 minutes
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-בפרק הזה חיזקנו את הידע לחבר זמני צפייה בדקות.
-בתרגול תמצאו גם מספרים גדולים יותר שאלות על סכום זמנים. חברו את הדקות!
+In this section we strengthened adding watching times in minutes.
+In practice you'll also find bigger questions about adding times. Add the minutes!

@@ -1,4 +1,4 @@
-# כפל עשרוני ב-10 או ב-100
+# Multiplying a Decimal by 10 or 100
 
 ## Metadata
 
@@ -11,64 +11,64 @@
 | **age_band** | grades_5_6 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | כפל עשרוני ב-10 או ב-100 `[DRAFT — not owner-approved]` |
+| **title_english** | Multiplying a Decimal by 10 or 100 |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** הזזת הנקודה ימינה
+**Content scope:** moving the decimal point to the right
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד כפל עשרוני ב-10 או ב-100.
-3.25 × 10 — הנקודה זזה ימינה.
-
----
-
-## 2. הסבר
-
-3.25 × 10 = 32.5 — הנקודה זזה מקום אחד ימינה.
-3.25 × 100 = 325 — שני מקומות ימינה.
+Today we will learn to multiply a decimal by 10 or 100.
+3.25 × 10 — the decimal point moves to the right.
 
 ---
 
-## 3. דוגמה
+## 2. Simple explanation
+
+3.25 × 10 = 32.5 — the decimal point moves one place to the right.
+3.25 × 100 = 325 — two places to the right.
+
+---
+
+## 3. Visual / concrete example
 
 0.45 × 10 = 4.5
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
 3.25 × 10 = ?
-×10 → הנקודה מקום אחד ימינה.
+×10 → the decimal point moves one place to the right.
 32.5.
 
 ---
 
-## 5. נסו בעצמכם
+## 5. Try it yourself
 
-חשבו: 4.17 × 10 = ?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+Calculate: 4.17 × 10 = ?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
 
 ---
 
-## 6. בואו נבדוק יחד
+## 6. Common mistake — watch out!
 
-חשבו: 4.17 × 10
-×10 → הנקודה זזה מקום אחד ימינה.
+Calculate: 4.17 × 10
+×10 → the decimal point moves one place to the right.
 4.17 → 41.7
-בדיקה: 41.7 ÷ 10 = 4.17
-התשובה: 41.7
+Check: 41.7 ÷ 10 = 4.17
+The answer: 41.7
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-כלל ×10/×100 חוסך זמן.
-בתרגול תמצאו כפל ב-10 וב-100 — כיוון הנקודה חשוב!
+The ×10/×100 rule saves time.
+In practice you will multiply by 10 and 100 — the direction of the decimal point matters!

@@ -1,4 +1,4 @@
-﻿# היקף ריבוע
+# Perimeter of a Square
 
 ## Metadata
 
@@ -11,75 +11,75 @@
 | **age_band** | grades_3_4 |
 | **page_type** | step_by_step_procedure |
 | **approval_status** | launch_ready |
-| **title_hebrew** | היקף ריבוע `[DRAFT — not owner-approved]` |
+| **title_english** | Perimeter of a Square `[DRAFT — not owner-approved]` |
 
 **Source references:**
 - `data/curriculum-spine/v1/skills.json`
 - `scripts/lib/geometry-g3-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Content scope:** ספירת 4 צלעות; 6, 24
+**Content scope:** Counting 4 sides; 6, 24
 
 ---
 
-## 1. מה לומדים?
+## 1. What are we learning?
 
-היום נלמד בגאומטריה למצוא היקף של ריבוע — אורך כל הגבול.
-נתחיל בספירה: נעבור על כל ארבע הצלעות ונחבר.
+Today in geometry we will learn to find the perimeter of a square — the length of the whole border.
+We will start by counting: go around all four sides and add them up.
 
 ---
 
-## 2. הסבר
+## 2. Simple explanation
 
 :::geometry-diagram
 type: square_perimeter
 :::
 
-בריבוע כל 4 הצלעות שוות.
-דרך ראשונה — ספירה:
-היקף = צלע + צלע + צלע + צלע — עוברים על כל 4 הצלעות.
-דרך שנייה — קיצור:
-4 צלעות שוות → היקף = 4 × צלע.
-יחידה: ס״מ, מ' — לא סמ״ר (זה שטח).
+In a square all 4 sides are equal.
+First way — counting:
+Perimeter = side + side + side + side — go around all 4 sides.
+Second way — shortcut:
+4 equal sides → perimeter = 4 × side.
+Unit: cm, m — not cm² (that is area).
 
 ---
 
-## 3. דוגמה
+## 3. Example
 
-ריבוע עם צלע 6 ס״מ — סופרים את כל הצלעות:
+A square with side 6 cm — count all the sides:
 6 + 6 + 6 + 6 = 24
-4 צלעות של 6 → 24 ס״מ סביב כל הריבוע.
+4 sides of 6 → 24 cm around the whole square.
 
 ---
 
-## 4. בואו נפתור
+## 4. Let's solve together
 
-לריבוע יש צלע באורך 6 ס״מ. מה ההיקף?
-סופרים 4 צלעות — כל אחת 6.
-6 + 6 + 6 + 6 = 24 (או 4 × 6 = 24).
-24 ס״מ
-
----
-
-## 5. נסו בעצמכם
-
-ריבוע עם צלע 8 ס״מ — מה ההיקף?
-נסו לפתור בעצמכם.
-בעמוד הבא נבדוק יחד את הדרך ואת התשובה.
+A square has a side of length 6 cm. What is the perimeter?
+Count 4 sides — each one is 6.
+6 + 6 + 6 + 6 = 24 (or 4 × 6 = 24).
+24 cm
 
 ---
 
-## 6. בואו נבדוק יחד
+## 5. Try it yourself
 
-ריבוע עם צלע 8 ס״מ — מה ההיקף?
-לריבוע יש 4 צלעות, כל אחת באורך 8 ס״מ.
+A square with side 8 cm — what is the perimeter?
+Try to solve it on your own.
+On the next page we will check the steps and the answer together.
+
+---
+
+## 6. Let's check together
+
+A square with side 8 cm — what is the perimeter?
+A square has 4 sides, each 8 cm long.
 8 + 8 + 8 + 8 = 32
-(או: 4 × 8 = 32)
-היקף = 32 ס״מ
+(or: 4 × 8 = 32)
+Perimeter = 32 cm
 
 ---
 
-## 7. בואו נתרגל!
+## 7. Let's practice!
 
-עכשיו אתם יודעים למצוא היקף ריבוע — קודם סופרים 4 צלעות!
-בתרגול תמצאו ריבוע — חברו את כל הצלעות סביב!
+Now you know how to find the perimeter of a square — first count 4 sides!
+In practice you will find a square — add all the sides around it!
