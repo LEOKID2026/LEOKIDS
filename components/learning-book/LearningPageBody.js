@@ -446,6 +446,7 @@ export default function LearningPageBody({
             pageId={page.pageId}
             sectionNumber={section.number}
             sectionIndex={sectionIndex}
+            pageData={page}
           />
 
           <div

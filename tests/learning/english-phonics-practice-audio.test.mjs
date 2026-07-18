@@ -46,19 +46,19 @@ describe("english phonics practice audio", () => {
     assert.ok(withAudio >= 10);
   });
 
-  it("audio segments include Hebrew instruction, English target, and options", () => {
+  it("audio segments use English instruction, target, and options", () => {
     const segments = buildPhonicsPracticeTtsSegments({
-      instruction: "בחר/י את האות הגדולה שמתאימה לאות הקטנה שמוצגת",
+      instruction: "Choose the uppercase letter that matches the lowercase letter shown",
       stimulus: "a",
       itemType: "choose_matching_letter",
       answers: ["A", "H", "N", "R"],
     });
-    assert.match(segments[0].text, /בחרו/);
-    assert.equal(segments[0].locale, "he-IL");
-    assert.match(segments[1].text, /ay/i);
+    assert.match(segments[0].text, /Choose/i);
+    assert.equal(segments[0].locale, "en-US");
+    assert.match(segments[1].text, /letter is/i);
     assert.equal(segments[1].locale, "en-US");
     const joined = segments.map((s) => s.text).join(" ");
-    assert.match(joined, /אפשרויות/);
+    assert.match(joined, /Options/i);
     assert.match(joined, /bee|aitch|ar/i);
   });
 
@@ -93,7 +93,7 @@ describe("english phonics practice audio", () => {
       assert.equal(q.params?.requiresAudio, false);
 
       const parts = visiblePartsFromUiProps(q);
-      assert.ok(parts.leadText.trim(), "visible Hebrew instruction");
+      assert.ok(parts.leadText.trim(), "visible instruction");
       assert.ok(parts.bodyText.trim(), "visible target letter/word");
       assert.equal(BROKEN_SLASH_PROMPT.test(parts.leadText), false);
       assert.equal(BROKEN_SLASH_PROMPT.test(parts.bodyText), false);

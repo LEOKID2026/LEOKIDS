@@ -1,7 +1,5 @@
 /**
- * English G1/G2 phonics + vocabulary practice-question audio —
- * child-friendly mixed Hebrew + US English TTS.
- * Mirrors Hebrew question audioStem pattern; uses browser speech synthesis (no book MP3 mapping).
+ * English G1/G2 phonics + vocabulary practice-question audio — US English browser TTS.
  */
 
 import { validateAudioStemV1 } from "./audio-task-contract.js";

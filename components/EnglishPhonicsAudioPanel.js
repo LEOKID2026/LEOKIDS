@@ -48,7 +48,7 @@ export default function EnglishPhonicsAudioPanel({ stem, gameActive, grade = nul
           stem,
           text: stem?.narration_plaintext,
           engine: "browser-tts",
-          contentLocale: "en",
+          locale: "en-US",
         });
       } else {
         await ctrlRef.current?.play();

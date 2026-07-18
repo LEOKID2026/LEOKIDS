@@ -1,7 +1,8 @@
 /**
- * Stem playback — static_url or TTS (speechSynthesis).
- * TTS: no silent resolve on error; wait for voices; locale voice pick; clear fallbacks and messages.
+ * Stem playback — browser TTS (speechSynthesis) only for Global.
  */
+
+const DEFAULT_SPEECH_LOCALE = "en-US";
 
 /**
  * Load/wake the voices list in browsers (especially Chrome) before the user click — recommended in useEffect.
@@ -38,8 +39,8 @@ export function primeSpeechSynthesisVoices() {
  */
 function pickLocaleTtsVoice(voices, locale, hints = []) {
   if (!Array.isArray(voices) || !voices.length) return null;
-  const want = String(locale || "he-IL").toLowerCase();
-  const base = want.split("-")[0] || "he";
+  const want = String(locale || DEFAULT_SPEECH_LOCALE).toLowerCase();
+  const base = want.split("-")[0] || "en";
 
   const score = (v) => {
     const lang = String(v.lang || "").toLowerCase();
@@ -68,11 +69,7 @@ function pickLocaleTtsVoice(voices, locale, hints = []) {
   return bestScore > 0 ? best : null;
 }
 
-export function pickHebrewTtsVoice(voices, locale = "he-IL") {
-  return pickLocaleTtsVoice(voices, locale, ["hebrew", "עברית"]);
-}
-
-export function pickEnglishTtsVoice(voices, locale = "en-US") {
+export function pickEnglishTtsVoice(voices, locale = DEFAULT_SPEECH_LOCALE) {
   return pickLocaleTtsVoice(voices, locale, [
     "english united states",
     "english (united states)",
@@ -80,6 +77,7 @@ export function pickEnglishTtsVoice(voices, locale = "en-US") {
     "jenny",
     "guy",
     "aria",
+    "samantha",
   ]);
 }
 
@@ -88,7 +86,6 @@ export function pickEnglishTtsVoice(voices, locale = "en-US") {
  * @param {{ onEnded?: () => void }} [opts]
  */
 export function createStemPlaybackController(stem, opts = {}) {
-  let audioEl = null;
   let replayCount = 0;
 
   function stopTts() {
@@ -103,16 +100,6 @@ export function createStemPlaybackController(stem, opts = {}) {
 
   function stopAll() {
     stopTts();
-    if (audioEl) {
-      try {
-        audioEl.pause();
-        audioEl.removeAttribute("src");
-        audioEl.load();
-      } catch {
-        /* ignore */
-      }
-      audioEl = null;
-    }
   }
 
   /**
@@ -121,14 +108,11 @@ export function createStemPlaybackController(stem, opts = {}) {
    */
   function ttsErr(code, message) {
     const e = new Error(message);
-    e.name = "HebrewAudioTtsError";
+    e.name = "AudioTtsError";
     /** @type {any} */ (e).code = code;
     return e;
   }
 
-  /**
-   * @returns {Promise<void>}
-   */
   /**
    * @param {{ locale?: string, text: string }} segment
    * @returns {Promise<void>}
@@ -141,12 +125,12 @@ export function createStemPlaybackController(stem, opts = {}) {
       return Promise.reject(
         ttsErr(
           "speech_synthesis_unavailable",
-          "This browser does not support speech synthesis. Try another browser or device."
-        )
+          "This browser does not support speech synthesis. Try another browser or device.",
+        ),
       );
     }
 
-    const locale = String(segment.locale || stem.locale || "he-IL");
+    const locale = String(segment.locale || stem.locale || DEFAULT_SPEECH_LOCALE);
     const synth = window.speechSynthesis;
 
     return new Promise((resolve, reject) => {
@@ -164,7 +148,7 @@ export function createStemPlaybackController(stem, opts = {}) {
 
       const u = new SpeechSynthesisUtterance(text);
       u.lang = locale;
-      u.rate = locale.toLowerCase().startsWith("en") ? 0.9 : 0.92;
+      u.rate = 0.9;
       u.volume = 1;
       u.pitch = 1;
 
@@ -175,9 +159,7 @@ export function createStemPlaybackController(stem, opts = {}) {
           return [];
         }
       })();
-      const picked = locale.toLowerCase().startsWith("en")
-        ? pickEnglishTtsVoice(voices, locale)
-        : pickHebrewTtsVoice(voices, locale);
+      const picked = pickEnglishTtsVoice(voices, locale);
       if (picked) u.voice = picked;
 
       u.onend = () => doneOk();
@@ -214,40 +196,25 @@ export function createStemPlaybackController(stem, opts = {}) {
         return Promise.reject(err);
       });
     }
-    if (stem.playback_kind === "static_url" && stem.stem_audio_url) {
-      audioEl = new Audio(stem.stem_audio_url);
-      audioEl.onended = () => {
-        opts.onEnded?.();
-      };
-      return audioEl.play().catch((err) => {
-        console.warn("[hebrew-audio] static_url play failed", stem.stem_audio_url, err);
-        opts.onEnded?.();
-        return Promise.reject(ttsErr("audio_element_play_failed", "Could not play the audio file."));
-      });
-    }
 
     const text = stem.tts_text != null ? String(stem.tts_text).trim() : "";
     if (stem.playback_kind !== "tts" || !text) {
-      console.warn("[hebrew-audio] tts missing or empty", {
-        playback_kind: stem.playback_kind,
-        hasText: !!text,
-      });
       return Promise.reject(
-        ttsErr("tts_not_configured", "No text available for playback (TTS). Try refreshing the question.")
+        ttsErr("tts_not_configured", "No text available for playback (TTS). Try refreshing the question."),
       );
     }
 
     if (typeof window === "undefined" || !window.speechSynthesis) {
-      console.warn("[hebrew-audio] speechSynthesis unavailable");
       return Promise.reject(
         ttsErr(
           "speech_synthesis_unavailable",
-          "This browser does not support speech synthesis. Try another browser or device."
-        )
+          "This browser does not support speech synthesis. Try another browser or device.",
+        ),
       );
     }
 
     const synth = window.speechSynthesis;
+    const locale = stem.locale || DEFAULT_SPEECH_LOCALE;
 
     return new Promise((resolve, reject) => {
       let settled = false;
@@ -272,40 +239,21 @@ export function createStemPlaybackController(stem, opts = {}) {
       const doneErr = (code, message) => {
         if (settled) return;
         settled = true;
-        console.warn("[hebrew-audio-tts]", code, message, {
-          voicesCount: synth.getVoices().length,
-          lang: stem.locale || "he-IL",
-        });
         opts.onEnded?.();
         reject(ttsErr(code, message));
       };
 
-      /**
-       * Run speak in the same sync turn as the click when possible (important for iOS Safari).
-       * @param {string} reason
-       */
-      const runSpeak = (reason) => {
+      const runSpeak = () => {
         if (settled) return;
         const u = new SpeechSynthesisUtterance(text);
-        u.lang = stem.locale || "he-IL";
-        u.rate = 0.92;
+        u.lang = locale;
+        u.rate = 0.9;
         u.volume = 1;
         u.pitch = 1;
 
         const voices = voicesNow();
-        const picked = pickHebrewTtsVoice(voices, stem.locale);
-        if (picked) {
-          u.voice = picked;
-          if (process.env.NODE_ENV === "development") {
-            console.info("[hebrew-audio-tts] voice", reason, picked.name, picked.lang);
-          }
-        } else {
-          console.warn("[hebrew-audio-tts] no Hebrew-matched voice; using lang only", {
-            reason,
-            voicesCount: voices.length,
-            sample: voices.slice(0, 5).map((v) => `${v.name}|${v.lang}`),
-          });
-        }
+        const picked = pickEnglishTtsVoice(voices, locale);
+        if (picked) u.voice = picked;
 
         u.onend = () => doneOk();
         u.onerror = (ev) => {
@@ -328,7 +276,6 @@ export function createStemPlaybackController(stem, opts = {}) {
           return;
         }
 
-        /** Chrome sometimes won't start until voices load — extend timeout if the list was empty */
         const gen = ++watchdogGeneration;
         const watchdogMs = initialVoiceCount === 0 && voicesNow().length === 0 ? 5200 : 2800;
         window.setTimeout(() => {
@@ -336,43 +283,13 @@ export function createStemPlaybackController(stem, opts = {}) {
           if (!synth.speaking && !synth.pending) {
             doneErr(
               "tts_no_activity",
-              "No playback was detected. In Chrome: make sure a matching language voice pack is installed; on iOS Safari: try again right after the page loads. You can also use the text shown above."
+              "No playback was detected. Make sure a matching language voice pack is installed, then try again.",
             );
           }
         }, watchdogMs);
       };
 
-      let voiceRetryScheduled = false;
-      const scheduleVoiceRetry = () => {
-        if (voiceRetryScheduled || settled) return;
-        voiceRetryScheduled = true;
-        const onVoices = () => {
-          if (voicesNow().length === 0) return;
-          synth.removeEventListener("voiceschanged", onVoices);
-          if (settled) return;
-          if (!synth.speaking && !synth.pending) {
-            try {
-              synth.cancel();
-            } catch {
-              /* ignore */
-            }
-            runSpeak("voiceschanged_retry");
-          }
-        };
-        synth.addEventListener("voiceschanged", onVoices);
-        window.setTimeout(() => {
-          try {
-            synth.removeEventListener("voiceschanged", onVoices);
-          } catch {
-            /* ignore */
-          }
-        }, 6000);
-      };
-
-      runSpeak("initial_click");
-      if (initialVoiceCount === 0) {
-        scheduleVoiceRetry();
-      }
+      runSpeak();
     });
   }
 

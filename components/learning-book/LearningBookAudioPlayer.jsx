@@ -1,12 +1,13 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { isLearningBookAudioEnabledClient } from "../../lib/learning-book/audio/learning-book-audio-feature-flags";
-import { resolveLearningBookAudio } from "../../lib/learning-book/audio/resolve-learning-book-audio";
+import { prepareGlobalBookSectionSpeechText } from "../../lib/learning-book/audio/prepare-global-book-speech-text";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
 import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
+import { useGameAudioOptional } from "../../hooks/useGameAudio.js";
+import { primeSpeechSynthesisVoices } from "../../utils/audio-playback-core.js";
 
 /**
- * Section-level pre-generated audio player for learning books.
- * No runtime TTS — plays static MP3 only on user action.
+ * Section-level browser TTS player for learning books.
  *
  * @param {{
  *   subject: string,
@@ -14,6 +15,7 @@ import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
  *   pageId: string,
  *   sectionNumber: number,
  *   sectionIndex?: number,
+ *   pageData?: { sections?: { number: number, title?: string, body: string }[] },
  * }} props
  */
 export default function LearningBookAudioPlayer({
@@ -22,75 +24,34 @@ export default function LearningBookAudioPlayer({
   pageId,
   sectionNumber,
   sectionIndex = 0,
+  pageData = null,
 }) {
   const { classes: theme } = useBookGradeTheme();
   const copy = useBookUiCopy();
+  const audio = useGameAudioOptional();
   const enabled = isLearningBookAudioEnabledClient();
-  const mathAudioDisabled =
-    String(subject || "").trim().toLowerCase() === "math" &&
-    (String(grade || "").trim().toLowerCase() === "g1" ||
-      String(grade || "").trim().toLowerCase() === "g2");
-  const audioMeta = useMemo(
-    () =>
-      enabled && !mathAudioDisabled
-        ? resolveLearningBookAudio(subject, grade, pageId, sectionNumber)
-        : null,
-    [enabled, mathAudioDisabled, subject, grade, pageId, sectionNumber]
+  const spokenText = useMemo(
+    () => (pageData ? prepareGlobalBookSectionSpeechText(pageData, sectionNumber) : ""),
+    [pageData, sectionNumber],
   );
 
-  const audioRef = useRef(null);
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const stopAndResetAudio = useCallback(() => {
-    const el = audioRef.current;
-    if (!el) return;
-    try {
-      el.pause();
-      el.currentTime = 0;
-    } catch {
-      /* ignore */
-    }
-  }, []);
+  useEffect(() => primeSpeechSynthesisVoices(), []);
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== "development") return;
-    console.debug("[LearningBookAudio]", {
-      subject,
-      grade,
-      pageId,
-      sectionIndex,
-      sectionNumber,
-      featureFlagEnabled: enabled,
-      resolvedAudio: audioMeta,
-    });
-  }, [subject, grade, pageId, sectionIndex, sectionNumber, enabled, audioMeta]);
-
-  useEffect(() => {
-    stopAndResetAudio();
     setStatus("idle");
     setErrorMsg("");
-
-    const el = audioRef.current;
-    if (!el) return;
-
-    if (audioMeta?.playbackSrc) {
-      el.src = audioMeta.playbackSrc;
-      el.load();
-    } else {
-      el.removeAttribute("src");
-    }
-  }, [audioMeta?.playbackSrc, audioMeta?.key, sectionNumber, pageId, stopAndResetAudio]);
+    audio?.stopVoice?.();
+  }, [spokenText, pageId, sectionNumber, audio]);
 
   const handlePlayPause = useCallback(async () => {
-    if (!audioMeta?.playbackSrc || status === "loading") return;
-
-    const el = audioRef.current;
-    if (!el) return;
+    if (!spokenText || status === "loading") return;
 
     if (status === "playing") {
-      stopAndResetAudio();
-      setStatus("paused");
+      audio?.stopVoice?.();
+      setStatus("idle");
       setErrorMsg("");
       return;
     }
@@ -99,29 +60,30 @@ export default function LearningBookAudioPlayer({
     setErrorMsg("");
 
     try {
-      if (el.src !== audioMeta.playbackSrc) {
-        el.src = audioMeta.playbackSrc;
-        el.load();
+      if (audio) {
+        await audio.playVoice("voice-edu-instruction", {
+          text: spokenText,
+          locale: "en-US",
+          engine: "browser-tts",
+        });
+      } else if (typeof window !== "undefined" && window.speechSynthesis) {
+        await new Promise((resolve, reject) => {
+          const synth = window.speechSynthesis;
+          const u = new SpeechSynthesisUtterance(spokenText);
+          u.lang = "en-US";
+          u.onend = () => resolve();
+          u.onerror = (ev) => reject(new Error(ev.error || "tts_error"));
+          synth.speak(u);
+        });
       }
-      el.currentTime = 0;
-      await el.play();
-      setStatus("playing");
+      setStatus("idle");
     } catch {
       setStatus("error");
       setErrorMsg(copy("shell", "audioError"));
     }
-  }, [audioMeta?.playbackSrc, status, stopAndResetAudio]);
+  }, [spokenText, status, audio, copy]);
 
-  const handleEnded = useCallback(() => {
-    setStatus("idle");
-  }, []);
-
-  const handleAudioError = useCallback(() => {
-    setStatus("error");
-    setErrorMsg(copy("shell", "audioError"));
-  }, [copy]);
-
-  if (!enabled || !audioMeta) return null;
+  if (!enabled || !spokenText) return null;
 
   const isPlaying = status === "playing";
   const isLoading = status === "loading";
@@ -131,24 +93,13 @@ export default function LearningBookAudioPlayer({
     ? copy("shell", "audioLoading")
     : isPlaying
       ? copy("shell", "audioStop")
-      : status === "paused"
-        ? copy("shell", "audioResume")
-        : copy("shell", "audioListen");
+      : copy("shell", "audioListen");
 
   return (
     <div className="mb-4 flex flex-col items-center gap-2" dir="ltr">
-      <audio
-        key={`${pageId}:${sectionNumber}:${audioMeta.playbackSrc}`}
-        ref={audioRef}
-        preload="none"
-        onEnded={handleEnded}
-        onError={handleAudioError}
-        className="sr-only"
-        aria-hidden="true"
-      />
       <button
         type="button"
-        onClick={handlePlayPause}
+        onClick={() => void handlePlayPause()}
         disabled={isLoading}
         className={`inline-flex min-h-[44px] items-center justify-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-bold shadow-sm transition disabled:cursor-wait disabled:opacity-100 ${theme.audioPlayerButton}`}
         aria-label={buttonLabel}
