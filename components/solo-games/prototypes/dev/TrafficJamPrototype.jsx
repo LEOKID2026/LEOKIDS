@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -150,8 +151,8 @@ export default function TrafficJamPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Traffic Jam"
-      subtitle="Prototype · drag cars along their axis · free the red one"
+      title={gamePackCopy("components__solo-games__prototypes__dev__TrafficJamPrototype", "traffic_jam")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__TrafficJamPrototype", "prototype_drag_cars_along_their_axis_free_the_red_one")}
       headerExtra={
         <button
           type="button"

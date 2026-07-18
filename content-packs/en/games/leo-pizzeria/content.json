@@ -1,0 +1,28 @@
+{
+  "toppings": [
+    { "id": "cheese", "emoji": "🧀", "name": "Cheese" },
+    { "id": "tomato", "emoji": "🍅", "name": "Tomato" },
+    { "id": "olive", "emoji": "🫒", "name": "Olives" },
+    { "id": "mushroom", "emoji": "🍄", "name": "Mushrooms" },
+    { "id": "pepper", "emoji": "🫑", "name": "Pepper" },
+    { "id": "basil", "emoji": "🌿", "name": "Basil" }
+  ],
+  "difficulties": {
+    "easy": {
+      "label": "Easy",
+      "hint": "Whole, half, and quarter on a 4-slice pizza"
+    },
+    "medium": {
+      "label": "Medium",
+      "hint": "Half, quarter, and three quarters on 8 slices"
+    },
+    "hard": {
+      "label": "Hard",
+      "hint": "Eighths, combinations, and completing the whole"
+    }
+  },
+  "successMessages": [
+    "Great job! The pizza is ready for the customer.",
+    "Awesome! You made it exactly as ordered."
+  ]
+}

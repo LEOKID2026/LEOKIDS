@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BINGO_PRIZE_KEYS } from "../../../lib/arcade/bingo/ov2BingoEngine";
@@ -340,7 +341,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
 
       <div
         className="shrink-0 overflow-x-auto rounded-lg border border-white/10 bg-black/35 py-0.5 [scrollbar-width:thin] sm:py-1"
-        aria-label="Seats"
+        aria-label={gamePackCopy("components__arcade__bingo__ArcadeBingoScreen", "seats")}
       >
         <div className="flex min-w-max gap-1 px-1">
           {seatSlots.map(({ seatIndex, member }) => {
@@ -383,7 +384,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {playingLive ? (
         <div
           className="flex shrink-0 flex-nowrap items-stretch gap-2 overflow-x-auto rounded-lg border border-white/10 bg-black/30 px-2 py-2 [scrollbar-width:thin] sm:gap-3 sm:px-4 sm:py-3"
-          aria-label="Live game stats"
+          aria-label={gamePackCopy("components__arcade__bingo__ArcadeBingoScreen", "live_game_stats")}
         >
           <span className="flex h-[2.25rem] max-h-[2.25rem] min-w-[5.5rem] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-3 py-0 text-xs leading-tight text-zinc-400 sm:h-[2.5rem] sm:max-h-[2.5rem] sm:min-w-0 sm:px-4 sm:text-sm">
             <span className="font-semibold text-zinc-500">Last</span>
@@ -405,7 +406,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {isFinishedLive ? (
         <div
           className="flex shrink-0 flex-nowrap items-stretch gap-2 overflow-x-auto rounded-lg border border-white/10 bg-black/30 px-2 py-1.5 [scrollbar-width:thin] sm:gap-3 sm:px-3 sm:py-2"
-          aria-label="Game results summary"
+          aria-label={gamePackCopy("components__arcade__bingo__ArcadeBingoScreen", "game_results_summary")}
         >
           <span className="flex h-[2rem] max-h-[2rem] min-w-[5rem] flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-2 py-0 text-[10px] leading-tight text-zinc-400 sm:h-[2.25rem] sm:max-h-[2.25rem] sm:min-w-0 sm:text-xs">
             <span className="font-semibold text-zinc-500">Last</span>

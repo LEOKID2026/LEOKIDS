@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 /** @typedef {'easy'|'medium'|'hard'} DifficultyId */
 
 /**
@@ -66,7 +67,7 @@ export const DIFFICULTIES = {
   },
   medium: {
     id: "medium",
-    label: "Medium",
+    label: gamePackCopy("components__educational-games__leo-supermarket__leo-supermarket-data", "medium"),
     customerCount: CUSTOMERS_PER_LEVEL,
     maxPrice: 20,
     baseProductCount: 2,

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "medium": "Medium",
+    "p_price": "p.price"
+  }
+}

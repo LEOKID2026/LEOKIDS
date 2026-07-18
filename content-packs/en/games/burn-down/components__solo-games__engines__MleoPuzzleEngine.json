@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "threshold_getcoords_touchstart_index_1": "threshold && getCoords(touchStart.index)[1]",
+    "threshold_getcoords_touchstart_index_0": "threshold && getCoords(touchStart.index)[0]",
+    "candy": "candy"
+  }
+}

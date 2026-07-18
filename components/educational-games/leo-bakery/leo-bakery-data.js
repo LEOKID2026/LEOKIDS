@@ -1,6 +1,7 @@
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
 /** @typedef {'build' | 'findTrays' | 'findPerTray' | 'findTotal'} BakeryMode */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { PRODUCTION_MIN_POOL } from "../../../lib/educational-games/educational-task-picker.js";
 import {
   pickSessionFromBands,

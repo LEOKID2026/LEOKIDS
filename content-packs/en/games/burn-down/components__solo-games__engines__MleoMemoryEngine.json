@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "try_again": "Try again",
+    "setflipped_delay_const_totalcards_cards_length_const_ismobileviewport_ty": "setFlipped([]), delay);\n        });\n      }\n    }\n  }\n\n  const totalCards = cards.length;\n  const isMobileViewport =\n    typeof window !== \"undefined\" && window.matchMedia(\"(max-width: 1023px)\").matches;\n  const isMobile = boardSize.w > 0 ? boardSize.w",
+    "void_onpregameuichange_active_boolean_void_deckbuilder_paircount_number_": "void,\n *   onPreGameUiChange?: (active: boolean) => void,\n *   deckBuilder?: (pairCount: number) => Promise",
+    "go_back_to_the_card_shop_and_make_sure_cards_are_available": "Go back to the card shop and make sure cards are available",
+    "initgamewithdifficulty_difficulty": "initGameWithDifficulty(difficulty)}\n                />",
+    "not_enough_shop_cards_for_memory": "Not enough shop cards for Memory",
+    "loading_cards_from_the_shop": "Loading cards from the shop…"
+  }
+}

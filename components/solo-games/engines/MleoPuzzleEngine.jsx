@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState } from "react";
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
 import SoloGameEndInterstitialOverlay from "../SoloGameEndInterstitialOverlay.jsx";
@@ -356,7 +357,7 @@ export default function MleoPuzzleEngine({
                 >
                   <img
                     src={`/images/candy/${shape}`}
-                    alt="candy"
+                    alt={gamePackCopy("components__solo-games__engines__MleoPuzzleEngine", gamePackCopy("components__solo-games__engines__MleoPuzzleEngine", "candy"))}
                     className="h-auto w-full object-contain"
                     draggable={false}
                   />

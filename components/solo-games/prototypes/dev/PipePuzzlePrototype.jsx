@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useMemo, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -147,16 +148,14 @@ export default function PipePuzzlePrototype() {
 
   return (
     <DevPrototypeShell
-      title="Water Pipes"
-      subtitle="Prototype · tap to rotate · check flow"
+      title={gamePackCopy("components__solo-games__prototypes__dev__PipePuzzlePrototype", "water_pipes")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__PipePuzzlePrototype", "prototype_tap_to_rotate_check_flow")}
       headerExtra={
         <button
           type="button"
           onClick={resetPuzzle}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
-        >
-          Reset
-        </button>
+        >{gamePackCopy("components__solo-games__prototypes__dev__PipePuzzlePrototype", "reset")}</button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-3 overflow-auto p-3 sm:p-4">
@@ -223,9 +222,7 @@ export default function PipePuzzlePrototype() {
           type="button"
           onClick={checkWater}
           className="min-h-[48px] rounded-xl bg-sky-500 px-8 py-2.5 text-base font-bold text-white shadow-lg active:scale-[0.98]"
-        >
-          Check water 💧
-        </button>
+        >{gamePackCopy("components__solo-games__prototypes__dev__PipePuzzlePrototype", "check_water")}</button>
 
         {status ? (
           <p

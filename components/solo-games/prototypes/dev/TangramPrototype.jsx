@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -8,7 +9,7 @@ import DevPrototypeShell from "./DevPrototypeShell.jsx";
 const INITIAL_PIECES = /** @type {Piece[]} */ ([
   {
     id: "tri1",
-    name: "Large triangle",
+    name: gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "large_triangle"),
     color: "#f87171",
     w: 90,
     h: 90,
@@ -19,7 +20,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "tri2",
-    name: "Medium triangle",
+    name: gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "medium_triangle"),
     color: "#60a5fa",
     w: 64,
     h: 64,
@@ -30,7 +31,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "tri3",
-    name: "Small triangle",
+    name: gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "small_triangle"),
     color: "#4ade80",
     w: 46,
     h: 46,
@@ -41,7 +42,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "sq",
-    name: "Square",
+    name: gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "square"),
     color: "#fbbf24",
     w: 46,
     h: 46,
@@ -52,7 +53,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "para",
-    name: "Parallelogram",
+    name: gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "parallelogram"),
     color: "#c084fc",
     w: 70,
     h: 40,
@@ -63,7 +64,7 @@ const INITIAL_PIECES = /** @type {Piece[]} */ ([
   },
   {
     id: "tri4",
-    name: "Triangle 2",
+    name: gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "triangle_2"),
     color: "#fb923c",
     w: 46,
     h: 46,
@@ -138,8 +139,8 @@ export default function TangramPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Tangram"
-      subtitle="Prototype · drag pieces · double-tap to rotate"
+      title={gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "tangram")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__TangramPrototype", "prototype_drag_pieces_double_tap_to_rotate")}
       headerExtra={
         <button
           type="button"

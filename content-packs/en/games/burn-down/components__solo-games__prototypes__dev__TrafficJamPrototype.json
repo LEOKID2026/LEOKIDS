@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "traffic_jam": "Traffic Jam",
+    "prototype_drag_cars_along_their_axis_free_the_red_one": "Prototype · drag cars along their axis · free the red one",
+    "size_return_false_if_nr": "SIZE) return false;\r\n    if (nr",
+    "size_return_false_if_nc": "SIZE) return false;\r\n    if (nc",
+    "you_did_it_red_car_is_out": "You did it! Red car is out 🎉",
+    "reset": "Reset"
+  }
+}

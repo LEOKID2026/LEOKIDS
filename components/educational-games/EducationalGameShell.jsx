@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
+import { useGameUiDisplay } from "../../lib/games/game-locale-context.jsx";
+import { useDisplayGame } from "../../hooks/games/useDisplayGame.js";
 import Head from "next/head";
 import Link from "next/link";
 import { findEducationalGame } from "../../lib/educational-games/educational-game-registry.js";
@@ -54,6 +57,8 @@ const PLAY_SHELL =
  */
 export default function EducationalGameShell({ gameKey }) {
   const game = useMemo(() => findEducationalGame(gameKey), [gameKey]);
+  const ui = useGameUiDisplay(gameKey);
+  const displayGame = useDisplayGame(gameKey, game);
   const Engine = ENGINE_MAP[gameKey];
   const { SG, pageBgStyle } = useSoloGameShellUi();
 
@@ -113,7 +118,7 @@ export default function EducationalGameShell({ gameKey }) {
   if (!game || !Engine) {
     return (
       <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
-        <p>Game not found</p>
+        <p>{gamePackCopy("components__educational-games__EducationalGameShell", "game_not_found")}</p>
       </div>
     );
   }
@@ -122,7 +127,7 @@ export default function EducationalGameShell({ gameKey }) {
     <GameAccessGuard gameKey={gameKey}>
       <>
         <Head>
-          <title>{game.titleHe} - Educational Games</title>
+          <title>{ui.title} - Educational Games</title>
         </Head>
         <div
           className={
@@ -151,10 +156,8 @@ export default function EducationalGameShell({ gameKey }) {
                   ? SG.navLink
                   : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300"
               }
-            >
-              Back
-            </Link>
-            <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>{game.titleHe}</h1>
+            >{gamePackCopy("components__educational-games__EducationalGameShell", "back")}</Link>
+            <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>{ui.title}</h1>
             <Link
               href="/student/home"
               className={
@@ -162,16 +165,14 @@ export default function EducationalGameShell({ gameKey }) {
                   ? SG.navLink
                   : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300"
               }
-            >
-              Home
-            </Link>
+            >{gamePackCopy("components__educational-games__EducationalGameShell", "home")}</Link>
           </header>
           ) : null}
 
           <main className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
             {phase === "entry" ? (
               <EducationalGameEntryScreen
-                game={game}
+                game={displayGame}
                 difficulty={difficulty}
                 setDifficulty={setDifficulty}
                 onStart={handleStart}
@@ -206,7 +207,7 @@ export default function EducationalGameShell({ gameKey }) {
                 subtitleHe={finishData.subtitleHe}
                 statsLines={finishData.statsLines}
                 gamesHubHref="/student/educational-games"
-                gamesHubLabel="Back to educational games"
+                gamesHubLabel={gamePackCopy("components__educational-games__EducationalGameShell", "back_to_educational_games")}
               />
             ) : null}
           </main>

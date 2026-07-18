@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -632,7 +633,7 @@ export default function LeoMinersGame({
         setGiftToastWithTTL(
           resp.coinsGranted
             ? `Redeemed! +${resp.coinsGranted} Leo coins`
-            : "Points redeemed successfully."
+            : gamePackCopy("components__leo-miners__LeoMinersGame", "points_redeemed_successfully")
         );
       } else {
         setGiftToastWithTTL(resp?.message || resp?.error || "Can't redeem right now.");
@@ -1531,7 +1532,7 @@ function draw(){
       if (!cell) {
         const pr = pillRect(l,k);
         const canAfford = (s.gold ?? 0) >= (s.spawnCost ?? 0) && countMiners(s) < MAX_MINERS;
-        drawPill(ctx, pr.x, pr.y, pr.w, pr.h, "Add", canAfford);
+        drawPill(ctx, pr.x, pr.y, pr.w, pr.h, gamePackCopy("components__leo-miners__LeoMinersGame", "add"), canAfford);
       }
     }
     drawRock(ctx, rockRect(l), s.lanes[l].rock);
@@ -2441,20 +2442,20 @@ function claimCoinsToMining() {
 const [hudModal, setHudModal] = useState(null);
 function getHudModalTitle(k){
   switch(k){
-    case 'coins': return 'Coins';
+    case gamePackCopy("components__leo-miners__LeoMinersGame", gamePackCopy("components__leo-miners__LeoMinersGame", gamePackCopy("components__leo-miners__LeoMinersGame", "coins"))): return 'Coins';
     case 'dps': return 'Break power multiplier';
     case 'gold': return 'Gold multiplier';
     case 'spawn': return 'New dog level';
     case 'lvCounter': return 'New dog level counter';
     case 'gifts': return 'Gift stages';
-    case 'giftRing': return 'Gift timer';
+    case 'giftRing': return gamePackCopy("components__leo-miners__LeoMinersGame", "gift_timer");
     case 'dogRing': return 'Auto dog';
     default: return 'Info';
   }
 }
 function getHudModalText(k){
   switch(k){
-    case 'coins':
+    case gamePackCopy("components__leo-miners__LeoMinersGame", gamePackCopy("components__leo-miners__LeoMinersGame", gamePackCopy("components__leo-miners__LeoMinersGame", "coins"))):
       return 'Your total coins. Breaking rocks adds coins; bonuses: 🎁 regular gift (10%), ad (50%), and diamonds with big multipliers.';
     case 'dps':
       return '🪓 Break power multiplier increases how fast the rock loses HP by 10% per upgrade.';
@@ -2555,9 +2556,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             <div className="absolute left-2 top-0 flex gap-2 pointer-events-auto">
               <button
                onClick={backSafe}
-                aria-label="Back"
+                aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "back")}
                 className="h-10 w-10 rounded-xl bg-black/40 hover:bg-black/60 text-white grid place-items-center shadow"
-                title="Back"
+                title={gamePackCopy("components__leo-miners__LeoMinersGame", "back")}
               >
                 ←
               </button>
@@ -2575,9 +2576,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                     document.exitFullscreen?.().catch(()=>{});
                   }
                 }}
-                aria-label="Fullscreen"
+                aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "fullscreen")}
                 className="h-10 px-3 rounded-xl bg-black/40 hover:bg-black/60 text-white flex items-center gap-2 shadow"
-                title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
+                title={isFullscreen ? "Exit fullscreen" : gamePackCopy("components__leo-miners__LeoMinersGame", "fullscreen")}
               >
                 <span className="text-base">⤢</span>
                 <span className="text-xs opacity-80">{isFullscreen ? "Exit" : "Full"}</span>
@@ -2585,9 +2586,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
               <button
                 onClick={() => { try { playMinersClick(); } catch {}; setMenuOpen(true); }}
-                aria-label="Menu"
+                aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "menu")}
                 className="h-10 w-10 rounded-xl bg-black/40 hover:bg-black/60 text-white grid place-items-center shadow"
-                title="Menu"
+                title={gamePackCopy("components__leo-miners__LeoMinersGame", "menu")}
               >
                 ≡
               </button>
@@ -2617,7 +2618,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         <button
           onClick={() => setMenuOpen(false)}
           className="h-9 w-9 rounded-lg bg-white/10 hover:bg-white/20 grid place-items-center"
-          title="Close"
+          title={gamePackCopy("components__leo-miners__LeoMinersGame", "close")}
         >
           ✕
         </button>
@@ -2631,7 +2632,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
 
       <div className="mt-4 text-xs opacity-70" dir="ltr">
-        <p>Leo the Miner - HUD version</p>
+        <p>{gamePackCopy("components__leo-miners__LeoMinersGame", "leo_the_miner_hud_version")}</p>
       </div>
     </div>
   </div>
@@ -2676,9 +2677,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               <button
                 onClick={() => { setShowAdModal(false); setAdVideoEnded(false); }}
                 className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900"
-              >
-                Close
-              </button>
+              >{gamePackCopy("components__leo-miners__LeoMinersGame", "close")}</button>
 
               <button
                 onClick={() => {
@@ -2743,7 +2742,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
     <button
       onClick={() => setShowResetConfirm(true)}
       className="px-3 py-2 rounded-xl bg-rose-500 hover:bg-rose-400 ring-2 ring-rose-300 text-white font-extrabold text-xs shadow-md active:scale-95"
-      title="Reset all progress"
+      title={gamePackCopy("components__leo-miners__LeoMinersGame", "reset_all_progress")}
     >
       Reset
     </button>
@@ -2778,7 +2777,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         }}
         className="max-w-[140px] text-[11px] font-bold rounded-lg border border-slate-500 bg-slate-900/90 text-amber-200 px-2 py-1 shadow-md"
       >
-        <option value={0}>Default</option>
+        <option value={0}>{gamePackCopy("components__leo-miners__LeoMinersGame", "default")}</option>
         {Array.from({ length: DEV_BG_VARIANT_COUNT }, (_, i) => i + 1).map((i) => (
           <option key={i} value={i}>
             BG {i}
@@ -2809,7 +2808,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         }}
         className="max-w-[120px] text-[11px] font-bold rounded-lg border border-slate-500 bg-slate-900/90 text-emerald-200 px-2 py-1 shadow-md"
       >
-        <option value={0}>Default</option>
+        <option value={0}>{gamePackCopy("components__leo-miners__LeoMinersGame", "default")}</option>
         {Array.from({ length: DEV_ROCK_VARIANT_COUNT }, (_, i) => i + 1).map((i) => (
           <option key={i} value={i}>
             Rock {i}
@@ -2859,9 +2858,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
           <div className="flex gap-2 flex-wrap justify-center items-center text-sm">
             {/* Coins + status dot + ad ring */}
             <button
-              onClick={()=>setHudModal('coins')}
+              onClick={()=>setHudModal(gamePackCopy("components__leo-miners__LeoMinersGame", gamePackCopy("components__leo-miners__LeoMinersGame", gamePackCopy("components__leo-miners__LeoMinersGame", "coins"))))}
               className="px-2 py-1 rounded-lg flex items-center gap-2 hover:bg-white/10"
-              aria-label="Coins info"
+              aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "coins_info")}
             >
 
 {/* ONLINE/OFFLINE dot - placed to the LEFT of the coin */}
@@ -2906,8 +2905,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             <button
               onClick={() => setShowDiamondInfo(true)}
               className="relative px-2 py-1 rounded-lg flex items-center gap-1 active:scale-95 transition hover:bg-white/10"
-              aria-label="Diamonds info"
-              title="Tap to open diamond chest"
+              aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "diamonds_info")}
+              title={gamePackCopy("components__leo-miners__LeoMinersGame", "tap_to_open_diamond_chest")}
             >
               {diamondsReady && (
                 <>
@@ -2947,9 +2946,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 title={
                   mounted
                     ? `⏳ Gifts every ${(_getPhaseInfo(stateRef.current, Date.now()).intervalSec)} seconds`
-                    : "Gift timer"
+                    : gamePackCopy("components__leo-miners__LeoMinersGame", "gift_timer")
                 }
-                aria-label="Gift timer info"
+                aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "gift_timer_info")}
               >
                 <div className="absolute inset-0 rounded-full" style={ringBg(giftProgress)} />
                 <div className="text-[22px] font-extrabold leading-none">🎁</div>
@@ -2960,7 +2959,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 onClick={()=>setHudModal('dogRing')}
                 className="relative w-8 h-8 rounded-full grid place-items-center hover:opacity-90 active:scale-95 transition"
                 title={`Auto dog every ${Math.round(DOG_INTERVAL_SEC/60)} minutes (bank up to ${DOG_BANK_CAP})`}
-                aria-label="Auto dog info"
+                aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "auto_dog_info")}
               >
                 <div className="absolute inset-0 rounded-full" style={ringBg(dogProgress)} />
                 <div className="text-[22px] font-extrabold leading-none">🦊</div>
@@ -2971,7 +2970,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   onClick={() => setShowGainModal(true)}
   className="relative w-8 h-8 rounded-full grid place-items-center hover:opacity-90 active:scale-95 transition"
   title={`Watch bonus ${addRemainMs > 0 ? `in ${addRemainLabel}` : "Ready"}`}
-  aria-label="Watch bonus info"
+  aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "watch_bonus_info")}
 >
   {/* */}
   <div className="absolute inset-0 rounded-full" style={ringBg(addProgress)} />
@@ -3013,7 +3012,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
 
       <img
         src={IMG_SPAWN_ICON}
-        alt="Dog"
+        alt={gamePackCopy("components__leo-miners__LeoMinersGame", "dog")}
         className="pointer-events-none object-cover block"
         style={{
           width: "100%",
@@ -3093,8 +3092,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
   onClick={() => setShowPointsModal(true)}
   className={`relative inline-flex items-center gap-2 px-2 py-1 rounded-md transition
     ${(Number(mining?.balance || 0) > 0) ? "hover:bg-white/10 active:scale-95 cursor-pointer" : "opacity-90"}`}
-  aria-label="Points details"
-  title="Mining points details"
+  aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "points_details")}
+  title={gamePackCopy("components__leo-miners__LeoMinersGame", "mining_points_details")}
 >
   <div className="relative w-6 h-6 rounded-full grid place-items-center">
     {(Number(mining?.balance || 0) >= 1) && (
@@ -3140,7 +3139,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
       style={{ animation: "btnPulse 1.8s ease-in-out infinite" }}
     />
   )}
-  {claiming ? "Redeeming…" : "Redeem"}
+  {claiming ? "Redeeming…" : gamePackCopy("components__leo-miners__LeoMinersGame", "redeem_2")}
 </button>
 
             </div>
@@ -3197,7 +3196,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               type="button"
               onClick={grantGift}
               className="pointer-events-auto touch-manipulation min-w-[11rem] min-h-[3rem] px-6 py-3 rounded-2xl font-extrabold text-black shadow-2xl bg-gradient-to-br from-yellow-300 to-amber-400 border border-yellow-200 hover:from-yellow-200 hover:to-amber-300 active:scale-95 relative"
-              aria-label="Collect gift"
+              aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "collect_gift")}
             >
               🎁 Collect gift
               <span aria-hidden className="pointer-events-none absolute -inset-3 rounded-3xl blur-3xl bg-yellow-400/30" />
@@ -3277,47 +3276,47 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               <section>
                 <h3 className="font-bold text-slate-900 mb-1">Goal</h3>
                 <p>
-                  Merge miner dogs, break rocks, and earn <b>coins</b>. Coins are used for upgrades and buying more dogs.
-                  Some activity also earns <b>mining points</b> (see below).
+                  Merge miner dogs, break rocks, and earn <b>{gamePackCopy("components__leo-miners__LeoMinersGame", "coins")}</b>. Coins are used for upgrades and buying more dogs.
+                  Some activity also earns <b>{gamePackCopy("components__leo-miners__LeoMinersGame", "mining_points")}</b> (see below).
                 </p>
               </section>
 
               <section>
                 <h3 className="font-bold text-slate-900 mb-1">Board & merge</h3>
                 <ol className="list-decimal mr-5 space-y-1">
-                  <li>Tap <b>Add</b> on an empty slot to add a dog. The price goes up over time.</li>
-                  <li>Drag two dogs of the same level together to merge into a higher level.</li>
+                  <li>Tap <b>Add</b>{gamePackCopy("components__leo-miners__LeoMinersGame", "on_an_empty_slot_to_add_a_dog_the_price_goes_up_over_time")}</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "drag_two_dogs_of_the_same_level_together_to_merge_into_a_higher_level")}</li>
                   <li>3 lanes, 4 dogs per lane (max 12 dogs).</li>
-                  <li>Each dog adds damage per second to its lane. When a rock breaks you get coins.</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "each_dog_adds_damage_per_second_to_its_lane_when_a_rock_breaks_you_get_c")}</li>
                 </ol>
               </section>
 
               <section>
                 <h3 className="font-bold text-slate-900 mb-1">Upgrades & bonuses</h3>
                 <ul className="list-disc mr-5 space-y-1">
-                  <li><b>Break power</b> - break rocks faster.</li>
-                  <li><b>Gold</b> - more coins from every rock (+10% per upgrade).</li>
-                  <li>Gifts, auto dogs, and other bonuses show up from time to time.</li>
-                  <li>Collect diamonds and open special chests.</li>
+                  <li><b>{gamePackCopy("components__leo-miners__LeoMinersGame", "break_power")}</b> - break rocks faster.</li>
+                  <li><b>{gamePackCopy("components__leo-miners__LeoMinersGame", "gold")}</b> - more coins from every rock (+10% per upgrade).</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "gifts_auto_dogs_and_other_bonuses_show_up_from_time_to_time")}</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "collect_diamonds_and_open_special_chests")}</li>
                 </ul>
               </section>
 
               <section>
                 <h3 className="font-bold text-slate-900 mb-1">Mining points</h3>
                 <ul className="list-disc mr-5 space-y-1">
-                  <li>Only breaking rocks can earn mining points.</li>
-                  <li>There is a daily cap and a gradual slowdown as you near it.</li>
-                  <li>Offline progress is limited and at reduced efficiency.</li>
-                  <li><b>Redeem:</b> earned points are redeemed for Leo coins via the server.</li>
-                  <li>Points are for fun only - they have no guaranteed cash value.</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "only_breaking_rocks_can_earn_mining_points")}</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "there_is_a_daily_cap_and_a_gradual_slowdown_as_you_near_it")}</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "offline_progress_is_limited_and_at_reduced_efficiency")}</li>
+                  <li><b>{gamePackCopy("components__leo-miners__LeoMinersGame", "redeem")}</b>{gamePackCopy("components__leo-miners__LeoMinersGame", "earned_points_are_redeemed_for_leo_coins_via_the_server")}</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "points_are_for_fun_only_they_have_no_guaranteed_cash_value")}</li>
                 </ul>
               </section>
 
               <section>
                 <h3 className="font-bold text-slate-900 mb-1">Good to know</h3>
                 <ul className="list-disc mr-5 space-y-1">
-                  <li>Game balance, gifts, and daily limits may change for fairness and upkeep.</li>
-                  <li>This is a fun kids game - not financial advice.</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "game_balance_gifts_and_daily_limits_may_change_for_fairness_and_upkeep")}</li>
+                  <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "this_is_a_fun_kids_game_not_financial_advice")}</li>
                 </ul>
               </section>
             </div>
@@ -3326,9 +3325,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               <button
                 onClick={() => setShowHowTo(false)}
                 className="px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
-              >
-                Close
-              </button>
+              >{gamePackCopy("components__leo-miners__LeoMinersGame", "close")}</button>
             </div>
           </div>
         </div>
@@ -3347,9 +3344,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
               <button
                 onClick={() => setHudModal(null)}
                 className="px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 font-extrabold"
-              >
-                Close
-              </button>
+              >{gamePackCopy("components__leo-miners__LeoMinersGame", "close")}</button>
             </div>
           </div>
         </div>
@@ -3364,8 +3359,8 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         <button
           onClick={() => setShowGainModal(false)}
           className="px-2 py-1 rounded hover:bg-white/10"
-          aria-label="Close"
-          title="Close"
+          aria-label={gamePackCopy("components__leo-miners__LeoMinersGame", "close")}
+          title={gamePackCopy("components__leo-miners__LeoMinersGame", "close")}
         >
           ✕
         </button>
@@ -3393,9 +3388,9 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         </div>
 
         <ul className="list-disc list-inside space-y-1 text-white/80">
-          <li>Complete the required action to activate the bonus.</li>
-          <li>When ready, tap Watch to claim the reward.</li>
-          <li>If it's off - wait until the conditions are met.</li>
+          <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "complete_the_required_action_to_activate_the_bonus")}</li>
+          <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "when_ready_tap_watch_to_claim_the_reward")}</li>
+          <li>{gamePackCopy("components__leo-miners__LeoMinersGame", "if_it_s_off_wait_until_the_conditions_are_met")}</li>
         </ul>
       </div>
 
@@ -3403,9 +3398,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
         <button
           onClick={() => setShowGainModal(false)}
           className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-white/10"
-        >
-          Close
-        </button>
+        >{gamePackCopy("components__leo-miners__LeoMinersGame", "close")}</button>
 
 <button
   onClick={() => {
@@ -3466,16 +3459,14 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
             </div>
 
             <p className="text-xs text-slate-600 mb-3">
-              Points only accrue from breaking rocks. Tap <b>Redeem</b> to convert them to Leo coins via the server.
+              Points only accrue from breaking rocks. Tap <b>{gamePackCopy("components__leo-miners__LeoMinersGame", "redeem_2")}</b> to convert them to Leo coins via the server.
             </p>
 
             <div className="flex justify-between gap-2">
               <button
                 onClick={() => setShowPointsModal(false)}
                 className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900 font-extrabold"
-              >
-                Close
-              </button>
+              >{gamePackCopy("components__leo-miners__LeoMinersGame", "close")}</button>
               <button
                 onClick={() => { setShowPointsModal(false); claimBalanceToVaultDemo(); }}
                 disabled={claiming || (Number(mining?.balance || 0) < 1)}
@@ -3486,7 +3477,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 }`}
                 title={(Number(mining?.balance || 0) >= 1) ? "Redeem all points" : "Need at least one point"}
               >
-                {claiming ? "Redeeming…" : "Redeem"}
+                {claiming ? "Redeeming…" : gamePackCopy("components__leo-miners__LeoMinersGame", "redeem_2")}
               </button>
             </div>
           </div>
@@ -3537,9 +3528,7 @@ const BTN_DIS  = "opacity-60 cursor-not-allowed";
                 <button
                   onClick={() => setShowDiamondInfo(false)}
                   className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-900 font-extrabold"
-                >
-                  Close
-                </button>
+                >{gamePackCopy("components__leo-miners__LeoMinersGame", "close")}</button>
                 <button
                   onClick={() => { openDiamondChestIfReady(); }}
                   disabled={!ready}

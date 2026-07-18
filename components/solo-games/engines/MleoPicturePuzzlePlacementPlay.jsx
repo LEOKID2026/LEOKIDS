@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
@@ -508,7 +509,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
         }`}
 
-        aria-label="Empty slot"
+        aria-label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "empty_slot")}
 
       />
 
@@ -670,7 +671,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={trayCols}
 
-              label="Top tray 🧩"
+              label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "top_tray")}
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -712,7 +713,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={2}
 
-              label="Tray 🧩"
+              label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "tray")}
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -834,7 +835,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={trayCols}
 
-              label="Bottom tray 🧩"
+              label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "bottom_tray")}
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -874,7 +875,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={2}
 
-              label="Tray 🧩"
+              label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "tray")}
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -910,7 +911,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
               trayCols={trayCols}
 
-              label="Tray 🧩"
+              label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "tray")}
 
               onTrayPieceClick={onSelectTrayPiece}
 
@@ -942,7 +943,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
                 style={{ touchAction: "manipulation" }}
 
-                aria-label="Close picture"
+                aria-label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzlePlacementPlay", "close_picture")}
 
               >
 

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "seats": "Seats",
+    "live_game_stats": "Live game stats",
+    "game_results_summary": "Game results summary"
+  }
+}

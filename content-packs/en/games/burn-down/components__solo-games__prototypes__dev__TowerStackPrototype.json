@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "block_tower": "Block Tower",
+    "prototype_tap_to_place_precision_taller_tower": "Prototype · tap to place · precision = taller tower",
+    "place_block": "Place block",
+    "tap_when_the_block_is_over_the_tower_small_overlap_narrower_block": "Tap when the block is over the tower · small overlap = narrower block",
+    "setflash_280_gameover_return": "setFlash(\"\"), 280);\n  }, [gameOver]);\n\n  return (",
+    "tap_to_play_again": "Tap to play again",
+    "game_over": "Game Over",
+    "reset": "Reset"
+  }
+}

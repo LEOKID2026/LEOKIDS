@@ -1,0 +1,9 @@
+{
+  "gameId": "chess",
+  "title": "Chess",
+  "blurb": "Play with friends in the arcade",
+  "help": {
+    "howToPlay": "Follow the on-screen instructions for this game.",
+    "tip": "Take turns and have fun."
+  }
+}

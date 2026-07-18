@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useSoloGameKeyboard } from "./solo-v2-ui.jsx";
 
 function getAdjacentIndices(index, gridSize) {
@@ -120,7 +121,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                 isEasy ? "ring-2 ring-sky-400/50" : ""
               }`}
             >
-              <p className="mb-1 text-xs font-bold text-yellow-200 sm:text-sm">Target picture 🐶</p>
+              <p className="mb-1 text-xs font-bold text-yellow-200 sm:text-sm">{gamePackCopy("components__solo-games__engines__MleoPicturePuzzleSlidingPlay", "target_picture")}</p>
               <img
                 src={puzzleImage}
                 alt=""
@@ -163,7 +164,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                           ? "border-sky-400 bg-sky-950/50 ring-2 ring-sky-400/40"
                           : "border-white/30 bg-white/8"
                       } ${tileMinClass}`}
-                      aria-label="Empty space"
+                      aria-label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzleSlidingPlay", "empty_space")}
                     />
                   );
                 }
@@ -195,7 +196,7 @@ export default function MleoPicturePuzzleSlidingPlay({
                 alt=""
                 className="mx-auto max-h-[min(50vh,280px)] max-w-[min(85vw,280px)] rounded-xl object-contain ring-4 ring-sky-400"
               />
-              <p className="mt-2 text-sm font-bold text-sky-200">This is how the picture should look!</p>
+              <p className="mt-2 text-sm font-bold text-sky-200">{gamePackCopy("components__solo-games__engines__MleoPicturePuzzleSlidingPlay", "this_is_how_the_picture_should_look")}</p>
             </div>
           </div>
         ) : null}

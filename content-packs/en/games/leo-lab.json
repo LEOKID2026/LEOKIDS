@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-lab",
+  "title": "Leo's Experiment Lab",
+  "blurb": "A game about experiments, materials, and cause and effect",
+  "help": {
+    "howToPlay": "Read the experiment task, choose items from the shelf (drag or tap), place them on the lab table, and tap \"Check Experiment\".",
+    "scoring": "A successful experiment +30, success on the first try +10, streak of 3 correct +15, streak of 5 +30. No points are deducted for mistakes.",
+    "rewards": "Coins are awarded based on how many experiments you succeeded at, difficulty level, accuracy, streaks, and completing 20 experiments - only if you succeeded at least once.",
+    "tip": "Think about what's needed to complete the task - don't rely on hints on the item cards."
+  },
+  "accessibility": {
+    "title": "Leo's Experiment Lab"
+  }
+}

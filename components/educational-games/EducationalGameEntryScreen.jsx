@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import {
   EDUCATIONAL_DIFFICULTIES,
   difficultyLabelHe,
@@ -52,7 +53,7 @@ export default function EducationalGameEntryScreen({
 
         {game.hasDifficultyPicker ? (
           <div className="space-y-2">
-            <p className={SG.diffLabel}>Choose a difficulty</p>
+            <p className={SG.diffLabel}>{gamePackCopy("components__educational-games__EducationalGameEntryScreen", "choose_a_difficulty")}</p>
             <div className="flex flex-wrap justify-center gap-2">
               {EDUCATIONAL_DIFFICULTIES.map((id) => {
                 const selected = difficulty === id;
@@ -78,11 +79,11 @@ export default function EducationalGameEntryScreen({
         {error ? <p className={SG.errorBox}>{error}</p> : null}
 
         <SoloGameNavButtons
-          primaryLabel="Start game"
+          primaryLabel={gamePackCopy("components__educational-games__EducationalGameEntryScreen", "start_game")}
           onPrimary={onStart}
           primaryDisabled={busy}
           primaryBusy={busy}
-          primaryBusyLabel="Loading…"
+          primaryBusyLabel={gamePackCopy("components__educational-games__EducationalGameEntryScreen", "loading")}
         />
       </div>
     </div>

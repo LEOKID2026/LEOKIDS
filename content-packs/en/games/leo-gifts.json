@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-gifts",
+  "title": "Leo's Candy Shop",
+  "blurb": "Equal division, remainders, and quick math",
+  "help": {
+    "howToPlay": "Divide gifts among the children - choose how many each child gets and how many are left for Leo, then tap \"Check Division\".",
+    "scoring": "Correct answer +30, time bonus up to +20, streak of 5 correct +25. No points are deducted for mistakes.",
+    "rewards": "Coins are awarded based on how many questions you answered correctly, accuracy, streaks, and difficulty level - even if the game ended due to mistakes.",
+    "tip": "Check that you've divided everything and that Leo isn't left with too many - you can give each child more."
+  },
+  "accessibility": {
+    "title": "Leo's Candy Shop"
+  }
+}

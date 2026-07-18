@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -268,7 +269,7 @@ export default function RecyclingFactoryGame({
       });
       addScore(SCORE.miss);
       setStreak(0);
-      const missText = "The item went past the conveyor - try to be faster!";
+      const missText = gamePackCopy("components__educational-games__recycling-factory__RecyclingFactoryGame", "the_item_went_past_the_conveyor_try_to_be_faster");
       setFeedback({ text: missText, fact: "", type: "bad" });
       onWrong();
       playFeedback(missText);
@@ -316,7 +317,7 @@ export default function RecyclingFactoryGame({
       addScore(bonus);
 
       const showFact = Math.random() < 0.3;
-      const okText = "Correct! Great job ♻️";
+      const okText = gamePackCopy("components__educational-games__recycling-factory__RecyclingFactoryGame", "correct_great_job");
       const factText = showFact ? pickFactForBin(binId) : "";
       setFeedback({ text: okText, fact: factText, type: "ok" });
       onCorrect();

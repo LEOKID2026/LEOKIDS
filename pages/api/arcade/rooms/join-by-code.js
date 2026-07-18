@@ -1,6 +1,7 @@
 import { requireArcadeStudent } from "../../../../lib/arcade/server/arcade-auth";
 import { joinArcadeRoomByCode } from "../../../../lib/arcade/server/arcade-rooms";
 import { assertArcadePlayAccess } from "../../../../lib/arcade/club/arcade-access.server.js";
+import { arcadeAccessErrorPayload } from "../../../../lib/arcade/club/arcade-access-error-payload.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -27,12 +28,7 @@ export default async function handler(req, res) {
       { roomAction: "join_by_code" }
     );
     if (!access.ok) {
-      return res.status(access.status || 403).json({
-        ok: false,
-        error: access.message,
-        code: access.code,
-        category: access.category,
-      });
+      return res.status(access.status || 403).json(arcadeAccessErrorPayload(access));
     }
   }
 

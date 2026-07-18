@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "large_triangle": "Large triangle",
+    "medium_triangle": "Medium triangle",
+    "small_triangle": "Small triangle",
+    "square": "Square",
+    "parallelogram": "Parallelogram",
+    "triangle_2": "Triangle 2",
+    "tangram": "Tangram",
+    "prototype_drag_pieces_double_tap_to_rotate": "Prototype · drag pieces · double-tap to rotate",
+    "rotatepiece_selected_classname_min_h_44px_rounded_xl_border_2_border_sky": "rotatePiece(selected)}\n            className=\"min-h-[44px] rounded-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 text-sm font-bold text-sky-100\"\n          >\n            ↻ Rotate selected piece",
+    "no_perfect_fit_check_just_drag_feel_and_layout": "No perfect-fit check — just drag feel and layout",
+    "fill_the_target_shape_double_tap_rotate_45": "Fill the target shape · double-tap = rotate 45°",
+    "reset": "Reset",
+    "goal": "Goal"
+  }
+}

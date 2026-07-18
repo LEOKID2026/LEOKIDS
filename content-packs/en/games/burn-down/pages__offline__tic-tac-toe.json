@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Back",
+    "local_badge": "Local",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "Board {size}×{size} • {mode}",
+    "vs_bot": "vs Bot",
+    "two_players": "2 Players",
+    "player_x": "Player X",
+    "player_o": "Player O",
+    "tie": "Tie",
+    "vs_bot_label": "vs Bot",
+    "reset_board": "Reset Board",
+    "reset_score": "Reset Score",
+    "player_won": "{player} won!",
+    "tie_game": "Tie!",
+    "turn": "Turn:"
+  }
+}

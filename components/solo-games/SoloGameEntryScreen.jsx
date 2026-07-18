@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useSoloGameShellUi } from "../../hooks/solo-games/useSoloGameShellUi.js";
 import { SOLO_DIFFICULTY_OPTIONS } from "../../lib/solo-games/solo-game-registry.js";
 import { useSoloOrientationHint } from "../../hooks/solo-games/useSoloOrientationHint.js";
@@ -56,7 +57,7 @@ export default function SoloGameEntryScreen({
 
         {game.hasDifficultyPicker ? (
           <div className="space-y-2">
-            <p className={SG.diffLabel}>Choose difficulty</p>
+            <p className={SG.diffLabel}>{gamePackCopy("components__solo-games__SoloGameEntryScreen", "choose_difficulty")}</p>
             <div className="flex flex-wrap justify-center gap-2">
               {SOLO_DIFFICULTY_OPTIONS.map((opt) => {
                 const selected = difficulty === opt.id;
@@ -81,11 +82,11 @@ export default function SoloGameEntryScreen({
         {error ? <p className={SG.errorBox}>{error}</p> : null}
 
         <SoloGameNavButtons
-          primaryLabel="Start Game"
+          primaryLabel={gamePackCopy("components__solo-games__SoloGameEntryScreen", "start_game")}
           onPrimary={onStart}
           primaryDisabled={busy}
           primaryBusy={busy}
-          primaryBusyLabel="Loading…"
+          primaryBusyLabel={gamePackCopy("components__solo-games__SoloGameEntryScreen", "loading")}
         />
       </div>
     </div>

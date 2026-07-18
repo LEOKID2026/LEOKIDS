@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "Leo's Recycling Factory",
+  "blurb": "Sort trash into the right bins and help protect the environment",
+  "help": {
+    "howToPlay": "Drag or tap an item from the conveyor belt, then choose the correct bin. Sort enough items before you reach the maximum number of mistakes.",
+    "scoring": "Correct sort +10, fast sort +5, streak of 5 correct +20, streak of 10 +50. A mistake or missed item −5 (score never drops below 0).",
+    "rewards": "Coins are awarded based on how many items you sorted correctly, accuracy, streaks, and reaching the goal - even if you didn't finish the whole game.",
+    "tip": "Pay attention to the item type - paper, plastic, glass, metal, or general waste."
+  },
+  "accessibility": {
+    "title": "Leo's Recycling Factory"
+  }
+}

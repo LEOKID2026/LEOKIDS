@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../../lib/games/game-pack-copy.js";
 import { requireArcadeStudent } from "../../../../../lib/arcade/server/arcade-auth";
 import { applyLudoAction } from "../../../../../lib/arcade/server/ludo-game";
 import { getArcadeRoomSnapshot } from "../../../../../lib/arcade/server/arcade-snapshot";
@@ -58,7 +59,7 @@ export default async function handler(req, res) {
     return res.status(500).json({
       ok: false,
       code: "server_error",
-      error: "Ludo server error",
+      error: gamePackCopy("pages__api__arcade__games__ludo__action", "ludo_server_error"),
     });
   }
 }

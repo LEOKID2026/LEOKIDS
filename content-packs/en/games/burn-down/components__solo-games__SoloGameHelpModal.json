@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "close": "Close",
+    "how_to_play_heading": "How to play?",
+    "how_to_play_title": "How to play {title}?",
+    "scoring_heading": "How do you score?",
+    "rewards_heading": "Rewards & diamonds",
+    "tip_heading": "Quick tip",
+    "got_it_lets_play": "Got it, let's play"
+  }
+}

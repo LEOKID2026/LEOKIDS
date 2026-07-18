@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useCheckersSession } from "../../../hooks/arcade/useCheckersSession";
@@ -13,7 +14,7 @@ import {
 } from "../../../lib/arcade/board-orientation";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "Checkers";
+const GAME_TITLE = gamePackCopy("components__arcade__checkers__CheckersScreen", "checkers");
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -80,10 +81,10 @@ function HowToModal({ open, onClose }) {
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm text-zinc-200">
-          <li>Black (left seat in the list) goes first; turns alternate.</li>
-          <li>Move diagonally forward; kings move on all diagonals.</li>
-          <li>Captures are mandatory when available.</li>
-          <li>Multi-jumps with the same piece continue until no more captures.</li>
+          <li>{gamePackCopy("components__arcade__checkers__CheckersScreen", "black_left_seat_in_the_list_goes_first_turns_alternate")}</li>
+          <li>{gamePackCopy("components__arcade__checkers__CheckersScreen", "move_diagonally_forward_kings_move_on_all_diagonals")}</li>
+          <li>{gamePackCopy("components__arcade__checkers__CheckersScreen", "captures_are_mandatory_when_available")}</li>
+          <li>{gamePackCopy("components__arcade__checkers__CheckersScreen", "multi_jumps_with_the_same_piece_continue_until_no_more_captures")}</li>
         </ul>
       </div>
     </div>

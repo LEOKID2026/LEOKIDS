@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { getLearningSupabaseServiceRoleClient } from "../../../../lib/learning-supabase/server";
 import {
   clearStudentSessionCookie,
@@ -85,9 +86,9 @@ export default async function handler(req, res) {
     }
     return res.status(500).json({
       ok: false,
-      error: "Server error",
+      error: gamePackCopy("pages__api__student__leo-miners__state", "server_error"),
       code: "server_error",
-      message: "Server error — try refreshing the page.",
+      message: gamePackCopy("pages__api__student__leo-miners__state", "server_error_try_refreshing_the_page"),
     });
   }
 }

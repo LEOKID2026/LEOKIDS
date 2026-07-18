@@ -1,14 +1,22 @@
 import { useEffect, useRef } from "react";
-import { resolveSoloGameHelp } from "../../lib/solo-games/solo-game-help.js";
+import {
+  useGameHelpContent,
+  useGamePackCopy,
+  useGameUiDisplay,
+} from "../../lib/games/game-locale-context.jsx";
 
 /**
  * @param {{
- *   game: { titleHe: string, help?: object } | null,
+ *   game: { gameKey?: string, id?: string, titleHe?: string } | null,
  *   onClose: () => void,
  * }} props
  */
 export default function SoloGameHelpModal({ game, onClose }) {
   const closeBtnRef = useRef(null);
+  const copy = useGamePackCopy();
+  const gameKey = String(game?.gameKey || game?.id || "").trim();
+  const ui = useGameUiDisplay(gameKey);
+  const help = useGameHelpContent(gameKey);
 
   useEffect(() => {
     if (!game) return undefined;
@@ -20,9 +28,12 @@ export default function SoloGameHelpModal({ game, onClose }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [game, onClose]);
 
-  if (!game) return null;
+  if (!game || !gameKey) return null;
 
-  const help = resolveSoloGameHelp(game);
+  const titleLine = copy("components__solo-games__SoloGameHelpModal", "how_to_play_title").replace(
+    "{title}",
+    ui.title,
+  );
 
   return (
     <div
@@ -42,7 +53,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
           ref={closeBtnRef}
           type="button"
           className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-lg font-bold text-slate-500 transition hover:bg-slate-100 hover:text-slate-800"
-          aria-label="Close"
+          aria-label={copy("components__solo-games__SoloGameHelpModal", "close")}
           onClick={onClose}
         >
           ×
@@ -52,26 +63,40 @@ export default function SoloGameHelpModal({ game, onClose }) {
           id="solo-game-help-title"
           className="mb-4 pr-8 text-lg font-extrabold leading-snug text-slate-900 sm:text-xl"
         >
-          How to play {game.titleHe}?
+          {titleLine}
         </h2>
 
         <div className="space-y-3 text-sm leading-relaxed text-slate-700 sm:text-[15px]">
           <section>
-            <p className="font-bold text-slate-900">🎮 How to play?</p>
+            <p className="font-bold text-slate-900">
+              🎮 {copy("components__solo-games__SoloGameHelpModal", "how_to_play_heading")}
+            </p>
             <p className="mt-1">{help.howToPlay}</p>
           </section>
-          <section>
-            <p className="font-bold text-slate-900">⭐ How do you score?</p>
-            <p className="mt-1">{help.scoring}</p>
-          </section>
-          <section>
-            <p className="font-bold text-slate-900">💎 Rewards & diamonds</p>
-            <p className="mt-1">{help.rewards}</p>
-          </section>
-          <section>
-            <p className="font-bold text-slate-900">💡 Quick tip</p>
-            <p className="mt-1">{help.tip}</p>
-          </section>
+          {help.scoring ? (
+            <section>
+              <p className="font-bold text-slate-900">
+                ⭐ {copy("components__solo-games__SoloGameHelpModal", "scoring_heading")}
+              </p>
+              <p className="mt-1">{help.scoring}</p>
+            </section>
+          ) : null}
+          {help.rewards ? (
+            <section>
+              <p className="font-bold text-slate-900">
+                💎 {copy("components__solo-games__SoloGameHelpModal", "rewards_heading")}
+              </p>
+              <p className="mt-1">{help.rewards}</p>
+            </section>
+          ) : null}
+          {help.tip ? (
+            <section>
+              <p className="font-bold text-slate-900">
+                💡 {copy("components__solo-games__SoloGameHelpModal", "tip_heading")}
+              </p>
+              <p className="mt-1">{help.tip}</p>
+            </section>
+          ) : null}
         </div>
 
         <button
@@ -79,7 +104,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
           className="mt-5 w-full min-h-[44px] rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-sky-700"
           onClick={onClose}
         >
-          Got it, let's play
+          {copy("components__solo-games__SoloGameHelpModal", "got_it_lets_play")}
         </button>
       </div>
     </div>

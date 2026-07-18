@@ -1,0 +1,11 @@
+{
+  "gameId": "puzzle",
+  "title": "Leo's Puzzle",
+  "blurb": "Merge tiles and rack up points before time runs out!",
+  "help": {
+    "howToPlay": "Move tiles on the board to merge matching numbers. The bigger the numbers, the higher the score.",
+    "scoring": "Every merge adds points. The goal is to reach the score target before time runs out.",
+    "rewards": "Winning based on difficulty level grants coins, and a score bonus adds even more.",
+    "tip": "Try to keep a corner free so you have room to move tiles."
+  }
+}

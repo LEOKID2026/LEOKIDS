@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -53,7 +54,7 @@ export default function ArcadeMyRoomPage() {
     <Layout studentTheme={theme} studentShell="home">
       <GameAccessGuard category="online">
         <Head>
-          <title>My Room - Leo Club</title>
+          <title>{gamePackCopy("pages__student__arcade__my-room", "my_room_leo_club")}</title>
         </Head>
         <div className={GH.pageWrap} dir="ltr">
           <div className={`${GH.container} max-w-3xl space-y-4`}>

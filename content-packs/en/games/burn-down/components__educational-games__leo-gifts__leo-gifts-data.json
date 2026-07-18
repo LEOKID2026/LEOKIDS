@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "cfg_maxtotal_total": "cfg.maxTotal || total"
+  }
+}

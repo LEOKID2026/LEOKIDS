@@ -1,4 +1,5 @@
 /** Soft "Locked" watermark for cards not owned by the student. */
+import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 
 export function lockedCardDimClassName(_compact = false) {
   return "";
@@ -31,6 +32,7 @@ const VARIANTS = {
 };
 
 export default function RewardCardLockedStamp({ compact = false, modal = false }) {
+  const copy = useRewardUiCopy();
   const key = modal ? "modal" : compact ? "compact" : "card";
   const variant = VARIANTS[key];
 
@@ -48,7 +50,7 @@ export default function RewardCardLockedStamp({ compact = false, modal = false }
           WebkitTextStroke: WATERMARK_STROKE,
         }}
       >
-        Locked
+        {copy("lockedStamp", "label")}
       </span>
     </div>
   );

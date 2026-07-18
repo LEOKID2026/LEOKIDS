@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "marble_run": "Marble Run",
+    "prototype_pick_a_piece_place_run": "Prototype · pick a piece · place · run",
+    "reset": "Reset",
+    "run": "Run ⚪"
+  }
+}

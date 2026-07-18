@@ -3,16 +3,15 @@ import { flushSync } from "react-dom";
 import Link from "next/link";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { formatCoinAmountHe } from "../../../lib/rewards/rewards-ui.js";
+import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 import RewardCardImage from "./RewardCardImage.jsx";
 
 const OPEN_PATH = "/api/student/rewards/surprise-box/open";
 const OPEN_TIMEOUT_MS = 30_000;
-const OPEN_ERROR_HE = "We couldn't open the box right now. Try again in a moment.";
-const NO_MORE_BOX_HE = "No more boxes to open right now.";
 
 const CARD_THUMB_PLACEHOLDER = "/rewards/cards/placeholders/regular/default.svg";
 
-function SurpriseBoxCardPrizeRow({ card, T }) {
+function SurpriseBoxCardPrizeRow({ card, T, copy }) {
   const imageSrc = card.imageThumbUrl || card.imageUrl || CARD_THUMB_PLACEHOLDER;
 
   return (
@@ -23,10 +22,12 @@ function SurpriseBoxCardPrizeRow({ card, T }) {
           <p className={`text-xs mt-0.5 ${T.tileSub}`}>Rarity: {card.rarityHe}</p>
           {card.wasDuplicate ? (
             <p className="text-xs mt-1 text-amber-700 dark:text-amber-300 line-clamp-2">
-              {card.conversionProgressHe || "You got an extra copy — you can sell duplicates in the shop."}
+              {card.conversionProgressHe || copy("surpriseBox", "duplicateHint")}
             </p>
           ) : (
-            <p className="text-xs mt-1 text-emerald-700 dark:text-emerald-300">New card in your collection!</p>
+            <p className="text-xs mt-1 text-emerald-700 dark:text-emerald-300">
+              {copy("surpriseBox", "newCard")}
+            </p>
           )}
         </div>
         <div className="shrink-0 w-9 aspect-[2/3]" aria-hidden>
@@ -46,6 +47,7 @@ function SurpriseBoxCardPrizeRow({ card, T }) {
 
 export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened }) {
   const { homeModalShell, tokens: T, isBright } = useStudentTheme();
+  const copy = useRewardUiCopy();
   const titleId = useId();
   const closeRef = useRef(null);
   const onOpenedRef = useRef(onOpened);
@@ -100,10 +102,10 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
         if (!res.ok || json?.ok !== true) {
           if (json?.code === "no_pending_box") {
             setRemainingPending(0);
-            setErrorHe(isReopen ? NO_MORE_BOX_HE : "No box ready right now — try again later.");
+            setErrorHe(isReopen ? copy("surpriseBox", "noMoreBoxes") : copy("surpriseBox", "noBoxReady"));
             notifyOpened(json);
           } else {
-            setErrorHe(OPEN_ERROR_HE);
+            setErrorHe(copy("surpriseBox", "openError"));
           }
           setPhase("error");
           return;
@@ -117,7 +119,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
         notifyOpened(json);
       } catch {
         if (cancelled) return;
-        setErrorHe(OPEN_ERROR_HE);
+        setErrorHe(copy("surpriseBox", "openError"));
         setPhase("error");
       } finally {
         clearTimeout(timeoutId);
@@ -129,7 +131,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
       cancelled = true;
       controller.abort();
     };
-  }, [open, openAttempt, notifyOpened]);
+  }, [open, openAttempt, notifyOpened, copy]);
 
   const handleOpenAnother = useCallback(() => {
     if (phase !== "done" || remainingPending <= 0) return;
@@ -190,12 +192,16 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
             onClick={onClose}
             disabled={phase === "opening"}
             className={`${homeModalShell.closeBtn} !min-h-9 !min-w-9`}
-            aria-label="Close"
+            aria-label={copy("surpriseBoxModal", "close")}
           >
             ✕
           </button>
           <h2 id={titleId} className={`text-base font-bold text-left flex-1 ${T.tileTitle}`}>
-            {phase === "opening" ? "Opening box..." : phase === "done" ? "Nice! You got rewards!" : "Surprise box"}
+            {phase === "opening"
+              ? copy("surpriseBoxModal", "openingTitle")
+              : phase === "done"
+                ? copy("surpriseBoxModal", "doneTitle")
+                : copy("surpriseBoxModal", "idleTitle")}
           </h2>
           <span className="text-xl shrink-0" aria-hidden>
             🎁
@@ -206,7 +212,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
           {phase === "opening" ? (
             <div className="flex flex-col items-center py-4 gap-2">
               <div className={T.loadingSpinner} aria-hidden />
-              <p className={`${T.loadingText} text-sm`}>Rolling your rewards...</p>
+              <p className={`${T.loadingText} text-sm`}>{copy("surpriseBoxModal", "rolling")}</p>
             </div>
           ) : null}
 
@@ -214,7 +220,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
             <div className={T.errorBox}>
               <p className={T.errorTitle}>{errorHe}</p>
               <button type="button" onClick={onClose} className={T.errorBtn}>
-                Close
+                {copy("surpriseBoxModal", "close")}
               </button>
             </div>
           ) : null}
@@ -253,7 +259,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
               {cards.length > 0 ? (
                 <ul className="space-y-1.5 min-w-0">
                   {cards.map((card, i) => (
-                    <SurpriseBoxCardPrizeRow key={`${card.nameHe}-${i}`} card={card} T={T} />
+                    <SurpriseBoxCardPrizeRow key={`${card.nameHe}-${i}`} card={card} T={T} copy={copy} />
                   ))}
                 </ul>
               ) : null}

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 import RewardCardImage from "../../student/rewards/RewardCardImage.jsx";
@@ -436,7 +437,7 @@ export default function MleoMemoryEngine({
                   Go back to the card shop and make sure cards are available
                 </p>
                 <SoloGameNavButtons
-                  primaryLabel="Try again"
+                  primaryLabel={gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "try_again")}
                   onPrimary={() => initGameWithDifficulty(difficulty)}
                 />
               </div>

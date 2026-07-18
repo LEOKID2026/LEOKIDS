@@ -1,0 +1,192 @@
+{
+  "rarity": {
+    "regular": "Regular",
+    "special": "Special",
+    "rare": "Rare",
+    "gold": "Gold"
+  },
+  "cardType": {
+    "achievement": "Achievement card",
+    "shop": "Shop card",
+    "event": "Event card"
+  },
+  "cardSource": {
+    "earned_achievement": "Learning achievement",
+    "shop_purchase": "Shop purchase",
+    "surprise_box_reward": "Surprise box",
+    "duplicate_conversion": "Duplicate conversion",
+    "card_sellback": "Duplicate sale",
+    "admin_grant": "Gift from the team"
+  },
+  "shop": {
+    "alreadyOwned": "You have it!",
+    "sellDuplicate": "Sell duplicate",
+    "catalogOwned": "Collected",
+    "coinsLabel": "{amount} coins",
+    "notEnoughCoins": "Not enough coins to buy this.",
+    "purchaseFailed": "Purchase failed — try again.",
+    "purchaseSuccess": "You bought {name}!",
+    "purchaseNetworkError": "Network error while purchasing.",
+    "sellConfirmTitle": "Sell a duplicate of {name} for {amount}?",
+    "sellConfirmBody": "You'll keep one copy in your collection.",
+    "sellFailed": "Couldn't sell the duplicate — try again.",
+    "sellSuccess": "Sold a duplicate for {amount}!",
+    "sellNetworkError": "Network error while selling.",
+    "noDuplicate": "You don't have a duplicate to sell.",
+    "loadFailed": "Couldn't load the shop right now."
+  },
+  "series": {
+    "professions": "Professions",
+    "space-tech": "Space & Tech",
+    "fantasy": "Fantasy",
+    "sport-fun": "Sports & Fun",
+    "style": "Style",
+    "general": "General achievements",
+    "math": "Math achievements",
+    "language": "Language achievements",
+    "subjects": "Subject achievements",
+    "events": "Events"
+  },
+  "fallback": {
+    "rewardCard": "Reward card",
+    "collectName": "Collect {name}!",
+    "earnCard": "Earn this card: {name}",
+    "eventLimited": "{name} — limited event card!",
+    "genericGame": "Game",
+    "keepLearning": "Keep learning to unlock this card",
+    "completeRequirement": "Complete the requirement: {label}",
+    "availableInShop": "Available in the shop",
+    "availableInSurpriseBox": "Available in a surprise box",
+    "notAvailableNow": "Not available right now",
+    "progressOf": "{current} of {target}"
+  },
+  "topics": {
+    "addition": "Addition",
+    "subtraction": "Subtraction",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "vocabulary": "Vocabulary"
+  },
+  "gradeBands": {
+    "g12": "Grades 1–2",
+    "g34": "Grades 3–4",
+    "g56": "Grades 5–6"
+  },
+  "requirements": {
+    "total_questions": "Answer {minQuestions} questions in total",
+    "weekly_questions": "Answer {minQuestions} questions in the last week",
+    "subject_questions": "Answer {minQuestions} questions in {subject}",
+    "subject_questions_fallback_subject": "Answer {minQuestions} questions in a subject",
+    "subject_accuracy": "Reach {minAccuracy}% accuracy in {subject}{topicPart} (at least {minQuestions} questions)",
+    "subject_accuracy_topic_part": " on {topic}",
+    "learning_streak_days": "Learn for {minStreakDays} days in a row",
+    "active_days_streak": "Be active for {minStreakDays} days in a row",
+    "parent_activity_complete": "Complete {minCompletedActivities} parent activities",
+    "monthly_learning_minutes": "Learn {minLearningMinutesMonthly} minutes this month",
+    "event_window": "Special event card — available during the event window",
+    "daily_mission_complete": "Complete the mission: {missionKey}",
+    "daily_mission_generic": "Complete a daily mission",
+    "grade_band_only": "Available for {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "We couldn't load the surprise box.",
+    "networkError": "Network error loading the surprise box.",
+    "ready": "Surprise box ready!",
+    "readyMultiple": "{count} boxes ready to open!",
+    "openError": "We couldn't open the box right now. Try again in a moment.",
+    "noMoreBoxes": "No more boxes to open right now.",
+    "noBoxReady": "No box ready right now — try again later.",
+    "duplicateHint": "You got an extra copy — you can sell duplicates in the shop.",
+    "newCard": "New card in your collection!",
+    "ariaLabel": "Surprise box",
+    "title": "Surprise box",
+    "loading": "Loading...",
+    "nextBoxIn": "Next box ready in",
+    "keepLearning": "Keep learning — a new box is coming soon!",
+    "openBox": "Open box",
+    "myCollection": "My collection"
+  },
+  "preview": {
+    "close": "Close",
+    "download": "Download image",
+    "prev": "Previous card",
+    "next": "Next card",
+    "locked": "Locked"
+  },
+  "lockedStamp": {
+    "label": "Locked"
+  },
+  "shopView": {
+    "loading": "Loading card shop...",
+    "loadErrorTitle": "We couldn't load the card shop.",
+    "tryAgain": "Try again",
+    "empty": "No cards available to buy right now.",
+    "coinBalance": "Coin balance: {amount}",
+    "buyPrice": "Buy price: {amount}",
+    "sellValue": "Sell value: {amount}",
+    "needMoreCoins": "You need {amount} more",
+    "notEnoughCoinsShort": "Not enough coins",
+    "noDuplicateToSell": "No duplicate copy to sell.",
+    "sellFailed": "Couldn't sell the duplicate — try again.",
+    "sellSuccess": "You sold a duplicate of {name} and got {amount}!",
+    "sellNetworkError": "Network error while selling.",
+    "buy": "Buy",
+    "sellDuplicateAction": "Sell duplicate",
+    "selling": "Selling...",
+    "buying": "Buying...",
+    "buyFor": "Buy for {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "Close",
+    "openingTitle": "Opening box...",
+    "doneTitle": "Nice! You got rewards!",
+    "idleTitle": "Surprise box",
+    "rolling": "Rolling your rewards...",
+    "coinsReward": "+{amount} coins",
+    "diamondsReward": "+{amount} diamonds",
+    "openAnother": "Open another box",
+    "viewCards": "View my cards"
+  },
+  "previewModal": {
+    "close": "Close",
+    "download": "Download my card",
+    "downloading": "Downloading...",
+    "downloadError": "We couldn't download the card. Try again.",
+    "prev": "Previous card",
+    "next": "Next card",
+    "cardImageAlt": "Card image",
+    "rarityLabel": "Rarity: {label}",
+    "seriesLabel": "Series: {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "Kids World",
+    "title": "My cards",
+    "subtitle": "Collection, shop, all cards, and series",
+    "featureDisabled": "The card collection isn't available yet.",
+    "loading": "Loading cards...",
+    "loadError": "We couldn't load the cards.",
+    "tryAgain": "Try again",
+    "tabsAriaLabel": "Card tabs",
+    "collectionEmpty": "No cards in your collection yet — open a surprise box in Kids World or buy from the shop!",
+    "catalogEmpty": "No cards to show.",
+    "seriesEmpty": "No card series yet.",
+    "tabs": {
+      "collection": { "label": "My collection", "shortLabel": "Collection" },
+      "shop": { "label": "Card shop", "shortLabel": "Shop" },
+      "catalog": { "label": "All cards", "shortLabel": "All" },
+      "series": { "label": "Series", "shortLabel": "Series" }
+    }
+  },
+  "server": {
+    "economyUnavailable": "The coin economy is not available right now",
+    "duplicateConversionRemoved": "Duplicate conversion was removed — you can sell a duplicate in the shop.",
+    "missingSeries": "Series is missing — a series with a slug is required for shop/achievement cards",
+    "multipartRequired": "Upload must use multipart/form-data",
+    "variantProcessFailed": "Card version processing failed",
+    "boxNeedsPrize": "The box needs at least one prize — cards and/or coins.",
+    "boxSettingsInvalidJson": "Box settings must be a JSON object.",
+    "notPurchasable": "This card can't be purchased",
+    "alreadyOwnedCollection": "Already in your collection",
+    "insufficientCoinsDetailed": "You don't have enough coins for this card"
+  }
+}

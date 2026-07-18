@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -103,7 +104,7 @@ export default function BalanceScalePrototype() {
           }}
           onClick={() => removeFromSide(side, p.id)}
           className="flex h-11 w-11 flex-col items-center justify-center rounded-xl border-2 border-white/20 bg-slate-700/90 text-lg shadow-md active:scale-95 sm:h-12 sm:w-12"
-          title="Tap to return to tray"
+          title={gamePackCopy("components__solo-games__prototypes__dev__BalanceScalePrototype", "tap_to_return_to_tray")}
         >
           {item.emoji}
           {showWeights ? (
@@ -115,8 +116,8 @@ export default function BalanceScalePrototype() {
 
   return (
     <DevPrototypeShell
-      title="Balance Scale"
-      subtitle="Prototype · drag items · balance the scale"
+      title={gamePackCopy("components__solo-games__prototypes__dev__BalanceScalePrototype", "balance_scale")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__BalanceScalePrototype", "prototype_drag_items_balance_the_scale")}
       headerExtra={
         <button
           type="button"

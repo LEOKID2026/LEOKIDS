@@ -1,5 +1,6 @@
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { PRODUCTION_MIN_POOL, shuffle } from "../../../lib/educational-games/educational-task-picker.js";
 import {
   pickSessionFromBands,

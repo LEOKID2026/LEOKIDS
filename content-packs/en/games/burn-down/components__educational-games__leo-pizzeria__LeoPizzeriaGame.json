@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "the_customer_waited_too_long": "The customer waited too long",
+    "pizza_in_progress": "Pizza in progress",
+    "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "Customers walk into the pizzeria — make them exactly the pizza they ordered!",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n                New game",
+    "leo_apos_s_pizzeria": "Leo&apos;s Pizzeria",
+    "serve_pizza": "Serve pizza 🍕",
+    "open_shift": "Open shift 🍕",
+    "clear_pizza": "Clear pizza",
+    "new_game": "New game",
+    "back": "Back"
+  }
+}

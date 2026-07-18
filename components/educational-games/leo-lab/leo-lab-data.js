@@ -1,5 +1,6 @@
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import {
   EASY_EXPERIMENTS,
   MEDIUM_EXPERIMENTS,
@@ -33,7 +34,7 @@ import { SHELF_SIZE_BY_DIFFICULTY } from "./leo-lab-shelf-presets.js";
 export const EXPERIMENTS_PER_LEVEL = 20;
 
 export const EASY_LEVEL_CONTENT_GUIDELINES = {
-  audience: "Grades 1–2",
+  audience: gamePackCopy("components__educational-games__leo-lab__leo-lab-data", "grades_1_2"),
   minColorExperimentsInEasyPool: 6,
 };
 
@@ -50,7 +51,7 @@ export const DIFFICULTIES = {
   },
   medium: {
     id: "medium",
-    label: "Medium",
+    label: gamePackCopy("components__educational-games__leo-lab__leo-lab-data", "medium"),
     shelfCount: 10,
     itemHint: "10 items · pick 2–3",
     maxMistakes: 5,

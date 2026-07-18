@@ -1,12 +1,20 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useGameAudio } from "../useGameAudio.js";
 import { getEducationalBgmAssetId } from "../../lib/game-audio/game-bgm-map.js";
+import { resolveSpeechLocale } from "../../lib/speech/locale-resolver.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Shared audio helpers for 9 educational games — SFX, BGM, TTS.
  */
 export function useEducationalGameAudio() {
   const audio = useGameAudio();
+  const { interfaceLocale, contentLocale } = useI18n();
+  const speechLocale = resolveSpeechLocale({
+    interfaceLocale,
+    contentLocale,
+    kind: "content",
+  });
   const audioRef = useRef(audio);
   audioRef.current = audio;
 
@@ -60,18 +68,18 @@ export function useEducationalGameAudio() {
   const playInstruction = useCallback((text) => {
     if (!text) return Promise.resolve();
     return (
-      audioRef.current.playVoice("voice-edu-instruction", { text, locale: "en-US" }) ??
+      audioRef.current.playVoice("voice-edu-instruction", { text, locale: speechLocale }) ??
       Promise.resolve()
     );
-  }, []);
+  }, [speechLocale]);
 
   const playFeedback = useCallback((text) => {
     if (!text) return Promise.resolve();
     return (
-      audioRef.current.playVoice("voice-edu-feedback", { text, locale: "en-US" }) ??
+      audioRef.current.playVoice("voice-edu-feedback", { text, locale: speechLocale }) ??
       Promise.resolve()
     );
-  }, []);
+  }, [speechLocale]);
 
   const replayInstruction = useCallback((text) => {
     audioRef.current.stopVoice();

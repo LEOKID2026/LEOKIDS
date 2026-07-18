@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "cannot_cancel_the_queue_in_the_current_state": "Cannot cancel the queue in the current state"
+  }
+}

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../../lib/games/game-pack-copy.js";
 import { requireArcadeStudent } from "../../../../../lib/arcade/server/arcade-auth";
 import { applyDominoesAction } from "../../../../../lib/arcade/server/dominoes-game";
 import { getArcadeRoomSnapshot } from "../../../../../lib/arcade/server/arcade-snapshot";
@@ -58,7 +59,7 @@ export default async function handler(req, res) {
     return res.status(500).json({
       ok: false,
       code: "server_error",
-      error: "Server error",
+      error: gamePackCopy("pages__api__arcade__games__dominoes__action", "server_error"),
     });
   }
 }

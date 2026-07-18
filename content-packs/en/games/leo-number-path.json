@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-number-path",
+  "title": "Leo's Number Path",
+  "blurb": "Sequences, odd-even, and multiples",
+  "help": {
+    "howToPlay": "Choose numbers from the path based on the task - even numbers, multiples, skip-counting, or a sequence - then tap \"Check Path\".",
+    "scoring": "Correct on the first try +30, second try +20, third try +10. After 3 mistakes you move on to the next task.",
+    "rewards": "Coins are awarded based on how many of the 20 tasks you completed, accuracy, streaks, and finishing the path.",
+    "tip": "Pay attention to whether order matters - for skip-counting and sequences you need to choose in order."
+  },
+  "accessibility": {
+    "title": "Leo's Number Path"
+  }
+}

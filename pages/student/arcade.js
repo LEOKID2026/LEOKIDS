@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -113,7 +114,7 @@ function EntryCostSelector({
   entryBtnSelected,
   entryBtnDefault,
   entryBtnDisabled,
-  label = "Entry cost",
+  label = gamePackCopy("pages__student__arcade", "entry_cost"),
 }) {
   return (
     <div className={className}>
@@ -613,14 +614,14 @@ export default function StudentArcadePage() {
     balance === null || balance === undefined
       ? initialSyncDone
         ? "Unavailable"
-        : "Loading…"
+        : gamePackCopy("pages__student__arcade", "loading")
       : String(balance);
 
   const diamondDisplay =
     diamondBalance === null || diamondBalance === undefined
       ? initialSyncDone
         ? "Unavailable"
-        : "Loading…"
+        : gamePackCopy("pages__student__arcade", "loading")
       : String(diamondBalance);
 
   const hlRoom = roomHighlight?.room;
@@ -848,7 +849,7 @@ export default function StudentArcadePage() {
                     <input
                       type="text"
                       autoComplete="off"
-                      placeholder="Room code"
+                      placeholder={gamePackCopy("pages__student__arcade", "room_code")}
                       value={joinCode}
                       onChange={(e) => setJoinCode(e.target.value)}
                       className={GH.input}

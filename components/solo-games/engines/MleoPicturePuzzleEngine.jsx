@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import SoloGameAdSlot from "../SoloGameAdSlot.jsx";
 import SoloGameEndInterstitialOverlay from "../SoloGameEndInterstitialOverlay.jsx";
@@ -213,7 +214,7 @@ export default function MleoPicturePuzzleEngine({
   useEffect(() => {
     if (previewIndex == null) return undefined;
     const onKeyDown = (event) => {
-      if (event.key === "Escape") {
+      if (event.key === gamePackCopy("components__solo-games__engines__MleoPicturePuzzleEngine", "escape")) {
         setPreviewIndex(null);
         return;
       }
@@ -523,7 +524,7 @@ export default function MleoPicturePuzzleEngine({
                     onClick={goPreviewPrev}
                     disabled={!canPreviewPrev}
                     className={PREVIEW_NAV_BTN_CLASS}
-                    aria-label="Previous picture"
+                    aria-label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzleEngine", "previous_picture")}
                   >
                     ‹
                   </button>
@@ -547,7 +548,7 @@ export default function MleoPicturePuzzleEngine({
                     onClick={goPreviewNext}
                     disabled={!canPreviewNext}
                     className={PREVIEW_NAV_BTN_CLASS}
-                    aria-label="Next picture"
+                    aria-label={gamePackCopy("components__solo-games__engines__MleoPicturePuzzleEngine", "next_picture")}
                   >
                     ›
                   </button>
@@ -626,7 +627,7 @@ export default function MleoPicturePuzzleEngine({
       ) : null}
       <SoloGamePortraitRecommendationModal
         show={showPortraitPrompt}
-        subtitle="The board and tray will display more comfortably."
+        subtitle={gamePackCopy("components__solo-games__engines__MleoPicturePuzzleEngine", "the_board_and_tray_will_display_more_comfortably")}
         onDismissRotate={() => {
           dismissPortraitPrompt(false);
           enterFromUserGesture();

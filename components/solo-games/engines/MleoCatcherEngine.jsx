@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState } from "react";
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
 import SoloGameEndInterstitialOverlay from "../SoloGameEndInterstitialOverlay.jsx";
@@ -5,7 +6,7 @@ import SoloGamePortraitRecommendationModal from "../SoloGamePortraitRecommendati
 import { useSoloGameMobileFullscreen } from "../../../hooks/solo-games/useSoloGameMobileFullscreen.js";
 import { useSoloEngineAudio } from "../../../hooks/solo-games/useSoloGameAudio.js";
 
-const DEFAULT_PLAYER_NAME = "Player";
+const DEFAULT_PLAYER_NAME = gamePackCopy("components__solo-games__engines__MleoCatcherEngine", "player");
 
 /**
  * @param {{ autoStart?: boolean, onSessionEnd?: (metrics: object) => void }} props
@@ -528,7 +529,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
 
               {gameOver && !onSessionEnd && (
                 <div className="pointer-events-auto absolute inset-0 z-40 flex flex-col items-center justify-center bg-black/70">
-                  <h2 className="mb-4 text-4xl font-bold text-red-500 sm:text-5xl">Game Over</h2>
+                  <h2 className="mb-4 text-4xl font-bold text-red-500 sm:text-5xl">{gamePackCopy("components__solo-games__engines__MleoCatcherEngine", "game_over")}</h2>
                 </div>
               )}
 
@@ -595,9 +596,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
                   onPointerLeave={(e) => {
                     if (e.buttons === 0) setPad("right", false);
                   }}
-                >
-                  Right ▶
-                </button>
+                >{gamePackCopy("components__solo-games__engines__MleoCatcherEngine", "right")}</button>
               </>
             )}
           </div>

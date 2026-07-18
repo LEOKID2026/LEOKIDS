@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
@@ -17,7 +18,7 @@ const DROP_MS = 155;
 const WIN_FREEZE_MS = 280;
 const MOVE_PULSE_MS = 220;
 
-const GAME_TITLE = "Four in a Row";
+const GAME_TITLE = gamePackCopy("components__arcade__fourline__FourlineScreen", "four_in_a_row");
 
 /**
  * @param {{ onLeave: () => void, disabled?: boolean, busy?: boolean }} props
@@ -58,8 +59,8 @@ function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="Back"
-        title="Back"
+        aria-label={gamePackCopy("components__arcade__fourline__FourlineScreen", "back")}
+        title={gamePackCopy("components__arcade__fourline__FourlineScreen", "back")}
       >
         <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">
           Back
@@ -75,7 +76,7 @@ function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
       <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <div
           className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-          title="Coin balance"
+          title={gamePackCopy("components__arcade__fourline__FourlineScreen", "coin_balance")}
         >
           <img
             src="/images/coin.png"
@@ -90,8 +91,8 @@ function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
           type="button"
           onClick={onOpenHelp}
           className={HUD_BTN_SQUARE}
-          aria-label="How to play"
-          title="How to play"
+          aria-label={gamePackCopy("components__arcade__fourline__FourlineScreen", "how_to_play")}
+          title={gamePackCopy("components__arcade__fourline__FourlineScreen", "how_to_play")}
         >
           <span
             className="font-serif text-[17px] font-semibold italic leading-none text-zinc-50 sm:text-[19px]"
@@ -120,7 +121,7 @@ function FourlineHowToModal({ open, onClose }) {
       <button
         type="button"
         className="absolute inset-0 cursor-default"
-        aria-label="Close"
+        aria-label={gamePackCopy("components__arcade__fourline__FourlineScreen", "close")}
         onClick={onClose}
       />
       <div
@@ -143,10 +144,10 @@ function FourlineHowToModal({ open, onClose }) {
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm leading-relaxed text-zinc-200">
-          <li>Each player picks a column; the disc drops to the bottom.</li>
-          <li>Goal: connect four discs in a row — horizontal, vertical, or diagonal.</li>
-          <li>Blue goes first; after each move the turn passes to Gold and back.</li>
-          <li>If the board fills with no four-in-a-row — it's a draw.</li>
+          <li>{gamePackCopy("components__arcade__fourline__FourlineScreen", "each_player_picks_a_column_the_disc_drops_to_the_bottom")}</li>
+          <li>{gamePackCopy("components__arcade__fourline__FourlineScreen", "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal")}</li>
+          <li>{gamePackCopy("components__arcade__fourline__FourlineScreen", "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back")}</li>
+          <li>{gamePackCopy("components__arcade__fourline__FourlineScreen", "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw")}</li>
         </ul>
       </div>
     </div>
@@ -636,7 +637,7 @@ export default function FourlineScreen({ roomId }) {
             </div>
           ) : showLobbyWait ? (
             <div className="flex min-h-[40vh] flex-col items-center justify-center px-2 text-center text-sm text-zinc-400">
-              <p>Waiting for a second player…</p>
+              <p>{gamePackCopy("components__arcade__fourline__FourlineScreen", "waiting_for_a_second_player")}</p>
               <p className="mt-2 text-xs text-zinc-500">When your opponent joins, the game opens automatically.</p>
             </div>
           ) : showSessionInitError ? (
@@ -785,7 +786,7 @@ export default function FourlineScreen({ roomId }) {
                         : didIWin
                           ? snapshot?.walkaway
                             ? "Opponent left — technical win."
-                            : "Four in a row."
+                            : gamePackCopy("components__arcade__fourline__FourlineScreen", "four_in_a_row_2")
                           : "Opponent connected four."}
                     </p>
                     {didIWin && Number(snapshot?.mySettlementAmount) > 0 ? (

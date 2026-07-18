@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState } from "react";
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
 import SoloGameEndInterstitialOverlay from "../SoloGameEndInterstitialOverlay.jsx";

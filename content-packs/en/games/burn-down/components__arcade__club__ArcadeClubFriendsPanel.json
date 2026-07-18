@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "Leo number (8 digits) or display name",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "This is the number you give a friend — they can type it below to send you a friend request.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "Enter a Leo number or display name — a friend request will be sent for them to approve.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "Couldn't show your Leo number — try refreshing the page.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "Friends — controlled via Admin. Not open to guests yet.",
+    "setquery_e_target_value": "setQuery(e.target.value)}\r\n          />",
+    "remove_this_friend_from_your_list": "Remove this friend from your list?",
+    "setting_up_your_leo_number": "Setting up your Leo number…",
+    "requests_friends": "Requests & friends",
+    "friend_requests": "Friend requests",
+    "no_friends_yet": "No friends yet",
+    "my_leo_number": "My Leo number",
+    "remove_friend": "Remove friend",
+    "add_friend": "Add friend",
+    "my_friends": "My friends",
+    "friends": "Friends",
+    "approve": "Approve",
+    "decline": "Decline",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "invite": "Invite"
+  }
+}

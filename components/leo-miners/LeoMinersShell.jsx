@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import Head from "next/head";
@@ -196,7 +197,7 @@ export default function LeoMinersShell({ skipAccessGuard = false }) {
 
       <Head>
 
-        <title>Leo the Miner - Leo Games</title>
+        <title>{gamePackCopy("components__leo-miners__LeoMinersShell", "leo_the_miner_leo_games")}</title>
 
         <meta name="robots" content="noindex,nofollow" />
 

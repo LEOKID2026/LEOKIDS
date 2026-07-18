@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "connect_colors": "Connect Colors",
+    "prototype_connect_pairs_without_crossing": "Prototype · connect pairs without crossing",
+    "p_id_colorid_const_isendpoint_endpointmap_cellkey_const_eppair_pairs_fin": "p.id === colorId);\r\n            const isEndpoint = endpointMap[cellKey];\r\n            const epPair = PAIRS.find(\r\n              (p) => keyOf(...p.a) === cellKey || keyOf(...p.b) === cellKey,\r\n            );\r\n            const previewConflict =\r\n              dragPreview === cellKey &&\r\n              activeColor &&\r\n              !tryExtend(activeColor, cellKey, paths);\r\n\r\n            return (",
+    "rect_width_rely_rect_height_return_null_const_c_math_floor_relx_rect_wid": "rect.width || relY > rect.height) return null;\r\n    const c = Math.floor((relX / rect.width) * GRID);\r\n    const r = Math.floor((relY / rect.height) * GRID);\r\n    if (r",
+    "clear": "Clear"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "Back",
+    "coin_balance": "Coin balance",
+    "how_to_play": "How to play",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "On your turn the dice are rolled (OV2 also auto-opens a roll animation), then pick which piece to move.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "Only a 6 gets a piece out of the yard onto the path.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "A 6, a capture, or entering home from the path — per engine rules — grants an extra turn.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "A piece that reaches home finishes; four pieces home wins.",
+    "waiting_for_players": "Waiting for players…"
+  }
+}

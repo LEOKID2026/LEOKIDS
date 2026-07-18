@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-miners",
+  "title": "Leo the Miner",
+  "blurb": "Merge mining dogs, break rocks, and earn points to redeem!",
+  "help": {
+    "howToPlay": "Add mining dogs to the board, drag dogs of the same level to merge them, and break rocks to earn coins and points.",
+    "scoring": "Every rock broken grants coins. Points accumulate based on the rock's stage - with a daily limit.",
+    "rewards": "Points can be redeemed for Leo coins and diamonds (once the server is ready).",
+    "tip": "Upgrade DPS to break rocks faster, and GOLD to earn more coins from each rock."
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useArcadePlaceholderSession } from "../../../hooks/arcade/useArcadePlaceholderSession";
@@ -38,7 +39,7 @@ function PlaceholderHud({ onBack, balance, title }) {
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="Back"
+        aria-label={gamePackCopy("components__arcade__placeholder__ArcadePlaceholderScreen", "back")}
       >
         <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">Back</span>
       </button>
@@ -51,7 +52,7 @@ function PlaceholderHud({ onBack, balance, title }) {
 
       <div
         className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-        title="Coin balance"
+        title={gamePackCopy("components__arcade__placeholder__ArcadePlaceholderScreen", "coin_balance")}
       >
         <img src="/images/coin.png" alt="" className="h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7" />
         <span className="min-w-0 truncate font-mono text-sm font-bold tabular-nums leading-none text-amber-100 sm:text-base">

@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Invalid idempotency key",
+    "invalid_action_type": "Invalid action type",
+    "missing_stage_data_for_mining": "Missing stage data for mining",
+    "too_many_breaks_in_one_request": "Too many breaks in one request",
+    "invalid_claim_type": "Invalid claim type",
+    "offline_time_exceeds_the_allowed_limit": "Offline time exceeds the allowed limit",
+    "offline_time_does_not_match_server_data": "Offline time does not match server data",
+    "too_many_breaks_try_again_in_a_moment": "Too many breaks - try again in a moment",
+    "guests_cannot_collect_rewards_please_link_an_account": "Guests cannot collect rewards - please link an account",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners is not enabled yet - apply migration and config",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners is disabled in Admin settings",
+    "leo_miners_economy_is_disabled": "Leo Miners economy is disabled",
+    "leo_miners_point_accrual_is_disabled": "Leo Miners point accrual is disabled",
+    "offline_collection_is_disabled": "Offline collection is disabled",
+    "leo_miners_gifts_are_disabled": "Leo Miners gifts are disabled",
+    "leo_miners_claims_are_disabled": "Leo Miners claims are disabled",
+    "diamond_chest_is_disabled": "Diamond chest is disabled",
+    "guests_cannot_collect_diamonds": "Guests cannot collect diamonds"
+  }
+}

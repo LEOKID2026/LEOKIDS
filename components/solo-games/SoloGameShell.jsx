@@ -1,3 +1,5 @@
+import { useGameUiDisplay } from "../../lib/games/game-locale-context.jsx";
+import { useDisplayGame } from "../../hooks/games/useDisplayGame.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { resetSoloGameDocumentShell } from "../../lib/solo-games/solo-game-document-cleanup.client.js";
 import { enterMobileGameFullscreenFromUserGesture } from "../../lib/solo-games/solo-game-fullscreen.client.js";
@@ -50,6 +52,8 @@ const PLAY_SHELL =
  */
 export default function SoloGameShell({ gameKey }) {
   const game = useMemo(() => findSoloGame(gameKey), [gameKey]);
+  const ui = useGameUiDisplay(gameKey);
+  const displayGame = useDisplayGame(gameKey, game);
   const Engine = ENGINE_MAP[gameKey];
   const { SG, pageBgStyle } = useSoloGameShellUi();
 
@@ -120,7 +124,7 @@ export default function SoloGameShell({ gameKey }) {
   if (!game || !Engine) {
     return (
       <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
-        <p>Game not found</p>
+        <p>{gamePackCopy("components__solo-games__SoloGameShell", "game_not_found")}</p>
       </div>
     );
   }
@@ -129,7 +133,7 @@ export default function SoloGameShell({ gameKey }) {
     <GameAccessGuard gameKey={gameKey}>
     <>
       <Head>
-        <title>{game.titleHe} - Leo's Games</title>
+        <title>{ui.title} - Leo's Games</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}
@@ -141,24 +145,20 @@ export default function SoloGameShell({ gameKey }) {
           <Link
             href="/student/game"
             className={themedShell ? SG.navLink : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"}
-          >
-            Games
-          </Link>
+          >{gamePackCopy("components__solo-games__SoloGameShell", "games")}</Link>
           <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>
-            {game.titleHe}
+            {ui.title}
           </h1>
           <Link
             href="/student/home"
             className={themedShell ? SG.navLink : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"}
-          >
-            Home
-          </Link>
+          >{gamePackCopy("components__solo-games__SoloGameShell", "home")}</Link>
         </header>
 
         <main className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
           {phase === "entry" ? (
             <SoloGameEntryScreen
-              game={game}
+              game={displayGame}
               difficulty={difficulty}
               setDifficulty={setDifficulty}
               onStart={handleStart}

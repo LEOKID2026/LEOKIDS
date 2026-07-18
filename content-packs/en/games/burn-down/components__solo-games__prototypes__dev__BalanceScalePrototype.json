@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "tap_to_return_to_tray": "Tap to return to tray",
+    "balance_scale": "Balance Scale",
+    "prototype_drag_items_balance_the_scale": "Prototype · drag items · balance the scale",
+    "object_fromentries_items_map_i_i_id_i_const_leftweight_left_reduce_s_p_s": "Object.fromEntries(ITEMS.map((i) => [i.id, i])), []);\n\n  const leftWeight = left.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const rightWeight = right.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const diff = rightWeight - leftWeight;\n  const tilt = Math.max(-18, Math.min(18, diff * 4));\n  const isBalanced = left.length > 0 && right.length > 0 && Math.abs(diff)",
+    "setshowweights_e_target_checked_classname_h_4_w_4_show_weights_debug": "setShowWeights(e.target.checked)}\n            className=\"h-4 w-4\"\n          />\n          Show weights (debug)",
+    "tap_an_item_on_the_scale_to_return_it_or_drag_from_the_tray": "Tap an item on the scale to return it · or drag from the tray",
+    "setdragover_null": "setDragOver(null)}\n              >",
+    "item_tray_drag_to_a_side": "Item tray — drag to a side",
+    "all_items_are_on_the_scale": "All items are on the scale",
+    "balanced": "Balanced! ⚖️🎉",
+    "reset": "Reset"
+  }
+}

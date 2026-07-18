@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -257,8 +258,8 @@ export default function FruitSlicePrototype() {
 
   return (
     <DevPrototypeShell
-      title="Fruit Slice"
-      subtitle="Prototype · swipe / slice · no full scoring"
+      title={gamePackCopy("components__solo-games__prototypes__dev__FruitSlicePrototype", "fruit_slice")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__FruitSlicePrototype", "prototype_swipe_slice_no_full_scoring")}
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-bold text-amber-200">
           {score} · {sliced}✂️

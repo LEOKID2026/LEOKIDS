@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "display_name": "Display name",
+    "setdisplayname_e_target_value_placeholder_gamepackcopy_components_arcade": "setDisplayName(e.target.value)}\r\n            placeholder=gamePackCopy(\"components__arcade__club__ArcadeClubProfilePanel\", \"display_name\")\r\n          />",
+    "display_name_for_games_only_doesn_t_change_your_official_name_or_leo_num": "Display name for games only — doesn't change your official name or Leo number.",
+    "change_photo_on_the_home_page": "Change photo on the home page",
+    "recent_history": "Recent history",
+    "no_games_yet": "No games yet",
+    "player_card": "Player card",
+    "game_name": "Game name:",
+    "save_name": "Save name"
+  }
+}

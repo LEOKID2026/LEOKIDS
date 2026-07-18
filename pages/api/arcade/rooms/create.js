@@ -1,6 +1,8 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { requireArcadeStudent } from "../../../../lib/arcade/server/arcade-auth";
 import { createArcadeRoom } from "../../../../lib/arcade/server/arcade-rooms";
 import { assertArcadePlayAccess } from "../../../../lib/arcade/club/arcade-access.server.js";
+import { arcadeAccessErrorPayload } from "../../../../lib/arcade/club/arcade-access-error-payload.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -20,7 +22,7 @@ export default async function handler(req, res) {
   if (!gameKey || !allowedTypes.has(roomType)) {
     return res.status(400).json({
       ok: false,
-      error: "Invalid room type (must be public or private)",
+      error: gamePackCopy("pages__api__arcade__rooms__create", "invalid_room_type_must_be_public_or_private"),
       code: "bad_request",
     });
   }
@@ -29,12 +31,7 @@ export default async function handler(req, res) {
     roomAction: roomType === "private" ? "private" : "public",
   });
   if (!access.ok) {
-    return res.status(access.status || 403).json({
-      ok: false,
-      error: access.message,
-      code: access.code,
-      category: access.category,
-    });
+    return res.status(access.status || 403).json(arcadeAccessErrorPayload(access));
   }
 
   const result = await createArcadeRoom(auth.supabase, {

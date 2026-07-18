@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
 import SoloGameEndInterstitialOverlay from "../SoloGameEndInterstitialOverlay.jsx";
@@ -531,7 +532,7 @@ export default function MleoMazeEngine({
           <ul className="max-w-sm space-y-1 text-sm text-gray-300">
             <li>🔑 Find a key → 🚪 Reach the gate</li>
             <li>⭐ +20 · 💎 +50 · Maze +100</li>
-            <li>Each new maze — collect and race on!</li>
+            <li>{gamePackCopy("components__solo-games__engines__MleoMazeEngine", "each_new_maze_collect_and_race_on")}</li>
           </ul>
           <button
             type="button"
@@ -736,7 +737,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(0, -1)}
-                  aria-label="Left"
+                  aria-label={gamePackCopy("components__solo-games__engines__MleoMazeEngine", "left")}
                 >
                   ←
                 </button>
@@ -745,7 +746,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(1, 0)}
-                  aria-label="Down"
+                  aria-label={gamePackCopy("components__solo-games__engines__MleoMazeEngine", "down")}
                 >
                   ↓
                 </button>
@@ -754,7 +755,7 @@ export default function MleoMazeEngine({
                   className="min-h-[48px] rounded-2xl bg-yellow-400 text-xl font-bold text-black shadow-lg active:scale-95 sm:min-h-[50px]"
                   style={{ touchAction: "manipulation" }}
                   onClick={() => tryMove(0, 1)}
-                  aria-label="Right"
+                  aria-label={gamePackCopy("components__solo-games__engines__MleoMazeEngine", "right")}
                 >
                   →
                 </button>

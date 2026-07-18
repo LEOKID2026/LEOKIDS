@@ -1,0 +1,9 @@
+{
+  "gameId": "tic-tac-toe",
+  "title": "Tic-Tac-Toe",
+  "blurb": "Boards from 3×3 to 7×7 with score tracking.",
+  "players": "2 players",
+  "help": {
+    "howToPlay": "Play together on the same device."
+  }
+}

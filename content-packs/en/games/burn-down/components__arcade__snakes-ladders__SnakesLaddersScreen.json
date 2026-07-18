@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Snakes and Ladders",
+    "back": "Back",
+    "coin_balance": "Coin balance",
+    "how_to_play": "How to play",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "On your turn, roll the dice and move forward by that number.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "Snakes send you down, ladders send you up — classic board.",
+    "reach_exactly_100_to_win": "Reach exactly 100 to win.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "A roll past 100 doesn't move you (you stay put)."
+  }
+}

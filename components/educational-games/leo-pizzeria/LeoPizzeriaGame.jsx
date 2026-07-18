@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { sharedStyles as frame } from "../../prototypes/dev/learning/shared/LearningPrototypeFrame.jsx";
@@ -180,7 +181,7 @@ export default function LeoPizzeriaGame({
     setCurrentStreak(0);
     addScore(SCORE.timeout);
     setCheckState("bad");
-    const timeoutText = "The customer waited too long";
+    const timeoutText = gamePackCopy("components__educational-games__leo-pizzeria__LeoPizzeriaGame", "the_customer_waited_too_long");
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -526,7 +527,7 @@ export default function LeoPizzeriaGame({
                 <svg
                   viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
                   className={styles.pizzaSvg}
-                  aria-label="Pizza in progress"
+                  aria-label={gamePackCopy("components__educational-games__leo-pizzeria__LeoPizzeriaGame", "pizza_in_progress")}
                 >
                   <circle cx={CX} cy={CY} r={R + 6} fill="#92400e" />
                   <circle cx={CX} cy={CY} r={R} fill="#dc2626" opacity="0.92" />

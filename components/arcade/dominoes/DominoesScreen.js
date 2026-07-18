@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDominoesSession } from "../../../hooks/arcade/useDominoesSession";
@@ -7,7 +8,7 @@ import { useArcadeRoomExit } from "../../../hooks/arcade/useArcadeRoomExit";
 import ArcadeGameSocialDock from "../club/ArcadeGameSocialDock.jsx";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "Dominoes";
+const GAME_TITLE = gamePackCopy("components__arcade__dominoes__DominoesScreen", "dominoes");
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -74,11 +75,11 @@ function HowToModal({ open, onClose }) {
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm text-zinc-200">
-          <li>Double-6 set — two players, seven tiles each.</li>
-          <li>Opener is the highest double (or highest pip total).</li>
-          <li>Play a tile matching an open end of the chain.</li>
-          <li>No legal move — pass; two passes in a row end in a block (lowest pip total wins).</li>
-          <li>Empty your hand to win.</li>
+          <li>{gamePackCopy("components__arcade__dominoes__DominoesScreen", "double_6_set_two_players_seven_tiles_each")}</li>
+          <li>{gamePackCopy("components__arcade__dominoes__DominoesScreen", "opener_is_the_highest_double_or_highest_pip_total")}</li>
+          <li>{gamePackCopy("components__arcade__dominoes__DominoesScreen", "play_a_tile_matching_an_open_end_of_the_chain")}</li>
+          <li>{gamePackCopy("components__arcade__dominoes__DominoesScreen", "no_legal_move_pass_two_passes_in_a_row_end_in_a_block_lowest_pip_total_w")}</li>
+          <li>{gamePackCopy("components__arcade__dominoes__DominoesScreen", "empty_your_hand_to_win")}</li>
         </ul>
       </div>
     </div>
@@ -333,7 +334,7 @@ export default function DominoesScreen({ roomId }) {
                     : vm.canClientAct
                       ? vm.mustPass
                         ? "No legal move — pass"
-                        : "Pick a tile (or an end if shown)"
+                        : gamePackCopy("components__arcade__dominoes__DominoesScreen", "pick_a_tile_or_an_end_if_shown")
                       : "Wait for your turn"}
                 </p>
               )}

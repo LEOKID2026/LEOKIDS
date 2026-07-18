@@ -3,9 +3,8 @@ import WindowedStudentCardsGrid from "./WindowedStudentCardsGrid.jsx";
 import StudentLoadingPanel from "../../ui/StudentLoadingPanel.jsx";
 import {
   formatCoinAmountHe,
-  SHOP_CARD_ALREADY_OWNED_HE,
-  SHOP_CARD_SELL_DUPLICATE_HE,
 } from "../../../lib/rewards/rewards-ui.js";
+import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 
 const SHOP_PATH = "/api/student/rewards/cards/shop";
 const PURCHASE_PATH = "/api/student/rewards/shop/purchase";
@@ -33,6 +32,7 @@ export default function StudentCardsShopView({
   gridClassName,
   actionButtonClassName = "",
 }) {
+  const copy = useRewardUiCopy();
   const [shop, setShop] = useState([]);
   const [phase, setPhase] = useState("loading");
   const [messageHe, setMessageHe] = useState("");
@@ -76,17 +76,25 @@ export default function StudentCardsShopView({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setMessageHe(json?.code === "insufficient_coins" ? "Not enough coins to buy this." : "Purchase failed — try again.");
+        setMessageHe(
+          json?.code === "insufficient_coins"
+            ? copy("shop", "notEnoughCoins")
+            : copy("shop", "purchaseFailed"),
+        );
         return;
       }
-      setMessageHe(`You bought ${json.card?.name_he || json.card?.nameHe || "the card"}!`);
+      setMessageHe(
+        copy("shop", "purchaseSuccess", {
+          name: json.card?.name_he || json.card?.nameHe || copy("fallback", "rewardCard"),
+        }),
+      );
       if (json.balanceAfter != null && onCoinBalanceChange) {
         onCoinBalanceChange(Math.floor(Number(json.balanceAfter)));
       }
       await loadShop();
       if (onAfterMutation) await onAfterMutation();
     } catch {
-      setMessageHe("Network error while purchasing.");
+      setMessageHe(copy("shop", "purchaseNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -96,8 +104,7 @@ export default function StudentCardsShopView({
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `Sell a duplicate of ${card.nameHe} for ${formatCoinAmountHe(card.sellbackCoins)}?\n` +
-        "You'll keep one copy in your collection."
+      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins) })}\n${copy("shop", "sellConfirmBody")}`,
     );
     if (!confirmed) return;
 
@@ -118,13 +125,16 @@ export default function StudentCardsShopView({
       if (!res.ok || json?.ok !== true) {
         setMessageHe(
           json?.code === "no_duplicate"
-            ? "No duplicate copy to sell."
-            : "Couldn't sell the duplicate — try again."
+            ? copy("shopView", "noDuplicateToSell")
+            : copy("shopView", "sellFailed"),
         );
         return;
       }
       setMessageHe(
-        `You sold a duplicate of ${json.card?.name_he || json.card?.nameHe || card.nameHe} and got ${formatCoinAmountHe(json.sellbackCoins || 0)}!`
+        copy("shopView", "sellSuccess", {
+          name: json.card?.name_he || json.card?.nameHe || card.nameHe,
+          amount: formatCoinAmountHe(json.sellbackCoins || 0),
+        }),
       );
       if (json.balanceAfter != null && onCoinBalanceChange) {
         onCoinBalanceChange(Math.floor(Number(json.balanceAfter)));
@@ -132,22 +142,22 @@ export default function StudentCardsShopView({
       await loadShop();
       if (onAfterMutation) await onAfterMutation();
     } catch {
-      setMessageHe("Network error while selling.");
+      setMessageHe(copy("shopView", "sellNetworkError"));
     } finally {
       setActionBusy("");
     }
   };
 
   if (phase === "loading") {
-    return <StudentLoadingPanel message="Loading card shop..." reportPage />;
+    return <StudentLoadingPanel message={copy("shopView", "loading")} reportPage />;
   }
 
   if (phase === "error") {
     return (
       <div className={T.errorBox}>
-        <p className={T.errorTitle}>We couldn't load the card shop.</p>
+        <p className={T.errorTitle}>{copy("shopView", "loadErrorTitle")}</p>
         <button type="button" onClick={() => void loadShop()} className={T.errorBtn}>
-          Try again
+          {copy("shopView", "tryAgain")}
         </button>
       </div>
     );
@@ -159,13 +169,13 @@ export default function StudentCardsShopView({
     <div className="space-y-3 min-w-0">
       {coinBalance != null ? (
         <p className={`text-sm font-semibold ${T.statValue}`}>
-          Coin balance: {formatCoinAmountHe(coinBalance)}
+          {copy("shopView", "coinBalance", { amount: formatCoinAmountHe(coinBalance) })}
         </p>
       ) : null}
       {messageHe ? <p className={`text-sm ${T.userMessage || T.tileSub}`}>{messageHe}</p> : null}
       <WindowedStudentCardsGrid
         items={shop}
-        emptyMessage="No cards available to buy right now."
+        emptyMessage={copy("shopView", "empty")}
         T={T}
         previewCards={shopPreviewCards}
         studentFullName={studentFullName}
@@ -184,11 +194,11 @@ export default function StudentCardsShopView({
             footer: (
               <>
                 <p className={`text-sm font-semibold ${T.statValue}`}>
-                  Buy price: {formatCoinAmountHe(card.priceCoins)}
+                  {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins) })}
                 </p>
                 {card.sellbackCoins > 0 ? (
                   <p className={`text-xs leading-snug ${T.tileSub}`}>
-                    Sell value: {formatCoinAmountHe(card.sellbackCoins)}
+                    {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins) })}
                   </p>
                 ) : (
                   <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -196,8 +206,10 @@ export default function StudentCardsShopView({
                 <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
                   {!card.alreadyOwned && !canBuy
                     ? card.missingCoins > 0
-                      ? `You need ${formatCoinAmountHe(card.missingCoins)} more`
-                      : "Not enough coins"
+                      ? copy("shopView", "needMoreCoins", {
+                          amount: formatCoinAmountHe(card.missingCoins),
+                        })
+                      : copy("shopView", "notEnoughCoinsShort")
                     : "\u00a0"}
                 </p>
                 <button
@@ -218,13 +230,13 @@ export default function StudentCardsShopView({
                 >
                   {canSell
                     ? sellBusy
-                      ? "Selling..."
-                      : SHOP_CARD_SELL_DUPLICATE_HE
+                      ? copy("shopView", "selling")
+                      : copy("shop", "sellDuplicate")
                     : card.alreadyOwned
-                      ? SHOP_CARD_ALREADY_OWNED_HE
+                      ? copy("shop", "alreadyOwned")
                       : buyBusy
-                        ? "Buying..."
-                        : `Buy for ${priceLabel}`}
+                        ? copy("shopView", "buying")
+                        : copy("shopView", "buyFor", { price: priceLabel })}
                 </button>
               </>
             ),

@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "Plastic",
+    "newspaper": "Newspaper",
+    "cardboard": "Cardboard",
+    "plastic_bottle": "Plastic bottle",
+    "plastic_bag": "Plastic bag",
+    "soda_can": "Soda can",
+    "banana_peel": "Banana peel",
+    "medium": "Medium",
+    "recycled_paper_can_become_new_paper_again": "Recycled paper can become new paper again.",
+    "plastic_bottles_can_be_made_into_new_products": "Plastic bottles can be made into new products.",
+    "glass_can_be_recycled_many_times": "Glass can be recycled many times.",
+    "metal_cans_are_great_for_recycling": "Metal cans are great for recycling.",
+    "sorting_correctly_helps_protect_the_environment": "Sorting correctly helps protect the environment."
+  }
+}

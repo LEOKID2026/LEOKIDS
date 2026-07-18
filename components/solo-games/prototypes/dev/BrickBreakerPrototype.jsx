@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -192,8 +193,8 @@ export default function BrickBreakerPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Brick Breaker"
-      subtitle="Prototype · move paddle · break bricks"
+      title={gamePackCopy("components__solo-games__prototypes__dev__BrickBreakerPrototype", "brick_breaker")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__BrickBreakerPrototype", "prototype_move_paddle_break_bricks")}
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-bold text-amber-200">{score}</span>
       }

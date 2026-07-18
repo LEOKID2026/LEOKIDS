@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useEffect, useRef, useState } from "react";
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
 import SoloGameEndInterstitialOverlay from "../SoloGameEndInterstitialOverlay.jsx";
@@ -378,15 +379,15 @@ export default function MleoSortShapesEngine({
       setSelectedBin((b) => (b + BINS.length - 1) % BINS.length);
       return true;
     }
-    if (e.code === "Digit1") {
+    if (e.code === gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "digit1")) {
       setSelectedBin(0);
       return true;
     }
-    if (e.code === "Digit2") {
+    if (e.code === gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "digit2")) {
       setSelectedBin(1);
       return true;
     }
-    if (e.code === "Digit3") {
+    if (e.code === gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "digit3")) {
       setSelectedBin(2);
       return true;
     }
@@ -405,7 +406,7 @@ export default function MleoSortShapesEngine({
     >
       <div className="flex min-h-0 w-full flex-1 flex-col gap-2 px-2 py-2 max-lg:gap-1 max-lg:px-0 max-lg:py-0">
         <div className="w-full shrink-0 max-lg:[&>p]:mx-0 max-lg:[&>p]:mb-1 max-lg:[&>p]:w-full max-lg:[&>p]:max-w-none max-lg:[&>p]:rounded-none max-lg:[&>p]:border-x-0">
-          <SoloV2Goal text="Drag the shape to the right group! +50 for each correct sort." />
+          <SoloV2Goal text={gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "drag_the_shape_to_the_right_group_50_for_each_correct_sort")} />
         </div>
         {!showIntro ? (
           <div className="w-full shrink-0 max-lg:[&>div]:w-full max-lg:[&>div]:max-w-none max-lg:[&>div]:rounded-none max-lg:[&>div]:border-x-0">
@@ -426,7 +427,7 @@ export default function MleoSortShapesEngine({
         >
         {showIntro ? (
           <SoloV2Intro
-            title="Sort Shapes"
+            title={gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "sort_shapes")}
             lines={[
               "Pick the right box for each shape",
               "+50 for correct sorts only",

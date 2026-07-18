@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "four_in_a_row": "Four in a Row",
+    "back": "Back",
+    "coin_balance": "Coin balance",
+    "how_to_play": "How to play",
+    "close": "Close",
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "Each player picks a column; the disc drops to the bottom.",
+    "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal": "Goal: connect four discs in a row — horizontal, vertical, or diagonal.",
+    "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back": "Blue goes first; after each move the turn passes to Gold and back.",
+    "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw": "If the board fills with no four-in-a-row — it's a draw.",
+    "waiting_for_a_second_player": "Waiting for a second player…",
+    "four_in_a_row_2": "Four in a row."
+  }
+}

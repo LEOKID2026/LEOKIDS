@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-train",
+  "title": "Leo's Word Train",
+  "blurb": "Letters, words, and sentences in English - riding on the train cars",
+  "help": {
+    "howToPlay": "Choose a card, load it onto an empty car, and tap \"Send the Train\". When the answer is correct - the train departs!",
+    "scoring": "Correct answer +30, time bonus, streak of 3 +15, streak of 5 +30. Timeout −5. A mistake doesn't end the game - it just counts.",
+    "rewards": "Coins are awarded based on how many of the 20 tasks you completed, accuracy, streaks, and difficulty level.",
+    "tip": "On easy - just letters. Medium - short words. Hard - short sentences."
+  },
+  "accessibility": {
+    "title": "Leo's Word Train"
+  }
+}

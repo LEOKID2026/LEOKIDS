@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { DEFAULT_PROFILE_BACKGROUND_KEY } from "../../../lib/student-ui/profile-background-options.js";
 import { resolveProfileBackgroundStyle } from "../../../lib/student-ui/profile-background.client.js";
 
@@ -9,7 +10,7 @@ export default function StudentLearningAvatar({
   className = "",
   sizeClass = "h-11 w-11 text-xl",
   onClick,
-  ariaLabel = "Player profile",
+  ariaLabel = gamePackCopy("components__arcade__club__StudentLearningAvatar", "player_profile"),
 }) {
   const { background } = resolveProfileBackgroundStyle(avatarBackgroundKey);
   const interactive =

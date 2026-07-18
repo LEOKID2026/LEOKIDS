@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "white_first_seat_in_the_list_goes_first": "White (first seat in the list) goes first.",
+    "select_a_piece_then_a_destination_square_per_chess_rules": "Select a piece, then a destination square per chess rules.",
+    "pawns_reaching_the_last_rank_auto_promote_to_queen": "Pawns reaching the last rank auto-promote to queen.",
+    "checkmate_ends_the_game_a_draw_refunds_entry_to_both_players": "Checkmate ends the game; a draw refunds entry to both players."
+  }
+}

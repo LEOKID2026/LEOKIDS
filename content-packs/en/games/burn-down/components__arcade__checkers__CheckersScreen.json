@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "checkers": "Checkers",
+    "black_left_seat_in_the_list_goes_first_turns_alternate": "Black (left seat in the list) goes first; turns alternate.",
+    "move_diagonally_forward_kings_move_on_all_diagonals": "Move diagonally forward; kings move on all diagonals.",
+    "captures_are_mandatory_when_available": "Captures are mandatory when available.",
+    "multi_jumps_with_the_same_piece_continue_until_no_more_captures": "Multi-jumps with the same piece continue until no more captures."
+  }
+}

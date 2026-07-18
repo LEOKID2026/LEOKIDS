@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { studentAvatarFromHomeSummary } from "../../../lib/learning-client/studentHomeAvatarFromSummary.js";
@@ -98,7 +99,7 @@ export default function ArcadeClubProfilePanel({ gh }) {
             maxLength={20}
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
-            placeholder="Display name"
+            placeholder={gamePackCopy("components__arcade__club__ArcadeClubProfilePanel", "display_name")}
           />
           <button
             type="button"

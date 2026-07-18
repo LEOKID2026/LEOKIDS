@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useChessSession } from "../../../hooks/arcade/useChessSession";
@@ -80,10 +81,10 @@ function HowToModal({ open, onClose }) {
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm text-zinc-200">
-          <li>White (first seat in the list) goes first.</li>
-          <li>Select a piece, then a destination square per chess rules.</li>
-          <li>Pawns reaching the last rank auto-promote to queen.</li>
-          <li>Checkmate ends the game; a draw refunds entry to both players.</li>
+          <li>{gamePackCopy("components__arcade__chess__ChessScreen", "white_first_seat_in_the_list_goes_first")}</li>
+          <li>{gamePackCopy("components__arcade__chess__ChessScreen", "select_a_piece_then_a_destination_square_per_chess_rules")}</li>
+          <li>{gamePackCopy("components__arcade__chess__ChessScreen", "pawns_reaching_the_last_rank_auto_promote_to_queen")}</li>
+          <li>{gamePackCopy("components__arcade__chess__ChessScreen", "checkmate_ends_the_game_a_draw_refunds_entry_to_both_players")}</li>
         </ul>
       </div>
     </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLudoSession } from "../../../hooks/arcade/useLudoSession";
@@ -44,8 +45,8 @@ function LudoOv2Hud({ onBack, balance, onOpenHelp }) {
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="Back"
-        title="Back"
+        aria-label={gamePackCopy("components__arcade__ludo__LudoScreen", "back")}
+        title={gamePackCopy("components__arcade__ludo__LudoScreen", "back")}
       >
         <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">Back</span>
       </button>
@@ -59,7 +60,7 @@ function LudoOv2Hud({ onBack, balance, onOpenHelp }) {
       <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <div
           className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-          title="Coin balance"
+          title={gamePackCopy("components__arcade__ludo__LudoScreen", "coin_balance")}
         >
           <img src="/images/coin.png" alt="" className="h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7" />
           <span className="min-w-0 truncate font-mono text-sm font-bold tabular-nums leading-none text-amber-100 sm:text-base">
@@ -70,8 +71,8 @@ function LudoOv2Hud({ onBack, balance, onOpenHelp }) {
           type="button"
           onClick={onOpenHelp}
           className={HUD_BTN_SQUARE}
-          aria-label="How to play"
-          title="How to play"
+          aria-label={gamePackCopy("components__arcade__ludo__LudoScreen", "how_to_play")}
+          title={gamePackCopy("components__arcade__ludo__LudoScreen", "how_to_play")}
         >
           <span className="text-lg leading-none text-white/95">?</span>
         </button>
@@ -111,10 +112,10 @@ function LudoHowToModal({ open, onClose }) {
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm leading-relaxed text-zinc-200">
-          <li>On your turn the dice are rolled (OV2 also auto-opens a roll animation), then pick which piece to move.</li>
-          <li>Only a 6 gets a piece out of the yard onto the path.</li>
-          <li>A 6, a capture, or entering home from the path — per engine rules — grants an extra turn.</li>
-          <li>A piece that reaches home finishes; four pieces home wins.</li>
+          <li>{gamePackCopy("components__arcade__ludo__LudoScreen", "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th")}</li>
+          <li>{gamePackCopy("components__arcade__ludo__LudoScreen", "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path")}</li>
+          <li>{gamePackCopy("components__arcade__ludo__LudoScreen", "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_")}</li>
+          <li>{gamePackCopy("components__arcade__ludo__LudoScreen", "a_piece_that_reaches_home_finishes_four_pieces_home_wins")}</li>
         </ul>
       </div>
     </div>
@@ -253,7 +254,7 @@ export default function LudoScreen({ roomId }) {
             <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-hidden px-0.5 sm:gap-1">
               <LudoSeatStrip count={4} labels={seatLabels} activeIndex={null} selfIndex={vm.mySeat} />
               <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-2 text-center text-sm text-zinc-400">
-                <p>Waiting for players…</p>
+                <p>{gamePackCopy("components__arcade__ludo__LudoScreen", "waiting_for_players")}</p>
                 <p className="mt-2 text-xs text-zinc-500">When the room fills, the game opens automatically.</p>
               </div>
             </div>

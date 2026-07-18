@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 /** @typedef {{ id: string, labelHe: string, cells: [number, number][], color: string, glow: string }} BlockShape */
 
 /** @type {BlockShape[]} */
@@ -21,7 +22,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "line-3",
-    labelHe: "Line of 3",
+    labelHe: gamePackCopy("components__solo-games__prototypes__smart-blocks-shapes", "line_of_3"),
     cells: [
       [0, 0],
       [0, 1],
@@ -32,7 +33,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "line-4",
-    labelHe: "Line of 4",
+    labelHe: gamePackCopy("components__solo-games__prototypes__smart-blocks-shapes", "line_of_4"),
     cells: [
       [0, 0],
       [0, 1],

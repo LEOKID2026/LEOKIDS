@@ -1,0 +1,370 @@
+{
+  "balloons": {
+    "gameId": "balloons",
+    "title": "Balloon Pop",
+    "blurb": "Pop balloons before time runs out!",
+    "help": {
+      "howToPlay": "Tap balloons to pop them. You have three lives and one minute. Watch out for bombs!",
+      "scoring": "Regular, gold, and diamond balloons add points. Clock balloons add time, and heart balloons restore a life. A bomb takes away a life.",
+      "rewards": "Reaching the pop target or a high final score grants coins and diamonds.",
+      "tip": "Watch for special balloons - they can help you before time runs out."
+    }
+  },
+  "bingo": {
+    "gameId": "bingo",
+    "title": "Bingo",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "catcher": {
+    "gameId": "catcher",
+    "title": "Catch with Leo",
+    "blurb": "Catch coins and stay away from bombs!",
+    "help": {
+      "howToPlay": "Move Leo left and right to catch coins and diamonds falling from the sky.",
+      "scoring": "Every coin or diamond caught adds points. Hitting a bomb ends the game.",
+      "rewards": "The more points you earn, the more coins and diamonds you'll get for your kid world.",
+      "tip": "Keep your eyes on what's falling and move ahead of time before the item reaches the bottom."
+    }
+  },
+  "checkers": {
+    "gameId": "checkers",
+    "title": "Checkers",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "chess": {
+    "gameId": "chess",
+    "title": "Chess",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "dominoes": {
+    "gameId": "dominoes",
+    "title": "Dominoes",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "flyer": {
+    "gameId": "flyer",
+    "title": "Leo in a Plane",
+    "blurb": "Hold to fly, collect coins, and avoid obstacles!",
+    "help": {
+      "howToPlay": "Hold the button or the screen to fly, and release to descend. Collect coins and avoid obstacles.",
+      "scoring": "Coins and diamonds add points. Hitting an obstacle ends the game.",
+      "rewards": "The farther you fly and the more points you earn, the more coins and diamonds you'll get.",
+      "tip": "Don't fly too high - sometimes it's better to pass beneath an obstacle."
+    }
+  },
+  "fourline": {
+    "gameId": "fourline",
+    "title": "Four in a Row",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "fruit-slice": {
+    "gameId": "fruit-slice",
+    "title": "Fruit Slice",
+    "blurb": "Slice fruit, avoid bombs, and reach the score target!",
+    "help": {
+      "howToPlay": "Drag your finger across the screen to slice flying fruit. Avoid bombs - you have three mistakes allowed.",
+      "scoring": "Every fruit sliced adds points. Slicing several fruits at once gives a combo bonus. Hitting a bomb or missing a fruit costs a mistake.",
+      "rewards": "Reaching the score target based on difficulty level grants coins and diamonds.",
+      "tip": "Slice only fruit - if you see a bomb, it's best to skip it."
+    }
+  },
+  "leo-bakery": {
+    "gameId": "leo-bakery",
+    "title": "Leo's Bakery",
+    "blurb": "Multiplication, equal groups, and trays",
+    "help": {
+      "howToPlay": "Build trays with an equal amount of baked goods - set the number of trays and the amount per tray, then tap \"Check Order\".",
+      "scoring": "Correct answer +30, time bonus up to +20, streak of 5 correct +25. No points are deducted for mistakes.",
+      "rewards": "Coins are awarded based on how many orders you prepared correctly, accuracy, streaks, and difficulty level.",
+      "tip": "Think about how many trays × how many per tray - not just the final result."
+    },
+    "accessibility": {
+      "title": "Leo's Bakery"
+    }
+  },
+  "leo-gifts": {
+    "gameId": "leo-gifts",
+    "title": "Leo's Candy Shop",
+    "blurb": "Equal division, remainders, and quick math",
+    "help": {
+      "howToPlay": "Divide gifts among the children - choose how many each child gets and how many are left for Leo, then tap \"Check Division\".",
+      "scoring": "Correct answer +30, time bonus up to +20, streak of 5 correct +25. No points are deducted for mistakes.",
+      "rewards": "Coins are awarded based on how many questions you answered correctly, accuracy, streaks, and difficulty level - even if the game ended due to mistakes.",
+      "tip": "Check that you've divided everything and that Leo isn't left with too many - you can give each child more."
+    },
+    "accessibility": {
+      "title": "Leo's Candy Shop"
+    }
+  },
+  "leo-jump": {
+    "gameId": "leo-jump",
+    "title": "Leo Jumps",
+    "blurb": "Jump over obstacles and collect coins!",
+    "help": {
+      "howToPlay": "Tap to jump. Get past obstacles and collect coins, diamonds, and magnets along the way.",
+      "scoring": "Coins and diamonds add points. Consecutive jumps over obstacles give a combo bonus. Hitting an obstacle ends the game.",
+      "rewards": "The farther you run and the more points you earn, the more coins and diamonds you'll get.",
+      "tip": "Don't jump every time - sometimes it's better to wait a moment and jump at the right time."
+    }
+  },
+  "leo-lab": {
+    "gameId": "leo-lab",
+    "title": "Leo's Experiment Lab",
+    "blurb": "A game about experiments, materials, and cause and effect",
+    "help": {
+      "howToPlay": "Read the experiment task, choose items from the shelf (drag or tap), place them on the lab table, and tap \"Check Experiment\".",
+      "scoring": "A successful experiment +30, success on the first try +10, streak of 3 correct +15, streak of 5 +30. No points are deducted for mistakes.",
+      "rewards": "Coins are awarded based on how many experiments you succeeded at, difficulty level, accuracy, streaks, and completing 20 experiments - only if you succeeded at least once.",
+      "tip": "Think about what's needed to complete the task - don't rely on hints on the item cards."
+    },
+    "accessibility": {
+      "title": "Leo's Experiment Lab"
+    }
+  },
+  "leo-miners": {
+    "gameId": "leo-miners",
+    "title": "Leo the Miner",
+    "blurb": "Merge mining dogs, break rocks, and earn points to redeem!",
+    "help": {
+      "howToPlay": "Add mining dogs to the board, drag dogs of the same level to merge them, and break rocks to earn coins and points.",
+      "scoring": "Every rock broken grants coins. Points accumulate based on the rock's stage - with a daily limit.",
+      "rewards": "Points can be redeemed for Leo coins and diamonds (once the server is ready).",
+      "tip": "Upgrade DPS to break rocks faster, and GOLD to earn more coins from each rock."
+    }
+  },
+  "leo-number-path": {
+    "gameId": "leo-number-path",
+    "title": "Leo's Number Path",
+    "blurb": "Sequences, odd-even, and multiples",
+    "help": {
+      "howToPlay": "Choose numbers from the path based on the task - even numbers, multiples, skip-counting, or a sequence - then tap \"Check Path\".",
+      "scoring": "Correct on the first try +30, second try +20, third try +10. After 3 mistakes you move on to the next task.",
+      "rewards": "Coins are awarded based on how many of the 20 tasks you completed, accuracy, streaks, and finishing the path.",
+      "tip": "Pay attention to whether order matters - for skip-counting and sequences you need to choose in order."
+    },
+    "accessibility": {
+      "title": "Leo's Number Path"
+    }
+  },
+  "leo-pizzeria": {
+    "gameId": "leo-pizzeria",
+    "title": "Leo's Pizzeria",
+    "blurb": "Learning fractions through making pizzas",
+    "help": {
+      "howToPlay": "Read the order, add toppings to the pizza slices (tap or drag), and tap \"Serve Pizza\".",
+      "scoring": "Correct pizza +30, streak of 3 correct +15, streak of 5 +30. No points are deducted for mistakes.",
+      "rewards": "Coins are awarded based on how many customers you served, accuracy, streaks, and difficulty level - even if you didn't serve all 20 customers.",
+      "tip": "Check how many slices each topping covers - half, quarter, and eighth refer to the number of slices, not a position."
+    },
+    "accessibility": {
+      "title": "Leo's Pizzeria"
+    }
+  },
+  "leo-supermarket": {
+    "gameId": "leo-supermarket",
+    "title": "Leo's Grocery Store",
+    "blurb": "A game about money, shopping, and giving change",
+    "help": {
+      "howToPlay": "A customer asks for products - pick them from the shelf, work out the change, and choose matching coins. Tap \"Give Change\" when you're ready.",
+      "scoring": "Correct product +10, correct change +25, satisfied customer +30, change right on the first try +10, fast service +5. A mistake or running out of time −5.",
+      "rewards": "Coins are awarded based on how many customers you served, accuracy, streaks, and difficulty level - even if you didn't serve all 20 customers.",
+      "tip": "Check the purchase total and how much the customer paid - work out for yourself how much change to give back."
+    },
+    "accessibility": {
+      "title": "Leo's Grocery Store"
+    }
+  },
+  "leo-word-detective": {
+    "gameId": "leo-word-detective",
+    "title": "Leo's Word Detective",
+    "blurb": "Drag evidence onto the board and solve reading and vocabulary cases",
+    "help": {
+      "howToPlay": "Drag evidence cards onto the investigation board and tap \"Solve Case\". When the answer is correct - the case is closed!",
+      "scoring": "Correct answer +30, time bonus, streak of 3 +15, streak of 5 +30. Timeout −5. A mistake doesn't end the game - it just counts.",
+      "rewards": "Coins are awarded based on how many of the 20 cases you solved, accuracy, streaks, and difficulty level.",
+      "tip": "Read the case task carefully - on hard level there's a short passage on the board."
+    },
+    "accessibility": {
+      "title": "Leo's Word Detective"
+    }
+  },
+  "leo-word-train": {
+    "gameId": "leo-word-train",
+    "title": "Leo's Word Train",
+    "blurb": "Letters, words, and sentences in English - riding on the train cars",
+    "help": {
+      "howToPlay": "Choose a card, load it onto an empty car, and tap \"Send the Train\". When the answer is correct - the train departs!",
+      "scoring": "Correct answer +30, time bonus, streak of 3 +15, streak of 5 +30. Timeout −5. A mistake doesn't end the game - it just counts.",
+      "rewards": "Coins are awarded based on how many of the 20 tasks you completed, accuracy, streaks, and difficulty level.",
+      "tip": "On easy - just letters. Medium - short words. Hard - short sentences."
+    },
+    "accessibility": {
+      "title": "Leo's Word Train"
+    }
+  },
+  "ludo": {
+    "gameId": "ludo",
+    "title": "Ludo",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "maze": {
+    "gameId": "maze",
+    "title": "Leo's Maze",
+    "blurb": "Find the exit of the maze before time runs out!",
+    "help": {
+      "howToPlay": "Move Leo through the maze, collect keys and stars, and find the exit before time runs out.",
+      "scoring": "Keys, stars, and diamonds add points. Finishing the maze gives a big bonus. If time runs out - the game ends.",
+      "rewards": "Successfully finishing the maze based on difficulty level grants coins, and a score bonus adds even more.",
+      "tip": "Collect the keys first - sometimes they unlock a shorter path."
+    }
+  },
+  "memory-match": {
+    "gameId": "memory-match",
+    "title": "Memory Match",
+    "blurb": "Flip cards, find pairs, and try to win.",
+    "players": "1–2 players",
+    "help": {
+      "howToPlay": "Play together on the same device."
+    }
+  },
+  "memory": {
+    "gameId": "memory",
+    "title": "Leo's Memory Game",
+    "blurb": "Flip cards and find pairs before the clock runs out!",
+    "help": {
+      "howToPlay": "Tap a card to flip it, and find its matching pair. Every pair you find stays open.",
+      "scoring": "You start with a high score - the longer you take, the lower it drops. Finding all the pairs before time runs out = a win.",
+      "rewards": "Winning based on difficulty level grants coins and diamonds. The higher the score, the bigger the reward.",
+      "tip": "Try to remember where you saw each picture - even if you didn't find its pair right away."
+    }
+  },
+  "picture-puzzle": {
+    "gameId": "picture-puzzle",
+    "title": "Picture Puzzle",
+    "blurb": "Complete the pieces of Leo's picture!",
+    "help": {
+      "howToPlay": "Drag the picture pieces to the right place on the board. Complete all the pieces before time runs out.",
+      "scoring": "The faster you finish and the fewer moves you use, the higher the score. If time runs out before you finish - there's no win.",
+      "rewards": "Completing the puzzle based on difficulty level grants coins, and a score bonus adds even more.",
+      "tip": "Start with the corners and edges - it's easier to see where each piece belongs."
+    }
+  },
+  "puzzle": {
+    "gameId": "puzzle",
+    "title": "Leo's Puzzle",
+    "blurb": "Merge tiles and rack up points before time runs out!",
+    "help": {
+      "howToPlay": "Move tiles on the board to merge matching numbers. The bigger the numbers, the higher the score.",
+      "scoring": "Every merge adds points. The goal is to reach the score target before time runs out.",
+      "rewards": "Winning based on difficulty level grants coins, and a score bonus adds even more.",
+      "tip": "Try to keep a corner free so you have room to move tiles."
+    }
+  },
+  "recycling-factory": {
+    "gameId": "recycling-factory",
+    "title": "Leo's Recycling Factory",
+    "blurb": "Sort trash into the right bins and help protect the environment",
+    "help": {
+      "howToPlay": "Drag or tap an item from the conveyor belt, then choose the correct bin. Sort enough items before you reach the maximum number of mistakes.",
+      "scoring": "Correct sort +10, fast sort +5, streak of 5 correct +20, streak of 10 +50. A mistake or missed item −5 (score never drops below 0).",
+      "rewards": "Coins are awarded based on how many items you sorted correctly, accuracy, streaks, and reaching the goal - even if you didn't finish the whole game.",
+      "tip": "Pay attention to the item type - paper, plastic, glass, metal, or general waste."
+    },
+    "accessibility": {
+      "title": "Leo's Recycling Factory"
+    }
+  },
+  "rock-paper-scissors": {
+    "gameId": "rock-paper-scissors",
+    "title": "Rock · Paper · Scissors",
+    "blurb": "Quick rounds — best of all.",
+    "players": "2 players or vs robot",
+    "help": {
+      "howToPlay": "Play together on the same device."
+    }
+  },
+  "smart-blocks": {
+    "gameId": "smart-blocks",
+    "title": "Smart Blocks",
+    "blurb": "Place shapes, clear rows and columns, and reach the score target!",
+    "help": {
+      "howToPlay": "Drag shapes onto the board, rotate them if needed, and place them to fill rows and columns.",
+      "scoring": "Clearing a row or column adds points. The goal is to reach the score target before the board fills up.",
+      "rewards": "Winning based on difficulty level grants coins, and a score bonus adds even more.",
+      "tip": "Try to clear several rows at once - it gives a lot of points."
+    }
+  },
+  "snakes-and-ladders": {
+    "gameId": "snakes-and-ladders",
+    "title": "Snakes and Ladders",
+    "blurb": "Play with friends in the arcade",
+    "help": {
+      "howToPlay": "Follow the on-screen instructions for this game.",
+      "tip": "Take turns and have fun."
+    }
+  },
+  "sort-shapes": {
+    "gameId": "sort-shapes",
+    "title": "Sort Shapes",
+    "blurb": "Sort shapes and colors into the correct boxes!",
+    "help": {
+      "howToPlay": "Drag each shape to the matching box by shape or color. Finish all the sorting before time runs out.",
+      "scoring": "Every correct sort adds points. A mistake deducts from the score. If time runs out before you finish - the game ends.",
+      "rewards": "Finishing successfully based on difficulty level grants coins, and a score bonus adds even more.",
+      "tip": "First decide which box each shape belongs to - then drag with confidence."
+    }
+  },
+  "tap-battle": {
+    "gameId": "tap-battle",
+    "title": "Tap Battle",
+    "blurb": "Each side taps as fast as they can — who wins?",
+    "players": "2 players",
+    "help": {
+      "howToPlay": "Play together on the same device."
+    }
+  },
+  "target-tap": {
+    "gameId": "target-tap",
+    "title": "Target Tap",
+    "blurb": "Tap the targets before they disappear!",
+    "help": {
+      "howToPlay": "Tap the targets that appear on the screen before they disappear. You have three lives.",
+      "scoring": "Regular targets, stars, and diamonds are worth different points. Missing costs a life. Consecutive hits give a combo bonus.",
+      "rewards": "Reaching the hit target or a high final score grants coins and diamonds.",
+      "tip": "Don't rush at everything - sometimes a target with a diamond is worth more."
+    }
+  },
+  "tic-tac-toe": {
+    "gameId": "tic-tac-toe",
+    "title": "Tic-Tac-Toe",
+    "blurb": "Boards from 3×3 to 7×7 with score tracking.",
+    "players": "2 players",
+    "help": {
+      "howToPlay": "Play together on the same device."
+    }
+  }
+}

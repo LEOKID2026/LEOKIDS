@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useMemo, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -209,16 +210,14 @@ export default function MarbleRunPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Marble Run"
-      subtitle="Prototype · pick a piece · place · run"
+      title={gamePackCopy("components__solo-games__prototypes__dev__MarbleRunPrototype", "marble_run")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__MarbleRunPrototype", "prototype_pick_a_piece_place_run")}
       headerExtra={
         <button
           type="button"
           onClick={resetBoard}
           className="rounded-lg border border-white/25 px-2 py-1 text-[11px] font-bold text-white/85"
-        >
-          Reset
-        </button>
+        >{gamePackCopy("components__solo-games__prototypes__dev__MarbleRunPrototype", "reset")}</button>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col items-center gap-2 overflow-auto p-3 sm:gap-3 sm:p-4">
@@ -318,9 +317,7 @@ export default function MarbleRunPrototype() {
           onClick={runMarble}
           disabled={running}
           className="min-h-[48px] rounded-xl bg-amber-500 px-8 py-2.5 text-base font-bold text-slate-900 shadow-lg active:scale-[0.98] disabled:opacity-50"
-        >
-          Run ⚪
-        </button>
+        >{gamePackCopy("components__solo-games__prototypes__dev__MarbleRunPrototype", "run")}</button>
 
         {status ? (
           <p

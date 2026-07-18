@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "digit1": "Digit1",
+    "digit2": "Digit2",
+    "digit3": "Digit3",
+    "drag_the_shape_to_the_right_group_50_for_each_correct_sort": "Drag the shape to the right group! +50 for each correct sort.",
+    "sort_shapes": "Sort Shapes",
+    "p_mx_0_max_lg_p_mb_1_max_lg_p_w_full_max_lg_p_max_w_none_max_lg_p_rounde": "p]:mx-0 max-lg:[&>p]:mb-1 max-lg:[&>p]:w-full max-lg:[&>p]:max-w-none max-lg:[&>p]:rounded-none max-lg:[&>p]:border-x-0\">",
+    "div_w_full_max_lg_div_max_w_none_max_lg_div_rounded_none_max_lg_div_bord": "div]:w-full max-lg:[&>div]:max-w-none max-lg:[&>div]:rounded-none max-lg:[&>div]:border-x-0\">",
+    "you_re_done": "You're done!",
+    "next_item": "Next item:",
+    "shuffling": "Shuffling!"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "water_pipes": "Water Pipes",
+    "prototype_tap_to_rotate_check_flow": "Prototype · tap to rotate · check flow",
+    "check_water": "Check water 💧",
+    "reset": "Reset"
+  }
+}

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import Link from "next/link";
 import { useSoloGameShellUi } from "../../hooks/solo-games/useSoloGameShellUi.js";
 
@@ -19,10 +20,10 @@ export default function SoloGameNavButtons({
   onPrimary,
   primaryDisabled = false,
   primaryBusy = false,
-  primaryBusyLabel = "Loading…",
+  primaryBusyLabel = gamePackCopy("components__solo-games__SoloGameNavButtons", "loading"),
   compact = false,
   gamesHubHref = "/game",
-  gamesHubLabel = "Back to Games",
+  gamesHubLabel = gamePackCopy("components__solo-games__SoloGameNavButtons", "back_to_games"),
 }) {
   const { SG, tokens: T } = useSoloGameShellUi();
   const minH = compact ? "min-h-[44px] landscape:min-h-[36px]" : "min-h-[48px]";
@@ -48,9 +49,7 @@ export default function SoloGameNavButtons({
       <Link
         href="/student/home"
         className={`${SG.navHomeBtn} ${minH} w-full flex items-center justify-center ${textSize}`}
-      >
-        Back to Kid's World
-      </Link>
+      >{gamePackCopy("components__solo-games__SoloGameNavButtons", "back_to_kid_s_world")}</Link>
     </div>
   );
 }

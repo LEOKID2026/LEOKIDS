@@ -4,6 +4,7 @@ import StudentShareFriendsButton from "../StudentShareFriendsButton.jsx";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../../lib/rewards/reward-feature-flags.client.js";
 import { formatCountdownHe } from "../../../lib/rewards/rewards-ui.js";
+import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 
 const STATUS_PATH = "/api/student/rewards/surprise-box/status";
 
@@ -22,6 +23,7 @@ export default function StudentSurpriseBoxWidget({
   statusOverride = null,
 }) {
   const { tokens: T, isBright } = useStudentTheme();
+  const copy = useRewardUiCopy();
   const [phase, setPhase] = useState("idle");
   const [ready, setReady] = useState(false);
   const [pendingBoxCount, setPendingBoxCount] = useState(0);
@@ -39,7 +41,7 @@ export default function StudentSurpriseBoxWidget({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setErrorHe("We couldn't load the surprise box.");
+        setErrorHe(copy("surpriseBox", "loadError"));
         setPhase("error");
         return;
       }
@@ -50,7 +52,7 @@ export default function StudentSurpriseBoxWidget({
       );
       setPhase("ok");
     } catch {
-      setErrorHe("Network error loading the surprise box.");
+      setErrorHe(copy("surpriseBox", "networkError"));
       setPhase("error");
     }
   }, []);
@@ -100,7 +102,7 @@ export default function StudentSurpriseBoxWidget({
   return (
     <section
       className={`mt-4 md:mt-5 w-full text-left overflow-x-hidden ${T.statCard}`}
-      aria-label="Surprise box"
+      aria-label={copy("surpriseBox", "ariaLabel")}
     >
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-3">
         <div className="min-w-0 flex-1">
@@ -114,27 +116,27 @@ export default function StudentSurpriseBoxWidget({
             <h2
               className={`${T.tileTitle} ${titleColorClass} !text-[1.625rem] md:!text-base !leading-[1.625rem] md:!leading-snug !min-h-0 !line-clamp-none`}
             >
-              Surprise box
+              {copy("surpriseBox", "title")}
             </h2>
           </div>
           {phase === "loading" ? (
-            <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>Loading...</p>
+            <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>{copy("surpriseBox", "loading")}</p>
           ) : phase === "error" ? (
             <p className="mt-0.5 text-xs md:text-sm text-rose-600">{errorHe}</p>
           ) : ready ? (
             <p className="mt-0.5 text-xs md:text-sm font-semibold text-emerald-700 dark:text-emerald-300">
               {pendingBoxCount > 1
-                ? `${pendingBoxCount} boxes ready to open!`
-                : "Surprise box ready!"}
+                ? copy("surpriseBox", "readyMultiple", { count: pendingBoxCount })
+                : copy("surpriseBox", "ready")}
             </p>
           ) : secondsRemaining != null ? (
             <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>
-              Next box ready in{" "}
+              {copy("surpriseBox", "nextBoxIn")}{" "}
               <span className="tabular-nums font-semibold">{formatCountdownHe(secondsRemaining)}</span>
             </p>
           ) : (
             <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>
-              Keep learning — a new box is coming soon!
+              {copy("surpriseBox", "keepLearning")}
             </p>
           )}
         </div>
@@ -145,10 +147,10 @@ export default function StudentSurpriseBoxWidget({
             onClick={() => onOpen?.()}
             className={`${T.ctaSurpriseOpen} ${compactBtn}`}
           >
-            Open box
+            {copy("surpriseBox", "openBox")}
           </button>
           <Link href="/student/cards" className={`${T.ctaCollection} ${compactBtn}`}>
-            My collection
+            {copy("surpriseBox", "myCollection")}
           </Link>
           <div className="hidden md:contents">
             <StudentShareFriendsButton variant="desktop-surprise" />

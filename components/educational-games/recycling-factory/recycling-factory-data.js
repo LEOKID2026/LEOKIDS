@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import {
   SESSION_FINAL_COUNT,
   SESSION_MID_COUNT,
@@ -31,7 +32,7 @@ export const BINS = {
   },
   plastic: {
     id: "plastic",
-    label: "Plastic",
+    label: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "plastic"),
     emoji: "🧴",
     accent: "#ca8a04",
     lid: "#a16207",
@@ -68,7 +69,7 @@ export const ITEMS = [
   {
     id: "newspaper",
     emoji: "📰",
-    name: "Newspaper",
+    name: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "newspaper"),
     bin: "paper",
     imageSrc: "/images/recycling-items/newspaper.svg",
   },
@@ -82,7 +83,7 @@ export const ITEMS = [
   {
     id: "box",
     emoji: "📦",
-    name: "Cardboard",
+    name: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "cardboard"),
     bin: "paper",
     imageSrc: "/images/recycling-items/cardboard-box.svg",
   },
@@ -90,14 +91,14 @@ export const ITEMS = [
   {
     id: "bottle-plastic",
     emoji: "🧴",
-    name: "Plastic bottle",
+    name: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "plastic_bottle"),
     bin: "plastic",
     imageSrc: "/images/recycling-items/plastic-bottle.svg",
   },
   {
     id: "bag",
     emoji: "🛍️",
-    name: "Plastic bag",
+    name: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "plastic_bag"),
     bin: "plastic",
     imageSrc: "/images/recycling-items/plastic-bag.svg",
   },
@@ -115,7 +116,7 @@ export const ITEMS = [
   {
     id: "can",
     emoji: "🥫",
-    name: "Soda can",
+    name: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "soda_can"),
     bin: "metal",
     imageSrc: "/images/recycling-items/metal-can.svg",
   },
@@ -124,7 +125,7 @@ export const ITEMS = [
   {
     id: "banana",
     emoji: "🍌",
-    name: "Banana peel",
+    name: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "banana_peel"),
     bin: "trash",
     imageSrc: "/images/recycling-items/banana-peel.svg",
   },
@@ -146,7 +147,7 @@ export const DIFFICULTIES = {
   },
   medium: {
     id: "medium",
-    label: "Medium",
+    label: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "medium"),
     bins: ["paper", "plastic", "glass", "trash"],
     itemsTarget: TASKS_PER_SESSION,
     maxMistakes: 4,
@@ -165,11 +166,11 @@ export const DIFFICULTIES = {
 };
 
 export const FACTS = [
-  "Recycled paper can become new paper again.",
-  "Plastic bottles can be made into new products.",
-  "Glass can be recycled many times.",
-  "Metal cans are great for recycling.",
-  "Sorting correctly helps protect the environment.",
+  gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "recycled_paper_can_become_new_paper_again"),
+  gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "plastic_bottles_can_be_made_into_new_products"),
+  gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "glass_can_be_recycled_many_times"),
+  gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "metal_cans_are_great_for_recycling"),
+  gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "sorting_correctly_helps_protect_the_environment"),
   "Recycling saves precious natural resources.",
   "Every item in the right place helps the Earth.",
 ];
@@ -276,11 +277,11 @@ export function pickNextRecyclingItem(queue, usedIds) {
 /** @param {BinId} binId */
 export function pickFactForBin(binId) {
   const binFacts = {
-    paper: "Recycled paper can become new paper again.",
-    plastic: "Plastic bottles can be made into new products.",
-    glass: "Glass can be recycled many times.",
-    metal: "Metal cans are great for recycling.",
-    trash: "Sorting correctly helps protect the environment.",
+    paper: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "recycled_paper_can_become_new_paper_again"),
+    plastic: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "plastic_bottles_can_be_made_into_new_products"),
+    glass: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "glass_can_be_recycled_many_times"),
+    metal: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "metal_cans_are_great_for_recycling"),
+    trash: gamePackCopy("components__educational-games__recycling-factory__recycling-factory-data", "sorting_correctly_helps_protect_the_environment"),
   };
   if (Math.random() < 0.65) return binFacts[binId];
   return FACTS[Math.floor(Math.random() * FACTS.length)];

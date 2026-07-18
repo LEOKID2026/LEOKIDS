@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useSoloGameShellUi } from "../../hooks/solo-games/useSoloGameShellUi.js";
 import SoloGameNavButtons from "./SoloGameNavButtons.jsx";
 
@@ -35,7 +36,7 @@ export default function SoloGameFinishScreen({
   subtitleHe = "",
   statsLines = [],
   gamesHubHref = "/game",
-  gamesHubLabel = "Back to Games",
+  gamesHubLabel = gamePackCopy("components__solo-games__SoloGameFinishScreen", "back_to_games"),
 }) {
   const { SG } = useSoloGameShellUi();
 
@@ -93,7 +94,7 @@ export default function SoloGameFinishScreen({
 
           <div className="mt-4 sm:mt-5 landscape:mt-3">
             <SoloGameNavButtons
-              primaryLabel="Play Again"
+              primaryLabel={gamePackCopy("components__solo-games__SoloGameFinishScreen", "play_again")}
               onPrimary={onPlayAgain}
               primaryDisabled={busy}
               primaryBusy={busy}

@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-detective",
+  "title": "Leo's Word Detective",
+  "blurb": "Drag evidence onto the board and solve reading and vocabulary cases",
+  "help": {
+    "howToPlay": "Drag evidence cards onto the investigation board and tap \"Solve Case\". When the answer is correct - the case is closed!",
+    "scoring": "Correct answer +30, time bonus, streak of 3 +15, streak of 5 +30. Timeout −5. A mistake doesn't end the game - it just counts.",
+    "rewards": "Coins are awarded based on how many of the 20 cases you solved, accuracy, streaks, and difficulty level.",
+    "tip": "Read the case task carefully - on hard level there's a short passage on the board."
+  },
+  "accessibility": {
+    "title": "Leo's Word Detective"
+  }
+}

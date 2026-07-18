@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import shop from "./educational-game-shop-layout.module.css";
 
 /**
@@ -10,8 +11,8 @@ export default function EducationalGameInstructionReplay({ text, onReplay, class
       type="button"
       className={`${shop.instructionReplayBtn} ${className}`.trim()}
       onClick={() => onReplay(text)}
-      aria-label="Replay instruction"
-      title="Replay instruction"
+      aria-label={gamePackCopy("components__educational-games__shared__EducationalGameInstructionReplay", "replay_instruction")}
+      title={gamePackCopy("components__educational-games__shared__EducationalGameInstructionReplay", "replay_instruction")}
     >
       🔊
     </button>

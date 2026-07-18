@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-bakery",
+  "title": "Leo's Bakery",
+  "blurb": "Multiplication, equal groups, and trays",
+  "help": {
+    "howToPlay": "Build trays with an equal amount of baked goods - set the number of trays and the amount per tray, then tap \"Check Order\".",
+    "scoring": "Correct answer +30, time bonus up to +20, streak of 5 correct +25. No points are deducted for mistakes.",
+    "rewards": "Coins are awarded based on how many orders you prepared correctly, accuracy, streaks, and difficulty level.",
+    "tip": "Think about how many trays × how many per tray - not just the final result."
+  },
+  "accessibility": {
+    "title": "Leo's Bakery"
+  }
+}

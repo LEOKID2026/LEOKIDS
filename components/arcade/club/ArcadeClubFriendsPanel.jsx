@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useState } from "react";
 
 function friendRequestFeedback(json) {
@@ -186,7 +187,7 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
         <div className="flex flex-wrap gap-2 justify-start">
           <input
             className={gh.input}
-            placeholder="Leo number (8 digits) or display name"
+            placeholder={gamePackCopy("components__arcade__club__ArcadeClubFriendsPanel", "leo_number_8_digits_or_display_name")}
             maxLength={32}
             value={query}
             onChange={(e) => setQuery(e.target.value)}

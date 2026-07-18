@@ -23,6 +23,7 @@
  * }} DetectiveTask
  */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { planLanguageSession } from "../../../lib/educational-games/language-session-planner.js";
 import {
   LANGUAGE_MIN_POOL_PER_LEVEL,
@@ -31,9 +32,9 @@ import {
 } from "../../../lib/educational-games/language-game-config.js";
 
 const GRADE_BANDS = {
-  easy: "Grades 1–2",
-  medium: "Grades 3–4",
-  hard: "Grades 5–6",
+  easy: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "grades_1_2"),
+  medium: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "grades_3_4"),
+  hard: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "grades_5_6"),
 };
 
 const EASY_TYPES = new Set(["letter_drop", "fill_gap", "image_word", "sort_letter"]);
@@ -125,7 +126,7 @@ function letterDropTask(id, caseLabel, spec) {
     zones: [{ id: "z1", label: "Starting letter", icon: "🔤" }],
     pieces,
     solution: { z1: "p1" },
-    feedbackShort: "Starting letter in place!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "starting_letter_in_place"),
   });
 }
 
@@ -143,7 +144,7 @@ function fillGapTask(id, caseLabel, spec) {
     zones: [{ id: "z1", label: "Missing letter", icon: "🧩" }],
     pieces,
     solution: { z1: "p1" },
-    feedbackShort: "Missing letter filled in!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "missing_letter_filled_in"),
   });
 }
 
@@ -155,12 +156,12 @@ function imageWordTask(id, caseLabel, spec) {
   return wrapDetectiveTask("easy", "image_word", {
     id,
     caseLabel,
-    mission: "Drag the word that matches the picture",
+    mission: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "drag_the_word_that_matches_the_picture"),
     emoji,
     zones: [{ id: "z1", label: "Evidence", icon: "📌" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "Word matches the picture!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "word_matches_the_picture"),
   });
 }
 
@@ -176,7 +177,7 @@ function sortLetterTask(id, caseLabel, spec) {
     zones: [{ id: "zL", label: `Starts with ${letter}`, icon: "📁" }],
     pieces,
     solution: { zL: correctId },
-    feedbackShort: "Right word for the folder!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "right_word_for_the_folder"),
   });
 }
 
@@ -192,7 +193,7 @@ function fillSentenceTask(id, caseLabel, spec) {
     zones: [{ id: "z1", label: "Gap in sentence", icon: "📝" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "Word completes the sentence!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "word_completes_the_sentence"),
   });
 }
 
@@ -208,7 +209,7 @@ function sortPluralTask(id, caseLabel, spec) {
     zones: [{ id: "zPlural", label: "Plural", icon: "📁" }],
     pieces,
     solution: { zPlural: correctId },
-    feedbackShort: "Correct plural form!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "correct_plural_form"),
   });
 }
 
@@ -224,7 +225,7 @@ function sortGenderTask(id, caseLabel, spec) {
     zones: [{ id: "zFem", label: "Female form", icon: "📁" }],
     pieces,
     solution: { zFem: correctId },
-    feedbackShort: "Correct female form!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "correct_female_form"),
   });
 }
 
@@ -240,7 +241,7 @@ function wordFamilyTask(id, caseLabel, spec) {
     zones: [{ id: "zFam", label: `${root} family`, icon: "🧬" }],
     pieces,
     solution: { zFam: correctId },
-    feedbackShort: "Word from the same family!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "word_from_the_same_family"),
   });
 }
 
@@ -256,7 +257,7 @@ function meaningWordTask(id, caseLabel, spec) {
     zones: [{ id: "z1", label: "Meaning", icon: "📖" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "Meaning matches!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "meaning_matches"),
   });
 }
 
@@ -273,12 +274,12 @@ function eventOrderTask(id, caseLabel, spec) {
   return wrapDetectiveTask("hard", "event_order", {
     id,
     caseLabel,
-    mission: "Put events in order — drag to the board",
+    mission: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "put_events_in_order_drag_to_the_board"),
     passage,
     zones,
     pieces,
     solution,
-    feedbackShort: "Event order is correct!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "event_order_is_correct"),
   });
 }
 
@@ -290,12 +291,12 @@ function titleStampTask(id, caseLabel, spec) {
   return wrapDetectiveTask("hard", "title_stamp", {
     id,
     caseLabel,
-    mission: "Drag a title that fits the passage",
+    mission: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "drag_a_title_that_fits_the_passage"),
     passage,
     zones: [{ id: "zTitle", label: "Case title", icon: "📋" }],
     pieces,
     solution: { zTitle: correctId },
-    feedbackShort: "Title fits the passage!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "title_fits_the_passage"),
   });
 }
 
@@ -312,7 +313,7 @@ function conclusionTask(id, caseLabel, spec) {
     zones: [{ id: "z1", label: "Conclusion", icon: "🎯" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "Correct conclusion from the passage!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "correct_conclusion_from_the_passage"),
   });
 }
 
@@ -329,7 +330,7 @@ function meaningPassageTask(id, caseLabel, spec) {
     zones: [{ id: "z1", label: "Meaning", icon: "📖" }],
     pieces,
     solution: { z1: correctId },
-    feedbackShort: "Meaning fits the passage!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "meaning_fits_the_passage"),
   });
 }
 
@@ -439,13 +440,13 @@ function buildMediumDetectiveTasks() {
   const mediumReplacements = [
     {
       taskType: "fill_sentence",
-      sentence: "The boy ___ water",
+      sentence: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_boy_water"),
       answer: "drinks",
       options: ["drinks", "runs", "blue", "table"],
     },
     {
       taskType: "fill_sentence",
-      sentence: "The dog ___ on the floor",
+      sentence: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_dog_on_the_floor"),
       answer: "sleeps",
       options: ["sleeps", "runs", "green", "table"],
     },
@@ -506,42 +507,42 @@ function buildHardDetectiveTasks() {
 
   const events = [
     {
-      passage: "Dan left the house. He walked to the park and played. Then he came home for lunch.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "dan_left_the_house_he_walked_to_the_park_and_played_then_he_came_home_fo"),
       labels: ["Left the house", "Played in the park", "Came home for lunch", "Went to sleep"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "Rain fell. The kids played inside. After the rain, a rainbow appeared.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "rain_fell_the_kids_played_inside_after_the_rain_a_rainbow_appeared"),
       labels: ["Rain fell", "Played inside", "Rainbow appeared", "Went to the beach"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "Mia woke up in the morning. She ate breakfast. She packed her bag and went to school.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "mia_woke_up_in_the_morning_she_ate_breakfast_she_packed_her_bag_and_went"),
       labels: ["Woke up", "Ate breakfast", "Went to school", "Went swimming"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "Jo drank water. He got dressed and went out. He rode his bike to the park.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "jo_drank_water_he_got_dressed_and_went_out_he_rode_his_bike_to_the_park"),
       labels: ["Drank water", "Went outside", "Rode to the park", "Bought shoes"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "Mom turned on the oven. She baked a cake. Everyone ate together.",
-      labels: ["Turned on oven", "Baked a cake", "Ate together", "Went shopping"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "mom_turned_on_the_oven_she_baked_a_cake_everyone_ate_together"),
+      labels: ["Turned on oven", "Baked a cake", gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "ate_together"), "Went shopping"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "The sun set. Stars came out. The children went to bed.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_sun_set_stars_came_out_the_children_went_to_bed"),
       labels: ["Sun set", "Stars came out", "Went to bed", "Went hiking"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "Noa opened a book. She read two pages. She closed it and put it on the shelf.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "noa_opened_a_book_she_read_two_pages_she_closed_it_and_put_it_on_the_she"),
       labels: ["Opened a book", "Read pages", "Put it on shelf", "Drew a picture"],
       answerIds: ["p1", "p2", "p3"],
     },
     {
-      passage: "The wind blew hard. Leaves fell. Then light rain came down.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_wind_blew_hard_leaves_fell_then_light_rain_came_down"),
       labels: ["Wind blew", "Leaves fell", "Rain came", "Sun came out"],
       answerIds: ["p1", "p2", "p3"],
     },
@@ -552,37 +553,37 @@ function buildHardDetectiveTasks() {
 
   const titles = [
     {
-      passage: "Mia loved to read books. Every evening she sat in a corner with a new book.",
-      answer: "Mia loves to read",
-      options: ["Mia loves to read", "Mia goes to the beach", "Mia buys shoes", "A rainy day"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "mia_loved_to_read_books_every_evening_she_sat_in_a_corner_with_a_new_boo"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "mia_loves_to_read"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "mia_loves_to_read"), "Mia goes to the beach", "Mia buys shoes", "A rainy day"],
     },
     {
-      passage: "Jo learned to ride a bike. At first he fell, but he kept trying. In the end he rode alone.",
-      answer: "Jo learns to ride",
-      options: ["Jo learns to ride", "Jo buys clothes", "Jo eats lunch", "A forest hike"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "jo_learned_to_ride_a_bike_at_first_he_fell_but_he_kept_trying_in_the_end"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "jo_learns_to_ride"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "jo_learns_to_ride"), "Jo buys clothes", "Jo eats lunch", "A forest hike"],
     },
     {
-      passage: "Heavy rain fell. The kids played board games. After the rain, a rainbow appeared.",
-      answer: "Rainy day and games",
-      options: ["Rainy day and games", "Forest hike", "Shopping trip", "Swimming lesson"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "heavy_rain_fell_the_kids_played_board_games_after_the_rain_a_rainbow_app"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "rainy_day_and_games"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "rainy_day_and_games"), "Forest hike", "Shopping trip", "Swimming lesson"],
     },
     {
-      passage: "Dan took care of the garden. He watered flowers and pulled weeds. The garden looked beautiful.",
-      answer: "Dan in the garden",
-      options: ["Dan in the garden", "Dan at the beach", "Dan at the store", "Dan at school"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "dan_took_care_of_the_garden_he_watered_flowers_and_pulled_weeds_the_gard"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "dan_in_the_garden"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "dan_in_the_garden"), "Dan at the beach", "Dan at the store", "Dan at school"],
     },
     {
-      passage: "The family made pizza together. Each person picked a topping. They ate happily together.",
-      answer: "Family pizza night",
-      options: ["Family pizza night", "Morning at school", "Mountain hike", "Shopping trip"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_family_made_pizza_together_each_person_picked_a_topping_they_ate_hap"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "family_pizza_night"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "family_pizza_night"), "Morning at school", "Mountain hike", "Shopping trip"],
     },
     {
-      passage: "Noa learned a new song. She practiced again and again. She sang in front of the class.",
-      answer: "Noa learns a song",
-      options: ["Noa learns a song", "Noa buys a clock", "Noa dances", "Noa sleeps"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "noa_learned_a_new_song_she_practiced_again_and_again_she_sang_in_front_o"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "noa_learns_a_song"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "noa_learns_a_song"), "Noa buys a clock", "Noa dances", "Noa sleeps"],
     },
     {
-      passage: "The cat slept on the sofa. It woke up, ate, and went back to sleep. It was a quiet day.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_cat_slept_on_the_sofa_it_woke_up_ate_and_went_back_to_sleep_it_was_a"),
       answer: "A day with the cat",
       options: ["A day with the cat", "A day with the dog", "A day at the beach", "A day at the store"],
     },
@@ -593,50 +594,50 @@ function buildHardDetectiveTasks() {
 
   const conclusions = [
     {
-      passage: "Dan left the house with a bag. He walked to the park and played with friends. Then he came home for lunch.",
-      question: "Why did Dan come home?",
-      answer: "For lunch",
-      options: ["For lunch", "To sleep", "To buy shoes", "To swim"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "dan_left_the_house_with_a_bag_he_walked_to_the_park_and_played_with_frie"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "why_did_dan_come_home"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "for_lunch"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "for_lunch"), "To sleep", "To buy shoes", "To swim"],
     },
     {
-      passage: "Heavy rain fell. The kids stayed inside and played board games.",
-      question: "What can we learn from the passage?",
-      answer: "They stayed inside because of rain",
-      options: ["They stayed inside because of rain", "They swam in the sea", "They flew abroad", "They bought bikes"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "heavy_rain_fell_the_kids_stayed_inside_and_played_board_games"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "what_can_we_learn_from_the_passage"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "they_stayed_inside_because_of_rain"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "they_stayed_inside_because_of_rain"), "They swam in the sea", "They flew abroad", "They bought bikes"],
     },
     {
-      passage: "Grandma asked for help at the market. Noa went with her and helped carry bags.",
-      question: "Who helped Grandma?",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "grandma_asked_for_help_at_the_market_noa_went_with_her_and_helped_carry_"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "who_helped_grandma"),
       answer: "Noa",
       options: ["Noa", "The dog", "The neighbor", "Nobody"],
     },
     {
-      passage: "Jo fell off his bike but kept practicing until he could ride on his own.",
-      question: "What did we learn about Jo?",
-      answer: "He did not give up",
-      options: ["He did not give up", "He sold his bike", "He stayed home", "He was afraid of water"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "jo_fell_off_his_bike_but_kept_practicing_until_he_could_ride_on_his_own"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "what_did_we_learn_about_jo"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "he_did_not_give_up"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "he_did_not_give_up"), "He sold his bike", "He stayed home", "He was afraid of water"],
     },
     {
-      passage: "The teacher told a story. The children listened quietly. At the end everyone clapped.",
-      question: "How did the children react?",
-      answer: "They clapped",
-      options: ["They clapped", "They cried", "They went outside", "They fell asleep"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_teacher_told_a_story_the_children_listened_quietly_at_the_end_everyo"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "how_did_the_children_react"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "they_clapped"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "they_clapped"), "They cried", "They went outside", "They fell asleep"],
     },
     {
-      passage: "The dog waited by the door. When Dan came back, its tail wagged with joy.",
-      question: "How did the dog feel?",
-      answer: "Happy to see Dan",
-      options: ["Happy to see Dan", "Angry", "Tired", "Very hungry"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_dog_waited_by_the_door_when_dan_came_back_its_tail_wagged_with_joy"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "how_did_the_dog_feel"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "happy_to_see_dan"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "happy_to_see_dan"), "Angry", "Tired", "Very hungry"],
     },
     {
-      passage: "Mom made soup. Everyone sat at the table. They ate together warmly.",
-      question: "What did the family do?",
-      answer: "Ate together",
-      options: ["Ate together", "Went hiking", "Watched TV", "Played outside"],
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "mom_made_soup_everyone_sat_at_the_table_they_ate_together_warmly"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "what_did_the_family_do"),
+      answer: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "ate_together"),
+      options: [gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "ate_together"), "Went hiking", "Watched TV", "Played outside"],
     },
     {
-      passage: "The kids planted a pot. They watered it every day. After two weeks a flower grew.",
-      question: "What happened to the pot?",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_kids_planted_a_pot_they_watered_it_every_day_after_two_weeks_a_flowe"),
+      question: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "what_happened_to_the_pot"),
       answer: "A flower grew",
       options: ["A flower grew", "It broke", "It disappeared", "It dried out"],
     },
@@ -647,43 +648,43 @@ function buildHardDetectiveTasks() {
 
   const meaningPassages = [
     {
-      passage: "Jo learned to ride. He fell, but kept practicing. In the end he rode on his own.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "jo_learned_to_ride_he_fell_but_kept_practicing_in_the_end_he_rode_on_his"),
       word: "practiced",
       answer: "tried again and again",
       options: ["tried again and again", "slept", "ate", "danced"],
     },
     {
-      passage: "The girl smiled at everyone. She helped a friend who fell. Everyone liked her.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "the_girl_smiled_at_everyone_she_helped_a_friend_who_fell_everyone_liked_"),
       word: "kind",
       answer: "helps others",
       options: ["helps others", "cries", "yells", "runs away"],
     },
     {
-      passage: "He looked around carefully. He waited before crossing the street.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "he_looked_around_carefully_he_waited_before_crossing_the_street"),
       word: "careful",
       answer: "keeps safe",
       options: ["keeps safe", "runs fast", "yells", "sleeps"],
     },
     {
-      passage: "She did not give up on the puzzle. She tried again and again until it was solved.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "she_did_not_give_up_on_the_puzzle_she_tried_again_and_again_until_it_was"),
       word: "persisted",
       answer: "kept trying",
       options: ["kept trying", "gave up right away", "went to sleep", "ate lunch"],
     },
     {
-      passage: "He shared his candy with everyone. He did not keep it all for himself.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "he_shared_his_candy_with_everyone_he_did_not_keep_it_all_for_himself"),
       word: "shared",
       answer: "gave to others too",
       options: ["gave to others too", "ate it all", "threw it away", "hid it"],
     },
     {
-      passage: "She listened quietly. She did not bother her friends.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "she_listened_quietly_she_did_not_bother_her_friends"),
       word: "respectful",
       answer: "thinks of others",
       options: ["thinks of others", "yells", "runs away", "sleeps"],
     },
     {
-      passage: "He cleaned his room before going out. Everything was in its place.",
+      passage: gamePackCopy("components__educational-games__leo-word-detective__leo-word-detective-data", "he_cleaned_his_room_before_going_out_everything_was_in_its_place"),
       word: "tidy",
       answer: "keeps things in place",
       options: ["keeps things in place", "throws things around", "sleeps", "eats"],

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -118,8 +119,8 @@ export default function TowerStackPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Block Tower"
-      subtitle="Prototype · tap to place · precision = taller tower"
+      title={gamePackCopy("components__solo-games__prototypes__dev__TowerStackPrototype", "block_tower")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__TowerStackPrototype", "prototype_tap_to_place_precision_taller_tower")}
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-bold text-amber-200">
           {score} floors
@@ -145,7 +146,7 @@ export default function TowerStackPrototype() {
           }}
           role="button"
           tabIndex={0}
-          aria-label="Place block"
+          aria-label={gamePackCopy("components__solo-games__prototypes__dev__TowerStackPrototype", "place_block")}
         >
           {!gameOver ? (
             <div

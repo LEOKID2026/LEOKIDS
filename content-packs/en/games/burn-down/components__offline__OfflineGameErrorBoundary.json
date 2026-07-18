@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "oops_something_went_wrong": "Oops! Something went wrong",
+    "we_couldn_t_load_the_game_you_can_try_again": "We couldn't load the game. You can try again.",
+    "back_to_games_list": "Back to Games List",
+    "offline_games_area": "Offline Games Area",
+    "try_again": "Try Again"
+  }
+}

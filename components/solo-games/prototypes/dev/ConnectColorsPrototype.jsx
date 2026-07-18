@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -181,8 +182,8 @@ export default function ConnectColorsPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Connect Colors"
-      subtitle="Prototype · connect pairs without crossing"
+      title={gamePackCopy("components__solo-games__prototypes__dev__ConnectColorsPrototype", "connect_colors")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__ConnectColorsPrototype", "prototype_connect_pairs_without_crossing")}
       headerExtra={
         <button
           type="button"

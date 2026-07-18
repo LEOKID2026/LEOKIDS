@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "The item went past the conveyor - try to be faster!",
+    "correct_great_job": "Correct! Great job ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "Math.max(best, next));\n        if (next === 5) addScore(SCORE.streak5);\n        if (next === 10) addScore(SCORE.streak10);\n        if (next === 5 || next === 10) onStreak();\n        return next;\n      });\n\n      addScore(bonus);\n\n      const showFact = Math.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"moving\");\n      const dualAllowed = allowDualItemsAt(sortedCountRef.current, difficultyRef.current);\n      const maxOnBelt = dualAllowed && Math.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id]),\n    [diffConfig.bins],\n  );\n\n  const binsGridClass =\n    activeBins.length",
+    "onitemclick_bi_uid": "onItemClick(bi.uid)}\n                          />\n                        ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Sort the items into the right bins and help the environment",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Sort each item into the right bin - help the planet!",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)}\n        />\n      ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "Drag to a bin or tap an item → bin",
+    "leo_apos_s_recycling_factory": "Leo&apos;s Recycling Factory",
+    "correct_items": "Correct items",
+    "best_streak": "Best streak",
+    "start_game": "Start game",
+    "mistakes": "Mistakes",
+    "accuracy": "Accuracy",
+    "new_game": "New game",
+    "mission": "Mission",
+    "score": "Score",
+    "level": "Level",
+    "back": "Back"
+  }
+}

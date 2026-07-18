@@ -1,6 +1,7 @@
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
 /** @typedef {'even' | 'odd' | 'multiples' | 'skip' | 'sequence'} PathRule */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { PRODUCTION_MIN_POOL, shuffle } from "../../../lib/educational-games/educational-task-picker.js";
 import {
   MAX_MISTAKES_BY_DIFFICULTY,
@@ -113,7 +114,7 @@ function buildParityTask(difficulty, cfg, guard) {
     orderMatters: false,
     promptHe: isEven
       ? "Choose all the even numbers on the path"
-      : "Choose all the odd numbers on the path",
+      : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "choose_all_the_odd_numbers_on_the_path"),
   };
 }
 

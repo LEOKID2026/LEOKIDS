@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "server_error": "Server error",
+    "server_error_try_refreshing_the_page": "Server error — try refreshing the page."
+  }
+}

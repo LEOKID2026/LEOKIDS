@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Leo in a Plane",
+  "blurb": "Hold to fly, collect coins, and avoid obstacles!",
+  "help": {
+    "howToPlay": "Hold the button or the screen to fly, and release to descend. Collect coins and avoid obstacles.",
+    "scoring": "Coins and diamonds add points. Hitting an obstacle ends the game.",
+    "rewards": "The farther you fly and the more points you earn, the more coins and diamonds you'll get.",
+    "tip": "Don't fly too high - sometimes it's better to pass beneath an obstacle."
+  }
+}

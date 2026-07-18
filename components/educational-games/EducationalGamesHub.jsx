@@ -8,6 +8,42 @@ import GamesHubHeader from "../games/GamesHubHeader.jsx";
 import GamesHubLockFooter from "../games/GamesHubLockFooter.jsx";
 import { useStudentGameAccess } from "../../hooks/useStudentGameAccess.js";
 import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useGameUiDisplay } from "../../lib/games/game-locale-context.jsx";
+
+function EducationalGameHubCard({ row, GH, locked, playNowLabel, metaLabel }) {
+  const ui = useGameUiDisplay(row.gameKey);
+  const cardBody = (
+    <>
+      <div className="flex items-center gap-3 mb-2">
+        <div className={GH.cardEmoji}>{row.emoji || "📚"}</div>
+        <div>
+          <h2 className={GH.cardTitle}>{ui.title}</h2>
+          <p className={GH.cardMeta}>{metaLabel}</p>
+        </div>
+      </div>
+      <p className={`${GH.cardBlurb} flex-1`}>{ui.blurb}</p>
+      {locked ? (
+        <GamesHubLockFooter ctaClass={GH.cardCta} />
+      ) : (
+        <span className={GH.cardCta}>{playNowLabel}</span>
+      )}
+    </>
+  );
+
+  if (locked) {
+    return (
+      <div key={row.gameKey} className={`${GH.card} opacity-80`} aria-disabled="true">
+        {cardBody}
+      </div>
+    );
+  }
+
+  return (
+    <Link key={row.gameKey} href={row.route} className={GH.card}>
+      {cardBody}
+    </Link>
+  );
+}
 
 export default function EducationalGamesHub() {
   const { theme } = useStudentTheme();
@@ -40,43 +76,19 @@ export default function EducationalGamesHub() {
             <section className="grid sm:grid-cols-2 gap-3 md:gap-4">
               {state === "loading" ? null : games.length === 0 ? (
                 <p className={`col-span-full text-center text-sm ${GH.muted}`}>
-                  No educational games available right now
+                  {t("games.noGamesAvailable")}
                 </p>
               ) : (
-                games.map((row) => {
-                  const locked = isGuest && !row.playable;
-                  const cardBody = (
-                    <>
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className={GH.cardEmoji}>{row.emoji || "📚"}</div>
-                        <div>
-                          <h2 className={GH.cardTitle}>{row.titleHe}</h2>
-                          <p className={GH.cardMeta}>Educational game · Coins</p>
-                        </div>
-                      </div>
-                      <p className={`${GH.cardBlurb} flex-1`}>{row.blurbHe}</p>
-                      {locked ? (
-                        <GamesHubLockFooter ctaClass={GH.cardCta} />
-                      ) : (
-                        <span className={GH.cardCta}>Play now</span>
-                      )}
-                    </>
-                  );
-
-                  if (locked) {
-                    return (
-                      <div key={row.gameKey} className={`${GH.card} opacity-80`} aria-disabled="true">
-                        {cardBody}
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <Link key={row.gameKey} href={row.route} className={GH.card}>
-                      {cardBody}
-                    </Link>
-                  );
-                })
+                games.map((row) => (
+                  <EducationalGameHubCard
+                    key={row.gameKey}
+                    row={row}
+                    GH={GH}
+                    locked={isGuest && !row.playable}
+                    playNowLabel={t("games.playNow")}
+                    metaLabel={t("games.educationalMeta")}
+                  />
+                ))
               )}
             </section>
           </div>
@@ -85,4 +97,3 @@ export default function EducationalGamesHub() {
     </Layout>
   );
 }
-

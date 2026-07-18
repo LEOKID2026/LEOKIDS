@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "Same-Device Games",
+    "leo_solo_games": "Leo Solo Games",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "Tag, puzzles, mazes and more - no connection needed.",
+    "educational_games": "Educational Games",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Recycling, grocery store, lab, pizzeria, word train and more - all local.",
+    "leo_games_offline": "Leo Games - Offline",
+    "educational_games_offline": "Educational Games - Offline",
+    "local_games_no_saving_and_no_rewards": "Local games - no saving and no rewards",
+    "offline_games": "Offline Games",
+    "back": "Back"
+  }
+}

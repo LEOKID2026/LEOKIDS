@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import DevPrototypeShell from "./DevPrototypeShell.jsx";
 
@@ -99,8 +100,8 @@ export default function RhythmPrototype() {
 
   return (
     <DevPrototypeShell
-      title="Rhythm Game"
-      subtitle="Prototype · tap when the mark hits the line"
+      title={gamePackCopy("components__solo-games__prototypes__dev__RhythmPrototype", "rhythm_game")}
+      subtitle={gamePackCopy("components__solo-games__prototypes__dev__RhythmPrototype", "prototype_tap_when_the_mark_hits_the_line")}
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-[10px] font-bold text-amber-200">
           🎯{stats.perfect}

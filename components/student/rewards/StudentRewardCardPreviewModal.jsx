@@ -4,6 +4,7 @@ import RewardCardLockedStamp, { lockedCardDimClassName } from "./RewardCardLocke
 import RewardCardImage from "./RewardCardImage.jsx";
 import { downloadStudentRewardCardImage } from "../../../lib/rewards/download-student-card.client.js";
 import { prefetchRewardCardNeighbors } from "../../../lib/rewards/reward-card-display-prefetch.client.js";
+import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 
 const CARD_THUMB_PLACEHOLDER = "/rewards/cards/placeholders/regular/default.svg";
 
@@ -106,6 +107,7 @@ export default function StudentRewardCardPreviewModal({
   studentFullName = "",
 }) {
   const { homeModalShell } = useStudentTheme();
+  const copy = useRewardUiCopy();
   const titleId = useId();
   const closeRef = useRef(null);
   const touchStartX = useRef(null);
@@ -202,7 +204,7 @@ export default function StudentRewardCardPreviewModal({
         cardKey: currentCard.cardKey,
       });
     } catch {
-      setDownloadError("We couldn't download the card. Try again.");
+      setDownloadError(copy("previewModal", "downloadError"));
     } finally {
       setDownloadBusy(false);
     }
@@ -247,7 +249,7 @@ export default function StudentRewardCardPreviewModal({
               onClick={goPrev}
               disabled={!canPrev}
               className={navBtnClass}
-              aria-label="Previous card"
+              aria-label={copy("previewModal", "prev")}
             >
               ‹
             </button>
@@ -263,14 +265,14 @@ export default function StudentRewardCardPreviewModal({
                 onClick={onClose}
                 className="absolute -top-2 -left-2 z-20 inline-flex items-center justify-center rounded-lg border border-white/20 bg-black/35 text-[#FFE8A3] text-2xl leading-none min-h-11 min-w-11 hover:bg-black/50 transition"
                 style={{ direction: "ltr" }}
-                aria-label="Close"
+                aria-label={copy("previewModal", "close")}
               >
                 ×
               </button>
               <StudentRewardCardModalImage
                 thumbSrc={thumbSrc}
                 displaySrc={displaySrc}
-                alt={currentCard.nameHe || "Card image"}
+                alt={currentCard.nameHe || copy("previewModal", "cardImageAlt")}
                 showLocked={showLocked}
                 preBaked={currentCard.imageVariantsReady === true}
               />
@@ -281,7 +283,7 @@ export default function StudentRewardCardPreviewModal({
               onClick={goNext}
               disabled={!canNext}
               className={navBtnClass}
-              aria-label="Next card"
+              aria-label={copy("previewModal", "next")}
             >
               ›
             </button>
@@ -294,8 +296,12 @@ export default function StudentRewardCardPreviewModal({
             {currentCard.rarityHe || currentCard.seriesNameHe ? (
               <p className={`${SUB_CAPTION_CLASS} truncate`}>
                 {[
-                  currentCard.rarityHe ? `Rarity: ${currentCard.rarityHe}` : null,
-                  currentCard.seriesNameHe ? `Series: ${currentCard.seriesNameHe}` : null,
+                  currentCard.rarityHe
+                    ? copy("previewModal", "rarityLabel", { label: currentCard.rarityHe })
+                    : null,
+                  currentCard.seriesNameHe
+                    ? copy("previewModal", "seriesLabel", { label: currentCard.seriesNameHe })
+                    : null,
                 ]
                   .filter(Boolean)
                   .join(" · ")}
@@ -312,7 +318,7 @@ export default function StudentRewardCardPreviewModal({
               onClick={() => void handleDownload()}
               className={`${T.ctaSecondary} text-sm w-full max-w-xs disabled:opacity-50`}
             >
-              {downloadBusy ? "Downloading..." : "Download my card"}
+              {downloadBusy ? copy("previewModal", "downloading") : copy("previewModal", "download")}
             </button>
             {downloadError ? (
               <p className={`text-xs text-center ${SUB_CAPTION_CLASS}`}>{downloadError}</p>

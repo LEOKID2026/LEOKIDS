@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "back_to_games": "Back to Games",
+    "play_again": "Play Again",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "void,\r\n *   busy?: boolean,\r\n *   subtitleHe?: string,\r\n *   statsLines?: Array",
+    "diamond_balance": "Diamond balance:",
+    "coin_balance": "Coin balance:",
+    "score": "Score:",
+    "level": "Level:"
+  }
+}

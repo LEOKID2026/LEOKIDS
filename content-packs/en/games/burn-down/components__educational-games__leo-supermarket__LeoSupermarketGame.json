@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Register",
+    "pick_coins": "Pick coins",
+    "removechangeat_lastindex": "removeChangeAt(lastIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Help Leo the cashier — pick the product, figure out the change, and give the right money back",
+    "x_id_id_if_p_return_null_return": "x.id === id);\n                      if (!p) return null;\n                      return (",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n            New game",
+    "pick_the_product_the_customer_asked_for": "Pick the product the customer asked for",
+    "leo_apos_s_market": "Leo&apos;s Market",
+    "change_you_gave": "Change you gave:",
+    "purchase_total": "Purchase total:",
+    "customer_paid": "Customer paid:",
+    "give_change": "Give change ✓",
+    "clear_change": "Clear change",
+    "start_game": "Start game",
+    "back": "Back"
+  }
+}

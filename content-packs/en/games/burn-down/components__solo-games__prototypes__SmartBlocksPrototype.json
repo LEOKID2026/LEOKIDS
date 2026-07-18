@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "the_board_and_tray_will_display_more_comfortably": "The board and tray will display more comfortably.",
+    "ghostpreview_row_dr_r_ghostpreview_col_dc_c_const_ghostclass_ghosthere_g": "ghostPreview.row + dr === r && ghostPreview.col + dc === c,\r\n                      );\r\n                    const ghostClass = ghostHere\r\n                      ? ghostPreview.valid\r\n                        ? \"ring-2 ring-emerald-300/80\"\r\n                        : \"ring-2 ring-rose-400/80\"\r\n                      : \"\";\r\n                    return (",
+    "startdrag_idx_shape_e": "startDrag(idx, shape, e)}\r\n                />\r\n              ))}",
+    "s_id_const_picked_while_picked_length": "s.id);\r\n    const picked = [];\r\n    while (picked.length",
+    "visual_prototype_no_scoring": "Visual prototype · no scoring",
+    "smart_blocks": "Smart Blocks",
+    "clear_board": "Clear board",
+    "board_size": "Board size:",
+    "swap_shapes": "Swap shapes",
+    "back": "Back",
+    "tray": "Tray"
+  }
+}

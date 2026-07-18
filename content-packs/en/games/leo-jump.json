@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-jump",
+  "title": "Leo Jumps",
+  "blurb": "Jump over obstacles and collect coins!",
+  "help": {
+    "howToPlay": "Tap to jump. Get past obstacles and collect coins, diamonds, and magnets along the way.",
+    "scoring": "Coins and diamonds add points. Consecutive jumps over obstacles give a combo bonus. Hitting an obstacle ends the game.",
+    "rewards": "The farther you run and the more points you earn, the more coins and diamonds you'll get.",
+    "tip": "Don't jump every time - sometimes it's better to wait a moment and jump at the right time."
+  }
+}

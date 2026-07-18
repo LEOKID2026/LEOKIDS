@@ -1,3 +1,6 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
+import { useGameUiDisplay } from "../../lib/games/game-locale-context.jsx";
+import { useDisplayGame } from "../../hooks/games/useDisplayGame.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { resetSoloGameDocumentShell } from "../../lib/solo-games/solo-game-document-cleanup.client.js";
 import { enterMobileGameFullscreenFromUserGesture } from "../../lib/solo-games/solo-game-fullscreen.client.js";
@@ -43,7 +46,7 @@ const ENGINE_MAP = {
   "fruit-slice": MleoFruitSliceEngine,
 };
 
-const OFFLINE_FINISH_SUBTITLE = "Local game — no saving and no rewards";
+const OFFLINE_FINISH_SUBTITLE = gamePackCopy("components__solo-games__OfflineSoloGameShell", "local_game_no_saving_and_no_rewards");
 
 const PLAY_SHELL =
   "flex h-dvh max-h-dvh min-h-0 flex-col overflow-hidden bg-gray-950 text-white";
@@ -54,6 +57,8 @@ const PLAY_SHELL =
  */
 export default function OfflineSoloGameShell({ gameKey }) {
   const game = useMemo(() => findSoloGame(gameKey), [gameKey]);
+  const ui = useGameUiDisplay(gameKey);
+  const displayGame = useDisplayGame(gameKey, game);
   const Engine = ENGINE_MAP[gameKey];
   const { SG, pageBgStyle } = useSoloGameShellUi();
 
@@ -106,7 +111,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
   if (!game || !Engine) {
     return (
       <div className="flex min-h-dvh items-center justify-center bg-gray-950 text-white" dir="ltr">
-        <p>Game not found</p>
+        <p>{gamePackCopy("components__solo-games__OfflineSoloGameShell", "game_not_found")}</p>
       </div>
     );
   }
@@ -114,7 +119,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
   return (
     <>
       <Head>
-        <title>{game.titleHe} - Offline Games</title>
+        <title>{ui.title} - Offline Games</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}
@@ -136,11 +141,9 @@ export default function OfflineSoloGameShell({ gameKey }) {
                 ? SG.navLink
                 : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"
             }
-          >
-            List
-          </Link>
+          >{gamePackCopy("components__solo-games__OfflineSoloGameShell", "list")}</Link>
           <h1 className={themedShell ? SG.headerTitle : SG.playHeaderTitle}>
-            {game.titleHe}
+            {ui.title}
           </h1>
           <Link
             href={OFFLINE_HUB_ROUTE}
@@ -149,15 +152,13 @@ export default function OfflineSoloGameShell({ gameKey }) {
                 ? SG.navLink
                 : "min-h-[44px] rounded-lg px-3 py-2 text-sm font-bold text-gray-300 hover:bg-white/5 hover:text-white"
             }
-          >
-            Offline
-          </Link>
+          >{gamePackCopy("components__solo-games__OfflineSoloGameShell", "offline")}</Link>
         </header>
 
         <main className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
           {phase === "entry" ? (
             <SoloGameEntryScreen
-              game={game}
+              game={displayGame}
               difficulty={difficulty}
               setDifficulty={setDifficulty}
               onStart={handleStart}
@@ -190,7 +191,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
               busy={false}
               subtitleHe={finishData.subtitleHe}
               gamesHubHref={OFFLINE_SOLO_HUB_ROUTE}
-              gamesHubLabel="Back to List"
+              gamesHubLabel={gamePackCopy("components__solo-games__OfflineSoloGameShell", "back_to_list")}
             />
           ) : null}
         </main>

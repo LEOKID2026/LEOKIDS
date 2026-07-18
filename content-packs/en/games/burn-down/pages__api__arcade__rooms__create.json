@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "invalid_room_type_must_be_public_or_private": "Invalid room type (must be public or private)"
+  }
+}

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import SoloGameMobileFullscreenButton from "../SoloGameMobileFullscreenButton.jsx";
@@ -376,7 +377,7 @@ export default function SmartBlocksPrototype() {
 
       <SoloGamePortraitRecommendationModal
         show={showPortraitPrompt}
-        subtitle="The board and tray will display more comfortably."
+        subtitle={gamePackCopy("components__solo-games__prototypes__SmartBlocksPrototype", "the_board_and_tray_will_display_more_comfortably")}
         onDismissRotate={() => {
           dismissPortraitPrompt(false);
           enterFromUserGesture();

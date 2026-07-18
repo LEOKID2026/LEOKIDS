@@ -1,5 +1,6 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSnakesLaddersSession } from "../../../hooks/arcade/useSnakesLaddersSession";
@@ -9,7 +10,7 @@ import { LADDERS, SNAKES } from "../../../lib/arcade/snakes-ladders/snakesLadder
 import { Ov2ArcadeSnakesPlayfield } from "./ov2ArcadeSnakesBoardView";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "Snakes and Ladders";
+const GAME_TITLE = gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "snakes_and_ladders");
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -44,8 +45,8 @@ function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label="Back"
-        title="Back"
+        aria-label={gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "back")}
+        title={gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "back")}
       >
         <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">Back</span>
       </button>
@@ -59,7 +60,7 @@ function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
       <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <div
           className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-          title="Coin balance"
+          title={gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "coin_balance")}
         >
           <img src="/images/coin.png" alt="" className="h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7" />
           <span className="min-w-0 truncate font-mono text-sm font-bold tabular-nums leading-none text-amber-100 sm:text-base">
@@ -70,8 +71,8 @@ function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
           type="button"
           onClick={onOpenHelp}
           className={HUD_BTN_SQUARE}
-          aria-label="How to play"
-          title="How to play"
+          aria-label={gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "how_to_play")}
+          title={gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "how_to_play")}
         >
           <span className="text-lg leading-none text-white/95">?</span>
         </button>
@@ -111,10 +112,10 @@ function SnakesHowToModal({ open, onClose }) {
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm leading-relaxed text-zinc-200">
-          <li>On your turn, roll the dice and move forward by that number.</li>
-          <li>Snakes send you down, ladders send you up — classic board.</li>
-          <li>Reach exactly 100 to win.</li>
-          <li>A roll past 100 doesn't move you (you stay put).</li>
+          <li>{gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "on_your_turn_roll_the_dice_and_move_forward_by_that_number")}</li>
+          <li>{gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "snakes_send_you_down_ladders_send_you_up_classic_board")}</li>
+          <li>{gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "reach_exactly_100_to_win")}</li>
+          <li>{gamePackCopy("components__arcade__snakes-ladders__SnakesLaddersScreen", "a_roll_past_100_doesn_t_move_you_you_stay_put")}</li>
           <li>
             A six gives an extra turn — up to two sixes in a row. A third six in a row doesn't move you and ends your turn; after two sixes, any other number is played and then the turn ends.
           </li>

@@ -22,6 +22,7 @@
  * }} TrainTask
  */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { planLanguageSession } from "../../../lib/educational-games/language-session-planner.js";
 import {
   LANGUAGE_MIN_POOL_PER_LEVEL,
@@ -30,9 +31,9 @@ import {
 } from "../../../lib/educational-games/language-game-config.js";
 
 const GRADE_BANDS = {
-  easy: "Grades 1–2",
-  medium: "Grades 3–4",
-  hard: "Grades 5–6",
+  easy: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "grades_1_2"),
+  medium: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "grades_3_4"),
+  hard: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "grades_5_6"),
 };
 
 const EASY_TYPES = new Set(["upper_to_lower", "lower_to_upper", "first_letter", "one_gap"]);
@@ -235,7 +236,7 @@ function upperToLowerTask(id, stationLabel, letter) {
     ],
     pieces: letterPieces([lower], 3),
     solution: { slot: lower },
-    feedbackShort: "Nice! The lowercase letter is on the car.",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "nice_the_lowercase_letter_is_on_the_car"),
   });
 }
 
@@ -253,7 +254,7 @@ function lowerToUpperTask(id, stationLabel, letter) {
     ],
     pieces: letterPieces([upper], 3),
     solution: { slot: upper },
-    feedbackShort: "Great job! The uppercase letter is in place.",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "great_job_the_uppercase_letter_is_in_place"),
   });
 }
 
@@ -270,7 +271,7 @@ function firstLetterTask(id, stationLabel, word) {
     ],
     pieces: letterPieces([letter], 3),
     solution: { slot: letter },
-    feedbackShort: "Correct! The first letter is on the car.",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "correct_the_first_letter_is_on_the_car"),
   });
 }
 
@@ -283,7 +284,7 @@ function oneMissingLetterTask(id, stationLabel, word, blankIdx) {
   return wrapTrainTask("easy", "one_gap", {
     id,
     stationLabel,
-    missionHe: "Fill in the missing letter on the car",
+    missionHe: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "fill_in_the_missing_letter_on_the_car"),
     carriages: letters.map((ch, i) =>
       i === blankIdx
         ? { id: `s${i}`, kind: "slot" }
@@ -291,7 +292,7 @@ function oneMissingLetterTask(id, stationLabel, word, blankIdx) {
     ),
     pieces: letterPieces([letters[blankIdx]], 4),
     solution: { [`s${blankIdx}`]: letters[blankIdx] },
-    feedbackShort: "Awesome! You filled in the missing letter.",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "awesome_you_filled_in_the_missing_letter"),
   });
 }
 
@@ -306,7 +307,7 @@ function buildWordTask(id, stationLabel, missionHe, emoji, word) {
     carriages: letters.map((_, i) => ({ id: `s${i}`, kind: "slot" })),
     pieces: letterPieces(letters, 4),
     solution: Object.fromEntries(letters.map((ch, i) => [`s${i}`, ch])),
-    feedbackShort: "Excellent! You built the word on the cars.",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "excellent_you_built_the_word_on_the_cars"),
   });
 }
 
@@ -328,7 +329,7 @@ function fillWordTask(id, stationLabel, missionHe, word, blankIdx, emoji) {
       4,
     ),
     solution: Object.fromEntries(blankIdx.map((i) => [`s${i}`, letters[i]])),
-    feedbackShort: "Great! You completed the missing letters.",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "great_you_completed_the_missing_letters"),
   });
 }
 
@@ -352,7 +353,7 @@ function dualPhraseTask(id, stationLabel, pair) {
       { id: "x3", label: "book" },
     ]),
     solution: { c1: color, c2: noun },
-    feedbackShort: "Both cars are ready - all aboard!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "both_cars_are_ready_all_aboard"),
   });
 }
 
@@ -361,12 +362,12 @@ function imageWordTask(id, stationLabel, word, emoji) {
   return wrapTrainTask("medium", "image_word", {
     id,
     stationLabel,
-    missionHe: "Load the word that matches the picture",
+    missionHe: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "load_the_word_that_matches_the_picture"),
     emoji,
     carriages: [{ id: "slot", kind: "slot", emoji }],
     pieces: wordPieces(word, 3),
     solution: { slot: word },
-    feedbackShort: "The right word is on the car!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "the_right_word_is_on_the_car"),
   });
 }
 
@@ -384,7 +385,7 @@ function wordOrderTask(id, stationLabel, missionHe, words, distractor) {
     carriages: slots,
     pieces,
     solution: Object.fromEntries(words.map((w, i) => [`w${i}`, w])),
-    feedbackShort: "Word order looks good - the train is leaving!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "word_order_looks_good_the_train_is_leaving"),
   });
 }
 
@@ -406,7 +407,7 @@ function sentenceGapTask(id, stationLabel, missionHe, prefix, gapWord, suffix, d
     carriages,
     pieces: wordPieces(gapWord, 3),
     solution: { gap: gapWord },
-    feedbackShort: "The missing word is in place!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "the_missing_word_is_in_place"),
   });
 }
 
@@ -427,7 +428,7 @@ function contextWordTask(id, stationLabel, clue, word) {
       { id: "d", label: "run" },
     ]),
     solution: { gap: word },
-    feedbackShort: "That word fits the situation!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "that_word_fits_the_situation"),
   });
 }
 
@@ -436,7 +437,7 @@ function imageSentenceTask(id, stationLabel, emoji, words, distractor) {
   return wrapTrainTask("hard", "image_sentence", {
     id,
     stationLabel,
-    missionHe: "Arrange a sentence that describes the picture",
+    missionHe: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "arrange_a_sentence_that_describes_the_picture"),
     emoji,
     carriages: words.map((_, i) => ({ id: `w${i}`, kind: "slot", hint: String(i + 1) })),
     pieces: shuffleLanguageTasks([
@@ -444,7 +445,7 @@ function imageSentenceTask(id, stationLabel, emoji, words, distractor) {
       { id: "d", label: distractor },
     ]),
     solution: Object.fromEntries(words.map((w, i) => [`w${i}`, w])),
-    feedbackShort: "The sentence matches the picture - all aboard!",
+    feedbackShort: gamePackCopy("components__educational-games__leo-word-train__leo-word-train-data", "the_sentence_matches_the_picture_all_aboard"),
   });
 }
 

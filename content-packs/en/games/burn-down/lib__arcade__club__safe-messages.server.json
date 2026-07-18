@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "cannot_send_a_message_in_this_room": "Cannot send a message in this room"
+  }
+}

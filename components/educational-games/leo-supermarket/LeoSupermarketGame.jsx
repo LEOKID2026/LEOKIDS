@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -757,7 +758,7 @@ export default function LeoSupermarketGame({
                 data-drop-zone="register"
                 className={`${styles.registerZone} ${step === "product" ? styles.registerZoneActive : ""}`}
                 role="region"
-                aria-label="Register"
+                aria-label={gamePackCopy("components__educational-games__leo-supermarket__LeoSupermarketGame", "register")}
               >
                 <p className={styles.zoneTitle}>🧾 Register</p>
                 <div className={styles.zoneItems}>
@@ -789,7 +790,7 @@ export default function LeoSupermarketGame({
                       {step === "change"
                         ? expectedChangeForCustomer === 0
                           ? "No change — tap Give change"
-                          : "Pick coins"
+                          : gamePackCopy("components__educational-games__leo-supermarket__LeoSupermarketGame", "pick_coins")
                         : "-"}
                     </span>
                   ) : (
