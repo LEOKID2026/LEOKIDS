@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../components/Layout";
@@ -224,7 +225,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
   return (
     <Layout>
       <TeacherPortalShell
-        title="Activity for selected private students"
+        title={globalBurnDownCopy("pages__teacher__students__activities__new", "activity_for_selected_private_students")}
         backHref="/teacher/dashboard"
       >
         {error ? (
@@ -417,7 +418,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                 setPreview([]);
               }}
               variant="select"
-              label="Level"
+              label={globalBurnDownCopy("pages__teacher__students__activities__new", "level")}
               inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
             />
 

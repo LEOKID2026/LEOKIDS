@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 
 /** @typedef {'practice-hub' | 'practice-inner' | 'guides-hub' | 'guides-inner'} SeoPageKind */
@@ -17,7 +18,7 @@ export default function PublicSeoPageActions({ pageKind, isBright }) {
   return (
     <nav
       className="flex w-full items-center justify-between gap-3"
-      aria-label="Page navigation"
+      aria-label={globalBurnDownCopy("components__seo__PublicSeoPageActions", "page_navigation")}
       data-testid="public-seo-page-actions"
     >
       <div className="flex flex-wrap items-center gap-2 sm:gap-3">

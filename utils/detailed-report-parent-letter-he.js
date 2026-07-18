@@ -3,6 +3,7 @@
  * Short, sharp, no sub-layers — does not change engine payload fields.
  */
 
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { pickVariant } from "./parent-report-language/variants.js";
 import {
   normalizeParentFacingHe,
@@ -242,7 +243,7 @@ function buildSubjectOpeningLineHe(sp, lab) {
       `In ${lab} there are also areas with relatively good results (for example ${displayTopicPhraseHe(ex0.labelHe)}, about ${acc}%) as well as points worth watching - the whole topic isn't marked as stable yet.`
     );
   }
-  if (domRisk && domRisk !== "Sparse data" && w0) {
+  if (domRisk && domRisk !== globalBurnDownCopy("utils__detailed-report-parent-letter-he", "sparse_data") && w0) {
     const pre = sparse ? "It's still early to conclude for sure, but " : "";
     return stripGuillemetsHe(
       `${pre}In ${lab} the main picture relates to ${domRisk} alongside ${displayTopicPhraseHe(w0.labelHe)}.`
@@ -312,7 +313,7 @@ function buildSubjectDiagnosisLineHe(sp, lab) {
     return stripGuillemetsHe(ibs);
   }
 
-  if (trendLine && domRisk && domRisk !== "Sparse data") {
+  if (trendLine && domRisk && domRisk !== globalBurnDownCopy("utils__detailed-report-parent-letter-he", "sparse_data")) {
     const base = stripGuillemetsHe(`${domRisk} - ${trendLine}`);
     if (w0 && s0) {
       return stripGuillemetsHe(

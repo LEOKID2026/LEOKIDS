@@ -1,4 +1,4 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { ACCENT, getHomeTextClasses } from "./home-theme";
 
 function getStepBadge(isBright, index) {
@@ -11,7 +11,7 @@ function getStepBadge(isBright, index) {
  * @param {{ isBright: boolean }} props
  */
 export default function HomeHowItWorks({ isBright }) {
-  const copy = HOMEPAGE_COPY.howItWorks;
+  const { howItWorks: copy } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
 
   return (

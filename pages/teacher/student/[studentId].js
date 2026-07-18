@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Layout from "../../../components/Layout";
@@ -72,8 +73,8 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="Student report"
-          message="Invalid student ID."
+          title={globalBurnDownCopy("pages__teacher__student__[studentId]", "student_report")}
+          message={globalBurnDownCopy("pages__teacher__student__[studentId]", "invalid_student_id")}
         />
       </Layout>
     );
@@ -84,7 +85,7 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportLoading
           backHref="/teacher/dashboard"
-          title="Student report"
+          title={globalBurnDownCopy("pages__teacher__student__[studentId]", "student_report")}
           hint={loadingHint}
         />
       </Layout>
@@ -96,8 +97,8 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="Student report"
-          message="You do not have permission to view this student's report."
+          title={globalBurnDownCopy("pages__teacher__student__[studentId]", "student_report")}
+          message={globalBurnDownCopy("pages__teacher__student__[studentId]", "you_do_not_have_permission_to_view_this_student_s_report")}
         />
       </Layout>
     );
@@ -108,7 +109,7 @@ export default function TeacherStudentReportPage({ studentId }) {
       <Layout>
         <TeacherReportError
           backHref="/teacher/dashboard"
-          title="Student report"
+          title={globalBurnDownCopy("pages__teacher__student__[studentId]", "student_report")}
           message={errorMessage}
           onRetry={reload}
         />
@@ -230,7 +231,7 @@ export default function TeacherStudentReportPage({ studentId }) {
             onEnableCustom={() => reportRange.setCustomDates(true)}
             onApplyCustom={() => {
               const result = reportRange.applyCustom();
-              if (!result.ok) alert("Please select valid dates");
+              if (!result.ok) alert(globalBurnDownCopy("pages__teacher__student__[studentId]", "please_select_valid_dates"));
             }}
             className="mb-6"
           />

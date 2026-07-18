@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import React from "react";
 import {
   OFFLINE_HUB_ROUTE,
@@ -57,30 +58,22 @@ export default class OfflineGameErrorBoundary extends React.Component {
         dir="ltr"
       >
         <div style={{ fontSize: 48 }}>😕</div>
-        <div style={{ fontSize: 20, fontWeight: 700 }}>Oops! Something went wrong</div>
-        <div style={{ fontSize: 15, color: "#94a3b8", maxWidth: 280 }}>
-          We couldn't load the game. You can try again.
-        </div>
+        <div style={{ fontSize: 20, fontWeight: 700 }}>{gamePackCopy("components__offline__OfflineGameErrorBoundary", "oops_something_went_wrong")}</div>
+        <div style={{ fontSize: 15, color: "#94a3b8", maxWidth: 280 }}>{gamePackCopy("components__offline__OfflineGameErrorBoundary", "we_couldn_t_load_the_game_you_can_try_again")}</div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%", maxWidth: 260 }}>
           <button
             onClick={this.handleRetry}
             style={{ ...btnBase, background: "#2563eb", color: "#fff", justifyContent: "center" }}
-          >
-            Try Again
-          </button>
+          >{gamePackCopy("components__offline__OfflineGameErrorBoundary", "try_again")}</button>
           <a
             href={backHref}
             style={{ ...btnBase, background: "#1e293b", color: "#94a3b8", justifyContent: "center" }}
-          >
-            Back to Games List
-          </a>
+          >{gamePackCopy("components__offline__OfflineGameErrorBoundary", "back_to_games_list")}</a>
           <a
             href={OFFLINE_HUB_ROUTE}
             style={{ ...btnBase, background: "#0f172a", color: "#475569", justifyContent: "center" }}
-          >
-            Offline Games Area
-          </a>
+          >{gamePackCopy("components__offline__OfflineGameErrorBoundary", "offline_games_area")}</a>
         </div>
       </div>
     );

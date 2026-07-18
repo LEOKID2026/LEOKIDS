@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
@@ -77,7 +78,7 @@ export default function TeacherPendingPage() {
 
   return (
     <Layout {...layoutProps}>
-      <TeacherPortalShell title="Request status" titleClassName={T.shellTitle}>
+      <TeacherPortalShell title={globalBurnDownCopy("pages__teacher__pending", "request_status")} titleClassName={T.shellTitle}>
         {state === "loading" ? (
           <p className={T.shellLoading} data-testid="teacher-pending-root" data-state="loading">
             Loading…

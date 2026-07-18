@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { patchStudentLearningProfile } from "../../lib/learning-client/studentLearningProfileClient";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   compressImageFileToJpegDataUrl,
   patchLearningProfileAvatarCustomImage,
@@ -61,6 +62,7 @@ export default function StudentAvatarPickerModal({
   onAvatarBackgroundPersisted,
   onAvatarChanged,
 }) {
+  const t = useT();
   const fileInputRef = useRef(null);
   const [playerAvatar, setPlayerAvatar] = useState("👤");
   const [playerAvatarImage, setPlayerAvatarImage] = useState(null);
@@ -117,7 +119,7 @@ export default function StudentAvatarPickerModal({
         onAvatarEmojiPersisted?.(em);
         onAvatarCustomDataUrlPersisted?.(null);
       } catch (e) {
-        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "Save failed");
+        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : t("ui.student.avatarSaveFailed"));
       } finally {
         setSaving(false);
       }
@@ -129,11 +131,11 @@ export default function StudentAvatarPickerModal({
     const file = e.target.files?.[0];
     if (!file) return;
     if (file.size > 5 * 1024 * 1024) {
-      window.alert("Image is too large. Please choose an image up to 5MB");
+      window.alert(t("ui.student.avatarImageTooLarge"));
       return;
     }
     if (!file.type.startsWith("image/")) {
-      window.alert("Please choose an image file only");
+      window.alert(t("ui.student.avatarImageTypeInvalid"));
       return;
     }
     void (async () => {
@@ -151,7 +153,7 @@ export default function StudentAvatarPickerModal({
         await patchLearningProfileAvatarCustomImage(dataUrl);
         onAvatarCustomDataUrlPersisted?.(dataUrl);
       } catch (err) {
-        setSaveError(err && typeof err === "object" && "message" in err ? String(err.message) : "Saving the image failed");
+        setSaveError(err && typeof err === "object" && "message" in err ? String(err.message) : t("ui.student.avatarImageSaveFailed"));
       } finally {
         setSaving(false);
       }
@@ -176,7 +178,7 @@ export default function StudentAvatarPickerModal({
         onAvatarCustomDataUrlPersisted?.(null);
         onAvatarEmojiPersisted?.(defaultAvatar);
       } catch (e) {
-        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "Save failed");
+        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : t("ui.student.avatarSaveFailed"));
       } finally {
         setSaving(false);
       }
@@ -206,7 +208,7 @@ export default function StudentAvatarPickerModal({
         await patchLearningProfileAvatarBackground(key);
         onAvatarBackgroundPersisted?.(key);
       } catch (e) {
-        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : "Save failed");
+        setSaveError(e && typeof e === "object" && "message" in e ? String(e.message) : t("ui.student.avatarSaveFailed"));
       } finally {
         setSaving(false);
       }
@@ -234,13 +236,13 @@ export default function StudentAvatarPickerModal({
           onClick={() => onClose()}
           className="absolute left-4 top-4 z-10 text-2xl font-bold text-slate-500 hover:text-slate-800"
           style={{ direction: "ltr" }}
-          aria-label="Close"
+          aria-label={t("ui.common.close")}
         >
           ✖
         </button>
 
         <h2 id="student-avatar-modal-title" className="mb-4 text-center text-2xl font-extrabold text-slate-800">
-          👤 Player profile
+          👤 {t("ui.student.avatarModalTitle")}
         </h2>
 
         <div className="rounded-xl border border-slate-200 bg-sky-50/50 p-3">
@@ -252,12 +254,12 @@ export default function StudentAvatarPickerModal({
               sizeClass="h-16 w-16 text-5xl"
             />
             <div className="min-w-0 flex-1 text-left">
-              <div className="mb-1 text-xs text-slate-500">Player name</div>
-              <div className="truncate text-lg font-bold text-slate-800">{playerName || "Player"}</div>
+              <div className="mb-1 text-xs text-slate-500">{t("ui.student.avatarPlayerNameLabel")}</div>
+              <div className="truncate text-lg font-bold text-slate-800">{playerName || t("ui.student.avatarPlayerDefault")}</div>
             </div>
           </div>
 
-          <div className="text-xs text-slate-500 mb-2">Choose an avatar:</div>
+          <div className="text-xs text-slate-500 mb-2">{t("ui.student.avatarChoosePrompt")}</div>
 
           <div className="mb-3">
             <label className="block w-full cursor-pointer">
@@ -274,7 +276,7 @@ export default function StudentAvatarPickerModal({
                   onClick={() => fileInputRef.current?.click()}
                   className="flex-1 rounded-lg bg-sky-500 px-3 py-2 text-xs font-bold text-white transition-all hover:bg-sky-600 min-h-10"
                 >
-                  📷 Choose photo
+                  📷 {t("ui.student.avatarChoosePhoto")}
                 </button>
                 {playerAvatarImage ? (
                   <button
@@ -283,13 +285,13 @@ export default function StudentAvatarPickerModal({
                     disabled={saving}
                     className="rounded-lg bg-rose-500 px-3 py-2 text-xs font-bold text-white transition-all hover:bg-rose-600 disabled:opacity-50 min-h-10"
                   >
-                    🗑️ Remove photo
+                    🗑️ {t("ui.student.avatarRemovePhoto")}
                   </button>
                 ) : null}
               </div>
             </label>
             {playerAvatarImage ? (
-              <div className="mt-2 text-center text-xs text-slate-500">Photo selected ✓</div>
+              <div className="mt-2 text-center text-xs text-slate-500">{t("ui.student.avatarPhotoSelected")}</div>
             ) : null}
           </div>
 
@@ -327,7 +329,7 @@ export default function StudentAvatarPickerModal({
           onClick={() => onClose()}
           className="mt-4 w-full rounded-xl bg-sky-500 py-2.5 text-sm font-bold text-white transition hover:bg-sky-600 min-h-12"
         >
-          Close
+          {t("ui.common.close")}
         </button>
       </div>
     </div>

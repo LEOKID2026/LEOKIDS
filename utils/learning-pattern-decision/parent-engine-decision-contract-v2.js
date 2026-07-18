@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 /**
  * PARENT ENGINE DECISION CONTRACT — registry of engine decisions covered by a
  * representative-fixture audit (NOT a verified full mapping of every runtime path).
@@ -128,7 +129,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "clear_topic_gap",
     scope: "topic",
-    description: "Clear, well-evidenced knowledge gap in one topic.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "clear_well_evidenced_knowledge_gap_in_one_topic"),
     evidenceRequirement: "q>=5 and low accuracy (engine accuracy band = clear_gap) OR canonicalState.actionState in {intervene, probe_only-with-low-acc}.",
     allowedClaims: ["knowledge_gap", "needs_strengthening"],
     forbiddenClaims: ["mastery", "stability", "attention", "fatigue", "pressure"],
@@ -144,7 +145,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "topic_needs_strengthening",
     scope: "topic",
-    description: "Moderate difficulty in one topic - needs focused practice, not yet a clear gap.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "moderate_difficulty_in_one_topic_needs_focused_practice_not_yet_a_clear_"),
     evidenceRequirement: "engine accuracy band = needs_strengthening (moderate accuracy, adequate q).",
     allowedClaims: ["needs_strengthening"],
     forbiddenClaims: ["mastery", "stability", "attention", "fatigue", "pressure", "repeated_pattern"],
@@ -207,7 +208,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "partial_stable",
     scope: "topic",
-    description: "Decent, but not yet fully mastered, accuracy - partial stability.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "decent_but_not_yet_fully_mastered_accuracy_partial_stability"),
     evidenceRequirement: "engine accuracy band = partial_good, adequate q.",
     allowedClaims: ["needs_strengthening"],
     forbiddenClaims: ["mastery", "knowledge_gap", "attention", "fatigue", "pressure", "repeated_pattern"],
@@ -223,7 +224,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "mastery_stable",
     scope: "topic",
-    description: "High, stable accuracy over adequate volume - mastery.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "high_stable_accuracy_over_adequate_volume_mastery"),
     evidenceRequirement: "q>=10 and accuracy>=90 (or engine mastery band).",
     allowedClaims: ["mastery", "stability"],
     forbiddenClaims: ["knowledge_gap", "needs_strengthening", "attention", "fatigue", "pressure"],
@@ -239,7 +240,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "early_direction_only",
     scope: "topic",
-    description: "Some practice, but not enough to call a direction yet (more than initial_data, less than a full evidence threshold).",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "some_practice_but_not_enough_to_call_a_direction_yet_more_than_initial_d"),
     evidenceRequirement: "q between ~3 and the moderate-evidence threshold; no strong pattern detected.",
     allowedClaims: [],
     forbiddenClaims: ["mastery", "stability", "knowledge_gap", "repeated_pattern", "attention", "fatigue", "pressure"],
@@ -255,7 +256,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "insufficient_data",
     scope: "topic",
-    description: "Too little practice (q<=4, or engine explicitly withholds) to say anything about a pattern.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "too_little_practice_q_4_or_engine_explicitly_withholds_to_say_anything_a"),
     evidenceRequirement: "q<=4, or explicit engine withhold.",
     allowedClaims: [],
     forbiddenClaims: ["mastery", "stability", "knowledge_gap", "repeated_pattern", "needs_strengthening", "attention", "fatigue", "pressure"],
@@ -311,7 +312,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "lpd_mixed",
     scope: "topic",
-    description: "Both a positive-dominance signal and a repeated-mistake signal detected in the same topic window.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "both_a_positive_dominance_signal_and_a_repeated_mistake_signal_detected_"),
     evidenceRequirement: "hasPositiveDominance && hasRepeated && wrong>=1 (resolveTopicFinding hasMixed branch).",
     allowedClaims: ["needs_strengthening"],
     forbiddenClaims: ["mastery", "attention", "fatigue", "pressure"],
@@ -345,7 +346,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "multiple_topic_gaps",
     scope: "subject",
-    description: "Two or more actionable-gap topics in this subject.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "two_or_more_actionable_gap_topics_in_this_subject"),
     evidenceRequirement: "priorityTopics filtered by isActionableGapTopic has length>=2.",
     allowedClaims: ["knowledge_gap", "needs_strengthening"],
     forbiddenClaims: ["mastery", "stability"],
@@ -361,7 +362,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "focused_strengthening_needed",
     scope: "subject",
-    description: "Exactly one actionable-gap topic in this subject.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "exactly_one_actionable_gap_topic_in_this_subject"),
     evidenceRequirement: "priorityTopics filtered by isActionableGapTopic has length===1.",
     allowedClaims: ["knowledge_gap", "needs_strengthening"],
     forbiddenClaims: ["mastery", "stability"],
@@ -412,7 +413,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "subject_strength_stable",
     scope: "subject",
-    description: "No actionable gaps; at least one stable topic.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "no_actionable_gaps_at_least_one_stable_topic"),
     evidenceRequirement: "gaps.length===0 AND stable.length>=1.",
     allowedClaims: ["mastery", "stability"],
     forbiddenClaims: ["knowledge_gap", "needs_strengthening"],
@@ -467,7 +468,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "insufficient_subject_data",
     scope: "subject",
-    description: "No topics with usable evidence in this subject yet.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "no_topics_with_usable_evidence_in_this_subject_yet"),
     evidenceRequirement:
       "allTopics.length===0 OR (gaps.length===0 AND stable.length===0 AND speedCheckTopics.length===0) - the " +
       "speedCheckTopics.length>=1 case is now routed to speed_check_only_subject instead (see that entry).",
@@ -487,7 +488,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "narrative_we0",
     scope: "topic",
-    description: "Cannot conclude yet / insufficient readiness or confidence - most cautious envelope.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "cannot_conclude_yet_insufficient_readiness_or_confidence_most_cautious_e"),
     evidenceRequirement: "cannotConcludeYet OR readiness==='insufficient' OR confidenceBand==='low' (below moderate-evidence threshold).",
     allowedClaims: [],
     forbiddenClaims: ["mastery", "stability", "knowledge_gap", "repeated_pattern", "attention", "fatigue", "pressure"],
@@ -503,7 +504,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "narrative_we1",
     scope: "topic",
-    description: "Early signal only - first direction forming, still needs more practice.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "early_signal_only_first_direction_forming_still_needs_more_practice"),
     evidenceRequirement: "readiness==='forming' or decisionTier<=1, or moderate-volume band with low accuracy.",
     allowedClaims: ["needs_strengthening"],
     forbiddenClaims: ["mastery", "stability", "repeated_pattern", "attention", "fatigue", "pressure"],
@@ -519,7 +520,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "narrative_we2",
     scope: "topic",
-    description: "Reasonable working direction; wants to see it repeat before calling it stable.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "reasonable_working_direction_wants_to_see_it_repeat_before_calling_it_st"),
     evidenceRequirement: "decisionTier<=2 or confidenceBand==='medium', accuracy in the mid band.",
     allowedClaims: ["needs_strengthening"],
     forbiddenClaims: ["mastery", "attention", "fatigue", "pressure"],
@@ -535,7 +536,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "narrative_we3",
     scope: "topic",
-    description: "Direction looks stable across the period; keep up routine practice.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "direction_looks_stable_across_the_period_keep_up_routine_practice"),
     evidenceRequirement: "confidenceBand==='high' AND decisionTier>=2 AND accuracy>=70 (moderate/high volume band).",
     allowedClaims: ["stability"],
     forbiddenClaims: ["mastery", "attention", "fatigue", "pressure"],
@@ -551,7 +552,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
   {
     decisionKey: "narrative_we4",
     scope: "topic",
-    description: "Highest-confidence stable/mastery envelope - eligible for a graduated recommendation step.",
+    description: burnDownCopy("utils__learning-pattern-decision__parent-engine-decision-contract-v2", "highest_confidence_stable_mastery_envelope_eligible_for_a_graduated_reco"),
     evidenceRequirement: "eligible && readiness==='ready' && confidenceBand==='high' && accuracy>=78 (high volume) or equivalent moderate-volume gate.",
     allowedClaims: ["stability", "mastery"],
     forbiddenClaims: ["attention", "fatigue", "pressure", "knowledge_gap"],

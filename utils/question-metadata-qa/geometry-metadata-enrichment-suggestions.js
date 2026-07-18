@@ -1,6 +1,7 @@
 /**
  * Proposal-only geometry conceptual metadata hints (does not write banks).
  */
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { GEOMETRY_CONCEPTUAL_ITEMS } from "../geometry-conceptual-bank.js";
 
 import { buildScanRecord } from "./question-metadata-scanner.js";
@@ -69,7 +70,7 @@ function suggestPrerequisiteGeometry(raw, record) {
     return {
       ids: ["geo_pv_area_vs_perimeter"],
       confidence: "high",
-      reason: "Rectangle area planning assumes distinguishing area vs perimeter in context.",
+      reason: globalBurnDownCopy("utils__question-metadata-qa__geometry-metadata-enrichment-suggestions", "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont"),
     };
   }
 
@@ -77,14 +78,14 @@ function suggestPrerequisiteGeometry(raw, record) {
     return {
       ids: ["tri_sum_180"],
       confidence: "medium",
-      reason: "Late-band triangle angle-sum row extends the same principle - confirm sequencing before enforcing.",
+      reason: globalBurnDownCopy("utils__question-metadata-qa__geometry-metadata-enrichment-suggestions", "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ"),
     };
   }
 
   return {
     ids: [],
     confidence: "medium",
-    reason: "No automated prerequisite chain for this template - curriculum authors map explicitly.",
+    reason: globalBurnDownCopy("utils__question-metadata-qa__geometry-metadata-enrichment-suggestions", "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map"),
   };
 }
 

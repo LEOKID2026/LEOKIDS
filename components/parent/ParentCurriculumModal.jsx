@@ -3,12 +3,14 @@ import ParentDashboardModal from "./ParentDashboardModal";
 import ParentCurriculumContent, {
   PARENT_CURRICULUM_SUBJECTS,
 } from "./ParentCurriculumContent";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Parent-facing full curriculum browser.
  * Bright parent-portal chrome; scrolls independently of subject tabs.
  */
 export default function ParentCurriculumModal({ open, onClose, bright = false }) {
+  const t = useT();
   const [activeSubject, setActiveSubject] = useState("math");
   const bodyRef = useRef(null);
 
@@ -34,7 +36,7 @@ export default function ParentCurriculumModal({ open, onClose, bright = false })
     <div
       className="flex flex-wrap gap-2"
       role="tablist"
-      aria-label="Subject selection"
+      aria-label={t("ui.parent.curriculumSubjectTabsAria")}
     >
       {PARENT_CURRICULUM_SUBJECTS.map((item) => {
         const active = item.key === activeSubject;
@@ -63,7 +65,7 @@ export default function ParentCurriculumModal({ open, onClose, bright = false })
     <ParentDashboardModal
       bright={bright}
       open={open}
-      title="Curriculum plans"
+      title={t("ui.parent.curriculumModalTitle")}
       onClose={onClose}
       size="4xl"
       toolbar={toolbar}

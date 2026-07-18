@@ -1,5 +1,6 @@
 import MarketingFeatureCard from "../marketing/MarketingFeatureCard";
-import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { ACCENT, getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
 
@@ -7,7 +8,7 @@ import HomeCtaLink from "./HomeCtaLink";
  * @param {{ isBright: boolean }} props
  */
 export default function HomeParentBenefits({ isBright }) {
-  const copy = HOMEPAGE_COPY.parentBenefits;
+  const { parentBenefits: copy } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
   const accent = ACCENT.parents;
   const gradient = isBright ? accent.brightCardGradient : accent.classicCardGradient;

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "human_body": "Human body",
+    "animals": "Animals",
+    "plants": "Plants",
+    "materials": "Materials",
+    "experiments": "Experiments",
+    "earth_space": "Earth & space",
+    "environment": "Environment"
+  }
+}

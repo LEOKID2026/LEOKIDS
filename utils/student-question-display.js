@@ -3,6 +3,7 @@
  * (instruction line vs equation/formula body, LTR isolation).
  */
 
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { COMPARISON_SIGN_LRM } from "./comparison-sign-mcq.js";
 
 const BLANK = /_{2,}|\?\?|…/;
@@ -432,12 +433,12 @@ export function resolveStudentQuestionDisplayParts(q) {
  * @param {Record<string, unknown>|null|undefined} q
  */
 const MATH_EQUATION_LABELS = {
-  g1: "Short equation puzzle:",
-  g2: "Complete the missing part of the equation:",
-  g3: "Find the unknown:",
-  g4: "Find the unknown:",
-  g5: "Find the unknown:",
-  g6: "Find x:",
+  g1: globalBurnDownCopy("utils__student-question-display", "short_equation_puzzle"),
+  g2: globalBurnDownCopy("utils__student-question-display", "complete_the_missing_part_of_the_equation"),
+  g3: globalBurnDownCopy("utils__student-question-display", "find_the_unknown"),
+  g4: globalBurnDownCopy("utils__student-question-display", "find_the_unknown"),
+  g5: globalBurnDownCopy("utils__student-question-display", "find_the_unknown"),
+  g6: globalBurnDownCopy("utils__student-question-display", "find_x"),
 };
 
 /**

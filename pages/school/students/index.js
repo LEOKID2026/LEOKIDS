@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
@@ -360,7 +361,7 @@ export default function SchoolStudentsPage() {
       onApplyCustom={() => {
         const result = reportRange.applyCustom();
         if (!result.ok) {
-          alert("Please select valid dates");
+          alert(globalBurnDownCopy("pages__school__students__index", "please_select_valid_dates"));
           return;
         }
         refetchStudentReportForRange({ from: result.from, to: result.to });
@@ -566,7 +567,7 @@ export default function SchoolStudentsPage() {
                       })}
                     </SchoolCardGrid>
                   ) : (
-                    <SchoolEmptyState title="No children in this grade." />
+                    <SchoolEmptyState title={globalBurnDownCopy("pages__school__students__index", "no_children_in_this_grade")} />
                   )}
                 </SchoolSection>
               </>
@@ -637,7 +638,7 @@ export default function SchoolStudentsPage() {
                       ))}
                     </SchoolCardGrid>
                   ) : (
-                    <SchoolEmptyState title="No children found in this class." />
+                    <SchoolEmptyState title={globalBurnDownCopy("pages__school__students__index", "no_children_found_in_this_class")} />
                   )}
                 </SchoolSection>
               </>

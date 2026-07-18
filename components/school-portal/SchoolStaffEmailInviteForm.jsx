@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useState } from "react";
 import { SchoolPrimaryButton, SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi";
 import {
@@ -94,7 +95,7 @@ export default function SchoolStaffEmailInviteForm({
                 className="w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 text-sm"
                 dir="ltr"
                 autoComplete="email"
-                placeholder="name@example.com"
+                placeholder={globalBurnDownCopy("components__school-portal__SchoolStaffEmailInviteForm", "name_example_com")}
               />
             </label>
           ) : (
@@ -135,7 +136,7 @@ export default function SchoolStaffEmailInviteForm({
                   setMessage("");
                 }}
               />
-              <span>Invite by user ID (advanced)</span>
+              <span>{globalBurnDownCopy("components__school-portal__SchoolStaffEmailInviteForm", "invite_by_user_id_advanced")}</span>
             </label>
           </details>
 

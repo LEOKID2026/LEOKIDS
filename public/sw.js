@@ -1,9 +1,30 @@
+/** @param {Request} request */
+function readLocaleFromCookieHeader(request) {
+  const raw = request.headers.get("cookie") || "";
+  const match = raw.match(/(?:^|;\s*)lk_global_locale=([^;]+)/);
+  if (!match) return "en";
+  try {
+    const val = decodeURIComponent(match[1]).trim();
+    return val || "en";
+  } catch {
+    return "en";
+  }
+}
+
+/** @param {string} base @param {string} localeId */
+function localeScopedCacheName(base, localeId) {
+  const loc = String(localeId || "en").trim() || "en";
+  return `lk-global-${loc}-${base}`;
+}
+
 // Service Worker for LEO K PWA - Full Offline Support
 const CACHE_NAME = 'lk-global-v2';
 const STATIC_CACHE = 'lk-global-static-v2';
 const DYNAMIC_CACHE = 'lk-global-dynamic-v2';
 const GLOBAL_CACHE_PREFIX = 'lk-global-';
+const LOCALE_DYNAMIC_SUFFIX = 'dynamic-v2';
 const CURRENT_GLOBAL_CACHES = new Set([CACHE_NAME, STATIC_CACHE, DYNAMIC_CACHE]);
+const SUPPORTED_LOCALE_CACHE_IDS = ['en', 'en-XA', 'ar-XB'];
 const REWARD_CARD_PATH_PREFIX = '/rewards/cards/';
 
 // Install-time precache: public chrome only. Game/solo assets cache on first request
@@ -141,6 +162,9 @@ self.addEventListener('activate', (event) => {
           if (CURRENT_GLOBAL_CACHES.has(cacheName)) {
             return undefined;
           }
+          if (SUPPORTED_LOCALE_CACHE_IDS.some((loc) => cacheName === localeScopedCacheName(LOCALE_DYNAMIC_SUFFIX, loc))) {
+            return undefined;
+          }
           console.log('[SW] Deleting old global cache:', cacheName);
           return caches.delete(cacheName);
         })
@@ -199,7 +223,8 @@ self.addEventListener('fetch', (event) => {
     url.pathname === '/manifest.json' ||
     url.pathname === '/manifest-student.webmanifest' ||
     url.pathname === '/manifest-parent.webmanifest' ||
-    url.pathname === '/manifest-teacher.webmanifest'
+    url.pathname === '/manifest-teacher.webmanifest' ||
+    url.pathname === '/api/pwa/manifest'
   ) {
     return;
   }
@@ -223,10 +248,14 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          // Cache successful responses
+          // Cache successful responses per interface locale (cookie)
           if (response && response.status === 200 && response.type === 'basic') {
             const responseToCache = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => {
+            const docCache = localeScopedCacheName(
+              LOCALE_DYNAMIC_SUFFIX,
+              readLocaleFromCookieHeader(request)
+            );
+            caches.open(docCache).then((cache) => {
               cache.put(request, responseToCache);
             });
           }

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "hebrew_level_prefix": "Hebrew level prefix",
+    "english_level_token_as_metadata": "English level token as metadata"
+  }
+}

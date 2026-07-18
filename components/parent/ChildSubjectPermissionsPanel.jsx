@@ -46,7 +46,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
         setSubjects(data.subjects || []);
         setAllowStudentGradePicker(data.allowStudentGradePicker === true);
       } catch (err) {
-        if (!cancelled) setError(mapParentPanelApiError(err.message, "load"));
+        if (!cancelled) setError(t(mapParentPanelApiError(err.message, "load")));
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -89,7 +89,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
     try {
       await patchBody({ subjectKey, isEnabled: !row.isEnabled });
     } catch (err) {
-      setError(mapParentPanelApiError(err.message, "save"));
+      setError(t(mapParentPanelApiError(err.message, "save")));
     } finally {
       setSaving(null);
     }
@@ -100,7 +100,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
     try {
       await patchBody({ enableAll: true });
     } catch (err) {
-      setError(mapParentPanelApiError(err.message, "save"));
+      setError(t(mapParentPanelApiError(err.message, "save")));
     } finally {
       setSaving(null);
     }
@@ -111,7 +111,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
     try {
       await patchBody({ allowStudentGradePicker: !allowStudentGradePicker });
     } catch (err) {
-      setError(mapParentPanelApiError(err.message, "save"));
+      setError(t(mapParentPanelApiError(err.message, "save")));
     } finally {
       setSaving(null);
     }

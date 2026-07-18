@@ -2,7 +2,6 @@ import Layout from "../../../../../components/Layout";
 import MathG2BookShell from "../../../../../components/learning-book/MathG2BookShell";
 import LearningBookIndexContent from "../../../../../components/learning-book/LearningBookIndexContent";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
-import { loadMathG2TocEntries } from "../../../../../lib/learning-book/load-math-g2-pages";
 import { MATH_G2_BOOK_META } from "../../../../../lib/learning-book/math-g2-registry";
 
 export default function MathG2BookIndex({ batches }) {
@@ -20,7 +19,8 @@ export default function MathG2BookIndex({ batches }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  const { loadMathG2TocEntries } = await import("../../../../../lib/learning-book/load-math-g2-pages");
   const batches = loadMathG2TocEntries();
   return { props: { batches } };
 }

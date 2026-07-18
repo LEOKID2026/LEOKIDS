@@ -1,3 +1,4 @@
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   PENDING_REJECTED_BODY,
   PENDING_REJECTED_HEADING,
@@ -11,12 +12,13 @@ import {
  * @param {{ variant: "teacher"|"school", rejected?: boolean, bright?: boolean }} props
  */
 export default function RegistrationPendingPanel({ variant, rejected = false, bright = false }) {
-  const heading = rejected
+  const t = useT();
+  const headingKey = rejected
     ? PENDING_REJECTED_HEADING
     : variant === "school"
       ? PENDING_SCHOOL_HEADING
       : PENDING_TEACHER_HEADING;
-  const body = rejected
+  const bodyKey = rejected
     ? PENDING_REJECTED_BODY
     : variant === "school"
       ? PENDING_SCHOOL_BODY
@@ -33,11 +35,9 @@ export default function RegistrationPendingPanel({ variant, rejected = false, br
       className="max-w-lg space-y-3 text-left"
       data-testid={`${variant}-registration-pending`}
       data-state={rejected ? "rejected" : "pending"}
-      dir="ltr"
-      lang="en"
     >
-      <h2 className={headingClass}>{heading}</h2>
-      <p className={bodyClass}>{body}</p>
+      <h2 className={headingClass}>{t(headingKey)}</h2>
+      <p className={bodyClass}>{t(bodyKey)}</p>
     </div>
   );
 }

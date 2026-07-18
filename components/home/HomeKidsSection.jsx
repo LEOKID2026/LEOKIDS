@@ -1,6 +1,7 @@
 import MarketingFeatureCard from "../marketing/MarketingFeatureCard";
 import StudentPromoVideo from "../student/StudentPromoVideo";
-import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { ACCENT, getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
 
@@ -14,7 +15,7 @@ function getKidsCardGradient(isBright, index) {
  * @param {{ isBright: boolean }} props
  */
 export default function HomeKidsSection({ isBright }) {
-  const copy = HOMEPAGE_COPY.kids;
+  const { kids: copy } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
   const cardTitleClass = `text-base font-bold leading-snug md:text-lg ${cls.heading}`;
 

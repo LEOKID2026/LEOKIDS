@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
@@ -214,7 +215,7 @@ export default function SchoolMessagesPage() {
     <Layout>
       <SchoolPortalShell title={SC_PAGE_MESSAGES_TITLE} schoolName={me?.school?.name}>
         {state !== "ready" ? (
-          <SchoolLoadingBlock message="Loading…" />
+          <SchoolLoadingBlock message={globalBurnDownCopy("pages__school__messages", "loading")} />
         ) : (
           <div className="space-y-6">
             <div className="flex flex-wrap justify-between gap-3">
@@ -285,7 +286,7 @@ export default function SchoolMessagesPage() {
 
             {error ? <SchoolErrorBlock message={error} onRetry={() => void loadMessages()} /> : null}
             {loading ? (
-              <SchoolLoadingBlock message="Loading…" />
+              <SchoolLoadingBlock message={globalBurnDownCopy("pages__school__messages", "loading")} />
             ) : messages.length ? (
               <>
                 <ul className="md:hidden space-y-3">
@@ -410,10 +411,10 @@ export default function SchoolMessagesPage() {
                         onChange={(e) => setMessageType(e.target.value)}
                         className="mt-1 w-full rounded bg-black/40 border border-white/20 px-2 py-2"
                       >
-                        <option value="regular">Regular</option>
-                        <option value="important">Important</option>
-                        <option value="urgent">Urgent</option>
-                        <option value="requires_confirmation">Requires confirmation</option>
+                        <option value="regular">{globalBurnDownCopy("pages__school__messages", "regular")}</option>
+                        <option value="important">{globalBurnDownCopy("pages__school__messages", "important")}</option>
+                        <option value="urgent">{globalBurnDownCopy("pages__school__messages", "urgent")}</option>
+                        <option value="requires_confirmation">{globalBurnDownCopy("pages__school__messages", "requires_confirmation")}</option>
                       </select>
                     </label>
                     <label className="block">

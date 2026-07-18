@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import {
   schoolActivityModeHe,
@@ -99,9 +100,9 @@ export function SchoolManagementCard({
           {subtitle ? <p className="text-sm text-white/55 mt-1">{subtitle}</p> : null}
           {meta ? <p className="text-xs text-white/45 mt-2">{meta}</p> : null}
           {gradeStatusLabel ? (
-            <BrowseStatusBadge prefix="Grade status" label={gradeStatusLabel} />
+            <BrowseStatusBadge prefix={globalBurnDownCopy("components__school-portal__SchoolDrillDown", "grade_status")} label={gradeStatusLabel} />
           ) : classStatusLabel ? (
-            <BrowseStatusBadge prefix="Class status" label={classStatusLabel} />
+            <BrowseStatusBadge prefix={globalBurnDownCopy("components__school-portal__SchoolDrillDown", "class_status")} label={classStatusLabel} />
           ) : null}
         </div>
         {action ? <div className="shrink-0">{action}</div> : null}

@@ -2,6 +2,7 @@
  * Post-process animation steps: exerciseView, topic-specific metadata, expression highlights.
  */
 
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { parseTemplateRuns } from "../lib/learning-book/learning-math-line-templates.js";
 import { flattenTemplateRuns } from "../lib/learning-book/learning-math-line-build.js";
 import { splitMixedHebrewMathRuns } from "../lib/bidi/mixed-hebrew-math-runs.js";
@@ -204,7 +205,7 @@ function scrubAnimationStepsForGlobalEnglish(steps) {
     }
     for (const key of ["text", "contentText", "caption", "body", "explanation", "prompt"]) {
       if (typeof next[key] === "string" && HEBREW_UI_RE.test(next[key])) {
-        next[key] = "Follow the highlighted numbers on the board.";
+        next[key] = burnDownCopy("utils__learning-step-animation-pipeline", "follow_the_highlighted_numbers_on_the_board");
       }
     }
     return next;

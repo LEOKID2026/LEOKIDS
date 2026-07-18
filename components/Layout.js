@@ -93,6 +93,9 @@ export default function Layout({
   const areaHomeHref = getAreaHomeHref(pathname, navOptions);
   const showThemePicker = layoutShowThemePicker || shouldShowLayoutThemePicker(pathname);
 
+  const resolveNavLabel = (link) =>
+    link.labelKey ? t(link.labelKey) : String(link.label || link.href);
+
   const resolvedTheme =
     studentTheme ||
     (studentLearningShell || studentBrightShell ? "bright" : null);
@@ -163,7 +166,7 @@ export default function Layout({
           >
             <img
               src="/images/coin.png"
-              alt="LEO KIDS logo"
+              alt={t("ui.layout.logoAlt")}
               width={32}
               height={32}
               className="w-8 h-8 object-contain"
@@ -175,11 +178,11 @@ export default function Layout({
           <div className="hidden md:flex flex-1 flex-wrap items-center gap-1 text-sm font-semibold min-w-0">
             {menuLinks.map((link) => (
               <Link
-                key={link.href + link.label}
+                key={link.href + (link.labelKey || link.label)}
                 href={link.href}
                 className={navLinkClass}
               >
-                {link.label}
+                {resolveNavLabel(link)}
               </Link>
             ))}
           </div>
@@ -217,12 +220,12 @@ export default function Layout({
             <div className="flex flex-col gap-2 text-base font-semibold">
               {menuLinks.map((link) => (
                 <Link
-                  key={link.href + link.label}
+                  key={link.href + (link.labelKey || link.label)}
                   href={link.href}
                   className={mobileMenuItem}
                   onClick={closeMenu}
                 >
-                  {link.label}
+                  {resolveNavLabel(link)}
                 </Link>
               ))}
             </div>

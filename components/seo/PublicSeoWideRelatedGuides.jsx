@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 
@@ -13,7 +14,7 @@ export default function PublicSeoWideRelatedGuides({ guides, isBright }) {
     <aside
       className={`space-y-3 ${cls.section}`}
       data-testid="practice-related-guides"
-      aria-label="Related guides"
+      aria-label={globalBurnDownCopy("components__seo__PublicSeoWideRelatedGuides", "related_guides")}
     >
       <h2 className={cls.sectionSubtitle}>Related guides</h2>
       <ul className={`space-y-2 text-sm md:text-base ${cls.body}`}>

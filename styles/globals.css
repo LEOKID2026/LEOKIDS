@@ -21,6 +21,19 @@ body {
   -webkit-overflow-scrolling: touch;
   width: 100%;
   height: 100%;
+  text-align: start;
+}
+
+/* Locale-aware shell — direction comes from html[dir] set by I18nProvider/_document bootstrap */
+html:dir(rtl) body {
+  text-align: start;
+}
+
+.leo-ltr-island,
+[dir="ltr"].leo-ltr-island {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: start;
 }
 
 /* Cookie consent bottom banner — shifts content up instead of covering controls */

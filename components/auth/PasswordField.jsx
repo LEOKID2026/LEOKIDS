@@ -5,6 +5,7 @@ import {
   AUTH_PASSWORD_SHOW,
   AUTH_PASSWORD_SHOW_SHORT,
 } from "../../lib/auth/auth-password.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const DEFAULT_INPUT_CLASS =
   "w-full rounded bg-black/40 border border-white/20 px-3 py-2 pe-10";
@@ -39,10 +40,11 @@ export default function PasswordField({
     ? "absolute left-2 top-1/2 -translate-y-1/2 text-xs text-slate-500 hover:text-slate-800 px-1"
     : "absolute left-2 top-1/2 -translate-y-1/2 text-xs text-white/70 hover:text-white px-1";
 
+  const t = useT();
   const [visible, setVisible] = useState(false);
   const inputId = id || testId;
-  const toggleLabel = visible ? AUTH_PASSWORD_HIDE : AUTH_PASSWORD_SHOW;
-  const toggleText = visible ? AUTH_PASSWORD_HIDE_SHORT : AUTH_PASSWORD_SHOW_SHORT;
+  const toggleLabel = visible ? t(AUTH_PASSWORD_HIDE) : t(AUTH_PASSWORD_SHOW);
+  const toggleText = visible ? t(AUTH_PASSWORD_HIDE_SHORT) : t(AUTH_PASSWORD_SHOW_SHORT);
 
   const field = (
     <div className={`relative ${wrapperClassName}`}>

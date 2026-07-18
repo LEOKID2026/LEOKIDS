@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { filterStudentsByRosterKey } from "../../lib/teacher-portal/teacher-dashboard-roster.js";
@@ -225,7 +226,7 @@ function ClassManagePanel({
   const atClassCap = perClassCap != null && members.length >= perClassCap;
 
   const onRemoveFromClass = async (member) => {
-    if (!window.confirm("Remove this student from the class?")) return;
+    if (!window.confirm(globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "remove_this_student_from_the_class"))) return;
     setBusy(true);
     setError("");
     const idsByClass = member.membershipIdsByClass || {};
@@ -269,7 +270,7 @@ function ClassManagePanel({
   };
 
   const onArchiveStudent = async (studentId) => {
-    if (!window.confirm("Remove this student from your teacher list?")) return;
+    if (!window.confirm(globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "remove_this_student_from_your_teacher_list"))) return;
     setBusy(true);
     const res = await teacherAuthFetch(accessToken, `/api/teacher/students/${studentId}/archive`, {
       method: "POST",
@@ -285,7 +286,7 @@ function ClassManagePanel({
   };
 
   return (
-    <Modal title="Manage class" onClose={onClose} T={T}>
+    <Modal title={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "manage_class")} onClose={onClose} T={T}>
       <div className="space-y-4">
         <div>
           <label className={T.label}>Class name</label>
@@ -311,7 +312,7 @@ function ClassManagePanel({
           <div className="flex flex-wrap gap-2">
             <input
               className={T.input}
-              placeholder="Full name of new student"
+              placeholder={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "full_name_of_new_student")}
               value={newStudentName}
               onChange={(e) => setNewStudentName(e.target.value)}
             />
@@ -576,12 +577,12 @@ export default function TeacherDashboardClient({
       <section className={T.section}>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <SummaryStat
-            label="Students"
+            label={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "students")}
             value={dashboard?.summary?.studentCount ?? 0}
             testId="teacher-dashboard-summary-students"
             T={T}
           />
-          <SummaryStat label="Classes" value={dashboard?.summary?.classCount ?? 0} T={T} />
+          <SummaryStat label={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "classes")} value={dashboard?.summary?.classCount ?? 0} T={T} />
           <div className="col-span-2 flex flex-col justify-center gap-2">
             <p className={`text-xs mb-1 ${T.faint}`}>Latest topic/activity</p>
             <p
@@ -677,7 +678,7 @@ export default function TeacherDashboardClient({
                         {
                           classId: classRouteId,
                           href: classBase,
-                          label: "Class report",
+                          label: globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "class_report"),
                         },
                       ]
                     : [];
@@ -693,7 +694,7 @@ export default function TeacherDashboardClient({
                         {
                           classId: classRouteId,
                           href: `${classBase}/activities`,
-                          label: "Activities",
+                          label: globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "activities"),
                         },
                       ]
                     : [];
@@ -771,7 +772,7 @@ export default function TeacherDashboardClient({
           <div
             className="flex flex-wrap gap-2 mb-4"
             role="tablist"
-            aria-label="Filter student list"
+            aria-label={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "filter_student_list")}
             data-testid="teacher-roster-filter-tabs"
           >
             {rosterFilters.map((opt) => {
@@ -800,7 +801,7 @@ export default function TeacherDashboardClient({
         <div className="space-y-3 mb-4">
           <input
             type="search"
-            placeholder="Search by name…"
+            placeholder={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "search_by_name")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className={T.searchInput}

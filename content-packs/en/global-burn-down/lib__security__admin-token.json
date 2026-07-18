@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_admin_token_header": "Missing admin token header",
+    "admin_token_does_not_match_server_configuration": "Admin token does not match server configuration"
+  }
+}

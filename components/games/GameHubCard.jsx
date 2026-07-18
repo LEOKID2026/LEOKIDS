@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import GamesHubLockFooter from "./GamesHubLockFooter.jsx";
 
 /**
@@ -24,9 +25,12 @@ export default function GameHubCard({
   ctaClass = "",
   locked = false,
   hidden = false,
-  lockTitle = "Locked by parents",
+  lockTitle,
   lockHint = "",
 }) {
+  const { t } = useI18n();
+  const resolvedLockTitle = lockTitle ?? t("ui.student.parentLocked");
+
   if (hidden) return null;
 
   const inner = (
@@ -44,16 +48,16 @@ export default function GameHubCard({
       </div>
       {locked ? (
         lockHint ? (
-          <GamesHubLockFooter ctaClass={ctaClass} label={lockTitle} hint={lockHint} />
+          <GamesHubLockFooter ctaClass={ctaClass} label={resolvedLockTitle} hint={lockHint} />
         ) : (
           <div className="mt-3 text-right">
             <span className={`${ctaClass} inline-flex items-center gap-1 opacity-90 cursor-not-allowed`}>
-              🔒 {lockTitle}
+              🔒 {resolvedLockTitle}
             </span>
           </div>
         )
       ) : (
-        <span className={ctaClass}>Enter</span>
+        <span className={ctaClass}>{t("ui.games.hub.enter")}</span>
       )}
     </>
   );

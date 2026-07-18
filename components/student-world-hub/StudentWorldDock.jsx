@@ -221,8 +221,8 @@ export default function StudentWorldDock({
         type="button"
         data-testid={`student-world-dock-${entry.id}`}
         className={`${dockBtnClass} ${locked ? "opacity-80" : ""}`}
-        title={locked ? lockMessage : entry.labelHe}
-        aria-label={entry.labelHe}
+        title={locked ? lockMessage : t(entry.labelKey)}
+        aria-label={t(entry.labelKey)}
         onClick={() => tryPanel(entry.panelId)}
       >
         <span className={dockIconClass} aria-hidden>
@@ -247,8 +247,8 @@ export default function StudentWorldDock({
           href={item.href}
           data-testid={`student-world-dock-${item.id}`}
           className={dockBtnClass}
-          title={item.labelHe}
-          aria-label={item.labelHe}
+          title={t(item.labelKey)}
+          aria-label={t(item.labelKey)}
         >
           <span className={dockIconClass} aria-hidden>
             {item.emoji}
@@ -264,8 +264,8 @@ export default function StudentWorldDock({
           type="button"
           data-testid={`student-world-dock-${item.id}`}
           className={dockBtnClass}
-          title={item.labelHe}
-          aria-label={item.labelHe}
+          title={t(item.labelKey)}
+          aria-label={t(item.labelKey)}
           onClick={() => onOpenAvatar?.()}
         >
           <span className={dockIconClass} aria-hidden>
@@ -283,8 +283,8 @@ export default function StudentWorldDock({
           type="button"
           data-testid={`student-world-dock-${item.id}`}
           className={`${dockBtnClass} ${locked ? "opacity-80" : ""}`}
-          title={locked ? lockMessage : item.labelHe}
-          aria-label={item.labelHe}
+          title={locked ? lockMessage : t(item.labelKey)}
+          aria-label={t(item.labelKey)}
           onClick={() => tryPanel(item.panelId)}
         >
           <span className={dockIconClass} aria-hidden>

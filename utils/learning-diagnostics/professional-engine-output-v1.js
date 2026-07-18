@@ -2,6 +2,7 @@
  * Unified internal professional engine payload (not parent-facing copy).
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { normalizeMistakeEvent } from "../mistake-event.js";
 import { aggregateMisconceptionsForSubject } from "./misconception-engine-v1.js";
 import { computeMasteryRollupV1 } from "./mastery-engine-v1.js";

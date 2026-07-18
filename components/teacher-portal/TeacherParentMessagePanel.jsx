@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { formatDateHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 
@@ -117,7 +118,7 @@ export default function TeacherParentMessagePanel({ accessToken, studentId }) {
             className="w-full min-h-[96px] rounded-lg bg-black/40 border border-white/20 px-3 py-2 text-sm resize-y"
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
-            placeholder="Write a short message to the parent..."
+            placeholder={globalBurnDownCopy("components__teacher-portal__TeacherParentMessagePanel", "write_a_short_message_to_the_parent")}
             maxLength={2000}
             disabled={busy}
           />

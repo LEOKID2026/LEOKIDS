@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect } from "react";
 import Link from "next/link";
 import Layout from "../Layout";
@@ -83,7 +84,7 @@ export default function UnifiedLegalPolicyPage({ pageKey = "legal", scrollToSect
               {CONTACT_EMAIL}
             </a>
           </p>
-          <nav aria-label="Legal document links">
+          <nav aria-label={globalBurnDownCopy("components__legal__UnifiedLegalPolicyPage", "legal_document_links")}>
             <p className="mb-2 font-semibold text-white/80">Additional documents</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-1">
               {LEGAL_CROSS_LINKS.filter((l) => l.href !== route && l.href !== "/legal").map((link) => (

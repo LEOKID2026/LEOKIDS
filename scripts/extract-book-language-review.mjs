@@ -11,8 +11,8 @@ import {
   extractAllBooksWithParser,
   flattenTextBlocks,
   renderBookReviewMarkdown,
-  SUBJECT_REVIEW_LABEL,
 } from "../lib/learning-book/book-language-review-extract.js";
+import { getLearningBookSubjectLabelCopy } from "../lib/learning-book/book-pack-copy.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -89,7 +89,7 @@ function renderIndex({
   lines.push("| Subject | Grade | Pages | Book title |");
   lines.push("|---------|-------|------:|------------|");
   for (const book of books) {
-    const label = SUBJECT_REVIEW_LABEL[book.subject] || book.subject;
+    const label = getLearningBookSubjectLabelCopy(book.subject, "en");
     lines.push(
       `| ${label} | ${book.grade.toUpperCase()} | ${book.pages.length} | ${book.bookTitleHe} |`
     );

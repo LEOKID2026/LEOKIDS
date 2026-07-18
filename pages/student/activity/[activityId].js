@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isLowerGradeG1G2Key } from "../../../utils/lower-grade-practice-runtime-quality";
 import { validateAudioStem } from "../../../utils/audio-task-contract";
@@ -60,11 +61,11 @@ function buildSavedAttemptsMap(attempts) {
 function feedbackFromSavedAttempt(attempt, activity) {
   if (!attempt) return null;
   if (activity?.mode === "discussion") {
-    return { type: "submitted", message: "Answer submitted" };
+    return { type: "submitted", message: globalBurnDownCopy("pages__student__activity__[activityId]", "answer_submitted") };
   }
   return {
     type: attempt.isCorrect ? "correct" : "wrong",
-    message: attempt.isCorrect ? "Correct!" : "Incorrect",
+    message: attempt.isCorrect ? "Correct!" : globalBurnDownCopy("pages__student__activity__[activityId]", "incorrect"),
   };
 }
 
@@ -501,7 +502,7 @@ export default function StudentActivityPage({ activityId }) {
       if (isDiscussion) {
         setFeedback({
           type: "submitted",
-          message: "Answer submitted",
+          message: globalBurnDownCopy("pages__student__activity__[activityId]", "answer_submitted"),
         });
       } else {
         explanationText = showExplanation ? json.explanation : undefined;
@@ -509,7 +510,7 @@ export default function StudentActivityPage({ activityId }) {
         if (explanationText) explanationViewedRef.current = true;
         setFeedback({
           type: json.isCorrect ? "correct" : "wrong",
-          message: json.isCorrect ? "Correct!" : "Incorrect",
+          message: json.isCorrect ? "Correct!" : globalBurnDownCopy("pages__student__activity__[activityId]", "incorrect"),
           explanation: explanationText,
         });
       }
@@ -606,7 +607,7 @@ export default function StudentActivityPage({ activityId }) {
               : isDiscussionDone
                 ? multiQuestionDiscussion
                   ? "You finished the discussion"
-                  : "Answer submitted"
+                  : globalBurnDownCopy("pages__student__activity__[activityId]", "answer_submitted")
                 : "You finished the activity!"}
           </h1>
           {!isDiscussionDone ? (
@@ -708,7 +709,7 @@ export default function StudentActivityPage({ activityId }) {
         submitButton={
           mobileEmbeddedNumericSubmit
             ? {
-                label: isCurrentQuestionAnswered ? "Answer saved" : "Submit answer",
+                label: isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer"),
                 onClick: () => {
                   if (!busy && !isCurrentQuestionAnswered && String(answerInput).trim() !== "") {
                     void submitAnswer();
@@ -892,7 +893,7 @@ export default function StudentActivityPage({ activityId }) {
                   ? "activity-geometry-numeric-answer"
                   : "activity-math-numeric-answer"
               }
-              placeholder="Type your answer"
+              placeholder={globalBurnDownCopy("pages__student__activity__[activityId]", "type_your_answer")}
               autoFocus={!scratchpadOpen || currentQuestion.subject !== "math"}
               suppressEmbeddedKeyboard={sharedScratchpadKeyboard}
               onInputFocus={() => setActiveScratchpadCell(null)}
@@ -926,7 +927,7 @@ export default function StudentActivityPage({ activityId }) {
                 busy || String(answerInput).trim() === "" || isCurrentQuestionAnswered
               }
               submitTestId="activity-submit-answer"
-              submitLabel={isCurrentQuestionAnswered ? "Answer saved" : "Submit answer"}
+              submitLabel={isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer")}
             />
           </div>
           {includeInlineKeyboard && sharedScratchpadKeyboard
@@ -939,7 +940,7 @@ export default function StudentActivityPage({ activityId }) {
             className={L.textInput}
             value={answerInput}
             onChange={(e) => setAnswerInput(e.target.value)}
-            placeholder="Type your answer"
+            placeholder={globalBurnDownCopy("pages__student__activity__[activityId]", "type_your_answer")}
             dir="auto"
             readOnly={isCurrentQuestionAnswered}
             disabled={isCurrentQuestionAnswered}
@@ -960,7 +961,7 @@ export default function StudentActivityPage({ activityId }) {
           className={L.submitButton}
           data-testid="activity-submit-answer"
         >
-          {isCurrentQuestionAnswered ? "Answer saved" : "Submit answer"}
+          {isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer")}
         </button>
       ) : null}
     </>
@@ -983,7 +984,7 @@ export default function StudentActivityPage({ activityId }) {
         className={className}
         data-testid="activity-submit-answer"
       >
-        {isCurrentQuestionAnswered ? "Answer saved" : "Submit answer"}
+        {isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer")}
       </button>
     ) : null;
 
@@ -1163,7 +1164,7 @@ export default function StudentActivityPage({ activityId }) {
             onClick={() => setShowDiagramModal(false)}
             role="dialog"
             aria-modal="true"
-            aria-label="Enlarged diagram"
+            aria-label={globalBurnDownCopy("pages__student__activity__[activityId]", "enlarged_diagram")}
           >
             <div
               className="w-full max-w-lg bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-500/50 rounded-2xl p-4 shadow-2xl"
@@ -1176,7 +1177,7 @@ export default function StudentActivityPage({ activityId }) {
                   type="button"
                   onClick={() => setShowDiagramModal(false)}
                   className="text-slate-400 hover:text-white text-lg leading-none px-1"
-                  aria-label="Close diagram"
+                  aria-label={globalBurnDownCopy("pages__student__activity__[activityId]", "close_diagram")}
                 >
                   ✕
                 </button>

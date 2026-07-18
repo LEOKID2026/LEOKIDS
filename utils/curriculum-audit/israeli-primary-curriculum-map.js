@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 /**
  * Israeli elementary (grades 1–6) curriculum mapping — Phase 2 conservative layer.
  * Topic entries are structured objects (not bare strings). Hebrew labels are advisory.
@@ -36,10 +37,10 @@ export const CURRICULUM_SOURCE_REF_PRESETS = {
   internal_conservative: [
     {
       sourceType: "internal_conservative",
-      title: "Internal conservative strand mapping (LIOSH audit layer)",
+      title: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "internal_conservative_strand_mapping_liosh_audit_layer"),
       url: "",
       checkedAt: "2026-05-09",
-      note: "Repo-maintained interpretation - requires pedagogy sign-off before any release gate.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "repo_maintained_interpretation_requires_pedagogy_sign_off_before_any_rel"),
     },
   ],
   rama_general: [
@@ -48,7 +49,7 @@ export const CURRICULUM_SOURCE_REF_PRESETS = {
       title: "אופקים חדשים - עקרונות כלליים (משרד החינוך / רשויות)",
       url: "https://www.gov.il/he/departments/education",
       checkedAt: "2026-05-09",
-      note: "General framework reference only; does not map individual question stems to outcomes.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "general_framework_reference_only_does_not_map_individual_question_stems_"),
     },
   ],
   moe_portal: [
@@ -57,7 +58,7 @@ export const CURRICULUM_SOURCE_REF_PRESETS = {
       title: "משרד החינוך - דף ראשי והנחיות כלליות",
       url: "https://www.gov.il/he/departments/education",
       checkedAt: "2026-05-09",
-      note: "Official portal - use for policy context; not a line-by-line syllabus match.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match"),
     },
   ],
   /** Broad framing only — not item-level English outcomes. */
@@ -67,31 +68,31 @@ export const CURRICULUM_SOURCE_REF_PRESETS = {
       title: "משרד החינוך - מסגרת כללית (אנגלית)",
       url: "https://www.gov.il/he/departments/education",
       checkedAt: "2026-05-09",
-      note: "General policy context; early grades often emphasize exposure/listening - verify formal literacy vs exposure per school.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "general_policy_context_early_grades_often_emphasize_exposure_listening_v"),
     },
     {
       sourceType: "rama",
       title: "אופקים חדשים - עקרונות כלליים (משרד החינוך / רשויות)",
       url: "https://www.gov.il/he/departments/education",
       checkedAt: "2026-05-09",
-      note: "General framework reference only; does not map individual question stems to outcomes.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "general_framework_reference_only_does_not_map_individual_question_stems_"),
     },
   ],
   /** Shapes / spatial orientation — interpretive mapping; not a formal geometry syllabus slice. */
   geometry_shapes_intro: [
     {
       sourceType: "internal_conservative",
-      title: "Internal strand: plane shapes recognition (audit)",
+      title: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "internal_strand_plane_shapes_recognition_audit"),
       url: "",
       checkedAt: "2026-05-09",
-      note: "Repo interpretation of typical early shape recognition - requires pedagogy validation.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "repo_interpretation_of_typical_early_shape_recognition_requires_pedagogy"),
     },
     {
       sourceType: "official_moe",
       title: "משרד החינוך - דף ראשי והנחיות כלליות",
       url: "https://www.gov.il/he/departments/education",
       checkedAt: "2026-05-09",
-      note: "Official portal - use for policy context; not a line-by-line syllabus match.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match"),
     },
   ],
 };
@@ -461,13 +462,13 @@ export const ISRAELI_PRIMARY_CURRICULUM_MAP = {
   math: {
     ...buildSubjectGrades(mathGrade),
     repoHints: {
-      note: "Strands align with normalized math.* keys from curriculum-topic-normalizer.js",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer"),
     },
   },
   geometry: {
     ...buildSubjectGrades(geometryGrade),
     repoHints: {
-      note: "Separated geometry strands - do not collapse to one topic.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "separated_geometry_strands_do_not_collapse_to_one_topic"),
     },
   },
   hebrew: {
@@ -477,7 +478,7 @@ export const ISRAELI_PRIMARY_CURRICULUM_MAP = {
   english: {
     ...buildSubjectGrades(englishGrade),
     repoHints: {
-      note: "Grades 1–2: grammar not assumed core; exposure/enrichment separation.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation"),
     },
   },
   science: {
@@ -487,7 +488,7 @@ export const ISRAELI_PRIMARY_CURRICULUM_MAP = {
   "moledet-geography": {
     ...buildSubjectGrades(geographyGrade),
     repoHints: {
-      note: "Inventory retained; curriculum placement deferred - confidence low.",
+      note: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "inventory_retained_curriculum_placement_deferred_confidence_low"),
     },
   },
 };
@@ -495,7 +496,7 @@ export const ISRAELI_PRIMARY_CURRICULUM_MAP = {
 export const CURRICULUM_MAP_META = {
   version: 3,
   phase: 3,
-  scope: "Israel elementary (grades 1–6) - conservative structured mapping + advisory source anchors",
+  scope: burnDownCopy("utils__curriculum-audit__israeli-primary-curriculum-map", "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so"),
   defaultConfidence: "medium",
   disclaimer:
     "This map does not encode an official Ministry of Education syllabus line-by-line. " +

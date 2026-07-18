@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useState, useMemo, useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
 import MaybeGameAccessGuard from "../../components/offline/MaybeGameAccessGuard.jsx";
@@ -9,6 +10,8 @@ import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { useGameAudio } from "../../hooks/useGameAudio";
 
 const SIZES = [3, 5, 7];
+const PACK = "pages__offline__tic-tac-toe";
+const copy = (key, vars) => gamePackCopy(PACK, key, vars);
 
 const initialScore = { X: 0, O: 0, ties: 0 };
 
@@ -160,7 +163,7 @@ export default function TicTacToeXL() {
     setBoard(nextBoard);
 
     if (potentialWinner) {
-      setWinnerMessage(`${playerLabel(potentialWinner)} won!`);
+      setWinnerMessage(copy("player_won", { player: playerLabel(potentialWinner) }));
       if (vsBot && potentialWinner === "O") {
         playSfx("sfx-defeat");
       } else {
@@ -171,7 +174,7 @@ export default function TicTacToeXL() {
         [potentialWinner]: prev[potentialWinner] + 1,
       }));
     } else if (full) {
-      setWinnerMessage("Tie!");
+      setWinnerMessage(copy("tie_game"));
       setScore((prev) => ({ ...prev, ties: prev.ties + 1 }));
     } else {
       setCurrentPlayer(nextPlayer);
@@ -233,13 +236,13 @@ export default function TicTacToeXL() {
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
               >
-                Back
+                {copy("back")}
               </button>
               {!isMidGame ? <GameAudioSettingsButton /> : null}
             </div>
             <div className="absolute right-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
-                Local
+                {copy("local_badge")}
               </span>
             </div>
           </div>
@@ -257,10 +260,13 @@ export default function TicTacToeXL() {
         >
           <div className="text-center mb-1">
             <h1 className="text-2xl font-extrabold text-white mb-0.5">
-              ❌⭕️ Tic-Tac-Toe
+              ❌⭕️ {copy("title")}
             </h1>
             <p className="text-white/70 text-xs">
-              Board {size}×{size} • {vsBot ? "vs Bot" : "2 Players"}
+              {copy("board_meta", {
+                size,
+                mode: vsBot ? copy("vs_bot") : copy("two_players"),
+              })}
             </p>
           </div>
 
@@ -269,15 +275,15 @@ export default function TicTacToeXL() {
             className="grid grid-cols-3 gap-1 mb-1 w-full max-w-md"
           >
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Player X</div>
+              <div className="text-[10px] text-white/60">{copy("player_x")}</div>
               <div className="text-sm font-bold text-emerald-400">{score.X}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Tie</div>
+              <div className="text-[10px] text-white/60">{copy("tie")}</div>
               <div className="text-sm font-bold text-amber-400">{score.ties}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Player O</div>
+              <div className="text-[10px] text-white/60">{copy("player_o")}</div>
               <div className="text-sm font-bold text-purple-400">{score.O}</div>
             </div>
           </div>
@@ -304,19 +310,19 @@ export default function TicTacToeXL() {
                 }}
                 className="w-5 h-5"
               />
-              vs Bot
+              {copy("vs_bot_label")}
             </label>
             <button
               onClick={resetBoard}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              Reset Board
+              {copy("reset_board")}
             </button>
             <button
               onClick={resetScore}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              Reset Score
+              {copy("reset_score")}
             </button>
           </div>
 
@@ -361,7 +367,7 @@ export default function TicTacToeXL() {
           </div>
 
           <div className="text-center text-sm text-white/80 font-semibold">
-            Turn: <span className="font-bold text-white text-lg">{playerLabel(currentPlayer)}</span>
+            {copy("turn")} <span className="font-bold text-white text-lg">{playerLabel(currentPlayer)}</span>
           </div>
         </div>
         <StudentAdSlot variant="dvh" />

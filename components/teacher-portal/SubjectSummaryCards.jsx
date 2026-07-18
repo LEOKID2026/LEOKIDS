@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import {
   REPORT_SUBJECTS,
   formatPercent,
@@ -22,15 +23,15 @@ export default function SubjectSummaryCards({ subjects, showTopics = false }) {
         <h3 className="font-semibold text-amber-200 mb-2">{label}</h3>
         <dl className="text-sm space-y-1 text-white/80">
           <div className="flex justify-between gap-2">
-            <dt>Sessions</dt>
+            <dt>{globalBurnDownCopy("components__teacher-portal__SubjectSummaryCards", "sessions")}</dt>
             <dd>{subj.sessions ?? 0}</dd>
           </div>
           <div className="flex justify-between gap-2">
-            <dt>Answers</dt>
+            <dt>{globalBurnDownCopy("components__teacher-portal__SubjectSummaryCards", "answers")}</dt>
             <dd>{subj.answers ?? 0}</dd>
           </div>
           <div className="flex justify-between gap-2">
-            <dt>Success</dt>
+            <dt>{globalBurnDownCopy("components__teacher-portal__SubjectSummaryCards", "success")}</dt>
             <dd>{formatPercent(subj.accuracy)}</dd>
           </div>
         </dl>

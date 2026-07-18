@@ -1,9 +1,10 @@
 import { useState } from "react";
 import CopyConfirmPopup from "../ui/CopyConfirmPopup.jsx";
-import { buildParentReferralInviteMessageHe } from "../../lib/site/public-site-origin.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { buildParentReferralInviteMessage } from "../../lib/site/public-site-origin.client.js";
 import {
-  COPY_INVITE_ERROR_MESSAGE_HE,
-  COPY_INVITE_SUCCESS_MESSAGE_HE,
+  COPY_INVITE_ERROR_MESSAGE_KEY,
+  COPY_INVITE_SUCCESS_MESSAGE_KEY,
   copyTextToClipboard,
 } from "../../lib/ui/copy-confirm-message.js";
 
@@ -13,22 +14,23 @@ import {
  */
 export default function ParentInviteOthersButton({
   bright = false,
-  label = "Invite other parents",
+  labelKey = "auth.parentInviteOthers",
   className,
   inline = false,
 }) {
+  const t = useT();
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [popupIsError, setPopupIsError] = useState(false);
 
   const handleClick = async () => {
-    const ok = await copyTextToClipboard(buildParentReferralInviteMessageHe());
+    const ok = await copyTextToClipboard(buildParentReferralInviteMessage(t));
     if (ok) {
       setPopupIsError(false);
-      setPopupMessage(COPY_INVITE_SUCCESS_MESSAGE_HE);
+      setPopupMessage(t(COPY_INVITE_SUCCESS_MESSAGE_KEY));
     } else {
       setPopupIsError(true);
-      setPopupMessage(COPY_INVITE_ERROR_MESSAGE_HE);
+      setPopupMessage(t(COPY_INVITE_ERROR_MESSAGE_KEY));
     }
     setPopupOpen(true);
   };
@@ -45,13 +47,13 @@ export default function ParentInviteOthersButton({
       className={btnClass}
       data-testid="parent-invite-others-btn"
     >
-      {label}
+      {t(labelKey)}
     </button>
   );
 
   return (
     <>
-      {inline ? button : <div className="flex flex-col items-center pt-2 md:pt-3">{button}</div>}
+      {inline ? button : <div className="flex justify-center">{button}</div>}
 
       <CopyConfirmPopup
         open={popupOpen}

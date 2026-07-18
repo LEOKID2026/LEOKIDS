@@ -39,7 +39,7 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
         if (!res.ok || !data.ok) throw new Error(mapParentPanelApiError(data.error, "load"));
         setPermissions(data.permissions);
       } catch (err) {
-        if (!cancelled) setError(mapParentPanelApiError(err.message, "load"));
+        if (!cancelled) setError(t(mapParentPanelApiError(err.message, "load")));
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -69,7 +69,7 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
       if (!res.ok || !data.ok) throw new Error(mapParentPanelApiError(data.error, "save"));
       setPermissions(data.permissions);
     } catch (err) {
-      setError(mapParentPanelApiError(err.message, "save"));
+      setError(t(mapParentPanelApiError(err.message, "save")));
     } finally {
       setSaving(null);
     }

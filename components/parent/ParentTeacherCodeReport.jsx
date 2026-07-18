@@ -14,6 +14,7 @@ import {
 } from "../../lib/school-portal/school-communication.js";
 import { formatParentDate } from "../../lib/parent-ui/format-parent-date.js";
 import { formatParentReportSubjectHe as formatParentReportSubject } from "../../utils/parent-report-language/parent-report-display-labels.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 async function fetchGuardianMe() {
   const res = await fetch("/api/guardian/me", {
@@ -44,6 +45,7 @@ export default function ParentTeacherCodeReport({
   logoutRedirectPath = "/parent/login",
 }) {
   const router = useRouter();
+  const t = useT();
   const [state, setState] = useState("loading");
   const [loadingHint, setLoadingHint] = useState("Verifying access…");
   const [studentId, setStudentId] = useState(null);
@@ -160,7 +162,7 @@ export default function ParentTeacherCodeReport({
   if (state === "loading") {
     return (
       <Layout>
-        <TeacherPortalShell title="Child report">
+        <TeacherPortalShell title={t("ui.parent.childReportTitle")}>
           <p className="text-white/60" role="status">{loadingHint}</p>
         </TeacherPortalShell>
       </Layout>
@@ -198,7 +200,7 @@ export default function ParentTeacherCodeReport({
   if (isSchoolLinked && mustChangePin && !pinGateDone) {
     return (
       <Layout>
-        <TeacherPortalShell title="Change access code">
+        <TeacherPortalShell title={t("ui.parent.changeAccessCodeTitle")}>
           <ParentMustChangePinGate onSuccess={() => setPinGateDone(true)} />
         </TeacherPortalShell>
       </Layout>

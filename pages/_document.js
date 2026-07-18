@@ -1,23 +1,38 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
+import { resolveLocaleDefinition } from "../lib/i18n/locale-registry.js";
+import { readRequestInterfaceLocale } from "../lib/i18n/read-request-interface-locale.server.js";
 
 /**
- * Default shell is English LTR. Runtime locale/direction are applied from `_app`
- * (and a tiny head bootstrap) via documentElement attributes.
+ * SSR locale shell — reads middleware-resolved interface locale from request header
+ * or locale prefix in the user-facing URL (ctx.asPath).
  */
-export default function Document() {
-  return (
-    <Html lang="en" dir="ltr">
-      <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var m=document.cookie.match(/(?:^|; )lk_global_locale=([^;]*)/);var raw=m?decodeURIComponent(m[1]):'en';var map={en:['en','ltr'],'en-XA':['en-XA','ltr'],'ar-XB':['ar-XB','rtl']};var pair=map[raw]||['en','ltr'];document.documentElement.lang=pair[0];document.documentElement.dir=pair[1];}catch(e){}})();`,
-          }}
-        />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
+function readDocumentInterfaceLocale(ctx) {
+  const fromRequest = readRequestInterfaceLocale(ctx.req, ctx.asPath || ctx.pathname || "");
+  if (fromRequest) return fromRequest;
+  return "en";
 }
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    const localeId = readDocumentInterfaceLocale(ctx);
+    const direction = resolveLocaleDefinition(localeId).direction;
+    return { ...initialProps, localeId, direction };
+  }
+
+  render() {
+    const localeId = this.props.localeId || "en";
+    const direction = this.props.direction || "ltr";
+    return (
+      <Html lang={localeId} dir={direction}>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;

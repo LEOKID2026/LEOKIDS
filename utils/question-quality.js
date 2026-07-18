@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 /**
  * Cross-subject MCQ / stem quality checks for audits and runtime polish.
  */
@@ -184,7 +185,7 @@ export function auditMcqQuality(q, ctx = {}) {
   ) {
     warnings.push({
       code: "correct_only_full_sentence",
-      message: "Correct answer is the only full sentence among options",
+      message: globalBurnDownCopy("utils__question-quality", "correct_answer_is_the_only_full_sentence_among_options"),
     });
   }
 
@@ -213,7 +214,7 @@ export function auditMcqQuality(q, ctx = {}) {
   ) {
     warnings.push({
       code: "word_count_style_mismatch",
-      message: "Correct option is much longer than all distractors",
+      message: globalBurnDownCopy("utils__question-quality", "correct_option_is_much_longer_than_all_distractors"),
     });
   }
 

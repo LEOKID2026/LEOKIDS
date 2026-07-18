@@ -1,10 +1,11 @@
 import { useState } from "react";
 import CopyConfirmPopup from "../ui/CopyConfirmPopup.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
-import { buildStudentShareFriendsMessageHe } from "../../lib/site/public-site-origin.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { buildStudentShareFriendsMessage } from "../../lib/site/public-site-origin.client.js";
 import {
-  COPY_INVITE_ERROR_MESSAGE_HE,
-  COPY_INVITE_SUCCESS_MESSAGE_HE,
+  COPY_INVITE_ERROR_MESSAGE_KEY,
+  COPY_INVITE_SUCCESS_MESSAGE_KEY,
   copyTextToClipboard,
 } from "../../lib/ui/copy-confirm-message.js";
 
@@ -27,21 +28,23 @@ const CHIP_BTN_CLASSIC =
 export default function StudentShareFriendsButton({
   className = "",
   variant = "mobile",
-  label = "Share with friends",
+  label,
 }) {
   const { tokens: T, isBright } = useStudentTheme();
+  const t = useT();
+  const resolvedLabel = label ?? t("ui.student.shareWithFriends");
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [popupIsError, setPopupIsError] = useState(false);
 
   const handleClick = async () => {
-    const ok = await copyTextToClipboard(buildStudentShareFriendsMessageHe());
+    const ok = await copyTextToClipboard(buildStudentShareFriendsMessage(t));
     if (ok) {
       setPopupIsError(false);
-      setPopupMessage(COPY_INVITE_SUCCESS_MESSAGE_HE);
+      setPopupMessage(t(COPY_INVITE_SUCCESS_MESSAGE_KEY));
     } else {
       setPopupIsError(true);
-      setPopupMessage(COPY_INVITE_ERROR_MESSAGE_HE);
+      setPopupMessage(t(COPY_INVITE_ERROR_MESSAGE_KEY));
     }
     setPopupOpen(true);
   };
@@ -79,7 +82,7 @@ export default function StudentShareFriendsButton({
         className={`${btnClass} ${className}`.trim()}
         data-testid={testId}
       >
-        {label}
+        {resolvedLabel}
       </button>
 
       <CopyConfirmPopup

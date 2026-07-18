@@ -3,11 +3,6 @@ import MathG6BookShell from "../../../../../components/learning-book/MathG6BookS
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import {
-  loadMathG6Page,
-  loadMathG6TocEntries,
-  getMathG6StaticPaths,
-} from "../../../../../lib/learning-book/load-math-g6-pages";
-import {
   getMathG6PageNeighbors,
   isValidMathG6PageId,
 } from "../../../../../lib/learning-book/math-g6-registry";
@@ -42,14 +37,8 @@ export default function MathG6BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getMathG6StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadMathG6Page, loadMathG6TocEntries } = await import("../../../../../lib/learning-book/load-math-g6-pages");
   const pageId = params.pageId;
   if (!isValidMathG6PageId(pageId)) {
     return { notFound: true };

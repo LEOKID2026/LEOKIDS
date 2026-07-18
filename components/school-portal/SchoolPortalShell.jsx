@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
@@ -133,7 +134,7 @@ export default function SchoolPortalShell({
         <aside className="lg:sticky lg:top-6">
           <nav
             className="rounded-xl border border-white/15 bg-black/25 p-2 space-y-1"
-            aria-label="School navigation"
+            aria-label={globalBurnDownCopy("components__school-portal__SchoolPortalShell", "school_navigation")}
           >
             <p className="text-xs text-white/45 px-3 pt-1 pb-2 hidden lg:block">{navLabel}</p>
             <div className="flex flex-wrap lg:flex-col gap-1 pb-1 lg:pb-0">

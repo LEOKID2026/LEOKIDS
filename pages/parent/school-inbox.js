@@ -13,9 +13,11 @@ import {
   SC_MESSAGE_FROM_SCHOOL_PARENT,
 } from "../../lib/school-portal/school-communication.js";
 import { getSchoolMessageId } from "../../lib/school-portal/school-messaging-ui";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 export default function ParentSchoolInboxPage() {
   const router = useRouter();
+  const t = useT();
   const [mustChangePin, setMustChangePin] = useState(false);
   const [pinGateDone, setPinGateDone] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -83,7 +85,7 @@ export default function ParentSchoolInboxPage() {
   if (mustChangePin && !pinGateDone) {
     return (
       <Layout>
-        <TeacherPortalShell title="Change access code">
+        <TeacherPortalShell title={t("ui.parent.changeAccessCodeTitle")}>
           <ParentMustChangePinGate onSuccess={() => setPinGateDone(true)} />
         </TeacherPortalShell>
       </Layout>

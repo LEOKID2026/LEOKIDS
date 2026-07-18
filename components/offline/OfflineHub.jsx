@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import Link from "next/link";
 import { useOfflineHubUi } from "../../hooks/useOfflineHubUi.js";
 import OfflineHubGameCard from "../games/OfflineHubGameCard.jsx";
@@ -34,14 +35,14 @@ export default function OfflineHub() {
         <div className={`${GH.container} space-y-5`}>
           <header className="space-y-2 text-center sm:text-left">
             <p className={GH.badge}>🔌 Offline Games</p>
-            <h1 className={GH.hubTitle}>Offline Games</h1>
-            <p className={GH.hubSub}>Local games - no saving and no rewards</p>
+            <h1 className={GH.hubTitle}>{gamePackCopy("components__offline__OfflineHub", "offline_games")}</h1>
+            <p className={GH.hubSub}>{gamePackCopy("components__offline__OfflineHub", "local_games_no_saving_and_no_rewards")}</p>
           </header>
 
           <OfflineReconnectBanner />
 
           <section className="space-y-3">
-            <OfflineSectionTitle GH={GH}>Same-Device Games</OfflineSectionTitle>
+            <OfflineSectionTitle GH={GH}>{gamePackCopy("components__offline__OfflineHub", "same_device_games")}</OfflineSectionTitle>
             <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
               {SAME_DEVICE_OFFLINE_GAMES.map((game) => (
                 <OfflineHubGameCard
@@ -57,23 +58,23 @@ export default function OfflineHub() {
           {fullGames ? (
             <>
               <section className="space-y-3">
-                <OfflineSectionTitle GH={GH}>Leo Solo Games</OfflineSectionTitle>
+                <OfflineSectionTitle GH={GH}>{gamePackCopy("components__offline__OfflineHub", "leo_solo_games")}</OfflineSectionTitle>
                 <OfflineHubTileCard
                   href={OFFLINE_SOLO_HUB_ROUTE}
                   emoji="🎮"
                   title="12 Solo Games"
-                  blurb="Tag, puzzles, mazes and more - no connection needed."
+                  blurb={gamePackCopy("components__offline__OfflineHub", "tag_puzzles_mazes_and_more_no_connection_needed")}
                   GH={GH}
                 />
               </section>
 
               <section className="space-y-3">
-                <OfflineSectionTitle GH={GH}>Educational Games</OfflineSectionTitle>
+                <OfflineSectionTitle GH={GH}>{gamePackCopy("components__offline__OfflineHub", "educational_games")}</OfflineSectionTitle>
                 <OfflineHubTileCard
                   href={OFFLINE_EDUCATIONAL_HUB_ROUTE}
                   emoji="📚"
                   title={`${OFFLINE_EDUCATIONAL_GAMES.length} Educational Games`}
-                  blurb="Recycling, grocery store, lab, pizzeria, word train and more - all local."
+                  blurb={gamePackCopy("components__offline__OfflineHub", "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local")}
                   GH={GH}
                 />
               </section>
@@ -92,7 +93,7 @@ export function OfflineSoloGamesHub() {
   return (
     <OfflineHubPageShell>
       <div className={`${GH.container} space-y-4`}>
-        <GamesHubNav offlineHubRoute={OFFLINE_HUB_ROUTE} title="Leo Games - Offline" GH={GH} />
+        <GamesHubNav offlineHubRoute={OFFLINE_HUB_ROUTE} title={gamePackCopy("components__offline__OfflineHub", "leo_games_offline")} GH={GH} />
         <OfflineReconnectBanner />
         <section className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
           {OFFLINE_SOLO_GAMES.map((game) => (
@@ -118,7 +119,7 @@ export function OfflineEducationalGamesHub() {
   return (
     <OfflineHubPageShell>
       <div className={`${GH.container} space-y-4`}>
-        <GamesHubNav offlineHubRoute={OFFLINE_HUB_ROUTE} title="Educational Games - Offline" GH={GH} />
+        <GamesHubNav offlineHubRoute={OFFLINE_HUB_ROUTE} title={gamePackCopy("components__offline__OfflineHub", "educational_games_offline")} GH={GH} />
         <OfflineReconnectBanner />
         <section className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
           {OFFLINE_EDUCATIONAL_GAMES.map((game) => (
@@ -140,9 +141,7 @@ export function OfflineEducationalGamesHub() {
 function GamesHubNav({ offlineHubRoute, title, GH }) {
   return (
     <div className="flex items-center justify-between gap-2">
-      <Link href={offlineHubRoute} className={GH.backBtn}>
-        Back
-      </Link>
+      <Link href={offlineHubRoute} className={GH.backBtn}>{gamePackCopy("components__offline__OfflineHub", "back")}</Link>
       <h1 className={`${GH.hubTitle} !text-lg sm:!text-xl`}>{title}</h1>
       <span className="w-16" aria-hidden />
     </div>

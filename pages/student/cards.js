@@ -10,7 +10,8 @@ import WindowedStudentCardsGrid from "../../components/student/rewards/WindowedS
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
-import { formatCoinAmountHe, formatCoinAmountNumberHe, SHOP_CARD_ALREADY_OWNED_HE, SHOP_CARD_SELL_DUPLICATE_HE, CATALOG_CARD_OWNED_HE } from "../../lib/rewards/rewards-ui.js";
+import { formatCoinAmountHe, formatCoinAmountNumberHe } from "../../lib/rewards/rewards-ui.js";
+import { useRewardUiCopy } from "../../lib/rewards/reward-locale-context.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 
 const CARDS_ENDPOINTS = {
@@ -23,12 +24,7 @@ const CARDS_ENDPOINTS = {
 const PURCHASE_PATH = "/api/student/rewards/shop/purchase";
 const SELL_DUPLICATE_PATH = "/api/student/rewards/shop/sell-duplicate";
 
-const TABS = [
-  { id: "collection", label: "My collection", shortLabel: "Collection" },
-  { id: "shop", label: "Card shop", shortLabel: "Shop" },
-  { id: "catalog", label: "All cards", shortLabel: "All" },
-  { id: "series", label: "Series", shortLabel: "Series" },
-];
+const TAB_IDS = ["collection", "shop", "catalog", "series"];
 
 const TAB_STYLES = {
   collection: {
@@ -138,7 +134,7 @@ function coinBalanceBadgeClass(theme) {
   return `${shell} border-amber-400/50 bg-amber-500/15 text-amber-900`;
 }
 
-function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games" }) {
+function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games", backLabel }) {
   const gridCols = coinBalanceAmount != null
     ? "grid-cols-[auto_auto]"
     : "grid-cols-[auto]";
@@ -146,7 +142,7 @@ function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games
   return (
     <div dir="ltr" className={`grid ${gridCols} gap-1 sm:gap-2 w-full sm:w-auto min-w-0 items-stretch`}>
       <Link href="/student/home" className={cardsBackButtonClass(theme, backVariant)}>
-        Kids World
+        {backLabel}
       </Link>
       {coinBalanceAmount != null ? (
         <span
@@ -166,6 +162,16 @@ function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games
 export default function StudentCardsPage() {
   const router = useRouter();
   const { tokens: T, theme } = useStudentTheme();
+  const copy = useRewardUiCopy();
+  const tabs = useMemo(
+    () =>
+      TAB_IDS.map((id) => ({
+        id,
+        label: copy("cardsPage", `tabs.${id}.label`),
+        shortLabel: copy("cardsPage", `tabs.${id}.shortLabel`),
+      })),
+    [copy],
+  );
   const [authPhase, setAuthPhase] = useState("checking");
   const [student, setStudent] = useState(null);
   const [activeTab, setActiveTab] = useState("collection");
@@ -238,10 +244,10 @@ export default function StudentCardsPage() {
       await Promise.all([loadSummary(), loadTabData("collection")]);
       setCardsPhase("ok");
     } catch {
-      setCardsError("We couldn't load the cards.");
+      setCardsError(copy("cardsPage", "loadError"));
       setCardsPhase("error");
     }
-  }, [loadSummary, loadTabData]);
+  }, [loadSummary, loadTabData, copy]);
 
   const refreshAfterCardAction = useCallback(async () => {
     loadedTabsRef.current.delete("shop");
@@ -315,18 +321,26 @@ export default function StudentCardsPage() {
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
         setMessageIsError(true);
-        setMessageHe(json?.code === "insufficient_coins" ? "Not enough coins to buy this." : "Purchase failed — try again.");
+        setMessageHe(
+          json?.code === "insufficient_coins"
+            ? copy("shop", "notEnoughCoins")
+            : copy("shop", "purchaseFailed"),
+        );
         return;
       }
       setMessageIsError(false);
-      setMessageHe(`You bought ${json.card?.name_he || json.card?.nameHe || "the card"}!`);
+      setMessageHe(
+        copy("shop", "purchaseSuccess", {
+          name: json.card?.name_he || json.card?.nameHe || copy("fallback", "rewardCard"),
+        }),
+      );
       if (json.balanceAfter != null) {
         setStudent((prev) => (prev ? { ...prev, coin_balance: json.balanceAfter } : prev));
       }
       await refreshAfterCardAction();
     } catch {
       setMessageIsError(true);
-      setMessageHe("Network error while purchasing.");
+      setMessageHe(copy("shop", "purchaseNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -336,8 +350,7 @@ export default function StudentCardsPage() {
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `Sell a duplicate of ${card.nameHe} for ${formatCoinAmountHe(card.sellbackCoins)}?\n` +
-        "You'll keep one copy in your collection."
+      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins) })}\n${copy("shop", "sellConfirmBody")}`,
     );
     if (!confirmed) return;
 
@@ -360,14 +373,17 @@ export default function StudentCardsPage() {
         setMessageIsError(true);
         setMessageHe(
           json?.code === "no_duplicate"
-            ? "No duplicate copy to sell."
-            : "Couldn't sell the duplicate — try again."
+            ? copy("shopView", "noDuplicateToSell")
+            : copy("shopView", "sellFailed"),
         );
         return;
       }
       setMessageIsError(false);
       setMessageHe(
-        `You sold a duplicate of ${json.card?.name_he || json.card?.nameHe || card.nameHe} and got ${formatCoinAmountHe(json.sellbackCoins || 0)}!`
+        copy("shopView", "sellSuccess", {
+          name: json.card?.name_he || json.card?.nameHe || card.nameHe,
+          amount: formatCoinAmountHe(json.sellbackCoins || 0),
+        }),
       );
       if (json.balanceAfter != null) {
         setStudent((prev) => (prev ? { ...prev, coin_balance: json.balanceAfter } : prev));
@@ -375,7 +391,7 @@ export default function StudentCardsPage() {
       await refreshAfterCardAction();
     } catch {
       setMessageIsError(true);
-      setMessageHe("Network error while selling.");
+      setMessageHe(copy("shopView", "sellNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -393,12 +409,13 @@ export default function StudentCardsPage() {
     return (
       <Layout studentTheme={theme} studentShell="home">
         <div className={`max-w-6xl mx-auto px-3 sm:px-4 py-8 text-right overflow-x-hidden ${T.pageWrap}`}>
-          <p className={T.emptyText}>The card collection isn't available yet.</p>
+          <p className={T.emptyText}>{copy("cardsPage", "featureDisabled")}</p>
           <div className="w-full min-w-0 sm:w-auto">
             <CardsPageHeaderActions
               theme={theme}
               coinBalanceAmount={coinBalanceAmount}
               backVariant="primary"
+              backLabel={copy("cardsPage", "kidsWorldBack")}
             />
           </div>
         </div>
@@ -410,7 +427,7 @@ export default function StudentCardsPage() {
 
   const renderTabContent = () => {
     if (cardsPhase === "loading") {
-      return <StudentLoadingPanel message="Loading cards..." reportPage />;
+      return <StudentLoadingPanel message={copy("cardsPage", "loading")} reportPage />;
     }
 
     if (cardsPhase === "error") {
@@ -418,7 +435,7 @@ export default function StudentCardsPage() {
         <div className={T.errorBox}>
           <p className={T.errorTitle}>{cardsError}</p>
           <button type="button" onClick={() => void loadInitialCards()} className={T.errorBtn}>
-            Try again
+            {copy("cardsPage", "tryAgain")}
           </button>
         </div>
       );
@@ -427,7 +444,7 @@ export default function StudentCardsPage() {
     if (cardsPhase !== "ok") return null;
 
     if (tabLoading[activeTab] || !loadedTabs.has(activeTab)) {
-      return <StudentLoadingPanel message="Loading cards..." reportPage />;
+      return <StudentLoadingPanel message={copy("cardsPage", "loading")} reportPage />;
     }
 
     if (activeTab === "collection") {
@@ -435,7 +452,7 @@ export default function StudentCardsPage() {
       return (
         <WindowedStudentCardsGrid
           items={collectionList}
-          emptyMessage="No cards in your collection yet — open a surprise box in Kids World or buy from the shop!"
+          emptyMessage={copy("cardsPage", "collectionEmpty")}
           T={T}
           previewCards={collectionList}
           studentFullName={studentDisplayName}
@@ -456,7 +473,7 @@ export default function StudentCardsPage() {
       return (
         <WindowedStudentCardsGrid
           items={shopList}
-          emptyMessage="No cards available to buy right now."
+          emptyMessage={copy("shopView", "empty")}
           T={T}
           previewCards={shopPreviewCards}
           studentFullName={studentDisplayName}
@@ -474,11 +491,11 @@ export default function StudentCardsPage() {
               footer: (
                 <>
                   <p className={`text-sm font-semibold ${T.statValue}`}>
-                    Buy price: {formatCoinAmountHe(card.priceCoins)}
+                    {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins) })}
                   </p>
                   {card.sellbackCoins > 0 ? (
                     <p className={`text-xs leading-snug ${T.tileSub}`}>
-                      Sell value: {formatCoinAmountHe(card.sellbackCoins)}
+                      {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins) })}
                     </p>
                   ) : (
                     <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -486,8 +503,10 @@ export default function StudentCardsPage() {
                   <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
                     {!card.alreadyOwned && !canBuy
                       ? card.missingCoins > 0
-                        ? `You need ${formatCoinAmountHe(card.missingCoins)} more`
-                        : "Not enough coins"
+                        ? copy("shopView", "needMoreCoins", {
+                            amount: formatCoinAmountHe(card.missingCoins),
+                          })
+                        : copy("shopView", "notEnoughCoinsShort")
                       : "\u00a0"}
                   </p>
                   <button
@@ -507,13 +526,13 @@ export default function StudentCardsPage() {
                   >
                     {canSell
                       ? sellBusy
-                        ? "Selling..."
-                        : SHOP_CARD_SELL_DUPLICATE_HE
+                        ? copy("shopView", "selling")
+                        : copy("shop", "sellDuplicate")
                       : card.alreadyOwned
-                        ? SHOP_CARD_ALREADY_OWNED_HE
+                        ? copy("shop", "alreadyOwned")
                         : buyBusy
-                          ? "Buying..."
-                          : `Buy for ${priceLabel}`}
+                          ? copy("shopView", "buying")
+                          : copy("shopView", "buyFor", { price: priceLabel })}
                   </button>
                 </>
               ),
@@ -531,7 +550,7 @@ export default function StudentCardsPage() {
       return (
         <WindowedStudentCardsGrid
           items={catalogList}
-          emptyMessage="No cards to show."
+          emptyMessage={copy("cardsPage", "catalogEmpty")}
           T={T}
           previewCards={catalogPreviewCards}
           studentFullName={studentDisplayName}
@@ -540,7 +559,7 @@ export default function StudentCardsPage() {
             showLockedStamp: !card.isOwned,
             allowDownload: card.isOwned,
             footer: card.isOwned ? (
-              <p className="text-xs font-bold text-amber-500 dark:text-amber-300">{CATALOG_CARD_OWNED_HE}</p>
+              <p className="text-xs font-bold text-amber-500 dark:text-amber-300">{copy("shop", "catalogOwned")}</p>
             ) : (
               <CardRequirementProgress card={card} T={T} />
             ),
@@ -552,7 +571,7 @@ export default function StudentCardsPage() {
     if (activeTab === "series") {
       const series = payload?.seriesProgress || [];
       if (!series.length) {
-        return <p className={`text-left py-6 ${T.emptyText}`}>No card series yet.</p>;
+        return <p className={`text-left py-6 ${T.emptyText}`}>{copy("cardsPage", "seriesEmpty")}</p>;
       }
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 w-full min-w-0">
@@ -576,11 +595,15 @@ export default function StudentCardsPage() {
       <div className={`w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-8 pb-8 overflow-x-hidden ${T.pageWrap}`}>
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 text-right min-w-0">
           <div className="min-w-0">
-            <h1 className={T.heroTitle}>My cards</h1>
-            <p className={T.heroSub}>Collection, shop, all cards, and series</p>
+            <h1 className={T.heroTitle}>{copy("cardsPage", "title")}</h1>
+            <p className={T.heroSub}>{copy("cardsPage", "subtitle")}</p>
           </div>
           <div className="w-full min-w-0 sm:w-auto">
-            <CardsPageHeaderActions theme={theme} coinBalanceAmount={coinBalanceAmount} />
+            <CardsPageHeaderActions
+              theme={theme}
+              coinBalanceAmount={coinBalanceAmount}
+              backLabel={copy("cardsPage", "kidsWorldBack")}
+            />
           </div>
         </header>
 
@@ -599,9 +622,9 @@ export default function StudentCardsPage() {
 
         <nav
           className="grid grid-cols-4 gap-1 sm:gap-2 w-full min-w-0 mb-4"
-          aria-label="Card tabs"
+          aria-label={copy("cardsPage", "tabsAriaLabel")}
         >
-          {TABS.map((tab) => (
+          {tabs.map((tab) => (
             <button
               key={tab.id}
               type="button"

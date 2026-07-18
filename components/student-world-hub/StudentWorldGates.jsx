@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import { STUDENT_WORLD_GATES } from "./studentWorldHubConfig.js";
 
 const gateById = Object.fromEntries(STUDENT_WORLD_GATES.map((g) => [g.id, g]));
 
-function WorldGate({ gate, className = "" }) {
+function WorldGate({ gate, className = "", label }) {
   if (!gate) return null;
   return (
     <Link
@@ -14,12 +15,13 @@ function WorldGate({ gate, className = "" }) {
       <span className="text-xl leading-none md:text-3xl" aria-hidden>
         {gate.emoji}
       </span>
-      <span className="mt-0.5 text-[11px] font-bold leading-tight md:mt-1 md:text-sm">{gate.labelHe}</span>
+      <span className="mt-0.5 text-[11px] font-bold leading-tight md:mt-1 md:text-sm">{label}</span>
     </Link>
   );
 }
 
 export default function StudentWorldGates() {
+  const t = useT();
   const learning = gateById.learning;
   const games = gateById.games;
   const club = gateById.club;
@@ -28,9 +30,9 @@ export default function StudentWorldGates() {
     <div className="w-full" data-testid="student-world-gates">
       {/* */}
       <div className="mx-auto hidden w-full max-w-2xl grid-cols-3 gap-4 md:grid lg:max-w-3xl lg:gap-5">
-        <WorldGate gate={games} />
-        <WorldGate gate={club} />
-        <WorldGate gate={learning} />
+        <WorldGate gate={games} label={t(games.labelKey)} />
+        <WorldGate gate={club} label={t(club.labelKey)} />
+        <WorldGate gate={learning} label={t(learning.labelKey)} />
       </div>
 
       {/* Mobile: 2-col + club full width. -translate-y-28 is visual only; low viewports tighten via negative margin-bottom. */}
@@ -39,10 +41,10 @@ export default function StudentWorldGates() {
         data-testid="student-world-gates-mobile"
       >
         <div className="grid grid-cols-2 gap-2">
-          <WorldGate gate={games} />
-          <WorldGate gate={learning} />
+          <WorldGate gate={games} label={t(games.labelKey)} />
+          <WorldGate gate={learning} label={t(learning.labelKey)} />
         </div>
-        <WorldGate gate={club} />
+        <WorldGate gate={club} label={t(club.labelKey)} />
       </div>
     </div>
   );

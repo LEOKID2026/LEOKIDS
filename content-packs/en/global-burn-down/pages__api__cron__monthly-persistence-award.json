@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron": "Monthly persistence cron is disabled. Set ENABLE_MONTHLY_PERSISTENCE_CRON=true"
+  }
+}

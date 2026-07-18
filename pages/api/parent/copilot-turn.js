@@ -19,7 +19,10 @@
  * Never mutates stored reports, banks, taxonomies, diagnostics, or planner output.
  */
 
+import { copilotStaticMessage } from "../../../lib/parent-copilot/copilot-static-message.js";
 import { runParentCopilotTurnAsync } from "../../../utils/parent-copilot/index.js";
+import { loadGlobalProductMembershipLocales } from "../../../lib/global/product-membership.server.js";
+import { resolveParentReportLocale } from "../../../lib/reports/report-locale.js";
 import { stripParentCopilotResponseForClient } from "../../../lib/parent-copilot/strip-copilot-client-response.server.js";
 import { requireParentApiContext, sendPersonaApiError } from "../../../lib/auth/persona-guard.server.js";
 import {
@@ -127,7 +130,7 @@ async function authorizeParentBearer(req, res, studentId, authHeader) {
       });
       return {
         ok: false,
-        error: "Could not verify student ownership",
+        error: copilotStaticMessage("copilot.answers.pages_api_parent_copilot-turn.could_not_verify_student_ownership"),
         code: "PARENT_OWNERSHIP_DENIED",
         status: ownedStudent.status || 403,
       };
@@ -141,7 +144,7 @@ async function authorizeParentBearer(req, res, studentId, authHeader) {
       });
       return {
         ok: false,
-        error: "Student not found for this parent",
+        error: copilotStaticMessage("copilot.answers.pages_api_parent_copilot-turn.student_not_found_for_this_parent"),
         code: "STUDENT_NOT_FOUND",
         status: 404,
       };
@@ -304,6 +307,20 @@ export default async function handler(req, res) {
     const selectedContextRef = body.selectedContextRef ?? null;
     const clickedFollowupFamily = body.clickedFollowupFamily ?? null;
 
+    let responseLocale = "en";
+    if (auth.mode === "parent_bearer" && auth.parentUserId && auth.serviceRole) {
+      const membershipLocales = await loadGlobalProductMembershipLocales(
+        auth.serviceRole,
+        auth.parentUserId
+      );
+      if (membershipLocales.ok) {
+        responseLocale = resolveParentReportLocale({
+          preferredReportLanguage: membershipLocales.preferredReportLanguage,
+          interfaceLocale: membershipLocales.interfaceLanguage,
+        });
+      }
+    }
+
     const result = await runParentCopilotTurnAsync({
       audience,
       payload: payloadResolution.payload,
@@ -311,6 +328,7 @@ export default async function handler(req, res) {
       sessionId,
       selectedContextRef,
       clickedFollowupFamily,
+      responseLocale,
     });
 
     if (auth.mode === "parent_bearer" && auth.parentUserId && auth.serviceRole) {

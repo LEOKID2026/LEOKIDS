@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { usePromoVideoInlineRef } from "../../lib/promo/promo-video-inline-playback.client.js";
 
 /**
@@ -25,7 +26,7 @@ export default function PromoMobileCompareVideo({
   return (
     <section
       className={`md:hidden mt-6 space-y-2 text-center ${className}`}
-      aria-label="Mobile compare version"
+      aria-label={globalBurnDownCopy("components__promo__PromoMobileCompareVideo", "mobile_compare_version")}
       data-testid={testId}
     >
       <p className={`text-xs font-medium ${labelClass}`}>Mobile compare version</p>
@@ -39,7 +40,7 @@ export default function PromoMobileCompareVideo({
           playsInline
           disableRemotePlayback
           preload="metadata"
-          aria-label="Mobile test video"
+          aria-label={globalBurnDownCopy("components__promo__PromoMobileCompareVideo", "mobile_test_video")}
           data-testid={`${testId}-player`}
         >
           <source src={mobileSrc} type="video/mp4" />

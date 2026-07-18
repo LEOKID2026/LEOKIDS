@@ -3,6 +3,7 @@
  * Called only from topic-next-step-engine.js.
  */
 
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { applyIntelligenceDecisionGuards } from "./intelligence-layer-v1/intelligence-decision-guards.js";
 import { getIntelligencePriority } from "./intelligence-layer-v1/signal-priority.js";
 import {
@@ -38,8 +39,8 @@ export function isAdvanceOnlyStep(step) {
   return step === "advance_level" || step === "advance_grade_topic_only";
 }
 
-const STEP_LABEL_FALLBACK_HE = "Continued measured support on the same issue";
-const INTERVENTION_LABEL_FALLBACK_HE = "Measured support and retesting before further change";
+const STEP_LABEL_FALLBACK_HE = burnDownCopy("utils__topic-next-step-phase2", "continued_measured_support_on_the_same_issue");
+const INTERVENTION_LABEL_FALLBACK_HE = burnDownCopy("utils__topic-next-step-phase2", "measured_support_and_retesting_before_further_change");
 
 export function interventionTypeLabelHe(intervention) {
   const key = String(intervention || "").trim();
@@ -686,37 +687,37 @@ export function buildPhase9RecommendationOverlay(p) {
   } else if ((mp === "concept_confusion" || mp === "procedure_break") && tr !== "ready") {
     reviewBeforeAdvanceHe = "to close a circle of similar mistakes at the same level before jumping forward.";
   } else if (hint && tr !== "ready") {
-    reviewBeforeAdvanceHe = "The child is still helped by hints, so it's worth continuing with regular practice before moving on to advanced.";
+    reviewBeforeAdvanceHe = burnDownCopy("utils__topic-next-step-phase2", "the_child_is_still_helped_by_hints_so_it_s_worth_continuing");
   }
 
   let mistakeFocusedActionHe = "";
   if (mp === "speed_driven_error") {
-    mistakeFocusedActionHe = "Short tasks without a watch - accuracy before speed.";
+    mistakeFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "short_tasks_without_a_watch_accuracy_before_speed");
   } else if (mp === "instruction_misread") {
-    mistakeFocusedActionHe = "Joint reading of the task and wording in simple words before calculation.";
+    mistakeFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "joint_reading_of_the_task_and_wording_in_simple_words_before_calculation");
   } else if (mp === "support_dependent_success") {
     mistakeFocusedActionHe = "A short independent experience and then a comparison together - without canceling help suddenly.";
   } else if (mp === "concept_confusion") {
-    mistakeFocusedActionHe = "Repetition of a typical error with one conceptual explanation per session.";
+    mistakeFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "repetition_of_a_typical_error_with_one_conceptual_explanation_per_sessio");
   } else if (mp === "procedure_break") {
-    mistakeFocusedActionHe = "Write an order of operations on a draft and go step by step.";
+    mistakeFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "write_an_order_of_operations_on_a_draft_and_go_step_by_step");
   } else if (mp === "insufficient_mistake_evidence") {
-    mistakeFocusedActionHe = "Record 2-3 short sessions at the same level before distilling a type of error.";
+    mistakeFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "record_2_3_short_sessions_at_the_same_level_before_distilling_a_type_of_");
   }
 
   let memoryFocusedActionHe = "";
   if (ls === "early_acquisition") {
-    memoryFocusedActionHe = "Short and repetitive practice - without expecting a quick transfer.";
+    memoryFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "short_and_repetitive_practice_without_expecting_a_quick_transfer");
   } else if (ls === "partial_stabilization") {
-    memoryFocusedActionHe = "Keep the same practice for another week and see a small improvement.";
+    memoryFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "keep_the_same_practice_for_another_week_and_see_a_small_improvement");
   } else if (ls === "stable_control") {
     memoryFocusedActionHe = "keep the same pace; Praise perseverance before adding change.";
   } else if (ls === "fragile_retention") {
-    memoryFocusedActionHe = "Strengthen again at the same level - the preservation is still fragile.";
+    memoryFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "strengthen_again_at_the_same_level_the_preservation_is_still_fragile");
   } else if (ls === "regression_signal") {
-    memoryFocusedActionHe = "Simplify a task and shorten a session until accuracy is established.";
+    memoryFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "simplify_a_task_and_shorten_a_session_until_accuracy_is_established");
   } else if (ls === "transfer_emerging") {
-    memoryFocusedActionHe = "Allow a small experiment within the topic with a quick test at the end.";
+    memoryFocusedActionHe = burnDownCopy("utils__topic-next-step-phase2", "allow_a_small_experiment_within_the_topic_with_a_quick_test_at_the_end");
   } else if (ls === "insufficient_longitudinal_evidence") {
     memoryFocusedActionHe = "Don't conclude a long trend yet - check again after a little more practice.";
   }
@@ -799,7 +800,7 @@ export function buildPhase10RecommendationOverlay(p) {
       "The information is less recent - do not rely on it alone before raising a difficulty or changing direction.";
   }
   if (rti === "mixed_response") {
-    changeBecauseHe = "Mixed response to support - some progressing, some still pending; to be precise a short structure.";
+    changeBecauseHe = burnDownCopy("utils__topic-next-step-phase2", "mixed_response_to_support_some_progressing_some_still_pending_to_be_prec");
   }
 
   return {
@@ -864,7 +865,7 @@ export function buildPhase11SequenceOverlay(p) {
       "It is better not to repeat the same type of practice without retesting - otherwise it sounds new but does not really change.";
   }
   if (sim === "clearly_new" || rot === "light_variation") {
-    whyThisIsDifferentNowHe = "There is a slight change in direction or purpose - not just another spin on the same wording.";
+    whyThisIsDifferentNowHe = burnDownCopy("utils__topic-next-step-phase2", "there_is_a_slight_change_in_direction_or_purpose_not_just_another_spin_o");
   }
   if (seq === "sequence_ready_for_release" && rti !== "independence_growing") {
     whatMustHappenBeforeReleaseHe =
@@ -983,7 +984,7 @@ export function buildPhase12ContinuationOverlay(p) {
       "Without building on guesswork: two short sessions with a small drawing at the end - what succeeded without help in the middle.";
   }
   if (match === "aligned" && carry === "clearly_visible") {
-    whatShouldCarryForwardHe = "To leave the same short practice skeleton, and only to specify a goal or timing - without replacing everything.";
+    whatShouldCarryForwardHe = burnDownCopy("utils__topic-next-step-phase2", "to_leave_the_same_short_practice_skeleton_and_only_to_specify_a_goal_or_");
   }
 
   const recommendationContinuationDecisionHe =
@@ -1337,11 +1338,11 @@ export function buildWhatCouldChangeThisHe(p) {
 
 function stepLabelHe(step) {
   const m = {
-    advance_level: "Increasing the level of difficulty in the subject",
-    advance_grade_topic_only: "Raising a class on the subject",
+    advance_level: burnDownCopy("utils__topic-next-step-phase2", "increasing_the_level_of_difficulty_in_the_subject"),
+    advance_grade_topic_only: burnDownCopy("utils__topic-next-step-phase2", "raising_a_class_on_the_subject"),
     maintain_and_strengthen: "establishment at the same level",
-    remediate_same_level: "Reinforcement at the same level",
-    drop_one_level_topic_only: "Decreased level of difficulty in the subject",
+    remediate_same_level: burnDownCopy("utils__topic-next-step-phase2", "reinforcement_at_the_same_level"),
+    drop_one_level_topic_only: burnDownCopy("utils__topic-next-step-phase2", "decreased_level_of_difficulty_in_the_subject"),
     drop_one_grade_topic_only: "A grade drop in the subject",
   };
   return m[String(step || "").trim()] || STEP_LABEL_FALLBACK_HE;

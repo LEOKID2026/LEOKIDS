@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "There is not yet enough data to set a subject-level picture.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Start short, consistent practice to build a measurement baseline.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Current data volume is low, so there is no basis for a clear direction.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Pick one topic and practice 10–15 minutes each session.",
+    "do_not_change_difficulty_based_on_sparse_data": "Do not change difficulty based on sparse data.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "How much to trust this: not high yet at this stage.",
+    "existing_data_is_still_partial": "Existing data is still partial.",
+    "continue_basic_data_collection": "Continue basic data collection.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "There is not yet enough data to define a clear direction.",
+    "short_focused_practice_on_one_topic": "Short, focused practice on one topic.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Do not draw strong conclusions from a small number of questions.",
+    "how_much_to_trust_this_not_high_yet": "How much to trust this: not high yet.",
+    "data_is_missing_or_partial": "Data is missing or partial."
+  }
+}

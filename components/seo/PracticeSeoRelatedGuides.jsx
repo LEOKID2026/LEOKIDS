@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 
 /**
@@ -18,7 +19,7 @@ export default function PracticeSeoRelatedGuides({ guides, isBright }) {
     <aside
       className={`space-y-2 ${shell}`}
       data-testid="practice-related-guides"
-      aria-label="Related guides"
+      aria-label={globalBurnDownCopy("components__seo__PracticeSeoRelatedGuides", "related_guides")}
     >
       <h2 className={`text-base font-bold md:text-lg ${title}`}>Related guides</h2>
       <ul className="space-y-1.5 text-sm md:text-base">

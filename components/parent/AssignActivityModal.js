@@ -14,6 +14,7 @@ import ParentSentActivitiesPanel from "./ParentSentActivitiesPanel.jsx";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
 import { mapParentPanelApiError } from "../../lib/parent-client/parent-api-errors.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const PARENT_ACTIVITY_MODE = "guided_practice";
 const MAX_QUESTION_COUNT = 30;
@@ -51,6 +52,7 @@ export default function AssignActivityModal({
   bright = false,
 }) {
   const T = getParentPortalTheme(bright);
+  const t = useT();
   // Registered profile grade — used only as the default; never mutated here.
   const profileGradeKey = useMemo(
     () => normalizeGradeLevelToKey(student?.grade_level),
@@ -341,7 +343,7 @@ export default function AssignActivityModal({
             }}
             disabled={busy}
             variant="radio"
-            label="Level"
+            label={t("ui.parent.assignActivityLevelLabel")}
             className="block text-sm"
             name="parent-activity-display-level"
           />

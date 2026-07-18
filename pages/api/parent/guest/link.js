@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../lib/i18n/global-burn-down-copy.js";
 import { requireParentApiContext } from "../../../../lib/auth/persona-guard.server.js";
 import {
   transferGuestCoinsAndCards,
@@ -12,8 +13,8 @@ import {
 } from "../../../../lib/guest/guest-link-rate-limit.server.js";
 import { clientIpFromRequest } from "../../../../lib/security/in-memory-rate-limit.js";
 
-const GENERIC_LINK_ERROR = "Unable to link this guest number. Check the number and try again.";
-const RATE_LIMIT_ERROR = "Too many attempts. Please try again later.";
+const GENERIC_LINK_ERROR = globalBurnDownCopy("pages__api__parent__guest__link", "unable_to_link_this_guest_number_check_the_number_and_try_again");
+const RATE_LIMIT_ERROR = globalBurnDownCopy("pages__api__parent__guest__link", "too_many_attempts_please_try_again_later");
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {

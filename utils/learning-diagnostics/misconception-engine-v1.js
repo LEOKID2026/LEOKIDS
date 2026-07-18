@@ -3,6 +3,7 @@
  * @module utils/learning-diagnostics/misconception-engine-v1
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { ERROR_TYPES_BY_SUBJECT_ID } from "./diagnostic-framework-v1.js";
 import { buildQuestionSkillMetadataV1 } from "./question-skill-metadata-v1.js";
 
@@ -50,7 +51,7 @@ export function inferMisconceptionFromWrongAnswer(params) {
   });
 
   let errorType = "insufficient_evidence";
-  let suspectedMisconception = "Unable to distinguish error mechanism from available fields.";
+  let suspectedMisconception = burnDownCopy("utils__learning-diagnostics__misconception-engine-v1", "unable_to_distinguish_error_mechanism_from_available_fields");
   let confidence = "very_low";
   /** @type {string[]} */
   const basedOn = [];
@@ -81,7 +82,7 @@ export function inferMisconceptionFromWrongAnswer(params) {
     if (!ev.isCorrect && respMs < FAST_WRONG_MS) {
       if (allowed.has("fast_guessing_pattern") || allowed.has("guessing_pattern")) {
         errorType = subjectId === "math" ? "fast_guessing_pattern" : "guessing_pattern";
-        suspectedMisconception = "Very fast incorrect response may reflect guessing or pacing strategy.";
+        suspectedMisconception = burnDownCopy("utils__learning-diagnostics__misconception-engine-v1", "very_fast_incorrect_response_may_reflect_guessing_or_pacing_strategy");
         confidence = "low";
         reasoning.push("Speed alone does not prove a specific misconception.");
         doNotConclude.push("Do not treat fast wrong answers as proof of knowledge gaps without further evidence.");
@@ -98,7 +99,7 @@ export function inferMisconceptionFromWrongAnswer(params) {
     if (errorType === "insufficient_evidence") {
       if (subjectId === "math") {
         errorType = "calculation_error";
-        suspectedMisconception = "Numeric/text answer mismatch-may be calculation slip or conceptual confusion.";
+        suspectedMisconception = burnDownCopy("utils__learning-diagnostics__misconception-engine-v1", "numeric_text_answer_mismatch_may_be_calculation_slip_or_conceptual_confu");
         confidence = "low";
       } else if (subjectId === "english") {
         errorType = "grammar_pattern_error";

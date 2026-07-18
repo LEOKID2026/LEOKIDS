@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 /**
  * Subject-specific adjustments to pending probe hints (deterministic; no UI).
  * Keeps probe-map-he shared while routing geometry vs science vs math operation shapes.
@@ -48,19 +49,19 @@ export function finalizePendingProbeHint(pb, normalized, subjectId) {
       },
       geometry_calculation_slip: {
         type: "geometry_formula_choice",
-        reasonHe: "Choose the correct formula or first step before numerical calculation.",
+        reasonHe: globalBurnDownCopy("utils__probe-pending-finalize", "choose_the_correct_formula_or_first_step_before_numerical_calculation"),
       },
       calculation_slip: {
         type: "geometry_formula_choice",
-        reasonHe: "Choose the correct formula or first step before numerical calculation.",
+        reasonHe: globalBurnDownCopy("utils__probe-pending-finalize", "choose_the_correct_formula_or_first_step_before_numerical_calculation"),
       },
       strategy_error: {
         type: "geometry_identify_shape_property",
-        reasonHe: "Identify one clear shape property or state before calculating.",
+        reasonHe: globalBurnDownCopy("utils__probe-pending-finalize", "identify_one_clear_shape_property_or_state_before_calculating"),
       },
       prerequisite_gap: {
         type: "geometry_concept_minimal_contrast",
-        reasonHe: "Reinforce a foundational concept before continuing.",
+        reasonHe: globalBurnDownCopy("utils__probe-pending-finalize", "reinforce_a_foundational_concept_before_continuing"),
       },
       instruction_misread: {
         type: "geometry_identify_shape_property",

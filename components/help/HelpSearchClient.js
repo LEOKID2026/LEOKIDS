@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import { useSharedShellUi } from "../../hooks/useSharedShellUi.js";
 
 function normalize(s) {
@@ -9,6 +10,7 @@ function normalize(s) {
 }
 
 export default function HelpSearchClient({ articles, sectionBase }) {
+  const t = useT();
   const { SP } = useSharedShellUi();
   const [query, setQuery] = useState("");
   const id = "help-search-input";
@@ -26,14 +28,14 @@ export default function HelpSearchClient({ articles, sectionBase }) {
     <div className="space-y-4">
       <div>
         <label htmlFor={id} className="sr-only">
-          Search guides
+          {t("ui.help.searchLabel")}
         </label>
         <input
           id={id}
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search by topic or keyword..."
+          placeholder={t("ui.help.searchPlaceholder")}
           className={SP.searchInput}
           aria-controls="help-search-results"
         />
@@ -49,7 +51,7 @@ export default function HelpSearchClient({ articles, sectionBase }) {
         ))}
       </ul>
       {filtered.length === 0 ? (
-        <p className={SP.searchEmpty}>No results found for this search.</p>
+        <p className={SP.searchEmpty}>{t("ui.help.noResults")}</p>
       ) : null}
     </div>
   );

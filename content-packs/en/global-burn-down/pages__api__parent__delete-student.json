@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "child_id_is_missing": "Child ID is missing",
+    "server_error_please_try_again": "Server error — please try again"
+  }
+}

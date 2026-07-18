@@ -2,6 +2,7 @@
  * Science-only enrichment review pack (aggregates suggestions + QA artifacts).
  * Does not modify question banks.
  */
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -294,7 +295,7 @@ export function buildScienceReviewPack(enrichmentPayload, unknownTokens, meta = 
       reviewPriority: s.reviewPriority,
       confidenceReasons: s.confidenceReasons,
     })),
-    needsHumanReviewNote: "All suggestions keep needsHumanReview=true until bank edits are approved.",
+    needsHumanReviewNote: globalBurnDownCopy("utils__question-metadata-qa__science-enrichment-review-pack", "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved"),
     taxonomyUnknownExpectedErrorTokens: unknownTokens,
     taxonomyUnknownExpectedErrorIssueRowCount: meta.taxonomyUnknownIssueRowCount ?? null,
     taxonomyUnknownExpectedErrorIssueGlobalCount: meta.taxonomyUnknownIssueGlobalCount ?? null,

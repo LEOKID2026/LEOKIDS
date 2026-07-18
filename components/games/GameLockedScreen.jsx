@@ -1,18 +1,26 @@
 import Link from "next/link";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Full-page lock when direct URL is blocked (parent lock or admin disabled).
  */
 export default function GameLockedScreen({
-  title = "Locked by parents",
+  title,
   adminDisabled = false,
   backHref = "/games",
-  backLabel = "Back to games",
+  backLabel,
 }) {
-  const heading = adminDisabled ? "This game is unavailable right now" : title;
+  const { direction, locale, t } = useI18n();
+  const resolvedTitle = title ?? t("ui.student.parentLocked");
+  const resolvedBackLabel = backLabel ?? t("ui.games.locked.backToGames");
+  const heading = adminDisabled ? t("ui.games.locked.unavailable") : resolvedTitle;
 
   return (
-    <div className="flex min-h-[50vh] flex-col items-center justify-center gap-4 px-4 text-center" dir="ltr" lang="en">
+    <div
+      className="flex min-h-[50vh] flex-col items-center justify-center gap-4 px-4 text-center"
+      dir={direction}
+      lang={locale}
+    >
       <div className="text-5xl" aria-hidden>
         {adminDisabled ? "🚫" : "🔒"}
       </div>
@@ -21,7 +29,7 @@ export default function GameLockedScreen({
         href={backHref}
         className="mt-2 rounded-lg bg-yellow-400 px-6 py-2.5 text-sm font-bold text-black"
       >
-        {backLabel}
+        {resolvedBackLabel}
       </Link>
     </div>
   );

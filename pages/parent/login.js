@@ -109,14 +109,14 @@ export default function ParentLoginPage() {
     if (!router.isReady || oauthErrorShownRef.current) return;
     if (router.query.oauth_error !== "1") return;
     oauthErrorShownRef.current = true;
-    const custom =
-      typeof router.query.oauth_message === "string" ? router.query.oauth_message.trim() : "";
-    setMessage(
-      custom || t("auth.googleSignInFailed")
-    );
+    const messageKey =
+      typeof router.query.oauth_message_key === "string"
+        ? router.query.oauth_message_key.trim()
+        : "";
+    setMessage(messageKey ? t(messageKey) : t("auth.googleSignInFailed"));
     setMessageKind("account");
     router.replace("/parent/login");
-  }, [router]);
+  }, [router, t]);
 
   const runAccountAction = async (action) => {
     if (busy || googleBusy) return;
@@ -135,11 +135,11 @@ export default function ParentLoginPage() {
         if (result.status === 409 && result.body?.error?.code === "guardian_multiple_students") {
           setMultiStudents(parseGuardianMultipleStudents(result.body));
           setMessageKind("teacher_code");
-          setMessage(mapParentTeacherCodeLoginError(result.body));
+          setMessage(t(mapParentTeacherCodeLoginError(result.body)));
           return;
         }
         setMessageKind("teacher_code");
-        setMessage(mapParentTeacherCodeLoginError(result.body));
+        setMessage(t(mapParentTeacherCodeLoginError(result.body)));
         return;
       }
 
@@ -166,11 +166,11 @@ export default function ParentLoginPage() {
           password: secret,
         });
         if (error) {
-          setMessage(mapParentAuthError(error, "signup"));
+          setMessage(t(mapParentAuthError(error, "signup")));
         } else if (data?.session?.access_token) {
           const ready = await postParentSessionReady(data.session.access_token, "signup");
           if (!ready.ok) {
-            setMessage(ready.messageHe || t("auth.signupSetupFailed"));
+            setMessage(ready.messageKey ? t(ready.messageKey) : t("auth.signupSetupFailed"));
             return;
           }
           router.push("/parent/dashboard");
@@ -183,11 +183,11 @@ export default function ParentLoginPage() {
           password: secret,
         });
         if (error) {
-          setMessage(mapParentAuthError(error, "login"));
+          setMessage(t(mapParentAuthError(error, "login")));
         } else if (data?.session?.access_token) {
           const ready = await postParentSessionReady(data.session.access_token, "login");
           if (!ready.ok) {
-            setMessage(ready.messageHe || t("auth.loginSetupFailed"));
+            setMessage(ready.messageKey ? t(ready.messageKey) : t("auth.loginSetupFailed"));
             return;
           }
           void trackProductEvent({
@@ -219,7 +219,7 @@ export default function ParentLoginPage() {
         return;
       }
       setMessageKind("teacher_code");
-      setMessage(mapParentTeacherCodeLoginError(result.body));
+      setMessage(t(mapParentTeacherCodeLoginError(result.body)));
     } finally {
       setBusy(false);
     }
@@ -237,7 +237,7 @@ export default function ParentLoginPage() {
         nonce
       );
       if (!signedIn.ok || !signedIn.session?.access_token) {
-        setMessage(mapParentAuthError(signedIn.error, "login"));
+        setMessage(t(mapParentAuthError(signedIn.error, "login")));
         return;
       }
 
@@ -245,14 +245,14 @@ export default function ParentLoginPage() {
       if (!finished.ok) {
         await supabaseRef.current.auth.signOut();
         setMessage(
-          finished.messageHe || t("auth.googleSignInFailed")
+          finished.messageKey ? t(finished.messageKey) : t("auth.googleSignInFailed")
         );
         return;
       }
 
       router.push(finished.redirectTo || "/parent/dashboard");
     } catch (error) {
-      setMessage(mapParentAuthError(error, "login"));
+      setMessage(t(mapParentAuthError(error, "login")));
     } finally {
       setGoogleBusy(false);
     }
@@ -311,9 +311,9 @@ export default function ParentLoginPage() {
           <ParentGoogleSignInButton
             disabled={formDisabled}
             onCredential={(payload) => void onGoogleCredential(payload)}
-            onError={(messageHe) => {
+            onError={(messageKey) => {
               setMessageKind("account");
-              setMessage(messageHe);
+              setMessage(t(messageKey));
             }}
           />
         )}
@@ -371,7 +371,7 @@ export default function ParentLoginPage() {
               className={T.link}
               data-testid="parent-forgot-password-link"
             >
-              {AUTH_FORGOT_PASSWORD_LINK}
+              {t(AUTH_FORGOT_PASSWORD_LINK)}
             </Link>
           </p>
         </form>

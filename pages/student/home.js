@@ -44,12 +44,13 @@ import StudentSurpriseBoxOpenModal from "../../components/student/rewards/Studen
 import StudentWorldTitleScreen from "../../components/student-world-hub/StudentWorldTitleScreen.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
 import { patchSurpriseBoxStatusFromOpenResult } from "../../lib/rewards/surprise-box-status-patch.client.js";
-import { GUEST_LOCK_MESSAGE_HE, GUEST_LOCKED_HOME_PANELS, LIOSH_GUEST_RESUME_TOKEN_KEY } from "../../lib/guest/constants.js";
+import { GUEST_LOCK_MESSAGE_KEY, GUEST_LOCKED_HOME_PANELS, LIOSH_GUEST_RESUME_TOKEN_KEY } from "../../lib/guest/constants.js";
 import { isGuestStudent } from "../../lib/guest/guest-display.js";
 import { shouldClearGuestResumeTokenOnLogout } from "../../lib/guest/guest-resume-token.client.js";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import MockModeBanner from "../../components/ui/MockModeBanner.jsx";
 import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
+import { resolveStudentApiErrorMessage } from "../../lib/student-client/student-api-legacy-errors.js";
 
 import { syncMonthlyProgressCacheFromServer } from "../../utils/progress-storage.js";
 
@@ -58,15 +59,6 @@ const HOME_ANALYTICS_PATH = "/api/student/home-profile/analytics";
 const HOME_ACHIEVEMENT_GRANTS_PATH = "/api/student/home-profile/achievement-grants";
 
 const studentHomeSeo = getPublicPageSeo("student-home");
-
-function mapApiErrorToEnglish(raw) {
-  const s = String(raw || "").trim();
-  if (!s) return "Could not load learning data from the server.";
-  if (s === "Student session expired") return "Your session expired — please sign in again.";
-  if (s === "Server error") return "Server error while loading learning data.";
-  if (/[A-Za-z]{4,}/.test(s)) return s;
-  return "Could not load learning data from the server.";
-}
 
 function LoadingScreen({ message }) {
   const { theme } = useStudentTheme();
@@ -470,12 +462,12 @@ export default function StudentHomePage() {
             const errRaw = json?.error != null ? String(json.error) : "";
             const detail = json?.detail != null ? String(json.detail) : "";
             const combined = [
-              mapApiErrorToEnglish(errRaw),
+              resolveStudentApiErrorMessage(errRaw, t),
               detail && isStudentIdentityDiagnosticsEnabled() ? `(${detail})` : "",
             ]
               .filter(Boolean)
               .join(" ");
-            setProfileError(combined || mapApiErrorToEnglish(""));
+            setProfileError(combined || resolveStudentApiErrorMessage("", t));
             setProfilePhase("error");
           }
           return;
@@ -498,7 +490,7 @@ export default function StudentHomePage() {
         }
       }
     },
-    [loadHomeAnalytics, loadHomeAchievementGrants]
+    [loadHomeAnalytics, loadHomeAchievementGrants, t]
   );
 
   useEffect(() => {
@@ -804,7 +796,7 @@ export default function StudentHomePage() {
   );
 
   const showLockToast = useCallback((message) => {
-    const text = message || GUEST_LOCK_MESSAGE_HE;
+    const text = message || t(GUEST_LOCK_MESSAGE_KEY);
     setLockToast(text);
     if (typeof window !== "undefined") {
       if (lockToastTimerRef.current) window.clearTimeout(lockToastTimerRef.current);
@@ -959,7 +951,7 @@ export default function StudentHomePage() {
           avatarImage={heroAvatarImage}
           avatarBackgroundKey={heroAvatarBackground}
           guestLockedPanelSet={guestLockedPanelSet}
-          lockMessage={guestPolicy?.lockMessageHe || GUEST_LOCK_MESSAGE_HE}
+          lockMessage={t(guestPolicy?.lockMessageKey || GUEST_LOCK_MESSAGE_KEY)}
           logoutBusy={logoutBusy}
           onOpenPanel={openHomePanel}
           onOpenAvatar={() => setShowAvatarModal(true)}

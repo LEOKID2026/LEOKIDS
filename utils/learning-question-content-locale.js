@@ -1,7 +1,7 @@
 /**
- * Content locale for learning question generators (global default: English).
- * UI chrome uses i18n; question stems/options/feedback use this layer.
+ * @deprecated Use lib/content/locale.js — kept for backward compatibility.
  */
+import { resolveContentLocale as resolveCore } from "../lib/content/locale.js";
 
 export const DEFAULT_CONTENT_LOCALE = "en";
 
@@ -12,15 +12,15 @@ export function containsHebrew(text) {
 }
 
 export function resolveContentLocale(opts) {
-  const raw =
-    opts?.contentLocale ??
-    opts?.locale ??
-    (typeof globalThis !== "undefined"
-      ? globalThis.__LEO_LEARNING_CONTENT_LOCALE
-      : undefined) ??
-    DEFAULT_CONTENT_LOCALE;
-  const id = String(raw || DEFAULT_CONTENT_LOCALE).trim().toLowerCase();
-  return id === "he" || id === "he-il" ? "he" : "en";
+  const resolved = resolveCore({
+    contentLocale: opts?.contentLocale,
+    interfaceLocale: opts?.locale,
+    subject: opts?.subject,
+    market: opts?.market,
+    curriculum: opts?.curriculum,
+  });
+  if (resolved === "he" || resolved === "he-IL") return "he";
+  return resolved;
 }
 
 const QUESTION_TEXT_KEYS = [
@@ -38,11 +38,6 @@ function cloneStringArray(arr) {
   return Array.isArray(arr) ? arr.map((x) => String(x)) : arr;
 }
 
-/**
- * Apply a field-localizer to student-facing question payload fields.
- * @param {Record<string, unknown>} question
- * @param {(field: string, value: string, q: Record<string, unknown>) => string} localizeField
- */
 export function mapQuestionTextFields(question, localizeField) {
   if (!question || typeof question !== "object") return question;
   const out = { ...question };

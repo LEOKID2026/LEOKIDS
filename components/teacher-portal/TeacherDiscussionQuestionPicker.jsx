@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import { teacherAuthFetch, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
@@ -430,7 +431,7 @@ export default function TeacherDiscussionQuestionPicker({
             setSelectedIndices(new Set());
           }}
           variant="select"
-          label="Level"
+          label={globalBurnDownCopy("components__teacher-portal__TeacherDiscussionQuestionPicker", "level")}
           inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
         />
         <label className="block text-sm">
@@ -455,7 +456,7 @@ export default function TeacherDiscussionQuestionPicker({
                 checked={recipientScope === "whole_class"}
                 onChange={() => setRecipientScope("whole_class")}
               />
-              <span>Whole class</span>
+              <span>{globalBurnDownCopy("components__teacher-portal__TeacherDiscussionQuestionPicker", "whole_class")}</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
               <input
@@ -464,7 +465,7 @@ export default function TeacherDiscussionQuestionPicker({
                 checked={recipientScope === "selected_students"}
                 onChange={() => setRecipientScope("selected_students")}
               />
-              <span>Selected students</span>
+              <span>{globalBurnDownCopy("components__teacher-portal__TeacherDiscussionQuestionPicker", "selected_students")}</span>
             </label>
           </div>
 
@@ -521,7 +522,7 @@ export default function TeacherDiscussionQuestionPicker({
               checked={answerRequired}
               onChange={() => setAnswerRequired(true)}
             />
-            <span>Discussion with response (students submit an answer)</span>
+            <span>{globalBurnDownCopy("components__teacher-portal__TeacherDiscussionQuestionPicker", "discussion_with_response_students_submit_an_answer")}</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -530,7 +531,7 @@ export default function TeacherDiscussionQuestionPicker({
               checked={!answerRequired}
               onChange={() => setAnswerRequired(false)}
             />
-            <span>Explanation only — no response required</span>
+            <span>{globalBurnDownCopy("components__teacher-portal__TeacherDiscussionQuestionPicker", "explanation_only_no_response_required")}</span>
           </label>
         </div>
       </div>

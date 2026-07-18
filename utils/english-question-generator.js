@@ -1,6 +1,7 @@
 ﻿/**
  * English question generation (extracted from english-master.js for reuse in classroom activities + tests).
  */
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { sanitizeQuestionForStudentDisplay } from "./student-question-stem-sanitizer.js";
 import { localizeLearningQuestion } from "./learning-content-en/index.js";
 import { mergeDiagnosticContractIntoParams } from "./diagnostic-question-contract.js";
@@ -507,10 +508,10 @@ export function generateQuestion(
         }
         question =
           "No grammar question is available for this grade. Try another level or return to the menu.";
-        correctAnswer = "Got it";
+        correctAnswer = globalBurnDownCopy("utils__english-question-generator", "got_it");
         params = {
           patternFamily: "english_empty_pool",
-          grammarOptionSet: ["Got it", "Try again", "Back to menu", "Choose another topic"],
+          grammarOptionSet: [globalBurnDownCopy("utils__english-question-generator", "got_it"), "Try again", "Back to menu", "Choose another topic"],
         };
         break;
       }
@@ -584,7 +585,7 @@ export function generateQuestion(
         }
         question =
           "No translation sentences are available for this grade. Try another topic or level.";
-        correctAnswer = "Got it";
+        correctAnswer = globalBurnDownCopy("utils__english-question-generator", "got_it");
         params = {
           patternFamily: "english_empty_pool",
           direction: "en_to_he",
@@ -678,10 +679,10 @@ export function generateQuestion(
         }
         question =
           "No sentence templates are available for this grade. Try another topic or level.";
-        correctAnswer = "Got it";
+        correctAnswer = globalBurnDownCopy("utils__english-question-generator", "got_it");
         params = {
           patternFamily: "english_empty_pool",
-          sentenceOptionSet: ["Got it", "Try again", "Back to menu", "Another topic"],
+          sentenceOptionSet: [globalBurnDownCopy("utils__english-question-generator", "got_it"), "Try again", "Back to menu", "Another topic"],
         };
         break;
       }
@@ -774,10 +775,10 @@ export function generateQuestion(
         }
         question =
           "No phonics exercise is available for this grade. Try another page or return to the menu.";
-        correctAnswer = "Got it";
+        correctAnswer = globalBurnDownCopy("utils__english-question-generator", "got_it");
         params = {
           patternFamily: "english_empty_pool",
-          phonicsOptionSet: ["Got it", "Try again", "Back to menu", "Choose another topic"],
+          phonicsOptionSet: [globalBurnDownCopy("utils__english-question-generator", "got_it"), "Try again", "Back to menu", "Choose another topic"],
           promotionEligible: false,
           diagnosticContribution: "manual_only",
           topic: "phonics",

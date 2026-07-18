@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef } from "react";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const SIZE_CLASS = {
   md: "md:max-w-md",
@@ -27,6 +28,7 @@ export default function ParentDashboardModal({
   const onCloseRef = useRef(onClose);
   const sizeClass = SIZE_CLASS[size] || SIZE_CLASS["2xl"];
   const T = getParentPortalTheme(bright);
+  const t = useT();
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -81,7 +83,7 @@ export default function ParentDashboardModal({
             onClick={onClose}
             className={T.modalClose}
             style={{ direction: "ltr" }}
-            aria-label="Close"
+            aria-label={t("ui.common.close")}
           >
             ✖
           </button>

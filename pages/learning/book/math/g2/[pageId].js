@@ -3,11 +3,6 @@ import MathG2BookShell from "../../../../../components/learning-book/MathG2BookS
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import {
-  loadMathG2Page,
-  loadMathG2TocEntries,
-  getMathG2StaticPaths,
-} from "../../../../../lib/learning-book/load-math-g2-pages";
-import {
   getMathG2PageNeighbors,
   isValidMathG2PageId,
 } from "../../../../../lib/learning-book/math-g2-registry";
@@ -42,14 +37,8 @@ export default function MathG2BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getMathG2StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadMathG2Page, loadMathG2TocEntries } = await import("../../../../../lib/learning-book/load-math-g2-pages");
   const pageId = params.pageId;
   if (!isValidMathG2PageId(pageId)) {
     return { notFound: true };

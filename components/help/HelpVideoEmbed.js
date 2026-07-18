@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import { useSharedShellUi } from "../../hooks/useSharedShellUi.js";
 
 const MOBILE_MQ = "(max-width: 640px)";
-const PREVIEW_LABEL = "Watch tutorial video";
-const CLOSE_LABEL = "Close video";
 
 function pickViewport(sourcesByViewport) {
   if (!sourcesByViewport) return null;
@@ -71,7 +70,11 @@ export default function HelpVideoEmbed({
   transcriptHe,
   durationSec,
 }) {
+  const t = useT();
   const { SP } = useSharedShellUi();
+  const previewLabel = t("ui.help.videoPreview");
+  const closeLabel = t("ui.help.videoClose");
+  const closeButtonLabel = t("ui.help.videoCloseButton");
   const [activeVp, setActiveVp] = useState("desktop");
   const [open, setOpen] = useState(false);
   const modalVideoRef = useRef(null);
@@ -153,7 +156,9 @@ export default function HelpVideoEmbed({
   if (!resolved?.webm && !resolved?.mp4) return null;
 
   const modalLabel =
-    activeVp === "mobile" ? "Tutorial video (mobile)" : "Tutorial video (desktop)";
+    activeVp === "mobile"
+      ? t("ui.help.videoModalMobile")
+      : t("ui.help.videoModalDesktop");
 
   return (
     <div className="my-4 space-y-2 max-w-full">
@@ -164,7 +169,7 @@ export default function HelpVideoEmbed({
         className={SP.videoPreview}
         aria-haspopup="dialog"
         aria-expanded={open}
-        aria-label={PREVIEW_LABEL}
+        aria-label={previewLabel}
       >
         <span className="relative block w-full h-[9.5rem] sm:h-[11rem] max-h-[44vh]">
           {posterUrl ? (
@@ -182,20 +187,22 @@ export default function HelpVideoEmbed({
           <span className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors" />
           <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-3">
             <PlayIcon />
-            <span className={SP.videoPreviewLabel}>{PREVIEW_LABEL}</span>
+            <span className={SP.videoPreviewLabel}>{previewLabel}</span>
           </span>
         </span>
       </button>
 
       {duration ? (
         <p className={SP.videoDuration}>
-          Estimated length: {Math.max(1, Math.round(duration / 60))} min
+          {t("ui.help.videoDuration", {
+            minutes: Math.max(1, Math.round(duration / 60)),
+          })}
         </p>
       ) : null}
 
       {transcriptHe ? (
         <details className={SP.videoTranscript}>
-          <summary className={SP.videoTranscriptSummary}>Transcript</summary>
+          <summary className={SP.videoTranscriptSummary}>{t("ui.help.transcript")}</summary>
           <p className={SP.videoTranscriptText}>{transcriptHe}</p>
         </details>
       ) : null}
@@ -215,15 +222,15 @@ export default function HelpVideoEmbed({
             onClick={(e) => e.stopPropagation()}
           >
             <div className={SP.videoModalHeader}>
-              <span className={SP.videoModalTitle}>{PREVIEW_LABEL}</span>
+              <span className={SP.videoModalTitle}>{previewLabel}</span>
               <button
                 ref={closeBtnRef}
                 type="button"
                 onClick={closeModal}
                 className={SP.videoModalClose}
-                aria-label={CLOSE_LABEL}
+                aria-label={closeLabel}
               >
-                Close
+                {closeButtonLabel}
               </button>
             </div>
             <div className={SP.videoModalBody}>
@@ -248,7 +255,7 @@ export default function HelpVideoEmbed({
                     kind="captions"
                     srcLang="en"
                     src={captionsUrl}
-                    label="English"
+                    label={t("ui.help.captionsEnglish")}
                   />
                 ) : null}
               </video>

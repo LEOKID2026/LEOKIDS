@@ -4,7 +4,6 @@ import LearningBookIndexContent from "../../../../../components/learning-book/Le
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../lib/learning-book/learning-book-nav";
 import { GEOMETRY_G6_BOOK_META } from "../../../../../lib/learning-book/geometry-g6-registry";
-import { loadGeometryG6TocEntries } from "../../../../../lib/learning-book/load-geometry-g6-pages";
 import { useMemo } from "react";
 
 const SUBJECT = "geometry";
@@ -35,7 +34,8 @@ export default function GeometryG6BookIndex({ batches }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  const { loadGeometryG6TocEntries } = await import("../../../../../lib/learning-book/load-geometry-g6-pages");
   const batches = loadGeometryG6TocEntries();
   return { props: { batches } };
 }

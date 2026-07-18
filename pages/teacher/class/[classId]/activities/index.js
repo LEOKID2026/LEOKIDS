@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -62,7 +63,7 @@ export default function TeacherClassActivitiesPage({ classId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title="Class activities"
+        title={globalBurnDownCopy("pages__teacher__class__[classId]__activities__index", "class_activities")}
         backHref="/teacher/dashboard"
         backLabel="← Back to dashboard"
       >

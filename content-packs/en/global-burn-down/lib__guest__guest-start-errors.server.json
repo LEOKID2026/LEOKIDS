@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "The service is not configured correctly.",
+    "guest_mode_is_currently_disabled": "Guest mode is currently disabled.",
+    "the_guest_system_is_not_ready": "The guest system is not ready.",
+    "could_not_start_guest_mode": "Could not start guest mode."
+  }
+}

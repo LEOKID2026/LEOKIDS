@@ -3,47 +3,11 @@ import PageSeo from "../components/seo/PageSeo";
 import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useSharedShellUi } from "../hooks/useSharedShellUi.js";
-import { useI18n } from "../lib/i18n/I18nProvider.jsx";
+import { useI18n, useT } from "../lib/i18n/I18nProvider.jsx";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-const whyCards = [
-  {
-    title: "Learning at your own pace",
-    text: "Every child moves according to their ability, with practice matched to their level and the topics they need to reinforce.",
-  },
-  {
-    title: "A clear picture for parents",
-    text: "Reports help you understand where your child succeeds, where they struggle, and what to practice next.",
-  },
-  {
-    title: "A friendly experience for kids",
-    text: "The site combines practice, games, coins, cards, and a welcoming design to encourage persistence and positive learning.",
-  },
-];
-
-const funGamesCards = [
-  {
-    title: "Engaging games",
-    text: "Games that add interest and fun, encouraging kids to keep practicing.",
-  },
-  {
-    title: "Social experiences",
-    text: "Play with friends and social experiences where available — in a positive, friendly way.",
-  },
-  {
-    title: "Motivation to learn",
-    text: "A mix of practice, coins, cards, games, and challenges that encourage kids to continue.",
-  },
-];
-
-const siteFeatures = [
-  { phase: "Practice by subject", text: "Math, geometry, English, and science." },
-  { phase: "Grades and difficulty levels", text: "Practice matched by age band, topic, and level for gradual, clear progress." },
-  { phase: "Reports for parents", text: "A clear summary of performance, mistakes, strengths, and areas to improve." },
-  { phase: "Games and social play", text: "Solo games, educational games, play with friends, coins, and cards." },
-];
+import { useMemo } from "react";
 
 const aboutSeo = getPublicPageSeo("about");
 
@@ -51,6 +15,34 @@ export default function About() {
   const { theme } = useStudentTheme();
   const { SP } = useSharedShellUi();
   const { direction, locale } = useI18n();
+  const t = useT();
+
+  const funGamesCards = useMemo(
+    () =>
+      [0, 1, 2].map((i) => ({
+        title: t(`ui.public.about.funGames.${i}.title`),
+        text: t(`ui.public.about.funGames.${i}.text`),
+      })),
+    [t]
+  );
+
+  const whyCards = useMemo(
+    () =>
+      [0, 1, 2].map((i) => ({
+        title: t(`ui.public.about.whyCards.${i}.title`),
+        text: t(`ui.public.about.whyCards.${i}.text`),
+      })),
+    [t]
+  );
+
+  const siteFeatures = useMemo(
+    () =>
+      [0, 1, 2, 3].map((i) => ({
+        phase: t(`ui.public.about.siteFeatures.${i}.phase`),
+        text: t(`ui.public.about.siteFeatures.${i}.text`),
+      })),
+    [t]
+  );
 
   return (
     <Layout page="about" studentTheme={theme} studentShell="home">
@@ -87,7 +79,7 @@ export default function About() {
             <div className="flex-shrink-0">
               <Image
                 src="/images/lio.png"
-                alt="Leo — smart learning environment for kids"
+                alt={t("ui.public.about.imageAlt")}
                 width={300}
                 height={300}
                 className={SP.imageBorder}
@@ -101,41 +93,27 @@ export default function About() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                About Leo — learn, practice, and progress
+                {t("ui.public.about.title")}
               </motion.h1>
 
-              <p className={SP.body}>
-                Welcome to Leo — a smart learning environment built to help children practice, understand, and progress at a pace that fits them.
-              </p>
+              <p className={SP.body}>{t("ui.public.about.intro0")}</p>
 
-              <p className={SP.body}>
-                The site is designed for elementary learners with practice by subject, grade, topic, and difficulty level. Every child can start where it makes sense, move forward gradually, and reinforce the topics where they need more confidence.
-              </p>
+              <p className={SP.body}>{t("ui.public.about.intro1")}</p>
 
-              <p className={SP.bodyLast}>
-                Our goal is to make learning clearer, friendlier, and more accurate: less guessing, less frustration, and a better understanding of what your child already knows and what still needs reinforcement.
-              </p>
+              <p className={SP.bodyLast}>{t("ui.public.about.intro2")}</p>
             </div>
           </div>
 
           <section className="mb-12 text-center">
-            <h2 className={SP.h2}>Our mission</h2>
-            <p className={SP.bodyCenter}>
-              We help children build confidence in learning, strengthen foundational and advanced skills, and give parents a clearer picture of their child's progress.
-            </p>
-            <p className={SP.bodyCenterMuted}>
-              The system combines practice, playfulness, parent reports, and progress summaries to create a learning process that feels personal, organized, and encouraging.
-            </p>
+            <h2 className={SP.h2}>{t("ui.public.about.missionTitle")}</h2>
+            <p className={SP.bodyCenter}>{t("ui.public.about.missionBody")}</p>
+            <p className={SP.bodyCenterMuted}>{t("ui.public.about.missionMuted")}</p>
           </section>
 
           <section className="mb-12">
-            <h2 className={SP.h2Teal}>Learn and enjoy</h2>
-            <p className={SP.bodyCenter}>
-              Beyond academic practice, the site includes educational games, engaging play, coins, and cards designed to add fun, motivation, and enjoyment to learning. The goal is for kids not to feel they are only "doing homework," but entering a colorful kids world where they can learn, play, and progress with a good feeling.
-            </p>
-            <p className={`${SP.bodyCenterMuted} mb-6`}>
-              There are solo games, educational games, and opportunities to play with friends — depending on what is open and available on the site.
-            </p>
+            <h2 className={SP.h2Teal}>{t("ui.public.about.learnEnjoyTitle")}</h2>
+            <p className={SP.bodyCenter}>{t("ui.public.about.learnEnjoyBody")}</p>
+            <p className={`${SP.bodyCenterMuted} mb-6`}>{t("ui.public.about.learnEnjoyMuted")}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {funGamesCards.map((item, i) => (
                 <motion.div key={i} whileHover={{ scale: 1.03 }} className={SP.card}>
@@ -147,7 +125,7 @@ export default function About() {
           </section>
 
           <section className="mb-12">
-            <h2 className={SP.h2AmberTeal}>Why does it matter?</h2>
+            <h2 className={SP.h2AmberTeal}>{t("ui.public.about.whyTitle")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               {whyCards.map((item, i) => (
                 <motion.div key={i} whileHover={{ scale: 1.03 }} className={SP.card}>
@@ -159,7 +137,7 @@ export default function About() {
           </section>
 
           <section>
-            <h2 className={SP.h2TealAmber}>What will you find on the site?</h2>
+            <h2 className={SP.h2TealAmber}>{t("ui.public.about.featuresTitle")}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center mb-8">
               {siteFeatures.map((phase, i) => (
                 <motion.div key={i} whileHover={{ scale: 1.03 }} className={SP.card}>
@@ -175,12 +153,12 @@ export default function About() {
                   type="button"
                   className="bg-gradient-to-r from-amber-400 via-amber-500 to-rose-500 px-8 py-4 rounded-xl text-base sm:text-lg font-bold text-black hover:scale-105 transition w-full sm:w-auto min-w-[200px]"
                 >
-                  Kids world
+                  {t("ui.public.about.kidsWorldCta")}
                 </button>
               </Link>
               <Link href="/parent/login">
                 <button type="button" className={SP.secondaryCta}>
-                  Parent login
+                  {t("ui.public.about.parentLoginCta")}
                 </button>
               </Link>
             </div>

@@ -3,6 +3,7 @@
  * User-facing copy stays Hebrew in banks; this module is for validation and enrichment planning only.
  */
 
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import {
   ENGLISH_SKILL_IDS,
   ENGLISH_SUBSKILL_ALLOWLIST_BY_SKILL,
@@ -347,10 +348,10 @@ export const TAXONOMY_ISSUE_CODES = {
  * Readiness rubric metadata (documentation / reporting helpers — advisory).
  */
 export const READINESS_RULES = {
-  strong: "Skill ≥85% coverage, subskill ≥50%, avg completeness ≥0.65, high-risk share <8%.",
-  medium: "Skill coverage usable but substantial gaps in cognitive/errors/prereqs.",
-  weak: "Large missing skill or inconsistent tagging.",
-  missing: "Skill id largely absent - diagnosis routing unreliable.",
+  strong: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8"),
+  medium: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs"),
+  weak: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "large_missing_skill_or_inconsistent_tagging"),
+  missing: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_id_largely_absent_diagnosis_routing_unreliable"),
 };
 
 /**

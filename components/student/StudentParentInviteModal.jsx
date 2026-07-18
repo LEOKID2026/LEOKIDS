@@ -66,13 +66,13 @@ export default function StudentParentInviteModal({ open, onClose }) {
   };
 
   const handleCopyMessage = async () => {
-    const ok = await copyTextToClipboard(buildParentInviteMessage());
+    const ok = await copyTextToClipboard(buildParentInviteMessage(t));
     if (ok) {
       setCopyPopupIsError(false);
-      setCopyPopupMessage(COPY_INVITE_SUCCESS_MESSAGE);
+      setCopyPopupMessage(t(COPY_INVITE_SUCCESS_MESSAGE));
     } else {
       setCopyPopupIsError(true);
-      setCopyPopupMessage(COPY_INVITE_ERROR_MESSAGE);
+      setCopyPopupMessage(t(COPY_INVITE_ERROR_MESSAGE));
     }
     setCopyPopupOpen(true);
   };
@@ -110,7 +110,7 @@ export default function StudentParentInviteModal({ open, onClose }) {
               ✕
             </button>
             <h2 id={titleId} className={`text-lg font-bold text-left flex-1 ${bodyText}`}>
-              Dear parent 👋
+              {t("ui.student.parentInviteTitle")}
             </h2>
           </header>
 
@@ -118,9 +118,9 @@ export default function StudentParentInviteModal({ open, onClose }) {
             className={`${homeModalShell.body} space-y-4 text-center md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-4 md:overflow-visible md:flex-none md:space-y-0 md:text-left`}
           >
             <p className={`text-sm leading-relaxed ${bodyText} md:col-start-1 md:row-start-1 md:text-left`}>
-              To open an account for your child,
+              {t("ui.student.parentInviteScanPromptLine1")}
               <br />
-              scan this code with your phone:
+              {t("ui.student.parentInviteScanPromptLine2")}
             </p>
 
             <div className="flex justify-center md:col-start-2 md:row-start-1 md:row-span-4 md:self-center">
@@ -134,13 +134,13 @@ export default function StudentParentInviteModal({ open, onClose }) {
                   size={200}
                   level="M"
                   includeMargin
-                  aria-label="QR code for parent page"
+                  aria-label={t("ui.student.parentInviteQrAria")}
                 />
               </div>
             </div>
 
             <div className="space-y-1 text-sm md:col-start-1 md:row-start-2 md:text-left">
-              <p className={mutedText}>Or go to:</p>
+              <p className={mutedText}>{t("ui.student.parentInviteOrGoTo")}</p>
               <a
                 href={parentUrl}
                 target="_blank"
@@ -159,7 +159,7 @@ export default function StudentParentInviteModal({ open, onClose }) {
                 onClick={() => void handleCopyLink()}
                 data-testid="student-parent-invite-copy-link"
               >
-                Copy link
+                {t("ui.student.parentInviteCopyLink")}
               </button>
               <button
                 type="button"

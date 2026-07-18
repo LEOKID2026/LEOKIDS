@@ -2,6 +2,7 @@
  * Cross-subject pattern hints (cautious educational language only).
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { getSubjectAccuracyFromSummary, getSubjectQuestionTotalFromSummary } from "./diagnostic-framework-v1.js";
 
 export const CROSS_SUBJECT_ENGINE_V1 = "1.0.0";
@@ -94,6 +95,6 @@ export function detectCrossSubjectPatternsV1(maps, summaryCounts) {
   return {
     version: CROSS_SUBJECT_ENGINE_V1,
     patterns,
-    note: "Patterns require evidence in multiple subjects; thin single-subject data cannot trigger.",
+    note: burnDownCopy("utils__learning-diagnostics__cross-subject-engine-v1", "patterns_require_evidence_in_multiple_subjects_thin_single_subject_data_"),
   };
 }

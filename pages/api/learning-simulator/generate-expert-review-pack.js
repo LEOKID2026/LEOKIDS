@@ -2,6 +2,7 @@
  * Internal-only: build Expert Review Pack snapshot from existing artifacts; returns JSON/Markdown (no writes under reports/).
  * Requires ENGINE_REVIEW_ADMIN_TOKEN and NEXT_PUBLIC_ENABLE_ENGINE_REVIEW_ADMIN=true.
  */
+import { burnDownCopy } from "../../../lib/learning/burn-down-copy.js";
 import { buildExpertReviewPackSnapshot } from "../../../utils/expert-review-pack-artifact-snapshot.js";
 import { timingSafeCompareStrings } from "../../../lib/security/timing-safe-equal.js";
 
@@ -51,8 +52,8 @@ export default async function handler(req, res) {
   if (!sent) {
     return res.status(401).json({
       code: "missing_token",
-      error: "Missing x-engine-review-token header",
-      message: "Missing x-engine-review-token header",
+      error: burnDownCopy("pages__api__learning-simulator__generate-expert-review-pack", "missing_x_engine_review_token_header"),
+      message: burnDownCopy("pages__api__learning-simulator__generate-expert-review-pack", "missing_x_engine_review_token_header"),
     });
   }
 
@@ -103,7 +104,7 @@ export default async function handler(req, res) {
         ok: false,
         code: "validation_artifact_not_ready",
         message: msg.replace(/^Error:\s*/, ""),
-        cliFallback: "Run npm run qa:learning-simulator:professional-engine (PASS), then retry.",
+        cliFallback: burnDownCopy("pages__api__learning-simulator__generate-expert-review-pack", "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry"),
       });
     }
     return res.status(500).json({

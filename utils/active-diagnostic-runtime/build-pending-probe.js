@@ -2,7 +2,7 @@ import { inferNormalizedTags } from "../fast-diagnostic-engine/infer-tags.js";
 import {
   PROBE_BY_ERROR_TAG,
   resolveProbeHintFromMap,
-} from "../fast-diagnostic-engine/probe-map-he.js";
+} from "../fast-diagnostic-engine/probe-map.js";
 import { finalizePendingProbeHint } from "../probe-pending-finalize.js";
 import { str } from "./str-utils.js";
 

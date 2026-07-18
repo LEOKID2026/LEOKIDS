@@ -12,7 +12,7 @@ import {
   AUTH_RESET_PASSWORD_ERROR_NO_SESSION,
   AUTH_RESET_PASSWORD_ERROR_SAME,
   AUTH_RESET_PASSWORD_ERROR_WEAK,
-} from "../../lib/auth/auth-reset.he.js";
+} from "../../lib/auth/auth-reset.js";
 
 function err(message, status = null, name = "AuthApiError") {
   return { message, status, name };

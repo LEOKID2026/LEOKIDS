@@ -3,11 +3,6 @@ import MathG1BookShell from "../../../../../components/learning-book/MathG1BookS
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import {
-  loadMathG1Page,
-  loadMathG1TocEntries,
-  getMathG1StaticPaths,
-} from "../../../../../lib/learning-book/load-math-g1-pages";
-import {
   getMathG1PageNeighbors,
   isValidMathG1PageId,
 } from "../../../../../lib/learning-book/math-g1-registry";
@@ -41,14 +36,8 @@ export default function MathG1BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getMathG1StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadMathG1Page, loadMathG1TocEntries } = await import("../../../../../lib/learning-book/load-math-g1-pages");
   const pageId = params.pageId;
   if (!isValidMathG1PageId(pageId)) {
     return { notFound: true };

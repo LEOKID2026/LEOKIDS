@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 /**
  * Parent Product Contract V1
  * Deterministic parent-facing summary envelope for detailed report payloads.
@@ -257,13 +258,13 @@ export function buildParentProductContractV1(detailedReport) {
   const top = primary
     ? buildContractRow(primary.row, primary.subjectProfile)
     : {
-        mainStatusHe: "There is not yet enough data to set a subject-level picture.",
-        mainPriorityHe: "Start short, consistent practice to build a measurement baseline.",
-        whyHe: "Current data volume is low, so there is no basis for a clear direction.",
-        doNowHe: "Pick one topic and practice 10–15 minutes each session.",
-        avoidNowHe: "Do not change difficulty based on sparse data.",
-        confidenceHe: "How much to trust this: not high yet at this stage.",
-        evidenceSummaryHe: "Existing data is still partial.",
+        mainStatusHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "there_is_not_yet_enough_data_to_set_a_subject_level_picture"),
+        mainPriorityHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "start_short_consistent_practice_to_build_a_measurement_baseline"),
+        whyHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction"),
+        doNowHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "pick_one_topic_and_practice_10_15_minutes_each_session"),
+        avoidNowHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "do_not_change_difficulty_based_on_sparse_data"),
+        confidenceHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "how_much_to_trust_this_not_high_yet_at_this_stage"),
+        evidenceSummaryHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "existing_data_is_still_partial"),
         nextCheckHe: `Collect at least ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} questions before deciding.`,
         evidence: {
           questionCount: 0,
@@ -282,12 +283,12 @@ export function buildParentProductContractV1(detailedReport) {
       ? buildContractRow(first, sp)
       : {
           mainStatusHe: removeForbiddenTerms(firstNonEmpty(sp?.summaryHe, "There is not enough data on this topic right now.")),
-          mainPriorityHe: "Continue basic data collection.",
-          whyHe: "There is not yet enough data to define a clear direction.",
-          doNowHe: "Short, focused practice on one topic.",
-          avoidNowHe: "Do not draw strong conclusions from a small number of questions.",
-          confidenceHe: "How much to trust this: not high yet.",
-          evidenceSummaryHe: "Data is missing or partial.",
+          mainPriorityHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "continue_basic_data_collection"),
+          whyHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "there_is_not_yet_enough_data_to_define_a_clear_direction"),
+          doNowHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "short_focused_practice_on_one_topic"),
+          avoidNowHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "do_not_draw_strong_conclusions_from_a_small_number_of_questions"),
+          confidenceHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "how_much_to_trust_this_not_high_yet"),
+          evidenceSummaryHe: globalBurnDownCopy("utils__contracts__parent-product-contract-v1", "data_is_missing_or_partial"),
           nextCheckHe: `Accumulate at least ${PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS} questions before changing.`,
           evidence: {
             questionCount: Number(sp?.subjectQuestionCount) || 0,

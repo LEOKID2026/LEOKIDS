@@ -1,5 +1,6 @@
 // Parent report generation system
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { STORAGE_KEY } from './math-constants.js';
 import { getTimeByPeriod, getTimeByCustomPeriod, getAllTimeTracking } from './math-time-tracking.js';
 import { getGeometryTimeByPeriod, getGeometryTimeByCustomPeriod } from './math-time-tracking.js';
@@ -8,58 +9,58 @@ import { getScienceTimeByCustomPeriod } from './science-time-tracking.js';
 
 // Operation display names (math)
 const OPERATION_NAMES = {
-  addition: "Addition",
-  subtraction: "Subtraction",
-  multiplication: "Multiplication",
-  division: "Division",
-  division_with_remainder: "Division with remainder",
-  fractions: "Fractions",
-  percentages: "Percentages",
-  sequences: "Sequences",
-  decimals: "Decimals",
-  rounding: "Rounding",
-  divisibility: "Divisibility rules",
-  prime_composite: "Prime and composite numbers",
-  powers: "Powers",
+  addition: reportPackCopy("utils__math-report-generator", "addition"),
+  subtraction: reportPackCopy("utils__math-report-generator", "subtraction"),
+  multiplication: reportPackCopy("utils__math-report-generator", "multiplication"),
+  division: reportPackCopy("utils__math-report-generator", "division"),
+  division_with_remainder: reportPackCopy("utils__math-report-generator", "division_with_remainder"),
+  fractions: reportPackCopy("utils__math-report-generator", "fractions"),
+  percentages: reportPackCopy("utils__math-report-generator", "percentages"),
+  sequences: reportPackCopy("utils__math-report-generator", "sequences"),
+  decimals: reportPackCopy("utils__math-report-generator", "decimals"),
+  rounding: reportPackCopy("utils__math-report-generator", "rounding"),
+  divisibility: reportPackCopy("utils__math-report-generator", "divisibility_rules"),
+  prime_composite: reportPackCopy("utils__math-report-generator", "prime_and_composite_numbers"),
+  powers: reportPackCopy("utils__math-report-generator", "powers"),
   ratio: "Ratio",
-  equations: "Equations",
-  order_of_operations: "Order of operations",
-  zero_one_properties: "Properties of 0 and 1",
-  estimation: "Estimation",
+  equations: reportPackCopy("utils__math-report-generator", "equations"),
+  order_of_operations: reportPackCopy("utils__math-report-generator", "order_of_operations"),
+  zero_one_properties: reportPackCopy("utils__math-report-generator", "properties_of_0_and_1"),
+  estimation: reportPackCopy("utils__math-report-generator", "estimation"),
   scale: "Scale",
-  compare: "Comparison",
-  number_sense: "Number sense",
-  factors_multiples: "Factors and multiples",
-  word_problems: "Word problems",
-  multiplication_table: "Multiplication table",
-  place_value: "Place value",
-  comparison: "Comparison",
-  patterns: "Patterns and sequences",
-  multiplication_advanced: "Advanced multiplication",
+  compare: reportPackCopy("utils__math-report-generator", "comparison"),
+  number_sense: reportPackCopy("utils__math-report-generator", "number_sense"),
+  factors_multiples: reportPackCopy("utils__math-report-generator", "factors_and_multiples"),
+  word_problems: reportPackCopy("utils__math-report-generator", "word_problems"),
+  multiplication_table: reportPackCopy("utils__math-report-generator", "multiplication_table"),
+  place_value: reportPackCopy("utils__math-report-generator", "place_value"),
+  comparison: reportPackCopy("utils__math-report-generator", "comparison"),
+  patterns: reportPackCopy("utils__math-report-generator", "patterns_and_sequences"),
+  multiplication_advanced: reportPackCopy("utils__math-report-generator", "advanced_multiplication"),
   mixed: "Mixed"
 };
 
 // Topic display names (geometry)
 const TOPIC_NAMES = {
-  shapes_basic: "Basic shapes",
-  shapes: "Shapes",
+  shapes_basic: reportPackCopy("utils__math-report-generator", "basic_shapes"),
+  shapes: reportPackCopy("utils__math-report-generator", "shapes"),
   area: "Area",
-  perimeter: "Perimeter",
-  volume: "Volume",
-  angles: "Angles",
-  parallel_perpendicular: "Parallel and perpendicular",
-  triangles: "Triangles",
-  quadrilaterals: "Quadrilaterals",
-  transformations: "Transformations",
-  rotation: "Rotation",
-  symmetry: "Symmetry",
-  diagonal: "Diagonal",
-  heights: "Heights",
-  tiling: "Tiling",
-  circles: "Circle",
-  solids: "Solids",
-  pythagoras: "Pythagoras",
-  coordinates: "Points and coordinates",
+  perimeter: reportPackCopy("utils__math-report-generator", "perimeter"),
+  volume: reportPackCopy("utils__math-report-generator", "volume"),
+  angles: reportPackCopy("utils__math-report-generator", "angles"),
+  parallel_perpendicular: reportPackCopy("utils__math-report-generator", "parallel_and_perpendicular"),
+  triangles: reportPackCopy("utils__math-report-generator", "triangles"),
+  quadrilaterals: reportPackCopy("utils__math-report-generator", "quadrilaterals"),
+  transformations: reportPackCopy("utils__math-report-generator", "transformations"),
+  rotation: reportPackCopy("utils__math-report-generator", "rotation"),
+  symmetry: reportPackCopy("utils__math-report-generator", "symmetry"),
+  diagonal: reportPackCopy("utils__math-report-generator", "diagonal"),
+  heights: reportPackCopy("utils__math-report-generator", "heights"),
+  tiling: reportPackCopy("utils__math-report-generator", "tiling"),
+  circles: reportPackCopy("utils__math-report-generator", "circle"),
+  solids: reportPackCopy("utils__math-report-generator", "solids"),
+  pythagoras: reportPackCopy("utils__math-report-generator", "pythagoras"),
+  coordinates: reportPackCopy("utils__math-report-generator", "points_and_coordinates"),
   mixed: "Mixed"
 };
 
@@ -80,7 +81,7 @@ export function normalizeReportTopicBucketKey(bucketKey) {
 }
 
 /** Fallback when no Hebrew topic label can be resolved for parent-facing math rows. */
-export const MATH_PARENT_TOPIC_FALLBACK_HE = "Practice";
+export const MATH_PARENT_TOPIC_FALLBACK_HE = reportPackCopy("utils__math-report-generator", "practice");
 
 const MATH_TOPIC_PLACEHOLDER_KEYS = new Set(["general", "unknown"]);
 
@@ -139,20 +140,20 @@ export function getTopicName(topic) {
 }
 
 const ENGLISH_TOPIC_NAMES = {
-  phonics: "Phonics",
-  vocabulary: "Vocabulary",
-  grammar: "Grammar",
-  grammar_basics: "Grammar basics",
-  translation: "Translation",
-  sentence: "Sentence building",
-  sentences: "Sentence building",
-  writing: "Writing",
-  reading_comprehension: "Reading comprehension",
-  matching: "Matching",
-  inference: "Inference",
-  sentence_understanding: "Sentence understanding",
-  simple_sentences: "Simple sentences",
-  mixed: "Mixed practice",
+  phonics: reportPackCopy("utils__math-report-generator", "phonics"),
+  vocabulary: reportPackCopy("utils__math-report-generator", "vocabulary"),
+  grammar: reportPackCopy("utils__math-report-generator", "grammar"),
+  grammar_basics: reportPackCopy("utils__math-report-generator", "grammar_basics"),
+  translation: reportPackCopy("utils__math-report-generator", "translation"),
+  sentence: reportPackCopy("utils__math-report-generator", "sentence_building"),
+  sentences: reportPackCopy("utils__math-report-generator", "sentence_building"),
+  writing: reportPackCopy("utils__math-report-generator", "writing"),
+  reading_comprehension: reportPackCopy("utils__math-report-generator", "reading_comprehension"),
+  matching: reportPackCopy("utils__math-report-generator", "matching"),
+  inference: reportPackCopy("utils__math-report-generator", "inference"),
+  sentence_understanding: reportPackCopy("utils__math-report-generator", "sentence_understanding"),
+  simple_sentences: reportPackCopy("utils__math-report-generator", "simple_sentences"),
+  mixed: reportPackCopy("utils__math-report-generator", "mixed_practice"),
 };
 
 export function getEnglishTopicName(topic) {
@@ -162,19 +163,19 @@ export function getEnglishTopicName(topic) {
 }
 
 const SCIENCE_TOPIC_NAMES = {
-  body: "Human body",
-  animals: "Animals",
-  plants: "Plants",
-  materials: "Materials",
-  earth_space: "Earth and space",
-  environment: "Environment and ecology",
-  experiments: "Experiments and processes",
-  animals_plants: "Animals and plants",
-  basic_experiments: "Basic experiments",
-  living_things: "Living things",
-  matter: "Materials",
-  forces: "Forces",
-  mixed: "Mixed topics",
+  body: reportPackCopy("utils__math-report-generator", "human_body"),
+  animals: reportPackCopy("utils__math-report-generator", "animals"),
+  plants: reportPackCopy("utils__math-report-generator", "plants"),
+  materials: reportPackCopy("utils__math-report-generator", "materials"),
+  earth_space: reportPackCopy("utils__math-report-generator", "earth_and_space"),
+  environment: reportPackCopy("utils__math-report-generator", "environment_and_ecology"),
+  experiments: reportPackCopy("utils__math-report-generator", "experiments_and_processes"),
+  animals_plants: reportPackCopy("utils__math-report-generator", "animals_and_plants"),
+  basic_experiments: reportPackCopy("utils__math-report-generator", "basic_experiments"),
+  living_things: reportPackCopy("utils__math-report-generator", "living_things"),
+  matter: reportPackCopy("utils__math-report-generator", "materials"),
+  forces: reportPackCopy("utils__math-report-generator", "forces"),
+  mixed: reportPackCopy("utils__math-report-generator", "mixed_topics"),
 };
 
 export function getScienceTopicName(topic) {
@@ -192,22 +193,22 @@ export function getHistorySubtopicName(_subtopicKey) {
 }
 
 const HEBREW_TOPIC_NAMES = {
-  reading: "Reading",
-  comprehension: "Reading comprehension",
-  reading_comprehension: "Reading comprehension",
-  writing: "Writing and expression",
-  grammar: "Grammar and language",
-  vocabulary: "Language richness",
-  speaking: "Speaking and discussion",
+  reading: reportPackCopy("utils__math-report-generator", "reading"),
+  comprehension: reportPackCopy("utils__math-report-generator", "reading_comprehension"),
+  reading_comprehension: reportPackCopy("utils__math-report-generator", "reading_comprehension"),
+  writing: reportPackCopy("utils__math-report-generator", "writing_and_expression"),
+  grammar: reportPackCopy("utils__math-report-generator", "grammar_and_language"),
+  vocabulary: reportPackCopy("utils__math-report-generator", "language_richness"),
+  speaking: reportPackCopy("utils__math-report-generator", "speaking_and_discussion"),
   mixed: "Mixed",
-  main_idea: "Main idea",
-  sequence: "Sequence",
-  inference: "Inference",
-  fact_vs_opinion: "Fact vs opinion",
-  vowels_reading: "Reading with vowels",
-  plurals: "Singular and plural",
-  verb_forms: "Verb forms",
-  sentence_structure: "Sentence structure",
+  main_idea: reportPackCopy("utils__math-report-generator", "main_idea"),
+  sequence: reportPackCopy("utils__math-report-generator", "sequence"),
+  inference: reportPackCopy("utils__math-report-generator", "inference"),
+  fact_vs_opinion: reportPackCopy("utils__math-report-generator", "fact_vs_opinion"),
+  vowels_reading: reportPackCopy("utils__math-report-generator", "reading_with_vowels"),
+  plurals: reportPackCopy("utils__math-report-generator", "singular_and_plural"),
+  verb_forms: reportPackCopy("utils__math-report-generator", "verb_forms"),
+  sentence_structure: reportPackCopy("utils__math-report-generator", "sentence_structure"),
 };
 
 export function getHebrewTopicName(topic) {
@@ -217,19 +218,19 @@ export function getHebrewTopicName(topic) {
 }
 
 const MOLEDET_GEOGRAPHY_TOPIC_NAMES = {
-  homeland: "Homeland Studies",
-  community: "Community",
-  citizenship: "Citizenship",
-  geography: "Geography",
-  basic_geography: "Geography basics",
-  values: "Values",
+  homeland: reportPackCopy("utils__math-report-generator", "homeland_studies"),
+  community: reportPackCopy("utils__math-report-generator", "community"),
+  citizenship: reportPackCopy("utils__math-report-generator", "citizenship"),
+  geography: reportPackCopy("utils__math-report-generator", "geography"),
+  basic_geography: reportPackCopy("utils__math-report-generator", "geography_basics"),
+  values: reportPackCopy("utils__math-report-generator", "values"),
   maps: "Maps",
-  map_reading: "Map reading",
-  directions: "Directions",
-  places: "Places",
-  maps_basic: "Basic maps",
-  regions: "Regions",
-  history: "History",
+  map_reading: reportPackCopy("utils__math-report-generator", "map_reading"),
+  directions: reportPackCopy("utils__math-report-generator", "directions"),
+  places: reportPackCopy("utils__math-report-generator", "places"),
+  maps_basic: reportPackCopy("utils__math-report-generator", "basic_maps"),
+  regions: reportPackCopy("utils__math-report-generator", "regions"),
+  history: reportPackCopy("utils__math-report-generator", "history"),
   mixed: "Mixed",
 };
 
@@ -281,12 +282,12 @@ export function canonicalParentReportGradeKey(raw) {
  * If the value is already a recognized display label, it is returned as-is.
  */
 export function formatParentReportGradeLabel(raw) {
-  if (raw == null || raw === "") return "Unavailable";
+  if (raw == null || raw === "") return reportPackCopy("utils__math-report-generator", "unavailable");
   const s0 = String(raw).trim();
   if (HEBREW_GRADE_DISPLAY_AS_IS.has(s0)) return s0;
   const c = canonicalParentReportGradeKey(s0);
   if (c && GRADE_LABELS[c]) return GRADE_LABELS[c];
-  return "Unavailable";
+  return reportPackCopy("utils__math-report-generator", "unavailable");
 }
 
 const LEVEL_LABELS = { easy: "Easy", medium: "Medium", hard: "Hard" };
@@ -328,8 +329,8 @@ function getMostCommonGradeAndLevel(savedTracking, containerKey, itemKey) {
     gradeLabel:
       rawGradeDominant != null
         ? formatParentReportGradeLabel(rawGradeDominant)
-        : "Unavailable",
-    levelLabel: levelKey ? (LEVEL_LABELS[levelKey] || levelKey) : "Unavailable",
+        : reportPackCopy("utils__math-report-generator", "unavailable"),
+    levelLabel: levelKey ? (LEVEL_LABELS[levelKey] || levelKey) : reportPackCopy("utils__math-report-generator", "unavailable"),
   };
 }
 
@@ -1242,7 +1243,7 @@ export function exportReportToPDF(report, options = {}) {
   try {
     const el = document.getElementById(elementId);
     if (!el) {
-      alert("PDF export error: No printable content found.");
+      alert(reportPackCopy("utils__math-report-generator", "pdf_export_error_no_printable_content_found"));
       return;
     }
 
@@ -1262,7 +1263,7 @@ export function exportReportToPDF(report, options = {}) {
         direction: ltr; text-align: center;
         backdrop-filter: blur(2px);
       `;
-      overlay.textContent = "Opens Print… Select 'Save as PDF'";
+      overlay.textContent = reportPackCopy("utils__math-report-generator", "opens_print_select_save_as_pdf");
       document.body.appendChild(overlay);
 
       // Many browsers use the title as the default PDF name
@@ -1295,7 +1296,7 @@ export function exportReportToPDF(report, options = {}) {
           } catch (e) {
             console.error("Print failed:", e);
             cleanup();
-            alert("Error opening print. Please try again.");
+            alert(reportPackCopy("utils__math-report-generator", "error_opening_print_please_try_again"));
           }
         });
       });
@@ -1336,7 +1337,7 @@ export function exportReportToPDF(report, options = {}) {
       direction: ltr; text-align: center;
       backdrop-filter: blur(2px);
     `;
-    overlay.textContent = "Preparing a PDF… This may take a few seconds";
+    overlay.textContent = reportPackCopy("utils__math-report-generator", "preparing_a_pdf_this_may_take_a_few_seconds");
     document.body.appendChild(overlay);
 
     // Let the browser "breathe" and paint the overlay before the heavy work
@@ -1523,7 +1524,7 @@ export function exportReportToPDF(report, options = {}) {
         })
         .catch((error) => {
           console.error("Error loading/creating PDF:", error);
-          alert("Error exporting PDF. Please try again. Details:" + (error?.message || "unknown"));
+          alert(reportPackCopy("utils__math-report-generator", "error_exporting_pdf_please_try_again_details") + (error?.message || "unknown"));
         })
         .finally(() => {
           try {
@@ -1538,7 +1539,7 @@ export function exportReportToPDF(report, options = {}) {
     });
   } catch (error) {
     console.error("Error exporting to PDF:", error);
-    alert("Error exporting PDF. Please try again.");
+    alert(reportPackCopy("utils__math-report-generator", "error_exporting_pdf_please_try_again"));
     try {
       const existing = document.querySelector('[data-pdf-overlay="1"]');
       existing?.remove?.();

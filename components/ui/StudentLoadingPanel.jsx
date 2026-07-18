@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import PortalLoadingPanel from "./PortalLoadingPanel.jsx";
 
@@ -6,7 +7,7 @@ import PortalLoadingPanel from "./PortalLoadingPanel.jsx";
  * @param {{ message?: string, fullPage?: boolean, reportPage?: boolean, hubGrid?: boolean, className?: string }} props
  */
 export default function StudentLoadingPanel({
-  message = "Loading…",
+  message = globalBurnDownCopy("components__ui__StudentLoadingPanel", "loading"),
   fullPage = false,
   reportPage = false,
   hubGrid = false,

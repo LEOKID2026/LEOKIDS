@@ -2,7 +2,6 @@ import Layout from "../../../../../components/Layout";
 import MathG1BookShell from "../../../../../components/learning-book/MathG1BookShell";
 import LearningBookIndexContent from "../../../../../components/learning-book/LearningBookIndexContent";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
-import { loadMathG1TocEntries } from "../../../../../lib/learning-book/load-math-g1-pages";
 import { MATH_G1_BOOK_META } from "../../../../../lib/learning-book/math-g1-registry";
 
 export default function MathG1BookIndex({ batches }) {
@@ -20,7 +19,8 @@ export default function MathG1BookIndex({ batches }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  const { loadMathG1TocEntries } = await import("../../../../../lib/learning-book/load-math-g1-pages");
   const batches = loadMathG1TocEntries();
   return { props: { batches } };
 }

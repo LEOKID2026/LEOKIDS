@@ -1,27 +1,30 @@
 import { TAXONOMY_BY_ID } from "./taxonomy-registry.js";
+import defaultsEn from "../../content-packs/en/learning/diagnostic-engine-v2-defaults.json" with { type: "json" };
 
 /**
  * @param {string|null} taxonomyId
  */
 export function buildInterventionPlan(taxonomyId) {
+  const fb = defaultsEn.interventionFallback;
+  const withTax = defaultsEn.interventionWithTaxonomy;
   if (!taxonomyId || !TAXONOMY_BY_ID[taxonomyId]) {
     return {
-      immediateActionHe: "Gather more evidence before a plan",
-      shortPracticeHe: "3–7 items on the same topic at a slightly lower difficulty",
-      avoidHe: "Do not jump too high in level or mix several topics together.",
-      improvementSignalsHe: ["Fewer repeating errors", "Independent correction after a mistake"],
-      failureSignalsHe: ["No change after two structured cycles"],
-      hypothesisChangeHe: "Failure on the proposed check, or success only with heavy hinting",
+      immediateActionHe: fb.immediateAction,
+      shortPracticeHe: fb.shortPractice,
+      avoidHe: fb.avoid,
+      improvementSignalsHe: fb.improvementSignals,
+      failureSignalsHe: fb.failureSignals,
+      hypothesisChangeHe: fb.hypothesisChange,
     };
   }
   const row = TAXONOMY_BY_ID[taxonomyId];
   return {
     immediateActionHe: row.probeHe,
     shortPracticeHe: row.interventionHe,
-    avoidHe: "Do not jump too high in level, mix several topics, or rely on general feedback without an example.",
-    improvementSignalsHe: ["Match taxonomy success markers", "Transfer success to a similar task"],
+    avoidHe: withTax.avoid,
+    improvementSignalsHe: withTax.improvementSignals,
     failureSignalsHe: [row.escalationHe],
-    hypothesisChangeHe: "When the recommended probe fails or strong counter-evidence appears",
+    hypothesisChangeHe: withTax.hypothesisChange,
     taxonomyId: row.id,
   };
 }

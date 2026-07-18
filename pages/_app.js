@@ -1,8 +1,9 @@
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import "../styles/globals.css";
 import "../styles/worksheet-print.css";
 import "../styles/worksheet-hub.css";
 import Head from "next/head";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/next";
 import OfflineIndicator from "../components/OfflineIndicator";
@@ -24,9 +25,12 @@ import {
   BROWSER_THEME_COLOR_BRIGHT,
   BROWSER_THEME_COLOR_BOOTSTRAP_SCRIPT,
 } from "../lib/student-ui/browser-theme-color.client.js";
-import { I18nProvider } from "../lib/i18n/I18nProvider.jsx";
-import { resolveRequestLocale } from "../lib/i18n/resolve-request-locale.js";
-import { resolveDirection, resolveLocaleDefinition } from "../lib/i18n/locale-registry.js";
+import AppLocaleShell from "../components/i18n/AppLocaleShell.jsx";
+import {
+  resolveLocaleDefinition,
+} from "../lib/i18n/locale-registry.js";
+import { resolveInterfaceLocale } from "../lib/i18n/locale-resolution.js";
+import { readRequestInterfaceLocale } from "../lib/i18n/read-request-interface-locale.server.js";
 
 const UUID_PATH_SEGMENT_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -105,31 +109,6 @@ function pathnameIsInternalDevRoute(pathname) {
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useIOSViewportFix();
-
-  const locale = useMemo(() => {
-    if (pageProps?.locale) return resolveLocaleDefinition(pageProps.locale).id;
-    if (typeof document !== "undefined") {
-      return resolveRequestLocale({
-        asPath: router.asPath,
-        pathname: router.pathname,
-        query: router.query,
-        cookieHeader: document.cookie,
-      });
-    }
-    return resolveRequestLocale({
-      asPath: router.asPath,
-      pathname: router.pathname,
-      query: router.query,
-    });
-  }, [pageProps?.locale, router.asPath, router.pathname, router.query]);
-
-  const direction = resolveDirection(locale);
-
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.documentElement.lang = locale;
-    document.documentElement.dir = direction;
-  }, [locale, direction]);
 
   useEffect(() => {
     initParentPwaInstallPromptCapture();
@@ -303,7 +282,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta
           name="description"
-          content="Leo Kids — practice math, geometry, English, and science with progress tracking for parents."
+          content={globalBurnDownCopy("lib__site__public-page-seo", "leo_kids_learning_games_and_progress_tracking_for_kids")}
         />
         {isStudentPwaInstallMode ? (
           <>
@@ -386,9 +365,9 @@ export default function MyApp({ Component, pageProps }) {
           <link key="app-manifest" rel="manifest" href={manifestHref} />
         ) : null}
         
-        <title>Leo Kids Â· Learning for elementary students</title>
+        <title>{globalBurnDownCopy("pages___app", "default_document_title")}</title>
       </Head>
-      <I18nProvider locale={locale}>
+      <AppLocaleShell pageProps={pageProps}>
       <OfflineIndicator />
       <CookieConsentManager />
       <StudentThemeProvider>
@@ -407,8 +386,54 @@ export default function MyApp({ Component, pageProps }) {
         )}
         </GameAudioProvider>
       </StudentThemeProvider>
-      </I18nProvider>
+      </AppLocaleShell>
       <Analytics beforeSend={vercelAnalyticsBeforeSend} />
     </>
   );
 }
+
+MyApp.getInitialProps = async (appContext) => {
+  const { ctx, App: NextApp } = appContext;
+  /** @type {{ pageProps?: Record<string, unknown> }} */
+  let appProps = { pageProps: {} };
+  if (NextApp && typeof NextApp.getInitialProps === "function") {
+    appProps = await NextApp.getInitialProps(appContext);
+  }
+  if (!appProps.pageProps) appProps.pageProps = {};
+
+  const req = ctx.req;
+  const headerLocale = readRequestInterfaceLocale(req, ctx.asPath || ctx.pathname || "/");
+  const cookieHeader = req?.headers?.cookie;
+  const acceptLanguage = req?.headers?.["accept-language"];
+
+  const interfaceLocale = resolveInterfaceLocale({
+    asPath: ctx.asPath || ctx.pathname || "/",
+    pathname: ctx.pathname,
+    query: ctx.query,
+    cookieHeader: typeof cookieHeader === "string" ? cookieHeader : undefined,
+    acceptLanguage: typeof acceptLanguage === "string" ? acceptLanguage : undefined,
+    profileInterfaceLocale: appProps.pageProps?.membershipInterfaceLanguage,
+    hasExplicitUserChoice: Boolean(appProps.pageProps?.membershipInterfaceLanguage),
+  });
+
+  if (typeof headerLocale === "string" && headerLocale) {
+    appProps.pageProps = {
+      ...appProps.pageProps,
+      interfaceLocale: resolveLocaleDefinition(headerLocale).id,
+    };
+  } else {
+    appProps.pageProps = {
+      ...appProps.pageProps,
+      interfaceLocale,
+    };
+  }
+
+  if (acceptLanguage) {
+    appProps.pageProps = {
+      ...appProps.pageProps,
+      acceptLanguage,
+    };
+  }
+
+  return appProps;
+};

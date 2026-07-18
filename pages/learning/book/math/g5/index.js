@@ -2,7 +2,6 @@ import Layout from "../../../../../components/Layout";
 import MathG5BookShell from "../../../../../components/learning-book/MathG5BookShell";
 import LearningBookIndexContent from "../../../../../components/learning-book/LearningBookIndexContent";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
-import { loadMathG5TocEntries } from "../../../../../lib/learning-book/load-math-g5-pages";
 import { MATH_G5_BOOK_META } from "../../../../../lib/learning-book/math-g5-registry";
 
 export default function MathG5BookIndex({ batches }) {
@@ -20,7 +19,8 @@ export default function MathG5BookIndex({ batches }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  const { loadMathG5TocEntries } = await import("../../../../../lib/learning-book/load-math-g5-pages");
   const batches = loadMathG5TocEntries();
   return { props: { batches } };
 }

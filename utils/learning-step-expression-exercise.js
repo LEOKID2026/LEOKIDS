@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 /** Build expression highlight spans from step metadata and text. */
 
 const HIGHLIGHT_PATTERNS = {

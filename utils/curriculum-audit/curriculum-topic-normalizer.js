@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 /**
  * Maps raw inventory topic/subtopic strings to stable audit keys (English internal).
  * Preserves raw strings; Hebrew labels are conservative metadata for reports only.
@@ -58,7 +59,7 @@ export function normalizeInventoryTopic(input) {
         normalizedTopicKey: `unknown.${slug(subject)}.${slug(rawTopic)}`,
         normalizedTopicLabelHe: "נושא לא מסווג",
         normalizationConfidence: "low",
-        normalizationNotes: "Unknown subject for normalization.",
+        normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "unknown_subject_for_normalization"),
       };
   }
 }
@@ -136,7 +137,7 @@ function normalizeMath(rawTopic, rawSubtopic) {
       normalizedTopicKey: hit.key,
       normalizedTopicLabelHe: hit.he,
       normalizationConfidence: "high",
-      normalizationNotes: "Mapped from math generator operation / topic key.",
+      normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "mapped_from_math_generator_operation_topic_key"),
     };
   }
 
@@ -207,7 +208,7 @@ function normalizeGeometry(rawTopic, rawSubtopic) {
       normalizationNotes:
         segments.length > 1
           ? "Composite topic string split; primary segment drove mapping."
-          : "Mapped from geometry topic / generator kind.",
+          : burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "mapped_from_geometry_topic_generator_kind"),
       compositeSegments: segments.length ? segments : undefined,
     };
   }
@@ -218,7 +219,7 @@ function normalizeGeometry(rawTopic, rawSubtopic) {
     normalizedTopicKey: `geometry.unmapped.${primarySeg || kind || "empty"}`,
     normalizedTopicLabelHe: "גאומטריה - נושא לא ממופה באודיט",
     normalizationConfidence: "low",
-    normalizationNotes: "Expand geometry strand map for this topic/kind.",
+    normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "expand_geometry_strand_map_for_this_topic_kind"),
     compositeSegments: segments.length ? segments : undefined,
   };
 }
@@ -294,7 +295,7 @@ function normalizeHebrew(rawTopic, rawSubtopic) {
       normalizationConfidence: st ? "medium" : "high",
       normalizationNotes: st
         ? "Primary Hebrew skill from topic; subtopic present - review for finer skill tagging."
-        : "Mapped from Hebrew TOPICS key.",
+        : burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "mapped_from_hebrew_topics_key"),
     };
   }
 
@@ -304,7 +305,7 @@ function normalizeHebrew(rawTopic, rawSubtopic) {
     normalizedTopicKey: `hebrew.unmapped.${t || "empty"}`,
     normalizedTopicLabelHe: "עברית - מיומנות לא ממופה",
     normalizationConfidence: "low",
-    normalizationNotes: "Unknown Hebrew topic bucket.",
+    normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "unknown_hebrew_topic_bucket"),
   };
 }
 
@@ -321,7 +322,7 @@ function normalizeEnglish(rawTopic, rawSubtopic) {
       normalizedTopicKey: `english.vocabulary_translation.${pool || "general"}`,
       normalizedTopicLabelHe: "אוצר מילים ומילולי",
       normalizationConfidence: pool ? "high" : "medium",
-      normalizationNotes: "Vocabulary games map to lexis / translation strand.",
+      normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "vocabulary_games_map_to_lexis_translation_strand"),
     };
   }
   if (cat === "writing") {
@@ -331,7 +332,7 @@ function normalizeEnglish(rawTopic, rawSubtopic) {
       normalizedTopicKey: `english.sentence_writing_patterns.${pool || "writing"}`,
       normalizedTopicLabelHe: "כתיבה ודפוסי משפט",
       normalizationConfidence: "medium",
-      normalizationNotes: "Writing / typing modes align with sentence-writing strand.",
+      normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "writing_typing_modes_align_with_sentence_writing_strand"),
     };
   }
   if (cat === "mixed") {
@@ -341,7 +342,7 @@ function normalizeEnglish(rawTopic, rawSubtopic) {
       normalizedTopicKey: "english.mixed_practice",
       normalizedTopicLabelHe: "אנגלית - ערבוב נושאים",
       normalizationConfidence: "medium",
-      normalizationNotes: "Mixed practice - audit often skips or treats as composite.",
+      normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "mixed_practice_audit_often_skips_or_treats_as_composite"),
     };
   }
 
@@ -363,7 +364,7 @@ function normalizeEnglish(rawTopic, rawSubtopic) {
       normalizedTopicKey: `english.vocabulary_translation.${pool || "general"}`,
       normalizedTopicLabelHe: "אוצר מילים ותרגום (מילולי)",
       normalizationConfidence: pool ? "high" : "medium",
-      normalizationNotes: "Translation pools emphasize vocabulary / phrases.",
+      normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "translation_pools_emphasize_vocabulary_phrases"),
     };
   }
   if (cat === "sentence") {
@@ -384,7 +385,7 @@ function normalizeEnglish(rawTopic, rawSubtopic) {
     normalizedTopicKey: `english.unmapped.${cat || "empty"}`,
     normalizedTopicLabelHe: "אנגלית - קטגוריה לא ממופה",
     normalizationConfidence: "low",
-    normalizationNotes: "Expected grammar | translation | sentence.",
+    normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "expected_grammar_translation_sentence"),
   };
 }
 
@@ -428,7 +429,7 @@ function normalizeScience(rawTopic, rawSubtopic) {
       normalizedTopicKey: hit.key,
       normalizedTopicLabelHe: hit.he,
       normalizationConfidence: "high",
-      normalizationNotes: "Mapped from science bank topic field.",
+      normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "mapped_from_science_bank_topic_field"),
     };
   }
 
@@ -438,7 +439,7 @@ function normalizeScience(rawTopic, rawSubtopic) {
     normalizedTopicKey: `science.unmapped.${t || "empty"}`,
     normalizedTopicLabelHe: "מדעים - תחום לא ממופה",
     normalizationConfidence: "low",
-    normalizationNotes: "Extend science domain map.",
+    normalizationNotes: burnDownCopy("utils__curriculum-audit__curriculum-topic-normalizer", "extend_science_domain_map"),
   };
 }
 

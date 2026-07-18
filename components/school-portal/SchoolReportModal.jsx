@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect, useState } from "react";
 import ReportHubModal from "../reporting/ReportHubModal.jsx";
 import { ReportModalFrame } from "../reporting/ReportModalFrame.jsx";
@@ -70,7 +71,7 @@ export default function SchoolReportModal({
   title,
   onClose,
   loading = false,
-  loadingLabel = "Loading report…",
+  loadingLabel = globalBurnDownCopy("components__school-portal__SchoolReportModal", "loading_report"),
   error = "",
   viewModel = null,
   onStudentReport,

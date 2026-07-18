@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef } from "react";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const SIZE_CLASS = {
   md: "md:max-w-md",
@@ -48,6 +49,7 @@ export default function StudentHomeModal({
   size = "2xl",
 }) {
   const { homeModalShell, isBright } = useStudentTheme();
+  const t = useT();
   const titleId = useId();
   const closeRef = useRef(null);
   const sizeClass = SIZE_CLASS[size] || SIZE_CLASS["2xl"];
@@ -112,7 +114,7 @@ export default function StudentHomeModal({
             onClick={onClose}
             className={homeModalShell.closeBtn}
             style={{ direction: "ltr" }}
-            aria-label="Close"
+            aria-label={t("ui.common.close")}
           >
             ✖
           </button>

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { isoDateLocal, MAX_REPORT_RANGE_DAYS } from "../../lib/reporting/report-date-range.js";
 
 /**
@@ -19,7 +20,7 @@ export default function ReportDateRangeControl({
   disabled = false,
   showDayPreset = false,
   showSchoolYearPreset = false,
-  customRangeLabel = "Custom dates",
+  customRangeLabel = globalBurnDownCopy("components__reporting__ReportDateRangeControl", "custom_dates"),
   compactPresets = false,
   presetRowClassName = "",
   className = "",

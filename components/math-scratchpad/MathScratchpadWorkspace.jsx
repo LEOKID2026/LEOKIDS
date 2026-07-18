@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { SCRATCHPAD_BRIGHT_CELLS } from "../../lib/student-ui/scratchpad-bright-cells-ui.client.js";
@@ -828,7 +829,7 @@ function PlaceValueTableWorkspace({ operands, centerOperands = false, fillParent
                         value={missingDenValue}
                         onChange={setMissingDenValue}
                         className={C.workCell}
-                        aria-label="fraction denominator"
+                        aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadWorkspace", "fraction_denominator")}
                         maxLength={3}
                       />
                     ) : (
@@ -848,7 +849,7 @@ function PlaceValueTableWorkspace({ operands, centerOperands = false, fillParent
                 <ScratchpadDigitDisplay
                   value="-"
                   className={`${C.operandCell} mx-auto`}
-                  aria-label="fraction exercise"
+                  aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadWorkspace", "fraction_exercise")}
                 />
               </td>
             </tr>
@@ -1062,14 +1063,14 @@ function FractionStack({
           value={numValue}
           onChange={onNumeratorChange}
           className={C.fracResultClass}
-          aria-label="fraction numerator"
+          aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadWorkspace", "fraction_numerator")}
           maxLength={3}
         />
       ) : (
         <ScratchpadDigitDisplay
           value={numValue}
           className={C.fracNumClass}
-          aria-label="fraction numerator"
+          aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadWorkspace", "fraction_numerator")}
         />
       )}
       <div className={`w-full min-w-[2.75rem] ${C.fracLine} my-1`} aria-hidden />
@@ -1078,14 +1079,14 @@ function FractionStack({
           value={denValue}
           onChange={onDenominatorChange}
           className={C.fracResultClass}
-          aria-label="fraction denominator"
+          aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadWorkspace", "fraction_denominator")}
           maxLength={3}
         />
       ) : (
         <ScratchpadDigitDisplay
           value={denValue}
           className={C.fracDenClass}
-          aria-label="fraction denominator"
+          aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadWorkspace", "fraction_denominator")}
         />
       )}
     </div>

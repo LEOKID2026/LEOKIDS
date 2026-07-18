@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import MathScratchpadWorkspace from "./MathScratchpadWorkspace";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { SCRATCHPAD_BRIGHT_SHELL } from "../../lib/student-ui/scratchpad-bright-shell-ui.client.js";
@@ -26,7 +27,7 @@ export default function MathScratchpadPanel({
     <div
       role="dialog"
       aria-modal="false"
-      aria-label="Scratch pad"
+      aria-label={globalBurnDownCopy("components__math-scratchpad__MathScratchpadPanel", "scratch_pad")}
       data-testid="math-scratchpad-panel"
       className={`flex flex-col h-full w-full overflow-hidden shadow-2xl ${
         isBright

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import {
   guardianAccessStateHe,
@@ -131,7 +132,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
   };
 
   const onRotatePin = async (accessId) => {
-    if (!window.confirm("The current code will be revoked and a new one generated. Save the new code — it will be shown only once.")) {
+    if (!window.confirm(globalBurnDownCopy("components__teacher-portal__StudentLoginAccessPanel", "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co"))) {
       return;
     }
     setBusy(true);
@@ -154,7 +155,7 @@ export default function StudentLoginAccessPanel({ accessToken, studentId }) {
   };
 
   const onRotateUsername = async (accessId) => {
-    if (!window.confirm("The current username will be revoked. The new username will be shown only once.")) {
+    if (!window.confirm(globalBurnDownCopy("components__teacher-portal__StudentLoginAccessPanel", "the_current_username_will_be_revoked_the_new_username_will_be_shown_only"))) {
       return;
     }
     setBusy(true);

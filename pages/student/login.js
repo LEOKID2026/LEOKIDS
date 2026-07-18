@@ -17,7 +17,7 @@ import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-ident
 import { LIOSH_GUEST_RESUME_TOKEN_KEY } from "../../lib/guest/constants.js";
 import { shouldClearGuestResumeTokenOnResumeFailure } from "../../lib/guest/guest-resume-token.client.js";
 import {
-  GUEST_NEW_AFTER_FAILED_RESUME_CONFIRM_HE,
+  GUEST_NEW_AFTER_FAILED_RESUME_CONFIRM_KEY,
   guestResumeFailureBannerFromPayload,
   shouldBlockGuestStartAfterResumeFailure,
   shouldConfirmNewGuestAfterResumeFailure,
@@ -129,7 +129,7 @@ export default function StudentLoginPage() {
     setMessage("");
     try {
       if (shouldBlockGuestStartAfterResumeFailure(guestResumeBanner?.code)) {
-        setMessage(guestResumeBanner?.messageHe || t("auth.invalidStudentCredentials"));
+        setMessage(guestResumeBanner?.messageKey ? t(guestResumeBanner.messageKey) : t("auth.invalidStudentCredentials"));
         return;
       }
 
@@ -141,7 +141,7 @@ export default function StudentLoginPage() {
         (shouldConfirmNewGuestAfterResumeFailure(guestResumeBanner?.code) ||
           guestResumeBanner?.code === "guest_resume_invalid")
       ) {
-        const confirmed = window.confirm(GUEST_NEW_AFTER_FAILED_RESUME_CONFIRM_HE);
+        const confirmed = window.confirm(t(GUEST_NEW_AFTER_FAILED_RESUME_CONFIRM_KEY));
         if (!confirmed) return;
         localStorage.removeItem(LIOSH_GUEST_RESUME_TOKEN_KEY);
         setGuestResumeBanner(null);
@@ -159,7 +159,7 @@ export default function StudentLoginPage() {
         const resumeFailure = guestResumeFailureBannerFromPayload(payload);
         if (resumeFailure) {
           setGuestResumeBanner(resumeFailure);
-          setMessage(resumeFailure.messageHe);
+          setMessage(t(resumeFailure.messageKey));
         } else {
           setMessage(payload?.error || t("auth.guestUnavailable"));
         }
@@ -217,13 +217,13 @@ export default function StudentLoginPage() {
   };
 
   const handleCopyParentMessage = async () => {
-    const ok = await copyTextToClipboard(buildParentInviteMessage());
+    const ok = await copyTextToClipboard(buildParentInviteMessage(t));
     if (ok) {
       setCopyPopupIsError(false);
-      setCopyPopupMessage(COPY_INVITE_SUCCESS_MESSAGE);
+      setCopyPopupMessage(t(COPY_INVITE_SUCCESS_MESSAGE));
     } else {
       setCopyPopupIsError(true);
-      setCopyPopupMessage(COPY_INVITE_ERROR_MESSAGE);
+      setCopyPopupMessage(t(COPY_INVITE_ERROR_MESSAGE));
     }
     setCopyPopupOpen(true);
   };
@@ -246,7 +246,7 @@ export default function StudentLoginPage() {
             }`}
             role="alert"
           >
-            {guestResumeBanner.messageHe}
+            {t(guestResumeBanner.messageKey)}
           </div>
         ) : null}
 

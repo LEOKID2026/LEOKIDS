@@ -6,6 +6,7 @@
  * This is a planning artefact: it does not modify runtime or question banks.
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import {
   ISRAELI_PRIMARY_CURRICULUM_MAP,
   CURRICULUM_SOURCE_REF_PRESETS,
@@ -416,7 +417,7 @@ export const OFFICIAL_SPINE_META = {
   phase: "4B-1-math-source",
   generatedFrom:
     "utils/curriculum-audit/israeli-primary-curriculum-map.js + official-curriculum-source-registry (math grades 1–6 PDFs + POP strands; RAMA supporting)",
-  scope: "Israeli elementary grades 1–6 - source-anchored planning spine (not syllabus certification)",
+  scope: burnDownCopy("utils__curriculum-audit__official-primary-curriculum-spine", "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu"),
   geometryVsMathNote:
     "Geometry appears as its own subject in the product; mathematically it is a strand - comparison reports cross-reference both.",
   moladetaGradeBandNote:

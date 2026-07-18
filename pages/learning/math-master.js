@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import Layout from "../../components/Layout";
 import { useRouter } from "next/router";

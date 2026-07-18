@@ -1,5 +1,6 @@
 // יצירת שאלות גיאומטריה
 
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { GRADES, PI, getShapesForTopic, TOPICS } from "./geometry-constants.js";
 import {
   isPrismVolumeTriangleAllowed,
@@ -1315,7 +1316,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                   ? "shapes_basic_square_g1_medium"
                   : "shapes_basic_square_g1_hard",
           };
-          correctAnswer = "Square";
+          correctAnswer = burnDownCopy("utils__geometry-question-generator", "square");
           const sqW = Math.floor(Math.random() * 3);
           question =
             levelKey === "easy"
@@ -1349,7 +1350,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                   ? "shapes_basic_rect_g1_medium"
                   : "shapes_basic_rect_g1_hard",
           };
-          correctAnswer = "Rectangle";
+          correctAnswer = burnDownCopy("utils__geometry-question-generator", "rectangle");
           const rectW = Math.floor(Math.random() * 3);
           question =
             levelKey === "easy"
@@ -1384,7 +1385,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
             kind: "shapes_basic_square",
             patternFamily: `shapes_basic_square_${gradeKey}_${levelKey}`,
           };
-          correctAnswer = "Square";
+          correctAnswer = burnDownCopy("utils__geometry-question-generator", "square");
           question =
             levelKey === "easy"
               ? [
@@ -1417,7 +1418,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
             kind: "shapes_basic_rectangle",
             patternFamily: `shapes_basic_rect_${gradeKey}_${levelKey}`,
           };
-          correctAnswer = "Rectangle";
+          correctAnswer = burnDownCopy("utils__geometry-question-generator", "rectangle");
           question =
             levelKey === "easy"
               ? [
@@ -1538,9 +1539,9 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== PARALLEL PERPENDICULAR =====================
     case "parallel_perpendicular": {
-      const types = ["Parallel", "Perpendicular"];
+      const types = [burnDownCopy("utils__geometry-question-generator", "parallel"), "Perpendicular"];
       const selectedType = types[Math.floor(Math.random() * types.length)];
-      const isParallel = selectedType === "Parallel";
+      const isParallel = selectedType === burnDownCopy("utils__geometry-question-generator", "parallel");
 
       params = {
         type: selectedType,
@@ -1688,7 +1689,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== QUADRILATERALS =====================
     case "quadrilaterals": {
-      const types = ["Square", "Rectangle", "Parallelogram", "Trapezoid"];
+      const types = [burnDownCopy("utils__geometry-question-generator", "square"), burnDownCopy("utils__geometry-question-generator", "rectangle"), "Parallelogram", "Trapezoid"];
       const selectedType = types[Math.floor(Math.random() * types.length)];
       const quadW = Math.floor(Math.random() * 10); // 10 stem variants
       const pickQuad = (variants) => variants[quadW % variants.length];
@@ -1780,7 +1781,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     case "transformations": {
       const scenarios = [
         {
-          answer: "Translation",
+          answer: burnDownCopy("utils__geometry-question-generator", "translation"),
           subtype: "translation",
           stems: {
             easy: [
@@ -1810,7 +1811,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           },
         },
         {
-          answer: "Reflection",
+          answer: burnDownCopy("utils__geometry-question-generator", "reflection"),
           subtype: "reflection",
           stems: {
             easy: [
@@ -1840,7 +1841,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           },
         },
         {
-          answer: "Rotation",
+          answer: burnDownCopy("utils__geometry-question-generator", "rotation"),
           subtype: "rotation",
           stems: {
             easy: [
@@ -1870,7 +1871,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           },
         },
         {
-          answer: "No movement",
+          answer: burnDownCopy("utils__geometry-question-generator", "no_movement"),
           subtype: "identity",
           stems: {
             easy: [

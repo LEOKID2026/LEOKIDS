@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useI18n } from "../lib/i18n/I18nProvider.jsx";
 import {
   isCapacitorNative,
   isPwaInstalledStandalone,
@@ -6,7 +7,9 @@ import {
   usePromptPwaInstall,
 } from "../lib/pwa/pwa-install-prompt";
 
-export default function InstallAppButton({ className = "", label = "Install app" }) {
+export default function InstallAppButton({ className = "", label }) {
+  const { direction, locale, t } = useI18n();
+  const resolvedLabel = label ?? t("ui.installApp.button");
   const hasNativePrompt = usePwaInstallPromptAvailable();
   const promptInstall = usePromptPwaInstall();
   const [isIOS, setIsIOS] = useState(false);
@@ -58,6 +61,23 @@ export default function InstallAppButton({ className = "", label = "Install app"
     return null;
   }
 
+  const instructionTitle = isIOS
+    ? t("ui.installApp.iosInstructionsTitle")
+    : t("ui.installApp.instructionsTitle");
+  const instructionSteps = isIOS
+    ? [
+        t("ui.installApp.iosStep1"),
+        t("ui.installApp.iosStep2"),
+        t("ui.installApp.iosStep3"),
+        t("ui.installApp.iosStep4"),
+      ]
+    : [
+        t("ui.installApp.androidStep1"),
+        t("ui.installApp.androidStep2"),
+        t("ui.installApp.androidStep3"),
+        t("ui.installApp.androidStep4"),
+      ];
+
   return (
     <div className={className || "mt-6"}>
       <button
@@ -75,7 +95,7 @@ export default function InstallAppButton({ className = "", label = "Install app"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
-        <span>{label}</span>
+        <span>{resolvedLabel}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-4 w-4"
@@ -98,8 +118,8 @@ export default function InstallAppButton({ className = "", label = "Install app"
         >
           <div
             className="relative w-full max-w-md rounded-xl border border-white/20 bg-black/85 p-5 shadow-2xl text-left animate-slide-up"
-            dir="ltr"
-            lang="en"
+            dir={direction}
+            lang={locale}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-3 flex items-start justify-between gap-3">
@@ -119,36 +139,24 @@ export default function InstallAppButton({ className = "", label = "Install app"
                   />
                 </svg>
                 <h3 id="install-app-instructions-title" className="text-lg font-bold text-white">
-                  {isIOS ? "iOS install instructions" : "Install instructions"}
+                  {instructionTitle}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={closeInstructions}
                 className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition"
-                aria-label="Close"
+                aria-label={t("ui.installApp.close")}
               >
                 ✕
               </button>
             </div>
 
-            {isIOS ? (
-              <ol className="list-decimal list-inside space-y-2 text-sm text-white/90">
-                <li>
-                  Tap the Share button <span className="font-bold">📤</span> at the bottom of Safari
-                </li>
-                <li>Scroll down and choose &quot;Add to Home Screen&quot;</li>
-                <li>Tap &quot;Add&quot; in the top-right corner</li>
-                <li>The app will appear on your home screen</li>
-              </ol>
-            ) : (
-              <ol className="list-decimal list-inside space-y-2 text-sm text-white/90">
-                <li>In Chrome/Edge: click the install icon in the address bar</li>
-                <li>In Firefox: open the menu (☰) and choose &quot;Install&quot;</li>
-                <li>On mobile: tap &quot;Add to Home Screen&quot; in the browser menu</li>
-                <li>The app will appear on your home screen</li>
-              </ol>
-            )}
+            <ol className="list-decimal list-inside space-y-2 text-sm text-white/90">
+              {instructionSteps.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
           </div>
         </div>
       ) : null}

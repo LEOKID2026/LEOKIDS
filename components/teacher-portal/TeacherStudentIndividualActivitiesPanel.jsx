@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { REPORT_SUBJECTS, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
@@ -229,7 +230,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
               setPreview([]);
             }}
             variant="select"
-            label="Level"
+            label={globalBurnDownCopy("components__teacher-portal__TeacherStudentIndividualActivitiesPanel", "level")}
             inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
           />
           <label className="block">

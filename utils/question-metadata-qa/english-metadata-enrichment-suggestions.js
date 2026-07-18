@@ -1,6 +1,7 @@
 /**
  * Proposal-only English static pool metadata hints (does not write banks).
  */
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import * as grammarMod from "../../data/english-questions/grammar-pools.js";
 import * as sentenceMod from "../../data/english-questions/sentence-pools.js";
 import * as translationMod from "../../data/english-questions/translation-pools.js";
@@ -64,7 +65,7 @@ function suggestEnglishPrerequisite() {
   return {
     ids: [],
     confidence: "medium",
-    reason: "No automated prerequisite chain for English pools in this fast-track pass.",
+    reason: globalBurnDownCopy("utils__question-metadata-qa__english-metadata-enrichment-suggestions", "no_automated_prerequisite_chain_for_english_pools_in_this_fast_track_pas"),
   };
 }
 

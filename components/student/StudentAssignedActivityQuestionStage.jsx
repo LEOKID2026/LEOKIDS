@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useMemo } from "react";
 import GeometryExplanationDiagram from "../learning/geometry/GeometryExplanationDiagram";
 import StudentActivityQuestionSurface from "./StudentActivityQuestionSurface";
@@ -49,7 +50,7 @@ export default function StudentAssignedActivityQuestionStage({
           <div
             role="button"
             tabIndex={0}
-            aria-label="Enlarge diagram"
+            aria-label={globalBurnDownCopy("components__student__StudentAssignedActivityQuestionStage", "enlarge_diagram")}
             onClick={() => onExpandDiagram?.()}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {

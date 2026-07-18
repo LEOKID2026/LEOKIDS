@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Does not replace numeric correctAnswer, answers[], or question text after generation - only enriches metadata fields.",
+    "blanket_patternfamily_math_kind_when_absent": "Blanket patternFamily `math_${kind}` when absent",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Probe + fraction rows already carry diagnosticSkillId / expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Standard op/kind rows use deterministic math_${kind} skill id",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Edge kinds with minimal params - still safe id pattern math_*"
+  }
+}

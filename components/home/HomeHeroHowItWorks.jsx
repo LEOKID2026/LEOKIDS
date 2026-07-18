@@ -1,4 +1,4 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 
 const STEP_COLORS_BRIGHT = [
   "from-cyan-400 to-sky-500",
@@ -18,7 +18,7 @@ const STEP_COLORS_CLASSIC = [
  * @param {{ isBright: boolean }} props
  */
 export default function HomeHeroHowItWorks({ isBright }) {
-  const copy = HOMEPAGE_COPY.hero;
+  const { hero: copy } = useHomepageCopy();
   const steps = copy.heroFlowSteps;
   const colors = isBright ? STEP_COLORS_BRIGHT : STEP_COLORS_CLASSIC;
 

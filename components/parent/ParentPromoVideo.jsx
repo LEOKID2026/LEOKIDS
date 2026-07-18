@@ -1,4 +1,5 @@
 import PromoVideoClickablePreview from "../promo/PromoVideoClickablePreview.jsx";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 export const PARENT_PROMO_DESKTOP_SRC = "/videos/promo/leo-kids-parent-desktop.mp4";
 export const PARENT_PROMO_MOBILE_SRC = "/videos/promo/leo-kids-parent-mobile.mp4";
@@ -22,8 +23,8 @@ export const PARENT_PROMO_MOBILE_SRC = "/videos/promo/leo-kids-parent-mobile.mp4
 export default function ParentPromoVideo({
   desktopSrc = PARENT_PROMO_DESKTOP_SRC,
   mobileSrc = PARENT_PROMO_MOBILE_SRC,
-  title = "Meet LEO KIDS",
-  description = "Watch a short video about parent tools and how children learn on LEO KIDS.",
+  title,
+  description,
   isBright = false,
   compact = false,
   compactHome = false,
@@ -31,6 +32,9 @@ export default function ParentPromoVideo({
   embedded = false,
   className = "",
 }) {
+  const t = useT();
+  const resolvedTitle = title ?? t("ui.parent.promoTitle");
+  const resolvedDescription = description ?? t("ui.parent.promoDescription");
   const titleClass = isBright ? "text-slate-900" : "text-white";
   const textClass = isBright ? "text-slate-600" : "text-white/75";
   const frameClass = isBright
@@ -41,14 +45,14 @@ export default function ParentPromoVideo({
     return (
       <section
         className={`shrink min-w-0 ${className}`}
-        aria-label={title}
+        aria-label={resolvedTitle}
         data-testid="parent-promo-video"
       >
         <PromoVideoClickablePreview
           src={desktopSrc}
           wrapClassName={`w-[min(46vw,180px)] md:w-[clamp(280px,22vw,360px)] aspect-video overflow-hidden rounded-xl border ${frameClass}`}
           videoClassName="h-full w-full bg-black object-contain"
-          ariaLabel={title}
+          ariaLabel={resolvedTitle}
           testId="parent-promo-video-compact-home"
         />
       </section>
@@ -75,19 +79,19 @@ export default function ParentPromoVideo({
   return (
     <section
       className={`space-y-2 text-right ${featured ? "space-y-3 md:space-y-4" : ""} ${className}`}
-      aria-label={title}
+      aria-label={resolvedTitle}
       data-testid="parent-promo-video"
     >
-      <h2 className={`${titleSize} ${titleClass}`}>{title}</h2>
-      {description ? (
-        <p className={`leading-relaxed ${descSize} ${textClass}`}>{description}</p>
+      <h2 className={`${titleSize} ${titleClass}`}>{resolvedTitle}</h2>
+      {resolvedDescription ? (
+        <p className={`leading-relaxed ${descSize} ${textClass}`}>{resolvedDescription}</p>
       ) : null}
 
       <PromoVideoClickablePreview
         src={desktopSrc}
         wrapClassName={`${wrapClass} ${frameClass}`}
         videoClassName="block h-auto w-full aspect-video bg-black object-contain"
-        ariaLabel="Parents video"
+        ariaLabel={t("ui.parent.promoVideoAria")}
         testId="parent-promo-video-desktop"
       />
     </section>

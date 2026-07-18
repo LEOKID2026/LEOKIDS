@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../lib/i18n/global-burn-down-copy.js";
 import styles from "./LeoDogGame.module.css";
 import {
   LEO_DOG_CARD_GALLERY,
@@ -55,7 +56,7 @@ export default function LeoDogReferenceGallery({ mode }) {
   return (
     <div className={styles.galleryPanel}>
       <p className={styles.galleryNote}>צפייה בלבד - לא משפיע על המשחק.</p>
-      <GallerySection title="Sprites חדשים (PNG שקוף)" items={LEO_DOG_SPRITE_GALLERY} />
+      <GallerySection title={globalBurnDownCopy("components__prototypes__dev__leo-dog__LeoDogReferenceGallery", "sprites_png")} items={LEO_DOG_SPRITE_GALLERY} />
       <GallerySection title="קלפים legacy (לא למשחק)" items={LEO_DOG_CARD_GALLERY} />
     </div>
   );

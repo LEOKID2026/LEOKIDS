@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 export function SchoolReportSection({ title, empty, children }) {
   return (
     <section className="mb-4">
@@ -74,7 +75,7 @@ export function SchoolReportLabelList({ items, variant = "default" }) {
               {item.status ? (
                 <span
                   className={`text-xs shrink-0 ${
-                    item.status === "No data yet" ? "text-white/45" : "text-amber-200 font-semibold"
+                    item.status === globalBurnDownCopy("components__school-portal__SchoolReportModalBody", "no_data_yet") ? "text-white/45" : "text-amber-200 font-semibold"
                   }`}
                 >
                   {item.status}

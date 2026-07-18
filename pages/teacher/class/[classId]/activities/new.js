@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../components/Layout";
@@ -409,7 +410,7 @@ export default function TeacherNewActivityPage({ classId }) {
               setPreview([]);
             }}
             variant="select"
-            label="Level"
+            label={globalBurnDownCopy("pages__teacher__class__[classId]__activities__new", "level")}
             className=""
             inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
           />

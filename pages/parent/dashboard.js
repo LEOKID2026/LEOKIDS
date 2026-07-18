@@ -8,6 +8,7 @@ import ParentDashboardModal from "../../components/parent/ParentDashboardModal";
 import ChildGamePermissionsPanel from "../../components/parent/ChildGamePermissionsPanel";
 import ChildSubjectPermissionsPanel from "../../components/parent/ChildSubjectPermissionsPanel";
 import ParentInviteOthersButton from "../../components/parent/ParentInviteOthersButton";
+import ParentMembershipLocaleSettings from "../../components/parent/ParentMembershipLocaleSettings";
 import { PARENT_PROMO_DESKTOP_SRC } from "../../components/parent/ParentPromoVideo";
 import PromoVideoClickablePreview from "../../components/promo/PromoVideoClickablePreview";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
@@ -147,7 +148,7 @@ export default function ParentDashboardPage() {
           // Session is valid; policy gate / entitlement heal handles provisioning.
           return;
         }
-        setMessage(mapParentDashboardApiError(res.status, code, payload.error, "load_students"));
+        setMessage(t(mapParentDashboardApiError(res.status, code, payload.error, "load_students")));
         return;
       }
       setStudents(payload.students || []);
@@ -164,7 +165,7 @@ export default function ParentDashboardPage() {
       setMessage("");
       lastStudentsFetchAtRef.current = Date.now();
     } catch (_err) {
-      setMessage(mapParentDashboardApiError(0, null, null, "load_students"));
+      setMessage(t(mapParentDashboardApiError(0, null, null, "load_students")));
     }
   }, [router]);
 
@@ -255,7 +256,7 @@ export default function ParentDashboardPage() {
     const payload = await res.json();
 
     if (!res.ok) {
-      setMessage(mapParentDashboardApiError(res.status, payload?.code, payload.error, "create_student"));
+      setMessage(t(mapParentDashboardApiError(res.status, payload?.code, payload.error, "create_student")));
     } else {
       const createdStudentId = payload?.student?.id;
       let credentialMessage = "";
@@ -330,7 +331,7 @@ export default function ParentDashboardPage() {
         grade: payload?.student?.grade_level || newGrade,
       });
       await fetchStudents(session);
-      setMessage(credentialMessage || parentDashboardCreateSuccessHe());
+      setMessage(credentialMessage || t(parentDashboardCreateSuccessHe()));
     }
     setBusy(false);
   };
@@ -359,10 +360,10 @@ export default function ParentDashboardPage() {
     const payload = await res.json();
 
     if (!res.ok) {
-      setMessage(mapParentDashboardApiError(res.status, payload?.code, payload.error, "update_student"));
+      setMessage(t(mapParentDashboardApiError(res.status, payload?.code, payload.error, "update_student")));
     } else {
       await fetchStudents(session);
-      setMessage(parentDashboardUpdateSuccessHe());
+      setMessage(t(parentDashboardUpdateSuccessHe()));
     }
     setBusy(false);
   };
@@ -1041,6 +1042,8 @@ export default function ParentDashboardPage() {
         </div>
 
         {message ? <p className={T.message}>{message}</p> : null}
+
+        <ParentMembershipLocaleSettings />
 
         <section>
           {students.length === 0 ? (

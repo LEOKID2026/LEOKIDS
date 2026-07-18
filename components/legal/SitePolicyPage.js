@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../Layout";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   CONTACT_EMAIL,
   LEGAL_CROSS_LINKS,
@@ -12,6 +13,7 @@ import {
  * @param {{ policy: import("../../data/legal/sitePolicies").SITE_POLICIES[string] }} props
  */
 export default function SitePolicyPage({ policy }) {
+  const t = useT();
   const { pageTitle, metaDescription, intro, sections, route } = policy;
 
   return (
@@ -22,7 +24,9 @@ export default function SitePolicyPage({ policy }) {
       </Head>
       <article dir="ltr" lang="en" className="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-left">
         <header className="mb-8 space-y-3">
-          <p className="text-xs text-white/50">Last updated: {POLICY_LAST_UPDATED}</p>
+          <p className="text-xs text-white/50">
+            {t("ui.public.legalShell.lastUpdated", { date: POLICY_LAST_UPDATED })}
+          </p>
           <h1 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-amber-300 via-amber-200 to-rose-300 bg-clip-text text-transparent">
             {pageTitle}
           </h1>
@@ -33,13 +37,13 @@ export default function SitePolicyPage({ policy }) {
 
         <footer className="mt-10 pt-6 border-t border-white/10 space-y-4 text-sm text-white/65">
           <p>
-            Questions:{" "}
+            {t("ui.public.legalShell.questions")}{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber-300 hover:text-amber-200 underline">
               {CONTACT_EMAIL}
             </a>
           </p>
-          <nav aria-label="Legal document links">
-            <p className="mb-2 font-semibold text-white/80">Additional documents</p>
+          <nav aria-label={t("ui.public.legalShell.legalNavAria")}>
+            <p className="mb-2 font-semibold text-white/80">{t("ui.public.legalShell.additionalDocuments")}</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-1">
               {LEGAL_CROSS_LINKS.filter((l) => l.href !== route).map((link) => (
                 <li key={link.href}>

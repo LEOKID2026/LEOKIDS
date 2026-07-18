@@ -1,9 +1,10 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 /**
  * Diagnostic Engine V3 — internal types and enums (not parent-facing copy).
  */
 
 export const ENGINE_V3_VERSION = "3.0.0";
-export const ENGINE_V3_BLUEPRINT = "Diagnostic Engine V3 - fast, deep, evidence-bound";
+export const ENGINE_V3_BLUEPRINT = burnDownCopy("utils__diagnostic-engine-v3__types", "diagnostic_engine_v3_fast_deep_evidence_bound");
 
 /** Wave 1 — richest error/subskill rules */
 export const V3_WAVE1_SUBJECT_IDS = Object.freeze(["math", "hebrew", "english"]);

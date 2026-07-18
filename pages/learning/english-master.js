@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
@@ -3682,10 +3683,10 @@ export default function EnglishMaster() {
                   </p>
 
                   <ul className="list-disc pr-4 space-y-1 text-[13px]">
-                    <li>Choose grade, difficulty, and topic (vocabulary, grammar, translation, writing, and more).</li>
-                    <li>Choose a game mode: learning, challenge with timer and lives, speed, or marathon.</li>
-                    <li>Read each question carefully — sometimes you choose an answer, sometimes you type in English.</li>
-                    <li>High scores, answer streaks, stars, and badges help you level up as a player.</li>
+                    <li>{burnDownCopy("pages__learning__english-master", "choose_grade_difficulty_and_topic_vocabulary_grammar_translation_writing")}</li>
+                    <li>{burnDownCopy("pages__learning__english-master", "choose_a_game_mode_learning_challenge_with_timer_and_lives_speed_or_mara")}</li>
+                    <li>{burnDownCopy("pages__learning__english-master", "read_each_question_carefully_sometimes_you_choose_an_answer_sometimes_yo")}</li>
+                    <li>{burnDownCopy("pages__learning__english-master", "high_scores_answer_streaks_stars_and_badges_help_you_level_up_as_a_playe")}</li>
                   </ul>
                 </div>
 

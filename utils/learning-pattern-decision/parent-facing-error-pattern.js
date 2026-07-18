@@ -1,10 +1,11 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 /**
  * Parent-facing English for internal error/pattern keys — never show raw snake_case to parents.
  * English sibling of parent-facing-error-pattern-he.js.
  */
 
 /** Section heading for topic-card home actions (product copy). */
-export const PARENT_TOPIC_HOME_ACTION_HEADING = "What to try together";
+export const PARENT_TOPIC_HOME_ACTION_HEADING = burnDownCopy("utils__learning-pattern-decision__parent-facing-error-pattern", "what_to_try_together");
 
 export const PARENT_ERROR_PATTERN_LABEL = Object.freeze({
   procedural_error: "the child picks a solving method that does not fit the question",

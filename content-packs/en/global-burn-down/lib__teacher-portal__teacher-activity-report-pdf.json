@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "activity_report_teacher": "Activity report — teacher",
+    "questions": "Questions",
+    "student_summary": "Student summary",
+    "question_analysis": "Question analysis",
+    "skill_analysis": "Skill analysis"
+  }
+}

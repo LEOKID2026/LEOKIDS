@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { useOfflineHubUi } from "../../hooks/useOfflineHubUi.js";
 import OfflineHubPageShell from "../../components/offline/OfflineHubPageShell.jsx";
@@ -10,35 +11,35 @@ const OFFLINE_GAMES = [
   {
     slug: "tic-tac-toe",
     gameKey: "tic-tac-toe",
-    title: "Tic-Tac-Toe",
+    title: gamePackCopy("pages__offline__index", "tic_tac_toe"),
     emoji: "❌⭕️",
     players: "2 players",
-    blurb: "Boards from 3×3 to 7×7 with score tracking.",
+    blurb: gamePackCopy("pages__offline__index", "boards_from_3_3_to_7_7_with_score_tracking"),
   },
   {
     slug: "rock-paper-scissors",
     gameKey: "rock-paper-scissors",
-    title: "Rock · Paper · Scissors",
+    title: gamePackCopy("pages__offline__index", "rock_paper_scissors"),
     titleOneLine: true,
     emoji: "🪨📄✂️",
     players: "2 players or vs robot",
-    blurb: "Quick rounds — best of all.",
+    blurb: gamePackCopy("pages__offline__index", "quick_rounds_best_of_all"),
   },
   {
     slug: "tap-battle",
     gameKey: "tap-battle",
-    title: "Tap Battle",
+    title: gamePackCopy("pages__offline__index", "tap_battle"),
     emoji: "⚡️",
     players: "2 players",
-    blurb: "Each side taps as fast as they can — who wins?",
+    blurb: gamePackCopy("pages__offline__index", "each_side_taps_as_fast_as_they_can_who_wins"),
   },
   {
     slug: "memory-match",
     gameKey: "memory-match",
-    title: "Memory Match",
+    title: gamePackCopy("pages__offline__index", "memory_match"),
     emoji: "🧠",
     players: "1–2 players",
-    blurb: "Flip cards, find pairs, and try to win.",
+    blurb: gamePackCopy("pages__offline__index", "flip_cards_find_pairs_and_try_to_win"),
   },
 ];
 
@@ -69,8 +70,8 @@ export default function OfflineHub() {
           />
 
           <GamesHubHeader
-            title="Always-on games with Leo"
-            subtitle="Play on the same device — even offline."
+            title={gamePackCopy("pages__offline__index", "always_on_games_with_leo")}
+            subtitle={gamePackCopy("pages__offline__index", "play_on_the_same_device_even_offline")}
             titleClass={GH.hubTitle}
             subtitleClass={GH.hubSub}
           />

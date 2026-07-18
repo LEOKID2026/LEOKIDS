@@ -1,4 +1,4 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { getHomeTextClasses } from "./home-theme";
 import HomeCapabilityCard from "./HomeCapabilityCard";
 
@@ -7,7 +7,7 @@ import HomeCapabilityCard from "./HomeCapabilityCard";
  * @param {{ isBright: boolean }} props
  */
 export default function HomeLearningSystemSection({ isBright }) {
-  const copy = HOMEPAGE_COPY.learningSystem;
+  const { learningSystem: copy } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
 
   return (

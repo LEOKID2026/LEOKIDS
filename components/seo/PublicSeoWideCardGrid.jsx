@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 
@@ -12,7 +13,7 @@ import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 export default function PublicSeoWideCardGrid({
   cards,
   isBright,
-  heading = "Practice areas",
+  heading = globalBurnDownCopy("components__seo__PublicSeoWideCardGrid", "practice_areas"),
   testId,
 }) {
   if (!cards?.length) return null;

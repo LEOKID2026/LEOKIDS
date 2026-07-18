@@ -1,9 +1,11 @@
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { getHomeTextClasses } from "./home-theme";
 
 /**
  * @param {{ steps: string[], isBright: boolean, variant?: "default"|"hero" }} props
  */
 export default function HomeFlowDiagram({ steps, isBright, variant = "default" }) {
+  const { flowDiagramAria } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
   const isHero = variant === "hero";
 
@@ -22,7 +24,7 @@ export default function HomeFlowDiagram({ steps, isBright, variant = "default" }
     <div
       className="motion-reduce:transition-none"
       data-testid="home-flow-diagram"
-      aria-label="System flow"
+      aria-label={flowDiagramAria}
     >
       <div
         className={`flex flex-col items-stretch gap-2 ${

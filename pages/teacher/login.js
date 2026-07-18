@@ -78,7 +78,7 @@ function TeacherPortalTopActions({ mode, setMode, T, disabled = false, t }) {
           className={portalTabBtnClass(T, mode === "login", disabled)}
           data-testid="teacher-login-tab"
         >
-          {REG_TEACHER_LOGIN_TAB}
+          {t(REG_TEACHER_LOGIN_TAB)}
         </button>
         <button
           type="button"
@@ -90,7 +90,7 @@ function TeacherPortalTopActions({ mode, setMode, T, disabled = false, t }) {
           className={portalTabBtnClass(T, mode === "request", disabled)}
           data-testid="teacher-request-tab"
         >
-          {REG_TEACHER_TAB}
+          {t(REG_TEACHER_TAB)}
         </button>
       </div>
       <TeacherPortalAuxButtons T={T} disabled={disabled} t={t} />
@@ -323,7 +323,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
             ) : (
               <>
                 {inviteOnly ? (
-                  <p className={`${T.inviteNote} mb-3`}>{REG_TEACHER_INVITE_ONLY_LOGIN_NOTE}</p>
+                  <p className={`${T.inviteNote} mb-3`}>{t(REG_TEACHER_INVITE_ONLY_LOGIN_NOTE)}</p>
                 ) : null}
                 <form onSubmit={onSubmit} className="space-y-3" autoComplete="on" noValidate>
                   <label className="block text-sm">
@@ -360,7 +360,7 @@ export default function TeacherLoginPage({ inviteOnly }) {
                       className={T.forgotLink}
                       data-testid="teacher-forgot-password-link"
                     >
-                      {AUTH_FORGOT_PASSWORD_LINK}
+                      {t(AUTH_FORGOT_PASSWORD_LINK)}
                     </Link>
                   </p>
                 </form>

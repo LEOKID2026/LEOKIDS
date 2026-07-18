@@ -3,11 +3,6 @@ import MathG4BookShell from "../../../../../components/learning-book/MathG4BookS
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import {
-  loadMathG4Page,
-  loadMathG4TocEntries,
-  getMathG4StaticPaths,
-} from "../../../../../lib/learning-book/load-math-g4-pages";
-import {
   getMathG4PageNeighbors,
   isValidMathG4PageId,
 } from "../../../../../lib/learning-book/math-g4-registry";
@@ -42,14 +37,8 @@ export default function MathG4BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getMathG4StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadMathG4Page, loadMathG4TocEntries } = await import("../../../../../lib/learning-book/load-math-g4-pages");
   const pageId = params.pageId;
   if (!isValidMathG4PageId(pageId)) {
     return { notFound: true };

@@ -99,7 +99,7 @@ describe("guest-start error classification", () => {
       new Error("Missing LEARNING_SUPABASE_SERVICE_ROLE_KEY")
     );
     assert.equal(mapped.code, GUEST_START_ERROR_CODES.MISSING_LEARNING_SUPABASE_CONFIG);
-    assert.equal(mapped.error, "The service is not configured correctly.");
+    assert.equal(mapped.messageKey, "ui.guest.errors.serviceNotConfigured");
     assert.equal(mapped.status, 500);
   });
 
@@ -108,7 +108,7 @@ describe("guest-start error classification", () => {
       new Error("Missing LEARNING_STUDENT_ACCESS_SECRET")
     );
     assert.equal(mapped.code, GUEST_START_ERROR_CODES.MISSING_STUDENT_ACCESS_SECRET);
-    assert.equal(mapped.error, "The service is not configured correctly.");
+    assert.equal(mapped.messageKey, "ui.guest.errors.serviceNotConfigured");
   });
 
   test("maps guest mode disabled result", () => {
@@ -176,7 +176,7 @@ describe("POST /api/student/guest/start", () => {
     }
     assert.equal(res.state.statusCode, 500);
     assert.equal(res.state.body?.code, "missing_learning_supabase_config");
-    assert.equal(res.state.body?.error, "The service is not configured correctly.");
+    assert.equal(res.state.body?.messageKey, "ui.guest.errors.serviceNotConfigured");
     assert.equal(res.state.body?.ok, false);
     assert.equal(res.state.body?.stack, undefined);
     const logBlob = JSON.stringify(logs);
@@ -196,7 +196,7 @@ describe("POST /api/student/guest/start", () => {
     await handler(mockReq({}), res);
     assert.equal(res.state.statusCode, 500);
     assert.equal(res.state.body?.code, "missing_student_access_secret");
-    assert.equal(res.state.body?.error, "The service is not configured correctly.");
+    assert.equal(res.state.body?.messageKey, "ui.guest.errors.serviceNotConfigured");
   });
 
   test("guest disabled → 403 guest_mode_disabled", async () => {

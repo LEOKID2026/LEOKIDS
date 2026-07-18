@@ -3,11 +3,6 @@ import MathG5BookShell from "../../../../../components/learning-book/MathG5BookS
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import {
-  loadMathG5Page,
-  loadMathG5TocEntries,
-  getMathG5StaticPaths,
-} from "../../../../../lib/learning-book/load-math-g5-pages";
-import {
   getMathG5PageNeighbors,
   isValidMathG5PageId,
 } from "../../../../../lib/learning-book/math-g5-registry";
@@ -42,14 +37,8 @@ export default function MathG5BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getMathG5StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadMathG5Page, loadMathG5TocEntries } = await import("../../../../../lib/learning-book/load-math-g5-pages");
   const pageId = params.pageId;
   if (!isValidMathG5PageId(pageId)) {
     return { notFound: true };

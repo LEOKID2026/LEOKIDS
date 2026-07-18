@@ -189,7 +189,7 @@ export default function LearningHub({ showDevStudentSimulator }) {
       Boolean(cachedGuestPolicy || isGuestStudent(cachedStudent)) &&
       new Set(cachedGuestPolicy?.lockedHomePanels || GUEST_LOCKED_HOME_PANELS).has("progress");
     if (guestLocked) {
-      showLockToast(cachedGuestPolicy?.lockMessageHe || guestLockMessage);
+      showLockToast(t(cachedGuestPolicy?.lockMessageKey || "ui.student.guestLock"));
       return;
     }
 

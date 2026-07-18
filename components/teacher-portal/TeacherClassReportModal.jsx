@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReportHubModal from "../reporting/ReportHubModal.jsx";
 import ReportDateRangeControl from "../reporting/ReportDateRangeControl.jsx";
@@ -162,7 +163,7 @@ export default function TeacherClassReportModal({
         onApplyCustom={() => {
           const result = reportRange.applyCustom();
           if (!result.ok) {
-            alert("Please select valid dates");
+            alert(globalBurnDownCopy("components__teacher-portal__TeacherClassReportModal", "please_select_valid_dates"));
             return;
           }
           refetchForRange({ from: result.from, to: result.to });
@@ -198,10 +199,10 @@ export default function TeacherClassReportModal({
 
       <ReportHubModal
         open
-        title="Class report"
+        title={globalBurnDownCopy("components__teacher-portal__TeacherClassReportModal", "class_report")}
         onClose={onClose}
         loading={loading}
-        loadingLabel="Loading class report…"
+        loadingLabel={globalBurnDownCopy("components__teacher-portal__TeacherClassReportModal", "loading_class_report")}
         error={error}
         viewModel={viewModel}
         onStudentReport={openStudentReport}

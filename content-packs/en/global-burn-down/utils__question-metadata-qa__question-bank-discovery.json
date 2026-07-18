@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Template rows for conceptual MCQ - scanned as static metadata carriers",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Procedural math items - metadata assigned at generation time",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Procedural geometry - use geometry-conceptual-bank + generator params",
+    "english_generator_pool_merge": "English generator + pool merge"
+  }
+}

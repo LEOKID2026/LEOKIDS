@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import Layout from "../Layout";
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-identity-client";
@@ -43,11 +44,12 @@ function StudentGateShell({ pathname, children }) {
 
 function StudentGateBlockedPanel({ loginHref }) {
   const { tokens: T } = useStudentTheme();
+  const t = useT();
   return (
     <div className="max-w-md mx-auto px-4 py-8 md:py-12 space-y-4" dir="ltr" lang="en">
-      <p className={`${T.loadingText} text-left`}>Please sign in as a student to continue</p>
+      <p className={`${T.loadingText} text-left`}>{t("ui.student.accessGateSignInPrompt")}</p>
       <Link href={loginHref} className={`${T.ctaPrimary} inline-flex justify-center w-full sm:w-auto`}>
-        Student sign-in
+        {t("ui.student.accessGateSignInCta")}
       </Link>
     </div>
   );
@@ -55,6 +57,7 @@ function StudentGateBlockedPanel({ loginHref }) {
 
 export default function StudentAccessGate({ children }) {
   const router = useRouter();
+  const t = useT();
   const pathname = router.pathname || "";
   const needsGameAccess = studentPathNeedsGameAccess(pathname);
 
@@ -200,7 +203,7 @@ export default function StudentAccessGate({ children }) {
   return (
     <StudentSessionProvider value={providerValue}>
       {showLoader ? (
-        <StudentLoadingPanel message="Loading..." fullPage />
+        <StudentLoadingPanel message={t("ui.student.loading")} fullPage />
       ) : (
         pageContent
       )}

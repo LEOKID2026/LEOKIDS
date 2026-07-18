@@ -1,6 +1,7 @@
 /**
  * Proposal-only enrichment hints for question rows (does not write banks).
  */
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { SCIENCE_QUESTIONS } from "../../data/science-questions.js";
 
 import { buildScanRecord } from "./question-metadata-scanner.js";
@@ -138,7 +139,7 @@ export function buildScienceEnrichmentSuggestion(raw, record, seqIndex) {
   const narrativeReason = [
     `Topic ${topic}; scanner skill ${record.skillId}.`,
     prereq.reason,
-    params.probePower ? `probePower=${params.probePower} mapped to cognitive tier.` : "No probePower - cognitive tier inferred from difficulty.",
+    params.probePower ? `probePower=${params.probePower} mapped to cognitive tier.` : globalBurnDownCopy("utils__question-metadata-qa__question-metadata-enrichment-suggestions", "no_probepower_cognitive_tier_inferred_from_difficulty"),
   ].join(" ");
 
   return {

@@ -2,6 +2,7 @@
  * Data trust / effort / inconsistency signals for diagnostic confidence adjustment.
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { normalizeMistakeEvent } from "../mistake-event.js";
 
 export const RELIABILITY_ENGINE_V1 = "1.0.0";
@@ -94,13 +95,13 @@ export function assessReliabilityV1(maps, rawMistakesBySubject, startMs, endMs) 
     confidenceAdjustment:
       guessingLikelihood > 0.35 ? -0.15 : totalQ < 12 ? -0.22 : inconsistencyLevel === "high" ? -0.12 : 0,
     reasoning: [
-      totalQ < 12 ? "Thin volume lowers trust in diagnostic conclusions." : "Volume supports stronger reliability.",
+      totalQ < 12 ? "Thin volume lowers trust in diagnostic conclusions." : burnDownCopy("utils__learning-diagnostics__reliability-engine-v1", "volume_supports_stronger_reliability"),
       slowCorrect >= fastWrong && slowCorrect > 0
         ? "Slow correct responses are treated as effortful success-not automatic weakness."
-        : "Review pacing signals separately from knowledge gaps.",
+        : burnDownCopy("utils__learning-diagnostics__reliability-engine-v1", "review_pacing_signals_separately_from_knowledge_gaps"),
       inconsistencyLevel !== "low"
         ? "Large accuracy spread across rows suggests unstable performance or mixed contexts."
-        : "Row-level accuracy is relatively consistent.",
+        : burnDownCopy("utils__learning-diagnostics__reliability-engine-v1", "row_level_accuracy_is_relatively_consistent"),
     ],
   };
 }

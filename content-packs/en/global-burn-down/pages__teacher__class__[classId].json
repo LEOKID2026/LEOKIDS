@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "class_report": "Class report",
+    "invalid_class_id": "Invalid class ID.",
+    "you_do_not_have_permission_to_view_this_class_report": "You do not have permission to view this class report.",
+    "please_select_valid_dates": "Please select valid dates"
+  }
+}

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import CopyConfirmPopup from "../ui/CopyConfirmPopup.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
-  COPY_LEO_NUMBER_ERROR_MESSAGE_HE,
-  COPY_LEO_NUMBER_SUCCESS_MESSAGE_HE,
+  COPY_LEO_NUMBER_ERROR_MESSAGE_KEY,
+  COPY_LEO_NUMBER_SUCCESS_MESSAGE_KEY,
   copyTextToClipboard,
 } from "../../lib/ui/copy-confirm-message.js";
 
@@ -14,6 +15,7 @@ export default function StudentCopyLeoNumberChip({
   className = "",
 }) {
   const { isBright } = useStudentTheme();
+  const t = useT();
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [popupIsError, setPopupIsError] = useState(false);
@@ -25,10 +27,10 @@ export default function StudentCopyLeoNumberChip({
     const ok = await copyTextToClipboard(num);
     if (ok) {
       setPopupIsError(false);
-      setPopupMessage(COPY_LEO_NUMBER_SUCCESS_MESSAGE_HE);
+      setPopupMessage(t(COPY_LEO_NUMBER_SUCCESS_MESSAGE_KEY));
     } else {
       setPopupIsError(true);
-      setPopupMessage(COPY_LEO_NUMBER_ERROR_MESSAGE_HE);
+      setPopupMessage(t(COPY_LEO_NUMBER_ERROR_MESSAGE_KEY));
     }
     setPopupOpen(true);
   };
@@ -42,7 +44,7 @@ export default function StudentCopyLeoNumberChip({
         onClick={() => void handleClick()}
         className={className}
         data-testid="student-copy-leo-number-chip"
-        aria-label="Copy Leo number"
+        aria-label={t("ui.student.copyLeoNumberAria")}
       >
         {label}
       </button>

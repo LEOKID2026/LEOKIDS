@@ -4,11 +4,6 @@ import LearningPageBody from "../../../../../components/learning-book/LearningPa
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../lib/learning-book/learning-book-nav";
 import {
-  loadGeometryG2Page,
-  loadGeometryG2TocEntries,
-  getGeometryG2StaticPaths,
-} from "../../../../../lib/learning-book/load-geometry-g2-pages";
-import {
   getGeometryG2PageNeighbors,
   isValidGeometryG2PageId,
   GEOMETRY_G2_BOOK_META,
@@ -57,14 +52,8 @@ export default function GeometryG2BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getGeometryG2StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadGeometryG2Page, loadGeometryG2TocEntries } = await import("../../../../../lib/learning-book/load-geometry-g2-pages");
   const pageId = params.pageId;
   if (!isValidGeometryG2PageId(pageId)) {
     return { notFound: true };

@@ -53,26 +53,7 @@ export default function DynamicLearningBookPage({
   );
 }
 
-export async function getStaticPaths() {
-  const { getDynamicRouteBooks } = await import(
-    "../../../../../lib/learning-book/learning-book-catalog.js"
-  );
-  const paths = [];
-  for (const book of getDynamicRouteBooks()) {
-    for (const { params } of book.loader.getStaticPaths()) {
-      paths.push({
-        params: {
-          subject: book.subject,
-          grade: book.grade,
-          pageId: params.pageId,
-        },
-      });
-    }
-  }
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const subject = params.subject;
   const grade = params.grade;
   const pageId = params.pageId;

@@ -1,3 +1,4 @@
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { itemAllowedForGrade } from "./grade-gating.js";
 import { mergeDiagnosticContractIntoParams } from "./diagnostic-question-contract.js";
 import { sanitizeQuestionForStudentDisplay } from "./student-question-stem-sanitizer.js";
@@ -253,7 +254,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "correct": "Area",
     "options": [
       "Area",
-      "Perimeter",
+      burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
       "Volume",
       "Diagonal length only"
     ],
@@ -285,11 +286,11 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "Square tiling for a room: tile side 5 m. To know how many square meters to buy — which concept do we compute?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "square_tiling_for_a_room_tile_side_5_m_to_know_how_many_square_meters_to"),
     "correct": "Area",
     "options": [
       "Area",
-      "Perimeter",
+      burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
       "Volume",
       "Diagonal length only"
     ],
@@ -321,10 +322,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "You want a fence around a rectangular field (only the outer boundary). What do you usually compute to know how much fencing to buy?",
-    "correct": "Perimeter",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "you_want_a_fence_around_a_rectangular_field_only_the_outer_boundary_what"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
     "options": [
-      "Perimeter",
+      burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
       "Area",
       "Volume",
       "Interior angle"
@@ -357,10 +358,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_concept_minimal_contrast",
-    "question": "Planning project: a fence around a rectangular field (outer edge only). To order fence length — what do you measure?",
-    "correct": "Perimeter",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "planning_project_a_fence_around_a_rectangular_field_outer_edge_only_to_o"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
     "options": [
-      "Perimeter",
+      burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
       "Area",
       "Volume",
       "Interior angle"
@@ -393,9 +394,9 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     ],
     "suggestedQuestionType": "geometry_formula_choice",
     "question": "A rectangle is 8 m long and 3 m wide. What is the correct first step to find the floor area?",
-    "correct": "Multiply length by width",
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "multiply_length_by_width"),
     "options": [
-      "Multiply length by width",
+      burnDownCopy("utils__geometry-conceptual-bank", "multiply_length_by_width"),
       "Add all the sides (like perimeter)",
       "Multiply length by 4",
       "Divide length by 2 only"
@@ -432,9 +433,9 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     ],
     "suggestedQuestionType": "geometry_formula_choice",
     "question": "A rectangular rug for a large room: length 8 m and width 3 m. Before computing the space area — what is a good first step?",
-    "correct": "Multiply length by width",
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "multiply_length_by_width"),
     "options": [
-      "Multiply length by width",
+      burnDownCopy("utils__geometry-conceptual-bank", "multiply_length_by_width"),
       "Add all the sides (like perimeter)",
       "Multiply length by 4",
       "Divide length by 2 only"
@@ -470,10 +471,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "same_perimeter_area_trap",
       "visual_reasoning_error"
     ],
-    "question": "Two different rectangles with the same perimeter. What is true about their areas?",
-    "correct": "The areas can be different",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_different_rectangles_with_the_same_perimeter_what_is_true_about_thei"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_areas_can_be_different"),
     "options": [
-      "The areas can be different",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_areas_can_be_different"),
       "The areas are always equal",
       "The taller rectangle always has larger area regardless of width",
       "The perimeter determines the area uniquely"
@@ -498,10 +499,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "inference",
     "conceptTag": "tri_sum_180",
     "distractorFamily": "angle_misconception",
-    "question": "In a triangle, two angles are known: 50° and 60°. What can you conclude about the third angle before computing the number yet?",
-    "correct": "The sum of the three angles in a triangle is 180°",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_triangle_two_angles_are_known_50_and_60_what_can_you_conclude_about"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_sum_of_the_three_angles_in_a_triangle_is_180"),
     "options": [
-      "The sum of the three angles in a triangle is 180°",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_sum_of_the_three_angles_in_a_triangle_is_180"),
       "The third angle is always 90°",
       "The sum of angles in a triangle is 360°",
       "There is not enough information without side lengths"
@@ -533,10 +534,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "triangle_angle_sum_error",
       "angle_measure_error"
     ],
-    "question": "In a triangle, two interior angles are known (for example 50° and 60°). Before computing the exact number — which geometry principle lets you reason about the third?",
-    "correct": "The sum of the three angles in a triangle is 180°",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "triangle_two_interior_angles_known_before_computing_third"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_sum_of_the_three_angles_in_a_triangle_is_180"),
     "options": [
-      "The sum of the three angles in a triangle is 180°",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_sum_of_the_three_angles_in_a_triangle_is_180"),
       "The third angle is always 90°",
       "The sum of angles in a triangle is 360°",
       "There is not enough information without side lengths"
@@ -602,7 +603,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "concept_confusion"
     ],
     "suggestedQuestionType": "geometry_identify_shape_property",
-    "question": "In an accurate measurement, a practical right angle is close to:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_an_accurate_measurement_a_practical_right_angle_is_close_to"),
     "correct": "90°",
     "options": [
       "90°",
@@ -635,10 +636,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "parallel_corresponding_angle_error",
       "angle_equality_error"
     ],
-    "question": "Two parallel lines are cut by a transversal. A pair of corresponding angles (same relative position) — how are they related?",
-    "correct": "Equal in measure",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_parallel_lines_are_cut_by_a_transversal_a_pair_of_corresponding_angl"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "equal_in_measure"),
     "options": [
-      "Equal in measure",
+      burnDownCopy("utils__geometry-conceptual-bank", "equal_in_measure"),
       "They always add to 180° with each other",
       "Their sum is always 90°",
       "There is no fixed relationship"
@@ -665,9 +666,9 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "conceptTag": "equilateral",
     "distractorFamily": "class_mislabel",
     "question": "A triangle with all three sides equal — what is it called?",
-    "correct": "Equilateral triangle",
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "equilateral_triangle"),
     "options": [
-      "Equilateral triangle",
+      burnDownCopy("utils__geometry-conceptual-bank", "equilateral_triangle"),
       "Isosceles triangle",
       "Always a right triangle",
       "Square"
@@ -693,10 +694,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "equal_sides_review",
     "conceptTag": "equilateral_late",
     "distractorFamily": "class_mislabel",
-    "question": "Classifying by sides: a triangle with three equal sides — the matching name is:",
-    "correct": "Equilateral triangle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "classifying_by_sides_a_triangle_with_three_equal_sides_the_matching_name"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "equilateral_triangle"),
     "options": [
-      "Equilateral triangle",
+      burnDownCopy("utils__geometry-conceptual-bank", "equilateral_triangle"),
       "Isosceles triangle",
       "Always a right triangle",
       "Square"
@@ -728,10 +729,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "opposite_sides_parallel_error",
       "shape_property_misread"
     ],
-    "question": "In a parallelogram, each pair of opposite sides:",
-    "correct": "Parallel and equal in length",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_parallelogram_each_pair_of_opposite_sides"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "parallel_and_equal_in_length"),
     "options": [
-      "Parallel and equal in length",
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_and_equal_in_length"),
       "Always perpendicular",
       "Always the same length as the diagonals",
       "Form a right angle at every join"
@@ -764,10 +765,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "opposite_sides_parallel_error",
       "shape_property_misread"
     ],
-    "question": "In a parallelogram — about pairs of opposite sides it is correct to say they are:",
-    "correct": "Parallel and equal in length",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_parallelogram_about_pairs_of_opposite_sides_it_is_correct_to_say_th"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "parallel_and_equal_in_length"),
     "options": [
-      "Parallel and equal in length",
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_and_equal_in_length"),
       "Always perpendicular",
       "Always the same length as the diagonals",
       "Form a right angle at every join"
@@ -799,10 +800,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "hierarchy_inclusion_error",
       "shape_family_mislabel"
     ],
-    "question": "Every square is also a:",
-    "correct": "Rectangle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "every_square_is_also_a"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "rectangle"),
     "options": [
-      "Rectangle",
+      burnDownCopy("utils__geometry-conceptual-bank", "rectangle"),
       "Only a trapezoid",
       "Circle",
       "Triangle"
@@ -834,10 +835,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "hierarchy_inclusion_error",
       "shape_family_mislabel"
     ],
-    "question": "In terms of inclusion: every square has the properties of a:",
-    "correct": "Rectangle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_terms_of_inclusion_every_square_has_the_properties_of_a"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "rectangle"),
     "options": [
-      "Rectangle",
+      burnDownCopy("utils__geometry-conceptual-bank", "rectangle"),
       "Only a trapezoid",
       "Circle",
       "Triangle"
@@ -870,7 +871,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "reflection_vs_rotation_confusion",
       "transform_confusion"
     ],
-    "question": "Reflection across a line of symmetry is most like:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "reflection_across_a_line_of_symmetry_is_most_like"),
     "correct": "A mirror image",
     "options": [
       "A mirror image",
@@ -906,7 +907,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "reflection_vs_rotation_confusion",
       "transform_confusion"
     ],
-    "question": "Reflection across a line of symmetry — the closest image is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "reflection_across_a_line_of_symmetry_the_closest_image_is"),
     "correct": "A mirror image",
     "options": [
       "A mirror image",
@@ -942,10 +943,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "congruence_vs_similarity_error",
       "transform_confusion"
     ],
-    "question": "Two congruent shapes mean that:",
-    "correct": "Same shape and same size (you can place one on the other)",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_congruent_shapes_mean_that"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "same_shape_and_same_size_you_can_place_one_on_the_other"),
     "options": [
-      "Same shape and same size (you can place one on the other)",
+      burnDownCopy("utils__geometry-conceptual-bank", "same_shape_and_same_size_you_can_place_one_on_the_other"),
       "Only the same area but a different shape",
       "Only the same perimeter",
       "Only equal angles with no regard to sides"
@@ -971,10 +972,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "definition",
     "conceptTag": "perp_meeting",
     "distractorFamily": "line_relation",
-    "question": "Two lines perpendicular to each other — what is true?",
-    "correct": "They meet at a 90° angle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_lines_perpendicular_to_each_other_what_is_true"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "they_meet_at_a_90_angle"),
     "options": [
-      "They meet at a 90° angle",
+      burnDownCopy("utils__geometry-conceptual-bank", "they_meet_at_a_90_angle"),
       "They never meet",
       "They are always the same length",
       "They are always parallel"
@@ -1000,10 +1001,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "definition_late",
     "conceptTag": "perp_meeting_late",
     "distractorFamily": "line_relation",
-    "question": "Two lines perpendicular to each other — what is a correct property at the intersection?",
-    "correct": "They meet at a 90° angle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_lines_perpendicular_to_each_other_what_is_a_correct_property_at_the_"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "they_meet_at_a_90_angle"),
     "options": [
-      "They meet at a 90° angle",
+      burnDownCopy("utils__geometry-conceptual-bank", "they_meet_at_a_90_angle"),
       "They never meet",
       "They are always the same length",
       "They are always parallel"
@@ -1029,10 +1030,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_def",
     "conceptTag": "parallel_never_meet",
     "distractorFamily": "line_relation",
-    "question": "Two parallel lines in the same plane — what is a correct property?",
-    "correct": "They have no intersection point and stay the same distance apart",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_parallel_lines_in_the_same_plane_what_is_a_correct_property"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "they_have_no_intersection_point_and_stay_the_same_distance_apart"),
     "options": [
-      "They have no intersection point and stay the same distance apart",
+      burnDownCopy("utils__geometry-conceptual-bank", "they_have_no_intersection_point_and_stay_the_same_distance_apart"),
       "They must meet at one point",
       "They are always perpendicular",
       "They are always equal in length"
@@ -1058,10 +1059,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_def_late",
     "conceptTag": "parallel_never_meet_late",
     "distractorFamily": "line_relation",
-    "question": "Two parallel lines in the same plane — about intersection between them it is true that:",
-    "correct": "They have no intersection point and stay the same distance apart",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "two_parallel_lines_in_the_same_plane_about_intersection_between_them_it_"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "they_have_no_intersection_point_and_stay_the_same_distance_apart"),
     "options": [
-      "They have no intersection point and stay the same distance apart",
+      burnDownCopy("utils__geometry-conceptual-bank", "they_have_no_intersection_point_and_stay_the_same_distance_apart"),
       "They must meet at one point",
       "They are always perpendicular",
       "They are always equal in length"
@@ -1088,11 +1089,11 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_symbol",
     "conceptTag": "parallel_symbol",
     "distractorFamily": "line_relation",
-    "question": "The symbol ∥ usually marks:",
-    "correct": "Parallel lines",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_symbol_usually_marks"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines"),
     "options": [
-      "Parallel lines",
-      "Perpendicular lines",
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines"),
+      burnDownCopy("utils__geometry-conceptual-bank", "perpendicular_lines"),
       "Lines equal in length",
       "Lines that cut a 45° angle"
     ],
@@ -1116,10 +1117,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare_relation_mid",
     "conceptTag": "parallel_vs_perp_mid",
     "distractorFamily": "line_relation",
-    "question": "What is true about parallel lines in the same plane?",
-    "correct": "They do not meet and keep a constant distance",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "what_is_true_about_parallel_lines_in_the_same_plane"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "they_do_not_meet_and_keep_a_constant_distance"),
     "options": [
-      "They do not meet and keep a constant distance",
+      burnDownCopy("utils__geometry-conceptual-bank", "they_do_not_meet_and_keep_a_constant_distance"),
       "They always meet at a 90° angle",
       "They must be the same length",
       "They are always perpendicular"
@@ -1143,11 +1144,11 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "perp_symbol_mid",
     "conceptTag": "perp_symbol_mid",
     "distractorFamily": "line_relation",
-    "question": "The symbol ⊥ usually marks:",
-    "correct": "Perpendicular lines",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_symbol_usually_marks_2"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "perpendicular_lines"),
     "options": [
-      "Perpendicular lines",
-      "Parallel lines",
+      burnDownCopy("utils__geometry-conceptual-bank", "perpendicular_lines"),
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines"),
       "Lines equal in length",
       "Lines that cannot be compared"
     ],
@@ -1170,7 +1171,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "perp_angle_mid",
     "conceptTag": "perp_angle_mid",
     "distractorFamily": "line_relation",
-    "question": "When two lines are perpendicular, their intersection angle is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "when_two_lines_are_perpendicular_their_intersection_angle_is"),
     "correct": "90°",
     "options": [
       "90°",
@@ -1204,10 +1205,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "dimension_confusion",
       "measurement_error"
     ],
-    "question": "The volume of a box mainly expresses:",
-    "correct": "How much space is occupied inside the box in three dimensions",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_volume_of_a_box_mainly_expresses"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "how_much_space_is_occupied_inside_the_box_in_three_dimensions"),
     "options": [
-      "How much space is occupied inside the box in three dimensions",
+      burnDownCopy("utils__geometry-conceptual-bank", "how_much_space_is_occupied_inside_the_box_in_three_dimensions"),
       "Only the length of the longest edge",
       "Only the area of one face",
       "Only the perimeter of the base"
@@ -1239,10 +1240,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "dimension_confusion",
       "measurement_error"
     ],
-    "question": "When we talk about the volume of a closed box — what is the main geometric meaning?",
-    "correct": "How much space is occupied inside the box in three dimensions",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "when_we_talk_about_the_volume_of_a_closed_box_what_is_the_main_geometric"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "how_much_space_is_occupied_inside_the_box_in_three_dimensions"),
     "options": [
-      "How much space is occupied inside the box in three dimensions",
+      burnDownCopy("utils__geometry-conceptual-bank", "how_much_space_is_occupied_inside_the_box_in_three_dimensions"),
       "Only the length of the longest edge",
       "Only the area of one face",
       "Only the perimeter of the base"
@@ -1274,7 +1275,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "formula_selection_error",
       "volume_unit_error"
     ],
-    "question": "Rectangular box: first you want the volume. What is a reasonable calculation order?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "rectangular_box_first_you_want_the_volume_what_is_a_reasonable_calculati"),
     "correct": "length × width × height",
     "options": [
       "length × width × height",
@@ -1305,10 +1306,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "relation",
     "conceptTag": "d_2r",
     "distractorFamily": "circle_terms",
-    "question": "In a circle, the relationship between diameter and radius is:",
-    "correct": "The diameter is twice the radius",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_circle_the_relationship_between_diameter_and_radius_is"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_diameter_is_twice_the_radius"),
     "options": [
-      "The diameter is twice the radius",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_diameter_is_twice_the_radius"),
       "The radius is twice the diameter",
       "They are always equal",
       "There is no fixed relationship"
@@ -1343,10 +1344,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "circumference_vs_area_confusion",
       "measurement_error"
     ],
-    "question": "How many meters a bicycle wheel travels in one full circular path is mainly related to:",
-    "correct": "The circumference of the circle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "how_many_meters_a_bicycle_wheel_travels_in_one_full_circular_path_is_mai"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_circumference_of_the_circle"),
     "options": [
-      "The circumference of the circle",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_circumference_of_the_circle"),
       "The area of the circle",
       "The volume of the tire",
       "Radius alone without multiplication"
@@ -1374,10 +1375,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "hypotenuse_side",
     "conceptTag": "hyp_opposite_right",
     "distractorFamily": "pythagoras_misconception",
-    "question": "In a right triangle, the hypotenuse is:",
-    "correct": "The side opposite the right angle",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_right_triangle_the_hypotenuse_is"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_side_opposite_the_right_angle"),
     "options": [
-      "The side opposite the right angle",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_side_opposite_the_right_angle"),
       "Always the shortest side",
       "Any side that was not chosen",
       "Always a side next to the right angle"
@@ -1404,10 +1405,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "first_step",
     "conceptTag": "when_pyth",
     "distractorFamily": "strategy_error",
-    "question": "In a right triangle, two legs are known and you want the hypotenuse. What is the right tool?",
-    "correct": "The Pythagorean theorem (sum of squares of the legs = square of the hypotenuse)",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_right_triangle_two_legs_are_known_and_you_want_the_hypotenuse_what_"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_pythagorean_theorem_sum_of_squares_of_the_legs_square_of_the_hypoten"),
     "options": [
-      "The Pythagorean theorem (sum of squares of the legs = square of the hypotenuse)",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_pythagorean_theorem_sum_of_squares_of_the_legs_square_of_the_hypoten"),
       "A straight sum of the three sides",
       "Triangle area (half base times height) only",
       "The perimeter of the triangle only"
@@ -1462,7 +1463,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "cube_faces_late",
     "conceptTag": "cube_faces_late",
     "distractorFamily": "solid_confusion",
-    "question": "In a 3D solid of type cube — how many square faces are there usually?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_3d_solid_of_type_cube_how_many_square_faces_are_there_usually"),
     "correct": "6",
     "options": [
       "6",
@@ -1491,7 +1492,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare",
     "conceptTag": "apex",
     "distractorFamily": "solid_confusion",
-    "question": "What is true about a pyramid versus a prism with the same base?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "what_is_true_about_a_pyramid_versus_a_prism_with_the_same_base"),
     "correct": "A pyramid has one apex; a prism has two similar parallel bases",
     "options": [
       "A pyramid has one apex; a prism has two similar parallel bases",
@@ -1520,7 +1521,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare_late",
     "conceptTag": "apex_late",
     "distractorFamily": "solid_confusion",
-    "question": "Geometric comparison: pyramid versus prism with the same base shape — what is true?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "geometric_comparison_pyramid_versus_prism_with_the_same_base_shape_what_"),
     "correct": "A pyramid has one apex; a prism has two similar parallel bases",
     "options": [
       "A pyramid has one apex; a prism has two similar parallel bases",
@@ -1550,7 +1551,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "angles_around_point",
     "conceptTag": "360_at_vertex",
     "distractorFamily": "tiling_angle",
-    "question": "In a tiling around every meeting point of regular shapes, the sum of angles around the point is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_tiling_around_every_meeting_point_of_regular_shapes_the_sum_of_angl"),
     "correct": "360°",
     "options": [
       "360°",
@@ -1578,7 +1579,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "square_tile_angle",
     "conceptTag": "square_tile_90",
     "distractorFamily": "tiling_angle",
-    "question": "In a regular tiling of squares, a typical interior angle in each square is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_regular_tiling_of_squares_a_typical_interior_angle_in_each_square_i"),
     "correct": "90°",
     "options": [
       "90°",
@@ -1607,7 +1608,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "triangle_tile_angle",
     "conceptTag": "triangle_tile_60",
     "distractorFamily": "tiling_angle",
-    "question": "In a regular tiling of equilateral triangles, a typical interior angle in each triangle is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_regular_tiling_of_equilateral_triangles_a_typical_interior_angle_in"),
     "correct": "60°",
     "options": [
       "60°",
@@ -1635,7 +1636,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "triangle",
     "conceptTag": "perpendicular_to_base",
     "distractorFamily": "height_confusion",
-    "question": "An altitude in a triangle (relative to a given base) is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "an_altitude_in_a_triangle_relative_to_a_given_base_is"),
     "correct": "A perpendicular segment from the opposite vertex to the base or its extension",
     "options": [
       "A perpendicular segment from the opposite vertex to the base or its extension",
@@ -1664,10 +1665,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "property",
     "conceptTag": "diag_equal_rect",
     "distractorFamily": "diagonal_confusion",
-    "question": "In a rectangle, the two diagonals:",
-    "correct": "Equal in length and bisect each other",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_rectangle_the_two_diagonals"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "equal_in_length_and_bisect_each_other"),
     "options": [
-      "Equal in length and bisect each other",
+      burnDownCopy("utils__geometry-conceptual-bank", "equal_in_length_and_bisect_each_other"),
       "Always perpendicular at 90° to each other at the center only in a general rectangle",
       "Always different in length",
       "Always equal to a side"
@@ -1692,10 +1693,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "compare_relation",
     "conceptTag": "parallel_vs_perp",
     "distractorFamily": "line_relation",
-    "question": "What is the main difference between parallel lines and perpendicular lines?",
-    "correct": "Parallel lines do not meet; perpendicular lines meet at 90°",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "what_is_the_main_difference_between_parallel_lines_and_perpendicular_lin"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines_do_not_meet_perpendicular_lines_meet_at_90"),
     "options": [
-      "Parallel lines do not meet; perpendicular lines meet at 90°",
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines_do_not_meet_perpendicular_lines_meet_at_90"),
       "Parallel lines are always shorter",
       "Perpendicular lines never meet",
       "There is no difference — they are the same"
@@ -1719,11 +1720,11 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "symbol_recognition",
     "conceptTag": "perp_symbol",
     "distractorFamily": "line_relation",
-    "question": "The symbol ⊥ usually marks:",
-    "correct": "Perpendicular lines",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_symbol_usually_marks_2"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "perpendicular_lines"),
     "options": [
-      "Perpendicular lines",
-      "Parallel lines",
+      burnDownCopy("utils__geometry-conceptual-bank", "perpendicular_lines"),
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines"),
       "Lines equal in length",
       "Lines that cannot be compared"
     ],
@@ -1747,7 +1748,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "perp_def_late",
     "conceptTag": "perp_def_late",
     "distractorFamily": "line_relation",
-    "question": "When two lines are perpendicular, their intersection angle is:",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "when_two_lines_are_perpendicular_their_intersection_angle_is"),
     "correct": "90°",
     "options": [
       "90°",
@@ -1774,11 +1775,11 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "parallel_symbol_late",
     "conceptTag": "parallel_symbol_late",
     "distractorFamily": "line_relation",
-    "question": "The symbol ∥ usually marks:",
-    "correct": "Parallel lines",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_symbol_usually_marks"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines"),
     "options": [
-      "Parallel lines",
-      "Perpendicular lines",
+      burnDownCopy("utils__geometry-conceptual-bank", "parallel_lines"),
+      burnDownCopy("utils__geometry-conceptual-bank", "perpendicular_lines"),
       "Lines equal in length",
       "Lines that cut a 45° angle"
     ],
@@ -1802,10 +1803,10 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "property_late",
     "conceptTag": "diag_equal_rect_late",
     "distractorFamily": "diagonal_confusion",
-    "question": "In a rectangle — about the two diagonals it is true that:",
-    "correct": "Equal in length and bisect each other",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_rectangle_about_the_two_diagonals_it_is_true_that"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "equal_in_length_and_bisect_each_other"),
     "options": [
-      "Equal in length and bisect each other",
+      burnDownCopy("utils__geometry-conceptual-bank", "equal_in_length_and_bisect_each_other"),
       "Always perpendicular at 90° to each other at the center only in a general rectangle",
       "Always different in length",
       "Always equal to a side"
@@ -1866,7 +1867,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "polygon_side_count_error",
       "careless_error"
     ],
-    "question": "How many sides does a square have?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "how_many_sides_does_a_square_have"),
     "correct": "4",
     "options": [
       "4",
@@ -1901,7 +1902,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "polygon_side_count_error",
       "careless_error"
     ],
-    "question": "In a quadrilateral with all sides equal (a square) — how many sides are there?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_quadrilateral_with_all_sides_equal_a_square_how_many_sides_are_ther"),
     "correct": "4",
     "options": [
       "4",
@@ -1937,7 +1938,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_property_misread"
     ],
     "binary": false,
-    "question": "In a rectangle, all four interior angles are right angles (90°). True or false?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_rectangle_all_four_interior_angles_are_right_angles_90_true_or_fals"),
     "correct": "True",
     "options": [
       "True",
@@ -1973,7 +1974,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_property_misread"
     ],
     "binary": false,
-    "question": "In a rectangle, all four interior angles are right angles (90°). True or false?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "in_a_rectangle_all_four_interior_angles_are_right_angles_90_true_or_fals"),
     "correct": "True",
     "options": [
       "True",
@@ -2009,7 +2010,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_family_mislabel"
     ],
     "binary": false,
-    "question": "Every rhombus is always also a rectangle. True or false?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "every_rhombus_is_always_also_a_rectangle_true_or_false"),
     "correct": "False",
     "options": [
       "False",
@@ -2045,7 +2046,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "shape_family_mislabel"
     ],
     "binary": false,
-    "question": "Claim: every rhombus is necessarily also a rectangle. True or false?",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "claim_every_rhombus_is_necessarily_also_a_rectangle_true_or_false"),
     "correct": "False",
     "options": [
       "False",
@@ -2110,13 +2111,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "translation",
     "conceptTag": "slide",
     "distractorFamily": "transform_confusion",
-    "question": "The shape moved to a new place with no rotation and no size change — which move is this?",
-    "correct": "Translation",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_shape_moved_to_a_new_place_with_no_rotation_and_no_size_change_which"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "translation"),
     "options": [
-      "Translation",
-      "Reflection",
-      "Rotation",
-      "No movement"
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement")
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2139,13 +2140,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "reflection",
     "conceptTag": "mirror_flip",
     "distractorFamily": "transform_confusion",
-    "question": "The shape flips like a mirror across a line — which move is this?",
-    "correct": "Reflection",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_shape_flips_like_a_mirror_across_a_line_which_move_is_this"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
     "options": [
-      "Reflection",
-      "Translation",
-      "Rotation",
-      "No movement"
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement")
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2169,13 +2170,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "rotation",
     "conceptTag": "turn",
     "distractorFamily": "transform_confusion",
-    "question": "The shape rotates about a point without changing size — which move is this?",
-    "correct": "Rotation",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_shape_rotates_about_a_point_without_changing_size_which_move_is_this"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
     "options": [
-      "Rotation",
-      "Translation",
-      "Reflection",
-      "No movement"
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement")
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2199,13 +2200,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "identity",
     "conceptTag": "no_motion",
     "distractorFamily": "transform_confusion",
-    "question": "The shape stayed in the same place and orientation — which transformation fits?",
-    "correct": "No movement",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "the_shape_stayed_in_the_same_place_and_orientation_which_transformation_"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "no_movement"),
     "options": [
-      "No movement",
-      "Translation",
-      "Reflection",
-      "Rotation"
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement"),
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation")
     ],
     "difficulty": "basic",
     "cognitiveLevel": "recall",
@@ -2227,13 +2228,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "reflection_hard",
     "conceptTag": "mirror_axis",
     "distractorFamily": "transform_confusion",
-    "question": "Challenge: only the orientation changes like a mirror across an axis, size preserved — which transformation?",
-    "correct": "Reflection",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "challenge_only_the_orientation_changes_like_a_mirror_across_an_axis_size"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
     "options": [
-      "Reflection",
-      "Translation",
-      "Rotation",
-      "No movement"
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement")
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -2255,13 +2256,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "translation_hard",
     "conceptTag": "slide_only",
     "distractorFamily": "transform_confusion",
-    "question": "Challenge: only the position changes, with no rotation and no size change — which move?",
-    "correct": "Translation",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "challenge_only_the_position_changes_with_no_rotation_and_no_size_change_"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "translation"),
     "options": [
-      "Translation",
-      "Reflection",
-      "Rotation",
-      "No movement"
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement")
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -2283,13 +2284,13 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "subtype": "rotation_hard",
     "conceptTag": "turn_center",
     "distractorFamily": "transform_confusion",
-    "question": "Challenge: the shape rotates about a fixed center with no size change — which transformation?",
-    "correct": "Rotation",
+    "question": burnDownCopy("utils__geometry-conceptual-bank", "challenge_the_shape_rotates_about_a_fixed_center_with_no_size_change_whi"),
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
     "options": [
-      "Rotation",
-      "Translation",
-      "Reflection",
-      "No movement"
+      burnDownCopy("utils__geometry-conceptual-bank", "rotation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "translation"),
+      burnDownCopy("utils__geometry-conceptual-bank", "reflection"),
+      burnDownCopy("utils__geometry-conceptual-bank", "no_movement")
     ],
     "difficulty": "advanced",
     "cognitiveLevel": "understanding",
@@ -2316,7 +2317,7 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
     "correct": "Area",
     "options": [
       "Area",
-      "Perimeter",
+      burnDownCopy("utils__geometry-conceptual-bank", "perimeter"),
       "Angle",
       "Length only"
     ],
@@ -2348,9 +2349,9 @@ export const GEOMETRY_CONCEPTUAL_ITEMS = [
       "formula_selection_error"
     ],
     "question": "A square has perimeter 20 cm. What is true about the side length?",
-    "correct": "The side length is 5 cm because 20 ÷ 4 = 5",
+    "correct": burnDownCopy("utils__geometry-conceptual-bank", "the_side_length_is_5_cm_because_20_4_5"),
     "options": [
-      "The side length is 5 cm because 20 ÷ 4 = 5",
+      burnDownCopy("utils__geometry-conceptual-bank", "the_side_length_is_5_cm_because_20_4_5"),
       "The side length is 20 cm",
       "You cannot tell without the area",
       "The side length is 10 cm"

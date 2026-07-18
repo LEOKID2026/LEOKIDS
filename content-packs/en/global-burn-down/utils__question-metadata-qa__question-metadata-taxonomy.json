@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Skill ≥85% coverage, subskill ≥50%, avg completeness ≥0.65, high-risk share <8%.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Skill coverage usable but substantial gaps in cognitive/errors/prereqs.",
+    "large_missing_skill_or_inconsistent_tagging": "Large missing skill or inconsistent tagging.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "Skill id largely absent - diagnosis routing unreliable."
+  }
+}

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../../../lib/games/game-pack-copy.js";
 import { useRouter } from "next/router";
 import OfflineFullGamesRouteGuard from "../../../../components/offline/OfflineFullGamesRouteGuard.jsx";
 import OfflineEducationalGameShell from "../../../../components/educational-games/OfflineEducationalGameShell.jsx";
@@ -22,7 +23,7 @@ export default function StudentOfflineEducationalGamePage() {
         className="flex min-h-dvh items-center justify-center bg-gray-950 text-white"
         dir="ltr"
       >
-        <p>Game not found</p>
+        <p>{gamePackCopy("pages__student__offline__educational__[gameKey]", "game_not_found")}</p>
       </div>
     );
   }

@@ -4,7 +4,7 @@ import {
 } from "../../../../lib/admin-server/admin-request.server.js";
 import {
   GUEST_FEATURE_DEFAULTS,
-  GUEST_FEATURE_LABELS_HE,
+  GUEST_FEATURE_LABEL_KEYS,
   loadGuestFeaturePermissionsMap,
   upsertGuestFeaturePermissions,
 } from "../../../../lib/guest/guest-feature-permissions.server.js";
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       const map = await loadGuestFeaturePermissionsMap(ctx.serviceRole);
       const features = Object.keys(GUEST_FEATURE_DEFAULTS).map((featureKey) => ({
         featureKey,
-        labelHe: GUEST_FEATURE_LABELS_HE[featureKey] || featureKey,
+        labelKey: GUEST_FEATURE_LABEL_KEYS[featureKey] || featureKey,
         enabledForGuest: map[featureKey] === true,
         defaultEnabled: GUEST_FEATURE_DEFAULTS[featureKey] === true,
       }));
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       const map = await upsertGuestFeaturePermissions(ctx.serviceRole, features);
       const out = Object.keys(GUEST_FEATURE_DEFAULTS).map((featureKey) => ({
         featureKey,
-        labelHe: GUEST_FEATURE_LABELS_HE[featureKey] || featureKey,
+        labelKey: GUEST_FEATURE_LABEL_KEYS[featureKey] || featureKey,
         enabledForGuest: map[featureKey] === true,
         defaultEnabled: GUEST_FEATURE_DEFAULTS[featureKey] === true,
       }));

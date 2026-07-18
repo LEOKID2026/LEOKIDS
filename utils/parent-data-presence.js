@@ -3,6 +3,7 @@
  * Does not change storage or scoring — classification and copy only.
  */
 
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { practicedSubjectCountFromReport } from "../lib/learning/normalized-subject-practice.js";
 import {
   rawMetricStrengthMixedSubjectHe,
@@ -163,7 +164,7 @@ export function deriveRawMetricStrengthLinesHe(summary, report = null, weakSubje
     { subjectId: "geometry", label: "Geometry", q: summary.geometryQuestions, acc: summary.geometryAccuracy },
     {
       subjectId: "moledet-geography",
-      label: "Social Studies & Geography",
+      label: globalBurnDownCopy("utils__parent-data-presence", "social_studies_geography"),
       q: summary.moledetGeographyQuestions,
       acc: summary.moledetGeographyAccuracy,
     },

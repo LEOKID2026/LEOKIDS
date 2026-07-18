@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "Plaintext PIN will not be retrievable after this response. Store securely."
+  }
+}

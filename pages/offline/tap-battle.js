@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useState, useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
 import MaybeGameAccessGuard from "../../components/offline/MaybeGameAccessGuard.jsx";
@@ -116,10 +117,10 @@ export default function TapBattle() {
     let message = "Tie!";
     const nextScore = { ...score };
     if (counts.left > counts.right) {
-      message = "Left side wins! 🏆";
+      message = gamePackCopy("pages__offline__tap-battle", "left_side_wins");
       nextScore.left += 1;
     } else if (counts.right > counts.left) {
-      message = "Right side wins! 🏆";
+      message = gamePackCopy("pages__offline__tap-battle", "right_side_wins");
       nextScore.right += 1;
     } else {
       nextScore.ties += 1;

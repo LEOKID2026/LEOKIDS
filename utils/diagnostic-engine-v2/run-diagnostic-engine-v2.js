@@ -2,6 +2,7 @@
  * Diagnostic Engine V2 — אורכסטרציה end-to-end לפי stage1 blueprint.
  * תלות: מפות דוח V2 לאחר enrich, טעויות גולמיות, חלון זמן.
  */
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { splitTopicRowKey } from "../parent-report-row-diagnostics.js";
 import { filterMistakesForRow } from "../parent-report-row-trend.js";
 import { mathReportBaseOperationKey } from "../math-report-generator.js";
@@ -388,9 +389,9 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
     engineVersion: ENGINE_VERSION,
     generatedAt,
     evidenceFoundation: {
-      schema: "MistakeEventV1+report_row",
+      schema: burnDownCopy("utils__diagnostic-engine-v2__run-diagnostic-engine-v2", "mistakeeventv1_report_row"),
       mappingChain: "question_event → topicRowKey → bucketKey → taxonomyId (bridge)",
-      eventCountHint: "Summarized per-row filters; see evidenceTrace on each unit",
+      eventCountHint: burnDownCopy("utils__diagnostic-engine-v2__run-diagnostic-engine-v2", "summarized_per_row_filters_see_evidencetrace_on_each_unit"),
     },
     units,
     subjectRollup,

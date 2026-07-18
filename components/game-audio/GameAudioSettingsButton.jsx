@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { useGameAudioOptional } from "../../hooks/useGameAudio.js";
 import GameAudioSettingsModal from "./GameAudioSettingsModal.jsx";
 import { GAME_AUDIO_SETTINGS_BUTTON_CLASS } from "./game-audio-settings-button-styles.js";
@@ -7,6 +8,7 @@ import { GAME_AUDIO_SETTINGS_BUTTON_CLASS } from "./game-audio-settings-button-s
  * Unified game audio control — opens full settings panel via body portal (not dropdown).
  */
 export default function GameAudioSettingsButton({ className = "", buttonClassName = "" }) {
+  const { t } = useI18n();
   const audio = useGameAudioOptional();
   const [showPanel, setShowPanel] = useState(false);
 
@@ -14,6 +16,7 @@ export default function GameAudioSettingsButton({ className = "", buttonClassNam
 
   const masterOn = audio.settings.masterEnabled;
   const btnClass = buttonClassName || GAME_AUDIO_SETTINGS_BUTTON_CLASS;
+  const settingsLabel = t("ui.audio.settings");
 
   return (
     <>
@@ -22,10 +25,10 @@ export default function GameAudioSettingsButton({ className = "", buttonClassNam
           type="button"
           onClick={() => setShowPanel(true)}
           className={btnClass}
-          aria-label="Audio settings"
+          aria-label={settingsLabel}
           aria-expanded={showPanel}
           aria-haspopup="dialog"
-          title="Audio settings"
+          title={settingsLabel}
         >
           <span aria-hidden="true">{masterOn ? "🔊" : "🔇"}</span>
         </button>

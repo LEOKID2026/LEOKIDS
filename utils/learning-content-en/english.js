@@ -1,10 +1,11 @@
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
 import { WORD_LISTS } from "../../data/english-questions/index.js";
 
 const EXPLANATION_EN = {
-  "עם I משתמשים ב-am.": "With I we use am.",
-  "עם he/she/it משתמשים ב-is.": "With he/she/it we use is.",
-  "עם you/we/they משתמשים ב-are.": "With you/we/they we use are.",
+  "עם I משתמשים ב-am.": burnDownCopy("utils__learning-content-en__english", "with_i_we_use_am"),
+  "עם he/she/it משתמשים ב-is.": burnDownCopy("utils__learning-content-en__english", "with_he_she_it_we_use_is"),
+  "עם you/we/they משתמשים ב-are.": burnDownCopy("utils__learning-content-en__english", "with_you_we_they_we_use_are"),
 };
 
 const PHONICS_LABELS = {
@@ -23,10 +24,10 @@ const PHONICS_LABELS = {
 };
 
 const POOL_FALLBACK_EN = {
-  הבנתי: "Got it",
-  "אנסה שוב": "Try again",
-  "אחזור לתפריט": "Back to menu",
-  "בחרו נושא אחר": "Choose another topic",
+  הבנתי: burnDownCopy("utils__learning-content-en__english", "got_it"),
+  "אנסה שוב": burnDownCopy("utils__learning-content-en__english", "try_again"),
+  "אחזור לתפריט": burnDownCopy("utils__learning-content-en__english", "back_to_menu"),
+  "בחרו נושא אחר": burnDownCopy("utils__learning-content-en__english", "choose_another_topic"),
 };
 
 function englishWordsFromList(listKey, excludeEn) {

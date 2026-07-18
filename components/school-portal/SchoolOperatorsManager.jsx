@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { SchoolCardGrid, SchoolErrorBlock, SchoolLoadingBlock } from "./SchoolDrillDown";
@@ -93,7 +94,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
         ) : error ? (
           <SchoolErrorBlock message={error} onRetry={() => void load()} />
         ) : operators.length === 0 ? (
-          <SchoolEmptyState title="No secretaries linked" />
+          <SchoolEmptyState title={globalBurnDownCopy("components__school-portal__SchoolOperatorsManager", "no_secretaries_linked")} />
         ) : (
           <SchoolCardGrid columns={1}>
             {operators.map((op) => (

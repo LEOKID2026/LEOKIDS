@@ -2,6 +2,7 @@
  * Diagnostic Engine V3 — smart early stopping / diagnosis stage (internal).
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { DIAGNOSIS_STAGE } from "./types.js";
 import { ERROR_TYPE_V3 } from "./error-types-v3.js";
 

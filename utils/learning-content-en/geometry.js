@@ -1,35 +1,10 @@
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
+import geometryContent from "../../content-packs/en/learning/geometry-content.json" with { type: "json" };
 
-export const GEOMETRY_EN_LABEL_OPTIONS = {
-  parallel_perpendicular: ["Parallel", "Perpendicular"],
-  triangles: ["Equilateral", "Isosceles", "Scalene"],
-  quadrilaterals: ["Square", "Rectangle", "Parallelogram", "Trapezoid"],
-  transformations: ["Translation", "Reflection", "Rotation", "No movement"],
-  concept_transform: ["Translation", "Reflection", "Rotation", "No movement"],
-  shapes_basic_square: ["Square", "Rectangle"],
-  shapes_basic_rectangle: ["Square", "Rectangle"],
-  shapes_basic_properties_square: ["2", "3", "4", "No equal sides"],
-  shapes_basic_properties_rectangle: ["1", "2", "3", "4"],
-  shapes_basic_properties_angles: ["2", "3", "4", "No right angles"],
-};
+export const GEOMETRY_EN_LABEL_OPTIONS = geometryContent.labelOptions;
+export const GEOMETRY_SOLID_NAMES_EN = geometryContent.solidNames;
 
-export const GEOMETRY_SOLID_NAMES_EN = [
-  "Cube",
-  "Cuboid",
-  "Cylinder",
-  "Pyramid",
-  "Cone",
-  "Sphere",
-];
-
-const SOLID_HE_TO_EN = {
-  קובייה: "Cube",
-  תיבה: "Cuboid",
-  גליל: "Cylinder",
-  פירמידה: "Pyramid",
-  חרוט: "Cone",
-  כדור: "Sphere",
-};
+const SOLID_HE_TO_EN = geometryContent.hebrewSolidAliases;
 
 /** Full-phrase replacements only — never bare nouns like רדיוס/צלע (they shred stems). */
 const PHRASES = [
@@ -142,21 +117,7 @@ const PHRASES = [
 ].sort((a, b) => b[0].length - a[0].length);
 
 const SHAPE_WORDS = {
-  ריבוע: "Square",
-  מלבן: "Rectangle",
-  מקבילית: "Parallelogram",
-  טרפז: "Trapezoid",
-  נכון: "True",
-  "לא נכון": "False",
-  סיבוב: "Rotation",
-  הזזה: "Translation",
-  שיקוף: "Reflection",
-  "ללא תנועה": "No movement",
-  מקבילות: "Parallel",
-  מאונכות: "Perpendicular",
-  "שווה צלעות": "Equilateral",
-  "שווה שוקיים": "Isosceles",
-  "שונה צלעות": "Scalene",
+  ...geometryContent.shapeWords,
   ...SOLID_HE_TO_EN,
 };
 

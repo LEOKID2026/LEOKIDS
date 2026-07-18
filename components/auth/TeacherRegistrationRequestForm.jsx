@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { LEARNING_SUBJECT_ALLOWLIST } from "../../lib/learning-supabase/learning-activity.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import { getTeacherPortalTheme } from "../../lib/teacher-ui/teacher-portal-theme.client.js";
 import {
+  REG_NETWORK_ERROR_KEY,
   REG_REQUEST_INTENT_OPTIONS,
+  REG_SUBMIT_FAILED_KEY,
   REG_TEACHER_ALREADY_PENDING,
   REG_TEACHER_EMAIL_LABEL,
   REG_TEACHER_EXPLANATION_HINT,
@@ -14,10 +17,11 @@ import {
   REG_TEACHER_SUBMIT,
   REG_TEACHER_SUCCESS,
   REG_TEACHER_TITLE,
-  SUBJECT_LABELS_HE,
+  SUBJECT_LABEL_KEYS,
 } from "../../lib/auth/auth-registration.js";
 
 export default function TeacherRegistrationRequestForm({ bright = false }) {
+  const t = useT();
   const T = getTeacherPortalTheme(bright);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -58,24 +62,24 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
       });
       const body = await res.json().catch(() => ({}));
       if (res.status === 409 && body?.error?.code === "request_already_pending") {
-        setError(REG_TEACHER_ALREADY_PENDING);
+        setError(t(REG_TEACHER_ALREADY_PENDING));
         return;
       }
       if (res.status === 201 || res.status === 200) {
-        setMessage(REG_TEACHER_SUCCESS);
+        setMessage(t(REG_TEACHER_SUCCESS));
         return;
       }
-      setError("Unable to submit the request right now. Please try again later.");
+      setError(t(REG_SUBMIT_FAILED_KEY));
     } catch {
-      setError("Network error. Please try again.");
+      setError(t(REG_NETWORK_ERROR_KEY));
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <div data-testid="teacher-registration-request-form" dir="ltr" lang="en">
-      <h2 className={T.regTitle}>{REG_TEACHER_TITLE}</h2>
+    <div data-testid="teacher-registration-request-form">
+      <h2 className={T.regTitle}>{t(REG_TEACHER_TITLE)}</h2>
       {message ? (
         <p className={`${T.regSuccess} mb-1`} role="status">
           {message}
@@ -84,7 +88,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
         <form onSubmit={(e) => void onSubmit(e)} className="space-y-1.5 md:space-y-3">
           <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 md:flex md:flex-row md:gap-x-4 md:gap-y-0">
             <label className="block text-sm min-w-0 col-span-1 order-1 md:flex-1">
-              <span className={T.loginLabel}>{REG_TEACHER_NAME_LABEL}</span>
+              <span className={T.loginLabel}>{t(REG_TEACHER_NAME_LABEL)}</span>
               <input
                 type="text"
                 value={fullName}
@@ -96,7 +100,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
               />
             </label>
             <label className="block text-sm min-w-0 col-span-1 order-2 md:flex-1">
-              <span className={T.loginLabel}>{REG_TEACHER_INTENT_LABEL}</span>
+              <span className={T.loginLabel}>{t(REG_TEACHER_INTENT_LABEL)}</span>
               <select
                 value={requestIntent}
                 onChange={(ev) => setRequestIntent(ev.target.value)}
@@ -106,13 +110,13 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
               >
                 {REG_REQUEST_INTENT_OPTIONS.map((option) => (
                   <option key={option.id} value={option.id}>
-                    {option.label}
+                    {t(option.labelKey)}
                   </option>
                 ))}
               </select>
             </label>
             <label className="block text-sm col-span-2 order-3 md:order-3 md:flex-none md:w-full md:max-w-md md:shrink-0">
-              <span className={T.loginLabel}>{REG_TEACHER_EMAIL_LABEL}</span>
+              <span className={T.loginLabel}>{t(REG_TEACHER_EMAIL_LABEL)}</span>
               <input
                 type="email"
                 value={email}
@@ -123,7 +127,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
               />
             </label>
             <label className="block text-sm col-span-2 order-4 md:order-4 md:flex-none md:w-full md:max-w-md md:shrink-0">
-              <span className={T.loginLabel}>{REG_TEACHER_PHONE_LABEL}</span>
+              <span className={T.loginLabel}>{t(REG_TEACHER_PHONE_LABEL)}</span>
               <input
                 type="tel"
                 value={phone}
@@ -139,8 +143,8 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
           </div>
 
           <label className="block text-sm">
-            <span className={T.loginLabel}>{REG_TEACHER_EXPLANATION_LABEL}</span>
-            <span className={`block ${T.regHint}`}>{REG_TEACHER_EXPLANATION_HINT}</span>
+            <span className={T.loginLabel}>{t(REG_TEACHER_EXPLANATION_LABEL)}</span>
+            <span className={`block ${T.regHint}`}>{t(REG_TEACHER_EXPLANATION_HINT)}</span>
             <textarea
               value={description}
               onChange={(ev) => setDescription(ev.target.value)}
@@ -154,7 +158,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
           </label>
 
           <fieldset className="text-sm pt-0">
-            <legend className={T.regLegend}>{REG_TEACHER_SUBJECTS_LABEL}</legend>
+            <legend className={T.regLegend}>{t(REG_TEACHER_SUBJECTS_LABEL)}</legend>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-1.5">
               {[...LEARNING_SUBJECT_ALLOWLIST].map((key) => (
                 <label key={key} className={T.regSubjectChip}>
@@ -165,7 +169,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
                     data-testid={`teacher-reg-subject-${key}`}
                     className="shrink-0"
                   />
-                  <span>{SUBJECT_LABELS_HE[key] || key}</span>
+                  <span>{t(SUBJECT_LABEL_KEYS[key] || key)}</span>
                 </label>
               ))}
             </div>
@@ -177,7 +181,7 @@ export default function TeacherRegistrationRequestForm({ bright = false }) {
             className={`${T.submitBtn} md:w-auto md:px-6 md:py-2`}
             data-testid="teacher-reg-submit"
           >
-            {busy ? "Sending…" : REG_TEACHER_SUBMIT}
+            {busy ? t("auth.sending") : t(REG_TEACHER_SUBMIT)}
           </button>
         </form>
       )}

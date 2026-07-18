@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -62,8 +63,8 @@ export default function SchoolActivityMonitorPage({ activityId }) {
   const students = Array.isArray(data?.students) ? data.students : [];
 
   return (
-    <Layout title="Activity monitor">
-      <SchoolPortalShell title="Activity monitor">
+    <Layout title={globalBurnDownCopy("pages__school__activities__[activityId]__monitor", "activity_monitor")}>
+      <SchoolPortalShell title={globalBurnDownCopy("pages__school__activities__[activityId]__monitor", "activity_monitor")}>
         <div className="space-y-4 text-left">
           <Link href="/school/dashboard#activities" className="text-sm text-amber-300 hover:underline">
             ← Back to activities

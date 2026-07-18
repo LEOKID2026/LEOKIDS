@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { summarizeHybridRuntimeForReview } from "./hybrid-review-summary.js";
 
 /**
@@ -119,7 +120,7 @@ export function buildHybridCaseReviewRecord({
       narrativeHe:
         typeof d.hasDisagreement === "boolean" && d.hasDisagreement
           ? `Conflict: V2 chose ${d.v2TopId || "-"} vs Hybrid top ${d.aiTopId || "-"} (severity: ${d.severity || "-"})`
-          : "No conflict between V2 and the Hybrid top hypothesis.",
+          : globalBurnDownCopy("utils__ai-hybrid-diagnostic__hybrid-review-record", "no_conflict_between_v2_and_the_hybrid_top_hypothesis"),
     },
   };
 }

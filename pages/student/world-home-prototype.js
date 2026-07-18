@@ -42,10 +42,11 @@ import StudentSurpriseBoxOpenModal from "../../components/student/rewards/Studen
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
 import { patchSurpriseBoxStatusFromOpenResult } from "../../lib/rewards/surprise-box-status-patch.client.js";
 import StudentWorldTitleScreen from "../../components/student-world-hub/StudentWorldTitleScreen.jsx";
-import { GUEST_LOCK_MESSAGE_HE, GUEST_LOCKED_HOME_PANELS, LIOSH_GUEST_RESUME_TOKEN_KEY } from "../../lib/guest/constants.js";
+import { GUEST_LOCK_MESSAGE_KEY, GUEST_LOCKED_HOME_PANELS, LIOSH_GUEST_RESUME_TOKEN_KEY } from "../../lib/guest/constants.js";
 import { isGuestStudent } from "../../lib/guest/guest-display.js";
 import { shouldClearGuestResumeTokenOnLogout } from "../../lib/guest/guest-resume-token.client.js";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
 import { syncMonthlyProgressCacheFromServer } from "../../utils/progress-storage.js";
 
@@ -53,33 +54,20 @@ const HOME_SUMMARY_PATH = "/api/student/home-profile/summary";
 const HOME_ANALYTICS_PATH = "/api/student/home-profile/analytics";
 const HOME_ACHIEVEMENT_GRANTS_PATH = "/api/student/home-profile/achievement-grants";
 
+import { resolveStudentApiErrorMessage } from "../../lib/student-client/student-api-legacy-errors.js";
+
 const PROTOTYPE_PATH = "/student/world-home-prototype";
-
-const studentHomeSeo = {
-  title: "Kids World — Prototype",
-  description: "Prototype for the Leo kids world opening screen",
-  canonicalPath: PROTOTYPE_PATH,
-  noindex: true,
-};
-
-function mapApiErrorToEnglish(raw) {
-  const s = String(raw || "").trim();
-  if (!s) return "Could not load learning data from the server.";
-  if (s === "Student session expired") return "Your session expired — please sign in again.";
-  if (s === "Server error") return "Server error while loading learning data.";
-  if (/[A-Za-z]{4,}/.test(s)) return "Could not load learning data from the server.";
-  return s;
-}
 
 function LoadingScreen({ message }) {
   const { theme } = useStudentTheme();
+  const t = useT();
   return (
     <Layout studentTheme={theme} studentShell="home">
       <PageSeo
-        title={studentHomeSeo.title}
-        description={studentHomeSeo.description}
-        canonicalPath={studentHomeSeo.canonicalPath}
-        noindex={studentHomeSeo.noindex}
+        title={t("ui.student.prototypeTitle")}
+        description={t("ui.student.prototypeDescription")}
+        canonicalPath={PROTOTYPE_PATH}
+        noindex
       />
       <StudentLoadingPanel message={message} reportPage />
     </Layout>
@@ -97,68 +85,71 @@ function StatCard({ label, value, sub }) {
   );
 }
 
-const HOME_PANELS = {
-  stats: { title: "My stats", emoji: "📊", size: "6xl", variant: "stats" },
-  progress: { title: "My progress", emoji: "📈", size: "2xl", variant: "progress" },
-  missions: { title: "My missions", emoji: "✅", size: "2xl", variant: "missions" },
-  classroom: { title: "Personal activities", emoji: "📋", size: "4xl", variant: "classroom" },
-  worksheets: { title: "Worksheets", emoji: "📄", size: "4xl", variant: "worksheets" },
-  subjects: { title: "My subjects", emoji: "📚", size: "6xl", variant: "subjects" },
-  badges: { title: "Badges & achievements", emoji: "🏅", size: "2xl", variant: "badges" },
-  recommendations: { title: "Recommendations", emoji: "💡", size: "4xl", variant: "recommendations" },
+const HOME_PANEL_KEYS = {
+  stats: { key: "panelStats", emoji: "📊", size: "6xl", variant: "stats" },
+  progress: { key: "panelProgress", emoji: "📈", size: "2xl", variant: "progress" },
+  missions: { key: "panelMissions", emoji: "✅", size: "2xl", variant: "missions" },
+  classroom: { key: "panelClassroom", emoji: "📋", size: "4xl", variant: "classroom" },
+  worksheets: { key: "panelWorksheets", emoji: "📄", size: "4xl", variant: "worksheets" },
+  subjects: { key: "panelSubjects", emoji: "📚", size: "6xl", variant: "subjects" },
+  badges: { key: "panelBadges", emoji: "🏅", size: "2xl", variant: "badges" },
+  recommendations: { key: "panelRecommendations", emoji: "💡", size: "4xl", variant: "recommendations" },
 };
 
-function StatsSection({ dashboardView, accLabel }) {
+function StatsSection({ dashboardView, accLabel, t }) {
   const { tokens: T } = useStudentTheme();
   const { accountStats: s } = dashboardView;
   return (
     <>
       <p className={T.panelIntro}>
-        Your progress across all subjects — level, stars, accuracy, and learning minutes.
+        {t("ui.student.statsIntro")}
       </p>
       <div className={T.statsSummaryCard}>
-        <p className={T.statsSummaryTitle}>At a glance</p>
+        <p className={T.statsSummaryTitle}>{t("ui.student.statsQuickView")}</p>
         <div className={T.statsSummaryGrid}>
           <div className={T.statsSummaryItem}>
-            <p className={T.statsSummaryLabel}>Level</p>
+            <p className={T.statsSummaryLabel}>{t("ui.student.level")}</p>
             <p className={T.statsSummaryValue}>{s.summaryLevel}</p>
           </div>
           <div className={T.statsSummaryItem}>
-            <p className={T.statsSummaryLabel}>Stars</p>
+            <p className={T.statsSummaryLabel}>{t("ui.student.stars")}</p>
             <p className={T.statsSummaryValue}>{s.summaryStars}</p>
             <p className="text-[10px] text-slate-500">{s.summaryStarsScopeHe}</p>
           </div>
           <div className={T.statsSummaryItem}>
-            <p className={T.statsSummaryLabel}>Accuracy</p>
+            <p className={T.statsSummaryLabel}>{t("ui.student.accuracy")}</p>
             <p className={T.statsSummaryValue}>{accLabel(s.overallAccuracyPct)}</p>
           </div>
           <div className={T.statsSummaryItem}>
-            <p className={T.statsSummaryLabel}>Coins</p>
+            <p className={T.statsSummaryLabel}>{t("ui.student.coins")}</p>
             <p className={T.statsSummaryValue}>{dashboardView.identity.coinBalanceDisplayHe ?? dashboardView.identity.coinBalance ?? "-"}</p>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2 md:gap-3">
-        <StatCard label="Best score" value={s.bestScoreOverall} />
-        <StatCard label="Best streak" value={s.bestStreakOverall} />
-        <StatCard label="Questions answered" value={s.questionsAnswered} />
-        <StatCard label="Correct answers" value={s.correctAnswers} />
+        <StatCard label={t("ui.student.bestScore")} value={s.bestScoreOverall} />
+        <StatCard label={t("ui.student.bestStreak")} value={s.bestStreakOverall} />
+        <StatCard label={t("ui.student.questionsAnswered")} value={s.questionsAnswered} />
+        <StatCard label={t("ui.student.correctAnswers")} value={s.correctAnswers} />
         <StatCard
-          label="Learning minutes this month"
+          label={t("ui.student.minutesThisMonth")}
           value={s.learningMinutesThisMonthDisplayHe ?? s.learningMinutesThisMonth ?? STUDENT_TRUTH_LABELS_HE.noData}
-          sub={`Goal: ${s.monthlyGoalMinutes} min · ${s.learningMinutesFilterNoteHe || STUDENT_TRUTH_LABELS_HE.periodThisMonth}`}
+          sub={t("ui.student.minutesGoal", {
+            goal: s.monthlyGoalMinutes,
+            note: s.learningMinutesFilterNoteHe || STUDENT_TRUTH_LABELS_HE.periodThisMonth,
+          })}
         />
         <StatCard
-          label="Lifetime minutes"
+          label={t("ui.student.minutesLifetime")}
           value={s.learningMinutesLifetimeDisplayHe ?? s.learningMinutesLifetimeRounded}
-          sub={s.learningMinutesLifetimeScopeHe || "From session summaries"}
+          sub={s.learningMinutesLifetimeScopeHe || t("ui.student.minutesLifetimeSub")}
         />
       </div>
     </>
   );
 }
 
-function SubjectsSection({ subjects }) {
+function SubjectsSection({ subjects, t }) {
   const { tokens: T, subjectAccentBar } = useStudentTheme();
   const subjectKeyAccent = {
     math: subjectAccentBar["math-master"],
@@ -169,7 +160,7 @@ function SubjectsSection({ subjects }) {
   return (
     <>
       <p className={T.panelIntro}>
-        Progress by subject — accuracy, questions, level, and stars. Tap "Go to subject" to start practicing.
+        {t("ui.student.subjectsIntro")}
       </p>
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-4">
         {subjects.map((s) => (
@@ -181,24 +172,24 @@ function SubjectsSection({ subjects }) {
             <h3 className={T.subjectTitle}>{s.labelHe}</h3>
             <div className={`${T.subjectBody} flex-1`}>
               <div className={T.subjectStatRow}>
-                <span className={T.subjectStatLabel}>Accuracy</span>
+                <span className={T.subjectStatLabel}>{t("ui.student.accuracy")}</span>
                 <span className={T.subjectStatValue}>{s.accuracyDisplayHe ?? "-"}</span>
               </div>
               <div className={T.subjectStatRow}>
-                <span className={T.subjectStatLabel}>Questions / correct</span>
+                <span className={T.subjectStatLabel}>{t("ui.student.questionsCorrect")}</span>
                 <span className={T.subjectStatValue}>
                   {s.answersDisplayHe ?? s.answersTotal} / {s.correctTotal}
                 </span>
               </div>
               <div className={T.subjectStatRow}>
-                <span className={T.subjectStatLabel}>Level · stars</span>
+                <span className={T.subjectStatLabel}>{t("ui.student.levelStars")}</span>
                 <span className={T.subjectStatValue}>
                   {s.levelDisplayHe ?? s.level ?? "-"} · {s.stars ?? "-"}
                   {s.starsScopeHe ? ` (${s.starsScopeHe})` : ""}
                 </span>
               </div>
               <div className={T.subjectStatRow}>
-                <span className={T.subjectStatLabel}>Learning minutes</span>
+                <span className={T.subjectStatLabel}>{t("ui.student.learningMinutes")}</span>
                 <span className={T.subjectStatValue}>
                   {s.sessionMinutesDisplayHe ?? s.sessionMinutesRounded ?? "-"}
                 </span>
@@ -213,7 +204,7 @@ function SubjectsSection({ subjects }) {
               </div>
             ) : null}
             <Link href={s.href} className={T.subjectLink}>
-              Go to subject
+              {t("ui.student.goToSubject")}
             </Link>
           </div>
         ))}
@@ -222,12 +213,12 @@ function SubjectsSection({ subjects }) {
   );
 }
 
-function BadgesSection({ badges }) {
+function BadgesSection({ badges, t }) {
   const { tokens: T } = useStudentTheme();
   if (badges.length === 0) {
     return (
       <p className={T.emptyText}>
-        No badges yet — start learning and earn achievements in every subject.
+        {t("ui.student.noBadgesYet")}
       </p>
     );
   }
@@ -273,6 +264,8 @@ function RecommendationsSection({ recommendations }) {
 /** Admin-only prototype — student world title screen (not production /student/home). */
 export default function WorldHomePrototypePage() {
   const router = useRouter();
+  const { direction } = useI18n();
+  const t = useT();
   const { tokens: T, theme, isBright } = useStudentTheme();
   const [authPhase, setAuthPhase] = useState("checking");
   const [student, setStudent] = useState(null);
@@ -443,12 +436,12 @@ export default function WorldHomePrototypePage() {
             const errRaw = json?.error != null ? String(json.error) : "";
             const detail = json?.detail != null ? String(json.detail) : "";
             const combined = [
-              mapApiErrorToEnglish(errRaw),
+              resolveStudentApiErrorMessage(errRaw, t),
               detail && isStudentIdentityDiagnosticsEnabled() ? `(${detail})` : "",
             ]
               .filter(Boolean)
               .join(" ");
-            setProfileError(combined || mapApiErrorToEnglish(""));
+            setProfileError(combined || resolveStudentApiErrorMessage("", t));
             setProfilePhase("error");
           }
           return;
@@ -463,7 +456,7 @@ export default function WorldHomePrototypePage() {
         void loadHomeAchievementGrants(studentId);
       } catch (e) {
         if (!cached?.merged) {
-          setProfileError("Network error");
+          setProfileError(t("auth.networkError"));
           setProfilePhase("error");
         }
         if (isStudentIdentityDiagnosticsEnabled()) {
@@ -748,7 +741,7 @@ export default function WorldHomePrototypePage() {
   const profilePending = profilePhase === "idle" || profilePhase === "loading";
   const buildFailed = profilePhase === "ok" && !dashboardView;
 
-  const accLabel = (pct) => (pct == null ? "No data yet" : `${pct}%`);
+  const accLabel = (pct) => (pct == null ? t("ui.student.noAccuracyData") : `${pct}%`);
 
   const openHomePanel = useCallback(
     (panelId) => {
@@ -760,7 +753,7 @@ export default function WorldHomePrototypePage() {
   );
 
   const showLockToast = useCallback((message) => {
-    const text = message || GUEST_LOCK_MESSAGE_HE;
+    const text = message || t(GUEST_LOCK_MESSAGE_KEY);
     setLockToast(text);
     if (typeof window !== "undefined") {
       if (lockToastTimerRef.current) window.clearTimeout(lockToastTimerRef.current);
@@ -793,22 +786,22 @@ export default function WorldHomePrototypePage() {
       setAuthPhase("anon");
       await router.replace("/student/login");
     } catch {
-      setLogoutMessage("Network error while signing out.");
+      setLogoutMessage(t("ui.student.logoutNetworkError"));
     } finally {
       setLogoutBusy(false);
     }
   };
 
   if (authPhase === "checking" || authPhase === "anon") {
-    return <LoadingScreen message={authPhase === "anon" ? "Redirecting to sign-in…" : "Loading home…"} />;
+    return <LoadingScreen message={authPhase === "anon" ? t("ui.student.redirectingLogin") : t("ui.student.loadingHome")} />;
   }
 
   if (!student) {
-    return <LoadingScreen message="Loading…" />;
+    return <LoadingScreen message={t("ui.student.loading")} />;
   }
 
-  const heroName = String(student.displayNameHe || student.full_name || "").trim() || "Student";
-  const heroGreeting = String(student.greetingHe || "").trim() || `Hello ${heroName}`;
+  const heroName = String(student.displayNameHe || student.full_name || "").trim() || t("ui.student.childDefault");
+  const heroGreeting = String(student.greetingHe || "").trim() || t("ui.student.hello", { name: heroName });
   const heroLeoNumber = String(student.leoNumber ?? student.leo_number ?? "").trim();
   const heroLeoLabel = String(student.leoNumberLabelHe || "").trim();
   const heroCoinsDisplay =
@@ -824,12 +817,12 @@ export default function WorldHomePrototypePage() {
     if (!dashboardView || !activePanel) return null;
     switch (activePanel) {
       case "stats":
-        return <StatsSection dashboardView={dashboardView} accLabel={accLabel} />;
+        return <StatsSection dashboardView={dashboardView} accLabel={accLabel} t={t} />;
       case "missions":
         return dashboardView.dailyMissions?.missions?.length ? (
           <StudentDailyMissionsPanel dailyMissions={dashboardView.dailyMissions} />
         ) : (
-          <p className={T.emptyText}>No data yet</p>
+          <p className={T.emptyText}>{t("ui.student.noDataYet")}</p>
         );
       case "progress":
         return dashboardView.monthlyPersistence?.loadError ? (
@@ -841,14 +834,14 @@ export default function WorldHomePrototypePage() {
         );
       case "classroom":
         return personalActivitiesPhase === "loading" ? (
-          <p className={T.emptyText}>Loading activities…</p>
+          <p className={T.emptyText}>{t("ui.student.loadingActivities")}</p>
         ) : (
           <StudentClassroomActivitiesPanel
             activities={personalActivities}
             activitiesLoaded={personalActivitiesPhase === "ok" || personalActivitiesPhase === "error"}
             emptyFallback={
               <p className={T.panelEmpty}>
-                No personal activities right now. When a teacher or parent sends a task, it will appear here.
+                {t("ui.student.noPersonalActivities")}
               </p>
             }
           />
@@ -858,15 +851,15 @@ export default function WorldHomePrototypePage() {
           <StudentWorksheetsPanel
             emptyFallback={
               <p className={T.panelEmpty}>
-                No open worksheets right now. When worksheets are assigned, they will appear here.
+                {t("ui.student.noWorksheets")}
               </p>
             }
           />
         );
       case "subjects":
-        return <SubjectsSection subjects={dashboardView.subjects} />;
+        return <SubjectsSection subjects={dashboardView.subjects} t={t} />;
       case "badges":
-        return <BadgesSection badges={dashboardView.badges} />;
+        return <BadgesSection badges={dashboardView.badges} t={t} />;
       case "recommendations":
         return <RecommendationsSection recommendations={dashboardView.recommendations} />;
       default:
@@ -877,17 +870,17 @@ export default function WorldHomePrototypePage() {
   return (
     <Layout studentTheme={theme} studentShell="home">
       <PageSeo
-        title={studentHomeSeo.title}
-        description={studentHomeSeo.description}
-        canonicalPath={studentHomeSeo.canonicalPath}
-        noindex={studentHomeSeo.noindex}
+        title={t("ui.student.prototypeTitle")}
+        description={t("ui.student.prototypeDescription")}
+        canonicalPath={PROTOTYPE_PATH}
+        noindex
       />
-      <div key={student.id} className="relative flex min-h-0 w-full flex-1 flex-col">
+      <div key={student.id} className="relative flex min-h-0 w-full flex-1 flex-col" dir={direction}>
         <p
           className="pointer-events-none absolute left-1/2 top-1 z-30 -translate-x-1/2 rounded-full bg-amber-100/80 px-2.5 py-0.5 text-[10px] font-bold text-amber-900 backdrop-blur-sm"
           role="note"
         >
-          🧪 Prototype
+          {t("ui.student.prototypeBadge")}
         </p>
 
         {lockToast ? (
@@ -901,7 +894,7 @@ export default function WorldHomePrototypePage() {
 
         <StudentWorldTitleScreen
           greetingHe={
-            (isGuestHome ? heroGreeting : `Hello ${heroName}`).replace(/!+\s*$/, "")
+            (isGuestHome ? heroGreeting : t("ui.student.hello", { name: heroName })).replace(/!+\s*$/, "")
           }
           coinsDisplay={heroCoinsDisplay}
           diamondsDisplay={heroDiamondsDisplay}
@@ -911,7 +904,7 @@ export default function WorldHomePrototypePage() {
           avatarImage={heroAvatarImage}
           avatarBackgroundKey={heroAvatarBackground}
           guestLockedPanelSet={guestLockedPanelSet}
-          lockMessage={guestPolicy?.lockMessageHe || GUEST_LOCK_MESSAGE_HE}
+          lockMessage={t(guestPolicy?.lockMessageKey || GUEST_LOCK_MESSAGE_KEY)}
           logoutBusy={logoutBusy}
           onOpenPanel={openHomePanel}
           onOpenAvatar={() => setShowAvatarModal(true)}
@@ -927,9 +920,9 @@ export default function WorldHomePrototypePage() {
           <p
             className={`absolute bottom-2 left-1/2 z-30 -translate-x-1/2 rounded-lg bg-white/80 px-3 py-1 text-center text-xs backdrop-blur-sm ${isBright ? "text-rose-600" : "text-rose-200"}`}
           >
-            Could not load progress data.{" "}
+            {profileError || t("ui.student.progressLoadFailed")}{" "}
             <button type="button" className="underline" onClick={() => student && void loadHomeDashboard(student)}>
-              Try again
+              {t("common.retry")}
             </button>
           </p>
         ) : null}
@@ -944,10 +937,10 @@ export default function WorldHomePrototypePage() {
       </div>
       <StudentHomeModal
         open={Boolean(activePanel && dashboardView)}
-        title={activePanel ? HOME_PANELS[activePanel]?.title ?? "" : ""}
-        emoji={activePanel ? HOME_PANELS[activePanel]?.emoji ?? "" : ""}
-        variant={activePanel ? HOME_PANELS[activePanel]?.variant ?? "default" : "default"}
-        size={activePanel ? HOME_PANELS[activePanel]?.size ?? "2xl" : "2xl"}
+        title={activePanel ? t(`ui.student.${HOME_PANEL_KEYS[activePanel]?.key ?? "panelStats"}`) : ""}
+        emoji={activePanel ? HOME_PANEL_KEYS[activePanel]?.emoji ?? "" : ""}
+        variant={activePanel ? HOME_PANEL_KEYS[activePanel]?.variant ?? "default" : "default"}
+        size={activePanel ? HOME_PANEL_KEYS[activePanel]?.size ?? "2xl" : "2xl"}
         onClose={closeHomePanel}
       >
         {renderActivePanelContent()}

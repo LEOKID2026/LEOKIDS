@@ -1,3 +1,5 @@
+import { patternCopy } from "../lib/learning/learning-patterns-copy.js";
+import learningSubjectsEn from "../locales/en/learning.json" with { type: "json" };
 import {
   MIN_PATTERN_FAMILY_FOR_DIAGNOSIS,
   MIN_MISTAKES_FOR_STRONG_RECOMMENDATION,
@@ -310,7 +312,7 @@ function inferWeaknessKindHe(labelHe) {
  *    nextWeekGoalHe: optional "A target for reinforcement" from top weakness or improving + "Target for conservation" from topStrengths[0] or maintain[0]
  *    when questions ≥ 8 or excellent.
  *
- * E) UI: parent-report maps each tierHe to the card subtitle (not everything is "weakness"; maintain → "Keeping a good level"; stableExcellence → "Your child is doing well on this topic over time").
+ * E) UI: parent-report maps each tierHe to the card subtitle (not everything is "weakness"; maintain → "Keeping a good level"; stableExcellence → patternCopy("your_child_is_doing_well_on_this_topic_over_time")).
  */
 
 const SUBJECT_IDS = [
@@ -334,15 +336,12 @@ const REPORT_ROWS_KEY = {
 };
 
 const SUBJECT_LABEL_HE = {
-  math: "Math",
-  geometry: "Geometry",
-  english: "English",
-  science: "Science",
-  history: "History",
-  hebrew: "Hebrew",
-  "moledet-geography": "Homeland & Geography",
-  moledet: "Homeland Studies",
-  geography: "Geography",
+  ...learningSubjectsEn.subjects,
+  history: patternCopy("subject_history"),
+  hebrew: patternCopy("subject_hebrew"),
+  "moledet-geography": patternCopy("subject_moledet_geography"),
+  moledet: patternCopy("subject_moledet"),
+  geography: patternCopy("subject_geography"),
 };
 
 /** Narrative caps (professional profile) */
@@ -350,7 +349,7 @@ const MAX_TOP_WEAKNESSES = 3;
 const MAX_TOP_STRENGTHS = 3;
 const MAX_MAINTAIN = 2;
 const MAX_IMPROVING = 2;
-/** How many "Your child is doing well on this topic over time" rows (separate from maintain / top strengths) */
+/** How many patternCopy("your_child_is_doing_well_on_this_topic_over_time") rows (separate from maintain / top strengths) */
 const MAX_STABLE_EXCELLENCE = 3;
 /** Long-term success threshold: don't declare too quickly — high accuracy + enough questions in range */
 const STABLE_EXCELLENCE_MIN_ACCURACY = 92;
@@ -538,7 +537,7 @@ function buildSessionBands(subjectId, report) {
 
   const stableExcellenceOut = stableExcellenceRaw.map((r) => ({
     ...r,
-    tierHe: "Your child is doing well on this topic over time",
+    tierHe: patternCopy("your_child_is_doing_well_on_this_topic_over_time"),
   }));
 
   const excellent = take(
@@ -624,7 +623,7 @@ function buildEvidenceSuccessFromPick(pick) {
   const conf =
     pick.confidence === "high" || pick.questions >= 20 ? "high" : "moderate";
   return {
-    titleHe: "What your child is doing well in practice",
+    titleHe: patternCopy("what_your_child_is_doing_well_in_practice"),
     bodyHe: `On the subject ${pick.labelHe} there is good success in the selected period: about ${pick.accuracy}% correct out of ${pick.questions} questions.`,
     confidence: conf,
   };
@@ -871,7 +870,7 @@ function buildSubSkillInsightsHe(topWeaknesses) {
         ? "A pattern that repeats in the selected period."
         : typeof w.mistakeCount === "number" && w.mistakeCount >= MIN_PATTERN_FAMILY_FOR_DIAGNOSIS
           ? "Medium repeating pattern - worth noting."
-          : "Only an initial sign - still too early for an unequivocal conclusion.",
+          : patternCopy("only_an_initial_sign_still_too_early_for_an_unequivocal_conclusion"),
   }));
 }
 
@@ -925,7 +924,7 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
       subjectDeferredActionHe: `In ${lab}: postpone a change of level/class and a long program until a figure stabilizes.`,
       subjectMonitoringOnly: true,
       subjectDoNowHe: "short and regular practice; One clear task for each session.",
-      subjectAvoidNowHe: "Do not draw strong conclusions or load a series of reinforcements.",
+      subjectAvoidNowHe: patternCopy("do_not_draw_strong_conclusions_or_load_a_series_of_reinforcements"),
     };
   }
 
@@ -941,7 +940,7 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
       subjectDeferredActionHe: `In ${lab}: to wait with the expansion of subjects until they have stabilized repeated small successes.`,
       subjectMonitoringOnly: false,
       subjectDoNowHe: "targeted reinforcement at the same level; Fewer issues at the same time.",
-      subjectAvoidNowHe: "Do not push too fast a rise in the level at home; Do not skip repeating mistakes.",
+      subjectAvoidNowHe: patternCopy("do_not_push_too_fast_a_rise_in_the_level_at_home_do_not_skip_repeating_m"),
     };
   }
 
@@ -956,8 +955,8 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
       subjectImmediateActionHe: home || `In ${lab}: a short task - a small independent experience and then a test together.`,
       subjectDeferredActionHe: `In ${lab}: postpone a too rapid increase in level until the dependency decreases a little.`,
       subjectMonitoringOnly: false,
-      subjectDoNowHe: "Separate a short independent experience from a test at the end.",
-      subjectAvoidNowHe: "Do not stop help suddenly; Do not explain too long during the practice.",
+      subjectDoNowHe: patternCopy("separate_a_short_independent_experience_from_a_test_at_the_end"),
+      subjectAvoidNowHe: patternCopy("do_not_stop_help_suddenly_do_not_explain_too_long_during_the_practice"),
     };
   }
 
@@ -974,7 +973,7 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
       subjectDeferredActionHe: `In ${lab}: reject extensions or hardening before a clear need.`,
       subjectMonitoringOnly: false,
       subjectDoNowHe: "to continue a steady pace; Praise a little persistence.",
-      subjectAvoidNowHe: "Do not add load to the house when there is no clear sign.",
+      subjectAvoidNowHe: patternCopy("do_not_add_load_to_the_house_when_there_is_no_clear_sign"),
     };
   }
 
@@ -986,7 +985,7 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
       subjectDeferredActionHe: `In ${lab}: postpone a final decision when the data is still mixed.`,
       subjectMonitoringOnly: false,
       subjectDoNowHe: "to track accuracy at the same level before adding variables.",
-      subjectAvoidNowHe: "Do not lock in a single explanation when there are several possible directions.",
+      subjectAvoidNowHe: patternCopy("do_not_lock_in_a_single_explanation_when_there_are_several_possible_dire"),
     };
   }
 
@@ -997,7 +996,7 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
     subjectDeferredActionHe: `In ${lab}: postpone dramatic changes until the direction becomes clear.`,
     subjectMonitoringOnly: false,
     subjectDoNowHe: "short and regular practice; A clear mission.",
-    subjectAvoidNowHe: "Do not make a level worse without two good encounters in a row.",
+    subjectAvoidNowHe: patternCopy("do_not_make_a_level_worse_without_two_good_encounters_in_a_row"),
   };
 }
 
@@ -1021,10 +1020,10 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     return {
       dominantLearningRisk: "none_sparse",
       dominantSuccessPattern: "none_sparse",
-      trendNarrativeHe: "In the selected period there is still not enough practice to identify a clear trend in this profession.",
-      confidenceSummaryHe: "In the chosen period there is still not enough practice to know how clear the direction is in this profession.",
+      trendNarrativeHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_identify_a_"),
+      confidenceSummaryHe: patternCopy("in_the_chosen_period_there_is_still_not_enough_practice_to_know_how_clea"),
       recommendedHomeMethodHe: null,
-      whatNotToDoHe: "Do not build a long plan before there is more practice in the selected period.",
+      whatNotToDoHe: patternCopy("do_not_build_a_long_plan_before_there_is_more_practice_in_the_selected_p"),
       majorRiskFlagsAcrossRows: emptyRiskOr(),
       dominantBehaviorProfileAcrossRows: "undetermined",
       strongestPositiveTrendRowHe: null,
@@ -1044,12 +1043,12 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectConclusionReadiness: "not_ready",
       subjectInterventionPriorityHe: INTERVENTION_TYPE_LABEL_HE.monitor_before_escalation,
       subjectPriorityLevel: "monitor",
-      subjectPriorityReasonHe: "In the selected period there is still not enough practice to determine what is important to practice first.",
+      subjectPriorityReasonHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_determine_w"),
       subjectImmediateActionHe: null,
       subjectDeferredActionHe: null,
       subjectMonitoringOnly: true,
-      subjectDoNowHe: "Collect a little short practice before decisions.",
-      subjectAvoidNowHe: "Do not build a long plan before there is a figure.",
+      subjectDoNowHe: patternCopy("collect_a_little_short_practice_before_decisions"),
+      subjectAvoidNowHe: patternCopy("do_not_build_a_long_plan_before_there_is_a_figure"),
       dominantMistakePattern: "insufficient_mistake_evidence",
       dominantMistakePatternLabelHe: MISTAKE_PATTERN_LABEL_HE.insufficient_mistake_evidence,
       mistakePatternDistribution: {},
@@ -1057,7 +1056,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectLearningStageLabelHe: LEARNING_STAGE_LABEL_HE.insufficient_longitudinal_evidence,
       subjectRetentionRisk: "unknown",
       subjectTransferReadiness: "not_ready",
-      subjectMemoryNarrativeHe: "In the selected period there is still not enough practice to detect a recurring error or a change over time.",
+      subjectMemoryNarrativeHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_detect_a_re"),
       subjectReviewBeforeAdvanceHe: null,
       subjectResponseToIntervention: "not_enough_evidence",
       subjectResponseToInterventionLabelHe: RESPONSE_TO_INTERVENTION_LABEL_HE.not_enough_evidence,
@@ -1067,7 +1066,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectConclusionFreshness: "low",
       subjectRecalibrationNeed: "do_not_rely_yet",
       subjectRecalibrationNeedHe: RECALIBRATION_NEED_LABEL_HE.do_not_rely_yet,
-      subjectEffectivenessNarrativeHe: "In the selected period there is still not enough practice to know if the help given really helped.",
+      subjectEffectivenessNarrativeHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_know_if_the"),
       subjectSupportSequenceState: "insufficient_sequence_evidence",
       subjectSupportSequenceStateLabelHe: SUPPORT_SEQUENCE_STATE_LABEL_HE.insufficient_sequence_evidence,
       subjectStrategyRepetitionRisk: "unknown",
@@ -1076,7 +1075,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectNextBestSequenceStepHe: NEXT_BEST_SEQUENCE_STEP_LABEL_HE.observe_before_next_cycle,
       subjectAdviceNovelty: "unknown",
       subjectRecommendationRotationNeed: "do_not_repeat_yet",
-      subjectSequenceNarrativeHe: "In the selected period there is still not enough practice to decide what the next step in practice is.",
+      subjectSequenceNarrativeHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_decide_what"),
       subjectRecommendationMemoryState: "no_memory",
       subjectPriorRecommendationSignature: "unknown",
       subjectSupportHistoryDepth: "unknown",
@@ -1085,7 +1084,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectFollowThroughSignal: "not_inferable",
       subjectContinuationDecision: "continue_but_refine",
       subjectContinuationDecisionHe: RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE.continue_but_refine,
-      subjectOutcomeNarrativeHe: "In the selected period there is still not enough practice to know if what we tried recently helped.",
+      subjectOutcomeNarrativeHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_know_if_wha"),
       subjectGateState: "gates_not_ready",
       subjectGateStateLabelHe: GATE_STATE_LABEL_HE.gates_not_ready,
       subjectGateReadiness: "insufficient",
@@ -1093,15 +1092,15 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       subjectNextCycleDecisionFocusHe: NEXT_CYCLE_DECISION_FOCUS_LABEL_HE.prove_current_direction,
       subjectEvidenceTargetType: "fresh_data_needed",
       subjectTargetObservationWindow: "unknown",
-      subjectGateNarrativeHe: "In the selected period there is still not enough practice to make a confident decision.",
+      subjectGateNarrativeHe: patternCopy("in_the_selected_period_there_is_still_not_enough_practice_to_make_a_conf"),
       subjectDependencyState: "insufficient_dependency_evidence",
       subjectDependencyStateLabelHe: DEPENDENCY_STATE_LABEL_HE.insufficient_dependency_evidence,
       subjectLikelyFoundationalBlocker: "unknown",
       subjectLikelyFoundationalBlockerLabelHe: FOUNDATIONAL_BLOCKER_LABEL_HE.unknown,
       subjectDownstreamSymptomRisk: "unknown",
       subjectFoundationFirstPriority: false,
-      subjectFoundationFirstPriorityHe: "In the chosen period there is still not enough practice to understand where the difficulty starts.",
-      subjectDependencyNarrativeHe: "You should gather more practice before deciding what should be strengthened first.",
+      subjectFoundationFirstPriorityHe: patternCopy("in_the_chosen_period_there_is_still_not_enough_practice_to_understand_wh"),
+      subjectDependencyNarrativeHe: patternCopy("you_should_gather_more_practice_before_deciding_what_should_be_strengthe"),
     };
   }
 
@@ -1470,25 +1469,25 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   const hiConf = rows.filter((r) => (Number(r.row.confidenceScore) || 0) >= 72).length;
   let confidenceSummaryHe = `According to the collected data: ${suffStrong} lines give a clear direction, ${suffMed} lines give a partial direction, and ${suffLow} lines still with little information; ${hiConf} Clearer data from ${rows.length}.`;
   if (suffLow >= rows.length * 0.55) {
-    confidenceSummaryHe += "The picture in the profession is still partial - remain cautious.";
+    confidenceSummaryHe += patternCopy("the_picture_in_the_profession_is_still_partial_remain_cautious");
   }
   if (anyHighRisk && strongRows.length >= 2) {
-    confidenceSummaryHe += "Despite data with relatively good results, there are also points for attention - don't mark everything as stable yet.";
+    confidenceSummaryHe += ` ${patternCopy("despite_data_with_relatively_good_results_there_are_also_points_for_attention")}`;
   }
 
   const riskLabelHe = {
     ...PARENT_DIAGNOSTIC_TYPE_LABEL_HE,
     mixed: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_signal,
     fragile_success: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.fragile_success,
-    none_sparse: "Too little practice in the lines",
-    none_observed: "Not one prominent repetitive behavior type was identified",
+    none_sparse: patternCopy("too_little_practice_in_the_lines"),
+    none_observed: patternCopy("not_one_prominent_repetitive_behavior_type_was_identified"),
   };
 
   const successLabelHe = {
-    stable_mastery: "Good control that is maintained over time in the rows",
-    fragile_success_cluster: "Success with fragility in help/independence",
+    stable_mastery: patternCopy("good_control_that_is_maintained_over_time_in_the_rows"),
+    fragile_success_cluster: patternCopy("success_with_fragility_in_help_independence"),
     mixed: "A mix of plates",
-    none_sparse: "Too little practice in the lines",
+    none_sparse: patternCopy("too_little_practice_in_the_lines"),
   };
 
   let recommendedHomeMethodHe = null;
@@ -1575,9 +1574,9 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     subjectDiagnosticRestraintHe =
       "There is some information, but also data that requires caution - you should follow it and not rush to determine too strong a direction.";
   } else if (moderateOrStrongRows >= Math.ceil(nR * 0.55)) {
-    subjectDiagnosticRestraintHe = "There are some data that show a similar direction - the summary within the profession can be trusted more.";
+    subjectDiagnosticRestraintHe = patternCopy("there_are_some_data_that_show_a_similar_direction_the_summary_within_the");
   } else {
-    subjectDiagnosticRestraintHe = "The picture in the profession is still mixed - it's worth going over the issues separately.";
+    subjectDiagnosticRestraintHe = patternCopy("the_picture_in_the_profession_is_still_mixed_it_s_worth_going_over_the_issues_separately");
   }
 
   const intv = pickRecommendedInterventionType(dominantRootCause, "maintain_and_strengthen");
@@ -1649,7 +1648,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
       ? "Prefer repeated reinforcement before expanding."
       : subjectRetentionRisk === "moderate"
         ? "Worth watching before a major change."
-        : "You can keep a steady pace and watch the results."
+        : patternCopy("you_can_keep_a_steady_pace_and_watch_the_results")
   }`.trim();
 
   let subjectReviewBeforeAdvanceHe = null;
@@ -1659,7 +1658,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   } else if (reviewBeforeAdvanceRowHints.length) {
     subjectReviewBeforeAdvanceHe = reviewBeforeAdvanceRowHints[0];
   } else if (subjectTransferReadiness === "limited" || subjectTransferReadiness === "not_ready") {
-    subjectReviewBeforeAdvanceHe = "Make sure to repeat similar mistakes at the same level before opening a new topic.";
+    subjectReviewBeforeAdvanceHe = patternCopy("make_sure_to_repeat_similar_mistakes_at_the_same_level_before_opening_a_");
   }
 
   let subjectResponseToIntervention = "not_enough_evidence";
@@ -2048,7 +2047,7 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
         if (insufficientData.length < 24) {
           insufficientData.push({
             mistakeCount: n,
-            note: "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty",
+            note: patternCopy("less_than_5_mistakes_in_the_same_pattern_it_is_still_too_early_to_determ"),
           });
         }
         return;
@@ -2269,375 +2268,6 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
 }
 
 /** Static example following the version 2 structure */
-export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = {
-  version: 2,
-  generatedAt: "2026-04-11T12:00:00.000Z",
-  constants: {
-    minMistakesPerPatternFamily: 5,
-    minMistakesForStrongRecommendation: 10,
-    maxWeaknesses: 3,
-    maxStrengthRows: 3,
-    maxMaintain: 2,
-    maxImproving: 2,
-    maxStableExcellence: 3,
-    stableExcellenceMinAccuracy: 92,
-    stableExcellenceMinQuestions: 22,
-  },
-  subjects: {
-    math: {
-      subject: "math",
-      subjectLabelHe: "Math",
-      mistakeEventCount: 12,
-      wrongCount: 12,
-      hasAnySignal: true,
-      summaryHe:
-        "The picture of the subject in mathematics: the child succeeds in composition over time. There is also room for reinforcement in comparing quantities or numbers.",
-      stableExcellence: [
-        {
-          id: "math:addition:learning",
-          labelHe: "Addition",
-          questions: 42,
-          accuracy: 93,
-          confidence: "high",
-          needsPractice: false,
-          excellent: true,
-          tierHe: "Your child is doing well on this topic over time",
-        },
-      ],
-      topStrengths: [],
-      topWeaknesses: [
-        {
-          id: "math:w:0",
-          labelHe: "Difficulty comparing quantities or numbers",
-          mistakeCount: 7,
-          confidence: "moderate",
-          tierHe: "Focused difficulty",
-        },
-      ],
-      parentTopicToneByKey: {},
-      parentStrengthWithCautionLinesByKey: {},
-      parentActionHe:
-        "Three times a week, 15-20 minutes each session: choose one math task on the subject of comparing quantities or numbers - read the formulation together, formulate out loud what is given and what is requested, perform a first step on a draft sheet and only then write a final answer and check against the solution.",
-      nextWeekGoalHe:
-        "Target for reinforcement: increase the percentage of success in comparing quantities or numbers (at least one more successful attempt than last week). Goal for retention: continue a relaxed practice routine on composition to maintain the level of accuracy.",
-      evidenceExamples: [
-        {
-          type: "mistake",
-          exerciseText: "How many bags is the price of the computer higher?",
-          questionLabel: null,
-          correctAnswer: 120,
-          userAnswer: 102,
-          confidence: "moderate",
-        },
-        {
-          type: "success",
-          titleHe: "What your child is doing well in practice",
-          bodyHe:
-            "In the subject of essay there is good success in the selected period: about 93% correct out of 42 questions.",
-          confidence: "high",
-        },
-      ],
-      weaknesses: [
-        {
-          id: "math:w:0",
-          labelHe: "Difficulty comparing quantities or numbers",
-          mistakeCount: 7,
-          confidence: "moderate",
-          tierHe: "Focused difficulty",
-        },
-      ],
-      strengths: [],
-      excellent: [],
-      maintain: [],
-      improving: [],
-      studentRecommendationsImprove: [
-        {
-          id: "stu-imp:math:w:0",
-          textHe:
-            "You should practice a little more on the subject: when comparing quantities or numbers - 7 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
-          strength: "moderate",
-        },
-      ],
-      studentRecommendationsMaintain: [
-        {
-          id: "stu-maint:math:addition:learning",
-          textHe:
-            "Continue practicing comfortably on the topic of connection - the level there is maintained (accuracy about 93%).",
-          strength: "strong",
-        },
-      ],
-      parentRecommendationsImprove: [
-        {
-          id: "par-imp:math:w:0",
-          textHe:
-            "A repetition of the same type of error begins - in the subject of comparing quantities or numbers. For the coming week, a calm look and a short, focused practice are enough.",
-          strength: "moderate",
-        },
-      ],
-      parentRecommendationsMaintain: [
-        {
-          id: "par-maint:math:addition:learning",
-          textHe:
-            "It is recommended to encourage persistence in connection - you see repeated success; Maintaining a positive habit is just as important as correcting mistakes.",
-          strength: "strong",
-        },
-      ],
-      evidenceMistake: {
-        exerciseText: "How many bags is the price of the computer higher?",
-        questionLabel: null,
-        correctAnswer: 120,
-        userAnswer: 102,
-        confidence: "moderate",
-      },
-      evidenceSuccess: {
-        titleHe: "What your child is doing well in practice",
-        bodyHe:
-          "In the subject of essay there is good success in the selected period: about 93% correct out of 42 questions.",
-        confidence: "high",
-      },
-      insufficientData: [
-        {
-          mistakeCount: 2,
-          note: "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty",
-        },
-      ],
-      diagnosticSparseNoteHe: null,
-    },
-    geometry: {
-      subject: "geometry",
-      subjectLabelHe: "Geometry",
-      mistakeEventCount: 9,
-      wrongCount: 9,
-      hasAnySignal: true,
-      summaryHe:
-        "The image of the profession in geometry: there is also room for strengthening on the issue of recurring confusion between perimeter and area.",
-      topStrengths: [],
-      stableExcellence: [],
-      topWeaknesses: [
-        {
-          id: "geometry:w:0",
-          labelHe: "Repeated confusion between perimeter and area",
-          mistakeCount: 6,
-          confidence: "moderate",
-          tierHe: "Focused difficulty",
-        },
-      ],
-      parentActionHe:
-        "Three times a week, 15-20 minutes each session: choose one task in geometry on the topic of repeated confusion between perimeter and area - read the formulation together, formulate out loud what is given and what is requested, make a first step on a draft sheet and only then write a final answer and check against the solution.",
-      nextWeekGoalHe:
-        "Target for reinforcement: increase the percentage of success in repeated confusion between scope and area (at least one more successful attempt than last week).",
-      evidenceExamples: [
-        {
-          type: "mistake",
-          exerciseText: "What is the perimeter of a 5x3 cm rectangle?",
-          questionLabel: null,
-          correctAnswer: "16 cm",
-          userAnswer: "15 cm",
-          confidence: "moderate",
-        },
-      ],
-      weaknesses: [
-        {
-          id: "geometry:w:0",
-          labelHe: "Repeated confusion between perimeter and area",
-          mistakeCount: 6,
-          confidence: "moderate",
-          tierHe: "Focused difficulty",
-        },
-      ],
-      strengths: [],
-      excellent: [],
-      maintain: [],
-      improving: [],
-      studentRecommendationsImprove: [
-        {
-          id: "stu-imp:geometry:w:0",
-          textHe:
-            "You should practice a little more on the subject: repeated confusion between scope and area - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
-          strength: "moderate",
-        },
-      ],
-      studentRecommendationsMaintain: [],
-      parentRecommendationsImprove: [
-        {
-          id: "par-imp:geometry:w:0",
-          textHe:
-            "A repetition of the same type of error begins - on the topic of repeated confusion between scope and area. For the coming week, a calm look and a short, focused practice are enough.",
-          strength: "moderate",
-        },
-      ],
-      parentRecommendationsMaintain: [],
-      evidenceMistake: {
-        exerciseText: "What is the perimeter of a 5x3 cm rectangle?",
-        questionLabel: null,
-        correctAnswer: "16 cm",
-        userAnswer: "15 cm",
-        confidence: "moderate",
-      },
-      evidenceSuccess: null,
-      insufficientData: [],
-      diagnosticSparseNoteHe: null,
-    },
-    english: {
-      subject: "english",
-      subjectLabelHe: "English",
-      mistakeEventCount: 0,
-      wrongCount: 0,
-      hasAnySignal: false,
-      summaryHe: null,
-      topStrengths: [],
-      stableExcellence: [],
-      topWeaknesses: [],
-      parentActionHe: null,
-      nextWeekGoalHe: null,
-      evidenceExamples: [],
-      weaknesses: [],
-      strengths: [],
-      excellent: [],
-      maintain: [],
-      improving: [],
-      studentRecommendationsImprove: [],
-      studentRecommendationsMaintain: [],
-      parentRecommendationsImprove: [],
-      parentRecommendationsMaintain: [],
-      evidenceMistake: null,
-      evidenceSuccess: null,
-      insufficientData: [],
-      diagnosticSparseNoteHe: null,
-    },
-    science: {
-      subject: "science",
-      subjectLabelHe: "Science",
-      mistakeEventCount: 0,
-      wrongCount: 0,
-      hasAnySignal: false,
-      summaryHe: null,
-      topStrengths: [],
-      stableExcellence: [],
-      topWeaknesses: [],
-      parentActionHe: null,
-      nextWeekGoalHe: null,
-      evidenceExamples: [],
-      weaknesses: [],
-      strengths: [],
-      excellent: [],
-      maintain: [],
-      improving: [],
-      studentRecommendationsImprove: [],
-      studentRecommendationsMaintain: [],
-      parentRecommendationsImprove: [],
-      parentRecommendationsMaintain: [],
-      evidenceMistake: null,
-      evidenceSuccess: null,
-      insufficientData: [],
-      diagnosticSparseNoteHe: null,
-    },
-    hebrew: {
-      subject: "hebrew",
-      subjectLabelHe: "Hebrew",
-      mistakeEventCount: 11,
-      wrongCount: 11,
-      hasAnySignal: true,
-      summaryHe:
-        "The image of the profession in Hebrew: there is also room for reinforcement in prepositions and sentence structure.",
-      topStrengths: [],
-      stableExcellence: [],
-      topWeaknesses: [
-        {
-          id: "hebrew:w:0",
-          labelHe: "Difficulty with prepositions and sentence structure",
-          mistakeCount: 6,
-          confidence: "moderate",
-          tierHe: "Focused difficulty",
-        },
-      ],
-      parentActionHe:
-        "Three times a week, 15-20 minutes in each session: choose one task in Hebrew on the topic with prepositions and sentence structure - read the wording together, formulate out loud what is given and what is requested, take the first step on a draft sheet and only then write a final answer and check against the solution.",
-      nextWeekGoalHe:
-        "Target for reinforcement: increase the percentage of success in prepositions and sentence structure (at least one more successful attempt than last week).",
-      evidenceExamples: [
-        {
-          type: "mistake",
-          exerciseText: "Complete: The children played ___ the time in kindergarten.",
-          questionLabel: null,
-          correctAnswer: "on",
-          userAnswer: "to",
-          confidence: "moderate",
-        },
-      ],
-      weaknesses: [
-        {
-          id: "hebrew:w:0",
-          labelHe: "Difficulty with prepositions and sentence structure",
-          mistakeCount: 6,
-          confidence: "moderate",
-          tierHe: "Focused difficulty",
-        },
-      ],
-      strengths: [],
-      excellent: [],
-      maintain: [],
-      improving: [],
-      studentRecommendationsImprove: [
-        {
-          id: "stu-imp:hebrew:w:0",
-          textHe:
-            "You should practice a little more on the subject: in prepositions and sentence structure - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
-          strength: "moderate",
-        },
-      ],
-      studentRecommendationsMaintain: [],
-      parentRecommendationsImprove: [
-        {
-          id: "par-imp:hebrew:w:0",
-          textHe:
-            "A repetition of the same type of error begins - on the subject in prepositions and sentence structure. For the coming week, a calm look and a short, focused practice are enough.",
-          strength: "moderate",
-        },
-      ],
-      parentRecommendationsMaintain: [],
-      evidenceMistake: {
-        exerciseText: "Complete: The children played ___ the time in kindergarten.",
-        questionLabel: null,
-        correctAnswer: "on",
-        userAnswer: "to",
-        confidence: "moderate",
-      },
-      evidenceSuccess: null,
-      insufficientData: [
-        {
-          mistakeCount: 3,
-          note: "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty",
-        },
-      ],
-      diagnosticSparseNoteHe: null,
-    },
-    "moledet-geography": {
-      subject: "moledet-geography",
-      subjectLabelHe: "Homeland & Geography",
-      mistakeEventCount: 0,
-      wrongCount: 0,
-      hasAnySignal: false,
-      summaryHe: null,
-      topStrengths: [],
-      stableExcellence: [],
-      topWeaknesses: [],
-      parentActionHe: null,
-      nextWeekGoalHe: null,
-      evidenceExamples: [],
-      weaknesses: [],
-      strengths: [],
-      excellent: [],
-      maintain: [],
-      improving: [],
-      studentRecommendationsImprove: [],
-      studentRecommendationsMaintain: [],
-      parentRecommendationsImprove: [],
-      parentRecommendationsMaintain: [],
-      evidenceMistake: null,
-      evidenceSuccess: null,
-      insufficientData: [],
-      diagnosticSparseNoteHe: null,
-    },
-  },
-};
+import examplePatternDiagnosticsPayload from "../content-packs/en/learning/example-pattern-diagnostics-payload.json" with { type: "json" };
+
+export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = examplePatternDiagnosticsPayload;

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
 
 /**
@@ -267,13 +268,13 @@ export const TRAIN_TASKS = {
       type: "sentence_order",
       promptHe: "סדרו מילים למשפט קצר",
       words: ["The", "cat", "is", "red"],
-      word: "The cat is red",
+      word: globalBurnDownCopy("components__prototypes__dev__learning__english-word-builder__english-word-builder-data", "the_cat_is_red"),
     },
     {
       id: "h8",
       type: "fill_sentence",
       promptHe: "השלימו את המילה החסרה",
-      sentenceTemplate: "The apple is ___",
+      sentenceTemplate: globalBurnDownCopy("components__prototypes__dev__learning__english-word-builder__english-word-builder-data", "the_apple_is"),
       missingWord: "red",
       options: ["red", "run", "swim"],
       correctIndex: 0,
@@ -307,7 +308,7 @@ export const TRAIN_TASKS = {
       type: "sentence_order",
       promptHe: "סדרו מילים למשפט קצר",
       words: ["She", "likes", "red"],
-      word: "She likes red",
+      word: globalBurnDownCopy("components__prototypes__dev__learning__english-word-builder__english-word-builder-data", "she_likes_red"),
     },
   ],
 };

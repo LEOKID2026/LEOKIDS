@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { getGuideLink } from "../../data/seo/guide-pages";
 import { GUIDE_HUB_CARDS } from "../../data/seo/guide-pages";
@@ -58,7 +59,7 @@ export default function GuideSeoArticlePage({ content, isHub = false }) {
           </p>
           <HomeCtaLink
             href={content.relatedPracticePath}
-            label={content.practiceCtaLabel || "All practice areas"}
+            label={content.practiceCtaLabel || globalBurnDownCopy("components__seo__GuideSeoArticlePage", "all_practice_areas")}
             className={getHomeBtnClasses("parents", isBright, "secondary")}
             size="md"
           />
@@ -74,7 +75,7 @@ export default function GuideSeoArticlePage({ content, isHub = false }) {
           </p>
           <HomeCtaLink
             href="/practice"
-            label="All practice areas"
+            label={globalBurnDownCopy("components__seo__GuideSeoArticlePage", "all_practice_areas")}
             className={getHomeBtnClasses("parents", isBright, "secondary")}
             size="md"
           />

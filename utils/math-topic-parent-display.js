@@ -7,6 +7,7 @@
  * a mode suffix is appended so the rows stay distinguishable.
  */
 
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import {
   getMathReportBucketDisplayName,
   MATH_PARENT_TOPIC_FALLBACK_HE,
@@ -15,15 +16,15 @@ import {
 import { splitTopicRowKey, MATH_SCOPE_UNKNOWN } from "./parent-report-row-diagnostics.js";
 
 const MODE_SUFFIX_LABELS = {
-  learning: "Learning",
-  practice: "Practice",
-  challenge: "Challenge",
+  learning: globalBurnDownCopy("utils__math-topic-parent-display", "learning"),
+  practice: globalBurnDownCopy("utils__math-topic-parent-display", "practice"),
+  challenge: globalBurnDownCopy("utils__math-topic-parent-display", "challenge"),
   speed: "Speed",
-  marathon: "Marathon",
-  graded: "Graded",
-  normal: "Normal",
-  mistakes: "Mistakes",
-  practice_mistakes: "Review mistakes",
+  marathon: globalBurnDownCopy("utils__math-topic-parent-display", "marathon"),
+  graded: globalBurnDownCopy("utils__math-topic-parent-display", "graded"),
+  normal: globalBurnDownCopy("utils__math-topic-parent-display", "normal"),
+  mistakes: globalBurnDownCopy("utils__math-topic-parent-display", "mistakes"),
+  practice_mistakes: globalBurnDownCopy("utils__math-topic-parent-display", "review_mistakes"),
 };
 
 function effectiveMathGradeKeyFromRowOrKey(rowKey, row) {

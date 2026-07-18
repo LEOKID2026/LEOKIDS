@@ -7,6 +7,7 @@
  * Auth: CRON_SECRET - Vercel sends `Authorization: Bearer <CRON_SECRET>` automatically.
  *       ENABLE_MONTHLY_PERSISTENCE_CRON=true must be set.
  */
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { getLearningSupabaseServiceRoleClient } from "../../../lib/learning-supabase/server";
 import {
   getPreviousIsraelYearMonth,
@@ -46,7 +47,7 @@ export default async function handler(req, res) {
   if (!isCronEnabled()) {
     return res.status(403).json({
       code: "cron_disabled",
-      error: "Monthly persistence cron is disabled. Set ENABLE_MONTHLY_PERSISTENCE_CRON=true",
+      error: globalBurnDownCopy("pages__api__cron__monthly-persistence-award", "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron"),
     });
   }
 

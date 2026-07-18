@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { useMemo } from "react";
 import Link from "next/link";
 import Layout from "../../../components/Layout";
@@ -54,8 +55,8 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="Class report"
-          message="Invalid class ID."
+          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
+          message={globalBurnDownCopy("pages__teacher__class__[classId]", "invalid_class_id")}
         />
       </Layout>
     );
@@ -66,7 +67,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportLoading
           backHref="/teacher/dashboard"
-          title="Class report"
+          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
           hint={loadingHint}
         />
       </Layout>
@@ -78,8 +79,8 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title="Class report"
-          message="You do not have permission to view this class report."
+          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
+          message={globalBurnDownCopy("pages__teacher__class__[classId]", "you_do_not_have_permission_to_view_this_class_report")}
         />
       </Layout>
     );
@@ -90,7 +91,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportError
           backHref="/teacher/dashboard"
-          title="Class report"
+          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
           message={errorMessage}
           onRetry={reload}
         />
@@ -167,7 +168,7 @@ export default function TeacherClassReportPage({ classId }) {
             onEnableCustom={() => reportRange.setCustomDates(true)}
             onApplyCustom={() => {
               const result = reportRange.applyCustom();
-              if (!result.ok) alert("Please select valid dates");
+              if (!result.ok) alert(globalBurnDownCopy("pages__teacher__class__[classId]", "please_select_valid_dates"));
             }}
             className="mb-4"
           />

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect } from "react";
 
 /**
@@ -49,7 +50,7 @@ export function ReportModalFrame({
       <button
         type="button"
         className="absolute inset-0 bg-black/75 backdrop-blur-sm"
-        aria-label="Close window"
+        aria-label={globalBurnDownCopy("components__reporting__ReportModalFrame", "close_window")}
         onClick={onClose}
       />
       <div className="relative w-full max-w-2xl max-h-[min(88vh,720px)] flex flex-col text-right">

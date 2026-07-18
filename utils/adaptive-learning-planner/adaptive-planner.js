@@ -2,6 +2,7 @@
  * Adaptive Learning Planner — deterministic next-step recommendation from engine-shaped input.
  * Does not call the diagnostic engine, does not mutate banks, does not change live routing.
  */
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { REASON_CODES } from "./adaptive-planner-contract.js";
 import {
   canUsePrerequisite,
@@ -120,8 +121,8 @@ export function planAdaptiveLearning(raw) {
     o.plannerStatus = "insufficient_data";
     o.nextAction = "pause_collect_more_data";
     o.reasonCodes.push(REASON_CODES.MISSING_METADATA);
-    o.studentSafeSummary = "Not enough context to plan (missing subject).";
-    o.parentSafeSummary = "More learning activity is needed before suggesting a next focus.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "not_enough_context_to_plan_missing_subject");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "more_learning_activity_is_needed_before_suggesting_a_next_focus");
     o.internalNotes.push("Missing subject on planner input.");
     return o;
   }
@@ -132,8 +133,8 @@ export function planAdaptiveLearning(raw) {
     o.nextAction = "pause_collect_more_data";
     o.questionCount = 3;
     o.reasonCodes.push(REASON_CODES.ENGINE_INSUFFICIENT_DATA);
-    o.studentSafeSummary = "The learning system needs a bit more practice data before suggesting the next step.";
-    o.parentSafeSummary = "Collect a few more practice items; conclusions are deferred.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "collect_a_few_more_practice_items_conclusions_are_deferred");
     return o;
   }
 
@@ -144,8 +145,8 @@ export function planAdaptiveLearning(raw) {
     o.questionCount = 3;
     o.requiresHumanReview = true;
     o.reasonCodes.push(REASON_CODES.ENGLISH_SKILL_TAGGING_INCOMPLETE);
-    o.studentSafeSummary = "English practice can continue, but skill routing should be confirmed by a teacher.";
-    o.parentSafeSummary = "English tagging is incomplete in the content bank; planner will not auto-route fine-grained skills.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_");
     o.internalNotes.push("English exempt / missing skillId - no confident adaptive routing.");
     return o;
   }
@@ -157,8 +158,8 @@ export function planAdaptiveLearning(raw) {
     o.questionCount = 3;
     o.requiresHumanReview = true;
     o.reasonCodes.push(REASON_CODES.MISSING_METADATA);
-    o.studentSafeSummary = "Waiting on verified question metadata before suggesting an advanced path.";
-    o.parentSafeSummary = "Skill metadata for the next step is not confirmed; hold automatic advancement.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance");
     return o;
   }
 
@@ -188,8 +189,8 @@ export function planAdaptiveLearning(raw) {
     o.questionCount = 3;
     o.targetDifficulty = normalizeDifficulty(raw?.currentDifficultyHint || "standard");
     o.reasonCodes.push(REASON_CODES.PROBE_GUESSING);
-    o.studentSafeSummary = "Short probe to verify understanding versus guessing.";
-    o.parentSafeSummary = "Inconsistent or guess-heavy signals - use a small diagnostic set.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "short_probe_to_verify_understanding_versus_guessing");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set");
     return o;
   }
 
@@ -203,8 +204,8 @@ export function planAdaptiveLearning(raw) {
     o.targetDifficulty = lowerDifficulty(raw?.currentDifficultyHint || "standard");
     o.reasonCodes.push(REASON_CODES.REMEDIATE);
     if (errTypes.length) o.reasonCodes.push(REASON_CODES.ERROR_TYPES_TARGETED_PRACTICE);
-    o.studentSafeSummary = "Extra practice on the current skill at a supportive difficulty.";
-    o.parentSafeSummary = "Targeted practice on the same skill; difficulty held or lowered slightly.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "extra_practice_on_the_current_skill_at_a_supportive_difficulty");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly");
     return o;
   }
 
@@ -217,8 +218,8 @@ export function planAdaptiveLearning(raw) {
     o.targetDifficulty = "basic";
     o.questionCount = 4;
     o.reasonCodes.push(REASON_CODES.PREREQUISITE_REVIEW);
-    o.studentSafeSummary = "Brief review of a foundation skill that supports the current topic.";
-    o.parentSafeSummary = "Strengthen a prerequisite skill before pushing the main skill harder.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "brief_review_of_a_foundation_skill_that_supports_the_current_topic");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder");
     return o;
   }
 
@@ -231,8 +232,8 @@ export function planAdaptiveLearning(raw) {
     o.targetDifficulty = raiseDifficulty(raw?.currentDifficultyHint || "standard");
     o.questionCount = 4;
     o.reasonCodes.push(REASON_CODES.ADVANCE_STRONG_SIGNAL);
-    o.studentSafeSummary = "Ready for slightly more challenging practice on the same skill line.";
-    o.parentSafeSummary = "Signals support cautious difficulty increase with monitoring.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "ready_for_slightly_more_challenging_practice_on_the_same_skill_line");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "signals_support_cautious_difficulty_increase_with_monitoring");
     return o;
   }
 
@@ -243,8 +244,8 @@ export function planAdaptiveLearning(raw) {
     o.questionCount = 4;
     o.targetDifficulty = normalizeDifficulty(raw?.currentDifficultyHint || "standard");
     o.reasonCodes.push(REASON_CODES.MAINTAIN_STRONG_SIGNAL);
-    o.studentSafeSummary = "Continue solid practice at the current level.";
-    o.parentSafeSummary = "Maintain current difficulty while consolidating mastery.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "continue_solid_practice_at_the_current_level");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "maintain_current_difficulty_while_consolidating_mastery");
     return o;
   }
 
@@ -255,8 +256,8 @@ export function planAdaptiveLearning(raw) {
     o.questionCount = 4;
     o.targetDifficulty = lowerDifficulty(raw?.currentDifficultyHint || "standard");
     o.reasonCodes.push(REASON_CODES.DEFAULT_MAINTAIN);
-    o.studentSafeSummary = "Review-style practice on the current skill.";
-    o.parentSafeSummary = "Engine suggests review; planner aligns with same-skill practice.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "review_style_practice_on_the_current_skill");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "engine_suggests_review_planner_aligns_with_same_skill_practice");
     return o;
   }
 
@@ -267,8 +268,8 @@ export function planAdaptiveLearning(raw) {
     o.questionCount = 4;
     o.targetDifficulty = normalizeDifficulty(raw?.currentDifficultyHint || "standard");
     o.reasonCodes.push(REASON_CODES.DEFAULT_MAINTAIN);
-    o.studentSafeSummary = "Steady practice on the current focus.";
-    o.parentSafeSummary = "Default safe path: continue practice without advancing difficulty.";
+    o.studentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "steady_practice_on_the_current_focus");
+    o.parentSafeSummary = burnDownCopy("utils__adaptive-learning-planner__adaptive-planner", "default_safe_path_continue_practice_without_advancing_difficulty");
     return o;
   }
 }

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { safeApiLog } from "../../../lib/security/safe-log.js";
 import { consumeRateLimit, clientIpFromRequest } from "../../../lib/security/in-memory-rate-limit.js";
 import { isProductionRuntime } from "../../../lib/security/production-guard.js";
@@ -56,7 +57,7 @@ export default async function handler(req, res) {
         profileResult.code,
         profileResult.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__me", "unexpected_server_error")
       );
     }
 
@@ -72,7 +73,7 @@ export default async function handler(req, res) {
         limitsRow.code,
         limitsRow.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__me", "unexpected_server_error")
       );
     }
 
@@ -92,7 +93,7 @@ export default async function handler(req, res) {
         resolvedLimits.code,
         resolvedLimits.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__me", "unexpected_server_error")
       );
     }
 
@@ -104,7 +105,7 @@ export default async function handler(req, res) {
         countersResult.code,
         countersResult.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__me", "unexpected_server_error")
       );
     }
 
@@ -116,7 +117,7 @@ export default async function handler(req, res) {
         schoolMem.code,
         schoolMem.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__me", "unexpected_server_error")
       );
     }
 
@@ -132,6 +133,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ data: mePayload });
   } catch (_e) {
     safeApiLog("teacher_me_unexpected_error", { route: "me" });
-    return sendTeacherApiError(res, 500, "internal_error", "Unexpected server error");
+    return sendTeacherApiError(res, 500, "internal_error", globalBurnDownCopy("pages__api__teacher__me", "unexpected_server_error"));
   }
 }

@@ -4,6 +4,7 @@ import {
   insertVirtualAnswerChar,
 } from "../../lib/learning/virtual-answer-keyboard-insert.js";
 import { getVirtualAnswerKeyboardRows } from "../../lib/learning/virtual-answer-keyboard-layouts.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * On-screen answer keyboard — inserts into existing answer state only.
@@ -48,6 +49,7 @@ export default function VirtualAnswerKeyboard({
   spacerClassName = "",
   variant = "default",
 }) {
+  const t = useT();
   const isMathMobile = variant === "mathMobile";
   const rows = getVirtualAnswerKeyboardRows(layout, { compact });
   if (!rows.length) return null;
@@ -116,7 +118,7 @@ export default function VirtualAnswerKeyboard({
       className={`w-full ${shellMaxWidthClass} mx-auto select-none ${shellPaddingClass} ${className}`}
       dir="ltr"
       role="group"
-      aria-label="Number keyboard"
+      aria-label={t("ui.learning.virtualKeyboardAria")}
     >
       {showClose && onClose ? (
         <div className="flex justify-end mb-1">
@@ -124,8 +126,8 @@ export default function VirtualAnswerKeyboard({
             type="button"
             onClick={onClose}
             className={closeBtnClass}
-            aria-label="Close"
-            title="Close"
+            aria-label={t("ui.common.close")}
+            title={t("ui.common.close")}
           >
             ✕
           </button>
@@ -191,7 +193,7 @@ export default function VirtualAnswerKeyboard({
                   onClick={submitButton.onClick}
                   className={submitClass}
                 >
-                  {submitButton.label || "Check"}
+                  {submitButton.label || t("ui.learning.virtualKeyboardCheck")}
                 </button>
               ) : null}
             </div>

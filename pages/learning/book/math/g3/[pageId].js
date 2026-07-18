@@ -3,11 +3,6 @@ import MathG3BookShell from "../../../../../components/learning-book/MathG3BookS
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import {
-  loadMathG3Page,
-  loadMathG3TocEntries,
-  getMathG3StaticPaths,
-} from "../../../../../lib/learning-book/load-math-g3-pages";
-import {
   getMathG3PageNeighbors,
   isValidMathG3PageId,
 } from "../../../../../lib/learning-book/math-g3-registry";
@@ -42,14 +37,8 @@ export default function MathG3BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getMathG3StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadMathG3Page, loadMathG3TocEntries } = await import("../../../../../lib/learning-book/load-math-g3-pages");
   const pageId = params.pageId;
   if (!isValidMathG3PageId(pageId)) {
     return { notFound: true };

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { getHomeBtnClasses, getHomeTextClasses } from "../home/home-theme";
 import HomeCtaLink from "../home/HomeCtaLink";
@@ -33,14 +34,14 @@ export default function PublicSeoEntrySection({ isBright }) {
       <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
         <HomeCtaLink
           href="/practice"
-          label="Practice areas"
+          label={globalBurnDownCopy("components__seo__PublicSeoEntrySection", "practice_areas")}
           className={getHomeBtnClasses("parents", isBright, "primary")}
           size="md"
           testId="public-seo-entry-practice"
         />
         <HomeCtaLink
           href="/guides"
-          label="Parent guides"
+          label={globalBurnDownCopy("components__seo__PublicSeoEntrySection", "parent_guides")}
           className={getHomeBtnClasses("parents", isBright, "secondary")}
           size="md"
           testId="public-seo-entry-guides"

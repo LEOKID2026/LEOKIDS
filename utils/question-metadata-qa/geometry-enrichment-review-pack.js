@@ -2,6 +2,7 @@
  * Geometry-only enrichment review pack (aggregates geometry suggestions).
  * Does not modify question banks.
  */
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { GEOMETRY_SKILL_IDS } from "./question-metadata-taxonomy.js";
 
 /**
@@ -198,7 +199,7 @@ export function buildGeometryReviewPack(enrichmentPayload) {
       reviewPriority: s.reviewPriority,
       confidenceReasons: s.confidenceReasons,
     })),
-    needsHumanReviewNote: "All suggestions keep needsHumanReview=true until bank edits are approved.",
+    needsHumanReviewNote: globalBurnDownCopy("utils__question-metadata-qa__geometry-enrichment-review-pack", "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved"),
     checklist,
   };
 }

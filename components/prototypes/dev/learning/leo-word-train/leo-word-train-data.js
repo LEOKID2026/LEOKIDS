@@ -15,6 +15,7 @@
  * }} TrainTask
  */
 
+import { gamePackCopy } from "../../../../../lib/games/game-pack-copy.js";
 import { LANGUAGE_PROTOTYPE_TASKS, shuffleTasks } from "../shared/language-prototype-config.js";
 
 /** @param {string[]} labels @param {number} extra */
@@ -326,7 +327,7 @@ export const WORD_TRAIN_TASKS = {
       id: "h8",
       type: "sentence_gap",
       stationLabel: "תחנה 8",
-      missionHe: "The apple is ___",
+      missionHe: gamePackCopy("components__prototypes__dev__learning__leo-word-train__leo-word-train-data", "the_apple_is"),
       carriages: [
         { id: "p1", kind: "fixed", content: "The" },
         { id: "p2", kind: "fixed", content: "apple" },

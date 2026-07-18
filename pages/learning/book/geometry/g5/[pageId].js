@@ -4,11 +4,6 @@ import LearningPageBody from "../../../../../components/learning-book/LearningPa
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../lib/learning-book/learning-book-nav";
 import {
-  loadGeometryG5Page,
-  loadGeometryG5TocEntries,
-  getGeometryG5StaticPaths,
-} from "../../../../../lib/learning-book/load-geometry-g5-pages";
-import {
   getGeometryG5PageNeighbors,
   isValidGeometryG5PageId,
   GEOMETRY_G5_BOOK_META,
@@ -57,14 +52,8 @@ export default function GeometryG5BookPage({
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getGeometryG5StaticPaths(),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+  const { loadGeometryG5Page, loadGeometryG5TocEntries } = await import("../../../../../lib/learning-book/load-geometry-g5-pages");
   const pageId = params.pageId;
   if (!isValidGeometryG5PageId(pageId)) {
     return { notFound: true };

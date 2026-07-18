@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useState, useRef, useEffect } from "react";
 import Layout from "../../components/Layout";
 import MaybeGameAccessGuard from "../../components/offline/MaybeGameAccessGuard.jsx";
@@ -58,7 +59,7 @@ export default function RockPaperScissors() {
       : score.p2 >= firstTo
       ? vsBot
         ? "Leo Bot"
-        : "Player 2"
+        : gamePackCopy("pages__offline__rock-paper-scissors", "player_2")
       : null;
 
   const isMidRound = showResults || showP1Choice;
@@ -320,7 +321,7 @@ export default function RockPaperScissors() {
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
               <div className="text-[10px] text-white/60">
-                {vsBot ? "Bot" : "Player 2"}
+                {vsBot ? "Bot" : gamePackCopy("pages__offline__rock-paper-scissors", "player_2")}
               </div>
               <div className="text-sm font-bold text-purple-400">{score.p2}</div>
             </div>
@@ -437,7 +438,7 @@ export default function RockPaperScissors() {
                   </div>
                   <div className="rounded-2xl border-2 border-purple-400/50 bg-purple-500/20 px-6 py-6 flex flex-col items-center justify-center gap-3">
                     <span className="text-2xl text-white/60">
-                      {vsBot ? "Bot" : "Player 2"}
+                      {vsBot ? "Bot" : gamePackCopy("pages__offline__rock-paper-scissors", "player_2")}
                     </span>
                     <span className="text-6xl">
                       {finalResult && CHOICES.find((c) => c.id === finalResult.p2)?.emoji}

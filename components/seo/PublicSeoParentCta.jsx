@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { getHomeBtnClasses } from "../home/home-theme";
 import HomeCtaLink from "../home/HomeCtaLink";
 
@@ -13,13 +14,13 @@ export default function PublicSeoParentCta({ isBright }) {
     >
       <HomeCtaLink
         href="/parent/login"
-        label="Parent login / sign up"
+        label={globalBurnDownCopy("components__seo__PublicSeoParentCta", "parent_login_sign_up")}
         className={getHomeBtnClasses("parents", isBright, "primary")}
         testId="seo-cta-parent-login"
       />
       <HomeCtaLink
         href="/parents"
-        label="Explore the parent portal"
+        label={globalBurnDownCopy("components__seo__PublicSeoParentCta", "explore_the_parent_portal")}
         className={getHomeBtnClasses("parents", isBright, "secondary")}
         size="md"
         testId="seo-cta-parents-portal"

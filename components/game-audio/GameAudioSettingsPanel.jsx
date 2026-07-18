@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { useGameAudioOptional } from "../../hooks/useGameAudio.js";
 import { getMastersBgmAssetId } from "../../lib/game-audio/game-bgm-map.js";
 import {
@@ -41,6 +42,7 @@ function VolumeRow({ label, value, onChange }) {
  * Full settings panel for in-game fullscreen overlays.
  */
 export default function GameAudioSettingsPanel({ onClose, className = "", musicScope = "global" }) {
+  const { direction, locale, t } = useI18n();
   const audio = useGameAudioOptional();
   const [open, setOpen] = useState(true);
   const isLearningMasterScope = musicScope === "learning-master";
@@ -65,34 +67,35 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
   return (
     <div
       className={`rounded-xl border border-white/15 bg-gray-900/95 p-4 text-white shadow-xl backdrop-blur ${className}`}
-      dir="ltr"
+      dir={direction}
+      lang={locale}
       role="dialog"
-      aria-label="Audio settings"
+      aria-label={t("ui.audio.settings")}
     >
       <div className="mb-3 flex items-center justify-between gap-2">
-        <h3 className="text-base font-semibold">Audio settings</h3>
+        <h3 className="text-base font-semibold">{t("ui.audio.settings")}</h3>
         <button
           type="button"
           onClick={close}
           className="rounded-lg px-2 py-1 text-sm text-white/70 hover:bg-white/10"
-          aria-label="Close"
+          aria-label={t("ui.audio.close")}
         >
           ✕
         </button>
       </div>
 
       <ToggleRow
-        label="All audio"
+        label={t("ui.audio.allAudio")}
         checked={s.masterEnabled}
         onChange={(v) => audio.updateSettings({ masterEnabled: v })}
       />
       <ToggleRow
-        label="Effects"
+        label={t("ui.audio.effects")}
         checked={s.sfxEnabled}
         onChange={(v) => audio.updateSettings({ sfxEnabled: v })}
       />
       <ToggleRow
-        label="Music"
+        label={t("ui.audio.music")}
         checked={isLearningMasterScope ? learningMasterMusicEnabled : s.musicEnabled}
         onChange={(v) => {
           if (isLearningMasterScope) {
@@ -110,7 +113,7 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
         }}
       />
       <ToggleRow
-        label="Speech / narration"
+        label={t("ui.audio.speech")}
         checked={s.voiceEnabled}
         onChange={(v) => {
           audio.updateSettings({ voiceEnabled: v });
@@ -119,28 +122,28 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
       />
 
       <VolumeRow
-        label="Effects volume"
+        label={t("ui.audio.effectsVolume")}
         value={s.sfxVolume}
         onChange={(v) => audio.updateSettings({ sfxVolume: v })}
       />
       <VolumeRow
-        label="Music volume"
+        label={t("ui.audio.musicVolume")}
         value={s.musicVolume}
         onChange={(v) => audio.updateSettings({ musicVolume: v })}
       />
       <VolumeRow
-        label="Speech volume"
+        label={t("ui.audio.speechVolume")}
         value={s.voiceVolume}
         onChange={(v) => audio.updateSettings({ voiceVolume: v })}
       />
 
       <ToggleRow
-        label="Auto-play instructions"
+        label={t("ui.audio.autoPlayInstructions")}
         checked={s.autoPlayInstructions}
         onChange={(v) => audio.updateSettings({ autoPlayInstructions: v })}
       />
       <ToggleRow
-        label="Auto-play questions"
+        label={t("ui.audio.autoPlayQuestions")}
         checked={s.autoPlayQuestions}
         onChange={(v) => audio.updateSettings({ autoPlayQuestions: v })}
       />
@@ -157,7 +160,7 @@ export default function GameAudioSettingsPanel({ onClose, className = "", musicS
           }
         }}
       >
-        Reset to defaults
+        {t("ui.audio.resetDefaults")}
       </button>
     </div>
   );

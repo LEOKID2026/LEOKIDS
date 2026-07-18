@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { safeApiLog } from "../../../lib/security/safe-log.js";
 import { rejectIfCrossOriginCookieMutation } from "../../../lib/security/same-origin.js";
 import { clientIpFromRequest, consumeRateLimit } from "../../../lib/security/in-memory-rate-limit.js";
@@ -200,7 +201,7 @@ export default async function handler(req, res) {
         result.code,
         result.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__onboard", "unexpected_server_error")
       );
     }
 
@@ -212,7 +213,7 @@ export default async function handler(req, res) {
         prefixResult.code,
         prefixResult.code === "db_schema_not_ready"
           ? "teacher_portal schema not yet applied"
-          : "Unexpected server error"
+          : globalBurnDownCopy("pages__api__teacher__onboard", "unexpected_server_error")
       );
     }
 
@@ -234,6 +235,6 @@ export default async function handler(req, res) {
     });
   } catch (_e) {
     safeApiLog("teacher_onboard_unexpected_error", { route: "onboard" });
-    return sendTeacherApiError(res, 500, "internal_error", "Unexpected server error");
+    return sendTeacherApiError(res, 500, "internal_error", globalBurnDownCopy("pages__api__teacher__onboard", "unexpected_server_error"));
   }
 }

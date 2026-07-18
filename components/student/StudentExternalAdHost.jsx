@@ -2,6 +2,7 @@ import {
   getStudentAdSlotClasses,
 } from "../../lib/student-ui/student-ad-slot.client.js";
 import { STUDENT_AD_POLICY } from "../../lib/student-ui/student-ad-config.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Reserved mount point for a future child-safe, non-personalized external ad provider.
@@ -24,6 +25,7 @@ export default function StudentExternalAdHost({
   className = "",
   dataAdSlot = "student-ad-reserved",
 }) {
+  const t = useT();
   const resolvedVariant = variant === "immersive-fixed" ? "inline" : variant;
   const styles = getStudentAdSlotClasses(resolvedVariant, theme);
   const wrapCls = [styles.wrap, wrapClassName, className].filter(Boolean).join(" ");
@@ -32,7 +34,7 @@ export default function StudentExternalAdHost({
   return (
     <aside
       role="complementary"
-      aria-label="Advertisement"
+      aria-label={t("ui.student.adSlotAria")}
       data-ad-slot={dataAdSlot}
       data-ad-render="external-host"
       data-ad-child-safe={STUDENT_AD_POLICY.childSafe ? "true" : "false"}

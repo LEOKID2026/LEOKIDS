@@ -4,6 +4,7 @@
  * Global product: English narration scaffolding (no Hebrew user-facing copy).
  */
 
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { sha256 } from "js-sha256";
 
 /** @param {string} s @param {number} max */
@@ -58,7 +59,7 @@ export function buildFirstPassNarrationPlaintext(p) {
     : "";
   const topicLabel = p.topic === "reading" ? "Reading" : "Reading comprehension";
   const ansPart = ansLine ? ` Options: ${ansLine}.` : "";
-  const afterTopic = "Listen to the question and answer based on what you hear.";
+  const afterTopic = globalBurnDownCopy("utils__hebrew-audio-narration-binding", "listen_to_the_question_and_answer_based_on_what_you_hear");
   const lead = `${topicLabel}. ${afterTopic} Question: `;
   if (p.task_mode === "oral_comprehension_mcq") {
     return `${lead}${body}.${ansPart} Choose the correct answer based on what you heard.`;

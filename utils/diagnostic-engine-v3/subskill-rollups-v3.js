@@ -2,6 +2,7 @@
  * Diagnostic Engine V3 — subskill / topic rollups (internal payload).
  */
 
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { splitTopicRowKey } from "../parent-report-row-diagnostics.js";
 import { normalizeDiagnosticSubjectId } from "../diagnostic-evidence.js";
 import { ERROR_TYPE_V3 } from "./error-types-v3.js";

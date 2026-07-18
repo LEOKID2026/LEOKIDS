@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import {
   isTopicDifficultyMetadataLead,
   normalizeStudentQuestionDisplayFields,
@@ -45,7 +46,7 @@ export const STUDENT_STEM_METADATA_LEAK_CHECKS = [
   {
     id: "level_he",
     re: /רמה\s+(קלה|בינונית|קשה|מאתגרת)/u,
-    label: "Hebrew level prefix",
+    label: globalBurnDownCopy("utils__student-question-stem-sanitizer", "hebrew_level_prefix"),
   },
   {
     id: "level_ramat",
@@ -95,7 +96,7 @@ export const STUDENT_STEM_METADATA_LEAK_CHECKS = [
   {
     id: "level_en_token",
     re: /(?:^|[·•(-])\s*(easy|medium|hard)\s*(?:[):·•-]|$)/iu,
-    label: "English level token as metadata",
+    label: globalBurnDownCopy("utils__student-question-stem-sanitizer", "english_level_token_as_metadata"),
   },
   {
     id: "mokad_focus_id",

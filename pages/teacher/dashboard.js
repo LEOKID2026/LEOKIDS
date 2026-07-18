@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
@@ -234,7 +235,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
         : "Something went wrong loading the data. Refresh the page and try again.";
     return (
       <Layout {...privateLayoutProps}>
-        <TeacherPortalShell title="My dashboard" titleClassName={shellTheme.shellTitle}>
+        <TeacherPortalShell title={globalBurnDownCopy("pages__teacher__dashboard", "my_dashboard")} titleClassName={shellTheme.shellTitle}>
           <p className={shellTheme.shellError} data-testid="teacher-dashboard-root" data-state={state} role="alert">
             {msg}
           </p>
@@ -253,7 +254,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
         data-link-enabled={linkEnabled ? "true" : "false"}
       >
         <TeacherPortalShell
-          title="My dashboard"
+          title={globalBurnDownCopy("pages__teacher__dashboard", "my_dashboard")}
           titleClassName={shellTheme.shellTitle}
           schoolMembership={dashboard?.schoolMembership}
         >

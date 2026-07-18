@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { requireParentApiContext } from "../../../lib/auth/persona-guard.server.js";
 import { resolveParentMaxChildren } from "../../../lib/parent-server/parent-entitlement-provision.server.js";
 import {
@@ -41,7 +42,7 @@ async function handler(req, res) {
     return res.status(400).json({
       ok: false,
       code: "grade_required",
-      error: "Please select a grade",
+      error: globalBurnDownCopy("pages__api__parent__create-student", "please_select_a_grade"),
     });
   }
 
@@ -55,8 +56,7 @@ async function handler(req, res) {
 
     const productId = getServerProductId();
     const membership = await ensureGlobalProductMembership(ctx.serviceRole, ctx.parentUserId, {
-      interfaceLanguage: "en",
-      preferredReportLanguage: "en",
+      preserveExistingLanguages: true,
     });
     if (!membership.ok) {
       return res.status(membership.status || 503).json({
@@ -86,7 +86,7 @@ async function handler(req, res) {
     if (countResult.count >= limitResult.maxChildren) {
       return res.status(400).json({
         ok: false,
-        error: "You can add up to 3 children on this parent account",
+        error: globalBurnDownCopy("pages__api__parent__create-student", "you_can_add_up_to_3_children_on_this_parent_account"),
       });
     }
 

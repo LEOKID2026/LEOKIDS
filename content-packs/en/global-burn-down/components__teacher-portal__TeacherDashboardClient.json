@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Remove this student from the class?",
+    "remove_this_student_from_your_teacher_list": "Remove this student from your teacher list?",
+    "manage_class": "Manage class",
+    "full_name_of_new_student": "Full name of new student",
+    "students": "Students",
+    "classes": "Classes",
+    "class_report": "Class report",
+    "activities": "Activities",
+    "filter_student_list": "Filter student list",
+    "search_by_name": "Search by name…"
+  }
+}

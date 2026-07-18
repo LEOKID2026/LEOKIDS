@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect, useMemo, useState } from "react";
 import { ReportModalFrame } from "./ReportModalFrame.jsx";
 import {
@@ -38,7 +39,7 @@ export default function ReportHubModal({
   title,
   onClose,
   loading = false,
-  loadingLabel = "Loading report…",
+  loadingLabel = globalBurnDownCopy("components__reporting__ReportHubModal", "loading_report"),
   error = "",
   viewModel = null,
   onStudentReport,
@@ -192,7 +193,7 @@ export default function ReportHubModal({
         <ReportDetailSectionView
           section={{
             title: drilldownSection?.title,
-            empty: "No children in this group.",
+            empty: globalBurnDownCopy("components__reporting__ReportHubModal", "no_children_in_this_group"),
             items: drilldownSection?.items || [],
           }}
           variant="students"

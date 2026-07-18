@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useT } from "../lib/i18n/I18nProvider.jsx";
 import {
   getDeferredInstallPrompt,
   isCapacitorNative,
@@ -9,6 +10,7 @@ import {
 } from "../lib/pwa/pwa-install-prompt";
 
 export default function InstallAppPrompt() {
+  const t = useT();
   const hasNativePrompt = usePwaInstallPromptAvailable();
   const promptInstall = usePromptPwaInstall();
   const [showPrompt, setShowPrompt] = useState(false);
@@ -102,11 +104,11 @@ export default function InstallAppPrompt() {
             </svg>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-white mb-1">Install LEO KIDS</h3>
+            <h3 className="text-lg font-bold text-white mb-1">{t("ui.installApp.prompt.title")}</h3>
             <p className="text-sm text-white/90 mb-3">
               {isIOS
-                ? "Add the app to your home screen for a better experience"
-                : "Install the app for faster, easier access"}
+                ? t("ui.installApp.prompt.bodyIos")
+                : t("ui.installApp.prompt.bodyDefault")}
             </p>
 
             <button
@@ -124,16 +126,20 @@ export default function InstallAppPrompt() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              {hasNativePrompt ? "Download and install now" : isIOS ? "Show install instructions" : "Install app"}
+              {hasNativePrompt
+                ? t("ui.installApp.prompt.installNow")
+                : isIOS
+                  ? t("ui.installApp.prompt.showIosInstructions")
+                  : t("ui.installApp.prompt.installApp")}
             </button>
 
             {isIOS && (
               <div className="bg-black/30 rounded-lg p-3 mb-3 text-xs text-white/90">
-                <p className="font-semibold mb-2">Install instructions:</p>
+                <p className="font-semibold mb-2">{t("ui.installApp.prompt.instructionsHeading")}</p>
                 <ol className="list-decimal list-inside space-y-1">
-                  <li>Tap the Share button <span className="font-bold">📤</span> at the bottom of Safari</li>
-                  <li>Choose &quot;Add to Home Screen&quot;</li>
-                  <li>Tap &quot;Add&quot;</li>
+                  <li>{t("ui.installApp.prompt.iosStep1")}</li>
+                  <li>{t("ui.installApp.prompt.iosStep2")}</li>
+                  <li>{t("ui.installApp.prompt.iosStep3")}</li>
                 </ol>
               </div>
             )}
@@ -144,7 +150,7 @@ export default function InstallAppPrompt() {
                 type="button"
                 className="flex-1 px-4 py-2 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all hover:scale-105 active:scale-95 text-sm"
               >
-                ✕ Close
+                {t("ui.installApp.prompt.close")}
               </button>
             </div>
           </div>

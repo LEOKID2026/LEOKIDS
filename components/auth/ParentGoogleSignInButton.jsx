@@ -4,6 +4,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   createParentGoogleNoncePair,
   getParentGoogleClientId,
@@ -15,7 +16,7 @@ import {
  *   disabled?: boolean;
  *   className?: string;
  *   onCredential?: (payload: { credential: string, nonce: string }) => void | Promise<void>;
- *   onError?: (messageHe: string) => void;
+ *   onError?: (messageKey: string) => void;
  * }} props
  */
 export default function ParentGoogleSignInButton({
@@ -24,12 +25,13 @@ export default function ParentGoogleSignInButton({
   onCredential,
   onError,
 }) {
+  const t = useT();
   const containerRef = useRef(null);
   const nonceRef = useRef(null);
   const onCredentialRef = useRef(onCredential);
   const onErrorRef = useRef(onError);
   const [ready, setReady] = useState(false);
-  const [initError, setInitError] = useState("");
+  const [initErrorKey, setInitErrorKey] = useState("");
 
   onCredentialRef.current = onCredential;
   onErrorRef.current = onError;
@@ -39,7 +41,7 @@ export default function ParentGoogleSignInButton({
     const clientId = getParentGoogleClientId();
 
     if (!clientId) {
-      setInitError("Google sign-in is not configured right now. Sign in with email and password.");
+      setInitErrorKey("auth.google.notConfigured");
       setReady(false);
       return undefined;
     }
@@ -62,7 +64,7 @@ export default function ParentGoogleSignInButton({
             const usedNonce = nonceRef.current;
             nonceRef.current = null;
             if (!credential) {
-              onErrorRef.current?.("Could not complete Google sign-in. Please try again.");
+              onErrorRef.current?.("auth.google.credentialMissing");
               return;
             }
             void onCredentialRef.current?.({ credential, nonce: usedNonce || "" });
@@ -88,16 +90,14 @@ export default function ParentGoogleSignInButton({
         });
 
         if (!cancelled) {
-          setInitError("");
+          setInitErrorKey("");
           setReady(true);
         }
       } catch {
         if (!cancelled) {
           setReady(false);
-          setInitError("Could not load Google sign-in right now. Please try again in a moment.");
-          onErrorRef.current?.(
-            "Could not load Google sign-in right now. Please try again in a moment."
-          );
+          setInitErrorKey("auth.google.loadFailed");
+          onErrorRef.current?.("auth.google.loadFailed");
         }
       }
     })();
@@ -108,14 +108,14 @@ export default function ParentGoogleSignInButton({
     };
   }, []);
 
-  if (initError && !ready) {
+  if (initErrorKey && !ready) {
     return (
       <div
         className={["w-full min-h-10", className].filter(Boolean).join(" ")}
         data-testid="parent-google-sign-in"
         role="status"
       >
-        <p className="text-sm text-center opacity-80">{initError}</p>
+        <p className="text-sm text-center opacity-80">{t(initErrorKey)}</p>
       </div>
     );
   }

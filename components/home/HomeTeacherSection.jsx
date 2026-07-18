@@ -1,4 +1,5 @@
-import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
 
@@ -6,7 +7,7 @@ import HomeCtaLink from "./HomeCtaLink";
  * @param {{ isBright: boolean }} props
  */
 export default function HomeTeacherSection({ isBright }) {
-  const copy = HOMEPAGE_COPY.teachers;
+  const { teachers: copy } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
 
   return (

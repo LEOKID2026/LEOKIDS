@@ -1,202 +1,28 @@
 /**
  * Professional Diagnostic Framework V1 (internal, educational support only).
- * Enriches diagnosticEngineV2 units — does not replace the engine.
- *
- * No clinical or medical claims. Language is educational and cautious.
+ * Structure is language-neutral; labels load from content-packs/en/learning/diagnostic-framework-v1.json.
  */
+import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
+import frameworkPack from "../../content-packs/en/learning/diagnostic-framework-v1.json" with { type: "json" };
 import { mathReportBaseOperationKey } from "../math-report-generator.js";
 
-export const PROFESSIONAL_FRAMEWORK_V1 = {
-  version: "1.1.0",
-  name: "Professional Diagnostic Framework V1",
-  supportedSubjectIds: /** @type {const} */ ([
-    "math",
-    "hebrew",
-    "english",
-    "science",
-    "geometry",
-    "moledet-geography",
-  ]),
-  evidenceLevelEnum: /** @type {const} */ (["none", "thin", "limited", "medium", "strong"]),
-  confidenceEnum: /** @type {const} */ (["very_low", "low", "medium", "high"]),
-  recommendationTypeEnum: /** @type {const} */ ([
-    "continue_current_level",
-    "advance_cautiously",
-    "targeted_practice",
-    "review_foundation",
-    "collect_more_data",
-    "slow_down_and_check",
-    "teacher_review_recommended",
-    "professional_review_consideration",
-  ]),
-  bannedConclusionPhrases: [
-    "dyslexia",
-    "dyscalculia",
-    "adhd",
-    "learning disability",
-    "קושי למידה קליני",
-    "אבחון רפואי",
-    "אבחון קליני",
-  ],
-};
+export const PROFESSIONAL_FRAMEWORK_V1 = frameworkPack.framework;
 
 /** @type {Record<string, Record<string, { label: string, subskills: string[] }>>} */
-export const SKILL_PACK_BY_SUBJECT_ID = {
-  math: {
-    arithmetic_operations: {
-      label: "Arithmetic / operations",
-      subskills: ["addition", "subtraction", "multiplication", "division", "order_of_operations"],
-    },
-    fractions: {
-      label: "Fractions",
-      subskills: [
-        "numerator_denominator_understanding",
-        "compare_fractions",
-        "unlike_denominators",
-        "equivalent_fractions",
-        "add_fractions",
-        "subtract_fractions",
-        "simplify_fractions",
-        "mixed_numbers",
-        "fraction_word_problems",
-      ],
-    },
-    word_problems: {
-      label: "Word problems",
-      subskills: [
-        "identify_operation_from_text",
-        "translate_text_to_equation",
-        "multi_step_reasoning",
-        "irrelevant_information",
-        "reading_the_question",
-      ],
-    },
-    number_sense: {
-      label: "Place value / number sense",
-      subskills: ["place_value", "rounding", "estimation", "number_line_reasoning"],
-    },
-  },
-  hebrew: {
-    reading_comprehension: {
-      label: "Reading comprehension",
-      subskills: [
-        "explicit_information",
-        "inference",
-        "main_idea",
-        "sequence_of_events",
-        "cause_and_effect",
-        "vocabulary_in_context",
-        "fact_vs_opinion",
-        "understanding_instructions",
-        "character_or_text_intent",
-      ],
-    },
-    language_grammar: {
-      label: "Language / grammar",
-      subskills: ["sentence_structure", "verb_tense_recognition", "word_meaning", "spelling_morphology"],
-    },
-  },
-  english: {
-    vocabulary: {
-      label: "Vocabulary",
-      subskills: ["word_meaning", "collocations", "context_clues", "synonyms_antonyms"],
-    },
-    grammar: {
-      label: "Grammar",
-      subskills: ["tense_agreement", "sentence_structure", "articles_prepositions", "word_order"],
-    },
-    reading_comprehension: {
-      label: "Reading comprehension",
-      subskills: ["main_idea", "details", "inference", "sequence"],
-    },
-    sentence_understanding: {
-      label: "Sentence understanding",
-      subskills: ["sentence_meaning", "connectors", "negation_scope"],
-    },
-    translation: {
-      label: "Translation / bilingual bridge",
-      subskills: ["alignment_meaning", "false_friends", "instruction_transfer"],
-    },
-  },
-  science: {
-    cause_and_effect: {
-      label: "Cause and effect",
-      subskills: ["identify_cause", "identify_effect", "chain_reasoning"],
-    },
-    experiments: {
-      label: "Experiments",
-      subskills: ["variables", "hypothesis", "steps", "interpret_results"],
-    },
-    observation: {
-      label: "Observation",
-      subskills: ["describe_patterns", "collect_evidence", "measurement_basics"],
-    },
-    classification: {
-      label: "Classification",
-      subskills: ["sorting_rules", "taxonomy", "compare_groups"],
-    },
-    systems_understanding: {
-      label: "Systems understanding",
-      subskills: ["parts_roles", "cycles", "interactions"],
-    },
-    scientific_reasoning: {
-      label: "Scientific reasoning",
-      subskills: ["models", "predictions", "evidence_vs_opinion"],
-    },
-  },
-  geometry: {
-    shapes: {
-      label: "Shapes",
-      subskills: ["identify_shapes", "properties", "compare_shapes"],
-    },
-    angles: {
-      label: "Angles",
-      subskills: ["measure_angles", "angle_types", "angle_relationships"],
-    },
-    area: {
-      label: "Area",
-      subskills: ["area_formulas", "composite_figures", "units"],
-    },
-    perimeter: {
-      label: "Perimeter",
-      subskills: ["perimeter_reasoning", "units", "composite_bounds"],
-    },
-    symmetry: {
-      label: "Symmetry",
-      subskills: ["line_symmetry", "reflections"],
-    },
-    spatial_reasoning: {
-      label: "Spatial reasoning",
-      subskills: ["nets", "views", "transformations"],
-    },
-  },
-  "moledet-geography": {
-    maps: {
-      label: "Maps",
-      subskills: ["legend_scale", "coordinates_grid", "symbols"],
-    },
-    directions: {
-      label: "Directions",
-      subskills: ["cardinal_relative", "routes", "orientation"],
-    },
-    landmarks: {
-      label: "Landmarks",
-      subskills: ["recognize_features", "relations_between_places"],
-    },
-    community: {
-      label: "Community",
-      subskills: ["roles_services", "local_context"],
-    },
-    environment: {
-      label: "Environment",
-      subskills: ["climate_landforms", "resources", "human_environment"],
-    },
-    location_reasoning: {
-      label: "Location reasoning",
-      subskills: ["near_far", "borders_regions", "spatial_comparison"],
-    },
-  },
-};
+export const SKILL_PACK_BY_SUBJECT_ID = Object.fromEntries(
+  Object.entries(frameworkPack.skillPackStructure).map(([subjectId, packs]) => [
+    subjectId,
+    Object.fromEntries(
+      Object.entries(packs).map(([packId, row]) => [
+        packId,
+        {
+          label: frameworkPack.skillLabels[`${subjectId}.${packId}`] || packId,
+          subskills: row.subskills,
+        },
+      ])
+    ),
+  ])
+);
 
 export const MATH_ERROR_TYPES_V1 = [
   "calculation_error",
@@ -473,7 +299,7 @@ function subjectWideWeaknessBlockedReasoning(subjectId, maps) {
   return [
     weakRows.length <= 1
       ? "Subject-wide weakness is not asserted from a single weak topic; other topics in this subject should show weakness across multiple skills."
-      : "Multiple weak topic rows exist-subject-level concern may be considered only when breadth criteria are met.",
+      : burnDownCopy("utils__learning-diagnostics__diagnostic-framework-v1", "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o"),
   ];
 }
 

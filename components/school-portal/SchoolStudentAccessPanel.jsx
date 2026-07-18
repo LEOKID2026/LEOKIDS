@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import SchoolCredentialShownOnceBox from "./SchoolCredentialShownOnceBox";
 import SchoolStudentParentAccessRow from "./SchoolStudentParentAccessRow";
@@ -208,7 +209,7 @@ export default function SchoolStudentAccessPanel({ accessToken, authMethod = "su
             ) : null}
 
             {studentCanManage ? (
-              <ActionGroup label="Account actions">
+              <ActionGroup label={globalBurnDownCopy("components__school-portal__SchoolStudentAccessPanel", "account_actions")}>
                 <button
                   type="button"
                   disabled={busy}
@@ -257,7 +258,7 @@ export default function SchoolStudentAccessPanel({ accessToken, authMethod = "su
             ) : null}
 
             {studentCanManage ? (
-              <ActionGroup label="Irreversible actions">
+              <ActionGroup label={globalBurnDownCopy("components__school-portal__SchoolStudentAccessPanel", "irreversible_actions")}>
                 <button
                   type="button"
                   disabled={busy}

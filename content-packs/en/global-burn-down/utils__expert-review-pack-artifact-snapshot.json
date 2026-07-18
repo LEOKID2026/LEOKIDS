@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Not populated in artifact snapshot mode. Run `npm run qa:learning-simulator:expert-review-pack` for synthetic maps / aggregates.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Cross-subject patterns are hypotheses and require confirming probes per subject.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Internal educational diagnostic support only - not clinical / not parent-facing."
+  }
+}

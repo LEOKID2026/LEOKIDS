@@ -1,188 +1,22 @@
 /**
  * English-only diagnostic labels for parents — no raw technical identifiers.
- * English sibling of diagnostic-labels-he.js.
+ * Display label maps live in content-packs/en/learning/diagnostic-labels.json.
  */
 
-const OPERATION_NAMES_EN = {
-  addition: "Addition",
-  subtraction: "Subtraction",
-  multiplication: "Multiplication",
-  division: "Division",
-  division_with_remainder: "Division with remainder",
-  fractions: "Fractions",
-  percentages: "Percentages",
-  sequences: "Sequences",
-  decimals: "Decimals",
-  rounding: "Rounding",
-  divisibility: "Divisibility rules",
-  prime_composite: "Prime and composite numbers",
-  powers: "Powers",
-  ratio: "Ratio",
-  equations: "Equations",
-  order_of_operations: "Order of operations",
-  zero_one_properties: "Properties of 0 and 1",
-  estimation: "Estimation",
-  scale: "Scale",
-  compare: "Comparison",
-  number_sense: "Number sense",
-  factors_multiples: "Factors and multiples",
-  word_problems: "Word problems",
-  multiplication_table: "Multiplication table",
-  place_value: "Place value",
-  comparison: "Comparison",
-  patterns: "Patterns",
-  multiplication_advanced: "Advanced multiplication",
-  mixed: "Mixed practice",
-};
+import diagnosticLabelsEn from "../content-packs/en/learning/diagnostic-labels.json" with { type: "json" };
 
-const GEOMETRY_TOPIC_NAMES_EN = {
-  shapes_basic: "Basic shapes",
-  shapes: "Shapes",
-  area: "Area",
-  perimeter: "Perimeter",
-  volume: "Volume",
-  angles: "Angles",
-  parallel_perpendicular: "Parallel and perpendicular lines",
-  triangles: "Triangles",
-  quadrilaterals: "Quadrilaterals",
-  transformations: "Transformations",
-  rotation: "Rotation",
-  symmetry: "Symmetry",
-  diagonal: "Diagonals",
-  heights: "Heights",
-  tiling: "Tiling",
-  circles: "Circles",
-  solids: "3D shapes",
-  pythagoras: "Pythagorean theorem",
-  coordinates: "Coordinates",
-  mixed: "Mixed practice",
-};
+const OPERATION_NAMES_EN = diagnosticLabelsEn.operations;
+const GEOMETRY_TOPIC_NAMES_EN = diagnosticLabelsEn.geometryTopics;
+const ENGLISH_TOPIC_NAMES_EN = diagnosticLabelsEn.englishTopics;
+const SCIENCE_TOPIC_NAMES_EN = diagnosticLabelsEn.scienceTopics;
+const LANGUAGE_ARTS_TOPIC_NAMES_EN = diagnosticLabelsEn.languageArtsTopics;
+const HOMELAND_GEOGRAPHY_TOPIC_NAMES_EN = diagnosticLabelsEn.homelandGeographyTopics;
+const EN_SNIPPET_EN = diagnosticLabelsEn.snippets;
 
-const ENGLISH_TOPIC_NAMES_EN = {
-  phonics: "Phonics",
-  vocabulary: "Vocabulary",
-  grammar: "Grammar",
-  grammar_basics: "Grammar basics",
-  translation: "Translation",
-  sentence: "Sentence building",
-  sentences: "Sentence building",
-  writing: "Writing",
-  reading_comprehension: "Reading comprehension",
-  matching: "Matching",
-  inference: "Inference",
-  sentence_understanding: "Sentence understanding",
-  simple_sentences: "Simple sentences",
-  mixed: "Mixed practice",
-};
-
-const SCIENCE_TOPIC_NAMES_EN = {
-  body: "The human body",
-  animals: "Animals",
-  plants: "Plants",
-  materials: "Materials",
-  earth_space: "Earth and space",
-  environment: "Environment and ecology",
-  experiments: "Experiments and processes",
-  animals_plants: "Animals and plants",
-  basic_experiments: "Basic experiments",
-  living_things: "Living things",
-  matter: "Matter",
-  forces: "Forces",
-  mixed: "Mixed topics",
-};
-
-const LANGUAGE_ARTS_TOPIC_NAMES_EN = {
-  reading: "Reading",
-  comprehension: "Reading comprehension",
-  reading_comprehension: "Reading comprehension",
-  writing: "Writing",
-  grammar: "Grammar",
-  vocabulary: "Vocabulary",
-  speaking: "Speaking",
-  mixed: "Mixed practice",
-  main_idea: "Main idea",
-  sequence: "Sequence",
-  inference: "Inference",
-  fact_vs_opinion: "Fact vs. opinion",
-  vowels_reading: "Vowel reading",
-  plurals: "Plurals",
-  verb_forms: "Verb forms",
-  sentence_structure: "Sentence structure",
-};
-
-const HOMELAND_GEOGRAPHY_TOPIC_NAMES_EN = {
-  homeland: "Homeland studies",
-  community: "Community",
-  citizenship: "Citizenship",
-  geography: "Geography",
-  basic_geography: "Geography basics",
-  values: "Values",
-  maps: "Maps",
-  map_reading: "Map reading",
-  directions: "Directions",
-  places: "Places",
-  maps_basic: "Basic maps",
-  regions: "Regions",
-  history: "History",
-  mixed: "Mixed topics",
-};
-
-/** English-word snippets used across free-text pattern strings. */
-const EN_SNIPPET_EN = {
-  word: "word-based",
-  problems: "problems",
-  word_problems: "word problems",
-  vocabulary: "vocabulary",
-  grammar: "grammar",
-  sentence: "sentences",
-  completion: "completion",
-  translation: "translation",
-  compare: "comparison",
-  comparison: "comparison",
-  remainder: "remainder",
-  division: "division",
-  fraction: "fractions",
-  fractions: "fractions",
-  decimal: "decimals",
-  percent: "percentages",
-  discount: "discounts",
-  perimeter: "perimeter",
-  area: "area",
-  volume: "volume",
-  prism: "prism",
-  angle: "angles",
-  triangle: "triangles",
-  rectangle: "rectangle",
-  mcq: "multiple choice",
-  cloze: "fill in the blank",
-  preposition: "prepositions",
-  prepositions: "prepositions",
-  listening: "listening",
-  spelling: "spelling",
-  tense: "verb tense",
-  irregular: "irregular forms",
-  reading: "reading",
-  writing: "writing",
-  recall: "recall",
-  vocab: "vocabulary",
-  story: "story",
-  subtraction: "subtraction",
-  addition: "addition",
-  multiplication: "multiplication",
-  mixed: "mixed operations",
-  vertical: "vertical form",
-  borrow: "regrouping",
-  once: "once",
-  easy: "basic level",
-  medium: "regular level",
-  hard: "advanced level",
-  grade: "grade",
-  context: "context",
-  logical: "logical sequence",
-  sequence: "sequence",
-  homeland: "homeland studies",
-  geography: "geography",
-};
+export const GENERIC_WEAKNESS_EN = diagnosticLabelsEn.generics.weakness;
+export const GENERIC_POINT_EN = diagnosticLabelsEn.generics.point;
+export const GENERIC_REINFORCE_EN = diagnosticLabelsEn.generics.reinforce;
+export const PARENT_TOPIC_FALLBACK_EN = diagnosticLabelsEn.generics.parentTopicFallback;
 
 /**
  * @param {string|null|undefined} slug
@@ -216,10 +50,6 @@ export function humanizeTopicKey(raw) {
     .join(" ");
 }
 
-export const GENERIC_WEAKNESS_EN = "There are some recurring mistakes here";
-export const GENERIC_POINT_EN = "A point worth noticing";
-export const GENERIC_REINFORCE_EN = "It helps to reinforce this topic a bit more";
-
 const TOPIC_NAME_PLACEHOLDER_LABELS = new Set(["topic", "this topic", "general", "unknown"]);
 
 /**
@@ -245,9 +75,6 @@ export function topicBucketLabel(subjectId, bucketKey) {
   }
   return humanizeTopicKey(base) || null;
 }
-
-/** Fallback string when an engine label cannot be cleaned up for parent display. */
-export const PARENT_TOPIC_FALLBACK_EN = "A topic worth checking again";
 
 /**
  * @param {string} subjectId

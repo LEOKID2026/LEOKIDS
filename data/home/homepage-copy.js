@@ -1,8 +1,10 @@
-/** Approved homepage copy — English global product */
+/** Homepage routes — copy lives in `ui.public.homepage.*` via `useHomepageCopy()`. */
 
+/** @deprecated use `useHomepageCopy()` — kept for tooling that still imports this symbol */
 export const HOMEPAGE_BRAND_LINE =
   "LEO KIDS — tools for parents, a fun experience for kids, and learning that moves step by step";
 
+/** @deprecated use `useHomepageCopy()` */
 export const HOMEPAGE_COPY = {
   hero: {
     badge: "Learn · Play · Progress",

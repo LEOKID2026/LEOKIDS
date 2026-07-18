@@ -1,13 +1,14 @@
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 /** Shared step-by-step metadata → place-value highlight mapping for vertical arithmetic. */
 
-export const PLACE_VALUE_SUFFIXES = ["Units", "Tens", "Hundreds"];
+export const PLACE_VALUE_SUFFIXES = ["Units", "Tens", burnDownCopy("utils__learning-step-vertical-exercise", "hundreds")];
 
 export const PLACE_VALUE_LABELS = ["אחדות", "עשרות", "מאות", "אלפים"];
 
 const PLACE_SUFFIX_BY_COLUMN = {
   0: "Units",
   1: "Tens",
-  2: "Hundreds",
+  2: burnDownCopy("utils__learning-step-vertical-exercise", "hundreds"),
 };
 
 const COLUMN_HIGHLIGHT_RE = /^(a|b|result)Col(\d+)$/;
@@ -24,7 +25,7 @@ export function hasColumnIndexHighlights(highlights = []) {
 export function columnIndexFromHighlightSuffix(suffix) {
   if (suffix === "Units") return 0;
   if (suffix === "Tens") return 1;
-  if (suffix === "Hundreds") return 2;
+  if (suffix === burnDownCopy("utils__learning-step-vertical-exercise", "hundreds")) return 2;
   return null;
 }
 
@@ -85,7 +86,7 @@ export function shouldHighlightRowCell(highlights, row, columnFromRight, activeC
     return list.includes(`${row}Col${columnFromRight}`);
   }
 
-  const suffix = PLACE_SUFFIX_BY_COLUMN[activeColumn] ?? "Hundreds";
+  const suffix = PLACE_SUFFIX_BY_COLUMN[activeColumn] ?? burnDownCopy("utils__learning-step-vertical-exercise", "hundreds");
   return list.includes(`${row}${suffix}`);
 }
 

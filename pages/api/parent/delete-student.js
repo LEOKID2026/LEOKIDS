@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { requireParentApiContext } from "../../../lib/auth/persona-guard.server.js";
 import { deleteParentOwnedStudent } from "../../../lib/parent-server/delete-parent-owned-student.server.js";
 import { safeApiLog } from "../../../lib/security/safe-log.js";
@@ -13,7 +14,7 @@ async function handler(req, res) {
   if (!studentId) {
     return res.status(400).json({
       ok: false,
-      error: "Child ID is missing",
+      error: globalBurnDownCopy("pages__api__parent__delete-student", "child_id_is_missing"),
       errorCode: "student_id_required",
     });
   }
@@ -44,7 +45,7 @@ async function handler(req, res) {
     console.error("[delete-student] unexpected error", error);
     return res.status(500).json({
       ok: false,
-      error: "Server error — please try again",
+      error: globalBurnDownCopy("pages__api__parent__delete-student", "server_error_please_try_again"),
       errorCode: "internal_error",
     });
   }

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import {
   SchoolCardGrid,
   SchoolLoadingBlock,
@@ -65,7 +66,7 @@ export default function SchoolTeacherClassStudentsModal({
         </SchoolCardGrid>
       ) : null}
       {!loading && !error && !students.length ? (
-        <SchoolEmptyState title="No children in this class." />
+        <SchoolEmptyState title={globalBurnDownCopy("components__school-portal__SchoolTeacherClassStudentsModal", "no_children_in_this_class")} />
       ) : null}
     </ReportModalFrame>
   );

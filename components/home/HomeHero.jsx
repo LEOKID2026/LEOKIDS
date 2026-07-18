@@ -1,12 +1,12 @@
 import PromoVideoClickablePreview from "../promo/PromoVideoClickablePreview.jsx";
 import { PARENT_PROMO_DESKTOP_SRC } from "../parent/ParentPromoVideo";
-import { HOMEPAGE_COPY, HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { WORKSHEET_HUB_ENTRY_ENABLED } from "../../lib/worksheets/worksheet-hub-entry-enabled.js";
 import { getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
 
-function HeroButtons({ isBright, className = "" }) {
-  const copy = HOMEPAGE_COPY.hero;
+function HeroButtons({ isBright, copy, className = "" }) {
   const parentBtn = `${getHomeBtnClasses("parents", isBright, "primary")} min-h-12 w-full whitespace-nowrap px-6 text-base font-bold sm:w-auto md:min-h-[3.25rem] md:px-8 md:text-lg`;
   const kidsBtn = `${getHomeBtnClasses("kids", isBright, "secondary")} min-h-12 w-full whitespace-nowrap px-6 text-base font-bold sm:w-auto md:min-h-[3.25rem] md:px-8 md:text-lg`;
   const worksheetsBtn = `${getHomeBtnClasses("teachers", isBright, "secondary")} min-h-12 w-full whitespace-nowrap px-6 text-base font-bold sm:w-auto md:min-h-[3.25rem] md:px-8 md:text-lg`;
@@ -52,7 +52,8 @@ function HeroButtons({ isBright, className = "" }) {
  * @param {{ isBright: boolean }} props
  */
 export default function HomeHero({ isBright }) {
-  const copy = HOMEPAGE_COPY.hero;
+  const homepage = useHomepageCopy();
+  const copy = homepage.hero;
   const cls = getHomeTextClasses(isBright);
   const titleClass = isBright ? "text-sky-900" : "text-sky-100";
 
@@ -92,7 +93,7 @@ export default function HomeHero({ isBright }) {
               {copy.reinforcement}
             </p>
 
-            <HeroButtons isBright={isBright} className="mt-1 justify-center lg:justify-start" />
+            <HeroButtons isBright={isBright} copy={copy} className="mt-1 justify-center lg:justify-start" />
           </div>
 
           <div className="w-full" data-testid="home-hero-video">
@@ -100,7 +101,7 @@ export default function HomeHero({ isBright }) {
               src={PARENT_PROMO_DESKTOP_SRC}
               wrapClassName={videoWrap}
               videoClassName="block h-auto w-full aspect-video bg-black object-contain"
-              ariaLabel="Parent video"
+              ariaLabel={copy.parentVideoAria}
               testId="parent-promo-video-desktop"
             />
           </div>

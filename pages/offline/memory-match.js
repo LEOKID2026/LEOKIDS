@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useMemo, useState, useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
 import MaybeGameAccessGuard from "../../components/offline/MaybeGameAccessGuard.jsx";
@@ -9,6 +10,8 @@ import OfflineGameHoldShell from "../../components/offline/OfflineGameHoldShell.
 import { useGameAudio } from "../../hooks/useGameAudio";
 
 const CARD_POOL = ["🐶", "🐱", "🪙", "💎", "🦴", "🐾", "🦊", "🌙", "⚡️", "🔥"];
+const PACK = "pages__offline__memory-match";
+const copy = (key, vars) => gamePackCopy(PACK, key, vars);
 
 function buildDeck(pairs = 8) {
   const selection = CARD_POOL.slice(0, pairs);
@@ -209,13 +212,13 @@ export default function MemoryMatch() {
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
               >
-                Back
+                {copy("back")}
               </button>
               {isSetupPhase ? <GameAudioSettingsButton /> : null}
             </div>
             <div className="absolute right-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
-                Local
+                {copy("local_badge")}
               </span>
             </div>
           </div>
@@ -233,10 +236,13 @@ export default function MemoryMatch() {
         >
           <div className="text-center mb-1">
             <h1 className="text-2xl font-extrabold text-white mb-0.5">
-              🧠 Memory Match
+              🧠 {copy("title")}
             </h1>
             <p className="text-white/70 text-xs">
-              {twoPlayers ? "2 Players" : "Single Player"} • {formatTime(elapsed)}
+              {copy("mode_meta", {
+                mode: twoPlayers ? copy("two_players") : copy("single_player"),
+                time: formatTime(elapsed),
+              })}
             </p>
           </div>
 
@@ -245,22 +251,22 @@ export default function MemoryMatch() {
             className="grid grid-cols-3 gap-1 mb-1 w-full max-w-md"
           >
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Time</div>
+              <div className="text-[10px] text-white/60">{copy("time")}</div>
               <div className="text-sm font-bold text-emerald-400">
                 {formatTime(elapsed)}
               </div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Moves</div>
+              <div className="text-[10px] text-white/60">{copy("moves")}</div>
               <div className="text-sm font-bold text-amber-400">{moves}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
               <div className="text-[10px] text-white/60">
-                {twoPlayers ? "Turn" : "Pairs"}
+                {twoPlayers ? copy("turn") : copy("pairs")}
               </div>
               <div className="text-sm font-bold text-purple-400">
                 {twoPlayers
-                  ? `Player ${currentPlayer + 1}`
+                  ? copy("player_n", { n: currentPlayer + 1 })
                   : `${matched.length / 2}/${deck.length / 2}`}
               </div>
             </div>
@@ -277,13 +283,13 @@ export default function MemoryMatch() {
                 }}
                 className="w-5 h-5"
               />
-              2 Players
+              {copy("two_players_label")}
             </label>
             <button
               onClick={resetGame}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              Shuffle
+              {copy("shuffle")}
             </button>
           </div>
 
@@ -296,7 +302,7 @@ export default function MemoryMatch() {
                     : "border-white/10"
                 }`}
               >
-                <div className="text-[10px] text-white/60">Player 1</div>
+                <div className="text-[10px] text-white/60">{copy("player_1")}</div>
                 <div className="text-sm font-bold">{scores[0]}</div>
               </div>
               <div
@@ -306,7 +312,7 @@ export default function MemoryMatch() {
                     : "border-white/10"
                 }`}
               >
-                <div className="text-[10px] text-white/60">Player 2</div>
+                <div className="text-[10px] text-white/60">{copy("player_2")}</div>
                 <div className="text-sm font-bold">{scores[1]}</div>
               </div>
             </div>
@@ -314,7 +320,7 @@ export default function MemoryMatch() {
 
           {allMatched && (
             <div className="mb-1 px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-semibold">
-              🎉 All pairs found!
+              🎉 {copy("all_pairs_found")}
             </div>
           )}
 

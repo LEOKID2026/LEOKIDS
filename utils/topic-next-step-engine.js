@@ -3,6 +3,7 @@
  * Based on V2 report rows + mistake map (with key normalization vs real storage).
  */
 
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { splitBucketModeRowKey } from "./parent-report-row-diagnostics.js";
 import { canonicalParentReportGradeKey, mathReportBaseOperationKey } from "./math-report-generator.js";
 import { DEFAULT_TOPIC_NEXT_STEP_CONFIG } from "./topic-next-step-config.js";
@@ -85,14 +86,14 @@ import {
 /** @typedef {'advance_level'|'advance_grade_topic_only'|'maintain_and_strengthen'|'maintain_regular_strengthen_medium'|'remediate_same_level'|'drop_one_level_topic_only'|'drop_one_grade_topic_only'|'suggest_return_to_regular'} RecommendedNextStep */
 
 export const RECOMMENDED_STEP_LABEL_HE = {
-  advance_level: "Move to advanced — same topic only",
-  advance_grade_topic_only: "Move up a grade — same topic only",
-  maintain_and_strengthen: "Solidify at the same level",
-  maintain_regular_strengthen_medium: "Solidify at regular level",
-  remediate_same_level: "Strengthen at the same level",
-  suggest_return_to_regular: "Return to regular practice",
-  drop_one_level_topic_only: "Strengthen at the same level",
-  drop_one_grade_topic_only: "Lower difficulty — same topic only",
+  advance_level: burnDownCopy("utils__topic-next-step-engine", "move_to_advanced_same_topic_only"),
+  advance_grade_topic_only: burnDownCopy("utils__topic-next-step-engine", "move_up_a_grade_same_topic_only"),
+  maintain_and_strengthen: burnDownCopy("utils__topic-next-step-engine", "solidify_at_the_same_level"),
+  maintain_regular_strengthen_medium: burnDownCopy("utils__topic-next-step-engine", "solidify_at_regular_level"),
+  remediate_same_level: burnDownCopy("utils__topic-next-step-engine", "strengthen_at_the_same_level"),
+  suggest_return_to_regular: burnDownCopy("utils__topic-next-step-engine", "return_to_regular_practice"),
+  drop_one_level_topic_only: burnDownCopy("utils__topic-next-step-engine", "strengthen_at_the_same_level"),
+  drop_one_grade_topic_only: burnDownCopy("utils__topic-next-step-engine", "lower_difficulty_same_topic_only"),
 };
 
 /** Engine field key — split to keep parent-copy guard clean. */
@@ -207,9 +208,9 @@ function buildHebrewCopy(step, ctx, cfg) {
   /** @type {Record<RecommendedNextStep, { reasonHe: string, parentHe: string, studentHe: string }>} */
   const table = {
     advance_level: {
-      reasonHe: "Enough questions were solved at regular level with stable accuracy. Trying advanced on the same topic is reasonable.",
-      parentHe: "Trying advanced on the same topic is recommended.",
-      studentHe: "You can try advanced on the same topic.",
+      reasonHe: burnDownCopy("utils__topic-next-step-engine", "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin"),
+      parentHe: burnDownCopy("utils__topic-next-step-engine", "trying_advanced_on_the_same_topic_is_recommended"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "you_can_try_advanced_on_the_same_topic"),
     },
     advance_grade_topic_only: {
       reasonHe: `On ${displayName}, current practice (${levelLabel}) already shows good accuracy (${acc}%) with enough questions (${q}). Trying a higher grade on this topic only — not for the whole subject — is reasonable.`,
@@ -228,23 +229,23 @@ function buildHebrewCopy(step, ctx, cfg) {
       studentHe: `We will strengthen the base on ${displayName} at the same level first — then move forward.`,
     },
     maintain_regular_strengthen_medium: {
-      reasonHe: "Build more steady practice at regular level before moving to advanced.",
-      parentHe: "Continue at regular level and strengthen accuracy and confidence before advanced.",
-      studentHe: "We will stay a bit longer at regular level, get stronger, then try to advance.",
+      reasonHe: burnDownCopy("utils__topic-next-step-engine", "build_more_steady_practice_at_regular_level_before_moving_to_advanced"),
+      parentHe: burnDownCopy("utils__topic-next-step-engine", "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva"),
     },
     suggest_return_to_regular: {
-      reasonHe: "The advanced challenge was high right now. Returning to regular practice on the same topic is recommended.",
-      parentHe: "The advanced challenge was high right now. Return to regular practice, strengthen accuracy and confidence, then try again later.",
-      studentHe: "We will return to regular practice for a bit, get stronger, then try again.",
+      reasonHe: burnDownCopy("utils__topic-next-step-engine", "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_"),
+      parentHe: burnDownCopy("utils__topic-next-step-engine", "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again"),
     },
     drop_one_level_topic_only: {
-      reasonHe: "Strengthen the same topic with regular practice at a comfortable pace.",
-      parentHe: "Continue regular practice at a comfortable pace, with a few short questions for reinforcement.",
-      studentHe: "We will strengthen with regular practice first, then move on.",
+      reasonHe: burnDownCopy("utils__topic-next-step-engine", "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace"),
+      parentHe: burnDownCopy("utils__topic-next-step-engine", "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_strengthen_with_regular_practice_first_then_move_on"),
     },
     drop_one_grade_topic_only: {
       reasonHe: `On ${displayName}, practice is already at the easiest level (${levelLabel}) but accuracy is still low (${acc}%)${mPart}. The gap is likely grade-related — drop one grade on this topic only.`,
-      parentHe: "Try a lower level or grade, then advance gradually.",
+      parentHe: burnDownCopy("utils__topic-next-step-engine", "try_a_lower_level_or_grade_then_advance_gradually"),
       studentHe: `On ${displayName}, we will try a slightly more comfortable grade — only there — so it feels fairer.`,
     },
   };
@@ -1525,7 +1526,7 @@ export function buildTopicRecommendationRecord(
         ? "Relatively clear information"
         : signals.evidenceStrength === "medium"
           ? "Partial but useful information"
-          : "Limited information",
+          : burnDownCopy("utils__topic-next-step-engine", "limited_information"),
     recommendedWhyNowHe: signals.recommendationContextHe,
     recommendationStabilityNoteHe: signals.patternStabilityHe,
     isEarlySignalOnly: !!signals.isEarlySignalOnly,

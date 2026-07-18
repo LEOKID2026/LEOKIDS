@@ -1,11 +1,11 @@
-import { HOMEPAGE_COPY } from "../../data/home/homepage-copy.js";
+import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { getHomeTextClasses } from "./home-theme";
 
 /**
  * @param {{ isBright: boolean }} props
  */
 export default function HomeParentIntro({ isBright }) {
-  const copy = HOMEPAGE_COPY.parentIntro;
+  const { parentIntro: copy } = useHomepageCopy();
   const cls = getHomeTextClasses(isBright);
 
   return (

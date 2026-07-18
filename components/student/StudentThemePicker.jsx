@@ -3,6 +3,7 @@ import {
   STUDENT_THEME_BRIGHT,
   STUDENT_THEME_CLASSIC,
 } from "../../lib/student-ui/student-theme-preference.client.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Toggle between bright and classic student UI themes.
@@ -14,6 +15,7 @@ export default function StudentThemePicker({
   variant = "default",
   iconSize = "default",
 }) {
+  const t = useT();
   const { theme, setTheme, isBright } = useStudentTheme();
   const isIcon = variant === "icon";
   const isNavIcon = isIcon && iconSize === "nav";
@@ -52,31 +54,34 @@ export default function StudentThemePicker({
       : "bg-white/5 text-white/70 border-white/15 hover:bg-white/10";
   }
 
+  const lightLabel = t("ui.student.themeLight");
+  const classicLabel = t("ui.student.themeClassic");
+
   return (
     <div
       className={`${shellClass} ${className} ${shellThemeClass}`}
       role="group"
-      aria-label="Choose screen theme"
+      aria-label={t("ui.student.themeGroupLabel")}
     >
       <button
         type="button"
         onClick={() => setTheme(STUDENT_THEME_BRIGHT)}
         aria-pressed={theme === STUDENT_THEME_BRIGHT}
-        aria-label="Light theme"
-        title="Light theme"
+        aria-label={lightLabel}
+        title={lightLabel}
         className={`${baseBtn} ${btnClass(theme === STUDENT_THEME_BRIGHT, true)}`}
       >
-        {isIcon ? "🌞" : "🌞 Light"}
+        {isIcon ? "🌞" : `🌞 ${t("ui.student.themeLightShort")}`}
       </button>
       <button
         type="button"
         onClick={() => setTheme(STUDENT_THEME_CLASSIC)}
         aria-pressed={theme === STUDENT_THEME_CLASSIC}
-        aria-label="Classic theme"
-        title="Classic theme"
+        aria-label={classicLabel}
+        title={classicLabel}
         className={`${baseBtn} ${btnClass(theme === STUDENT_THEME_CLASSIC, false)}`}
       >
-        {isIcon ? "🌙" : "🌙 Classic"}
+        {isIcon ? "🌙" : `🌙 ${t("ui.student.themeClassicShort")}`}
       </button>
     </div>
   );

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../lib/i18n/global-burn-down-copy.js";
 import { safeApiLog } from "../../../../lib/security/safe-log.js";
 import { rejectIfCrossOriginCookieMutation } from "../../../../lib/security/same-origin.js";
 import { consumeRateLimit, clientIpFromRequest } from "../../../../lib/security/in-memory-rate-limit.js";
@@ -54,7 +55,7 @@ async function handleGet(req, res, ctx) {
       listed.code,
       listed.code === "db_schema_not_ready"
         ? "teacher_portal schema not yet applied"
-        : "Unexpected server error"
+        : globalBurnDownCopy("pages__api__teacher__classes__index", "unexpected_server_error")
     );
   }
 
@@ -101,7 +102,7 @@ async function handlePost(req, res, ctx) {
           ? "Classes are disabled for this plan"
           : created.code === "db_schema_not_ready"
             ? "teacher_portal schema not yet applied"
-            : "Unexpected server error";
+            : globalBurnDownCopy("pages__api__teacher__classes__index", "unexpected_server_error");
     return sendTeacherApiError(res, created.status, created.code, msg);
   }
 
@@ -135,6 +136,6 @@ export default async function handler(req, res) {
     return sendTeacherApiError(res, 405, "method_not_allowed", "Method not allowed");
   } catch (_e) {
     safeApiLog("teacher_classes_index_error", { route: "classes" });
-    return sendTeacherApiError(res, 500, "internal_error", "Unexpected server error");
+    return sendTeacherApiError(res, 500, "internal_error", globalBurnDownCopy("pages__api__teacher__classes__index", "unexpected_server_error"));
   }
 }

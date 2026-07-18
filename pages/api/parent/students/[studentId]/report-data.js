@@ -8,6 +8,11 @@ import {
 } from "../../../../../lib/parent-server/report-data-aggregate.server.js";
 import { attachStudentLearningAccountToParentReportPayload } from "../../../../../lib/parent-server/parent-report-account-attachment.server.js";
 import { enrichPayloadWithParentFacing } from "../../../../../lib/parent-server/parent-report-parent-facing.server.js";
+import { loadGlobalProductMembershipLocales } from "../../../../../lib/global/product-membership.server.js";
+import {
+  attachReportLocaleMeta,
+  resolveProductionReportLocale,
+} from "../../../../../lib/reports/report-locale.js";
 
 const DEFAULT_RANGE_DAYS = 30;
 /** Short-lived in-memory cache — same parent/student/range within TTL skips re-aggregation. */
@@ -16,8 +21,8 @@ const REPORT_DATA_CACHE_TTL_MS = 90_000;
 /** @type {Map<string, { expiresAt: number, payload: unknown }>} */
 const reportDataResponseCache = new Map();
 
-function reportDataCacheKey(parentUserId, studentId, fromYmd, toYmd) {
-  return `${parentUserId}|${studentId}|${fromYmd}|${toYmd}`;
+function reportDataCacheKey(parentUserId, studentId, fromYmd, toYmd, reportLocale) {
+  return `${parentUserId}|${studentId}|${fromYmd}|${toYmd}|${reportLocale || "en"}`;
 }
 
 function buildDefaultRange() {
@@ -78,9 +83,27 @@ export default async function handler(req, res) {
       return res.status(403).json({ ok: false, error: "Not available for guest accounts", code: "guest_not_eligible" });
     }
 
+    const membershipLocales = await loadGlobalProductMembershipLocales(
+      ctx.serviceRole,
+      ctx.parentUserId
+    );
+    const reportLocale = resolveProductionReportLocale({
+      membershipLocales,
+      reportLocaleHint: safeString(req.query?.reportLocale, 16),
+    });
+    const interfaceLocale = membershipLocales.ok
+      ? membershipLocales.interfaceLanguage
+      : "en";
+
     const fromYmd = fromDate.toISOString().slice(0, 10);
     const toYmd = toDate.toISOString().slice(0, 10);
-    const cacheKey = reportDataCacheKey(ctx.parentUserId, studentId, fromYmd, toYmd);
+    const cacheKey = reportDataCacheKey(
+      ctx.parentUserId,
+      studentId,
+      fromYmd,
+      toYmd,
+      reportLocale
+    );
     const cached = reportDataResponseCache.get(cacheKey);
     if (cached && cached.expiresAt > Date.now()) {
       res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
@@ -94,8 +117,14 @@ export default async function handler(req, res) {
       includePrivateTeacherActivities: true,
     });
     const payload = await attachStudentLearningAccountToParentReportPayload(serviceClient, student, analytics);
-    const enriched = await enrichPayloadWithParentFacing(serviceClient, payload, studentId);
-    const responseBody = stripInternalReportPayloadFields(enriched);
+    const enriched = await enrichPayloadWithParentFacing(serviceClient, payload, studentId, {
+      reportLocale,
+    });
+    const withLocaleMeta = attachReportLocaleMeta(enriched, {
+      reportLocale,
+      interfaceLocale,
+    });
+    const responseBody = stripInternalReportPayloadFields(withLocaleMeta);
     reportDataResponseCache.set(cacheKey, {
       expiresAt: Date.now() + REPORT_DATA_CACHE_TTL_MS,
       payload: responseBody,

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import ClassroomGeometryQuestionDiagram from "../student/ClassroomGeometryQuestionDiagram";
 import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
@@ -90,7 +91,7 @@ export default function TeacherActivityStudentAnswersModal({
       <button
         type="button"
         className="absolute inset-0 bg-black/70"
-        aria-label="Close"
+        aria-label={globalBurnDownCopy("components__teacher-portal__TeacherActivityStudentAnswersModal", "close")}
         onClick={onClose}
       />
       <div

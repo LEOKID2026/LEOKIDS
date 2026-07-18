@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../components/Layout";
@@ -70,7 +71,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title="New discussion activity"
+        title={globalBurnDownCopy("pages__teacher__class__[classId]__discussion__new", "new_discussion_activity")}
         backHref={`/teacher/class/${encodeURIComponent(classId)}/activities`}
       >
         <TeacherClassActivitiesNav classId={classId} active="discussion" />

@@ -1,6 +1,7 @@
 /**
  * Static inventory + mapping plan for `utils/math-question-generator.js` (procedural math).
  */
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -54,13 +55,13 @@ export function buildMathGeneratorMetadataMap(generatorPath = GENERATOR_PATH) {
     approach:
       "Runtime: `attachProfessionalMathMetadata` merges subject/skillId/subskillId/difficulty/cognitiveLevel/expectedErrorTypes and fills params.diagnosticSkillId / subtype / patternFamily when missing.",
     riskLevel: "low",
-    notes: "Does not replace numeric correctAnswer, answers[], or question text after generation - only enriches metadata fields.",
+    notes: globalBurnDownCopy("utils__question-metadata-qa__math-generator-metadata-map", "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge"),
   };
 
   /** @type {{ pattern: string, risk: string }[]} */
   const riskyMappings = [
     {
-      pattern: "Blanket patternFamily `math_${kind}` when absent",
+      pattern: globalBurnDownCopy("utils__question-metadata-qa__math-generator-metadata-map", "blanket_patternfamily_math_kind_when_absent"),
       risk: "low - additive only; existing probe patternFamily preserved.",
     },
     {
@@ -115,9 +116,9 @@ export function buildMathGeneratorMetadataMap(generatorPath = GENERATOR_PATH) {
     proposedMappingSummary,
     safeApply,
     confidenceBreakdown: {
-      high: "Probe + fraction rows already carry diagnosticSkillId / expectedErrorTags",
-      medium: "Standard op/kind rows use deterministic math_${kind} skill id",
-      low: "Edge kinds with minimal params - still safe id pattern math_*",
+      high: globalBurnDownCopy("utils__question-metadata-qa__math-generator-metadata-map", "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags"),
+      medium: globalBurnDownCopy("utils__question-metadata-qa__math-generator-metadata-map", "standard_op_kind_rows_use_deterministic_math_kind_skill_id"),
+      low: globalBurnDownCopy("utils__question-metadata-qa__math-generator-metadata-map", "edge_kinds_with_minimal_params_still_safe_id_pattern_math"),
     },
     riskyMappings,
     needsHumanReview: [

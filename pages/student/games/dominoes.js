@@ -1,11 +1,12 @@
 "use client";
 
-import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import DominoesScreen from "../../../components/arcade/dominoes/DominoesScreen";
-
 import ArcadeRouteHoldShell from "../../../components/arcade/ArcadeRouteHoldShell.jsx";
+import ArcadeRoomMissingShell from "../../../components/arcade/ArcadeRoomMissingShell.jsx";
+import ArcadeStudentGamePageHead from "../../../components/arcade/ArcadeStudentGamePageHead.jsx";
+
+const GAME_TITLE_KEY = "ui.student.arcadeGames.dominoes";
 
 export default function StudentDominoesPage() {
   const router = useRouter();
@@ -16,26 +17,12 @@ export default function StudentDominoesPage() {
   }
 
   if (!roomId) {
-    return (
-      <>
-        <Head>
-          <title>Dominoes - Arcade</title>
-        </Head>
-        <div className="min-h-screen bg-zinc-950 px-4 py-8 text-zinc-300 space-y-3">
-          <p>Missing room ID.</p>
-          <Link href="/student/arcade" className="text-sky-400 underline">
-            Back to arcade
-          </Link>
-        </div>
-      </>
-    );
+    return <ArcadeRoomMissingShell gameTitleKey={GAME_TITLE_KEY} />;
   }
 
   return (
     <>
-      <Head>
-        <title>Dominoes - Arcade</title>
-      </Head>
+      <ArcadeStudentGamePageHead gameTitleKey={GAME_TITLE_KEY} />
       <div
         className="flex h-dvh max-h-dvh min-h-0 flex-col overflow-hidden bg-zinc-950 text-zinc-100"
         dir="ltr"

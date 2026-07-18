@@ -201,7 +201,7 @@ describe("guest resume ui helpers", () => {
       message: "המספר כבר שויך להורה - התחבר/י עם שם משתמש ו-PIN",
     });
     assert.equal(banner?.code, "guest_already_linked");
-    assert.match(banner?.messageHe || "", /התחבר/);
+    assert.equal(banner?.messageKey, "ui.guest.resume.alreadyLinked");
     assert.equal(shouldBlockGuestStartAfterResumeFailure("guest_already_linked"), true);
   });
 });

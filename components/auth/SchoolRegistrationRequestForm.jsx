@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
+  REG_NETWORK_ERROR_KEY,
   REG_SCHOOL_APPROX_STUDENTS_LABEL,
   REG_SCHOOL_APPROX_TEACHERS_LABEL,
   REG_SCHOOL_CITY_LABEL,
@@ -9,6 +11,7 @@ import {
   REG_SCHOOL_NAME_LABEL,
   REG_SCHOOL_SUBMIT,
   REG_SCHOOL_SUCCESS,
+  REG_SUBMIT_FAILED_KEY,
   REG_TEACHER_ALREADY_PENDING,
 } from "../../lib/auth/auth-registration.js";
 
@@ -16,6 +19,7 @@ const INPUT_CLASS =
   "mt-0.5 w-full rounded bg-black/40 border border-white/20 px-3 py-1.5 text-sm";
 
 export default function SchoolRegistrationRequestForm() {
+  const t = useT();
   const [schoolName, setSchoolName] = useState("");
   const [city, setCity] = useState("");
   const [contactName, setContactName] = useState("");
@@ -49,23 +53,23 @@ export default function SchoolRegistrationRequestForm() {
       });
       const body = await res.json().catch(() => ({}));
       if (res.status === 409 && body?.error?.code === "request_already_pending") {
-        setError(REG_TEACHER_ALREADY_PENDING);
+        setError(t(REG_TEACHER_ALREADY_PENDING));
         return;
       }
       if (res.status === 201 || res.status === 200) {
-        setSuccess(REG_SCHOOL_SUCCESS);
+        setSuccess(t(REG_SCHOOL_SUCCESS));
         return;
       }
-      setError("Unable to submit the request right now. Please try again later.");
+      setError(t(REG_SUBMIT_FAILED_KEY));
     } catch {
-      setError("Network error. Please try again.");
+      setError(t(REG_NETWORK_ERROR_KEY));
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <div data-testid="school-registration-request-form" dir="ltr" lang="en">
+    <div data-testid="school-registration-request-form">
       {success ? (
         <p className="text-emerald-300 text-sm" role="status">
           {success}
@@ -74,7 +78,7 @@ export default function SchoolRegistrationRequestForm() {
         <form onSubmit={(e) => void onSubmit(e)} className="space-y-2 md:space-y-3">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 md:gap-y-3">
             <label className="block text-sm">
-              <span className="text-white/80">{REG_SCHOOL_NAME_LABEL}</span>
+              <span className="text-white/80">{t(REG_SCHOOL_NAME_LABEL)}</span>
               <input
                 type="text"
                 value={schoolName}
@@ -86,7 +90,7 @@ export default function SchoolRegistrationRequestForm() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-white/80">{REG_SCHOOL_CITY_LABEL}</span>
+              <span className="text-white/80">{t(REG_SCHOOL_CITY_LABEL)}</span>
               <input
                 type="text"
                 value={city}
@@ -98,7 +102,7 @@ export default function SchoolRegistrationRequestForm() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-white/80">{REG_SCHOOL_CONTACT_NAME_LABEL}</span>
+              <span className="text-white/80">{t(REG_SCHOOL_CONTACT_NAME_LABEL)}</span>
               <input
                 type="text"
                 value={contactName}
@@ -110,7 +114,7 @@ export default function SchoolRegistrationRequestForm() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-white/80">{REG_SCHOOL_CONTACT_EMAIL_LABEL}</span>
+              <span className="text-white/80">{t(REG_SCHOOL_CONTACT_EMAIL_LABEL)}</span>
               <input
                 type="email"
                 value={contactEmail}
@@ -124,7 +128,7 @@ export default function SchoolRegistrationRequestForm() {
 
           <div className="grid grid-cols-2 md:grid-cols-2 gap-x-3 md:gap-x-4 gap-y-2 md:gap-y-3">
             <label className="block text-sm">
-              <span className="text-white/80">{REG_SCHOOL_APPROX_TEACHERS_LABEL}</span>
+              <span className="text-white/80">{t(REG_SCHOOL_APPROX_TEACHERS_LABEL)}</span>
               <input
                 type="number"
                 min={1}
@@ -135,7 +139,7 @@ export default function SchoolRegistrationRequestForm() {
               />
             </label>
             <label className="block text-sm">
-              <span className="text-white/80">{REG_SCHOOL_APPROX_STUDENTS_LABEL}</span>
+              <span className="text-white/80">{t(REG_SCHOOL_APPROX_STUDENTS_LABEL)}</span>
               <input
                 type="number"
                 min={1}
@@ -148,7 +152,7 @@ export default function SchoolRegistrationRequestForm() {
           </div>
 
           <label className="block text-sm">
-            <span className="text-white/80">{REG_SCHOOL_MESSAGE_LABEL}</span>
+            <span className="text-white/80">{t(REG_SCHOOL_MESSAGE_LABEL)}</span>
             <textarea
               value={message}
               onChange={(ev) => setMessage(ev.target.value)}
@@ -165,7 +169,7 @@ export default function SchoolRegistrationRequestForm() {
             className="w-full md:w-auto rounded bg-amber-500 text-black font-semibold px-6 py-1.5 md:py-2 disabled:opacity-60"
             data-testid="school-reg-submit"
           >
-            {busy ? "Sending…" : REG_SCHOOL_SUBMIT}
+            {busy ? t("auth.sending") : t(REG_SCHOOL_SUBMIT)}
           </button>
         </form>
       )}

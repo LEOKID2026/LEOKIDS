@@ -3,6 +3,7 @@
  * Read-only; does not write banks, taxonomies, diagnostics, or planner state.
  */
 
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { buildTruthPacketV1 } from "../parent-copilot/truth-packet-v1.js";
 import {
   shouldPhaseEBypassClarification,
@@ -89,7 +90,7 @@ export function tryBuildPhaseEClarificationBypassDraft(input) {
   const scope = {
     scopeType: /** @type {const} */ ("executive"),
     scopeId: "executive",
-    scopeLabel: "The report for the selected period",
+    scopeLabel: globalBurnDownCopy("utils__parent-ai-topic-classifier__external-question-route", "the_report_for_the_selected_period"),
     canonicalIntent: "explain_report",
     interpretationScope,
     scopeClass: interpretationScope,

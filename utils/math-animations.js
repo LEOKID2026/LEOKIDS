@@ -1,3 +1,4 @@
+import { animTitle } from "../lib/learning/math-animation-copy.js";
 import {
   coerceComparisonOperands,
   embedComparisonSignInRtlProse,
@@ -230,7 +231,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     // Step 1: Line up the digits
     steps.push({
       id: "place-value",
-      title: "Line up the digits",
+      title: animTitle("line_up_the_digits"),
       ...learningStepFields(mix`Write the numbers one above the other so the ones digits line up in the same column.`),
       highlights: ["aAll", "bAll"],
       revealDigits: 0, // nothing revealed yet
@@ -289,7 +290,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       const carryRowStr = carryRowArr.join("");
       steps.push({
         id: `step-${stepIndex}`,
-        title: `the ${placeName}`,
+        title: animTitle("the_var", { placeName: placeName }),
         ...learningStepFields(mix`add the ${placeName}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. write ${ones} in the ${placeName}${newCarry ? " and carry 1 to the next column" : ""}.`),
         highlights: [
           `aCol${columnFromRight}`,
@@ -316,7 +317,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       revealedCount++; // if there is carry, there is an extra digit
       steps.push({
         id: "final-carry",
-        title: "Extra carry",
+        title: animTitle("extra_carry"),
         ...learningStepFields(mix`At the end of the addition we have one extra 1 — write it on the left as a new digit in the hundreds/thousands column.`),
         highlights: ["resultAll"],
         revealDigits: revealedCount,
@@ -334,7 +335,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     // Last step: the final result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the number formed is ${answer}. This is the final answer to the exercise.`),
       highlights: ["resultAll"],
       revealDigits: answerLen, // reveal all the digits
@@ -354,7 +355,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     // Step 1: Line up the digits
     steps.push({
       id: "place-value",
-      title: "Line up the digits",
+      title: animTitle("line_up_the_digits"),
       ...learningStepFields(mix`Write the numbers one above the other so the ones, tens, etc. line up in the same column.`),
       highlights: ["aAll", "bAll"],
       revealDigits: 0, // nothing revealed yet
@@ -390,7 +391,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       if (da < db) {
         steps.push({
           id: `borrow-${stepIndex}`,
-          title: `borrow from the ${placeName}`,
+          title: animTitle("borrow_from_the_var", { placeName: placeName }),
           ...learningStepFields(mix`in the ${placeName} ${da} less than ${db}, so we take "a borrow" from the next column (add 10 to this digit and subtract 1 from the next column).`),
           highlights: [`aCol${columnFromRight}`, `bCol${columnFromRight}`],
           revealDigits: revealedCount, // do not reveal a new digit during the borrow step
@@ -413,7 +414,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
       revealedCount++; // reveal one more digit
       steps.push({
         id: `step-${stepIndex}`,
-        title: `the ${placeName}`,
+        title: animTitle("the_var", { placeName: placeName }),
         ...learningStepFields(mix`now compute in the ${placeName}: ${M(`${da} - ${db} = ${diff}`)} and write ${diff} in this column.`),
         highlights: [
           `aCol${columnFromRight}`,
@@ -436,7 +437,7 @@ export function buildAdditionOrSubtractionAnimation(a, b, answer, op) {
     // Last step: the final result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the number we got at the end is ${answer}. This is the subtraction result.`),
       highlights: ["resultAll"],
       revealDigits: answerLen, // reveal all the digits
@@ -509,7 +510,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
   // Step 1: arrange in columns
   steps.push({
     id: "place-value",
-    title: "Line up the digits",
+    title: animTitle("line_up_the_digits"),
     ...learningStepFields(mix`Write both numbers one under the other so the ones digits line up in the same column.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
@@ -520,7 +521,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
   if (A < 10 && B < 10) {
     steps.push({
       id: "single-digit",
-      title: "Single-digit multiplication",
+      title: animTitle("single_digit_multiplication"),
       ...learningStepFields(mix`multiply: ${M(`${A} × ${B} = ${ansNum}`)}.`),
       highlights: ["aAll", "bAll", "resultAll"],
       revealDigits: answerStr.length,
@@ -528,7 +529,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${ansNum}.`),
       highlights: ["resultAll"],
       revealDigits: answerStr.length,
@@ -539,7 +540,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
 
   steps.push({
     id: "explain",
-    title: "What do we do in long multiplication?",
+    title: animTitle("what_do_we_do_in_long_multiplication"),
     ...learningStepFields(mix`First multiply the top number by each digit of the bottom number (right to left). Each row is 'partial product'. then add all the partial products.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
@@ -586,7 +587,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
       const inProgressRow = formatInProgressRow(rowDigits, aDigits.length + 1, j);
       steps.push({
         id: `row-${j}-mul-${i}`,
-        title: `multiplication ${place}`,
+        title: animTitle("multiplication_var", { place: place }),
         ...learningStepFields(mix`multiply ${ad} × ${bd}${carryText} = ${prod}. write ${digit} in this place${nextCarry ? ` and carry ${nextCarry} to the next step.` : " (no carry)."
           }`),
         highlights: ["aAll", "bAll"],
@@ -603,7 +604,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
       const inProgressRow = formatInProgressRow(rowDigits, aDigits.length + 1, j);
       steps.push({
         id: `row-${j}-carry-end`,
-        title: "Final carry",
+        title: animTitle("final_carry"),
         ...learningStepFields(mix`at the end of the row a carry remains ${carry}. write it to the left of the row.`),
         highlights: ["aAll", "bAll"],
         revealDigits: 0,
@@ -619,7 +620,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
 
     steps.push({
       id: `row-${j}-done`,
-      title: `partial product ${j + 1}`,
+      title: animTitle("partial_product_var", { index: j + 1 }),
       ...(j === 0 ? learningStepFields(mix`we got a partial product: \${rowValue}.`) : learningStepFields(mix`we got \${rowValue}. because we multiplied by a higher-place digit (×\${repeat("10", j).replace(/10/g, "10") || 10}), add \${j} zeros at the end ⇒ \${shifted}.`)),
       highlights: ["aAll", "bAll"],
       revealDigits: 0,
@@ -630,7 +631,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
   // adding partial products
   steps.push({
     id: "sum-start",
-    title: "Add the partial products",
+    title: animTitle("add_the_partial_products"),
     ...learningStepFields(mix`Now add all the rows we got to reach the final result.`),
     highlights: ["resultAll"],
     revealDigits: 0,
@@ -652,7 +653,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
       col === 0 ? "ones" : col === 1 ? "tens" : col === 2 ? "hundreds" : `place ${col + 1} from the right`;
     steps.push({
       id: `sum-col-${col}`,
-      title: `add in the ${place}`,
+      title: animTitle("add_in_the_var", { place: place }),
       ...learningStepFields(mix`add in the ${place}: the digit sum in the column${carryAdd ? ` + carry ${carryAdd}` : ""} = ${colSum}. write ${digit}${nextCarry ? ` and carry ${nextCarry}.` : "."}`),
       highlights: ["resultAll"],
       revealDigits: 0,
@@ -665,7 +666,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
     resDigits.push(carryAdd);
     steps.push({
       id: "sum-carry-end",
-      title: "Final carry in addition",
+      title: animTitle("final_carry_in_addition"),
       ...learningStepFields(mix`a carry remains ${carryAdd} at the end, write it on the left.`),
       highlights: ["resultAll"],
       revealDigits: 0,
@@ -677,7 +678,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
 
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`After adding all the partial products we got: ${M(`${A} × ${B} = ${sumStr}.`)}`),
     highlights: ["resultAll"],
     revealDigits: answerStr.length,
@@ -688,7 +689,7 @@ export function buildMultiplicationAnimation(a, b, answer) {
   if (!Number.isNaN(ansNum) && sumStr !== String(ansNum)) {
     steps.push({
       id: "note",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`Note: the steps produced ${sumStr} but the stored answer for the question is ${ansNum}. If that happens, the question probably uses special parameters (for example signed numbers or a conversion).`),
       highlights: ["resultAll"],
       revealDigits: answerStr.length,
@@ -793,7 +794,7 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
   // Step 1: Show the question
   steps.push({
     id: "place-value",
-    title: "Show the question",
+    title: animTitle("show_the_question"),
     ...learningStepFields(mix`divide ${dividend} by ${divisor}. Write the dividend and the divisor in long-division form.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
@@ -813,7 +814,7 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
     quotientLineArr[position] = String(qDigit);
     steps.push({
       id: `step-${stepIndex + 1}-write`,
-      title: `step ${stepIndex + 1}: write in the quotient`,
+      title: animTitle("step_var_write_in_the_quotient", { index: stepIndex + 1 }),
       ...learningStepFields(mix`${divisor} goes into${wNum} exactly ${qDigit} times. Write ${qDigit} in the quotient above the digit ${dividendStr[position]}.`),
       highlights: [`result${quotientPosition}`, `a${position}`],
       revealDigits: quotientPosition + 1,
@@ -834,7 +835,7 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
     workLines.push(makeWorkLineAt(position, remainder));
     steps.push({
       id: `step-${stepIndex + 1}-subtract`,
-      title: `step ${stepIndex + 1}: multiply and subtract`,
+      title: animTitle("step_var_multiply_and_subtract", { index: stepIndex + 1 }),
       ...learningStepFields(mix`multiply: ${qDigit} × ${divisor} = ${product}. subtract: ${wNum} - ${product} = ${remainder}. ${remainder === 0 ? 'No remainder.' : `the remainder is ${remainder}.`}`),
       highlights: [`a${position}`, "bAll", `result${quotientPosition}`, `product${stepIndex}`, `remainder${stepIndex}`],
       revealDigits: quotientPosition + 1,
@@ -858,7 +859,7 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
       workLines.push(makeWorkLineAt(nextDigitPos, bringDownStr));
       steps.push({
         id: `step-${stepIndex + 1}-bring-down`,
-        title: `step ${stepIndex + 1}: Bring down a digit`,
+        title: animTitle("step_var_bring_down_a_digit", { index: stepIndex + 1 }),
         ...learningStepFields(mix`bring down the next digit (${dividendStr[nextDigitPos]}). the new number to divide is ${bringDownStr}.`),
         highlights: [`a${nextDigitPos}`],
         revealDigits: quotientPosition + 1,
@@ -879,7 +880,7 @@ export function buildDivisionAnimation(dividend, divisor, quotient) {
   const remainderSuffix = finalRemainder > 0 ? `(${finalRemainder})` : "";
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...(finalRemainder > 0
         ? learningStepFields(mix`Done! The answer is ${M(`${quotient}${remainderSuffix}`)}.`)
         : learningStepFields(mix`Done! The quotient is ${quotient} with no remainder.`)),
@@ -931,7 +932,7 @@ export function buildFractionsAnimation(params, answer) {
     // Step 1: Show the fractions
     steps.push({
       id: "show-fractions",
-      title: "Show the fractions",
+      title: animTitle("show_the_fractions"),
       ...learningStepFields(mix`We have two fractions with the same denominator: ${M(`${n1}/${den} ${isAdd ? "+" : "-"} ${n2}/${den}`)}`),
       highlights: ["fraction1", "fraction2"],
       type: "fractions",
@@ -945,7 +946,7 @@ export function buildFractionsAnimation(params, answer) {
     // Step 2: explain the common denominator
     steps.push({
       id: "same-denominator",
-      title: "Common denominator",
+      title: animTitle("common_denominator"),
       ...learningStepFields(mix`we have the same denominator (${den}). Leave the denominator alone — work only with the numerators.`),
       highlights: ["denominator"],
       type: "fractions",
@@ -961,7 +962,7 @@ export function buildFractionsAnimation(params, answer) {
     const resNum = rawNum;
     steps.push({
       id: "calculate-numerators",
-      title: "Compute the numerators",
+      title: animTitle("compute_the_numerators"),
       ...learningStepFields(mix`${isAdd ? "add" : "subtract"} the numerators: ${M(`${n1} ${isAdd ? "+" : "-"} ${n2} = ${resNum}`)}`),
       highlights: ["numerators"],
       type: "fractions",
@@ -978,7 +979,7 @@ export function buildFractionsAnimation(params, answer) {
     if (canSimplify) {
       steps.push({
         id: "simplify",
-        title: "Simplify the fraction",
+        title: animTitle("simplify_the_fraction"),
         ...learningStepFields(mix`we can simplify because both ${resNum} and ${den} are divisible by ${simplified.g}. divide the numerator and denominator by ${simplified.g}.`),
         highlights: ["simplify"],
         type: "fractions",
@@ -996,7 +997,7 @@ export function buildFractionsAnimation(params, answer) {
     if (mixed && mixed.rem !== 0) {
       steps.push({
         id: "mixed",
-        title: "Convert to a mixed number",
+        title: animTitle("convert_to_a_mixed_number"),
         ...learningStepFields(mix`If the numerator is larger than the denominator, you can write a mixed number: ${M(`${simplified.n} ÷ ${simplified.d} = ${mixed.whole} `)}remainder ${mixed.rem}.`),
         highlights: ["mixed"],
         type: "fractions",
@@ -1012,7 +1013,7 @@ export function buildFractionsAnimation(params, answer) {
     // last step: the result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the denominator stays ${den} (and if we simplified/converted — use the simplified form). The answer is ${answer}`),
       highlights: ["result"],
       type: "fractions",
@@ -1035,7 +1036,7 @@ export function buildFractionsAnimation(params, answer) {
     // Step 1: Show the fractions
     steps.push({
       id: "show-fractions",
-      title: "Show the fractions",
+      title: animTitle("show_the_fractions"),
       ...learningStepFields(mix`We have two fractions with different denominators: ${M(`${n1}/${den1} ${isAdd ? "+" : "-"} ${n2}/${den2}`)}`),
       highlights: ["fraction1", "fraction2"],
       type: "fractions",
@@ -1049,7 +1050,7 @@ export function buildFractionsAnimation(params, answer) {
     // Step 2: Find a common denominator
     steps.push({
       id: "find-common",
-      title: "Find a common denominator",
+      title: animTitle("find_a_common_denominator"),
       ...learningStepFields(mix`find a common denominator — here ${commonDen}`),
       highlights: ["commonDen"],
       type: "fractions",
@@ -1067,7 +1068,7 @@ export function buildFractionsAnimation(params, answer) {
     // Step 3: Rewrite with a common denominator
     steps.push({
       id: "convert",
-      title: "Rewrite with a common denominator",
+      title: animTitle("rewrite_with_a_common_denominator"),
       ...learningStepFields(mix`to reach the denominator ${commonDen} multiply numerator and denominator by the same number:`),
       highlights: ["convert1", "convert2"],
       type: "fractions",
@@ -1083,7 +1084,7 @@ export function buildFractionsAnimation(params, answer) {
     const resNum = rawNum;
     steps.push({
       id: "calculate",
-      title: "Calculation",
+      title: animTitle("calculation"),
       ...learningStepFields(mix`Now that the denominators match — work only with the numerators: ${M(`${nn1} ${isAdd ? "+" : "-"} ${nn2} = ${resNum}`)}`),
       highlights: ["calculation"],
       type: "fractions",
@@ -1100,7 +1101,7 @@ export function buildFractionsAnimation(params, answer) {
     if (canSimplify) {
       steps.push({
         id: "simplify",
-        title: "Simplify the fraction",
+        title: animTitle("simplify_the_fraction"),
         ...learningStepFields(mix`we can simplify because both ${resNum} and ${commonDen} are divisible by ${simplified.g}.`),
         highlights: ["simplify"],
         type: "fractions",
@@ -1118,7 +1119,7 @@ export function buildFractionsAnimation(params, answer) {
     if (mixed && mixed.rem !== 0) {
       steps.push({
         id: "mixed",
-        title: "Convert to a mixed number",
+        title: animTitle("convert_to_a_mixed_number"),
         ...learningStepFields(mix`If the result is a fraction greater than 1, you can write it as a mixed number.`),
         highlights: ["mixed"],
         type: "fractions",
@@ -1134,7 +1135,7 @@ export function buildFractionsAnimation(params, answer) {
     // last step: the result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "fractions",
@@ -1145,7 +1146,7 @@ export function buildFractionsAnimation(params, answer) {
     const { improperNum, den, whole, num } = params;
     steps.push({
       id: "show",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`convert the fraction ${improperNum}/${den} to a mixed number.`),
       type: "fractions",
       params,
@@ -1154,7 +1155,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "divide",
-      title: "Divide to find the whole",
+      title: animTitle("divide_to_find_the_whole"),
       ...learningStepFields(mix`divide: ${M(`${improperNum} ÷ ${den} = ${whole} `)}remainder ${num}.`),
       type: "fractions",
       params,
@@ -1166,7 +1167,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}.`),
       type: "fractions",
       params,
@@ -1176,7 +1177,7 @@ export function buildFractionsAnimation(params, answer) {
     const { whole, num, den, improperNum } = params;
     steps.push({
       id: "show",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`convert the mixed number ${whole} ${num}/${den} to a fraction.`),
       type: "fractions",
       params,
@@ -1185,7 +1186,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "Conversion rule",
+      title: animTitle("conversion_rule"),
       ...learningStepFields(mix`Multiply the whole number by the denominator and add the numerator: (${whole}×${den}) + ${num}.`),
       type: "fractions",
       params,
@@ -1197,7 +1198,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "compute",
+      title: animTitle("compute"),
       ...learningStepFields(mix`${whole}×${den} = ${M(`${whole * den}, `)}then ${whole * den} + ${num} = ${M(`${improperNum}.`)}`),
       type: "fractions",
       params,
@@ -1210,7 +1211,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}.`),
       type: "fractions",
       params,
@@ -1220,7 +1221,7 @@ export function buildFractionsAnimation(params, answer) {
     const { num, den, factor, expandedNum, expandedDen } = params;
     steps.push({
       id: "show",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`expand ${num}/${den} by ${factor} (that is, multiply numerator and denominator by the same number).`),
       type: "fractions",
       params,
@@ -1229,7 +1230,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "multiply",
-      title: "Multiply numerator and denominator",
+      title: animTitle("multiply_numerator_and_denominator"),
       ...learningStepFields(mix`numerator: ${M(`${num}×${factor} = ${expandedNum}. `)}denominator: ${M(`${den}×${factor} = ${expandedDen}.`)}`),
       type: "fractions",
       params,
@@ -1241,7 +1242,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the equivalent fraction is ${answer}.`),
       type: "fractions",
       params,
@@ -1252,7 +1253,7 @@ export function buildFractionsAnimation(params, answer) {
     const simp = simplifyFraction(num, den);
     steps.push({
       id: "show",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`simplify the fraction ${num}/${den}.`),
       type: "fractions",
       params,
@@ -1261,7 +1262,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "gcd",
-      title: "Greatest common divisor",
+      title: animTitle("greatest_common_divisor"),
       ...learningStepFields(mix`find a number that divides both ${num} and also ${den}. here the divisor is ${simp.g}.`),
       type: "fractions",
       params,
@@ -1269,7 +1270,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "divide",
-      title: "Divide numerator and denominator",
+      title: animTitle("divide_numerator_and_denominator"),
       ...learningStepFields(mix`numerator: ${M(`${num}÷${simp.g} = ${reducedNum}. `)}denominator: ${M(`${den}÷${simp.g} = ${reducedDen}.`)}`),
       type: "fractions",
       params,
@@ -1282,7 +1283,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the simplified fraction is ${answer}.`),
       type: "fractions",
       params,
@@ -1292,7 +1293,7 @@ export function buildFractionsAnimation(params, answer) {
     const { dividend, divisor, num, den } = params;
     steps.push({
       id: "show",
-      title: "Fraction as a quotient",
+      title: animTitle("fraction_as_a_quotient"),
       ...learningStepFields(mix`division can be written as a fraction: ${M(`${dividend} ÷ ${divisor} = ${dividend}/${divisor}`)}.`),
       type: "fractions",
       params,
@@ -1303,7 +1304,7 @@ export function buildFractionsAnimation(params, answer) {
     if (simp.g > 1) {
       steps.push({
         id: "simplify",
-        title: "Simplify",
+        title: animTitle("simplify"),
         ...learningStepFields(mix`simplify ${dividend}/${divisor} by ${simp.g}.`),
         type: "fractions",
         params,
@@ -1317,7 +1318,7 @@ export function buildFractionsAnimation(params, answer) {
     }
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`so the answer is ${answer}.`),
       type: "fractions",
       params,
@@ -1330,7 +1331,7 @@ export function buildFractionsAnimation(params, answer) {
     const simp = simplifyFraction(rawNum, rawDen);
     steps.push({
       id: "show",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`Multiplying fractions: multiply numerator by numerator and denominator by denominator.`),
       type: "fractions",
       params,
@@ -1339,7 +1340,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "mul",
-      title: "Multiply numerators and denominators",
+      title: animTitle("multiply_numerators_and_denominators"),
       ...learningStepFields(mix`numerator: ${M(`${n1}×${n2} = ${rawNum}. `)}denominator: ${M(`${den1}×${den2} = ${rawDen}.`)}`),
       type: "fractions",
       params,
@@ -1353,7 +1354,7 @@ export function buildFractionsAnimation(params, answer) {
     if (simp.g > 1) {
       steps.push({
         id: "simplify",
-        title: "Simplify",
+        title: animTitle("simplify"),
         ...learningStepFields(mix`simplify by ${simp.g}: ${M(`${rawNum}/${rawDen} = ${finalNum}/${finalDen}.`)}`),
         type: "fractions",
         params,
@@ -1373,7 +1374,7 @@ export function buildFractionsAnimation(params, answer) {
     const simp = simplifyFraction(rawNum, rawDen);
     steps.push({
       id: "show",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`Dividing fractions: flip the divisor and multiply.`),
       type: "fractions",
       params,
@@ -1382,7 +1383,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "flip",
-      title: "Flip and multiply",
+      title: animTitle("flip_and_multiply"),
       ...learningStepFields(mix`${M(`${n1}/${den1} ÷ ${n2}/${den2} = ${n1}/${den1} × ${den2}/${n2}`)}`),
       type: "fractions",
       params,
@@ -1394,7 +1395,7 @@ export function buildFractionsAnimation(params, answer) {
     });
     steps.push({
       id: "mul",
-      title: "Multiply numerators and denominators",
+      title: animTitle("multiply_numerators_and_denominators"),
       ...learningStepFields(mix`numerator: ${M(`${n1}×${den2} = ${rawNum}. `)}denominator: ${M(`${den1}×${n2} = ${rawDen}.`)}`),
       type: "fractions",
       params,
@@ -1408,7 +1409,7 @@ export function buildFractionsAnimation(params, answer) {
     if (simp.g > 1) {
       steps.push({
         id: "simplify",
-        title: "Simplify",
+        title: animTitle("simplify"),
         ...learningStepFields(mix`simplify by ${simp.g}: ${M(`${rawNum}/${rawDen} = ${finalNum}/${finalDen}.`)}`),
         type: "fractions",
         params,
@@ -1526,7 +1527,7 @@ export function buildDecimalsAnimation(params, answer) {
   // Step 1: line up decimal points
   steps.push({
     id: "place-value",
-    title: "Line up the decimal points",
+    title: animTitle("line_up_the_decimal_points"),
     ...learningStepFields(mix`Write the numbers one above the other so the decimal points line up in the same column.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
@@ -1537,7 +1538,7 @@ export function buildDecimalsAnimation(params, answer) {
   const mul = Math.pow(10, places);
   steps.push({
     id: "dot-note",
-    title: "What do we do with the decimal point?",
+    title: animTitle("what_do_we_do_with_the_decimal_point"),
     ...learningStepFields(mix`To make column math easier, imagine shifting the decimal point ${places} places to the right (multiply by ${mul}). Compute with whole numbers, then put the decimal point back ${places} places to the left.`),
     highlights: ["aAll", "bAll"],
     revealDigits: 0,
@@ -1563,7 +1564,7 @@ export function buildDecimalsAnimation(params, answer) {
       revealedCount++;
   steps.push({
         id: `step-${stepIndex}`,
-        title: `the column ${place}`,
+        title: animTitle("the_column_var", { place: place }),
         ...learningStepFields(mix`add in the ${place}: ${M(`${da} + ${db}${carry ? " + " + carry : ""} = ${sum}`)}. write ${digit}${newCarry ? " and carry 1 to the next column." : "."}`),
     highlights: ["aAll", "bAll", "resultAll"],
         revealDigits: revealedCount,
@@ -1578,7 +1579,7 @@ export function buildDecimalsAnimation(params, answer) {
       revealedCount++;
       steps.push({
         id: "final-carry",
-        title: "Final carry",
+        title: animTitle("final_carry"),
         ...learningStepFields(mix`A carry of 1 remains at the end — write it on the left.`),
         highlights: ["resultAll"],
         revealDigits: revealedCount,
@@ -1599,7 +1600,7 @@ export function buildDecimalsAnimation(params, answer) {
       if (da < db) {
         steps.push({
           id: `borrow-${stepIndex}`,
-          title: `borrow in the ${place}`,
+          title: animTitle("borrow_in_the_var", { place: place }),
           ...learningStepFields(mix`in the ${place} ${da} less than ${db}, so add 10 to this column and take 1 from the next column (borrow).`),
           highlights: ["aAll", "bAll"],
           revealDigits: revealedCount,
@@ -1616,7 +1617,7 @@ export function buildDecimalsAnimation(params, answer) {
       revealedCount++;
       steps.push({
         id: `step-${stepIndex}`,
-        title: `the column ${place}`,
+        title: animTitle("the_column_var", { place: place }),
         ...learningStepFields(mix`subtract in the ${place}: ${M(`${da} − ${db} = ${diff}. `)}write ${diff}.`),
         highlights: ["aAll", "bAll", "resultAll"],
         revealDigits: revealedCount,
@@ -1628,7 +1629,7 @@ export function buildDecimalsAnimation(params, answer) {
 
   steps.push({
     id: "final",
-    title: "Put the decimal point back",
+    title: animTitle("put_the_decimal_point_back"),
     ...learningStepFields(mix`Remember: put the decimal point back in the same column. The final result is ${answerStr}.`),
     highlights: ["resultAll"],
     revealDigits: answerDigitsCount,
@@ -1660,7 +1661,7 @@ export function buildPercentagesAnimation(params, answer) {
     const den = 100 / g;
     local.push({
       id: `${idPrefix}-show`,
-      title: "What is asked?",
+      title: animTitle("what_is_asked"),
       ...learningStepFields(mix`compute ${perc}% of ${baseVal}.`),
       type: "percentages",
       params,
@@ -1669,7 +1670,7 @@ export function buildPercentagesAnimation(params, answer) {
     });
     local.push({
       id: `${idPrefix}-fraction`,
-      title: "Percent as a fraction",
+      title: animTitle("percent_as_a_fraction"),
       ...learningStepFields(mix`${perc}% = ${perc}/100. you can simplify: ${M(`${perc}/100 = ${num}/${den}`)}.`),
       type: "percentages",
       params,
@@ -1678,7 +1679,7 @@ export function buildPercentagesAnimation(params, answer) {
     });
     local.push({
       id: `${idPrefix}-formula`,
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`part = number × the fraction ⇒ ${M(`${baseVal} × ${num}/${den}`)}.`),
       type: "percentages",
       params,
@@ -1692,7 +1693,7 @@ export function buildPercentagesAnimation(params, answer) {
       const reducedBase = baseVal / den;
       local.push({
         id: `${idPrefix}-divide-first`,
-        title: "Divide first (easier)",
+        title: animTitle("divide_first_easier"),
         ...learningStepFields(mix`first divide ${baseVal} by ${den}: ${M(`${baseVal} ÷ ${den} = ${reducedBase}`)}.`),
       type: "percentages",
       params,
@@ -1701,7 +1702,7 @@ export function buildPercentagesAnimation(params, answer) {
       });
       local.push({
         id: `${idPrefix}-multiply`,
-        title: "Multiply",
+        title: animTitle("multiply"),
         ...learningStepFields(mix`${M(`${reducedBase} × ${num} = ${resultVal}`)}.`),
         type: "percentages",
         params,
@@ -1710,7 +1711,7 @@ export function buildPercentagesAnimation(params, answer) {
     } else {
       local.push({
         id: `${idPrefix}-multiply-first`,
-        title: "Multiply, then divide",
+        title: animTitle("multiply_then_divide"),
         ...learningStepFields(mix`compute: ${M(`${baseVal} × ${num} ÷ ${den} = ${resultVal}`)}.`),
         type: "percentages",
         params,
@@ -1720,7 +1721,7 @@ export function buildPercentagesAnimation(params, answer) {
 
     local.push({
       id: `${idPrefix}-final`,
-      title: "Result",
+      title: animTitle("result"),
       ...learningStepFields(mix`so ${perc}% of ${baseVal} is ${resultVal}.`),
       type: "percentages",
       params,
@@ -1733,7 +1734,7 @@ export function buildPercentagesAnimation(params, answer) {
     const result = Number(answer);
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`how much is ${p}% of ${base}?`),
       type: "percentages",
       params,
@@ -1742,7 +1743,7 @@ export function buildPercentagesAnimation(params, answer) {
     steps.push(...buildPartOfSteps(base, p, result, "part"));
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}.`),
       type: "percentages",
       params,
@@ -1752,7 +1753,7 @@ export function buildPercentagesAnimation(params, answer) {
     const { discount, finalPrice } = params;
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`a product costs ${base} and there is a discount of ${p}%. What is the price after the discount?`),
       type: "percentages",
       params,
@@ -1760,7 +1761,7 @@ export function buildPercentagesAnimation(params, answer) {
     });
     steps.push({
       id: "idea",
-      title: "What do we do?",
+      title: animTitle("what_do_we_do"),
       ...learningStepFields(mix`Step 1: compute the discount amount. Step 2: subtract it from the price.`),
       type: "percentages",
       params,
@@ -1769,7 +1770,7 @@ export function buildPercentagesAnimation(params, answer) {
     steps.push(...buildPartOfSteps(base, p, discount, "disc"));
     steps.push({
       id: "subtract",
-      title: "Price after discount",
+      title: animTitle("price_after_discount"),
       ...learningStepFields(mix`subtract the discount: ${M(`${base} − ${discount} = ${finalPrice}`)}.`),
       type: "percentages",
       params,
@@ -1787,7 +1788,7 @@ export function buildPercentagesAnimation(params, answer) {
     );
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the price after the discount is ${answer}.`),
       type: "percentages",
       params,
@@ -1806,7 +1807,7 @@ export function buildSequencesAnimation(params, answer) {
   const display = seq.map((v, idx) => (idx === posOfBlank ? "__" : v)).join(", ");
   steps.push({
     id: "show-sequence",
-    title: "Show the sequence",
+    title: animTitle("show_the_sequence"),
     ...learningStepFields(mix`the sequence is: ${M(`${display}`)}`),
     highlights: ["sequence"],
     type: "sequences",
@@ -1818,7 +1819,7 @@ export function buildSequencesAnimation(params, answer) {
   const firstDiff = seq[1] - seq[0];
   steps.push({
     id: "find-difference",
-    title: "Find the difference",
+    title: animTitle("find_the_difference"),
     ...learningStepFields(mix`Look at the difference between two neighboring numbers: ${M(`${seq[1]} - ${seq[0]} = ${firstDiff}`)}`),
     highlights: ["difference"],
     type: "sequences",
@@ -1829,7 +1830,7 @@ export function buildSequencesAnimation(params, answer) {
     const secondDiff = seq[2] - seq[1];
     steps.push({
       id: "confirm",
-      title: "Confirm it is constant",
+      title: animTitle("confirm_it_is_constant"),
       ...learningStepFields(mix`check again: ${M(`${seq[2]} - ${seq[1]} = ${secondDiff}`)}. it is the same difference ⇒ the step is constant.`),
       highlights: ["difference"],
       type: "sequences",
@@ -1841,7 +1842,7 @@ export function buildSequencesAnimation(params, answer) {
   // Step 3: explain the constant step
   steps.push({
     id: "explain-step",
-    title: "The constant step",
+    title: animTitle("the_constant_step"),
     ...learningStepFields(mix`This is the constant step of the sequence: ${M(`${step > 0 ? "add" : "subtract"} ${Math.abs(step)} `)}each step`),
     highlights: ["step"],
     type: "sequences",
@@ -1859,7 +1860,7 @@ export function buildSequencesAnimation(params, answer) {
     const res = beforeBlank + step;
     steps.push({
       id: "calculate",
-      title: "Find the missing number",
+      title: animTitle("find_the_missing_number"),
       ...learningStepFields(mix`the number after ${beforeBlank} is obtained by ${step >= 0 ? "adding" : "subtracting"} ${amt}: ${M(`${beforeBlank} ${step >= 0 ? "+" : "−"} ${amt} = ${res}`)}`),
       highlights: ["calculation"],
       type: "sequences",
@@ -1882,7 +1883,7 @@ export function buildSequencesAnimation(params, answer) {
     const res = afterBlank - step;
     steps.push({
       id: "calculate",
-      title: "Find the missing number",
+      title: animTitle("find_the_missing_number"),
       ...learningStepFields(mix`the number before ${afterBlank} is obtained by ${step >= 0 ? "subtracting" : "adding"} ${amt}: ${M(`${afterBlank} ${step >= 0 ? "−" : "+"} ${amt} = ${res}`)}`),
       highlights: ["calculation"],
       type: "sequences",
@@ -1903,7 +1904,7 @@ export function buildSequencesAnimation(params, answer) {
   // Step 5: The result
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`the missing number is ${answer}`),
     highlights: ["result"],
     type: "sequences",
@@ -1934,7 +1935,7 @@ export function buildEquationsAnimation(params, answer) {
   // Step 1: Show the equation
   steps.push({
     id: "show-equation",
-    title: "Show the equation",
+    title: animTitle("show_the_equation"),
     ...learningStepFields(mix`the equation is: ${M(`${exerciseText}`)}`),
     type: "equations",
     params,
@@ -1945,7 +1946,7 @@ export function buildEquationsAnimation(params, answer) {
   if (kind === "eq_add_simple") {
     steps.push({
       id: "idea",
-      title: "How do we solve it?",
+      title: animTitle("how_do_we_solve_it"),
       ...learningStepFields(mix`if ${M(`${a} + __ = ${c}`)} then the missing number is ${M(`${c} − ${a}`)}.`),
       type: "equations",
       params,
@@ -1955,7 +1956,7 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_sub_simple") {
     steps.push({
       id: "idea",
-      title: "How do we solve it?",
+      title: animTitle("how_do_we_solve_it"),
       ...learningStepFields(mix`if ${M(`${a} − __ = ${c}`)} then the missing number is ${M(`${a} − ${c}`)}.`),
       type: "equations",
       params,
@@ -1965,7 +1966,7 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_add") {
     steps.push({
       id: "inverse",
-      title: "Inverse operation",
+      title: animTitle("inverse_operation"),
       ...learningStepFields(mix`In addition, the inverse operation is subtraction.`),
       type: "equations",
       params,
@@ -1976,7 +1977,7 @@ export function buildEquationsAnimation(params, answer) {
     const subB = form === "a_plus_x" ? a : b;
     steps.push({
       id: "calc",
-      title: "Find the missing number",
+      title: animTitle("find_the_missing_number"),
       ...learningStepFields(mix`compute: ${M(`${subA} − ${subB} = ${missing}`)}.`),
       type: "equations",
       params,
@@ -1986,7 +1987,7 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_sub") {
     steps.push({
       id: "inverse",
-      title: "Inverse operation",
+      title: animTitle("inverse_operation"),
       ...learningStepFields(mix`In subtraction — sometimes we use subtraction and sometimes addition, depending on where the blank is.`),
       type: "equations",
       params,
@@ -1996,7 +1997,7 @@ export function buildEquationsAnimation(params, answer) {
     if (form === "a_minus_x") {
     steps.push({
         id: "calc",
-        title: "Find the missing number",
+        title: animTitle("find_the_missing_number"),
         ...learningStepFields(mix`if ${M(`${a} − __ = ${c}`)} then ${M(`${a} − ${c} = ${missing}`)}.`),
       type: "equations",
       params,
@@ -2006,7 +2007,7 @@ export function buildEquationsAnimation(params, answer) {
     } else {
       steps.push({
         id: "calc",
-        title: "Find the missing number",
+        title: animTitle("find_the_missing_number"),
         ...learningStepFields(mix`if ${M(`__ − ${b} = ${c}`)} then ${M(`${c} + ${b} = ${missing}`)}.`),
         type: "equations",
         params,
@@ -2017,7 +2018,7 @@ export function buildEquationsAnimation(params, answer) {
   } else if (kind === "eq_mul") {
     steps.push({
       id: "inverse",
-      title: "Inverse operation",
+      title: animTitle("inverse_operation"),
       ...learningStepFields(mix`In multiplication, the inverse operation is division.`),
       type: "equations",
       params,
@@ -2027,7 +2028,7 @@ export function buildEquationsAnimation(params, answer) {
     const known = form === "a_times_x" ? a : b;
     steps.push({
       id: "calc",
-      title: "Find the missing number",
+      title: animTitle("find_the_missing_number"),
       ...learningStepFields(mix`compute: ${M(`${c} ÷ ${known} = ${missing}`)}.`),
       type: "equations",
       params,
@@ -2038,7 +2039,7 @@ export function buildEquationsAnimation(params, answer) {
     const { dividend, divisor, quotient } = params;
     steps.push({
       id: "inverse",
-      title: "Idea",
+      title: animTitle("idea"),
       ...learningStepFields(mix`In division we use multiplication/division to find the missing number.`),
       type: "equations",
       params,
@@ -2049,7 +2050,7 @@ export function buildEquationsAnimation(params, answer) {
       // dividend ÷ __ = quotient  => __ = dividend ÷ quotient
     steps.push({
         id: "calc",
-        title: "Find the missing divisor",
+        title: animTitle("find_the_missing_divisor"),
         ...learningStepFields(mix`if ${M(`${dividend} ÷ __ = ${quotient}`)} then ${M(`${dividend} ÷ ${quotient} = ${missing}`)}.`),
       type: "equations",
       params,
@@ -2060,7 +2061,7 @@ export function buildEquationsAnimation(params, answer) {
       // __ ÷ divisor = quotient => __ = quotient × divisor
       steps.push({
         id: "calc",
-        title: "Find the missing dividend",
+        title: animTitle("find_the_missing_dividend"),
         ...learningStepFields(mix`if ${M(`__ ÷ ${divisor} = ${quotient}`)} then ${M(`${quotient} × ${divisor} = ${missing}`)}.`),
         type: "equations",
         params,
@@ -2072,7 +2073,7 @@ export function buildEquationsAnimation(params, answer) {
 
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`the answer is ${answer}.`),
     type: "equations",
     params,
@@ -2097,7 +2098,7 @@ export function buildCompareAnimation(params, _answerIgnored) {
 
   steps.push({
     id: "show-question",
-    title: "Show the question",
+    title: animTitle("show_the_question"),
     ...learningStepFields(mix`fill in the sign: ${M(`${aLabel} `)}__ ${bLabel}`),
     highlights: ["question"],
     type: "compare",
@@ -2108,7 +2109,7 @@ export function buildCompareAnimation(params, _answerIgnored) {
   // Step 2: explain the comparison
   steps.push({
     id: "explain",
-    title: "How do we compare?",
+    title: animTitle("how_do_we_compare"),
     ...learningStepFields(mix`Look at the two numbers: ${M(`${aLabel} `)}and ${bLabel}.`),
     highlights: ["explanation"],
     type: "compare",
@@ -2129,7 +2130,7 @@ export function buildCompareAnimation(params, _answerIgnored) {
 
   steps.push({
     id: "calculate",
-    title: "The calculation",
+    title: animTitle("the_calculation"),
     ...learningStepFields(mix`${comparison} so we choose the sign ${signInProse}.`),
     highlights: ["calculation"],
     type: "compare",
@@ -2140,7 +2141,7 @@ export function buildCompareAnimation(params, _answerIgnored) {
   // Step 4: The result
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`the correct sign is ${signInProse}`),
     highlights: ["result"],
     type: "compare",
@@ -2161,7 +2162,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...(dir === "after"
         ? learningStepFields(mix`What number comes after ${n}?`)
         : learningStepFields(mix`What number comes before ${n}?`)),
@@ -2174,7 +2175,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "How do we find a neighbor?",
+      title: animTitle("how_do_we_find_a_neighbor"),
       ...learningStepFields(dir === "after" ? mix`one after — add 1: ${n} + 1 = ${answer}` : mix`one before — subtract 1: ${n} - 1 = ${answer}`),
       highlights: ["explanation"],
       type: "number_sense",
@@ -2185,7 +2186,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 3: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
@@ -2209,7 +2210,7 @@ export function buildNumberSenseAnimation(params, answer) {
     
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`${questionText}`),
       highlights: ["question"],
       type: "number_sense",
@@ -2221,7 +2222,7 @@ export function buildNumberSenseAnimation(params, answer) {
     if (kind === "ns_place_tens_units") {
       steps.push({
         id: "breakdown",
-        title: "Break apart the number",
+        title: animTitle("break_apart_the_number"),
         ...learningStepFields(mix`${M(`${tens * 10} + ${units} = ${n}`)} (${tens} tens + ${units} ones)`),
         highlights: ["breakdown"],
         type: "number_sense",
@@ -2231,7 +2232,7 @@ export function buildNumberSenseAnimation(params, answer) {
     } else {
       steps.push({
         id: "breakdown",
-        title: "Break apart the number",
+        title: animTitle("break_apart_the_number"),
         ...learningStepFields(mix`${M(`${hundreds * 100} + ${tens * 10} + ${units} = ${n}`)} (${hundreds} hundreds + ${tens} tens + ${units} ones)`),
         highlights: ["breakdown"],
         type: "number_sense",
@@ -2243,7 +2244,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 3: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
@@ -2257,7 +2258,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`__ + ${b} = ${M(`${target}`)}`),
       highlights: ["question"],
       type: "number_sense",
@@ -2268,7 +2269,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "Complete / make a ten",
+      title: animTitle("complete_make_a_ten"),
       ...learningStepFields(mix`find how much is missing from ${b} to reach${target}`),
       highlights: ["explanation"],
       type: "number_sense",
@@ -2279,7 +2280,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 3: The calculation
     steps.push({
       id: "calculate",
-      title: "The calculation",
+      title: animTitle("the_calculation"),
       ...learningStepFields(mix`compute: ${M(`${target} - ${b} = ${answer}`)}`),
       highlights: ["calculation"],
       type: "number_sense",
@@ -2290,7 +2291,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 4: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
@@ -2303,7 +2304,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`Is the number ${n} is it even or odd?`),
       highlights: ["question"],
       type: "number_sense",
@@ -2314,7 +2315,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "How do we check?",
+      title: animTitle("how_do_we_check"),
       ...learningStepFields(mix`Look at the ones digit of ${n}. If the digit is 0,2,4,6,8 — the number is even. If 1,3,5,7,9 — it is odd.`),
       highlights: ["explanation"],
       type: "number_sense",
@@ -2325,7 +2326,7 @@ export function buildNumberSenseAnimation(params, answer) {
     // Step 3: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the number ${n} is ${answer}`),
       highlights: ["result"],
       type: "number_sense",
@@ -2336,7 +2337,7 @@ export function buildNumberSenseAnimation(params, answer) {
     const { start, next } = params;
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`What is the next number after ${start}?`),
       type: "number_sense",
       params,
@@ -2344,7 +2345,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "Rule",
+      title: animTitle("rule"),
       ...learningStepFields(mix`To find the next number — add 1.`),
       type: "number_sense",
       params,
@@ -2352,7 +2353,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "compute",
+      title: animTitle("compute"),
       ...learningStepFields(mix`${M(`${start} + 1 = ${next}`)}.`),
       type: "number_sense",
       params,
@@ -2361,7 +2362,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}.`),
       type: "number_sense",
       params,
@@ -2371,7 +2372,7 @@ export function buildNumberSenseAnimation(params, answer) {
     const { start, prev } = params;
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`What number comes before ${start}?`),
       type: "number_sense",
       params,
@@ -2379,7 +2380,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "Rule",
+      title: animTitle("rule"),
       ...learningStepFields(mix`To find the previous number — subtract 1.`),
       type: "number_sense",
       params,
@@ -2387,7 +2388,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "compute",
+      title: animTitle("compute"),
       ...learningStepFields(mix`${M(`${start} − 1 = ${prev}`)}.`),
       type: "number_sense",
       params,
@@ -2396,7 +2397,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}.`),
       type: "number_sense",
       params,
@@ -2409,7 +2410,7 @@ export function buildNumberSenseAnimation(params, answer) {
     const step = arr.length >= 2 ? arr[1] - arr[0] : 1;
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`What is the missing number on the number line?`),
       type: "number_sense",
       params,
@@ -2418,7 +2419,7 @@ export function buildNumberSenseAnimation(params, answer) {
     });
     steps.push({
       id: "range",
-      title: "Range and constant jump",
+      title: animTitle("range_and_constant_jump"),
       ...learningStepFields(mix`the line from ${start} up to ${end}. the difference between neighboring points is ${step}.`),
       type: "number_sense",
       params,
@@ -2430,7 +2431,7 @@ export function buildNumberSenseAnimation(params, answer) {
     if (prevVal != null) {
       steps.push({
         id: "calc",
-        title: "Find the missing number",
+        title: animTitle("find_the_missing_number"),
         ...learningStepFields(mix`add one jump: ${M(`${prevVal} + ${step} = ${missing}`)}.`),
         type: "number_sense",
         params,
@@ -2440,7 +2441,7 @@ export function buildNumberSenseAnimation(params, answer) {
     }
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}.`),
       type: "number_sense",
       params,
@@ -2462,7 +2463,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`Which of the following numbers is a divisor (factor) of ${n}?`),
       highlights: ["question"],
       type: "factors_multiples",
@@ -2473,7 +2474,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "What is a factor?",
+      title: animTitle("what_is_a_factor"),
       ...learningStepFields(mix`A factor is a number that divides another number with no remainder. Check which numbers divide ${n} with no remainder.`),
       highlights: ["explanation"],
       type: "factors_multiples",
@@ -2484,7 +2485,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 3: Check
     steps.push({
       id: "check",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`divide ${n} by ${correct}: ${M(`${n} ÷ ${correct} = ${n / correct}. `)}that is a whole number, so ${correct} is a factor of ${n}`),
       highlights: ["check"],
       type: "factors_multiples",
@@ -2495,7 +2496,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 4: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "factors_multiples",
@@ -2508,7 +2509,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`Which of the following numbers is a multiple of ${base}?`),
       highlights: ["question"],
       type: "factors_multiples",
@@ -2519,7 +2520,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "What is a multiple?",
+      title: animTitle("what_is_a_multiple"),
       ...learningStepFields(mix`A multiple is what you get when multiplying the number by a whole number. Multiples of ${base} are: ${M(`${base} × 1, ${base} × 2, ${base} × 3, ...`)}`),
       highlights: ["explanation"],
       type: "factors_multiples",
@@ -2530,7 +2531,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 3: Check
     steps.push({
       id: "check",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`check: ${M(`${correct} ÷ ${base} = ${correct / base}. `)}that is a whole number, so ${correct} is a multiple of ${base}`),
       highlights: ["check"],
       type: "factors_multiples",
@@ -2541,7 +2542,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 4: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "factors_multiples",
@@ -2554,7 +2555,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 1: Show the question
     steps.push({
       id: "show-question",
-      title: "Show the question",
+      title: animTitle("show_the_question"),
       ...learningStepFields(mix`What is the greatest common factor of ${a} and ${b}?`),
       highlights: ["question"],
       type: "factors_multiples",
@@ -2565,7 +2566,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 2: explanation
     steps.push({
       id: "explain",
-      title: "What is GCF?",
+      title: animTitle("what_is_gcf"),
       ...learningStepFields(mix`The greatest common factor (GCF) is the largest number that divides both numbers with no remainder.`),
       highlights: ["explanation"],
       type: "factors_multiples",
@@ -2576,7 +2577,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 3: Calculation
     steps.push({
       id: "calculate",
-      title: "Calculation",
+      title: animTitle("calculation"),
       ...learningStepFields(mix`factor ${a} and ${b} into factors and see which is largest — here ${gcd}`),
       highlights: ["calculation"],
       type: "factors_multiples",
@@ -2587,7 +2588,7 @@ export function buildFactorsMultiplesAnimation(params, answer) {
     // Step 4: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "factors_multiples",
@@ -2625,7 +2626,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 1: Read the story
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo has ${a} balls and gets ${b} balls. How many balls does Leo have in total?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2636,7 +2637,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 2: Identify the operation
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`Recognize the question asks for a total — that is addition.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -2647,7 +2648,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 3: Write the exercise
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`Write the exercise: ${M(`${a} + ${b}`)}`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2661,7 +2662,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 5: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`Answer: Leo has ${answer} balls.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2673,7 +2674,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const left = total - give;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo has ${total} stickers. He gives a friend ${give} stickers. How many stickers does Leo have left?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2682,7 +2683,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`give away / take away → subtraction.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -2691,7 +2692,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`Write the exercise: ${M(`${total} − ${give}`)}`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2701,7 +2702,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(total, give, left, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`Leo has left ${answer} stickers.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2713,7 +2714,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const left = money - toy;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo has ${money} in pocket money. He buys a game for${toy}. How much money does he have left?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2722,7 +2723,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`buying spends money → subtraction.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -2731,7 +2732,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`Write the exercise: ${M(`${money} − ${toy}`)}`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2741,7 +2742,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(money, toy, left, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`Leo will have left ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2752,7 +2753,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { days } = params;
     steps.push({
       id: "read-story",
-      title: "Read the question",
+      title: animTitle("read_the_question"),
       ...learningStepFields(mix`A question about days of the week: how many days until a certain day?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2761,7 +2762,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "method",
-      title: "How do we solve it?",
+      title: animTitle("how_do_we_solve_it"),
       ...learningStepFields(mix`Count day by day forward on the calendar. Each move to the next day is +1.`),
       highlights: ["explanation"],
       type: "word_problems",
@@ -2770,7 +2771,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "count",
-      title: "Count the days",
+      title: animTitle("count_the_days"),
       ...learningStepFields(mix`we counted ${days} days until the requested day.`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -2779,7 +2780,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer} days.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2791,7 +2792,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const res = today + daysLater;
     steps.push({
       id: "read-story",
-      title: "Read the question",
+      title: animTitle("read_the_question"),
       ...learningStepFields(mix`if today is the${today} of the month, what date will it be in ${daysLater} days?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2800,7 +2801,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`future date = today's date + number of days ⇒ ${M(`${today} + ${daysLater}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2810,7 +2811,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(today, daysLater, res, "addition"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the date will be the${answer} of the month.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2824,7 +2825,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 1: Read the story
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`each box has ${per} pencils. There are ${groups} such boxes. How many pencils are there in total?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2835,7 +2836,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 2: Identify the operation
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`each box has ${per} pencils and there are ${groups} boxes — this is repeated addition, that is multiplication.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -2846,7 +2847,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 3: Write the exercise
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`Write a multiplication: ${M(`${per} × ${groups}`)}`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2860,7 +2861,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // Step 5: The result
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`Answer: ${M(`${answer} `)}pencils.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2871,7 +2872,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { total, perGroup, groups } = params;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`there is ${total} apples. Split them into groups of ${perGroup} apples in each group. How many groups are there?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2880,7 +2881,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`split into equal groups → division.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -2889,7 +2890,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`write the exercise: ${M(`${total} ÷ ${perGroup}`)}`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2900,7 +2901,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildDivisionAnimation(total, perGroup, groups), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`there is ${answer} groups.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2911,7 +2912,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { total, groupSize, groups, leftover } = params;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`there is ${total} students split into groups of ${groupSize} students in each group. How many students will be left without a full group?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2920,7 +2921,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`This is division with a remainder: the remainder is what is left without a full group.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -2929,7 +2930,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`write the exercise: ${M(`${total} ÷ ${groupSize}`)} and find the remainder.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -2939,7 +2940,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildDivisionAnimation(total, groupSize, groups), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the remainder is ${leftover}, so ${answer} students will be left without a full group.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2951,7 +2952,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const sum = value1 + value2;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo has ${coins1} shekel coins and ${coins2} $2 coins. How much money does he have in total?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2960,7 +2961,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "find-values",
-      title: "Compute each part",
+      title: animTitle("compute_each_part"),
       ...learningStepFields(mix`coin values: ${M(`${coins1}×1=${value1}`)} and ${M(`${coins2}×2=${value2}`)}.`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -2970,7 +2971,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(value1, value2, sum, "addition"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`in total Leo has ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
@@ -2982,7 +2983,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const left = total - spent;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo has ${total}. he buys a candy for ${spent}. How much money does he have left?`),
       highlights: ["story"],
       type: "word_problems",
@@ -2991,7 +2992,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`If you buy something — subtract from the amount, that is subtraction.`),
       highlights: ["operation"],
       type: "word_problems",
@@ -3001,7 +3002,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(total, spent, left, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`Leo has left ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3012,7 +3013,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { price, discPerc, discount, finalPrice } = params;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`a shirt costs ${price} and it has a discount of ${discPerc}%. How much will you pay after the discount?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3021,7 +3022,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "find-discount",
-      title: "Compute the discount amount",
+      title: animTitle("compute_the_discount_amount"),
       ...learningStepFields(mix`compute ${discPerc}% of ${price}: ${M(`${price} × ${discPerc} ÷ 100 = ${discount}`)}.`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3030,7 +3031,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "write-equation",
-      title: "Compute the price after discount",
+      title: animTitle("compute_the_price_after_discount"),
       ...learningStepFields(mix`subtract the discount from the price: ${M(`${price} − ${discount} = ${finalPrice}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3040,7 +3041,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(price, discount, finalPrice, "subtraction"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`after the discount you pay ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3051,7 +3052,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { speed, hours, distance } = params;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`A child walks at a steady speed of ${speed} km per hour for ${hours} hours. How many kilometers will he travel?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3060,7 +3061,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`distance = speed × time ⇒ ${M(`${speed} × ${hours}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3070,7 +3071,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildMultiplicationAnimation(speed, hours, distance), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`he will travel ${answer} km.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3082,7 +3083,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const sum = l1 + l2;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`the first video lasts ${l1} minutes and another clip lasts ${l2} minutes. How many minutes of watching altogether?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3091,7 +3092,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`together means addition: ${M(`${l1} + ${l2}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3101,7 +3102,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(l1, l2, sum, "addition"), "math");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`together that is ${answer} minutes.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3112,7 +3113,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { cm, meters } = params;
     steps.push({
       id: "read-story",
-      title: "Read the question",
+      title: animTitle("read_the_question"),
       ...learningStepFields(mix`how many meters is ${cm} centimeters?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3121,7 +3122,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "Conversion rule",
+      title: animTitle("conversion_rule"),
       ...learningStepFields(mix`1 meter = 100 cm. to convert from cm to meters, divide by 100.`),
       highlights: ["explanation"],
       type: "word_problems",
@@ -3130,7 +3131,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "compute",
+      title: animTitle("compute"),
       ...learningStepFields(mix`${M(`${cm} ÷ 100 = ${meters}`)}`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3139,7 +3140,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer} meters.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3150,7 +3151,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { g, kg } = params;
     steps.push({
       id: "read-story",
-      title: "Read the question",
+      title: animTitle("read_the_question"),
       ...learningStepFields(mix`how many kilograms is ${g} grams?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3159,7 +3160,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "rule",
-      title: "Conversion rule",
+      title: animTitle("conversion_rule"),
       ...learningStepFields(mix`1 kg = 1000 grams. To convert grams to kg divide by 1000.`),
       highlights: ["explanation"],
       type: "word_problems",
@@ -3168,7 +3169,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "calc",
-      title: "compute",
+      title: animTitle("compute"),
       ...learningStepFields(mix`${M(`${g} ÷ 1000 = ${kg}`)}`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3177,7 +3178,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer} kilograms.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3191,7 +3192,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const rounded = Number(answer);
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo's scores are ${s1}, ${s2} and ${s3}. What is the average (rounded to a whole number)?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3200,7 +3201,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step1",
-      title: "Step 1: add the scores",
+      title: animTitle("step_1_add_the_scores"),
       ...learningStepFields(mix`compute the sum: ${M(`${s1} + ${s2} + ${s3} = ${sum}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3209,7 +3210,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step2",
-      title: "Step 2: divide by the number of scores",
+      title: animTitle("step_2_divide_by_the_number_of_scores"),
       ...learningStepFields(mix`average = sum ÷ 3 ⇒ ${M(`${sum} ÷ 3 = ${exact}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3218,7 +3219,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step3",
-      title: "Step 3: Round",
+      title: animTitle("step_3_round"),
       ...learningStepFields(mix`round to a whole number: ${M(`${exact} ≈ ${rounded}`)}.`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3227,7 +3228,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the rounded average is ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3238,7 +3239,7 @@ export function buildWordProblemsAnimation(params, answer) {
     const { a, b, price, totalQty, totalCost, money } = params;
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Leo has ${money}. he buys ${a} pens and${b} pencils, and each item costs ${price}. How much money will he have left after shopping?`),
       highlights: ["story"],
       type: "word_problems",
@@ -3247,7 +3248,7 @@ export function buildWordProblemsAnimation(params, answer) {
     });
     steps.push({
       id: "step1",
-      title: "Step 1: How many items are bought?",
+      title: animTitle("step_1_how_many_items_are_bought"),
       ...learningStepFields(mix`add the amounts: ${M(`${a} + ${b} = ${totalQty}`)} items.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3257,7 +3258,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(a, b, totalQty, "addition"), "math1");
     steps.push({
       id: "step2",
-      title: "Step 2: What is the total cost?",
+      title: animTitle("step_2_what_is_the_total_cost"),
       ...learningStepFields(mix`times the price per item: ${M(`${totalQty} × ${price} = ${totalCost}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3267,7 +3268,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildMultiplicationAnimation(totalQty, price, totalCost), "math2");
     steps.push({
       id: "step3",
-      title: "Step 3: How much money is left?",
+      title: animTitle("step_3_how_much_money_is_left"),
       ...learningStepFields(mix`subtract from the money you have: ${M(`${money} − ${totalCost} = ${answer}`)}.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3277,7 +3278,7 @@ export function buildWordProblemsAnimation(params, answer) {
     pushMathSteps(buildAdditionOrSubtractionAnimation(money, totalCost, Number(answer), "subtraction"), "math3");
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`Leo will have left ${answer}.`),
       highlights: ["result"],
       type: "word_problems",
@@ -3288,7 +3289,7 @@ export function buildWordProblemsAnimation(params, answer) {
     // general word problems (fallback)
     steps.push({
       id: "read-story",
-      title: "Read the story",
+      title: animTitle("read_the_story"),
       ...learningStepFields(mix`Read the story carefully and identify the numbers and the required operation.`),
       highlights: ["story"],
       type: "word_problems",
@@ -3298,7 +3299,7 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "identify-operation",
-      title: "Identify the operation",
+      title: animTitle("identify_the_operation"),
       ...learningStepFields(mix`Identify what is asked — how many altogether? how many are left? how many in each group?`),
       highlights: ["operation"],
       type: "word_problems",
@@ -3308,7 +3309,7 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "write-equation",
-      title: "Write the exercise",
+      title: animTitle("write_the_exercise"),
       ...learningStepFields(mix`Write a math exercise that matches the story.`),
       highlights: ["equation"],
       type: "word_problems",
@@ -3318,7 +3319,7 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "calculate",
-      title: "The calculation",
+      title: animTitle("the_calculation"),
       ...learningStepFields(mix`Solve the exercise.`),
       highlights: ["calculation"],
       type: "word_problems",
@@ -3328,7 +3329,7 @@ export function buildWordProblemsAnimation(params, answer) {
     
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`the answer is ${answer}`),
       highlights: ["result"],
       type: "word_problems",
@@ -3351,7 +3352,7 @@ export function buildRoundingAnimation(params, answer) {
 
   steps.push({
     id: "show",
-    title: "What are we rounding?",
+    title: animTitle("what_are_we_rounding"),
     ...learningStepFields(mix`round ${n} to ${targetLabel}.`),
     type: "rounding",
     params,
@@ -3359,7 +3360,7 @@ export function buildRoundingAnimation(params, answer) {
   });
   steps.push({
     id: "find-digit",
-    title: "Which digit decides?",
+    title: animTitle("which_digit_decides"),
     ...learningStepFields(mix`to round to ${targetLabel} look at ${checkLabel}. here it is ${digitToCheck}.`),
     type: "rounding",
     params,
@@ -3367,7 +3368,7 @@ export function buildRoundingAnimation(params, answer) {
   });
   steps.push({
     id: "rule",
-    title: "Rounding rule",
+    title: animTitle("rounding_rule"),
     ...learningStepFields(mix`If the deciding digit is 0–4, round down. If 5–9, round up.`),
     type: "rounding",
     params,
@@ -3376,7 +3377,7 @@ export function buildRoundingAnimation(params, answer) {
   const rounded = Number(answer);
   steps.push({
     id: "calc",
-    title: "compute",
+    title: animTitle("compute"),
     ...learningStepFields(mix`${digitToCheck >= 5 ? "round up" : "round down"} ⇒ ${M(`${n} ≈ ${rounded}`)}.`),
     type: "rounding",
     params,
@@ -3384,7 +3385,7 @@ export function buildRoundingAnimation(params, answer) {
   });
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`the answer is ${answer}.`),
     type: "rounding",
     params,
@@ -3398,7 +3399,7 @@ export function buildDivisibilityAnimation(params, answer) {
   const { num, divisor } = params;
   steps.push({
     id: "show",
-    title: "Show the question",
+    title: animTitle("show_the_question"),
     ...learningStepFields(mix`is ${num} divisible by ${divisor}?`),
     type: "divisibility",
     params,
@@ -3413,7 +3414,7 @@ export function buildDivisibilityAnimation(params, answer) {
   if (divisor === 2) {
     steps.push({
       id: "rule",
-      title: "Divisibility rule for 2",
+      title: animTitle("divisibility_rule_for_2"),
       ...learningStepFields(mix`a number is divisible by 2 if the ones digit is even (0,2,4,6,8).`),
       type: "divisibility",
       params,
@@ -3421,7 +3422,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "check",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`the ones digit is ${lastDigit}. so ${M(`${answer === "Yes" ? "Yes" : "No"}.`)}`),
       type: "divisibility",
       params,
@@ -3430,7 +3431,7 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 5) {
     steps.push({
       id: "rule",
-      title: "Divisibility rule for 5",
+      title: animTitle("divisibility_rule_for_5"),
       ...learningStepFields(mix`a number is divisible by 5 if the ones digit is 0 or 5.`),
       type: "divisibility",
       params,
@@ -3438,7 +3439,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "check",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`the ones digit is ${lastDigit}. so ${M(`${answer === "Yes" ? "Yes" : "No"}.`)}`),
       type: "divisibility",
       params,
@@ -3447,7 +3448,7 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 10) {
     steps.push({
       id: "rule",
-      title: "Divisibility rule for 10",
+      title: animTitle("divisibility_rule_for_10"),
       ...learningStepFields(mix`a number is divisible by 10 if the ones digit is 0.`),
       type: "divisibility",
       params,
@@ -3455,7 +3456,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "check",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`the ones digit is ${lastDigit}. so ${M(`${answer === "Yes" ? "Yes" : "No"}.`)}`),
       type: "divisibility",
       params,
@@ -3464,7 +3465,7 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 3 || divisor === 9) {
     steps.push({
       id: "rule",
-      title: `divisibility rule for ${divisor}`,
+      title: animTitle("divisibility_rule_for_var", { divisor: divisor }),
       ...learningStepFields(mix`a number is divisible by ${divisor} if the sum of its digits is divisible by ${divisor}.`),
       type: "divisibility",
       params,
@@ -3472,7 +3473,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "sum",
-      title: "Sum of digits",
+      title: animTitle("sum_of_digits"),
       ...learningStepFields(mix`digit sum: ${M(`${String(num).split("").join(" + ")} = ${sumDigits}`)}.`),
       type: "divisibility",
       params,
@@ -3480,7 +3481,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "check",
-      title: "Check",
+      title: animTitle("check"),
       ...learningStepFields(mix`${sumDigits} ${M(`${sumDigits % divisor === 0 ? "divisible" : "not divisible"} `)}by ${divisor} ⇒ Answer: ${M(`${answer}.`)}`),
       type: "divisibility",
       params,
@@ -3489,7 +3490,7 @@ export function buildDivisibilityAnimation(params, answer) {
   } else if (divisor === 6) {
     steps.push({
       id: "rule",
-      title: "Divisibility rule for 6",
+      title: animTitle("divisibility_rule_for_6"),
       ...learningStepFields(mix`a number is divisible by 6 if it is divisible by both 2 and 3.`),
       type: "divisibility",
       params,
@@ -3497,7 +3498,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "check2",
-      title: "Check divisibility by 2",
+      title: animTitle("check_divisibility_by_2"),
       ...learningStepFields(mix`the ones digit is ${lastDigit} ⇒ ${M(`${lastDigit % 2 === 0 ? "divisible by 2" : "not divisible by 2"}.`)}`),
       type: "divisibility",
       params,
@@ -3505,7 +3506,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "check3",
-      title: "Check divisibility by 3",
+      title: animTitle("check_divisibility_by_3"),
       ...learningStepFields(mix`the digit sum is ${sumDigits} ⇒ ${M(`${sumDigits % 3 === 0 ? "divisible by 3" : "not divisible by 3"}.`)}`),
       type: "divisibility",
       params,
@@ -3513,7 +3514,7 @@ export function buildDivisibilityAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Conclusion",
+      title: animTitle("conclusion"),
       ...learningStepFields(mix`only if both conditions are true ⇒ divisible by 6. Answer: ${M(`${answer}.`)}`),
       type: "divisibility",
       params,
@@ -3525,7 +3526,7 @@ export function buildDivisibilityAnimation(params, answer) {
     const r = num % divisor;
     steps.push({
       id: "fallback",
-      title: "Check with division",
+      title: animTitle("check_with_division"),
       ...learningStepFields(mix`check with division: ${M(`${num} = ${divisor}×${q} + ${r}`)}. if the remainder is 0, it is divisible.`),
       type: "divisibility",
       params,
@@ -3535,7 +3536,7 @@ export function buildDivisibilityAnimation(params, answer) {
 
   steps.push({
     id: "final-answer",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`the answer is ${answer}.`),
     type: "divisibility",
     params,
@@ -3549,7 +3550,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
   const { num, isPrime } = params;
   steps.push({
     id: "show",
-    title: "What is the question asking?",
+    title: animTitle("what_is_the_question_asking"),
     ...learningStepFields(mix`is ${num} is it prime or composite?`),
     type: "prime_composite",
     params,
@@ -3557,7 +3558,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
   });
   steps.push({
     id: "define",
-    title: "Definition",
+    title: animTitle("definition"),
     ...learningStepFields(mix`A prime number is divisible only by 1 and itself. A composite number is also divisible by another number.`),
     type: "prime_composite",
     params,
@@ -3565,7 +3566,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
   });
   steps.push({
     id: "check-small",
-    title: "What are we checking?",
+    title: animTitle("what_are_we_checking"),
     ...learningStepFields(mix`it is enough to check divisors up to u221A${num} (because if there is a large divisor, there is also a small one).`),
     type: "prime_composite",
     params,
@@ -3575,7 +3576,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
   if (num === 2) {
     steps.push({
       id: "two",
-      title: "Special case",
+      title: animTitle("special_case"),
       ...learningStepFields(mix`2 is a prime number.`),
       type: "prime_composite",
       params,
@@ -3593,7 +3594,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
       if (explainedTries < 6) {
         steps.push({
           id: `try-${d}`,
-          title: `check division by ${d}`,
+          title: animTitle("check_division_by_var", { d: d }),
           ...learningStepFields(mix`${M(`${num} ÷ ${d}`)} is not a whole number ⇒ continue.`),
           type: "prime_composite",
           params,
@@ -3605,7 +3606,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
     if (found != null) {
       steps.push({
         id: "found",
-        title: "We found a divisor",
+        title: animTitle("we_found_a_divisor"),
         ...learningStepFields(mix`${M(`${num} ÷ ${found} = ${num / found}`)} (whole number) ⇒ ${num} composite.`),
         type: "prime_composite",
         params,
@@ -3614,7 +3615,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
     } else {
       steps.push({
         id: "none",
-        title: "No divisors found",
+        title: animTitle("no_divisors_found"),
         ...learningStepFields(mix`no divisor found up to u221A${num} ⇒ ${num} prime.`),
         type: "prime_composite",
         params,
@@ -3625,7 +3626,7 @@ export function buildPrimeCompositeAnimation(params, answer) {
 
   steps.push({
     id: "final",
-    title: "Final result",
+    title: animTitle("final_result"),
     ...learningStepFields(mix`the answer is ${answer}.`),
     type: "prime_composite",
     params,
@@ -3639,7 +3640,7 @@ export function buildPowersAnimation(params, answer) {
   const { kind, base, exp, result } = params;
   steps.push({
     id: "show",
-    title: "What is a power?",
+    title: animTitle("what_is_a_power"),
     ...learningStepFields(mix`a power is repeated multiplication: ${M(`${base}^${exp} = ${base} × ${base} × ...`)} (${exp} times).`),
     type: "powers",
     params,
@@ -3649,7 +3650,7 @@ export function buildPowersAnimation(params, answer) {
   if (kind === "power_calc") {
     steps.push({
       id: "expand",
-      title: "expand the power",
+      title: animTitle("expand_the_power"),
       ...learningStepFields(mix`write as repeated multiplication: ${M(`${base}^${exp} = ${Array(exp).fill(base).join(" × ")}`)}.`),
       type: "powers",
       params,
@@ -3661,7 +3662,7 @@ export function buildPowersAnimation(params, answer) {
       const next = acc * base;
       steps.push({
         id: `mul-${i}`,
-        title: `multiply number ${i}`,
+        title: animTitle("multiply_number_var", { i: i }),
         ...learningStepFields(mix`compute: ${M(`${acc} × ${base} = ${next}`)}.`),
         type: "powers",
         params,
@@ -3672,7 +3673,7 @@ export function buildPowersAnimation(params, answer) {
 
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`so ${M(`${base}^${exp} = ${result}`)}.`),
       type: "powers",
       params,
@@ -3681,7 +3682,7 @@ export function buildPowersAnimation(params, answer) {
   } else if (kind === "power_base") {
     steps.push({
       id: "goal",
-      title: "What are we looking for?",
+      title: animTitle("what_are_we_looking_for"),
       ...learningStepFields(mix`find the base so that ${M(`(base)^${exp} = ${result}`)}.`),
       type: "powers",
       params,
@@ -3689,7 +3690,7 @@ export function buildPowersAnimation(params, answer) {
     });
     steps.push({
       id: "trial",
-      title: "Check options",
+      title: animTitle("check_options"),
       ...learningStepFields(mix`check small numbers: for example 2^${exp}, 3^${exp}, 4^${exp}... until you get ${result}.`),
       type: "powers",
       params,
@@ -3697,7 +3698,7 @@ export function buildPowersAnimation(params, answer) {
     });
     steps.push({
       id: "final",
-      title: "Final result",
+      title: animTitle("final_result"),
       ...learningStepFields(mix`we found that ${M(`${answer}^${exp} = ${result}`)}, so the base is ${answer}.`),
       type: "powers",
       params,
@@ -3751,7 +3752,7 @@ export function buildOrderOfOperationsAnimation(params, answer) {
   const { kind, a, b, c } = params;
   steps.push({
     id: "rule",
-    title: "Order of operations",
+    title: animTitle("order_of_operations"),
     ...learningStepFields(mix`order of operations: parentheses → multiplication/division → addition/subtraction.`),
     type: "order_of_operations",
     params,
@@ -3795,7 +3796,7 @@ export function buildZeroOnePropertiesAnimation(params, answer) {
           : `${a} × 1`;
   steps.push({
     id: "show",
-    title: "Show the question",
+    title: animTitle("show_the_question"),
     ...learningStepFields(mix`compute: ${M(`${pureMathLtrDisplay(expr)}`)}`),
     type: "zero_one_properties",
     params,

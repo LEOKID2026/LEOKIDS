@@ -2,6 +2,7 @@
  * Builds Expert Review Pack snapshot from existing validation artifacts (no diagnostic imports).
  * Used by Next API (bundled) and by scripts/learning-simulator/generate-expert-review-pack-artifacts.mjs (writes to disk).
  */
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -271,7 +272,7 @@ export async function buildExpertReviewPackSnapshot(root) {
       generationMode: "artifact_snapshot_v1",
       generationNote: ARTIFACT_MODE_NOTE,
       rawAndAggregate: {
-        note: "Not populated in artifact snapshot mode. Run `npm run qa:learning-simulator:expert-review-pack` for synthetic maps / aggregates.",
+        note: globalBurnDownCopy("utils__expert-review-pack-artifact-snapshot", "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato"),
       },
       rawMistakesCounts: {},
       professionalEngineV1: null,
@@ -280,7 +281,7 @@ export async function buildExpertReviewPackSnapshot(root) {
         engineLayer: ["Full professional engine object omitted in artifact snapshot mode."],
         sparseMetadata:
           "Subskill and misconception precision is limited until question pools carry dense expectedErrorTypes and prerequisiteSkillIds.",
-        crossSubjectHeuristic: "Cross-subject patterns are hypotheses and require confirming probes per subject.",
+        crossSubjectHeuristic: globalBurnDownCopy("utils__expert-review-pack-artifact-snapshot", "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_"),
       },
       reviewer,
     };
@@ -328,7 +329,7 @@ export async function buildExpertReviewPackSnapshot(root) {
       orchestratorRunSummary: orchestratorRunSummary ? "reports/learning-simulator/orchestrator/run-summary.json" : null,
     },
     scenarios: manifestScenarios,
-    disclaimer: "Internal educational diagnostic support only - not clinical / not parent-facing.",
+    disclaimer: globalBurnDownCopy("utils__expert-review-pack-artifact-snapshot", "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac"),
   };
 
   const summaryPayload = {

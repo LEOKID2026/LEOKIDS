@@ -9,11 +9,14 @@ import {
   completeParentGoogleSession,
   establishParentGoogleOAuthSession,
 } from "../../../lib/auth/parent-google-oauth.client.js";
+import { useI18n, useT } from "../../../lib/i18n/I18nProvider.jsx";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { getParentPortalTheme } from "../../../lib/parent-ui/parent-portal-theme.client.js";
 
 export default function ParentGoogleOAuthCallbackPage() {
   const router = useRouter();
+  const { direction, locale } = useI18n();
+  const t = useT();
   const { theme, isBright } = useStudentTheme();
   const T = getParentPortalTheme(isBright);
   const layoutProps = { studentTheme: theme, studentShell: "home" };
@@ -53,7 +56,7 @@ export default function ParentGoogleOAuthCallbackPage() {
         await supabase.auth.signOut();
         const query = new URLSearchParams({
           oauth_error: "1",
-          oauth_message: finished.messageHe || "",
+          oauth_message_key: finished.messageKey || "auth.google.signInFailed",
         });
         router.replace(`/parent/login?${query.toString()}`);
         return;
@@ -62,24 +65,24 @@ export default function ParentGoogleOAuthCallbackPage() {
       router.replace(finished.redirectTo || "/parent/dashboard");
     })().catch(() => {
       clearParentGoogleOAuthFlow();
-      setMessage("Could not sign in with Google. Please try again.");
+      setMessage(t("auth.google.callbackError"));
     });
   }, [router]);
 
   return (
     <Layout {...layoutProps}>
-      <div className="max-w-md mx-auto px-4 py-10" dir="ltr" lang="en">
+      <div className="max-w-md mx-auto px-4 py-10" dir={direction} lang={locale}>
         {message ? (
           <div className="space-y-3">
             <p className={T.error} role="alert">
               {message}
             </p>
             <Link href="/parent/login" className={T.link}>
-              Back to parent sign-in
+              {t("auth.google.backToParentSignIn")}
             </Link>
           </div>
         ) : (
-          <PortalLoadingPanel isBright={isBright} message="Finishing Google sign-in..." />
+          <PortalLoadingPanel isBright={isBright} message={t("auth.google.callbackLoading")} />
         )}
       </div>
     </Layout>
