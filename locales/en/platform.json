@@ -1,0 +1,76 @@
+{
+  "subjects": {
+    "math": "Math",
+    "geometry": "Geometry",
+    "english": "English",
+    "hebrew": "Hebrew",
+    "science": "Science",
+    "moledet": "Homeland studies",
+    "geography": "Geography",
+    "moledet_geography": "Homeland & geography",
+    "moledet-geography": "Homeland & geography",
+    "history": "History"
+  },
+  "activityModes": {
+    "live_lesson": "Live lesson",
+    "guided_practice": "Guided practice",
+    "quiz": "Quiz",
+    "homework": "Homework",
+    "discussion": "Discussion",
+    "practice": "Practice",
+    "review": "Review"
+  },
+  "activityStatuses": {
+    "draft": "Draft",
+    "active": "Active",
+    "paused": "Paused",
+    "closed": "Closed",
+    "archived": "Archived"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Not started",
+    "in_progress": "In progress",
+    "submitted": "Submitted",
+    "completed": "Completed",
+    "timed_out": "Timed out"
+  },
+  "roles": {
+    "teacher": "Teacher",
+    "school_admin": "School admin",
+    "admin": "System admin"
+  },
+  "auditActions": {
+    "school_subject_granted": "Subject permission granted",
+    "school_subject_revoked": "Subject assignment revoked",
+    "school_student_enrolled": "Student enrolled",
+    "school_student_unenrolled": "Student unenrolled",
+    "school_class_viewed": "Class report viewed",
+    "school_student_report_viewed": "Student report viewed",
+    "school_student_class_transferred": "Student transferred",
+    "school_class_teacher_reassigned": "Class teacher reassigned",
+    "school_class_archived": "Class archived",
+    "assign_teacher": "Teacher assigned",
+    "assign_manager": "Manager appointed",
+    "class_transfer": "Student transferred",
+    "grant": "Permission granted",
+    "revoke": "Permission removed",
+    "archive": "Archived",
+    "viewed_student_report": "Student report viewed",
+    "viewed_class_report": "Class report viewed",
+    "grant_created": "Access grant created",
+    "grant_revoked": "Access grant revoked",
+    "magic_link_issued": "Login link issued",
+    "pin_rotated": "PIN rotated",
+    "username_rotated": "Username rotated",
+    "teacher_quota_updated": "Quotas updated",
+    "teacher_features_updated": "Feature permissions updated",
+    "teacher_status_updated": "Account status updated"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "System action",
+    "activity": "Activity",
+    "classActivity": "Class activity",
+    "activitySuffix": "activity"
+  }
+}

@@ -1,17 +1,45 @@
 {
   "audio": {
-    "settings": "Audio settings"
+    "settings": "Audio settings",
+    "close": "Close",
+    "allAudio": "All audio",
+    "effects": "Effects",
+    "music": "Music",
+    "speech": "Speech / narration",
+    "effectsVolume": "Effects volume",
+    "musicVolume": "Music volume",
+    "speechVolume": "Speech volume",
+    "autoPlayInstructions": "Auto-play instructions",
+    "autoPlayQuestions": "Auto-play questions",
+    "resetDefaults": "Reset to defaults"
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  },
+  "localeSettings": {
+    "heading": "Language preferences",
+    "description": "Interface language controls menus and navigation. Report language controls parent reports and Copilot answers.",
+    "interfaceLanguage": "Interface language",
+    "interfaceHint": "Applies to menus, buttons, and site navigation.",
+    "reportLanguage": "Report language",
+    "reportHint": "Applies to progress reports and Parent Copilot. Changing interface language does not change this after you set report language explicitly."
   },
   "nav": {
     "home": "Home",
     "kids": "For kids",
+    "kidsWorld": "Kids world",
     "parents": "For parents",
+    "parentPortal": "Parent portal",
     "teachers": "For teachers",
+    "teacherPortal": "Teacher portal",
     "about": "About",
     "contact": "Contact",
     "practice": "Practice",
     "guides": "Guides",
     "learning": "Learning",
+    "games": "Games",
+    "gallery": "Gallery",
+    "helpCenter": "Help center",
     "loginParent": "Parent login",
     "loginStudent": "Student login"
   },
@@ -33,7 +61,8 @@
     "menu": "Menu",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "backHome": "Back to home"
+    "backHome": "Back to home",
+    "logoAlt": "LEO KIDS logo"
   },
   "empty": {
     "default": "Nothing to show yet.",
@@ -54,7 +83,288 @@
     "chooseTitle": "What would you like to install?",
     "kids": "Install kids app",
     "parents": "Install parents app",
-    "teachers": "Install teachers app"
+    "teachers": "Install teachers app",
+    "instructionsTitle": "Install instructions",
+    "iosInstructionsTitle": "iOS install instructions",
+    "close": "Close",
+    "iosStep1": "Tap the Share button 📤 at the bottom of Safari",
+    "iosStep2": "Scroll down and choose \"Add to Home Screen\"",
+    "iosStep3": "Tap \"Add\" in the top-right corner",
+    "iosStep4": "The app will appear on your home screen",
+    "androidStep1": "In Chrome/Edge: click the install icon in the address bar",
+    "androidStep2": "In Firefox: open the menu (☰) and choose \"Install\"",
+    "androidStep3": "On mobile: tap \"Add to Home Screen\" in the browser menu",
+    "androidStep4": "The app will appear on your home screen",
+    "prompt": {
+      "title": "Install LEO KIDS",
+      "bodyIos": "Add the app to your home screen for a better experience",
+      "bodyDefault": "Install the app for faster, easier access",
+      "installNow": "Download and install now",
+      "showIosInstructions": "Show install instructions",
+      "installApp": "Install app",
+      "instructionsHeading": "Install instructions:",
+      "iosStep1": "Tap the Share button 📤 at the bottom of Safari",
+      "iosStep2": "Choose \"Add to Home Screen\"",
+      "iosStep3": "Tap \"Add\"",
+      "close": "✕ Close"
+    }
+  },
+  "games": {
+    "hub": {
+      "enter": "Enter"
+    },
+    "locked": {
+      "backToGames": "Back to games",
+      "unavailable": "This game is unavailable right now"
+    }
+  },
+  "learning": {
+    "virtualKeyboardAria": "Number keyboard",
+    "virtualKeyboardCheck": "Check"
+  },
+  "guest": {
+    "features": {
+      "roomPublicCreate": "Create public room",
+      "roomPrivateCreate": "Create private room",
+      "roomJoinByCode": "Join with code",
+      "quickGame": "Quick game",
+      "invitesSend": "Send game invite",
+      "invitesReceive": "Receive game invite",
+      "friends": "Add friend",
+      "safeMessages": "Preset messages",
+      "shop": "Buy cosmetics",
+      "events": "Daily event",
+      "tournaments": "Tournaments",
+      "missions": "Arcade missions",
+      "personalRoom": "Personal room"
+    },
+    "errors": {
+      "playerNotFound": "Player not found.",
+      "featureLocked": "This action is not currently available for guests.",
+      "serviceNotConfigured": "The service is not configured correctly.",
+      "modeDisabled": "Guest mode is currently disabled.",
+      "systemNotReady": "The guest system is not ready.",
+      "startFailed": "Could not start guest mode."
+    },
+    "resume": {
+      "alreadyLinked": "This guest number is already linked to a parent. Sign in with your username and code, or ask your parent for login details.",
+      "invalid": "We could not restore guest mode on this device. Starting as a new guest will create a new Leo number and previous progress will not carry over.",
+      "newAfterFailedConfirm": "We could not restore your previous guest session. Starting as a new guest will create a new Leo number and previous progress will not carry over. Continue?"
+    }
+  },
+  "common": {
+    "close": "Close"
+  },
+  "public": {
+    "contact": {
+      "title": "Contact us",
+      "intro": "Have a question, idea, comment, or bug to report? We would love to hear from you. Reach out about learning, your child's account, parent reports, games, cards, or your experience using the site.",
+      "formAriaLabel": "Contact form",
+      "faqHeading": "Frequently asked questions",
+      "legalHeading": "Legal documents",
+      "legalNavAria": "Legal documents and contact",
+      "form": {
+        "nameLabel": "Name",
+        "emailLabel": "Email",
+        "subjectLabel": "Subject",
+        "messageLabel": "Message",
+        "submit": "Send",
+        "submitting": "Sending…",
+        "hint": "Do not enter passwords, login codes, or other sensitive information here.",
+        "success": "Your message was sent. Thank you for reaching out!",
+        "deliveryPending": "The form was validated, but email delivery from the site is still being configured on the server. For now, contact us directly using the email button below.",
+        "errors": {
+          "name": "Please enter your name.",
+          "email": "Please enter your email address.",
+          "emailInvalid": "That email address does not look valid.",
+          "message": "Please write a message.",
+          "network": "Network error. Please try again in a moment.",
+          "rateLimit": "Too many messages in a short time. Please try again later.",
+          "generic": "We could not send your message right now. Please try again later."
+        }
+      },
+      "social": {
+        "email": "Leo's email",
+        "emailAria": "Send email to {email}",
+        "instagram": "Leo's Instagram",
+        "instagramAria": "Open Instagram page in a new window",
+        "youtube": "Leo's YouTube",
+        "youtubeAria": "Open Leo Kids YouTube in a new window",
+        "facebook": "Leo's Facebook",
+        "facebookAria": "Open Leo Kids Facebook in a new window"
+      },
+      "faq": {
+        "whoFor": {
+          "q": "Who is the site for?",
+          "a": "The site is for children who want to practice and progress, and for parents and teachers who want a clearer picture of progress, strengths, and topics worth reinforcing."
+        },
+        "subjects": {
+          "q": "Which subjects can you practice?",
+          "a": "The site includes practice in math, geometry, English, and science — based on what is open and available for your child."
+        },
+        "parentsSee": {
+          "q": "What can parents see?",
+          "a": "Parents can view reports showing performance, repeating mistakes, strengths, and topics to keep practicing."
+        },
+        "reinforcement": {
+          "q": "Is the site good for children who need reinforcement?",
+          "a": "Yes. The goal is gradual, clear practice so every child can move at their own pace and reinforce topics where they struggle."
+        },
+        "games": {
+          "q": "Are there games on the site?",
+          "a": "Yes. Alongside academic practice there are educational games, Leo games, play-with-friends options, and coins and cards in the kids world."
+        },
+        "reportBug": {
+          "q": "How can I report a bug or send an idea?",
+          "a": "Contact us using the email button on this page. We welcome feedback, ideas, and reports that help improve the site."
+        }
+      }
+    },
+    "homepage": {
+      "brandLine": "LEO KIDS — tools for parents, a fun experience for kids, and learning that moves step by step",
+      "flowDiagramAria": "System flow",
+      "primaryActionsAria": "Sign in and registration",
+      "hero": {
+        "badge": "Learn · Play · Progress",
+        "titleLine0": "Tools for parents.",
+        "titleLine1": "A world kids love.",
+        "titleLine2": "Learning that moves step by step.",
+        "subtitle": "LEO KIDS connects practice and games for kids with a system that maps progress and gives parents a clear picture.",
+        "reinforcement": "Subjects · Topics · Skills · Sub-skills",
+        "videoTitle": "See it from a parent's view",
+        "videoDescription": "Meet the tracking, reports, and personal activities.",
+        "parentCta": "Parent login / sign up",
+        "kidsCta": "Student login",
+        "worksheetsCta": "Printable worksheets",
+        "infoLine": "LEO KIDS — tools for parents, a fun experience for kids, and learning that moves step by step",
+        "howItWorksTitle": "How it works",
+        "flowStep0": "Child practices",
+        "flowStep1": "System maps performance",
+        "flowStep2": "Parent gets a clear view",
+        "flowStep3": "Choose the next step",
+        "parentVideoAria": "Parent video"
+      },
+      "valueCards": {
+        "0": { "title": "Tools for parents", "text": "See what your child practiced, where they are improving, and what to reinforce." },
+        "1": { "title": "Experience for kids", "text": "Practice, games, coins, and progress in a friendly, colorful journey." },
+        "2": { "title": "Progress mapping", "text": "Tracking by subject, topic, skill, and sub-skill." }
+      },
+      "parentIntro": {
+        "label": "For parents",
+        "title": "See your child clearly — not just a score",
+        "text": "Get a clear picture of strengths and gaps, then send a focused activity that matches what they need right now."
+      },
+      "parentVideo": {
+        "title": "See it from a parent's view",
+        "description": "Watch a short video about tracking, reports, and parent activities."
+      },
+      "learningSystem": {
+        "label": "The system behind learning",
+        "title": "We map how your child progresses — not just right or wrong",
+        "textPart0": "Every practice session feeds into one picture:",
+        "textPart1": "by subject, topic, sub-topic, skill, and sub-skill.",
+        "textPart2": "That helps spot wins, repeating mistakes, and what to reinforce — with a clear report and focused next steps.",
+        "dimensionTags": "Subject · Topic · Skill · Sub-skill",
+        "flowStep0": "Child practices",
+        "flowStep1": "System maps performance",
+        "flowStep2": "Parent gets a clear view",
+        "flowStep3": "Choose the next step",
+        "capabilities": {
+          "subject-map": { "title": "Map by subject and topic", "text": "See progress across math, geometry, English, and science down to the topics practiced." },
+          "skills": { "title": "Skills and sub-skills", "text": "The system looks at which skills were needed — not only whether an answer was correct." },
+          "spot-difficulty": { "title": "Spot focused difficulty", "text": "Repeating mistakes can point to a specific skill worth reinforcing." },
+          "over-time": { "title": "Track over time", "text": "The picture builds from real practice — not a single score." },
+          "parent-report": { "title": "Clear parent report", "text": "Plain language: what your child knows, where they are moving, and what to focus on." },
+          "focused-work": { "title": "Focused follow-up", "text": "Parents can send a personal activity targeting a topic or skill." }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "0": { "title": "Understand what's happening", "text": "A broader view than one grade — built from real activity." },
+          "1": { "title": "Know where to focus", "text": "Reports help pick the next topic to reinforce." },
+          "2": { "title": "Send personal activities", "text": "Assign focused practice and follow results afterward." },
+          "3": { "title": "See progress over time", "text": "Practice, games, and activities connect into an updating picture." }
+        },
+        "highlight": "Instead of guessing where it's hard — get organized insight about what to work on.",
+        "cta": "Go to parent portal"
+      },
+      "kids": {
+        "label": "For kids",
+        "title": "Learn the way kids like to",
+        "text": "Answer questions, move at your own pace, play, collect rewards, and come back for more.",
+        "videoTitle": "Meet Leo's kids world",
+        "videoDescription": "Watch a short video about practice, games, surprises, and progress in the kids world.",
+        "benefits": {
+          "0": { "title": "Practice that feels like play", "text": "Colorful questions and challenges that make practice feel lighter." },
+          "1": { "title": "Your own pace", "text": "Leo guides you so you can keep trying without pressure." },
+          "2": { "title": "Games and learning together", "text": "Mix subject practice with fun breaks in one place." },
+          "3": { "title": "Coins, cards, and surprises", "text": "Progress comes with rewards that encourage coming back." }
+        },
+        "cta": "Enter the kids world",
+        "kidsVideoAria": "Kids world video"
+      },
+      "howItWorks": {
+        "title": "Get started in a few simple steps",
+        "step0": "Parent opens an account",
+        "step1": "Add your child and get personal login details",
+        "step2": "Child starts learning, practicing, and playing",
+        "step3": "The system maps progress; parents get reports and can send focused activities"
+      },
+      "finalCta": {
+        "title": "Want a clearer picture of how your child is doing?",
+        "text": "Open an account, add your child, and build an organized learning picture from practice, activities, and games.",
+        "parentCta": "Open parent account",
+        "kidsCta": "Student login"
+      },
+      "teachers": {
+        "label": "For private tutors",
+        "title": "Organized practice and tracking between lessons",
+        "text": "Send focused activities, see how students perform, and continue from the lesson at home.",
+        "bullet0": "Manage students",
+        "bullet1": "Send personal activities",
+        "bullet2": "Track completion and progress",
+        "cta": "Teacher login / sign up"
+      }
+    },
+    "about": {
+      "imageAlt": "Leo — smart learning environment for kids",
+      "title": "About Leo — learn, practice, and progress",
+      "intro0": "Welcome to Leo — a smart learning environment built to help children practice, understand, and progress at a pace that fits them.",
+      "intro1": "The site is designed for elementary learners with practice by subject, grade, topic, and difficulty level. Every child can start where it makes sense, move forward gradually, and reinforce the topics where they need more confidence.",
+      "intro2": "Our goal is to make learning clearer, friendlier, and more accurate: less guessing, less frustration, and a better understanding of what your child already knows and what still needs reinforcement.",
+      "missionTitle": "Our mission",
+      "missionBody": "We help children build confidence in learning, strengthen foundational and advanced skills, and give parents a clearer picture of their child's progress.",
+      "missionMuted": "The system combines practice, playfulness, parent reports, and progress summaries to create a learning process that feels personal, organized, and encouraging.",
+      "learnEnjoyTitle": "Learn and enjoy",
+      "learnEnjoyBody": "Beyond academic practice, the site includes educational games, engaging play, coins, and cards designed to add fun, motivation, and enjoyment to learning. The goal is for kids not to feel they are only \"doing homework,\" but entering a colorful kids world where they can learn, play, and progress with a good feeling.",
+      "learnEnjoyMuted": "There are solo games, educational games, and opportunities to play with friends — depending on what is open and available on the site.",
+      "whyTitle": "Why does it matter?",
+      "featuresTitle": "What will you find on the site?",
+      "kidsWorldCta": "Kids world",
+      "parentLoginCta": "Parent login",
+      "funGames": {
+        "0": { "title": "Engaging games", "text": "Games that add interest and fun, encouraging kids to keep practicing." },
+        "1": { "title": "Social experiences", "text": "Play with friends and social experiences where available — in a positive, friendly way." },
+        "2": { "title": "Motivation to learn", "text": "A mix of practice, coins, cards, games, and challenges that encourage kids to continue." }
+      },
+      "whyCards": {
+        "0": { "title": "Learning at your own pace", "text": "Every child moves according to their ability, with practice matched to their level and the topics they need to reinforce." },
+        "1": { "title": "A clear picture for parents", "text": "Reports help you understand where your child succeeds, where they struggle, and what to practice next." },
+        "2": { "title": "A friendly experience for kids", "text": "The site combines practice, games, coins, cards, and a welcoming design to encourage persistence and positive learning." }
+      },
+      "siteFeatures": {
+        "0": { "phase": "Practice by subject", "text": "Math, geometry, English, and science." },
+        "1": { "phase": "Grades and difficulty levels", "text": "Practice matched by age band, topic, and level for gradual, clear progress." },
+        "2": { "phase": "Reports for parents", "text": "A clear summary of performance, mistakes, strengths, and areas to improve." },
+        "3": { "phase": "Games and social play", "text": "Solo games, educational games, play with friends, coins, and cards." }
+      }
+    },
+    "legalShell": {
+      "lastUpdated": "Last updated: {date}",
+      "questions": "Questions:",
+      "additionalDocuments": "Additional documents",
+      "legalNavAria": "Legal document links"
+    }
   },
   "gallery": {
     "back": "Back",
@@ -133,6 +443,14 @@
     "activity": "Activity",
     "noChildrenYet": "No children added yet",
     "promoVideoLabel": "Parent video",
+    "promoTitle": "Meet LEO KIDS",
+    "promoDescription": "Watch a short video about parent tools and how children learn on LEO KIDS.",
+    "promoVideoAria": "Parents video",
+    "curriculumModalTitle": "Curriculum plans",
+    "curriculumSubjectTabsAria": "Subject selection",
+    "assignActivityLevelLabel": "Level",
+    "childReportTitle": "Child report",
+    "changeAccessCodeTitle": "Change access code",
     "save": "Save",
     "deleteChild": "Delete child",
     "active": "Active",
@@ -193,7 +511,29 @@
     "filterSuitable": "Suitable for grade",
     "gradeSuitable": "Suitable for grade",
     "enableAllSubjects": "Open all",
-    "allowGradePicker": "Allow child to pick grade on learning pages"
+    "allowGradePicker": "Allow child to pick grade on learning pages",
+    "createChildSuccess": "Child added successfully.",
+    "updateChildSuccess": "Child details saved.",
+    "errors": {
+      "guestNotEligible": "Not available for guest accounts.",
+      "notParent": "This account is not authorized for parent access.",
+      "childNotFound": "Child not found.",
+      "reportsDisabled": "Parent reports are not available right now.",
+      "invalidDateRange": "The date range is not valid.",
+      "signInAgain": "Please sign in again.",
+      "signInAgainParent": "Please sign in again as a parent.",
+      "signInAgainTeacher": "Please sign in again as a teacher.",
+      "reportForbidden": "You do not have access to this child's report.",
+      "reportLoadFailed": "Could not load the parent report.",
+      "actionForbidden": "You do not have permission for this action.",
+      "loadChildrenFailed": "Could not load the children list.",
+      "createChildFailed": "Could not add the child.",
+      "updateChildFailed": "Could not update the child's details.",
+      "panelLoadFailed": "Could not load the data.",
+      "panelSaveFailed": "Could not save the changes.",
+      "genericFailed": "Could not complete that action. Please try again.",
+      "rawMessage": "{message}"
+    }
   },
   "student": {
     "loadingHome": "Loading home…",
@@ -207,6 +547,9 @@
     "share": "Share",
     "messageParent": "Message parent",
     "guestLock": "Not available in guest mode",
+    "guestTopicLock": "This topic is locked in guest mode",
+    "guestGameLockLabel": "Locked",
+    "guestGameLockHint": "Ask a parent to unlock",
     "parentLocked": "Locked by parents",
     "panelStats": "My stats",
     "panelProgress": "My progress",
@@ -261,6 +604,91 @@
     "surpriseNextCountdown": "Surprise box — next box ready in {time}",
     "nextBoxIn": "Next box in",
     "youHaveOneBox": "You have 1 box",
-    "youHaveBoxes": "You have {count} boxes"
+    "youHaveBoxes": "You have {count} boxes",
+    "copyLeoNumberAria": "Copy Leo number",
+    "shareWithFriends": "Share with friends",
+    "themeGroupLabel": "Choose screen theme",
+    "themeLight": "Light theme",
+    "themeLightShort": "Light",
+    "themeClassic": "Classic theme",
+    "themeClassicShort": "Classic",
+    "prototypeTitle": "Kids World — Prototype",
+    "prototypeDescription": "Prototype for the Leo kids world opening screen",
+    "prototypeBadge": "🧪 Prototype",
+    "errors": {
+      "sessionExpired": "Your session expired — please sign in again.",
+      "serverError": "Server error while loading learning data.",
+      "loadFailed": "Could not load learning data from the server."
+    },
+    "promoTitle": "Discover the LEO kids world",
+    "promoDescription": "Watch a short video about practice, games, cards, and surprises along the way.",
+    "promoVideoAria": "Kids video",
+    "avatarModalTitle": "Player profile",
+    "avatarPlayerNameLabel": "Player name",
+    "avatarPlayerDefault": "Player",
+    "avatarChoosePrompt": "Choose an avatar:",
+    "avatarChoosePhoto": "Choose photo",
+    "avatarRemovePhoto": "Remove photo",
+    "avatarPhotoSelected": "Photo selected ✓",
+    "avatarSaveFailed": "Save failed",
+    "avatarImageTooLarge": "Image is too large. Please choose an image up to 5MB",
+    "avatarImageTypeInvalid": "Please choose an image file only",
+    "avatarImageSaveFailed": "Saving the image failed",
+    "accessGateSignInPrompt": "Please sign in as a student to continue",
+    "accessGateSignInCta": "Student sign-in",
+    "adSlotAria": "Advertisement",
+    "parentInviteTitle": "Dear parent 👋",
+    "parentInviteScanPromptLine1": "To open an account for your child,",
+    "parentInviteScanPromptLine2": "scan this code with your phone:",
+    "parentInviteOrGoTo": "Or go to:",
+    "parentInviteCopyLink": "Copy link",
+    "parentInviteQrAria": "QR code for parent page",
+    "arcadeMissingRoom": "Missing room ID.",
+    "arcadeBackToArcade": "Back to arcade",
+    "arcadePageTitle": "{game} — Arcade",
+    "arcadeGames": {
+      "bingo": "Bingo",
+      "checkers": "Checkers",
+      "chess": "Chess",
+      "dominoes": "Dominoes",
+      "fourInARow": "Four in a Row",
+      "ludo": "Ludo",
+      "snakesAndLadders": "Snakes & Ladders"
+    }
+  },
+  "help": {
+    "searchLabel": "Search guides",
+    "searchPlaceholder": "Search by topic or keyword...",
+    "noResults": "No results found for this search.",
+    "videoPreview": "Watch tutorial video",
+    "videoClose": "Close video",
+    "videoCloseButton": "Close",
+    "videoModalDesktop": "Tutorial video (desktop)",
+    "videoModalMobile": "Tutorial video (mobile)",
+    "videoDuration": "Estimated length: {minutes} min",
+    "transcript": "Transcript",
+    "captionsEnglish": "English"
+  },
+  "copilot": {
+    "panel": {
+      "title": "Ask about the report",
+      "aiDisclosureLink": "Information about AI use",
+      "disclaimer": "This information is based on practice data on the site and is not a diagnosis or professional advice.",
+      "intro": "You can ask freely about the report here, for example: what matters most right now, what to focus on this week, what's going well, or how to explain it to your child.",
+      "processing": "Processing the report…",
+      "youPrefix": "You: ",
+      "questionLabel": "Question",
+      "placeholder": "Question about the report…",
+      "send": "Send",
+      "errorGeneric": "Unable to answer the question right now. Please try again in a moment.",
+      "quickUtterances": {
+        "qa_action_today": "What should we do at home today?",
+        "qa_action_week": "What should we do this week?",
+        "qa_avoid_now": "What should we avoid right now?",
+        "qa_advance_or_hold": "Move forward or wait?",
+        "qa_explain_to_child": "How should we explain this to the child?",
+        "qa_ask_teacher": "Question for the teacher"
+      }
+    }
   }
 }

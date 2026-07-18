@@ -1,0 +1,122 @@
+{
+  "reportSubjects": ["math", "geometry", "english", "science"],
+  "subjects": {
+    "math": "Math",
+    "geometry": "Geometry",
+    "english": "English",
+    "hebrew": "Hebrew",
+    "science": "Science",
+    "history": "History",
+    "moledet": "Homeland Studies",
+    "geography": "Geography",
+    "moledet_geography": "Homeland & Geography",
+    "moledet-geography": "Homeland & Geography"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Prolonged inactivity",
+    "no_sessions_in_range": "No practice sessions in this period",
+    "low_overall_accuracy": "Difficulty with overall performance",
+    "many_recent_mistakes": "High number of recent mistakes",
+    "never_active_in_range": "No activity in this period",
+    "insufficient_answers": "Not enough data to analyze"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Recommended to review subject fundamentals",
+    "encourage_session_start": "Recommended to encourage starting practice",
+    "targetedReview": "Recommended to reinforce {subject} in class",
+    "focusPractice": "Recommended to focus practice on {subject}",
+    "generic": "Keep monitoring progress"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inactive in this period",
+    "low_accuracy": "Difficulty with performance",
+    "many_recent_mistakes": "High number of recent mistakes",
+    "recent_mistakes": "Recurring mistakes"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Needs immediate attention",
+    "needs_reinforcement": "Needs reinforcement",
+    "monitor": "Worth monitoring",
+    "on_track": "On track"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "Class needs immediate attention",
+    "class_needs_reinforcement": "Class needs reinforcement",
+    "class_monitor": "Class needs monitoring and focused practice",
+    "class_on_track": "Class is on track"
+  },
+  "classHealth": {
+    "no_data": "Not enough data",
+    "critical_class": "Class needs immediate attention",
+    "needs_reinforcement": "Class needs reinforcement",
+    "monitor": "Class needs monitoring and focused practice",
+    "strong": "Class is on track"
+  },
+  "groupTier": {
+    "struggling": "Support group",
+    "on_track": "Reinforcement group",
+    "advanced": "Advanced group"
+  },
+  "guardianAccessState": {
+    "active": "Active",
+    "expired": "Expired",
+    "revoked": "Revoked"
+  },
+  "actionTypes": {
+    "class_reteach": "Whole-class reteach",
+    "small_group": "Small group work",
+    "individual_practice": "Focused individual practice",
+    "collect_more_data": "Wait for more data"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Classroom activity",
+    "worksheet_pdf": "Worksheet",
+    "focused_practice": "Focused practice"
+  },
+  "riskLevel": {
+    "high": "Needs immediate attention",
+    "moderate": "Worth monitoring",
+    "low": "On track"
+  },
+  "focus": {
+    "studentCalmMessage": "No urgent topics right now - keep going as usual.",
+    "hubStudentCalmMessage": "No focused topics - keep monitoring.",
+    "hubClassWeakTopicsCalmMessage": "No significant weak topics detected - keep monitoring.",
+    "studentFallbackBanner": "Difficulty in this subject - diagnostic practice needed to identify the exact topic",
+    "classFallbackBanner": "The class shows difficulty in this subject - diagnostic class reinforcement recommended"
+  },
+  "fallback": {
+    "unknownSubject": "Unknown",
+    "defaultTopic": "Topic",
+    "defaultStudentName": "Student",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} - subject-level difficulty",
+    "studentSubjectHeadlineNoSubject": "Subject-level difficulty",
+    "studentSubjectEvidence": "{percent} success out of {totalAnswers} answers",
+    "studentSubjectAction": "Recommended to start a short diagnostic practice to identify the exact topic",
+    "classSubjectHeadline": "{subject} - class-level subject difficulty",
+    "classSubjectHeadlineNoSubject": "Class-level subject difficulty",
+    "classSubjectAction": "Recommended to start a short diagnostic activity or focused whole-class review",
+    "classSuffix": "Class {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} - {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "No active classes",
+    "noClassesHint": "Create a new class below, then add children via \u201cManage class\u201d on the class card.",
+    "createClassLabel": "Class name",
+    "createClassButton": "Create class",
+    "createClassPlaceholder": "e.g. Class 3 - LEO"
+  },
+  "activities": {
+    "personalSectionTitle": "Personal activities",
+    "individualBadge": "Personal"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "All children ({count})",
+      "directStudents": "Private children ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

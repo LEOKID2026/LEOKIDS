@@ -15,6 +15,21 @@
   "remediateSameLevel": "Keep practicing at the same level.",
   "maintainAndStrengthen": "Keep practicing and gently raise the challenge.",
   "mockBanner": "This is a preview report from sample data.",
+  "parentSections": {
+    "teacherMessages": "Messages from the teacher",
+    "insights": "What's important to know",
+    "homeRecommendations": "Recommended at-home practice",
+    "showMoreMessages": "Show more messages",
+    "showLessMessages": "Show less"
+  },
+  "parentInsights": {
+    "noPracticeData": "There is not yet enough practice data in this period to show a clear learning picture.",
+    "insufficientData": "There is still too little practice data to show a reliable learning picture. Adding some short practice would help get a more accurate picture.",
+    "recentInactivity": "There hasn't been recent activity - it's recommended to return to short practice to keep up the learning streak.",
+    "dailyImprovement": "There's an improving trend over the recent period, but it's worth checking whether it holds going forward. It's recommended to keep up the same level a bit longer before concluding the topic is already stable.",
+    "noUrgentTopic": "There is practice in the selected period, but the system has not yet identified one standout topic that needs special reinforcement. It helps to continue with short, regular practice and check that stability holds going forward.",
+    "homeFallback": "At home: it's recommended to do short, regular practice, and check the next report to see whether a clearer pattern has formed."
+  },
   "contract": {
     "types": {
       "topicNeedsStrengthening": "{topic} needs more practice ({accuracy}% on {questions} questions).",
@@ -237,6 +252,40 @@
       "environment_ecosystems": "Ecosystems",
       "environment_climate": "Climate",
       "experiments_observation": "Observation skills"
+    }
+  },
+  "v2": {
+    "executive": {
+      "homeFocusEmpty": "There's no clear focus yet - this week it helps to practice a little in a few topics and see what stays stable.",
+      "homeFocusWithAreas": "Focus first on: {areas}",
+      "majorTrendsNoUnitsLine1": "Not enough topics have been gathered yet in the selected period to compare between them.",
+      "majorTrendsNoUnitsLine2": "Short, consistent practice will add a picture that can be relied on.",
+      "majorTrendsOneStableLine1": "One topic was reviewed in the selected period.",
+      "majorTrendsOneStableLine2": "The direction there is positive and consistent; before expanding to more topics, it's better to stabilize this one with a bit more practice.",
+      "majorTrendsManyUnitsLine2": "When relatively many topics are reviewed at once, strong stability doesn't always show up right away in the same way across all of them - that's normal; it helps to keep practicing to stabilize what looks recurring.",
+      "majorTrendsDefaultLine2": "Topics holding up well: {stable} out of what was reviewed. {actionable} topics have a basis for a focused conversation at home. {uncertain} topics still don't have a clear picture.",
+      "majorTrendsUnitsLine1": "{units} topics were reviewed in the selected period.",
+      "mixedSignalNotice": "Results in a few topics are still not stable - a bit more practice will help before settling on a clear direction.",
+      "overallConfidenceNoUnits": "Overall view: there still aren't enough topics in the selected period to build a clear picture for home.",
+      "overallConfidenceOneUnit": "Overall view: only one topic was reviewed in the selected period right now - keeping to careful wording while we gather more practice.",
+      "overallConfidenceDefault": "Overall view: {actionable} out of {units} topics reviewed have an initial basis for a focused conversation at home.",
+      "evidenceBalance": "Points that continue to hold up well: {stable}; topics worth reinforcing or learning more about before settling on a clear direction: {rest}.",
+      "cautionP4": "There are topics worth watching this week - the teacher can be shown what's in the report so you can choose a short learning step together for the coming week.",
+      "cautionUncertain": "There's still no clear direction for some topics - a bit more practice will clarify the picture.",
+      "reportReadinessFull": "There's enough practice in the selected period to carefully discuss a general direction at home.",
+      "reportReadinessLimited": "Practice in the selected period is still limited - it helps to read the summary closely and keep gathering more practice.",
+      "homePlanEmpty": "There's no single clear home action right now - short, focused practice this week would help clarify the direction.",
+      "nextPeriodGoalsEmpty": "Goal for the coming week: more consistent, relaxed practice, and then a clear progress goal can be set.",
+      "crossSubjectUnits": "Looking at all subjects together: {units} topics in the selected period.",
+      "crossSubjectHighPriority": "{count} topics worth following closely this week.",
+      "crossSubjectStrengthen": "There are a few topics worth reinforcing in the coming period.",
+      "crossSubjectContradictory": "Results in {count} topics are still not consistent - a bit more short practice will help show whether it holds or stabilizes.",
+      "crossSubjectDataQualityLow": "The number of topics reviewed is relatively low - the picture will get clearer as more practice accumulates.",
+      "subjectTrendHighPriority": "There are topics worth paying attention to this week.",
+      "subjectTrendStable": "The patterns in the selected period have held up relatively well over time.",
+      "subjectRecalibrationYes": "Before changing direction or difficulty level - one more short round of practice.",
+      "subjectRecalibrationNo": "No need to change the direction to focus on right now.",
+      "topicRecommendationCautionGated": "A strong direction hasn't been set for this topic yet - first, a bit more focused practice on this topic."
     }
   }
 }
