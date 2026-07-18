@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../../../components/Layout";
@@ -113,7 +114,7 @@ export default function TeacherWorksheetGradePage({ classId, worksheetId, studen
   return (
     <Layout>
       <TeacherPortalShell
-        title="Grade student"
+        title={globalBurnDownCopy("pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]", "grade_student")}
         backHref={`/teacher/class/${classId}/worksheets/${worksheetId}/report`}
       >
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />

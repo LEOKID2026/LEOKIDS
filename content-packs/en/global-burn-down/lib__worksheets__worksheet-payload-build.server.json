@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "worksheet": "Worksheet",
+    "name": "Name: ________________",
+    "date": "Date: ________________",
+    "options": "Options:",
+    "answer": "Answer:",
+    "question": "Question",
+    "answer_2": "Answer",
+    "answer_key": "Answer key"
+  }
+}

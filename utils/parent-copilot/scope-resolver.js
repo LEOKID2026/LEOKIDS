@@ -3,6 +3,7 @@
  * Does not build TruthPacketV1 (truth-packet-v1.js owns that).
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import {
   findFirstAnchoredTopicRowForSubject,
   findTopicRowByKey,
@@ -348,7 +349,7 @@ export function resolveScope(input) {
     if (!hit) {
       return {
         resolutionStatus: "clarification_required",
-        clarificationQuestionHe: "In this subject there is still not enough practice that appears in the report - you should choose a subject in which there is already practice.",
+        clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_scope-resolver.in_this_subject_there_is_still_not_enough_practice_that_appears_"),
         scopeConfidence: 0.2,
         scopeReason: "selected_context_topic_missing_anchor",
         stageA,
@@ -378,7 +379,7 @@ export function resolveScope(input) {
     if (!subjectHasAnchor) {
       return {
         resolutionStatus: "clarification_required",
-        clarificationQuestionHe: "In this subject there is not yet a topic with enough practice to talk about - you can try another subject.",
+        clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_scope-resolver.in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to"),
         scopeConfidence: 0.24,
         scopeReason: "selected_context_subject_missing_anchor",
         stageA,
@@ -398,7 +399,7 @@ export function resolveScope(input) {
       resolutionStatus: "clarification_required",
       clarificationQuestionHe: names
         ? `There are several similar topics in the report - which one to answer: ${names}?`
-        : "There is more than one topic here - which topic to answer?",
+        : copilotStaticMessage("copilot.answers.utils_parent-copilot_scope-resolver.there_is_more_than_one_topic_here_which_topic_to_answer"),
       scopeConfidence: 0.25,
       scopeReason: "utterance_topic_ambiguous",
       stageA,
@@ -440,7 +441,7 @@ export function resolveScope(input) {
   if (topicMatch.ambiguous) {
     return {
       resolutionStatus: "clarification_required",
-      clarificationQuestionHe: "There is more than one topic here - which topic to answer?",
+      clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_scope-resolver.there_is_more_than_one_topic_here_which_topic_to_answer"),
       scopeConfidence: 0.25,
       scopeReason: "utterance_topic_ambiguous",
       stageA,

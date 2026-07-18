@@ -149,12 +149,12 @@ function strengthFramingOk(truthPacket) {
 }
 
 /**
- * @param {Array<{ type: string; textHe: string; source: string }>} blocks
+ * @param {Array<{ type: string; answerText: string; source: string }>} blocks
  */
 function composedTextJoin(blocks) {
   return blocks
     .filter((b) => b && String(b.source || "") !== "contract_slot")
-    .map((b) => String(b.textHe || ""))
+    .map((b) => String(b.answerText || ""))
     .join(" ")
     .trim();
 }
@@ -244,7 +244,7 @@ export function collectParentFacingOutputQualityIssues(joined, intent) {
 }
 
 /**
- * @param {{ answerBlocks: Array<{ type: string; textHe: string; source: string }> }} draft
+ * @param {{ answerBlocks: Array<{ type: string; answerText: string; source: string }> }} draft
  * @param {NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>} truthPacket
  * @param {{ intent?: string }} [hints]
  */
@@ -258,7 +258,7 @@ export function validateAnswerDraft(draft, truthPacket, hints = null) {
   const hasMean = blocks.some((b) => b.type === "meaning");
   if (!hasObs && !hasMean) failCodes.push("missing_observation_or_meaning");
 
-  const joined = blocks.map((b) => String(b.textHe || "")).join(" ");
+  const joined = blocks.map((b) => String(b.answerText || "")).join(" ");
   const composedJoined = composedTextJoin(blocks);
   const intent = String(hints?.intent || "").trim();
   const joinedNorm = normalizeWsHe(joined);
@@ -433,8 +433,8 @@ export function validateAnswerDraft(draft, truthPacket, hints = null) {
   }
 
   for (const b of blocks) {
-    if (b.source === "contract_slot" && String(b.textHe || "").trim()) {
-      const t = String(b.textHe).trim();
+    if (b.source === "contract_slot" && String(b.answerText || "").trim()) {
+      const t = String(b.answerText).trim();
       if (!slotText.includes(t) && b.type !== "observation") {
         failCodes.push("contract_slot_mismatch");
         break;
@@ -533,10 +533,10 @@ export function validateParentCopilotResponseV1(response) {
       if (!allowedTypes.has(String(b.type || ""))) hardFails.push("invalid_answer_block_family");
     }
     for (const tok of FORBIDDEN_PARENT_SURFACE_TOKENS) {
-      const body = ab.map((x) => String(x.textHe || "")).join(" ").toLowerCase();
+      const body = ab.map((x) => String(x.answerText || "")).join(" ").toLowerCase();
       if (tok && body.includes(tok.toLowerCase())) hardFails.push("resolved_forbidden_surface");
     }
-    if (RAW_INTENSITY_RE.test(ab.map((x) => String(x.textHe || "")).join(" "))) hardFails.push("resolved_raw_intensity");
+    if (RAW_INTENSITY_RE.test(ab.map((x) => String(x.answerText || "")).join(" "))) hardFails.push("resolved_raw_intensity");
   } else {
     hardFails.push("resolution_status");
   }

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { worksheetGradingStatusLabelHe } from "../../lib/worksheet-activities/worksheet-labels.client.js";
 
@@ -13,14 +14,14 @@ export default function TeacherWorksheetReport({ classId, worksheetId, report, w
   return (
     <div className="space-y-6 text-left">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        <Stat label="Total students" value={report.totalStudents} />
-        <Stat label="Opened PDF" value={report.pdfOpenedCount} />
-        <Stat label="Completed (PDF)" value={report.markedCompleteCount} />
-        <Stat label="Submitted answers" value={report.digitalSubmittedCount} />
-        <Stat label="Pending review" value={report.pendingReviewCount} />
-        <Stat label="Published" value={report.publishedCount} />
+        <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "total_students")} value={report.totalStudents} />
+        <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "opened_pdf")} value={report.pdfOpenedCount} />
+        <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "completed_pdf")} value={report.markedCompleteCount} />
+        <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "submitted_answers")} value={report.digitalSubmittedCount} />
+        <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "pending_review")} value={report.pendingReviewCount} />
+        <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "published")} value={report.publishedCount} />
         {report.classAveragePct != null ? (
-          <Stat label="Class average" value={`${report.classAveragePct}%`} />
+          <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "class_average")} value={`${report.classAveragePct}%`} />
         ) : null}
       </div>
 

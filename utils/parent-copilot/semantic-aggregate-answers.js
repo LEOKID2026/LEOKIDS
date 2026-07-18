@@ -3,6 +3,7 @@
  * Uses only payload.subjectProfiles numeric fields + executiveSummary lines; no new contract facts.
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { SUBJECT_ORDER, normalizeSubjectId, subjectLabelHe } from "./contract-reader.js";
 import { normalizeExecutiveTrendLinesHe } from "../parent-report-language/parent-facing-normalize-he.js";
 
@@ -272,7 +273,7 @@ function narrativeTextSlots(truthPacket) {
  *   utterance?: string;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }> } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } | null}
  */
 function buildClarifyReexplainDraft(input) {
   const truthPacket = input?.truthPacket;
@@ -318,8 +319,8 @@ function buildClarifyReexplainDraft(input) {
   if (!passesEnvelope(truthPacket, obs, meaning)) return null;
   return {
     answerBlocks: [
-      { type: "observation", textHe: obs, source: "composed" },
-      { type: "meaning", textHe: meaning, source: "composed" },
+      { type: "observation", answerText: obs, source: "composed" },
+      { type: "meaning", answerText: meaning, source: "composed" },
     ],
   };
 }
@@ -330,7 +331,7 @@ function buildClarifyReexplainDraft(input) {
  *   utterance?: string;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }> } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } | null}
  */
 function buildAdvanceOrHoldDraft(input) {
   const truthPacket = input?.truthPacket;
@@ -390,8 +391,8 @@ function buildAdvanceOrHoldDraft(input) {
   if (!passesEnvelope(truthPacket, obs, meaning)) return null;
   return {
     answerBlocks: [
-      { type: "observation", textHe: obs, source: "composed" },
-      { type: "meaning", textHe: meaning, source: "composed" },
+      { type: "observation", answerText: obs, source: "composed" },
+      { type: "meaning", answerText: meaning, source: "composed" },
     ],
   };
 }
@@ -402,7 +403,7 @@ function buildAdvanceOrHoldDraft(input) {
  *   utterance?: string;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }> } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } | null}
  */
 function buildRecommendationActionDraft(input) {
   const truthPacket = input?.truthPacket;
@@ -464,8 +465,8 @@ function buildRecommendationActionDraft(input) {
 
   return {
     answerBlocks: [
-      { type: "observation", textHe: obs, source: "composed" },
-      { type: "meaning", textHe: meaning, source: "composed" },
+      { type: "observation", answerText: obs, source: "composed" },
+      { type: "meaning", answerText: meaning, source: "composed" },
     ],
   };
 }
@@ -477,7 +478,7 @@ function buildRecommendationActionDraft(input) {
  *   payload: unknown;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }>; aggregateContinuity?: { questionClass: string; subjectId: string; role: string } | null } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }>; aggregateContinuity?: { questionClass: string; subjectId: string; role: string } | null } | null}
  */
 export function buildSemanticAggregateDraft(input) {
   const qc = String(input?.questionClass || "");
@@ -532,48 +533,48 @@ export function buildSemanticAggregateDraft(input) {
     const ids = subjectsListedInReport(payload);
     if (!ids.length) {
       obs = `${lead}The report does not currently show subjects with subject lines.`;
-      meaning = "When subjects appear in the date range, you can ask again and get an organized list.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_subjects_appear_in_the_date_range_you_can_ask_again_and_get");
     } else {
       const names = ids.map((sid) => subjectLabelHe(sid)).join(" · ");
       obs = `${lead}The following subjects appear in the report: ${names}.`;
-      meaning = "The list is based on the subjects that are shown in the report for the selected period, according to the order of display.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f");
     }
   } else if (qc === "period_highlight") {
     const es = payload?.executiveSummary && typeof payload.executiveSummary === "object" ? payload.executiveSummary : {};
     const trends = normalizeExecutiveTrendLinesHe(es.majorTrendsHe);
     if (trends.length) {
       obs = `What stands out in the period: ${trends.slice(0, 4).join(" · ")}.`;
-      meaning = "These are the summary formulations for the period as they appear in the report; For details by subject, you can go to the subjects screen.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.these_are_the_summary_formulations_for_the_period_as_they_appear");
       aggregateContinuity = { questionClass: qc, subjectId: "", role: "period_highlight" };
     } else if (withAvg.length) {
       const sorted = [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ);
       const top = sorted.slice(0, 2);
       obs = `Currently the highest average overall accuracy rating in the report: ${top.map((r) =>`${r.label} (about ${r.avg}%)`).join(" · ")}.`;
-      meaning = "The ranking is based on averages across subjects with practice in each subject, not on the formulation of a single subject.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.the_ranking_is_based_on_averages_across_subjects_with_practice_i");
       aggregateContinuity = { questionClass: qc, subjectId: top[0]?.sid || "", role: "period_numeric" };
     } else {
       obs = `There is currently not enough numerical practice across disciplines in the report to describe "what stands out" reliably.`;
-      meaning = "When practice data appears on at least one topic with questions, you can return to the question and get a clearer picture.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_practice_data_appears_on_at_least_one_topic_with_questions_");
     }
   } else if (qc === "comparison") {
     const mentioned = subjectsMentionedInUtterance(utterance, payload);
     if (mentioned.length < 2) {
       obs = `${lead} To compare two subjects you need to specify the two names as they appear in your report.`;
-      meaning = "You can formulate again with two subject names, or ask one question about ranking by difficulty versus relatively good results according to the data in the report.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.you_can_formulate_again_with_two_subject_names");
     } else {
       const a = roll.find((r) => r.sid === mentioned[0]);
       const b = roll.find((r) => r.sid === mentioned[1]);
       if (!a || !b || a.avg == null || b.avg == null) {
         obs = `${lead} There is mention of two subjects in the question, but the report lacks enough numerical practice data for both to compare in a stable way.`;
-        meaning = "When questions and accuracy appear for both subjects, you can ask again and get a direct comparison according to the averages in the report.";
+        meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_questions_and_accuracy_appear_for_both_subjects_you_can_ask");
       } else if (a.avg === b.avg) {
         obs = `${lead} According to the averages in the report, ${a.label} and ${b.label} are currently on the same line in terms of general accuracy (about ${a.avg}%).`;
-        meaning = "In order to differentiate between the directions, it is useful to also look at the number of questions in each subject and the wording of the topics themselves in the report.";
+        meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.in_order_to_differentiate_between_the_directions");
       } else {
         const hi = a.avg > b.avg ? a : b;
         const lo = a.avg > b.avg ? b : a;
         obs = `${hi.label} is currently higher than ${lo.label} - according to the average of the general accuracy in the report (about ${hi.avg}% vs. ${lo.avg}%).`;
-        meaning = "The comparison is based on averages across the topics that have practice in the report, not on the wording of a single topic.";
+        meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.the_comparison_is_based_on_averages_across_the_topics_that_have_");
         aggregateContinuity = { questionClass: qc, subjectId: hi.sid, role: "comparison_hi" };
       }
     }
@@ -581,22 +582,22 @@ export function buildSemanticAggregateDraft(input) {
     const listed = roll.filter((r) => r.topicRows > 0);
     if (!listed.length) {
       obs = `${lead}There are currently no active subjects in the report for the selected period.`;
-      meaning = "When subjects appear with subject lines, you can return to the question and get a practice rating.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_subjects_appear_with_subject_lines_you_can_return_to_the_qu");
     } else {
       const best = [...listed].sort((a, b) => b.totalQ - a.totalQ || b.topicRows - a.topicRows)[0];
       obs = `Most practice on report right now: ${best.label} (${best.totalQ} documented questions).`;
-      meaning = "The rating is based on the actual amount of questions in the period report, not according to the feeling of being overwhelmed.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.the_rating_is_based_on_the_actual_amount_of_questions_in_the_per");
       aggregateContinuity = { questionClass: qc, subjectId: best.sid, role: "most_practice" };
     }
   } else if (qc === "least_data") {
     const listed = roll.filter((r) => r.topicRows > 0);
     if (!listed.length) {
       obs = `${lead}There are currently no active subjects with data to compare in the report.`;
-      meaning = "When active subjects appear, it is possible to identify exactly where the data is the least.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_active_subjects_appear_it_is_possible_to_identify_exactly_w");
     } else {
       const weakestData = [...listed].sort((a, b) => a.totalQ - b.totalQ || a.dataTopics - b.dataTopics)[0];
       obs = `The least amount of data in the report at the moment: ${weakestData.label} (${weakestData.totalQ} documented questions).`;
-      meaning = "This is a sign that there is too little data in the period report; In such a case, it is correct to be careful in drawing conclusions.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.this_is_a_sign_that_there_is_too_little_data_in_the_period_repor");
       aggregateContinuity = { questionClass: qc, subjectId: weakestData.sid, role: "least_data" };
     }
   } else if (qc === "improved") {
@@ -605,7 +606,7 @@ export function buildSemanticAggregateDraft(input) {
     const improvementLines = trends.filter((t) => /שיפור|התקדמות|עלייה|התחזק|משתפר/.test(t));
     if (improvementLines.length) {
       obs = `Signs of improvement that appear in the wording of the summary for the period: ${improvementLines.slice(0, 3).join(" · ")}.`;
-      meaning = "This is an answer based on the summary lines in the report only, without inventing a direction over time that did not appear explicitly.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.this_is_an_answer_based_on_the_summary_lines_in_the_report_only_");
       aggregateContinuity = { questionClass: qc, subjectId: "", role: "improved" };
     } else {
       const uImp = norm(utterance).toLowerCase();
@@ -627,7 +628,7 @@ export function buildSemanticAggregateDraft(input) {
     })[0];
     if (!atRisk) {
       obs = `${lead}There is currently insufficient data in the report to identify a clear focus of attention.`;
-      meaning = "When complete practice data by subject appears in the report, it is possible to identify an area that requires attention.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_complete_practice_data_by_subject_appears_in_the_report_it_");
     } else {
       obs = `The focus that currently requires the most reinforcement is ${atRisk.label}.`;
       meaning =
@@ -640,11 +641,11 @@ export function buildSemanticAggregateDraft(input) {
     const unclear = roll.filter((r) => r.cannotConcludeTopics > 0 || r.lowConfidenceTopics > 0 || r.insufficientTopics > 0);
     if (!unclear.length) {
       obs = `${lead}There is currently no strong indication in the report that an entire subject is still uncertain.`;
-      meaning = "It is still correct to continue practicing and testing, but there is currently no clear sign from the report of lack of clarity.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.it_is_still_correct_to_continue_practicing_and_testing_but_there");
     } else {
       const names = unclear.map((r) => r.label).join(" · ");
       obs = `${lead}still not clear enough mainly in: ${names}.`;
-      meaning = "The identification is based on signs of doubt regarding the wording, it is still not clear enough or too little data that appears in the report itself.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.the_identification_is_based_on_signs_of_doubt_regarding_the_word");
     }
   } else if (qc === "most_stable") {
     if (roll.length < 2) {
@@ -654,7 +655,7 @@ export function buildSemanticAggregateDraft(input) {
       const stable = mostStableSubject(roll);
       if (!stable || stable.totalQ <= 0) {
         obs = `${lead}There is currently not enough practice in some subjects to determine who is the most stable.`;
-        meaning = "More questions and a wider practice sequence are needed to reliably test stability.";
+        meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.more_questions_and_a_wider_practice_sequence_are_needed_to_relia");
       } else {
         obs = `The most stable subject at the moment according to the period data in the report is ${stable.label}.`;
         meaning = `The assessment is based on a combination of the amount of practice, performance stability, readiness and maturity according to the report, not on a single subject line.`;
@@ -684,7 +685,7 @@ export function buildSemanticAggregateDraft(input) {
       }
     } else if (withAvg.length < 2) {
       obs = `${lead}The report currently does not have enough numerical practice on at least two different subjects, so subjects are not ranked here against each other.`;
-      meaning = "When data appears for two or more subjects, you can ask again and get a rating according to the averages shown in the report.";
+      meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_data_appears_for_two_or_more_subjects_you_can_ask_again_and");
     } else {
       const sortedStrength = [...withAvg].sort((a, b) => (b.avg || 0) - (a.avg || 0) || b.totalQ - a.totalQ);
       const sortedWeak = [...withAvg].sort((a, b) => (a.avg || 0) - (b.avg || 0) || a.totalQ - b.totalQ);
@@ -696,7 +697,7 @@ export function buildSemanticAggregateDraft(input) {
         aggregateContinuity = { questionClass: qc, subjectId: strongest.sid, role: "strongest" };
       } else if (qc === "weakest_subject") {
         obs = `The lowest subject right now is ${weakest.label} - by the same overall accuracy average across subjects with practice (about ${weakest.avg}%).`;
-        meaning = "This is a subject-level description from the report; For exact details by topic, you should open the subject in the report.";
+        meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.this_is_a_subject_level_description_from_the_report_for_exact_de");
         aggregateContinuity = { questionClass: qc, subjectId: weakest.sid, role: "weakest" };
       } else {
         obs = `The subject where the most "difficult" at the moment in terms of results is ${weakest.label} - according to the average overall accuracy in the report (about ${weakest.avg}%).`;
@@ -736,13 +737,13 @@ export function buildSemanticAggregateDraft(input) {
   if (obs.length < 8 || meaning.length < 8) return null;
   if (!passesEnvelope(truthPacket, obs, meaning, cautionHe)) return null;
 
-  /** @type {Array<{ type: string; textHe: string; source: "composed"|"contract_slot" }>} */
+  /** @type {Array<{ type: string; answerText: string; source: "composed"|"contract_slot" }>} */
   const answerBlocks = [
-    { type: "observation", textHe: obs, source: "composed" },
-    { type: "meaning", textHe: meaning, source: "composed" },
+    { type: "observation", answerText: obs, source: "composed" },
+    { type: "meaning", answerText: meaning, source: "composed" },
   ];
   if (cautionHe) {
-    answerBlocks.push({ type: "caution", textHe: cautionHe, source: cautionSource });
+    answerBlocks.push({ type: "caution", answerText: cautionHe, source: cautionSource });
   }
 
   return {

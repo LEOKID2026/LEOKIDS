@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Layout from "../../../components/Layout";
@@ -61,7 +62,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
   }, [worksheetId, load]);
 
   const markComplete = useCallback(async () => {
-    if (!window.confirm("Mark this worksheet as finished?")) return;
+    if (!window.confirm(globalBurnDownCopy("pages__student__worksheet__[worksheetId]", "mark_this_worksheet_as_finished"))) return;
     setBusy(true);
     setMsg("");
     try {
@@ -82,7 +83,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
   }, [worksheetId, load]);
 
   const submitAnswers = useCallback(async () => {
-    if (!window.confirm("Submit your answers?")) return;
+    if (!window.confirm(globalBurnDownCopy("pages__student__worksheet__[worksheetId]", "submit_your_answers"))) return;
     setBusy(true);
     setMsg("");
     setError("");
@@ -110,7 +111,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
       setMsg(
         json.hasManualQuestions
           ? "Great job — your submission was received and will be reviewed by your teacher."
-          : "Submission received and waiting for teacher approval."
+          : globalBurnDownCopy("pages__student__worksheet__[worksheetId]", "submission_received_and_waiting_for_teacher_approval")
       );
       await load();
     } finally {

@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useEffect } from "react";
 import {
   activityDisplayLevelKeys,
@@ -14,7 +15,7 @@ export default function ActivityDisplayLevelSelector({
   onChange,
   disabled = false,
   variant = "select",
-  label = "Level",
+  label = globalBurnDownCopy("components__classroom-activities__ActivityDisplayLevelSelector", "level"),
   className = "",
   inputClassName = "",
   name = "activity-display-level",

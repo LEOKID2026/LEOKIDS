@@ -25,7 +25,7 @@ export function measureGroundedness(answerBlocks, truthPacket) {
 
   let covered = 0;
   for (const b of blocks) {
-    const txt = String(b?.textHe || "").trim();
+    const txt = String(b?.answerText || "").trim();
     if (!txt) continue;
     if (String(b?.source || "") === "contract_slot") {
       covered += 1;
@@ -49,7 +49,7 @@ export function measureGroundedness(answerBlocks, truthPacket) {
  */
 export function measureGenericness(answerBlocks) {
   const blocks = Array.isArray(answerBlocks) ? answerBlocks : [];
-  const text = blocks.map((b) => String(b?.textHe || "")).join(" ").trim();
+  const text = blocks.map((b) => String(b?.answerText || "")).join(" ").trim();
   if (!text) return { score: 100, repeatedCueCount: 0 };
   const cues = ["As of now", "At this stage", "continue to follow", "Still too early to decide", "You should keep following"];
   let hits = 0;

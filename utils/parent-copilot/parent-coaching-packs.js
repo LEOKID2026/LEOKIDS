@@ -1,3 +1,4 @@
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 /**
  * Phase C — parent coaching lines and script variants (deterministic, in-session only).
  * Text is generic framing around contract slots; no new facts beyond TruthPacket + scope label.
@@ -55,7 +56,7 @@ export function coachingVariantIndex(conv, intent, turnOrdinal = 0) {
 function scopeSnippet(label) {
   const t = String(label || "").trim();
   if (t.length < 2) return "On the selected topic";
-  if (t === "Period overview" || t === "the report for the selected period" || t === "executive") return "What appears in the report";
+  if (t === copilotStaticMessage("copilot.answers.utils_parent-copilot_parent-coaching-packs.period_overview") || t === "the report for the selected period" || t === "executive") return "What appears in the report";
   if (t.length > 32) return `About ${t.slice(0, 30)}…`;
   return `on ${t}`;
 }
@@ -184,7 +185,7 @@ function personalizedLine(truthPacket, ix) {
 }
 
 /**
- * @param {Array<{ type: string; textHe: string; source: string }>} blocks
+ * @param {Array<{ type: string; answerText: string; source: string }>} blocks
  * @param {{
  *   intent: string;
  *   truthPacket: object;
@@ -195,7 +196,7 @@ function personalizedLine(truthPacket, ix) {
  */
 export function applyParentCoachingPacks(blocks, ctx) {
   if (ctx.stripParentFacingMeta) {
-    return (Array.isArray(blocks) ? blocks : []).map((b) => ({ ...b, textHe: String(b.textHe || "").trim() }));
+    return (Array.isArray(blocks) ? blocks : []).map((b) => ({ ...b, answerText: String(b.answerText || "").trim() }));
   }
   const intent = String(ctx.intent || "");
   let packGroup = mapCanonicalIntentToPackGroup(intent);
@@ -225,7 +226,7 @@ export function applyParentCoachingPacks(blocks, ctx) {
   const effIx = hits >= 2 ? ix % 4 : ix;
   const cont = !!ctx.continuityRepeat;
 
-  /** @type {Array<{ type: string; textHe: string; source: string }>} */
+  /** @type {Array<{ type: string; answerText: string; source: string }>} */
   const out = [];
 
   const obsArr = OBS_PREFIX[packGroup] || ["What the report shows: ", "", "Based on what the report says: ", "Regarding the figure in the report:"];
@@ -238,8 +239,8 @@ export function applyParentCoachingPacks(blocks, ctx) {
   let meaningEmitted = 0;
 
   for (const b of blocks) {
-    if (b.type === "observation" && b.source === "contract_slot" && String(b.textHe || "").trim()) {
-      out.push({ ...b, textHe: obsPrefix + String(b.textHe).trim() });
+    if (b.type === "observation" && b.source === "contract_slot" && String(b.answerText || "").trim()) {
+      out.push({ ...b, answerText: obsPrefix + String(b.answerText).trim() });
       continue;
     }
 
@@ -247,11 +248,11 @@ export function applyParentCoachingPacks(blocks, ctx) {
       out.push(b);
       meaningEmitted += 1;
       if (addMeaningCoach && meaningEmitted === 1 && meaningCoachText) {
-        out.push({ type: "meaning", textHe: meaningCoachText, source: "composed" });
+        out.push({ type: "meaning", answerText: meaningCoachText, source: "composed" });
         if (cont) {
           out.push({
             type: "meaning",
-            textHe: personalizedLine(ctx.truthPacket, effIx + 3),
+            answerText: personalizedLine(ctx.truthPacket, effIx + 3),
             source: "composed",
           });
         }
@@ -273,7 +274,7 @@ export function applyParentCoachingPacks(blocks, ctx) {
       const arr = NEXT_STEP_COACH[coachKey] || NEXT_STEP_COACH.action_week;
       const line = arr[effIx % arr.length];
       if (line) {
-        out.push({ type: "next_step", textHe: line, source: "composed" });
+        out.push({ type: "next_step", answerText: line, source: "composed" });
       }
       out.push(b);
       continue;

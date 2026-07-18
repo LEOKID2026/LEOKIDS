@@ -16,13 +16,13 @@ export function buildDeterministicFallbackAnswer(truthPacket, _failCodes) {
   const interp = String(slots.interpretation || narrativeSectionTextHe("finding", nar) || "").trim();
   const lim = String(slots.uncertainty || narrativeSectionTextHe("limitations", nar) || "").trim();
 
-  /** @type {Array<{ type: string; textHe: string; source: "contract_slot" }>} */
+  /** @type {Array<{ type: string; answerText: string; source: "contract_slot" }>} */
   const answerBlocks = [];
-  if (obs) answerBlocks.push({ type: "observation", textHe: obs, source: "contract_slot" });
-  if (interp) answerBlocks.push({ type: "meaning", textHe: interp, source: "contract_slot" });
-  if (lim) answerBlocks.push({ type: "caution", textHe: lim, source: "contract_slot" });
+  if (obs) answerBlocks.push({ type: "observation", answerText: obs, source: "contract_slot" });
+  if (interp) answerBlocks.push({ type: "meaning", answerText: interp, source: "contract_slot" });
+  if (lim) answerBlocks.push({ type: "caution", answerText: lim, source: "contract_slot" });
   if (answerBlocks.length < 2) {
-    if (!obs && interp) answerBlocks.unshift({ type: "observation", textHe: interp, source: "contract_slot" });
+    if (!obs && interp) answerBlocks.unshift({ type: "observation", answerText: interp, source: "contract_slot" });
   }
   return { answerBlocks };
 }

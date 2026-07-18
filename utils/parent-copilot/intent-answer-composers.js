@@ -2,6 +2,7 @@
  * Intent-specific Parent Copilot answer composers (not shared FAQ/metric blocks).
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import {
   findTopicRowByKey,
   listCopilotAnchoredTopicRows,
@@ -349,15 +350,15 @@ function composeReportExplanation(params) {
     if (unc) action = unc;
     else if (primary) {
       meaningParts.push(meaningHeForPolarity(primary.displayName, primary.q, primary.acc));
-      action = "Right now it's worth gathering more practice before making a decision.";
+      action = copilotStaticMessage("copilot.answers.utils_parent-copilot_intent-answer-composers.right_now_it_s_worth_gathering_more_practice");
     }
   }
 
   return {
     answerBlocks: [
-      { type: "observation", textHe: practicedPhrase, source: "intent_composer" },
-      { type: "meaning", textHe: meaningParts.join(" "), source: "intent_composer" },
-      { type: "next_step", textHe: action, source: "intent_composer" },
+      { type: "observation", answerText: practicedPhrase, source: "intent_composer" },
+      { type: "meaning", answerText: meaningParts.join(" "), source: "intent_composer" },
+      { type: "next_step", answerText: action, source: "intent_composer" },
     ],
     plannerIntent: "explain_report",
     answerComposerUsed: ANSWER_CONTRACT.report_explanation,
@@ -430,9 +431,9 @@ function composeTopicProblem(params) {
 
   return {
     answerBlocks: [
-      { type: "observation", textHe: observation, source: "intent_composer" },
-      { type: "meaning", textHe: meaningParts.join(" "), source: "intent_composer" },
-      { type: "next_step", textHe: action, source: "intent_composer" },
+      { type: "observation", answerText: observation, source: "intent_composer" },
+      { type: "meaning", answerText: meaningParts.join(" "), source: "intent_composer" },
+      { type: "next_step", answerText: action, source: "intent_composer" },
     ],
     plannerIntent: "what_is_still_difficult",
     answerComposerUsed: ANSWER_CONTRACT.topic_problem,
@@ -481,17 +482,17 @@ function composeMistakePattern(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `${label} has ${q} questions in the period range - still a little given.`,
+          answerText: `${label} has ${q} questions in the period range - still a little given.`,
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: meaningHeForPolarity(label, q, acc),
+          answerText: meaningHeForPolarity(label, q, acc),
           source: "intent_composer",
         },
         {
           type: "next_step",
-          textHe: String(unc || "").trim() || "Right now it's worth gathering more practice before making a decision.",
+          answerText: String(unc || "").trim() || "Right now it's worth gathering more practice before making a decision.",
           source: "intent_composer",
         },
       ],
@@ -510,17 +511,17 @@ function composeMistakePattern(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `In ${displayName}, according to what appears in the report on error patterns:`,
+          answerText: `In ${displayName}, according to what appears in the report on error patterns:`,
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: `The most prominent error that comes back is ${mistakeText}. This is a type of error that should be identified during practice - not just counting right/wrong.`,
+          answerText: `The most prominent error that comes back is ${mistakeText}. This is a type of error that should be identified during practice - not just counting right/wrong.`,
           source: "intent_composer",
         },
         {
           type: "next_step",
-          textHe: `Focused practice: 2-3 questions of the same type, without skipping a step - and ask the child to say out loud what he is doing before answering.`,
+          answerText: `Focused practice: 2-3 questions of the same type, without skipping a step - and ask the child to say out loud what he is doing before answering.`,
           source: "intent_composer",
         },
       ],
@@ -533,18 +534,18 @@ function composeMistakePattern(params) {
     answerBlocks: [
       {
         type: "observation",
-        textHe: `${displayName} has enough practice data to see that there is a difficulty, but the report does not specify the type of error.`,
+        answerText: `${displayName} has enough practice data to see that there is a difficulty, but the report does not specify the type of error.`,
         source: "intent_composer",
       },
       {
         type: "meaning",
-        textHe:
+        answerText:
           "The report has enough information about the state of the issue, but not enough detail to identify the exact type of error.",
         source: "intent_composer",
       },
       {
         type: "next_step",
-        textHe:
+        answerText:
           "To collect it: during practice, write down one sentence about what the child did before he made a mistake - after 3-4 times a pattern will appear.",
         source: "intent_composer",
       },
@@ -575,17 +576,17 @@ function composeHomePractice(params) {
     answerBlocks: [
       {
         type: "observation",
-        textHe: `A practical house plan around ${displayName}:`,
+        answerText: `A practical house plan around ${displayName}:`,
         source: "intent_composer",
       },
       {
         type: "meaning",
-        textHe: `${duration}: (1) 2–3 questions of the same type without help; (2) a short test together after each question - what did you do before the answer; (3) notice if the same type of error repeats.`,
+        answerText: `${duration}: (1) 2–3 questions of the same type without help; (2) a short test together after each question - what did you do before the answer; (3) notice if the same type of error repeats.`,
         source: "intent_composer",
       },
       {
         type: "next_step",
-        textHe: "Follow up after 3-4 days like this, then check in the report if the accuracy increases or if the pattern returns.",
+        explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t",
         source: "intent_composer",
       },
     ],
@@ -616,12 +617,12 @@ function composeStrength(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `During the period, only ${subjectLabelHe(sid)} (${subQ} questions) will be practiced - there is not enough data to compare subjects.`,
+          answerText: `During the period, only ${subjectLabelHe(sid)} (${subQ} questions) will be practiced - there is not enough data to compare subjects.`,
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: best
+          answerText: best
             ? `According to what is in the report, ${subjectLabelHe(sid)} is the only subject with practice - ${best.displayName} about ${best.acc}% on ${best.q} questions.`
             : `${subjectLabelHe(sid)} is the only subject with practice in the range - it is impossible to rank "strong/weak" between subjects.`,
           source: "intent_composer",
@@ -637,12 +638,12 @@ function composeStrength(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: "According to what appears in the report, there is not yet a topic with enough practice and high accuracy to call it \"strong\" reliably.",
+          answerText: "According to what appears in the report, there is not yet a topic with enough practice and high accuracy to call it \"strong\" reliably.",
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "This does not mean that there are no successes - just that it is still too early to mark stable strength according to the data in the range.",
+          explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.this_does_not_mean_that_there_are_no_successes_just_that_it_is_s",
           source: "intent_composer",
         },
       ],
@@ -698,13 +699,13 @@ function composeStrength(params) {
     answerBlocks: [
       {
         type: "observation",
-        textHe: observationHe,
+        answerText: observationHe,
         source: "intent_composer",
       },
-      { type: "meaning", textHe: meaningHe, source: "intent_composer" },
+      { type: "meaning", answerText: meaningHe, source: "intent_composer" },
       {
         type: "next_step",
-        textHe: nextStepHe,
+        answerText: nextStepHe,
         source: "intent_composer",
       },
     ],
@@ -732,14 +733,14 @@ function composeTopicLookup(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: tail
+          answerText: tail
             ? `In this period there is no practice data on ${tail} in the current report.`
-            : "During this period there is no practice data on this subject in the current report.",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_intent-answer-composers.during_this_period_there_is_no_practice_data_on_this_subject_in_"),
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "You can choose another topic from the report, or gain practice on this topic and ask again.",
+          explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.you_can_choose_another_topic_from_the_report_or_gain_practice_on",
           source: "intent_composer",
         },
       ],
@@ -756,12 +757,12 @@ function composeTopicLookup(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: `In this period there is no practice data on ${label || "the topic"} in the current report.`,
+          answerText: `In this period there is no practice data on ${label || "the topic"} in the current report.`,
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "The subject appears in the list, but no questions have been counted in it in the date range.",
+          explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.the_subject_appears_in_the_list_but_no_questions_have_been_count",
           source: "intent_composer",
         },
       ],
@@ -818,12 +819,12 @@ function composeProgression(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: "In this period there is still not enough practice data to recommend an increase or decrease in level.",
+          explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.in_this_period_there_is_still_not_enough_practice_data_to_recomm",
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: "You should gather more practice on the subject before deciding on a level change.",
+          explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.you_should_gather_more_practice_on_the_subject_before_deciding_o",
           source: "intent_composer",
         },
       ],
@@ -847,9 +848,9 @@ function composeProgression(params) {
         const list = lowerWeak.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (about ${m.acc}% on ${m.q} questions)`).join("; ");
         return {
           answerBlocks: [
-            { type: "observation", textHe: `Yes - according to the report there is difficulty even below the class listed in: ${list}.`, source: "intent_composer" },
-            { type: "meaning", textHe: "Difficulty at a basic level indicates a need to strengthen the basics of the subject before advancing to the grade level.", source: "intent_composer" },
-            { type: "next_step", textHe: `You should practice at a basic level in ${lowerWeak[0].displayName} until the accuracy increases, and only then return to the class level.`, source: "intent_composer" },
+            { type: "observation", answerText: `Yes - according to the report there is difficulty even below the class listed in: ${list}.`, source: "intent_composer" },
+            { type: "meaning", answerText: "Difficulty at a basic level indicates a need to strengthen the basics of the subject before advancing to the grade level.", source: "intent_composer" },
+            { type: "next_step", answerText: `You should practice at a basic level in ${lowerWeak[0].displayName} until the accuracy increases, and only then return to the class level.`, source: "intent_composer" },
           ],
           plannerIntent: "what_is_still_difficult",
           answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -857,12 +858,12 @@ function composeProgression(params) {
       }
       return {
         answerBlocks: [
-          { type: "observation", textHe: "According to the report, no difficulty is seen at a level below the registered class during this period.", source: "intent_composer" },
+          { type: "observation", answerText: "According to the report, no difficulty is seen at a level below the registered class during this period.", source: "intent_composer" },
           {
             type: "meaning",
-            textHe: weak.length
+            answerText: weak.length
               ? `The difficulties that appear are at the level of the class itself: ${weak.slice(0, 2).map((m) => sttl(m.sid, m.displayName)).join("; ")}.`
-              : "No weak line stood out with enough practice at the range.",
+              : copilotStaticMessage("copilot.answers.utils_parent-copilot_intent-answer-composers.no_weak_line_stood_out_with_enough_practice_at_the_range"),
             source: "intent_composer",
           },
         ],
@@ -875,8 +876,8 @@ function composeProgression(params) {
     if (!weak.length) {
       return {
         answerBlocks: [
-          { type: "observation", textHe: "According to the report, there is currently no topic with enough practice and low accuracy that justifies a drop in level.", source: "intent_composer" },
-          { type: "meaning", textHe: "Dropping a level is appropriate when there is repeated difficulty; Currently we don't see one in the range data.", source: "intent_composer" },
+          { type: "observation", answerText: "According to the report, there is currently no topic with enough practice and low accuracy that justifies a drop in level.", source: "intent_composer" },
+          { type: "meaning", answerText: "Dropping a level is appropriate when there is repeated difficulty; Currently we don't see one in the range data.", source: "intent_composer" },
         ],
         plannerIntent: "why_not_advance",
         answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -889,9 +890,9 @@ function composeProgression(params) {
         : "";
     return {
       answerBlocks: [
-        { type: "observation", textHe: `The place where it is best to consider a temporary level drop for reinforcement is ${sttl(w.sid, w.displayName)} (about ${w.acc}% on ${w.q} questions).`, source: "intent_composer" },
-        { type: "meaning", textHe: `A temporary drop in level allows you to establish the foundation before returning to the class level.${foundationNote}`, source: "intent_composer" },
-        { type: "next_step", textHe: `You should practice with ${w.displayName} one level lower for several days, then check if the accuracy increases.`, source: "intent_composer" },
+        { type: "observation", answerText: `The place where it is best to consider a temporary level drop for reinforcement is ${sttl(w.sid, w.displayName)} (about ${w.acc}% on ${w.q} questions).`, source: "intent_composer" },
+        { type: "meaning", answerText: `A temporary drop in level allows you to establish the foundation before returning to the class level.${foundationNote}`, source: "intent_composer" },
+        { type: "next_step", answerText: `You should practice with ${w.displayName} one level lower for several days, then check if the accuracy increases.`, source: "intent_composer" },
       ],
       plannerIntent: "what_is_still_difficult",
       answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -905,9 +906,9 @@ function composeProgression(params) {
       const list = higherStrong.slice(0, 3).map((m) => `${sttl(m.sid, m.displayName)} (about ${m.acc}% on ${m.q} questions)`).join("; ");
       return {
         answerBlocks: [
-          { type: "observation", textHe: `Yes - the child worked and succeeded even above the class listed in: ${list}.`, source: "intent_composer" },
-          { type: "meaning", textHe: "Success above grade level indicates high ability in this subject.", source: "intent_composer" },
-          { type: "next_step", textHe: `You can consider raising the difficulty or progressing to a more advanced topic in ${higherStrong[0].displayName}.`, source: "intent_composer" },
+          { type: "observation", answerText: `Yes - the child worked and succeeded even above the class listed in: ${list}.`, source: "intent_composer" },
+          { type: "meaning", answerText: "Success above grade level indicates high ability in this subject.", source: "intent_composer" },
+          { type: "next_step", answerText: `You can consider raising the difficulty or progressing to a more advanced topic in ${higherStrong[0].displayName}.`, source: "intent_composer" },
         ],
         plannerIntent: "what_is_going_well",
         answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -917,16 +918,16 @@ function composeProgression(params) {
       answerBlocks: [
         {
           type: "observation",
-          textHe: strong.length
+          answerText: strong.length
             ? "According to the report, the successes were measured at the level of the registered class and not above it."
-            : "According to the report, there is still insufficient evidence for work above the listed grade.",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_intent-answer-composers.according_to_the_report_there_is_still_insufficient_evidence_for"),
           source: "intent_composer",
         },
         {
           type: "meaning",
-          textHe: strong.length
+          answerText: strong.length
             ? `There is a nice control over the class level (eg ${sttl(strong[0].sid, strong[0].displayName)}) - you can consider increasing the difficulty gradually.`
-            : "It is worth gathering more practice before concluding on above-class ability.",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_intent-answer-composers.it_is_worth_gathering_more_practice_before_concluding_on_above_c"),
           source: "intent_composer",
         },
       ],
@@ -938,9 +939,9 @@ function composeProgression(params) {
   if (!strong.length) {
     return {
       answerBlocks: [
-        { type: "observation", textHe: "According to the report, there is not yet a topic with enough practice and high accuracy to recommend progress reliably.", source: "intent_composer" },
-        { type: "meaning", textHe: "This does not mean that there are no successes - just that it is still too early to recommend an increase in the level according to the data in the range.", source: "intent_composer" },
-        { type: "next_step", textHe: "You should continue a short and regular practice, then ask again when the accuracy stabilizes.", source: "intent_composer" },
+        { type: "observation", answerText: "According to the report, there is not yet a topic with enough practice and high accuracy to recommend progress reliably.", source: "intent_composer" },
+        { type: "meaning", answerText: "This does not mean that there are no successes - just that it is still too early to recommend an increase in the level according to the data in the range.", source: "intent_composer" },
+        { type: "next_step", answerText: "You should continue a short and regular practice, then ask again when the accuracy stabilizes.", source: "intent_composer" },
       ],
       plannerIntent: "why_not_advance",
       answerComposerUsed: ANSWER_CONTRACT.progression,
@@ -961,15 +962,15 @@ function composeProgression(params) {
 
   return {
     answerBlocks: [
-      { type: "observation", textHe: `The most obvious place to move forward is: ${list}.`, source: "intent_composer" },
+      { type: "observation", answerText: `The most obvious place to move forward is: ${list}.`, source: "intent_composer" },
       {
         type: "meaning",
-        textHe: srcPhrase ? `${relStep} Some of the evidence was collected ${srcPhrase}.` : relStep,
+        answerText: srcPhrase ? `${relStep} Some of the evidence was collected ${srcPhrase}.` : relStep,
         source: "intent_composer",
       },
       {
         type: "next_step",
-        textHe: [reallocate, focusElsewhere].filter(Boolean).join(" ") ||
+        answerText: [reallocate, focusElsewhere].filter(Boolean).join(" ") ||
           `You should continue to challenge in ${lead.displayName} and increase the difficulty gradually as long as the success is maintained.`,
         source: "intent_composer",
       },
@@ -986,12 +987,12 @@ function composeZeroEvidence(params) {
     answerBlocks: [
       {
         type: "observation",
-        textHe: zeroEvidenceSubjectCopilotHe(label),
+        answerText: zeroEvidenceSubjectCopilotHe(label),
         source: "intent_composer",
       },
       {
         type: "meaning",
-        textHe: "It is therefore impossible to determine direction from the current report on performance in this subject.",
+        explanationCode: "copilot.answers.utils_parent-copilot_intent-answer-composers.it_is_therefore_impossible_to_determine_direction_from_the_curre",
         source: "intent_composer",
       },
     ],
@@ -1121,7 +1122,7 @@ export function tryComposeIntentAnswer(params) {
  * @param {object} draft
  */
 export function fingerprintAnswerHe(draft) {
-  const text = (draft?.answerBlocks || []).map((b) => String(b.textHe || "")).join(" ");
+  const text = (draft?.answerBlocks || []).map((b) => String(b.answerText || "")).join(" ");
   return text
     .replace(/\d+/g, "#")
     .replace(/\s+/g, " ")

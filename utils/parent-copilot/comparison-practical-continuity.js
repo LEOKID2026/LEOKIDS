@@ -11,11 +11,11 @@ import { compactParentAnswerBlocks } from "./answer-compaction.js";
 import { readContractsSliceForScope, subjectLabelHe } from "./contract-reader.js";
 import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize-he.js";
 
-/** @param {Array<{ type: string; textHe: string; source: string }>} blocks */
+/** @param {Array<{ type: string; answerText: string; source: string }>} blocks */
 function normalizeAnswerBlocksHe(blocks) {
   return (Array.isArray(blocks) ? blocks : []).map((b) => ({
     ...b,
-    textHe: normalizeParentFacingHe(String(b?.textHe || "").trim()),
+    answerText: normalizeParentFacingHe(String(b?.answerText || "").trim()),
   }));
 }
 
@@ -81,7 +81,7 @@ function interpretationForComparisonThread(priorClass, role) {
 
 /**
  * @param {{ utteranceStr: string; conv: object; payload: unknown; stageA: object }} ctx
- * @returns {null|{ truthPacket: object; plannerIntent: string; answerBlocks: Array<{ type: string; textHe: string; source: string }>; scopeMeta: object }}
+ * @returns {null|{ truthPacket: object; plannerIntent: string; answerBlocks: Array<{ type: string; answerText: string; source: string }>; scopeMeta: object }}
  */
 export function tryBuildComparisonPracticalFollowupDraft(ctx) {
   const utteranceStr = String(ctx.utteranceStr || "").trim();
@@ -167,19 +167,19 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
   const hook = label
     ? `Continuing from the comparison presented - especially around ${label}:`
     : "Continuing from the comparison over the period:";
-  const oix = answerBlocks.findIndex((b) => b.type === "observation" && String(b.textHe || "").trim());
-  if (oix >= 0 && !String(answerBlocks[oix].textHe || "").includes("Continuing from the comparison")) {
+  const oix = answerBlocks.findIndex((b) => b.type === "observation" && String(b.answerText || "").trim());
+  if (oix >= 0 && !String(answerBlocks[oix].answerText || "").includes("Continuing from the comparison")) {
     answerBlocks[oix] = {
       ...answerBlocks[oix],
-      textHe: `${hook}${String(answerBlocks[oix].textHe || "").trim()}`,
+      answerText: `${hook}${String(answerBlocks[oix].answerText || "").trim()}`,
       source: "composed",
     };
   } else if (oix < 0) {
-    const firstIx = answerBlocks.findIndex((b) => String(b?.textHe || "").trim());
-    if (firstIx >= 0 && !String(answerBlocks[firstIx].textHe || "").includes("Continuing from the comparison")) {
+    const firstIx = answerBlocks.findIndex((b) => String(b?.answerText || "").trim());
+    if (firstIx >= 0 && !String(answerBlocks[firstIx].answerText || "").includes("Continuing from the comparison")) {
       answerBlocks[firstIx] = {
         ...answerBlocks[firstIx],
-        textHe: `${hook}${String(answerBlocks[firstIx].textHe || "").trim()}`,
+        answerText: `${hook}${String(answerBlocks[firstIx].answerText || "").trim()}`,
         source: "composed",
       };
     }

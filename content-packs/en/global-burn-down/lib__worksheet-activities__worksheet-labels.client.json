@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "active": "Active",
+    "closed": "Closed",
+    "archived": "Archived",
+    "digital_answer_sheet": "Digital answer sheet",
+    "manual_grading": "Manual grading",
+    "not_submitted": "Not submitted",
+    "submitted": "Submitted",
+    "pending_review": "Pending review",
+    "partially_checked": "Partially checked",
+    "checked": "Checked",
+    "published": "Published",
+    "multiple_choice": "Multiple choice",
+    "true_false": "True / False",
+    "number": "Number",
+    "short_answer": "Short answer",
+    "free_text": "Free text"
+  }
+}

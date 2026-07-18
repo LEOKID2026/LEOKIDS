@@ -2,6 +2,7 @@
  * Approved continuity follow-up composers (round 3).
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { NO_DATA_FOR_REQUEST_RESPONSE_HE } from "./question-classifier.js";
 import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
@@ -100,7 +101,7 @@ const WHY_NOT_INFER_EXPLANATION_HE =
  * @param {string} plannerIntent
  * @param {unknown} payload
  */
-function continuityDraft(textHe, a, utterance, plannerIntent, payload) {
+function continuityDraft(answerText, a, utterance, plannerIntent, payload) {
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "topic",
     scopeId: a.topicRowKey,
@@ -110,7 +111,7 @@ function continuityDraft(textHe, a, utterance, plannerIntent, payload) {
   });
   if (!truthPacket) return null;
   return {
-    answerBlocks: [{ type: "observation", textHe: String(textHe || "").trim(), source: "continuity_pattern_composer" }],
+    answerBlocks: [{ type: "observation", answerText: String(textHe || "").trim(), source: "continuity_pattern_composer" }],
     plannerIntent,
     truthPacket,
     scopeMeta: {
@@ -123,17 +124,17 @@ function continuityDraft(textHe, a, utterance, plannerIntent, payload) {
   };
 }
 
-function continuityExecutiveDraft(textHe, utterance, plannerIntent, payload) {
+function continuityExecutiveDraft(answerText, utterance, plannerIntent, payload) {
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "Report summary",
+    scopeLabel: copilotStaticMessage("copilot.answers.utils_parent-copilot_continuity-pattern-composer.report_summary"),
     canonicalIntent: plannerIntent,
     parentUtterance: utterance,
   });
   if (!truthPacket) return null;
   return {
-    answerBlocks: [{ type: "observation", textHe: String(textHe || "").trim(), source: "continuity_pattern_composer" }],
+    answerBlocks: [{ type: "observation", answerText: String(textHe || "").trim(), source: "continuity_pattern_composer" }],
     plannerIntent,
     truthPacket,
     scopeMeta: {

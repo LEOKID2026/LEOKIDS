@@ -48,7 +48,7 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
   if (vol < 40) return draft;
 
   const joined = blocks
-    .map((b) => String(b?.textHe || ""))
+    .map((b) => String(b?.answerText || ""))
     .join(" ")
     .replace(/\s+/g, " ")
     .trim();
@@ -66,7 +66,7 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
 
   return {
     ...draft,
-    answerBlocks: [...blocks, { type: "observation", textHe: line, source: "composed" }],
+    answerBlocks: [...blocks, { type: "observation", answerText: line, source: "composed" }],
   };
 }
 

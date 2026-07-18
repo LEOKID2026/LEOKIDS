@@ -2,6 +2,7 @@
  * Parent Copilot v1 — parent-only runtime. Single entry for a conversational turn.
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { resolveScope } from "./scope-resolver.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { interpretFreeformStageA } from "./stage-a-freeform-interpretation.js";
@@ -66,6 +67,10 @@ import { isContextualFollowUpUtterance } from "./contextual-follow-up-he.js";
 import { utteranceQualifiesAsReportQuestion, hasAnchoredReportRows } from "./report-row-resolver.js";
 import { tryComposePatternAnswerDraft, tryComposeExplainReportSimpleWordsDraft } from "./pattern-answer-composers.js";
 import { tryComposeContinuityPatternDraft } from "./continuity-pattern-composer.js";
+import { applyCopilotResponseLocaleToTurn } from "../../lib/parent-copilot/copilot-locale-adapters/index.js";
+
+/** @type {string} */
+let activeCopilotResponseLocale = "en";
 
 /**
  * @param {Record<string, unknown>} base
@@ -152,14 +157,14 @@ function normalizeWsHeJoin(s) {
  */
 function isClinicalBoundaryDraft(draft) {
   const joined = (Array.isArray(draft?.answerBlocks) ? draft.answerBlocks : [])
-    .map((b) => String(b?.textHe || ""))
+    .map((b) => String(b?.answerText || ""))
     .join(" ");
   return normalizeWsHeJoin(joined) === normalizeWsHeJoin(clinicalBoundaryJoinedFingerprintHe());
 }
 
 function isSensitiveEducationChoiceDraft(draft) {
   const joined = (Array.isArray(draft?.answerBlocks) ? draft.answerBlocks : [])
-    .map((b) => String(b?.textHe || ""))
+    .map((b) => String(b?.answerText || ""))
     .join(" ");
   return normalizeWsHeJoin(joined) === normalizeWsHeJoin(sensitiveEducationChoiceJoinedFingerprintHe());
 }
@@ -186,7 +191,7 @@ function normalizeAnswerBlocksHe(answerBlocks, truthPacket = null, opts = null) 
   const slotBundle = truthPacket ? contractNarrativeSlotBundleHe(truthPacket) : "";
   const preserveSlot = !!(opts && opts.preserveContractSlotSources);
   const mapped = (Array.isArray(answerBlocks) ? answerBlocks : []).map((b) => {
-    const textHe = normalizeParentFacingHe(String(b?.textHe || "").trim());
+    const textHe = normalizeParentFacingHe(String(b?.answerText || "").trim());
     let source = String(b?.source || "composed");
     if (
       !preserveSlot &&
@@ -194,18 +199,18 @@ function normalizeAnswerBlocksHe(answerBlocks, truthPacket = null, opts = null) 
       source === "contract_slot" &&
       String(b?.type || "") !== "observation" &&
       textHe &&
-      !slotBundle.includes(textHe)
+      !slotBundle.includes(answerText)
     ) {
       source = "composed";
     }
-    return { ...b, textHe, source };
+    return { ...b, answerText, source };
   });
   return postprocessParentFacingBlocksHe(mapped);
 }
 
 const THIN_DATA_APPROVED_SCARCITY_RE =
   /(יש\s+כרגע\s+מעט\s+נתוני\s+תרגול|נפח\s+הנתונים\s+עדיין\s+מצומצם|אין\s+עדיין\s+מספיק\s+מידע\s+לכיוון\s+ברור)/u;
-const THIN_DATA_DEFAULT_LEAD = "There is currently little practice data, so there is not yet enough information for a clear direction.";
+const THIN_DATA_DEFAULT_LEAD = copilotStaticMessage("copilot.answers.utils_parent-copilot_index.there_is_currently_little_practice_data_so_there_is_not_yet_enou");
 
 function shouldUseThinDataLead(truthPacket, intent, payload) {
   const tp = truthPacket && typeof truthPacket === "object" ? truthPacket : {};
@@ -249,15 +254,15 @@ function enforceThinDataScarcityLead(draft, truthPacket, intent, payload) {
     return draft;
   }
   if (!shouldUseThinDataLead(truthPacket, intent, payload)) return draft;
-  const joined = blocks.map((b) => String(b?.textHe || "")).join(" ").trim();
+  const joined = blocks.map((b) => String(b?.answerText || "")).join(" ").trim();
   if (THIN_DATA_APPROVED_SCARCITY_RE.test(joined)) return draft;
-  const firstIdx = blocks.findIndex((b) => String(b?.textHe || "").trim());
+  const firstIdx = blocks.findIndex((b) => String(b?.answerText || "").trim());
   if (firstIdx < 0) return draft;
   const next = blocks.slice();
   const first = next[firstIdx];
   next[firstIdx] = {
     ...first,
-    textHe: `${THIN_DATA_DEFAULT_LEAD} ${String(first?.textHe || "").trim()}`.trim(),
+    answerText: `${THIN_DATA_DEFAULT_LEAD} ${String(first?.answerText || "").trim()}`.trim(),
   };
   return { ...draft, answerBlocks: normalizeAnswerBlocksHe(next) };
 }
@@ -454,7 +459,7 @@ function finalizeTurnResponse(response, context) {
   const withTelemetry = ensureResponseTelemetry(response, context);
   persistClarificationConversationMemory(withTelemetry, context);
   persistTelemetryBestEffort(withTelemetry, context);
-  return withTelemetry;
+  return applyCopilotResponseLocaleToTurn(withTelemetry, context?.responseLocale || activeCopilotResponseLocale);
 }
 
 function persistClarificationConversationMemory(response, context) {
@@ -476,7 +481,7 @@ function persistClarificationConversationMemory(response, context) {
  * @param {number} priorRepeated
  * @param {object} conv
  * @param {string} utteranceStr
- * @param {{ noData?: boolean; truthPacket?: object; plannerIntent?: string; scopeMeta?: object; answerBlocks?: Array<{ type: string; textHe: string; source?: string }> }} draftResult
+ * @param {{ noData?: boolean; truthPacket?: object; plannerIntent?: string; scopeMeta?: object; answerBlocks?: Array<{ type: string; answerText: string; source?: string }> }} draftResult
  * @param {object} [scopeMetaBase]
  */
 function tryPackageApprovedPatternTurn(input, sessionId, priorRepeated, conv, utteranceStr, draftResult, scopeMetaBase = {}) {
@@ -573,9 +578,9 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       const slots = nar?.textSlots || {};
       draft = {
         answerBlocks: [
-          { type: "observation", textHe: String(slots.observation || "").trim(), source: "contract_slot" },
-          { type: "meaning", textHe: String(slots.interpretation || "").trim(), source: "contract_slot" },
-        ].filter((b) => b.textHe),
+          { type: "observation", answerText: String(slots.observation || "").trim(), source: "contract_slot" },
+          { type: "meaning", answerText: String(slots.interpretation || "").trim(), source: "contract_slot" },
+        ].filter((b) => b.answerText),
       };
       if (draft.answerBlocks.length < 2) {
         draft = buildDeterministicFallbackAnswer(truthPacket, ["emergency_fallback"]);
@@ -610,7 +615,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
   };
 
   const answerBlockTypes = draft.answerBlocks.map((b) => b.type);
-  const answerBodyTextHe = draft.answerBlocks.map((b) => b.textHe).join(" ").trim();
+  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join(" ").trim();
 
   const follow = selectFollowUp({
     audience: "parent",
@@ -639,7 +644,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     ? {
         kind: /** @type {const} */ ("question"),
         family: follow.selected.family,
-        textHe: normalizeParentFacingHe(follow.selected.textHe),
+        answerText: normalizeParentFacingHe(follow.selected.answerText),
         reasonCode: follow.selected.reasonCode,
       }
     : null;
@@ -714,7 +719,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
   if (draft.answerBlocks.some((b) => b.type === "caution")) constraintParts.push("surface:caution");
 
   const assistantAnswerSummary = draft.answerBlocks
-    .map((b) => b.textHe)
+    .map((b) => b.answerText)
     .join(" ")
     .trim()
     .slice(0, 480);
@@ -727,8 +732,8 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       : {}),
     addedScopeKey: `${truthPacket.scopeType}:${truthPacket.scopeId}`,
     answeredConstraintTag: constraintParts.join(","),
-    closingSnippet: draft.answerBlocks.map((b) => b.textHe).join(" ").slice(-48),
-    ...(suggestedFollowUp?.textHe ? { suggestedFollowupTextHe: suggestedFollowUp.textHe } : {}),
+    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join(" ").slice(-48),
+    ...(suggestedFollowUp?.answerText ? { suggestedFollowupTextHe: suggestedFollowUp.answerText } : {}),
     ...(assistantAnswerSummary ? { assistantAnswerSummary } : {}),
     scopeLabelSnapshotHe: truthPacket.scopeLabel || "",
     plannerIntentSnapshot: responseIntentEarly,
@@ -866,7 +871,7 @@ function runDeterministicCore(input, options) {
 
   if (audience !== "parent") {
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: "This mode is for parent only.",
+      clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_index.this_mode_is_for_parent_only"),
       intent: "uncertainty_boundary",
       priorRepeated,
       metadata: { intentConfidence: 1, intentReason: "audience_guard", scopeConfidence: 1, scopeReason: "audience_guard" },
@@ -1267,7 +1272,7 @@ function runDeterministicCore(input, options) {
   const scope = scopeRes.scope;
   if (!scope) {
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: "The relationship cannot be identified from the report.",
+      clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_index.the_relationship_cannot_be_identified_from_the_report"),
       intent,
       priorRepeated,
       metadata: scopeMeta,
@@ -1308,7 +1313,7 @@ function runDeterministicCore(input, options) {
   });
   if (!truthPacket) {
     const r = buildClarificationParentCopilotResponse({
-      clarificationQuestionHe: "No contracts were found matching the topic selected in the report.",
+      clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_index.no_contracts_were_found_matching_the_topic_selected_in_the_repor"),
       intent,
       priorRepeated,
       metadata: scopeMeta,
@@ -1357,7 +1362,7 @@ function runDeterministicCore(input, options) {
     const compactedIntent = compactParentAnswerBlocks(
       intentAnswerDraft.answerBlocks.map((b) => ({
         ...b,
-        textHe: normalizeParentFacingHe(String(b.textHe || "").trim()),
+        answerText: normalizeParentFacingHe(String(b.answerText || "").trim()),
       })),
       { scopeType: String(truthPacket.scopeType || ""), maxBlocks: 5, maxTotalChars: 2600 },
     );
@@ -1369,7 +1374,7 @@ function runDeterministicCore(input, options) {
         intent: intentPlanner,
         answerContract: intentAnswerDraft.answerContract,
         priorAnswerFingerprint: String(conv.lastAnswerSummary || "").trim()
-          ? fingerprintAnswerHe({ answerBlocks: [{ textHe: conv.lastAnswerSummary }] })
+          ? fingerprintAnswerHe({ answerBlocks: [{ answerText: conv.lastAnswerSummary }] })
           : "",
       },
     );
@@ -1540,7 +1545,7 @@ function runDeterministicCore(input, options) {
         ...draft,
         answerBlocks: draft.answerBlocks.map((b) => ({
           ...b,
-          textHe: String(b?.textHe || "")
+          answerText: String(b?.answerText || "")
             .replace(SCARCITY_STRIP_RE, " ")
             .replace(/\s{2,}/g, " ")
             .trim(),
@@ -1584,9 +1589,9 @@ function runDeterministicCore(input, options) {
       const slots = nar?.textSlots || {};
       draft = {
         answerBlocks: [
-          { type: "observation", textHe: String(slots.observation || "").trim(), source: "contract_slot" },
-          { type: "meaning", textHe: String(slots.interpretation || "").trim(), source: "contract_slot" },
-        ].filter((b) => b.textHe),
+          { type: "observation", answerText: String(slots.observation || "").trim(), source: "contract_slot" },
+          { type: "meaning", answerText: String(slots.interpretation || "").trim(), source: "contract_slot" },
+        ].filter((b) => b.answerText),
       };
       if (draft.answerBlocks.length < 2) {
         draft = buildDeterministicFallbackAnswer(truthPacket, ["emergency_fallback"]);
@@ -1622,7 +1627,7 @@ function runDeterministicCore(input, options) {
   };
 
   const answerBlockTypes = draft.answerBlocks.map((b) => b.type);
-  const answerBodyTextHe = draft.answerBlocks.map((b) => b.textHe).join(" ").trim();
+  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join(" ").trim();
 
   const follow = selectFollowUp({
     audience: "parent",
@@ -1651,7 +1656,7 @@ function runDeterministicCore(input, options) {
     ? {
         kind: /** @type {const} */ ("question"),
         family: follow.selected.family,
-        textHe: normalizeParentFacingHe(follow.selected.textHe),
+        answerText: normalizeParentFacingHe(follow.selected.answerText),
         reasonCode: follow.selected.reasonCode,
       }
     : null;
@@ -1723,7 +1728,7 @@ function runDeterministicCore(input, options) {
   if (draft.answerBlocks.some((b) => b.type === "caution")) constraintParts.push("surface:caution");
 
   const assistantAnswerSummary = draft.answerBlocks
-    .map((b) => b.textHe)
+    .map((b) => b.answerText)
     .join(" ")
     .trim()
     .slice(0, 480);
@@ -1736,8 +1741,8 @@ function runDeterministicCore(input, options) {
       : {}),
     addedScopeKey: `${truthPacket.scopeType}:${truthPacket.scopeId}`,
     answeredConstraintTag: constraintParts.join(","),
-    closingSnippet: draft.answerBlocks.map((b) => b.textHe).join(" ").slice(-48),
-    ...(suggestedFollowUp?.textHe ? { suggestedFollowupTextHe: suggestedFollowUp.textHe } : {}),
+    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join(" ").slice(-48),
+    ...(suggestedFollowUp?.answerText ? { suggestedFollowupTextHe: suggestedFollowUp.answerText } : {}),
     ...(assistantAnswerSummary ? { assistantAnswerSummary } : {}),
     scopeLabelSnapshotHe: truthPacket.scopeLabel || "",
     plannerIntentSnapshot: responseIntent,
@@ -1803,6 +1808,8 @@ export function runParentCopilotTurn(input) {
  * @see ./README.md for env flags and `generationPath` semantics
  */
 export async function runParentCopilotTurnAsync(input) {
+  activeCopilotResponseLocale = input?.responseLocale || input?.reportLocale || "en";
+  try {
   // ── Optional LLM classifier upgrade for ambiguous deterministic verdicts ──
   // Runs ONLY when:
   //   - the deterministic classifier returned ambiguous_or_unclear, AND
@@ -1926,6 +1933,7 @@ export async function runParentCopilotTurnAsync(input) {
     utterance: core.utteranceStr,
     truthPacket: core.truthPacket,
     parentIntent: core.intent,
+    responseLocale: activeCopilotResponseLocale,
   });
   if (!llmResult.ok || !llmResult.draft) {
     if (CLINICAL_LLM_FAIL_REASONS.has(String(llmResult.reason || "")) && core.truthPacket) {
@@ -2174,6 +2182,9 @@ export async function runParentCopilotTurnAsync(input) {
     generationPath: "llm_grounded",
     llmAttempt: llmOkAttempt,
   });
+  } finally {
+    activeCopilotResponseLocale = "en";
+  }
 }
 
 export { buildTruthPacketV1 } from "./truth-packet-v1.js";

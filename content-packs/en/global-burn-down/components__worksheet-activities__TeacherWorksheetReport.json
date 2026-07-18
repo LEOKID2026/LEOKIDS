@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "total_students": "Total students",
+    "opened_pdf": "Opened PDF",
+    "completed_pdf": "Completed (PDF)",
+    "submitted_answers": "Submitted answers",
+    "pending_review": "Pending review",
+    "published": "Published",
+    "class_average": "Class average"
+  }
+}

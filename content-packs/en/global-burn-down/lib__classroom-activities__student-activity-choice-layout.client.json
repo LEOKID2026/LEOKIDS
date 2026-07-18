@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "string_c_trim_length": "String(c ?? \"\").trim().length"
+  }
+}

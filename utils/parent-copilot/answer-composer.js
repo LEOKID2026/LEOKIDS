@@ -4,6 +4,7 @@
  * Polish: adjacent composed de-dup by token overlap.
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { narrativeSectionTextHe } from "../contracts/narrative-contract-v1.js";
 import { coachingVariantIndex, applyParentCoachingPacks, pickUncertaintyReasonScript } from "./parent-coaching-packs.js";
 import { parentDirectOpenerHe } from "./direct-answer-openers.js";
@@ -29,14 +30,14 @@ export const SENSITIVE_EDUCATION_LINE_3_HE =
   "What can be done here is to choose from the report one subject for strengthening, and build around it a small and clear step for home or for a conversation with the educational staff.";
 
 /**
- * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }> }}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> }}
  */
 export function buildClinicalBoundaryAnswerDraft() {
   return {
     answerBlocks: [
-      { type: "observation", textHe: CLINICAL_BOUNDARY_LINE_1_HE, source: "composed" },
-      { type: "meaning", textHe: CLINICAL_BOUNDARY_LINE_2_HE, source: "composed" },
-      { type: "caution", textHe: CLINICAL_BOUNDARY_LINE_3_HE, source: "composed" },
+      { type: "observation", answerText: CLINICAL_BOUNDARY_LINE_1_HE, source: "composed" },
+      { type: "meaning", answerText: CLINICAL_BOUNDARY_LINE_2_HE, source: "composed" },
+      { type: "caution", answerText: CLINICAL_BOUNDARY_LINE_3_HE, source: "composed" },
     ],
   };
 }
@@ -54,14 +55,14 @@ export function peerComparisonBoundaryJoinedFingerprintHe() {
 }
 
 /**
- * @returns {{ answerBlocks: Array<{ type: string; textHe: string; source: "composed" }> }}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> }}
  */
 export function buildSensitiveEducationChoiceAnswerDraft() {
   return {
     answerBlocks: [
-      { type: "observation", textHe: SENSITIVE_EDUCATION_LINE_1_HE, source: "composed" },
-      { type: "meaning", textHe: SENSITIVE_EDUCATION_LINE_2_HE, source: "composed" },
-      { type: "caution", textHe: SENSITIVE_EDUCATION_LINE_3_HE, source: "composed" },
+      { type: "observation", answerText: SENSITIVE_EDUCATION_LINE_1_HE, source: "composed" },
+      { type: "meaning", answerText: SENSITIVE_EDUCATION_LINE_2_HE, source: "composed" },
+      { type: "caution", answerText: SENSITIVE_EDUCATION_LINE_3_HE, source: "composed" },
     ],
   };
 }
@@ -106,13 +107,13 @@ function requiredHedgeAlreadyCoveredInDraft(hedge, reason, priorSlots) {
   const bucket = `${priorSlots} ${reason}`.replace(/\s+/g, " ").trim();
   if (!bucket) return false;
   if (bucket.includes(h)) return true;
-  if (h === "Still too early to decide" && (bucket.includes("too early to determine") || bucket.includes("still early"))) return true;
+  if (h === copilotStaticMessage("copilot.answers.utils_parent-copilot_answer-composer.still_too_early_to_decide") && (bucket.includes("too early to determine") || bucket.includes("still early"))) return true;
   return false;
 }
 
 /**
  * Drop adjacent composed blocks that repeat the same framing (high token overlap).
- * @param {Array<{ type: string; textHe: string; source: string }>} blocks
+ * @param {Array<{ type: string; answerText: string; source: string }>} blocks
  */
 function dedupeAdjacentOverlappingComposed(blocks) {
   /** @type {typeof blocks} */
@@ -123,7 +124,7 @@ function dedupeAdjacentOverlappingComposed(blocks) {
       prev &&
       b.source === "composed" &&
       prev.source === "composed" &&
-      tokenOverlapCount4(String(prev.textHe || ""), String(b.textHe || "")) >= 4
+      tokenOverlapCount4(String(prev.answerText || ""), String(b.answerText || "")) >= 4
     ) {
       continue;
     }
@@ -170,7 +171,7 @@ export function practicalMagnitudeTailHe(intentMain, truthPacket) {
 
 /**
  * Deterministic merge-layer: guarantees QA-visible magnitude hints for weekly/today intents without adding blocks (compaction pops trailing blocks). Preserves `contract_slot` sourcing when merging the approved tail.
- * @param {{ answerBlocks?: Array<{ type: string; textHe: string; source?: string }> }} draft
+ * @param {{ answerBlocks?: Array<{ type: string; answerText: string; source?: string }> }} draft
  */
 export function ensureHomePracticePracticalMagnitudeDraft(draft, responseIntent, truthPacket) {
   const intent = String(responseIntent || "");
@@ -179,7 +180,7 @@ export function ensureHomePracticePracticalMagnitudeDraft(draft, responseIntent,
   }
   const blocks = draft?.answerBlocks;
   if (!Array.isArray(blocks) || !blocks.length) return draft;
-  const joined = blocks.map((b) => String(b?.textHe || "")).join("\n");
+  const joined = blocks.map((b) => String(b?.answerText || "")).join("\n");
   if (joined.length <= 30 || PRACTICAL_MAGNITUDE_MARKERS_RE.test(joined)) {
     return draft;
   }
@@ -189,7 +190,7 @@ export function ensureHomePracticePracticalMagnitudeDraft(draft, responseIntent,
   const next = blocks.slice();
   next[lastIdx] = {
     ...last,
-    textHe: `${String(last?.textHe || "").trim()}\n\n${tail}`.trim(),
+    answerText: `${String(last?.answerText || "").trim()}\n\n${tail}`.trim(),
     // Magnitude tail is deterministic product copy; keep contract_slot so resolved+fallbackUsed
     // passes validateParentCopilotResponseV1 (fallback_non_slot_source).
     source: last?.source === "contract_slot" ? "contract_slot" : last.source,
@@ -240,13 +241,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       answerBlocks: [
         {
           type: "observation",
-          textHe:
+          answerText:
             "Here you can ask questions about the report and the learning progress that appears in it.",
           source: "composed",
         },
         {
           type: "meaning",
-          textHe:
+          answerText:
             "For example: What should you practice this week? Or where relatively good results were seen?",
           source: "composed",
         },
@@ -259,13 +260,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       answerBlocks: [
         {
           type: "observation",
-          textHe:
+          answerText:
             "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it.",
           source: "composed",
         },
         {
           type: "meaning",
-          textHe:
+          answerText:
             "It is not possible to ignore the report or bypass what was told from the practice within the scope of the report only. If something doesn't seem to be working out, it's right to check dates and topics together before deciding on a direction.",
           source: "composed",
         },
@@ -278,13 +279,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       answerBlocks: [
         {
           type: "observation",
-          textHe:
+          answerText:
             "In the practice report presented here, there is currently no data on the subject you asked about - the system records only the study subjects that appear in the report.",
           source: "composed",
         },
         {
           type: "meaning",
-          textHe:
+          answerText:
             "Therefore, it is not possible to assess a situation here according to this report on this issue; If a relevant practice enters the range, the image will be updated.",
           source: "composed",
         },
@@ -304,9 +305,9 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     const opener = parentDirectOpenerHe("is_intervention_needed", truthPacket);
     const obsBlock = opener ? `${opener}\n\n${obsText}`.trim() : obsText;
     const blocks = [];
-    if (obsBlock) blocks.push({ type: "observation", textHe: obsBlock, source: "composed" });
-    if (interpText) blocks.push({ type: "meaning", textHe: interpText, source: "composed" });
-    if (limText) blocks.push({ type: "caution", textHe: limText, source: "composed" });
+    if (obsBlock) blocks.push({ type: "observation", answerText: obsBlock, source: "composed" });
+    if (interpText) blocks.push({ type: "meaning", answerText: interpText, source: "composed" });
+    if (limText) blocks.push({ type: "caution", answerText: limText, source: "composed" });
     if (blocks.length > 0) {
       return {
         answerBlocks: blocks,
@@ -333,18 +334,18 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     const opener = parentDirectOpenerHe(intentMain, truthPacket);
     const obsBlock = opener ? `${opener}\n\n${obsWk}`.trim() : obsWk;
     const blocks = [];
-    if (obsBlock) blocks.push({ type: "observation", textHe: obsBlock, source: "composed" });
+    if (obsBlock) blocks.push({ type: "observation", answerText: obsBlock, source: "composed" });
     if (actWk) {
       // Use "composed" not "contract_slot" — normalizeAnswerBlocksHe replaces \n with spaces,
       // making the text diverge from the raw slot text, which would trigger contract_slot_mismatch.
-      blocks.push({ type: "next_step", textHe: actWk.replace(/\n/g, " "), source: "composed" });
+      blocks.push({ type: "next_step", answerText: actWk.replace(/\n/g, " "), source: "composed" });
     } else if (interpWk) {
-      blocks.push({ type: "meaning", textHe: interpWk, source: "composed" });
+      blocks.push({ type: "meaning", answerText: interpWk, source: "composed" });
     }
     if (!actWk && !interpWk) {
       blocks.push({
         type: "next_step",
-        textHe: defaultConcretePlanTextHe(intentMain, truthPacket),
+        answerText: defaultConcretePlanTextHe(intentMain, truthPacket),
         source: "composed",
       });
     }
@@ -364,15 +365,15 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       : Number(conv?.priorIntents?.length) || 0;
   const scriptIx = conv ? coachingVariantIndex(conv, intent, turnOrd) : 0;
 
-  /** @type {Array<{ type: string; textHe: string; source: "contract_slot"|"composed" }>} */
+  /** @type {Array<{ type: string; answerText: string; source: "contract_slot"|"composed" }>} */
   const answerBlocks = [];
 
   for (const b of plan.blockPlan || []) {
     if (b === "observation" && obs) {
-      answerBlocks.push({ type: "observation", textHe: obs, source: "contract_slot" });
+      answerBlocks.push({ type: "observation", answerText: obs, source: "contract_slot" });
     }
     if (b === "meaning" && interp) {
-      answerBlocks.push({ type: "meaning", textHe: interp, source: "contract_slot" });
+      answerBlocks.push({ type: "meaning", answerText: interp, source: "contract_slot" });
     }
     if (b === "next_step") {
       const dlRec = truthPacket?.derivedLimits || {};
@@ -386,7 +387,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           "Subject from the report";
         answerBlocks.push({
           type: "next_step",
-          textHe:
+          answerText:
             intent === "what_to_do_today"
               ? `Tomorrow: 1) 8–10 minutes short practice in ${subj} around the topic that stands out as a gap in the report. 2) Then 3-5 short test questions. 3) End in one sentence for the child what you tried together.`
               : `For the coming week: 1) Choose one central topic in ${subj} according to what stands out in the report. 2) Divide into three short windows of practice (15-20 minutes total per week). 3) At the end of the week, check in one sentence what has improved compared to the beginning of the week.`,
@@ -397,7 +398,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       if (act) {
         const skipWhenIvSaysNoWeakTopic = hasIntelligenceSignals && ivWeak === "none";
         if (!skipWhenIvSaysNoWeakTopic) {
-          answerBlocks.push({ type: "next_step", textHe: act, source: "contract_slot" });
+          answerBlocks.push({ type: "next_step", answerText: act, source: "contract_slot" });
         }
       } else if (intent === "what_to_do_today" || intent === "what_to_do_this_week") {
         const subj =
@@ -406,7 +407,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           "Subject from the report";
         answerBlocks.push({
           type: "next_step",
-          textHe:
+          answerText:
             intent === "what_to_do_today"
               ? `Tomorrow: 1) 8–10 minutes short practice in ${subj} around the topic that stands out as a gap in the report. 2) Then 3-5 short test questions. 3) End in one sentence for the child what you tried together.`
               : `For the coming week: 1) choose one central topic from the report. 2) Divide into three short windows of practice. 3) At the end of the week, make a one-sentence summary of what progressed.`,
@@ -415,7 +416,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       }
     }
     if (b === "caution" && lim) {
-      answerBlocks.push({ type: "caution", textHe: lim, source: "contract_slot" });
+      answerBlocks.push({ type: "caution", answerText: lim, source: "contract_slot" });
     }
     if (b === "uncertainty_reason") {
       const dl = truthPacket.derivedLimits || {};
@@ -435,10 +436,10 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           "There is a significant volume of practice in the report; There is still a natural difference between what happens at home and what is told in the range - we will update again after more practice.";
       }
       if (hasIntelligenceSignals && ivConf === "low" && sfQ < 90) {
-        reason = "This is an initial image only -" + reason;
+        reason = copilotStaticMessage("copilot.answers.utils_parent-copilot_answer-composer.this_is_an_initial_image_only") + reason;
       }
       if (hasIntelligenceSignals && ivWeak === "tentative" && sfQ < 100) {
-        reason = "There is only an initial sign of weakness -" + reason;
+        reason = copilotStaticMessage("copilot.answers.utils_parent-copilot_answer-composer.there_is_only_an_initial_sign_of_weakness") + reason;
       }
       const hedges = Array.isArray(truthPacket.allowedClaimEnvelope?.requiredHedges)
         ? truthPacket.allowedClaimEnvelope.requiredHedges.map((h) => String(h || "").trim()).filter(Boolean)
@@ -449,15 +450,15 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           reason = `${h} - ${reason}`;
         }
       }
-      answerBlocks.push({ type: "uncertainty_reason", textHe: reason, source: "composed" });
+      answerBlocks.push({ type: "uncertainty_reason", answerText: reason, source: "composed" });
     }
   }
 
   if (answerBlocks.length < 2 && obs) {
-    answerBlocks.unshift({ type: "observation", textHe: obs, source: "contract_slot" });
+    answerBlocks.unshift({ type: "observation", answerText: obs, source: "contract_slot" });
   }
   if (answerBlocks.length < 2 && interp) {
-    answerBlocks.push({ type: "meaning", textHe: interp, source: "contract_slot" });
+    answerBlocks.push({ type: "meaning", answerText: interp, source: "contract_slot" });
   }
 
   if (!coachingCtx || !intent) {
@@ -478,12 +479,12 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
 
   let composed = dedupeAdjacentOverlappingComposed(packed);
   const opener = parentDirectOpenerHe(intent, truthPacket);
-  const firstObsIx = composed.findIndex((b) => b.type === "observation" && String(b.textHe || "").trim());
+  const firstObsIx = composed.findIndex((b) => b.type === "observation" && String(b.answerText || "").trim());
   if (opener && firstObsIx >= 0) {
-    const cur = String(composed[firstObsIx].textHe || "").trim();
+    const cur = String(composed[firstObsIx].answerText || "").trim();
     composed[firstObsIx] = {
       ...composed[firstObsIx],
-      textHe: cur.includes(opener.slice(0, 12)) ? cur : `${opener}\n\n${cur}`.trim(),
+      answerText: cur.includes(opener.slice(0, 12)) ? cur : `${opener}\n\n${cur}`.trim(),
     };
   }
 
@@ -500,8 +501,8 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     const gradeLine = note
       ? `${note} Each line in the report shows the content class in which the practice was performed - do not merge between classes when determining direction.`
       : "When the same subject appears in different content classes, each line in the report is counted separately - do not merge between classes.";
-    if (!composed.some((b) => String(b.textHe || "").includes("Class"))) {
-      composed = [...composed, { type: "meaning", textHe: gradeLine, source: "composed" }];
+    if (!composed.some((b) => String(b.answerText || "").includes("Class"))) {
+      composed = [...composed, { type: "meaning", answerText: gradeLine, source: "composed" }];
     }
   }
 

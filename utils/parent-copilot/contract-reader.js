@@ -1,3 +1,4 @@
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 /**
  * Helper-only: contract slices from detailed-report payload rows.
  * Not a TruthPacketV1 owner (see truth-packet-v1.js).
@@ -133,7 +134,7 @@ function topicRowFromOverviewRow(overviewRow, subjectId) {
           interpretation: `According to the report data in ${subjectLabelHe(subjectId)}, this is the information collected from the practice in the selected period.`,
           uncertainty: cannotConcludeYet
             ? "There are still a few points - we will check again after more practice."
-            : "You should continue to follow for several days of practice.",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.you_should_continue_to_follow_for_several_days_of_practice"),
         },
       },
       readiness: { readiness: q >= 28 ? "ready" : q >= 12 ? "forming" : "insufficient" },
@@ -188,12 +189,12 @@ const SUBJECT_LABEL_HE = {
   geometry: "Geometry",
   english: "English",
   science: "Science",
-  history: "History",
-  hebrew: "Hebrew",
-  "moledet-geography": "Homeland & Geography",
-  moledet_geography: "Homeland & Geography",
-  moledet: "Homeland Studies",
-  geography: "Geography",
+  history: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.history"),
+  hebrew: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.hebrew"),
+  "moledet-geography": copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.homeland_geography"),
+  moledet_geography: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.homeland_geography"),
+  moledet: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.homeland_studies"),
+  geography: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.geography"),
 };
 
 export function subjectLabelHe(subjectId) {
@@ -309,7 +310,7 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
       const syntheticTr = {
         topicRowKey: "aggregate-executive-summary",
         topicKey: "aggregate-executive-summary",
-        displayName: "General summary of the practice",
+        displayName: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.general_summary_of_the_practice"),
         questions: tq,
         q: tq,
         accuracy: acc,

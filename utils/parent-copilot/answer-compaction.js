@@ -21,7 +21,7 @@ const ONCE_ACROSS_ANSWER = [
 ];
 
 /**
- * @param {Array<{ type: string; textHe: string; source: string }>} blocks
+ * @param {Array<{ type: string; answerText: string; source: string }>} blocks
  * @param {{ maxTotalChars?: number; maxBlocks?: number; scopeType?: string }} [opts]
  */
 export function compactParentAnswerBlocks(blocks, opts = {}) {
@@ -33,15 +33,15 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
   let out = (Array.isArray(blocks) ? blocks : [])
     .map((b) => ({
       ...b,
-      textHe: norm(b.textHe),
+      answerText: norm(b.answerText),
     }))
-    .filter((b) => b.textHe.length > 0);
+    .filter((b) => b.answerText.length > 0);
 
   let acc = "";
   /** @type {typeof out} */
   const deduped = [];
   for (const b of out) {
-    let t = b.textHe;
+    let t = b.answerText;
     for (const p of ONCE_ACROSS_ANSWER) {
       if (!p) continue;
       if (acc.includes(p) && t.includes(p)) {
@@ -49,7 +49,7 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
       }
     }
     if (t.length > 2) {
-      deduped.push({ ...b, textHe: t });
+      deduped.push({ ...b, answerText: t });
       acc = `${acc} ${t}`;
     }
   }
@@ -84,9 +84,9 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
       prev.type === b.type &&
       prev.source === "contract_slot" &&
       b.source === "contract_slot" &&
-      jaccard(prev.textHe, b.textHe) >= 0.55
+      jaccard(prev.answerText, b.answerText) >= 0.55
     ) {
-      merged[merged.length - 1] = { ...prev, textHe: norm(`${prev.textHe} ${b.textHe}`).slice(0, 900) };
+      merged[merged.length - 1] = { ...prev, answerText: norm(`${prev.answerText} ${b.answerText}`).slice(0, 900) };
       continue;
     }
     merged.push(b);
@@ -95,8 +95,8 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
 
   if (scopeType === "executive") {
     for (let i = 0; i < out.length; i += 1) {
-      if (out[i].type === "observation" && out[i].textHe.length > 720) {
-        out[i] = { ...out[i], textHe: `${out[i].textHe.slice(0, 680)}…` };
+      if (out[i].type === "observation" && out[i].answerText.length > 720) {
+        out[i] = { ...out[i], answerText: `${out[i].answerText.slice(0, 680)}…` };
       }
     }
   }
@@ -111,8 +111,8 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
   for (const b of out) {
     const room = maxTotal - total;
     if (room <= 40) break;
-    const t = b.textHe.length > room ? `${b.textHe.slice(0, room - 1)}…` : b.textHe;
-    trimmed.push({ ...b, textHe: t });
+    const t = b.answerText.length > room ? `${b.answerText.slice(0, room - 1)}…` : b.answerText;
+    trimmed.push({ ...b, answerText: t });
     total += t.length;
   }
 

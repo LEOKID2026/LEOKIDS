@@ -3,6 +3,7 @@
  * This module is optional and must degrade safely to deterministic flow.
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { getLlmGateDecision } from "./rollout-gates.js";
 import { clinicalBoundaryJoinedFingerprintHe } from "./answer-composer.js";
 import {
@@ -94,7 +95,8 @@ function utteranceAsksSubjectLevelStrength(u) {
   return /מקצוע|מקצועות|המקצוע\s+ה(חזק|טוב)|איזה\s+מקצוע|באיזה\s+מקצוע|מה\s+המקצוע/u.test(String(u || "").trim());
 }
 
-export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "") {
+export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", opts = {}) {
+  const responseLocale = String(opts?.responseLocale || opts?.reportLocale || "en").trim() || "en";
   const nar = truthPacket?.contracts?.narrative?.textSlots || {};
   const dl = truthPacket?.derivedLimits || {};
   const globalQ =
@@ -174,7 +176,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "") {
           "Block meaning: short practical program: 5-10 minutes a day, what topic, type of practice.",
           facts.recommendationEligible && facts.recommendationIntensityCap !== "RI0"
             ? "next_step block: one specific simple step to perform (according to FACTS_JSON.action)."
-            : "You must not include a next_step block.",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_llm-orchestrator.you_must_not_include_a_next_step_block"),
           "Do not write 'it is possible to arrange' or 'this is what the report gives'.",
         ].join("\n");
       case "is_intervention_needed":
@@ -195,7 +197,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "") {
           "If the specific topic has few questions - this can be carefully noted only for this topic.",
           facts.recommendationEligible && facts.recommendationIntensityCap !== "RI0"
             ? "Optional: next_step block - one short home step according to FACTS_JSON.action only."
-            : "The next_step block must not be included - practical recommendations only within the meaning block (FACTS_JSON approves recommendations only when recommendationEligible=true and cap is not RI0).",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_llm-orchestrator.the_next_step_block_must_not_be_included_practical_recommendations"),
         ].join("\n");
       default:
         return [
@@ -213,7 +215,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "") {
       : "";
 
   return [
-    "You are a professional parent helper. Answer in Hebrew only.",
+    `You are a professional parent helper. Answer in the language matching BCP-47 locale "${responseLocale}" only.`,
     "Use only facts from the FACTS_JSON. It is forbidden to invent facts that are not in it.",
     "Write in simple, direct, and parent-friendly language - not in system language.",
     "Do not use the phrases: 'According to the report, there are:', 'The professions that appear:', 'Focuses with wording', 'This is what the report gives at the moment', 'It is possible to arrange what is important first'.",
@@ -244,7 +246,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
   let blocks = Array.isArray(payload?.answerBlocks)
     ? payload.answerBlocks.map((b) => ({
         type: b?.type,
-        textHe: b?.textHe,
+        answerText: b?.answerText,
         source: b?.source,
       }))
     : [];
@@ -258,7 +260,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
   const hasMean = blocks.some((b) => String(b?.type || "") === "meaning");
   if (!hasObs && !hasMean) return { ok: false, reason: "llm_missing_observation_or_meaning" };
 
-  const joined = blocks.map((b) => String(b?.textHe || "").trim()).join(" ");
+  const joined = blocks.map((b) => String(b?.answerText || "").trim()).join(" ");
   const intent = String(hints?.intent || "").trim();
   const joinedNorm = normalizeWsHe(joined);
   const boundaryNorm = normalizeWsHe(clinicalBoundaryJoinedFingerprintHe());
@@ -275,8 +277,8 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
 
   for (const b of blocks) {
     const type = String(b?.type || "");
-    const textHe = String(b?.textHe || "").trim();
-    if (!allowedTypes.has(type) || !textHe) return { ok: false, reason: "llm_invalid_block_shape" };
+    const textHe = String(b?.answerText || "").trim();
+    if (!allowedTypes.has(type) || !answerText) return { ok: false, reason: "llm_invalid_block_shape" };
     for (const ph of truthPacket?.allowedClaimEnvelope?.forbiddenPhrases || []) {
       if (ph && textHe.toLowerCase().includes(String(ph).toLowerCase())) {
         return { ok: false, reason: "llm_forbidden_phrase" };
@@ -300,7 +302,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
     draft: {
       answerBlocks: blocks.map((b) => ({
         type: String(b.type),
-        textHe: String(b.textHe || "").trim(),
+        answerText: String(b.answerText || "").trim(),
         source: "composed",
       })),
     },
@@ -353,7 +355,9 @@ export async function maybeGenerateGroundedLlmDraft(input) {
     };
   }
   const primaryProvider = copilotLlmPrimaryProviderLabel();
-  const prompt = buildGroundedPrompt(input.utterance, input.truthPacket, String(input?.parentIntent || ""));
+  const prompt = buildGroundedPrompt(input.utterance, input.truthPacket, String(input?.parentIntent || ""), {
+    responseLocale: input.responseLocale || input.reportLocale || "en",
+  });
   const timeoutMs = Number(env("PARENT_COPILOT_LLM_TIMEOUT_MS", String(DEFAULT_TIMEOUT_MS))) || DEFAULT_TIMEOUT_MS;
   const intentHint = String(input?.parentIntent || "").trim();
 

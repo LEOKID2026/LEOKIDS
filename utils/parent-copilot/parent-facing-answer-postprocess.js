@@ -1,3 +1,4 @@
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 /**
  * Final parent-facing sanitization: banned engine phrases, duplicate sentences/topics.
  */
@@ -20,7 +21,7 @@ const BANNED_PHRASE_RULES = [
   },
   {
     pattern: /זה אומר שהתמונה בנויה ממקצועות ונושאים שכבר הוכנסו לטווח התקופה\.?/gu,
-    replace: "The report is based on the practice carried out on the site in the selected period.",
+    replace: copilotStaticMessage("copilot.answers.utils_parent-copilot_parent-facing-answer-postpr.the_report_is_based_on_the_practice_carried_out_on_the_site_in_t"),
   },
   {
     pattern: /כהורה,?\s*אפשר להשתמש בזה כמילון משמעויות לדוח[^.!?]*[.!?]?/gu,
@@ -109,12 +110,12 @@ export function postprocessParentFacingAnswerHe(text) {
  */
 export function postprocessParentFacingBlocksHe(blocks) {
   const joined = (Array.isArray(blocks) ? blocks : [])
-    .map((b) => norm(b?.textHe))
+    .map((b) => norm(b?.answerText))
     .filter(Boolean)
     .join(" ");
   const globalSeen = new Set();
   return (Array.isArray(blocks) ? blocks : []).map((b) => {
-    let textHe = postprocessParentFacingAnswerHe(String(b?.textHe || ""));
+    let textHe = postprocessParentFacingAnswerHe(String(b?.answerText || ""));
     const parts = textHe.split(/(?<=[.!?؟])\s+/).filter(Boolean);
     /** @type {string[]} */
     const kept = [];
@@ -127,8 +128,8 @@ export function postprocessParentFacingBlocksHe(blocks) {
     }
     if (kept.length) textHe = norm(kept.join(" "));
     if (!textHe && joined) textHe = postprocessParentFacingAnswerHe(joined);
-    return { ...b, textHe };
-  }).filter((b) => norm(b.textHe).length > 0);
+    return { ...b, answerText };
+  }).filter((b) => norm(b.answerText).length > 0);
 }
 
 export const BANNED_PARENT_PHRASE_SNIPPETS = [

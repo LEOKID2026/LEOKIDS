@@ -14,6 +14,7 @@
  * `next_step`, or missing hedges. See `./README.md` and `guardrail-validator.js` for policy detail.
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import {
   contractsFromTopicRow,
   listAllAnchoredTopicRows,
@@ -524,7 +525,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
 
       interp = appendDistinctSentence(
         interp,
-        strengthTopics.length ? "You should continue with a short practice to preserve the progress." : "You should continue with a short and measured practice to stabilize progress in all areas.",
+        strengthTopics.length ? "You should continue with a short practice to preserve the progress." : copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.you_should_continue_with_a_short_and_measured_practice_to_stabil"),
       );
       interp = appendDistinctSentence(interp, supportingNumericTail(x, intent));
       if (!interp.trim()) interp = defaultInterp;
@@ -673,7 +674,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       const m = metas[0];
       if (!m) return { observation: defaultObs, interpretation: defaultInterp };
       const core = `You can choose a short sentence that starts with what actually appears in the report in ${labelPair(m)}: ${
-        m.obs?`"${clipHe(m.obs, 150)}"`: "There is a wording here that can be reflected to a child in soft language."
+        m.obs?`"${clipHe(m.obs, 150)}"`: copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft")
       }`;
       const trendBack = trends[0] && !looksLikeNumericOrCountLead(trends[0]) ? `If you need soft context: ${trends[0]}` : "";
       const obs = appendDistinctSentence(core, trendBack);
@@ -755,13 +756,13 @@ function buildExecutiveIntentNarrativeSlots(x) {
           obs = m0
             ? `According to what is shown in the report, there is currently a major focus around ${labelPair(m0)}. ${
                 m0.obs
-                  ? `What you see there: ${clipHe(m0.obs, 220)}` : "There is still no long extension in all subjects, but there are numerical practice data for the period."
+                  ? `What you see there: ${clipHe(m0.obs, 220)}` : copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.there_is_still_no_long_extension_in_all_subjects_but_there_are_n")
               } It is better to read this as a periodic picture, not as a definitive direction.`
             : defaultObs;
         } else {
           obs = m0
             ? `${scarcityLead ? `${scarcityLead} `: ""}Currently, limited information appears in the report: in ${labelPair(m0)}. ${
-                m0.obs ? `What you see there: ${clipHe(m0.obs, 220)}` : "No long detail shown here yet."
+                m0.obs ? `What you see there: ${clipHe(m0.obs, 220)}` : copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.no_long_detail_shown_here_yet")
               } The overall picture is still partial - until more practice points are collected.`
             : defaultObs;
         }
@@ -1251,7 +1252,7 @@ export function buildTruthPacketV1(payload, scope) {
     const avgAcc = totalQ > 0 ? Math.round(weightedAcc / totalQ) : 0;
     q = totalQ;
     acc = avgAcc;
-    displayName = "Period overview";
+    displayName = copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.period_overview");
     readiness = minReadiness >= 3 ? "ready" : minReadiness === 2 ? "emerging" : minReadiness === 1 ? "forming" : "insufficient";
     confidenceBand = minConfidence >= 2 ? "high" : minConfidence === 1 ? "medium" : "low";
     cannotConcludeYet = anyCannotConclude || totalQ <= 0;
@@ -1264,7 +1265,7 @@ export function buildTruthPacketV1(payload, scope) {
       ? trendLines.slice(0, 4)
       : [
           `In the periodic report, about ${totalQ} questions were counted in all subjects.`,
-          totalQ > 0 ? `The average accuracy in the period is about ${avgAcc}%.` : "Still lacks cumulative practice for a stable image.",
+          totalQ > 0 ? `The average accuracy in the period is about ${avgAcc}%.` : copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.still_lacks_cumulative_practice_for_a_stable_image"),
         ];
     let uncertaintyLine;
     if (totalQ >= 50 && avgAcc >= 65) {

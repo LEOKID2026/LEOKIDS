@@ -2,6 +2,7 @@
  * Approved round-3 pattern answer composers (exact owner-provided Hebrew templates).
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { NO_DATA_FOR_REQUEST_RESPONSE_HE } from "./question-classifier.js";
 import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
@@ -146,7 +147,7 @@ export function tryComposeExplainReportSimpleWordsDraft(params) {
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "topic",
     scopeId: composed.focusTopic?.topicRowKey || "explain-simple-words",
-    scopeLabel: composed.focusTopic?.displayName || composed.focusTopic?.topicLabel || "Report summary",
+    scopeLabel: composed.focusTopic?.displayName || composed.focusTopic?.topicLabel || copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.report_summary"),
     canonicalIntent: "explain_report",
     parentUtterance: utteranceStr,
   });
@@ -207,21 +208,21 @@ function buildTopicTruthPacket(payload, a, utterance, plannerIntent) {
 /**
  * @param {string} textHe
  */
-function patternAnswerBlocks(textHe) {
+function patternAnswerBlocks(answerText) {
   const text = String(textHe || "").trim();
   if (!text) return [];
   const sentenceBreak = text.search(/(?<=[.!?])\s+(?=\S)/u);
   if (sentenceBreak >= 12 && sentenceBreak < text.length - 12) {
     return [
-      { type: "observation", textHe: text.slice(0, sentenceBreak).trim(), source: "pattern_composer" },
-      { type: "meaning", textHe: text.slice(sentenceBreak).trim(), source: "pattern_composer" },
+      { type: "observation", answerText: text.slice(0, sentenceBreak).trim(), source: "pattern_composer" },
+      { type: "meaning", answerText: text.slice(sentenceBreak).trim(), source: "pattern_composer" },
     ];
   }
   return [
-    { type: "observation", textHe: text, source: "pattern_composer" },
+    { type: "observation", answerText: text, source: "pattern_composer" },
     {
       type: "meaning",
-      textHe: "This is a focused answer according to what appears in the report in the selected period, without concluding beyond the data that is presented.",
+      explanationCode: "copilot.answers.utils_parent-copilot_pattern-answer-composers.this_is_a_focused_answer_according_to_what_appears_in_the_report",
       source: "pattern_composer",
     },
   ];
@@ -231,9 +232,9 @@ function patternAnswerBlocks(textHe) {
  * @param {string} textHe
  * @param {object} focus
  */
-function patternDraft(textHe, focus, plannerIntent) {
+function patternDraft(answerText, focus, plannerIntent) {
   return {
-    answerBlocks: patternAnswerBlocks(textHe),
+    answerBlocks: patternAnswerBlocks(answerText),
     plannerIntent,
     focusTopic: focus,
     answerComposerUsed: "pattern_composer",
@@ -259,7 +260,7 @@ function composeThreeThings(payload) {
   const weak = pickWeakForThreeThings(metas);
   if (!metas.length) return null;
 
-  let text = "The three most important things right now are:";
+  let text = copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.the_three_most_important_things_right_now_are");
   if (strong) {
     const s = topicAnchorFields(strong);
     text += `1. Preserve what works: ${s.subjectLabel} - ${s.topicLabel}, with ${s.questionCount} questions and ${s.accuracyPercent}% success.\n\n`;
@@ -292,7 +293,7 @@ function composeAvoidNow(payload, utteranceStr = "") {
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "Report summary",
+    scopeLabel: copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.report_summary"),
     canonicalIntent: "what_not_to_do_now",
     parentUtterance: utteranceStr,
   });
@@ -369,7 +370,7 @@ function composeHomeToday(payload, conv) {
     hit?.tr?.safeSubskillHe ||
     hit?.tr?.contractsV1?.narrative?.safeSubskillHe;
   if (String(sub || "").trim().length >= 3) {
-    text += "If a clear sub-skill appears in the report, you should focus on it and not open several subjects together.";
+    text += copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i");
   }
   return patternDraft(text, a, "what_to_do_today");
 }
@@ -388,7 +389,7 @@ function composeWhatNotInfer(payload, utterance) {
   const truthPacket = buildTruthPacketV1(payload, {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "Report summary",
+    scopeLabel: copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.report_summary"),
     canonicalIntent: "report_trust_question",
     parentUtterance: utterance,
   });

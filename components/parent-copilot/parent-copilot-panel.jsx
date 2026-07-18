@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import parentCopilot from "../../utils/parent-copilot/index.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
+import {
+  resolveCopilotAnswerBlocksText,
+  resolveCopilotReportMessage,
+} from "../../lib/parent-copilot/copilot-response-resolver.js";
+import { applyCopilotResponseLocaleToTurn } from "../../lib/parent-copilot/copilot-locale-adapters/index.js";
 import { ParentCopilotQuickActions } from "./parent-copilot-quick-actions.jsx";
 
 /** Deterministic UI pacing (ms), plan range 250–450 */
@@ -48,6 +54,8 @@ function countCompletedAssistantTurns(lines) {
  * @param {{ payload: object; selectedContextRef?: object | null; asyncTurnRunner?: ((input: object) => Promise<unknown>) | null }} props
  */
 export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTurnRunner = null }) {
+  const t = useT();
+  const { reportLocale } = useI18n();
   const formId = useId();
   const [sessionId] = useState(() => makeSessionId());
   const [utterance, setUtterance] = useState("");
@@ -87,7 +95,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
         id: lineId(),
         role: "assistant",
         kind: "processing",
-        text: "Processing the report…",
+        text: t("ui.copilot.panel.processing"),
       };
 
       setLines((prev) => [...prev, userLine, processingLine]);
@@ -102,30 +110,54 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
           selectedContextRef,
           clickedFollowupFamily: meta.clickedFollowupFamily || null,
         };
-        const res =
+        const resRaw =
           typeof asyncTurnRunner === "function"
             ? await asyncTurnRunner(turnInput)
             : await (typeof parentCopilot.runParentCopilotTurnAsync === "function"
                 ? parentCopilot.runParentCopilotTurnAsync(turnInput)
                 : Promise.resolve(parentCopilot.runParentCopilotTurn(turnInput)));
+        const res = applyCopilotResponseLocaleToTurn(resRaw, reportLocale);
 
         let answerCore = "";
         let fullText = "";
         if (res.resolutionStatus === "clarification_required") {
-          answerCore = String(res.clarificationQuestionHe || "").trim();
+          const clarificationKey = String(res.clarificationQuestionKey || "").trim();
+          answerCore = clarificationKey
+            ? resolveCopilotReportMessage(reportLocale, clarificationKey, res.clarificationParameters || {}) ||
+              String(res.clarificationQuestionHe || "").trim()
+            : String(res.clarificationQuestionHe || "").trim();
           fullText = answerCore;
         } else {
-          answerCore = (res.answerBlocks || []).map((b) => b.textHe).join("\n\n");
+          answerCore = resolveCopilotAnswerBlocksText(res.answerBlocks, reportLocale);
           fullText = answerCore;
-          if (res.suggestedFollowUp?.textHe) {
-            fullText += `\n\n- ${res.suggestedFollowUp.textHe}`;
+          const followUpKey = String(res.suggestedFollowUp?.recommendationCode || "").trim();
+          const followUpText = followUpKey
+            ? resolveCopilotReportMessage(reportLocale, followUpKey, res.suggestedFollowUp?.parameters || {})
+            : res.suggestedFollowUp?.answerText
+              ? resolveCopilotReportMessage(
+                  reportLocale,
+                  String(res.suggestedFollowUp.explanationCode || "").trim(),
+                  res.suggestedFollowUp.parameters || {}
+                ) || String(res.suggestedFollowUp.answerText)
+              : "";
+          if (followUpText) {
+            fullText += `\n\n- ${followUpText}`;
           }
         }
 
         const processingId = processingLine.id;
         const isClarification = res.resolutionStatus === "clarification_required";
         const followUpHe =
-          !isClarification && res.suggestedFollowUp?.textHe ? String(res.suggestedFollowUp.textHe) : "";
+          !isClarification && res.suggestedFollowUp
+            ? resolveCopilotReportMessage(
+                reportLocale,
+                String(
+                  res.suggestedFollowUp.recommendationCode || res.suggestedFollowUp.explanationCode || ""
+                ).trim(),
+                res.suggestedFollowUp.parameters || {}
+              ) ||
+              String(res.suggestedFollowUp.answerText || "")
+            : "";
         const assistantLine = {
           id: lineId(),
           role: "assistant",
@@ -152,7 +184,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
         const errText =
           e instanceof Error && String(e.message || "").trim()
             ? String(e.message).trim()
-            : "Unable to answer the question right now. Please try again in a moment.";
+            : t("ui.copilot.panel.errorGeneric");
         setLines((prev) => {
           const withoutProc = prev.filter((l) => l.id !== processingId);
           return [
@@ -174,7 +206,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
         setUtterance("");
       }
     },
-    [busy, payload, selectedContextRef, sessionId, asyncTurnRunner],
+    [busy, payload, selectedContextRef, sessionId, asyncTurnRunner, t, reportLocale],
   );
 
   const lastResponse = useMemo(() => {
@@ -193,18 +225,8 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
       enabled: !!a.enabled,
       disabledReasonCode: a.disabledReasonCode,
       onPress: () => {
-        const preset =
-          a.id === "qa_action_today"
-            ? "What should we do at home today?"
-            : a.id === "qa_action_week"
-              ? "What should we do this week?"
-              : a.id === "qa_avoid_now"
-                ? "What should we avoid right now?"
-                : a.id === "qa_advance_or_hold"
-                  ? "Move forward or wait?"
-                  : a.id === "qa_explain_to_child"
-                    ? "How should we explain this to the child?"
-                    : "Question for the teacher";
+        const presetKey = `ui.copilot.panel.quickUtterances.${a.id}`;
+        const preset = t(presetKey);
         const familyMap = {
           qa_action_today: "action_today",
           qa_action_week: "action_week",
@@ -216,7 +238,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
         submit(preset, { clickedFollowupFamily: familyMap[a.id] || null });
       },
     }));
-  }, [lastResponse, submit]);
+  }, [lastResponse, submit, t]);
 
   const completedAssistantTurns = useMemo(() => countCompletedAssistantTurns(lines), [lines]);
   const shouldCompactHistory = completedAssistantTurns >= 4;
@@ -239,19 +261,19 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
       style={{ height: "420px", minHeight: "420px" }}
     >
       <div className="flex items-center justify-between gap-2 shrink-0 mb-1">
-        <div className="text-xs font-extrabold tracking-wide text-white/70">Ask about the report</div>
+        <div className="text-xs font-extrabold tracking-wide text-white/70">{t("ui.copilot.panel.title")}</div>
         <Link
           href="/ai-disclosure"
           className="text-[10px] text-sky-300/80 hover:text-sky-200 underline whitespace-nowrap shrink-0"
         >
-          Information about AI use
+          {t("ui.copilot.panel.aiDisclosureLink")}
         </Link>
       </div>
       <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-1 pr-0.5" role="note">
-        This information is based on practice data on the site and is not a diagnosis or professional advice.
+        {t("ui.copilot.panel.disclaimer")}
       </p>
       <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-2 pr-0.5">
-        You can ask freely about the report here, for example: what matters most right now, what to focus on this week, what&apos;s going well, or how to explain it to your child.
+        {t("ui.copilot.panel.intro")}
       </p>
 
       <div
@@ -297,7 +319,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
                   : "text-white/85 whitespace-pre-wrap"
               }
             >
-              {isUser ? <span className="font-bold text-white/50">You: </span> : null}
+              {isUser ? <span className="font-bold text-white/50">{t("ui.copilot.panel.youPrefix")}</span> : null}
               {body}
             </div>
           );
@@ -314,12 +336,12 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
           }}
         >
           <label htmlFor={formId} className="sr-only">
-            Question
+            {t("ui.copilot.panel.questionLabel")}
           </label>
           <input
             id={formId}
             className="flex-1 min-w-0 rounded-lg border border-white/15 bg-white/[0.06] px-3 py-2 text-sm text-white placeholder:text-white/35"
-            placeholder="Question about the report…"
+            placeholder={t("ui.copilot.panel.placeholder")}
             value={utterance}
             disabled={busy}
             onChange={(e) => setUtterance(e.target.value)}
@@ -329,7 +351,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
             disabled={busy || !utterance.trim()}
             className="shrink-0 rounded-lg border border-sky-400/40 bg-sky-900/35 px-4 py-2 text-sm font-bold text-sky-50 disabled:opacity-40"
           >
-            Send
+            {t("ui.copilot.panel.send")}
           </button>
         </form>
       </div>

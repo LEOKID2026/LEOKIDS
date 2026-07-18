@@ -4,16 +4,17 @@
  * Deterministic only — parent-only, contract-bound families from TruthPacket.
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { mapCanonicalIntentToPackGroup } from "./parent-coaching-packs.js";
 
 const TEXT = {
-  action_today: "Is it possible to take a small step together today at home around the same topic?",
-  action_week: "Can we draw together a short plan for the coming week around this topic?",
-  avoid_now: "Want to mark together what you should avoid in the coming week?",
-  advance_or_hold: "Do you want to check together when you should promote and when to stop on the same topic?",
-  explain_to_child: "Want a short wording to explain to a child without pressure?",
-  ask_teacher: "Do you want a wording for a targeted question for the teacher according to what appears in the report?",
-  uncertainty_boundary: "Want to break down what is still not clear from the data in the report?",
+  action_today: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.is_it_possible_to_take_a_small_step_together_today_at_home_aroun"),
+  action_week: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.can_we_draw_together_a_short_plan_for_the_coming_week_around_thi"),
+  avoid_now: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.want_to_mark_together_what_you_should_avoid_in_the_coming_week"),
+  advance_or_hold: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.do_you_want_to_check_together_when_you_should_promote_and_when_t"),
+  explain_to_child: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.want_a_short_wording_to_explain_to_a_child_without_pressure"),
+  ask_teacher: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac"),
+  uncertainty_boundary: copilotStaticMessage("copilot.answers.utils_parent-copilot_followup-engine.want_to_break_down_what_is_still_not_clear_from_the_data_in_the_"),
 };
 
 /** @type {Record<string, Partial<Record<string, number>>>} */
@@ -388,7 +389,7 @@ export function selectFollowUp(input) {
   return {
     selected: {
       family: chosen,
-      textHe,
+      answerText,
       reasonCode: reasonForChoice(chosen, relax),
     },
     candidateFamiliesRanked: ranked,

@@ -1,3 +1,4 @@
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 /**
  * Renders ParentCopilotResponseV1 from validated pipeline outputs.
  */
@@ -64,14 +65,14 @@ export function buildQuickActions(truthPacket, answerValidatorOk) {
     }),
     qa({
       id: "qa_action_week",
-      labelHe: "Program for the week",
+      labelHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_render-adapter.program_for_the_week"),
       sourceContract: "contractsV1.recommendation",
       contractGate: () => recOk,
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "ineligible_recommendation" : "cap_blocked"),
     }),
     qa({
       id: "qa_avoid_now",
-      labelHe: "What to avoid now",
+      labelHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_render-adapter.what_to_avoid_now"),
       sourceContract: "contractsV1.readiness",
       contractGate: () =>
         readiness === "insufficient" || readiness === "forming" || readiness === "emerging",
@@ -86,7 +87,7 @@ export function buildQuickActions(truthPacket, answerValidatorOk) {
     }),
     qa({
       id: "qa_explain_to_child",
-      labelHe: "Formulation for a child",
+      labelHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_render-adapter.formulation_for_a_child"),
       sourceContract: "contractsV1.narrative",
       contractGate: () => !!truthPacket?.contracts?.narrative,
       disabledReason: (cOk, vOk) => (!vOk ? "validator_blocked" : !cOk ? "scope_not_applicable" : "scope_not_applicable"),

@@ -2,6 +2,7 @@
  * Continuation turns: classify short parent replies by behavior class, then compose from last scope + contracts (no full replan).
  */
 
+import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { classifyShortParentReplyClassHe } from "./conversational-reply-class-he.js";
 import { planConversation } from "./conversation-planner.js";
@@ -106,7 +107,7 @@ function composeBlocksForPlannerIntent(plannerIntent, truthPacket, conv) {
   return compactParentAnswerBlocks(
     (composed.answerBlocks || []).map((b) => ({
       ...b,
-      textHe: normalizeParentFacingHe(String(b.textHe || "").trim()),
+      answerText: normalizeParentFacingHe(String(b.answerText || "").trim()),
     })),
     { scopeType: String(truthPacket.scopeType || ""), maxBlocks: 5, maxTotalChars: 2400 },
   );
@@ -114,7 +115,7 @@ function composeBlocksForPlannerIntent(plannerIntent, truthPacket, conv) {
 
 /**
  * @param {{ utteranceStr: string; conv: object; payload: unknown }} ctx
- * @returns {null|{ truthPacket: object; plannerIntent: string; answerBlocks: Array<{ type: string; textHe: string; source: string }>; scopeMeta: object; replyClass: string }}
+ * @returns {null|{ truthPacket: object; plannerIntent: string; answerBlocks: Array<{ type: string; answerText: string; source: string }>; scopeMeta: object; replyClass: string }}
  */
 export function tryBuildParentShortFollowupDraft(ctx) {
   const utteranceStr = String(ctx.utteranceStr || "").trim();
@@ -170,7 +171,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
 
   let plannerIntent = String(conv.lastPlannerIntent || "unclear").trim() || "unclear";
 
-  /** @type {Array<{ type: string; textHe: string; source: string }>} */
+  /** @type {Array<{ type: string; answerText: string; source: string }>} */
   let answerBlocks = [];
 
   switch (replyClass) {
@@ -181,22 +182,22 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           answerBlocks = [
             {
               type: "observation",
-              textHe:
+              answerText:
                 "According to what is in the report at the moment - there is not yet a strong enough basis for a big step; Better a very tiny step after more practice, or a short wait.",
               source: "composed",
             },
-            { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
+            { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
           ];
         } else {
           answerBlocks = [
             {
               type: "observation",
-              textHe: "Excellent - start with a small step that corresponds to what appears in the report, without expanding beyond this wording.",
+              explanationCode: "copilot.answers.utils_parent-copilot_short-followup-composer.excellent_start_with_a_small_step_that_corresponds_to_what_appea",
               source: "composed",
             },
           ];
-          if (act) answerBlocks.push({ type: "next_step", textHe: act.slice(0, 420), source: "composed" });
-          else answerBlocks.push({ type: "meaning", textHe: interp.slice(0, 420), source: "composed" });
+          if (act) answerBlocks.push({ type: "next_step", answerText: act.slice(0, 420), source: "composed" });
+          else answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 420), source: "composed" });
         }
       } else {
         const mapped = plannerIntentForAcceptedFollowupFamily(fam);
@@ -218,16 +219,16 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           answerBlocks = compactParentAnswerBlocks(
             (composed.answerBlocks || []).map((b) => ({
               ...b,
-              textHe: normalizeParentFacingHe(String(b.textHe || "").trim()),
+              answerText: normalizeParentFacingHe(String(b.answerText || "").trim()),
             })),
             { scopeType: String(truthPacket.scopeType || ""), maxBlocks: 5, maxTotalChars: 2400 },
           );
           const hook = acceptanceHookHe(fam, truthPacket);
-          const oix = answerBlocks.findIndex((b) => b.type === "observation" && String(b.textHe || "").trim());
-          if (oix >= 0 && hook && !String(answerBlocks[oix].textHe || "").includes("Carry out the continuation")) {
+          const oix = answerBlocks.findIndex((b) => b.type === "observation" && String(b.answerText || "").trim());
+          if (oix >= 0 && hook && !String(answerBlocks[oix].answerText || "").includes("Carry out the continuation")) {
             answerBlocks[oix] = {
               ...answerBlocks[oix],
-              textHe: `${hook}${String(answerBlocks[oix].textHe || "").trim()}`,
+              answerText: `${hook}${String(answerBlocks[oix].answerText || "").trim()}`,
               source: "composed",
             };
           }
@@ -235,10 +236,10 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           answerBlocks = [
             {
               type: "observation",
-              textHe: "Understandable - we stay with the same wording from the report and move forward with the next small step when appropriate.",
+              explanationCode: "copilot.answers.utils_parent-copilot_short-followup-composer.understandable_we_stay_with_the_same_wording_from_the_report_and",
               source: "composed",
             },
-            { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
+            { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
           ];
         }
       }
@@ -248,10 +249,10 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe: "OK - you don't have to promote now. Stay with what the report shows, without pressure to make an immediate decision.",
+          answerText: "OK - you don't have to promote now. Stay with what the report shows, without pressure to make an immediate decision.",
           source: "composed",
         },
-        { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
+        { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
       ];
       break;
 
@@ -260,13 +261,13 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe:
+          answerText:
             dl.cannotConcludeYet || dl.confidenceBand === "low"
               ? "It's not necessarily \"bad\" - it's mostly a sign that the report isn't yet close enough to label a situation sharply."
               : "According to what appears in the report, there is no sign of a blanket \"bad\" here - it is still a picture within the period.",
           source: "composed",
         },
-        { type: "meaning", textHe: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
+        { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
       ];
       break;
 
@@ -275,11 +276,11 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe: obs ? `Simply put: ${obs.slice(0, 420)}` : "There is no long paragraph here for elaboration - you can put in another word what exactly is not clear.",
+          answerText: obs ? `Simply put: ${obs.slice(0, 420)}` : copilotStaticMessage("copilot.answers.utils_parent-copilot_short-followup-composer.there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a"),
           source: "composed",
         },
       ];
-      if (interp) answerBlocks.push({ type: "meaning", textHe: interp.slice(0, 380), source: "composed" });
+      if (interp) answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 380), source: "composed" });
       break;
 
     case "clarify_previous": {
@@ -290,11 +291,11 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe: `We remain on the same wording from the ${scopeBit} report, without adding a new fact beyond what already appears in the report. ${tail}`,
+          answerText: `We remain on the same wording from the ${scopeBit} report, without adding a new fact beyond what already appears in the report. ${tail}`,
           source: "composed",
         },
       ];
-      if (interp) answerBlocks.push({ type: "meaning", textHe: interp.slice(0, 380), source: "composed" });
+      if (interp) answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 380), source: "composed" });
       break;
     }
 
@@ -302,13 +303,13 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       answerBlocks = [
         {
           type: "observation",
-          textHe: obs
+          answerText: obs
             ? `Continuing from the same point of the report - staying in the same picture without adding a new topic: ${obs.slice(0, 360)}`
-            : "Continuing from the same point of the report - staying in the same picture without adding a new subject beyond what has already been presented.",
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_short-followup-composer.continuing_from_the_same_point_of_the_report_staying_in_the_same"),
           source: "composed",
         },
       ];
-      if (interp) answerBlocks.push({ type: "meaning", textHe: interp.slice(0, 400), source: "composed" });
+      if (interp) answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 400), source: "composed" });
       break;
 
     case "contrast_follow_negative": {
@@ -362,10 +363,10 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       return null;
   }
 
-  answerBlocks = answerBlocks.filter((b) => String(b.textHe || "").trim().length > 1);
+  answerBlocks = answerBlocks.filter((b) => String(b.answerText || "").trim().length > 1);
   if (answerBlocks.length < 2) {
     const fill = interp || obs;
-    if (fill) answerBlocks.push({ type: "meaning", textHe: fill.slice(0, 400), source: "composed" });
+    if (fill) answerBlocks.push({ type: "meaning", answerText: fill.slice(0, 400), source: "composed" });
   }
   if (answerBlocks.length < 2) return null;
 

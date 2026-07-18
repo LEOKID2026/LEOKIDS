@@ -2,6 +2,7 @@
  * Answer key list — shared renderer for screen preview and print document.
  */
 
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import WorksheetAnswerKeyAnswer from "./WorksheetAnswerKeyAnswer.jsx";
 import { getAnswerKeyGridClass } from "../../lib/worksheets/worksheet-print-layout.js";
 
@@ -25,7 +26,7 @@ export default function WorksheetAnswerKeyList({ answers, mode }) {
           className={isPrint ? "answer-key-item" : "worksheet-screen-answer-card"}
         >
           <div className={isPrint ? "answer-key-item-head" : "worksheet-screen-answer-head"}>
-            <span>Answer</span>{" "}
+            <span>{globalBurnDownCopy("components__worksheets__WorksheetAnswerKeyList", "answer")}</span>{" "}
             <span className="worksheet-question-number">{row.displayIndex}</span>
           </div>
           <WorksheetAnswerKeyAnswer row={row} />
