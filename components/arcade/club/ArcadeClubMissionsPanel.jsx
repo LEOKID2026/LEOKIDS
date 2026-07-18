@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
+import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
+import { DEMO_ARCADE_MISSIONS } from "../../demo/demo-display-fixtures.js";
 
-/** @param {{ gh: Record<string, string>, className?: string }} props */
-export default function ArcadeClubMissionsPanel({ gh, className = "" }) {
-  const [missions, setMissions] = useState([]);
-  const [achievements, setAchievements] = useState([]);
-  const [locked, setLocked] = useState(false);
+/** @param {{ gh: Record<string, string>, className?: string, demoMode?: boolean }} props */
+export default function ArcadeClubMissionsPanel({ gh, className = "", demoMode: demoModeProp = false }) {
+  const demoMode = demoModeProp || isDemoMode();
+  const [missions, setMissions] = useState(demoMode ? DEMO_ARCADE_MISSIONS.missions : []);
+  const [achievements, setAchievements] = useState(demoMode ? DEMO_ARCADE_MISSIONS.achievements : []);
+  const [locked, setLocked] = useState(demoMode ? DEMO_ARCADE_MISSIONS.featureLocked : false);
 
   const load = useCallback(async () => {
     const [mRes, aRes] = await Promise.all([
@@ -21,8 +24,14 @@ export default function ArcadeClubMissionsPanel({ gh, className = "" }) {
   }, []);
 
   useEffect(() => {
+    if (demoMode) {
+      setMissions(DEMO_ARCADE_MISSIONS.missions);
+      setAchievements(DEMO_ARCADE_MISSIONS.achievements);
+      setLocked(DEMO_ARCADE_MISSIONS.featureLocked);
+      return undefined;
+    }
     void load();
-  }, [load]);
+  }, [demoMode, load]);
 
   if (locked) {
     return (

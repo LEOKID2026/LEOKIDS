@@ -49,6 +49,13 @@ import { isGuestStudent } from "../../lib/guest/guest-display.js";
 import { shouldClearGuestResumeTokenOnLogout } from "../../lib/guest/guest-resume-token.client.js";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import MockModeBanner from "../../components/ui/MockModeBanner.jsx";
+import { isDemoMode, buildDemoDisplayStudent, clearDemoSession } from "../../lib/demo/demo-mode.client.js";
+import {
+  buildDemoHomePayload,
+  buildDemoDashboardView,
+  DEMO_AVATAR_EMOJI,
+  DEMO_DIAMOND_BALANCE,
+} from "../../components/demo/demo-display-fixtures.js";
 import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { resolveStudentApiErrorMessage } from "../../lib/student-client/student-api-legacy-errors.js";
 
@@ -291,7 +298,7 @@ function RecommendationsSection({ recommendations }) {
 
 export default function StudentHomePage() {
   const router = useRouter();
-  const { direction } = useI18n();
+  const { direction, locale } = useI18n();
   const t = useT();
   const { tokens: T, theme, isBright } = useStudentTheme();
   const [authPhase, setAuthPhase] = useState("checking");
@@ -495,6 +502,21 @@ export default function StudentHomePage() {
 
   useEffect(() => {
     if (!router.isReady) return undefined;
+    if (isDemoMode()) {
+      const demoStudent = buildDemoDisplayStudent(undefined, locale);
+      setStudent(demoStudent);
+      setAuthPhase("authed");
+      setHomePayload(buildDemoHomePayload(locale));
+      setProfilePhase("ok");
+      setAnalyticsPhase("ok");
+      setDiamondBalance(DEMO_DIAMOND_BALANCE);
+      setPersonalActivities([]);
+      setPersonalActivityCount(0);
+      setPersonalActivitiesPhase("idle");
+      setHeroAvatarEmoji(DEMO_AVATAR_EMOJI);
+      setHeroAvatarBackground("sky");
+      return undefined;
+    }
     let mounted = true;
     setProfileError("");
     setPersonalActivities([]);
@@ -606,9 +628,10 @@ export default function StudentHomePage() {
       mounted = false;
     };
     // Only isReady + loadHomeDashboard — not router (changes on hydration and aborts fetch mid-flight → stuck on "Loading home...").
-  }, [router.isReady, loadHomeDashboard]);
+  }, [router.isReady, loadHomeDashboard, locale]);
 
   const dashboardView = useMemo(() => {
+    if (isDemoMode()) return buildDemoDashboardView(locale);
     if (!student?.id || profilePhase !== "ok" || !homePayload) return null;
     try {
       const v = buildStudentHomeView({ student, homePayload });
@@ -627,9 +650,10 @@ export default function StudentHomePage() {
       }
       return null;
     }
-  }, [student, homePayload, profilePhase]);
+  }, [student, homePayload, profilePhase, locale]);
 
   useEffect(() => {
+    if (isDemoMode()) return undefined;
     if (authPhase !== "authed" || !student?.id) {
       setPersonalActivities([]);
       setPersonalActivityCount(0);
@@ -683,6 +707,7 @@ export default function StudentHomePage() {
   }, [authPhase, student?.id]);
 
   useEffect(() => {
+    if (isDemoMode()) return undefined;
     if (authPhase !== "authed" || !student?.id) {
       setDiamondBalance(null);
       return undefined;
@@ -807,6 +832,11 @@ export default function StudentHomePage() {
   const closeHomePanel = useCallback(() => setActivePanel(null), []);
 
   const onLogout = async () => {
+    if (isDemoMode()) {
+      clearDemoSession();
+      await router.replace("/");
+      return;
+    }
     setLogoutMessage("");
     const sid = student?.id;
     setLogoutBusy(true);
@@ -919,7 +949,7 @@ export default function StudentHomePage() {
         noindex={studentHomeSeo.noindex}
       />
       <div
-        key={student.id}
+        key={isDemoMode() ? "demo-home" : student.id}
         className="relative flex h-full min-h-0 w-full flex-1 flex-col"
         dir={direction}
         style={{
@@ -954,10 +984,10 @@ export default function StudentHomePage() {
           lockMessage={t(guestPolicy?.lockMessageKey || GUEST_LOCK_MESSAGE_KEY)}
           logoutBusy={logoutBusy}
           onOpenPanel={openHomePanel}
-          onOpenAvatar={() => setShowAvatarModal(true)}
+          onOpenAvatar={isDemoMode() ? undefined : () => setShowAvatarModal(true)}
           onLogout={() => void onLogout()}
           onLockedTap={showLockToast}
-          onSurpriseOpen={cardRewardsEnabled ? () => setBoxModalOpen(true) : undefined}
+          onSurpriseOpen={cardRewardsEnabled && !isDemoMode() ? () => setBoxModalOpen(true) : undefined}
           surpriseOpeningLocked={boxModalOpen}
           surpriseRefreshToken={boxRefreshToken}
           surpriseStatusOverride={surpriseBoxStatus}
@@ -1020,12 +1050,12 @@ export default function StudentHomePage() {
         {renderActivePanelContent()}
       </StudentHomeModal>
       <StudentSurpriseBoxOpenModal
-        open={boxModalOpen}
+        open={boxModalOpen && !isDemoMode()}
         onClose={() => setBoxModalOpen(false)}
         onOpened={handleSurpriseBoxOpened}
       />
       <StudentAvatarPickerModal
-        open={showAvatarModal}
+        open={showAvatarModal && !isDemoMode()}
         onClose={() => setShowAvatarModal(false)}
         playerName={heroName}
         serverAvatarEmoji={

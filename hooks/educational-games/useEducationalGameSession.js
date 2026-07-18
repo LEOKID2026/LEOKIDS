@@ -1,4 +1,6 @@
 import { useCallback, useRef, useState } from "react";
+import { isDemoMode } from "../../lib/demo/demo-mode.client.js";
+import { assertDemoPlayAllowed, DEMO_TIME_EXPIRED_CODE } from "../../lib/demo/demo-play-guard.client.js";
 
 async function postJson(url, body) {
   const res = await fetch(url, {
@@ -25,12 +27,22 @@ export function useEducationalGameSession(gameKey) {
       setBusy(true);
       setError("");
       try {
+        if (isDemoMode()) {
+          if (!assertDemoPlayAllowed()) {
+            setError(DEMO_TIME_EXPIRED_CODE);
+            return null;
+          }
+          const demoId = `demo-edu-${gameKey}-${Date.now()}`;
+          setSessionId(demoId);
+          setSessionStartedAtMs(Date.now());
+          return demoId;
+        }
         const { ok, payload } = await postJson("/api/student/educational-games/start", {
           gameKey,
           difficulty: difficulty || undefined,
         });
         if (!ok) {
-          setError(typeof payload?.error === "string" ? payload.error : "לא ניתן להתחיל משחק");
+          setError(typeof payload?.error === "string" ? payload.error : "start_failed");
           return null;
         }
         setSessionId(payload.sessionId);
@@ -40,7 +52,7 @@ export function useEducationalGameSession(gameKey) {
         setSessionStartedAtMs(startedMs);
         return payload.sessionId;
       } catch {
-        setError("שגיאת רשת");
+        setError("network_error");
         return null;
       } finally {
         setBusy(false);
@@ -52,12 +64,15 @@ export function useEducationalGameSession(gameKey) {
   const finishSession = useCallback(
     async (metrics) => {
       if (!sessionId) {
-        setError("חסר מזהה משחק");
+        setError("missing_session");
         return null;
       }
       setBusy(true);
       setError("");
       try {
+        if (isDemoMode()) {
+          return { ok: true, demo: true, sessionId, metrics };
+        }
         const durationMs =
           sessionStartedAtMs != null ? Math.max(0, Date.now() - sessionStartedAtMs) : undefined;
         const { ok, payload } = await postJson("/api/student/educational-games/finish", {
@@ -70,12 +85,12 @@ export function useEducationalGameSession(gameKey) {
           },
         });
         if (!ok) {
-          setError(typeof payload?.error === "string" ? payload.error : "לא ניתן לשמור תוצאה");
+          setError(typeof payload?.error === "string" ? payload.error : "finish_failed");
           return null;
         }
         return payload;
       } catch {
-        setError("שגיאת רשת");
+        setError("network_error");
         return null;
       } finally {
         setBusy(false);
@@ -84,19 +99,11 @@ export function useEducationalGameSession(gameKey) {
     [sessionId, sessionStartedAtMs, gameKey],
   );
 
-  const resetSession = useCallback(() => {
-    setSessionId(null);
-    setSessionStartedAtMs(null);
-    setError("");
-  }, []);
-
   return {
     sessionId,
-    sessionStartedAtMs,
     busy,
     error,
     startSession,
     finishSession,
-    resetSession,
   };
 }

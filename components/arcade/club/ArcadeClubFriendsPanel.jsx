@@ -1,5 +1,7 @@
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useState } from "react";
+import { demoPackCopyForLocale } from "../../../lib/demo/demo-pack-copy.js";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 
 function friendRequestFeedback(json) {
   if (json?.ok) return "Friend request sent";
@@ -10,8 +12,9 @@ function friendRequestFeedback(json) {
   return json?.message || json?.error || "Error";
 }
 
-/** @param {{ gh: Record<string, string>, leoNumber?: string|null, leoNumberLoading?: boolean }} props */
-export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumberLoading = false }) {
+/** @param {{ gh: Record<string, string>, leoNumber?: string|null, leoNumberLoading?: boolean, demoDisabled?: boolean }} props */
+export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumberLoading = false, demoDisabled = false }) {
+  const { locale } = useI18n();
   const [friends, setFriends] = useState([]);
   const [pending, setPending] = useState([]);
   const [query, setQuery] = useState("");
@@ -32,8 +35,19 @@ export default function ArcadeClubFriendsPanel({ gh, leoNumber = null, leoNumber
   }, []);
 
   useEffect(() => {
+    if (demoDisabled) return undefined;
     void load();
-  }, [load]);
+  }, [load, demoDisabled]);
+
+  if (demoDisabled) {
+    return (
+      <div className={`${gh.arcadePanelFriends || gh.card} text-left`} dir="ltr">
+        <p className={gh.arcadePanelBlurb || gh.cardBlurb}>
+          {demoPackCopyForLocale(locale, "friends", "demoUnavailable")}
+        </p>
+      </div>
+    );
+  }
 
   const sendRequest = async () => {
     setBusy(true);

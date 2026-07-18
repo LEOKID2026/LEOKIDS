@@ -2,6 +2,7 @@ import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useGameUiDisplay } from "../../lib/games/game-locale-context.jsx";
 import { useDisplayGame } from "../../hooks/games/useDisplayGame.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { assertDemoPlayAllowed } from "../../lib/demo/demo-play-guard.client.js";
 import { resetSoloGameDocumentShell } from "../../lib/solo-games/solo-game-document-cleanup.client.js";
 import { enterMobileGameFullscreenFromUserGesture } from "../../lib/solo-games/solo-game-fullscreen.client.js";
 import Head from "next/head";
@@ -70,6 +71,7 @@ export default function OfflineSoloGameShell({ gameKey }) {
   const { helpGame, openSoloGameHelp, closeSoloGameHelp } = useSoloGameHelp();
 
   const handleStart = useCallback(() => {
+    if (!assertDemoPlayAllowed()) return;
     if (typeof document !== "undefined") {
       enterMobileGameFullscreenFromUserGesture(
         document.querySelector("[data-solo-game-shell]"),

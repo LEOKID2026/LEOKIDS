@@ -13,6 +13,19 @@ import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-fla
 import { formatCoinAmountHe, formatCoinAmountNumberHe } from "../../lib/rewards/rewards-ui.js";
 import { useRewardUiCopy } from "../../lib/rewards/reward-locale-context.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
+import { isDemoMode, buildDemoDisplayStudent, readDemoSession } from "../../lib/demo/demo-mode.client.js";
+import { demoPackCopyForLocale } from "../../lib/demo/demo-pack-copy.js";
+import { DEMO_COIN_BALANCE } from "../../components/demo/demo-display-fixtures.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+
+const DEMO_CARDS_DIAMOND_BALANCE = 10;
+
+const DEMO_CARDS_ENDPOINTS = {
+  collection: "/api/demo/cards/collection",
+  shop: "/api/demo/cards/shop",
+  catalog: "/api/demo/cards/catalog",
+  series: "/api/demo/cards/series",
+};
 
 const CARDS_ENDPOINTS = {
   summary: "/api/student/rewards/cards/summary",
@@ -161,6 +174,7 @@ function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games
 
 export default function StudentCardsPage() {
   const router = useRouter();
+  const { locale } = useI18n();
   const { tokens: T, theme } = useStudentTheme();
   const copy = useRewardUiCopy();
   const tabs = useMemo(
@@ -249,6 +263,57 @@ export default function StudentCardsPage() {
     }
   }, [loadSummary, loadTabData, copy]);
 
+  const loadDemoTabData = useCallback(async (tabId, { force = false } = {}) => {
+    if (!DEMO_CARDS_ENDPOINTS[tabId]) return;
+    if (!force && loadedTabsRef.current.has(tabId)) return;
+
+    setTabLoading((prev) => ({ ...prev, [tabId]: true }));
+    try {
+      const grade = readDemoSession()?.gradeLevel || "g3";
+      const res = await fetch(
+        `${DEMO_CARDS_ENDPOINTS[tabId]}?gradeLevel=${encodeURIComponent(grade)}`,
+        {
+          cache: "no-store",
+          headers: { Accept: "application/json" },
+        },
+      );
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json?.ok !== true) {
+        throw new Error(json?.error || "demo_cards_load_failed");
+      }
+      setPayload((prev) => {
+        const next = { ...(prev || {}), coinBalance: DEMO_COIN_BALANCE };
+        if (tabId === "collection") next.collection = json.collection;
+        if (tabId === "shop") next.shop = json.shop;
+        if (tabId === "catalog") next.catalog = json.catalog;
+        if (tabId === "series") next.seriesProgress = json.seriesProgress;
+        return next;
+      });
+      loadedTabsRef.current.add(tabId);
+      setLoadedTabs(new Set(loadedTabsRef.current));
+    } catch {
+      setMessageIsError(true);
+      setMessageHe(demoPackCopyForLocale(locale, "cards", "loadFailed"));
+      throw new Error("demo_cards_load_failed");
+    } finally {
+      setTabLoading((prev) => ({ ...prev, [tabId]: false }));
+    }
+  }, [locale]);
+
+  const loadDemoInitialCards = useCallback(async () => {
+    setCardsPhase("loading");
+    setCardsError("");
+    loadedTabsRef.current = new Set();
+    setLoadedTabs(new Set());
+    try {
+      await Promise.all([loadDemoTabData("collection"), loadDemoTabData("shop")]);
+      setCardsPhase("ok");
+    } catch {
+      setCardsError(demoPackCopyForLocale(locale, "cards", "loadFailed"));
+      setCardsPhase("error");
+    }
+  }, [loadDemoTabData, locale]);
+
   const refreshAfterCardAction = useCallback(async () => {
     loadedTabsRef.current.delete("shop");
     loadedTabsRef.current.delete("collection");
@@ -264,6 +329,13 @@ export default function StudentCardsPage() {
 
   useEffect(() => {
     if (!router.isReady) return undefined;
+    if (isDemoMode()) {
+      setStudent(buildDemoDisplayStudent(undefined, locale));
+      setAuthPhase("authed");
+      setPayload({ coinBalance: DEMO_COIN_BALANCE });
+      void loadDemoInitialCards();
+      return undefined;
+    }
     let mounted = true;
     setAuthPhase("checking");
 
@@ -289,22 +361,39 @@ export default function StudentCardsPage() {
     return () => {
       mounted = false;
     };
-  }, [router.isReady, router, loadInitialCards, rewardsEnabled]);
+  }, [router.isReady, router, loadInitialCards, rewardsEnabled, loadDemoInitialCards, locale]);
 
   useEffect(() => {
     if (cardsPhase !== "ok") return undefined;
+    if (isDemoMode()) {
+      if (!loadedTabsRef.current.has(activeTab)) {
+        void loadDemoTabData(activeTab);
+      }
+      return undefined;
+    }
     void loadTabData(activeTab);
     return undefined;
-  }, [activeTab, cardsPhase, loadTabData]);
+  }, [activeTab, cardsPhase, loadTabData, loadDemoTabData]);
 
   const coinBalanceAmount = useMemo(() => {
+    if (isDemoMode()) return DEMO_COIN_BALANCE;
     if (student?.coin_balance == null) return null;
     const n = Number(student.coin_balance);
     if (!Number.isFinite(n)) return null;
     return Math.floor(n);
   }, [student?.coin_balance]);
 
+  const diamondBalanceAmount = useMemo(() => {
+    if (isDemoMode()) return DEMO_CARDS_DIAMOND_BALANCE;
+    return null;
+  }, []);
+
   const handlePurchase = async (cardId) => {
+    if (isDemoMode()) {
+      setMessageIsError(true);
+      setMessageHe(demoPackCopyForLocale(locale, "cards", "purchaseBlocked"));
+      return;
+    }
     const shopCard = payload?.shop?.find((c) => c.id === cardId);
     if (shopCard?.alreadyOwned || shopCard?.canAfford === false) return;
 
@@ -347,6 +436,11 @@ export default function StudentCardsPage() {
   };
 
   const handleSellDuplicate = async (card) => {
+    if (isDemoMode()) {
+      setMessageIsError(true);
+      setMessageHe(demoPackCopyForLocale(locale, "cards", "sellBlocked"));
+      return;
+    }
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
@@ -467,6 +561,7 @@ export default function StudentCardsPage() {
 
     if (activeTab === "shop") {
       const shopList = payload?.shop || [];
+      const demoShop = isDemoMode();
       const shopPreviewCards = shopList.map((c) =>
         c.alreadyOwned ? c : { ...c, showLockedStamp: true }
       );
@@ -477,17 +572,17 @@ export default function StudentCardsPage() {
           T={T}
           previewCards={shopPreviewCards}
           studentFullName={studentDisplayName}
-          getPreviewAllowDownload={(card) => card.alreadyOwned === true}
+          getPreviewAllowDownload={(card) => !demoShop && card.alreadyOwned === true}
           renderCardProps={(card) => {
-            const canBuy = card.canAfford === true && !card.alreadyOwned;
-            const canSell = card.canSellDuplicate === true && card.sellbackCoins > 0;
-            const ownedOnly = card.alreadyOwned && !canSell;
+            const canBuy = !demoShop && card.canAfford === true && !card.alreadyOwned;
+            const canSell = !demoShop && card.canSellDuplicate === true && card.sellbackCoins > 0;
+            const ownedOnly = !demoShop && card.alreadyOwned && !canSell;
             const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("en-US");
             const sellBusy = actionBusy === `sell:${card.id}`;
             const buyBusy = actionBusy === card.id;
             return {
               showLockedStamp: !card.alreadyOwned,
-              allowDownload: card.alreadyOwned,
+              allowDownload: !demoShop && card.alreadyOwned,
               footer: (
                 <>
                   <p className={`text-sm font-semibold ${T.statValue}`}>
@@ -501,7 +596,7 @@ export default function StudentCardsPage() {
                     <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
                   )}
                   <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
-                    {!card.alreadyOwned && !canBuy
+                    {!demoShop && !card.alreadyOwned && !canBuy
                       ? card.missingCoins > 0
                         ? copy("shopView", "needMoreCoins", {
                             amount: formatCoinAmountHe(card.missingCoins),
@@ -511,8 +606,9 @@ export default function StudentCardsPage() {
                   </p>
                   <button
                     type="button"
-                    disabled={ownedOnly || sellBusy || buyBusy || (!canBuy && !canSell)}
+                    disabled={demoShop || ownedOnly || sellBusy || buyBusy || (!canBuy && !canSell)}
                     onClick={() => {
+                      if (demoShop) return;
                       if (canSell) void handleSellDuplicate(card);
                       else if (canBuy) void handlePurchase(card.id);
                     }}

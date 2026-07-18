@@ -23,6 +23,9 @@ import { GUEST_GAME_LOCK_LABEL_HE } from "../../lib/guest/constants.js";
 import { mapEntryCostOptionsForUi } from "../../lib/learning-client/economyConfigClient.js";
 import { studentAvatarFromHomeSummary } from "../../lib/learning-client/studentHomeAvatarFromSummary.js";
 import { clearArcadeActiveRoom } from "../../lib/arcade/client/arcadeRoomLifecycle.client.js";
+import { isDemoMode, readDemoSession } from "../../lib/demo/demo-mode.client.js";
+import { buildDemoArcadeFixtures } from "../../components/demo/demo-display-fixtures.js";
+import { demoPackCopyForLocale } from "../../lib/demo/demo-pack-copy.js";
 import {
   arcadeGameTileTheme,
   ARCADE_TILE_BADGE_ACTIVE,
@@ -326,9 +329,10 @@ function ArcadeGameCard({
 }
 
 export default function StudentArcadePage() {
+  const demoMode = isDemoMode();
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
-  const { direction } = useI18n();
+  const { direction, locale } = useI18n();
   const t = useT();
   const [balance, setBalance] = useState(null);
   const [diamondBalance, setDiamondBalance] = useState(null);
@@ -413,6 +417,47 @@ export default function StudentArcadePage() {
   }, []);
 
   useEffect(() => {
+    if (!demoMode) return undefined;
+    let cancelled = false;
+    const fixtures = buildDemoArcadeFixtures(locale);
+    (async () => {
+      try {
+        const grade = readDemoSession()?.gradeLevel || "g3";
+        const res = await fetch(`/api/demo/catalog?gradeLevel=${encodeURIComponent(grade)}`, {
+          credentials: "same-origin",
+          cache: "no-store",
+        });
+        const json = await res.json().catch(() => ({}));
+        if (cancelled || !json?.ok) return;
+        if (Array.isArray(json.games)) {
+          setGames(
+            json.games.map((g) => ({
+              gameKey: g.gameKey,
+              enabled: g.isEnabled === true,
+              foundationOnly: false,
+              guestLocked: g.category === "online",
+            })),
+          );
+        }
+      } catch {
+        /* demo catalog optional for lobby skeleton */
+      }
+    })();
+    setBalance(fixtures.balance);
+    setDiamondBalance(fixtures.diamondBalance);
+    setClubProfile({ ...fixtures.clubProfile });
+    setHomeAvatarEmoji(fixtures.avatar.avatarEmoji);
+    setHomeAvatarCustomDataUrl(fixtures.avatar.avatarCustomDataUrl);
+    setHomeAvatarBackground(fixtures.avatar.avatarBackgroundKey);
+    setOpenRooms([]);
+    setInitialSyncDone(true);
+    return () => {
+      cancelled = true;
+    };
+  }, [demoMode, locale]);
+
+  useEffect(() => {
+    if (demoMode) return undefined;
     let cancelled = false;
     (async () => {
       try {
@@ -424,7 +469,7 @@ export default function StudentArcadePage() {
     return () => {
       cancelled = true;
     };
-  }, [refresh]);
+  }, [refresh, demoMode]);
 
   const lobbyGameVm = useMemo(() => {
     return LOBBY_GAME_KEYS.map((gameKey) => {
@@ -487,15 +532,19 @@ export default function StudentArcadePage() {
   }, []);
 
   useEffect(() => {
-    if (!openRoomsPollActive) return undefined;
+    if (demoMode || !openRoomsPollActive) return undefined;
     refreshOpenRooms();
     const id = setInterval(() => {
       void refreshOpenRooms();
     }, POLL_MS);
     return () => clearInterval(id);
-  }, [openRoomsPollActive, refreshOpenRooms]);
+  }, [openRoomsPollActive, refreshOpenRooms, demoMode]);
 
   const run = async (promise) => {
+    if (demoMode) {
+      setUserMessage(demoPackCopyForLocale(locale, "arcade", "actionBlocked"));
+      return null;
+    }
     setBusy(true);
     setUserMessage("");
     try {
@@ -510,6 +559,10 @@ export default function StudentArcadePage() {
   };
 
   const runQuick = async (promise) => {
+    if (demoMode) {
+      setUserMessage(demoPackCopyForLocale(locale, "arcade", "quickPlayBlocked"));
+      return null;
+    }
     setBusy(true);
     setUserMessage("");
     try {
@@ -673,7 +726,7 @@ export default function StudentArcadePage() {
           />
 
           <ArcadeLobbyHeader
-            displayName={clubProfile?.displayName || "Player"}
+            displayName={clubProfile?.displayName || (demoMode ? buildDemoArcadeFixtures(locale).clubProfile.displayName : "Player")}
             coinBalance={balanceDisplay}
             diamondBalance={diamondDisplay}
             isGuest={Boolean(clubProfile?.isGuest)}
@@ -714,6 +767,7 @@ export default function StudentArcadePage() {
               gh={GH}
               leoNumber={clubProfile?.leoNumber ?? null}
               leoNumberLoading={clubProfile == null}
+              demoDisabled={demoMode}
             />
           ) : activeTab === "shop" ? (
             <ArcadeClubShopPanel
@@ -721,11 +775,12 @@ export default function StudentArcadePage() {
               coinBalance={balanceNum}
               onCoinBalanceChange={(bal) => setBalance(bal)}
               studentFullName={clubProfile?.fullName || ""}
+              demoDisabled={demoMode}
             />
           ) : activeTab === "profile" ? (
             <div className="space-y-4">
-              <ArcadeClubProfilePanel gh={GH} />
-              <ArcadeClubMissionsPanel gh={GH} />
+              <ArcadeClubProfilePanel gh={GH} demoMode={demoMode} />
+              <ArcadeClubMissionsPanel gh={GH} demoMode={demoMode} />
               <div className={`${GH.arcadePanelMyRoom || GH.card} text-left`}>
                 <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Personal room</h3>
                 <p className={`mt-1 text-sm ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Your space with trophies and decorations</p>

@@ -47,6 +47,8 @@ import StudentAssignedActivityQuestionStage from "../../../components/student/St
 import StudentActivitySubmitConfirmModal from "../../../components/student/StudentActivitySubmitConfirmModal";
 import AssignedActivityBidiText from "../../../components/classroom-activities/AssignedActivityBidiText.jsx";
 import { prepareAssignedActivityQuestionSetForStudentDisplay } from "../../../lib/classroom-activities/prepare-assigned-activity-questions-for-display.client.js";
+import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
+import { demoPackCopy } from "../../../lib/demo/demo-pack-copy.js";
 
 function buildSavedAttemptsMap(attempts) {
   /** @type {Record<number, { questionIndex: number, selectedAnswer: string|null, isCorrect: boolean|null }>} */
@@ -127,6 +129,11 @@ export default function StudentActivityPage({ activityId }) {
   const isTouchDevice = useTouchPrimaryDevice();
 
   const startSession = useCallback(async () => {
+    if (isDemoMode()) {
+      setError(demoPackCopy("activity", "classroomUnavailable"));
+      setPhase("error");
+      return;
+    }
     setPhase("loading");
     setError("");
     try {

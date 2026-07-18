@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import OfflineGameHoldShell from "../../components/offline/OfflineGameHoldShell.jsx";
 import { useGameAudio } from "../../hooks/useGameAudio";
+import { assertDemoPlayAllowed } from "../../lib/demo/demo-play-guard.client.js";
 
 const CARD_POOL = ["🐶", "🐱", "🪙", "💎", "🦴", "🐾", "🦊", "🌙", "⚡️", "🔥"];
 const PACK = "pages__offline__memory-match";
@@ -119,6 +120,7 @@ export default function MemoryMatch() {
   function handleFlip(idx) {
     if (flipped.includes(idx) || matched.includes(deck[idx].id)) return;
     if (flipped.length === 2) return;
+    if (moves === 0 && matched.length === 0 && !assertDemoPlayAllowed()) return;
 
     primeFromUserGesture();
     playSfx("sfx-flap");
@@ -158,6 +160,7 @@ export default function MemoryMatch() {
   }
 
   function resetGame() {
+    if (!assertDemoPlayAllowed()) return;
     setDeck(buildDeck());
     setFlipped([]);
     setMatched([]);

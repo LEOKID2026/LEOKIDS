@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import OfflineGameHoldShell from "../../components/offline/OfflineGameHoldShell.jsx";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { useGameAudio } from "../../hooks/useGameAudio";
+import { assertDemoPlayAllowed } from "../../lib/demo/demo-play-guard.client.js";
 
 const SIZES = [3, 5, 7];
 const PACK = "pages__offline__tic-tac-toe";
@@ -149,6 +150,8 @@ export default function TicTacToeXL() {
   function handleMove(idx, isBot = false) {
     if (winner || board[idx]) return;
     if (!isBot && vsBot && currentPlayer === "O") return;
+    const isFreshBoard = board.every((cell) => !cell);
+    if (isFreshBoard && !isBot && !assertDemoPlayAllowed()) return;
 
     primeFromUserGesture();
     playSfx("sfx-place");
@@ -182,6 +185,7 @@ export default function TicTacToeXL() {
   }
 
   function resetBoard() {
+    if (!assertDemoPlayAllowed()) return;
     setBoard(makeBoard(size));
     setCurrentPlayer("X");
     setWinnerMessage("");

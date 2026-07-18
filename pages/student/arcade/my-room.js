@@ -6,8 +6,16 @@ import Layout from "../../../components/Layout";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { useGamesHubUi } from "../../../hooks/useGamesHubUi.js";
 import GameAccessGuard from "../../../components/games/GameAccessGuard.jsx";
+import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
+import { buildDemoMyRoomFixture } from "../../../components/demo/demo-display-fixtures.js";
+import { demoPackCopyForLocale } from "../../../lib/demo/demo-pack-copy.js";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 
 export default function ArcadeMyRoomPage() {
+  const { locale } = useI18n();
+  const demoMode = isDemoMode();
+  const demoMyRoom = buildDemoMyRoomFixture(locale);
+  const demoCopy = (group, key) => demoPackCopyForLocale(locale, group, key);
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
   const [room, setRoom] = useState(null);
@@ -30,10 +38,15 @@ export default function ArcadeMyRoomPage() {
   }, []);
 
   useEffect(() => {
+    if (demoMode) return undefined;
     void load();
-  }, [load]);
+  }, [load, demoMode]);
 
   const save = async () => {
+    if (demoMode) {
+      setMessage(demoCopy("myRoom", "saveBlocked"));
+      return;
+    }
     setBusy(true);
     setMessage("");
     try {
@@ -64,7 +77,12 @@ export default function ArcadeMyRoomPage() {
               </Link>
             </div>
 
-            {locked ? (
+            {demoMode ? (
+              <div className={`${GH.card} space-y-4 p-4 text-left`}>
+                <h1 className={GH.sectionTitle}>{demoCopy("myRoom", "title")}</h1>
+                <p className={`text-sm ${GH.cardBlurb}`}>{demoMyRoom.messageHe}</p>
+              </div>
+            ) : locked ? (
               <div className={`${GH.card} p-4 text-right`}>
                 <p className={GH.cardBlurb}>Personal room — controlled via Admin. Not open to guests yet.</p>
               </div>

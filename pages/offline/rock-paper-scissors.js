@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import OfflineGameHoldShell from "../../components/offline/OfflineGameHoldShell.jsx";
 import { useGameAudio } from "../../hooks/useGameAudio";
+import { assertDemoPlayAllowed } from "../../lib/demo/demo-play-guard.client.js";
 
 const CHOICES = [
   { id: "rock", label: "Rock", emoji: "🪨" },
@@ -185,6 +186,7 @@ export default function RockPaperScissors() {
 
   function handleHumanChoice(choice) {
     if (matchWinner || showResults) return;
+    if (history.length === 0 && !assertDemoPlayAllowed()) return;
     primeFromUserGesture();
     playSfx("sfx-ui-click");
     
@@ -213,6 +215,7 @@ export default function RockPaperScissors() {
   }
 
   function resetMatch(fullReset = false) {
+    if (!assertDemoPlayAllowed()) return;
     prevResultsTimerRef.current = null;
     setRound(1);
     setScore({ p1: 0, p2: 0 });

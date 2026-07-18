@@ -1,9 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import SiteLegalFooterBar from "./layout/SiteLegalFooterBar.jsx";
 import StudentAdSlot from "./student/StudentAdSlot.jsx";
 import StudentThemePicker from "./student/StudentThemePicker.jsx";
+import HomeDemoButton from "./home/HomeDemoButton.jsx";
+import {
+  clearDemoSession,
+  isDemoMode,
+  isHomeDemoButtonExcluded,
+  shouldDemoHudHomeNavigateToPublic,
+} from "../lib/demo/demo-mode.client.js";
 import { useI18n } from "../lib/i18n/I18nProvider.jsx";
 import {
   getAreaHomeHref,
@@ -42,6 +49,7 @@ export default function Layout({
   const router = useRouter();
   const { direction, locale, t } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [demoButtonDismissed, setDemoButtonDismissed] = useState(false);
   const [activePortal, setActivePortal] = useState(() =>
     typeof window !== "undefined" ? readSiteNavPortal() : null
   );
@@ -51,6 +59,10 @@ export default function Layout({
     pathname.startsWith("/auth/") && typeof router.query?.portal === "string"
       ? router.query.portal
       : undefined;
+
+  useEffect(() => {
+    setDemoButtonDismissed(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -113,6 +125,18 @@ export default function Layout({
     "min-h-[100svh] md:min-h-screen bg-gradient-to-b from-[#050816] via-[#0b1020] to-[#050816] text-white flex flex-col";
 
   const showStudentAd = shouldShowLayoutStudentAdSlot(pathname);
+  const showHomeDemoButton = !demoButtonDismissed && !isHomeDemoButtonExcluded(pathname);
+
+  const handleDemoHudHomeClick = useCallback(
+    (event, href) => {
+      if (!shouldDemoHudHomeNavigateToPublic(isDemoMode(), href)) return;
+      event.preventDefault();
+      clearDemoSession();
+      void router.push("/");
+    },
+    [router],
+  );
+
   const shellClassBase = isLearningBright
     ? brightLearningShell
     : isStudentBright
@@ -143,8 +167,14 @@ export default function Layout({
     ? `border-t border-sky-100 ${STUDENT_BRIGHT_SITE_CHROME_BG} shrink-0 ${homepage || showStudentAd ? "" : "mt-10"}`
     : `border-t border-white/10 bg-black/40 shrink-0 ${homepage || showStudentAd ? "" : "mt-10"}`;
 
-  const renderLegalFooter = () => (
-    <footer className={footerClass}>
+  const renderLegalFooter = (embedDemoButton = false) => (
+    <footer className={`${footerClass}${embedDemoButton ? " relative" : ""}`}>
+      {embedDemoButton && showHomeDemoButton ? (
+        <HomeDemoButton
+          variant="footer-above"
+          onDismiss={() => setDemoButtonDismissed(true)}
+        />
+      ) : null}
       <SiteLegalFooterBar isStudentBright={isStudentBright} />
     </footer>
   );
@@ -160,6 +190,7 @@ export default function Layout({
         <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 md:gap-3">
           <Link
             href={areaHomeHref}
+            onClick={(event) => handleDemoHudHomeClick(event, areaHomeHref)}
             className={`flex items-center gap-2 font-extrabold tracking-widest text-lg shrink-0 ${
               isStudentBright ? "text-red-600" : ""
             }`}
@@ -180,6 +211,7 @@ export default function Layout({
               <Link
                 key={link.href + (link.labelKey || link.label)}
                 href={link.href}
+                onClick={(event) => handleDemoHudHomeClick(event, link.href)}
                 className={navLinkClass}
               >
                 {resolveNavLabel(link)}
@@ -222,8 +254,11 @@ export default function Layout({
                 <Link
                   key={link.href + (link.labelKey || link.label)}
                   href={link.href}
+                  onClick={(event) => {
+                    handleDemoHudHomeClick(event, link.href);
+                    closeMenu();
+                  }}
                   className={mobileMenuItem}
-                  onClick={closeMenu}
                 >
                   {resolveNavLabel(link)}
                 </Link>
@@ -259,11 +294,14 @@ export default function Layout({
             variant="layout"
             theme={isStudentBright ? "bright" : "classic"}
           />
-          {renderLegalFooter()}
+          {renderLegalFooter(true)}
         </div>
       ) : (
-        renderLegalFooter()
+        renderLegalFooter(false)
       )}
+      {showHomeDemoButton && !showStudentAd ? (
+        <HomeDemoButton onDismiss={() => setDemoButtonDismissed(true)} />
+      ) : null}
     </div>
   );
 }

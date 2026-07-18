@@ -1,0 +1,102 @@
+{
+  "bar": {
+    "badge": "Demo mode",
+    "gradeLabel": "Grade",
+    "playExpired": "Time for new starts has ended",
+    "playTime": "Play time",
+    "minutesUnit": "min",
+    "changeGrade": "Change grade",
+    "exitDemo": "Exit demo"
+  },
+  "enter": {
+    "pageTitle": "Demo mode — LEO KIDS",
+    "pageDescription": "Try the kids world without signing up",
+    "heading": "Parent demo mode",
+    "intro": "Pick a grade and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
+    "activeSessionNote": "You have an active demo — changing grade will not reset the timer.",
+    "chooseGradeLegend": "Choose a grade",
+    "enterButton": "Enter the kids world",
+    "enteringButton": "Entering…"
+  },
+  "homeButton": {
+    "labelDesktop": "Try the kids world",
+    "labelMobile": "Demo",
+    "ariaLabel": "Try the kids world — demo mode",
+    "dismissAriaLabel": "Dismiss demo button"
+  },
+  "gate": {
+    "loading": "Loading demo mode…",
+    "loadError": "Could not load demo mode. Try refreshing the page."
+  },
+  "timeExpiredModal": {
+    "title": "Demo time is up",
+    "body": "{minutes} minutes have passed since the demo started. You can keep browsing the kids world, but you cannot start a new game or activity.",
+    "inProgressNote": "Games or activities already in progress will continue until finished.",
+    "dismiss": "Got it",
+    "restart": "Start a new demo"
+  },
+  "onlineGameUnavailable": {
+    "title": "Online games are not available in demo mode",
+    "body": "In demo mode you can browse the arcade and see the games, but online multiplayer is not active.",
+    "backToArcade": "Back to arcade"
+  },
+  "display": {
+    "studentName": "Demo mode",
+    "greeting": "Welcome to demo mode",
+    "arcadePlayerName": "Demo player",
+    "myRoomMessage": "My room — demo preview",
+    "learningMinutesScope": "From session summaries (demo)",
+    "allSubjectsScope": "All subjects",
+    "encouragement": "Keep practicing — this is a demo!",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Practice math",
+    "mathDescription": "Answer 5 math questions",
+    "soloTitle": "Solo game",
+    "soloDescription": "Play one solo game",
+    "tier5": "5 minutes",
+    "tier15": "15 minutes",
+    "tier30": "30 minutes"
+  },
+  "subjects": {
+    "math": "Math",
+    "geometry": "Geometry",
+    "english": "English",
+    "science": "Science"
+  },
+  "cards": {
+    "purchaseBlocked": "Purchases are not available in demo mode.",
+    "sellBlocked": "Selling cards is not available in demo mode.",
+    "loadFailed": "Could not load cards."
+  },
+  "arcade": {
+    "actionBlocked": "This action is not available in demo mode.",
+    "quickPlayBlocked": "Quick play is not available in demo mode."
+  },
+  "activity": {
+    "classroomUnavailable": "Classroom activities are not available in demo mode."
+  },
+  "worksheet": {
+    "pageTitle": "Worksheet — demo mode",
+    "intro": "You can browse worksheets from the list on the home page. Digital submission is not available in demo mode.",
+    "backHome": "← Back to home",
+    "submitBlocked": "Submission is not available in demo mode."
+  },
+  "myRoom": {
+    "title": "My Room",
+    "saveBlocked": "Saving is not available in demo mode."
+  },
+  "friends": {
+    "demoUnavailable": "Friends and Leo number — demo preview. Adding friends and invites are not available."
+  },
+  "grades": {
+    "g1": "Grade 1",
+    "g2": "Grade 2",
+    "g3": "Grade 3",
+    "g4": "Grade 4",
+    "g5": "Grade 5",
+    "g6": "Grade 6"
+  }
+}

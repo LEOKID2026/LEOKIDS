@@ -4,12 +4,18 @@ import Link from "next/link";
 import Layout from "../../../components/Layout";
 import StudentAnswerSheet from "../../../components/worksheet-activities/StudentAnswerSheet";
 import { worksheetGradingStatusLabelHe } from "../../../lib/worksheet-activities/worksheet-labels.client.js";
+import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
+import { demoPackCopyForLocale } from "../../../lib/demo/demo-pack-copy.js";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 
 export async function getServerSideProps(context) {
   return { props: { worksheetId: String(context.params?.worksheetId || "").trim() } };
 }
 
 export default function StudentWorksheetPage({ worksheetId }) {
+  const { locale, direction } = useI18n();
+  const demoMode = isDemoMode();
+  const demoCopy = (group, key) => demoPackCopyForLocale(locale, group, key);
   const [worksheet, setWorksheet] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [studentStatus, setStudentStatus] = useState(null);
@@ -19,6 +25,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
   const [msg, setMsg] = useState("");
 
   const load = useCallback(async () => {
+    if (demoMode) return;
     setError("");
     try {
       const res = await fetch(`/api/student/worksheet-activities/${encodeURIComponent(worksheetId)}`, {
@@ -36,11 +43,12 @@ export default function StudentWorksheetPage({ worksheetId }) {
     } catch {
       setError("Network error");
     }
-  }, [worksheetId]);
+  }, [worksheetId, demoMode]);
 
   useEffect(() => {
+    if (demoMode) return;
     void load();
-  }, [load]);
+  }, [load, demoMode]);
 
   const openPdf = useCallback(async () => {
     setBusy(true);
@@ -62,6 +70,10 @@ export default function StudentWorksheetPage({ worksheetId }) {
   }, [worksheetId, load]);
 
   const markComplete = useCallback(async () => {
+    if (demoMode) {
+      setError(demoCopy("worksheet", "submitBlocked"));
+      return;
+    }
     if (!window.confirm(globalBurnDownCopy("pages__student__worksheet__[worksheetId]", "mark_this_worksheet_as_finished"))) return;
     setBusy(true);
     setMsg("");
@@ -80,9 +92,13 @@ export default function StudentWorksheetPage({ worksheetId }) {
     } finally {
       setBusy(false);
     }
-  }, [worksheetId, load]);
+  }, [worksheetId, load, demoMode, demoCopy]);
 
   const submitAnswers = useCallback(async () => {
+    if (demoMode) {
+      setError(demoCopy("worksheet", "submitBlocked"));
+      return;
+    }
     if (!window.confirm(globalBurnDownCopy("pages__student__worksheet__[worksheetId]", "submit_your_answers"))) return;
     setBusy(true);
     setMsg("");
@@ -117,7 +133,21 @@ export default function StudentWorksheetPage({ worksheetId }) {
     } finally {
       setBusy(false);
     }
-  }, [worksheetId, questions, answers, load]);
+  }, [worksheetId, questions, answers, load, demoMode, demoCopy]);
+
+  if (demoMode && !worksheet) {
+    return (
+      <Layout>
+        <div className="max-w-2xl mx-auto px-4 py-8 text-left" dir={direction} lang={locale}>
+          <Link href="/student/home" className="text-sm text-cyan-300 hover:underline">
+            {demoCopy("worksheet", "backHome")}
+          </Link>
+          <h1 className="text-2xl font-bold text-white mt-4">{demoCopy("worksheet", "pageTitle")}</h1>
+          <p className="text-white/75 text-sm mt-4">{demoCopy("worksheet", "intro")}</p>
+        </div>
+      </Layout>
+    );
+  }
 
   if (!worksheet) {
     return (
