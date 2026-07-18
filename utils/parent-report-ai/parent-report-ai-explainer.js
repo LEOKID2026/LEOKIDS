@@ -3,6 +3,7 @@
  * Does not choose next actions, difficulty, or practice sets — explains pre-approved signals only.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { mapPlannerNextActionToHebrew } from "../../lib/learning-client/adaptive-planner-recommendation-view-model.js";
 import {
   parentReportAiInputToNarrativeEngineSnapshot,
@@ -16,11 +17,11 @@ function envStr(name, env = typeof process !== "undefined" ? process.env : {}) {
 
 const SUBJECT_LABEL_HE = {
   math: "Math",
-  hebrew: "Hebrew",
+  hebrew: reportPackCopy("utils__parent-report-ai__parent-report-ai-explainer", "hebrew"),
   science: "Science",
   geometry: "Geometry",
   english: "English",
-  "moledet-geography": "Geography",
+  "moledet-geography": reportPackCopy("utils__parent-report-ai__parent-report-ai-explainer", "geography"),
 };
 
 /**

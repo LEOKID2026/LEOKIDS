@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "history": "History",
+    "hebrew": "Hebrew",
+    "social_studies": "Social Studies",
+    "geography": "Geography",
+    "social_studies_geography": "Social Studies & Geography"
+  }
+}

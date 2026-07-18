@@ -1,13 +1,27 @@
 import Link from "next/link";
+import { useMemo } from "react";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
 import MixedHebrewMathText from "./MixedHebrewMathText";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { resolveRegistryTitleKey } from "../../lib/learning-book/book-pack-copy.js";
 
 export default function LearningBookIndexContent({ batches, routeBase }) {
   const { classes: theme } = useBookGradeTheme();
+  const { contentLocale } = useI18n();
+  const resolvedBatches = useMemo(
+    () =>
+      (batches || []).map((batch) => ({
+        ...batch,
+        titleHe: batch.titleKey
+          ? resolveRegistryTitleKey(String(batch.titleKey), contentLocale)
+          : batch.titleHe || batch.title || "",
+      })),
+    [batches, contentLocale],
+  );
 
   return (
     <div className="space-y-8" dir="ltr">
-      {batches.map((batch) => (
+      {resolvedBatches.map((batch) => (
         <section key={batch.id}>
           <h2
             className={`mb-4 text-left text-lg font-bold sm:text-xl ${theme.indexBatchHeading}`}

@@ -1,3 +1,4 @@
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 /**
  * Phase 8 — micro intervention plan for a topic row (based on Phase 7).
  * Pure logic; not React-dependent.
@@ -39,8 +40,8 @@ export function buildInterventionPlanPhase8(ctx) {
   let interventionGoal = "stabilize_signal";
   /** @type {string[]} */
   const stepsHe = [];
-  let interventionSuccessSignalHe = "Small consistency: same level with fewer repeated mistakes.";
-  let interventionStopSignalHe = "If frustration or pushback shows up — stop and shorten further.";
+  let interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "small_consistency_same_level_with_fewer_repeated_mistakes");
+  let interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_frustration_or_pushback_shows_up_stop_and_shorten_further");
   let doNowHe = "";
   let avoidNowHe = "";
 
@@ -54,10 +55,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionGoal = "collect_evidence";
     stepsHe.push(`Watch 2–3 short practice sessions on ${displayName} at the same difficulty — only note whether the child reads the task before answering.`);
     stepsHe.push("Do not change grade or level at home at this stage.");
-    interventionSuccessSignalHe = "After 2–3 short sessions we can see if the pattern repeats — then tighten the focus.";
-    interventionStopSignalHe = "If every session turns into a struggle — cut to 5–7 minutes and try again tomorrow.";
-    doNowHe = "Short, measurable practice: same task, same level, emphasize reading before answering.";
-    avoidNowHe = "Do not draw deep conclusions or raise the level based on a single result.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "after_2_3_short_sessions_we_can_see_if_the_pattern_repeats_then_tighten_");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_every_session_turns_into_a_struggle_cut_to_5_7_minutes_and_try_again_");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "short_measurable_practice_same_task_same_level_emphasize_reading_before_");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_draw_deep_conclusions_or_raise_the_level_based_on_a_single_result");
   } else if (rootCause === "speed_pressure") {
     interventionDurationBand = sparse ? "very_short" : "short";
     interventionIntensity = capAggressivePlan ? "light" : "focused";
@@ -66,10 +67,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionGoal = "accuracy_over_speed";
     stepsHe.push(`On ${displayName}, choose a calm mode (not a marathon) at the same difficulty — accuracy before the clock.`);
     stepsHe.push("Goal: two matching attempts in a row with a quick check before submitting.");
-    interventionSuccessSignalHe = "When accuracy holds without time pressure — gradually return to a faster track.";
-    interventionStopSignalHe = "If the child rushes again — briefly return to untimed practice.";
-    doNowHe = "One short untimed practice, with a pause before submitting.";
-    avoidNowHe = "Do not turn a speed weakness into a subject-wide level drop, and do not push for records.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "when_accuracy_holds_without_time_pressure_gradually_return_to_a_faster_t");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_the_child_rushes_again_briefly_return_to_untimed_practice");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "one_short_untimed_practice_with_a_pause_before_submitting");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_turn_a_speed_weakness_into_a_subject_wide_level_drop_and_do_not_p");
   } else if (rootCause === "instruction_friction") {
     interventionDurationBand = "very_short";
     interventionIntensity = "light";
@@ -78,10 +79,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionGoal = "clarity_first";
     stepsHe.push(`One task on ${displayName}: read the wording together, say in one sentence what is asked, then solve.`);
     stepsHe.push("Only one hint after a short independent try — not a chain of hints.");
-    interventionSuccessSignalHe = "When the child starts pausing alone before answering — the load is easing.";
-    interventionStopSignalHe = "If you stay stuck on hints — shorten the task and return tomorrow.";
-    doNowHe = "Short task, clear wording, fewer long explanations during practice.";
-    avoidNowHe = "Do not over-explain every item when the hard part is understanding the task.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "when_the_child_starts_pausing_alone_before_answering_the_load_is_easing");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_you_stay_stuck_on_hints_shorten_the_task_and_return_tomorrow");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "short_task_clear_wording_fewer_long_explanations_during_practice");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_over_explain_every_item_when_the_hard_part_is_understanding_the_t");
   } else if (rootCause === "weak_independence") {
     interventionDurationBand = "short";
     interventionIntensity = capAggressivePlan ? "light" : "focused";
@@ -90,10 +91,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionGoal = "fade_support";
     stepsHe.push(`On ${displayName}: stage A with brief support, stage B an independent try on the same task, then compare at the end.`);
     stepsHe.push("Increase the independent part only a little when a small success repeats twice.");
-    interventionSuccessSignalHe = "When the child mostly finishes stage B alone — expand a little.";
-    interventionStopSignalHe = "If independence drops and mistakes rise — return to more guidance for a week.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "when_the_child_mostly_finishes_stage_b_alone_expand_a_little");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_independence_drops_and_mistakes_rise_return_to_more_guidance_for_a_we");
     doNowHe = 'Clearly separate "try alone" from "check together at the end".';
-    avoidNowHe = "Do not move to advanced before two consistent sessions with reasonable independence.";
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_move_to_advanced_before_two_consistent_sessions_with_reasonable_i");
   } else if (rootCause === "knowledge_gap" && !capAggressivePlan) {
     interventionDurationBand = sparse ? "short" : "moderate";
     interventionIntensity = sparse ? "focused" : "targeted";
@@ -102,10 +103,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionGoal = "core_skill_gap";
     stepsHe.push(`On ${displayName}, pick 2–3 typical mistakes and revisit them at the same level — do not expand topics.`);
     stepsHe.push("Twice a week, 8–12 minutes — enough to consolidate if consistent.");
-    interventionSuccessSignalHe = "When that mistake type disappears across two sessions in a row — a sign of stabilization.";
-    interventionStopSignalHe = "If there is no improvement after two weeks of consistency — pause and review level or wording.";
-    doNowHe = "Focused review of similar mistakes at the same difficulty.";
-    avoidNowHe = "Do not skip foundations or open too many topics at once.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "when_that_mistake_type_disappears_across_two_sessions_in_a_row_a_sign_of");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_there_is_no_improvement_after_two_weeks_of_consistency_pause_and_revi");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "focused_review_of_similar_mistakes_at_the_same_difficulty");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_skip_foundations_or_open_too_many_topics_at_once");
   } else if (rootCause === "careless_execution") {
     interventionDurationBand = "very_short";
     interventionIntensity = "light";
@@ -113,10 +114,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionParentEffort = "low";
     interventionGoal = "execution_habits";
     stepsHe.push(`On ${displayName}, check before submitting: wording → answer → quick review (10 seconds).`);
-    interventionSuccessSignalHe = 'Fewer "familiar" mistakes on the same task type.';
-    interventionStopSignalHe = "If mistakes run deeper than carelessness — shift to concept reinforcement.";
-    doNowHe = "Every task includes a short check pause before finishing.";
-    avoidNowHe = "Do not assume a deep knowledge gap when there is partial mastery.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "fewer_familiar_mistakes_same_task_type");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_mistakes_run_deeper_than_carelessness_shift_to_concept_reinforcement");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "every_task_includes_a_short_check_pause_before_finishing");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_assume_a_deep_knowledge_gap_when_there_is_partial_mastery");
   } else if (rootCause === "mixed_signal" || rootCause === "early_stage_instability") {
     interventionDurationBand = "very_short";
     interventionIntensity = "light";
@@ -124,10 +125,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionParentEffort = "low";
     interventionGoal = "observe_and_stabilize";
     stepsHe.push(`On ${displayName}, keep the same setup and note small wins — do not change many variables.`);
-    interventionSuccessSignalHe = "When two sessions in a row look similar — pick one direction.";
-    interventionStopSignalHe = "If the picture changes a lot between sessions — stay with short practice and watch, without a big change.";
-    doNowHe = "Continue at the same level and check accuracy after each session.";
-    avoidNowHe = "Do not lock onto a single explanation when signals conflict.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "when_two_sessions_in_a_row_look_similar_pick_one_direction");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_the_picture_changes_a_lot_between_sessions_stay_with_short_practice_a");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "continue_at_the_same_level_and_check_accuracy_after_each_session");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_lock_onto_a_single_explanation_when_signals_conflict");
   } else {
     interventionDurationBand = "short";
     interventionIntensity = capAggressivePlan ? "light" : "focused";
@@ -135,10 +136,10 @@ export function buildInterventionPlanPhase8(ctx) {
     interventionParentEffort = capAggressivePlan ? "low" : "medium";
     interventionGoal = "balanced_support";
     stepsHe.push(`On ${displayName}, short practice twice a week — one focus per session.`);
-    interventionSuccessSignalHe = "Small, consistent improvement in accuracy or fewer repeated mistakes.";
-    interventionStopSignalHe = "If there is no movement after two weeks — update how practice is run.";
-    doNowHe = "Short, steady practice around the same level.";
-    avoidNowHe = "Do not pile on big goals while the picture is still forming.";
+    interventionSuccessSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "small_consistent_improvement_in_accuracy_or_fewer_repeated_mistakes");
+    interventionStopSignalHe = reportPackCopy("utils__parent-report-intervention-plan", "if_there_is_no_movement_after_two_weeks_update_how_practice_is_run");
+    doNowHe = reportPackCopy("utils__parent-report-intervention-plan", "short_steady_practice_around_the_same_level");
+    avoidNowHe = reportPackCopy("utils__parent-report-intervention-plan", "do_not_pile_on_big_goals_while_the_picture_is_still_forming");
   }
 
   if (capAggressivePlan && interventionIntensity === "targeted") {

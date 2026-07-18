@@ -2,6 +2,7 @@
  * Parent-assigned activity rows for detailed parent report (display slice only).
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { formatParentReportActivityIsrael } from "../lib/learning-supabase/parent-report-activity-time.js";
 import {
   formatParentReportGradeHe,
@@ -55,9 +56,9 @@ function topicLabelHe(subjectId, topicKey) {
 }
 
 function formatActivityDateHe(isoOrMs) {
-  if (isoOrMs == null || isoOrMs === "") return "Not available";
+  if (isoOrMs == null || isoOrMs === "") return reportPackCopy("utils__parent-report-parent-assigned-activities", "not_available");
   const ms = typeof isoOrMs === "number" ? isoOrMs : Date.parse(String(isoOrMs));
-  if (!Number.isFinite(ms) || ms <= 0) return "Not available";
+  if (!Number.isFinite(ms) || ms <= 0) return reportPackCopy("utils__parent-report-parent-assigned-activities", "not_available");
   return formatParentReportActivityIsrael(ms);
 }
 
@@ -73,7 +74,7 @@ export function buildParentActivityDisplayLabelHe(p) {
   const titleRaw = String(p?.titleRaw || "").trim();
   const topicSuffix = topic && topic !== "Topic" && topic !== "נושא" ? topic : "";
   const subjectGradeFallback =
-    subjectLabel && gradeLabel && gradeLabel !== "Not available" && gradeLabel !== "לא זמין"
+    subjectLabel && gradeLabel && gradeLabel !== reportPackCopy("utils__parent-report-parent-assigned-activities", "not_available") && gradeLabel !== "לא זמין"
       ? `${subjectLabel} grade ${gradeLabel}`
       : subjectLabel || "";
 

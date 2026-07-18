@@ -1,3 +1,4 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 /**
  * Owner-approved parent diagnostic explanations (parent report only).
  * Renders only when status === "approved" and the engine diagnosed the finding.
@@ -218,7 +219,7 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
     lookupKey: "finding:taxonomy:H-06",
     explanationHe:
       "The system identified difficulty arranging words in a question sentence. The idea is to build a clear question, with the question word, subject, and verb in the right place.",
-    exampleHe: "When did the child arrive?",
+    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "when_did_the_child_arrive"),
     status: "approved",
     approvalSource: "owner_hebrew_subject_batch_approved",
   },
@@ -234,7 +235,7 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
     lookupKey: "finding:taxonomy:H-08",
     explanationHe:
       "The system identified difficulty matching the level of language to the situation. The idea is to choose wording that fits the purpose: everyday conversation, an academic answer, or a formal request.",
-    exampleHe: "Could I get some help? / Bring me that",
+    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "could_i_get_some_help_bring_me_that"),
     status: "approved",
     approvalSource: "owner_hebrew_subject_batch_approved",
   },
@@ -282,7 +283,7 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
     lookupKey: "finding:taxonomy:E-06",
     explanationHe:
       "The system identified difficulty understanding an inference from an English text. The idea is to understand something that isn't written explicitly, but is implied by the sentences and clues in the text.",
-    exampleHe: "The room is dark, so she turns on the light.",
+    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "the_room_is_dark_so_she_turns_on_the_light"),
     status: "approved",
     approvalSource: "owner_english_subject_batch_approved",
   },
@@ -418,7 +419,7 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
     lookupKey: "finding:taxonomy:MG-07",
     explanationHe:
       "The system identified difficulty understanding the role of public institutions. The idea is to know what each institution does and what its responsibility is in society.",
-    exampleHe: "Parliament - legislation / Court - adjudication",
+    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "parliament_legislation_court_adjudication"),
     status: "approved",
     approvalSource: "owner_moledet_geography_batch_approved",
   },

@@ -3,6 +3,7 @@
  * Parent-facing surfaces must trace to stable row identity — never display label alone.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { splitTopicRowKey } from "../parent-report-row-diagnostics.js";
 import { practiceGradeRelation } from "../../lib/learning-supabase/practice-grade-resolution.js";
 import {
@@ -168,7 +169,7 @@ export function classifyRowSectionPlacement(identity) {
 }
 
 /** @param {string} label */
-const COLLECT_MORE_DATA_HE = "Collect more information";
+const COLLECT_MORE_DATA_HE = reportPackCopy("utils__parent-report-output-integrity__row-identity-v1", "collect_more_information");
 
 /**
  * @param {ReturnType<typeof buildRowIdentityV1>} identity

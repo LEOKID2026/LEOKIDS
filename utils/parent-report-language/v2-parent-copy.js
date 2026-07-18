@@ -1,26 +1,42 @@
 /**
- * V2 detailed-report — parent-facing copy only (params in, strings out).
- * No business rules: callers pass counts/flags already computed.
+ * V2 detailed-report — locale-aware parent-facing copy (params in, strings out).
+ * Legacy export names retain `He` suffix for call-site compatibility.
  */
 
+import { createReportTranslator } from "../../lib/reports/report-locale.js";
 import { confidenceLevelParentSummaryHe } from "./confidence-parent-he.js";
+
+const DEFAULT_REPORT_LOCALE = "en";
+
+/**
+ * @param {string|null|undefined} locale
+ */
+function reportT(locale) {
+  return createReportTranslator(locale || DEFAULT_REPORT_LOCALE).t;
+}
 
 /**
  * @param {string[]} topFocusAreasHe
+ * @param {string|null|undefined} [reportLocale]
  */
-export function executiveV2HomeFocusHe(topFocusAreasHe) {
+export function executiveV2HomeFocusHe(topFocusAreasHe, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const areas = Array.isArray(topFocusAreasHe) ? topFocusAreasHe.filter(Boolean) : [];
   if (!areas.length) {
-    return "There's no clear focus yet - this week it helps to practice a little in a few topics and see what stays stable.";
+    return t("reports.v2.executive.homeFocusEmpty");
   }
-  return `Focus first on: ${areas.slice(0, 2).join(" · ")}`;
+  return t("reports.v2.executive.homeFocusWithAreas", {
+    areas: areas.slice(0, 2).join(" · "),
+  });
 }
 
 /**
  * @param {{ units: number, diagnosed: number, uncertain: number, stable: number }} p
+ * @param {string|null|undefined} [reportLocale]
  * @returns {string[]}
  */
-export function executiveV2MajorTrendsLinesHe(p) {
+export function executiveV2MajorTrendsLinesHe(p, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const units = Math.max(0, Number(p.units) || 0);
   const diagnosed = Math.max(0, Number(p.diagnosed) || 0);
   const uncertain = Math.max(0, Number(p.uncertain) || 0);
@@ -28,91 +44,109 @@ export function executiveV2MajorTrendsLinesHe(p) {
   const actionable = Math.max(diagnosed, stable);
   if (units === 0) {
     return [
-      "Not enough topics have been gathered yet in the selected period to compare between them.",
-      "Short, consistent practice will add a picture that can be relied on.",
+      t("reports.v2.executive.majorTrendsNoUnitsLine1"),
+      t("reports.v2.executive.majorTrendsNoUnitsLine2"),
     ];
   }
   if (units === 1 && stable > 0 && diagnosed === 0) {
     return [
-      "One topic was reviewed in the selected period.",
-      "The direction there is positive and consistent; before expanding to more topics, it's better to stabilize this one with a bit more practice.",
+      t("reports.v2.executive.majorTrendsOneStableLine1"),
+      t("reports.v2.executive.majorTrendsOneStableLine2"),
     ];
   }
   const line2 =
     stable === 0 && units >= 4
-      ? `When relatively many topics are reviewed at once, strong stability doesn't always show up right away in the same way across all of them - that's normal; it helps to keep practicing to stabilize what looks recurring.`
-      : `Topics holding up well: ${stable} out of what was reviewed. ${actionable} topics have a basis for a focused conversation at home. ${uncertain} topics still don't have a clear picture.`;
-  return [`${units} topics were reviewed in the selected period.`, line2];
+      ? t("reports.v2.executive.majorTrendsManyUnitsLine2")
+      : t("reports.v2.executive.majorTrendsDefaultLine2", {
+          stable,
+          actionable,
+          uncertain,
+        });
+  return [t("reports.v2.executive.majorTrendsUnitsLine1", { units }), line2];
 }
 
-/** @param {boolean} hasUncertain */
-export function executiveV2MixedSignalNoticeHe(hasUncertain) {
+/** @param {boolean} hasUncertain @param {string|null|undefined} [reportLocale] */
+export function executiveV2MixedSignalNoticeHe(hasUncertain, reportLocale = DEFAULT_REPORT_LOCALE) {
   if (!hasUncertain) return "";
-  return "Results in a few topics are still not stable - a bit more practice will help before settling on a clear direction.";
+  return reportT(reportLocale)("reports.v2.executive.mixedSignalNotice");
 }
 
 /**
  * @param {number} diagnosed
  * @param {number} units
  * @param {number} stable
+ * @param {string|null|undefined} [reportLocale]
  */
-export function executiveV2OverallConfidenceHe(diagnosed, units, stable = 0) {
+export function executiveV2OverallConfidenceHe(
+  diagnosed,
+  units,
+  stable = 0,
+  reportLocale = DEFAULT_REPORT_LOCALE
+) {
+  const t = reportT(reportLocale);
   const d = Math.max(0, Number(diagnosed) || 0);
   const u = Math.max(0, Number(units) || 0);
   const s = Math.max(0, Number(stable) || 0);
   const actionable = Math.max(d, s);
   if (u === 0) {
-    return "Overall view: there still aren't enough topics in the selected period to build a clear picture for home.";
+    return t("reports.v2.executive.overallConfidenceNoUnits");
   }
   if (u === 1 && actionable === 0) {
-    return "Overall view: only one topic was reviewed in the selected period right now - keeping to careful wording while we gather more practice.";
+    return t("reports.v2.executive.overallConfidenceOneUnit");
   }
-  return `Overall view: ${actionable} out of ${u} topics reviewed have an initial basis for a focused conversation at home.`;
+  return t("reports.v2.executive.overallConfidenceDefault", { actionable, units: u });
 }
 
 /**
  * @param {number} stable
  * @param {number} diagnosed
+ * @param {string|null|undefined} [reportLocale]
  */
-export function executiveV2EvidenceBalanceHe(stable, diagnosed) {
+export function executiveV2EvidenceBalanceHe(stable, diagnosed, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const s = Math.max(0, Number(stable) || 0);
   const diag = Math.max(0, Number(diagnosed) || 0);
   const rest = Math.max(0, diag - s);
-  return `Points that continue to hold up well: ${s}; topics worth reinforcing or learning more about before settling on a clear direction: ${rest}.`;
+  return t("reports.v2.executive.evidenceBalance", { stable: s, rest });
 }
 
 /**
  * @param {{ p4Length: number, uncertainLength: number }} p
+ * @param {string|null|undefined} [reportLocale]
  */
-export function executiveV2CautionNoteHe(p) {
+export function executiveV2CautionNoteHe(p, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const p4 = Math.max(0, Number(p.p4Length) || 0);
   const u = Math.max(0, Number(p.uncertainLength) || 0);
-  if (p4 > 0) return "There are topics worth watching this week - the teacher can be shown what's in the report so you can choose a short learning step together for the coming week.";
-  if (u > 0) return "There's still no clear direction for some topics - a bit more practice will clarify the picture.";
+  if (p4 > 0) return t("reports.v2.executive.cautionP4");
+  if (u > 0) return t("reports.v2.executive.cautionUncertain");
   return "";
 }
 
-/** @param {number} unitsLength */
-export function executiveV2ReportReadinessHe(unitsLength) {
+/** @param {number} unitsLength @param {string|null|undefined} [reportLocale] */
+export function executiveV2ReportReadinessHe(unitsLength, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const n = Math.max(0, Number(unitsLength) || 0);
   return n >= 8
-    ? "There's enough practice in the selected period to carefully discuss a general direction at home."
-    : "Practice in the selected period is still limited - it helps to read the summary closely and keep gathering more practice.";
+    ? t("reports.v2.executive.reportReadinessFull")
+    : t("reports.v2.executive.reportReadinessLimited");
 }
 
-export function homePlanV2EmptyFallbackHe() {
-  return "There's no single clear home action right now - short, focused practice this week would help clarify the direction.";
+export function homePlanV2EmptyFallbackHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.homePlanEmpty");
 }
 
-export function nextPeriodGoalsV2EmptyFallbackHe() {
-  return "Goal for the coming week: more consistent, relaxed practice, and then a clear progress goal can be set.";
+export function nextPeriodGoalsV2EmptyFallbackHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.nextPeriodGoalsEmpty");
 }
 
 /**
- * @param {{ unitsLength: number, highPriorityCount: number, contradictoryCount: number }} p
+ * @param {{ unitsLength: number, highPriorityCount: number, contradictoryCount: number, strengthenTopicCount?: number }} p
+ * @param {string|null|undefined} [reportLocale]
  * @returns {string[]}
  */
-export function crossSubjectV2BulletsHe(p) {
+export function crossSubjectV2BulletsHe(p, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const units = Math.max(0, Number(p.unitsLength) || 0);
   const hi = Math.max(0, Number(p.highPriorityCount) || 0);
   const strengthenCount = Math.max(0, Number(p.strengthenTopicCount) || 0);
@@ -120,53 +154,56 @@ export function crossSubjectV2BulletsHe(p) {
   /** @type {string[]} */
   const bullets = [];
   if (units > 0) {
-    bullets.push(`Looking at all subjects together: ${units} topics in the selected period.`);
+    bullets.push(t("reports.v2.executive.crossSubjectUnits", { units }));
   }
   if (hi > 0) {
-    bullets.push(`${hi} topics worth following closely this week.`);
+    bullets.push(t("reports.v2.executive.crossSubjectHighPriority", { count: hi }));
   } else if (strengthenCount > 0) {
-    bullets.push("There are a few topics worth reinforcing in the coming period.");
+    bullets.push(t("reports.v2.executive.crossSubjectStrengthen"));
   }
   if (c > 0) {
-    bullets.push(
-      `Results in ${c} topics are still not consistent - a bit more short practice will help show whether it holds or stabilizes.`
-    );
+    bullets.push(t("reports.v2.executive.crossSubjectContradictory", { count: c }));
   }
   return bullets;
 }
 
-export function crossSubjectV2DataQualityNoteHe(unitsLength) {
+export function crossSubjectV2DataQualityNoteHe(unitsLength, reportLocale = DEFAULT_REPORT_LOCALE) {
+  const t = reportT(reportLocale);
   const n = Math.max(0, Number(unitsLength) || 0);
-  return n < 8 ? "The number of topics reviewed is relatively low - the picture will get clearer as more practice accumulates." : null;
+  return n < 8 ? t("reports.v2.executive.crossSubjectDataQualityLow") : null;
 }
 
-export function subjectV2TrendNarrativeHighPriorityHe() {
-  return "There are topics worth paying attention to this week.";
+export function subjectV2TrendNarrativeHighPriorityHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.subjectTrendHighPriority");
 }
 
-export function subjectV2TrendNarrativeStableHe() {
-  return "The patterns in the selected period have held up relatively well over time.";
+export function subjectV2TrendNarrativeStableHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.subjectTrendStable");
 }
 
-export function subjectV2RecalibrationNeedYesHe() {
-  return "Before changing direction or difficulty level - one more short round of practice.";
+export function subjectV2RecalibrationNeedYesHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.subjectRecalibrationYes");
 }
 
 /** Canonical "no recalibration" — keep in sync with `SubjectPhase3Insights` visibility filter */
-export const SUBJECT_V2_RECALIBRATION_NEED_NO_HE = "No need to change the direction to focus on right now.";
+export const SUBJECT_V2_RECALIBRATION_NEED_NO_HE = reportT(DEFAULT_REPORT_LOCALE)(
+  "reports.v2.executive.subjectRecalibrationNo"
+);
 
-export function subjectV2RecalibrationNeedNoHe() {
-  return SUBJECT_V2_RECALIBRATION_NEED_NO_HE;
+export function subjectV2RecalibrationNeedNoHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.subjectRecalibrationNo");
 }
 
 /** When output gating blocks a firm conclusion */
-export function topicRecommendationV2CautionGatedHe() {
-  return "A strong direction hasn't been set for this topic yet - first, a bit more focused practice on this topic.";
+export function topicRecommendationV2CautionGatedHe(reportLocale = DEFAULT_REPORT_LOCALE) {
+  return reportT(reportLocale)("reports.v2.executive.topicRecommendationCautionGated");
 }
 
 /**
  * @param {string|null|undefined} confidenceLevel
+ * @param {string|null|undefined} [reportLocale]
  */
-export function subjectV2ConfidenceSummaryHe(confidenceLevel) {
+export function subjectV2ConfidenceSummaryHe(confidenceLevel, reportLocale = DEFAULT_REPORT_LOCALE) {
+  void reportLocale;
   return confidenceLevelParentSummaryHe(confidenceLevel);
 }

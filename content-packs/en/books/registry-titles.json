@@ -1,0 +1,391 @@
+{
+  "batches": {
+    "english.g1": {
+      "phonics-a": {
+        "title": "Uppercase Letters A–Z and more"
+      },
+      "phonics-b": {
+        "title": "Letter Sounds and more"
+      },
+      "phonics-c": {
+        "title": "Classroom Words and more"
+      },
+      "phonics-d": {
+        "title": "Picture and Word and more"
+      }
+    },
+    "english.g2": {
+      "phonics-review": {
+        "title": "Review: Letters and Names and more"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "a": {
+        "title": "Getting to Know the Square [DRAFT and more"
+      },
+      "b": {
+        "title": "Translation and Reflection — Introduction [DRAFT — not owner-approved]"
+      }
+    },
+    "geometry.g2": {
+      "a": {
+        "title": "Three-Dimensional Solids — Names and Introduction [DRAFT — not owner-approved]"
+      },
+      "b": {
+        "title": "Area of a Square [DRAFT — not owner-approved]"
+      },
+      "c": {
+        "title": "Translation and Reflection — More Practice [DRAFT — not owner-approved]"
+      }
+    },
+    "geometry.g3": {
+      "a": {
+        "title": "Types of Triangles [DRAFT and more"
+      },
+      "b": {
+        "title": "Parallel and Perpendicular Lines [DRAFT — not owner-approved]"
+      },
+      "c": {
+        "title": "Area of a Square and more"
+      },
+      "d": {
+        "title": "Angles in a Triangle [DRAFT — not owner-approved]"
+      },
+      "e": {
+        "title": "Rotation in the Plane [DRAFT and more"
+      }
+    },
+    "geometry.g4": {
+      "a": {
+        "title": "Properties of a Square and more"
+      },
+      "b": {
+        "title": "Quadrilaterals and more"
+      },
+      "c": {
+        "title": "Perimeter of a Square and more"
+      },
+      "d": {
+        "title": "Diagonal of a Square [DRAFT and more"
+      },
+      "e": {
+        "title": "Solids and more"
+      }
+    },
+    "geometry.g5": {
+      "a": {
+        "title": "Parallel and Perpendicular Lines and more"
+      },
+      "b": {
+        "title": "Perimeter of a Square and more"
+      },
+      "c": {
+        "title": "Height of a Triangle and more"
+      },
+      "d": {
+        "title": "Area of a Square and more"
+      },
+      "e": {
+        "title": "Diagonal of a Square and more"
+      },
+      "f": {
+        "title": "Three-Dimensional Solids and more"
+      },
+      "g": {
+        "title": "Tiling a Plane"
+      }
+    },
+    "geometry.g6": {
+      "a": {
+        "title": "Perimeter of a Square and more"
+      },
+      "b": {
+        "title": "Circumference of a Circle [DRAFT and more"
+      },
+      "c": {
+        "title": "Pythagorean Theorem and more"
+      },
+      "d": {
+        "title": "Solids and more"
+      },
+      "e": {
+        "title": "Volume of a Prism and more"
+      },
+      "f": {
+        "title": "Volume of a Pyramid and more"
+      },
+      "g": {
+        "title": "Volume of a Cylinder [DRAFT and more"
+      }
+    },
+    "math.g1": {
+      "a": {
+        "title": "Counting Forward on the Number Line and more"
+      },
+      "b": {
+        "title": "Tens and Ones and more"
+      },
+      "c": {
+        "title": "Adding Two Numbers and more"
+      },
+      "d": {
+        "title": "Word Problems and more"
+      }
+    },
+    "math.g2": {
+      "a": {
+        "title": "Hundreds, Tens, and Ones and more"
+      },
+      "b": {
+        "title": "Adding Two Numbers and more"
+      },
+      "c": {
+        "title": "When Does a Number Divide by 2, 5, and 10? and more"
+      },
+      "d": {
+        "title": "Word Problems and more"
+      }
+    },
+    "math.g3": {
+      "a": {
+        "title": "Hundreds, Tens, and Ones and more"
+      },
+      "b": {
+        "title": "Adding Two Numbers and more"
+      },
+      "c": {
+        "title": "Fractions — What Are They and How Do We Compare?"
+      },
+      "d": {
+        "title": "Addition Equation and more"
+      },
+      "e": {
+        "title": "Word Problem and more"
+      }
+    },
+    "math.g4": {
+      "a": {
+        "title": "Place Value and more"
+      },
+      "b": {
+        "title": "Adding with 0 and more"
+      },
+      "c": {
+        "title": "Adding Two Numbers and more"
+      },
+      "d": {
+        "title": "Division and more"
+      },
+      "e": {
+        "title": "Adding Decimals and more"
+      },
+      "f": {
+        "title": "Powers and more"
+      },
+      "g": {
+        "title": "Word Problems and more"
+      }
+    },
+    "math.g5": {
+      "a": {
+        "title": "Place Value and more"
+      },
+      "b": {
+        "title": "Adding Two Numbers and more"
+      },
+      "c": {
+        "title": "Division and more"
+      },
+      "d": {
+        "title": "Simplifying Fractions and more"
+      },
+      "e": {
+        "title": "Adding Decimals and more"
+      },
+      "f": {
+        "title": "Factors of a Number and more"
+      },
+      "g": {
+        "title": "Percent of a Quantity and more"
+      },
+      "h": {
+        "title": "Word Problems and more"
+      }
+    },
+    "math.g6": {
+      "a": {
+        "title": "Place Value and more"
+      },
+      "b": {
+        "title": "Adding Two Numbers and more"
+      },
+      "c": {
+        "title": "Factors of a Number and more"
+      },
+      "d": {
+        "title": "Addition Equation and more"
+      },
+      "e": {
+        "title": "Adding Decimal Numbers and more"
+      },
+      "f": {
+        "title": "A Fraction as Division and more"
+      },
+      "g": {
+        "title": "Ratios and more"
+      },
+      "h": {
+        "title": "Percent of a Quantity and more"
+      },
+      "i": {
+        "title": "Word Problems and more"
+      }
+    },
+    "science.g1": {
+      "a": {
+        "title": "The Human Body and more"
+      },
+      "b": {
+        "title": "Materials and more"
+      }
+    },
+    "science.g2": {
+      "a": {
+        "title": "The Human Body and more"
+      },
+      "b": {
+        "title": "Materials and more"
+      },
+      "c": {
+        "title": "Observation and Investigation [DRAFT — not owner-approved]"
+      }
+    },
+    "science.g3": {
+      "a": {
+        "title": "The Human Body and more"
+      },
+      "b": {
+        "title": "Materials and more"
+      },
+      "c": {
+        "title": "A Short Scientific Experiment [DRAFT — not owner-approved]"
+      }
+    },
+    "science.g4": {
+      "a": {
+        "title": "The Human Body and more"
+      },
+      "b": {
+        "title": "Materials and more"
+      },
+      "c": {
+        "title": "Planning an Experiment [DRAFT — not owner-approved]"
+      }
+    },
+    "science.g5": {
+      "b": {
+        "title": "Materials and more"
+      },
+      "a": {
+        "title": "The Human Body and more"
+      },
+      "c": {
+        "title": "Full Investigation — Documentation [DRAFT — not owner-approved]"
+      }
+    },
+    "science.g6": {
+      "b": {
+        "title": "Materials and more"
+      },
+      "a": {
+        "title": "The Human Body and more"
+      },
+      "c": {
+        "title": "Science Project [DRAFT — not owner-approved]"
+      }
+    },
+    "placeholder": {
+      "comingSoon": {
+        "title": "Coming soon"
+      }
+    }
+  },
+  "meta": {
+    "english.g1": {
+      "bookTitle": "English — Grade 1"
+    },
+    "english.g2": {
+      "bookTitle": "English — Grade 2"
+    },
+    "english.g3": {
+      "bookTitle": "English — Grade 3"
+    },
+    "english.g4": {
+      "bookTitle": "English — Grade 4"
+    },
+    "english.g5": {
+      "bookTitle": "English — Grade 5"
+    },
+    "english.g6": {
+      "bookTitle": "English — Grade 6"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometry — Grade 1"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometry — Grade 2"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometry — Grade 3"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometry — Grade 4"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometry — Grade 5"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometry — Grade 6"
+    },
+    "math.g1": {
+      "bookTitle": "Math — Grade 1"
+    },
+    "math.g2": {
+      "bookTitle": "Math — Grade 2"
+    },
+    "math.g3": {
+      "bookTitle": "Math — Grade 3"
+    },
+    "math.g4": {
+      "bookTitle": "Math — Grade 4"
+    },
+    "math.g5": {
+      "bookTitle": "Math — Grade 5"
+    },
+    "math.g6": {
+      "bookTitle": "Math — Grade 6"
+    },
+    "science.g1": {
+      "bookTitle": "Science — Grade 1"
+    },
+    "science.g2": {
+      "bookTitle": "Science — Grade 2"
+    },
+    "science.g3": {
+      "bookTitle": "Science — Grade 3"
+    },
+    "science.g4": {
+      "bookTitle": "Science — Grade 4"
+    },
+    "science.g5": {
+      "bookTitle": "Science — Grade 5"
+    },
+    "science.g6": {
+      "bookTitle": "Science — Grade 6"
+    }
+  }
+}

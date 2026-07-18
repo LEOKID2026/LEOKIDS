@@ -1,8 +1,13 @@
 /**
  * Parent-facing display labels — short/detailed report (UI display phase only).
  * Maps technical ids to short text; does not invent pedagogical content.
+ *
+ * @deprecated Wave B — copy lives in content-packs/en/reports/burn-down/.
+ * TODO(Wave B12): replace consumers with useReportPackCopy() / reportPackCopyForLocale(reportLocale, …).
+ * This module must not add new user-facing literals; reportLocale-aware rendering belongs in report-locale-context.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { normalizeParentFacingHe } from "./parent-report-language/parent-facing-normalize.js";
 import { SUBJECT_V2_RECALIBRATION_NEED_NO_HE } from "./parent-report-language/v2-parent-copy.js";
 import { narrativeSectionTextHe } from "./contracts/narrative-contract-v1.js";
@@ -28,31 +33,31 @@ import {
 const BEHAVIOR_OR_DIAGNOSTIC_HE = { ...PARENT_DIAGNOSTIC_TYPE_LABEL_HE };
 
 const CONF_BADGE_HE = {
-  high: "Enough questions in this period",
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "enough_questions_in_this_period"),
   medium: "A moderate number of questions in this period",
-  low: "Still limited data - a bit more practice will help us understand better",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "still_limited_data_a_bit_more_practice_will_help_us_understand_better"),
 };
 
 const SUFF_BADGE_HE = {
-  high: "Amount of practice: good",
-  medium: "Amount of practice: moderate",
-  low: "Amount of practice: low",
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "amount_of_practice_good"),
+  medium: reportPackCopy("utils__parent-report-ui-explain-he", "amount_of_practice_moderate"),
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "amount_of_practice_low"),
 };
 
 const RISK_FLAG_HE = {
-  falsePromotionRisk: "Risk of moving up a level too early",
-  falseRemediationRisk: "Risk of over-treating",
-  speedOnlyRisk: "Tendency toward speed",
-  hintDependenceRisk: "The child still relies on hints",
-  insufficientEvidenceRisk: "Only partial information",
+  falsePromotionRisk: reportPackCopy("utils__parent-report-ui-explain-he", "risk_of_moving_up_a_level_too_early"),
+  falseRemediationRisk: reportPackCopy("utils__parent-report-ui-explain-he", "risk_of_over_treating"),
+  speedOnlyRisk: reportPackCopy("utils__parent-report-ui-explain-he", "tendency_toward_speed"),
+  hintDependenceRisk: reportPackCopy("utils__parent-report-ui-explain-he", "the_child_still_relies_on_hints"),
+  insufficientEvidenceRisk: reportPackCopy("utils__parent-report-ui-explain-he", "only_partial_information"),
   recentTransitionRisk: "A small recent change",
 };
 
 const TREND_DIR_HE = {
-  up: "Improving",
-  down: "Declining",
-  flat: "No change",
-  unknown: "Not clear enough",
+  up: reportPackCopy("utils__parent-report-ui-explain-he", "improving"),
+  down: reportPackCopy("utils__parent-report-ui-explain-he", "declining"),
+  flat: reportPackCopy("utils__parent-report-ui-explain-he", "no_change"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_enough"),
 };
 
 /**
@@ -213,10 +218,10 @@ export const ROOT_CAUSE_LABEL_HE = {
 
 /** Recommended intervention type Phase 7 */
 export const INTERVENTION_TYPE_LABEL_HE = {
-  stabilize_accuracy: "Reinforce accuracy before changing level",
-  reduce_time_pressure: "Ease time pressure a bit while keeping accuracy",
-  guided_to_independent_transition: "Move slowly from guided support to independence",
-  clarify_instruction_pattern: "Explain the task and break it into small steps",
+  stabilize_accuracy: reportPackCopy("utils__parent-report-ui-explain-he", "reinforce_accuracy_before_changing_level"),
+  reduce_time_pressure: reportPackCopy("utils__parent-report-ui-explain-he", "ease_time_pressure_a_bit_while_keeping_accuracy"),
+  guided_to_independent_transition: reportPackCopy("utils__parent-report-ui-explain-he", "move_slowly_from_guided_support_to_independence"),
+  clarify_instruction_pattern: reportPackCopy("utils__parent-report-ui-explain-he", "explain_the_task_and_break_it_into_small_steps"),
   target_core_skill_gap: "Focused reinforcement where it's missing",
   monitor_before_escalation: "A bit more guided practice before escalating",
 };
@@ -226,44 +231,44 @@ export const MISTAKE_PATTERN_LABEL_HE = { ...MISTAKE_PATTERN_PARENT_HE };
 
 /** Phase 9 — learning stage over time */
 export const LEARNING_STAGE_LABEL_HE = {
-  early_acquisition: "Still learning and experimenting - this topic is relatively new",
-  partial_stabilization: "Starting to stabilize, not fully there yet",
-  stable_control: "Good problem-solving that holds over time",
-  fragile_retention: "The material is retained with difficulty",
+  early_acquisition: reportPackCopy("utils__parent-report-ui-explain-he", "still_learning_and_experimenting_this_topic_is_relatively_new"),
+  partial_stabilization: reportPackCopy("utils__parent-report-ui-explain-he", "starting_to_stabilize_not_fully_there_yet"),
+  stable_control: reportPackCopy("utils__parent-report-ui-explain-he", "good_problem_solving_that_holds_over_time"),
+  fragile_retention: reportPackCopy("utils__parent-report-ui-explain-he", "the_material_is_retained_with_difficulty"),
   regression_signal: "A recent decline - worth watching over the coming week",
-  transfer_emerging: "Starting to apply outside of the exact practice format too",
-  insufficient_longitudinal_evidence: "Still not enough information over time",
+  transfer_emerging: reportPackCopy("utils__parent-report-ui-explain-he", "starting_to_apply_outside_of_the_exact_practice_format_too"),
+  insufficient_longitudinal_evidence: reportPackCopy("utils__parent-report-ui-explain-he", "still_not_enough_information_over_time"),
 };
 
 const PHASE8_DURATION_BAND_HE = {
-  very_short: "Very short sessions",
-  short: "Short sessions",
-  moderate: "Moderate-length sessions",
+  very_short: reportPackCopy("utils__parent-report-ui-explain-he", "very_short_sessions"),
+  short: reportPackCopy("utils__parent-report-ui-explain-he", "short_sessions"),
+  moderate: reportPackCopy("utils__parent-report-ui-explain-he", "moderate_length_sessions"),
 };
 
 const PHASE8_INTENSITY_HE = {
   light: "Light",
-  focused: "Focused",
-  targeted: "Precise",
+  focused: reportPackCopy("utils__parent-report-ui-explain-he", "focused"),
+  targeted: reportPackCopy("utils__parent-report-ui-explain-he", "precise"),
 };
 
 const PHASE8_FORMAT_HE = {
-  guided_practice: "Guided practice",
-  independent_practice: "Independent practice",
-  mixed: "Guided and independent",
-  observation_block: "Observation and measurement",
+  guided_practice: reportPackCopy("utils__parent-report-ui-explain-he", "guided_practice"),
+  independent_practice: reportPackCopy("utils__parent-report-ui-explain-he", "independent_practice"),
+  mixed: reportPackCopy("utils__parent-report-ui-explain-he", "guided_and_independent"),
+  observation_block: reportPackCopy("utils__parent-report-ui-explain-he", "observation_and_measurement"),
 };
 
 const PHASE8_PARENT_EFFORT_HE = {
-  low: "Light parent involvement",
-  medium: "Moderate parent involvement",
-  high: "High parent involvement",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "light_parent_involvement"),
+  medium: reportPackCopy("utils__parent-report-ui-explain-he", "moderate_parent_involvement"),
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "high_parent_involvement"),
 };
 
 const PHASE8_PRACTICE_LOAD_HE = {
-  minimal: "Minimal practice",
-  light: "Light practice",
-  moderate: "Moderate practice",
+  minimal: reportPackCopy("utils__parent-report-ui-explain-he", "minimal_practice"),
+  light: reportPackCopy("utils__parent-report-ui-explain-he", "light_practice"),
+  moderate: reportPackCopy("utils__parent-report-ui-explain-he", "moderate_practice"),
 };
 
 /**
@@ -517,44 +522,44 @@ export function transferReadinessLineHe(rowOrRec) {
 /** Phase 10 — response to intervention */
 export const RESPONSE_TO_INTERVENTION_LABEL_HE = {
   not_enough_evidence: "There still isn't enough experience to know whether what we tried is really helping",
-  early_positive_response: "There are early signs of improvement - not confirmed yet",
-  stalled_response: "Progress feels stalled - worth refining or changing direction a bit",
-  over_supported_progress: "Success mostly happens with help nearby - not yet full independence",
-  independence_growing: "Independence is growing alongside progress",
+  early_positive_response: reportPackCopy("utils__parent-report-ui-explain-he", "there_are_early_signs_of_improvement_not_confirmed_yet"),
+  stalled_response: reportPackCopy("utils__parent-report-ui-explain-he", "progress_feels_stalled_worth_refining_or_changing_direction_a_bit"),
+  over_supported_progress: reportPackCopy("utils__parent-report-ui-explain-he", "success_mostly_happens_with_help_nearby_not_yet_full_independence"),
+  independence_growing: reportPackCopy("utils__parent-report-ui-explain-he", "independence_is_growing_alongside_progress"),
   regression_under_support: "A negative trend even with the same support",
-  mixed_response: "Mixed response - some progress, some still dependent",
+  mixed_response: reportPackCopy("utils__parent-report-ui-explain-he", "mixed_response_some_progress_some_still_dependent"),
 };
 
 export const SUPPORT_FIT_LABEL_HE = {
-  good_fit: "Good fit with current support",
-  partial_fit: "Partial fit - keep tracking and adjusting",
-  poor_fit: "Weak fit - consider changing approach",
-  unknown: "Not yet clear whether the fit is good",
+  good_fit: reportPackCopy("utils__parent-report-ui-explain-he", "good_fit_with_current_support"),
+  partial_fit: reportPackCopy("utils__parent-report-ui-explain-he", "partial_fit_keep_tracking_and_adjusting"),
+  poor_fit: reportPackCopy("utils__parent-report-ui-explain-he", "weak_fit_consider_changing_approach"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_yet_clear_whether_the_fit_is_good"),
 };
 
 export const SUPPORT_ADJUSTMENT_NEED_LABEL_HE = {
-  hold_course: "Continue in the same direction, carefully",
-  tighten_focus: "Narrow to one goal and slow down a bit",
-  reduce_support: "Gradually reduce support as independence appears",
-  increase_structure: "Add a short, clear structure",
+  hold_course: reportPackCopy("utils__parent-report-ui-explain-he", "continue_in_the_same_direction_carefully"),
+  tighten_focus: reportPackCopy("utils__parent-report-ui-explain-he", "narrow_to_one_goal_and_slow_down_a_bit"),
+  reduce_support: reportPackCopy("utils__parent-report-ui-explain-he", "gradually_reduce_support_as_independence_appears"),
+  increase_structure: reportPackCopy("utils__parent-report-ui-explain-he", "add_a_short_clear_structure"),
   change_strategy: "Change approach - what we tried isn't enough",
-  monitor_only: "Observe and gather more information before deciding",
+  monitor_only: reportPackCopy("utils__parent-report-ui-explain-he", "observe_and_gather_more_information_before_deciding"),
 };
 
 /** Phase 10 — freshness of the conclusion */
 export const FRESHNESS_STATE_LABEL_HE = {
-  fresh: "The information is relatively current",
-  recent_but_partial: "Partially current - details are still missing",
-  aging: "The information is starting to age",
+  fresh: reportPackCopy("utils__parent-report-ui-explain-he", "the_information_is_relatively_current"),
+  recent_but_partial: reportPackCopy("utils__parent-report-ui-explain-he", "partially_current_details_are_still_missing"),
+  aging: reportPackCopy("utils__parent-report-ui-explain-he", "the_information_is_starting_to_age"),
   stale: "The information is less current - don't rely on it alone",
-  unknown: "Not clear how fresh the information is",
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_how_fresh_the_information_is"),
 };
 
 export const CONCLUSION_FRESHNESS_LABEL_HE = {
-  high: "What the report shows is fairly reasonable right now",
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "what_the_report_shows_is_fairly_reasonable_right_now"),
   medium: "What the report shows is still solidifying - we'll keep checking",
-  low: "What the report shows is still tentative - a bit more information would help",
-  expired: "What the report shows is no longer current - worth reviewing again",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "what_the_report_shows_is_still_tentative_a_bit_more_information_would_he"),
+  expired: reportPackCopy("utils__parent-report-ui-explain-he", "what_the_report_shows_is_no_longer_current_worth_reviewing_again"),
 };
 
 export const RECALIBRATION_NEED_LABEL_HE = {
@@ -566,143 +571,143 @@ export const RECALIBRATION_NEED_LABEL_HE = {
 
 /** Phase 10 — direction of support adjustment for next week */
 export const NEXT_SUPPORT_ADJUSTMENT_LABEL_HE = {
-  continue_same_plan: "Continue with the same plan - carefully and with re-checking",
+  continue_same_plan: reportPackCopy("utils__parent-report-ui-explain-he", "continue_with_the_same_plan_carefully_and_with_re_checking"),
   continue_and_reduce_support: "Continue and slightly reduce guidance when there's a sign of independence",
-  continue_and_tighten_focus: "Continue, narrow to one goal, and shorten the session if needed",
-  pause_and_observe: "Pause for a moment, observe, and gather more information before changing",
-  recheck_before_advancing: "One more short check before raising difficulty or level",
+  continue_and_tighten_focus: reportPackCopy("utils__parent-report-ui-explain-he", "continue_narrow_to_one_goal_and_shorten_the_session_if_needed"),
+  pause_and_observe: reportPackCopy("utils__parent-report-ui-explain-he", "pause_for_a_moment_observe_and_gather_more_information_before_changing"),
+  recheck_before_advancing: reportPackCopy("utils__parent-report-ui-explain-he", "one_more_short_check_before_raising_difficulty_or_level"),
   switch_strategy: "Change approach - what we tried isn't enough right now",
 };
 
 /** Phase 11 — support sequence state */
 export const SUPPORT_SEQUENCE_STATE_LABEL_HE = {
-  new_support_cycle: "Starting new support - in the first days, watch the results without rushing to conclusions",
-  early_sequence: "Start of new support - keep tracking without overloading",
-  continuing_sequence: "Continuing in the same direction, which looks good",
-  sequence_ready_for_release: "Support can be reduced a little",
+  new_support_cycle: reportPackCopy("utils__parent-report-ui-explain-he", "starting_new_support_in_the_first_days_watch_the_results_without_rushing"),
+  early_sequence: reportPackCopy("utils__parent-report-ui-explain-he", "start_of_new_support_keep_tracking_without_overloading"),
+  continuing_sequence: reportPackCopy("utils__parent-report-ui-explain-he", "continuing_in_the_same_direction_which_looks_good"),
+  sequence_ready_for_release: reportPackCopy("utils__parent-report-ui-explain-he", "support_can_be_reduced_a_little"),
   sequence_stalled: "The direction isn't progressing enough - narrow the goal or change approach",
-  sequence_exhausted: "Practice is repeating too much - worth pausing and trying a different approach",
-  insufficient_sequence_evidence: "Still limited experience - worth checking again after a bit more practice.",
+  sequence_exhausted: reportPackCopy("utils__parent-report-ui-explain-he", "practice_is_repeating_too_much_worth_pausing_and_trying_a_different_appr"),
+  insufficient_sequence_evidence: reportPackCopy("utils__parent-report-ui-explain-he", "still_limited_experience_worth_checking_again_after_a_bit_more_practice"),
 };
 
 export const PRIOR_SUPPORT_PATTERN_LABEL_HE = {
-  guided_repeat: "Similar guided support repeated over time",
-  guided_then_release: "Guided, then a gradual move toward more independence",
+  guided_repeat: reportPackCopy("utils__parent-report-ui-explain-he", "similar_guided_support_repeated_over_time"),
+  guided_then_release: reportPackCopy("utils__parent-report-ui-explain-he", "guided_then_a_gradual_move_toward_more_independence"),
   review_hold_repeat: "A cycle of review and holding steady before changing",
   observe_then_retry: "A short check, then another attempt",
-  mixed_support_history: "An inconsistent mix of support",
-  unknown: "Not clear what past support looked like",
+  mixed_support_history: reportPackCopy("utils__parent-report-ui-explain-he", "an_inconsistent_mix_of_support"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_what_past_support_looked_like"),
 };
 
 export const STRATEGY_REPETITION_RISK_LABEL_HE = {
-  low: "Low risk of unnecessarily repeating the same method",
-  moderate: "Moderate risk of repeating the same direction without change",
-  high: "High risk of repeating the same kind of help without added benefit",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "low_risk_of_unnecessarily_repeating_the_same_method"),
+  moderate: reportPackCopy("utils__parent-report-ui-explain-he", "moderate_risk_of_repeating_the_same_direction_without_change"),
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "high_risk_of_repeating_the_same_kind_of_help_without_added_benefit"),
   unknown: "Not clear if there's risky repetition",
 };
 
 export const STRATEGY_FATIGUE_RISK_LABEL_HE = {
-  low: "Low load right now",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "low_load_right_now"),
   moderate: "Worth watching that things don't get \"worn out\" on the same wording",
   high: "There's a sign of fatigue with this kind of support - time to refresh",
-  unknown: "Not clear regarding fatigue with the approach",
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_regarding_fatigue_with_the_approach"),
 };
 
 export const NEXT_BEST_SEQUENCE_STEP_LABEL_HE = {
-  continue_current_sequence: "Continue in the same direction a bit longer and check again",
+  continue_current_sequence: reportPackCopy("utils__parent-report-ui-explain-he", "continue_in_the_same_direction_a_bit_longer_and_check_again"),
   begin_release_step: "Start reducing help carefully - don't switch all at once",
-  tighten_same_goal: "Narrow the same goal instead of expanding",
-  switch_support_type: "Switch the type of support - not just another repetition",
+  tighten_same_goal: reportPackCopy("utils__parent-report-ui-explain-he", "narrow_the_same_goal_instead_of_expanding"),
+  switch_support_type: reportPackCopy("utils__parent-report-ui-explain-he", "switch_the_type_of_support_not_just_another_repetition"),
   reset_with_short_review: "A short reset and re-check before pushing further",
-  observe_before_next_cycle: "Observe and gather information before a new cycle",
+  observe_before_next_cycle: reportPackCopy("utils__parent-report-ui-explain-he", "observe_and_gather_information_before_a_new_cycle"),
 };
 
 /** Phase 11 — next week's support sequence action (engine) */
 export const NEXT_SUPPORT_SEQUENCE_ACTION_LABEL_HE = {
-  continue_same_sequence: "Continue in the same direction - without a big change",
-  continue_with_tighter_target: "Continue in the same direction with a more focused goal",
-  begin_release_sequence: "Start a gradual process of reducing help",
-  pause_repeat_and_switch: "Pause repetitions and switch direction",
+  continue_same_sequence: reportPackCopy("utils__parent-report-ui-explain-he", "continue_in_the_same_direction_without_a_big_change"),
+  continue_with_tighter_target: reportPackCopy("utils__parent-report-ui-explain-he", "continue_in_the_same_direction_with_a_more_focused_goal"),
+  begin_release_sequence: reportPackCopy("utils__parent-report-ui-explain-he", "start_a_gradual_process_of_reducing_help"),
+  pause_repeat_and_switch: reportPackCopy("utils__parent-report-ui-explain-he", "pause_repetitions_and_switch_direction"),
   short_reset_then_retry: "A short reset, then try again",
-  observe_without_new_push: "Observe without a new push right now",
+  observe_without_new_push: reportPackCopy("utils__parent-report-ui-explain-he", "observe_without_a_new_push_right_now"),
 };
 
 export const ADVICE_SIMILARITY_LEVEL_LABEL_HE = {
   clearly_new: "Sounds like a relatively new direction compared to what's repeated so far",
-  partly_repeated: "Some things repeat - a slight variation could help",
-  mostly_repeated: "Most of the wording repeats itself - worth changing the angle",
-  unknown: "Not clear if this is a repetition",
+  partly_repeated: reportPackCopy("utils__parent-report-ui-explain-he", "some_things_repeat_a_slight_variation_could_help"),
+  mostly_repeated: reportPackCopy("utils__parent-report-ui-explain-he", "most_of_the_wording_repeats_itself_worth_changing_the_angle"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_if_this_is_a_repetition"),
 };
 
 export const ADVICE_NOVELTY_LABEL_HE = {
   high: "A lot of freshness in the wording and in what's actually done",
   medium: "A moderate level of freshness",
   low: "Similar to what's already been tried - maybe update it a bit",
-  unknown: "Not clear",
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear"),
 };
 
 export const RECOMMENDATION_ROTATION_NEED_LABEL_HE = {
-  none: "No need to update the direction of the recommendation",
+  none: reportPackCopy("utils__parent-report-ui-explain-he", "no_need_to_update_the_direction_of_the_recommendation"),
   light_variation: "It's enough to lightly update the wording or the step",
-  meaningful_rotation: "Worth changing significantly - not the same repeated exercise",
+  meaningful_rotation: reportPackCopy("utils__parent-report-ui-explain-he", "worth_changing_significantly_not_the_same_repeated_exercise"),
   do_not_repeat_yet: "Don't repeat the same kind of practice without pausing for a short check",
 };
 
 /** Phase 12 — what was tried recently */
 export const RECOMMENDATION_MEMORY_STATE_LABEL_HE = {
-  no_memory: "Still limited experience from the past - worth checking again after a bit more practice",
-  light_memory: "Only limited information from the past - mostly from the current period",
-  usable_memory: "Enough background to compare progress against what happened recently",
-  strong_memory: "Several periods to compare - continuity can be trusted a bit more",
+  no_memory: reportPackCopy("utils__parent-report-ui-explain-he", "still_limited_experience_from_the_past_worth_checking_again_after_a_bit_"),
+  light_memory: reportPackCopy("utils__parent-report-ui-explain-he", "only_limited_information_from_the_past_mostly_from_the_current_period"),
+  usable_memory: reportPackCopy("utils__parent-report-ui-explain-he", "enough_background_to_compare_progress_against_what_happened_recently"),
+  strong_memory: reportPackCopy("utils__parent-report-ui-explain-he", "several_periods_to_compare_continuity_can_be_trusted_a_bit_more"),
 };
 
 export const PRIOR_RECOMMENDATION_SIGNATURE_LABEL_HE = {
-  guided_accuracy_path: "Previous attempt to stabilize accuracy through guided practice",
-  review_hold_path: "Review and holding steady before a change",
+  guided_accuracy_path: reportPackCopy("utils__parent-report-ui-explain-he", "previous_attempt_to_stabilize_accuracy_through_guided_practice"),
+  review_hold_path: reportPackCopy("utils__parent-report-ui-explain-he", "review_and_holding_steady_before_a_change"),
   release_transition_path: "A gradual transition from support to independence",
   observe_monitor_path: "A short check and information gathering",
-  mixed_prior_path: "Several approaches tried, without one clear direction",
-  unknown: "Not clear what past support looked like",
+  mixed_prior_path: reportPackCopy("utils__parent-report-ui-explain-he", "several_approaches_tried_without_one_clear_direction"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_what_past_support_looked_like"),
 };
 
 export const SUPPORT_HISTORY_DEPTH_LABEL_HE = {
-  single_window: "Information from a single period only",
-  short_history: "Data from two periods to compare",
-  multi_window: "Several periods - a stronger basis",
-  unknown: "Not clear how much history is available",
+  single_window: reportPackCopy("utils__parent-report-ui-explain-he", "information_from_a_single_period_only"),
+  short_history: reportPackCopy("utils__parent-report-ui-explain-he", "data_from_two_periods_to_compare"),
+  multi_window: reportPackCopy("utils__parent-report-ui-explain-he", "several_periods_a_stronger_basis"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_how_much_history_is_available"),
 };
 
 export const RECOMMENDATION_CARRYOVER_LABEL_HE = {
-  not_visible: "No clear continuity is visible from the previous direction",
-  partly_visible: "The same direction may be continuing - but not conclusively",
-  clearly_visible: "It looks like the same support direction is continuing into this period too",
-  unclear: "Not clear if this is the same approach or a small change",
+  not_visible: reportPackCopy("utils__parent-report-ui-explain-he", "no_clear_continuity_is_visible_from_the_previous_direction"),
+  partly_visible: reportPackCopy("utils__parent-report-ui-explain-he", "the_same_direction_may_be_continuing_but_not_conclusively"),
+  clearly_visible: reportPackCopy("utils__parent-report-ui-explain-he", "it_looks_like_the_same_support_direction_is_continuing_into_this_period_"),
+  unclear: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_if_this_is_the_same_approach_or_a_small_change"),
 };
 
 export const MEMORY_OF_PRIOR_SUPPORT_CONFIDENCE_LABEL_HE = {
-  none: "Still not a strong enough basis to compare with the past",
-  low: "The comparison with the past is still weak",
-  medium: "Enough background for a careful comparison with the past",
+  none: reportPackCopy("utils__parent-report-ui-explain-he", "still_not_a_strong_enough_basis_to_compare_with_the_past"),
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "the_comparison_with_the_past_is_still_weak"),
+  medium: reportPackCopy("utils__parent-report-ui-explain-he", "enough_background_for_a_careful_comparison_with_the_past"),
   high: "There's enough background for a fairly reliable comparison with the past",
 };
 
 /** Phase 12 — outcome tracking */
 export const EXPECTED_OUTCOME_TYPE_LABEL_HE = {
-  accuracy_stabilization: "We wanted to stabilize accuracy",
-  independence_growth: "We wanted to build independence",
-  error_reduction: "We wanted to reduce recurring mistakes",
-  retention_hold: "We wanted retention and consistency",
-  release_readiness: "We wanted to see if help could be carefully reduced",
-  evidence_collection: "We wanted to gather a bit more information",
-  unknown: "Not clear what we were actually trying to improve",
+  accuracy_stabilization: reportPackCopy("utils__parent-report-ui-explain-he", "we_wanted_to_stabilize_accuracy"),
+  independence_growth: reportPackCopy("utils__parent-report-ui-explain-he", "we_wanted_to_build_independence"),
+  error_reduction: reportPackCopy("utils__parent-report-ui-explain-he", "we_wanted_to_reduce_recurring_mistakes"),
+  retention_hold: reportPackCopy("utils__parent-report-ui-explain-he", "we_wanted_retention_and_consistency"),
+  release_readiness: reportPackCopy("utils__parent-report-ui-explain-he", "we_wanted_to_see_if_help_could_be_carefully_reduced"),
+  evidence_collection: reportPackCopy("utils__parent-report-ui-explain-he", "we_wanted_to_gather_a_bit_more_information"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_what_we_were_actually_trying_to_improve"),
 };
 
 export const OBSERVED_OUTCOME_STATE_LABEL_HE = {
-  clear_progress: "In practice, we see clear improvement in the direction we wanted",
+  clear_progress: reportPackCopy("utils__parent-report-ui-explain-he", "in_practice_we_see_clear_improvement_in_the_direction_we_wanted"),
   partial_progress: "In practice, there's partial progress",
-  flat_response: "In practice, the picture is fairly flat",
-  contradictory_response: "In practice, the direction differs from what we expected",
-  not_observable_yet: "Still too early to see a clear result",
+  flat_response: reportPackCopy("utils__parent-report-ui-explain-he", "in_practice_the_picture_is_fairly_flat"),
+  contradictory_response: reportPackCopy("utils__parent-report-ui-explain-he", "in_practice_the_direction_differs_from_what_we_expected"),
+  not_observable_yet: reportPackCopy("utils__parent-report-ui-explain-he", "still_too_early_to_see_a_clear_result"),
 };
 
 export const EXPECTED_VS_OBSERVED_MATCH_LABEL_HE = {
@@ -714,14 +719,14 @@ export const EXPECTED_VS_OBSERVED_MATCH_LABEL_HE = {
 
 export const FOLLOW_THROUGH_SIGNAL_LABEL_HE = {
   likely_followed: "It's likely the direction at home was followed",
-  possibly_followed: "The direction may have been followed - not conclusive",
-  unclear: "Not clear if the same direction was followed at home",
-  not_inferable: "Cannot be inferred from the data",
+  possibly_followed: reportPackCopy("utils__parent-report-ui-explain-he", "the_direction_may_have_been_followed_not_conclusive"),
+  unclear: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_if_the_same_direction_was_followed_at_home"),
+  not_inferable: reportPackCopy("utils__parent-report-ui-explain-he", "cannot_be_inferred_from_the_data"),
 };
 
 export const RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE = {
   continue_with_same_core: "Continue with the same goal - what we're seeing in practice supports it",
-  continue_but_refine: "Continue in the same direction, more precisely",
+  continue_but_refine: reportPackCopy("utils__parent-report-ui-explain-he", "continue_in_the_same_direction_more_precisely"),
   begin_controlled_release: "Start slowly reducing support - now that there's a basis",
   do_not_repeat_without_new_evidence: "Don't repeat the same direction without new information",
   pivot_from_prior_path: "Move away from a direction that didn't lead anywhere",
@@ -729,66 +734,66 @@ export const RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE = {
 };
 
 export const OUTCOME_BASED_NEXT_MOVE_LABEL_HE = {
-  keep_current_direction: "Stay on this direction - and check again later",
+  keep_current_direction: reportPackCopy("utils__parent-report-ui-explain-he", "stay_on_this_direction_and_check_again_later"),
   tighten_goal_definition: "Narrow the goal - don't expand it",
-  reduce_support_and_check_transfer: "Reduce support a little and check if it holds on a new question too",
-  collect_new_evidence_first: "Gather more information before a major decision",
-  switch_path_type: "Switch the approach - not just another round",
+  reduce_support_and_check_transfer: reportPackCopy("utils__parent-report-ui-explain-he", "reduce_support_a_little_and_check_if_it_holds_on_a_new_question_too"),
+  collect_new_evidence_first: reportPackCopy("utils__parent-report-ui-explain-he", "gather_more_information_before_a_major_decision"),
+  switch_path_type: reportPackCopy("utils__parent-report-ui-explain-he", "switch_the_approach_not_just_another_round"),
   brief_reset_then_compare: "A brief reset and a fresh comparison",
 };
 
 /** Phase 13 — decision gates */
 export const GATE_STATE_LABEL_HE = {
   gates_not_ready: "There still isn't enough basis - staying with a cautious decision",
-  continue_gate_active: "The current direction needs a bit more proof before changing",
-  release_gate_forming: "Getting closer to reducing help - still missing one short sign of independence",
+  continue_gate_active: reportPackCopy("utils__parent-report-ui-explain-he", "the_current_direction_needs_a_bit_more_proof_before_changing"),
+  release_gate_forming: reportPackCopy("utils__parent-report-ui-explain-he", "getting_closer_to_reducing_help_still_missing_one_short_sign_of_independ"),
   pivot_gate_visible: "If there's still no improvement after more practice - worth considering a slightly different direction",
-  recheck_gate_visible: "Missing current information - worth gathering a bit more before deciding",
+  recheck_gate_visible: reportPackCopy("utils__parent-report-ui-explain-he", "missing_current_information_worth_gathering_a_bit_more_before_deciding"),
   advance_gate_forming: "There's a good basis - don't raise the level too fast without a clearly repeating success",
-  mixed_gate_state: "Several things at once - one clear step first",
+  mixed_gate_state: reportPackCopy("utils__parent-report-ui-explain-he", "several_things_at_once_one_clear_step_first"),
 };
 
 export const GATE_READINESS_LABEL_HE = {
-  low: "Low readiness - not locking into anything definitive",
-  moderate: "Moderate readiness - can be narrowed to one step",
-  high: "Relatively high readiness - still with conditions before reducing help or raising the level",
-  insufficient: "Not yet enough basis for a precise decision",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "low_readiness_not_locking_into_anything_definitive"),
+  moderate: reportPackCopy("utils__parent-report-ui-explain-he", "moderate_readiness_can_be_narrowed_to_one_step"),
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "relatively_high_readiness_still_with_conditions_before_reducing_help_or_"),
+  insufficient: reportPackCopy("utils__parent-report-ui-explain-he", "not_yet_enough_basis_for_a_precise_decision"),
 };
 
 export const GATE_LEVEL_LABEL_HE = {
-  off: "Not relevant right now",
-  pending: "Waiting for one more short sign",
-  forming: "Building gradually",
-  ready_watch: "Almost there - one last condition remains",
+  off: reportPackCopy("utils__parent-report-ui-explain-he", "not_relevant_right_now"),
+  pending: reportPackCopy("utils__parent-report-ui-explain-he", "waiting_for_one_more_short_sign"),
+  forming: reportPackCopy("utils__parent-report-ui-explain-he", "building_gradually"),
+  ready_watch: reportPackCopy("utils__parent-report-ui-explain-he", "almost_there_one_last_condition_remains"),
   blocked: "Paused temporarily until there's a bit of progress",
 };
 
 /** Phase 13 — evidence targets for the next round */
 export const TARGET_EVIDENCE_TYPE_LABEL_HE = {
-  accuracy_confirmation: "Confirm that accuracy holds without unnecessary pressure",
-  independence_confirmation: "See a short success without help in the middle",
-  retention_confirmation: "See that the child remembers even after a short break",
-  mistake_reduction_confirmation: "See fewer mistakes of the same kind",
-  response_confirmation: "See how the child responds to practice at home",
-  fresh_data_needed: "Gather a bit more current data before closing the picture",
-  mixed_target: "Combine two short signs - not everything at once",
+  accuracy_confirmation: reportPackCopy("utils__parent-report-ui-explain-he", "confirm_that_accuracy_holds_without_unnecessary_pressure"),
+  independence_confirmation: reportPackCopy("utils__parent-report-ui-explain-he", "see_a_short_success_without_help_in_the_middle"),
+  retention_confirmation: reportPackCopy("utils__parent-report-ui-explain-he", "see_that_the_child_remembers_even_after_a_short_break"),
+  mistake_reduction_confirmation: reportPackCopy("utils__parent-report-ui-explain-he", "see_fewer_mistakes_of_the_same_kind"),
+  response_confirmation: reportPackCopy("utils__parent-report-ui-explain-he", "see_how_the_child_responds_to_practice_at_home"),
+  fresh_data_needed: reportPackCopy("utils__parent-report-ui-explain-he", "gather_a_bit_more_current_data_before_closing_the_picture"),
+  mixed_target: reportPackCopy("utils__parent-report-ui-explain-he", "combine_two_short_signs_not_everything_at_once"),
 };
 
 export const TARGET_OBSERVATION_WINDOW_LABEL_HE = {
-  next_short_cycle: "In the coming days (one or two sessions)",
-  next_two_cycles: "Within the next two short practice sequences",
-  needs_fresh_baseline: "After a short check to refresh the picture",
-  unknown: "Not clear how much time is needed",
+  next_short_cycle: reportPackCopy("utils__parent-report-ui-explain-he", "in_the_coming_days_one_or_two_sessions"),
+  next_two_cycles: reportPackCopy("utils__parent-report-ui-explain-he", "within_the_next_two_short_practice_sequences"),
+  needs_fresh_baseline: reportPackCopy("utils__parent-report-ui-explain-he", "after_a_short_check_to_refresh_the_picture"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear_how_much_time_is_needed"),
 };
 
 /** Phase 13 — decision focus for the next round */
 export const NEXT_CYCLE_DECISION_FOCUS_LABEL_HE = {
-  prove_current_direction: "Check that the current direction is really helping",
-  check_independence_before_release: "Check for short independence before reducing help",
-  stabilize_before_advance: "Stabilize before raising the level",
-  test_if_path_is_working: "Check if the direction is actually working after a bit more practice",
-  refresh_baseline_before_decision: "Recheck the simpler parts before a big decision",
-  prepare_for_controlled_release: "Prepare to reduce help gradually - not switch to independent all at once",
+  prove_current_direction: reportPackCopy("utils__parent-report-ui-explain-he", "check_that_the_current_direction_is_really_helping"),
+  check_independence_before_release: reportPackCopy("utils__parent-report-ui-explain-he", "check_for_short_independence_before_reducing_help"),
+  stabilize_before_advance: reportPackCopy("utils__parent-report-ui-explain-he", "stabilize_before_raising_the_level"),
+  test_if_path_is_working: reportPackCopy("utils__parent-report-ui-explain-he", "check_if_the_direction_is_actually_working_after_a_bit_more_practice"),
+  refresh_baseline_before_decision: reportPackCopy("utils__parent-report-ui-explain-he", "recheck_the_simpler_parts_before_a_big_decision"),
+  prepare_for_controlled_release: reportPackCopy("utils__parent-report-ui-explain-he", "prepare_to_reduce_help_gradually_not_switch_to_independent_all_at_once"),
 };
 
 /** Phase 14 — parent_report_hebrew_copy_spec.md §4 */
@@ -797,38 +802,38 @@ export const DEPENDENCY_STATE_LABEL_HE = { ...DEPENDENCY_STATE_PARENT_HE };
 export const FOUNDATIONAL_BLOCKER_LABEL_HE = {
   accuracy_foundation_gap: DEPENDENCY_STATE_PARENT_HE.accuracy_foundation_gap,
   procedure_automaticity_gap: "It's hard to recall the solving method alone, even when the material is familiar",
-  instruction_language_load: "The wording of the task adds extra load",
-  independence_readiness_gap: "Still early for full independent work",
+  instruction_language_load: reportPackCopy("utils__parent-report-ui-explain-he", "the_wording_of_the_task_adds_extra_load"),
+  independence_readiness_gap: reportPackCopy("utils__parent-report-ui-explain-he", "still_early_for_full_independent_work"),
   retention_instability: "The child still doesn't retain the method over time",
-  unknown: "Not yet clear exactly what needs reinforcing first",
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_yet_clear_exactly_what_needs_reinforcing_first"),
 };
 
 export const LIKELIHOOD_LOW_MOD_HIGH_HE = {
-  low: "Less likely",
-  moderate: "Moderate likelihood",
-  high: "Fairly likely",
-  unknown: "Not clear",
+  low: reportPackCopy("utils__parent-report-ui-explain-he", "less_likely"),
+  moderate: reportPackCopy("utils__parent-report-ui-explain-he", "moderate_likelihood"),
+  high: reportPackCopy("utils__parent-report-ui-explain-he", "fairly_likely"),
+  unknown: reportPackCopy("utils__parent-report-ui-explain-he", "not_clear"),
 };
 
 /** Phase 14 — intervention order */
 export const INTERVENTION_ORDERING_LABEL_HE = {
-  foundation_first: "First reinforce the simpler parts - then return to the topic itself",
-  local_support_first: "Focused practice on the topic itself first",
-  parallel_light_support: "Light practice in parallel - without expanding everything at once",
-  gather_dependency_evidence_first: "Gather more information before deciding what to reinforce first",
+  foundation_first: reportPackCopy("utils__parent-report-ui-explain-he", "first_reinforce_the_simpler_parts_then_return_to_the_topic_itself"),
+  local_support_first: reportPackCopy("utils__parent-report-ui-explain-he", "focused_practice_on_the_topic_itself_first"),
+  parallel_light_support: reportPackCopy("utils__parent-report-ui-explain-he", "light_practice_in_parallel_without_expanding_everything_at_once"),
+  gather_dependency_evidence_first: reportPackCopy("utils__parent-report-ui-explain-he", "gather_more_information_before_deciding_what_to_reinforce_first"),
 };
 
 /** Phase 14 — foundation decision for the next round */
 export const FOUNDATION_DECISION_LABEL_HE = {
-  stabilize_foundation_first: "Reinforce the simpler parts first before expanding",
-  treat_locally: "Address the topic itself - without expanding beyond what the data shows",
-  run_parallel_light_support: "Combine short practice of the simpler parts together with the topic itself",
-  collect_dependency_evidence_first: "Gather information before changing the order of work",
+  stabilize_foundation_first: reportPackCopy("utils__parent-report-ui-explain-he", "reinforce_the_simpler_parts_first_before_expanding"),
+  treat_locally: reportPackCopy("utils__parent-report-ui-explain-he", "address_the_topic_itself_without_expanding_beyond_what_the_data_shows"),
+  run_parallel_light_support: reportPackCopy("utils__parent-report-ui-explain-he", "combine_short_practice_of_the_simpler_parts_together_with_the_topic_itse"),
+  collect_dependency_evidence_first: reportPackCopy("utils__parent-report-ui-explain-he", "gather_information_before_changing_the_order_of_work"),
 };
 
 export const NEXT_CYCLE_SUPPORT_LEVEL_LABEL_HE = {
-  narrow_local: "Focused practice on the topic",
-  foundation_targeted: "Focused practice on the simpler parts that need reinforcing",
+  narrow_local: reportPackCopy("utils__parent-report-ui-explain-he", "focused_practice_on_the_topic"),
+  foundation_targeted: reportPackCopy("utils__parent-report-ui-explain-he", "focused_practice_on_the_simpler_parts_that_need_reinforcing"),
   blended_light: "A light mix - not double the load",
   evidence_first: "A short check before deciding on the level of support",
 };

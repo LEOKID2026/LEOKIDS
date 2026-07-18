@@ -1,0 +1,61 @@
+{
+  "subjectId": "geometry",
+  "rows": [
+    {
+      "id": "G-01",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-02",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-03",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-04",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-05",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-06",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-07",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "G-08",
+      "subjectId": "geometry",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    }
+  ]
+}

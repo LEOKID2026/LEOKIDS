@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Thin practice window-need more observations before stable interpretation.",
+    "stable_accuracy_over_at_least_two_sessions": "Stable accuracy over at least two sessions",
+    "continued_random_incorrect_pattern_without_convergence": "Continued random/incorrect pattern without convergence",
+    "re_evaluate_mastery_and_misconceptions": "Re-evaluate mastery and misconceptions",
+    "consistent_correct_responses_on_parallel_items": "Consistent correct responses on parallel items",
+    "repeated_same_distractor_selection": "Repeated same distractor selection",
+    "escalate_practice_specificity": "Escalate practice specificity",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Prerequisite strengths unclear relative to advanced skill.",
+    "prerequisite_skill_shows_independent_accuracy": "Prerequisite skill shows independent accuracy",
+    "prerequisite_remains_unstable": "Prerequisite remains unstable",
+    "foundation_review_vs_isolated_advanced_gap": "Foundation review vs isolated advanced gap",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Strong observed mastery with adequate volume-optional challenge probe to confirm transfer.",
+    "maintains_accuracy_on_harder_parallel_items": "Maintains accuracy on harder parallel items",
+    "breakdown_on_increased_complexity": "Breakdown on increased complexity",
+    "adjust_level_or_add_scaffolded_practice": "Adjust level or add scaffolded practice",
+    "default_maintenance_probe_confirm_stability": "Default maintenance probe-confirm stability.",
+    "meet_or_exceed_recent_accuracy_band": "Meet or exceed recent accuracy band",
+    "accuracy_drops_materially": "Accuracy drops materially",
+    "adjust_practice_plan": "Adjust practice plan"
+  }
+}

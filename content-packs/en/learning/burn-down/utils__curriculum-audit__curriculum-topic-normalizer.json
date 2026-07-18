@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "unknown_subject_for_normalization": "Unknown subject for normalization.",
+    "mapped_from_math_generator_operation_topic_key": "Mapped from math generator operation / topic key.",
+    "mapped_from_geometry_topic_generator_kind": "Mapped from geometry topic / generator kind.",
+    "expand_geometry_strand_map_for_this_topic_kind": "Expand geometry strand map for this topic/kind.",
+    "mapped_from_hebrew_topics_key": "Mapped from Hebrew TOPICS key.",
+    "unknown_hebrew_topic_bucket": "Unknown Hebrew topic bucket.",
+    "vocabulary_games_map_to_lexis_translation_strand": "Vocabulary games map to lexis / translation strand.",
+    "writing_typing_modes_align_with_sentence_writing_strand": "Writing / typing modes align with sentence-writing strand.",
+    "mixed_practice_audit_often_skips_or_treats_as_composite": "Mixed practice - audit often skips or treats as composite.",
+    "translation_pools_emphasize_vocabulary_phrases": "Translation pools emphasize vocabulary / phrases.",
+    "expected_grammar_translation_sentence": "Expected grammar | translation | sentence.",
+    "mapped_from_science_bank_topic_field": "Mapped from science bank topic field.",
+    "extend_science_domain_map": "Extend science domain map."
+  }
+}

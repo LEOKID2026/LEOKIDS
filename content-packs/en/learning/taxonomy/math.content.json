@@ -1,0 +1,256 @@
+{
+  "subjectId": "math",
+  "rows": {
+    "M-01": {
+      "id": "M-01",
+      "domain": "Number",
+      "topic": "Structure",
+      "subskill": "10+1 decomposition",
+      "pattern": "Errors converting between representations",
+      "counterEvidence": "Succeeds with a representation shown without a long explanation",
+      "countsWhen": "Equivalent tasks; no hint that shows the full solution",
+      "doesNotCountWhen": "Full hint given; single task only",
+      "probe": "Two representations of the same number",
+      "intervention": "Manipulatives, then a gradual move to symbols",
+      "escalation": "Fails on every representation",
+      "observableMarkers": [
+        "Same error across two representations",
+        "Hesitation before answering"
+      ],
+      "roots": [
+        "Representation gap"
+      ],
+      "competitors": [
+        "Reading comprehension"
+      ],
+      "doNotConclude": [
+        "Not an arithmetic issue"
+      ]
+    },
+    "M-02": {
+      "id": "M-02",
+      "domain": "Operations",
+      "topic": "Addition",
+      "subskill": "Carrying",
+      "pattern": "Error in the tens column",
+      "counterEvidence": "Correct when there is no carrying",
+      "countsWhen": "Written digits",
+      "doesNotCountWhen": "Only extreme-sized numbers without a carrying basis",
+      "probe": "Addition with/without carrying",
+      "intervention": "Carrying with the intermediate step written out",
+      "escalation": "Depends on the intermediate step with no progress",
+      "observableMarkers": [
+        "Same error type across different magnitudes"
+      ],
+      "roots": [
+        "Carrying algorithm"
+      ],
+      "competitors": [
+        "Carelessness"
+      ],
+      "doNotConclude": [
+        "Lack of number sense"
+      ]
+    },
+    "M-03": {
+      "id": "M-03",
+      "domain": "Operations",
+      "topic": "Multiplication",
+      "subskill": "Multiplication fact",
+      "pattern": "Same pairs wrong repeatedly",
+      "counterEvidence": "Other pairs correct in the same session",
+      "countsWhen": "Regular practice; not only a speed test",
+      "doesNotCountWhen": "Speed test only",
+      "probe": "Double the time for the same set",
+      "intervention": "Targeted pair practice",
+      "escalation": "Fails on every pair even when slow",
+      "observableMarkers": [
+        "Overlapping list of wrong pairs"
+      ],
+      "roots": [
+        "Fact gap"
+      ],
+      "competitors": [
+        "Time pressure"
+      ],
+      "doNotConclude": [
+        "Cannot multiply at all"
+      ]
+    },
+    "M-04": {
+      "id": "M-04",
+      "domain": "Fractions",
+      "topic": "Representation",
+      "subskill": "Part-whole",
+      "pattern": "Comparing by numerator only",
+      "counterEvidence": "Correct when denominators happen to match",
+      "countsWhen": "Diagram/fraction strip available",
+      "doesNotCountWhen": "Verbal only, without a representation not yet taught",
+      "probe": "With/without a diagram",
+      "intervention": "Concrete part-whole work",
+      "escalation": "No improvement in any representation",
+      "observableMarkers": [
+        "Error even when the diagram is complete"
+      ],
+      "roots": [
+        "Fraction concept gap"
+      ],
+      "competitors": [
+        "Carelessness"
+      ],
+      "doNotConclude": [
+        "Cannot do fractions at all"
+      ]
+    },
+    "M-05": {
+      "id": "M-05",
+      "domain": "Fractions",
+      "topic": "Addition",
+      "subskill": "Denominator expansion",
+      "pattern": "Error at the same step",
+      "counterEvidence": "Correct with matching denominators",
+      "countsWhen": "Small denominators within the taught range",
+      "doesNotCountWhen": "Large denominators before basic multiplication is solid",
+      "probe": "Expansion factors 2, 3, 4",
+      "intervention": "Written steps with a parallel worked example",
+      "escalation": "Fails at basic multiplication",
+      "observableMarkers": [
+        "Error in repeated multiplication/expansion"
+      ],
+      "roots": [
+        "Expansion algorithm"
+      ],
+      "competitors": [
+        "Weak multiplication"
+      ],
+      "doNotConclude": [
+        "Cannot do fractions at all"
+      ]
+    },
+    "M-06": {
+      "id": "M-06",
+      "domain": "Decimals",
+      "topic": "Place value",
+      "subskill": "Rounding/comparison",
+      "pattern": "Wrong rounding direction",
+      "counterEvidence": "Correct with a place-value chart",
+      "countsWhen": "Non-round numbers",
+      "doesNotCountWhen": "Only round numbers in the task",
+      "probe": "With/without a place-value chart",
+      "intervention": "Color-coding place values",
+      "escalation": "Fails even with the chart",
+      "observableMarkers": [
+        "Repeated error on the same rule"
+      ],
+      "roots": [
+        "Place-value gap"
+      ],
+      "competitors": [
+        "Reading comprehension"
+      ],
+      "doNotConclude": [
+        "Cannot do decimals at all"
+      ]
+    },
+    "M-07": {
+      "id": "M-07",
+      "domain": "Word problems",
+      "topic": "Phrasing",
+      "subskill": "Units",
+      "pattern": "Correct number, wrong unit",
+      "counterEvidence": "Correct when only a number is requested",
+      "countsWhen": "Unit explicit in the text",
+      "doesNotCountWhen": "Question has no unit in the original",
+      "probe": "With/without a unit field",
+      "intervention": "Number plus a unit line",
+      "escalation": "Struggles even without a unit",
+      "observableMarkers": [
+        "Repeats an inappropriate unit"
+      ],
+      "roots": [
+        "Reading the question"
+      ],
+      "competitors": [
+        "Calculation"
+      ],
+      "doNotConclude": [
+        "No comprehension at all"
+      ]
+    },
+    "M-08": {
+      "id": "M-08",
+      "domain": "Word problems",
+      "topic": "Modeling",
+      "subskill": "Multi-step",
+      "pattern": "Fails only when combining steps",
+      "counterEvidence": "Succeeds with printed steps",
+      "countsWhen": "Numbered steps",
+      "doesNotCountWhen": "Version without steps when not yet taught",
+      "probe": "With a step template",
+      "intervention": "Steps plus a working-backward check",
+      "escalation": "Fails even on single-step problems",
+      "observableMarkers": [
+        "Error at the same final step"
+      ],
+      "roots": [
+        "Working-memory load"
+      ],
+      "competitors": [
+        "Calculation gap"
+      ],
+      "doNotConclude": [
+        "Cannot do word problems at all"
+      ]
+    },
+    "M-09": {
+      "id": "M-09",
+      "domain": "Operations",
+      "topic": "Subtraction",
+      "subskill": "Making ten",
+      "pattern": "Reversed direction / adds instead of subtracting",
+      "counterEvidence": "Correct on a number line",
+      "countsWhen": "Number line/track available",
+      "doesNotCountWhen": "Long verbal problem without a representation when not yet taught",
+      "probe": "Number line plus symbolic",
+      "intervention": "Number line plus a distance model",
+      "escalation": "No improvement in either representation",
+      "observableMarkers": [
+        "Repeated direction error"
+      ],
+      "roots": [
+        "Subtraction concept"
+      ],
+      "competitors": [
+        "Reading comprehension"
+      ],
+      "doNotConclude": [
+        "General arithmetic problem"
+      ]
+    },
+    "M-10": {
+      "id": "M-10",
+      "domain": "Multiplication/Division",
+      "topic": "Ratio",
+      "subskill": "Inverse operations",
+      "pattern": "Picks a multiplication fact that doesn't match the division",
+      "counterEvidence": "Correct when the multiplication sentence is shown",
+      "countsWhen": "Small numbers",
+      "doesNotCountWhen": "Large numbers before multiplication is mastered",
+      "probe": "With/without the multiplication sentence",
+      "intervention": "Linking multiplication and division",
+      "escalation": "Fails consistently",
+      "observableMarkers": [
+        "Error when no multiplication sentence is shown"
+      ],
+      "roots": [
+        "Inverse relationship"
+      ],
+      "competitors": [
+        "Carelessness"
+      ],
+      "doNotConclude": [
+        "Cannot divide at all"
+      ]
+    }
+  }
+}

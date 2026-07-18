@@ -3,6 +3,7 @@
  * Pure engine — no window / UI dependencies.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { EVIDENCE_SOURCE, normalizeEvidenceSourceKey } from "../lib/learning-supabase/evidence-source.js";
 import { PARENT_REPORT_DISPLAY_TIMEZONE } from "../lib/learning-supabase/parent-report-activity-time.js";
 
@@ -30,9 +31,9 @@ export const TREND_V1_PARENT_LINE_HE = Object.freeze({
 
 /** Short status label shown after "Trend for this period:" in parent-facing lines. */
 export const TREND_V1_STATUS_LABEL_HE = Object.freeze({
-  improving: "Improving",
-  stable: "No significant change",
-  declining: "Needs reinforcement",
+  improving: reportPackCopy("utils__parent-report-topic-trend-v1", "improving"),
+  stable: reportPackCopy("utils__parent-report-topic-trend-v1", "no_significant_change"),
+  declining: reportPackCopy("utils__parent-report-topic-trend-v1", "needs_reinforcement"),
 });
 
 /** Aggregate stores `moledet_geography`; V2 maps use `moledet-geography`. */

@@ -1,0 +1,36 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Gather more evidence before a plan",
+    "shortPractice": "3–7 items on the same topic at a slightly lower difficulty",
+    "avoid": "Do not jump too high in level or mix several topics together.",
+    "improvementSignals": ["Fewer repeating errors", "Independent correction after a mistake"],
+    "failureSignals": ["No change after two structured cycles"],
+    "hypothesisChange": "Failure on the proposed check, or success only with heavy hinting"
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Do not jump too high in level, mix several topics, or rely on general feedback without an example.",
+    "improvementSignals": ["Match taxonomy success markers", "Transfer success to a similar task"],
+    "hypothesisChange": "When the recommended probe fails or strong counter-evidence appears"
+  },
+  "probeFallback": {
+    "objective": "Separate a foundation gap from a topic-specific issue",
+    "specification": "A parallel task on the same principle with reduced complexity",
+    "stoppingRule": "Two consistent sequences or stable improvement",
+    "escalationRule": "No improvement after two cycles"
+  },
+  "probeWithTaxonomy": {
+    "objective": "Distinguish a foundation difficulty from a topic-specific one",
+    "stoppingRule": "Meet the row recurrence threshold or reject the hypothesis",
+    "hypothesisChange": "When the recommended probe fails or strong counter-evidence appears"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Speed pressure vs knowledge gap",
+    "carelessPattern": "Carelessness vs misunderstanding",
+    "instructionFriction": "Instruction/hint friction vs conceptual gap",
+    "distinguishingEvidence": [
+      "Compare timed vs untimed performance",
+      "Compare sparse vs rich hinting",
+      "Check recurrence by pattern family"
+    ]
+  }
+}

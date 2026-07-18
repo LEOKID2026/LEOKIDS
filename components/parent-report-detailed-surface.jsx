@@ -3,6 +3,7 @@
  * Parent Copilot Phase A: no report/print structure change here - Copilot is only integrated on the `parent-report-detailed.js` page.
  */
 export const PARENT_COPILOT_PHASE_A_SURFACE_TAG = "phaseA-no-layout-change";
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import React, { useMemo } from "react";
 import {
   buildSubjectParentLetterDetailedPhase1,
@@ -53,9 +54,9 @@ const PR1_RETENTION_LABEL_HE = {
 
 const PR1_TRANSFER_LABEL_HE = {
   not_ready: "It's better to reinforce the current topic first.",
-  limited: "You can try a little, only within the same topic.",
-  emerging: "You can start with a small step, but not jump a level.",
-  ready: "You can try a small advanced step.",
+  limited: reportPackCopy("components__parent-report-detailed-surface", "you_can_try_a_little_only_within_the_same_topic"),
+  emerging: reportPackCopy("components__parent-report-detailed-surface", "you_can_start_with_a_small_step_but_not_jump_a_level"),
+  ready: reportPackCopy("components__parent-report-detailed-surface", "you_can_try_a_small_advanced_step"),
 };
 
 const PHASE1_WHAT_NOT_TO_DO_DISPLAY = Object.freeze({
@@ -117,7 +118,7 @@ function pr1CrossSubjectTransferDisplayHe(raw) {
     .trim()
     .toLowerCase()
     .replace(/-/g, "_");
-  return PR1_TRANSFER_LABEL_HE[k] || "Still needs more practice to determine.";
+  return PR1_TRANSFER_LABEL_HE[k] || reportPackCopy("components__parent-report-detailed-surface", "still_needs_more_practice_to_determine");
 }
 
 /**
@@ -614,7 +615,7 @@ export function SubjectPhase3Insights({ sp, compact }) {
   }
   const trLine = String(transferReadinessLineHe(sp) || "").trim();
   const trMapped = pr1CrossSubjectTransferDisplayHe(String(sp?.subjectTransferReadiness || "").trim());
-  const trCombined = pr1ParentVisibleTextHe(trLine || (trMapped !== "Still needs more practice to determine." ? trMapped : ""));
+  const trCombined = pr1ParentVisibleTextHe(trLine || (trMapped !== reportPackCopy("components__parent-report-detailed-surface", "still_needs_more_practice_to_determine") ? trMapped : ""));
   if (trCombined) {
     rows.push({ k: "Ready to advance?", v: truncateHe(trCombined, 160) });
   }
@@ -647,16 +648,16 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
   const rows = [
     { label: "Total learning time", value: `${formatExclusiveLearningMinutesHe(b.totalMinutes)} min` },
     {
-      label: "Practice with questions",
+      label: reportPackCopy("components__parent-report-detailed-surface", "practice_with_questions"),
       value: `${formatExclusiveLearningMinutesHe(b.questionPracticeMinutes)} min`,
     },
     { label: "Questions answered", value: String(b.analyzedQuestionCount) },
     {
-      label: "Book reading",
+      label: reportPackCopy("components__parent-report-detailed-surface", "book_reading"),
       value: `${formatExclusiveLearningMinutesHe(b.bookReadingMinutes)} min`,
     },
     {
-      label: "Other active learning",
+      label: reportPackCopy("components__parent-report-detailed-surface", "other_active_learning"),
       value: `${formatExclusiveLearningMinutesHe(b.otherActiveLearningMinutes)} min`,
     },
   ];
@@ -690,8 +691,8 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
                 <thead>
                   <tr className="border-b border-white/15 bg-white/5">
                     <th className="p-2 font-semibold">Subject</th>
-                    <th className="p-2 font-semibold">Practice with questions</th>
-                    <th className="p-2 font-semibold">Book reading</th>
+                    <th className="p-2 font-semibold">{reportPackCopy("components__parent-report-detailed-surface", "practice_with_questions")}</th>
+                    <th className="p-2 font-semibold">{reportPackCopy("components__parent-report-detailed-surface", "book_reading")}</th>
                   </tr>
                 </thead>
                 <tbody>

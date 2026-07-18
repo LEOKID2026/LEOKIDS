@@ -3,6 +3,7 @@
  * Distinguishes topic-level conclusion sufficiency vs missing subskill detail.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { formatParentReportGradeHe as formatParentReportGradeLabel } from "./parent-report-language/parent-report-display-labels.js";
 import { splitTopicRowKey } from "./parent-report-row-diagnostics.js";
 import {
@@ -204,7 +205,7 @@ export function parentFacingTopicRowLabelHe(args) {
     gk = p?.gradeKey != null && String(p.gradeKey).trim() ? String(p.gradeKey).trim() : null;
   }
   const gradeLabel = gk ? formatParentReportGradeLabel(gk) : "";
-  if (!gradeLabel || gradeLabel === "Not available") return name;
+  if (!gradeLabel || gradeLabel === reportPackCopy("utils__parent-report-topic-evidence", "not_available")) return name;
   const rel = String(args?.gradeRelation || "").trim();
   if (rel === "higher") return `${name} (practiced at grade ${gradeLabel} - above the registered grade)`;
   if (rel === "lower") return `${name} (practiced at grade ${gradeLabel} - foundational/lower grade)`;

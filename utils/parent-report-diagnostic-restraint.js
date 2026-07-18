@@ -3,6 +3,7 @@
  * לוגיקה טהורה; לא תלוי ב-React.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { PARENT_EVIDENCE_VOLUME } from "./parent-report-language/parent-evidence-matrix.js";
 
 /**
@@ -154,7 +155,7 @@ export function computeDiagnosticRestraint(ctx) {
     diagnosticCautionHe =
       "There are conflicting signals (for example speed versus knowledge gap) — do not lock onto one direction before more guided practice.";
   } else if (conclusionStrength === "tentative") {
-    diagnosticCautionHe = "What is shown here is plausible but not final — follow up rather than acting on a sharp assumption.";
+    diagnosticCautionHe = reportPackCopy("utils__parent-report-diagnostic-restraint", "what_is_shown_here_is_plausible_but_not_final_follow_up_rather_than_acti");
   }
 
   return {

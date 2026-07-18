@@ -3,6 +3,7 @@
  * One storage bucket (operations.* or topics.*) = one table row; no V1 fallback.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { STORAGE_KEY } from "./math-constants.js";
 import {
   generateRecommendations,
@@ -569,18 +570,18 @@ export function collapseTopicRowsToCanonicalTopicEntity(subjectId, rowsByKey) {
       grade: formatParentReportGradeLabel(gradeKey),
       levelKey: displayLevelKey || null,
       displayLevelKey: displayLevelKey || null,
-      level: displayLevelKey ? formatParentReportLevelHe(displayLevelKey, subjectId) : "Not available",
+      level: displayLevelKey ? formatParentReportLevelHe(displayLevelKey, subjectId) : reportPackCopy("utils__parent-report-v2", "not_available"),
       _sourceDifficultyBreakdown:
         mergedSourceBreakdown.easy + mergedSourceBreakdown.medium + mergedSourceBreakdown.hard > 0
           ? { ...mergedSourceBreakdown }
           : representative?._sourceDifficultyBreakdown || null,
       displayName: String(representative?.displayName || "").trim() || String(representative?.bucketKey || bucketKey),
       lastSessionMs: validActivityMs(Number(lastSessionMs)),
-      lastSessionAt: lastSessionAt || representative?.lastSessionAt || "Not available",
+      lastSessionAt: lastSessionAt || representative?.lastSessionAt || reportPackCopy("utils__parent-report-v2", "not_available"),
       latestActivityAt:
         validActivityMs(Number(lastSessionMs)) != null
           ? formatParentReportActivityIsrael(Number(lastSessionMs))
-          : "Not available",
+          : reportPackCopy("utils__parent-report-v2", "not_available"),
       latestActivityMs: validActivityMs(Number(lastSessionMs)),
       lastAnswerMs: validActivityMs(Number(lastAnswerMs)),
       lastAnswerAt: lastAnswerAt || representative?.lastAnswerAt || null,
@@ -727,7 +728,7 @@ function buildRowSummary({
   const topicOpLabel = displayNameFn(bucketKey);
   const modeStr = modeLabel(modeKey);
   const lastMs = latestSessionMs(sessions);
-  const lastSessionAt = formatLastSessionAt(lastMs) || "Not available";
+  const lastSessionAt = formatLastSessionAt(lastMs) || reportPackCopy("utils__parent-report-v2", "not_available");
   const lastAnswerMsFromSessions = (() => {
     let max = null;
     for (const s of sessions) {
@@ -777,7 +778,7 @@ function buildRowSummary({
     actualGradeKey: gradeEvidence.contentGradeLevel,
     gradeRelation: gradeEvidence.gradeRelation,
     gradeDelta: gradeEvidence.gradeDelta,
-    level: levelKey ? formatParentReportLevelHe(levelKey, subject) : "Not available",
+    level: levelKey ? formatParentReportLevelHe(levelKey, subject) : reportPackCopy("utils__parent-report-v2", "not_available"),
     levelKey,
     displayLevelKey,
     mode: modeStr,

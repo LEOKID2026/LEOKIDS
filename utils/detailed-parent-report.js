@@ -3,6 +3,7 @@
  * Data source: generateParentReportV2 + diagnosticEngineV2 (primary source), with fallback to patternDiagnostics.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { generateParentReportV2 } from "./parent-report-v2.js";
 import { splitTopicRowKey } from "./parent-report-row-diagnostics.js";
 import { isValidHybridRuntimePayload } from "./ai-hybrid-diagnostic/validate-hybrid-runtime.js";
@@ -383,7 +384,7 @@ const CROSS_RISK_LABEL_HE = {
   ...PARENT_DIAGNOSTIC_TYPE_LABEL_HE,
   mixed: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_signal,
   none_sparse: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.none_sparse,
-  none_observed: "No dominant difficulty is visible right now",
+  none_observed: reportPackCopy("utils__detailed-parent-report", "no_dominant_difficulty_is_visible_right_now"),
 };
 
 function crossRiskLabelHe(riskId, subjects) {
@@ -2563,7 +2564,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         topicRecommendations: [],
         parentActionHe: null,
         nextWeekGoalHe: null,
-        confidenceSummaryHe: "Not enough information has accumulated yet to set a clear direction.",
+        confidenceSummaryHe: reportPackCopy("utils__detailed-parent-report", "not_enough_information_has_accumulated_yet_to_set_a_clear_direction"),
         recommendedHomeMethodHe: null,
         trendNarrativeHe: null,
         subjectMonitoringOnly: true,
@@ -2848,7 +2849,7 @@ function buildSubjectProfilesFromV2(baseReport) {
                 reportSubjectAccuracy: subjectAccuracyFromReportSummary(baseReport, sid),
               });
             })()
-          : "Not enough information has accumulated yet for a broad picture from the practice.",
+          : reportPackCopy("utils__detailed-parent-report", "not_enough_information_has_accumulated_yet_for_a_broad_picture_from_the_"),
       recommendedHomeMethodHe:
         resolveUnitNextGoalHe(subjectAnchorUnit, anchorGradeKey) || resolveUnitHomeMethodHe(subjectAnchorUnit, anchorGradeKey),
       whatNotToDoHe: subjectAnchorUnit?.intervention?.avoidHe || null,
@@ -2913,7 +2914,7 @@ function buildSubjectProfilesFromV2(baseReport) {
   return out;
 }
 
-function buildExecutiveSummaryFromV2(baseReport, subjectCoverage) {
+function buildExecutiveSummaryFromV2(baseReport, subjectCoverage, reportLocale = "en") {
   const diag = baseReport?.diagnosticEngineV2;
   const allUnits = Array.isArray(diag?.units) ? diag.units : [];
   const units = allUnits.filter((u) => {
@@ -2962,20 +2963,31 @@ function buildExecutiveSummaryFromV2(baseReport, subjectCoverage) {
     topStrengthsAcrossHe,
     topFocusAreasHe,
     gradeSplitTopicNoticesHe,
-    homeFocusHe: executiveV2HomeFocusHe(topFocusAreasHe),
-    majorTrendsHe: executiveV2MajorTrendsLinesHe({
-      units: units.length,
-      diagnosed: diagnosed.length,
-      uncertain: uncertain.length,
-      stable: stable.length,
-    }),
+    homeFocusHe: executiveV2HomeFocusHe(topFocusAreasHe, reportLocale),
+    majorTrendsHe: executiveV2MajorTrendsLinesHe(
+      {
+        units: units.length,
+        diagnosed: diagnosed.length,
+        uncertain: uncertain.length,
+        stable: stable.length,
+      },
+      reportLocale
+    ),
     mainHomeRecommendationHe:
       resolveUnitParentActionHe(p4[0], gk(p4[0]))
       || resolveUnitParentActionHe(diagnosed[0], gk(diagnosed[0]))
       || resolveUnitParentActionHe(leadPosX, gk(leadPosX))
       || "There's no single central home recommendation right now, because more information is still needed.",
-    cautionNoteHe: executiveV2CautionNoteHe({ p4Length: p4.length, uncertainLength: uncertain.length }),
-    overallConfidenceHe: executiveV2OverallConfidenceHe(diagnosed.length, units.length, stable.length),
+    cautionNoteHe: executiveV2CautionNoteHe(
+      { p4Length: p4.length, uncertainLength: uncertain.length },
+      reportLocale
+    ),
+    overallConfidenceHe: executiveV2OverallConfidenceHe(
+      diagnosed.length,
+      units.length,
+      stable.length,
+      reportLocale
+    ),
     dominantCrossSubjectRiskLabelHe: parentFacingPatternLabelHe(diagnosed[0]) || "",
     dominantCrossSubjectSuccessPatternLabelHe: (() => {
       const focusHe = stable[0]?.taxonomy?.["sub" + "skillHe"];
@@ -2987,9 +2999,9 @@ function buildExecutiveSummaryFromV2(baseReport, subjectCoverage) {
       }
       return "";
     })(),
-    mixedSignalNoticeHe: executiveV2MixedSignalNoticeHe(uncertain.length > 0),
-    reportReadinessHe: executiveV2ReportReadinessHe(units.length),
-    evidenceBalanceHe: executiveV2EvidenceBalanceHe(stable.length, diagnosed.length),
+    mixedSignalNoticeHe: executiveV2MixedSignalNoticeHe(uncertain.length > 0, reportLocale),
+    reportReadinessHe: executiveV2ReportReadinessHe(units.length, reportLocale),
+    evidenceBalanceHe: executiveV2EvidenceBalanceHe(stable.length, diagnosed.length, reportLocale),
     topImmediateParentActionHe: resolveUnitParentActionHe(diagnosed[0], gk(diagnosed[0])) || "",
     secondPriorityActionHe: diagnosed[1]
       ? resolveUnitParentActionHe(diagnosed[1], gk(diagnosed[1])) || ""
@@ -3008,7 +3020,7 @@ function buildExecutiveSummaryFromV2(baseReport, subjectCoverage) {
   };
 }
 
-function buildCrossSubjectInsightsFromV2(baseReport) {
+function buildCrossSubjectInsightsFromV2(baseReport, reportLocale = "en") {
   const allUnits = Array.isArray(baseReport?.diagnosticEngineV2?.units) ? baseReport.diagnosticEngineV2.units : [];
   const units = allUnits.filter((u) => {
     const sid = String(u?.subjectId || "");
@@ -3025,19 +3037,22 @@ function buildCrossSubjectInsightsFromV2(baseReport) {
       tier === PARENT_TOPIC_TIER.NEEDS_GUIDANCE
     );
   }).length;
-  const bulletsHe = crossSubjectV2BulletsHe({
-    unitsLength: units.length,
-    highPriorityCount: p4,
-    strengthenTopicCount,
-    contradictoryCount: contradictory,
-  });
+  const bulletsHe = crossSubjectV2BulletsHe(
+    {
+      unitsLength: units.length,
+      highPriorityCount: p4,
+      strengthenTopicCount,
+      contradictoryCount: contradictory,
+    },
+    reportLocale
+  );
   return {
     bulletsHe,
-    dataQualityNoteHe: crossSubjectV2DataQualityNoteHe(units.length),
+    dataQualityNoteHe: crossSubjectV2DataQualityNoteHe(units.length, reportLocale),
   };
 }
 
-function buildHomePlanFromV2(baseReport) {
+function buildHomePlanFromV2(baseReport, reportLocale = "en") {
   const allUnits = Array.isArray(baseReport?.diagnosticEngineV2?.units) ? baseReport.diagnosticEngineV2.units : [];
   const units = allUnits.filter((u) => {
     const sid = String(u?.subjectId || "");
@@ -3074,10 +3089,10 @@ function buildHomePlanFromV2(baseReport) {
       homePlanLineFromV2Unit(baseReport, u, rewriteParentRecommendationForDetailedHe(String(action))),
     );
   }
-  return { itemsHe: itemsHe.length ? itemsHe : [homePlanV2EmptyFallbackHe()] };
+  return { itemsHe: itemsHe.length ? itemsHe : [homePlanV2EmptyFallbackHe(reportLocale)] };
 }
 
-function buildNextPeriodGoalsFromV2(baseReport) {
+function buildNextPeriodGoalsFromV2(baseReport, reportLocale = "en") {
   const allUnits = Array.isArray(baseReport?.diagnosticEngineV2?.units) ? baseReport.diagnosticEngineV2.units : [];
   const units = allUnits.filter((u) => {
     const sid = String(u?.subjectId || "");
@@ -3091,7 +3106,7 @@ function buildNextPeriodGoalsFromV2(baseReport) {
       const goal = resolveUnitNextGoalHe(u, gradeKeyForV2UnitFromReport(baseReport, u)) || "";
       return `In ${SUBJECT_LABEL_HE[u.subjectId] || u.subjectId}: ${rewriteParentRecommendationForDetailedHe(String(goal))}`;
     });
-  return { itemsHe: itemsHe.length ? itemsHe : [nextPeriodGoalsV2EmptyFallbackHe()] };
+  return { itemsHe: itemsHe.length ? itemsHe : [nextPeriodGoalsV2EmptyFallbackHe(reportLocale)] };
 }
 
 /**
@@ -3117,6 +3132,12 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
   hardenBaseReportWithRowIdentity(baseReport);
   const playerName = meta.playerName ?? baseReport.playerName ?? "_fixture_";
   const period = meta.period ?? baseReport.period ?? "week";
+  const reportLocale =
+    meta.reportLocale ??
+    (baseReport.meta && typeof baseReport.meta === "object"
+      ? /** @type {{ reportLocale?: string }} */ (baseReport.meta).reportLocale
+      : null) ??
+    "en";
 
   const subjectCoverage = buildSubjectCoverage(baseReport);
   const overallSnapshot = buildOverallSnapshot(baseReport, subjectCoverage);
@@ -3129,7 +3150,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
     baseReport.patternDiagnostics?.subjects ||
     {};
   let executiveSummary = hasV2Primary
-    ? buildExecutiveSummaryFromV2(baseReport, subjectCoverage)
+    ? buildExecutiveSummaryFromV2(baseReport, subjectCoverage, reportLocale)
     : buildExecutiveSummary(
         subjectsLegacy,
         baseReport.summary || {},
@@ -3137,11 +3158,13 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
         baseReport.dataIntegrityReport ?? null
       );
   const crossSubjectInsights = hasV2Primary
-    ? buildCrossSubjectInsightsFromV2(baseReport)
+    ? buildCrossSubjectInsightsFromV2(baseReport, reportLocale)
     : buildCrossSubjectInsights(baseReport, subjectsLegacy);
-  const homePlan = hasV2Primary ? buildHomePlanFromV2(baseReport) : buildHomePlan(subjectsLegacy);
+  const homePlan = hasV2Primary
+    ? buildHomePlanFromV2(baseReport, reportLocale)
+    : buildHomePlan(subjectsLegacy);
   const nextPeriodGoals = hasV2Primary
-    ? buildNextPeriodGoalsFromV2(baseReport)
+    ? buildNextPeriodGoalsFromV2(baseReport, reportLocale)
     : buildNextPeriodGoals(subjectsLegacy);
   const rawSubjectProfiles = hasV2Primary
     ? buildSubjectProfilesFromV2(baseReport)

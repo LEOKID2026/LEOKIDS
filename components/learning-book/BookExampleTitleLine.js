@@ -17,7 +17,7 @@ export default function BookExampleTitleLine({ text }) {
     <p
       className="text-left text-base font-bold leading-relaxed text-[color:var(--book-text)] sm:text-lg"
       dir="ltr"
-      data-book-example-title="true"
+      data-book-example-title
     >
       <bdi dir="ltr" style={mathIslandStyle} className="tabular-nums">
         {mathPart}

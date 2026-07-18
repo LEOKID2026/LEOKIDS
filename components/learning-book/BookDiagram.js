@@ -19,6 +19,7 @@ import {
 } from "../../lib/learning-book/diagram-detect";
 import { stripStrayMarkdown } from "../../lib/learning-book/parse-inline-markdown";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
+import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
 
 function Dot({ kind = "dot" }) {
   const theme = useBookGradeTheme().classes;
@@ -449,6 +450,7 @@ function FrameTextDiagram({ lines }) {
 
 function PlaceValueDiagram({ parsed }) {
   const theme = useBookGradeTheme().classes;
+  const copy = useBookUiCopy();
   const { columns, equation } = parsed;
 
   return (
@@ -456,7 +458,7 @@ function PlaceValueDiagram({ parsed }) {
       <div
         className="mx-auto flex w-fit max-w-full flex-row items-stretch justify-center gap-2 sm:gap-3"
         role="table"
-        aria-label="Place value chart"
+        aria-label={copy("diagramAria", "place_value_chart")}
       >
         {columns.map((col, i) => (
           <div
@@ -584,6 +586,7 @@ function GenericDiagram({ content }) {
 
 export default function BookDiagram({ content }) {
   const theme = useBookGradeTheme().classes;
+  const copy = useBookUiCopy();
   const lines = String(content || "")
     .split("\n")
     .map((l) => stripStrayMarkdown(l.trim()))
@@ -596,7 +599,7 @@ export default function BookDiagram({ content }) {
     <div
       className={`my-4 rounded-2xl border px-3 py-5 sm:px-6 sm:py-6 ${theme.diagramPanel}`}
       role="img"
-      aria-label="Example"
+      aria-label={copy("diagramAria", "content_diagram")}
     >
       {verticalArithmetic && <BookVerticalArithmetic content={content} />}
       {!verticalArithmetic && kind === "number_line" && <NumberLineDiagram lines={lines} />}

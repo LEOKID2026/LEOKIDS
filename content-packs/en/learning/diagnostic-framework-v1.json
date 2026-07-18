@@ -1,0 +1,313 @@
+{
+  "framework": {
+    "version": "1.1.0",
+    "name": "Professional Diagnostic Framework V1",
+    "supportedSubjectIds": [
+      "math",
+      "hebrew",
+      "english",
+      "science",
+      "geometry",
+      "moledet-geography"
+    ],
+    "evidenceLevelEnum": [
+      "none",
+      "thin",
+      "limited",
+      "medium",
+      "strong"
+    ],
+    "confidenceEnum": [
+      "very_low",
+      "low",
+      "medium",
+      "high"
+    ],
+    "recommendationTypeEnum": [
+      "continue_current_level",
+      "advance_cautiously",
+      "targeted_practice",
+      "review_foundation",
+      "collect_more_data",
+      "slow_down_and_check",
+      "teacher_review_recommended",
+      "professional_review_consideration"
+    ],
+    "bannedConclusionPhrases": [
+      "dyslexia",
+      "dyscalculia",
+      "adhd",
+      "learning disability",
+      "╫º╫ò╫⌐╫Ö ╫£╫₧╫Ö╫ô╫ö ╫º╫£╫Ö╫á╫Ö",
+      "╫É╫æ╫ù╫ò╫ƒ ╫¿╫ñ╫ò╫É╫Ö",
+      "╫É╫æ╫ù╫ò╫ƒ ╫º╫£╫Ö╫á╫Ö"
+    ]
+  },
+  "skillPackStructure": {
+    "math": {
+      "arithmetic_operations": {
+        "subskills": [
+          "addition",
+          "subtraction",
+          "multiplication",
+          "division",
+          "order_of_operations"
+        ]
+      },
+      "fractions": {
+        "subskills": [
+          "numerator_denominator_understanding",
+          "compare_fractions",
+          "unlike_denominators",
+          "equivalent_fractions",
+          "add_fractions",
+          "subtract_fractions",
+          "simplify_fractions",
+          "mixed_numbers",
+          "fraction_word_problems"
+        ]
+      },
+      "word_problems": {
+        "subskills": [
+          "identify_operation_from_text",
+          "translate_text_to_equation",
+          "multi_step_reasoning",
+          "irrelevant_information",
+          "reading_the_question"
+        ]
+      },
+      "number_sense": {
+        "subskills": [
+          "place_value",
+          "rounding",
+          "estimation",
+          "number_line_reasoning"
+        ]
+      }
+    },
+    "hebrew": {
+      "reading_comprehension": {
+        "subskills": [
+          "explicit_information",
+          "inference",
+          "main_idea",
+          "sequence_of_events",
+          "cause_and_effect",
+          "vocabulary_in_context",
+          "fact_vs_opinion",
+          "understanding_instructions",
+          "character_or_text_intent"
+        ]
+      },
+      "language_grammar": {
+        "subskills": [
+          "sentence_structure",
+          "verb_tense_recognition",
+          "word_meaning",
+          "spelling_morphology"
+        ]
+      }
+    },
+    "english": {
+      "vocabulary": {
+        "subskills": [
+          "word_meaning",
+          "collocations",
+          "context_clues",
+          "synonyms_antonyms"
+        ]
+      },
+      "grammar": {
+        "subskills": [
+          "tense_agreement",
+          "sentence_structure",
+          "articles_prepositions",
+          "word_order"
+        ]
+      },
+      "reading_comprehension": {
+        "subskills": [
+          "main_idea",
+          "details",
+          "inference",
+          "sequence"
+        ]
+      },
+      "sentence_understanding": {
+        "subskills": [
+          "sentence_meaning",
+          "connectors",
+          "negation_scope"
+        ]
+      },
+      "translation": {
+        "subskills": [
+          "alignment_meaning",
+          "false_friends",
+          "instruction_transfer"
+        ]
+      }
+    },
+    "science": {
+      "cause_and_effect": {
+        "subskills": [
+          "identify_cause",
+          "identify_effect",
+          "chain_reasoning"
+        ]
+      },
+      "experiments": {
+        "subskills": [
+          "variables",
+          "hypothesis",
+          "steps",
+          "interpret_results"
+        ]
+      },
+      "observation": {
+        "subskills": [
+          "describe_patterns",
+          "collect_evidence",
+          "measurement_basics"
+        ]
+      },
+      "classification": {
+        "subskills": [
+          "sorting_rules",
+          "taxonomy",
+          "compare_groups"
+        ]
+      },
+      "systems_understanding": {
+        "subskills": [
+          "parts_roles",
+          "cycles",
+          "interactions"
+        ]
+      },
+      "scientific_reasoning": {
+        "subskills": [
+          "models",
+          "predictions",
+          "evidence_vs_opinion"
+        ]
+      }
+    },
+    "geometry": {
+      "shapes": {
+        "subskills": [
+          "identify_shapes",
+          "properties",
+          "compare_shapes"
+        ]
+      },
+      "angles": {
+        "subskills": [
+          "measure_angles",
+          "angle_types",
+          "angle_relationships"
+        ]
+      },
+      "area": {
+        "subskills": [
+          "area_formulas",
+          "composite_figures",
+          "units"
+        ]
+      },
+      "perimeter": {
+        "subskills": [
+          "perimeter_reasoning",
+          "units",
+          "composite_bounds"
+        ]
+      },
+      "symmetry": {
+        "subskills": [
+          "line_symmetry",
+          "reflections"
+        ]
+      },
+      "spatial_reasoning": {
+        "subskills": [
+          "nets",
+          "views",
+          "transformations"
+        ]
+      }
+    },
+    "moledet-geography": {
+      "maps": {
+        "subskills": [
+          "legend_scale",
+          "coordinates_grid",
+          "symbols"
+        ]
+      },
+      "directions": {
+        "subskills": [
+          "cardinal_relative",
+          "routes",
+          "orientation"
+        ]
+      },
+      "landmarks": {
+        "subskills": [
+          "recognize_features",
+          "relations_between_places"
+        ]
+      },
+      "community": {
+        "subskills": [
+          "roles_services",
+          "local_context"
+        ]
+      },
+      "environment": {
+        "subskills": [
+          "climate_landforms",
+          "resources",
+          "human_environment"
+        ]
+      },
+      "location_reasoning": {
+        "subskills": [
+          "near_far",
+          "borders_regions",
+          "spatial_comparison"
+        ]
+      }
+    }
+  },
+  "skillLabels": {
+    "math.arithmetic_operations": "Arithmetic / operations",
+    "math.fractions": "Fractions",
+    "math.word_problems": "Word problems",
+    "math.number_sense": "Place value / number sense",
+    "hebrew.reading_comprehension": "Reading comprehension",
+    "hebrew.language_grammar": "Language / grammar",
+    "english.vocabulary": "Vocabulary",
+    "english.grammar": "Grammar",
+    "english.reading_comprehension": "Reading comprehension",
+    "english.sentence_understanding": "Sentence understanding",
+    "english.translation": "Translation / bilingual bridge",
+    "science.cause_and_effect": "Cause and effect",
+    "science.experiments": "Experiments",
+    "science.observation": "Observation",
+    "science.classification": "Classification",
+    "science.systems_understanding": "Systems understanding",
+    "science.scientific_reasoning": "Scientific reasoning",
+    "geometry.shapes": "Shapes",
+    "geometry.angles": "Angles",
+    "geometry.area": "Area",
+    "geometry.perimeter": "Perimeter",
+    "geometry.symmetry": "Symmetry",
+    "geometry.spatial_reasoning": "Spatial reasoning",
+    "moledet-geography.maps": "Maps",
+    "moledet-geography.directions": "Directions",
+    "moledet-geography.landmarks": "Landmarks",
+    "moledet-geography.community": "Community",
+    "moledet-geography.environment": "Environment",
+    "moledet-geography.location_reasoning": "Location reasoning"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Parallel",
+      "Perpendicular"
+    ],
+    "triangles": [
+      "Equilateral",
+      "Isosceles",
+      "Scalene"
+    ],
+    "quadrilaterals": [
+      "Square",
+      "Rectangle",
+      "Parallelogram",
+      "Trapezoid"
+    ],
+    "transformations": [
+      "Translation",
+      "Reflection",
+      "Rotation",
+      "No movement"
+    ],
+    "concept_transform": [
+      "Translation",
+      "Reflection",
+      "Rotation",
+      "No movement"
+    ],
+    "shapes_basic_square": [
+      "Square",
+      "Rectangle"
+    ],
+    "shapes_basic_rectangle": [
+      "Square",
+      "Rectangle"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "No equal sides"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "No right angles"
+    ]
+  },
+  "solidNames": [
+    "Cube",
+    "Cuboid",
+    "Cylinder",
+    "Pyramid",
+    "Cone",
+    "Sphere"
+  ],
+  "hebrewSolidAliases": {
+    "קובייה": "Cube",
+    "תיבה": "Cuboid",
+    "גליל": "Cylinder",
+    "פירמידה": "Pyramid",
+    "חרוט": "Cone",
+    "כדור": "Sphere"
+  },
+  "shapeWords": {
+    "ריבוע": "Square",
+    "מלבן": "Rectangle",
+    "מקבילית": "Parallelogram",
+    "טרפז": "Trapezoid",
+    "נכון": "True",
+    "לא נכון": "False",
+    "סיבוב": "Rotation",
+    "הזזה": "Translation",
+    "שיקוף": "Reflection",
+    "ללא תנועה": "No movement",
+    "מקבילות": "Parallel",
+    "מאונכות": "Perpendicular",
+    "שווה צלעות": "Equilateral",
+    "שווה שוקיים": "Isosceles",
+    "שונה צלעות": "Scalene"
+  }
+}

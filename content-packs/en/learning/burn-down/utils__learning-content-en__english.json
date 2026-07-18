@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "With I we use am.",
+    "with_he_she_it_we_use_is": "With he/she/it we use is.",
+    "with_you_we_they_we_use_are": "With you/we/they we use are.",
+    "got_it": "Got it",
+    "try_again": "Try again",
+    "back_to_menu": "Back to menu",
+    "choose_another_topic": "Choose another topic"
+  }
+}

@@ -3,6 +3,7 @@
  * Do not invent wording here; add new strings deliberately and keep them parent-friendly.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   PARENT_TOPIC_HOME_ACTION_HEADING as PARENT_TOPIC_HOME_ACTION_HEADING_HE,
   resolveParentFacingPatternLabel as resolveParentFacingPatternLabelHe,
@@ -47,21 +48,21 @@ export const SPEC_FORBIDDEN_PARENT_PHRASES = Object.freeze([
 ]);
 
 const MEANING_BY_ROOT_CAUSE_INSIGHT = Object.freeze({
-  knowledge_gap: "The data points to a skill that is still not fully stable.",
-  speed_pressure: "Some of the mistakes look related to speed - not necessarily a full knowledge gap.",
-  instruction_friction: "The difficulty may be related to understanding the instructions, not just knowledge of the topic.",
-  careless_execution: "The material looks partly familiar, but there are execution mistakes that repeat when working quickly.",
-  weak_independence: "The child does better with support, and it still helps to build up independent problem-solving.",
-  insufficient_evidence: "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
-  preliminary_direction: "There is an early direction, but a bit more practice would help before drawing a clear conclusion.",
+  knowledge_gap: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_data_points_to_a_skill_that_is_still_not_fully_stable"),
+  speed_pressure: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "some_of_the_mistakes_look_related_to_speed_not_necessarily_a_full_knowle"),
+  instruction_friction: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_difficulty_may_be_related_to_understanding_the_instructions_not_just"),
+  careless_execution: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_material_looks_partly_familiar_but_there_are_execution_mistakes_that"),
+  weak_independence: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_does_better_with_support_and_it_still_helps_to_build_up_indepe"),
+  insufficient_evidence: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef"),
+  preliminary_direction: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_is_an_early_direction_but_a_bit_more_practice_would_help_before_dr"),
   recurring_pattern:
     "A recurring pattern already shows up in this topic, so it is worth addressing and reinforcing. It still helps to keep practicing to confirm the pattern holds over time.",
   recurring_pattern_supported:
     "A recurring pattern already shows up in this topic across several sessions, so it is worth addressing and reinforcing. It helps to keep practicing to confirm the pattern holds over time.",
-  no_consistent_pattern: "There is already some practice in this topic, but a consistent enough pattern has not appeared yet.",
-  mixed_signal: "There are a few possible directions - worth checking again after a bit more practice.",
-  early_stage_instability: "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
-  mixed: "There are a few possible directions - worth checking again after a bit more practice.",
+  no_consistent_pattern: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_is_already_some_practice_in_this_topic_but_a_consistent_enough_pat"),
+  mixed_signal: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_a_few_possible_directions_worth_checking_again_after_a_bit_mor"),
+  early_stage_instability: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef"),
+  mixed: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_a_few_possible_directions_worth_checking_again_after_a_bit_mor"),
 });
 
 const MEANING_BY_BEHAVIOR_EXPLAIN = Object.freeze({
@@ -74,19 +75,19 @@ const MEANING_BY_BEHAVIOR_EXPLAIN = Object.freeze({
   instruction_friction:
     "The difficulty may be related to reading the instructions or understanding what the question is asking, not just knowledge of the topic.",
   careless_execution:
-    "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis"),
   careless_pattern:
-    "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis"),
   weak_independence:
-    "The child does better with support or hints, and it still helps to build up independent problem-solving.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_does_better_with_support_or_hints_and_it_still_helps_to_build_"),
   stable_mastery:
     "The data points to good command of the topic right now. It's important to maintain this skill rather than assume the whole subject is already stable.",
   insufficient_evidence:
-    "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef"),
   undetermined:
-    "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef"),
   mixed_low_signal:
-    "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef"),
   mixed_signal:
     "There are signs pointing in a few different directions, so the report recommends moving forward carefully instead of drawing one strong conclusion.",
   mixed:
@@ -96,7 +97,7 @@ const MEANING_BY_BEHAVIOR_EXPLAIN = Object.freeze({
 const ACTION_BY_ROOT_CAUSE = Object.freeze({
   knowledge_gap:
     "Go over similar questions in the same topic and difficulty level, and ask the child to explain the solving steps out loud.",
-  speed_pressure: "Solve a few questions without a timer, pause before submitting, and check whether the answer fits the question.",
+  speed_pressure: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "solve_a_few_questions_without_a_timer_pause_before_submitting_and_check_"),
   instruction_friction:
     "Read the instructions together, mark what the question is asking for, and only then solve the question.",
   careless_execution:
@@ -109,7 +110,7 @@ const ACTION_BY_ROOT_CAUSE = Object.freeze({
     "Keep the topic fresh with short practice, and gradually add slightly more challenging questions if accuracy holds.",
   insufficient_evidence:
     "There are still only a few answers - a bit more practice on this topic would help, then check the report again.",
-  preliminary_direction: "Do a few more questions on this topic, then check the report again.",
+  preliminary_direction: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "do_a_few_more_questions_on_this_topic_then_check_the_report_again"),
   recurring_pattern:
     "Go over similar questions in this topic, reinforce the point that keeps recurring, and check again after more practice.",
   recurring_pattern_supported:
@@ -119,21 +120,21 @@ const ACTION_BY_ROOT_CAUSE = Object.freeze({
   mixed_signal:
     "Keep up short practice on this topic - worth checking again after a few more questions.",
   early_stage_instability:
-    "Do a few more questions on this topic, then check the report again.",
+    reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "do_a_few_more_questions_on_this_topic_then_check_the_report_again"),
 });
 
 /** Spec §3 — mistake pattern parent text by engine id */
 export const MISTAKE_PATTERN_PARENT_HE = Object.freeze({
   insufficient_mistake_evidence: "",
-  recurring_weakness: "Some mistakes repeat in the same type of activity.",
+  recurring_weakness: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "some_mistakes_repeat_in_the_same_type_of_activity"),
   insufficient_recurrence: "",
   early_signal: "",
-  speed_driven_error: "Some mistakes happened while working quickly.",
-  instruction_misread: "Some mistakes appear related to understanding the instructions.",
-  support_dependent_success: "Success mostly happens with guidance or hints.",
-  careless_flip: "Small execution mistakes that repeat when working quickly.",
+  speed_driven_error: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "some_mistakes_happened_while_working_quickly"),
+  instruction_misread: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "some_mistakes_appear_related_to_understanding_the_instructions"),
+  support_dependent_success: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "success_mostly_happens_with_guidance_or_hints"),
+  careless_flip: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "small_execution_mistakes_that_repeat_when_working_quickly"),
   concept_confusion: "",
-  procedure_break: "Confusion about the order of steps in solving.",
+  procedure_break: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "confusion_about_the_order_of_steps_in_solving"),
   mixed_mistake_pattern: "",
   early_learning_noise: "",
 });
@@ -142,7 +143,7 @@ export const MISTAKE_PATTERN_PARENT_HE = Object.freeze({
 export const DEPENDENCY_STATE_PARENT_HE = Object.freeze({
   insufficient_dependency_evidence:
     "There is not yet enough information to know whether the difficulty is in the topic itself or in its foundation.",
-  likely_local_issue: "The signs mostly point to a difficulty within this topic itself.",
+  likely_local_issue: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_signs_mostly_point_to_a_difficulty_within_this_topic_itself"),
   likely_foundational_block:
     "There is a sign that the difficulty may be related to the foundation of this topic, but there is no mapping yet showing exactly which foundational part is involved.",
   mixed_dependency_signal:
@@ -166,8 +167,8 @@ const SUBJECT_ID_TO_LABEL = Object.freeze({
   geometry: "Geometry",
   english: "English",
   science: "Science",
-  hebrew: "Hebrew",
-  "moledet-geography": "Social Studies & Geography",
+  hebrew: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "hebrew"),
+  "moledet-geography": reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "social_studies_geography"),
 });
 
 function clean(s) {
@@ -319,7 +320,7 @@ function adjustInsufficientEvidenceByQHe(text, q) {
   if (!t.includes("only a few answers")) return t;
   const n = Math.round(Number(q) || 0);
   if (n <= 5) return "Still very little data - a bit more practice will help us get a clearer picture.";
-  if (n <= 15) return "There is an early direction, but a bit more practice would help before drawing a clear conclusion.";
+  if (n <= 15) return reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_is_an_early_direction_but_a_bit_more_practice_would_help_before_dr");
   return "This looks like a topic worth reinforcing in upcoming practice.";
 }
 
@@ -533,19 +534,19 @@ export function homeBySubjectHe(subjectId) {
 /** Spec §2.4 / §6 — short parent labels for diagnostic type badges */
 export const PARENT_DIAGNOSTIC_TYPE_LABEL_HE = Object.freeze({
   knowledge_gap: "There's a knowledge point in this topic that isn't fully stable yet.",
-  speed_pressure: "Some of the mistakes look related to speed or time pressure.",
-  instruction_friction: "The difficulty may be related to reading the instructions or understanding what the question asks.",
-  careless_pattern: "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
-  careless_execution: "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
+  speed_pressure: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "some_of_the_mistakes_look_related_to_speed_or_time_pressure"),
+  instruction_friction: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_difficulty_may_be_related_to_reading_the_instructions_or_understandi"),
+  careless_pattern: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis"),
+  careless_execution: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis"),
   fragile_success: "The child gets to some of the correct answers, but consistency isn't fully there yet.",
-  stable_mastery: "The data points to good command of the topic right now.",
-  undetermined: "No clear pattern has been established for this topic yet.",
+  stable_mastery: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_data_points_to_good_command_of_the_topic_right_now"),
+  undetermined: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "no_clear_pattern_has_been_established_for_this_topic_yet"),
   insufficient_evidence: "It's still early to clearly determine what needs reinforcement in this topic.",
   mixed_low_signal: "It's still early to clearly determine what needs reinforcement in this topic.",
-  mixed_signal: "There are signs pointing in a few different directions, so the report recommends moving forward carefully.",
-  mixed: "There are signs pointing in a few different directions, so the report recommends moving forward carefully.",
-  weak_independence: "The child does better with support or hints, and it still helps to build up independent problem-solving.",
-  none_sparse: "There are too few questions on this topic to draw a clear conclusion from.",
+  mixed_signal: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_signs_pointing_in_a_few_different_directions_so_the_report_rec"),
+  mixed: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_signs_pointing_in_a_few_different_directions_so_the_report_rec"),
+  weak_independence: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "the_child_does_better_with_support_or_hints_and_it_still_helps_to_build_"),
+  none_sparse: reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "there_are_too_few_questions_on_this_topic_to_draw_a_clear_conclusion_fro"),
   none_observed: "There isn't yet enough repetition to call the mistake a consistent pattern.",
 });
 
@@ -579,7 +580,7 @@ export function preliminarySignalHe() {
 export function parentDiagnosticTypeLabelHe(diagnosticType) {
   const k = clean(diagnosticType);
   if (k && PARENT_DIAGNOSTIC_TYPE_LABEL_HE[k]) return PARENT_DIAGNOSTIC_TYPE_LABEL_HE[k];
-  return k ? "What was seen in practice" : "No clear pattern has been established for this topic yet.";
+  return k ? "What was seen in practice" : reportPackCopy("utils__parent-report-language__parent-report-hebrew-copy-spec", "no_clear_pattern_has_been_established_for_this_topic_yet");
 }
 
 /**

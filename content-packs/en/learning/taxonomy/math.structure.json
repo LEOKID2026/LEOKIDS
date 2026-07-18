@@ -1,0 +1,75 @@
+{
+  "subjectId": "math",
+  "rows": [
+    {
+      "id": "M-01",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 2,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-02",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 2
+    },
+    {
+      "id": "M-03",
+      "subjectId": "math",
+      "minWrong": 4,
+      "minDistinctPatternFamilies": 2,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-04",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-05",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-06",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-07",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-08",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-09",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "M-10",
+      "subjectId": "math",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    }
+  ]
+}

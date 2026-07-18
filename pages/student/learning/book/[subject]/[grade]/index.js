@@ -28,17 +28,8 @@ export default function StudentBookIndex({ batches, subject, grade, bookMeta }) 
   );
 }
 
-export async function getStaticPaths() {
-  const { LEARNING_BOOK_META_LIST } = await import(
-    "../../../../../../lib/learning-book/learning-book-catalog-meta.js"
-  );
-  const paths = LEARNING_BOOK_META_LIST.filter((b) => b.status === "authored").map((b) => ({
-    params: { subject: b.subject, grade: b.grade },
-  }));
-  return { paths, fallback: false };
-}
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { subject, grade } = params;
   const { getLearningBookEntry } = await import(
     "../../../../../../lib/learning-book/learning-book-catalog.js"

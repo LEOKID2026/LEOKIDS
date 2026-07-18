@@ -3,6 +3,7 @@
  * No dependency on parent-report-v2 (avoids circular imports).
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { mathReportBaseOperationKey, canonicalParentReportGradeKey } from "./math-report-generator.js";
 import { DEFAULT_TOPIC_NEXT_STEP_CONFIG } from "./topic-next-step-config.js";
 import { TOPIC_EVIDENCE_THRESHOLDS } from "./parent-report-topic-evidence.js";
@@ -260,21 +261,21 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
   if (q <= 0) {
     return {
       level: "low",
-      labelHe: "No questions were collected in the selected period - there is no data basis for this row.",
+      labelHe: reportPackCopy("utils__parent-report-row-diagnostics", "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi"),
       suppressAggressiveStep: true,
     };
   }
   if (q < 4) {
     return {
       level: "low",
-      labelHe: "Too few questions in the period - conclusions for this row are very partial.",
+      labelHe: reportPackCopy("utils__parent-report-row-diagnostics", "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia"),
       suppressAggressiveStep: true,
     };
   }
   if (q >= 40) {
     return {
       level: "strong",
-      labelHe: "Many questions were collected - you can rely more on what you see for this topic.",
+      labelHe: reportPackCopy("utils__parent-report-row-diagnostics", "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this"),
       suppressAggressiveStep: false,
     };
   }
@@ -283,8 +284,8 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
       level: evidenceStrength === "strong" ? "strong" : "medium",
       labelHe:
         evidenceStrength === "strong"
-          ? "There are enough questions - you can rely more on what you see for this topic."
-          : "There are enough questions for this topic - cautious changes to sub-skills only.",
+          ? reportPackCopy("utils__parent-report-row-diagnostics", "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to")
+          : reportPackCopy("utils__parent-report-row-diagnostics", "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills"),
       suppressAggressiveStep: false,
     };
   }
@@ -293,8 +294,8 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
       level: evidenceStrength === "strong" ? "strong" : "medium",
       labelHe:
         evidenceStrength === "strong"
-          ? "There are enough questions - you can rely more on what you see for this topic."
-          : "There are enough questions for this topic - cautious changes to sub-skills only.",
+          ? reportPackCopy("utils__parent-report-row-diagnostics", "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to")
+          : reportPackCopy("utils__parent-report-row-diagnostics", "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills"),
       suppressAggressiveStep: false,
     };
   }
@@ -308,13 +309,13 @@ export function evaluateDataSufficiency(q, evidenceStrength, confidence01) {
   if (evidenceStrength === "strong" && q >= 12) {
     return {
       level: "strong",
-      labelHe: "There are enough questions - you can rely more on what you see for this topic.",
+      labelHe: reportPackCopy("utils__parent-report-row-diagnostics", "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to"),
       suppressAggressiveStep: false,
     };
   }
   return {
     level: "medium",
-    labelHe: "Moderate data - cautious changes only are recommended.",
+    labelHe: reportPackCopy("utils__parent-report-row-diagnostics", "moderate_data_cautious_changes_only_are_recommended"),
     suppressAggressiveStep: evidenceStrength === "low",
   };
 }
@@ -349,7 +350,7 @@ export function buildDiagnosticsDecisionTrace(ctx) {
   return [
     data({
       phase: "inputs",
-      detailHe: "Row inputs before signal computation.",
+      detailHe: reportPackCopy("utils__parent-report-row-diagnostics", "row_inputs_before_signal_computation"),
       data: {
         subjectId,
         topicRowKey: String(topicRowKey || ""),
@@ -383,7 +384,7 @@ export function buildDiagnosticsDecisionTrace(ctx) {
     }),
     data({
       phase: "data_sufficiency",
-      detailHe: "How much information is available affects how cautious the next recommendation is.",
+      detailHe: reportPackCopy("utils__parent-report-row-diagnostics", "how_much_information_is_available_affects_how_cautious_the_next_recommen"),
       data: {
         dataSufficiencyLevel,
         suppressAggressiveStep,
@@ -422,7 +423,7 @@ export function computeRowDiagnosticSignals(subjectId, topicRowKey, row, mistake
 
   let patternStabilityHe = "It's still early - it's not clear from this data alone whether this pattern will hold over time.";
   if (isStablePattern) {
-    patternStabilityHe = "This shows up across several practice sessions - the picture reflects a trend, not just a single session.";
+    patternStabilityHe = reportPackCopy("utils__parent-report-row-diagnostics", "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr");
   } else if (sufficiency.level === "medium") {
     patternStabilityHe = "There's a partial direction - collect more practice before stating something definitive.";
   }
@@ -466,7 +467,7 @@ export function computeRowDiagnosticSignals(subjectId, topicRowKey, row, mistake
     isEarlySignalOnly,
     recommendationContextHe: isEarlySignalOnly
       ? "The recommendation is based on partial data; avoid making a dramatic change without checking again after more practice."
-      : "The recommendation is based on a combination of accuracy, question count, mistakes, and how recent practice was in the selected period.",
+      : reportPackCopy("utils__parent-report-row-diagnostics", "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_"),
     decisionTrace,
   };
 }

@@ -5,6 +5,7 @@
  * - valid: VALID_MIN+ — may appear in insights/recommendations
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   PARENT_EVIDENCE_VOLUME,
   SUBJECT_VALID_MIN_QUESTIONS,
@@ -19,11 +20,11 @@ export const SUBJECT_VISIBLE_LABELS_HE = Object.freeze({
   geometry: ["Geometry"],
   english: ["English"],
   science: ["Science"],
-  history: ["History"],
-  hebrew: ["Hebrew"],
-  "moledet-geography": ["Social Studies and Geography"],
-  moledet: ["Social Studies"],
-  geography: ["Geography"],
+  history: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "history")],
+  hebrew: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "hebrew")],
+  "moledet-geography": [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies_and_geography")],
+  moledet: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies")],
+  geography: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography")],
 });
 
 /** Primary label per subject id (matches subject cards). */
@@ -32,11 +33,11 @@ export const SUBJECT_LABEL_BY_ID = Object.freeze({
   geometry: "Geometry",
   english: "English",
   science: "Science",
-  history: "History",
-  hebrew: "Hebrew",
-  "moledet-geography": "Social Studies and Geography",
-  moledet: "Social Studies",
-  geography: "Geography",
+  history: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "history"),
+  hebrew: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "hebrew"),
+  "moledet-geography": reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies_and_geography"),
+  moledet: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies"),
+  geography: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography"),
 });
 
 export const SUBJECT_EVIDENCE_TIER = Object.freeze({

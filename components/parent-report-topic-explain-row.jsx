@@ -1,6 +1,7 @@
 /**
  * Topic explanations under the chart in the parent report — separated for SSR tests without the rest of the page.
  */
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import React from "react";
 import {
   activeRiskFlagLabelsHe,
@@ -90,16 +91,16 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
             data-testid="parent-report-topic-diagnostic-explain"
           >
             {parentCard.whatWeSee ? (
-              <ExplainSectionLine label="What we see?" text={parentCard.whatWeSee} />
+              <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "what_we_see")} text={parentCard.whatWeSee} />
             ) : null}
             {trendV1Facing ? (
               <ExplainSectionLine text={trendV1Facing} dataTestId="parent-report-topic-trend-v1" />
             ) : null}
             {parentCard.whatItMeans ? (
-              <ExplainSectionLine label="What it means?" text={parentCard.whatItMeans} />
+              <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "what_it_means")} text={parentCard.whatItMeans} />
             ) : null}
             {parentCard.homeAction ? (
-              <ExplainSectionLine label="What to do together?" text={parentCard.homeAction} />
+              <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "what_to_do_together")} text={parentCard.homeAction} />
             ) : null}
           </div>
         </div>
@@ -159,11 +160,11 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
           ) : null}
         </div>
         {trendFacing ? (
-          <ExplainSectionLine label="In the recent period:" text={trendFacing} />
+          <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "in_the_recent_period")} text={trendFacing} />
         ) : null}
         {primaryFinding ? (
           <div data-testid="parent-report-lpd-finding">
-            <ExplainSectionLine label="What we saw:" text={primaryFinding} />
+            <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "what_we_saw")} text={primaryFinding} />
           </div>
         ) : null}
         {sections &&
@@ -196,19 +197,19 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
           </div>
         ) : null}
         {fdFacing && !sections?.meaning?.includes(fdFacing.slice(0, 24)) ? (
-          <ExplainSectionLine label="Foundation and dependencies:" text={fdFacing} />
+          <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "foundation_and_dependencies")} text={fdFacing} />
         ) : null}
         {mpFacing && !sections?.pattern?.includes(mpFacing.slice(0, 20)) ? (
-          <ExplainSectionLine label="Where they sometimes get stuck:" text={mpFacing} />
+          <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "where_they_sometimes_get_stuck")} text={mpFacing} />
         ) : null}
-        {lmFacing ? <ExplainSectionLine label="Retention at home:" text={lmFacing} /> : null}
+        {lmFacing ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "retention_at_home")} text={lmFacing} /> : null}
         {dn || av ? (
           <div className="text-[9px] md:text-[10px] text-sky-100/88 leading-snug border border-sky-400/20 rounded px-1.5 py-1 bg-sky-950/12 space-y-0.5 m-0 pr-0.5">
-            {dn ? <ExplainSectionLine label="Now:" text={dn} /> : null}
-            {av ? <ExplainSectionLine label="Avoid:" text={av} /> : null}
+            {dn ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "now")} text={dn} /> : null}
+            {av ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "avoid")} text={av} /> : null}
           </div>
         ) : null}
-        {caut ? <ExplainSectionLine label="Caution:" text={caut} /> : null}
+        {caut ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "caution")} text={caut} /> : null}
       </div>
     </div>
   );

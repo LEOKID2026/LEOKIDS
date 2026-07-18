@@ -1,3 +1,4 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 /**
  * SSOT — English labels for parent report UI (screen + PDF).
  * Internal enum keys stay English internally; these functions map them to
@@ -9,13 +10,13 @@ export const PARENT_REPORT_SUBJECT_LABELS_EN = {
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  hebrew: "Hebrew",
+  hebrew: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "hebrew"),
   science: "Science",
-  history: "History",
-  moledet: "Homeland Studies",
-  geography: "Geography",
-  moledet_geography: "Homeland & Geography",
-  "moledet-geography": "Homeland & Geography",
+  history: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "history"),
+  moledet: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homeland_studies"),
+  geography: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "geography"),
+  moledet_geography: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homeland_geography"),
+  "moledet-geography": reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homeland_geography"),
 };
 
 /** @deprecated Alias — Global uses English labels; keep HE export name for import stability. */
@@ -23,30 +24,30 @@ export const PARENT_REPORT_SUBJECT_LABELS_HE = PARENT_REPORT_SUBJECT_LABELS_EN;
 
 /** @type {Record<string, string>} */
 export const PARENT_REPORT_MODE_LABELS_EN = {
-  learning: "Learning",
-  practice: "Practice",
-  challenge: "Challenge",
+  learning: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "learning"),
+  practice: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice"),
+  challenge: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "challenge"),
   speed: "Speed",
-  marathon: "Extended practice",
-  review: "Review",
-  drill: "Focused practice",
-  graded: "Graded",
-  normal: "Regular",
-  mistakes: "Mistakes",
-  practice_mistakes: "Mistake review",
+  marathon: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "extended_practice"),
+  review: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "review"),
+  drill: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "focused_practice"),
+  graded: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "graded"),
+  normal: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "regular"),
+  mistakes: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "mistakes"),
+  practice_mistakes: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "mistake_review"),
   quiz: "Quiz",
-  homework: "Homework",
-  guided_practice: "Practice",
-  guided: "Practice",
-  live_lesson: "Live lesson",
-  discussion: "Discussion",
-  worksheet: "Worksheet",
-  learning_book: "Learning book",
-  diagnostic: "Practice",
-  independent: "Independent practice",
-  self_practice: "Independent practice",
-  parent_assigned_activity: "Personal activity",
-  classroom_assigned_activity: "Class activity",
+  homework: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homework"),
+  guided_practice: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice"),
+  guided: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice"),
+  live_lesson: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "live_lesson"),
+  discussion: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "discussion"),
+  worksheet: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "worksheet"),
+  learning_book: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "learning_book"),
+  diagnostic: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice"),
+  independent: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice"),
+  self_practice: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice"),
+  parent_assigned_activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity"),
+  classroom_assigned_activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "class_activity"),
   unknown: "Unknown",
 };
 
@@ -66,24 +67,24 @@ const PARENT_ACTIVITY_SOURCE_RESOLVE_ORDER = Object.freeze([
  * @param {Record<string, unknown>|string|null|undefined} input
  */
 export function formatParentReportActivitySourceHe(input) {
-  if (input == null) return "Practice";
+  if (input == null) return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice");
   if (typeof input === "string") {
     const key = normalizeKey(input);
-    if (key === "parent_assigned_activity") return "Personal activity from parent";
-    if (key === "self_practice") return "Independent practice";
-    if (key === "guided_practice" || key === "guided") return "Practice";
+    if (key === "parent_assigned_activity") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity_from_parent");
+    if (key === "self_practice") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice");
+    if (key === "guided_practice" || key === "guided") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice");
     if (PARENT_REPORT_SOURCE_LABELS_EN[key]) return PARENT_REPORT_SOURCE_LABELS_EN[key];
-    return "Practice";
+    return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice");
   }
   const row = input && typeof input === "object" ? input : {};
   for (const field of PARENT_ACTIVITY_SOURCE_RESOLVE_ORDER) {
     const resolved = formatParentReportActivitySourceHe(row[field]);
-    if (resolved !== "Practice") return resolved;
+    if (resolved !== reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice")) return resolved;
   }
   const modeKey = normalizeKey(row.modeKey ?? row.mode);
-  if (modeKey === "self_practice" || modeKey === "independent") return "Independent practice";
-  if (modeKey === "parent_assigned_activity") return "Personal activity from parent";
-  return "Practice";
+  if (modeKey === "self_practice" || modeKey === "independent") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice");
+  if (modeKey === "parent_assigned_activity") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity_from_parent");
+  return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice");
 }
 
 function resolveActivitySourceKind(row) {
@@ -102,9 +103,9 @@ function resolveActivitySourceKind(row) {
 function resolveActivityTopicLabelHe(row, options = {}) {
   const r = row && typeof row === "object" ? row : {};
   const clean = String(r.cleanTopicLabelHe || r.rowIdentityV1?.cleanTopicLabelHe || "").trim();
-  if (clean && clean !== "Topic" && clean !== "Practice") return clean;
+  if (clean && clean !== "Topic" && clean !== reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice")) return clean;
   const displayName = String(r.displayName || options.topicLabelHe || "").trim();
-  if (displayName && displayName !== "Topic" && displayName !== "Practice") {
+  if (displayName && displayName !== "Topic" && displayName !== reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice")) {
     return displayName;
   }
   const bucket = String(r.bucketKey ?? r.topicKey ?? options.topicKey ?? "").trim();
@@ -121,7 +122,7 @@ function activityLabelWithSubjectGradeFallback(baseLabel, row, subjectId) {
   const gradeLabel = formatParentReportGradeHe(
     row?.contentGradeKey ?? row?.gradeKey ?? row?.contentGradeLevel ?? row?.grade
   );
-  if (subjectLabel && gradeLabel && gradeLabel !== "Not available") {
+  if (subjectLabel && gradeLabel && gradeLabel !== reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available")) {
     return `${baseLabel} - ${subjectLabel} grade ${gradeLabel}`;
   }
   if (subjectLabel) return `${baseLabel} - ${subjectLabel}`;
@@ -145,12 +146,12 @@ export function isTechnicalParentActivityTitleHe(title) {
 
 /**
  * Parent-facing combined activity label for table source/mode columns.
- * Parent-assigned activities include topic; self practice stays plain "Practice".
+ * Parent-assigned activities include topic; self practice stays plain reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice").
  * @param {Record<string, unknown>|string|null|undefined} input
  * @param {{ subjectId?: string, topicKey?: string, topicLabelHe?: string }} [options]
  */
 export function formatParentReportActivityDisplayLabelHe(input, options = {}) {
-  if (input == null) return "Practice";
+  if (input == null) return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "practice");
   if (typeof input === "string") return formatParentReportActivitySourceHe(input);
 
   const row = input && typeof input === "object" ? input : {};
@@ -167,14 +168,14 @@ export function formatParentReportActivityDisplayLabelHe(input, options = {}) {
         ""
     ).trim();
     const base = !isTechnicalParentActivityTitleHe(titleRaw)
-      ? titleRaw || "Personal activity from parent"
-      : "Personal activity from parent";
+      ? titleRaw || reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity_from_parent")
+      : reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity_from_parent");
     if (topicLabel) return `${base} - ${topicLabel}`;
     return activityLabelWithSubjectGradeFallback(base, row, options.subjectId);
   }
 
   if (sourceKind === "self_practice") {
-    return "Independent practice";
+    return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice");
   }
 
   return formatParentReportActivitySourceHe(row);
@@ -182,71 +183,71 @@ export function formatParentReportActivityDisplayLabelHe(input, options = {}) {
 
 /** @type {Record<string, string>} */
 export const PARENT_REPORT_SOURCE_LABELS_EN = {
-  self_practice: "Independent practice",
-  parent_assigned_activity: "Personal activity from parent",
-  learning_book: "Learning book",
-  worksheet: "Worksheet",
-  classroom_assigned_activity: "Class activity",
-  report: "Report",
-  activity: "Activity",
+  self_practice: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice"),
+  parent_assigned_activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity_from_parent"),
+  learning_book: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "learning_book"),
+  worksheet: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "worksheet"),
+  classroom_assigned_activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "class_activity"),
+  report: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "report"),
+  activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "activity"),
   unknown: "Unknown",
-  unavailable: "Not available",
-  partial: "Partial",
-  available: "Available",
-  not_tracked: "Not measured",
-  requires_events: "Needs more data",
+  unavailable: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"),
+  partial: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "partial"),
+  available: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "available"),
+  not_tracked: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_measured"),
+  requires_events: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "needs_more_data"),
 };
 
 /** @type {Record<string, string>} */
 export const PARENT_REPORT_STATUS_LABELS_EN = {
-  completed: "Completed",
-  active: "Active",
-  inactive: "Inactive",
-  submitted: "Submitted",
-  in_progress: "In progress",
-  not_started: "Not started",
-  sufficient: "Sufficient",
-  insufficient: "Insufficient",
-  unavailable: "Not available",
-  partial: "Partial",
-  empty: "No data",
+  completed: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "completed"),
+  active: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "active"),
+  inactive: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "inactive"),
+  submitted: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "submitted"),
+  in_progress: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "in_progress"),
+  not_started: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_started"),
+  sufficient: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "sufficient"),
+  insufficient: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "insufficient"),
+  unavailable: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"),
+  partial: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "partial"),
+  empty: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data"),
   unknown: "Unknown",
-  not_tracked: "Not measured",
-  requires_events: "Needs more data",
-  available: "Available",
+  not_tracked: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_measured"),
+  requires_events: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "needs_more_data"),
+  available: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "available"),
   true: "Yes",
   false: "No",
 };
 
 /** @type {Record<string, string>} — parent practice levels: Regular / Advanced only */
 export const PARENT_REPORT_LEVEL_LABELS_EN = {
-  regular: "Regular",
-  advanced: "Advanced",
-  easy: "Regular",
-  medium: "Regular",
-  mixed: "Regular",
-  hard: "Advanced",
+  regular: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "regular"),
+  advanced: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "advanced"),
+  easy: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "regular"),
+  medium: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "regular"),
+  mixed: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "regular"),
+  hard: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "advanced"),
   low: "Low",
   high: "High",
-  moderate: "Moderate",
-  strong: "Strong",
+  moderate: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "moderate"),
+  strong: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "strong"),
   weak: "Weak",
 };
 
 /** @type {Record<string, string>} */
 export const PARENT_REPORT_EVIDENCE_LABELS_EN = {
-  low: "Limited",
-  medium: "Moderate",
+  low: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "limited"),
+  medium: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "moderate"),
   strong: "Good",
   high: "High",
-  moderate: "Moderate",
-  contradictory: "Inconsistent",
-  insufficient: "Insufficient",
-  sufficient: "Sufficient",
+  moderate: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "moderate"),
+  contradictory: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "inconsistent"),
+  insufficient: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "insufficient"),
+  sufficient: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "sufficient"),
   unknown: "Unknown",
-  partial: "Partial",
-  no_data: "No data",
-  nodata: "No data",
+  partial: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "partial"),
+  no_data: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data"),
+  nodata: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data"),
 };
 
 function normalizeKey(value) {
@@ -287,7 +288,7 @@ export function formatParentReportTopicHe(topic) {
 
 /** @param {string|null|undefined} mode */
 export function formatParentReportModeHe(mode) {
-  return mapFromTable(mode, PARENT_REPORT_MODE_LABELS_EN, "Not available");
+  return mapFromTable(mode, PARENT_REPORT_MODE_LABELS_EN, reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"));
 }
 
 /** @param {string|null|undefined} source */
@@ -305,17 +306,17 @@ export function formatParentReportStatusHe(status) {
  * @param {string|null|undefined} [subjectId]
  */
 export function formatParentReportLevelHe(level, subjectId) {
-  if (level == null || level === "") return "Not available";
-  return mapFromTable(level, PARENT_REPORT_LEVEL_LABELS_EN, "Not available");
+  if (level == null || level === "") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available");
+  return mapFromTable(level, PARENT_REPORT_LEVEL_LABELS_EN, reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"));
 }
 
 /** @param {string|null|undefined} grade */
 export function formatParentReportGradeHe(grade) {
   const raw = String(grade ?? "").trim();
-  if (!raw) return "Not available";
+  if (!raw) return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available");
   const n = Number(raw.replace(/[^\d.]/g, ""));
   if (Number.isFinite(n) && n > 0) return String(Math.round(n));
-  return mapFromTable(grade, PARENT_REPORT_LEVEL_LABELS_EN, "Not available");
+  return mapFromTable(grade, PARENT_REPORT_LEVEL_LABELS_EN, reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"));
 }
 
 /** @param {string|null|undefined} evidence */

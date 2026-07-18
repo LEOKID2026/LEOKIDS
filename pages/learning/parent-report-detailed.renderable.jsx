@@ -1,3 +1,4 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -284,7 +285,7 @@ export default function ParentReportDetailedPage() {
     <div
       className={`no-pdf flex flex-wrap items-center justify-center gap-2 ${className}`}
       role="group"
-      aria-label="Report display mode"
+      aria-label={reportPackCopy("pages__learning__parent-report-detailed.renderable", "report_display_mode")}
     >
       <button
         type="button"
@@ -333,7 +334,7 @@ export default function ParentReportDetailedPage() {
   return (
     <Layout>
       <Head>
-        <title>Detailed Report for the Period - LIOSH</title>
+        <title>{reportPackCopy("pages__learning__parent-report-detailed.renderable", "detailed_report_for_the_period_liosh")}</title>
         <style>{`
           .pr-detailed-page {
             --pr-h1: 1.35rem;
@@ -1186,7 +1187,7 @@ export default function ParentReportDetailedPage() {
                 </header>
 
                 {/* */}
-                <SectionCard title="Summary for the period" compact={displayMode === "summary"}>
+                <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed.renderable", "summary_for_the_period")} compact={displayMode === "summary"}>
                   <ExecutiveSummarySection
                     es={normalizeExecutiveSummary(payload)}
                     compact={displayMode === "summary"}
@@ -1194,7 +1195,7 @@ export default function ParentReportDetailedPage() {
                 </SectionCard>
 
                 {/* C */}
-                <SectionCard title="What we did during this period" compact={displayMode === "summary"}>
+                <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed.renderable", "what_we_did_during_this_period")} compact={displayMode === "summary"}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
                     <div className="text-xs text-white/55 mb-1">Total time</div>
@@ -1410,7 +1411,7 @@ export default function ParentReportDetailedPage() {
                 )}
 
                 {/* cross insights - part of structure; placed after subjects for flow */}
-                <SectionCard title="What repeats across several subjects" compact={displayMode === "summary"}>
+                <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed.renderable", "what_repeats_across_several_subjects")} compact={displayMode === "summary"}>
                 <Bullets
                   items={(payload.crossSubjectInsights.bulletsHe || []).filter(
                     (line) => !/^Subjects not practiced/u.test(String(line || "")),
@@ -1423,7 +1424,7 @@ export default function ParentReportDetailedPage() {
                 </SectionCard>
 
                 {/* E */}
-                <SectionCard title="Short ideas for home" compact={displayMode === "summary"}>
+                <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed.renderable", "short_ideas_for_home")} compact={displayMode === "summary"}>
                   <PlanItemCards
                     items={payload.homePlan.itemsHe}
                     windowTotalQuestions={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -1431,7 +1432,7 @@ export default function ParentReportDetailedPage() {
                 </SectionCard>
 
                 {/* F */}
-                <SectionCard title="Direction for the coming days" compact={displayMode === "summary"}>
+                <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed.renderable", "direction_for_the_coming_days")} compact={displayMode === "summary"}>
                   <GoalItemCards
                     items={payload.nextPeriodGoals.itemsHe}
                     windowTotalQuestions={Number(payload.overallSnapshot?.totalQuestions) || 0}

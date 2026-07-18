@@ -1,0 +1,353 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-11T12:00:00.000Z",
+  "constants": {
+    "minMistakesPerPatternFamily": 5,
+    "minMistakesForStrongRecommendation": 10,
+    "maxWeaknesses": 3,
+    "maxStrengthRows": 3,
+    "maxMaintain": 2,
+    "maxImproving": 2,
+    "maxStableExcellence": 3,
+    "stableExcellenceMinAccuracy": 92,
+    "stableExcellenceMinQuestions": 22
+  },
+  "subjects": {
+    "math": {
+      "subject": "math",
+      "subjectLabelHe": "Math",
+      "mistakeEventCount": 12,
+      "wrongCount": 12,
+      "hasAnySignal": true,
+      "summaryHe": "The picture of the subject in mathematics: the child succeeds in composition over time. There is also room for reinforcement in comparing quantities or numbers.",
+      "stableExcellence": [
+        {
+          "id": "math:addition:learning",
+          "labelHe": "Addition",
+          "questions": 42,
+          "accuracy": 93,
+          "confidence": "high",
+          "needsPractice": false,
+          "excellent": true,
+          "tierHe": "Your child is doing well on this topic over time"
+        }
+      ],
+      "topStrengths": [],
+      "topWeaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Difficulty comparing quantities or numbers",
+          "mistakeCount": 7,
+          "confidence": "moderate",
+          "tierHe": "Focused difficulty"
+        }
+      ],
+      "parentTopicToneByKey": {},
+      "parentStrengthWithCautionLinesByKey": {},
+      "parentActionHe": "Three times a week, 15-20 minutes each session: choose one math task on the subject of comparing quantities or numbers - read the formulation together, formulate out loud what is given and what is requested, perform a first step on a draft sheet and only then write a final answer and check against the solution.",
+      "nextWeekGoalHe": "Target for reinforcement: increase the percentage of success in comparing quantities or numbers (at least one more successful attempt than last week). Goal for retention: continue a relaxed practice routine on composition to maintain the level of accuracy.",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "How many bags is the price of the computer higher?",
+          "questionLabel": null,
+          "correctAnswer": 120,
+          "userAnswer": 102,
+          "confidence": "moderate"
+        },
+        {
+          "type": "success",
+          "titleHe": "What your child is doing well in practice",
+          "bodyHe": "In the subject of essay there is good success in the selected period: about 93% correct out of 42 questions.",
+          "confidence": "high"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Difficulty comparing quantities or numbers",
+          "mistakeCount": 7,
+          "confidence": "moderate",
+          "tierHe": "Focused difficulty"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:math:w:0",
+          "textHe": "You should practice a little more on the subject: when comparing quantities or numbers - 7 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
+          "strength": "moderate"
+        }
+      ],
+      "studentRecommendationsMaintain": [
+        {
+          "id": "stu-maint:math:addition:learning",
+          "textHe": "Continue practicing comfortably on the topic of connection - the level there is maintained (accuracy about 93%).",
+          "strength": "strong"
+        }
+      ],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:math:w:0",
+          "textHe": "A repetition of the same type of error begins - in the subject of comparing quantities or numbers. For the coming week, a calm look and a short, focused practice are enough.",
+          "strength": "moderate"
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "id": "par-maint:math:addition:learning",
+          "textHe": "It is recommended to encourage persistence in connection - you see repeated success; Maintaining a positive habit is just as important as correcting mistakes.",
+          "strength": "strong"
+        }
+      ],
+      "evidenceMistake": {
+        "exerciseText": "How many bags is the price of the computer higher?",
+        "questionLabel": null,
+        "correctAnswer": 120,
+        "userAnswer": 102,
+        "confidence": "moderate"
+      },
+      "evidenceSuccess": {
+        "titleHe": "What your child is doing well in practice",
+        "bodyHe": "In the subject of essay there is good success in the selected period: about 93% correct out of 42 questions.",
+        "confidence": "high"
+      },
+      "insufficientData": [
+        {
+          "mistakeCount": 2,
+          "note": "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "geometry": {
+      "subject": "geometry",
+      "subjectLabelHe": "Geometry",
+      "mistakeEventCount": 9,
+      "wrongCount": 9,
+      "hasAnySignal": true,
+      "summaryHe": "The image of the profession in geometry: there is also room for strengthening on the issue of recurring confusion between perimeter and area.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Repeated confusion between perimeter and area",
+          "mistakeCount": 6,
+          "confidence": "moderate",
+          "tierHe": "Focused difficulty"
+        }
+      ],
+      "parentActionHe": "Three times a week, 15-20 minutes each session: choose one task in geometry on the topic of repeated confusion between perimeter and area - read the formulation together, formulate out loud what is given and what is requested, make a first step on a draft sheet and only then write a final answer and check against the solution.",
+      "nextWeekGoalHe": "Target for reinforcement: increase the percentage of success in repeated confusion between scope and area (at least one more successful attempt than last week).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "What is the perimeter of a 5x3 cm rectangle?",
+          "questionLabel": null,
+          "correctAnswer": "16 cm",
+          "userAnswer": "15 cm",
+          "confidence": "moderate"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Repeated confusion between perimeter and area",
+          "mistakeCount": 6,
+          "confidence": "moderate",
+          "tierHe": "Focused difficulty"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:geometry:w:0",
+          "textHe": "You should practice a little more on the subject: repeated confusion between scope and area - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
+          "strength": "moderate"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:geometry:w:0",
+          "textHe": "A repetition of the same type of error begins - on the topic of repeated confusion between scope and area. For the coming week, a calm look and a short, focused practice are enough.",
+          "strength": "moderate"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "What is the perimeter of a 5x3 cm rectangle?",
+        "questionLabel": null,
+        "correctAnswer": "16 cm",
+        "userAnswer": "15 cm",
+        "confidence": "moderate"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "english": {
+      "subject": "english",
+      "subjectLabelHe": "English",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "science": {
+      "subject": "science",
+      "subjectLabelHe": "Science",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "hebrew": {
+      "subject": "hebrew",
+      "subjectLabelHe": "Hebrew",
+      "mistakeEventCount": 11,
+      "wrongCount": 11,
+      "hasAnySignal": true,
+      "summaryHe": "The image of the profession in Hebrew: there is also room for reinforcement in prepositions and sentence structure.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "hebrew:w:0",
+          "labelHe": "Difficulty with prepositions and sentence structure",
+          "mistakeCount": 6,
+          "confidence": "moderate",
+          "tierHe": "Focused difficulty"
+        }
+      ],
+      "parentActionHe": "Three times a week, 15-20 minutes in each session: choose one task in Hebrew on the topic with prepositions and sentence structure - read the wording together, formulate out loud what is given and what is requested, take the first step on a draft sheet and only then write a final answer and check against the solution.",
+      "nextWeekGoalHe": "Target for reinforcement: increase the percentage of success in prepositions and sentence structure (at least one more successful attempt than last week).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "Complete: The children played ___ the time in kindergarten.",
+          "questionLabel": null,
+          "correctAnswer": "on",
+          "userAnswer": "to",
+          "confidence": "moderate"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "hebrew:w:0",
+          "labelHe": "Difficulty with prepositions and sentence structure",
+          "mistakeCount": 6,
+          "confidence": "moderate",
+          "tierHe": "Focused difficulty"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:hebrew:w:0",
+          "textHe": "You should practice a little more on the subject: in prepositions and sentence structure - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
+          "strength": "moderate"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:hebrew:w:0",
+          "textHe": "A repetition of the same type of error begins - on the subject in prepositions and sentence structure. For the coming week, a calm look and a short, focused practice are enough.",
+          "strength": "moderate"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "Complete: The children played ___ the time in kindergarten.",
+        "questionLabel": null,
+        "correctAnswer": "on",
+        "userAnswer": "to",
+        "confidence": "moderate"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [
+        {
+          "mistakeCount": 3,
+          "note": "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "moledet-geography": {
+      "subject": "moledet-geography",
+      "subjectLabelHe": "Homeland & Geography",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    }
+  }
+}

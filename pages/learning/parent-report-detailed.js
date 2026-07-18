@@ -1,3 +1,5 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
+import { ReportLocaleSurface } from "../../lib/reports/report-locale-context.jsx";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -427,7 +429,7 @@ export default function ParentReportDetailedPage() {
               setParentReportError(
                 isTeacherSource
                   ? "Teacher sign-in is required - please sign in again and try again."
-                  : "Parent sign-in is required - please use parent sign-in and try again."
+                  : reportPackCopy("pages__learning__parent-report-detailed", "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again")
               );
               setPayload(null);
               setBaseReport(null);
@@ -505,7 +507,7 @@ export default function ParentReportDetailedPage() {
             setParentReportError(
               networkLike
                 ? "Loading the report took too long - try a shorter range or refresh."
-                : "The detailed report cannot be loaded right now."
+                : reportPackCopy("pages__learning__parent-report-detailed", "the_detailed_report_cannot_be_loaded_right_now")
             );
             setPayload(null);
             setBaseReport(null);
@@ -653,7 +655,7 @@ export default function ParentReportDetailedPage() {
     <div
       className={`no-pdf flex flex-wrap items-center justify-center gap-2 ${className}`}
       role="group"
-      aria-label="Report display mode"
+      aria-label={reportPackCopy("pages__learning__parent-report-detailed", "report_display_mode")}
     >
       <button
         type="button"
@@ -695,7 +697,7 @@ export default function ParentReportDetailedPage() {
             isBright={isBright}
             fullPage={reportImmersive}
             className="!min-h-0 h-full max-h-full overflow-hidden"
-            message="Loading detailed report…"
+            message={reportPackCopy("pages__learning__parent-report-detailed", "loading_detailed_report")}
           />
         </div>
         {reportImmersive ? (
@@ -887,7 +889,7 @@ export default function ParentReportDetailedPage() {
       layoutLockViewport={!reportImmersive && !(payload && periodHasPracticeEvidence)}
     >
       <Head>
-        <title>Detailed Report for the Period - Leo Kids</title>
+        <title>{reportPackCopy("pages__learning__parent-report-detailed", "detailed_report_for_the_period_leo_kids")}</title>
         <style>{`
           .pr-detailed-page {
             --pr-h1: 1.35rem;
@@ -1764,7 +1766,7 @@ export default function ParentReportDetailedPage() {
             </div>
           ) : (
             <>
-              <div
+              <ReportLocaleSurface
                 id="parent-report-detailed-print"
                 data-display-mode={displayMode}
                 className={displayMode === "summary" ? "pr-detailed-print-root pr-detailed-print-root--summary" : "pr-detailed-print-root pr-detailed-print-root--full"}
@@ -1794,7 +1796,7 @@ export default function ParentReportDetailedPage() {
                 />
 
                 {/* */}
-                <SectionCard title="What we did during this period" compact={displayMode === "summary"}>
+                <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed", "what_we_did_during_this_period")} compact={displayMode === "summary"}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
                     <div className="text-xs text-white/55 mb-1">Total time</div>
@@ -1894,7 +1896,7 @@ export default function ParentReportDetailedPage() {
                 ) : null}
 
                 {displayMode === "full" && whatToNoticeItems.length > 0 ? (
-                  <SectionCard title="What's important to know" compact={false}>
+                  <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed", "whats_important_to_know")} compact={false}>
                     <Bullets
                       items={whatToNoticeItems}
                       volumeQuestionsTotal={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -1903,7 +1905,7 @@ export default function ParentReportDetailedPage() {
                 ) : null}
 
                 {displayMode === "full" && activeTeacherMessages.length > 0 ? (
-                  <SectionCard title="Messages from the teacher" compact={false}>
+                  <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed", "messages_from_the_teacher")} compact={false}>
                     <ul className="space-y-3 m-0 p-0 list-none">
                       {activeTeacherMessages.map((msg) => (
                         <li
@@ -2039,7 +2041,7 @@ export default function ParentReportDetailedPage() {
                 </div>
 
                 <ParentReportImportantDisclaimer />
-              </div>
+              </ReportLocaleSurface>
 
               <div className="no-pdf mt-8 pt-5 border-t border-white/15 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
                 <button

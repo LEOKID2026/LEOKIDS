@@ -1,0 +1,85 @@
+# Community — visited, museum
+
+## Metadata
+
+| Field | Value |
+|-------|-------|
+| **learning_page_id** | `english:g5:vocab_community` |
+| **skill_id** | `english:vocabulary:wordlist:community` |
+| **subject** | english |
+| **grade** | g5 |
+| **age_band** | grades_5_6 |
+| **page_type** | vocabulary_theme |
+| **approval_status** | approved |
+| **title_english** | Community — visited, museum |
+
+**Source references:**
+- `data/curriculum-spine/v1/skills.json`
+- `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
+
+**Content scope:** We visited the museum — places in the community, in the past
+
+---
+
+## 1. What are we learning?
+
+Today we will learn about places in the community in the past.
+We visited the museum yesterday.
+
+---
+
+## 2. Simple explanation
+
+Past Simple — visiting a place:
+
+We visited the museum yesterday.
+
+They went to the library last week.
+
+---
+
+## 3. Example
+
+A family at the museum.
+
+We visited the museum yesterday.
+
+---
+
+## 4. Let's solve together
+
+Question: How do you say this?
+
+We visited the museum yesterday
+
+Answer: We visited the museum yesterday
+
+---
+
+## 5. Try it yourself
+
+A fun day on holiday — the zoo.
+
+We visited the zoo on holiday.
+
+Try it yourself.
+On the next page, we'll check the answer and how to get there together.
+
+---
+
+## 6. Let's check together
+
+Exercise: "We visited the zoo on holiday."
+
+A regular verb in the past: visit becomes visited.
+
+"On holiday" tells us when.
+
+So the full sentence is: We visited the zoo on holiday.
+
+---
+
+## 7. Let's practice!
+
+Now you will describe places in the community in the past.
+In the practice, you'll find: We visited the museum yesterday.

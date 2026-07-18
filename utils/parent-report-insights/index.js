@@ -17,6 +17,7 @@
  * The companion `buildAiNarrativeInput(packet)` produces the strict projection that the LLM sees.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { classifyDataConfidence, INSIGHT_DATA_CONFIDENCE_THRESHOLDS } from "./derive-data-confidence.js";
 import { resolveRegisteredGradeKeyFromAggregate } from "../parent-report-core-grade-filter.js";
 import { deriveFluencySignals } from "./derive-fluency-signals.js";
@@ -111,7 +112,7 @@ function buildThinDataWarnings(overall, subjectInsights) {
   if (overall.dataConfidence === "thin") {
     out.push({
       scope: "overall",
-      displayNameHe: "Overall",
+      displayNameHe: reportPackCopy("utils__parent-report-insights__index", "overall"),
       questionCount: overall.totalQuestions,
     });
   }

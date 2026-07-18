@@ -2,6 +2,7 @@
  * Phase 13 — יעדי ראיה לסבב הבא (שפה הורית, מבוסס שורש קושי ומצב ראיות).
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import {
   TARGET_EVIDENCE_TYPE_LABEL_HE,
   TARGET_OBSERVATION_WINDOW_LABEL_HE,
@@ -60,9 +61,9 @@ export function buildEvidenceTargetsPhase13(ctx) {
   const targetFailureSignalHe =
     "If the exact same mistake type repeats with no change - stop and narrow the goal.";
 
-  const targetIndependenceSignalHe = "Fewer mid-task stops when the instructions are clear.";
+  const targetIndependenceSignalHe = reportPackCopy("utils__parent-report-evidence-targets", "fewer_mid_task_stops_when_the_instructions_are_clear");
 
-  const targetStabilitySignalHe = "The same difficulty level with similar results across two consecutive sessions.";
+  const targetStabilitySignalHe = reportPackCopy("utils__parent-report-evidence-targets", "the_same_difficulty_level_with_similar_results_across_two_consecutive_se");
 
   const targetFreshnessNeedHe = stale
     ? "Prefer a recent practice date and don't rely only on what was seen a while ago."

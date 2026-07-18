@@ -2,6 +2,7 @@
  * Cross-subject context-aware labeling + topic overview / focus matrix assertions.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   assertAggregateExplainsGradeSplit,
   assertHomePlanReflectsStrengthAndSupport,
@@ -28,8 +29,8 @@ const SUBJECT_LABEL_HE = {
   geometry: "Geometry",
   english: "English",
   science: "Science",
-  hebrew: "Hebrew",
-  "moledet-geography": "Homeland and Geography",
+  hebrew: reportPackCopy("utils__parent-report-output-integrity__context-labeling-matrix", "hebrew"),
+  "moledet-geography": reportPackCopy("utils__parent-report-output-integrity__context-labeling-matrix", "homeland_and_geography"),
 };
 
 const NARRATIVE_GRADE_TITLE_RE = / - (?:כיתה|Grade) /iu;

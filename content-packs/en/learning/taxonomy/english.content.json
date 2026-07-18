@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "Vocabulary",
+      "topic": "Context",
+      "subskill": "collocation",
+      "pattern": "Incorrect literal translation",
+      "counterEvidence": "Correct after two examples",
+      "countsWhen": "Clear sentences",
+      "doesNotCountWhen": "False-friend distractor only",
+      "probe": "Parallel sentences",
+      "intervention": "Sentence cards",
+      "escalation": "Difficulty across every topic",
+      "observableMarkers": [
+        "Same root across different sentences"
+      ],
+      "roots": [
+        "false friend"
+      ],
+      "competitors": [
+        "Grammar"
+      ],
+      "doNotConclude": [
+        "No English"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "Grammar",
+      "topic": "Tenses",
+      "subskill": "Time marker",
+      "pattern": "past/present",
+      "counterEvidence": "Correct with a markers chart",
+      "countsWhen": "Marker highlighted",
+      "doesNotCountWhen": "Mixed tense without prior teaching",
+      "probe": "Identical sentences, different marker",
+      "intervention": "Markers chart",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Error when yesterday/now is explicit"
+      ],
+      "roots": [
+        "Tense map"
+      ],
+      "competitors": [
+        "Vocabulary"
+      ],
+      "doNotConclude": [
+        "No grammar"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "Reading",
+      "topic": "Layout",
+      "subskill": "Line tracking",
+      "pattern": "Error in two-column layout",
+      "counterEvidence": "Correct in one wide column",
+      "countsWhen": "Readable font",
+      "doesNotCountWhen": "Tiny font without a scaffold",
+      "probe": "Large font vs small",
+      "intervention": "Line number / finger tracking",
+      "escalation": "Vision report",
+      "observableMarkers": [
+        "Error only in two-column layout"
+      ],
+      "roots": [
+        "Line tracking"
+      ],
+      "competitors": [
+        "Vocabulary"
+      ],
+      "doNotConclude": [
+        "No reading"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "Grammar",
+      "topic": "Agreement",
+      "subskill": "Pronoun–subject",
+      "pattern": "he/she/it",
+      "counterEvidence": "Correct when very slow",
+      "countsWhen": "Explicit subject",
+      "doesNotCountWhen": "Fast typing only",
+      "probe": "Chain with subject",
+      "intervention": "Subject–pronoun chart",
+      "escalation": "Always fails",
+      "observableMarkers": [
+        "Error",
+        "Subject highlighted"
+      ],
+      "roots": [
+        "Syntactic agreement"
+      ],
+      "competitors": [
+        "Speed"
+      ],
+      "doNotConclude": [
+        "No knowledge"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "Vocabulary",
+      "topic": "Usage",
+      "subskill": "preposition",
+      "pattern": "Same wrong preposition",
+      "counterEvidence": "Correct on a closed list",
+      "countsWhen": "Taught prepositions",
+      "doesNotCountWhen": "Verbs not yet taught",
+      "probe": "Same verb, two prepositions",
+      "intervention": "Minimal pairs",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Error with different verbs"
+      ],
+      "roots": [
+        "Specific vocabulary"
+      ],
+      "competitors": [
+        "General grammar"
+      ],
+      "doNotConclude": [
+        "No language"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "Reading",
+      "topic": "Comprehension",
+      "subskill": "inference",
+      "pattern": "Fact instead of inference",
+      "counterEvidence": "Correct on an explicit fact",
+      "countsWhen": "Question type marked",
+      "doesNotCountWhen": "Before inference is taught",
+      "probe": "Fact vs inference",
+      "intervention": "Inference signal words",
+      "escalation": "Failure on facts too",
+      "observableMarkers": [
+        "Error only on inference"
+      ],
+      "roots": [
+        "Strategy"
+      ],
+      "competitors": [
+        "Vocabulary"
+      ],
+      "doNotConclude": [
+        "No thinking"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "Writing",
+      "topic": "Spelling",
+      "subskill": "Silent patterns",
+      "pattern": "Repeated errors",
+      "counterEvidence": "Correct with slow dictation",
+      "countsWhen": "Taught words",
+      "doesNotCountWhen": "Before the rule",
+      "probe": "Controlled handwriting",
+      "intervention": "Mini spelling rule",
+      "escalation": "Professional report",
+      "observableMarkers": [
+        "Same pattern"
+      ],
+      "roots": [
+        "Phonology"
+      ],
+      "competitors": [
+        "Typing"
+      ],
+      "doNotConclude": [
+        "Disorder"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "Listening",
+      "topic": "Phonemic",
+      "subskill": "minimal pairs",
+      "pattern": "Confusing a sound pair",
+      "counterEvidence": "Correct with slow double listening",
+      "countsWhen": "Clear recording",
+      "doesNotCountWhen": "Known noise",
+      "probe": "Same pair in different words",
+      "intervention": "Pair practice",
+      "escalation": "Hearing report",
+      "observableMarkers": [
+        "Error on the same pair"
+      ],
+      "roots": [
+        "Phonemics"
+      ],
+      "competitors": [
+        "Noise"
+      ],
+      "doNotConclude": [
+        "Hearing disorder"
+      ]
+    }
+  }
+}

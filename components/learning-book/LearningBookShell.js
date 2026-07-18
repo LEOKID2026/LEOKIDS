@@ -1,11 +1,14 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
 import { formatBookShellTitle } from "../../lib/learning-book/format-book-shell-title";
 import { BookGradeThemeProvider } from "./BookGradeThemeContext";
 import BookShellHeader from "./BookShellHeader";
 import BookTocModal from "./BookTocModal";
 import StudentAdSlot from "../student/StudentAdSlot.jsx";
+import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
+import { resolveBookTitleKey, resolveRegistryTitleKey } from "../../lib/learning-book/book-pack-copy.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Shared learning book shell for all subjects/grades.
@@ -23,28 +26,48 @@ export default function LearningBookShell({
   const router = useRouter();
   const [tocOpen, setTocOpen] = useState(false);
   const isIndex = activePageId === null;
+  const copy = useBookUiCopy();
+  const { contentLocale } = useI18n();
 
   const fromLearning = nav.isLearningReturn(router.query);
   const returnQuerySuffix = nav.getReturnQuerySuffix(router.query);
   const theme = getBookGradeTheme(grade);
 
   const returnLabel = fromLearning
-    ? "Close"
+    ? copy("shell", "backClose")
     : subject === "geometry"
-      ? "Back to Geometry"
+      ? copy("shell", "backGeometry")
       : subject === "science"
-        ? "Back to Science"
+        ? copy("shell", "backScience")
         : subject === "hebrew"
-          ? "Back to Hebrew"
+          ? copy("shell", "backHebrew")
           : subject === "english"
-            ? "Back to English"
+            ? copy("shell", "backEnglish")
             : subject === "moledet"
-              ? "Back to Homeland"
+              ? copy("shell", "backHomeland")
               : subject === "geography"
-                ? "Back to Geography"
+                ? copy("shell", "backGeography")
                 : subject === "history"
-                  ? "Back to History"
-                  : "Back to Math";
+                  ? copy("shell", "backHistory")
+                  : copy("shell", "backMath");
+
+  const shellTitle = useMemo(() => {
+    const raw = bookMeta.bookTitleKey
+      ? resolveBookTitleKey(String(bookMeta.bookTitleKey), contentLocale)
+      : bookMeta.bookTitle || bookMeta.bookTitleHe || "";
+    return formatBookShellTitle(raw);
+  }, [bookMeta, contentLocale]);
+
+  const resolvedBatches = useMemo(
+    () =>
+      (batches || []).map((batch) => ({
+        ...batch,
+        titleHe: batch.titleKey
+          ? resolveRegistryTitleKey(String(batch.titleKey), contentLocale)
+          : batch.titleHe || batch.title || "",
+      })),
+    [batches, contentLocale],
+  );
 
   const handleReturnClick = () => {
     if (fromLearning) {
@@ -69,10 +92,12 @@ export default function LearningBookShell({
             onReturn={handleReturnClick}
             onOpenToc={() => setTocOpen(true)}
             themeClasses={theme.classes}
-            title={formatBookShellTitle(bookMeta.bookTitle || bookMeta.bookTitleHe)}
+            title={shellTitle}
             isIndex={isIndex}
             pageMeta={pageMeta}
-            indexSubtitle={`${bookMeta.gradeShortLabel} · Pick a topic and read page by page`}
+            indexSubtitle={copy("shell", "indexSubtitle", {
+              grade: bookMeta.gradeShortLabel || bookMeta.grade,
+            })}
             activePageTitleClass={theme.classes.activePageTitle}
           />
         </header>
@@ -96,7 +121,7 @@ export default function LearningBookShell({
         <BookTocModal
           open={tocOpen}
           onClose={() => setTocOpen(false)}
-          batches={batches}
+          batches={resolvedBatches}
           activePageId={activePageId}
           returnQuerySuffix={returnQuerySuffix}
           routeBase={bookMeta.routeBase}

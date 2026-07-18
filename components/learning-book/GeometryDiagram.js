@@ -1,25 +1,9 @@
 ﻿import MixedHebrewMathText from "./MixedHebrewMathText";
 import { bookMathIsolateStyle } from "../../lib/learning-book/book-math-display";
 import { isKnownGeometryDiagramType } from "../../lib/learning-book/geometry-diagram-registry";
+import { useMemo } from "react";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
-
-/** Child-facing diagram labels (US English). */
-const GEOMETRY_DIAGRAM_LABELS = Object.freeze({
-  side: "Side",
-  vertex: "Vertex",
-  angle: "Angle",
-  rightAngle: "Right angle",
-  length: "Length",
-  width: "Width",
-  base: "Base",
-  height: "Height",
-  perimeter: "Perimeter",
-  area: "Area",
-  symmetryLine: "Line of symmetry",
-  parallelLines: "Parallel lines",
-  radius: "Radius",
-  diameter: "Diameter",
-});
+import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
 
 const TRIANGLE = "110,28 188,142 32,142";
 const PARALLELOGRAM = "40,120 140,120 170,50 70,50";
@@ -99,32 +83,32 @@ function SolidShapeOutline({ points, theme, fillOpacity = 0.06 }) {
   );
 }
 
-function TrianglePartsDiagram({ theme }) {
+function TrianglePartsDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Triangle with sides and vertices">
+    <DiagramSvg label={d.aria("triangle_parts")}>
       <SolidShapeOutline points={TRIANGLE} theme={theme} fillOpacity={0} />
       <VertexDot cx={110} cy={28} theme={theme} />
       <VertexDot cx={188} cy={142} theme={theme} />
       <VertexDot cx={32} cy={142} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.side} x={110} y={14} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.vertex} x={110} y={48} />
+      <HebrewLabel text={d.label("side")} x={110} y={14} />
+      <HebrewLabel text={d.label("vertex")} x={110} y={48} />
     </DiagramSvg>
   );
 }
 
-function TrianglePerimeterDiagram({ theme }) {
+function TrianglePerimeterDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Triangle perimeter">
+    <DiagramSvg label={d.aria("triangle_perimeter")}>
       <SolidShapeOutline points={TRIANGLE} theme={theme} fillOpacity={0.04} />
       <DashedPerimeterOutline points={TRIANGLE} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.perimeter} x={110} y={16} />
+      <HebrewLabel text={d.label("perimeter")} x={110} y={16} />
     </DiagramSvg>
   );
 }
 
-function TriangleHeightDiagram({ theme }) {
+function TriangleHeightDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Height in a triangle">
+    <DiagramSvg label={d.aria("triangle_height")}>
       <SolidShapeOutline points={TRIANGLE} theme={theme} />
       <line
         x1="110"
@@ -136,15 +120,15 @@ function TriangleHeightDiagram({ theme }) {
         strokeDasharray="5 4"
         className={theme.diagramAccentStrong}
       />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={126} y={88} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.base} x={110} y={158} />
+      <HebrewLabel text={d.label("height")} x={126} y={88} />
+      <HebrewLabel text={d.label("base")} x={110} y={158} />
     </DiagramSvg>
   );
 }
 
-function RightTriangleDiagram({ theme }) {
+function RightTriangleDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Right triangle">
+    <DiagramSvg label={d.aria("right_triangle")}>
       <polygon
         points="40,140 170,140 40,50"
         fill="currentColor"
@@ -163,28 +147,28 @@ function RightTriangleDiagram({ theme }) {
         strokeWidth="2"
         className={theme.diagramAccentSoft}
       />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.rightAngle} x={110} y={24} />
+      <HebrewLabel text={d.label("rightAngle")} x={110} y={24} />
     </DiagramSvg>
   );
 }
 
-function QuadrilateralPartsDiagram({ theme }) {
+function QuadrilateralPartsDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Quadrilateral with sides and vertices">
+    <DiagramSvg label={d.aria("quadrilateral_parts")}>
       <SolidShapeOutline points="48,40 172,40 188,140 32,140" theme={theme} fillOpacity={0} />
       <VertexDot cx={48} cy={40} theme={theme} />
       <VertexDot cx={172} cy={40} theme={theme} />
       <VertexDot cx={188} cy={140} theme={theme} />
       <VertexDot cx={32} cy={140} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.side} x={110} y={28} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.vertex} x={48} y={56} />
+      <HebrewLabel text={d.label("side")} x={110} y={28} />
+      <HebrewLabel text={d.label("vertex")} x={48} y={56} />
     </DiagramSvg>
   );
 }
 
-function RectangleSidesDiagram({ theme }) {
+function RectangleSidesDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Rectangle with length and width">
+    <DiagramSvg label={d.aria("rectangle_sides")}>
       <rect
         x="50"
         y="42"
@@ -196,15 +180,15 @@ function RectangleSidesDiagram({ theme }) {
         className={theme.diagramAccent}
         rx="2"
       />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.length} x={110} y={32} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.width} x={28} y={86} anchor="end" />
+      <HebrewLabel text={d.label("length")} x={110} y={32} />
+      <HebrewLabel text={d.label("width")} x={28} y={86} anchor="end" />
     </DiagramSvg>
   );
 }
 
-function RectangleDiagonalDiagram({ theme }) {
+function RectangleDiagonalDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Rectangle with a diagonal">
+    <DiagramSvg label={d.aria("rectangle_diagonal")}>
       <rect
         x="50"
         y="42"
@@ -222,9 +206,9 @@ function RectangleDiagonalDiagram({ theme }) {
   );
 }
 
-function SquareSidesDiagram({ theme }) {
+function SquareSidesDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Square with sides">
+    <DiagramSvg label={d.aria("square_sides")}>
       <rect
         x="60"
         y="38"
@@ -236,14 +220,14 @@ function SquareSidesDiagram({ theme }) {
         className={theme.diagramAccent}
         rx="2"
       />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.side} x={110} y={28} />
+      <HebrewLabel text={d.label("side")} x={110} y={28} />
     </DiagramSvg>
   );
 }
 
-function SquarePerimeterDiagram({ theme }) {
+function SquarePerimeterDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Square perimeter">
+    <DiagramSvg label={d.aria("square_perimeter")}>
       <rect
         x="60"
         y="38"
@@ -268,14 +252,14 @@ function SquarePerimeterDiagram({ theme }) {
         className={theme.diagramAccentStrong}
         rx="2"
       />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.perimeter} x={110} y={24} />
+      <HebrewLabel text={d.label("perimeter")} x={110} y={24} />
     </DiagramSvg>
   );
 }
 
-function SquareDiagonalDiagram({ theme }) {
+function SquareDiagonalDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Square with a diagonal">
+    <DiagramSvg label={d.aria("square_diagonal")}>
       <rect
         x="60"
         y="38"
@@ -293,7 +277,7 @@ function SquareDiagonalDiagram({ theme }) {
   );
 }
 
-function SquareAreaGridDiagram({ theme }) {
+function SquareAreaGridDiagram({ theme, d }) {
   const cells = [];
   const size = 4;
   const cell = 22;
@@ -318,9 +302,9 @@ function SquareAreaGridDiagram({ theme }) {
     }
   }
   return (
-    <DiagramSvg label="Square area - unit squares">
+    <DiagramSvg label={d.aria("square_area_grid")}>
       {cells}
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.area} x={110} y={24} />
+      <HebrewLabel text={d.label("area")} x={110} y={24} />
       <MathMeasure text="4 × 4 = 16" x={110} y={156} />
     </DiagramSvg>
   );
@@ -330,33 +314,33 @@ function ParallelogramOutline({ theme, fillOpacity = 0.06 }) {
   return <SolidShapeOutline points={PARALLELOGRAM} theme={theme} fillOpacity={fillOpacity} />;
 }
 
-function ParallelogramHeightDiagram({ theme }) {
+function ParallelogramHeightDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Height in a parallelogram">
+    <DiagramSvg label={d.aria("parallelogram_height")}>
       <ParallelogramOutline theme={theme} />
       <line x1="105" y1="50" x2="105" y2="120" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={122} y={88} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.base} x={90} y={148} />
+      <HebrewLabel text={d.label("height")} x={122} y={88} />
+      <HebrewLabel text={d.label("base")} x={90} y={148} />
     </DiagramSvg>
   );
 }
 
-function ParallelogramAreaDiagram({ theme }) {
+function ParallelogramAreaDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Parallelogram area">
+    <DiagramSvg label={d.aria("parallelogram_area")}>
       <ParallelogramOutline theme={theme} />
       <line x1="40" y1="120" x2="140" y2="120" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <line x1="105" y1="50" x2="105" y2="120" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.base} x={90} y={148} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={122} y={88} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.area} x={110} y={20} />
+      <HebrewLabel text={d.label("base")} x={90} y={148} />
+      <HebrewLabel text={d.label("height")} x={122} y={88} />
+      <HebrewLabel text={d.label("area")} x={110} y={20} />
     </DiagramSvg>
   );
 }
 
-function ParallelogramDiagonalDiagram({ theme }) {
+function ParallelogramDiagonalDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Parallelogram with a diagonal">
+    <DiagramSvg label={d.aria("parallelogram_diagonal")}>
       <ParallelogramOutline theme={theme} />
       <line x1="40" y1="120" x2="170" y2="50" stroke="currentColor" strokeWidth="2" strokeDasharray="6 4" className={theme.diagramAccentStrong} />
     </DiagramSvg>
@@ -367,87 +351,87 @@ function TrapezoidOutline({ theme, fillOpacity = 0.06 }) {
   return <SolidShapeOutline points={TRAPEZOID} theme={theme} fillOpacity={fillOpacity} />;
 }
 
-function TrapezoidHeightDiagram({ theme }) {
+function TrapezoidHeightDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Height in a trapezoid">
+    <DiagramSvg label={d.aria("trapezoid_height")}>
       <TrapezoidOutline theme={theme} />
       <line x1="110" y1="50" x2="110" y2="130" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={126} y={92} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.base} x={110} y={152} />
+      <HebrewLabel text={d.label("height")} x={126} y={92} />
+      <HebrewLabel text={d.label("base")} x={110} y={152} />
     </DiagramSvg>
   );
 }
 
-function TrapezoidAreaDiagram({ theme }) {
+function TrapezoidAreaDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Trapezoid area">
+    <DiagramSvg label={d.aria("trapezoid_area")}>
       <TrapezoidOutline theme={theme} />
       <line x1="60" y1="130" x2="160" y2="130" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <line x1="110" y1="50" x2="110" y2="130" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" className={theme.diagramAccentStrong} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.base} x={110} y={152} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.height} x={126} y={92} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.area} x={110} y={20} />
+      <HebrewLabel text={d.label("base")} x={110} y={152} />
+      <HebrewLabel text={d.label("height")} x={126} y={92} />
+      <HebrewLabel text={d.label("area")} x={110} y={20} />
     </DiagramSvg>
   );
 }
 
-function RightAngleDiagram({ theme }) {
+function RightAngleDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Right angle">
+    <DiagramSvg label={d.aria("right_angle")}>
       <line x1="40" y1="130" x2="180" y2="130" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="40" y1="130" x2="40" y2="36" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <rect x="40" y="110" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" className={theme.diagramAccentSoft} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.rightAngle} x={110} y={24} />
+      <HebrewLabel text={d.label("rightAngle")} x={110} y={24} />
     </DiagramSvg>
   );
 }
 
-function AngleBasicDiagram({ theme }) {
+function AngleBasicDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Angle with two rays">
+    <DiagramSvg label={d.aria("angle_basic")}>
       <line x1="110" y1="120" x2="36" y2="48" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="110" y1="120" x2="184" y2="48" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <VertexDot cx={110} cy={120} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.angle} x={110} y={28} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.vertex} x={110} y={140} />
+      <HebrewLabel text={d.label("angle")} x={110} y={28} />
+      <HebrewLabel text={d.label("vertex")} x={110} y={140} />
     </DiagramSvg>
   );
 }
 
-function SymmetryLineDiagram({ theme }) {
+function SymmetryLineDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Line of symmetry">
+    <DiagramSvg label={d.aria("symmetry_line")}>
       <SolidShapeOutline points={TRIANGLE} theme={theme} />
       <line x1="110" y1="22" x2="110" y2="148" stroke="currentColor" strokeWidth="2" strokeDasharray="6 5" className={theme.diagramAccentStrong} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.symmetryLine} x={110} y={14} />
+      <HebrewLabel text={d.label("symmetryLine")} x={110} y={14} />
     </DiagramSvg>
   );
 }
 
-function ParallelLinesDiagram({ theme }) {
+function ParallelLinesDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Parallel lines">
+    <DiagramSvg label={d.aria("parallel_lines")}>
       <line x1="32" y1="58" x2="188" y2="58" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="32" y1="108" x2="188" y2="108" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.parallelLines} x={110} y={24} />
+      <HebrewLabel text={d.label("parallelLines")} x={110} y={24} />
     </DiagramSvg>
   );
 }
 
-function CircleRadiusDiagram({ theme }) {
+function CircleRadiusDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Circle with radius">
+    <DiagramSvg label={d.aria("circle_radius")}>
       <circle cx="110" cy="92" r="52" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="110" y1="92" x2="162" y2="92" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <VertexDot cx={110} cy={92} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.radius} x={110} y={24} />
+      <HebrewLabel text={d.label("radius")} x={110} y={24} />
     </DiagramSvg>
   );
 }
 
-function CirclePerimeterDiagram({ theme }) {
+function CirclePerimeterDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Circle perimeter">
+    <DiagramSvg label={d.aria("circle_perimeter")}>
       <circle cx="110" cy="92" r="52" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="2" className={theme.diagramSecondary} />
       <circle
         cx="110"
@@ -461,27 +445,27 @@ function CirclePerimeterDiagram({ theme }) {
       />
       <line x1="110" y1="92" x2="152" y2="92" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <VertexDot cx={110} cy={92} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.perimeter} x={110} y={18} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.radius} x={168} y={96} />
+      <HebrewLabel text={d.label("perimeter")} x={110} y={18} />
+      <HebrewLabel text={d.label("radius")} x={168} y={96} />
     </DiagramSvg>
   );
 }
 
-function CircleAreaDiagram({ theme }) {
+function CircleAreaDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Circle area">
+    <DiagramSvg label={d.aria("circle_area")}>
       <circle cx="110" cy="92" r="52" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccent} />
       <line x1="110" y1="92" x2="162" y2="92" stroke="currentColor" strokeWidth="2.5" className={theme.diagramAccentStrong} />
       <VertexDot cx={110} cy={92} theme={theme} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.area} x={110} y={18} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.radius} x={168} y={96} />
+      <HebrewLabel text={d.label("area")} x={110} y={18} />
+      <HebrewLabel text={d.label("radius")} x={168} y={96} />
     </DiagramSvg>
   );
 }
 
-function CubeBasicDiagram({ theme }) {
+function CubeBasicDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Cube">
+    <DiagramSvg label={d.aria("cube_basic")}>
       <polygon points="70,90 130,90 150,70 90,70" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="70,90 70,130 130,130 130,90" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="130,90 150,70 150,110 130,130" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="2" className={theme.diagramAccentSoft} />
@@ -493,16 +477,16 @@ function CubeBasicDiagram({ theme }) {
   );
 }
 
-function BoxBasicDiagram({ theme }) {
+function BoxBasicDiagram({ theme, d }) {
   return (
-    <DiagramSvg label="Rectangular prism">
+    <DiagramSvg label={d.aria("box_basic")}>
       <polygon points="52,96 148,96 168,72 72,72" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="52,96 52,144 148,144 148,96" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <polygon points="148,96 168,72 168,120 148,144" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="2" className={theme.diagramAccentSoft} />
       <line x1="52" y1="96" x2="72" y2="72" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
       <line x1="148" y1="96" x2="168" y2="72" stroke="currentColor" strokeWidth="2" className={theme.diagramAccent} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.length} x={100} y={64} />
-      <HebrewLabel text={GEOMETRY_DIAGRAM_LABELS.width} x={182} y={108} />
+      <HebrewLabel text={d.label("length")} x={100} y={64} />
+      <HebrewLabel text={d.label("width")} x={182} y={108} />
     </DiagramSvg>
   );
 }
@@ -539,6 +523,14 @@ const DIAGRAM_RENDERERS = Object.freeze({
 
 export default function GeometryDiagram({ type, options = {} }) {
   const theme = useBookGradeTheme().classes;
+  const copy = useBookUiCopy();
+  const d = useMemo(
+    () => ({
+      label: (key) => copy("diagramLabels", key),
+      aria: (key) => copy("diagramAria", key),
+    }),
+    [copy],
+  );
   const diagramType = String(type || "").trim();
 
   if (!isKnownGeometryDiagramType(diagramType)) {
@@ -548,7 +540,7 @@ export default function GeometryDiagram({ type, options = {} }) {
           className={`my-4 rounded-xl border border-dashed px-4 py-3 text-center text-sm ${theme.diagramPanel}`}
           data-geometry-diagram-unknown={diagramType || "empty"}
         >
-          [dev] Unknown geometry diagram: {diagramType || "(empty)"}
+          {copy("shell", "devUnknownDiagram", { type: diagramType || "(empty)" })}
         </div>
       );
     }
@@ -562,7 +554,7 @@ export default function GeometryDiagram({ type, options = {} }) {
       data-geometry-diagram-type={diagramType}
       className={`my-4 w-full max-w-full overflow-hidden rounded-2xl border px-3 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:px-6 sm:py-6 ${theme.diagramPanel} ${theme.diagramAccent}`}
     >
-      <Renderer theme={theme} />
+      <Renderer theme={theme} d={d} />
       {options.caption === "1" || options.caption === "true" ? (
         options.label ? (
           <figcaption className="mt-3 text-center text-sm font-semibold sm:text-base" dir="ltr">

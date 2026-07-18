@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "Shapes",
+      "topic": "Quadrilaterals",
+      "subskill": "Rectangle/parallelogram properties",
+      "pattern": "Confusing properties",
+      "counterEvidence": "Correct on clean shapes only",
+      "countsWhen": "Angles marked",
+      "doesNotCountWhen": "Names only without a diagram",
+      "probe": "With angle/side marking",
+      "intervention": "Definition cards",
+      "escalation": "Failure on every shape",
+      "observableMarkers": [
+        "Error when angle is not 90°"
+      ],
+      "roots": [
+        "Overlapping definitions"
+      ],
+      "competitors": [
+        "Name recall"
+      ],
+      "doNotConclude": [
+        "No geometry"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "Angles",
+      "topic": "Measurement",
+      "subskill": "Reading a protractor",
+      "pattern": "Error in angle range",
+      "counterEvidence": "Correct with guided measurement",
+      "countsWhen": "Protractor and instructions are valid",
+      "doesNotCountWhen": "Angle too small in a misleading UI",
+      "probe": "Guided vs independent",
+      "intervention": "Scale practice",
+      "escalation": "Vision report",
+      "observableMarkers": [
+        "Repeated error in the same range"
+      ],
+      "roots": [
+        "Reading a scale"
+      ],
+      "competitors": [
+        "Speed"
+      ],
+      "doNotConclude": [
+        "Vision problem"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "Area",
+      "topic": "Parallelogram",
+      "subskill": "Height",
+      "pattern": "Using sides as height",
+      "counterEvidence": "Always correct on a rectangle",
+      "countsWhen": "Height can be added",
+      "doesNotCountWhen": "Large numbers only without a model",
+      "probe": "With/without height line",
+      "intervention": "Highlight height",
+      "escalation": "Failure on a rectangle",
+      "observableMarkers": [
+        "Error when no height line is drawn"
+      ],
+      "roots": [
+        "Choosing height"
+      ],
+      "competitors": [
+        "Wrong multiplication"
+      ],
+      "doNotConclude": [
+        "No formulas"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "Transformation",
+      "topic": "Rotation",
+      "subskill": "Direction/angle",
+      "pattern": "Reversed rotation",
+      "counterEvidence": "Correct on a grid",
+      "countsWhen": "Grid and axis",
+      "doesNotCountWhen": "No grid before teaching",
+      "probe": "With/without axis",
+      "intervention": "Grid + vertices",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Repeated direction error"
+      ],
+      "roots": [
+        "Spatial orientation"
+      ],
+      "competitors": [
+        "Carelessness"
+      ],
+      "doNotConclude": [
+        "No spatial thinking"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "Volume",
+      "topic": "Rectangular prism",
+      "subskill": "3D model",
+      "pattern": "Forgets depth",
+      "counterEvidence": "Correct on a simple cube",
+      "countsWhen": "Net available",
+      "doesNotCountWhen": "No diagram when not taught",
+      "probe": "With/without net",
+      "intervention": "Paper net",
+      "escalation": "Failure on a cube",
+      "observableMarkers": [
+        "2D answer",
+        "Correct with a net"
+      ],
+      "roots": [
+        "3D model"
+      ],
+      "competitors": [
+        "Multiplication"
+      ],
+      "doNotConclude": [
+        "No volume"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "Measurement",
+      "topic": "Perimeter",
+      "subskill": "Unit conversion",
+      "pattern": "Repeated unit error",
+      "counterEvidence": "Correct with a key",
+      "countsWhen": "Key available",
+      "doesNotCountWhen": "Conversion not yet taught",
+      "probe": "Two units for the same length",
+      "intervention": "Conversion key",
+      "escalation": "Failure on a single line",
+      "observableMarkers": [
+        "Same unit error"
+      ],
+      "roots": [
+        "Units"
+      ],
+      "competitors": [
+        "Computation"
+      ],
+      "doNotConclude": [
+        "No measurement"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "Symmetry",
+      "topic": "Shape",
+      "subskill": "Axis",
+      "pattern": "Repeated wrong axis",
+      "counterEvidence": "Correct when the axis is shown",
+      "countsWhen": "Points available",
+      "doesNotCountWhen": "Non-symmetric shape",
+      "probe": "With/without axis",
+      "intervention": "Paper fold",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Error with marked points"
+      ],
+      "roots": [
+        "Visual"
+      ],
+      "competitors": [
+        "Carelessness"
+      ],
+      "doNotConclude": [
+        "No symmetry"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "Triangle",
+      "topic": "Area",
+      "subskill": "base×height÷2",
+      "pattern": "Forgets ÷2 or wrong height",
+      "counterEvidence": "Correct only on simple cases",
+      "countsWhen": "Clear interior height",
+      "doesNotCountWhen": "Obtuse without a teaching step",
+      "probe": "Exterior height highlighted",
+      "intervention": "Identify height → formula",
+      "escalation": "Failure on right triangle",
+      "observableMarkers": [
+        "Repeated error",
+        "Correct on right triangle with interior height"
+      ],
+      "roots": [
+        "Formula"
+      ],
+      "competitors": [
+        "Triangle structure"
+      ],
+      "doNotConclude": [
+        "No triangles"
+      ]
+    }
+  }
+}

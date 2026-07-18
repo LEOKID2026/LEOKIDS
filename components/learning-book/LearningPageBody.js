@@ -6,6 +6,7 @@ import LearningBookAudioPlayer from "./LearningBookAudioPlayer";
 import MixedHebrewMathText from "./MixedHebrewMathText";
 import BookTopicCardTitle from "./BookTopicCardTitle";
 import { getSectionDisplayTitle } from "../../lib/learning-book/section-display-labels";
+import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
 import { useBookSectionSwipe } from "../../hooks/useBookSectionSwipe";
 import { MATH_G1_BOOK_META } from "../../lib/learning-book/math-g1-registry";
 import { MATH_G2_BOOK_META } from "../../lib/learning-book/math-g2-registry";
@@ -203,6 +204,7 @@ export default function LearningPageBody({
   bookSubject = "math",
   bookGrade = "g1",
 }) {
+  const copy = useBookUiCopy();
   const clientMeta = getLearningBookClientMeta(bookSubject, bookGrade);
   const bookNav = useMemo(
     () =>
@@ -322,10 +324,10 @@ export default function LearningPageBody({
     setSectionIndex((i) => Math.min((page?.sections?.length ?? 1) - 1, i + 1));
   }, [page?.sections?.length]);
 
-  const jumpToSection = useCallback((target) => {
-    setSectionIndex((current) => {
-      setSlideDir(target > current ? 1 : target < current ? -1 : 0);
-      return target;
+  const jumpToSection = useCallback((sectionIdx) => {
+    setSectionIndex((prevIdx) => {
+      setSlideDir(Math.sign(sectionIdx - prevIdx));
+      return sectionIdx;
     });
   }, []);
 
@@ -357,7 +359,7 @@ export default function LearningPageBody({
   if (!page?.sections?.length) {
     return (
       <p className="text-center text-[color:var(--book-text-muted)]" dir="ltr">
-        No content to show on this page.
+        {copy("shell", "emptyPageContent")}
       </p>
     );
   }
@@ -372,12 +374,12 @@ export default function LearningPageBody({
   const isFinalPracticeSection = atLast && section?.number === 7;
   const practiceCtaSubtext =
     bookSubject === "geometry"
-      ? "We'll practice this Geometry topic next"
+      ? copy("shell", "practiceGeometry")
       : bookSubject === "science"
-        ? "We'll practice this Science topic next"
+        ? copy("shell", "practiceScience")
         : bookSubject === "english"
-          ? "We'll practice this English topic next"
-          : "We'll practice this Math topic next";
+          ? copy("shell", "practiceEnglish")
+          : copy("shell", "practiceMath");
 
   return (
     <>
@@ -429,7 +431,7 @@ export default function LearningPageBody({
                       ? `book-dot-active w-7 ${theme.dotActive}`
                       : "w-2.5 bg-[color:var(--book-divider)] hover:bg-[color:var(--book-accent-muted)]"
                   }`}
-                  aria-label={`Page ${i + 1}`}
+                  aria-label={copy("shell", "pageDotAria", { number: i + 1 })}
                 />
               ))}
             </div>
@@ -460,7 +462,7 @@ export default function LearningPageBody({
                 onClick={handlePracticeClick}
                 className={`mx-auto block w-full max-w-md rounded-2xl border px-5 py-4 transition sm:inline-block sm:w-auto sm:min-w-[16rem] ${theme.practiceCta}`}
               >
-                <span className="block text-lg font-bold sm:text-xl">Let's practice now</span>
+                <span className="block text-lg font-bold sm:text-xl">{copy("shell", "practiceNow")}</span>
                 <span className={`mt-1 block text-sm font-medium ${theme.practiceCtaSub}`}>
                   {practiceCtaSubtext}
                 </span>
@@ -478,12 +480,12 @@ export default function LearningPageBody({
       >
         <div className="mx-auto max-w-4xl space-y-3 px-4 py-3 sm:py-4">
           <p className="text-center text-sm font-medium text-[color:var(--book-text-muted)]">
-            Page {pageNumber} of {totalSections}
+            {copy("shell", "pageOfTotal", { current: pageNumber, total: totalSections })}
           </p>
 
           <nav
             className="flex items-stretch gap-3"
-            aria-label="Page navigation within this topic"
+            aria-label={copy("shell", "pageNavWithinTopic")}
           >
             <button
               type="button"
@@ -491,7 +493,7 @@ export default function LearningPageBody({
               onClick={goPrev}
               className={`min-h-[48px] flex-1 rounded-2xl border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-100 ${theme.navPrevButton}`}
             >
-              Previous page
+              {copy("shell", "previousPage")}
             </button>
             <button
               type="button"
@@ -499,14 +501,14 @@ export default function LearningPageBody({
               onClick={goNext}
               className={`min-h-[48px] flex-1 rounded-2xl border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-100 ${theme.navNextButton}`}
             >
-              Next page
+              {copy("shell", "nextPage")}
             </button>
           </nav>
 
           {hasLessonNav ? (
             <nav
               className="grid grid-cols-2 gap-2 border-t border-[color:var(--book-divider)] pt-3"
-              aria-label="Topic navigation"
+              aria-label={copy("shell", "topicNav")}
             >
               {prevPageId ? (
                 <Link
@@ -516,7 +518,7 @@ export default function LearningPageBody({
                   )}
                   className={`min-h-[52px] rounded-xl border px-3 py-2.5 text-left text-xs shadow-sm transition ${theme.topicPrevLink}`}
                 >
-                  <span className={`block text-[10px] ${theme.topicPrevLabel}`}>Previous topic</span>
+                  <span className={`block text-[10px] ${theme.topicPrevLabel}`}>{copy("shell", "previousTopic")}</span>
                   <BookTopicCardTitle text={prevTitle} />
                 </Link>
               ) : (
@@ -530,7 +532,7 @@ export default function LearningPageBody({
                   )}
                   className={`min-h-[52px] rounded-xl border px-3 py-2.5 text-left text-xs shadow-sm transition ${theme.topicNextLink}`}
                 >
-                  <span className={`block text-[10px] ${theme.topicNextLabel}`}>Next topic</span>
+                  <span className={`block text-[10px] ${theme.topicNextLabel}`}>{copy("shell", "nextTopic")}</span>
                   <BookTopicCardTitle text={nextTitle} />
                 </Link>
               ) : (

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { formatParentDateTime } from "../../lib/parent-ui/format-parent-date.js";
+import { useReportT } from "../../lib/i18n/I18nProvider.jsx";
 
 function formatMessageDate(iso) {
   if (!iso) return "";
@@ -46,6 +47,7 @@ export default function ParentReportParentSections({
   compact = false,
   visibleSections = DEFAULT_VISIBLE_SECTIONS,
 }) {
+  const reportT = useReportT();
   const { insights, homeRecommendations, teacherMessages } = useMemo(
     () => normalizeParentFacing(report),
     [report]
@@ -70,7 +72,7 @@ export default function ParentReportParentSections({
 
   const teacherSection =
     showTeacher && activeMessages.length > 0 ? (
-      <SectionCard title="Messages from the teacher">
+      <SectionCard title={reportT("parentSections.teacherMessages")}>
         <ul className="space-y-3 m-0 p-0 list-none">
           {visibleMessages.map((msg) => (
             <li
@@ -90,7 +92,7 @@ export default function ParentReportParentSections({
             onClick={() => setShowAllMessages(true)}
             className="mt-3 text-sm text-amber-300 underline hover:text-amber-200"
           >
-            Show more messages
+            {reportT("parentSections.showMoreMessages")}
           </button>
         ) : null}
         {showAllMessages && activeMessages.length > 3 ? (
@@ -99,7 +101,7 @@ export default function ParentReportParentSections({
             onClick={() => setShowAllMessages(false)}
             className="mt-3 text-sm text-white/60 underline hover:text-white/80"
           >
-            Show less
+            {reportT("parentSections.showLessMessages")}
           </button>
         ) : null}
       </SectionCard>
@@ -107,7 +109,7 @@ export default function ParentReportParentSections({
 
   const insightsSection =
     showInsights && insights.length > 0 ? (
-      <SectionCard title="What's important to know">
+      <SectionCard title={reportT("parentSections.insights")}>
         <ul className={listClass}>
           {insights.map((line, i) => (
             <li key={`ins-${i}`} className="break-words">
@@ -120,7 +122,7 @@ export default function ParentReportParentSections({
 
   const homeSection =
     showHome && homeRecommendations.length > 0 ? (
-      <SectionCard title="Recommended at-home practice">
+      <SectionCard title={reportT("parentSections.homeRecommendations")}>
         <ul className={listClass}>
           {homeRecommendations.map((line, i) => (
             <li key={`rec-${i}`} className="break-words">

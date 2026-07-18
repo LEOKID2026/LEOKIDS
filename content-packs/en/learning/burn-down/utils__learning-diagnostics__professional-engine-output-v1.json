@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "number_x_masteryscore": "Number(x.masteryScore)"
+  }
+}

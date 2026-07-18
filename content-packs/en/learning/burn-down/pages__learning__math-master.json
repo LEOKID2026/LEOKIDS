@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "setanimationstep_s_s": "setAnimationStep((s) => (s"
+  }
+}

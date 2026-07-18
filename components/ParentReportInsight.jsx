@@ -10,6 +10,7 @@
  * existing print/PDF CSS and the screen layout do not need to change.
  */
 
+import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import React from "react";
 import { normalizeParentFacingHe } from "../utils/parent-report-language/parent-facing-normalize.js";
 import { filterOutParentReportDuplicates } from "../utils/parent-report-text-dedupe.js";
@@ -167,7 +168,7 @@ export function ParentReportInsight({ explanation, className = "", excludeHomeTi
   const sourceLabel = structured
     ? isStructuredAi
       ? "This summary was written with the help of AI based on the report data, and is meant to be used only as a learning aid."
-      : "This summary was generated automatically from the report data, and is meant to be used only as a learning aid."
+      : globalBurnDownCopy("components__ParentReportInsight", "this_summary_was_generated_automatically_from_the_report_data_and_is_mea")
     : "";
 
   return (

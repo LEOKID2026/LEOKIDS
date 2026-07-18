@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "No data yet",
+    "data_unavailable_right_now": "Data unavailable right now",
+    "loading": "Loading…",
+    "cumulative": "Cumulative",
+    "for_the_current_month": "For the current month",
+    "cumulative_from_all_sessions": "Cumulative from all sessions",
+    "from_completed_sessions": "From completed sessions",
+    "from_all_sessions_with_duration": "From all sessions with duration",
+    "credited_learning_time_questions_books_and_parent_activities": "Credited learning time — questions, books, and parent activities"
+  }
+}

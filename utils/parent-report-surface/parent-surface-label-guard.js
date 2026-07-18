@@ -2,6 +2,7 @@
  * Parent report surface — block internal/taxonomy labels from parent-visible text.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { normalizeParentFacingHe } from "../parent-report-language/index.js";
 
 /** Internal/engine identifiers (snake_case), not ordinary parent-facing English words. */
@@ -34,7 +35,7 @@ const GEOMETRY_ONLY_PHRASES = [
 
 /** Parent-facing subskill overrides (surface copy only). */
 const SUBSKILL_SURFACE_HE = Object.freeze({
-  "S-03": "Understanding how body parts relate",
+  "S-03": reportPackCopy("utils__parent-report-surface__parent-surface-label-guard", "understanding_how_body_parts_relate"),
 });
 
 /**

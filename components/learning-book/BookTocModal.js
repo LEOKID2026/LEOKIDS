@@ -3,6 +3,7 @@ import { MATH_G1_BOOK_META } from "../../lib/learning-book/math-g1-registry";
 import { appendReturnQueryToHref } from "../../lib/learning-book/math-g1-book-nav";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
 import MixedHebrewMathText from "./MixedHebrewMathText";
+import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
 
 export default function BookTocModal({
   open,
@@ -13,6 +14,7 @@ export default function BookTocModal({
   routeBase = MATH_G1_BOOK_META.routeBase,
 }) {
   const { classes: theme } = useBookGradeTheme();
+  const copy = useBookUiCopy();
 
   if (!open) return null;
 
@@ -26,7 +28,7 @@ export default function BookTocModal({
       <button
         type="button"
         className="absolute inset-0 bg-black/55 backdrop-blur-sm"
-        aria-label="Close"
+        aria-label={copy("shell", "tocCloseAria")}
         onClick={onClose}
       />
       <div
@@ -35,18 +37,18 @@ export default function BookTocModal({
       >
         <div className="flex items-center justify-between gap-3 border-b border-[color:var(--book-divider)] px-5 py-4">
           <h2 id="book-toc-title" className="text-lg font-bold text-[color:var(--book-text)]">
-            Table of contents
+            {copy("shell", "tocTitle")}
           </h2>
           <button
             type="button"
             onClick={onClose}
             className={`rounded-full px-3 py-1 text-sm font-semibold ${theme.tocCloseButton}`}
           >
-            ✕ Close
+            {copy("shell", "tocClose")}
           </button>
         </div>
         <div className="flex-1 overflow-y-auto px-5 py-4">
-          <nav className="space-y-5" aria-label="Table of contents">
+          <nav className="space-y-5" aria-label={copy("shell", "tocAria")}>
             {batches.map((batch) => (
               <div key={batch.id}>
                 <h3 className={`mb-2 text-sm font-bold ${theme.tocBatchHeading}`}>
@@ -85,7 +87,7 @@ export default function BookTocModal({
             onClick={onClose}
             className={`block text-center text-sm font-semibold ${theme.tocFooterLink}`}
           >
-            ← Back to the book home page
+            {copy("shell", "tocBackHome")}
           </Link>
         </div>
       </div>

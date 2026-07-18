@@ -1,3 +1,4 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 /**
  * Parent-facing surface classification for row-identity sign-off.
  */
@@ -5,14 +6,14 @@
 export const PARENT_FACING_SURFACES = [
   {
     id: "short_report_table",
-    labelHe: "Short report table",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "short_report_table"),
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "pages/learning/parent-report.js + baseReport topic maps",
   },
   {
     id: "short_report_smart_summary",
-    labelHe: "Smart summary - short report",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "smart_summary_short_report"),
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -20,36 +21,36 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "detailed_smart_summary",
-    labelHe: "Smart summary - detailed report",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "smart_summary_detailed_report"),
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
-    implementation: "ParentAiInsight + executiveSummary",
+    implementation: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "parentaiinsight_executivesummary"),
   },
   {
     id: "detailed_strengths",
-    labelHe: "Strengths",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "strengths"),
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/detailed-parent-report.js topStrengths",
   },
   {
     id: "detailed_weaknesses",
-    labelHe: "Focus / weaknesses",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "focus_weaknesses"),
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/detailed-parent-report.js topWeaknesses",
   },
   {
     id: "topic_recommendations",
-    labelHe: "Topic recommendations",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "topic_recommendations"),
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/detailed-parent-report.js topicRecommendations",
   },
   {
     id: "home_plan",
-    labelHe: "What to do at home",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "what_to_do_at_home"),
     classification: "mixed",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -57,7 +58,7 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "executive_summary",
-    labelHe: "Executive summary",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "executive_summary"),
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
@@ -65,7 +66,7 @@ export const PARENT_FACING_SURFACES = [
   },
   {
     id: "charts",
-    labelHe: "Charts / labels",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "charts_labels"),
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "parent-report.js buildTopicRowsForChart",
@@ -76,18 +77,18 @@ export const PARENT_FACING_SURFACES = [
     classification: "mixed",
     requiresRowIdentity: true,
     requiresGradeSplitRespect: true,
-    implementation: "Playwright print of pages above",
+    implementation: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "playwright_print_of_pages_above"),
   },
   {
     id: "copilot_truth_packet",
-    labelHe: "Copilot truth packet",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "copilot_truth_packet"),
     classification: "row-scoped",
     requiresRowIdentity: true,
     implementation: "utils/parent-copilot/truth-packet-v1.js",
   },
   {
     id: "copilot_answer_composer",
-    labelHe: "Copilot answer composer",
+    labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "copilot_answer_composer"),
     classification: "mixed",
     requiresRowIdentity: true,
     requiresGradeSplitRespect: true,

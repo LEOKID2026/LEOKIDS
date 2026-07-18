@@ -264,7 +264,7 @@ function BookLineLabel({ label }) {
     <span
       className="book-line-label inline font-bold text-[color:var(--book-text)]"
       style={bookLabelIsolateStyle}
-      data-book-label="true"
+      data-book-label
     >
       {cleaned}
     </span>

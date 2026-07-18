@@ -2,6 +2,7 @@
  * Parent report surface — unified topic tier (display/placement only; no engine changes).
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { resolveGradeAwareParentTopicTier } from "../parent-report-language/grade-context-parent-he.js";
 
 /** @typedef {'strong'|'monitor'|'strengthen'|'needs_guidance'|'clear_gap'|'low_evidence'|'advanced_practice'|'foundation_practice'} ParentTopicTier */
@@ -18,25 +19,25 @@ export const PARENT_TOPIC_TIER = Object.freeze({
 });
 
 const TIER_LABEL_HE = Object.freeze({
-  strong: "Looks strong",
-  monitor: "Worth watching",
-  strengthen: "Worth strengthening",
-  needs_guidance: "Worth guiding",
-  clear_gap: "Needs strengthening",
-  low_evidence: "Few questions",
-  advanced_practice: "Above grade level",
-  foundation_practice: "Earlier foundations",
+  strong: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "looks_strong"),
+  monitor: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "worth_watching"),
+  strengthen: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "worth_strengthening"),
+  needs_guidance: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "worth_guiding"),
+  clear_gap: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "needs_strengthening"),
+  low_evidence: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "few_questions"),
+  advanced_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "above_grade_level"),
+  foundation_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "earlier_foundations"),
 });
 
 const TIER_SECTION_TITLE_HE = Object.freeze({
-  strong: "Strong topics",
-  monitor: "Topics worth watching",
-  strengthen: "Topics worth strengthening",
-  needs_guidance: "Topics worth guiding in practice",
-  clear_gap: "Topics worth strengthening",
-  low_evidence: "Topics with few questions",
-  advanced_practice: "Practice above grade level",
-  foundation_practice: "Earlier foundation practice",
+  strong: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "strong_topics"),
+  monitor: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_watching"),
+  strengthen: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_strengthening"),
+  needs_guidance: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_guiding_in_practice"),
+  clear_gap: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_strengthening"),
+  low_evidence: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_with_few_questions"),
+  advanced_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "practice_above_grade_level"),
+  foundation_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "earlier_foundation_practice"),
 });
 
 const TIER_PLACEMENT_KIND = Object.freeze({

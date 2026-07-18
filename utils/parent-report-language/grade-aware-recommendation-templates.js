@@ -1,3 +1,4 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 /**
  * Grade-aware parent recommendation templates (Phase 1–4 math/geometry/Hebrew/English; Phase 5-B1/B2 Science; Phase 5-C1/C3 moledet-geography MG-01–MG-08 bucketOverrides).
  * Slot-specific parent copy is editorially approved; do not change without sign-off.
@@ -197,7 +198,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Do not provide formal factors/multiples recommendations for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "do_not_provide_formal_factors_multiples_recommendations_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -220,7 +221,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Do not provide powers/exponents recommendations for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "do_not_provide_powers_exponents_recommendations_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe: null,
@@ -313,7 +314,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Do not provide division-with-remainder recommendations for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "do_not_provide_division_with_remainder_recommendations_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -336,7 +337,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Do not provide ratio recommendations for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "do_not_provide_ratio_recommendations_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe: null,
@@ -501,7 +502,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Do not provide order-of-operations recommendations for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "do_not_provide_order_of_operations_recommendations_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -626,7 +627,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep scale/magnitude recommendations null for grades 1–2 until early-number copy is approved.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_scale_magnitude_recommendations_null_for_grades_1_2_until_early_num"),
           },
           g3_g4: {
             actionTextHe:
@@ -649,7 +650,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep prime/composite recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_prime_composite_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -672,7 +673,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep zero/one properties recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_zero_one_properties_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -895,7 +896,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal volume recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_volume_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe: null,
@@ -940,7 +941,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal perimeter recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_perimeter_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1087,7 +1088,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal parallel/perpendicular recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_parallel_perpendicular_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1110,7 +1111,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep diagonal recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_diagonal_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1207,7 +1208,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal height recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_height_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1230,7 +1231,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal area recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_area_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1277,7 +1278,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formula-based area recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formula_based_area_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe: null,
@@ -1322,12 +1323,12 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep Pythagoras recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_pythagoras_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep Pythagoras recommendations null for grades 3–4.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_pythagoras_recommendations_null_for_grades_3_4"),
           },
           g5_g6: {
             actionTextHe:
@@ -1509,12 +1510,12 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep mixed Hebrew vocabulary recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_mixed_hebrew_vocabulary_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
               "It helps to practice grade 3–4 mixed Hebrew vocabulary and expressions through sentence context and explanation. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 3–4 mixed Hebrew vocabulary and expressions through sentence context and explanation.",
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_3_4_mixed_hebrew_vocabulary_and_expressions_thr"),
             intentDescriptionEn:
               "Grade 3–4 mixed Hebrew vocabulary and expressions through sentence context and explanation.",
           },
@@ -1552,7 +1553,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal Hebrew grammar recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_hebrew_grammar_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1602,7 +1603,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g3_g4: {
             actionTextHe:
               "It helps to practice grade 3–4 Hebrew writing: short clear answer, direct response to the question, one supporting detail, and rereading for clarity. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 3–4 Hebrew writing: short clear answer, direct response to the question, one supporting detail, and rereading for clarity.",
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_3_4_hebrew_writing_short_clear_answer_direct_re"),
             intentDescriptionEn:
               "Grade 3–4 Hebrew writing: short clear answer, direct response to the question, one supporting detail, and rereading for clarity.",
           },
@@ -1640,12 +1641,12 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep advanced Hebrew grammar/syntax recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_advanced_hebrew_grammar_syntax_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
               "It helps to practice grade 3–4 Hebrew sentence structure: identify the doer/action and how sentence parts connect. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 3–4 Hebrew sentence structure: identify the doer/action and how sentence parts connect.",
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_3_4_hebrew_sentence_structure_identify_the_doer"),
             intentDescriptionEn:
               "Grade 3–4 Hebrew sentence structure: identify the doer/action and how sentence parts connect.",
           },
@@ -1683,12 +1684,12 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep higher-level Hebrew writing recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_higher_level_hebrew_writing_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
               "It helps to practice grade 3–4 developed Hebrew writing: main idea, explanation, example, and keeping sentences connected. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 3–4 developed Hebrew writing: main idea, explanation, example, and keeping sentences connected.",
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_3_4_developed_hebrew_writing_main_idea_explanat"),
             intentDescriptionEn:
               "Grade 3–4 developed Hebrew writing: main idea, explanation, example, and keeping sentences connected.",
           },
@@ -1729,7 +1730,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal register/speaking recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_register_speaking_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe: null,
@@ -1818,7 +1819,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep formal English grammar recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_formal_english_grammar_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -1910,12 +1911,12 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep sentence-structure grammar recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
               "It helps to practice grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion.",
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_3_4_english_sentence_structure_basic_word_order"),
             intentDescriptionEn:
               "Grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion.",
           },
@@ -1953,7 +1954,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep vocabulary-in-context recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_vocabulary_in_context_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -2424,14 +2425,14 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
               "It helps to practice grade 3–4 unit conversion with reference table and unit choice justification. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 3–4 unit conversion with reference table and unit choice justification.",
-            intentDescriptionEn: "Grade 3–4 unit conversion with reference table and unit choice justification.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_3_4_unit_conversion_with_reference_table_and_unit_choice_justifica"),
           },
           g5_g6: {
             actionTextHe:
               "It helps to practice grade 5–6 multi-step unit conversion with reasonableness checks. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 5–6 multi-step unit conversion with reasonableness checks.",
-            intentDescriptionEn: "Grade 5–6 multi-step unit conversion with reasonableness checks.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_5_6_multi_step_unit_conversion_with_reasonableness_checks"),
           },
         },
       },
@@ -2461,14 +2462,14 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
               "It helps to practice grade 3–4 graph reading: axes, point location, value extraction. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 3–4 graph reading: axes, point location, value extraction.",
-            intentDescriptionEn: "Grade 3–4 graph reading: axes, point location, value extraction.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_3_4_graph_reading_axes_point_location_value_extraction"),
           },
           g5_g6: {
             actionTextHe:
               "It helps to practice grade 5–6 graph comparison and axis-based reasoning. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 5–6 graph comparison and axis-based reasoning.",
-            intentDescriptionEn: "Grade 5–6 graph comparison and axis-based reasoning.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_5_6_graph_comparison_and_axis_based_reasoning"),
           },
         },
         experiments: {
@@ -2477,14 +2478,14 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
               "It helps to practice grade 3–4 experiment data table/graph reading. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 3–4 experiment data table/graph reading.",
-            intentDescriptionEn: "Grade 3–4 experiment data table/graph reading.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_3_4_experiment_data_table_graph_reading"),
           },
           g5_g6: {
             actionTextHe:
               "It helps to practice grade 5–6 experiment graph analysis and variable-result link. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 5–6 experiment graph analysis and variable-result link.",
-            intentDescriptionEn: "Grade 5–6 experiment graph analysis and variable-result link.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_5_6_experiment_graph_analysis_and_variable_result_link"),
           },
         },
       },
@@ -2514,14 +2515,14 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
               "It helps to practice grade 3–4 evidence/source grounding for animal-science claims. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 3–4 evidence/source grounding for animal-science claims.",
-            intentDescriptionEn: "Grade 3–4 evidence/source grounding for animal-science claims.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_3_4_evidence_source_grounding_for_animal_science_claims"),
           },
           g5_g6: {
             actionTextHe:
               "It helps to practice grade 5–6 claim-evidence distinction in science texts. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 5–6 claim-evidence distinction in science texts.",
-            intentDescriptionEn: "Grade 5–6 claim-evidence distinction in science texts.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_5_6_claim_evidence_distinction_in_science_texts"),
           },
         },
         experiments: {
@@ -2530,14 +2531,14 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
               "It helps to practice grade 3–4 experiment evidence sourcing from observation/logs. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 3–4 experiment evidence sourcing from observation/logs.",
-            intentDescriptionEn: "Grade 3–4 experiment evidence sourcing from observation/logs.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_3_4_experiment_evidence_sourcing_from_observation_logs"),
           },
           g5_g6: {
             actionTextHe:
               "It helps to practice grade 5–6 data-backed conclusions vs speculation. After each exercise, ask your child to explain how they got the answer.",
             goalTextHe:
               "This week, focus on grade 5–6 data-backed conclusions vs speculation.",
-            intentDescriptionEn: "Grade 5–6 data-backed conclusions vs speculation.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_5_6_data_backed_conclusions_vs_speculation"),
           },
         },
       },
@@ -2639,7 +2640,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep geography scale/distance recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_geography_scale_distance_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -2662,7 +2663,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep mixed map-scale recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_mixed_map_scale_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -2733,7 +2734,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep geography orientation recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_geography_orientation_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -2876,7 +2877,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep climate/region map recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_climate_region_map_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -2923,7 +2924,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep homeland cause/effect recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_homeland_cause_effect_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -2946,7 +2947,7 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
           g1_g2: {
             actionTextHe: null,
             goalTextHe: null,
-            intentDescriptionEn: "Keep values/social explanation recommendations null for grades 1–2.",
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "keep_values_social_explanation_recommendations_null_for_grades_1_2"),
           },
           g3_g4: {
             actionTextHe:
@@ -3074,16 +3075,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         what_is_history: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 historical concepts and source terminology. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 historical concepts and source terminology.",
-            intentDescriptionEn: "Grade 6 historical concepts and source terminology.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_historical_concepts_and_source_terminology_"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_historical_concepts_and_source_terminology"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_historical_concepts_and_source_terminology"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed historical concept identification. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed historical concept identification.",
-            intentDescriptionEn: "Grade 6 mixed historical concept identification.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_historical_concept_identification_aft"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_historical_concept_identification"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_historical_concept_identification"),
           },
         },
       },
@@ -3097,23 +3098,23 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         hasmonaeans: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Hasmonaean timeline sequencing. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Hasmonaean timeline sequencing.",
-            intentDescriptionEn: "Grade 6 Hasmonaean timeline sequencing.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_hasmonaean_timeline_sequencing_after_each_e"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_hasmonaean_timeline_sequencing"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_hasmonaean_timeline_sequencing"),
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Rome/Judea timeline sequencing. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Rome/Judea timeline sequencing.",
-            intentDescriptionEn: "Grade 6 Rome/Judea timeline sequencing.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_rome_judea_timeline_sequencing_after_each_e"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_rome_judea_timeline_sequencing"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_rome_judea_timeline_sequencing"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed timeline sequencing. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed timeline sequencing.",
-            intentDescriptionEn: "Grade 6 mixed timeline sequencing.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_timeline_sequencing_after_each_exerci"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_timeline_sequencing"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_timeline_sequencing"),
           },
         },
       },
@@ -3127,30 +3128,30 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         hellenism_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Hellenism/Judaism cause-effect. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Hellenism/Judaism cause-effect.",
-            intentDescriptionEn: "Grade 6 Hellenism/Judaism cause-effect.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_hellenism_judaism_cause_effect_after_each_e"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_hellenism_judaism_cause_effect"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_hellenism_judaism_cause_effect"),
           },
         },
         hasmonaeans: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Hasmonaean cause-effect. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Hasmonaean cause-effect.",
-            intentDescriptionEn: "Grade 6 Hasmonaean cause-effect.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_hasmonaean_cause_effect_after_each_exercise"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_hasmonaean_cause_effect"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_hasmonaean_cause_effect"),
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Rome/Judea cause-effect. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Rome/Judea cause-effect.",
-            intentDescriptionEn: "Grade 6 Rome/Judea cause-effect.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_rome_judea_cause_effect_after_each_exercise"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_rome_judea_cause_effect"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_rome_judea_cause_effect"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed cause-effect. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed cause-effect.",
-            intentDescriptionEn: "Grade 6 mixed cause-effect.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_cause_effect_after_each_exercise_ask_"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_cause_effect"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_cause_effect"),
           },
         },
       },
@@ -3164,16 +3165,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         classical_greece: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Athens/Sparta comparison. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Athens/Sparta comparison.",
-            intentDescriptionEn: "Grade 6 Athens/Sparta comparison.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_athens_sparta_comparison_after_each_exercis"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_athens_sparta_comparison"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_athens_sparta_comparison"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed historical comparison. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed historical comparison.",
-            intentDescriptionEn: "Grade 6 mixed historical comparison.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_historical_comparison_after_each_exer"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_historical_comparison"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_historical_comparison"),
           },
         },
       },
@@ -3187,23 +3188,23 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         hellenism_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Hellenism figures and roles. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Hellenism figures and roles.",
-            intentDescriptionEn: "Grade 6 Hellenism figures and roles.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_hellenism_figures_and_roles_after_each_exer"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_hellenism_figures_and_roles"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_hellenism_figures_and_roles"),
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Rome/Judea figures and roles. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Rome/Judea figures and roles.",
-            intentDescriptionEn: "Grade 6 Rome/Judea figures and roles.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_rome_judea_figures_and_roles_after_each_exe"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_rome_judea_figures_and_roles"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_rome_judea_figures_and_roles"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed figures and roles. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed figures and roles.",
-            intentDescriptionEn: "Grade 6 mixed figures and roles.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_figures_and_roles_after_each_exercise"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_figures_and_roles"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_figures_and_roles"),
           },
         },
       },
@@ -3217,30 +3218,30 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         classical_greece: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 classical Greece governance. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 classical Greece governance.",
-            intentDescriptionEn: "Grade 6 classical Greece governance.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_classical_greece_governance_after_each_exer"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_classical_greece_governance"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_classical_greece_governance"),
           },
         },
         hasmonaeans: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Hasmonaean governance. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Hasmonaean governance.",
-            intentDescriptionEn: "Grade 6 Hasmonaean governance.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_hasmonaean_governance_after_each_exercise_a"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_hasmonaean_governance"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_hasmonaean_governance"),
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Roman/Judean governance. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Roman/Judean governance.",
-            intentDescriptionEn: "Grade 6 Roman/Judean governance.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_roman_judean_governance_after_each_exercise"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_roman_judean_governance"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_roman_judean_governance"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed governance institutions. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed governance institutions.",
-            intentDescriptionEn: "Grade 6 mixed governance institutions.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_governance_institutions_after_each_ex"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_governance_institutions"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_governance_institutions"),
           },
         },
       },
@@ -3254,23 +3255,23 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         classical_greece: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Greek culture and legacy. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Greek culture and legacy.",
-            intentDescriptionEn: "Grade 6 Greek culture and legacy.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_greek_culture_and_legacy_after_each_exercis"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_greek_culture_and_legacy"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_greek_culture_and_legacy"),
           },
         },
         rome_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 Roman culture and legacy. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 Roman culture and legacy.",
-            intentDescriptionEn: "Grade 6 Roman culture and legacy.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_roman_culture_and_legacy_after_each_exercis"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_roman_culture_and_legacy"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_roman_culture_and_legacy"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed culture and heritage. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed culture and heritage.",
-            intentDescriptionEn: "Grade 6 mixed culture and heritage.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_culture_and_heritage_after_each_exerc"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_culture_and_heritage"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_culture_and_heritage"),
           },
         },
       },
@@ -3284,16 +3285,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         what_is_history: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 simple historical source reading. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 simple historical source reading.",
-            intentDescriptionEn: "Grade 6 simple historical source reading.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_simple_historical_source_reading_after_each"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_simple_historical_source_reading"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_simple_historical_source_reading"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed source comprehension. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed source comprehension.",
-            intentDescriptionEn: "Grade 6 mixed source comprehension.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_source_comprehension_after_each_exerc"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_source_comprehension"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_source_comprehension"),
           },
         },
       },
@@ -3307,16 +3308,16 @@ export const GRADE_AWARE_RECOMMENDATION_TEMPLATES = {
       bucketOverrides: {
         rome_jews: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 past-present link in Rome/Judea period. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 past-present link in Rome/Judea period.",
-            intentDescriptionEn: "Grade 6 past-present link in Rome/Judea period.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_past_present_link_in_rome_judea_period_afte"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_past_present_link_in_rome_judea_period"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_past_present_link_in_rome_judea_period"),
           },
         },
         mixed: {
           g5_g6: {
-            actionTextHe: "It helps to practice grade 6 mixed past-present link. After each exercise, ask your child to explain how they got the answer.",
-            goalTextHe: "This week, focus on grade 6 mixed past-present link.",
-            intentDescriptionEn: "Grade 6 mixed past-present link.",
+            actionTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "it_helps_to_practice_grade_6_mixed_past_present_link_after_each_exercise"),
+            goalTextHe: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "this_week_focus_on_grade_6_mixed_past_present_link"),
+            intentDescriptionEn: reportPackCopy("utils__parent-report-language__grade-aware-recommendation-templates", "grade_6_mixed_past_present_link"),
           },
         },
       },

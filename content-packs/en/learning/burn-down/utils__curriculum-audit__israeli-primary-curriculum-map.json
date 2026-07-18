@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "internal_conservative_strand_mapping_liosh_audit_layer": "Internal conservative strand mapping (LIOSH audit layer)",
+    "repo_maintained_interpretation_requires_pedagogy_sign_off_before_any_rel": "Repo-maintained interpretation - requires pedagogy sign-off before any release gate.",
+    "general_framework_reference_only_does_not_map_individual_question_stems_": "General framework reference only; does not map individual question stems to outcomes.",
+    "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match": "Official portal - use for policy context; not a line-by-line syllabus match.",
+    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "General policy context; early grades often emphasize exposure/listening - verify formal literacy vs exposure per school.",
+    "internal_strand_plane_shapes_recognition_audit": "Internal strand: plane shapes recognition (audit)",
+    "repo_interpretation_of_typical_early_shape_recognition_requires_pedagogy": "Repo interpretation of typical early shape recognition - requires pedagogy validation.",
+    "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer": "Strands align with normalized math.* keys from curriculum-topic-normalizer.js",
+    "separated_geometry_strands_do_not_collapse_to_one_topic": "Separated geometry strands - do not collapse to one topic.",
+    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "Grades 1–2: grammar not assumed core; exposure/enrichment separation.",
+    "inventory_retained_curriculum_placement_deferred_confidence_low": "Inventory retained; curriculum placement deferred - confidence low.",
+    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israel elementary (grades 1–6) - conservative structured mapping + advisory source anchors"
+  }
+}

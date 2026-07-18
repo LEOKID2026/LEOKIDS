@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "Not enough context to plan (missing subject).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "More learning activity is needed before suggesting a next focus.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "The learning system needs a bit more practice data before suggesting the next step.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Collect a few more practice items; conclusions are deferred.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "English practice can continue, but skill routing should be confirmed by a teacher.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "English tagging is incomplete in the content bank; planner will not auto-route fine-grained skills.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "Waiting on verified question metadata before suggesting an advanced path.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "Skill metadata for the next step is not confirmed; hold automatic advancement.",
+    "short_probe_to_verify_understanding_versus_guessing": "Short probe to verify understanding versus guessing.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Inconsistent or guess-heavy signals - use a small diagnostic set.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Extra practice on the current skill at a supportive difficulty.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Targeted practice on the same skill; difficulty held or lowered slightly.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Brief review of a foundation skill that supports the current topic.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Strengthen a prerequisite skill before pushing the main skill harder.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Ready for slightly more challenging practice on the same skill line.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "Signals support cautious difficulty increase with monitoring.",
+    "continue_solid_practice_at_the_current_level": "Continue solid practice at the current level.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Maintain current difficulty while consolidating mastery.",
+    "review_style_practice_on_the_current_skill": "Review-style practice on the current skill.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "Engine suggests review; planner aligns with same-skill practice.",
+    "steady_practice_on_the_current_focus": "Steady practice on the current focus.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Default safe path: continue practice without advancing difficulty."
+  }
+}

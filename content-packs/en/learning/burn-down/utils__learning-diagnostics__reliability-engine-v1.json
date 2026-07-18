@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "volume_supports_stronger_reliability": "Volume supports stronger reliability.",
+    "review_pacing_signals_separately_from_knowledge_gaps": "Review pacing signals separately from knowledge gaps.",
+    "row_level_accuracy_is_relatively_consistent": "Row-level accuracy is relatively consistent."
+  }
+}

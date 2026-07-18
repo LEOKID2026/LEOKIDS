@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isLearningBookAudioEnabledClient } from "../../lib/learning-book/audio/learning-book-audio-feature-flags";
 import { resolveLearningBookAudio } from "../../lib/learning-book/audio/resolve-learning-book-audio";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
+import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
 
 /**
  * Section-level pre-generated audio player for learning books.
@@ -23,6 +24,7 @@ export default function LearningBookAudioPlayer({
   sectionIndex = 0,
 }) {
   const { classes: theme } = useBookGradeTheme();
+  const copy = useBookUiCopy();
   const enabled = isLearningBookAudioEnabledClient();
   const mathAudioDisabled =
     String(subject || "").trim().toLowerCase() === "math" &&
@@ -106,7 +108,7 @@ export default function LearningBookAudioPlayer({
       setStatus("playing");
     } catch {
       setStatus("error");
-      setErrorMsg("Unable to load audio right now");
+      setErrorMsg(copy("shell", "audioError"));
     }
   }, [audioMeta?.playbackSrc, status, stopAndResetAudio]);
 
@@ -116,8 +118,8 @@ export default function LearningBookAudioPlayer({
 
   const handleAudioError = useCallback(() => {
     setStatus("error");
-    setErrorMsg("Unable to load audio right now");
-  }, []);
+    setErrorMsg(copy("shell", "audioError"));
+  }, [copy]);
 
   if (!enabled || !audioMeta) return null;
 
@@ -126,12 +128,12 @@ export default function LearningBookAudioPlayer({
   const hasError = status === "error";
 
   const buttonLabel = isLoading
-    ? "Loading audio..."
+    ? copy("shell", "audioLoading")
     : isPlaying
-      ? "Stop"
+      ? copy("shell", "audioStop")
       : status === "paused"
-        ? "Resume"
-        : "Listen to this page";
+        ? copy("shell", "audioResume")
+        : copy("shell", "audioListen");
 
   return (
     <div className="mb-4 flex flex-col items-center gap-2" dir="ltr">
@@ -161,7 +163,7 @@ export default function LearningBookAudioPlayer({
         </p>
       ) : null}
       <span className="sr-only" aria-live="polite">
-        {isLoading ? "Loading audio..." : isPlaying ? "Playing" : ""}
+        {isLoading ? copy("shell", "audioLoading") : isPlaying ? copy("shell", "audioPlaying") : ""}
       </span>
     </div>
   );

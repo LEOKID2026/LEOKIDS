@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "clear_well_evidenced_knowledge_gap_in_one_topic": "Clear, well-evidenced knowledge gap in one topic.",
+    "moderate_difficulty_in_one_topic_needs_focused_practice_not_yet_a_clear_": "Moderate difficulty in one topic - needs focused practice, not yet a clear gap.",
+    "decent_but_not_yet_fully_mastered_accuracy_partial_stability": "Decent, but not yet fully mastered, accuracy - partial stability.",
+    "high_stable_accuracy_over_adequate_volume_mastery": "High, stable accuracy over adequate volume - mastery.",
+    "some_practice_but_not_enough_to_call_a_direction_yet_more_than_initial_d": "Some practice, but not enough to call a direction yet (more than initial_data, less than a full evidence threshold).",
+    "too_little_practice_q_4_or_engine_explicitly_withholds_to_say_anything_a": "Too little practice (q<=4, or engine explicitly withholds) to say anything about a pattern.",
+    "both_a_positive_dominance_signal_and_a_repeated_mistake_signal_detected_": "Both a positive-dominance signal and a repeated-mistake signal detected in the same topic window.",
+    "two_or_more_actionable_gap_topics_in_this_subject": "Two or more actionable-gap topics in this subject.",
+    "exactly_one_actionable_gap_topic_in_this_subject": "Exactly one actionable-gap topic in this subject.",
+    "no_actionable_gaps_at_least_one_stable_topic": "No actionable gaps; at least one stable topic.",
+    "no_topics_with_usable_evidence_in_this_subject_yet": "No topics with usable evidence in this subject yet.",
+    "cannot_conclude_yet_insufficient_readiness_or_confidence_most_cautious_e": "Cannot conclude yet / insufficient readiness or confidence - most cautious envelope.",
+    "early_signal_only_first_direction_forming_still_needs_more_practice": "Early signal only - first direction forming, still needs more practice.",
+    "reasonable_working_direction_wants_to_see_it_repeat_before_calling_it_st": "Reasonable working direction; wants to see it repeat before calling it stable.",
+    "direction_looks_stable_across_the_period_keep_up_routine_practice": "Direction looks stable across the period; keep up routine practice.",
+    "highest_confidence_stable_mastery_envelope_eligible_for_a_graduated_reco": "Highest-confidence stable/mastery envelope - eligible for a graduated recommendation step."
+  }
+}

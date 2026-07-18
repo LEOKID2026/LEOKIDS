@@ -4,6 +4,7 @@
  * - NARRATIVE: short "{topic} - Grade {grade}" + optional relation subline
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { formatParentReportGradeLabel } from "../math-report-generator.js";
 import { splitTopicRowKey } from "../parent-report-row-diagnostics.js";
 import { parseCanonicalTopicFromRowKey } from "./row-identity-v1.js";
@@ -73,7 +74,7 @@ export function resolveNarrativeDisplayLabels(args) {
   }
 
   const gradeLabel = formatParentReportGradeLabel(gk);
-  if (!gradeLabel || gradeLabel === "לא זמין" || gradeLabel === "Unavailable" || gradeLabel === "N/A") {
+  if (!gradeLabel || gradeLabel === "לא זמין" || gradeLabel === reportPackCopy("utils__parent-report-output-integrity__row-display-label-context", "unavailable") || gradeLabel === "N/A") {
     return { titleHe: name, gradeRelationSublineHe: null };
   }
   const gradeShort = gradeLabel.replace(/^(?:כיתה|Grade)\s+/iu, "").trim();

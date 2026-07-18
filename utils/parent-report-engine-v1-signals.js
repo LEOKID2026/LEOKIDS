@@ -3,6 +3,7 @@
  * No parent-facing Hebrew copy; consumed by mistake intelligence + topic engine row signals.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { mapTaxonomyToMistakePatternFamily } from "./parent-report-engine-taxonomy-bridge.js";
 
 /** @typedef {"T0"|"T1"|"T2"|"T3"|"T4"} EngineConfidenceTier */
@@ -39,11 +40,11 @@ export function computeAccuracyBand(acc, q) {
 export const ENGINE_V1_GUARDRAILS = [
   {
     id: "subskill_requires_taxonomy_match",
-    rule: "Do not emit subskillCandidate when taxonomyMatch is false or matchStrength is weak.",
+    rule: reportPackCopy("utils__parent-report-engine-v1-signals", "do_not_emit_subskillcandidate_when_taxonomymatch_is_false_or_matchstreng"),
   },
   {
     id: "insufficient_at_t0",
-    rule: "When engineConfidenceTier is T0 (<5 questions), engineDecision stays insufficient_data.",
+    rule: reportPackCopy("utils__parent-report-engine-v1-signals", "when_engineconfidencetier_is_t0_5_questions_enginedecision_stays_insuffi"),
   },
   {
     id: "weak_taxonomy_no_subskill",
@@ -59,7 +60,7 @@ export const ENGINE_V1_GUARDRAILS = [
   },
   {
     id: "speed_only_no_gap",
-    rule: "When speedOnlyRisk and mode is speed/marathon and accuracyBand is not clear_gap, do not infer knowledge_gap.",
+    rule: reportPackCopy("utils__parent-report-engine-v1-signals", "when_speedonlyrisk_and_mode_is_speed_marathon_and_accuracyband_is_not_cl"),
   },
   {
     id: "mastery_100_low_q",

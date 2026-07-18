@@ -1,0 +1,205 @@
+{
+  "subjectId": "science",
+  "rows": {
+    "S-01": {
+      "id": "S-01",
+      "domain": "Concept",
+      "topic": "Classification",
+      "subskill": "Property vs process",
+      "pattern": "Category confusion",
+      "counterEvidence": "Correct after an examples table",
+      "countsWhen": "Guided table",
+      "doesNotCountWhen": "Homophone distractors only",
+      "probe": "Separate property from process (focused practice)",
+      "intervention": "Property/process table",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Error on two similar concepts"
+      ],
+      "roots": [
+        "Concept confusion"
+      ],
+      "competitors": [
+        "Reading"
+      ],
+      "doNotConclude": [
+        "No science"
+      ]
+    },
+    "S-02": {
+      "id": "S-02",
+      "domain": "Method",
+      "topic": "Experiment",
+      "subskill": "Isolated variable",
+      "pattern": "Changing everything",
+      "counterEvidence": "Correct with a variables table",
+      "countsWhen": "Table available",
+      "doesNotCountWhen": "Long text without a table",
+      "probe": "Same experiment with a table",
+      "intervention": "One variable",
+      "escalation": "Repeated failure",
+      "observableMarkers": [
+        "Error on single-change scenarios"
+      ],
+      "roots": [
+        "Experiment understanding"
+      ],
+      "competitors": [
+        "Memory"
+      ],
+      "doNotConclude": [
+        "No thinking"
+      ]
+    },
+    "S-03": {
+      "id": "S-03",
+      "domain": "Body",
+      "topic": "Systems",
+      "subskill": "Location/flow",
+      "pattern": "Wrong order/location",
+      "counterEvidence": "Correct with numbering",
+      "countsWhen": "Numbered diagram",
+      "doesNotCountWhen": "Latin names not yet taught",
+      "probe": "Vertical vs horizontal",
+      "intervention": "Location cards",
+      "escalation": "Medical report",
+      "observableMarkers": [
+        "Error on a simple body map"
+      ],
+      "roots": [
+        "Coarse spatial map"
+      ],
+      "competitors": [
+        "Language"
+      ],
+      "doNotConclude": [
+        "Medical issue"
+      ]
+    },
+    "S-04": {
+      "id": "S-04",
+      "domain": "Matter",
+      "topic": "States of matter",
+      "subskill": "Mass conservation",
+      "pattern": "Disappears without conservation",
+      "counterEvidence": "Correct after a diagram",
+      "countsWhen": "Diagram available",
+      "doesNotCountWhen": "Word without taught states",
+      "probe": "With/without diagram",
+      "intervention": "States diagram",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Error when a states diagram is present"
+      ],
+      "roots": [
+        "Mass conservation"
+      ],
+      "competitors": [
+        "Language"
+      ],
+      "doNotConclude": [
+        "No physics"
+      ]
+    },
+    "S-05": {
+      "id": "S-05",
+      "domain": "Energy",
+      "topic": "Units",
+      "subskill": "Unit conversion",
+      "pattern": "Unit confusion",
+      "counterEvidence": "Correct with a key",
+      "countsWhen": "Key available",
+      "doesNotCountWhen": "Before the unit is taught",
+      "probe": "Two units for the same amount",
+      "intervention": "Unit key",
+      "escalation": "Always fails",
+      "observableMarkers": [
+        "Error on the same unit"
+      ],
+      "roots": [
+        "Units"
+      ],
+      "competitors": [
+        "Computation"
+      ],
+      "doNotConclude": [
+        "No understanding"
+      ]
+    },
+    "S-06": {
+      "id": "S-06",
+      "domain": "Measurement",
+      "topic": "Graph",
+      "subskill": "Reading an axis",
+      "pattern": "Wrong value from a graph",
+      "counterEvidence": "Correct when the axis is highlighted",
+      "countsWhen": "Scaled axes",
+      "doesNotCountWhen": "Unscaled graph",
+      "probe": "With/without point highlight",
+      "intervention": "Practice a point on an axis",
+      "escalation": "Vision report",
+      "observableMarkers": [
+        "Error on two graphs"
+      ],
+      "roots": [
+        "Graph reading"
+      ],
+      "competitors": [
+        "Computation"
+      ],
+      "doNotConclude": [
+        "No science"
+      ]
+    },
+    "S-07": {
+      "id": "S-07",
+      "domain": "Ecology",
+      "topic": "Relationships",
+      "subskill": "Food web",
+      "pattern": "Repeated wrong level",
+      "counterEvidence": "Correct on a closed list",
+      "countsWhen": "Diagram or list",
+      "doesNotCountWhen": "Text only without teaching",
+      "probe": "Partial web",
+      "intervention": "Cards",
+      "escalation": "No improvement",
+      "observableMarkers": [
+        "Error when a diagram is present"
+      ],
+      "roots": [
+        "System structure"
+      ],
+      "competitors": [
+        "Name recall"
+      ],
+      "doNotConclude": [
+        "No systems"
+      ]
+    },
+    "S-08": {
+      "id": "S-08",
+      "domain": "Science safety",
+      "topic": "Reasoning",
+      "subskill": "Source for a claim",
+      "pattern": "Unsupported claim",
+      "counterEvidence": "Correct when a source is requested",
+      "countsWhen": "Sources marked",
+      "doesNotCountWhen": "Ad distractor",
+      "probe": "With/without source",
+      "intervention": "Ask how we know",
+      "escalation": "Social studies teacher",
+      "observableMarkers": [
+        "Repeats when an explicit source is present"
+      ],
+      "roots": [
+        "Critical thinking"
+      ],
+      "competitors": [
+        "Reading"
+      ],
+      "doNotConclude": [
+        "Personal values"
+      ]
+    }
+  }
+}

@@ -2,6 +2,7 @@
  * Raw practice rows outside the student's registered grade - transparency only, no conclusions.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { subjectLabelHe } from "../lib/teacher-portal/teacher-ui.js";
 import {
   isCoreParentReportRow,
@@ -123,7 +124,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
   if (!advancedPractice.length && !foundationPractice.length) return null;
 
   return {
-    titleHe: "Practice outside registered grade",
+    titleHe: reportPackCopy("utils__parent-report-out-of-grade-transparency", "practice_outside_registered_grade"),
     registeredGradeKey,
     advancedPractice,
     foundationPractice,

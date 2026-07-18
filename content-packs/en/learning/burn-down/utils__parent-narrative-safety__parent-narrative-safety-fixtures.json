@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Safe Hebrew parent narrative with observational tone and adequate volume.",
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Thin evidence but explicit cautious hedging - should not block.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Thin evidence with strong certainty and mastery claim - block.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Engine lists do-not-conclude barriers but text uses absolute certainty.",
+    "disability_clinical_framing_block": "Disability / clinical framing - block.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "Engine allows maintenance only; narrative forces level jump.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "Engine confidence low but parent text is fully certain.",
+    "permanent_failure_never_succeed_framing_block": "Permanent failure / never-succeed framing - block.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "High guessing signal but narrative claims full mastery.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "Only suspected prerequisite gap; narrative states proof-level gap.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "Internal taxonomy token leaked into parent copy - block.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "Realistic thin-data statistical restraint line - pass (info: safe thin caution).",
+    "explicit_collect_more_examples_framing_pass_info": "Explicit collect-more-examples framing - pass (info).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "Thin data but claims determinability / significant weakness - warning.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "Acknowledges lack of data then asserts clear problem - warning.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "Thin row but vague narrative without explicit limited-data framing - warning.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "Despite little data, absolute clarity about struggle - overconfidence + thin → block."
+  }
+}

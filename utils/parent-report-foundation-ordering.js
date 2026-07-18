@@ -2,6 +2,7 @@
  * Phase 14 — work order: foundation before expansion vs local treatment (dependency + gates).
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import {
   FOUNDATION_DECISION_LABEL_HE,
   INTERVENTION_ORDERING_LABEL_HE,
@@ -119,7 +120,7 @@ export function buildPhase14RecommendationOverlay(p) {
       "There's no need to defer everything to a \"big foundation\" if what's here is still point-specific.";
   } else if (ord.interventionOrdering === "parallel_light_support") {
     whyFoundationFirstHe = "A light line on the foundation - without replacing the whole plan.";
-    whyLocalSupportFirstHe = "At the same time, keep a narrow goal in the topic - not two heavy loads.";
+    whyLocalSupportFirstHe = reportPackCopy("utils__parent-report-foundation-ordering", "at_the_same_time_keep_a_narrow_goal_in_the_topic_not_two_heavy_loads");
     whatCanWaitUntilFoundationStabilizesHe =
       "Avoid doubling up heavy practice on two tracks in the same evening.";
   } else {

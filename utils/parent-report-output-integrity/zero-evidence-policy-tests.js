@@ -2,6 +2,7 @@
  * Assertions for global zero-evidence / inactive-subject policy.
  */
 
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   SUBJECT_EVIDENCE_TIER,
   ZERO_EVIDENCE_FORBIDDEN_RE,
@@ -170,8 +171,8 @@ export function assertPublicReportPayloadStripsZeroEvidenceFields() {
   const cleaned = stripZeroEvidenceFromPublicReportPayload({
     summary: {
       diagnosticOverviewHe: {
-        notPracticedSubjectsSummaryHe: "Subjects not practiced in this period: Geometry.",
-        practicedSubjectsSummaryHe: "Practiced subjects: Math.",
+        notPracticedSubjectsSummaryHe: reportPackCopy("utils__parent-report-output-integrity__zero-evidence-policy-tests", "subjects_not_practiced_in_this_period_geometry"),
+        practicedSubjectsSummaryHe: reportPackCopy("utils__parent-report-output-integrity__zero-evidence-policy-tests", "practiced_subjects_math"),
       },
     },
   });
