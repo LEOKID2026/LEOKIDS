@@ -365,13 +365,53 @@ export function bakeryPrompt(task) {
 }
 
 /** @param {BakeryTask} task */
-export function bakerySolutionText(task) {
+export function bakeryControlHint(task) {
+  const key =
+    {
+      build: "control_build",
+      findTotal: "control_find_total",
+      findTrays: "control_find_trays",
+      findPerTray: "control_find_per_tray",
+      sameTotal: "control_same_total",
+    }[task.mode] || "control_build";
+  return gamePackCopy("components__educational-games__leo-bakery__leo-bakery-data", key);
+}
+
+/**
+ * @param {BakeryTask} task
+ * @returns {{ text: string, equation: string }}
+ */
+export function bakerySolutionParts(task) {
   const e = bakeryExpected(task);
+  const pack = "components__educational-games__leo-bakery__leo-bakery-data";
   if (task.mode === "sameTotal") {
-    const g = task.givenArrangement;
-    return gamePackCopy("components__educational-games__leo-bakery__leo-bakery-data", "solution_same_total", { trays: e.trays, perTray: e.perTray, total: e.total, givenTrays: g?.trays, givenPerTray: g?.perTray });
+    return {
+      text: gamePackCopy(pack, "solution_text_same_total", { trays: e.trays, perTray: e.perTray }),
+      equation: `${e.trays} × ${e.perTray} = ${e.total}`,
+    };
   }
-  return gamePackCopy("components__educational-games__leo-bakery__leo-bakery-data", "solution_default", { trays: e.trays, perTray: e.perTray, total: e.total });
+  if (task.mode === "findTrays") {
+    return {
+      text: gamePackCopy(pack, "solution_text_find_trays", { trays: e.trays }),
+      equation: `${e.trays} × ${e.perTray} = ${e.total}`,
+    };
+  }
+  if (task.mode === "findPerTray") {
+    return {
+      text: gamePackCopy(pack, "solution_text_find_per_tray", { perTray: e.perTray }),
+      equation: `${e.trays} × ${e.perTray} = ${e.total}`,
+    };
+  }
+  return {
+    text: gamePackCopy(pack, "solution_text_default"),
+    equation: `${e.trays} × ${e.perTray} = ${e.total}`,
+  };
+}
+
+/** @param {BakeryTask} task */
+export function bakerySolutionText(task) {
+  const parts = bakerySolutionParts(task);
+  return `${parts.text}\n${parts.equation}`;
 }
 
 /** @param {boolean} ok */

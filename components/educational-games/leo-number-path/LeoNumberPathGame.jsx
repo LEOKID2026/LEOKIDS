@@ -351,6 +351,11 @@ export default function LeoNumberPathGame({
                   </div>
                   <p className={shop.missionText}>
                     {currentTask.promptHe}
+                    {currentTask.seriesDisplayLtr ? (
+                      <span dir="ltr" style={{ display: "block", marginTop: "0.35rem" }}>
+                        {currentTask.seriesDisplayLtr}
+                      </span>
+                    ) : null}
                     <span className={shop.missionTicket}>
                       🧾 Attempt {Math.max(1, attemptsOnTask || 1)}/{MAX_ATTEMPTS_PER_TASK}
                     </span>

@@ -239,7 +239,7 @@ export default function LeoGiftsGame({
       answerTimesRef.current.push(elapsed);
       const bonus = calcTimeBonus(timeLeft, timeLimitSec);
       setCheckState("ok");
-      const okText = `${giftsFeedback(true, perChild, remainder)} ${giftsSolutionText(task)}`;
+      const okText = giftsFeedback(true, task);
       setFeedback(okText);
       onCorrect();
       playFeedback(okText);
@@ -267,7 +267,7 @@ export default function LeoGiftsGame({
       revealAndAdvance(giftsSolutionText(task));
       return;
     }
-    const badText = giftsFeedback(false, perChild, remainder);
+    const badText = giftsFeedback(false, task);
     setFeedback(badText);
     playFeedback(badText);
   }, [

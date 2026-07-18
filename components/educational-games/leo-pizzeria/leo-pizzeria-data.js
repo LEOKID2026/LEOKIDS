@@ -592,7 +592,10 @@ export function validateOrderSpec(orderSpec, sliceCount, sliceMap) {
 
 /** @param {PizzeriaTask} order @param {Record<number, string>} sliceMap */
 export function validateCustomerOrder(order, sliceMap) {
-  if (!order.spec) return withValidationMessage({ ok: false, messageKey: "error_invalid_task" });
+  if (!order.spec) {
+    console.error("[leo-pizzeria] invalid order without spec", order?.id);
+    return { ok: false, message: "" };
+  }
   return validateOrderSpec(order.spec, order.sliceCount, sliceMap);
 }
 

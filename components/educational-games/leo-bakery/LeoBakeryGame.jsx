@@ -12,6 +12,7 @@ import {
 } from "../../../lib/educational-games/continuous-play.js";
 import { maxMistakesForDifficulty } from "../../../lib/educational-games/educational-session-standard.js";
 import {
+  bakeryControlHint,
   bakeryFeedback,
   bakeryPrompt,
   bakerySolutionText,
@@ -245,7 +246,7 @@ export default function LeoBakeryGame({
     timeoutHandledRef.current = true;
     registerMistake();
     onTimeUp();
-    if (task) revealAndAdvance(`Time's up! ${bakerySolutionText(task)}`);
+    if (task) revealAndAdvance(`Time's up. Here's the solution:\n${bakerySolutionText(task)}`);
   }, [registerMistake, onTimeUp, task, revealAndAdvance]);
 
   useEffect(() => {
@@ -585,7 +586,7 @@ export default function LeoBakeryGame({
 
               <div className={feedbackBarClass}>
                 <p className={shop.feedbackText}>
-                  {feedback || "Set trays and amount per tray, then tap Check Order"}
+                  {feedback || (task ? bakeryControlHint(task) : "Build the order.")}
                 </p>
               </div>
             </aside>

@@ -2,7 +2,7 @@
   "fraction_zero": "zero",
   "fraction_whole": "one whole",
   "fraction_parts": "{numerator} of {denominator} equal parts",
-  "compare_greater": "First is greater",
-  "compare_less": "First is less",
-  "compare_equal": "Equal"
+  "compare_greater": "First fraction is greater",
+  "compare_less": "Second fraction is greater",
+  "compare_equal": "The fractions are equal"
 }

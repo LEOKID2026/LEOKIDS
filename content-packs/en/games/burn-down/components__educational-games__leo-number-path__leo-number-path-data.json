@@ -1,5 +1,15 @@
 {
   "copy": {
-    "choose_all_the_odd_numbers_on_the_path": "Choose all the odd numbers on the path"
+    "choose_all_the_odd_numbers_on_the_path": "Choose all the odd numbers on the path",
+    "prompt_odd": "Choose all the odd numbers.",
+    "prompt_even": "Choose all the even numbers.",
+    "prompt_multiples": "Choose all multiples of {multiple}.",
+    "prompt_skip_forward": "Start at {start}. Add {step} each step. Choose the numbers in order.",
+    "prompt_skip_backward": "Start at {start}. Subtract {step} each step. Choose the numbers in order.",
+    "prompt_arithmetic_ascending": "Start at {start} and add {step} each step. Choose the numbers in order.",
+    "prompt_arithmetic_descending": "Start at {start} and subtract {step} each step. Choose the numbers in order.",
+    "prompt_arithmetic_missing": "Complete the sequence. Choose the missing numbers in order.",
+    "prompt_geometric_sequence": "Start at {start} and multiply by {ratio} each step. Choose the numbers in order.",
+    "solution_prefix": "Correct path:"
   }
 }

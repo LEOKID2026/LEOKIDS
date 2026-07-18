@@ -56,8 +56,27 @@ const ITEM_TYPES = [
   { itemKey: "item_sweets", itemEmoji: "🍭" },
 ];
 
+const GIFTS_PACK = "components__educational-games__leo-gifts__leo-gifts-data";
+
+/**
+ * @param {string} itemKey
+ * @param {number} count
+ */
+export function giftsItemLabelForKey(itemKey, count) {
+  const suffix = count === 1 ? "_one" : "_other";
+  return gamePackCopy(GIFTS_PACK, `${itemKey}${suffix}`);
+}
+
+/** @param {GiftsTask} task */
 function giftsItemLabel(task) {
-  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", task.itemKey);
+  return giftsItemLabelForKey(task.itemKey, task.total);
+}
+
+/** @param {number} count */
+export function remainingItemsText(count) {
+  if (count === 0) return gamePackCopy(GIFTS_PACK, "remaining_none");
+  if (count === 1) return gamePackCopy(GIFTS_PACK, "remaining_one");
+  return gamePackCopy(GIFTS_PACK, "remaining_other", { count });
 }
 
 /** @param {DifficultyId} difficulty */
@@ -318,26 +337,63 @@ export function giftsPrompt(task) {
 
 /** @param {GiftsTask} task */
 export function giftsSolutionText(task) {
+  const parts = giftsSolutionParts(task);
+  return `${parts.text}\n${parts.equation}`;
+}
+
+/**
+ * @param {GiftsTask} task
+ * @returns {{ text: string, equation: string }}
+ */
+export function giftsSolutionParts(task) {
   const q = task.expectedAnswer.quotient;
   const r = task.expectedAnswer.remainder;
   const d = task.operands.divisor;
   if (task.mode === "make_groups") {
-    return r > 0
-      ? gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_groups_with_remainder", { quotient: q, divisor: d, remainder: r, total: task.total })
-      : gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_groups", { quotient: q, divisor: d, total: task.total });
+    const size = task.groupSize ?? d;
+    if (r > 0) {
+      return {
+        text: gamePackCopy(GIFTS_PACK, "solution_text_groups_remainder", {
+          quotient: q,
+          remaining: remainingItemsText(r),
+        }),
+        equation: `${q} × ${size} + ${r} = ${task.total}`,
+      };
+    }
+    return {
+      text: gamePackCopy(GIFTS_PACK, "solution_text_groups", { quotient: q }),
+      equation: `${q} × ${size} = ${task.total}`,
+    };
   }
-  return r > 0
-    ? gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_share_with_remainder", { quotient: q, divisor: d, remainder: r, total: task.total })
-    : gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_share", { quotient: q, divisor: d, total: task.total });
+  const children = task.children ?? d;
+  if (r > 0) {
+    return {
+      text: gamePackCopy(GIFTS_PACK, "solution_text_share_remainder", {
+        quotient: q,
+        remaining: remainingItemsText(r),
+      }),
+      equation: `${children} × ${q} + ${r} = ${task.total}`,
+    };
+  }
+  return {
+    text: gamePackCopy(GIFTS_PACK, "solution_text_share", { quotient: q }),
+    equation: `${children} × ${q} = ${task.total}`,
+  };
 }
 
-/** @param {boolean} ok @param {number} perChild @param {number} remainder */
-export function giftsFeedback(ok, perChild, remainder) {
-  if (ok) return remainder > 0 ? gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "feedback_ok_with_remainder", { perChild, remainder }) : gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "feedback_ok");
-  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "feedback_almost");
+/**
+ * @param {boolean} ok
+ * @param {GiftsTask} [task]
+ */
+export function giftsFeedback(ok, task) {
+  if (ok) return gamePackCopy(GIFTS_PACK, "feedback_ok");
+  if (task?.mode === "make_groups") {
+    return gamePackCopy(GIFTS_PACK, "feedback_almost_groups");
+  }
+  return gamePackCopy(GIFTS_PACK, "feedback_almost_share");
 }
 
-const CHILD_EMOJIS = ["👧", "👦", "🧒", "👧🏻", "👦🏻", " compat", "👧🏼", "👦🏼", " compat", "👧🏽", "👦🏽", " compat"];
+const CHILD_EMOJIS = ["👧", "👦", "🧒", "👧🏻", "👦🏻", "🧑🏻", "👧🏼", "👦🏼", "🧑🏼", "👧", "👦", "🧒"];
 
 /** @param {number} index */
 export function childEmojiAt(index) {
@@ -360,8 +416,6 @@ export function giftsDivisorLabel(task) {
 export function giftsQuotientLabel(task) {
   return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", task.mode === "make_groups" ? "quotient_full_bags" : "quotient_per_child");
 }
-
-const GIFTS_PACK = "components__educational-games__leo-gifts__leo-gifts-data";
 
 /** @param {GiftsTask | null | undefined} task @param {boolean} showRemainder */
 export function giftsIdleFeedback(task, showRemainder) {

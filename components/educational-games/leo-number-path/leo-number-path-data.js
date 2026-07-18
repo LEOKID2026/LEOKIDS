@@ -142,7 +142,7 @@ function buildParityTask(difficulty, cfg, guard, isEven) {
     numbers,
     correctPath: correct,
     orderMatters: false,
-    promptHe: isEven ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_even") : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "choose_all_the_odd_numbers_on_the_path"),
+    promptHe: isEven ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_even") : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_odd"),
   };
 }
 
@@ -177,7 +177,10 @@ function buildSkipTask(difficulty, cfg, guard) {
   ]).slice(0, 18);
 
   const start = correct[0];
-  const directionHe = backward ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "direction_backward") : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "direction_forward");
+  const pack = "components__educational-games__leo-number-path__leo-number-path-data";
+  const promptHe = backward
+    ? gamePackCopy(pack, "prompt_skip_backward", { start, step })
+    : gamePackCopy(pack, "prompt_skip_forward", { start, step });
 
   return {
     ...createMathTask({
@@ -195,7 +198,7 @@ function buildSkipTask(difficulty, cfg, guard) {
     numbers,
     correctPath: correct,
     orderMatters: true,
-    promptHe: gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_skip", { start, direction: directionHe, step }),
+    promptHe,
   };
 }
 
@@ -310,6 +313,14 @@ function buildSequenceTask(difficulty, cfg, guard, geometric) {
     ...distractorsWhere(correctSeq, randInt(5, 7), cfg.maxNum, near),
   ]);
 
+  const startVal = correctSeq[0];
+  const pack = "components__educational-games__leo-number-path__leo-number-path-data";
+  const promptHe = missingMiddle
+    ? gamePackCopy(pack, "prompt_arithmetic_missing")
+    : descending
+      ? gamePackCopy(pack, "prompt_arithmetic_descending", { start: startVal, step })
+      : gamePackCopy(pack, "prompt_arithmetic_ascending", { start: startVal, step });
+
   return {
     ...createMathTask({
       id: `p-${difficulty}-arith-${guard}`,
@@ -330,9 +341,8 @@ function buildSequenceTask(difficulty, cfg, guard, geometric) {
     numbers,
     correctPath: correctSeq,
     orderMatters: true,
-    promptHe: missingMiddle
-      ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_arithmetic_missing", { shown: shown.join(", ") })
-      : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_arithmetic_sequence", { start: correctSeq[0], step: descending ? -step : step }),
+    promptHe,
+    seriesDisplayLtr: missingMiddle ? shown.join(" , ") : null,
   };
 }
 
@@ -395,9 +405,18 @@ export function pathFeedback(ok) {
 }
 
 /** @param {PathTask} task */
-export function pathSolutionText(task) {
+export function pathSolutionParts(task) {
   const path = task.orderMatters ? task.correctPath.join(" → ") : task.correctPath.join(" · ");
-  return gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "solution_correct_path", { path });
+  return {
+    text: gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "solution_prefix"),
+    pathLtr: path,
+  };
+}
+
+/** @param {PathTask} task */
+export function pathSolutionText(task) {
+  const parts = pathSolutionParts(task);
+  return `${parts.text}\n${parts.pathLtr}`;
 }
 
 /** @param {number[]} selected @param {boolean} orderMatters */
