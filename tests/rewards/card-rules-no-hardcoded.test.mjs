@@ -8,6 +8,11 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  rewardUiCopy,
+  rewardUiCopyForLocale,
+} from "../../lib/rewards/reward-pack-copy.js";
+import rewardUiJson from "../../content-packs/en/rewards/ui.json" with { type: "json" };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
@@ -64,7 +69,26 @@ describe("card-rules-no-hardcoded", () => {
       "utf8"
     );
     assert.match(conversion, /feature_disabled/);
-    assert.match(conversion, /sell a duplicate in the shop/i);
+    assert.match(
+      conversion,
+      /rewardUiCopy\s*\(\s*["']server["']\s*,\s*["']duplicateConversionRemoved["']\s*\)/
+    );
+    assert.doesNotMatch(conversion, /sell a duplicate in the shop/i);
+
+    const packValue = rewardUiJson.server?.duplicateConversionRemoved;
+    assert.equal(typeof packValue, "string");
+    assert.match(packValue, /sell a duplicate in the shop/i);
+
+    const resolvedEn = rewardUiCopy("server", "duplicateConversionRemoved");
+    assert.match(resolvedEn, /sell a duplicate in the shop/i);
+
+    const resolvedPseudo = rewardUiCopyForLocale(
+      "en-XA",
+      "server",
+      "duplicateConversionRemoved"
+    );
+    assert.notEqual(resolvedPseudo, resolvedEn);
+    assert.match(resolvedPseudo, /^\[\[\[/);
 
     const shop = readFileSync(join(ROOT, "lib/rewards/server/reward-shop.server.js"), "utf8");
     assert.match(shop, /getDuplicateSellbackPercent/);
