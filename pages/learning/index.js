@@ -20,6 +20,12 @@ import { getCachedStudentMe, setCachedStudentMe } from "../../lib/learning-clien
 import { STUDENT_TRUTH_LABELS_HE } from "../../lib/learning-shared/student-display-truth.js";
 import { GUEST_LOCKED_HOME_PANELS } from "../../lib/guest/constants.js";
 import { isGuestStudent } from "../../lib/guest/guest-display.js";
+import { isDemoMode, buildDemoDisplayStudent, readDemoSession } from "../../lib/demo/demo-mode.client.js";
+import { useDemoMode } from "../../components/demo/DemoModeContext.jsx";
+import {
+  buildDemoDashboardView,
+  buildDemoHomePayload,
+} from "../../components/demo/demo-display-fixtures.js";
 
 const HOME_SUMMARY_PATH = "/api/student/home-profile/summary";
 
@@ -43,8 +49,9 @@ export async function getServerSideProps() {
 export default function LearningHub({ showDevStudentSimulator }) {
   useIOSViewportFix();
   const { tokens: T, theme, subjectHubCard } = useStudentTheme();
-  const { direction } = useI18n();
+  const { direction, locale } = useI18n();
   const t = useT();
+  const { session: demoSession } = useDemoMode();
   const [progressOpen, setProgressOpen] = useState(false);
   const [student, setStudent] = useState(null);
   const [homePayload, setHomePayload] = useState(null);
@@ -98,13 +105,14 @@ export default function LearningHub({ showDevStudentSimulator }) {
   );
 
   const dashboardView = useMemo(() => {
+    if (isDemoMode()) return buildDemoDashboardView(locale);
     if (!student?.id || !homePayload) return null;
     try {
       return buildStudentHomeView({ student, homePayload });
     } catch {
       return null;
     }
-  }, [student, homePayload]);
+  }, [student, homePayload, locale]);
 
   const guestLockMessage = t("ui.student.guestLock");
 
@@ -121,6 +129,12 @@ export default function LearningHub({ showDevStudentSimulator }) {
   );
 
   const loadProgressData = useCallback(async () => {
+    if (isDemoMode()) {
+      setStudent(buildDemoDisplayStudent(demoSession || readDemoSession(), locale));
+      setHomePayload(buildDemoHomePayload(locale));
+      setProgressLoadPhase("ok");
+      return;
+    }
     setProgressLoadPhase("loading");
     try {
       const cachedMe = getCachedStudentMe();
@@ -179,9 +193,16 @@ export default function LearningHub({ showDevStudentSimulator }) {
     } catch {
       setProgressLoadPhase("error");
     }
-  }, []);
+  }, [demoSession, locale]);
 
   const openProgressModal = useCallback(() => {
+    if (isDemoMode()) {
+      setStudent(buildDemoDisplayStudent(demoSession || readDemoSession(), locale));
+      setHomePayload(buildDemoHomePayload(locale));
+      setProgressOpen(true);
+      setProgressLoadPhase("ok");
+      return;
+    }
     const cachedMe = getCachedStudentMe();
     const cachedGuestPolicy = guestPolicy || cachedMe?.guestPolicy || null;
     const cachedStudent = student || cachedMe?.student || null;
@@ -199,7 +220,7 @@ export default function LearningHub({ showDevStudentSimulator }) {
     } else {
       setProgressLoadPhase("ok");
     }
-  }, [guestPolicy, guestLockMessage, homePayload, loadProgressData, showLockToast, student]);
+  }, [guestPolicy, guestLockMessage, homePayload, loadProgressData, showLockToast, student, demoSession, locale, t]);
 
   const closeProgressModal = useCallback(() => setProgressOpen(false), []);
 
@@ -220,6 +241,14 @@ export default function LearningHub({ showDevStudentSimulator }) {
   };
 
   useEffect(() => {
+    if (!isDemoMode()) return undefined;
+    setStudent(buildDemoDisplayStudent(demoSession || readDemoSession(), locale));
+    setHomePayload(buildDemoHomePayload(locale));
+    return undefined;
+  }, [demoSession?.gradeLevel, locale]);
+
+  useEffect(() => {
+    if (isDemoMode()) return undefined;
     if (!isStudentIdentityDiagnosticsEnabled()) return undefined;
     console.log("[learning/index] localStorage on mount", {
       liosh_active_student_id: localStorage.getItem("liosh_active_student_id"),
