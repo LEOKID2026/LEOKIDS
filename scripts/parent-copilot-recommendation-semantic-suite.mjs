@@ -124,12 +124,12 @@ for (const q of questions) {
   assert.equal(r.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(r).ok);
   assert.equal(r.suggestedFollowUp, null);
-  const body = r.answerBlocks.map((b) => b.textHe).join(" ");
+  const body = r.answerBlocks.map((b) => b.answerText).join(" ");
   assert.ok(
     /focused practice|short.*practice|recommend(?:ed|ation)|start.*activity/i.test(body),
     `${q} must lead with concrete recommendation text from contracts (topic or executive aggregate)`,
   );
-  assert.ok(!/^(from a parent'?s perspective|as a parent|according to the report):?\s*$/im.test(r.answerBlocks[0]?.textHe || ""), `${q} must not be coaching-first`);
+  assert.ok(!/^(from a parent'?s perspective|as a parent|according to the report):?\s*$/im.test(r.answerBlocks[0]?.answerText || ""), `${q} must not be coaching-first`);
 }
 
 for (const q of questions) {
@@ -143,7 +143,7 @@ for (const q of questions) {
   assert.equal(r.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(r).ok);
   assert.equal(r.suggestedFollowUp, null);
-  const body = r.answerBlocks.map((b) => b.textHe).join(" ");
+  const body = r.answerBlocks.map((b) => b.answerText).join(" ");
   assert.ok(
     /too early|cannot (?:yet )?determine|not enough practice|clear direction.*not|picture is not yet closed/i.test(
       body,

@@ -7,7 +7,7 @@ const eligiblePayload = syntheticPayload({ eligible: true });
 const insufficientPayload = syntheticPayload({ eligible: false });
 
 const insufficientCue =
-  /לא\s+ניתן|אין\s+מספיק\s+נתונים|מוקדם\s+לקבוע|כדאי\s+להמשיך\s+לעקוב|not enough evidence|too early|continue(?:\s+to)?\s+monitor|still early|insufficient/iu;
+  /לא\s+ניתן|אין\s+מספיק\s+נתונים|מוקדם\s+לקבוע|כדאי\s+להמשיך\s+לעקוב|not enough evidence|too early|continuing to monitor|continue(?:\s+to)?\s+monitor|still early|insufficient|consistent reinforcement is still needed|verify stability/iu;
 const overAuthorityCue = /בוודאות|חד\s+משמעית|בטוח\s+לחלוטין|completely certain|with certainty|unequivocally/iu;
 
 let insufficientRequired = 0;
@@ -31,8 +31,8 @@ for (let i = 0; i < 80; i++) {
     selectedContextRef: null,
   });
 
-  const goodText = Array.isArray(good?.answerBlocks) ? good.answerBlocks.map((b) => String(b?.textHe || "")).join(" ") : "";
-  const badText = Array.isArray(bad?.answerBlocks) ? bad.answerBlocks.map((b) => String(b?.textHe || "")).join(" ") : "";
+  const goodText = Array.isArray(good?.answerBlocks) ? good.answerBlocks.map((b) => String(b?.answerText || "")).join(" ") : "";
+  const badText = Array.isArray(bad?.answerBlocks) ? bad.answerBlocks.map((b) => String(b?.answerText || "")).join(" ") : "";
 
   total += 2;
   if (overAuthorityCue.test(goodText)) authorityViolations += 1;

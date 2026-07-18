@@ -23,7 +23,7 @@ for (let i = 0; i < 180; i++) {
     sessionId: `hebrew-drift-${i}`,
     selectedContextRef: null,
   });
-  const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.textHe || "")).join(" ").trim() : "";
+  const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim() : "";
   const clarification = String(out?.clarificationQuestionHe || "").trim();
   outputs.push(text || clarification || "ללא טקסט");
 }

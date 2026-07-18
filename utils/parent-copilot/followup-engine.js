@@ -389,7 +389,7 @@ export function selectFollowUp(input) {
   return {
     selected: {
       family: chosen,
-      answerText,
+      answerText: textHe,
       reasonCode: reasonForChoice(chosen, relax),
     },
     candidateFamiliesRanked: ranked,

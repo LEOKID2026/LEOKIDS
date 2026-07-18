@@ -199,11 +199,11 @@ function normalizeAnswerBlocksHe(answerBlocks, truthPacket = null, opts = null) 
       source === "contract_slot" &&
       String(b?.type || "") !== "observation" &&
       textHe &&
-      !slotBundle.includes(answerText)
+      !slotBundle.includes(textHe)
     ) {
       source = "composed";
     }
-    return { ...b, answerText, source };
+    return { ...b, answerText: textHe, source };
   });
   return postprocessParentFacingBlocksHe(mapped);
 }

@@ -111,7 +111,7 @@ function continuityDraft(answerText, a, utterance, plannerIntent, payload) {
   });
   if (!truthPacket) return null;
   return {
-    answerBlocks: [{ type: "observation", answerText: String(textHe || "").trim(), source: "continuity_pattern_composer" }],
+    answerBlocks: [{ type: "observation", answerText: String(answerText || "").trim(), source: "continuity_pattern_composer" }],
     plannerIntent,
     truthPacket,
     scopeMeta: {
@@ -134,7 +134,7 @@ function continuityExecutiveDraft(answerText, utterance, plannerIntent, payload)
   });
   if (!truthPacket) return null;
   return {
-    answerBlocks: [{ type: "observation", answerText: String(textHe || "").trim(), source: "continuity_pattern_composer" }],
+    answerBlocks: [{ type: "observation", answerText: String(answerText || "").trim(), source: "continuity_pattern_composer" }],
     plannerIntent,
     truthPacket,
     scopeMeta: {

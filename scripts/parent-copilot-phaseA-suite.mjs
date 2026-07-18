@@ -472,8 +472,8 @@ const rStrongest = parentCopilot.runParentCopilotTurn({
 });
 assert.equal(rStrongest.resolutionStatus, "resolved");
 assert.ok(guardrail.validateParentCopilotResponseV1(rStrongest).ok);
-assert.ok(rStrongest.answerBlocks[0].textHe.includes("English"));
-assert.ok(!rStrongest.answerBlocks.map((b) => b.textHe).join(" ").includes("Multiplication"));
+assert.ok(rStrongest.answerBlocks[0].answerText.includes("English"));
+assert.ok(!rStrongest.answerBlocks.map((b) => b.answerText).join(" ").includes("Multiplication"));
 assert.equal(rStrongest.suggestedFollowUp, null);
 
 const rSubjectsList = parentCopilot.runParentCopilotTurn({
@@ -482,9 +482,9 @@ const rSubjectsList = parentCopilot.runParentCopilotTurn({
   utterance: "Are there more subjects?",
   sessionId: "semantic-subjects-list",
 });
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("Math"));
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("English"));
-assert.ok(rSubjectsList.answerBlocks[0].textHe.includes("Science"));
+assert.ok(rSubjectsList.answerBlocks[0].answerText.includes("Math"));
+assert.ok(rSubjectsList.answerBlocks[0].answerText.includes("English"));
+assert.ok(rSubjectsList.answerBlocks[0].answerText.includes("Science"));
 assert.equal(rSubjectsList.suggestedFollowUp, null);
 
 const rHardest = parentCopilot.runParentCopilotTurn({
@@ -493,7 +493,7 @@ const rHardest = parentCopilot.runParentCopilotTurn({
   utterance: "Which subject is hardest?",
   sessionId: "semantic-hardest",
 });
-assert.ok(rHardest.answerBlocks[0].textHe.includes("Science"));
+assert.ok(rHardest.answerBlocks[0].answerText.includes("Science"));
 assert.equal(rHardest.suggestedFollowUp, null);
 
 const rPeriod = parentCopilot.runParentCopilotTurn({
@@ -502,7 +502,7 @@ const rPeriod = parentCopilot.runParentCopilotTurn({
   utterance: "What stands out most this period?",
   sessionId: "semantic-period",
 });
-const rPeriodText = rPeriod.answerBlocks.map((b) => String(b.textHe || "")).join("\n");
+const rPeriodText = rPeriod.answerBlocks.map((b) => String(b.answerText || "")).join("\n");
 assert.ok(rPeriodText.includes("What stands out in the period"), rPeriodText);
 assert.ok(rPeriodText.includes("First"), rPeriodText);
 assert.ok(!rPeriodText.includes("קו מגמה"), rPeriodText);

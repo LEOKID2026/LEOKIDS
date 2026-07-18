@@ -246,7 +246,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
   let blocks = Array.isArray(payload?.answerBlocks)
     ? payload.answerBlocks.map((b) => ({
         type: b?.type,
-        answerText: b?.answerText,
+        answerText: String(b?.answerText || b?.textHe || "").trim(),
         source: b?.source,
       }))
     : [];
@@ -278,7 +278,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
   for (const b of blocks) {
     const type = String(b?.type || "");
     const textHe = String(b?.answerText || "").trim();
-    if (!allowedTypes.has(type) || !answerText) return { ok: false, reason: "llm_invalid_block_shape" };
+    if (!allowedTypes.has(type) || !textHe) return { ok: false, reason: "llm_invalid_block_shape" };
     for (const ph of truthPacket?.allowedClaimEnvelope?.forbiddenPhrases || []) {
       if (ph && textHe.toLowerCase().includes(String(ph).toLowerCase())) {
         return { ok: false, reason: "llm_forbidden_phrase" };

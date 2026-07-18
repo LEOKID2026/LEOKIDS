@@ -120,7 +120,7 @@ for (const q of recQs) {
   });
   assert.equal(r.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(r).ok);
-  const body = r.answerBlocks.map((b) => b.textHe).join(" ");
+  const body = r.answerBlocks.map((b) => b.answerText).join(" ");
   assertNoInternalJargon(body, q);
 }
 
@@ -133,7 +133,7 @@ const rStrong = parentCopilot.runParentCopilotTurn({
 });
 assert.equal(rStrong.resolutionStatus, "resolved");
 assert.ok(guardrail.validateParentCopilotResponseV1(rStrong).ok);
-const strongBody = rStrong.answerBlocks.map((b) => b.textHe).join(" ");
+const strongBody = rStrong.answerBlocks.map((b) => b.answerText).join(" ");
 assert.ok(/one subject|without comparison|math|fractions/i.test(strongBody), "single-subject strongest uses warm parent explanation");
 assert.ok(!/we do not rank subjects against each other/i.test(strongBody), "single-subject strongest must not use dry multi-subject-only boilerplate");
 
@@ -148,7 +148,7 @@ for (const q of clarifyQs) {
   });
   assert.equal(r.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(r).ok);
-  const body = r.answerBlocks.map((b) => b.textHe).join(" ");
+  const body = r.answerBlocks.map((b) => b.answerText).join(" ");
   assert.ok(/in simple words|simply put|plain language/i.test(body), `${q}: clarify path uses plain-language framing`);
   assert.ok(
     /report.*(?:12|questions)|accuracy|reasonable practice direction|fractions|12\s+questions/i.test(body),
@@ -167,7 +167,7 @@ for (const q of advanceQs) {
   });
   assert.equal(rHold.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(rHold).ok);
-  const bHold = rHold.answerBlocks.map((b) => b.textHe).join(" ");
+  const bHold = rHold.answerBlocks.map((b) => b.answerText).join(" ");
   assert.ok(/wait|hold off|not push/i.test(bHold), `${q} ineligible: bounded hold-first answer`);
 
   const rGo = parentCopilot.runParentCopilotTurn({
@@ -179,7 +179,7 @@ for (const q of advanceQs) {
   });
   assert.equal(rGo.resolutionStatus, "resolved");
   assert.ok(guardrail.validateParentCopilotResponseV1(rGo).ok);
-  const bGo = rGo.answerBlocks.map((b) => b.textHe).join(" ");
+  const bGo = rGo.answerBlocks.map((b) => b.answerText).join(" ");
   assert.ok(/move forward|carefully|small steps/i.test(bGo), `${q} eligible: bounded advance-with-care answer`);
 }
 

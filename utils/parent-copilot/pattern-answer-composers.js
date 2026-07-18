@@ -209,7 +209,7 @@ function buildTopicTruthPacket(payload, a, utterance, plannerIntent) {
  * @param {string} textHe
  */
 function patternAnswerBlocks(answerText) {
-  const text = String(textHe || "").trim();
+  const text = String(answerText || "").trim();
   if (!text) return [];
   const sentenceBreak = text.search(/(?<=[.!?])\s+(?=\S)/u);
   if (sentenceBreak >= 12 && sentenceBreak < text.length - 12) {

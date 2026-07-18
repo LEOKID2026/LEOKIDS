@@ -21,7 +21,7 @@ for (let i = 0; i < 180; i++) {
     sessionId: `repetition-seq-${i}`,
     selectedContextRef: null,
   });
-  const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.textHe || "")).join(" ").trim() : "";
+  const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim() : "";
   outputs.push(text);
 }
 

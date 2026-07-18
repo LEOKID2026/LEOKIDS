@@ -101,9 +101,9 @@ const draftC = composeAnswerDraft(plan, tp, {
   continuityRepeat: false,
   conversationState: { priorIntents: [], repeatedPhraseHits: 0 },
 });
-const obs0 = String(draftC.answerBlocks.find((b) => b.type === "observation")?.textHe || "");
+const obs0 = String(draftC.answerBlocks.find((b) => b.type === "observation")?.answerText || "");
 assert.ok(/in short|here is what to notice|this is what the report summarizes|fractions.*12 questions/i.test(obs0), "expected direct parent-facing opener on primary observation");
-const joinedDraftC = draftC.answerBlocks.map((b) => b.textHe).join(" ");
+const joinedDraftC = draftC.answerBlocks.map((b) => b.answerText).join(" ");
 assert.ok(!/from a parent'?s perspective.*ask|\bprofession\b/i.test(joinedDraftC), "parent-visible draft must not include meta-coaching filler");
 
 const v = validateAnswerDraft(draftC, tp);

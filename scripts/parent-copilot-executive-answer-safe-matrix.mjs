@@ -301,8 +301,8 @@ function assertSemanticAnswerShape(payloadName, payload, question, response) {
   assert.equal(response.answerBlocks[0]?.type, "observation", `${payloadName}: "${question}" first block must be observation`);
   assert.equal(response.suggestedFollowUp, null, `${payloadName}: "${question}" should not emit follow-up`);
 
-  const first = String(response.answerBlocks[0]?.textHe || "").trim();
-  const joined = response.answerBlocks.map((b) => String(b.textHe || "")).join(" ");
+  const first = String(response.answerBlocks[0]?.answerText || "").trim();
+  const joined = response.answerBlocks.map((b) => String(b.answerText || "")).join(" ");
   assert.ok(first.length > 10, `${payloadName}: "${question}" first block too short`);
   assert.ok(!coachingPrefix.test(first), `${payloadName}: "${question}" must be answer-first, not coaching-first`);
   assert.ok(!internalLeak.test(joined), `${payloadName}: "${question}" leaked internal label`);

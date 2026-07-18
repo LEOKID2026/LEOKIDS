@@ -128,7 +128,7 @@ export function postprocessParentFacingBlocksHe(blocks) {
     }
     if (kept.length) textHe = norm(kept.join(" "));
     if (!textHe && joined) textHe = postprocessParentFacingAnswerHe(joined);
-    return { ...b, answerText };
+    return { ...b, answerText: textHe };
   }).filter((b) => norm(b.answerText).length > 0);
 }
 
