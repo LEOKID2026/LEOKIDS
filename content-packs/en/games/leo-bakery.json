@@ -1,12 +1,12 @@
 {
   "gameId": "leo-bakery",
   "title": "Leo's Bakery",
-  "blurb": "Multiplication, equal groups, and trays",
+  "blurb": "Multiplication, equal groups, and missing factor",
   "help": {
-    "howToPlay": "Build trays with an equal amount of baked goods - set the number of trays and the amount per tray, then tap \"Check Order\".",
-    "scoring": "Correct answer +30, time bonus up to +20, streak of 5 correct +25. No points are deducted for mistakes.",
+    "howToPlay": "Build trays, find total or missing factor, or rearrange the same total — then tap \"Check Order\".",
+    "scoring": "Correct answer +30, time bonus up to +20, streak of 5 correct +25. After 3 failed attempts the full solution is shown.",
     "rewards": "Coins are awarded based on how many orders you prepared correctly, accuracy, streaks, and difficulty level.",
-    "tip": "Think about how many trays × how many per tray - not just the final result."
+    "tip": "Think about how many trays × how many per tray — not just counting icons."
   },
   "accessibility": {
     "title": "Leo's Bakery"

@@ -2,17 +2,27 @@
 /** @typedef {'even' | 'odd' | 'multiples' | 'skip' | 'sequence'} PathRule */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
-import { PRODUCTION_MIN_POOL, shuffle } from "../../../lib/educational-games/educational-task-picker.js";
+import {
+  createMathTask,
+  pickBalancedSession,
+  randInt,
+  shuffledCopy,
+} from "../../../lib/educational-games/math-task-schema.js";
 import {
   MAX_MISTAKES_BY_DIFFICULTY,
-  SESSION_FINAL_COUNT,
-  SESSION_MID_COUNT,
-  SESSION_OPEN_COUNT,
   TASKS_PER_SESSION,
 } from "../../../lib/educational-games/educational-session-standard.js";
 
-/** @typedef {{
+/**
+ * @typedef {{
  *   id: string
+ *   gameKey: 'leo-number-path'
+ *   difficulty: DifficultyId
+ *   skillId: string
+ *   variant: PathRule
+ *   operands: Record<string, unknown>
+ *   expectedAnswer: number[]
+ *   representationType: string
  *   rule: PathRule
  *   step?: number
  *   multiple?: number
@@ -20,7 +30,8 @@ import {
  *   correctPath: number[]
  *   orderMatters: boolean
  *   promptHe: string
- * }} PathTask */
+ * }} PathTask
+ */
 
 export { TASKS_PER_SESSION };
 
@@ -30,22 +41,53 @@ export const DIFFICULTIES = {
   hard: { id: "hard", label: "Hard", maxMistakes: MAX_MISTAKES_BY_DIFFICULTY.hard },
 };
 
-export const SCORE = {
-  first: 30,
-  second: 20,
-  third: 10,
-};
+export const SCORE = { first: 30, second: 20, third: 10 };
 
-/** @type {Record<DifficultyId, { maxNum: number, multiples: number[], skipSteps: number[] }>} */
-const LEVEL = {
-  easy: { maxNum: 40, multiples: [2], skipSteps: [2, 10] },
-  medium: { maxNum: 80, multiples: [3, 4, 5, 6, 7], skipSteps: [7, 8] },
-  hard: { maxNum: 120, multiples: [8, 9, 10, 11, 12], skipSteps: [9, 11] },
-};
+/** @param {DifficultyId} difficulty */
+function levelCfg(difficulty) {
+  if (difficulty === "easy") {
+    return { maxNum: 50, multiples: [2, 5, 10], skipSteps: [2, 5, 10], allowBackward: false, geo: false };
+  }
+  if (difficulty === "medium") {
+    return { maxNum: 100, multiples: [3, 4, 5, 6, 7, 8, 9], skipSteps: [3, 4, 6, 7], allowBackward: true, geo: false };
+  }
+  return {
+    maxNum: 144,
+    multiples: [6, 7, 8, 9, 10, 11, 12],
+    skipSteps: [4, 5, 6, 7, 8, 9],
+    allowBackward: true,
+    geo: true,
+  };
+}
 
-/** @param {number} min @param {number} max */
-function randInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+/** @param {DifficultyId} difficulty */
+function pathQuotas(difficulty) {
+  if (difficulty === "easy") {
+    return {
+      "numbers.even": 5,
+      "numbers.odd": 5,
+      "numbers.multiples": 4,
+      "numbers.skip_counting": 4,
+      "numbers.arithmetic_sequence": 2,
+    };
+  }
+  if (difficulty === "medium") {
+    return {
+      "numbers.even": 2,
+      "numbers.odd": 2,
+      "numbers.multiples": 6,
+      "numbers.skip_counting": 5,
+      "numbers.arithmetic_sequence": 5,
+    };
+  }
+  return {
+    "numbers.multiples": 5,
+    "numbers.skip_counting": 5,
+    "numbers.arithmetic_sequence": 5,
+    "numbers.geometric_sequence": 3,
+    "numbers.even": 1,
+    "numbers.odd": 1,
+  };
 }
 
 /** @param {number[]} correctSet @param {number} count @param {number} max @param {(n: number) => boolean} isForbidden */
@@ -54,7 +96,7 @@ function distractorsWhere(correctSet, count, max, isForbidden) {
   /** @type {number[]} */
   const out = [];
   let guard = 0;
-  while (out.length < count && guard < 400) {
+  while (out.length < count && guard < 500) {
     guard += 1;
     const n = randInt(1, max);
     if (forbidden.has(n) || out.includes(n) || isForbidden(n)) continue;
@@ -63,38 +105,13 @@ function distractorsWhere(correctSet, count, max, isForbidden) {
   return out;
 }
 
-/** @param {PathTask} task */
-export function matchingNumbersOnBoard(task) {
-  if (task.rule === "even") return task.numbers.filter((n) => n % 2 === 0);
-  if (task.rule === "odd") return task.numbers.filter((n) => n % 2 === 1);
-  if (task.rule === "multiples" && task.multiple) {
-    return task.numbers.filter((n) => n % task.multiple === 0);
-  }
-  return [...task.correctPath];
-}
-
-/** @param {DifficultyId} difficulty @param {number} guard @param {number} salt */
-function ruleKindForGuard(difficulty, guard, salt) {
-  const roll = (guard + salt) % 12;
-  if (difficulty === "easy") {
-    if (roll < 6) return "parity";
-    if (roll < 10) return "skip";
-    return "multiples";
-  }
-  if (difficulty === "medium") {
-    if (roll < 3) return "parity";
-    if (roll < 5) return "skip";
-    return "multiples";
-  }
-  if (roll < 2) return "parity";
-  if (roll < 5) return "skip";
-  if (roll < 7) return "sequence";
-  return "multiples";
-}
-
-/** @param {DifficultyId} difficulty @param {ReturnType<typeof LEVEL.easy>} cfg @param {number} guard */
-function buildParityTask(difficulty, cfg, guard) {
-  const isEven = guard % 2 === 0;
+/**
+ * @param {DifficultyId} difficulty
+ * @param {ReturnType<typeof levelCfg>} cfg
+ * @param {number} guard
+ * @param {boolean} isEven
+ */
+function buildParityTask(difficulty, cfg, guard, isEven) {
   const max = cfg.maxNum;
   const span = randInt(10, 16);
   const start = randInt(1, Math.max(1, max - span));
@@ -102,57 +119,93 @@ function buildParityTask(difficulty, cfg, guard) {
   for (let i = 0; i < span; i += 1) nums.push(start + i);
   const wrongParity = (n) => (isEven ? n % 2 !== 0 : n % 2 === 0);
   const inSpan = new Set(nums);
-  const extra = distractorsWhere(nums, randInt(2, 4), max, (n) => wrongParity(n) || inSpan.has(n));
-  const numbers = shuffle([...nums, ...extra]).slice(0, 16);
-  const correct = numbers.filter((n) => !wrongParity(n));
+  const extra = distractorsWhere(nums, randInt(3, 5), max, (n) => wrongParity(n) || inSpan.has(n));
+  let numbers = shuffledCopy([...nums, ...extra]).slice(0, 16);
+  // Avoid fixed layout: reshuffle positions
+  numbers = shuffledCopy(numbers);
+  const correct = numbers.filter((n) => !wrongParity(n)).sort((a, b) => a - b);
   if (correct.length < 3) return null;
+
+  const rule = isEven ? "even" : "odd";
   return {
-    id: `p-${difficulty}-parity-${guard}`,
-    rule: isEven ? "even" : "odd",
-    numbers: shuffle(numbers),
-    correctPath: correct.sort((a, b) => a - b),
+    ...createMathTask({
+      id: `p-${difficulty}-parity-${guard}`,
+      gameKey: "leo-number-path",
+      difficulty,
+      skillId: isEven ? "numbers.even" : "numbers.odd",
+      variant: rule,
+      operands: { rule, boardSize: numbers.length },
+      expectedAnswer: correct,
+      representationType: "number_grid",
+    }),
+    rule,
+    numbers,
+    correctPath: correct,
     orderMatters: false,
-    promptHe: isEven
-      ? "Choose all the even numbers on the path"
-      : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "choose_all_the_odd_numbers_on_the_path"),
+    promptHe: isEven ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_even") : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "choose_all_the_odd_numbers_on_the_path"),
   };
 }
 
-/** @param {DifficultyId} difficulty @param {ReturnType<typeof LEVEL.easy>} cfg @param {number} guard */
+/**
+ * @param {DifficultyId} difficulty
+ * @param {ReturnType<typeof levelCfg>} cfg
+ * @param {number} guard
+ */
 function buildSkipTask(difficulty, cfg, guard) {
   const step = cfg.skipSteps[guard % cfg.skipSteps.length];
-  const start = randInt(1, step);
+  const backward = cfg.allowBackward && guard % 3 === 0;
   const len = randInt(4, 6);
+  /** @type {number[]} */
   const correct = [];
-  for (let i = 0; i < len; i += 1) correct.push(start + i * step);
-  if (correct[correct.length - 1] > cfg.maxNum) return null;
+  if (backward) {
+    const start = randInt(step * len, cfg.maxNum);
+    for (let i = 0; i < len; i += 1) correct.push(start - i * step);
+  } else {
+    const start = randInt(1, step + 4);
+    for (let i = 0; i < len; i += 1) correct.push(start + i * step);
+  }
+  if (correct.some((n) => n < 1 || n > cfg.maxNum)) return null;
+
   const correctSet = new Set(correct);
-  const isSeqLike = (n) => {
+  const nearStep = (n) => {
     if (correctSet.has(n)) return true;
-    if (correct.includes(n - step) || correct.includes(n + step)) return true;
-    if (correct.some((c) => c !== n && Math.abs(c - n) === step)) return true;
-    return false;
+    return correct.some((c) => Math.abs(c - n) === step);
   };
-  const numbers = shuffle([
+  const numbers = shuffledCopy([
     ...correct,
-    ...distractorsWhere(correct, randInt(4, 7), cfg.maxNum, isSeqLike),
+    ...distractorsWhere(correct, randInt(5, 8), cfg.maxNum, nearStep),
   ]).slice(0, 18);
+
+  const start = correct[0];
+  const directionHe = backward ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "direction_backward") : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "direction_forward");
+
   return {
-    id: `p-${difficulty}-skip-${guard}`,
+    ...createMathTask({
+      id: `p-${difficulty}-skip-${guard}`,
+      gameKey: "leo-number-path",
+      difficulty,
+      skillId: "numbers.skip_counting",
+      variant: "skip",
+      operands: { start, step, direction: backward ? "backward" : "forward", length: len },
+      expectedAnswer: correct,
+      representationType: "number_grid",
+    }),
     rule: "skip",
     step,
     numbers,
     correctPath: correct,
     orderMatters: true,
-    promptHe: `Choose in order: ${correct.slice(0, 4).join(" → ")}${correct.length > 4 ? "…" : ""}`,
+    promptHe: gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_skip", { start, direction: directionHe, step }),
   };
 }
 
-/** @param {DifficultyId} difficulty @param {ReturnType<typeof LEVEL.easy>} cfg @param {number} guard */
+/**
+ * @param {DifficultyId} difficulty
+ * @param {ReturnType<typeof levelCfg>} cfg
+ * @param {number} guard
+ */
 function buildMultiplesTask(difficulty, cfg, guard) {
-  const mults =
-    difficulty === "easy" ? [2] : cfg.multiples.length ? cfg.multiples : [2, 3, 5];
-  const multiple = mults[guard % mults.length];
+  const multiple = cfg.multiples[guard % cfg.multiples.length];
   const max = cfg.maxNum;
   /** @type {number[]} */
   const allMultiples = [];
@@ -163,7 +216,7 @@ function buildMultiplesTask(difficulty, cfg, guard) {
   const startIdx = randInt(0, Math.max(0, allMultiples.length - onBoardCount));
   const seedMultiples = allMultiples.slice(startIdx, startIdx + onBoardCount);
   const isMultiple = (n) => n % multiple === 0;
-  const numbers = shuffle([
+  const numbers = shuffledCopy([
     ...seedMultiples,
     ...distractorsWhere(seedMultiples, randInt(5, 9), max, isMultiple),
   ]).slice(0, 18);
@@ -171,43 +224,115 @@ function buildMultiplesTask(difficulty, cfg, guard) {
   if (correctOnBoard.length < 3) return null;
 
   return {
-    id: `p-${difficulty}-mult-${guard}`,
+    ...createMathTask({
+      id: `p-${difficulty}-mult-${guard}`,
+      gameKey: "leo-number-path",
+      difficulty,
+      skillId: "numbers.multiples",
+      variant: "multiples",
+      operands: { multiple },
+      expectedAnswer: correctOnBoard,
+      representationType: "number_grid",
+    }),
     rule: "multiples",
     multiple,
     numbers,
     correctPath: correctOnBoard,
     orderMatters: false,
-    promptHe: `Choose all multiples of ${multiple} on the path`,
+    promptHe: gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_multiples", { multiple }),
   };
 }
 
-/** @param {DifficultyId} difficulty @param {ReturnType<typeof LEVEL.easy>} cfg @param {number} guard */
-function buildSequenceTask(difficulty, cfg, guard) {
-  const ratio = randInt(2, 4);
-  const start = randInt(2, 6);
-  const correctSeq = [start];
-  for (let i = 1; i < 5; i += 1) correctSeq.push(correctSeq[i - 1] * ratio);
-  if (correctSeq[correctSeq.length - 1] > cfg.maxNum) return null;
+/**
+ * @param {DifficultyId} difficulty
+ * @param {ReturnType<typeof levelCfg>} cfg
+ * @param {number} guard
+ * @param {boolean} geometric
+ */
+function buildSequenceTask(difficulty, cfg, guard, geometric) {
+  if (geometric) {
+    const ratio = randInt(2, 3);
+    const start = randInt(2, 5);
+    const correctSeq = [start];
+    for (let i = 1; i < 4; i += 1) correctSeq.push(correctSeq[i - 1] * ratio);
+    if (correctSeq[correctSeq.length - 1] > cfg.maxNum) return null;
+    const seqSet = new Set(correctSeq);
+    const fitsRatio = (n) => {
+      if (seqSet.has(n)) return true;
+      return correctSeq.some((c) => c * ratio === n || (n * ratio === c && Number.isInteger(n)));
+    };
+    const numbers = shuffledCopy([
+      ...correctSeq,
+      ...distractorsWhere(correctSeq, randInt(5, 7), cfg.maxNum, fitsRatio),
+    ]);
+    return {
+      ...createMathTask({
+        id: `p-${difficulty}-geo-${guard}`,
+        gameKey: "leo-number-path",
+        difficulty,
+        skillId: "numbers.geometric_sequence",
+        variant: "sequence",
+        operands: { kind: "geometric", start, ratio, shown: correctSeq.slice(0, 2) },
+        expectedAnswer: correctSeq,
+        representationType: "number_grid",
+      }),
+      rule: "sequence",
+      numbers,
+      correctPath: correctSeq,
+      orderMatters: true,
+      promptHe: gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_geometric_sequence", { start, ratio }),
+    };
+  }
+
+  const step = difficulty === "easy" ? randInt(2, 5) : randInt(3, 9);
+  const descending = cfg.allowBackward && guard % 4 === 0;
+  const len = 5;
+  /** @type {number[]} */
+  const correctSeq = [];
+  if (descending) {
+    const start = randInt(step * len + 5, cfg.maxNum);
+    for (let i = 0; i < len; i += 1) correctSeq.push(start - i * step);
+  } else {
+    const start = randInt(1, 12);
+    for (let i = 0; i < len; i += 1) correctSeq.push(start + i * step);
+  }
+  if (correctSeq.some((n) => n < 1 || n > cfg.maxNum)) return null;
+
+  const missingMiddle = difficulty !== "easy" && guard % 2 === 0;
+  const shown = missingMiddle
+    ? [correctSeq[0], "?", correctSeq[2], "?", correctSeq[4]]
+    : [correctSeq[0], correctSeq[1], "?"];
+
   const seqSet = new Set(correctSeq);
-  const fitsRatio = (n) => {
-    if (seqSet.has(n)) return true;
-    for (const c of correctSeq) {
-      if (Number.isInteger(c * ratio) && c * ratio === n) return true;
-      if (Number.isInteger(n * ratio) && n * ratio === c) return true;
-    }
-    return false;
-  };
-  const numbersSeq = shuffle([
+  const near = (n) => seqSet.has(n) || correctSeq.some((c) => Math.abs(c - n) === step);
+  const numbers = shuffledCopy([
     ...correctSeq,
-    ...distractorsWhere(correctSeq, randInt(4, 6), cfg.maxNum, fitsRatio),
+    ...distractorsWhere(correctSeq, randInt(5, 7), cfg.maxNum, near),
   ]);
+
   return {
-    id: `p-${difficulty}-seq-${guard}`,
+    ...createMathTask({
+      id: `p-${difficulty}-arith-${guard}`,
+      gameKey: "leo-number-path",
+      difficulty,
+      skillId: "numbers.arithmetic_sequence",
+      variant: "sequence",
+      operands: {
+        kind: "arithmetic",
+        start: correctSeq[0],
+        step: descending ? -step : step,
+        missingMiddle,
+      },
+      expectedAnswer: correctSeq,
+      representationType: "number_grid",
+    }),
     rule: "sequence",
-    numbers: numbersSeq,
+    numbers,
     correctPath: correctSeq,
     orderMatters: true,
-    promptHe: `Continue the sequence: ${correctSeq.slice(0, 3).join(" → ")} → ?`,
+    promptHe: missingMiddle
+      ? gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_arithmetic_missing", { shown: shown.join(", ") })
+      : gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "prompt_arithmetic_sequence", { start: correctSeq[0], step: descending ? -step : step }),
   };
 }
 
@@ -216,23 +341,23 @@ function buildSequenceTask(difficulty, cfg, guard) {
  * @param {{ salt?: number }} [opts]
  */
 export function generatePathPool(difficulty, opts = {}) {
-  const cfg = LEVEL[difficulty];
+  const cfg = levelCfg(difficulty);
   const salt = opts.salt ?? 0;
-  const seen = new Set();
   /** @type {PathTask[]} */
   const pool = [];
+  const seen = new Set();
   let guard = 0;
 
-  while (pool.length < PRODUCTION_MIN_POOL + 10 && guard < 2000) {
+  while (pool.length < 120 && guard < 2500) {
     guard += 1;
-    const kind = ruleKindForGuard(difficulty, guard, salt);
+    const roll = (guard + salt) % 10;
     /** @type {PathTask|null} */
     let task = null;
-
-    if (kind === "parity") task = buildParityTask(difficulty, cfg, guard);
-    else if (kind === "skip") task = buildSkipTask(difficulty, cfg, guard);
-    else if (kind === "sequence") task = buildSequenceTask(difficulty, cfg, guard);
-    else task = buildMultiplesTask(difficulty, cfg, guard);
+    if (roll < 2) task = buildParityTask(difficulty, cfg, guard, true);
+    else if (roll < 4) task = buildParityTask(difficulty, cfg, guard, false);
+    else if (roll < 6) task = buildMultiplesTask(difficulty, cfg, guard);
+    else if (roll < 8) task = buildSkipTask(difficulty, cfg, guard);
+    else task = buildSequenceTask(difficulty, cfg, guard, cfg.geo && roll === 9);
 
     if (!task) continue;
     const key = pathTaskKey(task);
@@ -241,8 +366,7 @@ export function generatePathPool(difficulty, opts = {}) {
     task.id = `p-${difficulty}-${pool.length}`;
     pool.push(task);
   }
-
-  return shuffle(pool);
+  return shuffledCopy(pool);
 }
 
 /** @param {PathTask} task */
@@ -267,7 +391,13 @@ export function validatePath(task, selected) {
 
 /** @param {boolean} ok */
 export function pathFeedback(ok) {
-  return ok ? "Great! You picked the right path." : "Almost! Check the jumps between the numbers.";
+  return gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", ok ? "feedback_ok" : "feedback_almost");
+}
+
+/** @param {PathTask} task */
+export function pathSolutionText(task) {
+  const path = task.orderMatters ? task.correctPath.join(" → ") : task.correctPath.join(" · ");
+  return gamePackCopy("components__educational-games__leo-number-path__leo-number-path-data", "solution_correct_path", { path });
 }
 
 /** @param {number[]} selected @param {boolean} orderMatters */
@@ -281,14 +411,23 @@ export function isNumberPathWin(successfulTasks, total, mistakes, maxMistakes) {
   return successfulTasks >= total && mistakes < maxMistakes;
 }
 
-/** Returns tasks where a board number matches the rule but is not in correctPath. */
+/** @param {PathTask} task */
+export function matchingNumbersOnBoard(task) {
+  if (task.rule === "even") return task.numbers.filter((n) => n % 2 === 0);
+  if (task.rule === "odd") return task.numbers.filter((n) => n % 2 === 1);
+  if (task.rule === "multiples" && task.multiple) {
+    return task.numbers.filter((n) => n % task.multiple === 0);
+  }
+  return [...task.correctPath];
+}
+
 export function findDistractorFalseNegatives(tasks) {
   /** @type {{ id: string, rule: string, number: number }[]} */
   const issues = [];
   for (const task of tasks) {
     const shouldMatch = matchingNumbersOnBoard(task);
     for (const n of shouldMatch) {
-      if (!task.correctPath.includes(n)) {
+      if (!task.correctPath.includes(n) && (task.rule === "even" || task.rule === "odd" || task.rule === "multiples")) {
         issues.push({ id: task.id, rule: task.rule, number: n });
       }
     }
@@ -300,15 +439,10 @@ export function findDistractorFalseNegatives(tasks) {
 export function taskDifficultyScore(task) {
   let score = 0;
   const maxOnBoard = Math.max(...task.numbers, 0);
-  if (task.rule === "even" || task.rule === "odd") {
-    score = 10 + task.correctPath.length + maxOnBoard * 0.05;
-  } else if (task.rule === "skip") {
-    score = 35 + task.correctPath.length * 2 + (task.step ?? 0);
-  } else if (task.rule === "multiples") {
-    score = 50 + task.correctPath.length * 2 + (task.multiple ?? 0);
-  } else if (task.rule === "sequence") {
-    score = 75 + task.correctPath.length * 3 + maxOnBoard * 0.03;
-  }
+  if (task.rule === "even" || task.rule === "odd") score = 10 + task.correctPath.length;
+  else if (task.rule === "skip") score = 35 + (task.step ?? 0);
+  else if (task.rule === "multiples") score = 50 + (task.multiple ?? 0);
+  else if (task.rule === "sequence") score = 70 + maxOnBoard * 0.02;
   return score;
 }
 
@@ -319,57 +453,36 @@ export function taskDifficultyScore(task) {
 export function buildOrderedSessionRun(difficulty, count = TASKS_PER_SESSION) {
   const salt = Math.floor(Math.random() * 10000);
   const pool = generatePathPool(difficulty, { salt });
-  const sorted = [...pool].sort((a, b) => taskDifficultyScore(a) - taskDifficultyScore(b));
-  const third = Math.max(1, Math.floor(sorted.length / 3));
-  const openingPool = sorted.slice(0, third);
-  const midPool = sorted.slice(third, third * 2);
-  const finalPool = sorted.slice(third * 2);
-  const used = new Set();
-  let lastKey = null;
-  let lastRule = null;
-  let ruleStreak = 0;
 
-  /** @param {PathTask[]} band @param {number} n */
-  function pickFrom(band, n) {
-    /** @type {PathTask[]} */
-    const out = [];
-    for (const task of shuffle(band)) {
-      if (out.length >= n) break;
-      const key = pathTaskKey(task);
-      if (used.has(key) || key === lastKey) continue;
-      if (lastRule === task.rule && ruleStreak >= 2) continue;
-      used.add(key);
-      lastKey = key;
-      if (lastRule === task.rule) ruleStreak += 1;
-      else {
-        lastRule = task.rule;
-        ruleStreak = 1;
-      }
-      out.push(task);
-    }
-    return out;
+  /** @type {Record<string, PathTask[]>} */
+  const pools = {};
+  for (const task of pool) {
+    const sid = task.skillId;
+    if (!pools[sid]) pools[sid] = [];
+    pools[sid].push(task);
   }
 
-  const openN = SESSION_OPEN_COUNT;
-  const midN = SESSION_MID_COUNT;
-  const finalN = count - openN - midN;
+  let run = pickBalancedSession(pools, pathQuotas(difficulty), pathTaskKey, count);
 
-  const run = [
-    ...pickFrom(openingPool, openN),
-    ...pickFrom(midPool, midN),
-    ...pickFrom(finalPool, finalN),
-  ];
-
+  const used = new Set(run.map(pathTaskKey));
   while (run.length < count) {
-    for (const task of shuffle(sorted)) {
+    let added = false;
+    for (const task of shuffledCopy(pool)) {
       if (run.length >= count) break;
       const key = pathTaskKey(task);
       if (used.has(key)) continue;
       used.add(key);
       run.push(task);
+      added = true;
     }
-    break;
+    if (!added) break;
   }
+
+  const mid = Math.floor(run.length / 2);
+  run = [
+    ...run.slice(0, mid).sort((a, b) => taskDifficultyScore(a) - taskDifficultyScore(b)),
+    ...run.slice(mid).sort((a, b) => taskDifficultyScore(a) - taskDifficultyScore(b)),
+  ];
 
   return run.slice(0, count).map((task, i) => ({ ...task, id: `p-${difficulty}-run-${i}` }));
 }
@@ -378,10 +491,7 @@ export function buildOrderedSessionRun(difficulty, count = TASKS_PER_SESSION) {
 export function sessionRunIsAscending(run) {
   if (run.length < 6) return true;
   const scores = run.map(taskDifficultyScore);
-  const openSlice = scores.slice(0, SESSION_OPEN_COUNT);
-  const finalSlice = scores.slice(SESSION_OPEN_COUNT + SESSION_MID_COUNT);
-  if (!openSlice.length || !finalSlice.length) return true;
-  const openAvg = openSlice.reduce((s, v) => s + v, 0) / openSlice.length;
-  const finalAvg = finalSlice.reduce((s, v) => s + v, 0) / finalSlice.length;
-  return openAvg <= finalAvg + 0.01;
+  const openAvg = scores.slice(0, 5).reduce((s, v) => s + v, 0) / 5;
+  const finalAvg = scores.slice(-5).reduce((s, v) => s + v, 0) / 5;
+  return openAvg <= finalAvg + 5;
 }

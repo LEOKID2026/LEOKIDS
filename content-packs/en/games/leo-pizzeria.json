@@ -1,12 +1,12 @@
 {
   "gameId": "leo-pizzeria",
   "title": "Leo's Pizzeria",
-  "blurb": "Learning fractions through making pizzas",
+  "blurb": "Build, identify, equivalent, compare, and combine fractions",
   "help": {
-    "howToPlay": "Read the order, add toppings to the pizza slices (tap or drag), and tap \"Serve Pizza\".",
-    "scoring": "Correct pizza +30, streak of 3 correct +15, streak of 5 +30. No points are deducted for mistakes.",
+    "howToPlay": "Build fractions on pizza, identify from a picture, complete to a whole, compare, or match equivalents — by task. Tap \"Serve Pizza\" when ready.",
+    "scoring": "Correct answer +30, streak bonuses. After 3 failed attempts the solution is shown.",
     "rewards": "Coins are awarded based on how many customers you served, accuracy, streaks, and difficulty level - even if you didn't serve all 20 customers.",
-    "tip": "Check how many slices each topping covers - half, quarter, and eighth refer to the number of slices, not a position."
+    "tip": "Pay attention to numerator and denominator — pizza slices are always equal parts."
   },
   "accessibility": {
     "title": "Leo's Pizzeria"

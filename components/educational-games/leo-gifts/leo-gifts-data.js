@@ -1,23 +1,37 @@
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'share_equally' | 'make_groups' | 'find_remainder'} GiftsMode */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
-import { PRODUCTION_MIN_POOL, shuffle } from "../../../lib/educational-games/educational-task-picker.js";
+import {
+  createMathTask,
+  pickBalancedSession,
+  randInt,
+  shuffledCopy,
+} from "../../../lib/educational-games/math-task-schema.js";
 import {
   pickSessionFromBands,
-  SESSION_FINAL_COUNT,
-  SESSION_MID_COUNT,
-  SESSION_OPEN_COUNT,
   TASKS_PER_SESSION,
   timeLimitForSessionIndex,
 } from "../../../lib/educational-games/educational-session-standard.js";
 
-/** @typedef {{
+/**
+ * @typedef {{
  *   id: string
+ *   gameKey: 'leo-gifts'
+ *   difficulty: DifficultyId
+ *   skillId: string
+ *   variant: GiftsMode
+ *   operands: { total: number, divisor: number, mode: GiftsMode, itemKey: string, itemEmoji: string }
+ *   expectedAnswer: { quotient: number, remainder: number }
+ *   representationType: string
  *   total: number
- *   children: number
- *   itemLabel: string
+ *   children?: number
+ *   groupSize?: number
+ *   mode: GiftsMode
+ *   itemKey: string
  *   itemEmoji: string
- * }} GiftsTask */
+ * }} GiftsTask
+ */
 
 export { TASKS_PER_SESSION };
 
@@ -35,105 +49,225 @@ export const GIFTS_TIME_LIMITS_BY_BAND = {
 };
 
 const ITEM_TYPES = [
-  { itemLabel: "gifts", itemEmoji: "🎁" },
-  { itemLabel: "candies", itemEmoji: "🍬" },
-  { itemLabel: "stickers", itemEmoji: "⭐" },
-  { itemLabel: "stars", itemEmoji: "🌟" },
-  { itemLabel: "sweets", itemEmoji: "🍭" },
+  { itemKey: "item_gifts", itemEmoji: "🎁" },
+  { itemKey: "item_candies", itemEmoji: "🍬" },
+  { itemKey: "item_stickers", itemEmoji: "⭐" },
+  { itemKey: "item_stars", itemEmoji: "🌟" },
+  { itemKey: "item_sweets", itemEmoji: "🍭" },
 ];
 
-/** @param {number} min @param {number} max */
-function randInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function giftsItemLabel(task) {
+  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", task.itemKey);
 }
 
-/** @typedef {0 | 1 | 2} GiftsSessionBand */
-
-/** @param {DifficultyId} difficulty @param {GiftsSessionBand} band */
-function giftsBandConfig(difficulty, band) {
+/** @param {DifficultyId} difficulty */
+function giftsQuotas(difficulty) {
   if (difficulty === "easy") {
-    if (band === 0) return { childrenMin: 2, childrenMax: 4, maxTotal: 20, allowRemainder: false };
-    if (band === 1) return { childrenMin: 2, childrenMax: 5, maxTotal: 32, allowRemainder: false };
-    return { childrenMin: 3, childrenMax: 6, maxTotal: 40, allowRemainder: false };
+    return {
+      "division.equal_sharing": 12,
+      "division.make_groups": 6,
+      "division.remainder": 2,
+    };
   }
   if (difficulty === "medium") {
-    if (band === 0) return { childrenMin: 3, childrenMax: 5, maxTotal: 30, allowRemainder: false };
-    if (band === 1) return { childrenMin: 4, childrenMax: 8, maxTotal: 56, allowRemainder: true };
-    return { childrenMin: 5, childrenMax: 10, maxTotal: 80, allowRemainder: true };
+    return {
+      "division.equal_sharing": 7,
+      "division.make_groups": 7,
+      "division.remainder": 6,
+    };
   }
-  if (band === 0) return { childrenMin: 4, childrenMax: 6, maxTotal: 42, allowRemainder: true };
-  if (band === 1) return { childrenMin: 5, childrenMax: 8, maxTotal: 72, allowRemainder: true };
-  return { childrenMin: 6, childrenMax: 10, maxTotal: 100, allowRemainder: true };
+  return {
+    "division.equal_sharing": 6,
+    "division.make_groups": 6,
+    "division.remainder": 5,
+    "division.relation_to_multiplication": 3,
+  };
 }
 
-/** @param {DifficultyId} difficulty @param {GiftsSessionBand} band @param {number} [salt] */
-function generateGiftsPoolForBand(difficulty, band, salt = 0) {
-  const cfg = giftsBandConfig(difficulty, band);
-  const seen = new Set();
+/**
+ * @param {DifficultyId} difficulty
+ * @param {GiftsMode} mode
+ * @param {boolean} allowRemainder
+ * @param {number} salt
+ * @returns {GiftsTask[]}
+ */
+function generateGiftsPoolForMode(difficulty, mode, allowRemainder, salt = 0) {
+  const cfg =
+    difficulty === "easy"
+      ? { divisorMin: 2, divisorMax: 5, maxTotal: 30, quotMax: 6 }
+      : difficulty === "medium"
+        ? { divisorMin: 2, divisorMax: 8, maxTotal: 72, quotMax: 10 }
+        : { divisorMin: 3, divisorMax: 10, maxTotal: 120, quotMax: 12 };
+
   /** @type {GiftsTask[]} */
   const pool = [];
+  const seen = new Set();
 
-  for (let children = cfg.childrenMin; children <= cfg.childrenMax; children += 1) {
-    for (let per = 2; per <= Math.max(2, Math.floor(cfg.maxTotal / children)); per += 1) {
-      const totalEven = per * children;
-      if (totalEven <= cfg.maxTotal) {
+  for (let divisor = cfg.divisorMin; divisor <= cfg.divisorMax; divisor += 1) {
+    for (let quot = 1; quot <= cfg.quotMax; quot += 1) {
+      const remOptions = allowRemainder ? [0, ...Array.from({ length: divisor - 1 }, (_, i) => i + 1)] : [0];
+      for (const rem of remOptions) {
+        if (difficulty === "easy" && rem > 0 && pool.filter((t) => t.expectedAnswer.remainder > 0).length >= 8) {
+          continue;
+        }
+        const total = quot * divisor + rem;
+        if (total < divisor || total > cfg.maxTotal) continue;
+        if (rem >= divisor) continue;
+
         for (let itemIdx = 0; itemIdx < ITEM_TYPES.length; itemIdx += 1) {
           const item = ITEM_TYPES[(itemIdx + salt) % ITEM_TYPES.length];
-          const key = `${totalEven}x${children}-${item.itemLabel}`;
+          const key = `${mode}-${total}-${divisor}-${item.itemKey}`;
           if (seen.has(key)) continue;
           seen.add(key);
-          pool.push({
-            id: `g-${difficulty}-b${band}-${pool.length}-${key}`,
-            total: totalEven,
-            children,
-            itemLabel: item.itemLabel,
+
+          const skillId =
+            mode === "find_remainder" || rem > 0
+              ? rem > 0
+                ? "division.remainder"
+                : mode === "make_groups"
+                  ? "division.make_groups"
+                  : "division.equal_sharing"
+              : mode === "make_groups"
+                ? "division.make_groups"
+                : "division.equal_sharing";
+
+          const useRelation =
+            difficulty === "hard" && rem === 0 && (pool.length + salt) % 7 === 0;
+
+          /** @type {GiftsTask} */
+          const task = {
+            ...createMathTask({
+              id: `g-${difficulty}-${mode}-${pool.length}`,
+              gameKey: "leo-gifts",
+              difficulty,
+              skillId: useRelation ? "division.relation_to_multiplication" : skillId,
+              variant: mode,
+              operands: {
+                total,
+                divisor,
+                mode,
+                itemKey: item.itemKey,
+                itemEmoji: item.itemEmoji,
+              },
+              expectedAnswer: { quotient: quot, remainder: rem },
+              representationType: difficulty === "easy" ? "visual" : "mixed",
+            }),
+            total,
+            mode,
+            itemKey: item.itemKey,
             itemEmoji: item.itemEmoji,
-          });
-        }
-      }
-      if (cfg.allowRemainder) {
-        for (let rem = 1; rem < children; rem += 1) {
-          const total = per * children + rem;
-          if (total > cfg.maxTotal || total < children * 2) continue;
-          for (let itemIdx = 0; itemIdx < ITEM_TYPES.length; itemIdx += 1) {
-            const item = ITEM_TYPES[(itemIdx + salt) % ITEM_TYPES.length];
-            const key = `${total}x${children}-${item.itemLabel}`;
-            if (seen.has(key)) continue;
-            seen.add(key);
-            pool.push({
-              id: `g-${difficulty}-b${band}-${pool.length}-${key}`,
-              total,
-              children,
-              itemLabel: item.itemLabel,
-              itemEmoji: item.itemEmoji,
-            });
+          };
+
+          if (mode === "share_equally" || mode === "find_remainder") {
+            task.children = divisor;
+          } else {
+            task.groupSize = divisor;
           }
+
+          pool.push(task);
         }
       }
     }
   }
 
-  return shuffle(pool);
+  return shuffledCopy(pool);
+}
+
+/** @param {GiftsTask} task */
+export function giftsTaskKey(task) {
+  return `${task.mode}-${task.total}-${task.operands.divisor}-${task.itemKey}`;
 }
 
 /** @param {GiftsTask} task */
 export function giftsTaskDifficultyScore(task) {
-  const rem = task.total % task.children;
-  return task.children * 3 + task.total * 0.15 + (rem > 0 ? 8 : 0);
+  const rem = task.expectedAnswer.remainder;
+  return task.operands.divisor * 3 + task.total * 0.12 + (rem > 0 ? 10 : 0) + (task.mode === "make_groups" ? 4 : 0);
 }
 
 /** @param {DifficultyId} difficulty */
 export function buildGiftsSessionRun(difficulty) {
   const salt = Math.floor(Math.random() * 10000);
-  const opening = generateGiftsPoolForBand(difficulty, 0, salt)
-    .sort((a, b) => giftsTaskDifficultyScore(a) - giftsTaskDifficultyScore(b));
-  const mid = generateGiftsPoolForBand(difficulty, 1, salt + 1)
-    .sort((a, b) => giftsTaskDifficultyScore(a) - giftsTaskDifficultyScore(b));
-  const final = generateGiftsPoolForBand(difficulty, 2, salt + 2)
-    .sort((a, b) => giftsTaskDifficultyScore(a) - giftsTaskDifficultyScore(b));
+  const allowRemEarly = difficulty !== "easy";
+  const sharePool = generateGiftsPoolForMode(difficulty, "share_equally", allowRemEarly || difficulty === "easy", salt);
+  const groupsPool = generateGiftsPoolForMode(difficulty, "make_groups", allowRemEarly, salt + 1);
+  const remPool = generateGiftsPoolForMode(
+    difficulty,
+    difficulty === "hard" ? "find_remainder" : "share_equally",
+    true,
+    salt + 2,
+  ).filter((t) => t.expectedAnswer.remainder > 0);
 
-  const run = pickSessionFromBands(opening, mid, final, giftsTaskKey, TASKS_PER_SESSION);
-  return run.map((task, i) => ({
+  /** @type {Record<string, GiftsTask[]>} */
+  const pools = {
+    "division.equal_sharing": sharePool.filter(
+      (t) => t.mode === "share_equally" && t.expectedAnswer.remainder === 0,
+    ),
+    "division.make_groups": groupsPool.filter((t) => t.expectedAnswer.remainder === 0),
+    "division.remainder": [
+      ...remPool,
+      ...sharePool.filter((t) => t.expectedAnswer.remainder > 0),
+      ...groupsPool.filter((t) => t.expectedAnswer.remainder > 0),
+    ],
+    "division.relation_to_multiplication": sharePool.filter(
+      (t) => t.expectedAnswer.remainder === 0 && t.skillId === "division.relation_to_multiplication",
+    ),
+  };
+
+  const quotas = giftsQuotas(difficulty);
+  let run = pickBalancedSession(pools, quotas, giftsTaskKey, TASKS_PER_SESSION);
+
+  if (run.length < TASKS_PER_SESSION) {
+    const opening = sharePool.sort((a, b) => giftsTaskDifficultyScore(a) - giftsTaskDifficultyScore(b));
+    const mid = shuffledCopy([...sharePool, ...groupsPool]);
+    const final = shuffledCopy([...groupsPool, ...remPool, ...sharePool]);
+    run = pickSessionFromBands(opening, mid, final, giftsTaskKey, TASKS_PER_SESSION);
+  }
+
+  // Easy: force share_equally early, make_groups late
+  if (difficulty === "easy") {
+    const shares = run.filter((t) => t.mode === "share_equally").slice(0, 12);
+    const groups = run.filter((t) => t.mode === "make_groups").slice(0, 6);
+    const rem = run.filter((t) => t.expectedAnswer.remainder > 0).slice(0, 2);
+    run = [...shares.slice(0, 10), ...groups.slice(0, 4), ...shares.slice(10), ...groups.slice(4), ...rem].slice(
+      0,
+      TASKS_PER_SESSION,
+    );
+    while (run.length < TASKS_PER_SESSION && shares.length) {
+      run.push(shares[run.length % shares.length]);
+    }
+  }
+
+  // Gradual difficulty: sort lightly within halves
+  const mid = Math.floor(run.length / 2);
+  const first = run.slice(0, mid).sort((a, b) => giftsTaskDifficultyScore(a) - giftsTaskDifficultyScore(b));
+  const second = run.slice(mid).sort((a, b) => giftsTaskDifficultyScore(a) - giftsTaskDifficultyScore(b));
+  run = [...first, ...second];
+
+  const used = new Set();
+  run = run.filter((t) => {
+    const k = giftsTaskKey(t);
+    if (used.has(k)) return false;
+    used.add(k);
+    return true;
+  });
+
+  while (run.length < TASKS_PER_SESSION) {
+    const extras = shuffledCopy([
+      ...sharePool.filter((t) => t.expectedAnswer.remainder === 0),
+      ...groupsPool,
+      ...sharePool.filter((t) => t.expectedAnswer.remainder > 0),
+    ]);
+    for (const t of extras) {
+      if (run.length >= TASKS_PER_SESSION) break;
+      const k = giftsTaskKey(t);
+      if (used.has(k)) continue;
+      used.add(k);
+      run.push(t);
+    }
+    break;
+  }
+
+  return run.slice(0, TASKS_PER_SESSION).map((task, i) => ({
     ...task,
     id: `g-${difficulty}-run-${i}`,
   }));
@@ -151,78 +285,59 @@ export function isGiftsWin(successful, total, mistakes, maxMistakes) {
   return successful >= total;
 }
 
-/**
- * @param {DifficultyId} difficulty
- * @param {{ salt?: number, stage?: number, band?: GiftsSessionBand }} [opts]
- */
-export function generateGiftsPool(difficulty, opts = {}) {
-  const salt = opts.salt ?? 0;
-  /** @type {GiftsTask[]} */
-  let pool = [];
-  const seen = new Set();
-  for (const band of /** @type {GiftsSessionBand[]} */ ([0, 1, 2])) {
-    for (const task of generateGiftsPoolForBand(difficulty, band, salt + band)) {
-      const key = giftsTaskKey(task);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      pool.push(task);
-    }
-  }
-
-  let guard = 0;
-  while (pool.length < PRODUCTION_MIN_POOL + 10 && guard < 1200) {
-    guard += 1;
-    const band = /** @type {GiftsSessionBand} */ (guard % 3);
-    for (const task of generateGiftsPoolForBand(difficulty, band, salt + guard)) {
-      const key = giftsTaskKey(task);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      pool.push(task);
-      if (pool.length >= PRODUCTION_MIN_POOL + 10) break;
-    }
-  }
-
-  return shuffle(pool);
-}
-
-/** @param {GiftsTask} task */
-export function giftsTaskKey(task) {
-  return `${task.total}x${task.children}-${task.itemLabel}`;
-}
-
-/** @param {GiftsTask} task @param {number} perChild @param {number} remainder */
-export function validateGiftsDivision(task, perChild, remainder) {
-  const { total, children } = task;
-  if (perChild < 0 || remainder < 0) return { ok: false };
-  if (perChild * children + remainder !== total) return { ok: false };
-  if (remainder >= children) return { ok: false };
-  const expectedPer = Math.floor(total / children);
-  const expectedRem = total % children;
-  if (perChild !== expectedPer || remainder !== expectedRem) return { ok: false };
-  return { ok: true, expectedPer, expectedRem };
+/** @param {GiftsTask} task @param {number} quotient @param {number} remainder */
+export function validateGiftsDivision(task, quotient, remainder) {
+  const divisor = task.operands.divisor;
+  const total = task.total;
+  if (quotient < 0 || remainder < 0) return { ok: false };
+  if (remainder >= divisor) return { ok: false };
+  if (quotient * divisor + remainder !== total) return { ok: false };
+  const expectedQuot = Math.floor(total / divisor);
+  const expectedRem = total % divisor;
+  if (quotient !== expectedQuot || remainder !== expectedRem) return { ok: false };
+  return { ok: true, expectedPer: expectedQuot, expectedRem };
 }
 
 /** @param {GiftsTask} task */
 export function giftsPrompt(task) {
-  const remainder = task.total % task.children;
-  if (remainder > 0) {
-    return `Leo has ${task.total} ${task.itemLabel}. ${task.children} kids arrived. How many does each kid get, and how many are left for Leo?`;
+  const label = giftsItemLabel(task);
+  const { total } = task;
+  if (task.mode === "make_groups") {
+    const size = task.groupSize ?? task.operands.divisor;
+    if (task.expectedAnswer.remainder > 0 || task.skillId === "division.remainder") {
+      return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "prompt_make_groups_with_remainder", { total, groupSize: size, itemLabel: label });
+    }
+    return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "prompt_make_groups", { total, groupSize: size, itemLabel: label });
   }
-  return `Leo has ${task.total} ${task.itemLabel}. ${task.children} kids arrived. How many does each kid get?`;
+  const children = task.children ?? task.operands.divisor;
+  if (task.expectedAnswer.remainder > 0 || task.mode === "find_remainder") {
+    return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "prompt_share_with_remainder", { total, children, itemLabel: label });
+  }
+  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "prompt_share_equal", { total, children, itemLabel: label });
+}
+
+/** @param {GiftsTask} task */
+export function giftsSolutionText(task) {
+  const q = task.expectedAnswer.quotient;
+  const r = task.expectedAnswer.remainder;
+  const d = task.operands.divisor;
+  if (task.mode === "make_groups") {
+    return r > 0
+      ? gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_groups_with_remainder", { quotient: q, divisor: d, remainder: r, total: task.total })
+      : gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_groups", { quotient: q, divisor: d, total: task.total });
+  }
+  return r > 0
+    ? gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_share_with_remainder", { quotient: q, divisor: d, remainder: r, total: task.total })
+    : gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "solution_share", { quotient: q, divisor: d, total: task.total });
 }
 
 /** @param {boolean} ok @param {number} perChild @param {number} remainder */
 export function giftsFeedback(ok, perChild, remainder) {
-  if (ok) {
-    if (remainder > 0) {
-      return `Nice! Each kid got ${perChild} and Leo has ${remainder} left.`;
-    }
-    return "Great! Every kid got the same amount.";
-  }
-  return "Almost! Check that every kid got an equal share and Leo isn't left with too many.";
+  if (ok) return remainder > 0 ? gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "feedback_ok_with_remainder", { perChild, remainder }) : gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "feedback_ok");
+  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", "feedback_almost");
 }
 
-const CHILD_EMOJIS = ["👧", "👦", "🧒", "👧🏽", "👦🏽", "🧒🏻", "👧🏻", "👦🏻", "🧒🏽", "👧🏼", "👦🏼", "🧒🏼"];
+const CHILD_EMOJIS = ["👧", "👦", "🧒", "👧🏻", "👦🏻", " compat", "👧🏼", "👦🏼", " compat", "👧🏽", "👦🏽", " compat"];
 
 /** @param {number} index */
 export function childEmojiAt(index) {
@@ -234,4 +349,33 @@ export function childrenGridClass(childCount) {
   if (childCount <= 4) return "gridFew";
   if (childCount <= 8) return "gridMedium";
   return "gridMany";
+}
+
+/** @param {GiftsTask} task */
+export function giftsDivisorLabel(task) {
+  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", task.mode === "make_groups" ? "label_bags" : "label_children");
+}
+
+/** @param {GiftsTask} task */
+export function giftsQuotientLabel(task) {
+  return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", task.mode === "make_groups" ? "quotient_full_bags" : "quotient_per_child");
+}
+
+const GIFTS_PACK = "components__educational-games__leo-gifts__leo-gifts-data";
+
+/** @param {GiftsTask | null | undefined} task @param {boolean} showRemainder */
+export function giftsIdleFeedback(task, showRemainder) {
+  if (task?.mode === "make_groups") {
+    return showRemainder
+      ? gamePackCopy(GIFTS_PACK, "idle_make_groups_remainder")
+      : gamePackCopy(GIFTS_PACK, "idle_make_groups");
+  }
+  return showRemainder
+    ? gamePackCopy(GIFTS_PACK, "idle_share_remainder")
+    : gamePackCopy(GIFTS_PACK, "idle_share_equal");
+}
+
+/** Compatibility: old field name */
+export function generateGiftsPool(difficulty, opts = {}) {
+  return generateGiftsPoolForMode(difficulty, "share_equally", difficulty !== "easy", opts.salt ?? 0);
 }

@@ -1,60 +1,124 @@
 /** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'build_fraction'|'identify_fraction'|'complete_whole'|'equivalent_fraction'|'compare_fractions'|'combine_visual_fractions'} PizzeriaVariant */
 
-/** @typedef {{ id: string, emoji: string, name: string }} PizzaTopping */
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+import {
+  createMathTask,
+  pickBalancedSession,
+  shuffledCopy,
+} from "../../../lib/educational-games/math-task-schema.js";
+import { TASKS_PER_SESSION } from "../../../lib/educational-games/educational-session-standard.js";
 
-/**
- * @typedef {{
- *   requirements: Record<string, number>
- *   filledSlices: number
- *   allowEmpty: boolean
- * }} OrderSpec
- */
+/** @typedef {{ id: string, emoji: string, nameKey: string }} PizzaTopping */
 
 /**
  * @typedef {{
  *   id: string
+ *   gameKey: 'leo-pizzeria'
+ *   difficulty: DifficultyId
+ *   skillId: string
+ *   variant: PizzeriaVariant
+ *   operands: Record<string, unknown>
+ *   expectedAnswer: unknown
+ *   representationType: string
  *   customerName: string
  *   customerEmoji: string
  *   greeting: string
  *   ticketLine: string
  *   sliceCount: number
- *   spec: OrderSpec
+ *   pizzaCount: number
+ *   toppingId: string
  *   timeLimitSec: number
- * }} PizzeriaCustomerOrder
+ *   prefilledCount?: number
+ *   compareA?: { n: number, d: number, toppingId: string }
+ *   compareB?: { n: number, d: number, toppingId: string }
+ *   sourceFraction?: { n: number, d: number }
+ *   targetFraction?: { n: number, d: number }
+ *   combineA?: { n: number, d: number }
+ *   combineB?: { n: number, d: number }
+ *   spec?: { requirements: Record<string, number>, filledSlices: number, allowEmpty: boolean, prefilledSlices?: number }
+ * }} PizzeriaTask
  */
 
-import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
-import pizzeriaGameplay from "../../../content-packs/en/games/leo-pizzeria/content.json" with { type: "json" };
+const PZ = "components__educational-games__leo-pizzeria__leo-pizzeria-data";
 
-export const CUSTOMERS_PER_LEVEL = 20;
+function pizzeriaCopy(key, vars) {
+  return gamePackCopy(PZ, key, vars);
+}
+
+function resolveTaskText(task, field) {
+  const keyField = field === "greeting" ? "greetingKey" : "ticketLineKey";
+  const key = task[keyField];
+  return key ? pizzeriaCopy(key) : task[field] || "";
+}
+
+/** Resolve greeting/ticketLine on task for runtime use */
+export function localizePizzeriaTask(task) {
+  return {
+    ...task,
+    greeting: resolveTaskText(task, "greeting"),
+    ticketLine: resolveTaskText(task, "ticketLine"),
+  };
+}
+
+export function toppingDisplayName(topping) {
+  return pizzeriaCopy(topping.nameKey);
+}
+
+export function difficultyHint(difficultyId) {
+  const diff = DIFFICULTIES[difficultyId];
+  return diff?.hintKey ? pizzeriaCopy(diff.hintKey) : "";
+}
+
+function validationMessage(result) {
+  if (result.messageKey) return pizzeriaCopy(result.messageKey);
+  return result.message || "";
+}
+
+function withValidationMessage(result) {
+  return { ...result, message: validationMessage(result) };
+}
+
+export function pizzeriaResultMessage(result) {
+  return validationMessage(result);
+}
+
+export const CUSTOMERS_PER_LEVEL = TASKS_PER_SESSION;
 
 /** @type {PizzaTopping[]} */
-export const TOPPINGS = pizzeriaGameplay.toppings;
+export const TOPPINGS = [
+  { id: "cheese", emoji: "🧀", nameKey: "topping_cheese" },
+  { id: "tomato", emoji: "🍅", nameKey: "topping_tomato" },
+  { id: "olive", emoji: "🫒", nameKey: "topping_olives" },
+  { id: "mushroom", emoji: "🍄", nameKey: "topping_mushrooms" },
+  { id: "pepper", emoji: "🫑", nameKey: "topping_pepper" },
+  { id: "basil", emoji: "🌿", nameKey: "topping_basil" },
+];
 
 export const DIFFICULTIES = {
   easy: {
     id: "easy",
-    label: pizzeriaGameplay.difficulties.easy.label,
-    sliceCount: 4,
-    hint: pizzeriaGameplay.difficulties.easy.hint,
+    label: pizzeriaCopy("difficulty_easy"),
+    denominators: [2, 3, 4],
+    hintKey: "hint_easy",
     maxMistakes: 5,
-    timeLimitsByBand: [45, 40, 35],
+    timeLimitsByBand: [50, 45, 40],
   },
   medium: {
     id: "medium",
-    label: pizzeriaGameplay.difficulties.medium.label,
-    sliceCount: 8,
-    hint: pizzeriaGameplay.difficulties.medium.hint,
+    label: pizzeriaCopy("difficulty_medium"),
+    denominators: [2, 3, 4, 6, 8],
+    hintKey: "hint_medium",
     maxMistakes: 4,
-    timeLimitsByBand: [35, 30, 25],
+    timeLimitsByBand: [45, 40, 35],
   },
   hard: {
     id: "hard",
-    label: pizzeriaGameplay.difficulties.hard.label,
-    sliceCount: 8,
-    hint: pizzeriaGameplay.difficulties.hard.hint,
+    label: pizzeriaCopy("difficulty_hard"),
+    denominators: [3, 4, 5, 6, 8, 10, 12],
+    hintKey: "hint_hard",
     maxMistakes: 3,
-    timeLimitsByBand: [30, 25, 20],
+    timeLimitsByBand: [40, 35, 30],
   },
 };
 
@@ -66,552 +130,424 @@ export const SCORE = {
   timeout: -5,
 };
 
-const SUCCESS_MESSAGES = pizzeriaGameplay.successMessages;
+const NAMES = [
+  ["Gal", "👧"],
+  ["Uri", "👦"],
+  ["Noa", "👧"],
+  ["Amit", "🧒"],
+  ["Mia", "👧"],
+  ["Daniel", "👦"],
+  ["Shir", "👧"],
+  ["Yoav", "👦"],
+];
 
-const THIRD_RE = /third|1\s*\/\s*3|2\s*\/\s*3|⅓|⅔/iu;
-
-/** @param {Record<string, number>} requirements @param {number} sliceCount @param {boolean} [fullPizza] */
-function spec(requirements, sliceCount, fullPizza = false) {
-  const sum = Object.values(requirements).reduce((a, b) => a + b, 0);
+/** more_than_one_whole removed until dual-pizza fill UI is complete. */
+/** @param {DifficultyId} difficulty */
+function pizzeriaQuotas(difficulty) {
+  if (difficulty === "easy") {
+    return {
+      "fractions.build_part_of_whole": 7,
+      "fractions.identify_numerator_denominator": 6,
+      "fractions.complete_whole": 5,
+      "fractions.equal_parts": 2,
+    };
+  }
+  if (difficulty === "medium") {
+    return {
+      "fractions.build_part_of_whole": 4,
+      "fractions.identify_numerator_denominator": 3,
+      "fractions.complete_whole": 3,
+      "fractions.equivalent": 5,
+      "fractions.compare": 3,
+      "fractions.combine_same_denominator": 2,
+    };
+  }
   return {
-    requirements,
-    filledSlices: fullPizza ? sliceCount : sum,
-    allowEmpty: !fullPizza && sum < sliceCount,
+    "fractions.build_part_of_whole": 3,
+    "fractions.identify_numerator_denominator": 2,
+    "fractions.complete_whole": 2,
+    "fractions.equivalent": 5,
+    "fractions.compare": 4,
+    "fractions.combine_same_denominator": 4,
   };
 }
 
-/** @param {Omit<PizzeriaCustomerOrder, 'sliceCount'|'spec'> & { spec: OrderSpec, sliceCount?: number }} order */
-function easyOrder(order) {
-  return { ...order, sliceCount: 4 };
+/** @param {number} n @param {number} d */
+export function gcd(n, d) {
+  let a = Math.abs(n);
+  let b = Math.abs(d);
+  while (b) {
+    const t = b;
+    b = a % b;
+    a = t;
+  }
+  return a || 1;
 }
 
-/** @param {Omit<PizzeriaCustomerOrder, 'sliceCount'|'spec'> & { spec: OrderSpec, sliceCount?: number }} order */
-function eightSliceOrder(order) {
-  return { ...order, sliceCount: 8 };
+export function simplifyFraction(n, d) {
+  const g = gcd(n, d);
+  return { n: n / g, d: d / g };
 }
 
-/** @type {PizzeriaCustomerOrder[]} */
-const EASY_ORDERS = [
-  easyOrder({
-    id: "easy-01",
-    customerName: "Sam",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_cheese_on_the_whole_pizza_please"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "cheese_on_the_whole_pizza"),
-    spec: spec({ cheese: 4 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-02",
-    customerName: "Alex",
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_tomato_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "tomato_half_2_of_4"),
-    spec: spec({ tomato: 2 }, 4),
-  }),
-  easyOrder({
-    id: "easy-03",
-    customerName: "Emma",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_olives_on_a_quarter_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "olives_a_quarter_1_of_4"),
-    spec: spec({ olive: 1 }, 4),
-  }),
-  easyOrder({
-    id: "easy-04",
-    customerName: "Noah",
-    customerEmoji: "🧒",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_cheese_and_half_with_tomato"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half"),
-    spec: spec({ cheese: 2, tomato: 2 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-05",
-    customerName: "Mia",
-    customerEmoji: "👧🏽",
-    greeting: "A quarter of the pizza with olives and the rest with cheese.",
-    ticketLine: "1 Olives 🫒 + 3 Cheese 🧀",
-    spec: spec({ olive: 1, cheese: 3 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-06",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "daniel"),
-    customerEmoji: "👦🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_half_2_of_4"),
-    spec: spec({ mushroom: 2 }, 4),
-  }),
-  easyOrder({
-    id: "easy-07",
-    customerName: "Lily",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_pepper_on_the_whole_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "pepper_on_the_whole_pizza"),
-    spec: spec({ pepper: 4 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-08",
-    customerName: "Josh",
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_basil_on_a_quarter_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "basil_a_quarter_1_of_4"),
-    spec: spec({ basil: 1 }, 4),
-  }),
-  easyOrder({
-    id: "easy-09",
-    customerName: "Tara",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_cheese_and_half_with_mushrooms"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_2"),
-    spec: spec({ cheese: 2, mushroom: 2 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-10",
-    customerName: "Ethan",
-    customerEmoji: "🧒",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_tomato_on_the_whole_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "tomato_on_the_whole_pizza"),
-    spec: spec({ tomato: 4 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-11",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "hannah"),
-    customerEmoji: "👧",
-    greeting: "A quarter of the pizza with tomato and the rest with cheese.",
-    ticketLine: "1 Tomato 🍅 + 3 Cheese 🧀",
-    spec: spec({ tomato: 1, cheese: 3 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-12",
-    customerName: "Nick",
-    customerEmoji: "👦🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_cheese_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "cheese_half_2_of_4"),
-    spec: spec({ cheese: 2 }, 4),
-  }),
-  easyOrder({
-    id: "easy-13",
-    customerName: "Ruby",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_olives_on_the_whole_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "olives_on_the_whole_pizza"),
-    spec: spec({ olive: 4 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-14",
-    customerName: "Ian",
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_pepper_and_half_with_cheese"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_3"),
-    spec: spec({ pepper: 2, cheese: 2 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-15",
-    customerName: "Liam",
-    customerEmoji: "🧑",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_basil_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "basil_half_2_of_4"),
-    spec: spec({ basil: 2 }, 4),
-  }),
-  easyOrder({
-    id: "easy-16",
-    customerName: "Maya",
-    customerEmoji: "👧🏽",
-    greeting: "A quarter of the pizza with mushrooms and the rest with cheese.",
-    ticketLine: "1 Mushrooms 🍄 + 3 Cheese 🧀",
-    spec: spec({ mushroom: 1, cheese: 3 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-17",
-    customerName: "Aaron",
-    customerEmoji: "👦🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_the_whole_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_on_the_whole_pizza"),
-    spec: spec({ mushroom: 4 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-18",
-    customerName: "Ava",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_olives_and_half_with_tomato"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_4"),
-    spec: spec({ olive: 2, tomato: 2 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-19",
-    customerName: "Adam",
-    customerEmoji: "🧒",
-    greeting: "A quarter of the pizza with pepper and the rest with tomato.",
-    ticketLine: "1 Pepper 🫑 + 3 Tomato 🍅",
-    spec: spec({ pepper: 1, tomato: 3 }, 4, true),
-  }),
-  easyOrder({
-    id: "easy-20",
-    customerName: "Nora",
-    customerEmoji: "👧🏻",
-    greeting: "A quarter of the pizza with basil and the rest with cheese.",
-    ticketLine: "1 Basil 🌿 + 3 Cheese 🧀",
-    spec: spec({ basil: 1, cheese: 3 }, 4, true),
-  }),
-];
+export function fractionsEqual(n1, d1, n2, d2) {
+  return n1 * d2 === n2 * d1;
+}
 
-/** @type {PizzeriaCustomerOrder[]} */
-const MEDIUM_ORDERS = [
-  eightSliceOrder({
-    id: "med-01",
-    customerName: "Sarah",
-    customerEmoji: "👩",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_half_4_of_8"),
-    spec: spec({ mushroom: 4 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-02",
-    customerName: "Dan",
-    customerEmoji: "👨",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_olives_on_a_quarter_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "olives_a_quarter_2_of_8"),
-    spec: spec({ olive: 2 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-03",
-    customerName: "Maya",
-    customerEmoji: "👧🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_cheese_on_three_quarters_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "cheese_6_of_8"),
-    spec: spec({ cheese: 6 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-04",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "johnny"),
-    customerEmoji: "👦🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_cheese_and_half_with_tomato"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half"),
-    spec: spec({ cheese: 4, tomato: 4 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-05",
-    customerName: "Ben",
-    customerEmoji: "👦",
-    greeting: "A quarter of the pizza with olives and three quarters with cheese.",
-    ticketLine: "2 Olives 🫒 + 6 Cheese 🧀",
-    spec: spec({ olive: 2, cheese: 6 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-06",
-    customerName: "Hazel",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_pepper_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "pepper_half_4_of_8"),
-    spec: spec({ pepper: 4 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-07",
-    customerName: "Cole",
-    customerEmoji: "👨🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_basil_on_a_quarter_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "basil_a_quarter_2_of_8"),
-    spec: spec({ basil: 2 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-08",
-    customerName: "Ruby",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_tomato_on_three_quarters_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "tomato_6_of_8"),
-    spec: spec({ tomato: 6 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-09",
-    customerName: "Andy",
-    customerEmoji: "👦🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_olives_and_half_with_tomato"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_4"),
-    spec: spec({ olive: 4, tomato: 4 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-10",
-    customerName: "Leah",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_cheese_on_the_whole_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "cheese_on_the_whole_pizza"),
-    spec: spec({ cheese: 8 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-11",
-    customerName: "Oscar",
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_a_quarter_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_a_quarter_2_of_8"),
-    spec: spec({ mushroom: 2 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-12",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "taylor"),
-    customerEmoji: "👩",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_olives_on_three_quarters_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "olives_6_of_8"),
-    spec: spec({ olive: 6 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-13",
-    customerName: "Ari",
-    customerEmoji: "👧🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_mushrooms_and_half_with_cheese"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_5"),
-    spec: spec({ mushroom: 4, cheese: 4 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-14",
-    customerName: "Joel",
-    customerEmoji: "👦🏻",
-    greeting: "A quarter of the pizza with pepper and the rest with cheese.",
-    ticketLine: "2 Pepper 🫑 + 6 Cheese 🧀",
-    spec: spec({ pepper: 2, cheese: 6 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-15",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "morgan"),
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_tomato_on_half_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "tomato_half_4_of_8"),
-    spec: spec({ tomato: 4 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-16",
-    customerName: "Isaac",
-    customerEmoji: "👨",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_basil_and_half_with_pepper"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_6"),
-    spec: spec({ basil: 4, pepper: 4 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-17",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "sophie"),
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_three_quarters_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_6_of_8"),
-    spec: spec({ mushroom: 6 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-18",
-    customerName: "Ryan",
-    customerEmoji: "👦",
-    greeting: "A quarter of the pizza with tomato and three quarters with olives.",
-    ticketLine: "2 Tomato 🍅 + 6 Olives 🫒",
-    spec: spec({ tomato: 2, olive: 6 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "med-19",
-    customerName: "Ivy",
-    customerEmoji: "👧🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_pepper_on_three_quarters_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "pepper_6_of_8"),
-    spec: spec({ pepper: 6 }, 8),
-  }),
-  eightSliceOrder({
-    id: "med-20",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "austin"),
-    customerEmoji: "👦🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_the_pizza_with_cheese_and_half_with_basil"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "half_half_7"),
-    spec: spec({ cheese: 4, basil: 4 }, 8, true),
-  }),
-];
+export function compareFractions(n1, d1, n2, d2) {
+  const left = n1 * d2;
+  const right = n2 * d1;
+  if (left > right) return "greater";
+  if (left < right) return "less";
+  return "equal";
+}
 
-/** @type {PizzeriaCustomerOrder[]} */
-const HARD_ORDERS = [
-  eightSliceOrder({
-    id: "hard-01",
-    customerName: "Leah",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_olives_on_an_eighth_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "olives_an_eighth_1_of_8"),
-    spec: spec({ olive: 1 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-02",
-    customerName: "Owen",
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_five_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_5_of_8"),
-    spec: spec({ mushroom: 5 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-03",
-    customerName: "Emma",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "three_eighths_tomato_and_five_eighths_cheese"),
-    ticketLine: "3 Tomato 🍅 + 5 Cheese 🧀",
-    spec: spec({ tomato: 3, cheese: 5 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-04",
-    customerName: "Tyler",
-    customerEmoji: "🧑",
-    greeting: "A quarter of the pizza with olives, a quarter with mushrooms, and half with cheese.",
-    ticketLine: "2 Olives 🫒 + 2 Mushrooms 🍄 + 4 Cheese 🧀",
-    spec: spec({ olive: 2, mushroom: 2, cheese: 4 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-05",
-    customerName: "Mila",
-    customerEmoji: "👧🏽",
-    greeting: "Put cheese on all the slices that didn't get tomato. Tomato on three eighths.",
-    ticketLine: "3 Tomato 🍅 + 5 Cheese 🧀",
-    spec: spec({ tomato: 3, cheese: 5 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-06",
-    customerName: "Ryan",
-    customerEmoji: "👨🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_basil_on_an_eighth_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "basil_an_eighth_1_of_8"),
-    spec: spec({ basil: 1 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-07",
-    customerName: "Ella",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_cheese_on_seven_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "cheese_7_of_8"),
-    spec: spec({ cheese: 7 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-08",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "jonathan"),
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "three_eighths_pepper_and_five_eighths_cheese"),
-    ticketLine: "3 Pepper 🫑 + 5 Cheese 🧀",
-    spec: spec({ pepper: 3, cheese: 5 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-09",
-    customerName: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "daphne"),
-    customerEmoji: "👩",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_tomato_on_two_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "tomato_2_of_8"),
-    spec: spec({ tomato: 2 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-10",
-    customerName: "Asher",
-    customerEmoji: "👦🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "an_eighth_mushrooms_and_the_rest_cheese"),
-    ticketLine: "1 Mushrooms 🍄 + 7 Cheese 🧀",
-    spec: spec({ mushroom: 1, cheese: 7 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-11",
-    customerName: "Kara",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_olives_on_six_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "olives_6_of_8"),
-    spec: spec({ olive: 6 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-12",
-    customerName: "Noah",
-    customerEmoji: "🧒",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "two_eighths_basil_and_six_eighths_mushrooms"),
-    ticketLine: "2 Basil 🌿 + 6 Mushrooms 🍄",
-    spec: spec({ basil: 2, mushroom: 6 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-13",
-    customerName: "Sarah",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_cheese_on_five_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "cheese_5_of_8"),
-    spec: spec({ cheese: 5 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-14",
-    customerName: "Nate",
-    customerEmoji: "👦🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "an_eighth_pepper_two_eighths_tomato_and_the_rest_cheese"),
-    ticketLine: "1 Pepper 🫑 + 2 Tomato 🍅 + 5 Cheese 🧀",
-    spec: spec({ pepper: 1, tomato: 2, cheese: 5 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-15",
-    customerName: "Addie",
-    customerEmoji: "👧🏽",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "three_eighths_olives_two_eighths_pepper_and_the_rest_cheese"),
-    ticketLine: "3 Olives 🫒 + 2 Pepper 🫑 + 3 Cheese 🧀",
-    spec: spec({ olive: 3, pepper: 2, cheese: 3 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-16",
-    customerName: "Alex",
-    customerEmoji: "👦",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_mushrooms_on_three_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "mushrooms_3_of_8"),
-    spec: spec({ mushroom: 3 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-17",
-    customerName: "Maya",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_tomato_on_one_eighth_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "tomato_an_eighth_1_of_8"),
-    spec: spec({ tomato: 1 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-18",
-    customerName: "Sam",
-    customerEmoji: "👧",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "four_eighths_basil_and_four_eighths_cheese"),
-    ticketLine: "4 Basil 🌿 + 4 Cheese 🧀",
-    spec: spec({ basil: 4, cheese: 4 }, 8, true),
-  }),
-  eightSliceOrder({
-    id: "hard-19",
-    customerName: "Ethan",
-    customerEmoji: "👦🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "put_pepper_on_five_eighths_of_the_pizza"),
-    ticketLine: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "pepper_5_of_8"),
-    spec: spec({ pepper: 5 }, 8),
-  }),
-  eightSliceOrder({
-    id: "hard-20",
-    customerName: "Emma",
-    customerEmoji: "👧🏻",
-    greeting: gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "two_eighths_olives_two_eighths_mushrooms_and_four_eighths_tomato"),
-    ticketLine: "2 Olives 🫒 + 2 Mushrooms 🍄 + 4 Tomato 🍅",
-    spec: spec({ olive: 2, mushroom: 2, tomato: 4 }, 8, true),
-  }),
-];
+/** @param {number} sourceN @param {number} sourceD @param {number} targetD */
+export function equivalentTargetNumerator(sourceN, sourceD, targetD) {
+  const raw = (sourceN * targetD) / sourceD;
+  if (!Number.isInteger(raw)) return null;
+  if (raw < 0 || raw > targetD) return null;
+  return raw;
+}
 
-/** @type {Record<DifficultyId, PizzeriaCustomerOrder[]>} */
-export const CUSTOMERS_BY_DIFFICULTY = {
-  easy: EASY_ORDERS,
-  medium: MEDIUM_ORDERS,
-  hard: HARD_ORDERS,
-};
+/** @param {DifficultyId} difficulty @param {number} index */
+function getTimeLimit(difficulty, index) {
+  const diff = DIFFICULTIES[difficulty];
+  const band = index < 5 ? 0 : index < 15 ? 1 : 2;
+  return diff.timeLimitsByBand[band];
+}
+
+/**
+ * @param {DifficultyId} difficulty
+ * @param {PizzeriaVariant} variant
+ * @param {number} salt
+ */
+function generatePoolForVariant(difficulty, variant, salt = 0) {
+  const denoms = DIFFICULTIES[difficulty].denominators;
+  /** @type {PizzeriaTask[]} */
+  const pool = [];
+  const seen = new Set();
+
+  for (let di = 0; di < denoms.length; di += 1) {
+    const denom = denoms[di];
+    for (let num = 0; num <= denom; num += 1) {
+      if (variant === "identify_fraction" && num === 0) continue;
+      if (variant === "build_fraction" && num === 0) continue;
+      if (variant === "complete_whole" && (num === 0 || num >= denom)) continue;
+      if (variant === "combine_visual_fractions" && num === 0) continue;
+
+      for (let t = 0; t < TOPPINGS.length; t += 1) {
+        const topping = TOPPINGS[(t + salt) % TOPPINGS.length];
+        const [name, emoji] = NAMES[(pool.length + salt) % NAMES.length];
+        const key = `${variant}-${num}-${denom}-${topping.id}`;
+        if (seen.has(key)) continue;
+
+        /** @type {PizzeriaTask|null} */
+        let task = null;
+
+        if (variant === "build_fraction") {
+          seen.add(key);
+          task = {
+            ...createMathTask({
+              id: `pz-${difficulty}-build-${pool.length}`,
+              gameKey: "leo-pizzeria",
+              difficulty,
+              skillId: num === denom ? "fractions.equal_parts" : "fractions.build_part_of_whole",
+              variant,
+              operands: { numerator: num, denominator: denom, toppingId: topping.id },
+              expectedAnswer: { numerator: num, denominator: denom },
+              representationType: "pizza_slices",
+            }),
+            customerName: name,
+            customerEmoji: emoji,
+            greetingKey: "greeting_build",
+            ticketLineKey: "ticket_build",
+            sliceCount: denom,
+            pizzaCount: 1,
+            toppingId: topping.id,
+            timeLimitSec: 40,
+            sourceFraction: { n: num, d: denom },
+            spec: {
+              requirements: { [topping.id]: num },
+              filledSlices: num,
+              allowEmpty: num < denom,
+            },
+          };
+        } else if (variant === "identify_fraction") {
+          seen.add(key);
+          task = {
+            ...createMathTask({
+              id: `pz-${difficulty}-id-${pool.length}`,
+              gameKey: "leo-pizzeria",
+              difficulty,
+              skillId: "fractions.identify_numerator_denominator",
+              variant,
+              operands: { numerator: num, denominator: denom, toppingId: topping.id, markedSlices: num },
+              expectedAnswer: { numerator: num, denominator: denom },
+              representationType: "pizza_slices",
+            }),
+            customerName: name,
+            customerEmoji: emoji,
+            greetingKey: "greeting_identify",
+            ticketLineKey: "ticket_identify",
+            sliceCount: denom,
+            pizzaCount: 1,
+            toppingId: topping.id,
+            timeLimitSec: 40,
+            prefilledCount: num,
+            spec: {
+              requirements: { [topping.id]: num },
+              filledSlices: num,
+              allowEmpty: true,
+            },
+          };
+        } else if (variant === "complete_whole") {
+          const missing = denom - num;
+          seen.add(key);
+          task = {
+            ...createMathTask({
+              id: `pz-${difficulty}-comp-${pool.length}`,
+              gameKey: "leo-pizzeria",
+              difficulty,
+              skillId: "fractions.complete_whole",
+              variant,
+              operands: {
+                givenNumerator: num,
+                denominator: denom,
+                missing,
+                toppingId: topping.id,
+              },
+              expectedAnswer: { numerator: missing, denominator: denom, given: num },
+              representationType: "pizza_slices",
+            }),
+            customerName: name,
+            customerEmoji: emoji,
+            greetingKey: "greeting_complete",
+            ticketLineKey: "ticket_complete",
+            sliceCount: denom,
+            pizzaCount: 1,
+            toppingId: topping.id,
+            timeLimitSec: 40,
+            prefilledCount: num,
+            sourceFraction: { n: num, d: denom },
+            spec: {
+              requirements: { [topping.id]: missing },
+              filledSlices: missing,
+              allowEmpty: false,
+              prefilledSlices: num,
+            },
+          };
+        } else if (variant === "equivalent_fraction") {
+          for (const targetD of denoms) {
+            if (targetD === denom) continue;
+            const targetN = equivalentTargetNumerator(num, denom, targetD);
+            if (targetN == null) continue;
+            if (targetN === 0 && num !== 0) continue;
+            const eqKey = `${variant}-${num}-${denom}->${targetN}-${targetD}-${topping.id}`;
+            if (seen.has(eqKey)) continue;
+            seen.add(eqKey);
+            pool.push({
+              ...createMathTask({
+                id: `pz-${difficulty}-eq-${pool.length}`,
+                gameKey: "leo-pizzeria",
+                difficulty,
+                skillId: "fractions.equivalent",
+                variant,
+                operands: {
+                  a: { n: num, d: denom },
+                  b: { n: targetN, d: targetD },
+                  toppingId: topping.id,
+                },
+                expectedAnswer: { n1: num, d1: denom, n2: targetN, d2: targetD },
+                representationType: "dual_pizza",
+              }),
+              customerName: name,
+              customerEmoji: emoji,
+              greetingKey: "greeting_equivalent",
+              ticketLineKey: "ticket_equivalent",
+              sliceCount: targetD,
+              pizzaCount: 1,
+              toppingId: topping.id,
+              timeLimitSec: 45,
+              sourceFraction: { n: num, d: denom },
+              targetFraction: { n: targetN, d: targetD },
+              spec: {
+                requirements: { [topping.id]: targetN },
+                filledSlices: targetN,
+                allowEmpty: targetN < targetD,
+              },
+            });
+          }
+          continue;
+        } else if (variant === "compare_fractions") {
+          for (let dj = 0; dj < denoms.length; dj += 1) {
+            const d2 = denoms[dj];
+            for (let n2 = 1; n2 <= d2; n2 += 1) {
+              if (num === n2 && denom === d2) continue;
+              // Keep pairs with same denominator, or related dens (clear visual compare)
+              if (denom !== d2 && denom % d2 !== 0 && d2 % denom !== 0) continue;
+              const cmp = compareFractions(num, denom, n2, d2);
+              const cmpKey = `cmp-${num}-${denom}-${n2}-${d2}`;
+              if (seen.has(cmpKey)) continue;
+              seen.add(cmpKey);
+              const toppingB = TOPPINGS[(t + 1 + salt) % TOPPINGS.length];
+              pool.push({
+                ...createMathTask({
+                  id: `pz-${difficulty}-cmp-${pool.length}`,
+                  gameKey: "leo-pizzeria",
+                  difficulty,
+                  skillId: "fractions.compare",
+                  variant,
+                  operands: { a: { n: num, d: denom }, b: { n: n2, d: d2 } },
+                  expectedAnswer: { relation: cmp },
+                  representationType: "dual_pizza",
+                }),
+                customerName: name,
+                customerEmoji: emoji,
+                greetingKey: "greeting_compare",
+                ticketLineKey: "ticket_compare",
+                sliceCount: Math.max(denom, d2),
+                pizzaCount: 2,
+                toppingId: topping.id,
+                timeLimitSec: 40,
+                compareA: { n: num, d: denom, toppingId: topping.id },
+                compareB: { n: n2, d: d2, toppingId: toppingB.id },
+              });
+            }
+          }
+          continue;
+        } else if (variant === "combine_visual_fractions") {
+          // Same denominator only — clear visual
+          if (num >= denom) continue;
+          for (let add = 1; add <= denom - num; add += 1) {
+            const sum = num + add;
+            const combKey = key + `-add${add}`;
+            if (seen.has(combKey)) continue;
+            seen.add(combKey);
+            pool.push({
+              ...createMathTask({
+                id: `pz-${difficulty}-comb-${pool.length}`,
+                gameKey: "leo-pizzeria",
+                difficulty,
+                skillId: "fractions.combine_same_denominator",
+                variant,
+                operands: {
+                  a: { n: num, d: denom },
+                  b: { n: add, d: denom },
+                  toppingId: topping.id,
+                },
+                expectedAnswer: { numerator: sum, denominator: denom },
+                representationType: "pizza_slices",
+              }),
+              customerName: name,
+              customerEmoji: emoji,
+              greetingKey: "greeting_combine",
+              ticketLineKey: "ticket_combine",
+              sliceCount: denom,
+              pizzaCount: 1,
+              toppingId: topping.id,
+              timeLimitSec: 45,
+              combineA: { n: num, d: denom },
+              combineB: { n: add, d: denom },
+              targetFraction: { n: sum, d: denom },
+              spec: {
+                requirements: { [topping.id]: sum },
+                filledSlices: sum,
+                allowEmpty: sum < denom,
+              },
+            });
+          }
+          continue;
+        }
+
+        if (task) pool.push(task);
+      }
+    }
+  }
+
+  return shuffledCopy(pool);
+}
+
+/** @param {PizzeriaTask} task */
+export function pizzeriaTaskKey(task) {
+  return `${task.variant}|${JSON.stringify(task.operands)}|${task.toppingId}|${task.sliceCount}`;
+}
+
+/** @param {DifficultyId} difficulty */
+export function pickCustomersForRun(difficulty) {
+  const quotas = pizzeriaQuotas(difficulty);
+  const salt = Math.floor(Math.random() * 10000);
+
+  const variantBySkill = {
+    "fractions.build_part_of_whole": "build_fraction",
+    "fractions.read_fraction": "identify_fraction",
+    "fractions.identify_numerator_denominator": "identify_fraction",
+    "fractions.complete_whole": "complete_whole",
+    "fractions.equal_parts": "build_fraction",
+    "fractions.equivalent": "equivalent_fraction",
+    "fractions.compare": "compare_fractions",
+    "fractions.combine_same_denominator": "combine_visual_fractions",
+  };
+
+  /** @type {Record<string, PizzeriaTask[]>} */
+  const pools = {};
+  for (const skill of Object.keys(quotas)) {
+    const variant = /** @type {PizzeriaVariant} */ (variantBySkill[skill] || "build_fraction");
+    let pool = generatePoolForVariant(difficulty, variant, salt);
+    if (skill === "fractions.equal_parts") {
+      pool = pool.filter((t) => t.operands?.numerator === t.operands?.denominator);
+    } else if (skill === "fractions.build_part_of_whole") {
+      pool = pool.filter((t) => (t.operands?.numerator ?? 0) < (t.operands?.denominator ?? 1));
+    }
+    pools[skill] = pool;
+  }
+
+  let run = pickBalancedSession(pools, quotas, pizzeriaTaskKey, CUSTOMERS_PER_LEVEL);
+  const used = new Set();
+  run = run.filter((t) => {
+    const k = pizzeriaTaskKey(t);
+    if (used.has(k)) return false;
+    used.add(k);
+    return true;
+  });
+
+  while (run.length < CUSTOMERS_PER_LEVEL) {
+    const extra = generatePoolForVariant(difficulty, "build_fraction", salt + run.length);
+    for (const t of extra) {
+      if (run.length >= CUSTOMERS_PER_LEVEL) break;
+      const k = pizzeriaTaskKey(t);
+      if (used.has(k)) continue;
+      used.add(k);
+      run.push(t);
+    }
+    break;
+  }
+
+  return run.slice(0, CUSTOMERS_PER_LEVEL).map((order, index) =>
+    localizePizzeriaTask({
+      ...order,
+      id: `pz-${difficulty}-run-${index}`,
+      timeLimitSec: getTimeLimit(difficulty, index),
+    }),
+  );
+}
 
 /** @param {Record<number, string>} sliceMap */
 function countByTopping(sliceMap) {
   /** @type {Record<string, number>} */
   const counts = {};
   for (const toppingId of Object.values(sliceMap)) {
-    if (!toppingId) continue;
+    if (!toppingId || toppingId === "__prefilled__") continue;
     counts[toppingId] = (counts[toppingId] || 0) + 1;
   }
   return counts;
 }
 
-/** @param {Record<number, string>} sliceMap */
 function filledCount(sliceMap) {
-  return Object.values(sliceMap).filter(Boolean).length;
-}
-
-/** @param {number} n */
-function successMessage(n) {
-  return SUCCESS_MESSAGES[n % SUCCESS_MESSAGES.length];
+  return Object.values(sliceMap).filter((v) => v && v !== "__prefilled__").length;
 }
 
 /**
- * @param {OrderSpec} orderSpec
+ * @param {{ requirements: Record<string, number>, filledSlices: number, allowEmpty: boolean }} orderSpec
  * @param {number} sliceCount
  * @param {Record<number, string>} sliceMap
  */
@@ -621,15 +557,15 @@ export function validateOrderSpec(orderSpec, sliceCount, sliceMap) {
   const { requirements, filledSlices, allowEmpty } = orderSpec;
 
   for (const toppingId of Object.values(sliceMap)) {
-    if (toppingId && requirements[toppingId] == null) {
-      return { ok: false, message: "Heads up: there's an extra topping on the pizza." };
+    if (toppingId && toppingId !== "__prefilled__" && requirements[toppingId] == null) {
+      return withValidationMessage({ ok: false, messageKey: "error_extra_topping" });
     }
   }
 
   for (const [toppingId, required] of Object.entries(requirements)) {
     const actual = counts[toppingId] || 0;
     if (actual > required) {
-      return { ok: false, message: "Heads up: there's an extra topping on the pizza." };
+      return withValidationMessage({ ok: false, messageKey: "error_extra_topping" });
     }
   }
 
@@ -640,81 +576,73 @@ export function validateOrderSpec(orderSpec, sliceCount, sliceMap) {
   }
 
   if (missingTotal > 0) {
-    if (missingTotal === 1) {
-      return { ok: false, message: "One more slice is missing from the order." };
-    }
-    return { ok: false, message: "Almost! Check how many slices each topping got." };
+    return withValidationMessage({ ok: false, messageKey: "error_almost_check_slices" });
   }
 
   if (filled > filledSlices) {
-    return { ok: false, message: "Heads up: there's an extra topping on the pizza." };
+    return withValidationMessage({ ok: false, messageKey: "error_extra_topping" });
   }
 
-  if (!allowEmpty && filled < sliceCount) {
-    const gap = sliceCount - filled;
-    if (gap === 1) {
-      return { ok: false, message: "One more slice is missing from the order." };
-    }
-    return { ok: false, message: "Almost! Check how many slices each topping got." };
+  if (!allowEmpty && filled < filledSlices) {
+    return withValidationMessage({ ok: false, messageKey: "error_almost_check_slices" });
   }
 
-  if (allowEmpty && filled > filledSlices) {
-    return { ok: false, message: "Heads up: there's an extra topping on the pizza." };
-  }
-
-  return { ok: true, message: successMessage(filled) };
+  return withValidationMessage({ ok: true, messageKey: "success_pizza_ready" });
 }
 
-/** @param {PizzeriaCustomerOrder} order @param {Record<number, string>} sliceMap */
+/** @param {PizzeriaTask} order @param {Record<number, string>} sliceMap */
 export function validateCustomerOrder(order, sliceMap) {
+  if (!order.spec) return withValidationMessage({ ok: false, messageKey: "error_invalid_task" });
   return validateOrderSpec(order.spec, order.sliceCount, sliceMap);
 }
 
-/** @param {DifficultyId} difficultyId @param {number} index 0-based */
-export function getCustomerTimeLimit(difficultyId, index) {
-  const diff = DIFFICULTIES[difficultyId] ?? DIFFICULTIES.easy;
-  const band = index < 5 ? 0 : index < 15 ? 1 : 2;
-  return diff.timeLimitsByBand[band];
+/**
+ * @param {PizzeriaTask} order
+ * @param {{ numerator?: number, denominator?: number, relation?: string, sliceMap?: Record<number, string> }} answer
+ */
+export function validatePizzeriaAnswer(order, answer) {
+  if (order.variant === "identify_fraction") {
+    const exp = /** @type {{ numerator: number, denominator: number }} */ (order.expectedAnswer);
+    const ok =
+      answer.numerator === exp.numerator &&
+      answer.denominator === exp.denominator &&
+      answer.denominator === order.sliceCount;
+    return withValidationMessage({ ok, messageKey: ok ? "feedback_identify_ok" : "feedback_identify_almost" });
+  }
+  if (order.variant === "compare_fractions") {
+    const exp = /** @type {{ relation: string }} */ (order.expectedAnswer);
+    const ok = answer.relation === exp.relation;
+    return withValidationMessage({ ok, messageKey: ok ? "feedback_compare_ok" : "feedback_compare_almost" });
+  }
+  if (answer.sliceMap && order.spec) {
+    return validateOrderSpec(order.spec, order.sliceCount, answer.sliceMap);
+  }
+  return withValidationMessage({ ok: false, messageKey: "error_missing_answer" });
 }
 
-/** Difficulty weight for ordering validation (lower = opening). */
+export function getCustomerTimeLimit(difficultyId, index) {
+  return getTimeLimit(difficultyId, index);
+}
+
 export function pizzeriaOrderDifficultyScore(order) {
-  const reqSum = Object.values(order.spec.requirements).reduce((a, b) => a + b, 0);
-  const toppingCount = Object.keys(order.spec.requirements).length;
-  let score = reqSum + toppingCount * 2;
-  if (order.spec.allowEmpty && reqSum < order.sliceCount) score -= 1;
-  const text = `${order.greeting} ${order.ticketLine}`;
-  if (/didn't get|the rest|\brest\b|three|five|six|seven/i.test(text)) score += 8;
-  if (/eighth|5 of|6 of|7 of/i.test(text)) score += 4;
+  let score = order.sliceCount || 4;
+  if (order.variant === "equivalent_fraction") score += 10;
+  if (order.variant === "compare_fractions") score += 12;
+  if (order.variant === "combine_visual_fractions") score += 8;
   return score;
 }
 
-/** @param {DifficultyId} difficulty */
-export function pickCustomersForRun(difficulty) {
-  const pool = CUSTOMERS_BY_DIFFICULTY[difficulty] ?? CUSTOMERS_BY_DIFFICULTY.easy;
-  return pool.slice(0, CUSTOMERS_PER_LEVEL).map((order, index) => ({
-    ...order,
-    timeLimitSec: getCustomerTimeLimit(difficulty, index),
-  }));
-}
-
-/**
- * @param {number} successfulCustomers
- * @param {number} customersTotal
- * @param {number} mistakes
- * @param {number} maxMistakes
- */
 export function isPizzeriaWin(successfulCustomers, customersTotal, mistakes, maxMistakes) {
   if (mistakes > maxMistakes) return false;
   return successfulCustomers >= customersTotal;
 }
 
-/** @param {string | null} toppingId */
 export function toppingById(toppingId) {
-  return TOPPINGS.find((t) => t.id === toppingId);
+  const t = TOPPINGS.find((x) => x.id === toppingId);
+  if (!t) return undefined;
+  return { ...t, name: toppingDisplayName(t) };
 }
 
-/** @param {number} index @param {number} total @param {number} radius @param {number} cx @param {number} cy */
 export function wedgePath(index, total, radius, cx, cy) {
   const start = ((index * 360) / total - 90) * (Math.PI / 180);
   const end = (((index + 1) * 360) / total - 90) * (Math.PI / 180);
@@ -726,7 +654,6 @@ export function wedgePath(index, total, radius, cx, cy) {
   return `M ${cx} ${cy} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
 }
 
-/** @param {number} index @param {number} total @param {number} radius @param {number} cx @param {number} cy */
 export function wedgeCenter(index, total, radius, cx, cy) {
   const mid = ((index + 0.5) * 360) / total - 90;
   const rad = (mid * Math.PI) / 180;
@@ -734,60 +661,178 @@ export function wedgeCenter(index, total, radius, cx, cy) {
   return { x: cx + dist * Math.cos(rad), y: cy + dist * Math.sin(rad) };
 }
 
-/** @returns {{ ok: boolean, issues: string[] }} */
+/** @param {PizzeriaTask} order */
+export function pizzeriaSolutionText(order) {
+  if (order.variant === "compare_fractions") {
+    const exp = /** @type {{ relation: string }} */ (order.expectedAnswer);
+    if (exp.relation === "greater") return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_compare_greater");
+    if (exp.relation === "less") return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_compare_less");
+    return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_compare_equal");
+  }
+  if (order.variant === "identify_fraction") {
+    return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_identify");
+  }
+  if (order.variant === "equivalent_fraction" && order.sourceFraction && order.targetFraction) {
+    return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_equivalent");
+  }
+  if (order.variant === "complete_whole") {
+    const exp = /** @type {{ given: number, numerator: number, denominator: number }} */ (order.expectedAnswer);
+    return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_complete", { given: exp.given, added: exp.numerator, total: exp.denominator });
+  }
+  if (order.variant === "combine_visual_fractions" && order.combineA && order.combineB) {
+    return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_combine");
+  }
+  return gamePackCopy("components__educational-games__leo-pizzeria__leo-pizzeria-data", "solution_build");
+}
+
+/** Structured solution payload for UI (no English enums exposed). */
+export function pizzeriaSolutionPayload(order) {
+  if (order.variant === "compare_fractions") {
+    return {
+      type: "compare",
+      relation: /** @type {{ relation: string }} */ (order.expectedAnswer).relation,
+      a: order.compareA,
+      b: order.compareB,
+    };
+  }
+  if (order.variant === "identify_fraction") {
+    return {
+      type: "identify",
+      numerator: order.expectedAnswer.numerator,
+      denominator: order.sliceCount,
+      toppingId: order.toppingId,
+      marked: order.prefilledCount,
+    };
+  }
+  if (order.variant === "equivalent_fraction") {
+    return {
+      type: "equivalent",
+      source: order.sourceFraction,
+      target: order.targetFraction,
+      toppingId: order.toppingId,
+    };
+  }
+  if (order.variant === "complete_whole") {
+    return {
+      type: "complete",
+      given: order.prefilledCount,
+      missing: order.expectedAnswer.numerator,
+      denominator: order.sliceCount,
+      toppingId: order.toppingId,
+    };
+  }
+  if (order.variant === "combine_visual_fractions") {
+    return {
+      type: "combine",
+      a: order.combineA,
+      b: order.combineB,
+      result: order.targetFraction,
+      toppingId: order.toppingId,
+    };
+  }
+  return {
+    type: "build",
+    numerator: order.operands.numerator ?? order.expectedAnswer.numerator,
+    denominator: order.sliceCount,
+    toppingId: order.toppingId,
+  };
+}
+
 export function auditPizzeriaContent() {
   /** @type {string[]} */
   const issues = [];
-
-  for (const [diff, orders] of Object.entries(CUSTOMERS_BY_DIFFICULTY)) {
-    if (orders.length < CUSTOMERS_PER_LEVEL) {
-      issues.push(`${diff}: pool has only ${orders.length} orders (need ${CUSTOMERS_PER_LEVEL})`);
+  for (const diff of /** @type {DifficultyId[]} */ (["easy", "medium", "hard"])) {
+    const run = pickCustomersForRun(diff);
+    if (run.length !== CUSTOMERS_PER_LEVEL) {
+      issues.push(`${diff}: expected ${CUSTOMERS_PER_LEVEL} got ${run.length}`);
     }
-
-    const expectedSlices = DIFFICULTIES[/** @type {DifficultyId} */ (diff)].sliceCount;
-
-    for (const order of orders) {
+    for (const order of run) {
+      if (!order.skillId || !order.variant || !order.id) {
+        issues.push(`${order.id || "?"}: missing schema`);
+      }
+      if (order.variant === "more_than_one_whole") {
+        issues.push(`${order.id}: more_than_one_whole should be disabled`);
+      }
+      if (order.variant === "equivalent_fraction") {
+        const a = order.sourceFraction;
+        const b = order.targetFraction;
+        if (!a || !b || !fractionsEqual(a.n, a.d, b.n, b.d)) {
+          issues.push(`${order.id}: not equivalent`);
+        }
+        const tn = equivalentTargetNumerator(a.n, a.d, b.d);
+        if (tn !== b.n) issues.push(`${order.id}: target numerator not integer path`);
+      }
+      if (order.variant === "identify_fraction") {
+        if (order.expectedAnswer.denominator !== order.sliceCount) {
+          issues.push(`${order.id}: identify denom != sliceCount`);
+        }
+        if (order.expectedAnswer.numerator !== order.prefilledCount) {
+          issues.push(`${order.id}: identify num != marked`);
+        }
+      }
+      if (order.variant === "complete_whole") {
+        const g = order.operands.givenNumerator;
+        const m = order.operands.missing;
+        if (g + m !== order.operands.denominator) issues.push(`${order.id}: complete math`);
+      }
+      if (order.variant === "compare_fractions") {
+        if (!order.compareA || !order.compareB) issues.push(`${order.id}: missing compare pizzas`);
+        const rel = compareFractions(order.compareA.n, order.compareA.d, order.compareB.n, order.compareB.d);
+        if (rel !== order.expectedAnswer.relation) issues.push(`${order.id}: compare wrong`);
+      }
       const text = `${order.greeting} ${order.ticketLine}`;
-      if (THIRD_RE.test(text)) {
-        issues.push(`${order.id}: contains forbidden third-fraction wording`);
+      if (/\b(LESS|GREATER|EQUAL)\b/.test(text)) {
+        issues.push(`${order.id}: enum leak in text`);
       }
-      if (order.sliceCount !== expectedSlices) {
-        issues.push(`${order.id}: sliceCount ${order.sliceCount} != ${expectedSlices}`);
-      }
-
-      const reqSum = Object.values(order.spec.requirements).reduce((a, b) => a + b, 0);
-      if (reqSum > order.sliceCount) {
-        issues.push(`${order.id}: requirements sum ${reqSum} exceeds sliceCount`);
-      }
-      if (!order.spec.allowEmpty && order.spec.filledSlices !== order.sliceCount) {
-        issues.push(`${order.id}: full pizza spec mismatch`);
-      }
-      if (order.spec.allowEmpty && order.spec.filledSlices !== reqSum) {
-        issues.push(`${order.id}: partial pizza filledSlices mismatch`);
+      if (/מתוך/.test(text)) issues.push(`${order.id}: N of M leak`);
+      if (/\d+\s*\/\s*\d+/.test(text)) {
+        issues.push(`${order.id}: slash fraction in text (use FractionDisplay)`);
       }
     }
   }
-
   return { ok: issues.length === 0, issues };
 }
 
-/** Sample orders for docs/tests — first 5 per level. */
+/** Stress: many sessions per difficulty. */
+export function stressAuditPizzeria(sessionsPerDiff = 100) {
+  /** @type {string[]} */
+  const issues = [];
+  for (const diff of /** @type {DifficultyId[]} */ (["easy", "medium", "hard"])) {
+    for (let s = 0; s < sessionsPerDiff; s += 1) {
+      const run = pickCustomersForRun(diff);
+      if (run.length !== 20) issues.push(`${diff}#${s}: len ${run.length}`);
+      for (const order of run) {
+        if (order.variant === "equivalent_fraction") {
+          const a = order.sourceFraction;
+          const b = order.targetFraction;
+          if (!a || !b || !fractionsEqual(a.n, a.d, b.n, b.d)) {
+            issues.push(`${diff}#${s} ${order.id}: bad equivalent`);
+          }
+          if (!Number.isInteger(b.n)) issues.push(`${diff}#${s} ${order.id}: non-int target`);
+        }
+        if (order.variant === "identify_fraction") {
+          if (order.expectedAnswer.denominator !== order.sliceCount) {
+            issues.push(`${diff}#${s} ${order.id}: identify denom`);
+          }
+        }
+        if (order.variant === "compare_fractions" && (!order.compareA || !order.compareB)) {
+          issues.push(`${diff}#${s} ${order.id}: compare missing pizzas`);
+        }
+        if (order.variant === "combine_visual_fractions") {
+          const a = order.combineA;
+          const b = order.combineB;
+          if (!a || !b || a.d !== b.d) issues.push(`${diff}#${s} ${order.id}: combine denoms`);
+        }
+      }
+    }
+  }
+  return { ok: issues.length === 0, issues: issues.slice(0, 40), issueCount: issues.length };
+}
+
 export function sampleOrdersByDifficulty() {
   return {
-    easy: EASY_ORDERS.slice(0, 5).map((o) => ({
-      greeting: o.greeting,
-      requirements: o.spec.requirements,
-      sliceCount: o.sliceCount,
-    })),
-    medium: MEDIUM_ORDERS.slice(0, 5).map((o) => ({
-      greeting: o.greeting,
-      requirements: o.spec.requirements,
-      sliceCount: o.sliceCount,
-    })),
-    hard: HARD_ORDERS.slice(0, 5).map((o) => ({
-      greeting: o.greeting,
-      requirements: o.spec.requirements,
-      sliceCount: o.sliceCount,
-    })),
+    easy: pickCustomersForRun("easy").slice(0, 5),
+    medium: pickCustomersForRun("medium").slice(0, 5),
+    hard: pickCustomersForRun("hard").slice(0, 5),
   };
 }

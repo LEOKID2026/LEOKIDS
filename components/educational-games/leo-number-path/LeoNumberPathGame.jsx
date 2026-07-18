@@ -12,6 +12,7 @@ import {
   formatSelectedPath,
   isNumberPathWin,
   pathFeedback,
+  pathSolutionText,
   SCORE,
   TASKS_PER_SESSION,
   validatePath,
@@ -205,9 +206,13 @@ export default function LeoNumberPathGame({
     }
 
     if (attemptNum >= MAX_ATTEMPTS_PER_TASK) {
+      const solution = pathSolutionText(currentTask);
+      setFeedback(solution);
+      setSelected([...currentTask.correctPath]);
+      playFeedback(solution);
       window.setTimeout(() => {
         advanceTask();
-      }, 1800);
+      }, 2200);
     }
   }, [
     currentTask,
@@ -265,7 +270,7 @@ export default function LeoNumberPathGame({
   }, [phase, productionMode, endMetrics]);
 
   return (
-    <div className={`${frame.shell} ${frame.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="ltr">
+    <div className={`${frame.shell} ${frame.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`}>
       <header className={frame.header}>
         <Link href={backHref} className={frame.hudChip}>
           Back
@@ -298,9 +303,9 @@ export default function LeoNumberPathGame({
       {!productionMode && phase === "intro" ? (
         <div className={frame.screenCenter}>
           <p className={frame.introHero}>🔢🦁</p>
-          <h1 className={frame.introTitle}>Leo&apos;s Number Path</h1>
+          <h1 className={frame.introTitle}>Leo's Number Path</h1>
           <p className={frame.introText}>
-            Pick numbers on the path by the rule — skips, even/odd, and multiples!
+            Choose numbers on the path by rule — skip-counting, even/odd, and multiples!
           </p>
           <div className={frame.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -316,7 +321,7 @@ export default function LeoNumberPathGame({
           </div>
           <EducationalDifficultyGradeHint className={`${frame.introText} opacity-70`} style={{ fontSize: "0.72rem" }} />
           <p className={frame.introText} style={{ fontSize: "0.78rem" }}>
-            {TASKS_PER_SESSION} tasks · up to {MAX_ATTEMPTS_PER_TASK} tries per task
+            {TASKS_PER_SESSION} tasks · up to {MAX_ATTEMPTS_PER_TASK} attempts per task
           </p>
           <button type="button" className={frame.startBtn} onClick={startGame}>
             Start game
@@ -338,7 +343,7 @@ export default function LeoNumberPathGame({
                 </span>
                 <div className={shop.customerSpeechWrap}>
                   <div className={shop.missionRow}>
-                    <p className={shop.customerName}>Number mission</p>
+                    <p className={shop.customerName}>Number task</p>
                     <EducationalGameInstructionReplay
                       text={instructionText}
                       onReplay={replayInstruction}
@@ -347,7 +352,7 @@ export default function LeoNumberPathGame({
                   <p className={shop.missionText}>
                     {currentTask.promptHe}
                     <span className={shop.missionTicket}>
-                      🧾 Try {Math.max(1, attemptsOnTask || 1)}/{MAX_ATTEMPTS_PER_TASK}
+                      🧾 Attempt {Math.max(1, attemptsOnTask || 1)}/{MAX_ATTEMPTS_PER_TASK}
                     </span>
                   </p>
                 </div>
@@ -357,7 +362,7 @@ export default function LeoNumberPathGame({
             <section className={`${shop.workCol} ${styles.pathWorkCol}`}>
               <div className={shop.workFrame}>
                 <div className={shop.workSurface}>
-                  <p className={shop.workSurfaceTitle}>🪨 Pick numbers</p>
+                  <p className={shop.workSurfaceTitle}>🪨 Choose numbers</p>
                   <div className={`${shop.workSurfaceBody} ${styles.pathPanel}`}>
                     <div
                       className={`${styles.stonePath} ${stoneGridSizeClass} ${styles.stonePathFit}`}
@@ -409,8 +414,8 @@ export default function LeoNumberPathGame({
                 <p className={shop.feedbackText}>
                   {feedback ||
                     (attemptsOnTask > 0
-                      ? `Try ${attemptsOnTask}/${MAX_ATTEMPTS_PER_TASK} — tap the numbers, then check`
-                      : "Tap the numbers, then check your path")}
+                      ? `Attempt ${attemptsOnTask}/${MAX_ATTEMPTS_PER_TASK} — tap numbers then check`
+                      : "Tap numbers then check the path")}
                 </p>
               </div>
             </aside>
@@ -423,7 +428,7 @@ export default function LeoNumberPathGame({
                   disabled={checkState === "ok"}
                   onClick={runCheck}
                 >
-                  Check path
+                  Check Path
                 </button>
                 <button
                   type="button"

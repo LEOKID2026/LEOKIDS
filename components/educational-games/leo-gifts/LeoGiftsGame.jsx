@@ -17,7 +17,10 @@ import {
   buildGiftsSessionRun,
   DIFFICULTIES,
   giftsFeedback,
+  giftsIdleFeedback,
   giftsPrompt,
+  giftsQuotientLabel,
+  giftsSolutionText,
   giftsTimeLimitForTask,
   isGiftsWin,
   TASKS_PER_SESSION,
@@ -28,6 +31,8 @@ import { sharedStyles as s } from "../../prototypes/dev/learning/shared/Learning
 import shop from "../shared/educational-game-shop-layout.module.css";
 import gameUi from "../../prototypes/dev/learning/leo-gifts/LeoGiftsGame.module.css";
 import styles from "./LeoGiftsGame.module.css";
+
+const MAX_ATTEMPTS = 3;
 
 /** @typedef {import('./leo-gifts-data.js').DifficultyId} DifficultyId */
 
@@ -73,6 +78,7 @@ export default function LeoGiftsGame({
   const [timeLeft, setTimeLeft] = useState(45);
   const [checkState, setCheckState] = useState(/** @type {'idle'|'ok'|'bad'} */ ("idle"));
   const [feedback, setFeedback] = useState("");
+  const [attemptsOnTask, setAttemptsOnTask] = useState(0);
 
   const instructionText = phase === "play" && task ? giftsPrompt(task) : "";
   const {
@@ -89,14 +95,24 @@ export default function LeoGiftsGame({
 
   const maxMistakes = maxMistakesForDifficulty(difficulty);
   const diffConfig = { label: DIFFICULTIES[difficulty].label, maxMistakes };
-  const gridClass = task ? gameUi[childrenGridClass(task.children)] : "";
-  const showRemainder = difficulty !== "easy";
+  const slotCount = task
+    ? task.mode === "make_groups"
+      ? (task.groupSize ?? task.operands?.divisor ?? 2)
+      : (task.children ?? task.operands?.divisor ?? 2)
+    : 2;
+  const gridClass = task ? gameUi[childrenGridClass(slotCount)] : "";
+  const showRemainder = task
+    ? (difficulty !== "easy" ||
+        (task.expectedAnswer?.remainder ?? 0) > 0 ||
+        task.mode === "find_remainder")
+    : difficulty !== "easy";
 
   const resetTaskUi = useCallback(() => {
     setPerChild(0);
     setRemainder(0);
     setCheckState("idle");
     setFeedback("");
+    setAttemptsOnTask(0);
     timeoutHandledRef.current = false;
   }, []);
 
@@ -162,28 +178,42 @@ export default function LeoGiftsGame({
   const advanceAfterSuccess = useCallback(() => {
     const nextSuccess = successCount + 1;
     setSuccessCount(nextSuccess);
-    if (nextSuccess >= TASKS_PER_SESSION) {
+    const nextIdx = taskIndex + 1;
+    if (nextIdx >= sessionTasksRef.current.length || nextSuccess >= TASKS_PER_SESSION) {
       window.setTimeout(() => endRun("won"), 1200);
       return;
     }
-    loadTaskAtIndex(nextSuccess);
-  }, [successCount, loadTaskAtIndex, endRun]);
+    loadTaskAtIndex(nextIdx);
+  }, [successCount, taskIndex, loadTaskAtIndex, endRun]);
+
+  const revealAndAdvance = useCallback(
+    (solutionText) => {
+      timerPausedRef.current = true;
+      setCheckState("bad");
+      setFeedback(solutionText);
+      playFeedback(solutionText);
+      window.setTimeout(() => {
+        if (mistakes >= maxMistakes) return;
+        const nextIdx = taskIndex + 1;
+        if (nextIdx >= sessionTasksRef.current.length) {
+          endRun(successCount >= TASKS_PER_SESSION ? "won" : "lost");
+          return;
+        }
+        loadTaskAtIndex(nextIdx);
+      }, 2000);
+    },
+    [mistakes, maxMistakes, successCount, taskIndex, loadTaskAtIndex, endRun, playFeedback],
+  );
 
   const handleTimeout = useCallback(() => {
     if (timeoutHandledRef.current || timerPausedRef.current) return;
     timeoutHandledRef.current = true;
-    timerPausedRef.current = true;
-    setCheckState("bad");
-    const timeoutText = "Time's up! Let's try a new question.";
-    setFeedback(timeoutText);
-    onTimeUp();
-    playFeedback(timeoutText);
     registerMistake();
-    window.setTimeout(() => {
-      if (mistakes + 1 >= maxMistakes) return;
-      loadTaskAtIndex(taskIndex);
-    }, 1400);
-  }, [registerMistake, loadTaskAtIndex, taskIndex, mistakes, maxMistakes, onTimeUp, playFeedback]);
+    onTimeUp();
+    if (task) {
+      revealAndAdvance(`Time's up! ${giftsSolutionText(task)}`);
+    }
+  }, [registerMistake, onTimeUp, task, revealAndAdvance]);
 
   useEffect(() => {
     if (phase !== "play" || !task || timerPausedRef.current) return undefined;
@@ -209,7 +239,7 @@ export default function LeoGiftsGame({
       answerTimesRef.current.push(elapsed);
       const bonus = calcTimeBonus(timeLeft, timeLimitSec);
       setCheckState("ok");
-      const okText = giftsFeedback(true, perChild, remainder);
+      const okText = `${giftsFeedback(true, perChild, remainder)} ${giftsSolutionText(task)}`;
       setFeedback(okText);
       onCorrect();
       playFeedback(okText);
@@ -228,12 +258,18 @@ export default function LeoGiftsGame({
       }, 1400);
       return;
     }
+    const nextAttempt = attemptsOnTask + 1;
+    setAttemptsOnTask(nextAttempt);
     setCheckState("bad");
+    onWrong();
+    registerMistake();
+    if (nextAttempt >= MAX_ATTEMPTS) {
+      revealAndAdvance(giftsSolutionText(task));
+      return;
+    }
     const badText = giftsFeedback(false, perChild, remainder);
     setFeedback(badText);
-    onWrong();
     playFeedback(badText);
-    registerMistake();
   }, [
     task,
     phase,
@@ -241,8 +277,10 @@ export default function LeoGiftsGame({
     remainder,
     timeLeft,
     timeLimitSec,
+    attemptsOnTask,
     advanceAfterSuccess,
     registerMistake,
+    revealAndAdvance,
     onCorrect,
     onWrong,
     onStreak,
@@ -291,12 +329,16 @@ export default function LeoGiftsGame({
         : shop.feedbackNeutral,
   ].join(" ");
 
-  const idleFeedback = showRemainder
-    ? "Choose how many each kid gets and how many Leo keeps"
-    : "Choose how many treats each kid gets";
+  const idleFeedback = giftsIdleFeedback(task, showRemainder);
+
+  const isMakeGroups = task?.mode === "make_groups";
+  const quotientLabel = task ? giftsQuotientLabel(task) : "Per child";
+  // For make_groups: show bags equal to current quotient answer (perChild); for share: show children
+  const visualCount = isMakeGroups ? Math.max(1, perChild || 1) : slotCount;
+  const visualPerSlot = isMakeGroups ? (task?.groupSize ?? task?.operands?.divisor ?? 1) : perChild;
 
   return (
-    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="ltr">
+    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`}>
       <header className={s.header}>
         <Link href={backHref} className={s.hudChip}>
           Back
@@ -329,8 +371,8 @@ export default function LeoGiftsGame({
       {!productionMode && phase === "intro" ? (
         <div className={styles.screenCenter}>
           <p className={styles.introHero}>🍬🦁</p>
-          <h1 className={styles.introTitle}>Leo&apos;s Candy Shop</h1>
-          <p className={styles.introText}>Help Leo share treats evenly among the kids!</p>
+          <h1 className={styles.introTitle}>Leo's Candy Shop</h1>
+          <p className={styles.introText}>Help Leo divide treats equally among the children!</p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
@@ -364,7 +406,7 @@ export default function LeoGiftsGame({
                 </span>
                 <div className={shop.customerSpeechWrap}>
                   <div className={shop.missionRow}>
-                    <p className={shop.customerName}>Mission</p>
+                    <p className={shop.customerName}>Task</p>
                     <EducationalGameInstructionReplay
                       text={instructionText}
                       onReplay={replayInstruction}
@@ -378,15 +420,21 @@ export default function LeoGiftsGame({
             <section className={`${shop.workCol} ${styles.giftsWorkCol}`}>
               <div className={shop.workFrame}>
                 <div className={shop.workSurface}>
-                  <p className={shop.workSurfaceTitle}>👧👦 The kids</p>
+                  <p className={shop.workSurfaceTitle}>
+                    {isMakeGroups ? "🛍️ Bags" : "👧👦 Children"}
+                  </p>
                   <div className={`${shop.workSurfaceBody} ${styles.childrenGridFit}`}>
-                    <div className={`${gameUi.childrenGrid} ${gridClass} ${styles.childrenGridInner}`}>
-                      {Array.from({ length: task.children }, (_, i) => (
+                    <div className={`${gameUi.childrenGrid} ${gameUi[childrenGridClass(visualCount)] || gridClass} ${styles.childrenGridInner}`}>
+                      {Array.from({ length: isMakeGroups ? Math.min(12, visualCount) : slotCount }, (_, i) => (
                         <div key={i} className={gameUi.childCard}>
-                          <span className={gameUi.childLabel}>Kid {i + 1}</span>
-                          <span className={gameUi.childEmoji}>{childEmojiAt(i)}</span>
+                          <span className={gameUi.childLabel}>
+                            {isMakeGroups ? `Bag ${i + 1}` : `Child ${i + 1}`}
+                          </span>
+                          <span className={gameUi.childEmoji}>
+                            {isMakeGroups ? "🛍️" : childEmojiAt(i)}
+                          </span>
                           <span className={gameUi.childGift}>{task.itemEmoji}</span>
-                          <span className={gameUi.childCount}>{perChild}</span>
+                          <span className={gameUi.childCount}>{isMakeGroups ? visualPerSlot : perChild}</span>
                         </div>
                       ))}
                     </div>
@@ -397,12 +445,12 @@ export default function LeoGiftsGame({
 
             <aside className={shop.sideCol}>
               <div className={`${s.panel} ${shop.toolsPanel} ${shop.toolsPanelLarge}`}>
-                <p className={shop.toolsTitle}>🎛️ Share</p>
+                <p className={shop.toolsTitle}>Division</p>
                 <div
                   className={`${shop.controlsStackInline} ${!showRemainder ? shop.controlsStackSingle : ""}`}
                 >
                   <div className={shop.controlRow}>
-                    <span className={shop.controlLabel}>Each kid</span>
+                    <span className={shop.controlLabel}>{quotientLabel}</span>
                     <div className={shop.stepperRow}>
                       <button
                         type="button"
@@ -431,7 +479,7 @@ export default function LeoGiftsGame({
                   </div>
                   {showRemainder ? (
                     <div className={shop.controlRow}>
-                      <span className={shop.controlLabel}>Left for Leo 🧺</span>
+                      <span className={shop.controlLabel}>Remainder</span>
                       <div className={shop.stepperRow}>
                         <button
                           type="button"
@@ -470,7 +518,7 @@ export default function LeoGiftsGame({
             <div className={shop.bottomBar}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} onClick={runCheck}>
-                  Check share
+                  Check Division
                 </button>
                 <button type="button" className={shop.secondaryBtn} onClick={resetTaskUi}>
                   Reset

@@ -1,6 +1,9 @@
 {
   "copy": {
     "the_customer_waited_too_long": "The customer waited too long",
+    "aria_first_pizza": "First pizza",
+    "aria_second_pizza": "Second pizza",
+    "aria_work_pizza": "Work pizza",
     "pizza_in_progress": "Pizza in progress",
     "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "Customers walk into the pizzeria — make them exactly the pizza they ordered!",
     "setphase_intro_new_game": "setPhase(\"intro\")}>\n                New game",

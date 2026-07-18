@@ -14,6 +14,7 @@ import { maxMistakesForDifficulty } from "../../../lib/educational-games/educati
 import {
   bakeryFeedback,
   bakeryPrompt,
+  bakerySolutionText,
   bakeryTimeLimitForTask,
   buildBakerySessionRun,
   DIFFICULTIES,
@@ -27,6 +28,8 @@ import { sharedStyles as s } from "../../prototypes/dev/learning/shared/Learning
 import shop from "../shared/educational-game-shop-layout.module.css";
 import gameUi from "../../prototypes/dev/learning/leo-bakery/LeoBakeryGame.module.css";
 import styles from "./LeoBakeryGame.module.css";
+
+const MAX_ATTEMPTS = 3;
 
 /** @typedef {import('./leo-bakery-data.js').DifficultyId} DifficultyId */
 
@@ -60,6 +63,8 @@ export default function LeoBakeryGame({
   const [task, setTask] = useState(/** @type {import('./leo-bakery-data.js').BakeryTask|null} */ (null));
   const [trays, setTrays] = useState(1);
   const [perTray, setPerTray] = useState(1);
+  const [enteredTotal, setEnteredTotal] = useState(0);
+  const [attemptsOnTask, setAttemptsOnTask] = useState(0);
   const [score, setScore] = useState(0);
   const [mistakes, setMistakes] = useState(0);
   const [successCount, setSuccessCount] = useState(0);
@@ -88,25 +93,35 @@ export default function LeoBakeryGame({
 
   const maxMistakes = maxMistakesForDifficulty(difficulty);
   const diffConfig = { label: DIFFICULTIES[difficulty].label, maxMistakes };
-  const total = trays * perTray;
+  const computedTotal = trays * perTray;
 
   const lockTrays = task?.mode === "findTotal" || task?.mode === "findPerTray";
-  const lockPerTray = task?.mode === "findTrays";
-  const lockTotal = task?.mode === "build" || task?.mode === "findTrays" || task?.mode === "findPerTray";
+  const lockPerTray = task?.mode === "findTrays" || task?.mode === "findTotal";
+  const needsEnteredTotal = task?.mode === "findTotal";
 
   const displayPerTray = task?.mode === "findTrays" ? (task.perTray ?? 1) : perTray;
+  const displayTrays = task?.mode === "findTotal" || task?.mode === "findPerTray" ? (task.trays ?? trays) : trays;
+
+  const compactVisual =
+    task?.representationType === "numeric" ||
+    (task?.representationType === "mixed" && displayTrays > 4);
 
   const trayPreview = useMemo(() => {
     if (!task) return [];
-    return Array.from({ length: trays }, (_, i) => ({
+    if (compactVisual) {
+      return [{ id: 0, count: displayPerTray, label: `× ${displayTrays} trays` }];
+    }
+    return Array.from({ length: Math.min(12, displayTrays) }, (_, i) => ({
       id: i,
       count: displayPerTray,
     }));
-  }, [task, trays, displayPerTray]);
+  }, [task, displayTrays, displayPerTray, compactVisual]);
 
   const resetTaskUi = useCallback(() => {
     setTrays(1);
     setPerTray(1);
+    setEnteredTotal(0);
+    setAttemptsOnTask(0);
     setCheckState("idle");
     setFeedback("");
     timeoutHandledRef.current = false;
@@ -114,8 +129,24 @@ export default function LeoBakeryGame({
 
   useEffect(() => {
     if (!task) return;
-    setTrays(1);
-    setPerTray(task.mode === "findTrays" ? (task.perTray ?? 1) : 1);
+    if (task.mode === "findTotal") {
+      setTrays(task.trays ?? 1);
+      setPerTray(task.perTray ?? 1);
+      setEnteredTotal(0);
+    } else if (task.mode === "findTrays") {
+      setTrays(1);
+      setPerTray(task.perTray ?? 1);
+      setEnteredTotal(0);
+    } else if (task.mode === "findPerTray") {
+      setTrays(task.trays ?? 1);
+      setPerTray(1);
+      setEnteredTotal(0);
+    } else {
+      setTrays(1);
+      setPerTray(1);
+      setEnteredTotal(0);
+    }
+    setAttemptsOnTask(0);
     setCheckState("idle");
     setFeedback("");
   }, [task]);
@@ -182,28 +213,40 @@ export default function LeoBakeryGame({
   const advanceAfterSuccess = useCallback(() => {
     const nextSuccess = successCount + 1;
     setSuccessCount(nextSuccess);
-    if (nextSuccess >= TASKS_PER_SESSION) {
+    const nextIdx = taskIndex + 1;
+    if (nextIdx >= sessionTasksRef.current.length || nextSuccess >= TASKS_PER_SESSION) {
       window.setTimeout(() => endRun("won"), 1200);
       return;
     }
-    loadTaskAtIndex(nextSuccess);
-  }, [successCount, loadTaskAtIndex, endRun]);
+    loadTaskAtIndex(nextIdx);
+  }, [successCount, taskIndex, loadTaskAtIndex, endRun]);
+
+  const revealAndAdvance = useCallback(
+    (solutionText) => {
+      timerPausedRef.current = true;
+      setCheckState("bad");
+      setFeedback(solutionText);
+      playFeedback(solutionText);
+      window.setTimeout(() => {
+        if (mistakes >= maxMistakes) return;
+        const nextIdx = taskIndex + 1;
+        if (nextIdx >= sessionTasksRef.current.length) {
+          endRun(successCount >= TASKS_PER_SESSION ? "won" : "lost");
+          return;
+        }
+        loadTaskAtIndex(nextIdx);
+      }, 2000);
+    },
+    [mistakes, maxMistakes, successCount, taskIndex, loadTaskAtIndex, endRun, playFeedback],
+  );
 
   const handleTimeout = useCallback(() => {
     if (timeoutHandledRef.current || timerPausedRef.current) return;
     timeoutHandledRef.current = true;
-    timerPausedRef.current = true;
-    setCheckState("bad");
-    const timeoutText = "Time's up! Let's try a new question.";
-    setFeedback(timeoutText);
-    onTimeUp();
-    playFeedback(timeoutText);
     registerMistake();
-    window.setTimeout(() => {
-      if (mistakes + 1 >= maxMistakes) return;
-      loadTaskAtIndex(taskIndex);
-    }, 1400);
-  }, [registerMistake, loadTaskAtIndex, taskIndex, mistakes, maxMistakes, onTimeUp, playFeedback]);
+    onTimeUp();
+    if (task) revealAndAdvance(`Time's up! ${bakerySolutionText(task)}`);
+  }, [registerMistake, onTimeUp, task, revealAndAdvance]);
 
   useEffect(() => {
     if (phase !== "play" || !task || timerPausedRef.current) return undefined;
@@ -228,16 +271,24 @@ export default function LeoBakeryGame({
   const runCheck = useCallback(() => {
     if (!task || phase !== "play" || timerPausedRef.current) return;
     const answerPerTray = task.mode === "findTrays" ? (task.perTray ?? 1) : perTray;
-    const answerTotal =
-      task.mode === "findTrays" || task.mode === "findPerTray" ? (task.total ?? 0) : total;
-    const result = validateBakery(task, { trays, perTray: answerPerTray, total: answerTotal });
+    const answerTrays = task.mode === "findPerTray" || task.mode === "findTotal" ? (task.trays ?? trays) : trays;
+    const answerTotal = needsEnteredTotal
+      ? enteredTotal
+      : task.mode === "findTrays" || task.mode === "findPerTray"
+        ? (task.total ?? 0)
+        : answerTrays * answerPerTray;
+    const result = validateBakery(task, {
+      trays: task.mode === "findTrays" ? trays : answerTrays,
+      perTray: task.mode === "findPerTray" ? perTray : answerPerTray,
+      total: answerTotal,
+    });
     if (result.ok) {
       timerPausedRef.current = true;
       const elapsed = Math.max(0.5, (Date.now() - questionStartRef.current) / 1000);
       answerTimesRef.current.push(elapsed);
       const bonus = calcTimeBonus(timeLeft, timeLimitSec);
       setCheckState("ok");
-      const okText = bakeryFeedback(true);
+      const okText = `${bakeryFeedback(true)} ${bakerySolutionText(task)}`;
       setFeedback(okText);
       onCorrect();
       playFeedback(okText);
@@ -256,22 +307,31 @@ export default function LeoBakeryGame({
       }, 1400);
       return;
     }
+    const nextAttempt = attemptsOnTask + 1;
+    setAttemptsOnTask(nextAttempt);
     setCheckState("bad");
+    onWrong();
+    registerMistake();
+    if (nextAttempt >= MAX_ATTEMPTS) {
+      revealAndAdvance(bakerySolutionText(task));
+      return;
+    }
     const badText = bakeryFeedback(false);
     setFeedback(badText);
-    onWrong();
     playFeedback(badText);
-    registerMistake();
   }, [
     task,
     phase,
     trays,
     perTray,
-    total,
+    enteredTotal,
+    needsEnteredTotal,
     timeLeft,
     timeLimitSec,
+    attemptsOnTask,
     advanceAfterSuccess,
     registerMistake,
+    revealAndAdvance,
     onCorrect,
     onWrong,
     onStreak,
@@ -307,7 +367,7 @@ export default function LeoBakeryGame({
   }, [phase, productionMode, endMetrics]);
 
   const trayGridSizeClass =
-    trays <= 4 ? styles.trayGridFew : trays <= 8 ? styles.trayGridMedium : styles.trayGridMany;
+    displayTrays <= 4 ? styles.trayGridFew : displayTrays <= 8 ? styles.trayGridMedium : styles.trayGridMany;
 
   const avgDisplay =
     answerTimesRef.current.length > 0
@@ -324,7 +384,7 @@ export default function LeoBakeryGame({
   ].join(" ");
 
   return (
-    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`} dir="ltr">
+    <div className={`${s.shell} ${s.shellWarm} ${productionMode ? styles.shellEmbedded : ""}`}>
       <header className={s.header}>
         <Link href={backHref} className={s.hudChip}>
           Back
@@ -357,8 +417,8 @@ export default function LeoBakeryGame({
       {!productionMode && phase === "intro" ? (
         <div className={styles.screenCenter}>
           <p className={styles.introHero}>🥐🦁</p>
-          <h1 className={styles.introTitle}>Leo&apos;s Bakery</h1>
-          <p className={styles.introText}>Build trays with equal amounts of treats — multiplication and equal groups!</p>
+          <h1 className={styles.introTitle}>Leo's Bakery</h1>
+          <p className={styles.introText}>Build trays with equal baked goods — multiplication and equal groups!</p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
@@ -381,7 +441,7 @@ export default function LeoBakeryGame({
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🥐 Leo&apos;s Bakery · Stage {internalStage}
+            🥐 Leo's Bakery · Stage {internalStage}
           </p>
 
           <div className={`${shop.shopGrid} ${styles.bakeryShopGrid}`} data-educational-workplace-grid="">
@@ -406,16 +466,22 @@ export default function LeoBakeryGame({
             <section className={`${shop.workCol} ${styles.bakeryWorkCol}`}>
               <div className={shop.workFrame}>
                 <div className={shop.workSurface}>
-                  <p className={shop.workSurfaceTitle}>🧁 Your trays</p>
+                  <p className={shop.workSurfaceTitle}>�Your trays</p>
                   <div className={`${shop.workSurfaceBody} ${styles.trayGridFit}`}>
                     <div
                       className={`${gameUi.trayGrid} ${styles.trayGridInner} ${trayGridSizeClass}`}
                     >
                       {trayPreview.map((tr) => {
-                        const disp = trayItemDisplay(tr.count, task.itemEmoji);
+                        const disp = trayItemDisplay(
+                          tr.count,
+                          task.itemEmoji,
+                          task.representationType || "visual",
+                        );
                         return (
                           <div key={tr.id} className={gameUi.trayCard}>
-                            <span className={gameUi.trayLabel}>Tray {tr.id + 1}</span>
+                            <span className={gameUi.trayLabel}>
+                              {tr.label || `Tray ${tr.id + 1}`}
+                            </span>
                             <span className={`${gameUi.trayItems} ${styles.bakeryTrayItems}`}>{disp.text}</span>
                           </div>
                         );
@@ -428,7 +494,7 @@ export default function LeoBakeryGame({
 
             <aside className={shop.sideCol}>
               <div className={`${s.panel} ${shop.toolsPanel} ${shop.toolsPanelLarge}`}>
-                <p className={shop.toolsTitle}>🎛️ Settings</p>
+                <p className={shop.toolsTitle}>Controls</p>
                 <div className={shop.controlsStackInline}>
                   <div className={shop.controlRow}>
                     <span className={shop.controlLabel}>Trays</span>
@@ -444,7 +510,7 @@ export default function LeoBakeryGame({
                       >
                         +
                       </button>
-                      <span className={shop.stepperValue}>{trays}</span>
+                      <span className={shop.stepperValue}>{displayTrays}</span>
                       <button
                         type="button"
                         className={shop.stepperBtn}
@@ -487,17 +553,39 @@ export default function LeoBakeryGame({
                     </div>
                   </div>
                 </div>
-                {!lockTotal ? (
+                {needsEnteredTotal ? (
                   <div className={shop.controlRow}>
                     <span className={shop.controlLabel}>Total</span>
-                    <span className={shop.totalBadge}>{total}</span>
+                    <div className={shop.stepperRow}>
+                      <button
+                        type="button"
+                        className={shop.stepperBtn}
+                        onClick={() => {
+                          setEnteredTotal((v) => Math.min(200, v + 1));
+                          clearFeedback();
+                        }}
+                      >
+                        +
+                      </button>
+                      <span className={shop.stepperValue}>{enteredTotal}</span>
+                      <button
+                        type="button"
+                        className={shop.stepperBtn}
+                        onClick={() => {
+                          setEnteredTotal((v) => Math.max(0, v - 1));
+                          clearFeedback();
+                        }}
+                      >
+                        −
+                      </button>
+                    </div>
                   </div>
                 ) : null}
               </div>
 
               <div className={feedbackBarClass}>
                 <p className={shop.feedbackText}>
-                  {feedback || "Set the trays and amount per tray, then tap Check"}
+                  {feedback || "Set trays and amount per tray, then tap Check Order"}
                 </p>
               </div>
             </aside>
@@ -505,7 +593,7 @@ export default function LeoBakeryGame({
             <div className={shop.bottomBar}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} onClick={runCheck}>
-                  Check order
+                  Check Order
                 </button>
                 <button type="button" className={shop.secondaryBtn} onClick={resetTaskUi}>
                   Reset
