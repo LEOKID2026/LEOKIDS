@@ -25,7 +25,9 @@ import {
   setClientAchievementGrantsInFlight,
   clearClientAchievementGrantsInFlight,
 } from "../../lib/learning-client/studentHomeProfileClient";
-import { invalidateStudentMeClientCache, getCachedStudentMe, setCachedStudentMe } from "../../lib/learning-client/studentMeClient";
+import { invalidateStudentMeClientCache, getCachedStudentMe } from "../../lib/learning-client/studentMeClient";
+import { invalidateStudentGameAccessClientCache } from "../../lib/learning-client/studentGameAccessClient.js";
+import { useStudentSessionContext } from "../../components/student/StudentSessionContext";
 import { STUDENT_TRUTH_LABELS_HE } from "../../lib/learning-shared/student-display-truth.js";
 import StudentAvatarPickerModal from "../../components/student/StudentAvatarPickerModal";
 import {
@@ -301,6 +303,7 @@ export default function StudentHomePage() {
   const { direction, locale } = useI18n();
   const t = useT();
   const { tokens: T, theme, isBright } = useStudentTheme();
+  const { status: sessionStatus, student: sessionStudent } = useStudentSessionContext();
   const [authPhase, setAuthPhase] = useState("checking");
   const [student, setStudent] = useState(null);
   const [homePayload, setHomePayload] = useState(null);
@@ -524,111 +527,47 @@ export default function StudentHomePage() {
     setPersonalActivitiesPhase("idle");
 
     const cachedMe = getCachedStudentMe();
-    if (cachedMe?.student?.id) {
-      setStudent(cachedMe.student);
-      setAuthPhase("authed");
-      const cachedHome = getCachedStudentHomePayload(cachedMe.student.id);
-      if (cachedHome?.merged) {
-        setHomePayload(cachedHome.merged);
-        setProfilePhase("ok");
-        setAnalyticsPhase(cachedHome.analytics ? "ok" : "idle");
-      } else {
-        setProfilePhase("idle");
-        setHomePayload(null);
-      }
-    } else {
-      setAuthPhase("checking");
-      setStudent(null);
-      setHomePayload(null);
-      setProfilePhase("idle");
-      setAnalyticsPhase("idle");
+    const activeStudent = sessionStudent || cachedMe?.student;
+
+    if (sessionStatus === "blocked") {
+      setAuthPhase("anon");
+      router.replace("/student/login");
+      return () => {
+        mounted = false;
+      };
     }
 
-    (async () => {
-      try {
-        const meRes = await fetch("/api/student/me", {
-          credentials: "include",
-          cache: "no-store",
-          headers: { Accept: "application/json" },
-        });
-
-        if (!mounted) return;
-
-        const payload = await meRes.json().catch(() => ({}));
-        if (isStudentIdentityDiagnosticsEnabled()) {
-          console.info("[student/home] /api/student/me", {
-            httpStatus: meRes.status,
-            hasStudent: !!payload?.student?.id,
-          });
-        }
-        if (!meRes.ok || !payload?.student?.id) {
-          setAuthPhase("anon");
-          router.replace("/student/login");
-          return;
-        }
-
-        setCachedStudentMe(payload);
-        syncStudentLocalStorageIdentity(payload.student, "student/home after /me");
-        setStudent(payload.student);
-        setGuestPolicy(payload.guestPolicy || null);
-        setAuthPhase("authed");
-
-        const cachedHome = getCachedStudentHomePayload(payload.student.id);
-        if (cachedHome?.merged) {
-          setHomePayload(cachedHome.merged);
-          setProfilePhase("ok");
-          setAnalyticsPhase(cachedHome.analytics ? "ok" : "idle");
-          void loadHomeAnalytics(payload.student.id, cachedHome.summary || {});
-          void loadHomeAchievementGrants(payload.student.id);
-          return;
-        }
-
-        setProfilePhase("loading");
-        const summaryRes = await fetch(HOME_SUMMARY_PATH, {
-          credentials: "include",
-          cache: "no-store",
-          headers: { Accept: "application/json" },
-        });
-        if (!mounted) return;
-
-        const summaryText = await summaryRes.text();
-        let summaryJson = {};
-        try {
-          summaryJson = summaryText ? JSON.parse(summaryText) : {};
-        } catch {
-          if (!getCachedStudentHomePayload(payload.student.id)?.merged) {
-            setProfileError(`Invalid server response (status ${summaryRes.status}).`);
-            setProfilePhase("error");
-          }
-          return;
-        }
-
-        if (summaryRes.ok && summaryJson?.ok === true && summaryJson?.accountSnapshot) {
-          setCachedStudentHomePayload(payload.student.id, { summary: summaryJson });
-          const cached = getCachedStudentHomePayload(payload.student.id);
-          setHomePayload(mergeStudentHomePayloads(summaryJson, cached?.analytics));
-          setProfilePhase("ok");
-          window.setTimeout(() => {
-            if (!mounted) return;
-            void loadHomeAnalytics(payload.student.id, summaryJson);
-            void loadHomeAchievementGrants(payload.student.id);
-          }, 0);
-          return;
-        }
-
-        void loadHomeDashboard(payload.student);
-      } catch {
-        if (!mounted) return;
-        setAuthPhase("anon");
-        router.replace("/student/login");
+    if (!activeStudent?.id) {
+      if (sessionStatus === "loading") {
+        setAuthPhase("checking");
       }
-    })();
+      return () => {
+        mounted = false;
+      };
+    }
+
+    setStudent(activeStudent);
+    setAuthPhase("authed");
+    setGuestPolicy(cachedMe?.guestPolicy || null);
+
+    const cachedHome = getCachedStudentHomePayload(activeStudent.id);
+    if (cachedHome?.merged) {
+      setHomePayload(cachedHome.merged);
+      setProfilePhase("ok");
+      setAnalyticsPhase(cachedHome.analytics ? "ok" : "idle");
+      void loadHomeAnalytics(activeStudent.id, cachedHome.summary || {});
+      void loadHomeAchievementGrants(activeStudent.id);
+    } else {
+      setProfilePhase("idle");
+      setHomePayload(null);
+      setAnalyticsPhase("idle");
+      void loadHomeDashboard(activeStudent);
+    }
 
     return () => {
       mounted = false;
     };
-    // Only isReady + loadHomeDashboard — not router (changes on hydration and aborts fetch mid-flight → stuck on "Loading home...").
-  }, [router.isReady, loadHomeDashboard, locale]);
+  }, [router.isReady, sessionStatus, sessionStudent, loadHomeDashboard, router, locale]);
 
   const dashboardView = useMemo(() => {
     if (isDemoMode()) return buildDemoDashboardView(locale);
@@ -852,6 +791,7 @@ export default function StudentHomePage() {
       invalidateStudentLearningProfileClientCache();
       invalidateStudentHomeProfileClientCache(sid);
       invalidateStudentMeClientCache();
+      invalidateStudentGameAccessClientCache(sid);
       setStudent(null);
       setHomePayload(null);
       setProfilePhase("idle");

@@ -4,7 +4,6 @@ import PageSeo from "../../components/seo/PageSeo";
 import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
 import Link from "next/link";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
-import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-identity-client";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import LearningHubSubjectCard from "../../components/learning/LearningHubSubjectCard.jsx";
@@ -246,34 +245,6 @@ export default function LearningHub({ showDevStudentSimulator }) {
     setHomePayload(buildDemoHomePayload(locale));
     return undefined;
   }, [demoSession?.gradeLevel, locale]);
-
-  useEffect(() => {
-    if (isDemoMode()) return undefined;
-    if (!isStudentIdentityDiagnosticsEnabled()) return undefined;
-    console.log("[learning/index] localStorage on mount", {
-      liosh_active_student_id: localStorage.getItem("liosh_active_student_id"),
-      mleo_player_name: localStorage.getItem("mleo_player_name"),
-    });
-    fetch("/api/student/me", { credentials: "include", cache: "no-store" })
-      .then((r) => r.json().catch(() => ({})))
-      .then((payload) => {
-        console.log("[learning/index] GET /api/student/me", {
-          ok: payload?.ok === true,
-          id: payload.student?.id,
-          fullName: payload.student?.full_name,
-          gradeLevel: payload.student?.grade_level,
-          debug: payload.debugStudentIdentity,
-        });
-        console.log("[learning/index] localStorage after /me response", {
-          liosh_active_student_id: localStorage.getItem("liosh_active_student_id"),
-          mleo_player_name: localStorage.getItem("mleo_player_name"),
-        });
-      })
-      .catch((err) => {
-        console.log("[learning/index] GET /api/student/me failed", String(err?.message || err));
-      });
-    return undefined;
-  }, []);
 
   useEffect(
     () => () => {

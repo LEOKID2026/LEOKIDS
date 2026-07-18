@@ -14,6 +14,15 @@ import { formatCoinAmountHe, formatCoinAmountNumberHe } from "../../lib/rewards/
 import { useRewardUiCopy } from "../../lib/rewards/reward-locale-context.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { isDemoMode, buildDemoDisplayStudent, readDemoSession } from "../../lib/demo/demo-mode.client.js";
+import { getCachedStudentMe } from "../../lib/learning-client/studentMeClient";
+import { useStudentSessionContext } from "../../components/student/StudentSessionContext";
+import {
+  getCachedCardsTab,
+  getCachedCardsSummary,
+  setCachedCardsTab,
+  setCachedCardsSummary,
+  isStudentCardsCacheStale,
+} from "../../lib/learning-client/studentCardsCacheClient.js";
 import { demoPackCopyForLocale } from "../../lib/demo/demo-pack-copy.js";
 import { DEMO_COIN_BALANCE } from "../../components/demo/demo-display-fixtures.js";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
@@ -176,6 +185,7 @@ export default function StudentCardsPage() {
   const router = useRouter();
   const { locale } = useI18n();
   const { tokens: T, theme } = useStudentTheme();
+  const { status: sessionStatus, student: sessionStudent } = useStudentSessionContext();
   const copy = useRewardUiCopy();
   const tabs = useMemo(
     () =>
@@ -215,21 +225,54 @@ export default function StudentCardsPage() {
   }, []);
 
   const loadSummary = useCallback(async () => {
+    const sid = String(student?.id || "").trim();
+    const cached = sid ? getCachedCardsSummary(sid) : null;
+    if (cached) {
+      setPayload((prev) => ({
+        ...(prev || {}),
+        coinBalance: cached.coinBalance,
+        counts: cached.counts,
+      }));
+    }
     const json = await fetchCardsEndpoint(CARDS_ENDPOINTS.summary);
     setPayload((prev) => ({
       ...(prev || {}),
       coinBalance: json.coinBalance,
       counts: json.counts,
     }));
+    if (sid) setCachedCardsSummary(sid, { coinBalance: json.coinBalance, counts: json.counts });
     return json;
-  }, [fetchCardsEndpoint]);
+  }, [fetchCardsEndpoint, student?.id]);
 
   const loadTabData = useCallback(
-    async (tabId, { force = false } = {}) => {
+    async (tabId, { force = false, background = false } = {}) => {
       if (!CARDS_ENDPOINTS[tabId]) return;
-      if (!force && loadedTabsRef.current.has(tabId)) return;
+      const sid = String(student?.id || "").trim();
+      const cached = sid ? getCachedCardsTab(sid, tabId) : null;
 
-      setTabLoading((prev) => ({ ...prev, [tabId]: true }));
+      if (!force && (loadedTabsRef.current.has(tabId) || cached)) {
+        if (cached) {
+          setPayload((prev) => {
+            const next = { ...(prev || {}) };
+            if (tabId === "collection") next.collection = cached.collection;
+            if (tabId === "shop") next.shop = cached.shop;
+            if (tabId === "catalog") next.catalog = cached.catalog;
+            if (tabId === "series") next.seriesProgress = cached.seriesProgress;
+            return next;
+          });
+          loadedTabsRef.current.add(tabId);
+          setLoadedTabs(new Set(loadedTabsRef.current));
+        }
+        if (!background && cached && sid && isStudentCardsCacheStale(sid)) {
+          void loadTabData(tabId, { force: true, background: true });
+        }
+        return;
+      }
+
+      if (!cached) {
+        setTabLoading((prev) => ({ ...prev, [tabId]: true }));
+      }
+
       try {
         const json = await fetchCardsEndpoint(CARDS_ENDPOINTS[tabId]);
         setPayload((prev) => {
@@ -240,28 +283,52 @@ export default function StudentCardsPage() {
           if (tabId === "series") next.seriesProgress = json.seriesProgress;
           return next;
         });
+        if (sid) {
+          setCachedCardsTab(sid, tabId, {
+            collection: json.collection,
+            shop: json.shop,
+            catalog: json.catalog,
+            seriesProgress: json.seriesProgress,
+          });
+        }
         loadedTabsRef.current.add(tabId);
         setLoadedTabs(new Set(loadedTabsRef.current));
       } finally {
         setTabLoading((prev) => ({ ...prev, [tabId]: false }));
       }
     },
-    [fetchCardsEndpoint]
+    [fetchCardsEndpoint, student?.id]
   );
 
   const loadInitialCards = useCallback(async () => {
-    setCardsPhase("loading");
+    const sid = String(student?.id || "").trim();
+    const cachedSummary = sid ? getCachedCardsSummary(sid) : null;
+    const cachedCollection = sid ? getCachedCardsTab(sid, "collection") : null;
+    if (cachedSummary || cachedCollection) {
+      setPayload((prev) => ({
+        ...(prev || {}),
+        ...(cachedSummary || {}),
+        ...(cachedCollection?.collection ? { collection: cachedCollection.collection } : {}),
+      }));
+      if (cachedCollection) {
+        loadedTabsRef.current.add("collection");
+        setLoadedTabs(new Set(loadedTabsRef.current));
+      }
+      setCardsPhase("ok");
+    } else {
+      setCardsPhase("loading");
+    }
     setCardsError("");
-    loadedTabsRef.current = new Set();
-    setLoadedTabs(new Set());
     try {
       await Promise.all([loadSummary(), loadTabData("collection")]);
       setCardsPhase("ok");
     } catch {
-      setCardsError(copy("cardsPage", "loadError"));
-      setCardsPhase("error");
+      if (!cachedSummary && !cachedCollection) {
+        setCardsError(copy("cardsPage", "loadError"));
+        setCardsPhase("error");
+      }
     }
-  }, [loadSummary, loadTabData, copy]);
+  }, [loadSummary, loadTabData, student?.id, copy]);
 
   const loadDemoTabData = useCallback(async (tabId, { force = false } = {}) => {
     if (!DEMO_CARDS_ENDPOINTS[tabId]) return;
@@ -336,32 +403,23 @@ export default function StudentCardsPage() {
       void loadDemoInitialCards();
       return undefined;
     }
-    let mounted = true;
-    setAuthPhase("checking");
+    const activeStudent = sessionStudent || getCachedStudentMe()?.student;
+    if (sessionStatus === "blocked") {
+      setAuthPhase("anon");
+      router.replace("/student/login");
+      return undefined;
+    }
+    if (!activeStudent?.id) {
+      if (sessionStatus === "loading") setAuthPhase("checking");
+      return undefined;
+    }
 
-    fetch("/api/student/me", { credentials: "include", cache: "no-store", headers: { Accept: "application/json" } })
-      .then(async (res) => {
-        const data = await res.json().catch(() => ({}));
-        if (!mounted) return;
-        if (!res.ok || !data?.student?.id) {
-          setAuthPhase("anon");
-          router.replace("/student/login");
-          return;
-        }
-        syncStudentLocalStorageIdentity(data.student, "student/cards after /me");
-        setStudent(data.student);
-        setAuthPhase("authed");
-        if (rewardsEnabled) void loadInitialCards();
-      })
-      .catch(() => {
-        if (!mounted) return;
-        router.replace("/student/login");
-      });
-
-    return () => {
-      mounted = false;
-    };
-  }, [router.isReady, router, loadInitialCards, rewardsEnabled, loadDemoInitialCards, locale]);
+    syncStudentLocalStorageIdentity(activeStudent, "student/cards after session");
+    setStudent(activeStudent);
+    setAuthPhase("authed");
+    if (rewardsEnabled) void loadInitialCards();
+    return undefined;
+  }, [router.isReady, sessionStatus, sessionStudent, loadInitialCards, rewardsEnabled, loadDemoInitialCards, locale]);
 
   useEffect(() => {
     if (cardsPhase !== "ok") return undefined;

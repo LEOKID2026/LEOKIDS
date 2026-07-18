@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import "../styles/worksheet-print.css";
 import "../styles/worksheet-hub.css";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/next";
 import OfflineIndicator from "../components/OfflineIndicator";
@@ -120,6 +120,8 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [router.pathname]);
 
+  const swRegisteredRef = useRef(false);
+
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) {
       return undefined;
@@ -152,17 +154,23 @@ export default function MyApp({ Component, pageProps }) {
         }
       })();
 
+      swRegisteredRef.current = true;
       return () => {
         cancelled = true;
       };
     }
 
-    const pathname = router.pathname || "";
+    if (swRegisteredRef.current) {
+      return undefined;
+    }
+
+    const pathname = window.location.pathname || "";
     const isParentRoute = pathname.startsWith("/parent/");
     const isStudentRoute = pathname.startsWith("/student/");
     const isTeacherRoute = pathname.startsWith("/teacher/");
 
     const registerSW = () => {
+      swRegisteredRef.current = true;
       if (isParentRoute) {
         navigator.serviceWorker
           .register("/parent/sw.js", { scope: "/parent/" })
@@ -262,20 +270,21 @@ export default function MyApp({ Component, pageProps }) {
 
     window.addEventListener("load", registerSW);
     return () => window.removeEventListener("load", registerSW);
-  }, [router.pathname]);
+  }, []);
 
   const pathname = router.pathname || "";
   const shouldGate = isStudentProtectedRoute(pathname);
-  /** @type {["pending" | "demo" | "student" | "none", import("react").Dispatch<import("react").SetStateAction<"pending" | "demo" | "student" | "none">>] */
-  const [gateKind, setGateKind] = useState("pending");
+  const [gateKind, setGateKind] = useState(() => (shouldGate ? "student" : "none"));
 
   useEffect(() => {
+    if (!shouldGate) {
+      setGateKind("none");
+      return;
+    }
     if (hasDemoSession() && isDemoAccessibleRoute(pathname)) {
       setGateKind("demo");
-    } else if (shouldGate) {
-      setGateKind("student");
     } else {
-      setGateKind("none");
+      setGateKind("student");
     }
   }, [pathname, shouldGate]);
 
@@ -392,8 +401,6 @@ export default function MyApp({ Component, pageProps }) {
           <DevPrototypeAdminGate>
             <Component {...pageProps} />
           </DevPrototypeAdminGate>
-        ) : gateKind === "pending" && shouldGate ? (
-          <div className="min-h-[40vh]" aria-busy="true" aria-label="Loading" />
         ) : gateKind === "demo" ? (
           <DemoAccessGate>
             <Component {...pageProps} />

@@ -1,20 +1,27 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import Layout from "../Layout";
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-identity-client";
-import { setCachedStudentMe, invalidateStudentMeClientCache } from "../../lib/learning-client/studentMeClient";
+import {
+  fetchStudentMeClient,
+  getCachedStudentMe,
+  invalidateStudentMeClientCache,
+} from "../../lib/learning-client/studentMeClient";
 import { StudentSessionProvider } from "./StudentSessionContext";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import StudentLoadingPanel from "../ui/StudentLoadingPanel.jsx";
 import { StudentGameAccessProvider } from "../../contexts/StudentGameAccessContext.jsx";
 import { StudentSubjectAccessProvider } from "../../contexts/StudentSubjectAccessContext.jsx";
+import { buildStudentGameAccessView } from "../../hooks/useStudentGameAccess.js";
 import {
-  buildStudentGameAccessView,
-  fetchStudentGameAccessClient,
-} from "../../hooks/useStudentGameAccess.js";
+  fetchStudentGameAccessCached,
+  getCachedStudentGameAccess,
+  invalidateStudentGameAccessClientCache,
+} from "../../lib/learning-client/studentGameAccessClient.js";
+import { prefetchStudentHubRoutes } from "../../lib/student-ui/student-hub-prefetch.client.js";
 import { studentPathNeedsGameAccess } from "../../lib/student-ui/student-game-access-paths.client.js";
 
 /** Allowed to store in next= after login — no open redirect */
@@ -55,126 +62,159 @@ function StudentGateBlockedPanel({ loginHref }) {
   );
 }
 
+function buildSubjectAccessFromMe(mePayload) {
+  return {
+    allowStudentGradePicker: mePayload?.allowStudentGradePicker === true,
+    subjectPermissions: mePayload?.subjectPermissions || {},
+    enforced: Object.prototype.hasOwnProperty.call(mePayload || {}, "subjectPermissions"),
+  };
+}
+
+const EMPTY_SESSION = { status: "loading", student: null, subjectAccess: null };
+const EMPTY_GAME_ACCESS = { status: "loading", data: null };
+
+function applyCachedSession(setters, needsGameAccess) {
+  const cached = getCachedStudentMe();
+  if (!cached?.student?.id) return false;
+
+  setters.setSession({
+    status: "ok",
+    student: cached.student,
+    subjectAccess: buildSubjectAccessFromMe(cached),
+  });
+  setters.setInitialColdLoad(false);
+
+  if (needsGameAccess) {
+    const gameCached = getCachedStudentGameAccess(cached.student.id);
+    if (gameCached) {
+      setters.setGameAccess({ status: "ready", data: gameCached });
+    }
+  } else {
+    setters.setGameAccess({ status: "skip", data: null });
+  }
+  return true;
+}
+
 export default function StudentAccessGate({ children }) {
   const router = useRouter();
   const t = useT();
   const pathname = router.pathname || "";
   const needsGameAccess = studentPathNeedsGameAccess(pathname);
+  const bootstrappedRef = useRef(false);
+  const hubsPrefetchedRef = useRef(false);
 
   /** @type {[{ status: "loading" | "ok" | "blocked", student: object | null, subjectAccess?: object|null }, function]: any} */
-  const [session, setSession] = useState({ status: "loading", student: null, subjectAccess: null });
+  const [session, setSession] = useState(EMPTY_SESSION);
   /** @type {[{ status: "skip" | "loading" | "ready" | "error", data: object | null }, function]: any} */
   const [gameAccess, setGameAccess] = useState(() =>
-    needsGameAccess ? { status: "loading", data: null } : { status: "skip", data: null }
+    needsGameAccess ? EMPTY_GAME_ACCESS : { status: "skip", data: null },
   );
   const [loginNextPath, setLoginNextPath] = useState("/learning");
+  const [initialColdLoad, setInitialColdLoad] = useState(true);
+
+  const bootstrapSession = useCallback(async () => {
+    const meResult = await fetchStudentMeClient({
+      force: session.status !== "ok",
+      background: session.status === "ok",
+    });
+
+    if (!meResult.ok || !meResult.payload?.student?.id) {
+      setSession({ status: "blocked", student: null, subjectAccess: null });
+      const pathForNext = router.asPath || "/learning";
+      const safeNext = isSafeNextPath(pathForNext) ? pathForNext : "/learning";
+      router.replace(`/student/login?next=${encodeURIComponent(safeNext)}`);
+      return;
+    }
+
+    const mePayload = meResult.payload;
+    if (isStudentIdentityDiagnosticsEnabled()) {
+      console.log("[StudentAccessGate] /me student", {
+        id: mePayload.student?.id,
+        fullName: mePayload.student?.full_name,
+        gradeLevel: mePayload.student?.grade_level,
+        fromCache: meResult.fromCache,
+      });
+    }
+
+    syncStudentLocalStorageIdentity(mePayload.student, "StudentAccessGate after /me");
+
+    setSession({
+      status: "ok",
+      student: mePayload.student,
+      subjectAccess: buildSubjectAccessFromMe(mePayload),
+    });
+    setInitialColdLoad(false);
+
+    if (!hubsPrefetchedRef.current) {
+      hubsPrefetchedRef.current = true;
+      prefetchStudentHubRoutes(router);
+    }
+
+    const sid = mePayload.student.id;
+    const needsGame = studentPathNeedsGameAccess(router.pathname);
+    if (needsGame) {
+      void fetchStudentGameAccessCached(sid, {
+        force: !getCachedStudentGameAccess(sid),
+        background: Boolean(getCachedStudentGameAccess(sid)),
+      }).then((gameResult) => {
+        if (gameResult.ok && gameResult.data) {
+          setGameAccess({ status: "ready", data: gameResult.data });
+        } else if (!gameResult.fromCache) {
+          setGameAccess({ status: "error", data: null });
+        }
+      });
+    } else {
+      setGameAccess({ status: "skip", data: null });
+      void fetchStudentGameAccessCached(sid, {
+        force: !getCachedStudentGameAccess(sid),
+        background: true,
+      });
+    }
+  }, [router, session.status]);
 
   useEffect(() => {
-    if (!router.isReady) return undefined;
-    let mounted = true;
+    if (!router.isReady || bootstrappedRef.current) return undefined;
+    bootstrappedRef.current = true;
+
     const pathForNext = router.asPath || "/learning";
     const safeNext = isSafeNextPath(pathForNext) ? pathForNext : "/learning";
     setLoginNextPath(safeNext);
-    invalidateStudentMeClientCache();
 
     const needsGame = studentPathNeedsGameAccess(router.pathname);
-    if (needsGame) {
-      setGameAccess({ status: "loading", data: null });
-    } else {
-      setGameAccess({ status: "skip", data: null });
-    }
+    applyCachedSession({ setSession, setGameAccess, setInitialColdLoad }, needsGame);
 
-    const load = async () => {
-      const mePromise = fetch("/api/student/me", { credentials: "same-origin", cache: "no-store" })
-        .then(async (meRes) => ({
-          res: meRes,
-          payload: await meRes.json().catch(() => ({})),
-        }));
-      const gamePromise = needsGame
-        ? fetchStudentGameAccessClient()
-        : Promise.resolve({ ok: true, data: null, error: null });
-
-      const [{ res: meRes, payload: mePayload }, gameResult] = await Promise.all([
-        mePromise,
-        gamePromise,
-      ]);
-
-      if (!mounted) return;
-
-      if (!meRes.ok || !mePayload?.student?.id) {
-        setSession({ status: "blocked", student: null });
-        router.replace(`/student/login?next=${encodeURIComponent(safeNext)}`);
-        return;
-      }
-
-      if (isStudentIdentityDiagnosticsEnabled()) {
-        console.log("[StudentAccessGate] /me student", {
-          id: mePayload.student?.id,
-          fullName: mePayload.student?.full_name,
-          gradeLevel: mePayload.student?.grade_level,
-          debug: mePayload.debugStudentIdentity,
-        });
-      }
-      setCachedStudentMe(mePayload);
-      syncStudentLocalStorageIdentity(mePayload.student, "StudentAccessGate after /me");
-      if (isStudentIdentityDiagnosticsEnabled()) {
-        console.log("[StudentAccessGate] localStorage after sync", {
-          liosh_active_student_id: localStorage.getItem("liosh_active_student_id"),
-          mleo_player_name: localStorage.getItem("mleo_player_name"),
-        });
-      }
-
-      if (needsGame) {
-        if (!gameResult.ok) {
-          setSession({ status: "blocked", student: null });
-          router.replace(`/student/login?next=${encodeURIComponent(safeNext)}`);
-          return;
-        }
-        setGameAccess({ status: "ready", data: gameResult.data });
-      }
-
-      setSession({
-        status: "ok",
-        student: mePayload.student,
-        subjectAccess: {
-          allowStudentGradePicker: mePayload.allowStudentGradePicker === true,
-          subjectPermissions: mePayload.subjectPermissions || {},
-          enforced: Object.prototype.hasOwnProperty.call(mePayload, "subjectPermissions"),
-        },
-      });
-    };
-
-    void load().catch(() => {
-      if (!mounted) return;
-      setSession({ status: "blocked", student: null });
+    void bootstrapSession().catch(() => {
+      setSession({ status: "blocked", student: null, subjectAccess: null });
+      setInitialColdLoad(false);
     });
 
-    return () => {
-      mounted = false;
-    };
-  }, [router.isReady, router.pathname, router]);
+    return undefined;
+  }, [router.isReady, router.asPath, bootstrapSession]);
 
   const providerValue = useMemo(
     () => ({
       status: session.status,
       student: session.student,
     }),
-    [session.status, session.student]
+    [session.status, session.student],
   );
 
-  const gameAccessValue = useMemo(
-    () => (gameAccess.status === "ready" && gameAccess.data ? buildStudentGameAccessView(gameAccess.data) : null),
-    [gameAccess.status, gameAccess.data]
-  );
+  const gameAccessValue = useMemo(() => {
+    if (gameAccess.status === "ready" && gameAccess.data) {
+      return buildStudentGameAccessView(gameAccess.data);
+    }
+    return null;
+  }, [gameAccess.status, gameAccess.data]);
 
   const loginHref = `/student/login?next=${encodeURIComponent(loginNextPath)}`;
 
-  const showLoader =
-    session.status === "loading" || (needsGameAccess && gameAccess.status === "loading");
+  const showFullLoader =
+    initialColdLoad && session.status === "loading" && !session.student;
+  const showGameLoader = needsGameAccess && gameAccess.status === "loading" && session.status === "ok";
 
   const subjectAccessValue = useMemo(
     () => session.subjectAccess || { enforced: false, allowStudentGradePicker: false, subjectPermissions: {} },
-    [session.subjectAccess]
+    [session.subjectAccess],
   );
 
   const wrapWithSubjectAccess = (node) => (
@@ -188,21 +228,21 @@ export default function StudentAccessGate({ children }) {
   );
 
   const pageContent =
-    session.status !== "ok" ? (
+    session.status === "blocked" ? (
       <StudentGateShell pathname={pathname}>
         <StudentGateBlockedPanel loginHref={loginHref} />
       </StudentGateShell>
     ) : needsGameAccess && gameAccessValue ? (
       wrapWithSubjectAccess(
-        <StudentGameAccessProvider value={gameAccessValue}>{children}</StudentGameAccessProvider>
+        <StudentGameAccessProvider value={gameAccessValue}>{children}</StudentGameAccessProvider>,
       )
-    ) : (
+    ) : session.status === "ok" ? (
       wrapWithSubjectAccess(children)
-    );
+    ) : null;
 
   return (
     <StudentSessionProvider value={providerValue}>
-      {showLoader ? (
+      {showFullLoader || showGameLoader ? (
         <StudentLoadingPanel message={t("ui.student.loading")} fullPage />
       ) : (
         pageContent
@@ -210,3 +250,8 @@ export default function StudentAccessGate({ children }) {
     </StudentSessionProvider>
   );
 }
+
+export {
+  invalidateStudentMeClientCache,
+  invalidateStudentGameAccessClientCache,
+};
