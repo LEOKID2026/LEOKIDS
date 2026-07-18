@@ -95,6 +95,12 @@ if (isProdBuild) {
 // Video-builder API reads runtime files only under public/admin-video-assets and
 // data/admin-video-builder. Without excludes, Next output tracing pulls in all of public/.
 const VIDEO_BUILDER_API_ROUTE = "/api/admin/video-builder/**";
+// Learning books load markdown at SSR via fs.readFileSync under docs/learning-book/.
+const LEARNING_BOOK_ROUTE_PATTERNS = [
+  "/student/learning/book/**",
+  "/learning/book/**",
+];
+const LEARNING_BOOK_TRACE_FILES = ["./docs/learning-book/**"];
 
 const nextConfig = {
   ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
@@ -108,6 +114,9 @@ const nextConfig = {
       "./public/admin-video-assets/**",
       "./data/admin-video-builder/**",
     ],
+    ...Object.fromEntries(
+      LEARNING_BOOK_ROUTE_PATTERNS.map((route) => [route, LEARNING_BOOK_TRACE_FILES]),
+    ),
   },
   reactStrictMode: false, // זמנית - כדי למנוע רענון אינסופי בפיתוח
   // Windows: lower parallel SSG concurrency to avoid intermittent PageNotFoundError
