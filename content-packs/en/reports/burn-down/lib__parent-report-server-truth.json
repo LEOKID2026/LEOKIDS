@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_report": "Parent report",
+    "the_report_cannot_be_built_from_local_browser_data_data_stored_on_this_d": "The report cannot be built from local browser data (data stored on this device)."
+  }
+}

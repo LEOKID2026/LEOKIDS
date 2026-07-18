@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "looks_strong": "Looks strong",
+    "worth_watching": "Worth watching",
+    "worth_strengthening": "Worth strengthening",
+    "worth_guiding": "Worth guiding",
+    "needs_strengthening": "Needs strengthening",
+    "few_questions": "Few questions",
+    "above_grade_level": "Above grade level",
+    "earlier_foundations": "Earlier foundations",
+    "strong_topics": "Strong topics",
+    "topics_worth_watching": "Topics worth watching",
+    "topics_worth_strengthening": "Topics worth strengthening",
+    "topics_worth_guiding_in_practice": "Topics worth guiding in practice",
+    "topics_with_few_questions": "Topics with few questions",
+    "practice_above_grade_level": "Practice above grade level",
+    "earlier_foundation_practice": "Earlier foundation practice"
+  }
+}

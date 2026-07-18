@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "what_we_see": "What we see?",
+    "what_it_means": "What it means?",
+    "what_to_do_together": "What to do together?",
+    "in_the_recent_period": "In the recent period:",
+    "what_we_saw": "What we saw:",
+    "foundation_and_dependencies": "Foundation and dependencies:",
+    "where_they_sometimes_get_stuck": "Where they sometimes get stuck:",
+    "retention_at_home": "Retention at home:",
+    "now": "Now:",
+    "avoid": "Avoid:",
+    "caution": "Caution:",
+    "number_r_questions_0_if_withq_length_return_null_return": "Number(r?.questions) > 0);\n  if (!withQ.length) return null;\n  return (",
+    "what_stands_out_in_each_topic": "What stands out in each topic"
+  }
+}

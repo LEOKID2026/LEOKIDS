@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "the_data_points_to_a_skill_that_is_still_not_fully_stable": "The data points to a skill that is still not fully stable.",
+    "some_of_the_mistakes_look_related_to_speed_not_necessarily_a_full_knowle": "Some of the mistakes look related to speed - not necessarily a full knowledge gap.",
+    "the_difficulty_may_be_related_to_understanding_the_instructions_not_just": "The difficulty may be related to understanding the instructions, not just knowledge of the topic.",
+    "the_material_looks_partly_familiar_but_there_are_execution_mistakes_that": "The material looks partly familiar, but there are execution mistakes that repeat when working quickly.",
+    "the_child_does_better_with_support_and_it_still_helps_to_build_up_indepe": "The child does better with support, and it still helps to build up independent problem-solving.",
+    "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef": "There are still only a few answers - a little more practice would help before drawing a clear conclusion.",
+    "there_is_an_early_direction_but_a_bit_more_practice_would_help_before_dr": "There is an early direction, but a bit more practice would help before drawing a clear conclusion.",
+    "there_is_already_some_practice_in_this_topic_but_a_consistent_enough_pat": "There is already some practice in this topic, but a consistent enough pattern has not appeared yet.",
+    "there_are_a_few_possible_directions_worth_checking_again_after_a_bit_mor": "There are a few possible directions - worth checking again after a bit more practice.",
+    "solve_a_few_questions_without_a_timer_pause_before_submitting_and_check_": "Solve a few questions without a timer, pause before submitting, and check whether the answer fits the question.",
+    "do_a_few_more_questions_on_this_topic_then_check_the_report_again": "Do a few more questions on this topic, then check the report again.",
+    "some_mistakes_repeat_in_the_same_type_of_activity": "Some mistakes repeat in the same type of activity.",
+    "some_mistakes_happened_while_working_quickly": "Some mistakes happened while working quickly.",
+    "some_mistakes_appear_related_to_understanding_the_instructions": "Some mistakes appear related to understanding the instructions.",
+    "success_mostly_happens_with_guidance_or_hints": "Success mostly happens with guidance or hints.",
+    "small_execution_mistakes_that_repeat_when_working_quickly": "Small execution mistakes that repeat when working quickly.",
+    "confusion_about_the_order_of_steps_in_solving": "Confusion about the order of steps in solving.",
+    "the_signs_mostly_point_to_a_difficulty_within_this_topic_itself": "The signs mostly point to a difficulty within this topic itself.",
+    "hebrew": "Hebrew",
+    "social_studies_geography": "Social Studies & Geography",
+    "some_of_the_mistakes_look_related_to_speed_or_time_pressure": "Some of the mistakes look related to speed or time pressure.",
+    "the_difficulty_may_be_related_to_reading_the_instructions_or_understandi": "The difficulty may be related to reading the instructions or understanding what the question asks.",
+    "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis": "The child seems to know part of the material, but there are execution mistakes that repeat when rushing or skipping a step.",
+    "the_data_points_to_good_command_of_the_topic_right_now": "The data points to good command of the topic right now.",
+    "no_clear_pattern_has_been_established_for_this_topic_yet": "No clear pattern has been established for this topic yet.",
+    "there_are_signs_pointing_in_a_few_different_directions_so_the_report_rec": "There are signs pointing in a few different directions, so the report recommends moving forward carefully.",
+    "the_child_does_better_with_support_or_hints_and_it_still_helps_to_build_": "The child does better with support or hints, and it still helps to build up independent problem-solving.",
+    "there_are_too_few_questions_on_this_topic_to_draw_a_clear_conclusion_fro": "There are too few questions on this topic to draw a clear conclusion from."
+  }
+}

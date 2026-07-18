@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again": "Parent sign-in is required - please use parent sign-in and try again.",
+    "the_detailed_report_cannot_be_loaded_right_now": "The detailed report cannot be loaded right now.",
+    "report_display_mode": "Report display mode",
+    "loading_detailed_report": "Loading detailed report…",
+    "detailed_report_for_the_period_leo_kids": "Detailed Report for the Period - Leo Kids",
+    "what_we_did_during_this_period": "What we did during this period",
+    "whats_important_to_know": "What's important to know",
+    "messages_from_the_teacher": "Messages from the teacher"
+  }
+}

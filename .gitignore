@@ -32,7 +32,7 @@ tmp/
 .tmp-zip-preview/
 docs/audits/
 docs/qa/
-reports/mass-simulation/
+/reports/mass-simulation/
 AUDIT*/
 *.log
 *.tmp
@@ -41,9 +41,9 @@ AUDIT*/
 /coverage
 /playwright-report/
 /test-results/
-reports/
-reports/virtual-student-daily/
-reports/virtual-student-longitudinal/
+/reports/
+/reports/virtual-student-daily/
+/reports/virtual-student-longitudinal/
 qa-evidence-audit/
 docs/repair/_artifacts/
 qa-visual-output/
