@@ -38,6 +38,24 @@ test("authoritative /me grade resolves without hardcoded fallback", () => {
   assert.equal(view.gradeSource, "authoritative");
 });
 
+test("demo student ignores activeStudentId cache and uses demo grade", () => {
+  const view = resolveStudentSessionView({
+    status: "ok",
+    student: {
+      account_kind: "demo",
+      full_name: "Demo",
+      grade_level: "g3",
+    },
+    activeStudentId: "real-student-id",
+    cachedGradeLevelRaw: "g6",
+    demoGradeLevel: "g3",
+  });
+  assert.equal(view.studentId, "");
+  assert.equal(view.gradeKey, "g3");
+  assert.equal(view.gradeSource, "demo_session");
+  assert.equal(view.gradeNumber, 3);
+});
+
 test("loading uses same-student localStorage hint when context still loading", () => {
   const view = resolveStudentSessionView({
     status: "loading",
