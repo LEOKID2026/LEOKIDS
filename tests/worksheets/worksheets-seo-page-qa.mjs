@@ -24,14 +24,19 @@ describe("worksheets-seo-page-qa", () => {
     assert.ok(content.faq.length >= 4);
   });
 
-  test("SEO entry and sitemap include /practice/worksheets only", () => {
+  test("SEO entry and sitemap include worksheets hub and ready slug pages", () => {
     const seo = getPublicPageSeo("practice-worksheets");
     assert.equal(seo.canonicalPath, "/practice/worksheets");
     assert.ok(seo.title.toLowerCase().includes("worksheet"));
     assert.ok(SEO_PUBLIC_PATHS.includes("/practice/worksheets"));
+    assert.equal(
+      SEO_PUBLIC_PATHS.filter((p) => p.startsWith("/practice/worksheets/")).length,
+      30
+    );
 
     const sitemap = readFileSync(join(ROOT, "public/sitemap.xml"), "utf8");
     assert.match(sitemap, /\/practice\/worksheets<\/loc>/);
+    assert.match(sitemap, /\/practice\/worksheets\/math-g1-addition-horizontal-regular<\/loc>/);
     assert.doesNotMatch(sitemap, /\/practice\/worksheets\/preview/);
   });
 

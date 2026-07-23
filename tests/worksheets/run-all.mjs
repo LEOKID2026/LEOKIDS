@@ -51,6 +51,7 @@ const TEST_FILES = [
   "public-worksheets-catalog-parity.test.mjs",
   "public-worksheets-preview-empty.test.mjs",
   "worksheets-seo-page-qa.mjs",
+  "worksheet-ready-public-pages.test.mjs",
   "worksheet-system-closure.test.mjs",
 ];
 

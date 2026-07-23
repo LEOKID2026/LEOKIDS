@@ -22,6 +22,11 @@ export default function PublicWorksheetAnswerKeyRoute() {
   const layoutProps = { studentTheme: theme, studentShell: "home" };
   const ui = useWorksheetUi();
   const shell = useWorksheetShellAttrs();
+  const answersSeo = {
+    title: ui.seoAnswerKeyTitle,
+    description: ui.seoAnswerKeyDescription,
+    canonicalPath: "/practice/worksheets/preview/answers",
+  };
 
   const [answerKeyPayload, setAnswerKeyPayload] = useState(null);
   const [staleMessage, setStaleMessage] = useState("");
@@ -63,83 +68,55 @@ export default function PublicWorksheetAnswerKeyRoute() {
     if (typeof window !== "undefined") window.print();
   }, []);
 
+  let body;
+
   if (!sessionChecked) {
-    return (
+    body = (
       <Layout {...layoutProps}>
         <div {...shell} className="p-4 text-center text-slate-500">
           {ui.loading}
         </div>
       </Layout>
     );
-  }
-
-  if (lostSession) {
-    return (
-      <>
-        <PageSeo
-          title={ui.seoAnswerKeyTitle}
-          description={ui.seoAnswerKeyDescription}
-          canonicalPath="/practice/worksheets/preview/answers"
-          noindex
-        />
-        <Layout {...layoutProps}>
-          <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
-            <p className="mb-6 text-base text-slate-700">{ui.publicPreviewLost}</p>
-            <Link
-              href={BACK_HREF}
-              className="inline-flex rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
-            >
-              {ui.publicPreviewLostCta}
-            </Link>
-          </div>
-        </Layout>
-      </>
+  } else if (lostSession) {
+    body = (
+      <Layout {...layoutProps}>
+        <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
+          <p className="mb-6 text-base text-slate-700">{ui.publicPreviewLost}</p>
+          <Link
+            href={BACK_HREF}
+            className="inline-flex rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
+          >
+            {ui.publicPreviewLostCta}
+          </Link>
+        </div>
+      </Layout>
     );
-  }
-
-  if (staleMessage) {
-    return (
-      <>
-        <PageSeo
-          title={ui.seoAnswerKeyTitle}
-          description={ui.seoAnswerKeyDescription}
-          canonicalPath="/practice/worksheets/preview/answers"
-          noindex
-        />
-        <Layout {...layoutProps}>
-          <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
-            <p className="mb-6 text-base text-slate-700">{staleMessage}</p>
-            <button
-              type="button"
-              className="rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
-              onClick={() => router.push(PREVIEW_HREF)}
-            >
-              {ui.back}
-            </button>
-          </div>
-        </Layout>
-      </>
+  } else if (staleMessage) {
+    body = (
+      <Layout {...layoutProps}>
+        <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
+          <p className="mb-6 text-base text-slate-700">{staleMessage}</p>
+          <button
+            type="button"
+            className="rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
+            onClick={() => router.push(PREVIEW_HREF)}
+          >
+            {ui.back}
+          </button>
+        </div>
+      </Layout>
     );
-  }
-
-  if (!answerKeyPayload) {
-    return (
+  } else if (!answerKeyPayload) {
+    body = (
       <Layout {...layoutProps}>
         <div {...shell} className="p-4 text-center text-slate-500">
           {ui.loading}
         </div>
       </Layout>
     );
-  }
-
-  return (
-    <>
-      <PageSeo
-        title={ui.seoAnswerKeyTitle}
-        description={ui.seoAnswerKeyDescription}
-        canonicalPath="/practice/worksheets/preview/answers"
-        noindex
-      />
+  } else {
+    body = (
       <Layout {...layoutProps}>
         <div className="worksheet-preview-container px-4 py-4 md:px-6 md:py-6">
           <WorksheetAnswerKeyPage
@@ -149,6 +126,13 @@ export default function PublicWorksheetAnswerKeyRoute() {
           />
         </div>
       </Layout>
+    );
+  }
+
+  return (
+    <>
+      <PageSeo {...answersSeo} noindex />
+      {body}
     </>
   );
 }

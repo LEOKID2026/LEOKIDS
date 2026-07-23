@@ -22,6 +22,11 @@ export default function PublicWorksheetPreviewRoute() {
   const layoutProps = { studentTheme: theme, studentShell: "home" };
   const ui = useWorksheetUi();
   const shell = useWorksheetShellAttrs();
+  const previewSeo = {
+    title: ui.seoPreviewTitle,
+    description: ui.seoPreviewDescription,
+    canonicalPath: "/practice/worksheets/preview",
+  };
 
   const [previewData, setPreviewData] = useState(null);
   const [sessionChecked, setSessionChecked] = useState(false);
@@ -128,50 +133,38 @@ export default function PublicWorksheetPreviewRoute() {
     }
   }, [previewData, ui.refreshQuestionsError]);
 
+  let body;
+
   if (!sessionChecked) {
-    return (
+    body = (
       <Layout {...layoutProps}>
         <div {...shell} className="p-4 text-center text-slate-500">
           {ui.loading}
         </div>
       </Layout>
     );
-  }
-
-  if (!previewData) {
-    return (
-      <>
-        <PageSeo
-          title={ui.seoPreviewTitle}
-          description={ui.seoPreviewDescription}
-          canonicalPath="/practice/worksheets/preview"
-          noindex
-        />
-        <Layout {...layoutProps}>
-          <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
-            <p className="mb-6 text-base text-slate-700">{ui.publicPreviewLost}</p>
-            <Link
-              href={BACK_HREF}
-              className="inline-flex rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
-            >
-              {ui.publicPreviewLostCta}
-            </Link>
-          </div>
-        </Layout>
-      </>
+  } else if (!previewData) {
+    body = (
+      <Layout {...layoutProps}>
+        <div {...shell} className="mx-auto max-w-lg px-4 py-10 text-center">
+          <p className="mb-6 text-base text-slate-700">{ui.publicPreviewLost}</p>
+          <Link
+            href={BACK_HREF}
+            className="inline-flex rounded-lg bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white"
+          >
+            {ui.publicPreviewLostCta}
+          </Link>
+        </div>
+      </Layout>
     );
-  }
+  } else {
+    const backHref =
+      typeof previewData.returnPath === "string" && previewData.returnPath.startsWith("/")
+        ? previewData.returnPath
+        : BACK_HREF;
+    const showRefresh = previewData.source === "public-demo";
 
-  const showRefresh = previewData.source === "public-demo";
-
-  return (
-    <>
-      <PageSeo
-        title={ui.seoPreviewTitle}
-        description={ui.seoPreviewDescription}
-        canonicalPath="/practice/worksheets/preview"
-        noindex
-      />
+    body = (
       <Layout {...layoutProps}>
         <div className="worksheet-preview-container px-4 py-4 md:px-6 md:py-6">
           {refreshError ? (
@@ -192,10 +185,17 @@ export default function PublicWorksheetPreviewRoute() {
             answerKeyLoading={answerKeyLoading}
             onRefresh={showRefresh ? handleRefresh : undefined}
             refreshLoading={refreshLoading}
-            backHref={BACK_HREF}
+            backHref={backHref}
           />
         </div>
       </Layout>
+    );
+  }
+
+  return (
+    <>
+      <PageSeo {...previewSeo} noindex />
+      {body}
     </>
   );
 }

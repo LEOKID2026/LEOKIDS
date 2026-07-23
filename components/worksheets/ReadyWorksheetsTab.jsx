@@ -3,7 +3,9 @@
  */
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { WORKSHEET_SUBJECT_ALLOWLIST } from "../../lib/worksheets/worksheet-print-allowlist.js";
+import { readyWorksheetPublicPath } from "../../lib/worksheets/worksheet-ready-public-paths.js";
 import { WORKSHEET_LEVEL_OPTIONS } from "../../lib/worksheets/worksheet-level-display.js";
 import { useWorksheetUi, worksheetGradeLabel, worksheetLevelLabel, worksheetSubjectLabel, writingCategoryLabel, WRITING_CATEGORY_I18N_KEYS } from "../../hooks/useWorksheetUi.js";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
@@ -294,7 +296,8 @@ export default function ReadyWorksheetsTab({
               const isWriting = item.worksheetType === "writing";
               const isQuestion = item.worksheetType === "questions";
               const isLocked = item.locked === true;
-              const cardHref = null;
+              const cardHref =
+                isQuestion && !isLocked ? readyWorksheetPublicPath(String(item.slug)) : null;
 
               const cardBody = (
                 <>

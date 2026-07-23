@@ -44,7 +44,7 @@ export const WORKSHEETS_PAGE_CONTENT = {
   badge: "Worksheets — try without signing up",
   h1: "Printable worksheets for kids — practice, print when helpful, or combine with online learning",
   intro:
-    "On this page you can create a demo sheet with 8 exercises or choose from 35 ready worksheets in math, geometry, and English. Preview each sheet, print it, and open an answer key.",
+    "On this page you can create a demo sheet with 8 exercises or choose from 30 ready worksheets in math, geometry, and English. Preview each sheet, print it, and open an answer key.",
   sections: [
     {
       title: "How do I create a demo sheet?",
@@ -55,7 +55,7 @@ export const WORKSHEETS_PAGE_CONTENT = {
     {
       title: "Ready worksheets by grade",
       paragraphs: [
-        "Choose from 35 ready sheets, filter by subject, grade, and level, open the sheet, and print when it fits your routine. Each sheet can have a separate answer key.",
+        "Choose from 30 ready sheets, filter by subject, grade, and level, open the sheet, and print when it fits your routine. Each sheet can have a separate answer key.",
       ],
     },
     {

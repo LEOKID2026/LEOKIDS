@@ -1,5 +1,5 @@
 /**
- * Public worksheets catalog parity — 35 items from shared builder.
+ * Public worksheets catalog parity — 30 items from shared builder.
  * Run: node --test tests/worksheets/public-worksheets-catalog-parity.test.mjs
  */
 
