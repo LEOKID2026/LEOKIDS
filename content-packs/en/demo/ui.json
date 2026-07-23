@@ -98,5 +98,29 @@
     "g4": "Grade 4",
     "g5": "Grade 5",
     "g6": "Grade 6"
+  },
+  "parentPortal": {
+    "barBadge": "Parent demo mode",
+    "barSubtitle": "View only · 3 sample children",
+    "barExit": "Exit demo",
+    "dashboardSubtitle": "Demo mode — parent portal",
+    "homeParentLabelLine1": "Parent",
+    "homeParentLabelLine2": "demo",
+    "homeParentAriaLabel": "Parent demo — view-only portal",
+    "homeParentDismissAriaLabel": "Dismiss parent demo button",
+    "enterPageTitle": "Parent demo — LEO KIDS",
+    "enterPageDescription": "Explore the parent portal with sample children, reports, and recommendations — view only",
+    "enterHeading": "Parent portal demo",
+    "enterBack": "Back",
+    "enterIntro": "Explore the parent portal with 3 sample children, reports, activities, and recommendations — view only, no sign-up.",
+    "enterActiveSessionNote": "You have an active parent demo — you can continue where you left off.",
+    "enterReadOnlyNote": "Changes cannot be saved in this mode.",
+    "enterButton": "Enter parent portal",
+    "enteringButton": "Entering…",
+    "enterBackHome": "Back to home",
+    "readOnlyDefault": "Demo mode is view only. Changes cannot be saved.",
+    "readOnlyShare": "Demo mode — sharing outside the demo is not available.",
+    "readOnlyWorksheets": "Demo mode — you can browse worksheets, but not create new ones.",
+    "apiReadOnlyError": "Demo mode is view only."
   }
 }

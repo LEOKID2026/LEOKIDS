@@ -29,6 +29,8 @@ import {
 } from "../lib/site-nav-portal-context.client.js";
 import { STUDENT_BRIGHT_PAGE_BG_STYLE, STUDENT_BRIGHT_SITE_CHROME_BG } from "../lib/student-ui/student-bright-page-background.client.js";
 import { STUDENT_LAYOUT_CHROME_BOTTOM_CSS } from "../lib/student-ui/student-ad-slot.client.js";
+import HomePublicDemoButtons from "./home/HomePublicDemoButtons.jsx";
+import { isPublicDemoButtonsExcluded } from "../lib/demo/parent-demo-mode.client.js";
 
 export default function Layout({
   children,
@@ -125,7 +127,18 @@ export default function Layout({
     "min-h-[100svh] md:min-h-screen bg-gradient-to-b from-[#050816] via-[#0b1020] to-[#050816] text-white flex flex-col";
 
   const showStudentAd = shouldShowLayoutStudentAdSlot(pathname);
-  const showHomeDemoButton = !demoButtonDismissed && !isHomeDemoButtonExcluded(pathname);
+  const showHomeDemoButton =
+    !demoButtonDismissed &&
+    !isHomeDemoButtonExcluded(pathname) &&
+    !isPublicDemoButtonsExcluded(pathname);
+  const showHomeParentDemoButton =
+    !demoButtonDismissed &&
+    !isHomeDemoButtonExcluded(pathname) &&
+    !isPublicDemoButtonsExcluded(pathname);
+  const showPublicDemoButtons = showHomeDemoButton || showHomeParentDemoButton;
+  const publicDemoButtonsBottomStyle = showStudentAd
+    ? { bottom: STUDENT_LAYOUT_CHROME_BOTTOM_CSS }
+    : { bottom: "max(1.5rem, env(safe-area-inset-bottom, 0px))" };
 
   const handleDemoHudHomeClick = useCallback(
     (event, href) => {
@@ -136,7 +149,6 @@ export default function Layout({
     },
     [router],
   );
-
   const shellClassBase = isLearningBright
     ? brightLearningShell
     : isStudentBright
@@ -167,14 +179,8 @@ export default function Layout({
     ? `border-t border-sky-100 ${STUDENT_BRIGHT_SITE_CHROME_BG} shrink-0 ${homepage || showStudentAd ? "" : "mt-10"}`
     : `border-t border-white/10 bg-black/40 shrink-0 ${homepage || showStudentAd ? "" : "mt-10"}`;
 
-  const renderLegalFooter = (embedDemoButton = false) => (
-    <footer className={`${footerClass}${embedDemoButton ? " relative" : ""}`}>
-      {embedDemoButton && showHomeDemoButton ? (
-        <HomeDemoButton
-          variant="footer-above"
-          onDismiss={() => setDemoButtonDismissed(true)}
-        />
-      ) : null}
+  const renderLegalFooter = () => (
+    <footer className={footerClass}>
       <SiteLegalFooterBar isStudentBright={isStudentBright} />
     </footer>
   );
@@ -294,13 +300,19 @@ export default function Layout({
             variant="layout"
             theme={isStudentBright ? "bright" : "classic"}
           />
-          {renderLegalFooter(true)}
+          {renderLegalFooter()}
         </div>
       ) : (
-        renderLegalFooter(false)
+        renderLegalFooter()
       )}
-      {showHomeDemoButton && !showStudentAd ? (
-        <HomeDemoButton onDismiss={() => setDemoButtonDismissed(true)} />
+      {showPublicDemoButtons ? (
+        <HomePublicDemoButtons
+          showChild={showHomeDemoButton}
+          showParent={showHomeParentDemoButton}
+          onDismiss={() => setDemoButtonDismissed(true)}
+          bottomStyle={publicDemoButtonsBottomStyle}
+          className={showStudentAd ? "" : "md:bottom-8"}
+        />
       ) : null}
     </div>
   );

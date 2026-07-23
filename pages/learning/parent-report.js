@@ -78,7 +78,6 @@ import {
 } from "../../utils/parent-report-subject-visibility.js";
 import { isDuplicateParentReportText } from "../../utils/parent-report-text-dedupe.js";
 import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -138,7 +137,7 @@ import {
 } from "../../lib/parent-ui/parent-report-regular-display.js";
 import ReportDateRangeControl from "../../components/reporting/ReportDateRangeControl.jsx";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
-import { postParentCopilotTurn } from "../../lib/parent-client/copilot-turn-api.js";
+import { resolveParentReportBearerToken } from "../../lib/parent-client/copilot-turn-api.js";
 import {
   runParentReportGenerationFromApiBody,
   computeReportRangeForParentApi,
@@ -150,6 +149,8 @@ import {
 } from "../../lib/teacher-portal/parent-report-remote-source.js";
 import { PARENT_REPORT_PORTAL_GATE } from "../../lib/parent-report-server-truth.js";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
+import { hasParentDemoSession } from "../../lib/demo/parent-demo-mode.client.js";
+import { applyParentReportRemoteApiBody } from "../../lib/parent-client/parent-copilot-short-report-gate.client.js";
 
 const REPORT_REMOTE_SESSION_CACHE_PREFIX = "leo-parent-report-remote:v1:";
 const REPORT_REMOTE_SESSION_CACHE_TTL_MS = 90_000;
@@ -180,18 +181,21 @@ function writeParentReportRemoteSessionCache(fetchKey, body) {
   }
 }
 
-function applyParentReportRemoteApiBody(body, uiPeriod, setters) {
-  const out = runParentReportGenerationFromApiBody(body, uiPeriod);
-  if (!out.ok || !out.base) return false;
-  setters.setReport(out.base);
-  setters.setPlayerName(out.playerName);
-  setters.setShortContractTop(out.detailed?.parentProductContractV1?.top || null);
-  setters.setCopilotDetailedPayload(
-    out.detailed && typeof out.detailed === "object" ? out.detailed : null
-  );
-  setters.setParentReportError("");
-  setters.setLoading(false);
-  return true;
+function isParentReportFetchAbortError(err) {
+  if (!err || typeof err !== "object") return false;
+  if (err.name === "AbortError") return true;
+  const msg = String(err.message || "");
+  return /aborted|abort/i.test(msg);
+}
+
+/** @param {AbortController} controller @param {string} [reason] */
+function abortParentReportFetch(controller, reason = "cancelled") {
+  if (!controller || controller.signal.aborted) return;
+  try {
+    controller.abort(reason);
+  } catch {
+    /* abort is best-effort on unmount */
+  }
 }
 
 function parentReportPresetDays(period, customDates) {
@@ -1123,9 +1127,6 @@ function sanitizeDiagnosticsFootnoteDetailHe(raw) {
 export default function ParentReport() {
   useIOSViewportFix();
   const router = useRouter();
-  /** Phase D — staged Parent Copilot on short report (server-side turns). Default off. */
-  const enableParentCopilotOnShort =
-    typeof process !== "undefined" && process.env.NEXT_PUBLIC_ENABLE_PARENT_COPILOT_ON_SHORT === "true";
 
   const remoteReportSource = useMemo(
     () => parseParentReportRemoteSource(router),
@@ -1135,8 +1136,6 @@ export default function ParentReport() {
   const isTeacherSource = remoteReportSource.isTeacher;
   const isRemoteReportSource = remoteReportSource.isRemote;
   const remoteStudentId = remoteReportSource.studentId;
-  const enableParentCopilotOnShortEffective =
-    enableParentCopilotOnShort && !isTeacherSource;
 
   const [report, setReport] = useState(null);
   const regularView = useMemo(
@@ -1166,10 +1165,6 @@ export default function ParentReport() {
     [displayReport]
   );
   const [shortContractTop, setShortContractTop] = useState(null);
-  /** Same shape as detailed report — required by ParentCopilotShell / truth packet builders. */
-  const [copilotDetailedPayload, setCopilotDetailedPayload] = useState(null);
-  /** Passed to `/api/parent/copilot-turn` when student is logged in (learning-site cookie). */
-  const [copilotStudentId, setCopilotStudentId] = useState(null);
   const [period, setPeriod] = useState('week');
   const [playerName, setPlayerName] = useState("");
   const [loading, setLoading] = useState(true);
@@ -1283,66 +1278,6 @@ export default function ParentReport() {
     };
   }, []);
 
-  /** Resolve student UUID for secured Copilot turns (parent dashboard query or cookie session). */
-  useEffect(() => {
-    if (typeof window === "undefined") return undefined;
-    if (!enableParentCopilotOnShortEffective) {
-      setCopilotStudentId(null);
-      return undefined;
-    }
-    if (isRemoteReportSource && parentStudentId) {
-      setCopilotStudentId(parentStudentId);
-      return undefined;
-    }
-    let cancelled = false;
-    fetch("/api/student/me", { credentials: "include", cache: "no-store" })
-      .then((r) => r.json())
-      .then((data) => {
-        if (cancelled || !data?.ok || !data?.student?.id) return;
-        setCopilotStudentId(String(data.student.id));
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [enableParentCopilotOnShortEffective, isRemoteReportSource, parentStudentId]);
-
-  const shortReportCopilotTurnRunner = useMemo(() => {
-    if (!enableParentCopilotOnShortEffective) return null;
-    const { from, to } = computeReportRangeForParentApi(
-      period,
-      customDates,
-      appliedStartDate,
-      appliedEndDate
-    );
-    const reportPeriodForApi =
-      customDates && appliedStartDate && appliedEndDate
-        ? "custom"
-        : period === "month"
-          ? "month"
-          : "week";
-    return async (input) =>
-      postParentCopilotTurn({
-        utterance: input.utterance,
-        sessionId: input.sessionId,
-        audience: input.audience,
-        payload: input.payload,
-        reportPeriod: reportPeriodForApi,
-        rangeFrom: from,
-        rangeTo: to,
-        ...(copilotStudentId ? { studentId: copilotStudentId } : {}),
-        selectedContextRef: input.selectedContextRef ?? null,
-        clickedFollowupFamily: input.clickedFollowupFamily ?? null,
-      });
-  }, [
-    enableParentCopilotOnShortEffective,
-    copilotStudentId,
-    period,
-    customDates,
-    appliedStartDate,
-    appliedEndDate,
-  ]);
-
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
     if (!router.isReady) return undefined;
@@ -1399,7 +1334,6 @@ export default function ParentReport() {
       setPlayerName("");
       setReport(null);
       setShortContractTop(null);
-      setCopilotDetailedPayload(null);
       setParentReportError("");
       remoteRouterSyncedRef.current = true;
       return undefined;
@@ -1408,7 +1342,6 @@ export default function ParentReport() {
     setPlayerName("");
     setReport(null);
     setShortContractTop(null);
-    setCopilotDetailedPayload(null);
     setParentReportError("");
     setLoading(false);
     remoteRouterSyncedRef.current = true;
@@ -1430,7 +1363,7 @@ export default function ParentReport() {
     let cancelled = false;
     const abortController = new AbortController();
     const timeoutId = window.setTimeout(() => {
-      if (!cancelled) abortController.abort();
+      if (!cancelled) abortParentReportFetch(abortController, "timeout");
     }, REPORT_REMOTE_FETCH_TIMEOUT_MS);
 
     const run = async () => {
@@ -1456,7 +1389,6 @@ export default function ParentReport() {
         setReport,
         setPlayerName,
         setShortContractTop,
-        setCopilotDetailedPayload,
         setParentReportError,
         setLoading,
       };
@@ -1469,28 +1401,24 @@ export default function ParentReport() {
         setParentReportError("");
       }
 
-      let supabase;
-      try {
-        supabase = getLearningSupabaseBrowserClient();
-      } catch {
+      let configOk = true;
+      if (!hasParentDemoSession()) {
+        try {
+          getLearningSupabaseBrowserClient();
+        } catch {
+          configOk = false;
+        }
+      }
+      if (!configOk) {
         if (!cancelled) {
           setParentReportError("System configuration error.");
           setReport(null);
-          setCopilotDetailedPayload(null);
           setLoading(false);
         }
         reportRemoteInflightKeyRef.current = null;
         return;
       }
-      const { data: sessData } = await supabase.auth.getSession();
-      let token = sessData?.session?.access_token;
-      if (
-        !token &&
-        typeof window !== "undefined" &&
-        window.__parentReportPlaywrightE2eSession === true
-      ) {
-        token = "playwright-e2e-parent-report";
-      }
+      const token = await resolveParentReportBearerToken();
       if (!token) {
         if (!cancelled) {
           setParentReportError(
@@ -1499,7 +1427,6 @@ export default function ParentReport() {
               : reportPackCopy("pages__learning__parent-report", "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again")
           );
           setReport(null);
-          setCopilotDetailedPayload(null);
           setLoading(false);
         }
         reportRemoteInflightKeyRef.current = null;
@@ -1508,7 +1435,7 @@ export default function ParentReport() {
 
       try {
         const qs = new URLSearchParams({ from, to });
-        const remoteKind = isTeacherSource ? "teacher" : "parent";
+        const remoteKind = isTeacherSource ? "teacher" : hasParentDemoSession() ? "demo" : "parent";
         const url = parentReportRemoteDataUrl(remoteKind, parentStudentId, qs);
         const res = await fetch(url, {
           credentials: "include",
@@ -1527,7 +1454,6 @@ export default function ParentReport() {
             );
             setParentReportError(msg);
             setReport(null);
-            setCopilotDetailedPayload(null);
             setLoading(false);
           }
           reportRemoteInflightKeyRef.current = null;
@@ -1541,7 +1467,6 @@ export default function ParentReport() {
           if (!cancelled) {
             setParentReportError("The report could not be built from the data received from the server.");
             setReport(null);
-            setCopilotDetailedPayload(null);
             setLoading(false);
           }
           reportRemoteInflightKeyRef.current = null;
@@ -1552,7 +1477,6 @@ export default function ParentReport() {
           setReport(out.base);
           setPlayerName(out.playerName);
           setShortContractTop(out.detailed?.parentProductContractV1?.top || null);
-          setCopilotDetailedPayload(out.detailed && typeof out.detailed === "object" ? out.detailed : null);
           setParentReportError("");
           setLoading(false);
           reportRemoteFetchKeyRef.current = fetchKey;
@@ -1567,22 +1491,21 @@ export default function ParentReport() {
           }
         }
       } catch (loadErr) {
+        if (cancelled && isParentReportFetchAbortError(loadErr)) {
+          reportRemoteInflightKeyRef.current = null;
+          return;
+        }
         if (process.env.NODE_ENV === "development") {
           console.error("[parent-report] report load failed:", loadErr);
         }
         if (!cancelled) {
-          const aborted =
-            loadErr &&
-            typeof loadErr === "object" &&
-            (loadErr.name === "AbortError" ||
-              /aborted|timeout/i.test(String(loadErr.message || "")));
+          const aborted = isParentReportFetchAbortError(loadErr);
           setParentReportError(
             aborted
               ? "Loading the report took too long - try a shorter range or refresh."
               : reportPackCopy("pages__learning__parent-report", "network_error_while_loading_the_report")
           );
           setReport(null);
-          setCopilotDetailedPayload(null);
           setLoading(false);
         }
         reportRemoteInflightKeyRef.current = null;
@@ -1593,7 +1516,7 @@ export default function ParentReport() {
     return () => {
       cancelled = true;
       window.clearTimeout(timeoutId);
-      abortController.abort();
+      abortParentReportFetch(abortController, "unmount");
       reportRemoteInflightKeyRef.current = null;
     };
   }, [
@@ -2530,16 +2453,7 @@ export default function ParentReport() {
             excludeHomeTipTextsHe={serverHomeRecommendationsListHe}
           />
 
-          {enableParentCopilotOnShortEffective && copilotDetailedPayload ? (
-            <div className="no-pdf mb-4 rounded-lg border border-cyan-500/20 bg-cyan-950/15 px-3 py-2">
-              <ParentCopilotShellLazy
-                payload={copilotDetailedPayload}
-                asyncTurnRunner={shortReportCopilotTurnRunner}
-              />
-            </div>
-          ) : null}
-
-          {/* */}
+          {/* Math operations table */}
           {regularReportTopicMapHasRows(displayReport, "mathOperations", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
               <h2 className="parent-report-math-progress-title text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🧮 Math progress</h2>

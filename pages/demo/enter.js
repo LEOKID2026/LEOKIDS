@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
@@ -21,6 +22,11 @@ export default function DemoEnterPage() {
   const { locale, direction } = useI18n();
   const [selected, setSelected] = useState("g3");
   const [busy, setBusy] = useState(false);
+  const [hasActiveDemo, setHasActiveDemo] = useState(false);
+
+  useEffect(() => {
+    setHasActiveDemo(hasDemoSession());
+  }, []);
 
   const copy = (group, key, vars) => demoPackCopyForLocale(locale, group, key, vars);
   const limitMinutes = PLAY_LIMIT_MS / 60000;

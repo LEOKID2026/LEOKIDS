@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
 import { mapParentPanelApiError } from "../../lib/parent-client/parent-api-errors.js";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { assertParentDemoReadOnly } from "../../lib/demo/parent-demo-readonly.client.js";
 
 function getCategoryLabels(t) {
   return {
@@ -51,6 +52,11 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
   }, [studentId, accessToken]);
 
   async function toggleCategory(key) {
+    const readOnly = assertParentDemoReadOnly("save");
+    if (!readOnly.allowed) {
+      setError(readOnly.message);
+      return;
+    }
     const field = `${key}Enabled`;
     const nextValue = !permissions[field];
     setSaving(key);

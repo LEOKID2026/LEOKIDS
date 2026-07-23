@@ -421,6 +421,8 @@
     "portalTitle": "Parent portal",
     "checkingSession": "Checking parent session…",
     "share": "Share",
+    "studentWorld": "Kids world",
+    "studentWorldAriaLabel": "Go to kids world",
     "worksheets": "Printable worksheets",
     "curriculum": "Curriculum",
     "addChild": "Add child",

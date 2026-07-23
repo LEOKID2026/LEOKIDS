@@ -28,7 +28,15 @@ import CookieConsentManager from "../components/consent/CookieConsentManager.jsx
 import { GOOGLE_CONSENT_BOOTSTRAP_SCRIPT } from "../lib/consent/google-consent-mode.client.js";
 import { isStudentProtectedRoute, isDemoAccessibleRoute } from "../lib/student-ui/student-protected-routes.client.js";
 import DemoAccessGate from "../components/demo/DemoAccessGate.jsx";
+import ParentDemoSessionChrome from "../components/demo/ParentDemoSessionChrome.jsx";
+import ParentDemoParentRouteGuard from "../components/demo/ParentDemoParentRouteGuard.jsx";
 import { hasDemoSession } from "../lib/demo/demo-mode.client.js";
+import { hasParentDemoSession } from "../lib/demo/parent-demo-mode.client.js";
+import {
+  isParentDemoAccessibleRoute,
+  isParentDemoGateRoute,
+} from "../lib/demo/parent-demo-routes.client.js";
+import { StudentNavigationProvider } from "../contexts/StudentNavigationContext.jsx";
 import {
   BROWSER_THEME_COLOR_BRIGHT,
   BROWSER_THEME_COLOR_BOOTSTRAP_SCRIPT,
@@ -280,19 +288,38 @@ export default function MyApp({ Component, pageProps }) {
 
   const pathname = router.pathname || "";
   const shouldGate = isStudentProtectedRoute(pathname);
+  const shouldParentDemoGate = isParentDemoGateRoute(pathname);
   const [gateKind, setGateKind] = useState(() => (shouldGate ? "student" : "none"));
+  const [parentGateKind, setParentGateKind] = useState("none");
+  const [parentDemoSessionActive, setParentDemoSessionActive] = useState(false);
 
   useEffect(() => {
     if (!shouldGate) {
       setGateKind("none");
-      return;
-    }
-    if (hasDemoSession() && isDemoAccessibleRoute(pathname)) {
+    } else if (hasDemoSession() && isDemoAccessibleRoute(pathname)) {
       setGateKind("demo");
     } else {
       setGateKind("student");
     }
   }, [pathname, shouldGate]);
+
+  useEffect(() => {
+    if (!shouldParentDemoGate) {
+      setParentGateKind("none");
+      return;
+    }
+    if (hasParentDemoSession() && isParentDemoAccessibleRoute(pathname)) {
+      setParentGateKind("parentDemo");
+    } else if (hasParentDemoSession()) {
+      setParentGateKind("parentDemoRedirect");
+    } else {
+      setParentGateKind("none");
+    }
+  }, [pathname, shouldParentDemoGate]);
+
+  useEffect(() => {
+    setParentDemoSessionActive(hasParentDemoSession());
+  }, [pathname]);
 
   const isInternalDevRoute = pathnameIsInternalDevRoute(pathname);
   const pwaPortal = resolvePwaPortal(pathname);
@@ -403,21 +430,37 @@ export default function MyApp({ Component, pageProps }) {
       <StudentThemeProvider>
         <GameAudioProvider>
         <BrowserThemeColorSync />
-        {isInternalDevRoute ? (
-          <DevPrototypeAdminGate>
+        {(() => {
+          const pageTree = isInternalDevRoute ? (
+            <DevPrototypeAdminGate>
+              <Component {...pageProps} />
+            </DevPrototypeAdminGate>
+          ) : parentGateKind === "parentDemo" || parentGateKind === "parentDemoRedirect" ? (
+            <ParentDemoParentRouteGuard>
+              <Component {...pageProps} />
+            </ParentDemoParentRouteGuard>
+          ) : gateKind === "demo" ? (
+            <StudentNavigationProvider>
+              <DemoAccessGate>
+                <Component {...pageProps} />
+              </DemoAccessGate>
+            </StudentNavigationProvider>
+          ) : gateKind === "student" ? (
+            <StudentNavigationProvider>
+              <StudentAccessGate>
+                <Component {...pageProps} />
+              </StudentAccessGate>
+            </StudentNavigationProvider>
+          ) : (
             <Component {...pageProps} />
-          </DevPrototypeAdminGate>
-        ) : gateKind === "demo" ? (
-          <DemoAccessGate>
-            <Component {...pageProps} />
-          </DemoAccessGate>
-        ) : gateKind === "student" ? (
-          <StudentAccessGate>
-            <Component {...pageProps} />
-          </StudentAccessGate>
-        ) : (
-          <Component {...pageProps} />
-        )}
+          );
+
+          return parentDemoSessionActive ? (
+            <ParentDemoSessionChrome>{pageTree}</ParentDemoSessionChrome>
+          ) : (
+            pageTree
+          );
+        })()}
         </GameAudioProvider>
       </StudentThemeProvider>
       </AppLocaleShell>

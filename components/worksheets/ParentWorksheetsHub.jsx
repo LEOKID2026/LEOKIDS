@@ -39,7 +39,18 @@ import {
 } from "../../lib/worksheets/worksheet-preview-session.client.js";
 import { buildWorksheetSessionFingerprint } from "../../lib/worksheets/worksheet-fingerprint.js";
 import { isWritingWorksheetPayload } from "../../lib/worksheets/worksheet-payload-kind.client.js";
+import { assertParentDemoReadOnly } from "../../lib/demo/parent-demo-readonly.client.js";
 
+
+
+function blockParentDemoWorksheetMutation(setError) {
+  const readOnly = assertParentDemoReadOnly("worksheets_generate");
+  if (!readOnly.allowed) {
+    setError(readOnly.message);
+    return true;
+  }
+  return false;
+}
 
 
 /**
@@ -260,6 +271,10 @@ export default function ParentWorksheetsHub({ session, students, T }) {
     }
     setPreviewModalError("");
     setPreviewRefreshLoading(true);
+    if (blockParentDemoWorksheetMutation(setPreviewModalError)) {
+      setPreviewRefreshLoading(false);
+      return;
+    }
     try {
       const gen = worksheetPreviewSession.generation;
       const newSeed = Math.floor(Math.random() * 1_000_000);
@@ -393,6 +408,11 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     setCreateError("");
 
+    if (blockParentDemoWorksheetMutation(setCreateError)) {
+      setCreateBusy(false);
+      return;
+    }
+
     try {
       if (
         createForm.topicKey === "mixed" &&
@@ -478,6 +498,10 @@ export default function ParentWorksheetsHub({ session, students, T }) {
   const handleWritingCreateSubmit = useCallback(async () => {
     setWritingCreateBusy(true);
     setWritingCreateError("");
+    if (blockParentDemoWorksheetMutation(setWritingCreateError)) {
+      setWritingCreateBusy(false);
+      return;
+    }
     try {
       const body = buildWritingGenerateBody(writingForm);
       const res = await fetch("/api/parent/worksheets/generate", {
@@ -529,6 +553,10 @@ export default function ParentWorksheetsHub({ session, students, T }) {
   const handleColoringCreateSubmit = useCallback(async (cardKeyOverride) => {
     setColoringCreateBusy(true);
     setColoringCreateError("");
+    if (blockParentDemoWorksheetMutation(setColoringCreateError)) {
+      setColoringCreateBusy(false);
+      return;
+    }
     try {
       const cardKey = String(cardKeyOverride || coloringForm.cardKey || "").trim();
       const body = buildColoringGenerateBody({ cardKey });
@@ -635,6 +663,11 @@ export default function ParentWorksheetsHub({ session, students, T }) {
       setBusyRecId(rec.id);
 
       setRecError("");
+
+      if (blockParentDemoWorksheetMutation(setRecError)) {
+        setBusyRecId(null);
+        return;
+      }
 
       try {
 

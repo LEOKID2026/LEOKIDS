@@ -28,6 +28,7 @@ import { AUTH_FORGOT_PASSWORD_LINK } from "../../lib/auth/auth-reset.js";
 import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { resolveParentBearerSession } from "../../lib/parent-client/parent-bearer-session.client.js";
+import { hasParentDemoSession } from "../../lib/demo/parent-demo-mode.client.js";
 
 const parentLoginSeo = getPublicPageSeo("parent-login");
 
@@ -78,6 +79,13 @@ export default function ParentLoginPage() {
     }
     setClientReady(true);
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (hasParentDemoSession()) {
+      router.replace("/parent/dashboard");
+    }
+  }, [router]);
 
   useEffect(() => {
     if (!clientReady || !supabaseRef.current) return;
