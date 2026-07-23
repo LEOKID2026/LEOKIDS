@@ -36,7 +36,6 @@ import {
   isParentDemoAccessibleRoute,
   isParentDemoGateRoute,
 } from "../lib/demo/parent-demo-routes.client.js";
-import { StudentNavigationProvider } from "../contexts/StudentNavigationContext.jsx";
 import {
   BROWSER_THEME_COLOR_BRIGHT,
   BROWSER_THEME_COLOR_BOOTSTRAP_SCRIPT,
@@ -440,17 +439,13 @@ export default function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
             </ParentDemoParentRouteGuard>
           ) : gateKind === "demo" ? (
-            <StudentNavigationProvider>
-              <DemoAccessGate>
-                <Component {...pageProps} />
-              </DemoAccessGate>
-            </StudentNavigationProvider>
+            <DemoAccessGate>
+              <Component {...pageProps} />
+            </DemoAccessGate>
           ) : gateKind === "student" ? (
-            <StudentNavigationProvider>
-              <StudentAccessGate>
-                <Component {...pageProps} />
-              </StudentAccessGate>
-            </StudentNavigationProvider>
+            <StudentAccessGate>
+              <Component {...pageProps} />
+            </StudentAccessGate>
           ) : (
             <Component {...pageProps} />
           );

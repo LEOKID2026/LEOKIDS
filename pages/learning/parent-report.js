@@ -80,6 +80,7 @@ import { isDuplicateParentReportText } from "../../utils/parent-report-text-dedu
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 const MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID = "moledet-geography";
 function moledetGeographyReportTopicKeyPrefix() {
