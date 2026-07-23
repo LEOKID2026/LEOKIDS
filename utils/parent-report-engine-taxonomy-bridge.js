@@ -16,7 +16,7 @@ import { orderMultiplicationTaxonomyCandidates } from "./diagnostic-engine-v2/mu
 import { orderWordProblemsTaxonomyCandidates } from "./diagnostic-engine-v2/word-problems-taxonomy-candidate-order.js";
 import { orderGeometryTaxonomyCandidatesWithMeta } from "./diagnostic-engine-v2/geometry-taxonomy-candidate-order.js";
 import { orderEnglishTaxonomyCandidatesWithMeta } from "./diagnostic-engine-v2/english-taxonomy-candidate-order.js";
-import { passesRecurrenceRules } from "./diagnostic-engine-v2/recurrence.js";
+import { passesEvidenceRecurrenceRules } from "./diagnostic-engine-v2/evidence-recurrence.js";
 import { assessSubskillCandidateSafety } from "./subskill-candidate-safety.js";
 
 function computeEvidenceFlags(wrongs, rowWrongTotal) {
@@ -116,18 +116,9 @@ export function resolveRowTaxonomyMatch({ subjectId, topicRowKey, row, rawMistak
   for (const tid of candidateIds) {
     const trow = TAXONOMY_BY_ID[tid];
     if (!trow) continue;
-    if (passesRecurrenceRules(wrongs, trow)) {
+    if (passesEvidenceRecurrenceRules(wrongs, trow)) {
       chosenId = tid;
       recurrenceMatched = wrongs.length > 0;
-      break;
-    }
-    if (
-      wrongs.length === 0 &&
-      wrongCountForRules >= trow.minWrong &&
-      !(trow.minDistinctDays > 0) &&
-      !(trow.minDistinctPatternFamilies > 0)
-    ) {
-      chosenId = tid;
       break;
     }
   }
@@ -153,13 +144,7 @@ export function resolveRowTaxonomyMatch({ subjectId, topicRowKey, row, rawMistak
     if (!chosenId) return false;
     const trow = TAXONOMY_BY_ID[chosenId];
     if (!trow) return false;
-    if (passesRecurrenceRules(wrongs, trow)) return true;
-    return (
-      wrongs.length === 0 &&
-      wrongCountForRules >= trow.minWrong &&
-      !(trow.minDistinctDays > 0) &&
-      !(trow.minDistinctPatternFamilies > 0)
-    );
+    return passesEvidenceRecurrenceRules(wrongs, trow);
   })();
 
   /** @type {"none"|"weak"|"moderate"|"strong"} */

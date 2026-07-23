@@ -79,6 +79,7 @@ import {
   clearActiveDiagnosticState,
   decrementPendingProbeExpiry,
 } from "../../utils/active-diagnostic-runtime/index.js";
+import { useMasterDiagnosticPersistence } from "../../lib/learning/useMasterDiagnosticPersistence.js";
 import { inferNormalizedTags } from "../../utils/fast-diagnostic-engine/infer-tags.js";
 import {
   finishLearningSession,
@@ -765,6 +766,7 @@ export default function ScienceMaster() {
   const pendingDiagnosticProbeRef = useRef(null);
   /** Session-local hypothesis ledger after probe answers (Phase 3D-B). Never persisted. */
   const scienceHypothesisLedgerRef = useRef(null);
+  const scienceAdaptiveStateRef = useRef(null);
   /** Question pool topic id for the question currently being timed (matches localStorage bucket). */
   const scienceTrackingTopicKeyRef = useRef(null);
   const bookPracticePresetRef = useRef(null);
@@ -900,10 +902,21 @@ export default function ScienceMaster() {
   const [showPlayerProfile, setShowPlayerProfile] = useState(false);
   const [practiceFocus, setPracticeFocus] = useState("balanced");
 
-  useEffect(() => {
-    pendingDiagnosticProbeRef.current = null;
-    scienceHypothesisLedgerRef.current = null;
-  }, [grade, level, topic, practiceFocus]);
+  const {
+    snapshot: snapshotScienceDiagnostic,
+    resolveAdaptiveTarget: resolveScienceAdaptiveTarget,
+    recordAdaptive: recordScienceAdaptive,
+  } = useMasterDiagnosticPersistence({
+    studentIdRef: learningProfileStudentIdRef,
+    subjectId: "science",
+    gradeKey: grade,
+    levelKey: level,
+    operationOrTopic: topic,
+    pendingRef: pendingDiagnosticProbeRef,
+    ledgerRef: scienceHypothesisLedgerRef,
+    adaptiveRef: scienceAdaptiveStateRef,
+    sessionFullName,
+  });
 
   const [focusedPracticeMode, setFocusedPracticeMode] = useState("normal");
   const [mistakes, setMistakes] = useState([]);
@@ -1733,6 +1746,8 @@ function saveScienceAnswerInParallel({
           selectedValue,
           generatorSource: "science-master",
           afterStepByStep: stepByStepViewedRef.current,
+          isCorrect,
+          subject: "science",
         }
       )
     : null;
@@ -1971,6 +1986,8 @@ function saveScienceAnswerInParallel({
     const smartPicking = focusedPracticeMode !== "mistakes";
 
     const probeAtStart = pendingDiagnosticProbeRef.current;
+
+    resolveScienceAdaptiveTarget({ operation: topic });
 
     /** Phase 3D-B — attach probe meta via shared runtime when probe-driven row is shown. */
     let probeAttachOpts = null;
@@ -2337,6 +2354,8 @@ function saveScienceAnswerInParallel({
           now: probeAnsweredAt,
         }
       );
+      recordScienceAdaptive(inferredTags?.[0] || null, isCorrect);
+      snapshotScienceDiagnostic();
       diagnosticProbeMetaForSave = buildDiagnosticProbeClientMeta({
         probeMeta: questionForSave._probeMeta,
         ledger: scienceHypothesisLedgerRef.current,

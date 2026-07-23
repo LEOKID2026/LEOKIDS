@@ -13,6 +13,7 @@ import {
 import { gradeBandForKey } from "./grade-gating.js";
 import { enrichGeometryProceduralParams } from "./geometry-diagnostic-metadata-bridge.js";
 import { attachCanonicalMetadataToMathGeometryQuestion } from "../lib/learning/math-geometry-canonical-metadata.js";
+import { applyMcqEvidenceTaggingToQuestion } from "../lib/learning/mcq-option-evidence-tagging.js";
 import { formatTriangleAnglesKnownTwoStem } from "./geometry-activity-question-stem.js";
 import { pickValidTriangleSides } from "../lib/worksheets/worksheet-geometry-math-valid.js";
 import { sanitizeQuestionForStudentDisplay } from "./student-question-stem-sanitizer.js";
@@ -2625,22 +2626,28 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
   });
 
   return localizeLearningQuestion(
-    sanitizeQuestionForStudentDisplay(
-      attachCanonicalMetadataToMathGeometryQuestion(
-        {
-          question,
-          correctAnswer: repairedCorrect,
-          answers: repairedAnswers,
-          topic: selectedTopic,
-          shape,
-          params: enrichedParams,
-        },
-        {
-          subject: "geometry",
-          gradeKey,
-          levelKey,
-          topic: selectedTopic,
-        }
+    applyMcqEvidenceTaggingToQuestion(
+      sanitizeQuestionForStudentDisplay(
+        attachCanonicalMetadataToMathGeometryQuestion(
+          {
+            question,
+            correctAnswer: repairedCorrect,
+            answers: repairedAnswers,
+            options: repairedAnswers,
+            correctIndex: finalCorrectIdx >= 0 ? finalCorrectIdx : 0,
+            topic: selectedTopic,
+            shape,
+            params: enrichedParams,
+            subjectId: "geometry",
+            type: "mcq",
+          },
+          {
+            subject: "geometry",
+            gradeKey,
+            levelKey,
+            topic: selectedTopic,
+          }
+        )
       )
     ),
     { subject: "geometry", contentLocale: "en" }

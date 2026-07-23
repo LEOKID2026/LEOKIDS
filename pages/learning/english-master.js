@@ -65,6 +65,7 @@ import {
   clearActiveDiagnosticState,
   decrementPendingProbeExpiry,
 } from "../../utils/active-diagnostic-runtime/index.js";
+import { useMasterDiagnosticPersistence } from "../../lib/learning/useMasterDiagnosticPersistence.js";
 import { mergeDiagnosticContractIntoParams } from "../../utils/diagnostic-question-contract";
 import { mcqCellValue } from "../../utils/mcq-option-cell";
 import { useLearningMasterUi } from "../../hooks/useLearningMasterUi";
@@ -512,6 +513,7 @@ export default function EnglishMaster() {
   const [mistakes, setMistakes] = useState([]);
   const englishPendingDiagnosticProbeRef = useRef(null);
   const englishHypothesisLedgerRef = useRef(null);
+  const englishAdaptiveStateRef = useRef(null);
   const englishGrammarRecentRowKeysRef = useRef([]);
   const bookPracticePresetRef = useRef(null);
   const practiceForceKindRef = useRef(null);
@@ -693,15 +695,27 @@ export default function EnglishMaster() {
   const [playerAvatarImage, setPlayerAvatarImage] = useState(null); //
   const [playerAvatarBackground, setPlayerAvatarBackground] = useState(DEFAULT_PROFILE_BACKGROUND_KEY);
   const [showPlayerProfile, setShowPlayerProfile] = useState(false);
-  
+
+  const {
+    snapshot: snapshotEnglishDiagnostic,
+    resolveAdaptiveTarget: resolveEnglishAdaptiveTarget,
+    recordAdaptive: recordEnglishAdaptive,
+  } = useMasterDiagnosticPersistence({
+    studentIdRef: learningProfileStudentIdRef,
+    subjectId: "english",
+    gradeKey: grade,
+    levelKey: level,
+    operationOrTopic: topic,
+    pendingRef: englishPendingDiagnosticProbeRef,
+    ledgerRef: englishHypothesisLedgerRef,
+    adaptiveRef: englishAdaptiveStateRef,
+    sessionFullName,
+    forceKindRef: practiceForceKindRef,
+  });
 
   useEffect(() => {
-    clearActiveDiagnosticState(
-      englishPendingDiagnosticProbeRef,
-      englishHypothesisLedgerRef
-    );
     englishGrammarRecentRowKeysRef.current = [];
-  }, [grade, level, topic, practiceFocus]);
+  }, [grade, level, topic, practiceFocus, sessionFullName]);
 
   useEffect(() => {
     let cancelled = false;
@@ -1186,6 +1200,8 @@ export default function EnglishMaster() {
           selectedValue: userAnswer,
           generatorSource: "english-master",
           afterStepByStep: stepByStepViewedRef.current,
+          isCorrect,
+          subject: "english",
         })
       : null;
     const answerLevelFields = buildAnswerLevelFields(
@@ -1541,6 +1557,9 @@ export default function EnglishMaster() {
     const localRecentQuestions = SessionAntiRepeatBuffer.fromIterable(recentQuestions);
     const probeAtStart = englishPendingDiagnosticProbeRef.current;
     const probeMetaHolder = { current: null };
+
+    resolveEnglishAdaptiveTarget({ operation: topicForState });
+
     do {
       question = generateQuestion(
         levelConfig,
@@ -1882,6 +1901,8 @@ export default function EnglishMaster() {
           now: probeAnsweredAt,
         }
       );
+      recordEnglishAdaptive(inferredTags?.[0] || null, isCorrect);
+      snapshotEnglishDiagnostic();
       diagnosticProbeMetaForSave = buildDiagnosticProbeClientMeta({
         probeMeta: questionForSave._probeMeta,
         ledger: englishHypothesisLedgerRef.current,
@@ -2140,6 +2161,7 @@ export default function EnglishMaster() {
             },
             "english"
           );
+          snapshotEnglishDiagnostic();
         } else {
           englishPendingDiagnosticProbeRef.current = null;
         }

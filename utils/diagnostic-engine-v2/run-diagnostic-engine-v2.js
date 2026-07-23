@@ -14,6 +14,7 @@ import { orderWordProblemsTaxonomyCandidates } from "./word-problems-taxonomy-ca
 import { orderGeometryTaxonomyCandidates } from "./geometry-taxonomy-candidate-order.js";
 import { orderEnglishTaxonomyCandidates } from "./english-taxonomy-candidate-order.js";
 import { passesRecurrenceRules, heavyHintLikelyInvalidatesPattern } from "./recurrence.js";
+import { passesEvidenceRecurrenceRules, evaluateEvidenceRecurrence } from "./evidence-recurrence.js";
 import { resolveConfidenceLevel } from "./confidence-policy.js";
 import { resolvePriority, breadthFromWeakRowCount } from "./priority-policy.js";
 import { applyOutputGating } from "./output-gating.js";
@@ -120,20 +121,15 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
       }
       /** @type {string|null} */
       let chosenId = null;
+      /** @type {ReturnType<typeof evaluateEvidenceRecurrence>|null} */
+      let evidenceRecurrence = null;
       for (const tid of candidateIds) {
         const trow = TAXONOMY_BY_ID[tid];
         if (!trow) continue;
-        if (passesRecurrenceRules(wrongs, trow)) {
+        const evRec = evaluateEvidenceRecurrence(wrongs, trow);
+        if (passesEvidenceRecurrenceRules(wrongs, trow)) {
           chosenId = tid;
-          break;
-        }
-        if (
-          wrongs.length === 0 &&
-          wrongCountForRules >= trow.minWrong &&
-          !(trow.minDistinctDays > 0) &&
-          !(trow.minDistinctPatternFamilies > 0)
-        ) {
-          chosenId = tid;
+          evidenceRecurrence = evRec;
           break;
         }
       }
@@ -157,13 +153,7 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
         if (!chosenId) return false;
         const trow = TAXONOMY_BY_ID[chosenId];
         if (!trow) return false;
-        if (passesRecurrenceRules(wrongs, trow)) return true;
-        return (
-          wrongs.length === 0 &&
-          wrongCountForRules >= trow.minWrong &&
-          !(trow.minDistinctDays > 0) &&
-          !(trow.minDistinctPatternFamilies > 0)
-        );
+        return passesEvidenceRecurrenceRules(wrongs, trow);
       })();
       const counterEvidenceStrong =
         (Number(row.accuracy) >= 88 && wrongCountForRules >= 4) ||
@@ -296,6 +286,16 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
           wrongEventCount: wrongs.length,
           rowWrongTotal,
           wrongCountForRules,
+          evidenceRecurrence: evidenceRecurrence
+            ? {
+                state: evidenceRecurrence.state,
+                evidenceCount: evidenceRecurrence.evidenceCount,
+                relevantQuestions: evidenceRecurrence.relevantQuestions,
+                occurrenceRatio: evidenceRecurrence.occurrenceRatio,
+                reasonCode: evidenceRecurrence.reasonCode,
+                requiredTags: evidenceRecurrence.requiredTags,
+              }
+            : null,
         },
         confidence: { level: confidence, rowSignals: { confidence01: row.confidence01 ?? null, dataSufficiencyLevel: row.dataSufficiencyLevel ?? null, isEarlySignalOnly: row.isEarlySignalOnly ?? null } },
         priority: { level: priority, breadth },

@@ -167,6 +167,13 @@ export function buildParentVisibleFinding({
       parentVisibleFinding =
         `In ${name}, a recurring pattern of mistakes appears (${patternLabel}). It helps to reinforce this topic.${contextSuffix}`;
       return { parentVisibleFinding, parentWordingLevel, templateId };
+    } else if (rawPatternLabel) {
+      templateId = "difficulty_repeated_evidence_tag";
+      parentWordingLevel =
+        evidenceStrength === "strong" ? "strong_pattern" : "repeated_pattern";
+      parentVisibleFinding =
+        `In ${name}, a recurring pattern of mistakes appears (${rawPatternLabel}). It helps to reinforce this topic.${contextSuffix}`;
+      return { parentVisibleFinding, parentWordingLevel, templateId };
     } else {
       templateId = "difficulty_repeated_generic";
       parentWordingLevel = "repeated_pattern";
