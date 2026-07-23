@@ -2,15 +2,16 @@
  * Worksheet preview route — separate screen layout and print document.
  */
 
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import WorksheetPreviewActions from "./WorksheetPreviewActions.jsx";
-import WorksheetScreenPreview from "./WorksheetScreenPreview.jsx";
-import WorksheetPrintDocument from "./WorksheetPrintDocument.jsx";
-import { useWorksheetShellAttrs } from "../../hooks/useWorksheetUi.js";
+import WritingPageRouter from "../writing/WritingPageRouter.jsx";
+import { useWorksheetShellAttrs, useWorksheetUi } from "../../hooks/useWorksheetUi.js";
+import { isColoringWorksheetPayload, isWritingWorksheetPayload } from "../../lib/worksheets/worksheet-payload-kind.client.js";
+import { waitForWritingTraceAssetsReady } from "../../lib/writing/writing-print-ready.client.js";
 
 /**
  * @param {{
- *   worksheetPayload: import("../../lib/worksheets/worksheet-question-types.js").WorksheetPayload,
+ *   worksheetPayload: import("../../lib/worksheets/worksheet-question-types.js").WorksheetPayload | import("../../lib/writing/writing-worksheet-types.js").WritingWorksheetPayload,
  *   includeAnswers: boolean,
  *   onPrint: () => void,
  *   onAnswerKey?: () => void,
@@ -30,27 +31,59 @@ export default function WorksheetPreviewPage({
   refreshLoading,
   backHref,
 }) {
+  const ui = useWorksheetUi();
   const shell = useWorksheetShellAttrs();
+  const isWriting = isWritingWorksheetPayload(worksheetPayload);
+  const isColoring = isColoringWorksheetPayload(worksheetPayload);
+
+  const handlePrint = useCallback(async () => {
+    if (isWriting) {
+      try {
+        await waitForWritingTraceAssetsReady();
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        if (typeof window !== "undefined") {
+          window.alert(`${ui.printFailedAlert} ${message}`);
+        }
+        return;
+      }
+    }
+    onPrint();
+  }, [isWriting, onPrint]);
 
   useEffect(() => {
     document.body.classList.add("worksheet-print-mode");
-    return () => document.body.classList.remove("worksheet-print-mode");
-  }, []);
+    if (isWritingWorksheetPayload(worksheetPayload)) {
+      document.body.classList.add("worksheet-writing-print-mode");
+      const orientation =
+        worksheetPayload.pages?.[0]?.orientation === "landscape" ? "landscape" : "portrait";
+      document.body.classList.add(`worksheet-writing-print-orientation-${orientation}`);
+    }
+    if (isColoringWorksheetPayload(worksheetPayload)) {
+      document.body.classList.add("worksheet-coloring-print-mode");
+    }
+    return () => {
+      document.body.classList.remove("worksheet-print-mode");
+      document.body.classList.remove("worksheet-writing-print-mode");
+      document.body.classList.remove("worksheet-writing-print-orientation-portrait");
+      document.body.classList.remove("worksheet-writing-print-orientation-landscape");
+      document.body.classList.remove("worksheet-coloring-print-mode");
+    };
+  }, [worksheetPayload]);
 
   return (
     <div {...shell} className="worksheet-preview-shell">
       <WorksheetPreviewActions
-        includeAnswers={includeAnswers}
-        onPrint={onPrint}
-        onAnswerKey={onAnswerKey}
+        includeAnswers={includeAnswers && !isWriting && !isColoring}
+        onPrint={handlePrint}
+        onAnswerKey={isWriting || isColoring ? undefined : onAnswerKey}
         answerKeyLoading={answerKeyLoading}
         onRefresh={onRefresh}
         refreshLoading={refreshLoading}
         backHref={backHref}
       />
 
-      <WorksheetScreenPreview worksheetPayload={worksheetPayload} />
-      <WorksheetPrintDocument worksheetPayload={worksheetPayload} />
+      <WritingPageRouter worksheetPayload={worksheetPayload} />
     </div>
   );
 }

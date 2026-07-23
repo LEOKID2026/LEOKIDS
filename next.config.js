@@ -101,6 +101,13 @@ const LEARNING_BOOK_ROUTE_PATTERNS = [
   "/learning/book/**",
 ];
 const LEARNING_BOOK_TRACE_FILES = ["./docs/learning-book/**"];
+const COLORING_CATALOG_FILE = "./data/coloring/coloring-pages-catalog.json";
+const COLORING_WORKSHEET_API_ROUTES = [
+  "/api/parent/worksheets/coloring-catalog",
+  "/api/public/worksheets/coloring-catalog",
+  "/api/parent/worksheets/generate",
+  "/api/public/worksheets/generate",
+];
 
 const nextConfig = {
   ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
@@ -117,6 +124,9 @@ const nextConfig = {
     ...Object.fromEntries(
       LEARNING_BOOK_ROUTE_PATTERNS.map((route) => [route, LEARNING_BOOK_TRACE_FILES]),
     ),
+    ...Object.fromEntries(
+      COLORING_WORKSHEET_API_ROUTES.map((route) => [route, [COLORING_CATALOG_FILE]])
+    ),
   },
   reactStrictMode: false, // זמנית - כדי למנוע רענון אינסופי בפיתוח
   // Windows: lower parallel SSG concurrency to avoid intermittent PageNotFoundError
@@ -129,6 +139,13 @@ const nextConfig = {
       }
     : {}),
   webpack: (config, { dev, isServer }) => {
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        sharp: false,
+        "onnxruntime-node": false,
+      };
+    }
     if (dev) {
       // Windows + long paths: filesystem webpack cache often corrupts mid-compile (ENOENT/rename).
       if (isWindows) {

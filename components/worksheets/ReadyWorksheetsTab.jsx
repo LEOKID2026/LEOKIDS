@@ -2,18 +2,17 @@
  * Ready worksheets catalog tab — filters + catalog cards.
  */
 
+import { useMemo, useState } from "react";
 import { WORKSHEET_SUBJECT_ALLOWLIST } from "../../lib/worksheets/worksheet-print-allowlist.js";
 import { WORKSHEET_LEVEL_OPTIONS } from "../../lib/worksheets/worksheet-level-display.js";
-import {
-  useWorksheetUi,
-  worksheetGradeLabel,
-  worksheetLevelLabel,
-  worksheetSubjectLabel,
-} from "../../hooks/useWorksheetUi.js";
+import { useWorksheetUi, worksheetGradeLabel, worksheetLevelLabel, worksheetSubjectLabel, writingCategoryLabel, WRITING_CATEGORY_I18N_KEYS } from "../../hooks/useWorksheetUi.js";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import WorksheetIncludeAnswersOption from "./WorksheetIncludeAnswersOption.jsx";
+import WritingLockedModal from "../writing/WritingLockedModal.jsx";
 
 const GRADE_FILTER_KEYS = ["", "g1", "g2", "g3", "g4", "g5", "g6"];
+
+const CATALOG_PAGE_SIZE = 24;
 
 /**
  * @param {{
@@ -25,6 +24,9 @@ const GRADE_FILTER_KEYS = ["", "g1", "g2", "g3", "g4", "g5", "g6"];
  *   filterSubject: string,
  *   filterGrade: string,
  *   filterLevel: string,
+ *   filterWorksheetType?: string,
+ *   filterWritingCategory?: string,
+ *   searchQuery?: string,
  *   onFilterChange: (patch: Record<string, string>) => void,
  *   includeAnswers: boolean,
  *   includeAnswersReady: boolean,
@@ -32,6 +34,9 @@ const GRADE_FILTER_KEYS = ["", "g1", "g2", "g3", "g4", "g5", "g6"];
  *   T: Record<string, string>,
  *   titleOverride?: string,
  *   hintOverride?: string,
+ *   hidePanelHeader?: boolean,
+ *   enableLockedModal?: boolean,
+ *   catalogPageSize?: number,
  * }} props
  */
 export default function ReadyWorksheetsTab({
@@ -43,6 +48,9 @@ export default function ReadyWorksheetsTab({
   filterSubject,
   filterGrade,
   filterLevel,
+  filterWorksheetType = "",
+  filterWritingCategory = "",
+  searchQuery = "",
   onFilterChange,
   includeAnswers,
   includeAnswersReady,
@@ -50,9 +58,70 @@ export default function ReadyWorksheetsTab({
   T,
   titleOverride,
   hintOverride,
+  hidePanelHeader = false,
+  enableLockedModal = false,
+  catalogPageSize = CATALOG_PAGE_SIZE,
 }) {
   const ui = useWorksheetUi();
   const t = useT();
+  const worksheetTypeOptions = [
+    { key: "", label: ui.worksheetTypeAll },
+    { key: "questions", label: ui.worksheetTypeQuestions },
+    { key: "writing", label: ui.worksheetTypeWriting },
+  ];
+  const [lockedItem, setLockedItem] = useState(null);
+  const [page, setPage] = useState(0);
+
+  const filteredItems = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return items.filter((item) => {
+      if (filterWorksheetType && item.worksheetType !== filterWorksheetType) return false;
+      if (filterWritingCategory && item.writingCategory !== filterWritingCategory) return false;
+      if (filterSubject && item.subjectId !== filterSubject) return false;
+      if (filterGrade && item.gradeKey !== filterGrade) return false;
+      if (filterLevel && item.levelKey !== filterLevel) return false;
+      if (q) {
+        const haystack = [
+          item.titleHe,
+          item.topicHe,
+          item.catalogNumber,
+          item.categoryHe,
+          item.slug,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
+      return true;
+    });
+  }, [
+    items,
+    filterWorksheetType,
+    filterWritingCategory,
+    filterSubject,
+    filterGrade,
+    filterLevel,
+    searchQuery,
+  ]);
+
+  const pageCount = Math.max(1, Math.ceil(filteredItems.length / catalogPageSize));
+  const safePage = Math.min(page, pageCount - 1);
+  const pageItems = filteredItems.slice(
+    safePage * catalogPageSize,
+    safePage * catalogPageSize + catalogPageSize
+  );
+
+  const handleCardActivate = (item) => {
+    if (enableLockedModal && item.locked === true) {
+      setLockedItem(item);
+      return;
+    }
+    if (item.worksheetType === "questions") {
+      return;
+    }
+    onViewPrint(String(item.slug));
+  };
 
   if (loading) {
     return (
@@ -75,21 +144,68 @@ export default function ReadyWorksheetsTab({
 
   return (
     <div className={`worksheet-hub-panel ${T.panel}`}>
-      <h2 className={`worksheet-hub-panel-title ${T.heading}`}>
-        {titleOverride || ui.readyTitle}
-      </h2>
+      {hidePanelHeader ? null : (
+        <>
+          <h2 className={`worksheet-hub-panel-title ${T.heading}`}>
+            {titleOverride || ui.readyTitle}
+          </h2>
+          <p className={`worksheet-hub-panel-hint ${T.muted}`}>
+            {hintOverride || ui.readyHint}
+          </p>
+        </>
+      )}
 
-      <p className={`worksheet-hub-panel-hint ${T.muted}`}>
-        {hintOverride || ui.readyHint}
-      </p>
+      <div className="worksheet-filter-bar worksheet-type-filter-bar">
+        <label>
+          <span className={`worksheet-filter-label ${T.muted}`}>{ui.worksheetTypeField}</span>
+          <select
+            className={T.inputMt}
+            value={filterWorksheetType}
+            onChange={(e) => {
+              setPage(0);
+              onFilterChange({ filterWorksheetType: e.target.value });
+            }}
+          >
+            {worksheetTypeOptions.map((opt) => (
+              <option key={opt.key || "all"} value={opt.key}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+        </label>
 
-      <div className="worksheet-filter-bar">
+        {filterWorksheetType === "writing" || !filterWorksheetType ? (
+          <label>
+            <span className={`worksheet-filter-label ${T.muted}`}>
+              {ui.writingCategoryField}
+            </span>
+            <select
+              className={T.inputMt}
+              value={filterWritingCategory}
+              onChange={(e) => {
+                setPage(0);
+                onFilterChange({ filterWritingCategory: e.target.value });
+              }}
+            >
+              <option value="">{ui.writingCategoryAll}</option>
+              {Object.keys(WRITING_CATEGORY_I18N_KEYS).map((key) => (
+                <option key={key} value={key}>
+                  {writingCategoryLabel(t, key)}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
+
         <label>
           <span className={`worksheet-filter-label ${T.muted}`}>{ui.subjectField}</span>
           <select
             className={T.inputMt}
             value={filterSubject}
-            onChange={(e) => onFilterChange({ filterSubject: e.target.value })}
+            onChange={(e) => {
+              setPage(0);
+              onFilterChange({ filterSubject: e.target.value });
+            }}
           >
             <option value="">{ui.subjectFilterAll}</option>
             {Object.keys(WORKSHEET_SUBJECT_ALLOWLIST).map((key) => (
@@ -105,7 +221,10 @@ export default function ReadyWorksheetsTab({
           <select
             className={T.inputMt}
             value={filterGrade}
-            onChange={(e) => onFilterChange({ filterGrade: e.target.value })}
+            onChange={(e) => {
+              setPage(0);
+              onFilterChange({ filterGrade: e.target.value });
+            }}
           >
             {GRADE_FILTER_KEYS.map((key) => (
               <option key={key || "all"} value={key}>
@@ -120,7 +239,10 @@ export default function ReadyWorksheetsTab({
           <select
             className={T.inputMt}
             value={filterLevel}
-            onChange={(e) => onFilterChange({ filterLevel: e.target.value })}
+            onChange={(e) => {
+              setPage(0);
+              onFilterChange({ filterLevel: e.target.value });
+            }}
           >
             <option value="">{ui.levelFilterAll}</option>
             {WORKSHEET_LEVEL_OPTIONS.map((levelOpt) => (
@@ -130,9 +252,23 @@ export default function ReadyWorksheetsTab({
             ))}
           </select>
         </label>
+
+        <label className="worksheet-filter-search">
+          <span className={`worksheet-filter-label ${T.muted}`}>{ui.searchField}</span>
+          <input
+            type="search"
+            className={T.inputMt}
+            value={searchQuery}
+            placeholder={ui.writingSearchPlaceholder}
+            onChange={(e) => {
+              setPage(0);
+              onFilterChange({ searchQuery: e.target.value });
+            }}
+          />
+        </label>
       </div>
 
-      {includeAnswersReady ? (
+      {includeAnswersReady && filterWorksheetType !== "writing" ? (
         <WorksheetIncludeAnswersOption
           checked={includeAnswers}
           onChange={onIncludeAnswersChange}
@@ -141,45 +277,142 @@ export default function ReadyWorksheetsTab({
         />
       ) : null}
 
-      {!items.length ? (
+      {!filteredItems.length ? (
         <div className="worksheet-empty-state">
           <div className="worksheet-empty-state-icon" aria-hidden="true">
             🔍
           </div>
-          <p className={`worksheet-empty-state-title ${T.heading}`}>{ui.readyEmptyTitle}</p>
+          <p className={`worksheet-empty-state-title ${T.heading}`}>
+            {ui.readyEmptyTitle}
+          </p>
           <p className={`worksheet-empty-state-text ${T.muted}`}>{ui.readyEmptyText}</p>
         </div>
       ) : (
-        <div className="worksheet-ready-grid">
-          {items.map((item) => (
-            <article key={item.slug} className="worksheet-ready-card">
-              <div>
-                <div className="worksheet-ready-card-top">
-                  <span className="worksheet-subject-badge" data-subject={item.subjectId}>
-                    {item.subjectHe}
-                  </span>
-                  <span className="worksheet-level-pill" data-level={item.levelKey}>
-                    {item.levelHe}
-                  </span>
-                </div>
-                <h3 className={`worksheet-ready-card-title ${T.heading}`}>{item.topicHe}</h3>
-                <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>{item.gradeHe}</p>
-                <p className={`worksheet-ready-card-count ${T.muted}`}>
-                  {item.count} {ui.questionCount}
-                </p>
-              </div>
+        <>
+          <div className="worksheet-ready-grid">
+            {pageItems.map((item) => {
+              const isWriting = item.worksheetType === "writing";
+              const isQuestion = item.worksheetType === "questions";
+              const isLocked = item.locked === true;
+              const cardHref = null;
+
+              const cardBody = (
+                <>
+                  <div>
+                    <div className="worksheet-ready-card-top">
+                      {isWriting ? (
+                        <span className="worksheet-subject-badge" data-subject="writing">
+                          {ui.worksheetTypeWriting}
+                        </span>
+                      ) : (
+                        <span className="worksheet-subject-badge" data-subject={item.subjectId}>
+                          {item.subjectHe}
+                        </span>
+                      )}
+                      {!isWriting && item.levelHe ? (
+                        <span className="worksheet-level-pill" data-level={item.levelKey}>
+                          {item.levelHe}
+                        </span>
+                      ) : null}
+                      {item.catalogNumber ? (
+                        <span className="worksheet-catalog-pill">{String(item.catalogNumber)}</span>
+                      ) : null}
+                    </div>
+
+                    <h3 className={`worksheet-ready-card-title ${T.heading}`}>
+                      {item.titleHe || item.topicHe}
+                    </h3>
+
+                    {isWriting ? (
+                      <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>
+                        {item.categoryHe || item.writingCategory}
+                      </p>
+                    ) : (
+                      <>
+                        <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>{item.gradeHe}</p>
+                        <p className={`worksheet-ready-card-count ${T.muted}`}>
+                          {item.count} {ui.questionCount}
+                        </p>
+                      </>
+                    )}
+                  </div>
+
+                  {cardHref ? (
+                    <span className={T.cardReportBtn}>{ui.viewAndPrint}</span>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled={busySlug === item.slug}
+                      onClick={() => handleCardActivate(item)}
+                      className={T.cardReportBtn}
+                      aria-label={
+                        isLocked
+                          ? `${item.titleHe || item.topicHe} — ${ui.writingLockedTitle}`
+                          : undefined
+                      }
+                    >
+                      {busySlug === item.slug
+                        ? ui.loading
+                        : isLocked
+                          ? ui.writingLockedTitle
+                          : ui.viewAndPrint}
+                    </button>
+                  )}
+                </>
+              );
+
+              if (cardHref) {
+                return (
+                  <Link
+                    key={String(item.slug)}
+                    href={cardHref}
+                    className={`worksheet-ready-card worksheet-ready-card-link${isLocked ? " is-locked" : ""}`}
+                  >
+                    {cardBody}
+                  </Link>
+                );
+              }
+
+              return (
+                <article
+                  key={String(item.slug)}
+                  className={`worksheet-ready-card${isLocked ? " is-locked" : ""}`}
+                >
+                  {cardBody}
+                </article>
+              );
+            })}
+          </div>
+
+          {pageCount > 1 ? (
+            <nav className="worksheet-catalog-pagination" aria-label={ui.catalogPaginationAria}>
               <button
                 type="button"
-                disabled={busySlug === item.slug}
-                onClick={() => onViewPrint(item.slug)}
-                className={T.cardReportBtn}
+                className={T.secondaryBtn}
+                disabled={safePage <= 0}
+                onClick={() => setPage((p) => Math.max(0, p - 1))}
               >
-                {busySlug === item.slug ? ui.loading : ui.viewAndPrint}
+                {ui.catalogPaginationPrevious}
               </button>
-            </article>
-          ))}
-        </div>
+              <span className={T.muted}>
+                {safePage + 1} / {pageCount}
+              </span>
+              <button
+                type="button"
+                className={T.secondaryBtn}
+                disabled={safePage >= pageCount - 1}
+                onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
+              >
+                {ui.catalogPaginationNext}
+              </button>
+            </nav>
+          ) : null}
+        </>
       )}
+
+      {enableLockedModal ? (
+        <WritingLockedModal item={lockedItem} onClose={() => setLockedItem(null)} T={T} />
+      ) : null}
     </div>
   );
 }
