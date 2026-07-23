@@ -175,20 +175,10 @@ function WritingWordTrace({ text, scriptStyle, language, mode }) {
 
 function WritingItemView({ item, meta, scriptStyle, mode }) {
 
-  const lang = meta.language === "en" ? "en" : meta.language === "mixed" ? "mixed" : "he";
-
-  const fontFamily = writingFontFamilyFor(lang === "en" ? "en" : "he", scriptStyle);
-
+  const lang = "en";
+  const fontFamily = writingFontFamilyFor("en", scriptStyle);
   const dir = item.direction === "ltr" ? "ltr" : item.direction === "rtl" ? "rtl" : undefined;
-
   const traceClass = traceItemClass(item.traceRenderMode);
-
-  const isHebrewModelSvg =
-    item.itemType === "glyph" &&
-    item.traceRenderMode === "faint_model" &&
-    Boolean(item.svgAssetId) &&
-    lang !== "en" &&
-    /[\u0590-\u05FF]/.test(String(item.character || ""));
 
   const isTraceSvgMode =
 
@@ -199,18 +189,12 @@ function WritingItemView({ item, meta, scriptStyle, mode }) {
     item.traceRenderMode === "stroke_path";
 
   const showGlyphText =
-
-    (item.taskType !== "trace" ||
-
-      item.traceRenderMode === "faint_model" ||
-
-      (!isTraceSvgMode && !item.svgAssetId)) &&
-    !isHebrewModelSvg;
+    item.taskType !== "trace" ||
+    item.traceRenderMode === "faint_model" ||
+    (!isTraceSvgMode && !item.svgAssetId);
 
   const showTraceSvg =
-
-    (item.taskType === "trace" && isTraceSvgMode && item.svgAssetId && item.itemType !== "word") ||
-    isHebrewModelSvg;
+    item.taskType === "trace" && isTraceSvgMode && item.svgAssetId && item.itemType !== "word";
 
 
 
