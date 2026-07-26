@@ -19,7 +19,7 @@ const {
   bumpActivityFromLearningSession,
   bumpActivityTimestamp,
   createEmptyActivityTimestamps,
-  formatParentReportActivityIsrael,
+  formatParentReportActivityLocal,
   parseActivityTimestampMs,
   reportRangeBoundsMs,
   reconcileLatestActivityToReportRange,
@@ -97,10 +97,16 @@ const NEW_ISO = new Date(NEW_MS).toISOString();
   assert.ok(activityMsInReportRange(bucket.latestActivityMs, range));
 }
 
-// UTC 15:00 → Israel 18:00 (May DST, Asia/Jerusalem).
+// UTC default: 2026-05-18T15:00:00Z → 18/05/2026 15:00
 {
-  const label = formatParentReportActivityIsrael(NEW_MS);
-  assert.match(label, /18\/05\/2026 18:00/, `expected Israel local time, got ${label}`);
+  const label = formatParentReportActivityLocal(NEW_MS);
+  assert.match(label, /18\/05\/2026 15:00/, `expected UTC display time, got ${label}`);
+}
+
+// Explicit IANA timezone: America/New_York (EDT in May) → 18/05/2026 11:00
+{
+  const label = formatParentReportActivityLocal(NEW_MS, "America/New_York");
+  assert.match(label, /18\/05\/2026 11:00/, `expected America/New_York display time, got ${label}`);
 }
 
 // Adapter + seed: real latestActivityAt, not report-range midpoint.
@@ -265,7 +271,7 @@ const NEW_ISO = new Date(NEW_MS).toISOString();
       questions: 3,
       correct: 2,
       lastSessionMs: OLD_MS,
-      lastSessionAt: formatParentReportActivityIsrael(OLD_MS),
+      lastSessionAt: formatParentReportActivityLocal(OLD_MS),
     },
     "fractions::mode:practice::g4::medium": {
       bucketKey: "fractions",
@@ -273,13 +279,13 @@ const NEW_ISO = new Date(NEW_MS).toISOString();
       questions: 2,
       correct: 1,
       lastSessionMs: NEW_MS,
-      lastSessionAt: formatParentReportActivityIsrael(NEW_MS),
+      lastSessionAt: formatParentReportActivityLocal(NEW_MS),
       latestActivitySource: "answer.answered_at",
     },
   });
   const row = collapsed["fractions::grade:g4"];
   assert.equal(row.lastSessionMs, NEW_MS);
-  assert.match(String(row.latestActivityAt), /18\/05\/2026 18:00/);
+  assert.match(String(row.latestActivityAt), /18\/05\/2026 15:00/);
 }
 
 process.stdout.write("OK parent-report-activity-time-selftest\n");
