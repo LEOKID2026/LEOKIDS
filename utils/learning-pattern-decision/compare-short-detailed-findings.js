@@ -71,6 +71,18 @@ export function detailedLearningPatternDecisionFromReport(
  * @param {unknown} shortLpd
  * @param {unknown} detailedLpd
  */
+function canonicalFactualObservationsJson(list) {
+  const arr = Array.isArray(list) ? list : [];
+  return JSON.stringify(
+    arr.map((o) => ({
+      canonicalKey: o?.canonicalKey,
+      label: o?.label,
+      count: o?.count,
+      recurrenceLevel: o?.recurrenceLevel,
+    })),
+  );
+}
+
 export function learningPatternDecisionsMatch(shortLpd, detailedLpd) {
   if (!shortLpd && !detailedLpd) return true;
   if (!shortLpd || !detailedLpd) return false;
@@ -84,6 +96,12 @@ export function learningPatternDecisionsMatch(shortLpd, detailedLpd) {
   ];
   for (const f of fields) {
     if (String(shortLpd[f] || "") !== String(detailedLpd[f] || "")) return false;
+  }
+  if (
+    canonicalFactualObservationsJson(shortLpd.factualObservations) !==
+    canonicalFactualObservationsJson(detailedLpd.factualObservations)
+  ) {
+    return false;
   }
   return true;
 }

@@ -1975,6 +1975,8 @@ function buildTopicOverviewRowsFromUnits(baseReport, sid, units, topicMapForSid)
         placementKind: place.placementKind,
         learningPatternDecision: lpd,
         parentVisibleFinding: lpd?.parentVisibleFinding || "",
+        factualObservations: lpd?.factualObservations || mapR?.factualObservations || [],
+        topicDisplayChrome: mapR?.topicDisplayChrome || null,
         rowIdentityV1: buildRowIdentityV1({
           subjectId: sid,
           topicRowKey: trk,
@@ -2264,6 +2266,9 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
       topicEngineContract.parentSafeFinding || lpd?.parentVisibleFinding || "",
     parentWordingLevel: lpd?.parentWordingLevel || "no_parent_text",
     topicStatus: lpd?.topicStatus || null,
+    factualObservations: lpd?.factualObservations || mapRow?.factualObservations || [],
+    topicDisplayChrome:
+      mapRow && typeof mapRow === "object" && mapRow.topicDisplayChrome ? mapRow.topicDisplayChrome : null,
     findingType: lpd?.findingType || null,
     narrativeTitleHe: reportMeta?.baseReport
       ? parentFacingDisplayLabelsForV2Unit(reportMeta.baseReport, u).titleHe

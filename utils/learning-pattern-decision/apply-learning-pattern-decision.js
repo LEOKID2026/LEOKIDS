@@ -5,6 +5,7 @@ import { SUBJECT_IDS } from "../diagnostic-engine-v2/subject-ids.js";
 import { buildLearningPatternDecision } from "./build-learning-pattern-decision.js";
 import { normalizeParentVisibleMetrics } from "./normalize-parent-practice-metrics.js";
 import { buildParentSafeActionDecisionV1 } from "../action-decision-contract/parent-action-decision-translations.js";
+import { parentTopicDisplayChromeFromRow } from "../parent-report-surface/parent-topic-display-chrome.js";
 
 /**
  * @param {object|null} professionalEngineV1
@@ -114,6 +115,8 @@ export function applyLearningPatternDecisionToUnitsAndRows({
         row.actionDecisionContract,
         { topicLabel: row.label || row.displayName || "" },
       );
+      row.factualObservations = lpd.factualObservations || [];
+      row.topicDisplayChrome = parentTopicDisplayChromeFromRow(row);
       bySubject[subjectId][topicRowKey] = lpd;
 
       if (unit) {
@@ -121,6 +124,8 @@ export function applyLearningPatternDecisionToUnitsAndRows({
         unit.engineDecisionContract = lpd.engineDecisionContract || null;
         unit.actionDecisionContract = row.actionDecisionContract;
         unit.parentActionDecision = row.parentActionDecision;
+        unit.factualObservations = row.factualObservations;
+        unit.topicDisplayChrome = row.topicDisplayChrome;
       }
     }
   }

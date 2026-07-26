@@ -1,7 +1,16 @@
 import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
+import {
+  isApprovedFactualObservationTag,
+  provenFactualParentLabelEn,
+} from "./parent-facing-error-pattern-factual.js";
 /**
  * Parent-facing English for internal error/pattern keys — never show raw snake_case to parents.
  * English sibling of parent-facing-error-pattern-he.js.
+ *
+ * For tags that are approved, evidence-backed factual observations (see
+ * parent-facing-error-pattern-factual.js), we prefer the factual English label over the
+ * hedgy/interpretive wording below ("may be", "confusion", "foundational mix-up") — those
+ * softened phrasings are reserved for pattern-family-level keys that are not directly proven.
  */
 
 /** Section heading for topic-card home actions (product copy). */
@@ -78,6 +87,10 @@ export function isTechnicalPatternKey(label) {
 export function parentFacingErrorPatternLabel(label) {
   const key = String(label || "").trim().toLowerCase();
   if (!key) return "";
+  if (isApprovedFactualObservationTag(key)) {
+    const factual = provenFactualParentLabelEn(key);
+    if (factual) return factual;
+  }
   return PARENT_ERROR_PATTERN_LABEL[key] || "";
 }
 
@@ -87,6 +100,10 @@ export function parentFacingErrorPatternLabel(label) {
 export function parentFacingErrorPatternMeaning(label) {
   const key = String(label || "").trim().toLowerCase();
   if (!key) return "";
+  if (isApprovedFactualObservationTag(key)) {
+    const factual = provenFactualParentLabelEn(key);
+    if (factual) return `This showed up in the practice: ${factual}.`;
+  }
   if (PARENT_ERROR_PATTERN_MEANING[key]) return PARENT_ERROR_PATTERN_MEANING[key];
   const short = parentFacingErrorPatternLabel(label);
   if (short) return `The difficulty seems related to the fact that ${short}.`;

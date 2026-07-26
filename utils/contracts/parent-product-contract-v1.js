@@ -166,6 +166,8 @@ function buildContractRow(row, subjectProfile) {
       ...getTrendEvidenceCounters(row),
       thinEvidenceDowngraded: !!row?.thinEvidenceDowngraded,
     },
+    topicStatus: row?.topicDisplayChrome?.topicStatus || row?.topicStatus || null,
+    factualObservations: Array.isArray(row?.factualObservations) ? row.factualObservations : [],
   };
 }
 
