@@ -185,6 +185,10 @@ import {
   tryConsumeBookContextOnPracticeEntry,
 } from "../../lib/learning-book/book-context-master-helper";
 import { useStudentDisplayLevelPractice } from "../../hooks/useStudentDisplayLevelPractice.js";
+import { useActionDecisionRouteSync } from "../../hooks/useActionDecisionRouteSync.js";
+import { usePracticeMoreBudget } from "../../hooks/usePracticeMoreBudget.js";
+import { resolvePracticeMoreTopicOverride } from "../../lib/learning/practice-more-budget.js";
+import { useStudentActionDecision } from "../../hooks/useStudentActionDecision.js";
 import { StudentDisplayLevelSelect } from "../../components/learning/StudentDisplayLevelSelect.js";
 import {
   isStudentAdaptiveActive,
@@ -416,6 +420,19 @@ export default function EnglishMaster() {
   const [streak, setStreak] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
+  const {
+    directive: actionDecisionDirective,
+    recordActivity: recordActionDecisionActivity,
+  } = useStudentActionDecision({
+    enabled:
+      learningProfileHydrationTick > 0 &&
+      Boolean(learningProfileStudentIdRef.current),
+    studentId: learningProfileStudentIdRef.current,
+    subjectId: "english",
+    topicKey: topic,
+    gradeKey: grade,
+    levelKey: level,
+  });
   const [timeLeft, setTimeLeft] = useState(20);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [typedAnswer, setTypedAnswer] = useState("");
@@ -1375,8 +1392,25 @@ export default function EnglishMaster() {
     };
   }, [mounted]);
 
+  // ADC-driven forced question kind + level, with rollback on expiry/failure
+  // (see hooks/useActionDecisionRouteSync.js — BLOCKER-2 closure).
+  useActionDecisionRouteSync({
+    directive: actionDecisionDirective,
+    level,
+    applyLevel: applyPlannerLevelKey,
+    forceKindRef: practiceForceKindRef,
+  });
+  const practiceMoreBudget = usePracticeMoreBudget(actionDecisionDirective);
+
   useEffect(() => {
     if (!gameActive || (mode !== "challenge" && mode !== "speed")) return;
+    if (
+      actionDecisionDirective.active &&
+      actionDecisionDirective.sessionPolicy.timerEnabled === false
+    ) {
+      if (timeLeft != null) setTimeLeft(null);
+      return;
+    }
     if (timeLeft == null) return;
     if (timeLeft <= 0) {
       handleTimeUp();
@@ -1386,7 +1420,7 @@ export default function EnglishMaster() {
       setTimeLeft((prev) => (prev != null ? prev - 1 : prev));
     }, 1000);
     return () => clearTimeout(timer);
-  }, [gameActive, mode, timeLeft]);
+  }, [actionDecisionDirective, gameActive, mode, timeLeft]);
 
   function saveRunToStorage() {
     if (typeof window === "undefined" || !playerName.trim()) return;
@@ -1548,6 +1582,17 @@ export default function EnglishMaster() {
       topicForState = "translation";
     } else if (useStoryQuestions && translationVisible && topicForState !== "translation") {
       topicForState = Math.random() < 0.5 ? "translation" : topicForState;
+    }
+
+    // While a practice_more budget remains, pin content selection to the
+    // decision's topic — overriding "mixed"/translation-swap above.
+    const practiceMoreTopicLock = resolvePracticeMoreTopicOverride(
+      practiceMoreBudget,
+      visibleEnglishTopics
+    );
+    if (practiceMoreTopicLock) {
+      topicForState = practiceMoreTopicLock;
+      mixedConfig = null;
     }
 
     const levelConfig = getLevelForGrade(levelForQuestion, gradeForQuestion);
@@ -1806,6 +1851,7 @@ export default function EnglishMaster() {
 
   function handleAnswer(answer) {
     if (selectedAnswer || !gameActive || !currentQuestion) return;
+    recordActionDecisionActivity();
     const questionForSave = currentQuestion;
     const hintUsedForSave = false;
     const rawMs = questionStartTime ? Math.max(0, Date.now() - questionStartTime) : null;
@@ -1935,6 +1981,10 @@ export default function EnglishMaster() {
         mode: focusedPracticeMode,
       });
     }
+    practiceMoreBudget.consume({
+      gameMode: reportModeFromGameState(mode, focusedPracticeMode),
+      afterStepByStep: stepByStepViewedRef.current,
+    });
     saveEnglishAnswerInParallel({
       question: questionForSave,
       userAnswer: answer,

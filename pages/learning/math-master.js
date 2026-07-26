@@ -116,6 +116,10 @@ import {
 } from "../../utils/learning-step-exercise-types";
 import { finalizeAnimationSteps } from "../../utils/learning-step-animation-pipeline";
 import { useLearningMasterUi } from "../../hooks/useLearningMasterUi.js";
+import { useStudentActionDecision } from "../../hooks/useStudentActionDecision.js";
+import { useActionDecisionRouteSync } from "../../hooks/useActionDecisionRouteSync.js";
+import { usePracticeMoreBudget } from "../../hooks/usePracticeMoreBudget.js";
+import { resolvePracticeMoreTopicOverride } from "../../lib/learning/practice-more-budget.js";
 import SubjectMasterSessionShell from "../../components/learning/SubjectMasterSessionShell.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { useGuestPlayableTopics } from "../../hooks/useGuestPlayableTopics.js";
@@ -682,6 +686,19 @@ export default function MathMaster() {
   const [streak, setStreak] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
+  const {
+    directive: actionDecisionDirective,
+    recordActivity: recordActionDecisionActivity,
+  } = useStudentActionDecision({
+    enabled:
+      learningProfileHydrationTick > 0 &&
+      Boolean(learningProfileStudentIdRef.current),
+    studentId: learningProfileStudentIdRef.current,
+    subjectId: "math",
+    topicKey: operation,
+    gradeKey: grade,
+    levelKey: level,
+  });
   const [timeLeft, setTimeLeft] = useState(20);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [textAnswer, setTextAnswer] = useState(""); //
@@ -1711,9 +1728,28 @@ export default function MathMaster() {
     return () => window.removeEventListener("resize", syncScratchpadAnchor);
   }, [mounted, gameActive, grade, level, operation, mode]);
 
+  // ADC-driven forced question kind + level, with rollback on expiry/failure
+  // (see hooks/useActionDecisionRouteSync.js — BLOCKER-2 closure).
+  useActionDecisionRouteSync({
+    directive: actionDecisionDirective,
+    level,
+    applyLevel: setLevel,
+    forceKindRef: practiceForceKindRef,
+  });
+  // Real runtime consumption of practice_more's additionalQuestions budget
+  // (see hooks/usePracticeMoreBudget.js).
+  const practiceMoreBudget = usePracticeMoreBudget(actionDecisionDirective);
+
   // Timer countdown (רק במצב Challenge או Speed)
   useEffect(() => {
     if (!gameActive || (mode !== "challenge" && mode !== "speed")) return;
+    if (
+      actionDecisionDirective.active &&
+      actionDecisionDirective.sessionPolicy.timerEnabled === false
+    ) {
+      if (timeLeft != null) setTimeLeft(null);
+      return;
+    }
     if (timeLeft == null) return;
 
     if (timeLeft <= 0) {
@@ -1726,7 +1762,7 @@ export default function MathMaster() {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [gameActive, mode, timeLeft]);
+  }, [actionDecisionDirective, gameActive, mode, timeLeft]);
 
   // שמירת ריצה נוכחית אל localStorage + עדכון Best & Leaderboard
   function saveRunToStorage() {
@@ -2148,6 +2184,18 @@ export default function MathMaster() {
           opForQuestion =
             Math.random() < 0.5 ? "word_problems" : operation;
         }
+      }
+
+      // While a practice_more budget remains, pin the topic actually used
+      // for content selection to the decision's topic — overriding "mixed"
+      // random pick and the word-problems coin-flip above. This is the
+      // real product effect of practice_more, not just bookkeeping.
+      const practiceMoreTopicLock = resolvePracticeMoreTopicOverride(
+        practiceMoreBudget,
+        GRADES[grade].operations
+      );
+      if (practiceMoreTopicLock) {
+        opForQuestion = practiceMoreTopicLock;
       }
 
       question = generateQuestion(
@@ -2665,6 +2713,7 @@ export default function MathMaster() {
 
   function handleAnswer(answer) {
     if (selectedAnswer || !gameActive || !currentQuestion) return;
+    recordActionDecisionActivity();
     setScratchpadCloseSignal((n) => n + 1);
     const questionForSave = currentQuestion;
     const hintUsedForSave = false;
@@ -2833,6 +2882,10 @@ export default function MathMaster() {
         setLevel(regularAdaptiveRef.current.internalState);
       }
     }
+    practiceMoreBudget.consume({
+      gameMode: reportModeFromGameState(mode, focusedPracticeModeRef.current),
+      afterStepByStep: stepByStepViewedRef.current,
+    });
     saveAnswerInParallel({
       question: currentQuestion,
       userAnswer: numericAnswer,

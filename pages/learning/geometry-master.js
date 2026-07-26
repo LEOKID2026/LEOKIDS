@@ -228,6 +228,12 @@ import { buildDailyMissionsView } from "../../lib/learning-client/dailyMissionsV
 import { fetchStudentHomeProfile } from "../../lib/learning-client/fetchStudentHomeProfile";
 import { buildSubjectMonthlyPersistenceViewFromProfile } from "../../lib/learning-client/subjectMonthlyPersistenceView";
 import { useStudentDisplayLevelPractice } from "../../hooks/useStudentDisplayLevelPractice.js";
+import { useActionDecisionRouteSync } from "../../hooks/useActionDecisionRouteSync.js";
+import { usePracticeMoreBudget } from "../../hooks/usePracticeMoreBudget.js";
+import { resolvePracticeMoreTopicOverride } from "../../lib/learning/practice-more-budget.js";
+import { usePrerequisiteContentOverride } from "../../hooks/usePrerequisiteContentOverride.js";
+import { pickQuestionForSkill } from "../../lib/learning/prerequisite-content-source.js";
+import { useStudentActionDecision } from "../../hooks/useStudentActionDecision.js";
 import { StudentDisplayLevelSelect } from "../../components/learning/StudentDisplayLevelSelect.js";
 import {
   studentDisplayLevelKeys,
@@ -437,6 +443,19 @@ export default function GeometryMaster() {
   const [streak, setStreak] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
+  const {
+    directive: actionDecisionDirective,
+    recordActivity: recordActionDecisionActivity,
+  } = useStudentActionDecision({
+    enabled:
+      learningProfileHydrationTick > 0 &&
+      Boolean(learningProfileStudentIdRef.current),
+    studentId: learningProfileStudentIdRef.current,
+    subjectId: "geometry",
+    topicKey: topic,
+    gradeKey: grade,
+    levelKey: level,
+  });
   const [timeLeft, setTimeLeft] = useState(20);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [feedback, setFeedback] = useState(null);
@@ -1220,10 +1239,19 @@ export default function GeometryMaster() {
 
     resolveGeometryAdaptiveTarget({ operation: validTopic });
 
+    // While a practice_more budget remains, pin content selection to the
+    // decision's topic — overriding the "mixed" random pick below.
+    const practiceMoreTopicLock = resolvePracticeMoreTopicOverride(
+      practiceMoreBudget,
+      allowedTopics
+    );
+
     do {
-      const selectedTopics = validTopic === "mixed" 
-        ? Object.keys(mixedTopics).filter(t => mixedTopics[t] && allowedTopics.includes(t))
-        : [validTopic];
+      const selectedTopics = practiceMoreTopicLock
+        ? [practiceMoreTopicLock]
+        : validTopic === "mixed"
+          ? Object.keys(mixedTopics).filter(t => mixedTopics[t] && allowedTopics.includes(t))
+          : [validTopic];
       
       if (selectedTopics.length === 0) {
         question = {
@@ -1237,8 +1265,20 @@ export default function GeometryMaster() {
       
       const currentTopic = selectedTopics[Math.floor(Math.random() * selectedTopics.length)];
       question = null;
+      // strengthen_prerequisite (exact_skill) content override — affects
+      // ONLY which question is selected for this draw. `topic` (decisionTopic,
+      // driving useStudentActionDecision's identity) is never touched here.
+      if (prerequisiteContentOverride) {
+        const picked = pickQuestionForSkill(
+          prerequisiteContentOverride.subject,
+          prerequisiteContentOverride.skillId,
+          attempts,
+        );
+        if (picked) question = picked;
+      }
       // Use concrete rolled topic (not "mixed") so probe.topicId must match this draw — avoids unrelated probes in mixed mode.
       if (
+        !question &&
         probeAtSessionStart &&
         probeMatchesSession(
           probeAtSessionStart,
@@ -1638,6 +1678,7 @@ export default function GeometryMaster() {
 
   const handleAnswer = (answer) => {
     if (selectedAnswer || !gameActive || !currentQuestion) return;
+    recordActionDecisionActivity();
     const questionForSave = currentQuestion;
     const hintUsedForSave = false;
     const rawMs = questionStartTime ? Math.max(0, Date.now() - questionStartTime) : null;
@@ -1753,6 +1794,10 @@ export default function GeometryMaster() {
       mode: reportModeFromGameState(mode, focusedPracticeMode),
     };
     applyAnswerAdaptive(isCorrect, { mode: focusedPracticeModeRef.current });
+    practiceMoreBudget.consume({
+      gameMode: reportModeFromGameState(mode, focusedPracticeModeRef.current),
+      afterStepByStep: stepByStepViewedRef.current,
+    });
     saveGeometryAnswerInParallel({
       question: questionForSave,
       userAnswer: answer,
@@ -2200,8 +2245,29 @@ export default function GeometryMaster() {
     };
   }, [mounted]);
 
+  // ADC-driven forced question kind + level, with rollback on expiry/failure
+  // (see hooks/useActionDecisionRouteSync.js — BLOCKER-2 closure).
+  useActionDecisionRouteSync({
+    directive: actionDecisionDirective,
+    level,
+    applyLevel: applyPlannerLevelKey,
+    forceKindRef: practiceForceKindRef,
+  });
+  const practiceMoreBudget = usePracticeMoreBudget(actionDecisionDirective);
+  const prerequisiteContentOverride = usePrerequisiteContentOverride(
+    actionDecisionDirective,
+    "geometry",
+  );
+
   useEffect(() => {
     if (!gameActive || (mode !== "challenge" && mode !== "speed")) return;
+    if (
+      actionDecisionDirective.active &&
+      actionDecisionDirective.sessionPolicy.timerEnabled === false
+    ) {
+      if (timeLeft != null) setTimeLeft(null);
+      return;
+    }
     if (timeLeft == null) return;
     if (timeLeft <= 0) {
       handleTimeUp();
@@ -2211,7 +2277,7 @@ export default function GeometryMaster() {
       setTimeLeft((prev) => (prev != null ? prev - 1 : prev));
     }, 1000);
     return () => clearTimeout(timer);
-  }, [gameActive, mode, timeLeft]);
+  }, [actionDecisionDirective, gameActive, mode, timeLeft]);
 
   function saveRunToStorage() {
     if (typeof window === "undefined" || !playerName.trim()) return;

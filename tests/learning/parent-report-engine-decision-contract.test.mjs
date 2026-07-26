@@ -9,13 +9,23 @@ import { restoreLearningPatternDecisionsFromUnits } from "../../utils/learning-p
 import { buildLpdSafeTopicExplainSectionsHe } from "../../utils/learning-pattern-decision/lpd-parent-facing-copy.js";
 
 function mockUnit({ patternHe, actionState = "intervene", questions = 206, correct = 108, wrong = 98, accuracy = 52 }) {
+  const actionAllowed = !["withhold", "probe_only"].includes(actionState);
   return {
     subjectId: "math",
     topicRowKey: "fractions::grade:g4",
     displayName: "שברים",
     taxonomy: { patternHe, id: "M-05", subskillHe: "השוואת שברים" },
     diagnosis: { allowed: true, lineHe: patternHe },
-    canonicalState: { actionState },
+    classification: { state: "classified", primaryTag: "numerator_only_compare" },
+    patternEvidence: { allowed: true, evidenceCount: Math.max(1, wrong) },
+    canonicalState: {
+      actionState,
+      recommendation: {
+        allowed: actionAllowed,
+        intensityCap: actionAllowed ? "RI3" : "RI0",
+        family: actionState,
+      },
+    },
     evidenceTrace: [{ type: "volume", value: { questions, correct, wrong, accuracy } }],
   };
 }
@@ -36,10 +46,10 @@ function rowFromMetrics(q, c, w, acc) {
     unit,
     rawMistakes: [],
   });
-  assert.match(lpd.parentVisibleFinding, /השוואה לפי מונה בלבד/);
+  assert.match(lpd.parentVisibleFinding, /השוואת שברים לפי המונה בלבד/);
   assert.doesNotMatch(lpd.parentVisibleFinding, /כמה טעויות/);
   assert.equal(lpd.engineDecisionContract.sourceEngine, "de2");
-  assert.equal(lpd.engineDecisionContract.detectedPattern, "השוואה לפי מונה בלבד");
+  assert.equal(lpd.engineDecisionContract.detectedPattern, "השוואת שברים לפי המונה בלבד");
 }
 
 // OMER כפל — repeated pairs pattern
@@ -54,6 +64,9 @@ function rowFromMetrics(q, c, w, acc) {
   });
   unit.displayName = "כפל";
   unit.topicRowKey = "multiplication::grade:g4";
+  unit.taxonomy = { patternHe: "אותם זוגות שגויים", id: "M-03", subskillHe: "כפל" };
+  unit.classification = { state: "classified", primaryTag: "multiplication_fact_error" };
+  unit.patternEvidence = { allowed: true, evidenceCount: 10 };
   const row = rowFromMetrics(32, 22, 10, 69);
   row.displayName = "כפל";
   const lpd = buildLearningPatternDecision({
@@ -63,7 +76,7 @@ function rowFromMetrics(q, c, w, acc) {
     unit,
     rawMistakes: [],
   });
-  assert.match(lpd.parentVisibleFinding, /אותם זוגות שגויים/);
+  assert.match(lpd.parentVisibleFinding, /טעויות חוזרות בעובדות כפל/);
   assert.equal(lpd.engineDecisionContract.recommendedAction, "remediate_same_level");
 }
 
@@ -75,14 +88,20 @@ function rowFromMetrics(q, c, w, acc) {
     topicName: "חיבור",
     row: rowFromMetrics(10, 2, 8, 20),
     unit: {
-      canonicalState: { actionState: "probe_only" },
+      canonicalState: {
+        actionState: "probe_only",
+        recommendation: { allowed: false, intensityCap: "RI0", family: "probe_only" },
+      },
       evidenceTrace: [{ type: "volume", value: { questions: 10, correct: 2, wrong: 8, accuracy: 20 } }],
     },
   });
   assert.equal(contract.engineDecision, "clear_topic_gap");
-  assert.equal(contract.recommendedAction, "remediate_same_level");
-  assert.match(contract.parentSafeFinding, /קושי ברור|הרבה טעויות/);
-  assert.doesNotMatch(contract.parentSafeFinding, /כמה טעויות/);
+  assert.equal(contract.actionDecisionContract.action, "give_probe_questions");
+  assert.equal(contract.actionDecisionContract.intensity, "RI0");
+  assert.equal(contract.recommendedAction, "maintain_current_path");
+  assert.equal(contract.actionAuthority.source, "canonicalState");
+  assert.equal(contract.actionAuthority.recommendationAllowed, false);
+  assert.match(contract.parentSafeFinding, /clear difficulty|many mistakes/i);
 }
 
 // narrative uncertainty suppressed on strong volume
@@ -138,13 +157,29 @@ function rowFromMetrics(q, c, w, acc) {
     learningPatternDecision: lpd,
   });
   assert.ok(sections);
-  assert.match(sections.identified, /השוואה לפי מונה בלבד/);
-  assert.match(sections.pattern, /השוואה לפי מונה בלבד/);
+  assert.match(sections.identified, /What we see/i);
+  assert.match(sections.pattern, /השוואת שברים לפי המונה בלבד/);
 }
 
-// mapEngineRecommendedAction overrides probe_only on clear gap
+// P0: canonical probe_only/RI0 cannot be overridden by clear-gap metrics.
 assert.equal(
-  mapEngineRecommendedAction("probe_only", "clear_topic_gap", { questions: 10, wrong: 8, accuracy: 20 }),
+  mapEngineRecommendedAction(
+    "probe_only",
+    "clear_topic_gap",
+    { questions: 10, wrong: 8, accuracy: 20 },
+    { canonicalPresent: true, recommendationAllowed: false, intensityCap: "RI0" },
+  ),
+  "watch",
+);
+
+// Canonical intervention authority can approve remediation.
+assert.equal(
+  mapEngineRecommendedAction(
+    "intervene",
+    "clear_topic_gap",
+    { questions: 10, wrong: 8, accuracy: 20 },
+    { canonicalPresent: true, recommendationAllowed: true, intensityCap: "RI2" },
+  ),
   "remediate_same_level",
 );
 

@@ -24,6 +24,11 @@ import {
 } from "./learning-pattern-decision/index.js";
 import { normalizeParentVisibleMetrics } from "./learning-pattern-decision/normalize-parent-practice-metrics.js";
 import {
+  buildExpiredParentActionDecisionV1,
+  buildParentSystemActionLineHe,
+  parentActionDisplayStateV1,
+} from "./action-decision-contract/parent-action-decision-translations.js";
+import {
 
   activityGapNonDiagnosticOnlyHe,
 
@@ -208,6 +213,18 @@ export function collectTopicEngineRowsFromReport(report) {
           data.learningPatternDecision && typeof data.learningPatternDecision === "object"
             ? data.learningPatternDecision
             : null,
+
+        engineDecisionContract:
+          data.engineDecisionContract ||
+          data.learningPatternDecision?.engineDecisionContract ||
+          null,
+
+        actionDecisionContract:
+          data.actionDecisionContract ||
+          data.engineDecisionContract?.actionDecisionContract ||
+          data.learningPatternDecision?.engineDecisionContract
+            ?.actionDecisionContract ||
+          null,
 
         trend: data.trend && typeof data.trend === "object" ? data.trend : null,
 
@@ -818,6 +835,67 @@ export function applyTopicEngineParentFacingInsights(clientReport, apiPayload = 
 }
 
 
+
+/**
+ * ADC-only parent-facing system actions (never replaces DE2/LPD finding text).
+ * @param {Record<string, unknown>} report
+ */
+export function buildParentFacingFromAdcV2(report) {
+  const contractRows = collectTopicEngineRowsFromReport(report).filter(
+    (row) =>
+      row.actionDecisionContract?.version === "2.0.0" &&
+      row.actionDecisionContract?.eligible === true,
+  );
+  const rows = contractRows
+    .filter((row) => {
+      const expiresAt = Date.parse(
+        String(row.actionDecisionContract?.expiry?.expiresAt || ""),
+      );
+      return Number.isFinite(expiresAt) && expiresAt > Date.now();
+    })
+    .sort((a, b) => {
+      const interventionDiff =
+        Number(b.actionDecisionContract?.intervention === true) -
+        Number(a.actionDecisionContract?.intervention === true);
+      if (interventionDiff) return interventionDiff;
+      return (
+        (Number(b.questions) || 0) - (Number(a.questions) || 0) ||
+        (Number(a.accuracy) || 0) - (Number(b.accuracy) || 0)
+      );
+    });
+
+  if (!rows.length) {
+    if (!contractRows.length) return null;
+    const expired = buildExpiredParentActionDecisionV1();
+    return {
+      parentState: expired.state,
+      systemActions: [expired.systemActionLineHe],
+      insights: [],
+      homeRecommendations: [],
+    };
+  }
+
+  const systemActions = [];
+  const seenSubjects = new Set();
+  let parentState = "progress_or_mastery";
+  for (const row of rows) {
+    if (seenSubjects.has(row.subjectId)) continue;
+    const line = buildParentSystemActionLineHe(row.actionDecisionContract, {
+      topicLabel: row.label,
+    });
+    if (line) systemActions.push(line);
+    parentState = parentActionDisplayStateV1(row.actionDecisionContract.action);
+    seenSubjects.add(row.subjectId);
+    if (systemActions.length >= 3) break;
+  }
+
+  return {
+    parentState,
+    systemActions,
+    insights: [],
+    homeRecommendations: [],
+  };
+}
 
 export { buildTopicDiagnosticExplainSectionsHe };
 

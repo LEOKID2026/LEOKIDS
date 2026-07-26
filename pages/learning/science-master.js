@@ -151,6 +151,10 @@ import {
   tryConsumeBookContextOnPracticeEntry,
 } from "../../lib/learning-book/book-context-master-helper";
 import { useStudentDisplayLevelPractice } from "../../hooks/useStudentDisplayLevelPractice.js";
+import { useActionDecisionRouteSync } from "../../hooks/useActionDecisionRouteSync.js";
+import { usePracticeMoreBudget } from "../../hooks/usePracticeMoreBudget.js";
+import { resolvePracticeMoreTopicOverride } from "../../lib/learning/practice-more-budget.js";
+import { useStudentActionDecision } from "../../hooks/useStudentActionDecision.js";
 import { StudentDisplayLevelRegularOnly } from "../../components/learning/StudentDisplayLevelSelect.js";
 import { studentDisplayLevelLabel } from "../../lib/learning-client/student-display-level-practice.js";
 import {
@@ -775,6 +779,19 @@ export default function ScienceMaster() {
   const learningProfileHydratedRef = useRef(false);
   const [serverAccountSubjectAccuracyPct, setServerAccountSubjectAccuracyPct] = useState(null);
   const [learningProfileHydrationTick, setLearningProfileHydrationTick] = useState(0);
+  const {
+    directive: actionDecisionDirective,
+    recordActivity: recordActionDecisionActivity,
+  } = useStudentActionDecision({
+    enabled:
+      learningProfileHydrationTick > 0 &&
+      Boolean(learningProfileStudentIdRef.current),
+    studentId: learningProfileStudentIdRef.current,
+    subjectId: "science",
+    topicKey: topic,
+    gradeKey: grade,
+    levelKey: level,
+  });
   const scoresStoreRef = useRef({});
   const progressLoadedRef = useRef(false);
   const progressStringRef = useRef("");
@@ -1347,10 +1364,26 @@ export default function ScienceMaster() {
     }
   }, [dailyChallenge.date, weeklyChallenge.week]);
 
+  // ADC-driven level, with rollback on expiry/failure
+  // (see hooks/useActionDecisionRouteSync.js — BLOCKER-2 closure).
+  useActionDecisionRouteSync({
+    directive: actionDecisionDirective,
+    level,
+    applyLevel: applyPlannerLevelKey,
+  });
+  const practiceMoreBudget = usePracticeMoreBudget(actionDecisionDirective);
+
   // ----- TIMER -----
   useEffect(() => {
     if (!gameActive) return;
     if (mode !== "challenge" && mode !== "speed") return;
+    if (
+      actionDecisionDirective.active &&
+      actionDecisionDirective.sessionPolicy.timerEnabled === false
+    ) {
+      if (timeLeft != null) setTimeLeft(null);
+      return;
+    }
     if (timeLeft == null) return;
     if (timeLeft <= 0) {
       handleTimeUp();
@@ -1361,7 +1394,7 @@ export default function ScienceMaster() {
     }, 1000);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [timeLeft, gameActive, mode]);
+  }, [timeLeft, gameActive, mode, actionDecisionDirective]);
 
   function filterQuestionsForCurrentSettings(levelOverride) {
     const gradeKey = grade;
@@ -1393,8 +1426,18 @@ export default function ScienceMaster() {
       return [];
     }
 
+    // While a practice_more budget remains, pin the question pool to the
+    // decision's topic — overriding "mixed"/practice-focus group expansion
+    // below.
+    const practiceMoreTopicLock = resolvePracticeMoreTopicOverride(
+      practiceMoreBudget,
+      allowedTopicsForGrade
+    );
+
     let topicsList;
-    if (mode === "practice" && practiceFocus !== "balanced") {
+    if (practiceMoreTopicLock) {
+      topicsList = [practiceMoreTopicLock];
+    } else if (mode === "practice" && practiceFocus !== "balanced") {
       topicsList = (PRACTICE_TOPIC_GROUPS[practiceFocus] || []).filter((t) =>
         allowedTopicsForGrade.includes(t)
       );
@@ -2298,6 +2341,7 @@ function saveScienceAnswerInParallel({
 
   function handleAnswer(idx) {
     if (!gameActive || !currentQuestion || selectedAnswer != null) return;
+    recordActionDecisionActivity();
     const questionForSave = currentQuestion;
     const hintUsedForSave = false;
     const rawMs = questionStartTime ? Math.max(0, Date.now() - questionStartTime) : null;
@@ -2379,6 +2423,10 @@ function saveScienceAnswerInParallel({
     if (isStudentAdaptiveActive("science", { mode: focusedPracticeMode })) {
       applyAnswerAdaptive(isCorrect, { mode: focusedPracticeMode });
     }
+    practiceMoreBudget.consume({
+      gameMode: reportModeFromGameState(mode, focusedPracticeMode),
+      afterStepByStep: stepByStepViewedRef.current,
+    });
 
     saveScienceAnswerInParallel({
       question: questionForSave,

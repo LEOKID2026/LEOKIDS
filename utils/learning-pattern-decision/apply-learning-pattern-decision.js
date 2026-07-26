@@ -4,6 +4,7 @@
 import { SUBJECT_IDS } from "../diagnostic-engine-v2/subject-ids.js";
 import { buildLearningPatternDecision } from "./build-learning-pattern-decision.js";
 import { normalizeParentVisibleMetrics } from "./normalize-parent-practice-metrics.js";
+import { buildParentSafeActionDecisionV1 } from "../action-decision-contract/parent-action-decision-translations.js";
 
 /**
  * @param {object|null} professionalEngineV1
@@ -107,11 +108,19 @@ export function applyLearningPatternDecisionToUnitsAndRows({
 
       row.learningPatternDecision = lpd;
       row.engineDecisionContract = lpd.engineDecisionContract || null;
+      row.actionDecisionContract =
+        lpd.engineDecisionContract?.actionDecisionContract || null;
+      row.parentActionDecision = buildParentSafeActionDecisionV1(
+        row.actionDecisionContract,
+        { topicLabel: row.label || row.displayName || "" },
+      );
       bySubject[subjectId][topicRowKey] = lpd;
 
       if (unit) {
         unit.learningPatternDecision = lpd;
         unit.engineDecisionContract = lpd.engineDecisionContract || null;
+        unit.actionDecisionContract = row.actionDecisionContract;
+        unit.parentActionDecision = row.parentActionDecision;
       }
     }
   }
