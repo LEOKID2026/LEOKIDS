@@ -1,0 +1,6 @@
+check,result,detail
+default_timezone,UTC,resolveCalendarTimeZone() => UTC
+explicit_iana,honored,America/New_York / Europe/London accepted
+asia_jerusalem_default,removed,no production hard-code; facade delegates to locale-calendar
+demo_resolver,shared,demo-calendar-date uses getCalendarDateString
+month_year_dst_tests,pass,locale-calendar-policy.test.mjs 7/7

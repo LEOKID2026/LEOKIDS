@@ -1,0 +1,6 @@
+surface,sameCanonicalObservation,sameEnglishLabel,sameCount,sameOrder,sameTopicStatus,sameChromeMeaning,notes
+regular,true,true,true,true,true,true,via applyLearningPatternDecisionToUnitsAndRows + LPD
+detailed,true,true,true,true,true,true,detailed-parent-report consumes LPD factualObservations
+short,true,true,true,true,true,true,compare-short-detailed-findings includes factualObservations
+demo,true,true,true,true,true,true,rebuild-parent-report-from-aggregate parity test 10/10
+product_contract,true,true,true,true,true,true,parent-product-contract-v1 exposes factualObservations + topicStatus
