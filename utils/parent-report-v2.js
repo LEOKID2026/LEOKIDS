@@ -224,7 +224,7 @@ function latestSessionMs(sessions) {
   return max;
 }
 
-/** DD/MM/YYYY HH:mm in Asia/Jerusalem (never raw UTC / browser local). */
+/** DD/MM/YYYY HH:mm in resolved calendar timezone (UTC default). */
 function formatLastSessionAt(ms) {
   if (!Number.isFinite(ms) || ms <= 0) return null;
   return formatParentReportActivityIsrael(ms);

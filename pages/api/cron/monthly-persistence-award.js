@@ -61,7 +61,7 @@ export default async function handler(req, res) {
       ok: true,
       skipped: true,
       reason: "not_first_israel_calendar_day",
-      israelDate: new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Jerusalem" }),
+      israelDate: new Date().toLocaleDateString("en-CA", { timeZone: "UTC" }),
     });
   }
 
