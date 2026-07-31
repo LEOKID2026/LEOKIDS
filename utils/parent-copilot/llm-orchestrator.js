@@ -135,20 +135,20 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
         const asksMiktzoa = utteranceAsksSubjectLevelStrength(u);
         if (asksMiktzoa) {
           return [
-            "The question refers to a profession (professional level), not just a single subject.",
-            "Block observation: start with a sentence like 'the profession in which the best results were seen is [name of the subject in Hebrew]', then if necessary 'and especially in the subject [name of the subject]' - only what appears in FACTS_JSON.observation.",
-            "Mandatory: Do not use the word «the field» in blocks - instead «the profession» or a direct opening with the name of the profession (for example «in English the best results were seen in this period...»).",
-            "Formulations such as «the area where the numbers are seen...» are expressly prohibited - this is not appropriate when the parent asked about a profession.",
-            "Do not start with a wording that begins only with a specific subject (for example «on the subject of vocabulary...») when the question is about a subject - first the name of the subject, then the prominent subject within the subject.",
-            "Block meaning: Briefly explain why it is positive according to FACTS_JSON.interpretation. One percentage of accuracy can be mentioned.",
-            "Do not list all professions. Do not write 'according to the report, appear:' or 'the professions that appear'. Do not present an area as having relatively good results if it also appears as a focus for strengthening in the report.",
+            "The question refers to a subject (subject level), not just a single topic.",
+            "Block observation: start with a sentence like 'the subject with the best results is [subject name]', then if needed 'and especially in the topic [topic name]' — only what appears in FACTS_JSON.observation.",
+            "Mandatory: Do not use the word «the field» in blocks — use «the subject» or open directly with the subject name (for example «in English the best results were seen in this period...»).",
+            "Phrases such as «the area where the numbers are seen...» are expressly prohibited when the parent asked about a subject.",
+            "Do not start with wording that begins only with a specific topic (for example «on vocabulary...») when the question is about a subject — first the subject name, then the prominent topic within that subject.",
+            "Block meaning: Briefly explain why it is positive according to FACTS_JSON.interpretation. One accuracy percentage can be mentioned.",
+            "Do not list all subjects. Do not write 'according to the report, appear:' or 'the subjects that appear'. Do not present an area as having relatively good results if it also appears as a focus to strengthen in the report.",
           ].join("\n");
         }
         return [
           "The question is about where relative progress is seen. The required structure:",
-          "Observation block: start with a wording like 'the topic where the best results were seen is...' or 'in... relatively good results were seen' - specify 1-2 specific areas from the FACTS_JSON.observation only.",
-          "Block meaning: Briefly explain why this is positive, according to the FACTS_JSON.interpretation. You can mention one percentage of accuracy.",
-          "Do not list all professions. Do not write 'according to the report, appear:' or 'the professions that appear'. Do not present an area as having relatively good results if it also appears as a focus for strengthening in the report.",
+          "Observation block: start with wording like 'the topic with the best results is...' or 'in... relatively good results were seen' — specify 1-2 specific areas from FACTS_JSON.observation only.",
+          "Block meaning: Briefly explain why this is positive, according to FACTS_JSON.interpretation. You can mention one accuracy percentage.",
+          "Do not list all subjects. Do not write 'according to the report, appear:' or 'the subjects that appear'. Do not present an area as having relatively good results if it also appears as a focus to strengthen in the report.",
         ].join("\n");
       }
       case "what_is_still_difficult":
@@ -191,7 +191,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
       case "ask_subject_specific":
       case "ask_topic_specific":
         return [
-          "The question is about a specific profession or topic. The required structure:",
+          "The question is about a specific subject or topic. The required structure:",
           "Observation block: Specify only what appears on the specific topic in FACTS_JSON.observation.",
           "block meaning: explain what the meaning is; Any short practical suggestion is allowed here or in another sentence in the same block - according to FACTS_JSON.interpretation/action only if they appear there.",
           "If the specific topic has few questions - this can be carefully noted only for this topic.",
@@ -211,14 +211,14 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
   const uTrim = String(utterance || "").trim();
   const subjectStrengthStyleRule =
     intentLabel === "what_is_going_well" && utteranceAsksSubjectLevelStrength(uTrim)
-      ? "Style rule for this question: the parent asks about a profession (strong / best). It is forbidden to use the word «the field» in the answer - use «the profession» or open directly with the name of the profession. Examples of a proper opening: «The subject in which the best results were seen is English, especially in the subject of vocabulary» or «In English, the best results were seen in this period, mainly in the subject of vocabulary». Prohibited: «The area where the numbers are visible...»."
+      ? "Style rule for this question: the parent asks about a subject (strong / best). It is forbidden to use the word «the field» in the answer — use «the subject» or open directly with the subject name. Examples of a proper opening: «The subject with the best results is English, especially in vocabulary» or «In English, the best results were seen in this period, mainly in vocabulary». Prohibited: «The area where the numbers are visible...»."
       : "";
 
   return [
     `You are a professional parent helper. Answer in the language matching BCP-47 locale "${responseLocale}" only.`,
     "Use only facts from the FACTS_JSON. It is forbidden to invent facts that are not in it.",
     "Write in simple, direct, and parent-friendly language - not in system language.",
-    "Do not use the phrases: 'According to the report, there are:', 'The professions that appear:', 'Focuses with wording', 'This is what the report gives at the moment', 'It is possible to arrange what is important first'.",
+    "Do not use the phrases: 'According to the report, there are:', 'The subjects that appear:', 'Focuses with wording', 'This is what the report gives at the moment', 'It is possible to arrange what is important first'.",
     "Natural wording for example: 'This week you should focus mainly on...', 'Relatively good results were seen in...', 'The area that needs strengthening at the moment is...', 'At home you should practice...', 'At this stage it is recommended...', 'The data points to...'.",
     "You must not write a period, colon or dash immediately after a preposition (in, on, with, of, to) before the subject name - always continue immediately with the full subject name. Prohibited example: \"Focus on account\"; Correct: \"to focus on the account\" or \"to focus on the account -\".",
     "Do not use the words 'security', 'security' or confidence about the child; Don't assume an emotional state.",

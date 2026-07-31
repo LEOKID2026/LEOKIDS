@@ -135,7 +135,7 @@ export function postprocessParentFacingBlocksHe(blocks) {
 export const BANNED_PARENT_PHRASE_SNIPPETS = [
   "Most foci with a relatively stable formulation",
   "Currently, there is no information here that does not come from the report",
-  "The picture is made up of professions and subjects",
+  "The picture is made up of subjects and topics",
   "Dictionary of meanings",
   "External interpretation layer",
 ];

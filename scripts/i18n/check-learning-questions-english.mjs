@@ -128,13 +128,47 @@ async function checkEnglish(failures) {
 
 async function checkScience(failures) {
   const { SCIENCE_QUESTIONS } = await mod("data/science-questions.js");
+  const { localizeScienceQuestionsForContentLocale } = await mod(
+    "lib/learning/question-content-locale.js"
+  );
+  const { validateScienceEnOverlayMechanical } = await mod(
+    "lib/learning/science-overlay-mechanical-validate.js"
+  );
+
+  const overlayGate = validateScienceEnOverlayMechanical();
+  if (!overlayGate.ok) {
+    failures.push({
+      subject: "science",
+      grade: "-",
+      topic: "overlay",
+      level: "-",
+      field: "mechanical",
+      id: "overlay",
+      sample: `science overlay mechanical fail: issues=${overlayGate.issueCount} sample=${(overlayGate.issueSample || []).slice(0, 3).join(";")}`,
+    });
+    return;
+  }
+  if (overlayGate.totalQuestions !== 1017) {
+    failures.push({
+      subject: "science",
+      grade: "-",
+      topic: "overlay",
+      level: "-",
+      field: "total",
+      id: "overlay",
+      sample: `expected 1017 science rows, got ${overlayGate.totalQuestions}`,
+    });
+  }
+
   const LEVEL_RANK = { easy: 0, medium: 1, hard: 2 };
   const topics = await loadCurriculumTopics("science");
+  // Runtime EN display path — never assert on raw HE bank prose.
+  const localizedBank = localizeScienceQuestionsForContentLocale(SCIENCE_QUESTIONS, "en");
   for (const grade of GRADES) {
     for (const topic of topics) {
       for (const level of LEVELS) {
         const req = LEVEL_RANK[level];
-        const pool = SCIENCE_QUESTIONS.filter((row) => {
+        const pool = localizedBank.filter((row) => {
           if (row.topic !== topic) return false;
           if (!Array.isArray(row.grades) || !row.grades.includes(grade)) return false;
           const lo = LEVEL_RANK[String(row.minLevel || "easy")] ?? 0;

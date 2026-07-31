@@ -1441,7 +1441,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   const modeTop = Object.entries(modeDist).sort((a, b) => b[1] - a[1])[0];
   let modeConcentrationNoteHe = null;
   if (modeTop && modeKeys.length >= 4 && modeTop[1] / modeKeys.length >= 0.62) {
-    modeConcentrationNoteHe = `Most of the practice in the selected period in the "${modeTop[0]}" mode - are not automatically generalized to the entire profession.`;
+    modeConcentrationNoteHe = `Most of the practice in the selected period was in "${modeTop[0]}" mode — do not automatically generalize that to the whole subject.`;
   }
 
   const strongRows = rows.filter((r) => r.row.dataSufficiencyLevel === "strong" && r.row.evidenceStrength === "strong");
@@ -1458,7 +1458,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   if (!trendNarrativeHe) {
     trendNarrativeHe =
       rows.some((r) => r.row.trend)
-        ? "There are trend data in the ranks, but there is still no uniform trend story at the professional level - it is worth gathering more practice."
+        ? "There is trend data on some topic lines, but there is still no uniform trend at the subject level — it is worth gathering more practice."
         : "There is still little data on change over time - you should check again after more practice.";
   }
   trendNarrativeHe = normalizeParentFacingHe(trendNarrativeHe);
@@ -1496,7 +1496,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     recommendedHomeMethodHe = `What to do at home: slow repetition of the basics in ${domRiskHe} - a short task, testing against the solution, without increasing the level too quickly.`;
   } else if (dominantLearningRisk === "speed_pressure") {
     recommendedHomeMethodHe =
-      "What to do at home: break down the pressure for speed - practice at the same level of difficulty with an emphasis on accuracy before speed, without lowering the level of the entire profession.";
+      "What to do at home: ease the pressure for speed — practice at the same difficulty with an emphasis on accuracy before speed, without lowering the level for the whole subject.";
   } else if (dominantLearningRisk === "instruction_friction") {
     recommendedHomeMethodHe =
       "What to do at home: reading a joint task, identifying what was asked, and only then answering - to reduce the child is still helped by step-by-step hints.";
@@ -1510,7 +1510,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     recommendedHomeMethodHe =
       strongRows.length >= 1
         ? "What to do at home: keep practice short and regular, and check that the level is maintained before changing settings."
-        : "What to do at home: continue to collect short practice until the image in the profession stabilizes.";
+        : "What to do at home: continue short practice until the picture in this subject stabilizes.";
   }
 
   const avoid = [];
@@ -1518,7 +1518,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     avoid.push("Do not push a too fast increase in level or class at home without repeated success and without a decrease in the child still using hints.");
   }
   if (riskOr.speedOnlyRisk || dominantLearningRisk === "speed_pressure") {
-    avoid.push("Do not turn difficulty in speed mode into a level drop in the entire profession.");
+    avoid.push("Do not turn difficulty in speed mode into a level drop for the whole subject.");
   }
   if (riskOr.falseRemediationRisk || dominantLearningRisk === "careless_pattern") {
     avoid.push("Do not immediately drop to an easy level without first trying targeted strengthening at the same level.");
@@ -1569,7 +1569,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   let subjectDiagnosticRestraintHe = "";
   if (subjectConclusionReadiness === "not_ready") {
     subjectDiagnosticRestraintHe =
-      "In most profession data there is still little information or it is too early to determine - no unambiguous explanation has yet been established.";
+      "In most of the subject data there is still little information, or it is too early to decide — no clear explanation has been established yet.";
   } else if (subjectConclusionReadiness === "partial") {
     subjectDiagnosticRestraintHe =
       "There is some information, but also data that requires caution - you should follow it and not rush to determine too strong a direction.";
@@ -1896,7 +1896,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     subjectDependencyState === "likely_foundational_block" ||
     (subjectDependencyState === "mixed_dependency_signal" && foundationHeavyRows >= 1);
   const subjectFoundationFirstPriorityHe = subjectFoundationFirstPriority
-    ? "It is better to first establish a short foundation in this profession - and only then expand."
+    ? "It is better to first build a short foundation in this subject — and only then expand."
     : "You can stay with focused or easy practice at the same time - without expanding into an unnecessarily broad story.";
 
   const subjectDependencyStateLabelHe =

@@ -24,7 +24,7 @@ function assignedActivityMcqAnswersMatch(a, b) {
 export const GEOMETRY_INDEX_LABEL_KINDS = {};
 
 /** Solid names pool used for 4-option MCQ in identification questions (Global EN). */
-export const GEOMETRY_SOLID_NAMES_EN = ["Cube", "Cuboid", "Cylinder", "Pyramid", "Cone", "Sphere"];
+export const GEOMETRY_SOLID_NAMES_EN = ["Cube", "Rectangular prism", "Cylinder", "Pyramid", "Cone", "Sphere"];
 /** @deprecated Use GEOMETRY_SOLID_NAMES_EN — kept as alias for legacy imports. */
 export const GEOMETRY_SOLID_NAMES_HE = GEOMETRY_SOLID_NAMES_EN;
 

@@ -8,7 +8,7 @@ import { GENERAL_OFF_TOPIC_RESPONSE_HE } from "../../utils/parent-copilot/questi
 
 test("copilot English adapter replaces Hebrew boundary copy", () => {
   const en = localizeCopilotBoundaryResponse(GENERAL_OFF_TOPIC_RESPONSE_HE, "en");
-  assert.match(en, /I can only help here/);
+  assert.match(en, /I can only help with your child's report/i);
   assert.doesNotMatch(en, /[\u0590-\u05FF]/);
 });
 
@@ -24,5 +24,5 @@ test("applyCopilotResponseLocaleToTurn localizes answer blocks", () => {
     },
     "en"
   );
-  assert.match(String(turn.answerBlocks[0].answerText), /I can only help here/);
+  assert.match(String(turn.answerBlocks[0].answerText), /I can only help with your child's report/i);
 });

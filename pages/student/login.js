@@ -332,10 +332,10 @@ export default function StudentLoginPage() {
               href={STUDENT_PWA_INSTALL_PATH}
               prefetch={false}
               className={installAppBtnClass}
-              aria-label="התקנת אפליקציה"
+              aria-label={t("ui.installApp.button")}
               data-testid="student-login-install-app"
             >
-              התקנת אפליקציה
+              {t("ui.installApp.button")}
             </Link>
           </div>
         </form>

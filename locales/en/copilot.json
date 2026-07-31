@@ -1,13 +1,13 @@
 {
   "boundary": {
-    "generalOffTopic": "I can only help here with your child's report, practice, and progress on the site. You can ask, for example: what to practice this week, what to try at home, or which topic to open as a short activity.",
-    "diagnosticBoundary": "I can only refer to what appears in the practice data on the site. From the report you can see which subjects and topics to strengthen, but this cannot be used to draw personal conclusions about your child. If you like, we can focus on what the report does show: a strong topic, a topic to strengthen, or a small step for home.",
-    "healthBoundary": "I can only refer to the practice data shown on the site. The report is not meant to draw personal conclusions about your child, but to help you see which topic to strengthen in learning. You can continue from here with a small learning step based on the report data.",
-    "privacyBoundary": "I can only help with the report for the child linked to this parent account. I cannot show data for other children, passwords, user lists, or internal system information.",
-    "peerComparison": "The report is based on this child's practice only and does not compare them to other children in the class. You can focus on what appears in the report and ask about a specific topic.",
-    "ambiguous": "I couldn't tell exactly which part of the report you meant. Try asking more simply, for example: what is most important to practice this week, what to try at home, or which topic to open as a short activity.",
-    "noDataForRequest": "The current report does not have enough information to answer this accurately. You can continue with a short practice session on the site, then check again whether a clearer direction appears in the report.",
-    "noDataSpecificForRequest": "The report has practice data for the period, but not enough information to answer this specific point accurately. You can continue with a short practice session on the site, then check again whether a clearer direction appears for this topic."
+    "generalOffTopic": "I can only help with your child's report, practice, and progress on the site. Try asking what to practice this week, what to try at home, or which topic to open as a short activity.",
+    "diagnosticBoundary": "I can only use what shows up in the practice data on the site. The report can highlight subjects and topics to strengthen, but it is not a personal diagnosis. We can focus on what the report does show: a strong topic, a topic to strengthen, or a small step for home.",
+    "healthBoundary": "I can only use the practice data shown on the site. The report is not meant to draw personal conclusions about your child — it helps you see which learning topic to strengthen. We can pick a small next learning step from that data.",
+    "privacyBoundary": "I can only help with the report for the child linked to this parent account. I cannot show other children's data, passwords, user lists, or internal system information.",
+    "peerComparison": "The report is based only on this child's practice and does not compare them to other children in the class. You can focus on what appears in the report and ask about a specific topic.",
+    "ambiguous": "I couldn't tell which part of the report you meant. Try a simpler question — for example: what matters most to practice this week, what to try at home, or which topic to open as a short activity.",
+    "noDataForRequest": "This report does not have enough information to answer that accurately yet. Do a short practice session on the site, then check again for a clearer direction.",
+    "noDataSpecificForRequest": "The report has practice data for the period, but not enough to answer this specific point accurately. Do a short practice session on the site, then check again for a clearer direction on this topic."
   },
   "answers": {
     "lib_parent-client_copilot-turn-api": {
@@ -26,113 +26,113 @@
     },
     "utils_parent-copilot_answer-composer": {
       "still_too_early_to_decide": "Still too early to decide",
-      "this_is_an_initial_image_only": "This is an initial image only -",
-      "there_is_only_an_initial_sign_of_weakness": "There is only an initial sign of weakness -"
+      "this_is_an_initial_image_only": "This is only an early snapshot —",
+      "there_is_only_an_initial_sign_of_weakness": "There is only an early sign of weakness —"
     },
     "utils_parent-copilot_continuity-pattern-composer": {
       "report_summary": "Report summary"
     },
     "utils_parent-copilot_contract-reader": {
-      "you_should_continue_to_follow_for_several_days_of_practice": "You should continue to follow for several days of practice.",
+      "you_should_continue_to_follow_for_several_days_of_practice": "Keep watching for several more days of practice.",
       "history": "History",
       "hebrew": "Hebrew",
       "homeland_geography": "Homeland & Geography",
       "homeland_studies": "Homeland Studies",
       "geography": "Geography",
-      "general_summary_of_the_practice": "General summary of the practice"
+      "general_summary_of_the_practice": "Practice overview"
     },
     "utils_parent-copilot_followup-engine": {
-      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Is it possible to take a small step together today at home around the same topic?",
-      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Can we draw together a short plan for the coming week around this topic?",
-      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Want to mark together what you should avoid in the coming week?",
-      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Do you want to check together when you should promote and when to stop on the same topic?",
-      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Want a short wording to explain to a child without pressure?",
-      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Do you want a wording for a targeted question for the teacher according to what appears in the report?",
-      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Want to break down what is still not clear from the data in the report?"
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Want to take a small step together at home today on the same topic?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Want a short plan together for this week on this topic?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Want to mark together what to avoid this week?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Want to check together when to move up and when to stay on the same topic?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Want a short way to explain this to your child without pressure?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Want wording for a focused question for the teacher, based on what appears in the report?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Want to unpack what is still unclear from the report data?"
     },
     "utils_parent-copilot_index": {
-      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "There is currently little practice data, so there is not yet enough information for a clear direction.",
-      "this_mode_is_for_parent_only": "This mode is for parent only.",
-      "the_relationship_cannot_be_identified_from_the_report": "The relationship cannot be identified from the report.",
-      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "No contracts were found matching the topic selected in the report."
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "There is little practice data right now, so there is not yet enough information for a clear direction.",
+      "this_mode_is_for_parent_only": "This mode is for parents only.",
+      "the_relationship_cannot_be_identified_from_the_report": "The report does not show enough to identify that relationship.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "No matching items were found for the topic selected in the report."
     },
     "utils_parent-copilot_intent-answer-composers": {
-      "right_now_it": "Right now it",
-      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Follow up after 3-4 days like this, then check in the report if the accuracy increases or if the pattern returns.",
-      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "This does not mean that there are no successes - just that it is still too early to mark stable strength according to the data in the range.",
+      "right_now_it": "Right now,",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Follow up after 3–4 days like this, then check in the report whether accuracy improves or the pattern returns.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "This does not mean there are no successes — only that it is still too early to mark stable strength from the data in this range.",
       "during_this_period_there_is_no_practice_data_on_this_subject_in_": "During this period there is no practice data on this subject in the current report.",
-      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "You can choose another topic from the report, or gain practice on this topic and ask again.",
-      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "The subject appears in the list, but no questions have been counted in it in the date range.",
-      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "In this period there is still not enough practice data to recommend an increase or decrease in level.",
-      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "You should gather more practice on the subject before deciding on a level change.",
-      "no_weak_line_stood_out_with_enough_practice_at_the_range": "No weak line stood out with enough practice at the range.",
-      "according_to_the_report_there_is_still_insufficient_evidence_for": "According to the report, there is still insufficient evidence for work above the listed grade.",
-      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "It is worth gathering more practice before concluding on above-class ability.",
-      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "It is therefore impossible to determine direction from the current report on performance in this subject."
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "You can choose another topic from the report, or practice this topic more and ask again.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "The subject appears in the list, but no questions were counted for it in the date range.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "In this period there is still not enough practice data to recommend raising or lowering the level.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Gather more practice on this subject before deciding on a level change.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "No weak topic line stood out with enough practice in this range.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "According to the report, there is still not enough evidence for work above the listed grade.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Gather more practice before concluding that performance is above grade level.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "It is not yet possible to determine direction from the current report on performance in this subject."
     },
     "utils_parent-copilot_llm-orchestrator": {
       "you_must_not_include_a_next_step_block": "You must not include a next_step block.",
-      "the_next_step_block_must_not_be_included_practical_recommendatio": "The next_step block must not be included - practical recommendations only within the meaning block (FACTS_JSON approves recommendations only when recommendation"
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "Do not include a next_step block — keep practical recommendations inside the meaning block only (FACTS_JSON allows recommendations only when recommendation"
     },
     "utils_parent-copilot_parent-coaching-packs": {
       "period_overview": "Period overview"
     },
     "utils_parent-copilot_parent-facing-answer-postpr": {
-      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "The report is based on the practice carried out on the site in the selected period."
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "The report is based on practice completed on the site in the selected period."
     },
     "utils_parent-copilot_pattern-answer-composers": {
-      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "This is a focused answer according to what appears in the report in the selected period, without concluding beyond the data that is presented.",
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "This answer sticks to what appears in the report for the selected period and does not go beyond that data.",
       "the_three_most_important_things_right_now_are": "The three most important things right now are:",
       "report_summary": "Report summary",
-      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "If a clear sub-skill appears in the report, you should focus on it and not open several subjects together."
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "If a clear sub-skill appears in the report, focus on it — do not open several subjects at once."
     },
     "utils_parent-copilot_render-adapter": {
-      "program_for_the_week": "Program for the week",
+      "program_for_the_week": "Plan for the week",
       "what_to_avoid_now": "What to avoid now",
-      "formulation_for_a_child": "Formulation for a child"
+      "formulation_for_a_child": "Wording for your child"
     },
     "utils_parent-copilot_scope-resolver": {
-      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "In this subject there is still not enough practice that appears in the report - you should choose a subject in which there is already practice.",
-      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "In this subject there is not yet a topic with enough practice to talk about - you can try another subject.",
-      "there_is_more_than_one_topic_here_which_topic_to_answer": "There is more than one topic here - which topic to answer?"
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "In this subject there is still not enough practice in the report — choose a subject that already has practice.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "In this subject there is not yet a topic with enough practice to discuss — you can try another subject.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "There is more than one topic here — which topic should I answer about?"
     },
     "utils_parent-copilot_semantic-aggregate-answers": {
-      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "When subjects appear in the date range, you can ask again and get an organized list.",
-      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "The list is based on the subjects that are shown in the report for the selected period, according to the order of display.",
-      "these_are_the_summary_formulations_for_the_period_as_they_appear": "These are the summary formulations for the period as they appear in the report; For details by subject, you can go to the subjects screen.",
-      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "The ranking is based on averages across subjects with practice in each subject, not on the formulation of a single subject.",
-      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "When practice data appears on at least one topic with questions, you can return to the question and get a clearer picture.",
-      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "You can formulate again with two subject names, or ask one question about ranking by difficulty versus relatively good results according to the data in the repo",
-      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "When questions and accuracy appear for both subjects, you can ask again and get a direct comparison according to the averages in the report.",
-      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "In order to differentiate between the directions, it is useful to also look at the number of questions in each subject and the wording of the topics themselves ",
-      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "The comparison is based on averages across the topics that have practice in the report, not on the wording of a single topic.",
-      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "When subjects appear with subject lines, you can return to the question and get a practice rating.",
-      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "The rating is based on the actual amount of questions in the period report, not according to the feeling of being overwhelmed.",
-      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "When active subjects appear, it is possible to identify exactly where the data is the least.",
-      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "This is a sign that there is too little data in the period report; In such a case, it is correct to be careful in drawing conclusions.",
-      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "This is an answer based on the summary lines in the report only, without inventing a direction over time that did not appear explicitly.",
-      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "When complete practice data by subject appears in the report, it is possible to identify an area that requires attention.",
-      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "It is still correct to continue practicing and testing, but there is currently no clear sign from the report of lack of clarity.",
-      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "The identification is based on signs of doubt regarding the wording, it is still not clear enough or too little data that appears in the report itself.",
-      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "More questions and a wider practice sequence are needed to reliably test stability.",
-      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "When data appears for two or more subjects, you can ask again and get a rating according to the averages shown in the report.",
-      "this_is_a_subject_level_description_from_the_report_for_exact_de": "This is a subject-level description from the report; For exact details by topic, you should open the subject in the report.",
-      "you_can_formulate_again_with_two_subject_names": "You can formulate again with two subject names, or ask one question about ranking by difficulty versus relatively good results according to the data in the report.",
-      "in_order_to_differentiate_between_the_directions": "In order to differentiate between the directions, it is useful to also look at the number of questions in each subject and the wording of the topics themselves in the report."
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "When subjects appear in the date range, ask again and you can get an organized list.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "The list is based on the subjects shown in the report for the selected period, in display order.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "These are the period summary lines as they appear in the report. For details by subject, open the subjects screen.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "The ranking uses averages across subjects with practice, not the wording of a single subject.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "When practice data appears for at least one topic with questions, you can ask again for a clearer picture.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "You can ask again with two subject names, or ask one question about ranking by difficulty versus relatively strong results based on the report data.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "When questions and accuracy appear for both subjects, ask again for a direct comparison from the averages in the report.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "To tell the directions apart, also look at the number of questions in each subject and the topic wording itself.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "The comparison uses averages across topics that have practice in the report, not the wording of a single topic.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "When subjects appear with subject lines, ask again to get a practice rating.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "The rating is based on the actual number of questions in the period report, not on a feeling of being overwhelmed.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "When active subjects appear, you can see exactly where the data is thinnest.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "This means there is too little data in the period report — be careful about drawing conclusions.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "This answer uses only the summary lines in the report and does not invent a trend over time that is not shown there.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "When complete practice data by subject appears in the report, you can spot an area that needs attention.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Keep practicing and checking — the report does not currently show a clear sign of confusion.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "This comes from signs that the wording is still unclear, or that there is too little data in the report itself.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "More questions and a longer practice stretch are needed to reliably test stability.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "When data appears for two or more subjects, ask again for a rating from the averages shown in the report.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "This is a subject-level description from the report. For exact details by topic, open the subject in the report.",
+      "you_can_formulate_again_with_two_subject_names": "You can ask again with two subject names, or ask one question about ranking by difficulty versus relatively strong results based on the report data.",
+      "in_order_to_differentiate_between_the_directions": "To tell the directions apart, also look at the number of questions in each subject and the topic wording in the report."
     },
     "utils_parent-copilot_short-followup-composer": {
-      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Excellent - start with a small step that corresponds to what appears in the report, without expanding beyond this wording.",
-      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Understandable - we stay with the same wording from the report and move forward with the next small step when appropriate.",
-      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "There is no long paragraph here for elaboration - you can put in another word what exactly is not clear.",
-      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "Continuing from the same point of the report - staying in the same picture without adding a new subject beyond what has already been presented."
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Great — start with a small step that matches what appears in the report, without going beyond that wording.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Got it — we stay with the same wording from the report and move to the next small step when it fits.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "There is no long explanation here — tell me in another word what is still unclear.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "Continuing from the same point in the report — staying with the same picture, without adding a new subject beyond what was already shown."
     },
     "utils_parent-copilot_truth-packet-v1": {
-      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "You should continue with a short and measured practice to stabilize progress in all areas.",
-      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "There is a wording here that can be reflected to a child in soft language.",
-      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "There is still no long extension in all subjects, but there are numerical practice data for the period.",
-      "no_long_detail_shown_here_yet": "No long detail shown here yet.",
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Keep up short, steady practice to lock in progress across areas.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Here is wording you can share with a child in gentle language.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "There is not yet a long stretch of practice across all subjects, but there are numerical practice totals for the period.",
+      "no_long_detail_shown_here_yet": "No detailed breakdown is shown here yet.",
       "period_overview": "Period overview",
-      "still_lacks_cumulative_practice_for_a_stable_image": "Still lacks cumulative practice for a stable image."
+      "still_lacks_cumulative_practice_for_a_stable_image": "There is still not enough cumulative practice for a stable picture."
     }
   }
 }

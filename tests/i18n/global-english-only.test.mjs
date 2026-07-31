@@ -1,12 +1,19 @@
 /**
- * Global English-only hard-fail scan.
- * Admin (pages/admin, components/admin, lib/admin-portal) may stay Hebrew.
+ * Global English-only hard-fail scan for EN runtime surfaces.
+ *
+ * Architecture contract:
+ * - Science SOURCE bank may remain Hebrew; EN display must come from overlay (1017/1017).
+ * - Hebrew glyph→slug maps are technical data, not UI prose.
+ * - Locale-aware CSS (`html[dir=rtl]`) is allowed only in locale font stacks.
+ * - New Hebrew on Global EN-visible paths must fail this suite.
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { isInactiveBookDraft } from "./learning-book-active-pages.mjs";
+import { validateScienceEnOverlayMechanical } from "../../lib/learning/science-overlay-mechanical-validate.js";
+import { localizeScienceBankForLocale } from "../../utils/learning-content-en/science.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "../..");
@@ -53,21 +60,21 @@ const PATH_ALLOW = [
   /^lib\/rewards\/.*\.he\.js$/,
   /^lib\/teacher-portal\/.*\.he\.js$/,
   /^lib\/leo-miners\/server\/leo-miners-admin-config\.server\.js$/,
-  // Test fixtures that intentionally contain Hebrew for detection tests
   /^tests\//,
   /^scripts\//,
   /^pages\/dev\//,
   /^components\/prototypes\//,
   /\/node_modules\//,
   /\/\.next\//,
-  // Generators localize before student UI (verified in runtime sample below)
+  // Generators localize before student UI (runtime samples below)
   /^utils\/math-question-generator\.js$/,
   /^utils\/geometry-question-generator\.js$/,
   /^utils\/english-question-generator\.js$/,
-  /^data\/science-questions/,
+  // Science HE source bank is allowed as SOURCE only — runtime overlay is asserted below
+  /^data\/science-questions\.js$/,
+  /^data\/science-questions\//,
   /^data\/english-questions\//,
   /^utils\/learning-content-en\//,
-  // Internal audit / QA tooling — never rendered to Global users
   /^lib\/bidi\//,
   /^data\/admin-video-builder\//,
   /^data\/language-review\//,
@@ -85,7 +92,6 @@ const PATH_ALLOW = [
   /^utils\/mcq-fail-content-repair\.js$/,
   /^utils\/geometry-diagram-layout\.js$/,
   /^lib\/i18n\/locale-registry\.js$/,
-  // Curriculum/tooling indexes (not rendered)
   /^data\/curriculum-spine\//,
   /^docs\/learning-book\/MATH_/,
   /^docs\/learning-book\/GEOMETRY_/,
@@ -104,6 +110,26 @@ function isAllowedPath(rel) {
   return PATH_ALLOW.some((re) => re.test(rel));
 }
 
+/**
+ * Narrow exemption: Hebrew characters used only as glyph keys / inventory in writing builders.
+ * Values must be Latin slugs or the line is a single-letter string entry — never UI sentences.
+ */
+function isHebrewGlyphTechnicalLine(line, rel) {
+  if (!/^data\/writing\/catalog-builders\//.test(rel)) return false;
+  const t = line.trim();
+  if (/^[\u0590-\u05FF]{1,2}\s*:\s*"[a-z0-9-]+"\s*,?$/.test(t)) return true;
+  if (/^"[\u0590-\u05FF]{1,2}"\s*,?$/.test(t)) return true;
+  if (/^'[\u0590-\u05FF]{1,2}'\s*,?$/.test(t)) return true;
+  if (/\bHEBREW_(LETTER|FINAL|LETTERS|LETTER_SLUG)/.test(line)) return true;
+  return false;
+}
+
+/** Locale-aware direction selectors — not hardcoded product Hebrew UI */
+function isLocaleAwareRtlCss(line, rel) {
+  if (!/^styles\/locale-fonts\.css$/.test(rel)) return false;
+  return /html\[dir=["']rtl["']\]/.test(line) || /:lang\(/.test(line);
+}
+
 function hebrewOutsideRegexAndStrings(line) {
   let stripped = line.replace(/\/(?:\\.|[^/\\])+\/[dgimsuy]*/g, "");
   stripped = stripped
@@ -112,6 +138,7 @@ function hebrewOutsideRegexAndStrings(line) {
     .replace(/`(?:\\.|[^`\\])*`/g, "");
   return HE.test(stripped);
 }
+
 function isCommentOnly(line) {
   const t = line.trim();
   if (
@@ -123,7 +150,6 @@ function isCommentOnly(line) {
   ) {
     return true;
   }
-  // Inline trailing comment — Hebrew only in comment portion
   const codePart = line.split("//")[0];
   if (line.includes("//") && HE.test(line) && !HE.test(codePart.replace(/["'`][^"'`]*["'`]/g, ""))) {
     return true;
@@ -131,7 +157,6 @@ function isCommentOnly(line) {
   return false;
 }
 
-/** Hebrew only inside regex / string normalization (not displayed) */
 function isNormalizationPatternLine(line, rel) {
   if (!/^lib\/learning-book\//.test(rel)) return false;
   if (/\.replace\(|\.match\(|RegExp|\/[^/]*[\u0590-\u05FF][^/]*\/[gimuys]*/.test(line)) {
@@ -154,7 +179,6 @@ function walk(dir, out = []) {
 /** @type {{ rel: string, line: number, kind: string, snippet: string }[]} */
 const findings = [];
 
-// 1) No pages/**/*.he.* routes (except admin — none exist)
 for (const file of walk(path.join(root, "pages"))) {
   const rel = path.relative(root, file).split(path.sep).join("/");
   if (/\.he\.(js|jsx|ts|tsx)$/.test(rel) && !rel.startsWith("pages/admin/")) {
@@ -167,7 +191,6 @@ for (const file of walk(path.join(root, "pages"))) {
   }
 }
 
-// 2) Static scan
 for (const base of SCAN_ROOTS) {
   const absBase = path.join(root, base);
   if (!fs.existsSync(absBase)) continue;
@@ -189,6 +212,8 @@ for (const base of SCAN_ROOTS) {
     text.split(/\r?\n/).forEach((line, i) => {
       if (isCommentOnly(line)) return;
       if (isNormalizationPatternLine(line, rel)) return;
+      if (isHebrewGlyphTechnicalLine(line, rel)) return;
+      if (isLocaleAwareRtlCss(line, rel)) return;
       if (HE_IMPORT.test(line)) {
         findings.push({
           rel,
@@ -197,7 +222,7 @@ for (const base of SCAN_ROOTS) {
           snippet: line.trim().slice(0, 160),
         });
       }
-      if (RTL_LANG.test(line)) {
+      if (RTL_LANG.test(line) && !isLocaleAwareRtlCss(line, rel)) {
         findings.push({
           rel,
           line: i + 1,
@@ -219,17 +244,46 @@ for (const base of SCAN_ROOTS) {
 
 async function runtimeSampleChecks() {
   const failures = [];
+
+  const overlay = validateScienceEnOverlayMechanical();
+  if (!overlay.ok) {
+    failures.push(
+      `science EN overlay mechanical FAIL issueCount=${overlay.issueCount} sample=${(overlay.issueSample || []).slice(0, 5).join(",")}`
+    );
+  }
+  if (overlay.totalQuestions !== 1017) {
+    failures.push(`science overlay expected 1017 questions, got ${overlay.totalQuestions}`);
+  }
+
   const { SCIENCE_QUESTIONS } = await import(
     pathToFileURL(path.join(root, "data/science-questions.js")).href
   );
-  for (const q of (SCIENCE_QUESTIONS || []).slice(0, 40)) {
+  const localized = localizeScienceBankForLocale(SCIENCE_QUESTIONS, "en");
+  assert.equal(localized.length, SCIENCE_QUESTIONS.length);
+  for (const q of localized.slice(0, 80)) {
     for (const field of ["stem", "question", "explanation"]) {
       const v = q?.[field];
       if (typeof v === "string" && HE.test(v)) {
-        failures.push(`SCIENCE_QUESTIONS.${q.id || "?"}.${field} still Hebrew`);
+        failures.push(`localized SCIENCE.${q.id || "?"}.${field} still Hebrew (EN overlay path)`);
+      }
+    }
+    if (Array.isArray(q?.options)) {
+      for (const [i, opt] of q.options.entries()) {
+        if (typeof opt === "string" && HE.test(opt)) {
+          failures.push(`localized SCIENCE.${q.id || "?"}.options[${i}] still Hebrew`);
+        }
       }
     }
   }
+  // Spot-check: first question must differ from HE source when source is HE
+  const raw0 = SCIENCE_QUESTIONS[0];
+  const loc0 = localized[0];
+  if (raw0 && loc0 && typeof raw0.stem === "string" && HE.test(raw0.stem)) {
+    if (typeof loc0.stem !== "string" || HE.test(loc0.stem)) {
+      failures.push("EN localization left first science stem Hebrew — Hebrew fallback visible");
+    }
+  }
+
   try {
     const { generateQuestion } = await import(
       pathToFileURL(path.join(root, "utils/math-question-generator.js")).href
@@ -265,4 +319,6 @@ if (findings.length || runtimeFailures.length) {
 
 assert.equal(findings.length, 0);
 assert.equal(runtimeFailures.length, 0);
-console.log("ok - global English-only runtime scan (0 findings)");
+console.log(
+  "ok - global English-only: no HE on EN surfaces; science overlay 1017 EN display path verified"
+);

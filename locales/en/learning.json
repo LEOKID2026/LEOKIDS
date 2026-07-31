@@ -421,27 +421,27 @@
         "square_area": {
           "title": "📐 Square area",
           "desc": "side × side",
-          "formula": "S = a²"
+          "formula": "A = a²"
         },
         "rectangle_area": {
           "title": "📐 Rectangle area",
           "desc": "length × width",
-          "formula": "S = a × b"
+          "formula": "A = a × b"
         },
         "triangle_area": {
           "title": "📐 Triangle area",
           "desc": "(base × height) ÷ 2",
-          "formula": "S = (b × h) ÷ 2"
+          "formula": "A = (b × h) ÷ 2"
         },
         "circle_perimeter": {
-          "title": "⭕ Circle perimeter",
+          "title": "⭕ Circumference",
           "desc": "2 × π × radius",
-          "formula": "P = 2πr"
+          "formula": "C = 2πr"
         },
         "circle_area": {
           "title": "⭕ Circle area",
           "desc": "π × radius²",
-          "formula": "S = πr²"
+          "formula": "A = πr²"
         }
       },
       "terms": {
@@ -480,15 +480,15 @@
         "cube": { "title": "🔲 Cube", "desc": "A box where all edges are equal" }
       },
       "formulas": {
-        "square_area": { "title": "📐 Square area", "desc": "side × side", "formula": "S = a²" },
-        "rectangle_area": { "title": "📐 Rectangle area", "desc": "length × width", "formula": "S = a × b" },
-        "triangle_area": { "title": "📐 Triangle area", "desc": "(base × height) ÷ 2", "formula": "S = (b × h) ÷ 2" },
+        "square_area": { "title": "📐 Square area", "desc": "side × side", "formula": "A = a²" },
+        "rectangle_area": { "title": "📐 Rectangle area", "desc": "length × width", "formula": "A = a × b" },
+        "triangle_area": { "title": "📐 Triangle area", "desc": "(base × height) ÷ 2", "formula": "A = (b × h) ÷ 2" },
         "square_perimeter": { "title": "📏 Square perimeter", "desc": "4 × side", "formula": "P = 4a" },
         "rectangle_perimeter": { "title": "📏 Rectangle perimeter", "desc": "2 × (length + width)", "formula": "P = 2(a + b)" },
-        "box_volume": { "title": "📦 Box volume", "desc": "length × width × height", "formula": "V = a × b × c" },
+        "box_volume": { "title": "📦 Rectangular prism volume", "desc": "length × width × height", "formula": "V = a × b × c" },
         "cube_volume": { "title": "📦 Cube volume", "desc": "side × side × side", "formula": "V = a³" },
-        "circle_perimeter": { "title": "⭕ Circle perimeter", "desc": "2 × π × radius", "formula": "P = 2πr" },
-        "circle_area": { "title": "⭕ Circle area", "desc": "π × radius²", "formula": "S = πr²" }
+        "circle_perimeter": { "title": "⭕ Circumference", "desc": "2 × π × radius", "formula": "C = 2πr" },
+        "circle_area": { "title": "⭕ Circle area", "desc": "π × radius²", "formula": "A = πr²" }
       },
       "terms": {
         "area": { "title": "📐 Area", "desc": "The space a shape covers on a flat surface" },
@@ -680,7 +680,7 @@
       "summary": "{num}. Summary: {explanation}"
     },
     "insights": {
-      "needsStrengthening": "Worth strengthening in {topic} (accuracy ~{percent}%)",
+      "needsStrengthening": "Area to strengthen: {topic} (accuracy ~{percent}%)",
       "relativeStrength": "Relative strength in {topic}.",
       "improving": "Nice improvement in {topic}.",
       "accuracyRising": "Accuracy trend in recent streak is rising.",

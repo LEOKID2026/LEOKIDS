@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import {
   DEFAULT_LOCALE,
+  LOCALE_COOKIE_NAME,
   LOCALE_REQUEST_HEADER,
   resolveLocaleDefinition,
 } from "./lib/i18n/locale-registry.js";
@@ -11,9 +12,24 @@ import {
 } from "./lib/i18n/locale-path.js";
 import { setLocaleCookieOnResponse } from "./lib/i18n/locale-cookie.js";
 
+/**
+ * Forward interface locale on the rewritten/next request.
+ * Next.js Pages `_document` reliably sees Cookie + x-lk-interface-locale for `next()`,
+ * but rewrite can drop custom headers — so we also inject the locale cookie onto the
+ * request Cookie header for the same request (response Set-Cookie alone is too late).
+ */
 function withInterfaceLocaleRequestHeaders(request, localeId) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(LOCALE_REQUEST_HEADER, localeId);
+
+  const existing = requestHeaders.get("cookie") || "";
+  const parts = existing
+    .split(";")
+    .map((p) => p.trim())
+    .filter((p) => p && !p.toLowerCase().startsWith(`${LOCALE_COOKIE_NAME.toLowerCase()}=`));
+  parts.push(`${LOCALE_COOKIE_NAME}=${encodeURIComponent(localeId)}`);
+  requestHeaders.set("cookie", parts.join("; "));
+
   return requestHeaders;
 }
 

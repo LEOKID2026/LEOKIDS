@@ -11,7 +11,6 @@
     "now": "Now:",
     "avoid": "Avoid:",
     "caution": "Caution:",
-    "number_r_questions_0_if_withq_length_return_null_return": "Number(r?.questions) > 0);\n  if (!withQ.length) return null;\n  return (",
     "what_stands_out_in_each_topic": "What stands out in each topic"
   }
 }

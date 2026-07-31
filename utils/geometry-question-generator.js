@@ -98,7 +98,7 @@ export function buildGeometryMcqAnswers({
 
   // Solid identification: 4 EN buttons — correct + 3 distractors from the 6 solids
   if (baseKind === "solids") {
-    const allSolids = ["Cube", "Cuboid", "Cylinder", "Pyramid", "Cone", "Sphere"];
+    const allSolids = ["Cube", "Rectangular prism", "Cylinder", "Pyramid", "Cone", "Sphere"];
     const ca4 = String(correctAnswer);
     const others = allSolids.filter((n) => n !== ca4);
     shuffleMcqList(others);
@@ -2433,7 +2433,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           dailyLife: ["dice", "ice cube", "Rubik's cube"],
         },
         {
-          name: "Cuboid", solidKey: "rectangular_prism", num: 2, faces: 6, vertices: 8, edges: 12,
+          name: "Rectangular prism", solidKey: "rectangular_prism", num: 2, faces: 6, vertices: 8, edges: 12,
           curved: false,
           descs: [
             "6 rectangular faces",

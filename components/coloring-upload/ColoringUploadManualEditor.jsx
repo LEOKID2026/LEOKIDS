@@ -69,9 +69,9 @@ export default function ColoringUploadManualEditor({
         <label>
           {ui.coloringUploadBrushSize}
           <select value={brushSize} onChange={(e) => onBrushSizeChange(Number(e.target.value))}>
-            <option value={4}>קטן</option>
-            <option value={8}>בינוני</option>
-            <option value={16}>גדול</option>
+            <option value={4}>{ui.writingFontSizeSm}</option>
+            <option value={8}>{ui.writingFontSizeMd}</option>
+            <option value={16}>{ui.writingFontSizeLg}</option>
           </select>
         </label>
         <button type="button" className="worksheet-secondary-cta" disabled={!canUndo} onClick={onUndo}>

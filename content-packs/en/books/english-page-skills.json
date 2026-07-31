@@ -5,8 +5,8 @@
         "skillId": "english:phonics:g1:letters_upper",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "אותיות גדולות A–Z",
-        "description": "זיהוי ושם אותיות גדולות A–Z בקבוצות",
+        "title": "Capital letters A–Z",
+        "description": "Identify and name capital letters A–Z in groups",
         "doNotTranslateFields": [
           "description"
         ],
@@ -16,8 +16,8 @@
         "skillId": "english:phonics:g1:letters_lower",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "אותיות קטנות a–z",
-        "description": "זיהוי ושם אותיות קטנות a–z",
+        "title": "Lowercase letters a–z",
+        "description": "Identify and name lowercase letters a–z",
         "doNotTranslateFields": [
           "description"
         ],
@@ -27,8 +27,8 @@
         "skillId": "english:phonics:g1:letters_match",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "התאמת אות גדולה וקטנה",
-        "description": "התאמת A↔a … Z↔z",
+        "title": "Match capital and lowercase letters",
+        "description": "Match A↔a … Z↔z",
         "doNotTranslateFields": [
           "description"
         ],
@@ -38,8 +38,8 @@
         "skillId": "english:phonics:g1:letter_names",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "שמות האותיות",
-        "description": "שם האות (letter name) מול צליל",
+        "title": "Letter names",
+        "description": "Letter name versus letter sound",
         "doNotTranslateFields": [
           "description"
         ],
@@ -49,8 +49,8 @@
         "skillId": "english:phonics:g1:phonics_sounds",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "צלילי אותיות",
-        "description": "צלילי עיצורים + תנועות קצרות a,e,i",
+        "title": "Letter sounds",
+        "description": "Consonant sounds + short vowels a, e, i",
         "doNotTranslateFields": [
           "description"
         ],
@@ -60,8 +60,8 @@
         "skillId": "english:phonics:g1:phonics_first_sound",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "הצליל הראשון במילה",
-        "description": "צליל ראשון במילים cat, dog, sun",
+        "title": "The first sound in a word",
+        "description": "First sound in words like cat, dog, sun",
         "doNotTranslateFields": [
           "description"
         ],
@@ -71,7 +71,7 @@
         "skillId": "english:phonics:g1:classroom_words",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "מילים בכיתה",
+        "title": "Classroom words",
         "description": "book, pen, desk, chair, door, teacher, hello, bye",
         "doNotTranslateFields": [
           "description"
@@ -82,7 +82,7 @@
         "skillId": "english:phonics:g1:first_words_simple",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "מילים פשוטות ראשונות",
+        "title": "First simple words",
         "description": "cat, dog, sun, red, blue, mom, dad",
         "doNotTranslateFields": [
           "description"
@@ -93,8 +93,8 @@
         "skillId": "english:phonics:g1:first_words_cvc",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "מילים עם שלוש אותיות (CVC)",
-        "description": "CVC מוגבל: cat, hat, sit, sun, pen, bed",
+        "title": "Three-letter words (CVC)",
+        "description": "Limited CVC set: cat, hat, sit, sun, pen, bed",
         "doNotTranslateFields": [
           "description"
         ],
@@ -104,8 +104,8 @@
         "skillId": "english:phonics:g1:picture_word_match",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "תמונה ומילה",
-        "description": "חיבור תמונה↔מילה ממילים שנלמדו",
+        "title": "Picture and word",
+        "description": "Match a picture to a word from words already learned",
         "doNotTranslateFields": [
           "description"
         ],
@@ -115,7 +115,7 @@
         "skillId": "english:phonics:g1:listening_classroom",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "הוראות בכיתה",
+        "title": "Classroom instructions",
         "description": "Stand up, Sit down, Open your book, Close your book",
         "doNotTranslateFields": [
           "description"
@@ -126,7 +126,7 @@
         "skillId": "english:phonics:g1:listening_commands",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "עוד הוראות קצרות",
+        "title": "More short instructions",
         "description": "Point to the door, Show me your pen",
         "doNotTranslateFields": [
           "description"
@@ -137,8 +137,8 @@
         "skillId": "english:vocabulary:wordlist:colors",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "צבעים באנגלית",
-        "description": "red, blue, green, yellow - זיהוי והחלפה עם עברית; ללא איות",
+        "title": "Colors in English",
+        "description": "red, blue, green, yellow — identify and match; no spelling yet",
         "doNotTranslateFields": [
           "description"
         ],
@@ -148,8 +148,8 @@
         "skillId": "english:vocabulary:wordlist:numbers",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מספרים 0–10 באנגלית",
-        "description": "zero–ten; זיהוי מספר באנגלית מתוך עברית",
+        "title": "Numbers 0–10 in English",
+        "description": "zero–ten; identify the English number",
         "doNotTranslateFields": [
           "description"
         ],
@@ -159,8 +159,8 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "משפחה באנגלית",
-        "description": "mom, dad, sister, brother - מילים בסיסיות",
+        "title": "Family words in English",
+        "description": "mom, dad, sister, brother — basic words",
         "doNotTranslateFields": [
           "description"
         ],
@@ -170,8 +170,8 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "חיות באנגלית",
-        "description": "cat, dog, bird, fish - שמות חיות נפוצות",
+        "title": "Animals in English",
+        "description": "cat, dog, bird, fish — common animal names",
         "doNotTranslateFields": [
           "description"
         ],
@@ -181,8 +181,8 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "רגשות באנגלית",
-        "description": "happy, sad - רגשות ראשוניים",
+        "title": "Feelings in English",
+        "description": "happy, sad — early feeling words",
         "doNotTranslateFields": [
           "description"
         ],
@@ -192,8 +192,8 @@
         "skillId": "english:vocabulary:wordlist:actions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "פעולות באנגלית",
-        "description": "run, jump, read, eat - פעלים פשוטים",
+        "title": "Actions in English",
+        "description": "run, jump, read, eat — simple verbs",
         "doNotTranslateFields": [
           "description"
         ],
@@ -203,8 +203,8 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית ספר באנגלית",
-        "description": "book, pen, desk, teacher - חפצי כיתה",
+        "title": "School words in English",
+        "description": "book, pen, desk, teacher — classroom items",
         "doNotTranslateFields": [
           "description"
         ],
@@ -214,8 +214,8 @@
         "skillId": "english:pool:grammar:be_basic",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "I am / You are - היכרות",
-        "description": "תבניות קבועות I am / You are + כינויי גוף בסיסיים; ללא טבלת am/is/are",
+        "title": "I am / You are — getting started",
+        "description": "Fixed patterns I am / You are + basic pronouns; no full am/is/are chart yet",
         "doNotTranslateFields": [
           "description"
         ],
@@ -225,8 +225,8 @@
         "skillId": "english:pool:sentence:base",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "משפטים קצרים - בסיס",
-        "description": "משפטים בני 2–3 מילים מתוך מילים שנלמדו",
+        "title": "Short sentences — basics",
+        "description": "2–3 word sentences using words already learned",
         "doNotTranslateFields": [
           "description"
         ],
@@ -236,8 +236,8 @@
         "skillId": "english:pool:translation:classroom",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "ביטויי כיתה",
-        "description": "Hello, Thank you, Please - תרגום מילה/ביטוי קצר",
+        "title": "Classroom phrases",
+        "description": "Hello, Thank you, Please — short word/phrase practice",
         "doNotTranslateFields": [
           "description"
         ],
@@ -249,8 +249,8 @@
         "skillId": "english:phonics:g2:letters_review",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "חזרה: אותיות ושמות",
-        "description": "חזרה A–Z גדולות+קטנות+שמות",
+        "title": "Review: letters and names",
+        "description": "Review A–Z capitals, lowercase, and names",
         "doNotTranslateFields": [
           "description"
         ],
@@ -260,8 +260,8 @@
         "skillId": "english:phonics:g2:letters_order",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "סדר האלף בית",
-        "description": "סדר A→Z",
+        "title": "Alphabet order",
+        "description": "Order A→Z",
         "doNotTranslateFields": [
           "description"
         ],
@@ -271,8 +271,8 @@
         "skillId": "english:phonics:g2:phonics_sounds_review",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "חזרה: צלילים",
-        "description": "חזרה עיצורים+תנועות; b/p, d/t",
+        "title": "Review: sounds",
+        "description": "Review consonants + vowels; b/p, d/t",
         "doNotTranslateFields": [
           "description"
         ],
@@ -282,7 +282,7 @@
         "skillId": "english:phonics:g2:phonics_blending",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "חיבור צלילים",
+        "title": "Blend sounds",
         "description": "blend CVC: cat, hat, sit, run, big, red, hot, sun",
         "doNotTranslateFields": [
           "description"
@@ -293,8 +293,8 @@
         "skillId": "english:phonics:g2:sound_letter_match",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "צליל ↔ אות",
-        "description": "צליל ↔ אות; hear letter→sound",
+        "title": "Sound ↔ letter",
+        "description": "Sound ↔ letter; hear letter → sound",
         "doNotTranslateFields": [
           "description"
         ],
@@ -304,7 +304,7 @@
         "skillId": "english:phonics:g2:first_word_reading",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "קריאת מילים ראשונה",
+        "title": "First word reading",
         "description": "CVC + sight: the, I, a, is",
         "doNotTranslateFields": [
           "description"
@@ -315,7 +315,7 @@
         "skillId": "english:phonics:g2:word_families_cvc",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "משפחות מילים",
+        "title": "Word families",
         "description": "-at, -an, -it, -og families",
         "doNotTranslateFields": [
           "description"
@@ -326,7 +326,7 @@
         "skillId": "english:phonics:g2:classroom_vocab_g2",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "אוצר מילים בכיתה",
+        "title": "Classroom vocabulary",
         "description": "classroom, playground, friend, read, write, listen",
         "doNotTranslateFields": [
           "description"
@@ -337,7 +337,7 @@
         "skillId": "english:phonics:g2:listening_comprehension",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "הבנת הנשמע",
+        "title": "Listening comprehension",
         "description": "4 mini dialogues; Who/What",
         "doNotTranslateFields": [
           "description"
@@ -348,7 +348,7 @@
         "skillId": "english:phonics:g2:picture_audio_word_match",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "תמונה, שמע ומילה",
+        "title": "Picture, sound, and word",
         "description": "triple match audio↔picture↔word",
         "doNotTranslateFields": [
           "description"
@@ -359,7 +359,7 @@
         "skillId": "english:phonics:g2:early_sentences_exposure",
         "learningPageId": "",
         "pageType": "phonics_foundation",
-        "title": "משפטים קצרים",
+        "title": "Short sentences",
         "description": "I see a cat. It is red. exposure only",
         "doNotTranslateFields": [
           "description"
@@ -370,8 +370,8 @@
         "skillId": "english:vocabulary:wordlist:colors",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "צבעים - שימוש במשפט",
-        "description": "חזרה + מילים במשפט קצר; כתיבה ראשונית",
+        "title": "Colors — use in a sentence",
+        "description": "Review + words in a short sentence; early writing",
         "doNotTranslateFields": [
           "description"
         ],
@@ -381,8 +381,8 @@
         "skillId": "english:vocabulary:wordlist:numbers",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מספרים - עד 20",
-        "description": "eleven–twenty; שימוש במשפט",
+        "title": "Numbers — up to 20",
+        "description": "eleven–twenty; use in a sentence",
         "doNotTranslateFields": [
           "description"
         ],
@@ -392,8 +392,8 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "משפחה - מילים במשפט",
-        "description": "This is my mom - תבנית קצרה",
+        "title": "Family — words in a sentence",
+        "description": "This is my mom — short pattern",
         "doNotTranslateFields": [
           "description"
         ],
@@ -403,8 +403,8 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "חיות - שמות ומשפטים",
-        "description": "I see a cat - תבנית קצרה",
+        "title": "Animals — names and sentences",
+        "description": "I see a cat — short pattern",
         "doNotTranslateFields": [
           "description"
         ],
@@ -414,7 +414,7 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "רגשות - במשפט",
+        "title": "Feelings — in a sentence",
         "description": "I am happy / I am sad",
         "doNotTranslateFields": [
           "description"
@@ -425,7 +425,7 @@
         "skillId": "english:vocabulary:wordlist:actions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "פעולות - פועל במשפט",
+        "title": "Actions — verb in a sentence",
         "description": "I run / I jump",
         "doNotTranslateFields": [
           "description"
@@ -436,7 +436,7 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית ספר - חפצים במשפט",
+        "title": "School — objects in a sentence",
         "description": "I have a book / My pen is blue",
         "doNotTranslateFields": [
           "description"
@@ -447,8 +447,8 @@
         "skillId": "english:vocabulary:wordlist:food",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מזון באנגלית",
-        "description": "apple, bread, milk, water - מילים + כתיבה",
+        "title": "Food in English",
+        "description": "apple, bread, milk, water — words + writing",
         "doNotTranslateFields": [
           "description"
         ],
@@ -458,8 +458,8 @@
         "skillId": "english:vocabulary:wordlist:house",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית - חדרים וחפצים",
-        "description": "bed, room, door, table - מילים בבית",
+        "title": "Home — rooms and objects",
+        "description": "bed, room, door, table — home words",
         "doNotTranslateFields": [
           "description"
         ],
@@ -469,8 +469,8 @@
         "skillId": "english:pool:grammar:be_basic",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "am / is / are - חיזוק",
-        "description": "I am / You are / He is / She is - ללא מונחים פורמליים",
+        "title": "am / is / are — reinforce",
+        "description": "I am / You are / He is / She is — without formal grammar labels",
         "doNotTranslateFields": [
           "description"
         ],
@@ -480,8 +480,8 @@
         "skillId": "english:pool:grammar:question_frames",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "ריבוי ושאלות פשוטות",
-        "description": "cat/cats; What is this? - שאלות קצרות",
+        "title": "Plurals and simple questions",
+        "description": "cat/cats; What is this? — short questions",
         "doNotTranslateFields": [
           "description"
         ],
@@ -491,8 +491,8 @@
         "skillId": "english:pool:sentence:base",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "משפטים קצרים - כיתה ב׳",
-        "description": "3–4 מילים; סימן פיסוק בסיסי",
+        "title": "Short sentences — Grade 2",
+        "description": "3–4 words; basic punctuation",
         "doNotTranslateFields": [
           "description"
         ],
@@ -502,8 +502,8 @@
         "skillId": "english:pool:sentence:routine",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "שגרת יום - משפטים",
-        "description": "I wake up / I go to school - שגרה יומית",
+        "title": "Daily routine — sentences",
+        "description": "I wake up / I go to school — daily routine",
         "doNotTranslateFields": [
           "description"
         ],
@@ -513,8 +513,8 @@
         "skillId": "english:pool:translation:classroom",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "ביטויי כיתה - משפטים",
-        "description": "תרגום ביטוי קצר דו-כיווני",
+        "title": "Classroom phrases — sentences",
+        "description": "Short two-way phrase practice",
         "doNotTranslateFields": [
           "description"
         ],
@@ -524,8 +524,8 @@
         "skillId": "english:pool:translation:routines",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "שגרת יום - תרגום",
-        "description": "תרגום משפטי שגרה 3–4 מילים",
+        "title": "Daily routine — practice",
+        "description": "Routine sentences of 3–4 words",
         "doNotTranslateFields": [
           "description"
         ],
@@ -537,8 +537,8 @@
         "skillId": "english:vocabulary:wordlist:actions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "פעולות - Present Simple",
-        "description": "פועל בזמן הווה פשוט; actions בשנה אחרונה",
+        "title": "Actions — present simple",
+        "description": "Present-simple verbs; recent action words",
         "doNotTranslateFields": [
           "description"
         ],
@@ -548,8 +548,8 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "חיות - במשפט מלא",
-        "description": "The dog runs fast - משפט עם פועל",
+        "title": "Animals — in a full sentence",
+        "description": "The dog runs fast — sentence with a verb",
         "doNotTranslateFields": [
           "description"
         ],
@@ -559,8 +559,8 @@
         "skillId": "english:vocabulary:wordlist:colors",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "צבעים - תיאור",
-        "description": "The sky is blue - תיאור עם is",
+        "title": "Colors — describing",
+        "description": "The sky is blue — description with is",
         "doNotTranslateFields": [
           "description"
         ],
@@ -570,7 +570,7 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "רגשות - She feels…",
+        "title": "Feelings — She feels…",
         "description": "She feels happy / sad",
         "doNotTranslateFields": [
           "description"
@@ -581,7 +581,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "משפחה - פעולות במשפחה",
+        "title": "Family — family actions",
         "description": "My brother reads every day",
         "doNotTranslateFields": [
           "description"
@@ -592,7 +592,7 @@
         "skillId": "english:vocabulary:wordlist:food",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מזון - I eat…",
+        "title": "Food — I eat…",
         "description": "I eat an apple / I drink milk",
         "doNotTranslateFields": [
           "description"
@@ -603,8 +603,8 @@
         "skillId": "english:vocabulary:wordlist:house",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית - חפצים ומיקום",
-        "description": "The book is on the table - הכנה ל-in/on/under",
+        "title": "Home — objects and place",
+        "description": "The book is on the table — prep for in/on/under",
         "doNotTranslateFields": [
           "description"
         ],
@@ -614,8 +614,8 @@
         "skillId": "english:vocabulary:wordlist:numbers",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מספרים - There are…",
-        "description": "There are ten books - מספר + שם עצם",
+        "title": "Numbers — There are…",
+        "description": "There are ten books — number + noun",
         "doNotTranslateFields": [
           "description"
         ],
@@ -625,7 +625,7 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית ספר - We learn…",
+        "title": "School — We learn…",
         "description": "We learn English at school",
         "doNotTranslateFields": [
           "description"
@@ -636,7 +636,7 @@
         "skillId": "english:vocabulary:wordlist:body",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "גוף האדם באנגלית",
+        "title": "The human body in English",
         "description": "head, hand, leg, eye - My head hurts",
         "doNotTranslateFields": [
           "description"
@@ -647,7 +647,7 @@
         "skillId": "english:vocabulary:wordlist:sports",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "ספורט באנגלית",
+        "title": "Sports in English",
         "description": "football, swim, run - I play football",
         "doNotTranslateFields": [
           "description"
@@ -658,7 +658,7 @@
         "skillId": "english:vocabulary:wordlist:weather",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מזג אוויר באנגלית",
+        "title": "Weather in English",
         "description": "sunny, rainy, cloudy - It is sunny",
         "doNotTranslateFields": [
           "description"
@@ -669,19 +669,19 @@
         "skillId": "english:pool:grammar:present_simple",
         "learningPageId": "",
         "pageType": "step_by_step_procedure",
-        "title": "Present Simple - חיובי, שלילי ושאלה",
-        "description": "I play / I do not play / Do you play? - הסבר בעברית פשוטה",
+        "title": "Present simple — positive, negative, and question",
+        "description": "I play / I do not play / Do you play? — clear simple explanation",
         "doNotTranslateFields": [
           "description"
         ],
         "learningLanguage": "en"
       },
       "grammar_articles_prepositions": {
-        "skillId": "english:grammar:line:תארים_בסיסיים_יידוע_a_an_the_ומילות_יחס_מקום_in_on_under",
+        "skillId": "Basic adjectives, a/an/the, and place prepositions in/on/under",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "a / an / the ו-in / on / under",
-        "description": "יידוע בסיסי + מיקום; The cat is under the bed",
+        "title": "a / an / the and in / on / under",
+        "description": "Basic articles + place; The cat is under the bed",
         "doNotTranslateFields": [
           "description"
         ],
@@ -691,8 +691,8 @@
         "skillId": "english:pool:grammar:question_frames",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "שאלות - חיזוק כיתה ג׳",
-        "description": "Do you…? / What is…? - חזרה עם Present Simple",
+        "title": "Questions — Grade 3 reinforce",
+        "description": "Do you…? / What is…? — review with present simple",
         "doNotTranslateFields": [
           "description"
         ],
@@ -702,7 +702,7 @@
         "skillId": "english:pool:sentence:routine",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "שגרת יום - משפטים מלאים",
+        "title": "Daily routine — full sentences",
         "description": "I brush my teeth every morning",
         "doNotTranslateFields": [
           "description"
@@ -713,8 +713,8 @@
         "skillId": "english:pool:sentence:descriptive",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "משפטים תיאוריים",
-        "description": "The big dog runs fast - תאר + שם עצם + פועל",
+        "title": "Descriptive sentences",
+        "description": "The big dog runs fast — adjective + noun + verb",
         "doNotTranslateFields": [
           "description"
         ],
@@ -724,8 +724,8 @@
         "skillId": "english:pool:translation:routines",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "שגרה - תרגום מורחב",
-        "description": "תרגום משפטי שגרה 4–5 מילים",
+        "title": "Routine — longer practice",
+        "description": "Routine sentences of 4–5 words",
         "doNotTranslateFields": [
           "description"
         ],
@@ -735,7 +735,7 @@
         "skillId": "english:pool:translation:hobbies",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "תחביבים - תרגום",
+        "title": "Hobbies — practice",
         "description": "I like to draw / She plays the piano",
         "doNotTranslateFields": [
           "description"
@@ -748,8 +748,8 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "חיות - פעולה עכשיו",
-        "description": "The birds are flying - קישור ל-Continuous",
+        "title": "Animals — action right now",
+        "description": "The birds are flying — link to continuous",
         "doNotTranslateFields": [
           "description"
         ],
@@ -759,7 +759,7 @@
         "skillId": "english:vocabulary:wordlist:body",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "גוף - פעולות יומיומיות",
+        "title": "Body — everyday actions",
         "description": "He washes his hands - Present Simple",
         "doNotTranslateFields": [
           "description"
@@ -770,7 +770,7 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "רגשות - They feel…",
+        "title": "Feelings — They feel…",
         "description": "They feel excited today",
         "doNotTranslateFields": [
           "description"
@@ -781,7 +781,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "משפחה - parents, work",
+        "title": "Family — parents, work",
         "description": "My parents work hard",
         "doNotTranslateFields": [
           "description"
@@ -792,7 +792,7 @@
         "skillId": "english:vocabulary:wordlist:food",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מזון - healthy food",
+        "title": "Food — healthy food",
         "description": "We eat healthy food",
         "doNotTranslateFields": [
           "description"
@@ -803,7 +803,7 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית ספר - students, read",
+        "title": "School — students, read",
         "description": "The students read books",
         "doNotTranslateFields": [
           "description"
@@ -814,7 +814,7 @@
         "skillId": "english:vocabulary:wordlist:sports",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "ספורט - עכשיו במגרש",
+        "title": "Sports — now on the field",
         "description": "She is swimming now",
         "doNotTranslateFields": [
           "description"
@@ -825,7 +825,7 @@
         "skillId": "english:vocabulary:wordlist:weather",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מזג אוויר - היום",
+        "title": "Weather — today",
         "description": "It is raining today",
         "doNotTranslateFields": [
           "description"
@@ -836,7 +836,7 @@
         "skillId": "english:vocabulary:wordlist:community",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "קהילה - park, town, library",
+        "title": "Community — park, town, library",
         "description": "The park is in our town",
         "doNotTranslateFields": [
           "description"
@@ -847,7 +847,7 @@
         "skillId": "english:vocabulary:wordlist:environment",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "סביבה - trees, protect",
+        "title": "Environment — trees, protect",
         "description": "We protect the trees",
         "doNotTranslateFields": [
           "description"
@@ -858,7 +858,7 @@
         "skillId": "english:vocabulary:wordlist:travel",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "נסיעות - bus, travel",
+        "title": "Travel — bus, travel",
         "description": "We travel by bus",
         "doNotTranslateFields": [
           "description"
@@ -869,8 +869,8 @@
         "skillId": "english:pool:grammar:present_simple",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "Present Simple - חיזוק",
-        "description": "הabit, fact - He walks every day; לא Continuous",
+        "title": "Present simple — reinforce",
+        "description": "Habit, fact — He walks every day; not continuous",
         "doNotTranslateFields": [
           "description"
         ],
@@ -880,7 +880,7 @@
         "skillId": "english:pool:grammar:progressive",
         "learningPageId": "",
         "pageType": "contrast_page",
-        "title": "Present Simple לעומת Continuous",
+        "title": "Present simple versus continuous",
         "description": "I read every day / I am reading now - now vs usually",
         "doNotTranslateFields": [
           "description"
@@ -892,7 +892,7 @@
         "learningPageId": "",
         "pageType": "concept_foundation",
         "title": "some/any, much/many, my, slowly",
-        "description": "כמות, שייכות, תואר פועל - I have some apples; She runs quickly",
+        "description": "Quantity, belonging, adverbs — I have some apples; She runs quickly",
         "doNotTranslateFields": [
           "description"
         ],
@@ -902,7 +902,7 @@
         "skillId": "english:pool:sentence:descriptive",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "תיאור - תאר + תואר פועל",
+        "title": "Description — adjective + adverb",
         "description": "The tall girl runs quickly",
         "doNotTranslateFields": [
           "description"
@@ -913,7 +913,7 @@
         "skillId": "english:pool:sentence:routine",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "שגרה - every day",
+        "title": "Routine — every day",
         "description": "Every day I help at home",
         "doNotTranslateFields": [
           "description"
@@ -924,8 +924,8 @@
         "skillId": "english:pool:sentence:narrative",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "סיפור קצר - First… Then…",
-        "description": "First we pack. Then we go. - רצף פשוט",
+        "title": "Short story — First… Then…",
+        "description": "First we pack. Then we go. — simple sequence",
         "doNotTranslateFields": [
           "description"
         ],
@@ -935,8 +935,8 @@
         "skillId": "english:pool:translation:hobbies",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "תחביבים - תרגום עם Continuous",
-        "description": "He is playing guitar - תרגום דו-כיווני",
+        "title": "Hobbies — practice with continuous",
+        "description": "He is playing guitar — two-way practice",
         "doNotTranslateFields": [
           "description"
         ],
@@ -946,7 +946,7 @@
         "skillId": "english:pool:translation:community",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "קהילה - תרגום",
+        "title": "Community — practice",
         "description": "The library is near the school",
         "doNotTranslateFields": [
           "description"
@@ -959,8 +959,8 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "חיות - Past Simple",
-        "description": "The elephant walked slowly - פועל בעבר",
+        "title": "Animals — past simple",
+        "description": "The elephant walked slowly — past-tense verb",
         "doNotTranslateFields": [
           "description"
         ],
@@ -970,8 +970,8 @@
         "skillId": "english:vocabulary:wordlist:community",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "קהילה - visited, museum",
-        "description": "We visited the museum - מקומות בקהילה בעבר",
+        "title": "Community — visited, museum",
+        "description": "We visited the museum — community places in the past",
         "doNotTranslateFields": [
           "description"
         ],
@@ -981,8 +981,8 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "רגשות - felt proud",
-        "description": "She felt proud - רגשות בעבר",
+        "title": "Feelings — felt proud",
+        "description": "She felt proud — feelings in the past",
         "doNotTranslateFields": [
           "description"
         ],
@@ -992,7 +992,7 @@
         "skillId": "english:vocabulary:wordlist:environment",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "סביבה - planted trees",
+        "title": "Environment — planted trees",
         "description": "They planted trees last year",
         "doNotTranslateFields": [
           "description"
@@ -1003,7 +1003,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "משפחה - grandparents",
+        "title": "Family — grandparents",
         "description": "My grandparents live far away",
         "doNotTranslateFields": [
           "description"
@@ -1014,7 +1014,7 @@
         "skillId": "english:vocabulary:wordlist:food",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "מזון - cooked healthy food",
+        "title": "Food — cooked healthy food",
         "description": "We cooked healthy soup",
         "doNotTranslateFields": [
           "description"
@@ -1025,7 +1025,7 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בית ספר - class project",
+        "title": "School — class project",
         "description": "Our class won the project",
         "doNotTranslateFields": [
           "description"
@@ -1036,7 +1036,7 @@
         "skillId": "english:vocabulary:wordlist:sports",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "ספורט - scored a goal",
+        "title": "Sports — scored a goal",
         "description": "He scored a goal yesterday",
         "doNotTranslateFields": [
           "description"
@@ -1047,8 +1047,8 @@
         "skillId": "english:vocabulary:wordlist:travel",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "נסיעות - will travel",
-        "description": "We will travel by train - קישור לעתיד",
+        "title": "Travel — will travel",
+        "description": "We will travel by train — link to future",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1058,7 +1058,7 @@
         "skillId": "english:vocabulary:wordlist:health",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בריאות באנגלית",
+        "title": "Health in English",
         "description": "rest, water, doctor, exercise - I need to rest",
         "doNotTranslateFields": [
           "description"
@@ -1069,7 +1069,7 @@
         "skillId": "english:vocabulary:wordlist:technology",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "טכנולוגיה באנגלית",
+        "title": "Technology in English",
         "description": "computer, email, internet - She uses a computer",
         "doNotTranslateFields": [
           "description"
@@ -1080,8 +1080,8 @@
         "skillId": "english:pool:grammar:past_simple",
         "learningPageId": "",
         "pageType": "step_by_step_procedure",
-        "title": "Past Simple - עבר פשוט",
-        "description": "played/went/saw - חיובי ושאלה; סדירים וחריגים נפוצים",
+        "title": "Past simple",
+        "description": "played/went/saw — positive and question; common regular and irregular verbs",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1124,8 +1124,8 @@
         "skillId": "english:pool:grammar:quantifiers",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "much/many - חיזוק כיתה ה׳",
-        "description": "many people / much time - בהקשר עבר ועתיד",
+        "title": "much/many — Grade 5 reinforce",
+        "description": "many people / much time — in past and future contexts",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1135,8 +1135,8 @@
         "skillId": "english:pool:sentence:narrative",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "סיפור - Then we arrived",
-        "description": "First… Then… After that… - רצף בעבר",
+        "title": "Story — Then we arrived",
+        "description": "First… Then… After that… — past sequence",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1146,8 +1146,8 @@
         "skillId": "english:pool:sentence:advanced",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "משפטים מורחבים",
-        "description": "6–8 מילים; Last week we learned…",
+        "title": "Longer sentences",
+        "description": "6–8 words; Last week we learned…",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1157,7 +1157,7 @@
         "skillId": "english:pool:translation:community",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "קהילה - תרגום מורחב",
+        "title": "Community — longer practice",
         "description": "The hospital is next to the park",
         "doNotTranslateFields": [
           "description"
@@ -1168,7 +1168,7 @@
         "skillId": "english:pool:translation:technology",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "טכנולוגיה - תרגום",
+        "title": "Technology — practice",
         "description": "I will send an email tomorrow",
         "doNotTranslateFields": [
           "description"
@@ -1179,7 +1179,7 @@
         "skillId": "english:pool:translation:global",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "עולם - תרגום",
+        "title": "World — practice",
         "description": "People around the world speak many languages",
         "doNotTranslateFields": [
           "description"
@@ -1192,8 +1192,8 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "חיות - Past Continuous",
-        "description": "The whales were swimming - פעולה בעבר במקביל",
+        "title": "Animals — past continuous",
+        "description": "The whales were swimming — ongoing past action",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1203,8 +1203,8 @@
         "skillId": "english:vocabulary:wordlist:community",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "קהילה - festival, celebrate",
-        "description": "Our community celebrated - אירועים בקהילה",
+        "title": "Community — festival, celebrate",
+        "description": "Our community celebrated — community events",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1214,8 +1214,8 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "רגשות - might feel",
-        "description": "He might feel nervous - רגשות עם modal",
+        "title": "Feelings — might feel",
+        "description": "He might feel nervous — feelings with a modal",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1225,8 +1225,8 @@
         "skillId": "english:vocabulary:wordlist:environment",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "סביבה - climate, protect",
-        "description": "Climate change affects… - נושאים סביבתיים",
+        "title": "Environment — climate, protect",
+        "description": "Climate change affects… — environment topics",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1236,8 +1236,8 @@
         "skillId": "english:vocabulary:wordlist:health",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "בריאות - should rest",
-        "description": "You should drink water - עצות בריאות",
+        "title": "Health — should rest",
+        "description": "You should drink water — health tips",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1247,8 +1247,8 @@
         "skillId": "english:vocabulary:wordlist:technology",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "טכנולוגיה - if / could",
-        "description": "If the internet stops… - טכנולוגיה בתנאי",
+        "title": "Technology — if / could",
+        "description": "If the internet stops… — technology with a condition",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1258,8 +1258,8 @@
         "skillId": "english:vocabulary:wordlist:travel",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "נסיעות - Present Perfect intro",
-        "description": "We have visited three countries - היכרות בלבד",
+        "title": "Travel — present perfect intro",
+        "description": "We have visited three countries — introduction only",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1269,7 +1269,7 @@
         "skillId": "english:vocabulary:wordlist:culture",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "תרבות באנגלית",
+        "title": "Culture in English",
         "description": "culture, tradition, music, identity",
         "doNotTranslateFields": [
           "description"
@@ -1280,7 +1280,7 @@
         "skillId": "english:vocabulary:wordlist:global_issues",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "סוגיות גלובליות",
+        "title": "Global issues",
         "description": "global issues, peace, cooperation",
         "doNotTranslateFields": [
           "description"
@@ -1291,7 +1291,7 @@
         "skillId": "english:vocabulary:wordlist:history",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "היסטוריה באנגלית",
+        "title": "History in English",
         "description": "ancient, century, learn about history",
         "doNotTranslateFields": [
           "description"
@@ -1302,7 +1302,7 @@
         "skillId": "english:pool:grammar:complex_tenses",
         "learningPageId": "",
         "pageType": "contrast_page",
-        "title": "Past Continuous + Past Simple + היכרות Present Perfect",
+        "title": "Past continuous + past simple + present perfect introduction",
         "description": "I was reading when…; I have visited - intro only",
         "doNotTranslateFields": [
           "description"
@@ -1313,7 +1313,7 @@
         "skillId": "english:pool:grammar:conditionals",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "Conditionals - type 0 ו-1",
+        "title": "Conditionals — types 0 and 1",
         "description": "If it rains, we will stay / If you heat ice, it melts",
         "doNotTranslateFields": [
           "description"
@@ -1325,7 +1325,7 @@
         "learningPageId": "",
         "pageType": "concept_foundation",
         "title": "should / might / could",
-        "description": "You should… / It might… / We could… - לא חזרה על can/must בלבד",
+        "description": "You should… / It might… / We could… — not only can/must",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1336,7 +1336,7 @@
         "learningPageId": "",
         "pageType": "practice_bridge",
         "title": "Superlatives - the most interesting",
-        "description": "the best / the most interesting - חיזוק כיתה ו׳",
+        "description": "the best / the most interesting — Grade 6 reinforce",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1346,8 +1346,8 @@
         "skillId": "english:pool:sentence:advanced",
         "learningPageId": "",
         "pageType": "visual_intuition",
-        "title": "משפטים מורכבים - While… was…",
-        "description": "8–10 מילים; While I was studying…",
+        "title": "Complex sentences — While… was…",
+        "description": "8–10 words; While I was studying…",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1357,8 +1357,8 @@
         "skillId": "english:pool:translation:technology",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "טכנולוגיה - תרגום מתקדם",
-        "description": "Scientists might discover… - תרגום דו-כיווני",
+        "title": "Technology — advanced practice",
+        "description": "Scientists might discover… — two-way practice",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1368,8 +1368,8 @@
         "skillId": "english:pool:translation:global",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "עולם - תרגום עם תנאי",
-        "description": "If we protect the oceans… - משפטים ארוכים",
+        "title": "World — practice with a condition",
+        "description": "If we protect the oceans… — longer sentences",
         "doNotTranslateFields": [
           "description"
         ],

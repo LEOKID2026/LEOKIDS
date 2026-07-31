@@ -274,7 +274,7 @@ export default function CreateWritingWorksheetTab({
       ) : (
         <>
           <div className="worksheet-form-field">
-            <span className={`worksheet-filter-label ${T.muted}`}>דף כל התווים (A4)</span>
+            <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingReferenceSheetField}</span>
             <select
               className={T.inputMt}
               value={referenceSheetPreset}
@@ -291,7 +291,7 @@ export default function CreateWritingWorksheetTab({
                 onChange({ referenceSheetPreset: key, ...applied });
               }}
             >
-              <option value="">תרגול רגיל (בחירה ידנית)</option>
+              <option value="">{ui.writingReferenceSheetManual}</option>
               {REFERENCE_SHEET_PRESET_KEYS.map((key) => (
                 <option key={key} value={key}>
                   {REFERENCE_SHEET_PRESETS[key].labelHe}
@@ -380,7 +380,7 @@ export default function CreateWritingWorksheetTab({
         <>
           <div className="worksheet-form-grid">
             <label className="worksheet-form-field">
-              <span className={`worksheet-filter-label ${T.muted}`}>מינימום</span>
+              <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingNumberMin}</span>
               <input
                 type="number"
                 className={T.inputMt}
@@ -398,7 +398,7 @@ export default function CreateWritingWorksheetTab({
               />
             </label>
             <label className="worksheet-form-field">
-              <span className={`worksheet-filter-label ${T.muted}`}>מקסימום</span>
+              <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingNumberMax}</span>
               <input
                 type="number"
                 className={T.inputMt}
@@ -526,7 +526,7 @@ export default function CreateWritingWorksheetTab({
       {showLetterNumberLayout ? (
         <div className="worksheet-form-grid">
           <label className="worksheet-form-field">
-            <span className={`worksheet-filter-label ${T.muted}`}>מספר אותיות בשורה</span>
+            <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingLettersPerRow}</span>
             <select
               className={T.inputMt}
               value={Number(form.itemsPerLine ?? WRITING_REQUEST_DEFAULTS.itemsPerLine)}
@@ -540,7 +540,7 @@ export default function CreateWritingWorksheetTab({
             </select>
           </label>
           <label className="worksheet-form-field">
-            <span className={`worksheet-filter-label ${T.muted}`}>גודל האות</span>
+            <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingLetterSize}</span>
             <select
               className={T.inputMt}
               value={String(form.fontSize || WRITING_REQUEST_DEFAULTS.fontSize)}
@@ -554,7 +554,7 @@ export default function CreateWritingWorksheetTab({
             </select>
           </label>
           <label className="worksheet-form-field">
-            <span className={`worksheet-filter-label ${T.muted}`}>חוזק ההדפסה</span>
+            <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingPrintStrength}</span>
             <select
               className={T.inputMt}
               value={String(form.printStrength || "normal")}
@@ -576,8 +576,8 @@ export default function CreateWritingWorksheetTab({
               value={String(form.pageOrientation || "portrait")}
               onChange={(e) => onChange({ pageOrientation: e.target.value })}
             >
-              <option value="portrait">לאורך</option>
-              <option value="landscape">לרוחב</option>
+              <option value="portrait">{ui.writingOrientationPortrait}</option>
+              <option value="landscape">{ui.writingOrientationLandscape}</option>
             </select>
           </label>
         </div>
@@ -606,7 +606,7 @@ export default function CreateWritingWorksheetTab({
 
         {!isPublicDemo && !isReferenceSheet ? (
           <label className="worksheet-form-field">
-            <span className={`worksheet-filter-label ${T.muted}`}>סגנון תצוגת עקיבה</span>
+            <span className={`worksheet-filter-label ${T.muted}`}>{ui.writingTraceDisplayStyle}</span>
             <select
               className={T.inputMt}
               value={String(form.traceRenderMode || "full_trace")}
@@ -670,8 +670,8 @@ export default function CreateWritingWorksheetTab({
               value={String(form.pageOrientation || "portrait")}
               onChange={(e) => onChange({ pageOrientation: e.target.value })}
             >
-              <option value="portrait">לאורך</option>
-              <option value="landscape">לרוחב</option>
+              <option value="portrait">{ui.writingOrientationPortrait}</option>
+              <option value="landscape">{ui.writingOrientationLandscape}</option>
             </select>
           </label>
         ) : null}

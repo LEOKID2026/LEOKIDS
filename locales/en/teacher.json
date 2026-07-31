@@ -54,7 +54,7 @@
   },
   "groupTier": {
     "struggling": "Support group",
-    "on_track": "Reinforcement group",
+    "on_track": "On-track group",
     "advanced": "Advanced group"
   },
   "guardianAccessState": {
@@ -92,7 +92,7 @@
     "notAvailable": "-",
     "studentSubjectHeadline": "{subject} - subject-level difficulty",
     "studentSubjectHeadlineNoSubject": "Subject-level difficulty",
-    "studentSubjectEvidence": "{percent} success out of {totalAnswers} answers",
+    "studentSubjectEvidence": "{percent}% correct out of {totalAnswers} answers",
     "studentSubjectAction": "Recommended to start a short diagnostic practice to identify the exact topic",
     "classSubjectHeadline": "{subject} - class-level subject difficulty",
     "classSubjectHeadlineNoSubject": "Class-level subject difficulty",

@@ -20,14 +20,14 @@ const LOCALE_MATRIX = [
 test("structured boundary block resolves via reportLocale without raw keys", () => {
   const block = boundaryCopilotAnswerBlock("generalOffTopic");
   const text = resolveCopilotAnswerBlockText(block, "en");
-  assert.match(text, /I can only help here/);
+  assert.match(text, /I can only help with your child's report/i);
   assert.doesNotMatch(text, /copilot\.boundary/);
   assert.doesNotMatch(text, /[\u0590-\u05FF]/);
 });
 
 test("legacy textHe still resolves during migration", () => {
   const text = resolveCopilotAnswerBlockText({ textHe: GENERAL_OFF_TOPIC_RESPONSE_HE }, "en");
-  assert.match(text, /I can only help here/);
+  assert.match(text, /I can only help/i);
 });
 
 test("resolveCopilotAnswerBlocksText joins structured blocks", () => {
@@ -35,7 +35,7 @@ test("resolveCopilotAnswerBlocksText joins structured blocks", () => {
     [boundaryCopilotAnswerBlock("ambiguous"), boundaryCopilotAnswerBlock("noDataForRequest")],
     "en"
   );
-  assert.match(joined, /couldn't tell exactly/i);
+  assert.match(joined, /couldn't tell which part of the report/i);
   assert.match(joined, /does not have enough information/i);
 });
 

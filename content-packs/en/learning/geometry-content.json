@@ -56,7 +56,7 @@
   },
   "solidNames": [
     "Cube",
-    "Cuboid",
+    "Rectangular prism",
     "Cylinder",
     "Pyramid",
     "Cone",
@@ -64,7 +64,7 @@
   ],
   "hebrewSolidAliases": {
     "קובייה": "Cube",
-    "תיבה": "Cuboid",
+    "תיבה": "Rectangular prism",
     "גליל": "Cylinder",
     "פירמידה": "Pyramid",
     "חרוט": "Cone",

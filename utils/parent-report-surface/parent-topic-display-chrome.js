@@ -79,7 +79,7 @@ export function parentTopicDisplayChromeEn(status) {
     return {
       topicStatus: s,
       tone: /** @type {ParentTopicChromeTone} */ ("warn"),
-      badgeTextEn: "Worth strengthening",
+      badgeTextEn: "Area to strengthen",
       statusEmoji: "⚠️",
       accuracyClass: "text-amber-400",
       excellent: false,

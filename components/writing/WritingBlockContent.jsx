@@ -18,6 +18,8 @@ import { resolveWritingTraceAssetUrl } from "../../lib/writing/writing-trace-ass
 
 import { writingFontFamilyFor } from "../../lib/writing/writing-constants.js";
 
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
+
 import WritingTraceSvg from "./WritingTraceSvg.jsx";
 
 
@@ -661,6 +663,8 @@ export function WritingPageContent({
 
 }) {
 
+  const ui = useWorksheetUi();
+
   const orientation = page.orientation === "landscape" ? "landscape" : "portrait";
 
   const hasContent = page.blocks.some(
@@ -715,7 +719,7 @@ export function WritingPageContent({
 
       data-page-id={page.pageId}
 
-      aria-label={mode === "print" ? `עמוד ${page.pageId}` : undefined}
+      aria-label={mode === "print" ? (ui.writingPageAria || `Page ${page.pageId}`).replace("{pageId}", String(page.pageId)) : undefined}
 
     >
 
@@ -763,7 +767,7 @@ export function WritingPageContent({
 
             <div className="writing-page-field">
 
-              <span className="writing-page-field-label">שם:</span>
+              <span className="writing-page-field-label">{ui.writingPageNameLabel}</span>
 
               <span className="writing-page-field-line" aria-hidden="true" />
 
@@ -775,7 +779,7 @@ export function WritingPageContent({
 
             <div className="writing-page-field">
 
-              <span className="writing-page-field-label">תאריך:</span>
+              <span className="writing-page-field-label">{ui.writingPageDateLabel}</span>
 
               <span className="writing-page-field-line" aria-hidden="true" />
 

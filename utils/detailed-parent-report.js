@@ -560,7 +560,7 @@ function buildCautionNoteHe(crossRisks, subjects, dominantRiskId) {
   if (dominantRiskId === "none_sparse" || dominantRiskId === "none_observed") {
     return "There's still limited data - don't make a drastic change at home before more practice is collected.";
   }
-  return "Keep watching the patterns in the rows before making a sharp change to settings.";
+  return "Keep watching the patterns on these topic lines before making a sharp change to settings.";
 }
 
 function buildOverallConfidenceHe(subjectCoverage, crossRisks) {
