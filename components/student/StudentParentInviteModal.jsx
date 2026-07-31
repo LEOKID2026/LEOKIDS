@@ -109,15 +109,15 @@ export default function StudentParentInviteModal({ open, onClose }) {
             >
               ✕
             </button>
-            <h2 id={titleId} className={`text-lg font-bold text-left flex-1 ${bodyText}`}>
+            <h2 id={titleId} className={`text-lg font-bold text-start flex-1 ${bodyText}`}>
               {t("ui.student.parentInviteTitle")}
             </h2>
           </header>
 
           <div
-            className={`${homeModalShell.body} space-y-4 text-center md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-4 md:overflow-visible md:flex-none md:space-y-0 md:text-left`}
+            className={`${homeModalShell.body} space-y-4 text-center md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-4 md:overflow-visible md:flex-none md:space-y-0 md:text-start`}
           >
-            <p className={`text-sm leading-relaxed ${bodyText} md:col-start-1 md:row-start-1 md:text-left`}>
+            <p className={`text-sm leading-relaxed ${bodyText} md:col-start-1 md:row-start-1 md:text-start`}>
               {t("ui.student.parentInviteScanPromptLine1")}
               <br />
               {t("ui.student.parentInviteScanPromptLine2")}
@@ -139,7 +139,7 @@ export default function StudentParentInviteModal({ open, onClose }) {
               </div>
             </div>
 
-            <div className="space-y-1 text-sm md:col-start-1 md:row-start-2 md:text-left">
+            <div className="space-y-1 text-sm md:col-start-1 md:row-start-2 md:text-start">
               <p className={mutedText}>{t("ui.student.parentInviteOrGoTo")}</p>
               <a
                 href={parentUrl}

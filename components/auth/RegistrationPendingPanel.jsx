@@ -32,7 +32,7 @@ export default function RegistrationPendingPanel({ variant, rejected = false, br
 
   return (
     <div
-      className="max-w-lg space-y-3 text-left"
+      className="max-w-lg space-y-3 text-start"
       data-testid={`${variant}-registration-pending`}
       data-state={rejected ? "rejected" : "pending"}
     >

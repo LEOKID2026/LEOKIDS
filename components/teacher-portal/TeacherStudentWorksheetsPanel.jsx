@@ -37,7 +37,7 @@ export default function TeacherStudentWorksheetsPanel({ accessToken, studentId }
   if (!loaded || worksheets.length === 0) return null;
 
   return (
-    <section className="rounded-2xl border border-violet-500/30 bg-violet-950/15 p-5 mb-6 text-left">
+    <section className="rounded-2xl border border-violet-500/30 bg-violet-950/15 p-5 mb-6 text-start">
       <h2 className="text-lg font-bold text-white mb-3">Worksheets (teacher activity)</h2>
       <p className="text-xs text-white/50 mb-3">Teacher activities appear in a separate report and are not mixed with automatic practice.</p>
       <ul className="space-y-2">

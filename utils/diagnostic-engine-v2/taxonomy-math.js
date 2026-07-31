@@ -1,11 +1,12 @@
 /**
- * Math taxonomy — structure from content pack; labels resolved at import time (en default).
+ * Math taxonomy — structure from content pack catalog via locale resolver.
  * @typedef {import("./taxonomy-types.js").TaxonomyRow} TaxonomyRow
  */
 
-import mathStructure from "../../content-packs/en/learning/taxonomy/math.structure.json" with { type: "json" };
-import mathContent from "../../content-packs/en/learning/taxonomy/math.content.json" with { type: "json" };
+import { loadTaxonomyBundle } from "../../lib/learning/learning-locale-contract.js";
 import { mergeTaxonomyRows } from "./taxonomy-merge.js";
 
+const { structure: mathStructure, content: mathContent } = loadTaxonomyBundle("math");
+
 /** @type {TaxonomyRow[]} */
-export const MATH_TAXONOMY_ROWS = mergeTaxonomyRows(mathStructure.rows, mathContent.rows);
+export const MATH_TAXONOMY_ROWS = mergeTaxonomyRows(mathStructure?.rows, mathContent?.rows);

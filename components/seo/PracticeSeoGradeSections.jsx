@@ -10,7 +10,7 @@ import {
 export default function PracticeSeoGradeSections({ grades, isBright }) {
   if (!grades?.length) return null;
 
-  const text = isBright ? "text-right text-slate-700" : "text-right text-white/80";
+  const text = isBright ? "text-start text-slate-700" : "text-start text-white/80";
 
   return (
     <div className="grid grid-cols-1 gap-4 md:gap-5">

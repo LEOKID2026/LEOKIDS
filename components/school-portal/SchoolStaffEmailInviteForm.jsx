@@ -82,11 +82,11 @@ export default function SchoolStaffEmailInviteForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`}>
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-left">{sectionTitle}</h2>
-        {helpText ? <p className="text-sm text-white/60 mb-3 text-left">{helpText}</p> : null}
+        <h2 className="text-base font-semibold mb-3 text-start">{sectionTitle}</h2>
+        {helpText ? <p className="text-sm text-white/60 mb-3 text-start">{helpText}</p> : null}
         <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl">
           {!useAdvanced ? (
-            <label className="block text-sm text-left">
+            <label className="block text-sm text-start">
               <span className="text-white/60 block mb-1">{SCHOOL_INVITE_EMAIL || ADMIN_COL_EMAIL}</span>
               <input
                 type="email"
@@ -99,7 +99,7 @@ export default function SchoolStaffEmailInviteForm({
               />
             </label>
           ) : (
-            <label className="block text-sm text-left">
+            <label className="block text-sm text-start">
               <span className="text-white/60 block mb-1">{SCHOOL_STAFF_UUID_ADVANCED}</span>
               <input
                 type="text"
@@ -113,7 +113,7 @@ export default function SchoolStaffEmailInviteForm({
           )}
 
           {showDisplayName ? (
-            <label className="block text-sm text-left">
+            <label className="block text-sm text-start">
               <span className="text-white/60 block mb-1">Display name (optional)</span>
               <input
                 type="text"
@@ -126,7 +126,7 @@ export default function SchoolStaffEmailInviteForm({
 
           <details className="text-sm text-white/50">
             <summary className="cursor-pointer hover:text-white/70">{SCHOOL_INVITE_ADVANCED_UUID}</summary>
-            <label className="flex items-center gap-2 mt-2 text-left">
+            <label className="flex items-center gap-2 mt-2 text-start">
               <input
                 type="checkbox"
                 checked={useAdvanced}

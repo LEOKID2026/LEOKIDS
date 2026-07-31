@@ -83,7 +83,7 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
 
         {roster.length > 0 ? (
           <div className="overflow-x-auto rounded-xl border border-white/10 mb-6">
-            <table className="w-full text-sm text-left">
+            <table className="w-full text-sm text-start">
               <thead className="bg-white/5 text-white/70">
                 <tr>
                   <th className="px-3 py-2">Student</th>

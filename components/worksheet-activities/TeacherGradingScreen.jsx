@@ -31,7 +31,7 @@ export default function TeacherGradingScreen({ questions, answers, busy, onSave,
     });
 
   return (
-    <div className="space-y-4 text-left">
+    <div className="space-y-4 text-start">
       {questions.map((q) => {
         const idx = Number(q.questionIndex);
         const ans = answers.find((a) => Number(a.questionIndex) === idx);

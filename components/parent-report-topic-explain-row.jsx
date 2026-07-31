@@ -59,7 +59,7 @@ function ExplainSectionLine({ label, text, dataTestId = null }) {
   if (!text) return null;
   return (
     <p
-      className="text-[10px] md:text-[11px] text-white/72 leading-relaxed m-0 pr-0.5 break-words"
+      className="text-[10px] md:text-[11px] text-white/72 leading-relaxed m-0 pe-0.5 break-words"
       {...(dataTestId ? { "data-testid": dataTestId } : {})}
     >
       {label ? <span className="text-white/45 font-semibold">{label} </span> : null}
@@ -204,7 +204,7 @@ export function ParentReportTopicExplainRow({ row, compact = false, registeredGr
         ) : null}
         {lmFacing ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "retention_at_home")} text={lmFacing} /> : null}
         {dn || av ? (
-          <div className="text-[9px] md:text-[10px] text-sky-100/88 leading-snug border border-sky-400/20 rounded px-1.5 py-1 bg-sky-950/12 space-y-0.5 m-0 pr-0.5">
+          <div className="text-[9px] md:text-[10px] text-sky-100/88 leading-snug border border-sky-400/20 rounded px-1.5 py-1 bg-sky-950/12 space-y-0.5 m-0 pe-0.5">
             {dn ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "now")} text={dn} /> : null}
             {av ? <ExplainSectionLine label={reportPackCopy("components__parent-report-topic-explain-row", "avoid")} text={av} /> : null}
           </div>

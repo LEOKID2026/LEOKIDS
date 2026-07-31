@@ -1087,7 +1087,9 @@ export function generateQuestion(
     }),
     {
       subject: "english",
-      contentLocale: "en",
+      contentLocale: probeOpts?.contentLocale ?? "en",
+      interfaceLocale: probeOpts?.interfaceLocale,
+      instructionLocale: probeOpts?.instructionLocale,
     }
   );
 }

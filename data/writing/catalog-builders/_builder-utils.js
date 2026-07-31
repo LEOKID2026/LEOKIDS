@@ -69,16 +69,21 @@ export function isPublicAccessSlug(slug) {
  * @param {Omit<WritingCatalogBuilderEntry, "publicAccess" | "requestDefaults"> & {
  *   publicAccess?: boolean,
  *   requestDefaults?: Record<string, unknown>,
+ *   title?: string,
+ *   titleHe?: string,
  * }} params
  * @returns {WritingCatalogBuilderEntry}
  */
 export function makeCatalogEntry(params) {
   const builderConfig = { ...params.builderConfig };
+  // Prefer locale-neutral `title`; keep `titleHe` as legacy payload field name (English on Global).
+  const title = String(params.title || params.titleHe || "").trim();
   return {
     slug: params.slug,
     catalogNumber: params.catalogNumber,
     writingCategory: params.writingCategory,
-    titleHe: params.titleHe,
+    title,
+    titleHe: title,
     publicAccess: params.publicAccess ?? isPublicAccessSlug(params.slug),
     ...(params.gradeKey ? { gradeKey: params.gradeKey } : {}),
     ...(params.levelKey ? { levelKey: params.levelKey } : {}),

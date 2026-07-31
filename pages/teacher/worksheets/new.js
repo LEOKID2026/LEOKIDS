@@ -207,7 +207,7 @@ export default function TeacherNewDirectWorksheetPage() {
   return (
     <Layout>
       <TeacherPortalShell title="Worksheet activity — selected students" backHref="/teacher/worksheets">
-        <div className="max-w-2xl mx-auto space-y-5 text-left">
+        <div className="max-w-2xl mx-auto space-y-5 text-start">
           {error ? <p className="text-red-300 text-sm">{error}</p> : null}
 
           <TeacherStudentSelector

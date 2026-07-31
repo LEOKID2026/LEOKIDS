@@ -18,7 +18,7 @@ export default function PracticeSeoCardGrid({ cards, isBright, heading = "Practi
       <h2 className={`text-xl md:text-2xl ${h2}`}>{heading}</h2>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((c) => (
-          <Link key={c.href} href={c.href} className={`block text-right ${card}`}>
+          <Link key={c.href} href={c.href} className={`block text-start ${card}`}>
             {c.emoji ? (
               <span className="mb-2 block text-2xl" aria-hidden>
                 {c.emoji}

@@ -5,7 +5,7 @@ import { worksheetQuestionTypeLabelHe } from "../../lib/worksheet-activities/wor
  */
 export default function StudentAnswerSheet({ questions, answers, onChange, disabled }) {
   return (
-    <div className="space-y-4 text-left">
+    <div className="space-y-4 text-start">
       <h3 className="text-lg font-bold text-white">Answer sheet</h3>
       {questions.map((q) => {
         const idx = q.questionIndex;

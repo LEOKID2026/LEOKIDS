@@ -17,7 +17,7 @@ export default function GamesHubLockFooter({
   const resolvedHint = hint === undefined ? t(GUEST_GAME_LOCK_HINT_KEY) : hint;
 
   return (
-    <div className="mt-3 text-right">
+    <div className="mt-3 text-start">
       <span className={`${ctaClass} inline-flex items-center gap-1 opacity-90 cursor-not-allowed`}>
         🔒 {resolvedLabel}
       </span>

@@ -65,7 +65,7 @@ export default function SchoolActivityMonitorPage({ activityId }) {
   return (
     <Layout title={globalBurnDownCopy("pages__school__activities__[activityId]__monitor", "activity_monitor")}>
       <SchoolPortalShell title={globalBurnDownCopy("pages__school__activities__[activityId]__monitor", "activity_monitor")}>
-        <div className="space-y-4 text-left">
+        <div className="space-y-4 text-start">
           <Link href="/school/dashboard#activities" className="text-sm text-amber-300 hover:underline">
             ← Back to activities
           </Link>
@@ -88,7 +88,7 @@ export default function SchoolActivityMonitorPage({ activityId }) {
 
           {students.length ? (
             <div className="overflow-x-auto rounded-lg border border-white/10">
-              <table className="w-full min-w-[640px] text-sm text-left">
+              <table className="w-full min-w-[640px] text-sm text-start">
                 <thead className="bg-white/5 text-white/70">
                   <tr>
                     <th className="px-3 py-2">Child</th>

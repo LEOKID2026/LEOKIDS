@@ -17,7 +17,7 @@ function SurpriseBoxCardPrizeRow({ card, T, copy }) {
   return (
     <li className={`rounded-lg border p-2 min-w-0 overflow-hidden ${T.subjectCard}`}>
       <div className="flex items-center gap-2 min-w-0">
-        <div className="flex-1 min-w-0 text-left">
+        <div className="flex-1 min-w-0 text-start">
           <p className={`text-sm font-bold leading-snug ${T.subjectTitle}`}>{card.nameHe}</p>
           <p className={`text-xs mt-0.5 ${T.tileSub}`}>Rarity: {card.rarityHe}</p>
           {card.wasDuplicate ? (
@@ -196,7 +196,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
           >
             ✕
           </button>
-          <h2 id={titleId} className={`text-base font-bold text-left flex-1 ${T.tileTitle}`}>
+          <h2 id={titleId} className={`text-base font-bold text-start flex-1 ${T.tileTitle}`}>
             {phase === "opening"
               ? copy("surpriseBoxModal", "openingTitle")
               : phase === "done"
@@ -208,7 +208,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
           </span>
         </header>
 
-        <div className="px-3 py-2.5 space-y-2 text-left">
+        <div className="px-3 py-2.5 space-y-2 text-start">
           {phase === "opening" ? (
             <div className="flex flex-col items-center py-4 gap-2">
               <div className={T.loadingSpinner} aria-hidden />

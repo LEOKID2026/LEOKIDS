@@ -577,6 +577,8 @@ a.worksheet-ready-card-link:focus-visible {
 /* ── Screen preview (on-site, wide) ── */
 .worksheet-screen-preview {
   width: 100%;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .worksheet-screen-info-card {

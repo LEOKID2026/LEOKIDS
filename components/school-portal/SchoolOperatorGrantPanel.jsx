@@ -8,7 +8,7 @@ import {
 function GrantToggle({ label, checked, disabled, onChange }) {
   return (
     <label className="flex items-center justify-between gap-3 text-sm py-2 border-b border-white/10 last:border-0">
-      <span className="text-left flex-1">{label}</span>
+      <span className="text-start flex-1">{label}</span>
       <input
         type="checkbox"
         checked={checked}

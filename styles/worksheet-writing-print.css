@@ -4,7 +4,8 @@
 
 .writing-screen-preview,
 .writing-print-document {
-  direction: rtl;
+  /* Inherit html[dir] from active interface locale (LTR for en, RTL when locale is RTL). */
+  direction: inherit;
 }
 
 .writing-screen-info-card {

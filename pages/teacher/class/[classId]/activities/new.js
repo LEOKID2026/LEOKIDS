@@ -472,7 +472,7 @@ export default function TeacherNewActivityPage({ classId }) {
               {preview.map((q, i) => (
                 <li key={i} className="list-item">
                   <AssignedActivityQuestionDisplay question={q} variant="preview" />
-                  <span className="text-white/40 text-xs mr-2"> (not sent to student)</span>
+                  <span className="text-white/40 text-xs me-2"> (not sent to student)</span>
                 </li>
               ))}
             </ol>

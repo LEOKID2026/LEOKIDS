@@ -31,7 +31,7 @@ export default function TeacherQuestionBuilder({ questions, onChange, disabled }
   };
 
   return (
-    <div className="space-y-4 text-left">
+    <div className="space-y-4 text-start">
       <label className="block text-sm text-white/80">
         Number of questions
         <input

@@ -25,7 +25,7 @@ function CompactMissionRow({ mission, index }) {
   return (
     <article
       className={[
-        "rounded-xl border p-3 flex flex-col gap-2 text-left min-w-0",
+        "rounded-xl border p-3 flex flex-col gap-2 text-start min-w-0",
         completed
           ? "border-emerald-400/45 bg-emerald-900/25"
           : 'border-white/12 bg-black/30',

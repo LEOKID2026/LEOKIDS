@@ -306,7 +306,7 @@ export default function SchoolMessagesPage() {
                   })}
                 </ul>
                 <div className="hidden md:block overflow-x-auto rounded-xl border border-white/15">
-                  <table className="w-full text-sm text-left">
+                  <table className="w-full text-sm text-start">
                     <thead className="text-white/50 border-b border-white/10">
                       <tr>
                         <th className="p-3">{SC_COL_SUBJECT}</th>
@@ -347,13 +347,13 @@ export default function SchoolMessagesPage() {
                 </div>
               </>
             ) : (
-              <p className="text-white/50 text-sm text-left">{SC_MESSAGES_EMPTY}</p>
+              <p className="text-white/50 text-sm text-start">{SC_MESSAGES_EMPTY}</p>
             )}
 
             {composeOpen ? (
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
                 <div
-                  className={`w-full max-w-lg rounded-xl border border-amber-500/30 bg-[#1a1208] p-5 text-left max-h-[90vh] overflow-y-auto ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
+                  className={`w-full max-w-lg rounded-xl border border-amber-500/30 bg-[#1a1208] p-5 text-start max-h-[90vh] overflow-y-auto ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
                 >
                   <h2 className="text-lg font-bold mb-4">{SC_COMPOSE_TITLE}</h2>
                   <div className="space-y-3 text-sm">

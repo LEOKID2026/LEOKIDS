@@ -27,7 +27,7 @@ export default function SchoolCredentialShownOnceBox({ credentials, onDismiss })
 
   return (
     <div
-      className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-left space-y-3"
+      className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-start space-y-3"
       data-testid="school-credential-once-box"
     >
       <p className="font-semibold text-amber-200">{SC_CREDENTIAL_BOX_HEADING}</p>

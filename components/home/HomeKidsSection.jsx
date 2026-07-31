@@ -21,7 +21,7 @@ export default function HomeKidsSection({ isBright }) {
 
   return (
     <section className="space-y-6 md:space-y-8" data-testid="home-kids-section">
-      <div className="space-y-3 text-center md:text-right">
+      <div className="space-y-3 text-center md:text-start">
         <p
           className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide ${cls.kidsLabel}`}
         >

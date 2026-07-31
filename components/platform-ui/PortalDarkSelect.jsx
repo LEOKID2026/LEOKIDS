@@ -26,7 +26,7 @@ export default function PortalDarkSelect({
       value={value}
       disabled={disabled}
       onChange={(e) => onChange(e.target.value)}
-      className={`w-full rounded-lg border border-white/20 bg-neutral-900 text-white px-3 py-2 text-sm text-right appearance-none cursor-pointer disabled:opacity-60 ${className}`}
+      className={`w-full rounded-lg border border-white/20 bg-neutral-900 text-white px-3 py-2 text-sm text-start appearance-none cursor-pointer disabled:opacity-60 ${className}`}
       style={{ colorScheme: "dark" }}
     >
       {options.map((opt) => (

@@ -36,12 +36,12 @@ export default function EducationalGameEntryScreen({
       className="relative flex h-full min-h-0 flex-col items-center justify-center overflow-hidden overflow-x-hidden px-4 py-2 sm:py-3 text-center"
       dir="ltr"
     >
-      <GameAudioSettingsButton className="absolute left-4 top-4 z-20 sm:left-6 sm:top-6" />
+      <GameAudioSettingsButton className="absolute start-4 top-4 z-20 sm:start-6 sm:top-6" />
       {onOpenHelp ? (
         <SoloGameHelpButton
           game={game}
           onOpen={onOpenHelp}
-          className="absolute right-4 top-4 z-20 sm:right-6 sm:top-6"
+          className="absolute end-4 top-4 z-20 sm:end-6 sm:top-6"
         />
       ) : null}
       <div className="w-full max-w-md space-y-4 sm:space-y-5">

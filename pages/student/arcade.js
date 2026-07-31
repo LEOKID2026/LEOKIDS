@@ -169,7 +169,7 @@ function ArcadeGameActionPanel({
   return (
     <div className={actionDivider}>
       <div className="flex flex-wrap items-end justify-between gap-2">
-        <div className="text-right">
+        <div className="text-start">
           <p className={actionTitle}>
             Selected game: <span className="font-bold">{selectedTitle || "-"}</span>
           </p>
@@ -258,7 +258,7 @@ function ArcadeGameCard({
       }
       className={`relative flex h-[132px] min-w-0 flex-col overflow-hidden rounded-lg border p-2 shadow-sm ${shellClasses} ${
         selectable ? "cursor-pointer transition hover:shadow-md" : ""
-      } text-right`}
+      } text-start`}
     >
       <div className={`absolute inset-x-0 top-0 h-1 ${tile.bar}`} aria-hidden="true" />
 
@@ -781,7 +781,7 @@ export default function StudentArcadePage() {
             <div className="space-y-4">
               <ArcadeClubProfilePanel gh={GH} demoMode={demoMode} />
               <ArcadeClubMissionsPanel gh={GH} demoMode={demoMode} />
-              <div className={`${GH.arcadePanelMyRoom || GH.card} text-left`}>
+              <div className={`${GH.arcadePanelMyRoom || GH.card} text-start`}>
                 <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Personal room</h3>
                 <p className={`mt-1 text-sm ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Your space with trophies and decorations</p>
                 <Link href="/student/arcade/my-room" className={`mt-3 inline-block ${GH.btnJoinCode}`}>
@@ -861,7 +861,7 @@ export default function StudentArcadePage() {
                   ) : openRooms.length === 0 ? (
                     <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>No open rooms right now</p>
                   ) : (
-                    <ul className="mt-3 max-h-64 space-y-2 overflow-y-auto pr-0.5 sm:max-h-72">
+                    <ul className="mt-3 max-h-64 space-y-2 overflow-y-auto pe-0.5 sm:max-h-72">
                       {openRooms.map((row) => {
                         const full = row.playerCount >= row.maxPlayers;
                         const costLabel =
@@ -872,7 +872,7 @@ export default function StudentArcadePage() {
                             key={row.roomId}
                             className={`flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between ${GH.arcadeRoomItem || GH.roomItem}`}
                           >
-                            <div className={`min-w-0 text-right ${GH.arcadePanelMeta || GH.roomItemMeta}`}>
+                            <div className={`min-w-0 text-start ${GH.arcadePanelMeta || GH.roomItemMeta}`}>
                               <p className={GH.arcadeRoomItemTitle || GH.arcadePanelTitle || GH.roomItemTitle}>
                                 {displayArcadeGameTitle(row.gameKey, row.gameTitle)}
                               </p>

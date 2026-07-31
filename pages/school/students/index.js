@@ -473,7 +473,7 @@ export default function SchoolStudentsPage() {
             ) : null}
 
             {isManager ? (
-              <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`}>
+              <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start`}>
                 <button
                   type="button"
                   onClick={() => setShowEnroll((v) => !v)}
@@ -509,7 +509,7 @@ export default function SchoolStudentsPage() {
                 ) : (
                   <>
                     {summaryLoading ? (
-                      <p className="text-xs text-white/45 mb-3 text-left">{SCHOOL_LOADING_DATA}</p>
+                      <p className="text-xs text-white/45 mb-3 text-start">{SCHOOL_LOADING_DATA}</p>
                     ) : null}
                     <SchoolCardGrid columns={3}>
                       {SCHOOL_GRADE_OPTIONS.map((grade) => {
@@ -582,7 +582,7 @@ export default function SchoolStudentsPage() {
                     const classStatus = browseStatus?.physicalByKey?.[`${gradeLevel}::${physicalClassName}`];
                     if (!classStatus) return null;
                     return (
-                      <p className="text-sm mb-3 text-left" data-testid="school-students-class-browse-status">
+                      <p className="text-sm mb-3 text-start" data-testid="school-students-class-browse-status">
                         <span
                           className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full border leading-snug ${studentLearningStatusBadgeClass(
                             classStatus
@@ -594,12 +594,12 @@ export default function SchoolStudentsPage() {
                     );
                   })()}
                   <div className="mb-4">
-                    <label className="block text-sm text-white/70 text-left">
+                    <label className="block text-sm text-white/70 text-start">
                       {SCHOOL_SEARCH_STUDENTS}
                       <input
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="mt-1 w-full max-w-md mr-0 ml-auto block rounded-lg bg-black/40 border border-white/20 px-3 py-2 text-sm"
+                        className="mt-1 w-full max-w-md ms-auto block rounded-lg bg-black/40 border border-white/20 px-3 py-2 text-sm"
                         placeholder={SCHOOL_SEARCH_STUDENTS_PLACEHOLDER}
                       />
                     </label>

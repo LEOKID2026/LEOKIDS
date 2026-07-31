@@ -62,8 +62,8 @@ export default function IosInstallHelpModal({
     : "fixed inset-0 z-[180] flex items-center justify-center bg-black/75 p-3 backdrop-blur-[2px] sm:p-4";
 
   const panelClass = isBright
-    ? "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-2xl sm:px-5 sm:py-5"
-    : "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-white/15 bg-[#0f1629] px-4 py-4 text-left shadow-2xl sm:px-5 sm:py-5";
+    ? "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white px-4 py-4 text-start shadow-2xl sm:px-5 sm:py-5"
+    : "relative flex max-h-[min(85vh,100%)] w-full max-w-[min(100%,400px)] flex-col overflow-y-auto overscroll-contain rounded-2xl border border-white/15 bg-[#0f1629] px-4 py-4 text-start shadow-2xl sm:px-5 sm:py-5";
 
   const titleClass = isBright
     ? "pe-8 text-base font-bold leading-snug text-slate-900"

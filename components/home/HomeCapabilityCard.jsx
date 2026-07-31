@@ -69,7 +69,7 @@ export default function HomeCapabilityCard({ id, title, text, isBright, index = 
   const shellClass = shells[index % shells.length];
 
   return (
-    <article className={`h-full p-4 text-right md:p-5 ${shellClass}`} data-testid={`home-capability-${id}`}>
+    <article className={`h-full p-4 text-start md:p-5 ${shellClass}`} data-testid={`home-capability-${id}`}>
       <div
         className={`mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl ${
           isBright ? "bg-white/80 text-sky-700" : "bg-white/10 text-cyan-200"

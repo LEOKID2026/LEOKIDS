@@ -2373,7 +2373,7 @@ export default function ParentReport() {
             <div className="mb-3 md:mb-5 avoid-break rounded-lg border border-amber-400/25 bg-amber-950/15 p-3 md:p-4 text-sm text-white/90 space-y-2">
               <p className="font-bold text-amber-100/95 m-0 text-sm md:text-base">What stands out most right now</p>
               {regularReportDisplay?.prominentFindingLinesHe?.length ? (
-                <ul className="m-0 pr-4 list-disc text-xs md:text-sm text-white/88 space-y-1.5">
+                <ul className="m-0 ps-4 list-disc text-xs md:text-sm text-white/88 space-y-1.5">
                   {regularReportDisplay.prominentFindingLinesHe.map((line, i) => (
                     <li key={`prominent-${i}`} className="leading-relaxed">
                       {line}
@@ -2410,7 +2410,7 @@ export default function ParentReport() {
           {regularReportDisplay?.topicStrengthLinesHe?.length ? (
             <div className="mb-3 md:mb-5 avoid-break rounded-lg border border-emerald-400/25 bg-emerald-950/15 p-3 md:p-4 text-sm text-white/90 space-y-1">
               <p className="font-bold text-emerald-100/95 m-0 text-sm md:text-base">Strengths that stood out in practice</p>
-              <ul className="m-0 pr-4 list-disc text-xs md:text-sm text-white/85 space-y-1">
+              <ul className="m-0 ps-4 list-disc text-xs md:text-sm text-white/85 space-y-1">
                 {regularReportDisplay.topicStrengthLinesHe.map((line, i) => (
                   <li key={`rms-${i}`} className="leading-relaxed">
                     {line}
@@ -2475,7 +2475,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Operation</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Operation</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -2492,8 +2492,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([op, data]) => (
                         <tr key={op} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel("math", data, op, regularReportDisplay)}
                             </span>
                           </td>
@@ -2612,7 +2612,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -2629,8 +2629,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel("geometry", data, topic, regularReportDisplay)}
                             </span>
                           </td>
@@ -2750,7 +2750,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -2767,8 +2767,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel("english", data, topic, regularReportDisplay)}
                             </span>
                           </td>
@@ -2888,7 +2888,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -2905,8 +2905,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel("science", data, topic, regularReportDisplay)}
                             </span>
                           </td>
@@ -3026,7 +3026,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -3043,8 +3043,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel("hebrew", data, topic, regularReportDisplay)}
                             </span>
                           </td>
@@ -3164,7 +3164,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -3185,8 +3185,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel(
                                 MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID,
                                 data,
@@ -3314,7 +3314,7 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Topic</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
@@ -3335,8 +3335,8 @@ export default function ParentReport() {
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
-                          <td className="text-right align-top py-1.5 px-1 min-w-0">
-                            <span className="text-right break-words">
+                          <td className="text-start align-top py-1.5 px-1 min-w-0">
+                            <span className="text-start break-words">
                               {regularReportTopicLabel(
                                 MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID,
                                 data,
@@ -3458,31 +3458,31 @@ export default function ParentReport() {
                   <table className="w-full text-sm parent-report-subject-table">
                     <thead>
                       <tr className="border-b border-white/20">
-                        <th className="text-right py-1.5 px-0.5 whitespace-nowrap">Learning type</th>
+                        <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Learning type</th>
                         <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1">{reportPackCopy("pages__learning__parent-report", "practice_with_questions")}</td>
+                        <td className="text-start py-1.5 px-1">{reportPackCopy("pages__learning__parent-report", "practice_with_questions")}</td>
                         <td className="py-1.5 px-0.5 text-center text-white/80 whitespace-nowrap">
                           {formatExclusiveLearningMinutesHe(exclusive.questionPracticeMinutes)} min
                         </td>
                       </tr>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1">{reportPackCopy("pages__learning__parent-report", "book_reading")}</td>
+                        <td className="text-start py-1.5 px-1">{reportPackCopy("pages__learning__parent-report", "book_reading")}</td>
                         <td className="py-1.5 px-0.5 text-center text-white/80 whitespace-nowrap">
                           {formatExclusiveLearningMinutesHe(exclusive.bookReadingMinutes)} min
                         </td>
                       </tr>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1">{reportPackCopy("pages__learning__parent-report", "other_active_learning")}</td>
+                        <td className="text-start py-1.5 px-1">{reportPackCopy("pages__learning__parent-report", "other_active_learning")}</td>
                         <td className="py-1.5 px-0.5 text-center text-white/80 whitespace-nowrap">
                           {formatExclusiveLearningMinutesHe(exclusive.otherActiveLearningMinutes)} min
                         </td>
                       </tr>
                       <tr className="border-b border-white/10">
-                        <td className="text-right py-1.5 px-1 font-semibold">Total</td>
+                        <td className="text-start py-1.5 px-1 font-semibold">Total</td>
                         <td className="py-1.5 px-0.5 text-center text-white/90 font-semibold whitespace-nowrap">
                           {formatExclusiveLearningMinutesHe(exclusive.totalMinutes)} min
                         </td>
@@ -3657,7 +3657,7 @@ export default function ParentReport() {
                                         ? card.evidence.map((line, li) => (
                                             <div
                                               key={li}
-                                              className="text-white/75 pr-1 leading-snug break-words"
+                                              className="text-white/75 pe-1 leading-snug break-words"
                                             >
                                               <span className="text-white/50">• </span>
                                               {diagnosticParentVisibleTextHe(line)}

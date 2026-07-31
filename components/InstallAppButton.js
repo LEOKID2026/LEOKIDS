@@ -117,7 +117,7 @@ export default function InstallAppButton({ className = "", label }) {
           onClick={closeInstructions}
         >
           <div
-            className="relative w-full max-w-md rounded-xl border border-white/20 bg-black/85 p-5 shadow-2xl text-left animate-slide-up"
+            className="relative w-full max-w-md rounded-xl border border-white/20 bg-black/85 p-5 shadow-2xl text-start animate-slide-up"
             dir={direction}
             lang={locale}
             onClick={(e) => e.stopPropagation()}

@@ -65,18 +65,18 @@ export default function SchoolTeacherDetailPage() {
         showTeacherDashboardLink={me?.hasTeacherActivity}
       >
         {state === "error" ? (
-          <p className="text-red-300 text-sm text-left" role="alert">
+          <p className="text-red-300 text-sm text-start" role="alert">
             {portalError || "Error loading portal"}
           </p>
         ) : null}
         {state !== "error" && portalBlocking ? (
-          <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING}</p>
+          <p className="text-white/60 text-sm text-start">{SCHOOL_LOADING}</p>
         ) : null}
         {state !== "error" && !portalBlocking && hydrationWaiting ? (
-          <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING_DATA}</p>
+          <p className="text-white/60 text-sm text-start">{SCHOOL_LOADING_DATA}</p>
         ) : null}
         {state !== "error" && !portalBlocking && !hydrationWaiting && routeInvalid ? (
-          <p className="text-white/60 text-sm text-left">No teacher ID found in the URL.</p>
+          <p className="text-white/60 text-sm text-start">No teacher ID found in the URL.</p>
         ) : null}
         {state !== "error" && !portalBlocking && !hydrationWaiting && !routeInvalid ? (
           <SchoolTeacherDetailContent

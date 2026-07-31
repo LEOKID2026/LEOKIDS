@@ -2268,6 +2268,10 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
 }
 
 /** Static example following the version 2 structure */
-import examplePatternDiagnosticsPayload from "../content-packs/en/learning/example-pattern-diagnostics-payload.json" with { type: "json" };
+import { resolveRegisteredContentPack } from "../lib/content/resolve-registered-pack.js";
 
-export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = examplePatternDiagnosticsPayload;
+export const EXAMPLE_PATTERN_DIAGNOSTICS_PAYLOAD = resolveRegisteredContentPack(
+  "en",
+  "learning",
+  "example-pattern-diagnostics-payload.json",
+);

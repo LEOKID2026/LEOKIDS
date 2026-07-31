@@ -199,7 +199,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
       <TeacherPortalShell title="Worksheet activity" backHref={`/teacher/class/${classId}/worksheets`}>
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
 
-        <div className="max-w-2xl mx-auto space-y-5 text-left">
+        <div className="max-w-2xl mx-auto space-y-5 text-start">
           {error ? <p className="text-red-300 text-sm">{error}</p> : null}
 
           <label className="block text-sm text-white/80">

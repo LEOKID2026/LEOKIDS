@@ -318,7 +318,7 @@ export default function TeacherClassReportPage({ classId }) {
                       <span className="font-medium break-words">
                         {s.studentFullName || s.studentFullNameMasked}
                       </span>
-                      <span className="text-white/50 mr-2 block sm:inline">
+                      <span className="text-white/50 me-2 block sm:inline">
                         {(s.reasons || [])
                           .map(attentionReasonHe)
                           .filter(Boolean)

@@ -169,7 +169,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
         {error ? <p className="text-red-300 text-sm mb-4">{error}</p> : null}
 
-        <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-left mb-6">
+        <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-start mb-6">
           <p className="text-white/80 text-sm">
             {worksheetModeLabelHe(worksheet.worksheetMode)} · {worksheetStatusLabelHe(worksheet.status)}
           </p>

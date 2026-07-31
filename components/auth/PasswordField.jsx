@@ -37,8 +37,8 @@ export default function PasswordField({
   const resolvedInputClass =
     inputClassName || (bright ? BRIGHT_INPUT_CLASS : DEFAULT_INPUT_CLASS);
   const toggleClass = bright
-    ? "absolute left-2 top-1/2 -translate-y-1/2 text-xs text-slate-500 hover:text-slate-800 px-1"
-    : "absolute left-2 top-1/2 -translate-y-1/2 text-xs text-white/70 hover:text-white px-1";
+    ? "absolute end-2 top-1/2 -translate-y-1/2 text-xs text-slate-500 hover:text-slate-800 px-1"
+    : "absolute end-2 top-1/2 -translate-y-1/2 text-xs text-white/70 hover:text-white px-1";
 
   const t = useT();
   const [visible, setVisible] = useState(false);

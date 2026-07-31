@@ -168,8 +168,8 @@ export default function Layout({
     : "md:hidden px-3 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition";
   const mobileMenuOverlay = isStudentBright ? "bg-slate-900/40" : "bg-black/70";
   const mobileMenuPanel = isStudentBright
-    ? "absolute top-4 right-4 bg-white border border-slate-200 rounded-2xl p-4 w-64 shadow-xl"
-    : "absolute top-4 right-4 bg-black/60 border border-white/10 rounded-2xl p-4 w-64";
+    ? "absolute top-4 end-4 bg-white border border-slate-200 rounded-2xl p-4 w-64 shadow-xl"
+    : "absolute top-4 end-4 bg-black/60 border border-white/10 rounded-2xl p-4 w-64";
   const mobileMenuLabel = isStudentBright ? "text-slate-500" : "text-white/60";
   const mobileMenuClose = isStudentBright ? "text-slate-500 hover:text-slate-800" : "text-white/70 hover:text-white";
   const mobileMenuItem = isStudentBright

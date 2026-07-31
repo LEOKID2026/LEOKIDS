@@ -1,6 +1,6 @@
-import uiPackIndex from "../../../content-packs/en/games/ui-pack-index.json" with { type: "json" };
 import { applyGameLocaleTransform } from "../../../lib/games/game-pack-copy.js";
 import { resolveContentLocale } from "../../../lib/i18n/locale-resolution.js";
+import { resolveRegisteredContentPack } from "../../../lib/content/resolve-registered-pack.js";
 
 /**
  * Shared display titles for the 7 active arcade board games.
@@ -17,6 +17,7 @@ import { resolveContentLocale } from "../../../lib/i18n/locale-resolution.js";
 export function displayArcadeGameTitle(gameKey, fallback = "", contentLocale = "en") {
   const key = String(gameKey || "").trim().toLowerCase();
   const locale = resolveContentLocale({ contentLocale });
+  const uiPackIndex = resolveRegisteredContentPack(locale, "games", "ui-pack-index.json") || {};
   const pack = uiPackIndex[key];
   if (pack?.title && String(pack.title).trim()) {
     return applyGameLocaleTransform(String(pack.title), locale);

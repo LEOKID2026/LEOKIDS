@@ -1,5 +1,8 @@
 import { useMemo } from "react";
 import { useI18n, useT } from "../lib/i18n/I18nProvider.jsx";
+import { WRITING_CATEGORY_I18N_KEYS } from "../lib/writing/writing-constants.js";
+
+export { WRITING_CATEGORY_I18N_KEYS };
 
 /** Keys mirrored from legacy worksheet-ui — use worksheets.* locale entries. */
 const WORKSHEET_UI_KEYS = [
@@ -234,16 +237,6 @@ const WORKSHEET_UI_KEYS = [
   "coloringUploadStyleTransferUnavailable",
   "coloringUploadStyleTransferRateLimited",
 ];
-
-/** English-only writing categories exposed in the global product. */
-export const WRITING_CATEGORY_I18N_KEYS = Object.freeze({
-  english_letters: "writingCategoryEnglishLetters",
-  numbers: "writingCategoryNumbers",
-  prewriting: "writingCategoryPrewriting",
-  english_words: "writingCategoryEnglishWords",
-  personal_text: "writingCategoryPersonalText",
-  mixed: "writingCategoryMixed",
-});
 
 /** Print documents stay LTR in the global English product. */
 export const WORKSHEET_PRINT_DOC_ATTRS = Object.freeze({ dir: "ltr", lang: "en" });

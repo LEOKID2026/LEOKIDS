@@ -1,10 +1,13 @@
 /**
  * Professional Diagnostic Framework V1 (internal, educational support only).
- * Structure is language-neutral; labels load from content-packs/en/learning/diagnostic-framework-v1.json.
+ * Structure is language-neutral; labels load via locale pack catalog.
  */
 import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
-import frameworkPack from "../../content-packs/en/learning/diagnostic-framework-v1.json" with { type: "json" };
+import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
 import { mathReportBaseOperationKey } from "../math-report-generator.js";
+
+const frameworkPack =
+  resolveRegisteredContentPack("en", "learning", "diagnostic-framework-v1.json") || {};
 
 export const PROFESSIONAL_FRAMEWORK_V1 = frameworkPack.framework;
 

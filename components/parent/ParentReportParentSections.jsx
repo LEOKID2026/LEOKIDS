@@ -63,8 +63,8 @@ export default function ParentReportParentSections({
   const visibleMessages = showAllMessages ? activeMessages : activeMessages.slice(0, 3);
 
   const listClass = compact
-    ? "space-y-2 text-sm text-white/90 leading-relaxed list-disc pl-5"
-    : "space-y-2.5 text-sm md:text-base text-white/90 leading-relaxed list-disc pl-5";
+    ? "space-y-2 text-sm text-white/90 leading-relaxed list-disc ps-5"
+    : "space-y-2.5 text-sm md:text-base text-white/90 leading-relaxed list-disc ps-5";
 
   const showInsights = visibleSections.includes("insights");
   const showTeacher = visibleSections.includes("teacher");

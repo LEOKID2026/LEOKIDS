@@ -33,7 +33,7 @@ export default function OfflineHub() {
       <OfflinePrecacheWarmup />
       <OfflineHubPageShell>
         <div className={`${GH.container} space-y-5`}>
-          <header className="space-y-2 text-center sm:text-left">
+          <header className="space-y-2 text-center sm:text-start">
             <p className={GH.badge}>🔌 Offline Games</p>
             <h1 className={GH.hubTitle}>{gamePackCopy("components__offline__OfflineHub", "offline_games")}</h1>
             <p className={GH.hubSub}>{gamePackCopy("components__offline__OfflineHub", "local_games_no_saving_and_no_rewards")}</p>

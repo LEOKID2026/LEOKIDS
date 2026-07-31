@@ -78,7 +78,7 @@ export default function StudentGamesHubPage() {
                     emoji={card.emoji}
                     blurb={t(card.blurbKey)}
                     href={categoryHref}
-                    cardClass={`${GH.card} text-left min-h-[9.5rem] md:min-h-[11rem]`}
+                    cardClass={`${GH.card} text-start min-h-[9.5rem] md:min-h-[11rem]`}
                     ctaClass={GH.cardCta}
                     hidden={catState ? !catState.visible : false}
                     locked={categoryLocked}

@@ -41,7 +41,7 @@ export default function PdfUploader({ disabled, fileRole = "worksheet", onUpload
   );
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/20 p-4 text-left">
+    <div className="rounded-2xl border border-white/10 bg-black/20 p-4 text-start">
       <p className="text-sm text-white/80 mb-2">
         {fileRole === "answer_key"
           ? "Upload answer-key PDF (teachers only)"

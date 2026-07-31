@@ -602,7 +602,7 @@ export default function SchoolClassesPage() {
 
             {!gradeLevel ? (
               <SchoolSection title={SCHOOL_CHOOSE_GRADE}>
-                {loading ? <p className="text-xs text-white/45 mb-3 text-left">{SCHOOL_LOADING_DATA}</p> : null}
+                {loading ? <p className="text-xs text-white/45 mb-3 text-start">{SCHOOL_LOADING_DATA}</p> : null}
                 <SchoolCardGrid columns={3}>
                   {SCHOOL_GRADE_OPTIONS.map((grade) => {
                     const count = classes ? gradePhysicalCounts.get(grade.level) ?? null : null;
@@ -668,7 +668,7 @@ export default function SchoolClassesPage() {
                       ];
                     if (!classStatus) return null;
                     return (
-                      <p className="text-sm mb-3 text-left" data-testid="school-physical-class-browse-status">
+                      <p className="text-sm mb-3 text-start" data-testid="school-physical-class-browse-status">
                         <span
                           className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full border leading-snug ${studentLearningStatusBadgeClass(
                             classStatus
@@ -683,7 +683,7 @@ export default function SchoolClassesPage() {
                     <button
                       type="button"
                       onClick={() => void openPhysicalClassReport(selectedPhysical)}
-                      className="w-full rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 px-4 py-3 text-left font-semibold text-amber-100 transition"
+                      className="w-full rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 px-4 py-3 text-start font-semibold text-amber-100 transition"
                       data-testid="school-physical-class-report-button"
                     >
                       {SCHOOL_PHYSICAL_CLASS_REPORT_BUTTON}

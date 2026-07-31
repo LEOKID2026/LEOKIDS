@@ -11,7 +11,7 @@ import {
 export function ParentReportImportantDisclaimer() {
   return (
     <aside
-      className="parent-report-important-disclaimer mt-5 md:mt-6 mb-1 rounded-lg border border-white/14 bg-white/[0.06] px-3 py-3 md:px-4 md:py-3.5 text-left shadow-none"
+      className="parent-report-important-disclaimer mt-5 md:mt-6 mb-1 rounded-lg border border-white/14 bg-white/[0.06] px-3 py-3 md:px-4 md:py-3.5 text-start shadow-none"
       dir="ltr"
       role="note"
     >

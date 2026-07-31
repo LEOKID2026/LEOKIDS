@@ -36,7 +36,7 @@ export default function OfflineHubTileCard({
 
   const inner = (
     <>
-      <div className="flex min-h-0 flex-1 flex-col gap-1.5 text-right">
+      <div className="flex min-h-0 flex-1 flex-col gap-1.5 text-start">
         <div className="flex items-start gap-2 md:gap-3">
           <span
             className="shrink-0 text-[clamp(1.35rem,5vw,2.25rem)] md:text-4xl leading-none"

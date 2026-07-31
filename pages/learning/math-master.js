@@ -3918,7 +3918,7 @@ export default function MathMaster() {
               >
                 <button
                   onClick={() => setShowPlayerProfile(false)}
-                  className="absolute left-4 top-4 text-white/80 hover:text-white text-2xl font-bold z-10"
+                  className="absolute start-4 top-4 text-white/80 hover:text-white text-2xl font-bold z-10"
                   style={{ direction: "ltr" }}
                 >
                   ✖
@@ -4157,7 +4157,7 @@ export default function MathMaster() {
                       }
                     }}
                     disabled={mistakes.length === 0}
-                    className={`w-full p-4 rounded-lg border transition-all text-right ${
+                    className={`w-full p-4 rounded-lg border transition-all text-start ${
                       mistakes.length > 0
                         ? "bg-purple-500/20 border-purple-400/50 hover:bg-purple-500/30"
                         : "bg-gray-500/20 border-gray-400/30 opacity-50 cursor-not-allowed"
@@ -4176,7 +4176,7 @@ export default function MathMaster() {
                       setShowPracticeOptions(false);
                       startGame({ focusedPracticeMode: "graded" });
                     }}
-                    className="w-full p-4 rounded-lg bg-blue-500/20 border border-blue-400/50 hover:bg-blue-500/30 transition-all text-right"
+                    className="w-full p-4 rounded-lg bg-blue-500/20 border border-blue-400/50 hover:bg-blue-500/30 transition-all text-start"
                   >
                     <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.graded')}</div>
                     <div className="text-sm text-white/70">{ms.t('learning.master.gradedPracticeBlurb')}</div>
@@ -4188,7 +4188,7 @@ export default function MathMaster() {
                       focusedPracticeModeRef.current = "normal";
                       setShowPracticeOptions(false);
                     }}
-                    className="w-full p-4 rounded-lg bg-emerald-500/20 border border-emerald-400/50 hover:bg-emerald-500/30 transition-all text-right"
+                    className="w-full p-4 rounded-lg bg-emerald-500/20 border border-emerald-400/50 hover:bg-emerald-500/30 transition-all text-start"
                   >
                     <div className="text-lg font-bold text-white mb-1">{ms.t('learning.master.practiceModes.normal')}</div>
                     <div className="text-sm text-white/70">{ms.t('learning.master.backToRegularPractice')}</div>
@@ -4697,7 +4697,7 @@ export default function MathMaster() {
                     {isVerticalDisplay &&
                     canDisplayVertically &&
                     currentQuestion.exerciseText ? (
-                      <div className="relative w-full pr-2 pl-2 pt-0">
+                      <div className="relative w-full px-2 pt-0">
                         {(() => {
                           const displayParts = resolveStudentQuestionDisplayParts({
                             question: currentQuestion.question,
@@ -4789,7 +4789,7 @@ export default function MathMaster() {
                         wrapperClassName={
                           isMathVerbalHorizontalStem
                             ? undefined
-                            : "relative w-full max-w-full pr-2 pl-2 pt-0 flex flex-col items-center justify-center gap-1"
+                            : "relative w-full max-w-full px-2 pt-0 flex flex-col items-center justify-center gap-1"
                         }
                         leadClassName={
                           isMathVerbalHorizontalStem
@@ -6396,7 +6396,7 @@ export default function MathMaster() {
 
                 <p className="text-white/80 text-xs mb-3 text-center">{ms.t('learning.math.howToLearnBlurb')}</p>
 
-                <ul className="list-disc pr-4 space-y-1 text-[13px] text-white/90">
+                <ul className="list-disc ps-4 space-y-1 text-[13px] text-white/90">
                   <li>{ms.t("learning.math.howToLearnSteps.step1")}</li>
                   <li>{ms.t("learning.math.howToLearnSteps.step2")}</li>
                   <li>{ms.t("learning.math.howToLearnSteps.step3")}</li>

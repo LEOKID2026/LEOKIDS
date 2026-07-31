@@ -17,8 +17,8 @@ const COMPACT_CLASSES_DARK = {
 
 const PREVIEW_CLASSES_DARK = {
   leadClassName:
-    "text-sm text-white/80 mb-0.5 break-words overflow-wrap-anywhere max-w-full text-right",
-  bodyClassName: "text-sm text-white/95 font-medium max-w-full break-words text-right",
+    "text-sm text-white/80 mb-0.5 break-words overflow-wrap-anywhere max-w-full text-start",
+  bodyClassName: "text-sm text-white/95 font-medium max-w-full break-words text-start",
   formulaClassName:
     "text-sm text-white/95 font-bold font-mono max-w-full leading-snug text-center",
   wrapperClassName: "inline-flex flex-col items-stretch gap-0.5 max-w-full",
@@ -35,8 +35,8 @@ const COMPACT_CLASSES_LIGHT = {
 
 const PREVIEW_CLASSES_LIGHT = {
   leadClassName:
-    "text-sm text-slate-600 mb-0.5 break-words overflow-wrap-anywhere max-w-full text-right",
-  bodyClassName: "text-sm text-slate-900 font-medium max-w-full break-words text-right",
+    "text-sm text-slate-600 mb-0.5 break-words overflow-wrap-anywhere max-w-full text-start",
+  bodyClassName: "text-sm text-slate-900 font-medium max-w-full break-words text-start",
   formulaClassName:
     "text-sm text-slate-900 font-bold font-mono max-w-full leading-snug text-center",
   wrapperClassName: "inline-flex flex-col items-stretch gap-0.5 max-w-full",

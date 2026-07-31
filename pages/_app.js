@@ -1,5 +1,6 @@
 import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import "../styles/globals.css";
+import "../styles/locale-fonts.css";
 import "../styles/worksheet-print.css";
 import "../styles/worksheet-writing-print.css";
 import "../styles/worksheet-writing-print-portrait.css";

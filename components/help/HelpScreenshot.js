@@ -32,7 +32,7 @@ export default function HelpScreenshot({ path, alt, caption, sources }) {
   }
 
   return (
-    <figure className="my-6 text-left">
+    <figure className="my-6 text-start">
       <picture>
         <source media="(max-width: 640px)" srcSet={mobile} />
         <source media="(max-width: 1023px)" srcSet={tablet} />

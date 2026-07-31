@@ -1,9 +1,11 @@
 /**
  * Deterministic next-probe hints by normalized error tag or diagnosticSkillId.
- * Copy lives in content-packs/en/learning/fast-diagnostic-probes.json.
+ * Copy loads via locale pack catalog / learning-locale-contract.
  */
 
-import probesEn from "../../content-packs/en/learning/fast-diagnostic-probes.json" with { type: "json" };
+import { loadFastDiagnosticProbes } from "../../lib/learning/learning-locale-contract.js";
+
+const probesEn = loadFastDiagnosticProbes("en") || {};
 
 /** @typedef {{ skill: string, suggestedQuestionType: string, reasonHe: string }} ProbeHint */
 

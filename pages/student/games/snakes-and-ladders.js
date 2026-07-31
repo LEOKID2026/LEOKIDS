@@ -28,7 +28,7 @@ export default function StudentSnakesAndLaddersPage() {
         dir="ltr"
       >
         <div
-          className="game-page-mobile learning-master-fill relative flex w-full flex-1 min-h-0 flex-col overflow-hidden max-md:pl-0 max-md:pr-0 md:pl-[clamp(8px,2vw,32px)] md:pr-[clamp(8px,2vw,32px)]"
+          className="game-page-mobile learning-master-fill relative flex w-full flex-1 min-h-0 flex-col overflow-hidden max-md:px-0 md:px-[clamp(8px,2vw,32px)]"
           style={{
             maxWidth: "1200px",
             width: "min(1200px, 100vw)",

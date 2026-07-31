@@ -1,5 +1,8 @@
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
-import geometryContent from "../../content-packs/en/learning/geometry-content.json" with { type: "json" };
+import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
+
+const geometryContent =
+  resolveRegisteredContentPack("en", "learning", "geometry-content.json") || {};
 
 export const GEOMETRY_EN_LABEL_OPTIONS = geometryContent.labelOptions;
 export const GEOMETRY_SOLID_NAMES_EN = geometryContent.solidNames;
@@ -235,41 +238,47 @@ function isShortAnswerField(field) {
 
 export function localizeGeometryQuestionEn(question) {
   if (!question) return question;
-  const rebuilt = rebuildGeometryStemEn(question);
-  const out = mapQuestionTextFields({ ...question }, (field, value) => {
+
+  const base = { ...question };
+  if (typeof base.question === "string" && containsHebrew(base.question)) base.question = "";
+  if (typeof base.exerciseText === "string" && containsHebrew(base.exerciseText)) base.exerciseText = "";
+  if (typeof base.questionLabel === "string" && containsHebrew(base.questionLabel)) base.questionLabel = "";
+
+  const rebuilt = rebuildGeometryStemEn({ ...question, ...base, params: question.params });
+  let resolvedStem = rebuilt && !containsHebrew(rebuilt) ? rebuilt : null;
+  if (!resolvedStem) {
+    const existing = String(question?.question || question?.exerciseText || "").trim();
+    if (existing && !containsHebrew(existing)) resolvedStem = existing;
+  }
+  if (!resolvedStem) resolvedStem = "Solve.";
+
+  const out = mapQuestionTextFields({ ...base }, (field, value) => {
+    if (field === "question" || field === "exerciseText" || field === "questionLabel") {
+      if (!value || containsHebrew(value) || isNearlyEmptyStem(value)) return resolvedStem;
+      return value;
+    }
     if (isShortAnswerField(field)) {
       const label = mapGeometryLabel(value) || SHAPE_WORDS[String(value ?? "").trim()];
       if (label) return label;
-      return translateGeometryPhrase(value);
+      const text = String(value ?? "");
+      if (!containsHebrew(text)) return text;
+      // Closed shape/token maps only — no Hebrew sentence translation
+      return text.replace(/[\u0590-\u05FF]+/gu, "").trim() || text;
     }
-    if (rebuilt && (field === "question" || field === "exerciseText" || field === "questionLabel")) {
-      if (containsHebrew(value) || isNearlyEmptyStem(value)) return rebuilt;
-    }
-    return translateGeometryPhrase(value);
+    if (!containsHebrew(String(value ?? ""))) return value;
+    return value;
   });
 
-  if (rebuilt) {
-    if (
-      !out.question ||
-      containsHebrew(String(out.question)) ||
-      isNearlyEmptyStem(out.question)
-    ) {
-      out.question = rebuilt;
-    }
-    if (
-      out.exerciseText &&
-      (containsHebrew(String(out.exerciseText)) || isNearlyEmptyStem(out.exerciseText))
-    ) {
-      out.exerciseText = rebuilt;
-    }
+  out.question = resolvedStem;
+  if (!out.exerciseText || containsHebrew(String(out.exerciseText)) || isNearlyEmptyStem(out.exerciseText)) {
+    out.exerciseText = resolvedStem;
   }
+  out.displayStemSource = rebuilt ? "params" : "passthrough";
 
   if (typeof out.correctAnswer === "string") {
     const mapped =
-      mapGeometryLabel(out.correctAnswer) ||
-      SHAPE_WORDS[out.correctAnswer.trim()] ||
-      translateGeometryPhrase(out.correctAnswer);
-    out.correctAnswer = mapped;
+      mapGeometryLabel(out.correctAnswer) || SHAPE_WORDS[out.correctAnswer.trim()];
+    if (mapped) out.correctAnswer = mapped;
   }
 
   return out;

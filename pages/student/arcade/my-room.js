@@ -78,16 +78,16 @@ export default function ArcadeMyRoomPage() {
             </div>
 
             {demoMode ? (
-              <div className={`${GH.card} space-y-4 p-4 text-left`}>
+              <div className={`${GH.card} space-y-4 p-4 text-start`}>
                 <h1 className={GH.sectionTitle}>{demoCopy("myRoom", "title")}</h1>
                 <p className={`text-sm ${GH.cardBlurb}`}>{demoMyRoom.messageHe}</p>
               </div>
             ) : locked ? (
-              <div className={`${GH.card} p-4 text-right`}>
+              <div className={`${GH.card} p-4 text-start`}>
                 <p className={GH.cardBlurb}>Personal room — controlled via Admin. Not open to guests yet.</p>
               </div>
             ) : (
-              <div className={`${GH.card} space-y-4 p-4 text-right`}>
+              <div className={`${GH.card} space-y-4 p-4 text-start`}>
                 <h1 className={GH.sectionTitle}>My Room</h1>
                 <p className={`text-sm ${GH.cardBlurb}`}>Decorations, trophies, and inviting friends — personal space only</p>
 

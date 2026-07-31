@@ -9,7 +9,7 @@ export default function HomeParentIntro({ isBright }) {
   const cls = getHomeTextClasses(isBright);
 
   return (
-    <section className="space-y-3 text-center md:text-right" data-testid="home-parent-intro">
+    <section className="space-y-3 text-center md:text-start" data-testid="home-parent-intro">
       <p
         className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide ${cls.label}`}
       >

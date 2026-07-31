@@ -30,6 +30,26 @@ export const HARDCODED_UI_ALLOWLIST = [
     file: "lib/student-client/student-api-legacy-errors.js",
     reason: "Legacy student API error protocol tokens; UI resolves via interface locale keys",
   },
+  {
+    file: "lib/writing/writing-constants.js",
+    pattern: "Noto Sans",
+    reason: "CSS font-family identifier for print glyphs, not translatable UI copy",
+  },
+  {
+    file: "lib/writing/writing-constants.js",
+    pattern: "Patrick Hand",
+    reason: "CSS font-family identifier for script glyphs, not translatable UI copy",
+  },
+  {
+    file: "lib/coloring-upload/coloring-upload-quota-window.server.js",
+    pattern: "Asia/Jerusalem",
+    reason: "IANA timezone id for quota window math, not user-facing copy",
+  },
+  {
+    file: "lib/coloring-upload/hf-lineart.js",
+    pattern: "Complex Lines",
+    reason: "Upstream Hugging Face Space API enum value, not product UI copy",
+  },
 ];
 
 /** Source directories intentionally excluded from runtime scan roots. */

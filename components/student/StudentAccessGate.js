@@ -54,7 +54,7 @@ function StudentGateBlockedPanel({ loginHref }) {
   const t = useT();
   return (
     <div className="max-w-md mx-auto px-4 py-8 md:py-12 space-y-4" dir="ltr" lang="en">
-      <p className={`${T.loadingText} text-left`}>{t("ui.student.accessGateSignInPrompt")}</p>
+      <p className={`${T.loadingText} text-start`}>{t("ui.student.accessGateSignInPrompt")}</p>
       <Link href={loginHref} className={`${T.ctaPrimary} inline-flex justify-center w-full sm:w-auto`}>
         {t("ui.student.accessGateSignInCta")}
       </Link>

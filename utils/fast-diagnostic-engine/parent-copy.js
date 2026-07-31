@@ -1,9 +1,12 @@
 /**
  * Deterministic English copy for fast diagnosis (no LLM).
- * Display labels live in content-packs/en/learning/fast-diagnostic-tag-labels.json.
+ * Display labels load via locale pack catalog.
  */
 
-import tagLabelsEn from "../../content-packs/en/learning/fast-diagnostic-tag-labels.json" with { type: "json" };
+import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
+
+const tagLabelsEn =
+  resolveRegisteredContentPack("en", "learning", "fast-diagnostic-tag-labels.json") || {};
 
 /** @type {Record<string, string>} */
 export const TAG_LABEL_EN = tagLabelsEn.tagLabels;

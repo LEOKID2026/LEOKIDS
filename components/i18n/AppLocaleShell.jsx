@@ -92,6 +92,7 @@ export default function AppLocaleShell({ pageProps, children }) {
     if (typeof document === "undefined") return;
     document.documentElement.lang = locale;
     document.documentElement.dir = direction;
+    document.documentElement.setAttribute("data-locale", locale);
   }, [locale, direction]);
 
   return (

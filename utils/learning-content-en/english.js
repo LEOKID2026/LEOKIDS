@@ -161,8 +161,18 @@ function localizeEnglishField(question, field, value) {
   return translateEnglishPhrase(text);
 }
 
-export function localizeEnglishQuestionEn(question) {
+/**
+ * English-subject display layer.
+ * Learning targets (stems with English words, spelling/vocab/grammar options) stay English.
+ * Instructional fields (phonics prompts, explanations, UI fallbacks) are EN today and accept
+ * instructionLocale for future translated instruction packs — without forking components.
+ *
+ * @param {Record<string, unknown>} question
+ * @param {{ instructionLocale?: string|null, interfaceLocale?: string|null }} [opts]
+ */
+export function localizeEnglishQuestionEn(question, opts = {}) {
   if (!question) return question;
+  void opts; // reserved: instructionLocale / interfaceLocale for future instruction packs
   const rebuilt = rebuildEnglishStem(question);
   const out = mapQuestionTextFields({ ...question }, (field, value, q) =>
     localizeEnglishField(q, field, value)

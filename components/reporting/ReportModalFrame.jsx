@@ -53,7 +53,7 @@ export function ReportModalFrame({
         aria-label={globalBurnDownCopy("components__reporting__ReportModalFrame", "close_window")}
         onClick={onClose}
       />
-      <div className="relative w-full max-w-2xl max-h-[min(88vh,720px)] flex flex-col text-right">
+      <div className="relative w-full max-w-2xl max-h-[min(88vh,720px)] flex flex-col text-start">
         <div className="rounded-xl border border-amber-500/30 bg-gradient-to-b from-[#1a1208] to-[#120c06] shadow-xl flex flex-col max-h-[min(88vh,720px)] overflow-hidden">
           <div className="shrink-0 px-4 sm:px-5 pt-4 pb-3 border-b border-white/10 flex items-start justify-between gap-3">
             <div className="min-w-0">

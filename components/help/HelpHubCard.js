@@ -13,7 +13,7 @@ export default function HelpHubCard({ href, title, description, emoji, sectionKe
   return (
     <Link
       href={href}
-      className={`group rounded-2xl bg-gradient-to-br ${gradient} p-[1px] block text-left`}
+      className={`group rounded-2xl bg-gradient-to-br ${gradient} p-[1px] block text-start`}
     >
       <div
         className={`h-full rounded-2xl p-5 flex flex-col justify-between min-h-[180px] ${

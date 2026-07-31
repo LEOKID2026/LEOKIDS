@@ -53,7 +53,7 @@ function MissionCard({ mission, index }) {
   return (
     <article
       className={[
-        "relative rounded-2xl border p-4 flex flex-col gap-3 text-left transition-all duration-300 min-w-0",
+        "relative rounded-2xl border p-4 flex flex-col gap-3 text-start transition-all duration-300 min-w-0",
         completed
           ? "border-emerald-200 bg-emerald-50 shadow-md"
           : "border-slate-200 bg-white hover:border-sky-200 hover:shadow-md",
@@ -116,7 +116,7 @@ export default function StudentDailyMissionsPanel({ dailyMissions }) {
       aria-labelledby="daily-missions-heading"
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4 md:mb-5">
-        <h2 id="daily-missions-heading" className="text-lg md:text-xl font-extrabold text-slate-800 text-left">
+        <h2 id="daily-missions-heading" className="text-lg md:text-xl font-extrabold text-slate-800 text-start">
           My missions for today
         </h2>
         <span
@@ -139,7 +139,7 @@ export default function StudentDailyMissionsPanel({ dailyMissions }) {
           Great job! You finished all of today's missions
         </div>
       ) : (
-        <p className="text-slate-600 text-sm text-left mb-4 leading-relaxed">
+        <p className="text-slate-600 text-sm text-start mb-4 leading-relaxed">
           Complete missions by real learning — each mission earns coins
         </p>
       )}

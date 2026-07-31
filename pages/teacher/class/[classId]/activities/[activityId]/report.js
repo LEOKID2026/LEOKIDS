@@ -148,7 +148,7 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
 
         {data?.students?.length ? (
           <div className="overflow-x-auto rounded-xl border border-white/10">
-            <table className="w-full text-sm text-left">
+            <table className="w-full text-sm text-start">
               <thead className="bg-white/5 text-white/70">
                 <tr>
                   <th className="px-3 py-2">Student</th>

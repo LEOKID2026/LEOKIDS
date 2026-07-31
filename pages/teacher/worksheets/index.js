@@ -95,7 +95,7 @@ export default function TeacherWorksheetsListPage() {
             {worksheets.map((w) => (
               <div
                 key={w.worksheetId}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-left"
+                className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-start"
               >
                 <div>
                   <h3 className="font-bold text-white">{w.title}</h3>

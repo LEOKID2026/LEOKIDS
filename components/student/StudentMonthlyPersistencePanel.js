@@ -71,7 +71,7 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
       aria-labelledby="monthly-persistence-heading"
     >
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5 md:mb-6">
-        <div className="text-left min-w-0">
+        <div className="text-start min-w-0">
           <h2 id="monthly-persistence-heading" className="text-lg md:text-xl font-extrabold text-slate-800">
             My monthly progress
           </h2>
@@ -143,10 +143,10 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
         </div>
       ) : progressToNextTierPct != null && typeof currentMinutes === "number" && nextTier ? (
         <div className="space-y-2">
-          <p className="text-slate-700 text-sm text-left font-medium">
+          <p className="text-slate-700 text-sm text-start font-medium">
             {nextTierEncouragementHe || `${Math.ceil(nextTier.minutes - currentMinutes)} more minutes to the next prize`}
           </p>
-          <p className="text-slate-500 text-xs text-left">
+          <p className="text-slate-500 text-xs text-start">
             Next goal: {nextTier.minutes} minutes → {tierCoinLabel(nextTier)}
           </p>
           <div className="h-3 rounded-full bg-slate-200 overflow-hidden border border-slate-100">
@@ -155,12 +155,12 @@ export default function StudentMonthlyPersistencePanel({ monthlyPersistence }) {
               style={{ width: `${Math.max(progressToNextTierPct > 0 ? 3 : 0, progressToNextTierPct)}%` }}
             />
           </div>
-          <p className="text-[11px] text-slate-500 text-left tabular-nums">
+          <p className="text-[11px] text-slate-500 text-start tabular-nums">
             {currentMinutes} / {nextTier.minutes} min ({progressToNextTierPct}%)
           </p>
         </div>
       ) : (
-        <p className="text-sm text-slate-600 text-left">{STUDENT_TRUTH_LABELS_HE.noData}</p>
+        <p className="text-sm text-slate-600 text-start">{STUDENT_TRUTH_LABELS_HE.noData}</p>
       )}
     </section>
   );

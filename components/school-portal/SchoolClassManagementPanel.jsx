@@ -88,18 +88,18 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
   return (
     <section className={SCHOOL_CARD} data-testid="school-class-management-panel">
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-left">{SCHOOL_CLASS_MGMT_SECTION}</h2>
+        <h2 className="text-base font-semibold mb-3 text-start">{SCHOOL_CLASS_MGMT_SECTION}</h2>
 
         {loading ? (
-          <p className="text-sm text-white/60 text-left">Loading…</p>
+          <p className="text-sm text-white/60 text-start">Loading…</p>
         ) : error && !classes.length ? (
-          <p className="text-sm text-red-300 text-left">{error}</p>
+          <p className="text-sm text-red-300 text-start">{error}</p>
         ) : null}
 
         <div className="mb-4">
-          <h3 className="text-sm font-medium text-white/80 mb-2 text-left">{SCHOOL_CLASS_MGMT_LIST_TITLE}</h3>
+          <h3 className="text-sm font-medium text-white/80 mb-2 text-start">{SCHOOL_CLASS_MGMT_LIST_TITLE}</h3>
           {classes.length ? (
-            <ul className="space-y-2 text-left" data-testid="school-class-list">
+            <ul className="space-y-2 text-start" data-testid="school-class-list">
               {classes.map((c) => (
                 <li
                   key={`${c.gradeLevel}:${c.name}`}
@@ -108,7 +108,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
                   <span className="font-medium">{c.name}</span>
                   <span className="text-white/50 mx-2">·</span>
                   <span className="text-white/70">{schoolGradeLabelHe(c.gradeLevel)}</span>
-                  <span className="text-white/40 text-xs mr-2">
+                  <span className="text-white/40 text-xs me-2">
                     ({SCHOOL_CLASS_MGMT_SUBJECT_COUNT}: {c.subjectCount ?? 0},{" "}
                     {SCHOOL_CLASS_MGMT_STUDENT_COUNT}: {c.studentCount ?? 0})
                   </span>
@@ -120,8 +120,8 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
           )}
         </div>
 
-        <h3 className="text-sm font-medium text-white/80 mb-2 text-left">{SCHOOL_CLASS_MGMT_ADD}</h3>
-        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-md text-left">
+        <h3 className="text-sm font-medium text-white/80 mb-2 text-start">{SCHOOL_CLASS_MGMT_ADD}</h3>
+        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-md text-start">
           <label className="block text-sm">
             <span className="text-white/60 block mb-1">{SCHOOL_CLASS_MGMT_NAME}</span>
             <input

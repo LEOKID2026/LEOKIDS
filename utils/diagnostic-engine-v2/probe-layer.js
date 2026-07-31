@@ -1,5 +1,8 @@
 import { TAXONOMY_BY_ID } from "./taxonomy-registry.js";
-import defaultsEn from "../../content-packs/en/learning/diagnostic-engine-v2-defaults.json" with { type: "json" };
+import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
+
+const defaultsEn =
+  resolveRegisteredContentPack("en", "learning", "diagnostic-engine-v2-defaults.json") || {};
 
 /**
  * @param {string|null} taxonomyId

@@ -16,7 +16,7 @@ export default function HomeLearningSystemSection({ isBright }) {
       data-testid="home-learning-system"
       aria-labelledby="home-learning-system-title"
     >
-      <div className="space-y-3 text-center md:text-right">
+      <div className="space-y-3 text-center md:text-start">
         <p
           className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide ${cls.label}`}
         >

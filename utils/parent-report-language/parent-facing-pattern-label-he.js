@@ -8,8 +8,8 @@ import { rewriteEngineTaxonomySnippetForParentHe } from "../diagnostic-labels-he
 import { normalizeParentFacingHe } from "./parent-facing-normalize.js";
 import { sanitizeParentPatternLabel } from "../learning-pattern-decision/parent-pattern-label.js";
 
-/** Engine-internal M-10 patternHe — must not appear parent-facing. */
-export const M10_ENGINE_PATTERN_HE = "בחירת כפל לא מתאים לחילוק";
+/** Engine-internal M-10 pattern key — must not appear parent-facing. */
+export const M10_ENGINE_PATTERN_HE = "unsuitable multiplication choice for division";
 
 export const M10_PARENT_PATTERN_LABELS = {
   divisionBuckets:

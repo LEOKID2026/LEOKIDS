@@ -138,7 +138,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
   if (demoMode && !worksheet) {
     return (
       <Layout>
-        <div className="max-w-2xl mx-auto px-4 py-8 text-left" dir={direction} lang={locale}>
+        <div className="max-w-2xl mx-auto px-4 py-8 text-start" dir={direction} lang={locale}>
           <Link href="/student/home" className="text-sm text-cyan-300 hover:underline">
             {demoCopy("worksheet", "backHome")}
           </Link>
@@ -165,7 +165,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
 
   return (
     <Layout>
-      <div className="max-w-2xl mx-auto px-4 py-8 text-right">
+      <div className="max-w-2xl mx-auto px-4 py-8 text-start">
         <Link href="/student/home" className="text-sm text-cyan-300 hover:underline">
           ← Back to home
         </Link>

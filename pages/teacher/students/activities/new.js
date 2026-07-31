@@ -352,7 +352,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
               <span className="text-white/70">
                 Grade (for content)
                 {lockedGrade ? (
-                  <span className="text-emerald-300/80 text-xs mr-1">- derived from selected students</span>
+                  <span className="text-emerald-300/80 text-xs me-1">- derived from selected students</span>
                 ) : null}
               </span>
               <select
@@ -500,7 +500,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                       <AssignedActivityQuestionDisplay question={q} variant="preview" />
                     </div>
                     {choices.length > 0 ? (
-                      <ul className="space-y-0.5 text-white/70 mr-6">
+                      <ul className="space-y-0.5 text-white/70 me-6">
                         {choices.map((c, ci) => (
                           <li key={ci}>
                             <AssignedActivityBidiText text={c} />

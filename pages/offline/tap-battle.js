@@ -197,7 +197,7 @@ export default function TapBattle() {
             className="relative px-2 py-3"
             style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 10px)" }}
           >
-            <div className="absolute left-2 top-2 flex gap-2 pointer-events-auto items-center">
+            <div className="absolute start-2 top-2 flex gap-2 pointer-events-auto items-center">
               <button
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
@@ -206,7 +206,7 @@ export default function TapBattle() {
               </button>
               {showAudioButton ? <GameAudioSettingsButton /> : null}
             </div>
-            <div className="absolute right-2 top-2 pointer-events-auto">
+            <div className="absolute end-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
                 Local
               </span>

@@ -125,7 +125,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
   if (loading) {
     return (
       <div className={T.permissionsBox}>
-        <p className={`${T.permissionsHint} text-right`}>{t("ui.parent.subjectPermissionsLoading")}</p>
+        <p className={`${T.permissionsHint} text-start`}>{t("ui.parent.subjectPermissionsLoading")}</p>
       </div>
     );
   }
@@ -137,7 +137,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
         {t("ui.parent.subjectPermissionsHint")}
       </p>
       {error ? (
-        <p className={`text-xs text-right ${bright ? "text-rose-600" : "text-red-300"}`}>{error}</p>
+        <p className={`text-xs text-start ${bright ? "text-rose-600" : "text-red-300"}`}>{error}</p>
       ) : null}
 
       <div className="flex flex-wrap gap-2 justify-end">
@@ -181,11 +181,11 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
                   }`}
                 />
               </button>
-              <div className="flex-1 text-right">
+              <div className="flex-1 text-start">
                 <span className={T.permissionsLabel}>{SUBJECT_LABELS[row.subjectKey] || row.labelHe || row.subjectKey}</span>
                 {row.isGradeSuitable ? (
                   <span
-                    className={`mr-2 text-[10px] rounded px-1.5 py-0.5 ${
+                    className={`me-2 text-[10px] rounded px-1.5 py-0.5 ${
                       bright ? "bg-emerald-100 text-emerald-800" : "bg-emerald-500/20 text-emerald-200"
                     }`}
                   >

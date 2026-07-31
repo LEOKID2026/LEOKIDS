@@ -122,11 +122,11 @@ export default function SchoolStudentAssignmentPanel({
   };
 
   if (loading) {
-    return <p className="text-sm text-white/60 text-left">Loading…</p>;
+    return <p className="text-sm text-white/60 text-start">Loading…</p>;
   }
 
   return (
-    <div className="space-y-4 text-left" data-testid="school-student-assignment-panel">
+    <div className="space-y-4 text-start" data-testid="school-student-assignment-panel">
       {studentName ? <p className="text-sm text-white/70">{studentName}</p> : null}
 
       <dl className="grid grid-cols-2 gap-3 text-sm rounded-lg border border-white/10 bg-black/30 p-3">

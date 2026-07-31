@@ -2843,7 +2843,7 @@ export default function EnglishMaster() {
 
                   {hasEnglishAudio ? (
                     <div
-                      className="absolute top-2 left-2 z-10 max-md:hidden pointer-events-auto"
+                      className="absolute top-2 start-2 z-10 max-md:hidden pointer-events-auto"
                       dir={ms.direction}
                     >
                       <EnglishPhonicsAudioPanel
@@ -3379,7 +3379,7 @@ export default function EnglishMaster() {
                     >
                       <span className="font-semibold">{en}</span>
                       <span className="text-white/50 mx-2">|</span>
-                      <span className="text-right" dir={ms.direction}>
+                      <span className="text-start" dir={ms.direction}>
                         {he}
                       </span>
                     </div>
@@ -3499,7 +3499,7 @@ export default function EnglishMaster() {
               >
                 <button
                   onClick={() => setShowPlayerProfile(false)}
-                  className="absolute left-4 top-4 text-white/80 hover:text-white text-2xl font-bold z-10"
+                  className="absolute start-4 top-4 text-white/80 hover:text-white text-2xl font-bold z-10"
                   style={{ direction: "ltr" }}
                 >
                   ✖
@@ -3754,7 +3754,7 @@ export default function EnglishMaster() {
                     The goal is to practice English in a fun way, matched to grade, topic, and difficulty.
                   </p>
 
-                  <ul className="list-disc pr-4 space-y-1 text-[13px]">
+                  <ul className="list-disc ps-4 space-y-1 text-[13px]">
                     <li>{burnDownCopy("pages__learning__english-master", "choose_grade_difficulty_and_topic_vocabulary_grammar_translation_writing")}</li>
                     <li>{burnDownCopy("pages__learning__english-master", "choose_a_game_mode_learning_challenge_with_timer_and_lives_speed_or_mara")}</li>
                     <li>{burnDownCopy("pages__learning__english-master", "read_each_question_carefully_sometimes_you_choose_an_answer_sometimes_yo")}</li>

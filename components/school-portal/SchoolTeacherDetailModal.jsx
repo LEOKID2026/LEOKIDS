@@ -29,7 +29,7 @@ export default function SchoolTeacherDetailModal({
       testId="school-teacher-detail-modal"
     >
       <div
-        className={`max-h-[min(70vh,640px)] overflow-y-auto pr-1 ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
+        className={`max-h-[min(70vh,640px)] overflow-y-auto pe-1 ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
       >
         <SchoolTeacherDetailContent
           teacherId={teacherId}

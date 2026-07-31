@@ -9,7 +9,7 @@
 export default function SoloGameHelpButton({
   game,
   onOpen,
-  className = "absolute left-4 top-4",
+  className = "absolute start-4 top-4",
   stopPropagation = false,
 }) {
   return (

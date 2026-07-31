@@ -94,7 +94,7 @@ export default function TeacherStudentSelector({
                 <span className="text-white text-sm">
                   {s.studentFullName || s.studentFullNameMasked || "Student"}
                   {s.gradeLevel ? (
-                    <span className="text-white/50 text-xs ml-2">Grade {s.gradeLevel}</span>
+                    <span className="text-white/50 text-xs ms-2">Grade {s.gradeLevel}</span>
                   ) : null}
                 </span>
                 <input

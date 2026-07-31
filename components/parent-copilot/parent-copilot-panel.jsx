@@ -257,7 +257,7 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
 
   return (
     <div
-      className="w-full flex flex-col rounded-xl border border-white/12 bg-black/25 p-3 text-right text-white/90"
+      className="w-full flex flex-col rounded-xl border border-white/12 bg-black/25 p-3 text-start text-white/90"
       style={{ height: "420px", minHeight: "420px" }}
     >
       <div className="flex items-center justify-between gap-2 shrink-0 mb-1">
@@ -269,17 +269,17 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
           {t("ui.copilot.panel.aiDisclosureLink")}
         </Link>
       </div>
-      <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-1 pr-0.5" role="note">
+      <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-1 pe-0.5" role="note">
         {t("ui.copilot.panel.disclaimer")}
       </p>
-      <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-2 pr-0.5">
+      <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-2 pe-0.5">
         {t("ui.copilot.panel.intro")}
       </p>
 
       <div
         ref={scrollRef}
         onScroll={updatePinnedFromScroll}
-        className="flex-1 min-h-0 overflow-y-auto space-y-2 text-sm leading-relaxed pr-0.5"
+        className="flex-1 min-h-0 overflow-y-auto space-y-2 text-sm leading-relaxed pe-0.5"
       >
         {lines.map((ln, i) => {
           if (ln.kind === "processing") {

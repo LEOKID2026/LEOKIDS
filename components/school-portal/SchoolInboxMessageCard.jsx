@@ -17,7 +17,7 @@ export default function SchoolInboxMessageCard({
   const isUnread = !message?.readAt && !message?.isRead;
 
   return (
-    <article className="rounded-xl border border-white/15 bg-white/5 p-4 text-left space-y-3">
+    <article className="rounded-xl border border-white/15 bg-white/5 p-4 text-start space-y-3">
       <div className="space-y-1">
         <h3 className="font-semibold text-base leading-snug">{subject}</h3>
         {sentLabel ? <p className="text-xs text-white/50">{sentLabel}</p> : null}

@@ -64,9 +64,9 @@ export default function SchoolStaffCreateForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`}>
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-3 text-left">{sectionTitle}</h2>
+        <h2 className="text-base font-semibold mb-3 text-start">{sectionTitle}</h2>
         <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl">
-          <label className="block text-sm text-left">
+          <label className="block text-sm text-start">
             <span className="text-white/60 block mb-1">{SCHOOL_STAFF_CREATE_DISPLAY_NAME}</span>
             <input
               type="text"

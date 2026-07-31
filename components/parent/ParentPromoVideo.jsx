@@ -78,7 +78,7 @@ export default function ParentPromoVideo({
 
   return (
     <section
-      className={`space-y-2 text-right ${featured ? "space-y-3 md:space-y-4" : ""} ${className}`}
+      className={`space-y-2 text-start ${featured ? "space-y-3 md:space-y-4" : ""} ${className}`}
       aria-label={resolvedTitle}
       data-testid="parent-promo-video"
     >

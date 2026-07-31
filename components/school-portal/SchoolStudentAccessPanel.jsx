@@ -173,12 +173,12 @@ export default function SchoolStudentAccessPanel({ accessToken, authMethod = "su
   const studentCanManage = hasSchoolStudent && student?.status !== "revoked";
 
   if (loading) {
-    return <p className="text-sm text-white/50 text-left py-6">{SC_LOADING}</p>;
+    return <p className="text-sm text-white/50 text-start py-6">{SC_LOADING}</p>;
   }
 
   return (
     <div
-      className={`space-y-6 text-left overflow-y-auto max-h-[min(70vh,520px)] px-1 pb-2 ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
+      className={`space-y-6 text-start overflow-y-auto max-h-[min(70vh,520px)] px-1 pb-2 ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}
       dir="ltr"
     >
       {studentName ? <p className="text-sm text-white/60">{studentName}</p> : null}

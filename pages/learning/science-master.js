@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { SCIENCE_QUESTIONS } from "../../data/science-questions";
+import { localizeScienceQuestionsForContentLocale } from "../../lib/learning/question-content-locale.js";
 import {
   SCIENCE_GRADES,
   SCIENCE_GRADE_ORDER,
@@ -256,7 +257,7 @@ function getReferenceSection(ms, category) {
   return { label, entries };
 }
 
-const QUESTIONS = SCIENCE_QUESTIONS;
+const QUESTIONS = localizeScienceQuestionsForContentLocale(SCIENCE_QUESTIONS, "en");
 
 function getTopicLabel(key, ms) {
   if (!key) return key;
@@ -3260,7 +3261,7 @@ function saveScienceAnswerInParallel({
                       )}
                       {errorExplanation && (
                         <div
-                          className="px-4 py-3 rounded-lg bg-[#0a1222]/95 border border-rose-300/60 shadow-xl backdrop-blur-sm text-sm leading-relaxed text-right"
+                          className="px-4 py-3 rounded-lg bg-[#0a1222]/95 border border-rose-300/60 shadow-xl backdrop-blur-sm text-sm leading-relaxed text-start"
                           style={learningMixedHebrewMathStyle}
                         >
                           <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">{ms.whyMistake}</div>
@@ -3515,7 +3516,7 @@ function saveScienceAnswerInParallel({
                           ✖
                         </button>
                       </div>
-                      <ul className="list-disc pr-4 space-y-1 text-sm text-white/90">
+                      <ul className="list-disc ps-4 space-y-1 text-sm text-white/90">
                         {currentQuestion.theoryLines.map((line, i) => (
                           <li key={i}>
                             {renderLearningMixedHebrewMathText(line)}
@@ -3813,7 +3814,7 @@ function saveScienceAnswerInParallel({
               >
                 <button
                   onClick={() => setShowPlayerProfile(false)}
-                  className="absolute left-4 top-4 text-white/80 hover:text-white text-2xl font-bold z-10"
+                  className="absolute start-4 top-4 text-white/80 hover:text-white text-2xl font-bold z-10"
                   style={{ direction: "ltr" }}
                 >
                   ✖

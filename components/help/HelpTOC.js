@@ -20,7 +20,7 @@ export default function HelpTOC({ toc }) {
     <>
       <details className={SP.tocMobile}>
         <summary className={SP.tocMobileSummary}>Table of contents</summary>
-        <nav aria-label="Table of contents" className="mt-3 text-left">
+        <nav aria-label="Table of contents" className="mt-3 text-start">
           {list}
         </nav>
       </details>

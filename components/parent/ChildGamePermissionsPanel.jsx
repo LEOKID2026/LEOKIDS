@@ -84,7 +84,7 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
   if (loading) {
     return (
       <div className={T.permissionsBox}>
-        <p className={`${T.permissionsHint} text-right`}>{t("ui.parent.gamePermissionsLoading")}</p>
+        <p className={`${T.permissionsHint} text-start`}>{t("ui.parent.gamePermissionsLoading")}</p>
       </div>
     );
   }
@@ -95,7 +95,7 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
       <p className={T.permissionsHint}>
         {t("ui.parent.gamePermissionsHint")}
       </p>
-      {error ? <p className={`text-xs text-right ${bright ? "text-rose-600" : "text-red-300"}`}>{error}</p> : null}
+      {error ? <p className={`text-xs text-start ${bright ? "text-rose-600" : "text-red-300"}`}>{error}</p> : null}
       <div className="space-y-2">
         {["online", "offline", "solo"].map((key) => {
           const field = `${key}Enabled`;

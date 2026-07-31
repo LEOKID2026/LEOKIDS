@@ -162,7 +162,7 @@ export function Bullets({ items, className = "", volumeQuestionsTotal = 0 }) {
     );
   return (
     <ul
-      className={`pr-detailed-body-text list-disc pr-5 space-y-1.5 text-sm md:text-base text-white/[0.88] leading-relaxed ${className}`.trim()}
+      className={`pr-detailed-body-text list-disc ps-5 space-y-1.5 text-sm md:text-base text-white/[0.88] leading-relaxed ${className}`.trim()}
     >
       {safeItems.map((t, i) => (
         <li key={i} className="pr-detailed-bullet-li">
@@ -672,7 +672,7 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
       </summary>
       <div className="px-3 py-3 md:px-4 md:py-4 space-y-4">
         <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left">
+          <table className="w-full text-sm text-start">
             <tbody>
               {rows.map((row) => (
                 <tr key={row.label} className="border-b border-white/10">
@@ -687,7 +687,7 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
           <div>
             <p className="pr-detailed-topic-rec-head m-0 mb-2">Breakdown by subject</p>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left">
+              <table className="w-full text-sm text-start">
                 <thead>
                   <tr className="border-b border-white/15 bg-white/5">
                     <th className="p-2 font-semibold">Subject</th>
@@ -735,7 +735,7 @@ export function ParentAssignedActivitiesSection({ rows }) {
         Personal activities from parent ({list.length})
       </summary>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm text-left">
+        <table className="w-full text-sm text-start">
           <thead>
             <tr className="border-b border-white/15 bg-white/5">
               <th className="p-2 font-semibold">Activity</th>
@@ -778,7 +778,7 @@ function OutOfGradePracticeTable({ rows }) {
   if (!list.length) return null;
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm text-left">
+      <table className="w-full text-sm text-start">
         <thead>
           <tr className="border-b border-white/15 bg-white/5">
             <th className="p-2 font-semibold">Subject</th>

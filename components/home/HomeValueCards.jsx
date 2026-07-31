@@ -35,7 +35,7 @@ export default function HomeValueCards({ isBright }) {
             data-testid={`home-value-card-${index + 1}`}
           >
             <div
-              className={`flex h-full flex-col gap-2 rounded-[14px] p-5 text-right md:p-6 ${
+              className={`flex h-full flex-col gap-2 rounded-[14px] p-5 text-start md:p-6 ${
                 isBright ? "bg-white/95" : "bg-[#0b1424]/90"
               }`}
             >

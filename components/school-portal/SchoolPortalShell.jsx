@@ -102,13 +102,13 @@ export default function SchoolPortalShell({
   return (
     <div className={`${SCHOOL_PAGE_CONTAINER} text-white`} dir="ltr" lang="en">
       <header className="mb-6 lg:mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-white/15 pb-4">
-        <div className="min-w-0 flex-1 text-left">
+        <div className="min-w-0 flex-1 text-start">
           <p className="text-xs text-white/50 mb-1">{SCHOOL_PLATFORM_LABEL}</p>
           {schoolName ? (
             <p className="text-sm sm:text-base text-amber-200/95 font-medium mb-1">{schoolName}</p>
           ) : null}
-          {title ? <h1 className="text-xl md:text-2xl font-bold text-left">{title}</h1> : null}
-          {subtitle ? <p className="text-sm text-white/55 mt-1 text-left max-w-2xl">{subtitle}</p> : null}
+          {title ? <h1 className="text-xl md:text-2xl font-bold text-start">{title}</h1> : null}
+          {subtitle ? <p className="text-sm text-white/55 mt-1 text-start max-w-2xl">{subtitle}</p> : null}
         </div>
         <div className="flex flex-wrap items-center gap-2 shrink-0 w-full sm:w-auto justify-end">
           {showTeacherDashboardLink ? (

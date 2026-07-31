@@ -52,7 +52,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
         <button
           ref={closeBtnRef}
           type="button"
-          className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-lg font-bold text-slate-500 transition hover:bg-slate-100 hover:text-slate-800"
+          className="absolute start-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-lg font-bold text-slate-500 transition hover:bg-slate-100 hover:text-slate-800"
           aria-label={copy("components__solo-games__SoloGameHelpModal", "close")}
           onClick={onClose}
         >
@@ -61,7 +61,7 @@ export default function SoloGameHelpModal({ game, onClose }) {
 
         <h2
           id="solo-game-help-title"
-          className="mb-4 pr-8 text-lg font-extrabold leading-snug text-slate-900 sm:text-xl"
+          className="mb-4 pe-8 text-lg font-extrabold leading-snug text-slate-900 sm:text-xl"
         >
           {titleLine}
         </h2>

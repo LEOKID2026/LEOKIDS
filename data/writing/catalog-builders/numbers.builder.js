@@ -14,7 +14,7 @@ const NUMBER_DIGIT_SINGLES = Array.from({ length: 10 }, (_, digit) => {
     slug: `writing-num-${digit}-trace`,
     catalogNumber: formatCatalogNumber(catalogNum),
     writingCategory: "numbers",
-    titleHe: `מספר ${digit}`,
+    title: `Number ${digit}`,
     seed: 1000 + catalogNum,
     builderConfig: {
       writingCategory: "numbers",
@@ -29,27 +29,27 @@ const NUMBER_DIGIT_SINGLES = Array.from({ length: 10 }, (_, digit) => {
   });
 });
 
-/** @type {Array<{ catalogNum: number, value: number, slug: string, titleHe: string, lineTemplate: string, numberMode?: string }>} */
+/** @type {Array<{ catalogNum: number, value: number, slug: string, title: string, lineTemplate: string, numberMode?: string }>} */
 const NUMBER_SPECIAL_SINGLES = [
   {
     catalogNum: 166,
     value: 10,
     slug: "writing-num-10-trace",
-    titleHe: "מספר 10",
+    title: "Number 10",
     lineTemplate: "single_digit_trace",
   },
   {
     catalogNum: 176,
     value: 20,
     slug: "writing-num-20-trace",
-    titleHe: "מספר 20",
+    title: "Number 20",
     lineTemplate: "single_digit_trace",
   },
   {
     catalogNum: 177,
     value: 10,
     slug: "writing-num-10-tens",
-    titleHe: "עשר — עשרות",
+    title: "Ten — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -57,7 +57,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 178,
     value: 20,
     slug: "writing-num-20-tens",
-    titleHe: "עשרים — עשרות",
+    title: "Twenty — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -65,7 +65,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 179,
     value: 30,
     slug: "writing-num-30-tens",
-    titleHe: "שלושים — עשרות",
+    title: "Thirty — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -73,7 +73,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 180,
     value: 40,
     slug: "writing-num-40-tens",
-    titleHe: "ארבעים — עשרות",
+    title: "Forty — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -81,7 +81,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 181,
     value: 50,
     slug: "writing-num-50-tens",
-    titleHe: "חמישים — עשרות",
+    title: "Fifty — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -89,7 +89,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 182,
     value: 60,
     slug: "writing-num-60-tens",
-    titleHe: "שישים — עשרות",
+    title: "Sixty — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -97,7 +97,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 183,
     value: 70,
     slug: "writing-num-70-tens",
-    titleHe: "שבעים — עשרות",
+    title: "Seventy — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -105,7 +105,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 184,
     value: 80,
     slug: "writing-num-80-tens",
-    titleHe: "שמונים — עשרות",
+    title: "Eighty — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -113,7 +113,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 185,
     value: 90,
     slug: "writing-num-90-tens",
-    titleHe: "תשעים — עשרות",
+    title: "Ninety — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -121,7 +121,7 @@ const NUMBER_SPECIAL_SINGLES = [
     catalogNum: 186,
     value: 100,
     slug: "writing-num-100-tens",
-    titleHe: "מאה — עשרות",
+    title: "One hundred — tens",
     lineTemplate: "whole_tens",
     numberMode: "number",
   },
@@ -133,7 +133,7 @@ const NUMBER_SPECIAL_ENTRIES = NUMBER_SPECIAL_SINGLES.map((item) =>
     slug: item.slug,
     catalogNumber: formatCatalogNumber(item.catalogNum),
     writingCategory: "numbers",
-    titleHe: item.titleHe,
+    title: item.title,
     seed: 1000 + item.catalogNum,
     builderConfig: {
       writingCategory: "numbers",
@@ -156,7 +156,7 @@ const NUMBER_TEEN_SINGLES = Array.from({ length: 9 }, (_, index) => {
     slug: `writing-num-${value}-trace`,
     catalogNumber: formatCatalogNumber(catalogNum),
     writingCategory: "numbers",
-    titleHe: `מספר ${value}`,
+    title: `Number ${value}`,
     seed: 1000 + catalogNum,
     builderConfig: {
       writingCategory: "numbers",
@@ -171,21 +171,21 @@ const NUMBER_TEEN_SINGLES = Array.from({ length: 9 }, (_, index) => {
   });
 });
 
-/** @type {Array<{ catalogNum: number, slug: string, titleHe: string, min: number, max: number, numberMode?: string, tracingMode?: string, builderConfig?: Record<string, unknown> }>} */
+/** @type {Array<{ catalogNum: number, slug: string, title: string, min: number, max: number, numberMode?: string, tracingMode?: string, builderConfig?: Record<string, unknown> }>} */
 const NUMBER_GROUPS = [
-  { catalogNum: 187, slug: "writing-num-group-0-5", titleHe: "מספרים 0–5", min: 0, max: 5 },
-  { catalogNum: 188, slug: "writing-num-group-1-5", titleHe: "מספרים 1–5", min: 1, max: 5 },
-  { catalogNum: 189, slug: "writing-num-group-0-9", titleHe: "מספרים 0–9", min: 0, max: 9 },
-  { catalogNum: 190, slug: "writing-num-group-1-10", titleHe: "מספרים 1–10", min: 1, max: 10 },
-  { catalogNum: 191, slug: "writing-num-group-0-10", titleHe: "מספרים 0–10", min: 0, max: 10 },
-  { catalogNum: 192, slug: "writing-num-group-11-20", titleHe: "מספרים 11–20", min: 11, max: 20 },
-  { catalogNum: 193, slug: "writing-num-group-1-20", titleHe: "מספרים 1–20", min: 1, max: 20 },
-  { catalogNum: 194, slug: "writing-num-group-even", titleHe: "מספרים זוגיים", min: 0, max: 20 },
-  { catalogNum: 195, slug: "writing-num-group-odd", titleHe: "מספרים אי-זוגיים", min: 1, max: 19 },
+  { catalogNum: 187, slug: "writing-num-group-0-5", title: "Numbers 0–5", min: 0, max: 5 },
+  { catalogNum: 188, slug: "writing-num-group-1-5", title: "Numbers 1–5", min: 1, max: 5 },
+  { catalogNum: 189, slug: "writing-num-group-0-9", title: "Numbers 0–9", min: 0, max: 9 },
+  { catalogNum: 190, slug: "writing-num-group-1-10", title: "Numbers 1–10", min: 1, max: 10 },
+  { catalogNum: 191, slug: "writing-num-group-0-10", title: "Numbers 0–10", min: 0, max: 10 },
+  { catalogNum: 192, slug: "writing-num-group-11-20", title: "Numbers 11–20", min: 11, max: 20 },
+  { catalogNum: 193, slug: "writing-num-group-1-20", title: "Numbers 1–20", min: 1, max: 20 },
+  { catalogNum: 194, slug: "writing-num-group-even", title: "Even numbers", min: 0, max: 20 },
+  { catalogNum: 195, slug: "writing-num-group-odd", title: "Odd numbers", min: 1, max: 19 },
   {
     catalogNum: 196,
     slug: "writing-num-group-tens",
-    titleHe: "עשרות",
+    title: "Tens",
     min: 10,
     max: 100,
     builderConfig: { numberMode: "number", lineTemplate: "whole_tens" },
@@ -193,7 +193,7 @@ const NUMBER_GROUPS = [
   {
     catalogNum: 197,
     slug: "writing-num-group-before-after",
-    titleHe: "לפני ואחרי",
+    title: "Before and after",
     min: 1,
     max: 10,
     numberMode: "before_after",
@@ -202,7 +202,7 @@ const NUMBER_GROUPS = [
   {
     catalogNum: 198,
     slug: "writing-num-group-sequence",
-    titleHe: "סדר מספרים",
+    title: "Number order",
     min: 1,
     max: 10,
     numberMode: "sequence",
@@ -211,7 +211,7 @@ const NUMBER_GROUPS = [
   {
     catalogNum: 199,
     slug: "writing-num-group-quantity",
-    titleHe: "התאמת כמות",
+    title: "Quantity matching",
     min: 1,
     max: 5,
     numberMode: "quantity_match",
@@ -220,7 +220,7 @@ const NUMBER_GROUPS = [
   {
     catalogNum: 200,
     slug: "writing-num-group-review",
-    titleHe: "חזרה — מספרים",
+    title: "Review — numbers",
     min: 0,
     max: 10,
     builderConfig: {
@@ -237,7 +237,7 @@ const NUMBER_GROUP_ENTRIES = NUMBER_GROUPS.map((group) =>
     slug: group.slug,
     catalogNumber: formatCatalogNumber(group.catalogNum),
     writingCategory: "numbers",
-    titleHe: group.titleHe,
+    title: group.titleHe,
     seed: 1000 + group.catalogNum,
     builderConfig: {
       writingCategory: "numbers",

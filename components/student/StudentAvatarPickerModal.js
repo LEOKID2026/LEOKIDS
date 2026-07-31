@@ -234,7 +234,7 @@ export default function StudentAvatarPickerModal({
         <button
           type="button"
           onClick={() => onClose()}
-          className="absolute left-4 top-4 z-10 text-2xl font-bold text-slate-500 hover:text-slate-800"
+          className="absolute start-4 top-4 z-10 text-2xl font-bold text-slate-500 hover:text-slate-800"
           style={{ direction: "ltr" }}
           aria-label={t("ui.common.close")}
         >
@@ -253,7 +253,7 @@ export default function StudentAvatarPickerModal({
               avatarBackgroundKey={playerAvatarBackground}
               sizeClass="h-16 w-16 text-5xl"
             />
-            <div className="min-w-0 flex-1 text-left">
+            <div className="min-w-0 flex-1 text-start">
               <div className="mb-1 text-xs text-slate-500">{t("ui.student.avatarPlayerNameLabel")}</div>
               <div className="truncate text-lg font-bold text-slate-800">{playerName || t("ui.student.avatarPlayerDefault")}</div>
             </div>

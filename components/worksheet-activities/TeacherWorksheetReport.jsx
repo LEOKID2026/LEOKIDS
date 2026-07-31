@@ -12,7 +12,7 @@ export default function TeacherWorksheetReport({ classId, worksheetId, report, w
   const rows = Array.isArray(report.studentRows) ? report.studentRows : [];
 
   return (
-    <div className="space-y-6 text-left">
+    <div className="space-y-6 text-start">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "total_students")} value={report.totalStudents} />
         <Stat label={globalBurnDownCopy("components__worksheet-activities__TeacherWorksheetReport", "opened_pdf")} value={report.pdfOpenedCount} />
@@ -26,7 +26,7 @@ export default function TeacherWorksheetReport({ classId, worksheetId, report, w
       </div>
 
       <div className="overflow-x-auto rounded-2xl border border-white/10">
-        <table className="w-full text-sm text-left">
+        <table className="w-full text-sm text-start">
           <thead className="bg-white/5 text-white/70">
             <tr>
               <th className="p-3">Student</th>

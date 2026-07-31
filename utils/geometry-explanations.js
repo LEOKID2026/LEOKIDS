@@ -1313,7 +1313,7 @@ export function getTheorySummary(question, topic, gradeKey) {
     ),
     React.createElement(
       "ul",
-      { className: "list-disc pr-4 text-[11px] space-y-0.5 text-right" },
+      { className: "list-disc ps-4 text-[11px] space-y-0.5 text-start" },
       lines.map((line, idx) => React.createElement("li", { key: idx }, line))
     )
   );

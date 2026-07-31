@@ -86,7 +86,7 @@ export default function About() {
               />
             </div>
 
-            <div className="text-center md:text-left max-w-xl flex-1">
+            <div className="text-center md:text-start max-w-xl flex-1">
               <motion.h1
                 className={SP.h1}
                 initial={{ opacity: 0, y: -20 }}

@@ -101,7 +101,7 @@ export default function StudentSurpriseBoxWidget({
 
   return (
     <section
-      className={`mt-4 md:mt-5 w-full text-left overflow-x-hidden ${T.statCard}`}
+      className={`mt-4 md:mt-5 w-full text-start overflow-x-hidden ${T.statCard}`}
       aria-label={copy("surpriseBox", "ariaLabel")}
     >
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-3">

@@ -653,46 +653,95 @@ function isNearlyEmptyStem(text) {
   return t.length < 2;
 }
 
+const OP_SYMBOL_EN = Object.freeze({
+  addition: "+",
+  subtraction: "−",
+  multiplication: "×",
+  division: "÷",
+});
+
+/**
+ * Build display stem from params/kind only (no Hebrew sentence translation).
+ * @param {Record<string, unknown>} question
+ */
+function resolveMathDisplayStem(question) {
+  const rebuilt = rebuildMathStemEn(question);
+  if (rebuilt && String(rebuilt).trim() && !containsHebrew(rebuilt)) {
+    return { stem: rebuilt, source: "params" };
+  }
+  const p = question?.params && typeof question.params === "object" ? question.params : {};
+  const opRaw = String(question?.operation || p.kind || "").replace(/^wp_/, "");
+  const a = p.a ?? question?.a;
+  const b = p.b ?? question?.b;
+  if (a != null && b != null && OP_SYMBOL_EN[opRaw]) {
+    return { stem: `What is ${a} ${OP_SYMBOL_EN[opRaw]} ${b}?`, source: "generic" };
+  }
+  for (const candidate of [p.exerciseText, question?.exerciseText, question?.question]) {
+    if (typeof candidate === "string" && candidate.trim() && !containsHebrew(candidate)) {
+      return { stem: String(candidate).trim(), source: "passthrough" };
+    }
+  }
+  return { stem: null, source: "none" };
+}
+
+/**
+ * Localize math question for Global English display.
+ * Display stems come from params/kind templates — not from translating Hebrew prose.
+ * Option tokens (כן/לא, זוגי/…) use closed dictionaries (logical labels), not sentence MT.
+ */
 export function localizeMathQuestionEn(question) {
   if (!question) return question;
-  const rebuilt = rebuildMathStemEn(question);
-  const out = mapQuestionTextFields({ ...question }, (field, value, q) =>
-    localizeMathField(field, value, { ...q, question: rebuilt || q.question })
-  );
-  if (rebuilt && !containsHebrew(rebuilt)) {
-    const shouldForceRebuild =
-      containsHebrew(String(out.question || "")) ||
-      isNearlyEmptyStem(out.question) ||
-      String(out.question || "").trim() === "Yes" ||
-      String(out.question || "").trim() === "No";
-    if (shouldForceRebuild || !out.question) {
-      out.question = rebuilt;
+
+  const base = { ...question };
+  // Drop authored Hebrew stems so params are the sole stem authority.
+  if (typeof base.question === "string" && containsHebrew(base.question)) base.question = "";
+  if (typeof base.exerciseText === "string" && containsHebrew(base.exerciseText)) base.exerciseText = "";
+  if (typeof base.questionLabel === "string" && containsHebrew(base.questionLabel)) base.questionLabel = "";
+
+  const { stem, source } = resolveMathDisplayStem({ ...question, ...base, params: question.params });
+  const resolvedStem = stem || "Solve.";
+
+  const out = mapQuestionTextFields({ ...base }, (field, value, q) => {
+    if (field === "question" || field === "exerciseText" || field === "questionLabel") {
+      if (!value || containsHebrew(value) || isNearlyEmptyStem(value)) return resolvedStem;
+      return value;
     }
-    if (
-      !out.exerciseText ||
-      containsHebrew(String(out.exerciseText)) ||
-      isNearlyEmptyStem(out.exerciseText) ||
-      String(out.exerciseText || "").trim() === "Yes" ||
-      String(out.exerciseText || "").trim() === "No"
-    ) {
-      out.exerciseText = rebuilt;
+    // Answers/options: closed token maps only (no full-sentence HE→EN).
+    if (isShortAnswerField(field)) {
+      const text = String(value ?? "");
+      if (!containsHebrew(text)) return text;
+      if (YES_NO[text.trim()]) return YES_NO[text.trim()];
+      if (PRIME_COMPOSITE[text.trim()]) return PRIME_COMPOSITE[text.trim()];
+      if (PARITY[text.trim()]) return PARITY[text.trim()];
+      if (/^כן\.?$/.test(text.trim()) || text.trim() === "כ") return "Yes";
+      if (/^לא\.?$/.test(text.trim()) || text.trim() === "ל") return "No";
+      if (OBJECTS_EN[text.trim()]) return OBJECTS_EN[text.trim()];
+      // Numeric / remainder patterns without prose translation
+      const rem = text.match(/^(\d+)\s+ושארית\s+(\d+)$/u);
+      if (rem) return `${rem[1]} remainder ${rem[2]}`;
+      // Leave non-mapped tokens as-is only if no Hebrew letters remain after digit keep
+      const digitsOnly = text.replace(/[\u0590-\u05FF]+/gu, "").trim();
+      return digitsOnly || text;
     }
+    if (!containsHebrew(String(value ?? ""))) return value;
+    return value;
+  });
+
+  out.question = resolvedStem;
+  if (!out.exerciseText || containsHebrew(String(out.exerciseText)) || isNearlyEmptyStem(out.exerciseText)) {
+    out.exerciseText = resolvedStem;
   }
-  if (typeof out.questionLabel === "string" && containsHebrew(out.questionLabel)) {
-    out.questionLabel = applyMathPhrases(out.questionLabel);
-    if (containsHebrew(out.questionLabel)) {
-      out.questionLabel = applyMathPhrases(rebuildMathStemEn(out) || out.questionLabel);
-    }
-  }
+  out.displayStemSource = source;
+
   if (typeof out.correctAnswer === "string") {
     const ca = out.correctAnswer.trim();
     if (YES_NO[ca]) out.correctAnswer = YES_NO[ca];
-    if (PRIME_COMPOSITE[ca]) out.correctAnswer = PRIME_COMPOSITE[ca];
-    if (PARITY[ca]) out.correctAnswer = PARITY[ca];
-    out.correctAnswer = applyMathPhrases(String(out.correctAnswer)).replace(
-      /(\d+)\s+ושארית\s+(\d+)/gu,
-      "$1 remainder $2"
-    );
+    else if (PRIME_COMPOSITE[ca]) out.correctAnswer = PRIME_COMPOSITE[ca];
+    else if (PARITY[ca]) out.correctAnswer = PARITY[ca];
+    else {
+      const rem = ca.match(/^(\d+)\s+ושארית\s+(\d+)$/u);
+      if (rem) out.correctAnswer = `${rem[1]} remainder ${rem[2]}`;
+    }
   }
   if (Array.isArray(out.answers)) {
     out.answers = out.answers.map((a) =>

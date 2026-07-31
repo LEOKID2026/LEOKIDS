@@ -1086,7 +1086,7 @@
 
 .answer-key-item-answer {
   margin: 0;
-  padding-right: 1.85rem;
+  padding-inline-start: 1.85rem;
   font-size: 0.92rem;
   line-height: 1.45;
   font-weight: 600;
@@ -1096,7 +1096,7 @@
 
 .answer-key-item-explanation {
   margin: 0.3rem 0 0;
-  padding-right: 2.25rem;
+  padding-inline-start: 2.25rem;
   font-size: 0.85rem;
   color: #475569;
   line-height: 1.5;

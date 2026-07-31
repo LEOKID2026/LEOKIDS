@@ -32,7 +32,7 @@ export default function SchoolOperatorsPage() {
         portalRole={me?.portalRole}
       >
         {state === "loading" ? (
-          <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING}</p>
+          <p className="text-white/60 text-sm text-start">{SCHOOL_LOADING}</p>
         ) : (
           <SchoolOperatorsManager accessToken={accessToken} enabled={state === "ready" && schoolId} />
         )}

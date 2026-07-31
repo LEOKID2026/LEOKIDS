@@ -560,7 +560,7 @@ export default function StudentCardsPage() {
   if (!rewardsEnabled) {
     return (
       <Layout studentTheme={theme} studentShell="home">
-        <div className={`max-w-6xl mx-auto px-3 sm:px-4 py-8 text-right overflow-x-hidden ${T.pageWrap}`}>
+        <div className={`max-w-6xl mx-auto px-3 sm:px-4 py-8 text-start overflow-x-hidden ${T.pageWrap}`}>
           <p className={T.emptyText}>{copy("cardsPage", "featureDisabled")}</p>
           <div className="w-full min-w-0 sm:w-auto">
             <CardsPageHeaderActions
@@ -725,7 +725,7 @@ export default function StudentCardsPage() {
     if (activeTab === "series") {
       const series = payload?.seriesProgress || [];
       if (!series.length) {
-        return <p className={`text-left py-6 ${T.emptyText}`}>{copy("cardsPage", "seriesEmpty")}</p>;
+        return <p className={`text-start py-6 ${T.emptyText}`}>{copy("cardsPage", "seriesEmpty")}</p>;
       }
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 w-full min-w-0">
@@ -747,7 +747,7 @@ export default function StudentCardsPage() {
   return (
     <Layout studentTheme={theme} studentShell="home">
       <div className={`w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-8 pb-8 overflow-x-hidden ${T.pageWrap}`}>
-        <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 text-right min-w-0">
+        <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 text-start min-w-0">
           <div className="min-w-0">
             <h1 className={T.heroTitle}>{copy("cardsPage", "title")}</h1>
             <p className={T.heroSub}>{copy("cardsPage", "subtitle")}</p>
@@ -763,7 +763,7 @@ export default function StudentCardsPage() {
 
         {messageHe ? (
           <p
-            className={`mb-3 text-sm text-right ${
+            className={`mb-3 text-sm text-start ${
               messageIsError
                 ? "text-rose-700 dark:text-rose-300"
                 : "text-emerald-700 dark:text-emerald-300"

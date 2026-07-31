@@ -86,9 +86,9 @@ function GeometryCurriculumBody() {
   return (
 <div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
             <div className="max-w-none text-slate-800">
-              <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
+              <div className="bg-teal-50 border border-teal-200 border-s-4 border-s-teal-600 shadow-sm p-4 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-2">General structure</h3>
-                <ul className="list-disc pr-6 space-y-2">
+                <ul className="list-disc ps-6 space-y-2">
                   <li>
                     <strong>6 grades</strong>: 1st, 2nd, 3rd, 4th, 5th, 6th
                   </li>
@@ -109,11 +109,11 @@ function GeometryCurriculumBody() {
                 return (
                   <div
                     key={gradeKey}
-                    className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6"
+                    className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6"
                   >
                     <h2 className="text-2xl font-bold mb-3">Grade {GRADE_LABEL[gradeKey]}</h2>
                     <h3 className="text-lg font-semibold mb-2">Topics for this grade:</h3>
-                    <ol className="list-decimal pr-6 space-y-1 mb-4">
+                    <ol className="list-decimal ps-6 space-y-1 mb-4">
                       {topics.map((tk) => {
                         const desc = topicDescriptionForCurriculumPage(gradeKey, tk);
                         return (
@@ -144,7 +144,7 @@ function GeometryCurriculumBody() {
                 );
               })}
 
-              <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg">
+              <div className="bg-teal-50 border border-teal-200 border-s-4 border-s-teal-600 shadow-sm p-4 rounded-lg">
                 <h3 className="text-xl font-bold mb-3 text-center">General summary</h3>
                 <p className="text-center mb-3">
                   The system covers <strong>{topicCountLabel} geometry topics</strong> (plus a mixed mode where available), across
@@ -189,9 +189,9 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
 
       {isEnglish ? (
 <div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+              <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-2">General goals</h3>
-                <ul className="list-disc pr-6 space-y-2">
+                <ul className="list-disc ps-6 space-y-2">
                   {ENGLISH_GENERAL_GOALS.map((goal, idx) => (
                     <li key={`goal-${idx}`}>{goal}</li>
                   ))}
@@ -200,7 +200,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
               {englishGrades.map((grade) => (
                 <div
                   key={grade.key}
-                  className="bg-sky-50 border border-sky-200 border-r-4 border-r-sky-500 shadow-sm p-4 rounded-lg mb-6"
+                  className="bg-sky-50 border border-sky-200 border-s-4 border-s-sky-500 shadow-sm p-4 rounded-lg mb-6"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
                     <h2 className="text-2xl font-bold">{grade.name}</h2>
@@ -214,7 +214,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Learning focus areas</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.focus?.map((item, idx) => (
                           <li key={`focus-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -222,7 +222,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Key skills</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.skills?.map((item, idx) => (
                           <li key={`skills-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -230,7 +230,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Grammar and structures</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.grammar?.map((item, idx) => (
                           <li key={`grammar-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -238,7 +238,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Vocabulary topics</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.vocabulary?.map((item, idx) => (
                           <li key={`vocab-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -247,7 +247,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                   </div>
                   <div className="mt-3">
                     <h4 className="font-semibold mb-1 text-slate-900">Benchmark goals</h4>
-                    <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                    <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                       {grade.curriculum?.benchmark?.map((item, idx) => (
                         <li key={`benchmark-${grade.key}-${idx}`}>{item}</li>
                       ))}
@@ -258,9 +258,9 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
             </div>
       ) : isScience ? (
 <div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
-              <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
+              <div className="bg-teal-50 border border-teal-200 border-s-4 border-s-teal-600 shadow-sm p-4 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-2">General goals</h3>
-                <ul className="list-disc pr-6 space-y-2">
+                <ul className="list-disc ps-6 space-y-2">
                   {SCIENCE_GENERAL_GOALS.map((goal, idx) => (
                     <li key={`science-goal-${idx}`}>{goal}</li>
                   ))}
@@ -270,7 +270,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
               {scienceGrades.map((grade) => (
                 <div
                   key={grade.key}
-                  className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-500 shadow-sm p-4 rounded-lg mb-6"
+                  className="bg-teal-50 border border-teal-200 border-s-4 border-s-teal-500 shadow-sm p-4 rounded-lg mb-6"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
                     <h2 className="text-2xl font-bold">{grade.name}</h2>
@@ -284,7 +284,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Core topics</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.focus?.map((item, idx) => (
                           <li key={`science-focus-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -292,7 +292,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Skills</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.skills?.map((item, idx) => (
                           <li key={`science-skills-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -300,7 +300,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Inquiry and hands-on exploration</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.inquiry?.map((item, idx) => (
                           <li key={`science-inquiry-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -308,7 +308,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-slate-900">Technology connections</h4>
-                      <ul className="list-disc pr-5 space-y-1 text-sm text-slate-700">
+                      <ul className="list-disc ps-5 space-y-1 text-sm text-slate-700">
                         {grade.curriculum?.technology?.map((item, idx) => (
                           <li key={`science-tech-${grade.key}-${idx}`}>{item}</li>
                         ))}
@@ -323,9 +323,9 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
       ) : (
 <div className="rounded-xl border border-slate-200 bg-slate-100/80 p-4 md:p-6">
               <div className="max-w-none text-slate-800">
-                <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg mb-6">
+                <div className="bg-teal-50 border border-teal-200 border-s-4 border-s-teal-600 shadow-sm p-4 rounded-lg mb-6">
                   <h3 className="text-xl font-bold mb-2">General structure</h3>
-                  <ul className="list-disc pr-6 space-y-2">
+                  <ul className="list-disc ps-6 space-y-2">
                     <li><strong>6 grades</strong>: 1st, 2nd, 3rd, 4th, 5th, 6th</li>
                     <li><strong>2 practice levels</strong>{burnDownCopy("components__parent__ParentCurriculumContent", "per_grade_regular_advanced")}</li>
                     <li><strong>{burnDownCopy("components__parent__ParentCurriculumContent", "topics_by_grade")}</strong> - as shown on the Math page</li>
@@ -333,10 +333,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                 </div>
 
                 {/* */}
-                <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+                <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                   <h2 className="text-2xl font-bold mb-3">Grade 1</h2>
                   <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
-                  <ol className="list-decimal pr-6 space-y-1 mb-4">
+                  <ol className="list-decimal ps-6 space-y-1 mb-4">
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "addition_including_addition_with_whole_tens_and_crossing_into_the_second")}</li>
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "subtraction_including_subtraction_with_whole_tens_and_crossing_into_the_")}</li>
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "multiplication_up_to_20")}</li>
@@ -355,10 +355,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                 </div>
 
                 {/* */}
-                <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+                <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                   <h2 className="text-2xl font-bold mb-3">Grade 2</h2>
                   <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
-                  <ol className="list-decimal pr-6 space-y-1 mb-4">
+                  <ol className="list-decimal ps-6 space-y-1 mb-4">
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "addition")}</li>
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "subtraction")}</li>
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "multiplication_times_tables_up_to_10_10")}</li>
@@ -379,10 +379,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                 </div>
 
                 {/* */}
-                <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+                <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                   <h2 className="text-2xl font-bold mb-3">Grade 3</h2>
                   <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
-                  <ol className="list-decimal pr-6 space-y-1 mb-4">
+                  <ol className="list-decimal ps-6 space-y-1 mb-4">
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "addition")}</li>
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "subtraction")}</li>
                     <li>{burnDownCopy("components__parent__ParentCurriculumContent", "multiplication_including_multiplication_with_whole_tens_and_whole_hundre")}</li>
@@ -407,10 +407,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
                 </div>
 
               {/* */}
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+              <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                 <h2 className="text-2xl font-bold mb-3">Grade 4</h2>
                 <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
-                <ol className="list-decimal pr-6 space-y-1 mb-4">
+                <ol className="list-decimal ps-6 space-y-1 mb-4">
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "addition")}</li>
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "subtraction")}</li>
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "multiplication_including_column_vertical_multiplication_multi_digit_fact")}</li>
@@ -440,10 +440,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
               </div>
 
               {/* */}
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+              <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                 <h2 className="text-2xl font-bold mb-3">Grade 5</h2>
                 <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
-                <ol className="list-decimal pr-6 space-y-1 mb-4">
+                <ol className="list-decimal ps-6 space-y-1 mb-4">
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "addition")}</li>
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "subtraction")}</li>
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "multiplication")}</li>
@@ -471,10 +471,10 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
               </div>
 
               {/* */}
-              <div className="bg-sky-100/70 border border-sky-200 border-r-4 border-r-sky-600 shadow-sm p-4 rounded-lg mb-6">
+              <div className="bg-sky-100/70 border border-sky-200 border-s-4 border-s-sky-600 shadow-sm p-4 rounded-lg mb-6">
                 <h2 className="text-2xl font-bold mb-3">Grade 6</h2>
                 <h3 className="text-lg font-semibold mb-2">Available topics:</h3>
-                <ol className="list-decimal pr-6 space-y-1 mb-4">
+                <ol className="list-decimal ps-6 space-y-1 mb-4">
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "addition")}</li>
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "subtraction")}</li>
                   <li>{burnDownCopy("components__parent__ParentCurriculumContent", "multiplication")}</li>
@@ -503,7 +503,7 @@ export default function ParentCurriculumContent({ subject, onSelectSubject }) {
               </div>
 
               {/* */}
-              <div className="bg-teal-50 border border-teal-200 border-r-4 border-r-teal-600 shadow-sm p-4 rounded-lg">
+              <div className="bg-teal-50 border border-teal-200 border-s-4 border-s-teal-600 shadow-sm p-4 rounded-lg">
                 <h3 className="text-xl font-bold mb-3 text-center">General summary</h3>
                 <p className="text-center">
                   The system is tailored by grade, topic, and practice level: <strong>6 grades</strong>, <strong>{burnDownCopy("components__parent__ParentCurriculumContent", "regular_advanced")}</strong>, and the topics shown above and on the Math page. Aligned with the topics commonly taught in elementary schools.

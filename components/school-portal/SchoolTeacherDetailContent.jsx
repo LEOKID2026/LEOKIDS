@@ -376,11 +376,11 @@ export default function SchoolTeacherDetailContent({
     : "";
 
   if (!teacherId) {
-    return <p className="text-white/60 text-sm text-left">No teacher ID found.</p>;
+    return <p className="text-white/60 text-sm text-start">No teacher ID found.</p>;
   }
 
   if (detailBlocking) {
-    return <p className="text-white/60 text-sm text-left">{SCHOOL_LOADING_DATA}</p>;
+    return <p className="text-white/60 text-sm text-start">{SCHOOL_LOADING_DATA}</p>;
   }
 
   return (
@@ -395,7 +395,7 @@ export default function SchoolTeacherDetailContent({
       ) : null}
 
       {detailError ? (
-        <p className="text-red-300 text-sm text-left" role="alert">
+        <p className="text-red-300 text-sm text-start" role="alert">
           {detailError}
         </p>
       ) : null}
@@ -417,10 +417,10 @@ export default function SchoolTeacherDetailContent({
       {!isManager ? (
         <SchoolSection title={SCHOOL_TEACHER_CLASSES_TITLE} data-testid="school-teacher-physical-classes">
           {classesLoading ? (
-            <p className="text-xs text-white/45 mb-3 text-left">{SCHOOL_LOADING_DATA}</p>
+            <p className="text-xs text-white/45 mb-3 text-start">{SCHOOL_LOADING_DATA}</p>
           ) : null}
           {classesError ? (
-            <p className="text-red-300 text-sm text-left" role="alert">
+            <p className="text-red-300 text-sm text-start" role="alert">
               {classesError}
             </p>
           ) : null}
@@ -450,7 +450,7 @@ export default function SchoolTeacherDetailContent({
       ) : null}
 
       {isManager ? (
-        <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`}>
+        <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start`}>
           <p className="text-sm text-white/70">{SCHOOL_MANAGER_ALL_SUBJECTS}</p>
         </div>
       ) : (

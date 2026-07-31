@@ -13,7 +13,7 @@ export default function GuideSeoHubList({ cards, isBright }) {
   return (
     <div className="grid gap-3 sm:grid-cols-2" data-testid="guides-hub-list">
       {cards.map((c) => (
-        <Link key={c.href} href={c.href} className={`block text-right ${card}`}>
+        <Link key={c.href} href={c.href} className={`block text-start ${card}`}>
           <span className={title}>{c.title}</span>
           {c.blurb ? <p className={blurb}>{c.blurb}</p> : null}
         </Link>

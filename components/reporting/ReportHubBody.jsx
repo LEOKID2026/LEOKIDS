@@ -58,7 +58,7 @@ export function ReportNavActionGrid({ items, onSelect }) {
           type="button"
           disabled={item.disabled}
           onClick={() => onSelect(item.id)}
-          className="rounded-xl border border-amber-500/25 bg-amber-500/10 hover:bg-amber-500/20 disabled:opacity-40 disabled:cursor-not-allowed px-4 py-3 text-right transition"
+          className="rounded-xl border border-amber-500/25 bg-amber-500/10 hover:bg-amber-500/20 disabled:opacity-40 disabled:cursor-not-allowed px-4 py-3 text-start transition"
           data-testid={`report-nav-${item.id}`}
         >
           <span className="font-semibold text-amber-100 text-sm block">{item.label}</span>
@@ -332,7 +332,7 @@ export function ReportDetailSectionView({
                 type={clickable ? "button" : undefined}
                 onClick={clickable ? () => onDrilldownSelect(item.drilldownKey) : undefined}
                 aria-label={clickable ? `${label}${countText ? `, ${countText}` : ""}, open list` : undefined}
-                className={`w-full rounded-lg border bg-black/20 px-3 py-2.5 text-sm text-right ${
+                className={`w-full rounded-lg border bg-black/20 px-3 py-2.5 text-sm text-start ${
                   clickable
                     ? "border-amber-500/20 hover:bg-black/35 hover:border-amber-500/35 cursor-pointer transition"
                     : "border-white/10"

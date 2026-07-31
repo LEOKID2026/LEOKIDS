@@ -26,39 +26,39 @@ import {
 import { useWorksheetUi, writingCategoryLabel } from "../../hooks/useWorksheetUi.js";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const TRACING_OPTIONS = [
-  { key: "trace", label: "עקיבה (מסלול מקווקו)" },
-  { key: "copy", label: "העתקה" },
-  { key: "trace_and_copy", label: "עקיבה והעתקה" },
-  { key: "independent", label: "כתיבה עצמאית" },
+const TRACING_OPTION_KEYS = [
+  { key: "trace", labelKey: "worksheets.writingTracingTrace" },
+  { key: "copy", labelKey: "worksheets.writingTracingCopy" },
+  { key: "trace_and_copy", labelKey: "worksheets.writingTracingTraceAndCopy" },
+  { key: "independent", labelKey: "worksheets.writingTracingIndependent" },
 ];
 
-const TRACE_RENDER_OPTIONS = [
-  { key: "full_trace", label: "מסלול מקווקו (עקיבה)" },
-  { key: "faint_model", label: "דוגמה בהירה (העתקה)" },
-  { key: "outline", label: "קו מתאר" },
-  { key: "stroke_path", label: "קו מרכזי (סדר משיכות)" },
+const TRACE_RENDER_OPTION_KEYS = [
+  { key: "full_trace", labelKey: "worksheets.writingTraceRenderFull" },
+  { key: "faint_model", labelKey: "worksheets.writingTraceRenderFaint" },
+  { key: "outline", labelKey: "worksheets.writingTraceRenderOutline" },
+  { key: "stroke_path", labelKey: "worksheets.writingTraceRenderStrokePath" },
 ];
 
-const SCRIPT_OPTIONS = [
-  { key: "print", label: "דפוס" },
-  { key: "script", label: "כתב" },
-  { key: "print_and_script", label: "דפוס וכתב" },
+const SCRIPT_OPTION_KEYS = [
+  { key: "print", labelKey: "worksheets.writingScriptPrint" },
+  { key: "script", labelKey: "worksheets.writingScriptScript" },
+  { key: "print_and_script", labelKey: "worksheets.writingScriptBoth" },
 ];
 
-const NUMBER_MODE_OPTIONS = [
-  { key: "digit", label: "ספרות" },
-  { key: "number", label: "מספרים" },
-  { key: "quantity_match", label: "התאמת כמות" },
-  { key: "sequence", label: "רצף" },
-  { key: "before_after", label: "לפני/אחרי" },
+const NUMBER_MODE_OPTION_KEYS = [
+  { key: "digit", labelKey: "worksheets.writingNumberModeDigit" },
+  { key: "number", labelKey: "worksheets.writingNumberModeNumber" },
+  { key: "quantity_match", labelKey: "worksheets.writingNumberModeQuantity" },
+  { key: "sequence", labelKey: "worksheets.writingNumberModeSequence" },
+  { key: "before_after", labelKey: "worksheets.writingNumberModeBeforeAfter" },
 ];
 
-const PERSONAL_KIND_OPTIONS = [
-  { key: "first_name", label: "שם פרטי" },
-  { key: "full_name", label: "שם מלא" },
-  { key: "word", label: "מילה" },
-  { key: "short_phrase", label: "משפט קצר" },
+const PERSONAL_KIND_OPTION_KEYS = [
+  { key: "first_name", labelKey: "worksheets.writingPersonalFirstName" },
+  { key: "full_name", labelKey: "worksheets.writingPersonalFullName" },
+  { key: "word", labelKey: "worksheets.writingPersonalWord" },
+  { key: "short_phrase", labelKey: "worksheets.writingPersonalShortPhrase" },
 ];
 
 const LINE_COUNT_OPTIONS = [3, 4, 5, 6, 8, 10, 12];
@@ -74,17 +74,17 @@ function manualDefaultCharacters(writingCategory) {
 
 const ITEMS_PER_LINE_OPTIONS = [1, 2, 3, 4, 5, 6];
 
-const FONT_SIZE_OPTIONS = [
-  { key: "sm", label: "קטן" },
-  { key: "md", label: "בינוני" },
-  { key: "lg", label: "גדול" },
-  { key: "xl", label: "גדול מאוד" },
+const FONT_SIZE_OPTION_KEYS = [
+  { key: "sm", labelKey: "worksheets.writingFontSizeSm" },
+  { key: "md", labelKey: "worksheets.writingFontSizeMd" },
+  { key: "lg", labelKey: "worksheets.writingFontSizeLg" },
+  { key: "xl", labelKey: "worksheets.writingFontSizeXl" },
 ];
 
-const PRINT_STRENGTH_OPTIONS = [
-  { key: "light", label: "עדין" },
-  { key: "normal", label: "רגיל" },
-  { key: "strong", label: "חזק" },
+const PRINT_STRENGTH_OPTION_KEYS = [
+  { key: "light", labelKey: "worksheets.writingPrintStrengthLight" },
+  { key: "normal", labelKey: "worksheets.writingPrintStrengthNormal" },
+  { key: "strong", labelKey: "worksheets.writingPrintStrengthStrong" },
 ];
 
 const LETTER_NUMBER_CATEGORIES = new Set(["english_letters", "numbers"]);
@@ -341,9 +341,9 @@ export default function CreateWritingWorksheetTab({
                 onChange({ letterCase: e.target.value, characters: manualDefaultCharacters("english_letters") })
               }
             >
-              <option value="upper">Uppercase</option>
-              <option value="lower">Lowercase</option>
-              <option value="pairs">Upper/lowercase pairs</option>
+              <option value="upper">{t("worksheets.writingLetterCaseUpper")}</option>
+              <option value="lower">{t("worksheets.writingLetterCaseLower")}</option>
+              <option value="pairs">{t("worksheets.writingLetterCasePairs")}</option>
             </select>
           </div>
           <div className="worksheet-form-field">
@@ -425,9 +425,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.numberMode || "digit")}
               onChange={(e) => onChange({ numberMode: e.target.value })}
             >
-              {NUMBER_MODE_OPTIONS.map((opt) => (
+              {NUMBER_MODE_OPTION_KEYS.map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </option>
               ))}
             </select>
@@ -470,7 +470,7 @@ export default function CreateWritingWorksheetTab({
                   {wordPackLabelEn(ENGLISH_WORD_PACKS, packId)}
                 </option>
               ))}
-              <option value="custom">Custom</option>
+              <option value="custom">{t("worksheets.writingWordPackCustom")}</option>
             </select>
           </div>
           {form.wordPackId === "custom" ? (
@@ -483,7 +483,7 @@ export default function CreateWritingWorksheetTab({
                 className={T.inputMt}
                 value={String(form.customWords || "")}
                 onChange={(e) => onChange({ customWords: e.target.value, wordPackId: "custom" })}
-                placeholder="cat, dog"
+                placeholder={t("worksheets.writingCustomWordsPlaceholder")}
               />
             </div>
           ) : null}
@@ -501,9 +501,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.customTextKind || "first_name")}
               onChange={(e) => onChange({ customTextKind: e.target.value })}
             >
-              {PERSONAL_KIND_OPTIONS.map((opt) => (
+              {PERSONAL_KIND_OPTION_KEYS.map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </option>
               ))}
             </select>
@@ -546,9 +546,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.fontSize || WRITING_REQUEST_DEFAULTS.fontSize)}
               onChange={(e) => onChange({ fontSize: e.target.value })}
             >
-              {FONT_SIZE_OPTIONS.map((opt) => (
+              {FONT_SIZE_OPTION_KEYS.map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </option>
               ))}
             </select>
@@ -560,9 +560,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.printStrength || "normal")}
               onChange={(e) => onChange({ printStrength: e.target.value })}
             >
-              {PRINT_STRENGTH_OPTIONS.map((opt) => (
+              {PRINT_STRENGTH_OPTION_KEYS.map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </option>
               ))}
             </select>
@@ -595,9 +595,9 @@ export default function CreateWritingWorksheetTab({
             onChange={(e) => onChange({ tracingMode: e.target.value })}
             disabled={isPublicDemo}
           >
-            {TRACING_OPTIONS.map((opt) => (
+            {TRACING_OPTION_KEYS.map((opt) => (
               <option key={opt.key} value={opt.key}>
-                {opt.label}
+                {t(opt.labelKey)}
               </option>
             ))}
           </select>
@@ -612,9 +612,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.traceRenderMode || "full_trace")}
               onChange={(e) => onChange({ traceRenderMode: e.target.value })}
             >
-              {TRACE_RENDER_OPTIONS.map((opt) => (
+              {TRACE_RENDER_OPTION_KEYS.map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </option>
               ))}
             </select>
@@ -631,9 +631,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.scriptStyle || "print")}
               onChange={(e) => onChange({ scriptStyle: e.target.value })}
             >
-              {SCRIPT_OPTIONS.map((opt) => (
+              {SCRIPT_OPTION_KEYS.map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </option>
               ))}
             </select>

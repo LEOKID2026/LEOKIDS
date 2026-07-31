@@ -27,6 +27,9 @@ export function localizeScienceQuestionEn(question) {
 }
 
 export function localizeScienceBankForLocale(rows, locale = "en") {
-  if (locale !== "en" || !Array.isArray(rows)) return rows;
+  if (!Array.isArray(rows)) return rows;
+  const id = String(locale || "en");
+  if (id === "he" || id === "he-IL") return rows;
+  // en + any not-yet-registered locale → English overlay (stable ids preserved)
   return rows.map((row) => localizeScienceQuestionEn(row));
 }

@@ -9,8 +9,8 @@ import {
 export const SCHOOL_CARD =
   "rounded-xl border border-white/15 bg-gradient-to-br from-black/30 to-black/10 shadow-sm";
 export const SCHOOL_CARD_INNER = "p-4 sm:p-5";
-export const SCHOOL_SECTION_TITLE = "text-base sm:text-lg font-bold text-left mb-1";
-export const SCHOOL_SECTION_DESC = "text-sm text-white/55 text-left mb-4";
+export const SCHOOL_SECTION_TITLE = "text-base sm:text-lg font-bold text-start mb-1";
+export const SCHOOL_SECTION_DESC = "text-sm text-white/55 text-start mb-4";
 
 export function SchoolStatCard({ label, value, hint, accent = "amber" }) {
   const accentRing =
@@ -23,7 +23,7 @@ export function SchoolStatCard({ label, value, hint, accent = "amber" }) {
           : "border-amber-500/30";
 
   return (
-    <div className={`${SCHOOL_CARD} ${accentRing} ${SCHOOL_CARD_INNER} text-left min-w-0`}>
+    <div className={`${SCHOOL_CARD} ${accentRing} ${SCHOOL_CARD_INNER} text-start min-w-0`}>
       <p className="text-xs text-white/50 mb-1 truncate">{label}</p>
       <p className="text-2xl sm:text-3xl font-bold tabular-nums leading-none">{value ?? "-"}</p>
       {hint ? <p className="text-xs text-white/45 mt-2">{hint}</p> : null}
@@ -35,7 +35,7 @@ export function SchoolQuickActionCard({ href, title, description, icon }) {
   return (
     <Link
       href={href}
-      className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} block text-left hover:border-amber-400/40 hover:bg-white/[0.04] transition-colors group min-w-0`}
+      className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} block text-start hover:border-amber-400/40 hover:bg-white/[0.04] transition-colors group min-w-0`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
@@ -61,7 +61,7 @@ export function SchoolSection({ title, description, children, action, ...rest })
   return (
     <section className={`${SCHOOL_CARD} overflow-hidden`} {...rest}>
       <div className="border-b border-white/10 px-4 sm:px-5 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3">
-        <div className="min-w-0 text-left">
+        <div className="min-w-0 text-start">
           <h2 className={SCHOOL_SECTION_TITLE}>{title}</h2>
           {description ? <p className="text-sm text-white/55 mt-0.5">{description}</p> : null}
         </div>
@@ -88,7 +88,7 @@ export function SchoolAlertBanner({ children, tone = "amber" }) {
     sky: "border-sky-500/35 bg-sky-500/10 text-sky-100",
   };
   return (
-    <div className={`rounded-lg border px-4 py-3 text-sm text-left ${tones[tone] || tones.amber}`}>
+    <div className={`rounded-lg border px-4 py-3 text-sm text-start ${tones[tone] || tones.amber}`}>
       {children}
     </div>
   );
@@ -148,7 +148,7 @@ export function SchoolActivityRow({ activity }) {
   return (
     <li className="rounded-lg border border-white/10 bg-black/25 px-3 sm:px-4 py-3 hover:bg-white/[0.03] transition-colors min-w-0">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div className="min-w-0 flex-1 text-left space-y-2">
+        <div className="min-w-0 flex-1 text-start space-y-2">
           <p className="font-semibold text-white break-words">{title}</p>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
             <div className="flex justify-between sm:block gap-2">
@@ -188,7 +188,7 @@ export function SchoolDataTable({ columns, children, emptyMessage }) {
   const hasRows = Boolean(children);
   return (
     <div className="overflow-x-auto -mx-1 px-1">
-      <table className="w-full min-w-[640px] text-sm text-left">
+      <table className="w-full min-w-[640px] text-sm text-start">
         <thead className="bg-black/40 text-white/65 text-xs">
           <tr>
             {columns.map((col) => (
@@ -235,9 +235,9 @@ export function SchoolTableCell({ children, className = "" }) {
 
 export function SchoolPageIntro({ title, subtitle }) {
   return (
-    <div className="mb-6 text-left">
+    <div className="mb-6 text-start">
       <h2 className="text-lg sm:text-xl font-bold text-white/95">{title}</h2>
-      {subtitle ? <p className="text-sm text-white/55 mt-1 max-w-3xl mr-0 ml-auto">{subtitle}</p> : null}
+      {subtitle ? <p className="text-sm text-white/55 mt-1 max-w-3xl ms-auto">{subtitle}</p> : null}
     </div>
   );
 }
@@ -277,7 +277,7 @@ export function SchoolSecondaryButton({ children, disabled, type = "button", onC
 export function SchoolReportPreview({ loading, error, summary, onClose, closeLabel = "Close" }) {
   if (!loading && !error && !summary) return null;
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} mt-4 text-left`}>
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} mt-4 text-start`}>
       {loading ? <p className="text-white/60 text-sm">{loading}</p> : null}
       {error ? (
         <p className="text-red-300 text-sm" role="alert">

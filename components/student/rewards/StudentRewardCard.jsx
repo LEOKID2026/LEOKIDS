@@ -34,7 +34,7 @@ export default function StudentRewardCard({
     <>
       <article
         data-testid="student-reward-card"
-        className={`rounded-xl border shadow-sm p-2.5 sm:p-3 flex flex-col h-full min-h-[240px] text-left overflow-hidden min-w-0 ${T.subjectCard}`}
+        className={`rounded-xl border shadow-sm p-2.5 sm:p-3 flex flex-col h-full min-h-[240px] text-start overflow-hidden min-w-0 ${T.subjectCard}`}
       >
         <button
           type="button"
@@ -155,7 +155,7 @@ export function StudentSeriesProgressCard({ series, T, studentFullName = "" }) {
   return (
     <>
       <article
-        className={`rounded-xl border shadow-sm p-3 sm:p-4 flex flex-col min-h-[120px] text-left min-w-0 overflow-hidden ${T.subjectCard}`}
+        className={`rounded-xl border shadow-sm p-3 sm:p-4 flex flex-col min-h-[120px] text-start min-w-0 overflow-hidden ${T.subjectCard}`}
       >
         <div className="flex justify-between items-start gap-2 mb-2 min-w-0">
           <span className={`font-bold text-sm sm:text-base leading-snug min-w-0 ${T.subjectTitle}`}>
@@ -215,7 +215,7 @@ export function StudentSeriesProgressCard({ series, T, studentFullName = "" }) {
 export function StudentCardsGrid({ children, emptyMessage, T }) {
   const items = Children.toArray(children);
   if (!items.length) {
-    return <p className={`text-left py-6 ${T.emptyText}`}>{emptyMessage}</p>;
+    return <p className={`text-start py-6 ${T.emptyText}`}>{emptyMessage}</p>;
   }
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-3 md:gap-4 w-full min-w-0">

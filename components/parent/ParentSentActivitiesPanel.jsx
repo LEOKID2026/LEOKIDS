@@ -80,8 +80,8 @@ function parentViewResultsButtonClass(bright, { compact = false } = {}) {
 function ParentActivityResultsModal({ activityId, accessToken, onClose, bright = false }) {
   const T = getParentPortalTheme(bright);
   const panelClass = bright
-    ? "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3 shadow-xl text-right text-slate-900"
-    : "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-white/20 bg-[#0f1629] p-4 space-y-3 shadow-xl text-right";
+    ? "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3 shadow-xl text-start text-slate-900"
+    : "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-white/20 bg-[#0f1629] p-4 space-y-3 shadow-xl text-start";
   const titleClass = bright ? "text-lg font-bold text-slate-900" : "text-lg font-bold text-white";
   const mutedClass = bright ? "text-sm text-slate-600" : "text-sm text-white/70";
   const errorClass = bright ? "text-sm text-rose-600" : "text-sm text-red-300";
@@ -262,8 +262,8 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
 function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose, bright = false }) {
   const T = getParentPortalTheme(bright);
   const panelClass = bright
-    ? "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3 shadow-xl text-right text-slate-900"
-    : "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-emerald-500/30 bg-[#0f1629] p-4 space-y-3 shadow-xl text-right";
+    ? "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3 shadow-xl text-start text-slate-900"
+    : "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-emerald-500/30 bg-[#0f1629] p-4 space-y-3 shadow-xl text-start";
   const titleClass = bright ? "text-lg font-bold text-slate-900" : "text-lg font-bold text-emerald-100";
   const mutedClass = bright ? "text-sm text-slate-500" : "text-sm text-white/60";
   const cardClass = bright

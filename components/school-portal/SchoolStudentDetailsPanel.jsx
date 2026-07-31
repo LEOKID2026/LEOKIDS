@@ -264,19 +264,19 @@ export default function SchoolStudentDetailsPanel({
   };
 
   if (loading) {
-    return <p className="text-sm text-white/60 text-left">{SC_LOADING}</p>;
+    return <p className="text-sm text-white/60 text-start">{SC_LOADING}</p>;
   }
 
   if (loadError) {
     return (
-      <p className="text-sm text-red-300 text-left" role="alert">
+      <p className="text-sm text-red-300 text-start" role="alert">
         {loadError}
       </p>
     );
   }
 
   return (
-    <div className={`space-y-4 text-left ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}>
+    <div className={`space-y-4 text-start ${SCHOOL_PORTAL_MODAL_SCROLL_CLASS}`}>
       {!canEdit ? (
         <p className="text-xs text-white/45">{SC_DETAILS_READONLY_BADGE}</p>
       ) : null}

@@ -53,7 +53,7 @@ function ShownOnceBox({ credentials, onDismiss }) {
           <span className="text-white/70">Quick login link:</span>
           <button
             type="button"
-            className="text-amber-300 text-xs underline break-all text-left"
+            className="text-amber-300 text-xs underline break-all text-start"
             onClick={() => copy(credentials.magicLink)}
           >
             Copy link

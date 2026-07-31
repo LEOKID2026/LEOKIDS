@@ -37,7 +37,7 @@ export default function HelpLayoutShell({
           <p className={SP.badge}>Help center</p>
           <h1 className={SP.helpArticleH1}>{title}</h1>
           {summary ? (
-            <p className={`${SP.helpSubtitle} text-left sm:text-center`}>{summary}</p>
+            <p className={`${SP.helpSubtitle} text-start sm:text-center`}>{summary}</p>
           ) : null}
         </header>
         {article && tocSlot ? (

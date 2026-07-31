@@ -12,7 +12,7 @@ import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi.jsx";
 
 export function SchoolLoadingBlock({ message = "Loading…" }) {
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`} role="status" aria-live="polite">
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start`} role="status" aria-live="polite">
       <p className="text-white/60 text-sm">{message}</p>
     </div>
   );
@@ -20,7 +20,7 @@ export function SchoolLoadingBlock({ message = "Loading…" }) {
 
 export function SchoolErrorBlock({ message, onRetry, retryLabel = "Try again" }) {
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left`} role="alert">
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start`} role="alert">
       <p className="text-red-300 text-sm">{message}</p>
       {typeof onRetry === "function" ? (
         <button
@@ -88,7 +88,7 @@ export function SchoolManagementCard({
   selected = false,
   ...rest
 }) {
-  const className = `${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left w-full min-w-0 transition-colors ${
+  const className = `${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start w-full min-w-0 transition-colors ${
     selected ? "border-amber-400/50 bg-amber-500/10" : "hover:border-amber-400/30 hover:bg-white/[0.03]"
   }`;
 
@@ -151,7 +151,7 @@ export function SchoolBackButton({ onClick, label = SCHOOL_BACK }) {
     <button
       type="button"
       onClick={onClick}
-      className="mb-4 text-sm text-amber-300 hover:underline text-left cursor-pointer"
+      className="mb-4 text-sm text-amber-300 hover:underline text-start cursor-pointer"
     >
       {label}
     </button>
@@ -206,7 +206,7 @@ export function SchoolActivityCard({ activity }) {
   const badgeClass = statusStyles[statusKey] || statusStyles.draft;
 
   return (
-    <li className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left min-w-0`}>
+    <li className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start min-w-0`}>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0 flex-1 space-y-2">
           <p className="font-semibold text-white break-words">{title}</p>
@@ -259,7 +259,7 @@ export function SchoolTeacherCard({
       : "-";
 
   return (
-    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-left min-w-0`}>
+    <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start min-w-0`}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <p className="font-semibold text-white break-words">{teacher.displayName || teacher.teacherId}</p>

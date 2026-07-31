@@ -154,8 +154,8 @@ export default function SchoolStudentCreateForm({
   return (
     <section className={`${SCHOOL_CARD} mb-6`} data-testid="school-student-create-form">
       <div className={SCHOOL_CARD_INNER}>
-        <h2 className="text-base font-semibold mb-2 text-left">{SCHOOL_CREATE_STUDENT_SECTION}</h2>
-        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl text-left">
+        <h2 className="text-base font-semibold mb-2 text-start">{SCHOOL_CREATE_STUDENT_SECTION}</h2>
+        <form onSubmit={(e) => void submit(e)} className="space-y-3 max-w-xl text-start">
           <label className="block text-sm">
             <span className="text-white/60 block mb-1">{SCHOOL_CREATE_STUDENT_FULL_NAME}</span>
             <input

@@ -50,7 +50,7 @@ export default function GameHubCard({
         lockHint ? (
           <GamesHubLockFooter ctaClass={ctaClass} label={resolvedLockTitle} hint={lockHint} />
         ) : (
-          <div className="mt-3 text-right">
+          <div className="mt-3 text-start">
             <span className={`${ctaClass} inline-flex items-center gap-1 opacity-90 cursor-not-allowed`}>
               🔒 {resolvedLockTitle}
             </span>
@@ -65,7 +65,7 @@ export default function GameHubCard({
   if (locked || !href) {
     return (
       <div
-        className={`${cardClass} text-right min-h-[9.5rem] md:min-h-[11rem] opacity-80`}
+        className={`${cardClass} text-start min-h-[9.5rem] md:min-h-[11rem] opacity-80`}
         aria-disabled="true"
       >
         {inner}
@@ -74,7 +74,7 @@ export default function GameHubCard({
   }
 
   return (
-    <Link href={href} className={`${cardClass} text-right min-h-[9.5rem] md:min-h-[11rem]`}>
+    <Link href={href} className={`${cardClass} text-start min-h-[9.5rem] md:min-h-[11rem]`}>
       {inner}
     </Link>
   );

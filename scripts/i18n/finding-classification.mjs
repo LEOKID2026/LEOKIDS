@@ -43,7 +43,9 @@ export function classifyFindingKind(file, text, line) {
     /\/dev-student-simulator\/|\/learning\/dev\/|pages\/learning\/dev\/|pages\/learning\/dev-/.test(f) ||
     /components\/ai-hybrid-internal-reviewer-panel/.test(f) ||
     /pages\/student\/pwa-debug\.js/.test(f) ||
-    /\/mock\/|mock-fixtures|feature-flag/.test(f)
+    /\/mock\/|mock-fixtures|feature-flag/.test(f) ||
+    /coloring-upload\/poc\//.test(f) ||
+    /components\/coloring-upload\/poc\//.test(f)
   ) {
     return "developer_only";
   }

@@ -8,8 +8,8 @@ export default function PracticeSeoFaq({ items, isBright }) {
 
   const cls = getPublicSeoWideClasses(isBright);
   const itemShell = isBright
-    ? "rounded-xl border border-sky-100 bg-white/90 px-4 py-3 text-left shadow-sm"
-    : "rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-left";
+    ? "rounded-xl border border-sky-100 bg-white/90 px-4 py-3 text-start shadow-sm"
+    : "rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-start";
 
   return (
     <section className={`space-y-4 ${cls.section}`} aria-labelledby="seo-faq-title">
@@ -19,7 +19,7 @@ export default function PracticeSeoFaq({ items, isBright }) {
       <div className="space-y-2">
         {items.map((item) => (
           <details key={item.q} className={itemShell}>
-            <summary className={`cursor-pointer text-left text-sm font-semibold md:text-base ${cls.heading}`}>
+            <summary className={`cursor-pointer text-start text-sm font-semibold md:text-base ${cls.heading}`}>
               {item.q}
             </summary>
             <p className={`mt-2 w-full text-sm leading-relaxed md:text-base ${cls.body}`}>{item.a}</p>

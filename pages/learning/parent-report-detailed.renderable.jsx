@@ -1218,7 +1218,7 @@ export default function ParentReportDetailedPage() {
                 </div>
                 <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">Coverage by subject</p>
                 <div className="overflow-x-auto rounded-lg border border-white/10">
-                  <table className="w-full text-sm text-left">
+                  <table className="w-full text-sm text-start">
                     <thead>
                       <tr className="border-b border-white/15 bg-white/5">
                         <th className="p-2 font-semibold">Subject</th>

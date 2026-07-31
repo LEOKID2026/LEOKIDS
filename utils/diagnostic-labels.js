@@ -1,9 +1,12 @@
 /**
  * English-only diagnostic labels for parents — no raw technical identifiers.
- * Display label maps live in content-packs/en/learning/diagnostic-labels.json.
+ * Display label maps load via locale pack catalog (fallback to en inside resolver).
  */
 
-import diagnosticLabelsEn from "../content-packs/en/learning/diagnostic-labels.json" with { type: "json" };
+import { resolveRegisteredContentPack } from "../lib/content/resolve-registered-pack.js";
+
+const diagnosticLabelsEn =
+  resolveRegisteredContentPack("en", "learning", "diagnostic-labels.json") || {};
 
 const OPERATION_NAMES_EN = diagnosticLabelsEn.operations;
 const GEOMETRY_TOPIC_NAMES_EN = diagnosticLabelsEn.geometryTopics;
