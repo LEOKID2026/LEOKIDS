@@ -67,6 +67,7 @@ describe("certified runtime surfaces avoid hardcoded RTL", () => {
     /^pages\/dev\//,
     /^components\/ai-hybrid-internal-reviewer-panel\.jsx$/,
     /^styles\/worksheet-print\.css$/,
+    /^styles\/locale-fonts\.css$/, // locale-aware font stacks keyed by html[dir]/lang from registry
     /^utils\/hebrew-audio-attach\.js$/,
     /^lib\/bidi\//,
     /^lib\/i18n\//,

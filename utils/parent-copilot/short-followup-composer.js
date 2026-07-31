@@ -8,7 +8,7 @@ import { classifyShortParentReplyClassHe } from "./conversational-reply-class-he
 import { planConversation } from "./conversation-planner.js";
 import { composeAnswerDraft } from "./answer-composer.js";
 import { compactParentAnswerBlocks } from "./answer-compaction.js";
-import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize.js";
 import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
 
 /** Full new report questions must not be treated as short reply-class continuations. */

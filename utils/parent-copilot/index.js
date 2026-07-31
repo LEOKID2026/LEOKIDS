@@ -25,7 +25,7 @@ import {
   buildClarificationParentCopilotResponse,
   buildQuickActions,
 } from "./render-adapter.js";
-import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize.js";
 import { normalizeFreeformParentUtteranceHe, foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
 import { buildTurnTelemetry } from "./turn-telemetry.js";
 import { maybeGenerateGroundedLlmDraft } from "./llm-orchestrator.js";

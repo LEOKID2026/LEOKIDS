@@ -1,6 +1,6 @@
 /**
- * Global: pedagogy glossary is a no-op — English report copy is already parent-facing.
- * Legacy `*He` filename retained for barrel export compatibility.
+ * ניסוח פדגוגי/מתמטי להורה — מחליף ניסוחים טכניים או דוּ-משמעיים שמופיעים מתוך טקסונומיות/מנוע.
+ * לא משנה לוגיקה; רק שכבת תצוגה לטקסט שכבר נבנה.
  */
 
 /**
@@ -8,5 +8,29 @@
  * @returns {string}
  */
 export function normalizePedagogyForParentReportHe(raw) {
-  return String(raw ?? "");
+  let s = String(raw ?? "").replace(/\s+/g, " ").trim();
+  if (!s) return "";
+
+  // סדר חשוב: ביטויים ארוכים לפני מילה בודדת
+  const pairs = [
+    [/חיבור\s*עם\s*\/\s*בלי\s*נשיאה/gi, "חיבור עם העברה עשרונית ובלי העברה"],
+    [/עם\s*\/\s*בלי\s*נשיאה/gi, "עם העברה ובלי העברה"],
+    [/נשיאה\s+עם\s+ביניים/gi, "העברה עם שלבי ביניים"],
+    [/אלגוריתם\s+נשיאה/gi, "דרך עבודה טובה בחיבור עם העברה"],
+    [/בלי\s+בסיס\s+נשיאה/gi, "בלי בסיס להעברה"],
+    [/רק\s+קיצון\s+מספרים\s+בלי\s+בסיס\s+נשיאה/gi, "רק ספרות הקיצון בלי בסיס להעברה"],
+    [/נכון\s+כשאין\s+נשיאה/gi, "נכון כשאין העברה"],
+    [/כשאין\s+נשיאה/gi, "כשאין העברה"],
+    [/בלי\s+נשיאה/gi, "בלי העברה"],
+  ];
+  for (const [re, rep] of pairs) {
+    s = s.replace(re, rep);
+  }
+
+  // מקרה קצה: רק המילה "נשיאה" כתווית נושא (מתמטיקה)
+  if (/^נשיאה$/u.test(s)) {
+    return "העברה עשרונית (בחיבור)";
+  }
+
+  return s.trim();
 }

@@ -5,7 +5,7 @@
 
 import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { SUBJECT_ORDER, normalizeSubjectId, subjectLabelHe } from "./contract-reader.js";
-import { normalizeExecutiveTrendLinesHe } from "../parent-report-language/parent-facing-normalize-he.js";
+import { normalizeExecutiveTrendLines as normalizeExecutiveTrendLinesHe } from "../parent-report-language/parent-facing-normalize.js";
 
 /**
  * @param {string} s

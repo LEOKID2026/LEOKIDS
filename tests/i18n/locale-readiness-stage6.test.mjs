@@ -23,7 +23,7 @@ import {
 } from "../../lib/i18n/resolve-locale-font.js";
 import { resolveLocalizedAsset } from "../../lib/content/resolve-localized-asset.js";
 import { checkLocalizedAssetsCompleteness } from "../../lib/content/localized-asset-manifest.js";
-import { GLOBAL_HE_FILENAME_ALLOWLIST_PATHS } from "../../lib/i18n/global-he-filename-allowlist.js";
+import { GLOBAL_HE_FILENAME_ALLOWLIST } from "../../lib/i18n/global-he-filename-allowlist.js";
 import { resolveLocaleDefinition } from "../../lib/i18n/locale-registry.js";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -151,18 +151,20 @@ test("locale completeness — en, en-XA, ar-XB", () => {
   }
 });
 
-test("Global *He allowlist — shim paths have no Hebrew authority prose", () => {
-  for (const rel of GLOBAL_HE_FILENAME_ALLOWLIST_PATHS) {
-    const abs = path.join(root, rel);
-    assert.ok(fs.existsSync(abs), rel);
+test("Global *He allowlist — shims stay EN; Hebrew display utilities keep HE gloss", () => {
+  for (const entry of GLOBAL_HE_FILENAME_ALLOWLIST) {
+    const abs = path.join(root, entry.path);
+    assert.ok(fs.existsSync(abs), entry.path);
     const text = fs.readFileSync(abs, "utf8");
-    // Shims / pack-backed may keep zero HE; classroom labels EN; pedagogy noop.
-    if (rel.endsWith("-he.js") || rel.endsWith(".he.js")) {
-      const heCount = (text.match(HE) || []).length;
-      // Comments in pack-backed files may remain; authority modules on allowlist as shim/noop must be low.
-      if (/shim|noop|Authority:/i.test(text) || text.includes("export * from") || text.includes("export {")) {
-        // re-export shims: allow only incidental HE in comments of re-export targets not inlined
-        if (text.length < 800) assert.ok(heCount < 20, `${rel} he=${heCount}`);
+    const heCount = (text.match(HE) || []).length;
+    if (entry.kind === "hebrew_display_utility") {
+      assert.ok(heCount > 0, `${entry.path} should retain Hebrew display gloss`);
+      continue;
+    }
+    if (entry.kind === "shim" || entry.kind === "noop_passthrough") {
+      // Thin re-export / shim modules must not reintroduce Hebrew prose authority.
+      if (text.length < 1200) {
+        assert.ok(heCount < 20, `${entry.path} shim he=${heCount}`);
       }
     }
   }

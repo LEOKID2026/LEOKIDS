@@ -9,7 +9,7 @@ import { planConversation } from "./conversation-planner.js";
 import { composeAnswerDraft } from "./answer-composer.js";
 import { compactParentAnswerBlocks } from "./answer-compaction.js";
 import { readContractsSliceForScope, subjectLabelHe } from "./contract-reader.js";
-import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize.js";
 
 /** @param {Array<{ type: string; answerText: string; source: string }>} blocks */
 function normalizeAnswerBlocksHe(blocks) {
