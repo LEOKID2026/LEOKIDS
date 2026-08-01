@@ -166,7 +166,7 @@ describe("pt-BR structural locks", () => {
     const meaning = resolveEnglishWordMeaning("port", { listKey: "travel", instructionLocale: "pt" });
     assert.notEqual(meaning, "porto");
     assert.equal(resolveLocaleDefinition("pt-BR").id, "pt-BR");
-    assert.equal(resolveLocaleDefinition("pt-PT").id, "en");
+    assert.equal(resolveLocaleDefinition("pt-PT").id, "pt-PT");
   });
 
   test("game pack disk authority parity for all pt-BR game slugs", () => {

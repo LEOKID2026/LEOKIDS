@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "fullscreen": "Ecrã cheia",
+    "dog": "Cão",
+    "on_an_empty_slot_to_add_a_dog_the_price_goes_up_over_time": "em um slot vazio para adicionar um cão. O preço sobe com o tempo.",
+    "complete_the_required_action_to_activate_the_bonus": "Completa a ação necessária para ativar o bônus.",
+    "each_dog_adds_damage_per_second_to_its_lane_when_a_rock_breaks_you_get_c": "Cada cão adiciona dano por segundo à sua pista. Quando uma pedra quebra ganhas moedas.",
+    "there_is_a_daily_cap_and_a_gradual_slowdown_as_you_near_it": "Há um limite diário e uma desaceleração gradual à medida que te aproximas dele."
+  }
+}

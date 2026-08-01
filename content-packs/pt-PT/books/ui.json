@@ -1,0 +1,18 @@
+{
+  "grades": {
+    "g1": "1.º ano",
+    "g2": "2.º ano",
+    "g3": "3.º ano",
+    "g4": "4.º ano",
+    "g5": "5.º ano",
+    "g6": "6.º ano"
+  },
+  "shell": {
+    "audioLoading": "A carregar áudio..."
+  },
+  "sections": {
+    "map": {
+      "Try it yourself": "Experimenta tu próprio"
+    }
+  }
+}

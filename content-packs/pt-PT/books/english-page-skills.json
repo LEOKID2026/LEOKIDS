@@ -1,0 +1,24 @@
+{
+  "grades": {
+    "g2": {
+      "sentence_base": {
+        "title": "Frases curtas - 2.º ano"
+      }
+    },
+    "g4": {
+      "vocab_family": {
+        "title": "Família - encarregados de educação, trabalho"
+      }
+    },
+    "g6": {
+      "grammar_comparatives": {
+        "description": "the best / the most interesting — reforço do 6.º ano"
+      }
+    },
+    "g1": {
+      "grammar_be": {
+        "title": "Eu sou / Tu és - começando"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "pick_coins": "Escolhe moedas",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Ajude Leo, o caixa - escolhe o produto, calcula o troco e devolva o dinheiro certo",
+    "pick_the_product_the_customer_asked_for": "Escolhe o produto que o cliente pediu",
+    "change_you_gave": "Troco que deste:"
+  }
+}

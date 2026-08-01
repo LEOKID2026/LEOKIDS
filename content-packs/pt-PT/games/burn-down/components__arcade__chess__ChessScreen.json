@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "select_a_piece_then_a_destination_square_per_chess_rules": "Seleciona uma peça e, em seguida, uma casa de destino de acordo com as regras do xadrez."
+  }
+}

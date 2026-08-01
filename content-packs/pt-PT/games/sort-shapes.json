@@ -1,0 +1,5 @@
+{
+  "help": {
+    "scoring": "Cada classificação correta adiciona pontos. Um erro é deduzido da pontuação. Se o tempo acabar antes de terminares, o jogo termina."
+  }
+}

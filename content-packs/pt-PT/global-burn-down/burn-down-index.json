@@ -1,0 +1,200 @@
+{
+  "components__reporting__ReportHubModal": {
+    "loading_report": "A carregar relatório…"
+  },
+  "components__school-portal__SchoolReportModal": {
+    "loading_report": "A carregar relatório…"
+  },
+  "components__school-portal__SchoolStaffEmailInviteForm": {
+    "invite_by_user_id_advanced": "Convidar por ID de utilizador (avançado)"
+  },
+  "components__seo__public-seo-wide-defaults": {
+    "want_to_create_more_sheets_and_unlock_every_topic": "Quer criar mais fichas de trabalho e desbloquear todos os tópicos?",
+    "in_the_full_parent_portal_you_can_create_unlimited_worksheets_choose_add": "No portal completo, pode criar fichas de trabalho ilimitadas, escolher tópicos adicionais e combinar fichas de trabalho com prática digital e acompanhamento de progresso.",
+    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "Abra uma conta de encarregado de educação, adicione seu filho e deixe-o praticar em um ritmo que lhe sirva."
+  },
+  "components__seo__PublicSeoEntrySection": {
+    "parent_guides": "Guias para encarregados de educação"
+  },
+  "components__seo__PublicSeoParentCta": {
+    "parent_login_sign_up": "Login / inscrição dos encarregados de educação",
+    "explore_the_parent_portal": "Explore o portal do encarregado de educação"
+  },
+  "components__teacher-portal__GuardianAccessPanel": {
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "O nome de utilizador atual será revogado. O novo nome de utilizador será mostrado apenas uma vez."
+  },
+  "components__teacher-portal__StudentLoginAccessPanel": {
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "O nome de utilizador atual será revogado. O novo nome de utilizador será mostrado apenas uma vez."
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "loading_class_report": "A carregar relatório da turma…"
+  },
+  "components__teacher-portal__TeacherParentMessagePanel": {
+    "write_a_short_message_to_the_parent": "Escreva uma mensagem curta para os encarregados de educação..."
+  },
+  "components__ui__StudentLoadingPanel": {
+    "loading": "A carregar…"
+  },
+  "lib__game-audio__game-audio-manifest": {
+    "train_departs": "O comboio parte"
+  },
+  "lib__games__game-catalog.constants": {
+    "locked_by_parents": "Bloqueado pelos encarregados de educação"
+  },
+  "lib__guest__guest-student.server": {
+    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "Este número já está vinculado a um dos encarregados de educação. Faça login com um nome de utilizador e PIN."
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "this_subject_is_locked_by_the_parents": "Este assunto está bloqueado pelos encarregados de educação.",
+    "you_don_t_have_permission_to_select_this_grade": "Não tem permissão para selecionar este ano."
+  },
+  "lib__parent-server__delete-parent-owned-student.server": {
+    "deleting_the_child_failed_please_try_again_or_contact_support": "Falha ao eliminar o filho. Tente novamente ou entre em contacto com o suporte."
+  },
+  "lib__school-portal__operator-grant-labels": {
+    "manage_child_and_parent_access": "Gerenciar o acesso dos filhos e dos encarregados de educação"
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "Encarregados de educação da turma",
+    "homeroom_child_parents": "Encarregados de educação de crianças em sala de aula"
+  },
+  "lib__site__public-page-seo": {
+    "contact_leo_kids": "Contacto · Leo Kids",
+    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "Entre em contacto com Leo Kids — dúvidas, suporte, relatórios de bugs ou ideias para melhorar o site.",
+    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "Sobre Leo Kids - prática disciplinar, relatórios dos encarregados de educação, jogos, moedas e cartões para crianças.",
+    "parent_portal_leo_kids": "Portal dos encarregados de educação · Leo Kids",
+    "parent_login_leo_kids": "Login dos encarregados de educação · Leo Kids",
+    "sign_in_to_the_leo_kids_parent_portal": "Faça login no portal dos encarregados de educação Leo Kids.",
+    "parent_progress_reports_leo_kids": "Relatórios de progresso dos encarregados de educação · Leo Kids",
+    "printable_worksheets_for_kids_leo_kids": "fichas de trabalho imprimíveis para crianças · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "fichas de trabalho prontas, um gerador de fichas de trabalho e soluções para prática no ensino básico.",
+    "guides_for_parents_leo_kids": "Guias para encarregados de educação · Leo Kids",
+    "parent_progress_tracking_leo_kids_guides": "Acompanhamento do progresso dos encarregados de educação · Guias Leo Kids",
+    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "Como usar jogos e práticas digitais e quando as fichas de trabalho ajudam.",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Prática digital para alunos do ensino básico em matemática, geometria, inglês e ciências.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — prática para alunos do ensino básico."
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1.º ano",
+    "grade_2": "2.º ano",
+    "grade_3": "3.º ano",
+    "grade_4": "4.º ano",
+    "grade_5": "5.º ano",
+    "grade_6": "6.º ano"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1.º ano",
+    "grade_2": "2.º ano",
+    "grade_3": "3.º ano",
+    "grade_4": "4.º ano",
+    "grade_5": "5.º ano",
+    "grade_6": "6.º ano"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "although_the_problem_was_complex_the_team_a_clear_plan": "Embora o problema fosse complexo, a equipa ___ tinha um plano claro.",
+    "before_publishing_the_article_check_fact_carefully": "Antes de publicar o artigo, verifique ___ os factos com atenção."
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1.º ano",
+    "grade_2": "2.º ano",
+    "grade_3": "3.º ano",
+    "grade_4": "4.º ano",
+    "grade_5": "5.º ano",
+    "grade_6": "6.º ano"
+  },
+  "lib__worksheets__worksheet-payload-build.server": {
+    "worksheet": "Ficha de trabalho",
+    "answer_key": "Soluções"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "printable_worksheets": "fichas de trabalho para impressão",
+    "ready_worksheet": "ficha de trabalho pronta",
+    "preview": "Pré-visualização",
+    "answer_key": "Soluções",
+    "separate_answer_key_generated_only_on_explicit_request": "Soluções em separado - gerada apenas mediante solicitação explícita",
+    "no_answers_on_the_worksheet": "Não há respostas na ficha de trabalho",
+    "include_answer_key": "Incluir soluções",
+    "create_worksheet": "Criar ficha de trabalho",
+    "loading": "A carregar…",
+    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "As recomendações são baseadas em tópicos que seu filho praticou recentemente e não no relatório dos encarregados de educação.",
+    "ready_made_worksheets": "fichas de trabalho prontas",
+    "no_worksheets_found": "Nenhuma ficha de trabalho encontrada",
+    "create_a_new_worksheet": "Crie uma nova ficha de trabalho",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Escolha uma matéria, o ano, tópico e nível e crie uma ficha de trabalho pronta para imprimir.",
+    "worksheet": "Ficha de trabalho",
+    "no_worksheet_to_preview_go_back_to_create_one": "Nenhuma ficha de trabalho para visualizar. Volte para criar uma.",
+    "creating_worksheet": "Criando ficha de trabalho…",
+    "the_answer_key_was_updated_to_match_the_current_questions_try_opening_th": "As soluções foram atualizadas para corresponder às perguntas atuais. Tente abrir as soluções novamente.",
+    "create_worksheet_from_recommendation": "Criar ficha de trabalho a partir de recomendação",
+    "try_the_worksheet_generator": "Experimente o gerador de fichas de trabalho",
+    "ready_made_worksheets_by_grade": "fichas de trabalho prontas por ano",
+    "preview_data_is_not_available_go_back_to_the_worksheets_page_and_choose_": "Os dados de pré-visualização não estão disponíveis. Volte para a página de fichas de trabalho e escolha uma ficha de trabalho novamente.",
+    "back_to_worksheets": "Voltar às fichas de trabalho"
+  },
+  "pages__school__messages": {
+    "loading": "A carregar…"
+  },
+  "pages__school__pending": {
+    "registration_status": "Status do registo"
+  },
+  "pages__student__worksheet__[worksheetId]": {
+    "mark_this_worksheet_as_finished": "Marcar esta ficha de trabalho como concluída?"
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "worksheets": "Fichas de trabalho"
+  },
+  "pages__teacher__worksheets__index": {
+    "worksheets": "Fichas de trabalho"
+  },
+  "pages__teacher__worksheets__[worksheetId]__report": {
+    "worksheet_report": "Relatório de ficha de trabalho"
+  },
+  "utils__expert-review-pack-artifact-snapshot": {
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Apenas suporte diagnóstico educacional interno - não clínico/não voltado para os encarregados de educação."
+  },
+  "lib__guest__guest-student": {
+    "server": {
+      "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "Este número já está vinculado a um dos encarregados de educação. Faça login com um nome de utilizador e PIN."
+    }
+  },
+  "lib__learning__subject-permissions__subject-access": {
+    "server": {
+      "you_don_t_have_permission_to_select_this_grade": "Não tem permissão para selecionar este ano."
+    }
+  },
+  "lib__worksheets__worksheet-payload-build": {
+    "server": {
+      "worksheet": "Ficha de trabalho",
+      "answer_key": "Soluções"
+    }
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Aprendizagem para alunos do ensino básico"
+  },
+  "lib__classroom-activities__student-activity-error-labels": {
+    "client": {
+      "you_do_not_have_permission_to_open_this_activity": "Não tem permissão para abrir esta atividade",
+      "this_activity_is_not_assigned_to_you": "Esta atividade não está atribuída a si",
+      "you_already_submitted_this_activity": "Já enviou esta atividade",
+      "you_already_answered_this_question": "Já respondeu esta pergunta"
+    }
+  },
+  "pages__api__parent__create-student": {
+    "you_can_add_up_to_3_children_on_this_parent_account": "Pode adicionar até três filhos nesta conta de encarregado de educação"
+  },
+  "pages__teacher__class__[classId]": {
+    "you_do_not_have_permission_to_view_this_class_report": "Não tem permissão para visualizar este relatório da turma."
+  },
+  "pages__teacher__student__[studentId]": {
+    "you_do_not_have_permission_to_view_this_student_s_report": "Não tem permissão para visualizar o relatório deste aluno."
+  },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "Ouça a pergunta e responda com base no que ouve."
+  },
+  "lib__classroom-activities__student-activity-error-labels.client": {
+    "you_do_not_have_permission_to_open_this_activity": "Não tem permissão para abrir esta atividade",
+    "this_activity_is_not_assigned_to_you": "Esta atividade não está atribuída a si",
+    "you_already_submitted_this_activity": "Já enviou esta atividade",
+    "you_already_answered_this_question": "Já respondeu esta pergunta"
+  }
+}

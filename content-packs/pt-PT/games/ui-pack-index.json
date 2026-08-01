@@ -1,0 +1,156 @@
+{
+  "bingo": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "checkers": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "chess": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "dominoes": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "flyer": {
+    "help": {
+      "howToPlay": "Segura o botão ou o ecrã para voar e larga para descer. Recolhe moedas e evite obstáculos.",
+      "rewards": "Quanto mais longe voares e mais pontos ganhares, mais moedas e diamantes ganhasá."
+    }
+  },
+  "fourline": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "fruit-slice": {
+    "help": {
+      "howToPlay": "Arrasta o dedo pelo ecrã para cortar frutas voadoras. Evita bombas - pode cometer três erros.",
+      "tip": "Corta apenas frutas - se vires uma bomba, é melhor ignorá-la."
+    }
+  },
+  "leo-gifts": {
+    "help": {
+      "howToPlay": "Divide os presentes entre as crianças – escolhe quantos cada criança ganha e quantos sobram para Leo, depois toca em “Verificar Divisão”.",
+      "rewards": "As moedas são concedidas com base em quantas perguntas respondeste corretamente, precisão, sequências e nível de dificuldade - mesmo que o jogo tenha terminado devido a erros.",
+      "tip": "Verifica se dividiste tudo e se Leo não ficou com muitos - podes dar mais a cada criança."
+    }
+  },
+  "leo-lab": {
+    "help": {
+      "howToPlay": "Lê a tarefa do experimento, escolhe os itens da prateleira (arraste ou toque), coloca-os na mesa do laboratório e toca em \"Verificar experimento\".",
+      "rewards": "As moedas são concedidas com base em quantas experiências tiveste sucesso, nível de dificuldade, precisão, sequências e conclusão de 20 experiências - somente se tiveste sucesso pelo menos uma vez."
+    }
+  },
+  "leo-miners": {
+    "help": {
+      "howToPlay": "Adiciona cães mineiros ao tabuleiro, arraste cães do mesmo nível para fundi-los e quebre pedras para ganhar moedas e pontos."
+    }
+  },
+  "leo-number-path": {
+    "help": {
+      "howToPlay": "Escolhe os números do caminho com base na tarefa - números pares, múltiplos, contagem pulada ou uma sequência - e toca em \"Verificar caminho\".",
+      "scoring": "Correto na primeira tentativa +30, na segunda tentativa +20, na terceira tentativa +10. Após 3 erros passas para a próxima tarefa.",
+      "rewards": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e finalização do caminho.",
+      "tip": "Presta atenção se a ordem é importante - para contagem pulada e sequências precisas escolher em ordem."
+    }
+  },
+  "leo-supermarket": {
+    "help": {
+      "howToPlay": "Um cliente pede produtos - escolhe-os na prateleira, calcula o troco e escolhe as moedas correspondentes. Toca em \"Dar troco\" quando estiver pronto.",
+      "rewards": "As moedas são concedidas com base em quantos clientes atendeste, precisão, sequências e nível de dificuldade - mesmo que não tenhas atendido todos os 20 clientes.",
+      "tip": "Verifica o total da compra e quanto o cliente pagou - calcula quanto troco devolver."
+    }
+  },
+  "leo-word-train": {
+    "title": "Comboio de palavras de Leo",
+    "blurb": "Letras, palavras e frases em inglês – andando nos vagões do comboio",
+    "help": {
+      "howToPlay": "Escolhe um cartão, carrega-o em um vagão vazio e toca em “Enviar o Comboio”. Quando a resposta estiver correta - o comboio parte!",
+      "rewards": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e nível de dificuldade."
+    },
+    "accessibility": {
+      "title": "Comboio de palavras de Leo"
+    }
+  },
+  "ludo": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "maze": {
+    "blurb": "Encontra a saída do labirinto antes que o tempo acabe!"
+  },
+  "picture-puzzle": {
+    "blurb": "Completa as peças da foto do Leo!",
+    "help": {
+      "howToPlay": "Arraste as peças da imagem para o lugar certo no tabuleiro. Completa todas as peças antes que o tempo acabe.",
+      "scoring": "Quanto mais rápido terminares e menos movimentos usar, maior será a pontuação. Se o tempo acabar antes de terminares, não há vitória."
+    }
+  },
+  "recycling-factory": {
+    "help": {
+      "howToPlay": "Arrasta ou toca em um item da esteira transportadora e escolhe a caixa correta. Classifica itens suficientes antes de atingir o número máximo de erros.",
+      "rewards": "As moedas são concedidas com base em quantos itens classificaste corretamente, precisão, sequências e alcance da meta - mesmo que não tenhas terminado o jogo inteiro."
+    }
+  },
+  "snakes-and-ladders": {
+    "help": {
+      "howToPlay": "Siga as instruções no ecrã para este jogo."
+    }
+  },
+  "target-tap": {
+    "help": {
+      "howToPlay": "Toque nos alvos que aparecem no ecrã antes que desapareçam. Tens três vidas."
+    }
+  },
+  "balloons": {
+    "help": {
+      "howToPlay": "Toque nos balões para estourá-los. Tens três vidas e um minuto. Cuidado com as bombas!"
+    }
+  },
+  "catcher": {
+    "help": {
+      "rewards": "Quanto mais pontos ganhas, mais moedas e diamantes ganhasá para o teu mundo infantil."
+    }
+  },
+  "leo-bakery": {
+    "help": {
+      "rewards": "As moedas são concedidas com base em quantos pedidos preparaste corretamente, precisão, sequências e nível de dificuldade."
+    }
+  },
+  "leo-jump": {
+    "help": {
+      "rewards": "Quanto mais corres e mais pontos ganhas, mais moedas e diamantes ganhas."
+    }
+  },
+  "leo-pizzeria": {
+    "help": {
+      "rewards": "As moedas são concedidas com base em quantos clientes atendeste, precisão, sequências e nível de dificuldade - mesmo que não tenhas atendido todos os 20 clientes."
+    }
+  },
+  "leo-word-detective": {
+    "help": {
+      "rewards": "As moedas são concedidas com base em quantos dos 20 casos resolveste, precisão, sequências e nível de dificuldade."
+    }
+  },
+  "memory": {
+    "help": {
+      "howToPlay": "Toca em uma carta para virá-la e encontra o par correspondente. Cada par que encontrares permanece aberto.",
+      "scoring": "Começas com uma pontuação alta - quanto mais demoras, mais baixa ela cai. Encontrar todos os pares antes que o tempo acabe = uma vitória.",
+      "tip": "Tente lembrar onde ti viu cada imagem - mesmo que não tenha encontrado o par imediatamente."
+    }
+  },
+  "sort-shapes": {
+    "help": {
+      "scoring": "Cada classificação correta adiciona pontos. Um erro é deduzido da pontuação. Se o tempo acabar antes de terminares, o jogo termina."
+    }
+  }
+}

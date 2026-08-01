@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "you_want_a_fence_around_a_rectangular_field_only_the_outer_boundary_what": "Queres uma cerca ao redor de um campo retangular (apenas o limite externo). O que costuma calcular para saber quanta cerca comprar?",
+    "planning_project_a_fence_around_a_rectangular_field_outer_edge_only_to_o": "Projeto de planejamento: uma cerca ao redor de um campo retangular (apenas na borda externa). Para solicitar o comprimento da cerca – o que medes?",
+    "in_a_triangle_two_angles_are_known_50_and_60_what_can_you_conclude_about": "Em um triângulo, dois ângulos são conhecidos: 50° e 60°. O que podes concluir sobre o terceiro ângulo antes de calcular o número?",
+    "same_shape_and_same_size_you_can_place_one_on_the_other": "Mesma forma e mesmo tamanho (podes colocar um sobre o outro)",
+    "rectangular_box_first_you_want_the_volume_what_is_a_reasonable_calculati": "Caixa retangular: primeiro queres o volume. O que é uma ordem de cálculo razoável?",
+    "in_a_right_triangle_two_legs_are_known_and_you_want_the_hypotenuse_what_": "Em um triângulo retângulo, dois catetos são conhecidos e queres a hipotenusa. Qual é a ferramenta certa?"
+  }
+}

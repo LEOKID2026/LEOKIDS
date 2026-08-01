@@ -1,0 +1,56 @@
+{
+  "enter": {
+    "pageDescription": "Experimenta o mundo infantil sem se inscrever",
+    "intro": "Escolhe um ano e explore o mundo infantil. {minutes} minutos de jogo e aprendizagem — sem inscrição.",
+    "chooseGradeLegend": "escolhe um ano",
+    "activeSessionNote": "Tens uma demonstração ativa – alterar o ano não zera o cronômetro."
+  },
+  "homeButton": {
+    "labelDesktop": "Experimenta o mundo infantil",
+    "ariaLabel": "Experimenta o mundo infantil – modo de demonstração"
+  },
+  "gate": {
+    "loading": "A carregar modo de demonstração…"
+  },
+  "display": {
+    "myRoomMessage": "Meu quarto – pré-visualização da demonstração"
+  },
+  "worksheet": {
+    "pageTitle": "ficha de trabalho - modo de demonstração",
+    "intro": "Pode navegar pelas fichas de trabalho na lista da página inicial. O envio digital não está disponível no modo de demonstração."
+  },
+  "myRoom": {
+    "saveBlocked": "Guardar não está disponível no modo de demonstração."
+  },
+  "friends": {
+    "demoUnavailable": "Número de amigos e Leo – pré-visualização da demonstração. Adicionar amigos e convites não está disponível."
+  },
+  "grades": {
+    "g1": "1.º ano",
+    "g2": "2.º ano",
+    "g3": "3.º ano",
+    "g4": "4.º ano",
+    "g5": "5.º ano",
+    "g6": "6.º ano"
+  },
+  "parentPortal": {
+    "dashboardSubtitle": "Modo de demonstração – portal do encarregado de educação",
+    "homeParentAriaLabel": "Demonstração do responsável – portal somente pré-visualização",
+    "homeParentDismissAriaLabel": "Botão Ignorar demonstração dos encarregados de educação",
+    "enterPageTitle": "Demonstração para encarregados de educação - LEO KIDS",
+    "enterPageDescription": "Explore o portal do encarregado de educação com exemplos de filhos, relatórios e recomendações — somente pré-visualização",
+    "enterHeading": "Demonstração do portal do encarregado de educação",
+    "enterIntro": "Explore o portal dos encarregados de educação com três exemplos de filhos, relatórios, atividades e recomendações – somente pré-visualização, sem inscrição.",
+    "enterActiveSessionNote": "tem uma demonstração para encarregados de educação ativa – pode continuar de onde parou.",
+    "enterButton": "Entrar no portal do encarregado de educação",
+    "readOnlyDefault": "O modo de demonstração é somente pré-visualização. As alterações não podem ser salvas.",
+    "readOnlyWorksheets": "Modo de demonstração – pode navegar pelas fichas de trabalho, mas não pode criar novas.",
+    "apiReadOnlyError": "O modo de demonstração é somente pré-visualização."
+  },
+  "timeExpiredModal": {
+    "body": "{minutes} minutos se passaram desde o início da demonstração. Podes continuar navegando no mundo infantil, mas não pode iniciar um novo jogo ou atividade."
+  },
+  "onlineGameUnavailable": {
+    "body": "No modo demo podes navegar no fliperama e ver os jogos, mas o modo multijogador online não está ativo."
+  }
+}

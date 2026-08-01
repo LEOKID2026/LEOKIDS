@@ -4,8 +4,8 @@
  * Global: never return Hebrew. WORD_LISTS is an English ID catalog.
  * Spanish: country packs deep-merge onto es-419 (e.g. es-CO → es-419 → en word).
  * Portuguese Brazil: pt-BR → en.
- * Bare `pt` is NOT an alias of pt-BR (reserved for future pt-PT); it follows
- * registry resolution (currently disabled → English meanings).
+ * Portugal: pt-PT → pt-BR → en.
+ * Bare `pt` is NOT an alias of pt-BR (or pt-PT for meanings); English meanings.
  */
 
 import { WORD_LISTS } from "./word-lists.js";
@@ -20,6 +20,7 @@ import { WORD_MEANINGS_ES_PA } from "./word-meanings/es-PA.js";
 import { WORD_MEANINGS_ES_UY } from "./word-meanings/es-UY.js";
 import { WORD_MEANINGS_ES_ES } from "./word-meanings/es-ES.js";
 import { WORD_MEANINGS_PT_BR } from "./word-meanings/pt-BR.js";
+import { WORD_MEANINGS_PT_PT } from "./word-meanings/pt-PT.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -36,6 +37,7 @@ const MEANING_PACKS = {
   "es-UY": WORD_MEANINGS_ES_UY,
   "es-ES": WORD_MEANINGS_ES_ES,
   "pt-BR": WORD_MEANINGS_PT_BR,
+  "pt-PT": WORD_MEANINGS_PT_PT,
 };
 
 /**
@@ -66,7 +68,7 @@ function isSpanishInstructionLocale(locale) {
 function isPortugueseBrazilInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   if (!tag) return false;
-  // Exact Brazil only — never bare `pt` or future `pt-PT`.
+  // Exact Brazil only — never bare `pt` or pt-PT.
   return tag === "pt-br";
 }
 
@@ -74,8 +76,23 @@ function isPortugueseBrazilInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isPortuguesePortugalInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  if (!tag) return false;
+  // Exact Portugal only — never bare `pt` (not an auto-alias).
+  return tag === "pt-pt";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isLocalizedMeaningLocale(locale) {
-  return isSpanishInstructionLocale(locale) || isPortugueseBrazilInstructionLocale(locale);
+  return (
+    isSpanishInstructionLocale(locale) ||
+    isPortugueseBrazilInstructionLocale(locale) ||
+    isPortuguesePortugalInstructionLocale(locale)
+  );
 }
 
 /**
@@ -91,6 +108,7 @@ function getMergedMeaningPack(instructionLocale) {
   let chainLocale = tag;
   if (tag === "es" || tag === "es419") chainLocale = "es-419";
   else if (tag === "pt-br") chainLocale = "pt-BR";
+  else if (tag === "pt-pt") chainLocale = "pt-PT";
   const chain = getLocaleFallbackChain(chainLocale);
   /** @type {Record<string, Record<string, string>>} */
   let merged = {};
@@ -156,7 +174,11 @@ export function resolveEnglishWordMeaning(enWord, { listKey, instructionLocale }
   return word;
 }
 
-export { isSpanishInstructionLocale, isPortugueseBrazilInstructionLocale };
+export {
+  isSpanishInstructionLocale,
+  isPortugueseBrazilInstructionLocale,
+  isPortuguesePortugalInstructionLocale,
+};
 
 /**
  * Return { [enWord]: meaning } for a list.

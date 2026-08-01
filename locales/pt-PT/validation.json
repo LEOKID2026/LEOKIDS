@@ -1,0 +1,18 @@
+{
+  "missingUserId": "O ID do utilizador está faltando.",
+  "unauthorized": "Não está ligado.",
+  "forbidden": "Não tem permissão para esta ação.",
+  "notFound": "Não conseguimos encontrar o que solicitou.",
+  "api": {
+    "staff_user_not_found": "Nenhum utilizador registrado encontrado com este e-mail. Inscreva-se/faça login primeiro no portal do professor e, em seguida, conecte-se à escola.",
+    "auth_list_failed": "Não foi possível carregar utilizadores de autenticação — verifique se a chave do servidor está configurada",
+    "auth_users_unavailable": "Nenhum utilizador de autenticação foi encontrado e não foi possível criar uma lista a partir do banco de dados",
+    "cannot_delete_self": "Não é possível eliminar a conta conectada",
+    "delete_blocked_by_dependencies": "Não é possível eliminar — existem registos dependentes",
+    "auth_delete_failed": "Falha ao eliminar conta",
+    "dependency_cleanup_failed": "Falha na limpeza do registo dependente",
+    "user_not_found": "Utilizador não encontrado",
+    "count_failed": "Não foi possível contar registos dependentes"
+  },
+  "invalidGrade": "Esse ano não é válido."
+}

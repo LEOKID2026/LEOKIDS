@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "grades_1_2": "1º–2.º ano",
+    "grades_3_4": "3º–4.º ano",
+    "grades_5_6": "5º–6.º ano",
+    "fill_in_the_missing_letter_on_the_car": "Preenche a letra que falta no carro",
+    "word_order_looks_good_the_train_is_leaving": "A ordem das palavras parece boa - o comboio está partindo!",
+    "awesome_you_filled_in_the_missing_letter": "Incrível! Preencheste a letra que faltava.",
+    "excellent_you_built_the_word_on_the_cars": "Excelente! Construíste a palavra nos carros.",
+    "great_you_completed_the_missing_letters": "Ótimo! Completaste as letras que faltavam."
+  }
+}

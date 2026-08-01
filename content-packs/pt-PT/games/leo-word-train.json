@@ -1,0 +1,11 @@
+{
+  "title": "Comboio de palavras de Leo",
+  "blurb": "Letras, palavras e frases em inglês – andando nos vagões do comboio",
+  "help": {
+    "howToPlay": "Escolhe um cartão, carrega-o em um vagão vazio e toca em “Enviar o Comboio”. Quando a resposta estiver correta - o comboio parte!",
+    "rewards": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e nível de dificuldade."
+  },
+  "accessibility": {
+    "title": "Comboio de palavras de Leo"
+  }
+}

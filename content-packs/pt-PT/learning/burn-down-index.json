@@ -1,0 +1,42 @@
+{
+  "lib__learning-client__student-subject-practice-gate": {
+    "loading": "A carregar…"
+  },
+  "lib__learning-shared__student-display-truth": {
+    "loading": "A carregar…",
+    "credited_learning_time_questions_books_and_parent_activities": "Tempo de aprendizagem creditado – perguntas, livros e atividades dos encarregados de educação"
+  },
+  "utils__curriculum-audit__israeli-primary-curriculum-map": {
+    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "1.º e 2.º anos: gramática não assumida como núcleo; separação exposição/enriquecimento.",
+    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Ensino básico de Israel (1.º a 6.º anos) - mapeamento estruturado conservador + âncoras de fontes consultivas"
+  },
+  "utils__curriculum-audit__official-primary-curriculum-spine": {
+    "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu": "Anos do ensino básico israelenses de 1.º a 6.º ano - coluna de planejamento ancorada na fonte (não certificação de plano de estudos)"
+  },
+  "lib__learning-client__studentHomeDashboardClient": {
+    "great_to_see_you_every_practice_session_brings_you_closer_to_your_goal": "Que bom ver-te! Cada sessão prática aproxima-te do o teu objetivo.",
+    "the_monthly_goal_is_usually_marked_after_you_reach_the_minutes_goal_keep": "A meta mensal geralmente é marcada depois de atingires a meta de minutos – continue aprendendo!"
+  },
+  "lib__learning-client__subjectMonthlyPersistenceView": {
+    "you_got_the_monthly_persistence_reward_well_done": "Recebeste a recompensa mensal de persistência! Bom trabalho!",
+    "you_reached_the_monthly_goal_keep_learning": "Atingiste a meta mensal! Continuar aprendendo!"
+  },
+  "pages__learning__english-master": {
+    "read_each_question_carefully_sometimes_you_choose_an_answer_sometimes_yo": "Lê cada pergunta com atenção – às vezes escolhes uma resposta, às vezes escreves em inglês.",
+    "high_scores_answer_streaks_stars_and_badges_help_you_level_up_as_a_playe": "Pontuações mais altas, sequências de respostas, estrelas e emblemas ajudam-te a subir de nível como jogador."
+  },
+  "utils__geometry-conceptual-bank": {
+    "you_want_a_fence_around_a_rectangular_field_only_the_outer_boundary_what": "Queres uma cerca ao redor de um campo retangular (apenas o limite externo). O que costuma calcular para saber quanta cerca comprar?",
+    "planning_project_a_fence_around_a_rectangular_field_outer_edge_only_to_o": "Projeto de planejamento: uma cerca ao redor de um campo retangular (apenas na borda externa). Para solicitar o comprimento da cerca – o que medes?",
+    "in_a_triangle_two_angles_are_known_50_and_60_what_can_you_conclude_about": "Em um triângulo, dois ângulos são conhecidos: 50° e 60°. O que podes concluir sobre o terceiro ângulo antes de calcular o número?",
+    "same_shape_and_same_size_you_can_place_one_on_the_other": "Mesma forma e mesmo tamanho (podes colocar um sobre o outro)",
+    "rectangular_box_first_you_want_the_volume_what_is_a_reasonable_calculati": "Caixa retangular: primeiro queres o volume. O que é uma ordem de cálculo razoável?",
+    "in_a_right_triangle_two_legs_are_known_and_you_want_the_hypotenuse_what_": "Em um triângulo retângulo, dois catetos são conhecidos e queres a hipotenusa. Qual é a ferramenta certa?"
+  },
+  "utils__learning-content-en__english": {
+    "with_you_we_they_we_use_are": "Com tu / nós / eles usamos somos."
+  },
+  "utils__topic-next-step-engine": {
+    "you_can_try_advanced_on_the_same_topic": "Podes tentar o avançado no mesmo tópico."
+  }
+}

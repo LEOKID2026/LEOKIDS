@@ -1,0 +1,7 @@
+{
+  "help": {
+    "howToPlay": "Um cliente pede produtos - escolhe-os na prateleira, calcula o troco e escolhe as moedas correspondentes. Toca em \"Dar troco\" quando estiver pronto.",
+    "rewards": "As moedas são concedidas com base em quantos clientes atendeste, precisão, sequências e nível de dificuldade - mesmo que não tenhas atendido todos os 20 clientes.",
+    "tip": "Verifica o total da compra e quanto o cliente pagou - calcula quanto troco devolver."
+  }
+}

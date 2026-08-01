@@ -1,0 +1,2 @@
+{ "probesByErrorTag": { "fact_recall_gap": { "skill": "Relembrando um facto da lição" } }, "probesByDiagnosticSkillId": { "sci_body_fact_recall": { "skill": "Relembrando um facto sobre corpo/sistemas" } }
+}

@@ -18,6 +18,11 @@ import {
   SECTIONS_PT_BR,
 } from "./pt-BR/index.js";
 import {
+  ALL_ARTICLES_PT_PT,
+  BY_SECTION_PT_PT,
+  SECTIONS_PT_PT,
+} from "./pt-PT/index.js";
+import {
   ALL_ARTICLES_EN_AU,
   BY_SECTION_EN_AU,
   SECTIONS_EN_AU,
@@ -65,6 +70,8 @@ export {
   SECTIONS_ES_ES,
   ALL_ARTICLES_PT_BR,
   SECTIONS_PT_BR,
+  ALL_ARTICLES_PT_PT,
+  SECTIONS_PT_PT,
   ALL_ARTICLES_EN_AU,
   SECTIONS_EN_AU,
   ALL_ARTICLES_EN_NZ,
@@ -133,7 +140,7 @@ export const ALL_ARTICLES = [
 
 /**
  * @param {string|null|undefined} [locale]
- * @returns {"en"|"es-419"|"es-ES"|"pt-BR"|"en-AU"|"en-NZ"|"en-IE"|"en-GB"|"en-SG"|"en-ZA"|"en-SCT"|"en-NIR"}
+ * @returns {"en"|"es-419"|"es-ES"|"pt-BR"|"pt-PT"|"en-AU"|"en-NZ"|"en-IE"|"en-GB"|"en-SG"|"en-ZA"|"en-SCT"|"en-NIR"}
  */
 export function resolveHelpLocale(locale) {
   const id = String(locale || "en")
@@ -150,7 +157,9 @@ export function resolveHelpLocale(locale) {
   if (id === "en-za") return "en-ZA";
   // Canada / Philippines have no Help overlay — inherit English base.
   if (id === "en-ca" || id === "en-ph") return "en";
-  if (id === "pt-br" || id === "pt") return "pt-BR";
+  // Portugal owns public path /pt; bare `pt` is not an alias of Brazil.
+  if (id === "pt-pt" || id === "pt") return "pt-PT";
+  if (id === "pt-br") return "pt-BR";
   if (id === "es-es") return "es-ES";
   if (id === "es-419" || id.startsWith("es-")) return "es-419";
   return "en";
@@ -169,6 +178,7 @@ export function getHelpSections(locale) {
   if (helpLocale === "en-NIR") return SECTIONS_EN_NIR;
   if (helpLocale === "en-SG") return SECTIONS;
   if (helpLocale === "en-ZA") return SECTIONS_EN_ZA;
+  if (helpLocale === "pt-PT") return SECTIONS_PT_PT;
   if (helpLocale === "pt-BR") return SECTIONS_PT_BR;
   if (helpLocale === "es-ES") return SECTIONS_ES_ES;
   if (helpLocale === "es-419") return SECTIONS_ES_419;
@@ -207,6 +217,9 @@ export function listArticles(section, locale) {
   }
   if (helpLocale === "en-ZA") {
     return BY_SECTION_EN_ZA[section] || [];
+  }
+  if (helpLocale === "pt-PT") {
+    return BY_SECTION_PT_PT[section] || [];
   }
   if (helpLocale === "pt-BR") {
     return BY_SECTION_PT_BR[section] || [];
@@ -277,6 +290,7 @@ export function assertAllArticlesValid() {
     { locale: "es-419", articles: ALL_ARTICLES_ES_419 },
     { locale: "es-ES", articles: ALL_ARTICLES_ES_ES },
     { locale: "pt-BR", articles: ALL_ARTICLES_PT_BR },
+    { locale: "pt-PT", articles: ALL_ARTICLES_PT_PT },
     { locale: "en-AU", articles: ALL_ARTICLES_EN_AU },
     { locale: "en-NZ", articles: ALL_ARTICLES_EN_NZ },
     { locale: "en-IE", articles: ALL_ARTICLES_EN_IE },

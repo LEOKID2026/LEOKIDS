@@ -53,7 +53,7 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 33);
+  assert.equal(locales.length, 34);
   assert.deepEqual(
     locales.map((l) => l.id),
     [
@@ -79,6 +79,7 @@ test("selectable locales for switcher are English + country names", () => {
       "es-PR",
       "es-ES",
       "pt-BR",
+      "pt-PT",
       "en-AU",
       "en-NZ",
       "en-IE",
@@ -109,6 +110,9 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["pt-BR"].nativeName, "Brasil");
   assert.equal(byId["pt-BR"].label, "Brasil");
   assert.equal(byId["pt-BR"].pathPrefix, "br");
+  assert.equal(byId["pt-PT"].nativeName, "Portugal");
+  assert.equal(byId["pt-PT"].label, "Portugal");
+  assert.equal(byId["pt-PT"].pathPrefix, "pt");
   assert.equal(byId["en-AU"].nativeName, "Australia");
   assert.equal(byId["en-NZ"].nativeName, "New Zealand");
   assert.equal(byId["en-IE"].nativeName, "Ireland");
@@ -172,11 +176,12 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.doesNotMatch(switcher, /Hebrew|עברית|flag/i);
 });
 
-test("LanguageSwitcher list can reach all selectable locales including Brasil", () => {
+test("LanguageSwitcher list can reach all selectable locales including Brasil and Portugal", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 33);
+  assert.equal(locales.length, 34);
   assert.equal(locales[0].id, "en");
   assert.ok(locales.some((l) => l.id === "pt-BR" && l.nativeName === "Brasil"));
+  assert.ok(locales.some((l) => l.id === "pt-PT" && l.nativeName === "Portugal"));
   assert.equal(locales[locales.length - 1].id, "en-PH");
   assert.equal(locales[locales.length - 1].nativeName, "Philippines");
 });

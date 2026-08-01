@@ -1,0 +1,49 @@
+{
+  "cardSource": {
+    "admin_grant": "Presente da equipa"
+  },
+  "fallback": {
+    "completeRequirement": "Completa o requisito: {label}"
+  },
+  "gradeBands": {
+    "g12": "1º–2.º ano",
+    "g34": "3º–4.º ano",
+    "g56": "5º–6.º ano"
+  },
+  "requirements": {
+    "parent_activity_complete": "Conclua {minCompletedActivities} atividades dos encarregados de educação",
+    "daily_mission_complete": "Completa a missão: {missionKey}",
+    "daily_mission_generic": "Completa uma missão diária"
+  },
+  "surpriseBox": {
+    "loading": "A carregar…",
+    "duplicateHint": "Recebeste uma cópia extra – podes vender duplicatas na loja."
+  },
+  "preview": {
+    "download": "Descarregar imagem"
+  },
+  "shopView": {
+    "loading": "A carregar loja de cartões...",
+    "needMoreCoins": "Precisas de {amount} mais",
+    "sellSuccess": "Vendeste uma duplicata de {name} e ganhou {amount}!"
+  },
+  "previewModal": {
+    "downloadError": "Não foi possível descarregar o cartão. Tente novamente."
+  },
+  "cardsPage": {
+    "loading": "A carregar cartões..."
+  },
+  "shop": {
+    "alreadyOwned": "Tens isso!",
+    "purchaseSuccess": "Compraste {name}!",
+    "sellConfirmBody": "Manterás uma cópia na tua coleção.",
+    "noDuplicate": "Não tens uma duplicata para vender."
+  },
+  "surpriseBoxModal": {
+    "doneTitle": "Legal! Recebeste recompensas!"
+  },
+  "server": {
+    "duplicateConversionRemoved": "A conversão duplicada foi removida – podes vender uma duplicata na loja.",
+    "insufficientCoinsDetailed": "Não tens moedas suficientes para este cartão"
+  }
+}

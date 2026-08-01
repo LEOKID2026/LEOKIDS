@@ -1,0 +1,115 @@
+{
+  "hubBlurb": "Escolhe um assunto e começa a praticar.",
+  "chooseGrade": "Escolher o ano",
+  "chooseTopic": "Escolhe o tópico",
+  "chooseSubject": "Escolhe o assunto",
+  "hubLoading": "A carregar…",
+  "master": {
+    "loading": "A carregar…",
+    "chooseAvatar": "Escolhe o avatar:",
+    "pickImage": "📷 Escolhe a imagem",
+    "deleteImage": "🗑️ Eliminar imagem",
+    "imageTooLarge": "A imagem é muito grande. Escolhe uma imagem de até 5 MB.",
+    "imageTypeOnly": "Escolhe apenas um ficheiro de imagem.",
+    "imageSaveFailed": "Falha ao guardar a imagem.",
+    "gradeRequired": "Por favor, escolhe um ano antes de praticar. Pede a um dos encarregados de educação para atualizar o teu ano.",
+    "selectAtLeastOneOp": "Seleciona pelo menos uma operação",
+    "practiceSettingsBlurb": "Controla o teu treino: revê os erros recentes, a prática avaliada (começa devagar e avança para o nível escolhido) ou escolhe uma área de foco.",
+    "referenceBoardBlurb": "Escolhe uma categoria para revisar rapidamente os pontos principais, como os quadros de ajuda em matemática e geometria.",
+    "modes": {
+      "practice": {
+        "description": "Escolhe um tópico ou modo de treinamento focado"
+      },
+      "marathon": {
+        "description": "Quantas questões consegues resolver? 🏃"
+      }
+    },
+    "grades": {
+      "g1": "1.º ano",
+      "g2": "2.º ano",
+      "g3": "3.º ano",
+      "g4": "4.º ano",
+      "g5": "5.º ano",
+      "g6": "6.º ano"
+    },
+    "pickOperations": "🎲 Escolhe operações",
+    "pickOperationsTitle": "Escolhe operações",
+    "save": "Guardar",
+    "gradeTitle": "{grade}.º ano",
+    "pickMixTopics": "🎲 Escolhe tópicos para misturar",
+    "pickMixTopicsBlurb": "Escolhe quais tópicos incluir na prática mista",
+    "selectOneTopicMin": "Seleciona pelo menos um tópico",
+    "mistakePracticeBlurb": "Escolhe um erro recente para abrir a prática focada no mesmo tópico, ano e dificuldade.",
+    "wordBoardBlurb": "Escolhe uma categoria para revisar palavras importantes em inglês.",
+    "smartPracticeBlurb": "Assim como matemática e geometria, escolhe um modo de treinamento especial, vincule erros recentes ou prática avaliada.",
+    "levelUpNow": "Estás agora no nível {level}!",
+    "mistakeReviewEmpty": "Nenhum erro salvo ainda. Pratique, cometa erros e toque aqui para revisar exatamente o que precisas.",
+    "notEnoughQuestions": "Não há perguntas suficientes para o tópico/ano/nível que escolheste. Tente alterar uma configuração.",
+    "levelUpNowText": "Estás agora no nível {level}!"
+  },
+  "math": {
+    "pickRowOrColumn": "Escolhe uma linha ou coluna para praticar:",
+    "howToLearnSteps": {
+      "step1": "Escolhe o ano, a dificuldade e a operação (adição, subtração, multiplicação, divisão, frações, porcentagens e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronômetro e vidas, velocidade ou maratona.",
+      "step3": "Lê cada pergunta com atenção - alguns são problemas de palavras em que precisas entender a história.",
+      "step4": "Pontuações mais altas, sequências de respostas, estrelas e emblemas ajudam-te a subir de nível como jogador."
+    },
+    "referenceBoardBlurb": "Escolhe uma categoria para revisar as principais operações, fórmulas e termos matemáticos.",
+    "reference": {
+      "terms": {
+        "percent": {
+          "title": "% Percentagem"
+        }
+      }
+    },
+    "levelUpScience": "Subiste de nível em matemática!"
+  },
+  "geometry": {
+    "howToLearnSteps": {
+      "step1": "Escolhe o ano, a dificuldade e o tópico (área, perímetro, volume, ângulos, Pitágoras e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronômetro e vidas, velocidade ou maratona.",
+      "step4": "Pontuações mais altas, sequências de respostas, estrelas e emblemas ajudam-te a subir de nível como jogador."
+    },
+    "referenceBoardBlurb": "Escolhe uma categoria para revisar formas, fórmulas e termos-chave de geometria.",
+    "errors": {
+      "invalidGrade": "Ano inválido. Por favor, escolhe outro ano.",
+      "noTopics": "Não há tópicos disponíveis para este ano. Por favor, escolhe outro ano.",
+      "generateError": "Erro ao gerar pergunta. Por favor, tente novamente ou escolhe outro tópico."
+    }
+  },
+  "english": {
+    "steps": {
+      "findLocalizedMeaning": "Encontra o significado da palavra.",
+      "findEnglishMeaning": "Encontra o significado da palavra em inglês.",
+      "breakIntoParts": "Divide a frase em partes e pense em como dizer cada uma em inglês.",
+      "grammarAmIsAre": "Eu = sou, Tu/Nós/Eles = somos, Ele/Ela/Isso = é.",
+      "grammarCheck": "Verifique o que se enquadra nas regras gramaticais: Eu/Tu/Nós/Eles = somos, Ele/Ela/Isso = é."
+    },
+    "mistakes": {
+      "amOnlyWithI": "Lembre-se: sou está apenas com eu. Ele/Ela/Isso = é, Tu/Nós/Eles = somos.",
+      "checkGrammarLearning": "A resposta correta é \"{answer}\". Verifique as regras gramaticais novamente: eu sou, tu/nós/eles somos, ele/ela/isso é.",
+      "checkGrammar": "Verifique as regras gramaticais novamente: eu sou, tu/nós/eles somos, ele/ela/isso é.",
+      "checkTranslationLearning": "Tradução correta: {answer}. Verifique novamente: tu traduziu todas as palavras corretamente?",
+      "checkTranslation": "Verifique novamente: tu traduziu todas as palavras corretamente?",
+      "checkSpellingLearning": "A resposta correta é \"{answer}\". Tu pode ter digitado errado – verifique letra por letra.",
+      "checkSpelling": "Tu pode ter digitado errado – verifique letra por letra."
+    },
+    "audio": {
+      "maxReplays": "Tu atingiu o número máximo de escutas para esta pergunta."
+    }
+  },
+  "science": {
+    "howToLearnSteps": {
+      "step1": "Escolhe a ano, o nível e o tópico (por exemplo, corpo humano, plantas, animais e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronômetro e vidas, velocidade ou maratona.",
+      "step3": "Responda perguntas de múltipla escolhe, verdadeiro/falso e estilo experimental."
+    },
+    "levelUp": "Subiste de nível em ciências!",
+    "levelUpNow": "Tu está agora no nível {level}",
+    "hints": {
+      "genericCheck": "Verifique os dados e a explicação que tu aprendeu novamente."
+    }
+  },
+  "hubSubtitle": "A consistência compensa – quanto mais jogas, mais moedas ganhas."
+}

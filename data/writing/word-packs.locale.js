@@ -55,6 +55,22 @@ const PACK_TITLE_PT_BR = Object.freeze({
   sight: "Palavras frequentes",
 });
 
+/** Portuguese Portugal pack titles (chrome only). */
+const PACK_TITLE_PT_PT = Object.freeze({
+  colors: "Cores",
+  animals: "Animais",
+  family: "Família",
+  food: "Alimentos",
+  school: "Escola",
+  body: "Corpo",
+  home: "Casa",
+  nature: "Natureza",
+  transport: "Transportes",
+  numbers: "Números",
+  cvc: "Palavras CVC",
+  sight: "Palavras frequentes",
+});
+
 /** EN colorInstruction → es-419 (colors pack only). */
 const COLOR_INSTRUCTION_ES_419 = Object.freeze({
   "Color in red": "Colorea de rojo",
@@ -77,6 +93,18 @@ const COLOR_INSTRUCTION_PT_BR = Object.freeze({
   "Color in purple": "Pinte de roxo",
   "Color in pink": "Pinte de rosa",
   "Color in black": "Pinte de preto",
+});
+
+/** EN colorInstruction → pt-PT (colors pack only). */
+const COLOR_INSTRUCTION_PT_PT = Object.freeze({
+  "Color in red": "Pinta de vermelho",
+  "Color in blue": "Pinta de azul",
+  "Color in green": "Pinta de verde",
+  "Color in yellow": "Pinta de amarelo",
+  "Color in orange": "Pinta de laranja",
+  "Color in purple": "Pinta de roxo",
+  "Color in pink": "Pinta de rosa",
+  "Color in black": "Pinta de preto",
 });
 
 /**
@@ -102,14 +130,38 @@ function isPtBr(locale) {
 }
 
 /**
+ * @param {string} locale
+ */
+function isPtPt(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "pt-pt";
+}
+
+/**
  * @param {string|null|undefined} [contentLocale]
  */
 export function resolveWritingWordPacks(contentLocale) {
   const locale = resolveContentLocale({ contentLocale });
   const useEs = isEs419(locale);
-  const usePt = isPtBr(locale);
-  const titles = usePt ? PACK_TITLE_PT_BR : useEs ? PACK_TITLE_ES_419 : PACK_TITLE_EN;
-  const colorMap = usePt ? COLOR_INSTRUCTION_PT_BR : useEs ? COLOR_INSTRUCTION_ES_419 : null;
+  const usePtPt = isPtPt(locale);
+  const usePtBr = isPtBr(locale);
+  const titles = usePtPt
+    ? PACK_TITLE_PT_PT
+    : usePtBr
+      ? PACK_TITLE_PT_BR
+      : useEs
+        ? PACK_TITLE_ES_419
+        : PACK_TITLE_EN;
+  const colorMap = usePtPt
+    ? COLOR_INSTRUCTION_PT_PT
+    : usePtBr
+      ? COLOR_INSTRUCTION_PT_BR
+      : useEs
+        ? COLOR_INSTRUCTION_ES_419
+        : null;
 
   /** @type {typeof ENGLISH_WORD_PACKS} */
   const out = {};

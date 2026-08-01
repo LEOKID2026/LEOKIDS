@@ -1,0 +1,7 @@
+{
+  "help": {
+    "howToPlay": "Escolhe os números do caminho por regra – pares, ímpares, múltiplos, contagem pulada ou sequências – e toca em “Verificar caminho”. A ordem é importante para saltos e sequências.",
+    "rewards": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e finalização do caminho.",
+    "tip": "Presta atenção se a ordem é importante - para contagem pulada e sequências precisas escolher em ordem."
+  }
+}

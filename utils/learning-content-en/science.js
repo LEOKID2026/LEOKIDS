@@ -1,16 +1,18 @@
 /**
- * Apply English, es-419, or pt-BR Science display overlays by content locale.
+ * Apply English, es-419, pt-BR, or pt-PT Science display overlays by content locale.
  */
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
 import { SCIENCE_EN_OVERLAY } from "../../data/science-questions-en-overlay.js";
 import { SCIENCE_ES_419_OVERLAY } from "../../data/science-questions-es-419-overlay.js";
 import { SCIENCE_PT_BR_OVERLAY } from "../../data/science-questions-pt-BR-overlay.js";
+import { SCIENCE_PT_PT_OVERLAY } from "../../data/science-questions-pt-PT-overlay.js";
 import { translateScienceFields, translateScienceText } from "./science-translate.js";
 import { resolveContentLocale } from "../../lib/content/locale.js";
 
 function overlayMapForLocale(locale) {
   const id = resolveContentLocale({ contentLocale: locale });
   if (id === "es-419") return SCIENCE_ES_419_OVERLAY;
+  if (id === "pt-PT") return SCIENCE_PT_PT_OVERLAY;
   if (id === "pt-BR") return SCIENCE_PT_BR_OVERLAY;
   return SCIENCE_EN_OVERLAY;
 }

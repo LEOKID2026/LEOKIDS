@@ -1,0 +1,258 @@
+{
+  "components__arcade__chess__ChessScreen": {
+    "select_a_piece_then_a_destination_square_per_chess_rules": "Seleciona uma peça e, em seguida, uma casa de destino de acordo com as regras do xadrez."
+  },
+  "components__arcade__club__ArcadeClubFriendsPanel": {
+    "delete": "Eliminar",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "Este é o número que dás a um amigo – ele pode digitá-lo abaixo para lhe enviar uma solicitação de amizade."
+  },
+  "components__arcade__club__ArcadeClubProfilePanel": {
+    "save_name": "Guardar nome"
+  },
+  "components__arcade__dominoes__DominoesScreen": {
+    "pick_a_tile_or_an_end_if_shown": "Escolhe uma peça (ou um final, se mostrado)"
+  },
+  "components__arcade__ludo__LudoScreen": {
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "Na tua vez, os dados são lançados (OV2 também abre automaticamente uma animação de lançamento) e, em seguida, escolhe qual peça mover."
+  },
+  "components__educational-games__EducationalGameEntryScreen": {
+    "loading": "A carregar…",
+    "choose_a_difficulty": "Escolhe uma dificuldade"
+  },
+  "components__educational-games__leo-bakery__leo-bakery-data": {
+    "prompt_find_per_tray": "Divide {total} {itemLabel} igualmente entre {trays} bandejas. Quantos vão em cada bandeja?",
+    "control_find_total": "Escolhe o número total de itens.",
+    "control_find_trays": "Escolhe quantas bandejas precisa.",
+    "control_find_per_tray": "Escolhe quantos vão em cada bandeja.",
+    "control_same_total": "Escolhe um arranjo diferente com o mesmo total.",
+    "prompt_find_trays": "Existem {total} {itemLabel}. Cada bandeja contém {perTray}. Quantas bandejas precisas?",
+    "solution_text_find_trays": "Precisas de {trays} bandejas."
+  },
+  "components__educational-games__leo-gifts__leo-gifts-data": {
+    "item_stickers_one": "autocolante",
+    "item_stickers_other": "autocolantes",
+    "item_stickers": "autocolantes",
+    "idle_make_groups_remainder": "Escolhe quantos sacos cheios e quantos restam",
+    "idle_make_groups": "Escolhe quantos sacos cheios pode fazer",
+    "idle_share_remainder": "Escolhe quantos cada criança recebe e quantos restam",
+    "idle_share_equal": "Escolhe quantos cada criança recebe",
+    "prompt_make_groups": "Existem {total} {itemLabel}. Coloca {groupSize} em cada saco. Quantos sacos cheios consegues fazer?",
+    "prompt_make_groups_with_remainder": "Existem {total} {itemLabel}. Coloca {groupSize} em cada saco. Quantos sacos cheios consegues fazer e quantos sobram?",
+    "solution_text_groups": "Podes fazer {quotient} sacolas cheias.",
+    "solution_text_groups_remainder": "Podes fazer {quotient} sacolas cheias. {remaining}",
+    "feedback_ok": "Ótimo! Partilhaste corretamente.",
+    "feedback_almost_groups": "Verifica quantos sacos cheios podes fazer."
+  },
+  "components__educational-games__leo-lab__leo-lab-data": {
+    "grades_1_2": "1º–2.º ano"
+  },
+  "components__educational-games__leo-lab__leo-lab-experiments-clean": {
+    "pick_a_nail_and_a_can_that_are_attracted_to_a_magnet": "Escolhe um prego e uma lata que sejam atraídos por um íman.",
+    "pick_2_objects_that_are_not_attracted_to_a_magnet": "Escolhe 2 objetos que não sejam atraídos por um íman.",
+    "pick_a_metal_spoon_and_a_can": "Escolhe uma colher de metal e uma lata.",
+    "pick_2_relatively_light_objects": "Escolhe 2 objetos relativamente leves.",
+    "pick_2_objects_that_can_float_in_water": "Escolhe 2 objetos que possam flutuar na água.",
+    "pick_a_nail_and_a_can_that_sink_in_water": "Escolhe um prego e uma lata que afunde na água.",
+    "pick_sun_and_water": "Escolhe sol e água.",
+    "pick_a_nail_and_a_can": "Escolhe um prego e uma lata.",
+    "pick_wood_and_a_plant": "Escolhe madeira e uma planta.",
+    "pick_a_nail_and_a_spoon": "Escolhe um prego e uma colher.",
+    "pick_2_things_from_nature": "Escolhe 2 coisas da natureza.",
+    "pick_2_metal_objects": "Escolhe 2 objetos de metal.",
+    "pick_2_objects_that_can_get_warm_in_the_sun": "Escolhe 2 objetos que possam esquentar ao sol.",
+    "pick_water_and_a_plant_for_a_small_garden": "Escolhe água e uma planta para um pequeno jardim.",
+    "pick_3_objects_that_can_power_a_simple_electric_circuit": "Escolhe 3 objetos que possam alimentar um circuito elétrico simples.",
+    "pick_a_power_source_and_a_conductor": "Escolhe uma fonte de energia e um condutor.",
+    "pick_3_objects_that_can_make_light_appear": "Escolhe 3 objetos que podem fazer a luz aparecer.",
+    "pick_a_testing_tool_and_an_object_that_is_attracted_to_it": "Escolhe uma ferramenta de teste e um objeto que seja atraído por ela.",
+    "pick_3_things_that_help_a_plant_grow": "Escolhe 3 coisas que ajudam uma planta a crescer.",
+    "pick_3_objects_for_an_experiment_where_ice_melts": "Escolhe 3 objetos para um experimento onde o gelo derrete.",
+    "pick_3_objects_for_testing_ice_in_water": "Escolhe 3 objetos para testar gelo na água.",
+    "pick_2_objects_that_help_keep_things_cold": "Escolhe 2 objetos que ajudem a manter as coisas frias.",
+    "pick_a_light_source_and_an_object_that_can_block_it": "Escolhe uma fonte de luz e um objeto que possa bloqueá-la.",
+    "pick_2_objects_that_are_good_for_holding_water": "Escolhe 2 objetos que sejam bons para reter água.",
+    "pick_a_plant_and_one_thing_that_helps_it_survive": "Escolhe uma planta e algo que a ajude a sobreviver.",
+    "pick_something_cold_and_something_that_can_warm_it_up": "Escolhe algo frio e algo que possa aquecê-lo.",
+    "pick_2_objects_that_are_good_for_carrying_electricity_in_a_circuit": "Escolhe 2 objetos que sejam bons para transportar eletricidade em um circuito.",
+    "pick_2_objects_for_testing_metal_attraction": "Escolhe 2 objetos para testar a atração do metal.",
+    "pick_2_objects_that_show_a_change_from_cold_to_warmer": "Escolhe 2 objetos que mostrem uma mudança de frio para mais quente.",
+    "pick_3_objects_for_a_safe_light_experiment": "Escolhe 3 objetos para um experimento de luz seguro.",
+    "pick_2_different_objects_to_compare_materials": "Escolhe 2 objetos diferentes para comparar materiais.",
+    "pick_2_objects_for_a_cold_experiment_inside_a_container": "Escolhe 2 objetos para um experimento frio dentro de um recipiente.",
+    "pick_3_objects_that_work_for_a_simple_science_experiment": "Escolhe 3 objetos que funcionem para um experimento científico simples.",
+    "pick_4_objects_for_a_circuit_with_a_switch": "Escolhe 4 objetos para um circuito com interruptor.",
+    "pick_3_objects_for_a_basic_electric_circuit": "Escolhe 3 objetos para um circuito elétrico básico.",
+    "pick_3_objects_that_can_help_with_conduction_or_testing_conduction": "Escolhe 3 objetos que podem ajudar na condução ou teste de condução.",
+    "pick_a_testing_tool_and_two_objects_that_are_attracted_to_it": "Escolhe uma ferramenta de teste e dois objetos que sejam atraídos por ela.",
+    "pick_3_objects_that_are_not_attracted_to_a_magnet": "Escolhe 3 objetos que não são atraídos por um íman.",
+    "pick_4_things_a_plant_needs_to_grow": "Escolhe 4 coisas que uma planta precisa para crescer.",
+    "pick_3_things_for_making_a_basic_planting": "Escolhe 3 coisas para fazer um plantio básico.",
+    "pick_2_things_for_a_drying_experiment": "Escolhe 2 coisas para um experimento de secagem.",
+    "pick_2_things_for_a_heating_experiment": "Escolhe 2 coisas para um experimento de aquecimento.",
+    "pick_2_things_for_testing_sinking": "Escolhe 2 coisas para testar o afundamento.",
+    "pick_3_things_for_testing_if_metal_sinks": "Escolhe três coisas para testar se o metal afunda.",
+    "pick_4_things_from_the_natural_world": "Escolhe 4 coisas do mundo natural.",
+    "pick_a_testing_tool_a_metal_object_and_a_non_metal_object": "Escolhe uma ferramenta de teste, um objeto metálico e um objeto não metálico.",
+    "pick_4_objects_for_testing_turning_on_and_off": "Escolhe 4 objetos para testar a ativação e desativação.",
+    "pick_4_objects_for_testing_a_metal_conductor_in_a_circuit": "Escolhe 4 objetos para testar um condutor metálico em um circuito.",
+    "pick_3_things_for_a_soil_absorption_experiment": "Escolhe 3 coisas para um experimento de absorção do solo.",
+    "pick_a_light_source_and_two_objects_that_can_make_a_shadow": "Escolhe uma fonte de luz e dois objetos que possam formar sombra.",
+    "pick_4_things_that_fit_a_healthy_garden": "Escolhe 4 coisas que cabem em um jardim saudável.",
+    "pick_a_testing_tool_an_object_that_is_attracted_to_it_and_one_that_is_no": "Escolhe uma ferramenta de teste, um objeto que seja atraído por ela e outro que não seja.",
+    "pick_4_objects_for_a_light_control_experiment": "Escolhe 4 objetos para um experimento de controle de luz.",
+    "how_do_you_make_orange": "Como fazes laranja? 🟧",
+    "how_do_you_make_green": "Como fazes o verde? 🟩",
+    "how_do_you_make_purple": "Como fazes roxo? 🟪",
+    "how_do_you_make_grass_green": "Como fazes a grama verde? 🟩",
+    "how_do_you_make_carrot_orange": "Como fazes cenoura laranja? 🟧",
+    "how_do_you_make_grape_purple": "Como fazes a uva roxa? 🟪",
+    "you_can_compare_a_metal_material_with_one_from_nature": "Podes comparar um material metálico com outro da natureza.",
+    "you_can_test_conduction_with_a_simple_electric_circuit": "Podes testar a condução com um circuito elétrico simples.",
+    "this_way_you_can_compare_what_is_attracted_to_a_magnet_with_what_is_not": "Desta forma podes comparar o que é atraído por um íman com o que não é.",
+    "with_a_switch_you_can_control_whether_the_bulb_is_on_or_off": "Com um interruptor, podes controlar se a lâmpada está ligada ou desligada."
+  },
+  "components__educational-games__leo-number-path__leo-number-path-data": {
+    "choose_all_the_odd_numbers_on_the_path": "Escolhe todos os números ímpares no caminho",
+    "prompt_odd": "Escolhe todos os números ímpares.",
+    "prompt_even": "Escolhe todos os números pares.",
+    "prompt_multiples": "Escolhe todos os múltiplos de {multiple}.",
+    "prompt_skip_forward": "Comece em {start}. Adiciona {step} cada etapa. Escolhe os números em ordem.",
+    "prompt_skip_backward": "Comece em {start}. Subtrai {step} cada etapa. Escolhe os números em ordem.",
+    "prompt_arithmetic_ascending": "Comece em {start} e adicione {step} a cada etapa. Escolhe os números em ordem.",
+    "prompt_arithmetic_descending": "Comece em {start} e subtraia {step} cada etapa. Escolhe os números em ordem.",
+    "prompt_arithmetic_sequence": "Sequência aritmética: comece em {start}, adicione {step} a cada etapa. Escolhe em ordem.",
+    "prompt_arithmetic_missing": "Completa a sequência. Escolhe os números que faltam em ordem.",
+    "prompt_geometric_sequence": "Comece em {start} e multiplique por {ratio} cada etapa. Escolhe os números em ordem.",
+    "feedback_ok": "Ótimo! Tu escolheu o caminho correto."
+  },
+  "components__educational-games__leo-pizzeria__leo-pizzeria-data": {
+    "ticket_identify": "Escolhe quantas fatias estão marcadas.",
+    "greeting_complete": "Completa a pizza para fazer uma inteira.",
+    "ticket_compare": "Escolhe a resposta correta.",
+    "feedback_identify_ok": "Ótimo! Tu identificou a fração."
+  },
+  "components__educational-games__leo-supermarket__LeoSupermarketGame": {
+    "pick_coins": "Escolhe moedas",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Ajude Leo, o caixa - escolhe o produto, calcula o troco e devolva o dinheiro certo",
+    "pick_the_product_the_customer_asked_for": "Escolhe o produto que o cliente pediu",
+    "change_you_gave": "Troco que deste:"
+  },
+  "components__educational-games__leo-word-detective__leo-word-detective-data": {
+    "grades_1_2": "1º–2.º ano",
+    "grades_3_4": "3º–4.º ano",
+    "grades_5_6": "5º–6.º ano",
+    "the_dog_on_the_floor": "O cão ___ no chão",
+    "mia_woke_up_in_the_morning_she_ate_breakfast_she_packed_her_bag_and_went": "Mia acordou de manhã. Ela tomou pequeno-almoço. Ela fez as malas e foi para a escola.",
+    "the_dog_waited_by_the_door_when_dan_came_back_its_tail_wagged_with_joy": "O cão esperou na porta. Quando Dan voltou, seu rabo balançou de alegria.",
+    "how_did_the_dog_feel": "Como o cão se sentiu?"
+  },
+  "components__educational-games__leo-word-train__leo-word-train-data": {
+    "grades_1_2": "1º–2.º ano",
+    "grades_3_4": "3º–4.º ano",
+    "grades_5_6": "5º–6.º ano",
+    "fill_in_the_missing_letter_on_the_car": "Preenche a letra que falta no carro",
+    "word_order_looks_good_the_train_is_leaving": "A ordem das palavras parece boa - o comboio está partindo!",
+    "awesome_you_filled_in_the_missing_letter": "Incrível! Preencheste a letra que faltava.",
+    "excellent_you_built_the_word_on_the_cars": "Excelente! Construíste a palavra nos carros.",
+    "great_you_completed_the_missing_letters": "Ótimo! Completaste as letras que faltavam."
+  },
+  "components__leo-miners__LeoMinersGame": {
+    "fullscreen": "Ecrã cheia",
+    "dog": "Cão",
+    "on_an_empty_slot_to_add_a_dog_the_price_goes_up_over_time": "em um slot vazio para adicionar um cão. O preço sobe com o tempo.",
+    "complete_the_required_action_to_activate_the_bonus": "Completa a ação necessária para ativar o bônus.",
+    "each_dog_adds_damage_per_second_to_its_lane_when_a_rock_breaks_you_get_c": "Cada cão adiciona dano por segundo à sua pista. Quando uma pedra quebra ganhas moedas.",
+    "there_is_a_daily_cap_and_a_gradual_slowdown_as_you_near_it": "Há um limite diário e uma desaceleração gradual à medida que te aproximas dele."
+  },
+  "components__offline__OfflineHub": {
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Reciclagem, mercearia, laboratório, pizzaria, comboio de palavras e muito mais - tudo local."
+  },
+  "components__solo-games__engines__MleoMazeEngine": {
+    "solve_as_many_mazes_as_you_can_before_time_runs_out": "Resolve o máximo de labirintos que puder antes que o tempo acabe!"
+  },
+  "components__solo-games__engines__MleoMemoryEngine": {
+    "loading_cards_from_the_shop": "A carregar cartões da loja…"
+  },
+  "components__solo-games__engines__MleoPicturePuzzleEngine": {
+    "choose_a_puzzle_picture": "Escolhe uma imagem de puzzle",
+    "select_picture": "Seleciona a imagem"
+  },
+  "components__solo-games__engines__MleoPicturePuzzlePlacementPlay": {
+    "pick_a_piece": "Escolhe uma peça"
+  },
+  "components__solo-games__prototypes__dev__TangramPrototype": {
+    "fill_the_target_shape_double_tap_rotate_45": "Preenche a forma alvo · toque duas vezes = gire 45°"
+  },
+  "components__solo-games__SoloGameEntryScreen": {
+    "loading": "A carregar…",
+    "choose_difficulty": "Escolhe a dificuldade"
+  },
+  "components__solo-games__SoloGameNavButtons": {
+    "loading": "A carregar…"
+  },
+  "components__solo-games__SoloGamePortraitRecommendationModal": {
+    "for_the_best_experience_rotate_your_screen_to_landscape": "Para obter a melhor experiência, gira o ecrã para paisagem."
+  },
+  "lib__educational-games__educational-game-registry": {
+    "letters_words_and_sentences_in_english_riding_on_the_train_cars": "Letras, palavras e frases em inglês – andando nos vagões do comboio",
+    "divide_among_children_or_bags_find_quotient_and_remainder": "Divide entre crianças ou em sacos – descubra quantos por grupo e quantos restam e toca em Verificar Divisão.",
+    "check_the_purchase_total_and_how_much_the_customer_paid_work_out_for_you": "Verifica o total da compra e quanto o cliente pagou - calcula quanto troco devolver.",
+    "coins_are_awarded_based_on_how_many_experiments_you_succeeded_at_difficu": "As moedas são concedidas com base em quantas experiências tiveste sucesso, nível de dificuldade, precisão, sequências e conclusão de 20 experiências - somente se tiveste sucesso pelo menos uma vez.",
+    "coins_are_awarded_based_on_how_many_questions_you_answered_correctly_acc": "As moedas são concedidas com base em quantas perguntas respondeste corretamente, precisão, sequências e nível de dificuldade - mesmo que o jogo tenha terminado devido a erros.",
+    "coins_are_awarded_based_on_how_many_orders_you_prepared_correctly_accura": "As moedas são concedidas com base em quantos pedidos preparaste corretamente, precisão, sequências e nível de dificuldade.",
+    "coins_are_awarded_based_on_how_many_of_the_20_tasks_you_completed_accura": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e finalização do caminho.",
+    "pay_attention_to_whether_order_matters_for_skip_counting_and_sequences_y": "Presta atenção se a ordem é importante - para contagem pulada e sequências precisas escolher em ordem.",
+    "coins_are_awarded_based_on_how_many_of_the_20_tasks_you_completed_accura_2": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e nível de dificuldade.",
+    "coins_are_awarded_based_on_how_many_of_the_20_cases_you_solved_accuracy_": "As moedas são concedidas com base em quantos dos 20 casos resolveste, precisão, sequências e nível de dificuldade."
+  },
+  "lib__solo-games__dev-prototype-hub-list": {
+    "try_ideas_for_new_solo_games": "Experimenta ideias para novos jogos solo",
+    "fruit_slice_pipes_blocks_and_more_feel_out_solo_gameplay": "Fatias de frutas, cachimbos, blocos e muito mais – experimenta o jogo solo.",
+    "home_screen_ui": "Ecrã inicial · IU"
+  },
+  "lib__solo-games__solo-game-help": {
+    "follow_the_instructions_on_screen_and_try_to_reach_the_goal": "Siga as instruções no ecrã e tente atingir a meta.",
+    "read_the_screen_before_you_start_then_plan_your_next_move": "Lê o ecrã antes de começar e planeia o teu próximo passo."
+  },
+  "lib__solo-games__solo-game-registry": {
+    "hold_the_button_or_the_screen_to_fly_and_release_to_descend_collect_coin": "Segura o botão ou o ecrã para voar e larga para descer. Recolhe moedas e evite obstáculos.",
+    "find_the_exit_of_the_maze_before_time_runs_out": "Encontra a saída do labirinto antes que o tempo acabe!",
+    "drag_the_picture_pieces_to_the_right_place_on_the_board_complete_all_the": "Arraste as peças da imagem para o lugar certo no tabuleiro. Completa todas as peças antes que o tempo acabe.",
+    "tap_the_targets_that_appear_on_the_screen_before_they_disappear_you_have": "Toque nos alvos que aparecem no ecrã antes que desapareçam. Tens três vidas.",
+    "drag_your_finger_across_the_screen_to_slice_flying_fruit_avoid_bombs_you": "Arrasta o dedo pelo ecrã para cortar frutas voadoras. Evita bombas - pode cometer três erros.",
+    "tap_a_card_to_flip_it_and_find_its_matching_pair_every_pair_you_find_sta": "Toca em uma carta para virá-la e encontra o par correspondente. Cada par que encontrares permanece aberto.",
+    "you_start_with_a_high_score_the_longer_you_take_the_lower_it_drops_findi": "Começas com uma pontuação alta - quanto mais demoras, mais baixa ela cai. Encontrar todos os pares antes que o tempo acabe = uma vitória.",
+    "tap_balloons_to_pop_them_you_have_three_lives_and_one_minute_watch_out_f": "Toque nos balões para estourá-los. Tens três vidas e um minuto. Cuidado com as bombas!",
+    "every_correct_sort_adds_points_a_mistake_deducts_from_the_score_if_time_": "Cada classificação correta adiciona pontos. Um erro é deduzido da pontuação. Se o tempo acabar antes de terminares, o jogo termina."
+  },
+  "pages__student__arcade": {
+    "loading": "A carregar…"
+  },
+  "components__arcade__snakes-ladders__SnakesLaddersScreen": {
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "As cobras mandam-te para baixo, as escadas mandam-te para cima – tabuleiro clássico.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Uma rolagem além de 100 não o move (ficas parado)."
+  },
+  "components__offline__OfflineGameErrorBoundary": {
+    "we_couldn_t_load_the_game_you_can_try_again": "Não foi possível carregar o jogo. Podes tentar novamente."
+  },
+  "components__solo-games__engines__MleoSortShapesEngine": {
+    "you_re_done": "Terminaste!"
+  },
+  "components__solo-games__prototypes__dev__TrafficJamPrototype": {
+    "you_did_it_red_car_is_out": "Conseguiste! Carro vermelho saiu 🎉"
+  },
+  "components__solo-games__SoloGameHelpModal": {
+    "scoring_heading": "Como marcas pontos?"
+  },
+  "components__solo-games__SoloLandscapeGate": {
+    "this_game_works_best_in_landscape_rotate_your_phone_or_tablet_then_you_c": "Este jogo funciona melhor em paisagem. Gire seu telefone ou tablet e poderás continuar."
+  },
+  "lib__arcade__club__player-profile": {
+    "server": {
+      "you_can_change_your_display_name_once_every_24_hours": "Podes alterar o teu nome de apresentação uma vez a cada 24 horas"
+    }
+  },
+  "lib__arcade__club__player-profile.server": {
+    "you_can_change_your_display_name_once_every_24_hours": "Podes alterar o teu nome de apresentação uma vez a cada 24 horas"
+  }
+}

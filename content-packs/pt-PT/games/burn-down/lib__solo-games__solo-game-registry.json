@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "hold_the_button_or_the_screen_to_fly_and_release_to_descend_collect_coin": "Segura o botão ou o ecrã para voar e larga para descer. Recolhe moedas e evite obstáculos.",
+    "find_the_exit_of_the_maze_before_time_runs_out": "Encontra a saída do labirinto antes que o tempo acabe!",
+    "drag_the_picture_pieces_to_the_right_place_on_the_board_complete_all_the": "Arraste as peças da imagem para o lugar certo no tabuleiro. Completa todas as peças antes que o tempo acabe.",
+    "tap_the_targets_that_appear_on_the_screen_before_they_disappear_you_have": "Toque nos alvos que aparecem no ecrã antes que desapareçam. Tens três vidas.",
+    "drag_your_finger_across_the_screen_to_slice_flying_fruit_avoid_bombs_you": "Arrasta o dedo pelo ecrã para cortar frutas voadoras. Evita bombas - pode cometer três erros.",
+    "tap_a_card_to_flip_it_and_find_its_matching_pair_every_pair_you_find_sta": "Toca em uma carta para virá-la e encontra o par correspondente. Cada par que encontrares permanece aberto.",
+    "you_start_with_a_high_score_the_longer_you_take_the_lower_it_drops_findi": "Começas com uma pontuação alta - quanto mais demoras, mais baixa ela cai. Encontrar todos os pares antes que o tempo acabe = uma vitória.",
+    "tap_balloons_to_pop_them_you_have_three_lives_and_one_minute_watch_out_f": "Toque nos balões para estourá-los. Tens três vidas e um minuto. Cuidado com as bombas!",
+    "every_correct_sort_adds_points_a_mistake_deducts_from_the_score_if_time_": "Cada classificação correta adiciona pontos. Um erro é deduzido da pontuação. Se o tempo acabar antes de terminares, o jogo termina."
+  }
+}

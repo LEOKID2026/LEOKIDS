@@ -1,0 +1,46 @@
+{
+  "cards": {
+    "achievement_addition_champion": {
+      "description": "Ganhe este cartão: Adiciona o Campeão",
+      "accessibility": {
+        "description": "Ganhe este cartão: Adiciona o Campeão"
+      }
+    },
+    "achievement_division_champion": {
+      "description": "Ganhe esta carta: Divide o Campeão",
+      "accessibility": {
+        "description": "Ganhe esta carta: Divide o Campeão"
+      }
+    },
+    "achievement_subtraction_champion": {
+      "title": "Subtrai o campeão",
+      "description": "Ganhe esta carta: Subtrai o Campeão",
+      "accessibility": {
+        "title": "Subtrai o campeão",
+        "description": "Ganhe esta carta: Subtrai o Campeão"
+      }
+    },
+    "leo_on_train": {
+      "title": "Leo no comboio",
+      "description": "Colete Leo no comboio!",
+      "accessibility": {
+        "title": "Leo no comboio",
+        "description": "Colete Leo no comboio!"
+      }
+    },
+    "leo_technodog": {
+      "description": "Colete o cão Leo Techno!",
+      "accessibility": {
+        "description": "Colete o cão Leo Techno!"
+      }
+    },
+    "event_tu_bishvat": {
+      "title": "Leo Tu Bishvat",
+      "description": "Leo Tu Bishvat – cartão de evento limitado!",
+      "accessibility": {
+        "title": "Leo Tu Bishvat",
+        "description": "Leo Tu Bishvat – cartão de evento limitado!"
+      }
+    }
+  }
+}

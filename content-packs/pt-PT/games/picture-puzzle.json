@@ -1,0 +1,7 @@
+{
+  "blurb": "Completa as peças da foto do Leo!",
+  "help": {
+    "howToPlay": "Arraste as peças da imagem para o lugar certo no tabuleiro. Completa todas as peças antes que o tempo acabe.",
+    "scoring": "Quanto mais rápido terminares e menos movimentos usar, maior será a pontuação. Se o tempo acabar antes de terminares, não há vitória."
+  }
+}

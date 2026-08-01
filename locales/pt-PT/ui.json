@@ -1,0 +1,217 @@
+{
+  "localeSettings": {
+    "reportHint": "Aplica-se a relatórios de progresso e ao Copilot dos encarregados. A alteração do idioma da interface não altera isso depois que define explicitamente o idioma do relatório."
+  },
+  "nav": {
+    "parents": "Para os encarregados de educação",
+    "contact": "Contacto",
+    "loginParent": "Login dos encarregados de educação"
+  },
+  "footer": {
+    "contact": "Contacto"
+  },
+  "installApp": {
+    "button": "Instalar aplicação",
+    "chooseTitle": "O que gostaria de instalar?",
+    "kids": "Instale a aplicação infantil",
+    "parents": "Instale a aplicação para encarregados de educação",
+    "teachers": "Instale a aplicação para professores",
+    "iosStep2": "Role para baixo e escolha \"Adicionar ao ecrã inicial\"",
+    "iosStep4": "A aplicação aparecerá no seu ecrã inicial",
+    "androidStep3": "No telemóvel: toque em \"Adicionar ao ecrã inicial\" no menu do navegador",
+    "androidStep4": "A aplicação aparecerá no seu ecrã inicial",
+    "prompt": {
+      "bodyIos": "Adicione a aplicação ao seu ecrã inicial para uma melhor experiência",
+      "bodyDefault": "Instale a aplicação para acesso mais rápido e fácil",
+      "installApp": "Instalar aplicação",
+      "iosStep2": "Escolha \"Adicionar ao ecrã inicial\""
+    }
+  },
+  "guest": {
+    "resume": {
+      "alreadyLinked": "Este número de convidado já está vinculado a um dos encarregados de educação. Faça login com seu nome de utilizador e código ou peça detalhes de login aos seus encarregados de educação."
+    }
+  },
+  "public": {
+    "contact": {
+      "intro": "Tem uma pergunta, ideia, comentário ou bug para relatar? Gostaríamos de receber o seu contacto. Entre em contacto sobre aprendizado, conta do seu filho, relatórios dos encarregados de educação, jogos, cartões ou sua experiência no uso do site.",
+      "formAriaLabel": "Formulário de contacto",
+      "legalNavAria": "Documentos legais e contacto",
+      "form": {
+        "success": "Sua mensagem foi enviada. Obrigado por entrar em contacto!",
+        "deliveryPending": "O formulário foi validado, mas a entrega dos emails do site ainda está sendo configurada no servidor. Por enquanto, entre em contacto conosco diretamente usando o botão de e-mail abaixo."
+      },
+      "faq": {
+        "whoFor": {
+          "a": "O site é para crianças que desejam praticar e progredir, e para encarregados de educação e professores que desejam uma imagem mais clara do progresso, dos pontos fortes e dos tópicos que valem a pena reforçar."
+        },
+        "subjects": {
+          "q": "Quais matérias pode praticar?"
+        },
+        "parentsSee": {
+          "q": "O que os encarregados de educação podem ver?",
+          "a": "Os encarregados de educação podem visualizar relatórios mostrando desempenho, repetição de erros, pontos fortes e tópicos para continuar praticando."
+        }
+      }
+    },
+    "homepage": {
+      "brandLine": "Leo Kids — ferramentas para os encarregados de educação, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
+      "hero": {
+        "titleLine0": "Ferramentas para encarregados de educação.",
+        "subtitle": "Leo Kids conecta práticas e jogos para crianças com um sistema que mapeia o progresso e dá aos encarregados de educação uma imagem clara.",
+        "videoTitle": "Veja do ponto de vista dos encarregados de educação",
+        "parentCta": "Login / inscrição dos encarregados de educação",
+        "worksheetsCta": "fichas de trabalho para impressão",
+        "infoLine": "Leo Kids — ferramentas para os encarregados de educação, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
+        "flowStep2": "Os encarregados de educação têm uma visão clara"
+      },
+      "valueCards": {
+        "0": {
+          "title": "Ferramentas para encarregados de educação"
+        }
+      },
+      "parentIntro": {
+        "label": "Para os encarregados de educação"
+      },
+      "parentVideo": {
+        "title": "Veja do ponto de vista dos encarregados de educação",
+        "description": "Assista a um breve vídeo sobre rastreamento, relatórios e atividades dos encarregados de educação."
+      },
+      "learningSystem": {
+        "flowStep2": "Os encarregados de educação têm uma visão clara",
+        "capabilities": {
+          "focused-work": {
+            "text": "Os encarregados de educação podem enviar uma atividade pessoal direcionada a um tópico ou habilidade."
+          }
+        }
+      },
+      "parentBenefits": {
+        "cta": "Portal dos encarregados"
+      },
+      "kids": {
+        "benefits": {
+          "1": {
+            "text": "Leo orienta para que continue tentando sem pressão."
+          }
+        }
+      },
+      "howItWorks": {
+        "step3": "O sistema mapeia o progresso; os encarregados de educação recebem relatórios e podem enviar atividades específicas"
+      }
+    },
+    "about": {
+      "missionBody": "Ajudamos as crianças a desenvolver confiança na aprendizagem, a fortalecer competências básicas e avançadas e a dar aos encarregados de educação uma imagem mais clara do progresso dos seus filhos.",
+      "missionMuted": "O sistema combina prática, diversão, relatórios dos encarregados de educação e resumos de progresso para criar um processo de aprendizagem pessoal, organizado e encorajador.",
+      "featuresTitle": "O que encontrará no site?",
+      "parentLoginCta": "Login dos encarregados de educação",
+      "whyCards": {
+        "1": {
+          "title": "Uma imagem clara para os encarregados de educação",
+          "text": "Os relatórios ajudam a entender onde seu filho teve sucesso, onde ele teve dificuldades e o que praticar em seguida."
+        }
+      },
+      "siteFeatures": {
+        "2": {
+          "phase": "Relatórios para encarregados de educação"
+        }
+      },
+      "intro1": "O site foi projetado para alunos do ensino básico com prática por matéria, ano, tópico e nível de dificuldade. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os temas em que precisa de mais confiança."
+    }
+  },
+  "gallery": {
+    "subtitle": "Fotos e vídeos do Leo — o cão que acompanha as crianças por todo o site."
+  },
+  "pwa": {
+    "installBody": "Toque em \"Instalar\" abaixo para adicionar a aplicação ao seu ecrã inicial.",
+    "iosIntro": "Em dispositivos Apple, instale a aplicação através do Safari:",
+    "iosStep3": "Role o menu e escolha \"Adicionar ao ecrã inicial\".",
+    "iosStep4": "Certifique-se de que \"Abrir como aplicação da Web\" esteja ativado, se mostrado.",
+    "iosStep5": "Toque em \"Adicionar\". O ícone da aplicação aparecerá no ecrã inicial.",
+    "iosHelpFooter": "Não vê \"Adicionar ao ecrã inicial\"? Role até a parte inferior do menu, toque em \"Editar ações\" e adicione-o à lista.",
+    "alreadyInstalled": "A aplicação já está instalada neste dispositivo.",
+    "portalInstallStudent": "Instale a aplicação infantil",
+    "portalInstallParent": "Instale a aplicação para encarregados de educação",
+    "portalInstallTeacher": "Instale a aplicação para professores",
+    "nativeOnlyBrowser": "A instalação do PWA está disponível no navegador, não na aplicação nativa instalado.",
+    "installedStudent": "Leo Kids está instalado. Abra o ícone Leo Kids no ecrã inicial.",
+    "installedParent": "Leo Kids (pais) está instalado. Abra o ícone Leo Kids (pais) no ecrã inicial.",
+    "installedTeacher": "O Leo Kids (professores) está instalado. Abra o ícone Leo Kids (professores) no ecrã inicial.",
+    "promptAcceptedStudent": "O Chrome aceitou a instalação. Se o ícone Leo Kids não aparecer no ecrã inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações da aplicação.",
+    "promptAcceptedParent": "O Chrome aceitou a instalação. Se o ícone do Leo Kids (pais) não aparecer no ecrã inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações da aplicação.",
+    "promptAcceptedTeacher": "O Chrome aceitou a instalação. Se o ícone do Leo Kids (professores) não aparecer no ecrã inicial dentro de um minuto, atualize a página e tente novamente.",
+    "unavailableNoPromptStudent": "O Chrome não ofereceu um prompt de instalação para Leo Kids no momento. Certifique-se de que a aplicação ainda não esteja instalada e tente atualizar.",
+    "unavailableNoPromptParent": "O Chrome não ofereceu um prompt de instalação para Leo Kids (pais) no momento. Certifique-se de que o Leo Kids esteja instalado e tente atualizar – os duas aplicações devem estar separados.",
+    "unavailableNoPromptTeacher": "O Chrome não ofereceu um prompt de instalação para Leo Kids (professores) no momento. Certifique-se de que a aplicação ainda não esteja instalada e tente atualizar.",
+    "titleStudent": "Instale a aplicação infantil",
+    "titleParent": "Instale a aplicação para encarregados de educação",
+    "titleTeacher": "Instale a aplicação para professores"
+  },
+  "parent": {
+    "worksheets": "fichas de trabalho para impressão",
+    "childLimitReached": "atingiu o limite de {limit} crianças por conta",
+    "selectGrade": "Escolher o ano",
+    "childUsername": "Nome de utilizador filho",
+    "parentReport": "Relatório para encarregados de educação",
+    "promoDescription": "Assista a um pequeno vídeo sobre ferramentas para encarregados de educação e como as crianças aprendem no Leo Kids.",
+    "promoVideoAria": "Vídeo dos encarregados de educação",
+    "save": "Guardar",
+    "deleteChild": "Eliminar filho",
+    "username": "Nome de utilizador",
+    "copyUsername": "Copiar nome de utilizador",
+    "usernameNotSet": "Nome de utilizador: ainda não definido",
+    "setUsernamePinHint": "Defina um nome de utilizador e um PIN para a criança fazer login. Se existir um login mais antigo, ele será substituído.",
+    "setUsernamePin": "Definir nome de utilizador e PIN",
+    "deleteChildTitle": "Eliminar filho permanentemente",
+    "deleteChildWarning": "Isso eliminará permanentemente a criança, os detalhes de login, as sessões, as respostas, os relatórios, as moedas e todos os dados relacionados. Isto não pode ser desfeito.",
+    "deletePermanently": "Eliminar permanentemente",
+    "usernameRequired": "O nome de utilizador é obrigatório.",
+    "invalidUsername": "Nome de utilizador inválido.",
+    "childLimitMessage": "Pode adicionar até {limit} filhos por conta dos encarregados de educação.",
+    "credentialsFailedAfterCreate": "O filho foi criado, mas a configuração do login falhou — pode defini-lo nos detalhes do filho.",
+    "credentialsBothRequired": "Digite o nome de utilizador e o PIN.",
+    "credentialsSaveFailed": "Não foi possível guardar os detalhes de login.",
+    "missingCardUsername": "Nome de utilizador ausente para este cartão.",
+    "usernameCopied": "Nome de utilizador copiado para a área de transferência.",
+    "gamePermissionsLoading": "A carregar permissões do jogo…",
+    "subjectPermissionsLoading": "A carregar permissões de assunto…",
+    "errors": {
+      "notParent": "Esta conta não está autorizada para acesso dos encarregados de educação.",
+      "reportsDisabled": "Os relatórios dos encarregados de educação não estão disponíveis no momento.",
+      "reportForbidden": "Não tem acesso ao relatório desta criança.",
+      "actionForbidden": "não tem permissão para esta ação.",
+      "panelSaveFailed": "Não foi possível guardar as alterações."
+    },
+    "gradeRequired": "Selecione um ano.",
+    "allowGradePicker": "Permitir que a criança escolha o ano nas páginas de aprendizagem"
+  },
+  "student": {
+    "loadingHome": "A carregar para casa…",
+    "loading": "A carregar…",
+    "parentLocked": "Bloqueado pelos encarregados de educação",
+    "panelWorksheets": "Fichas de trabalho",
+    "noWorksheets": "Nenhuma ficha de trabalho aberta no momento. Quando as fichas de trabalho forem atribuídas, elas aparecerão aqui.",
+    "loadingActivities": "A carregar atividades…",
+    "youHaveOneBox": "Tens 1 caixa",
+    "youHaveBoxes": "Tens {count} caixas",
+    "themeGroupLabel": "Escolhe o tema do ecrã",
+    "prototypeDescription": "Protótipo do ecrã de abertura do mundo Leo kids",
+    "avatarSaveFailed": "Falha ao guardar",
+    "avatarImageTypeInvalid": "Escolha apenas um ficheiro de imagem",
+    "avatarImageSaveFailed": "Falha ao guardar a imagem"
+  },
+  "help": {
+    "searchPlaceholder": "Pesquise por tópico ou palavra..."
+  },
+  "copilot": {
+    "panel": {
+      "intro": "Pode perguntar livremente sobre o relatório aqui, por exemplo: o que é mais importante no momento, no que focar nesta semana, o que está indo bem ou como explicar para seu filho.",
+      "youPrefix": ":"
+    }
+  },
+  "home": {
+    "subhead": "Pratique matemática, geometria, inglês e ciências — feito para alunos do ensino básico.",
+    "ctaParents": "Sou encarregado de educação",
+    "ctaKids": "Entrar como aluno",
+    "ctaTeachers": "Sou professor"
+  }
+}

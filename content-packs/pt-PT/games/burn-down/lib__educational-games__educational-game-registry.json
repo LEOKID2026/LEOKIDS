@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "letters_words_and_sentences_in_english_riding_on_the_train_cars": "Letras, palavras e frases em inglês – andando nos vagões do comboio",
+    "check_the_purchase_total_and_how_much_the_customer_paid_work_out_for_you": "Verifica o total da compra e quanto o cliente pagou - calcula quanto troco devolver.",
+    "coins_are_awarded_based_on_how_many_experiments_you_succeeded_at_difficu": "As moedas são concedidas com base em quantas experiências tiveste sucesso, nível de dificuldade, precisão, sequências e conclusão de 20 experiências - somente se tiveste sucesso pelo menos uma vez.",
+    "coins_are_awarded_based_on_how_many_questions_you_answered_correctly_acc": "As moedas são concedidas com base em quantas perguntas respondeste corretamente, precisão, sequências e nível de dificuldade - mesmo que o jogo tenha terminado devido a erros.",
+    "coins_are_awarded_based_on_how_many_orders_you_prepared_correctly_accura": "As moedas são concedidas com base em quantos pedidos preparaste corretamente, precisão, sequências e nível de dificuldade.",
+    "coins_are_awarded_based_on_how_many_of_the_20_tasks_you_completed_accura": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e finalização do caminho.",
+    "pay_attention_to_whether_order_matters_for_skip_counting_and_sequences_y": "Presta atenção se a ordem é importante - para contagem pulada e sequências precisas escolher em ordem.",
+    "coins_are_awarded_based_on_how_many_of_the_20_tasks_you_completed_accura_2": "As moedas são concedidas com base em quantas das 20 tarefas completaste, precisão, sequências e nível de dificuldade.",
+    "coins_are_awarded_based_on_how_many_of_the_20_cases_you_solved_accuracy_": "As moedas são concedidas com base em quantos dos 20 casos resolveste, precisão, sequências e nível de dificuldade."
+  }
+}

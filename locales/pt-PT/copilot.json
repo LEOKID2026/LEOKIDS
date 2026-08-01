@@ -1,0 +1,34 @@
+{
+  "boundary": {
+    "healthBoundary": "Só posso usar os dados práticos mostrados no site. O relatório não pretende tirar conclusões pessoais sobre o seu filho – ele ajuda a ver qual tópico de aprendizagem fortalecer. Podemos escolher um pequeno próximo passo de aprendizagem a partir desses dados.",
+    "privacyBoundary": "Só posso ajudar com o relatório da criança vinculada a esta conta de encarregado de educação. Não posso mostrar dados, palavras-passe, listas de utilizadores ou informações internas do sistema de outras crianças.",
+    "peerComparison": "O relatório baseia-se apenas na prática desta criança e não a compara com outras crianças da turma. Pode se concentrar no que aparece no relatório e perguntar sobre um tópico específico.",
+    "ambiguous": "Não consegui dizer a que parte do relatório se referia. Tente uma pergunta mais simples — por exemplo: o que é mais importante praticar esta semana, o que tentar em casa ou qual tópico abrir como uma atividade curta."
+  },
+  "answers": {
+    "utils_parent-copilot_index": {
+      "this_mode_is_for_parent_only": "Este modo é apenas para encarregados de educação."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Pode escolher outro tópico do relatório ou praticar mais este tópico e perguntar novamente."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "não deve incluir um bloco next_step."
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "Neste assunto ainda não há um tópico com prática suficiente para discutir — pode tentar outro assunto."
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "Quando aparecerem assuntos no intervalo de datas, pergunte novamente e terá uma lista organizada.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Estas são as linhas de resumo do período conforme aparecem no relatório. Para detalhes por assunto, abra o ecrã de assuntos.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "Pode perguntar novamente com dois nomes de assuntos ou fazer uma pergunta sobre classificação por dificuldade versus resultados relativamente fortes com base nos dados do relatório.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Quando assuntos ativos aparecem, pode ver exatamente onde os dados são mais escassos.",
+      "you_can_formulate_again_with_two_subject_names": "Pode perguntar novamente com dois nomes de assuntos ou fazer uma pergunta sobre classificação por dificuldade versus resultados relativamente fortes com base nos dados do relatório.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Quando os dados práticos aparecerem para pelo menos um tópico com perguntas, poderá perguntar novamente para obter uma imagem mais clara.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Quando os dados completos da prática por assunto aparecerem no relatório, poderá identificar uma área que precisa de atenção."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Aqui estão algumas palavras que pode compartilhar com uma criança em linguagem gentil."
+    }
+  }
+}

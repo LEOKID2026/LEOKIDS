@@ -1,0 +1,24 @@
+{
+  "subjects": {
+    "math": {
+      "nextWeekGoalHe": "Alvo para reforço: aumentar a percentagem de sucesso na comparação de quantidades ou números (pelo menos mais uma tentativa bem sucedida do que na semana passada). Objetivo de retenção: continuar uma rotina de prática descontraída na composição para manter o nível de precisão.",
+      "studentRecommendationsImprove": [
+        {
+          "textHe": "Deves praticar um pouco mais no assunto: ao comparar quantidades ou números - foram registrados 7 erros semelhantes no período selecionado. Ficamos com a prática focada e não com “tentar consertar tudo de uma vez”."
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "textHe": "Recomenda-se incentivar a persistência na conexão – vês sucesso repetido; Manter um hábito positivo é tão importante quanto corrigir erros."
+        }
+      ]
+    },
+    "geometry": {
+      "studentRecommendationsImprove": [
+        {
+          "textHe": "Deves praticar um pouco mais no assunto: confusão repetida entre escopo e área – foram registrados 6 erros semelhantes no período selecionado. Ficamos com a prática focada e não com “tentar consertar tudo de uma vez”."
+        }
+      ]
+    }
+  }
+}
