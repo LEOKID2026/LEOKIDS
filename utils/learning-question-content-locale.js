@@ -21,6 +21,10 @@ const PRODUCT_CONTENT_LOCALES = new Set([
   "es-BO",
   "es-HN",
   "es-SV",
+  "es-NI",
+  "es-PY",
+  "es-CR",
+  "es-PA",
 ]);
 
 /** Detect Hebrew-script code points without embedding Unicode escapes in source. */

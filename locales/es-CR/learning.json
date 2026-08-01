@@ -1,0 +1,49 @@
+{
+  "chooseGrade": "Elegir año",
+  "master": {
+    "gradeRequired": "Elige un año antes de practicar. Pide a un padre o tutor que actualice tu año.",
+    "practiceSettingsBlurb": "Controla tu entrenamiento: repasa errores recientes, práctica por años (empieza bajo y avanza hasta el nivel que elijas) o elige un área de enfoque.",
+    "notEnoughQuestions": "No hay suficientes preguntas para el tema, año o nivel que elegiste. Prueba a cambiar una configuración.",
+    "gradeFallback": "Año",
+    "gradedPracticeBlurb": "Práctica por años — empieza bajo y avanza hasta el nivel que elijas",
+    "grades": {
+      "g1": "1.er año",
+      "g2": "2.º año",
+      "g3": "3.er año",
+      "g4": "4.º año",
+      "g5": "5.º año",
+      "g6": "6.º año"
+    },
+    "practiceModes": {
+      "graded": "Práctica por años"
+    },
+    "gradeTitle": "Año {grade}",
+    "mistakePracticeBlurb": "Elige un error reciente para abrir práctica enfocada en el mismo tema, año y dificultad.",
+    "currentGrade": "Año actual",
+    "smartPracticeBlurb": "Como en matemáticas y geometría, elige un modo especial de entrenamiento, vincúlalo a errores recientes o usa la práctica por años.",
+    "gradedPracticeLabel": "Práctica por años (empieza bajo → tu nivel elegido)"
+  },
+  "math": {
+    "howToLearnBlurb": "El objetivo es practicar matemáticas de forma divertida, según el año, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el año, la dificultad y la operación (suma, resta, multiplicación, división, fracciones, porcentajes y más)."
+    }
+  },
+  "geometry": {
+    "howToLearnBlurb": "El objetivo es practicar geometría de forma divertida, según el año, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el año, la dificultad y el tema (área, perímetro, volumen, ángulos, Pitágoras y más)."
+    },
+    "errors": {
+      "invalidGrade": "Año no válido. Elige otro año.",
+      "noTopics": "No hay temas disponibles para este año. Elige otro año.",
+      "noQuestions": "No hay preguntas disponibles para el tema y año seleccionados."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "El objetivo es practicar ciencias de forma divertida, según el año, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el año, el nivel y el tema (p. ej. cuerpo humano, plantas, animales y más)."
+    }
+  }
+}

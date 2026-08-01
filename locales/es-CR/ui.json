@@ -1,0 +1,24 @@
+{
+  "public": {
+    "homepage": {
+      "hero": {
+        "worksheetsCta": "Hojas de trabajo para imprimir"
+      }
+    }
+  },
+  "parent": {
+    "worksheets": "Hojas de trabajo para imprimir",
+    "selectGrade": "Seleccionar año",
+    "gradeRequired": "Selecciona un año.",
+    "filterSuitable": "Adecuadas al año",
+    "gradeSuitable": "Adecuadas al año",
+    "allowGradePicker": "Permitir que el niño o niña elija el año en las páginas de aprendizaje"
+  },
+  "student": {
+    "panelWorksheets": "Hojas de trabajo",
+    "noWorksheets": "No hay hojas de trabajo abiertas ahora. Cuando se asignen, aparecerán aquí."
+  },
+  "help": {
+    "videoModalMobile": "Video tutorial (celular)"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglés — 1.er año"
+    },
+    "english.g2": {
+      "bookTitle": "Inglés — 2.º año"
+    },
+    "english.g3": {
+      "bookTitle": "Inglés — 3.er año"
+    },
+    "english.g4": {
+      "bookTitle": "Inglés — 4.º año"
+    },
+    "english.g5": {
+      "bookTitle": "Inglés — 5.º año"
+    },
+    "english.g6": {
+      "bookTitle": "Inglés — 6.º año"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometría — 1.er año"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometría — 2.º año"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometría — 3.er año"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometría — 4.º año"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometría — 5.º año"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometría — 6.º año"
+    },
+    "math.g1": {
+      "bookTitle": "Matemáticas — 1.er año"
+    },
+    "math.g2": {
+      "bookTitle": "Matemáticas — 2.º año"
+    },
+    "math.g3": {
+      "bookTitle": "Matemáticas — 3.er año"
+    },
+    "math.g4": {
+      "bookTitle": "Matemáticas — 4.º año"
+    },
+    "math.g5": {
+      "bookTitle": "Matemáticas — 5.º año"
+    },
+    "math.g6": {
+      "bookTitle": "Matemáticas — 6.º año"
+    },
+    "science.g1": {
+      "bookTitle": "Ciencias — 1.er año"
+    },
+    "science.g2": {
+      "bookTitle": "Ciencias — 2.º año"
+    },
+    "science.g3": {
+      "bookTitle": "Ciencias — 3.er año"
+    },
+    "science.g4": {
+      "bookTitle": "Ciencias — 4.º año"
+    },
+    "science.g5": {
+      "bookTitle": "Ciencias — 5.º año"
+    },
+    "science.g6": {
+      "bookTitle": "Ciencias — 6.º año"
+    }
+  }
+}

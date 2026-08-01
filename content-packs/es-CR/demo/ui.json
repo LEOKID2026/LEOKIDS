@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "changeGrade": "Cambiar año",
+    "gradeLabel": "Año"
+  },
+  "enter": {
+    "intro": "Elige un año y explora el mundo infantil. {minutes} minutos de juego y aprendizaje, sin registrarte.",
+    "activeSessionNote": "Tienes una demo activa: cambiar el año no reiniciará el temporizador.",
+    "chooseGradeLegend": "Elige un año"
+  },
+  "worksheet": {
+    "pageTitle": "Hoja de trabajo — modo demo",
+    "intro": "Puedes explorar hojas de trabajo desde la lista de la página de inicio. El envío digital no está disponible en modo demo."
+  },
+  "grades": {
+    "g1": "1.er año",
+    "g2": "2.º año",
+    "g3": "3.er año",
+    "g4": "4.º año",
+    "g5": "5.º año",
+    "g6": "6.º año"
+  },
+  "parentPortal": {
+    "readOnlyWorksheets": "Modo demo — puedes explorar hojas de trabajo, pero no crear nuevas."
+  }
+}
