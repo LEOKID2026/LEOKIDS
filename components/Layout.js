@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import SiteLegalFooterBar from "./layout/SiteLegalFooterBar.jsx";
+import LanguageSwitcher from "./i18n/LanguageSwitcher.jsx";
 import StudentAdSlot from "./student/StudentAdSlot.jsx";
 import StudentThemePicker from "./student/StudentThemePicker.jsx";
 import HomeDemoButton from "./home/HomeDemoButton.jsx";
@@ -19,6 +20,7 @@ import {
   isPurePublicMarketingPath,
   NAV_AREAS,
   resolveNavArea,
+  shouldShowLayoutLanguageSwitcher,
   shouldShowLayoutStudentAdSlot,
   shouldShowLayoutThemePicker,
 } from "../lib/site-nav";
@@ -106,6 +108,7 @@ export default function Layout({
   const { links: menuLinks } = getContextNav(pathname, navOptions);
   const areaHomeHref = getAreaHomeHref(pathname, navOptions);
   const showThemePicker = layoutShowThemePicker || shouldShowLayoutThemePicker(pathname);
+  const showLanguageSwitcher = shouldShowLayoutLanguageSwitcher(pathname);
 
   const resolveNavLabel = (link) =>
     link.labelKey ? t(link.labelKey) : String(link.label || link.href);
@@ -226,6 +229,9 @@ export default function Layout({
           </div>
 
           <div className="ms-auto flex items-center gap-1.5 shrink-0">
+            {showLanguageSwitcher ? (
+              <LanguageSwitcher appearance={isStudentBright ? "bright" : "classic"} />
+            ) : null}
             {showThemePicker ? (
               <StudentThemePicker variant="icon" iconSize="nav" />
             ) : null}

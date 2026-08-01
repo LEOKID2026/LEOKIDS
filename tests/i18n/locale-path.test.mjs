@@ -90,6 +90,17 @@ test("buildLocalizedHref preserves query and hash", () => {
   );
 });
 
+test("buildLocalizedHref en ↔ es-419 keeps same page with query and hash", () => {
+  assert.equal(
+    buildLocalizedHref("es-419", "/parents", { search: "utm=1", hash: "cta" }),
+    "/es-419/parents?utm=1#cta"
+  );
+  assert.equal(
+    buildLocalizedHref("en", "/student/home", { search: "x=1", hash: "nav" }),
+    "/student/home?x=1#nav"
+  );
+});
+
 test("isLocaleRoutingExcluded: static assets and API paths", () => {
   assert.equal(isLocaleRoutingExcluded("/_next/static/chunk.js"), true);
   assert.equal(isLocaleRoutingExcluded("/api/auth/session"), true);

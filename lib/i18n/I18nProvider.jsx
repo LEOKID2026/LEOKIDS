@@ -85,15 +85,35 @@ export function I18nProvider({
       writeLocaleCookieClient(id);
       if (onLocaleChange) await onLocaleChange(id);
 
-      const currentPath = canonicalizeLocalizedPath(router.asPath.split("?")[0].split("#")[0]);
-      const search = router.asPath.includes("?") ? router.asPath.split("?")[1]?.split("#")[0] : "";
-      const hash = router.asPath.includes("#") ? `#${router.asPath.split("#")[1]}` : "";
+      // Prefer the browser URL: middleware rewrites strip the locale prefix from
+      // router.asPath, so soft-push back to the default locale can become a no-op.
+      const browserPathname =
+        typeof window !== "undefined" ? window.location.pathname : router.asPath.split("?")[0].split("#")[0];
+      const search =
+        typeof window !== "undefined"
+          ? window.location.search.replace(/^\?/, "")
+          : router.asPath.includes("?")
+            ? router.asPath.split("?")[1]?.split("#")[0] || ""
+            : "";
+      const hash =
+        typeof window !== "undefined"
+          ? window.location.hash
+          : router.asPath.includes("#")
+            ? `#${router.asPath.split("#")[1]}`
+            : "";
+      const currentPath = canonicalizeLocalizedPath(browserPathname);
       const nextHref = buildLocalizedHref(id, currentPath, {
         search: search || undefined,
         hash: hash || undefined,
       });
 
-      if (opts.reload) {
+      const mustHardNavigate =
+        opts.reload ||
+        (typeof window !== "undefined" &&
+          stripLocaleFromPath(browserPathname).hadPrefix &&
+          id === DEFAULT_LOCALE);
+
+      if (mustHardNavigate) {
         window.location.assign(nextHref);
         return;
       }
