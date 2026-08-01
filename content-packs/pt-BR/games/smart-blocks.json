@@ -1,0 +1,11 @@
+{
+  "gameId": "smart-blocks",
+  "title": "Blocos Inteligentes",
+  "blurb": "Coloque formas, limpe linhas e colunas e alcance a meta de pontuação!",
+  "help": {
+    "howToPlay": "Arraste as formas para o quadro, gire-as se necessário e posicione-as para preencher linhas e colunas.",
+    "scoring": "Limpar uma linha ou coluna adiciona pontos. O objetivo é atingir a meta de pontuação antes que o tabuleiro fique cheio.",
+    "rewards": "Ganhar com base no nível de dificuldade concede moedas e um bônus de pontuação acrescenta ainda mais.",
+    "tip": "Tente limpar várias linhas de uma vez - isso dá muitos pontos."
+  }
+}

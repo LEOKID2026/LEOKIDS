@@ -8,6 +8,7 @@ import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/scho
 import { hasSchoolPortalSession } from "../../lib/school-portal/operator-grants.js";
 import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   adminProfileFormToPayload,
   adminProfileToForm,
@@ -113,6 +114,7 @@ export default function SchoolStudentDetailsPanel({
   showAuditFooter = true,
   onStudentNameChange,
 }) {
+  const t = useT();
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
   const [profile, setProfile] = useState(null);
@@ -507,7 +509,7 @@ export default function SchoolStudentDetailsPanel({
         <div className="space-y-4">
           <Section title={SC_DETAILS_SECTION_STUDENT}>
             <dl>
-              <FieldRow label={SC_DETAILS_FIELD_GRADE} value={schoolGradeLabelHe(gradeLevel)} />
+              <FieldRow label={SC_DETAILS_FIELD_GRADE} value={schoolGradeLabelHe(gradeLevel, t)} />
               <FieldRow label={SC_DETAILS_FIELD_CLASS} value={physicalClassName} />
               <FieldRow
                 label={SC_DETAILS_FIELD_CHILD_AGE}

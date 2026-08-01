@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "practice_recommendation": "Recomendação prática",
+    "recommended_practice_level": "Nível de prática recomendado",
+    "recommended_number_of_questions": "Número recomendado de perguntas",
+    "keep_practicing_based_on_your_progress": "Continuar praticando com base no seu progresso"
+  }
+}

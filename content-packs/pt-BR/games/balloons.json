@@ -1,0 +1,11 @@
+{
+  "gameId": "balloons",
+  "title": "Balão estourado",
+  "blurb": "Estoure balões antes que o tempo acabe!",
+  "help": {
+    "howToPlay": "Toque nos balões para estourá-los. Você tem três vidas e um minuto. Cuidado com as bombas!",
+    "scoring": "Balões normais, dourados e de diamante somam pontos. Os balões do relógio acrescentam tempo e os balões do coração restauram uma vida. Uma bomba tira uma vida.",
+    "rewards": "Alcançar a meta pop ou uma pontuação final alta concede moedas e diamantes.",
+    "tip": "Fique atento aos balões especiais - eles podem ajudá-lo antes que o tempo acabe."
+  }
+}

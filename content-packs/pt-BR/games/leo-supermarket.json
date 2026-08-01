@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Mercearia do Leo",
+  "blurb": "Um jogo sobre dinheiro, compras e troca",
+  "help": {
+    "howToPlay": "Um cliente pede produtos - escolha-os na prateleira, calcule o troco e escolha as moedas correspondentes. Toque em \"Dar troco\" quando estiver pronto.",
+    "scoring": "Produto correto +10, alteração correta +25, cliente satisfeito +30, alteração logo na primeira tentativa +10, atendimento rápido +5. Um erro ou falta de tempo −5.",
+    "rewards": "As moedas são concedidas com base em quantos clientes você atendeu, precisão, sequências e nível de dificuldade - mesmo que você não tenha atendido todos os 20 clientes.",
+    "tip": "Verifique o total da compra e quanto o cliente pagou - calcule você mesmo quanto troco devolver."
+  },
+  "accessibility": {
+    "title": "Mercearia do Leo"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "clear_well_evidenced_knowledge_gap_in_one_topic": "Lacuna de conhecimento clara e bem evidenciada em um tópico.",
+    "moderate_difficulty_in_one_topic_needs_focused_practice_not_yet_a_clear_": "Dificuldade moderada em um tópico – requer prática focada, mas ainda não há uma lacuna clara.",
+    "decent_but_not_yet_fully_mastered_accuracy_partial_stability": "Precisão decente, mas ainda não totalmente dominada - estabilidade parcial.",
+    "high_stable_accuracy_over_adequate_volume_mastery": "Precisão alta e estável sobre volume adequado - domínio.",
+    "some_practice_but_not_enough_to_call_a_direction_yet_more_than_initial_d": "Alguma prática, mas ainda não o suficiente para chamar uma direção (mais do que dados_iniciais, menos do que um limite de evidência total).",
+    "too_little_practice_q_4_or_engine_explicitly_withholds_to_say_anything_a": "Pouca prática (q<=4, ou o mecanismo omite explicitamente) para dizer qualquer coisa sobre um padrão.",
+    "both_a_positive_dominance_signal_and_a_repeated_mistake_signal_detected_": "Tanto um sinal de dominância positiva quanto um sinal de erro repetido detectado na mesma janela de tópico.",
+    "two_or_more_actionable_gap_topics_in_this_subject": "Dois ou mais tópicos com lacunas acionáveis ​​neste assunto.",
+    "exactly_one_actionable_gap_topic_in_this_subject": "Exatamente um tópico de lacuna acionável neste assunto.",
+    "no_actionable_gaps_at_least_one_stable_topic": "Sem lacunas acionáveis; pelo menos um tópico estável.",
+    "no_topics_with_usable_evidence_in_this_subject_yet": "Ainda não há tópicos com evidências utilizáveis ​​neste assunto.",
+    "cannot_conclude_yet_insufficient_readiness_or_confidence_most_cautious_e": "Ainda não é possível concluir/prontidão ou confiança insuficientes – envelope mais cauteloso.",
+    "early_signal_only_first_direction_forming_still_needs_more_practice": "Somente sinal antecipado - formação da primeira direção, ainda precisa de mais prática.",
+    "reasonable_working_direction_wants_to_see_it_repeat_before_calling_it_st": "Direção de trabalho razoável; quer vê-lo repetir antes de chamá-lo de estável.",
+    "direction_looks_stable_across_the_period_keep_up_routine_practice": "A direção parece estável ao longo do período; mantenha a prática rotineira.",
+    "highest_confidence_stable_mastery_envelope_eligible_for_a_graduated_reco": "Envelope estável/de domínio da mais alta confiança - elegível para uma etapa de recomendação gradual."
+  }
+}

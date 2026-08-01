@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Toque de alvo",
+  "blurb": "Toque nos alvos antes que desapareçam!",
+  "help": {
+    "howToPlay": "Toque nos alvos que aparecem na tela antes que desapareçam. Você tem três vidas.",
+    "scoring": "Alvos regulares, estrelas e diamantes valem pontos diferentes. Desaparecer custa uma vida. Acertos consecutivos dão um bônus de combo.",
+    "rewards": "Alcançar a meta atingida ou uma pontuação final alta concede moedas e diamantes.",
+    "tip": "Não se apresse em tudo - às vezes um alvo com diamante vale mais."
+  }
+}

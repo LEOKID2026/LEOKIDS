@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "active": "Ativo",
+    "closed": "Fechado",
+    "archived": "Arquivado",
+    "digital_answer_sheet": "Folha de respostas digital",
+    "manual_grading": "Classificação manual",
+    "not_submitted": "Não enviado",
+    "submitted": "Enviado",
+    "pending_review": "Revisão pendente",
+    "partially_checked": "Parcialmente verificado",
+    "checked": "Verificado",
+    "published": "Publicado",
+    "multiple_choice": "Múltipla escolha",
+    "true_false": "Verdadeiro/Falso",
+    "number": "Número",
+    "short_answer": "Resposta curta",
+    "free_text": "Texto livre"
+  }
+}

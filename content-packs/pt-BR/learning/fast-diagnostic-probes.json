@@ -1,0 +1,236 @@
+{
+  "probesByErrorTag": {
+    "adds_denominators_directly": {
+      "skill": "Encontrar um denominador comum antes de adicionar frações",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Verifique se a dificuldade é encontrar um denominador comum antes da adição em si, com perguntas curtas apenas sobre um único denominador comum."
+    },
+    "wrong_lcm": {
+      "skill": "Compreendendo o mínimo denominador comum",
+      "suggestedQuestionType": "fraction_lcm_pair_compare",
+      "reason": "Execute pares de pequenos denominadores e peça para identificar o mínimo denominador comum antes de combinar."
+    },
+    "ignores_denominator": {
+      "skill": "Vinculando numeradorΓÇôdenominador em operações fracionárias",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Fortaleça a ligação entre numerador e denominador antes de combinar duas frações."
+    },
+    "concept_gap": {
+      "skill": "Compreendendo uma fração como uma proporção",
+      "suggestedQuestionType": "fraction_meaning_visual",
+      "reason": "Mostre uma representação visual da fração como uma razão antes do algoritmo de adição."
+    },
+    "operation_confusion": {
+      "skill": "Distinguir adição de multiplicação de frações",
+      "suggestedQuestionType": "fraction_operation_gate",
+      "reason": "Escolha explicitamente uma operação (adição/subtração/multiplicação) com uma frase orientadora curta."
+    },
+    "tense_confusion": {
+      "skill": "Combinando o tempo verbal com uma palavra temporal ou assunto",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Escolha pares mínimos (por exemplo, passado/presente) com a mesma raiz e uma palavra de tempo clara."
+    },
+    "grammar_pattern_error": {
+      "skill": "Correspondência da forma verbal ao sujeito",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole frases curtas com sujeitos no singular/plural e formas verbais correspondentes."
+    },
+    "vocabulary_gap": {
+      "skill": "Vocabulário em uma frase curta",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Complete uma palavra em uma frase curta com contexto claro (não uma lista de palavras independente)."
+    },
+    "concept_confusion": {
+      "skill": "Distinguir conceitos científicos intimamente relacionados",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Apresente dois conceitos adjacentes e escolha uma definição correta no texto abreviado."
+    },
+    "fact_recall_gap": {
+      "skill": "Relembrando um fato da lição",
+      "suggestedQuestionType": "science_fact_one_line_recall",
+      "reason": "Uma pergunta curta com uma resposta precisa do material aprendido."
+    },
+    "cause_effect_gap": {
+      "skill": "Relação causaΓÇôefeito",
+      "suggestedQuestionType": "science_cause_effect_pair",
+      "reason": "Escolha o que vem da causa e o que vem do efeito em uma situação simples."
+    },
+    "classification_error": {
+      "skill": "Classificação por um único critério",
+      "suggestedQuestionType": "science_single_criterion_sort",
+      "reason": "Apresente um pequeno conjunto e peça para classificar por um atributo claro."
+    },
+    "place_value_error": {
+      "skill": "Valor posicional de um dígito",
+      "suggestedQuestionType": "place_value_digit_value",
+      "reason": "Isole o valor posicional de um dígito em um número em um breve exercício."
+    },
+    "multiplication_fact_gap": {
+      "skill": "Fatos da tabuada de multiplicação",
+      "suggestedQuestionType": "multiplication_fact_check",
+      "reason": "Uma breve questão de multiplicação direta da tabuada."
+    },
+    "geometry_calculation_slip": {
+      "skill": "Escolhendo uma fórmula ou primeiro passo na geometria",
+      "suggestedQuestionType": "geometry_formula_choice",
+      "reason": "Escolha uma fórmula apropriada ou o primeiro passo antes do cálculo numérico."
+    },
+    "prerequisite_gap": {
+      "skill": "Conceito de pré-requisito",
+      "suggestedQuestionType": "geometry_concept_minimal_contrast",
+      "reason": "Reforce um conceito fundamental antes de continuar."
+    },
+    "spelling_pattern_error": {
+      "skill": "Ortografia em contexto curto",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Complete uma palavra em uma frase com contexto claro."
+    },
+    "present_simple_3rd_singular_error": {
+      "skill": "Forma verbal de terceira pessoa no presente simples",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole frases curtas com he/she/it e escolha a forma verbal correspondente."
+    },
+    "past_tense_form_error": {
+      "skill": "Forma de passado simples",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Escolha pares mínimos de passado/presente com a mesma raiz."
+    },
+    "progressive_aspect_error": {
+      "skill": "Presente contínuo (am/is/are + V-ing)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Verifique a escolha entre uma ação contínua e um tempo simples."
+    },
+    "question_word_order_error": {
+      "skill": "Ordem das palavras em uma pergunta",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Isole frases curtas com perguntas do/faz/é/está no lugar certo."
+    },
+    "modal_verb_error": {
+      "skill": "Verbos auxiliares (pode/deve/deveria)",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Escolha entre dois verbos auxiliares em uma frase curta com o mesmo verbo principal."
+    },
+    "quantifier_choice_error": {
+      "skill": "Quantificadores (alguns/muitos/muito)",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Distinga quantidade contável de quantidade incontável em uma frase curta."
+    },
+    "comparative_form_error": {
+      "skill": "Formulário de comparação",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Escolha -er/-est ou more/most em uma frase curta."
+    },
+    "future_form_error": {
+      "skill": "Futuro (irá/vai para)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Escolha entre querer e ir para em um contexto claro."
+    },
+    "perfect_aspect_error": {
+      "skill": "Tempos perfeitos (have/had + V3)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Compare uma forma perfeita com um tempo simples no mesmo contexto."
+    },
+    "conditional_clause_error": {
+      "skill": "Sentença condicional",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Isole se/quando com uma forma verbal correspondente em uma pessoa."
+    },
+    "sentence_structure_error": {
+      "skill": "Estrutura da frase",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole frases curtas com ordem de palavras e forma verbal consistentes."
+    },
+    "advanced_grammar_error": {
+      "skill": "Gramática avançada",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole uma frase com um padrão gramatical claro para verificar."
+    }
+  },
+  "probesByDiagnosticSkillId": {
+    "math_frac_same_den": {
+      "skill": "Adição/subtração de frações com o mesmo denominador",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Confirme a estabilidade no numerador quando o denominador já estiver compartilhado."
+    },
+    "math_frac_common_denominator": {
+      "skill": "Encontrar um denominador comum antes de adicionar",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Primeiro verifique a etapa do denominador comum sem pular direto para a resposta final."
+    },
+    "en_grammar_be_present": {
+      "skill": "Seja formulário com o assunto",
+      "suggestedQuestionType": "english_be_agreement_gate",
+      "reason": "Isole as frases com I/he/they e escolha a forma correspondente."
+    },
+    "en_grammar_present_simple": {
+      "skill": "Presente simples - sujeitoΓÇôconcordância verbal",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole frases curtas com he/she/it e escolha a forma verbal correspondente."
+    },
+    "en_grammar_past_simple": {
+      "skill": "Passado simples",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Escolha pares mínimos de passado/presente com a mesma raiz."
+    },
+    "en_grammar_progressive": {
+      "skill": "Presente contínuo",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Verifique a escolha entre uma ação contínua e um tempo simples."
+    },
+    "en_grammar_question_frames": {
+      "skill": "Quadros de perguntas",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Isole frases curtas com perguntas do/faz/é/está no lugar certo."
+    },
+    "en_grammar_modals": {
+      "skill": "Verbos auxiliares",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Escolha entre dois verbos auxiliares em uma frase curta."
+    },
+    "en_grammar_quantifiers": {
+      "skill": "Quantificadores",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Distinga alguns/muitos/muito em uma frase curta."
+    },
+    "en_grammar_comparatives": {
+      "skill": "Comparação",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Escolha um formulário de comparação em uma frase curta."
+    },
+    "en_grammar_future_forms": {
+      "skill": "Futuro",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Escolha entre querer e ir para em um contexto claro."
+    },
+    "en_grammar_complex_tenses": {
+      "skill": "Tempos perfeitos",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Verifique perfeito versus um tempo simples no mesmo contexto."
+    },
+    "en_grammar_conditionals": {
+      "skill": "Condicionais",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Isole se/quando com uma forma verbal correspondente."
+    },
+    "en_grammar_phase29_standard": {
+      "skill": "Correspondência da forma verbal ao sujeito",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole frases curtas com sujeitos no singular/plural e formas verbais correspondentes."
+    },
+    "en_grammar_phase29_advanced": {
+      "skill": "Gramática avançada – etapa intermediária",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isole uma frase com um padrão gramatical claro para verificar."
+    },
+    "sci_body_fact_recall": {
+      "skill": "Relembrando um fato sobre corpo/sistemas",
+      "suggestedQuestionType": "science_fact_single_choice",
+      "reason": "Uma pergunta factual precisa do material sobre o órgão ou sistema."
+    },
+    "sci_respiration_concept": {
+      "skill": "Papel do sistema respiratório nas trocas gasosas",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Distinguir o transporte sanguíneo da troca de oxigênio/CO2 com o ar."
+    }
+  }
+}

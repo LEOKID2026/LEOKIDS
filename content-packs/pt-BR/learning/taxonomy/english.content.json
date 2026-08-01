@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "Vocabulário",
+      "topic": "Contexto",
+      "subskill": "colocação",
+      "pattern": "Tradução literal incorreta",
+      "counterEvidence": "Correto após dois exemplos",
+      "countsWhen": "Frases claras",
+      "doesNotCountWhen": "Apenas distrator de falso amigo",
+      "probe": "Frases paralelas",
+      "intervention": "Cartões de frases",
+      "escalation": "Dificuldade em todos os tópicos",
+      "observableMarkers": [
+        "Mesma raiz em frases diferentes"
+      ],
+      "roots": [
+        "falso amigo"
+      ],
+      "competitors": [
+        "Gramática"
+      ],
+      "doNotConclude": [
+        "Sem inglês"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "Gramática",
+      "topic": "Tempos",
+      "subskill": "Marcador de tempo",
+      "pattern": "past/present",
+      "counterEvidence": "Corrija com um gráfico de marcadores",
+      "countsWhen": "Marcador destacado",
+      "doesNotCountWhen": "Tempo misto sem ensino prévio",
+      "probe": "Frases idênticas, marcador diferente",
+      "intervention": "Gráfico de marcadores",
+      "escalation": "Sem melhoria",
+      "observableMarkers": [
+        "Erro quando ontem/agora está explícito"
+      ],
+      "roots": [
+        "Mapa tenso"
+      ],
+      "competitors": [
+        "Vocabulário"
+      ],
+      "doNotConclude": [
+        "Sem gramática"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "Leitura",
+      "topic": "Disposição",
+      "subskill": "Rastreamento de linha",
+      "pattern": "Erro no layout de duas colunas",
+      "counterEvidence": "Correto em uma coluna larga",
+      "countsWhen": "Fonte legível",
+      "doesNotCountWhen": "Fonte minúscula sem andaime",
+      "probe": "Fonte grande vs pequena",
+      "intervention": "Número de linha/rastreamento de dedo",
+      "escalation": "Relatório de visão",
+      "observableMarkers": [
+        "Erro apenas no layout de duas colunas"
+      ],
+      "roots": [
+        "Rastreamento de linha"
+      ],
+      "competitors": [
+        "Vocabulário"
+      ],
+      "doNotConclude": [
+        "Sem leitura"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "Gramática",
+      "topic": "Acordo",
+      "subskill": "Pronome-sujeito",
+      "pattern": "he/she/it",
+      "counterEvidence": "Corrija quando estiver muito lento",
+      "countsWhen": "Assunto explícito",
+      "doesNotCountWhen": "Somente digitação rápida",
+      "probe": "Cadeia com assunto",
+      "intervention": "Gráfico sujeito-pronome",
+      "escalation": "Sempre falha",
+      "observableMarkers": [
+        "Erro",
+        "Assunto destacado"
+      ],
+      "roots": [
+        "Acordo sintático"
+      ],
+      "competitors": [
+        "Velocidade"
+      ],
+      "doNotConclude": [
+        "Nenhum conhecimento"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "Vocabulário",
+      "topic": "Uso",
+      "subskill": "preposição",
+      "pattern": "Mesma preposição errada",
+      "counterEvidence": "Correto em uma lista fechada",
+      "countsWhen": "Preposições ensinadas",
+      "doesNotCountWhen": "Verbos ainda não ensinados",
+      "probe": "Mesmo verbo, duas preposições",
+      "intervention": "Pares mínimos",
+      "escalation": "Sem melhoria",
+      "observableMarkers": [
+        "Erro com verbos diferentes"
+      ],
+      "roots": [
+        "Vocabulário específico"
+      ],
+      "competitors": [
+        "Gramática geral"
+      ],
+      "doNotConclude": [
+        "Sem idioma"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "Leitura",
+      "topic": "Compreensão",
+      "subskill": "inferência",
+      "pattern": "Fato em vez de inferência",
+      "counterEvidence": "Correto em um fato explícito",
+      "countsWhen": "Tipo de pergunta marcado",
+      "doesNotCountWhen": "Antes que a inferência seja ensinada",
+      "probe": "Fato versus inferência",
+      "intervention": "Palavras de sinalização de inferência",
+      "escalation": "Falha nos fatos também",
+      "observableMarkers": [
+        "Erro apenas na inferência"
+      ],
+      "roots": [
+        "Estratégia"
+      ],
+      "competitors": [
+        "Vocabulário"
+      ],
+      "doNotConclude": [
+        "Sem pensar"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "Escrita",
+      "topic": "Ortografia",
+      "subskill": "Padrões silenciosos",
+      "pattern": "Erros repetidos",
+      "counterEvidence": "Corrija com ditado lento",
+      "countsWhen": "Palavras ensinadas",
+      "doesNotCountWhen": "Antes da regra",
+      "probe": "Escrita controlada",
+      "intervention": "Mini regra de ortografia",
+      "escalation": "Relatório profissional",
+      "observableMarkers": [
+        "Mesmo padrão"
+      ],
+      "roots": [
+        "Fonologia"
+      ],
+      "competitors": [
+        "Digitando"
+      ],
+      "doNotConclude": [
+        "Desordem"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "Audição",
+      "topic": "Fonêmica",
+      "subskill": "pares mínimos",
+      "pattern": "Confundindo um par de sons",
+      "counterEvidence": "Corrija com escuta dupla lenta",
+      "countsWhen": "Limpar gravação",
+      "doesNotCountWhen": "Ruído conhecido",
+      "probe": "O mesmo par em palavras diferentes",
+      "intervention": "Prática em pares",
+      "escalation": "Relatório de audiência",
+      "observableMarkers": [
+        "Erro no mesmo par"
+      ],
+      "roots": [
+        "Fonêmica"
+      ],
+      "competitors": [
+        "Barulho"
+      ],
+      "doNotConclude": [
+        "Distúrbio auditivo"
+      ]
+    }
+  }
+}

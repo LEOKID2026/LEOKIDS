@@ -53,6 +53,10 @@ const COUNTRIES = [
 
 const SELECTOR_IDS = [
   "en",
+  "en-AU",
+  "en-GB",
+  "en-IE",
+  "en-NZ",
   "es-AR",
   "es-BO",
   "es-CL",
@@ -73,21 +77,27 @@ const SELECTOR_IDS = [
   "es-SV",
   "es-UY",
   "es-VE",
+  "pt-BR",
 ];
 
 const SELECTOR_LABELS = [
   "Argentina",
+  "Australia",
   "Bolivia",
+  "Brasil",
   "Chile",
   "Colombia",
   "Costa Rica",
   "Cuba",
   "Ecuador",
   "El Salvador",
+  "England",
   "España",
   "Guatemala",
   "Honduras",
+  "Ireland",
   "México",
+  "New Zealand",
   "Nicaragua",
   "Panamá",
   "Paraguay",
@@ -120,6 +130,11 @@ const SELECTOR_ORDER = [
   "es-CU",
   "es-PR",
   "es-ES",
+  "pt-BR",
+  "en-AU",
+  "en-NZ",
+  "en-IE",
+  "en-GB",
 ];
 
 test("country locales registered with es-419 → en fallback", () => {
@@ -135,9 +150,33 @@ test("country locales registered with es-419 → en fallback", () => {
   }
 });
 
+test("Brasil pt-BR registered with /br and fallback to en", () => {
+  const def = LOCALE_REGISTRY["pt-BR"];
+  assert.ok(def);
+  assert.equal(def.enabled, true);
+  assert.equal(def.fallbackLocale, "en");
+  assert.equal(def.pathPrefix, "br");
+  assert.equal(def.label, "Brasil");
+  assert.equal(def.nativeName, "Brasil");
+  assert.deepEqual(getLocaleFallbackChain("pt-BR"), ["pt-BR", "en"]);
+  assert.equal(getPublicLocalePathPrefix("pt-BR"), "br");
+  assert.equal(resolveLocaleIdFromPathPrefix("br"), "pt-BR");
+  assert.equal(withLocalePath("pt-BR", "/student/home"), "/br/student/home");
+  assert.deepEqual(stripLocaleFromPath("/br/parents"), {
+    locale: "pt-BR",
+    pathname: "/parents",
+    hadPrefix: true,
+    pathSegment: "br",
+  });
+  assert.equal(shouldRedirectToPublicLocalePrefix("pt-BR", "pt-BR"), true);
+  assert.equal(shouldRedirectToPublicLocalePrefix("pt-BR", "BR"), true);
+  assert.equal(shouldRedirectToPublicLocalePrefix("pt-BR", "br"), false);
+  assert.equal(withLocalePath("pt-BR", stripLocaleFromPath("/pt-BR/help").pathname), "/br/help");
+});
+
 test("selector shows English + country names only (no Español / codes)", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 21);
+  assert.equal(locales.length, 26);
   assert.deepEqual(
     locales.map((l) => l.id),
     SELECTOR_ORDER
@@ -244,6 +283,7 @@ test("help center country locales inherit es-419 pack; Spain uses es-ES overlay"
     }
   }
   assert.equal(resolveHelpLocale("en"), "en");
+  assert.equal(resolveHelpLocale("pt-BR"), "pt-BR");
 });
 
 test("es-CO word meaning override merges onto es-419", () => {

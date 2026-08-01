@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "checkers": "Damas",
+    "black_left_seat_in_the_list_goes_first_turns_alternate": "Preto (lugar esquerdo na lista) vai primeiro; vira alternado.",
+    "move_diagonally_forward_kings_move_on_all_diagonals": "Mova-se diagonalmente para frente; os reis se movem em todas as diagonais.",
+    "captures_are_mandatory_when_available": "As capturas são obrigatórias quando disponíveis.",
+    "multi_jumps_with_the_same_piece_continue_until_no_more_captures": "Os saltos múltiplos com a mesma peça continuam até não haver mais capturas."
+  }
+}

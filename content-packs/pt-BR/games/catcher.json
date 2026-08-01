@@ -1,0 +1,11 @@
+{
+  "gameId": "catcher",
+  "title": "Pegue com Leo",
+  "blurb": "Pegue moedas e fique longe das bombas!",
+  "help": {
+    "howToPlay": "Mova Leo para a esquerda e para a direita para pegar moedas e diamantes que caem do céu.",
+    "scoring": "Cada moeda ou diamante capturado soma pontos. Acertar uma bomba encerra o jogo.",
+    "rewards": "Quanto mais pontos você ganhar, mais moedas e diamantes você ganhará para o seu mundo infantil.",
+    "tip": "Fique de olho no que está caindo e avance antes que o item chegue ao fundo."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-gifts",
+  "title": "Loja de doces do Leo",
+  "blurb": "Compartilhamento igual, grupos e restos",
+  "help": {
+    "howToPlay": "Divida entre crianças ou em sacos — descubra quantos por grupo e quantos restam e toque em “Verificar Divisão”.",
+    "scoring": "Resposta correta +30, bônus de tempo de até +20, sequência de 5 acertos +25. Após 3 tentativas fracassadas, a solução é mostrada.",
+    "rewards": "As moedas são concedidas com base em quantas perguntas você respondeu corretamente, precisão, sequências e nível de dificuldade - mesmo que o jogo tenha terminado devido a erros.",
+    "tip": "Observe se a tarefa pede por criança ou sacolas cheias."
+  },
+  "accessibility": {
+    "title": "Loja de doces do Leo"
+  }
+}

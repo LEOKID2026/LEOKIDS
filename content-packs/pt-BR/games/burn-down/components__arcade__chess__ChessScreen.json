@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "white_first_seat_in_the_list_goes_first": "As brancas (primeiro lugar da lista) vão primeiro.",
+    "select_a_piece_then_a_destination_square_per_chess_rules": "Selecione uma peça e, em seguida, uma casa de destino de acordo com as regras do xadrez.",
+    "pawns_reaching_the_last_rank_auto_promote_to_queen": "Os peões que alcançam a última classificação são promovidos automaticamente para rainha.",
+    "checkmate_ends_the_game_a_draw_refunds_entry_to_both_players": "O xeque-mate encerra o jogo; um empate reembolsa a entrada de ambos os jogadores."
+  }
+}

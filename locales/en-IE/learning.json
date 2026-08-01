@@ -1,0 +1,74 @@
+{
+  "chooseGrade": "Choose a class",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "gradeRequired": "Please choose a class before practising. Ask a parent to update your class.",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practice by class (start low and advance to your chosen level), or pick a focus area.",
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry.",
+    "notEnoughQuestions": "Not enough questions for the topic/class/level you chose. Try changing a setting.",
+    "gradeFallback": "Class",
+    "gradedPracticeBlurb": "Practice by class — starts low and advances to your chosen level",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "grades": {
+      "g1": "First Class",
+      "g2": "Second Class",
+      "g3": "Third Class",
+      "g4": "Fourth Class",
+      "g5": "Fifth Class",
+      "g6": "Sixth Class"
+    },
+    "practiceModes": {
+      "graded": "Practice by class"
+    },
+    "gradeTitle": "{grade}",
+    "mistakePracticeBlurb": "Pick a recent mistake to open focused practice in the same topic, class, and difficulty.",
+    "currentGrade": "Current class",
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practice by class.",
+    "gradedPracticeLabel": "Practice by class (start low → your chosen level)",
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "referenceCategories": {
+      "operations": "Maths operations"
+    }
+  },
+  "math": {
+    "levelUpScience": "You levelled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practice maths in a fun way, matched to class, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "howToLearnSteps": {
+      "step1": "Choose class, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    },
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths."
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practice geometry in a fun way, matched to class, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose class, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    },
+    "errors": {
+      "invalidGrade": "Invalid class. Please choose another class.",
+      "noTopics": "No topics available for this class. Please choose another class.",
+      "noQuestions": "No questions available for the selected topic and class."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practice science in a fun way, matched to class, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose class, level, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

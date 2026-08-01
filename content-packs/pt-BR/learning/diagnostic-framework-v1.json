@@ -1,0 +1,238 @@
+{
+  "framework": {
+    "version": "1.1.0",
+    "name": "Estrutura de diagnóstico profissional V1",
+    "supportedSubjectIds": [
+      "matemática",
+      "geometria",
+      "inglês",
+      "ciência"
+    ],
+    "evidenceLevelEnum": [
+      "nenhum",
+      "afinar",
+      "limitado",
+      "médio",
+      "forte"
+    ],
+    "confidenceEnum": [
+      "very_low",
+      "baixo",
+      "médio",
+      "alto"
+    ],
+    "recommendationTypeEnum": [
+      "continue_current_level",
+      "advance_cautiously",
+      "targeted_practice",
+      "review_foundation",
+      "collect_more_data",
+      "slow_down_and_check",
+      "teacher_review_recommended",
+      "professional_review_consideration"
+    ],
+    "bannedConclusionPhrases": [
+      "dislexia",
+      "discalculia",
+      "TDAH",
+      "dificuldade de aprendizagem",
+      "╫º╫ò╫⌐╫Ö ╫£╫₧╫Ö╫ô╫ö ╫º╫£╫Ö╫á╫Ö",
+      "╫É╫æ╫ù╫ò╫ƒ ╫¿╫ñ╫ò╫É╫Ö",
+      "╫É╫æ╫ù╫ò╫ƒ ╫º╫£╫Ö╫á╫Ö"
+    ]
+  },
+  "skillPackStructure": {
+    "math": {
+      "arithmetic_operations": {
+        "subskills": [
+          "adição",
+          "subtração",
+          "multiplicação",
+          "divisão",
+          "order_of_operations"
+        ]
+      },
+      "fractions": {
+        "subskills": [
+          "numerator_denominator_understanding",
+          "compare_fractions",
+          "unlike_denominators",
+          "equivalent_fractions",
+          "add_fractions",
+          "subtract_fractions",
+          "simplify_fractions",
+          "mixed_numbers",
+          "fraction_word_problems"
+        ]
+      },
+      "word_problems": {
+        "subskills": [
+          "identify_operation_from_text",
+          "translate_text_to_equation",
+          "multi_step_reasoning",
+          "irrelevant_information",
+          "reading_the_question"
+        ]
+      },
+      "number_sense": {
+        "subskills": [
+          "place_value",
+          "arredondamento",
+          "estimativa",
+          "number_line_reasoning"
+        ]
+      }
+    },
+    "english": {
+      "vocabulary": {
+        "subskills": [
+          "word_meaning",
+          "colocações",
+          "context_clues",
+          "synonyms_antonyms"
+        ]
+      },
+      "grammar": {
+        "subskills": [
+          "tense_agreement",
+          "sentence_structure",
+          "articles_prepositions",
+          "word_order"
+        ]
+      },
+      "reading_comprehension": {
+        "subskills": [
+          "main_idea",
+          "detalhes",
+          "inferência",
+          "sequência"
+        ]
+      },
+      "sentence_understanding": {
+        "subskills": [
+          "sentence_meaning",
+          "conectores",
+          "negation_scope"
+        ]
+      },
+      "translation": {
+        "subskills": [
+          "alignment_meaning",
+          "false_friends",
+          "instruction_transfer"
+        ]
+      }
+    },
+    "science": {
+      "cause_and_effect": {
+        "subskills": [
+          "identify_cause",
+          "identify_effect",
+          "chain_reasoning"
+        ]
+      },
+      "experiments": {
+        "subskills": [
+          "variáveis",
+          "hipótese",
+          "passos",
+          "interpret_results"
+        ]
+      },
+      "observation": {
+        "subskills": [
+          "describe_patterns",
+          "collect_evidence",
+          "measurement_basics"
+        ]
+      },
+      "classification": {
+        "subskills": [
+          "sorting_rules",
+          "taxonomia",
+          "compare_groups"
+        ]
+      },
+      "systems_understanding": {
+        "subskills": [
+          "parts_roles",
+          "ciclos",
+          "interações"
+        ]
+      },
+      "scientific_reasoning": {
+        "subskills": [
+          "modelos",
+          "previsões",
+          "evidence_vs_opinion"
+        ]
+      }
+    },
+    "geometry": {
+      "shapes": {
+        "subskills": [
+          "identify_shapes",
+          "propriedades",
+          "compare_shapes"
+        ]
+      },
+      "angles": {
+        "subskills": [
+          "measure_angles",
+          "angle_types",
+          "angle_relationships"
+        ]
+      },
+      "area": {
+        "subskills": [
+          "area_formulas",
+          "composite_figures",
+          "unidades"
+        ]
+      },
+      "perimeter": {
+        "subskills": [
+          "perimeter_reasoning",
+          "unidades",
+          "composite_bounds"
+        ]
+      },
+      "symmetry": {
+        "subskills": [
+          "line_symmetry",
+          "reflexões"
+        ]
+      },
+      "spatial_reasoning": {
+        "subskills": [
+          "redes",
+          "visualizações",
+          "transformações"
+        ]
+      }
+    }
+  },
+  "skillLabels": {
+    "math.arithmetic_operations": "Aritmética / operações",
+    "math.fractions": "Frações",
+    "math.word_problems": "Problemas de palavras",
+    "math.number_sense": "Valor posicional / sentido numérico",
+    "english.vocabulary": "Vocabulário",
+    "english.grammar": "Gramática",
+    "english.reading_comprehension": "Compreensão de leitura",
+    "english.sentence_understanding": "Compreensão de frases",
+    "english.translation": "Tradução / ponte bilíngue",
+    "science.cause_and_effect": "Causa e efeito",
+    "science.experiments": "Experimentos",
+    "science.observation": "Observação",
+    "science.classification": "Classificação",
+    "science.systems_understanding": "Compreensão de sistemas",
+    "science.scientific_reasoning": "Raciocínio científico",
+    "geometry.shapes": "Formas",
+    "geometry.angles": "Ângulos",
+    "geometry.area": "Área",
+    "geometry.perimeter": "Perímetro",
+    "geometry.symmetry": "Simetria",
+    "geometry.spatial_reasoning": "Raciocínio espacial"
+  }
+}

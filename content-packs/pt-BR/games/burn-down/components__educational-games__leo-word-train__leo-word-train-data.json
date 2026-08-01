@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "grades_1_2": "1º–2º ano",
+    "grades_3_4": "3º–4º ano",
+    "grades_5_6": "5º–6º ano",
+    "nice_the_lowercase_letter_is_on_the_car": "Legal! A letra minúscula está no carro.",
+    "great_job_the_uppercase_letter_is_in_place": "Ótimo trabalho! A letra maiúscula está no lugar.",
+    "correct_the_first_letter_is_on_the_car": "Correto! A primeira letra está no carro.",
+    "fill_in_the_missing_letter_on_the_car": "Preencha a letra que falta no carro",
+    "awesome_you_filled_in_the_missing_letter": "Incrível! Você preencheu a letra que faltava.",
+    "excellent_you_built_the_word_on_the_cars": "Excelente! Você construiu a palavra nos carros.",
+    "great_you_completed_the_missing_letters": "Ótimo! Você completou as letras que faltavam.",
+    "both_cars_are_ready_all_aboard": "Ambos os carros estão prontos – todos a bordo!",
+    "load_the_word_that_matches_the_picture": "Carregue a palavra que corresponde à imagem",
+    "the_right_word_is_on_the_car": "A palavra certa está no carro!",
+    "word_order_looks_good_the_train_is_leaving": "A ordem das palavras parece boa - o trem está partindo!",
+    "the_missing_word_is_in_place": "A palavra que falta está no lugar!",
+    "that_word_fits_the_situation": "Essa palavra se ajusta à situação!",
+    "arrange_a_sentence_that_describes_the_picture": "Organize uma frase que descreva a imagem",
+    "the_sentence_matches_the_picture_all_aboard": "A frase corresponde à imagem – todos a bordo!"
+  }
+}

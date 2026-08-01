@@ -1,0 +1,11 @@
+{
+  "gameId": "maze",
+  "title": "Labirinto de Leo",
+  "blurb": "Encontre a saída do labirinto antes que o tempo acabe!",
+  "help": {
+    "howToPlay": "Mova Leo pelo labirinto, colete chaves e estrelas e encontre a saída antes que o tempo acabe.",
+    "scoring": "Chaves, estrelas e diamantes somam pontos. Terminar o labirinto dá um grande bônus. Se o tempo acabar, o jogo termina.",
+    "rewards": "Terminar o labirinto com sucesso com base no nível de dificuldade concede moedas e um bônus de pontuação acrescenta ainda mais.",
+    "tip": "Colete as chaves primeiro - às vezes elas desbloqueiam um caminho mais curto."
+  }
+}

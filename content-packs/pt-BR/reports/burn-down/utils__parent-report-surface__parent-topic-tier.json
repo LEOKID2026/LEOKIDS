@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "looks_strong": "Parece forte",
+    "worth_watching": "Vale a pena assistir",
+    "worth_strengthening": "Área para reforçar",
+    "worth_guiding": "Vale a pena orientar",
+    "needs_strengthening": "Precisa de fortalecimento",
+    "few_questions": "Poucas perguntas",
+    "above_grade_level": "Acima do nível escolar",
+    "earlier_foundations": "Fundações anteriores",
+    "strong_topics": "Tópicos fortes",
+    "topics_worth_watching": "Assuntos que valem a pena assistir",
+    "topics_worth_strengthening": "Tópicos que valem a pena fortalecer",
+    "topics_worth_guiding_in_practice": "Tópicos que valem a pena orientar na prática",
+    "topics_with_few_questions": "Tópicos com poucas perguntas",
+    "practice_above_grade_level": "Pratique acima do nível da série",
+    "earlier_foundation_practice": "Prática anterior de fundação"
+  }
+}

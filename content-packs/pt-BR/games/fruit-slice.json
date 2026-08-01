@@ -1,0 +1,11 @@
+{
+  "gameId": "fruit-slice",
+  "title": "Fatia de Fruta",
+  "blurb": "Fatie frutas, evite bombas e alcance a meta de pontuação!",
+  "help": {
+    "howToPlay": "Arraste o dedo pela tela para cortar frutas voadoras. Evite bombas - você pode cometer três erros.",
+    "scoring": "Cada fruta fatiada soma pontos. Fatiar várias frutas de uma vez dá um bônus de combinação. Acertar uma bomba ou perder uma fruta custa um erro.",
+    "rewards": "Atingir a meta de pontuação com base no nível de dificuldade concede moedas e diamantes.",
+    "tip": "Fatie apenas frutas - se você vir uma bomba, é melhor ignorá-la."
+  }
+}

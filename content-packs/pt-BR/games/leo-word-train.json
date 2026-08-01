@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-train",
+  "title": "Trem de palavras de Leo",
+  "blurb": "Letras, palavras e frases em inglês – andando nos vagões do trem",
+  "help": {
+    "howToPlay": "Escolha um cartão, carregue-o em um vagão vazio e toque em “Enviar o Trem”. Quando a resposta estiver correta - o trem parte!",
+    "scoring": "Resposta correta +30, bônus de tempo, sequência de 3 +15, sequência de 5 +30. Tempo limite −5. Um erro não encerra o jogo – apenas conta.",
+    "rewards": "As moedas são concedidas com base em quantas das 20 tarefas você completou, precisão, sequências e nível de dificuldade.",
+    "tip": "Fácil - apenas letras. Médio - palavras curtas. Difícil - frases curtas."
+  },
+  "accessibility": {
+    "title": "Trem de palavras de Leo"
+  }
+}

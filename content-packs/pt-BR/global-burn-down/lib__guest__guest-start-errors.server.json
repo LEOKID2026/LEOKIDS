@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "O serviço não está configurado corretamente.",
+    "guest_mode_is_currently_disabled": "O modo visitante está atualmente desativado.",
+    "the_guest_system_is_not_ready": "O sistema convidado não está pronto.",
+    "could_not_start_guest_mode": "Não foi possível iniciar o modo visitante."
+  }
+}

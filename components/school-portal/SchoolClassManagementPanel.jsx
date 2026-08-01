@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import PortalDarkSelect from "../platform-ui/PortalDarkSelect.jsx";
 import { SchoolEmptyState, SchoolPrimaryButton, SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi";
-import { SCHOOL_GRADE_OPTIONS, schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown";
+import { getSchoolGradeOptions, schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   apiErrorMessageHe,
   schoolAuthFetch,
@@ -22,6 +23,7 @@ import {
  * @param {{ accessToken: string, onChanged?: () => void }} props
  */
 export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
+  const t = useT();
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -31,8 +33,8 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
   const [message, setMessage] = useState("");
 
   const gradeOptions = useMemo(
-    () => [{ value: "", label: "-" }, ...SCHOOL_GRADE_OPTIONS.map((g) => ({ value: g.level, label: g.label }))],
-    []
+    () => [{ value: "", label: "-" }, ...getSchoolGradeOptions(t).map((g) => ({ value: g.level, label: g.label }))],
+    [t]
   );
 
   const load = useCallback(async () => {
@@ -107,7 +109,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
                 >
                   <span className="font-medium">{c.name}</span>
                   <span className="text-white/50 mx-2">·</span>
-                  <span className="text-white/70">{schoolGradeLabelHe(c.gradeLevel)}</span>
+                  <span className="text-white/70">{schoolGradeLabelHe(c.gradeLevel, t)}</span>
                   <span className="text-white/40 text-xs me-2">
                     ({SCHOOL_CLASS_MGMT_SUBJECT_COUNT}: {c.subjectCount ?? 0},{" "}
                     {SCHOOL_CLASS_MGMT_STUDENT_COUNT}: {c.studentCount ?? 0})

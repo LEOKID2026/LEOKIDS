@@ -1,0 +1,126 @@
+{
+  "bar": {
+    "badge": "Modo de demonstração",
+    "gradeLabel": "Ano",
+    "playExpired": "O tempo para novos começos terminou",
+    "playTime": "Tempo de jogo",
+    "minutesUnit": "min",
+    "changeGrade": "Alterar nota",
+    "exitDemo": "Sair da demonstração"
+  },
+  "enter": {
+    "pageTitle": "Modo de demonstração — LEO KIDS",
+    "pageDescription": "Experimente o mundo infantil sem se inscrever",
+    "heading": "Modo de demonstração pai",
+    "intro": "Escolha uma série e explore o mundo infantil. {minutes} minutos de jogo e aprendizagem — sem inscrição.",
+    "activeSessionNote": "Você tem uma demonstração ativa – alterar a nota não zera o cronômetro.",
+    "chooseGradeLegend": "escolha um ano",
+    "enterButton": "Entre no mundo infantil",
+    "enteringButton": "Entrando…"
+  },
+  "homeButton": {
+    "labelDesktop": "Experimente o mundo infantil",
+    "labelMobile": "Demonstração",
+    "ariaLabel": "Experimente o mundo infantil – modo de demonstração",
+    "dismissAriaLabel": "Botão Ignorar demonstração"
+  },
+  "gate": {
+    "loading": "Carregando modo de demonstração…",
+    "loadError": "Não foi possível carregar o modo de demonstração. Tente atualizar a página."
+  },
+  "timeExpiredModal": {
+    "title": "O tempo de demonstração acabou",
+    "body": "{minutes} minutos se passaram desde o início da demonstração. Você pode continuar navegando no mundo infantil, mas não pode iniciar um novo jogo ou atividade.",
+    "inProgressNote": "Jogos ou atividades já em andamento continuarão até serem finalizados.",
+    "dismiss": "Entendi",
+    "restart": "Iniciar uma nova demonstração"
+  },
+  "onlineGameUnavailable": {
+    "title": "Os jogos online não estão disponíveis no modo de demonstração",
+    "body": "No modo demo você pode navegar no fliperama e ver os jogos, mas o modo multijogador online não está ativo.",
+    "backToArcade": "De volta ao fliperama"
+  },
+  "display": {
+    "studentName": "Modo de demonstração",
+    "greeting": "Bem-vindo ao modo de demonstração",
+    "arcadePlayerName": "Jogador de demonstração",
+    "myRoomMessage": "Meu quarto – visualização da demonstração",
+    "learningMinutesScope": "Dos resumos das sessões (demonstração)",
+    "allSubjectsScope": "Todas as disciplinas",
+    "encouragement": "Continuar praticando – esta é uma demonstração!",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Pratique matemática",
+    "mathDescription": "Responda 5 questões de matemática",
+    "soloTitle": "Jogo solo",
+    "soloDescription": "Jogue um jogo solo",
+    "tier5": "5 minutos",
+    "tier15": "15 minutos",
+    "tier30": "30 minutos"
+  },
+  "subjects": {
+    "math": "Matemática",
+    "geometry": "Geometria",
+    "english": "Inglês",
+    "science": "Ciências"
+  },
+  "cards": {
+    "purchaseBlocked": "As compras não estão disponíveis no modo de demonstração.",
+    "sellBlocked": "A venda de cartões não está disponível no modo de demonstração.",
+    "loadFailed": "Não foi possível carregar os cartões."
+  },
+  "arcade": {
+    "actionBlocked": "Esta ação não está disponível no modo de demonstração.",
+    "quickPlayBlocked": "A reprodução rápida não está disponível no modo de demonstração."
+  },
+  "activity": {
+    "classroomUnavailable": "As atividades em sala de aula não estão disponíveis no modo de demonstração."
+  },
+  "worksheet": {
+    "pageTitle": "folha de atividades - modo de demonstração",
+    "intro": "Você pode navegar pelas folha de atividadess na lista da página inicial. O envio digital não está disponível no modo de demonstração.",
+    "backHome": "← De volta para casa",
+    "submitBlocked": "O envio não está disponível no modo de demonstração."
+  },
+  "myRoom": {
+    "title": "Meu quarto",
+    "saveBlocked": "Salvar não está disponível no modo de demonstração."
+  },
+  "friends": {
+    "demoUnavailable": "Número de amigos e Leo – visualização da demonstração. Adicionar amigos e convites não está disponível."
+  },
+  "grades": {
+    "g1": "1º ano",
+    "g2": "2º ano",
+    "g3": "3º ano",
+    "g4": "4º ano",
+    "g5": "5º ano",
+    "g6": "6º ano"
+  },
+  "parentPortal": {
+    "barBadge": "Modo de demonstração pai",
+    "barSubtitle": "Visualizar apenas · 3 exemplos de filhos",
+    "barExit": "Sair da demonstração",
+    "dashboardSubtitle": "Modo de demonstração – portal pai",
+    "homeParentLabelLine1": "Responsável",
+    "homeParentLabelLine2": "demonstração",
+    "homeParentAriaLabel": "Demonstração pai – portal somente visualização",
+    "homeParentDismissAriaLabel": "Botão Ignorar demonstração dos responsáveis",
+    "enterPageTitle": "Demonstração para responsáveis - LEO KIDS",
+    "enterPageDescription": "Explore o portal pai com exemplos de filhos, relatórios e recomendações — somente visualização",
+    "enterHeading": "Demonstração do portal pai",
+    "enterBack": "Voltar",
+    "enterIntro": "Explore o portal dos responsáveis com três exemplos de filhos, relatórios, atividades e recomendações – somente visualização, sem inscrição.",
+    "enterActiveSessionNote": "Você tem uma demonstração para responsáveis ativa – você pode continuar de onde parou.",
+    "enterReadOnlyNote": "As alterações não podem ser salvas neste modo.",
+    "enterButton": "Entrar no portal pai",
+    "enteringButton": "Entrando…",
+    "enterBackHome": "De volta para casa",
+    "readOnlyDefault": "O modo de demonstração é somente visualização. As alterações não podem ser salvas.",
+    "readOnlyShare": "Modo de demonstração – o compartilhamento fora da demonstração não está disponível.",
+    "readOnlyWorksheets": "Modo de demonstração – você pode navegar pelas folha de atividadess, mas não pode criar novas.",
+    "apiReadOnlyError": "O modo de demonstração é somente visualização."
+  }
+}

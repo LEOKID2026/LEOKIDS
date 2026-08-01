@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-detective",
+  "title": "Palavra Detetive de Leo",
+  "blurb": "Arraste as evidências para o quadro e resolva casos de leitura e vocabulário",
+  "help": {
+    "howToPlay": "Arraste os cartões de evidências para o quadro de investigação e toque em \"Resolver caso\". Quando a resposta estiver correta - o caso está encerrado!",
+    "scoring": "Resposta correta +30, bônus de tempo, sequência de 3 +15, sequência de 5 +30. Tempo limite −5. Um erro não encerra o jogo – apenas conta.",
+    "rewards": "As moedas são concedidas com base em quantos dos 20 casos você resolveu, precisão, sequências e nível de dificuldade.",
+    "tip": "Leia a tarefa do caso com atenção - no nível difícil há uma pequena passagem no quadro."
+  },
+  "accessibility": {
+    "title": "Palavra Detetive de Leo"
+  }
+}

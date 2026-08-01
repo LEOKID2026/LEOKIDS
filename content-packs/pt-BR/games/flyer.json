@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Leão em um avião",
+  "blurb": "Segure para voar, coletar moedas e evitar obstáculos!",
+  "help": {
+    "howToPlay": "Segure o botão ou a tela para voar e solte para descer. Colete moedas e evite obstáculos.",
+    "scoring": "Moedas e diamantes somam pontos. Atingir um obstáculo encerra o jogo.",
+    "rewards": "Quanto mais longe você voar e mais pontos ganhar, mais moedas e diamantes você ganhará.",
+    "tip": "Não voe muito alto – às vezes é melhor passar por baixo de um obstáculo."
+  }
+}

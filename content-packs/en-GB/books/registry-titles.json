@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "English — Year 1"
+    },
+    "english.g2": {
+      "bookTitle": "English — Year 2"
+    },
+    "english.g3": {
+      "bookTitle": "English — Year 3"
+    },
+    "english.g4": {
+      "bookTitle": "English — Year 4"
+    },
+    "english.g5": {
+      "bookTitle": "English — Year 5"
+    },
+    "english.g6": {
+      "bookTitle": "English — Year 6"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometry — Year 1"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometry — Year 2"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometry — Year 3"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometry — Year 4"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometry — Year 5"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometry — Year 6"
+    },
+    "math.g1": {
+      "bookTitle": "Maths — Year 1"
+    },
+    "math.g2": {
+      "bookTitle": "Maths — Year 2"
+    },
+    "math.g3": {
+      "bookTitle": "Maths — Year 3"
+    },
+    "math.g4": {
+      "bookTitle": "Maths — Year 4"
+    },
+    "math.g5": {
+      "bookTitle": "Maths — Year 5"
+    },
+    "math.g6": {
+      "bookTitle": "Maths — Year 6"
+    },
+    "science.g1": {
+      "bookTitle": "Science — Year 1"
+    },
+    "science.g2": {
+      "bookTitle": "Science — Year 2"
+    },
+    "science.g3": {
+      "bookTitle": "Science — Year 3"
+    },
+    "science.g4": {
+      "bookTitle": "Science — Year 4"
+    },
+    "science.g5": {
+      "bookTitle": "Science — Year 5"
+    },
+    "science.g6": {
+      "bookTitle": "Science — Year 6"
+    }
+  }
+}

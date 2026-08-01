@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_x_engine_review_token_header": "Cabeçalho x-engine-review-token ausente",
+    "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry": "Execute npm run qa:learning-simulator:professional-engine (PASS) e tente novamente."
+  }
+}

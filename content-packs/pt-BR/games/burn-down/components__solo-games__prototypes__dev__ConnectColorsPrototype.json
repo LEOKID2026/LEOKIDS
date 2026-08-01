@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "connect_colors": "Conectar cores",
+    "prototype_connect_pairs_without_crossing": "Protótipo · conectar pares sem cruzar",
+    "p_id_colorid_const_isendpoint_endpointmap_cellkey_const_eppair_pairs_fin": "p.id === colorId);\r\n            const isEndpoint = endpointMap[cellKey];\r\n            const epPair = PARES.find(\r\n              (p) => keyOf(...p.a) === cellKey || keyOf(...p.b) === cellKey,\r\n            );\r\n            const previewConflict =\r\n              arrastarPreview === cellKey &&\r\n              cor ativa &&\r\n              !tryExtend(activeColor, cellKey, caminhos);\r\n\r\n            retornar (",
+    "rect_width_rely_rect_height_return_null_const_c_math_floor_relx_rect_wid": "largura correta || relY > rect.height) retorna nulo;\r\n    const c = Matemática.floor((relX / rect.width) * GRID);\r\n    const r = Matemática.floor((relY / rect.height) * GRID);\r\n    se (r",
+    "clear": "Claro"
+  }
+}

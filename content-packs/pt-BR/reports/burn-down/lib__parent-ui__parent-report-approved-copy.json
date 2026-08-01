@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "not_available": "Não disponível",
+    "there_are_only_a_few_questions_on_this_topic_so_it_is_still_early_to_dra": "Existem apenas algumas perguntas sobre este tema, por isso ainda é cedo para tirar uma conclusão forte.",
+    "keep_practicing_a_few_more_short_questions_and_watch_for_whether_the_sam": "Continuar praticando mais algumas perguntas curtas e observe se o mesmo erro se repete.",
+    "most_answers_are_correct_and_this_topic_looks_relatively_stable": "A maioria das respostas está correta e este tópico parece relativamente estável.",
+    "keep_up_the_success_with_a_short_practice_every_now_and_then": "Mantenha o sucesso com uma breve prática de vez em quando.",
+    "the_same_type_of_mistake_keeps_showing_up": "O mesmo tipo de erro continua aparecendo.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_how_they_reached_the_": "Faça uma pausa após um erro e peça à criança que explique como chegou à resposta.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_step_by_step_how_they": "Faça uma pausa após um erro e peça à criança que explique, passo a passo, como chegou à resposta.",
+    "practice_the_specific_pairs_that_keep_coming_up_wrong_out_loud_and_as_a_": "Pratique os pares específicos que sempre aparecem errados, em voz alta e como um jogo rápido.",
+    "pause_before_solving_and_ask_should_the_result_be_bigger_or_smaller_than": "Faça uma pausa antes de resolver e pergunte: o resultado deve ser maior ou menor que o número inicial?",
+    "read_a_short_passage_together_and_pause_to_ask_where_in_the_text_did_you": "Leiam juntos um pequeno trecho e façam uma pausa para perguntar: onde no texto vocês encontraram a resposta?",
+    "practice_a_few_short_questions_and_ask_the_child_to_explain_the_method": "Pratique algumas perguntas curtas e peça à criança que explique o método."
+  }
+}

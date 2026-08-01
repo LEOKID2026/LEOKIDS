@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "the_game_has_ended": "O jogo terminou",
+    "room_is_no_longer_active": "A sala não está mais ativa"
+  }
+}

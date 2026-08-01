@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "Esta atividade não está disponível no momento",
+    "activity_not_found": "Atividade não encontrada",
+    "this_activity_has_not_started_yet": "Esta atividade ainda não começou",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "As respostas não podem ser enviadas para esta atividade no momento",
+    "this_activity_is_closed": "Esta atividade está encerrada",
+    "time_is_up_for_this_activity": "O tempo acabou para esta atividade",
+    "could_not_open_this_activity_right_now": "Não foi possível abrir esta atividade no momento",
+    "not_found": "Não encontrado",
+    "please_sign_in": "Faça login",
+    "you_do_not_have_permission_to_open_this_activity": "Você não tem permissão para abrir esta atividade",
+    "this_activity_is_not_assigned_to_you": "Esta atividade não está atribuída a você",
+    "could_not_identify_the_account": "Não foi possível identificar a conta",
+    "could_not_complete_that_action_right_now": "Não foi possível concluir essa ação agora",
+    "you_already_submitted_this_activity": "Você já enviou esta atividade",
+    "you_already_answered_this_question": "Você já respondeu esta pergunta",
+    "waiting_for_the_teacher": "Esperando o professor…",
+    "no_answer_submission_needed": "Não é necessário enviar resposta",
+    "the_system_is_updating_try_again_later": "O sistema está sendo atualizado. Tente novamente mais tarde",
+    "something_went_wrong_please_try_again": "Algo deu errado. Tente novamente",
+    "server_error_please_try_again": "Erro no servidor – tente novamente",
+    "action_not_supported": "Ação não suportada",
+    "could_not_load_the_question_right_now": "Não foi possível carregar a pergunta agora",
+    "could_not_submit_an_answer_right_now": "Não foi possível enviar uma resposta agora"
+  }
+}

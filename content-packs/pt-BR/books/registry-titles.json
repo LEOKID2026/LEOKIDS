@@ -1,0 +1,391 @@
+{
+  "batches": {
+    "english.g1": {
+      "phonics-a": {
+        "title": "Letras maiúsculas de A a Z e mais"
+      },
+      "phonics-b": {
+        "title": "Sons de letras e muito mais"
+      },
+      "phonics-c": {
+        "title": "Palavras em sala de aula e muito mais"
+      },
+      "phonics-d": {
+        "title": "Imagem e Word e muito mais"
+      }
+    },
+    "english.g2": {
+      "phonics-review": {
+        "title": "Revisão: Letras e Nomes e muito mais"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "a": {
+        "title": "Conhecendo a Praça e muito mais"
+      },
+      "b": {
+        "title": "Tradução e Reflexão — Introdução"
+      }
+    },
+    "geometry.g2": {
+      "a": {
+        "title": "Sólidos Tridimensionais — Nomes e Introdução"
+      },
+      "b": {
+        "title": "Área de um quadrado"
+      },
+      "c": {
+        "title": "Tradução e Reflexão – Mais Prática"
+      }
+    },
+    "geometry.g3": {
+      "a": {
+        "title": "Tipos de triângulos e muito mais"
+      },
+      "b": {
+        "title": "Retas Paralelas e Perpendiculares"
+      },
+      "c": {
+        "title": "Área de um quadrado e mais"
+      },
+      "d": {
+        "title": "Ângulos em um Triângulo"
+      },
+      "e": {
+        "title": "Rotação no Plano e muito mais"
+      }
+    },
+    "geometry.g4": {
+      "a": {
+        "title": "Propriedades de um quadrado e muito mais"
+      },
+      "b": {
+        "title": "Quadriláteros e muito mais"
+      },
+      "c": {
+        "title": "Perímetro de um quadrado e mais"
+      },
+      "d": {
+        "title": "Diagonal de um quadrado e mais"
+      },
+      "e": {
+        "title": "Sólidos e muito mais"
+      }
+    },
+    "geometry.g5": {
+      "a": {
+        "title": "Linhas paralelas e perpendiculares e muito mais"
+      },
+      "b": {
+        "title": "Perímetro de um quadrado e mais"
+      },
+      "c": {
+        "title": "Altura de um triângulo e mais"
+      },
+      "d": {
+        "title": "Área de um quadrado e mais"
+      },
+      "e": {
+        "title": "Diagonal de um quadrado e mais"
+      },
+      "f": {
+        "title": "Sólidos tridimensionais e muito mais"
+      },
+      "g": {
+        "title": "Ladrilhando um avião"
+      }
+    },
+    "geometry.g6": {
+      "a": {
+        "title": "Perímetro de um quadrado e mais"
+      },
+      "b": {
+        "title": "Circunferência de um Círculo e muito mais"
+      },
+      "c": {
+        "title": "Teorema de Pitágoras e mais"
+      },
+      "d": {
+        "title": "Sólidos e muito mais"
+      },
+      "e": {
+        "title": "Volume de um prisma e mais"
+      },
+      "f": {
+        "title": "Volume de uma pirâmide e muito mais"
+      },
+      "g": {
+        "title": "Volume de um cilindro e muito mais"
+      }
+    },
+    "math.g1": {
+      "a": {
+        "title": "Contando para frente na reta numérica e muito mais"
+      },
+      "b": {
+        "title": "Dezenas e Unidades e muito mais"
+      },
+      "c": {
+        "title": "Adicionando dois números e mais"
+      },
+      "d": {
+        "title": "Problemas com palavras e muito mais"
+      }
+    },
+    "math.g2": {
+      "a": {
+        "title": "Centenas, Dezenas e Unidades e muito mais"
+      },
+      "b": {
+        "title": "Adicionando dois números e mais"
+      },
+      "c": {
+        "title": "Quando um número é dividido por 2, 5 e 10? e mais"
+      },
+      "d": {
+        "title": "Problemas com palavras e muito mais"
+      }
+    },
+    "math.g3": {
+      "a": {
+        "title": "Centenas, Dezenas e Unidades e muito mais"
+      },
+      "b": {
+        "title": "Adicionando dois números e mais"
+      },
+      "c": {
+        "title": "Frações – o que são e como podemos comparar?"
+      },
+      "d": {
+        "title": "Equação de adição e mais"
+      },
+      "e": {
+        "title": "Problema de palavras e muito mais"
+      }
+    },
+    "math.g4": {
+      "a": {
+        "title": "Valor posicional e muito mais"
+      },
+      "b": {
+        "title": "Adicionando com 0 e mais"
+      },
+      "c": {
+        "title": "Adicionando dois números e mais"
+      },
+      "d": {
+        "title": "Divisão e muito mais"
+      },
+      "e": {
+        "title": "Adicionando decimais e muito mais"
+      },
+      "f": {
+        "title": "Poderes e muito mais"
+      },
+      "g": {
+        "title": "Problemas com palavras e muito mais"
+      }
+    },
+    "math.g5": {
+      "a": {
+        "title": "Valor posicional e muito mais"
+      },
+      "b": {
+        "title": "Adicionando dois números e mais"
+      },
+      "c": {
+        "title": "Divisão e muito mais"
+      },
+      "d": {
+        "title": "Simplificando frações e muito mais"
+      },
+      "e": {
+        "title": "Adicionando decimais e muito mais"
+      },
+      "f": {
+        "title": "Fatores de um número e mais"
+      },
+      "g": {
+        "title": "Porcentagem de uma quantidade e mais"
+      },
+      "h": {
+        "title": "Problemas com palavras e muito mais"
+      }
+    },
+    "math.g6": {
+      "a": {
+        "title": "Valor posicional e muito mais"
+      },
+      "b": {
+        "title": "Adicionando dois números e mais"
+      },
+      "c": {
+        "title": "Fatores de um número e mais"
+      },
+      "d": {
+        "title": "Equação de adição e mais"
+      },
+      "e": {
+        "title": "Adicionando números decimais e muito mais"
+      },
+      "f": {
+        "title": "Uma fração como divisão e muito mais"
+      },
+      "g": {
+        "title": "Razões e muito mais"
+      },
+      "h": {
+        "title": "Porcentagem de uma quantidade e mais"
+      },
+      "i": {
+        "title": "Problemas com palavras e muito mais"
+      }
+    },
+    "science.g1": {
+      "a": {
+        "title": "O corpo humano e muito mais"
+      },
+      "b": {
+        "title": "Materiais e muito mais"
+      }
+    },
+    "science.g2": {
+      "a": {
+        "title": "O corpo humano e muito mais"
+      },
+      "b": {
+        "title": "Materiais e muito mais"
+      },
+      "c": {
+        "title": "Observação e Investigação"
+      }
+    },
+    "science.g3": {
+      "a": {
+        "title": "O corpo humano e muito mais"
+      },
+      "b": {
+        "title": "Materiais e muito mais"
+      },
+      "c": {
+        "title": "Um breve experimento científico"
+      }
+    },
+    "science.g4": {
+      "a": {
+        "title": "O corpo humano e muito mais"
+      },
+      "b": {
+        "title": "Materiais e muito mais"
+      },
+      "c": {
+        "title": "Planejando uma experiência"
+      }
+    },
+    "science.g5": {
+      "b": {
+        "title": "Materiais e muito mais"
+      },
+      "a": {
+        "title": "O corpo humano e muito mais"
+      },
+      "c": {
+        "title": "Investigação Completa – Documentação"
+      }
+    },
+    "science.g6": {
+      "b": {
+        "title": "Materiais e muito mais"
+      },
+      "a": {
+        "title": "O corpo humano e muito mais"
+      },
+      "c": {
+        "title": "Projeto de Ciência"
+      }
+    },
+    "placeholder": {
+      "comingSoon": {
+        "title": "Em breve"
+      }
+    }
+  },
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglês - 1ª série"
+    },
+    "english.g2": {
+      "bookTitle": "Inglês - 2ª série"
+    },
+    "english.g3": {
+      "bookTitle": "Inglês - 3ª série"
+    },
+    "english.g4": {
+      "bookTitle": "Inglês - 4ª série"
+    },
+    "english.g5": {
+      "bookTitle": "Inglês - 5ª série"
+    },
+    "english.g6": {
+      "bookTitle": "Inglês - 6ª série"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometria - 1ª série"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometria - 2ª série"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometria - 3ª série"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometria - 4ª série"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometria - 5ª série"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometria - 6ª série"
+    },
+    "math.g1": {
+      "bookTitle": "Matemática - 1ª série"
+    },
+    "math.g2": {
+      "bookTitle": "Matemática - 2ª série"
+    },
+    "math.g3": {
+      "bookTitle": "Matemática - 3ª série"
+    },
+    "math.g4": {
+      "bookTitle": "Matemática - 4ª série"
+    },
+    "math.g5": {
+      "bookTitle": "Matemática - 5ª série"
+    },
+    "math.g6": {
+      "bookTitle": "Matemática - 6ª série"
+    },
+    "science.g1": {
+      "bookTitle": "Ciências - 1ª série"
+    },
+    "science.g2": {
+      "bookTitle": "Ciências - 2ª série"
+    },
+    "science.g3": {
+      "bookTitle": "Ciências - 3ª série"
+    },
+    "science.g4": {
+      "bookTitle": "Ciências - 4ª série"
+    },
+    "science.g5": {
+      "bookTitle": "Ciências - 5ª série"
+    },
+    "science.g6": {
+      "bookTitle": "Ciências - 6ª série"
+    }
+  }
+}

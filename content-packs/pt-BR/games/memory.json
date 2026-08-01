@@ -1,0 +1,11 @@
+{
+  "gameId": "memory",
+  "title": "Jogo da Memória de Leo",
+  "blurb": "Vire as cartas e encontre pares antes que o tempo acabe!",
+  "help": {
+    "howToPlay": "Toque em uma carta para virá-la e encontre o par correspondente. Cada par que você encontrar permanece aberto.",
+    "scoring": "Você começa com uma pontuação alta - quanto mais você demora, mais baixa ela cai. Encontrar todos os pares antes que o tempo acabe = uma vitória.",
+    "rewards": "Ganhar com base no nível de dificuldade concede moedas e diamantes. Quanto maior a pontuação, maior será a recompensa.",
+    "tip": "Tente lembrar onde você viu cada imagem - mesmo que não tenha encontrado o par imediatamente."
+  }
+}

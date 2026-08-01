@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "traffic_jam": "Engarrafamento",
+    "prototype_drag_cars_along_their_axis_free_the_red_one": "Protótipo · arraste os carros ao longo de seu eixo · libere o vermelho",
+    "size_return_false_if_nr": "TAMANHO) retorna falso;\r\n    se (nº",
+    "size_return_false_if_nc": "TAMANHO) retorna falso;\r\n    se (nc",
+    "you_did_it_red_car_is_out": "Você conseguiu! Carro vermelho saiu 🎉",
+    "reset": "Reiniciar"
+  }
+}

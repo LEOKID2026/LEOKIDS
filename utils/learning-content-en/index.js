@@ -4,6 +4,7 @@ import { localizeGeometryQuestionEn } from "./geometry.js";
 import { localizeEnglishQuestionEn } from "./english.js";
 import { localizeScienceQuestionEn, localizeScienceQuestionForLocale } from "./science.js";
 import { applyEs419DisplayLayer } from "../learning-content-es419/index.js";
+import { applyPtBrDisplayLayer } from "../learning-content-pt-BR/index.js";
 
 /**
  * Apply the Global English display layer (HE→EN maps / overlays).
@@ -35,7 +36,7 @@ function applyEnglishDisplayLayer(question, subject, opts = {}) {
  * - Shared logic/ids/params/diagnostics are untouched (mapQuestionTextFields only remaps text).
  * - Unregistered content locales (including he*) use the English display layer
  *   (never leave raw Hebrew stems for student display).
- * - `es-419` uses native math/geometry stem rebuilders; science uses locale overlay;
+ * - `es-419` / `pt-BR` use native math/geometry stem rebuilders; science uses locale overlay;
  *   English subject keeps learning stems in EN and may localize instruction chrome.
  *
  * @param {Record<string, unknown>} question
@@ -64,6 +65,10 @@ export function localizeLearningQuestion(question, opts = {}) {
 
   if (contentLocale === "es-419" && (subject === "math" || subject === "geometry")) {
     return applyEs419DisplayLayer(question, subject);
+  }
+
+  if (contentLocale === "pt-BR" && (subject === "math" || subject === "geometry")) {
+    return applyPtBrDisplayLayer(question, subject);
   }
 
   return applyEnglishDisplayLayer(question, subject, {

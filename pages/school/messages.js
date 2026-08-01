@@ -1,5 +1,5 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import SchoolPortalShell from "../../components/school-portal/SchoolPortalShell";
@@ -10,14 +10,8 @@ import {
   SCHOOL_PORTAL_MODAL_SCROLL_CLASS,
 } from "../../components/school-portal/SchoolPortalUi";
 import { useSchoolPortalLoad } from "../../lib/school-portal/use-school-portal-session";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
-  SC_AUDIENCE_ALL_PARENTS,
-  SC_AUDIENCE_ALL_TEACHERS,
-  SC_AUDIENCE_CLASS_PARENTS,
-  SC_AUDIENCE_CLASS_TEACHERS,
-  SC_AUDIENCE_GRADE_PARENTS,
-  SC_AUDIENCE_GRADE_TEACHERS,
-  SC_AUDIENCE_SUBJECT_TEACHERS,
   SC_BTN_COMPOSE,
   SC_COL_AUDIENCE,
   SC_COL_DATE,
@@ -51,24 +45,17 @@ import {
   buildSchoolMessagesListQuery,
   formatSchoolMessageAudienceLabel,
   formatSchoolMessageListReadCount,
+  getSchoolAudienceOptions,
   getSchoolMessageId,
   schoolMessageHasParentRecipients,
   schoolMessageHasTeacherRecipients,
 } from "../../lib/school-portal/school-messaging-ui";
 import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.js";
 
-const AUDIENCE_OPTIONS = [
-  { value: "all_parents", label: SC_AUDIENCE_ALL_PARENTS },
-  { value: "all_teachers", label: SC_AUDIENCE_ALL_TEACHERS },
-  { value: "grade_parents", label: SC_AUDIENCE_GRADE_PARENTS, needsGrade: true },
-  { value: "class_parents", label: SC_AUDIENCE_CLASS_PARENTS, needsGrade: true, needsClass: true },
-  { value: "grade_teachers", label: SC_AUDIENCE_GRADE_TEACHERS, needsGrade: true },
-  { value: "subject_teachers", label: SC_AUDIENCE_SUBJECT_TEACHERS, needsSubject: true },
-  { value: "class_teachers", label: SC_AUDIENCE_CLASS_TEACHERS, needsGrade: true, needsClass: true },
-];
-
 export default function SchoolMessagesPage() {
   const router = useRouter();
+  const t = useT();
+  const AUDIENCE_OPTIONS = useMemo(() => getSchoolAudienceOptions(t), [t]);
   const { state, accessToken, me } = useSchoolPortalLoad();
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -298,7 +285,7 @@ export default function SchoolMessagesPage() {
                           message={m}
                           messageId={messageId}
                           onOpen={() => messageId && void loadDetail(messageId)}
-                          metaLine={formatSchoolMessageAudienceLabel(m.audienceType, m.audienceScope)}
+                          metaLine={formatSchoolMessageAudienceLabel(m.audienceType, m.audienceScope, t)}
                           readCountLine={formatSchoolMessageListReadCount(m)}
                         />
                       </li>
@@ -323,7 +310,7 @@ export default function SchoolMessagesPage() {
                           <tr key={messageId || m.subject} className="border-b border-white/5">
                             <td className="p-3">{m.subject || "-"}</td>
                             <td className="p-3">
-                              {formatSchoolMessageAudienceLabel(m.audienceType, m.audienceScope)}
+                              {formatSchoolMessageAudienceLabel(m.audienceType, m.audienceScope, t)}
                             </td>
                             <td className="p-3">
                               {m.sentAt ? new Date(m.sentAt).toLocaleDateString("en-US") : "-"}

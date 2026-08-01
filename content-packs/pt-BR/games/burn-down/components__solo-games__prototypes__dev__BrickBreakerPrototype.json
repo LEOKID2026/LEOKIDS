@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Quebra-tijolos",
+    "prototype_move_paddle_break_bricks": "Protótipo · mover remo · quebrar tijolos",
+    "drag_move_below_don_t_miss_the_ball": "Arraste/mova abaixo · não perca a bola",
+    "bx_s_ballx_ball_r": "bx &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "por &&\r\n          s.ballY - BALL_R",
+    "all_bricks_cleared": "Todos os tijolos foram removidos! 🎉",
+    "tap_to_play_again": "Toque para jogar novamente",
+    "ball_dropped": "Bola caiu!"
+  }
+}

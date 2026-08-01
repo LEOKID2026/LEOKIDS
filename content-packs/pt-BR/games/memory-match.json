@@ -1,0 +1,9 @@
+{
+  "gameId": "memory-match",
+  "title": "Jogo de memória",
+  "blurb": "Vire as cartas, encontre pares e tente ganhar.",
+  "players": "1–2 jogadores",
+  "help": {
+    "howToPlay": "Joguem juntos no mesmo dispositivo."
+  }
+}

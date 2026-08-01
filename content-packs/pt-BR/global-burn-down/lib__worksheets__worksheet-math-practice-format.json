@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "horizontal_addition_and_subtraction": "Adição e subtração horizontais",
+    "vertical_addition_and_subtraction": "Adição e subtração verticais",
+    "basic_multiplication": "Multiplicação básica",
+    "long_multiplication": "Multiplicação longa",
+    "basic_division": "Divisão básica",
+    "long_division": "Divisão longa",
+    "fractions": "Frações",
+    "decimals": "Decimais",
+    "percentages": "Porcentagens",
+    "ratio_and_scale": "Proporção e escala",
+    "word_problems": "Problemas de palavras",
+    "mixed_practice": "Prática mista"
+  }
+}

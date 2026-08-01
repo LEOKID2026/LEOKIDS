@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "the_data_points_to_a_skill_that_is_still_not_fully_stable": "Os dados apontam para uma habilidade que ainda não está totalmente estável.",
+    "some_of_the_mistakes_look_related_to_speed_not_necessarily_a_full_knowle": "Alguns dos erros parecem estar relacionados com a velocidade – não necessariamente uma lacuna total de conhecimento.",
+    "the_difficulty_may_be_related_to_understanding_the_instructions_not_just": "A dificuldade pode estar relacionada à compreensão das instruções e não apenas ao conhecimento do tema.",
+    "the_material_looks_partly_familiar_but_there_are_execution_mistakes_that": "O material parece parcialmente familiar, mas existem erros de execução que se repetem quando se trabalha rapidamente.",
+    "the_child_does_better_with_support_and_it_still_helps_to_build_up_indepe": "A criança se sai melhor com apoio e isso ainda ajuda a construir uma solução independente de problemas.",
+    "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef": "Ainda existem apenas algumas respostas - um pouco mais de prática ajudaria antes de chegar a uma conclusão clara.",
+    "there_is_an_early_direction_but_a_bit_more_practice_would_help_before_dr": "Há uma orientação inicial, mas um pouco mais de prática ajudaria antes de chegar a uma conclusão clara.",
+    "there_is_already_some_practice_in_this_topic_but_a_consistent_enough_pat": "Já existe alguma prática neste tópico, mas ainda não apareceu um padrão suficientemente consistente.",
+    "there_are_a_few_possible_directions_worth_checking_again_after_a_bit_mor": "Existem algumas direções possíveis - vale a pena conferir novamente depois de um pouco mais de prática.",
+    "solve_a_few_questions_without_a_timer_pause_before_submitting_and_check_": "Resolva algumas questões sem cronômetro, faça uma pausa antes de enviar e verifique se a resposta se ajusta à pergunta.",
+    "do_a_few_more_questions_on_this_topic_then_check_the_report_again": "Faça mais algumas perguntas sobre este tópico e verifique o relatório novamente.",
+    "some_mistakes_repeat_in_the_same_type_of_activity": "Alguns erros se repetem no mesmo tipo de atividade.",
+    "some_mistakes_happened_while_working_quickly": "Alguns erros aconteceram durante o trabalho rápido.",
+    "some_mistakes_appear_related_to_understanding_the_instructions": "Alguns erros aparecem relacionados à compreensão das instruções.",
+    "success_mostly_happens_with_guidance_or_hints": "O sucesso acontece principalmente com orientações ou dicas.",
+    "small_execution_mistakes_that_repeat_when_working_quickly": "Pequenos erros de execução que se repetem quando se trabalha rapidamente.",
+    "confusion_about_the_order_of_steps_in_solving": "Confusão sobre a ordem das etapas da resolução.",
+    "the_signs_mostly_point_to_a_difficulty_within_this_topic_itself": "Os sinais apontam principalmente para uma dificuldade dentro do próprio tópico.",
+    "social_studies_geography": "Estudos Sociais e Geografia",
+    "some_of_the_mistakes_look_related_to_speed_or_time_pressure": "Alguns dos erros parecem relacionados à velocidade ou à pressão do tempo.",
+    "the_difficulty_may_be_related_to_reading_the_instructions_or_understandi": "A dificuldade pode estar relacionada à leitura das instruções ou à compreensão do que a pergunta pede.",
+    "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis": "A criança parece conhecer parte do material, mas há erros de execução que se repetem ao correr ou pular um passo.",
+    "the_data_points_to_good_command_of_the_topic_right_now": "Os dados apontam para um bom domínio do assunto no momento.",
+    "no_clear_pattern_has_been_established_for_this_topic_yet": "Nenhum padrão claro foi estabelecido para este tópico ainda.",
+    "there_are_signs_pointing_in_a_few_different_directions_so_the_report_rec": "Existem sinais que apontam em algumas direções diferentes, por isso o relatório recomenda avançar com cuidado.",
+    "the_child_does_better_with_support_or_hints_and_it_still_helps_to_build_": "A criança se sai melhor com apoio ou dicas, e isso ainda ajuda a construir uma solução independente de problemas.",
+    "there_are_too_few_questions_on_this_topic_to_draw_a_clear_conclusion_fro": "Existem muito poucas perguntas sobre este tópico para se tirar uma conclusão clara."
+  }
+}

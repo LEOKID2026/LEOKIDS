@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Matemática",
+    "geometry": "Geometria",
+    "english": "Inglês",
+    "science": "Ciências"
+  },
+  "activityModes": {
+    "live_lesson": "Aula ao vivo",
+    "guided_practice": "Prática guiada",
+    "quiz": "Questionário",
+    "homework": "Trabalho de casa",
+    "discussion": "Discussão",
+    "practice": "Prática",
+    "review": "Análise"
+  },
+  "activityStatuses": {
+    "draft": "Rascunho",
+    "active": "Ativo",
+    "paused": "Pausado",
+    "closed": "Fechado",
+    "archived": "Arquivado"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Não iniciado",
+    "in_progress": "Em andamento",
+    "submitted": "Enviado",
+    "completed": "Concluído",
+    "timed_out": "Tempo limite esgotado"
+  },
+  "roles": {
+    "teacher": "Professor",
+    "school_admin": "Administrador escolar",
+    "admin": "Administrador do sistema"
+  },
+  "auditActions": {
+    "school_subject_granted": "Permissão do assunto concedida",
+    "school_subject_revoked": "Atribuição de assunto revogada",
+    "school_student_enrolled": "Aluno matriculado",
+    "school_student_unenrolled": "Aluno não matriculado",
+    "school_class_viewed": "Relatório da turma visualizado",
+    "school_student_report_viewed": "Relatório do aluno visualizado",
+    "school_student_class_transferred": "Aluno transferido",
+    "school_class_teacher_reassigned": "Professor da turma transferido",
+    "school_class_archived": "Aula arquivada",
+    "assign_teacher": "Professor atribuído",
+    "assign_manager": "Gerente nomeado",
+    "class_transfer": "Aluno transferido",
+    "grant": "Permissão concedida",
+    "revoke": "Permissão removida",
+    "archive": "Arquivado",
+    "viewed_student_report": "Relatório do aluno visualizado",
+    "viewed_class_report": "Relatório da turma visualizado",
+    "grant_created": "Concessão de acesso criada",
+    "grant_revoked": "Concessão de acesso revogada",
+    "magic_link_issued": "Link de login emitido",
+    "pin_rotated": "PIN girado",
+    "username_rotated": "Nome de usuário girado",
+    "teacher_quota_updated": "Cotas atualizadas",
+    "teacher_features_updated": "Permissões de recursos atualizadas",
+    "teacher_status_updated": "Status da conta atualizado"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Ação do sistema",
+    "activity": "Atividade",
+    "classActivity": "Atividade de aula",
+    "activitySuffix": "atividade"
+  }
+}

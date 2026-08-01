@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-lab",
+  "title": "Laboratório Experimental de Leo",
+  "blurb": "Um jogo sobre experimentos, materiais e causa e efeito",
+  "help": {
+    "howToPlay": "Leia a tarefa do experimento, escolha os itens da prateleira (arraste ou toque), coloque-os na mesa do laboratório e toque em \"Verificar experimento\".",
+    "scoring": "Uma experiência bem-sucedida +30, sucesso na primeira tentativa +10, sequência de 3 corretas +15, sequência de 5 +30. Nenhum ponto é deduzido por erros.",
+    "rewards": "As moedas são concedidas com base em quantas experiências você teve sucesso, nível de dificuldade, precisão, sequências e conclusão de 20 experiências - somente se você teve sucesso pelo menos uma vez.",
+    "tip": "Pense no que é necessário para completar a tarefa – não confie nas dicas dos cartões de itens."
+  },
+  "accessibility": {
+    "title": "Laboratório Experimental de Leo"
+  }
+}

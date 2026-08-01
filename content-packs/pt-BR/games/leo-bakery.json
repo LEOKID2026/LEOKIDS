@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-bakery",
+  "title": "Padaria do Léo",
+  "blurb": "Multiplicação, grupos iguais e fator ausente",
+  "help": {
+    "howToPlay": "Construa bandejas, encontre o fator total ou ausente ou reorganize o mesmo total - depois toque em \"Verificar pedido\".",
+    "scoring": "Resposta correta +30, bônus de tempo de até +20, sequência de 5 acertos +25. Após 3 tentativas fracassadas, a solução completa é mostrada.",
+    "rewards": "As moedas são concedidas com base em quantos pedidos você preparou corretamente, precisão, sequências e nível de dificuldade.",
+    "tip": "Pense em quantas bandejas × quantas por bandeja – não apenas contando os ícones."
+  },
+  "accessibility": {
+    "title": "Padaria do Léo"
+  }
+}

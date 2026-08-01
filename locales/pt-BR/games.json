@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Jogos",
+  "arcade": "Arcada",
+  "solo": "Jogos individuais",
+  "educational": "Jogos educativos",
+  "play": "Jogar",
+  "pause": "Pausa",
+  "resume": "Retomar",
+  "settings": "Configurações do jogo",
+  "soundOn": "Som ativado",
+  "soundOff": "Som desligado",
+  "youWin": "Você venceu!",
+  "youLose": "Boa tentativa!",
+  "draw": "É um empate",
+  "inviteFriend": "Convide um amigo",
+  "waitingForOpponent": "Esperando pelo adversário…",
+  "matchFound": "Correspondência encontrada!",
+  "connectionLost": "Conexão perdida. Tentando novamente…",
+  "back": "Voltar",
+  "gamesBadge": "Jogos",
+  "hubSubtitle": "Escolha a experiência adequada: jogos Leo, jogos offline e muito mais.",
+  "hubRegularTitle": "Os jogos do Leão",
+  "hubRegularBlurb": "Jogos de Leo - jogos de memória, quebra-cabeças, tiro ao alvo e muito mais.",
+  "hubOfflineTitle": "Sempre com Leão",
+  "hubOfflineBlurb": "Jogue mesmo sem internet",
+  "hubEducationalTitle": "Jogos de aprendizagem de Leo",
+  "hubEducationalBlurb": "Enriquecimento, habilidades de pensamento e conhecimento geral",
+  "hubOnlineTitle": "Jogos com amigos",
+  "hubOnlineBlurb": "Salas de jogos multijogador com amigos e outros jogadores.",
+  "devPrototypeMeta": "Desenvolvimento · testes internos",
+  "soloHubBadge": "Os jogos do Leão",
+  "soloHubTitle": "Jogos do Leo — mundo infantil",
+  "soloHubSubtitle": "Jogue, ganhe pontos e colete moedas e joias para o seu mundo!",
+  "soloMeta": "Solo · moedas · gemas",
+  "playNow": "Jogue agora",
+  "educationalBadge": "Educacional",
+  "educationalHubTitle": "Jogos educativos",
+  "educationalHubSubtitle": "Jogos de aprendizagem que desenvolvem habilidades enquanto se divertem.",
+  "noGamesAvailable": "Nenhum jogo disponível no momento.",
+  "educationalMeta": "Jogo educativo · Moedas",
+  "arcadeBack": "Arcada",
+  "arcadeBadge": "Clube de fliperama",
+  "arcadeHubTitle": "Clube de jogo do Leo",
+  "arcadeHubSubtitle": "Jogue com amigos – crie uma sala ou entre em uma.",
+  "entryCostLabel": "Custo de entrada",
+  "selectEntryCost": "Escolha o valor da entrada",
+  "roomTypeQuick": "Partida rápida",
+  "roomTypePublic": "Público",
+  "playersLabel": "Jogadores",
+  "apiSuccess": "Feito",
+  "apiAlreadyQueued": "Já na fila (não cobrado novamente)",
+  "apiInsufficientFunds": "Não há moedas suficientes para esta ação",
+  "apiFailed": "Falha na ação",
+  "quickAlreadyInRoom": "Já em uma sala – toque em Entrar no jogo",
+  "quickJoined": "Juntou-se a um jogador esperando na sala",
+  "quickCreated": "Sala de partida rápida criada – aguardando outro jogador",
+  "quickReady": "Preparar",
+  "social": {
+    "greatGame": "Ótimo jogo!",
+    "wellPlayed": "Bem jogado!",
+    "rematch": "Revanche?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Conecte quatro",
+      "blurb": "Conecte quatro · dois jogadores",
+      "players": "Jogadores: 2"
+    },
+    "ludo": {
+      "title": "Ludo",
+      "blurb": "Ludo · jogo de tabuleiro familiar",
+      "players": "Jogadores: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Cobras e escadas",
+      "blurb": "Tabuleiro 1–100 · escadas e cobras",
+      "players": "Jogadores: 2–4"
+    },
+    "checkers": {
+      "title": "Damas",
+      "blurb": "Damas clássicas · capturas necessárias",
+      "players": "Jogadores: 2"
+    },
+    "chess": {
+      "title": "Xadrez",
+      "blurb": "Xadrez clássico · xeque e xeque-mate",
+      "players": "Jogadores: 2"
+    },
+    "dominoes": {
+      "title": "Dominó",
+      "blurb": "Bloqueando dominós · jogue até acabar",
+      "players": "Jogadores: 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · vitórias em linha completa",
+      "players": "Jogadores: até 8"
+    }
+  }
+}

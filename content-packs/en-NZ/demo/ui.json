@@ -1,0 +1,24 @@
+{
+  "bar": {
+    "gradeLabel": "Year"
+  },
+  "enter": {
+    "intro": "Pick a year and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
+    "chooseGradeLegend": "Choose a year"
+  },
+  "missions": {
+    "mathTitle": "Practice maths",
+    "mathDescription": "Answer 5 maths questions"
+  },
+  "subjects": {
+    "math": "Maths"
+  },
+  "grades": {
+    "g1": "Year 1",
+    "g2": "Year 2",
+    "g3": "Year 3",
+    "g4": "Year 4",
+    "g5": "Year 5",
+    "g6": "Year 6"
+  }
+}

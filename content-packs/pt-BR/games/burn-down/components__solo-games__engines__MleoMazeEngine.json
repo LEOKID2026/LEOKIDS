@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "each_new_maze_collect_and_race_on": "Cada novo labirinto – colete e corra!",
+    "left": "Esquerda",
+    "down": "Abaixo",
+    "right": "Certo",
+    "hintcell_hintcell_r_r_hintcell_c_c_const_isstartcell_r_c_start_r_r_start": "dicaCell && dicaCell.r === r && dicaCell.c === c;\n  const isStartCell = (r, c) => start.r === r && start.c === c;\n  const isExitCell = (r, c) => exit.r === r && exit.c === c;\n  const isKeyCell = (r, c) => keyCell && keyCell.r === r && keyCell.c === c;\n  const isBonusDiamond = (r, c) =>\n    bônusDiamond?.ativo && bônusDiamond.r === r && bônusDiamond.c === c;\n  const isWallHit = (r, c) => wallHitCell && wallHitCell.r === r && wallHitCell.c === c;\n\n  retornar (",
+    "trymove_0_1_aria_label_gamepackcopy_components_solo_games_engines_mleoma": "tryMove(0, -1)}\n                  aria-label=gamePackCopy(\"componentes__solo-games__engines__MleoMazeEngine\", \"esquerda\")\n                >\n                  ←",
+    "trymove_0_1_aria_label_gamepackcopy_components_solo_games_engines_mleoma_2": "tryMove(0, 1)}\n                  aria-label=gamePackCopy(\"componentes__solo-games__engines__MleoMazeEngine\", \"direita\")\n                >\n                  →",
+    "trymove_1_0_aria_label_gamepackcopy_components_solo_games_engines_mleoma": "tenteMove(1, 0)}\n                  aria-label=gamePackCopy(\"componentes__solo-games__engines__MleoMazeEngine\", \"down\")\n                >\n                  ↓",
+    "trymove_1_0_aria_label_up": "tenteMove(-1, 0)}\n                  aria-label=\"Para cima\"\n                >\n                  ↑",
+    "solve_as_many_mazes_as_you_can_before_time_runs_out": "Resolva o máximo de labirintos que puder antes que o tempo acabe!",
+    "a_diamond_appeared": "Um diamante apareceu! 💎",
+    "leo_s_maze_race": "Corrida Labirinto de Leo",
+    "start_game": "Iniciar jogo"
+  }
+}

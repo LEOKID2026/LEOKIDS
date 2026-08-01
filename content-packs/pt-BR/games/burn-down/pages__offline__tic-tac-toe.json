@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Voltar",
+    "local_badge": "Local",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "Quadro {size}×{size} • {mode}",
+    "vs_bot": "contra bot",
+    "two_players": "2 jogadores",
+    "player_x": "Jogador X",
+    "player_o": "Jogador O",
+    "tie": "Gravata",
+    "vs_bot_label": "contra bot",
+    "reset_board": "Redefinir placa",
+    "reset_score": "Redefinir pontuação",
+    "player_won": "{player} ganhou!",
+    "tie_game": "Gravata!",
+    "turn": "Vez:"
+  }
+}

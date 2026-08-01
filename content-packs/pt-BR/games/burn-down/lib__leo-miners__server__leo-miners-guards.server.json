@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Chave de idempotência inválida",
+    "invalid_action_type": "Tipo de ação inválido",
+    "missing_stage_data_for_mining": "Dados de estágio ausentes para mineração",
+    "too_many_breaks_in_one_request": "Muitas interrupções em uma solicitação",
+    "invalid_claim_type": "Tipo de reivindicação inválido",
+    "offline_time_exceeds_the_allowed_limit": "O tempo off-line excede o limite permitido",
+    "offline_time_does_not_match_server_data": "O horário off-line não corresponde aos dados do servidor",
+    "too_many_breaks_try_again_in_a_moment": "Muitas pausas. Tente novamente em alguns instantes",
+    "guests_cannot_collect_rewards_please_link_an_account": "Os convidados não podem receber recompensas - vincule uma conta",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners ainda não está habilitado - aplique migração e configuração",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners está desativado nas configurações de administrador",
+    "leo_miners_economy_is_disabled": "Economia do Leo Miners está desativada",
+    "leo_miners_point_accrual_is_disabled": "O acúmulo de pontos Leo Miners está desativado",
+    "offline_collection_is_disabled": "A coleta off-line está desativada",
+    "leo_miners_gifts_are_disabled": "Os presentes do Leo Miners estão desativados",
+    "leo_miners_claims_are_disabled": "As reivindicações do Leo Miners estão desativadas",
+    "diamond_chest_is_disabled": "O baú de diamantes está desativado",
+    "guests_cannot_collect_diamonds": "Os hóspedes não podem coletar diamantes"
+  }
+}

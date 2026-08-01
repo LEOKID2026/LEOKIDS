@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Narrativa parental hebraica segura com tom observacional e volume adequado.",
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Evidências escassas, mas cobertura cautelosa explícita – não devem bloquear.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Evidências tênues com forte certeza e reivindicação de domínio - bloqueio.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "O mecanismo lista barreiras que não concluem, mas o texto usa certeza absoluta.",
+    "disability_clinical_framing_block": "Incapacidade/enquadramento clínico – bloqueio.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "O motor permite apenas manutenção; salto de nível de forças narrativas.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "A confiança do mecanismo é baixa, mas o texto pai é totalmente certo.",
+    "permanent_failure_never_succeed_framing_block": "Falha permanente / enquadramento sem sucesso - bloqueio.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "Sinal de alta adivinhação, mas a narrativa afirma domínio total.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "Apenas suspeita de lacuna de pré-requisitos; a narrativa afirma uma lacuna no nível da prova.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "O token de taxonomia interna vazou no bloco de cópia pai.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "Linha de restrição estatística realista de dados finos - aprovação (informações: cuidado fino e seguro).",
+    "explicit_collect_more_examples_framing_pass_info": "Enquadramento explícito de coletar mais exemplos - passe (informações).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "Dados escassos, mas alegam determinabilidade/fraqueza significativa – aviso.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "Reconhece a falta de dados e então afirma um problema claro – aviso.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "Linha tênue, mas narrativa vaga, sem enquadramento explícito de dados limitados - aviso.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "Apesar dos poucos dados, clareza absoluta sobre a luta - excesso de confiança + sutil → bloqueio."
+  }
+}

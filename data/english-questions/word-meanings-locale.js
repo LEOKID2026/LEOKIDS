@@ -3,6 +3,7 @@
  * English word ID stays stable; meaning follows instructionLocale.
  * Global: never return Hebrew. WORD_LISTS is an English ID catalog.
  * Spanish: country packs deep-merge onto es-419 (e.g. es-CO → es-419 → en word).
+ * Portuguese Brazil: pt-BR → en.
  */
 
 import { WORD_LISTS } from "./word-lists.js";
@@ -16,6 +17,7 @@ import { WORD_MEANINGS_ES_PY } from "./word-meanings/es-PY.js";
 import { WORD_MEANINGS_ES_PA } from "./word-meanings/es-PA.js";
 import { WORD_MEANINGS_ES_UY } from "./word-meanings/es-UY.js";
 import { WORD_MEANINGS_ES_ES } from "./word-meanings/es-ES.js";
+import { WORD_MEANINGS_PT_BR } from "./word-meanings/pt-BR.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -31,6 +33,7 @@ const MEANING_PACKS = {
   "es-PA": WORD_MEANINGS_ES_PA,
   "es-UY": WORD_MEANINGS_ES_UY,
   "es-ES": WORD_MEANINGS_ES_ES,
+  "pt-BR": WORD_MEANINGS_PT_BR,
 };
 
 /**
@@ -55,16 +58,37 @@ function isSpanishInstructionLocale(locale) {
 }
 
 /**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isPortugueseBrazilInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  if (!tag) return false;
+  return tag === "pt-br" || tag === "pt" || tag.startsWith("pt-");
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isLocalizedMeaningLocale(locale) {
+  return isSpanishInstructionLocale(locale) || isPortugueseBrazilInstructionLocale(locale);
+}
+
+/**
  * Build merged meaning tables for a locale via fallback chain.
  * @param {string|null|undefined} instructionLocale
  * @returns {Record<string, Record<string, string>>}
  */
 function getMergedMeaningPack(instructionLocale) {
   const tag = normalizeLocaleTag(instructionLocale);
-  if (!isSpanishInstructionLocale(tag)) {
+  if (!isLocalizedMeaningLocale(tag)) {
     return MEANING_PACKS.en || {};
   }
-  const chain = getLocaleFallbackChain(tag === "es" || tag === "es419" ? "es-419" : tag);
+  let chainLocale = tag;
+  if (tag === "es" || tag === "es419") chainLocale = "es-419";
+  else if (tag === "pt") chainLocale = "pt-BR";
+  const chain = getLocaleFallbackChain(chainLocale);
   /** @type {Record<string, Record<string, string>>} */
   let merged = {};
   for (const loc of [...chain].reverse()) {
@@ -114,14 +138,14 @@ export function resolveEnglishWordMeaning(enWord, { listKey, instructionLocale }
   const resolvedListKey = listKey || findListKeyForEnglishWord(word);
   const pack = getMergedMeaningPack(instructionLocale);
 
-  if (isSpanishInstructionLocale(instructionLocale)) {
+  if (isLocalizedMeaningLocale(instructionLocale)) {
     if (resolvedListKey) {
-      const es = meaningFromPack(pack, resolvedListKey, word);
-      if (es) return es;
+      const localized = meaningFromPack(pack, resolvedListKey, word);
+      if (localized) return localized;
     }
     for (const key of Object.keys(pack || {})) {
-      const es = meaningFromPack(pack, key, word);
-      if (es) return es;
+      const localized = meaningFromPack(pack, key, word);
+      if (localized) return localized;
     }
   }
 
@@ -129,7 +153,7 @@ export function resolveEnglishWordMeaning(enWord, { listKey, instructionLocale }
   return word;
 }
 
-export { isSpanishInstructionLocale };
+export { isSpanishInstructionLocale, isPortugueseBrazilInstructionLocale };
 
 /**
  * Return { [enWord]: meaning } for a list.

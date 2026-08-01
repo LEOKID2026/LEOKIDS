@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "English — First Class"
+    },
+    "english.g2": {
+      "bookTitle": "English — Second Class"
+    },
+    "english.g3": {
+      "bookTitle": "English — Third Class"
+    },
+    "english.g4": {
+      "bookTitle": "English — Fourth Class"
+    },
+    "english.g5": {
+      "bookTitle": "English — Fifth Class"
+    },
+    "english.g6": {
+      "bookTitle": "English — Sixth Class"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometry — First Class"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometry — Second Class"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometry — Third Class"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometry — Fourth Class"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometry — Fifth Class"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometry — Sixth Class"
+    },
+    "math.g1": {
+      "bookTitle": "Maths — First Class"
+    },
+    "math.g2": {
+      "bookTitle": "Maths — Second Class"
+    },
+    "math.g3": {
+      "bookTitle": "Maths — Third Class"
+    },
+    "math.g4": {
+      "bookTitle": "Maths — Fourth Class"
+    },
+    "math.g5": {
+      "bookTitle": "Maths — Fifth Class"
+    },
+    "math.g6": {
+      "bookTitle": "Maths — Sixth Class"
+    },
+    "science.g1": {
+      "bookTitle": "Science — First Class"
+    },
+    "science.g2": {
+      "bookTitle": "Science — Second Class"
+    },
+    "science.g3": {
+      "bookTitle": "Science — Third Class"
+    },
+    "science.g4": {
+      "bookTitle": "Science — Fourth Class"
+    },
+    "science.g5": {
+      "bookTitle": "Science — Fifth Class"
+    },
+    "science.g6": {
+      "bookTitle": "Science — Sixth Class"
+    }
+  }
+}

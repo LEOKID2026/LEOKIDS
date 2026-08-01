@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Remover este aluno da turma?",
+    "remove_this_student_from_your_teacher_list": "Remover este aluno da sua lista de professores?",
+    "manage_class": "Gerenciar turma",
+    "full_name_of_new_student": "Nome completo do novo aluno",
+    "students": "Alunos",
+    "classes": "Aulas",
+    "class_report": "Relatório de aula",
+    "activities": "Atividades",
+    "filter_student_list": "Filtrar lista de alunos",
+    "search_by_name": "Pesquise por nome…"
+  }
+}

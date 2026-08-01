@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "player": "Jogador",
+    "game_over": "Game Over",
+    "right": "Certo ▶"
+  }
+}

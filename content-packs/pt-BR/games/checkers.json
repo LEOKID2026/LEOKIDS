@@ -1,0 +1,9 @@
+{
+  "gameId": "checkers",
+  "title": "Damas",
+  "blurb": "Jogue com amigos no fliperama",
+  "help": {
+    "howToPlay": "Siga as instruções na tela para este jogo.",
+    "tip": "Revezem-se e divirtam-se."
+  }
+}

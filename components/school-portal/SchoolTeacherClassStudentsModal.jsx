@@ -8,6 +8,7 @@ import { ReportModalFrame } from "../reporting/ReportModalFrame.jsx";
 import { schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown.js";
 import { SCHOOL_VIEW_STUDENT_REPORT } from "../../lib/school-portal/school-ui.js";
 import { SchoolEmptyState, SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi.jsx";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Roster for a subject class opened from teacher detail.
@@ -35,7 +36,8 @@ export default function SchoolTeacherClassStudentsModal({
   onStudentReport,
   zIndex = 110,
 }) {
-  const gradeLabel = schoolGradeLabelHe(gradeLevel);
+  const t = useT();
+  const gradeLabel = schoolGradeLabelHe(gradeLevel, t);
 
   return (
     <ReportModalFrame

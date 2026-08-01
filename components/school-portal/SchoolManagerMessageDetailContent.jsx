@@ -14,6 +14,7 @@ import {
   schoolMessageReadCountForTab,
 } from "../../lib/school-portal/school-messaging-ui";
 import { SCHOOL_PORTAL_MODAL_SCROLL_CLASS } from "./SchoolPortalUi";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 export default function SchoolManagerMessageDetailContent({
   detail,
@@ -21,6 +22,7 @@ export default function SchoolManagerMessageDetailContent({
   receiptTab,
   onReceiptTabChange,
 }) {
+  const t = useT();
   if (!detail) return null;
 
   const sentLabel = detail.sentAt ? new Date(detail.sentAt).toLocaleString("en-US") : "";
@@ -31,7 +33,7 @@ export default function SchoolManagerMessageDetailContent({
         {detail.subject || SC_RECEIPTS_PANEL_TITLE}
       </h2>
       <p className="text-xs text-white/50">
-        {formatSchoolMessageAudienceLabel(detail.audienceType, detail.audienceScope)}
+        {formatSchoolMessageAudienceLabel(detail.audienceType, detail.audienceScope, t)}
         {sentLabel ? ` · ${sentLabel}` : ""}
       </p>
       <p className="text-sm text-white/85 whitespace-pre-wrap">{detail.body || "-"}</p>

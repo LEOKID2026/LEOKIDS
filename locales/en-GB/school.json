@@ -1,0 +1,21 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a year, physical class and subject - reports and management by year",
+    "chooseGrade": "Choose a year",
+    "backGrades": "← Back to years",
+    "colGrade": "Year",
+    "studentsSubtitle": "Browse by year and class - child reports without entering IDs",
+    "createStudentGrade": "Year",
+    "classMgmtGrade": "Year",
+    "assignCurrentGrade": "Current year",
+    "assignTargetGrade": "Target year"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this year group",
+    "audienceGradeTeachers": "Teachers of this year group",
+    "detailsFieldGrade": "Year"
+  },
+  "reportSummary": {
+    "studentLine": "Answers: {totalAnswers} · Accuracy: {accuracy} · Year: {gradeLevel}"
+  }
+}

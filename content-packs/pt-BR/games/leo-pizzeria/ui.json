@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Pizzaria do Léo",
+  "blurb": "Aprendendo frações fazendo pizzas",
+  "help": {
+    "howToPlay": "Leia o pedido, adicione coberturas às fatias de pizza (toque ou arraste) e toque em “Servir Pizza”.",
+    "scoring": "Pizza correta +30, sequência de 3 correta +15, sequência de 5 +30. Nenhum ponto é deduzido por erros.",
+    "rewards": "As moedas são concedidas com base em quantos clientes você atendeu, precisão, sequências e nível de dificuldade - mesmo que você não tenha atendido todos os 20 clientes.",
+    "tip": "Verifique quantas fatias cada cobertura cobre – metade, quarto e oitavo referem-se ao número de fatias, não à posição."
+  },
+  "accessibility": {
+    "title": "Pizzaria do Léo"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Não substitui correctAnswer numérico, respostas[] ou texto de pergunta após a geração - apenas enriquece os campos de metadados.",
+    "blanket_patternfamily_math_kind_when_absent": "Padrão de cobertorFamily `math_${kind}` quando ausente",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "As linhas de sondagem + fração já carregam diagnosticSkillId / esperadoErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Linhas de operação/tipo padrão usam matemática determinística_${kind} id de habilidade",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Tipos de borda com parâmetros mínimos - padrão de identificação ainda seguro math_*"
+  }
+}

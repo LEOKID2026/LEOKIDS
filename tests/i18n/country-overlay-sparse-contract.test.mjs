@@ -8,7 +8,9 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   assessNearFullCopy,
+  auditBurnDownIndexOverlay,
   collectStringLeaves,
+  isBurnDownIndexPath,
   resolveAuthorityPackPath,
 } from "../../lib/i18n/country-overlay-sparse-contract.js";
 import { getCatalogPackExact } from "../../lib/content/pack-catalog.js";
@@ -64,10 +66,22 @@ function auditCountryContentPacks(locale) {
   const denseJustified = [];
 
   for (const rel of listJsonRel(countryRoot)) {
-    // Index files are sparse by construction (few slugs vs full base index).
-    if (rel.endsWith("/burn-down-index.json") || rel === "burn-down-index.json") continue;
-
     const country = JSON.parse(fs.readFileSync(path.join(countryRoot, rel), "utf8"));
+
+    if (isBurnDownIndexPath(rel)) {
+      const domain = rel.split("/")[0];
+      const baseRel = `${domain}/burn-down-index.json`;
+      if (!baseExists(baseRel)) {
+        extraFiles.push(rel);
+        continue;
+      }
+      const base = JSON.parse(fs.readFileSync(path.join(baseRoot, baseRel), "utf8"));
+      const indexAudit = auditBurnDownIndexOverlay(country, base, { countryRoot, domain });
+      for (const key of indexAudit.orphanKeys) orphanKeys.push({ rel, key });
+      for (const key of indexAudit.identicalOverrides) identicalOverrides.push({ rel, key });
+      continue;
+    }
+
     const authority = resolveAuthorityPackPath(rel, baseExists);
     if (authority.kind === "missing" || !authority.baseRel) {
       extraFiles.push(rel);
@@ -232,4 +246,67 @@ test("es-ES merged report runtime parity for grade-aware slug", () => {
   assert.equal((values.match(/\bgrados?\b/gi) || []).length, 0);
   assert.doesNotMatch(values, /\b(usted|pídale a su|proporcione|Mantenga|concéntrese|identifique)\b/i);
   assert.equal((values.match(/\{[a-zA-Z0-9_|,# ]+\}|\{\{[^}]+\}\}/g) || []).length, 0);
+});
+
+test("burn-down-index overlay: genuine index-only difference passes", () => {
+  const baseIndex = { "slug.a": { hello: "Hello {name}" } };
+  const countryIndex = { "slug.a": { hello: "G'day {name}" } };
+  const audit = auditBurnDownIndexOverlay(countryIndex, baseIndex, {
+    countryRoot: path.join(ROOT, "content-packs/__none__"),
+    domain: "learning",
+    hasLeafForSlug: () => false,
+  });
+  assert.equal(audit.countryLeaves.size, 1);
+  assert.deepEqual(audit.orphanKeys, []);
+  assert.deepEqual(audit.identicalOverrides, []);
+  assert.deepEqual(audit.placeholderMismatches, []);
+});
+
+test("burn-down-index overlay: identical index-only override fails", () => {
+  const baseIndex = { "slug.a": { hello: "Hello {name}" } };
+  const countryIndex = { "slug.a": { hello: "Hello {name}" } };
+  const audit = auditBurnDownIndexOverlay(countryIndex, baseIndex, {
+    countryRoot: path.join(ROOT, "content-packs/__none__"),
+    domain: "learning",
+    hasLeafForSlug: () => false,
+  });
+  assert.deepEqual(audit.identicalOverrides, ["slug.a.hello"]);
+});
+
+test("burn-down-index overlay: orphan index key fails", () => {
+  const baseIndex = { "slug.a": { hello: "Hello" } };
+  const countryIndex = { "slug.a": { hello: "Hi", orphanKey: "x" } };
+  const audit = auditBurnDownIndexOverlay(countryIndex, baseIndex, {
+    countryRoot: path.join(ROOT, "content-packs/__none__"),
+    domain: "learning",
+    hasLeafForSlug: () => false,
+  });
+  assert.ok(audit.orphanKeys.includes("slug.a.orphanKey"));
+});
+
+test("burn-down-index overlay: placeholder mismatch fails", () => {
+  const baseIndex = { "slug.a": { hello: "Hello {name}" } };
+  const countryIndex = { "slug.a": { hello: "Hello {student}" } };
+  const audit = auditBurnDownIndexOverlay(countryIndex, baseIndex, {
+    countryRoot: path.join(ROOT, "content-packs/__none__"),
+    domain: "learning",
+    hasLeafForSlug: () => false,
+  });
+  assert.deepEqual(audit.placeholderMismatches, ["slug.a.hello"]);
+});
+
+test("burn-down-index overlay: composed leaf slug is not double-scanned", () => {
+  const baseIndex = { "slug.leaf": { hello: "Hello" }, "slug.index": { bye: "Bye" } };
+  const countryIndex = {
+    "slug.leaf": { hello: "Hello" },
+    "slug.index": { bye: "See you" },
+  };
+  const audit = auditBurnDownIndexOverlay(countryIndex, baseIndex, {
+    countryRoot: path.join(ROOT, "content-packs/__none__"),
+    domain: "learning",
+    hasLeafForSlug: (slug) => slug === "slug.leaf",
+  });
+  assert.equal(audit.countryLeaves.has("slug.leaf.hello"), false);
+  assert.equal(audit.identicalOverrides.includes("slug.leaf.hello"), false);
+  assert.equal(audit.countryLeaves.get("slug.index.bye"), "See you");
 });

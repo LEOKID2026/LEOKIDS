@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "Fábrica de Reciclagem Leo",
+  "blurb": "Separe o lixo nas lixeiras certas e ajude a proteger o meio ambiente",
+  "help": {
+    "howToPlay": "Arraste ou toque em um item da esteira transportadora e escolha a caixa correta. Classifique itens suficientes antes de atingir o número máximo de erros.",
+    "scoring": "Classificação correta +10, classificação rápida +5, sequência de 5 correta +20, sequência de 10 +50. Um erro ou item perdido −5 (a pontuação nunca cai abaixo de 0).",
+    "rewards": "As moedas são concedidas com base em quantos itens você classificou corretamente, precisão, sequências e alcance da meta - mesmo que você não tenha terminado o jogo inteiro.",
+    "tip": "Preste atenção ao tipo de item – papel, plástico, vidro, metal ou lixo geral."
+  },
+  "accessibility": {
+    "title": "Fábrica de Reciclagem Leo"
+  }
+}

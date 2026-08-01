@@ -1,0 +1,52 @@
+{
+  "toppings": [
+    {
+      "id": "cheese",
+      "emoji": "🧀",
+      "name": "Queijo"
+    },
+    {
+      "id": "tomato",
+      "emoji": "🍅",
+      "name": "Tomate"
+    },
+    {
+      "id": "olive",
+      "emoji": "🫒",
+      "name": "Azeitonas"
+    },
+    {
+      "id": "mushroom",
+      "emoji": "🍄",
+      "name": "Cogumelos"
+    },
+    {
+      "id": "pepper",
+      "emoji": "🫑",
+      "name": "Pimenta"
+    },
+    {
+      "id": "basil",
+      "emoji": "🌿",
+      "name": "Manjericão"
+    }
+  ],
+  "difficulties": {
+    "easy": {
+      "label": "Fácil",
+      "hint": "Inteira, metade e um quarto em uma pizza de 4 fatias"
+    },
+    "medium": {
+      "label": "Médio",
+      "hint": "Metade, um quarto e três quartos em 8 fatias"
+    },
+    "hard": {
+      "label": "Duro",
+      "hint": "Oitavos, combinações e completando o todo"
+    }
+  },
+  "successMessages": [
+    "Ótimo trabalho! A pizza está pronta para o cliente.",
+    "Incrível! Você fez exatamente como solicitado."
+  ]
+}

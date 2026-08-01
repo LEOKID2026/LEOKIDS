@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "Número Leo (8 dígitos) ou nome de exibição",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "Este é o número que você dá a um amigo – ele pode digitá-lo abaixo para lhe enviar uma solicitação de amizade.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "Insira um número Leo ou nome de exibição – uma solicitação de amizade será enviada para aprovação.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "Não foi possível mostrar seu número Leo. Tente atualizar a página.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "Amigos – controlados pelo Admin. Ainda não está aberto para convidados.",
+    "setquery_e_target_value": "setQuery(e.target.value)}\r\n          />",
+    "remove_this_friend_from_your_list": "Remover este amigo da sua lista?",
+    "setting_up_your_leo_number": "Configurando seu número Leo…",
+    "requests_friends": "Pedidos e amigos",
+    "friend_requests": "Pedidos de amizade",
+    "no_friends_yet": "Ainda não há amigos",
+    "my_leo_number": "Meu número Leo",
+    "remove_friend": "Remover amigo",
+    "add_friend": "Adicionar amigo",
+    "my_friends": "Meus amigos",
+    "friends": "Amigos",
+    "approve": "Aprovar",
+    "decline": "Declínio",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "invite": "Convidar"
+  }
+}

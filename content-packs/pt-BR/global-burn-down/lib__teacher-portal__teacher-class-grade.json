@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "grade_1": "1º ano",
+    "grade_2": "2º ano",
+    "grade_3": "3º ano",
+    "grade_4": "4º ano",
+    "grade_5": "5º ano",
+    "grade_6": "6º ano"
+  }
+}

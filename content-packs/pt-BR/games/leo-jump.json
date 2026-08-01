@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-jump",
+  "title": "Leão salta",
+  "blurb": "Salte obstáculos e colete moedas!",
+  "help": {
+    "howToPlay": "Toque para pular. Supere obstáculos e colete moedas, diamantes e ímãs ao longo do caminho.",
+    "scoring": "Moedas e diamantes somam pontos. Saltos consecutivos sobre obstáculos dão um bônus de combinação. Atingir um obstáculo encerra o jogo.",
+    "rewards": "Quanto mais você corre e mais pontos ganha, mais moedas e diamantes você ganha.",
+    "tip": "Não pule sempre - às vezes é melhor esperar um momento e pular na hora certa."
+  }
+}

@@ -9,11 +9,17 @@ import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 function helpCenterLabel(locale, t) {
   const fromUi = t?.("nav.helpCenter");
   if (fromUi && fromUi !== "nav.helpCenter") return fromUi;
-  return locale === "es-419" ? "Centro de ayuda" : "Help center";
+  const id = String(locale || "");
+  if (id === "es-419" || id.startsWith("es-")) return "Centro de ayuda";
+  if (id === "pt-BR" || id.startsWith("pt-")) return "Central de ajuda";
+  return "Help center";
 }
 
 function updatedLabel(locale, date) {
-  return locale === "es-419" ? `Actualizado: ${date}` : `Updated: ${date}`;
+  const id = String(locale || "");
+  if (id === "es-419" || id.startsWith("es-")) return `Actualizado: ${date}`;
+  if (id === "pt-BR" || id.startsWith("pt-")) return `Atualizado: ${date}`;
+  return `Updated: ${date}`;
 }
 
 export function buildSectionHubPage(sectionKey) {

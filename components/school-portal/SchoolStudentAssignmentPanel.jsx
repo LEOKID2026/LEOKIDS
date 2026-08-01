@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import PortalDarkSelect from "../platform-ui/PortalDarkSelect.jsx";
 import { SchoolPrimaryButton } from "./SchoolPortalUi";
-import { SCHOOL_GRADE_OPTIONS, schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown";
+import { getSchoolGradeOptions, schoolGradeLabelHe } from "../../lib/school-portal/school-drilldown";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   apiErrorMessageHe,
   schoolAuthFetch,
@@ -29,6 +30,7 @@ export default function SchoolStudentAssignmentPanel({
   studentName = "",
   onUpdated,
 }) {
+  const t = useT();
   const [assignment, setAssignment] = useState(null);
   const [physicalClasses, setPhysicalClasses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,8 +41,8 @@ export default function SchoolStudentAssignmentPanel({
   const [message, setMessage] = useState("");
 
   const gradeOptions = useMemo(
-    () => [{ value: "", label: "-" }, ...SCHOOL_GRADE_OPTIONS.map((g) => ({ value: g.level, label: g.label }))],
-    []
+    () => [{ value: "", label: "-" }, ...getSchoolGradeOptions(t).map((g) => ({ value: g.level, label: g.label }))],
+    [t]
   );
 
   const classOptions = useMemo(() => {
@@ -133,7 +135,7 @@ export default function SchoolStudentAssignmentPanel({
         <div>
           <dt className="text-white/50">{SCHOOL_ASSIGN_CURRENT_GRADE}</dt>
           <dd className="font-medium">
-            {assignment?.gradeLevel ? schoolGradeLabelHe(assignment.gradeLevel) : "-"}
+            {assignment?.gradeLevel ? schoolGradeLabelHe(assignment.gradeLevel, t) : "-"}
           </dd>
         </div>
         <div>

@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "Área a reforçar",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "O login dos responsáveis é obrigatório. Use o login dos responsáveis e tente novamente.",
+    "network_error_while_loading_the_report": "Erro de rede ao carregar o relatório.",
+    "please_choose_valid_dates": "Escolha datas válidas",
+    "custom": "Personalizado",
+    "preparing_the_performance_report": "Preparando o relatório de desempenho...",
+    "charts": "Gráficos",
+    "breakdown": "Discriminação",
+    "practice_with_questions": "Praticar com perguntas",
+    "book_reading": "Leitura do livro",
+    "other_active_learning": "Outra aprendizagem ativa",
+    "time_minutes": "Tempo (minutos)",
+    "questions": "Questões",
+    "accuracy": "Precisão %"
+  }
+}

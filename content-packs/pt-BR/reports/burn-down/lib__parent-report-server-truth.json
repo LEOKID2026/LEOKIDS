@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_report": "Relatório para responsáveis",
+    "the_report_cannot_be_built_from_local_browser_data_data_stored_on_this_d": "O relatório não pode ser criado a partir de dados do navegador local (dados armazenados neste dispositivo)."
+  }
+}

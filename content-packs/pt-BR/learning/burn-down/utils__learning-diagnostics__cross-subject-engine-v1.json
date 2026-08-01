@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "patterns_require_evidence_in_multiple_subjects_thin_single_subject_data_": "Os padrões exigem evidências em vários assuntos; dados finos de um único assunto não podem ser acionados."
+  }
+}

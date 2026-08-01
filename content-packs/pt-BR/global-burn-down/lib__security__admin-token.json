@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_admin_token_header": "Cabeçalho do token de administrador ausente",
+    "admin_token_does_not_match_server_configuration": "O token de administrador não corresponde à configuração do servidor"
+  }
+}

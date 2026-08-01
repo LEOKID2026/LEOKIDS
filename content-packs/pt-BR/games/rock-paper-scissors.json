@@ -1,0 +1,9 @@
+{
+  "gameId": "rock-paper-scissors",
+  "title": "Pedra · Papel · Tesoura",
+  "blurb": "Rodadas rápidas – o melhor de tudo.",
+  "players": "2 jogadores ou vs robô",
+  "help": {
+    "howToPlay": "Joguem juntos no mesmo dispositivo."
+  }
+}

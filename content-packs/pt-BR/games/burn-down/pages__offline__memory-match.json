@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "Voltar",
+    "local_badge": "Local",
+    "title": "Jogo de memória",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "Único jogador",
+    "two_players": "2 jogadores",
+    "time": "Tempo",
+    "moves": "Movimentos",
+    "turn": "Vez",
+    "pairs": "Pares",
+    "player_n": "Jogador {n}",
+    "two_players_label": "2 jogadores",
+    "shuffle": "Embaralhar",
+    "player_1": "Jogador 1",
+    "player_2": "Jogador 2",
+    "all_pairs_found": "Todos os pares encontrados!"
+  }
+}

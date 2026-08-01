@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "unable_to_link_this_guest_number_check_the_number_and_try_again": "Não foi possível vincular este número de convidado. Verifique o número e tente novamente.",
+    "too_many_attempts_please_try_again_later": "Muitas tentativas. Por favor, tente novamente mais tarde."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "loading": "Carregando…",
+    "regular": "Comum",
+    "important": "Importante",
+    "urgent": "Urgente",
+    "requires_confirmation": "Requer confirmação"
+  }
+}

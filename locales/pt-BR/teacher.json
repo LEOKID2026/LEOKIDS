@@ -1,0 +1,121 @@
+{
+  "reportSubjects": [
+    "matemática",
+    "geometria",
+    "inglês",
+    "ciência"
+  ],
+  "subjects": {
+    "math": "Matemática",
+    "geometry": "Geometria",
+    "english": "Inglês",
+    "science": "Ciências"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Inatividade prolongada",
+    "no_sessions_in_range": "Não há sessões práticas neste período",
+    "low_overall_accuracy": "Dificuldade com desempenho geral",
+    "many_recent_mistakes": "Alto número de erros recentes",
+    "never_active_in_range": "Nenhuma atividade neste período",
+    "insufficient_answers": "Não há dados suficientes para analisar"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Recomendado para revisar os fundamentos do assunto",
+    "encourage_session_start": "Recomendado para incentivar a prática inicial",
+    "targetedReview": "Recomendado para reforçar {subject} na aula",
+    "focusPractice": "Recomendado para focar a prática em {subject}",
+    "generic": "Continuar monitorando o progresso"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inativo neste período",
+    "low_accuracy": "Dificuldade com desempenho",
+    "many_recent_mistakes": "Alto número de erros recentes",
+    "recent_mistakes": "Erros recorrentes"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Precisa de atenção imediata",
+    "needs_reinforcement": "Precisa de reforço",
+    "monitor": "Vale a pena monitorar",
+    "on_track": "No caminho certo"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "A aula precisa de atenção imediata",
+    "class_needs_reinforcement": "Aula precisa de reforço",
+    "class_monitor": "Aula precisa de acompanhamento e prática focada",
+    "class_on_track": "A aula está no caminho certo"
+  },
+  "classHealth": {
+    "no_data": "Dados insuficientes",
+    "critical_class": "A aula precisa de atenção imediata",
+    "needs_reinforcement": "Aula precisa de reforço",
+    "monitor": "Aula precisa de acompanhamento e prática focada",
+    "strong": "A aula está no caminho certo"
+  },
+  "groupTier": {
+    "struggling": "Grupo de apoio",
+    "on_track": "Grupo na pista",
+    "advanced": "Grupo avançado"
+  },
+  "guardianAccessState": {
+    "active": "Ativo",
+    "expired": "Expirado",
+    "revoked": "Revogado"
+  },
+  "actionTypes": {
+    "class_reteach": "Reensino para toda a turma",
+    "small_group": "Trabalho em pequenos grupos",
+    "individual_practice": "Prática individual focada",
+    "collect_more_data": "Aguarde mais dados"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Atividade em sala de aula",
+    "worksheet_pdf": "Folha de atividades",
+    "focused_practice": "Prática focada"
+  },
+  "riskLevel": {
+    "high": "Precisa de atenção imediata",
+    "moderate": "Vale a pena monitorar",
+    "low": "No caminho certo"
+  },
+  "focus": {
+    "studentCalmMessage": "Não há tópicos urgentes no momento. Continuar normalmente.",
+    "hubStudentCalmMessage": "Sem tópicos específicos – continue monitorando.",
+    "hubClassWeakTopicsCalmMessage": "Nenhum tópico fraco significativo detectado – continue monitorando.",
+    "studentFallbackBanner": "Dificuldade neste assunto - prática diagnóstica necessária para identificar o tópico exato",
+    "classFallbackBanner": "A turma apresenta dificuldade nesta matéria - recomenda-se reforço de aula diagnóstica"
+  },
+  "fallback": {
+    "unknownSubject": "Desconhecido",
+    "defaultTopic": "Tópico",
+    "defaultStudentName": "Aluno",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} - dificuldade no nível do assunto",
+    "studentSubjectHeadlineNoSubject": "Dificuldade no nível do assunto",
+    "studentSubjectEvidence": "{percent}% correto de {totalAnswers} respostas",
+    "studentSubjectAction": "Recomendado para iniciar uma breve prática de diagnóstico para identificar o tópico exato",
+    "classSubjectHeadline": "{subject} - dificuldade da matéria em nível de aula",
+    "classSubjectHeadlineNoSubject": "Dificuldade da matéria em nível de aula",
+    "classSubjectAction": "Recomendado para iniciar uma breve atividade de diagnóstico ou uma revisão focada de toda a turma",
+    "classSuffix": "Classe {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} - {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Nenhuma aula ativa",
+    "noClassesHint": "Crie uma nova turma abaixo e adicione crianças em “Gerenciar turma” no cartão da turma.",
+    "createClassLabel": "Nome da classe",
+    "createClassButton": "Criar aula",
+    "createClassPlaceholder": "por exemplo Classe 3 - LEÃO"
+  },
+  "activities": {
+    "personalSectionTitle": "Atividades pessoais",
+    "individualBadge": "Pessoal"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Todas as crianças ({count})",
+      "directStudents": "Crianças particulares ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

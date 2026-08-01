@@ -1,0 +1,17 @@
+{
+  "grades": {
+    "g1": "First Class",
+    "g2": "Second Class",
+    "g3": "Third Class",
+    "g4": "Fourth Class",
+    "g5": "Fifth Class",
+    "g6": "Sixth Class"
+  },
+  "subjects": {
+    "math": "Maths"
+  },
+  "shell": {
+    "backMath": "Back to Maths",
+    "practiceMath": "We'll practice this Maths topic next"
+  }
+}

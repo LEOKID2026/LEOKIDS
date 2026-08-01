@@ -1,0 +1,776 @@
+{
+  "audio": {
+    "settings": "Configurações de áudio",
+    "close": "Fechar",
+    "allAudio": "Todo o áudio",
+    "effects": "Efeitos",
+    "music": "Música",
+    "speech": "Discurso/narração",
+    "effectsVolume": "Volume de efeitos",
+    "musicVolume": "Volume da música",
+    "speechVolume": "Volume da fala",
+    "autoPlayInstructions": "Instruções de reprodução automática",
+    "autoPlayQuestions": "Perguntas de reprodução automática",
+    "resetDefaults": "Redefinir para os padrões"
+  },
+  "languageSwitcher": {
+    "label": "Linguagem"
+  },
+  "localeSettings": {
+    "heading": "Preferências de idioma",
+    "description": "O idioma da interface controla os menus e a navegação. O idioma do relatório controla os relatórios principais e as respostas do Copilot.",
+    "interfaceLanguage": "Idioma da interface",
+    "interfaceHint": "Aplica-se a menus, botões e navegação do site.",
+    "reportLanguage": "Idioma do relatório",
+    "reportHint": "Aplica-se a relatórios de progresso e ao Responsável Copilot. A alteração do idioma da interface não altera isso depois que você define explicitamente o idioma do relatório."
+  },
+  "nav": {
+    "home": "Início",
+    "kids": "Para crianças",
+    "kidsWorld": "Mundo infantil",
+    "parents": "Para os responsáveis",
+    "parentPortal": "Portal pai",
+    "teachers": "Para professores",
+    "teacherPortal": "Portal do professor",
+    "about": "Sobre",
+    "contact": "Contato",
+    "practice": "Prática",
+    "guides": "Guias",
+    "learning": "Aprendizado",
+    "games": "Jogos",
+    "gallery": "Galeria",
+    "helpCenter": "Central de ajuda",
+    "loginParent": "Login dos responsáveis",
+    "loginStudent": "Login do aluno"
+  },
+  "home": {
+    "headline": "Leo Kids",
+    "subhead": "Pratique matemática, geometria, inglês e ciências — desenvolvido para alunos do ensino fundamental.",
+    "ctaParents": "Eu sou um pai",
+    "ctaKids": "Eu sou um estudante",
+    "ctaTeachers": "Eu sou um professor"
+  },
+  "footer": {
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "security": "Segurança",
+    "contact": "Contato",
+    "tagline": "Jogos e aprendizagem para crianças"
+  },
+  "layout": {
+    "menu": "Menu",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "backHome": "De volta para casa",
+    "logoAlt": "LEO KIDS logo"
+  },
+  "empty": {
+    "default": "Nada para mostrar ainda.",
+    "noStudents": "Nenhum aluno ainda. Adicione um filho para começar.",
+    "noProgress": "Ainda não há dados práticos para este período."
+  },
+  "toast": {
+    "saved": "Salvo",
+    "copied": "Copiado",
+    "error": "Não foi possível concluir essa ação"
+  },
+  "copyPopup": {
+    "successTitle": "Copiado com sucesso",
+    "errorTitle": "Não foi possível copiar"
+  },
+  "installApp": {
+    "button": "Instalar aplicativo",
+    "chooseTitle": "O que você gostaria de instalar?",
+    "kids": "Instale o aplicativo infantil",
+    "parents": "Instale o aplicativo para responsáveis",
+    "teachers": "Instale o aplicativo para professores",
+    "instructionsTitle": "Instruções de instalação",
+    "iosInstructionsTitle": "Instruções de instalação do iOS",
+    "close": "Fechar",
+    "iosStep1": "Toque no botão Compartilhar 📤 na parte inferior do Safari",
+    "iosStep2": "Role para baixo e escolha \"Adicionar à tela inicial\"",
+    "iosStep3": "Toque em \"Adicionar\" no canto superior direito",
+    "iosStep4": "O aplicativo aparecerá na sua tela inicial",
+    "androidStep1": "No Chrome/Edge: clique no ícone de instalação na barra de endereço",
+    "androidStep2": "No Firefox: abra o menu (☰) e escolha “Instalar”",
+    "androidStep3": "No celular: toque em \"Adicionar à tela inicial\" no menu do navegador",
+    "androidStep4": "O aplicativo aparecerá na sua tela inicial",
+    "prompt": {
+      "title": "Instale LEO KIDS",
+      "bodyIos": "Adicione o aplicativo à sua tela inicial para uma melhor experiência",
+      "bodyDefault": "Instale o aplicativo para acesso mais rápido e fácil",
+      "installNow": "Baixe e instale agora",
+      "showIosInstructions": "Mostrar instruções de instalação",
+      "installApp": "Instalar aplicativo",
+      "instructionsHeading": "Instruções de instalação:",
+      "iosStep1": "Toque no botão Compartilhar 📤 na parte inferior do Safari",
+      "iosStep2": "Escolha \"Adicionar à tela inicial\"",
+      "iosStep3": "Toque em \"Adicionar\"",
+      "close": "✕ Fechar"
+    }
+  },
+  "games": {
+    "hub": {
+      "enter": "Digitar"
+    },
+    "locked": {
+      "backToGames": "De volta aos jogos",
+      "unavailable": "Este jogo não está disponível no momento"
+    }
+  },
+  "learning": {
+    "virtualKeyboardAria": "Teclado numérico",
+    "virtualKeyboardCheck": "Conferir"
+  },
+  "guest": {
+    "features": {
+      "roomPublicCreate": "Criar sala pública",
+      "roomPrivateCreate": "Criar sala privada",
+      "roomJoinByCode": "Junte-se com código",
+      "quickGame": "Jogo rápido",
+      "invitesSend": "Enviar convite para jogo",
+      "invitesReceive": "Receber convite para jogo",
+      "friends": "Adicionar amigo",
+      "safeMessages": "Mensagens predefinidas",
+      "shop": "Compre cosméticos",
+      "events": "Evento diário",
+      "tournaments": "Torneios",
+      "missions": "Missões de arcade",
+      "personalRoom": "Sala pessoal"
+    },
+    "errors": {
+      "playerNotFound": "Jogador não encontrado.",
+      "featureLocked": "Esta ação não está disponível atualmente para convidados.",
+      "serviceNotConfigured": "O serviço não está configurado corretamente.",
+      "modeDisabled": "O modo visitante está atualmente desativado.",
+      "systemNotReady": "O sistema convidado não está pronto.",
+      "startFailed": "Não foi possível iniciar o modo visitante."
+    },
+    "resume": {
+      "alreadyLinked": "Este número de convidado já está vinculado a um dos responsáveis. Faça login com seu nome de usuário e código ou peça detalhes de login aos seus responsáveis.",
+      "invalid": "Não foi possível restaurar o modo visitante neste dispositivo. Começar como um novo convidado criará um novo número Leo e o progresso anterior não será transferido.",
+      "newAfterFailedConfirm": "Não foi possível restaurar sua sessão de convidado anterior. Começar como um novo convidado criará um novo número Leo e o progresso anterior não será transferido. Continuar?"
+    }
+  },
+  "common": {
+    "close": "Fechar"
+  },
+  "public": {
+    "contact": {
+      "title": "Contate-nos",
+      "intro": "Tem uma pergunta, ideia, comentário ou bug para relatar? Adoraríamos ouvir de você. Entre em contato sobre aprendizado, conta do seu filho, relatórios dos responsáveis, jogos, cartões ou sua experiência no uso do site.",
+      "formAriaLabel": "Formulário de contato",
+      "faqHeading": "Perguntas frequentes",
+      "legalHeading": "Documentos legais",
+      "legalNavAria": "Documentos legais e contato",
+      "form": {
+        "nameLabel": "Nome",
+        "emailLabel": "E-mail",
+        "subjectLabel": "Assunto",
+        "messageLabel": "Mensagem",
+        "submit": "Enviar",
+        "submitting": "Enviando…",
+        "hint": "Não insira senhas, códigos de login ou outras informações confidenciais aqui.",
+        "success": "Sua mensagem foi enviada. Obrigado por entrar em contato!",
+        "deliveryPending": "O formulário foi validado, mas a entrega dos emails do site ainda está sendo configurada no servidor. Por enquanto, entre em contato conosco diretamente usando o botão de e-mail abaixo.",
+        "errors": {
+          "name": "Por favor, digite seu nome.",
+          "email": "Por favor, insira seu endereço de e-mail.",
+          "emailInvalid": "Esse endereço de e-mail não parece válido.",
+          "message": "Por favor, escreva uma mensagem.",
+          "network": "Erro de rede. Por favor, tente novamente em alguns instantes.",
+          "rateLimit": "Muitas mensagens em pouco tempo. Por favor, tente novamente mais tarde.",
+          "generic": "Não foi possível enviar sua mensagem neste momento. Por favor, tente novamente mais tarde."
+        }
+      },
+      "social": {
+        "email": "e-mail de Léo",
+        "emailAria": "Enviar e-mail para {email}",
+        "instagram": "Instagram do Léo",
+        "instagramAria": "Abra a página do Instagram em uma nova janela",
+        "youtube": "YouTube do Léo",
+        "youtubeAria": "Abra o Leo Kids YouTube em uma nova janela",
+        "facebook": "Facebook do Léo",
+        "facebookAria": "Abra o Leo Kids Facebook em uma nova janela"
+      },
+      "faq": {
+        "whoFor": {
+          "q": "Para quem é o site?",
+          "a": "O site é para crianças que desejam praticar e progredir, e para responsáveis e professores que desejam uma imagem mais clara do progresso, dos pontos fortes e dos tópicos que valem a pena reforçar."
+        },
+        "subjects": {
+          "q": "Quais matérias você pode praticar?",
+          "a": "O site inclui prática de matemática, geometria, inglês e ciências – com base no que está aberto e disponível para seu filho."
+        },
+        "parentsSee": {
+          "q": "O que os responsáveis podem ver?",
+          "a": "Os responsáveis podem visualizar relatórios mostrando desempenho, repetição de erros, pontos fortes e tópicos para continuar praticando."
+        },
+        "reinforcement": {
+          "q": "O site é bom para crianças que precisam de reforço?",
+          "a": "Sim. O objetivo é uma prática gradual e clara para que cada criança possa se mover em seu próprio ritmo e reforçar os tópicos em que tem dificuldade."
+        },
+        "games": {
+          "q": "Existem jogos no site?",
+          "a": "Sim. Ao lado da prática acadêmica, há jogos educativos, jogos leoninos, opções de brincadeiras com amigos e moedas e cartas no mundo infantil."
+        },
+        "reportBug": {
+          "q": "Como posso reportar um bug ou enviar uma ideia?",
+          "a": "Contate-nos usando o botão de e-mail nesta página. Agradecemos comentários, ideias e relatórios que ajudem a melhorar o site."
+        }
+      }
+    },
+    "homepage": {
+      "brandLine": "LEO KIDS — ferramentas para os responsáveis, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
+      "flowDiagramAria": "Fluxo do sistema",
+      "primaryActionsAria": "Faça login e registre-se",
+      "hero": {
+        "badge": "Aprender · Brincar · Progresso",
+        "titleLine0": "Ferramentas para responsáveis.",
+        "titleLine1": "Um mundo que as crianças adoram.",
+        "titleLine2": "Aprendizagem que avança passo a passo.",
+        "subtitle": "LEO KIDS conecta práticas e jogos para crianças com um sistema que mapeia o progresso e dá aos responsáveis uma imagem clara.",
+        "reinforcement": "Disciplinas · Tópicos · Habilidades · Sub-habilidades",
+        "videoTitle": "Veja do ponto de vista dos responsáveis",
+        "videoDescription": "Conheça o rastreamento, relatórios e atividades pessoais.",
+        "parentCta": "Login / inscrição dos responsáveis",
+        "kidsCta": "Login do aluno",
+        "worksheetsCta": "folha de atividadess para impressão",
+        "infoLine": "LEO KIDS — ferramentas para os responsáveis, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
+        "howItWorksTitle": "Como funciona",
+        "flowStep0": "Práticas infantis",
+        "flowStep1": "Desempenho de mapas do sistema",
+        "flowStep2": "Os responsáveis têm uma visão clara",
+        "flowStep3": "Escolha o próximo passo",
+        "parentVideoAria": "Vídeo pai"
+      },
+      "valueCards": {
+        "0": {
+          "title": "Ferramentas para responsáveis",
+          "text": "Veja o que seu filho praticou, onde está melhorando e o que reforçar."
+        },
+        "1": {
+          "title": "Experiência para crianças",
+          "text": "Pratique, jogue, ganhe moedas e progrida em uma jornada amigável e colorida."
+        },
+        "2": {
+          "title": "Mapeamento de progresso",
+          "text": "Rastreamento por assunto, tópico, habilidade e subhabilidade."
+        }
+      },
+      "parentIntro": {
+        "label": "Para os responsáveis",
+        "title": "Veja seu filho claramente – não apenas uma pontuação",
+        "text": "Obtenha uma imagem clara dos pontos fortes e das lacunas e, em seguida, envie uma atividade focada que corresponda ao que eles precisam no momento."
+      },
+      "parentVideo": {
+        "title": "Veja do ponto de vista dos responsáveis",
+        "description": "Assista a um breve vídeo sobre rastreamento, relatórios e atividades dos responsáveis."
+      },
+      "learningSystem": {
+        "label": "O sistema por trás da aprendizagem",
+        "title": "Mapeamos como seu filho progride – não apenas certo ou errado",
+        "textPart0": "Cada sessão prática alimenta uma imagem:",
+        "textPart1": "por assunto, tópico, subtópico, habilidade e subhabilidade.",
+        "textPart2": "Isso ajuda a identificar vitórias, erros repetidos e o que reforçar – com um relatório claro e próximos passos focados.",
+        "dimensionTags": "Assunto · Tópico · Habilidade · Sub-habilidade",
+        "flowStep0": "Práticas infantis",
+        "flowStep1": "Desempenho de mapas do sistema",
+        "flowStep2": "Os responsáveis têm uma visão clara",
+        "flowStep3": "Escolha o próximo passo",
+        "capabilities": {
+          "subject-map": {
+            "title": "Mapa por assunto e tópico",
+            "text": "Veja o progresso em matemática, geometria, inglês e ciências até os tópicos praticados."
+          },
+          "skills": {
+            "title": "Habilidades e sub-habilidades",
+            "text": "O sistema analisa quais habilidades eram necessárias – não apenas se uma resposta estava correta."
+          },
+          "spot-difficulty": {
+            "title": "Dificuldade focada no local",
+            "text": "A repetição de erros pode apontar para uma habilidade específica que vale a pena reforçar."
+          },
+          "over-time": {
+            "title": "Acompanhe ao longo do tempo",
+            "text": "A imagem é baseada na prática real – não em uma única pontuação."
+          },
+          "parent-report": {
+            "title": "Limpar relatório pai",
+            "text": "Linguagem simples: o que seu filho sabe, para onde está se movendo e no que focar."
+          },
+          "focused-work": {
+            "title": "Acompanhamento focado",
+            "text": "Os responsáveis podem enviar uma atividade pessoal direcionada a um tópico ou habilidade."
+          }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "0": {
+            "title": "Entenda o que está acontecendo",
+            "text": "Uma visão mais ampla do que uma série — construída a partir de atividades reais."
+          },
+          "1": {
+            "title": "Saiba onde focar",
+            "text": "Os relatórios ajudam a escolher o próximo tópico a ser reforçado."
+          },
+          "2": {
+            "title": "Enviar atividades pessoais",
+            "text": "Atribua uma prática focada e acompanhe os resultados depois."
+          },
+          "3": {
+            "title": "Veja o progresso ao longo do tempo",
+            "text": "Práticas, jogos e atividades se conectam em uma imagem atualizada."
+          }
+        },
+        "highlight": "Em vez de adivinhar onde é difícil, obtenha uma visão organizada sobre o que fazer.",
+        "cta": "Vá para o portal pai"
+      },
+      "kids": {
+        "label": "Para crianças",
+        "title": "Aprenda do jeito que as crianças gostam",
+        "text": "Responda às perguntas, mova-se no seu próprio ritmo, jogue, colete recompensas e volte para mais.",
+        "videoTitle": "Conheça o mundo infantil do Leo",
+        "videoDescription": "Assista a um pequeno vídeo sobre treinos, jogos, surpresas e progresso no mundo infantil.",
+        "benefits": {
+          "0": {
+            "title": "Pratique que parece uma brincadeira",
+            "text": "Perguntas e desafios coloridos que tornam a prática mais leve."
+          },
+          "1": {
+            "title": "Seu próprio ritmo",
+            "text": "Leo orienta você para que você continue tentando sem pressão."
+          },
+          "2": {
+            "title": "Jogos e aprendizagem juntos",
+            "text": "Combine a prática da matéria com intervalos divertidos em um só lugar."
+          },
+          "3": {
+            "title": "Moedas, cartões e surpresas",
+            "text": "O progresso vem com recompensas que incentivam o retorno."
+          }
+        },
+        "cta": "Entre no mundo infantil",
+        "kidsVideoAria": "Vídeo do mundo infantil"
+      },
+      "howItWorks": {
+        "title": "Comece com algumas etapas simples",
+        "step0": "Pai abre uma conta",
+        "step1": "Adicione seu filho e obtenha detalhes de login pessoais",
+        "step2": "A criança começa a aprender, praticar e brincar",
+        "step3": "O sistema mapeia o progresso; os responsáveis recebem relatórios e podem enviar atividades específicas"
+      },
+      "finalCta": {
+        "title": "Quer uma imagem mais clara de como seu filho está?",
+        "text": "Abra uma conta, adicione seu filho e crie um quadro de aprendizagem organizado a partir de práticas, atividades e jogos.",
+        "parentCta": "Abrir conta pai",
+        "kidsCta": "Login do aluno"
+      },
+      "teachers": {
+        "label": "Para professores particulares",
+        "title": "Prática organizada e acompanhamento entre as aulas",
+        "text": "Envie atividades focadas, veja o desempenho dos alunos e continue a aula em casa.",
+        "bullet0": "Gerenciar alunos",
+        "bullet1": "Enviar atividades pessoais",
+        "bullet2": "Acompanhe a conclusão e o progresso",
+        "cta": "Login / inscrição do professor"
+      }
+    },
+    "about": {
+      "imageAlt": "Leo – ambiente de aprendizagem inteligente para crianças",
+      "title": "Sobre Leo – aprenda, pratique e progrida",
+      "intro0": "Bem-vindo ao Leo — um ambiente de aprendizagem inteligente criado para ajudar as crianças a praticar, compreender e progredir em um ritmo adequado a elas.",
+      "intro1": "O site foi projetado para alunos do ensino fundamental com prática por matéria, série, tópico e nível de dificuldade. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os tópicos onde precisa de mais confiança.",
+      "intro2": "Nosso objetivo é tornar o aprendizado mais claro, amigável e preciso: menos suposições, menos frustração e uma melhor compreensão do que seu filho já sabe e do que ainda precisa de reforço.",
+      "missionTitle": "Nossa missão",
+      "missionBody": "Ajudamos as crianças a desenvolver confiança na aprendizagem, a fortalecer competências básicas e avançadas e a dar aos responsáveis uma imagem mais clara do progresso dos seus filhos.",
+      "missionMuted": "O sistema combina prática, diversão, relatórios dos responsáveis e resumos de progresso para criar um processo de aprendizagem pessoal, organizado e encorajador.",
+      "learnEnjoyTitle": "Aprenda e aproveite",
+      "learnEnjoyBody": "Além da prática acadêmica, o site inclui jogos educativos, brincadeiras envolventes, moedas e cartões projetados para adicionar diversão, motivação e prazer ao aprendizado. O objetivo é que as crianças não sintam que estão apenas “fazendo o dever de casa”, mas entrando em um mundo infantil colorido onde podem aprender, brincar e progredir com bons sentimentos.",
+      "learnEnjoyMuted": "Existem jogos individuais, jogos educativos e oportunidades para jogar com amigos – dependendo do que está aberto e disponível no site.",
+      "whyTitle": "Por que isso importa?",
+      "featuresTitle": "O que você encontrará no site?",
+      "kidsWorldCta": "Mundo infantil",
+      "parentLoginCta": "Login dos responsáveis",
+      "funGames": {
+        "0": {
+          "title": "Jogos envolventes",
+          "text": "Jogos que agregam interesse e diversão, incentivando as crianças a continuarem praticando."
+        },
+        "1": {
+          "title": "Experiências sociais",
+          "text": "Jogue com amigos e tenha experiências sociais quando disponíveis – de uma forma positiva e amigável."
+        },
+        "2": {
+          "title": "Motivação para aprender",
+          "text": "Uma mistura de prática, moedas, cartas, jogos e desafios que incentivam as crianças a continuar."
+        }
+      },
+      "whyCards": {
+        "0": {
+          "title": "Aprendendo no seu próprio ritmo",
+          "text": "Cada criança se move de acordo com sua habilidade, com a prática adequada ao seu nível e aos tópicos que precisam ser reforçados."
+        },
+        "1": {
+          "title": "Uma imagem clara para os responsáveis",
+          "text": "Os relatórios ajudam você a entender onde seu filho teve sucesso, onde ele teve dificuldades e o que praticar em seguida."
+        },
+        "2": {
+          "title": "Uma experiência amigável para crianças",
+          "text": "O site combina prática, jogos, moedas, cartas e um design acolhedor para estimular a persistência e o aprendizado positivo."
+        }
+      },
+      "siteFeatures": {
+        "0": {
+          "phase": "Pratique por assunto",
+          "text": "Matemática, geometria, inglês e ciências."
+        },
+        "1": {
+          "phase": "Notas e níveis de dificuldade",
+          "text": "Prática combinada por faixa etária, tópico e nível para um progresso gradual e claro."
+        },
+        "2": {
+          "phase": "Relatórios para responsáveis",
+          "text": "Um resumo claro do desempenho, erros, pontos fortes e áreas a serem melhoradas."
+        },
+        "3": {
+          "phase": "Jogos e brincadeiras sociais",
+          "text": "Jogos individuais, jogos educativos, jogos com amigos, moedas e cartas."
+        }
+      }
+    },
+    "legalShell": {
+      "lastUpdated": "Última atualização: {date}",
+      "questions": "Questões:",
+      "additionalDocuments": "Documentos adicionais",
+      "legalNavAria": "Links de documentos legais"
+    }
+  },
+  "gallery": {
+    "back": "Voltar",
+    "title": "Galeria do Léo",
+    "subtitle": "Fotos e vídeos do Leo — o cachorro que acompanha as crianças por todo o site.",
+    "intro": "Conheça Leo de perto através de momentos, fotos e vídeos que dão calor e vida ao mundo infantil do site.",
+    "empty": "Não há fotos ou vídeos para mostrar.",
+    "imageAlt": "Leão — imagem {num}",
+    "close": "Fechar",
+    "previous": "Anterior",
+    "next": "Próximo"
+  },
+  "pwa": {
+    "installBody": "Toque em \"Instalar\" abaixo para adicionar o aplicativo à sua tela inicial.",
+    "iosHelpTitle": "Instalar no iPhone ou iPad",
+    "backHome": "De volta para casa",
+    "close": "Fechar",
+    "gotIt": "Entendi",
+    "iosIntro": "Em dispositivos Apple, instale o aplicativo através do Safari:",
+    "iosStep1": "Abra esta página no Safari.",
+    "iosStep2": "Toque no botão Compartilhar na barra de ferramentas do navegador.",
+    "iosStep3": "Role o menu e escolha \"Adicionar à tela inicial\".",
+    "iosStep4": "Certifique-se de que \"Abrir como aplicativo da Web\" esteja ativado, se mostrado.",
+    "iosStep5": "Toque em \"Adicionar\". O ícone do aplicativo aparecerá na tela inicial.",
+    "iosHelpFooter": "Não vê \"Adicionar à tela inicial\"? Role até a parte inferior do menu, toque em \"Editar ações\" e adicione-o à lista.",
+    "alreadyInstalled": "O aplicativo já está instalado neste dispositivo.",
+    "portalInstallStudent": "Instale o aplicativo infantil",
+    "portalInstallParent": "Instale o aplicativo para responsáveis",
+    "portalInstallTeacher": "Instale o aplicativo para professores",
+    "nativeOnlyBrowser": "A instalação do PWA está disponível no navegador, não no aplicativo nativo instalado.",
+    "installBtnStudent": "Instale LEO KIDS",
+    "installBtnParent": "Instalar P LEO KIDS",
+    "installBtnTeacher": "Instale o T LEO KIDS",
+    "installedStudent": "LEO KIDS está instalado. Abra o ícone LEO KIDS na tela inicial.",
+    "installedParent": "P LEO KIDS está instalado. Abra o ícone P LEO KIDS na tela inicial.",
+    "installedTeacher": "O T LEO KIDS está instalado. Abra o ícone T LEO KIDS na tela inicial.",
+    "promptAcceptedStudent": "O Chrome aceitou a instalação. Se o ícone LEO KIDS não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações do aplicativo.",
+    "promptAcceptedParent": "O Chrome aceitou a instalação. Se o ícone do P LEO KIDS não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações do aplicativo.",
+    "promptAcceptedTeacher": "O Chrome aceitou a instalação. Se o ícone do T LEO KIDS não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente.",
+    "unavailableConsumed": "O prompt de instalação já foi usado. Atualize a página para tentar novamente, se o Chrome ainda permitir.",
+    "unavailableError": "O prompt de instalação falhou. Atualize a página e tente novamente.",
+    "unavailableNoPromptStudent": "O Chrome não ofereceu um prompt de instalação para LEO KIDS no momento. Certifique-se de que o aplicativo ainda não esteja instalado e tente atualizar.",
+    "unavailableNoPromptParent": "O Chrome não ofereceu um prompt de instalação para P LEO KIDS no momento. Certifique-se de que o LEO KIDS esteja instalado e tente atualizar – os dois aplicativos devem estar separados.",
+    "unavailableNoPromptTeacher": "O Chrome não ofereceu um prompt de instalação para T LEO KIDS no momento. Certifique-se de que o aplicativo ainda não esteja instalado e tente atualizar.",
+    "pageTitleStudent": "LEO KIDS - Instalar",
+    "pageTitleParent": "P LEO KIDS - Instalar",
+    "pageTitleTeacher": "T LEO KIDS - Instalar",
+    "titleStudent": "Instale o aplicativo infantil",
+    "titleParent": "Instale o aplicativo para responsáveis",
+    "titleTeacher": "Instale o aplicativo para professores"
+  },
+  "parent": {
+    "portalTitle": "Portal pai",
+    "checkingSession": "Verificando sessão pai…",
+    "share": "Compartilhar",
+    "studentWorld": "Mundo infantil",
+    "studentWorldAriaLabel": "Vá para o mundo infantil",
+    "worksheets": "folha de atividadess para impressão",
+    "curriculum": "Currículo",
+    "addChild": "Adicionar filho",
+    "addChildTitle": "Adicionar filho",
+    "childrenCount": "Crianças por conta: {current} / {limit}",
+    "childLimitReached": "Você atingiu o limite de {limit} crianças por conta",
+    "childNamePlaceholder": "Nome da criança",
+    "selectGrade": "Escolher ano",
+    "guestLeoOptional": "Número Leo convidado (opcional)",
+    "guestLeoPlaceholder": "Número Leo – 8 dígitos",
+    "childLoginDetails": "Detalhes de login infantil",
+    "childUsername": "Nome de usuário filho",
+    "childPin": "PIN infantil",
+    "pinPlaceholder": "4 dígitos",
+    "usernameExample": "por exemplo noam123",
+    "details": "Detalhes",
+    "detailsTitle": "Detalhes — {name}",
+    "childDefault": "Criança",
+    "parentReport": "Relatório para responsáveis",
+    "activity": "Atividade",
+    "noChildrenYet": "Nenhum filho adicionado ainda",
+    "promoVideoLabel": "Vídeo pai",
+    "promoTitle": "Conheça LEO KIDS",
+    "promoDescription": "Assista a um pequeno vídeo sobre ferramentas para responsáveis e como as crianças aprendem no LEO KIDS.",
+    "promoVideoAria": "Vídeo dos responsáveis",
+    "curriculumModalTitle": "Planos curriculares",
+    "curriculumSubjectTabsAria": "Seleção de assunto",
+    "assignActivityLevelLabel": "Nível",
+    "childReportTitle": "Relatório infantil",
+    "changeAccessCodeTitle": "Alterar código de acesso",
+    "save": "Salvar",
+    "deleteChild": "Excluir filho",
+    "active": "Ativo",
+    "coinBalance": "Saldo de moedas: {balance}",
+    "guestLeoLink": "Número do convidado Leo (para vincular)",
+    "linkGuest": "Vincular convidado",
+    "saveCredentialsImportant": "Salve esses detalhes – o PIN não será mostrado novamente.",
+    "username": "Nome de usuário",
+    "newPin": "Novo PIN",
+    "copyUsername": "Copiar nome de usuário",
+    "pinStatusSet": "Definir",
+    "pinStatusUnset": "Não definido",
+    "newPinReset": "Novo PIN (redefinir/alterar)",
+    "resetPin": "Redefinir PIN/alterar PIN",
+    "childLoginActive": "O login infantil está ativo",
+    "usernameNotSet": "Nome de usuário: ainda não definido",
+    "setUsernamePinHint": "Defina um nome de usuário e um PIN para a criança fazer login. Se existir um login mais antigo, ele será substituído.",
+    "setUsernamePin": "Definir nome de usuário e PIN",
+    "deleteChildTitle": "Excluir filho permanentemente",
+    "deleteChildWarning": "Isso excluirá permanentemente a criança, os detalhes de login, as sessões, as respostas, os relatórios, as moedas e todos os dados relacionados. Isto não pode ser desfeito.",
+    "deleteChildConfirm": "Digite exatamente o nome da criança:",
+    "deleteConfirmPlaceholder": "Digite o nome para confirmar",
+    "deletePermanently": "Excluir permanentemente",
+    "activitySentSuccess": "Atividade enviada com sucesso!",
+    "gradeRequired": "Selecione uma nota.",
+    "pinMustBeFourDigits": "O PIN deve ter quatro dígitos.",
+    "usernameRequired": "O nome de usuário é obrigatório.",
+    "invalidUsername": "Nome de usuário inválido.",
+    "childLimitMessage": "Você pode adicionar até {limit} filhos por conta dos responsáveis.",
+    "guestLinkFailedAfterCreate": "A criança foi criada, mas a vinculação do número do convidado falhou.",
+    "guestLinkCoinsSaved": "Moedas e cartões foram guardados para a criança.",
+    "credentialsFailedAfterCreate": "O filho foi criado, mas a configuração do login falhou — você pode defini-lo nos detalhes do filho.",
+    "guestLeoEightDigits": "Insira um número Leo de 8 dígitos.",
+    "guestLinkFailed": "O link do número do convidado falhou.",
+    "guestLinkNetworkError": "Erro de rede ao vincular convidado.",
+    "credentialsBothRequired": "Digite o nome de usuário e o PIN.",
+    "credentialsSaveFailed": "Não foi possível salvar os detalhes de login.",
+    "missingCardUsername": "Nome de usuário ausente para este cartão.",
+    "newPinFourDigits": "Insira um novo PIN de 4 dígitos.",
+    "pinChangeFailed": "Não foi possível alterar o PIN.",
+    "deleteFailed": "Falha na exclusão",
+    "deleteNetworkError": "Erro de rede – tente novamente.",
+    "childDeleted": "Criança excluída permanentemente.",
+    "usernameCopied": "Nome de usuário copiado para a área de transferência.",
+    "usernameCopyFailed": "Não foi possível copiar automaticamente — copie manualmente.",
+    "gamePermissionsTitle": "Permissões de jogo",
+    "gamePermissionsHint": "Desativar uma categoria bloqueia todos os jogos nela contidos. A criança verá a categoria com uma mensagem de bloqueio.",
+    "gamePermissionsLoading": "Carregando permissões do jogo…",
+    "gameCategoryOnline": "Jogos on-line",
+    "gameCategoryOffline": "Jogos off-line",
+    "gameCategorySolo": "Jogos individuais",
+    "subjectPermissionsTitle": "Assuntos de aprendizagem",
+    "subjectPermissionsHint": "Bloquear um assunto bloqueia novos aprendizados nele. O histórico de aprendizagem anterior é mantido.",
+    "subjectPermissionsLoading": "Carregando permissões de assunto…",
+    "filterAll": "Todos",
+    "filterEnabled": "Abrir",
+    "filterDisabled": "Bloqueada",
+    "filterSuitable": "Adequado para grau",
+    "gradeSuitable": "Adequado para grau",
+    "enableAllSubjects": "Abra tudo",
+    "allowGradePicker": "Permitir que a criança escolha a nota nas páginas de aprendizagem",
+    "createChildSuccess": "Criança adicionada com sucesso.",
+    "updateChildSuccess": "Detalhes da criança salvos.",
+    "errors": {
+      "guestNotEligible": "Não disponível para contas de convidados.",
+      "notParent": "Esta conta não está autorizada para acesso dos responsáveis.",
+      "childNotFound": "Criança não encontrada.",
+      "reportsDisabled": "Os relatórios dos responsáveis não estão disponíveis no momento.",
+      "invalidDateRange": "O intervalo de datas não é válido.",
+      "signInAgain": "Faça login novamente.",
+      "signInAgainParent": "Faça login novamente como pai/mãe.",
+      "signInAgainTeacher": "Faça login novamente como professor.",
+      "reportForbidden": "Você não tem acesso ao relatório desta criança.",
+      "reportLoadFailed": "Não foi possível carregar o relatório pai.",
+      "actionForbidden": "Você não tem permissão para esta ação.",
+      "loadChildrenFailed": "Não foi possível carregar a lista de filhos.",
+      "createChildFailed": "Não foi possível adicionar a criança.",
+      "updateChildFailed": "Não foi possível atualizar os dados da criança.",
+      "panelLoadFailed": "Não foi possível carregar os dados.",
+      "panelSaveFailed": "Não foi possível salvar as alterações.",
+      "genericFailed": "Não foi possível concluir essa ação. Por favor, tente novamente.",
+      "rawMessage": "{message}"
+    }
+  },
+  "student": {
+    "loadingHome": "Carregando para casa…",
+    "redirectingLogin": "Redirecionando para login…",
+    "loading": "Carregando…",
+    "hello": "Olá {name}",
+    "childDefault": "Aluno",
+    "whatToday": "O que faremos hoje?",
+    "openProfile": "Abra meu perfil",
+    "loggingOut": "Saindo…",
+    "share": "Compartilhar",
+    "messageParent": "Mensagem pai",
+    "guestLock": "Não disponível no modo visitante",
+    "guestTopicLock": "Este tópico está bloqueado no modo visitante",
+    "guestGameLockLabel": "Bloqueada",
+    "guestGameLockHint": "Peça a um pai para desbloquear",
+    "parentLocked": "Bloqueado pelos responsáveis",
+    "panelStats": "Minhas estatísticas",
+    "panelProgress": "Meu progresso",
+    "panelMissions": "Minhas missões",
+    "panelClassroom": "Atividades pessoais",
+    "panelWorksheets": "Folhas de atividades",
+    "panelSubjects": "Meus assuntos",
+    "panelBadges": "Emblemas e conquistas",
+    "panelRecommendations": "Recomendações",
+    "gateLearning": "Jogos de desafio",
+    "gateGames": "Jogos",
+    "gateClub": "Clube on-line",
+    "dockCollection": "Coleção",
+    "dockFriends": "Amigos",
+    "dockProfile": "Perfil",
+    "dockMissions": "Missões",
+    "statsIntro": "Seu progresso em todas as disciplinas: nível, estrelas, precisão e minutos de aprendizado.",
+    "statsQuickView": "De relance",
+    "level": "Nível",
+    "stars": "Estrelas",
+    "accuracy": "Precisão",
+    "coins": "Moedas",
+    "bestScore": "Melhor pontuação",
+    "bestStreak": "Melhor sequência",
+    "questionsAnswered": "Perguntas respondidas",
+    "correctAnswers": "Respostas corretas",
+    "minutesThisMonth": "Minutos de aprendizagem este mês",
+    "minutesGoal": "Meta: {goal} min · {note}",
+    "minutesLifetime": "Minutos vitalícios",
+    "minutesLifetimeSub": "Dos resumos das sessões",
+    "monthlyJourney": "Jornada mensal",
+    "monthMinutes": "Minutos deste mês:",
+    "noDataYet": "Ainda não há dados",
+    "noAccuracyData": "Ainda não há dados",
+    "subjectsIntro": "Progresso por assunto – precisão, perguntas, nível e estrelas. Toque em \"Ir para o assunto\" para começar a praticar.",
+    "questionsCorrect": "Perguntas / correto",
+    "levelStars": "Nível · estrelas",
+    "learningMinutes": "Minutos de aprendizagem",
+    "goToSubject": "Ir para o assunto",
+    "noBadgesYet": "Ainda não há emblemas. Comece a aprender e obtenha conquistas em todas as disciplinas.",
+    "noPersonalActivities": "Nenhuma atividade pessoal no momento. Quando um professor ou pai envia uma tarefa, ela aparecerá aqui.",
+    "noWorksheets": "Nenhuma folha de atividades aberta no momento. Quando as folha de atividadess forem atribuídas, elas aparecerão aqui.",
+    "loadingActivities": "Carregando atividades…",
+    "progressLoadFailed": "Não foi possível carregar os dados de progresso.",
+    "dataProcessFailed": "Erro ao processar dados.",
+    "analyticsLoadFailed": "Falha na atualização avançada de dados.",
+    "logoutNetworkError": "Erro de rede ao sair.",
+    "surpriseReady": "Caixa surpresa pronta",
+    "surpriseNextIn": "Próxima caixa pronta em {time}",
+    "surpriseBox": "Caixa surpresa",
+    "surpriseReadyOpen": "Caixa surpresa pronta para abrir",
+    "surpriseNextCountdown": "Caixa surpresa — próxima caixa pronta em {time}",
+    "nextBoxIn": "Próxima caixa em",
+    "youHaveOneBox": "Você tem 1 caixa",
+    "youHaveBoxes": "Você tem {count} caixas",
+    "copyLeoNumberAria": "Copiar número Leo",
+    "shareWithFriends": "Compartilhe com amigos",
+    "themeGroupLabel": "Escolha o tema da tela",
+    "themeLight": "Tema claro",
+    "themeLightShort": "Luz",
+    "themeClassic": "Tema clássico",
+    "themeClassicShort": "Clássico",
+    "prototypeTitle": "Mundo Infantil – Protótipo",
+    "prototypeDescription": "Protótipo da tela de abertura do mundo Leo kids",
+    "prototypeBadge": "🧪 Protótipo",
+    "errors": {
+      "sessionExpired": "Sua sessão expirou. Faça login novamente.",
+      "serverError": "Erro no servidor ao carregar dados de aprendizagem.",
+      "loadFailed": "Não foi possível carregar dados de aprendizagem do servidor."
+    },
+    "promoTitle": "Descubra o mundo infantil LEO",
+    "promoDescription": "Assista a um pequeno vídeo sobre treinos, jogos, cartas e surpresas ao longo do caminho.",
+    "promoVideoAria": "Vídeo infantil",
+    "avatarModalTitle": "Perfil do jogador",
+    "avatarPlayerNameLabel": "Nome do jogador",
+    "avatarPlayerDefault": "Jogador",
+    "avatarChoosePrompt": "Escolha um avatar:",
+    "avatarChoosePhoto": "Escolha a foto",
+    "avatarRemovePhoto": "Remover foto",
+    "avatarPhotoSelected": "Foto selecionada ✓",
+    "avatarSaveFailed": "Falha ao salvar",
+    "avatarImageTooLarge": "A imagem é muito grande. Escolha uma imagem de até 5MB",
+    "avatarImageTypeInvalid": "Escolha apenas um arquivo de imagem",
+    "avatarImageSaveFailed": "Falha ao salvar a imagem",
+    "accessGateSignInPrompt": "Faça login como aluno para continuar",
+    "accessGateSignInCta": "Login do aluno",
+    "adSlotAria": "Anúncio",
+    "parentInviteTitle": "Querido pai 👋",
+    "parentInviteScanPromptLine1": "Para abrir uma conta para seu filho,",
+    "parentInviteScanPromptLine2": "escaneie este código com seu telefone:",
+    "parentInviteOrGoTo": "Ou acesse:",
+    "parentInviteCopyLink": "Copiar link",
+    "parentInviteQrAria": "Código QR para página pai",
+    "arcadeMissingRoom": "ID do quarto ausente.",
+    "arcadeBackToArcade": "De volta ao fliperama",
+    "arcadePageTitle": "{game} — Arcada",
+    "arcadeGames": {
+      "bingo": "Bingo",
+      "checkers": "Damas",
+      "chess": "Xadrez",
+      "dominoes": "Dominó",
+      "fourInARow": "Quatro em linha",
+      "ludo": "Ludo",
+      "snakesAndLadders": "Cobras e escadas"
+    }
+  },
+  "help": {
+    "searchLabel": "Guias de pesquisa",
+    "searchPlaceholder": "Pesquise por tópico ou senha...",
+    "noResults": "Nenhum resultado encontrado para esta pesquisa.",
+    "videoPreview": "Assista ao vídeo tutorial",
+    "videoClose": "Fechar vídeo",
+    "videoCloseButton": "Fechar",
+    "videoModalDesktop": "Vídeo tutorial (desktop)",
+    "videoModalMobile": "Vídeo tutorial (móvel)",
+    "videoDuration": "Duração estimada: {minutes} min",
+    "transcript": "Transcrição",
+    "captionsEnglish": "Inglês"
+  },
+  "copilot": {
+    "panel": {
+      "title": "Pergunte sobre o relatório",
+      "aiDisclosureLink": "Informações sobre o uso de IA",
+      "disclaimer": "Estas informações são baseadas em dados práticos do site e não constituem um diagnóstico ou conselho profissional.",
+      "intro": "Você pode perguntar livremente sobre o relatório aqui, por exemplo: o que é mais importante no momento, no que focar nesta semana, o que está indo bem ou como explicar para seu filho.",
+      "processing": "Processando o relatório…",
+      "youPrefix": "Você:",
+      "questionLabel": "Pergunta",
+      "placeholder": "Pergunta sobre o relatório…",
+      "send": "Enviar",
+      "errorGeneric": "Não é possível responder à pergunta agora. Por favor, tente novamente em alguns instantes.",
+      "quickUtterances": {
+        "qa_action_today": "O que devemos fazer em casa hoje?",
+        "qa_action_week": "O que devemos fazer esta semana?",
+        "qa_avoid_now": "O que devemos evitar agora?",
+        "qa_advance_or_hold": "Seguir em frente ou esperar?",
+        "qa_explain_to_child": "Como devemos explicar isso à criança?",
+        "qa_ask_teacher": "Pergunta para o professor"
+      }
+    }
+  }
+}

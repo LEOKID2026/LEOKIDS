@@ -1,0 +1,11 @@
+{
+  "gameId": "puzzle",
+  "title": "O quebra-cabeça de Leo",
+  "blurb": "Combine peças e acumule pontos antes que o tempo acabe!",
+  "help": {
+    "howToPlay": "Mova as peças no tabuleiro para mesclar os números correspondentes. Quanto maiores os números, maior será a pontuação.",
+    "scoring": "Cada fusão adiciona pontos. O objetivo é atingir a meta de pontuação antes que o tempo acabe.",
+    "rewards": "Ganhar com base no nível de dificuldade concede moedas e um bônus de pontuação acrescenta ainda mais.",
+    "tip": "Tente manter um canto livre para ter espaço para mover as peças."
+  }
+}

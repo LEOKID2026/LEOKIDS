@@ -1,0 +1,67 @@
+{
+  "chooseGrade": "Choose a year",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "gradeRequired": "Please choose a year before practising. Ask a parent to update your year.",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practice by year (start low and advance to your chosen level), or pick a focus area.",
+    "notEnoughQuestions": "Not enough questions for the topic/year/level you chose. Try changing a setting.",
+    "gradeFallback": "Year",
+    "gradedPracticeBlurb": "Practice by year — starts low and advances to your chosen level",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "grades": {
+      "g1": "Year 1",
+      "g2": "Year 2",
+      "g3": "Year 3",
+      "g4": "Year 4",
+      "g5": "Year 5",
+      "g6": "Year 6"
+    },
+    "practiceModes": {
+      "graded": "Practice by year"
+    },
+    "gradeTitle": "Year {grade}",
+    "mistakePracticeBlurb": "Pick a recent mistake to open focused practice in the same topic, year, and difficulty.",
+    "currentGrade": "Current year",
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practice by year.",
+    "gradedPracticeLabel": "Practice by year (start low → your chosen level)",
+    "referenceCategories": {
+      "operations": "Maths operations"
+    },
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry."
+  },
+  "math": {
+    "levelUpScience": "You leveled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practice maths in a fun way, matched to year, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "howToLearnSteps": {
+      "step1": "Choose a year, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    },
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths."
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practice geometry in a fun way, matched to year, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a year, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "errors": {
+      "invalidGrade": "Invalid year. Please choose another year.",
+      "noTopics": "No topics available for this year. Please choose another year.",
+      "noQuestions": "No questions available for the selected topic and year."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practice science in a fun way, matched to year, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a year, level, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

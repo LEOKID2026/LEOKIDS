@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "tap_to_return_to_tray": "Toque para retornar à bandeja",
+    "balance_scale": "Escala de equilíbrio",
+    "prototype_drag_items_balance_the_scale": "Protótipo · arrastar itens · equilibrar a escala",
+    "object_fromentries_items_map_i_i_id_i_const_leftweight_left_reduce_s_p_s": "Object.fromEntries(ITEMS.map((i) => [i.id, i])), []);\n\n  const leftWeight = left.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const rightWeight = right.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const diff = pesodireito - pesoesquerdo;\n  const inclinação = Matemática.max(-18, Matemática.min(18, diff * 4));\n  const isBalanced = left.length > 0 && right.length > 0 && Matemática.abs(diff)",
+    "setshowweights_e_target_checked_classname_h_4_w_4_show_weights_debug": "setShowWeights(e.target.checked)}\n            className=\"h-4 w-4\"\n          />\n          Mostrar pesos (depuração)",
+    "tap_an_item_on_the_scale_to_return_it_or_drag_from_the_tray": "Toque em um item na balança para retorná-lo · ou arraste-o da bandeja",
+    "setdragover_null": "setDragOver(nulo)}\n              >",
+    "item_tray_drag_to_a_side": "Bandeja de itens — arraste para o lado",
+    "all_items_are_on_the_scale": "Todos os itens estão na escala",
+    "balanced": "Equilibrado! ⚖️🎉",
+    "reset": "Reiniciar"
+  }
+}

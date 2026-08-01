@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-number-path",
+  "title": "Caminho numérico de Leo",
+  "blurb": "Sequências, pares ímpares e múltiplos",
+  "help": {
+    "howToPlay": "Escolha os números do caminho por regra – pares, ímpares, múltiplos, contagem pulada ou sequências – e toque em “Verificar caminho”. A ordem é importante para saltos e sequências.",
+    "scoring": "Correto na primeira tentativa +30, na segunda +20, na terceira +10. Após 3 erros o caminho correto é mostrado.",
+    "rewards": "As moedas são concedidas com base em quantas das 20 tarefas você completou, precisão, sequências e finalização do caminho.",
+    "tip": "Preste atenção se a ordem é importante - para contagem pulada e sequências você precisa escolher em ordem."
+  },
+  "accessibility": {
+    "title": "Caminho numérico de Leo"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "do_not_emit_subskillcandidate_when_taxonomymatch_is_false_or_matchstreng": "Não emita subskillCandidate quando taxonomyMatch for falso ou matchStrength for fraco.",
+    "when_engineconfidencetier_is_t0_5_questions_enginedecision_stays_insuffi": "Quando engineConfidenceTier é T0 (<5 perguntas), engineDecision permanece insuficiente_data.",
+    "when_speedonlyrisk_and_mode_is_speed_marathon_and_accuracyband_is_not_cl": "Quando speedOnlyRisk e modo forem velocidade/maratona e precisãoBand não for clear_gap, não infira Knowledge_gap."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-miners",
+  "title": "Leão, o Mineiro",
+  "blurb": "Combine cães mineiros, quebre pedras e ganhe pontos para resgatar!",
+  "help": {
+    "howToPlay": "Adicione cães mineiros ao tabuleiro, arraste cães do mesmo nível para fundi-los e quebre pedras para ganhar moedas e pontos.",
+    "scoring": "Cada pedra quebrada concede moedas. Os pontos são acumulados de acordo com o estágio do rock – com limite diário.",
+    "rewards": "Os pontos podem ser trocados por moedas e diamantes Leo (assim que o servidor estiver pronto).",
+    "tip": "Atualize o DPS para quebrar pedras mais rapidamente e OURO para ganhar mais moedas com cada pedra."
+  }
+}

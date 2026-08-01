@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Cobras e escadas",
+    "back": "Voltar",
+    "coin_balance": "Saldo de moedas",
+    "how_to_play": "Como jogar",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "Na sua vez, jogue os dados e avance nesse número.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "As cobras mandam você para baixo, as escadas mandam você para cima – tabuleiro clássico.",
+    "reach_exactly_100_to_win": "Alcance exatamente 100 para vencer.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Uma rolagem além de 100 não o move (você fica parado)."
+  }
+}

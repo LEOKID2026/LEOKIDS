@@ -1,4 +1,4 @@
-import { globalBurnDownCopy } from "../../../../../../../lib/i18n/global-burn-down-copy.js";
+import { globalBurnDownCopyForLocale } from "../../../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../../../components/Layout";
@@ -8,6 +8,7 @@ import TeacherGradingScreen from "../../../../../../../components/worksheet-acti
 import { getLearningSupabaseBrowserClient } from "../../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch } from "../../../../../../../lib/teacher-portal/teacher-ui.js";
+import { useI18n } from "../../../../../../../lib/i18n/I18nProvider.jsx";
 
 export async function getServerSideProps(context) {
   return {
@@ -21,6 +22,7 @@ export async function getServerSideProps(context) {
 
 export default function TeacherWorksheetGradePage({ classId, worksheetId, studentId }) {
   const router = useRouter();
+  const { locale } = useI18n();
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [busy, setBusy] = useState(false);
@@ -114,7 +116,7 @@ export default function TeacherWorksheetGradePage({ classId, worksheetId, studen
   return (
     <Layout>
       <TeacherPortalShell
-        title={globalBurnDownCopy("pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]", "grade_student")}
+        title={globalBurnDownCopyForLocale(locale, "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]", "grade_student")}
         backHref={`/teacher/class/${classId}/worksheets/${worksheetId}/report`}
       >
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />

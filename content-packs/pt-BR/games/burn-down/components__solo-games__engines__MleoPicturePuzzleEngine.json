@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "escape": "Escapar",
+    "previous_picture": "Foto anterior",
+    "next_picture": "Próxima foto",
+    "the_board_and_tray_will_display_more_comfortably": "O quadro e a bandeja serão exibidos com mais conforto.",
+    "img_id_selectedimageid_src_puzzle_images_0_src_const_iseasy_difficulty_e": "img.id === selectImageId)?.src || PUZZLE_IMAGES[0].src;\n  const isEasy = dificuldade === \"fácil\";\n\n  const safePreviewIndex =\n    previewIndex == nulo\n      ? nulo\n      : Matemática.min(Matemática.max(previewIndex, 0), PUZZLE_IMAGES.length - 1);\n  const previewImage = safePreviewIndex == nulo? nulo: PUZZLE_IMAGES[safePreviewIndex];\n  const canPreviewPrev = safePreviewIndex != null && safePreviewIndex > 0;\n  const canPreviewNext =\n    safePreviewIndex! = nulo && safePreviewIndex",
+    "event_stoppropagation_dir_ltr": "evento.stopPropagation()}\n                dir=\"ltr\"\n              >",
+    "tap_a_picture_to_select_it": "Toque em uma imagem para selecioná-la",
+    "choose_a_puzzle_picture": "Escolha uma imagem de quebra-cabeça",
+    "select_picture": "Selecione a imagem",
+    "close": "Fechar"
+  }
+}

@@ -23,8 +23,9 @@ import {
   physicalClassStudentCount,
   schoolGradeLabelHe,
   sortSubjectClasses,
-  SCHOOL_GRADE_OPTIONS,
+  getSchoolGradeOptions,
 } from "../../../lib/school-portal/school-drilldown";
+import { useT } from "../../../lib/i18n/I18nProvider.jsx";
 import { useSchoolDataFetch } from "../../../lib/school-portal/use-school-data-fetch";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
 import { fetchSchoolReportCached } from "../../../lib/school-portal/fetch-school-report";
@@ -60,6 +61,8 @@ const REPORT_STACK_TEACHER_DETAIL_NESTED = 350;
 
 export default function SchoolClassesPage() {
   const router = useRouter();
+  const t = useT();
+  const schoolGradeOptions = useMemo(() => getSchoolGradeOptions(t), [t]);
   const { state, accessToken, me, schoolId } = useSchoolPortalLoad();
   const [gradeLevel, setGradeLevel] = useState("");
   const [physicalKey, setPhysicalKey] = useState("");
@@ -210,11 +213,11 @@ export default function SchoolClassesPage() {
   const gradePhysicalCounts = useMemo(() => {
     const map = new Map();
     if (!classes) return map;
-    for (const grade of SCHOOL_GRADE_OPTIONS) {
+    for (const grade of schoolGradeOptions) {
       map.set(grade.level, groupPhysicalClassesForGrade(classes, grade.level).length);
     }
     return map;
-  }, [classes]);
+  }, [classes, schoolGradeOptions]);
 
   const selectedPhysical = useMemo(
     () => physicalGroups.find((g) => physicalClassGroupKey(g.subjectClasses[0]) === physicalKey) || null,
@@ -576,7 +579,7 @@ export default function SchoolClassesPage() {
     },
     gradeLevel
       ? {
-          label: schoolGradeLabelHe(gradeLevel),
+          label: schoolGradeLabelHe(gradeLevel, t),
           onClick: physicalKey ? () => setPhysicalKey("") : undefined,
           active: gradeLevel && !physicalKey,
         }
@@ -604,7 +607,7 @@ export default function SchoolClassesPage() {
               <SchoolSection title={SCHOOL_CHOOSE_GRADE}>
                 {loading ? <p className="text-xs text-white/45 mb-3 text-start">{SCHOOL_LOADING_DATA}</p> : null}
                 <SchoolCardGrid columns={3}>
-                  {SCHOOL_GRADE_OPTIONS.map((grade) => {
+                  {schoolGradeOptions.map((grade) => {
                     const count = classes ? gradePhysicalCounts.get(grade.level) ?? null : null;
                     return (
                       <SchoolManagementCard
@@ -632,7 +635,7 @@ export default function SchoolClassesPage() {
                     setPhysicalKey("");
                   }}
                 />
-                <SchoolSection title={`${SCHOOL_CHOOSE_PHYSICAL_CLASS} · ${schoolGradeLabelHe(gradeLevel)}`}>
+                <SchoolSection title={`${SCHOOL_CHOOSE_PHYSICAL_CLASS} · ${schoolGradeLabelHe(gradeLevel, t)}`}>
                   {loading ? (
                     <SchoolLoadingBlock message={SCHOOL_LOADING_DATA} />
                   ) : physicalGroups.length ? (

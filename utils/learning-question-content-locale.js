@@ -29,6 +29,7 @@ const PRODUCT_CONTENT_LOCALES = new Set([
   "es-CU",
   "es-PR",
   "es-ES",
+  "pt-BR",
 ]);
 
 /** Detect Hebrew-script code points without embedding Unicode escapes in source. */
@@ -54,6 +55,7 @@ export function resolveContentLocale(opts) {
   if (PRODUCT_CONTENT_LOCALES.has(id)) return id;
   // Country / regional Spanish still product content via registry chain.
   if (id.toLowerCase().startsWith("es-")) return id;
+  if (id.toLowerCase().startsWith("pt-")) return id;
   return "en";
 }
 

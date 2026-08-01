@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import PortalDarkSelect from "../platform-ui/PortalDarkSelect.jsx";
 import SchoolCredentialShownOnceBox from "./SchoolCredentialShownOnceBox";
 import { SchoolPrimaryButton, SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi";
-import { SCHOOL_GRADE_OPTIONS } from "../../lib/school-portal/school-drilldown";
+import { getSchoolGradeOptions } from "../../lib/school-portal/school-drilldown";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
   adminProfileFormToPayload,
   EMPTY_ADMIN_PROFILE_FORM,
@@ -61,6 +62,7 @@ export default function SchoolStudentCreateForm({
   browseSummary,
   onSuccess,
 }) {
+  const t = useT();
   const [fullName, setFullName] = useState("");
   const [gradeLevel, setGradeLevel] = useState("");
   const [physicalClassName, setPhysicalClassName] = useState("");
@@ -73,6 +75,16 @@ export default function SchoolStudentCreateForm({
   const [message, setMessage] = useState("");
   const [profileWarning, setProfileWarning] = useState("");
   const [credentials, setCredentials] = useState(null);
+
+  const gradeSelectOptions = useMemo(() => {
+    const choose = t("learning.chooseGrade");
+    const chooseLabel =
+      choose && choose !== "learning.chooseGrade" ? `- ${choose} -` : "- Choose a grade -";
+    return [
+      { value: "", label: chooseLabel },
+      ...getSchoolGradeOptions(t).map((g) => ({ value: g.level, label: g.label })),
+    ];
+  }, [t]);
 
   const classOptions = useMemo(() => {
     if (!gradeLevel || !browseSummary?.physicalClassesByGrade) return [];
@@ -175,7 +187,7 @@ export default function SchoolStudentCreateForm({
                 setGradeLevel(v);
                 setPhysicalClassName("");
               }}
-              options={[{ value: "", label: "- Choose grade -" }, ...SCHOOL_GRADE_OPTIONS.map((g) => ({ value: g.level, label: g.label }))]}
+              options={gradeSelectOptions}
             />
           </label>
 

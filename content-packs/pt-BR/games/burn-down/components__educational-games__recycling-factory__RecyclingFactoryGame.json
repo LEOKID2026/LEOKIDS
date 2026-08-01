@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "O item passou pela esteira - tente ser mais rápido!",
+    "correct_great_job": "Correto! Ótimo trabalho ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "Matemática.max(melhor, próximo));\n        if (próximo === 5) addScore(SCORE.streak5);\n        if (próximo === 10) addScore(SCORE.streak10);\n        if (próximo === 5 || próximo === 10) onStreak();\n        retorne em seguida;\n      });\n\n      addScore(bônus);\n\n      const showFact = Matemática.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"em movimento\");\n      const dualAllowed = permitirDualItemsAt(sortedCountRef.current, dificuldadeRef.current);\n      const maxOnBelt = dualAllowed && Matemática.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id]),\n    [diffConfig.bins],\n  );\n\n  const binsGridClass =\n    activeBins.length",
+    "onitemclick_bi_uid": "onItemClick(bi.uid)}\n                          />\n                        ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Organize os itens nas caixas certas e ajude o meio ambiente",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Organize cada item na lixeira certa - ajude o planeta!",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)}\n        />\n      ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "Arraste para uma lixeira ou toque em um item → lixeira",
+    "leo_apos_s_recycling_factory": "Fábrica de Reciclagem Leo",
+    "correct_items": "Itens corretos",
+    "best_streak": "Melhor sequência",
+    "start_game": "Iniciar jogo",
+    "mistakes": "Erros",
+    "accuracy": "Precisão",
+    "new_game": "Novo jogo",
+    "mission": "Missão",
+    "score": "Pontuação",
+    "level": "Nível",
+    "back": "Voltar"
+  }
+}

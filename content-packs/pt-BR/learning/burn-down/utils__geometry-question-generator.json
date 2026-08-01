@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "square": "Quadrado",
+    "rectangle": "Retângulo",
+    "parallel": "Paralelo",
+    "translation": "Tradução",
+    "reflection": "Reflexão",
+    "rotation": "Rotação",
+    "no_movement": "Nenhum movimento"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "Com eu usamos am.",
+    "with_he_she_it_we_use_is": "Com ele/ela usamos é.",
+    "with_you_we_they_we_use_are": "Com você / nós / eles usamos somos.",
+    "got_it": "Entendi",
+    "try_again": "Tentar de novo",
+    "back_to_menu": "Voltar ao cardápio",
+    "choose_another_topic": "Escolha outro tópico"
+  }
+}

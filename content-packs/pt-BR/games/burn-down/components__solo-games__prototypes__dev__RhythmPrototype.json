@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "rhythm_game": "Jogo de ritmo",
+    "prototype_tap_when_the_mark_hits_the_line": "Protótipo · toque quando a marca atingir a linha",
+    "n_lane_lane_n_hit_map_n": "n.lane === pista && !n.hit)\r\n                  .mapa((n) => (",
+    "now_n_spawnat": "agora - n.spawnAt"
+  }
+}

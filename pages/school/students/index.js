@@ -24,7 +24,8 @@ import {
   SCHOOL_CARD,
   SCHOOL_CARD_INNER,
 } from "../../../components/school-portal/SchoolPortalUi";
-import { schoolGradeLabelHe, SCHOOL_GRADE_OPTIONS } from "../../../lib/school-portal/school-drilldown";
+import { schoolGradeLabelHe, getSchoolGradeOptions } from "../../../lib/school-portal/school-drilldown";
+import { useT } from "../../../lib/i18n/I18nProvider.jsx";
 import { useSchoolDataFetch } from "../../../lib/school-portal/use-school-data-fetch";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
 import {
@@ -78,6 +79,8 @@ function gradeCountMap(summary) {
 
 export default function SchoolStudentsPage() {
   const router = useRouter();
+  const t = useT();
+  const schoolGradeOptions = useMemo(() => getSchoolGradeOptions(t), [t]);
   const { state, accessToken, authMethod, me, schoolId } = useSchoolPortalLoad();
   const [gradeLevel, setGradeLevel] = useState("");
   const [physicalClassName, setPhysicalClassName] = useState("");
@@ -436,7 +439,7 @@ export default function SchoolStudentsPage() {
     },
     gradeLevel
       ? {
-          label: schoolGradeLabelHe(gradeLevel),
+          label: schoolGradeLabelHe(gradeLevel, t),
           onClick: physicalClassName ? () => setPhysicalClassName("") : undefined,
           active: gradeLevel && !physicalClassName,
         }
@@ -512,7 +515,7 @@ export default function SchoolStudentsPage() {
                       <p className="text-xs text-white/45 mb-3 text-start">{SCHOOL_LOADING_DATA}</p>
                     ) : null}
                     <SchoolCardGrid columns={3}>
-                      {SCHOOL_GRADE_OPTIONS.map((grade) => {
+                      {schoolGradeOptions.map((grade) => {
                         const count = countsByGrade.get(grade.level);
                         return (
                           <SchoolManagementCard
@@ -546,7 +549,7 @@ export default function SchoolStudentsPage() {
                     setPhysicalClassName("");
                   }}
                 />
-                <SchoolSection title={`${SCHOOL_CHOOSE_PHYSICAL_CLASS} · ${schoolGradeLabelHe(gradeLevel)}`}>
+                <SchoolSection title={`${SCHOOL_CHOOSE_PHYSICAL_CLASS} · ${schoolGradeLabelHe(gradeLevel, t)}`}>
                   {summaryLoading ? (
                     <SchoolLoadingBlock message={SCHOOL_LOADING_DATA} />
                   ) : physicalGroups.length ? (
@@ -614,7 +617,7 @@ export default function SchoolStudentsPage() {
                         <SchoolStudentCard
                           key={s.studentId}
                           student={s}
-                          gradeLabel={schoolGradeLabelHe(s.gradeLevel)}
+                          gradeLabel={schoolGradeLabelHe(s.gradeLevel, t)}
                           reportLabel={SCHOOL_VIEW_STUDENT_REPORT}
                           accessLabel={SCHOOL_OPERATOR_MANAGE_ACCESS}
                           learningStatusBadge={canViewReports ? s.learningStatusBadge || null : null}

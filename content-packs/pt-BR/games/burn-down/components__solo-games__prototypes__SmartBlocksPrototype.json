@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "the_board_and_tray_will_display_more_comfortably": "O quadro e a bandeja serão exibidos com mais conforto.",
+    "ghostpreview_row_dr_r_ghostpreview_col_dc_c_const_ghostclass_ghosthere_g": "ghostPreview.row + dr === r && ghostPreview.col + dc === c,\r\n                      );\r\n                    const ghostClass = ghostAqui\r\n                      ? fantasmaPreview.valid\r\n                        ? \"anel-2 anel-esmeralda-300/80\"\r\n                        : \"anel-2 anel-rosa-400/80\"\r\n                      : \"\";\r\n                    retornar (",
+    "startdrag_idx_shape_e": "startDrag(idx, forma, e)}\r\n                />\r\n              ))}",
+    "s_id_const_picked_while_picked_length": "s.id);\r\n    const escolhido = [];\r\n    while (comprimento escolhido",
+    "visual_prototype_no_scoring": "Protótipo visual · sem pontuação",
+    "smart_blocks": "Blocos Inteligentes",
+    "clear_board": "Limpar quadro",
+    "board_size": "Tamanho da placa:",
+    "swap_shapes": "Trocar formas",
+    "back": "Voltar",
+    "tray": "Bandeja"
+  }
+}

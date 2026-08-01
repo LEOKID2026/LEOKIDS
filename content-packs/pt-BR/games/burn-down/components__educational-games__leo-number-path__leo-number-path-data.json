@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "choose_all_the_odd_numbers_on_the_path": "Escolha todos os números ímpares no caminho",
+    "prompt_odd": "Escolha todos os números ímpares.",
+    "prompt_even": "Escolha todos os números pares.",
+    "prompt_multiples": "Escolha todos os múltiplos de {multiple}.",
+    "prompt_skip_forward": "Comece em {start}. Adicione {step} cada etapa. Escolha os números em ordem.",
+    "prompt_skip_backward": "Comece em {start}. Subtraia {step} cada etapa. Escolha os números em ordem.",
+    "prompt_arithmetic_ascending": "Comece em {start} e adicione {step} a cada etapa. Escolha os números em ordem.",
+    "prompt_arithmetic_descending": "Comece em {start} e subtraia {step} cada etapa. Escolha os números em ordem.",
+    "prompt_arithmetic_missing": "Complete a sequência. Escolha os números que faltam em ordem.",
+    "prompt_geometric_sequence": "Comece em {start} e multiplique por {ratio} cada etapa. Escolha os números em ordem.",
+    "solution_prefix": "Caminho correto:"
+  }
+}

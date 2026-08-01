@@ -1,0 +1,44 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Reúna mais evidências antes de um plano",
+    "shortPractice": "3–7 itens sobre o mesmo tópico com uma dificuldade um pouco menor",
+    "avoid": "Não salte muito alto nem misture vários tópicos.",
+    "improvementSignals": [
+      "Menos erros repetidos",
+      "Correção independente após um erro"
+    ],
+    "failureSignals": [
+      "Nenhuma mudança após dois ciclos estruturados"
+    ],
+    "hypothesisChange": "Falha no teste proposto ou sucesso apenas com dicas pesadas"
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Não suba muito de nível, misture vários tópicos ou confie no feedback geral sem um exemplo.",
+    "improvementSignals": [
+      "Combine marcadores de sucesso de taxonomia",
+      "Transfira o sucesso para uma tarefa semelhante"
+    ],
+    "hypothesisChange": "Quando a investigação recomendada falha ou aparecem fortes contra-evidências"
+  },
+  "probeFallback": {
+    "objective": "Separe uma lacuna fundamental de uma questão específica do tópico",
+    "specification": "Uma tarefa paralela no mesmo princípio com complexidade reduzida",
+    "stoppingRule": "Duas sequências consistentes ou melhoria estável",
+    "escalationRule": "Nenhuma melhora após dois ciclos"
+  },
+  "probeWithTaxonomy": {
+    "objective": "Distinguir uma dificuldade básica de uma dificuldade específica do tópico",
+    "stoppingRule": "Atenda ao limite de recorrência de linha ou rejeite a hipótese",
+    "hypothesisChange": "Quando a investigação recomendada falha ou aparecem fortes contra-evidências"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Pressão de velocidade versus lacuna de conhecimento",
+    "carelessPattern": "Descuido versus mal-entendido",
+    "instructionFriction": "Atrito de instrução/dica versus lacuna conceitual",
+    "distinguishingEvidence": [
+      "Compare o desempenho cronometrado e o desempenho indeterminado",
+      "Compare dicas esparsas e ricas",
+      "Verifique a recorrência por família de padrões"
+    ]
+  }
+}

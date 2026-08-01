@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Cadastre-se",
+    "pick_coins": "Escolha moedas",
+    "removechangeat_lastindex": "removeChangeAt(últimoIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Ajude Leo, o caixa - escolha o produto, calcule o troco e devolva o dinheiro certo",
+    "x_id_id_if_p_return_null_return": "x.id === id);\n                      se (!p) retornar nulo;\n                      retornar (",
+    "setphase_intro_new_game": "setPhase(\"introdução\")}>\n            Novo jogo",
+    "pick_the_product_the_customer_asked_for": "Escolha o produto que o cliente pediu",
+    "leo_apos_s_market": "Mercado do Leão",
+    "change_you_gave": "Troco que você deu:",
+    "purchase_total": "Total da compra:",
+    "customer_paid": "Cliente pago:",
+    "give_change": "Dê troco ✓",
+    "clear_change": "Limpar alteração",
+    "start_game": "Iniciar jogo",
+    "back": "Voltar"
+  }
+}

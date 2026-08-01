@@ -1,0 +1,1380 @@
+{
+  "grades": {
+    "g1": {
+      "letters_upper": {
+        "skillId": "english:phonics:g1:letters_upper",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Letras maiúsculas de A a Z",
+        "description": "Identify and name capital letters A–Z in groups",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_lower": {
+        "skillId": "english:phonics:g1:letters_lower",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Letras minúsculas de a a z",
+        "description": "Identify and name lowercase letters a–z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_match": {
+        "skillId": "english:phonics:g1:letters_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Combine letras maiúsculas e minúsculas",
+        "description": "Match A↔a … Z↔z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letter_names": {
+        "skillId": "english:phonics:g1:letter_names",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Nomes de letras",
+        "description": "Letter name versus letter sound",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_sounds": {
+        "skillId": "english:phonics:g1:phonics_sounds",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Sons de letras",
+        "description": "Consonant sounds + short vowels a, e, i",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_first_sound": {
+        "skillId": "english:phonics:g1:phonics_first_sound",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "O primeiro som de uma palavra",
+        "description": "First sound in words like cat, dog, sun",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "classroom_words": {
+        "skillId": "english:phonics:g1:classroom_words",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Palavras de sala de aula",
+        "description": "book, pen, desk, chair, door, teacher, hello, bye",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_words_simple": {
+        "skillId": "english:phonics:g1:first_words_simple",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Primeiras palavras simples",
+        "description": "cat, dog, sun, red, blue, mom, dad",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_words_cvc": {
+        "skillId": "english:phonics:g1:first_words_cvc",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Palavras de três letras (CVC)",
+        "description": "Limited CVC set: cat, hat, sit, sun, pen, bed",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "picture_word_match": {
+        "skillId": "english:phonics:g1:picture_word_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Imagem e palavra",
+        "description": "Match a picture to a word from words already learned",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_classroom": {
+        "skillId": "english:phonics:g1:listening_classroom",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Instruções em sala de aula",
+        "description": "Stand up, Sit down, Open your book, Close your book",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_commands": {
+        "skillId": "english:phonics:g1:listening_commands",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Mais instruções curtas",
+        "description": "Point to the door, Show me your pen",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Cores em inglês",
+        "description": "red, blue, green, yellow — identify and match; no spelling yet",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Números de 0 a 10 em inglês",
+        "description": "zero–ten; identify the English number",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Palavras de família em inglês",
+        "description": "mom, dad, sister, brother — basic words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animais em inglês",
+        "description": "cat, dog, bird, fish — common animal names",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sentimentos em inglês",
+        "description": "happy, sad — early feeling words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Ações em inglês",
+        "description": "run, jump, read, eat — simple verbs",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Palavras escolares em inglês",
+        "description": "book, pen, desk, teacher — classroom items",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_be": {
+        "skillId": "english:pool:grammar:be_basic",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Eu sou / Você é - começando",
+        "description": "Fixed patterns I am / You are + basic pronouns; no full am/is/are chart yet",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_base": {
+        "skillId": "english:pool:sentence:base",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Frases curtas – básico",
+        "description": "2–3 word sentences using words already learned",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_classroom": {
+        "skillId": "english:pool:translation:classroom",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Frases de sala de aula",
+        "description": "Hello, Thank you, Please — short word/phrase practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g2": {
+      "letters_review": {
+        "skillId": "english:phonics:g2:letters_review",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Revisão: letras e nomes",
+        "description": "Review A–Z capitals, lowercase, and names",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_order": {
+        "skillId": "english:phonics:g2:letters_order",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Ordem alfabética",
+        "description": "Order A→Z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_sounds_review": {
+        "skillId": "english:phonics:g2:phonics_sounds_review",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Revisão: sons",
+        "description": "Review consonants + vowels; b/p, d/t",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_blending": {
+        "skillId": "english:phonics:g2:phonics_blending",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Misturar sons",
+        "description": "blend CVC: cat, hat, sit, run, big, red, hot, sun",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sound_letter_match": {
+        "skillId": "english:phonics:g2:sound_letter_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Som ↔ letra",
+        "description": "Sound ↔ letter; hear letter → sound",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_word_reading": {
+        "skillId": "english:phonics:g2:first_word_reading",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Leitura da primeira palavra",
+        "description": "CVC + sight: the, I, a, is",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "word_families_cvc": {
+        "skillId": "english:phonics:g2:word_families_cvc",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Famílias de palavras",
+        "description": "-at, -an, -it, -og families",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "classroom_vocab_g2": {
+        "skillId": "english:phonics:g2:classroom_vocab_g2",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Vocabulário de sala de aula",
+        "description": "classroom, playground, friend, read, write, listen",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_comprehension": {
+        "skillId": "english:phonics:g2:listening_comprehension",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Compreensão auditiva",
+        "description": "4 mini dialogues; Who/What",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "picture_audio_word_match": {
+        "skillId": "english:phonics:g2:picture_audio_word_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Imagem, som e palavra",
+        "description": "triple match audio↔picture↔word",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "early_sentences_exposure": {
+        "skillId": "english:phonics:g2:early_sentences_exposure",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Frases curtas",
+        "description": "I see a cat. It is red. exposure only",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Cores - use em uma frase",
+        "description": "Review + words in a short sentence; early writing",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Números – até 20",
+        "description": "eleven–twenty; use in a sentence",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Família — palavras em uma frase",
+        "description": "This is my mom — short pattern",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animais - nomes e frases",
+        "description": "I see a cat — short pattern",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sentimentos - em uma frase",
+        "description": "I am happy / I am sad",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Ações - verbo em uma frase",
+        "description": "I run / I jump",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Escola - objetos em uma frase",
+        "description": "I have a book / My pen is blue",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Comida em inglês",
+        "description": "apple, bread, milk, water — words + writing",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_house": {
+        "skillId": "english:vocabulary:wordlist:house",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Casa — cômodos e objetos",
+        "description": "bed, room, door, table — home words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_be": {
+        "skillId": "english:pool:grammar:be_basic",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "sou / é / sou - reforçar",
+        "description": "I am / You are / He is / She is — without formal grammar labels",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_plural_questions": {
+        "skillId": "english:pool:grammar:question_frames",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Plurais e perguntas simples",
+        "description": "cat/cats; What is this? — short questions",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_base": {
+        "skillId": "english:pool:sentence:base",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Frases curtas - 2ª série",
+        "description": "3–4 words; basic punctuation",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Rotina diária - frases",
+        "description": "I wake up / I go to school — daily routine",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_classroom": {
+        "skillId": "english:pool:translation:classroom",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Frases de sala de aula - sentenças",
+        "description": "Short two-way phrase practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_routines": {
+        "skillId": "english:pool:translation:routines",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Rotina diária – prática",
+        "description": "Routine sentences of 3–4 words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g3": {
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Ações - presente simples",
+        "description": "Present-simple verbs; recent action words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animais - em uma frase completa",
+        "description": "The dog runs fast — sentence with a verb",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Cores - descrevendo",
+        "description": "The sky is blue — description with is",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sentimentos - Ela sente ...",
+        "description": "She feels happy / sad",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Família - ações familiares",
+        "description": "My brother reads every day",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Comida – eu como…",
+        "description": "I eat an apple / I drink milk",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_house": {
+        "skillId": "english:vocabulary:wordlist:house",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Casa – objetos e lugar",
+        "description": "The book is on the table — prep for in/on/under",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Números - Existem ...",
+        "description": "There are ten books — number + noun",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Escola – Aprendemos…",
+        "description": "We learn English at school",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_body": {
+        "skillId": "english:vocabulary:wordlist:body",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "O corpo humano em inglês",
+        "description": "head, hand, leg, eye - My head hurts",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Esportes em inglês",
+        "description": "football, swim, run - I play football",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_weather": {
+        "skillId": "english:vocabulary:wordlist:weather",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Tempo em inglês",
+        "description": "sunny, rainy, cloudy - It is sunny",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_present_simple": {
+        "skillId": "english:pool:grammar:present_simple",
+        "learningPageId": "",
+        "pageType": "step_by_step_procedure",
+        "title": "Presente simples - positivo, negativo e pergunta",
+        "description": "I play / I do not play / Do you play? — clear simple explanation",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_articles_prepositions": {
+        "skillId": "Basic adjectives, a/an/the, and place prepositions in/on/under",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "a / an / the e dentro / sobre / abaixo",
+        "description": "Basic articles + place; The cat is under the bed",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_question_frames": {
+        "skillId": "english:pool:grammar:question_frames",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Perguntas - reforço de grau 3",
+        "description": "Do you…? / What is…? — review with present simple",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Rotina diária - frases completas",
+        "description": "I brush my teeth every morning",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_descriptive": {
+        "skillId": "english:pool:sentence:descriptive",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Frases descritivas",
+        "description": "The big dog runs fast — adjective + noun + verb",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_routines": {
+        "skillId": "english:pool:translation:routines",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Rotina – prática mais longa",
+        "description": "Routine sentences of 4–5 words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_hobbies": {
+        "skillId": "english:pool:translation:hobbies",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Passatempos – praticar",
+        "description": "I like to draw / She plays the piano",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g4": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animais – ação agora",
+        "description": "The birds are flying — link to continuous",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_body": {
+        "skillId": "english:vocabulary:wordlist:body",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Corpo - ações cotidianas",
+        "description": "He washes his hands - Present Simple",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sentimentos – Eles sentem…",
+        "description": "They feel excited today",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Família - responsáveis, trabalho",
+        "description": "My parents work hard",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Alimentação – alimentação saudável",
+        "description": "We eat healthy food",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Escola - alunos, leiam",
+        "description": "The students read books",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Esportes – agora em campo",
+        "description": "She is swimming now",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_weather": {
+        "skillId": "english:vocabulary:wordlist:weather",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Tempo - hoje",
+        "description": "It is raining today",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Comunidade - parque, cidade, biblioteca",
+        "description": "The park is in our town",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Meio ambiente - árvores, proteja",
+        "description": "We protect the trees",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Viagem - ônibus, viagem",
+        "description": "We travel by bus",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_present_simple": {
+        "skillId": "english:pool:grammar:present_simple",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Presente simples – reforçar",
+        "description": "Habit, fact — He walks every day; not continuous",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_simple_continuous": {
+        "skillId": "english:pool:grammar:progressive",
+        "learningPageId": "",
+        "pageType": "contrast_page",
+        "title": "Presente simples versus contínuo",
+        "description": "I read every day / I am reading now - now vs usually",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_quantifiers": {
+        "skillId": "english:pool:grammar:quantifiers",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "algum/qualquer, muito/muitos, meu, lentamente",
+        "description": "Quantity, belonging, adverbs — I have some apples; She runs quickly",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_descriptive": {
+        "skillId": "english:pool:sentence:descriptive",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Descrição - adjetivo + advérbio",
+        "description": "The tall girl runs quickly",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Rotina – todos os dias",
+        "description": "Every day I help at home",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_narrative": {
+        "skillId": "english:pool:sentence:narrative",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Conto — Primeiro… Depois…",
+        "description": "First we pack. Then we go. — simple sequence",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_hobbies": {
+        "skillId": "english:pool:translation:hobbies",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Hobbies — pratique com continuidade",
+        "description": "He is playing guitar — two-way practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_community": {
+        "skillId": "english:pool:translation:community",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Comunidade - prática",
+        "description": "The library is near the school",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g5": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animais - passado simples",
+        "description": "The elephant walked slowly — past-tense verb",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Comunidade — visitada, museu",
+        "description": "We visited the museum — community places in the past",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sentimentos - senti-me orgulhoso",
+        "description": "She felt proud — feelings in the past",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Meio ambiente – árvores plantadas",
+        "description": "They planted trees last year",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Família - avós",
+        "description": "My grandparents live far away",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Comida – comida saudável cozida",
+        "description": "We cooked healthy soup",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Escola - projeto de aula",
+        "description": "Our class won the project",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Esportes – marcou um gol",
+        "description": "He scored a goal yesterday",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Viajar - viajará",
+        "description": "We will travel by train — link to future",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_health": {
+        "skillId": "english:vocabulary:wordlist:health",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Saúde em Inglês",
+        "description": "rest, water, doctor, exercise - I need to rest",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_technology": {
+        "skillId": "english:vocabulary:wordlist:technology",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Tecnologia em Inglês",
+        "description": "computer, email, internet - She uses a computer",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_past_simple": {
+        "skillId": "english:pool:grammar:past_simple",
+        "learningPageId": "",
+        "pageType": "step_by_step_procedure",
+        "title": "Passado simples",
+        "description": "played/went/saw — positive and question; common regular and irregular verbs",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_future_forms": {
+        "skillId": "english:pool:grammar:future_forms",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Futuro - vai / vai",
+        "description": "I will call you / We are going to visit",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_modals": {
+        "skillId": "english:pool:grammar:modals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Modais – pode, deve, tem que",
+        "description": "You must… / I can… / We have to…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_comparatives": {
+        "skillId": "english:pool:grammar:comparatives",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Comparativos – maiores, mais interessantes",
+        "description": "bigger than / more interesting than",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_quantifiers": {
+        "skillId": "english:pool:grammar:quantifiers",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "muito/muitos — reforço de grau 5",
+        "description": "many people / much time — in past and future contexts",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_narrative": {
+        "skillId": "english:pool:sentence:narrative",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "História - Então chegamos",
+        "description": "First… Then… After that… — past sequence",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_advanced": {
+        "skillId": "english:pool:sentence:advanced",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Frases mais longas",
+        "description": "6–8 words; Last week we learned…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_community": {
+        "skillId": "english:pool:translation:community",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Comunidade – prática mais longa",
+        "description": "The hospital is next to the park",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_technology": {
+        "skillId": "english:pool:translation:technology",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Tecnologia - prática",
+        "description": "I will send an email tomorrow",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_global": {
+        "skillId": "english:pool:translation:global",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Mundo - prática",
+        "description": "People around the world speak many languages",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g6": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animais - passado contínuo",
+        "description": "The whales were swimming — ongoing past action",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Comunidade — festival, celebração",
+        "description": "Our community celebrated — community events",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sentimentos - pode sentir",
+        "description": "He might feel nervous — feelings with a modal",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Meio ambiente — clima, proteger",
+        "description": "Climate change affects… — environment topics",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_health": {
+        "skillId": "english:vocabulary:wordlist:health",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Saúde – deveria descansar",
+        "description": "You should drink water — health tips",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_technology": {
+        "skillId": "english:vocabulary:wordlist:technology",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Tecnologia - se / pudesse",
+        "description": "If the internet stops… — technology with a condition",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Viagem - presente introdução perfeita",
+        "description": "We have visited three countries — introduction only",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_culture": {
+        "skillId": "english:vocabulary:wordlist:culture",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Cultura em Inglês",
+        "description": "culture, tradition, music, identity",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_global_issues": {
+        "skillId": "english:vocabulary:wordlist:global_issues",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Questões globais",
+        "description": "global issues, peace, cooperation",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_history": {
+        "skillId": "english:vocabulary:wordlist:history",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "História em inglês",
+        "description": "ancient, century, learn about history",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_complex_tenses": {
+        "skillId": "english:pool:grammar:complex_tenses",
+        "learningPageId": "",
+        "pageType": "contrast_page",
+        "title": "Passado contínuo + passado simples + presente perfeito introdução",
+        "description": "I was reading when…; I have visited - intro only",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_conditionals": {
+        "skillId": "english:pool:grammar:conditionals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Condicionais - tipos 0 e 1",
+        "description": "If it rains, we will stay / If you heat ice, it melts",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_modals": {
+        "skillId": "english:pool:grammar:modals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "deveria / poderia / poderia",
+        "description": "You should… / It might… / We could… — not only can/must",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_comparatives": {
+        "skillId": "english:pool:grammar:comparatives",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Superlativos - os mais interessantes",
+        "description": "the best / the most interesting — Grade 6 reinforce",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_advanced": {
+        "skillId": "english:pool:sentence:advanced",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Frases complexas - Enquanto… era…",
+        "description": "8–10 words; While I was studying…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_technology": {
+        "skillId": "english:pool:translation:technology",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Tecnologia – prática avançada",
+        "description": "Scientists might discover… — two-way practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_global": {
+        "skillId": "english:pool:translation:global",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Mundo – pratique com uma condição",
+        "description": "If we protect the oceans… — longer sentences",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    }
+  }
+}

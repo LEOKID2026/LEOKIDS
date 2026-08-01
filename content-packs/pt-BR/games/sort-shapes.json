@@ -1,0 +1,11 @@
+{
+  "gameId": "sort-shapes",
+  "title": "Classificar formas",
+  "blurb": "Classifique formas e cores nas caixas corretas!",
+  "help": {
+    "howToPlay": "Arraste cada forma para a caixa correspondente por forma ou cor. Conclua toda a classificação antes que o tempo acabe.",
+    "scoring": "Cada classificação correta adiciona pontos. Um erro é deduzido da pontuação. Se o tempo acabar antes de você terminar, o jogo termina.",
+    "rewards": "Terminar com sucesso com base no nível de dificuldade concede moedas e um bônus de pontuação acrescenta ainda mais.",
+    "tip": "Primeiro decida a qual caixa cada forma pertence e depois arraste com confiança."
+  }
+}

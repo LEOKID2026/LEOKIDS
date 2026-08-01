@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "incorrect": "Incorreto",
+    "answer_submitted": "Resposta enviada",
+    "submit_answer": "Enviar resposta",
+    "type_your_answer": "Digite sua resposta",
+    "enlarged_diagram": "Diagrama ampliado",
+    "close_diagram": "Fechar diagrama"
+  }
+}

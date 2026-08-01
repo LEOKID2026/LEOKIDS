@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "class_report": "Relatório de aula",
+    "invalid_class_id": "ID de classe inválido.",
+    "you_do_not_have_permission_to_view_this_class_report": "Você não tem permissão para visualizar este relatório da turma.",
+    "please_select_valid_dates": "Selecione datas válidas"
+  }
+}

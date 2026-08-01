@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Ainda não existem dados suficientes para definir uma imagem ao nível do assunto.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Comece uma prática curta e consistente para construir uma linha de base de medição.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "O volume de dados atual é baixo, portanto não há base para uma direção clara.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Escolha um tópico e pratique de 10 a 15 minutos em cada sessão.",
+    "do_not_change_difficulty_based_on_sparse_data": "Não altere a dificuldade com base em dados esparsos.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Quanto confiar nisso: ainda não é alto nesta fase.",
+    "existing_data_is_still_partial": "Os dados existentes ainda são parciais.",
+    "continue_basic_data_collection": "Continuar a coleta de dados básicos.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Ainda não existem dados suficientes para definir uma direção clara.",
+    "short_focused_practice_on_one_topic": "Prática curta e focada em um tópico.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Não tire conclusões fortes de um pequeno número de perguntas.",
+    "how_much_to_trust_this_not_high_yet": "Quanto confiar nisso: ainda não é alto.",
+    "data_is_missing_or_partial": "Os dados estão faltando ou são parciais."
+  }
+}

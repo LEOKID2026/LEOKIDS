@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Janela de prática estreita - precisa de mais observações antes de uma interpretação estável.",
+    "stable_accuracy_over_at_least_two_sessions": "Precisão estável durante pelo menos duas sessões",
+    "continued_random_incorrect_pattern_without_convergence": "Padrão aleatório/incorreto contínuo sem convergência",
+    "re_evaluate_mastery_and_misconceptions": "Reavaliar o domínio e os equívocos",
+    "consistent_correct_responses_on_parallel_items": "Respostas corretas consistentes em itens paralelos",
+    "repeated_same_distractor_selection": "Seleção repetida do mesmo distrator",
+    "escalate_practice_specificity": "Aumente a especificidade da prática",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Os pré-requisitos fortes não são claros em relação às habilidades avançadas.",
+    "prerequisite_skill_shows_independent_accuracy": "A habilidade de pré-requisito mostra precisão independente",
+    "prerequisite_remains_unstable": "O pré-requisito permanece instável",
+    "foundation_review_vs_isolated_advanced_gap": "Revisão da fundação versus lacuna avançada isolada",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Forte domínio observado com sonda de desafio opcional com volume adequado para confirmar a transferência.",
+    "maintains_accuracy_on_harder_parallel_items": "Mantém a precisão em itens paralelos mais difíceis",
+    "breakdown_on_increased_complexity": "Análise do aumento da complexidade",
+    "adjust_level_or_add_scaffolded_practice": "Ajuste o nível ou adicione prática de andaime",
+    "default_maintenance_probe_confirm_stability": "Estabilidade confirmada pela sonda de manutenção padrão.",
+    "meet_or_exceed_recent_accuracy_band": "Atender ou exceder a faixa de precisão recente",
+    "accuracy_drops_materially": "A precisão cai materialmente",
+    "adjust_practice_plan": "Ajustar plano de prática"
+  }
+}

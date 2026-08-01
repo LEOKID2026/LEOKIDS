@@ -53,7 +53,7 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 21);
+  assert.equal(locales.length, 26);
   assert.deepEqual(
     locales.map((l) => l.id),
     [
@@ -78,6 +78,11 @@ test("selectable locales for switcher are English + country names", () => {
       "es-CU",
       "es-PR",
       "es-ES",
+      "pt-BR",
+      "en-AU",
+      "en-NZ",
+      "en-IE",
+      "en-GB",
     ]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
@@ -94,6 +99,14 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["es-CU"].nativeName, "Cuba");
   assert.equal(byId["es-PR"].nativeName, "Puerto Rico");
   assert.equal(byId["es-ES"].nativeName, "España");
+  assert.equal(byId["pt-BR"].nativeName, "Brasil");
+  assert.equal(byId["pt-BR"].label, "Brasil");
+  assert.equal(byId["pt-BR"].pathPrefix, "br");
+  assert.equal(byId["en-AU"].nativeName, "Australia");
+  assert.equal(byId["en-NZ"].nativeName, "New Zealand");
+  assert.equal(byId["en-IE"].nativeName, "Ireland");
+  assert.equal(byId["en-GB"].nativeName, "England");
+  assert.equal(byId["en-GB"].pathPrefix, "eng");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {
@@ -141,10 +154,11 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.doesNotMatch(switcher, /Hebrew|עברית|flag/i);
 });
 
-test("LanguageSwitcher list can reach all selectable locales including España", () => {
+test("LanguageSwitcher list can reach all selectable locales including Brasil", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 21);
+  assert.equal(locales.length, 26);
   assert.equal(locales[0].id, "en");
-  assert.equal(locales[locales.length - 1].id, "es-ES");
-  assert.equal(locales[locales.length - 1].nativeName, "España");
+  assert.ok(locales.some((l) => l.id === "pt-BR" && l.nativeName === "Brasil"));
+  assert.equal(locales[locales.length - 1].id, "en-GB");
+  assert.equal(locales[locales.length - 1].nativeName, "England");
 });

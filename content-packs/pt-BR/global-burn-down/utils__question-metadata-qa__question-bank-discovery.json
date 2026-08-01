@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Linhas de modelo para MCQ conceitual - digitalizadas como portadoras de metadados estáticos",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Itens matemáticos processuais - metadados atribuídos no momento da geração",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Geometria processual - use banco de geometria conceitual + parâmetros do gerador",
+    "english_generator_pool_merge": "Gerador inglês + mesclagem de pool"
+  }
+}

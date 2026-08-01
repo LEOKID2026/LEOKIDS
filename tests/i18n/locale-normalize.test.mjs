@@ -16,14 +16,19 @@ test("normalizeLocaleInput: empty defaults to en", () => {
 test("normalizeLocaleInput: BCP47 casing and underscore handling", () => {
   assert.equal(normalizeLocaleId("EN_us"), "en");
   assert.equal(normalizeLocaleId("en-US"), "en");
-  assert.equal(normalizeLocaleId("en_GB"), "en");
+  // en-GB is a registered country locale (England), not an alias of en.
+  assert.equal(normalizeLocaleId("en_GB"), "en-GB");
   assert.equal(normalizeLocaleInput("pt-BR").canonical, "pt-BR");
   assert.equal(normalizeLocaleInput("pt-BR").language, "pt");
   assert.equal(normalizeLocaleInput("pt-BR").region, "BR");
 });
 
 test("normalizeLocaleInput: known aliases resolve to canonical registry ids", () => {
-  assert.equal(normalizeLocaleId("en-au"), "en");
+  // en-AU/NZ/IE/GB are registered country locales, not aliases of en.
+  assert.equal(normalizeLocaleId("en-au"), "en-AU");
+  assert.equal(normalizeLocaleId("en-nz"), "en-NZ");
+  assert.equal(normalizeLocaleId("en-ie"), "en-IE");
+  assert.equal(normalizeLocaleId("en-ca"), "en");
   assert.equal(normalizeLocaleId("en-xa"), "en-XA");
   assert.equal(normalizeLocaleId("ar-xb"), "ar-XB");
   // Unregistered locales (including he / he-IL) fall back to English

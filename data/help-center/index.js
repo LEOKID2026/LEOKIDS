@@ -12,8 +12,48 @@ import {
   BY_SECTION_ES_ES,
   SECTIONS_ES_ES,
 } from "./es-ES/index.js";
+import {
+  ALL_ARTICLES_PT_BR,
+  BY_SECTION_PT_BR,
+  SECTIONS_PT_BR,
+} from "./pt-BR/index.js";
+import {
+  ALL_ARTICLES_EN_AU,
+  BY_SECTION_EN_AU,
+  SECTIONS_EN_AU,
+} from "./en-AU/index.js";
+import {
+  ALL_ARTICLES_EN_NZ,
+  BY_SECTION_EN_NZ,
+  SECTIONS_EN_NZ,
+} from "./en-NZ/index.js";
+import {
+  ALL_ARTICLES_EN_IE,
+  BY_SECTION_EN_IE,
+  SECTIONS_EN_IE,
+} from "./en-IE/index.js";
+import {
+  ALL_ARTICLES_EN_GB,
+  BY_SECTION_EN_GB,
+  SECTIONS_EN_GB,
+} from "./en-GB/index.js";
 
-export { ALL_ARTICLES_ES_419, SECTIONS_ES_419, ALL_ARTICLES_ES_ES, SECTIONS_ES_ES };
+export {
+  ALL_ARTICLES_ES_419,
+  SECTIONS_ES_419,
+  ALL_ARTICLES_ES_ES,
+  SECTIONS_ES_ES,
+  ALL_ARTICLES_PT_BR,
+  SECTIONS_PT_BR,
+  ALL_ARTICLES_EN_AU,
+  SECTIONS_EN_AU,
+  ALL_ARTICLES_EN_NZ,
+  SECTIONS_EN_NZ,
+  ALL_ARTICLES_EN_IE,
+  SECTIONS_EN_IE,
+  ALL_ARTICLES_EN_GB,
+  SECTIONS_EN_GB,
+};
 
 export const SECTIONS = {
   parents: {
@@ -66,13 +106,18 @@ export const ALL_ARTICLES = [
 
 /**
  * @param {string|null|undefined} [locale]
- * @returns {"en"|"es-419"|"es-ES"}
+ * @returns {"en"|"es-419"|"es-ES"|"pt-BR"|"en-AU"|"en-NZ"|"en-IE"|"en-GB"}
  */
 export function resolveHelpLocale(locale) {
   const id = String(locale || "en")
     .trim()
     .toLowerCase()
     .replace(/_/g, "-");
+  if (id === "en-au") return "en-AU";
+  if (id === "en-nz") return "en-NZ";
+  if (id === "en-ie") return "en-IE";
+  if (id === "en-gb") return "en-GB";
+  if (id === "pt-br" || id === "pt") return "pt-BR";
   if (id === "es-es") return "es-ES";
   if (id === "es-419" || id.startsWith("es-")) return "es-419";
   return "en";
@@ -83,6 +128,11 @@ export function resolveHelpLocale(locale) {
  */
 export function getHelpSections(locale) {
   const helpLocale = resolveHelpLocale(locale);
+  if (helpLocale === "en-AU") return SECTIONS_EN_AU;
+  if (helpLocale === "en-NZ") return SECTIONS_EN_NZ;
+  if (helpLocale === "en-IE") return SECTIONS_EN_IE;
+  if (helpLocale === "en-GB") return SECTIONS_EN_GB;
+  if (helpLocale === "pt-BR") return SECTIONS_PT_BR;
   if (helpLocale === "es-ES") return SECTIONS_ES_ES;
   if (helpLocale === "es-419") return SECTIONS_ES_419;
   return SECTIONS;
@@ -94,6 +144,21 @@ export function getHelpSections(locale) {
  */
 export function listArticles(section, locale) {
   const helpLocale = resolveHelpLocale(locale);
+  if (helpLocale === "en-AU") {
+    return BY_SECTION_EN_AU[section] || [];
+  }
+  if (helpLocale === "en-NZ") {
+    return BY_SECTION_EN_NZ[section] || [];
+  }
+  if (helpLocale === "en-IE") {
+    return BY_SECTION_EN_IE[section] || [];
+  }
+  if (helpLocale === "en-GB") {
+    return BY_SECTION_EN_GB[section] || [];
+  }
+  if (helpLocale === "pt-BR") {
+    return BY_SECTION_PT_BR[section] || [];
+  }
   if (helpLocale === "es-ES") {
     return BY_SECTION_ES_ES[section] || [];
   }
@@ -152,13 +217,18 @@ export function collectScreenshotPathsFromArticles(articles = ALL_ARTICLES) {
   return [...paths].sort();
 }
 
-/** Build-time validation for articles (EN + es-419 + es-ES slug parity). */
+/** Build-time validation for articles (EN + overlays slug parity). */
 export function assertAllArticlesValid() {
   const allErrors = [];
   const packs = [
     { locale: "en", articles: ALL_ARTICLES },
     { locale: "es-419", articles: ALL_ARTICLES_ES_419 },
     { locale: "es-ES", articles: ALL_ARTICLES_ES_ES },
+    { locale: "pt-BR", articles: ALL_ARTICLES_PT_BR },
+    { locale: "en-AU", articles: ALL_ARTICLES_EN_AU },
+    { locale: "en-NZ", articles: ALL_ARTICLES_EN_NZ },
+    { locale: "en-IE", articles: ALL_ARTICLES_EN_IE },
+    { locale: "en-GB", articles: ALL_ARTICLES_EN_GB },
   ];
   for (const pack of packs) {
     for (const article of pack.articles) {
@@ -175,17 +245,19 @@ export function assertAllArticlesValid() {
   }
 
   const enSlugs = new Set(ALL_ARTICLES.map((a) => `${a.section}/${a.slug}`));
-  const esSlugs = new Set(ALL_ARTICLES_ES_419.map((a) => `${a.section}/${a.slug}`));
-  const esEsSlugs = new Set(ALL_ARTICLES_ES_ES.map((a) => `${a.section}/${a.slug}`));
-  for (const key of enSlugs) {
-    if (!esSlugs.has(key)) allErrors.push({ locale: "es-419", errs: [`missing slug parity: ${key}`] });
-    if (!esEsSlugs.has(key)) allErrors.push({ locale: "es-ES", errs: [`missing slug parity: ${key}`] });
-  }
-  for (const key of esSlugs) {
-    if (!enSlugs.has(key)) allErrors.push({ locale: "es-419", errs: [`extra slug vs en: ${key}`] });
-  }
-  for (const key of esEsSlugs) {
-    if (!enSlugs.has(key)) allErrors.push({ locale: "es-ES", errs: [`extra slug vs en: ${key}`] });
+  const parityPacks = packs.filter((p) => p.locale !== "en");
+  for (const pack of parityPacks) {
+    const slugs = new Set(pack.articles.map((a) => `${a.section}/${a.slug}`));
+    for (const key of enSlugs) {
+      if (!slugs.has(key)) {
+        allErrors.push({ locale: pack.locale, errs: [`missing slug parity: ${key}`] });
+      }
+    }
+    for (const key of slugs) {
+      if (!enSlugs.has(key)) {
+        allErrors.push({ locale: pack.locale, errs: [`extra slug vs en: ${key}`] });
+      }
+    }
   }
 
   if (allErrors.length) {
