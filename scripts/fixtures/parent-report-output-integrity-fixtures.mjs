@@ -2,13 +2,12 @@
  * Generic multi-subject fixtures for parent report output integrity (no real topic names from PDFs).
  */
 
+/** Global product subjects only (no Israeli hebrew / moledet-geography). */
 const SUBJECT_TOPIC = {
-  math: { bucket: "topic_alpha", labelHe: "נושא א׳" },
-  geometry: { bucket: "topic_beta", labelHe: "נושא ב׳" },
-  english: { bucket: "topic_gamma", labelHe: "נושא ג׳" },
-  hebrew: { bucket: "topic_delta", labelHe: "נושא ד׳" },
-  science: { bucket: "topic_epsilon", labelHe: "נושא ה׳" },
-  "moledet-geography": { bucket: "topic_zeta", labelHe: "נושא ו׳" },
+  math: { bucket: "topic_alpha", labelHe: "Topic A" },
+  geometry: { bucket: "topic_beta", labelHe: "Topic B" },
+  english: { bucket: "topic_gamma", labelHe: "Topic C" },
+  science: { bucket: "topic_epsilon", labelHe: "Topic E" },
 };
 
 const REPORT_MAP_KEY = {
@@ -16,8 +15,6 @@ const REPORT_MAP_KEY = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
 };
 
 /**
@@ -34,7 +31,7 @@ function v2Unit(p) {
     displayName: p.displayName,
     classification: { state: "classified", reasonCode: null, weakFallbackBlocked: false },
     evidenceTrace: [{ type: "volume", value: { questions: q, correct, wrong: q - correct, accuracy: acc } }],
-    taxonomy: p.patternHe ? { patternHe: p.patternHe, subskillHe: "תת־מיומנות לדוגמה" } : {},
+    taxonomy: p.patternHe ? { patternHe: p.patternHe, subskillHe: "sample subskill" } : {},
     recurrence: { totalQuestions: q, wrongCountForRules: q - correct },
     confidence: {
       level: q >= 40 ? "high" : "moderate",
@@ -99,8 +96,6 @@ export function buildGradeSplitBaseReport() {
     geometryTopics: {},
     englishTopics: {},
     scienceTopics: {},
-    hebrewTopics: {},
-    moledetGeographyTopics: {},
     diagnosticEngineV2: {
       units: [
         v2Unit({
@@ -120,7 +115,7 @@ export function buildGradeSplitBaseReport() {
           questions: 66,
           accuracy: 38,
           actionState: "intervene",
-          patternHe: "דפוס טעות חוזר לדוגמה",
+          patternHe: "sample recurring error pattern",
         }),
       ],
     },
@@ -128,7 +123,7 @@ export function buildGradeSplitBaseReport() {
 }
 
 /**
- * Full six-subject matrix with one strong + one weak row per subject where applicable.
+ * Full Global four-subject matrix with one strong + one weak row per subject where applicable.
  */
 export function buildMultiSubjectMatrixBaseReport() {
   const registeredGradeKey = "g4";
@@ -138,8 +133,6 @@ export function buildMultiSubjectMatrixBaseReport() {
     geometryTopics: {},
     englishTopics: {},
     scienceTopics: {},
-    hebrewTopics: {},
-    moledetGeographyTopics: {},
   };
   /** @type {object[]} */
   const units = [];
@@ -173,7 +166,7 @@ export function buildMultiSubjectMatrixBaseReport() {
         questions: 120,
         accuracy: 88,
         actionState: "maintain",
-        patternHe: subjectId === "math" ? `דפוס ${subjectId}` : undefined,
+        patternHe: subjectId === "math" ? `pattern ${subjectId}` : undefined,
       }),
       v2Unit({
         subjectId,
@@ -183,7 +176,7 @@ export function buildMultiSubjectMatrixBaseReport() {
         questions: 55,
         accuracy: 36,
         actionState: "intervene",
-        patternHe: `דפוס ${subjectId}`,
+        patternHe: `pattern ${subjectId}`,
       }),
     );
   }

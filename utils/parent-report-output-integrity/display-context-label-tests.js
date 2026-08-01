@@ -10,8 +10,8 @@ import {
   narrativeTitleFromRow
 } from "./row-display-label-context.js";
 
-const GRADE_IN_TABLE_LABEL_RE = /(?!)/iu;
-const NARRATIVE_GRADE_TITLE_RE = /(?!)/iu;
+const GRADE_IN_TABLE_LABEL_RE = / - Grade (1st|2nd|3rd|4th|5th|6th)\b/;
+const NARRATIVE_GRADE_TITLE_RE = / - Grade (1st|2nd|3rd|4th|5th|6th)\b/;
 
 /**
  * @param {Record<string, unknown>|null|undefined} row

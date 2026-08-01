@@ -177,7 +177,10 @@ const COLLECT_MORE_DATA_HE = reportPackCopy("utils__parent-report-output-integri
  */
 export function textImpliesThinDataMislabel(identity, text) {
   const t = String(text || "");
-  if (!t.includes(COLLECT_MORE_DATA_HE) && !t.includes("") && !/(?!)/iu.test(t)) {
+  const impliesCollectMore =
+    (COLLECT_MORE_DATA_HE && t.includes(COLLECT_MORE_DATA_HE)) ||
+    /collect more (?:information|data)/i.test(t);
+  if (!impliesCollectMore) {
     return false;
   }
   return identity.hasTopicLevelEvidence && !identity.thinEvidenceDowngraded;
@@ -228,8 +231,9 @@ export function parentLabelHasGradeContext(displayName, identities) {
   if (grades.size < 2) return true;
   return sameLabel.every(
     (i) =>
-      /(?!)/iu.test(String(i.recommendedStepLabelHe || "")) === false &&
-      (i.contentGradeKey != null || /(?!)/u.test(String(i.displayName || ""))));
+      i.contentGradeKey != null ||
+      / - Grade (1st|2nd|3rd|4th|5th|6th)\b/.test(String(i.displayName || "")),
+  );
 }
 
 export const OUTPUT_INTEGRITY_SUBJECT_IDS = SUBJECT_IDS;

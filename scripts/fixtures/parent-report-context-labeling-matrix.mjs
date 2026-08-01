@@ -1,8 +1,8 @@
 /**
- * Six-subject context-labeling matrix: per subject —
+ * Global four-subject context-labeling matrix: per subject —
  * - same topic label at g4 (strong) + g5 (weak)
  * - second topic at registered grade g4 (strong)
- * Generic Hebrew labels only (no production topic hardcoding).
+ * Generic English labels only (no production topic hardcoding).
  */
 
 const REPORT_MAP_KEY = {
@@ -10,40 +10,25 @@ const REPORT_MAP_KEY = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  history: "historyTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
 };
 
 /** @type {Record<string, { split: { bucket: string; labelHe: string }; solo: { bucket: string; labelHe: string } }>} */
 export const SUBJECT_MATRIX_TOPICS = {
   math: {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
+    split: { bucket: "matrix_topic_a", labelHe: "Topic A" },
+    solo: { bucket: "matrix_topic_b", labelHe: "Topic B" },
   },
   geometry: {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
+    split: { bucket: "matrix_topic_a", labelHe: "Topic A" },
+    solo: { bucket: "matrix_topic_b", labelHe: "Topic B" },
   },
   english: {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
+    split: { bucket: "matrix_topic_a", labelHe: "Topic A" },
+    solo: { bucket: "matrix_topic_b", labelHe: "Topic B" },
   },
   science: {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
-  },
-  history: {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
-  },
-  hebrew: {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
-  },
-  "moledet-geography": {
-    split: { bucket: "matrix_topic_a", labelHe: "נושא א׳" },
-    solo: { bucket: "matrix_topic_b", labelHe: "נושא ב׳" },
+    split: { bucket: "matrix_topic_a", labelHe: "Topic A" },
+    solo: { bucket: "matrix_topic_b", labelHe: "Topic B" },
   },
 };
 
@@ -63,7 +48,7 @@ function v2Unit(p) {
     displayName: p.displayName,
     classification: { state: "classified", reasonCode: null, weakFallbackBlocked: false },
     evidenceTrace: [{ type: "volume", value: { questions: q, correct, wrong: q - correct, accuracy: acc } }],
-    taxonomy: p.patternHe ? { patternHe: p.patternHe, subskillHe: "תת־מיומנות לדוגמה" } : {},
+    taxonomy: p.patternHe ? { patternHe: p.patternHe, subskillHe: "sample subskill" } : {},
     recurrence: { totalQuestions: q, wrongCountForRules: q - correct },
     confidence: {
       level: q >= 40 ? "high" : "moderate",
@@ -122,7 +107,7 @@ export function matrixRowKeysForSubject(subjectId) {
 }
 
 /**
- * Full six-subject labeling matrix (3 practiced rows per subject).
+ * Full Global four-subject labeling matrix (3 practiced rows per subject).
  */
 export function buildSixSubjectContextLabelingMatrixBaseReport() {
   const registeredGradeKey = "g4";
@@ -132,9 +117,6 @@ export function buildSixSubjectContextLabelingMatrixBaseReport() {
     geometryTopics: {},
     englishTopics: {},
     scienceTopics: {},
-    historyTopics: {},
-    hebrewTopics: {},
-    moledetGeographyTopics: {},
   };
   /** @type {object[]} */
   const units = [];
@@ -187,7 +169,7 @@ export function buildSixSubjectContextLabelingMatrixBaseReport() {
         questions: 55,
         accuracy: 36,
         actionState: "intervene",
-        patternHe: `דפוס ${subjectId} ג5`,
+        patternHe: `pattern ${subjectId} g5`,
       }),
       v2Unit({
         subjectId,
@@ -206,16 +188,13 @@ export function buildSixSubjectContextLabelingMatrixBaseReport() {
     gradePracticeMeta: {
       mixedGradePractice: true,
       mixedGradePracticeNoteHe:
-        "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד.",
+        "Some practice was done at a different grade than the registered grade, so it is shown separately.",
     },
     summary: { totalQuestions: totalQ, overallAccuracy: 72 },
     mathOperations: topicMaps.mathOperations,
     geometryTopics: topicMaps.geometryTopics,
     englishTopics: topicMaps.englishTopics,
     scienceTopics: topicMaps.scienceTopics,
-    historyTopics: topicMaps.historyTopics,
-    hebrewTopics: topicMaps.hebrewTopics,
-    moledetGeographyTopics: topicMaps.moledetGeographyTopics,
     diagnosticEngineV2: { units },
   };
 }

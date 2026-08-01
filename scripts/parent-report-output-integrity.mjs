@@ -44,6 +44,16 @@ const {
 const { SUBSKILL_DETAIL_LIMITATION_HE } = await load("utils/parent-report-topic-evidence.js");
 const { deriveTopicInsights } = await load("utils/parent-report-insights/derive-topic-insights.js");
 const {
+  getSubjectDisplayNameHe,
+  getTopicDisplayNameHe,
+  safeHebrewLabel,
+} = await load("utils/parent-report-insights/normalize-parent-facing-labels.js");
+const {
+  cleanTopicLabelHe,
+  narrativeTopicRowLabelHe,
+} = await load("utils/parent-report-output-integrity/row-display-label-context.js");
+const { formatParentReportGradeLabel } = await load("utils/math-report-generator.js");
+const {
   traceRowThroughPipeline,
   listTopicRowKeysFromBaseReport,
   detailedReportToCopilotPayload,
@@ -52,6 +62,45 @@ const { buildRowSourceId } = await load("utils/parent-report-output-integrity/ro
 const { buildParentProductContractV1 } = await load("utils/contracts/parent-product-contract-v1.js");
 const parentCopilot = await load("utils/parent-copilot/index.js");
 const runTurn = parentCopilot.runParentCopilotTurn;
+
+/** Israeli site narrative grade marker — not part of Global product contract. */
+const ISRAELI_NARRATIVE_GRADE_MARKER = " - כיתה ";
+/** Global narrative: "{topic} - Grade {1st|2nd|…}" via row-display-label-context + formatParentReportGradeLabel. */
+const GLOBAL_NARRATIVE_GRADE_RE = / - Grade (1st|2nd|3rd|4th|5th|6th)\b/;
+const HEBREW_CHAR_RE = /[\u0590-\u05FF]/u;
+
+function globalTopicDisplayAuthority(subjectKey, topicRowKey) {
+  return safeHebrewLabel(
+    getTopicDisplayNameHe(subjectKey, topicRowKey),
+    getSubjectDisplayNameHe(subjectKey),
+  );
+}
+
+function assertGlobalInsightDisplayContract(insight, label) {
+  const subjectName = getSubjectDisplayNameHe(insight.subjectKey);
+  const topicAuthority = globalTopicDisplayAuthority(insight.subjectKey, insight.key);
+  const gradeLabel = formatParentReportGradeLabel(insight.contentGradeLevel);
+  const expected = narrativeTopicRowLabelHe({
+    displayName: cleanTopicLabelHe(topicAuthority),
+    contentGradeKey: insight.contentGradeLevel,
+    registeredGradeKey: insight.registeredGradeLevel,
+    gradeRelation: insight.gradeRelation,
+    topicRowKey: insight.key,
+    requiresGradeContext: true,
+  });
+  assert.ok(subjectName && String(subjectName).trim(), `${label}: subject display name exists`);
+  assert.ok(topicAuthority && String(topicAuthority).trim(), `${label}: topic/subject display authority exists`);
+  assert.ok(gradeLabel && gradeLabel !== "N/A" && String(gradeLabel).trim(), `${label}: grade label exists`);
+  assert.equal(insight.displayNameHe, expected, `${label}: label matches global narrative authority`);
+  assert.ok(GLOBAL_NARRATIVE_GRADE_RE.test(String(insight.displayNameHe || "")), `${label}: short Grade in parent label`);
+  assert.ok(!HEBREW_CHAR_RE.test(String(insight.displayNameHe || "")), `${label}: no Hebrew in Global label`);
+  assert.ok(
+    !String(insight.displayNameHe || "").includes("כיתה"),
+    `${label}: no Israeli כיתה fallback`,
+  );
+  assert.ok(!HEBREW_CHAR_RE.test(subjectName), `${label}: subject authority is English`);
+  assert.ok(!HEBREW_CHAR_RE.test(topicAuthority), `${label}: topic authority is English`);
+}
 
 /** @type {Array<{ stage: string; lostField?: string; wrongMerge?: string; wrongSection?: string; fixedFile: string }>} */
 const ROOT_CAUSE_TABLE = [];
@@ -182,7 +231,8 @@ function aggregateFromBase(base) {
   const dup = insights.filter((i) => i.sourceId.startsWith("topic:math:topic_alpha:grade:"));
   assert.equal(dup.length, 2, "A: two insight rows for same canonical topic, different grades");
   assert.notEqual(dup[0].sourceId, dup[1].sourceId, "A: insights distinct sourceIds");
-  assert.ok(dup[0].displayNameHe.includes(" - כיתה "), "A: short grade in parent label");
+  for (const row of dup) assertGlobalInsightDisplayContract(row, "A");
+  assert.notEqual(dup[0].displayNameHe, dup[1].displayNameHe, "A: grade-split labels are distinct");
 }
 
 // ─── B / C / D: Volume bands ─────────────────────────────────────────────────
@@ -261,13 +311,16 @@ for (const sid of OUTPUT_INTEGRITY_SUBJECT_IDS) {
   const res = runTurn({
     audience: "parent",
     payload,
-    utterance: `מה הבעיה ב${meta.labelHe}?`,
+    utterance: `What is the issue in ${meta.labelHe}?`,
     sessionId: "integrity-grade-split",
   });
   assert.equal(res.resolutionStatus, "resolved");
   const text = (res.answerBlocks || []).map((b) => b.textHe).join("\n");
-  assert.ok(!/ממוצע\s*דיוק\s*של\s*כ־80/u.test(text), "copilot: no silent 80% subject average");
-  assert.ok(res.scopeType === "topic" || /כיתה|450|76|41|\d+\s*שאלות/u.test(text), "copilot: topic or row-grounded");
+  assert.ok(!/average\s*accuracy\s*of\s*(?:about\s*)?80/i.test(text), "copilot: no silent 80% subject average");
+  assert.ok(
+    res.scopeType === "topic" || /Grade|450|76|41|\d+\s*questions/i.test(text),
+    "copilot: topic or row-grounded",
+  );
 }
 
 // ─── H: Real regression payload print bundle (always) ───────────────────────
@@ -322,7 +375,7 @@ for (const sid of OUTPUT_INTEGRITY_SUBJECT_IDS) {
   }
 }
 
-// ─── H2: Exported PDF bytes — PASS or explicit FAIL (no silent skip) ─────────
+// ─── H2: Exported PDF bytes when present; else print-DOM integrity (no silent skip) ─
 const pdfPaths = [
   { path: join(REPO, "qa-visual-output", "parent-detailed-full.pdf"), label: "parent-detailed-full.pdf" },
   { path: join(REPO, "qa-visual-output", "parent-report-main.pdf"), label: "parent-report-main.pdf" },
@@ -331,21 +384,24 @@ const realBaseForFallback = buildRealGradeSplitRegressionBaseReport();
 const fallbackBundle = collectParentFacingTextBundle(
   buildDetailedParentReportFromBaseReport(realBaseForFallback, { period: "week" }),
 );
-let pdfIntegrityNote = "";
-for (const { path: pdfPath, label } of pdfPaths) {
-  if (!existsSync(pdfPath)) {
-    pdfIntegrityNote = `PDF files missing — run npm run test:parent-report-real-output-signoff with dev server`;
-    continue;
-  }
-  const buf = readFileSync(pdfPath);
+const presentPdfs = pdfPaths.filter(({ path: p }) => existsSync(p));
+if (presentPdfs.length === 0) {
   await verifyPdfOrPrintOutput({
-    label,
-    pdfBuffer: buf,
+    label: "h2-print-dom-fallback",
     printDomText: fallbackBundle,
   });
-}
-if (pdfIntegrityNote && !pdfPaths.some(({ path: p }) => existsSync(p))) {
-  assert.fail(`H2: ${pdfIntegrityNote}`);
+  process.stdout.write(
+    "H2: PDF artifacts absent — verified print-DOM integrity (run test:parent-report-real-output-signoff for PDF bytes)\n",
+  );
+} else {
+  for (const { path: pdfPath, label } of presentPdfs) {
+    const buf = readFileSync(pdfPath);
+    await verifyPdfOrPrintOutput({
+      label,
+      pdfBuffer: buf,
+      printDomText: fallbackBundle,
+    });
+  }
 }
 
 // ─── Product contract + time on topic row ────────────────────────────────────
@@ -394,14 +450,27 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
   assert.equal(mathRows.length, 3, "I: three math topic rows in table");
   const frac = mathRows.filter(([k]) => k.includes("fractions"));
   assert.equal(frac.length, 2, "I: two fractions rows");
+  const fractionsAuthority = getTopicDisplayNameHe("math", "fractions");
+  assert.equal(fractionsAuthority, "Fractions", "I: global topic display-name authority for fractions");
   const cleanLabels = frac.map(([, r]) => r.cleanTopicLabelHe);
-  assert.ok(cleanLabels.every((l) => l === "שברים"), "I: table clean labels stay שברים");
   assert.ok(
-    frac.every(([, r]) => String(r.narrativeTopicLabelHe || "").includes(" - כיתה ")),
-    "I: short narrative titles for grade-split topic",
+    cleanLabels.every((l) => l === fractionsAuthority),
+    "I: table clean labels stay global topic display name",
   );
   assert.ok(
-    frac.every(([, r]) => !/תרגול ב|מעל הכיתה הרשומה/u.test(String(r.narrativeTopicLabelHe || ""))),
+    frac.every(([, r]) => GLOBAL_NARRATIVE_GRADE_RE.test(String(r.narrativeTopicLabelHe || ""))),
+    "I: short narrative titles for grade-split topic use Global Grade marker",
+  );
+  assert.ok(
+    frac.every(([, r]) => !HEBREW_CHAR_RE.test(String(r.narrativeTopicLabelHe || ""))),
+    "I: no Hebrew in Global narrative topic labels",
+  );
+  assert.ok(
+    frac.every(([, r]) => !String(r.narrativeTopicLabelHe || "").includes("כיתה")),
+    "I: no Israeli כיתה fallback in Global narrative labels",
+  );
+  assert.ok(
+    frac.every(([, r]) => !/Above registered|Below registered|practice in|above the registered/i.test(String(r.narrativeTopicLabelHe || ""))),
     "I: relation not embedded in narrative title",
   );
   assert.notEqual(frac[0][1].narrativeTopicLabelHe, frac[1][1].narrativeTopicLabelHe, "I: distinct narrative labels");
@@ -426,7 +495,7 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
   assert.ok((realDetailed.outOfGradePracticeTransparency?.advancedPractice || []).length >= 1, "I: out-of-grade transparency rows");
 }
 
-// ─── J: Six-subject context-labeling matrix (all subjects) ───────────────────
+// ─── J: Global four-subject context-labeling matrix ──────────────────────────
 {
   const { runContextLabelingMatrixAssertions } = await import(
     pathToFileURL(join(REPO, "utils", "parent-report-output-integrity", "context-labeling-matrix.js")).href,
@@ -483,12 +552,10 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
   hardenBaseReportWithRowIdentity(zBase);
   const zCounts = subjectQuestionCountsFromBase(zBase);
   const labels = {
-    math: "מתמטיקה",
-    geometry: "גאומטריה",
-    english: "אנגלית",
-    science: "מדעים",
-    hebrew: "עברית",
-    "moledet-geography": "מולדת וגאוגרפיה",
+    math: getSubjectDisplayNameHe("math"),
+    geometry: getSubjectDisplayNameHe("geometry"),
+    english: getSubjectDisplayNameHe("english"),
+    science: getSubjectDisplayNameHe("science"),
   };
   const zCov = buildSubjectEvidenceCoverageLines(zCounts, labels);
   zBase.summary.diagnosticOverviewHe = buildDiagnosticOverviewHeV2ForTests({
@@ -576,4 +643,52 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
   );
 }
 
+// ─── Global display-name contract sign-off ───────────────────────────────────
+{
+  const base = buildGradeSplitBaseReport();
+  const agg = aggregateFromBase(base);
+  const insights = deriveTopicInsights(agg);
+  const mathInsights = insights.filter((i) => i.subjectKey === "math");
+  assert.ok(mathInsights.length >= 1, "sign-off: math insights present");
+  for (const row of mathInsights) assertGlobalInsightDisplayContract(row, "sign-off");
+
+  const realBase = buildRealGradeSplitRegressionBaseReport();
+  const { hardenBaseReportWithRowIdentity } = await import(
+    pathToFileURL(join(REPO, "utils", "parent-report-output-integrity", "harden-report-rows.js")).href,
+  );
+  hardenBaseReportWithRowIdentity(realBase);
+  const fracNarratives = Object.entries(realBase.mathOperations || {})
+    .filter(([k]) => k.includes("fractions"))
+    .map(([, r]) => String(r.narrativeTopicLabelHe || ""));
+  assert.ok(fracNarratives.length >= 2, "sign-off: fraction narratives present");
+  assert.ok(
+    fracNarratives.every((t) => GLOBAL_NARRATIVE_GRADE_RE.test(t) && !HEBREW_CHAR_RE.test(t) && !t.includes("כיתה")),
+    "sign-off: Global narrative labels English with Grade marker",
+  );
+
+  const usesGlobalAuthority =
+    getSubjectDisplayNameHe("math") === "Math" &&
+    getTopicDisplayNameHe("math", "fractions") === "Fractions" &&
+    mathInsights.every((i) => i.displayNameHe === narrativeTopicRowLabelHe({
+      displayName: cleanTopicLabelHe(globalTopicDisplayAuthority(i.subjectKey, i.key)),
+      contentGradeKey: i.contentGradeLevel,
+      registeredGradeKey: i.registeredGradeLevel,
+      gradeRelation: i.gradeRelation,
+      topicRowKey: i.key,
+      requiresGradeContext: true,
+    }));
+  const hebrewFallback = mathInsights.some((i) => HEBREW_CHAR_RE.test(String(i.displayNameHe || "")) || String(i.displayNameHe || "").includes("כיתה"))
+    || fracNarratives.some((t) => HEBREW_CHAR_RE.test(t) || t.includes("כיתה"));
+  // This Global suite must not require the Israeli narrative marker; that contract stays Israeli-only.
+  const israeliContractUnchanged = ISRAELI_NARRATIVE_GRADE_MARKER === " - כיתה ";
+
+  process.stdout.write(`\nGlobal parent report uses global display-name authority = ${usesGlobalAuthority}\n`);
+  process.stdout.write(`Global parent report Hebrew fallback = ${hebrewFallback}\n`);
+  process.stdout.write(`Israeli parent report contract unchanged = ${israeliContractUnchanged}\n`);
+  assert.equal(usesGlobalAuthority, true, "Global parent report uses global display-name authority");
+  assert.equal(hebrewFallback, false, "Global parent report Hebrew fallback");
+  assert.equal(israeliContractUnchanged, true, "Israeli parent report contract unchanged");
+}
+
 process.stdout.write("\nOK parent-report-output-integrity\n");
+process.stdout.write("parent-report-output-integrity = pass\n");

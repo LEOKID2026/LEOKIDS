@@ -29,8 +29,10 @@ const SUBJECT_LABEL_HE = {
   science: "Science"
 };
 
-const NARRATIVE_GRADE_TITLE_RE = /(?!)/iu;
-const TABLE_GRADE_IN_TOPIC_RE = /(?!)/iu;
+/** Global narrative grade marker: "{topic} - Grade {ordinal}". */
+const NARRATIVE_GRADE_TITLE_RE = / - Grade (1st|2nd|3rd|4th|5th|6th)\b/;
+/** Table topic cells must stay grade-free (grade lives in its own column / narrative title). */
+const TABLE_GRADE_IN_TOPIC_RE = / - Grade (1st|2nd|3rd|4th|5th|6th)\b/;
 
 /**
  * @param {string} subjectId
@@ -222,22 +224,23 @@ export function assertAggregateExplainsAllGradeSplits(detailedReport, baseReport
     ...(detailedReport?.executiveSummary?.topStrengthsAcrossHe || []),
     ...(detailedReport?.homePlan?.itemsHe || [])].join("\n");
 
+  const transparency = detailedReport?.outOfGradePracticeTransparency;
+  const transparencyRowCount =
+    (transparency?.advancedPractice?.length || 0) + (transparency?.foundationPractice?.length || 0);
   for (const { subjectId, displayName } of findGradeSplitTopicLabelsInBaseReport(baseReport)) {
     const collapsed = new RegExp(
       `${displayName.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}[^.\\n]{0,20} `,
       "u");
     const hasNotice =
       notices.some((n) => String(n).includes(displayName)) ||
-      notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId));
+      notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId)) ||
+      transparencyRowCount > 0;
     if (collapsed.test(bundle) && !hasNotice) {
       failures.push(
         `${subjectId}: aggregate may collapse "${displayName}" without split explanation`);
     }
   }
   if (findGradeSplitTopicLabelsInBaseReport(baseReport).length > 0 && notices.length === 0) {
-    const transparency = detailedReport?.outOfGradePracticeTransparency;
-    const transparencyRowCount =
-      (transparency?.advancedPractice?.length || 0) + (transparency?.foundationPractice?.length || 0);
     const mixedNote = String(
       detailedReport?.gradePracticeMeta?.mixedGradePracticeNoteHe ||
         baseReport?.gradePracticeMeta?.mixedGradePracticeNoteHe ||

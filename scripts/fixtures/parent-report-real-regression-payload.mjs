@@ -56,7 +56,8 @@ function mapRow(p) {
 }
 
 /**
- * Three math rows: שברים g4 strong, שברים g5 weak, חיסור g4 strong.
+ * Three math rows: Fractions g4 strong, Fractions g5 weak, Subtraction g4 strong.
+ * Display names follow Global English authority (normalize-parent-facing-labels).
  */
 export function buildRealGradeSplitRegressionBaseReport() {
   const registeredGradeKey = "g4";
@@ -74,21 +75,21 @@ export function buildRealGradeSplitRegressionBaseReport() {
     },
     mathOperations: {
       [kFrac4]: mapRow({
-        displayName: "שברים",
+        displayName: "Fractions",
         questions: 450,
         accuracy: 88,
         gradeKey: "g4",
         timeMinutes: 48,
       }),
       [kFrac5]: mapRow({
-        displayName: "שברים",
+        displayName: "Fractions",
         questions: 76,
         accuracy: 41,
         gradeKey: "g5",
         timeMinutes: 14,
       }),
       [kSub4]: mapRow({
-        displayName: "חיסור",
+        displayName: "Subtraction",
         questions: 67,
         accuracy: 84,
         gradeKey: "g4",
@@ -106,7 +107,7 @@ export function buildRealGradeSplitRegressionBaseReport() {
           subjectId: "math",
           topicRowKey: kFrac4,
           bucket: "fractions",
-          displayName: "שברים",
+          displayName: "Fractions",
           questions: 450,
           accuracy: 88,
           actionState: "maintain",
@@ -115,7 +116,7 @@ export function buildRealGradeSplitRegressionBaseReport() {
           subjectId: "math",
           topicRowKey: kFrac5,
           bucket: "fractions",
-          displayName: "שברים",
+          displayName: "Fractions",
           questions: 76,
           accuracy: 41,
           actionState: "intervene",
@@ -125,7 +126,7 @@ export function buildRealGradeSplitRegressionBaseReport() {
           subjectId: "math",
           topicRowKey: kSub4,
           bucket: "subtraction",
-          displayName: "חיסור",
+          displayName: "Subtraction",
           questions: 67,
           accuracy: 84,
           actionState: "maintain",
