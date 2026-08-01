@@ -55,7 +55,21 @@ test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
   assert.deepEqual(
     locales.map((l) => l.id).sort(),
-    ["en", "es-AR", "es-CL", "es-CO", "es-DO", "es-EC", "es-GT", "es-MX", "es-PE"]
+    [
+      "en",
+      "es-AR",
+      "es-BO",
+      "es-CL",
+      "es-CO",
+      "es-DO",
+      "es-EC",
+      "es-GT",
+      "es-HN",
+      "es-MX",
+      "es-PE",
+      "es-SV",
+      "es-VE",
+    ]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   assert.equal(byId.en.nativeName, "English");
@@ -66,7 +80,11 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["es-CL"].nativeName, "Chile");
   assert.equal(byId["es-EC"].nativeName, "Ecuador");
   assert.equal(byId["es-GT"].nativeName, "Guatemala");
-  assert.equal(byId["es-DO"].nativeName, "República Dominicana");
+  assert.equal(byId["es-DO"].nativeName, "R. Dominicana");
+  assert.equal(byId["es-VE"].nativeName, "Venezuela");
+  assert.equal(byId["es-BO"].nativeName, "Bolivia");
+  assert.equal(byId["es-HN"].nativeName, "Honduras");
+  assert.equal(byId["es-SV"].nativeName, "El Salvador");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {

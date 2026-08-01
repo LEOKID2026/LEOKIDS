@@ -1,6 +1,6 @@
 /**
  * Country locale wiring: registry, public paths, selector labels, deep merge.
- * Covers Wave 1 (MX/CO/AR/PE) and Wave 2 (CL/EC/GT/DO).
+ * Covers Wave 1 (MX/CO/AR/PE), Wave 2 (CL/EC/GT/DO), Wave 3 (VE/BO/HN/SV).
  */
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -36,30 +36,42 @@ const COUNTRIES = [
   { id: "es-CL", prefix: "cl", label: "Chile" },
   { id: "es-EC", prefix: "ec", label: "Ecuador" },
   { id: "es-GT", prefix: "gt", label: "Guatemala" },
-  { id: "es-DO", prefix: "do", label: "República Dominicana" },
+  { id: "es-DO", prefix: "do", label: "R. Dominicana" },
+  { id: "es-VE", prefix: "ve", label: "Venezuela" },
+  { id: "es-BO", prefix: "bo", label: "Bolivia" },
+  { id: "es-HN", prefix: "hn", label: "Honduras" },
+  { id: "es-SV", prefix: "sv", label: "El Salvador" },
 ];
 
 const SELECTOR_IDS = [
   "en",
   "es-AR",
+  "es-BO",
   "es-CL",
   "es-CO",
   "es-DO",
   "es-EC",
   "es-GT",
+  "es-HN",
   "es-MX",
   "es-PE",
+  "es-SV",
+  "es-VE",
 ];
 
 const SELECTOR_LABELS = [
   "Argentina",
+  "Bolivia",
   "Chile",
   "Colombia",
   "Ecuador",
+  "El Salvador",
   "Guatemala",
+  "Honduras",
   "México",
   "Perú",
-  "República Dominicana",
+  "R. Dominicana",
+  "Venezuela",
 ];
 
 test("country locales registered with es-419 → en fallback", () => {
@@ -86,12 +98,10 @@ test("selector shows English + country names only (no Español / codes)", () => 
     assert.doesNotMatch(String(loc.label || ""), /^es-/i);
     assert.notEqual(loc.label, "Español");
     assert.notEqual(loc.nativeName, "Español");
-    assert.notEqual(loc.label, "MX");
-    assert.notEqual(loc.label, "CO");
-    assert.notEqual(loc.label, "CL");
-    assert.notEqual(loc.label, "EC");
-    assert.notEqual(loc.label, "GT");
-    assert.notEqual(loc.label, "DO");
+    assert.notEqual(loc.label, "VE");
+    assert.notEqual(loc.label, "BO");
+    assert.notEqual(loc.label, "HN");
+    assert.notEqual(loc.label, "SV");
   }
 });
 
@@ -124,12 +134,16 @@ test("internal /es-MX style segments redirect to public /mx", () => {
   assert.equal(withLocalePath("es-MX", parsed.pathname), "/mx/student/home");
 });
 
-test("Wave 2 internal /es-CL and /CL redirect to public /cl", () => {
+test("Wave 2–3 internal locale ids and uppercase prefixes redirect to public form", () => {
   for (const c of [
     { id: "es-CL", prefix: "cl", internal: "es-CL", upper: "CL" },
     { id: "es-EC", prefix: "ec", internal: "es-EC", upper: "EC" },
     { id: "es-GT", prefix: "gt", internal: "es-GT", upper: "GT" },
     { id: "es-DO", prefix: "do", internal: "es-DO", upper: "DO" },
+    { id: "es-VE", prefix: "ve", internal: "es-VE", upper: "VE" },
+    { id: "es-BO", prefix: "bo", internal: "es-BO", upper: "BO" },
+    { id: "es-HN", prefix: "hn", internal: "es-HN", upper: "HN" },
+    { id: "es-SV", prefix: "sv", internal: "es-SV", upper: "SV" },
   ]) {
     const fromInternal = stripLocaleFromPath(`/${c.internal}/student/home`);
     assert.equal(fromInternal.locale, c.id);
@@ -139,13 +153,16 @@ test("Wave 2 internal /es-CL and /CL redirect to public /cl", () => {
     const fromUpper = stripLocaleFromPath(`/${c.upper}/parents`);
     assert.equal(fromUpper.locale, c.id);
     assert.equal(shouldRedirectToPublicLocalePrefix(c.id, fromUpper.pathSegment), true);
-    assert.equal(withLocalePath(c.id, fromUpper.pathname), `/${c.prefix}/parents`);
+    assert.equal(
+      buildLocalizedHref(c.id, fromUpper.pathname, { search: "tab=1" }),
+      `/${c.prefix}/parents?tab=1`
+    );
   }
 });
 
 test("deep merge keeps sibling branches for sparse country UI overlays", () => {
   resetLocaleBundleCache();
-  for (const id of ["es-MX", "es-CL", "es-GT"]) {
+  for (const id of ["es-MX", "es-CL", "es-GT", "es-VE", "es-BO", "es-SV"]) {
     const bundles = loadLocaleBundles(id);
     const overlay = lookupMessage(bundles, "ui.help.videoModalMobile");
     assert.ok(overlay && /celular|móvil|mobile/i.test(overlay), id);
@@ -191,42 +208,47 @@ test("es-GT word meaning override merges onto es-419", () => {
     instructionLocale: "es-GT",
   });
   assert.equal(gt, "café");
-  const from419 = resolveEnglishWordMeaning("red", {
-    listKey: "colors",
-    instructionLocale: "es-GT",
-  });
-  assert.ok(typeof from419 === "string" && from419.length > 0);
-  assert.notEqual(from419, "red");
-  // Wave 2 countries without meaning packs inherit es-419
-  const cl = resolveEnglishWordMeaning("brown", {
-    listKey: "colors",
-    instructionLocale: "es-CL",
-  });
-  assert.ok(typeof cl === "string" && cl.length > 0);
-  assert.notEqual(cl, "brown");
+});
+
+test("Wave 3 word meanings: BO/SV override brown; VE/HN inherit es-419", () => {
+  assert.equal(
+    resolveEnglishWordMeaning("brown", { listKey: "colors", instructionLocale: "es-BO" }),
+    "café"
+  );
+  assert.equal(
+    resolveEnglishWordMeaning("brown", { listKey: "colors", instructionLocale: "es-SV" }),
+    "café"
+  );
+  for (const id of ["es-BO", "es-SV", "es-VE", "es-HN"]) {
+    const red = resolveEnglishWordMeaning("red", {
+      listKey: "colors",
+      instructionLocale: id,
+    });
+    assert.ok(typeof red === "string" && red.length > 0, id);
+    assert.notEqual(red, "red", id);
+  }
 });
 
 test("sparse content pack deep-merge keeps parent keys", () => {
-  for (const id of ["es-MX", "es-CL", "es-EC", "es-GT", "es-DO"]) {
+  for (const id of ["es-MX", "es-CL", "es-VE", "es-BO", "es-HN", "es-SV"]) {
     const pack = loadContentPack(id, "demo", "ui.json");
     assert.ok(pack && typeof pack === "object", id);
-    const keys = Object.keys(pack);
-    assert.ok(keys.length >= 1, id);
+    assert.ok(Object.keys(pack).length >= 1, id);
   }
 });
 
 test("country content packs do not cross-contaminate", () => {
-  const cl = loadContentPack("es-CL", "demo", "ui.json");
-  const gt = loadContentPack("es-GT", "demo", "ui.json");
-  assert.ok(cl && gt);
-  // Both inherit es-419 base; country overlays must remain independently mergeable
-  assert.equal(typeof cl, "object");
-  assert.equal(typeof gt, "object");
+  const ve = loadContentPack("es-VE", "demo", "ui.json");
+  const bo = loadContentPack("es-BO", "demo", "ui.json");
+  assert.ok(ve && bo);
+  assert.equal(typeof ve, "object");
+  assert.equal(typeof bo, "object");
 });
 
 test("resolveLocaleDefinition accepts country ids", () => {
   assert.equal(resolveLocaleDefinition("es-MX").id, "es-MX");
   assert.equal(resolveLocaleDefinition("es-PE").fallbackLocale, "es-419");
   assert.equal(resolveLocaleDefinition("es-CL").id, "es-CL");
-  assert.equal(resolveLocaleDefinition("es-DO").fallbackLocale, "es-419");
+  assert.equal(resolveLocaleDefinition("es-VE").id, "es-VE");
+  assert.equal(resolveLocaleDefinition("es-SV").fallbackLocale, "es-419");
 });

@@ -1,0 +1,19 @@
+{
+  "public": {
+    "homepage": {
+      "hero": {
+        "worksheetsCta": "Hojas de trabajo para imprimir"
+      }
+    }
+  },
+  "parent": {
+    "worksheets": "Hojas de trabajo para imprimir"
+  },
+  "student": {
+    "panelWorksheets": "Hojas de trabajo",
+    "noWorksheets": "No hay hojas de trabajo abiertas ahora. Cuando se asignen, aparecerán aquí."
+  },
+  "help": {
+    "videoModalMobile": "Video tutorial (celular)"
+  }
+}

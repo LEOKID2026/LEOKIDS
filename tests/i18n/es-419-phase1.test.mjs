@@ -58,6 +58,10 @@ test("es-419 always appears in language switcher with English", () => {
   assert.ok(ids.includes("es-EC"));
   assert.ok(ids.includes("es-GT"));
   assert.ok(ids.includes("es-DO"));
+  assert.ok(ids.includes("es-VE"));
+  assert.ok(ids.includes("es-BO"));
+  assert.ok(ids.includes("es-HN"));
+  assert.ok(ids.includes("es-SV"));
   assert.ok(!ids.includes("en-XA"));
   assert.ok(!ids.includes("ar-XB"));
 });
