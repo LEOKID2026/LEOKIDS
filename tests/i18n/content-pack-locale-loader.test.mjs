@@ -72,11 +72,14 @@ test("es-419 diagnostic-labels returns Spanish distinct from en", () => {
   const en = resolveRegisteredContentPack("en", "learning", "diagnostic-labels.json");
   assert.ok(es && typeof es === "object");
   assert.ok(en && typeof en === "object");
-  assert.equal(es, CONTENT_PACK_CATALOG["es-419"]["learning/diagnostic-labels.json"]);
-  assert.notEqual(es, en);
+  // Deep-merged along es-419 → en; Spanish leaf wins over English.
   assert.equal(en.operations?.addition, "Addition");
   assert.equal(es.operations?.addition, "Suma");
   assert.notEqual(es.operations?.addition, en.operations?.addition);
+  assert.equal(
+    es.operations?.addition,
+    CONTENT_PACK_CATALOG["es-419"]["learning/diagnostic-labels.json"].operations?.addition
+  );
 });
 
 test("es-419 falls back to en for a missing registered pack path", () => {
@@ -103,6 +106,45 @@ test("es-419 falls back to en for a missing registered pack path", () => {
     CONTENT_PACK_CATALOG["es-419"] = saved;
   }
 });
+test("es-ES catalog packs deep-merge onto es-419 (books, rewards, burn-down indexes)", () => {
+  const books = resolveRegisteredContentPack("es-ES", "books", "ui.json");
+  const books419 = resolveRegisteredContentPack("es-419", "books", "ui.json");
+  assert.equal(books?.grades?.g1, "1.º de Primaria");
+  assert.equal(books419?.grades?.g1, "Grado 1");
+  // Sibling keys inherit from es-419 when present on the base pack
+  for (const key of Object.keys(books419?.grades || {})) {
+    assert.ok(key in (books?.grades || {}), `missing sibling grade key ${key}`);
+  }
+
+  const titles = resolveRegisteredContentPack("es-ES", "books", "registry-titles.json");
+  assert.equal(titles?.meta?.["english.g1"]?.bookTitle, "Inglés — 1.º de Primaria");
+
+  const rewards = resolveRegisteredContentPack("es-ES", "rewards", "ui.json");
+  const rewards419 = resolveRegisteredContentPack("es-419", "rewards", "ui.json");
+  assert.equal(rewards?.gradeBands?.g12, "Cursos 1.º–2.º");
+  assert.equal(rewards?.gradeBands?.g34, "Cursos 3.º–4.º");
+  assert.equal(rewards?.gradeBands?.g56, "Cursos 5.º–6.º");
+  assert.equal(rewards?.rarity?.regular, rewards419?.rarity?.regular);
+
+  const learning = resolveRegisteredContentPack("es-ES", "learning", "burn-down-index.json");
+  assert.equal(
+    learning?.["components__parent__ParentCurriculumContent"]?.topics_by_grade,
+    "Temas por curso"
+  );
+
+  const global = resolveRegisteredContentPack("es-ES", "global-burn-down", "burn-down-index.json");
+  assert.equal(global?.["lib__teacher-portal__teacher-class-grade"]?.grade_1, "1.º de Primaria");
+  assert.match(String(global?.["lib__site__public-page-seo"]?.leo_kids_practice_for_elementary_learners || ""), /Primaria/);
+});
+
+test("es-ES catalog resolution leaves es-419 unchanged", () => {
+  const esBooks = resolveRegisteredContentPack("es-419", "books", "ui.json");
+  assert.equal(esBooks?.grades?.g1, "Grado 1");
+  const mxMissing = resolveRegisteredContentPack("es-MX", "books", "ui.json");
+  // es-MX not in catalog → falls through to es-419 (same deep-merge chain as locale fallback)
+  assert.equal(mxMissing?.grades?.g1, "Grado 1");
+});
+
 test("English subject forces contentLocale en for taxonomy pack", () => {
   assert.equal(resolveContentLocale({ subject: "english", interfaceLocale: "ar-XB" }), "en");
   assert.equal(

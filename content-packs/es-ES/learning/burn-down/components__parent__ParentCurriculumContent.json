@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "six_grades": "seis cursos",
+    "per_grade_regular_advanced": "por curso: regular, avanzado",
+    "topics_by_grade": "Temas por curso"
+  }
+}

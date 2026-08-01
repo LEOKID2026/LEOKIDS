@@ -7,8 +7,13 @@ import {
   BY_SECTION_ES_419,
   SECTIONS_ES_419,
 } from "./es-419/index.js";
+import {
+  ALL_ARTICLES_ES_ES,
+  BY_SECTION_ES_ES,
+  SECTIONS_ES_ES,
+} from "./es-ES/index.js";
 
-export { ALL_ARTICLES_ES_419, SECTIONS_ES_419 };
+export { ALL_ARTICLES_ES_419, SECTIONS_ES_419, ALL_ARTICLES_ES_ES, SECTIONS_ES_ES };
 
 export const SECTIONS = {
   parents: {
@@ -61,12 +66,14 @@ export const ALL_ARTICLES = [
 
 /**
  * @param {string|null|undefined} [locale]
+ * @returns {"en"|"es-419"|"es-ES"}
  */
 export function resolveHelpLocale(locale) {
   const id = String(locale || "en")
     .trim()
     .toLowerCase()
     .replace(/_/g, "-");
+  if (id === "es-es") return "es-ES";
   if (id === "es-419" || id.startsWith("es-")) return "es-419";
   return "en";
 }
@@ -75,7 +82,10 @@ export function resolveHelpLocale(locale) {
  * @param {string|null|undefined} [locale]
  */
 export function getHelpSections(locale) {
-  return resolveHelpLocale(locale) === "es-419" ? SECTIONS_ES_419 : SECTIONS;
+  const helpLocale = resolveHelpLocale(locale);
+  if (helpLocale === "es-ES") return SECTIONS_ES_ES;
+  if (helpLocale === "es-419") return SECTIONS_ES_419;
+  return SECTIONS;
 }
 
 /**
@@ -83,7 +93,11 @@ export function getHelpSections(locale) {
  * @param {string|null|undefined} [locale]
  */
 export function listArticles(section, locale) {
-  if (resolveHelpLocale(locale) === "es-419") {
+  const helpLocale = resolveHelpLocale(locale);
+  if (helpLocale === "es-ES") {
+    return BY_SECTION_ES_ES[section] || [];
+  }
+  if (helpLocale === "es-419") {
     return BY_SECTION_ES_419[section] || [];
   }
   return BY_SECTION[section] || [];
@@ -138,12 +152,13 @@ export function collectScreenshotPathsFromArticles(articles = ALL_ARTICLES) {
   return [...paths].sort();
 }
 
-/** Build-time validation for articles (EN + es-419 parity). */
+/** Build-time validation for articles (EN + es-419 + es-ES slug parity). */
 export function assertAllArticlesValid() {
   const allErrors = [];
   const packs = [
     { locale: "en", articles: ALL_ARTICLES },
     { locale: "es-419", articles: ALL_ARTICLES_ES_419 },
+    { locale: "es-ES", articles: ALL_ARTICLES_ES_ES },
   ];
   for (const pack of packs) {
     for (const article of pack.articles) {
@@ -161,11 +176,16 @@ export function assertAllArticlesValid() {
 
   const enSlugs = new Set(ALL_ARTICLES.map((a) => `${a.section}/${a.slug}`));
   const esSlugs = new Set(ALL_ARTICLES_ES_419.map((a) => `${a.section}/${a.slug}`));
+  const esEsSlugs = new Set(ALL_ARTICLES_ES_ES.map((a) => `${a.section}/${a.slug}`));
   for (const key of enSlugs) {
     if (!esSlugs.has(key)) allErrors.push({ locale: "es-419", errs: [`missing slug parity: ${key}`] });
+    if (!esEsSlugs.has(key)) allErrors.push({ locale: "es-ES", errs: [`missing slug parity: ${key}`] });
   }
   for (const key of esSlugs) {
     if (!enSlugs.has(key)) allErrors.push({ locale: "es-419", errs: [`extra slug vs en: ${key}`] });
+  }
+  for (const key of esEsSlugs) {
+    if (!enSlugs.has(key)) allErrors.push({ locale: "es-ES", errs: [`extra slug vs en: ${key}`] });
   }
 
   if (allErrors.length) {

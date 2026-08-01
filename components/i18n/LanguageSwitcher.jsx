@@ -69,11 +69,14 @@ export default function LanguageSwitcher({
       ? "inline-flex items-center gap-1 min-h-8 px-2.5 py-1 rounded-lg border border-white/20 bg-white/5 text-white/90 text-xs sm:text-sm font-semibold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
       : "inline-flex items-center gap-1 min-h-8 px-2.5 py-1 rounded-lg border border-gray-300 bg-white text-gray-800 text-xs sm:text-sm font-semibold hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500";
 
+  // Cap list height to the viewport so all locales stay reachable via vertical scroll.
+  const menuScroll =
+    "max-h-[min(70vh,520px)] overflow-y-auto overflow-x-hidden overscroll-contain";
   const menuClass = isBright
-    ? "absolute end-0 top-full z-50 mt-1 min-w-[9.5rem] rounded-xl border border-slate-200 bg-white py-1 shadow-lg"
+    ? `absolute end-0 top-full z-50 mt-1 min-w-[9.5rem] rounded-xl border border-slate-200 bg-white py-1 shadow-lg ${menuScroll}`
     : isClassic
-      ? "absolute end-0 top-full z-50 mt-1 min-w-[9.5rem] rounded-xl border border-white/15 bg-[#0b1020] py-1 shadow-lg"
-      : "absolute end-0 top-full z-50 mt-1 min-w-[9.5rem] rounded-xl border border-gray-200 bg-white py-1 shadow-lg";
+      ? `absolute end-0 top-full z-50 mt-1 min-w-[9.5rem] rounded-xl border border-white/15 bg-[#0b1020] py-1 shadow-lg ${menuScroll}`
+      : `absolute end-0 top-full z-50 mt-1 min-w-[9.5rem] rounded-xl border border-gray-200 bg-white py-1 shadow-lg ${menuScroll}`;
 
   const optionBase =
     "w-full text-start px-3 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]";

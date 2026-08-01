@@ -53,7 +53,7 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 20);
+  assert.equal(locales.length, 21);
   assert.deepEqual(
     locales.map((l) => l.id),
     [
@@ -77,6 +77,7 @@ test("selectable locales for switcher are English + country names", () => {
       "es-UY",
       "es-CU",
       "es-PR",
+      "es-ES",
     ]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
@@ -92,6 +93,7 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["es-UY"].nativeName, "Uruguay");
   assert.equal(byId["es-CU"].nativeName, "Cuba");
   assert.equal(byId["es-PR"].nativeName, "Puerto Rico");
+  assert.equal(byId["es-ES"].nativeName, "España");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {
@@ -131,6 +133,18 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.match(switcher, /setLocale/);
   assert.match(switcher, /aria-label/);
   assert.match(switcher, /Escape/);
+  assert.match(switcher, /max-h-\[min\(70vh,520px\)\]/);
+  assert.match(switcher, /overflow-y-auto/);
+  assert.match(switcher, /overflow-x-hidden/);
+  assert.match(switcher, /overscroll-contain/);
   assert.doesNotMatch(switcher, /es-419/);
   assert.doesNotMatch(switcher, /Hebrew|עברית|flag/i);
+});
+
+test("LanguageSwitcher list can reach all selectable locales including España", () => {
+  const locales = getSelectableLocales();
+  assert.equal(locales.length, 21);
+  assert.equal(locales[0].id, "en");
+  assert.equal(locales[locales.length - 1].id, "es-ES");
+  assert.equal(locales[locales.length - 1].nativeName, "España");
 });

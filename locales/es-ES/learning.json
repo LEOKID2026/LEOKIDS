@@ -1,0 +1,49 @@
+{
+  "chooseGrade": "Elegir curso",
+  "master": {
+    "gradeRequired": "Elige un curso antes de practicar. Pide a un padre o tutor que actualice tu curso.",
+    "practiceSettingsBlurb": "Controla tu entrenamiento: repasa errores recientes, práctica por cursos (empieza bajo y avanza hasta el nivel que elijas) o elige un área de enfoque.",
+    "notEnoughQuestions": "No hay suficientes preguntas para el tema, curso o nivel que elegiste. Prueba a cambiar una configuración.",
+    "gradeFallback": "Curso",
+    "gradedPracticeBlurb": "Práctica por cursos — empieza bajo y avanza hasta el nivel que elijas",
+    "grades": {
+      "g1": "1.º de Primaria",
+      "g2": "2.º de Primaria",
+      "g3": "3.º de Primaria",
+      "g4": "4.º de Primaria",
+      "g5": "5.º de Primaria",
+      "g6": "6.º de Primaria"
+    },
+    "practiceModes": {
+      "graded": "Práctica por cursos"
+    },
+    "gradeTitle": "Curso {grade}",
+    "mistakePracticeBlurb": "Elige un error reciente para abrir práctica enfocada en el mismo tema, curso y dificultad.",
+    "currentGrade": "Curso actual",
+    "smartPracticeBlurb": "Como en matemáticas y geometría, elige un modo especial de entrenamiento, vincúlalo a errores recientes o usa la práctica por cursos.",
+    "gradedPracticeLabel": "Práctica por cursos (empieza bajo → tu nivel elegido)"
+  },
+  "math": {
+    "howToLearnBlurb": "El objetivo es practicar matemáticas de forma divertida, según el curso, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el curso, la dificultad y la operación (suma, resta, multiplicación, división, fracciones, porcentajes y más)."
+    }
+  },
+  "geometry": {
+    "howToLearnBlurb": "El objetivo es practicar geometría de forma divertida, según el curso, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el curso, la dificultad y el tema (área, perímetro, volumen, ángulos, Pitágoras y más)."
+    },
+    "errors": {
+      "invalidGrade": "Curso no válido. Elige otro curso.",
+      "noTopics": "No hay temas disponibles para este curso. Elige otro curso.",
+      "noQuestions": "No hay preguntas disponibles para el tema y curso seleccionados."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "El objetivo es practicar ciencias de forma divertida, según el curso, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el curso, el nivel y el tema (p. ej. cuerpo humano, plantas, animales y más)."
+    }
+  }
+}

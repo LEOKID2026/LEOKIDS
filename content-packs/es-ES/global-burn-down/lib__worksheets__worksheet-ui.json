@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "printable_worksheets": "Fichas de ejercicios para imprimir",
+    "ready_worksheet": "Ficha lista",
+    "answer_key": "Soluciones",
+    "separate_answer_key_generated_only_on_explicit_request": "Soluciones aparte: se crean solo cuando las solicitas",
+    "no_answers_on_the_worksheet": "No hay respuestas en la ficha de ejercicios.",
+    "include_answer_key": "Incluir soluciones",
+    "create_worksheet": "Crear ficha",
+    "ready_made_worksheets": "Fichas listas para usar",
+    "no_worksheets_found": "No se encontraron fichas",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Prueba cambiar los filtros — o elige todas las materias, cursos y niveles.",
+    "create_a_new_worksheet": "Crear una ficha nueva",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Elige una materia, curso, tema y nivel y luego crea una ficha lista para imprimir.",
+    "worksheet": "Ficha de ejercicios",
+    "no_worksheet_to_preview_go_back_to_create_one": "No hay ficha de ejercicios para obtener una vista previa. Vuelve para crear una.",
+    "creating_worksheet": "Creando ficha…",
+    "the_answer_key_was_updated_to_match_the_current_questions_try_opening_th": "Las soluciones se actualizaron para que coincidan con las preguntas actuales. Intenta abrir las soluciones de nuevo.",
+    "create_worksheet_from_recommendation": "Crear ficha a partir de recomendación",
+    "try_the_worksheet_generator": "Prueba el generador de fichas",
+    "ready_made_worksheets_by_grade": "Fichas listas para usar por curso",
+    "preview_data_is_not_available_go_back_to_the_worksheets_page_and_choose_": "Los datos de vista previa no están disponibles. Vuelve a la página de fichas y elige una ficha de nuevo.",
+    "back_to_worksheets": "Volver a las fichas"
+  }
+}

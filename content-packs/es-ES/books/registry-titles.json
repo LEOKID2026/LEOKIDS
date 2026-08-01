@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglés — 1.º de Primaria"
+    },
+    "english.g2": {
+      "bookTitle": "Inglés — 2.º de Primaria"
+    },
+    "english.g3": {
+      "bookTitle": "Inglés — 3.º de Primaria"
+    },
+    "english.g4": {
+      "bookTitle": "Inglés — 4.º de Primaria"
+    },
+    "english.g5": {
+      "bookTitle": "Inglés — 5.º de Primaria"
+    },
+    "english.g6": {
+      "bookTitle": "Inglés — 6.º de Primaria"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometría — 1.º de Primaria"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometría — 2.º de Primaria"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometría — 3.º de Primaria"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometría — 4.º de Primaria"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometría — 5.º de Primaria"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometría — 6.º de Primaria"
+    },
+    "math.g1": {
+      "bookTitle": "Matemáticas — 1.º de Primaria"
+    },
+    "math.g2": {
+      "bookTitle": "Matemáticas — 2.º de Primaria"
+    },
+    "math.g3": {
+      "bookTitle": "Matemáticas — 3.º de Primaria"
+    },
+    "math.g4": {
+      "bookTitle": "Matemáticas — 4.º de Primaria"
+    },
+    "math.g5": {
+      "bookTitle": "Matemáticas — 5.º de Primaria"
+    },
+    "math.g6": {
+      "bookTitle": "Matemáticas — 6.º de Primaria"
+    },
+    "science.g1": {
+      "bookTitle": "Ciencias — 1.º de Primaria"
+    },
+    "science.g2": {
+      "bookTitle": "Ciencias — 2.º de Primaria"
+    },
+    "science.g3": {
+      "bookTitle": "Ciencias — 3.º de Primaria"
+    },
+    "science.g4": {
+      "bookTitle": "Ciencias — 4.º de Primaria"
+    },
+    "science.g5": {
+      "bookTitle": "Ciencias — 5.º de Primaria"
+    },
+    "science.g6": {
+      "bookTitle": "Ciencias — 6.º de Primaria"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "portal": {
+    "classesSubtitle": "Elija curso, clase física y materia: informes y gestión por curso",
+    "chooseGrade": "Elegir curso",
+    "backGrades": "← Volver a cursos",
+    "colGrade": "Curso",
+    "studentsSubtitle": "Explorar por curso y clase: informes del niño sin ingresar identificadores",
+    "createStudentGrade": "Curso",
+    "classMgmtGrade": "Curso",
+    "assignCurrentGrade": "Curso actual",
+    "assignTargetGrade": "Curso de destino"
+  },
+  "communication": {
+    "audienceGradeParents": "Padres del curso",
+    "audienceGradeTeachers": "Docentes del curso",
+    "detailsFieldGrade": "Curso"
+  },
+  "reportSummary": {
+    "studentLine": "Respuestas: {totalAnswers} · Precisión: {accuracy} · Curso: {gradeLevel}"
+  }
+}

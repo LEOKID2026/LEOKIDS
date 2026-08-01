@@ -48,6 +48,7 @@ const COUNTRIES = [
   { id: "es-UY", prefix: "uy", label: "Uruguay" },
   { id: "es-CU", prefix: "cu", label: "Cuba" },
   { id: "es-PR", prefix: "pr", label: "Puerto Rico" },
+  { id: "es-ES", prefix: "es", label: "España" },
 ];
 
 const SELECTOR_IDS = [
@@ -60,6 +61,7 @@ const SELECTOR_IDS = [
   "es-CU",
   "es-DO",
   "es-EC",
+  "es-ES",
   "es-GT",
   "es-HN",
   "es-MX",
@@ -82,6 +84,7 @@ const SELECTOR_LABELS = [
   "Cuba",
   "Ecuador",
   "El Salvador",
+  "España",
   "Guatemala",
   "Honduras",
   "México",
@@ -116,6 +119,7 @@ const SELECTOR_ORDER = [
   "es-UY",
   "es-CU",
   "es-PR",
+  "es-ES",
 ];
 
 test("country locales registered with es-419 → en fallback", () => {
@@ -133,7 +137,7 @@ test("country locales registered with es-419 → en fallback", () => {
 
 test("selector shows English + country names only (no Español / codes)", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 20);
+  assert.equal(locales.length, 21);
   assert.deepEqual(
     locales.map((l) => l.id),
     SELECTOR_ORDER
@@ -193,6 +197,7 @@ test("Wave 2–5 internal locale ids and uppercase prefixes redirect to public f
     { id: "es-UY", prefix: "uy", internal: "es-UY", upper: "UY" },
     { id: "es-CU", prefix: "cu", internal: "es-CU", upper: "CU" },
     { id: "es-PR", prefix: "pr", internal: "es-PR", upper: "PR" },
+    { id: "es-ES", prefix: "es", internal: "es-ES", upper: "ES" },
   ]) {
     const fromInternal = stripLocaleFromPath(`/${c.internal}/student/home`);
     assert.equal(fromInternal.locale, c.id);
@@ -230,9 +235,13 @@ test("deepMergeJson does not drop untouched nested keys", () => {
   assert.deepEqual(merged, { help: { a: "mx", b: "2" }, other: { x: "y" } });
 });
 
-test("help center country locales inherit es-419 pack", () => {
+test("help center country locales inherit es-419 pack; Spain uses es-ES overlay", () => {
   for (const c of COUNTRIES) {
-    assert.equal(resolveHelpLocale(c.id), "es-419");
+    if (c.id === "es-ES") {
+      assert.equal(resolveHelpLocale(c.id), "es-ES");
+    } else {
+      assert.equal(resolveHelpLocale(c.id), "es-419");
+    }
   }
   assert.equal(resolveHelpLocale("en"), "en");
 });

@@ -1,0 +1,59 @@
+{
+  "installApp": {
+    "androidStep3": "En el móvil: toca \"Agregar a la pantalla de inicio\" en el menú del navegador"
+  },
+  "home": {
+    "subhead": "Practica matemáticas, geometría, inglés y ciencias — pensado para estudiantes de Educación Primaria."
+  },
+  "public": {
+    "homepage": {
+      "hero": {
+        "worksheetsCta": "Fichas de ejercicios para imprimir",
+        "parentVideoAria": "Vídeo para padres"
+      },
+      "parentVideo": {
+        "description": "Mira un vídeo corto sobre el seguimiento, los informes y las actividades de padres."
+      },
+      "kids": {
+        "videoDescription": "Mira un vídeo corto sobre la práctica, los juegos, las sorpresas y el progreso en el mundo infantil.",
+        "kidsVideoAria": "Vídeo del mundo infantil"
+      }
+    },
+    "about": {
+      "intro1": "El sitio está diseñado para estudiantes de Educación Primaria con práctica por materia, curso, tema y nivel de dificultad. Cada niño puede empezar donde tenga sentido, avanzar de forma gradual y reforzar los temas donde necesite más confianza.",
+      "siteFeatures": {
+        "1": {
+          "phase": "Cursos y niveles de dificultad"
+        }
+      }
+    }
+  },
+  "gallery": {
+    "subtitle": "Fotos y vídeos de Leo — el perro que acompaña a los niños en todo el sitio.",
+    "intro": "Conoce a Leo de cerca a través de momentos, fotos y vídeos que suman calidez y vida al mundo infantil del sitio.",
+    "empty": "No hay fotos ni vídeos para mostrar."
+  },
+  "parent": {
+    "worksheets": "Fichas de ejercicios para imprimir",
+    "selectGrade": "Seleccionar curso",
+    "promoVideoLabel": "Vídeo para padres",
+    "promoDescription": "Mira un vídeo corto sobre las herramientas para padres y cómo aprenden los niños en LEO KIDS.",
+    "promoVideoAria": "Vídeo para padres",
+    "gradeRequired": "Selecciona un curso.",
+    "filterSuitable": "Adecuadas al curso",
+    "gradeSuitable": "Adecuadas al curso",
+    "allowGradePicker": "Permitir que el niño o niña elija el curso en las páginas de aprendizaje"
+  },
+  "student": {
+    "panelWorksheets": "Fichas de ejercicios",
+    "promoDescription": "Mira un vídeo corto sobre la práctica, los juegos, las tarjetas y las sorpresas en el camino.",
+    "promoVideoAria": "Vídeo infantil",
+    "noWorksheets": "No hay fichas de ejercicios abiertas ahora. Cuando se asignen, aparecerán aquí."
+  },
+  "help": {
+    "videoPreview": "Ver vídeo tutorial",
+    "videoClose": "Cerrar vídeo",
+    "videoModalDesktop": "Vídeo tutorial (escritorio)",
+    "videoModalMobile": "Vídeo tutorial (móvil)"
+  }
+}

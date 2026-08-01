@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "changeGrade": "Cambiar curso",
+    "gradeLabel": "Curso"
+  },
+  "enter": {
+    "intro": "Elige un curso y explora el mundo infantil. {minutes} minutos de juego y aprendizaje, sin registrarte.",
+    "activeSessionNote": "Tienes una demo activa: cambiar el curso no reiniciará el temporizador.",
+    "chooseGradeLegend": "Elige un curso"
+  },
+  "worksheet": {
+    "pageTitle": "Ficha de ejercicios — modo demo",
+    "intro": "Puedes explorar fichas de ejercicios desde la lista de la página de inicio. El envío digital no está disponible en modo demo."
+  },
+  "grades": {
+    "g1": "1.º de Primaria",
+    "g2": "2.º de Primaria",
+    "g3": "3.º de Primaria",
+    "g4": "4.º de Primaria",
+    "g5": "5.º de Primaria",
+    "g6": "6.º de Primaria"
+  },
+  "parentPortal": {
+    "readOnlyWorksheets": "Modo demo — puedes explorar fichas de ejercicios, pero no crear nuevas."
+  }
+}

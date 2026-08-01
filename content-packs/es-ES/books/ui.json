@@ -1,0 +1,10 @@
+{
+  "grades": {
+    "g1": "1.º de Primaria",
+    "g2": "2.º de Primaria",
+    "g3": "3.º de Primaria",
+    "g4": "4.º de Primaria",
+    "g5": "5.º de Primaria",
+    "g6": "6.º de Primaria"
+  }
+}

@@ -30,6 +30,8 @@ function collectStrings(value, out = []) {
 describe("Help Center es-419", () => {
   it("resolves locale and sections", () => {
     assert.equal(resolveHelpLocale("es-419"), "es-419");
+    assert.equal(resolveHelpLocale("es-MX"), "es-419");
+    assert.equal(resolveHelpLocale("es-ES"), "es-ES");
     assert.equal(resolveHelpLocale("en"), "en");
     assert.match(getHelpSections("es-419").parents.title, /padres/i);
     assert.match(getHelpSections("en").parents.title, /parents/i);
