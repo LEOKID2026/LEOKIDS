@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglés — 1.er grado"
+    },
+    "english.g2": {
+      "bookTitle": "Inglés — 2.º grado"
+    },
+    "english.g3": {
+      "bookTitle": "Inglés — 3.er grado"
+    },
+    "english.g4": {
+      "bookTitle": "Inglés — 4.º grado"
+    },
+    "english.g5": {
+      "bookTitle": "Inglés — 5.º grado"
+    },
+    "english.g6": {
+      "bookTitle": "Inglés — 6.º grado"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometría — 1.er grado"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometría — 2.º grado"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometría — 3.er grado"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometría — 4.º grado"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometría — 5.º grado"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometría — 6.º grado"
+    },
+    "math.g1": {
+      "bookTitle": "Matemáticas — 1.er grado"
+    },
+    "math.g2": {
+      "bookTitle": "Matemáticas — 2.º grado"
+    },
+    "math.g3": {
+      "bookTitle": "Matemáticas — 3.er grado"
+    },
+    "math.g4": {
+      "bookTitle": "Matemáticas — 4.º grado"
+    },
+    "math.g5": {
+      "bookTitle": "Matemáticas — 5.º grado"
+    },
+    "math.g6": {
+      "bookTitle": "Matemáticas — 6.º grado"
+    },
+    "science.g1": {
+      "bookTitle": "Ciencias — 1.er grado"
+    },
+    "science.g2": {
+      "bookTitle": "Ciencias — 2.º grado"
+    },
+    "science.g3": {
+      "bookTitle": "Ciencias — 3.er grado"
+    },
+    "science.g4": {
+      "bookTitle": "Ciencias — 4.º grado"
+    },
+    "science.g5": {
+      "bookTitle": "Ciencias — 5.º grado"
+    },
+    "science.g6": {
+      "bookTitle": "Ciencias — 6.º grado"
+    }
+  }
+}

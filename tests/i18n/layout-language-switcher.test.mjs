@@ -53,26 +53,30 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
+  assert.equal(locales.length, 20);
   assert.deepEqual(
-    locales.map((l) => l.id).sort(),
+    locales.map((l) => l.id),
     [
       "en",
-      "es-AR",
-      "es-BO",
-      "es-CL",
+      "es-MX",
       "es-CO",
-      "es-CR",
-      "es-DO",
+      "es-AR",
+      "es-PE",
+      "es-CL",
       "es-EC",
       "es-GT",
-      "es-HN",
-      "es-MX",
-      "es-NI",
-      "es-PA",
-      "es-PE",
-      "es-PY",
-      "es-SV",
+      "es-DO",
       "es-VE",
+      "es-BO",
+      "es-HN",
+      "es-SV",
+      "es-NI",
+      "es-PY",
+      "es-CR",
+      "es-PA",
+      "es-UY",
+      "es-CU",
+      "es-PR",
     ]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
@@ -85,6 +89,9 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["es-PY"].nativeName, "Paraguay");
   assert.equal(byId["es-CR"].nativeName, "Costa Rica");
   assert.equal(byId["es-PA"].nativeName, "Panamá");
+  assert.equal(byId["es-UY"].nativeName, "Uruguay");
+  assert.equal(byId["es-CU"].nativeName, "Cuba");
+  assert.equal(byId["es-PR"].nativeName, "Puerto Rico");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {

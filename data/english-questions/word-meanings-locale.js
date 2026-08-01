@@ -14,6 +14,7 @@ import { WORD_MEANINGS_ES_BO } from "./word-meanings/es-BO.js";
 import { WORD_MEANINGS_ES_SV } from "./word-meanings/es-SV.js";
 import { WORD_MEANINGS_ES_PY } from "./word-meanings/es-PY.js";
 import { WORD_MEANINGS_ES_PA } from "./word-meanings/es-PA.js";
+import { WORD_MEANINGS_ES_UY } from "./word-meanings/es-UY.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -27,6 +28,7 @@ const MEANING_PACKS = {
   "es-SV": WORD_MEANINGS_ES_SV,
   "es-PY": WORD_MEANINGS_ES_PY,
   "es-PA": WORD_MEANINGS_ES_PA,
+  "es-UY": WORD_MEANINGS_ES_UY,
 };
 
 /**
