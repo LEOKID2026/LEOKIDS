@@ -7,6 +7,8 @@ import {
   isLocalizedPath,
   canonicalizeLocalizedPath,
   buildLocalizedHref,
+  localizeHref,
+  ensureLocalePrefixedUrl,
   isLocaleRoutingExcluded,
   shouldRedirectPrefixedDefaultLocale,
   isLocaleRoutable,
@@ -99,6 +101,26 @@ test("buildLocalizedHref en ↔ es-419 keeps same page with query and hash", () 
     buildLocalizedHref("en", "/student/home", { search: "x=1", hash: "nav" }),
     "/student/home?x=1#nav"
   );
+});
+
+test("localizeHref prefixes internal paths for es-419 and leaves English bare", () => {
+  assert.equal(localizeHref("es-419", "/parent/dashboard"), "/es-419/parent/dashboard");
+  assert.equal(localizeHref("es-419", "/about?tab=1#x"), "/es-419/about?tab=1#x");
+  assert.equal(localizeHref("en", "/about?tab=1#x"), "/about?tab=1#x");
+  assert.equal(localizeHref("es-419", "https://example.com/x"), "https://example.com/x");
+  assert.equal(localizeHref("es-419", "/admin/schools"), "/admin/schools");
+  assert.equal(localizeHref("es-419", "#section"), "#section");
+});
+
+test("ensureLocalePrefixedUrl restores missing es-419 prefix after bare navigation", () => {
+  assert.equal(ensureLocalePrefixedUrl("es-419", "/about"), "/es-419/about");
+  assert.equal(
+    ensureLocalePrefixedUrl("es-419", "/parent/dashboard?tab=1#sum"),
+    "/es-419/parent/dashboard?tab=1#sum"
+  );
+  assert.equal(ensureLocalePrefixedUrl("es-419", "/es-419/about"), null);
+  assert.equal(ensureLocalePrefixedUrl("en", "/about"), null);
+  assert.equal(ensureLocalePrefixedUrl("es-419", "/admin/schools"), null);
 });
 
 test("isLocaleRoutingExcluded: static assets and API paths", () => {

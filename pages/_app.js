@@ -476,7 +476,11 @@ MyApp.getInitialProps = async (appContext) => {
 
   const req = ctx.req;
   const headerLocale = readRequestInterfaceLocale(req, ctx.asPath || ctx.pathname || "/");
-  const cookieHeader = req?.headers?.cookie;
+  let cookieHeader = req?.headers?.cookie;
+  // Client-side transitions have no req — still honor lk_global_locale from document.
+  if ((typeof cookieHeader !== "string" || !cookieHeader) && typeof window !== "undefined") {
+    cookieHeader = document.cookie;
+  }
   const acceptLanguage = req?.headers?.["accept-language"];
 
   const interfaceLocale = resolveInterfaceLocale({

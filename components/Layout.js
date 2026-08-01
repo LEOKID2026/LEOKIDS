@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import SiteLegalFooterBar from "./layout/SiteLegalFooterBar.jsx";
 import LanguageSwitcher from "./i18n/LanguageSwitcher.jsx";
+import LocaleLink from "./i18n/LocaleLink.jsx";
 import StudentAdSlot from "./student/StudentAdSlot.jsx";
 import StudentThemePicker from "./student/StudentThemePicker.jsx";
 import HomeDemoButton from "./home/HomeDemoButton.jsx";
@@ -197,7 +197,7 @@ export default function Layout({
     >
       <header className={headerClass}>
         <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 md:gap-3">
-          <Link
+          <LocaleLink
             href={areaHomeHref}
             onClick={(event) => handleDemoHudHomeClick(event, areaHomeHref)}
             className={`flex items-center gap-2 font-extrabold tracking-widest text-lg shrink-0 ${
@@ -213,18 +213,18 @@ export default function Layout({
               style={{ transform: "scale(1.9)" }}
             />
             <span>LEO KIDS</span>
-          </Link>
+          </LocaleLink>
 
           <div className="hidden md:flex flex-1 flex-wrap items-center gap-1 text-sm font-semibold min-w-0">
             {menuLinks.map((link) => (
-              <Link
+              <LocaleLink
                 key={link.href + (link.labelKey || link.label)}
                 href={link.href}
                 onClick={(event) => handleDemoHudHomeClick(event, link.href)}
                 className={navLinkClass}
               >
                 {resolveNavLabel(link)}
-              </Link>
+              </LocaleLink>
             ))}
           </div>
 
@@ -263,7 +263,7 @@ export default function Layout({
             </div>
             <div className="flex flex-col gap-2 text-base font-semibold">
               {menuLinks.map((link) => (
-                <Link
+                <LocaleLink
                   key={link.href + (link.labelKey || link.label)}
                   href={link.href}
                   onClick={(event) => {
@@ -273,7 +273,7 @@ export default function Layout({
                   className={mobileMenuItem}
                 >
                   {resolveNavLabel(link)}
-                </Link>
+                </LocaleLink>
               ))}
             </div>
             {showThemePicker ? (

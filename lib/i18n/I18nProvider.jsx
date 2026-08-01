@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useMemo } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { createTranslator } from "./create-translator.js";
 import {
@@ -17,6 +17,8 @@ import { resolveCurriculum, resolveMarket } from "./market-curriculum.js";
 import {
   buildLocalizedHref,
   canonicalizeLocalizedPath,
+  ensureLocalePrefixedUrl,
+  localizeHref,
   stripLocaleFromPath,
   withLocalePath,
 } from "./locale-path.js";
@@ -127,6 +129,29 @@ export function I18nProvider({
     [interfaceLocale]
   );
 
+  const localizeHrefFn = useCallback(
+    (href) => localizeHref(interfaceLocale, href),
+    [interfaceLocale]
+  );
+
+  // Soft next/link and router.push often use bare paths. Restore the active
+  // non-default locale prefix after client navigations so es-419 is not lost.
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    if (interfaceLocale === DEFAULT_LOCALE) return undefined;
+
+    const onComplete = (url) => {
+      const next = ensureLocalePrefixedUrl(interfaceLocale, url);
+      if (!next) return;
+      void router.replace(next, undefined, { locale: false, scroll: false });
+    };
+
+    router.events.on("routeChangeComplete", onComplete);
+    return () => {
+      router.events.off("routeChangeComplete", onComplete);
+    };
+  }, [interfaceLocale, router]);
+
   const value = useMemo(
     () => ({
       locale: interfaceLocale,
@@ -150,6 +175,7 @@ export function I18nProvider({
       formatCurrency: (v, currency, opts) => formatCurrency(v, interfaceLocale, currency),
       formatPercent: (v, opts) => formatPercent(v, interfaceLocale, opts),
       withLocalePath: withLocalePathFn,
+      localizeHref: localizeHrefFn,
       setLocale,
       selectableLocales: getSelectableLocales(),
     }),
@@ -164,6 +190,7 @@ export function I18nProvider({
       market,
       curriculum,
       withLocalePathFn,
+      localizeHrefFn,
       setLocale,
     ]
   );
@@ -196,6 +223,7 @@ export function useI18n() {
       formatCurrency: (v, currency, opts) => formatCurrency(v, DEFAULT_LOCALE, currency),
       formatPercent: (v, opts) => formatPercent(v, DEFAULT_LOCALE, opts),
       withLocalePath: (p) => withLocalePath(DEFAULT_LOCALE, p),
+      localizeHref: (href) => localizeHref(DEFAULT_LOCALE, href),
       setLocale: async () => {},
       selectableLocales: getSelectableLocales(),
     };

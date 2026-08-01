@@ -54,10 +54,9 @@ export default function AppLocaleShell({ pageProps, children }) {
       : pageProps?.onLocaleChange;
 
   const locale = useMemo(() => {
-    if (pageProps?.interfaceLocale) {
-      return resolveLocaleDefinition(pageProps.interfaceLocale).id;
-    }
-    if (pageProps?.locale) return resolveLocaleDefinition(pageProps.locale).id;
+    // On the client, resolve from live URL + cookie + profile. Do not trust
+    // pageProps.interfaceLocale alone — client getInitialProps often lacks req
+    // cookies and would force English after a bare-path navigation.
     if (typeof document !== "undefined") {
       return resolveInterfaceLocale({
         asPath: router.asPath,
@@ -66,8 +65,13 @@ export default function AppLocaleShell({ pageProps, children }) {
         cookieHeader: document.cookie,
         profileInterfaceLocale,
         hasExplicitUserChoice: Boolean(profileInterfaceLocale),
+        acceptLanguage: pageProps?.acceptLanguage,
       });
     }
+    if (pageProps?.interfaceLocale) {
+      return resolveLocaleDefinition(pageProps.interfaceLocale).id;
+    }
+    if (pageProps?.locale) return resolveLocaleDefinition(pageProps.locale).id;
     return resolveInterfaceLocale({
       asPath: router.asPath,
       pathname: router.pathname,

@@ -9,6 +9,7 @@ import {
   isLocaleRoutingExcluded,
   shouldRedirectPrefixedDefaultLocale,
   stripLocaleFromPath,
+  withLocalePath,
 } from "./lib/i18n/locale-path.js";
 import { setLocaleCookieOnResponse } from "./lib/i18n/locale-cookie.js";
 
@@ -17,8 +18,12 @@ import { setLocaleCookieOnResponse } from "./lib/i18n/locale-cookie.js";
  * Next.js Pages `_document` reliably sees Cookie + x-lk-interface-locale for `next()`,
  * but rewrite can drop custom headers — so we also inject the locale cookie onto the
  * request Cookie header for the same request (response Set-Cookie alone is too late).
+ *
+ * @param {import('next/server').NextRequest} request
+ * @param {string} localeId
+ * @param {{ fromLocalePrefix?: boolean }} [opts]
  */
-function withInterfaceLocaleRequestHeaders(request, localeId) {
+function withInterfaceLocaleRequestHeaders(request, localeId, opts = {}) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(LOCALE_REQUEST_HEADER, localeId);
 
@@ -29,6 +34,12 @@ function withInterfaceLocaleRequestHeaders(request, localeId) {
     .filter((p) => p && !p.toLowerCase().startsWith(`${LOCALE_COOKIE_NAME.toLowerCase()}=`));
   parts.push(`${LOCALE_COOKIE_NAME}=${encodeURIComponent(localeId)}`);
   requestHeaders.set("cookie", parts.join("; "));
+
+  // Prevent cookie→prefix redirect from looping when this request is the internal
+  // rewrite target of /{locale}/path → /path.
+  if (opts.fromLocalePrefix) {
+    requestHeaders.set("x-lk-locale-prefix-rewrite", "1");
+  }
 
   return requestHeaders;
 }
@@ -85,15 +96,52 @@ export function middleware(request) {
     url.pathname = parsed.pathname;
     const response = NextResponse.rewrite(url, {
       request: {
-        headers: withInterfaceLocaleRequestHeaders(request, def.id),
+        headers: withInterfaceLocaleRequestHeaders(request, def.id, { fromLocalePrefix: true }),
       },
     });
     setLocaleCookieOnResponse(response, def.id);
     return response;
   }
 
-  const cookieLocale = request.cookies.get("lk_global_locale")?.value;
+  // Client data requests must not be redirected — only document navigations.
+  if (pathname.startsWith("/_next")) {
+    const cookieLocale = request.cookies.get(LOCALE_COOKIE_NAME)?.value;
+    const resolved = resolveLocaleDefinition(cookieLocale || DEFAULT_LOCALE);
+    return NextResponse.next({
+      request: {
+        headers: withInterfaceLocaleRequestHeaders(request, resolved.id),
+      },
+    });
+  }
+
+  const cookieLocale = request.cookies.get(LOCALE_COOKIE_NAME)?.value;
   const resolved = resolveLocaleDefinition(cookieLocale || DEFAULT_LOCALE);
+
+  // Internal rewrite of /{locale}/path already landed on the bare path — do not
+  // bounce back to the prefixed URL (that creates a redirect loop).
+  if (request.headers.get("x-lk-locale-prefix-rewrite") === "1") {
+    return NextResponse.next({
+      request: {
+        headers: withInterfaceLocaleRequestHeaders(request, resolved.id),
+      },
+    });
+  }
+
+  // Keep an explicit non-default locale choice in the URL (e.g. cookie es-419 + /parents
+  // → /es-419/parents). Soft client Links often omit the prefix; this restores it on
+  // full document requests without forcing a prefix for English.
+  if (
+    resolved.id !== DEFAULT_LOCALE &&
+    resolved.enabled &&
+    !pathname.startsWith("/admin")
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = withLocalePath(resolved.id, pathname);
+    if (url.pathname !== pathname) {
+      return NextResponse.redirect(url, 307);
+    }
+  }
+
   const response = NextResponse.next({
     request: {
       headers: withInterfaceLocaleRequestHeaders(request, resolved.id),

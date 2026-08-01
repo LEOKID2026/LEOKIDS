@@ -84,6 +84,8 @@ test("same-page language switch preserves path, query, and hash", () => {
 
 test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   const src = readFileSync(path.join(repoRoot, "components/Layout.js"), "utf8");
+  assert.match(src, /import LocaleLink from "\.\/i18n\/LocaleLink\.jsx"/);
+  assert.match(src, /<LocaleLink/);
   assert.match(src, /import LanguageSwitcher from "\.\/i18n\/LanguageSwitcher\.jsx"/);
   assert.match(src, /shouldShowLayoutLanguageSwitcher/);
   assert.match(src, /<LanguageSwitcher appearance=\{/);

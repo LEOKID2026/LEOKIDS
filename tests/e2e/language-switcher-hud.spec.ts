@@ -1,6 +1,6 @@
 /**
- * Focused language-switcher HUD check (desktop + mobile screenshots).
- * Not part of the broad e2e suite — run manually:
+ * Focused language-switcher + locale persistence across internal navigation.
+ * Run:
  *   PLAYWRIGHT_USE_START=1 npx playwright test tests/e2e/language-switcher-hud.spec.ts --project=chromium
  */
 import { test, expect } from "@playwright/test";
@@ -14,7 +14,9 @@ test.describe("HUD language switcher", () => {
     fs.mkdirSync(outDir, { recursive: true });
   });
 
-  test("desktop + mobile: switch locale keeps path/query/hash", async ({ page }) => {
+  test("switch locale, keep es-419 across internal nav, refresh, and English strip", async ({
+    page,
+  }) => {
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.goto("/parents?ref=hud#cta");
 
@@ -35,9 +37,20 @@ test.describe("HUD language switcher", () => {
     const cookie = (await page.context().cookies()).find((c) => c.name === "lk_global_locale");
     expect(cookie?.value).toBe("es-419");
 
+    // Internal HUD navigation must keep es-419 (not drop to bare /about).
+    await page.getByRole("navigation").getByRole("link", { name: /Acerca de|About/i }).click();
+    await expect(page).toHaveURL(/\/es-419\/about/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "es-419");
+    await expect(page.locator('[data-language-switcher="hud"]')).toContainText(/Español/i);
+
     await page.reload();
-    await expect(page).toHaveURL(/\/es-419\/parents/);
-    await expect(page.locator('[data-language-switcher="hud"]')).toBeVisible();
+    await expect(page).toHaveURL(/\/es-419\/about/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "es-419");
+
+    await page.getByRole("navigation").getByRole("link", { name: /Contacto|Contact/i }).click();
+    await expect(page).toHaveURL(/\/es-419\/contact/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "es-419");
+    await expect(page.locator('[data-language-switcher="hud"]')).toContainText(/Español/i);
 
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/es-419/parents?ref=hud#cta");
