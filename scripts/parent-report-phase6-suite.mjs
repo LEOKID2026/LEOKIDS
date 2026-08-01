@@ -201,7 +201,7 @@ const REQUIRED_EXEC_KEYS = [
 
 const REQUIRED_SUBJECT_PROFILE_KEYS = [
   "subject",
-  "subjectLabelHe",
+  "subjectLabel",
   "topStrengths",
   "topWeaknesses",
   "topicRecommendations",
