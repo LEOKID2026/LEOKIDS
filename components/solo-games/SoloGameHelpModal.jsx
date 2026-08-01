@@ -7,7 +7,7 @@ import {
 
 /**
  * @param {{
- *   game: { gameKey?: string, id?: string, titleHe?: string } | null,
+ *   game: { gameKey?: string, id?: string, titleHe?: string } || null,
  *   onClose: () => void,
  * }} props
  */

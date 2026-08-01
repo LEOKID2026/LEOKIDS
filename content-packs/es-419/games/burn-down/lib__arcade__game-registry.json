@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "four_in_a_row": "Cuatro en línea",
+    "checkers": "Damas",
+    "chess": "Ajedrez",
+    "snakes_and_ladders": "Serpientes y escaleras",
+    "dominoes": "Dominó",
+    "bingo": "Bingo",
+    "ludo": "Ludo"
+  }
+}

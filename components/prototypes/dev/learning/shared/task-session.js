@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 /** משימות בכל סשן בדיקה (המאגר מאחורה גדול בהרבה). */
 export const SESSION_TASK_COUNT = 12;

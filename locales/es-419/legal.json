@@ -1,0 +1,23 @@
+{
+  "privacyTitle": "Política de privacidad",
+  "termsTitle": "Términos de uso",
+  "securityTitle": "Seguridad",
+  "placeholderNotice": "El texto legal del sitio global está pendiente de revisión jurídica. Esta página es un marcador de posición y no constituye una política vinculante.",
+  "cookieBannerTitle": "Cookies y almacenamiento local",
+  "cookieBannerBody": "Este sitio utiliza cookies y almacenamiento local solo para funciones esenciales (inicio de sesión, preferencias y continuidad). La publicidad y la analítica opcional están desactivadas por ahora y podrán habilitarse más adelante con tu consentimiento.",
+  "cookieAccept": "Aceptar",
+  "cookieReject": "Rechazar opcionales",
+  "cookieManage": "Preferencias de cookies",
+  "cookieManageAria": "Abrir preferencias de cookies y publicidad",
+  "cookiePrefsTitle": "Administrar preferencias de cookies",
+  "cookiePrefsBody": "Las cookies esenciales son necesarias para el inicio de sesión, las preferencias y las funciones principales del sitio. Las opciones siguientes cubren la publicidad y la medición opcionales — actualmente inactivas.",
+  "cookieAdsLabel": "Publicidad (actualmente inactiva)",
+  "cookieAdsHelp": "Publicidad opcional futura — podrá habilitarse más adelante sujeta a la aprobación y configuración de Google.",
+  "cookieAnalyticsLabel": "Medición y analítica (actualmente inactiva)",
+  "cookieAnalyticsHelp": "Medición anónima opcional — podrá habilitarse más adelante sujeta a configuración.",
+  "cookieSavePrefs": "Guardar preferencias",
+  "cookieClose": "Cerrar",
+  "privacyLink": "Política de privacidad",
+  "legalHubLink": "Documentos legales",
+  "dataDeletionLink": "Eliminación de datos"
+}

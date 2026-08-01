@@ -14,7 +14,7 @@ export const BLOCKING_ISSUE_CODES = new Set([
   ISSUE_CODES.taxonomy_unknown_skillId,
   ISSUE_CODES.taxonomy_unknown_subskillId,
   ISSUE_CODES.taxonomy_unknown_expected_error_type,
-  ISSUE_CODES.taxonomy_unknown_prerequisite_skillId,
+  ISSUE_CODES.taxonomy_unknown_prerequisite_skillId
 ]);
 
 /** Explicit advisory-only codes (curriculum / documentation debt). */
@@ -28,14 +28,14 @@ export const ADVISORY_ISSUE_CODES = new Set([
   ISSUE_CODES.missing_explanation,
   ISSUE_CODES.misconception_diagnosis_unsupported,
   ISSUE_CODES.prerequisite_diagnosis_unsupported,
-  ISSUE_CODES.skill_low_volume,
+  ISSUE_CODES.skill_low_volume
 ]);
 
 const TAXONOMY_ISSUE_CODES = new Set([
   ISSUE_CODES.taxonomy_unknown_skillId,
   ISSUE_CODES.taxonomy_unknown_subskillId,
   ISSUE_CODES.taxonomy_unknown_expected_error_type,
-  ISSUE_CODES.taxonomy_unknown_prerequisite_skillId,
+  ISSUE_CODES.taxonomy_unknown_prerequisite_skillId
 ]);
 
 const LAUNCH_SCOPE_SUBJECTS = new Set([
@@ -43,9 +43,7 @@ const LAUNCH_SCOPE_SUBJECTS = new Set([
   "geometry",
   "science",
   "english",
-  "hebrew",
-  "moledet-geography",
-  "history",
+  "history"
 ]);
 
 /**
@@ -71,8 +69,8 @@ export const KNOWN_EXEMPTION_CATALOG = [
     subjects: ["english"],
     issueCodes: [ISSUE_CODES.missing_skillId, ISSUE_CODES.missing_subskillId],
     rationale:
-      "English pools underwent a deliberate safe metadata pass; ~439 grammar rows remain untagged until curriculum assigns taxonomy-valid skillId/subskillId.",
-  },
+      "English pools underwent a deliberate safe metadata pass; ~439 grammar rows remain untagged until curriculum assigns taxonomy-valid skillId/subskillId."
+  }
 ];
 
 /** Subject → optional glob-like source path matchers for future file-level carve-outs (empty by default). */
@@ -186,9 +184,9 @@ export function computeMetadataGateRollup({ records, loadErrors, duplicates, ris
     knownExemptions: {
       catalog: KNOWN_EXEMPTION_CATALOG,
       exemptedIssueOccurrences: exemptedIssueCount,
-      subjectSourceMatchers: SUBJECT_SOURCE_EXEMPTIONS,
+      subjectSourceMatchers: SUBJECT_SOURCE_EXEMPTIONS
     },
-    parseOk,
+    parseOk
   };
 }
 

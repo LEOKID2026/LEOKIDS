@@ -116,7 +116,7 @@ export function useCheckersSession(ctx) {
           revision: s.revision,
         });
         if (!r.ok) {
-          setErr(r.error || "מהלך נכשל");
+          setErr(r.error || "");
           return { ok: false };
         }
         if (r.snapshot) setSnap((prev) => preferNewer(prev, r.snapshot));
@@ -137,8 +137,7 @@ export function useCheckersSession(ctx) {
         setBusy(false);
       }
     },
-    [roomId, busy],
-  );
+    [roomId, busy]);
 
   const vm = useMemo(() => {
     const phase = snap ? String(snap.phase || "").toLowerCase() : "";

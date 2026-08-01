@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "back_to_games": "Volver a Juegos",
+    "play_again": "Jugar de nuevo",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "void,\r\n *   busy?: boolean,\r\n *   subtitleHe?: string,\r\n *   statsLines?: Array",
+    "diamond_balance": "Saldo de diamantes:",
+    "coin_balance": "Saldo de monedas:",
+    "score": "Puntaje:",
+    "level": "Nivel:"
+  }
+}

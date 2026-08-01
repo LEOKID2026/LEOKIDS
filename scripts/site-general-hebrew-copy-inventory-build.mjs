@@ -82,7 +82,7 @@ const EXCLUDE_PATH_RE = [
   /parent-ai-topic-classifier/i,
   /utils\/contracts\/narrative-contract/i,
   /utils\/fast-diagnostic-engine/i,
-  /utils\/diagnostic-labels-he\.js$/,
+  /utils\/diagnostic-labels\.js$/,
   /utils\/diagnostic-mistake-metadata\.js$/,
   /utils\/diagnostic-question-contract/i,
   /utils\/topic-next-step-engine/i,

@@ -105,7 +105,7 @@ export function loadImage(src) {
   });
 }
 
-/** @param {PointerEvent | TouchEvent} e @param {DOMRect} rect */
+/** @param {PointerEvent || TouchEvent} e @param {DOMRect} rect */
 export function getBoardTapPoint(e, rect) {
   const touch = e.touches?.[0] || e.changedTouches?.[0];
   const clientX = touch ? touch.clientX : e.clientX;
@@ -118,8 +118,8 @@ export function getBoardTapPoint(e, rect) {
 
 /**
  * Reliable mobile tap handling on a full-size capture layer.
- * @param {React.RefObject<HTMLElement | null>} boardRef
- * @param {React.RefObject<HTMLElement | null>} captureRef
+ * @param {React.RefObject<HTMLElement || null>} boardRef
+ * @param {React.RefObject<HTMLElement || null>} captureRef
  * @param {React.MutableRefObject<boolean>} runningRef
  * @param {(x: number, y: number, rect: DOMRect) => void} onTap
  * @param {boolean} active
@@ -167,7 +167,7 @@ const KEYBOARD_BLOCK =
 
 /**
  * @param {boolean} active
- * @param {(e: KeyboardEvent) => boolean | void} onKey Return true to preventDefault
+ * @param {(e: KeyboardEvent) => boolean || void} onKey Return true to preventDefault
  */
 export function useSoloGameKeyboard(active, onKey) {
   const onKeyRef = useRef(onKey);
@@ -188,7 +188,7 @@ export function useSoloGameKeyboard(active, onKey) {
 /**
  * Keyboard crosshair for tap-style solo games.
  * @param {boolean} active
- * @param {{ step?: number, onFire: (x: number, y: number, rect: DOMRect) => void, boardRef: React.RefObject<HTMLElement | null> }} opts
+ * @param {{ step?: number, onFire: (x: number, y: number, rect: DOMRect) => void, boardRef: React.RefObject<HTMLElement || null> }} opts
  */
 export function useSoloAimKeyboard(active, { step = 2.4, onFire, boardRef }) {
   const onFireRef = useRef(onFire);

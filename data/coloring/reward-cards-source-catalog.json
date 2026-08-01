@@ -4,7 +4,7 @@
   "cards": [
     {
       "cardKey": "achievement_20_questions",
-      "displayNameHe": "20 שאלות",
+      "displayNameHe": "Achievement 20 Questions",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f843ae00-fa8e-4ba1-a7bf-d77e30366d0e/display.webp",
@@ -16,7 +16,7 @@
     },
     {
       "cardKey": "achievement_3_day_streak",
-      "displayNameHe": "מתמיד 3 ימים",
+      "displayNameHe": "Achievement 3 Day Streak",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/c48582a1-6d96-4a12-91b2-75b188df04bc/display.webp",
@@ -28,7 +28,7 @@
     },
     {
       "cardKey": "achievement_7_day_streak",
-      "displayNameHe": "מתמיד 7 ימים",
+      "displayNameHe": "Achievement 7 Day Streak",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d75a37ad-b890-4d0d-a279-4484542cbfff/display.webp",
@@ -40,7 +40,7 @@
     },
     {
       "cardKey": "achievement_addition_champion",
-      "displayNameHe": "אלוף החיבור",
+      "displayNameHe": "Achievement Addition Champion",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/9d25da5d-ad50-428a-a4b1-825756823a9e/display.webp",
@@ -52,7 +52,7 @@
     },
     {
       "cardKey": "achievement_big_progress",
-      "displayNameHe": "התקדמות גדולה",
+      "displayNameHe": "Achievement Big Progress",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/81894e64-a155-452f-a84a-ba57c1bc6cf1/display.webp",
@@ -64,7 +64,7 @@
     },
     {
       "cardKey": "achievement_diligent_student",
-      "displayNameHe": "ליאו התלמיד החרוץ",
+      "displayNameHe": "Achievement Diligent Student",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/61e94117-9207-4a7b-b53f-f9822f8e0aec/display.webp",
@@ -76,7 +76,7 @@
     },
     {
       "cardKey": "achievement_division_champion",
-      "displayNameHe": "אלוף החילוק",
+      "displayNameHe": "Achievement Division Champion",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e3f55708-4691-4272-8d92-361302b3652a/display.webp",
@@ -88,7 +88,7 @@
     },
     {
       "cardKey": "achievement_english_star",
-      "displayNameHe": "כוכב אנגלית",
+      "displayNameHe": "Achievement English Star",
       "category": "achievement",
       "seriesSlug": "language",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f88567fd-89c3-40df-b9ac-6905831101dc/display.webp",
@@ -100,7 +100,7 @@
     },
     {
       "cardKey": "achievement_geometry_3d_builder",
-      "displayNameHe": "בונה תלת־ממד",
+      "displayNameHe": "Achievement Geometry 3d Builder",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/1ecaca95-6418-40e6-9a20-e1d00494f2ef/display.webp",
@@ -112,7 +112,7 @@
     },
     {
       "cardKey": "achievement_geometry_angles_detective",
-      "displayNameHe": "בלש הזוויות",
+      "displayNameHe": "Achievement Geometry Angles Detective",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/5313ae88-7a97-4f49-bf95-17f202680665/display.webp",
@@ -124,7 +124,7 @@
     },
     {
       "cardKey": "achievement_geometry_area_genius",
-      "displayNameHe": "גאון השטח",
+      "displayNameHe": "Achievement Geometry Area Genius",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/8436c41f-71e6-4386-a7e2-abd2d67ac417/display.webp",
@@ -136,7 +136,7 @@
     },
     {
       "cardKey": "achievement_geometry_polygon_architect",
-      "displayNameHe": "אדריכל המצולעים",
+      "displayNameHe": "Achievement Geometry Polygon Architect",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dcb9ab29-aab4-4045-90aa-c7235b41fb3f/display.webp",
@@ -148,7 +148,7 @@
     },
     {
       "cardKey": "achievement_geometry_shapes_champion",
-      "displayNameHe": "אלוף הצורות",
+      "displayNameHe": "Achievement Geometry Shapes Champion",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/925071f8-02e2-45dc-beb9-263e85918731/display.webp",
@@ -160,7 +160,7 @@
     },
     {
       "cardKey": "achievement_geometry_symmetry_explorer",
-      "displayNameHe": "חוקר הסימטריה",
+      "displayNameHe": "Achievement Geometry Symmetry Explorer",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/9acf4587-c9cb-418b-8efa-dff18781d2f2/display.webp",
@@ -172,7 +172,7 @@
     },
     {
       "cardKey": "achievement_great_listener",
-      "displayNameHe": "מאזין מצוין",
+      "displayNameHe": "Achievement Great Listener",
       "category": "achievement",
       "seriesSlug": "language",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e8c7ad02-f84d-4a1e-945c-33aef62fc756/display.webp",
@@ -183,32 +183,8 @@
       "isActive": true
     },
     {
-      "cardKey": "achievement_hebrew_star",
-      "displayNameHe": "כוכב עברית",
-      "category": "achievement",
-      "seriesSlug": "language",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/74e4dfc6-f9db-4801-857c-73a3c2b6c5fc/display.webp",
-      "storagePath": "achievements/language/achievement_hebrew_star.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/74e4dfc6-f9db-4801-857c-73a3c2b6c5fc/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/74e4dfc6-f9db-4801-857c-73a3c2b6c5fc/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/74e4dfc6-f9db-4801-857c-73a3c2b6c5fc/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "achievement_moledet_explorer",
-      "displayNameHe": "חוקר המולדת",
-      "category": "achievement",
-      "seriesSlug": "subjects",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/85982e7f-e61f-4455-9263-0c7da8785f20/display.webp",
-      "storagePath": "achievements/subjects/achievement_moledet_explorer.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/85982e7f-e61f-4455-9263-0c7da8785f20/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/85982e7f-e61f-4455-9263-0c7da8785f20/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/85982e7f-e61f-4455-9263-0c7da8785f20/thumb.webp",
-      "isActive": true
-    },
-    {
       "cardKey": "achievement_multiplication_champion",
-      "displayNameHe": "אלוף הכפל",
+      "displayNameHe": "Achievement Multiplication Champion",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/78853e7a-2d02-4cd5-8cf5-e239ac59121e/display.webp",
@@ -220,7 +196,7 @@
     },
     {
       "cardKey": "achievement_never_give_up",
-      "displayNameHe": "לא מוותר",
+      "displayNameHe": "Achievement Never Give Up",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/8c89bdfd-c564-4dc8-afc4-9c1ec31d31fd/display.webp",
@@ -232,7 +208,7 @@
     },
     {
       "cardKey": "achievement_new_record",
-      "displayNameHe": "שיא חדש",
+      "displayNameHe": "Achievement New Record",
       "category": "achievement",
       "seriesSlug": "subjects",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e4632f62-65f8-4289-b80c-e2bd7b4e2a9a/display.webp",
@@ -244,7 +220,7 @@
     },
     {
       "cardKey": "achievement_number_explorer",
-      "displayNameHe": "חוקר המספרים",
+      "displayNameHe": "Achievement Number Explorer",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/a11a8fb8-b154-4480-8a66-d3db9a9ff168/display.webp",
@@ -256,7 +232,7 @@
     },
     {
       "cardKey": "achievement_personal_activity",
-      "displayNameHe": "פעילות אישית",
+      "displayNameHe": "Achievement Personal Activity",
       "category": "achievement",
       "seriesSlug": "subjects",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/86e4e850-dbcc-49b0-94a3-239ee7396f1a/display.webp",
@@ -268,7 +244,7 @@
     },
     {
       "cardKey": "achievement_science_explorer",
-      "displayNameHe": "חוקר המדע",
+      "displayNameHe": "Achievement Science Explorer",
       "category": "achievement",
       "seriesSlug": "subjects",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d5512a3d-6587-42a3-96e9-16282b97830e/display.webp",
@@ -280,7 +256,7 @@
     },
     {
       "cardKey": "achievement_science_magnet_master",
-      "displayNameHe": "מאסטר המגנט",
+      "displayNameHe": "Achievement Science Magnet Master",
       "category": "achievement",
       "seriesSlug": "science",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/ab71a4a0-0d7f-424b-8780-02234de5ea78/display.webp",
@@ -292,7 +268,7 @@
     },
     {
       "cardKey": "achievement_science_space_discoverer",
-      "displayNameHe": "מגלה החלל",
+      "displayNameHe": "Achievement Science Space Discoverer",
       "category": "achievement",
       "seriesSlug": "science",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b82d5c21-735b-4ec4-a019-c2436aa942b5/display.webp",
@@ -304,7 +280,7 @@
     },
     {
       "cardKey": "achievement_science_weather_explorer",
-      "displayNameHe": "חוקר מזג האוויר",
+      "displayNameHe": "Achievement Science Weather Explorer",
       "category": "achievement",
       "seriesSlug": "science",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/393d62c6-7290-4f14-af81-88bdf567e708/display.webp",
@@ -316,7 +292,7 @@
     },
     {
       "cardKey": "achievement_science_young_scientist",
-      "displayNameHe": "מדען צעיר",
+      "displayNameHe": "Achievement Science Young Scientist",
       "category": "achievement",
       "seriesSlug": "science",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0b878352-68f6-40b2-9413-f8fe813670ad/display.webp",
@@ -328,7 +304,7 @@
     },
     {
       "cardKey": "achievement_shapes_master",
-      "displayNameHe": "מאסטר הצורות",
+      "displayNameHe": "Achievement Shapes Master",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/31b54d9e-83a6-4c0e-bfbe-479cc1729521/display.webp",
@@ -340,7 +316,7 @@
     },
     {
       "cardKey": "achievement_strong_start",
-      "displayNameHe": "מתחיל חזק",
+      "displayNameHe": "Achievement Strong Start",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/73ce2225-5ff1-49ed-9f25-74866f36bb7f/display.webp",
@@ -352,7 +328,7 @@
     },
     {
       "cardKey": "achievement_subtraction_champion",
-      "displayNameHe": "אלוף החיסור",
+      "displayNameHe": "Achievement Subtraction Champion",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/c917cf0c-83a8-4638-a591-f96890a20813/display.webp",
@@ -364,7 +340,7 @@
     },
     {
       "cardKey": "achievement_task_complete",
-      "displayNameHe": "משימה הושלמה",
+      "displayNameHe": "Achievement Task Complete",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/8a54106e-ea92-496e-9eaf-001efa622a3b/display.webp",
@@ -376,7 +352,7 @@
     },
     {
       "cardKey": "achievement_understanding_master",
-      "displayNameHe": "מאסטר ההבנה",
+      "displayNameHe": "Achievement Understanding Master",
       "category": "achievement",
       "seriesSlug": "language",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/ae0cebe5-219b-4a40-b5b6-10c17b5e592f/display.webp",
@@ -388,7 +364,7 @@
     },
     {
       "cardKey": "achievement_week_star",
-      "displayNameHe": "כוכב השבוע",
+      "displayNameHe": "Achievement Week Star",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f54c984f-dee9-46aa-8904-0cc68bf9cd8b/display.webp",
@@ -400,7 +376,7 @@
     },
     {
       "cardKey": "achievement_word_discoverer",
-      "displayNameHe": "מגלה מילים",
+      "displayNameHe": "Achievement Word Discoverer",
       "category": "achievement",
       "seriesSlug": "language",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/2a328cbc-25e5-4637-927f-7f2ed9fd8864/display.webp",
@@ -412,7 +388,7 @@
     },
     {
       "cardKey": "achievement_young_reader",
-      "displayNameHe": "קורא צעיר",
+      "displayNameHe": "Achievement Young Reader",
       "category": "achievement",
       "seriesSlug": "language",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/4b82db70-cc93-49af-b71c-97751db78ba4/display.webp",
@@ -424,7 +400,7 @@
     },
     {
       "cardKey": "bear_strong",
-      "displayNameHe": "דוב חזק",
+      "displayNameHe": "Bear Strong",
       "category": "shop",
       "seriesSlug": "animals",
       "imageUrl": "/rewards/cards/shop/animals/bear_strong.svg",
@@ -436,7 +412,7 @@
     },
     {
       "cardKey": "blue_dino",
-      "displayNameHe": "דינוזאור כחול",
+      "displayNameHe": "Blue Dino",
       "category": "shop",
       "seriesSlug": "dinosaurs",
       "imageUrl": "/rewards/cards/shop/dinosaurs/blue_dino.svg",
@@ -448,7 +424,7 @@
     },
     {
       "cardKey": "class_star",
-      "displayNameHe": "כוכב הכיתה",
+      "displayNameHe": "Class Star",
       "category": "shop",
       "seriesSlug": "heroes",
       "imageUrl": "/rewards/cards/shop/heroes/class_star.svg",
@@ -460,7 +436,7 @@
     },
     {
       "cardKey": "color_flower",
-      "displayNameHe": "פרח צבעוני",
+      "displayNameHe": "Color Flower",
       "category": "shop",
       "seriesSlug": "nature",
       "imageUrl": "/rewards/cards/shop/nature/color_flower.svg",
@@ -472,7 +448,7 @@
     },
     {
       "cardKey": "cute_alien",
-      "displayNameHe": "חייזר חמוד",
+      "displayNameHe": "Cute Alien",
       "category": "shop",
       "seriesSlug": "space",
       "imageUrl": "/rewards/cards/shop/space/cute_alien.svg",
@@ -484,7 +460,7 @@
     },
     {
       "cardKey": "dog_loyal",
-      "displayNameHe": "כלב נאמן",
+      "displayNameHe": "Dog Loyal",
       "category": "shop",
       "seriesSlug": "animals",
       "imageUrl": "/rewards/cards/shop/animals/dog_loyal.svg",
@@ -496,7 +472,7 @@
     },
     {
       "cardKey": "english_speaker",
-      "displayNameHe": "דובר אנגלית",
+      "displayNameHe": "English Speaker",
       "category": "achievement",
       "seriesSlug": "english",
       "imageUrl": "/rewards/cards/achievements/english/english_speaker.svg",
@@ -508,7 +484,7 @@
     },
     {
       "cardKey": "english_star",
-      "displayNameHe": "כוכב אנגלית",
+      "displayNameHe": "English Star",
       "category": "achievement",
       "seriesSlug": "english",
       "imageUrl": "/rewards/cards/achievements/english/english_star.svg",
@@ -520,7 +496,7 @@
     },
     {
       "cardKey": "event_autumn",
-      "displayNameHe": "ליאו בסתיו",
+      "displayNameHe": "Event Autumn",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b5e40efe-22f8-4209-972e-e34b48c728f1/display.webp",
@@ -532,7 +508,7 @@
     },
     {
       "cardKey": "event_back_to_learning",
-      "displayNameHe": "קלף חוזרים ללמוד",
+      "displayNameHe": "Event Back To Learning",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6152d177-507c-41e4-8536-92dacf77e561/display.webp",
@@ -544,7 +520,7 @@
     },
     {
       "cardKey": "event_birthday",
-      "displayNameHe": "קלף יום הולדת",
+      "displayNameHe": "Event Birthday",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f2514793-a9de-41d2-b791-bdd3e3eef28c/display.webp",
@@ -556,7 +532,7 @@
     },
     {
       "cardKey": "event_end_of_year",
-      "displayNameHe": "קלף סוף השנה",
+      "displayNameHe": "Event End Of Year",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/339f77bc-8db4-4e0e-b06c-1a5fc5a6df23/display.webp",
@@ -568,7 +544,7 @@
     },
     {
       "cardKey": "event_family_day",
-      "displayNameHe": "ליאו ביום המשפחה",
+      "displayNameHe": "Event Family Day",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/ee1d5f88-e160-4b81-bea3-d5092f524cdd/display.webp",
@@ -580,7 +556,7 @@
     },
     {
       "cardKey": "event_hanukkah",
-      "displayNameHe": "קלף חנוכה",
+      "displayNameHe": "Event Hanukkah",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/35d45b70-a0af-4d1f-8ea1-fa20cb81716a/display.webp",
@@ -592,7 +568,7 @@
     },
     {
       "cardKey": "event_independence_day",
-      "displayNameHe": "קלף יום העצמאות",
+      "displayNameHe": "Event Independence Day",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d9089d5b-cc53-49ac-9fef-754f4cc7cd19/display.webp",
@@ -604,7 +580,7 @@
     },
     {
       "cardKey": "event_lag_baomer",
-      "displayNameHe": "ל״ג בעומר",
+      "displayNameHe": "Event Lag Baomer",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3964324b-1249-4068-8176-5f17c5fec898/display.webp",
@@ -616,7 +592,7 @@
     },
     {
       "cardKey": "event_passover",
-      "displayNameHe": "קלף פסח",
+      "displayNameHe": "Event Passover",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/375ecac2-c01a-40cf-8893-ad40fe617e6e/display.webp",
@@ -628,7 +604,7 @@
     },
     {
       "cardKey": "event_purim",
-      "displayNameHe": "קלף פורים",
+      "displayNameHe": "Event Purim",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e3816dba-020d-4efb-9f59-a8bc122ca558/display.webp",
@@ -640,7 +616,7 @@
     },
     {
       "cardKey": "event_rosh_hashana",
-      "displayNameHe": "קלף ראש השנה",
+      "displayNameHe": "Event Rosh Hashana",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0fa2dc66-2058-42b2-bf54-d0de88602725/display.webp",
@@ -652,7 +628,7 @@
     },
     {
       "cardKey": "event_shavuot",
-      "displayNameHe": "קלף שבועות",
+      "displayNameHe": "Event Shavuot",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cf8a9be9-623d-4e1c-850c-db52f36c6589/display.webp",
@@ -664,7 +640,7 @@
     },
     {
       "cardKey": "event_spring",
-      "displayNameHe": "ליאו באביב",
+      "displayNameHe": "Event Spring",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6793428f-ff6a-411a-ba95-cdd1be4e6ac3/display.webp",
@@ -676,7 +652,7 @@
     },
     {
       "cardKey": "event_sukkot",
-      "displayNameHe": "קלף סוכות",
+      "displayNameHe": "Event Sukkot",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dc8a02aa-ba49-406e-a339-3d8220e8adc3/display.webp",
@@ -688,7 +664,7 @@
     },
     {
       "cardKey": "event_summer",
-      "displayNameHe": "קלף הקיץ",
+      "displayNameHe": "Event Summer",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f3b924be-622a-4865-8d61-eb80afefa6fd/display.webp",
@@ -700,7 +676,7 @@
     },
     {
       "cardKey": "event_summer_vacation",
-      "displayNameHe": "ליאו בחופש הגדול",
+      "displayNameHe": "Event Summer Vacation",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/fa6e1b73-fe2a-4538-9d31-9087a60a3b4b/display.webp",
@@ -712,7 +688,7 @@
     },
     {
       "cardKey": "event_tu_bishvat",
-      "displayNameHe": "ליאו בט״ו בשבט",
+      "displayNameHe": "Event Tu Bishvat",
       "category": "event",
       "seriesSlug": "israeli-holidays",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/422b6dfa-8b3c-459d-8392-256e93aca21c/display.webp",
@@ -724,7 +700,7 @@
     },
     {
       "cardKey": "event_winter",
-      "displayNameHe": "קלף החורף",
+      "displayNameHe": "Event Winter",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/fa9737d1-79e4-4bd8-9e7b-4548312b3bd4/display.webp",
@@ -736,7 +712,7 @@
     },
     {
       "cardKey": "event_winter_vacation",
-      "displayNameHe": "ליאו בחופשת חורף",
+      "displayNameHe": "Event Winter Vacation",
       "category": "event",
       "seriesSlug": "events",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/a541a29d-5573-4af5-a567-55fd82cda556/display.webp",
@@ -748,7 +724,7 @@
     },
     {
       "cardKey": "field_star",
-      "displayNameHe": "כוכב המגרש",
+      "displayNameHe": "Field Star",
       "category": "shop",
       "seriesSlug": "football",
       "imageUrl": "/rewards/cards/shop/football/field_star.svg",
@@ -760,7 +736,7 @@
     },
     {
       "cardKey": "fox_clever",
-      "displayNameHe": "שועל זריז",
+      "displayNameHe": "Fox Clever",
       "category": "shop",
       "seriesSlug": "animals",
       "imageUrl": "/rewards/cards/shop/animals/fox_clever.svg",
@@ -772,7 +748,7 @@
     },
     {
       "cardKey": "geometry_ace",
-      "displayNameHe": "אלוף הגיאומטריה",
+      "displayNameHe": "Geometry Ace",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "/rewards/cards/achievements/geometry/geometry_ace.svg",
@@ -784,7 +760,7 @@
     },
     {
       "cardKey": "goal_king",
-      "displayNameHe": "מלך השערים",
+      "displayNameHe": "Goal King",
       "category": "shop",
       "seriesSlug": "football",
       "imageUrl": "/rewards/cards/shop/football/goal_king.svg",
@@ -796,7 +772,7 @@
     },
     {
       "cardKey": "gold_robot",
-      "displayNameHe": "רובוט זהב",
+      "displayNameHe": "Gold Robot",
       "category": "shop",
       "seriesSlug": "robots",
       "imageUrl": "/rewards/cards/shop/robots/gold_robot.svg",
@@ -808,7 +784,7 @@
     },
     {
       "cardKey": "gold_striker",
-      "displayNameHe": "כדורגלן זהב",
+      "displayNameHe": "Gold Striker",
       "category": "shop",
       "seriesSlug": "football",
       "imageUrl": "/rewards/cards/shop/football/gold_striker.svg",
@@ -820,7 +796,7 @@
     },
     {
       "cardKey": "golden_knight",
-      "displayNameHe": "אביר זהב",
+      "displayNameHe": "Golden Knight",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "/rewards/cards/shop/fantasy/golden_knight.svg",
@@ -832,7 +808,7 @@
     },
     {
       "cardKey": "green_spell",
-      "displayNameHe": "קסם ירוק",
+      "displayNameHe": "Green Spell",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "/rewards/cards/shop/fantasy/green_spell.svg",
@@ -844,7 +820,7 @@
     },
     {
       "cardKey": "green_star",
-      "displayNameHe": "כוכב ירוק",
+      "displayNameHe": "Green Star",
       "category": "shop",
       "seriesSlug": "space",
       "imageUrl": "/rewards/cards/shop/space/green_star.svg",
@@ -856,7 +832,7 @@
     },
     {
       "cardKey": "helper_bot",
-      "displayNameHe": "עוזר רובוט",
+      "displayNameHe": "Helper Bot",
       "category": "shop",
       "seriesSlug": "robots",
       "imageUrl": "/rewards/cards/shop/robots/helper_bot.svg",
@@ -867,32 +843,8 @@
       "isActive": false
     },
     {
-      "cardKey": "homeland_explorer",
-      "displayNameHe": "חוקר המולדת",
-      "category": "achievement",
-      "seriesSlug": "moledet",
-      "imageUrl": "/rewards/cards/achievements/moledet/homeland_explorer.svg",
-      "storagePath": "achievements/moledet/homeland_explorer.webp",
-      "imageDownloadUrl": null,
-      "imageDisplayUrl": null,
-      "imageThumbUrl": null,
-      "isActive": false
-    },
-    {
-      "cardKey": "homeland_scholar",
-      "displayNameHe": "ידע מולדת",
-      "category": "achievement",
-      "seriesSlug": "moledet",
-      "imageUrl": "/rewards/cards/achievements/moledet/homeland_scholar.svg",
-      "storagePath": "achievements/moledet/homeland_scholar.webp",
-      "imageDownloadUrl": null,
-      "imageDisplayUrl": null,
-      "imageThumbUrl": null,
-      "isActive": false
-    },
-    {
       "cardKey": "learning_hero",
-      "displayNameHe": "גיבור למידה",
+      "displayNameHe": "Learning Hero",
       "category": "shop",
       "seriesSlug": "heroes",
       "imageUrl": "/rewards/cards/shop/heroes/learning_hero.svg",
@@ -904,7 +856,7 @@
     },
     {
       "cardKey": "leo_arcade_champion",
-      "displayNameHe": "ליאו אלוף הארקייד",
+      "displayNameHe": "Leo Arcade Champion",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/776fc65e-ad34-4781-87fa-48f1a426d561/display.webp",
@@ -916,7 +868,7 @@
     },
     {
       "cardKey": "leo_archaeologist",
-      "displayNameHe": "ליאו הארכיאולוג",
+      "displayNameHe": "Leo Archaeologist",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0a69729f-32e9-498a-ae53-1d5d61d0ce16/display.webp",
@@ -928,7 +880,7 @@
     },
     {
       "cardKey": "leo_army_dog",
-      "displayNameHe": "ליאו כלב צבאי",
+      "displayNameHe": "Leo Army Dog",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/a0710b3a-0805-4578-a005-e341728ac9e4/display.webp",
@@ -940,7 +892,7 @@
     },
     {
       "cardKey": "leo_art_class",
-      "displayNameHe": "ליאו בחוג ציור",
+      "displayNameHe": "Leo Art Class",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/62bd3f70-b726-4ccb-a014-0468d3d9de2d/display.webp",
@@ -952,7 +904,7 @@
     },
     {
       "cardKey": "leo_artist",
-      "displayNameHe": "ליאו האמן",
+      "displayNameHe": "Leo Artist",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0d53fc2d-4166-4ec5-bc2b-14f182407f9f/display.webp",
@@ -964,7 +916,7 @@
     },
     {
       "cardKey": "leo_astronaut",
-      "displayNameHe": "ליאו האסטרונאוט",
+      "displayNameHe": "Leo Astronaut",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e1bccf06-dd37-4e83-92ce-73edce6ba44a/display.webp",
@@ -976,7 +928,7 @@
     },
     {
       "cardKey": "leo_at_beach",
-      "displayNameHe": "ליאו הולך לים",
+      "displayNameHe": "Leo At Beach",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/58b2a963-6f74-4513-98cc-7fa5f130d8f3/display.webp",
@@ -988,7 +940,7 @@
     },
     {
       "cardKey": "leo_at_library",
-      "displayNameHe": "ליאו בספרייה",
+      "displayNameHe": "Leo At Library",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6b5f5fc3-7b71-42eb-b61e-c63d3aa68833/display.webp",
@@ -1000,7 +952,7 @@
     },
     {
       "cardKey": "leo_at_pool",
-      "displayNameHe": "ליאו בבריכה",
+      "displayNameHe": "Leo At Pool",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/4695e711-a1f2-4fa5-aa8c-11f4ba789975/display.webp",
@@ -1012,7 +964,7 @@
     },
     {
       "cardKey": "leo_at_recess",
-      "displayNameHe": "ליאו בהפסקה",
+      "displayNameHe": "Leo At Recess",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/17f37270-3865-489a-af49-05843841f03b/display.webp",
@@ -1024,7 +976,7 @@
     },
     {
       "cardKey": "leo_at_zoo",
-      "displayNameHe": "ליאו בגן החיות",
+      "displayNameHe": "Leo At Zoo",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/1b7268ea-53b7-4db3-9ae6-17438070c90c/display.webp",
@@ -1036,7 +988,7 @@
     },
     {
       "cardKey": "leo_basketball",
-      "displayNameHe": "ליאו הכדורסלן",
+      "displayNameHe": "Leo Basketball",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0712540d-ee89-4616-9084-0f824fecb4f3/display.webp",
@@ -1048,7 +1000,7 @@
     },
     {
       "cardKey": "leo_camping",
-      "displayNameHe": "ליאו בקמפינג",
+      "displayNameHe": "Leo Camping",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3a0df9b0-cc7e-4522-85b0-1b3e356fb8d5/display.webp",
@@ -1060,7 +1012,7 @@
     },
     {
       "cardKey": "leo_candy_store",
-      "displayNameHe": "ליאו בחנות ממתקים",
+      "displayNameHe": "Leo Candy Store",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/df61698b-dad4-4b48-91e8-8b1c45e15f82/display.webp",
@@ -1072,7 +1024,7 @@
     },
     {
       "cardKey": "leo_carpenter",
-      "displayNameHe": "ליאו הנגר",
+      "displayNameHe": "Leo Carpenter",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/5afdebc3-ab1f-4002-88fd-4cc39eb2715d/display.webp",
@@ -1084,7 +1036,7 @@
     },
     {
       "cardKey": "leo_celebration",
-      "displayNameHe": "ליאו החוגג",
+      "displayNameHe": "Leo Celebration",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/822bf4e5-9b4f-4ec2-9128-3c489f451ff9/display.webp",
@@ -1096,7 +1048,7 @@
     },
     {
       "cardKey": "leo_champion",
-      "displayNameHe": "ליאו האלוף",
+      "displayNameHe": "Leo Champion",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d1c58167-9c0e-415e-a202-8ecb82258352/display.webp",
@@ -1108,7 +1060,7 @@
     },
     {
       "cardKey": "leo_chef",
-      "displayNameHe": "ליאו השף",
+      "displayNameHe": "Leo Chef",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/867fb654-4e48-456a-bafc-fe63a582d7d5/display.webp",
@@ -1120,7 +1072,7 @@
     },
     {
       "cardKey": "leo_cherry_blossom",
-      "displayNameHe": "ליאו בפריחת הדובדבן",
+      "displayNameHe": "Leo Cherry Blossom",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b6966237-7e09-417b-860a-0ae23ced11b2/display.webp",
@@ -1132,7 +1084,7 @@
     },
     {
       "cardKey": "leo_chess_club",
-      "displayNameHe": "ליאו בחוג שחמט",
+      "displayNameHe": "Leo Chess Club",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6461775c-6d91-4087-8a80-6b0ef3b57636/display.webp",
@@ -1144,7 +1096,7 @@
     },
     {
       "cardKey": "leo_classic",
-      "displayNameHe": "ליאו הקלאסי",
+      "displayNameHe": "Leo Classic",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/2f2203ef-c7a6-4f75-90f5-e0f4cc30fb9d/display.webp",
@@ -1156,7 +1108,7 @@
     },
     {
       "cardKey": "leo_clothes_shopping",
-      "displayNameHe": "ליאו קונה בגדים",
+      "displayNameHe": "Leo Clothes Shopping",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/06952901-e12b-4661-ad06-666fef66cebf/display.webp",
@@ -1168,7 +1120,7 @@
     },
     {
       "cardKey": "leo_clothing_store",
-      "displayNameHe": "ליאו בחנות בגדים",
+      "displayNameHe": "Leo Clothing Store",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/24378b8d-0077-4273-873a-8968b7374a5a/display.webp",
@@ -1180,7 +1132,7 @@
     },
     {
       "cardKey": "leo_computer_class",
-      "displayNameHe": "ליאו בשיעור מחשבים",
+      "displayNameHe": "Leo Computer Class",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/717e6d7e-78aa-4fac-aa61-b9a429bc4363/display.webp",
@@ -1192,7 +1144,7 @@
     },
     {
       "cardKey": "leo_cool",
-      "displayNameHe": "ליאו המגניב",
+      "displayNameHe": "Leo Cool",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/2ec5c682-90aa-4170-93a0-bb71d5ebdfb8/display.webp",
@@ -1204,7 +1156,7 @@
     },
     {
       "cardKey": "leo_cyclist",
-      "displayNameHe": "ליאו על אופניים",
+      "displayNameHe": "Leo Cyclist",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/433dc513-5a72-4503-8f14-6a0685f87dbd/display.webp",
@@ -1216,7 +1168,7 @@
     },
     {
       "cardKey": "leo_dancer",
-      "displayNameHe": "ליאו הרקדן",
+      "displayNameHe": "Leo Dancer",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/607604e5-d56c-4a51-aeee-4bca58e22054/display.webp",
@@ -1228,7 +1180,7 @@
     },
     {
       "cardKey": "leo_detective",
-      "displayNameHe": "ליאו עוזר הבלש",
+      "displayNameHe": "Leo Detective",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d35dd7bd-f5ea-453a-884d-ee476f499a92/display.webp",
@@ -1240,7 +1192,7 @@
     },
     {
       "cardKey": "leo_doctor",
-      "displayNameHe": "ליאו הרופא",
+      "displayNameHe": "Leo Doctor",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/59d4fa55-c4d4-4ac3-8bc0-0516f3b56540/display.webp",
@@ -1252,7 +1204,7 @@
     },
     {
       "cardKey": "leo_electrician",
-      "displayNameHe": "ליאו הטכנאי",
+      "displayNameHe": "Leo Electrician",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/626852d6-a238-4cab-82a1-b7f7d49f4e85/display.webp",
@@ -1264,7 +1216,7 @@
     },
     {
       "cardKey": "leo_enchanted_forest_guardian",
-      "displayNameHe": "ליאו שומר היער הקסום",
+      "displayNameHe": "Leo Enchanted Forest Guardian",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/a76b9322-5d0c-46be-aabf-64b7a57b458b/display.webp",
@@ -1276,7 +1228,7 @@
     },
     {
       "cardKey": "leo_engineer",
-      "displayNameHe": "ליאו המהנדס",
+      "displayNameHe": "Leo Engineer",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/41226f16-e08f-42f9-b793-00e5e0f8e866/display.webp",
@@ -1288,7 +1240,7 @@
     },
     {
       "cardKey": "leo_factory_manager",
-      "displayNameHe": "ליאו מנהל המפעל",
+      "displayNameHe": "Leo Factory Manager",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/c5793957-37c5-4909-8154-a75c1f712f09/display.webp",
@@ -1300,7 +1252,7 @@
     },
     {
       "cardKey": "leo_factory_tour",
-      "displayNameHe": "ליאו מסייר במפעל",
+      "displayNameHe": "Leo Factory Tour",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/30b10e37-36c5-442d-ac90-66f75511ba0d/display.webp",
@@ -1312,7 +1264,7 @@
     },
     {
       "cardKey": "leo_ferris_wheel",
-      "displayNameHe": "ליאו בגלגל ענק",
+      "displayNameHe": "Leo Ferris Wheel",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/4bb4d8cd-0ba4-4044-8b97-4be815e05c53/display.webp",
@@ -1324,7 +1276,7 @@
     },
     {
       "cardKey": "leo_firefighter",
-      "displayNameHe": "ליאו הכבאי",
+      "displayNameHe": "Leo Firefighter",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6871dbde-14eb-45c8-b8fd-3c462c8c2f3f/display.webp",
@@ -1336,7 +1288,7 @@
     },
     {
       "cardKey": "leo_firefighter_helper",
-      "displayNameHe": "ליאו עוזר כבאי",
+      "displayNameHe": "Leo Firefighter Helper",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/170cfbca-cbcf-4489-9d32-f4cbcb72f44b/display.webp",
@@ -1348,7 +1300,7 @@
     },
     {
       "cardKey": "leo_football",
-      "displayNameHe": "ליאו הכדורגלן",
+      "displayNameHe": "Leo Football",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b3d6a378-d0cc-41db-b80e-cbf2e354642d/display.webp",
@@ -1360,7 +1312,7 @@
     },
     {
       "cardKey": "leo_forest_guardian",
-      "displayNameHe": "ליאו שומר היער",
+      "displayNameHe": "Leo Forest Guardian",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/75658e95-76ee-4fe3-be5f-6dfdd101db23/display.webp",
@@ -1372,7 +1324,7 @@
     },
     {
       "cardKey": "leo_funny",
-      "displayNameHe": "ליאו המצחיק",
+      "displayNameHe": "Leo Funny",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/72210f47-e201-4673-8f2a-efea9283be49/display.webp",
@@ -1384,7 +1336,7 @@
     },
     {
       "cardKey": "leo_galactic_explorer",
-      "displayNameHe": "ליאו חוקר הגלקסיות",
+      "displayNameHe": "Leo Galactic Explorer",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/ff707a2d-927b-435c-9679-0068d84150bc/display.webp",
@@ -1396,7 +1348,7 @@
     },
     {
       "cardKey": "leo_galaxy_captain",
-      "displayNameHe": "ליאו קפטן גלקסי",
+      "displayNameHe": "Leo Galaxy Captain",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d26b17b1-0357-482a-b681-fe7e5691708d/display.webp",
@@ -1408,7 +1360,7 @@
     },
     {
       "cardKey": "leo_gamer",
-      "displayNameHe": "ליאו הגיימר",
+      "displayNameHe": "Leo Gamer",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/7feef7a6-50cc-4062-8183-4714a2162c25/display.webp",
@@ -1420,7 +1372,7 @@
     },
     {
       "cardKey": "leo_gardener",
-      "displayNameHe": "ליאו הגנן",
+      "displayNameHe": "Leo Gardener",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/da542f5f-a4b2-42b4-85ed-ce607e678765/display.webp",
@@ -1432,7 +1384,7 @@
     },
     {
       "cardKey": "leo_genius_inventor",
-      "displayNameHe": "ליאו הממציא הגאון",
+      "displayNameHe": "Leo Genius Inventor",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6fb61e03-b1fd-4e67-82e0-9ff9aa3847c3/display.webp",
@@ -1444,7 +1396,7 @@
     },
     {
       "cardKey": "leo_gets_star",
-      "displayNameHe": "ליאו מקבל כוכב",
+      "displayNameHe": "Leo Gets Star",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/18a40ff1-3887-48cb-bfa3-ffe25660c729/display.webp",
@@ -1456,7 +1408,7 @@
     },
     {
       "cardKey": "leo_glasses",
-      "displayNameHe": "ליאו עם משקפיים",
+      "displayNameHe": "Leo Glasses",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f40b5cd3-a134-44b6-98b8-e01872da79da/display.webp",
@@ -1468,7 +1420,7 @@
     },
     {
       "cardKey": "leo_golden_knight",
-      "displayNameHe": "ליאו אביר הזהב",
+      "displayNameHe": "Leo Golden Knight",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/ea1b3e9a-e296-42b7-822d-a6d6f7bfc154/display.webp",
@@ -1480,7 +1432,7 @@
     },
     {
       "cardKey": "leo_grand_wizard",
-      "displayNameHe": "ליאו המכשף הגדול",
+      "displayNameHe": "Leo Grand Wizard",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/bb783d28-3e32-43dc-9b18-29ae27128cee/display.webp",
@@ -1492,7 +1444,7 @@
     },
     {
       "cardKey": "leo_hot_air_balloon",
-      "displayNameHe": "ליאו בכדור פורח",
+      "displayNameHe": "Leo Hot Air Balloon",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/8b06af0d-4bea-4ebd-ac31-94b0771270de/display.webp",
@@ -1504,7 +1456,7 @@
     },
     {
       "cardKey": "leo_jump_rope",
-      "displayNameHe": "ליאו קופץ בחבל",
+      "displayNameHe": "Leo Jump Rope",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3513a341-1caf-4854-8137-6b4a34ede122/display.webp",
@@ -1516,7 +1468,7 @@
     },
     {
       "cardKey": "leo_king",
-      "displayNameHe": "ליאו המלך",
+      "displayNameHe": "Leo King",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/89cd6096-88e8-4332-affa-b31433cb6dd9/display.webp",
@@ -1528,7 +1480,7 @@
     },
     {
       "cardKey": "leo_knight",
-      "displayNameHe": "ליאו האביר",
+      "displayNameHe": "Leo Knight",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cb7b3c56-384d-45d5-842d-cb8617e7917f/display.webp",
@@ -1540,7 +1492,7 @@
     },
     {
       "cardKey": "leo_legendary_superhero",
-      "displayNameHe": "סופר ליאו האגדי",
+      "displayNameHe": "Leo Legendary Superhero",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d944878b-9688-4ea6-8425-4b75aded28e8/display.webp",
@@ -1552,7 +1504,7 @@
     },
     {
       "cardKey": "leo_magician",
-      "displayNameHe": "ליאו הקוסם",
+      "displayNameHe": "Leo Magician",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b23d9ab0-fcc6-4d4c-9791-fbab11f193fb/display.webp",
@@ -1564,7 +1516,7 @@
     },
     {
       "cardKey": "leo_marathon_runner",
-      "displayNameHe": "ליאו רץ מרתון",
+      "displayNameHe": "Leo Marathon Runner",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/402ae71f-e725-461c-b592-b41ff4f2dcec/display.webp",
@@ -1576,7 +1528,7 @@
     },
     {
       "cardKey": "leo_master_chef",
-      "displayNameHe": "ליאו השף הראשי",
+      "displayNameHe": "Leo Master Chef",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d8b179e7-a353-4283-98c7-7a5f075df336/display.webp",
@@ -1588,7 +1540,7 @@
     },
     {
       "cardKey": "leo_master_detective",
-      "displayNameHe": "ליאו בלש העל",
+      "displayNameHe": "Leo Master Detective",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/663d7127-0281-4fd1-9405-555c2409abe7/display.webp",
@@ -1600,7 +1552,7 @@
     },
     {
       "cardKey": "leo_master_painter",
-      "displayNameHe": "ליאו הצייר הגדול",
+      "displayNameHe": "Leo Master Painter",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/9b6647b1-59d2-4423-a45a-93418b0c9cc9/display.webp",
@@ -1612,7 +1564,7 @@
     },
     {
       "cardKey": "leo_miner",
-      "displayNameHe": "ליאו הכורה",
+      "displayNameHe": "Leo Miner",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dfbae0ad-453c-4978-95a4-915f783f68b5/display.webp",
@@ -1624,7 +1576,7 @@
     },
     {
       "cardKey": "leo_month_star",
-      "displayNameHe": "ליאו כוכב החודש",
+      "displayNameHe": "Leo Month Star",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/615f7a61-a30b-4d56-bbc3-d35319ab5c9c/display.webp",
@@ -1636,7 +1588,7 @@
     },
     {
       "cardKey": "leo_moon_walker",
-      "displayNameHe": "ליאו מטייל בירח",
+      "displayNameHe": "Leo Moon Walker",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/529d1632-8352-4370-bf6d-1f8ec60ed30f/display.webp",
@@ -1648,7 +1600,7 @@
     },
     {
       "cardKey": "leo_mountain_climber",
-      "displayNameHe": "ליאו מטפס ההרים",
+      "displayNameHe": "Leo Mountain Climber",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/54a55f0f-a3b8-434d-a5ca-ca4a2f119cf9/display.webp",
@@ -1660,7 +1612,7 @@
     },
     {
       "cardKey": "leo_music_star",
-      "displayNameHe": "ליאו כוכב הבמה",
+      "displayNameHe": "Leo Music Star",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/a7eb182b-2453-46aa-99c7-465cca44736e/display.webp",
@@ -1672,7 +1624,7 @@
     },
     {
       "cardKey": "leo_musician",
-      "displayNameHe": "ליאו המוזיקאי",
+      "displayNameHe": "Leo Musician",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b7bb97e6-b780-4595-a995-31c58c50fdc6/display.webp",
@@ -1684,7 +1636,7 @@
     },
     {
       "cardKey": "leo_nature_explorer",
-      "displayNameHe": "ליאו חוקר הטבע",
+      "displayNameHe": "Leo Nature Explorer",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f7da180a-2fdf-4afc-ac73-7fd50daa8aad/display.webp",
@@ -1696,7 +1648,7 @@
     },
     {
       "cardKey": "leo_ninja",
-      "displayNameHe": "ליאו הנינג'ה",
+      "displayNameHe": "Leo Ninja",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/173a297f-36a4-4035-bc25-a538b6d0f97d/display.webp",
@@ -1708,7 +1660,7 @@
     },
     {
       "cardKey": "leo_office_worker",
-      "displayNameHe": "ליאו במשרד",
+      "displayNameHe": "Leo Office Worker",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/2f7390f8-e9c9-43d3-a0ab-915c82624343/display.webp",
@@ -1720,7 +1672,7 @@
     },
     {
       "cardKey": "leo_on_train",
-      "displayNameHe": "ליאו ברכבת",
+      "displayNameHe": "Leo On Train",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cca8c6a7-8baf-4c3f-8dfd-59f484661d71/display.webp",
@@ -1732,7 +1684,7 @@
     },
     {
       "cardKey": "leo_pe_class",
-      "displayNameHe": "ליאו בשיעור ספורט",
+      "displayNameHe": "Leo Pe Class",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/60354d09-f98e-4c19-82c9-958972fc6ed3/display.webp",
@@ -1744,7 +1696,7 @@
     },
     {
       "cardKey": "leo_piano_player",
-      "displayNameHe": "ליאו מנגן בפסנתר",
+      "displayNameHe": "Leo Piano Player",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/bd21d841-983e-49f3-8378-3a51071c62bc/display.webp",
@@ -1756,7 +1708,7 @@
     },
     {
       "cardKey": "leo_picnic",
-      "displayNameHe": "ליאו בפיקניק",
+      "displayNameHe": "Leo Picnic",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d6971a57-6d38-498d-9d5d-44e23d7558c2/display.webp",
@@ -1768,7 +1720,7 @@
     },
     {
       "cardKey": "leo_pilot",
-      "displayNameHe": "ליאו הטייס",
+      "displayNameHe": "Leo Pilot",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/bc83617d-eea8-45f4-938b-159d8507df88/display.webp",
@@ -1780,7 +1732,7 @@
     },
     {
       "cardKey": "leo_pirate",
-      "displayNameHe": "ליאו הפיראט",
+      "displayNameHe": "Leo Pirate",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/4a3340df-ff37-4647-a7f9-6c141ba514f4/display.webp",
@@ -1792,7 +1744,7 @@
     },
     {
       "cardKey": "leo_pirate_captain",
-      "displayNameHe": "ליאו קפטן הים",
+      "displayNameHe": "Leo Pirate Captain",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/797fb0f5-a54a-4bf7-82ef-bc725fce4037/display.webp",
@@ -1804,7 +1756,7 @@
     },
     {
       "cardKey": "leo_playful",
-      "displayNameHe": "ליאו השובב",
+      "displayNameHe": "Leo Playful",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/96636d09-a0f2-431f-885e-a38fd017b872/display.webp",
@@ -1816,7 +1768,7 @@
     },
     {
       "cardKey": "leo_police_dog",
-      "displayNameHe": "ליאו כלב המשטרה",
+      "displayNameHe": "Leo Police Dog",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/45ef7528-f0a9-4838-9b1d-50ce940b78c9/display.webp",
@@ -1828,7 +1780,7 @@
     },
     {
       "cardKey": "leo_racing_driver",
-      "displayNameHe": "ליאו נהג המרוצים",
+      "displayNameHe": "Leo Racing Driver",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3e00de12-1e29-42fc-9ea5-cc22a16269bd/display.webp",
@@ -1840,7 +1792,7 @@
     },
     {
       "cardKey": "leo_rain_walk",
-      "displayNameHe": "ליאו מטייל בגשם",
+      "displayNameHe": "Leo Rain Walk",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dbd5fda2-3387-4053-ba7c-92d57985c449/display.webp",
@@ -1852,7 +1804,7 @@
     },
     {
       "cardKey": "leo_robot_engineer",
-      "displayNameHe": "ליאו המהנדס הרובוטי",
+      "displayNameHe": "Leo Robot Engineer",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b435034c-3ba0-4e60-9d36-551cee911c9b/display.webp",
@@ -1864,7 +1816,7 @@
     },
     {
       "cardKey": "leo_robotic",
-      "displayNameHe": "ליאו הרובוטי",
+      "displayNameHe": "Leo Robotic",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/ac34799f-36f0-4666-932c-97cb10fafe77/display.webp",
@@ -1876,7 +1828,7 @@
     },
     {
       "cardKey": "leo_runner",
-      "displayNameHe": "ליאו הרץ",
+      "displayNameHe": "Leo Runner",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/aa2b0207-e790-426e-b23a-063565b08f5c/display.webp",
@@ -1888,7 +1840,7 @@
     },
     {
       "cardKey": "leo_safari",
-      "displayNameHe": "ליאו בספארי",
+      "displayNameHe": "Leo Safari",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/907ed88c-76f8-49f0-9b34-46430f24c32b/display.webp",
@@ -1900,7 +1852,7 @@
     },
     {
       "cardKey": "leo_science_class",
-      "displayNameHe": "ליאו בשיעור מדעים",
+      "displayNameHe": "Leo Science Class",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b6a3bd80-2117-490f-a2d4-7cf5f3478948/display.webp",
@@ -1912,7 +1864,7 @@
     },
     {
       "cardKey": "leo_scientist",
-      "displayNameHe": "ליאו המדען",
+      "displayNameHe": "Leo Scientist",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/7b5991fa-3699-4ee4-8eeb-53503dafeb06/display.webp",
@@ -1924,7 +1876,7 @@
     },
     {
       "cardKey": "leo_shoe_shopping",
-      "displayNameHe": "ליאו קונה נעליים",
+      "displayNameHe": "Leo Shoe Shopping",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b48955b9-7630-4f5d-94c9-92221e345ede/display.webp",
@@ -1936,7 +1888,7 @@
     },
     {
       "cardKey": "leo_skateboarder",
-      "displayNameHe": "ליאו בסקייטבורד",
+      "displayNameHe": "Leo Skateboarder",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/4a3baebd-c906-498b-871e-bc361c9abe44/display.webp",
@@ -1948,7 +1900,7 @@
     },
     {
       "cardKey": "leo_skier",
-      "displayNameHe": "ליאו בסקי",
+      "displayNameHe": "Leo Skier",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d0b08ea3-a85e-452e-8cf5-0a784d782598/display.webp",
@@ -1960,7 +1912,7 @@
     },
     {
       "cardKey": "leo_smart",
-      "displayNameHe": "ליאו החכם",
+      "displayNameHe": "Leo Smart",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0cfde646-1c43-41e2-8c17-57648c98f278/display.webp",
@@ -1972,7 +1924,7 @@
     },
     {
       "cardKey": "leo_soccer_champion",
-      "displayNameHe": "ליאו אלוף הכדורגל",
+      "displayNameHe": "Leo Soccer Champion",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b7143c4d-31d1-404a-8b53-6c7a22a02bec/display.webp",
@@ -1984,7 +1936,7 @@
     },
     {
       "cardKey": "leo_sorcerer",
-      "displayNameHe": "ליאו המכשף",
+      "displayNameHe": "Leo Sorcerer",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d1cb3bea-ead3-4e7f-85a7-ad39dab3c0d6/display.webp",
@@ -1996,7 +1948,7 @@
     },
     {
       "cardKey": "leo_space_commander",
-      "displayNameHe": "ליאו מפקד החלל",
+      "displayNameHe": "Leo Space Commander",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/74c68bb5-15cd-423a-b263-13ff64fd4e0a/display.webp",
@@ -2008,7 +1960,7 @@
     },
     {
       "cardKey": "leo_space_pilot",
-      "displayNameHe": "ליאו טייס חלל",
+      "displayNameHe": "Leo Space Pilot",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/5d7ea546-9124-4d1b-9978-dd18a89f1544/display.webp",
@@ -2020,7 +1972,7 @@
     },
     {
       "cardKey": "leo_sports_store",
-      "displayNameHe": "ליאו בחנות הספורט",
+      "displayNameHe": "Leo Sports Store",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/4573b9c8-002c-4c65-9abd-b657d263b9e2/display.webp",
@@ -2032,7 +1984,7 @@
     },
     {
       "cardKey": "leo_star_explorer",
-      "displayNameHe": "ליאו חוקר הכוכבים",
+      "displayNameHe": "Leo Star Explorer",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f20656f1-62c0-4db7-abb2-3d10461650f1/display.webp",
@@ -2044,7 +1996,7 @@
     },
     {
       "cardKey": "leo_suit",
-      "displayNameHe": "ליאו בחליפה",
+      "displayNameHe": "Leo Suit",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d3a2c9f2-afa2-4c5f-926f-d13765e918a6/display.webp",
@@ -2056,7 +2008,7 @@
     },
     {
       "cardKey": "leo_super_inventor",
-      "displayNameHe": "ליאו ממציא העל",
+      "displayNameHe": "Leo Super Inventor",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6787f2c8-9632-4ca1-80a0-40835d87ef84/display.webp",
@@ -2068,7 +2020,7 @@
     },
     {
       "cardKey": "leo_superhero",
-      "displayNameHe": "ליאו גיבור העל",
+      "displayNameHe": "Leo Superhero",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e8c6b6d3-84b2-4f56-808c-b667332a1a85/display.webp",
@@ -2080,7 +2032,7 @@
     },
     {
       "cardKey": "leo_surfer",
-      "displayNameHe": "ליאו הגולש הצעיר",
+      "displayNameHe": "Leo Surfer",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/98d68158-9bb7-4d3c-8d44-ea7c044ed901/display.webp",
@@ -2092,7 +2044,7 @@
     },
     {
       "cardKey": "leo_swimmer",
-      "displayNameHe": "ליאו השחיין",
+      "displayNameHe": "Leo Swimmer",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6e4d90e4-1ae3-4b95-8e2c-d909c664e58e/display.webp",
@@ -2104,7 +2056,7 @@
     },
     {
       "cardKey": "leo_teacher",
-      "displayNameHe": "ליאו המורה",
+      "displayNameHe": "Leo Teacher",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/fdf754fe-6e20-42d9-aa15-d0532e30800b/display.webp",
@@ -2116,7 +2068,7 @@
     },
     {
       "cardKey": "leo_technodog",
-      "displayNameHe": "ליאו טכנודוג",
+      "displayNameHe": "Leo Technodog",
       "category": "shop",
       "seriesSlug": "space-tech",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cb742a3a-84fa-436b-bd9b-4038b4968664/display.webp",
@@ -2128,7 +2080,7 @@
     },
     {
       "cardKey": "leo_treasure_hunter",
-      "displayNameHe": "ליאו מחפש האוצר",
+      "displayNameHe": "Leo Treasure Hunter",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/f39c5ce5-8236-4a4e-8170-1a73408f3804/display.webp",
@@ -2140,7 +2092,7 @@
     },
     {
       "cardKey": "leo_veterinarian",
-      "displayNameHe": "ליאו הווטרינר",
+      "displayNameHe": "Leo Veterinarian",
       "category": "shop",
       "seriesSlug": "professions",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/94f779fd-69dd-4722-b3bd-4c04c287377d/display.webp",
@@ -2152,7 +2104,7 @@
     },
     {
       "cardKey": "leo_walk_to_school",
-      "displayNameHe": "ליאו הולך לבית הספר",
+      "displayNameHe": "Leo Walk To School",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/b9531e19-f3a1-4f66-a441-12be56294c9a/display.webp",
@@ -2164,7 +2116,7 @@
     },
     {
       "cardKey": "leo_wave_champion",
-      "displayNameHe": "ליאו אלוף הגלים",
+      "displayNameHe": "Leo Wave Champion",
       "category": "shop",
       "seriesSlug": "sport-fun",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/a4a2a62f-1e9f-478a-8835-bc941f5d58c2/display.webp",
@@ -2176,7 +2128,7 @@
     },
     {
       "cardKey": "leo_wizard",
-      "displayNameHe": "ליאו הקוסם הצעיר",
+      "displayNameHe": "Leo Wizard",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/2771acec-7ab0-4141-a47c-668016c54d3c/display.webp",
@@ -2188,7 +2140,7 @@
     },
     {
       "cardKey": "leo_world_explorer",
-      "displayNameHe": "ליאו מגלה העולם",
+      "displayNameHe": "Leo World Explorer",
       "category": "shop",
       "seriesSlug": "style",
       "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dc13ff01-4305-4fbc-a20f-713b1ce7ebd6/display.webp",
@@ -2200,7 +2152,7 @@
     },
     {
       "cardKey": "lion_gold",
-      "displayNameHe": "אריה זהב",
+      "displayNameHe": "Lion Gold",
       "category": "shop",
       "seriesSlug": "animals",
       "imageUrl": "/rewards/cards/shop/animals/lion_gold.svg",
@@ -2212,7 +2164,7 @@
     },
     {
       "cardKey": "little_dragon",
-      "displayNameHe": "דרקון קטן",
+      "displayNameHe": "Little Dragon",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "/rewards/cards/shop/fantasy/little_dragon.svg",
@@ -2224,7 +2176,7 @@
     },
     {
       "cardKey": "magic_forest",
-      "displayNameHe": "יער קסום",
+      "displayNameHe": "Magic Forest",
       "category": "shop",
       "seriesSlug": "nature",
       "imageUrl": "/rewards/cards/shop/nature/magic_forest.svg",
@@ -2236,7 +2188,7 @@
     },
     {
       "cardKey": "magic_shield",
-      "displayNameHe": "מגן הקסם",
+      "displayNameHe": "Magic Shield",
       "category": "shop",
       "seriesSlug": "fantasy",
       "imageUrl": "/rewards/cards/shop/fantasy/magic_shield.svg",
@@ -2248,7 +2200,7 @@
     },
     {
       "cardKey": "math_star",
-      "displayNameHe": "כוכב חשבון",
+      "displayNameHe": "Math Star",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "/rewards/cards/achievements/math/math_star.svg",
@@ -2260,7 +2212,7 @@
     },
     {
       "cardKey": "mission_done",
-      "displayNameHe": "משימה הושלמה",
+      "displayNameHe": "Mission Done",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/mission_done.svg",
@@ -2272,7 +2224,7 @@
     },
     {
       "cardKey": "multiplication_champ",
-      "displayNameHe": "אלוף הכפל",
+      "displayNameHe": "Multiplication Champ",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "/rewards/cards/achievements/math/multiplication_champ.svg",
@@ -2284,7 +2236,7 @@
     },
     {
       "cardKey": "nature_explorer",
-      "displayNameHe": "חוקר הטבע",
+      "displayNameHe": "Nature Explorer",
       "category": "achievement",
       "seriesSlug": "science",
       "imageUrl": "/rewards/cards/achievements/science/nature_explorer.svg",
@@ -2296,7 +2248,7 @@
     },
     {
       "cardKey": "nebula_glow",
-      "displayNameHe": "ערפילית זוהרת",
+      "displayNameHe": "Nebula Glow",
       "category": "shop",
       "seriesSlug": "space",
       "imageUrl": "/rewards/cards/shop/space/nebula_glow.svg",
@@ -2308,7 +2260,7 @@
     },
     {
       "cardKey": "never_give_up",
-      "displayNameHe": "לא מוותר",
+      "displayNameHe": "Never Give Up",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/never_give_up.svg",
@@ -2320,7 +2272,7 @@
     },
     {
       "cardKey": "number_explorer",
-      "displayNameHe": "חוקר המספרים",
+      "displayNameHe": "Number Explorer",
       "category": "achievement",
       "seriesSlug": "math",
       "imageUrl": "/rewards/cards/achievements/math/number_explorer.svg",
@@ -2332,7 +2284,7 @@
     },
     {
       "cardKey": "number_hero",
-      "displayNameHe": "גיבור המספרים",
+      "displayNameHe": "Number Hero",
       "category": "shop",
       "seriesSlug": "heroes",
       "imageUrl": "/rewards/cards/shop/heroes/number_hero.svg",
@@ -2344,7 +2296,7 @@
     },
     {
       "cardKey": "panda_happy",
-      "displayNameHe": "פנדה שמחה",
+      "displayNameHe": "Panda Happy",
       "category": "shop",
       "seriesSlug": "animals",
       "imageUrl": "/rewards/cards/shop/animals/panda_happy.svg",
@@ -2356,7 +2308,7 @@
     },
     {
       "cardKey": "parent_activity",
-      "displayNameHe": "פעילות מהורה",
+      "displayNameHe": "Parent Activity",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/parent_activity.svg",
@@ -2368,7 +2320,7 @@
     },
     {
       "cardKey": "persistence_hero",
-      "displayNameHe": "גיבור התמדה",
+      "displayNameHe": "Persistence Hero",
       "category": "shop",
       "seriesSlug": "heroes",
       "imageUrl": "/rewards/cards/shop/heroes/persistence_hero.svg",
@@ -2380,7 +2332,7 @@
     },
     {
       "cardKey": "power_week",
-      "displayNameHe": "שבוע חזק",
+      "displayNameHe": "Power Week",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/power_week.svg",
@@ -2392,7 +2344,7 @@
     },
     {
       "cardKey": "ptero_fly",
-      "displayNameHe": "פטרוזאור",
+      "displayNameHe": "Ptero Fly",
       "category": "shop",
       "seriesSlug": "dinosaurs",
       "imageUrl": "/rewards/cards/shop/dinosaurs/ptero_fly.svg",
@@ -2404,7 +2356,7 @@
     },
     {
       "cardKey": "question_master",
-      "displayNameHe": "מאסטר שאלות",
+      "displayNameHe": "Question Master",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/question_master.svg",
@@ -2416,7 +2368,7 @@
     },
     {
       "cardKey": "shape_master",
-      "displayNameHe": "גיאומטר מוכשר",
+      "displayNameHe": "Shape Master",
       "category": "achievement",
       "seriesSlug": "geometry",
       "imageUrl": "/rewards/cards/achievements/geometry/shape_master.svg",
@@ -2428,7 +2380,7 @@
     },
     {
       "cardKey": "silver_robot",
-      "displayNameHe": "רובוט כסוף",
+      "displayNameHe": "Silver Robot",
       "category": "shop",
       "seriesSlug": "robots",
       "imageUrl": "/rewards/cards/shop/robots/silver_robot.svg",
@@ -2440,7 +2392,7 @@
     },
     {
       "cardKey": "smart_robot",
-      "displayNameHe": "רובוט חכם",
+      "displayNameHe": "Smart Robot",
       "category": "shop",
       "seriesSlug": "robots",
       "imageUrl": "/rewards/cards/shop/robots/smart_robot.svg",
@@ -2452,7 +2404,7 @@
     },
     {
       "cardKey": "space_cat",
-      "displayNameHe": "חתול חלל",
+      "displayNameHe": "Space Cat",
       "category": "shop",
       "seriesSlug": "space",
       "imageUrl": "/rewards/cards/shop/space/space_cat.svg",
@@ -2464,7 +2416,7 @@
     },
     {
       "cardKey": "space_pilot",
-      "displayNameHe": "טייס חלל",
+      "displayNameHe": "Space Pilot",
       "category": "shop",
       "seriesSlug": "space",
       "imageUrl": "/rewards/cards/shop/space/space_pilot.svg",
@@ -2476,7 +2428,7 @@
     },
     {
       "cardKey": "star_rocket",
-      "displayNameHe": "טיל כוכבים",
+      "displayNameHe": "Star Rocket",
       "category": "shop",
       "seriesSlug": "space",
       "imageUrl": "/rewards/cards/shop/space/star_rocket.svg",
@@ -2488,7 +2440,7 @@
     },
     {
       "cardKey": "streak_14",
-      "displayNameHe": "לוחם התמדה",
+      "displayNameHe": "Streak 14",
       "category": "achievement",
       "seriesSlug": "persistence",
       "imageUrl": "/rewards/cards/achievements/persistence/streak_14.svg",
@@ -2500,7 +2452,7 @@
     },
     {
       "cardKey": "streak_3",
-      "displayNameHe": "מתמיד 3 ימים",
+      "displayNameHe": "Streak 3",
       "category": "achievement",
       "seriesSlug": "persistence",
       "imageUrl": "/rewards/cards/achievements/persistence/streak_3.svg",
@@ -2512,7 +2464,7 @@
     },
     {
       "cardKey": "streak_7",
-      "displayNameHe": "מתמיד 7 ימים",
+      "displayNameHe": "Streak 7",
       "category": "achievement",
       "seriesSlug": "persistence",
       "imageUrl": "/rewards/cards/achievements/persistence/streak_7.svg",
@@ -2524,7 +2476,7 @@
     },
     {
       "cardKey": "strong_start",
-      "displayNameHe": "מתחיל חזק",
+      "displayNameHe": "Strong Start",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/strong_start.svg",
@@ -2536,7 +2488,7 @@
     },
     {
       "cardKey": "tiger_fast",
-      "displayNameHe": "נמר מהיר",
+      "displayNameHe": "Tiger Fast",
       "category": "shop",
       "seriesSlug": "animals",
       "imageUrl": "/rewards/cards/shop/animals/tiger_fast.svg",
@@ -2548,7 +2500,7 @@
     },
     {
       "cardKey": "top_goalkeeper",
-      "displayNameHe": "שוער מעולה",
+      "displayNameHe": "Top Goalkeeper",
       "category": "shop",
       "seriesSlug": "football",
       "imageUrl": "/rewards/cards/shop/football/top_goalkeeper.svg",
@@ -2560,7 +2512,7 @@
     },
     {
       "cardKey": "trex_mighty",
-      "displayNameHe": "טי-רекс",
+      "displayNameHe": "Trex Mighty",
       "category": "shop",
       "seriesSlug": "dinosaurs",
       "imageUrl": "/rewards/cards/shop/dinosaurs/trex_mighty.svg",
@@ -2572,7 +2524,7 @@
     },
     {
       "cardKey": "tri_guard",
-      "displayNameHe": "טריצרטופס",
+      "displayNameHe": "Tri Guard",
       "category": "shop",
       "seriesSlug": "dinosaurs",
       "imageUrl": "/rewards/cards/shop/dinosaurs/tri_guard.svg",
@@ -2584,7 +2536,7 @@
     },
     {
       "cardKey": "week_star",
-      "displayNameHe": "כוכב השבוע",
+      "displayNameHe": "Week Star",
       "category": "achievement",
       "seriesSlug": "general",
       "imageUrl": "/rewards/cards/achievements/general/week_star.svg",
@@ -2595,20 +2547,8 @@
       "isActive": false
     },
     {
-      "cardKey": "winning_reader",
-      "displayNameHe": "קורא מנצח",
-      "category": "achievement",
-      "seriesSlug": "hebrew",
-      "imageUrl": "/rewards/cards/achievements/hebrew/winning_reader.svg",
-      "storagePath": "achievements/hebrew/winning_reader.webp",
-      "imageDownloadUrl": null,
-      "imageDisplayUrl": null,
-      "imageThumbUrl": null,
-      "isActive": false
-    },
-    {
       "cardKey": "wise_owl",
-      "displayNameHe": "ינשוף חכם",
+      "displayNameHe": "Wise Owl",
       "category": "shop",
       "seriesSlug": "nature",
       "imageUrl": "/rewards/cards/shop/nature/wise_owl.svg",
@@ -2620,7 +2560,7 @@
     },
     {
       "cardKey": "wise_turtle",
-      "displayNameHe": "צב חכם",
+      "displayNameHe": "Wise Turtle",
       "category": "shop",
       "seriesSlug": "nature",
       "imageUrl": "/rewards/cards/shop/nature/wise_turtle.svg",
@@ -2631,32 +2571,8 @@
       "isActive": false
     },
     {
-      "cardKey": "word_discoverer",
-      "displayNameHe": "מגלה מילים",
-      "category": "achievement",
-      "seriesSlug": "hebrew",
-      "imageUrl": "/rewards/cards/achievements/hebrew/word_discoverer.svg",
-      "storagePath": "achievements/hebrew/word_discoverer.webp",
-      "imageDownloadUrl": null,
-      "imageDisplayUrl": null,
-      "imageThumbUrl": null,
-      "isActive": false
-    },
-    {
-      "cardKey": "young_reader",
-      "displayNameHe": "קורא צעיר",
-      "category": "achievement",
-      "seriesSlug": "hebrew",
-      "imageUrl": "/rewards/cards/achievements/hebrew/young_reader.svg",
-      "storagePath": "achievements/hebrew/young_reader.webp",
-      "imageDownloadUrl": null,
-      "imageDisplayUrl": null,
-      "imageThumbUrl": null,
-      "isActive": false
-    },
-    {
       "cardKey": "young_scientist",
-      "displayNameHe": "מדען צעיר",
+      "displayNameHe": "Young Scientist",
       "category": "achievement",
       "seriesSlug": "science",
       "imageUrl": "/rewards/cards/achievements/science/young_scientist.svg",

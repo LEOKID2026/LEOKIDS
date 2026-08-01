@@ -20,7 +20,13 @@
     },
     "subject": {
       "type": "string",
-      "enum": ["hebrew", "math", "geometry", "english", "science", "geography"]
+      "enum": [
+        "math",
+        "geometry",
+        "english",
+        "science",
+        "geography"
+      ]
     },
     "topic": {
       "type": "string",
@@ -42,7 +48,12 @@
     },
     "cognitive_level": {
       "type": "string",
-      "enum": ["recognition", "understanding", "application", "reasoning"]
+      "enum": [
+        "recognition",
+        "understanding",
+        "application",
+        "reasoning"
+      ]
     },
     "description": {
       "type": "string",
@@ -59,7 +70,9 @@
     "linked_skill_ids": {
       "type": "array",
       "description": "Optional links to other spine skill_ids (e.g. Hebrew rich-bank → content-map rows).",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "schema_version": {
       "type": "integer",

@@ -150,7 +150,7 @@ export function renderGeometryConceptualRowToQuestion(row, ctx) {
 
 /**
  * @param {{ gradeKey: string, levelKey: string, topic: string }} ctx
- * @returns {null | { question: string, correctAnswer: string, answers: string[], params: object }}
+ * @returns {null || { question: string, correctAnswer: string, answers: string[], params: object }}
  */
 export function pickGeometryConceptualQuestion(ctx) {
   const { gradeKey, levelKey, topic } = ctx;

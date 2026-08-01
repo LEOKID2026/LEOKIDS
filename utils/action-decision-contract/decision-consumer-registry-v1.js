@@ -71,7 +71,7 @@ export const DECISION_CONSUMER_REGISTRY_V1 = Object.freeze([
   Object.freeze({
     id: "parent-report",
     paths: Object.freeze([
-      "utils/parent-report-engine-insights-he.js",
+      "utils/parent-report-engine-insights.js",
       "utils/detailed-parent-report.js",
       "pages/learning/parent-report.js",
       "pages/learning/parent-report-detailed.js",

@@ -3,8 +3,8 @@
  *
  * Root cause of 2026-05-23 partial run (AAA7 grade 4 English):
  *   The English page presents TWO question shapes in the same session:
- *     - MCQ ("choice") for en_to_he direction vocabulary
- *     - Free-text typing for he_to_en direction vocabulary at grade ≥ 4
+ *     - MCQ ("choice") for en_to_meaning direction vocabulary
+ *     - Free-text typing for meaning_to_en direction vocabulary at grade ≥ 4
  *   (see pages/learning/english-master.js determineMcqOrTyping())
  *   The previous generic MCQ driver waited 20 s for MCQ buttons that never
  *   arrived for typing questions and exited the session early.
@@ -25,7 +25,7 @@
  *   - Typing mode auto-advances (setTimeout in handleAnswer): 1000 ms correct,
  *     1500 ms wrong. The "שאלה הבאה" button must NOT be clicked by the driver.
  *   - Typing placeholder matches Hebrew master: "כתוב את התשובה שלך כאן..."
- *   - Correct answer for he_to_en typing is an English word surfaced via the
+ *   - Correct answer for meaning_to_en typing is an English word surfaced via the
  *     React fiber probe anchored on the always-present learning-stop-game node.
  */
 

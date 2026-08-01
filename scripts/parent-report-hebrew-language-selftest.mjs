@@ -19,13 +19,13 @@ const {
   findReadabilityLeakSubstringsInString,
   scanValueForForbidden,
 } = await import(u("utils/parent-report-language/forbidden-terms.js"));
-const { normalizePedagogyForParentReportHe } = await import(u("utils/parent-report-language/pedagogy-glossary-he.js"));
-const { normalizeParentFacingHe } = await import(u("utils/parent-report-language/parent-facing-normalize-he.js"));
+const { normalizePedagogyForParentReport } = await import(u("utils/parent-report-language/pedagogy-glossary.js"));
+const { normalizeParentFacing } = await import(u("utils/parent-report-language/parent-facing-normalize.js"));
 const { buildWhyThisRecommendationHe, interventionTypeLabelHe } = await import(u("utils/topic-next-step-phase2.js"));
-const { confidenceLevelParentSummaryHe } = await import(u("utils/parent-report-language/confidence-parent-he.js"));
-const { priorityLevelParentLabelHe } = await import(u("utils/parent-report-language/priority-parent-he.js"));
+const { confidenceLevelParentSummaryHe } = await import(u("utils/parent-report-language/confidence-parent.js"));
+const { priorityLevelParentLabelHe } = await import(u("utils/parent-report-language/priority-parent.js"));
 const { diagnosticPrimarySourceParentLabelHe } = await import(
-  u("utils/parent-report-language/short-report-source-label-he.js")
+  u("utils/parent-report-language/short-report-source-label.js")
 );
 const {
   executiveV2HomeFocusHe,
@@ -127,17 +127,17 @@ assert.equal(treeHits, 0, "scanValueForForbidden should find no hits in sample t
 
 // Pedagogy gloss — engine/taxonomy phrasing → parent Hebrew (display layer)
 assert.equal(
-  normalizePedagogyForParentReportHe("חיבור עם/בלי נשיאה"),
+  normalizePedagogyForParentReport("חיבור עם/בלי נשיאה"),
   "חיבור עם העברה עשרונית ובלי העברה"
 );
 assert.ok(
-  normalizePedagogyForParentReportHe("נכון כשאין נשיאה").includes("העברה"),
+  normalizePedagogyForParentReport("נכון כשאין נשיאה").includes("העברה"),
   "expected העברה replacement"
 );
-assert.equal(normalizePedagogyForParentReportHe("נשיאה"), "העברה עשרונית (בחיבור)");
+assert.equal(normalizePedagogyForParentReport("נשיאה"), "העברה עשרונית (בחיבור)");
 
 // שכבת ניסוח הורה מלאה — ללא מאסטרי/טקסונומיה במחרוזת
-const glossed = normalizeParentFacingHe("שליטה יציבה בנשיאה · מאסטרי יציב · טקסונומיה M-02");
+const glossed = normalizeParentFacing("שליטה יציבה בנשיאה · מאסטרי יציב · טקסונומיה M-02");
 assert.ok(!glossed.includes("מאסטרי"), glossed);
 assert.ok(!glossed.toLowerCase().includes("m-02"), glossed);
 

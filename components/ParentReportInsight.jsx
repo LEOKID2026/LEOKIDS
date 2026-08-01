@@ -12,7 +12,7 @@
 
 import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import React from "react";
-import { normalizeParentFacingHe } from "../utils/parent-report-language/parent-facing-normalize.js";
+import { normalizeParentFacing } from "../utils/parent-report-language/parent-facing-normalize.js";
 import { filterOutParentReportDuplicates } from "../utils/parent-report-text-dedupe.js";
 
 function isObject(value) {
@@ -131,7 +131,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
 /**
  * @param {{
- *   explanation: { ok?: boolean; text?: string; source?: string; structured?: object | null; structuredSource?: string | null } | null | undefined;
+ *   explanation: { ok?: boolean; text?: string; source?: string; structured?: object || null; structuredSource?: string || null } || null || undefined;
  *   className?: string;
  *   excludeHomeTipTextsHe?: string[];
  * }} props
@@ -139,7 +139,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 export function ParentReportInsight({ explanation, className = "", excludeHomeTipTextsHe = [] }) {
   if (!explanation?.ok) return null;
   const structuredRaw = readStructured(explanation);
-  const fallbackText = typeof explanation?.text === "string" ? normalizeParentFacingHe(explanation.text) : "";
+  const fallbackText = typeof explanation?.text === "string" ? normalizeParentFacing(explanation.text) : "";
 
   // Wave 2 Fix 1.3: avoid repeating a home tip that already appeared verbatim (or
   // near-verbatim) in "What's recommended at home" (ParentReportParentSections).

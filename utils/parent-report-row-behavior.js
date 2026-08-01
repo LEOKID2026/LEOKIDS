@@ -1,5 +1,5 @@
 /**
- * פרופיל התנהגות ברמת שורת דוח — מבוסס אירועי טעות מנורמלים + מדדי שורה (ללא UI).
+ *      —     +   ( UI).
  */
 
 import { mistakePatternClusterKey } from "./mistake-event.js";
@@ -156,8 +156,7 @@ export function computeRowBehaviorProfile(subjectId, topicRowKey, row, rawMistak
         maxPatternFamilyRepeats: maxFamCount,
       },
     },
-    { source: "behavior", phase: "scores", data: { ...scores, winner, bestScore: Math.round(best * 100) / 100 } },
-  ];
+    { source: "behavior", phase: "scores", data: { ...scores, winner, bestScore: Math.round(best * 100) / 100 } }];
 
   const summaryParts = [];
   if (winner === "undetermined") {

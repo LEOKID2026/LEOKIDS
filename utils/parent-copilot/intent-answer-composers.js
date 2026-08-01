@@ -7,7 +7,7 @@ import {
   findTopicRowByKey,
   listCopilotAnchoredTopicRows,
   normalizeSubjectId,
-  subjectLabelHe,
+  subjectLabel,
   SUBJECT_ORDER,
 } from "./contract-reader.js";
 import { resolveReportRowFromUtterance } from "./report-row-resolver.js";
@@ -26,12 +26,12 @@ import {
   zeroEvidenceSubjectCopilotHe,
 } from "../parent-report-language/subject-evidence-policy.js";
 import { ANSWER_CONTRACT, resolveAnswerContract, subjectQuestionCountFromPayload } from "./intent-answer-contract.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 import {
   evidenceSourcePhraseHe,
   gradeScopeMeaningHe,
   masteryReallocationHe,
-} from "../parent-report-language/grade-insight-he.js";
+} from "../parent-report-language/grade-insight.js";
 import { detectAggregateQuestionClass } from "./semantic-question-class.js";
 
 const STRONG_ACC_MIN = 75;
@@ -134,7 +134,7 @@ function subjectWeightedAvgRows(payload) {
       }
     }
     if (totalQ > 0) {
-      rows.push({ sid, label: subjectLabelHe(sid), totalQ, avg: Math.round(wAcc / totalQ) });
+      rows.push({ sid, label: subjectLabel(sid), totalQ, avg: Math.round(wAcc / totalQ) });
     }
   }
   return rows;
@@ -292,7 +292,7 @@ function composeReportExplanation(params) {
   const metas = collectPracticeMetrics(payload);
   const totalQ = metas.reduce((s, m) => s + m.q, 0);
   const subjectsPracticed = new Set(metas.map((m) => m.sid));
-  const subjectLabels = [...subjectsPracticed].map((sid) => subjectLabelHe(sid));
+  const subjectLabels = [...subjectsPracticed].map((sid) => subjectLabel(sid));
   const strong = metas
     .filter((m) => m.q >= STRONG_Q_MIN && m.acc >= STRONG_ACC_MIN)
     .sort((a, b) => b.acc - a.acc || b.q - a.q)
@@ -314,14 +314,14 @@ function composeReportExplanation(params) {
   const meaningParts = [];
   if (strong.length) {
     meaningParts.push(
-      `What works relatively well: ${strong.map((m) =>`${subjectLabelHe(m.sid)} - ${m.displayName} (about ${m.acc}% on ${m.q} questions)`).join("; ")}.`,
+      `What works relatively well: ${strong.map((m) =>`${subjectLabel(m.sid)} - ${m.displayName} (about ${m.acc}% on ${m.q} questions)`).join("; ")}.`,
     );
   }
   if (weak.length) {
     const lead =
       weak.length === 1
-        ? `The main thing that requires attention right now is ${subjectLabelHe(weak[0].sid)} - ${weak[0].displayName}`
-        : `Places that require strengthening: ${weak.map((m) =>`${subjectLabelHe(m.sid)} - ${m.displayName} (about ${m.acc}%)`).join("; ")}`;
+        ? `The main thing that requires attention right now is ${subjectLabel(weak[0].sid)} - ${weak[0].displayName}`
+        : `Places that require strengthening: ${weak.map((m) =>`${subjectLabel(m.sid)} - ${m.displayName} (about ${m.acc}%)`).join("; ")}`;
     meaningParts.push(`${lead}.`);
   } else if (!strong.length && metas.length) {
     meaningParts.push("There is still no very prominent strong line - you should continue a short practice and follow stability.");
@@ -561,7 +561,7 @@ function composeMistakePattern(params) {
 function composeHomePractice(params) {
   const truthPacket = params.truthPacket;
   const displayName = String(truthPacket?.scopeLabel || truthPacket?.surfaceFacts?.displayName || "the topic").trim();
-  const utterance = foldUtteranceForHeMatch(String(params?.utteranceStr || ""));
+  const utterance = foldUtteranceForMatch(String(params?.utteranceStr || ""));
   const q = Math.max(0, Number(truthPacket?.surfaceFacts?.questions) || 0);
   const acc = Math.max(0, Math.min(100, Math.round(Number(truthPacket?.surfaceFacts?.accuracy) || 0)));
   const cannot = truthPacket?.derivedLimits?.cannotConcludeYet === true;
@@ -570,7 +570,7 @@ function composeHomePractice(params) {
     return null;
   }
   const duration =
-    /כמה\s*זמן/u.test(utterance) ? "5-10 minutes a day, no more" : "About 5-10 minutes a day";
+    /(?!)/u.test(utterance) ? "5-10 minutes a day, no more" : "About 5-10 minutes a day";
 
   return {
     answerBlocks: [
@@ -590,7 +590,7 @@ function composeHomePractice(params) {
         source: "intent_composer",
       },
     ],
-    plannerIntent: /שבוע/u.test(utterance) ? "what_to_do_this_week" : "what_to_do_today",
+    plannerIntent: /(?!)/u.test(utterance) ? "what_to_do_this_week" : "what_to_do_today",
     answerComposerUsed: ANSWER_CONTRACT.home_practice,
   };
 }
@@ -617,14 +617,14 @@ function composeStrength(params) {
       answerBlocks: [
         {
           type: "observation",
-          answerText: `During the period, only ${subjectLabelHe(sid)} (${subQ} questions) will be practiced - there is not enough data to compare subjects.`,
+          answerText: `During the period, only ${subjectLabel(sid)} (${subQ} questions) will be practiced - there is not enough data to compare subjects.`,
           source: "intent_composer",
         },
         {
           type: "meaning",
           answerText: best
-            ? `According to what is in the report, ${subjectLabelHe(sid)} is the only subject with practice - ${best.displayName} about ${best.acc}% on ${best.q} questions.`
-            : `${subjectLabelHe(sid)} is the only subject with practice in the range - it is impossible to rank "strong/weak" between subjects.`,
+            ? `According to what is in the report, ${subjectLabel(sid)} is the only subject with practice - ${best.displayName} about ${best.acc}% on ${best.q} questions.`
+            : `${subjectLabel(sid)} is the only subject with practice in the range - it is impossible to rank "strong/weak" between subjects.`,
           source: "intent_composer",
         },
       ],
@@ -653,12 +653,12 @@ function composeStrength(params) {
   }
 
   const list = metas
-    .map((m) => `${subjectLabelHe(m.sid)} - ${m.displayName}: about ${m.acc}% on ${m.q} questions`)
+    .map((m) => `${subjectLabel(m.sid)} - ${m.displayName}: about ${m.acc}% on ${m.q} questions`)
     .join("; ");
 
   const singleSubjectNote =
     practicedSubjects.length === 1
-      ? `During the period, only ${subjectLabelHe(practicedSubjects[0])} was practiced - there is not enough data to compare subjects.`
+      ? `During the period, only ${subjectLabel(practicedSubjects[0])} was practiced - there is not enough data to compare subjects.`
       : "";
 
   const lead = metas[0];
@@ -728,7 +728,7 @@ function composeTopicLookup(params) {
   const label = String(best?.displayName || "").trim();
 
   if (!best?.topicRowKey) {
-    const tail = utteranceStr.replace(/^מה\s*(?:לגבי|עם)\s+/u, "").trim();
+    const tail = utteranceStr.replace(/(?!)/u, "").trim();
     return {
       answerBlocks: [
         {
@@ -798,12 +798,12 @@ function composeTopicLookup(params) {
 function composeProgression(params) {
   const payload = params.payload;
   const truthPacket = params.truthPacket;
-  const folded = foldUtteranceForHeMatch(String(params?.utteranceStr || ""));
+  const folded = foldUtteranceForMatch(String(params?.utteranceStr || ""));
   const scopeType = String(truthPacket?.scopeType || "");
 
-  const asksAboveGrade = /מעל\s*(?:ה)?כיתה|מעל\s*הרמה/u.test(folded);
-  const asksBelowGrade = /מתחת\s*(?:ל)?כיתה|מתקשה\s*(?:גם\s*)?מתחת/u.test(folded);
-  const asksLevelDown = /לרדת\s*(?:ב)?רמה|להוריד\s*(?:את\s*)?(?:ה)?רמה/u.test(folded);
+  const asksAboveGrade = /(?!)/u.test(folded);
+  const asksBelowGrade = /(?!)/u.test(folded);
+  const asksLevelDown = /(?!)/u.test(folded);
   const isDown = asksBelowGrade || asksLevelDown;
 
   let metas = collectPracticeMetrics(payload);
@@ -812,7 +812,7 @@ function composeProgression(params) {
     if (focus.length) metas = focus;
   }
 
-  const sttl = (sid, name) => `${subjectLabelHe(sid)} - ${name}`;
+  const sttl = (sid, name) => `${subjectLabel(sid)} - ${name}`;
 
   if (!metas.length) {
     return {
@@ -982,7 +982,7 @@ function composeProgression(params) {
 
 function composeZeroEvidence(params) {
   const subjectId = String(params?.subjectId || params?.truthPacket?.scopeId || "").trim();
-  const label = subjectLabelHe(subjectId);
+  const label = subjectLabel(subjectId);
   return {
     answerBlocks: [
       {

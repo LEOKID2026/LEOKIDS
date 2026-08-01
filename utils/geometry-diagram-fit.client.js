@@ -13,7 +13,7 @@ const MEASURABLE =
 
 /**
  * Union bbox of rendered SVG primitives (shape + labels).
- * @param {SVGSVGElement | null | undefined} svgElement
+ * @param {SVGSVGElement || null || undefined} svgElement
  */
 export function measureSvgContentBBox(svgElement) {
   if (!svgElement) return null;
@@ -53,7 +53,7 @@ export function measureSvgContentBBox(svgElement) {
 
 /**
  * Padding around content — smaller padding => larger apparent diagram.
- * @param {"mini" | "compact" | "expanded"} variant
+ * @param {"mini" || "compact" || "expanded"} variant
  */
 export function getGeometryDiagramFitPaddingRatio(variant = "compact") {
   if (variant === "expanded") return 0.06;

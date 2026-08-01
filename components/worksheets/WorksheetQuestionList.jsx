@@ -52,7 +52,7 @@ function WorksheetQuestionSection({ question, isPrint, subjectId, index = 0 }) {
 /**
  * @param {{
  *   questions: import("../../lib/worksheets/worksheet-question-types.js").PrintableWorksheetQuestion[],
- *   mode: "screen" | "print",
+ *   mode: "screen" || "print",
  *   subjectId?: import("../../lib/worksheets/worksheet-question-types.js").WorksheetSubjectId,
  * }} props
  */

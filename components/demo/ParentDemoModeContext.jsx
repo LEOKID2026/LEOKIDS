@@ -4,10 +4,10 @@ import {
   readParentDemoSession,
 } from "../../lib/demo/parent-demo-mode.client.js";
 
-/** @typedef {{ session: import('../../lib/demo/parent-demo-mode.client.js').ParentDemoSession | null, isDemo: boolean, exitDemo: () => void }} ParentDemoModeValue */
+/** @typedef {{ session: import('../../lib/demo/parent-demo-mode.client.js').ParentDemoSession || null, isDemo: boolean, exitDemo: () => void }} ParentDemoModeValue */
 
 const ParentDemoModeContext = createContext(
-  /** @type {ParentDemoModeValue | null} */ (null),
+  /** @type {ParentDemoModeValue || null} */ (null),
 );
 
 export function ParentDemoModeProvider({ children }) {

@@ -10,8 +10,7 @@ import {
   HISTORY_SKILL_IDS,
   HISTORY_SUBSKILL_ALLOWLIST_BY_SKILL,
   HISTORY_TOPIC_ORDER,
-  validateTaxonomyForRecord,
-} from "../question-metadata-qa/question-metadata-taxonomy.js";
+  validateTaxonomyForRecord} from "../question-metadata-qa/question-metadata-taxonomy.js";
 
 const HISTORY_G6_CONTENT_MAP = {};
 const HEBREW_ARCHIVE_CATEGORY_KEYS = [];
@@ -59,8 +58,7 @@ const MATH_REPORT_BUCKET_TO_BANK_PAIR = {
   powers: { skillId: "math_power_calc", subskillId: "power_calc" },
   zero_one_properties: { skillId: "math_ns_complement10", subskillId: "ns_complement10" },
   estimation: { skillId: "math_est_add", subskillId: "est_add" },
-  factors_multiples: { skillId: "math_fm_factor", subskillId: "fm_factor" },
-};
+  factors_multiples: { skillId: "math_fm_factor", subskillId: "fm_factor" }};
 /** @typedef {"exact" | "inferred_safe" | "missing"} AlignmentConfidence */
 /** @typedef {"unit_field" | "question_metadata" | "topic_mapping" | "taxonomy_bridge" | "none"} AlignmentSource */
 
@@ -77,8 +75,7 @@ const GEOMETRY_TAXONOMY_ID_TO_BANK = {
   "G-05": { skillId: "volume_3d", subskillId: "definition" },
   "G-06": { skillId: "geo_pv_area_vs_perimeter", subskillId: "choose_measure" },
   "G-07": { skillId: "mirror", subskillId: "meaning" },
-  "G-08": { skillId: "perpendicular_to_base", subskillId: "triangle" },
-};
+  "G-08": { skillId: "perpendicular_to_base", subskillId: "triangle" }};
 
 /**
  * @param {string} scenarioId
@@ -112,8 +109,7 @@ const ENGLISH_DISPLAY_NAME_TO_TOPIC_BUCKET = {
   grammar: "grammar",
   vocabulary: "vocabulary",
   writing: "writing",
-  "sentence building": "sentences",
-};
+  "sentence building": "sentences"};
 
 /**
  * Resolve a stable `englishTopics` bucket key from the unit + optional facet topic keys.
@@ -137,12 +133,12 @@ export function resolveEnglishTopicBucketKeyFromUnit(unit, topicBucketKeys) {
 }
 
 /**
- * Facet `displayName` (Hebrew geometry master labels) → `geometryTopics` bucket key.
+ * Facet `displayName` (geometry master labels) → `geometryTopics` bucket key.
  * Only labels that appear in real report artifacts; cross-check with `topicBucketKeys`.
  */
 const GEOMETRY_LEGACY_DISPLAY_TO_TOPIC_BUCKET = {
-  "\u05d4\u05d9\u05e7\u05e3": "perimeter",
-  "\u05de\u05e7\u05d1\u05d9\u05dc\u05d5\u05ea \u05d5\u05de\u05d0\u05d5\u05e0\u05db\u05d5\u05ea": "parallel_perpendicular",
+  perimeter: "perimeter",
+  "parallel and perpendicular": "parallel_perpendicular",
 };
 
 /**
@@ -151,7 +147,9 @@ const GEOMETRY_LEGACY_DISPLAY_TO_TOPIC_BUCKET = {
  * @returns {string} bucket key or ""
  */
 export function resolveGeometryTopicBucketKeyFromUnit(unit, topicBucketKeys) {
-  const display = String(unit?.displayName || "").trim();
+  const display = String(unit?.displayName || "")
+    .trim()
+    .toLowerCase();
   const bucket = GEOMETRY_LEGACY_DISPLAY_TO_TOPIC_BUCKET[display] || "";
   if (!bucket) return "";
   const keys = Array.isArray(topicBucketKeys)
@@ -217,7 +215,6 @@ function validationSubjectForPair(subject, skillId) {
   const sid = String(subject || "").toLowerCase();
   const sk = String(skillId || "");
   if (sk.startsWith("hebrew_archive_")) return "hebrew-archive";
-  if (sk.startsWith("moledet_geo_")) return "moledet-geography";
   return sid;
 }
 
@@ -236,8 +233,7 @@ export function validateBankTaxonomyPair(subject, skillId, subskillId) {
     difficulty: "standard",
     cognitiveLevel: "recall",
     expectedErrorTypes: ["misconception"],
-    prerequisiteSkillIds: [],
-  });
+    prerequisiteSkillIds: []});
 }
 
 /**
@@ -310,11 +306,7 @@ function indexHasExactPair(index, subject, skillId, subskillId) {
   if (!index || !Array.isArray(index.entries) || !skillId || !subskillId) return true;
   const sub = String(subject || "").toLowerCase();
   const aliases =
-    sub === "hebrew"
-      ? new Set(["hebrew", "hebrew-archive"])
-      : sub === "moledet-geography"
-        ? new Set(["moledet-geography"])
-        : sub === "history"
+     sub === "history"
           ? new Set(["history"])
           : new Set([sub]);
   return index.entries.some(
@@ -347,8 +339,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
     subskillId: "",
     confidence: /** @type {AlignmentConfidence} */ ("missing"),
     source: /** @type {AlignmentSource} */ ("none"),
-    warnings: [...warnings],
-  });
+    warnings: [...warnings]});
 
   if (!subject) {
     warnings.push("alignment_missing_subject");
@@ -385,8 +376,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
       subskillId: explicitSub,
       confidence: "exact",
       source: "unit_field",
-      warnings,
-    };
+      warnings};
   }
 
   const qm = unit?.questionMetadata || unit?.sampleQuestionMetadata;
@@ -410,8 +400,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
           subskillId: sub,
           confidence: "exact",
           source: "question_metadata",
-          warnings,
-        };
+          warnings};
       } else {
         for (const code of issues) warnings.push(`alignment_invalid_question_metadata:${code}`);
       }
@@ -434,8 +423,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
         subskillId: pair.subskillId,
         confidence: "inferred_safe",
         source: "taxonomy_bridge",
-        warnings,
-      };
+        warnings};
     }
     for (const code of issues) warnings.push(`alignment_invalid_taxonomy_bridge:${code}`);
   }
@@ -456,8 +444,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
               subskillId: pair.subskillId,
               confidence: "inferred_safe",
               source: "topic_mapping",
-              warnings,
-            };
+              warnings};
           }
         } else {
           for (const code of issues) warnings.push(`alignment_geometry_topic_bucket_invalid:${code}`);
@@ -493,8 +480,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
       subskillId: pair.subskillId,
       confidence: "inferred_safe",
       source: "topic_mapping",
-      warnings,
-    };
+      warnings};
   }
 
   if (subject === "science") {
@@ -510,8 +496,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
         subskillId: fromIndex.subskillId,
         confidence: "inferred_safe",
         source: "topic_mapping",
-        warnings,
-      };
+        warnings};
     }
     const skillId = bucketKey;
     const subskillId = `sci_${bucketKey}_general`;
@@ -533,8 +518,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
       subskillId,
       confidence: "inferred_safe",
       source: "topic_mapping",
-      warnings,
-    };
+      warnings};
   }
 
   if (subject === "history") {
@@ -550,8 +534,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
         subskillId: fromIndex.subskillId,
         confidence: "inferred_safe",
         source: "topic_mapping",
-        warnings,
-      };
+        warnings};
     }
     const cfg = HISTORY_G6_CONTENT_MAP[bucketKey];
     const first = cfg?.subtopics?.[0];
@@ -579,83 +562,12 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
       subskillId,
       confidence: "inferred_safe",
       source: "topic_mapping",
-      warnings,
-    };
+      warnings};
   }
 
-  if (subject === "hebrew") {
-    const bucketKey = String(unit?.bucketKey || "").trim();
-    if (!bucketKey || !HEBREW_ARCHIVE_CATEGORY_KEYS.includes(bucketKey)) {
-      return { ...empty(), warnings: [...warnings] };
-    }
-    const skillId = hebrewArchiveCategoryToSkillId(bucketKey);
-    if (!skillId) return { ...empty(), warnings: [...warnings] };
-    if (!gradeSub) {
-      warnings.push("alignment_hebrew_archive_needs_grade_from_scenario");
-      return {
-        subject,
-        skillId,
-        subskillId: "",
-        confidence: "inferred_safe",
-        source: "topic_mapping",
-        warnings,
-      };
-    }
-    const issues = validateBankTaxonomyPair("hebrew", skillId, gradeSub);
-    if (issues.length) {
-      for (const code of issues) warnings.push(`alignment_hebrew_archive_invalid:${code}`);
-      return { ...empty(), warnings: [...warnings] };
-    }
-    if (!indexHasExactPair(context.metadataIndex, "hebrew", skillId, gradeSub)) {
-      warnings.push("alignment_hebrew_pair_not_in_metadata_index");
-      return { ...empty(), warnings: [...warnings] };
-    }
-    return {
-      subject,
-      skillId,
-      subskillId: gradeSub,
-      confidence: "inferred_safe",
-      source: "topic_mapping",
-      warnings,
-    };
-  }
+  
 
-  if (subject === "moledet-geography") {
-    const bucketKey = String(unit?.bucketKey || "").trim();
-    if (!bucketKey || !MOLEDET_GEOGRAPHY_STRAND_KEYS.includes(bucketKey) || bucketKey === "mixed") {
-      return { ...empty(), warnings: [...warnings] };
-    }
-    const skillId = moledetGeographyStrandToSkillId(bucketKey);
-    if (!skillId) return { ...empty(), warnings: [...warnings] };
-    if (!gradeSub) {
-      warnings.push("alignment_moledet_needs_grade_from_scenario");
-      return {
-        subject,
-        skillId,
-        subskillId: "",
-        confidence: "inferred_safe",
-        source: "topic_mapping",
-        warnings,
-      };
-    }
-    const issues = validateBankTaxonomyPair("moledet-geography", skillId, gradeSub);
-    if (issues.length) {
-      for (const code of issues) warnings.push(`alignment_moledet_invalid:${code}`);
-      return { ...empty(), warnings: [...warnings] };
-    }
-    if (!indexHasExactPair(context.metadataIndex, "moledet-geography", skillId, gradeSub)) {
-      warnings.push("alignment_moledet_pair_not_in_metadata_index");
-      return { ...empty(), warnings: [...warnings] };
-    }
-    return {
-      subject,
-      skillId,
-      subskillId: gradeSub,
-      confidence: "inferred_safe",
-      source: "topic_mapping",
-      warnings,
-    };
-  }
+  
 
   if (subject === "english") {
     const bucket = resolveEnglishTopicBucketKeyFromUnit(unit, context.topicBucketKeys);
@@ -674,8 +586,7 @@ export function resolveDiagnosticUnitSkillAlignment(unit, context = {}) {
               subskillId: pair.subskillId,
               confidence: "inferred_safe",
               source: "topic_mapping",
-              warnings,
-            };
+              warnings};
           }
         } else {
           for (const code of issues) warnings.push(`alignment_english_topic_bucket_invalid:${code}`);
@@ -703,8 +614,7 @@ export function buildFacetSkillAlignmentFields(engineUnit, context) {
   const out = {
     skillAlignmentConfidence: resolved.confidence,
     skillAlignmentSource: resolved.source,
-    skillAlignmentWarnings: resolved.warnings.length ? resolved.warnings : [],
-  };
+    skillAlignmentWarnings: resolved.warnings.length ? resolved.warnings : []};
   if (resolved.skillId) out.skillId = resolved.skillId;
   if (resolved.subskillId) out.subskillId = resolved.subskillId;
   return out;
@@ -719,5 +629,4 @@ export default {
   geometryTopicBucketToBankPair,
   validateBankTaxonomyPair,
   resolveDiagnosticUnitSkillAlignment,
-  buildFacetSkillAlignmentFields,
-};
+  buildFacetSkillAlignmentFields};

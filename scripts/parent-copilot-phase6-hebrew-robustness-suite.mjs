@@ -21,8 +21,8 @@ const { interpretFreeformStageA, CANONICAL_PARENT_INTENTS } = await import(
 const { resolveScope } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/scope-resolver.js")).href);
 const { buildTruthPacketV1 } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/truth-packet-v1.js")).href);
 const { planConversation } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/conversation-planner.js")).href);
-const { normalizeFreeformParentUtteranceHe } = await import(
-  pathToFileURL(join(ROOT, "utils/parent-copilot/utterance-normalize-he.js")).href
+const { normalizeFreeformParentUtterance } = await import(
+  pathToFileURL(join(ROOT, "utils/parent-copilot/utterance-normalize.js")).href
 );
 const parentCopilot = (await import(pathToFileURL(join(ROOT, "utils/parent-copilot/index.js")).href)).default;
 const sessionMemory = (await import(pathToFileURL(join(ROOT, "utils/parent-copilot/session-memory.js")).href)).default;
@@ -187,7 +187,7 @@ for (const { raw, expect } of NOISY_CASES) {
     expect,
     `noisy "${raw}" → expected ${expect}, got ${r.canonicalIntent}`,
   );
-  const norm = normalizeFreeformParentUtteranceHe(raw);
+  const norm = normalizeFreeformParentUtterance(raw);
   const sr = resolveScope({
     payload: pInel,
     utterance: norm,

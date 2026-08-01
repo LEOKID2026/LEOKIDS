@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MATH_G1_BOOK_META } from "../../lib/learning-book/math-g1-registry";
 import { appendReturnQueryToHref } from "../../lib/learning-book/math-g1-book-nav";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
 
 export default function BookTocModal({
@@ -71,7 +71,7 @@ export default function BookTocModal({
                               : "bg-[color:var(--book-surface-soft)] text-[color:var(--book-text)] hover:bg-[color:var(--book-accent-muted)]"
                           }`}
                         >
-                          <MixedHebrewMathText text={entry.displayTitle} />
+                          <MixedRtlMathText text={entry.displayTitle} />
                         </Link>
                       </li>
                     );

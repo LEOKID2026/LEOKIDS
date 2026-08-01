@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "No se recopilaron preguntas en el período seleccionado; no hay una base de datos para esta fila.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "Muy pocas preguntas en el período: las conclusiones para esta fila son muy parciales.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "Se recopilaron muchas preguntas; puede confiar más en lo que ve sobre este tema.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "Hay suficientes preguntas para este tema: cambios cautelosos solo en las subhabilidades.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "Hay suficientes preguntas; puede confiar más en lo que ve sobre este tema.",
+    "moderate_data_cautious_changes_only_are_recommended": "Datos moderados: sólo se recomiendan cambios cautelosos.",
+    "row_inputs_before_signal_computation": "Entradas de fila antes del cálculo de la señal.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "La cantidad de información disponible afecta la cautela que sea la siguiente recomendación.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "Esto se muestra en varias sesiones de práctica: la imagen refleja una tendencia, no solo una sesión.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "La recomendación se basa en una combinación de precisión, número de preguntas, errores y cuán reciente fue la práctica en el período seleccionado."
+  }
+}

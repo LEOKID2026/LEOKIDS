@@ -3,6 +3,7 @@
  * Do not hand-edit; regenerate after deficit changes.
  * Stems sanitized for student display (launch-blocker fix).
  */
+
 export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
   {
     "id": "sci_vol_g1_body_medium_01",
@@ -13,15 +14,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה תפקיד הלב במערכת הדם?",
+    "stem": "What role heart in system circulatory?",
     "options": [
-      "מזרים דם ברחבי הגוף",
-      "מסנן רעלים מהמזון",
-      "מייצר הורמוני גדילה",
-      "סופג חמצן מהמעיים"
+      "Pumps blood body.",
+      "Science question",
+      "Science question",
+      "Oxygen."
     ],
     "correctIndex": 0,
-    "explanation": "הלב הוא משאבת דם.",
+    "explanation": "Heart blood.",
     "params": {
       "patternFamily": "sci_vol_body_g1_medium_heart_circulation",
       "subtype": "sci_body_general",
@@ -50,15 +51,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה חשוב לשתות מים במהלך פעילות גופנית?",
+    "stem": "Why water?",
     "options": [
-      "לשמירה על איזון נוזלים",
-      "כדי לבטל נשימה",
-      "כדי להפסיק עיכול",
-      "כדי לחזק רק את השיער"
+      "On.",
+      "To.",
+      "To.",
+      "To."
     ],
     "correctIndex": 0,
-    "explanation": "מים תומכים בתהליכים בגוף.",
+    "explanation": "Water in the body.",
     "params": {
       "patternFamily": "sci_vol_body_g1_medium_hydration_balance",
       "subtype": "sci_body_general",
@@ -87,15 +88,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה עוזר השריר בזרוע להתכווץ?",
+    "stem": "What?",
     "options": [
-      "יוצר תנועה",
-      "מסנן אוויר",
-      "שומר על שיניים",
-      "מייצר זרעים"
+      "Movement.",
+      "Science question",
+      "On teeth.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שרירים מאפשרים תנועה.",
+    "explanation": "Muscles movement.",
     "params": {
       "patternFamily": "sci_vol_body_g1_hard_muscle_movement",
       "subtype": "sci_body_general",
@@ -124,15 +125,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד העצמות בגוף?",
+    "stem": "What role bones in the body?",
     "options": [
-      "תמיכה והגנה",
-      "הפקת חמצן",
-      "עיכול שומנים",
-      "האזנה לצלילים"
+      "Science question",
+      "Oxygen.",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שלד נותן מבנה.",
+    "explanation": "Skeleton.",
     "params": {
       "patternFamily": "sci_vol_body_g1_hard_skeleton_support",
       "subtype": "sci_body_general",
@@ -161,15 +162,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה מאפיין הדבורה כמאביקת?",
+    "stem": "What?",
     "options": [
-      "מעבירה אבקה",
-      "צדה דגים",
-      "שוחה בזימים",
-      "מייצרת חמצן"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Oxygen."
     ],
     "correctIndex": 0,
-    "explanation": "דבורה מאביקת.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g1_medium_bee_as_pollinator",
       "subtype": "sci_animals_general",
@@ -198,15 +199,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה לגמל מותאם למדבר?",
+    "stem": "Why to desert?",
     "options": [
-      "שומר מים בגוף",
-      "עף למרחקים",
-      "נושם במים",
-      "אוכל דגים"
+      "Water in the body.",
+      "Science question",
+      "In water.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "גמל מותאם ליובש.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g1_medium_camel_adaptation",
       "subtype": "sci_animals_general",
@@ -235,15 +236,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשוב מגוון בעלי חיים?",
+    "stem": "Why animals living?",
     "options": [
-      "מייצב מערכת אקולוגית",
-      "מונע גשם",
-      "מבטל מזון",
-      "מחליף אור"
+      "System.",
+      "Rain.",
+      "Food.",
+      "Light."
     ],
     "correctIndex": 0,
-    "explanation": "מגוון תומך ביציבות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g1_hard_biodiversity",
       "subtype": "sci_animals_general",
@@ -272,15 +273,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה עושה אריה בטבע?",
+    "stem": "What?",
     "options": [
-      "צד טרף",
-      "אוכלת רק עלים",
-      "מאבקת פרחים",
-      "מייצרת חמצן"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Oxygen."
     ],
     "correctIndex": 0,
-    "explanation": "אריה היא טורפת.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g1_hard_lion_predator",
       "subtype": "sci_animals_general",
@@ -309,15 +310,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה קורה כשמעמיסים יותר מדי מים לעציץ?",
+    "stem": "What more water?",
     "options": [
-      "שורשים עלולים להיחנק",
-      "הצמח תמיד גדל מהר",
-      "אין השפעה",
-      "העלים הופכים לאבנים"
+      "Science question",
+      "Plant always from mountain.",
+      "Usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "עודף מים מזיק.",
+    "explanation": "Water.",
     "params": {
       "patternFamily": "sci_vol_plants_g1_medium_overwatering",
       "subtype": "sci_plants_general",
@@ -346,15 +347,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה זרעים מפוזרים ברוח?",
+    "stem": "Why?",
     "options": [
-      "להתפשטות",
-      "לעיכול",
-      "לשחייה",
-      "לייצור דם"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Blood."
     ],
     "correctIndex": 0,
-    "explanation": "רוח מפזרת זרעים.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_plants_g1_medium_seed_dispersal_wind",
       "subtype": "sci_plants_general",
@@ -383,15 +384,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה עושה זרע בתוך פרי?",
+    "stem": "What seed fruit?",
     "options": [
-      "יכול לצמוח לצמח חדש",
-      "מחליף מים",
-      "שוחה",
-      "צד טרף"
+      "Science question",
+      "Water.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "זרע הוא שלב רבייה.",
+    "explanation": "Seed.",
     "params": {
       "patternFamily": "sci_vol_plants_g1_hard_seed_growth",
       "subtype": "sci_plants_general",
@@ -420,15 +421,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה צמח בחדר חשוך נוטה לצד חלון?",
+    "stem": "Why plant?",
     "options": [
-      "מחפש אור",
-      "מחפש מים בלבד",
-      "מעכל בשר",
-      "מייצר דם"
+      "Light.",
+      "Water.",
+      "Science question",
+      "Blood."
     ],
     "correctIndex": 0,
-    "explanation": "צמחים נמשכים לאור.",
+    "explanation": "Plants to light.",
     "params": {
       "patternFamily": "sci_vol_plants_g1_hard_phototropism",
       "subtype": "sci_plants_general",
@@ -457,15 +458,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה תפקיד המפרקים?",
+    "stem": "What role?",
     "options": [
-      "מאפשרים תנועה בין עצמות",
-      "מייצרים חמצן",
-      "מעכלים שומנים",
-      "שומרים על שיניים"
+      "Movement bones.",
+      "Oxygen usually all.",
+      "Usually all.",
+      "On teeth."
     ],
     "correctIndex": 0,
-    "explanation": "מפרקים מאפשרים תנועה.",
+    "explanation": "Movement.",
     "params": {
       "patternFamily": "sci_vol_body_g2_medium_joint_movement",
       "subtype": "sci_body_general",
@@ -494,15 +495,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה עושים הריאות בגוף האדם?",
+    "stem": "What lungs in the body human?",
     "options": [
-      "מחליפות גזים עם האוויר",
-      "מפרקות חלבונים",
-      "מייצרות דם אדום",
-      "שומרות על טמפרטורת העור"
+      "With air.",
+      "Science question",
+      "Blood.",
+      "On skin."
     ],
     "correctIndex": 0,
-    "explanation": "הריאות אחראיות על חילוף גזים.",
+    "explanation": "Lungs on.",
     "params": {
       "patternFamily": "sci_vol_body_g2_medium_lungs_gas_exchange",
       "subtype": "sci_body_general",
@@ -531,15 +532,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשובה היגיינת פה יומית?",
+    "stem": "Why?",
     "options": [
-      "למניעת עששת",
-      "כדי לעצור נשימה",
-      "כדי לחזק ריאות",
-      "כדי להחליף דם"
+      "Science question",
+      "To.",
+      "To lungs.",
+      "To blood."
     ],
     "correctIndex": 0,
-    "explanation": "צחצוח שומר על שיניים.",
+    "explanation": "On teeth.",
     "params": {
       "patternFamily": "sci_vol_body_g2_hard_oral_hygiene",
       "subtype": "sci_body_general",
@@ -568,15 +569,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה קורה בעת שינה מספקת?",
+    "stem": "What?",
     "options": [
-      "הגוף נח ומתאושש",
-      "העיכול נעצר לחלוטין",
-      "הדם מפסיק לזרום",
-      "העצמות נעלמות"
+      "Body.",
+      "Digestive.",
+      "Circulatory.",
+      "Bones."
     ],
     "correctIndex": 0,
-    "explanation": "שינה תומכת בבריאות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_body_g2_hard_sleep_recovery",
       "subtype": "sci_body_general",
@@ -605,15 +606,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה מסמנים צירים בגרף?",
+    "stem": "Why?",
     "options": [
-      "להבין מה נמדד",
-      "למחוק נתונים",
-      "להחליף השערה",
-      "למנוע ניסוי"
+      "What.",
+      "Science question",
+      "Hypothesis.",
+      "Experiment."
     ],
     "correctIndex": 0,
-    "explanation": "צירים מסבירים משתנים.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g2_easy_graph_axes",
       "subtype": "sci_experiments_general",
@@ -642,15 +643,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה תפקיד מחברת בניסוי?",
+    "stem": "What role in experiment?",
     "options": [
-      "ערבוב זהיר",
-      "מדידת אורך",
-      "שקילה",
-      "תיעוד זמן"
+      "Science question",
+      "Science question",
+      "Usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "מחברת לערבוב.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g2_easy_beaker_use",
       "subtype": "sci_experiments_general",
@@ -679,15 +680,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה כלי למדידת אורך?",
+    "stem": "What?",
     "options": [
-      "סרגל",
-      "מדחום",
-      "משקל",
-      "שעון"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "אורך נמדד בסרגל.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g2_medium_length_ruler",
       "subtype": "sci_experiments_general",
@@ -716,15 +717,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה משתנה תלוי בניסוי?",
+    "stem": "What variable in experiment?",
     "options": [
-      "מה שנמדד",
-      "שם החוקר",
-      "צבע המחברת",
-      "שעת הצהריים"
+      "What.",
+      "Science question",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "תלוי הוא התוצאה הנמדדת.",
+    "explanation": "Result.",
     "params": {
       "patternFamily": "sci_vol_experiments_g2_medium_dependent_variable",
       "subtype": "sci_experiments_general",
@@ -753,15 +754,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה עושה תצפית מדויקת?",
+    "stem": "What observation?",
     "options": [
-      "אוספת מידע בלי הטיה",
-      "מוחקת נתונים",
-      "משנה תוצאה",
-      "מבטלת ביקורת"
+      "Science question",
+      "Science question",
+      "Result usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "תצפית היא כלי מחקר.",
+    "explanation": "Observation.",
     "params": {
       "patternFamily": "sci_vol_experiments_g2_hard_observation_skill",
       "subtype": "sci_experiments_general",
@@ -790,15 +791,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד מדחום?",
+    "stem": "What role?",
     "options": [
-      "מודד טמפרטורה",
-      "אורך",
-      "משקל",
-      "זמן"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "מדחום למדידת חום.",
+    "explanation": "Heat.",
     "params": {
       "patternFamily": "sci_vol_experiments_g2_hard_thermometer_use",
       "subtype": "sci_experiments_general",
@@ -827,15 +828,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה ציפורים בונות קן?",
+    "stem": "Why?",
     "options": [
-      "למחסה ולהטלת ביצים",
-      "לעיכול",
-      "לשחייה",
-      "לייצור אור"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Light."
     ],
     "correctIndex": 0,
-    "explanation": "קן משמש רבייה.",
+    "explanation": "From sun.",
     "params": {
       "patternFamily": "sci_vol_animals_g2_medium_bird_nest",
       "subtype": "sci_animals_general",
@@ -864,15 +865,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה עושה אוכלוסיית טרף גדולה מדי?",
+    "stem": "What?",
     "options": [
-      "פוגעת במאזן",
-      "משפרת יער",
-      "מייצרת אור",
-      "מבטלת מים"
+      "Science question",
+      "Forest.",
+      "Light.",
+      "Water."
     ],
     "correctIndex": 0,
-    "explanation": "עודף טרף מפר מאזן.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g2_medium_prey_overpopulation",
       "subtype": "sci_animals_general",
@@ -901,15 +902,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשוב לשמור על בית גידול?",
+    "stem": "Why on?",
     "options": [
-      "מספק מזון ומחסה",
-      "מונע גידול",
-      "לא חשוב",
-      "מחליף מים"
+      "Food.",
+      "Science question",
+      "Not usually all.",
+      "Water usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שמירת טבע חשובה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g2_hard_habitat_protection",
       "subtype": "sci_animals_general",
@@ -938,15 +939,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה מאפיין זוחל?",
+    "stem": "What?",
     "options": [
-      "עור יבש ושיניים",
-      "זימים במים",
-      "פרווה ומינק",
-      "אין חום גוף"
+      "Skin.",
+      "In water.",
+      "Science question",
+      "Heat body."
     ],
     "correctIndex": 0,
-    "explanation": "זוחלים בעלי עור יבש.",
+    "explanation": "Animals skin.",
     "params": {
       "patternFamily": "sci_vol_animals_g2_hard_reptile_traits",
       "subtype": "sci_animals_general",
@@ -975,15 +976,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה תפקיד הפרי?",
+    "stem": "What role fruit?",
     "options": [
-      "מגן על זרעים",
-      "מחליף שורש",
-      "מייצר אור",
-      "סוגר פוטוסינתזה"
+      "On.",
+      "Root.",
+      "Light.",
+      "Photosynthesis."
     ],
     "correctIndex": 0,
-    "explanation": "פרי עוטף זרע.",
+    "explanation": "Fruit seed.",
     "params": {
       "patternFamily": "sci_vol_plants_g2_medium_fruit_seeds",
       "subtype": "sci_plants_general",
@@ -1012,15 +1013,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה צמחים חשובים לרשת מזון?",
+    "stem": "Why plants food?",
     "options": [
-      "הם יצרנים",
-      "הם טורפים",
-      "אינם קשורים",
-      "אוכלים בעלי חיים"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Animals living."
     ],
     "correctIndex": 0,
-    "explanation": "צמחים מייצרים מזון.",
+    "explanation": "Plants food.",
     "params": {
       "patternFamily": "sci_vol_plants_g2_medium_plants_producers",
       "subtype": "sci_plants_general",
@@ -1049,15 +1050,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד נצמיות?",
+    "stem": "What role?",
     "options": [
-      "מייצרות זרעים בקונוסים",
-      "שוחות",
-      "צדות טרף",
-      "מעכלות בשר"
+      "Science question",
+      "Usually all.",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "נצמיות מייצרות זרעים.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_plants_g2_hard_conifers_seeds",
       "subtype": "sci_plants_general",
@@ -1086,15 +1087,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשוב לא לקטוף כל פרח בשדה?",
+    "stem": "Why not all flower?",
     "options": [
-      "לשמור על מאביקים וזרעים",
-      "למנוע גשם",
-      "לייצר דם",
-      "להחליף שורש"
+      "On.",
+      "Rain usually all.",
+      "Blood usually all.",
+      "Root."
     ],
     "correctIndex": 0,
-    "explanation": "שמירת פרחים תומכת בטבע.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_plants_g2_hard_flower_conservation",
       "subtype": "sci_plants_general",
@@ -1123,15 +1124,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה עושה מחזור הדם?",
+    "stem": "What circulatory?",
     "options": [
-      "מחזיר דם ללב ולריאות",
-      "מייצר מזון",
-      "מחליף עצמות",
-      "סוגר את העור"
+      "Blood to heart.",
+      "Food.",
+      "Bones.",
+      "Skin."
     ],
     "correctIndex": 0,
-    "explanation": "דם חוזר ללב.",
+    "explanation": "Blood to heart.",
     "params": {
       "patternFamily": "sci_vol_body_g3_medium_blood_cycle",
       "subtype": "sci_body_general",
@@ -1160,15 +1161,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה מחבר בין המוח לשרירים?",
+    "stem": "What brain to muscles?",
     "options": [
-      "מערכת העצבים",
-      "מערכת העיכול",
-      "מערכת הנשימה",
-      "מערכת השלד בלבד"
+      "System nervous.",
+      "System digestive.",
+      "System breathing.",
+      "System skeleton."
     ],
     "correctIndex": 0,
-    "explanation": "עצבים מעבירים אותות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_body_g3_hard_nervous_signals",
       "subtype": "sci_body_general",
@@ -1197,15 +1198,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד הכבד בעיכול?",
+    "stem": "What role liver?",
     "options": [
-      "עוזר בעיבוד חומרים",
-      "מחליף את הריאות",
-      "שואב אור",
-      "מחזיק את העצמות"
+      "Materials.",
+      "Lungs.",
+      "Light usually all.",
+      "Bones."
     ],
     "correctIndex": 0,
-    "explanation": "כבד תומך בעיבוד.",
+    "explanation": "Liver.",
     "params": {
       "patternFamily": "sci_vol_body_g3_hard_liver_role",
       "subtype": "sci_body_general",
@@ -1234,15 +1235,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושים לפני כתיבת מסקנה?",
+    "stem": "What conclusion?",
     "options": [
-      "בודקים את הנתונים",
-      "מוחקים טבלה",
-      "משנים תוצאה",
-      "מדלגים על מדידה"
+      "Science question",
+      "Science question",
+      "Result.",
+      "On."
     ],
     "correctIndex": 0,
-    "explanation": "מסקנה מבוססת נתונים.",
+    "explanation": "Conclusion.",
     "params": {
       "patternFamily": "sci_vol_experiments_g3_easy_before_conclusion",
       "subtype": "sci_experiments_general",
@@ -1271,15 +1272,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה קורה כשמדידה חריגה אחת?",
+    "stem": "What?",
     "options": [
-      "בודקים אם טעות",
-      "מוחקים הכל",
-      "משנים השערה",
-      "מדלגים"
+      "Science question",
+      "All.",
+      "Hypothesis.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "חריג מצריך בדיקה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g3_easy_outlier_check",
       "subtype": "sci_experiments_general",
@@ -1308,15 +1309,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה משתנה מבוקר בניסוי?",
+    "stem": "What variable from morning in experiment?",
     "options": [
-      "משתנה אחד",
-      "הכל יחד",
-      "שום דבר",
-      "רק שם"
+      "Variable.",
+      "All.",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "בודדים משתנה אחד.",
+    "explanation": "Variable.",
     "params": {
       "patternFamily": "sci_vol_experiments_g3_hard_controlled_variable",
       "subtype": "sci_experiments_general",
@@ -1345,15 +1346,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקידה של קבוצת ביקורת בניסוי מדעי?",
+    "stem": "What of in experiment?",
     "options": [
-      "להשוות מול קבוצה ללא שינוי",
-      "למחוק טבלה",
-      "לשנות הכל",
-      "להחליף מדידה"
+      "Science question",
+      "Science question",
+      "All usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "ביקורת מבודדת.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g3_hard_control_group_role",
       "subtype": "sci_experiments_general",
@@ -1382,15 +1383,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה אוכלת פרה בשדה?",
+    "stem": "What?",
     "options": [
-      "עשב וצמחים",
-      "בשר ציפורים",
-      "דגים חיים",
-      "אבקת סלעים"
+      "Science question",
+      "Science question",
+      "Living.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "פרה אוכלת צמחים.",
+    "explanation": "Plants.",
     "params": {
       "patternFamily": "sci_vol_animals_g3_easy_herbivore_cow",
       "subtype": "sci_animals_general",
@@ -1419,15 +1420,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושה צמח ליונק אוכל עשב?",
+    "stem": "What plant?",
     "options": [
-      "משמש מזון",
-      "צד טרף",
-      "מחליף מים",
-      "מייצר דם"
+      "From sun food.",
+      "Science question",
+      "Water.",
+      "Blood."
     ],
     "correctIndex": 0,
-    "explanation": "צמחים מזינים אוכלי צמחים.",
+    "explanation": "Plants plants.",
     "params": {
       "patternFamily": "sci_vol_animals_g3_easy_plant_consumer",
       "subtype": "sci_animals_general",
@@ -1456,15 +1457,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה מאפיין דג בים?",
+    "stem": "What in sea?",
     "options": [
-      "נושם בזימים",
-      "עף בכנפיים",
-      "מחמל בפרווה",
-      "אוכל רק אבנים"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "דג מותאם למים.",
+    "explanation": "To water.",
     "params": {
       "patternFamily": "sci_vol_animals_g3_hard_fish_gills",
       "subtype": "sci_animals_general",
@@ -1493,15 +1494,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה לדג יש סנפירים?",
+    "stem": "Why?",
     "options": [
-      "לשחייה ושיווי משקל",
-      "לתעופה",
-      "לעיכול",
-      "להאזנה"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "סנפירים עוזרים בשחייה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g3_hard_fish_fins",
       "subtype": "sci_animals_general",
@@ -1530,15 +1531,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה עלים יבשים נושרים בסתיו?",
+    "stem": "Why?",
     "options": [
-      "מפחיתים איבוד מים",
-      "מייצרים אור",
-      "מחליפים שורש",
-      "צדים טרף"
+      "Water.",
+      "Light.",
+      "Root.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "נשירה חוסכת מים.",
+    "explanation": "Water.",
     "params": {
       "patternFamily": "sci_vol_plants_g3_easy_leaf_shedding",
       "subtype": "sci_plants_general",
@@ -1567,15 +1568,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושה דשן לצמח?",
+    "stem": "What to plant?",
     "options": [
-      "מספק חומרים מזינים",
-      "מחליף אור",
-      "מונע נביטה",
-      "שוחה"
+      "Materials.",
+      "Light.",
+      "Science question",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "דשן תומך בגידול.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_plants_g3_easy_fertilizer_role",
       "subtype": "sci_plants_general",
@@ -1604,15 +1605,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה קורה כשאין מספיק מים לצמח?",
+    "stem": "What water to plant?",
     "options": [
-      "עלול לנבול",
-      "גדל מהר יותר",
-      "מייצר יותר פרחים",
-      "מחליף שורש"
+      "Science question",
+      "From mountain more.",
+      "More.",
+      "Root."
     ],
     "correctIndex": 0,
-    "explanation": "מחסור במים מזיק.",
+    "explanation": "In water.",
     "params": {
       "patternFamily": "sci_vol_plants_g3_hard_drought_stress",
       "subtype": "sci_plants_general",
@@ -1641,15 +1642,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה עושה צמח לייצור סוכר?",
+    "stem": "What plant?",
     "options": [
-      "פוטוסינתזה",
-      "נשימת לילה בלבד",
-      "עיכול",
-      "שחייה"
+      "Photosynthesis.",
+      "Night.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "פוטוסינתזה מייצרת סוכר.",
+    "explanation": "Photosynthesis.",
     "params": {
       "patternFamily": "sci_vol_plants_g3_hard_sugar_production",
       "subtype": "sci_plants_general",
@@ -1678,15 +1679,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד השיניים בפה?",
+    "stem": "What role teeth?",
     "options": [
-      "לקטום ולהתחיל עיכול",
-      "לייצר חמצן",
-      "להזרים דם",
-      "להגן מפני קור בלבד"
+      "Science question",
+      "Oxygen usually all.",
+      "To pump blood usually all.",
+      "Cold."
     ],
     "correctIndex": 0,
-    "explanation": "שיניים מתחילות עיכול.",
+    "explanation": "Teeth.",
     "params": {
       "patternFamily": "sci_vol_body_g4_hard_teeth_chewing",
       "subtype": "sci_body_general",
@@ -1715,15 +1716,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה קורה כשאנו נושמים עמוק?",
+    "stem": "What?",
     "options": [
-      "נכנס יותר אוויר לריאות",
-      "העיכול נעצר",
-      "הדם מפסיק לזרום",
-      "העצמות מתרככות"
+      "Enters more to lungs.",
+      "Digestive usually all.",
+      "Circulatory.",
+      "Bones."
     ],
     "correctIndex": 0,
-    "explanation": "נשימה עמוקה מגדילה אוויר.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_body_g4_hard_deep_breathing",
       "subtype": "sci_body_general",
@@ -1752,15 +1753,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה כדאי למדוד אותו דבר פעמיים?",
+    "stem": "Why?",
     "options": [
-      "לוודא שהמדידה עקבית",
-      "כדי למחוק טבלה",
-      "כדי לדלג על ניסוי",
-      "כדי לשנות השערה"
+      "Science question",
+      "To.",
+      "To on experiment.",
+      "To hypothesis."
     ],
     "correctIndex": 0,
-    "explanation": "חזרה משפרת אמינות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g4_easy_repeat_for_reliability",
       "subtype": "sci_experiments_general",
@@ -1789,15 +1790,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה מתכננים שלבי ניסוי מראש?",
+    "stem": "Why experiment from head?",
     "options": [
-      "לעבודה מסודרת ובטוחה",
-      "למחוק תוצאות",
-      "לשנות השערה",
-      "להימנע ממדידה"
+      "Science question",
+      "Usually all.",
+      "Hypothesis usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "תכנון מונע טעויות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g4_easy_experiment_plan",
       "subtype": "sci_experiments_general",
@@ -1826,15 +1827,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד תרשים בדוח ניסוי?",
+    "stem": "What role experiment?",
     "options": [
-      "להמחיש נתונים",
-      "להחליף מדידה",
-      "למחוק השערה",
-      "למנוע מסקנה"
+      "Science question",
+      "Science question",
+      "Hypothesis.",
+      "Conclusion."
     ],
     "correctIndex": 0,
-    "explanation": "תרשים מבהיר נתונים.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g4_hard_chart_role",
       "subtype": "sci_experiments_general",
@@ -1863,15 +1864,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה בניסוי משנים רק משתנה אחד בכל פעם?",
+    "stem": "Why in experiment variable in all?",
     "options": [
-      "כדי לדעת מה השפיע",
-      "כדי למחוק נתונים",
-      "כדי לדלג על מדידה",
-      "כדי לשנות השערה"
+      "To what.",
+      "To.",
+      "To on.",
+      "To hypothesis."
     ],
     "correctIndex": 0,
-    "explanation": "יש לבודד משתנה.",
+    "explanation": "Variable.",
     "params": {
       "patternFamily": "sci_vol_experiments_g4_hard_one_variable_at_a_time",
       "subtype": "sci_experiments_general",
@@ -1900,15 +1901,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה מאפיין עוף לעומת דג?",
+    "stem": "What?",
     "options": [
-      "נושם באוויר בנוסף",
-      "חי רק במים",
-      "אין שלד",
-      "אוכל אבנים"
+      "Science question",
+      "Living in water.",
+      "Skeleton usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "עוף מותאם לאוויר.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g4_hard_bird_vs_fish",
       "subtype": "sci_animals_general",
@@ -1937,15 +1938,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד האבקה לצמח?",
+    "stem": "What role to plant?",
     "options": [
-      "מאבקת פרחים",
-      "שוחה",
-      "צד חיות",
-      "מייצרת דם"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Blood."
     ],
     "correctIndex": 0,
-    "explanation": "אבקה מזרעת צמחים.",
+    "explanation": "Plants.",
     "params": {
       "patternFamily": "sci_vol_animals_g4_hard_pollen_role",
       "subtype": "sci_animals_general",
@@ -1974,15 +1975,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה חשוב לאימון מתון ללב?",
+    "stem": "Why to heart?",
     "options": [
-      "מחזק את מערכת הדם",
-      "מבטל צורך בנשימה",
-      "מונע ספיגת מזון",
-      "מחליף שינה"
+      "System circulatory.",
+      "Science question",
+      "Food.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "פעילות תומכת בלב.",
+    "explanation": "In heart.",
     "params": {
       "patternFamily": "sci_vol_body_g5_easy_exercise_heart",
       "subtype": "sci_body_general",
@@ -2011,15 +2012,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושים כליות בגוף?",
+    "stem": "What kidneys in the body?",
     "options": [
-      "מסננות פסולת מדם",
-      "מייצרות חמצן",
-      "מעכלות עמילנים",
-      "מאזינות לקול"
+      "From blood.",
+      "Oxygen.",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "כליות מסננות דם.",
+    "explanation": "Kidneys blood.",
     "params": {
       "patternFamily": "sci_vol_body_g5_easy_kidney_filter",
       "subtype": "sci_body_general",
@@ -2048,15 +2049,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה קורה כשנשארים ללא מים זמן רב?",
+    "stem": "What without water?",
     "options": [
-      "עלולה להיפגע איזון הגוף",
-      "הגוף מייצר יותר חמצן",
-      "העצמות גדלות מהר",
-      "העיכול משתפר"
+      "Body.",
+      "Body more oxygen.",
+      "Bones from mountain.",
+      "Digestive usually all."
     ],
     "correctIndex": 0,
-    "explanation": "מחסור במים מזיק.",
+    "explanation": "In water.",
     "params": {
       "patternFamily": "sci_vol_body_g5_easy_dehydration_risk",
       "subtype": "sci_body_general",
@@ -2085,15 +2086,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה תפקיד הדם ברקמות?",
+    "stem": "What role circulatory?",
     "options": [
-      "מספק חמצן וחומרים",
-      "מחליף את השרירים",
-      "סוגר את הריאות",
-      "מונע תנועת מפרקים"
+      "Oxygen.",
+      "Muscles.",
+      "Lungs.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "דם מזין רקמות.",
+    "explanation": "Blood.",
     "params": {
       "patternFamily": "sci_vol_body_g5_easy_blood_supply",
       "subtype": "sci_body_general",
@@ -2122,15 +2123,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה חשוב לאכול ארוחה מאוזנת?",
+    "stem": "Why?",
     "options": [
-      "לספק חומרי מזון שונים",
-      "כדי לבטל עיכול",
-      "כדי שלא נזדקק לשינה",
-      "כדי להחליף מים"
+      "Food.",
+      "To.",
+      "To.",
+      "To water."
     ],
     "correctIndex": 0,
-    "explanation": "מגוון מזון תומך בגוף.",
+    "explanation": "Food in the body.",
     "params": {
       "patternFamily": "sci_vol_body_g5_medium_balanced_diet",
       "subtype": "sci_body_general",
@@ -2159,15 +2160,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה תפקיד המוח בגוף?",
+    "stem": "What role brain in the body?",
     "options": [
-      "מרכז בקרה ותיאום",
-      "מפרק מזון",
-      "מסנן אוויר",
-      "מייצר זרעים"
+      "Center.",
+      "Food usually all.",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "מוח מתאם פעולות.",
+    "explanation": "Brain.",
     "params": {
       "patternFamily": "sci_vol_body_g5_medium_brain_control",
       "subtype": "sci_body_general",
@@ -2196,15 +2197,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשוב חימום לפני ספורט?",
+    "stem": "Why?",
     "options": [
-      "מכין שרירים לפעילות",
-      "מבטל צורך בלב",
-      "מונע נשימה",
-      "מחליף שינה"
+      "Muscles.",
+      "In heart.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "חימום מפחית פציעות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_body_g5_hard_warmup_muscles",
       "subtype": "sci_body_general",
@@ -2233,15 +2234,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה קורה כשחוטפים נשימה זמן קצר?",
+    "stem": "What short?",
     "options": [
-      "מצטבר פחמן דו-חמצני",
-      "הגוף מייצר יותר חמצן",
-      "העיכול נעצר לצמיתות",
-      "השלד נעלם"
+      "-.",
+      "Body more oxygen.",
+      "Digestive.",
+      "Skeleton usually all."
     ],
     "correctIndex": 0,
-    "explanation": "עצירת נשימה מצטברת CO₂.",
+    "explanation": "CO₂.",
     "params": {
       "patternFamily": "sci_vol_body_g5_hard_breath_hold_co2",
       "subtype": "sci_body_general",
@@ -2270,15 +2271,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה לא משאירים ניסוי ללא השגחה?",
+    "stem": "Why not experiment without?",
     "options": [
-      "בטיחות",
-      "למחיקת נתונים",
-      "לשינוי השערה",
-      "לעצירת מדידה"
+      "Safety.",
+      "Science question",
+      "Hypothesis.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "השגחה מונעת סכנה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g5_easy_supervision_safety",
       "subtype": "sci_experiments_general",
@@ -2307,15 +2308,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושה ניסוי חוזר?",
+    "stem": "What experiment?",
     "options": [
-      "בודק אם התוצאה יציבה",
-      "מוחק טבלה",
-      "מבטל ביקורת",
-      "משנה צבע"
+      "Result.",
+      "Science question",
+      "Science question",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "חזרה מאמתת ממצא.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g5_easy_replication",
       "subtype": "sci_experiments_general",
@@ -2344,15 +2345,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה חוברת מדענית משקפיים מגנים?",
+    "stem": "Why?",
     "options": [
-      "להגנה על העיניים",
-      "לייצור חמצן",
-      "למדידת משקל",
-      "לשחייה"
+      "On eyes.",
+      "Oxygen.",
+      "Science question",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "מגנים שומרים על עיניים.",
+    "explanation": "On eyes.",
     "params": {
       "patternFamily": "sci_vol_experiments_g5_medium_safety_goggles",
       "subtype": "sci_experiments_general",
@@ -2381,15 +2382,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה קורה כשהשערה לא נתמכת?",
+    "stem": "What not?",
     "options": [
-      "מנסחים הסבר חדש",
-      "מוחקים נתונים",
-      "משנים מדידה",
-      "מדלגים"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "מדע מתפתח מהפרכה.",
+    "explanation": "Science.",
     "params": {
       "patternFamily": "sci_vol_experiments_g5_medium_hypothesis_reject",
       "subtype": "sci_experiments_general",
@@ -2418,15 +2419,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מהי השערה בניסוי מדעי?",
+    "stem": "Hypothesis in experiment?",
     "options": [
-      "חיזוי שניתן לבדוק",
-      "תוצאה סופית",
-      "מחיקת נתונים",
-      "ציור בלבד"
+      "Science question",
+      "Result.",
+      "Science question",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "השערה נבדקת בניסוי.",
+    "explanation": "Hypothesis in experiment.",
     "params": {
       "patternFamily": "sci_vol_experiments_g5_medium_hypothesis",
       "subtype": "sci_experiments_general",
@@ -2455,15 +2456,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה מאפיין דו-חיים בוגר?",
+    "stem": "What - living?",
     "options": [
-      "חי גם במים וגם ביבשה",
-      "עף בלבד",
-      "אין ריאות",
-      "אוכל אבנים"
+      "Living in water.",
+      "Usually all.",
+      "Lungs.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "דו-חיים משנים בית גידול.",
+    "explanation": "- living.",
     "params": {
       "patternFamily": "sci_vol_animals_g5_easy_amphibian_habitat",
       "subtype": "sci_animals_general",
@@ -2492,15 +2493,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה לעטלף משתמש באקולוקציה?",
+    "stem": "Why?",
     "options": [
-      "למצוא טרף בחושך",
-      "לעכל עלים",
-      "לשחות",
-      "לייצר אור"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Light."
     ],
     "correctIndex": 0,
-    "explanation": "אקולוקציה עוזרת בלילה.",
+    "explanation": "In night.",
     "params": {
       "patternFamily": "sci_vol_animals_g5_easy_bat_echolocation",
       "subtype": "sci_animals_general",
@@ -2529,15 +2530,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושה חילזון בלחות?",
+    "stem": "What?",
     "options": [
-      "שומר על לחות גוף",
-      "עף",
-      "צד טרף",
-      "מייצר דם"
+      "On body.",
+      "Usually all.",
+      "Usually all.",
+      "Blood usually all."
     ],
     "correctIndex": 0,
-    "explanation": "לחות חשובה לחילזון.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g5_easy_snail_moisture",
       "subtype": "sci_animals_general",
@@ -2566,15 +2567,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה מאפיין חרק עם שלד חיצון?",
+    "stem": "What with skeleton?",
     "options": [
-      "שלד חיצון",
-      "פרווה",
-      "זימים",
-      "מינק"
+      "Skeleton.",
+      "Usually all.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "לחרקים שלד חיצון.",
+    "explanation": "Skeleton.",
     "params": {
       "patternFamily": "sci_vol_animals_g5_easy_insect_exoskeleton",
       "subtype": "sci_animals_general",
@@ -2603,15 +2604,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה חשוב לשמור על בית גידול?",
+    "stem": "Why on?",
     "options": [
-      "מספק מזון ומחסה",
-      "מונע גידול",
-      "לא חשוב",
-      "מחליף מים"
+      "Food.",
+      "Science question",
+      "Not usually all.",
+      "Water usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שמירת טבע חשובה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g5_medium_habitat_protection",
       "subtype": "sci_animals_general",
@@ -2640,15 +2641,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה מחזור חיים של פרפר?",
+    "stem": "What living of?",
     "options": [
-      "ביצה, זחל, גולם, בוגר",
-      "רק בוגר",
-      "אין שלבים",
-      "רק ביצה"
+      ",,,.",
+      "With.",
+      "Usually all.",
+      "With water usually all."
     ],
     "correctIndex": 0,
-    "explanation": "יש גלגול מלא.",
+    "explanation": "From not.",
     "params": {
       "patternFamily": "sci_vol_animals_g5_medium_butterfly_lifecycle",
       "subtype": "sci_animals_general",
@@ -2677,15 +2678,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה לדג יש סנפירים?",
+    "stem": "Why?",
     "options": [
-      "לשחייה ושיווי משקל",
-      "לתעופה",
-      "לעיכול",
-      "להאזנה"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "סנפירים עוזרים בשחייה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g5_hard_fish_fins",
       "subtype": "sci_animals_general",
@@ -2714,15 +2715,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה מאפיין עוף לעומת דג?",
+    "stem": "What?",
     "options": [
-      "נושם באוויר בנוסף",
-      "חי רק במים",
-      "אין שלד",
-      "אוכל אבנים"
+      "Science question",
+      "Living in water.",
+      "Skeleton usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "עוף מותאם לאוויר.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g5_hard_bird_vs_fish",
       "subtype": "sci_animals_general",
@@ -2751,15 +2752,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה חשובה היגיינת פה יומית?",
+    "stem": "Why?",
     "options": [
-      "למניעת עששת",
-      "כדי לעצור נשימה",
-      "כדי לחזק ריאות",
-      "כדי להחליף דם"
+      "Science question",
+      "To.",
+      "To lungs.",
+      "To blood."
     ],
     "correctIndex": 0,
-    "explanation": "צחצוח שומר על שיניים.",
+    "explanation": "On teeth.",
     "params": {
       "patternFamily": "sci_vol_body_g6_medium_oral_hygiene",
       "subtype": "sci_body_general",
@@ -2788,15 +2789,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה קורה בעת שינה מספקת?",
+    "stem": "What?",
     "options": [
-      "הגוף נח ומתאושש",
-      "העיכול נעצר לחלוטין",
-      "הדם מפסיק לזרום",
-      "העצמות נעלמות"
+      "Body.",
+      "Digestive.",
+      "Circulatory.",
+      "Bones."
     ],
     "correctIndex": 0,
-    "explanation": "שינה תומכת בבריאות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_body_g6_medium_sleep_recovery",
       "subtype": "sci_body_general",
@@ -2825,15 +2826,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשוב לאכול ארוחה מאוזנת?",
+    "stem": "Why?",
     "options": [
-      "לספק חומרי מזון שונים",
-      "כדי לבטל עיכול",
-      "כדי שלא נזדקק לשינה",
-      "כדי להחליף מים"
+      "Food.",
+      "To.",
+      "To.",
+      "To water."
     ],
     "correctIndex": 0,
-    "explanation": "מגוון מזון תומך בגוף.",
+    "explanation": "Food in the body.",
     "params": {
       "patternFamily": "sci_vol_body_g6_hard_balanced_diet",
       "subtype": "sci_body_general",
@@ -2862,15 +2863,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד השיניים בפה?",
+    "stem": "What role teeth?",
     "options": [
-      "לקטום ולהתחיל עיכול",
-      "לייצר חמצן",
-      "להזרים דם",
-      "להגן מפני קור בלבד"
+      "Science question",
+      "Oxygen usually all.",
+      "To pump blood usually all.",
+      "Cold."
     ],
     "correctIndex": 0,
-    "explanation": "שיניים מתחילות עיכול.",
+    "explanation": "Teeth.",
     "params": {
       "patternFamily": "sci_vol_body_g6_hard_teeth_chewing",
       "subtype": "sci_body_general",
@@ -2899,15 +2900,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה קורה כשמדידה חריגה אחת?",
+    "stem": "What?",
     "options": [
-      "בודקים אם טעות",
-      "מוחקים הכל",
-      "משנים השערה",
-      "מדלגים"
+      "Science question",
+      "All.",
+      "Hypothesis.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "חריג מצריך בדיקה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g6_medium_outlier_check",
       "subtype": "sci_experiments_general",
@@ -2936,15 +2937,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "למה חשוב יחידות מידה?",
+    "stem": "Why?",
     "options": [
-      "להבין גודל אמיתי",
-      "לציור בלבד",
-      "להחלפת צבע",
-      "למחיקת ניסוי"
+      "Science question",
+      "Science question",
+      "Science question",
+      "Experiment."
     ],
     "correctIndex": 0,
-    "explanation": "יחידות נותנות משמעות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_experiments_g6_medium_measurement_units",
       "subtype": "sci_experiments_general",
@@ -2973,15 +2974,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה עושה תצפית מדויקת?",
+    "stem": "What observation?",
     "options": [
-      "אוספת מידע בלי הטיה",
-      "מוחקת נתונים",
-      "משנה תוצאה",
-      "מבטלת ביקורת"
+      "Science question",
+      "Science question",
+      "Result usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "תצפית היא כלי מחקר.",
+    "explanation": "Observation.",
     "params": {
       "patternFamily": "sci_vol_experiments_g6_medium_observation_skill",
       "subtype": "sci_experiments_general",
@@ -3010,15 +3011,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה מאפיין זוחל?",
+    "stem": "What?",
     "options": [
-      "עור יבש ושיניים",
-      "זימים במים",
-      "פרווה ומינק",
-      "אין חום גוף"
+      "Skin.",
+      "In water.",
+      "Science question",
+      "Heat body."
     ],
     "correctIndex": 0,
-    "explanation": "זוחלים בעלי עור יבש.",
+    "explanation": "Animals skin.",
     "params": {
       "patternFamily": "sci_vol_animals_g6_easy_reptile_traits",
       "subtype": "sci_animals_general",
@@ -3047,15 +3048,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה עושה צמח ליונק אוכל עשב?",
+    "stem": "What plant?",
     "options": [
-      "משמש מזון",
-      "צד טרף",
-      "מחליף מים",
-      "מייצר דם"
+      "From sun food.",
+      "Science question",
+      "Water.",
+      "Blood."
     ],
     "correctIndex": 0,
-    "explanation": "צמחים מזינים אוכלי צמחים.",
+    "explanation": "Plants plants.",
     "params": {
       "patternFamily": "sci_vol_animals_g6_easy_plant_consumer",
       "subtype": "sci_animals_general",
@@ -3084,15 +3085,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה לדג יש סנפירים?",
+    "stem": "Why?",
     "options": [
-      "לשחייה ושיווי משקל",
-      "לתעופה",
-      "לעיכול",
-      "להאזנה"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "סנפירים עוזרים בשחייה.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g6_easy_fish_fins",
       "subtype": "sci_animals_general",
@@ -3121,15 +3122,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה מאפיין עוף לעומת דג?",
+    "stem": "What?",
     "options": [
-      "נושם באוויר בנוסף",
-      "חי רק במים",
-      "אין שלד",
-      "אוכל אבנים"
+      "Science question",
+      "Living in water.",
+      "Skeleton usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "עוף מותאם לאוויר.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g6_easy_bird_vs_fish",
       "subtype": "sci_animals_general",
@@ -3158,15 +3159,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה תפקיד האבקה לצמח?",
+    "stem": "What role to plant?",
     "options": [
-      "מאבקת פרחים",
-      "שוחה",
-      "צד חיות",
-      "מייצרת דם"
+      "Science question",
+      "Usually all.",
+      "Usually all.",
+      "Blood."
     ],
     "correctIndex": 0,
-    "explanation": "אבקה מזרעת צמחים.",
+    "explanation": "Plants.",
     "params": {
       "patternFamily": "sci_vol_animals_g6_hard_pollen_role",
       "subtype": "sci_animals_general",
@@ -3195,15 +3196,15 @@ export const SCIENCE_QUESTIONS_NEEDS_MORE_VOLUME = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "למה חשוב מגוון בעלי חיים?",
+    "stem": "Why animals living?",
     "options": [
-      "מייצב מערכת אקולוגית",
-      "מונע גשם",
-      "מבטל מזון",
-      "מחליף אור"
+      "System.",
+      "Rain.",
+      "Food.",
+      "Light."
     ],
     "correctIndex": 0,
-    "explanation": "מגוון תומך ביציבות.",
+    "explanation": ".",
     "params": {
       "patternFamily": "sci_vol_animals_g6_hard_biodiversity",
       "subtype": "sci_animals_general",

@@ -7,7 +7,7 @@ import { apiErrorMessageHe, schoolAuthFetch, SCHOOL_STUDENT_ID } from "../../lib
  * @param {{
  *   accessToken: string,
  *   apiPath: string,
- *   bodyKey: "teacherUserId" | "operatorUserId",
+ *   bodyKey: "teacherUserId" || "operatorUserId",
  *   sectionTitle: string,
  *   submitLabel: string,
  *   onSuccess?: () => void,

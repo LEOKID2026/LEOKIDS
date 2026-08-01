@@ -11,7 +11,7 @@ import { waitForWritingTraceAssetsReady } from "../../lib/writing/writing-print-
 
 /**
  * @param {{
- *   worksheetPayload: import("../../lib/worksheets/worksheet-question-types.js").WorksheetPayload | import("../../lib/writing/writing-worksheet-types.js").WritingWorksheetPayload,
+ *   worksheetPayload: import("../../lib/worksheets/worksheet-question-types.js").WorksheetPayload || import("../../lib/writing/writing-worksheet-types.js").WritingWorksheetPayload,
  *   includeAnswers: boolean,
  *   onPrint: () => void,
  *   onAnswerKey?: () => void,

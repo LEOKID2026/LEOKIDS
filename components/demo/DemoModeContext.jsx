@@ -13,13 +13,13 @@ import { registerDemoTimeExpiredNotifier } from "../../lib/demo/demo-play-guard.
 /**
  * @typedef {object} DemoModeContextValue
  * @property {boolean} isDemo
- * @property {DemoSession | null} session
+ * @property {DemoSession || null} session
  * @property {boolean} playExpired
  * @property {number} remainingMs
  * @property {boolean} timeExpiredModalOpen
  * @property {(open: boolean) => void} setTimeExpiredModalOpen
  * @property {() => void} notifyTimeExpired
- * @property {(grade: string) => DemoSession | null} changeGrade
+ * @property {(grade: string) => DemoSession || null} changeGrade
  * @property {() => void} exitDemo
  * @property {() => void} refreshSession
  */

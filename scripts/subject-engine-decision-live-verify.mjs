@@ -24,12 +24,12 @@ const { runWithParentReportRebuildLock } = await load("lib/parent-server/db-inpu
 const { buildReportInputFromDbData } = await load("lib/learning-supabase/report-data-adapter.js");
 const { applyParentReportGamificationOverlay } = await load("lib/learning-shared/student-account-state-view.js");
 const { applyServerParentFacingAuthorityToClientReport } = await load("lib/parent-server/parent-facing-report-authority.js");
-const { applyTopicEngineParentFacingInsights } = await load("utils/parent-report-engine-insights-he.js");
+const { applyTopicEngineParentFacingInsights } = await load("utils/parent-report-engine-insights.js");
 const { applyBridgeProvenanceToGeneratedReport } = await load("lib/learning-supabase/bridge-report-provenance.js");
 const { syncReportVisiblePracticeFromServer } = await load("lib/learning/report-visible-practice-sync.js");
 const { generateParentReportV2 } = await load("utils/parent-report-v2.js");
 const { buildDetailedParentReportFromBaseReport } = await load("utils/detailed-parent-report.js");
-const { buildSubjectParentLetter, buildTopicRecommendationNarrative } = await load("utils/detailed-report-parent-letter-he.js");
+const { buildSubjectParentLetter, buildTopicRecommendationNarrative } = await load("utils/detailed-report-parent-letter.js");
 const {
   buildLpdSafeTopicInsightLineHe,
   resolveParentExplainRowCopy,

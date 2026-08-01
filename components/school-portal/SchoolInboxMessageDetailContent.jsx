@@ -8,7 +8,7 @@ export default function SchoolInboxMessageDetailContent({
 }) {
   if (!message) return null;
 
-  const sentLabel = message.sentAt ? new Date(message.sentAt).toLocaleString("he-IL") : "";
+  const sentLabel = message.sentAt ? new Date(message.sentAt).toLocaleString("en-US") : "";
 
   return (
     <>

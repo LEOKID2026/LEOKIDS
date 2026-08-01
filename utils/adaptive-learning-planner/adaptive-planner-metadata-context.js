@@ -6,8 +6,7 @@ import { join } from "node:path";
 
 import {
   GEOMETRY_CONCEPTUAL_BANK,
-  STATIC_QUESTION_BANK_MODULES,
-} from "../question-metadata-qa/question-bank-discovery.js";
+  STATIC_QUESTION_BANK_MODULES} from "../question-metadata-qa/question-bank-discovery.js";
 import { scanGeometryConceptualBank, scanQuestionBankModule } from "../question-metadata-qa/question-metadata-scanner.js";
 import { buildMathGeneratorMetadataMap } from "../question-metadata-qa/math-generator-metadata-map.js";
 
@@ -48,15 +47,14 @@ export function scanRecordToPlannerLight(r) {
     expectedErrorTypes: Array.isArray(r.expectedErrorTypes) ? r.expectedErrorTypes.map(String).slice(0, 8) : [],
     prerequisiteSkillIds: Array.isArray(r.prerequisiteSkillIds) ? r.prerequisiteSkillIds.map(String).slice(0, 8) : [],
     questionType: String(r.questionType || "").slice(0, 64),
-    id,
-  };
+    id};
 }
 
 /** Disallow obvious free-text blobs in ids (heuristic) */
 function isSafeMetadataId(id) {
   const s = String(id);
   if (s.length > 200) return false;
-  if (/[\u0590-\u05FF]/.test(s) && s.length > 80) return false;
+  if (/\s{3,}/.test(s) && s.length > 80) return false;
   return true;
 }
 
@@ -89,7 +87,7 @@ export function mapPlannerDifficultyToBankHints(d) {
  */
 export function subjectAliasesForQuery(subject) {
   const s = String(subject || "").trim().toLowerCase();
-  if (s === "hebrew") return new Set(["hebrew", "hebrew-archive"]);
+  
   return new Set([s]);
 }
 
@@ -148,8 +146,7 @@ export async function buildPlannerQuestionMetadataIndex(options) {
           expectedErrorTypes: [],
           prerequisiteSkillIds: [],
           questionType: "procedural_placeholder",
-          id: kid,
-        });
+          id: kid});
       }
       for (const d of diags) {
         const ds = String(d).slice(0, 120);
@@ -163,8 +160,7 @@ export async function buildPlannerQuestionMetadataIndex(options) {
           expectedErrorTypes: [],
           prerequisiteSkillIds: [],
           questionType: "procedural_placeholder",
-          id: `math:procedural:diag:${ds.replace(/[^a-z0-9_]/gi, "_")}`,
-        });
+          id: `math:procedural:diag:${ds.replace(/[^a-z0-9_]/gi, "_")}`});
       }
     } catch (e) {
       loadErrors.push({ path: "math-generator-metadata-map", error: String(e?.message || e) });
@@ -183,15 +179,13 @@ export async function buildPlannerQuestionMetadataIndex(options) {
     staticBankModulesAttempted: STATIC_QUESTION_BANK_MODULES.length,
     geometryConceptual: true,
     mathProceduralPlaceholdersIncluded: options?.includeMathProceduralPlaceholders !== false,
-    loadErrors,
-  };
+    loadErrors};
 
   return {
     entries,
     stats,
     builtAt: new Date().toISOString(),
-    rootAbs,
-  };
+    rootAbs};
 }
 
 /**
@@ -277,8 +271,7 @@ export function getAvailableQuestionMetadataForPlanner(index, query) {
     candidates: candidates.slice(0, limit),
     warnings,
     subjectFallback,
-    skillOnlyFallback,
-  };
+    skillOnlyFallback};
 }
 
 /**
@@ -306,8 +299,7 @@ export const FORBIDDEN_LEAK_KEYS = [
   "options",
   "answers",
   "correctAnswer",
-  "correctIndex",
-];
+  "correctIndex"];
 
 export function assertPlannerMetadataLightShape(obj) {
   const allowed = new Set([
@@ -320,8 +312,7 @@ export function assertPlannerMetadataLightShape(obj) {
     "expectedErrorTypes",
     "prerequisiteSkillIds",
     "questionType",
-    "id",
-  ]);
+    "id"]);
   if (!obj || typeof obj !== "object") return "not_object";
   const keys = Object.keys(obj);
   for (const k of keys) {
@@ -362,8 +353,7 @@ export function assertSerializedMetadataLeakFree(jsonString) {
     /"options"\s*:/i,
     /"answers"\s*:/i,
     /"correctAnswer"\s*:/i,
-    /"correctIndex"\s*:/i,
-  ];
+    /"correctIndex"\s*:/i];
   for (const p of patterns) {
     if (p.test(jsonString)) return false;
   }
@@ -385,8 +375,7 @@ export function runPlannerMetadataProviderSmokeChecks(index) {
       skillId: science.skillId,
       subskillId: science.subskillId,
       limit: 6,
-      allowSubjectFallback: false,
-    });
+      allowSubjectFallback: false});
     if (!r.candidates.length) errors.push("science_exact_match_expected_nonzero_candidates");
   }
 
@@ -395,8 +384,7 @@ export function runPlannerMetadataProviderSmokeChecks(index) {
     skillId: "__nonexistent_planner_skill__",
     subskillId: "__nonexistent_planner_sub__",
     limit: 5,
-    allowSubjectFallback: false,
-  });
+    allowSubjectFallback: false});
   if (rBad.candidates.length) errors.push("unknown_skill_should_return_empty");
   if (!rBad.warnings.includes("metadata_no_match_for_skill")) {
     errors.push("unknown_skill_should_warn_metadata_no_match_for_skill");
@@ -404,8 +392,7 @@ export function runPlannerMetadataProviderSmokeChecks(index) {
 
   const rEn = getAvailableQuestionMetadataForPlanner(index, {
     subject: "english",
-    limit: 8,
-  });
+    limit: 8});
   if (rEn.candidates.length) errors.push("english_untagged_query_must_return_empty");
   if (!rEn.warnings.includes("english_untagged_query_no_metadata")) {
     errors.push("english_untagged_should_warn");
@@ -416,8 +403,7 @@ export function runPlannerMetadataProviderSmokeChecks(index) {
     skillId: "__bad_geometry_skill__",
     subskillId: "__bad_geometry_sub__",
     limit: 4,
-    allowSubjectFallback: true,
-  });
+    allowSubjectFallback: true});
   if (rFb.candidates.length && !rFb.subjectFallback) {
     errors.push("subject_fallback_should_set_subjectFallback_when_bad_skill");
   }

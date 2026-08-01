@@ -20,11 +20,8 @@ export const SKILL_PACK_BY_SUBJECT_ID = Object.fromEntries(
         packId,
         {
           label: frameworkPack.skillLabels[`${subjectId}.${packId}`] || packId,
-          subskills: row.subskills,
-        },
-      ])
-    ),
-  ])
+          subskills: row.subskills}])
+    )])
 );
 
 export const MATH_ERROR_TYPES_V1 = [
@@ -38,8 +35,7 @@ export const MATH_ERROR_TYPES_V1 = [
   "reading_instruction_error",
   "careless_error",
   "fast_guessing_pattern",
-  "insufficient_evidence",
-];
+  "insufficient_evidence"];
 
 export const HEBREW_ERROR_TYPES_V1 = [
   "missed_explicit_information",
@@ -51,8 +47,7 @@ export const HEBREW_ERROR_TYPES_V1 = [
   "instruction_misread",
   "careless_error",
   "guessing_pattern",
-  "insufficient_evidence",
-];
+  "insufficient_evidence"];
 
 export const ENGLISH_ERROR_TYPES_V1 = [
   "vocabulary_gap",
@@ -60,8 +55,7 @@ export const ENGLISH_ERROR_TYPES_V1 = [
   "translation_confusion",
   "instruction_misread",
   "guessing_pattern",
-  "insufficient_evidence",
-];
+  "insufficient_evidence"];
 
 export const SCIENCE_ERROR_TYPES_V1 = [
   "cause_effect_confusion",
@@ -69,8 +63,7 @@ export const SCIENCE_ERROR_TYPES_V1 = [
   "concept_confusion",
   "classification_error",
   "instruction_misread",
-  "insufficient_evidence",
-];
+  "insufficient_evidence"];
 
 export const GEOMETRY_ERROR_TYPES_V1 = [
   "formula_selection_error",
@@ -78,8 +71,7 @@ export const GEOMETRY_ERROR_TYPES_V1 = [
   "shape_property_confusion",
   "angle_reasoning_error",
   "calculation_error",
-  "insufficient_evidence",
-];
+  "insufficient_evidence"];
 
 export const MOLEDET_ERROR_TYPES_V1 = [
   "map_reading_error",
@@ -87,18 +79,15 @@ export const MOLEDET_ERROR_TYPES_V1 = [
   "symbol_legend_confusion",
   "place_relationship_error",
   "instruction_misread",
-  "insufficient_evidence",
-];
+  "insufficient_evidence"];
 
 /** @type {Record<string, string[]>} */
 export const ERROR_TYPES_BY_SUBJECT_ID = {
   math: MATH_ERROR_TYPES_V1,
-  hebrew: HEBREW_ERROR_TYPES_V1,
+  
   english: ENGLISH_ERROR_TYPES_V1,
   science: SCIENCE_ERROR_TYPES_V1,
-  geometry: GEOMETRY_ERROR_TYPES_V1,
-  "moledet-geography": MOLEDET_ERROR_TYPES_V1,
-};
+  geometry: GEOMETRY_ERROR_TYPES_V1};
 
 export function mathSkillIdFromBucketKey(bucketKeyRaw) {
   const base = mathReportBaseOperationKey(String(bucketKeyRaw || ""));
@@ -166,31 +155,25 @@ export function moledetSkillIdFromBucketKey(bucketKeyRaw) {
 /** @type {Record<string, (raw: string) => string>} */
 export const SKILL_RESOLVER_BY_SUBJECT_ID = {
   math: mathSkillIdFromBucketKey,
-  hebrew: hebrewSkillIdFromBucketKey,
+  
   english: englishSkillIdFromBucketKey,
   science: scienceSkillIdFromBucketKey,
-  geometry: geometrySkillIdFromBucketKey,
-  "moledet-geography": moledetSkillIdFromBucketKey,
-};
+  geometry: geometrySkillIdFromBucketKey};
 
 /** Summary counts keys aligned with parent-report-v2 enrich call */
 const SUBJECT_VOLUME_KEYS = {
   math: "mathQuestions",
-  hebrew: "hebrewQuestions",
+  
   english: "englishQuestions",
   science: "scienceQuestions",
-  geometry: "geometryQuestions",
-  "moledet-geography": "moledetGeographyQuestions",
-};
+  geometry: "geometryQuestions"};
 
 const SUBJECT_ACCURACY_KEYS = {
   math: "mathAccuracy",
-  hebrew: "hebrewAccuracy",
+  
   english: "englishAccuracy",
   science: "scienceAccuracy",
-  geometry: "geometryAccuracy",
-  "moledet-geography": "moledetGeographyAccuracy",
-};
+  geometry: "geometryAccuracy"};
 
 export function getSubjectQuestionTotalFromSummary(summaryCounts, subjectId) {
   const k = SUBJECT_VOLUME_KEYS[subjectId];
@@ -227,8 +210,7 @@ export function recommendationTypeFromSignals({
   evidenceLevel,
   dominantBehavior,
   counterEvidenceStrong,
-  narrowSample,
-}) {
+  narrowSample}) {
   const a = String(actionState || "withhold");
   const ev = String(evidenceLevel || "thin");
   const dom = String(dominantBehavior || "");
@@ -260,12 +242,6 @@ function inferErrorTypesV1(subjectId, row, behaviorDom) {
     if (dom === "speed_pressure" && wrong > 0) out.push("fast_guessing_pattern");
     if (wrong === 0 && Number.isFinite(acc) && acc < 70) out.push("insufficient_evidence");
     if (out.length === 0 && wrong > 0) out.push("calculation_error");
-  } else if (subjectId === "hebrew") {
-    if (dom === "knowledge_gap") out.push("weak_inference");
-    if (dom === "instruction_friction") out.push("instruction_misread");
-    if (dom === "speed_pressure") out.push("guessing_pattern");
-    if (rowQ > 0 && rowQ < 8 && wrong === 0) out.push("insufficient_evidence");
-    if (out.length === 0 && wrong > 0) out.push("missed_explicit_information");
   } else if (subjectId === "english") {
     if (dom === "knowledge_gap") out.push("vocabulary_gap");
     if (dom === "instruction_friction") out.push("instruction_misread");
@@ -282,12 +258,7 @@ function inferErrorTypesV1(subjectId, row, behaviorDom) {
     if (dom === "careless_pattern") out.push("calculation_error");
     if (out.length === 0 && wrong > 0) out.push("formula_selection_error");
     if (rowQ < 8) out.push("insufficient_evidence");
-  } else if (subjectId === "moledet-geography") {
-    if (dom === "knowledge_gap") out.push("place_relationship_error");
-    if (dom === "instruction_friction") out.push("instruction_misread");
-    if (out.length === 0 && wrong > 0) out.push("map_reading_error");
-    if (rowQ < 8) out.push("insufficient_evidence");
-  }
+  } else 
 
   return [...new Set(out)].slice(0, 6);
 }
@@ -302,8 +273,7 @@ function subjectWideWeaknessBlockedReasoning(subjectId, maps) {
   return [
     weakRows.length <= 1
       ? "Subject-wide weakness is not asserted from a single weak topic; other topics in this subject should show weakness across multiple skills."
-      : burnDownCopy("utils__learning-diagnostics__diagnostic-framework-v1", "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o"),
-  ];
+      : burnDownCopy("utils__learning-diagnostics__diagnostic-framework-v1", "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o")];
 }
 
 /**
@@ -320,8 +290,7 @@ export function enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEn
     "Do not conclude subject-wide weakness from a single weak topic without breadth evidence.",
     "Do not conclude mastery from high accuracy on very few questions.",
     "Do not treat slow response time as weakness when accuracy remains strong.",
-    "Do not treat subjects with no activity as failed.",
-  ];
+    "Do not treat subjects with no activity as failed."];
 
   /** @type {object[]} */
   const structuredFindings = [];
@@ -351,8 +320,7 @@ export function enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEn
       rowQuestions: rowQ,
       subjectQuestionTotal: subjQ,
       accuracy: acc,
-      dataSufficiencyLevel: row?.dataSufficiencyLevel,
-    });
+      dataSufficiencyLevel: row?.dataSufficiencyLevel});
 
     const cs = u.canonicalState;
     const actionState = cs?.actionState || "withhold";
@@ -375,8 +343,7 @@ export function enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEn
       evidenceLevel,
       dominantBehavior: behaviorDom,
       counterEvidenceStrong: !!counterEvidenceStrong,
-      narrowSample,
-    });
+      narrowSample});
 
     const errorTypes = inferErrorTypesV1(sid, row, behaviorDom);
 
@@ -400,8 +367,7 @@ export function enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEn
 
     const doNotConclude = [
       ...(u.diagnosis?.forbiddenInferencesHe || []).slice(0, 4).map((x) => String(x)),
-      ...subjectWideWeaknessBlockedReasoning(sid, maps).slice(0, 2),
-    ];
+      ...subjectWideWeaknessBlockedReasoning(sid, maps).slice(0, 2)];
     if (evidenceLevel === "thin" || evidenceLevel === "limited") {
       doNotConclude.push("Do not draw strong conclusions until more practice data is collected.");
     }
@@ -429,26 +395,21 @@ export function enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEn
         sessionsApprox: null,
         trend: row?.trend?.accuracyDirection || "unknown",
         comparedToSubjectAverage:
-          Number.isFinite(acc) && subjQ > 0 && subjAvgN !== null ? Math.round((acc - subjAvgN) * 10) / 10 : null,
-      },
+          Number.isFinite(acc) && subjQ > 0 && subjAvgN !== null ? Math.round((acc - subjAvgN) * 10) / 10 : null},
       reasoning,
       doNotConclude: [...new Set(doNotConclude)].filter(Boolean).slice(0, 14),
       nextAction: {
-        type: nextType,
-      },
+        type: nextType},
       frameworkMeta: {
         frameworkVersion: PROFESSIONAL_FRAMEWORK_V1.version,
         skillPackKey: skillId,
         subskillsAvailable: skillPack[skillId]?.subskills || [],
-        errorTypesConsidered: errorTypes,
-      },
-    };
+        errorTypesConsidered: errorTypes}};
 
     const errList = ERROR_TYPES_BY_SUBJECT_ID[sid] || MATH_ERROR_TYPES_V1;
     u.professionalFrameworkV1 = {
       structuredFinding,
-      errorTypesV1: errList,
-    };
+      errorTypesV1: errList};
     structuredFindings.push(structuredFinding);
     subjectsTouched.add(sid);
   }
@@ -458,8 +419,7 @@ export function enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEn
     subjectsCoveredThisPass: [...subjectsTouched].sort(),
     structuredFindings,
     globalDoNotConclude,
-    clinicalLanguageGuard: PROFESSIONAL_FRAMEWORK_V1.bannedConclusionPhrases,
-  };
+    clinicalLanguageGuard: PROFESSIONAL_FRAMEWORK_V1.bannedConclusionPhrases};
 
   return diagnosticEngineV2;
 }
@@ -470,4 +430,4 @@ export const HEBREW_SKILLS_V1 = SKILL_PACK_BY_SUBJECT_ID.hebrew;
 export const ENGLISH_SKILLS_V1 = SKILL_PACK_BY_SUBJECT_ID.english;
 export const SCIENCE_SKILLS_V1 = SKILL_PACK_BY_SUBJECT_ID.science;
 export const GEOMETRY_SKILLS_V1 = SKILL_PACK_BY_SUBJECT_ID.geometry;
-export const MOLEDET_SKILLS_V1 = SKILL_PACK_BY_SUBJECT_ID["moledet-geography"];
+

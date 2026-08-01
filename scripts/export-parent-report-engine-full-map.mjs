@@ -109,7 +109,7 @@ add({ category: "server_insight", state: "weak_topic_hedged", file: SRV, cond: "
 add({ category: "server_insight", state: "default_fallback_insight", file: SRV, cond: "!insights.length", in: "(none)", out: "insights[]", tpl: "מומלץ לשמור על תרגול קצר וקבוע כדי ליצור רצף למידה.", ex: "מומלץ לשמור על תרגול קצר וקבוע כדי ליצור רצף למידה.", pol: "neutral", short: DISPLAY.insights, pdfShort: DISPLAY.yes, detailed: DISPLAY.yes, spec: "generic", dup: "engine no_urgent fallback", conflict: "", notes: "" });
 
 // ─── 3. Engine insights override ────────────────────────────────────────────
-const ENG = "utils/parent-report-engine-insights-he.js";
+const ENG = "utils/parent-report-engine-insights.js";
 add({ category: "engine_insight", state: "activity_gap_zero_diagnostic", file: ENG, cond: "diagnosticAnswers===0 && (totalAnswers>0||activity)", in: "summary.diagnosticAnswers, totalAnswers", out: "insights[] + summary.activityGapNoteHe", tpl: "היו {totalAnswers} תשובות באתר, אבל רק 0 נספרו לדוח הלימודי. כדי לקבל תמונה מדויקת יותר...", ex: "היו 42 תשובות באתר, אבל רק 0 נספרו לדוח הלימודי. כדי לקבל תמונה מדויקת יותר, כדאי לבצע גם תרגול שאלות רגיל במקצועות הליבה.", pol: "neutral", short: DISPLAY.insights, pdfShort: DISPLAY.yes, detailed: DISPLAY.yes, hidden: "also ParentReportDataHealthNote", spec: "specific", dup: "no_data", conflict: "supported diagnosis", notes: "AAA1/AAA7 case" });
 add({ category: "engine_insight", state: "activity_gap_partial_diagnostic", file: ENG, cond: "diagnosticAnswers>0 && diagnosticAnswers<min(8,floor(total*0.35)) && total>=2*diag", in: "diagnosticAnswers, totalAnswers", out: "insights[]", tpl: "היו {total} תשובות באתר, אבל רק {diag} נספרו לדוח...", ex: "היו 30 תשובות באתר, אבל רק 5 נספרו לדוח הלימודי...", pol: "neutral", short: DISPLAY.insights, pdfShort: DISPLAY.yes, detailed: DISPLAY.yes, spec: "specific", dup: "activity_gap_zero_diagnostic", conflict: "", notes: "" });
 add({ category: "engine_insight", state: "activity_gap_non_diagnostic_only", file: ENG, cond: "hasNonDiagnosticActivity && diagnosticAnswers<5 && total<=diag", in: "learningMinutes, bookMinutes", out: "insights[]", tpl: "היו פעילויות באתר בתקופה הזו, אבל רק חלק קטן...", ex: "היו פעילויות באתר בתקופה הזו, אבל רק חלק קטן מהן מתאים לחישוב הדוח הלימודי...", pol: "neutral", short: DISPLAY.insights, pdfShort: DISPLAY.yes, detailed: DISPLAY.yes, spec: "generic", dup: "activity_gap_zero_diagnostic", conflict: "", notes: "" });
@@ -548,7 +548,7 @@ for (const subj of subjects) {
 }
 
 // ─── 17. UI explain block sections ──────────────────────────────────────────
-const UI = "utils/parent-report-ui-explain-he.js";
+const UI = "utils/parent-report-ui-explain.js";
 const explainSections = [
   ["explain_identified", "buildTopicDiagnosticExplainSectionsHe identified", "מה זוהה: {stepLabel} ב«{label}».", "topic table + PDF"],
   ["explain_data", "q/acc/wr", "הנתונים: {q} שאלות, דיוק {acc}%, {wr}% טעויות.", "topic table + PDF"],

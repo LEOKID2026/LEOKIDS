@@ -19,6 +19,7 @@ import ColoringTabShell from "../coloring-upload/ColoringTabShell.jsx";
 import ColoringPreviewModal from "../coloring/ColoringPreviewModal.jsx";
 import WorksheetPreviewModal from "./WorksheetPreviewModal.jsx";
 import { useWorksheetShellAttrs, useWorksheetUi } from "../../hooks/useWorksheetUi.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { writingErrorLabelEn } from "../../lib/writing/writing-error-labels.en.js";
 import { getPublicSeoWideClasses } from "../seo/public-seo-wide-theme";
 import { getPublicDemoAllowlistEntry } from "../../lib/worksheets/worksheet-public-demo.constants.js";
@@ -80,6 +81,12 @@ export default function PublicWorksheetsHub({
 }) {
   const router = useRouter();
   const ui = useWorksheetUi();
+  const { locale, contentLocale } = useI18n();
+  const worksheetLocaleFields = {
+    interfaceLocale: locale || "en",
+    contentLocale: contentLocale || locale || "en",
+    instructionLocale: contentLocale || locale || "en",
+  };
   const shell = useWorksheetShellAttrs();
   const { isBright } = useStudentTheme();
   const landingCls = landingEmbed ? getPublicSeoWideClasses(isBright) : null;
@@ -130,7 +137,11 @@ export default function PublicWorksheetsHub({
     setCatalogLoading(true);
     setCatalogError("");
     try {
-      const res = await fetch("/api/public/worksheets/catalog");
+      const localeQs = new URLSearchParams({
+        interfaceLocale: worksheetLocaleFields.interfaceLocale,
+        contentLocale: worksheetLocaleFields.contentLocale,
+      }).toString();
+      const res = await fetch(`/api/public/worksheets/catalog?${localeQs}`);
       const data = await res.json();
       if (!res.ok || !data.ok) {
         setCatalogError(data.error || ui.errorGeneric);
@@ -143,7 +154,7 @@ export default function PublicWorksheetsHub({
     } finally {
       setCatalogLoading(false);
     }
-  }, []);
+  }, [worksheetLocaleFields, ui.errorGeneric]);
 
   useEffect(() => {
     fetchCatalog();
@@ -292,7 +303,13 @@ export default function PublicWorksheetsHub({
     async (slug) => {
       setBusySlug(slug);
       try {
-        const res = await fetch(`/api/public/worksheets/ready/${encodeURIComponent(slug)}`);
+        const localeQs = new URLSearchParams({
+          interfaceLocale: worksheetLocaleFields.interfaceLocale,
+          contentLocale: worksheetLocaleFields.contentLocale,
+        }).toString();
+        const res = await fetch(
+          `/api/public/worksheets/ready/${encodeURIComponent(slug)}?${localeQs}`
+        );
         const data = await res.json();
         if (!res.ok || !data.ok) {
           setCatalogError(data.error || ui.errorGeneric);
@@ -311,7 +328,7 @@ export default function PublicWorksheetsHub({
         setBusySlug(null);
       }
     },
-    [openPreview, includeAnswers]
+    [openPreview, includeAnswers, worksheetLocaleFields]
   );
 
   const handleCreateSubmit = useCallback(async () => {
@@ -333,6 +350,7 @@ export default function PublicWorksheetsHub({
             ? createForm.mathPracticeFormat
             : undefined,
         preferMcq: createForm.preferMcq === true,
+        ...worksheetLocaleFields,
         ...(visitSessionId ? { visitSessionId } : {}),
       };
 
@@ -352,7 +370,7 @@ export default function PublicWorksheetsHub({
     } finally {
       setCreateBusy(false);
     }
-  }, [createForm, openWorksheetPreviewModal, includeAnswers]);
+  }, [createForm, openWorksheetPreviewModal, includeAnswers, worksheetLocaleFields]);
 
   const handleWritingCreateSubmit = useCallback(async () => {
     setWritingCreateBusy(true);
@@ -361,7 +379,7 @@ export default function PublicWorksheetsHub({
       const newSeed = Math.floor(Math.random() * 1_000_000);
       const visitSessionId = getPublicWorksheetVisitSessionId();
       const body = {
-        ...buildWritingGenerateBody(writingForm),
+        ...buildWritingGenerateBody(writingForm, worksheetLocaleFields),
         seed: newSeed,
         source: "public-demo",
         presetId: writingForm.demoPresetId,
@@ -390,7 +408,7 @@ export default function PublicWorksheetsHub({
     } finally {
       setWritingCreateBusy(false);
     }
-  }, [writingForm, openWorksheetPreviewModal]);
+  }, [writingForm, openWorksheetPreviewModal, worksheetLocaleFields]);
 
   const handleColoringCreateSubmit = useCallback(async (cardKeyOverride) => {
     setColoringCreateBusy(true);

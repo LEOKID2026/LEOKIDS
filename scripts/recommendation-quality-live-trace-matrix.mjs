@@ -31,7 +31,7 @@ const { seedLocalStorageFromDbReportInput } = await load("lib/learning-supabase/
 const { applyParentReportGamificationOverlay } = await load("lib/learning-shared/student-account-state-view.js");
 const { applyServerParentFacingAuthorityToClientReport } = await load("lib/parent-server/parent-facing-report-authority.js");
 const { applyTopicEngineParentFacingInsights, collectTopicEngineRowsFromReport, buildTopicEngineInsightLineHe } =
-  await load("utils/parent-report-engine-insights-he.js");
+  await load("utils/parent-report-engine-insights.js");
 const { applyBridgeProvenanceToGeneratedReport } = await load("lib/learning-supabase/bridge-report-provenance.js");
 const { syncReportVisiblePracticeFromServer } = await load("lib/learning/report-visible-practice-sync.js");
 const { generateParentReportV2 } = await load("utils/parent-report-v2.js");
@@ -42,7 +42,7 @@ const {
   buildLpdSafeTopicExplainSectionsHe,
   getLpdFromRow,
 } = await load("utils/learning-pattern-decision/index.js");
-const { buildSubjectParentLetter } = await load("utils/detailed-report-parent-letter-he.js");
+const { buildSubjectParentLetter } = await load("utils/detailed-report-parent-letter.js");
 const { traceRowThroughPipeline } = await load("utils/parent-report-output-integrity/trace-row-pipeline.js");
 const { isParentReportPracticeAnswer } = await load("lib/learning/parent-report-evidence-gate.js");
 const { classifyActivityEvidence, EVIDENCE_CATEGORIES } = await load("lib/learning/activity-classification.js");

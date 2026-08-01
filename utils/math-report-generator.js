@@ -153,7 +153,7 @@ const ENGLISH_TOPIC_NAMES = {
   inference: reportPackCopy("utils__math-report-generator", "inference"),
   sentence_understanding: reportPackCopy("utils__math-report-generator", "sentence_understanding"),
   simple_sentences: reportPackCopy("utils__math-report-generator", "simple_sentences"),
-  mixed: reportPackCopy("utils__math-report-generator", "mixed_practice"),
+  mixed: reportPackCopy("utils__math-report-generator", "mixed_practice")
 };
 
 export function getEnglishTopicName(topic) {
@@ -175,7 +175,7 @@ const SCIENCE_TOPIC_NAMES = {
   living_things: reportPackCopy("utils__math-report-generator", "living_things"),
   matter: reportPackCopy("utils__math-report-generator", "materials"),
   forces: reportPackCopy("utils__math-report-generator", "forces"),
-  mixed: reportPackCopy("utils__math-report-generator", "mixed_topics"),
+  mixed: reportPackCopy("utils__math-report-generator", "mixed_topics")
 };
 
 export function getScienceTopicName(topic) {
@@ -208,7 +208,7 @@ const HEBREW_TOPIC_NAMES = {
   vowels_reading: reportPackCopy("utils__math-report-generator", "reading_with_vowels"),
   plurals: reportPackCopy("utils__math-report-generator", "singular_and_plural"),
   verb_forms: reportPackCopy("utils__math-report-generator", "verb_forms"),
-  sentence_structure: reportPackCopy("utils__math-report-generator", "sentence_structure"),
+  sentence_structure: reportPackCopy("utils__math-report-generator", "sentence_structure")
 };
 
 export function getHebrewTopicName(topic) {
@@ -231,7 +231,7 @@ const MOLEDET_GEOGRAPHY_TOPIC_NAMES = {
   maps_basic: reportPackCopy("utils__math-report-generator", "basic_maps"),
   regions: reportPackCopy("utils__math-report-generator", "regions"),
   history: reportPackCopy("utils__math-report-generator", "history"),
-  mixed: "Mixed",
+  mixed: "Mixed"
 };
 
 export function getMoledetGeographyTopicName(topic) {
@@ -249,7 +249,7 @@ const HEBREW_GRADE_DISPLAY_AS_IS = new Set([
   "3rd",
   "4th",
   "5th",
-  "6th",
+  "6th"
 ]);
 
 const HEBREW_GRADE_TO_CANON = {
@@ -258,7 +258,7 @@ const HEBREW_GRADE_TO_CANON = {
   "3rd": "g3",
   "4th": "g4",
   "5th": "g5",
-  "6th": "g6",
+  "6th": "g6"
 };
 
 /**
@@ -330,7 +330,7 @@ function getMostCommonGradeAndLevel(savedTracking, containerKey, itemKey) {
       rawGradeDominant != null
         ? formatParentReportGradeLabel(rawGradeDominant)
         : reportPackCopy("utils__math-report-generator", "unavailable"),
-    levelLabel: levelKey ? (LEVEL_LABELS[levelKey] || levelKey) : reportPackCopy("utils__math-report-generator", "unavailable"),
+    levelLabel: levelKey ? (LEVEL_LABELS[levelKey] || levelKey) : reportPackCopy("utils__math-report-generator", "unavailable")
   };
 }
 
@@ -735,7 +735,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...mathRecommendations,
       ...geometryRecommendations,
       ...englishRecommendations,
-      ...scienceRecommendations,
+      ...scienceRecommendations
     ];
     
     // ========== Achievements ==========
@@ -747,7 +747,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...mathAchievements,
       ...geometryAchievements,
       ...englishAchievements,
-      ...scienceAchievements,
+      ...scienceAchievements
     ];
     const stars =
       (mathProgress.stars || 0) +
@@ -778,7 +778,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       ...Object.keys(mathDailyData),
       ...Object.keys(geometryDailyData),
       ...Object.keys(englishDailyData),
-      ...Object.keys(scienceDailyData),
+      ...Object.keys(scienceDailyData)
     ]);
     
     allDailyDates.forEach(dateStr => {
@@ -814,7 +814,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
           mathTopics: Object.keys(mathDay.operations || {}).length,
           geometryTopics: Object.keys(geometryDay.topics || {}).length,
           englishTopics: Object.keys(englishDay.topics || {}).length,
-          scienceTopics: Object.keys(scienceDay.topics || {}).length,
+          scienceTopics: Object.keys(scienceDay.topics || {}).length
         });
       }
     });
@@ -835,7 +835,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         .map(([topic, _]) => `English: ${getEnglishTopicName(topic)}`),
       ...Object.entries(scienceTopicsSummary)
         .filter(([_, data]) => data.needsPractice)
-        .map(([topic, _]) => `Science: ${getScienceTopicName(topic)}`),
+        .map(([topic, _]) => `Science: ${getScienceTopicName(topic)}`)
     ];
     
     // Excellent topics
@@ -851,7 +851,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         .map(([topic, _]) => `English: ${getEnglishTopicName(topic)}`),
       ...Object.entries(scienceTopicsSummary)
         .filter(([_, data]) => data.excellent && data.questions >= 10)
-        .map(([topic, _]) => `Science: ${getScienceTopicName(topic)}`),
+        .map(([topic, _]) => `Science: ${getScienceTopicName(topic)}`)
     ];
     
     return {
@@ -913,7 +913,7 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         ...Object.fromEntries(Object.entries(mathOperationsSummary).map(([k, v]) => [`math_${k}`, v])),
         ...Object.fromEntries(Object.entries(geometryTopicsSummary).map(([k, v]) => [`geometry_${k}`, v])),
         ...Object.fromEntries(Object.entries(englishTopicsSummary).map(([k, v]) => [`english_${k}`, v])),
-        ...Object.fromEntries(Object.entries(scienceTopicsSummary).map(([k, v]) => [`science_${k}`, v])),
+        ...Object.fromEntries(Object.entries(scienceTopicsSummary).map(([k, v]) => [`science_${k}`, v]))
       },
       
       // Daily activity
@@ -1037,9 +1037,8 @@ function getDisplayNameForEntry(op, data) {
     if (String(keyForLookup).startsWith("hist_sub_")) return getHistorySubtopicName(keyForLookup);
     return getHistoryTopicName(keyForLookup);
   }
-  if (data.subject === 'hebrew') return getHebrewTopicName(keyForLookup);
-  if (data.subject === 'moledet-geography')
-    return getMoledetGeographyTopicName(keyForLookup);
+  
+  
   return getOperationName(keyForLookup);
 }
 
@@ -1060,7 +1059,7 @@ export function generateRecommendations(operations, mistakes) {
     // To get a "Blue recommendation" (good), both time and enough questions are required
     goodAccuracy: 85,
     goodQuestions: 15,
-    goodTimeMinutes: 10,
+    goodTimeMinutes: 10
   };
 
   const gradeOrder = ["g1", "g2", "g3", "g4", "g5", "g6"];
@@ -1137,7 +1136,7 @@ export function generateRecommendations(operations, mistakes) {
         message: `Excellent! ${parts.join(" and ")} is recommended. (${baseReasons})`,
         priority: "success",
         promoteLevelToKey,
-        promoteGradeToKey,
+        promoteGradeToKey
       });
       return;
     }
@@ -1150,7 +1149,7 @@ export function generateRecommendations(operations, mistakes) {
         operation: op,
         operationName,
         message: `You need more practice (mainly time/quantity of questions) to give a strong recommendation. (${baseReasons})`,
-        priority: "medium",
+        priority: "medium"
       });
       return;
     }
@@ -1168,7 +1167,7 @@ export function generateRecommendations(operations, mistakes) {
         operationName,
         message: `${msgParts.join(". ")}. (${baseReasons})`,
         priority: "high",
-        mistakeCount: mistakesCount,
+        mistakeCount: mistakesCount
       });
       return;
     }
@@ -1180,7 +1179,7 @@ export function generateRecommendations(operations, mistakes) {
         operation: op,
         operationName,
         message: `There is progress, but it is better to strengthen before raising difficulties. (${baseReasons})`,
-        priority: "medium",
+        priority: "medium"
       });
       return;
     }
@@ -1201,7 +1200,7 @@ export function generateRecommendations(operations, mistakes) {
         operation: op,
         operationName,
         message: `Good progress. ${hint}. (${baseReasons})`,
-        priority: "low",
+        priority: "low"
       });
       return;
     }
@@ -1213,7 +1212,7 @@ export function generateRecommendations(operations, mistakes) {
         operation: op,
         operationName,
         message: `The accuracy is good, but you need more practice (time/amount of questions) before increasing the difficulty. (${baseReasons})`,
-        priority: "medium",
+        priority: "medium"
       });
       return;
     }
@@ -1223,7 +1222,7 @@ export function generateRecommendations(operations, mistakes) {
       operation: op,
       operationName,
       message: `It is recommended to keep practicing to get accuracy data as well. (${baseReasons})`,
-      priority: "medium",
+      priority: "medium"
     });
   });
 
@@ -1238,7 +1237,7 @@ export function exportReportToPDF(report, options = {}) {
   
   const elementId = options.elementId || "parent-report-pdf";
   const filename = options.filename || `Report-${report?.playerName || "Player"}-${report?.endDate || ""}.pdf`;
-  const method = options.method || "print"; // "print" (recommended) | "canvas" (fallback)
+  const method = options.method || "print"; // "print" (recommended) || "canvas" (fallback)
 
   try {
     const el = document.getElementById(elementId);
@@ -1318,7 +1317,7 @@ export function exportReportToPDF(report, options = {}) {
       chartSizes.push({
         id,
         w: w || Math.round(pRect.width) || 600,
-        h: h || Math.round(pRect.height) || 280,
+        h: h || Math.round(pRect.height) || 280
       });
     });
 
@@ -1506,7 +1505,7 @@ export function exportReportToPDF(report, options = {}) {
                   console.warn("PDF onclone styling failed:", e);
                 }
               },
-              ignoreElements: (node) => node?.classList?.contains("no-pdf"),
+              ignoreElements: (node) => node?.classList?.contains("no-pdf")
             },
             jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
             // Better page breaks:
@@ -1516,8 +1515,8 @@ export function exportReportToPDF(report, options = {}) {
             pagebreak: {
               mode: ["avoid-all", "css", "legacy"],
               avoid: [".avoid-break", ".recharts-wrapper", ".recharts-responsive-container", "table"],
-              before: [".pdf-page-break"],
-            },
+              before: [".pdf-page-break"]
+            }
           };
 
           return html2pdf().set(opt).from(el).save();

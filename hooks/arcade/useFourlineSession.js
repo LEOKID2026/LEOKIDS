@@ -33,7 +33,7 @@ export function useFourlineSession(ctx) {
   const [gameSessionRow, setGameSessionRow] = useState(null);
   /** True after at least one successful snapshot bundle (ok JSON with room payload). */
   const [bundleLoaded, setBundleLoaded] = useState(false);
-  /** טעינת snapshot נכשלה (403 / רשת); אחרי ניסיון הצטרפות אוטומטי לחדר */
+  /**  snapshot  (403 / );      */
   const [bundleError, setBundleError] = useState("");
   const [roomAccessLost, setRoomAccessLost] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -127,7 +127,7 @@ export function useFourlineSession(ctx) {
       try {
         const r = await requestFourlinePlayColumn(roomId, col, { revision: s.revision });
         if (!r.ok) {
-          setErr(r.error || "מהלך נכשל");
+          setErr(r.error || "");
           return { ok: false };
         }
         if (r.snapshot) setSnap((prev) => preferNewer(prev, r.snapshot));
@@ -148,8 +148,7 @@ export function useFourlineSession(ctx) {
         setBusy(false);
       }
     },
-    [roomId, busy],
-  );
+    [roomId, busy]);
 
   const vm = useMemo(() => {
     const phase = snap ? String(snap.phase || "").toLowerCase() : "";

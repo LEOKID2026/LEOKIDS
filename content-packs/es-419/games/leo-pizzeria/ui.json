@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Pizzería Leo",
+  "blurb": "Aprender fracciones haciendo pizzas.",
+  "help": {
+    "howToPlay": "Lea el pedido, agregue ingredientes a las porciones de pizza (toque o arrastre) y toque \"Servir pizza\".",
+    "scoring": "Pizza correcta +30, racha de 3 correcta +15, racha de 5 +30. No se deducen puntos por errores.",
+    "rewards": "Las monedas se otorgan según la cantidad de clientes atendidos, la precisión, las rachas y el nivel de dificultad, incluso si no atendiste a los 20 clientes.",
+    "tip": "Verifique cuántas rebanadas cubre cada cobertura: la mitad, un cuarto y un octavo se refieren al número de rebanadas, no a una posición."
+  },
+  "accessibility": {
+    "title": "Pizzería Leo"
+  }
+}

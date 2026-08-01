@@ -370,9 +370,9 @@ const GENERIC_AREA_PROCEDURAL = {
 };
 
 /**
- * @param {DiagnosticContract | null} contract
+ * @param {DiagnosticContract || null} contract
  * @param {{ kind?: string, patternFamily?: string }} ctx
- * @returns {DiagnosticContract | null}
+ * @returns {DiagnosticContract || null}
  */
 function suppressUnspinedRectangleAreaSkill(contract, ctx = {}) {
   if (!contract || isRectangleAreaSpineRegistered()) return contract;
@@ -391,7 +391,7 @@ function suppressUnspinedRectangleAreaSkill(contract, ctx = {}) {
 /**
  * @param {string} patternFamily
  * @param {string} kind
- * @returns {DiagnosticContract | null}
+ * @returns {DiagnosticContract || null}
  */
 function resolveByPatternFamily(patternFamily, kind) {
   const pf = String(patternFamily || "");

@@ -1,5 +1,5 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
-/** @typedef {'even' | 'odd' | 'multiples' | 'skip' | 'sequence'} PathRule */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
+/** @typedef {'even' || 'odd' || 'multiples' || 'skip' || 'sequence'} PathRule */
 
 import { MIN_POOL_SIZE, randInt, shuffle } from "../shared/task-session.js";
 

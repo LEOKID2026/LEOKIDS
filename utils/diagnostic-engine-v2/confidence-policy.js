@@ -1,5 +1,5 @@
 /**
- * מדיניות ביטחון — תואם stage1 §9 + אותות שורה קיימים (diagnostics).
+ *   —  stage1 §9 +    (diagnostics).
  * @typedef {"high"|"moderate"|"low"|"early_signal_only"|"insufficient_data"|"contradictory"} ConfidenceLevel
  */
 

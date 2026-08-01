@@ -790,7 +790,7 @@ const PRACTICE_PAGES = {
 
 /**
  * @param {string} slug
- * @returns {PracticePageContent | null}
+ * @returns {PracticePageContent || null}
  */
 export function getPracticePageContent(slug) {
   const page = PRACTICE_PAGES[slug];

@@ -17,7 +17,7 @@ function tierBoxClass(state) {
   return "border-white/15 bg-black/30 opacity-75";
 }
 
-/** @param {{ view: object | null }} props */
+/** @param {{ view: object || null }} props */
 export default function SubjectMonthlyPrizeJourney({ view }) {
   if (!view) {
     return (

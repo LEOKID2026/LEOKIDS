@@ -2,6 +2,7 @@ import Layout from "../../../../../components/Layout";
 import MathG6BookShell from "../../../../../components/learning-book/MathG6BookShell";
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 import {
   getMathG6PageNeighbors,
   isValidMathG6PageId,
@@ -37,23 +38,24 @@ export default function MathG6BookPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadMathG6Page, loadMathG6TocEntries } = await import("../../../../../lib/learning-book/load-math-g6-pages");
   const pageId = params.pageId;
   if (!isValidMathG6PageId(pageId)) {
     return { notFound: true };
   }
 
-  const page = loadMathG6Page(pageId);
+  const page = loadMathG6Page(pageId, { contentLocale });
   if (!page) {
     return { notFound: true };
   }
 
-  const batches = loadMathG6TocEntries();
+  const batches = loadMathG6TocEntries({ contentLocale });
   const { prev, next } = getMathG6PageNeighbors(pageId);
 
-  const prevPage = prev ? loadMathG6Page(prev) : null;
-  const nextPage = next ? loadMathG6Page(next) : null;
+  const prevPage = prev ? loadMathG6Page(prev, { contentLocale }) : null;
+  const nextPage = next ? loadMathG6Page(next, { contentLocale }) : null;
 
   return {
     props: {

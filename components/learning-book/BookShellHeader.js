@@ -1,4 +1,4 @@
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 
 const HEADER_BTN =
   "inline-flex min-h-[2.5rem] shrink-0 items-center justify-center rounded-full px-3 py-2 text-xs font-semibold leading-none transition sm:px-3.5 sm:text-sm";
@@ -35,7 +35,7 @@ export default function BookShellHeader({
         <h1 className="text-base font-black leading-tight sm:text-lg">{title}</h1>
         {!isIndex && pageMeta ? (
           <p className={`mt-0.5 text-sm font-bold leading-snug sm:text-base ${activePageTitleClass}`}>
-            <MixedHebrewMathText text={pageMeta.displayTitle} />
+            <MixedRtlMathText text={pageMeta.displayTitle} />
           </p>
         ) : isIndex ? (
           <p className="mt-0.5 text-xs leading-snug text-[color:var(--book-text-muted)]">

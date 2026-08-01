@@ -8,7 +8,7 @@ import TeacherStudentSelector from "../../../components/worksheet-activities/Tea
 import { getLearningSupabaseBrowserClient } from "../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch } from "../../../lib/teacher-portal/teacher-ui.js";
-import { REPORT_SUBJECTS, subjectLabelHe } from "../../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabel } from "../../../lib/teacher-portal/teacher-ui.js";
 import { worksheetModeLabelHe } from "../../../lib/worksheet-activities/worksheet-labels.client.js";
 
 const MODES = ["pdf_only", "digital_answers", "manual_grading"];
@@ -235,7 +235,7 @@ export default function TeacherNewDirectWorksheetPage() {
             >
               {REPORT_SUBJECTS.map((s) => (
                 <option key={s} value={s}>
-                  {subjectLabelHe(s)}
+                  {subjectLabel(s)}
                 </option>
               ))}
             </select>

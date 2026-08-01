@@ -6,7 +6,7 @@
 /** @param {string} t */
 function norm(t) {
   return String(t || "")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
 }
 
@@ -17,8 +17,7 @@ const ONCE_ACROSS_ANSWER = [
   "uncertainty",
   "keep following",
   "early to the direction",
-  "Unable to determine direction",
-];
+  "Unable to determine direction"];
 
 /**
  * @param {Array<{ type: string; answerText: string; source: string }>} blocks
@@ -33,8 +32,7 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
   let out = (Array.isArray(blocks) ? blocks : [])
     .map((b) => ({
       ...b,
-      answerText: norm(b.answerText),
-    }))
+      answerText: norm(b.answerText)}))
     .filter((b) => b.answerText.length > 0);
 
   let acc = "";
@@ -45,7 +43,7 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
     for (const p of ONCE_ACROSS_ANSWER) {
       if (!p) continue;
       if (acc.includes(p) && t.includes(p)) {
-        t = norm(t.split(p).join(" ").replace(/\s{2,}/g, " "));
+        t = norm(t.split(p).join("").replace(/\s{2}/g, ""));
       }
     }
     if (t.length > 2) {
@@ -60,13 +58,13 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
     const ta = new Set(
       String(a)
         .split(/\s+/)
-        .map((x) => x.replace(/^[^\u0590-\u05FF]+|[^\u0590-\u05FF]+$/g, ""))
+        .map((x) => x.replace(/(?!)/g, ""))
         .filter((x) => x.length >= 4),
     );
     const tb = new Set(
       String(b)
         .split(/\s+/)
-        .map((x) => x.replace(/^[^\u0590-\u05FF]+|[^\u0590-\u05FF]+$/g, ""))
+        .map((x) => x.replace(/(?!)/g, ""))
         .filter((x) => x.length >= 4),
     );
     let inter = 0;

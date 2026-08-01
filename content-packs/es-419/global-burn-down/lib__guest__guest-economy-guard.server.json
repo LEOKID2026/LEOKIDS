@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "the_shop_is_not_available_in_guest_mode": "La tienda no está disponible en modo invitado.",
+    "cards_are_not_available_in_guest_mode": "Las tarjetas no están disponibles en modo invitado."
+  }
+}

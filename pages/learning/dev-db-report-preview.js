@@ -253,7 +253,7 @@ export default function DevDbReportPreviewPage() {
                     <li key={`${m.subject}-${m.questionId || idx}`} className="border rounded p-2">
                       <div>{m.subject} / {m.topic || "general"}</div>
                       <div>Q: {m.questionId || "N/A"}</div>
-                      <div>Expected: {m.expectedAnswer || "N/A"} | User: {m.userAnswer || "N/A"}</div>
+                      <div>Expected: {m.expectedAnswer || "N/A"} || User: {m.userAnswer || "N/A"}</div>
                     </li>
                   ))}
                 </ul>

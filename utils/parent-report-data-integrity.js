@@ -1,5 +1,5 @@
 /**
- * בדיקות שלמות נתונים לפני/אחרי בניית דוח הורים V2 — מבנה JSON לבדיקה ולא אל UI.
+ *    /    V2 —  JSON    UI.
  */
 
 import { mistakeTimestampMs } from "./mistake-event.js";
@@ -14,8 +14,7 @@ const VALID_MODES = new Set([
   "graded",
   "normal",
   "mistakes",
-  "practice_mistakes",
-]);
+  "practice_mistakes"]);
 
 const GRADE_RE = /^g[1-6]$/i;
 const LEVEL_RE = /^(easy|medium|hard)$/i;
@@ -70,7 +69,7 @@ export function validateParentReportDataIntegrity(params) {
       for (let i = 0; i < sessions.length; i++) {
         const s = sessions[i];
         if (!s || typeof s !== "object") {
-          push("malformed_session", "warn", "מפגש לא אובייקט בתוך אחסון", {
+          push("malformed_session", "warn", "", {
             subjectId,
             bucketKey,
             detail: { index: i },
@@ -79,7 +78,7 @@ export function validateParentReportDataIntegrity(params) {
         }
         const t = parseSessionTime(s);
         if (t == null) {
-          push("missing_session_timestamp", "warn", "מפגש ללא חותמת זמן תקפה", {
+          push("missing_session_timestamp", "warn", "", {
             subjectId,
             bucketKey,
             detail: { index: i },
@@ -87,7 +86,7 @@ export function validateParentReportDataIntegrity(params) {
         }
         const mode = s.mode != null && s.mode !== "" ? String(s.mode).trim() : "learning";
         if (mode && !VALID_MODES.has(mode)) {
-          push("unknown_session_mode", "warn", "מצב מפגש לא מוכר", {
+          push("unknown_session_mode", "warn", "", {
             subjectId,
             bucketKey,
             detail: { mode },
@@ -95,7 +94,7 @@ export function validateParentReportDataIntegrity(params) {
         }
         const g = s.grade != null && s.grade !== "" ? String(s.grade).trim() : null;
         if (g && !GRADE_RE.test(g)) {
-          push("invalid_session_grade", "warn", "כיתה במפגש לא בפורמט צפוי (g1–g6)", {
+          push("invalid_session_grade", "warn", "(g1–g6)", {
             subjectId,
             bucketKey,
             detail: { grade: g },
@@ -103,7 +102,7 @@ export function validateParentReportDataIntegrity(params) {
         }
         const lv = s.level != null && s.level !== "" ? String(s.level).trim() : null;
         if (lv && !LEVEL_RE.test(lv)) {
-          push("invalid_session_level", "warn", "רמת קושי במפגש לא easy/medium/hard", {
+          push("invalid_session_level", "warn", "easy/medium/hard", {
             subjectId,
             bucketKey,
             detail: { level: lv },
@@ -115,7 +114,7 @@ export function validateParentReportDataIntegrity(params) {
           const k = `${bucketKey}:${sig}`;
           const prev = seenTs.get(k);
           if (prev !== undefined) {
-            push("duplicate_session_signature", "warn", "חשד לכפילות מפגשים (אותו זמן ונפח)", {
+            push("duplicate_session_signature", "warn", "", {
               subjectId,
               bucketKey,
               detail: { indices: [prev, i] },
@@ -131,7 +130,7 @@ export function validateParentReportDataIntegrity(params) {
     for (let i = 0; i < arr.length; i++) {
       const m = arr[i];
       if (m == null || typeof m !== "object") {
-        push("malformed_mistake_event", "error", "אירוע טעות לא אובייקט", {
+        push("malformed_mistake_event", "error", "", {
           subjectId,
           detail: { index: i },
         });
@@ -139,23 +138,23 @@ export function validateParentReportDataIntegrity(params) {
       }
       const ts = mistakeTimestampMs(m);
       if (ts === null) {
-        push("missing_mistake_timestamp", "warn", "אירוע טעות ללא חותמת זמן אחרי נירמול", {
+        push("missing_mistake_timestamp", "warn", "", {
           subjectId,
           detail: { index: i },
         });
       }
       if (Number.isFinite(startMs) && Number.isFinite(endMs) && ts !== null && (ts < startMs || ts > endMs)) {
-        push("mistake_outside_declared_range", "warn", "אירוע טעות מחוץ לטווח הדיווח המוצהר (ייתכן סינון כפול)", {
+        push("mistake_outside_declared_range", "warn", "", {
           subjectId,
           detail: { index: i, ts },
         });
       }
       const hasTopic =
-        m.topic != null ||
-        m.operation != null ||
+        m.topic != null |
+        m.operation != null |
         (m.snapshot && typeof m.snapshot === "object" && (m.snapshot.topic != null || m.snapshot.operation != null));
       if (!hasTopic) {
-        push("legacy_mistake_missing_topic", "warn", "אירוע טעות ללא נושא/פעולה (נירמול legacy)", {
+        push("legacy_mistake_missing_topic", "warn", "/ ( legacy)", {
           subjectId,
           detail: { index: i },
         });
@@ -170,7 +169,7 @@ export function validateParentReportDataIntegrity(params) {
       if (!row || typeof row !== "object") continue;
       const bk = row.bucketKey != null ? String(row.bucketKey) : "";
       if (!bk) {
-        push("row_missing_bucket_key", "warn", "שורת דוח ללא bucketKey", { subjectId, detail: { rowKey } });
+        push("row_missing_bucket_key", "warn", "bucketKey", { subjectId, detail: { rowKey } });
         continue;
       }
       const storageKeys = Object.keys(bucket);
@@ -179,14 +178,14 @@ export function validateParentReportDataIntegrity(params) {
         const canonRow = mathReportBaseOperationKey(bk);
         const found = storageKeys.some((k) => mathReportBaseOperationKey(k) === canonRow);
         if (!found) {
-          push("bucket_key_mismatch_math", "warn", "מפתח שורה לא תואם לאף דלי באחסון (מתמטיקה לאחר נירמול)", {
+          push("bucket_key_mismatch_math", "warn", "", {
             subjectId,
             bucketKey: bk,
             detail: { rowKey },
           });
         }
       } else if (!storageKeys.includes(bk)) {
-        push("bucket_key_mismatch", "warn", "מפתח שורה לא תואם למפתח אחסון גולמי", {
+        push("bucket_key_mismatch", "warn", "", {
           subjectId,
           bucketKey: bk,
           detail: { rowKey },
@@ -210,7 +209,7 @@ export function validateParentReportDataIntegrity(params) {
     if (sumDailyQ > 0 && sumMapQ > 0) {
       const ratio = sumDailyQ / sumMapQ;
       if (ratio < 0.5 || ratio > 2.5) {
-        push("daily_vs_row_question_divergence", "warn", "פער גדול בין סכום שאלות יומי לבין סכום שורות (ייתכן כפילויות או מפתחות שונים)", {
+        push("daily_vs_row_question_divergence", "warn", "", {
           detail: { sumDailyQuestions: sumDailyQ, sumRowQuestions: sumMapQ },
         });
       }

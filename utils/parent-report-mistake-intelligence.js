@@ -1,9 +1,9 @@
 /**
- * Phase 9 — אינטליגנציית טעויות ברמת שורה (v1).
- * טהור לוגית; תוויות עברית מיובאות מ parent-report-ui-explain-he.
+ * Phase 9 —     (v1).
+ *  ;     parent-report-ui-explain.
  */
 
-import { MISTAKE_PATTERN_LABEL_HE } from "./parent-report-ui-explain-he.js";
+import { MISTAKE_PATTERN_LABEL_HE } from "./parent-report-ui-explain.js";
 import { mapTaxonomyToMistakePatternFamily } from "./parent-report-engine-taxonomy-bridge.js";
 
 /**
@@ -53,9 +53,9 @@ export function buildMistakeIntelligencePhase9(ctx) {
   let mistakePatternConfidence = 0.35;
 
   const weakSignal =
-    q < 6 ||
-    (ev === "low" && suff === "low" && mC < 3) ||
-    rootCause === "insufficient_evidence" ||
+    q < 6 |
+    (ev === "low" && suff === "low" && mC < 3) |
+    rootCause === "insufficient_evidence" |
     cs === "withheld";
 
   if (mC === 0 && q < 10 && wr < 0.08) {

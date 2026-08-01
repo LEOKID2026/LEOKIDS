@@ -11,7 +11,7 @@ import {
   DASHBOARD_NO_CLASSES_TITLE,
   formatTeacherAttentionStudentLineHe,
   rosterFilterLabelHe,
-  subjectLabelHe,
+  subjectLabel,
   teacherAuthFetch,
 } from "../../lib/teacher-portal/teacher-ui.js";
 import TeacherInviteOthersButton from "./TeacherInviteOthersButton";
@@ -665,7 +665,7 @@ export default function TeacherDashboardClient({
                 : "";
               const studentCount = effectivePhysicalClassStudentCount(c);
               const subjectLinkLabel = (s) =>
-                s.subjectLabel || subjectLabelHe(s.subjectFocus) || "Class";
+                s.subjectLabel || subjectLabel(s.subjectFocus) || "Class";
               const reportLinks =
                 subjectClasses.length > 1
                   ? subjectClasses.map((s) => ({

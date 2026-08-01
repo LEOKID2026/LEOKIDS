@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "volume_supports_stronger_reliability": "El volumen admite una mayor confiabilidad.",
+    "review_pacing_signals_separately_from_knowledge_gaps": "Revise las señales de estimulación por separado de las lagunas de conocimiento.",
+    "row_level_accuracy_is_relatively_consistent": "La precisión a nivel de fila es relativamente consistente."
+  }
+}

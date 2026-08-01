@@ -313,19 +313,19 @@ function buildPreviewMarkdown(pack) {
     ``,
     `## A. Executive summary`,
     ``,
-    `| Metric | Value |`,
+    `| Metric || Value |`,
     `|--------|-------|`,
-    `| Total planner runs | ${es.totalPlannerRuns} |`,
-    `| safetyViolationCount | ${es.safetyViolationCount} |`,
-    `| metadataExactMatchCount | ${es.metadataExactMatchCount} |`,
-    `| metadataSkillSubskillMatchCount | ${es.metadataSkillSubskillMatchCount} |`,
-    `| metadataSubjectFallbackCount | ${es.metadataSubjectFallbackCount} |`,
-    `| metadataSubjectFallbackBaselineCount | ${es.metadataSubjectFallbackBaselineCount} |`,
-    `| afterAvailableQuestionMetadataMissingCount | ${es.afterAvailableQuestionMetadataMissingCount} |`,
-    `| needsHumanReviewCount | ${es.needsHumanReviewCount} |`,
-    `| skillAlignmentCoverage | ${es.skillAlignmentCoverage} |`,
-    `| Planner status - ready / caution | ${es.plannerReadyCount} / ${es.plannerCautionCount} |`,
-    `| englishSkillTaggingIncompleteCount | ${es.englishSkillTaggingIncompleteCount} |`,
+    `| Total planner runs || ${es.totalPlannerRuns} |`,
+    `| safetyViolationCount || ${es.safetyViolationCount} |`,
+    `| metadataExactMatchCount || ${es.metadataExactMatchCount} |`,
+    `| metadataSkillSubskillMatchCount || ${es.metadataSkillSubskillMatchCount} |`,
+    `| metadataSubjectFallbackCount || ${es.metadataSubjectFallbackCount} |`,
+    `| metadataSubjectFallbackBaselineCount || ${es.metadataSubjectFallbackBaselineCount} |`,
+    `| afterAvailableQuestionMetadataMissingCount || ${es.afterAvailableQuestionMetadataMissingCount} |`,
+    `| needsHumanReviewCount || ${es.needsHumanReviewCount} |`,
+    `| skillAlignmentCoverage || ${es.skillAlignmentCoverage} |`,
+    `| Planner status - ready / caution || ${es.plannerReadyCount} / ${es.plannerCautionCount} |`,
+    `| englishSkillTaggingIncompleteCount || ${es.englishSkillTaggingIncompleteCount} |`,
     ``,
     `### skillAlignmentBySource`,
     ``,
@@ -335,11 +335,11 @@ function buildPreviewMarkdown(pack) {
     ``,
     `## B. Planner action table`,
     ``,
-    `| Count | nextAction | plannerStatus | subject | skillAlignmentSource | metadataResolutionSource |`,
+    `| Count || nextAction || plannerStatus || subject || skillAlignmentSource || metadataResolutionSource |`,
     `|------:|------------|---------------|---------|----------------------|--------------------------|`,
     ...pack.actionTable.map(
       (r) =>
-        `| ${r.count} | ${r.nextAction} | ${r.plannerStatus} | ${r.subject} | ${r.skillAlignmentSource} | ${r.metadataResolutionSource} |`
+        `| ${r.count} || ${r.nextAction} || ${r.plannerStatus} || ${r.subject} || ${r.skillAlignmentSource} || ${r.metadataResolutionSource} |`
     ),
     ``,
     `## C. Examples (slim rows - no question bodies)`,
@@ -363,10 +363,10 @@ function buildPreviewMarkdown(pack) {
     else lines.push("```json", JSON.stringify(arr, null, 2), "```", ``);
   }
 
-  lines.push(`## D. Readiness by subject`, ``, `| Subject | Runs | Exact | Fallback | Missing meta | needs_human_review | ready | caution | Recommended |`, `|---------|-----:|------:|---------:|-------------:|-------------------:|------:|--------:|-------------|`);
+  lines.push(`## D. Readiness by subject`, ``, `| Subject || Runs || Exact || Fallback || Missing meta || needs_human_review || ready || caution || Recommended |`, `|---------|-----:|------:|---------:|-------------:|-------------------:|------:|--------:|-------------|`);
   for (const r of pack.readinessBySubject) {
     lines.push(
-      `| ${r.subjectId} | ${r.total} | ${r.exactMatch} | ${r.fallback} | ${r.missingMeta} | ${r.needsReview} | ${r.ready} | ${r.caution} | **${r.recommendedReadiness}** |`
+      `| ${r.subjectId} || ${r.total} || ${r.exactMatch} || ${r.fallback} || ${r.missingMeta} || ${r.needsReview} || ${r.ready} || ${r.caution} || **${r.recommendedReadiness}** |`
     );
   }
   lines.push(``);

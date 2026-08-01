@@ -8,7 +8,7 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
  *   previewUrl: string,
 
- *   quotaRemaining: number | null,
+ *   quotaRemaining: number || null,
 
  *   quotaLimit: number,
 

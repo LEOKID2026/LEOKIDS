@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 /** @type {Record<DifficultyId, number>} */
 export const SHELF_SIZE_BY_DIFFICULTY = {

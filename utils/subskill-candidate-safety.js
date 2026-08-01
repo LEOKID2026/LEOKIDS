@@ -106,7 +106,7 @@ export function assessSubskillCandidateSafety(ctx) {
       possibleErrorPatternsPresent: false,
       questionMetadataRate: 0,
       falsePositiveRisk: "no_candidate",
-      disambiguationApplied: false,
+      disambiguationApplied: false
     };
   }
 
@@ -141,8 +141,7 @@ export function assessSubskillCandidateSafety(ctx) {
 
   if (fallbackUsed) blockReasons.push("first_candidate_without_disambiguation");
   if (
-    ctx.subjectId === "moledet-geography" &&
-    normBucket === "geography" &&
+    false && normBucket === "geography" &&
     multiCandidate &&
     (!disambiguationApplied || fallbackUsed || ctx.geographyDefinitionOnly === true)
   ) {
@@ -200,6 +199,6 @@ export function assessSubskillCandidateSafety(ctx) {
     multiCandidate,
     chosenId,
     taxonomyMinWrong: trow?.minWrong ?? null,
-    accuracyBand: band,
+    accuracyBand: band
   };
 }

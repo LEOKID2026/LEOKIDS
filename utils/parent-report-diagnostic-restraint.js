@@ -1,6 +1,6 @@
 /**
- * Phase 7 — שכבת ריסון אבחוני לפני מסקנות חזקות בשורת נושא.
- * לוגיקה טהורה; לא תלוי ב-React.
+ * Phase 7 —        .
+ *  ;   -React.
  */
 
 import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
@@ -92,7 +92,7 @@ export function computeDiagnosticRestraint(ctx) {
   }
 
   const hintInd =
-    !!riskFlags.hintDependenceRisk ||
+    !!riskFlags.hintDependenceRisk |
     (Number(ctx?.behaviorProfile?.signals?.hintRate) >= 0.28 &&
       Number(ctx?.behaviorProfile?.signals?.hintKnownCount) >= 2);
   if (hintInd && acc >= 78) {
@@ -141,9 +141,9 @@ export function computeDiagnosticRestraint(ctx) {
   }
 
   const shouldAvoidStrongConclusion =
-    conclusionStrength === "withheld" ||
-    conclusionStrength === "tentative" ||
-    level === "insufficient" ||
+    conclusionStrength === "withheld" |
+    conclusionStrength === "tentative" |
+    level === "insufficient" |
     level === "mixed";
 
   let diagnosticCautionHe =

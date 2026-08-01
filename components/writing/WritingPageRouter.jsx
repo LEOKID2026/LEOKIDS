@@ -15,7 +15,7 @@ import ColoringPrintDocument from "../coloring/ColoringPrintDocument.jsx";
 
 /**
  * @param {{
- *   worksheetPayload: import("../../lib/worksheets/worksheet-question-types.js").WorksheetPayload | import("../../lib/writing/writing-worksheet-types.js").WritingWorksheetPayload | import("../../lib/coloring/coloring-worksheet-types.js").ColoringWorksheetPayload,
+ *   worksheetPayload: import("../../lib/worksheets/worksheet-question-types.js").WorksheetPayload || import("../../lib/writing/writing-worksheet-types.js").WritingWorksheetPayload || import("../../lib/coloring/coloring-worksheet-types.js").ColoringWorksheetPayload,
  * }} props
  */
 export default function WritingPageRouter({ worksheetPayload }) {

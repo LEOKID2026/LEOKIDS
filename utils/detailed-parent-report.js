@@ -10,18 +10,16 @@ import { isValidHybridRuntimePayload } from "./ai-hybrid-diagnostic/validate-hyb
 import { buildParentProductContractV1 } from "./contracts/parent-product-contract-v1.js";
 import { applyMathScopedParentDisplayNames } from "./math-topic-parent-display.js";
 import { buildTopicRecommendationsForSubject } from "./topic-next-step-engine.js";
-import { rewriteParentRecommendationForDetailedHe } from "./detailed-report-parent-letter-he.js";
+import { rewriteParentRecommendationForDetailedHe } from "./detailed-report-parent-letter.js";
 import { buildParentAssignedActivitiesInPeriod } from "./parent-report-parent-assigned-activities.js";
 import { buildOutOfGradePracticeTransparency } from "./parent-report-out-of-grade-transparency.js";
 import {
   filterCoreV2Units,
-  isCoreV2UnitForReport,
-} from "./parent-report-core-grade-filter.js";
+  isCoreV2UnitForReport} from "./parent-report-core-grade-filter.js";
 import {
   resolveGradeAwareRecommendationStepLabelHe,
-  suppressRegisteredGradeStrengthenCopy,
-} from "./parent-report-language/grade-context-parent-he.js";
-import { PARENT_DIAGNOSTIC_TYPE_LABEL_HE } from "./parent-report-language/parent-report-hebrew-copy-spec.js";
+  suppressRegisteredGradeStrengthenCopy} from "./parent-report-language/grade-context-parent.js";
+import { PARENT_DIAGNOSTIC_TYPE_LABEL_HE } from "./parent-report-language/parent-report-copy-spec.js";
 import {
   EXPECTED_VS_OBSERVED_MATCH_LABEL_HE,
   LEARNING_STAGE_LABEL_HE,
@@ -41,8 +39,7 @@ import {
   TARGET_EVIDENCE_TYPE_LABEL_HE,
   TARGET_OBSERVATION_WINDOW_LABEL_HE,
   DEPENDENCY_STATE_LABEL_HE,
-  FOUNDATIONAL_BLOCKER_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+  FOUNDATIONAL_BLOCKER_LABEL_HE} from "./parent-report-ui-explain.js";
 import { pickRecommendedInterventionType } from "./topic-next-step-phase2.js";
 import {
   crossSubjectV2BulletsHe,
@@ -67,34 +64,29 @@ import {
   tierStableStrengthHe,
   parentFacingPatternLabelHe,
   sanitizeDiagnosticEngineV2ForParentFacing,
-  buildParentDiagnosticExplanationV1FromV2Unit,
-} from "./parent-report-language/index.js";
-import { withholdSummaryCopyHe, withholdConfidenceSummaryFallbackHe } from "./parent-report-language/subject-withhold-summary-he.js";
+  buildParentDiagnosticExplanationV1FromV2Unit} from "./parent-report-language/index.js";
+import { withholdSummaryCopyHe, withholdConfidenceSummaryFallbackHe } from "./parent-report-language/subject-withhold-summary.js";
 import {
   mergeCrossSubjectConclusionReadinessContract,
   applyGateToTextClampToTopicRecommendations,
   mergeSubjectConclusionReadinessContract,
-  v2UnitsToContractRows,
-} from "./minimal-safe-scope-enforcement.js";
+  v2UnitsToContractRows} from "./minimal-safe-scope-enforcement.js";
 import {
   NARRATIVE_CONTRACT_VERSION,
   applyNarrativeContractToRecord,
   buildNarrativeContractV1,
-  validateNarrativeContractV1,
-} from "./contracts/narrative-contract-v1.js";
+  validateNarrativeContractV1} from "./contracts/narrative-contract-v1.js";
 import {
   isStrongPositiveUnitForParentGuidance,
   resolveUnitHomeMethodHe,
   resolveUnitNextGoalHe,
-  resolveUnitParentActionHe,
-} from "./parent-report-recommendation-consistency.js";
+  resolveUnitParentActionHe} from "./parent-report-recommendation-consistency.js";
 import { resolveGradeAwareParentRecommendationHe } from "./parent-report-language/grade-aware-recommendation-resolver.js";
 import {
   deriveRawMetricStrengthLinesHe,
   mergeExecutiveStrengthLinesHe,
   subjectAccuracyFromReportSummary,
-  subjectQuestionCountFromReportSummary,
-} from "./parent-data-presence.js";
+  subjectQuestionCountFromReportSummary} from "./parent-data-presence.js";
 import { filterSubjectCoverageWithEvidence } from "./parent-report-subject-visibility.js";
 import {
   executiveRowDedupeKey,
@@ -104,8 +96,7 @@ import {
   resolveRowDataSufficiencyLevel,
   resolveHasSubskillMetadataFromRowSources,
   shouldThinEvidenceDowngradeRecommendation,
-  TOPIC_EVIDENCE_THRESHOLDS,
-} from "./parent-report-topic-evidence.js";
+  TOPIC_EVIDENCE_THRESHOLDS} from "./parent-report-topic-evidence.js";
 import { buildRowIdentityV1 } from "./parent-report-output-integrity/row-identity-v1.js";
 import {
   groupTopicRowsByParentTier,
@@ -115,16 +106,14 @@ import {
   parentTopicTierShowsRecommendationCard,
   PARENT_TOPIC_TIER,
   resolveSubjectPrimaryParentActionHe,
-  sanitizeParentSurfaceTextHe,
-} from "./parent-report-surface/index.js";
+  sanitizeParentSurfaceTextHe} from "./parent-report-surface/index.js";
 import {
   detectGradeSplitContradictions,
   executiveLineFromV2Unit,
   hardenBaseReportWithRowIdentity,
   homePlanLineFromV2Unit,
   parentFacingDisplayLabelsForV2Unit,
-  parentFacingLabelForV2Unit,
-} from "./parent-report-output-integrity/harden-report-rows.js";
+  parentFacingLabelForV2Unit} from "./parent-report-output-integrity/harden-report-rows.js";
 import { resolveNarrativeDisplayLabels } from "./parent-report-output-integrity/row-display-label-context.js";
 import { parseCanonicalTopicFromRowKey } from "./parent-report-output-integrity/row-identity-v1.js";
 import { buildGradeEvidenceFields } from "../lib/learning-supabase/practice-grade-resolution.js";
@@ -134,16 +123,14 @@ function splitMoledetGeographyReportForDisplay(_report) {
     moledetTopics: {},
     geographyTopics: {},
     moledetStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
-    geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
-  };
+    geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 }};
 }
-const VISUAL_STRAND_LABEL_HE = { moledet: "Social Studies", geography: "Geography" };
+const VISUAL_STRAND_LABEL_HE = {  geography: "Geography" };
 import { normalizeParentVisibleMetrics } from "./learning-pattern-decision/normalize-parent-practice-metrics.js";
 import { buildParentReportEngineDecisionContract } from "./learning-pattern-decision/build-parent-report-engine-decision-contract.js";
 import {
   buildSubjectEngineDecisionContract,
-  resolveSubjectSummaryTextFromEngineContract,
-} from "./learning-pattern-decision/build-subject-engine-decision-contract.js";
+  resolveSubjectSummaryTextFromEngineContract} from "./learning-pattern-decision/build-subject-engine-decision-contract.js";
 import {
   EDC_CONTRACT_KEY,
   EDC_DECISION_FIELD,
@@ -152,8 +139,7 @@ import {
   RA_REMEDIATE_SAME_LEVEL,
   RA_WATCH,
   RA_MAINTAIN_AND_STRENGTHEN,
-  SP_SUBJECT_ENGINE_CONTRACT,
-} from "./learning-pattern-decision/engine-decision-codes.js";
+  SP_SUBJECT_ENGINE_CONTRACT} from "./learning-pattern-decision/engine-decision-codes.js";
 import { guardParentFacingText } from "./learning-pattern-decision/lpd-parent-facing-copy.js";
 import { resolveTopicRecommendationOwnerCopyHe } from "./learning-pattern-decision/resolve-topic-owner-copy.js";
 
@@ -161,15 +147,13 @@ const SUBJECT_IDS = [
   "math",
   "geometry",
   "english",
-  "science",
-];
+  "science"];
 
 const SUBJECT_LABEL_HE = {
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  science: "Science",
-};
+  science: "Science"};
 
 const TOPIC_REC_MIN_ACTIONABLE_QUESTIONS = 8;
 const PRIORITY_SCORE_BY_LEVEL = { P4: 400, P3: 300, P2: 200, P1: 100 };
@@ -179,10 +163,7 @@ const REPORT_MAP_KEY = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  history: "historySubtopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
-};
+  history: "historySubtopics"};
 
 /**
  * @param {Record<string, unknown>} baseReport
@@ -237,8 +218,7 @@ function sanitizeDiagnosticEngineV2ForParentSnapshot(baseReport, diag) {
         gradeKey: gk,
         taxonomyId,
         bucketKey: next?.bucketKey,
-        slot: "action",
-      }) != null;
+        slot: "action"}) != null;
     if (!hasTemplate) return next;
 
     const pa = resolveUnitParentActionHe(next, gk);
@@ -257,14 +237,7 @@ const SUMMARY_Q = {
   geometry: ["geometryQuestions", "geometryCorrect", "geometryAccuracy"],
   english: ["englishQuestions", "englishCorrect", "englishAccuracy"],
   science: ["scienceQuestions", "scienceCorrect", "scienceAccuracy"],
-  history: ["historyQuestions", "historyCorrect", "historyAccuracy"],
-  hebrew: ["hebrewQuestions", "hebrewCorrect", "hebrewAccuracy"],
-  "moledet-geography": [
-    "moledetGeographyQuestions",
-    "moledetGeographyCorrect",
-    "moledetGeographyAccuracy",
-  ],
-};
+  history: ["historyQuestions", "historyCorrect", "historyAccuracy"]};
 
 function sumTopicMapMinutes(map) {
   if (!map || typeof map !== "object") return 0;
@@ -290,14 +263,13 @@ function collectStrengthRows(subjects) {
     for (const r of list) {
       rows.push({
         subjectId: sid,
-        subjectLabelHe: SUBJECT_LABEL_HE[sid],
+        subjectLabel: SUBJECT_LABEL_HE[sid],
         topicRowKey: String(r.topicRowKey || "").trim() || null,
         contentGradeKey: r.contentGradeKey != null ? String(r.contentGradeKey).trim() : null,
         labelHe: String(r.labelHe || "").trim(),
         questions: Number(r.questions) || 0,
         accuracy: Number(r.accuracy) || 0,
-        excellent: !!r.excellent,
-      });
+        excellent: !!r.excellent});
     }
   }
   rows.sort((a, b) => {
@@ -317,14 +289,13 @@ function collectWeaknessRows(subjects) {
     for (const w of list) {
       rows.push({
         subjectId: sid,
-        subjectLabelHe: SUBJECT_LABEL_HE[sid],
+        subjectLabel: SUBJECT_LABEL_HE[sid],
         topicRowKey: String(w.topicRowKey || "").trim() || null,
         contentGradeKey: w.contentGradeKey != null ? String(w.contentGradeKey).trim() : null,
         labelHe: String(w.labelHe || "").trim(),
         mistakeCount: Number(w.mistakeCount) || 0,
         questions: Number(w.questions) || 0,
-        accuracy: Number(w.accuracy) || 0,
-      });
+        accuracy: Number(w.accuracy) || 0});
     }
   }
   rows.sort((a, b) => b.mistakeCount - a.mistakeCount);
@@ -341,11 +312,10 @@ function uniqueTopLabels(rows, labelKey, max) {
       topicRowKey: r.topicRowKey,
       labelHe: lab,
       subjectId: r.subjectId,
-      contentGradeKey: r.contentGradeKey,
-    });
+      contentGradeKey: r.contentGradeKey});
     if (seen.has(dedupe)) continue;
     seen.add(dedupe);
-    out.push(`${lab} (${r.subjectLabelHe})`);
+    out.push(`${lab} (${r.subjectLabel})`);
     if (out.length >= max) break;
   }
   return out;
@@ -369,8 +339,7 @@ function collectMaintainRows(subjects) {
         labelHe: String(r.labelHe || "").trim(),
         accuracy: Number(r.accuracy) || 0,
         questions: Number(r.questions) || 0,
-        subjectLabelHe: SUBJECT_LABEL_HE[sid],
-      });
+        subjectLabel: SUBJECT_LABEL_HE[sid]});
     }
   }
   rows.sort((a, b) => {
@@ -384,8 +353,7 @@ const CROSS_RISK_LABEL_HE = {
   ...PARENT_DIAGNOSTIC_TYPE_LABEL_HE,
   mixed: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_signal,
   none_sparse: PARENT_DIAGNOSTIC_TYPE_LABEL_HE.none_sparse,
-  none_observed: reportPackCopy("utils__detailed-parent-report", "no_dominant_difficulty_is_visible_right_now"),
-};
+  none_observed: reportPackCopy("utils__detailed-parent-report", "no_dominant_difficulty_is_visible_right_now")};
 
 function crossRiskLabelHe(riskId, subjects) {
   if (CROSS_RISK_LABEL_HE[riskId]) return CROSS_RISK_LABEL_HE[riskId];
@@ -411,8 +379,7 @@ const CROSS_SUCCESS_LABEL_HE = {
   stable_mastery: "stable mastery of the material",
   fragile_success_cluster: "repeated success but still fragile",
   mixed: "several success patterns in parallel",
-  none_sparse: "still limited data",
-};
+  none_sparse: "still limited data"};
 
 function shortenHe(s, maxLen) {
   const t = String(s || "").replace(/\s+/g, " ").trim();
@@ -427,8 +394,7 @@ function aggregateCrossSubjectRisks(subjects) {
     speedOnlyRisk: false,
     hintDependenceRisk: false,
     insufficientEvidenceRisk: false,
-    recentTransitionRisk: false,
-  };
+    recentTransitionRisk: false};
   for (const sid of SUBJECT_IDS) {
     const r = subjects?.[sid]?.majorRiskFlagsAcrossRows;
     if (!r || typeof r !== "object") continue;
@@ -458,8 +424,7 @@ function subjectQuestionTotal(subjects, sid, summary) {
   const pools = [
     ...(Array.isArray(s?.topStrengths) ? s.topStrengths : []),
     ...(Array.isArray(s?.maintain) ? s.maintain : []),
-    ...(Array.isArray(s?.improving) ? s.improving : []),
-  ];
+    ...(Array.isArray(s?.improving) ? s.improving : [])];
   for (const r of pools) q += Number(r?.questions) || 0;
   return q;
 }
@@ -657,7 +622,7 @@ function buildCrossSubjectPhase7Fields(subjects, subjectCoverage) {
   }
 
   const entries = Object.entries(dist)
-    .filter(([, n]) => n > 0)
+    .filter(([ n]) => n > 0)
     .sort((a, b) => b[1] - a[1]);
   const nonIns = entries.filter(([k]) => k !== "insufficient_evidence");
   let dominantCrossSubjectRootCause = "insufficient_evidence";
@@ -708,8 +673,7 @@ function buildCrossSubjectPhase7Fields(subjects, subjectCoverage) {
     dominantCrossSubjectRootCauseLabelHe,
     crossSubjectConclusionReadiness,
     majorDiagnosticCautionsHe,
-    recommendedParentPriorityType,
-  };
+    recommendedParentPriorityType};
 }
 
 const CROSS_STAGE_PRIORITY_P9 = [
@@ -719,8 +683,7 @@ const CROSS_STAGE_PRIORITY_P9 = [
   "insufficient_longitudinal_evidence",
   "partial_stabilization",
   "transfer_emerging",
-  "stable_control",
-];
+  "stable_control"];
 
 /**
  * Phase 9 — repeated mistakes and learning memory across subjects.
@@ -758,7 +721,7 @@ function buildCrossSubjectPhase9Fields(subjects) {
   }
 
   const mpEntries = Object.entries(mpVotes)
-    .filter(([, n]) => n > 0)
+    .filter(([ n]) => n > 0)
     .sort((a, b) => b[1] - a[1]);
   const nonInsMp = mpEntries.filter(([k]) => k !== "insufficient_mistake_evidence");
   let dominantCrossSubjectMistakePattern = "insufficient_mistake_evidence";
@@ -807,8 +770,7 @@ function buildCrossSubjectPhase9Fields(subjects) {
     crossSubjectRetentionRisk,
     crossSubjectTransferReadiness,
     reviewBeforeAdvanceAreasHe,
-    transferReadyAreasHe,
-  };
+    transferReadyAreasHe};
 }
 
 const RTI_CROSS_WORST_FIRST = [
@@ -818,8 +780,7 @@ const RTI_CROSS_WORST_FIRST = [
   "over_supported_progress",
   "not_enough_evidence",
   "early_positive_response",
-  "independence_growing",
-];
+  "independence_growing"];
 
 /**
  * Phase 10 — response to intervention and conclusion freshness across subjects.
@@ -833,8 +794,7 @@ function buildCrossSubjectPhase10Fields(subjects) {
     reduce_support: 2,
     tighten_focus: 3,
     increase_structure: 4,
-    change_strategy: 5,
-  };
+    change_strategy: 5};
   const cfRank = { high: 0, medium: 1, low: 2, expired: 3 };
   const recRank = { none: 0, light_review: 1, structured_recheck: 2, do_not_rely_yet: 3 };
   let maxAdj = 0;
@@ -917,8 +877,7 @@ function buildCrossSubjectPhase10Fields(subjects) {
       RECALIBRATION_NEED_LABEL_HE[crossSubjectRecalibrationNeed] || RECALIBRATION_NEED_LABEL_HE.none,
     majorRecheckAreasHe,
     areasWhereSupportCanBeReducedHe,
-    areasNeedingStrategyChangeHe,
-  };
+    areasNeedingStrategyChangeHe};
 }
 
 const SEQ_STATE_CROSS_WORST_FIRST = [
@@ -928,8 +887,7 @@ const SEQ_STATE_CROSS_WORST_FIRST = [
   "continuing_sequence",
   "early_sequence",
   "new_support_cycle",
-  "sequence_ready_for_release",
-];
+  "sequence_ready_for_release"];
 
 const NEXT_BEST_STEP_CROSS_WORST_FIRST = [
   "switch_support_type",
@@ -937,8 +895,7 @@ const NEXT_BEST_STEP_CROSS_WORST_FIRST = [
   "tighten_same_goal",
   "observe_before_next_cycle",
   "begin_release_step",
-  "continue_current_sequence",
-];
+  "continue_current_sequence"];
 
 /**
  * Phase 11 — support direction across subjects.
@@ -1033,8 +990,7 @@ function buildCrossSubjectPhase11Fields(subjects) {
       NEXT_BEST_SEQUENCE_STEP_LABEL_HE.observe_before_next_cycle,
     subjectsReadyForReleaseHe,
     subjectsAtRiskOfSupportRepetitionHe,
-    subjectsNeedingSupportResetHe,
-  };
+    subjectsNeedingSupportResetHe};
 }
 
 const MEM_STATE_RANK_P12 = { no_memory: 0, light_memory: 1, usable_memory: 2, strong_memory: 3 };
@@ -1046,8 +1002,7 @@ const CONTINUATION_WORST_FIRST_P12 = [
   "do_not_repeat_without_new_evidence",
   "continue_but_refine",
   "begin_controlled_release",
-  "continue_with_same_core",
-];
+  "continue_with_same_core"];
 
 /**
  * Phase 12 — what was tried recently and outcome tracking across subjects.
@@ -1153,8 +1108,7 @@ function buildCrossSubjectPhase12Fields(subjects) {
       RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE.continue_but_refine,
     subjectsWithClearCarryoverHe,
     subjectsNeedingFreshEvidenceHe,
-    subjectsWherePriorPathSeemsMisalignedHe,
-  };
+    subjectsWherePriorPathSeemsMisalignedHe};
 }
 
 const GATE_CROSS_PRIORITY_P13 = [
@@ -1164,16 +1118,14 @@ const GATE_CROSS_PRIORITY_P13 = [
   "mixed_gate_state",
   "release_gate_forming",
   "advance_gate_forming",
-  "continue_gate_active",
-];
+  "continue_gate_active"];
 const FOCUS_CROSS_PRIORITY_P13 = [
   "refresh_baseline_before_decision",
   "test_if_path_is_working",
   "stabilize_before_advance",
   "check_independence_before_release",
   "prepare_for_controlled_release",
-  "prove_current_direction",
-];
+  "prove_current_direction"];
 const TARGET_TYPE_CROSS_P13 = [
   "fresh_data_needed",
   "mixed_target",
@@ -1181,8 +1133,7 @@ const TARGET_TYPE_CROSS_P13 = [
   "mistake_reduction_confirmation",
   "retention_confirmation",
   "independence_confirmation",
-  "accuracy_confirmation",
-];
+  "accuracy_confirmation"];
 const WINDOW_CROSS_P13 = ["needs_fresh_baseline", "next_two_cycles", "next_short_cycle", "unknown"];
 
 /**
@@ -1293,24 +1244,21 @@ function buildCrossSubjectPhase13Fields(subjects) {
       TARGET_OBSERVATION_WINDOW_LABEL_HE.unknown,
     subjectsNearReleaseButNotThereHe,
     subjectsNeedingRecheckBeforeDecisionHe,
-    subjectsWithVisiblePivotTriggerHe,
-  };
+    subjectsWithVisiblePivotTriggerHe};
 }
 
 const DEP_CROSS_PRIORITY_P14 = [
   "likely_foundational_block",
   "mixed_dependency_signal",
   "insufficient_dependency_evidence",
-  "likely_local_issue",
-];
+  "likely_local_issue"];
 const BLOCKER_CROSS_PRIORITY_P14 = [
   "retention_instability",
   "independence_readiness_gap",
   "accuracy_foundation_gap",
   "instruction_language_load",
   "procedure_automaticity_gap",
-  "unknown",
-];
+  "unknown"];
 
 /**
  * Phase 14 — where the difficulty starts across subjects.
@@ -1397,8 +1345,7 @@ function buildCrossSubjectPhase14Fields(subjects) {
     crossSubjectFoundationFirstPriorityHe,
     subjectsLikelyShowingDownstreamSymptomsHe,
     subjectsNeedingFoundationFirstHe,
-    subjectsSafeForLocalInterventionHe,
-  };
+    subjectsSafeForLocalInterventionHe};
 }
 
 /**
@@ -1426,7 +1373,7 @@ function buildParentPriorityLadderPhase8(subjects, subjectCoverage) {
     if (s.dominantRootCause === "knowledge_gap") score += 20;
     if (s.dominantRootCause === "weak_independence" || s.dominantRootCause === "instruction_friction") score += 12;
     score += Math.min(18, Math.floor(qc / 5));
-    ranked.push({ sid, subjectLabelHe: SUBJECT_LABEL_HE[sid], score, s });
+    ranked.push({ sid, subjectLabel: SUBJECT_LABEL_HE[sid], score, s });
   }
   ranked.sort((a, b) => b.score - a.score);
 
@@ -1456,7 +1403,7 @@ function buildParentPriorityLadderPhase8(subjects, subjectCoverage) {
   for (const r of ranked) {
     if (r.s.subjectMonitoringOnly && monitoringOnlyAreasHe.length < 5) {
       monitoringOnlyAreasHe.push(
-        `${r.subjectLabelHe}: ${shortenHe(String(r.s.subjectPriorityReasonHe || "A short practice routine at this stage."), 120)}`
+        `${r.subjectLabel}: ${shortenHe(String(r.s.subjectPriorityReasonHe || "A short practice routine at this stage."), 120)}`
       );
     } else if (
       r.s.subjectPriorityLevel === "soon" &&
@@ -1465,29 +1412,26 @@ function buildParentPriorityLadderPhase8(subjects, subjectCoverage) {
       deferForNowAreasHe.length < 4
     ) {
       deferForNowAreasHe.push(
-        `${r.subjectLabelHe}: ${shortenHe(String(r.s.subjectDeferredActionHe || "Hold off on a significant change."), 110)}`
+        `${r.subjectLabel}: ${shortenHe(String(r.s.subjectDeferredActionHe || "Hold off on a significant change."), 110)}`
       );
     }
   }
 
   const parentPriorityLadder = {
     version: 1,
-    rankedSubjects: ranked.map(({ sid, subjectLabelHe, score, s: sub }) => ({
+    rankedSubjects: ranked.map(({ sid, subjectLabel, score, s: sub }) => ({
       subject: sid,
-      subjectLabelHe,
+      subjectLabel,
       score: Math.round(score),
       priorityLevel: String(sub.subjectPriorityLevel || ""),
-      monitoringOnly: !!sub.subjectMonitoringOnly,
-    })),
-  };
+      monitoringOnly: !!sub.subjectMonitoringOnly}))};
 
   return {
     parentPriorityLadder,
     topImmediateParentActionHe,
     secondPriorityActionHe,
     monitoringOnlyAreasHe,
-    deferForNowAreasHe,
-  };
+    deferForNowAreasHe};
 }
 
 function buildHomeFocusHe(subjects, topStrengthsAcrossHe, topFocusAreasHe, summary) {
@@ -1496,7 +1440,7 @@ function buildHomeFocusHe(subjects, topStrengthsAcrossHe, topFocusAreasHe, summa
   let preservePhrase = null;
   if (maintainRows.length && maintainRows[0].labelHe) {
     const m = maintainRows[0];
-    preservePhrase = `${m.labelHe} in ${m.subjectLabelHe}`;
+    preservePhrase = `${m.labelHe} in ${m.subjectLabel}`;
   } else if (topStrengthsAcrossHe.length) {
     preservePhrase =
       topStrengthsAcrossHe[0].replace(/\s*\([^)]*\)\s*$/u, "").trim() || topStrengthsAcrossHe[0];
@@ -1551,13 +1495,12 @@ function buildExecutiveSummary(subjects, summary, subjectCoverage, dataIntegrity
   const supportingSignals = {
     crossRiskFlags: crossRisks,
     dominantSubjectId: domVol?.subject ?? null,
-    dominantSubjectLabelHe: domVol?.subjectLabelHe ?? null,
+    dominantSubjectLabelHe: domVol?.subjectLabel ?? null,
     dominantSubjectQuestionCount: Number(domVol?.questionCount) || 0,
     fragileSuccessRowsTotal: SUBJECT_IDS.reduce((s, sid) => s + (Number(subjects?.[sid]?.fragileSuccessRowCount) || 0), 0),
     stableMasteryRowsTotal: SUBJECT_IDS.reduce((s, sid) => s + (Number(subjects?.[sid]?.stableMasteryRowCount) || 0), 0),
     subjectsWithModeConcentrationNote: SUBJECT_IDS.filter((sid) => subjects?.[sid]?.modeConcentrationNoteHe).length,
-    dataIntegrityIssueCount: Array.isArray(dataIntegrityReport?.issues) ? dataIntegrityReport.issues.length : 0,
-  };
+    dataIntegrityIssueCount: Array.isArray(dataIntegrityReport?.issues) ? dataIntegrityReport.issues.length : 0};
 
   const mainHomeRecommendationHe = pickMainHomeRecommendationHe(
     subjects,
@@ -1605,8 +1548,7 @@ function buildExecutiveSummary(subjects, summary, subjectCoverage, dataIntegrity
     ...phase11Cross,
     ...phase12Cross,
     ...phase13Cross,
-    ...phase14Cross,
-  };
+    ...phase14Cross};
 }
 
 function buildVisualMoledetGeographyCoverageRows(baseReport) {
@@ -1614,32 +1556,26 @@ function buildVisualMoledetGeographyCoverageRows(baseReport) {
   return [
     {
       subject: "moledet-visual",
-      subjectLabelHe: VISUAL_STRAND_LABEL_HE.moledet,
+      subjectLabel: VISUAL_STRAND_LABEL_HE.moledet,
       questionCount: split.moledetStats.questions,
       correctCount: split.moledetStats.correct,
       accuracy: split.moledetStats.accuracy,
-      timeMinutes: split.moledetStats.minutes,
-    },
+      timeMinutes: split.moledetStats.minutes},
     {
       subject: "geography-visual",
-      subjectLabelHe: VISUAL_STRAND_LABEL_HE.geography,
+      subjectLabel: VISUAL_STRAND_LABEL_HE.geography,
       questionCount: split.geographyStats.questions,
       correctCount: split.geographyStats.correct,
       accuracy: split.geographyStats.accuracy,
-      timeMinutes: split.geographyStats.minutes,
-    },
-  ];
+      timeMinutes: split.geographyStats.minutes}];
 }
 
 function buildSubjectCoverage(baseReport) {
   const sum = baseReport?.summary || {};
-  /** @type {Array<{ subject: string; subjectLabelHe: string; questionCount: number; correctCount: number; accuracy: number; timeMinutes: number }>} */
+  /** @type {Array<{ subject: string; subjectLabel: string; questionCount: number; correctCount: number; accuracy: number; timeMinutes: number }>} */
   const rows = [];
   for (const sid of SUBJECT_IDS) {
-    if (sid === "moledet-geography") {
-      rows.push(...buildVisualMoledetGeographyCoverageRows(baseReport));
-      continue;
-    }
+    
     const [qk, ck, ak] = SUMMARY_Q[sid];
     const questions = Number(sum[qk]) || 0;
     const correct = Number(sum[ck]) || 0;
@@ -1648,12 +1584,11 @@ function buildSubjectCoverage(baseReport) {
     const timeMinutes = sumTopicMapMinutes(baseReport?.[mapKey]);
     rows.push({
       subject: sid,
-      subjectLabelHe: SUBJECT_LABEL_HE[sid],
+      subjectLabel: SUBJECT_LABEL_HE[sid],
       questionCount: questions,
       correctCount: correct,
       accuracy,
-      timeMinutes,
-    });
+      timeMinutes});
   }
   return rows;
 }
@@ -1666,14 +1601,14 @@ function buildOverallSnapshot(baseReport, subjectCoverage) {
   for (const row of practicedCoverage) {
     if (row.questionCount > 0 && row.questionCount < 15) {
       sparseSubjectsHe.push(
-        `${row.subjectLabelHe} - low question count (${row.questionCount} questions)`
+        `${row.subjectLabel} - low question count (${row.questionCount} questions)`
       );
     }
     const isHighVolumeStrong = row.questionCount >= 40 && row.accuracy >= 85;
     const isMediumVolumeStrong = row.questionCount >= 18 && row.accuracy >= 88;
     if (isHighVolumeStrong || isMediumVolumeStrong) {
       notableSubjectsHe.push(
-        `${row.subjectLabelHe} - ${row.questionCount} questions collected with good accuracy (${row.accuracy}%)`
+        `${row.subjectLabel} - ${row.questionCount} questions collected with good accuracy (${row.accuracy}%)`
       );
     }
   }
@@ -1694,8 +1629,7 @@ function buildOverallSnapshot(baseReport, subjectCoverage) {
     lowExposureSubjectsHe: [...sparseSubjectsHe],
     unpracticedSubjectsHe: [],
     sparseSubjectsHe,
-    notableSubjectsHe,
-  };
+    notableSubjectsHe};
 }
 
 function buildCrossSubjectInsights(baseReport, subjects) {
@@ -1704,11 +1638,11 @@ function buildCrossSubjectInsights(baseReport, subjects) {
   const sparse = coverage.filter((c) => c.questionCount > 0 && c.questionCount < 10);
   if (sparse.length) {
     bulletsHe.push(
-      `In ${sparse.map((s) => s.subjectLabelHe).join(", ")} there's still limited information - the picture will become clearer after more practice.`
+      `In ${sparse.map((s) => s.subjectLabel).join(", ")} there's still limited information - the picture will become clearer after more practice.`
     );
   }
   const wRows = collectWeaknessRows(subjects);
-  const instr = wRows.filter((w) => /instructions|wording|reading|הוראות|ניסוח|קריאה/i.test(w.labelHe));
+  const instr = wRows.filter((w) => /instructions|wording|reading/i.test(w.labelHe));
   if (instr.length >= 2) {
     bulletsHe.push(
       "The same picture repeats across several subjects: careful reading of the question wording before writing the answer. It's recommended to set aside a fixed short moment at home for this."
@@ -1722,8 +1656,7 @@ function buildCrossSubjectInsights(baseReport, subjects) {
     dataQualityNoteHe:
       (baseReport?.summary?.totalQuestions || 0) < 30
         ? "The number of questions in the period is low - read the general conclusions gently."
-        : null,
-  };
+        : null};
 }
 
 function buildHomePlan(subjects) {
@@ -1790,14 +1723,13 @@ function buildSubjectProfiles(baseReport) {
             parentStrengthWithCautionLinesByKey:
               s.parentStrengthWithCautionLinesByKey && typeof s.parentStrengthWithCautionLinesByKey === "object"
                 ? s.parentStrengthWithCautionLinesByKey
-                : {},
-          }
+                : {}}
         )
       )
     );
     out.push({
       subject: sid,
-      subjectLabelHe: SUBJECT_LABEL_HE[sid],
+      subjectLabel: SUBJECT_LABEL_HE[sid],
       summaryHe: s.summaryHe ?? null,
       topStrengths: Array.isArray(s.topStrengths) ? s.topStrengths : [],
       topWeaknesses: Array.isArray(s.topWeaknesses) ? s.topWeaknesses : [],
@@ -1900,8 +1832,7 @@ function buildSubjectProfiles(baseReport) {
       subjectDownstreamSymptomRisk: s.subjectDownstreamSymptomRisk ?? null,
       subjectFoundationFirstPriority: s.subjectFoundationFirstPriority ?? false,
       subjectFoundationFirstPriorityHe: s.subjectFoundationFirstPriorityHe ?? null,
-      subjectDependencyNarrativeHe: s.subjectDependencyNarrativeHe ?? null,
-    });
+      subjectDependencyNarrativeHe: s.subjectDependencyNarrativeHe ?? null});
   }
   return out;
 }
@@ -1927,8 +1858,7 @@ function topicOverviewPlacementFromUnit(u, mapRow) {
   return {
     parentTier: tier,
     overviewStatusHe: parentTopicTierLabelHe(tier),
-    placementKind: parentTopicTierPlacementKind(tier),
-  };
+    placementKind: parentTopicTierPlacementKind(tier)};
 }
 
 /**
@@ -1954,8 +1884,7 @@ function buildTopicOverviewRowsFromUnits(baseReport, sid, units, topicMapForSid)
           accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0,
           correct: mapR?.correct,
           wrong: mapR?.wrong,
-          parentVisibleMetrics: mapR?.parentVisibleMetrics,
-        },
+          parentVisibleMetrics: mapR?.parentVisibleMetrics},
         mapR && typeof mapR === "object" ? mapR : null,
       );
       return {
@@ -1986,23 +1915,20 @@ function buildTopicOverviewRowsFromUnits(baseReport, sid, units, topicMapForSid)
           gradeRelation: ge.gradeRelation,
           questions: Number(u?.evidenceTrace?.[0]?.value?.questions) || 0,
           accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0,
-          timeSpentMinutes: Number(mapR?.timeMinutes) || 0,
-        }),
-      };
+          timeSpentMinutes: Number(mapR?.timeMinutes) || 0})};
     })
     .sort((a, b) => (Number(b.questions) || 0) - (Number(a.questions) || 0));
 }
 
 /**
  * @param {Record<string, unknown>} rec
- * @param {string} subjectLabelHe
+ * @param {string} subjectLabel
  */
-function applyTopicOwnerCopyToRecommendation(rec, subjectLabelHe = "") {
+function applyTopicOwnerCopyToRecommendation(rec, subjectLabel = "") {
   const row = {
     ...rec,
-    subjectLabelHe,
-    label: rec.displayName || rec.narrativeTitleHe,
-  };
+    subjectLabel,
+    label: rec.displayName || rec.narrativeTitleHe};
   const ownerFinding = resolveTopicRecommendationOwnerCopyHe(row, "finding");
   const ownerStep = resolveTopicRecommendationOwnerCopyHe(row, "stepLabel");
   const ownerPlan = resolveTopicRecommendationOwnerCopyHe(row, "interventionPlan");
@@ -2125,8 +2051,7 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
     questionCount: outQuestions,
     dataSufficiencyLevel,
     gateReadiness: effectiveReadiness,
-    evidenceStrength,
-  });
+    evidenceStrength});
   const hasSubskillMetadata = resolveHasSubskillMetadataFromRowSources(u, mapRow);
   const rowGkFromTopicKeyEarly = (() => {
     if (!topicKey) return null;
@@ -2155,33 +2080,27 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
       topicKey: topicKey || String(baseDecision?.topicKey || "__unknown_topic__"),
       subjectId,
       decisionTier: canonicalDecisionTier,
-      cannotConcludeYet,
-    },
+      cannotConcludeYet},
     readiness: {
       ...baseReadiness,
       contractVersion: String(baseReadiness?.contractVersion || "v1"),
       topicKey: topicKey || String(baseReadiness?.topicKey || "__unknown_topic__"),
       subjectId,
-      readiness: effectiveReadiness,
-    },
+      readiness: effectiveReadiness},
     confidence: {
       ...baseConfidence,
       contractVersion: String(baseConfidence?.contractVersion || "v1"),
       topicKey: topicKey || String(baseConfidence?.topicKey || "__unknown_topic__"),
       subjectId,
-      confidenceBand: effectiveConfidenceBand,
-    },
-  };
+      confidenceBand: effectiveConfidenceBand}};
   if (mapEvidence) {
     contractsV1.evidence = {
       ...mapEvidence,
-      skillBreakdownAvailable: hasSubskillMetadata,
-    };
+      skillBreakdownAvailable: hasSubskillMetadata};
     if (mapEvidenceValidation) {
       contractsV1.evidenceValidation = {
         ok: !!mapEvidenceValidation.ok,
-        errors: Array.isArray(mapEvidenceValidation.errors) ? [...mapEvidenceValidation.errors] : [],
-      };
+        errors: Array.isArray(mapEvidenceValidation.errors) ? [...mapEvidenceValidation.errors] : []};
     }
   } else if (hasSubskillMetadata) {
     contractsV1.evidence = { skillBreakdownAvailable: true };
@@ -2194,8 +2113,7 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
       accuracy: outAccuracy,
       correct: mapRow?.correct,
       wrong: mapRow?.wrong,
-      parentVisibleMetrics: mapRow?.parentVisibleMetrics,
-    },
+      parentVisibleMetrics: mapRow?.parentVisibleMetrics},
     mapRow && typeof mapRow === "object" ? mapRow : null,
   );
   const topicEngineContract =
@@ -2207,8 +2125,7 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
       topicRowKey: topicKey,
       topicName: String(u?.displayName || mapRow?.displayName || ""),
       row: mapRow && typeof mapRow === "object" ? mapRow : {},
-      unit: u,
-    });
+      unit: u});
   const contractRequiresRemediate =
     topicEngineContract.recommendedAction === RA_REMEDIATE_SAME_LEVEL;
   const finalStep = contractRequiresRemediate
@@ -2258,7 +2175,7 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
     topicRowKey: topicKey,
     topicKey,
     subjectId,
-    subjectLabelHe: SUBJECT_LABEL_HE[subjectId] || "",
+    subjectLabel: SUBJECT_LABEL_HE[subjectId] || "",
     displayName: String(u?.displayName || "").trim(),
     learningPatternDecision: lpd,
     [EDC_CONTRACT_KEY]: topicEngineContract,
@@ -2322,8 +2239,7 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
           if (k.startsWith("_deprecated")) delete raw[k];
         }
         return raw;
-      })(),
-    },
+      })()},
     _priorityScore: priorityScore,
     _priorityLevel: priorityLevel || null,
     thinEvidenceDowngraded,
@@ -2351,11 +2267,9 @@ function recommendationFromV2Unit(u, mapRow, reportMeta = {}) {
       evidenceSourceCounts:
         mapRow?.evidenceSourceCounts && typeof mapRow.evidenceSourceCounts === "object"
           ? mapRow.evidenceSourceCounts
-          : null,
-    }),
+          : null}),
     threshold_policy_used: `topic_recommendation_questions>=${TOPIC_REC_MIN_ACTIONABLE_QUESTIONS}`,
-    contractsV1,
-  };
+    contractsV1};
   return applyTopicOwnerCopyToRecommendation(rec, SUBJECT_LABEL_HE[subjectId] || "");
 }
 
@@ -2400,8 +2314,7 @@ function attachNarrativeContractsToTopicRecommendations(subjectId, topicRecommen
         tr?.cannotConcludeYet === true ||
         tr?.suppressAggressiveStep === true ||
         String(tr?.conclusionStrength || "") === "withheld" ||
-        String(tr?.conclusionStrength || "") === "tentative",
-    });
+        String(tr?.conclusionStrength || "") === "tentative"});
     const validation = validateNarrativeContractV1(narrativeContract);
     return applyNarrativeContractToRecord(tr, narrativeContract, validation);
   });
@@ -2430,8 +2343,7 @@ function applyNarrativeConsistencyToExecutiveSummary(executiveSummary, subjectPr
     mainHomeRecommendationHe: restrainedLine,
     cautionNoteHe: String(es.cautionNoteHe || "").trim()
       ? `${String(es.cautionNoteHe).trim()} ${restrainedLine}`
-      : restrainedLine,
-  };
+      : restrainedLine};
 }
 
 /** Minimum subject volume to compare cross-subject aggregates in parent-facing copy */
@@ -2447,20 +2359,18 @@ function collectPerSubjectAggregateRowsFromSummary(summary, baseReport = null) {
     { q: Number(s.englishQuestions) || 0, acc: Number(s.englishAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.english },
     { q: Number(s.scienceQuestions) || 0, acc: Number(s.scienceAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.science },
     { q: Number(s.historyQuestions) || 0, acc: Number(s.historyAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.history },
-    { q: Number(s.hebrewQuestions) || 0, acc: Number(s.hebrewAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.hebrew },
-  ];
+    { q: Number(s.hebrewQuestions) || 0, acc: Number(s.hebrewAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.hebrew }];
   if (baseReport) {
     const mg = buildVisualMoledetGeographyCoverageRows(baseReport);
     rows.push(
-      { q: mg[0].questionCount, acc: mg[0].accuracy, labelHe: mg[0].subjectLabelHe },
-      { q: mg[1].questionCount, acc: mg[1].accuracy, labelHe: mg[1].subjectLabelHe },
+      { q: mg[0].questionCount, acc: mg[0].accuracy, labelHe: mg[0].subjectLabel },
+      { q: mg[1].questionCount, acc: mg[1].accuracy, labelHe: mg[1].subjectLabel },
     );
   } else {
     rows.push({
       q: Number(s.moledetGeographyQuestions) || 0,
       acc: Number(s.moledetGeographyAccuracy) || 0,
-      labelHe: SUBJECT_LABEL_HE["moledet-geography"],
-    });
+      labelHe: "Subject"});
   }
   return rows;
 }
@@ -2497,12 +2407,11 @@ function augmentExecutiveSummaryWithCrossSubjectAccuracyWeakSignal(executiveSumm
   const blob = [
     String(es.homeFocusHe || ""),
     ...(Array.isArray(es.majorTrendsHe) ? es.majorTrendsHe : []).map(String),
-    String(es.cautionNoteHe || ""),
-  ].join("\n");
+    String(es.cautionNoteHe || "")].join("\n");
   if (blob.includes(worst.labelHe)) return es;
 
   const prevHome = String(es.homeFocusHe || "");
-  const genericHome = !prevHome.trim() || /still no clear focus|עדיין אין מוקד ברור/.test(prevHome);
+  const genericHome = !prevHome.trim() || /still no clear focus/.test(prevHome);
 
   if (genericHome) {
     es.homeFocusHe = line;
@@ -2557,7 +2466,7 @@ function buildSubjectProfilesFromV2(baseReport) {
           : "There isn't enough data in the examined period.";
       out.push({
         subject: sid,
-        subjectLabelHe: SUBJECT_LABEL_HE[sid],
+        subjectLabel: SUBJECT_LABEL_HE[sid],
         summaryHe: summaryHeEmpty,
         hasAnySignal: false,
         topStrengths: [],
@@ -2572,8 +2481,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         confidenceSummaryHe: reportPackCopy("utils__detailed-parent-report", "not_enough_information_has_accumulated_yet_to_set_a_clear_direction"),
         recommendedHomeMethodHe: null,
         trendNarrativeHe: null,
-        subjectMonitoringOnly: true,
-      });
+        subjectMonitoringOnly: true});
       continue;
     }
     const csOf = (u) => u?.canonicalState;
@@ -2622,8 +2530,7 @@ function buildSubjectProfilesFromV2(baseReport) {
           .map((u) =>
             recommendationFromV2Unit(u, topicMapForSid[String(u?.topicRowKey || "")] || null, {
               registeredGradeKey: baseReport?.registeredGradeKey,
-              baseReport,
-            }),
+              baseReport}),
           )
           .slice(0, 8)
       )
@@ -2643,8 +2550,7 @@ function buildSubjectProfilesFromV2(baseReport) {
       .map((tr, idx) => ({
         ...tr,
         actionableRole: idx === 0 ? "primary" : "secondary",
-        isMainActionable: idx === 0,
-      }));
+        isMainActionable: idx === 0}));
 
     const excellentList = strengthUnits.filter(
       (u) => csOf(u)?.evidence?.positiveAuthorityLevel === "excellent"
@@ -2681,9 +2587,7 @@ function buildSubjectProfilesFromV2(baseReport) {
           gradeRelation: ge.gradeRelation,
           questions: Number(u?.evidenceTrace?.[0]?.value?.questions) || 0,
           accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0,
-          timeSpentMinutes: Number(mapR?.timeMinutes) || 0,
-        }),
-      };
+          timeSpentMinutes: Number(mapR?.timeMinutes) || 0})};
     });
 
     const maintain = goodList.slice(0, 5).map((u) => {
@@ -2696,8 +2600,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         contentGradeKey: gk,
         labelHe: parentFacingLabelForV2Unit(baseReport, u),
         questions: Number(u?.evidenceTrace?.[0]?.value?.questions) || 0,
-        accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0,
-      };
+        accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0};
     });
 
     const topWeaknesses = diagnosed
@@ -2731,9 +2634,7 @@ function buildSubjectProfilesFromV2(baseReport) {
             accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0,
             timeSpentMinutes: Number(topicMapForSid[trk]?.timeMinutes) || 0,
             hasSubskillMetadata: !!patternHe,
-            diagnosticPatternHe: patternHe || null,
-          }),
-        };
+            diagnosticPatternHe: patternHe || null})};
       });
 
     const POSITIVE_LEVEL_RANK_D = { excellent: 3, very_good: 2, good: 1, none: 0 };
@@ -2787,28 +2688,26 @@ function buildSubjectProfilesFromV2(baseReport) {
         diagnosedCount: diagnosed.length,
         weakPatternHe: parentFacingPatternLabelHe(diagnosticLeadSource),
         units,
-        subjectLabelHe: SUBJECT_LABEL_HE[sid],
+        subjectLabel: SUBJECT_LABEL_HE[sid],
         reportSubjectAccuracy: subjectAccuracyFromReportSummary(baseReport, sid),
         reportTotalQuestions: totalReportQ,
         clearWeakTopicLabelHe: w0Label,
         clearWeakTopicQuestions: w0?.questions,
-        clearWeakTopicAccuracy: w0?.accuracy,
-      });
+        clearWeakTopicAccuracy: w0?.accuracy});
     })();
 
     const subjectEngineContract = buildSubjectEngineDecisionContract(sid, topicRecommendations, {
-      subjectLabelKey: sid,
-    });
+      subjectLabelKey: sid});
     const summaryHeFromEngineContract = resolveSubjectSummaryTextFromEngineContract(
       subjectEngineContract,
-      { subjectLabelHe: SUBJECT_LABEL_HE[sid] },
+      { subjectLabel: SUBJECT_LABEL_HE[sid] },
     );
     const finalSummaryHe = summaryHeFromEngineContract || summaryHe;
     const blockedSubjectLegacy = !!subjectEngineContract.blockedLegacySummary;
 
     out.push({
       subject: sid,
-      subjectLabelHe: SUBJECT_LABEL_HE[sid],
+      subjectLabel: SUBJECT_LABEL_HE[sid],
       summaryHe: finalSummaryHe,
       topStrengths,
       topWeaknesses,
@@ -2818,8 +2717,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         labelHe: parentFacingLabelForV2Unit(baseReport, u),
         questions: Number(u?.evidenceTrace?.[0]?.value?.questions) || 0,
         accuracy: Number(u?.evidenceTrace?.[0]?.value?.accuracy) || 0,
-        excellent: true,
-      })),
+        excellent: true})),
       diagnosticSectionsHe: null,
       subSkillInsightsHe: [],
       parentActionHe: resolveUnitParentActionHe(subjectAnchorUnit, anchorGradeKey),
@@ -2851,8 +2749,7 @@ function buildSubjectProfilesFromV2(baseReport) {
                 sumUnitQuestions: sumU,
                 strengthUnitCount: strengthUnits.length,
                 diagnosedCount: diagnosed.length,
-                reportSubjectAccuracy: subjectAccuracyFromReportSummary(baseReport, sid),
-              });
+                reportSubjectAccuracy: subjectAccuracyFromReportSummary(baseReport, sid)});
             })()
           : reportPackCopy("utils__detailed-parent-report", "not_enough_information_has_accumulated_yet_for_a_broad_picture_from_the_"),
       recommendedHomeMethodHe:
@@ -2860,8 +2757,7 @@ function buildSubjectProfilesFromV2(baseReport) {
       whatNotToDoHe: subjectAnchorUnit?.intervention?.avoidHe || null,
       majorRiskFlagsAcrossRows: {
         insufficientEvidenceRisk: units.some((u) => u?.outputGating?.cannotConcludeYet),
-        hintDependenceRisk: false,
-      },
+        hintDependenceRisk: false},
       dominantBehaviorProfileAcrossRows: subjectAnchorUnit?.strengthProfile?.dominantBehavior || null,
       strongestPositiveTrendRowHe: stable > 0 ? "Pockets of stable mastery are visible." : null,
       strongestCautionTrendRowHe: fragile > 0 ? "There are fragile successes that need stabilizing." : null,
@@ -2887,8 +2783,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         withheldStrengthRows: units.filter((u) => u?.outputGating?.cannotConcludeYet).length,
         tentativeStrengthRows: 0,
         rowCount: Math.max(1, units.length),
-        hasCannotConcludeYet: units.some((u) => u?.outputGating?.cannotConcludeYet),
-      }),
+        hasCannotConcludeYet: units.some((u) => u?.outputGating?.cannotConcludeYet)}),
       subjectInterventionPriorityHe: priorityLevelParentLabelHe(subjectAnchorUnit?.priority?.level),
       subjectPriorityLevel: highPriority > 0 ? "immediate" : "soon",
       subjectPriorityReasonHe: parentFacingPatternLabelHe(subjectAnchorUnit) || null,
@@ -2900,8 +2795,7 @@ function buildSubjectProfilesFromV2(baseReport) {
       subjectMonitoringOnly: units.length === 0,
       subjectDoNowHe: resolveUnitParentActionHe(subjectAnchorUnit, anchorGradeKey),
       subjectAvoidNowHe: sanitizeParentSurfaceTextHe(subjectAnchorUnit?.intervention?.avoidHe, {
-        subjectId: sid,
-      }),
+        subjectId: sid}),
       subjectReviewBeforeAdvanceHe: sanitizeParentSurfaceTextHe(
         subjectAnchorUnit?.probe?.objectiveHe,
         { subjectId: sid },
@@ -2913,8 +2807,7 @@ function buildSubjectProfilesFromV2(baseReport) {
         : subjectV2RecalibrationNeedNoHe(),
       subjectDependencyNarrativeHe: subjectAnchorUnit?.taxonomy?.competitorsHe?.[0]
         ? `An alternative should also be checked: ${subjectAnchorUnit.taxonomy.competitorsHe[0]}.`
-        : null,
-    });
+        : null});
   }
   return out;
 }
@@ -2974,8 +2867,7 @@ function buildExecutiveSummaryFromV2(baseReport, subjectCoverage, reportLocale =
         units: units.length,
         diagnosed: diagnosed.length,
         uncertain: uncertain.length,
-        stable: stable.length,
-      },
+        stable: stable.length},
       reportLocale
     ),
     mainHomeRecommendationHe:
@@ -3021,8 +2913,7 @@ function buildExecutiveSummaryFromV2(baseReport, subjectCoverage, reportLocale =
       .slice(0, 4)
       .map((u) => `${SUBJECT_LABEL_HE[u.subjectId] || u.subjectId}: ${u.probe.objectiveHe}`),
     transferReadyAreasHe: stable.slice(0, 3).map((u) => executiveLineFromV2Unit(baseReport, u)),
-    anchoredTopicStateIds: stable.slice(0, 3).map((u) => csOf(u)?.topicStateId || null).filter(Boolean),
-  };
+    anchoredTopicStateIds: stable.slice(0, 3).map((u) => csOf(u)?.topicStateId || null).filter(Boolean)};
 }
 
 function buildCrossSubjectInsightsFromV2(baseReport, reportLocale = "en") {
@@ -3047,14 +2938,12 @@ function buildCrossSubjectInsightsFromV2(baseReport, reportLocale = "en") {
       unitsLength: units.length,
       highPriorityCount: p4,
       strengthenTopicCount,
-      contradictoryCount: contradictory,
-    },
+      contradictoryCount: contradictory},
     reportLocale
   );
   return {
     bulletsHe,
-    dataQualityNoteHe: crossSubjectV2DataQualityNoteHe(units.length, reportLocale),
-  };
+    dataQualityNoteHe: crossSubjectV2DataQualityNoteHe(units.length, reportLocale)};
 }
 
 function buildHomePlanFromV2(baseReport, reportLocale = "en") {
@@ -3123,8 +3012,7 @@ export function attachOutOfGradeTransparencyFromRawBase(detailed, rawBaseReport)
   if (!detailed || typeof detailed !== "object") return detailed;
   return {
     ...detailed,
-    outOfGradePracticeTransparency: buildOutOfGradePracticeTransparency(rawBaseReport),
-  };
+    outOfGradePracticeTransparency: buildOutOfGradePracticeTransparency(rawBaseReport)};
 }
 
 /**
@@ -3182,8 +3070,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
     }
     executiveSummary = {
       ...executiveSummary,
-      ...buildCrossSubjectPhase7Fields(subjMap, subjectCoverage),
-    };
+      ...buildCrossSubjectPhase7Fields(subjMap, subjectCoverage)};
   }
   const subjectCoverageById = Object.fromEntries(
     subjectCoverage.map((row) => [String(row.subject), row])
@@ -3194,12 +3081,10 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
       ...sp,
       subjectQuestionCount: Number(cov?.questionCount) || 0,
       subjectTimeMinutes: Number(cov?.timeMinutes) || 0,
-      subjectAccuracy: Number(cov?.accuracy) || 0,
-    };
+      subjectAccuracy: Number(cov?.accuracy) || 0};
     return {
       ...enriched,
-      primaryParentActionHe: resolveSubjectPrimaryParentActionHe(enriched, baseReport),
-    };
+      primaryParentActionHe: resolveSubjectPrimaryParentActionHe(enriched, baseReport)};
   });
   executiveSummary = applyNarrativeConsistencyToExecutiveSummary(executiveSummary, subjectProfiles);
   executiveSummary = augmentExecutiveSummaryWithCrossSubjectAccuracyWeakSignal(
@@ -3214,9 +3099,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
       period: baseReport.period === "custom" ? "custom" : period,
       startDate: baseReport.startDate,
       endDate: baseReport.endDate,
-      playerName: baseReport.playerName || playerName,
-    },
-  });
+      playerName: baseReport.playerName || playerName}});
 
   return {
     version: 2,
@@ -3238,8 +3121,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
       endDate: baseReport.endDate,
       startDateLabelHe: formatDateLabelHe(baseReport.startDate),
       endDateLabelHe: formatDateLabelHe(baseReport.endDate),
-      playerName: baseReport.playerName || playerName,
-    },
+      playerName: baseReport.playerName || playerName},
     executiveSummary,
     overallSnapshot,
     subjectProfiles,
@@ -3255,9 +3137,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
       narrative: {
         version: NARRATIVE_CONTRACT_VERSION,
         scope: "gate-to-text",
-        attached: true,
-      },
-    },
+        attached: true}},
     registeredGradeKey: baseReport.registeredGradeKey ?? null,
     gradePracticeMeta:
       baseReport.gradePracticeMeta && typeof baseReport.gradePracticeMeta === "object"
@@ -3267,8 +3147,7 @@ export function buildDetailedParentReportFromBaseReport(baseReport, meta = {}) {
     ...(baseReport.historySubtopics && typeof baseReport.historySubtopics === "object"
       ? { historySubtopics: baseReport.historySubtopics }
       : {}),
-    ...(baseReport.summary && typeof baseReport.summary === "object" ? { summary: baseReport.summary } : {}),
-  };
+    ...(baseReport.summary && typeof baseReport.summary === "object" ? { summary: baseReport.summary } : {})};
 }
 
 /**

@@ -10,7 +10,7 @@ export default function ColoringScreenPreview({ worksheetPayload }) {
       <div className="coloring-preview-frame">
         <img
           src={src}
-          alt={title ? `דף צביעה — ${title}` : "דף צביעה"}
+          alt={title ? `  — ${title}` : ""}
           className="coloring-preview-image"
           draggable={false}
         />

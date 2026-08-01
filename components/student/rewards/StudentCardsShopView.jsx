@@ -17,7 +17,7 @@ const SELL_DUPLICATE_PATH = "/api/student/rewards/shop/sell-duplicate";
  *   T: Record<string, string>,
  *   coinBalance?: number|null,
  *   onCoinBalanceChange?: (balance: number) => void,
- *   onAfterMutation?: () => void | Promise<void>,
+ *   onAfterMutation?: () => void || Promise<void>,
  *   studentFullName?: string,
  *   gridClassName?: string,
  *   actionButtonClassName?: string,

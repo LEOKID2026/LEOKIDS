@@ -3,7 +3,7 @@
  */
 
 import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
-import { resolveGradeAwareParentTopicTier } from "../parent-report-language/grade-context-parent-he.js";
+import { resolveGradeAwareParentTopicTier } from "../parent-report-language/grade-context-parent.js";
 
 /** @typedef {'strong'|'monitor'|'strengthen'|'needs_guidance'|'clear_gap'|'low_evidence'|'advanced_practice'|'foundation_practice'} ParentTopicTier */
 

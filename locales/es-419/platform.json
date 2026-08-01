@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Matemáticas",
+    "geometry": "Geometría",
+    "english": "Inglés",
+    "science": "Ciencias"
+  },
+  "activityModes": {
+    "live_lesson": "Clase en vivo",
+    "guided_practice": "Práctica guiada",
+    "quiz": "Cuestionario",
+    "homework": "Tarea",
+    "discussion": "Discusión",
+    "practice": "Práctica",
+    "review": "Repaso"
+  },
+  "activityStatuses": {
+    "draft": "Borrador",
+    "active": "Activa",
+    "paused": "Pausada",
+    "closed": "Cerrada",
+    "archived": "Archivada"
+  },
+  "studentActivityStatuses": {
+    "not_started": "No iniciada",
+    "in_progress": "En progreso",
+    "submitted": "Enviada",
+    "completed": "Completada",
+    "timed_out": "Tiempo agotado"
+  },
+  "roles": {
+    "teacher": "Docente",
+    "school_admin": "Administrador escolar",
+    "admin": "Administrador del sistema"
+  },
+  "auditActions": {
+    "school_subject_granted": "Permiso de materia otorgado",
+    "school_subject_revoked": "Asignación de materia revocada",
+    "school_student_enrolled": "Estudiante inscrito",
+    "school_student_unenrolled": "Estudiante dado de baja",
+    "school_class_viewed": "Informe de clase consultado",
+    "school_student_report_viewed": "Informe del estudiante consultado",
+    "school_student_class_transferred": "Estudiante transferido",
+    "school_class_teacher_reassigned": "Docente de la clase reasignado",
+    "school_class_archived": "Clase archivada",
+    "assign_teacher": "Docente asignado",
+    "assign_manager": "Director designado",
+    "class_transfer": "Estudiante transferido",
+    "grant": "Permiso otorgado",
+    "revoke": "Permiso eliminado",
+    "archive": "Archivado",
+    "viewed_student_report": "Informe del estudiante consultado",
+    "viewed_class_report": "Informe de clase consultado",
+    "grant_created": "Acceso creado",
+    "grant_revoked": "Acceso revocado",
+    "magic_link_issued": "Enlace de inicio de sesión emitido",
+    "pin_rotated": "PIN actualizado",
+    "username_rotated": "Nombre de usuario actualizado",
+    "teacher_quota_updated": "Cupos actualizados",
+    "teacher_features_updated": "Permisos de funciones actualizados",
+    "teacher_status_updated": "Estado de la cuenta actualizado"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Acción del sistema",
+    "activity": "Actividad",
+    "classActivity": "Actividad de clase",
+    "activitySuffix": "actividad"
+  }
+}

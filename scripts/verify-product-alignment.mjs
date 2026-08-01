@@ -61,7 +61,7 @@ async function loadProductModules() {
     import(href("scripts/curriculum-spine-grade-bindings.mjs")),
     import(href("lib/learning-book/geometry-g5-registry.js")),
     import(href("lib/learning-book/geometry-g6-registry.js")),
-    import(href("lib/classroom-activities/classroom-skill-labels-he.js")),
+    import(href("lib/classroom-activities/classroom-skill-labels.js")),
     import(href("utils/geometry-diagnostic-metadata-bridge.js")),
     import(href("data/moledet-geography-curriculum.js")),
     import(href("data/science-curriculum.js")),
@@ -300,7 +300,7 @@ function runChecks(ctx) {
   // GEO-06 — classroom label geo_area_triangle_formula without grade gate
   const labels = modules.classroomLabels ?? {};
   const labelsText = fs.readFileSync(
-    path.join(REPO_ROOT, "lib/classroom-activities/classroom-skill-labels-he.js"),
+    path.join(REPO_ROOT, "lib/classroom-activities/classroom-skill-labels.js"),
     "utf8"
   );
   if (labels.geo_area_triangle_formula || labelsText.includes("geo_area_triangle_formula")) {
@@ -315,7 +315,7 @@ function runChecks(ctx) {
           grade: null,
           topic: "triangle_area",
           product_surface: "teacher_classroom_labels",
-          file_path: "lib/classroom-activities/classroom-skill-labels-he.js",
+          file_path: "lib/classroom-activities/classroom-skill-labels.js",
           current_behavior: `geo_area_triangle_formula label present without grade-aware gate via isTriangleAreaFormulaGradeAllowed.`,
           oracle_status: triangleOracle?.status,
           evidence_from_code: 'geo_area_triangle_formula: "שטח משולש"',
@@ -846,7 +846,7 @@ async function main() {
       "scripts/curriculum-spine-grade-bindings.mjs",
       "lib/learning-book/geometry-g5-registry.js",
       "lib/learning-book/geometry-g6-registry.js",
-      "lib/classroom-activities/classroom-skill-labels-he.js",
+      "lib/classroom-activities/classroom-skill-labels.js",
       "utils/diagnostic-engine-v2/geometry-taxonomy-candidate-order.js",
       "utils/geometry-diagnostic-metadata-bridge.js",
       "data/moledet-geography-curriculum.js",

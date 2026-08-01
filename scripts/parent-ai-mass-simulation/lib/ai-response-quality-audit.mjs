@@ -4,7 +4,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import parentFacingNormalize from "../../../utils/parent-report-language/parent-facing-normalize-he.js";
+import parentFacingNormalize from "../../../utils/parent-report-language/parent-facing-normalize.js";
 import questionClassifierConstants from "../../../utils/parent-copilot/question-classifier.js";
 
 const AMBIGUOUS_RESPONSE_HE = String(questionClassifierConstants?.AMBIGUOUS_RESPONSE_HE || "");
@@ -69,7 +69,7 @@ function collectDetailedParentFacingBlob(detailed) {
   const parts = [];
   const push = (v) => {
     if (typeof v === "string" && v.trim()) {
-      parts.push(parentFacingNormalize.normalizeParentFacingHe(v));
+      parts.push(parentFacingNormalize.normalizeParentFacing(v));
     }
   };
   const es = detailed?.executiveSummary;

@@ -26,17 +26,17 @@ export function buildPlannerSummaryMarkdown(payload) {
     "# Adaptive Learning Planner - selftest summary",
     "",
     `- **Generated:** ${payload.generatedAt}`,
-    `- **Cases:** ${payload.totals.cases} | **Passed:** ${payload.totals.passed} | **Failed:** ${payload.totals.failed}`,
+    `- **Cases:** ${payload.totals.cases} || **Passed:** ${payload.totals.passed} || **Failed:** ${payload.totals.failed}`,
     "",
     "## Results",
     "",
-    "| Case | Pass | plannerStatus | nextAction |",
-    "| --- | --- | --- | --- |",
+    "| Case || Pass || plannerStatus || nextAction |",
+    "| --- || --- || --- || --- |",
   ];
   for (const c of payload.cases || []) {
     const st = c.output?.plannerStatus ?? "-";
     const na = c.output?.nextAction ?? "-";
-    lines.push(`| ${String(c.name).replace(/\|/g, "\\|")} | ${c.pass ? "yes" : "no"} | ${st} | ${na} |`);
+    lines.push(`| ${String(c.name).replace(/\|/g, "\\|")} || ${c.pass ? "yes" : "no"} || ${st} || ${na} |`);
   }
   lines.push("");
   const fails = (payload.cases || []).filter((c) => !c.pass);

@@ -2,8 +2,8 @@ import { useEffect } from "react";
 
 /**
  * Optional Supabase Realtime nudge for arcade session updates (falls back to polling).
- * @param {string | null} roomId
- * @param {() => void | Promise<void>} onChange
+ * @param {string || null} roomId
+ * @param {() => void || Promise<void>} onChange
  */
 export function useArcadeSessionRealtime(roomId, onChange) {
   useEffect(() => {

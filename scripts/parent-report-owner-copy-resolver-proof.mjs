@@ -19,7 +19,7 @@ const {
   renderOwnerSubjectCopyTemplateHe,
   buildSubjectOwnerCopySlots,
   SUBJECT_OWNER_COPY_TEMPLATE_IDS,
-} = await import(u("utils/parent-report-language/parent-report-owner-copy-templates-he.js"));
+} = await import(u("utils/parent-report-language/parent-report-owner-copy-templates.js"));
 
 const FORBIDDEN = [
   "remediate same level",

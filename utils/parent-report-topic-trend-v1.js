@@ -15,7 +15,7 @@ export const TREND_V1_DELTA_THRESHOLD_PCT = 10;
 
 const APPROVED_TREND_SOURCES = new Set([
   EVIDENCE_SOURCE.SELF_PRACTICE,
-  EVIDENCE_SOURCE.PARENT_ASSIGNED,
+  EVIDENCE_SOURCE.PARENT_ASSIGNED
 ]);
 
 export const TREND_V1_PARENT_LINE_HE = Object.freeze({
@@ -26,19 +26,18 @@ export const TREND_V1_PARENT_LINE_HE = Object.freeze({
   declining:
     "Trend for this period: needs reinforcement - there were more mistakes in the later part of the period, so short practice would help.",
   insufficient_data:
-    "There still isn't enough of a practice streak to identify a trend over time.",
+    "There still isn't enough of a practice streak to identify a trend over time."
 });
 
 /** Short status label shown after "Trend for this period:" in parent-facing lines. */
 export const TREND_V1_STATUS_LABEL_HE = Object.freeze({
   improving: reportPackCopy("utils__parent-report-topic-trend-v1", "improving"),
   stable: reportPackCopy("utils__parent-report-topic-trend-v1", "no_significant_change"),
-  declining: reportPackCopy("utils__parent-report-topic-trend-v1", "needs_reinforcement"),
+  declining: reportPackCopy("utils__parent-report-topic-trend-v1", "needs_reinforcement")
 });
 
 /** Aggregate stores `moledet_geography`; V2 maps use `moledet-geography`. */
 export const TREND_SUBJECT_STORE_KEY = Object.freeze({
-  "moledet-geography": "moledet_geography",
 });
 
 /** @param {unknown} ms */
@@ -49,7 +48,7 @@ function calendarDayKeyIsrael(ms) {
     timeZone: PARENT_REPORT_DISPLAY_TIMEZONE,
     year: "numeric",
     month: "2-digit",
-    day: "2-digit",
+    day: "2-digit"
   }).format(new Date(n));
 }
 
@@ -89,7 +88,7 @@ function buildTrendWindowSlice(slice) {
     to:
       slice?.toMs != null && Number.isFinite(slice.toMs)
         ? new Date(slice.toMs).toISOString()
-        : null,
+        : null
   };
 }
 
@@ -110,7 +109,7 @@ export function computeTopicTrendV1(approvedEvents) {
     recent: buildTrendWindowSlice({ questions: 0, correct: 0, fromMs: null, toMs: null }),
     deltaPct: null,
     confidence,
-    parentLineHe: TREND_V1_PARENT_LINE_HE.insufficient_data,
+    parentLineHe: TREND_V1_PARENT_LINE_HE.insufficient_data
   });
 
   if (total < TREND_V1_MIN_TOTAL) {
@@ -146,7 +145,7 @@ export function computeTopicTrendV1(approvedEvents) {
       questions: arr.length,
       correct,
       fromMs: Number.isFinite(fromMs) ? fromMs : null,
-      toMs: Number.isFinite(toMs) ? toMs : null,
+      toMs: Number.isFinite(toMs) ? toMs : null
     };
   };
 
@@ -176,7 +175,7 @@ export function computeTopicTrendV1(approvedEvents) {
     recent: buildTrendWindowSlice(recentAgg),
     deltaPct,
     confidence,
-    parentLineHe: TREND_V1_PARENT_LINE_HE[direction] || TREND_V1_PARENT_LINE_HE.stable,
+    parentLineHe: TREND_V1_PARENT_LINE_HE[direction] || TREND_V1_PARENT_LINE_HE.stable
   };
 }
 

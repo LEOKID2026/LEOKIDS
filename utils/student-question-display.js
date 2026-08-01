@@ -9,36 +9,35 @@ import { COMPARISON_SIGN_LRM } from "./comparison-sign-mcq.js";
 const BLANK = /_{2,}|\?\?|…/;
 
 const KNOWN_INSTRUCTION_LEADS = [
-  /^מצאו(?:\s+את)?\s+הנעלם$/u,
-  /^מצאו\s+x$/iu,
-  /^השלימו(?:\s+את)?(?:\s+החסר)?(?:\s+במשוואה)?$/u,
-  /^חידת\s+משוואה\s+קצרה$/u,
-  /^חשבו$/u,
-  /^פתרו$/u,
-  /^השלם(?:\s+את)?(?:\s+הסימן)?$/u,
-  /^השלם(?:\s+את)?(?:\s+הסדרה)?$/u,
-  /^מה\s+התוצאה$/u,
-  /^קראו(?:\s+את)?(?:\s+הטקסט)?$/u,
-  /^קרא את המשפט$/u,
-  /^קרא את המילה(?: המנוקדת)?$/u,
-  /^בחרו(?:\s+תשובה)?$/u,
-  /^מה\s+המשפט/u,
-  /^מה\s+המילה/u,
-  /^Choose\b/iu,
-];
+  /(?!)/u,
+  /(?!)/iu,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /^Choose\b/iu];
 
 /** @param {string} s */
 export function isEquationLikeText(s) {
   const t = String(s ?? "").trim();
   if (!t) return false;
   if (
-    /^['"«׳][\u0590-\u05FF][^'"»׳]*['"»׳](?:\s*(?:\(\s*\d+\s*\)|·\s*משפט\s*\d+))?\s*$/u.test(
+    /(?!)/u.test(
       t
     )
   ) {
     return false;
   }
-  const hebrewChars = (t.match(/[\u0590-\u05FF]/g) || []).length;
+  const hebrewChars = (t.match(/(?!)/g) || []).length;
   if (hebrewChars >= 10 && hebrewChars / Math.max(t.length, 1) > 0.3) {
     return false;
   }
@@ -53,8 +52,8 @@ export function isEquationLikeText(s) {
 export function isFormulaLikeText(s) {
   const t = String(s ?? "").trim();
   if (!t) return false;
-  if (/שטח\s*=|היקף\s*=|נפח\s*=|אורך\s*=/u.test(t)) return true;
-  if (/[×÷]/.test(t) && /[0-9א-ת]/.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
+  if (/[×÷]/.test(t) && /(?!)/.test(t)) return true;
   return isEquationLikeText(t);
 }
 
@@ -68,12 +67,12 @@ export function formatCompactExpression(text) {
     .trim();
   if (!t) return t;
   t = t.replace(/\s+/g, " ");
-  t = t.replace(/\s*([+\-×÷*/=(),])\s*/g, " $1 ");
+  t = t.replace(/\s*([+\-×÷*/=()])\s*/g, " $1 ");
   t = t.replace(/\s+/g, " ").trim();
   return t;
 }
 
-const DIFFICULTY_IN_PAREN = /\((קל|בינוני|אתגר|מאתגר)\)/u;
+const DIFFICULTY_IN_PAREN = /(?!)/u;
 
 /**
  * Generator topic/difficulty framing (not child-facing instruction).
@@ -91,7 +90,7 @@ export function isTopicDifficultyMetadataLead(lead) {
   }
 
   if (
-    /^כיתה\s+[אבגדהו]['׳]?\s*\((קל|בינוני|אתגר|מאתגר)\)\s*$/u.test(t)
+    /(?!)/u.test(t)
   ) {
     return true;
   }
@@ -118,7 +117,7 @@ export function shouldOmitInstructionLead(lead, body) {
   if (isEquationLikeText(bodyT) && bodyT.length <= 56) return true;
   if (
     isFormulaLikeText(bodyT) &&
-    /^(שטח|היקף)\s*=/.test(bodyT) &&
+    /(?!)/.test(bodyT) &&
     bodyT.length <= 40
   ) {
     return true;
@@ -140,12 +139,11 @@ export function stripGeometryFormulaHelpParenthetical(text) {
   if (!t.trim()) return t;
   const mul = "[×xX]";
   const formulas = [
-    `ממוצע\\s+הבסיסים\\s*${mul}\\s*גובה`,
-    `חצי\\s*${mul}\\s*בסיס\\s*${mul}\\s*גובה`,
-    `אורך\\s*${mul}\\s*רוחב`,
-    `בסיס\\s*${mul}\\s*גובה`,
-    `צלע\\s*${mul}\\s*צלע`,
-  ].join("|");
+    `\\s+\\s*${mul}\\s*`,
+    `\\s*${mul}\\s*\\s*${mul}\\s*`,
+    `\\s*${mul}\\s*`,
+    `\\s*${mul}\\s*`,
+    `\\s*${mul}\\s*`].join("|");
   t = t.replace(new RegExp(`\\s*\\(\\s*(?:${formulas})\\s*\\)\\s*$`, "u"), "");
   return t;
 }
@@ -154,23 +152,23 @@ export function formatGeometryChildFriendlyQuestion(text) {
   let t = String(text ?? "");
   if (!t.trim()) return t;
 
-  t = t.replace(/מה\s+שטח\s+הפנים/gu, "מה שטח המלבן");
-  t = t.replace(/מה\s+היקף\s+הפנים/gu, "מה היקף המלבן");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
   t = t.replace(
-    /מלבן\s+במישור:\s*(\d+(?:[.,]\d+)?)\s+על\s+(\d+(?:[.,]\d+)?)/gu,
-    "מלבן שאורכו $1 יחידות ורוחבו $2 יחידות"
+    /(?!)/gu,
+    "$1 $2"
   );
   t = t.replace(
-    /שטח\s+מלבן\s+ללא\s+ציור:\s*(\d+(?:[.,]\d+)?)\s+על\s+(\d+(?:[.,]\d+)?)/gu,
-    "מלבן שאורכו $1 יחידות ורוחבו $2 יחידות. מה שטח המלבן?"
+    /(?!)/gu,
+    "$1 $2 . ?"
   );
   t = t.replace(
-    /מלבן\s+(\d+(?:[.,]\d+)?)\s+על\s+(\d+(?:[.,]\d+)?)\s*-/gu,
-    "מלבן שאורכו $1 יחידות ורוחבו $2 יחידות -"
+    /(?!)/gu,
+    "$1 $2 -"
   );
   t = t.replace(
-    /מלבן\s+אורך\s+(\d+(?:[.,]\d+)?),\s*רוחב\s+(\d+(?:[.,]\d+)?):\s*שטח\s*=\s*אורך\s*×\s*רוחב\.\s*מה\s+התוצאה\?/gu,
-    "מלבן שאורכו $1 יחידות ורוחבו $2 יחידות. מה שטח המלבן?"
+    /(?!)/gu,
+    "$1 $2 . ?"
   );
   t = stripGeometryFormulaHelpParenthetical(t);
   return t.replace(/\s{2,}/g, " ").trim();
@@ -181,7 +179,7 @@ function isKnownInstructionLead(lead) {
   const t = String(lead ?? "").trim().replace(/:$/, "");
   if (!t) return false;
   if (KNOWN_INSTRUCTION_LEADS.some((re) => re.test(t))) return true;
-  if (t.length <= 42 && /^(מצאו|השלימו|חשבו|פתרו|השלם|קראו|בחרו|מה|איזה|בחר)/u.test(t)) {
+  if (t.length <= 42 && /(?!)/u.test(t)) {
     return !isEquationLikeText(t) && !isFormulaLikeText(t);
   }
   return false;
@@ -195,21 +193,21 @@ export function isLikelyVerbalInstruction(lead) {
   if (!t) return false;
   if (isKnownInstructionLead(t)) return true;
   if (
-    /^(?:קרא|קראו|קראי)(?:\s+את)?(?:\s+ה(?:טקסט|קטע|משפט|מילה(?:\s+המנוקדת)?))?$/u.test(
+    /(?!)/u.test(
       t
     )
   ) {
     return true;
   }
   if (
-    /^(?:האזינ|התבונ|עיינ|הסתכל)(?:ו|י|וּ)?(?:\s+(?:ו|ב))?/u.test(t) ||
+    /(?!)/u.test(t) |
     /^(?:Look|Read|Listen|Watch|Choose|Select|Complete|Fill)\b/iu.test(t)
   ) {
     return !isEquationLikeText(t) && !isFormulaLikeText(t);
   }
   if (
     t.length <= 56 &&
-    /^(קרא|קראו|קראי|האזינ|התבונ|עיינ|הסתכל|Look|Read|Listen|Watch|Choose|Select|Complete|Fill)\b/iu.test(
+    /(?!)/iu.test(
       t
     )
   ) {
@@ -227,22 +225,22 @@ export function formatFormulaSpacing(text) {
   let t = formatGeometryChildFriendlyQuestion(String(text ?? ""));
   if (!t) return t;
 
-  t = t.replace(/חצי\s*×\s*בסיס\s*×\s*גובה/gu, "חצי × בסיס × גובה");
-  t = t.replace(/חציבסיסגובה/gu, "חצי × בסיס × גובה");
-  t = t.replace(/חצי×בסיס×גובה/gu, "חצי × בסיס × גובה");
-  t = t.replace(/חצי×בסיס/gu, "חצי × בסיס");
-  t = t.replace(/בסיס×גובה/gu, "בסיס × גובה");
-  t = t.replace(/אורך×רוחב/gu, "אורך × רוחב");
-  t = t.replace(/בסיס×גובה/gu, "בסיס × גובה");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
 
-  t = t.replace(/([א-ת׳'])([×÷])([א-ת׳'0-9])/gu, "$1 $2 $3");
-  t = t.replace(/([0-9])([×÷])([א-ת׳'0-9])/gu, "$1 $2 $3");
-  t = t.replace(/([א-ת׳'0-9])([×÷])([0-9])/gu, "$1 $2 $3");
+  t = t.replace(/(?!)/gu, "$1 $2 $3");
+  t = t.replace(/(?!)/gu, "$1 $2 $3");
+  t = t.replace(/(?!)/gu, "$1 $2 $3");
 
-  t = t.replace(/(שטח|היקף|נפח|אורך)(\s*=\s*)/gu, "$1$2");
-  t = t.replace(/=\s*(?=[א-ת])/gu, "= ");
+  t = t.replace(/(?!)/gu, "$1$2");
+  t = t.replace(/(?!)/gu, "= ");
   t = t.replace(
-    /(\d+(?:[.,]\d+)?)\s*([<>=])\s*(\d+(?:[.,]\d+)?)/g,
+    /(\d+(?:[.]\d+)?)\s*([<>=])\s*(\d+(?:[.]\d+)?)/g,
     (_, left, sign, right) =>
       `${left} ${COMPARISON_SIGN_LRM}${sign}${COMPARISON_SIGN_LRM} ${right}`
   );
@@ -256,12 +254,12 @@ export function formatFormulaSpacing(text) {
  */
 function splitHebrewQuestionWithEquationTail(raw) {
   const t = String(raw ?? "").trim();
-  if (!t || !/[\u0590-\u05FF]/.test(t)) return null;
+  if (!t || !/(?!)/.test(t)) return null;
 
-  const leadingJunk = t.match(/^[\s_=?=]+\s*(.+[\u0590-\u05FF][\s\S]*)$/u);
+  const leadingJunk = t.match(/(?!)/u);
   const normalized = leadingJunk?.[1]?.trim() || t;
 
-  const trailingBlank = normalized.match(/^(.+[\u0590-\u05FF][^=]*?)\s*\??\s*(=\s*[_\s?]+)$/u);
+  const trailingBlank = normalized.match(/(?!)/u);
   if (trailingBlank?.[1] && trailingBlank?.[2]) {
     return {
       leadText: trailingBlank[1].replace(/\?\s*$/, "").trim(),
@@ -287,7 +285,7 @@ function splitHebrewQuestionWithEquationTail(raw) {
  */
 function splitInstructionAfterContextSentence(raw) {
   const t = String(raw ?? "").trim();
-  const match = t.match(/^(.+?[.!?])\s+([\u0590-\u05FF][\s\S]+)$/u);
+  const match = t.match(/(?!)/u);
   if (!match?.[2]) return null;
   const instruction = match[2].trim().replace(/\.$/, "");
   if (!isKnownInstructionLead(instruction)) return null;
@@ -300,7 +298,7 @@ function splitInstructionAfterContextSentence(raw) {
 
 /**
  * @param {string} text
- * @returns {{ leadText: string, bodyText: string, bodyKind: "text" | "equation" | "mixed" }}
+ * @returns {{ leadText: string, bodyText: string, bodyKind: "text" || "equation" || "mixed" }}
  */
 export function splitStudentQuestionForDisplay(text) {
   const raw = String(text ?? "").trim();
@@ -320,7 +318,7 @@ export function splitStudentQuestionForDisplay(text) {
     const body = raw.slice(colonIdx + 1).trim();
     if (
       body &&
-      (isKnownInstructionLead(lead) ||
+      (isKnownInstructionLead(lead) |
         (lead.length <= 56 && (isEquationLikeText(body) || isFormulaLikeText(body))))
     ) {
       const bodyText = formatCompactExpression(formatFormulaSpacing(body));
@@ -334,7 +332,7 @@ export function splitStudentQuestionForDisplay(text) {
     }
   }
 
-  const formulaInSentence = raw.match(/^(.+?)\s+(שטח\s*=\s*.+)$/u);
+  const formulaInSentence = raw.match(/(?!)/u);
   if (formulaInSentence) {
     const lead = formulaInSentence[1].trim();
     const body = formulaInSentence[2].trim();
@@ -359,7 +357,7 @@ export function splitStudentQuestionForDisplay(text) {
 
 /**
  * Resolve lead/body from question payload fields.
- * @param {{ question?: string, questionLabel?: string, exerciseText?: string } | null | undefined}
+ * @param {{ question?: string, questionLabel?: string, exerciseText?: string } || null || undefined}
  */
 export function resolveStudentQuestionDisplayParts(q) {
   if (!q || typeof q !== "object") {
@@ -450,15 +448,15 @@ export function attachMathEquationInstructionLabel(q, gradeKey) {
   const op = String(q.operation || q.params?.kind || "");
   const kind = String(q.params?.kind || "");
   const isEq =
-    op === "equations" ||
-    /^eq_/.test(kind) ||
-    /^order_/.test(kind) ||
+    op === "equations" |
+    /^eq_/.test(kind) |
+    /^order_/.test(kind) |
     op === "order_of_operations";
   if (!isEq) return q;
 
   const exercise =
-    (typeof q.exerciseText === "string" && q.exerciseText.trim()) ||
-    (typeof q.params?.exerciseText === "string" && q.params.exerciseText.trim()) ||
+    (typeof q.exerciseText === "string" && q.exerciseText.trim()) |
+    (typeof q.params?.exerciseText === "string" && q.params.exerciseText.trim()) |
     "";
   const question = typeof q.question === "string" ? q.question.trim() : "";
   const body = exercise || question;

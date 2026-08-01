@@ -6,7 +6,7 @@ import {
   findTopicRowByKey,
   listCopilotAnchoredTopicRows,
   normalizeSubjectId,
-  subjectLabelHe,
+  subjectLabel,
   SUBJECT_ORDER,
 } from "./contract-reader.js";
 import { parentFacingTopicRowLabelHe } from "../parent-report-topic-evidence.js";
@@ -157,13 +157,13 @@ export function pickStableSubjectForProgress(payload) {
   const best = [...pool].sort((a, b) => b.acc - a.acc || b.q - a.q)[0];
   if (!best) return null;
   return {
-    subjectLabel: subjectLabelHe(best.sid),
+    subjectLabel: subjectLabel(best.sid),
     topicLabel: "",
     questionCount: best.q,
     accuracyPercent: best.acc,
     topicRowKey: "",
     subjectId: best.sid,
-    displayName: subjectLabelHe(best.sid),
+    displayName: subjectLabel(best.sid),
   };
 }
 
@@ -172,7 +172,7 @@ export function pickStableSubjectForProgress(payload) {
  */
 export function topicAnchorFields(m) {
   return {
-    subjectLabel: subjectLabelHe(m.sid),
+    subjectLabel: subjectLabel(m.sid),
     topicLabel: m.label || m.displayName,
     questionCount: m.q,
     accuracyPercent: m.acc,
@@ -222,7 +222,7 @@ export function resolveContextTopicMetrics(payload, conv, opts = {}) {
   const summary = String(conv?.lastAnswerSummary || conv?.lastAssistantAnswerDigestHe || "");
   if (summary.length > 8) {
     for (const sid of SUBJECT_ORDER) {
-      const label = subjectLabelHe(sid);
+      const label = subjectLabel(sid);
       if (!summary.includes(label)) continue;
       const within = collectTopicMetrics(payload).filter((m) => normalizeSubjectId(m.sid) === sid);
       if (!within.length) continue;

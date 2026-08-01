@@ -34,7 +34,7 @@ import {
 } from "../../utils/learning-master-question-pressure.client.js";
 import {
   buildHebrewApprovedVerbalMcqGridClassName,
-} from "../../utils/hebrew-approved-verbal-master-contract.client.js";
+} from "../../utils/approved-verbal-master-contract.client.js";
 import {
   buildApprovedVerbalStemLayout,
   getHebrewApprovedSingleVerbalQuestionStyle,
@@ -102,8 +102,8 @@ import { STEP_BY_STEP_AUTO_PLAY_DELAY_MS } from "../../utils/learning-step-by-st
 import TrackingDebugPanel from "../../components/TrackingDebugPanel";
 import LearningPlannerRecommendationBlock from "../../components/LearningPlannerRecommendationBlock";
 import { reportModeFromGameState } from "../../utils/report-track-meta";
-import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-hebrew-math";
-import { renderLearningMixedHebrewMathText } from "../../components/learning/LearningMixedHebrewMathText";
+import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-rtl-math";
+import { renderLearningMixedRtlMathText } from "../../components/learning/LearningMixedRtlMathText";
 import { getGeometryDiagramSpec } from "../../utils/geometry-diagram-spec";
 import { geometryQuestionUsesChoiceUi } from "../../utils/geometry-activity-answer-ui.js";
 import GeometryExplanationDiagram from "../../components/learning/geometry/GeometryExplanationDiagram";
@@ -270,8 +270,7 @@ const AVATAR_OPTIONS = [
   "🎮",
   "🏆",
   "⭐",
-  "💫",
-];
+  "💫"];
 
 const GEOMETRY_BOOK_GRADES = new Set(["g1", "g2", "g3", "g4", "g5", "g6"]);
 
@@ -282,8 +281,7 @@ const GEOMETRY_REFERENCE_SHAPE_KEYS = [
   "triangle",
   "circle",
   "box",
-  "cube",
-];
+  "cube"];
 const GEOMETRY_REFERENCE_FORMULA_KEYS = [
   "square_area",
   "rectangle_area",
@@ -293,8 +291,7 @@ const GEOMETRY_REFERENCE_FORMULA_KEYS = [
   "box_volume",
   "cube_volume",
   "circle_perimeter",
-  "circle_area",
-];
+  "circle_area"];
 const GEOMETRY_REFERENCE_TERM_KEYS = [
   "area",
   "perimeter",
@@ -306,8 +303,7 @@ const GEOMETRY_REFERENCE_TERM_KEYS = [
   "parallel",
   "perpendicular",
   "diagonal",
-  "symmetry",
-];
+  "symmetry"];
 
 export default function GeometryMaster() {
   useIOSViewportFix();
@@ -359,7 +355,6 @@ export default function GeometryMaster() {
   const scoresStoreRef = useRef({});
   const progressLoadedRef = useRef(false);
 
-  // פונקציה עזר לקבלת מפתח תאריך
   const getTodayKey = () => {
     const today = new Date();
     return `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
@@ -430,7 +425,6 @@ export default function GeometryMaster() {
     return getGeometryBookHref(ctx);
   }, [grade, mode, currentQuestion, topic]);
 
-  /** שרטוט בזמן השאלה — מוסתר אם null, לא מציג placeholder */
   const questionDiagramSpec = useMemo(
     () =>
       currentQuestion && currentQuestion.params?.kind !== "no_question"
@@ -627,8 +621,7 @@ export default function GeometryMaster() {
       textAnswer,
       feedback,
       questionStartTime,
-      router,
-    ]
+      router]
   );
 
   const applyBookPracticePreset = useCallback((preset) => {
@@ -772,8 +765,7 @@ export default function GeometryMaster() {
           profile.row.profile,
           setPlayerAvatar,
           setPlayerAvatarImage,
-          setPlayerAvatarBackground,
-        );
+          setPlayerAvatarBackground);
         learningProfileHydratedRef.current = true;
         progressLoadedRef.current = true;
         setLearningProfileHydrationTick((n) => n + 1);
@@ -792,8 +784,6 @@ export default function GeometryMaster() {
   }, [refreshMonthlyPersistenceView]);
 
 
-
-  // טעינת אווטר מ-localStorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       const saved = safeGetItem("mleo_player_avatar");
@@ -810,7 +800,6 @@ export default function GeometryMaster() {
       setPlayerAvatarBackground(readProfileBackgroundFromLocalStorage());
   }, []);
 
-  // טיפול בהעלאת תמונת אווטר (דחיסה + שמירה בפרופיל — סנכרון בין מכשירים)
   const handleAvatarImageUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -842,7 +831,6 @@ export default function GeometryMaster() {
     e.target.value = "";
   };
 
-  // טיפול במחיקת תמונת אווטר
   const handleRemoveAvatarImage = () => {
     void (async () => {
       const defaultAvatar = "👤";
@@ -877,7 +865,6 @@ export default function GeometryMaster() {
     }
   }, [dailyChallenge.date]);
 
-  // שמירת progress ל-localStorage בכל עדכון
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!progressLoadedRef.current) return;
@@ -928,8 +915,7 @@ export default function GeometryMaster() {
     weeklyChallenge,
     dailyStreak,
     playerAvatar,
-    playerAvatarImage,
-  ]);
+    playerAvatarImage]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -1103,7 +1089,6 @@ export default function GeometryMaster() {
   const generateNewQuestion = () => {
     clearWrongAnswerAdvanceState();
     closeOpenQuestionLedger(true);
-    // בדיקה שהכיתה קיימת
     if (!GRADES[grade]) {
       console.error("Invalid grade:", grade);
       setCurrentQuestion({
@@ -1173,7 +1158,6 @@ export default function GeometryMaster() {
 
     const allowedTopics = geometryTopicSelectOptions;
     
-    // בדיקה שיש נושאים זמינים
     if (allowedTopics.length === 0) {
       console.error("No topics available for grade:", grade);
       setCurrentQuestion({
@@ -1185,7 +1169,6 @@ export default function GeometryMaster() {
       return;
     }
     
-    // בדיקה שהנושא הנוכחי תקין, אם לא - נבחר נושא תקין
     let validTopic = topic;
     if (topic === "mixed") {
       const mixedAvailable = Object.keys(mixedTopics).filter(t => mixedTopics[t] && allowedTopics.includes(t));
@@ -1194,7 +1177,6 @@ export default function GeometryMaster() {
         if (validTopic) setTopic(validTopic); //
       }
     } else if (!allowedTopics.includes(topic)) {
-      // אם הנושא לא תקין, נבחר נושא תקין
       validTopic = allowedTopics.find(t => t !== "mixed") || allowedTopics[0];
       if (validTopic) {
         setTopic(validTopic); //
@@ -1209,7 +1191,6 @@ export default function GeometryMaster() {
       }
     }
     
-    // בדיקה סופית שהנושא תקין
     if (!validTopic || !allowedTopics.includes(validTopic)) {
       setCurrentQuestion({
         question: ms.t("learning.geometry.errors.noTopics"),
@@ -1272,8 +1253,7 @@ export default function GeometryMaster() {
         const picked = pickQuestionForSkill(
           prerequisiteContentOverride.subject,
           prerequisiteContentOverride.skillId,
-          attempts,
-        );
+          attempts);
         if (picked) question = picked;
       }
       // Use concrete rolled topic (not "mixed") so probe.topicId must match this draw — avoids unrelated probes in mixed mode.
@@ -1332,13 +1312,11 @@ export default function GeometryMaster() {
         );
       }
       
-      // אם אין שאלה זמינה, ננסה נושא אחר
       if (!question || question.params?.kind === "no_question") {
         const nextTopic = allowedTopics.find(t => t !== "mixed" && t !== currentTopic);
         if (nextTopic) {
           question = generateQuestion(levelConfig, nextTopic, grade, null);
         } else {
-          // אם אין נושאים אחרים, נעצור
           question = {
             question: ms.t("learning.geometry.errors.noQuestions"),
             correctAnswer: 0,
@@ -1349,7 +1327,6 @@ export default function GeometryMaster() {
         }
       }
       
-      // בדיקה שהשאלה תקינה
       if (!question || !question.answers || question.answers.length === 0) {
         attempts++;
         continue;
@@ -1366,13 +1343,12 @@ export default function GeometryMaster() {
       
       attempts++;
       
-      // בדיקה שהשאלה תקינה
       if (!question || !question.answers || question.answers.length === 0 || question.params?.kind === "no_question") {
         continue; //
       }
       
       const questionKey =
-        geometryQuestionFingerprint(question) ||
+        geometryQuestionFingerprint(question) |
         `fallback|${question.question}|${question.correctAnswer}`;
 
       const conceptualKind =
@@ -1399,13 +1375,11 @@ export default function GeometryMaster() {
         break;
       }
       
-      // אם הגענו למקסימום ניסיונות, נשתמש בשאלה האחרונה גם אם היא חוזרת
       if (attempts >= maxAttempts - 5) {
         break;
       }
     } while (attempts < maxAttempts);
     
-    // עדכון state רק פעם אחת אחרי הלולאה
     if (attempts >= maxAttempts) {
       console.warn(
         `Too many attempts (${attempts}) to generate new question, softening anti-repeat buffer`
@@ -1417,7 +1391,6 @@ export default function GeometryMaster() {
     }
     setRecentQuestions(localRecentQuestions.toSet());
     
-    // בדיקה שהשאלה תקינה לפני הצגתה
     if (!question || !question.answers || question.answers.length === 0) {
       console.error("Failed to generate valid question");
       decrementPendingProbeExpiry(geometryPendingDiagnosticProbeRef);
@@ -1826,7 +1799,6 @@ export default function GeometryMaster() {
         );
       }
 
-      // חישוב נקודות לפי מצב
       let points = 10 + streak;
       if (mode === "speed") {
         const timeBonus = timeLeft ? Math.floor(timeLeft * 2) : 0;
@@ -1840,7 +1812,6 @@ export default function GeometryMaster() {
       clearWrongAnswerAdvanceState();
       setErrorExplanation("");
 
-      // עדכון התקדמות אישית
       const top = currentQuestion.topic;
       setProgress((prev) => ({
         ...prev,
@@ -1852,12 +1823,10 @@ export default function GeometryMaster() {
 
       setLearningIntel((prev) => recordGeometryAnswerIntel(prev, top, true));
 
-      // מערכת כוכבים - כוכב כל 5 תשובות נכונות
       const newCorrect = correct + 1;
       if (newCorrect % 5 === 0) {
         setStars((prev) => {
           const newStars = prev + 1;
-          // שמירה ל-localStorage
           if (typeof window !== "undefined") {
             try {
               const saved = safeGetJsonObject(STORAGE_KEY + "_progress");
@@ -1869,7 +1838,6 @@ export default function GeometryMaster() {
         });
       }
 
-      // מערכת תגים
       const newStreak = streak + 1;
       if (newStreak === 10 && !hasLearningBadge(badges, LEARNING_BADGE.STREAK_10)) {
         const newBadge = LEARNING_BADGE.STREAK_10;
@@ -1912,7 +1880,6 @@ export default function GeometryMaster() {
         }
       }
 
-      // מערכת XP ורמות
       const xpGain = 10;
       setXp((prev) => {
         const newXp = prev + xpGain;
@@ -1947,7 +1914,6 @@ export default function GeometryMaster() {
         return newXp;
       });
 
-      // עדכון תחרות יומית
       setDailyChallenge((prev) => {
         const updated = {
           ...prev,
@@ -1963,7 +1929,6 @@ export default function GeometryMaster() {
         return updated;
       });
 
-      // עדכון תחרות שבועית
       setWeeklyChallenge((prev) => {
         const newCurrent = (prev.current || 0) + 1;
         const updated = {
@@ -1979,7 +1944,6 @@ export default function GeometryMaster() {
         return updated;
       });
 
-      // אנימציה ותגובה חזותית לתשובה נכונה
       const emojis = ["🎉", "✨", "🌟", "💫", "⭐", "🔥", "💪", "🎊", "👏", "🏆"];
       const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
       setCelebrationEmoji(randomEmoji);
@@ -2045,7 +2009,6 @@ export default function GeometryMaster() {
       setErrorExplanation(errExpl);
       if (errExpl) stepByStepViewedRef.current = true;
       
-      // עדכון התקדמות אישית
       const top = currentQuestion.topic;
       setProgress((prev) => ({
         ...prev,
@@ -2256,8 +2219,7 @@ export default function GeometryMaster() {
   const practiceMoreBudget = usePracticeMoreBudget(actionDecisionDirective);
   const prerequisiteContentOverride = usePrerequisiteContentOverride(
     actionDecisionDirective,
-    "geometry",
-  );
+    "geometry");
 
   useEffect(() => {
     if (!gameActive || (mode !== "challenge" && mode !== "speed")) return;
@@ -2557,8 +2519,7 @@ export default function GeometryMaster() {
           diagramReveal: [],
           animationPreset: "none",
           textHighlights: [],
-        },
-      ];
+        }];
     }
     return steps;
   }, [isShowingAnySolution, explanationQuestion, grade]);
@@ -2672,8 +2633,7 @@ export default function GeometryMaster() {
       playerAvatar,
       playerAvatarImage,
       dailyChallenge,
-      weeklyChallenge,
-    ]
+      weeklyChallenge]
   );
 
   useEffect(() => {
@@ -2687,9 +2647,7 @@ export default function GeometryMaster() {
     { open: showReferenceModal, close: () => setShowReferenceModal(false) },
     { open: showHowTo, close: () => setShowHowTo(false) },
     { open: showLeaderboard, close: () => setShowLeaderboard(false) },
-    { open: showMixedSelector, close: () => setShowMixedSelector(false) },
-  ]);
-
+    { open: showMixedSelector, close: () => setShowMixedSelector(false) }]);
 
 
   if (!mounted || session.sessionLoading)
@@ -2749,11 +2707,10 @@ export default function GeometryMaster() {
           questionParts: [
             currentQuestion.question,
             currentQuestion.questionLabel,
-            currentQuestion.exerciseText,
-          ],
+            currentQuestion.exerciseText],
           answers: currentQuestion.options ?? currentQuestion.answers ?? [],
           hasFloatButtons: Boolean(
-            questionBookHref ||
+            questionBookHref |
               (mode === "learning" &&
                 currentQuestion.params?.kind !== "no_question")
           ),
@@ -2953,7 +2910,7 @@ export default function GeometryMaster() {
                 <div
                   data-testid="geometry-player-name"
                   className={MB.preGamePlayerBadge}
-                  dir={playerName && /[\u0590-\u05FF]/.test(playerName) ? "rtl" : "ltr"}
+                  dir={playerName && /(?!)/.test(playerName) ? "rtl" : "ltr"}
                   title={playerName.trim() ? playerName.trim() : undefined}
                   aria-label={playerName.trim() ? ms.t("learning.master.childNameAria", { name: playerName.trim() }) : ms.childNameUnavailable}
                 >
@@ -2967,7 +2924,6 @@ export default function GeometryMaster() {
                   onChange={(e) => {
                     const newGrade = e.target.value;
 
-                    // מעדכנים כיתה ומפסיקים משחק
                     setGrade(newGrade);
                     setGameActive(false);
                     setCurrentQuestion(null);
@@ -2975,7 +2931,6 @@ export default function GeometryMaster() {
                     setSelectedAnswer(null);
                     setShowSolution(false);
 
-                    // בחירת נושא ברירת מחדל שמתאים לכיתה
                     const allowed = listVisibleTopicsForSelfPractice(
                       "geometry",
                       newGrade,
@@ -2989,7 +2944,6 @@ export default function GeometryMaster() {
                       setTopic(firstAllowed);
                     }
 
-                    // עדכון נושאים זמינים למיקס לפי הכיתה החדשה
                     const availableTopics = allowed;
                     const newMixedTopics = {
                       area: availableTopics.includes("area"),
@@ -3000,7 +2954,6 @@ export default function GeometryMaster() {
                     };
                     setMixedTopics(newMixedTopics);
 
-                    // מאפס את רשימת השאלות האחרונות כדי שלא תהיה לולאה בניסיון למצוא "{ms.t("learning.master.newQuestion")}"
                     setRecentQuestions(new Set());
                   }}
                   className={`${MB.selectControl} shrink-0 min-w-0 w-[5.75rem] max-w-[6.25rem] md:w-[6.5rem] md:max-w-[7rem]`}
@@ -3215,15 +3168,15 @@ export default function GeometryMaster() {
                         {feedback && (
                           <div
                             className={`px-4 py-2 rounded-lg text-sm font-semibold text-center ${
-                              feedback.includes("Correct") ||
-                              feedback.includes("∞") ||
-                              feedback.includes("Start") ||
+                              feedback.includes("Correct") |
+                              feedback.includes("∞") |
+                              feedback.includes("Start") |
                               feedback.includes("Great") || feedback.includes("Correct")
                                 ? "bg-emerald-500/20 text-emerald-200"
                                 : "bg-red-500/20 text-red-200"
                             }`}
                           >
-                            {renderLearningMixedHebrewMathText(feedback)}
+                            {renderLearningMixedRtlMathText(feedback)}
                           </div>
                         )}
 
@@ -3234,7 +3187,7 @@ export default function GeometryMaster() {
                           >
                             <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">{ms.whyMistake}</div>
                             <div className="text-rose-50">
-                              {renderLearningMixedHebrewMathText(errorExplanation)}
+                              {renderLearningMixedRtlMathText(errorExplanation)}
                             </div>
                           </div>
                         )}
@@ -3578,7 +3531,7 @@ export default function GeometryMaster() {
                                       className={learningQuestionText}
                                       style={learningMixedHebrewMathStyle}
                                     >
-                                      {renderLearningMixedHebrewMathText(
+                                      {renderLearningMixedRtlMathText(
                                         explanationQuestion.question,
                                         learningQuestionText
                                       )}
@@ -3598,7 +3551,7 @@ export default function GeometryMaster() {
                                           spec={diagramSpec}
                                           question={explanationQuestion}
                                           emphasis={
-                                            activeStep.diagramEmphasis ||
+                                            activeStep.diagramEmphasis |
                                             "neutral"
                                           }
                                           reveal={activeStep.diagramReveal || []}
@@ -3704,7 +3657,7 @@ export default function GeometryMaster() {
                                     className="text-sm text-white/90 leading-relaxed"
                                     style={learningMixedHebrewMathStyle}
                                   >
-                                    {renderLearningMixedHebrewMathText(
+                                    {renderLearningMixedRtlMathText(
                                       getTheorySummary(currentQuestion, currentQuestion.topic, grade)
                                     )}
                                   </div>
@@ -3989,7 +3942,8 @@ export default function GeometryMaster() {
                     <label className="block w-full">
                       <input
                         type="file"
-                        accept="image/*"
+                        accept="image
+/*"
                         onChange={handleAvatarImageUpload}
                         className="hidden"
                         id="avatar-image-upload-geometry"
@@ -4454,7 +4408,5 @@ export default function GeometryMaster() {
     </MasterSubjectAccessScreen>
   );
 }
-
-
 
 

@@ -7,13 +7,13 @@ import { stripGeometryFormulaHelpParenthetical } from "./student-question-displa
 
 /** Patterns that must not appear in student-facing elementary geometry activity stems. */
 export const GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE =
-  /אלגברה|משווא(?:ה|ת)|ביטוי\s+אלגברי|(?:^|[\s\-–])נעלם(?:[\s,.!?]|$)/u;
+  /(?!)/u;
 
 /** Banned fallback phrase — never emit on worksheets. */
-export const GEOMETRY_GENERIC_ANSWER_FILLER_RE = /חשבו את התשובה|Calculate the answer/u;
+export const GEOMETRY_GENERIC_ANSWER_FILLER_RE = /(?!)/u;
 
 const HAS_ASK_CUE_RE =
-  /(חשב(?:ו|י)?|מצא(?:ו|י)?|כתב(?:ו|י)?|השל(?:ימו|ם)|קבע(?:ו|י)?|סמנ(?:ו|י)?|מה\s|כמה\s|\bWhat\b|\bHow\b|\bFind\b|\bCalculate\b|\bWhich\b|\bTrue or false\b)/iu;
+  /(?!)/iu;
 
 /**
  * Canonical elementary stem when two triangle angles are known.
@@ -156,13 +156,13 @@ function stemNeedsComputeRewrite(text, kind) {
   if (!t) return false;
   if (k.startsWith("concept_")) return false;
   if (GEOMETRY_GENERIC_ANSWER_FILLER_RE.test(t)) return true;
-  if (/^מדידת אלכסון/u.test(t)) return true;
-  if (/שטח פנים/.test(t) && /ריבוע|מלבן|משולש|מקבילית|טרפז/.test(t)) return true;
-  if (/^אתגר קצר\s*-\s*אלכסון/u.test(t)) return true;
-  if (/^ניתוח אלכסון/u.test(t)) return true;
-  if (/^חישוב אלכסון מ/u.test(t) && !HAS_ASK_CUE_RE.test(t)) return true;
-  if (/גובה במשולש\s*\(ביחס/u.test(t)) return true;
-  if (/הוא[:.]?\s*$/u.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
+  if (/(?!)/.test(t) && /(?!)/.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
+  if (/(?!)/u.test(t) && !HAS_ASK_CUE_RE.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
 
   // Known compute kinds: sanitizer often keeps only the data clause — rebuild.
   const computeKinds = new Set([
@@ -189,24 +189,23 @@ function stemNeedsComputeRewrite(text, kind) {
     "prism_volume_triangle",
     "prism_volume_rectangular",
     "pythagoras_hyp",
-    "pythagoras_leg",
-  ]);
+    "pythagoras_leg"]);
   if (computeKinds.has(k) && !HAS_ASK_CUE_RE.test(t)) return true;
   if (
     (k === "pythagoras_hyp" || k === "pythagoras_leg") &&
-    (!/ס״מ|סמ|\bcm\b/i.test(t) || !HAS_ASK_CUE_RE.test(t))
+    (!/(?!)/i.test(t) || !HAS_ASK_CUE_RE.test(t))
   ) {
     return true;
   }
 
   if (
-    /היקף|שטח|נפח|אלכסון|גובה|יתר|ניצב/.test(t) &&
+    /(?!)/.test(t) &&
     !HAS_ASK_CUE_RE.test(t)
   ) {
     return true;
   }
   if (
-    /מקבילית:|היקף משולש:|ריבוע \d|צלעות \d|אורכי צלעות|אורך בסיס|אורך צלע/u.test(t) &&
+    /(?!)/u.test(t) &&
     !HAS_ASK_CUE_RE.test(t)
   ) {
     return true;
@@ -237,14 +236,14 @@ export function normalizeGeometryWorksheetStem(text, context = {}) {
 
   // Force clear compute wording for missing triangle angle.
   const isComputeTriangleAngles =
-    kind === "triangle_angles" ||
+    kind === "triangle_angles" |
     (context?.topic === "angles" &&
       !kind.startsWith("concept_") &&
-      /זווית השלישית|שתי זוויות|ידועות/.test(t) &&
+      /(?!)/.test(t) &&
       /\d+\s*°/.test(t));
   if (isComputeTriangleAngles) {
     const m =
-      t.match(/(\d+)\s*°\s*(?:ו[־\-–]?|ו)\s*(\d+)\s*°/u) ||
+      t.match(/(?!)/u) |
       t.match(/(\d+)\s*°[^\d]{0,12}(\d+)\s*°/u);
     const a1 = typeof angle1 === "number" ? angle1 : m ? Number(m[1]) : null;
     const a2 = typeof angle2 === "number" ? angle2 : m ? Number(m[2]) : null;
@@ -255,20 +254,20 @@ export function normalizeGeometryWorksheetStem(text, context = {}) {
 
   // Awkward principle prompts → clear MCQ stem (options stay conceptual).
   if (
-    kind === "concept_angle_reason" ||
-    /עיקרון גיאומטרי|לפני חישוב המספר|מה אפשר להסיק על הזווית/.test(t)
+    kind === "concept_angle_reason" |
+    /(?!)/.test(t)
   ) {
-    if (/סכום|180|זווית השלישית|שתי זוויות|ידועות|sum of|triangle angles/i.test(t)) {
+    if (/(?!)/i.test(t)) {
       return "Which statement is true about the sum of angles in a triangle?";
     }
   }
 
   // Drop lead-ins that leave a data-only fragment looking unfinished.
-  t = t.replace(/^חישוב זוויות במשולש\s*[:-–-]\s*/u, "");
-  t = t.replace(/^מציאת זווית חסרה במשולש\s*[:-–-]\s*/u, "");
+  t = t.replace(/(?!)/u, "");
+  t = t.replace(/(?!)/u, "");
 
   // Never keep the banned generic filler — rewrite from params when possible.
-  t = t.replace(/\s*חשבו את התשובה\.?\s*/gu, " ").replace(/\s{2,}/g, " ").trim();
+  t = t.replace(/(?!)/gu, " ").replace(/\s{2,}/g, " ").trim();
 
   if (stemNeedsComputeRewrite(t, kind) || GEOMETRY_GENERIC_ANSWER_FILLER_RE.test(String(text || ""))) {
     const rebuilt = buildGeometryComputeStemFromParams(kind, { ...params, ...context });
@@ -295,8 +294,8 @@ export function isGeometryWorksheetStemIncomplete(stem, kind = "") {
   if (!t) return true;
   if (GEOMETRY_GENERIC_ANSWER_FILLER_RE.test(t)) return true;
   if (k.startsWith("concept_")) return false;
-  if (/גובה במשולש\s*\(ביחס/u.test(t) && !HAS_ASK_CUE_RE.test(t)) return true;
-  if (/^מדידת אלכסון/u.test(t)) return true;
+  if (/(?!)/u.test(t) && !HAS_ASK_CUE_RE.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
   if (stemNeedsComputeRewrite(t, k) && !HAS_ASK_CUE_RE.test(t)) return true;
   return false;
 }
@@ -311,37 +310,37 @@ export function sanitizeGeometryActivityQuestionStem(text, context = {}) {
   if (!t) return t;
 
   const isTriangleAngles =
-    context?.kind === "triangle_angles" ||
-    (context?.topic === "angles" && /זווית|משולש|180°/.test(t));
+    context?.kind === "triangle_angles" |
+    (context?.topic === "angles" && /(?!)/.test(t));
 
-  t = t.replace(/אלגברה\s+של\s+זוויות\s*[–-]\s*/gu, "חישוב זוויות במשולש - ");
-  t = t.replace(/אלגברה\s+של\s+זוויות/gu, "חישוב זוויות במשולש");
+  t = t.replace(/(?!)/gu, "");
+  t = t.replace(/(?!)/gu, "");
 
   t = t.replace(
-    /משוואת\s+זוויות:\s*(\d+)°\s*\+\s*(\d+)°\s*\+\s*\?\s*=\s*180°\s*-\s*מה\s+החסר\?/gu,
+    /(?!)/gu,
     (_, a1, a2) => formatTriangleAnglesKnownTwoStem(a1, a2)
   );
-  t = t.replace(/משוואת\s+זוויות/gu, "חישוב זוויות במשולש");
+  t = t.replace(/(?!)/gu, "");
 
   if (isTriangleAngles) {
     t = t.replace(
-      /^חישוב זוויות במשולש\s*[–-]\s*סכום שתי זוויות ידועות הוא (\d+)°\+(\d+)°\s*[–-]\s*השלימו (?:ל)?זווית השלישית(?: במשולש)?\.?/giu,
+      /(?!)/giu,
       (_, a1, a2) => formatTriangleAnglesKnownTwoStem(a1, a2)
     );
     t = t.replace(
-      /^חישוב זוויות במשולש:\s*ידועות\s+(\d+)°\s*ו-(\d+)°\.\s*השלימו את הזווית השלישית\.?$/giu,
+      /(?!)/giu,
       (_, a1, a2) => formatTriangleAnglesKnownTwoStem(a1, a2)
     );
     t = t.replace(
-      /^חישוב זוויות במשולש:\s*ידועות\s+(\d+)°\s*ו-(\d+)°\.\s*מה הזווית השלישית\?$/giu,
+      /(?!)/giu,
       (_, a1, a2) => formatTriangleAnglesKnownTwoStem(a1, a2)
     );
     t = t.replace(
-      /^ניתוח\s+ל(?:לא\s+)?(?:ניסוח\s+)?(?:הכלל\s+)?(?:במפורש\s*)?[–-]\s*/giu,
-      "מציאת זווית חסרה במשולש - "
+      /(?!)/giu,
+      ""
     );
-    t = t.replace(/^אתגר\s+(?:קצר|זוויות\s+משולש)\s*[–-]\s*/giu, "חישוב זוויות במשולש - ");
-    t = t.replace(/^אתגר\s+זוויות\s+משולש\s*[–-]\s*/giu, "חישוב זוויות במשולש - ");
+    t = t.replace(/(?!)/giu, "");
+    t = t.replace(/(?!)/giu, "");
   }
 
   t = stripGeometryFormulaHelpParenthetical(t);

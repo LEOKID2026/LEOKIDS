@@ -33,120 +33,112 @@
 
 /** Clinical / medical / disability-framing — parent report must not use (block). */
 export const MEDICAL_DIAGNOSTIC_RES = [
-  /דיסלקציה|דיסלקסיה|דיסקלקוליה/u,
-  /לקות\s*למידה/u,
-  /הפרעת\s*קשב|ADHD/u,
-  /הפרעה\s*נוירולוגית|הפרעה\s*פסיכיאטרית/u,
-  /אבחון\s*רפואי|אבחנה\s*קלינית|אבחון\s*קליני/u,
-  /פסיכולוג\s*קליני|רופא\s*מומחה/u,
-];
+  //u,
+  /\s*/u,
+  /\s*|ADHD/u,
+  /\s*|\s*/u,
+  /\s*|\s*|\s*/u,
+  /\s*|\s*/u];
 
 /** Absolute certainty — risky when engine forbids strong conclusions or has low confidence. */
 export const OVERCONFIDENT_PHRASE_RES = [
-  /בוודאות/u,
-  /חד[\s-]*משמעי(?:ת)?/u,
-  /אין\s*ספק/u,
-  /ברור\s*ש(?!רק)/u, // allow "ברור שרק" careful? keep simple: ברור ש
-  /מוכיח\s*במלואו|הוכחה\s*חד[\s-]*משמעית/u,
-  /ללא\s*ספק\s*(?:ש|כי)/u,
-];
+  //u,
+  /[\s-]*(?:)?/u,
+  /\s*/u,
+  /\s*(?!)/u, // allow "" careful? keep simple:  
+  /\s*|\s*[\s-]*/u,
+  /\s*\s*(?:)/u];
 
 /** Hedging / observational — reduces risk when evidence is thin. */
 export const CAUTIOUS_HEDGE_RES = [
-  /נראה\s*ש/u,
-  /ייתכן\s*ש/u,
-  /עדיין\s*מוקדם/u,
-  /מהנתונים\s*כאן/u,
-  /לא\s*ברור\s*עדיין/u,
-  /כדאי\s*לאסוף/u,
-  /אין\s*מספיק\s*נתונים/u,
-  /עדיין\s+מעט\s+נתון/u,
-];
+  /\s*/u,
+  /\s*/u,
+  /\s*/u,
+  /\s*/u,
+  /\s*\s*/u,
+  /\s*/u,
+  /\s*\s*/u,
+  /\s+\s+/u];
 
 /**
  * Hebrew narrative explicitly acknowledges limited evidence / need for more data.
  * When matched on thin engine rows, these are treated as safe framing (info), not `ambiguous_evidence`.
  */
 export const SAFE_THIN_DATA_CAUTION_RES = [
-  /אין\s+מספיק\s+נתונים\s+כדי\s+להסיק/u,
-  /אין\s+מספיק\s+נתונים/u,
-  /אין\s+די\s+נתון/u,
-  /נתון\s*דל/u,
-  /נתון\s+מצומצם/u,
-  /עדיין\s+מעט\s+נתון/u,
-  /מעט\s+נתון\s+בתקופה/u,
-  /בתקופה\s+הנוכחית/u,
-  /לא\s+מסכמים\s+ביטחון\s*סטטיסטי/u,
-  /לא\s+מסכמים\s+ביטחון/u,
-  /עדיין\s+אין\s+מספיק\s+דוגמאות/u,
-  /אין\s+מספיק\s+דוגמאות/u,
-  /כדאי\s+להמשיך\s+לאסוף\s+עוד/u,
-  /כדאי\s+לאסוף\s+עוד/u,
-  /לא\s+לבנות\s+תוכנית\s+ארוכה/u,
-  /לפני\s+שיש\s+נתון/u,
-  /אחרי\s+עוד\s+קצת\s+תרגול/u,
-  /לנסח\s+תמונה\s+מלאה/u,
-  /תמונה\s+מלאה\s+יותר/u,
-  /קשה\s+להסיק\s+מסקנה/u,
-  /לא\s+ניתן\s+להסיק/u,
-  /עדיין\s+מוקדם\s+להסיק/u,
-  /מוקדם\s+להסיק/u,
-  /לפני\s+שמחליטים/u,
-  /לפני\s+החלטה/u,
-  /נדרש(?:ים)?\s+עוד\s+דוגמאות/u,
-  /כדי\s+לראות\s+טעות\s+חוזרת/u,
-  /לא\s+להסיק\s+מסקנות\s+חזקות/u,
-  /צריך\s+עוד\s+כמה\s+דוגמאות/u,
-  /עדיין\s+לא\s+ברור\s+מה/u,
-];
+  /\s+\s+\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+/u,
+  /\s*/u,
+  /\s+/u,
+  /\s+\s+/u,
+  /\s+\s+/u,
+  /\s+/u,
+  /\s+\s+\s*/u,
+  /\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+/u,
+  /\s+\s+/u,
+  /\s+/u,
+  /\s+/u,
+  /\s+/u,
+  /(?:)?\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+\s+/u,
+  /\s+\s+\s+/u];
 
 /**
  * Strong claims or prescriptions despite thin data — still warn (do not treat as safe caution).
  */
 export const UNSAFE_THIN_DATA_MIXED_CONCLUSION_RES = [
-  /ניתן\s+לקבוע/u,
-  /לקבוע\s+חולשה/u,
-  /חולשה\s*משמעותית/u,
-  /בעיה\s*ברורה/u,
-  /למרות\s+ש(?:יש|מעט).{0,120}ברור\s+ש/u,
-  /אין\s+מספיק\s+מידע.{0,80}אבל.{0,80}ברור/u,
-  /על\s+בסיס\s+(?:שתי|שלוש|שלושת|מספר\s+מצומצם\s+של)/u,
-  /למרות\s+שיש\s+מעט\s+נתונים.{0,80}ברור\s+ש/u,
-];
+  /\s+/u,
+  /\s+/u,
+  /\s*/u,
+  /\s*/u,
+  /\s+(?:).{0,120}\s+/u,
+  /\s+\s+.{0,80}.{0,80}/u,
+  /\s+\s+(?:\s+\s+)/u,
+  /\s+\s+\s+.{0,80}\s+/u];
 
 /** Traits framed as permanent — block in educational reporting. */
 export const PERMANENT_ABILITY_RES = [
-  /לעולם\s*לא\s*י(?:למד|צליח)/u,
-  /תמיד\s*נכשל/u,
-  /לא\s*מסוגל\s*מטבעו/u,
-  /לא\s*יוכל\s*לעולם/u,
-];
+  /\s*\s*(?:)/u,
+  /\s*/u,
+  /\s*\s*/u,
+  /\s*\s*/u];
 
 /** Escalation wording when only maintenance is supported. */
 export const UNSUPPORTED_ADVANCE_RES = [
-  /העל(?:ים|ות)\s*(?:את\s*)?הרמה/u,
-  /להעלות\s*(?:את\s*)?הרמה/u,
-  /קפיצה\s*לרמה/u,
-  /רמה\s*גבוהה\s*מיד/u,
-  /בהכרח\s*להתקדם/u,
-  /חובה\s*להתקדם/u,
-  /חובה\s*לדלג/u,
-];
+  /(?:)\s*(?:\s*)?/u,
+  /\s*(?:\s*)?/u,
+  /\s*/u,
+  /\s*\s*/u,
+  /\s*/u,
+  /\s*/u,
+  /\s*/u];
 
 /** Strong mastery claims — unsafe if guessing is likely. */
-export const MASTERY_CLAIM_RES = [/שליטה\s*מלאה/u, /מצב\s*מאסטרי/u, /מושלם\s*בנושא/u, /ביצועים\s*מושלמים/u];
+export const MASTERY_CLAIM_RES = [/\s*/u, /\s*/u, /\s*/u, /\s*/u];
 
 /** Strong gap / prerequisite claims — unsafe if only suspected. */
-export const OVERSTATED_GAP_RES = [/חוסר\s*יסוד\s*מוכח/u, /מוכח\s*לחלוטין\s*שחסר/u, /הוכח\s*חוסר/u];
+export const OVERSTATED_GAP_RES = [/\s*\s*/u, /\s*\s*/u, /\s*/u];
 
 /** Default parent-facing phrases that must never appear (subset; extend via engineOutput.mustNotSay). */
 export const DEFAULT_MUST_NOT_SAY = [
-  "מאסטרי",
-  "טקסונומיה",
+  "",
+  "",
   "probe",
   "fallback",
-  "insufficient_data",
-];
+  "insufficient_data"];
 
 export const ISSUE_CODES = {
   medical_language: "medical_language",
@@ -159,5 +151,4 @@ export const ISSUE_CODES = {
   permanent_trait: "permanent_trait",
   guessing_as_mastery: "guessing_as_mastery",
   prerequisite_overstated: "prerequisite_overstated",
-  ambiguous_evidence: "ambiguous_evidence",
-};
+  ambiguous_evidence: "ambiguous_evidence"};

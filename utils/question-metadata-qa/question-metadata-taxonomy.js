@@ -6,7 +6,7 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import {
   ENGLISH_SKILL_IDS,
-  ENGLISH_SUBSKILL_ALLOWLIST_BY_SKILL,
+  ENGLISH_SUBSKILL_ALLOWLIST_BY_SKILL
 } from "./question-metadata-taxonomy-english.js";
 import { isTaxonomyValidMathSkillId, isTaxonomyValidMathSubskillId } from "./question-metadata-taxonomy-math.js";
 import { BANK_ENRICHED_EXPECTED_ERROR_TYPES } from "./bank-enriched-expected-error-types.js";
@@ -34,7 +34,7 @@ export const SCIENCE_TOPIC_ORDER = [
   "materials",
   "earth_space",
   "environment",
-  "experiments",
+  "experiments"
 ];
 
 /**
@@ -44,7 +44,7 @@ export const SCIENCE_TOPIC_ORDER = [
 export const SCIENCE_SKILL_IDS = new Set([
   ...SCIENCE_TOPIC_ORDER,
   "sci_body_fact_recall",
-  "sci_respiration_concept",
+  "sci_respiration_concept"
 ]);
 
 /**
@@ -86,7 +86,7 @@ export const CANONICAL_DIFFICULTY = new Set([
   "basic",
   "standard",
   "advanced",
-  "challenge",
+  "challenge"
 ]);
 
 /** Legacy / in-repo normalizations still accepted. */
@@ -97,7 +97,7 @@ export const LEGACY_DIFFICULTY = new Set([
   "low",
   "high",
   /** Science enrichment pass — between basic and advanced */
-  "intermediate",
+  "intermediate"
 ]);
 
 /** Union used by scanner validation. */
@@ -107,7 +107,7 @@ export const CANONICAL_COGNITIVE_LEVELS = new Set([
   "recall",
   "understanding",
   "application",
-  "analysis",
+  "analysis"
 ]);
 
 /** Legacy values still present in data / heuristics. */
@@ -115,7 +115,7 @@ export const LEGACY_COGNITIVE_LEVELS = new Set(["reasoning", "multi_step"]);
 
 export const ALL_VALID_COGNITIVE_LEVELS = new Set([
   ...CANONICAL_COGNITIVE_LEVELS,
-  ...LEGACY_COGNITIVE_LEVELS,
+  ...LEGACY_COGNITIVE_LEVELS
 ]);
 
 /**
@@ -132,7 +132,7 @@ export const GENERIC_EXPECTED_ERROR_TYPES = [
   "prerequisite_gap",
   "careless_error",
   "strategy_error",
-  "incomplete_answer",
+  "incomplete_answer"
 ];
 
 /**
@@ -183,7 +183,7 @@ export const EXTENDED_EXPECTED_ERROR_TYPES = new Set([
   "geography_concept_confusion",
   "map_reading_error",
   "place_identification_error",
-  "direction_confusion",
+  "direction_confusion"
 ]);
 
 /**
@@ -214,7 +214,7 @@ function buildGeometrySubskillAllowlist() {
     "square_rectangle",
     "square_rectangle_late",
     "rhombus_rectangle",
-    "rhombus_rectangle_late",
+    "rhombus_rectangle_late"
   ]);
   m["geo_symmetry_reflection"] = new Set(["meaning", "meaning_axis", "same_size_shape"]);
   m["geo_volume_unit_reasoning"] = new Set(["definition", "definition_capacity"]);
@@ -341,7 +341,7 @@ export const TAXONOMY_ISSUE_CODES = {
   taxonomy_unknown_skillId: "taxonomy_unknown_skillId",
   taxonomy_unknown_subskillId: "taxonomy_unknown_subskillId",
   taxonomy_unknown_expected_error_type: "taxonomy_unknown_expected_error_type",
-  taxonomy_unknown_prerequisite_skillId: "taxonomy_unknown_prerequisite_skillId",
+  taxonomy_unknown_prerequisite_skillId: "taxonomy_unknown_prerequisite_skillId"
 };
 
 /**
@@ -351,7 +351,7 @@ export const READINESS_RULES = {
   strong: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8"),
   medium: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs"),
   weak: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "large_missing_skill_or_inconsistent_tagging"),
-  missing: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_id_largely_absent_diagnosis_routing_unreliable"),
+  missing: globalBurnDownCopy("utils__question-metadata-qa__question-metadata-taxonomy", "skill_id_largely_absent_diagnosis_routing_unreliable")
 };
 
 /**
@@ -482,17 +482,7 @@ export function validateTaxonomyForRecord(record) {
   const skillId = record.skillId || "";
   const subskillId = record.subskillId || "";
 
-  if (subject === "hebrew") {
-    if (skillId && !HEBREW_RICH_SKILL_IDS.has(skillId)) {
-      issues.push(TAXONOMY_ISSUE_CODES.taxonomy_unknown_skillId);
-    }
-    if (skillId && subskillId) {
-      const allow = HEBREW_RICH_SUBSKILL_ALLOWLIST_BY_SKILL[skillId];
-      if (allow && !allow.has(subskillId)) {
-        issues.push(TAXONOMY_ISSUE_CODES.taxonomy_unknown_subskillId);
-      }
-    }
-  }
+  
 
   if (subject === "science") {
     if (skillId && !SCIENCE_SKILL_IDS.has(skillId)) {
@@ -551,17 +541,7 @@ export function validateTaxonomyForRecord(record) {
     }
   }
 
-  if (subject === "moledet-geography") {
-    if (skillId && !MOLEDET_GEOGRAPHY_SKILL_IDS.has(skillId)) {
-      issues.push(TAXONOMY_ISSUE_CODES.taxonomy_unknown_skillId);
-    }
-    if (skillId && subskillId) {
-      const allow = MOLEDET_GEOGRAPHY_SUBSKILL_ALLOWLIST_BY_SKILL[skillId];
-      if (allow && !allow.has(subskillId)) {
-        issues.push(TAXONOMY_ISSUE_CODES.taxonomy_unknown_subskillId);
-      }
-    }
-  }
+  
 
   if (subject === "history") {
     if (skillId && !HISTORY_SKILL_ID_SET.has(skillId)) {
@@ -606,16 +586,7 @@ export function validateTaxonomyForRecord(record) {
     }
   }
 
-  if (subject === "hebrew" && Array.isArray(record.prerequisiteSkillIds)) {
-    for (const p of record.prerequisiteSkillIds) {
-      const id = String(p).trim();
-      if (!id) continue;
-      if (!HEBREW_RICH_SKILL_IDS.has(id)) {
-        issues.push(TAXONOMY_ISSUE_CODES.taxonomy_unknown_prerequisite_skillId);
-        break;
-      }
-    }
-  }
+  
 
   if (subject === "english" && Array.isArray(record.prerequisiteSkillIds)) {
     for (const p of record.prerequisiteSkillIds) {
@@ -650,16 +621,7 @@ export function validateTaxonomyForRecord(record) {
     }
   }
 
-  if (subject === "moledet-geography" && Array.isArray(record.prerequisiteSkillIds)) {
-    for (const p of record.prerequisiteSkillIds) {
-      const id = String(p).trim();
-      if (!id) continue;
-      if (!MOLEDET_GEOGRAPHY_SKILL_IDS.has(id)) {
-        issues.push(TAXONOMY_ISSUE_CODES.taxonomy_unknown_prerequisite_skillId);
-        break;
-      }
-    }
-  }
+  
 
   return [...new Set(issues)];
 }

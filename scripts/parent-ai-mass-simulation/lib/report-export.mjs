@@ -5,7 +5,7 @@ import { applyMassStudentSeedAndQuestionRows, buildMassStudentStorageSnapshot } 
 import { harnessAttachPerfectTopicCopilotAnchor } from "./mass-perfect-topic-copilot-bridge.mjs";
 import { exportProductParentReportPdfPack } from "./product-pdf-playwright.mjs";
 import { writeStudentReportEvidence } from "./report-evidence-export.mjs";
-import parentFacingNormalize from "../../../utils/parent-report-language/parent-facing-normalize-he.js";
+import parentFacingNormalize from "../../../utils/parent-report-language/parent-facing-normalize.js";
 
 function envCheckpointEvery() {
   const raw = process.env.MASS_RUN_CHECKPOINT_EVERY;
@@ -43,7 +43,7 @@ function htmlToParentFacingLines(html) {
     .replace(/\r/g, "");
   return plain
     .split("\n")
-    .map((x) => parentFacingNormalize.normalizeParentFacingHe(x.replace(/\s+/g, " ").trim()))
+    .map((x) => parentFacingNormalize.normalizeParentFacing(x.replace(/\s+/g, " ").trim()))
     .filter((x) => x.length >= 2)
     .filter((x) => !/^(profileType|studentId|reportDataAlignment|reportPipeline)\b/i.test(x))
     .filter((x) => !/^(mleo_|__NEXT_DATA__|window\.__)/.test(x))
@@ -58,7 +58,7 @@ function execSummaryLines(detailed) {
   const lines = [];
   const push = (label, v) => {
     if (v == null) return;
-    if (typeof v === "string" && v.trim()) lines.push(parentFacingNormalize.normalizeParentFacingHe(`${label}: ${v.trim()}`));
+    if (typeof v === "string" && v.trim()) lines.push(parentFacingNormalize.normalizeParentFacing(`${label}: ${v.trim()}`));
     else if (Array.isArray(v)) v.forEach((x) => push(label, x));
   };
   push("מיקוד בית", es.homeFocusHe);

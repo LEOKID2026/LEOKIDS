@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 import {
   simulateBookLineBidiRuns,
   detectBookLineBidiBreakage,

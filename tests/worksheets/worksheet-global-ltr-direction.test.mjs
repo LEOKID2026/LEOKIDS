@@ -63,7 +63,7 @@ const VOCAB_RAW = {
   topic: "vocabulary",
   subject: "english",
   params: {
-    direction: "en_to_he",
+    direction: "en_to_meaning",
     word: "bridge",
     translation: "גשר",
     patternFamily: "vocab_translation",

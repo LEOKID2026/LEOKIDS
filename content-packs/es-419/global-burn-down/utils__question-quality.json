@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "correct_answer_is_the_only_full_sentence_among_options": "La respuesta correcta es la única oración completa entre las opciones.",
+    "correct_option_is_much_longer_than_all_distractors": "La opción correcta es mucho más larga que todos los distractores."
+  }
+}

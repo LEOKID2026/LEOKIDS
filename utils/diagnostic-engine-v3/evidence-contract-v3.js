@@ -51,7 +51,7 @@ export function buildDiagnosticEvidenceContractV3(input) {
         ? normalizeMistakeEvent(
             {
               ...input.aggregateRow,
-              isCorrect: input.isCorrect === true,
+              isCorrect: input.isCorrect === true
             },
             subjectId,
           )
@@ -83,15 +83,15 @@ export function buildDiagnosticEvidenceContractV3(input) {
       patternFamily: ev.patternFamily,
       expectedErrorTags: ev.expectedErrorTags,
       diagnosticSkillId: ev.diagnosticSkillId,
-      distractorFamily: ev.distractorFamily,
+      distractorFamily: ev.distractorFamily
     },
-    correctAnswer: ev.correctAnswer,
+    correctAnswer: ev.correctAnswer
   };
   const meta = buildQuestionSkillMetadataV1(stub, {
-    subjectCanonical: subjectId === "moledet-geography" ? "moledet_geography" : subjectId,
+    subjectCanonical: subjectId,
     grade,
     level: ev.level,
-    topic,
+    topic
   });
 
   const skill = pickStr(ev.diagnosticSkillId) || pickStr(ev.skillId) || pickStr(meta.skillId) || null;
@@ -172,7 +172,7 @@ export function buildDiagnosticEvidenceContractV3(input) {
           : null,
     isCorrect,
     wrongCount: isCorrect ? 0 : 1,
-    attempts: 1,
+    attempts: 1
   });
 
   if (gradeContext.relation === "above_registered_grade" && !isCorrect) {
@@ -213,7 +213,7 @@ export function buildDiagnosticEvidenceContractV3(input) {
     confidenceContribution,
     metadataPresent,
     patternFamily: pickStr(ev.patternFamily),
-    questionId: pickStr(ev.questionLabel) || null,
+    questionId: pickStr(ev.questionLabel) || null
   };
 }
 
@@ -258,7 +258,7 @@ export function buildEvidenceContractsFromMistakes(
         probeEvidence: probe,
         evidenceSource: ev.evidenceSource || null,
         activityMode: ev.mode || null,
-        registeredGrade,
+        registeredGrade
       }),
     );
   }

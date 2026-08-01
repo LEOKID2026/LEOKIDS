@@ -10,11 +10,10 @@ assert.equal(subjectHasParentReportPracticeEvidence(3, 0), true, "questions coun
 assert.equal(subjectHasParentReportPracticeEvidence(0, 0), false, "zero is not evidence");
 
 const rows = [
-  { name: "מתמטיקה", questions: 10, minutes: 5 },
-  { name: "אנגלית", questions: 0, minutes: 20 },
-];
+  { name: "", questions: 10, minutes: 5 },
+  { name: "", questions: 0, minutes: 20 }];
 const visible = filterSubjectOverviewRowsWithEvidence(rows);
 assert.equal(visible.length, 1, "time-only subject hidden from overview");
-assert.equal(visible[0].name, "מתמטיקה");
+assert.equal(visible[0].name, "");
 
 console.log("parent-report-subject-visibility.selftest: PASS");

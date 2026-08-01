@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "the_cat_is_red": "el gato es rojo",
+    "the_apple_is": "La manzana es ___",
+    "she_likes_red": "a ella le gusta el rojo"
+  }
+}

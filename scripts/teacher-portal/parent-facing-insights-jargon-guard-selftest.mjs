@@ -12,7 +12,7 @@ const mod = await import(
   pathToFileURL(path.join(root, "lib/parent-server/parent-report-parent-facing.server.js")).href
 );
 const { insufficientDataInsightHe, noUrgentTopicInsightHe } = await import(
-  pathToFileURL(path.join(root, "utils/parent-report-language/parent-report-hebrew-copy-spec.js")).href
+  pathToFileURL(path.join(root, "utils/parent-report-language/parent-report-copy-spec.js")).href
 );
 
 const { buildParentInsightsHe, buildParentFacingBlocks } = mod;

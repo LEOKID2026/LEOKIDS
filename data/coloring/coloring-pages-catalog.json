@@ -6,7 +6,7 @@
   "cards": [
     {
       "cardKey": "achievement_20_questions",
-      "displayNameHe": "20 שאלות",
+      "displayNameHe": "Achievement 20 Questions",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_20_questions.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_20_questions.png",
@@ -15,7 +15,7 @@
     },
     {
       "cardKey": "achievement_3_day_streak",
-      "displayNameHe": "מתמיד 3 ימים",
+      "displayNameHe": "Achievement 3 Day Streak",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_3_day_streak.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_3_day_streak.png",
@@ -24,7 +24,7 @@
     },
     {
       "cardKey": "achievement_7_day_streak",
-      "displayNameHe": "מתמיד 7 ימים",
+      "displayNameHe": "Achievement 7 Day Streak",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_7_day_streak.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_7_day_streak.png",
@@ -33,7 +33,7 @@
     },
     {
       "cardKey": "achievement_addition_champion",
-      "displayNameHe": "אלוף החיבור",
+      "displayNameHe": "Achievement Addition Champion",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_addition_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_addition_champion.png",
@@ -42,7 +42,7 @@
     },
     {
       "cardKey": "achievement_big_progress",
-      "displayNameHe": "התקדמות גדולה",
+      "displayNameHe": "Achievement Big Progress",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_big_progress.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_big_progress.png",
@@ -51,7 +51,7 @@
     },
     {
       "cardKey": "achievement_diligent_student",
-      "displayNameHe": "ליאו התלמיד החרוץ",
+      "displayNameHe": "Achievement Diligent Student",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_diligent_student.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_diligent_student.png",
@@ -60,7 +60,7 @@
     },
     {
       "cardKey": "achievement_division_champion",
-      "displayNameHe": "אלוף החילוק",
+      "displayNameHe": "Achievement Division Champion",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_division_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_division_champion.png",
@@ -69,7 +69,7 @@
     },
     {
       "cardKey": "achievement_english_star",
-      "displayNameHe": "כוכב אנגלית",
+      "displayNameHe": "Achievement English Star",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_english_star.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_english_star.png",
@@ -78,7 +78,7 @@
     },
     {
       "cardKey": "achievement_geometry_3d_builder",
-      "displayNameHe": "בונה תלת־ממד",
+      "displayNameHe": "Achievement Geometry 3d Builder",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_geometry_3d_builder.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_geometry_3d_builder.png",
@@ -87,7 +87,7 @@
     },
     {
       "cardKey": "achievement_geometry_angles_detective",
-      "displayNameHe": "בלש הזוויות",
+      "displayNameHe": "Achievement Geometry Angles Detective",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_geometry_angles_detective.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_geometry_angles_detective.png",
@@ -96,7 +96,7 @@
     },
     {
       "cardKey": "achievement_geometry_area_genius",
-      "displayNameHe": "גאון השטח",
+      "displayNameHe": "Achievement Geometry Area Genius",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_geometry_area_genius.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_geometry_area_genius.png",
@@ -105,7 +105,7 @@
     },
     {
       "cardKey": "achievement_geometry_polygon_architect",
-      "displayNameHe": "אדריכל המצולעים",
+      "displayNameHe": "Achievement Geometry Polygon Architect",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_geometry_polygon_architect.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_geometry_polygon_architect.png",
@@ -114,7 +114,7 @@
     },
     {
       "cardKey": "achievement_geometry_shapes_champion",
-      "displayNameHe": "אלוף הצורות",
+      "displayNameHe": "Achievement Geometry Shapes Champion",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_geometry_shapes_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_geometry_shapes_champion.png",
@@ -123,7 +123,7 @@
     },
     {
       "cardKey": "achievement_geometry_symmetry_explorer",
-      "displayNameHe": "חוקר הסימטריה",
+      "displayNameHe": "Achievement Geometry Symmetry Explorer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_geometry_symmetry_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_geometry_symmetry_explorer.png",
@@ -132,7 +132,7 @@
     },
     {
       "cardKey": "achievement_great_listener",
-      "displayNameHe": "מאזין מצוין",
+      "displayNameHe": "Achievement Great Listener",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_great_listener.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_great_listener.png",
@@ -141,7 +141,7 @@
     },
     {
       "cardKey": "achievement_hebrew_star",
-      "displayNameHe": "כוכב עברית",
+      "displayNameHe": "Achievement Hebrew Star",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_hebrew_star.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_hebrew_star.png",
@@ -150,7 +150,7 @@
     },
     {
       "cardKey": "achievement_moledet_explorer",
-      "displayNameHe": "חוקר המולדת",
+      "displayNameHe": "Achievement Moledet Explorer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_moledet_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_moledet_explorer.png",
@@ -159,7 +159,7 @@
     },
     {
       "cardKey": "achievement_multiplication_champion",
-      "displayNameHe": "אלוף הכפל",
+      "displayNameHe": "Achievement Multiplication Champion",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_multiplication_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_multiplication_champion.png",
@@ -168,7 +168,7 @@
     },
     {
       "cardKey": "achievement_never_give_up",
-      "displayNameHe": "לא מוותר",
+      "displayNameHe": "Achievement Never Give Up",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_never_give_up.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_never_give_up.png",
@@ -177,7 +177,7 @@
     },
     {
       "cardKey": "achievement_new_record",
-      "displayNameHe": "שיא חדש",
+      "displayNameHe": "Achievement New Record",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_new_record.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_new_record.png",
@@ -186,7 +186,7 @@
     },
     {
       "cardKey": "achievement_number_explorer",
-      "displayNameHe": "חוקר המספרים",
+      "displayNameHe": "Achievement Number Explorer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_number_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_number_explorer.png",
@@ -195,7 +195,7 @@
     },
     {
       "cardKey": "achievement_personal_activity",
-      "displayNameHe": "פעילות אישית",
+      "displayNameHe": "Achievement Personal Activity",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_personal_activity.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_personal_activity.png",
@@ -204,7 +204,7 @@
     },
     {
       "cardKey": "achievement_science_explorer",
-      "displayNameHe": "חוקר המדע",
+      "displayNameHe": "Achievement Science Explorer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_science_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_science_explorer.png",
@@ -213,7 +213,7 @@
     },
     {
       "cardKey": "achievement_science_magnet_master",
-      "displayNameHe": "מאסטר המגנט",
+      "displayNameHe": "Achievement Science Magnet Master",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_science_magnet_master.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_science_magnet_master.png",
@@ -222,7 +222,7 @@
     },
     {
       "cardKey": "achievement_science_space_discoverer",
-      "displayNameHe": "מגלה החלל",
+      "displayNameHe": "Achievement Science Space Discoverer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_science_space_discoverer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_science_space_discoverer.png",
@@ -231,7 +231,7 @@
     },
     {
       "cardKey": "achievement_science_weather_explorer",
-      "displayNameHe": "חוקר מזג האוויר",
+      "displayNameHe": "Achievement Science Weather Explorer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_science_weather_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_science_weather_explorer.png",
@@ -240,7 +240,7 @@
     },
     {
       "cardKey": "achievement_science_young_scientist",
-      "displayNameHe": "מדען צעיר",
+      "displayNameHe": "Achievement Science Young Scientist",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_science_young_scientist.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_science_young_scientist.png",
@@ -249,7 +249,7 @@
     },
     {
       "cardKey": "achievement_shapes_master",
-      "displayNameHe": "מאסטר הצורות",
+      "displayNameHe": "Achievement Shapes Master",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_shapes_master.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_shapes_master.png",
@@ -258,7 +258,7 @@
     },
     {
       "cardKey": "achievement_strong_start",
-      "displayNameHe": "מתחיל חזק",
+      "displayNameHe": "Achievement Strong Start",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_strong_start.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_strong_start.png",
@@ -267,7 +267,7 @@
     },
     {
       "cardKey": "achievement_subtraction_champion",
-      "displayNameHe": "אלוף החיסור",
+      "displayNameHe": "Achievement Subtraction Champion",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_subtraction_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_subtraction_champion.png",
@@ -276,7 +276,7 @@
     },
     {
       "cardKey": "achievement_task_complete",
-      "displayNameHe": "משימה הושלמה",
+      "displayNameHe": "Achievement Task Complete",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_task_complete.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_task_complete.png",
@@ -285,7 +285,7 @@
     },
     {
       "cardKey": "achievement_understanding_master",
-      "displayNameHe": "מאסטר ההבנה",
+      "displayNameHe": "Achievement Understanding Master",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_understanding_master.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_understanding_master.png",
@@ -294,7 +294,7 @@
     },
     {
       "cardKey": "achievement_week_star",
-      "displayNameHe": "כוכב השבוע",
+      "displayNameHe": "Achievement Week Star",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_week_star.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_week_star.png",
@@ -303,7 +303,7 @@
     },
     {
       "cardKey": "achievement_word_discoverer",
-      "displayNameHe": "מגלה מילים",
+      "displayNameHe": "Achievement Word Discoverer",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_word_discoverer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_word_discoverer.png",
@@ -312,7 +312,7 @@
     },
     {
       "cardKey": "achievement_young_reader",
-      "displayNameHe": "קורא צעיר",
+      "displayNameHe": "Achievement Young Reader",
       "category": "achievement",
       "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_young_reader.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_young_reader.png",
@@ -321,7 +321,7 @@
     },
     {
       "cardKey": "event_back_to_learning",
-      "displayNameHe": "קלף חוזרים ללמוד",
+      "displayNameHe": "Event Back To Learning",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_back_to_learning.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_back_to_learning.png",
@@ -330,7 +330,7 @@
     },
     {
       "cardKey": "event_birthday",
-      "displayNameHe": "קלף יום הולדת",
+      "displayNameHe": "Event Birthday",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_birthday.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_birthday.png",
@@ -339,7 +339,7 @@
     },
     {
       "cardKey": "event_end_of_year",
-      "displayNameHe": "קלף סוף השנה",
+      "displayNameHe": "Event End Of Year",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_end_of_year.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_end_of_year.png",
@@ -348,7 +348,7 @@
     },
     {
       "cardKey": "event_hanukkah",
-      "displayNameHe": "קלף חנוכה",
+      "displayNameHe": "Event Hanukkah",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_hanukkah.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_hanukkah.png",
@@ -357,7 +357,7 @@
     },
     {
       "cardKey": "event_independence_day",
-      "displayNameHe": "קלף יום העצמאות",
+      "displayNameHe": "Event Independence Day",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_independence_day.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_independence_day.png",
@@ -366,7 +366,7 @@
     },
     {
       "cardKey": "event_lag_baomer",
-      "displayNameHe": "ל״ג בעומר",
+      "displayNameHe": "Event Lag Baomer",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_lag_baomer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_lag_baomer.png",
@@ -375,7 +375,7 @@
     },
     {
       "cardKey": "event_passover",
-      "displayNameHe": "קלף פסח",
+      "displayNameHe": "Event Passover",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_passover.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_passover.png",
@@ -384,7 +384,7 @@
     },
     {
       "cardKey": "event_purim",
-      "displayNameHe": "קלף פורים",
+      "displayNameHe": "Event Purim",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_purim.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_purim.png",
@@ -393,7 +393,7 @@
     },
     {
       "cardKey": "event_rosh_hashana",
-      "displayNameHe": "קלף ראש השנה",
+      "displayNameHe": "Event Rosh Hashana",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_rosh_hashana.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_rosh_hashana.png",
@@ -402,7 +402,7 @@
     },
     {
       "cardKey": "event_shavuot",
-      "displayNameHe": "קלף שבועות",
+      "displayNameHe": "Event Shavuot",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_shavuot.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_shavuot.png",
@@ -411,7 +411,7 @@
     },
     {
       "cardKey": "event_sukkot",
-      "displayNameHe": "קלף סוכות",
+      "displayNameHe": "Event Sukkot",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_sukkot.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_sukkot.png",
@@ -420,7 +420,7 @@
     },
     {
       "cardKey": "event_summer",
-      "displayNameHe": "קלף הקיץ",
+      "displayNameHe": "Event Summer",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_summer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_summer.png",
@@ -429,7 +429,7 @@
     },
     {
       "cardKey": "event_winter",
-      "displayNameHe": "קלף החורף",
+      "displayNameHe": "Event Winter",
       "category": "event",
       "sourceImagePath": "tmp/coloring-pages-work/sources/event_winter.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_winter.png",
@@ -438,7 +438,7 @@
     },
     {
       "cardKey": "leo_arcade_champion",
-      "displayNameHe": "ליאו אלוף הארקייד",
+      "displayNameHe": "Leo Arcade Champion",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_arcade_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_arcade_champion.png",
@@ -447,7 +447,7 @@
     },
     {
       "cardKey": "leo_archaeologist",
-      "displayNameHe": "ליאו הארכיאולוג",
+      "displayNameHe": "Leo Archaeologist",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_archaeologist.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_archaeologist.png",
@@ -456,7 +456,7 @@
     },
     {
       "cardKey": "leo_army_dog",
-      "displayNameHe": "ליאו כלב צבאי",
+      "displayNameHe": "Leo Army Dog",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_army_dog.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_army_dog.png",
@@ -465,7 +465,7 @@
     },
     {
       "cardKey": "leo_art_class",
-      "displayNameHe": "ליאו בחוג ציור",
+      "displayNameHe": "Leo Art Class",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_art_class.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_art_class.png",
@@ -474,7 +474,7 @@
     },
     {
       "cardKey": "leo_artist",
-      "displayNameHe": "ליאו האמן",
+      "displayNameHe": "Leo Artist",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_artist.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_artist.png",
@@ -483,7 +483,7 @@
     },
     {
       "cardKey": "leo_astronaut",
-      "displayNameHe": "ליאו האסטרונאוט",
+      "displayNameHe": "Leo Astronaut",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_astronaut.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_astronaut.png",
@@ -492,7 +492,7 @@
     },
     {
       "cardKey": "leo_at_beach",
-      "displayNameHe": "ליאו הולך לים",
+      "displayNameHe": "Leo At Beach",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_at_beach.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_at_beach.png",
@@ -501,7 +501,7 @@
     },
     {
       "cardKey": "leo_at_library",
-      "displayNameHe": "ליאו בספרייה",
+      "displayNameHe": "Leo At Library",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_at_library.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_at_library.png",
@@ -510,7 +510,7 @@
     },
     {
       "cardKey": "leo_at_pool",
-      "displayNameHe": "ליאו בבריכה",
+      "displayNameHe": "Leo At Pool",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_at_pool.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_at_pool.png",
@@ -519,7 +519,7 @@
     },
     {
       "cardKey": "leo_at_recess",
-      "displayNameHe": "ליאו בהפסקה",
+      "displayNameHe": "Leo At Recess",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_at_recess.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_at_recess.png",
@@ -528,7 +528,7 @@
     },
     {
       "cardKey": "leo_at_zoo",
-      "displayNameHe": "ליאו בגן החיות",
+      "displayNameHe": "Leo At Zoo",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_at_zoo.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_at_zoo.png",
@@ -537,7 +537,7 @@
     },
     {
       "cardKey": "leo_basketball",
-      "displayNameHe": "ליאו הכדורסלן",
+      "displayNameHe": "Leo Basketball",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_basketball.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_basketball.png",
@@ -546,7 +546,7 @@
     },
     {
       "cardKey": "leo_camping",
-      "displayNameHe": "ליאו בקמפינג",
+      "displayNameHe": "Leo Camping",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_camping.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_camping.png",
@@ -555,7 +555,7 @@
     },
     {
       "cardKey": "leo_candy_store",
-      "displayNameHe": "ליאו בחנות ממתקים",
+      "displayNameHe": "Leo Candy Store",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_candy_store.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_candy_store.png",
@@ -564,7 +564,7 @@
     },
     {
       "cardKey": "leo_carpenter",
-      "displayNameHe": "ליאו הנגר",
+      "displayNameHe": "Leo Carpenter",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_carpenter.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_carpenter.png",
@@ -573,7 +573,7 @@
     },
     {
       "cardKey": "leo_celebration",
-      "displayNameHe": "ליאו החוגג",
+      "displayNameHe": "Leo Celebration",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_celebration.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_celebration.png",
@@ -582,7 +582,7 @@
     },
     {
       "cardKey": "leo_champion",
-      "displayNameHe": "ליאו האלוף",
+      "displayNameHe": "Leo Champion",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_champion.png",
@@ -591,7 +591,7 @@
     },
     {
       "cardKey": "leo_chef",
-      "displayNameHe": "ליאו השף",
+      "displayNameHe": "Leo Chef",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_chef.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_chef.png",
@@ -600,7 +600,7 @@
     },
     {
       "cardKey": "leo_cherry_blossom",
-      "displayNameHe": "ליאו בפריחת הדובדבן",
+      "displayNameHe": "Leo Cherry Blossom",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_cherry_blossom.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_cherry_blossom.png",
@@ -609,7 +609,7 @@
     },
     {
       "cardKey": "leo_chess_club",
-      "displayNameHe": "ליאו בחוג שחמט",
+      "displayNameHe": "Leo Chess Club",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_chess_club.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_chess_club.png",
@@ -618,7 +618,7 @@
     },
     {
       "cardKey": "leo_classic",
-      "displayNameHe": "ליאו הקלאסי",
+      "displayNameHe": "Leo Classic",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_classic.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_classic.png",
@@ -627,7 +627,7 @@
     },
     {
       "cardKey": "leo_clothes_shopping",
-      "displayNameHe": "ליאו קונה בגדים",
+      "displayNameHe": "Leo Clothes Shopping",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_clothes_shopping.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_clothes_shopping.png",
@@ -636,7 +636,7 @@
     },
     {
       "cardKey": "leo_clothing_store",
-      "displayNameHe": "ליאו בחנות בגדים",
+      "displayNameHe": "Leo Clothing Store",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_clothing_store.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_clothing_store.png",
@@ -645,7 +645,7 @@
     },
     {
       "cardKey": "leo_computer_class",
-      "displayNameHe": "ליאו בשיעור מחשבים",
+      "displayNameHe": "Leo Computer Class",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_computer_class.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_computer_class.png",
@@ -654,7 +654,7 @@
     },
     {
       "cardKey": "leo_cool",
-      "displayNameHe": "ליאו המגניב",
+      "displayNameHe": "Leo Cool",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_cool.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_cool.png",
@@ -663,7 +663,7 @@
     },
     {
       "cardKey": "leo_cyclist",
-      "displayNameHe": "ליאו על אופניים",
+      "displayNameHe": "Leo Cyclist",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_cyclist.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_cyclist.png",
@@ -672,7 +672,7 @@
     },
     {
       "cardKey": "leo_dancer",
-      "displayNameHe": "ליאו הרקדן",
+      "displayNameHe": "Leo Dancer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_dancer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_dancer.png",
@@ -681,7 +681,7 @@
     },
     {
       "cardKey": "leo_detective",
-      "displayNameHe": "ליאו עוזר הבלש",
+      "displayNameHe": "Leo Detective",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_detective.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_detective.png",
@@ -690,7 +690,7 @@
     },
     {
       "cardKey": "leo_doctor",
-      "displayNameHe": "ליאו הרופא",
+      "displayNameHe": "Leo Doctor",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_doctor.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_doctor.png",
@@ -699,7 +699,7 @@
     },
     {
       "cardKey": "leo_electrician",
-      "displayNameHe": "ליאו הטכנאי",
+      "displayNameHe": "Leo Electrician",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_electrician.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_electrician.png",
@@ -708,7 +708,7 @@
     },
     {
       "cardKey": "leo_enchanted_forest_guardian",
-      "displayNameHe": "ליאו שומר היער הקסום",
+      "displayNameHe": "Leo Enchanted Forest Guardian",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_enchanted_forest_guardian.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_enchanted_forest_guardian.png",
@@ -717,7 +717,7 @@
     },
     {
       "cardKey": "leo_engineer",
-      "displayNameHe": "ליאו המהנדס",
+      "displayNameHe": "Leo Engineer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_engineer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_engineer.png",
@@ -726,7 +726,7 @@
     },
     {
       "cardKey": "leo_factory_manager",
-      "displayNameHe": "ליאו מנהל המפעל",
+      "displayNameHe": "Leo Factory Manager",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_factory_manager.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_factory_manager.png",
@@ -735,7 +735,7 @@
     },
     {
       "cardKey": "leo_factory_tour",
-      "displayNameHe": "ליאו מסייר במפעל",
+      "displayNameHe": "Leo Factory Tour",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_factory_tour.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_factory_tour.png",
@@ -744,7 +744,7 @@
     },
     {
       "cardKey": "leo_ferris_wheel",
-      "displayNameHe": "ליאו בגלגל ענק",
+      "displayNameHe": "Leo Ferris Wheel",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_ferris_wheel.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_ferris_wheel.png",
@@ -753,7 +753,7 @@
     },
     {
       "cardKey": "leo_firefighter",
-      "displayNameHe": "ליאו הכבאי",
+      "displayNameHe": "Leo Firefighter",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_firefighter.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_firefighter.png",
@@ -762,7 +762,7 @@
     },
     {
       "cardKey": "leo_firefighter_helper",
-      "displayNameHe": "ליאו עוזר כבאי",
+      "displayNameHe": "Leo Firefighter Helper",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_firefighter_helper.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_firefighter_helper.png",
@@ -771,7 +771,7 @@
     },
     {
       "cardKey": "leo_football",
-      "displayNameHe": "ליאו הכדורגלן",
+      "displayNameHe": "Leo Football",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_football.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_football.png",
@@ -780,7 +780,7 @@
     },
     {
       "cardKey": "leo_forest_guardian",
-      "displayNameHe": "ליאו שומר היער",
+      "displayNameHe": "Leo Forest Guardian",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_forest_guardian.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_forest_guardian.png",
@@ -789,7 +789,7 @@
     },
     {
       "cardKey": "leo_funny",
-      "displayNameHe": "ליאו המצחיק",
+      "displayNameHe": "Leo Funny",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_funny.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_funny.png",
@@ -798,7 +798,7 @@
     },
     {
       "cardKey": "leo_galactic_explorer",
-      "displayNameHe": "ליאו חוקר הגלקסיות",
+      "displayNameHe": "Leo Galactic Explorer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_galactic_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_galactic_explorer.png",
@@ -807,7 +807,7 @@
     },
     {
       "cardKey": "leo_galaxy_captain",
-      "displayNameHe": "ליאו קפטן גלקסי",
+      "displayNameHe": "Leo Galaxy Captain",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_galaxy_captain.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_galaxy_captain.png",
@@ -816,7 +816,7 @@
     },
     {
       "cardKey": "leo_gamer",
-      "displayNameHe": "ליאו הגיימר",
+      "displayNameHe": "Leo Gamer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_gamer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_gamer.png",
@@ -825,7 +825,7 @@
     },
     {
       "cardKey": "leo_gardener",
-      "displayNameHe": "ליאו הגנן",
+      "displayNameHe": "Leo Gardener",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_gardener.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_gardener.png",
@@ -834,7 +834,7 @@
     },
     {
       "cardKey": "leo_genius_inventor",
-      "displayNameHe": "ליאו הממציא הגאון",
+      "displayNameHe": "Leo Genius Inventor",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_genius_inventor.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_genius_inventor.png",
@@ -843,7 +843,7 @@
     },
     {
       "cardKey": "leo_gets_star",
-      "displayNameHe": "ליאו מקבל כוכב",
+      "displayNameHe": "Leo Gets Star",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_gets_star.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_gets_star.png",
@@ -852,7 +852,7 @@
     },
     {
       "cardKey": "leo_glasses",
-      "displayNameHe": "ליאו עם משקפיים",
+      "displayNameHe": "Leo Glasses",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_glasses.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_glasses.png",
@@ -861,7 +861,7 @@
     },
     {
       "cardKey": "leo_golden_knight",
-      "displayNameHe": "ליאו אביר הזהב",
+      "displayNameHe": "Leo Golden Knight",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_golden_knight.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_golden_knight.png",
@@ -870,7 +870,7 @@
     },
     {
       "cardKey": "leo_grand_wizard",
-      "displayNameHe": "ליאו המכשף הגדול",
+      "displayNameHe": "Leo Grand Wizard",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_grand_wizard.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_grand_wizard.png",
@@ -879,7 +879,7 @@
     },
     {
       "cardKey": "leo_hot_air_balloon",
-      "displayNameHe": "ליאו בכדור פורח",
+      "displayNameHe": "Leo Hot Air Balloon",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_hot_air_balloon.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_hot_air_balloon.png",
@@ -888,7 +888,7 @@
     },
     {
       "cardKey": "leo_jump_rope",
-      "displayNameHe": "ליאו קופץ בחבל",
+      "displayNameHe": "Leo Jump Rope",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_jump_rope.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_jump_rope.png",
@@ -897,7 +897,7 @@
     },
     {
       "cardKey": "leo_king",
-      "displayNameHe": "ליאו המלך",
+      "displayNameHe": "Leo King",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_king.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_king.png",
@@ -906,7 +906,7 @@
     },
     {
       "cardKey": "leo_knight",
-      "displayNameHe": "ליאו האביר",
+      "displayNameHe": "Leo Knight",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_knight.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_knight.png",
@@ -915,7 +915,7 @@
     },
     {
       "cardKey": "leo_legendary_superhero",
-      "displayNameHe": "סופר ליאו האגדי",
+      "displayNameHe": "Leo Legendary Superhero",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_legendary_superhero.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_legendary_superhero.png",
@@ -924,7 +924,7 @@
     },
     {
       "cardKey": "leo_magician",
-      "displayNameHe": "ליאו הקוסם",
+      "displayNameHe": "Leo Magician",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_magician.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_magician.png",
@@ -933,7 +933,7 @@
     },
     {
       "cardKey": "leo_marathon_runner",
-      "displayNameHe": "ליאו רץ מרתון",
+      "displayNameHe": "Leo Marathon Runner",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_marathon_runner.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_marathon_runner.png",
@@ -942,7 +942,7 @@
     },
     {
       "cardKey": "leo_master_chef",
-      "displayNameHe": "ליאו השף הראשי",
+      "displayNameHe": "Leo Master Chef",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_master_chef.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_master_chef.png",
@@ -951,7 +951,7 @@
     },
     {
       "cardKey": "leo_master_detective",
-      "displayNameHe": "ליאו בלש העל",
+      "displayNameHe": "Leo Master Detective",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_master_detective.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_master_detective.png",
@@ -960,7 +960,7 @@
     },
     {
       "cardKey": "leo_master_painter",
-      "displayNameHe": "ליאו הצייר הגדול",
+      "displayNameHe": "Leo Master Painter",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_master_painter.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_master_painter.png",
@@ -969,7 +969,7 @@
     },
     {
       "cardKey": "leo_miner",
-      "displayNameHe": "ליאו הכורה",
+      "displayNameHe": "Leo Miner",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_miner.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_miner.png",
@@ -978,7 +978,7 @@
     },
     {
       "cardKey": "leo_month_star",
-      "displayNameHe": "ליאו כוכב החודש",
+      "displayNameHe": "Leo Month Star",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_month_star.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_month_star.png",
@@ -987,7 +987,7 @@
     },
     {
       "cardKey": "leo_moon_walker",
-      "displayNameHe": "ליאו מטייל בירח",
+      "displayNameHe": "Leo Moon Walker",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_moon_walker.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_moon_walker.png",
@@ -996,7 +996,7 @@
     },
     {
       "cardKey": "leo_mountain_climber",
-      "displayNameHe": "ליאו מטפס ההרים",
+      "displayNameHe": "Leo Mountain Climber",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_mountain_climber.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_mountain_climber.png",
@@ -1005,7 +1005,7 @@
     },
     {
       "cardKey": "leo_music_star",
-      "displayNameHe": "ליאו כוכב הבמה",
+      "displayNameHe": "Leo Music Star",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_music_star.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_music_star.png",
@@ -1014,7 +1014,7 @@
     },
     {
       "cardKey": "leo_musician",
-      "displayNameHe": "ליאו המוזיקאי",
+      "displayNameHe": "Leo Musician",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_musician.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_musician.png",
@@ -1023,7 +1023,7 @@
     },
     {
       "cardKey": "leo_nature_explorer",
-      "displayNameHe": "ליאו חוקר הטבע",
+      "displayNameHe": "Leo Nature Explorer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_nature_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_nature_explorer.png",
@@ -1032,7 +1032,7 @@
     },
     {
       "cardKey": "leo_ninja",
-      "displayNameHe": "ליאו הנינג'ה",
+      "displayNameHe": "Leo Ninja",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_ninja.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_ninja.png",
@@ -1041,7 +1041,7 @@
     },
     {
       "cardKey": "leo_office_worker",
-      "displayNameHe": "ליאו במשרד",
+      "displayNameHe": "Leo Office Worker",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_office_worker.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_office_worker.png",
@@ -1050,7 +1050,7 @@
     },
     {
       "cardKey": "leo_on_train",
-      "displayNameHe": "ליאו ברכבת",
+      "displayNameHe": "Leo On Train",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_on_train.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_on_train.png",
@@ -1059,7 +1059,7 @@
     },
     {
       "cardKey": "leo_pe_class",
-      "displayNameHe": "ליאו בשיעור ספורט",
+      "displayNameHe": "Leo Pe Class",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_pe_class.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_pe_class.png",
@@ -1068,7 +1068,7 @@
     },
     {
       "cardKey": "leo_piano_player",
-      "displayNameHe": "ליאו מנגן בפסנתר",
+      "displayNameHe": "Leo Piano Player",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_piano_player.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_piano_player.png",
@@ -1077,7 +1077,7 @@
     },
     {
       "cardKey": "leo_picnic",
-      "displayNameHe": "ליאו בפיקניק",
+      "displayNameHe": "Leo Picnic",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_picnic.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_picnic.png",
@@ -1086,7 +1086,7 @@
     },
     {
       "cardKey": "leo_pilot",
-      "displayNameHe": "ליאו הטייס",
+      "displayNameHe": "Leo Pilot",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_pilot.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_pilot.png",
@@ -1095,7 +1095,7 @@
     },
     {
       "cardKey": "leo_pirate",
-      "displayNameHe": "ליאו הפיראט",
+      "displayNameHe": "Leo Pirate",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_pirate.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_pirate.png",
@@ -1104,7 +1104,7 @@
     },
     {
       "cardKey": "leo_pirate_captain",
-      "displayNameHe": "ליאו קפטן הים",
+      "displayNameHe": "Leo Pirate Captain",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_pirate_captain.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_pirate_captain.png",
@@ -1113,7 +1113,7 @@
     },
     {
       "cardKey": "leo_playful",
-      "displayNameHe": "ליאו השובב",
+      "displayNameHe": "Leo Playful",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_playful.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_playful.png",
@@ -1122,7 +1122,7 @@
     },
     {
       "cardKey": "leo_police_dog",
-      "displayNameHe": "ליאו כלב המשטרה",
+      "displayNameHe": "Leo Police Dog",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_police_dog.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_police_dog.png",
@@ -1131,7 +1131,7 @@
     },
     {
       "cardKey": "leo_racing_driver",
-      "displayNameHe": "ליאו נהג המרוצים",
+      "displayNameHe": "Leo Racing Driver",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_racing_driver.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_racing_driver.png",
@@ -1140,7 +1140,7 @@
     },
     {
       "cardKey": "leo_rain_walk",
-      "displayNameHe": "ליאו מטייל בגשם",
+      "displayNameHe": "Leo Rain Walk",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_rain_walk.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_rain_walk.png",
@@ -1149,7 +1149,7 @@
     },
     {
       "cardKey": "leo_robot_engineer",
-      "displayNameHe": "ליאו המהנדס הרובוטי",
+      "displayNameHe": "Leo Robot Engineer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_robot_engineer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_robot_engineer.png",
@@ -1158,7 +1158,7 @@
     },
     {
       "cardKey": "leo_robotic",
-      "displayNameHe": "ליאו הרובוטי",
+      "displayNameHe": "Leo Robotic",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_robotic.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_robotic.png",
@@ -1167,7 +1167,7 @@
     },
     {
       "cardKey": "leo_runner",
-      "displayNameHe": "ליאו הרץ",
+      "displayNameHe": "Leo Runner",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_runner.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_runner.png",
@@ -1176,7 +1176,7 @@
     },
     {
       "cardKey": "leo_safari",
-      "displayNameHe": "ליאו בספארי",
+      "displayNameHe": "Leo Safari",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_safari.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_safari.png",
@@ -1185,7 +1185,7 @@
     },
     {
       "cardKey": "leo_science_class",
-      "displayNameHe": "ליאו בשיעור מדעים",
+      "displayNameHe": "Leo Science Class",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_science_class.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_science_class.png",
@@ -1194,7 +1194,7 @@
     },
     {
       "cardKey": "leo_scientist",
-      "displayNameHe": "ליאו המדען",
+      "displayNameHe": "Leo Scientist",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_scientist.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_scientist.png",
@@ -1203,7 +1203,7 @@
     },
     {
       "cardKey": "leo_shoe_shopping",
-      "displayNameHe": "ליאו קונה נעליים",
+      "displayNameHe": "Leo Shoe Shopping",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_shoe_shopping.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_shoe_shopping.png",
@@ -1212,7 +1212,7 @@
     },
     {
       "cardKey": "leo_skateboarder",
-      "displayNameHe": "ליאו בסקייטבורד",
+      "displayNameHe": "Leo Skateboarder",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_skateboarder.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_skateboarder.png",
@@ -1221,7 +1221,7 @@
     },
     {
       "cardKey": "leo_skier",
-      "displayNameHe": "ליאו בסקי",
+      "displayNameHe": "Leo Skier",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_skier.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_skier.png",
@@ -1230,7 +1230,7 @@
     },
     {
       "cardKey": "leo_smart",
-      "displayNameHe": "ליאו החכם",
+      "displayNameHe": "Leo Smart",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_smart.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_smart.png",
@@ -1239,7 +1239,7 @@
     },
     {
       "cardKey": "leo_soccer_champion",
-      "displayNameHe": "ליאו אלוף הכדורגל",
+      "displayNameHe": "Leo Soccer Champion",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_soccer_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_soccer_champion.png",
@@ -1248,7 +1248,7 @@
     },
     {
       "cardKey": "leo_sorcerer",
-      "displayNameHe": "ליאו המכשף",
+      "displayNameHe": "Leo Sorcerer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_sorcerer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_sorcerer.png",
@@ -1257,7 +1257,7 @@
     },
     {
       "cardKey": "leo_space_commander",
-      "displayNameHe": "ליאו מפקד החלל",
+      "displayNameHe": "Leo Space Commander",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_space_commander.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_space_commander.png",
@@ -1266,7 +1266,7 @@
     },
     {
       "cardKey": "leo_space_pilot",
-      "displayNameHe": "ליאו טייס חלל",
+      "displayNameHe": "Leo Space Pilot",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_space_pilot.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_space_pilot.png",
@@ -1275,7 +1275,7 @@
     },
     {
       "cardKey": "leo_sports_store",
-      "displayNameHe": "ליאו בחנות הספורט",
+      "displayNameHe": "Leo Sports Store",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_sports_store.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_sports_store.png",
@@ -1284,7 +1284,7 @@
     },
     {
       "cardKey": "leo_star_explorer",
-      "displayNameHe": "ליאו חוקר הכוכבים",
+      "displayNameHe": "Leo Star Explorer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_star_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_star_explorer.png",
@@ -1293,7 +1293,7 @@
     },
     {
       "cardKey": "leo_suit",
-      "displayNameHe": "ליאו בחליפה",
+      "displayNameHe": "Leo Suit",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_suit.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_suit.png",
@@ -1302,7 +1302,7 @@
     },
     {
       "cardKey": "leo_super_inventor",
-      "displayNameHe": "ליאו ממציא העל",
+      "displayNameHe": "Leo Super Inventor",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_super_inventor.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_super_inventor.png",
@@ -1311,7 +1311,7 @@
     },
     {
       "cardKey": "leo_superhero",
-      "displayNameHe": "ליאו גיבור העל",
+      "displayNameHe": "Leo Superhero",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_superhero.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_superhero.png",
@@ -1320,7 +1320,7 @@
     },
     {
       "cardKey": "leo_surfer",
-      "displayNameHe": "ליאו הגולש הצעיר",
+      "displayNameHe": "Leo Surfer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_surfer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_surfer.png",
@@ -1329,7 +1329,7 @@
     },
     {
       "cardKey": "leo_swimmer",
-      "displayNameHe": "ליאו השחיין",
+      "displayNameHe": "Leo Swimmer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_swimmer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_swimmer.png",
@@ -1338,7 +1338,7 @@
     },
     {
       "cardKey": "leo_teacher",
-      "displayNameHe": "ליאו המורה",
+      "displayNameHe": "Leo Teacher",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_teacher.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_teacher.png",
@@ -1347,7 +1347,7 @@
     },
     {
       "cardKey": "leo_technodog",
-      "displayNameHe": "ליאו טכנודוג",
+      "displayNameHe": "Leo Technodog",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_technodog.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_technodog.png",
@@ -1356,7 +1356,7 @@
     },
     {
       "cardKey": "leo_treasure_hunter",
-      "displayNameHe": "ליאו מחפש האוצר",
+      "displayNameHe": "Leo Treasure Hunter",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_treasure_hunter.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_treasure_hunter.png",
@@ -1365,7 +1365,7 @@
     },
     {
       "cardKey": "leo_veterinarian",
-      "displayNameHe": "ליאו הווטרינר",
+      "displayNameHe": "Leo Veterinarian",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_veterinarian.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_veterinarian.png",
@@ -1374,7 +1374,7 @@
     },
     {
       "cardKey": "leo_walk_to_school",
-      "displayNameHe": "ליאו הולך לבית הספר",
+      "displayNameHe": "Leo Walk To School",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_walk_to_school.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_walk_to_school.png",
@@ -1383,7 +1383,7 @@
     },
     {
       "cardKey": "leo_wave_champion",
-      "displayNameHe": "ליאו אלוף הגלים",
+      "displayNameHe": "Leo Wave Champion",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_wave_champion.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_wave_champion.png",
@@ -1392,7 +1392,7 @@
     },
     {
       "cardKey": "leo_wizard",
-      "displayNameHe": "ליאו הקוסם הצעיר",
+      "displayNameHe": "Leo Wizard",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_wizard.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_wizard.png",
@@ -1401,7 +1401,7 @@
     },
     {
       "cardKey": "leo_world_explorer",
-      "displayNameHe": "ליאו מגלה העולם",
+      "displayNameHe": "Leo World Explorer",
       "category": "shop",
       "sourceImagePath": "tmp/coloring-pages-work/sources/leo_world_explorer.png",
       "lineArtPath": "/assets/coloring-pages/cards/line-art/leo_world_explorer.png",

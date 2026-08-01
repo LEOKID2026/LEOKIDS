@@ -1,7 +1,14 @@
-import { PARENT_ARTICLES } from "./content/parents";
-import { STUDENT_ARTICLES } from "./content/students";
-import { PARENT_REPORT_ARTICLES } from "./content/parent-report";
-import { SUBJECT_ARTICLES } from "./content/subjects";
+import { PARENT_ARTICLES } from "./content/parents.js";
+import { STUDENT_ARTICLES } from "./content/students.js";
+import { PARENT_REPORT_ARTICLES } from "./content/parent-report.js";
+import { SUBJECT_ARTICLES } from "./content/subjects.js";
+import {
+  ALL_ARTICLES_ES_419,
+  BY_SECTION_ES_419,
+  SECTIONS_ES_419,
+} from "./es-419/index.js";
+
+export { ALL_ARTICLES_ES_419, SECTIONS_ES_419 };
 
 export const SECTIONS = {
   parents: {
@@ -52,17 +59,49 @@ export const ALL_ARTICLES = [
   ...SUBJECT_ARTICLES,
 ];
 
-export function listArticles(section) {
+/**
+ * @param {string|null|undefined} [locale]
+ */
+export function resolveHelpLocale(locale) {
+  const id = String(locale || "en").toLowerCase();
+  if (id === "es-419") return "es-419";
+  return "en";
+}
+
+/**
+ * @param {string|null|undefined} [locale]
+ */
+export function getHelpSections(locale) {
+  return resolveHelpLocale(locale) === "es-419" ? SECTIONS_ES_419 : SECTIONS;
+}
+
+/**
+ * @param {string} section
+ * @param {string|null|undefined} [locale]
+ */
+export function listArticles(section, locale) {
+  if (resolveHelpLocale(locale) === "es-419") {
+    return BY_SECTION_ES_419[section] || [];
+  }
   return BY_SECTION[section] || [];
 }
 
-export function getArticle(section, slug) {
-  const articles = listArticles(section);
+/**
+ * @param {string} section
+ * @param {string} slug
+ * @param {string|null|undefined} [locale]
+ */
+export function getArticle(section, slug, locale) {
+  const articles = listArticles(section, locale);
   return articles.find((a) => a.slug === slug) || null;
 }
 
+/**
+ * Paths are locale-agnostic (same slugs across locales).
+ * @param {string} section
+ */
 export function getPathsForSection(section) {
-  return listArticles(section).map((a) => ({
+  return listArticles(section, "en").map((a) => ({
     params: { slug: a.slug },
   }));
 }
@@ -96,13 +135,36 @@ export function collectScreenshotPathsFromArticles(articles = ALL_ARTICLES) {
   return [...paths].sort();
 }
 
-/** Build-time validation for articles */
+/** Build-time validation for articles (EN + es-419 parity). */
 export function assertAllArticlesValid() {
   const allErrors = [];
-  for (const article of ALL_ARTICLES) {
-    const errs = validateArticle(article);
-    if (errs.length) allErrors.push({ slug: article.slug, section: article.section, errs });
+  const packs = [
+    { locale: "en", articles: ALL_ARTICLES },
+    { locale: "es-419", articles: ALL_ARTICLES_ES_419 },
+  ];
+  for (const pack of packs) {
+    for (const article of pack.articles) {
+      const errs = validateArticle(article);
+      if (errs.length) {
+        allErrors.push({
+          locale: pack.locale,
+          slug: article.slug,
+          section: article.section,
+          errs,
+        });
+      }
+    }
   }
+
+  const enSlugs = new Set(ALL_ARTICLES.map((a) => `${a.section}/${a.slug}`));
+  const esSlugs = new Set(ALL_ARTICLES_ES_419.map((a) => `${a.section}/${a.slug}`));
+  for (const key of enSlugs) {
+    if (!esSlugs.has(key)) allErrors.push({ locale: "es-419", errs: [`missing slug parity: ${key}`] });
+  }
+  for (const key of esSlugs) {
+    if (!enSlugs.has(key)) allErrors.push({ locale: "es-419", errs: [`extra slug vs en: ${key}`] });
+  }
+
   if (allErrors.length) {
     throw new Error(
       `Help Center article validation failed: ${JSON.stringify(allErrors, null, 2)}`

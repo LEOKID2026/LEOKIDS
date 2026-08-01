@@ -8,7 +8,7 @@ export const SUBJECT_ORDER = [
   "math",
   "geometry",
   "english",
-  "science",
+  "science"
 ];
 
 export function normalizeSubjectId(subjectId) {
@@ -32,13 +32,13 @@ export function contractsFromTopicRow(tr) {
     readiness: shallowCopy(cv.readiness ?? null),
     confidence: shallowCopy(cv.confidence ?? null),
     recommendation: shallowCopy(cv.recommendation ?? null),
-    narrative: shallowCopy(cv.narrative ?? null),
+    narrative: shallowCopy(cv.narrative ?? null)
   };
 }
 
 /**
  * @param {unknown} payload
- * @returns {{ subject: string, tr: object } | null}
+ * @returns {{ subject: string, tr: object } || null}
  */
 export function findFirstAnchoredTopicRow(payload) {
   const profiles = Array.isArray(payload?.subjectProfiles) ? payload.subjectProfiles : [];
@@ -81,7 +81,7 @@ export function listAllAnchoredTopicRows(payload) {
 /**
  * @param {unknown} payload
  * @param {string} subjectId
- * @returns {{ subject: string, tr: object } | null}
+ * @returns {{ subject: string, tr: object } || null}
  */
 export function findFirstAnchoredTopicRowForSubject(payload, subjectId) {
   const sid = normalizeSubjectId(subjectId);
@@ -131,17 +131,17 @@ function topicRowFromOverviewRow(overviewRow, subjectId) {
         contractVersion: "v1",
         textSlots: {
           observation: `In ${displayName}, ${q} questions were counted in the period, with an accuracy of about ${acc}%.`,
-          interpretation: `According to the report data in ${subjectLabelHe(subjectId)}, this is the information collected from the practice in the selected period.`,
+          interpretation: `According to the report data in ${subjectLabel(subjectId)}, this is the information collected from the practice in the selected period.`,
           uncertainty: cannotConcludeYet
             ? "There are still a few points - we will check again after more practice."
-            : copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.you_should_continue_to_follow_for_several_days_of_practice"),
-        },
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.you_should_continue_to_follow_for_several_days_of_practice")
+        }
       },
       readiness: { readiness: q >= 28 ? "ready" : q >= 12 ? "forming" : "insufficient" },
       confidence: { confidenceBand: acc >= 78 ? "high" : acc >= 58 ? "medium" : "low" },
-      decision: { cannotConcludeYet },
+      decision: { cannotConcludeYet }
     },
-    __copilotOverviewRowAnchor: true,
+    __copilotOverviewRowAnchor: true
   };
 }
 
@@ -149,7 +149,7 @@ function topicRowFromOverviewRow(overviewRow, subjectId) {
  * @param {unknown} payload
  * @param {string} topicRowKey
  * @param {string} [subjectIdHint]
- * @returns {{ subject: string, tr: object } | null}
+ * @returns {{ subject: string, tr: object } || null}
  */
 export function findTopicRowByKey(payload, topicRowKey, subjectIdHint = "") {
   const key = String(topicRowKey || "").trim();
@@ -190,14 +190,10 @@ const SUBJECT_LABEL_HE = {
   english: "English",
   science: "Science",
   history: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.history"),
-  hebrew: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.hebrew"),
-  "moledet-geography": copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.homeland_geography"),
-  moledet_geography: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.homeland_geography"),
-  moledet: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.homeland_studies"),
-  geography: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.geography"),
+  geography: copilotStaticMessage("copilot.answers.utils_parent-copilot_contract-reader.geography")
 };
 
-export function subjectLabelHe(subjectId) {
+export function subjectLabel(subjectId) {
   return SUBJECT_LABEL_HE[normalizeSubjectId(subjectId)] || "Subject";
 }
 
@@ -241,17 +237,17 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
     const topics = Array.isArray(sp.topicRecommendations) ? sp.topicRecommendations : [];
     const baseTr = topics[0] && typeof topics[0] === "object" ? topics[0] : null;
     const displayName =
-      String(baseTr?.displayName || "").trim() || `${subjectLabelHe(sid)} - Periodic summary`;
+      String(baseTr?.displayName || "").trim() || `${subjectLabel(sid)} - Periodic summary`;
     const topicRowKey = String(baseTr?.topicRowKey || baseTr?.topicKey || `aggregate-${sid}`).trim() || `aggregate-${sid}`;
     const cv0 = baseTr?.contractsV1 && typeof baseTr.contractsV1 === "object" ? baseTr.contractsV1 : {};
     const nar0 = cv0.narrative && typeof cv0.narrative === "object" ? cv0.narrative : {};
     const ts0 = nar0.textSlots && typeof nar0.textSlots === "object" ? nar0.textSlots : {};
     const obs =
       String(ts0.observation || "").trim() ||
-      `In ${subjectLabelHe(sid)}, about ${qc} questions were counted in the range, with an accuracy of about ${acc}% - this is the picture that emerges from the report data for this period.`;
+      `In ${subjectLabel(sid)}, about ${qc} questions were counted in the range, with an accuracy of about ${acc}% - this is the picture that emerges from the report data for this period.`;
     const interp =
       String(ts0.interpretation || "").trim() ||
-      `According to what appears in the report under ${subjectLabelHe(sid)}, you can see the volume of practice and the level of accuracy in the selected period (without inferring a point of weakness outside of what is shown there).`;
+      `According to what appears in the report under ${subjectLabel(sid)}, you can see the volume of practice and the level of accuracy in the selected period (without inferring a point of weakness outside of what is shown there).`;
     const readinessRaw =
       qc >= 28 ? "ready" : qc >= 12 ? "forming" : qc >= 6 ? "forming" : "insufficient";
     const confRaw = acc >= 78 ? "high" : acc >= 58 ? "medium" : "low";
@@ -277,23 +273,23 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
               String(ts0.uncertainty || "").trim() ||
               (cannotConcludeYet
                 ? "There are still a few points with careful wording in relation to the volume - we will check again after more practice at the range."
-                : "There is still a natural gap between what is seen at home and what is told in the report; We will continue to follow throughout several days of practice."),
-          },
+                : "There is still a natural gap between what is seen at home and what is told in the report; We will continue to follow throughout several days of practice.")
+          }
         },
         readiness: {
           ...(cv0.readiness && typeof cv0.readiness === "object" ? cv0.readiness : {}),
-          readiness: readinessRaw,
+          readiness: readinessRaw
         },
         confidence: {
           ...(cv0.confidence && typeof cv0.confidence === "object" ? cv0.confidence : {}),
-          confidenceBand: confRaw,
+          confidenceBand: confRaw
         },
         decision: {
           ...(cv0.decision && typeof cv0.decision === "object" ? cv0.decision : {}),
-          cannotConcludeYet,
-        },
+          cannotConcludeYet
+        }
       },
-      __copilotSyntheticAggregate: true,
+      __copilotSyntheticAggregate: true
     };
     out.push({ subject: sid, tr: syntheticTr });
   }
@@ -322,14 +318,14 @@ export function listSyntheticAggregateAnchoredTopicRows(payload) {
               interpretation: `At this stage it is possible to refer mainly to the scope of the practice and the general accuracy, before drawing detailed conclusions by subject or subject.`,
               uncertainty: cannotConcludeYet
                 ? "There is still not enough data to determine a clear direction. You should check again after another practice."
-                : "There may be a gap between what you feel at home and what appears in the report, so it's worth continuing to monitor over several days of practice.",
-            },
+                : "There may be a gap between what you feel at home and what appears in the report, so it's worth continuing to monitor over several days of practice."
+            }
           },
           readiness: { readiness: tq >= 28 ? "ready" : tq >= 12 ? "forming" : "insufficient" },
           confidence: { confidenceBand: acc >= 78 ? "high" : acc >= 58 ? "medium" : "low" },
-          decision: { cannotConcludeYet },
+          decision: { cannotConcludeYet }
         },
-        __copilotSyntheticAggregate: true,
+        __copilotSyntheticAggregate: true
       };
       out.push({ subject: "math", tr: syntheticTr });
     }
@@ -354,7 +350,7 @@ export function listCopilotAnchoredTopicRows(payload) {
  * @param {string} scopeId
  * @param {string} [subjectId]
  * @param {unknown} payload
- * @returns {{ subjectId: string, topicRow: object, contracts: ReturnType<typeof contractsFromTopicRow> } | null}
+ * @returns {{ subjectId: string, topicRow: object, contracts: ReturnType<typeof contractsFromTopicRow> } || null}
  */
 /**
  * Read-only mapping of intelligenceV1 for Copilot / planning (no decisions).
@@ -370,7 +366,7 @@ export function getIntelligenceSignals(unit) {
   return {
     weaknessLevel: String(iv.weakness?.level || "none"),
     confidenceBand: String(iv.confidence?.band || "low"),
-    recurrence: !!p.recurrenceFull,
+    recurrence: !!p.recurrenceFull
   };
 }
 
@@ -398,7 +394,7 @@ export function readContractsSliceForScope(scopeType, scopeId, subjectId, payloa
 
 export default {
   readContractsSliceForScope,
-  subjectLabelHe,
+  subjectLabel,
   normalizeSubjectId,
   SUBJECT_ORDER,
   listAllAnchoredTopicRows,
@@ -410,5 +406,5 @@ export default {
   findFirstAnchoredTopicRowForSubject,
   findTopicRowByKey,
   contractsFromTopicRow,
-  getIntelligenceSignals,
+  getIntelligenceSignals
 };

@@ -47,10 +47,10 @@ function clip(s, max) {
 /** Child-friendly English instruction (normalize legacy Hebrew slash forms if present). */
 export function normalizePhonicsHebrewInstruction(text) {
   return String(text || "")
-    .replace(/בחר\/י/gu, "Choose")
-    .replace(/שמע\/י/gu, "Listen")
-    .replace(/קרא\/י/gu, "Read")
-    .replace(/האזינ\/י/gu, "Listen")
+    .replace(/(?!)/gu, "Choose")
+    .replace(/(?!)/gu, "Listen")
+    .replace(/(?!)/gu, "Read")
+    .replace(/(?!)/gu, "Listen")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -199,7 +199,7 @@ export function attachEnglishPhonicsPracticeAudio(question, ctx) {
     question.questionLabel || row.question || question.params?.phonicsInstruction || ""
   ).trim();
   const stimulus =
-    String(question.params?.phonicsStimulus || "").trim() ||
+    String(question.params?.phonicsStimulus || "").trim() |
     getPhonicsPracticeStimulus(row);
 
   const segments = buildPhonicsPracticeTtsSegments({
@@ -270,7 +270,7 @@ export function attachEnglishVocabPracticeAudio(question, ctx) {
 
   const params = question.params || {};
   const word = String(params.word || "").trim();
-  const direction = String(params.direction || "en_to_he");
+  const direction = String(params.direction || "en_to_meaning");
   const listKey = String(params.listKey || "vocab");
 
   if (!word) return false;
@@ -278,7 +278,7 @@ export function attachEnglishVocabPracticeAudio(question, ctx) {
   /** @type {{ locale: string, text: string }[]} */
   const segments = [];
 
-  if (direction === "en_to_he") {
+  if (direction === "en_to_meaning") {
     segments.push({ locale: "en-US", text: "What is the meaning of the word" });
     segments.push({ locale: "en-US", text: word });
     const heAnswers = question.answers.slice(0, 4).map(String).filter(Boolean);

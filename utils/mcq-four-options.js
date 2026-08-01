@@ -26,13 +26,11 @@ const GEOMETRY_HEBREW_LABEL_KINDS = new Set([
   "shapes_basic_rectangle",
   "shapes_basic_properties_square",
   "shapes_basic_properties_rectangle",
-  "shapes_basic_properties_angles",
-]);
+  "shapes_basic_properties_angles"]);
 
 const GEOMETRY_INDEX_LABEL_KINDS = new Set([
   "quadrilaterals",
-  "solids",
-]);
+  "solids"]);
 
 const ENGLISH_GRAMMAR_FALLBACK = [
   "am",
@@ -51,8 +49,7 @@ const ENGLISH_GRAMMAR_FALLBACK = [
   "will",
   "would",
   "shall",
-  "should",
-];
+  "should"];
 
 const ENGLISH_FALLBACK_DISTRACTORS = [
   "not always",
@@ -62,8 +59,7 @@ const ENGLISH_FALLBACK_DISTRACTORS = [
   "could be different",
   "not necessarily",
   "often",
-  "mostly not",
-];
+  "mostly not"];
 
 /** @param {unknown} q */
 function readAnswers(q) {
@@ -137,8 +133,7 @@ function synthesizeEnglishDistractor(correct, usedKeys) {
     `did ${ca}`,
     `doesn't ${ca}`,
     `don't ${ca}`,
-    `${ca}n't`,
-  ];
+    `${ca}n't`];
   return pickFromPool(correct, usedKeys, variants);
 }
 
@@ -199,7 +194,7 @@ export function ensureMcqFourOptions(q, ctx = {}) {
         : answers[0];
 
   // Niqqud codepoints — used for a lighter key that preserves punctuation.
-  const NIQQUD_RE_LOCAL = /[\u0591-\u05C7]/g;
+  const NIQQUD_RE_LOCAL = /(?!)/g;
 
   /** @type {string[]} */
   const deduped = [];
@@ -209,8 +204,8 @@ export function ensureMcqFourOptions(q, ctx = {}) {
     if (!t) return false;
     // Use a lightweight key: lowercase + strip niqqud + collapse whitespace.
     // We intentionally do NOT strip punctuation from edges (unlike normalizeOptionForCompare)
-    // because MCQ options that differ only in punctuation (e.g. "היום חם." vs "היום חם?"
-    // vs "היום חם" in a grammar question) are semantically distinct and must all be kept.
+    // because MCQ options that differ only in punctuation (e.g. " ." vs " ?"
+    // vs " " in a grammar question) are semantically distinct and must all be kept.
     // For purely-punctuation options such as "." or "?" we fall back to the raw lowercase
     // text so they are never silently dropped.
     const lightKey = t.toLowerCase().replace(NIQQUD_RE_LOCAL, "").replace(/\s+/g, " ");
@@ -265,7 +260,7 @@ export function ensureMcqFourOptions(q, ctx = {}) {
   answers = shuffleMcqOptions(answers);
 
   // Use the same lighter key as pushUnique so that punctuation-distinguishing options
-  // (e.g. "שלי?" vs "שלי.") are not accidentally conflated when locating the correct answer.
+  // (e.g. "?" vs ".") are not accidentally conflated when locating the correct answer.
   const correctLightKey = (correct.toLowerCase().replace(NIQQUD_RE_LOCAL, "").replace(/\s+/g, " ")) || correct.toLowerCase();
   const newIdx = answers.findIndex((a) => {
     const ak = (a.toLowerCase().replace(NIQQUD_RE_LOCAL, "").replace(/\s+/g, " ")) || a.toLowerCase();

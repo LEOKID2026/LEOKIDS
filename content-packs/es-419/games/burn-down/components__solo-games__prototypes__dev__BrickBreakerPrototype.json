@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Rompe ladrillos",
+    "prototype_move_paddle_break_bricks": "Prototipo · mover paleta · romper ladrillos",
+    "drag_move_below_don_t_miss_the_ball": "Arrastrar/mover hacia abajo · no te pierdas la pelota",
+    "bx_s_ballx_ball_r": "bx &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "by &&\r\n          s.ballY - BALL_R",
+    "all_bricks_cleared": "¡Todos los ladrillos despejados! 🎉",
+    "tap_to_play_again": "Toca para jugar de nuevo",
+    "ball_dropped": "¡Balón caído!"
+  }
+}

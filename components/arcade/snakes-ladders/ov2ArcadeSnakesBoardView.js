@@ -530,17 +530,17 @@ function PawnWithTurnRing({ seat, turnSeat, dense, edgeHang }) {
  *
  * @param {{
  *   edges: { ladders: Record<string, number>, snakes: Record<string, number> },
- *   positions: Record<string | number, number>,
- *   turnSeat: number | null,
- *   mySeat: number | null,
+ *   positions: Record<string || number, number>,
+ *   turnSeat: number || null,
+ *   mySeat: number || null,
  *   memberBySeat: Map<number, { display_name?: string }>,
- *   diceValue: number | null,
+ *   diceValue: number || null,
  *   diceEmphasized: boolean,
  *   finished: boolean,
  *   onRoll: () => void,
  *   rollDisabled: boolean,
  *   err?: string,
- *   pawnMotion?: null | { seat: number, displayCell: number, phase: string, preCell: number, finalCell: number, kind: 'ladder'|'snake'|null },
+ *   pawnMotion?: null || { seat: number, displayCell: number, phase: string, preCell: number, finalCell: number, kind: 'ladder'|'snake'|null },
  * }} props
  */
 export function Ov2ArcadeSnakesPlayfield({

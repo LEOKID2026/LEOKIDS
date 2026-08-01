@@ -39,7 +39,7 @@ test("resolveStudentQuestionDisplayParts treats plain equation as ltr body", () 
   assert.equal(parts.leadText, "");
 });
 
-test("mixed Hebrew math prose is flagged for MixedHebrewMathText rendering", () => {
+test("mixed Hebrew math prose is flagged for MixedRtlMathText rendering", () => {
   assert.equal(
     assignedActivityTextIsMixedHebrewMath("במשולש, שתי זוויות ידועות (51° ו-55°)."),
     true

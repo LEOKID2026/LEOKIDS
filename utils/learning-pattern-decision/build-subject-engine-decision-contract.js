@@ -16,8 +16,7 @@ const ENGINE_DECISION_RANK = {
   speed_pressure_pattern: 1,
   early_direction_only: 1,
   insufficient_data: 0,
-  none: 0,
-};
+  none: 0};
 
 /**
  * @param {Record<string, unknown>|null|undefined} row
@@ -25,8 +24,8 @@ const ENGINE_DECISION_RANK = {
  */
 function extractTopicEngineContract(row) {
   const edc =
-    row?.engineDecisionContract ||
-    row?.learningPatternDecision?.engineDecisionContract ||
+    row?.engineDecisionContract |
+    row?.learningPatternDecision?.engineDecisionContract |
     null;
   if (!edc || typeof edc !== "object") return null;
 
@@ -78,8 +77,7 @@ function extractTopicEngineContract(row) {
     ).trim(),
     templateId: String(lpd?.templateId || row?.templateId || "").trim() || null,
     _decisionRank: ENGINE_DECISION_RANK[engineDecision] || 0,
-    _evidenceRank: evidenceStrengthRank(evidenceStrength),
-  };
+    _evidenceRank: evidenceStrengthRank(evidenceStrength)};
 }
 
 /**
@@ -120,12 +118,12 @@ function deriveSubjectDecision(priorityTopics, allTopics, speedCheckTopicsCount 
   const stable = allTopics.filter(
     (t) =>
       String(t.engineDecision || "") !== "speed_pressure_pattern" &&
-      (String(t.engineDecision || "") === "partial_stable" ||
+      (String(t.engineDecision || "") === "partial_stable" |
         String(t.action || "") === "maintain"),
   );
 
   // Product-approved routing order (mixed_subject_profile only ever describes exactly
-  // ONE topic needing strengthening — its approved copy says "נושא אחד שכדאי לחזק" and
+  // ONE topic needing strengthening — its approved copy says "" and
   // must never be used when two or more topics have gaps). speed_check_only_subject is
   // NOT a gap and NOT a strengthening decision — it only applies when there is nothing
   // else to report except topic(s) flagged purely for a speed-mode check.
@@ -147,8 +145,8 @@ function deriveRecommendedSubjectAction(priorityTopics, subjectDecision) {
   const gaps = priorityTopics.filter(isActionableGapTopic);
   if (
     gaps.length >= 1 &&
-    (subjectDecision === "multiple_topic_gaps" ||
-      subjectDecision === "focused_strengthening_needed" ||
+    (subjectDecision === "multiple_topic_gaps" |
+      subjectDecision === "focused_strengthening_needed" |
       subjectDecision === "mixed_subject_profile")
   ) {
     return "remediate_priority_topics_same_level";
@@ -232,8 +230,8 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
   const actionableCandidates = allExtracted.filter(
     (t) =>
       t.parentSafeFinding &&
-      (t.engineDecision === "clear_topic_gap" ||
-        t.engineDecision === "topic_needs_strengthening" ||
+      (t.engineDecision === "clear_topic_gap" |
+        t.engineDecision === "topic_needs_strengthening" |
         t.engineDecision === "early_direction_only"),
   );
 
@@ -263,15 +261,14 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
   }
 
   const strongestDetectedPatterns = [
-    ...new Set(priorityTopics.map((t) => t.detectedPattern).filter(Boolean)),
-  ];
+    ...new Set(priorityTopics.map((t) => t.detectedPattern).filter(Boolean))];
 
   const mainGaps = priorityTopics.filter(isActionableGapTopic).map((t) => t.topicKey);
   const stableStrengths = allTopicsClean
     .filter(
       (t) =>
         String(t.engineDecision || "") !== "speed_pressure_pattern" &&
-        (String(t.engineDecision || "") === "partial_stable" ||
+        (String(t.engineDecision || "") === "partial_stable" |
           String(t.action || "") === "maintain"),
     )
     .map((t) => t.topicKey)
@@ -283,11 +280,11 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
   const speedCheckEvidenceQualifies =
     !!prioritySpeedTopic &&
     (evidenceStrengthRank(String(prioritySpeedTopic.evidenceStrength || "none")) >=
-      evidenceStrengthRank("supported") ||
+      evidenceStrengthRank("supported") |
       Number(prioritySpeedTopic.questions) >= 20);
 
   // Blocks the legacy (engine-unaware) subject-summary/parent-letter fallback paths —
-  // e.g. findClearWeakTopicInSubject, which can otherwise declare "נקודת חיזוק ברורה"
+  // e.g. findClearWeakTopicInSubject, which can otherwise declare ""
   // (a clear, definite knowledge gap) purely from accuracy/volume, with zero awareness
   // that the only active decision here is speed_check_only_subject (not a proven gap).
   const blockedLegacySummary =
@@ -297,7 +294,7 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
         evidenceStrengthRank(String(t.evidenceStrength || "none")) >=
           evidenceStrengthRank("supported") || Number(t.questions) >= 20
       );
-    }) ||
+    }) |
     (subjectDecision === "speed_check_only_subject" && speedCheckEvidenceQualifies);
 
   if (blockedLegacySummary) traceReason.push("blockedLegacySummary:true");
@@ -315,8 +312,7 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
       ? "SUBJECT_CLOSING_ENGINE_CONTRACT"
       : "SUBJECT_CLOSING_LEGACY",
     priorityTopicKeys: priorityTopics.map((t) => t.topicKey),
-    renderSource: "subjectEngineDecisionContract",
-  };
+    renderSource: "subjectEngineDecisionContract"};
 
   for (const t of priorityTopics) {
     traceReason.push(
@@ -340,8 +336,7 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
     recommendedSubjectAction,
     blockedLegacySummary,
     traceReason,
-    summarySlots,
-  };
+    summarySlots};
 }
 
 /**
@@ -370,8 +365,7 @@ export function buildSubjectEngineDecisionContractFromTopicMap(subjectId, topicM
         engineDecisionContract: row.engineDecisionContract,
         learningPatternDecision: row.learningPatternDecision,
         parentVisibleFinding: row.parentVisibleFinding,
-        templateId: row.learningPatternDecision?.templateId,
-      });
+        templateId: row.learningPatternDecision?.templateId});
     }
   }
   return buildSubjectEngineDecisionContract(subjectId, rows, opts);
@@ -380,7 +374,7 @@ export function buildSubjectEngineDecisionContractFromTopicMap(subjectId, topicM
 /**
  * @param {Record<string, unknown>|null|undefined} contract
  * @returns {string|null}
- * @deprecated Prefer resolveSubjectSummaryTextFromEngineContract from resolve-subject-owner-copy.js with subjectLabelHe.
+ * @deprecated Prefer resolveSubjectSummaryTextFromEngineContract from resolve-subject-owner-copy.js with subjectLabel.
  */
 export function resolveSubjectSummaryTextFromEngineContractLegacyFinding(contract) {
   if (!contract?.blockedLegacySummary) return null;
@@ -391,8 +385,7 @@ export function resolveSubjectSummaryTextFromEngineContractLegacyFinding(contrac
 
 export {
   resolveSubjectSummaryTextFromEngineContract,
-  resolveSubjectLetterOwnerCopyHe,
-} from "./resolve-subject-owner-copy.js";
+  resolveSubjectLetterOwnerCopyHe} from "./resolve-subject-owner-copy.js";
 
 /**
  * @param {Record<string, unknown>|null|undefined} sp

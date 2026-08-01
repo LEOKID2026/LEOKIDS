@@ -14,7 +14,7 @@ import { detectCrossSubjectPatternsV1 } from "./cross-subject-engine-v1.js";
 
 export const PROFESSIONAL_ENGINE_OUTPUT_V1 = "1.0.0";
 
-const SUBJECTS = ["math", "hebrew", "english", "science", "geometry", "moledet-geography"];
+const SUBJECTS = ["math", "english", "science", "geometry"];
 
 /**
  * @param {object} diagnosticEngineV2
@@ -65,7 +65,7 @@ export function enrichDiagnosticEngineV2WithProfessionalEngineV1(
   }
 
   const mastery = computeMasteryRollupV1(maps, summaryCounts, {
-    misconceptionErrorCountsBySubjectSkill,
+    misconceptionErrorCountsBySubjectSkill
   });
   const calibration = buildCalibrationV1(maps, summaryCounts, studentGradeKey);
   const reliability = assessReliabilityV1(maps, rawMistakesBySubject, startMs, endMs);
@@ -103,7 +103,7 @@ export function enrichDiagnosticEngineV2WithProfessionalEngineV1(
         : null,
     strongMasterySignal: !!strongMastery && !thin,
     strongMasterySubjectId: strongMastery?.subjectId,
-    strongMasterySkillId: strongMastery?.skillId,
+    strongMasterySkillId: strongMastery?.skillId
   });
 
   const pf = diagnosticEngineV2.professionalFrameworkV1;
@@ -119,7 +119,7 @@ export function enrichDiagnosticEngineV2WithProfessionalEngineV1(
   const globalDoNotConclude = [
     ...(pf?.globalDoNotConclude || []),
     "Educational diagnostic support only-not a medical or clinical assessment.",
-    "Cross-subject patterns require confirming probes in each involved subject.",
+    "Cross-subject patterns require confirming probes in each involved subject."
   ];
 
   diagnosticEngineV2.professionalEngineV1 = {
@@ -142,8 +142,8 @@ export function enrichDiagnosticEngineV2WithProfessionalEngineV1(
     limitations: [
       "English generator metadata varies by pool row coverage.",
       "Subskill and misconception precision is limited until question pools/generators carry dense expectedErrorTypes and prerequisiteSkillIds.",
-      "Mastery aggregates by skill-full diagnostic precision depends on difficultyTier (or equivalent) on topic rows where available.",
-    ],
+      "Mastery aggregates by skill-full diagnostic precision depends on difficultyTier (or equivalent) on topic rows where available."
+    ]
   };
 
   return diagnosticEngineV2;
@@ -152,11 +152,9 @@ export function enrichDiagnosticEngineV2WithProfessionalEngineV1(
 function getSubjectVolume(summaryCounts, sid) {
   const k = {
     math: "mathQuestions",
-    hebrew: "hebrewQuestions",
     english: "englishQuestions",
     science: "scienceQuestions",
-    geometry: "geometryQuestions",
-    "moledet-geography": "moledetGeographyQuestions",
+    geometry: "geometryQuestions"
   }[sid];
   return Number(summaryCounts?.[k]) || 0;
 }
@@ -167,7 +165,7 @@ function getSubjectVolume(summaryCounts, sid) {
 export function buildProfessionalEngineOutputV1(diagnosticEngineV2, maps, summaryCounts, opts) {
   const clone = {
     ...diagnosticEngineV2,
-    units: diagnosticEngineV2?.units,
+    units: diagnosticEngineV2?.units
   };
   enrichDiagnosticEngineV2WithProfessionalEngineV1(clone, maps, summaryCounts, opts);
   return clone.professionalEngineV1;

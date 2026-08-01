@@ -1,4 +1,4 @@
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
 
 function TableCell({ value }) {
@@ -12,7 +12,7 @@ function TableCell({ value }) {
       }`}
       dir="ltr"
     >
-      <MixedHebrewMathText text={trimmed} />
+      <MixedRtlMathText text={trimmed} />
     </td>
   );
 }
@@ -42,7 +42,7 @@ export default function BookPipeTable({ headers = [], rows = [] }) {
                   dir="ltr"
                 >
                   {headers[i] ? (
-                    <MixedHebrewMathText text={headers[i]} />
+                    <MixedRtlMathText text={headers[i]} />
                   ) : null}
                 </th>
               ))}

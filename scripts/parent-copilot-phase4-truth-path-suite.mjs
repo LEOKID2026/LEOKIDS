@@ -17,8 +17,8 @@ const { resolveScope } = await import(pathToFileURL(join(ROOT, "utils/parent-cop
 const { buildTruthPacketV1 } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/truth-packet-v1.js")).href);
 const { planConversation } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/conversation-planner.js")).href);
 const { composeAnswerDraft } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/answer-composer.js")).href);
-const { normalizeFreeformParentUtteranceHe } = await import(
-  pathToFileURL(join(ROOT, "utils/parent-copilot/utterance-normalize-he.js")).href
+const { normalizeFreeformParentUtterance } = await import(
+  pathToFileURL(join(ROOT, "utils/parent-copilot/utterance-normalize.js")).href
 );
 const sessionMemory = (await import(pathToFileURL(join(ROOT, "utils/parent-copilot/session-memory.js")).href)).default;
 const parentCopilot = (await import(pathToFileURL(join(ROOT, "utils/parent-copilot/index.js")).href)).default;
@@ -90,7 +90,7 @@ function payloadIneligibleSingleSubject(payload) {
  * @param {null|object} selectedContextRef
  */
 function manualDeterministicDraft(utterance, payload, selectedContextRef = null) {
-  const utteranceStr = normalizeFreeformParentUtteranceHe(utterance);
+  const utteranceStr = normalizeFreeformParentUtterance(utterance);
   const stageA = interpretFreeformStageA(utterance, payload);
   const scopeRes = resolveScope({ payload, utterance: utteranceStr, selectedContextRef, stageA });
   assert.equal(scopeRes.resolutionStatus, "resolved", "manual path expects resolved scope");
@@ -142,7 +142,7 @@ assert.deepEqual(stripBlocks(manualPipe.answerBlocks), stripBlocks(rPipe.answerB
 // --- Executive truth (aggregate → executive scope) ---
 const execRes = resolveScope({
   payload,
-  utterance: normalizeFreeformParentUtteranceHe("מה הכי בולט בתקופה בדוח?"),
+  utterance: normalizeFreeformParentUtterance("מה הכי בולט בתקופה בדוח?"),
   selectedContextRef: null,
 });
 assert.equal(execRes.scope?.scopeType, "executive");
@@ -156,7 +156,7 @@ assert.ok(
 // --- Subject-scoped truth ---
 const subRes = resolveScope({
   payload,
-  utterance: normalizeFreeformParentUtteranceHe("מה המשמעות בחשבון?"),
+  utterance: normalizeFreeformParentUtterance("מה המשמעות בחשבון?"),
   selectedContextRef: null,
 });
 assert.equal(subRes.scope?.scopeType, "subject");
@@ -169,7 +169,7 @@ assert.ok(
 // --- Topic-scoped truth ---
 const topicRes = resolveScope({
   payload,
-  utterance: normalizeFreeformParentUtteranceHe("מה המצב בנושא השברים?"),
+  utterance: normalizeFreeformParentUtterance("מה המצב בנושא השברים?"),
   selectedContextRef: null,
 });
 assert.equal(topicRes.scope?.scopeType, "topic");

@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "digit1": "Dígito1",
+    "digit2": "Dígito2",
+    "digit3": "Dígito3",
+    "drag_the_shape_to_the_right_group_50_for_each_correct_sort": "¡Arrastra la forma al grupo correcto! +50 por cada clasificación correcta.",
+    "sort_shapes": "Ordenar formas",
+    "p_mx_0_max_lg_p_mb_1_max_lg_p_w_full_max_lg_p_max_w_none_max_lg_p_rounde": "p]:mx-0 max-lg:[&>p]:mb-1 max-lg:[&>p]:w-full max-lg:[&>p]:max-w-none max-lg:[&>p]:redondeado-ninguno max-lg:[&>p]:borde-x-0\">",
+    "div_w_full_max_lg_div_max_w_none_max_lg_div_rounded_none_max_lg_div_bord": "div]:w-full max-lg:[&>div]:max-w-none max-lg:[&>div]:redondeado-ninguno max-lg:[&>div]:border-x-0\">",
+    "you_re_done": "¡Ya terminaste!",
+    "next_item": "Siguiente artículo:",
+    "shuffling": "¡Arrastramiento!"
+  }
+}

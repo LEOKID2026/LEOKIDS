@@ -3,6 +3,7 @@ import MathG5BookShell from "../../../../../components/learning-book/MathG5BookS
 import LearningBookIndexContent from "../../../../../components/learning-book/LearningBookIndexContent";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { MATH_G5_BOOK_META } from "../../../../../lib/learning-book/math-g5-registry";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 export default function MathG5BookIndex({ batches }) {
   useIOSViewportFix();
@@ -19,8 +20,10 @@ export default function MathG5BookIndex({ batches }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx) {
+  const { params, req, resolvedUrl, query } = ctx;
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadMathG5TocEntries } = await import("../../../../../lib/learning-book/load-math-g5-pages");
-  const batches = loadMathG5TocEntries();
+  const batches = loadMathG5TocEntries({ contentLocale });
   return { props: { batches } };
 }

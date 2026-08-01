@@ -77,12 +77,12 @@ export function mathTopicParentDisplayCoreFromRow(row, rowKey = "") {
 }
 
 /**
- * מעדכן displayName + displayNameScoped לכל שורות המתמטיקה במפה.
+ *  displayName + displayNameScoped    .
  * @param {Record<string, unknown>|null|undefined} mathOperations
  */
 export function applyMathScopedParentDisplayNames(mathOperations) {
   if (!mathOperations || typeof mathOperations !== "object") return;
-  const list = Object.entries(mathOperations).filter(([, row]) => row && typeof row === "object");
+  const list = Object.entries(mathOperations).filter(([ row]) => row && typeof row === "object");
   if (!list.length) return;
   const countByIdentity = new Map();
   for (const [itemKey, row] of list) {

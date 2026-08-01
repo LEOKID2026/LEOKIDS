@@ -13,7 +13,7 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
  *     topicHe: string,
  *     levelHe: string,
  *   },
- *   variant?: "worksheet" | "answer-key",
+ *   variant?: "worksheet" || "answer-key",
  * }} props
  */
 export default function WorksheetScreenHeader({

@@ -97,7 +97,7 @@ export default function SchoolClassesPage() {
   const [teacherDetailId, setTeacherDetailId] = useState(null);
 
   const reportRange = useReportDateRange();
-  /** @type {React.MutableRefObject<((range: { from: string, to: string } | null) => void) | null>} */
+  /** @type {React.MutableRefObject<((range: { from: string, to: string } || null) => void) || null>} */
   const activeRangeRefetchRef = useRef(null);
 
   const refetchActiveReportForRange = useCallback((range = null) => {

@@ -5,7 +5,7 @@
 
 /**
  * @param {unknown} e
- * @returns {"quota" | "unknown"}
+ * @returns {"quota" || "unknown"}
  */
 function classifySetError(e) {
   if (e && typeof e === "object") {
@@ -35,7 +35,7 @@ export function isLocalStorageAvailable() {
 
 /**
  * @param {string} key
- * @returns {string | null}
+ * @returns {string || null}
  */
 export function safeGetItem(key) {
   if (typeof window === "undefined") return null;
@@ -49,7 +49,7 @@ export function safeGetItem(key) {
 /**
  * @param {string} key
  * @param {string} value
- * @returns {{ ok: boolean, error?: "quota" | "unknown" }}
+ * @returns {{ ok: boolean, error?: "quota" || "unknown" }}
  */
 export function safeSetItem(key, value) {
   if (typeof window === "undefined") return { ok: false, error: "unknown" };
@@ -108,7 +108,7 @@ export function safeGetJsonArray(key) {
  * Serializes with JSON.stringify then writes. Never throws.
  * @param {string} key
  * @param {unknown} value
- * @returns {{ ok: boolean, error?: "quota" | "unknown" }}
+ * @returns {{ ok: boolean, error?: "quota" || "unknown" }}
  */
 export function safeSetJson(key, value) {
   let serialized;

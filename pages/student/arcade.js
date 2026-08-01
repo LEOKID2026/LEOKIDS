@@ -351,7 +351,7 @@ export default function StudentArcadePage() {
   const [homeAvatarCustomDataUrl, setHomeAvatarCustomDataUrl] = useState("");
   const [homeAvatarBackground, setHomeAvatarBackground] = useState("sky");
   const [pendingInvite, setPendingInvite] = useState(null);
-  /** @type {{ kind: string; room: Record<string, unknown> } | null} */
+  /** @type {{ kind: string; room: Record<string, unknown> } || null} */
   const [roomHighlight, setRoomHighlight] = useState(null);
 
   useArcadeClubPresence();

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "manage_child_and_parent_access": "Administrar el acceso de padres e hijos",
+    "view_reports_and_child_details": "Ver informes y datos del niño"
+  }
+}

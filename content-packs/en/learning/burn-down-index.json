@@ -129,13 +129,7 @@
   "lib__parent-server__attach-unified-learning-time.server": {
     "asia_jerusalem": "Asia/Jerusalem"
   },
-  "lib__parent-ui__learning-time-exclusive-breakdown-display": {
-    "history": "History",
-    "hebrew": "Hebrew",
-    "social_studies": "Social Studies",
-    "geography": "Geography",
-    "social_studies_geography": "Social Studies & Geography"
-  },
+  "lib__parent-ui__learning-time-exclusive-breakdown-display": {},
   "pages__api__learning-simulator__generate-expert-review-pack": {
     "missing_x_engine_review_token_header": "Missing x-engine-review-token header",
     "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry": "Run npm run qa:learning-simulator:professional-engine (PASS), then retry."

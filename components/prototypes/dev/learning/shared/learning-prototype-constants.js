@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 import {
   SESSION_TASK_COUNT,

@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-11T12:00:00.000Z",
+  "constants": {
+    "minMistakesPerPatternFamily": 5,
+    "minMistakesForStrongRecommendation": 10,
+    "maxWeaknesses": 3,
+    "maxStrengthRows": 3,
+    "maxMaintain": 2,
+    "maxImproving": 2,
+    "maxStableExcellence": 3,
+    "stableExcellenceMinAccuracy": 92,
+    "stableExcellenceMinQuestions": 22
+  },
+  "subjects": {
+    "math": {
+      "subject": "matemáticas",
+      "subjectLabel": "Matemáticas",
+      "mistakeEventCount": 12,
+      "wrongCount": 12,
+      "hasAnySignal": true,
+      "summaryHe": "La imagen de la asignatura en matemáticas: el niño logra componer con el tiempo. También hay lugar para el refuerzo al comparar cantidades o números.",
+      "stableExcellence": [
+        {
+          "id": "math:addition:learning",
+          "labelHe": "Suma",
+          "questions": 42,
+          "accuracy": 93,
+          "confidence": "alto",
+          "needsPractice": false,
+          "excellent": true,
+          "tierHe": "A su hijo le está yendo bien en este tema con el tiempo."
+        }
+      ],
+      "topStrengths": [],
+      "topWeaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Dificultad para comparar cantidades o números.",
+          "mistakeCount": 7,
+          "confidence": "moderado",
+          "tierHe": "Dificultad enfocada"
+        }
+      ],
+      "parentTopicToneByKey": {},
+      "parentStrengthWithCautionLinesByKey": {},
+      "parentActionHe": "Tres veces por semana, de 15 a 20 minutos cada sesión: elija una tarea matemática sobre el tema de comparar cantidades o números: lean juntos la formulación, formule en voz alta lo que se da y lo que se solicita, realice un primer paso en una hoja borrador y solo después escriba una respuesta final y coteje con la solución.",
+      "nextWeekGoalHe": "Objetivo de refuerzo: aumentar el porcentaje de éxito al comparar cantidades o números (al menos un intento exitoso más que la semana pasada). Objetivo de retención: continuar con una rutina de práctica relajada de composición para mantener el nivel de precisión.",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "¿En cuántas bolsas es mayor el precio de la computadora?",
+          "questionLabel": null,
+          "correctAnswer": 120,
+          "userAnswer": 102,
+          "confidence": "moderado"
+        },
+        {
+          "type": "success",
+          "titleHe": "Lo que su hijo hace bien en la práctica",
+          "bodyHe": "En la asignatura de ensayo hay buenos resultados en el periodo seleccionado: aproximadamente el 93% acierta en 42 preguntas.",
+          "confidence": "alto"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Dificultad para comparar cantidades o números.",
+          "mistakeCount": 7,
+          "confidence": "moderado",
+          "tierHe": "Dificultad enfocada"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:math:w:0",
+          "textHe": "Deberías practicar un poco más sobre el tema: al comparar cantidades o números, se registraron 7 errores similares en el período seleccionado. Nos quedamos con la práctica enfocada y no con “intentar arreglar todo de una vez”.",
+          "strength": "moderado"
+        }
+      ],
+      "studentRecommendationsMaintain": [
+        {
+          "id": "stu-maint:math:addition:learning",
+          "textHe": "Continúe practicando cómodamente sobre el tema de la conexión: el nivel se mantiene (precisión de alrededor del 93%).",
+          "strength": "fuerte"
+        }
+      ],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:math:w:0",
+          "textHe": "Comienza una repetición del mismo tipo de error: en el tema de comparar cantidades o números. Para la próxima semana, basta con una mirada tranquila y una práctica breve y concentrada.",
+          "strength": "moderado"
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "id": "par-maint:math:addition:learning",
+          "textHe": "Se recomienda fomentar la perseverancia en la conexión: verá éxitos repetidos; Mantener un hábito positivo es tan importante como corregir errores.",
+          "strength": "fuerte"
+        }
+      ],
+      "evidenceMistake": {
+        "exerciseText": "¿En cuántas bolsas es mayor el precio de la computadora?",
+        "questionLabel": null,
+        "correctAnswer": 120,
+        "userAnswer": 102,
+        "confidence": "moderado"
+      },
+      "evidenceSuccess": {
+        "titleHe": "Lo que su hijo hace bien en la práctica",
+        "bodyHe": "En la asignatura de ensayo hay buenos resultados en el periodo seleccionado: aproximadamente el 93% acierta en 42 preguntas.",
+        "confidence": "alto"
+      },
+      "insufficientData": [
+        {
+          "mistakeCount": 2,
+          "note": "Menos de 5 errores en el mismo patrón: todavía es demasiado pronto para determinar una dificultad recurrente"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "geometry": {
+      "subject": "geometría",
+      "subjectLabel": "Geometría",
+      "mistakeEventCount": 9,
+      "wrongCount": 9,
+      "hasAnySignal": true,
+      "summaryHe": "El panorama general en geometría: también hay lugar para reforzar la confusión recurrente entre perímetro y área.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Confusión repetida entre perímetro y área",
+          "mistakeCount": 6,
+          "confidence": "moderado",
+          "tierHe": "Dificultad enfocada"
+        }
+      ],
+      "parentActionHe": "Tres veces por semana, de 15 a 20 minutos cada sesión: elija una tarea de geometría sobre la confusión recurrente entre perímetro y área: lean juntos el problema, digan en voz alta lo que se da y lo que se pide, den un primer paso en papel de desecho, luego escriban la respuesta final y verifíquela.",
+      "nextWeekGoalHe": "Objetivo de práctica: aumentar el éxito en la confusión recurrente entre perímetro y área (al menos un intento más exitoso que la semana pasada).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "¿Cuál es el perímetro de un rectángulo de 5x3 cm?",
+          "questionLabel": null,
+          "correctAnswer": "16cm",
+          "userAnswer": "15cm",
+          "confidence": "moderado"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Confusión repetida entre perímetro y área",
+          "mistakeCount": 6,
+          "confidence": "moderado",
+          "tierHe": "Dificultad enfocada"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:geometry:w:0",
+          "textHe": "Deberías practicar un poco más sobre el tema: confusión repetida entre alcance y área: se registraron 6 errores similares en el período seleccionado. Nos quedamos con la práctica enfocada y no con “intentar arreglar todo de una vez”.",
+          "strength": "moderado"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:geometry:w:0",
+          "textHe": "Comienza una repetición del mismo tipo de error: en el tema de la repetida confusión entre ámbito y ámbito. Para la próxima semana, basta con una mirada tranquila y una práctica breve y concentrada.",
+          "strength": "moderado"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "¿Cuál es el perímetro de un rectángulo de 5x3 cm?",
+        "questionLabel": null,
+        "correctAnswer": "16cm",
+        "userAnswer": "15cm",
+        "confidence": "moderado"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "english": {
+      "subject": "inglés",
+      "subjectLabel": "Inglés",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "science": {
+      "subject": "ciencia",
+      "subjectLabel": "Ciencias",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    }
+  }
+}

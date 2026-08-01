@@ -1,5 +1,5 @@
 /**
- * Phase 12 — השוואת צפי מול נצפה (מבוסס זיכרון פרוקסי + RTI/מגמה).
+ * Phase 12 —     (   + RTI/).
  */
 
 import {
@@ -7,10 +7,10 @@ import {
   EXPECTED_VS_OBSERVED_MATCH_LABEL_HE,
   FOLLOW_THROUGH_SIGNAL_LABEL_HE,
   OBSERVED_OUTCOME_STATE_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 /**
- * @param {object} ctx — פלט memory + Phase 10–11
+ * @param {object} ctx —  memory + Phase 10–11
  */
 export function buildOutcomeTrackingPhase12(ctx) {
   const sig = String(ctx?.priorRecommendationSignature || "unknown").trim();
@@ -69,13 +69,13 @@ export function buildOutcomeTrackingPhase12(ctx) {
   } else if (observedOutcomeState === "contradictory_response") {
     expectedVsObservedMatch = "misaligned";
   } else if (
-    (expectedOutcomeType === "accuracy_stabilization" && (observedOutcomeState === "clear_progress" || observedOutcomeState === "partial_progress")) ||
-    (expectedOutcomeType === "release_readiness" && (rti === "independence_growing" || indepUp || indep === "improving")) ||
+    (expectedOutcomeType === "accuracy_stabilization" && (observedOutcomeState === "clear_progress" || observedOutcomeState === "partial_progress")) |
+    (expectedOutcomeType === "release_readiness" && (rti === "independence_growing" || indepUp || indep === "improving")) |
     (expectedOutcomeType === "evidence_collection" && q >= 14 && rti !== "stalled_response")
   ) {
     expectedVsObservedMatch = "aligned";
   } else if (
-    (expectedOutcomeType === "accuracy_stabilization" && observedOutcomeState === "flat_response") ||
+    (expectedOutcomeType === "accuracy_stabilization" && observedOutcomeState === "flat_response") |
     (expectedOutcomeType === "release_readiness" && !indepUp && indep !== "improving" && rti !== "independence_growing")
   ) {
     expectedVsObservedMatch = "misaligned";
@@ -108,17 +108,17 @@ export function buildOutcomeTrackingPhase12(ctx) {
   else if (mem === "light_memory") outcomeTrackingConfidence = "low";
   else outcomeTrackingConfidence = "low";
 
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "").trim();
   const expLab = EXPECTED_OUTCOME_TYPE_LABEL_HE[expectedOutcomeType] || EXPECTED_OUTCOME_TYPE_LABEL_HE.unknown;
   const obsLab = OBSERVED_OUTCOME_STATE_LABEL_HE[observedOutcomeState] || OBSERVED_OUTCOME_STATE_LABEL_HE.not_observable_yet;
   const matchLab =
-    EXPECTED_VS_OBSERVED_MATCH_LABEL_HE[expectedVsObservedMatch] ||
+    EXPECTED_VS_OBSERVED_MATCH_LABEL_HE[expectedVsObservedMatch] |
     EXPECTED_VS_OBSERVED_MATCH_LABEL_HE.not_enough_evidence;
   const ftLab = FOLLOW_THROUGH_SIGNAL_LABEL_HE[followThroughSignal] || FOLLOW_THROUGH_SIGNAL_LABEL_HE.not_inferable;
 
-  let outcomeTrackingNarrativeHe = `ב«${displayName}»: ${expLab} · ${obsLab} · ${matchLab}.`;
+  let outcomeTrackingNarrativeHe = `«${displayName}»: ${expLab} · ${obsLab} · ${matchLab}.`;
   if (expectedVsObservedMatch === "misaligned") {
-    outcomeTrackingNarrativeHe = `ב«${displayName}»: ${expLab} - ובפועל ${obsLab} - ${matchLab}.`;
+    outcomeTrackingNarrativeHe = `«${displayName}»: ${expLab} -  ${obsLab} - ${matchLab}.`;
   }
 
   const outcomeTracking = {

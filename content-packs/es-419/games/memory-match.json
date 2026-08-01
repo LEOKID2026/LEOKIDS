@@ -1,0 +1,9 @@
+{
+  "gameId": "memory-match",
+  "title": "Coincidencia de memoria",
+  "blurb": "Voltea cartas, encuentra parejas e intenta ganar.",
+  "players": "1-2 jugadores",
+  "help": {
+    "howToPlay": "Jueguen juntos en el mismo dispositivo."
+  }
+}

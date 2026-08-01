@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "tic_tac_toe": "Tic-Tac-Toe",
+    "boards_from_3_3_to_7_7_with_score_tracking": "Tableros de 3×3 a 7×7 con seguimiento de puntuación.",
+    "rock_paper_scissors": "Piedra · Papel · Tijera",
+    "quick_rounds_best_of_all": "Rondas rápidas: lo mejor de todo.",
+    "tap_battle": "Toca batalla",
+    "each_side_taps_as_fast_as_they_can_who_wins": "Cada lado toca lo más rápido que puede: ¿quién gana?",
+    "memory_match": "Coincidencia de memoria",
+    "flip_cards_find_pairs_and_try_to_win": "Voltea cartas, encuentra parejas e intenta ganar."
+  }
+}

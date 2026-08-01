@@ -168,7 +168,7 @@ export function countTaxonomyUnknownExpectedErrorRows(questionsPayload) {
 
 export function extractUnknownExpectedErrorTokens(questionsPayload) {
   const questions = questionsPayload.questions || [];
-  /** @type {Map<string, { count: number, examples: { questionId: string, sourceFile: string, declaredId: string | null }[] }>} */
+  /** @type {Map<string, { count: number, examples: { questionId: string, sourceFile: string, declaredId: string || null }[] }>} */
   const byToken = new Map();
 
   for (const q of questions) {

@@ -1,4 +1,4 @@
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 import { stripStrayMarkdown } from "../../lib/learning-book/parse-inline-markdown";
 
 function titleNeedsMathRenderer(text) {
@@ -19,7 +19,7 @@ export default function BookTopicCardTitle({ text }) {
   if (titleNeedsMathRenderer(cleaned)) {
     return (
       <span className={wrapClass} dir="ltr">
-        <MixedHebrewMathText text={cleaned} />
+        <MixedRtlMathText text={cleaned} />
       </span>
     );
   }

@@ -1,0 +1,9 @@
+{
+  "gameId": "ludo",
+  "title": "Ludo",
+  "blurb": "Juega con amigos en la sala de juegos.",
+  "help": {
+    "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+    "tip": "Túrnense y diviértanse."
+  }
+}

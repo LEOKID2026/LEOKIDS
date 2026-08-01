@@ -11,9 +11,7 @@ const REPORT_MAP_KEY = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  history: "historyTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
+  history: "historyTopics"
 };
 
 /**
@@ -84,7 +82,7 @@ export function auditLearningPatternDecisionReport(baseReport, rawMistakesBySubj
         competitiveBucketOnly: lpd.competitiveBucketOnly,
         excludedEvidence: lpd.excludedEvidence,
         enrichmentMissing: lpd.enrichmentMissing,
-        learningExcluded,
+        learningExcluded
       });
     }
   }
@@ -107,7 +105,7 @@ export function auditLearningPatternDecisionReport(baseReport, rawMistakesBySubj
         conflicts.push({
           subjectId: "history",
           topicRowKey,
-          reasons: ["history_subtopic_missing_projection"],
+          reasons: ["history_subtopic_missing_projection"]
         });
       }
       rows.push({
@@ -115,7 +113,7 @@ export function auditLearningPatternDecisionReport(baseReport, rawMistakesBySubj
         topicRowKey,
         rowKind: "history_subtopic",
         topicStatus: lpd.topicStatus,
-        projectedFrom: lpd.projectedFrom || null,
+        projectedFrom: lpd.projectedFrom || null
       });
     }
   }
@@ -133,7 +131,7 @@ export function auditLearningPatternDecisionReport(baseReport, rawMistakesBySubj
     forbiddenHits,
     missingLpd,
     missingSubtopicLpd,
-    learningLeaks,
+    learningLeaks
   };
 }
 

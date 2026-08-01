@@ -9,8 +9,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
-const { normalizeFreeformParentUtteranceHe, foldUtteranceForHeMatch } = await import(
-  pathToFileURL(join(ROOT, "utils/parent-copilot/utterance-normalize-he.js")).href
+const { normalizeFreeformParentUtterance, foldUtteranceForMatch } = await import(
+  pathToFileURL(join(ROOT, "utils/parent-copilot/utterance-normalize.js")).href
 );
 const { interpretFreeformStageA } = await import(
   pathToFileURL(join(ROOT, "utils/parent-copilot/stage-a-freeform-interpretation.js")).href
@@ -75,8 +75,8 @@ const payload = syntheticPayload();
 
 // 1) Normalization strips invisible / odd spaces and is stable
 const rawNoisy = `  מה\u200Bהמצב\u00A0בנושא\u201Cהשברים\u201D?  `;
-const once = normalizeFreeformParentUtteranceHe(rawNoisy);
-const twice = normalizeFreeformParentUtteranceHe(once);
+const once = normalizeFreeformParentUtterance(rawNoisy);
+const twice = normalizeFreeformParentUtterance(once);
 assert.equal(once, twice, "normalization must be idempotent");
 assert.ok(once.includes("השברים"), "quotes/spaces normalized");
 assert.ok(!/\u200B/.test(once), "zero-width removed");
@@ -90,8 +90,8 @@ assert.equal(scopeNoisy.resolutionStatus, "resolved");
 assert.equal(scopeClean.scope?.scopeId, scopeNoisy.scope?.scopeId, "scope parity under noisy Hebrew");
 assert.equal(scopeClean.scope?.scopeType, "topic");
 
-// 3) foldUtteranceForHeMatch strips cantillation for substring match
-const folded = foldUtteranceForHeMatch("מה המצב בנושא ה\u05B4ש\u05B8ב\u05B8ר\u05B4ים?");
+// 3) foldUtteranceForMatch strips cantillation for substring match
+const folded = foldUtteranceForMatch("מה המצב בנושא ה\u05B4ש\u05B8ב\u05B8ר\u05B4ים?");
 assert.ok(folded.includes("שברים"), "cantillation fold preserves letters");
 
 // 4) Full turn: resolved, validator pass, no internal leak in blocks

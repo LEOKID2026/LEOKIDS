@@ -2,16 +2,16 @@
  * Multi-turn scope inheritance for contextual follow-ups (no new topic anchor in utterance).
  */
 
-import { foldUtteranceForHeMatch, normalizeFreeformParentUtteranceHe } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch, normalizeFreeformParentUtterance } from "./utterance-normalize.js";
 import { resolveReportRowFromUtterance } from "./report-row-resolver.js";
-import { findTopicRowByKey, subjectLabelHe } from "./contract-reader.js";
+import { findTopicRowByKey, subjectLabel } from "./contract-reader.js";
 import { interpretFreeformStageA } from "./stage-a-freeform-interpretation.js";
-import { isContextualFollowUpUtterance } from "./contextual-follow-up-he.js";
+import { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
 
 const NAMED_TOPIC_RE =
-  /שברים|חיסור|חיבור|כפל|חילוק|שבר|אנגלית|עברית|גאומטריה|גיאומטריה|מדעים|מולדת|גאוגרפיה|חשבון/u;
+  /|||||/u;
 
-export { isContextualFollowUpUtterance } from "./contextual-follow-up-he.js";
+export { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
 
 /**
  * @param {string} scopeToken e.g. topic:fractions::grade:g5
@@ -57,8 +57,8 @@ export function tryResolveInheritedScope(params) {
   if (!payload || !conv) return null;
   if (!isContextualFollowUpUtterance(utterance)) return null;
 
-  const normalized = normalizeFreeformParentUtteranceHe(utterance);
-  const folded = foldUtteranceForHeMatch(normalized);
+  const normalized = normalizeFreeformParentUtterance(utterance);
+  const folded = foldUtteranceForMatch(normalized);
   if (NAMED_TOPIC_RE.test(folded)) return null;
 
   const rowRes = resolveReportRowFromUtterance(normalized, payload);
@@ -78,8 +78,8 @@ export function tryResolveInheritedScope(params) {
   if (prior.scopeType === "topic" && prior.scopeId) {
     const hit = findTopicRowByKey(payload, prior.scopeId, "");
     const label =
-      String(hit?.tr?.displayName || "").trim() ||
-      String(conv?.lastScopeLabelHe || "").trim() ||
+      String(hit?.tr?.displayName || "").trim() |
+      String(conv?.lastScopeLabelHe || "").trim() |
       "Topic";
     return {
       resolutionStatus: "resolved",
@@ -87,15 +87,13 @@ export function tryResolveInheritedScope(params) {
         scopeType: "topic",
         scopeId: prior.scopeId,
         scopeLabel: label,
-        interpretationScope: /טעויות|טעיות|טעה|חוזר\s*בטעות/u.test(folded)
+        interpretationScope: /\s*/u.test(folded)
           ? "mistake_patterns"
           : stageA.scopeClass || "weaknesses",
-        scopeClass: stageA.scopeClass || "weaknesses",
-      },
+        scopeClass: stageA.scopeClass || "weaknesses"},
       scopeConfidence: 0.92,
       scopeReason: "conversation_inherited_topic_scope",
-      stageA,
-    };
+      stageA};
   }
 
   if (prior.scopeType === "subject" && prior.scopeId) {
@@ -104,14 +102,12 @@ export function tryResolveInheritedScope(params) {
       scope: {
         scopeType: "subject",
         scopeId: prior.scopeId,
-        scopeLabel: subjectLabelHe(prior.scopeId),
+        scopeLabel: subjectLabel(prior.scopeId),
         interpretationScope: stageA.scopeClass || "weaknesses",
-        scopeClass: stageA.scopeClass || "weaknesses",
-      },
+        scopeClass: stageA.scopeClass || "weaknesses"},
       scopeConfidence: 0.88,
       scopeReason: "conversation_inherited_subject_scope",
-      stageA,
-    };
+      stageA};
   }
 
   return null;
@@ -120,5 +116,4 @@ export function tryResolveInheritedScope(params) {
 export default {
   isContextualFollowUpUtterance,
   lastResolvedScopeFromConversation,
-  tryResolveInheritedScope,
-};
+  tryResolveInheritedScope};

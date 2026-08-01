@@ -4,16 +4,16 @@
 
 import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
-import { classifyShortParentReplyClassHe } from "./conversational-reply-class-he.js";
+import { classifyShortParentReplyClass } from "./conversational-reply-class.js";
 import { planConversation } from "./conversation-planner.js";
 import { composeAnswerDraft } from "./answer-composer.js";
 import { compactParentAnswerBlocks } from "./answer-compaction.js";
-import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { normalizeParentFacing } from "../parent-report-language/parent-facing-normalize.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 
 /** Full new report questions must not be treated as short reply-class continuations. */
 const EXPLICIT_NEW_REPORT_QUESTION_RE =
-  /תסביר\s+לי\s+מה\s+חשוב|מה\s+חשוב\s+כאן|מה\s+לגבי|מה\s+המקצוע\s+החזק|מה\s+הטעויות|מה\s+הטעיות|מה\s+הבעיה|מה\s+לעשות\s+בבית|תסביר\s+לי\s+על\s+הדוח|מה\s+הדוח\s+אומר/u;
+  /\s+\s+\s+|\s+\s+|\s+|\s+\s+|\s+|\s+|\s+|\s+\s+|\s+\s+\s+|\s+\s+/u;
 
 /**
  * @param {string} family
@@ -78,9 +78,9 @@ function priorTurnWasStrengthSide(conv) {
 function priorTurnWasDifficultySide(conv) {
   const k = lastPlannerIntentFromConv(conv);
   return (
-    k === "what_is_still_difficult" ||
-    k === "what_not_to_do_now" ||
-    k === "why_not_advance" ||
+    k === "what_is_still_difficult" |
+    k === "what_not_to_do_now" |
+    k === "why_not_advance" |
     k === "is_intervention_needed"
   );
 }
@@ -96,19 +96,16 @@ function composeBlocksForPlannerIntent(plannerIntent, truthPacket, conv) {
     continuityRepeat: false,
     turnOrdinal: turnOrd,
     scopeType: truthPacket.scopeType,
-    interpretationScope: truthPacket.interpretationScope,
-  });
+    interpretationScope: truthPacket.interpretationScope});
   const composed = composeAnswerDraft(plan, truthPacket, {
     intent: plannerIntent,
     continuityRepeat: false,
     conversationState: conv,
-    turnOrdinal: turnOrd,
-  });
+    turnOrdinal: turnOrd});
   return compactParentAnswerBlocks(
     (composed.answerBlocks || []).map((b) => ({
       ...b,
-      answerText: normalizeParentFacingHe(String(b.answerText || "").trim()),
-    })),
+      answerText: normalizeParentFacing(String(b.answerText || "").trim())})),
     { scopeType: String(truthPacket.scopeType || ""), maxBlocks: 5, maxTotalChars: 2400 },
   );
 }
@@ -122,11 +119,11 @@ export function tryBuildParentShortFollowupDraft(ctx) {
   const conv = ctx.conv || {};
   const payload = ctx.payload;
 
-  const folded = foldUtteranceForHeMatch(utteranceStr);
+  const folded = foldUtteranceForMatch(utteranceStr);
   if (EXPLICIT_NEW_REPORT_QUESTION_RE.test(folded)) return null;
   if (utteranceStr.length > 52) return null;
 
-  const replyClass = classifyShortParentReplyClassHe(utteranceStr, { conv });
+  const replyClass = classifyShortParentReplyClass(utteranceStr, { conv });
   if (!replyClass) return null;
 
   const fam = String(conv.lastOfferedFollowupFamily || "").trim();
@@ -134,9 +131,9 @@ export function tryBuildParentShortFollowupDraft(ctx) {
   const scopeKey = scopes.length ? String(scopes[scopes.length - 1] || "").trim() : "";
   if (!scopeKey) return null;
   const chipOptional =
-    replyClass === "contrast_follow_negative" ||
-    replyClass === "contrast_follow_positive" ||
-    replyClass === "vague_summary_follow" ||
+    replyClass === "contrast_follow_negative" |
+    replyClass === "contrast_follow_positive" |
+    replyClass === "vague_summary_follow" |
     replyClass === "short_action_follow";
   if (!fam && !chipOptional) return null;
   const colon = scopeKey.indexOf(":");
@@ -154,8 +151,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
     scopeLabel,
     interpretationScope: "executive",
     scopeClass: "executive",
-    canonicalIntent: String(conv.lastPlannerIntent || "unclear").trim() || "unclear",
-  };
+    canonicalIntent: String(conv.lastPlannerIntent || "unclear").trim() || "unclear"};
 
   const truthPacket = buildTruthPacketV1(payload, scope);
   if (!truthPacket) return null;
@@ -184,18 +180,14 @@ export function tryBuildParentShortFollowupDraft(ctx) {
               type: "observation",
               answerText:
                 "According to what is in the report at the moment - there is not yet a strong enough basis for a big step; Better a very tiny step after more practice, or a short wait.",
-              source: "composed",
-            },
-            { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
-          ];
+              source: "composed"},
+            { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" }];
         } else {
           answerBlocks = [
             {
               type: "observation",
               explanationCode: "copilot.answers.utils_parent-copilot_short-followup-composer.excellent_start_with_a_small_step_that_corresponds_to_what_appea",
-              source: "composed",
-            },
-          ];
+              source: "composed"}];
           if (act) answerBlocks.push({ type: "next_step", answerText: act.slice(0, 420), source: "composed" });
           else answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 420), source: "composed" });
         }
@@ -208,19 +200,16 @@ export function tryBuildParentShortFollowupDraft(ctx) {
             continuityRepeat: false,
             turnOrdinal: turnOrd,
             scopeType: truthPacket.scopeType,
-            interpretationScope: truthPacket.interpretationScope,
-          });
+            interpretationScope: truthPacket.interpretationScope});
           const composed = composeAnswerDraft(plan, truthPacket, {
             intent: mapped,
             continuityRepeat: false,
             conversationState: conv,
-            turnOrdinal: turnOrd,
-          });
+            turnOrdinal: turnOrd});
           answerBlocks = compactParentAnswerBlocks(
             (composed.answerBlocks || []).map((b) => ({
               ...b,
-              answerText: normalizeParentFacingHe(String(b.answerText || "").trim()),
-            })),
+              answerText: normalizeParentFacing(String(b.answerText || "").trim())})),
             { scopeType: String(truthPacket.scopeType || ""), maxBlocks: 5, maxTotalChars: 2400 },
           );
           const hook = acceptanceHookHe(fam, truthPacket);
@@ -229,18 +218,15 @@ export function tryBuildParentShortFollowupDraft(ctx) {
             answerBlocks[oix] = {
               ...answerBlocks[oix],
               answerText: `${hook}${String(answerBlocks[oix].answerText || "").trim()}`,
-              source: "composed",
-            };
+              source: "composed"};
           }
         } else {
           answerBlocks = [
             {
               type: "observation",
               explanationCode: "copilot.answers.utils_parent-copilot_short-followup-composer.understandable_we_stay_with_the_same_wording_from_the_report_and",
-              source: "composed",
-            },
-            { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
-          ];
+              source: "composed"},
+            { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" }];
         }
       }
       break;
@@ -250,10 +236,8 @@ export function tryBuildParentShortFollowupDraft(ctx) {
         {
           type: "observation",
           answerText: "OK - you don't have to promote now. Stay with what the report shows, without pressure to make an immediate decision.",
-          source: "composed",
-        },
-        { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
-      ];
+          source: "composed"},
+        { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" }];
       break;
 
     case "concern_reaction":
@@ -265,10 +249,8 @@ export function tryBuildParentShortFollowupDraft(ctx) {
             dl.cannotConcludeYet || dl.confidenceBand === "low"
               ? "It's not necessarily \"bad\" - it's mostly a sign that the report isn't yet close enough to label a situation sharply."
               : "According to what appears in the report, there is no sign of a blanket \"bad\" here - it is still a picture within the period.",
-          source: "composed",
-        },
-        { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" },
-      ];
+          source: "composed"},
+        { type: "meaning", answerText: interp ? interp.slice(0, 420) : obs.slice(0, 420), source: "composed" }];
       break;
 
     case "confusion_simpler":
@@ -277,9 +259,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
         {
           type: "observation",
           answerText: obs ? `Simply put: ${obs.slice(0, 420)}` : copilotStaticMessage("copilot.answers.utils_parent-copilot_short-followup-composer.there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a"),
-          source: "composed",
-        },
-      ];
+          source: "composed"}];
       if (interp) answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 380), source: "composed" });
       break;
 
@@ -292,9 +272,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
         {
           type: "observation",
           answerText: `We remain on the same wording from the ${scopeBit} report, without adding a new fact beyond what already appears in the report. ${tail}`,
-          source: "composed",
-        },
-      ];
+          source: "composed"}];
       if (interp) answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 380), source: "composed" });
       break;
     }
@@ -306,9 +284,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
           answerText: obs
             ? `Continuing from the same point of the report - staying in the same picture without adding a new topic: ${obs.slice(0, 360)}`
             : copilotStaticMessage("copilot.answers.utils_parent-copilot_short-followup-composer.continuing_from_the_same_point_of_the_report_staying_in_the_same"),
-          source: "composed",
-        },
-      ];
+          source: "composed"}];
       if (interp) answerBlocks.push({ type: "meaning", answerText: interp.slice(0, 400), source: "composed" });
       break;
 
@@ -336,15 +312,15 @@ export function tryBuildParentShortFollowupDraft(ctx) {
       const recOk = !!dl.recommendationEligible && String(dl.recommendationIntensityCap || "RI0") !== "RI0";
       const lastFam = String(fam || "").trim();
       const lastP = lastPlannerIntentFromConv(conv);
-      const wantsWeek = /מחר|השבוע|שבוע/u.test(utteranceStr);
+      const wantsWeek = /(?!)/u.test(utteranceStr);
       const priorActs = Array.isArray(conv.priorIntents)
         ? conv.priorIntents.slice(-4).filter((x) => x === "what_to_do_today" || x === "what_to_do_this_week")
         : [];
       const hadActionContext =
-        lastFam === "action_today" ||
-        lastFam === "action_week" ||
-        lastP === "what_to_do_today" ||
-        lastP === "what_to_do_this_week" ||
+        lastFam === "action_today" |
+        lastFam === "action_week" |
+        lastP === "what_to_do_today" |
+        lastP === "what_to_do_this_week" |
         priorActs.length > 0;
       if (!recOk || !hadActionContext) {
         plannerIntent = "explain_report";
@@ -374,8 +350,7 @@ export function tryBuildParentShortFollowupDraft(ctx) {
     scopeConfidence: 0.88,
     scopeReason: "reply_class_continuity",
     intentConfidence: 0.75,
-    intentReason: `reply_class:${replyClass}`,
-  };
+    intentReason: `reply_class:${replyClass}`};
 
   return { truthPacket, plannerIntent, answerBlocks, scopeMeta, replyClass };
 }

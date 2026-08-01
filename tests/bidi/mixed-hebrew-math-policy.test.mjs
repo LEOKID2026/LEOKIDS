@@ -4,11 +4,11 @@ import {
   isFullEquationLine,
   splitMixedHebrewMathRuns,
   detectMixedMathRenderIssues,
-} from "../../lib/bidi/mixed-hebrew-math-runs.js";
+} from "../../lib/bidi/mixed-rtl-math-runs.js";
 import {
   parseStepExplanationThreeLines,
   splitLearningMixedHebrewMathRuns,
-} from "../../utils/learning-mixed-hebrew-math-render.js";
+} from "../../utils/learning-mixed-rtl-math-render.js";
 
 test("place-value decomposition is one LTR math island", () => {
   const line = "1 מאה + 2 עשרות + 4 אחדות = 124";

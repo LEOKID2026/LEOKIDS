@@ -29,7 +29,7 @@ const { buildReportInputFromDbData } = await load("lib/learning-supabase/report-
 const { seedLocalStorageFromDbReportInput } = await load("lib/learning-supabase/seed-db-report-local-storage.js");
 const { applyParentReportGamificationOverlay } = await load("lib/learning-shared/student-account-state-view.js");
 const { applyServerParentFacingAuthorityToClientReport } = await load("lib/parent-server/parent-facing-report-authority.js");
-const { applyTopicEngineParentFacingInsights } = await load("utils/parent-report-engine-insights-he.js");
+const { applyTopicEngineParentFacingInsights } = await load("utils/parent-report-engine-insights.js");
 const { applyBridgeProvenanceToGeneratedReport } = await load("lib/learning-supabase/bridge-report-provenance.js");
 const { syncReportVisiblePracticeFromServer } = await load("lib/learning/report-visible-practice-sync.js");
 const { generateParentReportV2 } = await load("utils/parent-report-v2.js");
@@ -57,10 +57,10 @@ const {
 } = await load("utils/parent-data-presence.js");
 const { diagnosticPrimarySourceParentLabelHe } = await load("utils/parent-report-language/index.js");
 const { formatParentReportGradeHe, formatParentReportSubjectHe } = await load(
-  "utils/parent-report-language/parent-report-display-labels.he.js",
+  "utils/parent-report-language/parent-report-display-labels.js",
 );
 const { shortReportDiagnosticsParentVisibleHe: diagnosticParentVisibleTextHe } = await load(
-  "utils/parent-report-ui-explain-he.js",
+  "utils/parent-report-ui-explain.js",
 );
 const { resolveParentExplainRowCopy } = await load("utils/learning-pattern-decision/index.js");
 const sitePoliciesMod = await import(u("data/legal/sitePolicies.he.js"));

@@ -5,7 +5,7 @@
 
 /**
  * @param {Array<{ type?: string; textHe?: string; source?: string }>} answerBlocks
- * @param {NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>> | null} truthPacket
+ * @param {NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>> || null} truthPacket
  */
 export function measureGroundedness(answerBlocks, truthPacket) {
   const blocks = Array.isArray(answerBlocks) ? answerBlocks : [];
@@ -74,7 +74,7 @@ export function measureGenericness(answerBlocks) {
  * @param {string[]} input.validatorFailCodes
  * @param {boolean} input.semanticAggregateSatisfied
  * @param {string} input.generationPath
- * @param {NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>> | null} input.truthPacket
+ * @param {NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>> || null} input.truthPacket
  */
 export function buildTurnTelemetry(input) {
   const groundedness = measureGroundedness(input.answerBlocks, input.truthPacket);

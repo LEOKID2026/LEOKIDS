@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "Atrás",
+    "local_badge": "Local",
+    "title": "Coincidencia de memoria",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "Un jugador",
+    "two_players": "2 jugadores",
+    "time": "Tiempo",
+    "moves": "se mueve",
+    "turn": "Doblar",
+    "pairs": "Pares",
+    "player_n": "Jugador {n}",
+    "two_players_label": "2 jugadores",
+    "shuffle": "Barajar",
+    "player_1": "Jugador 1",
+    "player_2": "Jugador 2",
+    "all_pairs_found": "¡Todos los pares encontrados!"
+  }
+}

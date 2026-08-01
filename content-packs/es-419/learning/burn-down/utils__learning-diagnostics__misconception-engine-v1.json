@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "unable_to_distinguish_error_mechanism_from_available_fields": "No se puede distinguir el mecanismo de error de los campos disponibles.",
+    "very_fast_incorrect_response_may_reflect_guessing_or_pacing_strategy": "Una respuesta incorrecta muy rápida puede reflejar una estrategia de conjetura o de ritmo.",
+    "numeric_text_answer_mismatch_may_be_calculation_slip_or_conceptual_confu": "La respuesta numérica/texto no coincide; puede deberse a un desliz en el cálculo o a una confusión conceptual."
+  }
+}

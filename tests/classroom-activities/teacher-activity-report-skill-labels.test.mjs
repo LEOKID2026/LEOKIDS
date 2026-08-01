@@ -7,7 +7,7 @@ import {
   decorateWeakSkillsForTeacherDisplay,
   looksLikeRawInternalSkillKey,
   resolveClassroomSkillLabelHe,
-} from "../../lib/classroom-activities/classroom-skill-labels-he.js";
+} from "../../lib/classroom-activities/classroom-skill-labels.js";
 
 const repoRoot = dirname(fileURLToPath(import.meta.url));
 const reportPageSrc = readFileSync(

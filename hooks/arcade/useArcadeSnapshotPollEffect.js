@@ -15,7 +15,7 @@ import { useArcadeSessionRealtime } from "./useArcadeSessionRealtime.js";
  * Standard snapshot poll loop for arcade game session hooks.
  *
  * @param {{
- *   roomId: string | null,
+ *   roomId: string || null,
  *   fetchBundle: () => Promise<{ ok: boolean, code?: string, httpStatus?: number, error?: string, [key: string]: unknown }>,
  *   onBundle: (
  *     bundle: { ok: boolean, code?: string, httpStatus?: number, error?: string, [key: string]: unknown },
@@ -34,7 +34,7 @@ export function useArcadeSnapshotPollEffect({
 }) {
   const joinRecoveryAttemptedRef = useRef(false);
   const pollStoppedRef = useRef(false);
-  const pollIntervalRef = useRef(/** @type {ReturnType<typeof setInterval> | null} */ (null));
+  const pollIntervalRef = useRef(/** @type {ReturnType<typeof setInterval> || null} */ (null));
   const tickInFlightRef = useRef(false);
   const bundleLoadedOnceRef = useRef(false);
   const pollRefs = { pollStoppedRef, joinRecoveryAttemptedRef, bundleLoadedOnceRef };
@@ -53,8 +53,8 @@ export function useArcadeSnapshotPollEffect({
 
   useArcadePollRouteStop(stopPolling);
 
-  const activeRoomIdRef = useRef(/** @type {string | null} */ (null));
-  const tickRef = useRef(/** @type {(() => Promise<void>) | null} */ (null));
+  const activeRoomIdRef = useRef(/** @type {string || null} */ (null));
+  const tickRef = useRef(/** @type {(() => Promise<void>) || null} */ (null));
 
   useEffect(() => {
     if (!roomId) {

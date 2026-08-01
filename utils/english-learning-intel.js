@@ -1,4 +1,4 @@
-/** מפתח נגד חזרות לשאלות אנגלית */
+/**      */
 
 export function englishQuestionFingerprint(q) {
   if (!q) return "";

@@ -161,5 +161,5 @@ test("geometry solidNames use Rectangular prism not Cuboid", () => {
   const raw = JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
   assert.ok(raw.solidNames.includes("Rectangular prism"));
   assert.equal(raw.solidNames.includes("Cuboid"), false);
-  assert.equal(raw.hebrewSolidAliases["תיבה"], "Rectangular prism");
+  assert.equal(raw.solidAliases["rectangular prism"], "Rectangular prism");
 });

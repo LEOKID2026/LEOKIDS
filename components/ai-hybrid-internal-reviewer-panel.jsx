@@ -33,14 +33,14 @@ function UnitBlock({ unit, idx }) {
       open={idx === 0}
     >
       <summary className="cursor-pointer select-none px-3 py-2.5 text-sm font-bold text-emerald-100/95 bg-emerald-950/30">
-        יחידה {idx + 1}: <span className="font-mono text-xs opacity-90">{u.unitKey || "-"}</span>
+         {idx + 1}: <span className="font-mono text-xs opacity-90">{u.unitKey || "-"}</span>
       </summary>
       <div className="px-3 pb-3 pt-1 space-y-1">
         <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-2 mb-1">v2AuthoritySnapshot</h4>
         <FieldRow label="taxonomyId">
           <span className="font-mono text-xs">{String(snap.taxonomyId ?? "-")}</span>
         </FieldRow>
-        <FieldRow label="אבחון">
+        <FieldRow label="">
           {snap.diagnosis ? (
             <span className="font-mono text-xs">
               allowed={String(!!snap.diagnosis.allowed)} · taxonomyId={String(snap.diagnosis.taxonomyId ?? "-")}
@@ -65,11 +65,11 @@ function UnitBlock({ unit, idx }) {
               ))}
             </ul>
           ) : (
-            <span className="text-white/50">אין</span>
+            <span className="text-white/50"></span>
           )}
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">היפותזה עליונה</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1"> </h4>
         <FieldRow label="top1">
           <span className="font-mono text-xs">
             {String(rank.top1Id || "-")} · p={Number(rank.top1Probability || 0).toFixed(4)} · band=
@@ -77,7 +77,7 @@ function UnitBlock({ unit, idx }) {
           </span>
         </FieldRow>
         {cands.length ? (
-          <FieldRow label="מועמדים (עד 5)">
+          <FieldRow label="( 5)">
             <ol className="list-decimal pr-5 m-0 space-y-1 font-mono text-[11px]">
               {cands.slice(0, 5).map((c) => (
                 <li key={`${c.candidateId}-${c.rank}`}>
@@ -88,7 +88,7 @@ function UnitBlock({ unit, idx }) {
           </FieldRow>
         ) : null}
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">התנגשות מול V2</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">  V2</h4>
         <FieldRow label="hasDisagreement">
           <span className={d.hasDisagreement ? "text-amber-300 font-bold" : "text-emerald-300"}>
             {String(!!d.hasDisagreement)}
@@ -112,33 +112,33 @@ function UnitBlock({ unit, idx }) {
           )}
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">צעד בדיקה (probe)</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">  (probe)</h4>
         <FieldRow label="suggestedProbeId">
           <span className="font-mono text-xs">{String(p.suggestedProbeId ?? "-")}</span>
         </FieldRow>
-        <FieldRow label="מדדים">
+        <FieldRow label="">
           <span className="font-mono text-[11px]">
-            Δאי ודאות≈{Number(p.uncertaintyReductionEstimate || 0).toFixed(3)} · עצירה=
-            {String(p.stoppingRuleMet)} · הסלמה={String(p.escalationRuleTriggered)}
+            Δ ≈{Number(p.uncertaintyReductionEstimate || 0).toFixed(3)} · =
+            {String(p.stoppingRuleMet)} · ={String(p.escalationRuleTriggered)}
           </span>
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">הסבר (טקסט / סטטוס)</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1"> ( /(?!)/h4>
         <FieldRow label="outputStatus">{String(ec.outputStatus ?? "-")}</FieldRow>
-        <FieldRow label="הורה (קצר)">
-          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{par.text || "-"}</p>
+        <FieldRow label="">
+          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{par.text | "-"}</p>
         </FieldRow>
-        <FieldRow label="מורה (קצר)">
-          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{tea.text || "-"}</p>
+        <FieldRow label="">
+          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{tea.text | "-"}</p>
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">אימות (validator)</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1"> (validator)</h4>
         <FieldRow label="overallPass">
           <span className={ev.overallPass ? "text-emerald-300 font-bold" : "text-rose-300 font-bold"}>
             {String(!!ev.overallPass)}
           </span>
         </FieldRow>
-        <FieldRow label="פירוט">
+        <FieldRow label="">
           <span className="font-mono text-[11px]">
             boundary={String(ev.boundaryPass)} · evidenceLink={String(ev.evidenceLinkPass)} · uncertainty=
             {String(ev.uncertaintyCompliancePass)}
@@ -171,10 +171,10 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
         className="ai-hybrid-internal-reviewer rounded-xl border border-amber-500/30 bg-amber-950/25 p-4 text-amber-100/90"
         dir="rtl"
       >
-        <h3 className="text-base font-black m-0 mb-2">ביקורת פנימית - AI Hybrid</h3>
+        <h3 className="text-base font-black m-0 mb-2">  - AI Hybrid</h3>
         <p className="text-sm m-0">
-          אין <span className="font-mono">hybridRuntime</span> בדוח (null או לא עבר ולידציה). בדוק שהדוח נבנה עם מנוע V2
-          ושאין כשל בטיחות.
+           <span className="font-mono">hybridRuntime</span>  (null    ).      V2
+            .
         </p>
       </section>
     );
@@ -189,9 +189,9 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
     >
       <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
         <div>
-          <h3 className="text-lg font-black m-0 text-emerald-100">ביקורת פנימית - hybridRuntime</h3>
+          <h3 className="text-lg font-black m-0 text-emerald-100">  - hybridRuntime</h3>
           <p className="text-xs text-white/60 m-0 mt-1">
-            לא מוצג להורים בהדפסה. גרסה {summary.hybridRuntimeVersion || "-"} · exposure {summary.exposureMode || "-"}
+               .  {summary.hybridRuntimeVersion || "-"} · exposure {summary.exposureMode || "-"}
           </p>
         </div>
         <button
@@ -199,15 +199,15 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
           className="text-xs font-bold px-2 py-1 rounded border border-white/20 bg-white/5 hover:bg-white/10"
           onClick={() => setJsonOpen((v) => !v)}
         >
-          {jsonOpen ? "הסתר JSON" : "הצג JSON גולמי (משני)"}
+          {jsonOpen ? "JSON" : "JSON ()"}
         </button>
       </div>
 
       <div className="rounded-lg border border-white/10 bg-black/25 p-3 mb-4 text-sm">
-        <h4 className="text-xs font-extrabold text-emerald-200/90 uppercase tracking-wide m-0 mb-2">סיכום Shadow (מקומי)</h4>
+        <h4 className="text-xs font-extrabold text-emerald-200/90 uppercase tracking-wide m-0 mb-2"> Shadow ()</h4>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
           <div>
-            <div className="text-white/50">סה״כ יחידות</div>
+            <div className="text-white/50"> </div>
             <div className="text-white font-bold">{summary.totalUnits}</div>
           </div>
           <div>
@@ -227,18 +227,18 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
             <div>{summary.modeCounts.suppressed}</div>
           </div>
           <div>
-            <div className="text-white/50">התנגשויות</div>
+            <div className="text-white/50"></div>
             <div className={summary.disagreementCount ? "text-amber-300 font-bold" : ""}>{summary.disagreementCount}</div>
           </div>
           <div className="sm:col-span-2">
-            <div className="text-white/50">פירוט חומרה (יחידות עם התנגשות)</div>
+            <div className="text-white/50">  (  )</div>
             <div className="text-[11px]">
               low {summary.disagreementSeveritySplit.low} · medium {summary.disagreementSeveritySplit.medium} · high{" "}
               {summary.disagreementSeveritySplit.high}
             </div>
           </div>
           <div className="sm:col-span-2">
-            <div className="text-white/50">כל היחידות לפי severity (כולל none)</div>
+            <div className="text-white/50">   severity ( none)</div>
             <div className="text-[11px]">
               none {summary.disagreementSeverityAllUnits.none} · low {summary.disagreementSeverityAllUnits.low} · medium{" "}
               {summary.disagreementSeverityAllUnits.medium} · high {summary.disagreementSeverityAllUnits.high}
@@ -246,7 +246,7 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
           </div>
           {summary.shadowEntriesSampled != null ? (
             <div className="sm:col-span-2">
-              <div className="text-white/50">רשומות shadow שנדגמו (session)</div>
+              <div className="text-white/50"> shadow  (session)</div>
               <div>{summary.shadowEntriesSampled}</div>
             </div>
           ) : null}
@@ -254,7 +254,7 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
       </div>
 
       <div className="space-y-1">
-        <h4 className="text-sm font-extrabold text-white m-0 mb-2">לפי יחידה</h4>
+        <h4 className="text-sm font-extrabold text-white m-0 mb-2"> </h4>
         {units.map((unit, idx) => (
           <UnitBlock key={unit.unitKey || idx} unit={unit} idx={idx} />
         ))}

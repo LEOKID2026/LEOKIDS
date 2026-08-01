@@ -14,15 +14,15 @@ export const LEARNING_BADGE = {
 
 /** @type {Record<string, string[]>} Legacy stored badge strings (HE + EN) for matching only — display comes from locales. */
 export const BADGE_LEGACY_ALIASES = {
-  [LEARNING_BADGE.STREAK_10]: ["🔥 רצף חם", "🔥 Hot Streak", "🔥 Hot streak"],
-  [LEARNING_BADGE.STREAK_25]: ["⚡ מהיר כברק", "⚡ Lightning Fast", "⚡ Lightning fast"],
-  [LEARNING_BADGE.STREAK_50]: ["🌟 אלוף", "🌟 מאסטר", "🌟 Master", "🌟 אלוף מדעים", "🌟 מאסטר מדעים", "🌟 Science champion", "🌟 Champion"],
-  [LEARNING_BADGE.STREAK_100_MATH]: ["👑 מלך החשבון", "👑 Math King"],
-  [LEARNING_BADGE.STREAK_100_SCIENCE]: ["👑 מלך המדעים", "👑 Science King"],
-  [LEARNING_BADGE.SCORE_1000]: ["💎 אלף נקודות", "💎 1,000 points"],
-  [LEARNING_BADGE.SCORE_5000]: ["🎯 חמשת אלפים", "🎯 5,000 points"],
-  [LEARNING_BADGE.CORRECT_100]: ["⭐ מאה תשובות נכונות", "⭐ 100 correct answers"],
-  [LEARNING_BADGE.CORRECT_500]: ["🌟 חמש מאות תשובות", "🌟 500 correct answers"],
+  [LEARNING_BADGE.STREAK_10]: ["", "🔥 Hot Streak", "🔥 Hot streak"],
+  [LEARNING_BADGE.STREAK_25]: ["", "⚡ Lightning Fast", "⚡ Lightning fast"],
+  [LEARNING_BADGE.STREAK_50]: ["", "", "🌟 Master", "", "", "🌟 Science champion", "🌟 Champion"],
+  [LEARNING_BADGE.STREAK_100_MATH]: ["", "👑 Math King"],
+  [LEARNING_BADGE.STREAK_100_SCIENCE]: ["", "👑 Science King"],
+  [LEARNING_BADGE.SCORE_1000]: ["", "💎 1,000 points"],
+  [LEARNING_BADGE.SCORE_5000]: ["", "🎯 5,000 points"],
+  [LEARNING_BADGE.CORRECT_100]: ["", "⭐ 100 correct answers"],
+  [LEARNING_BADGE.CORRECT_500]: ["", "🌟 500 correct answers"],
 };
 
 export function opKingBadgeId(op) {
@@ -53,18 +53,18 @@ export function hasLearningBadge(badges, id) {
   if (id.startsWith("op_king:") || id.startsWith("op_genius:")) {
     return badges.some(
       (b) =>
-        b === id ||
-        b.startsWith("🧮 מלך") ||
-        b.startsWith("🏆 גאון ה") ||
+        b === id |
+        b.startsWith("") |
+        b.startsWith("") |
         parseLegacyBadgeCanonicalId(b) === id
     );
   }
   if (id.startsWith("topic_expert:") || id.startsWith("topic_genius:")) {
     return badges.some(
       (b) =>
-        b === id ||
-        b.startsWith("🔬 מומחה") ||
-        b.startsWith("🏆 גאון ") ||
+        b === id |
+        b.startsWith("") |
+        b.startsWith("") |
         parseLegacyBadgeCanonicalId(b) === id
     );
   }
@@ -87,13 +87,13 @@ export function parseLegacyBadgeCanonicalId(stored) {
   for (const [canonical, aliases] of Object.entries(BADGE_LEGACY_ALIASES)) {
     if (aliases.includes(stored)) return canonical;
   }
-  const opKing = stored.match(/^🧮 מלך ה(.+)$/);
+  const opKing = stored.match(/(?!)/);
   if (opKing) return `op_king:${opKing[1]}`;
-  const opGenius = stored.match(/^🏆 גאון ה(.+)$/);
+  const opGenius = stored.match(/(?!)/);
   if (opGenius) return `op_genius:${opGenius[1]}`;
-  const topicExpert = stored.match(/^🔬 מומחה (.+)$/);
+  const topicExpert = stored.match(/(?!)/);
   if (topicExpert) return `topic_expert_legacy:${topicExpert[1]}`;
-  const topicGenius = stored.match(/^🏆 גאון (.+)$/);
+  const topicGenius = stored.match(/(?!)/);
   if (topicGenius) return `topic_genius_legacy:${topicGenius[1]}`;
   return null;
 }

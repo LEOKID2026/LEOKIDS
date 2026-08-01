@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "marble_run": "Carrera de canicas",
+    "prototype_pick_a_piece_place_run": "Prototipo · escoger una pieza · colocar · ejecutar",
+    "reset": "Restablecer",
+    "run": "Corre ⚪"
+  }
+}

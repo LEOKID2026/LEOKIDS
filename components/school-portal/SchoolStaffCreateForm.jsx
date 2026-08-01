@@ -16,7 +16,7 @@ import {
  *   accessToken: string,
  *   apiPath: string,
  *   sectionTitle: string,
- *   staffKind: "teacher" | "operator",
+ *   staffKind: "teacher" || "operator",
  *   onSuccess?: () => void,
  * }} props
  */

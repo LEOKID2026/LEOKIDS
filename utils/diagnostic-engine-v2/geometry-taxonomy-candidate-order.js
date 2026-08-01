@@ -39,8 +39,7 @@ const G01_INDICATORS = [
   "square",
   "shape",
   "identify_rectangle",
-  "shapes_basic_rectangle",
-];
+  "shapes_basic_rectangle"];
 
 const G03_INDICATORS = [
   "area_of_trapezoid",
@@ -55,10 +54,9 @@ const G03_INDICATORS = [
   "base",
   "rectangle_area_procedural",
   "procedural",
-  "צלעות כגובה",
-  "בחירת גובה",
-  "כפל שגוי",
-];
+  "",
+  "",
+  ""];
 
 const G08_INDICATORS = [
   "formula_pipeline",
@@ -72,8 +70,7 @@ const G08_INDICATORS = [
   "theorem",
   "formula",
   "leg",
-  "triangle_area_formula",
-];
+  "triangle_area_formula"];
 
 const G08_FORMULA_INDICATORS = new Set([
   "formula_pipeline",
@@ -81,8 +78,7 @@ const G08_FORMULA_INDICATORS = new Set([
   "advanced_area",
   "triangle_area",
   "area_formula",
-  "formula",
-]);
+  "formula"]);
 
 /**
  * @param {unknown} row
@@ -93,8 +89,7 @@ function g08IndicatorsForRow(row) {
     row && typeof row === "object"
       ? /** @type {Record<string, unknown>} */ (row).gradeKey ??
           /** @type {Record<string, unknown>} */ (row).contentGradeKey
-      : null,
-  );
+      : null);
   if (n == null || n < TRIANGLE_AREA_FORMULA_MIN_GRADE) {
     return G08_INDICATORS.filter((ind) => !G08_FORMULA_INDICATORS.has(ind));
   }
@@ -145,8 +140,8 @@ export function geometryAreaRoutingScores(wrongEvents, row) {
     g03Score += countRoutingIndicatorHits(wh, G03_INDICATORS);
     g08Score += countRoutingIndicatorHits(wh, g08Indicators);
 
-    if (/perimeter|היקף/.test(wh)) g03Score += 1;
-    if (/unit|יחיד|cm|מ\"ר|sq/.test(wh) && !/formula|נוסח/.test(wh)) g03Score += 1;
+    if (/(?!)/.test(wh)) g03Score += 1;
+    if (/(?!)/.test(wh) && !/(?!)/.test(wh)) g03Score += 1;
   }
   return { g03Score, g08Score };
 }
@@ -174,8 +169,7 @@ export function orderGeometryTaxonomyCandidatesWithMeta(candidateIds, wrongEvent
         "G-03",
         g01Score > g03Score,
         g03Score > g01Score,
-        candidateIds,
-      );
+        candidateIds);
       return { ...pair, scores: { "G-01": g01Score, "G-03": g03Score } };
     }
   }
@@ -190,8 +184,7 @@ export function orderGeometryTaxonomyCandidatesWithMeta(candidateIds, wrongEvent
         "G-08",
         g03Score > g08Score,
         g08Score > g03Score,
-        candidateIds,
-      );
+        candidateIds);
       return { ...pair, scores: { "G-03": g03Score, "G-08": g08Score } };
     }
   }

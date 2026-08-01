@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import LearningMarkdown from "./LearningMarkdown";
 import LearningBookAudioPlayer from "./LearningBookAudioPlayer";
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 import BookTopicCardTitle from "./BookTopicCardTitle";
 import { getSectionDisplayTitle } from "../../lib/learning-book/section-display-labels";
 import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";

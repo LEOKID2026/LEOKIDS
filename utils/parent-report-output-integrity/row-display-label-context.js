@@ -13,11 +13,11 @@ export const ROW_LABEL_DISPLAY_CONTEXT = Object.freeze({
   TABLE: "table",
   NARRATIVE: "narrative",
   CHART: "chart",
-  AGGREGATE: "aggregate",
+  AGGREGATE: "aggregate"
 });
 
 /** Banned in titles — relation belongs in subline only. */
-export const LONG_NARRATIVE_TITLE_RE = /תרגול ב|מעל הכיתה הרשומה|בסיס\/כיתה נמוכה|practice in|above registered grade|foundation\/lower grade/iu;
+export const LONG_NARRATIVE_TITLE_RE = /(?!)/iu;
 
 /**
  * @param {string} displayName
@@ -65,8 +65,8 @@ export function resolveNarrativeDisplayLabels(args) {
   }
 
   const includeGrade =
-    args?.includeGradeInTitle === true ||
-    args?.requiresGradeContext === true ||
+    args?.includeGradeInTitle === true |
+    args?.requiresGradeContext === true |
     Boolean(gk);
 
   if (!gk || !includeGrade) {
@@ -74,10 +74,10 @@ export function resolveNarrativeDisplayLabels(args) {
   }
 
   const gradeLabel = formatParentReportGradeLabel(gk);
-  if (!gradeLabel || gradeLabel === "לא זמין" || gradeLabel === reportPackCopy("utils__parent-report-output-integrity__row-display-label-context", "unavailable") || gradeLabel === "N/A") {
+  if (!gradeLabel || gradeLabel === "" || gradeLabel === reportPackCopy("utils__parent-report-output-integrity__row-display-label-context", "unavailable") || gradeLabel === "N/A") {
     return { titleHe: name, gradeRelationSublineHe: null };
   }
-  const gradeShort = gradeLabel.replace(/^(?:כיתה|Grade)\s+/iu, "").trim();
+  const gradeShort = gradeLabel.replace(/(?!)/iu, "").trim();
   const titleHe = `${name} - Grade ${gradeShort}`;
   const sub = gradeRelationSublineFromRelation(args?.gradeRelation);
   return { titleHe, gradeRelationSublineHe: sub || null };
@@ -110,8 +110,8 @@ export function buildDuplicateCanonicalTopicKeys(subjectId, topicMap) {
     const parsed = parseCanonicalTopicFromRowKey(topicRowKey);
     const canon = parsed.canonicalTopicKey || topicRowKey;
     const gk =
-      (row && typeof row === "object" && (row.contentGradeKey || row.gradeKey)) ||
-      parsed.contentGradeKey ||
+      (row && typeof row === "object" && (row.contentGradeKey || row.gradeKey)) |
+      parsed.contentGradeKey |
       null;
     const g = gk != null ? String(gk).trim() : "";
     if (!gradesByCanon.has(canon)) gradesByCanon.set(canon, new Set());
@@ -135,9 +135,8 @@ export function buildDuplicateCanonicalTopicKeysFromBaseReport(baseReport) {
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
     ["science", "scienceTopics"],
-    ["hebrew", "hebrewTopics"],
-    ["moledet-geography", "moledetGeographyTopics"],
-  ];
+    ["hebrewTopics"],
+    ["moledetGeographyTopics"]];
   for (const [sid, mk] of maps) {
     const tm = baseReport?.[mk];
     if (!tm) continue;
@@ -163,7 +162,7 @@ export function resolveRowDisplayLabelHe(context, fields) {
 export function narrativeTitleFromRow(row) {
   if (!row || typeof row !== "object") return "";
   return (
-    String(row.narrativeTitleHe || row.narrativeTopicLabelHe || row.labelHe || "").trim() ||
+    String(row.narrativeTitleHe || row.narrativeTopicLabelHe || row.labelHe || "").trim() |
     cleanTopicLabelHe(row.displayName)
   );
 }
@@ -188,5 +187,5 @@ export default {
   buildDuplicateCanonicalTopicKeysFromBaseReport,
   resolveRowDisplayLabelHe,
   narrativeTitleFromRow,
-  gradeRelationSublineFromRow,
+  gradeRelationSublineFromRow
 };

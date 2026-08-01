@@ -7,7 +7,7 @@ import {
 import { isScienceSubjectId } from "../../lib/learning/display-level.js";
 
 /**
- * Parent/teacher activity level selector — רגיל / מתקדם (science: regular only).
+ * Parent/teacher activity level selector —  /  (science: regular only).
  */
 export default function ActivityDisplayLevelSelector({
   subjectId,

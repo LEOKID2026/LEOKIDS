@@ -26,7 +26,7 @@ import {
   formatPercent,
   formatTopicLineHe,
   groupTierHe,
-  subjectLabelHe,
+  subjectLabel,
 } from "../../../lib/teacher-portal/teacher-ui.js";
 
 export async function getServerSideProps(context) {
@@ -240,7 +240,7 @@ export default function TeacherClassReportPage({ classId }) {
                         </li>
                       );
                     }
-                    const subj = subjectLabelHe(t.subject);
+                    const subj = subjectLabel(t.subject);
                     const headline = t.subtopicLabelHe
                       ? `${t.topicLabelHe} - ${t.subtopicLabelHe}`
                       : t.topicLabelHe;

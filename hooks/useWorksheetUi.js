@@ -25,7 +25,6 @@ const WORKSHEET_UI_KEYS = [
   "subjectField",
   "subjectMath",
   "subjectGeometry",
-  "subjectHebrew",
   "subjectEnglish",
   "subjectFilterAll",
   "levelFilterAll",
@@ -296,7 +295,6 @@ export function worksheetSubjectLabel(t, subjectId) {
     math: "subjectMath",
     geometry: "subjectGeometry",
     english: "subjectEnglish",
-    hebrew: "subjectHebrew",
   };
   const key = map[subjectId];
   return key ? t(`worksheets.${key}`) : subjectId;

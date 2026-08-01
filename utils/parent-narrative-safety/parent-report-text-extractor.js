@@ -1,9 +1,7 @@
 /**
- * Extract parent-visible Hebrew / narrative strings from report JSON artifacts.
+ * Extract parent-visible narrative strings from report JSON artifacts.
  * Does not traverse raw mistake blobs or deep engine diagnostics (configurable).
  */
-
-const HEBREW_CHAR = /[\u0590-\u05FF]/;
 
 /** Subtrees to skip entirely (raw/internal). */
 /** Path fragments — if present in dot-path, string is treated as internal / non-parent-surface. */
@@ -16,8 +14,7 @@ export const DEFAULT_DENY_PATH_SEGMENTS = [
   "trackingSnapshots",
   "diagnosticEngineV2",
   "hybridRuntime",
-  "evidenceTrace",
-];
+  "evidenceTrace"];
 
 const SKIP_PATH_SEGMENTS = new Set([
   "mistakes",
@@ -43,8 +40,7 @@ const SKIP_PATH_SEGMENTS = new Set([
   "professionalEngineOutputV1",
   "allItems",
   "topicEngineRowSignals",
-  "decisionTrace",
-]);
+  "decisionTrace"]);
 
 /**
  * @param {string} path
@@ -71,7 +67,7 @@ function keyAllowsParentNarrative(key, path) {
   if (key === "needsPracticeLines") return true;
   if (
     key === "displayName" &&
-    /(Topics|Operations|hebrewTopics|mathOperations|geometryTopics|englishTopics|scienceTopics|moledetGeographyTopics)/.test(path)
+    /(Topics|Operations|mathOperations|geometryTopics|englishTopics|scienceTopics|historyTopics)/.test(path)
   ) {
     return true;
   }
@@ -96,11 +92,11 @@ function shouldKeepStringValue(s, key) {
   if (/^(true|false|null)$/i.test(t)) return false;
   if (/^-?\d+(\.\d+)?$/.test(t)) return false;
   if (/^(insufficient_data|contradictory|P[1-4]|advance_ok|maintain|monitor)$/i.test(t)) return false;
-  // Prefer Hebrew prose for parent surfaces; allow longer Latin-only cautiously (URLs unlikely < 2 in reports)
-  if (!HEBREW_CHAR.test(t) && key.endsWith("He")) {
+  // Prefer prose for parent surfaces; require longer Latin-only *He strings
+  if (key.endsWith("He")) {
     return t.length >= 8 && /\s/.test(t);
   }
-  return HEBREW_CHAR.test(t);
+  return t.length >= 8 && /\s/.test(t);
 }
 
 /**
@@ -130,7 +126,7 @@ function walk(value, path, ctx, out, opts) {
     if (!keyAllowsParentNarrative(keySeg, path)) return;
     if (!shouldKeepStringValue(value, keySeg)) return;
     const heKey = keySeg.endsWith("He");
-    if (!HEBREW_CHAR.test(value) && !heKey) return;
+    if (!heKey && keySeg !== "needsPracticeLines" && keySeg !== "displayName") return;
 
     const id = path.replace(/[^\w\-[\].]/g, "_").slice(0, 200);
     const dedupeKey = opts.dedupeText !== false ? String(value).trim() : id;
@@ -141,8 +137,7 @@ function walk(value, path, ctx, out, opts) {
       id,
       path,
       text: String(value).trim(),
-      context: { ...ctx },
-    };
+      context: { ...ctx }};
     out.set(`txt:${dedupeKey}`, row);
     return;
   }
@@ -193,13 +188,11 @@ export function extractParentVisibleNarratives(reportObject, options = {}) {
   const map = new Map();
   walk(reportObject, "", ctxBase, map, {
     dedupeText,
-    denyPathSegments: options.denyPathSegments ?? DEFAULT_DENY_PATH_SEGMENTS,
-  });
+    denyPathSegments: options.denyPathSegments ?? DEFAULT_DENY_PATH_SEGMENTS});
 
   const list = [...map.values()].map((n) => ({
     ...n,
-    context: { ...n.context, source },
-  }));
+    context: { ...n.context, source }}));
 
   list.sort((a, b) => a.path.localeCompare(b.path));
   return list;
@@ -216,29 +209,25 @@ export function runParentReportTextExtractorInlineTests() {
   const nested = {
     summary: {
       diagnosticOverviewHe: {
-        strongestAreaLineHe: "תוצאות טובות יחסית בתרגול בסיסי",
-        mainFocusAreaLineHe: null,
-      },
-      needsPracticeLines: ["עברית: הבנה"],
-    },
+        strongestAreaLineHe: "Relatively strong results in basic practice",
+        mainFocusAreaLineHe: null},
+      needsPracticeLines: ["Math: comprehension"]},
     internalDebug: { taxonomyId: "X-1", snapshotHash: "abc" },
-    mistakes: [{ stem: "שאלה סודית" }],
-  };
+    mistakes: [{ stem: "secret question" }]};
 
   const ext = extractParentVisibleNarratives(nested, { source: "test_nested", dedupeText: true });
-  if (!ext.some((x) => x.text.includes("תוצאות טובות"))) failures.push("nested: missed Hebrew He field");
+  if (!ext.some((x) => x.text.includes("Relatively strong"))) failures.push("nested: missed He field");
   if (ext.some((x) => x.path.includes("mistakes"))) failures.push("nested: should skip mistakes subtree");
-  if (ext.some((x) => x.text.includes("סודית"))) failures.push("nested: leaked mistake stem");
+  if (ext.some((x) => x.text.includes("secret question"))) failures.push("nested: leaked mistake stem");
 
   const dup = {
-    a: { lineHe: "טקסט זהה" },
-    b: { lineHe: "טקסט זהה" },
-  };
+    a: { lineHe: "identical text sample" },
+    b: { lineHe: "identical text sample" }};
   const extDup = extractParentVisibleNarratives(dup, { source: "dup", dedupeText: true });
-  if (extDup.filter((x) => x.text === "טקסט זהה").length !== 1) failures.push("dedupe: expected one row");
+  if (extDup.filter((x) => x.text === "identical text sample").length !== 1) failures.push("dedupe: expected one row");
 
   const extNoDedupe = extractParentVisibleNarratives(dup, { source: "dup", dedupeText: false });
-  if (extNoDedupe.filter((x) => x.text === "טקסט זהה").length !== 2) failures.push("no dedupe: expected two rows");
+  if (extNoDedupe.filter((x) => x.text === "identical text sample").length !== 2) failures.push("no dedupe: expected two rows");
 
   const empty = extractParentVisibleNarratives({}, { source: "empty" });
   if (empty.length !== 0) failures.push("empty object should yield 0");
@@ -249,10 +238,7 @@ export function runParentReportTextExtractorInlineTests() {
 
   const subjects = {
     subjectsArr: [
-      { subjectId: "math", summaryLineHe: "קו תקציב חזק" },
-      { subjectId: "hebrew", summaryLineHe: "קו תקציב חזק" },
-    ],
-  };
+      { subjectId: "math", summaryLineHe: "Strong place value line" }]};
   const extArr = extractParentVisibleNarratives(subjects, { source: "arrays", dedupeText: false });
   if (!extArr.every((x) => x.context.subject)) failures.push("subject propagation");
 

@@ -230,7 +230,7 @@ function BadgesSection({ badges, t }) {
           className={T.badgePill}
         >
           {b.label}
-          <span className={T.badgeSubject}>({b.subjectLabelHe})</span>
+          <span className={T.badgeSubject}>({b.subjectLabel})</span>
         </li>
       ))}
     </ul>

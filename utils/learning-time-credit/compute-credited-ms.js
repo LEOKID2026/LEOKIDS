@@ -21,7 +21,7 @@ export function creditVisibleSliceMs(visibleElapsedMs, tierCapMs, alreadyCredite
 }
 
 /**
- * צבירת זמן ליחידה — תקרה 10 דקות.
+ *    —  10 .
  * @param {number} elapsedMs
  */
 export function legacyAccumulateQuestionMs(elapsedMs) {

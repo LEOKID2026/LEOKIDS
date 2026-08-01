@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron": "El cron de persistencia mensual está deshabilitado. Establecer ENABLE_MONTHLY_PERSISTENCE_CRON = verdadero"
+  }
+}

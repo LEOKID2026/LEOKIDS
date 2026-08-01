@@ -39,17 +39,9 @@ export default function LearningBookShell({
       ? copy("shell", "backGeometry")
       : subject === "science"
         ? copy("shell", "backScience")
-        : subject === "hebrew"
-          ? copy("shell", "backHebrew")
-          : subject === "english"
-            ? copy("shell", "backEnglish")
-            : subject === "moledet"
-              ? copy("shell", "backHomeland")
-              : subject === "geography"
-                ? copy("shell", "backGeography")
-                : subject === "history"
-                  ? copy("shell", "backHistory")
-                  : copy("shell", "backMath");
+        : subject === "english"
+          ? copy("shell", "backEnglish")
+          : copy("shell", "backMath");
 
   const shellTitle = useMemo(() => {
     const raw = bookMeta.bookTitleKey

@@ -13,7 +13,7 @@ import { planAdaptiveLearning } from "./adaptive-planner.js";
 const MOLEDET_GEOGRAPHY_STRAND_KEYS = [];
 
 /**
- * @param {Record<string, string | undefined>} [env]
+ * @param {Record<string, string || undefined>} [env]
  */
 export function isAdaptivePlannerRecommendationEnabled(env = typeof process !== "undefined" ? process.env : {}) {
   const pub = String(env.NEXT_PUBLIC_ENABLE_ADAPTIVE_PLANNER_RECOMMENDATION || "").trim().toLowerCase();
@@ -43,7 +43,7 @@ export function normalizePlannerSubject(raw) {
     .trim()
     .toLowerCase()
     .replace(/_/g, "-");
-  if (s === "moledet") return "moledet-geography";
+  
   return s;
 }
 
@@ -105,7 +105,7 @@ function inferDefaultTopicBucketKeys(normalizedSubject, topic, explicit) {
       writing: "writing",
       sentences: "sentences",
       translation: "sentences",
-      mixed: "",
+      mixed: ""
     };
     const b = map[t];
     return b ? [b] : [];
@@ -118,10 +118,7 @@ function inferDefaultTopicBucketKeys(normalizedSubject, topic, explicit) {
     if (SCIENCE_TOPIC_ORDER.includes(t)) return [t];
     return [];
   }
-  if (normalizedSubject === "moledet-geography") {
-    if (MOLEDET_GEOGRAPHY_STRAND_KEYS.includes(t)) return [t];
-    return [];
-  }
+  
   return [];
 }
 
@@ -172,27 +169,25 @@ export function buildSyntheticDiagnosticReport(practice, normalizedSubject, grad
     positiveAuthorityLevel: accuracyToPositiveAuthorityLevel(accuracy),
     engineDecision: inferEngineDecisionFromPractice(practice),
     patternHe: "",
-    recentAttempts: Array.isArray(practice.recentAttempts) ? practice.recentAttempts : [],
+    recentAttempts: Array.isArray(practice.recentAttempts) ? practice.recentAttempts : []
   };
 
-  if (normalizedSubject === "math" || normalizedSubject === "science" || normalizedSubject === "hebrew") {
+  if (normalizedSubject === "math" || normalizedSubject === "science") {
     unit.bucketKey = topic;
   }
-  if (normalizedSubject === "moledet-geography") {
-    unit.bucketKey = topic;
-  }
+  
 
   /** @type {Record<string, unknown>} */
   const facets = {
     contract: {
       primarySubjectId: normalizedSubject,
-      topThinDowngraded,
+      topThinDowngraded
     },
     crossSubject: {},
     executive: {},
     diagnostic: {
-      unitSummaries: [unit],
-    },
+      unitSummaries: [unit]
+    }
   };
 
   if (topicBucketKeys.length) {
@@ -204,7 +199,7 @@ export function buildSyntheticDiagnosticReport(practice, normalizedSubject, grad
     playerName: practice.learningSessionId ? String(practice.learningSessionId) : scenarioId,
     diagnosticPrimarySource: "runtime_practice_session",
     generator: "adaptive-planner-runtime-bridge-v1",
-    facets,
+    facets
   };
 }
 
@@ -235,7 +230,7 @@ function buildDiagnostics(subject, gradeFrag, sourceInfo, safetyViolationCount, 
     metadataExactMatch: computeMetadataExactMatch(res),
     metadataSubjectFallback: !!(res && res.subjectFallback),
     safetyViolationCount,
-    skillAlignmentSource: sourceInfo?.skillAlignmentSource != null ? String(sourceInfo.skillAlignmentSource) : null,
+    skillAlignmentSource: sourceInfo?.skillAlignmentSource != null ? String(sourceInfo.skillAlignmentSource) : null
   };
 }
 
@@ -254,7 +249,7 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
     metadataExactMatch: false,
     metadataSubjectFallback: false,
     safetyViolationCount: 0,
-    skillAlignmentSource: null,
+    skillAlignmentSource: null
   };
 
   try {
@@ -269,7 +264,7 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
         ok: false,
         source: "adaptive_planner",
         reason: "missing_subject",
-        diagnostics: { ...diagnosticsFallback },
+        diagnostics: { ...diagnosticsFallback }
       };
     }
     if (!gradeFrag) {
@@ -277,7 +272,7 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
         ok: false,
         source: "adaptive_planner",
         reason: "missing_or_invalid_grade",
-        diagnostics: { ...diagnosticsFallback },
+        diagnostics: { ...diagnosticsFallback }
       };
     }
 
@@ -287,7 +282,7 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
         ok: false,
         source: "adaptive_planner",
         reason: "metadata_index_unavailable",
-        diagnostics: { ...diagnosticsFallback },
+        diagnostics: { ...diagnosticsFallback }
       };
     }
 
@@ -300,7 +295,7 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
     const adapterOptions = {
       metadataIndex,
       metadataQueryLimit: Number(options.metadataQueryLimit) > 0 ? Number(options.metadataQueryLimit) : 12,
-      currentDifficultyHint: String(options.currentDifficultyHint || "standard"),
+      currentDifficultyHint: String(options.currentDifficultyHint || "standard")
     };
 
     const { input, sourceInfo } = buildPlannerInputFromDiagnosticPayload(report, adapterOptions);
@@ -317,8 +312,8 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
         diagnostics: {
           ...diagnostics,
           safetyViolationCount: violations.length,
-          safetyViolations: violations,
-        },
+          safetyViolations: violations
+        }
       };
     }
 
@@ -330,16 +325,16 @@ export function buildRuntimePlannerRecommendationFromPracticeResult(payload, opt
         targetDifficulty: planOut.targetDifficulty,
         questionCount: planOut.questionCount,
         reasonCodes: planOut.reasonCodes,
-        mustNotSay: planOut.mustNotSay,
+        mustNotSay: planOut.mustNotSay
       },
-      diagnostics,
+      diagnostics
     };
   } catch (err) {
     return {
       ok: false,
       source: "adaptive_planner",
       reason: String(err?.message || err || "unknown_error"),
-      diagnostics: { ...diagnosticsFallback },
+      diagnostics: { ...diagnosticsFallback }
     };
   }
 }

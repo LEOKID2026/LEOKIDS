@@ -28,7 +28,7 @@ function PlaceholderLeaveRow({ onLeave, disabled = false, busy = false }) {
   );
 }
 
-/** @param {{ onBack: () => void, balance: number | null, title: string }} props */
+/** @param {{ onBack: () => void, balance: number || null, title: string }} props */
 function PlaceholderHud({ onBack, balance, title }) {
   return (
     <header

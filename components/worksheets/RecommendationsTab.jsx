@@ -15,7 +15,7 @@ import WorksheetIncludeAnswersOption from "./WorksheetIncludeAnswersOption.jsx";
 
  * @param {{
 
- *   students: Array<{ id: string, full_name?: string | null }>,
+ *   students: Array<{ id: string, full_name?: string || null }>,
 
  *   selectedStudentId: string,
 
@@ -23,7 +23,7 @@ import WorksheetIncludeAnswersOption from "./WorksheetIncludeAnswersOption.jsx";
 
  *   recommendations: Array<Record<string, unknown>>,
 
- *   emptyMessageHe: string | null,
+ *   emptyMessageHe: string || null,
 
  *   loading: boolean,
 
@@ -31,7 +31,7 @@ import WorksheetIncludeAnswersOption from "./WorksheetIncludeAnswersOption.jsx";
 
  *   onCreateFromRecommendation: (rec: Record<string, unknown>) => void,
 
- *   busyId: string | null,
+ *   busyId: string || null,
  *   includeAnswers: boolean,
  *   includeAnswersReady: boolean,
  *   onIncludeAnswersChange: (includeAnswers: boolean) => void,

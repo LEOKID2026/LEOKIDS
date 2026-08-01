@@ -7,13 +7,13 @@
  * @typedef {Object} EnglishWordPackEntry
  * @property {string} text
  * @property {string} illustrationId
- * @property {string} [colorInstructionHe]
+ * @property {string} [colorInstruction]
  */
 
 /**
  * @typedef {Object} EnglishWordPack
  * @property {string} id
- * @property {string} titleHe
+ * @property {string} title
  * @property {EnglishWordPackEntry[]} words
  */
 
@@ -21,21 +21,21 @@
 export const ENGLISH_WORD_PACKS = {
   colors: {
     id: "colors",
-    titleHe: "צבעים",
+    title: "Colors",
     words: [
-      { text: "red", illustrationId: "ill-pencil", colorInstructionHe: "צבעו באדום" },
-      { text: "blue", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בכחול" },
-      { text: "green", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בירוק" },
-      { text: "yellow", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בצהוב" },
-      { text: "orange", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בכתום" },
-      { text: "purple", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בסגול" },
-      { text: "pink", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בוורוד" },
-      { text: "black", illustrationId: "ill-pencil", colorInstructionHe: "צבעו בשחור" },
+      { text: "red", illustrationId: "ill-pencil", colorInstruction: "Color in red" },
+      { text: "blue", illustrationId: "ill-pencil", colorInstruction: "Color in blue" },
+      { text: "green", illustrationId: "ill-pencil", colorInstruction: "Color in green" },
+      { text: "yellow", illustrationId: "ill-pencil", colorInstruction: "Color in yellow" },
+      { text: "orange", illustrationId: "ill-pencil", colorInstruction: "Color in orange" },
+      { text: "purple", illustrationId: "ill-pencil", colorInstruction: "Color in purple" },
+      { text: "pink", illustrationId: "ill-pencil", colorInstruction: "Color in pink" },
+      { text: "black", illustrationId: "ill-pencil", colorInstruction: "Color in black" },
     ],
   },
   animals: {
     id: "animals",
-    titleHe: "בעלי חיים",
+    title: "Animals",
     words: [
       { text: "cat", illustrationId: "ill-cat" },
       { text: "dog", illustrationId: "ill-dog" },
@@ -49,7 +49,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   family: {
     id: "family",
-    titleHe: "משפחה",
+    title: "Family",
     words: [
       { text: "mom", illustrationId: "ill-mom" },
       { text: "dad", illustrationId: "ill-dad" },
@@ -63,7 +63,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   food: {
     id: "food",
-    titleHe: "אוכל",
+    title: "Food",
     words: [
       { text: "apple", illustrationId: "ill-apple" },
       { text: "banana", illustrationId: "ill-banana" },
@@ -77,7 +77,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   school: {
     id: "school",
-    titleHe: "בית הספר",
+    title: "School",
     words: [
       { text: "book", illustrationId: "ill-book" },
       { text: "pencil", illustrationId: "ill-pencil" },
@@ -91,7 +91,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   body: {
     id: "body",
-    titleHe: "גוף",
+    title: "Body",
     words: [
       { text: "hand", illustrationId: "ill-hand" },
       { text: "foot", illustrationId: "ill-foot" },
@@ -105,7 +105,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   home: {
     id: "home",
-    titleHe: "בית",
+    title: "Home",
     words: [
       { text: "house", illustrationId: "ill-house" },
       { text: "door", illustrationId: "ill-door" },
@@ -119,7 +119,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   nature: {
     id: "nature",
-    titleHe: "טבע",
+    title: "Nature",
     words: [
       { text: "sun", illustrationId: "ill-sun" },
       { text: "tree", illustrationId: "ill-tree" },
@@ -133,7 +133,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   transport: {
     id: "transport",
-    titleHe: "תחבורה",
+    title: "Transport",
     words: [
       { text: "car", illustrationId: "ill-car" },
       { text: "bus", illustrationId: "ill-bus" },
@@ -147,7 +147,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   numbers: {
     id: "numbers",
-    titleHe: "מספרים",
+    title: "Numbers",
     words: [
       { text: "one", illustrationId: "qty-01" },
       { text: "two", illustrationId: "qty-02" },
@@ -161,7 +161,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   cvc: {
     id: "cvc",
-    titleHe: "מילים קצרות",
+    title: "CVC words",
     words: [
       { text: "cat", illustrationId: "ill-cat" },
       { text: "dog", illustrationId: "ill-dog" },
@@ -175,7 +175,7 @@ export const ENGLISH_WORD_PACKS = {
   },
   sight: {
     id: "sight",
-    titleHe: "מילות תדירות",
+    title: "Sight words",
     words: [
       { text: "the", illustrationId: "ill-book" },
       { text: "and", illustrationId: "ill-book" },
@@ -214,7 +214,7 @@ export const ENGLISH_WORD_PACK_IDS_ALL = Object.keys(ENGLISH_WORD_PACKS);
 
 /**
  * @param {string} packId
- * @returns {EnglishWordPack | null}
+ * @returns {EnglishWordPack || null}
  */
 export function getEnglishWordPack(packId) {
   return ENGLISH_WORD_PACKS[String(packId || "").trim()] || null;

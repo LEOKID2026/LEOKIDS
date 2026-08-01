@@ -16,7 +16,7 @@ function read(rel) {
 }
 
 const forbiddenTouch = [
-  "components/learning-book/MixedHebrewMathText.js",
+  "components/learning-book/MixedRtlMathText.js",
   "lib/learning-book/book-math-display.js",
   "pages/learning/math-master.js",
   "components/learning/StudentQuestionDisplay.jsx",
@@ -32,11 +32,11 @@ for (const file of forbiddenTouch) {
 }
 
 const mathMaster = read("pages/learning/math-master.js");
-if (!/renderLearningMixedHebrewMathText/.test(mathMaster)) {
-  errors.push("math-master: step modal must use renderLearningMixedHebrewMathText");
+if (!/renderLearningMixedRtlMathText/.test(mathMaster)) {
+  errors.push("math-master: step modal must use renderLearningMixedRtlMathText");
 }
-if (!/LearningMixedHebrewMathText/.test(mathMaster)) {
-  errors.push("math-master: LearningMixedHebrewMathText import missing");
+if (!/LearningMixedRtlMathText/.test(mathMaster)) {
+  errors.push("math-master: LearningMixedRtlMathText import missing");
 }
 
 const studentDisplay = read("utils/student-question-display.js");
@@ -45,8 +45,8 @@ if (!/export function resolveStudentQuestionDisplayParts/.test(studentDisplay)) 
 }
 
 const bookContentLine = read("components/learning-book/BookContentLine.js");
-if (/from "\.\/MixedHebrewMathText"/.test(bookContentLine) === false) {
-  errors.push("BookContentLine must delegate fallback to MixedHebrewMathText");
+if (/from "\.\/MixedRtlMathText"/.test(bookContentLine) === false) {
+  errors.push("BookContentLine must delegate fallback to MixedRtlMathText");
 }
 
 if (errors.length) {

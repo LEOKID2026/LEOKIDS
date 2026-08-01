@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { MATH_G1_BOOK_META } from "../../lib/learning-book/math-g1-registry";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
-import { formatBookShellTitleHe } from "../../lib/learning-book/format-book-shell-title-he";
+import { formatBookShellTitleHe } from "../../lib/learning-book/format-book-shell-title";
 import {
   getMathG1BookReturnQuerySuffix,
   handleMathG1BookClose,

@@ -34,7 +34,7 @@ const heroPromptText =
  *   leoNumber?: string,
  *   leoNumberLabelHe?: string,
  *   avatarEmoji: string,
- *   avatarImage?: string | null,
+ *   avatarImage?: string || null,
  *   avatarBackgroundKey?: string,
  *   guestLockedPanelSet?: Set<string>,
  *   lockMessage?: string,
@@ -46,7 +46,7 @@ const heroPromptText =
  *   onSurpriseOpen?: () => void,
  *   surpriseOpeningLocked?: boolean,
  *   surpriseRefreshToken?: number,
- *   surpriseStatusOverride?: { ready?: boolean, pendingBoxCount?: number } | null,
+ *   surpriseStatusOverride?: { ready?: boolean, pendingBoxCount?: number } || null,
  *   showParentInvite?: boolean,
  * }} props
  */

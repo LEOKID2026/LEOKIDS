@@ -10,7 +10,7 @@ import { useT } from "../../lib/i18n/I18nProvider.jsx";
 /**
  * Shared install-page shell — bright/classic via site theme picker.
  * @param {{
- *   portal: 'student' | 'parent' | 'teacher',
+ *   portal: 'student' || 'parent' || 'teacher',
  *   badge: string,
  *   title: string,
  *   pageTitle: string,

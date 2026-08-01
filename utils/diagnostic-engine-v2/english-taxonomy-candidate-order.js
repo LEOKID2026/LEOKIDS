@@ -31,8 +31,7 @@ const E05_VOCAB_CONTEXT_INDICATORS = [
   "context_clue",
   "preposition_context",
   "preposition",
-  "prepositions",
-];
+  "prepositions"];
 
 const E01_VOCAB_BASIC_INDICATORS = [
   "vocab_recall_en",
@@ -48,12 +47,11 @@ const E01_VOCAB_BASIC_INDICATORS = [
   "vocabulary",
   "translation",
   "recall",
-  "he_to_en",
-  "en_to_he",
+  "meaning_to_en",
+  "en_to_meaning",
   "false_friend",
   "false friend",
-  "collocation",
-];
+  "collocation"];
 
 const E04_GRAMMAR_STRUCTURE_INDICATORS = [
   "sentence_structure",
@@ -66,8 +64,7 @@ const E04_GRAMMAR_STRUCTURE_INDICATORS = [
   "word_order",
   "connectors",
   "connector",
-  "structure",
-];
+  "structure"];
 
 const E02_GRAMMAR_BASIC_INDICATORS = [
   "grammar_basic",
@@ -82,8 +79,7 @@ const E02_GRAMMAR_BASIC_INDICATORS = [
   "agreement",
   "tense",
   "present",
-  "past",
-];
+  "past"];
 
 /**
  * @param {unknown[]} wrongEvents
@@ -111,18 +107,22 @@ export function englishVocabularyRoutingScores(wrongEvents, row) {
         : {};
     const direction = String(params.direction || "").trim().toLowerCase();
     const patternFamily = String(
-      (ev && typeof ev === "object" ? ev.patternFamily : null) || params.patternFamily || "",
-    )
+      (ev && typeof ev === "object" ? ev.patternFamily : null) || params.patternFamily || "")
       .trim()
       .toLowerCase();
 
     if (patternFamily === "vocab_recall_en" || wh.includes("vocab_recall_en")) e01Score += 3;
-    if (direction === "he_to_en") e01Score += 2;
-    if (direction === "en_to_he" && (wh.includes("word_meaning") || wh.includes("vocabulary"))) e01Score += 2;
+    if (direction === "meaning_to_en") e01Score += 2;
+    if (
+      direction === "en_to_meaning" &&
+      (wh.includes("word_meaning") || wh.includes("vocabulary"))
+    ) {
+      e01Score += 2;
+    }
 
     const patterns = collectPossibleErrorPatterns([ev]);
-    if (patterns.some((p) => /תרגום מילולי|false friend/i.test(String(p)))) e01Score += 3;
-    if (patterns.some((p) => /preposition|יחס/i.test(String(p)))) e05Score += 3;
+    if (patterns.some((p) => /(?!)/i.test(String(p)))) e01Score += 3;
+    if (patterns.some((p) => /(?!)/i.test(String(p)))) e05Score += 3;
   }
 
   return { e01Score, e05Score };
@@ -174,8 +174,7 @@ export function orderEnglishTaxonomyCandidatesWithMeta(candidateIds, wrongEvents
         "E-05",
         e01Score > e05Score,
         e05Score > e01Score,
-        candidateIds,
-      );
+        candidateIds);
       return { ...pair, scores: { "E-01": e01Score, "E-05": e05Score } };
     }
   }
@@ -190,8 +189,7 @@ export function orderEnglishTaxonomyCandidatesWithMeta(candidateIds, wrongEvents
         "E-04",
         e02Score > e04Score,
         e04Score > e02Score,
-        candidateIds,
-      );
+        candidateIds);
       return { ...pair, scores: { "E-02": e02Score, "E-04": e04Score } };
     }
   }

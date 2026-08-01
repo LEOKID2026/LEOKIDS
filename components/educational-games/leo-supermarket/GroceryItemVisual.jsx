@@ -54,7 +54,7 @@ function ShelfVisual({ product, imageClassName, iconClassName, centerClassName }
  *     shelfIcon: string
  *     imageSrc?: string
  *   }
- *   variant?: 'shelf' | 'register-chip'
+ *   variant?: 'shelf' || 'register-chip'
  *   showPrice?: boolean
  *   nameOnShelf?: boolean
  * }} props

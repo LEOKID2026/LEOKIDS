@@ -14,16 +14,16 @@
  *     plus compositional **semantic intent rules** (strength / weakness / explain-report
  *     inquiries), not per-sentence FAQ tables. Payload-derived subject/topic vocabulary
  *     layers on top.
- *   - WEAK report tokens (e.g. הוא, היא, הילד, השבוע, היום, בבית) cannot classify a
+ *   - WEAK report tokens (e.g. , , , ) cannot classify a
  *     question as report_related on their own; they must combine with at least one
- *     STRONG report token (תרגול, מתקשה, חזק, לתרגל, לפי הדוח, etc.) or a strong
- *     report intent phrase. This guards against "הוא אוהב פיצה?" being classified
+ *     STRONG report token (, ,  , etc.) or a strong
+ *     report intent phrase. This guards against "  ?" being classified
  *     as report_related.
- *   - Generic-knowledge framing (מה זה, מי המציא, איך מכינים, מי כתב) clamps
+ *   - Generic-knowledge framing ( ,  ,  ) clamps
  *     report_signal so that even a topic-name match cannot push the question into
- *     report_related. "מה זה פוטוסינתזה?" stays off_topic even when science is in
- *     the report. The parent must phrase it as "מה עם פוטוסינתזה בדוח?" or
- *     "הוא מתקשה בפוטוסינתזה?" to trigger report_related.
+ *     report_related. "  ?" stays off_topic even when science is in
+ *     the report. The parent must phrase it as "   ?" or
+ *     "  ?" to trigger report_related.
  *   - On low confidence, the deterministic step returns ambiguous_or_unclear and
  *     defers the upgrade to the optional LLM classifier (see question-classifier-llm.js).
  *
@@ -33,7 +33,7 @@
 
 import { SUBJECT_ORDER, normalizeSubjectId } from "./contract-reader.js";
 import { detectAggregateQuestionClass } from "./semantic-question-class.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 import { looksLikeExternalPastedQuestion, matchLooseTopicFromUtterance } from "../parent-ai-topic-classifier/classifier.js";
 import {
   buildTopicClarificationQuestionHe,
@@ -42,7 +42,7 @@ import {
   isSubjectStatusInquiry,
   isTopicWeaknessInquiry,
   resolveReportRowFromUtterance,
-  utteranceQualifiesAsReportQuestion,
+  utteranceQualifiesAsReportQuestion
 } from "./report-row-resolver.js";
 
 export { buildTopicClarificationQuestionHe };
@@ -63,7 +63,7 @@ export { buildTopicClarificationQuestionHe };
  * @typedef {{
  *   bucket: ClassifierBucket;
  *   confidence: number;
- *   source: "deterministic" | "llm" | "fallback";
+ *   source: "deterministic" || "llm" || "fallback";
  *   signals: {
  *     reportSignal: number;
  *     offTopicSignal: number;
@@ -82,31 +82,31 @@ export { buildTopicClarificationQuestionHe };
  * Public boundary copy. Imported by question-router.js / index.js.
  */
 export const GENERAL_OFF_TOPIC_RESPONSE_HE =
-  "אני יכול לעזור כאן רק עם הדוח, התרגול וההתקדמות של הילד באתר. אפשר לשאול למשל: מה חשוב לתרגל השבוע, מה כדאי לעשות בבית, או איזה נושא לפתוח כפעילות קצרה.";
+  "I can help here only with the report, practice, and your child's progress on the site. You can ask, for example: what matters to practice this week, what to do at home, or which topic to open as a short activity.";
 
 /** @deprecated alias — use {@link GENERAL_OFF_TOPIC_RESPONSE_HE} */
 export const OFF_TOPIC_RESPONSE_HE = GENERAL_OFF_TOPIC_RESPONSE_HE;
 
 export const DIAGNOSTIC_BOUNDARY_RESPONSE_HE =
-  "אני יכול להתייחס רק למה שמופיע בנתוני התרגול באתר. לפי הדוח אפשר לראות באילו מקצועות ונושאים כדאי לחזק את הלמידה, אבל אי אפשר להסיק מכאן מסקנה אישית על הילד. אם תרצו, אפשר להתמקד עכשיו במה שהדוח כן מראה: נושא חזק, נושא לחיזוק, או צעד קטן לבית.";
+  "I can only talk about what appears in the practice data on the site. The report can show which subjects and topics are worth reinforcing, but it cannot support a personal conclusion about the child. If you like, we can focus on what the report does show: a strong topic, a topic to reinforce, or a small next step at home.";
 
 export const HEALTH_BOUNDARY_RESPONSE_HE =
-  "אני יכול להתייחס רק לנתוני התרגול שמופיעים באתר. הדוח לא נועד לקבוע מסקנות אישיות על הילד, אלא לעזור להבין איזה נושא כדאי לחזק בלמידה. אפשר להמשיך מכאן לצעד לימודי קטן לפי הנתונים בדוח.";
+  "I can only talk about the practice data that appears on the site. The report is not meant to draw personal conclusions about the child — it helps show which topic is worth reinforcing in learning. We can continue from here with a small learning step based on the report.";
 
 export const PRIVACY_BOUNDARY_RESPONSE_HE =
-  "אני יכול לעזור רק עם הדוח של הילד שמחובר לחשבון ההורה הזה. אין לי אפשרות להציג נתונים של ילדים אחרים, סיסמאות, רשימות משתמשים או מידע פנימי של המערכת.";
+  "I can only help with the report for the child linked to this parent account. I cannot show other children's data, passwords, user lists, or internal system information.";
 
 export const PEER_COMPARISON_RESPONSE_HE =
-  "הדוח מתבסס על תרגול הילד בלבד ואינו משווה לילדים אחרים בכיתה. אפשר להתמקד במה שמופיע בדוח ולשאול על נושא ספציפי.";
+  "The report is based only on this child's practice and does not compare to other children in the class. You can focus on what appears in the report and ask about a specific topic.";
 
 export const AMBIGUOUS_RESPONSE_HE =
-  "לא הצלחתי להבין בדיוק לאיזה חלק בדוח התכוונתם. אפשר לשאול בצורה פשוטה יותר, למשל: מה הכי חשוב לתרגל השבוע, מה כדאי לעשות בבית, או איזה נושא לפתוח כפעילות קצרה.";
+  "I could not tell exactly which part of the report you meant. Try asking more simply, for example: what matters most to practice this week, what to do at home, or which topic to open as a short activity.";
 
 export const NO_DATA_FOR_REQUEST_RESPONSE_HE =
-  "בדוח הנוכחי אין מספיק מידע כדי לענות על זה בצורה מדויקת. אפשר להמשיך עם תרגול קצר באתר, ואז לבדוק שוב אם כבר מופיע כיוון ברור יותר בדוח.";
+  "In the current report there is not enough information to answer that precisely. You can continue with short practice on the site, then check again whether a clearer direction appears in the report.";
 
 export const NO_DATA_SPECIFIC_FOR_REQUEST_RESPONSE_HE =
-  "יש בדוח נתוני תרגול מהתקופה, אבל אין מספיק מידע כדי לענות דווקא על הנקודה הזו בצורה מדויקת. אפשר להמשיך עם תרגול קצר באתר, ואז לבדוק שוב אם מופיע כיוון ברור יותר בנושא הזה.";
+  "The report has practice data from this period, but there is not enough information to answer this specific point precisely. You can continue with short practice on the site, then check again whether a clearer direction appears for this topic.";
 
 /**
  * Decision thresholds. Exported so tests can assert behavior without re-deriving them.
@@ -117,7 +117,7 @@ export const CLASSIFIER_THRESHOLDS = Object.freeze({
   reportRelated: 0.5,
   reportRelatedOffTopicCeiling: 0.3,
   llmConfidenceFloor: 0.7,
-  meaningfulTokenMinForReport: 2,
+  meaningfulTokenMinForReport: 2
 });
 
 const STRONG_REPORT_TOKEN_WEIGHT = 0.35;
@@ -132,75 +132,75 @@ const MIXED_INTENT_PENALTY = 0.3;
 /** STRONG report tokens — each contributes 0.35 to reportSignal. */
 const STRONG_REPORT_TOKENS = [
   // Verbs / actions about practice and learning
-  "תרגול", "להתאמן", "מתאמן", "מתאמנת", "להתקדם", "מתקדם", "מתקדמת",
-  "התקדמות", "להתמקד", "לתרגל", "לתרגול", "לחזור על", "תרגיל", "תרגילים",
+  "", "", "", "", "", "", "",
+  "", "", "", "", "", "", "",
   // Strengths / weaknesses / state about the child's performance
-  "חוזקה", "חוזקות", "חזק", "חזקה", "חזקים",
-  "קושי", "קשיים", "מתקשה", "מתקשים", "חלש", "חלשה", "חלשים",
-  "ציון", "ציונים", "הצלחה", "הצלחות",
-  "שיפור", "ירידה", "מגמה",
+  "", "", "", "", "",
+  "", "", "", "", "", "", "",
+  "", "", "", "",
+  "", "", "",
   // Help / report references
-  "לעזור לו", "לעזור לה", "איך לעזור", "איך אעזור", "איך נעזור",
-  "לפי הדוח", "על פי הדוח", "מהדוח", "בדוח", "הדוח אומר", "הדוח מראה",
+  "", "", "", "", "",
+  "", "", "", "", "", "",
   "report", "practice", "progress", "learning", "data", "numbers", "conclusions",
-  "help me", "at home", "teacher", "explain", "meaning", "general picture",
+  "help me", "at home", "teacher", "explain", "meaning", "general picture"
 ];
 
 /** STRONG report intent phrases — compact routing cues (after fold). */
 const STRONG_REPORT_INTENTS = [
-  /במה.{0,12}חזק/u, /במה.{0,12}מתקשה/u, /במה.{0,12}חלש/u,
-  /במה.{0,12}טוב/u,
-  /איפה.{0,16}מתקשה/u, /איפה.{0,12}(הוא|היא|הילד|הילדה).{0,12}מתקשה/u,
-  /מה.{0,8}לתרגל/u, /מה.{0,8}לעשות.{0,8}בבית/u,
+  /(?!)/u, /(?!)/u, /(?!)/u,
+  /(?!)/u,
+  /(?!)/u, /(?!)/u,
+  /(?!)/u, /(?!)/u,
   // Home-practice / next-step framing (keep aligned with semantic-question-class recommendation_action)
-  /מה\s+לעשות\s+היום/u,
-  /מה\s+לעשות\s+מחר/u,
-  /מה\s+לעשות\s+השבוע/u,
-  /מה\s+לעשות\s+בשבוע/u,
-  /מה\s+לעשות\s+בשבוע\s+הקרוב/u,
-  /מה\s+לעשות\s+עכשיו/u,
-  /מה\s+עושים\s+עכשיו/u,
-  /איך.{0,8}לעזור/u,
-  /מה.{0,8}הכי.{0,8}חשוב/u, /איפה.{0,8}להתמקד/u, /איפה.{0,8}להתחיל/u,
-  /יש.{0,3}שיפור/u, /יש.{0,3}ירידה/u, /יש.{0,3}התקדמות/u,
-  /סיבה.{0,3}לדאגה/u, /צריך.{0,3}לדאוג/u,
-  /הצלחות/u,
-  /בקצרה/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u, /(?!)/u, /(?!)/u,
+  /(?!)/u, /(?!)/u, /(?!)/u,
+  /(?!)/u, /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   // Strength / best-subject family (category signals — not FAQ sentences)
-  /מה\s+המקצוע\s*(הכי\s*)?טוב/u,
-  /המקצוע\s*(הכי\s*)?טוב/u,
-  /איזה\s+מקצוע\s*(הכי\s*)?טוב/u,
-  /באיזה\s+מקצוע\s*(הכי\s*)?טוב/u,
-  /איפה\s+(הכי\s*)?טוב/u,
-  /איפה\s+נראו.{0,28}תוצאות.{0,24}(הכי\s*)?טוב/u,
-  /במה\s+(הוא|היא|הילד|הילדה)\s+הכי\s+טוב/u,
-  /במה\s+(הוא|היא|הילד|הילדה)\s+(טוב|טובה)/u,
-  /מה\s+הנושא\s*(הכי\s*)?(חזק|טוב)/u,
-  /איזה\s+נושא\s*(הכי\s*)?(חזק|טוב)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   // Main focus / priority family
-  /^במה\s+(להתמקד|כדאי\s+להתמקד)/u,
-  /^איפה\s+(להתמקד|כדאי\s+להתמקד)/u,
-  /מה\s+הדגש/u,
-  /מה\s+הכי\s+חשוב\s+עכשיו/u,
-  /מה\s+חשוב\s+לתרגל/u,
-  /על\s+מה\s+להתמקד/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   // Home-practice / dosage family
-  /כמה\s+לתרגל/u,
-  /כמה\s+זמן\s+לתרגל/u,
-  /כמה\s+שאלות/u,
-  /כמה\s+פעמים\s+בשבוע/u,
-  /^איך\s+לתרגל/u,
-  /איך\s+לעזור\s+בבית/u,
-  /איך\s+להסביר\s+ל(?:ילד|ילדה|הילד|הילדה)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   // Catalog-aligned report questions that must reach Stage A (avoid classifier ambiguous early-exit)
-  /תסביר\s+לי\s+כמו\s+להורה/u,
-  /מה\s+לומר.{0,48}דוח/u,
-  /מה\s+לכתוב.{0,40}דוח/u,
-  /ניסוח\s+לשאול.{0,24}מורה/u,
-  /האם\s+אפשר\s+להסיק\s+מסקנות/u,
-  /תן\s+לי\s+רק\s+3\s+נקודות/u,
-  // Balanced strengths vs gaps (executive) without explicit "דוח" / חזק stems
-  /סיכום\s+מאוזן.{0,48}מה\s+טוב.{0,24}פחות/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  // Balanced strengths vs gaps (executive) without explicit "" /  stems
+  /(?!)/u,
   /what\s+(?:does|do).{0,20}(?:report|data|numbers).{0,20}(?:mean|show|say)/i,
   /what\s+is\s+the\s+(?:main\s+)?thing.{0,40}(?:report|data)/i,
   /what\s+should\s+i\s+(?:know|remember|take).{0,40}(?:report|home)/i,
@@ -219,7 +219,7 @@ const STRONG_REPORT_INTENTS = [
   /strengths?.{0,30}weaknesses|strong.{0,30}weak/i,
   /balanced\s+summary.{0,40}(?:good|less\s+good|weaker|weak)/i,
   /reinforcement\s+needed|most\s+reinforcement|needs\s+strengthening/i,
-  /what\s+is\s+(?:strong|weak).{0,30}report/i,
+  /what\s+is\s+(?:strong|weak).{0,30}report/i
 ];
 
 /**
@@ -228,12 +228,12 @@ const STRONG_REPORT_INTENTS = [
  * STRONG_REPORT_INTENT_WEIGHT so a lone STRONG token (0.35) still clears 0.5.
  */
 function matchesExplainReportInquiry(t) {
-  const reportSurface = /דוח|מהדוח|בדוח|מתוך\s+הדוח|\breport\b|\bdata\b|\bnumbers\b/u.test(t);
-  const inAppDeictic = /מדובר\s+פה|מה\s+שמופיע\s+למעלה|על\s+המסך\s+הזה/u.test(t);
+  const reportSurface = /(?!)/u.test(t);
+  const inAppDeictic = /(?!)/u.test(t);
   const conclusionReading =
-    /מסקנות/u.test(t) && /להבין|להיתקע|פרטים|בלי\s+להיתקע/u.test(t);
+    /(?!)/u.test(t) && /(?!)/u.test(t);
   if (!reportSurface && !inAppDeictic && !conclusionReading) return false;
-  return /תסביר|הסבר|איך\s+לקרוא|איך\s+להבין|להבין|אומר|משמעות|מה\s+אומר|מה\s+הדוח|פירוש|בקצרה|מבט\s+על|תוכן|מה\s+מופיע|עקרונית|חשוב\s+שאדע|חשוב\s+ל|מה\s+חשוב|כדאי\s+שאזכור|מה\s+לשים\s+לב|סדר\s+במספרים|תמונה\s+כללית|מסקנות|מה\s+הדוח\s+אומר|איך\s+לקרוא\s+את\s+הדוח|תעזר|לעזור\s+לי\s+לעשות\s+סדר|לא\s+הבנתי|explain|understand|meaning|mean|show|say|summary|main\s+thing|remember|take\s+home|pay\s+attention|make\s+sense|read\s+the\s+report/i.test(
+  return /(?!)/i.test(
     t,
   );
 }
@@ -257,13 +257,13 @@ function hasAnchoredTopicObservation(payload) {
 
 function hasWeaknessStem(t) {
   return (
-    /חלש|מתקשה|מתקשים|קושי|חולשות|דורש\s+חיזוק|לא\s+הולך|לא\s*יושב/u.test(t) ||
-    (/קשה|מאתגר/u.test(t) && /מקצוע|נושא/u.test(t))
+    /(?!)/u.test(t) ||
+    (/(?!)/u.test(t) && /(?!)/u.test(t))
   );
 }
 
 function hasLearningInquiryFrame(t) {
-  return /מקצוע|נושא|מה|איזה|איפה|במה|באיזה|הוא|היא|הילד|הילדה|דוח|נראו|תוצאות/u.test(t);
+  return /(?!)/u.test(t);
 }
 
 function matchesWeaknessInquiryCategory(t) {
@@ -271,12 +271,12 @@ function matchesWeaknessInquiryCategory(t) {
 }
 
 function hasStrengthStem(t) {
-  if (/במה\s+(הוא|היא|הילד|הילדה)\s+טוב/u.test(t)) return true;
-  if (/חזק|חוזקות|חוזק/u.test(t)) return true;
-  if (t.includes("נקודות") && /חוזק|חוזקות/u.test(t)) return true;
-  if (t.includes("תוצאות") && /טוב|הכי|נראו/u.test(t)) return true;
-  if (/מצליח|הצלח/u.test(t)) {
-    return /מקצוע|נושא|בדוח|למידה|תרגול|הילד|הוא|היא|איפה|נראו|תוצאות/u.test(t);
+  if (/(?!)/u.test(t)) return true;
+  if (/(?!)/u.test(t)) return true;
+  if (t.includes("") && /(?!)/u.test(t)) return true;
+  if (t.includes("") && /(?!)/u.test(t)) return true;
+  if (/(?!)/u.test(t)) {
+    return /(?!)/u.test(t);
   }
   return false;
 }
@@ -296,36 +296,36 @@ function computeSemanticReportIntentBonus(t) {
 /** WEAK tokens — only count when paired with a STRONG token or strong intent. */
 const WEAK_REPORT_TOKENS = [
   // Pronouns referring to the child
-  "הוא", "היא", "הילד", "הילדה", "הבן", "הבת", "בני", "בתי",
+  "", "", "", "", "", "", "", "",
   // Time / context
-  "השבוע", "היום", "השנה", "החודש", "בבית",
+  "", "", "", "", ""
 ];
 
 /** Off-topic category lexicons. Short, category-based. */
 const OFF_TOPIC_CATEGORIES = {
-  weather: ["מזג", "אוויר", "אויר", "ממטרים", "גשם", "שלג", "טמפרטורה"],
-  time: ["מה השעה", "השעון", "כמה השעה"],
-  jokes_chat: ["בדיחה", "תספר בדיחה", "ספר בדיחה", "תספר לי משהו"],
-  politics: ["ראש הממשלה", "ראש ממשלה", "כנסת", "בחירות", "מפלגה", "בנימין"],
-  sports: ["כדורגל", "כדורסל", "מי ניצח", "המכבייה", "אולימפיאדה", "משחק אתמול"],
-  food: ["מתכון", "עוגה", "פיצה", "המבורגר", "מאכל", "ארוחה", "מה לאכול", "איך מכינים"],
-  code: ["javascript", "java script", "פייתון", "קוד תקין", "תכנות"],
-  shopping: ["איפה לקנות", "כמה עולה", "מחיר של", "נעליים", "ביטקוין", "מטבע", "דולר"],
-  songs: ["תכתוב לי שיר", "שיר על", "כתוב שיר"],
-  news: ["מה החדשות", "חדשות היום", "מה קרה בעולם"],
-  investments: ["השקעות", "השקעה", "בורסה", "מניות", "קריפטו", "ביטקוין"],
+  weather: ["", "", "", "", "", "", ""],
+  time: ["", "", ""],
+  jokes_chat: ["", "", "", ""],
+  politics: ["", "", "", "", "", ""],
+  sports: ["", "", "", "", "", ""],
+  food: ["", "", "", "", "", "", "", ""],
+  code: ["javascript", "java script", "", "", ""],
+  shopping: ["", "", "", "", "", "", ""],
+  songs: ["", "", ""],
+  news: ["", "", ""],
+  investments: ["", "", "", "", "", ""],
   generic_knowledge_qa: [
-    "מה זה ", "מהו ", "מהי ", "מי המציא", "מי גילה", "מי כתב", "מתי קרה",
-    "באיזו שנה", "באיזה תאריך", "איפה נמצאת", "איפה נמצא",
+    "", "", "", "", "", "", "",
+    "", "", "", ""
   ],
-  trivia: ["הארי פוטר", "נארניה", "פוטוסינתזה", "פירמידות", "פרל הארבור"],
-  // Note: phrases like "מה אתה חושב", "מה דעתך", "תסביר" are intentionally
+  trivia: ["", "", "", "", ""],
+  // Note: phrases like "  ", " ", "" are intentionally
   //       NOT in smalltalk because we want them to surface as ambiguous_or_unclear,
   //       so the LLM upgrade can decide based on context. Smalltalk targets only
   //       phrases that are clearly about the bot itself.
-  smalltalk: ["מי אתה", "מה השם שלך", "אתה בוט", "אתה אדם"],
-  computation: ["כמה זה ", "תחשב לי", "תפתור לי "],
-  hobbies_general: ["שחמט", "מוזיקה", "אמנות", "מחול"],
+  smalltalk: ["", "", "", ""],
+  computation: ["", "", ""],
+  hobbies_general: ["", "", "", ""]
 };
 
 /**
@@ -335,121 +335,121 @@ const OFF_TOPIC_CATEGORIES = {
  * not match. We use `(?:\s|$)` explicitly instead.
  */
 const GENERIC_KNOWLEDGE_FRAMING = [
-  /^מה\s+זה(?:\s|$)/u,
-  /^(מהו|מהי)(?:\s|$)/u,
-  /^מי\s+המציא(?:\s|$)/u,
-  /^מי\s+גילה(?:\s|$)/u,
-  /^מי\s+כתב(?:\s|$)/u,
-  /^איך\s+מכינים(?:\s|$)/u,
-  /^כמה\s+עולה(?:\s|$)/u,
-  /^כמה\s+זה(?:\s|$)/u,
-  /^באיזו?\s+(שנה|תאריך)(?:\s|$)/u,
-  /^הסבר\s+לי\s+מה\s+זה(?:\s|$)/u,
-  /תסביר\s+לי\s+על\s+(?!הדוח)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 /** Privacy / system-internals — must refuse before report routing. */
 const PRIVACY_SENSITIVE_PATTERNS = [
-  /(?:נתונים|דוח|מידע)\s+של\s+ילד\s+אחר/u,
-  /(?:מה|תראה|הראה|תן).{0,32}ילד\s+אחר/u,
-  /(?:כל\s+)(?:ה)?ילדים(?:\s+באתר|\s+ש(?:ל|ב)|\s*$|\?)/u,
-  /רשימ(?:ה|ת)\s+ילדים/u,
-  /סיסמ(?:ה|א)|password/u,
-  /דאטה\s*בייס|database|\bdb\b|מה\s+יש\s+ב(?:ד)?אטה/u,
-  /(?:כל\s+)?(?:ה)?משתמשים|רשימ(?:ה|ת)\s+משתמשים/u,
-  /חשבון\s+אחר|נתונים\s+של\s+מישהו\s+אחר/u,
-  /ת(?:ן|ני)\s+(?:לי\s+)?(?:את\s+)?(?:כל\s+)?(?:ה)?(?:משתמשים|ילדים)/u,
-  /תרא(?:ה|י)\s+(?:לי\s+)?(?:את\s+)?(?:כל\s+)?(?:ה)?ילדים/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 /** Health / clinical / diagnosis — route to HEALTH_BOUNDARY (not sensitive_education). */
 const HEALTH_SENSITIVE_PATTERNS = [
-  /(?:רופא|רפואי|נוירולוג|פסיכולוג)/u,
-  /בעיה\s+בראש/u,
-  /בעיה\s+פסיכולוגית/u,
-  /(?:האם\s+)?(?:צריך|כדאי)\s+אבחון/u,
-  /המלצה\s+לאבחון|תכתוב\s+לי\s+המלצה\s+לאבחון/u,
-  /(?:האם\s+)?(?:ל|אל)\s*פנ(?:ות|ות)\s*(?:ל)?(?:נוירולוג|פסיכולוג|רופא)/u,
-  /סימן\s+ל(?:לקות|וקות)/u,
-  /(?:זה\s+)?(?:אומר|מעיד)\s+.*(?:דיסלקצ|דיסלקס|הפרעת\s+קשב|לקות)/u,
-  /(?:האם\s+)?(?:יש\s+ל(?:ו|ה)|ל(?:ילד|ילדה)\s+יש)\s+הפרעת\s+קשב/u,
-  /חשד\s+ל(?:דיסלקצ|הפרעת|לקות|אבחון)/u,
-  /(?:האם\s+)?(?:צריך|כדאי)\s+(?:טיפול|תרופה)/u,
-  /(?:אבחון|אבחנה)\s*(?:מומלץ|נדרש|כדאי)/u,
-  /טיפול\s+(?:פסיכ|נוירו|רפוא)/u,
-  /האם\s+ז(?:ה|ו)\s+אומר\s+ש(?:יש|יהי)/u,
-  /זה\s+אומר\s+ש(?:יש|יהי)\s+בעיה/u,
-  /האם\s+יש\s+כאן\s+בעיה/u,
-  /האם\s+ז(?:ה|ו)\s+משהו\s+רציני/u,
-  /יש\s+סיבה\s+לדאוג/u,
-  /^(?:ז(?:ה|ו)\s+)?חמור\s*\??$/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 /** Diagnostic / clinical lexicon — independent of report context. */
 const DIAGNOSTIC_PATTERNS = [
-  /דיסלקצי[הא]|דיסלקסי[הא]?|דיסלקסי[ת]?\b|דיסקלקולי[הא]/u,
-  /לקות\s*למידה/u,
-  /הפרעת\s*קשב|בעיית\s*קשב|הפרעות\s*קשב/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   /\badhd\b/i,
-  /אוטיסט|על\s*הספקטרום|אוטיזם/u,
-  /חרד[הת]\s*(חברתית|מתמדת|של|אצל)?|חרדות\s*(של|אצל)?/u,
+  /(?!)/u,
+  /(?!)/u,
   /\bocd\b/i,
-  /(הוא|היא|הילד|הילדה).{0,16}(בסדר\s*רגשית|רגשית\s*בסדר)/u,
-  /רגשית\s*בסדר|רגשי\s*בסדר/u,
-  /יש\s*לו\s*אבחון|יש\s*לה\s*אבחון|מה\s*ה?אבחון|מה\s*ה?אבחנה/u,
-  /(?:יש\s*לילד|לילד\s*יש|יש\s*לילדה|לילדה\s*יש|יש\s*לו|יש\s*לה).{0,40}(?:דיסלקצי|דיסלקסי|דיסקלקולי|לקות|הפרעת|adhd|אוטיז|אוטיסט)/iu,
-  /ת(?:אבח|ן|ני)\s*(?:ן|ני)?(?:\s+א(?:ת|תי))?(?:\s*(?:ה)?(?:ילד|ילדה|בן|בת))?/u,
-  /אבח(?:ן|ני)\s+א(?:ת|תי)\s*(?:ה)?(?:ילד|ילדה|בן|בת)?/u,
-  /(?:תן|תני|תני\s+לי)\s+אבח(?:ון|נה)/u,
-  /אבח(?:ון|נה)\s+ל(?:ילד|ילדה)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/iu,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   // Emotional / mental-health wording (boundary — not diagnosis from report data)
-  /בעיה\s+רגשית|קושי\s+רגשי|מצב\s+רגשי/u,
-  /דיכאון|בדיכאון/u,
-  /עצוב\s+מאוד/u,
-  /(?:^|\s)(הוא|היא)\s+חרד(?:\s|$)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 /** Off-topic patterns beyond category lexicon. */
 const OFF_TOPIC_EXTRA_PATTERNS = [
-  /תעזור\s+לי\s+ב(?:ה)?שקעות/u,
-  /שיעורי\s+בית\s+ש(?:לא|אינ(?:ם|ן))\s+קשורים\s+לדוח/u,
-  /ת(?:ן|ני)\s+(?:לי\s+)?שיעורי\s+בית\s+ש(?:לא|אינ(?:ם|ן))/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 /** Legitimate parent report questions — must never land in ambiguous_or_unclear. */
 const LEGITIMATE_PARENT_PATTERNS = [
-  /איפה\s+(?:הוא|היא|הילד|הילדה)\s+צריך\s+עזרה/u,
-  /מה\s+לעשות\s+(?:איתו|איתה|עמו|עמה)(?:\s+בבית)?\s+היום/u,
-  /למה\s+כ(?:תוב|תב)\s+ש(?:יש|יהי)\s+פער/u,
-  /האם\s+הבעיה\s+היא\s+נשיאה/u,
-  /מה\s+השתנה\s+מ(?:ה)?שבוע(?:\s+ה)?קודם/u,
-  /האם\s+הפעילות\s+.*השפיע/u,
-  /(?:מה\s+)?(?:שלוש(?:ת)?|3)\s*(?:ה)?דברים(?:\s+הכי\s+חשוב(?:ים)?)?/u,
-  /מה\s+לעשות\s+בבית/u,
-  /איפה\s+רואים(?:\s+(?:ש(?:יפור|התקדמות)|(?:ש(?:ה)?)?מצב\s+טוב\s+יותר))?/u,
-  /מה\s+השתפר/u,
-  /מה\s+ה(?:כי\s+)?חשוב(?:\s+(?:כרגע|לי(?:\s+ל)?דעת(?:\s+השבוע)?|עכשיו))?/u,
-  /במה\s+להתמקד\s+(?:עכשיו|השבוע)?/u,
-  /מה\s+העיקר/u,
-  /מה\s+חשוב\s+עכשיו/u,
-  /מה\s+כדאי\s+להימנע(?:\s+ממנ(?:ו|ה))?(?:\s+עכשיו)?/u,
-  /ממה\s+להימנע/u,
-  /מה\s+לא\s+(?:כדאי\s+)?(?:ל)?עשות/u,
-  /מה\s+לא\s+כדאי\s+(?:לי\s+)?להסיק/u,
-  /ת(?:ן|ני)\s+(?:לי\s+)?תוכנית(?:\s+עבודה)?\s+(?:ל)?שבוע/u,
-  /מה\s+לשאול\s+(?:אותו|אותה)\s+בבית/u,
-  /על\s+איזה\s+נושא\s+ל(?:פתוח|התחיל)/u,
-  /האם\s+(?:הוא|היא)\s+מתקדם/u,
-  /האם\s+ז(?:ה|ו)\s+בגלל\s+לחץ\s+זמן/u,
-  /ת(?:ן|ני)\s+(?:לי\s+)?תרגול/u,
-  /^תסביר\s+לי(?:\s|$)/u,
-  /תקצר\s+לי/u,
-  /(?:פשוט|קל)\s+יותר/u,
-  /תעש(?:ה|י)\s+.*\s+פשוט\s+יותר/u,
-  /^(?:אז\s+)?מה\s+עושים/u,
-  /^איך\s+לשמר/u,
-  /^ו?מה\s+אם\s+(?:ה(?:וא|יא)|(?:הילד|הילדה))\s+טוע/u,
-  /^למה\s*\??$/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 /**
@@ -489,12 +489,12 @@ function matchesOffTopicExtra(t) {
 
 /** Peer / class norm comparison — not clinical diagnosis; separate early-exit copy. */
 const PEER_COMPARISON_PATTERNS = [
-  /ילדים\s+אחרים|מילדים\s+אחרים/u,
-  /לעומת\s+ילדים|מול\s+ילדים\s+אחרים/u,
-  /חלש\s+יותר\s+מילדים|יותר\s+חלש\s+מילדים|טוב\s+יותר\s+מילדים|חזק\s+יותר\s+מילדים/u,
-  /ביחס\s+לילדים\s+אחרים|לעומת\s+שאר\s+הכיתה|לעומת\s+הכיתה/u,
-  /האם\s+הוא\s+יותר\s+חלש\s+מילדים|האם\s+היא\s+יותר\s+חלשה\s+מילדים/u,
-  /האם\s+הוא\s+חלש\s+יותר\s+מילדים/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u
 ];
 
 // ─── Normalization ──────────────────────────────────────────────────────────
@@ -505,8 +505,8 @@ const PEER_COMPARISON_PATTERNS = [
  */
 function normalizeForClassifier(raw) {
   return String(raw || "")
-    .replace(/[\u05b0-\u05c7]/g, "")
-    .replace(/['"״׳`]/g, "")
+    .replace(/(?!)/g, "")
+    .replace(/(?!)/g, "")
     .replace(/[?!.,:;]+/g, " ")
     .toLowerCase()
     .replace(/\s+/g, " ")
@@ -517,8 +517,8 @@ function normalizeForClassifier(raw) {
 function countMeaningfulTokens(normalized) {
   if (!normalized) return 0;
   const drops = new Set([
-    "אבל", "כן", "לא", "טוב", "אוקיי", "אוקי", "תודה", "סליחה",
-    "אז", "אה", "הא", "אהה", "אממ", "אם", "ש", "אש", "ב", "ל", "מ",
+    "", "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", ""
   ]);
   const tokens = normalized.split(/\s+/).filter((t) => t.length >= 2 && !drops.has(t));
   return tokens.length;
@@ -559,13 +559,13 @@ function extractReportVocabulary(payload) {
 function subjectLabelLocalHe(subjectId) {
   const sid = normalizeSubjectId(subjectId);
   switch (sid) {
-    case "math": return "מתמטיקה";
-    case "geometry": return "גאומטריה";
-    case "english": return "אנגלית";
-    case "science": return "מדעים";
-    case "history": return "היסטוריה";
-    case "hebrew": return "עברית";
-    case "moledet-geography": return "מולדת";
+    case "math": return "";
+    case "geometry": return "";
+    case "english": return "";
+    case "science": return "";
+    case "history": return "";
+    
+    
     default: return "";
   }
 }
@@ -604,8 +604,8 @@ function scoreReportSignal(t, vocab, payload, rawUtterance) {
   }
   for (const tok of WEAK_REPORT_TOKENS) {
     if (new RegExp(`(^|\\s)${tok}(\\s|$)`, "u").test(t)) {
-      if (tok === "הוא" || tok === "היא" || tok === "הילד" || tok === "הילדה" ||
-          tok === "הבן" || tok === "הבת" || tok === "בני" || tok === "בתי") {
+      if (tok === "" || tok === "" || tok === "" || tok === "" ||
+          tok === "" || tok === "" || tok === "" || tok === "") {
         pronounsMatched = true;
       }
     }
@@ -661,7 +661,7 @@ function scoreReportSignal(t, vocab, payload, rawUtterance) {
     hasStrong,
     pronounsMatched,
     subjectTopicNameMatched,
-    hasGenericKnowledgeFraming,
+    hasGenericKnowledgeFraming
   };
 }
 
@@ -708,14 +708,14 @@ function scorePeerComparisonSignal(t) {
 }
 
 /**
- * "מה עם …?" where the remainder names a subject/topic label present in the payload.
+ * "  …?" where the remainder names a subject/topic label present in the payload.
  * Category-level shorthand (not per-sentence FAQ).
  * @param {string} t
  * @param {{ subjectsHe: string[]; topicsHe: string[] }} vocab
  */
 function maImReferencesPayloadVocab(t, vocab) {
-  if (!/^מה\s+עם\s+/u.test(t)) return false;
-  const tail = t.replace(/^מה\s+עם\s+/u, "").trim();
+  if (!/(?!)/u.test(t)) return false;
+  const tail = t.replace(/(?!)/u, "").trim();
   if (tail.length < 2) return false;
   const labels = [...new Set([...vocab.subjectsHe, ...vocab.topicsHe])];
   for (const lbl of labels) {
@@ -725,12 +725,12 @@ function maImReferencesPayloadVocab(t, vocab) {
 }
 
 /**
- * True for "מה עם …?" when no subject/topic label from the payload appears in the tail.
+ * True for "  …?" when no subject/topic label from the payload appears in the tail.
  * QA harness / callers use this to distinguish expected ambiguity from routing bugs.
  */
 export function maImSubjectAbsentFromPayload({ utterance, payload }) {
   const t = normalizeForClassifier(utterance);
-  if (!/^מה\s+עם\s+/u.test(t)) return false;
+  if (!/(?!)/u.test(t)) return false;
   const vocab = extractReportVocabulary(payload);
   return !maImReferencesPayloadVocab(t, vocab);
 }
@@ -757,7 +757,7 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
     offTopicSignal,
     hasStrong: reportRes.hasStrong,
     subjectTopicNameMatched: reportRes.subjectTopicNameMatched,
-    pronounsMatched: reportRes.pronounsMatched,
+    pronounsMatched: reportRes.pronounsMatched
   });
 
   const signals = {
@@ -769,7 +769,7 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
     hasGenericKnowledgeFraming: reportRes.hasGenericKnowledgeFraming,
     subjectTopicNameMatched: reportRes.subjectTopicNameMatched,
     pronounsMatched: reportRes.pronounsMatched,
-    meaningfulTokenCount,
+    meaningfulTokenCount
   };
 
   // Decision rules in strict order.
@@ -779,7 +779,7 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       bucket: "privacy_sensitive",
       confidence: 0.96,
       source: "deterministic",
-      signals,
+      signals
     };
   }
 
@@ -789,7 +789,7 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       bucket: "health_sensitive",
       confidence: 0.95,
       source: "deterministic",
-      signals,
+      signals
     };
   }
 
@@ -799,7 +799,7 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       bucket: "peer_comparison",
       confidence: peerComparisonSignal,
       source: "deterministic",
-      signals: { ...signals, peerComparisonSignal },
+      signals: { ...signals, peerComparisonSignal }
     };
   }
 
@@ -818,8 +818,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         reportSignal: Math.max(reportRes.score, 0.78),
         hasStrongReportToken: true,
         ambiguitySignal: Math.min(ambiguitySignal, 0.2),
-        aggregateQuestionClass,
-      },
+        aggregateQuestionClass
+      }
     };
   }
 
@@ -835,13 +835,13 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         reportSignal: Math.max(reportRes.score, 0.78),
         hasStrongReportToken: true,
         subjectTopicNameMatched: !!(rowRes.best || rowRes.subjectId),
-        ambiguitySignal: Math.min(ambiguitySignal, 0.2),
-      },
+        ambiguitySignal: Math.min(ambiguitySignal, 0.2)
+      }
     };
   }
 
   // 1b. Catalog topic named in the utterance but row not anchored — Phase E / bank path must run before
-  //     off-topic hits on mid-sentence fragments like "מה זה …" (generic_knowledge_qa category).
+  //     off-topic hits on mid-sentence fragments like "  …" (generic_knowledge_qa category).
   const looseUnanchoredEarly = matchLooseTopicFromUtterance(String(utterance || ""), payload);
   if (looseUnanchoredEarly && !looseUnanchoredEarly.anchored) {
     return {
@@ -852,16 +852,16 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.7),
         hasStrongReportToken: true,
-        subjectTopicNameMatched: true,
-      },
+        subjectTopicNameMatched: true
+      }
     };
   }
 
   // 2. Subject/status inquiry framed as child + report scope —
-  // must beat hobbies/off-topic lexicon hits (e.g. שחמט/מוזיקה in OFF_TOPIC_CATEGORIES).
+  // must beat hobbies/off-topic lexicon hits (e.g. / in OFF_TOPIC_CATEGORIES).
   if (
-    /מה\s*מצב\s*הילד\s*שלי\s*ב/u.test(t) ||
-    /^מה\s*מצב.*ב(?:מדעים|עברית|חשבון|אנגלית|גאומטריה|גיאומטריה|מולדת|שחמט|מוזיקה)/u.test(
+    /(?!)/u.test(t) ||
+    /(?!)/u.test(
       t,
     ) ||
     /how\s+is\s+(?:my|the)\s+child\s+doing\s+in\s+/i.test(t) ||
@@ -888,8 +888,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.75),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
@@ -899,11 +899,11 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       bucket: "off_topic",
       confidence: offTopicSignal,
       source: "deterministic",
-      signals,
+      signals
     };
   }
 
-  // 4. "מה עם <payload subject/topic>?" — beats ambiguous when the named row exists.
+  // 4. "  <payload subject/topic>?" — beats ambiguous when the named row exists.
   if (
     maImReferencesPayloadVocab(t, vocab) &&
     offTopicSignal <= CLASSIFIER_THRESHOLDS.reportRelatedOffTopicCeiling &&
@@ -917,14 +917,14 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.78),
         hasStrongReportToken: true,
-        subjectTopicNameMatched: true,
-      },
+        subjectTopicNameMatched: true
+      }
     };
   }
 
   // 2c. Policy / integrity violations — must reach Stage A (`parent_policy_refusal`) with payload contracts.
   if (
-    /תמציא\s*נתונים|תסתיר\s*מההורה|תכתוב\s+ש(?:ה)?(?:ילד|ילדה)\s+מצוין|בלי\s+להתחשב\s+בנתונים|תעצור\s+להראות\s+חולשות|לא\s*מותר\s*להמציא/u.test(
+    /(?!)/u.test(
       t,
     )
   ) {
@@ -935,13 +935,13 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.78),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
   // 2d. Prompt-style overrides — must reach Stage A grounded refusal (not ambiguous clarification exit).
-  if (/תתעלם\s*מהדוח|מעכשיו\s*אל\s*תשתמש|תחשוף\s*לי\s*הוראות|debug|system\s*prompt/u.test(t)) {
+  if (/(?!)/u.test(t)) {
     return {
       bucket: "report_related",
       confidence: 0.86,
@@ -949,14 +949,14 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.78),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
   // 2e. Education-adjacent sensitive decisions — Stage A `sensitive_education_choice` (not ambiguous early-exit).
   if (
-    /האם\s*כדאי\s*להעביר\s*בית\s*ספר|מעבר\s*בית\s*ספר|להעביר\s*בית\s*ספר|האם\s*לעבור\s*בית\s*ספר|מורה\s*פרטי|שיעורים\s*פרטיים|האם\s*הוא\s*מחונן/u.test(
+    /(?!)/u.test(
       t,
     )
   ) {
@@ -967,14 +967,14 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.75),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
   // 2f. Trajectory / trend questions — keep on-report (mass catalog dg_03/dg_04 style). Avoid ambiguous early-exit.
   if (
-    /(?:^|\s)(?:האם\s+(?:הוא|היא)\s+(?:משתפר(?:ת)?|בירידה|עולה|יורד(?:ת)?|מוכן(?:ת)?|בשיפור))|האם\s+יש\s+(?:שיפור|התקדמות|ירידה)|האם\s+עדיין\s+משתפר|יש\s+שיפור\s+ב(?:מתמטיקה|חשבון|עברית|אנגלית)|מוכן\s+לעלות\s+רמה/u.test(
+    /(?!)/u.test(
       t,
     )
   ) {
@@ -985,14 +985,14 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.72),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
   // 2g. Prioritization / planning / comparison stems from Parent AI catalog — must reach Stage A (not ambiguous router exit).
   if (
-    /באיזה\s+מקצוע\s+(?:להתחיל|עדיף)|מה\s+הנושא\s+הכי\s+דחוף|האם\s+הבעיה\s+היא\s+קריאה\s+או\s+חשבון|כמה\s+זמן\s+כדאי\s+לתרגל\s+ביום|תן\s+לי\s+תוכנית\s+תרגול|תסכם\s+לי\s+את\s+המצב|למה\s+הדוח\s+אומר|איזה\s+שאלות\s+הוא\s+פספס|האם\s+הוא\s+מנחש|האם\s+הוא\s+עונה\s+מהר/u.test(
+    /(?!)/u.test(
       t,
     )
   ) {
@@ -1003,8 +1003,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.72),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
@@ -1020,13 +1020,13 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.75),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
   // 2m. Anchored report + explicit subject/topic label + "I want to understand …" — on-report (not ambiguous).
-  if (hasAnchoredTopicObservation(payload) && reportRes.subjectTopicNameMatched && /אני\s+רוצה\s+להבין/u.test(t)) {
+  if (hasAnchoredTopicObservation(payload) && reportRes.subjectTopicNameMatched && /(?!)/u.test(t)) {
     return {
       bucket: "report_related",
       confidence: 0.79,
@@ -1034,17 +1034,17 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.73),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
-  // 2n. "במקצוע …" + clarity/uncertainty on a payload subject label — on-report (not ambiguous).
+  // 2n. " …" + clarity/uncertainty on a payload subject label — on-report (not ambiguous).
   if (
     hasAnchoredTopicObservation(payload) &&
     reportRes.subjectTopicNameMatched &&
-    /(^|\s)במקצוע\s+/u.test(t) &&
-    /לא\s+ברור|לא\s+מבין|מבלבל|לא\s+ברורה/u.test(t)
+    /(?!)/u.test(t) &&
+    /(?!)/u.test(t)
   ) {
     return {
       bucket: "report_related",
@@ -1053,18 +1053,18 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.72),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
-  // 2o. Topic display matched + short status ask ("נושא — מה המצב?") — on-report without "מה קורה" prefix.
+  // 2o. Topic display matched + short status ask (" —  ?") — on-report without " " prefix.
   const looseForStatus = matchLooseTopicFromUtterance(String(utterance || ""), payload);
   if (
     looseForStatus &&
     looseForStatus.anchored &&
     hasAnchoredTopicObservation(payload) &&
-    /מה\s+המצב|איך\s+המצב/u.test(t)
+    /(?!)/u.test(t)
   ) {
     return {
       bucket: "report_related",
@@ -1074,22 +1074,22 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.72),
         hasStrongReportToken: true,
-        subjectTopicNameMatched: true,
-      },
+        subjectTopicNameMatched: true
+      }
     };
   }
 
-  // 2p. Topic-only shorthand with light punctuation ("שברים???") — anchored display match, very short utterance.
+  // 2p. Topic-only shorthand with light punctuation ("???") — anchored display match, very short utterance.
   const looseBare = matchLooseTopicFromUtterance(String(utterance || ""), payload);
   if (looseBare && looseBare.anchored && hasAnchoredTopicObservation(payload) && meaningfulTokenCount <= 2) {
-    const uFold = foldUtteranceForHeMatch(String(utterance || ""))
-      .replace(/[?!.,:;״׳]+/g, " ")
+    const uFold = foldUtteranceForMatch(String(utterance || ""))
+      .replace(/(?!)/g, " ")
       .replace(/\s+/g, " ")
       .trim();
-    const dn = foldUtteranceForHeMatch(String(looseBare.displayName || ""))
+    const dn = foldUtteranceForMatch(String(looseBare.displayName || ""))
       .replace(/\s+/g, " ")
       .trim();
-    if (dn.length >= 2 && (uFold === dn || uFold === `ה${dn}`)) {
+    if (dn.length >= 2 && (uFold === dn || uFold === `${dn}`)) {
       return {
         bucket: "report_related",
         confidence: 0.74,
@@ -1098,17 +1098,17 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
           ...signals,
           reportSignal: Math.max(reportRes.score, 0.7),
           hasStrongReportToken: true,
-          subjectTopicNameMatched: true,
-        },
+          subjectTopicNameMatched: true
+        }
       };
     }
   }
 
-  // 2q. Severity / worry about the report (no explicit "דוח" token) — needs anchored rows so off-topic stays gated.
+  // 2q. Severity / worry about the report (no explicit "" token) — needs anchored rows so off-topic stays gated.
   if (
     hasAnchoredTopicObservation(payload) &&
-    (/לא\s+ברור\s+לי\s+אם\s+זה\s+חמור(?:\s+או\s+לא)?|חמור\s+או\s+לא|יש\s+פה\s+משהו\s+מדאיג|האם\s+צריך\s+לדאוג\s+מהדוח/u.test(t) ||
-      (/מדאיג|לדאוג/u.test(t) && /דוח/u.test(t)))
+    (/(?!)/u.test(t) ||
+      (/(?!)/u.test(t) && /(?!)/u.test(t)))
   ) {
     return {
       bucket: "report_related",
@@ -1117,15 +1117,15 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.72),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
   // 2r. Anchored report + recommendation rationale / “what to avoid now” — sync path has no LLM classifier upgrade; keep on-report (not ambiguous).
   if (
     hasAnchoredTopicObservation(payload) &&
-    (/למה\s+ה?המלצה/u.test(t) || /מה\s+לא\s+כדאי\s+לעשות\s+עכשיו/u.test(t))
+    (/(?!)/u.test(t) || /(?!)/u.test(t))
   ) {
     return {
       bucket: "report_related",
@@ -1134,8 +1134,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.76),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
@@ -1148,13 +1148,13 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.72),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
-  // 2j. Topic-scoped "מה קורה …" when payload vocabulary matches — on-report (not ambiguous).
-  if (hasAnchoredTopicObservation(payload) && /^מה\s+קורה\s+/u.test(t) && reportRes.subjectTopicNameMatched) {
+  // 2j. Topic-scoped "  …" when payload vocabulary matches — on-report (not ambiguous).
+  if (hasAnchoredTopicObservation(payload) && /(?!)/u.test(t) && reportRes.subjectTopicNameMatched) {
     return {
       bucket: "report_related",
       confidence: 0.8,
@@ -1162,8 +1162,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       signals: {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.74),
-        hasStrongReportToken: true,
-      },
+        hasStrongReportToken: true
+      }
     };
   }
 
@@ -1178,27 +1178,27 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
       bucket: "report_related",
       confidence: reportRes.score,
       source: "deterministic",
-      signals,
+      signals
     };
   }
 
   // 4. Subject/topic match without strong intent => ambiguous (NOT report_related).
-  //    "תסביר לי שברים" or "מה עם גאומטריה?" without strong report verb.
-  //    Note: "מה עם X?" is a common parent shorthand for "what about X in the report".
+  //    "  " or "  ?" without strong report verb.
+  //    Note: "  X?" is a common parent shorthand for "what about X in the report".
   //    We treat it as ambiguous so the LLM upgrade can decide; the deterministic
-  //    fallback for "מה עם גאומטריה" will be report_related via the dedicated
-  //    "מה עם" rule below.
+  //    fallback for "  " will be report_related via the dedicated
+  //    " " rule below.
   if (
     reportRes.subjectTopicNameMatched &&
     !reportRes.hasStrong &&
-    /^מה\s+עם(?:\s|$)/u.test(t)
+    /(?!)/u.test(t)
   ) {
-    // "מה עם <topic>?" is a clear report-related shorthand even without explicit verb.
+    // "  <topic>?" is a clear report-related shorthand even without explicit verb.
     return {
       bucket: "report_related",
       confidence: 0.65,
       source: "deterministic",
-      signals: { ...signals, hasStrongReportToken: true },
+      signals: { ...signals, hasStrongReportToken: true }
     };
   }
 
@@ -1215,8 +1215,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.76),
         hasStrongReportToken: true,
-        ambiguitySignal: Math.min(ambiguitySignal, 0.15),
-      },
+        ambiguitySignal: Math.min(ambiguitySignal, 0.15)
+      }
     };
   }
 
@@ -1230,8 +1230,8 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
         ...signals,
         reportSignal: Math.max(reportRes.score, 0.78),
         hasStrongReportToken: true,
-        ambiguitySignal: Math.min(ambiguitySignal, 0.15),
-      },
+        ambiguitySignal: Math.min(ambiguitySignal, 0.15)
+      }
     };
   }
 
@@ -1240,7 +1240,7 @@ export function classifyParentQuestionDeterministic({ utterance, payload }) {
     bucket: "ambiguous_or_unclear",
     confidence: ambiguitySignal,
     source: "deterministic",
-    signals,
+    signals
   };
 }
 
@@ -1294,5 +1294,5 @@ export default {
   NO_DATA_FOR_REQUEST_RESPONSE_HE,
   PEER_COMPARISON_RESPONSE_HE,
   AMBIGUOUS_RESPONSE_HE,
-  CLASSIFIER_THRESHOLDS,
+  CLASSIFIER_THRESHOLDS
 };

@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "Juego local: sin guardar ni recompensas",
+    "game_not_found": "Juego no encontrado",
+    "back_to_list": "Volver a la lista",
+    "offline": "Desconectado",
+    "list": "Lista"
+  }
+}

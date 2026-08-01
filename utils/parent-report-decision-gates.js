@@ -1,8 +1,8 @@
 /**
- * Phase 13 — שערי החלטה לסבב הבא (מבוסס Phases 7–12, בלי המצאת ראיות).
+ * Phase 13 —     ( Phases 7–12).
  */
 
-import { GATE_LEVEL_LABEL_HE, GATE_READINESS_LABEL_HE, GATE_STATE_LABEL_HE } from "./parent-report-ui-explain-he.js";
+import { GATE_LEVEL_LABEL_HE, GATE_READINESS_LABEL_HE, GATE_STATE_LABEL_HE } from "./parent-report-ui-explain.js";
 import { buildDecisionReadinessContractsBundleV1 } from "./contracts/decision-readiness-contract-v1.js";
 import { PARENT_EVIDENCE_VOLUME } from "./parent-report-language/parent-evidence-matrix.js";
 
@@ -28,12 +28,12 @@ export function buildDecisionGatesPhase13(ctx) {
   const td = ctx?.trendDer && typeof ctx.trendDer === "object" ? ctx.trendDer : {};
   const indepUp = String(td.independenceDirection || "") === "up" || indep === "improving";
   const transferReadiness = String(ctx?.transferReadiness || "");
-  /** QA calibration: שחרור «forming» רק כשאין עצירה מוכנות/שורש עצמאות */
+  /** QA calibration:  «forming»    /  */
   const releaseIndependenceHold =
-    root === "weak_independence" ||
-    transferReadiness === "not_ready" ||
-    transferReadiness === "limited" ||
-    indep === "flat" ||
+    root === "weak_independence" |
+    transferReadiness === "not_ready" |
+    transferReadiness === "limited" |
+    indep === "flat" |
     String(td.independenceDirection || "") === "down";
   const finalStep = String(ctx?.finalStep || "");
   const weak = q < PARENT_EVIDENCE_VOLUME.STRONG_MIN || ev === "low" || cs === "withheld" || cs === "tentative";
@@ -60,7 +60,7 @@ export function buildDecisionGatesPhase13(ctx) {
   }
 
   if (seq === "sequence_ready_for_release" || rti === "independence_growing" || rti === "over_supported_progress") {
-    /* forming דורש q גבוה יותר + בלי חסימת מוכנות — מפחית false release */
+    /* forming  q   +    —  false release */
     if (indepUp && q >= 16 && ev !== "low" && !releaseIndependenceHold) releaseGate = "forming";
     else if (rti === "over_supported_progress" && !indepUp) releaseGate = "pending";
     else releaseGate = "pending";
@@ -121,12 +121,12 @@ export function buildDecisionGatesPhase13(ctx) {
   }
   if (weak && gateState === "pivot_gate_visible") gateState = "gates_not_ready";
 
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "").trim();
   const gateStateLabelHe = GATE_STATE_LABEL_HE[gateState] || GATE_STATE_LABEL_HE.gates_not_ready;
   const gateReadinessLabelHe = GATE_READINESS_LABEL_HE[gateReadiness] || GATE_READINESS_LABEL_HE.insufficient;
 
   const gateNarrativeHe =
-    `ב«${displayName}»: ${gateStateLabelHe} · ${gateReadinessLabelHe} · שחרור: ${GATE_LEVEL_LABEL_HE[releaseGate] || ""} · מעבר מסלול: ${GATE_LEVEL_LABEL_HE[pivotGate] || ""} · ריענון: ${GATE_LEVEL_LABEL_HE[recheckGate] || ""}.`;
+    `«${displayName}»: ${gateStateLabelHe} · ${gateReadinessLabelHe} · : ${GATE_LEVEL_LABEL_HE[releaseGate] || ""} ·  : ${GATE_LEVEL_LABEL_HE[pivotGate] || ""} · : ${GATE_LEVEL_LABEL_HE[recheckGate] || ""}.`;
 
   const decisionGates = {
     version: 1,

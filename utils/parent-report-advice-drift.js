@@ -1,15 +1,15 @@
 /**
- * Phase 11 — אזהרת חזרה על אותו סוג עצה / צורך בסיבוב ניסוח.
+ * Phase 11 —       /   .
  */
 
 import {
   ADVICE_NOVELTY_LABEL_HE,
   ADVICE_SIMILARITY_LEVEL_LABEL_HE,
   RECOMMENDATION_ROTATION_NEED_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 /**
- * @param {object} ctx — פלט מ buildSupportSequencingPhase11 + שדות התערבות
+ * @param {object} ctx —   buildSupportSequencingPhase11 +  
  */
 export function buildAdviceDriftPhase11(ctx) {
   const rp = String(ctx?.priorSupportPattern || "unknown");
@@ -19,10 +19,10 @@ export function buildAdviceDriftPhase11(ctx) {
   const seq = String(ctx?.supportSequenceState || "");
 
   const sameGuidedBand =
-    rpm === "slow_guided_accuracy" ||
-    rpm === "error_reduction_loop" ||
-    rpm === "guided_release" ||
-    intv === "guided_to_independent_transition" ||
+    rpm === "slow_guided_accuracy" |
+    rpm === "error_reduction_loop" |
+    rpm === "guided_release" |
+    intv === "guided_to_independent_transition" |
     intv === "stabilize_accuracy";
 
   let adviceSimilarityLevel = "unknown";
@@ -60,11 +60,11 @@ export function buildAdviceDriftPhase11(ctx) {
     ADVICE_SIMILARITY_LEVEL_LABEL_HE[adviceSimilarityLevel] || ADVICE_SIMILARITY_LEVEL_LABEL_HE.unknown;
   const adviceNoveltyHe = ADVICE_NOVELTY_LABEL_HE[adviceNovelty] || ADVICE_NOVELTY_LABEL_HE.unknown;
   const recommendationRotationNeedHe =
-    RECOMMENDATION_ROTATION_NEED_LABEL_HE[recommendationRotationNeed] ||
+    RECOMMENDATION_ROTATION_NEED_LABEL_HE[recommendationRotationNeed] |
     RECOMMENDATION_ROTATION_NEED_LABEL_HE.none;
 
   const repeatAdviceWarningHe = repeatAdviceWarning
-    ? "יש סימנים לכך שאותו סוג עזרה חוזר שוב בלי שינוי מספק בעצמאות - כדאי לדייק או לשנות מעט את הדרך."
+    ? ""
     : "";
 
   const adviceDrift = {

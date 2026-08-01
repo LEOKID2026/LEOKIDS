@@ -93,7 +93,7 @@ test("normalize rejects incomplete breakdown; accepts full", () => {
     bySubject: [{ subjectKey: "math", questionPracticeMinutes: 4, bookReadingMinutes: 1 }],
   });
   assert.ok(n);
-  assert.equal(n.bySubject[0].subjectLabelHe, "מתמטיקה");
+  assert.equal(n.bySubject[0].subjectLabel, "מתמטיקה");
   assert.match(formatLearningTimeDivisionLineHe(n), /חלוקת זמן הלמידה/);
   assert.equal(formatExclusiveLearningMinutesHe(4), "4");
 });

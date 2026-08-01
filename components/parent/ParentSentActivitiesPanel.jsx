@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { subjectLabelHe } from "../../lib/platform-ui/hebrew-display-labels.js";
+import { subjectLabel } from "../../lib/platform-ui/display-labels.js";
 import { formatActivityTopicDisplayHe } from "../../lib/classroom-activities/student-activity-display-labels.client.js";
 import {
   parentSentActivitiesSectionTitleHe,
@@ -154,7 +154,7 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
         {activity ? (
           <div className={bodyClass}>
             <div>
-              Subject: {subjectLabelHe(activity.subject)} · Topic:{" "}
+              Subject: {subjectLabel(activity.subject)} · Topic:{" "}
               {formatActivityTopicDisplayHe(activity.subject, activity.topic, activity.subtopic)}
             </div>
             <div>
@@ -339,7 +339,7 @@ function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose
                 <div key={activity.activityId} className={cardClass}>
                   <div className={cardTitleClass}>{activity.title}</div>
                   <div className={cardBodyClass}>
-                    {subjectLabelHe(activity.subject)} ·{" "}
+                    {subjectLabel(activity.subject)} ·{" "}
                     {formatActivityTopicDisplayHe(
                       activity.subject,
                       activity.topic,

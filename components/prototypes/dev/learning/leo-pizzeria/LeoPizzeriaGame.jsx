@@ -28,7 +28,7 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ ("easy"));
   const [customers, setCustomers] = useState(/** @type {PizzeriaCustomerOrder[]} */ ([]));
   const [customerIndex, setCustomerIndex] = useState(0);
-  const [selectedTopping, setSelectedTopping] = useState(/** @type {string | null} */ (null));
+  const [selectedTopping, setSelectedTopping] = useState(/** @type {string || null} */ (null));
   /** @type {[Record<number, string>, import('react').Dispatch<import('react').SetStateAction<Record<number, string>>>]} */
   const [sliceMap, setSliceMap] = useState({});
   const [score, setScore] = useState(0);
@@ -39,8 +39,8 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
   const [feedback, setFeedback] = useState("");
   const [customerKey, setCustomerKey] = useState(0);
 
-  const dragRef = useRef(/** @type {{ toppingId: string } | null} */ (null));
-  const [dragGhost, setDragGhost] = useState(/** @type {{ toppingId: string, x: number, y: number } | null} */ (null));
+  const dragRef = useRef(/** @type {{ toppingId: string } || null} */ (null));
+  const [dragGhost, setDragGhost] = useState(/** @type {{ toppingId: string, x: number, y: number } || null} */ (null));
 
   const customer = customers[customerIndex] ?? null;
   const sliceCount = customer?.sliceCount ?? 4;

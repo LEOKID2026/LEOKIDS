@@ -139,7 +139,7 @@ const criticalPaths = {
   mixedBugLine: 205,
   sessionApi: ["pages/api/learning/session/start.js", "pages/api/learning/answer.js"],
   reports: [
-    "utils/parent-report-language/parent-report-display-labels.he.js",
+    "utils/parent-report-language/parent-report-display-labels.js",
     "utils/parent-report-v2.js",
     "utils/topic-next-step-engine.js",
     "lib/parent-server/report-data-aggregate.server.js",
@@ -222,7 +222,7 @@ const risks = [
     id: "R7",
     severity: "medium",
     title: "parent report labels still קל/בינוני/קשה",
-    location: "utils/parent-report-language/parent-report-display-labels.he.js:93-95",
+    location: "utils/parent-report-language/parent-report-display-labels.js:93-95",
     mitigation: "Phase 6 labels → רגיל/מתקדם",
   },
   {
@@ -323,7 +323,7 @@ const impact = {
     phase3: ["session/start.js", "answer.js", "diagnostic-evidence.js"],
     phase4: ["8 masters", "curriculum.js", "englishLevelKeysForGradeKey removal"],
     phase5: ["AssignActivityModal", "teacher activity forms"],
-    phase6: ["parent-report-display-labels.he.js", "topic-next-step-engine.js", "report-data-aggregate.server.js"],
+    phase6: ["parent-report-display-labels.js", "topic-next-step-engine.js", "report-data-aggregate.server.js"],
     phase7: ["eight-subject smoke scripts", "generator probes", "qa-question-inventory-matrix"],
   },
   risksBeforePhase1: risks,

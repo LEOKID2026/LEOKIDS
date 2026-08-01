@@ -47,11 +47,11 @@ export function listScienceRuntimeThinBuckets(scienceQuestions) {
 }
 
 const G12_STRETCH_REASON =
-  "כיתות א׳–ב׳: דגש פדגוגי על רצף קל ותצפית קונקרטית; רמות בינוני/קשה כוללות פריטי הרחבה מצומצמים במכוון, לא דורשות שלישייה מלאה לכל נושא.";
+  "";
 
 /**
  * @param {{ gradeKey: string, uiLevel: string, count: number }} row
- * @returns {{ kind: 'A' | 'B' | 'C', blocking: boolean, reason?: string }}
+ * @returns {{ kind: 'A' || 'B' || 'C', blocking: boolean, reason?: string }}
  */
 export function classifyScienceRuntimeThinBucket(row) {
   const gnum = Number(String(row.gradeKey).replace(/^g/, ""));

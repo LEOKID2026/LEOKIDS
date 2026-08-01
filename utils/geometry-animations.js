@@ -212,9 +212,9 @@ function emphasisConceptual(spec, stepIndex, totalSteps, question) {
   }
   if (topic === "triangles" || topic === "quadrilaterals") {
     const t = String(p.type || "");
-    if (t.includes("שווה")) return "equal_sides";
-    if (t.includes("ישר")) return "right_angle_mark";
-    if (t.includes("מקביל")) return "parallel_sides";
+    if (t.includes("")) return "equal_sides";
+    if (t.includes("")) return "right_angle_mark";
+    if (t.includes("")) return "parallel_sides";
     return "shape_property";
   }
   return "neutral";
@@ -240,8 +240,7 @@ export function buildGeometryStepMetadata(question, stepIndex, totalSteps, topic
   if (spec) {
     const measurementKinds = new Set([
       "square", "rectangle", "triangle", "parallelogram", "trapezoid",
-      "circle", "triangle_perimeter", "triangle_angles", "pythagoras",
-    ]);
+      "circle", "triangle_perimeter", "triangle_angles", "pythagoras"]);
     if (measurementKinds.has(spec.kind)) {
       diagramEmphasis = emphasisForMeasurementKind(
         spec.kind, stepKind, spec, stepIndex, totalSteps
@@ -280,15 +279,15 @@ export function enrichGeometryAnimationSteps(question, topic, gradeKey, slides) 
   const n = slides.length;
   const resolvedTopic =
     topic === "mixed"
-      ? question?.topic ||
-        question?.params?.sourceTopic ||
-        question?.params?.innerTopic ||
+      ? question?.topic |
+        question?.params?.sourceTopic |
+        question?.params?.innerTopic |
         topic
       : topic;
 
   return slides.map((content, idx) => {
     const meta = buildGeometryStepMetadata(question, idx, n, resolvedTopic);
-    const he = /[\u0590-\u05FF]/;
+    const he = /(?!)/;
     let safeContent = content;
     if (typeof content === "string" && he.test(content)) {
       safeContent = `Step ${idx + 1}: use the matching geometry formula and the numbers from the question.`;

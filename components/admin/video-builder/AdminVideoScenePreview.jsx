@@ -22,7 +22,7 @@ const WM_CLASS = {
 };
 
 /**
- * @param {{ scene: Record<string, unknown>, mediaUrl?: string | null, mediaType?: string, aspectRatio?: string, active?: boolean, watermarkUrl?: string | null, watermarkPosition?: string, showSafeZone?: boolean }} props
+ * @param {{ scene: Record<string, unknown>, mediaUrl?: string || null, mediaType?: string, aspectRatio?: string, active?: boolean, watermarkUrl?: string || null, watermarkPosition?: string, showSafeZone?: boolean }} props
  */
 export default function AdminVideoScenePreview({
   scene,

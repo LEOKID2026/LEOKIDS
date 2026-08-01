@@ -1,6 +1,6 @@
 /**
- * חוזה stem לאודיו — סכמה 1 (Build 1) + סכמה 2 (השלמת עברית / English-ready).
- * ולידציה קשיחה; ללא UI.
+ *  stem  —  1 (Build 1) +  2 (  / English-ready).
+ *  ;  UI.
  */
 
 /** @typedef {"listen_and_choose"|"oral_comprehension_mcq"|"guided_recording"|"phonological_discrimination_he"|"audio_grammar_choice_he"|"read_aloud_short_he"|"structured_spoken_response_he"} AudioTaskMode */
@@ -40,22 +40,19 @@ const TASK_MODES_V2 = new Set([
   "phonological_discrimination_he",
   "audio_grammar_choice_he",
   "read_aloud_short_he",
-  "structured_spoken_response_he",
-]);
+  "structured_spoken_response_he"]);
 
 const RECORDING_TASK_MODES = new Set([
   "guided_recording",
   "read_aloud_short_he",
-  "structured_spoken_response_he",
-]);
+  "structured_spoken_response_he"]);
 
 const PLAYBACK_KINDS = new Set(["tts", "static_url"]);
 const SCORING_POLICIES = new Set([
   "mcq_after_audio_auto",
   "guided_record_manual_review",
   "manual_review_required",
-  "borderline_transcript_assist",
-]);
+  "borderline_transcript_assist"]);
 const REVIEW_ROUTES = new Set(["none", "manual_pending"]);
 const FALLBACK_MODES = new Set(["degraded_skip", "degraded_listen_only"]);
 
@@ -83,7 +80,7 @@ function commonStemChecks(stem) {
 }
 
 /**
- * סכמה 1 — רק מצבי Build 1 (תאימות לאחור).
+ *  1 —   Build 1 ( ).
  * @param {unknown} stem
  * @returns {boolean}
  */
@@ -104,7 +101,7 @@ export function validateAudioStemV1(stem) {
 }
 
 /**
- * סכמה 2 — כל משימות האודיו המאושרות לסגירת עברית.
+ *  2 —      .
  * @param {unknown} stem
  * @returns {boolean}
  */
@@ -139,7 +136,7 @@ export function validateAudioStem(stem) {
 }
 
 /**
- * ניתוב score-or-review — ללא pronunciation כציון מוצר.
+ *  score-or-review —  pronunciation  .
  * @param {AudioStem} stem
  */
 export function resolveScoreOrReviewRoute(stem) {

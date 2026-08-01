@@ -13,7 +13,7 @@ const STATUS_PATH = "/api/student/rewards/surprise-box/status";
  *   onOpen?: () => void,
  *   openingLocked?: boolean,
  *   refreshToken?: number,
- *   statusOverride?: { ready?: boolean, pendingBoxCount?: number } | null,
+ *   statusOverride?: { ready?: boolean, pendingBoxCount?: number } || null,
  * }} props
  */
 export default function StudentSurpriseBoxWidget({

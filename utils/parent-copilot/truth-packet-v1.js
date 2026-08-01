@@ -22,13 +22,11 @@ import {
   hasAggregatePracticeEvidence,
   normalizeSubjectId,
   readContractsSliceForScope,
-  subjectLabelHe,
-  SUBJECT_ORDER,
-} from "./contract-reader.js";
+  subjectLabel,
+  SUBJECT_ORDER} from "./contract-reader.js";
 import {
-  hebrewFromEnglishSlug,
-  rewriteEngineTaxonomySnippetForParentHe,
-} from "../diagnostic-labels-he.js";
+  englishLabelFromSlug,
+  rewriteEngineTaxonomySnippetForParentHe} from "../diagnostic-labels.js";
 import { maxGlobalReportQuestionCount, STRONG_GLOBAL_QUESTION_FLOOR } from "./report-volume-context.js";
 import { subjectQuestionCountsFromPayload } from "../parent-report-language/subject-evidence-policy.js";
 
@@ -59,8 +57,7 @@ function intelligenceV1DerivedSnapshotFromUnit(unit) {
       weaknessLevel: "none",
       confidenceBand: "low",
       recurrence: false,
-      hasPattern: false,
-    };
+      hasPattern: false};
   }
   const p = iv.patterns && typeof iv.patterns === "object" ? iv.patterns : {};
   const recurrence = !!p.recurrenceFull;
@@ -149,7 +146,7 @@ function confidenceRank(v) {
  */
 function clipHe(s, max = 140) {
   const t = String(s || "")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
   if (t.length <= max) return t;
   return `${t.slice(0, max - 1)}…`;
@@ -162,8 +159,8 @@ function clipHe(s, max = 140) {
 function looksLikeNumericOrCountLead(line) {
   const t = String(line || "").trim();
   if (t.length < 10) return false;
-  if (/^(בדוח\s+התקופתי\s+נספרו|כ \s*\d|בסך\s+הכל\s+כ ?\d)/u.test(t)) return true;
-  if (/נספרו\s+כ|שאלות\s+בכלל\s+המקצועות|דיוק\s+הממוצע\s+הכללי|ממוצע\s+דיוק\s+כללי/u.test(t)) return true;
+  if (/^(\s+\s+| \s*\d|\s+\s+ ?\d)/u.test(t)) return true;
+  if (/\s+|\s+\s+|\s+\s+|\s+\s+/u.test(t)) return true;
   return false;
 }
 
@@ -193,8 +190,7 @@ function supportingNumericTail(x, canonicalIntent = "") {
     "how_to_tell_child",
     "question_for_teacher",
     "unclear",
-    "simple_parent_explanation",
-  ]);
+    "simple_parent_explanation"]);
   if (omitRollup.has(intent)) return "";
   if (tq <= 0 && aa <= 0) return "";
   const bits = [];
@@ -217,21 +213,21 @@ function appendDistinctSentence(base, tail) {
 /** Topic title for parents — drops internal "— period summary" suffix when present. */
 function parentFacingTopicTitleHe(dn) {
   const raw = String(dn || "")
-    .replace(/\s*-\s*סיכום תקופתי\s*$/iu, "")
+    .replace(/\s*-\s* \s*$/iu, "")
     .trim();
   if (!raw) return "";
   const rewritten = rewriteEngineTaxonomySnippetForParentHe(raw);
   if (rewritten && rewritten !== raw) return rewritten;
   if (/^[a-z][a-z0-9_/-]*$/i.test(raw)) {
-    const fromSlug = hebrewFromEnglishSlug(raw.replace(/[/-]/g, "_"));
+    const fromSlug = englishLabelFromSlug(raw.replace(/[/-]/g, "_"));
     if (fromSlug) return fromSlug;
-    return raw.replace(/_/g, " ");
+    return raw.replace(/_/g, "");
   }
   return raw;
 }
 
 function isMisleadingZeroStableTrendLine(line) {
-  return /נושאים שנשמרים טוב:\s*0\b/u.test(String(line || ""));
+  return /  :\s*0\b/u.test(String(line || ""));
 }
 
 /**
@@ -317,7 +313,7 @@ function executiveTopicKey(m) {
 function interpretationReadsAsWeaknessNeedingSupport(interp) {
   const s = String(interp || "").trim();
   if (!s) return false;
-  return /נדרש\s*חיזוק|דורש\s*חיזוק|דורשים\s*חיזוק|חיזוק\s*משמעותי|דורש\s*עבודה|דורשים\s*עבודה|אתגר\s*ייחודי|עדיין\s*דורש|קשה\s*יותר|חולש|לא\s*יציב|תשומת\s*לב\s*מיוחדת|דורש\s*תרגול/u.test(
+  return /\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*\s*|\s*/u.test(
     s,
   );
 }
@@ -386,11 +382,11 @@ function buildExecutiveIntentNarrativeSlots(x) {
   const trends = x.trendLines.filter(Boolean);
   const namedBits = metas
     .slice(0, 5)
-    .map((m) => `${subjectLabelHe(m.sid)} - ${parentFacingTopicTitleHe(m.dn) || "topic from the report"}`)
+    .map((m) => `${subjectLabel(m.sid)} - ${parentFacingTopicTitleHe(m.dn) || "topic from the report"}`)
     .join(" · ");
 
   const labelPair = (m) => {
-    const sub = subjectLabelHe(m.sid);
+    const sub = subjectLabel(m.sid);
     const topic = parentFacingTopicTitleHe(m.dn);
     if (!topic || topic === sub) return sub;
     return `${sub} - ${topic}`;
@@ -399,11 +395,11 @@ function buildExecutiveIntentNarrativeSlots(x) {
   const parentUtteranceRaw = String(x.parentUtterance || "").trim();
   /** Subject-level strength asks (strong subject / best subject …) — align wording with llm-orchestrator.js */
   const subjectLevelStrengthQuestion =
-    /מקצוע|מקצועות|המקצוע\s+ה(חזק|טוב)|איזה\s+מקצוע|באיזה\s+מקצוע|מה\s+המקצוע/u.test(parentUtteranceRaw);
+    /\s+()|\s+|\s+|\s+/u.test(parentUtteranceRaw);
 
   /** When the parent asks about a subject, lead with subject name then optional topic — not topic-only. */
   const subjectFirstStrengthObservation = (m) => {
-    const sub = subjectLabelHe(m.sid);
+    const sub = subjectLabel(m.sid);
     const topic = parentFacingTopicTitleHe(m.dn);
     if (topic && topic !== sub) {
       return `The subject where the best results were seen is ${sub}, and especially in the subject ${topic}.`;
@@ -435,8 +431,8 @@ function buildExecutiveIntentNarrativeSlots(x) {
   const intent = String(x.canonicalIntent || "unclear").trim() || "unclear";
 
   const defaultInterpBase =
-    (metas[0]?.interp && clipHe(metas[0].interp, 200)) ||
-    (trends[0] && !looksLikeNumericOrCountLead(trends[0]) ? trends[0] : "") ||
+    (metas[0]?.interp && clipHe(metas[0].interp, 200)) |
+    (trends[0] && !looksLikeNumericOrCountLead(trends[0]) ? trends[0] : "") |
     "What is missing in the report is mainly a breadth of anchored formulations - not necessarily numbers in themselves.";
   const defaultInterp = appendDistinctSentence(defaultInterpBase, supportingNumericTail(x, intent));
 
@@ -459,7 +455,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       if (!interpParts.length && metas[0]?.interp) interpParts.push(clipHe(metas[0].interp, 180));
       const microPlan =
         "It is recommended to practice for about 10 minutes, 3 times a week, with 5-8 short questions each time.";
-      let interp = appendDistinctSentence(interpParts.join(" "), microPlan);
+      let interp = appendDistinctSentence(interpParts.join(""), microPlan);
       interp = appendDistinctSentence(interp, supportingNumericTail(x, intent));
       if (!interp.trim()) interp = defaultInterp;
       return { observation: obs, interpretation: interp };
@@ -474,8 +470,8 @@ function buildExecutiveIntentNarrativeSlots(x) {
         if (subjectLevelStrengthQuestion) {
           const m0 = strengthTopics[0];
           const m1 = strengthTopics[1];
-          const s0 = subjectLabelHe(m0.sid);
-          const s1 = subjectLabelHe(m1.sid);
+          const s0 = subjectLabel(m0.sid);
+          const s1 = subjectLabel(m1.sid);
           const t0 = parentFacingTopicTitleHe(m0.dn);
           const t1 = parentFacingTopicTitleHe(m1.dn);
           if (s0 === s1) {
@@ -508,7 +504,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
         const rel = rankedBestFirst.find((m) => !worstKeys.has(executiveTopicKey(m))) || rankedBestFirst[0];
         if (rel) {
           if (subjectLevelStrengthQuestion) {
-            const rs = subjectLabelHe(rel.sid);
+            const rs = subjectLabel(rel.sid);
             const rt = parentFacingTopicTitleHe(rel.dn);
             const topicBit = rt && rt !== rs ? `, and especially about ${rt}` : "";
             interp = `In relation to the other subjects in the report, the subject where the best results were seen is ${rs}${topicBit} (${rel.acc}%).`;
@@ -603,7 +599,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       let focus = rankedWorstFirst[0] || metas[0];
       if (primarySid) {
         const prefer =
-          rankedWorstFirst.find((m) => normalizeSubjectId(m.sid) === primarySid && m.q > 0) ||
+          rankedWorstFirst.find((m) => normalizeSubjectId(m.sid) === primarySid && m.q > 0) |
           metas.find((m) => normalizeSubjectId(m.sid) === primarySid && m.q > 0);
         if (prefer) focus = prefer;
       }
@@ -636,7 +632,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       /** @type {string|null} */
       let stepsOnly = null;
       const stepAnchorFrom = (m) => {
-        const subjName = subjectLabelHe(m.sid);
+        const subjName = subjectLabel(m.sid);
         const topicClean = parentFacingTopicTitleHe(m.dn);
         const topicShort = clipHe(topicClean, 44);
         return !topicClean || topicClean === subjName ? subjName : `${subjName} · ${topicShort}`;
@@ -666,7 +662,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       }
       if (stepsOnly) {
         if (allowRec) action = stepsOnly;
-        else interp = appendDistinctSentence(interp, stepsOnly.replace(/\n/g, " "));
+        else interp = appendDistinctSentence(interp, stepsOnly.replace(/\n/g, ""));
       }
       return { observation: obs, interpretation: interp, action };
     }
@@ -716,13 +712,12 @@ function buildExecutiveIntentNarrativeSlots(x) {
     case "clarify_term": {
       const m = metas[0];
       const obs = m
-        ? `To understand a term from the report, here is a basic sentence from ${parentFacingTopicTitleHe(m.dn)} in ${subjectLabelHe(m.sid)}: ${clipHe(m.obs, 200)}`
+        ? `To understand a term from the report, here is a basic sentence from ${parentFacingTopicTitleHe(m.dn)} in ${subjectLabel(m.sid)}: ${clipHe(m.obs, 200)}`
         : defaultObs;
       return {
         observation: obs,
         interpretation:
-          "If the confusing word does not appear in this line, you can ask about it in other words - we will try to retrieve the same wording from the report only.",
-      };
+          "If the confusing word does not appear in this line, you can ask about it in other words - we will try to retrieve the same wording from the report only."};
     }
     case "report_trust_question": {
       const w = rankedWorstFirst[0];
@@ -739,8 +734,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       );
       return {
         observation: appendDistinctSentence(obs, supportingNumericTail(x, intent)),
-        interpretation: appendDistinctSentence(interp, supportingNumericTail(x, intent)),
-      };
+        interpretation: appendDistinctSentence(interp, supportingNumericTail(x, intent))};
     }
     case "explain_report":
     case "ask_topic_specific":
@@ -779,7 +773,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       if (explainInterpPick[0]?.interp) interpParts.push(clipHe(explainInterpPick[0].interp, 200));
       if (explainInterpPick[1]?.interp)
         interpParts.push(`In addition, in ${labelPair(explainInterpPick[1])}: ${clipHe(explainInterpPick[1].interp, 170)}`);
-      let interp = interpParts.join(" ");
+      let interp = interpParts.join("");
       const narrTrend = trends.find(
         (line) => line && !looksLikeNumericOrCountLead(line) && shouldAttachExecutiveSecondTrendLine(line, x.totalQ),
       );
@@ -796,18 +790,18 @@ function buildExecutiveIntentNarrativeSlots(x) {
         obs =
           "There is currently little practice data in the report - the volume of data is still relatively small, so the general picture is still partial; You should gain a little more practice before a clear direction.";
       } else if (best && worst && (best.sid !== worst.sid || best.dn !== worst.dn)) {
-        obs = `In general: in ${subjectLabelHe(best.sid)} seems relatively more stable according to what is told in the report, and in ${subjectLabelHe(worst.sid)} there is more room for strengthening according to the same range.`;
+        obs = `In general: in ${subjectLabel(best.sid)} seems relatively more stable according to what is told in the report, and in ${subjectLabel(worst.sid)} there is more room for strengthening according to the same range.`;
       } else if (worst) {
-        obs = `Broadly speaking: the more noticeable gap according to what is said in the report is around ${subjectLabelHe(worst.sid)} - where you should pay attention calmly at home.`;
+        obs = `Broadly speaking: the more noticeable gap according to what is said in the report is around ${subjectLabel(worst.sid)} - where you should pay attention calmly at home.`;
       } else {
         obs =
           "The report has data from practice on several subjects - you can look at it as a general picture of what was done during the period, not as a single grade.";
       }
       let interp = `In simple sentences: a total of about ${Math.max(rollupTq, globalQ)} questions were counted during the period, and the overall level of accuracy is about ${x.avgAcc}%.`;
       if (worst && worst.acc < 55) {
-        interp += `The place where it seems less stable is around ${subjectLabelHe(worst.sid)} - where you should strengthen at a short and constant rate.`;
+        interp += `The place where it seems less stable is around ${subjectLabel(worst.sid)} - where you should strengthen at a short and constant rate.`;
       } else if (best && best.acc >= 75) {
-        interp += `In ${subjectLabelHe(best.sid)}, relatively better results were seen during this period - you can gradually build on this.`;
+        interp += `In ${subjectLabel(best.sid)}, relatively better results were seen during this period - you can gradually build on this.`;
       }
       return { observation: obs, interpretation: interp };
     }
@@ -862,8 +856,7 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
     "strengths",
     "weaknesses",
     "blocked_advance",
-    "executive",
-  ]);
+    "executive"]);
   const rawInterp = String(s.interpretationScope || s.scopeClass || "").trim();
   const interpretationScope = interpretationScopes.has(rawInterp) ? rawInterp : "executive";
 
@@ -886,38 +879,31 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
           "According to the few data that do appear, it is possible to talk only about initial signs, and not to conclude beyond what is actually shown in the report during this period.",
         action: null,
         uncertainty:
-          "You should accumulate another short practice before heading: 10 minutes of repetition in one subject, then 5-8 questions in another subject, then check if the same pattern repeats in the next two days.",
-      },
-    },
+          "You should accumulate another short practice before heading: 10 minutes of repetition in one subject, then 5-8 questions in another subject, then check if the same pattern repeats in the next two days."}},
     decision: {
       contractVersion: "v1",
       topicKey: "__no_anchor__",
       subjectId: "__no_anchor__",
       decisionTier: 0,
-      cannotConcludeYet: true,
-    },
+      cannotConcludeYet: true},
     readiness: {
       contractVersion: "v1",
       topicKey: "__no_anchor__",
       subjectId: "__no_anchor__",
-      readiness: "insufficient",
-    },
+      readiness: "insufficient"},
     confidence: {
       contractVersion: "v1",
       topicKey: "__no_anchor__",
       subjectId: "__no_anchor__",
-      confidenceBand: "low",
-    },
+      confidenceBand: "low"},
     recommendation: {
       contractVersion: "v1",
       topicKey: "__no_anchor__",
       subjectId: "__no_anchor__",
       eligible: false,
       intensity: "RI0",
-      forbiddenBecause: ["cannot_conclude_yet"],
-    },
-    evidence: null,
-  };
+      forbiddenBecause: ["cannot_conclude_yet"]},
+    evidence: null};
 
   const narrative = contracts.narrative;
   const wordingEnvelope = wordingEnvelopeFromNarrative(narrative);
@@ -933,8 +919,7 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
     "attention disorder",
     "ADHD",
     "The diagnosis is",
-    "The diagnosis is",
-  ];
+    "The diagnosis is"];
   for (const ph of systemicCopilotClinicalForbidden) {
     if (ph && !forbiddenPhrases.includes(ph)) forbiddenPhrases.push(ph);
   }
@@ -950,8 +935,7 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
     weaknessLevel: "none",
     confidenceBand: "low",
     recurrence: false,
-    hasPattern: false,
-  };
+    hasPattern: false};
   const q = 0;
   const acc = 0;
   const displayName = scopeLabel;
@@ -966,7 +950,7 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
   const slotUnc = String(narTs.uncertainty || "").trim();
   const narrativeCoreOk = slotObs.length >= 14 && (slotInterp.length >= 14 || slotUnc.length >= 14);
   const narrativeSignalsOpenPartial =
-    /עדיין|זהיר|חלקי|מוקדם|לא\s+ברור|חוסר|בינוני|נדרש|חיזוק|פתוח|מוגבל|לא\s+סגור|מוקדם\s+ל|מצומצם|לא\s+אפשר\s+לקבוע|לא\s+להתקדם|לעצור|להמתין|דורש\s+חיזוק|תשומת\s+לב|אינם\s+סגורים|בלי\s+בסיס\s+מספיק|לא\s+סוגרים/u.test(
+    /|\s+||||\s+|\s+|\s+\s+|\s+||\s+|\s+|\s+|\s+\s+|\s+/u.test(
       `${slotInterp} ${slotUnc}`,
     );
 
@@ -976,23 +960,23 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
   }
   const avoidNowGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet ||
-      confidenceBand === "low" ||
-      readiness === "insufficient" ||
-      readiness === "forming" ||
-      anchorUncertaintyRows > 0 ||
+    (cannotConcludeYet |
+      confidenceBand === "low" |
+      readiness === "insufficient" |
+      readiness === "forming" |
+      anchorUncertaintyRows > 0 |
       (readiness === "emerging" && narrativeSignalsOpenPartial));
   if (avoidNowGrounded) {
     allowedFollowupFamilies.push("avoid_now");
   }
   const advanceHoldGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet ||
-      anchorUncertaintyRows > 0 ||
-      !recommendationEligible ||
-      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" ||
-      readiness === "insufficient" ||
-      confidenceBand === "low" ||
+    (cannotConcludeYet |
+      anchorUncertaintyRows > 0 |
+      !recommendationEligible |
+      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" |
+      readiness === "insufficient" |
+      confidenceBand === "low" |
       (readiness !== "ready" && narrativeSignalsOpenPartial));
   if (advanceHoldGrounded) {
     allowedFollowupFamilies.push("advance_or_hold");
@@ -1022,30 +1006,25 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
       recommendationEligible,
       recommendationIntensityCap: "RI0",
       readiness,
-      confidenceBand,
-    },
+      confidenceBand},
     signals: {
-      intelligenceV1: intelligenceV1Snapshot,
-    },
+      intelligenceV1: intelligenceV1Snapshot},
     surfaceFacts: {
       questions: q,
       reportQuestionTotalGlobal: q,
       accuracy: acc,
       displayName,
-      subjectLabelHe: subjectLabelHe(subjectId),
-      weakFocusSubjectLabelHe: "",
+      subjectLabel: subjectLabel(subjectId),
+      weakFocussubjectLabel: "",
       weakFocusTopicDisplayNameHe: "",
-      relevantSummaryLines: summaryLines,
-    },
+      relevantSummaryLines: summaryLines},
     allowedClaimEnvelope: {
       wordingEnvelope,
       allowedSections,
       forbiddenPhrases,
-      requiredHedges,
-    },
+      requiredHedges},
     allowedFollowupFamilies: uniq,
-    forbiddenMoves: ["teacher_runtime", "non_contract_metrics", "cross_session_inference", "autonomous_planning"],
-  };
+    forbiddenMoves: ["teacher_runtime", "non_contract_metrics", "cross_session_inference", "autonomous_planning"]};
 }
 
 /**
@@ -1087,8 +1066,7 @@ export function buildTruthPacketV1(payload, scope) {
     weaknessLevel: "none",
     confidenceBand: "low",
     recurrence: false,
-    hasPattern: false,
-  };
+    hasPattern: false};
 
   if (scope.scopeType !== "executive") {
     const slice = readContractsSliceForScope(scope.scopeType, scope.scopeId, "", payload);
@@ -1153,10 +1131,7 @@ export function buildTruthPacketV1(payload, scope) {
             ...narrative,
             textSlots: {
               ...(narrative.textSlots && typeof narrative.textSlots === "object" ? narrative.textSlots : {}),
-              observation: obsLine,
-            },
-          },
-        };
+              observation: obsLine}}};
       } else {
         relevantSummaryLines = obsLine ? [obsLine] : [displayName];
       }
@@ -1183,8 +1158,7 @@ export function buildTruthPacketV1(payload, scope) {
         return {
           subjectId: sid,
           topicRow: row.tr,
-          contracts: contractsFromTopicRow(row.tr),
-        };
+          contracts: contractsFromTopicRow(row.tr)};
       }
       const byKey = readContractsSliceForScope(
         "topic",
@@ -1265,8 +1239,7 @@ export function buildTruthPacketV1(payload, scope) {
       ? trendLines.slice(0, 4)
       : [
           `In the periodic report, about ${totalQ} questions were counted in all subjects.`,
-          totalQ > 0 ? `The average accuracy in the period is about ${avgAcc}%.` : copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.still_lacks_cumulative_practice_for_a_stable_image"),
-        ];
+          totalQ > 0 ? `The average accuracy in the period is about ${avgAcc}%.` : copilotStaticMessage("copilot.answers.utils_parent-copilot_truth-packet-v1.still_lacks_cumulative_practice_for_a_stable_image")];
     let uncertaintyLine;
     if (totalQ >= 50 && avgAcc >= 65) {
       uncertaintyLine =
@@ -1298,8 +1271,7 @@ export function buildTruthPacketV1(payload, scope) {
       overallSnapshotTotalQuestions: Number(payload?.overallSnapshot?.totalQuestions) || 0,
       maxGlobalReportQuestions: maxGlobalReportQuestionCount(payload),
       primarySubjectId: String(payload?.parentProductContractV1?.primarySubjectId || "").trim(),
-      parentUtterance: String(scope?.parentUtterance || "").trim(),
-    });
+      parentUtterance: String(scope?.parentUtterance || "").trim()});
     const slotAction =
       intentSlots &&
       intentSlots.action != null &&
@@ -1318,9 +1290,7 @@ export function buildTruthPacketV1(payload, scope) {
           : recommendationEligible && recommendationIntensityCap !== "RI0"
             ? "You can choose one short support step for the coming week and check again after another practice."
             : null,
-        uncertainty: uncertaintyLine,
-      },
-    };
+        uncertainty: uncertaintyLine}};
     contracts = {
       ...anchorContracts.contracts,
       narrative: executiveNarrative,
@@ -1330,9 +1300,7 @@ export function buildTruthPacketV1(payload, scope) {
       recommendation: {
         ...(anchorContracts.contracts?.recommendation || {}),
         eligible: recommendationEligible,
-        intensity: recommendationIntensityCap,
-      },
-    };
+        intensity: recommendationIntensityCap}};
     topicRow = { displayName, questions: totalQ, accuracy: avgAcc };
     relevantSummaryLines = trendsForSurface;
     anchorUncertaintyRows = uncertainRows + partialDataRowSignals;
@@ -1353,8 +1321,7 @@ export function buildTruthPacketV1(payload, scope) {
     "attention disorder",
     "ADHD",
     "The diagnosis is",
-    "The diagnosis is",
-  ];
+    "The diagnosis is"];
   if (scope.scopeType === "topic" || scope.scopeType === "subject" || scope.scopeType === "executive") {
     for (const ph of systemicCopilotClinicalForbidden) {
       if (ph && !forbiddenPhrases.includes(ph)) forbiddenPhrases.push(ph);
@@ -1368,7 +1335,7 @@ export function buildTruthPacketV1(payload, scope) {
   const slotUnc = String(narTs.uncertainty || "").trim();
   const narrativeCoreOk = slotObs.length >= 14 && (slotInterp.length >= 14 || slotUnc.length >= 14);
   const narrativeSignalsOpenPartial =
-    /עדיין|זהיר|חלקי|מוקדם|לא\s+ברור|חוסר|בינוני|נדרש|חיזוק|פתוח|מוגבל|לא\s+סגור|מוקדם\s+ל|מצומצם|לא\s+אפשר\s+לקבוע|לא\s+להתקדם|לעצור|להמתין|דורש\s+חיזוק|תשומת\s+לב|אינם\s+סגורים|בלי\s+בסיס\s+מספיק|לא\s+סוגרים/u.test(
+    /\s+|\s+|\s+|\s+\s+|\s+|\s+|\s+|\s+|\s+\s+|\s+/u.test(
       `${slotInterp} ${slotUnc}`,
     );
 
@@ -1383,11 +1350,11 @@ export function buildTruthPacketV1(payload, scope) {
   /** Offer "what to avoid" only when continuation can lean on real partial-risk signals, not "emerging" alone. */
   const avoidNowGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet ||
-      confidenceBand === "low" ||
-      readiness === "insufficient" ||
-      readiness === "forming" ||
-      anchorUncertaintyRows > 0 ||
+    (cannotConcludeYet |
+      confidenceBand === "low" |
+      readiness === "insufficient" |
+      readiness === "forming" |
+      anchorUncertaintyRows > 0 |
       (readiness === "emerging" && narrativeSignalsOpenPartial));
   if (avoidNowGrounded) {
     allowedFollowupFamilies.push("avoid_now");
@@ -1395,12 +1362,12 @@ export function buildTruthPacketV1(payload, scope) {
   /** Offer advance/hold only when the packet supports a non-generic tradeoff (risk rows, limits, or open partial copy). */
   const advanceHoldGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet ||
-      anchorUncertaintyRows > 0 ||
-      !recommendationEligible ||
-      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" ||
-      readiness === "insufficient" ||
-      confidenceBand === "low" ||
+    (cannotConcludeYet |
+      anchorUncertaintyRows > 0 |
+      !recommendationEligible |
+      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" |
+      readiness === "insufficient" |
+      confidenceBand === "low" |
       (readiness !== "ready" && narrativeSignalsOpenPartial));
   if (advanceHoldGrounded) {
     allowedFollowupFamilies.push("advance_or_hold");
@@ -1419,18 +1386,17 @@ export function buildTruthPacketV1(payload, scope) {
     "strengths",
     "weaknesses",
     "blocked_advance",
-    "executive",
-  ]);
+    "executive"]);
   const rawInterp = String(scope?.interpretationScope || scope?.scopeClass || "").trim();
   const interpretationScope = interpretationScopes.has(rawInterp) ? rawInterp : "executive";
 
-  let weakFocusSubjectLabelHe = subjectLabelHe(subjectId);
+  let weakFocussubjectLabel = subjectLabel(subjectId);
   let weakFocusTopicDisplayNameHe = "";
   if (scope.scopeType === "executive") {
     const { rankedWorstFirst } = buildAnchoredMetasForExecutive(allAnchored);
     const wf = rankedWorstFirst[0];
     if (wf) {
-      weakFocusSubjectLabelHe = subjectLabelHe(wf.sid);
+      weakFocussubjectLabel = subjectLabel(wf.sid);
       weakFocusTopicDisplayNameHe = String(wf.dn || "").trim();
     }
   }
@@ -1457,18 +1423,16 @@ export function buildTruthPacketV1(payload, scope) {
       cannotConcludeYet,
       recommendationEligible,
       recommendationIntensityCap:
-        recommendationIntensityCap === "RI0" ||
-        recommendationIntensityCap === "RI1" ||
-        recommendationIntensityCap === "RI2" ||
+        recommendationIntensityCap === "RI0" |
+        recommendationIntensityCap === "RI1" |
+        recommendationIntensityCap === "RI2" |
         recommendationIntensityCap === "RI3"
           ? recommendationIntensityCap
           : "RI0",
       readiness,
-      confidenceBand,
-    },
+      confidenceBand},
     signals: {
-      intelligenceV1: intelligenceV1Snapshot,
-    },
+      intelligenceV1: intelligenceV1Snapshot},
     surfaceFacts: {
       questions: q,
       reportQuestionTotalGlobal: Math.max(q, globalQCount),
@@ -1484,27 +1448,24 @@ export function buildTruthPacketV1(payload, scope) {
       primaryEvidenceSource: topicRow?.rowIdentityV1?.primaryEvidenceSource ?? null,
       displayName,
       subjectId: String(subjectId || "").trim() || null,
-      subjectLabelHe: subjectLabelHe(subjectId),
-      weakFocusSubjectLabelHe,
+      subjectLabel: subjectLabel(subjectId),
+      weakFocussubjectLabel,
       weakFocusTopicDisplayNameHe,
       relevantSummaryLines: summaryLines,
       registeredGradeKey:
-        String(payload?.registeredGradeKey || payload?.gradePracticeMeta?.registeredGradeKey || "").trim() ||
+        String(payload?.registeredGradeKey || payload?.gradePracticeMeta?.registeredGradeKey || "").trim() |
         null,
       gradePracticeMeta:
         payload?.gradePracticeMeta && typeof payload.gradePracticeMeta === "object"
           ? { ...payload.gradePracticeMeta }
-          : null,
-    },
+          : null},
     allowedClaimEnvelope: {
       wordingEnvelope,
       allowedSections,
       forbiddenPhrases,
-      requiredHedges,
-    },
+      requiredHedges},
     allowedFollowupFamilies: uniq,
-    forbiddenMoves: ["teacher_runtime", "non_contract_metrics", "cross_session_inference", "autonomous_planning"],
-  };
+    forbiddenMoves: ["teacher_runtime", "non_contract_metrics", "cross_session_inference", "autonomous_planning"]};
 }
 
 export default { buildTruthPacketV1 };

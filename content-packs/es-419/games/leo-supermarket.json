@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Tienda de comestibles Leo",
+  "blurb": "Un juego sobre dinero, compras y cambio.",
+  "help": {
+    "howToPlay": "Un cliente solicita productos: recójalos del estante, calcule el cambio y elija las monedas correspondientes. Toca \"Dar cambio\" cuando estés listo.",
+    "scoring": "Producto correcto +10, cambio correcto +25, cliente satisfecho +30, cambio acertado al primer intento +10, servicio rápido +5. Un error o falta de tiempo −5.",
+    "rewards": "Las monedas se otorgan según la cantidad de clientes atendidos, la precisión, las rachas y el nivel de dificultad, incluso si no atendiste a los 20 clientes.",
+    "tip": "Verifique el total de la compra y cuánto pagó el cliente; determine usted mismo cuánto cambio debe devolver."
+  },
+  "accessibility": {
+    "title": "Tienda de comestibles Leo"
+  }
+}

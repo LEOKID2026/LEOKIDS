@@ -6,7 +6,7 @@
 import { writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
 import { describeMixedMathDomContract } from "../../lib/bidi/describe-mixed-math-dom.js";
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 import { analyzeBidiRenderStructure } from "../../lib/learning-book/book-bidi-render.js";
 
 const LINES = [
@@ -51,7 +51,7 @@ Generated: ${new Date().toISOString()}
 
 ## Root cause (fixed)
 
-\`MixedHebrewMathText\` used **three incompatible paths** on the same page:
+\`MixedRtlMathText\` used **three incompatible paths** on the same page:
 
 1. \`splitFormulaTokens\` — split operators/symbols/Hebrew terms into separate spans
 2. \`splitHebrewMathRuns\` + \`DigitSpan\` — isolated bare digits inside RTL prose
@@ -61,7 +61,7 @@ Lines caught by one path rendered as LTR islands; lines missed by detection stay
 
 ## Fix
 
-All book + learning surfaces now delegate to \`splitMixedHebrewMathRuns\` (\`lib/bidi/mixed-hebrew-math-runs.js\`):
+All book + learning surfaces now delegate to \`splitMixedHebrewMathRuns\` (\`lib/bidi/mixed-rtl-math-runs.js\`):
 
 - Full equation → **one** \`<span dir="ltr" style="unicode-bidi:isolate">\`
 - Hebrew label + equation → label RTL + equation LTR

@@ -3,9 +3,9 @@ import {
   learningMathIsolateStyle,
   learningProseIsolateStyle,
   splitLearningMixedHebrewMathRuns,
-} from "../../../utils/learning-mixed-hebrew-math-render";
-import { learningMixedHebrewMathStyle } from "../../../utils/learning-mixed-hebrew-math";
-import { normalizeHebrewWordNumberSpacing } from "../../../utils/learning-hebrew-number-spacing";
+} from "../../../utils/learning-mixed-rtl-math-render";
+import { learningMixedHebrewMathStyle } from "../../../utils/learning-mixed-rtl-math";
+import { normalizeHebrewWordNumberSpacing } from "../../../utils/learning-number-spacing";
 
 function stripBidiMarks(text) {
   return normalizeHebrewWordNumberSpacing(String(text).replace(/\u2066|\u2069/g, ""));

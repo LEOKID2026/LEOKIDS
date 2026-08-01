@@ -1,7 +1,7 @@
 import {
   backspaceVirtualAnswer,
   clearVirtualAnswer,
-  insertVirtualAnswerChar,
+  insertVirtualAnswerChar
 } from "../../lib/learning/virtual-answer-keyboard-insert.js";
 import { getVirtualAnswerKeyboardRows } from "../../lib/learning/virtual-answer-keyboard-layouts.js";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
@@ -11,7 +11,7 @@ import { useT } from "../../lib/i18n/I18nProvider.jsx";
  * Optional embedded submit button on compact mobile last row (not a duplicate logic path).
  *
  * @param {{
- *   layout?: "numeric" | "hebrew" | "english",
+ *   layout?: "numeric" || "english",
  *   value: string,
  *   onChange: (next: string) => void,
  *   disabled?: boolean,
@@ -19,8 +19,8 @@ import { useT } from "../../lib/i18n/I18nProvider.jsx";
  *   onClose?: () => void,
  *   showClose?: boolean,
  *   compact?: boolean,
- *   submitButton?: { label?: string, onClick: () => void, disabled?: boolean, testId?: string } | null,
- *   submitTone?: "green" | "blue",
+ *   submitButton?: { label?: string, onClick: () => void, disabled?: boolean, testId?: string } || null,
+ *   submitTone?: "green" || "blue",
  *   keyClassName?: string,
  *   actionKeyClassName?: string,
  *   clearKeyClassName?: string,
@@ -47,7 +47,7 @@ export default function VirtualAnswerKeyboard({
   rowGapClassName = "",
   colGapClassName = "",
   spacerClassName = "",
-  variant = "default",
+  variant = "default"
 }) {
   const t = useT();
   const isMathMobile = variant === "mathMobile";

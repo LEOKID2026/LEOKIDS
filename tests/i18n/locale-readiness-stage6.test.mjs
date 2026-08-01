@@ -151,7 +151,7 @@ test("locale completeness — en, en-XA, ar-XB", () => {
   }
 });
 
-test("Global *He allowlist — shims stay EN; Hebrew display utilities keep HE gloss", () => {
+test("Global *He allowlist — shims stay EN; former HE utilities are Global EN passthrough", () => {
   for (const entry of GLOBAL_HE_FILENAME_ALLOWLIST) {
     const abs = path.join(root, entry.path);
     assert.ok(fs.existsSync(abs), entry.path);

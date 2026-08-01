@@ -7,9 +7,9 @@ import { syntheticPayload } from "./parent-copilot-test-fixtures.mjs";
 import parentCopilot from "../utils/parent-copilot/index.js";
 import sessionMemory from "../utils/parent-copilot/session-memory.js";
 import {
-  classifyShortParentReplyClassHe,
+  classifyShortParentReplyClass,
   normalizeParentFollowupForClassHe,
-} from "../utils/parent-copilot/conversational-reply-class-he.js";
+} from "../utils/parent-copilot/conversational-reply-class.js";
 
 const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
 
@@ -79,7 +79,7 @@ const PARAPHRASE_FAMILIES = {
 
 for (const [expectedClass, variants] of Object.entries(PARAPHRASE_FAMILIES)) {
   for (const v of variants) {
-    const got = classifyShortParentReplyClassHe(v, {});
+    const got = classifyShortParentReplyClass(v, {});
     assert.equal(
       got,
       expectedClass,
@@ -89,12 +89,12 @@ for (const [expectedClass, variants] of Object.entries(PARAPHRASE_FAMILIES)) {
 }
 
 /** Light typo / messy spacing should still land in affirmation. */
-assert.equal(classifyShortParentReplyClassHe("כנ", {}), "affirmation_continue");
-assert.equal(classifyShortParentReplyClassHe("  כן!!  ", {}), "affirmation_continue");
+assert.equal(classifyShortParentReplyClass("כנ", {}), "affirmation_continue");
+assert.equal(classifyShortParentReplyClass("  כן!!  ", {}), "affirmation_continue");
 
 /** Long utterances should not be treated as short reply classes. */
 assert.equal(
-  classifyShortParentReplyClassHe("מה דעתך על המצב בשברים ובדקדוק ובאנגלית ובחשבון השבוע", {}),
+  classifyShortParentReplyClass("מה דעתך על המצב בשברים ובדקדוק ובאנגלית ובחשבון השבוע", {}),
   null,
 );
 

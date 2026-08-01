@@ -1,5 +1,5 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
-/** @typedef {'word' | 'color_item' | 'sentence'} ShopLevel */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
+/** @typedef {'word' || 'color_item' || 'sentence'} ShopLevel */
 
 /** @typedef {{
  *   id: string

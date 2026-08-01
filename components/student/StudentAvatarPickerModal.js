@@ -44,10 +44,10 @@ export const STUDENT_AVATAR_EMOJI_OPTIONS = [
  * @param {boolean} props.open
  * @param {() => void} props.onClose
  * @param {string} [props.playerName]
- * @param {string | null | undefined} props.serverAvatarEmoji from learning profile (e.g. home-profile `profile.avatarEmoji`)
- * @param {string | null | undefined} [props.serverAvatarBackgroundKey] from learning profile
- * @param {(emoji: string | null) => void} [props.onAvatarEmojiPersisted] parent may merge into dashboard payload
- * @param {(url: string | null) => void} [props.onAvatarCustomDataUrlPersisted] parent merges `profile.avatarCustomDataUrl`
+ * @param {string || null || undefined} props.serverAvatarEmoji from learning profile (e.g. home-profile `profile.avatarEmoji`)
+ * @param {string || null || undefined} [props.serverAvatarBackgroundKey] from learning profile
+ * @param {(emoji: string || null) => void} [props.onAvatarEmojiPersisted] parent may merge into dashboard payload
+ * @param {(url: string || null) => void} [props.onAvatarCustomDataUrlPersisted] parent merges `profile.avatarCustomDataUrl`
  * @param {(key: string) => void} [props.onAvatarBackgroundPersisted]
  * @param {() => void} [props.onAvatarChanged] called after any local avatar change (e.g. refresh hero from localStorage)
  */

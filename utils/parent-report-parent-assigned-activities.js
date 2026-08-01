@@ -8,7 +8,7 @@ import {
   formatParentReportGradeHe,
   formatParentReportStatusHe,
   formatParentReportSubjectHe,
-  isTechnicalParentActivityTitleHe,
+  isTechnicalParentActivityTitleHe
 } from "./parent-report-language/parent-report-display-labels.js";
 import {
   getEnglishTopicName,
@@ -17,7 +17,7 @@ import {
   getMathReportBucketDisplayName,
   getMoledetGeographyTopicName,
   getScienceTopicName,
-  getTopicName,
+  getTopicName
 } from "./math-report-generator.js";
 
 const REPORT_MAP_KEY = {
@@ -25,9 +25,7 @@ const REPORT_MAP_KEY = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  history: "historySubtopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
+  history: "historySubtopics"
 };
 
 const TOPIC_NAME_FN = {
@@ -35,9 +33,7 @@ const TOPIC_NAME_FN = {
   geometry: getTopicName,
   english: getEnglishTopicName,
   science: getScienceTopicName,
-  history: getHistoryTopicName,
-  hebrew: getHebrewTopicName,
-  "moledet-geography": getMoledetGeographyTopicName,
+  history: getHistoryTopicName
 };
 
 function topicLabelHe(subjectId, topicKey) {
@@ -72,9 +68,9 @@ export function buildParentActivityDisplayLabelHe(p) {
   const subjectLabel = formatParentReportSubjectHe(subjectId);
   const gradeLabel = formatParentReportGradeHe(p?.contentGradeKey ?? p?.gradeKey);
   const titleRaw = String(p?.titleRaw || "").trim();
-  const topicSuffix = topic && topic !== "Topic" && topic !== "נושא" ? topic : "";
+  const topicSuffix = topic && topic !== "Topic" && topic !== "" ? topic : "";
   const subjectGradeFallback =
-    subjectLabel && gradeLabel && gradeLabel !== reportPackCopy("utils__parent-report-parent-assigned-activities", "not_available") && gradeLabel !== "לא זמין"
+    subjectLabel && gradeLabel && gradeLabel !== reportPackCopy("utils__parent-report-parent-assigned-activities", "not_available") && gradeLabel !== ""
       ? `${subjectLabel} grade ${gradeLabel}`
       : subjectLabel || "";
 
@@ -107,10 +103,10 @@ function normalizeAggregateParentActivityRow(raw) {
       subjectId,
       topicKey,
       contentGradeKey: raw?.contentGradeKey ?? raw?.gradeKey,
-      gradeKey: raw?.gradeKey,
+      gradeKey: raw?.gradeKey
     }),
     subjectId,
-    subjectLabelHe: formatParentReportSubjectHe(subjectId),
+    subjectLabel: formatParentReportSubjectHe(subjectId),
     topicKey,
     topicLabelHe: topicLabelHe(subjectId, topicKey),
     gradeLabelHe: formatParentReportGradeHe(raw?.contentGradeKey ?? raw?.gradeKey),
@@ -118,7 +114,7 @@ function normalizeAggregateParentActivityRow(raw) {
     questionCount: q,
     accuracy: Math.round(Number(raw?.accuracy) || 0),
     timeMinutes: Math.round(tm || (Number(raw?.timeMsSum) || 0) / 60000),
-    statusLabelHe: raw?.status ? formatParentReportStatusHe(raw.status) : "-",
+    statusLabelHe: raw?.status ? formatParentReportStatusHe(raw.status) : "-"
   };
 }
 
@@ -165,7 +161,7 @@ function buildFallbackFromTopicMaps(baseReport) {
         accuracy: Number(row.accuracy) || 0,
         timeMinutes: tm,
         lastActivityAtIso: row.lastSessionMs || row.latestActivityMs || null,
-        status: null,
+        status: null
       });
     }
   }

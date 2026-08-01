@@ -20,7 +20,7 @@ import {
   PROBE_BY_DIAGNOSTIC_SKILL_ID,
   PROBE_BY_ERROR_TAG,
   resolveProbeHintFromMap,
-} from "../utils/fast-diagnostic-engine/probe-map-he.js";
+} from "../utils/fast-diagnostic-engine/probe-map.js";
 
 const POOL_KEYS = Object.keys(ENGLISH_GRAMMAR_POOL_DIAGNOSTIC_BY_POOL);
 

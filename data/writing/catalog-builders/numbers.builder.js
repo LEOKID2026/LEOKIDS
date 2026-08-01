@@ -237,7 +237,7 @@ const NUMBER_GROUP_ENTRIES = NUMBER_GROUPS.map((group) =>
     slug: group.slug,
     catalogNumber: formatCatalogNumber(group.catalogNum),
     writingCategory: "numbers",
-    title: group.titleHe,
+    title: group.title,
     seed: 1000 + group.catalogNum,
     builderConfig: {
       writingCategory: "numbers",

@@ -5,9 +5,9 @@ import { useEffect, useMemo, useState } from "react";
 import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 const CATEGORY_LABELS = {
-  shop: "חנות",
-  achievement: "הישג",
-  event: "אירוע",
+  shop: "",
+  achievement: "",
+  event: "",
 };
 
 /**

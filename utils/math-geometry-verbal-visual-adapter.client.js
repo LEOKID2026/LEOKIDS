@@ -7,7 +7,7 @@ import { resolveStudentQuestionDisplayParts } from "./student-question-display.j
 import {
   buildHebrewApprovedVerbalMasterLayout,
   getHebrewApprovedSingleVerbalQuestionStyle,
-} from "./hebrew-approved-verbal-master-contract.client.js";
+} from "./approved-verbal-master-contract.client.js";
 
 export { getHebrewApprovedSingleVerbalQuestionStyle };
 

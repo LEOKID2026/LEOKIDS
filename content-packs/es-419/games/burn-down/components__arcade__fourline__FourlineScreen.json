@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "four_in_a_row": "Cuatro en línea",
+    "back": "Atrás",
+    "coin_balance": "Saldo de monedas",
+    "how_to_play": "Cómo jugar",
+    "close": "Cerrar",
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "Cada jugador elige una columna; el disco cae al fondo.",
+    "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal": "Objetivo: conectar cuatro discos en fila: horizontal, vertical o diagonal.",
+    "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back": "El azul va primero; Después de cada movimiento, el turno pasa a Gold y viceversa.",
+    "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw": "Si el tablero no se llena con cuatro en fila, es un empate.",
+    "waiting_for_a_second_player": "Esperando a un segundo jugador...",
+    "four_in_a_row_2": "Cuatro seguidos."
+  }
+}

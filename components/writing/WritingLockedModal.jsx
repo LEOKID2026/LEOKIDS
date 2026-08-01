@@ -6,7 +6,7 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
- *   item: Record<string, unknown> | null,
+ *   item: Record<string, unknown> || null,
  *   onClose: () => void,
  *   T: Record<string, string>,
  * }} props

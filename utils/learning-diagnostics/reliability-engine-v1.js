@@ -40,7 +40,7 @@ export function assessReliabilityV1(maps, rawMistakesBySubject, startMs, endMs) 
   let fastWrong = 0;
   let slowCorrect = 0;
   let wrongTotal = 0;
-  const subs = ["math", "hebrew", "english", "science", "geometry", "moledet-geography"];
+  const subs = ["math", "english", "science", "geometry"];
   for (const sid of subs) {
     const raw = rawMistakesBySubject?.[sid] || [];
     for (const m of raw) {
@@ -101,7 +101,7 @@ export function assessReliabilityV1(maps, rawMistakesBySubject, startMs, endMs) 
         : burnDownCopy("utils__learning-diagnostics__reliability-engine-v1", "review_pacing_signals_separately_from_knowledge_gaps"),
       inconsistencyLevel !== "low"
         ? "Large accuracy spread across rows suggests unstable performance or mixed contexts."
-        : burnDownCopy("utils__learning-diagnostics__reliability-engine-v1", "row_level_accuracy_is_relatively_consistent"),
-    ],
+        : burnDownCopy("utils__learning-diagnostics__reliability-engine-v1", "row_level_accuracy_is_relatively_consistent")
+    ]
   };
 }

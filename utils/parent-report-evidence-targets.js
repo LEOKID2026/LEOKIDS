@@ -1,12 +1,12 @@
 /**
- * Phase 13 — יעדי ראיה לסבב הבא (שפה הורית, מבוסס שורש קושי ומצב ראיות).
+ * Phase 13 —     (     ).
  */
 
 import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import {
   TARGET_EVIDENCE_TYPE_LABEL_HE,
   TARGET_OBSERVATION_WINDOW_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 /**
  * @param {object} ctx

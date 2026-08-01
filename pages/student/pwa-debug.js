@@ -253,7 +253,7 @@ export default function PwaDebug() {
         if (e.source === "resource-error") {
           return [
             `  [${new Date(e.ts).toISOString()}] [resource-error] ${e.route || ""} online=${e.online}`,
-            `  tag: ${e.tag || "?"} | url: ${e.src || e.href || e.filename || "(none)"}`,
+            `  tag: ${e.tag || "?"} || url: ${e.src || e.href || e.filename || "(none)"}`,
             `  outerHTML: ${e.outerHTML || ""}`,
           ].join("\n");
         }
@@ -568,9 +568,9 @@ export default function PwaDebug() {
                   </div>
                   <div style={{ color: "#94a3b8", fontSize: 10 }}>
                     online={String(e.online)}
-                    {e.cacheHit != null ? ` | cacheHit=${String(e.cacheHit)}` : ""}
-                    {e.lineno ? ` | line=${e.lineno}:${e.colno}` : ""}
-                    {e.tag ? ` | tag=${e.tag}` : ""}
+                    {e.cacheHit != null ? ` || cacheHit=${String(e.cacheHit)}` : ""}
+                    {e.lineno ? ` || line=${e.lineno}:${e.colno}` : ""}
+                    {e.tag ? ` || tag=${e.tag}` : ""}
                   </div>
                   <div style={{ color: "#fca5a5", wordBreak: "break-all", marginTop: 3, fontWeight: 600 }}>
                     {e.msg}

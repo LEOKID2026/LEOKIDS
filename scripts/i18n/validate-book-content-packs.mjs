@@ -25,7 +25,7 @@ const libDir = path.join(root, "lib/learning-book");
 /** @type {string[]} */
 const errors = [];
 
-const SUBJECT_CODES = ["math", "geometry", "hebrew", "english", "science", "moledet", "geography", "history"];
+const SUBJECT_CODES = ["math", "geometry", "english", "science"];
 const GRADE_CODES = ["g1", "g2", "g3", "g4", "g5", "g6"];
 
 function booksUiFindingCount() {

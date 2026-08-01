@@ -15,7 +15,7 @@
   "subjects": {
     "math": {
       "subject": "math",
-      "subjectLabelHe": "Math",
+      "subjectLabel": "Math",
       "mistakeEventCount": 12,
       "wrongCount": 12,
       "hasAnySignal": true,
@@ -125,7 +125,7 @@
     },
     "geometry": {
       "subject": "geometry",
-      "subjectLabelHe": "Geometry",
+      "subjectLabel": "Geometry",
       "mistakeEventCount": 9,
       "wrongCount": 9,
       "hasAnySignal": true,
@@ -195,7 +195,7 @@
     },
     "english": {
       "subject": "english",
-      "subjectLabelHe": "English",
+      "subjectLabel": "English",
       "mistakeEventCount": 0,
       "wrongCount": 0,
       "hasAnySignal": false,
@@ -222,109 +222,7 @@
     },
     "science": {
       "subject": "science",
-      "subjectLabelHe": "Science",
-      "mistakeEventCount": 0,
-      "wrongCount": 0,
-      "hasAnySignal": false,
-      "summaryHe": null,
-      "topStrengths": [],
-      "stableExcellence": [],
-      "topWeaknesses": [],
-      "parentActionHe": null,
-      "nextWeekGoalHe": null,
-      "evidenceExamples": [],
-      "weaknesses": [],
-      "strengths": [],
-      "excellent": [],
-      "maintain": [],
-      "improving": [],
-      "studentRecommendationsImprove": [],
-      "studentRecommendationsMaintain": [],
-      "parentRecommendationsImprove": [],
-      "parentRecommendationsMaintain": [],
-      "evidenceMistake": null,
-      "evidenceSuccess": null,
-      "insufficientData": [],
-      "diagnosticSparseNoteHe": null
-    },
-    "hebrew": {
-      "subject": "hebrew",
-      "subjectLabelHe": "Hebrew",
-      "mistakeEventCount": 11,
-      "wrongCount": 11,
-      "hasAnySignal": true,
-      "summaryHe": "The overall picture in Hebrew: there is also room to strengthen prepositions and sentence structure.",
-      "topStrengths": [],
-      "stableExcellence": [],
-      "topWeaknesses": [
-        {
-          "id": "hebrew:w:0",
-          "labelHe": "Difficulty with prepositions and sentence structure",
-          "mistakeCount": 6,
-          "confidence": "moderate",
-          "tierHe": "Focused difficulty"
-        }
-      ],
-      "parentActionHe": "Three times a week, 15–20 minutes each session: choose one Hebrew task on prepositions and sentence structure — read the item together, say out loud what is given and what is asked, take the first step on scrap paper, then write the final answer and check it.",
-      "nextWeekGoalHe": "Practice goal: raise success on prepositions and sentence structure (at least one more successful attempt than last week).",
-      "evidenceExamples": [
-        {
-          "type": "mistake",
-          "exerciseText": "Complete: The children played ___ the time in kindergarten.",
-          "questionLabel": null,
-          "correctAnswer": "on",
-          "userAnswer": "to",
-          "confidence": "moderate"
-        }
-      ],
-      "weaknesses": [
-        {
-          "id": "hebrew:w:0",
-          "labelHe": "Difficulty with prepositions and sentence structure",
-          "mistakeCount": 6,
-          "confidence": "moderate",
-          "tierHe": "Focused difficulty"
-        }
-      ],
-      "strengths": [],
-      "excellent": [],
-      "maintain": [],
-      "improving": [],
-      "studentRecommendationsImprove": [
-        {
-          "id": "stu-imp:hebrew:w:0",
-          "textHe": "You should practice a little more on the subject: in prepositions and sentence structure - 6 similar mistakes were recorded in the selected period. We stay with focused practice and not with \"trying to fix everything at once\".",
-          "strength": "moderate"
-        }
-      ],
-      "studentRecommendationsMaintain": [],
-      "parentRecommendationsImprove": [
-        {
-          "id": "par-imp:hebrew:w:0",
-          "textHe": "A repetition of the same type of error begins - on the subject in prepositions and sentence structure. For the coming week, a calm look and a short, focused practice are enough.",
-          "strength": "moderate"
-        }
-      ],
-      "parentRecommendationsMaintain": [],
-      "evidenceMistake": {
-        "exerciseText": "Complete: The children played ___ the time in kindergarten.",
-        "questionLabel": null,
-        "correctAnswer": "on",
-        "userAnswer": "to",
-        "confidence": "moderate"
-      },
-      "evidenceSuccess": null,
-      "insufficientData": [
-        {
-          "mistakeCount": 3,
-          "note": "Less than 5 mistakes in the same pattern - it is still too early to determine a recurring difficulty"
-        }
-      ],
-      "diagnosticSparseNoteHe": null
-    },
-    "moledet-geography": {
-      "subject": "moledet-geography",
-      "subjectLabelHe": "Homeland & Geography",
+      "subjectLabel": "Science",
       "mistakeEventCount": 0,
       "wrongCount": 0,
       "hasAnySignal": false,

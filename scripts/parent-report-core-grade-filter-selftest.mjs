@@ -14,7 +14,7 @@ const {
   filterCoreV2Units,
 } = await import(u("utils/parent-report-core-grade-filter.js"));
 const { formatParentReportActivityDisplayLabelHe } = await import(
-  u("utils/parent-report-language/parent-report-display-labels.he.js")
+  u("utils/parent-report-language/parent-report-display-labels.js")
 );
 const { buildSixSubjectContextLabelingMatrixBaseReport, matrixRowKeysForSubject } = await import(
   u("scripts/fixtures/parent-report-context-labeling-matrix.mjs")
@@ -29,13 +29,13 @@ const { buildDeterministicFallbackNarrative } = await import(
   u("utils/parent-report-ai-narrative/deterministic-fallback.js")
 );
 const { buildParentInsightsFromTopicEngineHe } = await import(
-  u("utils/parent-report-engine-insights-he.js")
+  u("utils/parent-report-engine-insights.js")
 );
 const { buildParentSurfaceWhatToNoticeHe } = await import(
   u("utils/parent-report-surface/parent-surface-insights.js")
 );
 const { applyTopicEngineParentFacingInsights } = await import(
-  u("utils/parent-report-engine-insights-he.js")
+  u("utils/parent-report-engine-insights.js")
 );
 
 assert.equal(isCoreParentReportRow({ gradeRelation: "same", questions: 5 }, "g1"), true);

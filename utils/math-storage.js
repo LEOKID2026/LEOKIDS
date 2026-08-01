@@ -1,6 +1,6 @@
 import { LEVELS, GRADES, GRADE_LEVELS, OPERATIONS, STORAGE_KEY } from './math-constants.js';
 
-// מחזיר את ההגדרות האקטואליות לפי כיתה + רמת קושי
+/** Level config for grade + difficulty. */
 export function getLevelConfig(grade, levelKey) {
   const safeGrade = Math.min(6, Math.max(1, grade || 1));
   const gradeCfg = GRADE_LEVELS[safeGrade];
@@ -11,27 +11,22 @@ export function getLevelConfig(grade, levelKey) {
   if (gradeCfg && gradeCfg.levels && gradeCfg.levels[levelKey]) {
     levelData = gradeCfg.levels[levelKey];
   } else {
-    // אם משום מה אין – נופלים להגדרות הכלליות
     levelData = LEVELS[levelKey] || LEVELS.easy;
   }
 
-  // לוודא שיש ערך תקין
   if (!levelData) {
     console.warn(`Invalid level config for grade ${grade}, level ${levelKey}, using default`);
     levelData = LEVELS.easy;
   }
 
-  // מוסיפים שדות נוספים שנדרשים
-  // אם אין כפל/חילוק/שברים בכיתה - לא נוסיף אותם
   const result = {
     ...levelData,
-    name: levelData.name || LEVELS[levelKey]?.name || "קל",
+    name: levelData.name || LEVELS[levelKey]?.name || "easy",
     allowNegatives: gradeCfgGrades.allowNegatives && levelKey === "hard",
     allowTwoStep: levelKey !== "easy" && safeGrade >= 5,
     allowFractions: gradeCfgGrades.allowFractions,
   };
-  
-  // אם אין כפל/חילוק/שברים בכיתה - נסיר אותם מהתוצאה
+
   if (!gradeCfgGrades.operations.includes("multiplication")) {
     delete result.multiplication;
   }
@@ -41,23 +36,21 @@ export function getLevelConfig(grade, levelKey) {
   if (!gradeCfgGrades.allowFractions) {
     delete result.fractions;
   }
-  
-  // הסרת פעולות שלא מוגדרות בכיתה
+
   const operationsToCheck = [
-    "percentages", "sequences", "decimals", "rounding", 
+    "percentages", "sequences", "decimals", "rounding",
     "divisibility", "prime_composite", "powers", "ratio",
     "order_of_operations", "estimation", "properties_0_1",
     "decimal_measures", "scale",
     "equations", "compare", "number_sense", "factors_multiples", "word_problems"
   ];
-  
+
   operationsToCheck.forEach(op => {
     if (!gradeCfgGrades.operations.includes(op)) {
       delete result[op];
     }
   });
 
-  // שדות שהגנרטור בודק ברמת השורש (לא רק תחת decimals)
   if (result.decimals?.repeatingDecimals) {
     result.repeatingDecimals = true;
   }
@@ -73,7 +66,7 @@ export function getLevelForGrade(levelKey, gradeKey) {
   let allowNegatives = false;
   let allowTwoStep = false;
 
-  // 6 כיתות נפרדות
+  // 6  
   if (gradeKey === "g1" || gradeKey === "g2") {
     factor = 0.6;
   } else if (gradeKey === "g3" || gradeKey === "g4") {

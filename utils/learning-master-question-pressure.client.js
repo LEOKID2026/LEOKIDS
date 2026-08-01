@@ -15,7 +15,7 @@ export const LEARNING_MASTER_ANSWER_CARD_NARROW_CLASS =
 /**
  * @param {{
  *   MB: { questionLead: string, questionBody: string },
- *   questionParts?: Array<string | null | undefined>,
+ *   questionParts?: Array<string || null || undefined>,
  *   answers?: Array<unknown>,
  *   hasFloatButtons?: boolean,
  * }} input

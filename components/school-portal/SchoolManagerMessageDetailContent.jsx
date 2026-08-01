@@ -23,7 +23,7 @@ export default function SchoolManagerMessageDetailContent({
 }) {
   if (!detail) return null;
 
-  const sentLabel = detail.sentAt ? new Date(detail.sentAt).toLocaleString("he-IL") : "";
+  const sentLabel = detail.sentAt ? new Date(detail.sentAt).toLocaleString("en-US") : "";
 
   return (
     <>

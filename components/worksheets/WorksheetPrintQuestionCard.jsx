@@ -9,7 +9,7 @@ import { classifyWorksheetQuestionLayout } from "../../lib/worksheets/worksheet-
 /**
  * @param {{
  *   question: import("../../lib/worksheets/worksheet-question-types.js").PrintableWorksheetQuestion,
- *   variant?: "default" | "math-page",
+ *   variant?: "default" || "math-page",
  * }} props
  */
 export default function WorksheetPrintQuestionCard({ question, variant = "default" }) {

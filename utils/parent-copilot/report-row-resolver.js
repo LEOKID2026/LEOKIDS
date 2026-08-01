@@ -1,13 +1,13 @@
 /**
- * Report-row-first Hebrew subject/topic resolution for Parent Copilot.
+ * Report-row-first subject/topic resolution for Parent Copilot.
  * Matches parent utterances against actual payload rows (display labels + subject labels).
  */
 
 import { listTopicRowsForClassifier } from "../parent-ai-topic-classifier/classifier.js";
-import { SUBJECT_ORDER, subjectLabelHe } from "./contract-reader.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
-import { isContextualFollowUpUtterance } from "./contextual-follow-up-he.js";
-import { detectHistoryCopilotLock } from "./history-scope-he.js";
+import { SUBJECT_ORDER, subjectLabel } from "./contract-reader.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
+import { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
+import { detectHistoryCopilotLock } from "./history-scope.js";
 
 /** @type {Record<string, string[]>} */
 export const SUBJECT_HE_ALIASES = Object.freeze({
@@ -15,10 +15,7 @@ export const SUBJECT_HE_ALIASES = Object.freeze({
   geometry: ["Geometry", "Geometry"],
   english: ["English"],
   science: ["Science", "science"],
-  history: ["History"],
-  hebrew: ["Hebrew", "language"],
-  "moledet-geography": ["Homeland Studies", "Geography", "Homeland & Geography"],
-});
+  history: ["History"]});
 
 /** Common parent/taxonomy topic phrases beyond exact displayName (report rows still win first). */
 /** @type {Record<string, string[]>} */
@@ -28,7 +25,7 @@ export const TOPIC_HE_ALIASES = Object.freeze({
   division: ["Division", "division", "division by tens"],
   "word-problems": ["Word problems", "Verbal problems", "Word exercises"],
   "reading-comprehension": ["Reading comprehension", "understanding", "Reading"],
-  grammar: ["Grammar", "Hebrew grammar"],
+  grammar: ["Grammar", "English grammar"],
   vocabulary: ["Vocabulary", "curator"],
   what_is_history: ["what is history", "primary source", "secondary source", "timeline"],
   classical_greece: ["Classical Greece", "Athens", "Sparta", "democracy", "Compare Athens Sparta"],
@@ -50,13 +47,12 @@ export const TOPIC_HE_ALIASES = Object.freeze({
   hist_sub_herod_building: ["Herod", "construction plants", "The rhodium"],
   hist_sub_judea_province: ["Judah as a province", "province"],
   hist_sub_great_revolt_destruction: ["The Great Rebellion", "The destruction of the temple", "Masada"],
-  hist_sub_yavne_bar_kokhba_babylon: ["will build", "Bar Kochba", "Center of Babylon", "Babylon"],
-});
+  hist_sub_yavne_bar_kokhba_babylon: ["will build", "Bar Kochba", "Center of Babylon", "Babylon"]});
 
 const TOPIC_INQUIRY_PREFIX_RE =
-  /^(?:תסביר\s+לי\s+|תסביר\s+|הסבר\s+לי\s+|הסבר\s+|מה\s+הבעיה\s+(?:ב|ב)?|מה\s+קורה\s+(?:ב|ב)?|מה\s+עם\s+|מה\s+לגבי\s+|איך\s+הוא\s+(?:ב|ב)?|איך\s+היא\s+(?:ב|ב)?|איך\s+הילד\s+(?:ב|ב)?|מה\s+לעשות\s+(?:ב|ב)?|מה\s+לחזק\s+(?:ב|ב)?|רוצה\s+לדעת\s+(?:על\s+)?|רוצה\s+להבין\s+(?:על\s+)?|אני\s+רוצה\s+לדעת\s+(?:על\s+)?|אני\s+רוצה\s+להבין\s+(?:על\s+)?)/u;
+  /^(?:explain\s+(?:to\s+me\s+)?|tell\s+me\s+(?:about\s+)?|what(?:'s|\s+is)\s+(?:the\s+)?(?:problem|issue)\s+(?:with\s+|in\s+)?|what(?:'s|\s+is)\s+(?:happening|going\s+on)\s+(?:with\s+|in\s+)?|what\s+about\s+|how\s+(?:is\s+)?(?:he|she|they|my\s+child)\s+(?:doing\s+)?(?:in\s+|at\s+|with\s+)?|what\s+(?:should\s+(?:i|we)\s+)?(?:do|practice)\s+(?:in\s+|for\s+|with\s+|about\s+)?|what\s+to\s+(?:strengthen|reinforce)\s+(?:in\s+|for\s+)?|(?:i\s+)?want\s+to\s+(?:know|understand)\s+(?:about\s+)?)/i;
 
-const FOLDED_PHRASE_BOUNDARY = /[\s?!.,:;״׳]/u;
+const FOLDED_PHRASE_BOUNDARY = /[\s?!.,:;""'']/;
 
 /**
  * Avoid false positives (e.g. alias "crisis" inside "Math").
@@ -91,7 +87,7 @@ export function hasAnchoredReportRows(payload) {
  * @param {unknown} payload
  * @returns {Array<{
  *   subjectId: string;
- *   subjectLabelHe: string;
+ *   subjectLabel: string;
  *   topicRowKey: string;
  *   displayName: string;
  *   displayNameFolded: string;
@@ -133,7 +129,7 @@ export function listReportRows(payload) {
     );
     return {
       subjectId: row.subjectId,
-      subjectLabelHe: subjectLabelHe(row.subjectId),
+      subjectLabel: subjectLabel(row.subjectId),
       topicRowKey,
       displayName: row.displayName,
       displayNameFolded: row.displayNameFolded,
@@ -141,8 +137,7 @@ export function listReportRows(payload) {
       contentGradeKey,
       topicBaseKey,
       questions,
-      accuracy,
-    };
+      accuracy};
   });
 }
 
@@ -151,7 +146,11 @@ export function listReportRows(payload) {
  */
 export function isTopicWeaknessInquiry(folded) {
   const t = String(folded || "").trim();
-  return /^מה\s+הבעיה/u.test(t) || /^מה\s+קשה/u.test(t) || /^איפה\s+הוא\s+מתקשה/u.test(t) || /^איפה\s+היא\s+מתקשה/u.test(t);
+  return (
+    /^what(?:'s|\s+is)\s+(?:the\s+)?(?:problem|issue)/i.test(t) ||
+    /^what(?:'s|\s+is)\s+(?:hard|difficult)/i.test(t) ||
+    /^where\s+(?:is\s+)?(?:he|she)\s+struggling/i.test(t)
+  );
 }
 
 /**
@@ -175,7 +174,7 @@ export function stripTopicInquiryPrefixes(folded) {
     if (next === t) break;
     t = next;
   }
-  return t.replace(/[?!.,:;״׳]+/g, " ").replace(/\s+/g, " ").trim();
+  return t.replace(/[?!.,:;""'']+/g, " ").replace(/\s+/g, " ").trim();
 }
 
 /**
@@ -185,7 +184,7 @@ export function stripTopicInquiryPrefixes(folded) {
 function topicAliasPhrases(subjectId, topicBaseKey) {
   const base = String(topicBaseKey || "").trim();
   const aliases = TOPIC_HE_ALIASES[base] || [];
-  const out = new Set(aliases.map((a) => foldUtteranceForHeMatch(a)).filter((a) => a.length >= 2));
+  const out = new Set(aliases.map((a) => foldUtteranceForMatch(a)).filter((a) => a.length >= 2));
   return [...out];
 }
 
@@ -197,7 +196,7 @@ function scoreRowMatch(foldedUtterance, row) {
   const u = foldedUtterance;
   if (!u || u.length < 2) return 0;
   const dn = row.displayNameFolded;
-  const subj = foldUtteranceForHeMatch(row.subjectLabelHe);
+  const subj = foldUtteranceForMatch(row.subjectLabel);
   let score = 0;
   if (dn.length >= 2 && u.includes(dn)) score = Math.max(score, dn.length + 10);
   const tail = stripTopicInquiryPrefixes(u);
@@ -211,13 +210,14 @@ function scoreRowMatch(foldedUtterance, row) {
     if (alias.length >= 2 && foldedIncludesPhrase(u, alias)) score = Math.max(score, alias.length + 6);
   }
   for (const alias of SUBJECT_HE_ALIASES[row.subjectId] || []) {
-    const af = foldUtteranceForHeMatch(alias);
+    const af = foldUtteranceForMatch(alias);
     if (af.length >= 2 && u.includes(af) && dn.length >= 2 && u.includes(dn)) {
       score = Math.max(score, af.length + dn.length + 6);
     }
   }
   if (score <= 0) return 0;
   if (row.anchored) score += 2;
+  void subj;
   return score;
 }
 
@@ -226,7 +226,7 @@ function scoreRowMatch(foldedUtterance, row) {
  * @param {unknown} payload
  */
 export function resolveReportRowFromUtterance(utterance, payload) {
-  const folded = foldUtteranceForHeMatch(utterance);
+  const folded = foldUtteranceForMatch(utterance);
   const rows = listReportRows(payload);
   /** @type {Array<{ row: typeof rows[0]; score: number }>} */
   const hits = [];
@@ -252,9 +252,9 @@ export function resolveReportRowFromUtterance(utterance, payload) {
   let subjectId = null;
   const subjHits = [];
   for (const sid of SUBJECT_ORDER) {
-    const labels = [subjectLabelHe(sid), ...(SUBJECT_HE_ALIASES[sid] || [])];
+    const labels = [subjectLabel(sid), ...(SUBJECT_HE_ALIASES[sid] || [])];
     for (const lbl of labels) {
-      const lf = foldUtteranceForHeMatch(lbl);
+      const lf = foldUtteranceForMatch(lbl);
       if (lf.length >= 2 && folded.includes(lf)) {
         subjHits.push({ subjectId: sid, score: lf.length });
         break;
@@ -296,12 +296,14 @@ export function resolveReportRowFromUtterance(utterance, payload) {
   }
 
   const isSubjectScopedInquiry =
-    isSubjectStatusInquiry(folded) || /^מה\s+לעשות\s+ב/u.test(folded) || /^מה\s+לחזק\s+ב/u.test(folded);
+    isSubjectStatusInquiry(folded) ||
+    /^what\s+(?:should\s+(?:i|we)\s+)?do\s+(?:in|for|about)\b/i.test(folded) ||
+    /^what\s+to\s+(?:strengthen|reinforce)\b/i.test(folded);
   if (isSubjectScopedInquiry && subjHits[0]) {
-    const tail = stripTopicInquiryPrefixes(folded).replace(/^ב/u, "").trim();
+    const tail = stripTopicInquiryPrefixes(folded).replace(/^(?:in|at|with)\s+/i, "").trim();
     const sid = subjHits[0].subjectId;
-    const subjectLabels = [subjectLabelHe(sid), ...(SUBJECT_HE_ALIASES[sid] || [])].map((l) =>
-      foldUtteranceForHeMatch(l),
+    const subjectLabels = [subjectLabel(sid), ...(SUBJECT_HE_ALIASES[sid] || [])].map((l) =>
+      foldUtteranceForMatch(l),
     );
     const topicExplicit =
       best &&
@@ -346,8 +348,7 @@ export function resolveReportRowFromUtterance(utterance, payload) {
     candidates: hits.slice(0, 4).map((h) => h.row),
     gradeSplitTopicRows,
     mixedGradeQuestion: isMixedGradeReportQuestion(folded),
-    foldedUtterance: folded,
-  };
+    foldedUtterance: folded};
 }
 
 /**
@@ -355,7 +356,11 @@ export function resolveReportRowFromUtterance(utterance, payload) {
  */
 export function isSubjectStatusInquiry(folded) {
   const t = String(folded || "").trim();
-  return /^(?:איך\s+(?:הוא|היא|הילד|הילדה|בני|בתי)|מה\s+המצב|מה\s+קורה)(?:\s|$)/u.test(t) && /\s+ב/u.test(t);
+  return (
+    /^(?:how\s+(?:is\s+)?(?:he|she|the\s+(?:boy|girl|kid|child)|my\s+(?:son|daughter))|what(?:'s|\s+is)\s+(?:the\s+)?(?:status|situation)|what(?:'s|\s+happening|going\s+on))(?:\s|$)/i.test(
+      t,
+    ) && /\s+(?:in|at|with)\s+/i.test(t)
+  );
 }
 
 /**
@@ -365,36 +370,25 @@ export function isGeneralReportQuestion(folded) {
   const t = String(folded || "").trim();
   if (t.length < 3) return false;
   return (
-    /^מה\s+הבעיה\??$/u.test(t) ||
-    /^מה\s+הבעיה\s/u.test(t) ||
-    /^מה\s+קשה(?:\s+לו|\s+לה|\s+לילד)?/u.test(t) ||
-    /^מה\s+טוב(?:\s+לו|\s+לה)?/u.test(t) ||
-    /^מה\s+לחזק/u.test(t) ||
-    /^מה\s+לעשות\s+בבית/u.test(t) ||
-    /^מה\s+לעשות\s+ב/u.test(t) ||
-    /^מה\s+הכי\s+חשוב/u.test(t) ||
-    /^איפה\s+הוא\s+חלש/u.test(t) ||
-    /^איפה\s+הוא\s+חזק/u.test(t) ||
-    /^איפה\s+הוא\s+מתקשה/u.test(t) ||
-    /^איפה\s+היא\s+חלש/u.test(t) ||
-    /^איפה\s+היא\s+חזק/u.test(t) ||
-    /^איפה\s+היא\s+מתקשה/u.test(t) ||
-    /^במה\s+הוא\s+חזק/u.test(t) ||
-    /^במה\s+הוא\s+מתקשה/u.test(t) ||
-    /^במה\s+היא\s+חזק/u.test(t) ||
-    /^במה\s+היא\s+מתקשה/u.test(t) ||
-    /^מה\s+הדוח\s+אומר/u.test(t) ||
-    /^מה\s+הדוח\s+אומר\s+בקצרה/u.test(t) ||
-    /^מה\s+השתפר/u.test(t) ||
-    /^מה\s+לעשות\s+השבוע/u.test(t) ||
-    /^מה\s+לעשות\s+עכשיו/u.test(t) ||
-    /למה\s+הדוח\s+אומר/u.test(t) ||
-    /^תסביר\s+לי\s+את\s+הדוח/u.test(t) ||
-    /^תסביר\s+את\s+הדוח/u.test(t) ||
-    /^איך\s+הוא\s+ב/u.test(t) ||
-    /^איך\s+היא\s+ב/u.test(t) ||
-    /^מה\s+המצב\s+ב/u.test(t) ||
-    /^מה\s+קורה\s+ב/u.test(t)
+    /^what(?:'s|\s+is)\s+(?:the\s+)?(?:problem|issue)\??$/i.test(t) ||
+    /^what(?:'s|\s+is)\s+(?:the\s+)?(?:problem|issue)\s/i.test(t) ||
+    /^what(?:'s|\s+is)\s+(?:hard|difficult)(?:\s+for\s+(?:him|her|the\s+child))?/i.test(t) ||
+    /^what(?:'s|\s+is)\s+good(?:\s+for\s+(?:him|her))?/i.test(t) ||
+    /^what\s+to\s+(?:strengthen|reinforce)/i.test(t) ||
+    /^what\s+(?:should\s+(?:i|we)\s+)?do\s+at\s+home/i.test(t) ||
+    /^what\s+(?:should\s+(?:i|we)\s+)?do\s+(?:in|for|about)\b/i.test(t) ||
+    /^what(?:'s|\s+is)\s+(?:the\s+)?most\s+important/i.test(t) ||
+    /^where\s+(?:is\s+)?(?:he|she)\s+(?:weak|strong|struggling)/i.test(t) ||
+    /^what\s+(?:is\s+)?(?:he|she)\s+(?:strong|struggling)\s+(?:in|at|with)/i.test(t) ||
+    /^what\s+does\s+the\s+report\s+say/i.test(t) ||
+    /^what\s+does\s+the\s+report\s+say\s+briefly/i.test(t) ||
+    /^what\s+(?:has\s+)?improved/i.test(t) ||
+    /^what\s+(?:should\s+(?:i|we)\s+)?do\s+(?:this\s+week|now)/i.test(t) ||
+    /why\s+(?:does|did)\s+the\s+report\s+say/i.test(t) ||
+    /^explain\s+(?:to\s+me\s+)?(?:the\s+)?report/i.test(t) ||
+    /^how\s+(?:is\s+)?(?:he|she)\s+(?:in|at|with)\b/i.test(t) ||
+    /^what(?:'s|\s+is)\s+(?:the\s+)?(?:status|situation)\s+(?:in|at|with)\b/i.test(t) ||
+    /^what(?:'s|\s+happening|going\s+on)\s+(?:in|at|with)\b/i.test(t)
   );
 }
 
@@ -404,7 +398,7 @@ export function isGeneralReportQuestion(folded) {
 export function isMixedGradeReportQuestion(folded) {
   const t = String(folded || "").trim();
   return (
-    /שתי\s+כיתות|שתי\s+שורות\s+כיתה|כיתה\s+אחרת|תרגל\s+כיתה\s+אחרת|כיתה\s+גבוהה\s+יותר|כיתה\s+נמוכה\s+יותר|יחסית\s+לכיתה\s+שלו|יחסית\s+לכיתה\s+שלה|בכיתה\s+גבוהה|בכיתה\s+נמוכה|מעל\s+הכיתה\s+שלו|מתחת\s+לכיתה/u.test(
+    /two\s+grades|two\s+grade\s+rows|another\s+grade|practiced\s+(?:a\s+)?different\s+grade|higher\s+grade|lower\s+grade|relative\s+to\s+(?:his|her)\s+grade|in\s+(?:a\s+)?(?:higher|lower)\s+grade|above\s+(?:his|her)\s+grade|below\s+(?:his|her)\s+grade/i.test(
       t,
     )
   );
@@ -416,7 +410,7 @@ export function isMixedGradeReportQuestion(folded) {
 export function isVagueTopicSelectionRequest(folded) {
   const t = String(folded || "").trim();
   return (
-    /נושא\s+מסויים|נושא\s+מסוימי|על\s+נושא\s+מסוים|על\s+נושא\s+מסויים|רוצה\s+לדעת\s+על\s+נושא\s+מסויים|רוצה\s+לדעת\s+על\s+נושא\s+מסוים/u.test(
+    /(?:a\s+)?specific\s+topic|about\s+a\s+(?:certain|specific)\s+topic|want\s+to\s+know\s+about\s+a\s+(?:certain|specific)\s+topic/i.test(
       t,
     )
   );
@@ -432,12 +426,12 @@ export function buildTopicClarificationQuestionHe(payload) {
   const examples = [];
   const seen = new Set();
   for (const r of rows) {
-    const subj = r.subjectLabelHe;
+    const subj = r.subjectLabel;
     const label =
-      foldUtteranceForHeMatch(r.displayName) === foldUtteranceForHeMatch(subj)
+      foldUtteranceForMatch(r.displayName) === foldUtteranceForMatch(subj)
         ? r.displayName
         : `${subj} · ${r.displayName}`;
-    const key = foldUtteranceForHeMatch(label);
+    const key = foldUtteranceForMatch(label);
     if (seen.has(key)) continue;
     seen.add(key);
     examples.push(label);
@@ -456,22 +450,21 @@ export function buildTopicClarificationQuestionHe(payload) {
 function isStandaloneGenericKnowledgeQuestion(folded) {
   const t = String(folded || "").trim();
   return (
-    /^מה\s+זה(?:\s|$)/u.test(t) ||
-    /^מהו\s|^מהי\s/u.test(t) ||
-    /^מי\s+המציא/u.test(t) ||
-    /^מי\s+גילה/u.test(t) ||
-    /^מי\s+כתב/u.test(t) ||
-    /^איך\s+מכינים/u.test(t)
+    /^what\s+is(?:\s|$)/i.test(t) ||
+    /^who\s+invented/i.test(t) ||
+    /^who\s+discovered/i.test(t) ||
+    /^who\s+wrote/i.test(t) ||
+    /^how\s+(?:do\s+you|to)\s+(?:make|prepare)/i.test(t)
   );
 }
 
 export function utteranceQualifiesAsReportQuestion(utterance, payload) {
   if (!payload || typeof payload !== "object") return false;
-  const folded = foldUtteranceForHeMatch(utterance);
+  const folded = foldUtteranceForMatch(utterance);
   if (hasAnchoredReportRows(payload) && isContextualFollowUpUtterance(utterance)) return true;
   if (
     hasAnchoredReportRows(payload) &&
-    /מה\s*חשוב|חשוב\s*כאן|מה\s*לגבי|מה\s*המקצוע\s*החזק|המקצוע\s*החזק|מה\s*הטעויות|מה\s*הטעיות|הטעויות\s*הבולטות/u.test(
+    /what(?:'s|\s+is)?\s*important|important\s+here|what\s+about|strong(?:est)?\s+subject|what\s+(?:are\s+)?the\s+mistakes|notable\s+mistakes/i.test(
       folded,
     )
   ) {
@@ -479,7 +472,7 @@ export function utteranceQualifiesAsReportQuestion(utterance, payload) {
   }
   if (
     isStandaloneGenericKnowledgeQuestion(folded) &&
-    !/דוח|תרגול|מתקשה|חזק|חלש|לפי\s+הדוח|בבית\s+ספר|למידה/u.test(folded)
+    !/report|practice|struggling|strong|weak|according\s+to\s+the\s+report|at\s+school|learning/i.test(folded)
   ) {
     return false;
   }
@@ -488,10 +481,21 @@ export function utteranceQualifiesAsReportQuestion(utterance, payload) {
   if (hasAnchoredReportRows(payload) && isMixedGradeReportQuestion(folded)) return true;
   const res = resolveReportRowFromUtterance(utterance, payload);
   if (res.best && res.bestScore >= 8) return true;
-  if (res.subjectId && !res.best && /איך\s+הוא|איך\s+היא|מה\s+המצב|מה\s+קורה|במקצוע/u.test(folded)) {
+  if (
+    res.subjectId &&
+    !res.best &&
+    /how\s+(?:is\s+)?(?:he|she)|what(?:'s|\s+is)\s+(?:the\s+)?(?:status|situation)|what(?:'s|\s+happening|going\s+on)|in\s+(?:the\s+)?subject/i.test(
+      folded,
+    )
+  ) {
     return true;
   }
-  if (res.best && /תסביר|הסבר|מה\s+הבעיה|מה\s+לעשות|רוצה\s+לדעת|רוצה\s+להבין/u.test(folded)) {
+  if (
+    res.best &&
+    /explain|tell\s+me|what(?:'s|\s+is)\s+(?:the\s+)?(?:problem|issue)|what\s+(?:should\s+(?:i|we)\s+)?do|want\s+to\s+(?:know|understand)/i.test(
+      folded,
+    )
+  ) {
     return true;
   }
   return false;
@@ -508,5 +512,4 @@ export default {
   buildTopicClarificationQuestionHe,
   utteranceQualifiesAsReportQuestion,
   SUBJECT_HE_ALIASES,
-  TOPIC_HE_ALIASES,
-};
+  TOPIC_HE_ALIASES};

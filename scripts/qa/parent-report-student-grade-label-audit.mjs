@@ -11,10 +11,10 @@ import {
   isCoreParentReportRow,
   resolveParentReportRowGradeRelation,
 } from "../../utils/parent-report-core-grade-filter.js";
-import { formatParentReportActivityDisplayLabelHe } from "../../utils/parent-report-language/parent-report-display-labels.he.js";
+import { formatParentReportActivityDisplayLabelHe } from "../../utils/parent-report-language/parent-report-display-labels.js";
 import { buildInsightPacketFromV2Snapshot } from "../../utils/parent-report-insights/build-packet-from-v2-snapshot.js";
 import { buildDeterministicFallbackNarrative } from "../../utils/parent-report-ai-narrative/deterministic-fallback.js";
-import { applyTopicEngineParentFacingInsights } from "../../utils/parent-report-engine-insights-he.js";
+import { applyTopicEngineParentFacingInsights } from "../../utils/parent-report-engine-insights.js";
 import { buildParentSurfaceWhatToNoticeHe } from "../../utils/parent-report-surface/parent-surface-insights.js";
 
 const STUDENT_ID = "2352e8c7-ac0b-4daa-afbf-cb7d130062b3";

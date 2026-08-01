@@ -32,15 +32,14 @@ export function handleArcadePollBundleFailure(b, ctx, setBundleError, setRoomAcc
         ? ARCADE_ROOM_INACTIVE_MESSAGE
         : isArcadeRoomAccessDenied(b)
           ? ARCADE_ROOM_FORBIDDEN_MESSAGE
-          : b.error || b.code || "טעינת החדר נכשלה",
-    );
+          : b.error || b.code || "");
     return true;
   }
 
   if (!ctx.bundleLoadedOnceRef.current) {
     const msg = isArcadeRoomAccessDenied(b)
       ? ARCADE_ROOM_FORBIDDEN_MESSAGE
-      : b.error || b.code || "טעינת החדר נכשלה";
+      : b.error || b.code || "";
     setBundleError(msg);
   }
   return true;

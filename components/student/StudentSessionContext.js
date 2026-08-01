@@ -1,11 +1,11 @@
 import { createContext, useContext, useMemo } from "react";
 
-/** @typedef {"loading" | "ok" | "blocked"} StudentSessionStatus */
+/** @typedef {"loading" || "ok" || "blocked"} StudentSessionStatus */
 
 /**
  * @typedef {object} StudentSessionContextValue
  * @property {StudentSessionStatus} status
- * @property {{ id: string, full_name?: string, grade_level?: string|null, coin_balance?: number, is_active?: boolean } | null} student
+ * @property {{ id: string, full_name?: string, grade_level?: string|null, coin_balance?: number, is_active?: boolean } || null} student
  */
 
 /** @type {StudentSessionContextValue} */

@@ -9,7 +9,7 @@ import { ENGLISH_GRADES } from "../data/english-curriculum.js";
 import { getLearningBookEntry } from "../lib/learning-book/learning-book-catalog.js";
 import { hasLearningBook, getLearningBookIndexHref, getVisibleLearningBooks, getDynamicRouteBookMetaList } from "../lib/learning-book/learning-book-catalog-meta.js";
 import { englishTopicOptionsForGrade } from "../lib/teacher-portal/teacher-class-topic-options.js";
-import { resolveClassroomSkillLabelHe } from "../lib/classroom-activities/classroom-skill-labels-he.js";
+import { resolveClassroomSkillLabelHe } from "../lib/classroom-activities/classroom-skill-labels.js";
 import { generateActivityQuestionSetClient } from "../lib/classroom-activities/generate-activity-questions-client.js";
 import {
   assertAllEnglishCurriculumPlacements,

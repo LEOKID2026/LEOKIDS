@@ -1,0 +1,861 @@
+{
+  "hubTitle": "Centro de juegos de desafíos",
+  "hubBlurb": "Elige una materia y empieza a practicar.",
+  "chooseGrade": "Elegir grado",
+  "chooseTopic": "Elegir tema",
+  "startPractice": "Empezar práctica",
+  "correct": "¡Correcto!",
+  "incorrect": "Casi — inténtalo de nuevo.",
+  "nextQuestion": "Siguiente pregunta",
+  "finish": "Terminar",
+  "resultsTitle": "¡Buen trabajo!",
+  "accuracy": "Precisión: {percent}%",
+  "questionsAnswered": "{count, plural, one {# pregunta} other {# preguntas}}",
+  "subjects": {
+    "math": "Matemáticas",
+    "geometry": "Geometría",
+    "english": "Inglés",
+    "science": "Ciencias"
+  },
+  "blurbs": {
+    "math": "Suma, resta, multiplicación, división y más.",
+    "geometry": "Figuras, ángulos, perímetro, área, volumen y más.",
+    "english": "Vocabulario, gramática, traducción y oraciones.",
+    "science": "Cuerpo, animales, plantas, espacio, materia, clima y fuerzas."
+  },
+  "openBook": "Abrir libro de aprendizaje",
+  "practiceAgain": "Practicar de nuevo",
+  "backToHub": "Volver al centro de aprendizaje",
+  "hubBadge": "Practica · repasa · mejora",
+  "hubSubtitle": "La constancia da frutos: cuanto más juegas, más monedas ganas.",
+  "myProgress": "Mi progreso",
+  "chooseSubject": "Elegir materia",
+  "hubLoading": "Cargando…",
+  "master": {
+    "back": "Atrás",
+    "curriculum": "📋 Plan de estudios",
+    "player": "Jugador",
+    "defaultPlayerName": "Estudiante",
+    "topic": "Tema",
+    "close": "Cerrar",
+    "loading": "Cargando…",
+    "coins": "Monedas:",
+    "coinsTitle": "Monedas del juego",
+    "submit": "Enviar",
+    "answer": "Respuesta",
+    "answerPlaceholder": "Respuesta",
+    "enterAnswer": "Escribe la respuesta",
+    "check": "Comprobar",
+    "keyboard": "Teclado",
+    "start": "▶️ Empezar",
+    "stop": "⏹️ Detener",
+    "play": "Jugar",
+    "explain": "Explicar",
+    "explainBook": "Explicación del libro",
+    "explainFull": "📘 Explicación completa",
+    "remember": "🧠 Recuerda",
+    "rememberTitle": "¿Qué debes recordar?",
+    "whyMistake": "¿Por qué me equivoqué?",
+    "previousExercise": "Solución del ejercicio anterior",
+    "howToSolve": "¿Cómo lo resolvemos?",
+    "leaderboard": "🏆 Tabla de posiciones",
+    "helpBoard": "📚 Tablero de ayuda",
+    "howToLearn": "❓ ¿Cómo se aprende aquí?",
+    "focusedPractice": "Práctica enfocada",
+    "enterNameToStart": "Escribe tu nombre para empezar",
+    "opening": "Apertura",
+    "challenges": "Desafíos",
+    "accuracy": "Precisión",
+    "bestScore": "Mejor puntaje",
+    "bestStreak": "Mejor racha",
+    "noQuestion": "No hay pregunta disponible para esta configuración.",
+    "playerProfile": "👤 Perfil del jugador",
+    "chooseAvatar": "Elegir avatar:",
+    "pickImage": "📷 Elegir imagen",
+    "deleteImage": "🗑️ Eliminar imagen",
+    "imageSelected": "Imagen seleccionada ✓",
+    "playerName": "Nombre del jugador",
+    "peakScore": "Puntaje máximo",
+    "peakStreak": "Racha máxima",
+    "stars": "Estrellas",
+    "level": "Nivel",
+    "xpPoints": "Puntos XP",
+    "dailyStreak": "🔥 Racha diaria",
+    "days": "días",
+    "monthlyProgress": "Progreso mensual",
+    "minutesShort": "min",
+    "overallAccuracy": "Precisión general",
+    "correctOfTotal": "{correct} correctas de {total} preguntas",
+    "topicProgress": "Progreso por tema",
+    "badges": {
+      "streak_10": "🔥 Racha ardiente",
+      "streak_25": "⚡ Rayo veloz",
+      "streak_50": "🌟 Campeón",
+      "streak_100_math": "👑 Rey de las matemáticas",
+      "streak_100_science": "👑 Rey de las ciencias",
+      "score_1000": "💎 1,000 puntos",
+      "score_5000": "🎯 5,000 puntos",
+      "correct_100": "⭐ 100 respuestas correctas",
+      "correct_500": "🌟 500 respuestas correctas",
+      "op_king": "🧮 Rey de {op}",
+      "op_genius": "🏆 Genio de {op}",
+      "topic_expert": "🔬 Experto en {topic}",
+      "topic_genius": "🏆 Genio de {topic}",
+      "topic_expert_legacy": "🔬 Experto en {topic}",
+      "topic_genius_legacy": "🏆 Genio de {topic}"
+    },
+    "noBadgesYet": "Aún no hay insignias. ¡Sigue practicando!",
+    "newBadge": "¡Nueva insignia!",
+    "levelUp": "¡Subiste de nivel!",
+    "levelUpNow": "¡Ahora estás en el nivel {level}!",
+    "avatar": "Avatar",
+    "hudLives": "Vidas",
+    "hudTimer": "Temporizador",
+    "avatarAlt": "Avatar",
+    "childNameAria": "Nombre del niño: {name}",
+    "childNameUnavailable": "Nombre del niño no disponible",
+    "imageTooLarge": "La imagen es demasiado grande. Elige una imagen de hasta 5 MB.",
+    "imageTypeOnly": "Elige solo un archivo de imagen.",
+    "imageSaveFailed": "No se pudo guardar la imagen.",
+    "gradeRequired": "Elige un grado antes de practicar. Pide a un padre o tutor que actualice tu grado.",
+    "enterValidNumber": "Ingresa un número válido",
+    "enterPlayerNameForMistake": "Escribe un nombre de jugador para practicar el error seleccionado",
+    "selectAtLeastOneOp": "Selecciona al menos una operación",
+    "noMistakesToPractice": "No hay errores para practicar",
+    "noResultsYet": "Aún no hay resultados guardados.",
+    "rank": "Puesto",
+    "score": "Puntaje",
+    "streak": "Racha",
+    "localHighScores": "Mejores puntajes locales",
+    "practiceSettings": "🎛️ Configuración de práctica",
+    "practiceSettingsBlurb": "Controla tu entrenamiento: repasa errores recientes, práctica por grados (empieza bajo y avanza hasta el nivel que elijas) o elige un área de enfoque.",
+    "practiceModeLabel": "Modo de práctica",
+    "currentMode": "Modo actual",
+    "focus": "Enfoque",
+    "focusedPracticeMode": "Modo de práctica enfocada",
+    "resetDefaults": "Restablecer valores",
+    "mistakeReview": "🎯 Repaso de errores",
+    "mistakeReviewEmpty": "Aún no hay errores guardados. Practica, comete errores y toca aquí para repasar exactamente lo que necesitas.",
+    "correctAnswer": "Respuesta correcta: {answer}",
+    "yourAnswer": "Tu respuesta: {answer}",
+    "practiceThisQuestion": "Practicar esta pregunta",
+    "clearMistakes": "🧹 Borrar errores",
+    "referenceBoard": "Tablero de referencia",
+    "referenceBoardBlurb": "Elige una categoría para repasar puntos clave — como los tableros de ayuda de matemáticas y geometría.",
+    "noTermsYet": "Aún no hay términos para mostrar.",
+    "verticalDisplay": "Mostrar vertical",
+    "horizontalDisplay": "Mostrar horizontal",
+    "topics": "Temas",
+    "mixedPractice": "Práctica mixta",
+    "editMixOperations": "Editar operaciones del mix",
+    "subjects": "Materias",
+    "notEnoughQuestions": "No hay suficientes preguntas para el tema, grado o nivel que elegiste. Prueba a cambiar una configuración.",
+    "step": "Paso {num}",
+    "explanation": "Explicación",
+    "noStepDetail": "No hay detalle paso a paso para esta pregunta. Usa el tablero de fórmulas.",
+    "multiplicationTableHint": "Toca un número en la tabla y luego un número de fila o columna",
+    "divisionTableHint": "Toca un producto y luego un número de fila o columna para ver la división",
+    "leaderboardLoadError": "Error al cargar la tabla de posiciones:",
+    "gradeFallback": "Grado",
+    "gradedPracticeBlurb": "Práctica por grados — empieza bajo y avanza hasta el nivel que elijas",
+    "backToRegularPractice": "Volver a la práctica normal",
+    "localInsights": "Ideas de práctica (local)",
+    "titles": {
+      "math": "🧮 Matemáticas",
+      "geometry": "📐 Geometría",
+      "english": "🇬🇧 Inglés",
+      "science": "🔬 Ciencias"
+    },
+    "modes": {
+      "learning": {
+        "name": "Aprendizaje",
+        "description": "Sin game over — practica a tu ritmo"
+      },
+      "challenge": {
+        "name": "Desafío",
+        "description": "Temporizador + vidas, compite por un puntaje alto"
+      },
+      "speed": {
+        "name": "Velocidad",
+        "description": "¡Respuestas rápidas = más puntos! ⚡"
+      },
+      "marathon": {
+        "name": "Maratón",
+        "description": "¿Cuántas preguntas puedes resolver? 🏃"
+      },
+      "practice": {
+        "name": "Práctica",
+        "description": "Elige un tema o un modo de entrenamiento enfocado"
+      }
+    },
+    "levels": {
+      "easy": "Fácil",
+      "medium": "Medio",
+      "hard": "Difícil"
+    },
+    "grades": {
+      "g1": "Grado 1",
+      "g2": "Grado 2",
+      "g3": "Grado 3",
+      "g4": "Grado 4",
+      "g5": "Grado 5",
+      "g6": "Grado 6"
+    },
+    "displayLevels": {
+      "regular": "Regular",
+      "advanced": "Avanzado"
+    },
+    "feedback": {
+      "correct": "¡Genial! 🎉",
+      "wrong": "Casi — inténtalo de nuevo 😔",
+      "gameOver": "¡Game over! 💔",
+      "wrongWithAnswer": "Casi 😔 La respuesta correcta: {answer} ✅",
+      "timeUp": "¡Se acabó el tiempo! ⏰",
+      "timeUpGameOver": "¡Se acabó el tiempo! ¡Game over! ⏰",
+      "excellent": "¡Excelente! ✅"
+    },
+    "practiceModes": {
+      "normal": "Práctica normal",
+      "mistakes": "Repaso de errores",
+      "graded": "Práctica por grados"
+    },
+    "streakEncouragement": {
+      "keepGoing": "🔥 ¡Sigue así!",
+      "nice": "⭐ ¡Bien!",
+      "great": "🌟 ¡Genial!",
+      "champion": "👑 ¡Campeón!"
+    },
+    "streakFeedback": {
+      "correct": "¡Correcto! ",
+      "amazing": "¡Increíble! ¡Racha de {streak}! ",
+      "excellent": "¡Excelente! ¡Racha de {streak}! ",
+      "wellDone": "¡Muy bien! ¡Racha de {streak}! ",
+      "nice": "¡Bien! ¡Racha de {streak}! "
+    },
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "stepOf": "Paso {current} de {total}",
+    "mistakesFixed": "🎉 Todos los errores corregidos — ¡buen trabajo!",
+    "levelLabel": "Nivel {level}",
+    "progressByOperation": "Progreso por operación",
+    "strengthen": "Reforzar:",
+    "strongRelative": "Fortaleza relativa:",
+    "browserOnlyMistakes": "Al menos 2 intentos; se guardan solo en el navegador.",
+    "practiceYourMistakes": "Practica tus {count} errores",
+    "recentMistakes": "Errores recientes:",
+    "focusedPracticeTitle": "Práctica enfocada",
+    "showHorizontal": "↔️ Horizontal",
+    "showVertical": "↕️ Vertical",
+    "draftPage": "Página de borrador",
+    "stepByStep": "📖 Paso a paso",
+    "howToSolveExerciseRtl": "¿Cómo resolvemos este ejercicio?",
+    "newQuestion": "Nueva pregunta",
+    "rowN": "Fila {num}",
+    "columnN": "Columna {num}",
+    "divisionLabel": "÷ División",
+    "multiplicationLabel": "× Multiplicación",
+    "reset": "Restablecer",
+    "remainderWarning": "⚠️ Error:",
+    "notInteger": "¡no es un número entero!",
+    "remainderOf": "resto {remainder}",
+    "tableTapNumberHint": "Toca un número en la tabla y luego un número de fila o columna",
+    "divisionTableTapHint": "Toca un producto y luego un número de fila o columna para ver la división",
+    "leaderboardLoadErrorPrefix": "Error al cargar el tablero de resultados:",
+    "noResultsAtLevel": "Aún no hay resultados en",
+    "pickOperations": "🎲 Elegir operaciones",
+    "pickOperationsTitle": "Elegir operaciones",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "all": "Todas",
+    "levelUpNowText": "¡Ahora estás en el nivel {level}!",
+    "gradeTitle": "Grado {grade}",
+    "editMixTopics": "Editar temas del mix",
+    "answerPlaceholderLong": "Escribe tu respuesta aquí...",
+    "checkAnswerBtn": "✅ Comprobar respuesta",
+    "noResultsForLevel": "Aún no hay resultados para el nivel",
+    "pickMixTopics": "🎲 Elegir temas para el mix",
+    "pickMixTopicsBlurb": "Elige qué temas incluir en la práctica mixta",
+    "deselectAll": "Quitar todas",
+    "selectOneTopicMin": "Selecciona al menos un tema",
+    "mistakePracticeTitle": "🎯 Practicar errores recientes",
+    "mistakePracticeBlurb": "Elige un error reciente para abrir práctica enfocada en el mismo tema, grado y dificultad.",
+    "noActiveMistakes": "Aún no hay errores activos. Juega una sesión, reúne datos y vuelve aquí.",
+    "currentGrade": "Grado actual",
+    "practiceNow": "Practicar ahora",
+    "clearMistakesBtn": "🧹 Borrar errores",
+    "wordBoardTitle": "📚 Tablero interactivo de palabras",
+    "wordBoardBlurb": "Elige una categoría para repasar palabras importantes en inglés.",
+    "noWordsInCategory": "No hay palabras para mostrar en esta categoría.",
+    "smartPracticeSettings": "🎛️ Configuración de práctica inteligente",
+    "smartPracticeBlurb": "Como en matemáticas y geometría, elige un modo especial de entrenamiento, vincúlalo a errores recientes o usa la práctica por grados.",
+    "focusMode": "Modo de enfoque",
+    "defaultMode": "Predeterminado",
+    "repeatRecentMistakes": "Repetir errores recientes",
+    "gradedPracticeLabel": "Práctica por grados (empieza bajo → tu nivel elegido)",
+    "translationQuestions": "Preguntas de traducción/historia",
+    "translationInVocab": "Incluir preguntas de traducción en juegos de vocabulario/gramática",
+    "translationOnly": "Mostrar solo preguntas de traducción/historia",
+    "currentStateSummary": "Resumen del estado actual",
+    "mistakeFocus": "Enfoque en errores:",
+    "translationMode": "Preguntas de traducción:",
+    "translationMixed": "Mixtas",
+    "translationOff": "Desactivadas",
+    "translationOnlyShort": "Solo traducción",
+    "enlargeDiagram": "Ampliar diagrama",
+    "enlarge": "Ampliar",
+    "enlargedDiagram": "Diagrama ampliado",
+    "diagram": "Diagrama",
+    "closeDiagram": "Cerrar diagrama",
+    "explainTitle": "Explicación",
+    "noStepDetailGeometry": "No hay detalle de pasos para esta pregunta. Usa el tablero de fórmulas.",
+    "correctAnswerColon": "Respuesta correcta: {answer}.",
+    "topicFallback": "Tema",
+    "shapeFallback": "Figura",
+    "dailyStreakChampion": "👑 ¡Campeón!",
+    "dailyStreakExcellent": "🌟 ¡Excelente!",
+    "dailyStreakGood": "🔥 ¡Gran racha!",
+    "dailyStreakNice": "⭐ ¡Bien!",
+    "dailyStreakKeepGoing": "🔥 ¡Sigue así!",
+    "recentMistakesMode": "Errores recientes",
+    "mistakeRow": "{question} = {wrong} ❌ (correcta: {correct})",
+    "monthMinutesProgress": "{current} / {goal} min",
+    "closeRtl": "Cerrar",
+    "referenceCategories": {
+      "operations": "Operaciones matemáticas",
+      "formulas": "Fórmulas",
+      "terms": "Términos",
+      "shapes": "Figuras"
+    }
+  },
+  "math": {
+    "levelUpScience": "¡Subiste de nivel en matemáticas!",
+    "howToLearnTitle": "📘 ¿Cómo aprender matemáticas aquí?",
+    "howToLearnBlurb": "El objetivo es practicar matemáticas de forma divertida, según el grado, el tema y la dificultad.",
+    "leaderboardTitle": "🏆 Tabla de posiciones – Matemáticas",
+    "referenceBoardTitle": "📚 Tablero de ayuda de matemáticas",
+    "multiplicationTable": "📊 Tabla de multiplicar",
+    "randomPractice": "Práctica aleatoria",
+    "pickRowOrColumn": "Elige una fila o columna para practicar:",
+    "operations": {
+      "addition": "Suma",
+      "subtraction": "Resta",
+      "multiplication": "Multiplicación",
+      "division": "División",
+      "division_with_remainder": "División con resto",
+      "fractions": "Fracciones",
+      "percentages": "Porcentajes",
+      "sequences": "Secuencias",
+      "decimals": "Decimales",
+      "rounding": "Redondeo",
+      "divisibility": "Reglas de divisibilidad",
+      "prime_composite": "Números primos y compuestos",
+      "powers": "Potencias",
+      "ratio": "Razón",
+      "equations": "Ecuaciones",
+      "order_of_operations": "Orden de las operaciones",
+      "zero_one_properties": "Propiedades del 0 y del 1",
+      "estimation": "Estimación",
+      "scale": "Escala",
+      "compare": "Comparar",
+      "number_sense": "Sentido numérico",
+      "factors_multiples": "Factores y múltiplos",
+      "word_problems": "Problemas verbales",
+      "multiplication_table": "Tabla de multiplicar",
+      "place_value": "Valor posicional",
+      "comparison": "Comparación",
+      "patterns": "Patrones y secuencias",
+      "multiplication_advanced": "Multiplicación avanzada",
+      "mixed": "Mixto"
+    },
+    "steps": {
+      "understandQuestion": "Paso 1: Entiende la pregunta",
+      "howToApproach": "Paso 2: ¿Cómo lo abordamos?",
+      "solveByRules": "Lo resolveremos usando las reglas de este tema.",
+      "lookAtExercise": "Miremos el ejercicio.",
+      "theAnswer": "Paso 3: La respuesta",
+      "answerIs": "La respuesta es: {answer}",
+      "checkAnswer": "Comprobaremos la respuesta."
+    },
+    "howToLearnSteps": {
+      "step1": "Elige el grado, la dificultad y la operación (suma, resta, multiplicación, división, fracciones, porcentajes y más).",
+      "step2": "Elige un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+      "step3": "Lee cada pregunta con cuidado — algunas son problemas verbales en los que debes entender la historia.",
+      "step4": "Los puntajes altos, las rachas de respuestas, las estrellas y las insignias te ayudan a subir de nivel como jugador."
+    },
+    "referenceBoardBlurb": "Elige una categoría para repasar operaciones clave, fórmulas y términos de matemáticas.",
+    "reference": {
+      "operations": {
+        "addition": {
+          "title": "➕ Suma",
+          "desc": "Sumar números: a + b = c",
+          "example": "Ejemplo: 5 + 3 = 8"
+        },
+        "subtraction": {
+          "title": "➖ Resta",
+          "desc": "Restar números: a - b = c",
+          "example": "Ejemplo: 8 - 3 = 5"
+        },
+        "multiplication": {
+          "title": "✖️ Multiplicación",
+          "desc": "Multiplicar números: a × b = c",
+          "example": "Ejemplo: 4 × 3 = 12"
+        },
+        "division": {
+          "title": "➗ División",
+          "desc": "Dividir números: a ÷ b = c",
+          "example": "Ejemplo: 12 ÷ 3 = 4"
+        },
+        "fractions": {
+          "title": "🔢 Fracciones",
+          "desc": "Un número que representa parte de un todo: 1/2, 3/4",
+          "example": "Ejemplo: 1/2 = 0.5"
+        },
+        "percentages": {
+          "title": "% Porcentajes",
+          "desc": "Parte de 100: % = parte/todo × 100",
+          "example": "Ejemplo: 50% = 0.5"
+        }
+      },
+      "formulas": {
+        "square_area": {
+          "title": "📐 Área del cuadrado",
+          "desc": "lado × lado",
+          "formula": "A = a²"
+        },
+        "rectangle_area": {
+          "title": "📐 Área del rectángulo",
+          "desc": "largo × ancho",
+          "formula": "A = a × b"
+        },
+        "triangle_area": {
+          "title": "📐 Área del triángulo",
+          "desc": "(base × altura) ÷ 2",
+          "formula": "A = (b × h) ÷ 2"
+        },
+        "circle_perimeter": {
+          "title": "⭕ Circunferencia",
+          "desc": "2 × π × radio",
+          "formula": "C = 2πr"
+        },
+        "circle_area": {
+          "title": "⭕ Área del círculo",
+          "desc": "π × radio²",
+          "formula": "A = πr²"
+        }
+      },
+      "terms": {
+        "sum": {
+          "title": "➕ Suma",
+          "desc": "El resultado de sumar números"
+        },
+        "difference": {
+          "title": "➖ Diferencia",
+          "desc": "El resultado de restar números"
+        },
+        "product": {
+          "title": "✖️ Producto",
+          "desc": "El resultado de multiplicar números"
+        },
+        "quotient": {
+          "title": "➗ Cociente",
+          "desc": "El resultado de dividir números"
+        },
+        "even": {
+          "title": "🔢 Número par",
+          "desc": "Un número divisible entre 2 sin resto (2, 4, 6, 8…)"
+        },
+        "odd": {
+          "title": "🔢 Número impar",
+          "desc": "Un número que no es divisible entre 2 sin resto (1, 3, 5, 7…)"
+        },
+        "prime": {
+          "title": "🔢 Número primo",
+          "desc": "Un número divisible solo entre 1 y sí mismo (2, 3, 5, 7, 11…)"
+        },
+        "integer": {
+          "title": "🔢 Entero",
+          "desc": "Un número completo sin fracciones (0, 1, 2, 3, -1, -2…)"
+        },
+        "fraction": {
+          "title": "🔢 Fracción",
+          "desc": "Un número que representa parte de un todo (1/2, 3/4, 2/3…)"
+        },
+        "percent": {
+          "title": "% Porcentaje",
+          "desc": "Parte de 100 (50% = mitad, 25% = cuarto)"
+        }
+      }
+    }
+  },
+  "geometry": {
+    "leaderboardTitle": "🏆 Tabla de posiciones – Geometría",
+    "howToLearnTitle": "📘 ¿Cómo aprender geometría aquí?",
+    "howToLearnBlurb": "El objetivo es practicar geometría de forma divertida, según el grado, el tema y la dificultad.",
+    "howToLearnSteps": {
+      "step1": "Elige el grado, la dificultad y el tema (área, perímetro, volumen, ángulos, Pitágoras y más).",
+      "step2": "Elige un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+      "step3": "Lee cada pregunta con cuidado — algunas son problemas verbales sobre jardines, cercas y cajas.",
+      "step4": "Los puntajes altos, las rachas de respuestas, las estrellas y las insignias te ayudan a subir de nivel como jugador."
+    },
+    "referenceBoardTitle": "📐 Tablero de figuras y fórmulas",
+    "referenceBoardBlurb": "Elige una categoría para repasar figuras, fórmulas y términos clave de geometría.",
+    "reference": {
+      "shapes": {
+        "square": {
+          "title": "🔷 Cuadrado",
+          "desc": "4 lados iguales, 4 ángulos rectos"
+        },
+        "rectangle": {
+          "title": "⬜ Rectángulo",
+          "desc": "2 pares de lados iguales, 4 ángulos rectos"
+        },
+        "triangle": {
+          "title": "🔺 Triángulo",
+          "desc": "3 lados, 3 ángulos"
+        },
+        "circle": {
+          "title": "⭕ Círculo",
+          "desc": "Figura redonda; todos los puntos están a la misma distancia del centro"
+        },
+        "box": {
+          "title": "📦 Caja (prisma rectangular)",
+          "desc": "Figura 3D con 6 caras rectangulares"
+        },
+        "cube": {
+          "title": "🔲 Cubo",
+          "desc": "Una caja donde todas las aristas son iguales"
+        }
+      },
+      "formulas": {
+        "square_area": {
+          "title": "📐 Área del cuadrado",
+          "desc": "lado × lado",
+          "formula": "A = a²"
+        },
+        "rectangle_area": {
+          "title": "📐 Área del rectángulo",
+          "desc": "largo × ancho",
+          "formula": "A = a × b"
+        },
+        "triangle_area": {
+          "title": "📐 Área del triángulo",
+          "desc": "(base × altura) ÷ 2",
+          "formula": "A = (b × h) ÷ 2"
+        },
+        "square_perimeter": {
+          "title": "📏 Perímetro del cuadrado",
+          "desc": "4 × lado",
+          "formula": "P = 4a"
+        },
+        "rectangle_perimeter": {
+          "title": "📏 Perímetro del rectángulo",
+          "desc": "2 × (largo + ancho)",
+          "formula": "P = 2(a + b)"
+        },
+        "box_volume": {
+          "title": "📦 Volumen del prisma rectangular",
+          "desc": "largo × ancho × altura",
+          "formula": "V = a × b × c"
+        },
+        "cube_volume": {
+          "title": "📦 Volumen del cubo",
+          "desc": "lado × lado × lado",
+          "formula": "V = a³"
+        },
+        "circle_perimeter": {
+          "title": "⭕ Circunferencia",
+          "desc": "2 × π × radio",
+          "formula": "C = 2πr"
+        },
+        "circle_area": {
+          "title": "⭕ Área del círculo",
+          "desc": "π × radio²",
+          "formula": "A = πr²"
+        }
+      },
+      "terms": {
+        "area": {
+          "title": "📐 Área",
+          "desc": "El espacio que cubre una figura en una superficie plana"
+        },
+        "perimeter": {
+          "title": "📏 Perímetro",
+          "desc": "La longitud de la línea alrededor de una figura"
+        },
+        "volume": {
+          "title": "📦 Volumen",
+          "desc": "El espacio que ocupa un objeto 3D"
+        },
+        "angle": {
+          "title": "📐 Ángulo",
+          "desc": "El espacio entre dos rayos que parten del mismo punto"
+        },
+        "right_angle": {
+          "title": "📐 Ángulo recto",
+          "desc": "90 grados"
+        },
+        "acute_angle": {
+          "title": "📐 Ángulo agudo",
+          "desc": "Menos de 90 grados"
+        },
+        "obtuse_angle": {
+          "title": "📐 Ángulo obtuso",
+          "desc": "Más de 90 grados"
+        },
+        "parallel": {
+          "title": "📐 Líneas paralelas",
+          "desc": "Líneas que nunca se encuentran"
+        },
+        "perpendicular": {
+          "title": "📐 Líneas perpendiculares",
+          "desc": "Líneas que se encuentran en un ángulo recto"
+        },
+        "diagonal": {
+          "title": "📐 Diagonal",
+          "desc": "Una línea que une dos esquinas no consecutivas"
+        },
+        "symmetry": {
+          "title": "📐 Simetría",
+          "desc": "Cuando una figura se ve igual en ambos lados"
+        }
+      }
+    },
+    "topics": {
+      "shapes_basic": "Figuras básicas",
+      "shapes": "Figuras",
+      "area": "Área",
+      "perimeter": "Perímetro",
+      "volume": "Volumen",
+      "angles": "Ángulos",
+      "parallel_perpendicular": "Paralelas y perpendiculares",
+      "triangles": "Triángulos",
+      "quadrilaterals": "Cuadriláteros",
+      "transformations": "Transformaciones",
+      "rotation": "Rotación",
+      "symmetry": "Simetría",
+      "diagonal": "Diagonal",
+      "heights": "Alturas",
+      "tiling": "Teselados",
+      "circles": "Círculo",
+      "solids": "Sólidos 3D",
+      "pythagoras": "Pitágoras",
+      "coordinates": "Coordenadas",
+      "mixed": "Mixto"
+    },
+    "errors": {
+      "invalidGrade": "Grado no válido. Elige otro grado.",
+      "noTopics": "No hay temas disponibles para este grado. Elige otro grado.",
+      "noQuestions": "No hay preguntas disponibles para el tema y grado seleccionados.",
+      "generateError": "Error al generar la pregunta. Inténtalo de nuevo o elige otro tema."
+    }
+  },
+  "english": {
+    "leaderboardTitle": "🏆 Tabla de posiciones – Inglés",
+    "howToLearnTitle": "📘 ¿Cómo aprender inglés aquí?",
+    "practiceFocus": {
+      "balanced": "📚 Todos los temas",
+      "vocab_core": "🔤 Vocabulario básico",
+      "grammar_forms": "✏️ Gramática y formas",
+      "writing_lab": "📝 Escritura y oraciones",
+      "translation_boost": "📖 Traducción y lectura"
+    },
+    "reference": {
+      "colors": {
+        "label": "Colores"
+      },
+      "animals": {
+        "label": "Animales"
+      },
+      "actions": {
+        "label": "Verbos comunes"
+      },
+      "emotions": {
+        "label": "Emociones"
+      },
+      "school": {
+        "label": "Vida escolar"
+      },
+      "technology": {
+        "label": "Tecnología"
+      }
+    },
+    "topics": {
+      "phonics": "Fonética",
+      "vocabulary": "Vocabulario",
+      "grammar": "Gramática",
+      "translation": "Traducción",
+      "sentences": "Oraciones",
+      "writing": "Escritura",
+      "mixed": "Mixto"
+    },
+    "steps": {
+      "wordIsEnglish": "Vemos que \"{word}\" está en inglés.",
+      "findLocalizedMeaning": "Encuentra el significado de la palabra.",
+      "correctMeaning": "El significado correcto es: {answer}.",
+      "checkMeaning": "Comprueba que el significado tenga sentido.",
+      "wordIsCue": "Vemos la palabra \"{word}\".",
+      "findEnglishMeaning": "Encuentra el significado en inglés de la palabra.",
+      "grammarRules": "Repasa las reglas de gramática en inglés.",
+      "grammarAmIsAre": "I = am, You/We/They = are, He/She/It = is.",
+      "readEnglishSentence": "Lee la oración en inglés: \"{sentence}\".",
+      "translatePiece": "Intenta traducir cada palabra o parte.",
+      "buildSentence": "Junta las palabras en una oración.",
+      "correctTranslation": "Traducción correcta: {answer}.",
+      "readSentence": "Lee la oración: \"{sentence}\".",
+      "buildEnglishSentence": "Junta las palabras en una oración en inglés.",
+      "readTemplate": "Lee la oración: \"{template}\".",
+      "whatIsMissing": "Averigua qué falta — qué palabra o forma gramatical.",
+      "grammarCheck": "Comprueba qué encaja con las reglas: I/You/We/They = are, He/She/It = is.",
+      "spellingReadWord": "Lee la palabra: \"{word}\".",
+      "spellingRecallEnglish": "Recuerda su forma en inglés.",
+      "spellingLetterByLetter": "Escribe letra por letra y cuida la ortografía.",
+      "writeSentence": "Lee la oración: \"{sentence}\".",
+      "breakIntoParts": "Divide la oración en partes y piensa cómo decir cada una en inglés.",
+      "checkWordOrder": "Comprueba el orden de las palabras y una mayúscula al inicio.",
+      "correctSentence": "Oración correcta: {answer}."
+    },
+    "mistakes": {
+      "checkMeaningLearning": "La respuesta correcta es \"{answer}\". Comprueba otra vez: ¿tu significado coincide con la palabra?",
+      "checkMeaning": "Comprueba otra vez: ¿tu significado coincide con la palabra?",
+      "iAmNotIs": "Recuerda: I siempre usa am, no is. I am = I.",
+      "amOnlyWithI": "Recuerda: am solo va con I. He/She/It = is, You/We/They = are.",
+      "checkGrammarLearning": "La respuesta correcta es \"{answer}\". Revisa otra vez las reglas: I am, You/We/They are, He/She/It is.",
+      "checkGrammar": "Revisa otra vez las reglas: I am, You/We/They are, He/She/It is.",
+      "checkTranslationLearning": "Traducción correcta: {answer}. Comprueba otra vez: ¿tradujiste cada palabra bien?",
+      "checkTranslation": "Comprueba otra vez: ¿tradujiste cada palabra bien?",
+      "checkWordFitLearning": "La respuesta correcta es \"{answer}\". Comprueba otra vez: ¿tu palabra encaja en la oración?",
+      "checkWordFit": "Comprueba otra vez: ¿tu palabra encaja en la oración?",
+      "checkSpellingLearning": "La respuesta correcta es \"{answer}\". Puede que la hayas escrito mal — revisa letra por letra.",
+      "checkSpelling": "Puede que la hayas escrito mal — revisa letra por letra.",
+      "checkMeaningContext": "Comprueba otra vez: ¿tu significado coincide con la palabra? Piensa en la palabra según el contexto."
+    },
+    "audio": {
+      "maxReplays": "Alcanzaste el máximo de escuchas para esta pregunta.",
+      "playing": "Reproduciendo…",
+      "playFailed": "No se puede reproducir ahora. Inténtalo de nuevo o continúa con el texto.",
+      "listenTitle": "Escuchar la pregunta ({current}/{max})",
+      "listen": "Escuchar",
+      "srLabel": "Audio · fonética"
+    }
+  },
+  "science": {
+    "leaderboardTitle": "🏆 Tabla de posiciones – Ciencias",
+    "howToLearnTitle": "📘 ¿Cómo aprender ciencias aquí?",
+    "howToLearnBlurb": "El objetivo es practicar ciencias de forma divertida, según el grado, el tema y la dificultad.",
+    "levelUp": "¡Subiste de nivel en ciencias!",
+    "levelUpNow": "Ahora estás en el nivel {level}",
+    "scientistLevel": "Nivel de científico",
+    "referenceBoardTitle": "📚 Tablero de conceptos de ciencias",
+    "practiceFocus": {
+      "balanced": "📚 Todos los temas",
+      "life_science": "🧬 Ciencias de la vida",
+      "earth_space": "🌍 Tierra y espacio",
+      "materials_energy": "🧪 Materiales y experimentos"
+    },
+    "reference": {
+      "life_science": {
+        "label": "Ciencias de la vida",
+        "terms": {
+          "respiratory": {
+            "term": "Sistema respiratorio",
+            "desc": "Lleva oxígeno al cuerpo y elimina dióxido de carbono."
+          },
+          "photosynthesis": {
+            "term": "Fotosíntesis",
+            "desc": "Proceso en el que las plantas fabrican alimento usando la luz."
+          },
+          "foodWeb": {
+            "term": "Red alimentaria",
+            "desc": "Red de cadenas alimentarias que muestra cómo se mueve la energía en la naturaleza."
+          },
+          "adaptations": {
+            "term": "Adaptaciones",
+            "desc": "Cambios en el cuerpo o el comportamiento que ayudan a sobrevivir."
+          }
+        }
+      },
+      "earth_space": {
+        "label": "Tierra y espacio",
+        "terms": {
+          "atmosphere": {
+            "term": "Atmósfera",
+            "desc": "Capa de gases alrededor de la Tierra."
+          },
+          "waterCycle": {
+            "term": "Ciclo del agua",
+            "desc": "Camino del agua entre el mar, las nubes y la tierra."
+          },
+          "crust": {
+            "term": "Corteza terrestre",
+            "desc": "Capa rocosa exterior con placas tectónicas."
+          },
+          "planet": {
+            "term": "Planeta",
+            "desc": "Cuerpo que orbita una estrella, p. ej. la Tierra o Marte."
+          }
+        }
+      },
+      "materials_energy": {
+        "label": "Materiales y energía",
+        "terms": {
+          "states": {
+            "term": "Estados de la materia",
+            "desc": "Sólido, líquido y gas — distintas formas del mismo material."
+          },
+          "mixtureCompound": {
+            "term": "Mezcla vs compuesto",
+            "desc": "Mezcla — combinados sin enlace químico; compuesto — enlace fuerte."
+          },
+          "renewable": {
+            "term": "Energía renovable",
+            "desc": "Fuentes como el sol y el viento que no se agotan."
+          },
+          "physicalChange": {
+            "term": "Cambio físico",
+            "desc": "Cambio de forma o estado sin crear una sustancia nueva."
+          }
+        }
+      }
+    },
+    "topics": {
+      "body": "Cuerpo humano",
+      "animals": "Animales",
+      "plants": "Plantas",
+      "materials": "Materiales",
+      "earth_space": "Tierra y espacio",
+      "environment": "Medio ambiente y ecología",
+      "experiments": "Experimentos y procesos",
+      "mixed": "Temas mixtos"
+    },
+    "hints": {
+      "body": "Comprueba otra vez: ¿cuál es el papel del sistema u órgano? ¿Cómo ayuda al cuerpo?",
+      "animals": "Pregúntate: ¿dónde vive el animal? ¿Qué come? ¿Cuáles son sus características?",
+      "plants": "Recuerda las partes de la planta y sus roles: raíz, tallo, hojas, flores.",
+      "materials": "Piensa en el estado de la materia y las propiedades del material (sólido/líquido/gas, solubilidad, etc.).",
+      "earth_space": "Recuerda: la Tierra tiene movimientos constantes (rotación y órbita alrededor del Sol).",
+      "environment": "Decide si la acción ayuda o daña el medio ambiente (contaminación, basura, reciclaje).",
+      "experiments": "Piensa como un científico: ¿qué ocurre en el experimento? ¿Causa y resultado?",
+      "genericRetry": "Piensa otra vez usando el enunciado de la pregunta y la lista «¿Qué debes recordar?» de arriba — no adivines demasiado rápido.",
+      "genericCheck": "Revisa otra vez los datos y la explicación que aprendiste."
+    },
+    "steps": {
+      "understand": "1. Primero entiende la pregunta — ¿de qué tema habla?",
+      "onlyMatch": "{num}. De todas las opciones, solo \"{answer}\" coincide con la explicación.",
+      "summary": "{num}. Resumen: {explanation}"
+    },
+    "insights": {
+      "needsStrengthening": "Área para reforzar: {topic} (precisión ~{percent}%)",
+      "relativeStrength": "Fortaleza relativa en {topic}.",
+      "improving": "Buena mejora en {topic}.",
+      "accuracyRising": "La tendencia de precisión en la racha reciente está subiendo.",
+      "accuracyFalling": "La tendencia de precisión en la racha reciente está bajando — repasa el material."
+    },
+    "howToLearnSteps": {
+      "step1": "Elige el grado, el nivel y el tema (p. ej. cuerpo humano, plantas, animales y más).",
+      "step2": "Elige un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+      "step3": "Responde preguntas de opción múltiple, verdadero/falso y estilo experimento.",
+      "step4": "Construye rachas de respuestas y gana estrellas y puntos XP."
+    },
+    "safety": "Sigue siempre las reglas de seguridad del laboratorio. Pide a un adulto antes de hacer experimentos en casa."
+  }
+}

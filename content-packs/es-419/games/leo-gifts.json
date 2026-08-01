@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-gifts",
+  "title": "Dulcería de Leo",
+  "blurb": "Reparto equitativo, grupos y restos",
+  "help": {
+    "howToPlay": "Divide entre niños o en bolsas: encuentra cuántos hay por grupo y cuántos sobran, luego toca \"Comprobar división\".",
+    "scoring": "Respuesta correcta +30, bonificación de tiempo hasta +20, racha de 5 correctas +25. Después de 3 intentos fallidos se muestra la solución.",
+    "rewards": "Las monedas se otorgan según cuántas preguntas respondiste bien, la precisión, las rachas y el nivel de dificultad, aunque el juego haya terminado por errores.",
+    "tip": "Fíjate si la tarea pide por niño o bolsas llenas."
+  },
+  "accessibility": {
+    "title": "Dulcería de Leo"
+  }
+}

@@ -1,6 +1,8 @@
 import { enrichEnglishPoolMapWithCanonicalMetadata } from "../../lib/learning/english-canonical-metadata.js";
 import { isEnglishPhonicsCopyLeakRow } from "../../utils/lower-grade-practice-runtime-quality.js";
 import { WORD_LISTS } from "./word-lists.js";
+import { WORD_MEANINGS_EN } from "./word-meanings/en.js";
+import { WORD_MEANINGS_ES_419 } from "./word-meanings/es-419.js";
 import { GRAMMAR_POOLS as GRAMMAR_POOLS_RAW } from "./grammar-pools.js";
 import { SENTENCE_POOLS as SENTENCE_POOLS_RAW } from "./sentence-pools.js";
 import { TRANSLATION_POOLS as TRANSLATION_POOLS_RAW } from "./translation-pools.js";
@@ -8,6 +10,15 @@ import { PHONICS_G1_POOL as PHONICS_G1_POOL_RAW } from "./phonics-g1.js";
 import { PHONICS_G2_POOL as PHONICS_G2_POOL_RAW } from "./phonics-g2.js";
 
 export { WORD_LISTS };
+export { WORD_MEANINGS_EN };
+export { WORD_MEANINGS_ES_419 };
+export {
+  resolveEnglishWordMeaning,
+  getLocalizedWordList,
+  getLocalizedWordEntries,
+  remapStoredMeaningToInstructionLocale,
+  isSpanishInstructionLocale,
+} from "./word-meanings-locale.js";
 export { PHONICS_G1_POOL_RAW as PHONICS_G1_POOL };
 export { PHONICS_G2_POOL_RAW as PHONICS_G2_POOL };
 
@@ -36,15 +47,13 @@ export const PHONICS_RUNTIME_BLOCKED_ITEM_TYPES = Object.freeze(
     "picture_word_matching",
     "hear_word_choose_picture_word",
     "simple_listening_instruction",
-    "simple_sentence_exposure",
-  ])
+    "simple_sentence_exposure"])
 );
 
 const PHONICS_STIMULUS_REQUIRED_ITEM_TYPES = new Set([
   "choose_matching_letter",
   "match_uppercase_lowercase",
-  "early_word_reading",
-]);
+  "early_word_reading"]);
 
 /**
  * Visible letter/word stimulus for MCQ stem body (not picture assets).
@@ -64,7 +73,7 @@ export function isPhonicsRowRuntimeDisplayable(row) {
   if (PHONICS_RUNTIME_BLOCKED_ITEM_TYPES.has(row.itemType)) return false;
   if (isEnglishPhonicsCopyLeakRow(row)) return false;
   if (row.pictureRef) return false;
-  if (/תמונה/u.test(String(row.question || ""))) return false;
+  if (/(?!)/u.test(String(row.question || ""))) return false;
   if (PHONICS_STIMULUS_REQUIRED_ITEM_TYPES.has(row.itemType)) {
     return Boolean(getPhonicsPracticeStimulus(row));
   }

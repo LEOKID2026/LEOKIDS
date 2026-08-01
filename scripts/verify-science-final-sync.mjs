@@ -44,7 +44,7 @@ import {
 } from "../lib/learning-book/science-g6-registry.js";
 import { getLearningBookEntry } from "../lib/learning-book/learning-book-catalog.js";
 import { scienceTopicOptionsForGrade } from "../lib/teacher-portal/teacher-class-topic-options.js";
-import { resolveClassroomSkillLabelHe } from "../lib/classroom-activities/classroom-skill-labels-he.js";
+import { resolveClassroomSkillLabelHe } from "../lib/classroom-activities/classroom-skill-labels.js";
 import { generateActivityQuestionSetClient } from "../lib/classroom-activities/generate-activity-questions-client.js";
 import {
   assertAllScienceCurriculumPlacements,

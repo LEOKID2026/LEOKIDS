@@ -4,11 +4,9 @@
     "name": "Professional Diagnostic Framework V1",
     "supportedSubjectIds": [
       "math",
-      "hebrew",
-      "english",
-      "science",
       "geometry",
-      "moledet-geography"
+      "english",
+      "science"
     ],
     "evidenceLevelEnum": [
       "none",
@@ -82,29 +80,6 @@
           "rounding",
           "estimation",
           "number_line_reasoning"
-        ]
-      }
-    },
-    "hebrew": {
-      "reading_comprehension": {
-        "subskills": [
-          "explicit_information",
-          "inference",
-          "main_idea",
-          "sequence_of_events",
-          "cause_and_effect",
-          "vocabulary_in_context",
-          "fact_vs_opinion",
-          "understanding_instructions",
-          "character_or_text_intent"
-        ]
-      },
-      "language_grammar": {
-        "subskills": [
-          "sentence_structure",
-          "verb_tense_recognition",
-          "word_meaning",
-          "spelling_morphology"
         ]
       }
     },
@@ -235,48 +210,6 @@
           "transformations"
         ]
       }
-    },
-    "moledet-geography": {
-      "maps": {
-        "subskills": [
-          "legend_scale",
-          "coordinates_grid",
-          "symbols"
-        ]
-      },
-      "directions": {
-        "subskills": [
-          "cardinal_relative",
-          "routes",
-          "orientation"
-        ]
-      },
-      "landmarks": {
-        "subskills": [
-          "recognize_features",
-          "relations_between_places"
-        ]
-      },
-      "community": {
-        "subskills": [
-          "roles_services",
-          "local_context"
-        ]
-      },
-      "environment": {
-        "subskills": [
-          "climate_landforms",
-          "resources",
-          "human_environment"
-        ]
-      },
-      "location_reasoning": {
-        "subskills": [
-          "near_far",
-          "borders_regions",
-          "spatial_comparison"
-        ]
-      }
     }
   },
   "skillLabels": {
@@ -284,8 +217,6 @@
     "math.fractions": "Fractions",
     "math.word_problems": "Word problems",
     "math.number_sense": "Place value / number sense",
-    "hebrew.reading_comprehension": "Reading comprehension",
-    "hebrew.language_grammar": "Language / grammar",
     "english.vocabulary": "Vocabulary",
     "english.grammar": "Grammar",
     "english.reading_comprehension": "Reading comprehension",
@@ -302,12 +233,6 @@
     "geometry.area": "Area",
     "geometry.perimeter": "Perimeter",
     "geometry.symmetry": "Symmetry",
-    "geometry.spatial_reasoning": "Spatial reasoning",
-    "moledet-geography.maps": "Maps",
-    "moledet-geography.directions": "Directions",
-    "moledet-geography.landmarks": "Landmarks",
-    "moledet-geography.community": "Community",
-    "moledet-geography.environment": "Environment",
-    "moledet-geography.location_reasoning": "Location reasoning"
+    "geometry.spatial_reasoning": "Spatial reasoning"
   }
 }

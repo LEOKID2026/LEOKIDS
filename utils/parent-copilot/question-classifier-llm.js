@@ -20,7 +20,7 @@ const VALID_BUCKETS = new Set([
   "report_related",
   "off_topic",
   "diagnostic_sensitive",
-  "ambiguous_or_unclear",
+  "ambiguous_or_unclear"
 ]);
 
 /**
@@ -33,8 +33,8 @@ function subjectLabelLocalHe(subjectId) {
     case "geometry": return "Geometry";
     case "english": return "English";
     case "science": return "Science";
-    case "hebrew": return "Hebrew";
-    case "moledet-geography": return "Homeland Studies";
+    
+    
     default: return "";
   }
 }
@@ -61,7 +61,7 @@ function buildClassifierContext(payload) {
   }
   return {
     subjects: Array.from(new Set(subjects)).slice(0, 8),
-    topics: Array.from(new Set(topics)).slice(0, 12),
+    topics: Array.from(new Set(topics)).slice(0, 12)
   };
 }
 
@@ -85,7 +85,7 @@ function buildPrompt(utterance, payload) {
     `Subjects in the report: ${ctx.subjects.join(", ") || "(none)"}.`,
     `Selected topics in the report: ${ctx.topics.join(", ") || "(none)"}.`,
     `Parent Question: ${String(utterance || "").trim()}`,
-    'Return only JSON in the format {"bucket":"report_related|off_topic|diagnostic_sensitive|ambiguous_or_unclear","confidence":0..1}.',
+    'Return only JSON in the format {"bucket":"report_related|off_topic|diagnostic_sensitive|ambiguous_or_unclear","confidence":0..1}.'
   ].join("\n");
 }
 
@@ -93,7 +93,7 @@ function buildPrompt(utterance, payload) {
  * Call the LLM classifier. Always non-throwing; returns ok=false on any failure.
  *
  * @param {{ utterance: string; payload?: unknown; timeoutMs?: number }} args
- * @returns {Promise<{ ok: true; bucket: import("./question-classifier.js").ClassifierBucket; confidence: number; provider?: string } | { ok: false; reason: string }>}
+ * @returns {Promise<{ ok: true; bucket: import("./question-classifier.js").ClassifierBucket; confidence: number; provider?: string } || { ok: false; reason: string }>}
  */
 export async function classifyParentQuestionViaLlm({ utterance, payload, timeoutMs }) {
   const u = String(utterance || "").trim();
@@ -127,7 +127,7 @@ export async function classifyParentQuestionViaLlm({ utterance, payload, timeout
     return {
       ok: true,
       bucket: /** @type {import("./question-classifier.js").ClassifierBucket} */ (bucket),
-      confidence,
+      confidence
     };
   } catch (e) {
     return { ok: false, reason: `llm_exception:${String(e?.message || e)}` };

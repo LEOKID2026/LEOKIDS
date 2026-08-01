@@ -23,8 +23,8 @@ import {
   applyServerParentFacingAuthorityToClientReport,
   cloneParentFacingBlock,
 } from "../../lib/parent-server/parent-facing-report-authority.js";
-import { applyTopicEngineParentFacingInsights } from "../../utils/parent-report-engine-insights-he.js";
-import { collectTopicEngineRowsFromReport } from "../../utils/parent-report-engine-insights-he.js";
+import { applyTopicEngineParentFacingInsights } from "../../utils/parent-report-engine-insights.js";
+import { collectTopicEngineRowsFromReport } from "../../utils/parent-report-engine-insights.js";
 import { getLpdFromRow } from "../../utils/learning-pattern-decision/lpd-parent-facing-copy.js";
 import {
   attachOutOfGradeTransparencyFromRawBase,

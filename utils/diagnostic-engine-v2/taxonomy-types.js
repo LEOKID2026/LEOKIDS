@@ -1,7 +1,7 @@
 /**
  * @typedef {Object} TaxonomyRow
  * @property {string} id
- * @property {"math"|"geometry"|"english"|"science"|"hebrew"|"moledet-geography"} subjectId
+ * @property {"math"|"geometry"|"english"|"science"} subjectId
  * @property {string} domainHe
  * @property {string} topicHe
  * @property {string} subskillHe

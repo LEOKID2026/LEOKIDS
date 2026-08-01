@@ -34,7 +34,7 @@ export function isMultiplicationStepId(id) {
  * @param {object} step
  * @param {object} [question]
  * @param {string} [operation]
- * @returns {keyof typeof EXERCISE_VIEWS | null}
+ * @returns {keyof typeof EXERCISE_VIEWS || null}
  */
 export function resolveExerciseView(step, question, operation) {
   if (!step) return null;

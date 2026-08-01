@@ -80,7 +80,7 @@ function CompactMissionRow({ mission, index }) {
   );
 }
 
-/** @param {{ open: boolean, onClose: () => void, dailyMissions: object | null, loading?: boolean }} props */
+/** @param {{ open: boolean, onClose: () => void, dailyMissions: object || null, loading?: boolean }} props */
 export default function SubjectDailyMissionsModal({ open, onClose, dailyMissions, loading = false }) {
   if (!open) return null;
 

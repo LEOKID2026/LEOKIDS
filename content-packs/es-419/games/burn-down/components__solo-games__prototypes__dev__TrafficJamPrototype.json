@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "traffic_jam": "Atasco de tráfico",
+    "prototype_drag_cars_along_their_axis_free_the_red_one": "Prototipo · arrastrar coches a lo largo de su eje · liberar el rojo",
+    "size_return_false_if_nr": "SIZE) return false;\r\n    if (nr",
+    "size_return_false_if_nc": "SIZE) return false;\r\n    if (nc",
+    "you_did_it_red_car_is_out": "¡Lo hiciste! El auto rojo salió 🎉",
+    "reset": "Restablecer"
+  }
+}

@@ -9,9 +9,9 @@ const W = 8;
 
 /** @type {Record<string, (rot: number) => number>} */
 const MASK_BY_TYPE = {
-  straight: (rot) => (rot % 2 === 0 ? N | S : E | W),
-  corner: (rot) => [N | E, E | S, S | W, W | N][rot % 4],
-  tee: (rot) => [N | E | S, E | S | W, S | W | N, W | N | E][rot % 4],
+  straight: (rot) => (rot % 2 === 0 ? N || S : E || W),
+  corner: (rot) => [N || E, E || S, S || W, W || N][rot % 4],
+  tee: (rot) => [N || E || S, E || S || W, S || W || N, W || N || E][rot % 4],
   start: () => E,
   end: () => W,
   empty: () => 0,

@@ -2,6 +2,7 @@ import Layout from "../../../../../components/Layout";
 import MathG3BookShell from "../../../../../components/learning-book/MathG3BookShell";
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 import {
   getMathG3PageNeighbors,
   isValidMathG3PageId,
@@ -37,23 +38,24 @@ export default function MathG3BookPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadMathG3Page, loadMathG3TocEntries } = await import("../../../../../lib/learning-book/load-math-g3-pages");
   const pageId = params.pageId;
   if (!isValidMathG3PageId(pageId)) {
     return { notFound: true };
   }
 
-  const page = loadMathG3Page(pageId);
+  const page = loadMathG3Page(pageId, { contentLocale });
   if (!page) {
     return { notFound: true };
   }
 
-  const batches = loadMathG3TocEntries();
+  const batches = loadMathG3TocEntries({ contentLocale });
   const { prev, next } = getMathG3PageNeighbors(pageId);
 
-  const prevPage = prev ? loadMathG3Page(prev) : null;
-  const nextPage = next ? loadMathG3Page(next) : null;
+  const prevPage = prev ? loadMathG3Page(prev, { contentLocale }) : null;
+  const nextPage = next ? loadMathG3Page(next, { contentLocale }) : null;
 
   return {
     props: {

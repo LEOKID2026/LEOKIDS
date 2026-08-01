@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "Atrás",
+    "coin_balance": "Saldo de monedas",
+    "how_to_play": "Cómo jugar",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "En tu turno, se lanzan los dados (OV2 también abre automáticamente una animación de tirada), luego elige qué pieza mover.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "Sólo un 6 saca una pieza del patio al camino.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "Un 6, una captura o entrar a casa desde el camino (según las reglas del motor) otorga un turno adicional.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "Una pieza que llega a los acabados de casa; cuatro piezas gana el local.",
+    "waiting_for_players": "Esperando jugadores..."
+  }
+}

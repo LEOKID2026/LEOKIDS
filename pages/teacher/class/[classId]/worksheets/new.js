@@ -8,7 +8,7 @@ import TeacherQuestionBuilder from "../../../../../components/worksheet-activiti
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
-import { REPORT_SUBJECTS, subjectLabelHe } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabel } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { worksheetModeLabelHe } from "../../../../../lib/worksheet-activities/worksheet-labels.client.js";
 
 export async function getServerSideProps(context) {
@@ -220,7 +220,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
             >
               {REPORT_SUBJECTS.map((s) => (
                 <option key={s} value={s}>
-                  {subjectLabelHe(s)}
+                  {subjectLabel(s)}
                 </option>
               ))}
             </select>

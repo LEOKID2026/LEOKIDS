@@ -2,7 +2,7 @@
  * @param {{
  *   isFullscreen: boolean,
  *   onToggle: () => void,
- *   variant?: "compact" | "board",
+ *   variant?: "compact" || "board",
  *   className?: string,
  * }} props
  */

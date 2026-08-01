@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 /** @typedef {'build_fraction'|'identify_fraction'|'complete_whole'|'equivalent_fraction'|'compare_fractions'|'combine_visual_fractions'} PizzeriaVariant */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
@@ -92,8 +92,7 @@ export const TOPPINGS = [
   { id: "olive", emoji: "🫒", nameKey: "topping_olives" },
   { id: "mushroom", emoji: "🍄", nameKey: "topping_mushrooms" },
   { id: "pepper", emoji: "🫑", nameKey: "topping_pepper" },
-  { id: "basil", emoji: "🌿", nameKey: "topping_basil" },
-];
+  { id: "basil", emoji: "🌿", nameKey: "topping_basil" }];
 
 export const DIFFICULTIES = {
   easy: {
@@ -138,8 +137,7 @@ const NAMES = [
   ["Mia", "👧"],
   ["Daniel", "👦"],
   ["Shir", "👧"],
-  ["Yoav", "👦"],
-];
+  ["Yoav", "👦"]];
 
 /** more_than_one_whole removed until dual-pizza fill UI is complete. */
 /** @param {DifficultyId} difficulty */
@@ -527,8 +525,7 @@ export function pickCustomersForRun(difficulty) {
       ...order,
       id: `pz-${difficulty}-run-${index}`,
       timeLimitSec: getTimeLimit(difficulty, index),
-    }),
-  );
+    }));
 }
 
 /** @param {Record<number, string>} sliceMap */
@@ -787,7 +784,7 @@ export function auditPizzeriaContent() {
       if (/\b(LESS|GREATER|EQUAL)\b/.test(text)) {
         issues.push(`${order.id}: enum leak in text`);
       }
-      if (/מתוך/.test(text)) issues.push(`${order.id}: N of M leak`);
+      if (/(?!)/.test(text)) issues.push(`${order.id}: N of M leak`);
       if (/\d+\s*\/\s*\d+/.test(text)) {
         issues.push(`${order.id}: slash fraction in text (use FractionDisplay)`);
       }

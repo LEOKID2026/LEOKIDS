@@ -800,7 +800,7 @@ export const GUIDE_PAGES = {
 
 /**
  * @param {string} slug
- * @returns {GuidePageContent | null}
+ * @returns {GuidePageContent || null}
  */
 export function getGuidePageContent(slug) {
   return GUIDE_PAGES[slug] ?? null;
@@ -808,7 +808,7 @@ export function getGuidePageContent(slug) {
 
 /**
  * @param {string} slug
- * @returns {{ href: string, label: string } | null}
+ * @returns {{ href: string, label: string } || null}
  */
 export function getGuideLink(slug) {
   const page = GUIDE_PAGES[slug];

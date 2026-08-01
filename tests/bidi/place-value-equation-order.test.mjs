@@ -7,7 +7,7 @@ import {
   parseCanonicalPlaceValueEquation,
   assertPlaceValueDisplayOrder,
 } from "../../lib/learning-book/place-value-equation-order.js";
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 import { classifyBookLine } from "../../lib/learning-book/book-line-classifier.js";
 import { flattenMixedHebrewMathVisibleText } from "../../lib/learning-book/book-visible-text-render.js";
 

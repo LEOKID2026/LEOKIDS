@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "El artículo pasó por la cinta transportadora. ¡Intenta ser más rápido!",
+    "correct_great_job": "¡Correcto! Gran trabajo ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "Math.max(best, next));\n        if (next === 5) addScore(SCORE.streak5);\n        if (next === 10) addScore(SCORE.streak10);\n        if (next === 5 || next === 10) onStreak();\n        return next;\n      });\n\n      addScore(bonus);\n\n      const showFact = Math.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"moving\");\n      const dualAllowed = allowDualItemsAt(sortedCountRef.current, difficultyRef.current);\n      const maxOnBelt = dualAllowed && Math.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id]),\n    [diffConfig.bins],\n  );\n\n  const binsGridClass =\n    activeBins.length",
+    "onitemclick_bi_uid": "onItemClick(bi.uid)}\n                          />\n                        ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Clasifica los artículos en los contenedores adecuados y ayuda al medio ambiente.",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Clasifica cada artículo en el contenedor correcto: ¡ayuda al planeta!",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)}\n        />\n      ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "Arrastre a una papelera o toque un elemento → papelera",
+    "leo_apos_s_recycling_factory": "Fábrica de Reciclaje de Leo",
+    "correct_items": "Artículos correctos",
+    "best_streak": "Mejor racha",
+    "start_game": "iniciar juego",
+    "mistakes": "Errores",
+    "accuracy": "Precisión",
+    "new_game": "Nuevo juego",
+    "mission": "Misión",
+    "score": "Puntaje",
+    "level": "Nivel",
+    "back": "Atrás"
+  }
+}

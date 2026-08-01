@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "empty_space": "espacio vacio",
+    "this_is_how_the_picture_should_look": "¡Así debería verse la imagen!",
+    "target_picture": "Imagen de destino 🐶"
+  }
+}

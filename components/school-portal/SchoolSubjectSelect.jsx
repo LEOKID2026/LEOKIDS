@@ -1,5 +1,5 @@
 import PortalDarkSelect from "../platform-ui/PortalDarkSelect.jsx";
-import { subjectSelectOptionsHe } from "../../lib/platform-ui/hebrew-display-labels.js";
+import { subjectSelectOptionsHe } from "../../lib/platform-ui/display-labels.js";
 
 /**
  * @param {{ value: string, onChange: (value: string) => void, id?: string, className?: string, disabled?: boolean }} props

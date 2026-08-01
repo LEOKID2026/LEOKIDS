@@ -10,7 +10,7 @@ import { PLANNER_AI_EXPLANATION_SECTION_LABEL_HE } from "../lib/learning-client/
 
 /**
  * @param {{
- *   model: { sectionTitle: string, actionLine: string, difficultyLabel: string, difficultyValue: string | null, questionLabel: string, questionValue: number, explanationText?: string, forPractice?: unknown } | null,
+ *   model: { sectionTitle: string, actionLine: string, difficultyLabel: string, difficultyValue: string || null, questionLabel: string, questionValue: number, explanationText?: string, forPractice?: unknown } || null,
  *   onRecommendedPractice?: () => void,
  * }} props
  */

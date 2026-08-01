@@ -4,7 +4,7 @@
  */
 
 import { createReportTranslator } from "../../lib/reports/report-locale.js";
-import { confidenceLevelParentSummaryHe } from "./confidence-parent-he.js";
+import { confidenceLevelParentSummaryHe } from "./confidence-parent.js";
 
 const DEFAULT_REPORT_LOCALE = "en";
 

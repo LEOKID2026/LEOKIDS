@@ -25,18 +25,17 @@ const KEYWORD_PATTERNS = [
   /\bgets?\b/gi,
   /\badd(?:s|ing)?\b/gi,
   /\bsubtract(?:s|ing)?\b/gi,
-  /בסך\s*ה?כל/g,
-  /נותר/g,
-  /נשאר/g,
-  /יותר/g,
-  /פחות/g,
-  /כמה/g,
-  /כל\s*אחד/g,
-  /מחלקים/g,
-  /מקבל/g,
-  /מוסיפים/g,
-  /מחסירים/g,
-];
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g,
+  /(?!)/g];
 
 export function extractKeywordRanges(text) {
   const raw = String(text || "").replace(/\u2066|\u2069/g, "");

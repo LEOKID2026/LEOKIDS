@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "Fábrica de Reciclaje de Leo",
+  "blurb": "Clasifique la basura en los contenedores adecuados y ayude a proteger el medio ambiente",
+  "help": {
+    "howToPlay": "Arrastre o toque un artículo de la cinta transportadora y luego elija el contenedor correcto. Ordene suficientes elementos antes de alcanzar el número máximo de errores.",
+    "scoring": "Clasificación correcta +10, clasificación rápida +5, racha de 5 correctas +20, racha de 10 +50. Un error o un elemento omitido −5 (la puntuación nunca cae por debajo de 0).",
+    "rewards": "Las monedas se otorgan según la cantidad de elementos que ordenaste correctamente, la precisión, las rachas y el alcance de la meta, incluso si no terminaste todo el juego.",
+    "tip": "Preste atención al tipo de artículo: papel, plástico, vidrio, metal o desechos en general."
+  },
+  "accessibility": {
+    "title": "Fábrica de Reciclaje de Leo"
+  }
+}

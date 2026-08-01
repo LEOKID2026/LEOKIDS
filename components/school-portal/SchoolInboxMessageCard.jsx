@@ -13,7 +13,7 @@ export default function SchoolInboxMessageCard({
   disabled = false,
 }) {
   const subject = message?.subject || "School message";
-  const sentLabel = message?.sentAt ? new Date(message.sentAt).toLocaleString("he-IL") : "";
+  const sentLabel = message?.sentAt ? new Date(message.sentAt).toLocaleString("en-US") : "";
   const isUnread = !message?.readAt && !message?.isRead;
 
   return (

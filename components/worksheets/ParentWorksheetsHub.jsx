@@ -25,6 +25,7 @@ import ColoringPreviewModal from "../coloring/ColoringPreviewModal.jsx";
 import WorksheetPreviewModal from "./WorksheetPreviewModal.jsx";
 import RecommendationsTab from "./RecommendationsTab.jsx";
 import { useWorksheetShellAttrs, useWorksheetUi } from "../../hooks/useWorksheetUi.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { writingErrorLabelEn } from "../../lib/writing/writing-error-labels.en.js";
 import { defaultWorksheetTopicForGrade } from "../../lib/worksheets/worksheet-topic-options.js";
 import { listMathPracticeFormatsForGradeTopic } from "../../lib/worksheets/worksheet-math-practice-format.js";
@@ -59,7 +60,7 @@ function blockParentDemoWorksheetMutation(setError) {
 
  *   session: { access_token: string },
 
- *   students: Array<{ id: string, full_name?: string | null, grade_level?: string | null }>,
+ *   students: Array<{ id: string, full_name?: string || null, grade_level?: string || null }>,
 
  *   T: Record<string, string>,
 
@@ -71,6 +72,12 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
   const router = useRouter();
   const ui = useWorksheetUi();
+  const { locale, contentLocale } = useI18n();
+  const worksheetLocaleFields = {
+    interfaceLocale: locale || "en",
+    contentLocale: contentLocale || locale || "en",
+    instructionLocale: contentLocale || locale || "en",
+  };
   const shell = useWorksheetShellAttrs();
   const tabs = [
     { id: "ready", label: ui.tabReady, hint: ui.tabReadyHint },
@@ -183,7 +190,11 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     try {
 
-      const res = await fetch("/api/parent/worksheets/catalog", {
+      const localeQs = new URLSearchParams({
+        interfaceLocale: worksheetLocaleFields.interfaceLocale,
+        contentLocale: worksheetLocaleFields.contentLocale,
+      }).toString();
+      const res = await fetch(`/api/parent/worksheets/catalog?${localeQs}`, {
 
         headers: { Authorization: authHeader },
 
@@ -213,7 +224,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     }
 
-  }, [authHeader]);
+  }, [authHeader, worksheetLocaleFields, ui.errorGeneric]);
 
 
 
@@ -366,11 +377,16 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
       try {
 
-        const res = await fetch(`/api/parent/worksheets/ready/${encodeURIComponent(slug)}`, {
-
+        const localeQs = new URLSearchParams({
+          interfaceLocale: worksheetLocaleFields.interfaceLocale,
+          contentLocale: worksheetLocaleFields.contentLocale,
+        }).toString();
+        const res = await fetch(
+          `/api/parent/worksheets/ready/${encodeURIComponent(slug)}?${localeQs}`,
+          {
           headers: { Authorization: authHeader },
-
-        });
+        }
+        );
 
         const data = await res.json();
 
@@ -396,7 +412,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     },
 
-    [authHeader, openPreview, includeAnswers]
+    [authHeader, openPreview, includeAnswers, worksheetLocaleFields]
 
   );
 
@@ -443,6 +459,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
               ? createForm.mathPracticeFormat
               : undefined,
           preferMcq: createForm.preferMcq === true,
+          ...worksheetLocaleFields,
 
         };
 
@@ -493,7 +510,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
 
     }
 
-  }, [authHeader, createForm, openWorksheetPreviewModal, includeAnswers]);
+  }, [authHeader, createForm, openWorksheetPreviewModal, includeAnswers, worksheetLocaleFields]);
 
   const handleWritingCreateSubmit = useCallback(async () => {
     setWritingCreateBusy(true);
@@ -503,7 +520,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
       return;
     }
     try {
-      const body = buildWritingGenerateBody(writingForm);
+      const body = buildWritingGenerateBody(writingForm, worksheetLocaleFields);
       const res = await fetch("/api/parent/worksheets/generate", {
         method: "POST",
         headers: {
@@ -525,7 +542,7 @@ export default function ParentWorksheetsHub({ session, students, T }) {
     } finally {
       setWritingCreateBusy(false);
     }
-  }, [authHeader, writingForm, openWorksheetPreviewModal]);
+  }, [authHeader, writingForm, openWorksheetPreviewModal, worksheetLocaleFields]);
 
   const fetchColoringCatalog = useCallback(async () => {
     setColoringCatalogLoading(true);

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "child_id_is_missing": "Falta la identificación del niño",
+    "server_error_please_try_again": "Error del servidor — inténtalo de nuevo"
+  }
+}

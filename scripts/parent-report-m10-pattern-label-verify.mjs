@@ -14,7 +14,7 @@ const [
   truthMod,
   forbiddenMod,
 ] = await Promise.all([
-  import("../utils/parent-report-language/parent-facing-pattern-label-he.js"),
+  import("../utils/parent-report-language/parent-facing-pattern-label.js"),
   import("../utils/detailed-parent-report.js"),
   import("../utils/parent-report-v2.js"),
   import("../utils/parent-copilot/truth-packet-v1.js"),

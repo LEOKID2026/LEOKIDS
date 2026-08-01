@@ -7,21 +7,19 @@ import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import { mapPlannerNextActionToHebrew } from "../../lib/learning-client/adaptive-planner-recommendation-view-model.js";
 import {
   parentReportAiInputToNarrativeEngineSnapshot,
-  validateParentReportAIText,
+  validateParentReportAIText
 } from "../../lib/parent-report-ai/parent-report-ai-validate.js";
 
-/** @param {Record<string, string | undefined>} [env] */
+/** @param {Record<string, string || undefined>} [env] */
 function envStr(name, env = typeof process !== "undefined" ? process.env : {}) {
   return String(env?.[name] ?? "").trim();
 }
 
 const SUBJECT_LABEL_HE = {
   math: "Math",
-  hebrew: reportPackCopy("utils__parent-report-ai__parent-report-ai-explainer", "hebrew"),
   science: "Science",
   geometry: "Geometry",
-  english: "English",
-  "moledet-geography": reportPackCopy("utils__parent-report-ai__parent-report-ai-explainer", "geography"),
+  english: "English"
 };
 
 /**
@@ -51,7 +49,7 @@ export function buildStrictParentReportAIInput(raw) {
     "practice_current",
     "review_prerequisite",
     "probe_skill",
-    "pause_collect_more_data",
+    "pause_collect_more_data"
   ]);
   if (!subject || !grade || !plannerNextAction || !allowedActions.has(plannerNextAction)) return null;
   if (!accuracyBand || !consistencyBand || !dataConfidence) return null;
@@ -68,7 +66,7 @@ export function buildStrictParentReportAIInput(raw) {
     dataConfidence,
     mainStrengths,
     mainPracticeNeeds,
-    recommendedNextStep,
+    recommendedNextStep
   };
 }
 
@@ -137,7 +135,7 @@ function buildParentModelPrompt(input) {
     data_confidence: input.dataConfidence,
     strengths_summary: input.mainStrengths,
     practice_needs_summary: input.mainPracticeNeeds,
-    approved_next_step_he: input.recommendedNextStep,
+    approved_next_step_he: input.recommendedNextStep
   };
   return [
     "You write THREE to FIVE short sentences in US English for parents (calm, professional, supportive).",
@@ -148,7 +146,7 @@ function buildParentModelPrompt(input) {
     "Do NOT use digits in the output.",
     "Ground the message only in the provided band labels and approved_next_step_he; do not invent new subjects or diagnoses.",
     'Return JSON only: {"text":"..."}',
-    `CONTEXT_JSON: ${JSON.stringify(payload)}`,
+    `CONTEXT_JSON: ${JSON.stringify(payload)}`
   ].join("\n");
 }
 
@@ -165,7 +163,7 @@ async function callOpenAiParentExplanation(prompt, env, signal) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${key}`,
+      Authorization: `Bearer ${key}`
     },
     body: JSON.stringify({
       model,
@@ -173,10 +171,10 @@ async function callOpenAiParentExplanation(prompt, env, signal) {
       max_tokens: 500,
       messages: [
         { role: "system", content: "You only output valid minified JSON with an English text field." },
-        { role: "user", content: prompt },
-      ],
+        { role: "user", content: prompt }
+      ]
     }),
-    signal: signal || undefined,
+    signal: signal || undefined
   });
   if (!res.ok) return { ok: false, reason: `http_${res.status}` };
   let body;
@@ -201,8 +199,8 @@ async function callOpenAiParentExplanation(prompt, env, signal) {
 
 /**
  * @param {object} rawInput - fields for `buildStrictParentReportAIInput`
- * @param {{ env?: Record<string, string | undefined>, signal?: AbortSignal, preferDeterministicOnly?: boolean }} [options]
- * @returns {Promise<{ ok: true, text: string, source: "ai" | "deterministic_fallback" } | { ok: false, reason: string, source: "none" }>}
+ * @param {{ env?: Record<string, string || undefined>, signal?: AbortSignal, preferDeterministicOnly?: boolean }} [options]
+ * @returns {Promise<{ ok: true, text: string, source: "ai" || "deterministic_fallback" } || { ok: false, reason: string, source: "none" }>}
  */
 export async function buildParentReportAIExplanation(rawInput, options = {}) {
   const env = options.env || (typeof process !== "undefined" ? process.env : {});
@@ -213,7 +211,7 @@ export async function buildParentReportAIExplanation(rawInput, options = {}) {
   const validateOpts = {
     runNarrativeGuard: true,
     narrativeEngineSnapshot: narrativeSnapshot,
-    narrativeReportContext: { surface: "detailed" },
+    narrativeReportContext: { surface: "detailed" }
   };
 
   const fallbackRaw = getDeterministicParentReportExplanation(input);

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { normalizeParentFacingHe } from "../utils/parent-report-language/parent-facing-normalize-he.js";
+import { normalizeParentFacing } from "../utils/parent-report-language/parent-facing-normalize.js";
 import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const pairs = [
@@ -27,7 +27,7 @@ const pairs = [
 
 let preserved = 0;
 for (const p of pairs) {
-  const out = normalizeParentFacingHe(p.input);
+  const out = normalizeParentFacing(p.input);
   const ok = p.mustContain.every((frag) => out.includes(frag));
   if (ok) preserved += 1;
 }

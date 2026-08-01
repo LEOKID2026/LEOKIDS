@@ -14,7 +14,7 @@ function pickStr(v) {
 }
 
 /**
- * Canonical difficulty from internal math level key (קל/בינוני/קשה mapping lives in generator).
+ * Canonical difficulty from internal math level key (// mapping lives in generator).
  * @param {string} mathLevelKey easy|medium|hard
  */
 export function mapMathLevelKeyToDifficulty(mathLevelKey) {
@@ -45,10 +45,10 @@ export function resolveMathSkillId(params, selectedOp) {
  */
 export function resolveMathSubskillId(params, selectedOp) {
   return (
-    pickStr(params.subtype) ||
-    pickStr(params.patternFamily) ||
-    pickStr(params.kind) ||
-    pickStr(selectedOp) ||
+    pickStr(params.subtype) |
+    pickStr(params.patternFamily) |
+    pickStr(params.kind) |
+    pickStr(selectedOp) |
     "general"
   );
 }
@@ -70,10 +70,10 @@ export function inferMathCognitiveLevel(kind, selectedOp, mathLevelKey, params =
   if (k.startsWith("wp_") || selectedOp === "word_problems") return "application";
   if (k.startsWith("frac_") || k.startsWith("dec_") || k.startsWith("scale_")) return "understanding";
   if (
-    k.startsWith("ns_") ||
-    k === "cmp" ||
-    k === "divisibility" ||
-    k === "prime_composite" ||
+    k.startsWith("ns_") |
+    k === "cmp" |
+    k === "divisibility" |
+    k === "prime_composite" |
     k.startsWith("pc_")
   ) {
     return "recall";
@@ -123,9 +123,9 @@ export function inferMathExpectedErrorTypes(params, selectedOp) {
     add("unit_or_scale_error");
   }
   if (
-    kind === "divisibility" ||
-    kind === "prime_composite" ||
-    kind.startsWith("pc_") ||
+    kind === "divisibility" |
+    kind === "prime_composite" |
+    kind.startsWith("pc_") |
     kind.startsWith("fm_")
   ) {
     add("concept_confusion");

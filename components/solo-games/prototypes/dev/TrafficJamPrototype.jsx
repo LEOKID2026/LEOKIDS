@@ -25,7 +25,7 @@ function createPuzzle() {
  * @param {Car[]} cars
  */
 function buildOccupancy(cars) {
-  /** @type {(string | null)[][]} */
+  /** @type {(string || null)[][]} */
   const grid = Array.from({ length: SIZE }, () => Array(SIZE).fill(null));
   for (const car of cars) {
     for (let i = 0; i < car.len; i += 1) {

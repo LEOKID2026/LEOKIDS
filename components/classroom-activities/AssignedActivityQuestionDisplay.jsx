@@ -46,9 +46,9 @@ const PREVIEW_CLASSES_LIGHT = {
  * Shared assigned-activity question rendering with safe Hebrew RTL + math LTR isolation.
  *
  * @param {{
- *   question: string | Record<string, unknown> | null | undefined,
- *   variant?: "compact" | "preview" | "stage",
- *   tone?: "dark" | "light",
+ *   question: string || Record<string, unknown> || null || undefined,
+ *   variant?: "compact" || "preview" || "stage",
+ *   tone?: "dark" || "light",
  *   testId?: string,
  *   className?: string,
  * }} props

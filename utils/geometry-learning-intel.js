@@ -1,4 +1,4 @@
-// מעקב קל ללמידה בגאומטריה — localStorage בלבד
+//     — localStorage 
 
 const STORAGE_KEY = "mleo_geometry_learning_intel";
 const VERSION = 1;
@@ -50,14 +50,13 @@ export function recordGeometryAnswerIntel(intel, topic, isCorrect) {
   const topicStats = { ...intel.topicStats, [t]: stats };
   const recentTail = [
     ...(intel.recentTail || []),
-    { topic: t, ok: !!isCorrect, at: Date.now() },
-  ].slice(-TAIL_MAX);
+    { topic: t, ok: !!isCorrect, at: Date.now() }].slice(-TAIL_MAX);
   return { topicStats, recentTail };
 }
 
 export function getGeometryTopicInsights(topicStats) {
   const entries = Object.entries(topicStats || {}).filter(
-    ([, s]) => (s.attempts || 0) >= 2
+    ([ s]) => (s.attempts || 0) >= 2
   );
   if (entries.length === 0) {
     return { weakest: null, strongest: null };
@@ -93,7 +92,7 @@ export function geometryQuestionFingerprint(q) {
   return `${topic}|${kind}|${patternFamily}|${conceptTag}|${subtype}|${ca}|${paramSig}`;
 }
 
-/** מפתח נוסף נגד חזרה על אותה תבנית קונספטואלית */
+/**         */
 export function geometryConceptLineageKey(q) {
   if (!q) return "";
   const topic = q.topic ?? "";

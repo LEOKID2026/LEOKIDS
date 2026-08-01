@@ -9,6 +9,7 @@ import {
   GEOMETRY_G4_BOOK_META,
 } from "../../../../../lib/learning-book/geometry-g4-registry";
 import { useMemo } from "react";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 const SUBJECT = "geometry";
 const GRADE = "g4";
@@ -52,23 +53,24 @@ export default function GeometryG4BookPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadGeometryG4Page, loadGeometryG4TocEntries } = await import("../../../../../lib/learning-book/load-geometry-g4-pages");
   const pageId = params.pageId;
   if (!isValidGeometryG4PageId(pageId)) {
     return { notFound: true };
   }
 
-  const page = loadGeometryG4Page(pageId);
+  const page = loadGeometryG4Page(pageId, { contentLocale });
   if (!page) {
     return { notFound: true };
   }
 
-  const batches = loadGeometryG4TocEntries();
+  const batches = loadGeometryG4TocEntries({ contentLocale });
   const { prev, next } = getGeometryG4PageNeighbors(pageId);
 
-  const prevPage = prev ? loadGeometryG4Page(prev) : null;
-  const nextPage = next ? loadGeometryG4Page(next) : null;
+  const prevPage = prev ? loadGeometryG4Page(prev, { contentLocale }) : null;
+  const nextPage = next ? loadGeometryG4Page(next, { contentLocale }) : null;
 
   return {
     props: {

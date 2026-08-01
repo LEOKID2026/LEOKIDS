@@ -37,7 +37,7 @@ export function categorizeFinding(file, text) {
   if (/email|sendgrid|mail/.test(f)) return "Emails";
   if (/diagnostic-|taxonomy-|probe-map|math-animations/.test(f)) return "Learning";
   if (/ParentCurriculumContent/.test(f)) return "Learning";
-  if (/hebrew-display-labels|apiError|validation/.test(f)) return "API errors";
+  if (/display-labels|apiError|validation/.test(f)) return "API errors";
   if (/student-api-legacy-errors/.test(f)) return "Internal/non-user-facing";
   if (/utils\/contracts\/|parent-product-contract|launch-readiness\/|report-visible-practice-sync/.test(f)) {
     return "Internal/non-user-facing";

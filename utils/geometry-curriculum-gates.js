@@ -3,7 +3,7 @@
  */
 import { parseGradeKey } from "./grade-gating.js";
 
-/** Oracle-confirmed G5+ triangle area formula (kita5.pdf § ה. מדידות שטחים). */
+/** Oracle-confirmed G5+ triangle area formula (kita5.pdf § .  ). */
 export const TRIANGLE_AREA_FORMULA_MIN_GRADE = 5;
 
 /** G5 triangle_area book page + spine skill registered (Track B). */

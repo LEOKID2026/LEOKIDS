@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "entry_cost": "Costo de entrada",
+    "loading": "Cargando…",
+    "room_code": "código de habitación"
+  }
+}

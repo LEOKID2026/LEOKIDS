@@ -1,17 +1,17 @@
 import assert from "node:assert/strict";
 import { getTopicName, normalizeReportTopicBucketKey } from "../../utils/math-report-generator.js";
-import { explainPatternHe, explainActionHe } from "../../utils/parent-report-language/parent-report-hebrew-copy-spec.js";
+import { explainPatternHe, explainActionHe } from "../../utils/parent-report-language/parent-report-copy-spec.js";
 import { sanitizeParentPatternLabel } from "../../utils/learning-pattern-decision/parent-pattern-label.js";
 import {
   PARENT_TOPIC_HOME_ACTION_HEADING_HE,
-  parentFacingErrorPatternMeaningHe,
-  resolveParentFacingPatternLabelHe,
-} from "../../utils/learning-pattern-decision/parent-facing-error-pattern-he.js";
-import { buildApprovedTopicCopyHe } from "../../lib/parent-ui/parent-report-approved-copy-he.js";
+  parentFacingErrorPatternMeaning,
+  resolveParentFacingPatternLabel,
+} from "../../utils/learning-pattern-decision/parent-facing-error-pattern.js";
+import { buildApprovedTopicCopyHe } from "../../lib/parent-ui/parent-report-approved-copy.js";
 import { trendV1DisplayLineHe } from "../../utils/parent-report-topic-trend-v1.js";
 
 {
-  const label = resolveParentFacingPatternLabelHe("procedural_error");
+  const label = resolveParentFacingPatternLabel("procedural_error");
   assert.ok(label.includes("דרך פתרון"));
   assert.ok(!/procedural_error/i.test(label));
   assert.equal(sanitizeParentPatternLabel("procedural_error"), label);
@@ -21,7 +21,7 @@ import { trendV1DisplayLineHe } from "../../utils/parent-report-topic-trend-v1.j
 }
 
 {
-  const meaning = parentFacingErrorPatternMeaningHe("procedural_error");
+  const meaning = parentFacingErrorPatternMeaning("procedural_error");
   assert.ok(meaning.includes("דרך הפתרון"));
   const copy = buildApprovedTopicCopyHe(
     {

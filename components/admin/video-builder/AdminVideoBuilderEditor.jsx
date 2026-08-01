@@ -405,7 +405,7 @@ export default function AdminVideoBuilderEditor({ accessToken, projectId }) {
         </div>
       ) : null}
 
-      {/* Workspace: inspector (ימין) | preview | scenes (שמאל) */}
+      {/* Workspace: inspector (ימין) || preview || scenes (שמאל) */}
       <div className="vb-editor-workspace mx-2 md:mx-4">
         <AdminVideoInspector
           activeTab={inspectorTab}

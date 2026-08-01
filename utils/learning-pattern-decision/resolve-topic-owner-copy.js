@@ -3,7 +3,7 @@
  */
 
 import { sanitizeParentPatternLabel } from "./parent-pattern-label.js";
-import { resolveParentFacingPatternLabelHe } from "./parent-facing-error-pattern-he.js";
+import { resolveParentFacingPatternLabel } from "./parent-facing-error-pattern.js";
 import {
   EDC_CONTRACT_KEY,
   readEngineDecisionCode,
@@ -13,7 +13,7 @@ import {
   renderOwnerTopicCopyTemplateHe,
   topicExplainTemplateId,
   narrativeOwnerTemplateId,
-} from "../parent-report-language/parent-report-owner-topic-copy-templates-he.js";
+} from "../parent-report-language/parent-report-owner-topic-copy-templates.js";
 
 /** @param {Record<string, unknown>|null|undefined} row */
 function getLpdFromRowLocal(row) {
@@ -21,7 +21,7 @@ function getLpdFromRowLocal(row) {
   return lpd && typeof lpd === "object" ? lpd : null;
 }
 
-/** @typedef {import("../parent-report-language/parent-report-owner-topic-copy-templates-he.js").TopicOwnerCopySlots} TopicOwnerCopySlots */
+/** @typedef {import("../parent-report-language/parent-report-owner-topic-copy-templates.js").TopicOwnerCopySlots} TopicOwnerCopySlots */
 
 const OWNER_TOPIC_BASE_TEMPLATE_IDS = new Set([
   "difficulty_observed",
@@ -63,7 +63,7 @@ export function resolveTopicOwnerBaseTemplateId(lpd) {
 function resolveDetectedPattern(contract, lpd) {
   const fromContract = str(contract?.detectedPattern);
   if (fromContract) {
-    const mapped = resolveParentFacingPatternLabelHe(fromContract);
+    const mapped = resolveParentFacingPatternLabel(fromContract);
     if (mapped) return mapped;
   }
   const patterns = Array.isArray(lpd?.repeatedMistakePatterns) ? lpd.repeatedMistakePatterns : [];
@@ -95,7 +95,7 @@ export function buildTopicOwnerCopySlots(row) {
 
   return {
     topicName,
-    subjectName: str(row?.subjectLabelHe || row?.subjectName),
+    subjectName: str(row?.subjectLabel || row?.subjectName),
     questions: metrics.questions,
     correct: metrics.correct,
     wrong: metrics.wrong,
@@ -131,7 +131,7 @@ export function resolveTopicExplainOwnerSectionsHe(row) {
   if (!slots?.baseTemplateId) return null;
   const base = slots.baseTemplateId;
 
-  /** @param {keyof import("../parent-report-language/parent-report-owner-topic-copy-templates-he.js").TOPIC_EXPLAIN_SECTION_TEMPLATE_SUFFIX} section */
+  /** @param {keyof import("../parent-report-language/parent-report-owner-topic-copy-templates.js").TOPIC_EXPLAIN_SECTION_TEMPLATE_SUFFIX} section */
   const sectionText = (section) =>
     renderOwnerTopicCopyTemplateHe(topicExplainTemplateId(base, section), slots) || "";
 

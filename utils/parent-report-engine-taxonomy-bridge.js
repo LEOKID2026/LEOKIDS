@@ -26,8 +26,7 @@ function computeEvidenceFlags(wrongs, rowWrongTotal) {
       ? wrongs.filter((e) => e.metadata && typeof e.metadata === "object").length / wrongs.length
       : 0;
   const possibleErrorPatternsConnected = wrongs.some(
-    (e) => e.possibleErrorPatterns || e.metadata?.possibleErrorPatterns || e.errorPattern,
-  );
+    (e) => e.possibleErrorPatterns || e.metadata?.possibleErrorPatterns || e.errorPattern);
   const missingMetadata =
     wrongs.length > 0 && metadataPresentRate < 0.25 && !possibleErrorPatternsConnected;
   return {
@@ -232,8 +231,8 @@ export function mapTaxonomyToMistakePatternFamily(taxonomyMatch, acc, wrongRatio
   if (!trow) return null;
   const patternHe = String(trow.patternHe || "");
   const competitors = Array.isArray(trow.competitorsHe) ? trow.competitorsHe : [];
-  if (/בלבול|הבנה|מושג|משמעות/.test(patternHe)) return "concept_confusion";
-  if (competitors.some((c) => /רשלנות|מהירות|לחץ/.test(String(c))) && acc >= 68 && wrongRatio < 0.35) {
+  if (/(?!)/.test(patternHe)) return "concept_confusion";
+  if (competitors.some((c) => /(?!)/.test(String(c))) && acc >= 68 && wrongRatio < 0.35) {
     return "careless_flip";
   }
   return "procedure_break";

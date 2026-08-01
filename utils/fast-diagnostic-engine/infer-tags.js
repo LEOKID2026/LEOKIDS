@@ -1,6 +1,6 @@
 /**
  * Map raw mistake-event fields to normalized educational error tags (deterministic).
- * Tags are stable ids for logic; Hebrew labels live in parent-copy-he.js
+ * Tags are stable ids for logic; Hebrew labels live in parent-copy.js
  */
 
 /** @param {string} s */
@@ -71,18 +71,10 @@ export function inferNormalizedTags(ev, subjectId) {
     else if (ct.startsWith("english_be_agreement")) add("grammar_pattern_error");
   }
 
-  if (sid === "hebrew") {
-    if (pf.includes("decod") || ct.includes("decode")) add("decoding_error");
-    if (pf.includes("comprehen") || ct.includes("comp")) add("comprehension_gap");
-    if (pf.includes("detail")) add("detail_recall_error");
-    if (pf.includes("infer")) add("inference_error");
-    if (pf.includes("vocab") || ct.includes("vocab")) add("vocabulary_gap");
-    if (pf.includes("sequence") || ct.includes("order")) add("sequence_error");
-  }
+  
 
   if (
     sid === "science" ||
-    sid === "moledet-geography" ||
     sid === "geometry"
   ) {
     if (pf.includes("concept") || ct.includes("concept")) add("concept_confusion");

@@ -1,5 +1,5 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
-/** @typedef {'build' | 'findTrays' | 'findPerTray' | 'findTotal'} BakeryMode */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
+/** @typedef {'build' || 'findTrays' || 'findPerTray' || 'findTotal'} BakeryMode */
 
 import { MIN_POOL_SIZE, randInt, shuffle } from "../shared/task-session.js";
 

@@ -2,6 +2,7 @@ import Layout from "../../../../../components/Layout";
 import MathG4BookShell from "../../../../../components/learning-book/MathG4BookShell";
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 import {
   getMathG4PageNeighbors,
   isValidMathG4PageId,
@@ -37,23 +38,24 @@ export default function MathG4BookPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadMathG4Page, loadMathG4TocEntries } = await import("../../../../../lib/learning-book/load-math-g4-pages");
   const pageId = params.pageId;
   if (!isValidMathG4PageId(pageId)) {
     return { notFound: true };
   }
 
-  const page = loadMathG4Page(pageId);
+  const page = loadMathG4Page(pageId, { contentLocale });
   if (!page) {
     return { notFound: true };
   }
 
-  const batches = loadMathG4TocEntries();
+  const batches = loadMathG4TocEntries({ contentLocale });
   const { prev, next } = getMathG4PageNeighbors(pageId);
 
-  const prevPage = prev ? loadMathG4Page(prev) : null;
-  const nextPage = next ? loadMathG4Page(next) : null;
+  const prevPage = prev ? loadMathG4Page(prev, { contentLocale }) : null;
+  const nextPage = next ? loadMathG4Page(next, { contentLocale }) : null;
 
   return {
     props: {

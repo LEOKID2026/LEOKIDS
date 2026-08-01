@@ -326,7 +326,7 @@ export default function SchoolMessagesPage() {
                               {formatSchoolMessageAudienceLabel(m.audienceType, m.audienceScope)}
                             </td>
                             <td className="p-3">
-                              {m.sentAt ? new Date(m.sentAt).toLocaleDateString("he-IL") : "-"}
+                              {m.sentAt ? new Date(m.sentAt).toLocaleDateString("en-US") : "-"}
                             </td>
                             <td className="p-3">{formatSchoolMessageListReadCount(m)}</td>
                             <td className="p-3">

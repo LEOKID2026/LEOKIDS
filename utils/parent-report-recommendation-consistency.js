@@ -1,8 +1,8 @@
-import { normalizeParentFacingHe } from "./parent-report-language/index.js";
+import { normalizeParentFacing } from "./parent-report-language/index.js";
 import { sanitizeParentSurfaceActionHe } from "./parent-report-surface/index.js";
 import { resolveGradeAwareParentRecommendationHe } from "./parent-report-language/grade-aware-recommendation-resolver.js";
 import { shouldOmitRawDiagnosticRecommendationFallback } from "./report-diagnostic-safety-guards.js";
-import { gradeScopeMeaningHe } from "./parent-report-language/grade-insight-he.js";
+import { gradeScopeMeaningHe } from "./parent-report-language/grade-insight.js";
 
 function canonicalState(unit) {
   return unit?.canonicalState || null;
@@ -42,7 +42,7 @@ function withGradeScopeInsight(text, unit) {
   if (base.includes("above grade") || base.includes("below grade") || base.includes("above registered grade")) {
     return base;
   }
-  return normalizeParentFacingHe(`${base} ${insight}`);
+  return normalizeParentFacing(`${base} ${insight}`);
 }
 
 function positiveAuthorityLevel(unit) {
@@ -94,7 +94,7 @@ function topicName(unit) {
 
 function bestEffortText(s) {
   const t = String(s || "").trim();
-  return t ? normalizeParentFacingHe(t) : "";
+  return t ? normalizeParentFacing(t) : "";
 }
 
 function unitTaxonomyId(unit) {
@@ -134,7 +134,7 @@ export function resolveUnitParentActionHe(unit, gradeKey, opts = {}) {
       return surfaceActionOut(
         unit,
         withGradeScopeInsight(
-          normalizeParentFacingHe(
+          normalizeParentFacing(
             `In ${name}, stay at the same level for now, and only if success continues — add a small, measured increase in difficulty.`
           ),
           unit
@@ -145,7 +145,7 @@ export function resolveUnitParentActionHe(unit, gradeKey, opts = {}) {
       return surfaceActionOut(
         unit,
         withGradeScopeInsight(
-          normalizeParentFacingHe(
+          normalizeParentFacing(
             `In ${name}, continue at the same level, and only if it keeps succeeding steadily — add a little difficulty.`
           ),
           unit
@@ -185,7 +185,7 @@ export function resolveUnitNextGoalHe(unit, gradeKey, opts = {}) {
   if (isStrengthAction(unit) && cs?.recommendation?.allowed) {
     const name = topicName(unit);
     return withGradeScopeInsight(
-      normalizeParentFacingHe(
+      normalizeParentFacing(
         `For the coming week in ${name}: stay at the same level, and if success holds — try one slightly more challenging step.`
       ),
       unit
@@ -219,7 +219,7 @@ export function resolveUnitHomeMethodHe(unit, gradeKey, opts = {}) {
   const cs = canonicalState(unit);
   if (isStrengthAction(unit) && cs?.recommendation?.allowed) {
     const name = topicName(unit);
-    return normalizeParentFacingHe(
+    return normalizeParentFacing(
       `In ${name}, short regular practice at the same level works best — without jumping ahead too quickly.`
     );
   }

@@ -27,8 +27,7 @@ const FLAG = {
   WIDE_GRADE_SPAN: "wide_grade_span_requires_review",
   DUPLICATE_CROSS_GRADE: "duplicate_across_grades_requires_review",
   TOPIC_SHALLOW_CROSS_GRADE: "topic_shallow_cross_grade_spread",
-  MOLEDET_VALUES_REPEATED: "moledet_values_homeland_repeated_across_grades",
-};
+  MOLEDET_VALUES_REPEATED: "moledet_values_homeland_repeated_across_grades"};
 
 /**
  * @param {object} rec inventory row
@@ -139,11 +138,6 @@ export function analyzeCurriculumDepth(rec, norm, ctx = {}) {
     }
   }
 
-  if (subject === "hebrew" && gmin <= 2 && nk.includes("grammar_language_knowledge")) {
-    depthFlags.push(FLAG.HEBREW_LANGUAGE_COMPLEXITY_EARLY);
-    suggestNeedsHumanReview = true;
-    notes.push("Formal Hebrew grammar/language-knowledge tagging in very early grades - confirm spiral vs mastery.");
-  }
 
   const sciByG = ctx.coverageContext?.scienceByGrade;
   if (subject === "science" && sciByG && sciByG[gmin] != null && sciByG[gmin] < 40) {
@@ -152,24 +146,15 @@ export function analyzeCurriculumDepth(rec, norm, ctx = {}) {
   }
 
   const hebByG = ctx.coverageContext?.hebrewByGrade;
-  if (subject === "hebrew" && gmin >= 5 && hebByG && hebByG[gmin] != null && hebByG[gmin] < 120) {
-    depthFlags.push(FLAG.HEBREW_UPPER_LOW_COVERAGE);
-    notes.push(`Hebrew upper-grade inventory thinner (${hebByG[gmin]} rows for g${gmin}).`);
-  }
+  
 
-  if (subject === "moledet-geography") {
-    if (["values", "homeland"].includes(rawTopic)) {
-      depthFlags.push(FLAG.MOLEDET_VALUES_REPEATED);
-      notes.push("Moledet theme repeats across grades - intentional spiral vs duplication review.");
-    }
-  }
+  
 
   return {
     depthFlags,
     suggestTooAdvanced,
     suggestNeedsHumanReview,
-    notes,
-  };
+    notes};
 }
 
 /**

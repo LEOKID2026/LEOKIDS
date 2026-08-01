@@ -51,7 +51,7 @@ export function gradeInRange(gradeKey, minG, maxG) {
 
 /**
  * Item may define (first match wins):
- * - gradeBand: "early" | "mid" | "late"
+ * - gradeBand: "early" || "mid" || "late"
  * - minGrade / maxGrade (inclusive, 1–6)
  * - grades: string[] e.g. ["g3","g4"] (legacy allow-list)
  * If none: allowed for all grades (use sparingly).
@@ -132,9 +132,9 @@ export function englishPoolItemAllowed(category, poolKey, item, gradeKey) {
   const n = parseGradeKey(gradeKey);
   if (n == null) return false;
   const hasItemGate =
-    item.gradeBand != null ||
-    item.minGrade != null ||
-    item.maxGrade != null ||
+    item.gradeBand != null |
+    item.minGrade != null |
+    item.maxGrade != null |
     (Array.isArray(item.grades) && item.grades.length > 0);
   if (hasItemGate) return itemAllowedForGrade(item, gradeKey);
   const map =
@@ -151,9 +151,9 @@ export function englishPoolItemAllowed(category, poolKey, item, gradeKey) {
 export function englishItemHasExplicitGradeGate(item) {
   if (!item || typeof item !== "object") return false;
   return (
-    item.gradeBand != null ||
-    item.minGrade != null ||
-    item.maxGrade != null ||
+    item.gradeBand != null |
+    item.minGrade != null |
+    item.maxGrade != null |
     (Array.isArray(item.grades) && item.grades.length > 0)
   );
 }
@@ -166,7 +166,7 @@ function englishContentKeyForClassSplit(category, item) {
   return String(item.question || "");
 }
 
-/** פיצול דטרמיניסטי לפי תוכן (FNV-1a) — שימוש חוזר: אנגלית, כתיבה, וכו'. */
+/**     (FNV-1a) —  : , '. */
 export function englishClassSplitBucket(key, mod) {
   let h = 2166136261 >>> 0;
   const s = String(key || "");
@@ -174,11 +174,11 @@ export function englishClassSplitBucket(key, mod) {
     h ^= s.charCodeAt(i);
     h = Math.imul(h, 16777619);
   }
-  return Math.abs(h | 0) % mod;
+  return Math.abs(h || 0) % mod;
 }
 
 /**
- * שער אנגלית: טווח בריכה + פיצול דטרמיניסטי g3|g4, g4|g5, g5|g6 כשאין שער פריט.
+ *  :   +   g3|g4, g4|g5, g5|g6   .
  */
 export function englishPoolItemAllowedWithClassSplit(
   category,
@@ -354,7 +354,7 @@ export function englishPoolItemAllowedWithClassSplit(
 }
 
 /**
- * פיצול משפטי כתיבה (מצב sentence_extended) בין כיתות ה׳/ו׳ כשאין שער פריט.
+ *    ( sentence_extended)   /   .
  */
 export function englishWritingSentenceAllowedForGrade(gradeKey, item) {
   const n = parseGradeKey(gradeKey);
@@ -369,8 +369,8 @@ export function englishWritingSentenceAllowedForGrade(gradeKey, item) {
 }
 
 /**
- * רמת קושי (easy / medium / hard) — אם יש allowedLevels על הפריט, חייב להתאים.
- * אם אין — מותר לכל הרמות.
+ *   (easy / medium / hard) —   allowedLevels  ,  .
+ *   —   .
  */
 export function itemAllowedForLevel(item, levelKey) {
   if (!item || typeof item !== "object") return true;
@@ -388,11 +388,11 @@ export function itemAllowedForGradeAndLevel(item, gradeKey, levelKey) {
   );
 }
 
-/** מפתחות רשימות מילים מותרות לכיתה (ללא חשיפה לכל WORD_LISTS) */
+/**      (   WORD_LISTS) */
 export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
   const n = parseGradeKey(gradeKey);
   if (n == null) return ["colors"];
-  // Dynamic import avoided — נשען על מפת ברירת מחדל תואמת data/english-curriculum.js
+  // Dynamic import avoided —       data/english-curriculum.js
   const byGrade = {
     g1: ["colors", "numbers", "family", "animals", "emotions", "actions", "school"],
     g2: [
@@ -404,8 +404,7 @@ export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
       "school",
       "food",
       "actions",
-      "house",
-    ],
+      "house"],
     g3: [
       "animals",
       "colors",
@@ -417,8 +416,7 @@ export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
       "weather",
       "sports",
       "actions",
-      "house",
-    ],
+      "house"],
     g4: [
       "animals",
       "family",
@@ -430,8 +428,7 @@ export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
       "travel",
       "community",
       "environment",
-      "emotions",
-    ],
+      "emotions"],
     g5: [
       "animals",
       "family",
@@ -442,8 +439,7 @@ export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
       "environment",
       "health",
       "technology",
-      "emotions",
-    ],
+      "emotions"],
     g6: [
       "technology",
       "environment",
@@ -452,8 +448,7 @@ export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
       "global_issues",
       "emotions",
       "school",
-      "sports",
-    ],
+      "sports"],
   };
   const want = `g${n}`;
   const keys = byGrade[want] || byGrade.g3;
@@ -461,7 +456,7 @@ export function englishVocabListKeysForGrade(gradeKey, wordListsObject) {
   return keys.filter((k) => wordListsObject[k]);
 }
 
-/** מצב כתיבה: מינימום כיתה (אנגלית) */
+/**  :   () */
 export function englishWritingModeAllowed(mode, gradeKey) {
   const n = parseGradeKey(gradeKey) || 3;
   if (mode === "sentence_master") return n >= 6;

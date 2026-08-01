@@ -5,7 +5,7 @@
 import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { NO_DATA_FOR_REQUEST_RESPONSE_HE } from "./question-classifier.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 import {
   collectTopicMetrics,
   extractTopicAnchorsFromSummary,
@@ -17,35 +17,35 @@ import {
   STRONG_Q_MIN,
 } from "./pattern-topic-metrics.js";
 
-const WHAT_NOW_RE = /^(?:אז\s+)?מה\s+עושים(?:\s+עכשיו)?(?:\s*[.?؟]*)?$/u;
-const PRESERVE_RE = /^איך\s+לשמר(?:\s+א(?:ת|ת)?\s+ז(?:ה|ו))?(?:\s*[.?؟]*)?$/u;
-const IF_WRONG_RE = /^ו?מה\s+אם\s+(?:ה(?:וא|יא)|(?:הילד|הילדה))\s+טוע(?:ה|ים|ות)\s*(?:ב(?:זה|נושא))?(?:\s*[.?؟]*)?$/u;
-const SIMPLER_RE = /^(?:תסביר\s+)?(?:פשוט\s+יותר|תעש(?:ה|י)\s+.*\s+פשוט\s+יותר)(?:\s*[.?؟]*)?$/u;
-const SHORTEN_RE = /^(?:תקצר\s+לי|תעש(?:ה|י)\s+.*\s+קצר)(?:\s*[.?؟]*)?$/u;
-const WHY_RE = /^למה(?:\s*[.?؟]*)?$/u;
-const SEVERITY_RE = /^(?:ז(?:ה|ו)\s+)?חמור(?:\s*[.?؟]*)?$/u;
-const THEN_ACTIVITY_RE = /^אז\s+לפתוח\s+פעילות(?:\s*[.?؟]*)?$/u;
-const WHICH_TOPIC_RE = /^באיזה\s+נושא(?:\s*[.?؟]*)?$/u;
-const THEN_AFTER_RE = /^ו?מה\s+אחר(?:\s+כך)?(?:\s*[.?؟]*)?$/u;
-const HOME_FOLLOWUP_RE = /^ו?מה\s+לעשות\s+(?:עם\s+ז(?:ה|ו)\s+)?בבית(?:\s*[.?؟]*)?$/u;
+const WHAT_NOW_RE = /(?!)/u;
+const PRESERVE_RE = /(?!)/u;
+const IF_WRONG_RE = /(?!)/u;
+const SIMPLER_RE = /(?!)/u;
+const SHORTEN_RE = /(?!)/u;
+const WHY_RE = /(?!)/u;
+const SEVERITY_RE = /(?!)/u;
+const THEN_ACTIVITY_RE = /(?!)/u;
+const WHICH_TOPIC_RE = /(?!)/u;
+const THEN_AFTER_RE = /(?!)/u;
+const HOME_FOLLOWUP_RE = /(?!)/u;
 
 /**
  * @param {string} utterance
  */
 export function matchesContinuityFollowUp(utterance) {
-  const t = foldUtteranceForHeMatch(String(utterance || ""));
+  const t = foldUtteranceForMatch(String(utterance || ""));
   if (!t || t.length > 48) return false;
   return (
-    WHAT_NOW_RE.test(t) ||
-    PRESERVE_RE.test(t) ||
-    IF_WRONG_RE.test(t) ||
-    SIMPLER_RE.test(t) ||
-    SHORTEN_RE.test(t) ||
-    WHY_RE.test(t) ||
-    SEVERITY_RE.test(t) ||
-    THEN_ACTIVITY_RE.test(t) ||
-    HOME_FOLLOWUP_RE.test(t) ||
-    WHICH_TOPIC_RE.test(t) ||
+    WHAT_NOW_RE.test(t) |
+    PRESERVE_RE.test(t) |
+    IF_WRONG_RE.test(t) |
+    SIMPLER_RE.test(t) |
+    SHORTEN_RE.test(t) |
+    WHY_RE.test(t) |
+    SEVERITY_RE.test(t) |
+    THEN_ACTIVITY_RE.test(t) |
+    HOME_FOLLOWUP_RE.test(t) |
+    WHICH_TOPIC_RE.test(t) |
     THEN_AFTER_RE.test(t)
   );
 }
@@ -54,7 +54,7 @@ export function matchesContinuityFollowUp(utterance) {
  * @param {string} utterance
  */
 export function classifyContinuityFollowUp(utterance) {
-  const t = foldUtteranceForHeMatch(String(utterance || ""));
+  const t = foldUtteranceForMatch(String(utterance || ""));
   if (SEVERITY_RE.test(t)) return "severity";
   if (HOME_FOLLOWUP_RE.test(t)) return "home_followup";
   if (WHAT_NOW_RE.test(t) || THEN_ACTIVITY_RE.test(t)) return "what_now";
@@ -69,9 +69,9 @@ export function classifyContinuityFollowUp(utterance) {
 
 function hasConversationContext(conv) {
   return (
-    String(conv?.lastResolvedTopic || "").trim() ||
-    String(conv?.lastResolvedSubject || "").trim() ||
-    (Array.isArray(conv?.priorScopes) && conv.priorScopes.length > 0) ||
+    String(conv?.lastResolvedTopic || "").trim() |
+    String(conv?.lastResolvedSubject || "").trim() |
+    (Array.isArray(conv?.priorScopes) && conv.priorScopes.length > 0) |
     String(conv?.lastAnswerSummary || "").trim().length > 12
   );
 }
@@ -80,8 +80,8 @@ function priorTurnWasNoData(conv) {
   if (conv?.lastTurnWasNoData === true) return true;
   const s = String(conv?.lastAnswerSummary || conv?.lastAssistantAnswerDigestHe || "");
   return (
-    s.includes("Not enough information") ||
-    s.includes(NO_DATA_FOR_REQUEST_RESPONSE_HE.slice(0, 24)) ||
+    s.includes("Not enough information") |
+    s.includes(NO_DATA_FOR_REQUEST_RESPONSE_HE.slice(0, 24)) |
     s.includes("There is not enough in the current report")
   );
 }

@@ -55,7 +55,7 @@ export const learningExplBodyGeometry =
 export const learningPrimaryCloseBtn =
   "inline-flex items-center justify-center min-h-10 px-6 rounded-lg text-sm font-bold transition-colors bg-emerald-600/80 hover:bg-emerald-600 active:scale-[0.98] cursor-pointer disabled:cursor-not-allowed";
 
-/** Hint / “הסבר מלא” triggers on game screens */
+/** Hint / “ ” triggers on game screens */
 export const learningHintTriggerBtn =
   "inline-flex items-center justify-center min-h-10 px-4 rounded-lg text-sm font-bold text-white transition-colors active:scale-[0.98] bg-blue-500/80 hover:bg-blue-500 cursor-pointer disabled:cursor-not-allowed";
 

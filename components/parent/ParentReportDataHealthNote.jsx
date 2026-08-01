@@ -1,9 +1,9 @@
 /**
  * Consolidated thin-data / data-quality messaging for parent reports.
  * @param {{
- *   diagnosticOverviewHe?: { thinEvidenceSubjectsHe?: string[], notPracticedSubjectsSummaryHe?: string | null } | null,
- *   dataQualityNoteHe?: string | null,
- *   mixedGradePracticeNoteHe?: string | null,
+ *   diagnosticOverviewHe?: { thinEvidenceSubjectsHe?: string[], notPracticedSubjectsSummaryHe?: string || null } || null,
+ *   dataQualityNoteHe?: string || null,
+ *   mixedGradePracticeNoteHe?: string || null,
  *   className?: string,
  * }} props
  */

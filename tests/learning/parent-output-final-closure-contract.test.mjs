@@ -44,8 +44,8 @@ import {
   formatCorrectTextHe,
   formatWrongTextHe,
 } from "../../utils/learning-pattern-decision/normalize-parent-practice-metrics.js";
-import { buildTopicDiagnosticExplainSectionsHe } from "../../utils/parent-report-ui-explain-he.js";
-import { buildSubjectParentLetter } from "../../utils/detailed-report-parent-letter-he.js";
+import { buildTopicDiagnosticExplainSectionsHe } from "../../utils/parent-report-ui-explain.js";
+import { buildSubjectParentLetter } from "../../utils/detailed-report-parent-letter.js";
 import { SP_SUBJECT_ENGINE_CONTRACT } from "../../utils/learning-pattern-decision/engine-decision-codes.js";
 
 let failures = 0;
@@ -140,11 +140,11 @@ check("speed_pressure_pattern uses the single approved sentence at topic level -
     "must not silently fall back to the generic difficulty sentence");
 });
 
-check("speed_pressure_pattern uses the exact same sentence source in engine-decision-parent-copy-he.js (single source across surfaces)", async () => {
-  const { buildEngineDecisionParentTopicCopyHe } = await import("../../utils/parent-report-language/engine-decision-parent-copy-he.js");
+check("speed_pressure_pattern uses the exact same sentence source in engine-decision-parent-copy.js (single source across surfaces)", async () => {
+  const { buildEngineDecisionParentTopicCopyHe } = await import("../../utils/parent-report-language/engine-decision-parent-copy.js");
   const copy = buildEngineDecisionParentTopicCopyHe({
     subjectId: "math",
-    subjectLabelHe: "מתמטיקה",
+    subjectLabel: "מתמטיקה",
     topic: "סדרות",
     topicKey: "sequences::g5",
     q: 28,
@@ -227,7 +227,7 @@ check("buildSpeedPressurePatternFindingHe is the ONLY text speed_pressure_patter
   };
   const sections = buildTopicDiagnosticExplainSectionsHe({
     subjectId: "math",
-    subjectLabelHe: "מתמטיקה",
+    subjectLabel: "מתמטיקה",
     label: "סדרות",
     topicKey: "sequences::g5",
     questions: 28,
@@ -298,7 +298,7 @@ check("speed_check_only_subject never produces 'נקודת חיזוק ברורה
 
   const banned = /נקודת\s*חיזוק\s*ברורה|המיקוד\s*המעשי\s*כרגע|חזרה\s*עקבית/u;
 
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "חשבון" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "חשבון" });
   assert.ok(summary && summary.length > 0, "speed_check_only_subject must produce non-empty subject summary text");
   assert.doesNotMatch(summary, banned);
   assert.doesNotMatch(summary, TECHNICAL_LEAK_RE);
@@ -306,7 +306,7 @@ check("speed_check_only_subject never produces 'נקודת חיזוק ברורה
   assert.match(summary, /סדרות/u, "must name the priority speed-check topic");
 
   const sp = {
-    subjectLabelHe: "חשבון",
+    subjectLabel: "חשבון",
     subjectQuestionCount: 28,
     [SP_SUBJECT_ENGINE_CONTRACT]: contract,
     topicRecommendations: [{ topicRowKey: "sequences::g5", engineDecisionContract: speedTopic.engineDecisionContract }],
@@ -330,7 +330,7 @@ check("multiple speedCheckTopics: subject-level sentence names only the single h
   const contract = buildSubjectEngineDecisionContract("math", [speedTopicA, speedTopicB], { subjectLabelKey: "math" });
   assert.equal(contract.subjectDecision, "speed_check_only_subject");
   assert.equal(contract.speedCheckTopics.length, 2);
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "חשבון" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "חשבון" });
   assert.doesNotMatch(summary, /נושא\s*אחד/u, "must not say 'one topic' - it simply names the priority topic without counting");
   const topicMentions = (summary.match(/סדרות|זוויות/gu) || []).length;
   assert.equal(topicMentions, 1, `must name exactly one (the priority) topic, got ${topicMentions} mentions: "${summary}"`);
@@ -404,7 +404,7 @@ check("mixed_subject_profile (1 gap + 1 stable): correct decision, approved sing
   assert.equal(contract.subjectDecision, "mixed_subject_profile");
   assert.equal(contract.recommendedSubjectAction, "remediate_priority_topics_same_level");
 
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "חשבון" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "חשבון" });
   assert.ok(summary && summary.length > 0, "mixed_subject_profile must produce non-empty subject summary text");
   assert.doesNotMatch(summary, TECHNICAL_LEAK_RE);
   assert.doesNotMatch(summary, /כמה\s*נושאים/u, "must never say 'several topics' when only 1 topic is a gap");
@@ -424,7 +424,7 @@ check("mixed_subject_profile (1 gap + 5 stable): same decision and same approved
   ];
   const contract = buildSubjectEngineDecisionContract("math", [gapTopic, ...stableTopics], { subjectLabelKey: "math" });
   assert.equal(contract.subjectDecision, "mixed_subject_profile");
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "חשבון" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "חשבון" });
   assert.doesNotMatch(summary, /כמה\s*נושאים/u);
   assert.match(summary, /נושא\s*אחד\s*שכדאי\s*לחזק/u);
   assert.match(summary, /נראית\s*יציבות\s*בחלק\s*מהנושאים/u,
@@ -447,7 +447,7 @@ check("multiple_topic_gaps (2 gaps + 1 stable): 2+ gaps always win over mixed_su
   const contract = buildSubjectEngineDecisionContract("math", [gap1, gap2, stableTopic], { subjectLabelKey: "math" });
   assert.equal(contract.subjectDecision, "multiple_topic_gaps");
   assert.notEqual(contract.subjectDecision, "mixed_subject_profile");
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "חשבון" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "חשבון" });
   assert.match(summary, /כמה\s*נושאים/u, "plural wording IS accurate here (2 real gaps)");
 });
 
@@ -681,7 +681,7 @@ check("WE4 (highest-confidence envelope) never asserts attention/fatigue/pressur
 // ---------------------------------------------------------------------------
 
 check('broken sentence "אין מספיק מה שרואים בשורות" is gone from the live withhold-summary renderer', async () => {
-  const { withholdSummaryCopyHe } = await import("../../utils/parent-report-language/subject-withhold-summary-he.js");
+  const { withholdSummaryCopyHe } = await import("../../utils/parent-report-language/subject-withhold-summary.js");
   const text = withholdSummaryCopyHe("subject", { subjectReportQuestions: 2, sumUnitQuestions: 2 });
   assert.doesNotMatch(text, /מה\s*שרואים\s*בשורות/u, `text: "${text}"`);
 });
@@ -697,7 +697,7 @@ check('broken sentence "אין מספיק מה שרואים בשורות" is gon
         evidenceTrace: [{ type: "volume", value: { questions: 3, correct: 2, wrong: 1, accuracy: 67 } }],
       },
     ],
-    { subjectId: "math", subjectReportQuestions: 3, subjectLabelHe: "מתמטיקה" },
+    { subjectId: "math", subjectReportQuestions: 3, subjectLabel: "מתמטיקה" },
   );
   assert.match(result.summaryHe, /עדיין אין מספיק נתונים כדי לקבוע תמונה ברורה/u, `summaryHe: "${result.summaryHe}"`);
   assert.doesNotMatch(result.summaryHe, /מה\s*שרואים\s*בשורות/u, `summaryHe: "${result.summaryHe}"`);

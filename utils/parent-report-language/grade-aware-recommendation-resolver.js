@@ -30,11 +30,9 @@ function normalizedResolverBucketKey(subjectId, bucketKeyRaw) {
   if (sid === "math") return mathReportBaseOperationKey(raw);
   if (
     sid === "geometry" ||
-    sid === "hebrew" ||
     sid === "english" ||
     sid === "science" ||
-    sid === "history" ||
-    sid === "moledet-geography"
+    sid === "history"
   )
     return raw.toLowerCase();
   return "";

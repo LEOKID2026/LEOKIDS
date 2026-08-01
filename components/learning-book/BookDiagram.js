@@ -1,4 +1,4 @@
-﻿import MixedHebrewMathText from "./MixedHebrewMathText";
+﻿import MixedRtlMathText from "./MixedRtlMathText";
 import BookContentLine from "./BookContentLine";
 import BookVerticalArithmetic from "./BookVerticalArithmetic";
 import { classifyBookLine } from "../../lib/learning-book/book-line-classifier";
@@ -55,8 +55,8 @@ function isNumberLineRow(line) {
 function isJumpAnnotation(line) {
   if (isNumberLineRow(line)) return false;
   return (
-    /^[↑↓←→_]/.test(line) ||
-    /(?:^|\s)[↑↓←→]/.test(line) ||
+    /^[↑↓←→_]/.test(line) |
+    /(?:^|\s)[↑↓←→]/.test(line) |
     /_{2,}/.test(line)
   );
 }
@@ -87,7 +87,7 @@ function NumberLineJump({ line }) {
       </span>
       {cleaned ? (
         <p className={`text-sm sm:text-base ${theme.diagramAccentMuted}`}>
-          <MixedHebrewMathText text={cleaned.replace(/^[↑↓←→]\s*/, "")} />
+          <MixedRtlMathText text={cleaned.replace(/^[↑↓←→]\s*/, "")} />
         </p>
       ) : null}
     </div>
@@ -183,8 +183,7 @@ const DIAGRAM_LINE_LAYOUT_CLASS = [
   "[&_[data-book-label]]:text-left",
   "[&_[data-book-label-gap]]:w-[0.5em]",
   "[&_[data-book-label-gap]]:min-w-[0.5em]",
-  "[&_[data-book-label-gap]]:shrink-0",
-].join(" ");
+  "[&_[data-book-label-gap]]:shrink-0"].join(" ");
 
 function DiagramCodeLineRow({ children, dir = "ltr", className = "" }) {
   return (
@@ -203,7 +202,7 @@ function DiagramEquationLine({ equation }) {
   if (!equation) return null;
   return (
     <DiagramCodeLineRow dir="ltr" className={`mt-1 text-base font-bold sm:text-lg ${theme.diagramAccent}`}>
-      <MixedHebrewMathText text={equation} />
+      <MixedRtlMathText text={equation} />
     </DiagramCodeLineRow>
   );
 }
@@ -239,7 +238,7 @@ function DiagramNumberRow({ numbers, equation }) {
       </div>
       {equation ? (
         <p className="text-sm font-semibold text-[color:var(--book-accent)]/90 sm:text-base">
-          <MixedHebrewMathText text={equation} />
+          <MixedRtlMathText text={equation} />
         </p>
       ) : null}
     </div>
@@ -260,7 +259,7 @@ function ObjectDiagram({ lines }) {
             return null;
           }
           const equation =
-            inferDiagramEquation(lastVisualLine, numberRow) ||
+            inferDiagramEquation(lastVisualLine, numberRow) |
             inferEquationFromObjectVisual(lastVisualLine);
           if (equation) {
             return <DiagramEquationLine key={li} equation={equation} />;
@@ -280,7 +279,7 @@ function ObjectDiagram({ lines }) {
               key={li}
               className={`text-center text-sm sm:text-base ${theme.diagramAccentSoft}`}
             >
-              <MixedHebrewMathText text={line.replace(/^[\s↑↓←→_]+/, "↑ ")} />
+              <MixedRtlMathText text={line.replace(/^[\s↑↓←→_]+/, "↑ ")} />
             </p>
           );
         }
@@ -291,7 +290,7 @@ function ObjectDiagram({ lines }) {
         if (!hasDots) {
           return (
             <p key={li} className="text-center text-sm text-[color:var(--book-text)] sm:text-base">
-              <MixedHebrewMathText text={line} />
+              <MixedRtlMathText text={line} />
             </p>
           );
         }
@@ -355,7 +354,7 @@ function ObjectDiagram({ lines }) {
             </div>
             {tailLabel ? (
               <p className="text-center text-sm text-[color:var(--book-text-muted)] sm:text-base" dir="ltr">
-                <MixedHebrewMathText text={tailLabel} />
+                <MixedRtlMathText text={tailLabel} />
               </p>
             ) : null}
             <DiagramEquationLine equation={equation} />
@@ -412,7 +411,7 @@ function CoinsDiagram({ lines }) {
             return null;
           }
           const equation =
-            inferDiagramEquation(lastVisualLine, numberRow) ||
+            inferDiagramEquation(lastVisualLine, numberRow) |
             inferEquationFromObjectVisual(lastVisualLine);
           if (equation) {
             return <DiagramEquationLine key={i} equation={equation} />;
@@ -428,7 +427,7 @@ function CoinsDiagram({ lines }) {
             key={i}
             className="flex flex-wrap items-center justify-center gap-2 text-base font-semibold sm:text-lg"
           >
-            <MixedHebrewMathText text={line} />
+            <MixedRtlMathText text={line} />
           </div>
         );
       })}
@@ -441,7 +440,7 @@ function FrameTextDiagram({ lines }) {
     <div className="space-y-2 rounded-xl border border-[color:var(--book-divider)] bg-[color:var(--book-surface-soft)] p-3 sm:p-4" dir="ltr">
       {lines.map((line, i) => (
         <DiagramCodeLineRow key={i} dir="ltr" className="text-left text-base sm:text-lg">
-          <MixedHebrewMathText text={line} diagramLayout />
+          <MixedRtlMathText text={line} diagramLayout />
         </DiagramCodeLineRow>
       ))}
     </div>
@@ -494,7 +493,7 @@ function FrameDiagram({ lines }) {
     <div className="space-y-1">
       {lines.map((line, i) => {
         const cleaned = stripStrayMarkdown(line);
-        if (/[\u0590-\u05FF]/.test(cleaned)) {
+        if (/(?!)/.test(cleaned)) {
           return <MixedDiagramLine key={i} line={cleaned} sizeClass={sizeClass} />;
         }
         return (
@@ -515,13 +514,13 @@ function FrameDiagram({ lines }) {
 
 function isMixedHebrewMathLine(line) {
   const text = stripStrayMarkdown(String(line || "").trim());
-  return /[\u0590-\u05FF]/.test(text) && /\d/.test(text);
+  return /(?!)/.test(text) && /\d/.test(text);
 }
 
 function isPureMathDiagramLine(line) {
   const text = stripStrayMarkdown(String(line || "").trim());
   if (!text) return false;
-  if (/[\u0590-\u05FF]/.test(text)) return false;
+  if (/(?!)/.test(text)) return false;
   return isMathLikeText(text) || /^=?\s*\d/.test(text);
 }
 

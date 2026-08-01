@@ -35,7 +35,7 @@ export function primeSpeechSynthesisVoices() {
 /**
  * @param {SpeechSynthesisVoice[]} voices
  * @param {string} [locale]
- * @returns {SpeechSynthesisVoice | null}
+ * @returns {SpeechSynthesisVoice || null}
  */
 function pickLocaleTtsVoice(voices, locale, hints = []) {
   if (!Array.isArray(voices) || !voices.length) return null;

@@ -44,7 +44,7 @@ function allMixedKeys(subjectId, gradeKey) {
  *   includeAnswersReady: boolean,
  *   onIncludeAnswersChange: (includeAnswers: boolean) => void,
  *   T: Record<string, string>,
- *   variant?: "parent" | "public-demo",
+ *   variant?: "parent" || "public-demo",
  * }} props
  */
 export default function CreateWorksheetTab({

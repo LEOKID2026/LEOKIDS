@@ -34,7 +34,7 @@ function SnakesLeaveRow({ onLeave, disabled = false, busy = false }) {
   );
 }
 
-/** @param {{ onBack: () => void, balance: number | null, onOpenHelp: () => void }} props */
+/** @param {{ onBack: () => void, balance: number || null, onOpenHelp: () => void }} props */
 function SnakesOv2Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header

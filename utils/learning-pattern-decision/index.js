@@ -76,7 +76,7 @@ export {
   renderOwnerSubjectCopyTemplateHe,
   parentReportOwnerCopyTemplatesHe,
   SUBJECT_OWNER_COPY_TEMPLATE_IDS,
-} from "../parent-report-language/parent-report-owner-copy-templates-he.js";
+} from "../parent-report-language/parent-report-owner-copy-templates.js";
 export {
   buildTopicOwnerCopySlots,
   resolveTopicOwnerBaseTemplateId,

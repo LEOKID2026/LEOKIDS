@@ -7,7 +7,7 @@ import {
   screenshotBlock,
   videoBlock,
   relatedLinks,
-} from "../articleHelpers";
+} from "../articleHelpers.js";
 
 const S = "parents";
 

@@ -56,7 +56,7 @@ export function computeMasteryRollupV1(maps, summaryCounts = {}, opts = {}) {
 
   /** @type {object[]} */
   const rows = [];
-  const subs = ["math", "hebrew", "english", "science", "geometry", "moledet-geography"];
+  const subs = ["math", "english", "science", "geometry"];
 
   for (const subjectId of subs) {
     const topicMap = maps?.[subjectId];
@@ -93,7 +93,7 @@ export function computeMasteryRollupV1(maps, summaryCounts = {}, opts = {}) {
           easyOnly: true,
           tierKnown: false,
           trendUp: 0,
-          trendDown: 0,
+          trendDown: 0
         };
       }
       const agg = bySkill[skillId];
@@ -176,7 +176,7 @@ export function computeMasteryRollupV1(maps, summaryCounts = {}, opts = {}) {
             ? "review_and_reassess"
             : masteryBand === "mastered"
               ? "maintain_or_extend"
-              : "practice_targeted",
+              : "practice_targeted"
       });
     }
   }

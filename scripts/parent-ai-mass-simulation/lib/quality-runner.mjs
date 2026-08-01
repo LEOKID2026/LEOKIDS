@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-import parentFacingNormalize from "../../../utils/parent-report-language/parent-facing-normalize-he.js";
+import parentFacingNormalize from "../../../utils/parent-report-language/parent-facing-normalize.js";
 
-/** Mirrors `utils/parent-report-language/subject-withhold-summary-he.js` (tsx resolves cross-root imports inconsistently). */
+/** Mirrors `utils/parent-report-language/subject-withhold-summary.js` (tsx resolves cross-root imports inconsistently). */
 function isGenericCautiousPracticeLineHe(text) {
   const t = String(text || "");
   const hasPractice = /יש\s+נתוני\s+תרגול/.test(t);
@@ -277,13 +277,13 @@ export async function runQualitySuite(ctx) {
     if (!shortMd || shortMd.trim().length < 40) fail("report_short_empty", student.studentId, `parent-reports/${student.studentId}/short.md`);
     if (!detailedMd || detailedMd.trim().length < 40) fail("report_detailed_empty", student.studentId, `parent-reports/${student.studentId}/detailed.md`);
 
-    const shortMdNormalized = parentFacingNormalize.normalizeParentFacingHe(shortMd);
-    const detailedMdNormalized = parentFacingNormalize.normalizeParentFacingHe(detailedMd);
+    const shortMdNormalized = parentFacingNormalize.normalizeParentFacing(shortMd);
+    const detailedMdNormalized = parentFacingNormalize.normalizeParentFacing(detailedMd);
     if (scanInternalLeak(shortMdNormalized) || scanInternalLeak(detailedMdNormalized)) {
       fail("internal_terms_in_report_md", student.studentId, `parent-reports/${student.studentId}/`);
     }
-    const shortHtmlVisible = parentFacingNormalize.normalizeParentFacingHe(htmlVisibleText(shortHtml));
-    const detailedHtmlVisible = parentFacingNormalize.normalizeParentFacingHe(htmlVisibleText(detailedHtml));
+    const shortHtmlVisible = parentFacingNormalize.normalizeParentFacing(htmlVisibleText(shortHtml));
+    const detailedHtmlVisible = parentFacingNormalize.normalizeParentFacing(htmlVisibleText(detailedHtml));
     if (scanInternalLeak(shortHtmlVisible) || scanInternalLeak(detailedHtmlVisible)) {
       fail("internal_terms_in_report_html", student.studentId, `parent-reports/${student.studentId}/`);
     }

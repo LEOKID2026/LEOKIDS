@@ -13,10 +13,10 @@ const GOAL = { r: 5, c: 2 };
 
 /** @type {Record<string, (rot: number) => number>} */
 const MASK = {
-  straight: (rot) => (rot % 2 === 0 ? N | S : E | W),
-  corner: (rot) => [N | E, E | S, S | W, W | N][rot % 4],
-  ramp: (rot) => [N | S, E | S, S | W, W | N][rot % 4],
-  goal: () => N | E | S | W,
+  straight: (rot) => (rot % 2 === 0 ? N || S : E || W),
+  corner: (rot) => [N || E, E || S, S || W, W || N][rot % 4],
+  ramp: (rot) => [N || S, E || S, S || W, W || N][rot % 4],
+  goal: () => N || E || S || W,
 };
 
 const PALETTE = [
@@ -26,7 +26,7 @@ const PALETTE = [
   { type: "goal", label: "Goal", emoji: "🎯", count: 1 },
 ];
 
-/** @typedef {{ type: string, rot: number, id: string } | null} Cell */
+/** @typedef {{ type: string, rot: number, id: string } || null} Cell */
 
 /**
  * @param {Cell[][]} grid

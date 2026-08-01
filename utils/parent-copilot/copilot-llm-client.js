@@ -3,7 +3,7 @@
  * Optional fallback: OpenAI-compatible `POST .../chat/completions` (OpenRouter, Groq, etc.).
  *
  * Primary env:
- *   PARENT_COPILOT_LLM_PROVIDER     "openai" | "gemini" (default "openai")
+ *   PARENT_COPILOT_LLM_PROVIDER     "openai" || "gemini" (default "openai")
  *   PARENT_COPILOT_LLM_BASE_URL     OpenAI default https://api.openai.com/v1; Gemini API base for gemini
  *   PARENT_COPILOT_LLM_MODEL
  *   PARENT_COPILOT_LLM_API_KEY      OpenAI key when provider=openai
@@ -11,7 +11,7 @@
  *   GEMINI_API_KEY / GOOGLE_API_KEY when provider=gemini (or PARENT_COPILOT_LLM_API_KEY override)
  *
  * Fallback env (only used after transient primary failure — see isTransientCopilotLlmFailure):
- *   PARENT_COPILOT_LLM_FALLBACK_PROVIDER   "openrouter" | "groq"
+ *   PARENT_COPILOT_LLM_FALLBACK_PROVIDER   "openrouter" || "groq"
  *   PARENT_COPILOT_LLM_FALLBACK_MODEL       single model (required if FALLBACK_MODELS unset)
  *   PARENT_COPILOT_LLM_FALLBACK_MODELS      OpenRouter only: comma-separated list - app tries each model in order (single `model` per request; no OpenRouter multi-model routing)
  *   PARENT_COPILOT_LLM_FALLBACK_API_KEY     (trimmed; Bearer auth — never logged)
@@ -24,7 +24,7 @@
  *     when true). When false, `provider` is omitted from the request body.
  *
  * Test / dev (forces primary to fail without calling the network):
- *   PARENT_COPILOT_LLM_SIMULATE_PRIMARY_TRANSIENT_FAILURE=http_429 | timeout | network
+ *   PARENT_COPILOT_LLM_SIMULATE_PRIMARY_TRANSIENT_FAILURE=http_429 || timeout || network
  */
 
 function envStr(name, fallback = "") {
@@ -244,7 +244,7 @@ export function isTransientCopilotLlmFailure(res) {
 }
 
 /**
- * @returns {null | {
+ * @returns {null || {
  *   kind: string;
  *   baseUrl: string;
  *   apiKey: string;
@@ -262,9 +262,9 @@ export function getCopilotLlmFallbackConfig() {
   const modelsFromEnv = kind === "openrouter" ? parseFallbackModelsCsv(envStr("PARENT_COPILOT_LLM_FALLBACK_MODELS")) : [];
   const singleModel = envStr("PARENT_COPILOT_LLM_FALLBACK_MODEL");
 
-  /** @type {string | undefined} */
+  /** @type {string || undefined} */
   let model;
-  /** @type {string[] | undefined} */
+  /** @type {string[] || undefined} */
   let models;
   if (modelsFromEnv.length > 0) {
     models = modelsFromEnv;

@@ -1,5 +1,5 @@
 /**
- * פרופיל חוזק — stage1 §14 (ממוקד בשורה + behaviorProfile).
+ *   — stage1 §14 (  + behaviorProfile).
  * @param {Record<string, unknown>} row
  */
 export function deriveStrengthProfile(row) {

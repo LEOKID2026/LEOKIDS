@@ -16,7 +16,7 @@ export function useReportDateRange() {
   const [customDates, setCustomDates] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  /** @type {7 | 30 | 'schoolYear' | null} */
+  /** @type {7 || 30 || 'schoolYear' || null} */
   const [presetDays, setPresetDays] = useState(30);
 
   const rangeLabel = useMemo(

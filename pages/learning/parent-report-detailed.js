@@ -10,7 +10,7 @@ import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import {
   buildSubjectParentLetterDetailedPhase1,
   buildTopicRecommendationNarrative,
-} from "../../utils/detailed-report-parent-letter-he";
+} from "../../utils/detailed-report-parent-letter";
 import {
   Bullets,
   LearningTimeBreakdownDetails,
@@ -83,8 +83,8 @@ const PARENT_REPORT_DETAILED_PRINTING_CLASS = "parent-report-detailed-printing";
 
 /**
  * Visual-only mapping based on recommendedNextStep from the payload — does not change engine or content.
- * @param {string | undefined} step
- * @returns {"advance" | "maintain" | "remediate" | "drop"}
+ * @param {string || undefined} step
+ * @returns {"advance" || "maintain" || "remediate" || "drop"}
  */
 function topicNextStepVisualVariant(step) {
   switch (step) {
@@ -251,14 +251,14 @@ export default function ParentReportDetailedPage() {
 
   const [payload, setPayload] = useState(null);
   /** Same V2 base report as regular parent report — drives ParentReportInsight 1:1. */
-  const [baseReport, setBaseReport] = useState(/** @type {Record<string, unknown> | null} */ (null));
+  const [baseReport, setBaseReport] = useState(/** @type {Record<string, unknown> || null} */ (null));
   const [loading, setLoading] = useState(true);
   const [displayMode, setDisplayMode] = useState("full");
   /** Same shape as short report `report.parentAiExplanation` — populated asynchronously. */
-  const [parentAiExplanation, setParentAiExplanation] = useState(/** @type {null | { ok: true; text: string; source?: string }} */ (null));
+  const [parentAiExplanation, setParentAiExplanation] = useState(/** @type {null || { ok: true; text: string; source?: string }} */ (null));
   const [parentReportError, setParentReportError] = useState("");
   /** Student UUID for secured `/api/parent/copilot-turn` (parent dashboard or cookie session). */
-  const [copilotStudentId, setCopilotStudentId] = useState(/** @type {string | null} */ (null));
+  const [copilotStudentId, setCopilotStudentId] = useState(/** @type {string || null} */ (null));
   const { theme, isBright } = useStudentTheme();
   const layoutProps = getParentReportLayoutProps(theme);
   const reportImmersive = isImmersiveGameLayoutPath(router.pathname);
@@ -433,7 +433,7 @@ export default function ParentReportDetailedPage() {
           }
           if (!configOk) {
             if (!cancelled) {
-              setParentReportError("שגיאת הגדרות מערכת.");
+              setParentReportError("");
               setPayload(null);
               setBaseReport(null);
               setLoading(false);
@@ -486,8 +486,7 @@ export default function ParentReportDetailedPage() {
                 res.status,
                 body?.code,
                 typeof body?.error === "string" ? body.error : null,
-                { isTeacher: isTeacherSource },
-              );
+                { isTeacher: isTeacherSource });
               setParentReportError(msg);
               setPayload(null);
               setBaseReport(null);
@@ -526,7 +525,7 @@ export default function ParentReportDetailedPage() {
           }
           if (!cancelled) {
             const networkLike =
-              errName === "AbortError" ||
+              errName === "AbortError" |
               /failed to fetch|networkerror|load failed|network request failed|aborted|timeout/i.test(
                 errMsg
               );
@@ -824,14 +823,13 @@ export default function ParentReportDetailedPage() {
   const allSubjectProfiles = Array.isArray(payload?.subjectProfiles) ? payload.subjectProfiles : [];
   const visibleSubjectProfiles = allSubjectProfiles.filter(subjectProfileHasPracticeEvidence);
   const periodHasPracticeEvidence =
-    (Number(payload?.overallSnapshot?.totalQuestions) || 0) > 0 ||
+    (Number(payload?.overallSnapshot?.totalQuestions) || 0) > 0 |
     (Number(payload?.overallSnapshot?.totalTime) || 0) > 0;
   const topContract = payload?.parentProductContractV1?.top || null;
   const topKeepLines = [
     topContract?.mainPriorityHe || "",
     topContract?.doNowHe || "",
-    topContract?.mainStatusHe || "",
-  ].filter(Boolean);
+    topContract?.mainStatusHe || ""].filter(Boolean);
   const homePlanItemsForUi = dedupeParentVisibleLines(payload?.homePlan?.itemsHe, {
     keep: topKeepLines,
   });
@@ -1868,7 +1866,7 @@ export default function ParentReportDetailedPage() {
                     <tbody>
                       {payload.overallSnapshot.subjectCoverage.map((row) => (
                         <tr key={row.subject} className="border-b border-white/10">
-                          <td className="p-2">{row.subjectLabelHe}</td>
+                          <td className="p-2">{row.subjectLabel}</td>
                           <td className="p-2">{row.questionCount}</td>
                           <td className="p-2">{row.accuracy}%</td>
                           <td className="p-2">{row.timeMinutes}</td>
@@ -1965,10 +1963,10 @@ export default function ParentReportDetailedPage() {
                         <div key={sp.subject} className="pr-detailed-subject-block pr-detailed-subject-stack min-w-0">
                           <div className="pr-detailed-subject-heading">
                             <h3 className="pr-detailed-subject-title text-lg font-bold text-white m-0 tracking-tight pb-2 border-b border-white/12">
-                              {sp.subjectLabelHe}
+                              {sp.subjectLabel}
                             </h3>
                             <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-                              Questions: {Number(sp?.subjectQuestionCount) || 0} | Accuracy: {Number(sp?.subjectAccuracy) || 0}%
+                              Questions: {Number(sp?.subjectQuestionCount) || 0} || Accuracy: {Number(sp?.subjectAccuracy) || 0}%
                             </p>
                           </div>
                           <div className="pr-detailed-subject-inner space-y-4 pt-3">
@@ -2004,10 +2002,10 @@ export default function ParentReportDetailedPage() {
                         <div key={sp.subject} className="pr-detailed-subject-block pr-detailed-subject-stack min-w-0">
                           <div className="pr-detailed-subject-heading">
                             <h3 className="pr-detailed-subject-title text-lg font-bold text-white m-0 tracking-tight pb-2 border-b border-white/12">
-                              {sp.subjectLabelHe}
+                              {sp.subjectLabel}
                             </h3>
                             <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-                              Questions: {Number(sp?.subjectQuestionCount) || 0} | Accuracy: {Number(sp?.subjectAccuracy) || 0}%
+                              Questions: {Number(sp?.subjectQuestionCount) || 0} || Accuracy: {Number(sp?.subjectAccuracy) || 0}%
                             </p>
                           </div>
                           <div className="pr-detailed-subject-inner space-y-4 pt-3">

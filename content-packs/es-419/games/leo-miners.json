@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-miners",
+  "title": "Leo el minero",
+  "blurb": "¡Fusiona perros mineros, rompe rocas y gana puntos para canjear!",
+  "help": {
+    "howToPlay": "Agrega perros mineros al tablero, arrastra perros del mismo nivel para fusionarlos y rompe rocas para ganar monedas y puntos.",
+    "scoring": "Cada roca rota otorga monedas. Los puntos se acumulan según el nivel de la roca, con un límite diario.",
+    "rewards": "Los puntos se pueden canjear por monedas Leo y diamantes (una vez que el servidor esté listo).",
+    "tip": "Mejora DPS para romper rocas más rápido y ORO para ganar más monedas de cada roca."
+  }
+}

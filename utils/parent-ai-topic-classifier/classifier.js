@@ -3,8 +3,8 @@
  * Does not mutate banks, taxonomies, diagnostics, or planner outputs.
  */
 
-import { SUBJECT_ORDER, subjectLabelHe } from "../parent-copilot/contract-reader.js";
-import { foldUtteranceForHeMatch } from "../parent-copilot/utterance-normalize-he.js";
+import { SUBJECT_ORDER, subjectLabel } from "../parent-copilot/contract-reader.js";
+import { foldUtteranceForMatch } from "../parent-copilot/utterance-normalize.js";
 
 /**
  * @param {unknown} payload
@@ -28,7 +28,7 @@ export function listTopicRowsForClassifier(payload) {
         subjectId: sid,
         topicRowKey,
         displayName: displayNameHe,
-        displayNameFolded: foldUtteranceForHeMatch(displayNameHe),
+        displayNameFolded: foldUtteranceForMatch(displayNameHe),
         anchored,
       });
     }
@@ -42,7 +42,7 @@ export function listTopicRowsForClassifier(payload) {
         subjectId: sid,
         topicRowKey,
         displayName: displayNameHe,
-        displayNameFolded: foldUtteranceForHeMatch(displayNameHe),
+        displayNameFolded: foldUtteranceForMatch(displayNameHe),
         anchored: Math.max(0, Number(row?.questions) || 0) > 0,
       });
     }
@@ -54,10 +54,10 @@ export function listTopicRowsForClassifier(payload) {
  * Match utterance to a catalog topic row even when the row is not anchored in the report (read-only).
  * @param {string} utteranceStr
  * @param {unknown} payload
- * @returns {{ subjectId: string; topicRowKey: string; displayName: string; anchored: boolean } | null}
+ * @returns {{ subjectId: string; topicRowKey: string; displayName: string; anchored: boolean } || null}
  */
 export function matchLooseTopicFromUtterance(utteranceStr, payload) {
-  const u = foldUtteranceForHeMatch(String(utteranceStr || ""));
+  const u = foldUtteranceForMatch(String(utteranceStr || ""));
   if (u.length < 3) return null;
   const rows = listTopicRowsForClassifier(payload);
   /** @type {Array<{ subjectId: string; topicRowKey: string; displayName: string; anchored: boolean; score: number }>} */
@@ -91,13 +91,13 @@ export function looksLikeExternalPastedQuestion(utteranceStr) {
   const multiLine = lines.length >= 2;
   const hasEquals = /[=≈]/.test(raw);
   const digitHeavy = (raw.match(/\d/g) || []).length >= 4;
-  const asksSolve = /(?:פתור|חשב|מה\s*התוצאה|Solve|Calculate)/i.test(raw);
+  const asksSolve = /(?!)/i.test(raw);
   const longSingle = raw.length >= 120;
   /** Parent utterances are often newline-collapsed before routing — still treat as paste if equation-like. */
   const equationLikeCompact = hasEquals && digitHeavy && raw.length >= 32;
   return (
-    (multiLine && (hasEquals || digitHeavy)) ||
-    equationLikeCompact ||
+    (multiLine && (hasEquals || digitHeavy)) |
+    equationLikeCompact |
     (longSingle && (hasEquals || digitHeavy || asksSolve))
   );
 }
@@ -108,9 +108,8 @@ export function looksLikeExternalPastedQuestion(utteranceStr) {
  */
 export function isPracticeSuggestionRequest(utteranceStr) {
   const u = String(utteranceStr || "").trim();
-  return /(?:תרגיל\s*דומה|שאלה\s*דומה|עוד\s*שאלה\s*(?:כזו|כמו)|דוגמא\s*דומה|רעיון\s*לתרגול|תרגול\s*דומה|תנו\s*לי\s*תרגיל|תן\s*לי\s*תרגיל)/i.test(
-    u,
-  );
+  return /(?!)/i.test(
+    u);
 }
 
 /**
@@ -131,8 +130,8 @@ export function shouldPhaseEBypassClarification(scopeRes, utteranceStr, stageA, 
   const intent = String(stageA?.canonicalIntent || "");
 
   const eligibleReason =
-    reason === "no_anchor_available" ||
-    reason === "selected_context_topic_missing_anchor" ||
+    reason === "no_anchor_available" |
+    reason === "selected_context_topic_missing_anchor" |
     reason === "selected_context_subject_missing_anchor";
 
   if (!eligibleReason && !external && !practice) return false;
@@ -159,7 +158,7 @@ export function shouldPhaseEBypassClarification(scopeRes, utteranceStr, stageA, 
 }
 
 export const PHASE_E_GENERAL_DISCLAIMER_LINE =
-  "תרגול כללי - לא מתוך מאגר השאלות הרשמי ולא משנה את האבחון";
+  "";
 
 export default {
   listTopicRowsForClassifier,

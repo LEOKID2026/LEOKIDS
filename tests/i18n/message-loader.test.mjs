@@ -61,16 +61,16 @@ test("loadLocaleBundles merges fallback chain (later overrides earlier)", () => 
   assert.equal(lookupMessage(bundles, "common.back"), "Back");
 });
 
-test("loadLocaleBundles warns once for missing locale bundle in chain", () => {
+test("loadLocaleBundles: regional locales fall straight to en without bare-language stub warn", () => {
   const warnings = [];
   const orig = console.warn;
   console.warn = (...args) => warnings.push(args.join(" "));
   try {
     resetLocaleBundleCache();
     loadLocaleBundles("ar-XB");
-    loadLocaleBundles("ar-XB");
-    assert.ok(warnings.some((w) => w.includes('[i18n] no bundle for locale "ar"')));
-    assert.equal(warnings.filter((w) => w.includes('[i18n] no bundle for locale "ar"')).length, 1);
+    loadLocaleBundles("es-419");
+    assert.equal(warnings.filter((w) => w.includes('[i18n] no bundle for locale "ar"')).length, 0);
+    assert.equal(warnings.filter((w) => w.includes('[i18n] no bundle for locale "es"')).length, 0);
   } finally {
     console.warn = orig;
     resetLocaleBundleCache();

@@ -11,37 +11,28 @@ export const PREREQUISITE_GRAPH_V1 = {
     fractions: ["arithmetic_operations", "number_sense"],
     word_problems: ["arithmetic_operations", "fractions"],
     arithmetic_operations: [],
-    number_sense: [],
-  },
-  hebrew: {
-    reading_comprehension: ["language_grammar"],
-    language_grammar: [],
+    number_sense: []
   },
   science: {
     experiments: ["observation", "cause_and_effect"],
     scientific_reasoning: ["classification", "observation"],
     observation: [],
     cause_and_effect: [],
-    classification: [],
+    classification: []
   },
   geometry: {
     area: ["shapes", "spatial_reasoning"],
     shapes: [],
     spatial_reasoning: [],
-    angles: ["shapes"],
-  },
-  "moledet-geography": {
-    maps: ["directions"],
-    directions: [],
-    location_reasoning: ["maps"],
+    angles: ["shapes"]
   },
   english: {
     reading_comprehension: ["vocabulary", "grammar"],
     grammar: ["vocabulary"],
     vocabulary: [],
     translation: ["vocabulary", "reading_comprehension"],
-    sentence_understanding: ["vocabulary"],
-  },
+    sentence_understanding: ["vocabulary"]
+  }
 };
 
 /**
@@ -57,7 +48,7 @@ export function getDependencyNode(subjectId, skillId) {
     prerequisiteSkillIds: pre,
     blocks: pre,
     supports: [],
-    diagnosticProbeIds: pre.map((p) => `probe_${p}`),
+    diagnosticProbeIds: pre.map((p) => `probe_${p}`)
   };
 }
 
@@ -73,7 +64,7 @@ export function analyzePrerequisiteGap({ mastery, subjectId, skillId }) {
   const node = getDependencyNode(subjectId, skillId);
   const prereqStates = (node.prerequisiteSkillIds || []).map((pid) => ({
     id: pid,
-    row: items.find((x) => x.subjectId === subjectId && x.skillId === pid),
+    row: items.find((x) => x.subjectId === subjectId && x.skillId === pid)
   }));
 
   let suspectedPrerequisiteGap = false;
@@ -111,13 +102,13 @@ export function analyzePrerequisiteGap({ mastery, subjectId, skillId }) {
     evidence,
     reasoning: [
       "Dependencies are educational hypotheses-verify with targeted probes.",
-      "A weak advanced skill with weak prerequisites may indicate foundation gaps.",
+      "A weak advanced skill with weak prerequisites may indicate foundation gaps."
     ],
     nextBestPrerequisiteToCheck:
       suspectedPrerequisiteGap && !suspectedDirectSkillGap ? node.prerequisiteSkillIds[0] || null : null,
     doNotConclude: [
       "Do not label subject-wide failure from a single dependency edge.",
-      "No clinical or medical conclusions.",
-    ],
+      "No clinical or medical conclusions."
+    ]
   };
 }

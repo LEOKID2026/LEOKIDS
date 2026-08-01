@@ -15,9 +15,9 @@ import {
 } from "../../utils/learning-question-font";
 import { resolveVerbalQuestionHierarchy } from "../../utils/verbal-question-hierarchy.client";
 import { useMobileViewport } from "../../hooks/useMobileViewport";
-import { renderLearningMixedHebrewMathText } from "./LearningMixedHebrewMathText";
-import { learningProseIsolateStyle } from "../../utils/learning-mixed-hebrew-math-render";
-import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-hebrew-math";
+import { renderLearningMixedRtlMathText } from "./LearningMixedRtlMathText";
+import { learningProseIsolateStyle } from "../../utils/learning-mixed-rtl-math-render";
+import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-rtl-math";
 import { renderMaybeStackedFractionText } from "./MathFractionExpression";
 import { hasStackedFractionToken } from "../../utils/math-fraction-expression-parse";
 
@@ -287,7 +287,7 @@ export default function StudentQuestionDisplay({
               >
                 {stackedFractions && hasStackedFractionToken(parts.bodyText)
                   ? renderMaybeStackedFractionText(parts.bodyText)
-                  : renderLearningMixedHebrewMathText(parts.bodyText)}
+                  : renderLearningMixedRtlMathText(parts.bodyText)}
               </div>
             ) : (
               <div

@@ -38,16 +38,16 @@ export function inferMisconceptionFromWrongAnswer(params) {
       subtype: ev.subtype,
       patternFamily: ev.patternFamily,
       expectedErrorTags: ev.expectedErrorTags,
-      diagnosticSkillId: ev.diagnosticSkillId,
+      diagnosticSkillId: ev.diagnosticSkillId
     },
     correctAnswer: ev.correctAnswer,
-    answers: undefined,
+    answers: undefined
   };
   const meta = buildQuestionSkillMetadataV1(stub, {
-    subjectCanonical: subjectId === "moledet-geography" ? "moledet_geography" : subjectId,
+    subjectCanonical: subjectId,
     grade: ev.grade,
     level: ev.level,
-    topic: String(topicHint),
+    topic: String(topicHint)
   });
 
   let errorType = "insufficient_evidence";
@@ -60,7 +60,7 @@ export function inferMisconceptionFromWrongAnswer(params) {
   /** @type {string[]} */
   const doNotConclude = [
     "This is a suspected learning pattern, not a confirmed diagnosis.",
-    "Do not infer clinical or medical conditions.",
+    "Do not infer clinical or medical conditions."
   ];
 
   const userAns = ev.userAnswer;
@@ -104,17 +104,11 @@ export function inferMisconceptionFromWrongAnswer(params) {
       } else if (subjectId === "english") {
         errorType = "grammar_pattern_error";
         confidence = "low";
-      } else if (subjectId === "hebrew") {
-        errorType = "missed_explicit_information";
-        confidence = "low";
       } else if (subjectId === "science") {
         errorType = "concept_confusion";
         confidence = "low";
       } else if (subjectId === "geometry") {
         errorType = "formula_selection_error";
-        confidence = "low";
-      } else if (subjectId === "moledet-geography") {
-        errorType = "map_reading_error";
         confidence = "low";
       }
     }
@@ -132,7 +126,7 @@ export function inferMisconceptionFromWrongAnswer(params) {
     confidence,
     basedOn,
     reasoning,
-    doNotConclude,
+    doNotConclude
   };
 }
 

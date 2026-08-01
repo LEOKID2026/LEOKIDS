@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "number_r_accuracy": "Número (r.accuracy)",
+    "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o": "Existen varias filas de temas débiles; la preocupación a nivel de tema se puede considerar solo cuando se cumplen los criterios de amplitud."
+  }
+}

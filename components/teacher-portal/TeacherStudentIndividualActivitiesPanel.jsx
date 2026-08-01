@@ -1,7 +1,7 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
-import { REPORT_SUBJECTS, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabel } from "../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../lib/classroom-activities/generate-activity-questions-client.js";
 import {
@@ -195,7 +195,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
             >
               {REPORT_SUBJECTS.filter((s) => ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS.has(s)).map((s) => (
                 <option key={s} value={s}>
-                  {subjectLabelHe(s)}
+                  {subjectLabel(s)}
                 </option>
               ))}
             </select>

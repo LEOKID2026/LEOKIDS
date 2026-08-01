@@ -8,7 +8,7 @@ import ColoringPrintDocument from "./ColoringPrintDocument.jsx";
 
 /**
  * @param {{
- *   worksheetPayload: import("../../lib/coloring/coloring-worksheet-types.js").ColoringWorksheetPayload | null,
+ *   worksheetPayload: import("../../lib/coloring/coloring-worksheet-types.js").ColoringWorksheetPayload || null,
  *   onClose: () => void,
  *   T: Record<string, string>,
  * }} props

@@ -240,7 +240,7 @@ export function computeMasteryScore(row) {
 }
 
 /**
- * @returns {"strong" | "medium" | "low"}
+ * @returns {"strong" || "medium" || "low"}
  */
 export function computeEvidenceStrength(q, stability01, confidence01, recencyScore, wrongRatio) {
   const vol = q >= 18 ? 1 : q >= 10 ? 0.75 : q >= 5 ? 0.5 : 0.25;

@@ -4,7 +4,7 @@ import { useArcadeSnapshotPollEffect } from "./useArcadeSnapshotPollEffect";
 import { handleArcadePollBundleFailure } from "./arcadeSessionPollHelpers.js";
 import { useArcadeRoomAccessLostRedirect } from "./useArcadeRoomAccessLostRedirect.js";
 
-/** כמו OV2 `useOv2LudoSession.js` — משך מינימלי לזריקה + הצגת תוצאה */
+/**  OV2 `useOv2LudoSession.js` —    +   */
 const OV2_LUDO_LIVE_ROLL_MIN_MS = 2000;
 const OV2_LUDO_DICE_FACE_HOLD_MS = 1200;
 
@@ -67,7 +67,7 @@ export function useLudoSession(ctx) {
   const [liveSpinTick, setLiveSpinTick] = useState(1);
   const [liveRollServerFace, setLiveRollServerFace] = useState(/** @type {number|null} */ (null));
   const [liveDiceRevealHold, setLiveDiceRevealHold] = useState(
-    /** @type {{ face: number; until: number } | null} */ (null)
+    /** @type {{ face: number; until: number } || null} */ (null)
   );
   const [nowMs, setNowMs] = useState(() => Date.now());
   const diceRollingRef = useRef(false);
@@ -180,7 +180,7 @@ export function useLudoSession(ctx) {
     try {
       const r = await requestLudoGameAction(roomId, { action: "roll", revision: s.revision });
       if (!r.ok) {
-        setErr(r.error || "פעולה נכשלה");
+        setErr(r.error || "");
         return { ok: false };
       }
       const nextSnap = r.snapshot;
@@ -223,7 +223,7 @@ export function useLudoSession(ctx) {
     return runLiveRoll();
   }, [diceRolling, runLiveRoll]);
 
-  /** OV2: בתחילת תור — זריקה אוטומטית עם אותה אנימציה (לא מזיזים כלים בשביל המשתמש) */
+  /** OV2:   —      (    ) */
   useEffect(() => {
     if (!roomId || !snap) return undefined;
     if (String(snap.phase || "").toLowerCase() !== "playing") return undefined;
@@ -253,9 +253,9 @@ export function useLudoSession(ctx) {
         }
         const cur = snapRef.current;
         if (
-          !cur ||
-          String(cur.phase || "").toLowerCase() !== "playing" ||
-          !cur.canClientRoll ||
+          !cur |
+          String(cur.phase || "").toLowerCase() !== "playing" |
+          !cur.canClientRoll |
           cur.dice != null
         ) {
           liveAutoRollCompletedKeyRef.current = autoKey;
@@ -316,7 +316,7 @@ export function useLudoSession(ctx) {
           revision: s.revision,
         });
         if (!r.ok) {
-          setErr(r.error || "מהלך נכשל");
+          setErr(r.error || "");
           return { ok: false };
         }
         if (r.snapshot) setSnap((prev) => preferNewer(prev, r.snapshot));
@@ -337,8 +337,7 @@ export function useLudoSession(ctx) {
         setBusy(false);
       }
     },
-    [roomId, busy, diceRolling],
-  );
+    [roomId, busy, diceRolling]);
 
   const vm = useMemo(() => {
     const phase = snap ? String(snap.phase || "").toLowerCase() : "";

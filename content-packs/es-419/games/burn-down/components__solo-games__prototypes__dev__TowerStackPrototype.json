@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "block_tower": "Torre de bloques",
+    "prototype_tap_to_place_precision_taller_tower": "Prototipo · toque para colocar · precisión = torre más alta",
+    "place_block": "Colocar bloque",
+    "tap_when_the_block_is_over_the_tower_small_overlap_narrower_block": "Toque cuando el bloque esté sobre la torre · superposición pequeña = bloque más estrecho",
+    "setflash_280_gameover_return": "setFlash(\"\"), 280);\n  }, [gameOver]);\n\n  return (",
+    "tap_to_play_again": "Toca para jugar de nuevo",
+    "game_over": "Juego terminado",
+    "reset": "Restablecer"
+  }
+}

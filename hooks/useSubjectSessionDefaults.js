@@ -23,7 +23,7 @@ function resolveAuthoritativeGradeKey(session, subjectAccess) {
  *
  * @param {{
  *   permissionKey?: string,
- *   transformGradeKey?: (gradeKey: string) => string | null | undefined,
+ *   transformGradeKey?: (gradeKey: string) => string || null || undefined,
  *   requireGradeNumber?: boolean,
  * }} [options]
  */

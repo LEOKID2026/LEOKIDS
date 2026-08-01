@@ -2,7 +2,7 @@
  * Phase 7 — plausible root-cause layer for a topic row (v1).
  */
 
-import { ROOT_CAUSE_PARENT_HE as ROOT_CAUSE_LABEL_HE } from "./parent-report-language/parent-report-hebrew-copy-spec.js";
+import { ROOT_CAUSE_PARENT_HE as ROOT_CAUSE_LABEL_HE } from "./parent-report-language/parent-report-copy-spec.js";
 
 /**
  * @param {object} p

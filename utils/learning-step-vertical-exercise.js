@@ -3,7 +3,7 @@ import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 
 export const PLACE_VALUE_SUFFIXES = ["Units", "Tens", burnDownCopy("utils__learning-step-vertical-exercise", "hundreds")];
 
-export const PLACE_VALUE_LABELS = ["אחדות", "עשרות", "מאות", "אלפים"];
+export const PLACE_VALUE_LABELS = ["", "", "", ""];
 
 const PLACE_SUFFIX_BY_COLUMN = {
   0: "Units",
@@ -43,8 +43,8 @@ export function resolveActiveColumnFromHighlights(highlights = []) {
 
   for (const suffix of PLACE_VALUE_SUFFIXES) {
     const inColumn =
-      highlights.includes(`a${suffix}`) ||
-      highlights.includes(`b${suffix}`) ||
+      highlights.includes(`a${suffix}`) |
+      highlights.includes(`b${suffix}`) |
       highlights.includes(`result${suffix}`);
     if (inColumn) return columnIndexFromHighlightSuffix(suffix);
   }
@@ -59,8 +59,8 @@ export function hasColumnSpecificHighlights(highlights = []) {
   if (hasColumnIndexHighlights(highlights)) return true;
   return PLACE_VALUE_SUFFIXES.some(
     (suffix) =>
-      highlights.includes(`a${suffix}`) ||
-      highlights.includes(`b${suffix}`) ||
+      highlights.includes(`a${suffix}`) |
+      highlights.includes(`b${suffix}`) |
       highlights.includes(`result${suffix}`)
   );
 }
@@ -223,8 +223,8 @@ export function buildStepCellHighlightState(step, layout, pre) {
 
 export function supportsPlaceValueStepExerciseView(effectiveOp, op, opSymbol) {
   return (
-    effectiveOp === "addition" ||
-    effectiveOp === "subtraction" ||
+    effectiveOp === "addition" |
+    effectiveOp === "subtraction" |
     (op === "decimals" && (opSymbol === "+" || opSymbol === "−"))
   );
 }

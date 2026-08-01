@@ -1,8 +1,8 @@
 /**
  * Fast Educational Diagnosis — deterministic hypotheses from small samples.
  */
-import { normalizeParentFacingHe } from "../parent-report-language/index.js";
-import { shortReportDiagnosticsParentVisibleHe } from "../parent-report-ui-explain-he.js";
+import { normalizeParentFacing } from "../parent-report-language/index.js";
+import { shortReportDiagnosticsParentVisibleHe } from "../parent-report-ui-explain.js";
 import { inferNormalizedTags, isHighInformationMisconceptionTag } from "./infer-tags.js";
 import { TAG_LABEL_HE, tagsSummaryHe } from "./parent-copy.js";
 import { resolveProbeHintFromMap } from "./probe-map.js";
@@ -18,7 +18,7 @@ function stripInternalTokensHe(s) {
   t = t.replace(/::/g, " ");
   t = t.replace(/\bdc:/gi, "");
   t = t.replace(/\bfd:[a-z0-9_:+-]+\b/gi, "");
-  return normalizeParentFacingHe(shortReportDiagnosticsParentVisibleHe(t.replace(/\s{2,}/g, " ").trim()));
+  return normalizeParentFacing(shortReportDiagnosticsParentVisibleHe(t.replace(/\s{2,}/g, " ").trim()));
 }
 
 /**
@@ -156,21 +156,21 @@ function buildHypothesisHe({ diagnosisStage, topicName, dominantTag, w, ratio, s
   const tagLab = dominantTag ? TAG_LABEL_HE[dominantTag] || "" : "";
   const summary = tagsSummaryHe(suspectedErrorTags);
   if (diagnosisStage === "stable_diagnosis") {
-    return normalizeParentFacingHe(
+    return normalizeParentFacing(
       `In ${topicName} a consistent pattern appears (${w} mistakes in range; similar concentration of the difficulty type). ${tagLab ? `Focus: ${tagLab}.` : summary ? `Possible focus areas: ${summary}.` : ""}`
     );
   }
   if (diagnosisStage === "working_hypothesis") {
-    return normalizeParentFacingHe(
+    return normalizeParentFacing(
       `Initial hypothesis in ${topicName}: the same type of mistake repeats — worth confirming with more examples. ${tagLab ? `Focus: ${tagLab}.` : ""}`
     );
   }
   if (diagnosisStage === "early_signal") {
-    return normalizeParentFacingHe(
+    return normalizeParentFacing(
       `Early signal in ${topicName}${tagLab ? ` — appears related to ${tagLab}` : summary ? ` — ${summary}` : ""}. This is only a preliminary picture.`
     );
   }
-  return normalizeParentFacingHe(
+  return normalizeParentFacing(
     `A stable pattern cannot be determined yet in ${topicName} — we will continue collecting focused observations.${w > 0 ? ` (${w} mistakes in range)` : ""}`
   );
 }
@@ -178,23 +178,23 @@ function buildHypothesisHe({ diagnosisStage, topicName, dominantTag, w, ratio, s
 function buildEvidenceLinesHe({ topicName, w, q, dominantTag, dominantCount, suspectedErrorTags }) {
   const lines = [];
   if (q > 0) {
-    lines.push(normalizeParentFacingHe(`In range: ${q} questions total in ${topicName}.`));
+    lines.push(normalizeParentFacing(`In range: ${q} questions total in ${topicName}.`));
   }
   if (w > 0) {
-    lines.push(normalizeParentFacingHe(`Captured ${w} relevant mistakes for this row.`));
+    lines.push(normalizeParentFacing(`Captured ${w} relevant mistakes for this row.`));
   }
   if (dominantTag && dominantCount > 0) {
     const lab = TAG_LABEL_HE[dominantTag] || "";
     if (lab) {
-      lines.push(normalizeParentFacingHe(`Most prominent in mistakes: ${lab} (${dominantCount} cases).`));
+      lines.push(normalizeParentFacing(`Most prominent in mistakes: ${lab} (${dominantCount} cases).`));
     }
   }
   if (suspectedErrorTags.length > 1) {
     const rest = tagsSummaryHe(suspectedErrorTags.slice(1));
-    if (rest) lines.push(normalizeParentFacingHe(`Also appears: ${rest}.`));
+    if (rest) lines.push(normalizeParentFacing(`Also appears: ${rest}.`));
   }
   if (!lines.length) {
-    lines.push(normalizeParentFacingHe(`There are not yet enough classified mistake events for ${topicName}.`));
+    lines.push(normalizeParentFacing(`There are not yet enough classified mistake events for ${topicName}.`));
   }
   return lines.slice(0, 6);
 }
@@ -234,11 +234,11 @@ function buildNextProbe({ diagnosisStage, topicName, dominantTag, subjectId, w, 
   });
 
   const tagLab = dominantTag ? TAG_LABEL_HE[dominantTag] || "" : "";
-  let reasonHe = normalizeParentFacingHe(
+  let reasonHe = normalizeParentFacing(
     `Check whether ${tagLab || "the same type of difficulty"} repeats when hints are reduced and work time is extended slightly.`
   );
   if (diagnosisStage === "insufficient_signal") {
-    reasonHe = normalizeParentFacingHe(
+    reasonHe = normalizeParentFacing(
       `Run 2–3 short questions on the same concept without hints, to see if the mistake repeats consistently.`
     );
   }
@@ -252,7 +252,7 @@ function buildNextProbe({ diagnosisStage, topicName, dominantTag, subjectId, w, 
   let skill = skillDefault;
   if (mapped) {
     skill = stripInternalTokensHe(mapped.skill);
-    reasonHe = normalizeParentFacingHe(mapped.reasonHe);
+    reasonHe = normalizeParentFacing(mapped.reasonHe);
     suggestedQuestionType = mapped.suggestedQuestionType;
   }
 
@@ -280,5 +280,5 @@ function buildParentSafeHe({ diagnosisStage, topicName, hypothesisHe, w, q, susp
   const base = `${hypothesisHe} ${stagePhrase}`;
   const probe = nextProbe?.reasonHe ? ` Suggested next step: ${nextProbe.reasonHe}` : "";
   const counts = q > 0 || w > 0 ? ` (Questions in range: ${q || "-"}, counted mistakes: ${w})` : "";
-  return normalizeParentFacingHe(`${base}${tags ? ` Possible focus areas: ${tags}.` : ""}${probe}${counts}`);
+  return normalizeParentFacing(`${base}${tags ? ` Possible focus areas: ${tags}.` : ""}${probe}${counts}`);
 }

@@ -1,6 +1,6 @@
 /**
- * Phase 11 — רצף תמיכה (פרוקסי מחלונות מגמה + פרופיל התערבות נוכחי).
- * לא ממציא היסטוריית צעדים — רק מסיק מצב בטוח מהנתונים הקיימים.
+ * Phase 11 —   (   +   ).
+ *     —      .
  */
 
 import {
@@ -9,7 +9,7 @@ import {
   STRATEGY_FATIGUE_RISK_LABEL_HE,
   STRATEGY_REPETITION_RISK_LABEL_HE,
   SUPPORT_SEQUENCE_STATE_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 /**
  * @param {object} ctx
@@ -37,9 +37,9 @@ export function buildSupportSequencingPhase11(ctx) {
   const posAcc = !!td.positiveAccuracy;
 
   const guidedHeavy =
-    rpm === "slow_guided_accuracy" ||
-    rpm === "guided_release" ||
-    rpm === "error_reduction_loop" ||
+    rpm === "slow_guided_accuracy" |
+    rpm === "guided_release" |
+    rpm === "error_reduction_loop" |
     iff === "guided_practice";
   const reviewHold = rpm === "review_and_hold";
   const observe = rpm === "observe_only";
@@ -124,9 +124,9 @@ export function buildSupportSequencingPhase11(ctx) {
     nextBestSequenceStep = "continue_current_sequence";
   }
 
-  const displayName = String(ctx?.displayName || "הנושא").trim();
+  const displayName = String(ctx?.displayName || "").trim();
   const supportSequenceStateLabelHe =
-    SUPPORT_SEQUENCE_STATE_LABEL_HE[supportSequenceState] ||
+    SUPPORT_SEQUENCE_STATE_LABEL_HE[supportSequenceState] |
     SUPPORT_SEQUENCE_STATE_LABEL_HE.insufficient_sequence_evidence;
   const priorSupportPatternLabelHe =
     PRIOR_SUPPORT_PATTERN_LABEL_HE[priorSupportPattern] || PRIOR_SUPPORT_PATTERN_LABEL_HE.unknown;
@@ -137,7 +137,7 @@ export function buildSupportSequencingPhase11(ctx) {
   const nextBestSequenceStepHe =
     NEXT_BEST_SEQUENCE_STEP_LABEL_HE[nextBestSequenceStep] || NEXT_BEST_SEQUENCE_STEP_LABEL_HE.observe_before_next_cycle;
 
-  const supportSequenceNarrativeHe = `ב«${displayName}»: ${supportSequenceStateLabelHe}. ${nextBestSequenceStepHe}`;
+  const supportSequenceNarrativeHe = `«${displayName}»: ${supportSequenceStateLabelHe}. ${nextBestSequenceStepHe}`;
 
   const supportSequencing = {
     version: 1,

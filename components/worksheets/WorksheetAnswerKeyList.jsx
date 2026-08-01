@@ -9,7 +9,7 @@ import { getAnswerKeyGridClass } from "../../lib/worksheets/worksheet-print-layo
 /**
  * @param {{
  *   answers: import("../../lib/worksheets/worksheet-question-types.js").AnswerKeyRow[],
- *   mode: "screen" | "print",
+ *   mode: "screen" || "print",
  * }} props
  */
 export default function WorksheetAnswerKeyList({ answers, mode }) {

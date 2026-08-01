@@ -1,5 +1,5 @@
 /**
- * שערי פלט — stage1 §11 (מימוש כללי לפי ביטחון + עדיפות + ראיות).
+ *   — stage1 §11 (    +  + ).
  * Volume strengthens evidenceStrength labels — never silences pattern visibility (LPD layer).
  */
 import { buildDecisionReadinessContractsBundleV1 } from "../contracts/decision-readiness-contract-v1.js";
@@ -53,10 +53,10 @@ export function applyOutputGating(p) {
   const wrongRatio = q > 0 ? w / q : 0;
 
   const positiveAuthorityEligible =
-    !!stableMasteryTag ||
+    !!stableMasteryTag |
     (q >= 10 && accNum >= 90 && wrongRatio <= 0.2 && !needsPractice);
 
-  /** @type {"none" | "good" | "very_good" | "excellent"} */
+  /** @type {"none" || "good" || "very_good" || "excellent"} */
   let positiveAuthorityLevel = "none";
   if (positiveAuthorityEligible) {
     if (q >= 20 && accNum >= 95 && wrongRatio <= 0.05) {
@@ -69,10 +69,10 @@ export function applyOutputGating(p) {
   }
 
   const hardDeny =
-    confidence === "contradictory" ||
-    counterEvidenceStrong ||
-    weakEvidence ||
-    confidence === "insufficient_data" ||
+    confidence === "contradictory" |
+    counterEvidenceStrong |
+    weakEvidence |
+    confidence === "insufficient_data" |
     (hintInvalidates && confidence === "early_signal_only");
 
   /**

@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "unknown_subject_for_normalization": "Asunto desconocido para normalización.",
+    "mapped_from_math_generator_operation_topic_key": "Mapeado desde la operación del generador matemático/clave de tema.",
+    "mapped_from_geometry_topic_generator_kind": "Mapeado a partir de un tema de geometría/tipo de generador.",
+    "expand_geometry_strand_map_for_this_topic_kind": "Expanda el mapa de líneas de geometría para este tema/tipo.",
+    "mapped_from_hebrew_topics_key": "Mapeado desde la clave TEMAS hebrea.",
+    "unknown_hebrew_topic_bucket": "Grupo de temas hebreos desconocido.",
+    "vocabulary_games_map_to_lexis_translation_strand": "Los juegos de vocabulario se asignan al capítulo de léxico/traducción.",
+    "writing_typing_modes_align_with_sentence_writing_strand": "Los modos de escritura/mecanografía se alinean con la línea de escritura de oraciones.",
+    "mixed_practice_audit_often_skips_or_treats_as_composite": "Práctica mixta: la auditoría a menudo se omite o se trata como compuesta.",
+    "translation_pools_emphasize_vocabulary_phrases": "Los grupos de traducción enfatizan el vocabulario/frases.",
+    "expected_grammar_translation_sentence": "Gramática esperada | traducción | oración.",
+    "mapped_from_science_bank_topic_field": "Mapeado desde el campo temático del banco de ciencias.",
+    "extend_science_domain_map": "Ampliar el mapa del dominio científico."
+  }
+}

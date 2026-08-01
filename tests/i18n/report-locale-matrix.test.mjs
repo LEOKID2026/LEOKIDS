@@ -38,7 +38,7 @@ for (const combo of MATRIX) {
 
     const sample = reportPackCopyForLocale(
       combo.reportLocale,
-      "utils__parent-report-ui-explain-he",
+      "utils__parent-report-ui-explain",
       "improving"
     );
     assert.ok(sample.length > 0);

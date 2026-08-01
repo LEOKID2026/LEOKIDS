@@ -11,8 +11,7 @@ import {
   callCopilotLlmOpenAiChatCompletionsJson,
   copilotLlmPrimaryProviderLabel,
   getCopilotLlmFallbackConfig,
-  isTransientCopilotLlmFailure,
-} from "./copilot-llm-client.js";
+  isTransientCopilotLlmFailure} from "./copilot-llm-client.js";
 import { collectParentFacingOutputQualityIssues } from "./guardrail-validator.js";
 
 /**
@@ -50,32 +49,30 @@ export function shouldTryNextFallbackCandidateAfterValidationFailure(reason) {
     /** Legacy / forward alias if surfaced under a different guardrail label */
     "llm_main_focus_missing_practical_magnitude",
     /** Intent-specific short answer for main_focus (guardrail-validator) */
-    "llm_main_focus_answer_too_short",
-  ]);
+    "llm_main_focus_answer_too_short"]);
   return retryable.has(r);
 }
 
 const DEFAULT_TIMEOUT_MS = 9000;
 
 const LLM_CLINICAL_DIAGNOSIS_RES = [
-  /דיסלקציה|דיסלקסיה|דיסקלקוליה/u,
-  /לקות\s*למידה/u,
-  /הפרעת\s*קשב/u,
+  //u,
+  /\s*/u,
+  /\s*/u,
   /\bADHD\b/i,
-  /האבחון\s*הוא/u,
-  /האבחנה\s*היא/u,
-  /(?:יש\s*לילד|לילד\s*יש).{0,64}(?:דיסלקציה|דיסלקסיה|דיסקלקוליה|לקות\s*למידה|הפרעת\s*קשב|ADHD)/iu,
-  /(?:דיסלקציה|דיסלקסיה|דיסקלקוליה|לקות\s*למידה|הפרעת\s*קשב|ADHD).{0,64}(?:יש\s*לילד|לילד\s*יש)/iu,
-];
+  /\s*/u,
+  /\s*/u,
+  /(?:\s*|\s*).{0,64}(?:\s*|\s*|ADHD)/iu,
+  /(?:\s*|\s*|ADHD).{0,64}(?:\s*|\s*)/iu];
 
-const LLM_CLINICAL_CERTAINTY_RE = /(בוודאות|חד[\s-]*משמעית|אין\s*ספק|ברור\s*ש)/u;
+const LLM_CLINICAL_CERTAINTY_RE = /([\s-]*|\s*|\s*)/u;
 
 /**
  * @param {string} s
  */
 function normalizeWsHe(s) {
   return String(s || "")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
 }
 
@@ -92,7 +89,7 @@ function env(name, fallback = "") {
 
 /** Same predicate as truth-packet executive strength (subject-level wording). */
 function utteranceAsksSubjectLevelStrength(u) {
-  return /מקצוע|מקצועות|המקצוע\s+ה(חזק|טוב)|איזה\s+מקצוע|באיזה\s+מקצוע|מה\s+המקצוע/u.test(String(u || "").trim());
+  return /\s+()|\s+|\s+|\s+/u.test(String(u || "").trim());
 }
 
 export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", opts = {}) {
@@ -125,8 +122,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
     forbiddenPhrases: Array.isArray(truthPacket?.allowedClaimEnvelope?.forbiddenPhrases)
       ? truthPacket.allowedClaimEnvelope.forbiddenPhrases
       : [],
-    reportQuestionTotalGlobal: globalQ,
-  };
+    reportQuestionTotalGlobal: globalQ};
   // Per-intent guidance for parent-friendly structured answers
   const intentGuidance = (() => {
     switch (intentLabel) {
@@ -141,23 +137,20 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
             "Phrases such as «the area where the numbers are seen...» are expressly prohibited when the parent asked about a subject.",
             "Do not start with wording that begins only with a specific topic (for example «on vocabulary...») when the question is about a subject — first the subject name, then the prominent topic within that subject.",
             "Block meaning: Briefly explain why it is positive according to FACTS_JSON.interpretation. One accuracy percentage can be mentioned.",
-            "Do not list all subjects. Do not write 'according to the report, appear:' or 'the subjects that appear'. Do not present an area as having relatively good results if it also appears as a focus to strengthen in the report.",
-          ].join("\n");
+            "Do not list all subjects. Do not write 'according to the report, appear:' or 'the subjects that appear'. Do not present an area as having relatively good results if it also appears as a focus to strengthen in the report."].join("\n");
         }
         return [
           "The question is about where relative progress is seen. The required structure:",
           "Observation block: start with wording like 'the topic with the best results is...' or 'in... relatively good results were seen' — specify 1-2 specific areas from FACTS_JSON.observation only.",
           "Block meaning: Briefly explain why this is positive, according to FACTS_JSON.interpretation. You can mention one accuracy percentage.",
-          "Do not list all subjects. Do not write 'according to the report, appear:' or 'the subjects that appear'. Do not present an area as having relatively good results if it also appears as a focus to strengthen in the report.",
-        ].join("\n");
+          "Do not list all subjects. Do not write 'according to the report, appear:' or 'the subjects that appear'. Do not present an area as having relatively good results if it also appears as a focus to strengthen in the report."].join("\n");
       }
       case "what_is_still_difficult":
         return [
           "The question is about areas of difficulty. The required structure:",
           "Observation block: start with a direct formulation such as 'the area that currently requires strengthening is...' or 'the areas that require strengthening are...' - specify 1-2 specific areas from the FACTS_JSON.observation.",
           "Block meaning: explanation in calm language, without scary words, according to the FACTS_JSON.interpretation.",
-          "Don't diagnose. Don't say 'serious problem'. Use a calm and practical tone.",
-        ].join("\n");
+          "Don't diagnose. Don't say 'serious problem'. Use a calm and practical tone."].join("\n");
       case "what_is_most_important":
         return [
           "The question is what is most important to practice this week. The following structure must be filled in (natural wording, full subject names from FACTS_JSON.observation only):",
@@ -166,8 +159,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
           'It is mandatory to include a practical homework sentence (within meaning, or another sentence in the same block): "It is recommended to practice for about 10 minutes, 3 times a week, with 5-8 short questions each time."',
           "If FACTS_JSON allows a next_step block - you can put the action statement there; If not - the same sentence (or a close formulation with 10 minutes, 3 times, 5–8 questions, short practice, each time) within the text is still mandatory.",
           "A full stop or punctuation is not allowed immediately after a preposition (in, on, with, of, to) before the subject name - \"in.\", \"in .\", \"in .\", \"in-.\", \"in:.\" are not allowed. Continue immediately after \"b\" with the full subject name.",
-          "Don't start with \"seems worth focusing on\" and then a period or dash before the subject. Do not write 'it is possible to arrange what is important first' or 'this is what the report gives at the moment'.",
-        ].join("\n");
+          "Don't start with \"seems worth focusing on\" and then a period or dash before the subject. Do not write 'it is possible to arrange what is important first' or 'this is what the report gives at the moment'."].join("\n");
       case "what_to_do_today":
       case "what_to_do_this_week":
         return [
@@ -177,8 +169,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
           facts.recommendationEligible && facts.recommendationIntensityCap !== "RI0"
             ? "next_step block: one specific simple step to perform (according to FACTS_JSON.action)."
             : copilotStaticMessage("copilot.answers.utils_parent-copilot_llm-orchestrator.you_must_not_include_a_next_step_block"),
-          "Do not write 'it is possible to arrange' or 'this is what the report gives'.",
-        ].join("\n");
+          "Do not write 'it is possible to arrange' or 'this is what the report gives'."].join("\n");
       case "is_intervention_needed":
         return [
           "The question is whether there is cause for concern. The required structure:",
@@ -186,8 +177,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
           "block meaning: explain what the situation is and what the recommended next step is, according to FACTS_JSON.interpretation.",
           "Don't diagnose. Don't panic. Use a calm and practical tone.",
           'Open a calm and professional tone. If there is enough data, you can start with the following: "At this stage there is no reason for concern, but...". After that, it is mandatory to continue according to FACTS_JSON only: if there is an established study finding (according to FACTS_JSON.interpretation), present it clearly and carefully and propose a practical study step; If there is no significant finding in the report, you can reassure briefly. Do not diagnose, do not use medical/psychological language, and do not hide a study finding that exists in the report.',
-          "It is forbidden to write \"don't get under pressure\", it is forbidden to write \"nothing to worry about\" in an absolute wording, and it is forbidden to write \"everything is fine\" if there is a study finding in the report.",
-        ].join("\n");
+          "It is forbidden to write \"don't get under pressure\", it is forbidden to write \"nothing to worry about\" in an absolute wording, and it is forbidden to write \"everything is fine\" if there is a study finding in the report."].join("\n");
       case "ask_subject_specific":
       case "ask_topic_specific":
         return [
@@ -197,14 +187,12 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
           "If the specific topic has few questions - this can be carefully noted only for this topic.",
           facts.recommendationEligible && facts.recommendationIntensityCap !== "RI0"
             ? "Optional: next_step block - one short home step according to FACTS_JSON.action only."
-            : copilotStaticMessage("copilot.answers.utils_parent-copilot_llm-orchestrator.the_next_step_block_must_not_be_included_practical_recommendations"),
-        ].join("\n");
+            : copilotStaticMessage("copilot.answers.utils_parent-copilot_llm-orchestrator.the_next_step_block_must_not_be_included_practical_recommendations")].join("\n");
       default:
         return [
           "Answer the parent's question directly. The required structure:",
           "Observation block: a short direct answer, based on FACTS_JSON.observation.",
-          "block meaning: one practical point from FACTS_JSON.interpretation.",
-        ].join("\n");
+          "block meaning: one practical point from FACTS_JSON.interpretation."].join("\n");
     }
   })();
 
@@ -229,8 +217,7 @@ export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", o
     `Specific instructions for the parent intent (parentIntent=${intentLabel}):\n${intentGuidance}`,
     'Return only JSON in the format {"answerBlocks":[{"type":"observation|meaning|next_step|caution","textHe":"...","source":"composed"}]}',
     `Parent Question: ${String(utterance || "").trim()}`,
-    `FACTS_JSON: ${JSON.stringify(facts)}`,
-  ].join("\n");
+    `FACTS_JSON: ${JSON.stringify(facts)}`].join("\n");
 }
 
 /**
@@ -247,8 +234,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
     ? payload.answerBlocks.map((b) => ({
         type: b?.type,
         answerText: String(b?.answerText || b?.textHe || "").trim(),
-        source: b?.source,
-      }))
+        source: b?.source}))
     : [];
   if (!recommendationOk) {
     blocks = blocks.filter((b) => String(b?.type || "") !== "next_step");
@@ -260,7 +246,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
   const hasMean = blocks.some((b) => String(b?.type || "") === "meaning");
   if (!hasObs && !hasMean) return { ok: false, reason: "llm_missing_observation_or_meaning" };
 
-  const joined = blocks.map((b) => String(b?.answerText || "").trim()).join(" ");
+  const joined = blocks.map((b) => String(b?.answerText || "").trim()).join("");
   const intent = String(hints?.intent || "").trim();
   const joinedNorm = normalizeWsHe(joined);
   const boundaryNorm = normalizeWsHe(clinicalBoundaryJoinedFingerprintHe());
@@ -303,10 +289,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
       answerBlocks: blocks.map((b) => ({
         type: String(b.type),
         answerText: String(b.answerText || "").trim(),
-        source: "composed",
-      })),
-    },
-  };
+        source: "composed"}))}};
 }
 
 /**
@@ -327,8 +310,7 @@ function pickLlmFailureFields(response) {
       : {}),
     ...(Array.isArray(response.fallbackAttempts) && response.fallbackAttempts.length
       ? { fallbackAttempts: response.fallbackAttempts.map((a) => ({ ...a })) }
-      : {}),
-  };
+      : {})};
 }
 
 /**
@@ -351,13 +333,11 @@ export async function maybeGenerateGroundedLlmDraft(input) {
     return {
       ok: false,
       reason: "llm_disabled_by_rollout_gate",
-      gateReasonCodes: gate.reasonCodes,
-    };
+      gateReasonCodes: gate.reasonCodes};
   }
   const primaryProvider = copilotLlmPrimaryProviderLabel();
   const prompt = buildGroundedPrompt(input.utterance, input.truthPacket, String(input?.parentIntent || ""), {
-    responseLocale: input.responseLocale || input.reportLocale || "en",
-  });
+    responseLocale: input.responseLocale || input.reportLocale || "en"});
   const timeoutMs = Number(env("PARENT_COPILOT_LLM_TIMEOUT_MS", String(DEFAULT_TIMEOUT_MS))) || DEFAULT_TIMEOUT_MS;
   const intentHint = String(input?.parentIntent || "").trim();
 
@@ -373,8 +353,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
           reason: validated.reason || "llm_validation_failed",
           primaryProvider,
           primaryReason: "ok",
-          finalProvider: primaryProvider,
-        };
+          finalProvider: primaryProvider};
       }
       return {
         ok: true,
@@ -383,8 +362,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
         finalProvider: primaryProvider,
         primaryProvider,
         primaryReason: "ok",
-        ...(typeof primaryRes.llmRetryCount === "number" ? { llmRetryCount: primaryRes.llmRetryCount } : {}),
-      };
+        ...(typeof primaryRes.llmRetryCount === "number" ? { llmRetryCount: primaryRes.llmRetryCount } : {})};
     }
 
     if (!isTransientCopilotLlmFailure(primaryRes)) {
@@ -394,8 +372,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
         primaryProvider,
         primaryReason,
         finalProvider: primaryProvider,
-        ...pickLlmFailureFields(primaryRes),
-      };
+        ...pickLlmFailureFields(primaryRes)};
     }
 
     const fbCfg = getCopilotLlmFallbackConfig();
@@ -406,8 +383,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
         primaryProvider,
         primaryReason,
         finalProvider: primaryProvider,
-        ...pickLlmFailureFields(primaryRes),
-      };
+        ...pickLlmFailureFields(primaryRes)};
     }
 
     const fallbackProvider = fbCfg.telemetryFallbackProvider;
@@ -425,8 +401,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
           baseUrl: fbCfg.baseUrl,
           apiKey: fbCfg.apiKey,
           model: candidateModel,
-          providerKind: fbCfg.kind,
-        }),
+          providerKind: fbCfg.kind}),
       );
 
       const resolvedRouteModel =
@@ -442,8 +417,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
           actualModel: resolvedRouteModel,
           ...(typeof fallbackRes.invalidJsonRawPreview === "string" && fallbackRes.invalidJsonRawPreview.trim()
             ? { invalidJsonRawPreview: String(fallbackRes.invalidJsonRawPreview).slice(0, 3000) }
-            : {}),
-        });
+            : {})});
         const tryNextNetwork = shouldTryNextFallbackCandidate(fallbackRes) && i < candidates.length - 1;
         if (tryNextNetwork) continue;
         return {
@@ -456,8 +430,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
           fallbackAttempts,
           fallbackReason: String(fallbackRes.reason || "llm_fallback_provider_error"),
           finalProvider: fallbackProvider,
-          ...pickLlmFailureFields(fallbackRes),
-        };
+          ...pickLlmFailureFields(fallbackRes)};
       }
 
       const validatedFb = validateLlmDraft(fallbackRes.payload, input.truthPacket, { intent: intentHint });
@@ -466,8 +439,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
           model: candidateModel,
           reason: "ok",
           ...(fallbackRes.httpStatus != null ? { httpStatus: Number(fallbackRes.httpStatus) } : {}),
-          actualModel: resolvedRouteModel,
-        });
+          actualModel: resolvedRouteModel});
         return {
           ok: true,
           draft: validatedFb.draft,
@@ -478,8 +450,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
           fallbackProvider,
           fallbackModels,
           fallbackAttempts,
-          fallbackReason: "ok",
-        };
+          fallbackReason: "ok"};
       }
 
       const vr = validatedFb.reason || "llm_validation_failed";
@@ -487,8 +458,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
         model: candidateModel,
         reason: `validator_rejected:${vr}`,
         ...(fallbackRes.httpStatus != null ? { httpStatus: Number(fallbackRes.httpStatus) } : {}),
-        actualModel: resolvedRouteModel,
-      });
+        actualModel: resolvedRouteModel});
 
       const tryNextQuality =
         shouldTryNextFallbackCandidateAfterValidationFailure(vr) && i < candidates.length - 1;
@@ -503,8 +473,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
         fallbackModels,
         fallbackAttempts,
         fallbackReason: vr,
-        finalProvider: resolvedRouteModel,
-      };
+        finalProvider: resolvedRouteModel};
     }
 
   } catch (error) {
@@ -513,8 +482,7 @@ export async function maybeGenerateGroundedLlmDraft(input) {
       reason: `llm_exception:${String(error?.message || error || "unknown")}`,
       primaryProvider,
       primaryReason: "exception",
-      finalProvider: primaryProvider,
-    };
+      finalProvider: primaryProvider};
   }
 }
 

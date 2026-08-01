@@ -175,7 +175,7 @@ try {
 
 // ── 5. Parent report wording + SSR smoke ────────────────────────────────────
 try {
-  const { preliminarySignalHe } = await import(u("utils/parent-report-language/parent-report-hebrew-copy-spec.js"));
+  const { preliminarySignalHe } = await import(u("utils/parent-report-language/parent-report-copy-spec.js"));
   const { findReadabilityLeakSubstringsInString } = await import(u("utils/parent-report-language/forbidden-terms.js"));
   const { buildWhyThisRecommendationHe } = await import(u("utils/topic-next-step-phase2.js"));
   const { buildDiagnosticOverviewHeV2ForTests } = await import(u("utils/parent-report-v2.js"));

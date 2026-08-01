@@ -410,7 +410,7 @@ const [
   parentReportV2Mod,
   schoolMod,
 ] = await Promise.all([
-  import("../utils/parent-report-language/parent-diagnostic-explanations-he.js"),
+  import("../utils/parent-report-language/parent-diagnostic-explanations.js"),
   import("../utils/detailed-parent-report.js"),
   import("../utils/parent-report-v2.js"),
   import("../lib/school-portal/school-report-view-model.js").catch(() => ({ buildSchoolClassReportViewModel: null })),

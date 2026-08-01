@@ -290,7 +290,6 @@
     "error_exporting_pdf_please_try_again": "Error exporting PDF. Please try again."
   },
   "utils__parent-report-ai__parent-report-ai-explainer": {
-    "hebrew": "Hebrew",
     "geography": "Geography"
   },
   "utils__parent-report-diagnostic-restraint": {
@@ -312,7 +311,6 @@
     "overall": "Overall"
   },
   "utils__parent-report-insights__normalize-parent-facing-labels": {
-    "hebrew": "Hebrew",
     "homeland_geography": "Homeland & geography",
     "addition": "Addition",
     "subtraction": "Subtraction",
@@ -552,7 +550,6 @@
     "parliament_legislation_court_adjudication": "Parliament - legislation / Court - adjudication"
   },
   "utils__parent-report-language__parent-report-display-labels": {
-    "hebrew": "Hebrew",
     "history": "History",
     "homeland_studies": "Homeland Studies",
     "geography": "Geography",
@@ -598,7 +595,7 @@
     "limited": "Limited",
     "inconsistent": "Inconsistent"
   },
-  "utils__parent-report-language__parent-report-hebrew-copy-spec": {
+  "utils__parent-report-language__parent-report-copy-spec": {
     "the_data_points_to_a_skill_that_is_still_not_fully_stable": "The data points to a skill that is still not fully stable.",
     "some_of_the_mistakes_look_related_to_speed_not_necessarily_a_full_knowle": "Some of the mistakes look related to speed - not necessarily a full knowledge gap.",
     "the_difficulty_may_be_related_to_understanding_the_instructions_not_just": "The difficulty may be related to understanding the instructions, not just knowledge of the topic.",
@@ -617,7 +614,6 @@
     "small_execution_mistakes_that_repeat_when_working_quickly": "Small execution mistakes that repeat when working quickly.",
     "confusion_about_the_order_of_steps_in_solving": "Confusion about the order of steps in solving.",
     "the_signs_mostly_point_to_a_difficulty_within_this_topic_itself": "The signs mostly point to a difficulty within this topic itself.",
-    "hebrew": "Hebrew",
     "social_studies_geography": "Social Studies & Geography",
     "some_of_the_mistakes_look_related_to_speed_or_time_pressure": "Some of the mistakes look related to speed or time pressure.",
     "the_difficulty_may_be_related_to_reading_the_instructions_or_understandi": "The difficulty may be related to reading the instructions or understanding what the question asks.",
@@ -630,7 +626,6 @@
   },
   "utils__parent-report-language__subject-evidence-policy": {
     "history": "History",
-    "hebrew": "Hebrew",
     "social_studies_and_geography": "Social Studies and Geography",
     "social_studies": "Social Studies",
     "geography": "Geography"
@@ -643,7 +638,6 @@
     "practice_outside_registered_grade": "Practice outside registered grade"
   },
   "utils__parent-report-output-integrity__context-labeling-matrix": {
-    "hebrew": "Hebrew",
     "homeland_and_geography": "Homeland and Geography"
   },
   "utils__parent-report-output-integrity__row-display-label-context": {
@@ -714,7 +708,7 @@
     "no_significant_change": "No significant change",
     "needs_reinforcement": "Needs reinforcement"
   },
-  "utils__parent-report-ui-explain-he": {
+  "utils__parent-report-ui-explain": {
     "enough_questions_in_this_period": "Enough questions in this period",
     "still_limited_data_a_bit_more_practice_will_help_us_understand_better": "Still limited data - a bit more practice will help us understand better",
     "amount_of_practice_good": "Amount of practice: good",

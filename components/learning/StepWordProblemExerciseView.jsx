@@ -6,7 +6,7 @@ import {
   learningMathBlockStyle,
   learningProseBlockStyle,
   splitLearningMixedHebrewMathRuns,
-} from "../../utils/learning-mixed-hebrew-math-render";
+} from "../../utils/learning-mixed-rtl-math-render";
 
 function renderWordProblemText(text, ranges) {
   const runs = splitLearningMixedHebrewMathRuns(text);

@@ -19,7 +19,7 @@ const SCAN_ROOTS = [
   "lib/parent-copilot",
   "pages/api/parent",
   "utils/fast-diagnostic-engine",
-  "utils/diagnostic-labels-he.js",
+  "utils/diagnostic-labels.js",
   "utils/diagnostic-mistake-metadata.js",
   "utils/diagnostic-question-contract.js",
   "utils/topic-next-step-engine.js",
@@ -32,7 +32,7 @@ const SCAN_ROOTS = [
   "lib/teacher-server/teacher-recommendations.server.js",
   "lib/teacher-server/student-activity.server.js",
   "lib/teacher-server/student-activity-play.server.js",
-  "lib/platform-ui/hebrew-display-labels.js",
+  "lib/platform-ui/display-labels.js",
   "pages/teacher/class",
   "pages/teacher/students",
   "pages/api/teacher/activities",
@@ -75,7 +75,7 @@ const EXCLUDE_PATH_RE = [
   /utils\/detailed-parent-report/i,
   /utils\/detailed-report-parent-letter/i,
   /utils\/parent-report-v2\.js$/,
-  /utils\/parent-report-ui-explain-he/i,
+  /utils\/parent-report-ui-explain/i,
   /utils\/parent-report-row-diagnostics/i,
   /utils\/parent-data-presence/i,
   /utils\/parent-report-language\/(?!forbidden)/,
@@ -104,7 +104,7 @@ const EXCLUDE_PATH_RE = [
 ];
 
 const FORCED_DECISION_PATH_RE =
-  /parent-copilot|parent-report-ai|fast-diagnostic|topic-next-step|copilot-turn|guardrail|fallback-templates|llm-orchestrator|probe-map-he|student-activity-(error|result)-labels|classroom-activities-labels/i;
+  /parent-copilot|parent-report-ai|fast-diagnostic|topic-next-step|copilot-turn|guardrail|fallback-templates|llm-orchestrator|probe-map|student-activity-(error|result)-labels|classroom-activities-labels/i;
 
 const NEUTRAL_EXACT = new Set([
   "חזור",

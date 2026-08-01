@@ -17,9 +17,9 @@ import { normalizeOptionForCompare } from './question-quality.js';
 
 function mathLevelKeyFromConfig(levelConfig) {
   const n = String(levelConfig?.name || "").trim().toLowerCase();
-  if (n === "קשה" || n === "hard" || n === "אתגר") return "hard";
-  if (n === "בינוני" || n === "medium" || n === "למידה") return "medium";
-  if (n === "קל" || n === "easy" || n === "תרגול") return "easy";
+  if (n === "hard") return "hard";
+  if (n === "medium") return "medium";
+  if (n === "easy") return "easy";
   return "easy";
 }
 
@@ -235,9 +235,6 @@ function finalizeMcqOptions(correctAnswer, wrongValues, kind, params) {
   return shuffleMcqList([correct, ...wrongs]);
 }
 
-/**
- * מסיחים לפי סוג תרגיל — טעויות תלמידים סבירות, לא רק ±אחוז אקראי
- */
 export function buildMathMcqAnswerList(correctAnswer, selectedOp, params, randInt, roundFn) {
   const kind = params?.kind || "";
 
@@ -510,7 +507,7 @@ export function buildMathMcqAnswerList(correctAnswer, selectedOp, params, randIn
 
 /**
  * Active diagnostic math probes (session-local; deterministic shapes).
- * @returns {null | {
+ * @returns {null || {
  *   question: string,
  *   correctAnswer: number|string,
  *   answers?: unknown[],
@@ -827,12 +824,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
   let operandB = null;
   let isStory = false;
   const mathLevelKey = mathLevelKeyFromConfig(levelConfig);
-  const gNumForScope =
-    parseInt(String(gradeKey || "").replace(/\D/g, ""), 10) || 0;
-  const gradeHebrewScope =
-    gNumForScope >= 1 && gNumForScope <= 6
-      ? ["", "", "", "", "", ""][gNumForScope - 1]
-      : "";
   const mathForceFromOpts =
     probeOpts?.forceKind != null ? String(probeOpts.forceKind) : "";
   const mathForce =
@@ -954,14 +945,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     });
   }
 
-  // ===== חיבור =====
   if (selectedOp === "addition") {
     const maxA = levelConfig.addition.max || 20;
-    const isLowGrade = gradeKey === "g1" || gradeKey === "g2"; // כיתות א' וב'
+    const isLowGrade = gradeKey === "g1" || gradeKey === "g2";
 
-    // כיתה א' - חיבור בעשרות שלמות (30+40=70)
     let useTensOnly = gradeKey === "g1" && Math.random() < 0.2;
-    // כיתה א' - חיבור בעשרת השנייה (13+4, 17-4)
     let useSecondDecade = gradeKey === "g1" && Math.random() < 0.2;
     if (mathForce === "add_tens_only") {
       useTensOnly = true;
@@ -978,20 +966,17 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     }
     const forceVerticalAdd =
       mathForce === "add_vertical" && ["g2", "g3", "g4", "g5", "g6"].includes(gradeKey);
-    // חיבור במאונך — worksheets may force vertical from grade 2+
     const useVertical =
       forceVerticalAdd ||
       (gradeKey === "g2" &&
         levelConfig.addition?.vertical &&
         mathForce !== "add_two" &&
         Math.random() < 0.4);
-    // האם להשתמש בתרגיל 3 מספרים - רק מכיתה ג' ומעלה
     const useThreeTerms =
       mathForce === "add_three" ||
       (!isLowGrade && allowTwoStep && Math.random() < 0.3);
 
     if (useTensOnly) {
-      // כיתה א': חיבור בעשרות שלמות (30+40=70)
       const tens1 = randInt(1, 9) * 10; // 10, 20, 30, ..., 90
       const tens2 = randInt(1, Math.min(9, Math.floor((100 - tens1) / 10))) * 10;
       correctAnswer = tens1 + tens2;
@@ -1008,7 +993,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = tens1;
       operandB = tens2;
     } else if (useSecondDecade) {
-      // כיתה א': חיבור בעשרת השנייה (13+4, 17-4)
       const base = randInt(11, 19); // 11-19
       const addend = randInt(1, Math.min(9, 20 - base));
       correctAnswer = base + addend;
@@ -1025,7 +1009,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = base;
       operandB = addend;
     } else if (useThreeTerms) {
-      // חיבור של 3 מספרים - רק מכיתה ג' ומעלה
       const a = randInt(1, maxA);
       const b = randInt(1, maxA);
       const c = randInt(1, maxA);
@@ -1044,14 +1027,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = a;
       operandB = b;
     } else {
-      // ✅ וריאציות שונות של חיבור שני מספרים
       const a = randInt(1, maxA);
       const b = randInt(1, maxA);
       const c = a + b;
 
-      // כיתה ב' - חיבור במאונך (אם מוגדר)
       if (useVertical) {
-        // חיבור במאונך - נציג את התרגיל בצורה מאונכת
         correctAnswer = c;
         const exerciseText = `${a} + ${b} = ${BLANK}`;
         question = exerciseText;
@@ -1069,7 +1049,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         operandA = a;
         operandB = b;
       } else {
-        // חיבור - רק תרגיל ישיר (ללא נעלם) - נעלמים רק במשוואות
         correctAnswer = c;
         const exerciseText = `${a} + ${b} = ${BLANK}`;
         question = exerciseText;
@@ -1090,11 +1069,9 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
   } else if (selectedOp === "subtraction") {
     const maxS = levelConfig.subtraction.max || 20;
     const minS = levelConfig.subtraction.min ?? 0;
-    const isLowGrade = gradeKey === "g1" || gradeKey === "g2"; // כיתות א' וב'
+    const isLowGrade = gradeKey === "g1" || gradeKey === "g2";
 
-    // כיתה א' - חיסור בעשרות שלמות
     let useTensOnly = gradeKey === "g1" && Math.random() < 0.2;
-    // כיתה א' - חיסור בעשרת השנייה
     let useSecondDecade = gradeKey === "g1" && Math.random() < 0.2;
     if (mathForce === "sub_two") {
       useTensOnly = false;
@@ -1102,7 +1079,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     }
     const forceVerticalSub =
       mathForce === "sub_vertical" && ["g2", "g3", "g4", "g5", "g6"].includes(gradeKey);
-    // חיסור במאונך — worksheets may force vertical from grade 2+
     const useVertical =
       forceVerticalSub ||
       (gradeKey === "g2" &&
@@ -1114,13 +1090,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     let b;
 
     if (useTensOnly) {
-      // כיתה א': חיסור בעשרות שלמות (50-20=30)
       const tens1 = randInt(2, 9) * 10; // 20, 30, 40, ..., 90
       const tens2 = randInt(1, Math.floor(tens1 / 10)) * 10;
       a = tens1;
       b = tens2;
     } else if (useSecondDecade) {
-      // כיתה א': חיסור בעשרת השנייה (17-4, 17-14)
       const base = randInt(11, 19); // 11-19
       const subtrahend = randInt(1, base - 10);
       a = base;
@@ -1130,14 +1104,12 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       b = randInt(minS, maxS);
     } else {
       b = randInt(minS, maxS);
-      a = randInt(b, maxS); // דואג ש-a ≥ b
+      a = randInt(b, maxS);
     }
 
     const c = a - b;
 
-    // כיתה ב' - חיסור במאונך
     if (useVertical) {
-      // חיסור במאונך
       correctAnswer = c;
       const exerciseText = `${a} - ${b} = ${BLANK}`;
       question = exerciseText;
@@ -1153,7 +1125,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = a;
       operandB = b;
     } else {
-      // חיסור - רק תרגיל ישיר (ללא נעלם) - נעלמים רק במשוואות
       correctAnswer = c;
       const exerciseText = `${a} - ${b} = ${BLANK}`;
       question = exerciseText;
@@ -1170,21 +1141,18 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandB = b;
     }
   } else if (selectedOp === "multiplication") {
-    // כיתה א׳ — ללא כפל פורמלי (סימן ×); רק קבוצות שוות וספירה בקפיצות
     if (gradeKey === "g1") {
       const groups = randInt(2, 5);
       const perGroup = randInt(2, 4);
       const total = groups * perGroup;
       const mulG1Variant = Math.random();
       if (mulG1Variant < 0.5) {
-        // קבוצות שוות — שאלה מילולית
         correctAnswer = total;
         const objects = ["", "", "", ""][randInt(0, 3)];
         question = ` ${groups} .   ${perGroup} ${objects}.  ${objects}   ?`;
         params = { kind: "mul_groups_g1", groups, perGroup, total, objects };
         isStory = true;
       } else {
-        // ספירה בקפיצות — השלם את הסדרה
         const seq = [];
         for (let i = 1; i <= groups; i++) seq.push(i * perGroup);
         correctAnswer = seq[seq.length - 1];
@@ -1204,7 +1172,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       });
     }
 
-    // שימוש ב-levelConfig.multiplication.max ישירות מ-GRADE_LEVELS
     const maxM = levelConfig.multiplication?.max || 10;
 
     if (mathForce === "mul") {
@@ -1269,8 +1236,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       mathForce === "mul_vertical" &&
       ["g4", "g5", "g6"].includes(gradeKey)
     ) {
-      // כפל ארוך (long_multiplication) — חייב להצליח בכיתות ד'-ו', ברמות רגיל/מתקדם,
-      // ללא תלות בדגל multiDigit של levelConfig (מוגדר רק בחלק מתצורות כיתה ד').
       let twoDigit;
       let oneDigit;
       if (gradeKey === "g4") {
@@ -1280,7 +1245,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         twoDigit = randInt(10, 99);
         oneDigit = randInt(10, 99);
       } else {
-        // g6 — כפל ארוך מאתגר יותר: תלת-ספרתי × דו-ספרתי
         twoDigit = randInt(100, 999);
         oneDigit = randInt(10, 99);
       }
@@ -1302,10 +1266,8 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = twoDigit;
       operandB = oneDigit;
     } else if (gradeKey === "g3" && levelConfig.multiplication?.tensHundreds && Math.random() < 0.4) {
-      // כיתה ג' - כפל בעשרות שלמות ובמאות שלמות
-      const useTens = Math.random() < 0.7; // 70% עשרות, 30% מאות
+      const useTens = Math.random() < 0.7;
       if (useTens) {
-        // כפל בעשרות שלמות: 20 × 3, 30 × 4 וכו'
         const tens = randInt(1, 9) * 10; // 10, 20, 30, ..., 90
         const multiplier = randInt(1, Math.min(10, maxM));
         const result = tens * multiplier;
@@ -1316,7 +1278,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         operandA = tens;
         operandB = multiplier;
       } else {
-        // כפל במאות שלמות: 200 × 3, 300 × 4 וכו'
         const hundreds = randInt(1, 9) * 100; // 100, 200, 300, ..., 900
         const multiplier = randInt(1, Math.min(10, maxM));
         const result = hundreds * multiplier;
@@ -1328,12 +1289,10 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         operandB = multiplier;
       }
     } else {
-      // כפל רגיל - רק תרגיל ישיר (ללא נעלם) - נעלמים רק במשוואות
       const a = randInt(1, maxM);
       const b = randInt(1, maxM);
       const c = a * b;
 
-      // צורה רגילה: a × b = __
       correctAnswer = round(c);
       const exerciseText = `${a} × ${b} = ${BLANK}`;
       question = exerciseText;
@@ -1353,7 +1312,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     const maxDivisor = levelConfig.division.maxDivisor || 12;
 
     if (mathForce === "div") {
-      // חילוק בסיסי — בכל הכיתות (כולל ד'/ה'), בלי ליפול לחילוק ארוך בגלל הסתברות.
       const divisor = randInt(2, maxDivisor);
       const quotient = randInt(2, Math.max(2, Math.floor(maxD / divisor)));
       const dividend = divisor * quotient;
@@ -1400,7 +1358,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       mathForce === "div_two_digit" &&
       ["g4", "g5", "g6"].includes(gradeKey)
     ) {
-      // חילוק ארוך במחלק דו-ספרתי — גם כש־forceKind נשלח (לא תלוי בדגל twoDigit של levelConfig).
       const divisor = randInt(11, 99);
       const quotient = randInt(2, Math.max(2, Math.floor(maxD / divisor)));
       const dividend = divisor * quotient;
@@ -1419,7 +1376,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = dividend;
       operandB = divisor;
     } else if (gradeKey === "g4" && levelConfig.division?.longDivision && Math.random() < 0.5) {
-      const useTens = Math.random() < 0.5; // 50% עשרות, 50% חד-ספרתי
+      const useTens = Math.random() < 0.5;
       let divisor;
       if (useTens) {
         divisor = randInt(1, 9) * 10; // 10, 20, 30, ..., 90
@@ -1435,7 +1392,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = dividend;
       operandB = divisor;
     } else if (gradeKey === "g5" && levelConfig.division?.twoDigit && Math.random() < 0.4) {
-      // כיתה ה' - חילוק במספר דו-ספרתי
       const divisor = randInt(11, 99);
       const quotient = randInt(2, Math.max(2, Math.floor(maxD / divisor)));
       const dividend = divisor * quotient;
@@ -1446,13 +1402,10 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = dividend;
       operandB = divisor;
     } else {
-      // חילוק רגיל - רק ללא שארית
       const divisor = randInt(2, maxDivisor);
       const quotient = randInt(2, Math.max(2, Math.floor(maxD / divisor)));
       const dividend = divisor * quotient;
 
-      // חילוק - רק תרגיל ישיר (ללא נעלם) - נעלמים רק במשוואות
-      // צורה רגילה: dividend ÷ divisor = __
       correctAnswer = round(quotient);
       const exerciseText = `${dividend} ÷ ${divisor} = ${BLANK}`;
       question = exerciseText;
@@ -1468,7 +1421,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandB = divisor;
     }
   } else if (selectedOp === "division_with_remainder") {
-    // חילוק עם שארית — בסיסי (אופקי) או ארוך (אנכי) לפי forceKind.
     const maxDBase = levelConfig.division_with_remainder?.max || 100;
     const maxDivisorBase = levelConfig.division_with_remainder?.maxDivisor || 12;
     const forceLongRemainder =
@@ -1495,35 +1447,29 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       divisor = randInt(2, maxDivisorBase);
     }
 
-    // לפחות 80% עם שארית (כמו שביקשת)
-    // אם אין טווח חוקי ליצור שארית (למשל maxD קטן מדי) ניפול אוטומטית לללא שארית.
     const minQuotient = maxD >= divisor * 2 ? 2 : 1;
-    const maxQuotientForRemainder = Math.floor((maxD - 1) / divisor); // כדי שיהיה מקום לשארית >= 1
+    const maxQuotientForRemainder = Math.floor((maxD - 1) / divisor);
     const canMakeRemainder = maxQuotientForRemainder >= minQuotient && divisor > 1;
     const hasRemainder = canMakeRemainder && Math.random() < 0.8;
 
     let quotient, dividend, remainder = 0;
     if (hasRemainder) {
-      // חילוק עם שארית
       const quotientMax = Math.max(minQuotient, maxQuotientForRemainder);
       quotient = randInt(minQuotient, quotientMax);
-      remainder = randInt(1, divisor - 1); // שארית בין 1 ל-divisor-1
+      remainder = randInt(1, divisor - 1);
       dividend = divisor * quotient + remainder;
 
-      // בטיחות: אם יצא מעבר למקסימום (במקרה קצה), נקטין מנה עד שנכנס.
       while (dividend > maxD && quotient > 1) {
         quotient -= 1;
         dividend = divisor * quotient + remainder;
       }
     } else {
-      // חילוק ללא שארית — עדיין בפורמט מנה+שארית כדי שלא ייפול ל־kind "div"
       const quotientMax = Math.max(minQuotient, Math.floor(maxD / divisor));
       quotient = randInt(minQuotient, quotientMax);
       remainder = 0;
       dividend = divisor * quotient;
     }
 
-    // חילוק ארוך: העדפת תרגיל עם מנה/מחולק גדולים יותר כשאפשר.
     if (forceLongRemainder && dividend < 20 && quotient < 10) {
       const bump = randInt(2, 5);
       quotient = Math.max(quotient, bump);
@@ -1550,7 +1496,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     operandA = dividend;
     operandB = divisor;
 
-    // תשובות MCQ כמחרוזות מנה+שארית (גם כשהשארית 0)
     const wrongAnswers = new Set();
     const addRemStr = (q, r) => {
       if (q <= 0 || r < 0 || r >= divisor) return;
@@ -1570,19 +1515,15 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       addRemStr(wq, wr);
     }
 
-    // הוספת התשובות ל-params כדי שיהיו זמינות
     const allAnswers = [correctAnswer, ...Array.from(wrongAnswers).slice(0, 3)];
 
-    // ערבוב התשובות
     for (let i = allAnswers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [allAnswers[i], allAnswers[j]] = [allAnswers[j], allAnswers[i]];
     }
 
-    // החזרת התשובות במקום standard processing
-    // נצטרך לטפל בזה אחר כך בקוד - אבל בינתיים נשמור את זה ב-params
     params.answers = allAnswers;
-    params.isChoiceOnly = true; // סמן שזה רק בחירה מרובה
+    params.isChoiceOnly = true;
   } else if (selectedOp === "fractions" && levelConfig.allowFractions) {
     const densSmall = [2, 4, 5, 10];
     const densBig = [2, 3, 4, 5, 6, 8, 10, 12];
@@ -1592,7 +1533,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         ? densSmall.filter((d) => d <= levelConfig.fractions.maxDen)
         : densBig.filter((d) => d <= levelConfig.fractions.maxDen);
 
-    // כיתה ה' - צמצום והרחבה, חיבור וחיסור, מספרים מעורבים
     if (gradeKey === "g5") {
       if (mathForce === "frac_to_mixed") {
         const whole = randInt(1, 3);
@@ -1605,10 +1545,8 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       } else {
       const fractionType = Math.random();
       if (fractionType < 0.2) {
-        // מספרים מעורבים (20% מהשאלות)
         const variant = Math.random();
         if (variant < 0.5) {
-          // המרה משבר למספר מעורב
           const whole = randInt(1, 3);
           const den = dens[Math.floor(Math.random() * dens.length)] || 4;
           const num = randInt(1, den - 1);
@@ -1617,7 +1555,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           question = `   ${improperNum}/${den}  : ${BLANK}`;
           params = { kind: "frac_to_mixed", improperNum, den, whole, num };
         } else {
-          // המרה ממספר מעורב לשבר
           const whole = randInt(1, 3);
           const den = dens[Math.floor(Math.random() * dens.length)] || 4;
           const num = randInt(1, den - 1);
@@ -1627,21 +1564,18 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           params = { kind: "mixed_to_frac", whole, num, den, improperNum };
         }
       } else if (fractionType < 0.5) {
-        // צמצום והרחבה
         const den = dens[Math.floor(Math.random() * dens.length)] || 4;
         const num = randInt(1, den - 1);
         const factor = randInt(2, 3);
         const variant = Math.random();
         
         if (variant < 0.5) {
-          // הרחבה: מצא שבר שווה
           const expandedNum = num * factor;
           const expandedDen = den * factor;
           correctAnswer = `${expandedNum}/${expandedDen}`;
           question = `   -${num}/${den} ( -${factor}): ${BLANK}`;
           params = { kind: "frac_expand", num, den, factor, expandedNum, expandedDen };
         } else {
-          // צמצום: מצא שבר שווה
           const reducedNum = num;
           const reducedDen = den;
           const expandedNum = num * factor;
@@ -1651,7 +1585,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           params = { kind: "frac_reduce", num: expandedNum, den: expandedDen, reducedNum, reducedDen };
         }
       } else {
-        // חיבור וחיסור שברים - כיתה ה'
         const den1 = dens[Math.floor(Math.random() * dens.length)] || 4;
         let den2 = dens[Math.floor(Math.random() * dens.length)] || 6;
         if (den1 === den2 && Math.random() < 0.3) {
@@ -1694,7 +1627,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
             "",
         });
         
-        // צמצום התוצאה אם אפשר
         const gcd = (x, y) => (y === 0 ? x : gcd(y, x % y));
         const divisor = gcd(resNum, commonDen);
         if (divisor > 1) {
@@ -1707,15 +1639,12 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       }
       }
     } else if (gradeKey === "g6") {
-      // כיתה ו' - כפל וחילוק שברים, שבר כמנת חילוק
       const fractionType = Math.random();
       if (fractionType < 0.2) {
-        // שבר כמנת חילוק (20% מהשאלות)
         const dividend = randInt(2, 20);
         const divisor = randInt(2, 10);
         const quotient = dividend / divisor;
         if (quotient % 1 !== 0) {
-          // אם התוצאה היא שבר
           const gcd = (x, y) => (y === 0 ? x : gcd(y, x % y));
           const divisorGcd = gcd(dividend, divisor);
           const num = dividend / divisorGcd;
@@ -1730,7 +1659,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           question = pickDivQ();
           params = { kind: "frac_as_division", dividend, divisor, num, den };
         } else {
-          // אם התוצאה היא מספר שלם, ננסה שוב
           const newDividend = randInt(3, 15);
           const newDivisor = randInt(2, 7);
           const newGcd = (x, y) => (y === 0 ? x : newGcd(y, x % y));
@@ -1745,7 +1673,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           params = { kind: "frac_as_division", dividend: newDividend, divisor: newDivisor, num, den };
         }
       } else if (fractionType < 0.63) {
-        // כפל שברים
         const den1 = dens[Math.floor(Math.random() * dens.length)] || 4;
         const den2 = dens[Math.floor(Math.random() * dens.length)] || 6;
         const n1 = randInt(1, den1 - 1);
@@ -1754,7 +1681,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         const resNum = n1 * n2;
         const resDen = den1 * den2;
         
-        // צמצום התוצאה
         const gcd = (x, y) => (y === 0 ? x : gcd(y, x % y));
         const divisor = gcd(resNum, resDen);
         const finalNum = resNum / divisor;
@@ -1785,17 +1711,14 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         ][Math.floor(Math.random() * 3)];
         params = { kind: "frac_compare_same_den", n1, n2, den };
       } else {
-        // חילוק שברים
         const den1 = dens[Math.floor(Math.random() * dens.length)] || 4;
         const den2 = dens[Math.floor(Math.random() * dens.length)] || 6;
         const n1 = randInt(1, den1 - 1);
         const n2 = randInt(1, den2 - 1);
         
-        // חילוק = כפל בהופכי
         const resNum = n1 * den2;
         const resDen = den1 * n2;
         
-        // צמצום התוצאה
         const gcd = (x, y) => (y === 0 ? x : gcd(y, x % y));
         const divisor = gcd(resNum, resDen);
         const finalNum = resNum / divisor;
@@ -1811,7 +1734,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         params = { kind: "frac_divide", n1, den1, n2, den2, finalNum, finalDen };
       }
     } else if (gradeKey === "g3" || gradeKey === "g4") {
-      // כיתות ג'-ד' — מכנה זהה, השוואה, צמצום בסיסי, שקילות פשוטה
       const g4tag = gradeKey === "g4" ? "" : "";
       const den = dens[Math.floor(Math.random() * dens.length)] || 4;
       const branch = Math.random();
@@ -1932,7 +1854,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         };
       }
     } else if (gradeKey === "g1" || gradeKey === "g2") {
-      // כיתות א׳–ב׳ — חצי ורבע בלבד; כיתה א׳ בטווחים צרים יותר
       const isG1 = gradeKey === "g1";
       const halfWholeHi = isG1 ? 12 : 20;
       const quarterWholeHi = isG1 ? 12 : 20;
@@ -1981,12 +1902,9 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         }
       }
     }
-  // ===== אחוזים (כיתות ה–ו) =====
   } else if (selectedOp === "percentages") {
     const maxBase = levelConfig.percentages?.maxBase || 400;
     const maxPercent = levelConfig.percentages?.maxPercent || 50;
-    // חשוב: בשאלות אחוזים אנחנו רוצים תוצאה מדויקת ושלמה (בלי שארית ובלי אומדן),
-    // לכן בוחרים base שמתאים ל-p כך ש-(base * p) / 100 יוצא מספר שלם.
     const gcd = (x, y) => {
       let a = Math.abs(x);
       let b = Math.abs(y);
@@ -2016,7 +1934,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     if (mathForce === "perc_discount") t = "discount";
 
     if (t === "part_of") {
-      correctAnswer = (base * p) / 100; // תמיד שלם לפי בחירת base
+      correctAnswer = (base * p) / 100;
       const partTemplates = [
         () => `  ${p}%  ${base}?`,
         () => ` ${p}%  ${base}.`,
@@ -2042,7 +1960,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         presentationVariant: templateIndex,
       };
     } else {
-      const discount = (base * p) / 100; // תמיד שלם
+      const discount = (base * p) / 100;
       const finalPrice = base - discount;
       const items = [
         { name: "", gender: "m" },
@@ -2078,7 +1996,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         presentationVariant: randInt(0, 7),
       };
     }
-  // ===== סדרות =====
   } else if (selectedOp === "sequences") {
     const maxStart = levelConfig.sequences?.maxStart || 20;
     const maxStep = levelConfig.sequences?.maxStep || 9;
@@ -2092,13 +2009,12 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       step = randInt(-maxStep, maxStep) || 2;
     }
 
-    const posOfBlank = randInt(0, 4); // אחד מחמשת המספרים
+    const posOfBlank = randInt(0, 4);
     const seq = [];
     for (let i = 0; i < 5; i++) {
       seq.push(start + i * step);
     }
     correctAnswer = seq[posOfBlank];
-    // יצירת הסדרה עם פסיקים, אבל בלי פסיקים לפני ואחרי המספר החסר
     const displayParts = [];
     for (let i = 0; i < seq.length; i++) {
       if (i === posOfBlank) {
@@ -2107,13 +2023,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         displayParts.push(seq[i]);
       }
     }
-    // חיבור עם פסיקים, אבל בלי פסיקים לפני ואחרי BLANK
     const display = displayParts
       .map((item, idx) => {
         if (item === BLANK) {
           return BLANK;
         }
-        // נוסיף פסיק רק אחרי המספר, אם יש משהו אחרי (ולא BLANK)
         const needsCommaAfter = idx < displayParts.length - 1 && displayParts[idx + 1] !== BLANK;
         return needsCommaAfter ? item + ", " : item;
       })
@@ -2144,9 +2058,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       exerciseText,
       variant: seqVariant,
     };
-  // ===== עשרוניים =====
   } else if (selectedOp === "decimals") {
-    // Grade-band alignment: א׳–ב׳ אין פעולת עשרוניים ב GRADES — אם הגיע סימפול ידני/ארוע נדיר, נפיל לתפיסה מספרית.
     if (gradeKey === "g1" || gradeKey === "g2") {
       return generateQuestion(
         levelConfig,
@@ -2192,9 +2104,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = big;
       operandB = small;
     } else if (gradeKey === "g6" && (levelConfig.decimals?.multiply || levelConfig.decimals?.divide || levelConfig.repeatingDecimals) && Math.random() < 0.5) {
-      // שבר עשרוני מחזורי - רק אם מוגדר
       if (levelConfig.repeatingDecimals && Math.random() < 0.2) {
-        // שבר מחזורי: 1/3 = 0.333..., 1/6 = 0.1666...
         const den = [3, 6, 9][Math.floor(Math.random() * 3)];
         const num = 1;
         const repeating = num / den;
@@ -2210,7 +2120,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         const num = round(Math.random() * maxBase, places);
         
         if (useMultiply) {
-          // כפל ב-10 או 100
           const result = round(num * factor, places);
           correctAnswer = result;
           question = `${num.toFixed(places)} × ${factor} = ${BLANK}`;
@@ -2218,7 +2127,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           operandA = num;
           operandB = factor;
         } else if (useDivide) {
-          // חילוק ב-10 או 100
           const result = round(num / factor, places);
           correctAnswer = result;
           question = `${num.toFixed(places)} ÷ ${factor} = ${BLANK}`;
@@ -2226,7 +2134,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           operandA = num;
           operandB = factor;
         } else {
-          // כפל וחילוק עשרוניים רגילים
           const a = round(Math.random() * maxBase, places);
           const b = round(Math.random() * maxBase, places);
           if (levelConfig.decimals?.multiply) {
@@ -2245,7 +2152,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         }
       }
     } else {
-      // עשרוניים רגילים — השוואה / עיגול לשלם / חיבור וחיסור
       if (mathForce === "dec_add" || mathForce === "dec_sub") {
         const a = round(Math.random() * maxBase, places);
         const b = round(Math.random() * maxBase, places);
@@ -2334,7 +2240,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       }
       }
     }
-  // ===== עיגול =====
   } else if (selectedOp === "rounding") {
     const roundingConfig = levelConfig.rounding || {};
     const toWhat = roundingConfig.toWhat || (Math.random() < 0.5 ? 10 : 100);
@@ -2449,17 +2354,14 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       
       const variant = Math.random();
       if (variant < 0.33) {
-        // כפל וחיבור: a + b × c
         correctAnswer = a + b * c;
         question = `${a} + ${b} × ${c} = ${BLANK}`;
         params = { kind: "order_add_mul", a, b, c };
       } else if (variant < 0.66) {
-        // כפל וחיסור: a × b - c
         correctAnswer = a * b - c;
         question = `${a} × ${b} - ${c} = ${BLANK}`;
         params = { kind: "order_mul_sub", a, b, c };
       } else {
-        // עם סוגריים: (a + b) × c
         correctAnswer = (a + b) * c;
         question = `(${a} + ${b}) × ${c} = ${BLANK}`;
         params = { kind: "order_parentheses", a, b, c };
@@ -2467,8 +2369,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = a;
       operandB = b;
     } else {
-      // משוואות רגילות
-      // כיתה א' - משוואות פשוטות (5 + __ = 7, 10 - __ = 6)
       if (gradeKey === "g1" && Math.random() < 0.3) {
         const eqType = Math.random() < 0.5 ? "add" : "sub";
         if (eqType === "add") {
@@ -2601,13 +2501,10 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     }
   } else if (selectedOp === "compare") {
     const maxVal = levelConfig.compare?.max || levelConfig.addition?.max || 500;
-    // מספרים שליליים רק לכיתות שמוגדרות allowNegatives=true (ה׳ ו-ו׳)
     const allowNeg = gradeCfg.allowNegatives;
     const a = allowNeg ? randInt(-20, maxVal) : randInt(0, maxVal);
     const b = allowNeg ? randInt(-20, maxVal) : randInt(0, maxVal);
 
-    // חשוב: הסימן צריך להיות מתמטי נכון. כדי למנוע היפוך בתצוגת RTL,
-    // נעטוף את התרגיל עצמו ב-LTR markers (LRI/PDI).
     const symbol = computeComparisonSign(a, b) ?? "=";
 
     correctAnswer = symbol;
@@ -2646,7 +2543,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       isStory: false,
     });
 
-  // ===== Number Sense – שכנים, עשרות/אחדות, זוגי/אי-זוגי, השלמה, ישר המספרים, מנייה =====
   } else if (selectedOp === "number_sense") {
     const maxNumberSense = levelConfig.number_sense?.max || levelConfig.addition?.max || 999;
 
@@ -2842,7 +2738,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       question = `${BLANK} + ${b} = ${c}`;
       params = { kind: "ns_complement100", a, b, c };
     } else if (t === "number_line") {
-      // כיתה א' - ישר המספרים
       const start = randInt(0, 15);
       const end = start + 5;
       const missing = randInt(start + 1, end - 1);
@@ -2854,36 +2749,29 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       question = `Fill in the missing number on the number line: ${numbers.join(" - ")}`;
       params = { kind: "ns_number_line", start, end, missing, numbers };
     } else if (t === "counting") {
-      // כיתה א' - מנייה וספירה
       const countType = Math.random() < 0.5 ? "forward" : "backward";
       const start = randInt(1, 20);
       if (countType === "forward") {
-        // ספירה קדימה: מה המספר הבא?
         correctAnswer = start + 1;
         question = `Count forward: ${start}, ${BLANK}`;
         params = { kind: "ns_counting_forward", start, next: start + 1 };
       } else {
-        // ספירה אחורה: מה המספר הקודם?
         if (start > 1) {
           correctAnswer = start - 1;
           question = `Count backward: ${start}, ${BLANK}`;
           params = { kind: "ns_counting_backward", start, prev: start - 1 };
         } else {
-          // אם start = 1, נשנה לספירה קדימה
           correctAnswer = start + 1;
           question = `Count forward: ${start}, ${BLANK}`;
           params = { kind: "ns_counting_forward", start, next: start + 1 };
         }
       }
     } else {
-      // even_odd – תשובה טקסטואלית
       const n = randInt(0, Math.min(200, maxNumberSense));
       const isEven = n % 2 === 0;
       correctAnswer = isEven ? "even" : "odd";
       question = `Is the number ${n} even?`;
       params = { kind: "ns_even_odd", n, isEven };
-      // רק שני ניסוחים שונים לזוגיות — לא ניתן למלא 4 אפשרויות ייחודיות באותה מילה בלי כפילויות;
-      // השכנים n−1 ו-n+1 תמיד באותה זוגיות (מנוגדים ל-n), ולכן היו יוצרים כפילויות ב-MCQ.
       let answers = ["even", "odd"];
       for (let i = answers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -2903,7 +2791,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     }
     }
 
-  // ===== גורמים / כפולות / מ.כ.ק/מ.א.ח – Factors & Multiples =====
   } else if (selectedOp === "factors_multiples") {
     const types = ["factor", "multiple", "gcd"];
     const t = types[Math.floor(Math.random() * types.length)];
@@ -2915,7 +2802,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       for (let i = 1; i <= n; i++) {
         if (n % i === 0) factors.push(i);
       }
-      const correct = factors[randInt(1, factors.length - 1)]; // לא 1
+      const correct = factors[randInt(1, factors.length - 1)];
       const options = new Set([correct]);
       while (options.size < 4) {
         const candidate = randInt(2, n + 5);
@@ -2924,13 +2811,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         }
       }
       let answers = Array.from(options);
-      // ערבוב התשובות - Fisher-Yates shuffle
       for (let i = answers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [answers[i], answers[j]] = [answers[j], answers[i]];
       }
       
-      // ערבוב נוסף
       const shuffled = [...answers];
       for (let i = 0; i < shuffled.length; i++) {
         const randomIndex = Math.floor(Math.random() * shuffled.length);
@@ -2968,13 +2853,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         if (candidate % base !== 0) options.add(candidate);
       }
       let answers = Array.from(options);
-      // ערבוב התשובות - Fisher-Yates shuffle
       for (let i = answers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [answers[i], answers[j]] = [answers[j], answers[i]];
       }
       
-      // ערבוב נוסף
       const shuffled = [...answers];
       for (let i = 0; i < shuffled.length; i++) {
         const randomIndex = Math.floor(Math.random() * shuffled.length);
@@ -3004,7 +2887,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         isStory: false,
       });
     } else {
-      // gcd – מ.א.ח
       const base = randInt(2, 10);
       const k1 = randInt(2, 10);
       const k2 = randInt(2, 10);
@@ -3015,9 +2897,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       params = { kind: "fm_gcd", a, b, gcd: base };
     }
 
-  // ===== תרגילי מילים (רק חשבון – בלי גאומטריה) =====
   } else if (selectedOp === "word_problems") {
-    // בריכות נפרדות לפי כיתה — בלי שיתוף תבניות early ↔ mid ↔ late
     const templatesEarlyG1 = [
       "simple_add",
       "simple_sub",
@@ -3142,8 +3022,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         give,
       };
     } else if (t === "pocket_money" || t === "pocket_money_g2") {
-      // כיתה א׳: טווח מספרים לפי רמת הכיתה (addition.max) — לא ערכים קשוחים
-      // כיתה ב׳: טווח גדול יותר אך גם מגוון לפי levelConfig
       const maxMoney =
         gradeKey === "g1"
           ? (levelConfig.addition?.max || 20)
@@ -3245,14 +3123,12 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         loss,
       };
     } else if (t === "time_days") {
-      // שאלות זמן - ימים בשבוע (כיתות א'-ב')
       let variant = Math.random();
       if (mathForce === "wp_time_days") variant = 0.1;
       else if (mathForce === "wp_time_date") variant = 0.9;
       if (variant < 0.5) {
-        // בוחרים startDay ו-days, מחשבים endDay — כך התשובה תמיד נכונה
         const weekdays = ["", "", "", "", "", "", ""];
-        const startDayIdx = randInt(0, 5); // ראשון עד שישי (לא שבת כנקודת התחלה)
+        const startDayIdx = randInt(0, 5);
         const days = randInt(1, 6);
         const endDayIdx = (startDayIdx + days) % 7;
         const startDay = weekdays[startDayIdx];
@@ -3279,15 +3155,14 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         };
       }
     } else if (t === "coins") {
-      // שאלות כסף - מטבעות (כיתות א'-ב')
       let variant = Math.random();
       if (mathForce === "wp_coins") variant = 0.1;
       else if (mathForce === "wp_coins_spent") variant = 0.9;
       if (variant < 0.5) {
         const coins1 = randInt(1, 5);
         const coins2 = randInt(1, 5);
-        const value1 = coins1 * 1; // שקל
-        const value2 = coins2 * 2; // 2 שקלים
+        const value1 = coins1 * 1;
+        const value2 = coins2 * 2;
         correctAnswer = value1 + value2;
         question = `  ${coins1}    -${coins2}   2 .      ?`;
         params = {
@@ -3311,10 +3186,9 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         };
       }
     } else if (t === "division_simple") {
-      // שאלות חילוק פשוטות (כיתה ב') - רק ללא שארית
       const perGroup = randInt(2, 5);
       const groups = randInt(2, 10);
-      const total = perGroup * groups; // וודא שאין שארית
+      const total = perGroup * groups;
       correctAnswer = groups;
       question = ` ${total} .     ${perGroup}   .   ?`;
       params = {
@@ -3341,7 +3215,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       };
     } else if (t === "shop_discount") {
       const discPerc = [10, 20, 25, 50][randInt(0, 3)];
-      // חשוב: תשובה מדויקת ושלמה (בלי שברים ובלי עיגול)
       const gcd = (x, y) => {
         let a = Math.abs(x);
         let b = Math.abs(y);
@@ -3352,11 +3225,11 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         }
         return a || 1;
       };
-      const step = 100 / gcd(discPerc, 100); // המחיר חייב להיות כפולה של step כדי שההנחה תהיה שלמה
+      const step = 100 / gcd(discPerc, 100);
       const minMul = Math.ceil(50 / step);
       const maxMul = Math.floor(400 / step);
       const price = step * randInt(Math.max(1, minMul), Math.max(1, maxMul));
-      const discount = (price * discPerc) / 100; // תמיד שלם לפי בחירת price
+      const discount = (price * discPerc) / 100;
       const finalPrice = price - discount;
       correctAnswer = finalPrice;
       question = `  ${price}      ${discPerc}%.    ?`;
@@ -3399,7 +3272,7 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         };
       }
     } else if (t === "distance_time") {
-      const speed = [5, 6, 8, 10][randInt(0, 3)]; // קמ"ש
+      const speed = [5, 6, 8, 10][randInt(0, 3)];
       const hours = randInt(1, 4);
       const distance = speed * hours;
       correctAnswer = distance;
@@ -3487,7 +3360,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       };
     }
     isStory = true;
-  // ===== סימני התחלקות =====
   } else if (selectedOp === "divisibility") {
     const divisibilityConfig = levelConfig.divisibility || {};
     const divisors = divisibilityConfig.divisors || [2, 5, 10];
@@ -3508,13 +3380,10 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     operandA = num;
     operandB = divisor;
     
-    // יצירת תשובות (תשובה נכונה + תשובה שגויה בלבד - 2 תשובות)
     const wrongAnswer = isDivisible ? "No" : "Yes";
     const answers = [correctAnswer, wrongAnswer];
     
-    // ערבוב התשובות
     if (Math.random() < 0.5) {
-      // נהפוך את הסדר ב-50% מהמקרים
       answers.reverse();
     }
 
@@ -3536,7 +3405,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       isStory: false,
     });
 
-  // ===== מספרים ראשוניים ופריקים =====
   } else if (selectedOp === "prime_composite") {
     const primeConfig = levelConfig.prime_composite || {};
     const maxNum = primeConfig.maxNumber || 100;
@@ -3683,7 +3551,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       isStory: false,
     });
 
-  // ===== חזקות =====
   } else if (selectedOp === "powers") {
     const powersConfig = levelConfig.powers || {};
     const maxBase = powersConfig.maxBase || 10;
@@ -3694,12 +3561,10 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     
     const variant = Math.random();
     if (variant < 0.5) {
-      // מה התוצאה?
       correctAnswer = result;
       question = `${base}^${exp} = ${BLANK}`;
       params = { kind: "power_calc", base, exp, result };
     } else {
-      // מה הבסיס?
       correctAnswer = base;
       question = `${BLANK}^${exp} = ${result}`;
       params = { kind: "power_base", base, exp, result };
@@ -3708,7 +3573,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     operandA = base;
     operandB = exp;
 
-  // ===== יחס =====
   } else if (selectedOp === "ratio") {
     const a = randInt(1, 20);
     const b = randInt(1, 20);
@@ -3744,13 +3608,10 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     }
 
     if (ratioSlot === "find") {
-      // מציאת היחס
       correctAnswer = `${simplifiedA}:${simplifiedB}`;
       question = `   ${a} -${b}?   .`;
       params = { kind: "ratio_find", a, b, simplifiedA, simplifiedB };
 
-      // ✅ יחס הוא תשובה טקסטואלית ("a:b") ולכן יצירת התשובות הכללית עלולה להחזיר אופציה אחת בלבד.
-      // כאן אנחנו מייצרים מראש 4 אופציות (1 נכונה + 3 שגויות), כולן "מצומצמות".
       const wrong = new Set();
       const addWrong = (x, y) => {
         if (x <= 0 || y <= 0) return;
@@ -3758,10 +3619,9 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
         if (r !== correctAnswer) wrong.add(r);
       };
 
-      // הצעות שגויות שכיחות (לא שקולות ליחס הנכון)
-      addWrong(simplifiedB, simplifiedA); // היפוך יחס
-      addWrong(simplifiedA + 1, simplifiedB); // שינוי מספר ראשון
-      addWrong(simplifiedA, simplifiedB + 1); // שינוי מספר שני
+      addWrong(simplifiedB, simplifiedA);
+      addWrong(simplifiedA + 1, simplifiedB);
+      addWrong(simplifiedA, simplifiedB + 1);
       if (simplifiedA > 1) addWrong(simplifiedA - 1, simplifiedB);
       if (simplifiedB > 1) addWrong(simplifiedA, simplifiedB - 1);
 
@@ -3774,15 +3634,12 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       }
 
       const answers = shuffle([correctAnswer, ...Array.from(wrong).slice(0, 3)]);
-      // אם משום מה עדיין חסר, נשלים בפולבק פשוט
       while (answers.length < 4) {
         const fallback = simplifyRatio(randInt(1, 20), randInt(1, 20));
         if (!answers.includes(fallback) && fallback !== correctAnswer) answers.push(fallback);
       }
       params.answers = answers;
     } else if (ratioSlot === "first") {
-      // מציאת המספר הראשון — בוחרים k כמספר שלם כך ש-first=simplifiedA*k, second=simplifiedB*k
-      // בכך היחס first:second שמור בדיוק (ללא Math.round)
       const kMax = Math.max(1, Math.floor(20 / Math.max(simplifiedA, simplifiedB)));
       const k = randInt(1, kMax);
       const firstNum = simplifiedA * k;
@@ -3791,7 +3648,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       question = `     ${simplifiedA}:${simplifiedB}.    ${secondNum}.   ?`;
       params = { kind: "ratio_first", firstNum, secondNum, simplifiedA, simplifiedB, k };
     } else {
-      // מציאת המספר השני — אותו עיקרון, k מספר שלם
       const kMax = Math.max(1, Math.floor(20 / Math.max(simplifiedA, simplifiedB)));
       const k = randInt(1, kMax);
       const firstNum = simplifiedA * k;
@@ -3804,7 +3660,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     operandA = a;
     operandB = b;
 
-  // ===== תכונות ה-0 וה-1 (כיתה ד') =====
   } else if (selectedOp === "zero_one_properties") {
     const a = randInt(1, 100);
     const slot = Math.random();
@@ -3858,34 +3713,30 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandB = a;
     }
 
-  // ===== אומדן (כיתות ד'-ה') =====
   } else if (selectedOp === "estimation") {
     const maxVal = levelConfig.estimation?.max || 1000;
     const variant = Math.random();
     if (variant < 0.33) {
-      // אומדן חיבור
       const a = randInt(10, maxVal);
       const b = randInt(10, maxVal);
       const exact = a + b;
-      const estimate = Math.round(exact / 10) * 10; // עיגול לעשרות
+      const estimate = Math.round(exact / 10) * 10;
       correctAnswer = estimate;
       question = `    ${a} + ${b} (  ): ${BLANK}`;
       params = { kind: "est_add", a, b, exact, estimate };
       operandA = a;
       operandB = b;
     } else if (variant < 0.66) {
-      // אומדן כפל
       const a = randInt(10, Math.min(100, maxVal));
       const b = randInt(2, 10);
       const exact = a * b;
-      const estimate = Math.round(exact / 100) * 100; // עיגול למאות
+      const estimate = Math.round(exact / 100) * 100;
       correctAnswer = estimate;
       question = `    ${a} × ${b} (  ): ${BLANK}`;
       params = { kind: "est_mul", a, b, exact, estimate };
       operandA = a;
       operandB = b;
     } else {
-      // אומדן כמויות
       const quantity = randInt(50, maxVal);
       const estimate = Math.round(quantity / 10) * 10;
       correctAnswer = estimate;
@@ -3895,7 +3746,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandB = null;
     }
 
-  // ===== קנה מידה (כיתה ו') =====
   } else if (selectedOp === "scale") {
     const scaleConfig = levelConfig.scale || {};
     const maxScale = scaleConfig.max || 100;
@@ -3911,7 +3761,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     }
 
     if (scaleSlot === "map_to_real") {
-      // מציאת אורך במציאות לפי מפה
       const mapLength = randInt(1, 10);
       const scale = randInt(2, Math.min(10, maxScale));
       const realLength = mapLength * scale;
@@ -3921,7 +3770,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = mapLength;
       operandB = scale;
     } else if (scaleSlot === "real_to_map") {
-      // מציאת אורך במפה לפי מציאות — תשובה שלמה: בוחרים mapLength ו-scale ומחשבים realLength
       const mapLength = randInt(1, 10);
       const scale = randInt(2, Math.min(10, maxScale));
       const realLength = mapLength * scale;
@@ -3931,7 +3779,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandA = realLength;
       operandB = scale;
     } else {
-      // מציאת קנה מידה — scale תמיד שלם
       const mapLength = randInt(1, 5);
       const scale = randInt(2, Math.min(10, maxScale));
       const realLength = mapLength * scale;
@@ -3942,7 +3789,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
       operandB = realLength;
     }
   } else {
-    // ברירת מחדל - חיבור פשוט
     const maxA = levelConfig.addition.max || 20;
     const a = randInt(1, maxA);
     const b = randInt(1, maxA);
@@ -3960,7 +3806,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     operandB = b;
   }
 
-  // אם יש תשובות מוכנות ב-params (למשל עבור division_with_remainder), נשתמש בהן
   if (params?.answers && Array.isArray(params.answers) && params.answers.length >= 4) {
     question = applyMathLevelPresentation(question, {
       selectedOp,
@@ -4021,7 +3866,6 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
     );
   }
 
-  // וודא שיש טקסט לשאלה
   question = applyMathLevelPresentation(question, {
     selectedOp,
     params,

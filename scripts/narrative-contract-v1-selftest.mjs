@@ -11,12 +11,12 @@ const {
   narrativeSectionTextHe,
   validateNarrativeContractV1,
 } = await importUtils("../utils/contracts/narrative-contract-v1.js");
-const { buildTopicRecommendationNarrative } = await importUtils("../utils/detailed-report-parent-letter-he.js");
+const { buildTopicRecommendationNarrative } = await importUtils("../utils/detailed-report-parent-letter.js");
 const {
   topicFreshnessUnifiedLineHe,
   topicGatesEvidenceDecisionCompactLineHe,
   topicSupportFlowUnifiedLineHe,
-} = await importUtils("../utils/parent-report-ui-explain-he.js");
+} = await importUtils("../utils/parent-report-ui-explain.js");
 const { buildTopicRecommendationRecord } = await importUtils("../utils/topic-next-step-engine.js");
 
 function runNarrativeContractV1Selftest() {

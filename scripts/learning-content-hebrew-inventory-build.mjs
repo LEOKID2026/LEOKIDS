@@ -55,7 +55,7 @@ const SCAN_ROOTS = [
   "utils/student-question-stem-sanitizer.js",
   "utils/learning-ui-classes.js",
   "utils/learning-question-font.js",
-  "utils/diagnostic-labels-he.js",
+  "utils/diagnostic-labels.js",
   "utils/curriculum-audit/israeli-primary-curriculum-map.js",
   "data/hebrew-curriculum.js",
   "data/hebrew-g1-content-map.js",

@@ -13,42 +13,36 @@ import { mapPlannerNextActionToHebrew } from "../../lib/learning-client/adaptive
 import {
   buildParentReportAIExplanation,
   buildStrictParentReportAIInput,
-  getDeterministicParentReportExplanation,
+  getDeterministicParentReportExplanation
 } from "./parent-report-ai-explainer.js";
 import { buildParentAiContext } from "../parent-ai-context/build-parent-ai-context.js";
 import { buildInsightPacketFromV2Snapshot } from "../parent-report-insights/build-packet-from-v2-snapshot.js";
 import {
   buildParentReportAINarrative,
-  buildDeterministicFallbackNarrative,
+  buildDeterministicFallbackNarrative
 } from "../parent-report-ai-narrative/index.js";
 
-const SUBJECT_KEYS = ["math", "geometry", "english", "science", "hebrew", "moledet-geography"];
+const SUBJECT_KEYS = ["math", "geometry", "english", "science"];
 
 const SUMMARY_Q = {
   math: "mathQuestions",
   geometry: "geometryQuestions",
   english: "englishQuestions",
-  science: "scienceQuestions",
-  hebrew: "hebrewQuestions",
-  "moledet-geography": "moledetGeographyQuestions",
+  science: "scienceQuestions"
 };
 
 const SUMMARY_ACC = {
   math: "mathAccuracy",
   geometry: "geometryAccuracy",
   english: "englishAccuracy",
-  science: "scienceAccuracy",
-  hebrew: "hebrewAccuracy",
-  "moledet-geography": "moledetGeographyAccuracy",
+  science: "scienceAccuracy"
 };
 
 const MAP_FIELD = {
   math: "mathOperations",
   geometry: "geometryTopics",
   english: "englishTopics",
-  science: "scienceTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
+  science: "scienceTopics"
 };
 
 /** Maps detailed-report `overallSnapshot.subjectCoverage[].subject` → V2 `summary` question / accuracy keys. */
@@ -56,13 +50,7 @@ const DETAILED_COVERAGE_TO_SUMMARY = {
   math: { q: "mathQuestions", c: "mathCorrect", a: "mathAccuracy" },
   geometry: { q: "geometryQuestions", c: "geometryCorrect", a: "geometryAccuracy" },
   english: { q: "englishQuestions", c: "englishCorrect", a: "englishAccuracy" },
-  science: { q: "scienceQuestions", c: "scienceCorrect", a: "scienceAccuracy" },
-  hebrew: { q: "hebrewQuestions", c: "hebrewCorrect", a: "hebrewAccuracy" },
-  "moledet-geography": {
-    q: "moledetGeographyQuestions",
-    c: "moledetGeographyCorrect",
-    a: "moledetGeographyAccuracy",
-  },
+  science: { q: "scienceQuestions", c: "scienceCorrect", a: "scienceAccuracy" }
 };
 
 /**
@@ -107,8 +95,8 @@ export function parentReportV2SnapshotFromDetailedPayload(detailedPayload) {
     diagnosticOverviewHe: {
       strongestAreaLineHe: "",
       mainFocusAreaLineHe: "",
-      requiresAttentionPreviewHe: [],
-    },
+      requiresAttentionPreviewHe: []
+    }
   };
 
   for (const row of cov) {
@@ -167,7 +155,7 @@ export function parentReportV2SnapshotFromDetailedPayload(detailedPayload) {
     englishTopics: {},
     scienceTopics: {},
     hebrewTopics: {},
-    moledetGeographyTopics: {},
+    moledetGeographyTopics: {}
   };
 }
 
@@ -180,8 +168,8 @@ export function parentReportV2SnapshotFromDetailedPayload(detailedPayload) {
  * output: summary + strengths + focusAreas + homeTips + cautionNote) is added alongside it.
  *
  * @param {Record<string, unknown>|null|undefined} detailedPayload
- * @param {{ env?: Record<string, string | undefined>; preferDeterministicOnly?: boolean; scope?: unknown; canonicalIntent?: string; now?: string }} [options]
- * @returns {Promise<{ parentAiExplanation: { ok: true, text: string, source: "deterministic_fallback"|"ai", structured?: object | null } | null }>}
+ * @param {{ env?: Record<string, string || undefined>; preferDeterministicOnly?: boolean; scope?: unknown; canonicalIntent?: string; now?: string }} [options]
+ * @returns {Promise<{ parentAiExplanation: { ok: true, text: string, source: "deterministic_fallback"|"ai", structured?: object || null } || null }>}
  */
 export async function enrichDetailedParentReportWithParentAi(detailedPayload, options = {}) {
   try {
@@ -291,7 +279,7 @@ function buildGradePracticeBreakdownFromV2(report) {
         registeredGradeKey: row.registeredGradeKey || report.registeredGradeKey || null,
         gradeRelation: row.gradeRelation || "unknown",
         questions: q,
-        accuracy: Number(row.accuracy) || 0,
+        accuracy: Number(row.accuracy) || 0
       });
     }
   }
@@ -363,7 +351,7 @@ function buildStrengthAndNeedsLines(report) {
   }
   return {
     mainStrengths: partsS.join(" · ").slice(0, 280),
-    mainPracticeNeeds: partsN.join(" · ").slice(0, 280),
+    mainPracticeNeeds: partsN.join(" · ").slice(0, 280)
   };
 }
 
@@ -416,7 +404,7 @@ export function buildStrictParentReportAIInputFromParentReportV2(report) {
     dataConfidence: dataConfidenceFromCount(nForConfidence),
     mainStrengths,
     mainPracticeNeeds,
-    recommendedNextStep,
+    recommendedNextStep
   };
   return buildStrictParentReportAIInput(raw);
 }
@@ -428,17 +416,17 @@ export function buildStrictParentReportAIInputFromParentReportV2(report) {
  *
  * @param {Record<string, unknown>|null|undefined} v2Snapshot
  * @param {{ env?: Record<string,string|undefined>; preferDeterministicOnly?: boolean; now?: string }} [options]
- * @returns {Promise<{ source: "ai" | "deterministic_fallback"; structured: object } | null>}
+ * @returns {Promise<{ source: "ai" || "deterministic_fallback"; structured: object } || null>}
  */
 async function buildStructuredNarrativeFromV2Snapshot(v2Snapshot, options = {}) {
   try {
     const packet = buildInsightPacketFromV2Snapshot(v2Snapshot, {
-      now: typeof options?.now === "string" ? options.now : "",
+      now: typeof options?.now === "string" ? options.now : ""
     });
     if (!packet || packet.ok === false) return null;
     const result = await buildParentReportAINarrative(packet, {
       env: options?.env || (typeof process !== "undefined" ? process.env : {}),
-      preferDeterministicOnly: options?.preferDeterministicOnly === true,
+      preferDeterministicOnly: options?.preferDeterministicOnly === true
     });
     if (!result?.ok || !result.structured) return null;
     return { source: result.source, structured: result.structured };
@@ -463,13 +451,13 @@ async function buildStructuredNarrativeFromV2Snapshot(v2Snapshot, options = {}) 
  *
  * @param {Record<string, unknown>} report
  * @param {{
- *   env?: Record<string, string | undefined>;
+ *   env?: Record<string, string || undefined>;
  *   preferDeterministicOnly?: boolean;
  *   scope?: unknown;
  *   canonicalIntent?: string;
  *   now?: string;
  * }} [options]
- * @returns {Promise<{ parentAiExplanation: { ok: true, text: string, source: "deterministic_fallback"|"ai", structured?: object | null } | null }>}
+ * @returns {Promise<{ parentAiExplanation: { ok: true, text: string, source: "deterministic_fallback"|"ai", structured?: object || null } || null }>}
  */
 export async function enrichParentReportWithParentAi(report, options = {}) {
   try {
@@ -478,20 +466,20 @@ export async function enrichParentReportWithParentAi(report, options = {}) {
       scope: options.scope,
       canonicalIntent: options.canonicalIntent,
       strictExplainerInputBuilder: (payload) =>
-        buildStrictParentReportAIInputFromParentReportV2(/** @type {Record<string, unknown>} */ (payload)),
+        buildStrictParentReportAIInputFromParentReportV2(/** @type {Record<string, unknown>} */ (payload))
     });
     const strict = context.strictExplainerInput;
     if (!strict) return { parentAiExplanation: null };
     const out = await buildParentReportAIExplanation(strict, {
       env: options.env || (typeof process !== "undefined" ? process.env : {}),
-      preferDeterministicOnly: options.preferDeterministicOnly === true,
+      preferDeterministicOnly: options.preferDeterministicOnly === true
     });
     if (!out.ok || !out.text) return { parentAiExplanation: null };
 
     const structuredResult = await buildStructuredNarrativeFromV2Snapshot(report, {
       env: options.env,
       preferDeterministicOnly: options.preferDeterministicOnly === true,
-      now: typeof options?.now === "string" ? options.now : "",
+      now: typeof options?.now === "string" ? options.now : ""
     });
 
     return {
@@ -500,8 +488,8 @@ export async function enrichParentReportWithParentAi(report, options = {}) {
         text: out.text,
         source: out.source,
         structured: structuredResult?.structured || null,
-        structuredSource: structuredResult?.source || null,
-      },
+        structuredSource: structuredResult?.source || null
+      }
     };
   } catch {
     return { parentAiExplanation: null };
@@ -524,7 +512,7 @@ function buildSynchronousStructuredFallback(v2Snapshot) {
  * `enrichDetailedParentReportWithParentAi` resolves (PDF / print snapshots).
  *
  * @param {Record<string, unknown>|null|undefined} detailedPayload
- * @returns {{ ok: true; text: string; source: "deterministic_fallback"; structured?: object | null; structuredSource?: "deterministic_fallback" | null } | null}
+ * @returns {{ ok: true; text: string; source: "deterministic_fallback"; structured?: object || null; structuredSource?: "deterministic_fallback" || null } || null}
  */
 export function getDeterministicDetailedParentAiExplanation(detailedPayload) {
   try {
@@ -539,7 +527,7 @@ export function getDeterministicDetailedParentAiExplanation(detailedPayload) {
       text,
       source: "deterministic_fallback",
       structured: structured || null,
-      structuredSource: structured ? "deterministic_fallback" : null,
+      structuredSource: structured ? "deterministic_fallback" : null
     };
   } catch {
     return null;
@@ -551,7 +539,7 @@ export function getDeterministicDetailedParentAiExplanation(detailedPayload) {
  * Ensures first paint / PDF / Playwright sees parent insight before async enrich resolves.
  *
  * @param {Record<string, unknown>|null|undefined} report
- * @returns {{ ok: true; text: string; source: "deterministic_fallback"; structured?: object | null; structuredSource?: "deterministic_fallback" | null } | null}
+ * @returns {{ ok: true; text: string; source: "deterministic_fallback"; structured?: object || null; structuredSource?: "deterministic_fallback" || null } || null}
  */
 export function getDeterministicParentAiExplanationFromParentReportV2(report) {
   try {
@@ -565,7 +553,7 @@ export function getDeterministicParentAiExplanationFromParentReportV2(report) {
       text,
       source: "deterministic_fallback",
       structured: structured || null,
-      structuredSource: structured ? "deterministic_fallback" : null,
+      structuredSource: structured ? "deterministic_fallback" : null
     };
   } catch {
     return null;

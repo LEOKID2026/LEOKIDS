@@ -7,10 +7,10 @@ import {
   learningMathIsolateStyle,
   learningProseIsolateStyle,
   splitLearningMixedHebrewMathRuns,
-} from "../../utils/learning-mixed-hebrew-math-render.js";
-import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-hebrew-math.js";
+} from "../../utils/learning-mixed-rtl-math-render.js";
+import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-rtl-math.js";
 import { unwrapLearningRuns } from "../../lib/learning-book/learning-math-line-build.js";
-import { renderLearningMixedHebrewMathText } from "./LearningMixedHebrewMathText";
+import { renderLearningMixedRtlMathText } from "./LearningMixedRtlMathText";
 
 /**
  * Compact stacked fraction — inherits parent font size; does not resize page layout.
@@ -160,7 +160,7 @@ export function renderStackedFractionFragment(text) {
   const raw = String(text);
   if (!raw) return raw;
   if (!hasStackedFractionToken(raw)) return raw;
-  if (/[\u0590-\u05FF]/.test(raw)) return renderMathFractionAwareText(raw);
+  if (/(?!)/.test(raw)) return renderMathFractionAwareText(raw);
   return <MathFractionExpression text={raw} />;
 }
 
@@ -178,7 +178,7 @@ export function renderMathFractionAwareText(text, className = "") {
     );
   }
 
-  if (!/[\u0590-\u05FF]/.test(raw)) {
+  if (!/(?!)/.test(raw)) {
     return <MathFractionExpression text={raw} className={className} />;
   }
 
@@ -261,7 +261,7 @@ export function renderMaybeStackedFractionText(text, className = "") {
   if (!hasStackedFractionToken(text)) {
     return className ? <span className={className}>{text}</span> : text;
   }
-  if (/[\u0590-\u05FF]/.test(text)) return renderMathFractionAwareText(text, className);
+  if (/(?!)/.test(text)) return renderMathFractionAwareText(text, className);
   return <MathFractionExpression text={text} className={className} />;
 }
 
@@ -279,14 +279,14 @@ export function renderMaybeStackedFractionOrMixed(text, className = "") {
         className
       );
     }
-    return renderLearningMixedHebrewMathText(text, className);
+    return renderLearningMixedRtlMathText(text, className);
   }
 
   if (typeof text === "string" && hasStackedFractionToken(text)) {
     return renderMaybeStackedFractionText(text, className);
   }
 
-  return renderLearningMixedHebrewMathText(text, className);
+  return renderLearningMixedRtlMathText(text, className);
 }
 
 export default MathFractionExpression;

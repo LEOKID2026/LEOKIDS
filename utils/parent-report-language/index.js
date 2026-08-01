@@ -6,8 +6,8 @@ export {
   findReadabilityLeakSubstringsInString,
   scanValueForForbidden,
 } from "./forbidden-terms.js";
-export { confidenceLevelParentSummaryHe } from "./confidence-parent-he.js";
-export { priorityLevelParentLabelHe } from "./priority-parent-he.js";
+export { confidenceLevelParentSummaryHe } from "./confidence-parent.js";
+export { priorityLevelParentLabelHe } from "./priority-parent.js";
 export {
   executiveV2HomeFocusHe,
   executiveV2MajorTrendsLinesHe,
@@ -28,10 +28,14 @@ export {
   topicRecommendationV2CautionGatedHe,
   subjectV2ConfidenceSummaryHe,
 } from "./v2-parent-copy.js";
-export { SUBJECT_PHASE3_ROW_LABEL_HE } from "./surface-row-labels-he.js";
-export { diagnosticPrimarySourceParentLabelHe } from "./short-report-source-label-he.js";
-export { normalizePedagogyForParentReportHe } from "./pedagogy-glossary-he.js";
+export { SUBJECT_PHASE3_ROW_LABEL_HE } from "./surface-row-labels.js";
+export { diagnosticPrimarySourceParentLabelHe } from "./short-report-source-label.js";
 export {
+  normalizePedagogyForParentReport,
+  normalizePedagogyForParentReportHe,
+} from "./pedagogy-glossary.js";
+export {
+  normalizeParentFacing,
   normalizeParentFacingHe,
   normalizeExecutiveTrendLine as normalizeExecutiveTrendLineHe,
   normalizeExecutiveTrendLines as normalizeExecutiveTrendLinesHe,
@@ -73,7 +77,7 @@ export {
   GENERIC_CAUTIOUS_SUBJECT_LINE_HE,
   GENERIC_CAUTIOUS_TOPIC_LINE_HE,
   unitsSuggestInstability,
-} from "./subject-withhold-summary-he.js";
+} from "./subject-withhold-summary.js";
 export { GRADE_AWARE_RECOMMENDATION_TEMPLATES } from "./grade-aware-recommendation-templates.js";
 export { resolveGradeAwareParentRecommendationHe } from "./grade-aware-recommendation-resolver.js";
 export {
@@ -90,7 +94,7 @@ export {
   englishSubjectTaxonomyExplanationIdsForTests,
   scienceSubjectTaxonomyExplanationIdsForTests,
   moledetGeographyTaxonomyExplanationIdsForTests,
-} from "./parent-diagnostic-explanations-he.js";
+} from "./parent-diagnostic-explanations.js";
 export {
   M10_ENGINE_PATTERN_HE,
   M10_PARENT_PATTERN_LABELS,
@@ -100,7 +104,7 @@ export {
   parentFacingDiagnosisSnippetHe,
   findM10EnginePatternLeaksInValue,
   sanitizeDiagnosticEngineV2ForParentFacing,
-} from "./parent-facing-pattern-label-he.js";
+} from "./parent-facing-pattern-label.js";
 export {
   SUBJECT_VALID_MIN_QUESTIONS,
   SUBJECT_EVIDENCE_TIER,

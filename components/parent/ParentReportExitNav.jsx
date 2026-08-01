@@ -25,7 +25,7 @@ export function ParentReportThemeIcons({ className = "" }) {
 
 /**
  * Top navigation for parent report pages — opposite corners:
- * left: Back to parent report | right: Back to parent portal
+ * left: Back to parent report || right: Back to parent portal
  */
 export function ParentReportExitNav({ className = "", showShortReportLink = true, isBright = false }) {
   const btnClass = isBright ? BTN_CLASS_BRIGHT : BTN_CLASS_DARK;

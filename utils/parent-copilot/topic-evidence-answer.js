@@ -2,22 +2,21 @@
  * Topic-scoped evidence helpers + legacy entry (delegates to intent-answer-composers).
  */
 
-import { foldUtteranceForHeMatch, normalizeFreeformParentUtteranceHe } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch, normalizeFreeformParentUtterance } from "./utterance-normalize.js";
 import { tryComposeIntentAnswer } from "./intent-answer-composers.js";
-import { rewriteEngineTaxonomySnippetForParentHe } from "../diagnostic-labels-he.js";
+import { rewriteEngineTaxonomySnippetForParentHe } from "../diagnostic-labels.js";
 import {
   parentFacingDiagnosisSnippetHe,
-  parentFacingPatternLabelHe,
-} from "../parent-report-language/parent-facing-pattern-label-he.js";
+  parentFacingPatternLabelHe} from "../parent-report-language/parent-facing-pattern-label.js";
 
 const MISTAKE_QUESTION_RE =
-  /טעויות|טעיות|טעות|איפה\s*(?:הוא|היא|הילד|הילדה)?\s*טעה|במה\s*(?:הוא|היא|הילד)?\s*טעה|מה\s*חוזר\s*בטעות|הטעויות\s*הבולטות|איפה\s*הילד\s*טעה|סוג\s*הטעות|דפוס\s*טעות/u;
+  /|\s*(?:|)?\s*|\s*(?:)?\s*|\s*\s*|\s*|\s*\s*|\s*|\s*/u;
 
 /**
  * @param {string} utterance
  */
 export function isMistakePatternQuestion(utterance) {
-  return MISTAKE_QUESTION_RE.test(foldUtteranceForHeMatch(normalizeFreeformParentUtteranceHe(utterance)));
+  return MISTAKE_QUESTION_RE.test(foldUtteranceForMatch(normalizeFreeformParentUtterance(utterance)));
 }
 
 /**
@@ -43,12 +42,10 @@ export function extractMistakePatternHeFromUnit(unit) {
 export function tryComposeTopicEvidenceAnswer(params) {
   return tryComposeIntentAnswer({
     ...params,
-    stageAIntent: params?.plannerIntent || params?.stageAIntent,
-  });
+    stageAIntent: params?.plannerIntent || params?.stageAIntent});
 }
 
 export default {
   isMistakePatternQuestion,
   extractMistakePatternHeFromUnit,
-  tryComposeTopicEvidenceAnswer,
-};
+  tryComposeTopicEvidenceAnswer};

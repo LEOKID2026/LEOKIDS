@@ -118,21 +118,21 @@ were answered → run status `partial`.
 **Root cause — Part 1: driver not handling typing questions.**
 The English learning page renders TWO question shapes within the same vocabulary session:
 
-- **MCQ ("choice")** for `en_to_he` direction questions (e.g. "What is 'ninety'?"
+- **MCQ ("choice")** for `en_to_meaning` direction questions (e.g. "What is 'ninety'?"
   → Hebrew buttons shown).
-- **Free-text typing** for `he_to_en` direction questions (e.g. "What does 'נמל'
+- **Free-text typing** for `meaning_to_en` direction questions (e.g. "What does 'נמל'
   mean?" → student types the English word).
 
 Typing mode is triggered by `determineMcqOrTyping()` in
 `pages/learning/english-master.js`:
 ```js
 if (selectedTopic === "vocabulary") {
-  if (params?.direction === "en_to_he") return "choice";
+  if (params?.direction === "en_to_meaning") return "choice";
   ...
-  if (isHardLevel || gNum >= 4) return "typing";  // ← grade 4 he_to_en
+  if (isHardLevel || gNum >= 4) return "typing";  // ← grade 4 meaning_to_en
 ```
 
-q1–q3 were `en_to_he` → MCQ (worked fine). q4 was `he_to_en` + grade 4 → typing
+q1–q3 were `en_to_meaning` → MCQ (worked fine). q4 was `meaning_to_en` + grade 4 → typing
 mode; the generic MCQ driver waited 20 s for MCQ buttons that would never appear.
 
 **Root cause — Part 2: double-advance from "שאלה הבאה" click (found during desktop validation).**

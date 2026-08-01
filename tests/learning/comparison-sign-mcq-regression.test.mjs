@@ -27,7 +27,7 @@ const { ensureMcqFourOptions, shouldEnforceFourMcqOptions, NORMAL_MCQ_OPTION_COU
   );
 const { buildAnimationForOperation } = await import(href("utils/math-animations.js"));
 const { splitLearningMixedHebrewMathRuns } = await import(
-  href("utils/learning-mixed-hebrew-math-render.js")
+  href("utils/learning-mixed-rtl-math-render.js")
 );
 
 function cmpUserMatchesCanonical(q, user) {

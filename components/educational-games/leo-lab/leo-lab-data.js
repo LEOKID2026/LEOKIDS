@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import {

@@ -40,7 +40,7 @@ const {
   applyTopicEngineParentFacingInsights,
   collectTopicEngineRowsFromReport,
   buildTopicEngineInsightLineHe,
-} = await load("utils/parent-report-engine-insights-he.js");
+} = await load("utils/parent-report-engine-insights.js");
 const { applyBridgeProvenanceToGeneratedReport } = await load("lib/learning-supabase/bridge-report-provenance.js");
 const { syncReportVisiblePracticeFromServer } = await load("lib/learning/report-visible-practice-sync.js");
 const { generateParentReportV2, summarizeV2UnitsForSubjectForTests } = await load("utils/parent-report-v2.js");
@@ -49,7 +49,7 @@ const {
   buildSubjectParentLetter,
   buildSubjectParentLetterCompact,
   buildTopicRecommendationNarrative,
-} = await load("utils/detailed-report-parent-letter-he.js");
+} = await load("utils/detailed-report-parent-letter.js");
 const {
   resolveParentExplainRowCopy,
   buildLpdSafeTopicExplainSectionsHe,
@@ -69,7 +69,7 @@ const {
   normalizeParentReportTextForDedupe,
 } = await load("utils/parent-report-text-dedupe.js");
 const { parentReportOwnerCopyTemplatesHe } = await load(
-  "utils/parent-report-language/parent-report-owner-copy-templates-he.js",
+  "utils/parent-report-language/parent-report-owner-copy-templates.js",
 );
 const { GRADE_AWARE_RECOMMENDATION_TEMPLATES } = await load(
   "utils/parent-report-language/grade-aware-recommendation-templates.js",
@@ -121,7 +121,7 @@ const SURFACE_META = {
   insights: {
     roleHe: "שורות תובנה ראשיות בדף דוח הורים (parentFacing.insights)",
     reportTypes: ["parentReportScreen", "shortReport"],
-    contractSource: "utils/parent-report-engine-insights-he.js",
+    contractSource: "utils/parent-report-engine-insights.js",
   },
   subjectSummary: {
     roleHe: "סיכום מקצוע בדוח מקוצר / בלוק מקצוע בדף דוח הורים",
@@ -151,7 +151,7 @@ const SURFACE_META = {
   parentLetter: {
     roleHe: "מכתב הורים למקצוע (פתיחה / אבחון / סיום)",
     reportTypes: ["detailedReport"],
-    contractSource: "detailed-report-parent-letter-he.js",
+    contractSource: "detailed-report-parent-letter.js",
   },
   homeAction: {
     roleHe: "פעולה ביתית מומלצת ברמת מקצוע",
@@ -186,7 +186,7 @@ const SURFACE_META = {
   staticTemplateCatalog: {
     roleHe: "קטלוג תבניות owner — לא live; מייצג טקסט אפשרי לפי templateId+slots",
     reportTypes: ["templateCatalog"],
-    contractSource: "parent-report-owner-copy-templates-he.js",
+    contractSource: "parent-report-owner-copy-templates.js",
   },
   gradeAwareTemplate: {
     roleHe: "תבנית grade-aware — לא live; מייצג action/goal לפי taxonomy+grade band",
@@ -494,7 +494,7 @@ function collectLiveRowsForStudent(ctx) {
         surface: "insights",
         section: `insight_${i}`,
         source: base._parentFacingInsightsSource || "topic_engine",
-        contractSource: "utils/parent-report-engine-insights-he.js",
+        contractSource: "utils/parent-report-engine-insights.js",
         sourceField: `report.parentFacing.insights[${i}]`,
         renderFunction: "applyTopicEngineParentFacingInsights → buildTopicEngineInsightLineHe",
         templateId: "lpd_parent_visible_finding",
@@ -755,7 +755,7 @@ function collectLiveRowsForStudent(ctx) {
           source: edc?.parentSafeFinding || lpd?.engineDecisionContract ? "engineDecisionContract" : "legacy",
           contractSource: "engineDecisionContract → buildTopicEngineInsightLineHe",
           sourceField: "parentFacing.insights / topicEngineRowSignals",
-          renderFunction: "utils/parent-report-engine-insights-he.js → buildTopicEngineInsightLineHe",
+          renderFunction: "utils/parent-report-engine-insights.js → buildTopicEngineInsightLineHe",
           slotsAvailable: buildSlotsFromEdc(edc, lpd, mapRow || row, subjectLabelHe),
           exactParentVisibleHebrewText: line,
           dataSource: "live",
@@ -917,7 +917,7 @@ function collectLiveRowsForStudent(ctx) {
                   ? `NARRATIVE_${tr.contractsV1.narrative.wordingEnvelope}_${sec}`
                   : `NARRATIVE_WE_UNKNOWN_${sec}`,
                 source: tr?.contractsV1?.narrative ? "engineDecisionContract" : "legacy",
-                contractSource: "detailed-report-parent-letter-he.js → buildTopicRecommendationNarrative",
+                contractSource: "detailed-report-parent-letter.js → buildTopicRecommendationNarrative",
                 sourceField: `narrative.${sec}`,
                 renderFunction: "buildTopicRecommendationNarrative",
                 exactParentVisibleHebrewText: t,
@@ -978,7 +978,7 @@ function collectLiveRowsForStudent(ctx) {
             letter.renderSource === "subjectEngineDecisionContract" || subjectContract?.blockedLegacySummary
               ? "subjectEngineDecisionContract"
               : "legacy",
-          contractSource: "detailed-report-parent-letter-he.js → buildSubjectParentLetter",
+          contractSource: "detailed-report-parent-letter.js → buildSubjectParentLetter",
           sourceField: `parentLetter.${sec}`,
           renderFunction: "buildSubjectParentLetter",
           slotsAvailable: buildSlotsFromSubjectContract(subjectContract, subjectLabelHe),
@@ -1247,7 +1247,7 @@ function collectStaticOwnerTemplateRows() {
           recommendedAction: fixture.slots.recommendedAction,
           evidenceStrength: fixture.slots.evidenceStrength,
           templateId,
-          contractSource: "parent-report-owner-topic-copy-templates-he.js",
+          contractSource: "parent-report-owner-topic-copy-templates.js",
           sourceField: `parentReportOwnerCopyTemplatesHe['${templateId}']`,
           renderFunction: "renderOwnerTopicCopyTemplateHe",
           slotsAvailable: pickSlots(fixture.slots),
@@ -1297,7 +1297,7 @@ function collectStaticOwnerTemplateRows() {
           subjectDecision: fixture.subjectDecision,
           recommendedAction: fixture.recommendedSubjectAction,
           templateId,
-          contractSource: "parent-report-owner-copy-templates-he.js",
+          contractSource: "parent-report-owner-copy-templates.js",
           sourceField: `parentReportOwnerCopyTemplatesHe['${templateId}']`,
           renderFunction: "renderOwnerSubjectCopyTemplateHe",
           slotsAvailable: pickSlots({

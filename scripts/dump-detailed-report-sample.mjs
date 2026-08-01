@@ -69,7 +69,7 @@ seedVisualQA();
 
 const { generateDetailedParentReport } = await import("../utils/detailed-parent-report.js");
 const { buildSubjectParentLetter, buildTopicRecommendationNarrative } = await import(
-  "../utils/detailed-report-parent-letter-he.js"
+  "../utils/detailed-report-parent-letter.js"
 );
 
 const player = process.argv[2] || "VisualQA";

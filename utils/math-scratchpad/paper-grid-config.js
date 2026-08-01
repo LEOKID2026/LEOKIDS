@@ -71,7 +71,7 @@ export function createEmptyPaperGrid(rows, cols) {
  * @returns {string[]}
  */
 export function placeValueHeaderLabels(cols, edgePadding = 0) {
-  const named = ["א", "ע", "מ", "אלף"];
+  const named = ["", "", "", ""];
   return Array.from({ length: cols }, (_, i) => {
     const fromRight = cols - 1 - edgePadding - i;
     return fromRight >= 0 && fromRight < named.length ? named[fromRight] : "";

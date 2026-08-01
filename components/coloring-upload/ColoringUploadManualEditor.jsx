@@ -5,8 +5,8 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
  * Action-based undo on processing-res bitmap (not A4 snapshots).
  * @param {{
  *   canvasRef: React.RefObject<HTMLCanvasElement>,
- *   brush: "white" | "black",
- *   onBrushChange: (b: "white" | "black") => void,
+ *   brush: "white" || "black",
+ *   onBrushChange: (b: "white" || "black") => void,
  *   brushSize: number,
  *   onBrushSizeChange: (n: number) => void,
  *   onStrokeComplete: () => void,

@@ -48,7 +48,7 @@ function HeroButtons({ isBright, copy, className = "" }) {
 }
 
 /**
- * Simple marketing hero — text + buttons | large parent video. No flow diagrams.
+ * Simple marketing hero — text + buttons || large parent video. No flow diagrams.
  * @param {{ isBright: boolean }} props
  */
 export default function HomeHero({ isBright }) {

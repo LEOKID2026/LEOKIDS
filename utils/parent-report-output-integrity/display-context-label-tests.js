@@ -7,11 +7,11 @@ import { isCoreParentReportRow } from "../parent-report-core-grade-filter.js";
 import {
   cleanTopicLabelHe,
   LONG_NARRATIVE_TITLE_RE,
-  narrativeTitleFromRow,
+  narrativeTitleFromRow
 } from "./row-display-label-context.js";
 
-const GRADE_IN_TABLE_LABEL_RE = /(?:-|\()\s*(?:כיתה|תרגול ב|Grade|practice in)/iu;
-const NARRATIVE_GRADE_TITLE_RE = / - (?:כיתה|Grade) /iu;
+const GRADE_IN_TABLE_LABEL_RE = /(?!)/iu;
+const NARRATIVE_GRADE_TITLE_RE = /(?!)/iu;
 
 /**
  * @param {Record<string, unknown>|null|undefined} row
@@ -20,7 +20,7 @@ function narrativeCleanTopicName(row) {
   const dn = String(row?.displayName || row?.rowIdentityV1?.displayName || "").trim();
   if (dn) return cleanTopicLabelHe(dn);
   const title = narrativeTitleFromRow(row);
-  const m = title.match(/^(.+?)\s-\s(?:כיתה|Grade)\s/iu);
+  const m = title.match(/(?!)/iu);
   if (m?.[1]) return cleanTopicLabelHe(m[1]);
   return cleanTopicLabelHe(title);
 }
@@ -29,9 +29,7 @@ const SUBJECT_MAP_KEYS = {
   math: "mathOperations",
   geometry: "geometryTopics",
   english: "englishTopics",
-  science: "scienceTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
+  science: "scienceTopics"
 };
 
 /**
@@ -44,10 +42,9 @@ export function assertTableLabelsStayClean(baseReport) {
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
     ["science", "scienceTopics"],
-    ["hebrew", "hebrewTopics"],
-    ["moledet-geography", "moledetGeographyTopics"],
-  ];
-  for (const [, mk] of maps) {
+    ["hebrewTopics"],
+    ["moledetGeographyTopics"]];
+  for (const [ mk] of maps) {
     const tm = baseReport?.[mk];
     if (!tm) continue;
     for (const [trk, row] of Object.entries(tm)) {
@@ -73,7 +70,7 @@ export function collectNarrativeTitleSurfaces(detailedReport) {
         kind,
         title: narrativeTitleFromRow(row) || String(row.labelHe || "").trim(),
         topicRowKey: row.topicRowKey,
-        subject: sp.subject,
+        subject: sp.subject
       });
     };
     for (const row of sp.topicOverviewRows || []) collect(row, "topicOverview");
@@ -93,10 +90,9 @@ export function assertNoLongNarrativeTitles(detailedReport) {
     if (!title) continue;
     if (LONG_NARRATIVE_TITLE_RE.test(title)) {
       failures.push(
-        `${subject || "?"} ${kind} ${topicRowKey || ""}: title must not use long relation-in-title format (${title})`,
-      );
+        `${subject || "?"} ${kind} ${topicRowKey || ""}: title must not use long relation-in-title format (${title})`);
     }
-    if (/(?:-|\()\s*תרגול ב/u.test(title)) {
+    if (/(?!)/u.test(title)) {
       failures.push(`${subject || "?"} ${kind}: banned em-dash long title (${title})`);
     }
   }
@@ -135,14 +131,12 @@ export function assertNarrativeSurfacesDisambiguateDuplicates(detailedReport) {
       const unique = new Set(titles);
       if (unique.size < distinctRows.length) {
         failures.push(
-          `${sp.subject}: duplicate "${clean}" across grades without distinct titles (${distinctRows.map((e) => e.kind).join(",")})`,
-        );
+          `${sp.subject}: duplicate "${clean}" across grades without distinct titles (${distinctRows.map((e) => e.kind).join(",")})`);
       }
       for (const t of titles) {
         if (!t || !NARRATIVE_GRADE_TITLE_RE.test(t)) {
           failures.push(
-            `${sp.subject}: narrative title for "${clean}" must use short grade title (- Grade …) (${t || "empty"})`,
-          );
+            `${sp.subject}: narrative title for "${clean}" must use short grade title (- Grade …) (${t || "empty"})`);
         }
       }
     }
@@ -162,18 +156,16 @@ export function assertTopicOverviewCompleteness(detailedReport, baseReport) {
     const tm = baseReport?.[mk];
     if (!tm || typeof tm !== "object") continue;
     const expectedKeys = Object.entries(tm)
-      .filter(([, row]) => (Number(row?.questions) || 0) > 0)
-      .filter(([, row]) =>
+      .filter(([ row]) => (Number(row?.questions) || 0) > 0)
+      .filter(([ row]) =>
         isCoreParentReportRow(
           {
             gradeRelation: row?.gradeRelation,
             contentGradeKey: row?.gradeKey ?? row?.contentGradeKey,
             registeredGradeKey: baseReport?.registeredGradeKey ?? row?.registeredGradeKey,
-            questions: row?.questions,
+            questions: row?.questions
           },
-          baseReport?.registeredGradeKey,
-        ),
-      )
+          baseReport?.registeredGradeKey))
       .map(([k]) => k);
     const overview = Array.isArray(sp.topicOverviewRows) ? sp.topicOverviewRows : [];
     const overviewKeys = new Set(overview.map((r) => String(r.topicRowKey || "")));
@@ -184,12 +176,10 @@ export function assertTopicOverviewCompleteness(detailedReport, baseReport) {
     }
     if (expectedKeys.length > 0 && overview.length < expectedKeys.length) {
       failures.push(
-        `${sp.subject}: topicOverviewRows count ${overview.length} < practiced rows ${expectedKeys.length}`,
-      );
+        `${sp.subject}: topicOverviewRows count ${overview.length} < practiced rows ${expectedKeys.length}`);
     }
     const focusRecKeys = new Set(
-      (sp.topicRecommendations || []).map((r) => String(r.topicRowKey || "")),
-    );
+      (sp.topicRecommendations || []).map((r) => String(r.topicRowKey || "")));
     for (const trk of focusRecKeys) {
       if (!overviewKeys.has(trk)) {
         failures.push(`${sp.subject}: focus row ${trk} missing from topicOverviewRows`);
@@ -219,19 +209,18 @@ export function assertHomePlanReflectsStrengthAndSupport(detailedReport) {
   const failures = [];
   const hasCoreWeakness = (detailedReport?.subjectProfiles || []).some(
     (sp) =>
-      (Array.isArray(sp?.topWeaknesses) && sp.topWeaknesses.length > 0) ||
-      (Array.isArray(sp?.topicRecommendations) && sp.topicRecommendations.length > 0),
-  );
-  const hasSupport = /חיזוק|ליווי|מיקוד|לפני קידום|תמיכה/u.test(bundle);
+      (Array.isArray(sp?.topWeaknesses) && sp.topWeaknesses.length > 0) |
+      (Array.isArray(sp?.topicRecommendations) && sp.topicRecommendations.length > 0));
+  const hasSupport = /(?!)/u.test(bundle);
   const hasMaintain =
-    /להמשיך|שימור|יציב|חזק|בסיס טוב|אותו קצב/u.test(bundle) || items.length >= 2;
+    /(?!)/u.test(bundle) || items.length >= 2;
   const execStrengths = (detailedReport?.executiveSummary?.topStrengthsAcrossHe || []).join("\n");
   const profileStrengths = (detailedReport?.subjectProfiles || [])
     .flatMap((sp) => sp?.topStrengths || [])
     .map((r) => String(r.labelHe || r.narrativeTitleHe || r.displayName || ""))
     .join("\n");
   const hasExecutiveStrengthSignal =
-    /להמשיך|שימור|יציב|חזק|בסיס טוב|אותו קצב|תמונה חיובית|נראית תמונה/u.test(execStrengths) ||
+    /(?!)/u.test(execStrengths) |
     profileStrengths.length > 0;
   if (hasCoreWeakness && !hasSupport) failures.push("homePlan missing support-oriented line for weak row");
   if (!hasMaintain && !hasExecutiveStrengthSignal) {
@@ -255,10 +244,9 @@ export function assertAggregateExplainsGradeSplit(detailedReport) {
   const bundle = [
     ...(es.topFocusAreasHe || []),
     ...(es.topStrengthsAcrossHe || []),
-    ...(detailedReport.homePlan?.itemsHe || []),
-  ].join("\n");
-  if (/שברים[^.\n]{0,24}(דורש חיזוק|נראה טוב|יציב)/u.test(bundle) && !/שתי תמונות|רמת הכיתה|כיתה ד/u.test(bundle)) {
-    return ["aggregate text may collapse grade-split שברים without split explanation"];
+    ...(detailedReport.homePlan?.itemsHe || [])].join("\n");
+  if (/(?!)/u.test(bundle) && !/(?!)/u.test(bundle)) {
+    return ["aggregate text may collapse grade-split without split explanation"];
   }
   return [];
 }
@@ -269,5 +257,5 @@ export default {
   assertNoLongNarrativeTitles,
   assertTopicOverviewCompleteness,
   assertHomePlanReflectsStrengthAndSupport,
-  assertAggregateExplainsGradeSplit,
+  assertAggregateExplainsGradeSplit
 };

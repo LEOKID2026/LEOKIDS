@@ -4,7 +4,7 @@
  */
 
 import { flattenBookSectionVisibleLines } from "../../lib/learning-book/book-visible-text-render.js";
-import { normalizeHebrewHyphensForTts } from "../../lib/learning-book/audio/prepare-hebrew-book-audio-text.js";
+import { normalizeHebrewHyphensForTts } from "../../lib/learning-book/audio/normalize-hyphens-for-tts.js";
 
 const TECHNICAL_LINE =
   /(?:learning_page_id|skill_id|approval_status|page_type|age_band|docs\/|data\/|\.md\b|\.json\b|(?:math|hebrew|english|science|geometry|moledet|geography):g\d+:)/i;

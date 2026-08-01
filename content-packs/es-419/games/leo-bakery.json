@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-bakery",
+  "title": "Panadería de Leo",
+  "blurb": "Multiplicación, grupos iguales y factor faltante",
+  "help": {
+    "howToPlay": "Arma bandejas, encuentra el total o el factor faltante, o reorganiza el mismo total; luego toca \"Comprobar pedido\".",
+    "scoring": "Respuesta correcta +30, bonificación de tiempo hasta +20, racha de 5 correctas +25. Después de 3 intentos fallidos se muestra la solución completa.",
+    "rewards": "Las monedas se otorgan según cuántos pedidos preparaste bien, la precisión, las rachas y el nivel de dificultad.",
+    "tip": "Piensa cuántas bandejas × cuántas por bandeja, no solo cuentes los íconos."
+  },
+  "accessibility": {
+    "title": "Panadería de Leo"
+  }
+}

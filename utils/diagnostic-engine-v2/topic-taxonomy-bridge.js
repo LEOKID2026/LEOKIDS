@@ -1,6 +1,6 @@
 /**
- * מיפוי bucketKey (אחסון דוח) ↔ מזהי טקסונומיה — גשר לתוכן הקיים במוצר.
- * מבוסס stage1 blueprint §5 + מפתחות ב math-report-generator.
+ *  bucketKey ( ) ↔   —    .
+ *  stage1 blueprint §5 +   math-report-generator.
  */
 import { mathReportBaseOperationKey } from "../math-report-generator.js";
 
@@ -29,7 +29,7 @@ const MATH_OP_TO_IDS = {
   powers: ["M-03"],
   zero_one_properties: ["M-01"],
   estimation: ["M-01"],
-  factors_multiples: ["M-03"],
+  factors_multiples: ["M-03"]
 };
 
 /** @type {Record<string, string[]>} */
@@ -51,7 +51,7 @@ const GEOMETRY_TOPIC_TO_IDS = {
   circles: ["G-02"],
   solids: ["G-05"],
   pythagoras: ["G-08"],
-  mixed: ["G-01"],
+  mixed: ["G-01"]
 };
 
 /** @type {Record<string, string[]>} */
@@ -64,7 +64,7 @@ const ENGLISH_TOPIC_TO_IDS = {
   sentence: ["E-06"],
   writing: ["E-07"],
   listening: ["E-08"],
-  mixed: ["E-01"],
+  mixed: ["E-01"]
 };
 
 /** @type {Record<string, string[]>} */
@@ -76,7 +76,7 @@ const HEBREW_TOPIC_TO_IDS = {
   comprehension: ["H-04"],
   homophones: ["H-05"],
   speaking: ["H-08"],
-  mixed: ["H-01"],
+  mixed: ["H-01"]
 };
 
 /** @type {Record<string, string[]>} */
@@ -88,7 +88,7 @@ const SCIENCE_TOPIC_TO_IDS = {
   earth_space: ["S-01", "S-06"],
   environment: ["S-07"],
   experiments: ["S-02"],
-  mixed: ["S-01"],
+  mixed: ["S-01"]
 };
 
 /** @type {Record<string, string[]>} */
@@ -98,7 +98,7 @@ const HISTORY_TOPIC_TO_IDS = {
   hellenism_jews: ["H-03", "H-05"],
   hasmonaeans: ["H-02", "H-03", "H-05", "H-06"],
   rome_jews: ["H-02", "H-03", "H-05", "H-06", "H-09"],
-  mixed: ["H-01"],
+  mixed: ["H-01"]
 };
 
 /** @type {Record<string, string[]>} */
@@ -109,7 +109,7 @@ const MOLEDET_TOPIC_TO_IDS = {
   homeland: ["MG-04", "MG-06"],
   community: ["MG-07"],
   values: ["MG-06"],
-  mixed: ["MG-01"],
+  mixed: ["MG-01"]
 };
 
 /**
@@ -121,7 +121,7 @@ const TOPIC_BUCKET_ALIASES = {
   shapes: "shapes_basic",
   sentence: "sentences",
   map: "maps",
-  human_body: "body",
+  human_body: "body"
 };
 
 const GRADE_SCOPE_SEP = "::grade:";
@@ -153,7 +153,7 @@ export function normalizeReportBucketKey(bucketKeyRaw) {
     rawBucketKey: raw,
     normalizedBucketKey: aliased,
     gradeScope,
-    baseBeforeAlias,
+    baseBeforeAlias
   };
 }
 
@@ -178,18 +178,14 @@ export function taxonomyIdsForReportBucketLegacy(subjectId, bucketKeyRaw) {
   if (subjectId === "english") {
     return ENGLISH_TOPIC_TO_IDS[bucketKey] ? [...ENGLISH_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  if (subjectId === "hebrew") {
-    return HEBREW_TOPIC_TO_IDS[bucketKey] ? [...HEBREW_TOPIC_TO_IDS[bucketKey]] : [];
-  }
+  
   if (subjectId === "science") {
     return SCIENCE_TOPIC_TO_IDS[bucketKey] ? [...SCIENCE_TOPIC_TO_IDS[bucketKey]] : [];
   }
   if (subjectId === "history") {
     return HISTORY_TOPIC_TO_IDS[bucketKey] ? [...HISTORY_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  if (subjectId === "moledet-geography") {
-    return MOLEDET_TOPIC_TO_IDS[bucketKey] ? [...MOLEDET_TOPIC_TO_IDS[bucketKey]] : [];
-  }
+  
   return [];
 }
 
@@ -218,17 +214,13 @@ export function taxonomyIdsForReportBucket(subjectId, bucketKeyRaw) {
   if (sid === "english") {
     return ENGLISH_TOPIC_TO_IDS[bucketKey] ? [...ENGLISH_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  if (sid === "hebrew") {
-    return HEBREW_TOPIC_TO_IDS[bucketKey] ? [...HEBREW_TOPIC_TO_IDS[bucketKey]] : [];
-  }
+  
   if (sid === "science") {
     return SCIENCE_TOPIC_TO_IDS[bucketKey] ? [...SCIENCE_TOPIC_TO_IDS[bucketKey]] : [];
   }
   if (sid === "history") {
     return HISTORY_TOPIC_TO_IDS[bucketKey] ? [...HISTORY_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  if (sid === "moledet-geography") {
-    return MOLEDET_TOPIC_TO_IDS[bucketKey] ? [...MOLEDET_TOPIC_TO_IDS[bucketKey]] : [];
-  }
+  
   return [];
 }

@@ -114,7 +114,7 @@ export function useSoloGameMobileFullscreen({
     [dismissKey],
   );
 
-  /** @param {HTMLElement | null | undefined} [element] */
+  /** @param {HTMLElement || null || undefined} [element] */
   const enterFromUserGesture = useCallback(
     (element) => {
       if (!isMobileGameFullscreenEligible()) return;

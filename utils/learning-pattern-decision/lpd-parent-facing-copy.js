@@ -9,25 +9,22 @@ import { rowNeedsPracticeFromLpd } from "./apply-learning-pattern-decision.js";
 import {
   lpdFindingNeedsRebuild,
   normalizeParentVisibleMetrics,
-  buildParentMetricsDataLineHe,
-} from "./normalize-parent-practice-metrics.js";
+  buildParentMetricsDataLineHe} from "./normalize-parent-practice-metrics.js";
 import {
   resolveTopicExplainOwnerSectionsHe,
-  resolveTopicPrimaryFindingOwnerCopyHe,
-} from "./resolve-topic-owner-copy.js";
+  resolveTopicPrimaryFindingOwnerCopyHe} from "./resolve-topic-owner-copy.js";
 
 /** @typedef {{ identified: string, data: string, pattern: string, meaning: string, action: string }} LpdExplainSections */
 
 /** @type {readonly [string, string][]} */
 const ROW_KEY_SUBJECT_PREFIXES = [
-  ["moledet_", "moledet-geography"],
+  ["moledet_"],
   ["math_", "math"],
   ["geometry_", "geometry"],
   ["english_", "english"],
   ["science_", "science"],
   ["history_", "history"],
-  ["hebrew_", "hebrew"],
-];
+  ["hebrew_"]];
 
 /**
  * @param {Record<string, unknown>|null|undefined} row
@@ -124,12 +121,10 @@ export function resolveOrBuildLpdOnRow(row, rawMistakes = []) {
       questions: q,
       correct: c,
       wrong: w,
-      accuracy,
-    },
+      accuracy},
     rawMistakes: Array.isArray(rawMistakes) ? rawMistakes : [],
     startMs: 0,
-    endMs: Date.now(),
-  });
+    endMs: Date.now()});
 }
 
 /**
@@ -185,7 +180,7 @@ export function buildLpdParentInsightLineHe(row) {
   const finding = lpdParentVisibleFindingFromRow(row);
   if (!finding) return "";
 
-  const subj = String(row.subjectLabelHe || row.subject || "").trim();
+  const subj = String(row.subjectLabel || row.subject || "").trim();
   const label = String(row.label || row.displayName || "").trim();
   if (subj && label) return guardParentFacingText(`${subj} - «${label}»: ${finding}`);
   if (label) return guardParentFacingText(`«${label}»: ${finding}`);
@@ -226,15 +221,14 @@ export function buildLpdSafeTopicInsightFromWeakTopic(
   return buildLpdSafeTopicInsightLineHe(
     {
       subjectId,
-      subjectLabelHe: subjectLabelFn(weakTopic.subject),
+      subjectLabel: subjectLabelFn(weakTopic.subject),
       topicKey,
       label: topicName,
       displayName: topicName,
       questions: q,
       correct: c,
       wrong: w,
-      accuracy: acc,
-    },
+      accuracy: acc},
     rawMistakes,
   );
 }
@@ -264,8 +258,7 @@ export function rawMistakesForTopicFromPayload(payload, subjectId, topicKey) {
       mode: m.mode || "practice",
       isCorrect: false,
       patternFamily: m.patternFamily || m.patternId || `pf:recent:${i}`,
-      timestamp: Date.parse(m.answeredAt || m.timestamp || 0) || Date.now() - i * 3600_000,
-    }));
+      timestamp: Date.parse(m.answeredAt || m.timestamp || 0) || Date.now() - i * 3600_000}));
 }
 
 /**
@@ -296,11 +289,11 @@ function lpdMeaningLineHe(lpd, topicName) {
     return "What this means: The same mistake keeps coming back, so it helps to pause and practice it on its own.";
   }
   if (
-    ts === "difficulty_observed" ||
-    ts === "practice_focus" ||
-    ft === "practice_focus" ||
-    ft === "difficulty_pattern" ||
-    templateId.includes("difficulty") ||
+    ts === "difficulty_observed" |
+    ts === "practice_focus" |
+    ft === "practice_focus" |
+    ft === "difficulty_pattern" |
+    templateId.includes("difficulty") |
     templateId.includes("practice_focus")
   ) {
     return `What this means: It helps to reinforce ${topicName} before moving on to harder topics.`;
@@ -374,16 +367,14 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
   const ownerSections = resolveTopicExplainOwnerSectionsHe({
     ...row,
     parentVisibleMetrics: metrics,
-    learningPatternDecision: lpd,
-  });
+    learningPatternDecision: lpd});
   if (ownerSections) {
     return {
       identified: guardParentFacingText(ownerSections.identified),
       data: guardParentFacingText(ownerSections.data),
       pattern: guardParentFacingText(ownerSections.pattern),
       meaning: guardParentFacingText(ownerSections.meaning),
-      action: guardParentFacingText(ownerSections.action),
-    };
+      action: guardParentFacingText(ownerSections.action)};
   }
 
   const topicName =
@@ -392,8 +383,8 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
   const w = metrics.wrong;
 
   const contract =
-    lpd.engineDecisionContract ||
-    row?.engineDecisionContract ||
+    lpd.engineDecisionContract |
+    row?.engineDecisionContract |
     null;
 
   if (contract?.parentSafeFinding && q >= 3) {
@@ -403,7 +394,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
         ? guardParentFacingText(`The recurring mistake: ${patternLabel}.`)
         : "";
     const meaning =
-      contract.engineDecision === "clear_topic_gap" ||
+      contract.engineDecision === "clear_topic_gap" |
       contract.engineDecision === "topic_needs_strengthening"
         ? guardParentFacingText(
             `What this means: It helps to reinforce ${topicName} before moving on to harder topics.`,
@@ -423,8 +414,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
       ),
       pattern,
       meaning,
-      action,
-    };
+      action};
   }
 
   const finding = guardParentFacingText(lpd.parentVisibleFinding);
@@ -434,7 +424,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
 
   if (isInitial) {
     const topicShort =
-      topicName.replace(/\s*-\s*(?:grade\s*\d+|כיתה\s*[א-ט״']+)\s*$/iu, "").trim() || topicName;
+      topicName.replace(/\s*-\s*(?:grade\s*\d+|\s*[-']+)\s*$/iu, "").trim() || topicName;
     return {
       identified: guardParentFacingText(`What we see: There are only a few questions so far on ${topicShort}.`),
       data: guardParentFacingText(
@@ -444,8 +434,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
       meaning: guardParentFacingText("What this means: It is still too early to draw a clear conclusion. A few more questions on this topic are needed."),
       action: guardParentFacingText(
         "What to try together: Keep practicing a little, without assuming there is a lasting difficulty yet.",
-      ),
-    };
+      )};
   }
 
   const identified = finding
@@ -472,8 +461,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
     data,
     pattern,
     meaning,
-    action,
-  };
+    action};
 
   if (!sections.identified && !sections.data && !sections.meaning && !sections.action) {
     return sections.data ? { identified: "", data: sections.data, pattern: "", meaning: "", action: "" } : null;
@@ -497,8 +485,7 @@ export function resolveParentExplainRowCopy(row) {
       explainSections: null,
       suppressEngineCopy: true,
       parentWordingLevel: "no_parent_text",
-      showTrend: false,
-    };
+      showTrend: false};
   }
 
   const explainSections = buildLpdSafeTopicExplainSectionsHe({ ...row, parentVisibleMetrics: metrics });
@@ -510,15 +497,13 @@ export function resolveParentExplainRowCopy(row) {
       explainSections,
       suppressEngineCopy: true,
       parentWordingLevel: "no_parent_text",
-      showTrend: false,
-    };
+      showTrend: false};
   }
 
   const ownerPrimaryFinding = resolveTopicPrimaryFindingOwnerCopyHe({
     ...row,
     parentVisibleMetrics: metrics,
-    learningPatternDecision: lpd,
-  });
+    learningPatternDecision: lpd});
   const primaryFinding = guardParentFacingText(ownerPrimaryFinding || lpd.parentVisibleFinding);
   const isInitial = q <= 2;
 
@@ -530,8 +515,7 @@ export function resolveParentExplainRowCopy(row) {
     parentWordingLevel: String(lpd.parentWordingLevel || "factual_observation"),
     showTrend: !isInitial && q >= 5 && !rowNeedsPracticeFromLpd({ learningPatternDecision: lpd }),
     findingType: String(lpd.findingType || ""),
-    topicStatus: String(lpd.topicStatus || ""),
-  };
+    topicStatus: String(lpd.topicStatus || "")};
 }
 
 /**

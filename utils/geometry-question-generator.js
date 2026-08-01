@@ -1,4 +1,3 @@
-// יצירת שאלות גיאומטריה
 
 import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { GRADES, PI, getShapesForTopic, TOPICS } from "./geometry-constants.js";
@@ -66,9 +65,6 @@ import {
   GEOMETRY_INDEX_LABEL_KINDS,
 } from "./geometry-activity-answer-ui.js";
 
-/**
- * מסיחים סבירים לפי סוג שאלה - לא לולאת 1..10 אקראית כשהקשר הוא שטח/נפח וכו'.
- */
 
 function geometryIndexLabelAnswers(correctAnswer, optionCount) {
   const opts = Array.from({ length: optionCount }, (_, i) => String(i + 1));
@@ -377,7 +373,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
   const forcedTopic =
     probeOpts?.topic != null ? String(probeOpts.topic) : "";
 
-  // בדיקה שהכיתה קיימת
   if (!GRADES[gradeKey]) {
     return {
       question: "Invalid grade. Please choose another grade.",
@@ -416,9 +411,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     selectedTopic =
       availableTopics[Math.floor(Math.random() * availableTopics.length)];
   } else {
-    // בדיקה שהנושא קיים עבור הכיתה
     if (!allowedTopics.includes(topic)) {
-      // ננסה למצוא נושא חלופי
       const alternativeTopic = allowedTopics.find(t => t !== "mixed");
       if (alternativeTopic) {
         selectedTopic = alternativeTopic;
@@ -443,7 +436,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     return true;
   });
   
-  // אם אין צורות זמינות, נחזיר שאלה ברירת מחדל
   if (!availableShapes || availableShapes.length === 0) {
     console.warn(`No shapes available for topic ${selectedTopic} in grade ${gradeKey}`);
     return {
@@ -514,9 +506,9 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
   const levelName = String(level?.name || "").trim().toLowerCase();
   const levelKey =
-    levelName === "hard" || levelName === "קשה" || levelName === "אתגר"
+    levelName === "hard"
       ? "hard"
-      : levelName === "medium" || levelName === "בינוני" || levelName === "למידה"
+      : levelName === "medium"
         ? "medium"
         : "easy";
 
@@ -575,7 +567,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     Math.round(num * Math.pow(10, roundTo)) / Math.pow(10, roundTo);
 
   const formulaBand = gradeBandForKey(gradeKey) || "mid";
-  // תרגילי מילים רק ב late (ה׳–ו׳)
   const allowStory = formulaBand === "late";
 
   switch (selectedTopic) {
@@ -1098,8 +1089,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
         }
 
         case "pyramid": {
-          // נפח פירמידה = (1/3) × שטח בסיס × גובה
-          // נשתמש בפירמידה עם בסיס ריבועי או מלבני
           const baseSide = Math.floor(Math.random() * (level.maxSide / 2)) + 1;
           const height = Math.floor(Math.random() * level.maxSide) + 1;
           const isSquareBase = Math.random() < 0.5;
@@ -1134,7 +1123,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
         }
 
         case "cone": {
-          // נפח חרוט = (1/3) × π × רדיוס² × גובה
           const radius = Math.floor(Math.random() * (level.maxSide / 3)) + 1;
           const height = Math.floor(Math.random() * level.maxSide) + 1;
           params = { radius, height, kind: "cone_volume" };
@@ -1144,7 +1132,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
         }
 
         case "prism": {
-          // נפח מנסרה = שטח בסיס × גובה
           const height = Math.floor(Math.random() * level.maxSide) + 1;
           const trianglePrismOk = isPrismVolumeTriangleAllowed();
           const baseType =
@@ -1271,7 +1258,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
       const b = bb * k;
       const c = bc * k;
 
-      // לפעמים שואלים על היתר (כמו קודם), לפעמים על אחד הניצבים
       const askLeg =
         geoForceKind === "pythagoras_leg"
           ? true
@@ -1292,7 +1278,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           question = ` ${a} -${b}   .   ?`;
         }
       } else {
-        // נשאל על ניצב חסר
         const missing = Math.random() < 0.5 ? "a" : "b";
         if (missing === "a") {
           params = { a, b, c, which: "leg_a", kind: "pythagoras_leg" };
@@ -1319,9 +1304,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== SHAPES BASIC =====================
     case "shapes_basic": {
-      // כיתה א' - זיהוי בסיסי, כיתה ד' - תכונות
       if (gradeKey === "g1") {
-        // שאלות זיהוי בסיסיות - מה השם של הצורה?
         const side = Math.floor(Math.random() * level.maxSide) + 1;
         const isSquare =
           geoForceKind === "shapes_basic_square" ||
@@ -1395,7 +1378,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                   ][rectW];
         }
       } else if (gradeKey === "g2" || gradeKey === "g3") {
-        // כיתה ב'-ג' - זיהוי ותכונות בסיסיות (5 variants each)
         const side = Math.floor(Math.random() * level.maxSide) + 1;
         const width = Math.floor(Math.random() * level.maxSide) + 1;
         const isSquare = Math.random() < 0.5;
@@ -1468,12 +1450,10 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                   ][g23w];
         }
       } else {
-        // כיתה ד' - תכונות ריבוע ומלבן (expanded to 8 variants)
         const questionType = Math.random();
         const g4w = Math.floor(Math.random() * 8);
         const g4w3 = g4w % 3;
         if (questionType < 0.33) {
-          // כמה צלעות שוות יש לריבוע?
           params = { shape: "Square", kind: "shapes_basic_properties_square" };
           correctAnswer = "4";
           question =
@@ -1510,7 +1490,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                     `   ? (1 = 2, 2 = 3, 3 = 4, 4 =   )`,
                   ][g4w];
         } else if (questionType < 0.66) {
-          // כמה זוגות של צלעות שוות יש למלבן?
           params = { shape: "Rectangle", kind: "shapes_basic_properties_rectangle" };
           correctAnswer = "2";
           question =
@@ -1532,7 +1511,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
                     `  -   : (1 = 1, 2 = 2, 3 = 3, 4 = 4)`,
                   ][g4w3];
         } else {
-          // כמה זוויות ישרות יש לריבוע/מלבן?
           const shape = Math.random() < 0.5 ? "Square" : "Rectangle";
           params = { shape, kind: "shapes_basic_properties_angles" };
           correctAnswer = "4";
@@ -2092,7 +2070,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
 
     // ===================== DIAGONAL =====================
     case "diagonal": {
-      // מסלול נוסחתי: משתמשים ב shape שנבחר מ TOPIC_SHAPES (כולל כפייה אל harness)
       const fromTopic =
         shape === "square"
           ? "Square"
@@ -2195,7 +2172,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           question = `Rectangle ${side} × ${width}:   ?`;
         }
       } else {
-        // מקבילית - כיתה ה'
         const width = Math.floor(Math.random() * level.maxSide) + 1;
         diagonal = round(Math.sqrt(side * side + width * width));
         params = { shape: hebShape, side, width, diagonal, kind: "diagonal_parallelogram" };
@@ -2283,8 +2259,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
       const tilingSubtype = Math.floor(Math.random() * 3);
 
       if (tilingSubtype === 0) {
-        // שאלת זווית פנימית
-        const shapes = ["Square", "Triangle Equilateral", "", "Rectangle"];
+        const shapes = ["Square", "Triangle Equilateral", "Hexagon", "Rectangle"];
         const selectedShape = shapes[Math.floor(Math.random() * shapes.length)];
         const angle =
           selectedShape === "Square" || selectedShape === "Rectangle" ? 90 :
@@ -2310,8 +2285,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
         ][tW];
 
       } else if (tilingSubtype === 1) {
-        // ספירת אריחים לכיסוי שטח
-        const tileSide = Math.floor(Math.random() * 4) + 1;   // צלע אריח 1-4
+        const tileSide = Math.floor(Math.random() * 4) + 1;
         const floorL = (Math.floor(Math.random() * 4) + 2) * tileSide;
         const floorW = (Math.floor(Math.random() * 4) + 2) * tileSide;
         const tileArea = tileSide * tileSide;
@@ -2340,11 +2314,9 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
         ][tcW];
 
       } else {
-        // שאלת "איזו צורה יכולה לרצף" — MCQ מושגי
-        const canTile = ["Square", "", "Triangle Equilateral"][Math.floor(Math.random() * 3)];
-        const cannotTile = ["", "", ""][Math.floor(Math.random() * 3)];
-        // שאלות על זווית פנימית שמאפשרת ריצוף
-        const tilingShapes = ["Square", "Triangle Equilateral", ""];
+        const canTile = ["Square", "Hexagon", "Triangle Equilateral"][Math.floor(Math.random() * 3)];
+        const cannotTile = ["Pentagon", "Triangle Scalene", "Heptagon"][Math.floor(Math.random() * 3)];
+        const tilingShapes = ["Square", "Triangle Equilateral", "Hexagon"];
         const tiledShape = tilingShapes[Math.floor(Math.random() * tilingShapes.length)];
         const tilingAngle =
           tiledShape === "Square" ? 90 : tiledShape === "Triangle Equilateral" ? 60 : 120;
@@ -2505,7 +2477,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
       const swDL = Math.floor(Math.random() * sel.dailyLife.length);
 
       if (formulaBand === "early" || solidSubtype === 0) {
-        // g2 ו-g3: זיהוי שם לפי תיאור
         params = { solid: sel.name, solidShape: sel.solidKey, desc: sel.descs[swDesc], kind: "solids" };
         correctAnswer = sel.name;
         const sW = Math.floor(Math.random() * 8);
@@ -2533,7 +2504,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           ][sW];
         }
       } else if (solidSubtype === 1 && (formulaBand === "mid" || formulaBand === "late")) {
-        // g3-g6: כמה פאות?
         params = { solid: sel.name, solidShape: sel.solidKey, faces: sel.faces, kind: "solids_faces" };
         correctAnswer = sel.faces;
         const sfW = Math.floor(Math.random() * 8);
@@ -2548,7 +2518,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           `   ${sel.name} ?`,
         ][sfW];
       } else if (solidSubtype === 2 && (formulaBand === "mid" || formulaBand === "late")) {
-        // g3-g6: כמה קודקודים?
         params = { solid: sel.name, solidShape: sel.solidKey, vertices: sel.vertices, kind: "solids_vertices" };
         correctAnswer = sel.vertices;
         const svW = Math.floor(Math.random() * 8);
@@ -2563,7 +2532,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           `   ${sel.name}?`,
         ][svW];
       } else if (solidSubtype === 3 && (formulaBand === "mid" || formulaBand === "late")) {
-        // g3-g6: כמה צלעות?
         params = { solid: sel.name, solidShape: sel.solidKey, edges: sel.edges, kind: "solids_edges" };
         correctAnswer = sel.edges;
         const seW = Math.floor(Math.random() * 6);
@@ -2576,7 +2544,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
           `   ${sel.name}?`,
         ][seW];
       } else {
-        // ברירת מחדל: זיהוי שם
         params = { solid: sel.name, solidShape: sel.solidKey, desc: sel.descs[swDesc], kind: "solids" };
         correctAnswer = sel.name;
         question = `    ${sel.descs[swDesc]}.  ?`;
@@ -2598,7 +2565,6 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
     }
   }
 
-  // ===== יצירת תשובות (מסיחים הקשריים) =====
   const shuffledAnswers = buildGeometryMcqAnswers({
     correctAnswer,
     params,

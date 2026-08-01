@@ -33,7 +33,7 @@ import {
   hasAnchoredReportRows,
   isVagueTopicSelectionRequest,
 } from "./report-row-resolver.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 
 export {
   OFF_TOPIC_RESPONSE_HE,
@@ -58,7 +58,7 @@ export {
  * @typedef {{
  *   routerIntent: QaRouterIntent;
  *   requiresLlm: boolean;
- *   deterministicResponse: string | null;
+ *   deterministicResponse: string || null;
  *   exitEarly: boolean;
  *   classifierBucket: import("./question-classifier.js").ClassifierBucket;
  *   classifierConfidence: number;
@@ -75,7 +75,7 @@ export {
  * @returns {QaRouterResult}
  */
 export function routeParentQuestion(utteranceRaw, payload) {
-  const folded = foldUtteranceForHeMatch(utteranceRaw);
+  const folded = foldUtteranceForMatch(utteranceRaw);
   if (hasAnchoredReportRows(payload) && isVagueTopicSelectionRequest(folded)) {
     return {
       routerIntent: "ambiguous_or_unclear",
@@ -188,7 +188,7 @@ export function routeParentQuestion(utteranceRaw, payload) {
  * Kept for backward compatibility; legacy callers may still consult this.
  *
  * @param {QaRouterIntent} routerIntent
- * @returns {import("./stage-a-freeform-interpretation.js").CanonicalParentIntent | null}
+ * @returns {import("./stage-a-freeform-interpretation.js").CanonicalParentIntent || null}
  */
 export function routerIntentToCanonical(routerIntent) {
   switch (routerIntent) {

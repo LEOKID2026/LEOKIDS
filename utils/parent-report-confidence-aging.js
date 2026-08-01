@@ -1,13 +1,13 @@
 /**
- * Phase 10 — התיישנות ראיות / רענון ביטחון במסקנה (v1).
- * משתמש ב recencyScore ובנפח ראיות — בלי תאריכים מדויקים כשאין נתון מלא.
+ * Phase 10 —   /    (v1).
+ *   recencyScore   —      .
  */
 
 import {
   FRESHNESS_STATE_LABEL_HE,
   CONCLUSION_FRESHNESS_LABEL_HE,
   RECALIBRATION_NEED_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 /**
  * @param {object} ctx

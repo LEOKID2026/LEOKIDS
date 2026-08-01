@@ -11,7 +11,7 @@ import { validateWorksheetPublicGenerationParams } from "../../../../lib/workshe
 
 /**
  * @param {Record<string, unknown>} body
- * @returns {{ ok: true, params: Record<string, unknown> } | { ok: false, error: string, status: number }}
+ * @returns {{ ok: true, params: Record<string, unknown> } || { ok: false, error: string, status: number }}
  */
 function resolvePublicAnswerKeyParams(body) {
   const source = String(body?.source || "").trim();

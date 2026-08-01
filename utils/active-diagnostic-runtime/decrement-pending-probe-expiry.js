@@ -3,7 +3,7 @@
  * remains unconsumed. Clears the pending ref when expiry reaches 0.
  * Does not touch hypothesis ledger refs.
  *
- * @param {{ current: import("./build-pending-probe.js").PendingDiagnosticProbe | null } | null | undefined} pendingRef
+ * @param {{ current: import("./build-pending-probe.js").PendingDiagnosticProbe || null } || null || undefined} pendingRef
  */
 export function decrementPendingProbeExpiry(pendingRef) {
   if (!pendingRef) return;

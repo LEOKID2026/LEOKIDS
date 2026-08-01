@@ -16,7 +16,7 @@ export const ERROR_TYPE_V3 = Object.freeze({
   SPEED: "speed_pressure",
   CARELESS: "careless_or_attention",
   GUESSING: "guessing_or_unstable",
-  UNKNOWN: "unknown",
+  UNKNOWN: "unknown"
 });
 
 const FAST_WRONG_MS = 8000;
@@ -39,7 +39,7 @@ const TAG_TO_V3 = Object.freeze({
   guessing_pattern: ERROR_TYPE_V3.GUESSING,
   careless_error: ERROR_TYPE_V3.CARELESS,
   prerequisite_gap: ERROR_TYPE_V3.PREREQUISITE,
-  phonics_gap: ERROR_TYPE_V3.PHONICS,
+  phonics_gap: ERROR_TYPE_V3.PHONICS
 });
 
 /**
@@ -65,7 +65,7 @@ export function classifyErrorTypeV3(subjectId, mistakeEvent) {
 
   const tags = [
     ...(Array.isArray(ev.expectedErrorTags) ? ev.expectedErrorTags : []),
-    ...(Array.isArray(ev.possibleErrorPatterns) ? ev.possibleErrorPatterns : []),
+    ...(Array.isArray(ev.possibleErrorPatterns) ? ev.possibleErrorPatterns : [])
   ].map(String);
 
   for (const tag of tags) {
@@ -108,9 +108,7 @@ export function classifyErrorTypeV3(subjectId, mistakeEvent) {
       }
       return { errorType: ERROR_TYPE_V3.SPEED, confidence: "very_low", basedOn };
     }
-    if (respMs > SLOW_MS && subjectId === "hebrew") {
-      return { errorType: ERROR_TYPE_V3.READING, confidence: "very_low", basedOn };
-    }
+    
   }
 
   if (ev.hintUsed === true || (Number(ev.retryCount) || 0) >= 2) {
@@ -136,7 +134,7 @@ export function classifyErrorTypeV3(subjectId, mistakeEvent) {
     return { errorType: ERROR_TYPE_V3.VOCABULARY, confidence: "very_low", basedOn };
   }
   if (
-    (subjectId === "hebrew" || subjectId === "english") &&
+    (subjectId === "english") &&
     (topic.includes("comprehension") || topic.includes("reading"))
   ) {
     basedOn.push("topic:reading");

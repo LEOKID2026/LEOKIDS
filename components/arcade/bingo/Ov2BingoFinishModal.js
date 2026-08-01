@@ -16,7 +16,7 @@ const BTN_FINISH_DANGER =
  *   onDismiss: () => void,
  *   prizeLabels: Record<string, string>,
  *   claims: Array<{ prizeKey: string, claimedByName: string, amount: number, seatIndex?: number }>,
- *   winner: { participantKey: string|null, name: string|null } | null,
+ *   winner: { participantKey: string|null, name: string|null } || null,
  *   walkoverPayoutAmount: number|null,
  *   vaultClaimBusy?: boolean,
  *   selfKey: string,
@@ -28,10 +28,10 @@ const BTN_FINISH_DANGER =
  *   startNextBusy: boolean,
  *   exitBusy: boolean,
  *   exitErr: string,
- *   onRequestRematch: () => void | Promise<void>,
- *   onCancelRematch: () => void | Promise<void>,
- *   onStartNext: () => void | Promise<void>,
- *   onLeaveTable: () => void | Promise<void>,
+ *   onRequestRematch: () => void || Promise<void>,
+ *   onCancelRematch: () => void || Promise<void>,
+ *   onStartNext: () => void || Promise<void>,
+ *   onLeaveTable: () => void || Promise<void>,
  * }} props
  */
 export default function Ov2BingoFinishModal({

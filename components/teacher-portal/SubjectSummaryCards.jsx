@@ -2,7 +2,7 @@ import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import {
   REPORT_SUBJECTS,
   formatPercent,
-  subjectLabelHe,
+  subjectLabel,
   topicLabelHe,
 } from "../../lib/teacher-portal/teacher-ui.js";
 
@@ -14,7 +14,7 @@ export default function SubjectSummaryCards({ subjects, showTopics = false }) {
   const cards = REPORT_SUBJECTS.map((sid) => {
     const subj = subjects[sid];
     if (!subj || (Number(subj.answers) || 0) === 0) return null;
-    const label = subjectLabelHe(sid) || sid;
+    const label = subjectLabel(sid) || sid;
     return (
       <div
         key={sid}

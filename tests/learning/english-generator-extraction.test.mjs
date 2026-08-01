@@ -50,7 +50,7 @@ test("extracted generateQuestion: translation g3 medium returns MCQ with pre-exp
   const level = getLevelForGrade("medium", "g3");
   const q = generateQuestion(level, "translation", "g3", null, "medium", null);
   assertMcqShape(q, "translation");
-  assert.equal(q.params?.direction, "en_to_he");
+  assert.equal(q.params?.direction, "en_to_meaning");
   assert.equal(q.qType || q.params?.answerMode, "choice");
 });
 
@@ -59,7 +59,10 @@ test("extracted generateQuestion: vocabulary g2 easy returns MCQ", () => {
   const q = generateQuestion(level, "vocabulary", "g2", null, "easy", null);
   assertMcqShape(q, "vocabulary");
   assert.ok(q.params?.listKey);
-  const pool = q.params.direction === "he_to_en"
+  assert.ok(
+    q.params.direction === "en_to_meaning" || q.params.direction === "meaning_to_en"
+  );
+  const pool = q.params.direction === "meaning_to_en"
     ? ["sun", "dog"].filter(Boolean)
     : null;
   if (pool) {
@@ -74,8 +77,8 @@ test("getLevelForGrade uses ENGLISH_LEVELS bands", () => {
   assert.ok(easy.maxWords >= 3);
 });
 
-test("ENGLISH_TOPICS labels match curriculum-facing keys", () => {
-  assert.equal(ENGLISH_TOPICS.grammar.name, "דקדוק");
-  assert.equal(ENGLISH_TOPICS.vocabulary.name, "אוצר מילים");
+test("ENGLISH_TOPICS labels are English on Global", () => {
+  assert.equal(ENGLISH_TOPICS.grammar.name, "Grammar");
+  assert.equal(ENGLISH_TOPICS.vocabulary.name, "Vocabulary");
   assert.ok(ENGLISH_GRADES.g3.topics.includes("grammar"));
 });

@@ -50,8 +50,8 @@ import { useGameAudio } from "../../hooks/useGameAudio";
 import { startLearningMasterSessionAudio } from "../../lib/game-audio/learning-master-session-audio.js";
 import { useMobileViewport } from "../../hooks/useMobileViewport";
 
-import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-hebrew-math";
-import { renderLearningMixedHebrewMathText } from "../../components/learning/LearningMixedHebrewMathText";
+import { learningMixedHebrewMathStyle } from "../../utils/learning-mixed-rtl-math";
+import { renderLearningMixedRtlMathText } from "../../components/learning/LearningMixedRtlMathText";
 import { getQuestionFontStyle } from "../../utils/learning-question-font";
 import { resolveLearningMcqChoiceClassName } from "../../utils/learning-mcq-choice-styles.client";
 import { sanitizeQuestionForStudentDisplay } from "../../utils/student-question-stem-sanitizer";
@@ -62,7 +62,7 @@ import {
   buildHebrewApprovedVerbalMcqGridClassName,
   getHebrewApprovedSingleVerbalQuestionStyle,
   HEBREW_APPROVED_VERBAL_ANSWER_AREA_CLASS,
-} from "../../utils/hebrew-approved-verbal-master-contract.client.js";
+} from "../../utils/approved-verbal-master-contract.client.js";
 import { warnDuplicateMcqOptionsDevOnly } from "../../utils/answer-compare";
 import {
   distractorFamilyFromOptionCell,
@@ -162,6 +162,7 @@ import {
   isStudentAdaptiveActive,
 } from "../../lib/learning-client/student-display-level-practice.js";
 import { useLearningMasterUi } from "../../hooks/useLearningMasterUi.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import SubjectMasterSessionShell from "../../components/learning/SubjectMasterSessionShell.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { useGuestPlayableTopics } from "../../hooks/useGuestPlayableTopics.js";
@@ -226,8 +227,7 @@ const AVATAR_OPTIONS = [
   "🎮",
   "🏆",
   "⭐",
-  "💫",
-];
+  "💫"];
 
 const SCIENCE_MISTAKES_KEY = "mleo_science_mistakes";
 const SCIENCE_MISTAKES_MAX = 80;
@@ -257,7 +257,10 @@ function getReferenceSection(ms, category) {
   return { label, entries };
 }
 
-const QUESTIONS = localizeScienceQuestionsForContentLocale(SCIENCE_QUESTIONS, "en");
+/** Localized at runtime from contentLocale (en / es-419 overlays). */
+function getLocalizedScienceQuestions(contentLocale) {
+  return localizeScienceQuestionsForContentLocale(SCIENCE_QUESTIONS, contentLocale);
+}
 
 function getTopicLabel(key, ms) {
   if (!key) return key;
@@ -418,7 +421,7 @@ function weightedPickQuestions(eligible, topicStats) {
 }
 
 /** Drops due, ineligible retries; returns first due question still in pool, or null. */
-function dequeueEligibleRetry(queue, pool, askCounter) {
+function dequeueEligibleRetry(queue, pool, askCounter, questionBank) {
   if (!queue.length || !pool.length) return null;
   queue.sort((a, b) => a.dueAt - b.dueAt);
   const maxSteps = queue.length + 3;
@@ -426,7 +429,7 @@ function dequeueEligibleRetry(queue, pool, askCounter) {
     const dueIdx = queue.findIndex((r) => r.dueAt <= askCounter);
     if (dueIdx < 0) return null;
     const item = queue.splice(dueIdx, 1)[0];
-    const candidate = QUESTIONS.find((q) => q.id === item.id);
+    const candidate = questionBank.find((q) => q.id === item.id);
     if (candidate && pool.some((p) => p.id === item.id)) {
       return candidate;
     }
@@ -564,10 +567,10 @@ function buildInsightFeedbackLines(insights, topicAnswerTails, t) {
 
 // ================== QUESTION BANK ==================
 
-// כל שאלה: נושא, כיתות מתאימות, רמת קושי, ניסוח, תשובות, הסבר, תיאוריה קצרה
+//  : ,  , ,  
 // ================== QUESTION BANK ==================
 
-// כל שאלה: נושא, כיתות מתאימות, רמת קושי, ניסוח, תשובות, הסבר, תיאוריה קצרה
+//  : ,  , ,  
 
 
 // ================== HELPERS ==================
@@ -641,6 +644,11 @@ function getSolutionStepsScience(question, getSteps) {
 
 export default function ScienceMaster() {
   useIOSViewportFix();
+  const { contentLocale } = useI18n();
+  const QUESTIONS = useMemo(
+    () => getLocalizedScienceQuestions(contentLocale),
+    [contentLocale]
+  );
   const { MB, ui, shellClass, shellBgStyle } = useLearningMasterUi();
   const ms = useLearningMasterStrings("science");
   const learningModalOverlay = ui.learningModalOverlay;
@@ -841,8 +849,7 @@ export default function ScienceMaster() {
       selectedAnswer,
       feedback,
       questionStartTime,
-      router,
-    ]
+      router]
   );
 
   const applyBookPracticePreset = useCallback((preset) => {
@@ -1047,7 +1054,7 @@ export default function ScienceMaster() {
     refreshMonthlyPersistenceView();
   }, [refreshMonthlyPersistenceView]);
 
-  // טעינת תמונת אווטר מ-localStorage
+  //    -localStorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       try {
@@ -1062,7 +1069,7 @@ export default function ScienceMaster() {
     }
   }, []);
 
-  // טיפול בהעלאת תמונת אווטר (דחיסה + שמירה בפרופיל — סנכרון בין מכשירים)
+  //     ( +   —   )
   const handleAvatarImageUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -1096,7 +1103,7 @@ export default function ScienceMaster() {
     e.target.value = "";
   };
 
-  // טיפול במחיקת תמונת אווטר
+  //    
   const handleRemoveAvatarImage = () => {
     void (async () => {
       const defaultAvatar = "👤";
@@ -1172,8 +1179,7 @@ export default function ScienceMaster() {
           profile.row.profile,
           setPlayerAvatar,
           setPlayerAvatarImage,
-          setPlayerAvatarBackground,
-        );
+          setPlayerAvatarBackground);
         learningProfileHydratedRef.current = true;
         try {
           const pr = profile.row.subjects?.science?.progressStore?.progress;
@@ -1243,8 +1249,7 @@ export default function ScienceMaster() {
     dailyStreak,
     playerAvatar,
     playerAvatarImage,
-    insightRevision,
-  ]);
+    insightRevision]);
 
   useEffect(() => {
     correctRef.current = correct;
@@ -1272,8 +1277,7 @@ export default function ScienceMaster() {
               v.attempts > 0
                 ? Number((v.wrong / v.attempts).toFixed(3))
                 : 0,
-          },
-        ])
+          }])
       ),
     });
     return () => {
@@ -1467,8 +1471,8 @@ export default function ScienceMaster() {
 
   function getLevelOverrideForFilter() {
     if (
-      !gameActive ||
-      focusedPracticeMode === "mistakes" ||
+      !gameActive |
+      focusedPracticeMode === "mistakes" |
       focusedPracticeMode === "graded"
     ) {
       return undefined;
@@ -1523,8 +1527,7 @@ export default function ScienceMaster() {
       if (stemFp) {
         intel.recentStemFps = [
           ...(intel.recentStemFps || []).filter((x) => x !== stemFp),
-          stemFp,
-        ].slice(-40);
+          stemFp].slice(-40);
       }
     }
     persistScienceIntel(intel);
@@ -1575,12 +1578,12 @@ export default function ScienceMaster() {
         scienceTrackingTopicKeyRef.current ?? questionForTrack?.topic;
       if (!topicKey) return;
       const qGrade =
-        questionForTrack?.assignedGrade ||
-        questionForTrack?.gradeKey ||
+        questionForTrack?.assignedGrade |
+        questionForTrack?.gradeKey |
         grade;
       const qLevel =
-        questionForTrack?.assignedLevel ||
-        questionForTrack?.levelKey ||
+        questionForTrack?.assignedLevel |
+        questionForTrack?.levelKey |
         level;
       trackScienceTopicTime(
         topicKey,
@@ -2036,7 +2039,7 @@ function saveScienceAnswerInParallel({
     /** Phase 3D-B — attach probe meta via shared runtime when probe-driven row is shown. */
     let probeAttachOpts = null;
 
-    let q = dequeueEligibleRetry(retryQueueRef.current, pool, askCounter);
+    let q = dequeueEligibleRetry(retryQueueRef.current, pool, askCounter, QUESTIONS);
     const usedRetryDequeue = !!q;
 
     if (!q) {
@@ -2094,17 +2097,17 @@ function saveScienceAnswerInParallel({
 
     pushRecentQuestionId(q, q.id);
 
-    // ערבוב התשובות (options) - Fisher-Yates shuffle
+    //   (options) - Fisher-Yates shuffle
     let shuffledOptions = [...(q.options || [])];
     const originalCorrectIndex = q.correctIndex;
     
-    // ערבוב התשובות
+    //  
     for (let i = shuffledOptions.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
     }
 
-    // מציאת המיקום החדש של התשובה הנכונה
+    //      
     const originalCorrectAnswer = q.options?.[originalCorrectIndex];
     const newCorrectIndex = shuffledOptions.findIndex(opt => opt === originalCorrectAnswer);
 
@@ -2162,7 +2165,7 @@ function saveScienceAnswerInParallel({
     setLives(3);
     clearActiveDiagnosticState(pendingDiagnosticProbeRef, scienceHypothesisLedgerRef);
 
-    // {ms.t("learning.master.reset")} מאגר השאלות
+    // {ms.t("learning.master.reset")}  
     questionPoolRef.current = [];
     questionIndexRef.current = 0;
     retryQueueRef.current = [];
@@ -2272,7 +2275,7 @@ function saveScienceAnswerInParallel({
 
     startLearningMasterSessionAudio(audio);
 
-    // מאתחל מאגר שאלות חדש לסשן הזה
+    //      
     generateNewQuestion(true);
   }
 
@@ -2874,8 +2877,7 @@ function saveScienceAnswerInParallel({
       playerAvatar,
       playerAvatarImage,
       dailyChallenge,
-      weeklyChallenge,
-    ]
+      weeklyChallenge]
   );
 
   useEffect(() => {
@@ -2889,8 +2891,7 @@ function saveScienceAnswerInParallel({
     { open: showPracticeOptions, close: () => setShowPracticeOptions(false) },
     { open: showReferenceModal, close: () => setShowReferenceModal(false) },
     { open: showHowTo, close: () => setShowHowTo(false) },
-    { open: showLeaderboard, close: () => setShowLeaderboard(false) },
-  ]);
+    { open: showLeaderboard, close: () => setShowLeaderboard(false) }]);
 
   if (!mounted || session.sessionLoading) {
     return <SubjectMasterSessionShell shellClass={shellClass} shellBgStyle={shellBgStyle} />;
@@ -3073,7 +3074,7 @@ function saveScienceAnswerInParallel({
                 <div
                   data-testid="science-player-name"
                   className={MB.preGamePlayerBadge}
-                  dir={playerName && /[\u0590-\u05FF]/.test(playerName) ? "rtl" : "ltr"}
+                  dir={playerName && /(?!)/.test(playerName) ? "rtl" : "ltr"}
                   title={playerName.trim() ? playerName.trim() : undefined}
                   aria-label={playerName.trim() ? ms.t("learning.master.childNameAria", { name: playerName.trim() }) : ms.childNameUnavailable}
                 >
@@ -3256,7 +3257,7 @@ function saveScienceAnswerInParallel({
                         <div
                           className={`${feedback.includes("Excellent") || feedback.includes("Great") ? MB.feedbackOk : MB.feedbackBad}`}
                         >
-                          {renderLearningMixedHebrewMathText(feedback)}
+                          {renderLearningMixedRtlMathText(feedback)}
                         </div>
                       )}
                       {errorExplanation && (
@@ -3266,7 +3267,7 @@ function saveScienceAnswerInParallel({
                         >
                           <div className="text-xs font-semibold text-rose-100 mb-1.5 tracking-tight">{ms.whyMistake}</div>
                           <div className="text-rose-50">
-                            {renderLearningMixedHebrewMathText(errorExplanation)}
+                            {renderLearningMixedRtlMathText(errorExplanation)}
                           </div>
                         </div>
                       )}
@@ -3468,7 +3469,7 @@ function saveScienceAnswerInParallel({
                         {getSolutionStepsScience(explanationQuestion, ms.getScienceSolutionSteps).map(
                           (line, idx) => (
                             <div key={idx} className={learningExplBody}>
-                              {renderLearningMixedHebrewMathText(line)}
+                              {renderLearningMixedRtlMathText(line)}
                             </div>
                           )
                         )}
@@ -3519,7 +3520,7 @@ function saveScienceAnswerInParallel({
                       <ul className="list-disc ps-4 space-y-1 text-sm text-white/90">
                         {currentQuestion.theoryLines.map((line, i) => (
                           <li key={i}>
-                            {renderLearningMixedHebrewMathText(line)}
+                            {renderLearningMixedRtlMathText(line)}
                           </li>
                         ))}
                       </ul>
@@ -3753,8 +3754,7 @@ function saveScienceAnswerInParallel({
                   {[
                     { value: "normal", label: ms.t("learning.master.practiceModes.normal") },
                     { value: "mistakes", label: ms.t("learning.master.practiceModes.mistakes") },
-                    { value: "graded", label: ms.t("learning.master.practiceModes.graded") },
-                  ].map((opt) => (
+                    { value: "graded", label: ms.t("learning.master.practiceModes.graded") }].map((opt) => (
                     <label key={opt.value} className="flex items-center gap-2 text-sm">
                       <input
                         type="radio"
@@ -3977,8 +3977,8 @@ function saveScienceAnswerInParallel({
                       <div className="text-sm text-white/60 mb-2">{ms.topicProgress}</div>
                       <div className="space-y-2 max-h-[200px] overflow-y-auto">
                         {Object.entries(progress)
-                          .filter(([, data]) => (data?.total || 0) > 0)
-                          .sort(([, a], [, b]) => (b?.total || 0) - (a?.total || 0))
+                          .filter(([ data]) => (data?.total || 0) > 0)
+                          .sort(([ a], [ b]) => (b?.total || 0) - (a?.total || 0))
                           .map(([topicKey, data]) => {
                             const topicAccuracy =
                               data.total > 0 ? Math.round((data.correct / data.total) * 100) : 0;

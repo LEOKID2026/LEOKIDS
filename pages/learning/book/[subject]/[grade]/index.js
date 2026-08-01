@@ -5,6 +5,7 @@ import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../lib/learning-book/learning-book-nav";
 import { getLearningBookMasterPath } from "../../../../../lib/learning-book/learning-book-catalog-meta";
 import { useMemo } from "react";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 export default function DynamicLearningBookIndex({
   batches,
@@ -41,7 +42,7 @@ export default function DynamicLearningBookIndex({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
   const subject = params.subject;
   const grade = params.grade;
   const { getLearningBookEntry } = await import(
@@ -55,7 +56,7 @@ export async function getServerSideProps({ params }) {
   if (!entry || !clientMeta) {
     return { notFound: true };
   }
-  const batches = entry.loader.loadTocEntries();
+  const batches = entry.loader.loadTocEntries({ contentLocale });
   return {
     props: {
       batches,

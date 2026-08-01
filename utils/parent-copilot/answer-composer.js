@@ -9,7 +9,7 @@ import { narrativeSectionTextHe } from "../contracts/narrative-contract-v1.js";
 import { coachingVariantIndex, applyParentCoachingPacks, pickUncertaintyReasonScript } from "./parent-coaching-packs.js";
 import { parentDirectOpenerHe } from "./direct-answer-openers.js";
 import { isMixedGradeReportQuestion } from "./report-row-resolver.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 import { compactParentAnswerBlocks } from "./answer-compaction.js";
 import { PEER_COMPARISON_RESPONSE_HE } from "./question-classifier.js";
 
@@ -37,16 +37,14 @@ export function buildClinicalBoundaryAnswerDraft() {
     answerBlocks: [
       { type: "observation", answerText: CLINICAL_BOUNDARY_LINE_1_HE, source: "composed" },
       { type: "meaning", answerText: CLINICAL_BOUNDARY_LINE_2_HE, source: "composed" },
-      { type: "caution", answerText: CLINICAL_BOUNDARY_LINE_3_HE, source: "composed" },
-    ],
-  };
+      { type: "caution", answerText: CLINICAL_BOUNDARY_LINE_3_HE, source: "composed" }]};
 }
 
 /**
  * Normalized join of boundary blocks - matches `validateAnswerDraft` joined shape (single spaces between blocks).
  */
 export function clinicalBoundaryJoinedFingerprintHe() {
-  return [CLINICAL_BOUNDARY_LINE_1_HE, CLINICAL_BOUNDARY_LINE_2_HE, CLINICAL_BOUNDARY_LINE_3_HE].join(" ");
+  return [CLINICAL_BOUNDARY_LINE_1_HE, CLINICAL_BOUNDARY_LINE_2_HE, CLINICAL_BOUNDARY_LINE_3_HE].join("");
 }
 
 /** Approved peer-comparison early-exit (single line). */
@@ -62,14 +60,12 @@ export function buildSensitiveEducationChoiceAnswerDraft() {
     answerBlocks: [
       { type: "observation", answerText: SENSITIVE_EDUCATION_LINE_1_HE, source: "composed" },
       { type: "meaning", answerText: SENSITIVE_EDUCATION_LINE_2_HE, source: "composed" },
-      { type: "caution", answerText: SENSITIVE_EDUCATION_LINE_3_HE, source: "composed" },
-    ],
-  };
+      { type: "caution", answerText: SENSITIVE_EDUCATION_LINE_3_HE, source: "composed" }]};
 }
 
 /** Normalized join for validator whitelist (fixed deterministic copy). */
 export function sensitiveEducationChoiceJoinedFingerprintHe() {
-  return [SENSITIVE_EDUCATION_LINE_1_HE, SENSITIVE_EDUCATION_LINE_2_HE, SENSITIVE_EDUCATION_LINE_3_HE].join(" ");
+  return [SENSITIVE_EDUCATION_LINE_1_HE, SENSITIVE_EDUCATION_LINE_2_HE, SENSITIVE_EDUCATION_LINE_3_HE].join("");
 }
 
 /**
@@ -78,7 +74,7 @@ export function sensitiveEducationChoiceJoinedFingerprintHe() {
 function hebrewTokens4(text) {
   return String(text || "")
     .split(/\s+/)
-    .map((t) => t.replace(/^[^\u0590-\u05FF]+|[^\u0590-\u05FF]+$/g, ""))
+    .map((t) => t.replace(/^[^-]+|[^-]+$/g, ""))
     .filter((t) => t.length >= 4);
 }
 
@@ -104,7 +100,7 @@ function tokenOverlapCount4(a, b) {
 function requiredHedgeAlreadyCoveredInDraft(hedge, reason, priorSlots) {
   const h = String(hedge || "").trim();
   if (!h) return true;
-  const bucket = `${priorSlots} ${reason}`.replace(/\s+/g, " ").trim();
+  const bucket = `${priorSlots} ${reason}`.replace(/\s+/g, "").trim();
   if (!bucket) return false;
   if (bucket.includes(h)) return true;
   if (h === copilotStaticMessage("copilot.answers.utils_parent-copilot_answer-composer.still_too_early_to_decide") && (bucket.includes("too early to determine") || bucket.includes("still early"))) return true;
@@ -135,12 +131,12 @@ function dedupeAdjacentOverlappingComposed(blocks) {
 
 /** Mirrors QA harness `home_practice` magnitude check — slots/coaching often omit these tokens. */
 const PRACTICAL_MAGNITUDE_MARKERS_RE =
-  /(דקות|דקה|פעמים|שאלות|סשנים|זמן\s+קצר|\d+\s*דק)/u;
+  /(\s+|\d+\s*)/u;
 
 function weakSubjectLabelForPlan(truthPacket) {
   return (
-    String(truthPacket?.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
-    String(truthPacket?.surfaceFacts?.subjectLabelHe || "").trim() ||
+    String(truthPacket?.surfaceFacts?.weakFocussubjectLabel || "").trim() |
+    String(truthPacket?.surfaceFacts?.subjectLabel || "").trim() |
     "Subject from the report"
   );
 }
@@ -193,8 +189,7 @@ export function ensureHomePracticePracticalMagnitudeDraft(draft, responseIntent,
     answerText: `${String(last?.answerText || "").trim()}\n\n${tail}`.trim(),
     // Magnitude tail is deterministic product copy; keep contract_slot so resolved+fallbackUsed
     // passes validateParentCopilotResponseV1 (fallback_non_slot_source).
-    source: last?.source === "contract_slot" ? "contract_slot" : last.source,
-  };
+    source: last?.source === "contract_slot" ? "contract_slot" : last.source};
   return { ...draft, answerBlocks: next };
 }
 
@@ -227,14 +222,12 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
   if (intentEarly === "clinical_boundary") {
     return {
       ...buildClinicalBoundaryAnswerDraft(),
-      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-    };
+      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
   }
   if (intentEarly === "sensitive_education_choice") {
     return {
       ...buildSensitiveEducationChoiceAnswerDraft(),
-      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-    };
+      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
   }
   if (intentEarly === "off_topic_redirect") {
     return {
@@ -243,17 +236,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           type: "observation",
           answerText:
             "Here you can ask questions about the report and the learning progress that appears in it.",
-          source: "composed",
-        },
+          source: "composed"},
         {
           type: "meaning",
           answerText:
             "For example: What should you practice this week? Or where relatively good results were seen?",
-          source: "composed",
-        },
-      ],
-      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-    };
+          source: "composed"}],
+      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
   }
   if (intentEarly === "parent_policy_refusal") {
     return {
@@ -262,17 +251,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           type: "observation",
           answerText:
             "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it.",
-          source: "composed",
-        },
+          source: "composed"},
         {
           type: "meaning",
           answerText:
             "It is not possible to ignore the report or bypass what was told from the practice within the scope of the report only. If something doesn't seem to be working out, it's right to check dates and topics together before deciding on a direction.",
-          source: "composed",
-        },
-      ],
-      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-    };
+          source: "composed"}],
+      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
   }
   if (intentEarly === "off_report_subject_clarification") {
     return {
@@ -281,17 +266,13 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
           type: "observation",
           answerText:
             "In the practice report presented here, there is currently no data on the subject you asked about - the system records only the study subjects that appear in the report.",
-          source: "composed",
-        },
+          source: "composed"},
         {
           type: "meaning",
           answerText:
             "Therefore, it is not possible to assess a situation here according to this report on this issue; If a relevant practice enters the range, the image will be updated.",
-          source: "composed",
-        },
-      ],
-      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-    };
+          source: "composed"}],
+      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
   }
 
   const intentMain = String(coachingCtx?.intent || plan.intent || "");
@@ -311,8 +292,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     if (blocks.length > 0) {
       return {
         answerBlocks: blocks,
-        debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-      };
+        debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
     }
   }
 
@@ -338,7 +318,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     if (actWk) {
       // Use "composed" not "contract_slot" — normalizeAnswerBlocksHe replaces \n with spaces,
       // making the text diverge from the raw slot text, which would trigger contract_slot_mismatch.
-      blocks.push({ type: "next_step", answerText: actWk.replace(/\n/g, " "), source: "composed" });
+      blocks.push({ type: "next_step", answerText: actWk.replace(/\n/g, ""), source: "composed" });
     } else if (interpWk) {
       blocks.push({ type: "meaning", answerText: interpWk, source: "composed" });
     }
@@ -346,14 +326,12 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       blocks.push({
         type: "next_step",
         answerText: defaultConcretePlanTextHe(intentMain, truthPacket),
-        source: "composed",
-      });
+        source: "composed"});
     }
     if (blocks.length > 0) {
       return {
         answerBlocks: blocks,
-        debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-      };
+        debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
     }
   }
 
@@ -382,8 +360,8 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       const isWeeklyIntent = intent === "what_to_do_today" || intent === "what_to_do_this_week";
       if (!recommendationOk && isWeeklyIntent) {
         const subj =
-          String(truthPacket?.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
-          String(truthPacket?.surfaceFacts?.subjectLabelHe || "").trim() ||
+          String(truthPacket?.surfaceFacts?.weakFocussubjectLabel || "").trim() |
+          String(truthPacket?.surfaceFacts?.subjectLabel || "").trim() |
           "Subject from the report";
         answerBlocks.push({
           type: "next_step",
@@ -391,8 +369,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
             intent === "what_to_do_today"
               ? `Tomorrow: 1) 8–10 minutes short practice in ${subj} around the topic that stands out as a gap in the report. 2) Then 3-5 short test questions. 3) End in one sentence for the child what you tried together.`
               : `For the coming week: 1) Choose one central topic in ${subj} according to what stands out in the report. 2) Divide into three short windows of practice (15-20 minutes total per week). 3) At the end of the week, check in one sentence what has improved compared to the beginning of the week.`,
-          source: "composed",
-        });
+          source: "composed"});
         continue;
       }
       if (act) {
@@ -402,8 +379,8 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
         }
       } else if (intent === "what_to_do_today" || intent === "what_to_do_this_week") {
         const subj =
-          String(truthPacket?.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
-          String(truthPacket?.surfaceFacts?.subjectLabelHe || "").trim() ||
+          String(truthPacket?.surfaceFacts?.weakFocussubjectLabel || "").trim() |
+          String(truthPacket?.surfaceFacts?.subjectLabel || "").trim() |
           "Subject from the report";
         answerBlocks.push({
           type: "next_step",
@@ -411,8 +388,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
             intent === "what_to_do_today"
               ? `Tomorrow: 1) 8–10 minutes short practice in ${subj} around the topic that stands out as a gap in the report. 2) Then 3-5 short test questions. 3) End in one sentence for the child what you tried together.`
               : `For the coming week: 1) choose one central topic from the report. 2) Divide into three short windows of practice. 3) At the end of the week, make a one-sentence summary of what progressed.`,
-          source: "composed",
-        });
+          source: "composed"});
       }
     }
     if (b === "caution" && lim) {
@@ -424,13 +400,12 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       const iv1Low = hasIntelligenceSignals && String(iv1?.confidenceBand || "") === "low";
       const dlForUncertainty = {
         ...dl,
-        confidenceBand: String(dl.confidenceBand || "") === "low" || iv1Low ? "low" : dl.confidenceBand,
-      };
+        confidenceBand: String(dl.confidenceBand || "") === "low" || iv1Low ? "low" : dl.confidenceBand};
       let reason = pickUncertaintyReasonScript(dlForUncertainty, intent, scriptIx);
       if (
         sfQ >= 120 &&
         sfA >= 65 &&
-        /דקים מדי|לא ניתן לקבוע כיוון עקבי|כיוון ברור|שאלות פתוחות|עדיין לא מאפשר לקבוע/u.test(reason)
+        / ||    || | ||   /u.test(reason)
       ) {
         reason =
           "There is a significant volume of practice in the report; There is still a natural difference between what happens at home and what is told in the range - we will update again after more practice.";
@@ -444,7 +419,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       const hedges = Array.isArray(truthPacket.allowedClaimEnvelope?.requiredHedges)
         ? truthPacket.allowedClaimEnvelope.requiredHedges.map((h) => String(h || "").trim()).filter(Boolean)
         : [];
-      const priorSlotsForHedgeDedup = [obs, interp, lim].filter(Boolean).join(" ");
+      const priorSlotsForHedgeDedup = [obs, interp, lim].filter(Boolean).join("");
       for (const h of hedges) {
         if (h && !requiredHedgeAlreadyCoveredInDraft(h, reason, priorSlotsForHedgeDedup)) {
           reason = `${h} - ${reason}`;
@@ -464,8 +439,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
   if (!coachingCtx || !intent) {
     return {
       answerBlocks,
-      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-    };
+      debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
   }
 
   const packed = applyParentCoachingPacks(answerBlocks, {
@@ -474,8 +448,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     conversationState: coachingCtx.conversationState,
     continuityRepeat: !!coachingCtx.continuityRepeat,
     turnOrdinal: turnOrd,
-    stripParentFacingMeta: true,
-  });
+    stripParentFacingMeta: true});
 
   let composed = dedupeAdjacentOverlappingComposed(packed);
   const opener = parentDirectOpenerHe(intent, truthPacket);
@@ -484,19 +457,17 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
     const cur = String(composed[firstObsIx].answerText || "").trim();
     composed[firstObsIx] = {
       ...composed[firstObsIx],
-      answerText: cur.includes(opener.slice(0, 12)) ? cur : `${opener}\n\n${cur}`.trim(),
-    };
+      answerText: cur.includes(opener.slice(0, 12)) ? cur : `${opener}\n\n${cur}`.trim()};
   }
 
   composed = compactParentAnswerBlocks(composed, {
     scopeType: String(truthPacket?.scopeType || ""),
     maxBlocks: truthPacket?.scopeType === "executive" ? 4 : 5,
-    maxTotalChars: truthPacket?.scopeType === "executive" ? 1900 : 2400,
-  });
+    maxTotalChars: truthPacket?.scopeType === "executive" ? 1900 : 2400});
 
   const parentUtterance = String(coachingCtx?.parentUtterance || plan?.parentUtterance || "");
   const gpm = truthPacket?.surfaceFacts?.gradePracticeMeta;
-  if (isMixedGradeReportQuestion(foldUtteranceForHeMatch(parentUtterance)) && gpm?.mixedGradePractice) {
+  if (isMixedGradeReportQuestion(foldUtteranceForMatch(parentUtterance)) && gpm?.mixedGradePractice) {
     const note = String(gpm.mixedGradePracticeNoteHe || "").trim();
     const gradeLine = note
       ? `${note} Each line in the report shows the content class in which the practice was performed - do not merge between classes when determining direction.`
@@ -508,6 +479,5 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
 
   return {
     answerBlocks: composed,
-    debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) },
-  };
+    debug: { intelligenceV1: intelligenceV1DebugSnapshot(truthPacket) }};
 }

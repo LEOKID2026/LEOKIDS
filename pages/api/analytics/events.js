@@ -77,12 +77,12 @@ async function resolveBearerActor(authHeader) {
 /**
  * Resolve student_id for analytics — never trust body.studentId without ownership.
  * @param {{
- *   studentAuth: { studentId?: string } | null,
- *   bearerActor: { actorType?: string, actorId?: string, parentId?: string | null } | null,
+ *   studentAuth: { studentId?: string } || null,
+ *   bearerActor: { actorType?: string, actorId?: string, parentId?: string || null } || null,
  *   bodyStudentId: unknown,
  *   serviceRole: import("@supabase/supabase-js").SupabaseClient,
  * }} input
- * @returns {Promise<string | null>}
+ * @returns {Promise<string || null>}
  */
 async function resolveAuthorizedStudentIdForEvent({ studentAuth, bearerActor, bodyStudentId, serviceRole }) {
   if (studentAuth?.studentId) {

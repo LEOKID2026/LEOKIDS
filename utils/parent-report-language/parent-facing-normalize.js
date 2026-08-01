@@ -2,7 +2,6 @@
  * Final parent-facing text normalization for English (Global) surfaces — pedagogy-only
  * clean-up: strips jargon, taxonomy codes, and any technical tokens that leaked into a
  * sentence. Does not change engine logic; display-only.
- * English sibling of parent-facing-normalize-he.js.
  */
 
 import { humanizeTopicKey, PARENT_TOPIC_FALLBACK_EN } from "../diagnostic-labels.js";
@@ -49,7 +48,7 @@ const BEHAVIOR_SNAKE_TOKENS = [
  * @param {string|null|undefined} raw
  * @returns {string}
  */
-export function normalizeParentFacingHe(raw) {
+export function normalizeParentFacing(raw) {
   let s = String(raw ?? "").trim();
   if (!s) return "";
 
@@ -75,8 +74,8 @@ export function normalizeParentFacingHe(raw) {
   return s;
 }
 
-/** Back-compat alias used by call sites migrated from the Hebrew module. */
-export const normalizeParentFacing = normalizeParentFacingHe;
+/** @deprecated Prefer normalizeParentFacing */
+export const normalizeParentFacingHe = normalizeParentFacing;
 
 /**
  * Second pass over a subject letter object — catches text left after the first pass.
@@ -87,7 +86,7 @@ export function normalizeSubjectParentLetterHe(letter) {
   const out = { ...letter };
   const keys = ["opening", "diagnosisHe", "homeAction", "closing", "goingWell", "fragile", "middle", "reliabilityNoteHe"];
   for (const k of keys) {
-    if (typeof out[k] === "string" && out[k]) out[k] = normalizeParentFacingHe(out[k]);
+    if (typeof out[k] === "string" && out[k]) out[k] = normalizeParentFacing(out[k]);
   }
   return out;
 }
@@ -103,9 +102,9 @@ export function glossTopicRecommendationHeFields(rec) {
   for (const [k, v] of Object.entries(out)) {
     if (!/He$/.test(k)) continue;
     if (typeof v === "string" && v) {
-      out[k] = normalizeParentFacingHe(v);
+      out[k] = normalizeParentFacing(v);
     } else if (Array.isArray(v)) {
-      out[k] = v.map((item) => (typeof item === "string" ? normalizeParentFacingHe(item) : item));
+      out[k] = v.map((item) => (typeof item === "string" ? normalizeParentFacing(item) : item));
     }
   }
   return out;

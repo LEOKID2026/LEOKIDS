@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_x_engine_review_token_header": "Falta el encabezado x-engine-review-token",
+    "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry": "Ejecute npm run qa:learning-simulator:professional-engine (PASS), luego vuelva a intentarlo."
+  }
+}

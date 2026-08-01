@@ -67,7 +67,7 @@ out.push("");
 out.push(`Generated: ${new Date().toISOString().slice(0, 10)}`);
 out.push("");
 out.push(
-  "Each section lists **source-normalized** text (markdown stripped) and **renderer-normalized** visible text (MixedHebrewMathText simulation)."
+  "Each section lists **source-normalized** text (markdown stripped) and **renderer-normalized** visible text (MixedRtlMathText simulation)."
 );
 out.push("");
 

@@ -1,0 +1,370 @@
+{
+  "balloons": {
+    "gameId": "balloons",
+    "title": "Explota globos",
+    "blurb": "¡Explota globos antes de que se acabe el tiempo!",
+    "help": {
+      "howToPlay": "Toca los globos para reventarlos. Tienes tres vidas y un minuto. ¡Cuidado con las bombas!",
+      "scoring": "Los globos normales, dorados y de diamantes suman puntos. Los globos de reloj añaden tiempo y los globos de corazón restauran la vida. Una bomba acaba con una vida.",
+      "rewards": "Alcanzar el objetivo pop o una puntuación final alta otorga monedas y diamantes.",
+      "tip": "Esté atento a los globos especiales: pueden ayudarle antes de que se acabe el tiempo."
+    }
+  },
+  "bingo": {
+    "gameId": "bingo",
+    "title": "Bingo",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "catcher": {
+    "gameId": "catcher",
+    "title": "Atrapa con Leo",
+    "blurb": "¡Atrapa monedas y mantente alejado de las bombas!",
+    "help": {
+      "howToPlay": "Mueve a Leo hacia la izquierda y hacia la derecha para atrapar monedas y diamantes que caen del cielo.",
+      "scoring": "Cada moneda o diamante capturado suma puntos. Golpear una bomba termina el juego.",
+      "rewards": "Cuantos más puntos ganes, más monedas y diamantes obtendrás para tu mundo infantil.",
+      "tip": "Mantén tus ojos en lo que está cayendo y avanza antes de que el objeto llegue al fondo."
+    }
+  },
+  "checkers": {
+    "gameId": "checkers",
+    "title": "Damas",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "chess": {
+    "gameId": "chess",
+    "title": "Ajedrez",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "dominoes": {
+    "gameId": "dominoes",
+    "title": "Dominó",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "flyer": {
+    "gameId": "flyer",
+    "title": "Leo en un avión",
+    "blurb": "¡Mantén presionado para volar, recoger monedas y evitar obstáculos!",
+    "help": {
+      "howToPlay": "Mantén presionado el botón o la pantalla para volar y suéltalo para descender. Recoge monedas y evita obstáculos.",
+      "scoring": "Las monedas y los diamantes suman puntos. Golpear un obstáculo finaliza el juego.",
+      "rewards": "Cuanto más lejos vueles y más puntos ganes, más monedas y diamantes obtendrás.",
+      "tip": "No vueles demasiado alto; a veces es mejor pasar por debajo de un obstáculo."
+    }
+  },
+  "fourline": {
+    "gameId": "fourline",
+    "title": "Cuatro en línea",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "fruit-slice": {
+    "gameId": "fruit-slice",
+    "title": "Rebanada de fruta",
+    "blurb": "¡Corta fruta, evita las bombas y alcanza el objetivo de puntuación!",
+    "help": {
+      "howToPlay": "Arrastra el dedo por la pantalla para cortar frutas voladoras. Evita las bombas: tienes tres errores permitidos.",
+      "scoring": "Cada fruta cortada suma puntos. Cortar varias frutas a la vez otorga una bonificación combinada. Golpear una bomba o perder una fruta cuesta un error.",
+      "rewards": "Alcanzar el objetivo de puntuación según el nivel de dificultad otorga monedas y diamantes.",
+      "tip": "Corta solo fruta; si ves una bomba, es mejor omitirla."
+    }
+  },
+  "leo-bakery": {
+    "gameId": "leo-bakery",
+    "title": "Panadería Leo",
+    "blurb": "Multiplicación, grupos iguales y bandejas.",
+    "help": {
+      "howToPlay": "Prepare bandejas con la misma cantidad de productos horneados: establezca la cantidad de bandejas y la cantidad por bandeja, luego toque \"Verificar pedido\".",
+      "scoring": "Respuesta correcta +30, bonificación de tiempo hasta +20, racha de 5 aciertos +25. No se deducen puntos por errores.",
+      "rewards": "Las monedas se otorgan según la cantidad de pedidos que preparó correctamente, la precisión, las rachas y el nivel de dificultad.",
+      "tip": "Piense en cuántas bandejas × cuántas por bandeja, no solo en el resultado final."
+    },
+    "accessibility": {
+      "title": "Panadería Leo"
+    }
+  },
+  "leo-gifts": {
+    "gameId": "leo-gifts",
+    "title": "Tienda de dulces Leo",
+    "blurb": "División igual, restos y matemáticas rápidas",
+    "help": {
+      "howToPlay": "Divida los regalos entre los niños: elija cuántos recibirá cada niño y cuántos le quedan a Leo, luego toque \"Verificar división\".",
+      "scoring": "Respuesta correcta +30, bonificación de tiempo hasta +20, racha de 5 aciertos +25. No se deducen puntos por errores.",
+      "rewards": "Las monedas se otorgan según la cantidad de preguntas que respondiste correctamente, la precisión, las rachas y el nivel de dificultad, incluso si el juego terminó debido a errores.",
+      "tip": "Comprueba que lo has dividido todo y que a Leo no le quedan demasiados: puedes darle más a cada niño."
+    },
+    "accessibility": {
+      "title": "Tienda de dulces Leo"
+    }
+  },
+  "leo-jump": {
+    "gameId": "leo-jump",
+    "title": "Leo salta",
+    "blurb": "¡Salta obstáculos y recoge monedas!",
+    "help": {
+      "howToPlay": "Toca para saltar. Supera obstáculos y recoge monedas, diamantes e imanes en el camino.",
+      "scoring": "Las monedas y los diamantes suman puntos. Los saltos consecutivos sobre obstáculos otorgan una bonificación combinada. Golpear un obstáculo finaliza el juego.",
+      "rewards": "Cuanto más corras y más puntos ganes, más monedas y diamantes obtendrás.",
+      "tip": "No saltes cada vez; a veces es mejor esperar un momento y saltar en el momento adecuado."
+    }
+  },
+  "leo-lab": {
+    "gameId": "leo-lab",
+    "title": "Laboratorio de experimentos de Leo",
+    "blurb": "Un juego sobre experimentos, materiales y causa y efecto.",
+    "help": {
+      "howToPlay": "Lea la tarea del experimento, elija elementos del estante (arrastre o toque), colóquelos en la mesa del laboratorio y toque \"Verificar experimento\".",
+      "scoring": "Un experimento exitoso +30, éxito en el primer intento +10, racha de 3 aciertos +15, racha de 5 +30. No se deducen puntos por errores.",
+      "rewards": "Las monedas se otorgan en función de cuántos experimentos tuvo éxito, nivel de dificultad, precisión, rachas y de completar 20 experimentos, solo si tuvo éxito al menos una vez.",
+      "tip": "Piense en lo que se necesita para completar la tarea; no confíe en las sugerencias de las tarjetas de elementos."
+    },
+    "accessibility": {
+      "title": "Laboratorio de experimentos de Leo"
+    }
+  },
+  "leo-miners": {
+    "gameId": "leo-miners",
+    "title": "Leo el minero",
+    "blurb": "¡Fusiona perros mineros, rompe rocas y gana puntos para canjear!",
+    "help": {
+      "howToPlay": "Agrega perros mineros al tablero, arrastra perros del mismo nivel para fusionarlos y rompe rocas para ganar monedas y puntos.",
+      "scoring": "Cada roca rota otorga monedas. Los puntos se acumulan según el nivel de la roca, con un límite diario.",
+      "rewards": "Los puntos se pueden canjear por monedas Leo y diamantes (una vez que el servidor esté listo).",
+      "tip": "Mejora DPS para romper rocas más rápido y ORO para ganar más monedas de cada roca."
+    }
+  },
+  "leo-number-path": {
+    "gameId": "leo-number-path",
+    "title": "El camino numérico de Leo",
+    "blurb": "Secuencias, pares impares y múltiplos",
+    "help": {
+      "howToPlay": "Elija números de la ruta según la tarea (números pares, múltiplos, conteo saltado o una secuencia) y luego toque \"Verificar ruta\".",
+      "scoring": "Correcto en el primer intento +30, segundo intento +20, tercer intento +10. Después de 3 errores pasas a la siguiente tarea.",
+      "rewards": "Las monedas se otorgan en función de cuántas de las 20 tareas hayas completado, precisión, rachas y finalización del camino.",
+      "tip": "Preste atención a si el orden importa: para el conteo saltado y las secuencias debe elegir en orden."
+    },
+    "accessibility": {
+      "title": "El camino numérico de Leo"
+    }
+  },
+  "leo-pizzeria": {
+    "gameId": "leo-pizzeria",
+    "title": "Pizzería Leo",
+    "blurb": "Aprender fracciones haciendo pizzas.",
+    "help": {
+      "howToPlay": "Lea el pedido, agregue ingredientes a las porciones de pizza (toque o arrastre) y toque \"Servir pizza\".",
+      "scoring": "Pizza correcta +30, racha de 3 correcta +15, racha de 5 +30. No se deducen puntos por errores.",
+      "rewards": "Las monedas se otorgan según la cantidad de clientes atendidos, la precisión, las rachas y el nivel de dificultad, incluso si no atendiste a los 20 clientes.",
+      "tip": "Verifique cuántas rebanadas cubre cada cobertura: la mitad, un cuarto y un octavo se refieren al número de rebanadas, no a una posición."
+    },
+    "accessibility": {
+      "title": "Pizzería Leo"
+    }
+  },
+  "leo-supermarket": {
+    "gameId": "leo-supermarket",
+    "title": "Tienda de comestibles Leo",
+    "blurb": "Un juego sobre dinero, compras y cambio.",
+    "help": {
+      "howToPlay": "Un cliente solicita productos: recójalos del estante, calcule el cambio y elija las monedas correspondientes. Toca \"Dar cambio\" cuando estés listo.",
+      "scoring": "Producto correcto +10, cambio correcto +25, cliente satisfecho +30, cambio acertado al primer intento +10, servicio rápido +5. Un error o falta de tiempo −5.",
+      "rewards": "Las monedas se otorgan según la cantidad de clientes atendidos, la precisión, las rachas y el nivel de dificultad, incluso si no atendiste a los 20 clientes.",
+      "tip": "Verifique el total de la compra y cuánto pagó el cliente; determine usted mismo cuánto cambio debe devolver."
+    },
+    "accessibility": {
+      "title": "Tienda de comestibles Leo"
+    }
+  },
+  "leo-word-detective": {
+    "gameId": "leo-word-detective",
+    "title": "El detective de palabras de Leo",
+    "blurb": "Arrastra evidencia a la pizarra y resuelve casos de lectura y vocabulario.",
+    "help": {
+      "howToPlay": "Arrastre las tarjetas de evidencia al tablero de investigación y toque \"Resolver caso\". Cuando la respuesta es correcta, ¡el caso está cerrado!",
+      "scoring": "Respuesta correcta +30, bonificación de tiempo, racha de 3 +15, racha de 5 +30. Tiempo de espera −5. Un error no termina el juego, simplemente cuenta.",
+      "rewards": "Las monedas se otorgan según cuántos de los 20 casos resolviste, precisión, rachas y nivel de dificultad.",
+      "tip": "Lea atentamente la tarea del caso: en el nivel difícil hay un breve pasaje en el tablero."
+    },
+    "accessibility": {
+      "title": "El detective de palabras de Leo"
+    }
+  },
+  "leo-word-train": {
+    "gameId": "leo-word-train",
+    "title": "El tren de palabras de Leo",
+    "blurb": "Letras, palabras y oraciones en inglés - viajar en los vagones del tren",
+    "help": {
+      "howToPlay": "Elige una tarjeta, cárgala en un vagón vacío y toca \"Enviar el tren\". Cuando la respuesta es correcta, ¡el tren sale!",
+      "scoring": "Respuesta correcta +30, bonificación de tiempo, racha de 3 +15, racha de 5 +30. Tiempo de espera −5. Un error no termina el juego, simplemente cuenta.",
+      "rewards": "Las monedas se otorgan según la cantidad de tareas que hayas completado de las 20, la precisión, las rachas y el nivel de dificultad.",
+      "tip": "En fácil, solo letras. Medio - palabras cortas. Difíciles: frases cortas."
+    },
+    "accessibility": {
+      "title": "El tren de palabras de Leo"
+    }
+  },
+  "ludo": {
+    "gameId": "ludo",
+    "title": "Ludo",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "maze": {
+    "gameId": "maze",
+    "title": "El laberinto de Leo",
+    "blurb": "¡Encuentra la salida del laberinto antes de que acabe el tiempo!",
+    "help": {
+      "howToPlay": "Mueve a Leo a través del laberinto, recoge llaves y estrellas y encuentra la salida antes de que se acabe el tiempo.",
+      "scoring": "Las llaves, las estrellas y los diamantes suman puntos. Terminar el laberinto da una gran ventaja. Si se acaba el tiempo, el juego termina.",
+      "rewards": "Terminar con éxito el laberinto según el nivel de dificultad otorga monedas, y una bonificación de puntuación agrega aún más.",
+      "tip": "Recoge las llaves primero; a veces abren un camino más corto."
+    }
+  },
+  "memory-match": {
+    "gameId": "memory-match",
+    "title": "Coincidencia de memoria",
+    "blurb": "Voltea cartas, encuentra parejas e intenta ganar.",
+    "players": "1-2 jugadores",
+    "help": {
+      "howToPlay": "Jueguen juntos en el mismo dispositivo."
+    }
+  },
+  "memory": {
+    "gameId": "memory",
+    "title": "El juego de memoria de Leo",
+    "blurb": "¡Voltea cartas y encuentra pares antes de que se acabe el tiempo!",
+    "help": {
+      "howToPlay": "Toca una carta para darle la vuelta y encuentra el par correspondiente. Cada par que encuentres permanece abierto.",
+      "scoring": "Comienzas con una puntuación alta: cuanto más tardes, más baja será. Encontrar todas las parejas antes de que acabe el tiempo = una victoria.",
+      "rewards": "Ganar según el nivel de dificultad otorga monedas y diamantes. Cuanto mayor sea la puntuación, mayor será la recompensa.",
+      "tip": "Intente recordar dónde vio cada imagen, incluso si no encontró el par de ellas de inmediato."
+    }
+  },
+  "picture-puzzle": {
+    "gameId": "picture-puzzle",
+    "title": "Rompecabezas de imágenes",
+    "blurb": "¡Completa las piezas del cuadro de Leo!",
+    "help": {
+      "howToPlay": "Arrastra las piezas de la imagen al lugar correcto en el tablero. Completa todas las piezas antes de que acabe el tiempo.",
+      "scoring": "Cuanto más rápido termines y menos movimientos utilices, mayor será la puntuación. Si se acaba el tiempo antes de terminar, no habrá victoria.",
+      "rewards": "Completar el rompecabezas según el nivel de dificultad otorga monedas, y una bonificación de puntuación agrega aún más.",
+      "tip": "Comience con las esquinas y los bordes; es más fácil ver a dónde pertenece cada pieza."
+    }
+  },
+  "puzzle": {
+    "gameId": "puzzle",
+    "title": "El rompecabezas de Leo",
+    "blurb": "¡Combina fichas y acumula puntos antes de que se acabe el tiempo!",
+    "help": {
+      "howToPlay": "Mueve fichas en el tablero para fusionar números coincidentes. Cuanto mayores sean los números, mayor será la puntuación.",
+      "scoring": "Cada fusión suma puntos. El objetivo es alcanzar el objetivo de puntuación antes de que acabe el tiempo.",
+      "rewards": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agrega aún más.",
+      "tip": "Intenta mantener una esquina libre para tener espacio para mover las fichas."
+    }
+  },
+  "recycling-factory": {
+    "gameId": "recycling-factory",
+    "title": "Fábrica de Reciclaje de Leo",
+    "blurb": "Clasifique la basura en los contenedores adecuados y ayude a proteger el medio ambiente",
+    "help": {
+      "howToPlay": "Arrastre o toque un artículo de la cinta transportadora y luego elija el contenedor correcto. Ordene suficientes elementos antes de alcanzar el número máximo de errores.",
+      "scoring": "Clasificación correcta +10, clasificación rápida +5, racha de 5 correctas +20, racha de 10 +50. Un error o un elemento omitido −5 (la puntuación nunca cae por debajo de 0).",
+      "rewards": "Las monedas se otorgan según la cantidad de elementos que ordenaste correctamente, la precisión, las rachas y el alcance de la meta, incluso si no terminaste todo el juego.",
+      "tip": "Preste atención al tipo de artículo: papel, plástico, vidrio, metal o desechos en general."
+    },
+    "accessibility": {
+      "title": "Fábrica de Reciclaje de Leo"
+    }
+  },
+  "rock-paper-scissors": {
+    "gameId": "rock-paper-scissors",
+    "title": "Piedra · Papel · Tijera",
+    "blurb": "Rondas rápidas: lo mejor de todo.",
+    "players": "2 jugadores o vs robot",
+    "help": {
+      "howToPlay": "Jueguen juntos en el mismo dispositivo."
+    }
+  },
+  "smart-blocks": {
+    "gameId": "smart-blocks",
+    "title": "Bloques inteligentes",
+    "blurb": "¡Coloca formas, limpia filas y columnas y alcanza el objetivo de puntuación!",
+    "help": {
+      "howToPlay": "Arrastre formas al tablero, gírelas si es necesario y colóquelas para llenar filas y columnas.",
+      "scoring": "Borrar una fila o columna suma puntos. El objetivo es alcanzar el objetivo de puntuación antes de que se llene el tablero.",
+      "rewards": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agrega aún más.",
+      "tip": "Intente borrar varias filas a la vez; esto le dará muchos puntos."
+    }
+  },
+  "snakes-and-ladders": {
+    "gameId": "snakes-and-ladders",
+    "title": "Serpientes y escaleras",
+    "blurb": "Juega con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Sigue las instrucciones que aparecen en pantalla para este juego.",
+      "tip": "Túrnense y diviértanse."
+    }
+  },
+  "sort-shapes": {
+    "gameId": "sort-shapes",
+    "title": "Ordenar formas",
+    "blurb": "¡Clasifica formas y colores en las casillas correctas!",
+    "help": {
+      "howToPlay": "Arrastre cada forma al cuadro correspondiente por forma o color. Termina toda la clasificación antes de que acabe el tiempo.",
+      "scoring": "Cada clasificación correcta suma puntos. Un error se descuenta del puntaje. Si se acaba el tiempo antes de terminar, el juego termina.",
+      "rewards": "Terminar con éxito según el nivel de dificultad otorga monedas, y una bonificación de puntuación agrega aún más.",
+      "tip": "Primero decide a qué cuadro pertenece cada forma y luego arrástrala con confianza."
+    }
+  },
+  "tap-battle": {
+    "gameId": "tap-battle",
+    "title": "Toca batalla",
+    "blurb": "Cada lado toca lo más rápido que puede: ¿quién gana?",
+    "players": "2 jugadores",
+    "help": {
+      "howToPlay": "Jueguen juntos en el mismo dispositivo."
+    }
+  },
+  "target-tap": {
+    "gameId": "target-tap",
+    "title": "Toque objetivo",
+    "blurb": "¡Toca los objetivos antes de que desaparezcan!",
+    "help": {
+      "howToPlay": "Toca los objetivos que aparecen en la pantalla antes de que desaparezcan. Tienes tres vidas.",
+      "scoring": "Los objetivos normales, las estrellas y los diamantes valen puntos diferentes. Desaparecer cuesta una vida. Los golpes consecutivos otorgan una bonificación combinada.",
+      "rewards": "Alcanzar el objetivo alcanzado o una puntuación final alta otorga monedas y diamantes.",
+      "tip": "No se apresure a hacer todo: a veces un objetivo con un diamante vale más."
+    }
+  },
+  "tic-tac-toe": {
+    "gameId": "tic-tac-toe",
+    "title": "Tic-Tac-Toe",
+    "blurb": "Tableros de 3×3 a 7×7 con seguimiento de puntuación.",
+    "players": "2 jugadores",
+    "help": {
+      "howToPlay": "Jueguen juntos en el mismo dispositivo."
+    }
+  }
+}

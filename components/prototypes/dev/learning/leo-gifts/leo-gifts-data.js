@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 import { MIN_POOL_SIZE, randInt, shuffle } from "../shared/task-session.js";
 

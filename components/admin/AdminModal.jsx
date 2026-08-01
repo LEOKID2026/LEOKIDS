@@ -9,13 +9,13 @@ const SIZE_CLASS = {
 
 /**
  * @param {{
- *   variant?: "cancel" | "primary" | "danger",
+ *   variant?: "cancel" || "primary" || "danger",
  *   onClick?: () => void,
  *   disabled?: boolean,
  *   busy?: boolean,
  *   busyLabel?: string,
  *   children: import("react").ReactNode,
- *   type?: "button" | "submit",
+ *   type?: "button" || "submit",
  * }} props
  */
 export function AdminModalButton({

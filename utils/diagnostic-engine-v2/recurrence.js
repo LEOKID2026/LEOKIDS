@@ -1,7 +1,7 @@
 import { mistakePatternClusterKey } from "../mistake-event.js";
 
 /**
- * בדיקת חזרתיות לפי ספי שורת הטקסונומיה (מינימום טעויות, ימים, משפחות דפוס).
+ *       (  ).
  * @param {import("../mistake-event.js").MistakeEventV1[]} wrongEvents
  * @param {import("./taxonomy-types.js").TaxonomyRow} row
  */
@@ -32,7 +32,7 @@ export function passesRecurrenceRules(wrongEvents, row) {
 }
 
 /**
- * האם רמז כבד מספיק כדי לפסול ספירה (היוריסטיקה: רמז + נכון מיד אחרי).
+ *        (:  +   ).
  * @param {import("../mistake-event.js").MistakeEventV1[]} events
  */
 export function heavyHintLikelyInvalidatesPattern(events) {

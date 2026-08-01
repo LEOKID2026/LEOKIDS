@@ -134,7 +134,7 @@ describe("Q2-C3 - English pool enrichment", () => {
         params: {
           listKey: "colors",
           patternFamily: "vocab_translation",
-          direction: "en_to_he",
+          direction: "en_to_meaning",
         },
       },
       { topic: "vocabulary", gradeKey: "g3", levelKey: "easy" }
@@ -229,8 +229,8 @@ describe("Q2-C3 - helpers", () => {
     assert.equal(inferEnglishQuestionType("writing", {}), "translation");
   });
 
-  test("inferEnglishProblemClass he_to_en → mixed", () => {
-    assert.equal(inferEnglishProblemClass("translation", { direction: "he_to_en" }), "mixed");
+  test("inferEnglishProblemClass meaning_to_en → mixed", () => {
+    assert.equal(inferEnglishProblemClass("translation", { direction: "meaning_to_en" }), "mixed");
   });
 
   test("resolveEnglishSkillId vocabulary listKey", () => {

@@ -39,23 +39,23 @@ import {
  * Stored as \\u escapes so the file stays valid UTF-8 on all editors/OS.
  */
 const PRESET_HEBREW_LABEL = {
-  simDeep01_mixed_real_child: "\u05D9\u05DC\u05D3 \u05DE\u05E2\u05D5\u05E8\u05D1 \u05D5\u05E8\u05D9\u05D0\u05DC\u05D9",
-  simDeep02_strong_stable_child: "\u05D9\u05DC\u05D3 \u05D7\u05D6\u05E7 \u05D5\u05D9\u05E6\u05D9\u05D1",
+  simDeep01_mixed_real_child: "",
+  simDeep02_strong_stable_child: "",
   simDeep03_weak_math_long_term:
-    "\u05D7\u05D5\u05DC\u05E9\u05D4 \u05D0\u05E8\u05D5\u05DB\u05EA\u05BE\u05D8\u05D5\u05D5\u05D7 \u05D1\u05DE\u05EA\u05DE\u05D8\u05D9\u05E7\u05D4",
-  simDeep04_improving_child: "\u05D9\u05DC\u05D3 \u05D1\u05DE\u05D2\u05DE\u05EA \u05E9\u05D9\u05E4\u05D5\u05E8",
-  simDeep05_declining_after_difficulty_jump: "\u05D9\u05E8\u05D9\u05D3\u05D4 \u05D0\u05D7\u05E8\u05D9 \u05E7\u05E4\u05D9\u05E6\u05EA \u05E7\u05D5\u05E9\u05D9",
+    "",
+  simDeep04_improving_child: "",
+  simDeep05_declining_after_difficulty_jump: "",
   simDeep06_fast_careless_vs_slow_accurate_mix:
-    "\u05E9\u05D9\u05DC\u05D5\u05D1 \u05E7\u05E6\u05D1: \u05DE\u05D4\u05D9\u05E8/\u05D7\u05E4\u05D5\u05D6 \u05DE\u05D5\u05DC \u05D0\u05D9\u05D8\u05D9/\u05DE\u05D3\u05D5\u05D9\u05E7",
+    "",
 };
 
 const TREND_PATTERN_HE = {
-  mixed: "\u05DE\u05E2\u05D5\u05E8\u05D1",
-  stable_strong: "\u05D9\u05E6\u05D9\u05D1 \u05D5\u05D7\u05D6\u05E7",
-  weak_math_persistent: "\u05D7\u05D5\u05DC\u05E9\u05D4 \u05DE\u05EA\u05DE\u05D8\u05D9\u05EA \u05DE\u05EA\u05DE\u05E9\u05DB\u05EA",
-  improving: "\u05DE\u05E9\u05EA\u05E4\u05E8",
-  decline_post_jump: "\u05D9\u05E8\u05D9\u05D3\u05D4 \u05D0\u05D7\u05E8\u05D9 \u05E7\u05E4\u05D9\u05E6\u05D4",
-  pace_mixed: "\u05D3\u05E4\u05D5\u05E1 \u05E7\u05E6\u05D1 \u05DE\u05E2\u05D5\u05E8\u05D1",
+  mixed: "",
+  stable_strong: "",
+  weak_math_persistent: "",
+  improving: "",
+  decline_post_jump: "",
+  pace_mixed: "",
 };
 
 const COLORS = {
@@ -164,7 +164,7 @@ function statusBadge(text, tone) {
 
 function presetOptionLabel(p) {
   const he = PRESET_HEBREW_LABEL[p.id] || p.studentName;
-  return `${he} \u2014 \u05DE\u05D6\u05D4\u05D4: ${p.id}`;
+  return `${he} \u2014 : ${p.id}`;
 }
 
 function aggregateTopicPreviewBySession(sessions) {
@@ -241,7 +241,7 @@ export default function DevStudentSimulatorClient() {
     if (staged === cur) return undefined;
     setPreview(null);
     setMessage(
-      "\u05D4\u05D1\u05D7\u05D9\u05E8\u05D4 \u05D4\u05E9\u05EA\u05E0\u05EA\u05D4. \u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05DE\u05D7\u05D3\u05E9 \u05DC\u05E4\u05E0\u05D9 \u05D4\u05D7\u05DC\u05D4."
+      ""
     );
     return undefined;
   }, [customSpec, simMode, preview?.applySource, preview?.stagedCustomSpecJson]);
@@ -254,7 +254,7 @@ export default function DevStudentSimulatorClient() {
     if (stagedId === presetId) return undefined;
     setPreview(null);
     setMessage(
-      "\u05D4\u05E4\u05E8\u05D5\u05E4\u05D9\u05DC \u05D4\u05E0\u05D1\u05D7\u05E8 \u05E9\u05D5\u05E0\u05D4. \u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05DE\u05D7\u05D3\u05E9 \u05DC\u05E4\u05E0\u05D9 \u05D4\u05D4\u05D7\u05DC\u05D4."
+      ""
     );
     return undefined;
   }, [presetId, simMode, preview?.applySource, preview?.stagedPresetId]);
@@ -327,7 +327,7 @@ export default function DevStudentSimulatorClient() {
           stagedCustomSpecJson: null,
         });
         showMsg(
-          "\u05E0\u05D5\u05E6\u05E8\u05D4 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 (\u05DC\u05D0 \u05D4\u05D5\u05D7\u05DC\u05D4). \u05D4\u05D4\u05D7\u05DC\u05D4 \u05EA\u05E9\u05EA\u05DE\u05E9 \u05D1\u05BEsnapshot \u05D5\u05D1\u05D2\u05D9\u05D1\u05D5\u05D9 \u05D4\u05DE\u05D3\u05D5\u05D9\u05E7\u05D9\u05DD \u05DE\u05D4\u05EA\u05E6\u05D5\u05D2\u05D4 \u05D4\u05DE\u05D0\u05D5\u05D7\u05E1\u05E0\u05EA."
+          "( ). snapshot ."
         );
       } else {
         setPreview({
@@ -339,7 +339,7 @@ export default function DevStudentSimulatorClient() {
           stagedCustomSpecJson: serializeCustomSpecForStage(customSpec),
         });
         showMsg(
-          "\u05E0\u05D5\u05E6\u05E8\u05D4 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D9\u05D3\u05E0\u05D9\u05D9\u05DD (\u05DC\u05D0 \u05D4\u05D5\u05D7\u05DC\u05D4). \u05D4\u05D4\u05D7\u05DC\u05D4 \u05EA\u05E9\u05EA\u05DE\u05E9 \u05D1\u05BEsnapshot \u05D4\u05DE\u05D3\u05D5\u05D9\u05D9\u05E7 \u05E9\u05DC \u05EA\u05E6\u05D5\u05D2\u05D4 \u05D6\u05D5 \u05D1\u05DC\u05D9 \u05D1\u05E0\u05D9\u05D9\u05D4 \u05DE\u05D7\u05D3\u05E9."
+          "( ). snapshot ."
         );
       }
     } catch (e) {
@@ -365,26 +365,26 @@ export default function DevStudentSimulatorClient() {
     setMessage("");
     try {
       if (!preview) {
-        showErr("\u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05E7\u05D5\u05D3\u05DD.");
+        showErr("");
         return;
       }
       if (preview.applySource === "import") {
         showErr(
-          "\u05D4\u05D4\u05D7\u05DC\u05D4 \u05DE\u05D9\u05D5\u05E2\u05D3\u05EA \u05DC\u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05E9\u05DC \u05E4\u05E8\u05D5\u05E4\u05D9\u05DC. \u05D9\u05D9\u05D1\u05D5\u05D0 \u05DB\u05D1\u05E8 \u05DB\u05EA\u05D1 \u05DC\u05D0\u05D7\u05E1\u05D5\u05DF."
+          ""
         );
         return;
       }
       if (preview.applySource === "preset") {
         if (simMode !== "quick" || preview.stagedPresetId !== presetId) {
           showErr(
-            "\u05D4\u05E4\u05E8\u05D5\u05E4\u05D9\u05DC \u05D4\u05E0\u05D1\u05D7\u05E8 \u05D0\u05D9\u05E0\u05D5 \u05EA\u05D5\u05D0\u05DD \u05DC\u05EA\u05E6\u05D5\u05D2\u05D4 \u05D4\u05DE\u05D0\u05D5\u05D7\u05E1\u05E0\u05EA. \u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05E9\u05D5\u05D1 \u05DC\u05E4\u05E0\u05D9 \u05D4\u05D4\u05D7\u05DC\u05D4."
+            ""
           );
           return;
         }
       } else if (preview.applySource === "custom") {
         if (simMode !== "custom" || serializeCustomSpecForStage(customSpec) !== preview.stagedCustomSpecJson) {
           showErr(
-            "\u05D4\u05D2\u05D3\u05E8\u05D9\u05DD \u05D4\u05D9\u05D3\u05E0\u05D9\u05D9\u05DD \u05E9\u05D5\u05E0\u05D5 \u05DE\u05D4\u05EA\u05E6\u05D5\u05D2\u05D4 \u05D4\u05DE\u05D0\u05D5\u05D7\u05E1\u05E0\u05EA. \u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05D7\u05D3\u05E9 \u05DC\u05E4\u05E0\u05D9 \u05D4\u05D4\u05D7\u05DC\u05D4."
+            ""
           );
           return;
         }
@@ -396,15 +396,15 @@ export default function DevStudentSimulatorClient() {
       });
       if (!ar.ok) {
         if (ar.phase === "validate") {
-          showErr(`\u05D4\u05D4\u05D7\u05DC\u05D4 \u05E0\u05D7\u05E1\u05DE\u05D4 \u05D1\u05DE\u05E4\u05EA\u05D7 ${ar.key}: ${ar.error || "\u05D0\u05D9\u05DE\u05D5\u05EA"}`);
+          showErr(`   ${ar.key}: ${ar.error || ""}`);
         } else if (ar.phase === "metadata") {
-          showErr(`\u05DB\u05EA\u05D9\u05D1\u05EA metadata \u05E0\u05DB\u05E9\u05DC\u05D4: ${ar.reason}. \u05DC\u05D0 \u05E9\u05D5\u05E0\u05D5 \u05DE\u05E4\u05EA\u05D7\u05D5\u05EA snapshot.`);
+          showErr(` metadata : ${ar.reason}.    snapshot.`);
         } else if (ar.phase === "snapshot") {
           showErr(
-            `\u05DB\u05EA\u05D9\u05D1\u05EA snapshot \u05E0\u05E2\u05E6\u05E8\u05D4 \u05D1\u05DE\u05E4\u05EA\u05D7 ${ar.key} (${ar.error || "\u05DC\u05D0 \u05D9\u05D3\u05D5\u05E2"}). metadata \u05D4\u05D2\u05D9\u05D1\u05D5\u05D9 \u05DB\u05D1\u05E8 \u05E0\u05E9\u05DE\u05E8 \u2014 \u05D9\u05E9 \u05DC\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1\u05D0\u05D9\u05E4\u05D5\u05E1 \u05DB\u05D3\u05D9 \u05DC\u05E9\u05D7\u05D6\u05E8 \u05E2\u05E8\u05DB\u05D9\u05DD \u05E7\u05D5\u05D3\u05DE\u05D9\u05DD.`
+            ` snapshot   ${ar.key} (${ar.error || " "}). metadata    \u2014       .`
           );
         } else {
-          showErr("\u05D4\u05D4\u05D7\u05DC\u05D4 \u05E0\u05DB\u05E9\u05DC\u05D4.");
+          showErr("");
         }
         return;
       }
@@ -441,7 +441,7 @@ export default function DevStudentSimulatorClient() {
       });
       refreshSimRangeLinks();
       showMsg(
-        "\u05D4\u05D5\u05D7\u05DC \u05D1\u05D3\u05E4\u05D3\u05E4\u05DF \u05D6\u05D4 \u05D1\u05D0\u05DE\u05E6\u05E2\u05D5\u05EA \u05D4\u05D7\u05D1\u05D9\u05DC\u05D4 \u05DE\u05D4\u05EA\u05E6\u05D5\u05D2\u05D4 \u05D4\u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 (metadata \u05E0\u05DB\u05EA\u05D1 \u05DC\u05E4\u05E0\u05D9 snapshot)."
+        "(metadata snapshot)."
       );
     } catch (e) {
       showErr(String(e?.message || e));
@@ -457,14 +457,14 @@ export default function DevStudentSimulatorClient() {
     try {
       const r = resetSimulatedStudentFromMetadata();
       if (!r.ok) {
-        showErr(`\u05D4\u05D0\u05D9\u05E4\u05D5\u05E1 \u05D3\u05D5\u05DC\u05D2: ${r.reason}`);
+        showErr(` : ${r.reason}`);
         return;
       }
       setPreview(null);
       setLastApplyVerification(null);
       refreshSimRangeLinks();
       showMsg(
-        "\u05D4\u05D0\u05D9\u05E4\u05D5\u05E1 \u05D4\u05D5\u05E9\u05DC\u05DD. \u05D4\u05E2\u05E8\u05DB\u05D9\u05DD \u05D4\u05E7\u05D5\u05D3\u05DE\u05D9\u05DD \u05E9\u05D5\u05D7\u05D6\u05E8\u05D5 (\u05D0\u05D5 \u05D4\u05D5\u05E1\u05E8\u05D5) \u05DC\u05E4\u05D9 metadata \u05D4\u05D2\u05D9\u05D1\u05D5\u05D9."
+        ". ( ) metadata ."
       );
     } catch (e) {
       showErr(String(e?.message || e));
@@ -479,7 +479,7 @@ export default function DevStudentSimulatorClient() {
       const cur = readCurrentSimulatorExportFromLocalStorage();
       if (!cur) {
         showErr(
-          "\u05D0\u05D9\u05DF metadata \u05E9\u05DC \u05D4\u05E1\u05D9\u05DE\u05D5\u05DC\u05D8\u05D5\u05E8 \u2014 \u05D9\u05D9\u05E6\u05D5\u05D0 \u05D6\u05DE\u05D9\u05DF \u05E8\u05E7 \u05D0\u05D7\u05E8\u05D9 \u05D4\u05D7\u05DC\u05D4 \u05D0\u05D5 \u05D9\u05D9\u05D1\u05D5\u05D0."
+          "metadata \u2014 ."
         );
         return;
       }
@@ -495,7 +495,7 @@ export default function DevStudentSimulatorClient() {
       a.download = `dev-student-simulator-${String(cur.metadata.presetId || "export")}.json`;
       a.click();
       URL.revokeObjectURL(url);
-      showMsg("\u05D4\u05D9\u05D9\u05E6\u05D5\u05D0 \u05D4\u05EA\u05D7\u05D9\u05DC.");
+      showMsg("");
     } catch (e) {
       showErr(String(e?.message || e));
     } finally {
@@ -515,9 +515,9 @@ export default function DevStudentSimulatorClient() {
         const text = String(reader.result || "");
         const pkg = parseSimulatorPackage(text);
         const snapshot = pkg.snapshot;
-        if (!snapshot || typeof snapshot !== "object") throw new Error("\u05D1\u05D7\u05D1\u05D9\u05DC\u05D4 \u05D7\u05E1\u05E8 snapshot");
+        if (!snapshot || typeof snapshot !== "object") throw new Error("snapshot");
         const v0 = validateSnapshotForApply(snapshot, STORAGE_KEYS);
-        if (!v0.ok) throw new Error(`\u05D9\u05D9\u05D1\u05D5\u05D0 \u05E0\u05D7\u05E1\u05DD \u05D1\u05DE\u05E4\u05EA\u05D7 ${v0.key}: ${v0.code}`);
+        if (!v0.ok) throw new Error(`   ${v0.key}: ${v0.code}`);
         const effectiveTouchedKeys = deriveEffectiveTouchedKeysFromSnapshot(snapshot);
         const existing = readRawStorageMapForKeys(effectiveTouchedKeys);
         const backupByKey = buildBackupEnvelope(effectiveTouchedKeys, existing);
@@ -532,14 +532,14 @@ export default function DevStudentSimulatorClient() {
         };
         const ar = applyMetadataThenSnapshot({ metadata: meta, snapshot, allowedKeys: STORAGE_KEYS });
         if (!ar.ok) {
-          if (ar.phase === "validate") throw new Error(`\u05D9\u05D9\u05D1\u05D5\u05D0 \u05E0\u05D7\u05E1\u05DD \u05D1\u05DE\u05E4\u05EA\u05D7 ${ar.key}: ${ar.error}`);
-          if (ar.phase === "metadata") throw new Error(`\u05DB\u05EA\u05D9\u05D1\u05EA metadata \u05E0\u05DB\u05E9\u05DC\u05D4: ${ar.reason}`);
+          if (ar.phase === "validate") throw new Error(`   ${ar.key}: ${ar.error}`);
+          if (ar.phase === "metadata") throw new Error(` metadata : ${ar.reason}`);
           if (ar.phase === "snapshot") {
             throw new Error(
-              `\u05DB\u05EA\u05D9\u05D1\u05EA snapshot \u05E0\u05E2\u05E6\u05E8\u05D4 \u05D1\u05DE\u05E4\u05EA\u05D7 ${ar.key} (${ar.error || "\u05DC\u05D0 \u05D9\u05D3\u05D5\u05E2"}). metadata \u05E0\u05E9\u05DE\u05E8 \u2014 \u05D9\u05E9 \u05DC\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1\u05D0\u05D9\u05E4\u05D5\u05E1 \u05DB\u05D3\u05D9 \u05DC\u05E9\u05D7\u05D6\u05E8 \u05E2\u05E8\u05DB\u05D9\u05DD \u05E7\u05D5\u05D3\u05DE\u05D9\u05DD.`
+              ` snapshot   ${ar.key} (${ar.error || " "}). metadata  \u2014       .`
             );
           }
-          throw new Error("\u05D4\u05D7\u05DC\u05EA \u05D4\u05D9\u05D9\u05D1\u05D5\u05D0 \u05E0\u05DB\u05E9\u05DC\u05D4.");
+          throw new Error("");
         }
         setPreview({
           preset: DEV_STUDENT_PRESETS.find((p) => p.id === pkg.metadata?.presetId) || null,
@@ -550,7 +550,7 @@ export default function DevStudentSimulatorClient() {
           applySource: "import",
           stagedPresetId: null,
         });
-        showMsg("\u05D4\u05D9\u05D9\u05D1\u05D5\u05D0 \u05D4\u05D5\u05D7\u05DC \u05D5\u05E0\u05E9\u05DE\u05E8 \u05D1\u05D2\u05D9\u05D1\u05D5\u05D9 \u05D1\u05E6\u05D5\u05E8\u05D4 \u05D1\u05D8\u05D5\u05D7\u05D4.");
+        showMsg("");
       } catch (e) {
         showErr(String(e?.message || e));
       } finally {
@@ -559,7 +559,7 @@ export default function DevStudentSimulatorClient() {
       }
     };
     reader.onerror = () => {
-      showErr("\u05E7\u05E8\u05D9\u05D0\u05EA \u05D4\u05E7\u05D5\u05D1\u05E5 \u05E0\u05DB\u05E9\u05DC\u05D4.");
+      showErr("");
       setBusy(false);
       ev.target.value = "";
     };
@@ -571,12 +571,12 @@ export default function DevStudentSimulatorClient() {
     try {
       const cur = readCurrentSimulatorExportFromLocalStorage();
       if (!cur) {
-        showErr("\u05D0\u05D9\u05DF \u05DE\u05D4 \u05DC\u05D4\u05E2\u05EA\u05D9\u05E7 \u2014 \u05D9\u05E9 \u05DC\u05D4\u05D7\u05D9\u05DC \u05D0\u05D5 \u05DC\u05D9\u05D9\u05D1\u05D0 \u05E7\u05D5\u05D3\u05DD.");
+        showErr("\u2014 .");
         return;
       }
       const pkg = exportSimulatorPackage({ presetId: cur.metadata.presetId, snapshot: cur.snapshot, metadata: cur.metadata });
       await navigator.clipboard.writeText(serializeSimulatorPackage(pkg));
-      showMsg("\u05D4\u05BEJSON \u05D4\u05D5\u05E2\u05EA\u05E7 \u05DC\u05DC\u05D5\u05D7.");
+      showMsg("JSON .");
     } catch (e) {
       showErr(String(e?.message || e));
     } finally {
@@ -592,72 +592,72 @@ export default function DevStudentSimulatorClient() {
   const trendHe = preset ? TREND_PATTERN_HE[preset.trendPattern] || preset.trendPattern : "";
 
   const t = {
-    title: "\u05E1\u05D9\u05DE\u05D5\u05DC\u05D8\u05D5\u05E8 \u05EA\u05DC\u05DE\u05D9\u05D3\u05D9\u05DD \u05DC\u05E4\u05D9\u05EA\u05D5\u05D7",
-    internalNs: "\u05DE\u05E8\u05D7\u05D1 \u05D0\u05D7\u05E1\u05D5\u05DF \u05E4\u05E0\u05D9\u05DE\u05D9:",
-    logout: "\u05D4\u05EA\u05E0\u05EA\u05E7\u05D5\u05EA",
-    secPreset: "\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05E8\u05D5\u05E4\u05D9\u05DC",
-    days: "\u05D9\u05DE\u05D9\u05DD",
-    sessions: "\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA",
-    questions: "\u05E9\u05D0\u05DC\u05D5\u05EA",
-    pattern: "\u05D3\u05E4\u05D5\u05E1:",
-    secActions: "\u05E4\u05E2\u05D5\u05DC\u05D5\u05EA",
-    btnPreview: "\u05D9\u05E6\u05D9\u05E8\u05EA \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4",
-    btnPreviewCustom: "\u05D9\u05E6\u05D9\u05E8\u05EA \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05DE\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D9\u05D3\u05E0\u05D9\u05D9\u05DD",
-    modeQuick: "\u05E4\u05E8\u05D9\u05E1\u05D8\u05D9\u05DD \u05DE\u05D4\u05D9\u05E8\u05D9\u05DD",
-    modeCustom: "\u05D1\u05E0\u05D9\u05D9\u05D4 \u05D9\u05D3\u05E0\u05D9\u05EA",
-    btnApply: "\u05D4\u05D7\u05DC\u05D4 \u05D1\u05D3\u05E4\u05D3\u05E4\u05DF \u05D4\u05E0\u05D5\u05DB\u05D7\u05D9",
-    btnReset: "\u05D0\u05D9\u05E4\u05D5\u05E1 \u05EA\u05DC\u05DE\u05D9\u05D3 \u05DE\u05D3\u05D5\u05DE\u05D4",
-    btnExport: "\u05D9\u05D9\u05E6\u05D5\u05D0 JSON",
-    btnImport: "\u05D9\u05D9\u05D1\u05D5\u05D0 JSON",
-    btnCopy: "\u05D4\u05E2\u05EA\u05E7\u05EA snapshot \u05D0\u05D7\u05E1\u05D5\u05DF",
-    hintPreviewFirst: "\u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05E7\u05D5\u05D3\u05DD.",
-    hintPreviewFirstCustom: "\u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05D4\u05D2\u05D3\u05E8\u05D9\u05DD \u05D4\u05D9\u05D3\u05E0\u05D9\u05D9\u05DD \u05E7\u05D5\u05D3\u05DD.",
+    title: "",
+    internalNs: "",
+    logout: "",
+    secPreset: "",
+    days: "",
+    sessions: "",
+    questions: "",
+    pattern: "",
+    secActions: "",
+    btnPreview: "",
+    btnPreviewCustom: "",
+    modeQuick: "",
+    modeCustom: "",
+    btnApply: "",
+    btnReset: "",
+    btnExport: "JSON",
+    btnImport: "JSON",
+    btnCopy: "snapshot",
+    hintPreviewFirst: "",
+    hintPreviewFirstCustom: "",
     hintStaleApply:
-      "\u05D4\u05D4\u05D7\u05DC\u05D4 \u05DE\u05D5\u05E9\u05D1\u05EA\u05EA \u05DB\u05D9 \u05D4\u05E4\u05E8\u05D5\u05E4\u05D9\u05DC \u05D4\u05E0\u05D1\u05D7\u05E8 \u05D0\u05D9\u05E0\u05D5 \u05EA\u05D5\u05D0\u05DD \u05E2\u05D5\u05D3 \u05DC\u05EA\u05E6\u05D5\u05D2\u05D4 \u05D4\u05DE\u05D0\u05D5\u05D7\u05E1\u05E0\u05EA. \u05D9\u05E9 \u05DC\u05D9\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05DE\u05D7\u05D3\u05E9.",
+      "",
     hintStaleApplyCustom:
-      "\u05D4\u05D1\u05D7\u05D9\u05E8\u05D4 \u05D4\u05E9\u05EA\u05E0\u05EA\u05D4. \u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05DE\u05D7\u05D3\u05E9 \u05DC\u05E4\u05E0\u05D9 \u05D4\u05D7\u05DC\u05D4.",
-    secReports: "\u05E4\u05EA\u05D9\u05D7\u05EA \u05D4\u05D3\u05D5\u05D7\u05D5\u05EA \u05D4\u05D0\u05DE\u05D9\u05EA\u05D9\u05D9\u05DD",
-    secAppliedSummary: "\u05DE\u05D4 \u05D4\u05D5\u05D7\u05DC \u05D1\u05E4\u05D5\u05E2\u05DC",
-    appliedUnits: "\u05D9\u05D7\u05D9\u05D3\u05D5\u05EA \u05DE\u05D5\u05E9\u05E4\u05E2\u05D5\u05EA",
-    appliedTopicBreakdown: "\u05E4\u05D9\u05E8\u05D5\u05D8 \u05DC\u05E4\u05D9 \u05E0\u05D5\u05E9\u05D0 (\u05DE\u05D4\u05EA\u05E6\u05D5\u05D2\u05D4 \u05E9\u05D4\u05D5\u05D7\u05DC\u05D4)",
-    appliedBuckets: "\u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05D0\u05D7\u05E1\u05D5\u05DF \u05E9\u05E0\u05DB\u05EA\u05D1\u05D5",
-    appliedReadback: "\u05D0\u05D9\u05DE\u05D5\u05EA \u05E7\u05E8\u05D9\u05D0\u05D4 \u05DE\u05D4\u05D0\u05D7\u05E1\u05D5\u05DF",
-    appliedDateRange: "\u05D8\u05D5\u05D5\u05D7 \u05EA\u05D0\u05E8\u05D9\u05DB\u05D9\u05DD \u05E9\u05D4\u05D5\u05E6\u05E8",
-    appliedReportRec: "\u05E7\u05D9\u05E9\u05D5\u05E8 \u05D3\u05D5\u05D7 \u05DE\u05D5\u05DE\u05DC\u05E5",
+      "",
+    secReports: "",
+    secAppliedSummary: "",
+    appliedUnits: "",
+    appliedTopicBreakdown: "",
+    appliedBuckets: "",
+    appliedReadback: "",
+    appliedDateRange: "",
+    appliedReportRec: "",
     hintDefaultReportLinks:
-      "\u05DC\u05DC\u05D0 metadata \u05E2\u05DD \u05D8\u05D5\u05D5\u05D7 \u05E1\u05D9\u05DE\u05D5\u05DC\u05E6\u05D9\u05D4: \u05D4\u05E7\u05D9\u05E9\u05D5\u05E8\u05D9\u05DD \u05DC\u05E9\u05D1\u05D5\u05E2 \u05D0\u05D7\u05E8\u05D5\u05DF \u05E2\u05DC\u05D5\u05DC\u05D9\u05DD \u05DC\u05D4\u05E1\u05EA\u05D9\u05E8 \u05DE\u05D3\u05D2\u05DD \u05E7\u05E6\u05E8. \u05D0\u05D7\u05E8\u05D9 \u05D4\u05D7\u05DC\u05D4 \u05DE\u05D4\u05E1\u05D9\u05DE\u05D5\u05DC\u05D8\u05D5\u05E8 \u05D9\u05D5\u05E4\u05D9\u05E2\u05D5 \u05DB\u05D0\u05DF \u05E7\u05D9\u05E9\u05D5\u05E8\u05D9\u05DD \u05DE\u05D5\u05EA\u05D0\u05DE\u05D9\u05DD \u05DC\u05D8\u05D5\u05D5\u05D7 \u05D4\u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E9\u05E0\u05D5\u05E6\u05E8\u05D5.",
-    linkShort: "\u05D3\u05D5\u05D7 \u05D4\u05D5\u05E8\u05D9\u05DD \u05E7\u05E6\u05E8 (\u05E9\u05D1\u05D5\u05E2 \u05D1\u05E8\u05D9\u05E8\u05EA \u05DE\u05D7\u05D3\u05DC)",
-    linkDetailed: "\u05D3\u05D5\u05D7 \u05D4\u05D5\u05E8\u05D9\u05DD \u05DE\u05E4\u05D5\u05E8\u05D8 (\u05E9\u05D1\u05D5\u05E2 \u05D1\u05E8\u05D9\u05E8\u05EA \u05DE\u05D7\u05D3\u05DC)",
-    linkSummary: "\u05EA\u05E7\u05E6\u05D9\u05E8 \u05D4\u05D3\u05D5\u05D7 \u05D4\u05DE\u05E4\u05D5\u05E8\u05D8 (\u05E9\u05D1\u05D5\u05E2 \u05D1\u05E8\u05D9\u05E8\u05EA \u05DE\u05D7\u05D3\u05DC)",
-    linkShortSimRange: "\u05D3\u05D5\u05D7 \u05E7\u05E6\u05E8 \u2014 \u05D8\u05D5\u05D5\u05D7 \u05D4\u05E1\u05D9\u05DE\u05D5\u05DC\u05E6\u05D9\u05D4",
-    linkDetailedSimRange: "\u05D3\u05D5\u05D7 \u05DE\u05E4\u05D5\u05E8\u05D8 \u2014 \u05D8\u05D5\u05D5\u05D7 \u05D4\u05E1\u05D9\u05DE\u05D5\u05DC\u05E6\u05D9\u05D4",
-    linkSummarySimRange: "\u05EA\u05E7\u05E6\u05D9\u05E8 \u2014 \u05D8\u05D5\u05D5\u05D7 \u05D4\u05E1\u05D9\u05DE\u05D5\u05DC\u05E6\u05D9\u05D4",
-    secValidation: "\u05E1\u05D9\u05DB\u05D5\u05DD \u05D1\u05D3\u05D9\u05E7\u05D5\u05EA",
-    statSessions: "\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA:",
-    statQuestions: "\u05E9\u05D0\u05DC\u05D5\u05EA:",
-    statDays: "\u05D9\u05DE\u05D9\u05DD \u05E4\u05E2\u05D9\u05DC\u05D9\u05DD:",
-    statSubjects: "\u05DE\u05E7\u05E6\u05D5\u05E2\u05D5\u05EA:",
-    hintValidation: "\u05E6\u05D5\u05E8 \u05EA\u05E6\u05D5\u05D2\u05D4 \u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 \u05DB\u05D3\u05D9 \u05DC\u05E8\u05D0\u05D5\u05EA \u05D0\u05EA \u05D1\u05D3\u05D9\u05E7\u05D5\u05EA \u05D4\u05EA\u05E7\u05D9\u05E0\u05D5\u05EA.",
-    secTouched: "\u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05DC\u05E9\u05D7\u05D6\u05D5\u05E8 / \u05D0\u05D9\u05E4\u05D5\u05E1",
-    touchedNone: "\u05D0\u05D9\u05DF \u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05DE\u05E1\u05D5\u05DE\u05E0\u05D9\u05DD \u05DC\u05D2\u05D9\u05D1\u05D5\u05D9/\u05D0\u05D9\u05E4\u05D5\u05E1.",
-    touchedSomeSuffix: " \u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05DE\u05E1\u05D5\u05DE\u05E0\u05D9\u05DD \u05DC\u05D2\u05D9\u05D1\u05D5\u05D9/\u05D0\u05D9\u05E4\u05D5\u05E1.",
-    sumTouchedJson: "\u05D4\u05E6\u05D2\u05EA JSON \u05E9\u05DC \u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05D4\u05E0\u05D2\u05D9\u05E2\u05D4",
-    secDetails: "\u05E4\u05E8\u05D8\u05D9 snapshot / metadata",
+      "metadata : . .",
+    linkShort: "",
+    linkDetailed: "",
+    linkSummary: "",
+    linkShortSimRange: "\u2014",
+    linkDetailedSimRange: "\u2014",
+    linkSummarySimRange: "\u2014",
+    secValidation: "",
+    statSessions: "",
+    statQuestions: "",
+    statDays: "",
+    statSubjects: "",
+    hintValidation: "",
+    secTouched: "",
+    touchedNone: "",
+    touchedSomeSuffix: "",
+    sumTouchedJson: "JSON",
+    secDetails: "snapshot / metadata",
     hintJsonCollapsed:
-      "JSON \u05D0\u05E8\u05D5\u05DA \u05DE\u05D5\u05E1\u05EA\u05E8 \u05DB\u05D1\u05E8\u05D9\u05E8\u05EA \u05DE\u05D7\u05D3\u05DC \u05DB\u05D3\u05D9 \u05DC\u05E9\u05DE\u05D5\u05E8 \u05E2\u05DC \u05E7\u05E8\u05D9\u05D0\u05D5\u05EA.",
-    sumValSessions: "\u05D0\u05D9\u05DE\u05D5\u05EA (\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA)",
-    sumValNs: "\u05D0\u05D9\u05DE\u05D5\u05EA (\u05DE\u05E8\u05D7\u05D1 \u05E9\u05DE\u05D5\u05EA)",
-    sumMetaPrefix: "metadata \u05D2\u05D9\u05D1\u05D5\u05D9",
-    sumSnapKeys: "\u05DE\u05E4\u05EA\u05D7\u05D5\u05EA snapshot + \u05E1\u05D5\u05D2/\u05D2\u05D5\u05D3\u05DC \u05E2\u05E8\u05DA",
-    modeSwitchTitle: "\u05DE\u05E6\u05D1 \u05E2\u05D1\u05D5\u05D3\u05D4",
-    secCustomBuilder: "\u05D1\u05E0\u05D9\u05D9\u05EA \u05EA\u05DC\u05DE\u05D9\u05D3 \u05D9\u05D3\u05E0\u05D9\u05EA",
-    valCurWin: "\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA \u05D1\u05D7\u05DC\u05D5\u05DF \u05E0\u05D5\u05DB\u05D7\u05D9 (30 \u05D9\u05D5\u05DD):",
-    valPrevWin: "\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA \u05D1\u05D7\u05DC\u05D5\u05DF \u05E7\u05D5\u05D3\u05DD (30\u201360 \u05D9\u05D5\u05DD):",
-    valTopicKeys: "\u05E1\u05D4\u05DB \u05DE\u05E4\u05EA\u05D7\u05D9 \u05E0\u05D5\u05E9\u05D0\u05D9\u05DD \u05D9\u05D7\u05D5\u05D3\u05D9\u05D9\u05DD:",
+      "JSON .",
+    sumValSessions: "",
+    sumValNs: "",
+    sumMetaPrefix: "metadata",
+    sumSnapKeys: "snapshot + /",
+    modeSwitchTitle: "",
+    secCustomBuilder: "",
+    valCurWin: "(30 ):",
+    valPrevWin: "(30\u201360 ):",
+    valTopicKeys: "",
     previewTopicSummaryTitle:
-      "\u05E0\u05D5\u05E9\u05D0\u05D9\u05DD \u05E1\u05D5\u05DB\u05DE\u05D9\u05DD \u05D1\u05EA\u05E6\u05D5\u05D2\u05D4 \u05D4\u05DE\u05E7\u05D3\u05D9\u05DE\u05D4 (\u05DC\u05E4\u05D9 \u05E0\u05D5\u05E9\u05D0)",
-    previewTopicRowSessions: "\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA",
-    previewTopicRowQuestions: "\u05E9\u05D0\u05DC\u05D5\u05EA",
+      "",
+    previewTopicRowSessions: "",
+    previewTopicRowQuestions: "",
   };
 
   return (
@@ -737,7 +737,7 @@ export default function DevStudentSimulatorClient() {
           </p>
           <p style={{ margin: "0 0 4px", fontSize: 13, fontWeight: 600 }}>{t.appliedReadback}</p>
           <p style={{ margin: "0 0 8px", fontSize: 12, color: COLORS.muted }}>
-            {lastApplyVerification.readbackOk ? "\u2713 metadata + snapshot" : "\u2717 \u05DC\u05D0 \u05E0\u05E7\u05E8\u05D0 \u05DE\u05D4\u05D0\u05D7\u05E1\u05D5\u05DF"}{" "}
+            {lastApplyVerification.readbackOk ? "\u2713 metadata + snapshot" : "\u2717"}{" "}
             <span dir="ltr" style={{ unicodeBidi: "embed" }}>
               ({lastApplyVerification.readbackSnapshotKeyCount} keys)
             </span>
@@ -901,7 +901,7 @@ export default function DevStudentSimulatorClient() {
         ) : (
           <p style={{ margin: "0 0 10px", fontSize: 12, color: COLORS.muted }}>{t.hintDefaultReportLinks}</p>
         )}
-        <p style={{ margin: "0 0 6px", fontSize: 12, color: COLORS.muted }}>\u05E7\u05D9\u05E9\u05D5\u05E8\u05D9\u05DD \u05DB\u05DC\u05DC\u05D9\u05D9\u05DD (\u05EA\u05E7\u05D5\u05E4\u05EA \u05E9\u05D1\u05D5\u05E2 \u05D1\u05E8\u05D9\u05E8\u05EA \u05DE\u05D7\u05D3\u05DC \u05D1\u05D3\u05E3 \u05D4\u05D3\u05D5\u05D7):</p>
+        <p style={{ margin: "0 0 6px", fontSize: 12, color: COLORS.muted }}>  (     ):</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
           <a
             data-testid="dev-sim-link-parent-report-short"
@@ -931,16 +931,16 @@ export default function DevStudentSimulatorClient() {
         <h2 style={{ margin: "0 0 10px", fontSize: 16 }}>{t.secValidation}</h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
           {statusBadge(
-            `\u05E4\u05D2\u05D9\u05E9\u05D5\u05EA: ${sessionsOk == null ? "\u05DC\u05D0 \u05D6\u05DE\u05D9\u05DF" : sessionsOk ? "\u05E2\u05D1\u05E8" : "\u05E0\u05D7\u05E1\u05DD"}`,
+            `: ${sessionsOk == null ? " " : sessionsOk ? "" : ""}`,
             sessionsOk == null ? "warn" : sessionsOk ? "ok" : "blocked"
           )}
           {statusBadge(
-            `\u05DE\u05E8\u05D7\u05D1 \u05E9\u05DE\u05D5\u05EA: ${namespaceOk == null ? "\u05DC\u05D0 \u05D6\u05DE\u05D9\u05DF" : namespaceOk ? "\u05E2\u05D1\u05E8" : "\u05E0\u05D7\u05E1\u05DD"}`,
+            ` : ${namespaceOk == null ? " " : namespaceOk ? "" : ""}`,
             namespaceOk == null ? "warn" : namespaceOk ? "ok" : "blocked"
           )}
-          {statusBadge(`\u05DE\u05E4\u05EA\u05D7\u05D5\u05EA \u05DC\u05E9\u05D7\u05D6\u05D5\u05E8: ${touchedCount}`, "warn")}
-          {statusBadge(`\u05DE\u05E4\u05EA\u05D7\u05D5\u05EA snapshot: ${snapshotKeyCount}`, "warn")}
-          {statusBadge(`metadata: ${preview?.metadata ? "\u05E7\u05D9\u05D9\u05DD" : "\u05D0\u05D9\u05DF"}`, preview?.metadata ? "ok" : "warn")}
+          {statusBadge(` : ${touchedCount}`, "warn")}
+          {statusBadge(` snapshot: ${snapshotKeyCount}`, "warn")}
+          {statusBadge(`metadata: ${preview?.metadata ? "" : ""}`, preview?.metadata ? "ok" : "warn")}
         </div>
         {sessionsStat ? (
           <>
@@ -986,7 +986,6 @@ export default function DevStudentSimulatorClient() {
             ) : null}
             {Array.isArray(preview?.validation?.sessions?.warnings) && preview.validation.sessions.warnings.length > 0 ? (
               <p style={{ margin: "10px 0 0", color: "#854d0e", fontSize: 13 }}>
-                \u05D0\u05D6\u05D4\u05E8\u05D5\u05EA: {preview.validation.sessions.warnings.join(" \u00B7 ")}
               </p>
             ) : null}
             {preview?.applySource === "custom" && Array.isArray(preview?.sessions) && preview.sessions.length ? (

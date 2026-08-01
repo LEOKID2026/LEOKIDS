@@ -45,7 +45,7 @@ const { GRADE_AWARE_RECOMMENDATION_TEMPLATES } = await import(
         patternFamily: "vocab_recall_en",
         questionLabel: "vocabulary|vocab_recall_en|לתת|מה פירוש המילה",
         metadata: { possibleErrorPatterns: ["תרגום מילולי שגוי", "false friend"] },
-        params: { direction: "he_to_en", patternFamily: "vocab_recall_en" },
+        params: { direction: "meaning_to_en", patternFamily: "vocab_recall_en" },
       },
       { conceptTag: "false_friend" },
     ],

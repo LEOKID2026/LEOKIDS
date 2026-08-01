@@ -18,7 +18,7 @@ function answerStatusLabel(isCorrect) {
  *   onClose: () => void;
  *   accessToken: string;
  *   activityId: string;
- *   student: { studentId: string; studentFullNameMasked: string; status: string; answersCount?: number; correctCount?: number } | null;
+ *   student: { studentId: string; studentFullNameMasked: string; status: string; answersCount?: number; correctCount?: number } || null;
  *   activityTitle?: string;
  *   answersApiPath?: string;
  *   authFetch?: (token: string, path: string, init?: RequestInit) => Promise<Response>;

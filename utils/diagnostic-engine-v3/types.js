@@ -7,16 +7,14 @@ export const ENGINE_V3_VERSION = "3.0.0";
 export const ENGINE_V3_BLUEPRINT = burnDownCopy("utils__diagnostic-engine-v3__types", "diagnostic_engine_v3_fast_deep_evidence_bound");
 
 /** Wave 1 — richest error/subskill rules */
-export const V3_WAVE1_SUBJECT_IDS = Object.freeze(["math", "hebrew", "english"]);
+export const V3_WAVE1_SUBJECT_IDS = Object.freeze(["math", "english"]);
 
 export const V3_ALL_SUBJECT_IDS = Object.freeze([
   "math",
   "geometry",
   "english",
   "science",
-  "hebrew",
-  "moledet-geography",
-  "history",
+  "history"
 ]);
 
 /** @typedef {typeof import("./error-types-v3.js").ERROR_TYPE_V3[keyof typeof import("./error-types-v3.js").ERROR_TYPE_V3]} ErrorTypeV3 */
@@ -48,7 +46,7 @@ export const CONFIDENCE_BAND = Object.freeze({
   VERY_LOW: "very_low",
   LOW: "low",
   MEDIUM: "medium",
-  HIGH: "high",
+  HIGH: "high"
 });
 
 export const DIAGNOSIS_STAGE = Object.freeze({
@@ -56,7 +54,7 @@ export const DIAGNOSIS_STAGE = Object.freeze({
   WORKING_HYPOTHESIS: "enough_for_working_hypothesis",
   STABLE: "enough_for_stable_subskill_diagnosis",
   NEEDS_PROBE: "needs_more_probe",
-  CONTRADICTORY: "contradictory_evidence",
+  CONTRADICTORY: "contradictory_evidence"
 });
 
 export const RECOMMENDED_NEXT_STEP = Object.freeze({
@@ -67,5 +65,5 @@ export const RECOMMENDED_NEXT_STEP = Object.freeze({
   REMOVE_TIMER: "remove_timer",
   ADVANCE: "advance_cautiously",
   MAINTAIN: "maintain",
-  INSUFFICIENT: "insufficient_data",
+  INSUFFICIENT: "insufficient_data"
 });

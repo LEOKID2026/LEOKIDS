@@ -10,13 +10,9 @@ export const PARENT_REPORT_SUBJECT_LABELS_EN = {
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  hebrew: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "hebrew"),
   science: "Science",
   history: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "history"),
-  moledet: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homeland_studies"),
-  geography: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "geography"),
-  moledet_geography: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homeland_geography"),
-  "moledet-geography": reportPackCopy("utils__parent-report-language__parent-report-display-labels", "homeland_geography"),
+  geography: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "geography")
 };
 
 /** @deprecated Alias — Global uses English labels; keep HE export name for import stability. */
@@ -48,7 +44,7 @@ export const PARENT_REPORT_MODE_LABELS_EN = {
   self_practice: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "independent_practice"),
   parent_assigned_activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "personal_activity"),
   classroom_assigned_activity: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "class_activity"),
-  unknown: "Unknown",
+  unknown: "Unknown"
 };
 
 /** @deprecated Alias — Global uses English labels; keep HE export name for import stability. */
@@ -59,7 +55,7 @@ const PARENT_ACTIVITY_SOURCE_RESOLVE_ORDER = Object.freeze([
   "primaryEvidenceSource",
   "latestActivitySource",
   "evidenceSource",
-  "sourceType",
+  "sourceType"
 ]);
 
 /**
@@ -195,7 +191,7 @@ export const PARENT_REPORT_SOURCE_LABELS_EN = {
   partial: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "partial"),
   available: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "available"),
   not_tracked: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_measured"),
-  requires_events: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "needs_more_data"),
+  requires_events: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "needs_more_data")
 };
 
 /** @type {Record<string, string>} */
@@ -216,7 +212,7 @@ export const PARENT_REPORT_STATUS_LABELS_EN = {
   requires_events: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "needs_more_data"),
   available: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "available"),
   true: "Yes",
-  false: "No",
+  false: "No"
 };
 
 /** @type {Record<string, string>} — parent practice levels: Regular / Advanced only */
@@ -231,7 +227,7 @@ export const PARENT_REPORT_LEVEL_LABELS_EN = {
   high: "High",
   moderate: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "moderate"),
   strong: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "strong"),
-  weak: "Weak",
+  weak: "Weak"
 };
 
 /** @type {Record<string, string>} */
@@ -247,7 +243,7 @@ export const PARENT_REPORT_EVIDENCE_LABELS_EN = {
   unknown: "Unknown",
   partial: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "partial"),
   no_data: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data"),
-  nodata: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data"),
+  nodata: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data")
 };
 
 function normalizeKey(value) {
@@ -361,7 +357,7 @@ export const PARENT_REPORT_FORBIDDEN_ENGLISH_ENUMS = Object.freeze([
   "unknown_scope",
   "registered_grade_primary",
   "enrichment_stretch",
-  "prerequisite_foundation",
+  "prerequisite_foundation"
 ]);
 
 /**

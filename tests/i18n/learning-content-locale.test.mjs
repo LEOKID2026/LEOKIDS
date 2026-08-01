@@ -48,7 +48,7 @@ test("math question localizes via content locale path (en)", () => {
   assert.ok(!containsHebrew(String(localized.question || "")));
 });
 
-test("missing locale falls back to English display layer", () => {
+test("es-419 science uses locale overlay (not English fallback)", () => {
   const raw = {
     subject: "science",
     id: SCIENCE_QUESTIONS[0]?.id,
@@ -57,7 +57,7 @@ test("missing locale falls back to English display layer", () => {
     correctIndex: SCIENCE_QUESTIONS[0]?.correctIndex ?? 0,
     params: SCIENCE_QUESTIONS[0]?.params || { diagnosticSkillId: "science.test" },
   };
-  const viaMissing = localizeLearningQuestion(raw, {
+  const viaEs = localizeLearningQuestion(raw, {
     subject: "science",
     contentLocale: "es-419",
   });
@@ -65,8 +65,30 @@ test("missing locale falls back to English display layer", () => {
     subject: "science",
     contentLocale: "en",
   });
-  assert.deepEqual(viaMissing.stem || viaMissing.question, viaEn.stem || viaEn.question);
-  assert.equal(viaMissing.params?.diagnosticSkillId, viaEn.params?.diagnosticSkillId);
+  assert.notEqual(viaEs.stem || viaEs.question, viaEn.stem || viaEn.question);
+  assert.match(String(viaEs.stem || viaEs.question), /[áéíóúñ¿¡]/i);
+  assert.equal(viaEs.params?.diagnosticSkillId, viaEn.params?.diagnosticSkillId);
+});
+
+test("unknown content locale falls back to English display layer for science", () => {
+  const raw = {
+    subject: "science",
+    id: SCIENCE_QUESTIONS[0]?.id,
+    stem: SCIENCE_QUESTIONS[0]?.stem || "בדיקה",
+    options: SCIENCE_QUESTIONS[0]?.options || ["א", "ב"],
+    correctIndex: SCIENCE_QUESTIONS[0]?.correctIndex ?? 0,
+    params: SCIENCE_QUESTIONS[0]?.params || { diagnosticSkillId: "science.test" },
+  };
+  const viaUnknown = localizeLearningQuestion(raw, {
+    subject: "science",
+    contentLocale: "fr-FR",
+  });
+  const viaEn = localizeLearningQuestion(raw, {
+    subject: "science",
+    contentLocale: "en",
+  });
+  assert.deepEqual(viaUnknown.stem || viaUnknown.question, viaEn.stem || viaEn.question);
+  assert.equal(viaUnknown.params?.diagnosticSkillId, viaEn.params?.diagnosticSkillId);
 });
 
 test("science bank localization preserves stable ids and diagnostic params", () => {
@@ -104,6 +126,17 @@ test("learning book loads via content locale drafts dir (en tree preferred)", ()
   assert.match(String(loader.draftsDir).replace(/\\/g, "/"), /\/en\/math\/g1\/drafts/);
 });
 
+test("learning book es-419 drafts dir resolves when tree exists", () => {
+  const draftsRel = resolveLearningBookDraftsDir("es-419", "math", "g1");
+  assert.match(
+    draftsRel.replace(/\\/g, "/"),
+    /docs\/learning-book\/es-419\/math\/g1\/drafts/,
+  );
+  const page = loadMathG1Page("ns_counting_forward", { contentLocale: "es-419" });
+  assert.ok(page);
+  assert.equal(page.pageId, "ns_counting_forward");
+});
+
 test("English subject: learning content locale forced to en; instructions resolvable separately", () => {
   assert.equal(
     resolveLearningQuestionContentLocale({
@@ -117,36 +150,66 @@ test("English subject: learning content locale forced to en; instructions resolv
     "en",
   );
 
-  const instructionLocale = resolveLearningInstructionLocale({
+  const instructionLocaleEn = resolveLearningInstructionLocale({
     interfaceLocale: "en",
     subject: "english",
   });
-  assert.equal(instructionLocale, "en");
+  assert.equal(instructionLocaleEn, "en");
 
-  const q = localizeLearningQuestion(
-    {
-      subject: "english",
-      question: "Choose the correct English sentence.",
-      answers: ["I am happy.", "I is happy."],
-      correctAnswer: "I am happy.",
-      explanation: "עם I משתמשים ב-am.",
-      params: { topic: "grammar", patternFamily: "grammar_be" },
+  const instructionLocaleEs = resolveLearningInstructionLocale({
+    instructionLocale: "es-419",
+    subject: "english",
+  });
+  assert.equal(instructionLocaleEs, "es-419");
+
+  const baseQuestion = {
+    subject: "english",
+    question: "Choose the correct English sentence.",
+    answers: ["I am happy.", "I is happy."],
+    correctAnswer: "I am happy.",
+    explanation: "עם I משתמשים ב-am.",
+    explanationByLocale: {
+      en: "With I we use am.",
+      "es-419": "Con I usamos am.",
     },
-    {
-      subject: "english",
-      contentLocale: "en",
-      instructionLocale: "en",
-    },
-  );
-  assert.equal(q.correctAnswer, "I am happy.");
-  assert.ok(String(q.answers[0]).includes("I am"));
-  assert.ok(!containsHebrew(String(q.explanation || "")));
+    params: { topic: "grammar", patternFamily: "grammar_be" },
+  };
+
+  const qEn = localizeLearningQuestion(baseQuestion, {
+    subject: "english",
+    contentLocale: "en",
+    instructionLocale: "en",
+  });
+  assert.equal(qEn.correctAnswer, "I am happy.");
+  assert.ok(String(qEn.answers[0]).includes("I am"));
+  assert.equal(qEn.explanation, "With I we use am.");
+  assert.ok(!containsHebrew(String(qEn.explanation || "")));
+
+  const qEs = localizeLearningQuestion(baseQuestion, {
+    subject: "english",
+    contentLocale: "en",
+    instructionLocale: "es-419",
+  });
+  assert.equal(qEs.correctAnswer, "I am happy.");
+  assert.ok(String(qEs.answers[0]).includes("I am"));
+  assert.equal(qEs.explanation, "Con I usamos am.");
+  assert.ok(!containsHebrew(String(qEs.explanation || "")));
+
+  const qHeFallback = localizeLearningQuestion(baseQuestion, {
+    subject: "english",
+    contentLocale: "en",
+    instructionLocale: "he",
+  });
+  assert.equal(qHeFallback.correctAnswer, "I am happy.");
+  assert.equal(qHeFallback.explanation, "With I we use am.");
+  assert.ok(!containsHebrew(String(qHeFallback.explanation || "")));
 });
 
 test("no new unauthorized hard runtime paths to docs/learning-book/en", () => {
   const HARD_RE = /docs\/learning-book\/en\//;
   const ALLOW = new Set([
     // registries may document legacy/meta paths; loaders must not hard-join en
+    "lib/i18n/es-419-translation-inventory.js",
   ]);
   /** @type {string[]} */
   const violations = [];

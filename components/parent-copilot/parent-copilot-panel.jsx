@@ -51,7 +51,7 @@ function countCompletedAssistantTurns(lines) {
  * Optional server-side runner (e.g. `/api/parent/copilot-turn`) - keeps LLM keys off the client.
  * When omitted, uses bundled `runParentCopilotTurnAsync` / `runParentCopilotTurn` (detailed report default).
  *
- * @param {{ payload: object; selectedContextRef?: object | null; asyncTurnRunner?: ((input: object) => Promise<unknown>) | null }} props
+ * @param {{ payload: object; selectedContextRef?: object || null; asyncTurnRunner?: ((input: object) => Promise<unknown>) || null }} props
  */
 export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTurnRunner = null }) {
   const t = useT();

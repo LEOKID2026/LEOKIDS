@@ -2,7 +2,7 @@
  * Parent Report Engine Decision Contract — propagates DE2/V3/professional decisions
  * to all parent surfaces. q/accuracy gate visibility only; content comes from engines.
  */
-import { parentFacingPatternLabelHe } from "../parent-report-language/parent-facing-pattern-label-he.js";
+import { parentFacingPatternLabelHe } from "../parent-report-language/parent-facing-pattern-label.js";
 import {
   buildEngineDiagnosticDecision,
   computeAccuracyBand,
@@ -126,7 +126,7 @@ function buildParentSafeFindingFromEngine(p) {
 
   if (engineDecision === "speed_pressure_pattern") {
     // Product-owner-approved wording — single source shared with
-    // engine-decision-parent-copy-he.js (buildDiagnosticBodyByDecision). Does NOT
+    // engine-decision-parent-copy.js (buildDiagnosticBodyByDecision). Does NOT
     // claim the problem IS speed, nor that a knowledge gap exists or is ruled out.
     return buildSpeedPressurePatternFindingHe({ topicName: name, wrong: w, questions: q, accuracy: acc });
   }
@@ -215,14 +215,14 @@ export function findStrongestEngineDecisionInSubject(sp) {
 }
 
 /**
- * @param {string} subjectLabelHe
+ * @param {string} subjectLabel
  * @param {{ contract: Record<string, unknown> }|null} strongest
  */
-export function buildSubjectEngineSummaryOpeningHe(subjectLabelHe, strongest) {
+export function buildSubjectEngineSummaryOpeningHe(subjectLabel, strongest) {
   if (!strongest?.contract) return null;
   const finding = String(strongest.contract.parentSafeFinding || "").trim();
   if (!finding) return null;
-  const lab = String(subjectLabelHe || "this subject").trim();
+  const lab = String(subjectLabel || "this subject").trim();
   return `${lab}: ${finding}`;
 }
 

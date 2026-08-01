@@ -1,4 +1,4 @@
-// פונקציות אחסון וניהול ניקוד לדף הגאומטריה
+//      
 
 import { LEVELS, TOPICS, GRADES } from "./geometry-constants.js";
 
@@ -6,7 +6,7 @@ export function getLevelForGrade(levelKey, gradeKey) {
   const base = LEVELS[levelKey];
   let factor = 1;
 
-  // התאמה לפי כיתה - עדכון ל-6 כיתות
+  //    -  -6 
   switch (gradeKey) {
     case "g1":
     case "g2":
@@ -31,7 +31,7 @@ export function getLevelForGrade(levelKey, gradeKey) {
   const clamp = (x, min, max) => Math.max(min, Math.min(max, x));
 
   let decimals = base.decimals;
-  // כיתות א'-ג' ללא עשרוניים
+  //  '-'  
   if (gradeKey === "g1" || gradeKey === "g2" || gradeKey === "g3") {
     decimals = false;
   }

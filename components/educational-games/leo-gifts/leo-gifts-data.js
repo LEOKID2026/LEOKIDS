@@ -1,5 +1,5 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
-/** @typedef {'share_equally' | 'make_groups' | 'find_remainder'} GiftsMode */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
+/** @typedef {'share_equally' || 'make_groups' || 'find_remainder'} GiftsMode */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import {
@@ -417,7 +417,7 @@ export function giftsQuotientLabel(task) {
   return gamePackCopy("components__educational-games__leo-gifts__leo-gifts-data", task.mode === "make_groups" ? "quotient_full_bags" : "quotient_per_child");
 }
 
-/** @param {GiftsTask | null | undefined} task @param {boolean} showRemainder */
+/** @param {GiftsTask || null || undefined} task @param {boolean} showRemainder */
 export function giftsIdleFeedback(task, showRemainder) {
   if (task?.mode === "make_groups") {
     return showRemainder

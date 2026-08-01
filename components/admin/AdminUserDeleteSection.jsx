@@ -22,7 +22,7 @@ import {
  *   userId: string,
  *   targetEmail?: string|null,
  *   onDeleted?: () => void,
- *   variant?: "default" | "compact",
+ *   variant?: "default" || "compact",
  *   disabled?: boolean,
  *   triggerTestId?: string,
  * }} props

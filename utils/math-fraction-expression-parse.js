@@ -49,11 +49,11 @@ function normalizeMinus(sign) {
 /**
  * @param {unknown} raw
  * @returns {Array<
- *   | { type: "fraction", sign: string, whole: string|null, numerator: string, denominator: string, raw: string }
- *   | { type: "number", value: string }
- *   | { type: "operator", value: string }
- *   | { type: "space", value: string }
- *   | { type: "text", value: string }
+ *   || { type: "fraction", sign: string, whole: string|null, numerator: string, denominator: string, raw: string }
+ *   || { type: "number", value: string }
+ *   || { type: "operator", value: string }
+ *   || { type: "space", value: string }
+ *   || { type: "text", value: string }
  * >}
  */
 export function parseMathFractionExpression(raw) {

@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Toque objetivo",
+  "blurb": "¡Toca los objetivos antes de que desaparezcan!",
+  "help": {
+    "howToPlay": "Toca los objetivos que aparecen en la pantalla antes de que desaparezcan. Tienes tres vidas.",
+    "scoring": "Los objetivos normales, las estrellas y los diamantes valen puntos diferentes. Desaparecer cuesta una vida. Los golpes consecutivos otorgan una bonificación combinada.",
+    "rewards": "Alcanzar el objetivo alcanzado o una puntuación final alta otorga monedas y diamantes.",
+    "tip": "No se apresure a hacer todo: a veces un objetivo con un diamante vale más."
+  }
+}

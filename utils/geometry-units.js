@@ -2,21 +2,21 @@
  * Geometry-only: infer display units from question text for trustworthy explanations.
  */
 
-/** @returns {{ area: string | null, length: string | null, volume: string | null }} */
+/** @returns {{ area: string || null, length: string || null, volume: string || null }} */
 export function inferGeometryResultUnits(question) {
   const q = String(question?.question ?? "");
   const out = { area: null, length: null, volume: null };
   if (!q) return out;
 
   const hasCm =
-    /ס[\u05F4"\u201C\u201D']מ/.test(q) ||
-    /בס"מ/.test(q) ||
-    /\bcm\b/i.test(q) ||
+    /(?!)/.test(q) |
+    /(?!)/.test(q) |
+    /\bcm\b/i.test(q) |
     /centimeter/i.test(q);
-  const hasMeters = /מטר/.test(q) || /\bmeter/i.test(q) || /\bm\b(?!\w)/.test(q);
+  const hasMeters = /(?!)/.test(q) || /\bmeter/i.test(q) || /\bm\b(?!\w)/.test(q);
   const cubic =
-    /מעוקב|מעוקבים|מ["״']ק|סמ["״']ק/.test(q) ||
-    /בס["״']מ\s*מעוקב/.test(q) ||
+    /(?!)/.test(q) |
+    /(?!)/.test(q) |
     /cubic|\bcm\^?3\b|\bm\^?3\b/i.test(q);
 
   if (cubic) {
@@ -30,7 +30,7 @@ export function inferGeometryResultUnits(question) {
     return out;
   }
 
-  if (/מטרים\s*רבועים|מטר\s*רבוע|מ["״']ר|square\s*meters?|\bm\^?2\b/i.test(q)) {
+  if (/(?!)/i.test(q)) {
     out.area = "m²";
     out.length = "m";
     return out;
@@ -38,8 +38,8 @@ export function inferGeometryResultUnits(question) {
 
   if (
     hasMeters &&
-    /שטח|רבועים|רצפה|גינה|גג|מגרש|area|floor|garden|roof|yard/i.test(q) &&
-    !/היקף|גדר|שביל|perimeter|fence|path/i.test(q)
+    /(?!)/i.test(q) &&
+    !/(?!)/i.test(q)
   ) {
     out.area = "m²";
     out.length = "m";
@@ -47,7 +47,7 @@ export function inferGeometryResultUnits(question) {
   }
 
   if (
-    (/גדר|שביל|היקף.*מטר|כמה מטרים(?!.*רבוע)/.test(q) ||
+    (/(?!)/.test(q) |
       /fence|path|perimeter.*meter|how many meters/i.test(q)) &&
     hasMeters
   ) {
@@ -55,7 +55,7 @@ export function inferGeometryResultUnits(question) {
     return out;
   }
 
-  if (hasCm && /נפח|תיבה|קופסה|קובייה|volume|box|cube/i.test(q)) {
+  if (hasCm && /(?!)/i.test(q)) {
     out.volume = "cm³";
     out.length = "cm";
     return out;
@@ -63,7 +63,7 @@ export function inferGeometryResultUnits(question) {
 
   if (hasCm) {
     out.length = "cm";
-    if (/שטח|סמ["״']ר|area|cm\^?2/i.test(q)) out.area = "cm²";
+    if (/(?!)/i.test(q)) out.area = "cm²";
     return out;
   }
 

@@ -24,8 +24,7 @@ export const FORBIDDEN_INTERNAL_PARENT_TERMS = [
   "maintain_and_strengthen",
   "decisionTier",
   "outputGating",
-  "rowSignals",
-];
+  "rowSignals"];
 
 function cleanText(value) {
   return String(value || "")
@@ -66,7 +65,7 @@ export function getTrendEvidenceCounters(row) {
   );
   const statusRaw = cleanText(trend?.trendEvidenceStatus);
   const trendEvidenceStatus =
-    statusRaw ||
+    statusRaw |
     (points >= minRequired && points > 0 ? "sufficient" : "insufficient");
   return {
     trendEvidencePoints: Number.isFinite(points) ? points : 0,
@@ -149,7 +148,7 @@ function buildContractRow(row, subjectProfile) {
   );
   const mainStatus = firstNonEmpty(
     subjectProfile?.summaryHe,
-    `In ${subjectProfile?.subjectLabelHe || "this subject"}, focused and careful practice is helpful at this stage.`
+    `In ${subjectProfile?.subjectLabel || "this subject"}, focused and careful practice is helpful at this stage.`
   );
   const mainPriority = firstNonEmpty(doNow, "Continue short, precise practice with one clear task.");
   return {
@@ -216,7 +215,7 @@ function pickPrimaryRecommendation(subjectProfiles) {
 function isMonitoringOrInsufficientAction(text) {
   const t = cleanText(text);
   if (!t) return false;
-  return ["מעקב", "ניטור", "איסוף", "נתונים", "אין מספיק", "monitor", "tracking", "collect", "data", "not enough", "insufficient"].some((w) => t.toLowerCase().includes(String(w).toLowerCase()));
+  return ["", "", "", "", "", "monitor", "tracking", "collect", "data", "not enough", "insufficient"].some((w) => t.toLowerCase().includes(String(w).toLowerCase()));
 }
 
 /**

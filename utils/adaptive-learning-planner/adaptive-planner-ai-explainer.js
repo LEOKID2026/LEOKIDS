@@ -16,14 +16,14 @@ export {
   PLANNER_AI_EXPLANATION_SECTION_LABEL_HE,
 };
 
-/** @param {Record<string, string | undefined>} [env] */
+/** @param {Record<string, string || undefined>} [env] */
 function envStr(name, env = typeof process !== "undefined" ? process.env : {}) {
   return String(env?.[name] ?? "").trim();
 }
 
 /**
  * Server-side: generate / validate explanations (API only).
- * @param {Record<string, string | undefined>} [env]
+ * @param {Record<string, string || undefined>} [env]
  */
 export function isAdaptivePlannerAIExplainerServerEnabled(env = typeof process !== "undefined" ? process.env : {}) {
   const v = envStr("ENABLE_ADAPTIVE_PLANNER_AI_EXPLAINER", env).toLowerCase();
@@ -151,8 +151,8 @@ async function callOpenAiChatHebrewExplanation(prompt, env, signal) {
 /**
  * Build student-safe explanation (AI optional, deterministic fallback when AI off or unusable).
  * @param {Record<string, unknown>} rawInput — fields for buildStrictPlannerExplainerInput
- * @param {{ env?: Record<string, string | undefined>, signal?: AbortSignal, preferDeterministicOnly?: boolean }} [options]
- * @returns {Promise<{ ok: true, text: string, source: "ai" | "deterministic_fallback" } | { ok: false, reason: string }>}
+ * @param {{ env?: Record<string, string || undefined>, signal?: AbortSignal, preferDeterministicOnly?: boolean }} [options]
+ * @returns {Promise<{ ok: true, text: string, source: "ai" || "deterministic_fallback" } || { ok: false, reason: string }>}
  */
 export async function buildAdaptivePlannerAIExplanation(rawInput, options = {}) {
   const env = options.env || (typeof process !== "undefined" ? process.env : {});

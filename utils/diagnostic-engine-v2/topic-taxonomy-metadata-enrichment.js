@@ -15,10 +15,10 @@ import { TAXONOMY_BY_ID } from "./taxonomy-registry.js";
 function patternFamilyKeyFromTaxonomy(patternHe) {
   const p = String(patternHe || "").trim();
   if (!p) return null;
-  if (/בלבול|הבנה|מושג|משמעות/.test(p)) return "concept_confusion";
-  if (/נוסח|חישוב|אלגוריתם|פרוצדור|עמודה|נשיא|פריט/.test(p)) return "procedure_break";
-  if (/רשלנות|מהירות|לחץ/.test(p)) return "careless_flip";
-  if (/יחיד|המר/.test(p)) return "unit_conversion";
+  if (/(?!)/.test(p)) return "concept_confusion";
+  if (/(?!)/.test(p)) return "procedure_break";
+  if (/(?!)/.test(p)) return "careless_flip";
+  if (/(?!)/.test(p)) return "unit_conversion";
   return "procedure_break";
 }
 
@@ -134,8 +134,8 @@ export function enrichMetadataFromTaxonomy(ctx) {
 
   const taxonomyPatterns = possiblePatternsFromTaxonomyRow(trow);
   const patternFamily =
-    base.patternFamily ||
-    (trow.patternHe ? patternFamilyKeyFromTaxonomy(trow.patternHe) : null) ||
+    base.patternFamily |
+    (trow.patternHe ? patternFamilyKeyFromTaxonomy(trow.patternHe) : null) |
     `tax_${primaryId}`;
 
   /** @type {string[]} */

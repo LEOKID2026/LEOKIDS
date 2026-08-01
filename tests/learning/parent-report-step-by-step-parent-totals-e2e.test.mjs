@@ -14,7 +14,7 @@ import { buildParentReportV2FromAggregate } from "../../scripts/qa/lib/mass-virt
 import {
   INSUFFICIENT_SUBJECT_SUMMARY_RE,
 } from "../../utils/learning-pattern-decision/subject-clear-weak-topic.js";
-import { withholdSummaryCopyHe } from "../../utils/parent-report-language/subject-withhold-summary-he.js";
+import { withholdSummaryCopyHe } from "../../utils/parent-report-language/subject-withhold-summary.js";
 import { EVIDENCE_CATEGORIES } from "../../lib/learning/activity-classification.js";
 
 const FROM = new Date("2026-07-04T00:00:00+03:00");
@@ -165,7 +165,7 @@ describe("parent report step-by-step parent totals e2e (Aaa7 regression)", () =>
       sumUnitQuestions: 10,
       reportSubjectAccuracy: 20,
       reportTotalQuestions: 10,
-      subjectLabelHe: "מתמטיקה",
+      subjectLabel: "מתמטיקה",
       clearWeakTopicLabelHe: "חיבור",
       clearWeakTopicQuestions: 10,
       clearWeakTopicAccuracy: 20,

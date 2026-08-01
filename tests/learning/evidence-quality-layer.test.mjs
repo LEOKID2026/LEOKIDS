@@ -23,7 +23,7 @@ import {
   PARENT_EVIDENCE_VOLUME,
 } from "../../utils/parent-report-language/parent-evidence-matrix.js";
 
-import { confidenceLevelParentSummaryHe } from "../../utils/parent-report-language/confidence-parent-he.js";
+import { confidenceLevelParentSummaryHe } from "../../utils/parent-report-language/confidence-parent.js";
 
 import {
   isSourceAllowedInContext,

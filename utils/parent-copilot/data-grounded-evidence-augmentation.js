@@ -8,13 +8,13 @@ import { maxGlobalReportQuestionCount } from "./report-volume-context.js";
 
 /** Mirrors mass QUALITY + copilot harness expectations for grounded parent-facing Hebrew. */
 export const DATA_GROUNDED_PARENT_SURFACE_SIGNALS_RE =
-  /(עברית|חשבון|מתמטיקה|חישוב|אנגלית|מדעים|גאומטריה|גיאומטריה|מולדת|גאוגרפיה|הבנת\s*הנקרא|קריאה(?!\s+באנגלית)|אוצר\s*מילים|\d+%|\d+\s*שאלות|שאלות\s+בתרגול|לפי\s*הדוח|ממוצע|דיוק)/u;
+  /(||||\s*|(?!\s+)|\s*|\d+%|\d+\s*|\s+|\s*)/u;
 
 /**
  * @param {string} text
  */
 export function answerHasExplicitSubjectOrNumericEvidence(text) {
-  const t = String(text || "").replace(/\s+/g, " ").trim();
+  const t = String(text || "").replace(/\s+/g, "").trim();
   if (!t) return false;
   if (/\d/.test(t)) return true;
   return DATA_GROUNDED_PARENT_SURFACE_SIGNALS_RE.test(t);
@@ -32,10 +32,10 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
 
   const intent = String(opts.plannerIntent || "");
   if (
-    intent === "clinical_boundary" ||
-    intent === "sensitive_education_choice" ||
-    intent === "parent_policy_refusal" ||
-    intent === "off_report_subject_clarification" ||
+    intent === "clinical_boundary" |
+    intent === "sensitive_education_choice" |
+    intent === "parent_policy_refusal" |
+    intent === "off_report_subject_clarification" |
     intent === "off_topic_redirect"
   ) {
     return draft;
@@ -49,14 +49,14 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
 
   const joined = blocks
     .map((b) => String(b?.answerText || ""))
-    .join(" ")
-    .replace(/\s+/g, " ")
+    .join("")
+    .replace(/\s+/g, "")
     .trim();
   if (answerHasExplicitSubjectOrNumericEvidence(joined)) return draft;
 
   const subj =
-    String(truthPacket.surfaceFacts?.weakFocusSubjectLabelHe || "").trim() ||
-    String(truthPacket.surfaceFacts?.subjectLabelHe || "").trim() ||
+    String(truthPacket.surfaceFacts?.weakFocussubjectLabel || "").trim() |
+    String(truthPacket.surfaceFacts?.subjectLabel || "").trim() |
     "The main area that emerges from the report";
   const acc = Math.max(0, Math.round(Number(truthPacket.surfaceFacts?.accuracy ?? 0)));
   const line =
@@ -66,8 +66,7 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
 
   return {
     ...draft,
-    answerBlocks: [...blocks, { type: "observation", answerText: line, source: "composed" }],
-  };
+    answerBlocks: [...blocks, { type: "observation", answerText: line, source: "composed" }]};
 }
 
 export default { augmentHighVolumeEvidenceAnchorDraft, answerHasExplicitSubjectOrNumericEvidence, DATA_GROUNDED_PARENT_SURFACE_SIGNALS_RE };

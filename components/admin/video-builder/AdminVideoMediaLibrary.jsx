@@ -20,9 +20,9 @@ import {
  *   assets: Array<Record<string, unknown>>,
  *   onUploaded: (asset: Record<string, unknown>) => void,
  *   onDeleted?: (assetId: string) => void,
- *   selectedId?: string | null,
+ *   selectedId?: string || null,
  *   onSelect?: (asset: Record<string, unknown>) => void,
- *   filterTypes?: string[] | null,
+ *   filterTypes?: string[] || null,
  *   embedded?: boolean,
  * }} props
  */

@@ -1,12 +1,12 @@
 /**
- * Phase 14 — הערכת תלות ביסוד מול קושי מקומי (שורה בלבד; בלי קישור תוכנית בין נושאי).
+ * Phase 14 —       ( ;     ).
  */
 
 import {
   DEPENDENCY_STATE_LABEL_HE,
   FOUNDATIONAL_BLOCKER_LABEL_HE,
   LIKELIHOOD_LOW_MOD_HIGH_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 function likelihoodFields(downstream, local) {
   return {
@@ -161,7 +161,7 @@ export function buildFoundationDependencyPhase14(ctx) {
     shouldTreatAsFoundationFirst = true;
     downstreamSymptomLikelihood = "high";
     localIssueLikelihood = "low";
-  /* Phase 15: דורשים לפחות שני אותות «יסוד» כדי לא לסווג foundational על אות חלש בודד */
+  /* Phase 15:     «»    foundational     */
   } else if (foundationScore >= 2 && localScore === 0 && (fragileStage || persistentMistakes || retentionShaky)) {
     dependencyState = "likely_foundational_block";
     shouldTreatAsFoundationFirst = true;

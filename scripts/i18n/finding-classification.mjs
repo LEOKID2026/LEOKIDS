@@ -66,7 +66,7 @@ export function classifyFindingKind(file, text, line) {
     return "learning_content";
   }
 
-  if (/hebrew-display-labels|apiError|validation\.json|api_user/.test(f)) {
+  if (/display-labels|apiError|validation\.json|api_user/.test(f)) {
     return "api_user_error";
   }
 

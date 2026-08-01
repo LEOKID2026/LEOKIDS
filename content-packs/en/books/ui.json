@@ -11,11 +11,7 @@
     "math": "Math",
     "geometry": "Geometry",
     "science": "Science",
-    "english": "English",
-    "hebrew": "Hebrew",
-    "moledet": "Homeland Studies",
-    "geography": "Geography",
-    "history": "History"
+    "english": "English"
   },
   "shell": {
     "close": "Close",
@@ -27,11 +23,7 @@
     "backClose": "Close",
     "backGeometry": "Back to Geometry",
     "backScience": "Back to Science",
-    "backHebrew": "Back to Hebrew",
     "backEnglish": "Back to English",
-    "backHomeland": "Back to Homeland",
-    "backGeography": "Back to Geography",
-    "backHistory": "Back to History",
     "backMath": "Back to Math",
     "placeholderComingSoon": "Coming soon",
     "practiceGeometry": "We'll practice this Geometry topic next",
@@ -64,9 +56,11 @@
       "What are we learning?": "What we learn",
       "Simple explanation": "Explanation",
       "Visual / concrete example": "Example",
+      "Example": "Example",
       "Let's solve together": "Let's solve",
       "Try it yourself": "Try it yourself",
       "Common mistake — watch out!": "Watch out!",
+      "Let's check together": "Let's check",
       "Let's practice!": "Let's practice"
     }
   },

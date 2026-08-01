@@ -1,0 +1,205 @@
+{
+  "subjectId": "science",
+  "rows": {
+    "S-01": {
+      "id": "S-01",
+      "domain": "Concepto",
+      "topic": "Clasificación",
+      "subskill": "Propiedad versus proceso",
+      "pattern": "Confusión de categorías",
+      "counterEvidence": "Corregir después de una tabla de ejemplos.",
+      "countsWhen": "Mesa guiada",
+      "doesNotCountWhen": "Sólo distractores homófonos",
+      "probe": "Separar propiedad del proceso (práctica enfocada)",
+      "intervention": "Tabla de propiedades/procesos",
+      "escalation": "Ninguna mejora",
+      "observableMarkers": [
+        "Error en dos conceptos similares"
+      ],
+      "roots": [
+        "Confusión de conceptos"
+      ],
+      "competitors": [
+        "Lectura"
+      ],
+      "doNotConclude": [
+        "Sin ciencia"
+      ]
+    },
+    "S-02": {
+      "id": "S-02",
+      "domain": "Método",
+      "topic": "Experimento",
+      "subskill": "variable aislada",
+      "pattern": "Cambiando todo",
+      "counterEvidence": "Corregir con una tabla de variables.",
+      "countsWhen": "Mesa disponible",
+      "doesNotCountWhen": "Texto largo sin tabla.",
+      "probe": "Mismo experimento con una mesa.",
+      "intervention": "una variable",
+      "escalation": "Fallo repetido",
+      "observableMarkers": [
+        "Error en escenarios de cambio único"
+      ],
+      "roots": [
+        "Comprensión del experimento"
+      ],
+      "competitors": [
+        "Memoria"
+      ],
+      "doNotConclude": [
+        "sin pensar"
+      ]
+    },
+    "S-03": {
+      "id": "S-03",
+      "domain": "Cuerpo",
+      "topic": "Sistemas",
+      "subskill": "Location/flow",
+      "pattern": "Orden/ubicación incorrectos",
+      "counterEvidence": "Corregir con numeración",
+      "countsWhen": "diagrama numerado",
+      "doesNotCountWhen": "Nombres latinos aún no enseñados",
+      "probe": "Verticales versus horizontales",
+      "intervention": "Tarjetas de ubicación",
+      "escalation": "Informe medico",
+      "observableMarkers": [
+        "Error en un mapa corporal simple"
+      ],
+      "roots": [
+        "Mapa espacial grueso"
+      ],
+      "competitors": [
+        "Idioma"
+      ],
+      "doNotConclude": [
+        "Problema medico"
+      ]
+    },
+    "S-04": {
+      "id": "S-04",
+      "domain": "Asunto",
+      "topic": "Estados de la materia",
+      "subskill": "conservación masiva",
+      "pattern": "Desaparece sin conservación",
+      "counterEvidence": "Corregir después de un diagrama.",
+      "countsWhen": "Diagrama disponible",
+      "doesNotCountWhen": "Palabra sin estados enseñados",
+      "probe": "Con/sin diagrama",
+      "intervention": "diagrama de estados",
+      "escalation": "Ninguna mejora",
+      "observableMarkers": [
+        "Error cuando hay un diagrama de estados presente"
+      ],
+      "roots": [
+        "conservación masiva"
+      ],
+      "competitors": [
+        "Idioma"
+      ],
+      "doNotConclude": [
+        "Sin física"
+      ]
+    },
+    "S-05": {
+      "id": "S-05",
+      "domain": "Energía",
+      "topic": "Unidades",
+      "subskill": "Conversión de unidades",
+      "pattern": "Confusión de unidades",
+      "counterEvidence": "Corregir con una llave",
+      "countsWhen": "Clave disponible",
+      "doesNotCountWhen": "Antes de enseñar la unidad",
+      "probe": "Dos unidades por el mismo importe",
+      "intervention": "Clave de unidad",
+      "escalation": "Siempre falla",
+      "observableMarkers": [
+        "Error en la misma unidad"
+      ],
+      "roots": [
+        "Unidades"
+      ],
+      "competitors": [
+        "Cálculo"
+      ],
+      "doNotConclude": [
+        "Sin comprensión"
+      ]
+    },
+    "S-06": {
+      "id": "S-06",
+      "domain": "Medición",
+      "topic": "Gráfico",
+      "subskill": "Leer un eje",
+      "pattern": "Valor incorrecto de un gráfico",
+      "counterEvidence": "Corregir cuando el eje está resaltado.",
+      "countsWhen": "ejes escalados",
+      "doesNotCountWhen": "Gráfico sin escala",
+      "probe": "Con/sin punto resaltado",
+      "intervention": "Practica un punto sobre un eje.",
+      "escalation": "Informe de visión",
+      "observableMarkers": [
+        "Error en dos gráficos"
+      ],
+      "roots": [
+        "Lectura de gráficos"
+      ],
+      "competitors": [
+        "Cálculo"
+      ],
+      "doNotConclude": [
+        "Sin ciencia"
+      ]
+    },
+    "S-07": {
+      "id": "S-07",
+      "domain": "Ecología",
+      "topic": "Relaciones",
+      "subskill": "Red alimentaria",
+      "pattern": "Nivel incorrecto repetido",
+      "counterEvidence": "Correcto en una lista cerrada",
+      "countsWhen": "Diagrama o lista",
+      "doesNotCountWhen": "Texto solo sin enseñar",
+      "probe": "web parcial",
+      "intervention": "Tarjetas",
+      "escalation": "Ninguna mejora",
+      "observableMarkers": [
+        "Error cuando hay un diagrama presente"
+      ],
+      "roots": [
+        "Estructura del sistema"
+      ],
+      "competitors": [
+        "Recuerdo de nombre"
+      ],
+      "doNotConclude": [
+        "Sin sistemas"
+      ]
+    },
+    "S-08": {
+      "id": "S-08",
+      "domain": "Seguridad científica",
+      "topic": "Razonamiento",
+      "subskill": "Fuente para un reclamo",
+      "pattern": "Reclamación no respaldada",
+      "counterEvidence": "Corregir cuando se solicita una fuente",
+      "countsWhen": "Fuentes marcadas",
+      "doesNotCountWhen": "Distractor publicitario",
+      "probe": "Con/sin fuente",
+      "intervention": "Pregunta cómo lo sabemos",
+      "escalation": "profesora de estudios sociales",
+      "observableMarkers": [
+        "Se repite cuando una fuente explícita está presente."
+      ],
+      "roots": [
+        "Pensamiento crítico"
+      ],
+      "competitors": [
+        "Lectura"
+      ],
+      "doNotConclude": [
+        "Valores personales"
+      ]
+    }
+  }
+}

@@ -3,7 +3,7 @@
  * Used by moledet/science generators — student-visible option text.
  */
 
-const GENERIC_ONLY_RE = /^(?:only|רק)\s+/iu;
+const GENERIC_ONLY_RE = /(?!)/iu;
 
 const FALLBACK_DISTRACTORS = [
   "an area with many people",
@@ -15,8 +15,7 @@ const FALLBACK_DISTRACTORS = [
   "an open field",
   "a small lake",
   "a small forest",
-  "a low hill",
-];
+  "a low hill"];
 
 /** @param {string} text */
 function normKey(text) {
@@ -27,7 +26,7 @@ function normKey(text) {
 }
 
 /**
- * Replace generic "רק בית/כיתה/…" distractors with plausible alternatives.
+ * Replace generic " //…" distractors with plausible alternatives.
  * @param {{ answers?: string[], options?: string[], correct?: number, correctIndex?: number }} row
  * @returns {typeof row}
  */

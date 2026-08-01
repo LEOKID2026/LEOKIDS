@@ -1,4 +1,4 @@
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 import { flattenMixedHebrewMathVisibleText } from "../../lib/learning-book/book-visible-text-render.js";
 import { flattenTemplateRuns, parseTemplateRuns } from "../../lib/learning-book/learning-math-line-templates.js";
 

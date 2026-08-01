@@ -3,16 +3,14 @@
  */
 
 import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
-import { subjectLabelHe } from "../lib/teacher-portal/teacher-ui.js";
+import { subjectLabel } from "../lib/teacher-portal/teacher-ui.js";
 import {
   isCoreParentReportRow,
   resolveParentReportRowGradeRelation,
-  resolveRegisteredGradeKeyFromReport,
-} from "./parent-report-core-grade-filter.js";
+  resolveRegisteredGradeKeyFromReport} from "./parent-report-core-grade-filter.js";
 import {
   formatParentReportActivityDisplayLabelHe,
-  formatParentReportGradeHe,
-} from "./parent-report-language/parent-report-display-labels.js";
+  formatParentReportGradeHe} from "./parent-report-language/parent-report-display-labels.js";
 import { parseCanonicalTopicFromRowKey } from "./parent-report-output-integrity/row-identity-v1.js";
 
 const SUBJECT_TOPIC_MAPS = [
@@ -20,10 +18,7 @@ const SUBJECT_TOPIC_MAPS = [
   { subjectId: "geometry", mapKey: "geometryTopics" },
   { subjectId: "english", mapKey: "englishTopics" },
   { subjectId: "science", mapKey: "scienceTopics" },
-  { subjectId: "history", mapKey: "historySubtopics" },
-  { subjectId: "hebrew", mapKey: "hebrewTopics" },
-  { subjectId: "moledet-geography", mapKey: "moledetGeographyTopics" },
-];
+  { subjectId: "history", mapKey: "historySubtopics" }];
 
 /**
  * @param {string|null|undefined} iso
@@ -84,8 +79,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
         gradeKey: data.gradeKey ?? contentGradeKey,
         questions: q,
         topicRowKey,
-        subjectId,
-      };
+        subjectId};
 
       if (isCoreParentReportRow(row, registeredGradeKey)) continue;
 
@@ -95,7 +89,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
       const item = {
         topicRowKey,
         subjectId,
-        subjectLabelHe: subjectLabelHe(subjectId) || subjectId,
+        subjectLabel: subjectLabel(subjectId) || subjectId,
         topicLabelHe: topicLabelFromMapRow(data, topicRowKey),
         gradeLabelHe: formatParentReportGradeHe(contentGradeKey) || "-",
         gradeRelation,
@@ -105,8 +99,7 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
         lastActivityAtHe: formatActivityDateHe(
           data.latestActivityAt || data.lastAnswerAt || data.lastSessionAt || null,
         ),
-        sourceLabelHe: formatParentReportActivityDisplayLabelHe(data) || "Practice",
-      };
+        sourceLabelHe: formatParentReportActivityDisplayLabelHe(data) || "Practice"};
 
       if (gradeRelation === "higher") advancedPractice.push(item);
       else foundationPractice.push(item);
@@ -127,6 +120,5 @@ export function buildOutOfGradePracticeTransparency(baseReport) {
     titleHe: reportPackCopy("utils__parent-report-out-of-grade-transparency", "practice_outside_registered_grade"),
     registeredGradeKey,
     advancedPractice,
-    foundationPractice,
-  };
+    foundationPractice};
 }

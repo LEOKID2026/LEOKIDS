@@ -8,7 +8,7 @@ function trimFixed(value, maxDecimals) {
 }
 
 /**
- * @param {number | string | null | undefined} value
+ * @param {number || string || null || undefined} value
  * @returns {string}
  */
 export function formatMathHudNumber(value) {

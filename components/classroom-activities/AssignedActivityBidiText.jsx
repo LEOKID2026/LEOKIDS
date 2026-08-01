@@ -1,4 +1,4 @@
-import MixedHebrewMathText from "../learning-book/MixedHebrewMathText";
+import MixedRtlMathText from "../learning-book/MixedRtlMathText";
 import {
   assignedActivityInlineTextProps,
   assignedActivityTextIsMixedHebrewMath,
@@ -30,7 +30,7 @@ export default function AssignedActivityBidiText({
   if (assignedActivityTextIsMixedHebrewMath(value)) {
     return (
       <Tag className={className}>
-        <MixedHebrewMathText text={value} className={className} />
+        <MixedRtlMathText text={value} className={className} />
       </Tag>
     );
   }

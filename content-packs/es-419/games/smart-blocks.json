@@ -1,0 +1,11 @@
+{
+  "gameId": "smart-blocks",
+  "title": "Bloques inteligentes",
+  "blurb": "¡Coloca formas, limpia filas y columnas y alcanza el objetivo de puntuación!",
+  "help": {
+    "howToPlay": "Arrastre formas al tablero, gírelas si es necesario y colóquelas para llenar filas y columnas.",
+    "scoring": "Borrar una fila o columna suma puntos. El objetivo es alcanzar el objetivo de puntuación antes de que se llene el tablero.",
+    "rewards": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agrega aún más.",
+    "tip": "Intente borrar varias filas a la vez; esto le dará muchos puntos."
+  }
+}

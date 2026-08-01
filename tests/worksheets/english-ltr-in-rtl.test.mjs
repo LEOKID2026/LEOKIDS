@@ -22,7 +22,7 @@ const TRANSLATION_RAW = {
   answers: ["כלב", "חתול", "ציפור", "דג"],
   correctAnswer: "כלב",
   topic: "translation",
-  params: { direction: "en_to_he", word: "dog", gradeKey: "g2" },
+  params: { direction: "en_to_meaning", word: "dog", gradeKey: "g2" },
 };
 
 const SENTENCE_RAW = {

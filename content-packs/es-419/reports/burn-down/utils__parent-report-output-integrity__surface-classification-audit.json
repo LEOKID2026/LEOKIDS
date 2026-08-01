@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "short_report_table": "Tabla de informe breve",
+    "smart_summary_short_report": "Resumen inteligente: informe breve",
+    "smart_summary_detailed_report": "Resumen inteligente: informe detallado",
+    "parentaiinsight_executivesummary": "ParentAiInsight + ejecutivoResumen",
+    "strengths": "Fortalezas",
+    "focus_weaknesses": "Enfoque/debilidades",
+    "topic_recommendations": "Recomendaciones de temas",
+    "what_to_do_at_home": "Que hacer en casa",
+    "executive_summary": "Resumen ejecutivo",
+    "charts_labels": "Gráficos/etiquetas",
+    "playwright_print_of_pages_above": "Impresión de dramaturgo de las páginas anteriores",
+    "copilot_truth_packet": "Paquete de verdad del copiloto",
+    "copilot_answer_composer": "Compositor de respuestas copiloto"
+  }
+}

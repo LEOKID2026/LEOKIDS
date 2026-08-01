@@ -1,0 +1,9 @@
+{
+  "gameId": "tic-tac-toe",
+  "title": "Tic-Tac-Toe",
+  "blurb": "Tableros de 3×3 a 7×7 con seguimiento de puntuación.",
+  "players": "2 jugadores",
+  "help": {
+    "howToPlay": "Jueguen juntos en el mismo dispositivo."
+  }
+}

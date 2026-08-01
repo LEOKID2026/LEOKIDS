@@ -9,5 +9,6 @@ export default async function handler(req, res) {
   const ctx = await requireParentApiContext(res, req.headers.authorization || "");
   if (ctx.stopped) return undefined;
 
-  return res.status(200).json({ ok: true, items: buildUnifiedWorksheetCatalogItems() });
+  const locale = String(req.query?.contentLocale || req.query?.locale || req.query?.interfaceLocale || "en").trim();
+  return res.status(200).json({ ok: true, items: buildUnifiedWorksheetCatalogItems(locale || "en") });
 }

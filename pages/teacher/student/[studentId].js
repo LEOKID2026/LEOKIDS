@@ -36,7 +36,7 @@ import {
   studentGuidanceHeadlineHe,
   STUDENT_FOCUS_CALM_MESSAGE,
   STUDENT_FOCUS_FALLBACK_BANNER,
-  subjectLabelHe,
+  subjectLabel,
   supportSuggestionHe,
 } from "../../../lib/teacher-portal/teacher-ui.js";
 import {
@@ -134,7 +134,7 @@ export default function TeacherStudentReportPage({ studentId }) {
     ? (guidance.strengthUnits || [])
         .filter((s) => s.topicLabelHe)
         .map((s) => {
-          const subj = subjectLabelHe(s.subject);
+          const subj = subjectLabel(s.subject);
           return `${subj ? `${subj} - ` : ""}${s.topicLabelHe} - ${formatPercent(s.accuracyPct)} success`;
         })
     : (guidance.strengthsForTeacher || [])
@@ -170,7 +170,7 @@ export default function TeacherStudentReportPage({ studentId }) {
             );
             return `${u.headlineHe} · ${stats}`;
           }
-          const subj = subjectLabelHe(u.subject);
+          const subj = subjectLabel(u.subject);
           const headline = u.subtopicLabelHe
             ? `${u.topicLabelHe} - ${u.subtopicLabelHe}`
             : u.topicLabelHe;
@@ -285,7 +285,7 @@ export default function TeacherStudentReportPage({ studentId }) {
                   </p>
                 ) : null}
                 {recommendationUnits.slice(0, 5).map((u) => {
-                  const subj = subjectLabelHe(u.subject);
+                  const subj = subjectLabel(u.subject);
                   const ev = u.evidenceSummary || {};
                   if (u.level === "subject" && u.headlineHe) {
                     const action = actionTypeLabelHe(u.recommendedActionType);

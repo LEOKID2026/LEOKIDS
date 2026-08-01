@@ -18,7 +18,7 @@ const DISPLAY_LEVEL_KEYS = ["regular", "advanced"];
 
 /**
  * Shared UI strings for learning subject masters (math, geometry, english, science).
- * @param {string} [subjectId] — math | geometry | english | science
+ * @param {string} [subjectId] — math || geometry || english || science
  */
 export function useLearningMasterStrings(subjectId = "math") {
   const { direction, locale } = useI18n();
@@ -315,16 +315,18 @@ export function useLearningMasterStrings(subjectId = "math") {
 
       switch (topic) {
         case "vocabulary":
-          if (p.direction === "en_to_he") {
+          if (p.direction === "en_to_meaning") {
             return [
-              t("learning.english.steps.wordIsEnglish", { word: p.word }),
-              t("learning.english.steps.findHebrewMeaning"),
+              t("learning.english.steps.wordIsEnglish", { word: p.word || p.wordEn }),
+              t("learning.english.steps.findLocalizedMeaning"),
               t("learning.english.steps.correctMeaning", { answer: correctAnswer }),
               t("learning.english.steps.checkMeaning"),
             ];
           }
           return [
-            t("learning.english.steps.wordIsHebrew", { word: p.word }),
+            t("learning.english.steps.wordIsCue", {
+              word: p.localizedMeaning || p.word,
+            }),
             t("learning.english.steps.findEnglishMeaning"),
             t("learning.english.steps.correctMeaning", { answer: correctAnswer }),
             t("learning.english.steps.checkMeaning"),
@@ -337,16 +339,18 @@ export function useLearningMasterStrings(subjectId = "math") {
             p.explanation || t("learning.english.steps.checkMeaning"),
           ];
         case "translation":
-          if (p.direction === "en_to_he") {
+          if (p.direction === "en_to_meaning") {
             return [
               t("learning.english.steps.readEnglishSentence", { sentence: p.sentence }),
               t("learning.english.steps.translatePiece"),
-              t("learning.english.steps.buildHebrewSentence"),
+              t("learning.english.steps.buildSentence"),
               t("learning.english.steps.correctTranslation", { answer: correctAnswer }),
             ];
           }
           return [
-            t("learning.english.steps.readHebrewSentence", { sentence: p.sentence }),
+            t("learning.english.steps.readSentence", {
+              sentence: p.localizedMeaning || p.localizedSentence || p.sentence,
+            }),
             t("learning.english.steps.translatePiece"),
             t("learning.english.steps.buildEnglishSentence"),
             t("learning.english.steps.correctTranslation", { answer: correctAnswer }),
@@ -361,7 +365,9 @@ export function useLearningMasterStrings(subjectId = "math") {
         case "writing":
           if (p.type === "word") {
             return [
-              t("learning.english.steps.spellingReadHebrew", { word: p.wordHe }),
+              t("learning.english.steps.spellingReadWord", {
+                word: p.localizedMeaning || p.wordEn,
+              }),
               t("learning.english.steps.spellingRecallEnglish"),
               t("learning.english.steps.spellingLetterByLetter"),
               t("learning.english.steps.correctMeaning", { answer: correctAnswer }),
@@ -369,7 +375,9 @@ export function useLearningMasterStrings(subjectId = "math") {
           }
           if (p.type === "sentence") {
             return [
-              t("learning.english.steps.writeSentenceHebrew", { sentence: p.sentenceHe }),
+              t("learning.english.steps.writeSentence", {
+                sentence: p.localizedMeaning || p.localizedSentence || p.sentenceEn,
+              }),
               t("learning.english.steps.breakIntoParts"),
               t("learning.english.steps.checkWordOrder"),
               t("learning.english.steps.correctSentence", { answer: correctAnswer }),

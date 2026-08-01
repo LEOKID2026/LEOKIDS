@@ -13,7 +13,7 @@ import { useWorksheetUi, WORKSHEET_PRINT_DOC_ATTRS } from "../../hooks/useWorksh
  *     topicHe: string,
  *     levelHe: string,
  *   },
- *   variant?: "worksheet" | "answer-key",
+ *   variant?: "worksheet" || "answer-key",
  * }} props
  */
 export default function WorksheetDocumentHeader({

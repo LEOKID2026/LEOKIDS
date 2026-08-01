@@ -12,8 +12,7 @@ import {
   buildClinicalBoundaryAnswerDraft,
   clinicalBoundaryJoinedFingerprintHe,
   sensitiveEducationChoiceJoinedFingerprintHe,
-  ensureHomePracticePracticalMagnitudeDraft,
-} from "./answer-composer.js";
+  ensureHomePracticePracticalMagnitudeDraft} from "./answer-composer.js";
 import { detectAggregateQuestionClass, shouldDeferIntentComposer } from "./semantic-question-class.js";
 import { buildSemanticAggregateDraft } from "./semantic-aggregate-answers.js";
 import { validateAnswerDraft, validateParentCopilotResponseV1 } from "./guardrail-validator.js";
@@ -23,10 +22,9 @@ import { getConversationState, applyConversationStateDelta } from "./session-mem
 import {
   buildResolvedParentCopilotResponse,
   buildClarificationParentCopilotResponse,
-  buildQuickActions,
-} from "./render-adapter.js";
-import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize.js";
-import { normalizeFreeformParentUtteranceHe, foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+  buildQuickActions} from "./render-adapter.js";
+import { normalizeParentFacing } from "../parent-report-language/parent-facing-normalize.js";
+import { normalizeFreeformParentUtterance, foldUtteranceForMatch } from "./utterance-normalize.js";
 import { buildTurnTelemetry } from "./turn-telemetry.js";
 import { maybeGenerateGroundedLlmDraft } from "./llm-orchestrator.js";
 import { getLlmGateDecision } from "./rollout-gates.js";
@@ -43,13 +41,11 @@ import { semanticIntentForMetadata } from "./semantic-intent-labels.js";
 import {
   composeHistoryZeroDataAnswerDraft,
   detectHistoryCopilotLock,
-  isHistoryZeroDataScope,
-} from "./history-scope-he.js";
+  isHistoryZeroDataScope} from "./history-scope.js";
 import {
   tryBuildPhaseEClarificationBypassDraft,
   augmentPhaseEThinEvidenceDraft,
-  tryBuildPhaseEResolvedShortcutDraft,
-} from "../parent-ai-topic-classifier/external-question-route.js";
+  tryBuildPhaseEResolvedShortcutDraft} from "../parent-ai-topic-classifier/external-question-route.js";
 import {
   routeParentQuestion,
   OFF_TOPIC_RESPONSE_HE,
@@ -58,12 +54,11 @@ import {
   HEALTH_BOUNDARY_RESPONSE_HE,
   PRIVACY_BOUNDARY_RESPONSE_HE,
   PEER_COMPARISON_RESPONSE_HE,
-  AMBIGUOUS_RESPONSE_HE,
-} from "./question-router.js";
+  AMBIGUOUS_RESPONSE_HE} from "./question-router.js";
 import { classifyParentQuestionViaLlm } from "./question-classifier-llm.js";
 import { matchesLegitimateParentQuestion } from "./question-classifier.js";
 import { shouldReturnNoDataForRequest, noDataResponseHe, isNoDataClarificationText } from "./no-data-request-response.js";
-import { isContextualFollowUpUtterance } from "./contextual-follow-up-he.js";
+import { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
 import { utteranceQualifiesAsReportQuestion, hasAnchoredReportRows } from "./report-row-resolver.js";
 import { tryComposePatternAnswerDraft, tryComposeExplainReportSimpleWordsDraft } from "./pattern-answer-composers.js";
 import { tryComposeContinuityPatternDraft } from "./continuity-pattern-composer.js";
@@ -130,8 +125,7 @@ const CLINICAL_GUARDRAIL_FAIL_CODES = new Set([
   "clinical_diagnosis_language",
   "clinical_certainty_language",
   "llm_clinical_diagnosis_language",
-  "llm_clinical_certainty_language",
-]);
+  "llm_clinical_certainty_language"]);
 
 const CLINICAL_LLM_FAIL_REASONS = new Set(["llm_clinical_diagnosis_language", "llm_clinical_certainty_language"]);
 
@@ -148,7 +142,7 @@ function draftHasClinicalGuardrailFailure(failCodes) {
  */
 function normalizeWsHeJoin(s) {
   return String(s || "")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
 }
 
@@ -158,14 +152,14 @@ function normalizeWsHeJoin(s) {
 function isClinicalBoundaryDraft(draft) {
   const joined = (Array.isArray(draft?.answerBlocks) ? draft.answerBlocks : [])
     .map((b) => String(b?.answerText || ""))
-    .join(" ");
+    .join("");
   return normalizeWsHeJoin(joined) === normalizeWsHeJoin(clinicalBoundaryJoinedFingerprintHe());
 }
 
 function isSensitiveEducationChoiceDraft(draft) {
   const joined = (Array.isArray(draft?.answerBlocks) ? draft.answerBlocks : [])
     .map((b) => String(b?.answerText || ""))
-    .join(" ");
+    .join("");
   return normalizeWsHeJoin(joined) === normalizeWsHeJoin(sensitiveEducationChoiceJoinedFingerprintHe());
 }
 
@@ -175,8 +169,7 @@ function contractNarrativeSlotBundleHe(truthPacket) {
     String(nar?.textSlots?.observation || ""),
     String(nar?.textSlots?.interpretation || ""),
     String(nar?.textSlots?.action || ""),
-    String(nar?.textSlots?.uncertainty || ""),
-  ].join(" ");
+    String(nar?.textSlots?.uncertainty || "")].join("");
 }
 
 /**
@@ -191,7 +184,7 @@ function normalizeAnswerBlocksHe(answerBlocks, truthPacket = null, opts = null) 
   const slotBundle = truthPacket ? contractNarrativeSlotBundleHe(truthPacket) : "";
   const preserveSlot = !!(opts && opts.preserveContractSlotSources);
   const mapped = (Array.isArray(answerBlocks) ? answerBlocks : []).map((b) => {
-    const textHe = normalizeParentFacingHe(String(b?.answerText || "").trim());
+    const textHe = normalizeParentFacing(String(b?.answerText || "").trim());
     let source = String(b?.source || "composed");
     if (
       !preserveSlot &&
@@ -209,7 +202,7 @@ function normalizeAnswerBlocksHe(answerBlocks, truthPacket = null, opts = null) 
 }
 
 const THIN_DATA_APPROVED_SCARCITY_RE =
-  /(יש\s+כרגע\s+מעט\s+נתוני\s+תרגול|נפח\s+הנתונים\s+עדיין\s+מצומצם|אין\s+עדיין\s+מספיק\s+מידע\s+לכיוון\s+ברור)/u;
+  /(\s+\s+\s+\s+|\s+\s+\s+|\s+\s+\s+\s+\s+)/u;
 const THIN_DATA_DEFAULT_LEAD = copilotStaticMessage("copilot.answers.utils_parent-copilot_index.there_is_currently_little_practice_data_so_there_is_not_yet_enou");
 
 function shouldUseThinDataLead(truthPacket, intent, payload) {
@@ -235,14 +228,13 @@ function shouldUseThinDataLead(truthPacket, intent, payload) {
     "simple_parent_explanation",
     "what_to_do_today",
     "what_to_do_this_week",
-    "report_trust_question",
-  ]);
+    "report_trust_question"]);
   if (!intentSet.has(String(intent || ""))) return false;
   const practiceVolume = globalQ;
   return (
-    practiceVolume < 90 ||
-    dl.readiness === "insufficient" ||
-    dl.readiness === "forming" ||
+    practiceVolume < 90 |
+    dl.readiness === "insufficient" |
+    dl.readiness === "forming" |
     (dl.cannotConcludeYet === true && practiceVolume < 120)
   );
 }
@@ -254,7 +246,7 @@ function enforceThinDataScarcityLead(draft, truthPacket, intent, payload) {
     return draft;
   }
   if (!shouldUseThinDataLead(truthPacket, intent, payload)) return draft;
-  const joined = blocks.map((b) => String(b?.answerText || "")).join(" ").trim();
+  const joined = blocks.map((b) => String(b?.answerText || "")).join("").trim();
   if (THIN_DATA_APPROVED_SCARCITY_RE.test(joined)) return draft;
   const firstIdx = blocks.findIndex((b) => String(b?.answerText || "").trim());
   if (firstIdx < 0) return draft;
@@ -262,8 +254,7 @@ function enforceThinDataScarcityLead(draft, truthPacket, intent, payload) {
   const first = next[firstIdx];
   next[firstIdx] = {
     ...first,
-    answerText: `${THIN_DATA_DEFAULT_LEAD} ${String(first?.answerText || "").trim()}`.trim(),
-  };
+    answerText: `${THIN_DATA_DEFAULT_LEAD} ${String(first?.answerText || "").trim()}`.trim()};
   return { ...draft, answerBlocks: normalizeAnswerBlocksHe(next) };
 }
 
@@ -271,28 +262,28 @@ function buildNoScopeCategorySpecificClarification(utterance) {
   const t = String(utterance || "").trim();
   if (!t) return null;
 
-  if (/ילד\s+אחר|כל\s+ה?ילדים|סיסמ(?:ה|א)|דאטה\s*בייס|database|\bdb\b|כל\s+ה?משתמשים|חשבון\s+אחר|נתונים\s+של\s+מישהו\s+אחר|רשימ(?:ה|ת)\s+ילדים/u.test(t)) {
+  if (/\s+|\s+?|(?:)|\s*|database|\bdb\b|\s+?|\s+|\s+\s+\s+|(?:)\s+/u.test(t)) {
     return PRIVACY_BOUNDARY_RESPONSE_HE;
   }
-  if (/מזג\s*האוויר|חדשות|כדורגל|מתכון|שיר|נעליים|ביטקוין|javascript|java\s*script|מה\s*השעה|בדיחה|ראש\s*הממשלה|השקעות|בורסה|שיעורי\s+בית\s+ש(?:לא|אינ)/i.test(t)) {
+  if (/\s*||||javascript|java\s*script|\s*|\s*||\s+\s+(?:)/i.test(t)) {
     return GENERAL_OFF_TOPIC_RESPONSE_HE;
   }
-  if (/תתעלם|תחשוף|system\s*prompt|debug|הוראות\s*פנימיות|תדפיס|מעכשיו\s*אל\s*תשתמש/i.test(t)) {
+  if (/system\s*prompt|debug|\s*|\s*\s*/i.test(t)) {
     return "I do not ignore the report and do not disclose internal instructions. The answer here remains based on learning data, and it is possible to continue with the question about the actual state of learning.";
   }
-  if (/תמציא|תסתיר|בלי\s*להתחשב\s*בנתונים|תכתוב\s*שהילד\s*מצוין\s*למרות|תשנה\s*את\s*הדוח/i.test(t)) {
+  if (/\s*\s*|\s*\s*\s*|\s*\s*/i.test(t)) {
     return "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it. It is also possible to build a clear formulation for the parent according to what is currently in the learning data.";
   }
-  if (/מה\s*מצב.*במוזיקה|במוזיקה|באמנות|בספורט|במחול/i.test(t)) {
+  if (/\s*.*|/i.test(t)) {
     return "At the moment, there is no practice data for this subject in the report, so it is impossible to conclude a situation about it. If you wish, we can focus on subjects that do appear in the report.";
   }
-  if (/למה\s*כתבת\s*שהוא\s*חלש|לא\s*מסכים\s*עם\s*הדוח|הדוח\s*טועה/i.test(t)) {
+  if (/\s*\s*\s*|\s*\s*\s*|\s*/i.test(t)) {
     return "There can be a gap between success at home and performance in practice in the app. That is why we look at a repeating pattern in the report over time, and not at a single answer.";
   }
-  if (/תסביר\s*לי\s*כמו\s*להורה|בלי\s*מושגים|במשפט\s*אחד|רק\s*3\s*נקודות|בקיצור/i.test(t)) {
+  if (/\s*\s*\s*|\s*|\s*|\s*3\s*/i.test(t)) {
     return "In short: the report compares subjects according to the amount of questions and accuracy in practice. If the data is still few, it is an initial sign and not a final direction - it is better to accumulate some more short practice before determining a direction.";
   }
-  if (/מה\s*לעשות\s*מחר|מה\s*לתרגל\s*השבוע|תוכנית\s*קצרה|איך\s*לעזור\s*בלי\s*לחץ/i.test(t)) {
+  if (/\s*\s*|\s*\s*|\s*|\s*\s*\s*/i.test(t)) {
     return "You can start with a short program: 1) 10 minutes of repetition on one subject, 2) 5-8 questions on another subject, 3) retesting in two days if the same pattern is maintained.";
   }
   return null;
@@ -337,10 +328,8 @@ function normalizeMergedLlmAttempt(raw) {
       ? {
           fallbackAttempts: raw.fallbackAttempts.map((a) =>
             a && typeof a === "object" ? { ...a } : a,
-          ),
-        }
-      : {}),
-  };
+          )}
+      : {})};
   return base;
 }
 
@@ -360,11 +349,7 @@ function ensureResponseTelemetry(response, context) {
           ...trace,
           branchOutcomes: {
             ...branchOutcomes,
-            llmAttempt: merged,
-          },
-        },
-      },
-    };
+            llmAttempt: merged}}}};
   }
   const metadata = response?.metadata && typeof response.metadata === "object" ? response.metadata : {};
   const fallbackUsed = !!response?.fallbackUsed;
@@ -385,8 +370,7 @@ function ensureResponseTelemetry(response, context) {
     resolutionStatus: String(response?.resolutionStatus || "clarification_required"),
     scopeType: response?.scopeType ?? null,
     scopeId: response?.scopeId ?? null,
-    llmAttempt: context.llmAttempt || null,
-  });
+    llmAttempt: context.llmAttempt || null});
   return { ...response, telemetry };
 }
 
@@ -423,8 +407,7 @@ function persistTelemetryBestEffort(response, context) {
             const base = {
               ok: !!llmAttempt.ok,
               reason: String(llmAttempt.reason || ""),
-              provider: llmAttempt.provider || undefined,
-            };
+              provider: llmAttempt.provider || undefined};
             if (llmAttempt.httpStatus != null) base.httpStatus = Number(llmAttempt.httpStatus);
             if (typeof llmAttempt.geminiErrorSummary === "string" && llmAttempt.geminiErrorSummary) {
               base.geminiErrorSummary = String(llmAttempt.geminiErrorSummary).slice(0, 2000);
@@ -451,8 +434,7 @@ function persistTelemetryBestEffort(response, context) {
           })()
         : null,
     utteranceLength: Number(context.utteranceLength || 0),
-    timestampMs: Number(telemetry.timestampMs || Date.now()),
-  });
+    timestampMs: Number(telemetry.timestampMs || Date.now())});
 }
 
 function finalizeTurnResponse(response, context) {
@@ -471,8 +453,7 @@ function persistClarificationConversationMemory(response, context) {
   const isNoData = isNoDataClarificationText(text);
   applyConversationStateDelta(sessionId, {
     assistantAnswerSummary: text.slice(0, 480),
-    ...(isNoData ? { lastTurnWasNoData: true, lastTurnWasWhatNotInfer: false } : {}),
-  });
+    ...(isNoData ? { lastTurnWasNoData: true, lastTurnWasWhatNotInfer: false } : {})});
 }
 
 /**
@@ -495,21 +476,18 @@ function tryPackageApprovedPatternTurn(input, sessionId, priorRepeated, conv, ut
       patternNoData: true,
       intentReason: "pattern:no_data",
       scopeConfidence: 0.88,
-      scopeReason: "approved_pattern_no_data",
-    };
+      scopeReason: "approved_pattern_no_data"};
     const noDataText = noDataResponseHe(utteranceStr, input?.payload);
     const r = buildClarificationParentCopilotResponse({
       clarificationQuestionHe: noDataText,
       intent,
       priorRepeated,
-      metadata: scopeMeta,
-    });
+      metadata: scopeMeta});
     validateParentCopilotResponseV1(r);
     applyConversationStateDelta(sessionId, {
       assistantAnswerSummary: noDataText.slice(0, 480),
       lastTurnWasNoData: true,
-      lastTurnWasWhatNotInfer: false,
-    });
+      lastTurnWasWhatNotInfer: false});
     return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
   }
   if (!draftResult.truthPacket || !draftResult.answerBlocks?.length) return null;
@@ -517,8 +495,7 @@ function tryPackageApprovedPatternTurn(input, sessionId, priorRepeated, conv, ut
     truthPacket: draftResult.truthPacket,
     plannerIntent: draftResult.plannerIntent,
     scopeMeta: { ...scopeMetaBase, ...draftResult.scopeMeta },
-    answerBlocks: draftResult.answerBlocks,
-  });
+    answerBlocks: draftResult.answerBlocks});
 }
 
 /**
@@ -535,9 +512,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     answerBlocks: compactParentAnswerBlocks(normalizeAnswerBlocksHe(fb.answerBlocks, truthPacket), {
       scopeType: String(truthPacket.scopeType || ""),
       maxBlocks: 5,
-      maxTotalChars: 2400,
-    }),
-  };
+      maxTotalChars: 2400})};
   const semanticAggregateSatisfied = false;
   const aggregateQuestionClass = detectAggregateQuestionClass(utteranceStr);
   const intentComposerPath = String(scopeMeta?.generationPath || "") === "intent_composer";
@@ -561,8 +536,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       fallbackUsed = true;
       draft = {
         ...draft,
-        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true }),
-      };
+        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true })};
       vDraft = validateAnswerDraft(draft, truthPacket, { intent: plannerIntent });
     }
   }
@@ -579,17 +553,14 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       draft = {
         answerBlocks: [
           { type: "observation", answerText: String(slots.observation || "").trim(), source: "contract_slot" },
-          { type: "meaning", answerText: String(slots.interpretation || "").trim(), source: "contract_slot" },
-        ].filter((b) => b.answerText),
-      };
+          { type: "meaning", answerText: String(slots.interpretation || "").trim(), source: "contract_slot" }].filter((b) => b.answerText)};
       if (draft.answerBlocks.length < 2) {
         draft = buildDeterministicFallbackAnswer(truthPacket, ["emergency_fallback"]);
       }
       fallbackUsed = true;
       draft = {
         ...draft,
-        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true }),
-      };
+        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true })};
       vDraft = validateAnswerDraft(draft, truthPacket, { intent: plannerIntent });
     }
   }
@@ -611,11 +582,10 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       draft.answerBlocks,
       truthPacket,
       fallbackUsed ? { preserveContractSlotSources: true } : null,
-    ),
-  };
+    )};
 
   const answerBlockTypes = draft.answerBlocks.map((b) => b.type);
-  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join(" ").trim();
+  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join("").trim();
 
   const follow = selectFollowUp({
     audience: "parent",
@@ -627,7 +597,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     answerBlockTypes,
     clickedFollowupFamilyThisTurn: input?.clickedFollowupFamily ? String(input.clickedFollowupFamily).trim() : null,
     omitFollowUpEntirely:
-      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") ||
+      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") |
       (truthPacket.scopeType === "executive" && vDraft.ok),
     truthPacket: {
       cannotConcludeYet: truthPacket.derivedLimits.cannotConcludeYet,
@@ -635,25 +605,22 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       confidenceBand: truthPacket.derivedLimits.confidenceBand,
       recommendationEligible: truthPacket.derivedLimits.recommendationEligible,
       recommendationIntensityCap: truthPacket.derivedLimits.recommendationIntensityCap,
-      allowedFollowupFamilies: truthPacket.allowedFollowupFamilies,
-    },
-    conversationState: conv,
-  });
+      allowedFollowupFamilies: truthPacket.allowedFollowupFamilies},
+    conversationState: conv});
 
   const suggestedFollowUp = follow.selected
     ? {
         kind: /** @type {const} */ ("question"),
         family: follow.selected.family,
-        answerText: normalizeParentFacingHe(follow.selected.answerText),
-        reasonCode: follow.selected.reasonCode,
-      }
+        answerText: normalizeParentFacing(follow.selected.answerText),
+        reasonCode: follow.selected.reasonCode}
     : null;
 
   /** @type {Array<"contractsV1.evidence"|"contractsV1.decision"|"contractsV1.readiness"|"contractsV1.confidence"|"contractsV1.recommendation"|"contractsV1.narrative">} */
   const contractSourcesUsed = ["contractsV1.narrative"];
   const explainLikeIntentEarly =
-    plannerIntent === "explain_report" ||
-    plannerIntent === "ask_topic_specific" ||
+    plannerIntent === "explain_report" |
+    plannerIntent === "ask_topic_specific" |
     plannerIntent === "ask_subject_specific";
   if (!explainLikeIntentEarly) {
     contractSourcesUsed.push("contractsV1.decision", "contractsV1.readiness", "contractsV1.confidence");
@@ -679,8 +646,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     contractSourcesUsed: [...new Set(contractSourcesUsed)],
     priorRepeated,
     metadata: scopeMeta,
-    debug: draft?.debug && typeof draft.debug === "object" ? draft.debug : undefined,
-  });
+    debug: draft?.debug && typeof draft.debug === "object" ? draft.debug : undefined});
 
   const finalCheck = validateParentCopilotResponseV1(response);
   if (!finalCheck.ok && response.resolutionStatus === "resolved") {
@@ -688,8 +654,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       ...response,
       validatorStatus: "fail",
       validatorFailCodes: [...new Set([...(response.validatorFailCodes || []), ...finalCheck.hardFails])],
-      quickActions: buildQuickActions(truthPacket, false),
-    };
+      quickActions: buildQuickActions(truthPacket, false)};
   }
 
   const telemetry = buildTurnTelemetry({
@@ -710,8 +675,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     scopeId: truthPacket.scopeId,
     ...(scopeMeta?.answerContract ? { answerContract: scopeMeta.answerContract } : {}),
     ...(scopeMeta?.answerComposerUsed ? { answerComposerUsed: scopeMeta.answerComposerUsed } : {}),
-    ...(scopeMeta?.evidenceUsed ? { evidenceUsed: scopeMeta.evidenceUsed } : {}),
-  });
+    ...(scopeMeta?.evidenceUsed ? { evidenceUsed: scopeMeta.evidenceUsed } : {})});
   response = { ...response, telemetry };
 
   const constraintParts = [vDraft.ok ? "turn:validator_pass" : "turn:validator_fail"];
@@ -720,7 +684,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
 
   const assistantAnswerSummary = draft.answerBlocks
     .map((b) => b.answerText)
-    .join(" ")
+    .join("")
     .trim()
     .slice(0, 480);
 
@@ -732,7 +696,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       : {}),
     addedScopeKey: `${truthPacket.scopeType}:${truthPacket.scopeId}`,
     answeredConstraintTag: constraintParts.join(","),
-    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join(" ").slice(-48),
+    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join("").slice(-48),
     ...(suggestedFollowUp?.answerText ? { suggestedFollowupTextHe: suggestedFollowUp.answerText } : {}),
     ...(assistantAnswerSummary ? { assistantAnswerSummary } : {}),
     scopeLabelSnapshotHe: truthPacket.scopeLabel || "",
@@ -740,18 +704,16 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     lastOfferedFollowupFamily: suggestedFollowUp?.family ?? null,
     lastTurnWasNoData: false,
     lastTurnWasWhatNotInfer:
-      String(scopeMeta?.patternId || "") === "what_not_infer" ||
-      String(scopeMeta?.patternId || "") === "avoid_now" ||
-      assistantAnswerSummary.includes("You should not draw conclusions from the report") ||
+      String(scopeMeta?.patternId || "") === "what_not_infer" |
+      String(scopeMeta?.patternId || "") === "avoid_now" |
+      assistantAnswerSummary.includes("You should not draw conclusions from the report") |
       assistantAnswerSummary.includes("Do not draw a personal conclusion"),
     ...(memoryHints && memoryHints.lastAnswerAggregateClass !== undefined
       ? {
           lastAnswerAggregateClass: memoryHints.lastAnswerAggregateClass,
           lastComparisonSubjectId: memoryHints.lastComparisonSubjectId,
-          lastComparisonRole: memoryHints.lastComparisonRole,
-        }
-      : {}),
-  });
+          lastComparisonRole: memoryHints.lastComparisonRole}
+      : {})});
 
   return {
     response,
@@ -763,8 +725,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     scopeMeta,
     utteranceStr,
     draft,
-    validatorFailCodes,
-  };
+    validatorFailCodes};
 }
 
 /**
@@ -801,7 +762,7 @@ function classifierIntentToCanonical(routerIntent) {
  * @param {object} args.conv
  * @param {number} args.priorRepeated
  * @param {string} args.utteranceStr
- * @param {{ source: "deterministic" | "llm"; reason?: string }} [args.classifierTrace]
+ * @param {{ source: "deterministic" || "llm"; reason?: string }} [args.classifierTrace]
  */
 function packageClassifierEarlyExit({
   qaRoute,
@@ -810,8 +771,7 @@ function packageClassifierEarlyExit({
   conv,
   priorRepeated,
   utteranceStr,
-  classifierTrace,
-}) {
+  classifierTrace}) {
   const boundaryLine = String(qaRoute.deterministicResponse || "");
   const canonicalIntent = classifierIntentToCanonical(qaRoute.routerIntent);
   const intentReason = `classifier:${qaRoute.classifierBucket}:${classifierTrace?.source || qaRoute.classifierSource || "deterministic"}`;
@@ -825,17 +785,14 @@ function packageClassifierEarlyExit({
     classifierConfidence: Number(qaRoute.classifierConfidence || 0),
     semanticIntent: semanticIntentForMetadata({
       classifierBucket: qaRoute.classifierBucket,
-      canonicalIntent,
-    }),
-    ...(classifierTrace?.reason ? { classifierLlmReason: classifierTrace.reason } : {}),
-  };
+      canonicalIntent}),
+    ...(classifierTrace?.reason ? { classifierLlmReason: classifierTrace.reason } : {})};
 
   const r = buildClarificationParentCopilotResponse({
     clarificationQuestionHe: boundaryLine,
     intent: canonicalIntent,
     priorRepeated,
-    metadata: scopeMeta,
-  });
+    metadata: scopeMeta});
   validateParentCopilotResponseV1(r);
 
   return {
@@ -850,8 +807,7 @@ function packageClassifierEarlyExit({
     routerExitEarly: true,
     classifierBucket: qaRoute.classifierBucket,
     classifierConfidence: qaRoute.classifierConfidence,
-    classifierSource: classifierTrace?.source || qaRoute.classifierSource || "deterministic",
-  };
+    classifierSource: classifierTrace?.source || qaRoute.classifierSource || "deterministic"};
 }
 
 /**
@@ -874,8 +830,7 @@ function runDeterministicCore(input, options) {
       clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_index.this_mode_is_for_parent_only"),
       intent: "uncertainty_boundary",
       priorRepeated,
-      metadata: { intentConfidence: 1, intentReason: "audience_guard", scopeConfidence: 1, scopeReason: "audience_guard" },
-    });
+      metadata: { intentConfidence: 1, intentReason: "audience_guard", scopeConfidence: 1, scopeReason: "audience_guard" }});
     validateParentCopilotResponseV1(r);
     return { response: r, audience, sessionId, conv, truthPacket: null, intent: "uncertainty_boundary", scopeMeta: null, utteranceStr: "" };
   }
@@ -883,7 +838,7 @@ function runDeterministicCore(input, options) {
   const payloadForCopilot = redactPayloadForCopilotGrounding(input?.payload);
   const scopedInput = input && typeof input === "object" ? { ...input, payload: payloadForCopilot } : input;
 
-  const utteranceStr = normalizeFreeformParentUtteranceHe(String(input?.utterance || ""));
+  const utteranceStr = normalizeFreeformParentUtterance(String(input?.utterance || ""));
 
   if (!scopedInput?.payload || typeof scopedInput.payload !== "object") {
     const stageAForMissing = interpretFreeformStageA(String(input?.utterance || ""), null);
@@ -892,22 +847,19 @@ function runDeterministicCore(input, options) {
       utterance: utteranceStr,
       selectedContextRef: scopedInput?.selectedContextRef ?? null,
       stageA: stageAForMissing,
-      conversationState: conv,
-    });
+      conversationState: conv});
     const scopeMetaMissing = {
       scopeConfidence: Number(scopeResMissing?.scopeConfidence || 0),
       scopeReason: String(scopeResMissing?.scopeReason || "missing_payload"),
       intentConfidence: Number(stageAForMissing?.confidence || 0),
-      intentReason: String(stageAForMissing?.reason || "missing_payload"),
-    };
+      intentReason: String(stageAForMissing?.reason || "missing_payload")};
     const r = buildClarificationParentCopilotResponse({
       clarificationQuestionHe:
-        scopeResMissing.clarificationQuestionHe ||
+        scopeResMissing.clarificationQuestionHe |
         "A comprehensive report was not loaded - it is not possible to answer from the data of the period. Refresh the page or choose another period.",
       intent: stageAForMissing?.canonicalIntent || "uncertainty_boundary",
       priorRepeated,
-      metadata: scopeMetaMissing,
-    });
+      metadata: scopeMetaMissing});
     validateParentCopilotResponseV1(r);
     return {
       response: r,
@@ -917,8 +869,7 @@ function runDeterministicCore(input, options) {
       truthPacket: null,
       intent: stageAForMissing?.canonicalIntent || "uncertainty_boundary",
       scopeMeta: scopeMetaMissing,
-      utteranceStr,
-    };
+      utteranceStr};
   }
 
   // ── FIRST PRODUCT GATE: classifier-first router before ANY report data access ──
@@ -930,8 +881,8 @@ function runDeterministicCore(input, options) {
     : routeParentQuestion(String(input?.utterance || ""), scopedInput?.payload);
   if (qaRoute.exitEarly && qaRoute.classifierBucket === "ambiguous_or_unclear") {
     const hasPriorScope =
-      (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) ||
-      String(conv.lastResolvedTopic || "").trim() ||
+      (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) |
+      String(conv.lastResolvedTopic || "").trim() |
       String(conv.lastResolvedSubject || "").trim();
     const reportQualified = utteranceQualifiesAsReportQuestion(utteranceStr, scopedInput?.payload);
     if (shouldReturnNoDataForRequest(utteranceStr, scopedInput?.payload)) {
@@ -943,11 +894,10 @@ function runDeterministicCore(input, options) {
         classifierBucket: "report_related",
         classifierConfidence: 0.82,
         classifierSource: "deterministic",
-        classifierSignals: qaRoute.classifierSignals,
-      };
+        classifierSignals: qaRoute.classifierSignals};
     } else if (
-      (isContextualFollowUpUtterance(utteranceStr) && hasPriorScope) ||
-      reportQualified ||
+      (isContextualFollowUpUtterance(utteranceStr) && hasPriorScope) |
+      reportQualified |
       matchesLegitimateParentQuestion(utteranceStr)
     ) {
       qaRoute = {
@@ -958,8 +908,7 @@ function runDeterministicCore(input, options) {
         classifierBucket: "report_related",
         classifierConfidence: Math.max(Number(qaRoute.classifierConfidence) || 0, 0.85),
         classifierSource: "deterministic",
-        classifierSignals: qaRoute.classifierSignals,
-      };
+        classifierSignals: qaRoute.classifierSignals};
     }
   }
   const isEmptyUtteranceWithAnchoredPayload =
@@ -976,18 +925,17 @@ function runDeterministicCore(input, options) {
       classifierBucket: "report_related",
       classifierConfidence: Math.max(Number(qaRoute.classifierConfidence) || 0, 0.56),
       classifierSource: "deterministic",
-      classifierSignals: qaRoute.classifierSignals,
-    };
+      classifierSignals: qaRoute.classifierSignals};
   }
   const hasPriorScopeForFollowUp =
-    (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) ||
-    String(conv.lastResolvedTopic || "").trim() ||
+    (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) |
+    String(conv.lastResolvedTopic || "").trim() |
     String(conv.lastResolvedSubject || "").trim();
   if (
     qaRoute.exitEarly &&
     qaRoute.deterministicResponse === HEALTH_BOUNDARY_RESPONSE_HE &&
     hasPriorScopeForFollowUp &&
-    /^(?:ז(?:ה|ו)\s+)?חמור\s*\??$/u.test(foldUtteranceForHeMatch(utteranceStr))
+    /^(?:(?:)\s+)?\s*\??$/u.test(foldUtteranceForMatch(utteranceStr))
   ) {
     qaRoute = {
       routerIntent: "unknown_report_question",
@@ -997,8 +945,7 @@ function runDeterministicCore(input, options) {
       classifierBucket: "report_related",
       classifierConfidence: Math.max(Number(qaRoute.classifierConfidence) || 0, 0.9),
       classifierSource: "deterministic",
-      classifierSignals: qaRoute.classifierSignals,
-    };
+      classifierSignals: qaRoute.classifierSignals};
   }
   if (qaRoute.exitEarly && qaRoute.deterministicResponse) {
     const earlyExit = packageClassifierEarlyExit({
@@ -1008,8 +955,7 @@ function runDeterministicCore(input, options) {
       conv,
       priorRepeated,
       utteranceStr,
-      classifierTrace: { source: qaRoute.classifierSource || "deterministic" },
-    });
+      classifierTrace: { source: qaRoute.classifierSource || "deterministic" }});
     return earlyExit;
   }
   // ── END FIRST PRODUCT GATE ──
@@ -1017,8 +963,7 @@ function runDeterministicCore(input, options) {
   const classifierMetaForResolved = {
     classifierBucket: qaRoute.classifierBucket || "report_related",
     classifierSource: qaRoute.classifierSource || "deterministic",
-    classifierConfidence: Number(qaRoute.classifierConfidence || 0),
-  };
+    classifierConfidence: Number(qaRoute.classifierConfidence || 0)};
 
   const stageA = interpretFreeformStageA(String(input?.utterance || ""), scopedInput?.payload);
   const aggregateQuestionClass = detectAggregateQuestionClass(utteranceStr);
@@ -1041,7 +986,7 @@ function runDeterministicCore(input, options) {
   }
   /** Fabrication / integrity asks must stay on refusal copy even when Stage A leans explain-like. */
   const reportDataFabricationProbe =
-    /תמציא\s*נתונים|תסתיר\s*(?:מההורה|את\s*הקושי)|בלי\s*להתחשב\s*בנתונים|תכתוב\s*שהילד\s*מצוין\s*למרות|תשנה\s*את\s*הדוח/i.test(
+    /\s*|\s*(?:|\s*)|\s*\s*|\s*\s*\s*|\s*\s*/i.test(
       utteranceStr,
     );
   if (
@@ -1056,8 +1001,7 @@ function runDeterministicCore(input, options) {
   const continuityPattern = tryComposeContinuityPatternDraft({
     utteranceStr,
     payload: scopedInput?.payload,
-    conversationState: conv,
-  });
+    conversationState: conv});
   if (continuityPattern) {
     const packaged = tryPackageApprovedPatternTurn(
       scopedInput,
@@ -1074,8 +1018,7 @@ function runDeterministicCore(input, options) {
   const earlyPattern = tryComposePatternAnswerDraft({
     utteranceStr,
     payload: scopedInput?.payload,
-    conversationState: conv,
-  });
+    conversationState: conv});
   if (earlyPattern) {
     const packaged = tryPackageApprovedPatternTurn(
       scopedInput,
@@ -1092,8 +1035,7 @@ function runDeterministicCore(input, options) {
   const simpleExplainDraft = tryComposeExplainReportSimpleWordsDraft({
     utteranceStr,
     payload: scopedInput?.payload,
-    conversationState: conv,
-  });
+    conversationState: conv});
   if (simpleExplainDraft) {
     const packaged = tryPackageApprovedPatternTurn(
       scopedInput,
@@ -1115,14 +1057,12 @@ function runDeterministicCore(input, options) {
       intentReason: "no_data:evidence_missing",
       classifierBucket: classifierMetaForResolved.classifierBucket,
       classifierSource: classifierMetaForResolved.classifierSource,
-      classifierConfidence: classifierMetaForResolved.classifierConfidence,
-    };
+      classifierConfidence: classifierMetaForResolved.classifierConfidence};
     const r = buildClarificationParentCopilotResponse({
       clarificationQuestionHe: noDataResponseHe(utteranceStr, scopedInput?.payload),
       intent: "unknown_report_question",
       priorRepeated,
-      metadata: scopeMetaNoData,
-    });
+      metadata: scopeMetaNoData});
     validateParentCopilotResponseV1(r);
     return {
       response: r,
@@ -1132,37 +1072,32 @@ function runDeterministicCore(input, options) {
       truthPacket: null,
       intent: "unknown_report_question",
       scopeMeta: scopeMetaNoData,
-      utteranceStr,
-    };
+      utteranceStr};
   }
 
   const shortFb = tryBuildParentShortFollowupDraft({
     utteranceStr,
     conv,
-    payload: scopedInput?.payload,
-  });
+    payload: scopedInput?.payload});
   if (shortFb) {
     return packageParentResolvedEarlyTurn(scopedInput, sessionId, priorRepeated, conv, utteranceStr, {
       truthPacket: shortFb.truthPacket,
       plannerIntent: shortFb.plannerIntent,
       scopeMeta: { ...classifierMetaForResolved, ...shortFb.scopeMeta },
-      answerBlocks: shortFb.answerBlocks,
-    });
+      answerBlocks: shortFb.answerBlocks});
   }
 
   const practicalFb = tryBuildComparisonPracticalFollowupDraft({
     utteranceStr,
     conv,
     payload: scopedInput?.payload,
-    stageA,
-  });
+    stageA});
   if (practicalFb) {
     return packageParentResolvedEarlyTurn(scopedInput, sessionId, priorRepeated, conv, utteranceStr, {
       truthPacket: practicalFb.truthPacket,
       plannerIntent: practicalFb.plannerIntent,
       scopeMeta: { ...classifierMetaForResolved, ...practicalFb.scopeMeta },
-      answerBlocks: practicalFb.answerBlocks,
-    });
+      answerBlocks: practicalFb.answerBlocks});
   }
 
   const intentResolution = {
@@ -1171,16 +1106,14 @@ function runDeterministicCore(input, options) {
     reason: stageA.intentReason,
     normalizedUtterance: stageA.normalizedUtterance,
     shouldClarify: stageA.shouldClarifyIntent,
-    stageA,
-  };
+    stageA};
 
   const scopeRes = resolveScope({
     payload: scopedInput?.payload,
     utterance: utteranceStr,
     selectedContextRef: scopedInput?.selectedContextRef ?? null,
     stageA,
-    conversationState: conv,
-  });
+    conversationState: conv});
 
   const scopeMeta = {
     scopeConfidence: Number(scopeRes?.scopeConfidence || 0),
@@ -1192,9 +1125,7 @@ function runDeterministicCore(input, options) {
     classifierConfidence: classifierMetaForResolved.classifierConfidence,
     semanticIntent: semanticIntentForMetadata({
       classifierBucket: classifierMetaForResolved.classifierBucket,
-      canonicalIntent: intent,
-    }),
-  };
+      canonicalIntent: intent})};
 
   if (scopeRes.resolutionStatus === "clarification_required") {
     if (String(scopeRes.scopeReason || "") === "subject_zero_evidence_in_period") {
@@ -1202,8 +1133,7 @@ function runDeterministicCore(input, options) {
         clarificationQuestionHe: scopeRes.clarificationQuestionHe || "In this period there is no practice data in this subject.",
         intent,
         priorRepeated,
-        metadata: scopeMeta,
-      });
+        metadata: scopeMeta});
       validateParentCopilotResponseV1(r);
       return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
     }
@@ -1213,8 +1143,7 @@ function runDeterministicCore(input, options) {
         clarificationQuestionHe: categorySpecificClarification,
         intent,
         priorRepeated,
-        metadata: scopeMeta,
-      });
+        metadata: scopeMeta});
       validateParentCopilotResponseV1(r);
       return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
     }
@@ -1222,31 +1151,27 @@ function runDeterministicCore(input, options) {
       utteranceStr,
       payload: scopedInput?.payload,
       scopeRes,
-      stageA,
-    });
+      stageA});
     if (phaseEBypass) {
       return packageParentResolvedEarlyTurn(scopedInput, sessionId, priorRepeated, conv, utteranceStr, {
         truthPacket: phaseEBypass.truthPacket,
         plannerIntent: phaseEBypass.plannerIntent,
         scopeMeta: phaseEBypass.scopeMeta,
-        answerBlocks: phaseEBypass.answerBlocks,
-      });
+        answerBlocks: phaseEBypass.answerBlocks});
     }
     if (shouldReturnNoDataForRequest(utteranceStr, scopedInput?.payload)) {
       const r = buildClarificationParentCopilotResponse({
         clarificationQuestionHe: noDataResponseHe(utteranceStr, scopedInput?.payload),
         intent,
         priorRepeated,
-        metadata: scopeMeta,
-      });
+        metadata: scopeMeta});
       validateParentCopilotResponseV1(r);
       return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
     }
     const patternBeforeClarify = tryComposePatternAnswerDraft({
       utteranceStr,
       payload: scopedInput?.payload,
-      conversationState: conv,
-    });
+      conversationState: conv});
     if (patternBeforeClarify) {
       const packaged = tryPackageApprovedPatternTurn(
         scopedInput,
@@ -1263,8 +1188,7 @@ function runDeterministicCore(input, options) {
       clarificationQuestionHe: scopeRes.clarificationQuestionHe || "Need more context.",
       intent,
       priorRepeated,
-      metadata: scopeMeta,
-    });
+      metadata: scopeMeta});
     validateParentCopilotResponseV1(r);
     return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
   }
@@ -1275,8 +1199,7 @@ function runDeterministicCore(input, options) {
       clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_index.the_relationship_cannot_be_identified_from_the_report"),
       intent,
       priorRepeated,
-      metadata: scopeMeta,
-    });
+      metadata: scopeMeta});
     validateParentCopilotResponseV1(r);
     return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
   }
@@ -1287,14 +1210,12 @@ function runDeterministicCore(input, options) {
       truthPacket: zeroDraft.truthPacket,
       plannerIntent: zeroDraft.plannerIntent,
       scopeMeta: { ...scopeMeta, ...zeroDraft.scopeMeta, historyZeroDataComposer: true },
-      answerBlocks: zeroDraft.answerBlocks,
-    });
+      answerBlocks: zeroDraft.answerBlocks});
     if (zeroEarly) {
       return {
         ...zeroEarly,
         fallbackUsed: false,
-        scopeMeta: { ...zeroEarly.scopeMeta, fallbackUsed: false },
-      };
+        scopeMeta: { ...zeroEarly.scopeMeta, fallbackUsed: false }};
     }
   }
 
@@ -1309,15 +1230,13 @@ function runDeterministicCore(input, options) {
   const truthPacket = buildTruthPacketV1(scopedInput.payload, {
     ...scope,
     canonicalIntent: truthPacketBuildIntent,
-    parentUtterance: utteranceStr,
-  });
+    parentUtterance: utteranceStr});
   if (!truthPacket) {
     const r = buildClarificationParentCopilotResponse({
       clarificationQuestionHe: copilotStaticMessage("copilot.answers.utils_parent-copilot_index.no_contracts_were_found_matching_the_topic_selected_in_the_repor"),
       intent,
       priorRepeated,
-      metadata: scopeMeta,
-    });
+      metadata: scopeMeta});
     validateParentCopilotResponseV1(r);
     return { response: r, audience, sessionId, conv, truthPacket: null, intent, scopeMeta, utteranceStr };
   }
@@ -1328,8 +1247,7 @@ function runDeterministicCore(input, options) {
     utteranceStr,
     payload: scopedInput.payload,
     conversationState: conv,
-    truthPacket,
-  });
+    truthPacket});
   if (patternAfterScope) {
     const packaged = tryPackageApprovedPatternTurn(
       scopedInput,
@@ -1355,15 +1273,13 @@ function runDeterministicCore(input, options) {
       plannerIntent: intent,
       stageAIntent: intent,
       inheritedScope,
-      conversationState: conv,
-    });
+      conversationState: conv});
   }
   if (intentAnswerDraft?.answerBlocks?.length) {
     const compactedIntent = compactParentAnswerBlocks(
       intentAnswerDraft.answerBlocks.map((b) => ({
         ...b,
-        answerText: normalizeParentFacingHe(String(b.answerText || "").trim()),
-      })),
+        answerText: normalizeParentFacing(String(b.answerText || "").trim())})),
       { scopeType: String(truthPacket.scopeType || ""), maxBlocks: 5, maxTotalChars: 2600 },
     );
     const intentPlanner = intentAnswerDraft.plannerIntent || intent;
@@ -1375,8 +1291,7 @@ function runDeterministicCore(input, options) {
         answerContract: intentAnswerDraft.answerContract,
         priorAnswerFingerprint: String(conv.lastAnswerSummary || "").trim()
           ? fingerprintAnswerHe({ answerBlocks: [{ answerText: conv.lastAnswerSummary }] })
-          : "",
-      },
+          : ""},
     );
     if (vIntent.ok) {
       const intentScopeMeta = {
@@ -1385,8 +1300,7 @@ function runDeterministicCore(input, options) {
         answerComposerUsed: intentAnswerDraft.answerComposerUsed,
         generationPath: "intent_composer",
         evidenceUsed: intentAnswerDraft.evidenceUsed,
-        inheritedScope: intentAnswerDraft.inheritedScope,
-      };
+        inheritedScope: intentAnswerDraft.inheritedScope};
       if (process.env.COPILOT_EVIDENCE_DEBUG === "1") {
         process.stderr.write(
           `${JSON.stringify({
@@ -1398,23 +1312,20 @@ function runDeterministicCore(input, options) {
             inheritedScope: intentAnswerDraft.inheritedScope,
             answerComposerUsed: intentAnswerDraft.answerComposerUsed,
             evidenceUsed: intentAnswerDraft.evidenceUsed,
-            fallbackUsed: false,
-          })}\n`,
+            fallbackUsed: false})}\n`,
         );
       }
       const early = packageParentResolvedEarlyTurn(scopedInput, sessionId, priorRepeated, conv, utteranceStr, {
         truthPacket,
         plannerIntent: intentPlanner,
         scopeMeta: intentScopeMeta,
-        answerBlocks: compactedIntent,
-      });
+        answerBlocks: compactedIntent});
       if (early.response?.telemetry) {
         early.response.telemetry = {
           ...early.response.telemetry,
           generationPath: "intent_composer",
           answerContract: intentAnswerDraft.answerContract,
-          answerComposerUsed: intentAnswerDraft.answerComposerUsed,
-        };
+          answerComposerUsed: intentAnswerDraft.answerComposerUsed};
       }
       return early;
     }
@@ -1425,15 +1336,13 @@ function runDeterministicCore(input, options) {
       utteranceStr,
       truthPacket,
       scope,
-      stageA,
-    });
+      stageA});
     if (phaseShortcut) {
       return packageParentResolvedEarlyTurn(scopedInput, sessionId, priorRepeated, conv, utteranceStr, {
         truthPacket: phaseShortcut.truthPacket,
         plannerIntent: phaseShortcut.plannerIntent,
         scopeMeta: phaseShortcut.scopeMeta,
-        answerBlocks: phaseShortcut.answerBlocks,
-      });
+        answerBlocks: phaseShortcut.answerBlocks});
     }
   }
 
@@ -1452,11 +1361,11 @@ function runDeterministicCore(input, options) {
   /** When aggregate asks for recommendations but contracts forbid them, plan as action intent (truth slots + uncertainty), not unrelated Stage A labels. */
   const plannerIntent =
     aggregateQuestionClass === "recommendation_action" && !skipSemanticAggregateForIneligibleRec
-      ? /השבוע|בשבוע|שבוע\s*הקרוב|המלצות|להמשך|מה\s*ההמלצות/.test(utteranceStr)
+      ? /\s*||\s*/.test(utteranceStr)
         ? "what_to_do_this_week"
         : "what_to_do_today"
       : skipSemanticAggregateForIneligibleRec &&
-          /השבוע|בשבוע|שבוע\s*הקרוב|המלצות|להמשך|מה\s*ההמלצות/.test(utteranceStr)
+          /\s*||\s*/.test(utteranceStr)
         ? "what_to_do_this_week"
         : skipSemanticAggregateForIneligibleRec
           ? "what_to_do_today"
@@ -1477,14 +1386,12 @@ function runDeterministicCore(input, options) {
       questionClass: aggregateQuestionClass,
       utterance: utteranceStr,
       payload: scopedInput.payload,
-      truthPacket,
-    });
+      truthPacket});
     if (aggDraft) {
       const compactedAgg = compactParentAnswerBlocks(aggDraft.answerBlocks, {
         scopeType: String(truthPacket.scopeType || ""),
         maxBlocks: 5,
-        maxTotalChars: 2600,
-      });
+        maxTotalChars: 2600});
       const vAgg = validateAnswerDraft({ answerBlocks: compactedAgg }, truthPacket, { intent: plannerIntent });
       if (vAgg.ok) {
         draft = { answerBlocks: compactedAgg };
@@ -1499,23 +1406,19 @@ function runDeterministicCore(input, options) {
       continuityRepeat,
       turnOrdinal: priorIntents.length,
       scopeType: truthPacket.scopeType,
-      interpretationScope: truthPacket.interpretationScope,
-    });
+      interpretationScope: truthPacket.interpretationScope});
     draft = composeAnswerDraft(plan, truthPacket, {
       intent: plannerIntent,
       continuityRepeat,
       conversationState: conv,
       turnOrdinal: priorIntents.length,
-      parentUtterance: utteranceStr,
-    });
+      parentUtterance: utteranceStr});
     draft = {
       ...draft,
       answerBlocks: compactParentAnswerBlocks(draft.answerBlocks, {
         scopeType: String(truthPacket.scopeType || ""),
         maxBlocks: 5,
-        maxTotalChars: 2600,
-      }),
-    };
+        maxTotalChars: 2600})};
   }
 
   draft = { ...draft, answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket) };
@@ -1527,9 +1430,9 @@ function runDeterministicCore(input, options) {
   {
     const augGlobalQ = maxGlobalReportQuestionCount(scopedInput?.payload);
     const isBoundaryIntent =
-      plannerIntent === "off_topic_redirect" ||
-      plannerIntent === "parent_policy_refusal" ||
-      plannerIntent === "clinical_boundary" ||
+      plannerIntent === "off_topic_redirect" |
+      plannerIntent === "parent_policy_refusal" |
+      plannerIntent === "clinical_boundary" |
       plannerIntent === "sensitive_education_choice";
     const isHighVolume = augGlobalQ >= STRONG_GLOBAL_QUESTION_FLOOR;
     if (!isBoundaryIntent && !isHighVolume) {
@@ -1540,17 +1443,15 @@ function runDeterministicCore(input, options) {
     // truth-packet builder when global answer count is already high.
     if (isHighVolume && !isBoundaryIntent) {
       const SCARCITY_STRIP_RE =
-        /(יש\s+כרגע\s+מעט\s+נתוני\s+תרגול,?\s*כלומר[^.]*\.?\s*|נפח\s+הנתונים\s+עדיין\s+מצומצם[^.]*\.?\s*|אין\s+עדיין\s+מספיק\s+מידע\s+לכיוון\s+ברור[^.]*\.?\s*)/gu;
+        /(\s+\s+\s+\s+,?\s*[^.]*\.?\s*|\s+\s+\s+[^.]*\.?\s*|\s+\s+\s+\s+\s+[^.]*\.?\s*)/gu;
       draft = {
         ...draft,
         answerBlocks: draft.answerBlocks.map((b) => ({
           ...b,
           answerText: String(b?.answerText || "")
-            .replace(SCARCITY_STRIP_RE, " ")
-            .replace(/\s{2,}/g, " ")
-            .trim(),
-        })),
-      };
+            .replace(SCARCITY_STRIP_RE, "")
+            .replace(/\s{2}/g, "")
+            .trim()}))};
     }
   }
   let vDraft = validateAnswerDraft(draft, truthPacket, { intent: plannerIntent });
@@ -1571,8 +1472,7 @@ function runDeterministicCore(input, options) {
       fallbackUsed = true;
       draft = {
         ...draft,
-        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true }),
-      };
+        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true })};
       vDraft = validateAnswerDraft(draft, truthPacket, { intent: plannerIntent });
     }
   }
@@ -1590,17 +1490,14 @@ function runDeterministicCore(input, options) {
       draft = {
         answerBlocks: [
           { type: "observation", answerText: String(slots.observation || "").trim(), source: "contract_slot" },
-          { type: "meaning", answerText: String(slots.interpretation || "").trim(), source: "contract_slot" },
-        ].filter((b) => b.answerText),
-      };
+          { type: "meaning", answerText: String(slots.interpretation || "").trim(), source: "contract_slot" }].filter((b) => b.answerText)};
       if (draft.answerBlocks.length < 2) {
         draft = buildDeterministicFallbackAnswer(truthPacket, ["emergency_fallback"]);
       }
       fallbackUsed = true;
       draft = {
         ...draft,
-        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true }),
-      };
+        answerBlocks: normalizeAnswerBlocksHe(draft.answerBlocks, truthPacket, { preserveContractSlotSources: true })};
       vDraft = validateAnswerDraft(draft, truthPacket, { intent: plannerIntent });
     }
   }
@@ -1623,11 +1520,10 @@ function runDeterministicCore(input, options) {
       draft.answerBlocks,
       truthPacket,
       fallbackUsed ? { preserveContractSlotSources: true } : null,
-    ),
-  };
+    )};
 
   const answerBlockTypes = draft.answerBlocks.map((b) => b.type);
-  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join(" ").trim();
+  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join("").trim();
 
   const follow = selectFollowUp({
     audience: "parent",
@@ -1639,7 +1535,7 @@ function runDeterministicCore(input, options) {
     answerBlockTypes,
     clickedFollowupFamilyThisTurn: scopedInput?.clickedFollowupFamily ? String(scopedInput.clickedFollowupFamily).trim() : null,
     omitFollowUpEntirely:
-      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") ||
+      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") |
       (semanticAggregateSatisfied && vDraft.ok),
     truthPacket: {
       cannotConcludeYet: truthPacket.derivedLimits.cannotConcludeYet,
@@ -1647,25 +1543,22 @@ function runDeterministicCore(input, options) {
       confidenceBand: truthPacket.derivedLimits.confidenceBand,
       recommendationEligible: truthPacket.derivedLimits.recommendationEligible,
       recommendationIntensityCap: truthPacket.derivedLimits.recommendationIntensityCap,
-      allowedFollowupFamilies: truthPacket.allowedFollowupFamilies,
-    },
-    conversationState: conv,
-  });
+      allowedFollowupFamilies: truthPacket.allowedFollowupFamilies},
+    conversationState: conv});
 
   const suggestedFollowUp = follow.selected
     ? {
         kind: /** @type {const} */ ("question"),
         family: follow.selected.family,
-        answerText: normalizeParentFacingHe(follow.selected.answerText),
-        reasonCode: follow.selected.reasonCode,
-      }
+        answerText: normalizeParentFacing(follow.selected.answerText),
+        reasonCode: follow.selected.reasonCode}
     : null;
 
   /** @type {Array<"contractsV1.evidence"|"contractsV1.decision"|"contractsV1.readiness"|"contractsV1.confidence"|"contractsV1.recommendation"|"contractsV1.narrative">} */
   const contractSourcesUsed = ["contractsV1.narrative"];
   const explainLikeIntent =
-    plannerIntent === "explain_report" ||
-    plannerIntent === "ask_topic_specific" ||
+    plannerIntent === "explain_report" |
+    plannerIntent === "ask_topic_specific" |
     plannerIntent === "ask_subject_specific";
   if (!explainLikeIntent) {
     contractSourcesUsed.push("contractsV1.decision", "contractsV1.readiness", "contractsV1.confidence");
@@ -1691,8 +1584,7 @@ function runDeterministicCore(input, options) {
     contractSourcesUsed: [...new Set(contractSourcesUsed)],
     priorRepeated,
     metadata: scopeMeta,
-    debug: draft?.debug && typeof draft.debug === "object" ? draft.debug : undefined,
-  });
+    debug: draft?.debug && typeof draft.debug === "object" ? draft.debug : undefined});
 
   const finalCheck = validateParentCopilotResponseV1(response);
   if (!finalCheck.ok && response.resolutionStatus === "resolved") {
@@ -1700,8 +1592,7 @@ function runDeterministicCore(input, options) {
       ...response,
       validatorStatus: "fail",
       validatorFailCodes: [...new Set([...(response.validatorFailCodes || []), ...finalCheck.hardFails])],
-      quickActions: buildQuickActions(truthPacket, false),
-    };
+      quickActions: buildQuickActions(truthPacket, false)};
   }
 
   const telemetry = buildTurnTelemetry({
@@ -1719,8 +1610,7 @@ function runDeterministicCore(input, options) {
     truthPacket,
     resolutionStatus: "resolved",
     scopeType: truthPacket.scopeType,
-    scopeId: truthPacket.scopeId,
-  });
+    scopeId: truthPacket.scopeId});
   response = { ...response, telemetry };
 
   const constraintParts = [vDraft.ok ? "turn:validator_pass" : "turn:validator_fail"];
@@ -1729,7 +1619,7 @@ function runDeterministicCore(input, options) {
 
   const assistantAnswerSummary = draft.answerBlocks
     .map((b) => b.answerText)
-    .join(" ")
+    .join("")
     .trim()
     .slice(0, 480);
 
@@ -1741,7 +1631,7 @@ function runDeterministicCore(input, options) {
       : {}),
     addedScopeKey: `${truthPacket.scopeType}:${truthPacket.scopeId}`,
     answeredConstraintTag: constraintParts.join(","),
-    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join(" ").slice(-48),
+    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join("").slice(-48),
     ...(suggestedFollowUp?.answerText ? { suggestedFollowupTextHe: suggestedFollowUp.answerText } : {}),
     ...(assistantAnswerSummary ? { assistantAnswerSummary } : {}),
     scopeLabelSnapshotHe: truthPacket.scopeLabel || "",
@@ -1751,10 +1641,8 @@ function runDeterministicCore(input, options) {
       ? {
           lastAnswerAggregateClass: aggregateContinuityHint.questionClass,
           lastComparisonSubjectId: aggregateContinuityHint.subjectId || "",
-          lastComparisonRole: aggregateContinuityHint.role || "",
-        }
-      : {}),
-  });
+          lastComparisonRole: aggregateContinuityHint.role || ""}
+      : {})});
 
   return { response, audience, sessionId, conv, truthPacket, intent: responseIntent, scopeMeta, utteranceStr, draft, validatorFailCodes };
 }
@@ -1785,8 +1673,7 @@ export function runParentCopilotTurn(input) {
     truthPacket: core.truthPacket,
     intent: core.intent,
     utteranceLength: String(core.utteranceStr || "").trim().length,
-    generationPath: "deterministic",
-  });
+    generationPath: "deterministic"});
 }
 
 /**
@@ -1827,8 +1714,7 @@ export async function runParentCopilotTurnAsync(input) {
   ) {
     const llmRes = await classifyParentQuestionViaLlm({
       utterance: String(input?.utterance || ""),
-      payload: redactPayloadForCopilotGrounding(input?.payload),
-    });
+      payload: redactPayloadForCopilotGrounding(input?.payload)});
     classifierLlmAttempt = llmRes;
     if (llmRes.ok) {
       if (llmRes.bucket === "off_topic") {
@@ -1839,8 +1725,7 @@ export async function runParentCopilotTurnAsync(input) {
           exitEarly: true,
           classifierBucket: "off_topic",
           classifierConfidence: llmRes.confidence,
-          classifierSource: /** @type {"deterministic"} */ ("deterministic"),
-        };
+          classifierSource: /** @type {"deterministic"} */ ("deterministic")};
       } else if (llmRes.bucket === "diagnostic_sensitive") {
         effectiveRoute = {
           ...detRoute,
@@ -1849,8 +1734,7 @@ export async function runParentCopilotTurnAsync(input) {
           exitEarly: true,
           classifierBucket: "health_sensitive",
           classifierConfidence: llmRes.confidence,
-          classifierSource: /** @type {"deterministic"} */ ("deterministic"),
-        };
+          classifierSource: /** @type {"deterministic"} */ ("deterministic")};
       } else if (llmRes.bucket === "report_related") {
         effectiveRoute = {
           ...detRoute,
@@ -1859,8 +1743,7 @@ export async function runParentCopilotTurnAsync(input) {
           exitEarly: false,
           classifierBucket: "report_related",
           classifierConfidence: llmRes.confidence,
-          classifierSource: /** @type {"deterministic"} */ ("deterministic"),
-        };
+          classifierSource: /** @type {"deterministic"} */ ("deterministic")};
       }
       // For "ambiguous_or_unclear" from LLM, keep effectiveRoute as detRoute (also ambiguous).
     }
@@ -1875,7 +1758,7 @@ export async function runParentCopilotTurnAsync(input) {
   const core = runDeterministicCore(input, { preRoute: effectiveRoute });
   const baseResponse = core.response;
   if (
-    baseResponse?.telemetry?.generationPath === "intent_composer" ||
+    baseResponse?.telemetry?.generationPath === "intent_composer" |
     baseResponse?.telemetry?.answerComposerUsed
   ) {
     return finalizeTurnResponse(baseResponse, {
@@ -1884,8 +1767,7 @@ export async function runParentCopilotTurnAsync(input) {
       truthPacket: core.truthPacket,
       intent: core.intent,
       utteranceLength: String(core.utteranceStr || "").trim().length,
-      generationPath: "intent_composer",
-    });
+      generationPath: "intent_composer"});
   }
   if (baseResponse?.resolutionStatus !== "resolved" || !core.truthPacket || !core.utteranceStr) {
     return finalizeTurnResponse(baseResponse, {
@@ -1894,16 +1776,15 @@ export async function runParentCopilotTurnAsync(input) {
       truthPacket: core.truthPacket,
       intent: core.intent,
       utteranceLength: String(core.utteranceStr || "").trim().length,
-      generationPath: "deterministic",
-    });
+      generationPath: "deterministic"});
   }
 
   if (
-    core.intent === "clinical_boundary" ||
-    core.intent === "sensitive_education_choice" ||
-    core.intent === "off_topic_redirect" ||
-    core.intent === "parent_policy_refusal" ||
-    core.intent === "unclear" ||
+    core.intent === "clinical_boundary" |
+    core.intent === "sensitive_education_choice" |
+    core.intent === "off_topic_redirect" |
+    core.intent === "parent_policy_refusal" |
+    core.intent === "unclear" |
     forceDeterministic
   ) {
     const skipReason = forceDeterministic
@@ -1922,8 +1803,7 @@ export async function runParentCopilotTurnAsync(input) {
           ok: !!classifierLlmAttempt.ok,
           reason: classifierLlmAttempt.ok
             ? `classifier_upgrade:${effectiveRoute?.classifierBucket || "ambiguous_or_unclear"}`
-            : `classifier_${classifierLlmAttempt.reason || "failed"}`,
-        }
+            : `classifier_${classifierLlmAttempt.reason || "failed"}`}
       : { ok: false, reason: skipReason };
     return finalizeTurnResponse(baseResponse, {
       audience: core.audience,
@@ -1932,23 +1812,20 @@ export async function runParentCopilotTurnAsync(input) {
       intent: core.intent,
       utteranceLength: String(core.utteranceStr || "").trim().length,
       generationPath: "deterministic",
-      llmAttempt,
-    });
+      llmAttempt});
   }
 
   const llmResult = await maybeGenerateGroundedLlmDraft({
     utterance: core.utteranceStr,
     truthPacket: core.truthPacket,
     parentIntent: core.intent,
-    responseLocale: activeCopilotResponseLocale,
-  });
+    responseLocale: activeCopilotResponseLocale});
   if (!llmResult.ok || !llmResult.draft) {
     if (CLINICAL_LLM_FAIL_REASONS.has(String(llmResult.reason || "")) && core.truthPacket) {
       const rawBoundary = buildClinicalBoundaryAnswerDraft();
       const boundaryDraft = {
         ...rawBoundary,
-        answerBlocks: normalizeAnswerBlocksHe(rawBoundary.answerBlocks),
-      };
+        answerBlocks: normalizeAnswerBlocksHe(rawBoundary.answerBlocks)};
       const vBoundary = validateAnswerDraft(boundaryDraft, core.truthPacket, { intent: "clinical_boundary" });
       if (vBoundary.ok) {
         const boundaryResponse = buildResolvedParentCopilotResponse({
@@ -1961,8 +1838,7 @@ export async function runParentCopilotTurnAsync(input) {
           fallbackUsed: false,
           contractSourcesUsed: baseResponse.contractSourcesUsed || ["contractsV1.narrative"],
           priorRepeated: Number(core?.conv?.repeatedPhraseHits || 0),
-          metadata: core.scopeMeta,
-        });
+          metadata: core.scopeMeta});
         const boundaryFinal = validateParentCopilotResponseV1(boundaryResponse);
         if (boundaryFinal.ok) {
           return finalizeTurnResponse(
@@ -1983,9 +1859,7 @@ export async function runParentCopilotTurnAsync(input) {
                 resolutionStatus: "resolved",
                 scopeType: core.truthPacket.scopeType,
                 scopeId: core.truthPacket.scopeId,
-                llmAttempt: { ok: false, reason: String(llmResult.reason || "llm_clinical_rejected") },
-              }),
-            },
+                llmAttempt: { ok: false, reason: String(llmResult.reason || "llm_clinical_rejected") }})},
             {
               audience: core.audience,
               sessionId: core.sessionId,
@@ -1993,8 +1867,7 @@ export async function runParentCopilotTurnAsync(input) {
               intent: "clinical_boundary",
               utteranceLength: String(core.utteranceStr || "").trim().length,
               generationPath: "deterministic",
-              llmAttempt: { ok: false, reason: String(llmResult.reason || "llm_clinical_rejected") },
-            },
+              llmAttempt: { ok: false, reason: String(llmResult.reason || "llm_clinical_rejected") }},
           );
         }
       }
@@ -2007,34 +1880,28 @@ export async function runParentCopilotTurnAsync(input) {
           {
             ok: false,
             reason: llmResult.reason || "llm_unavailable",
-            ...(Array.isArray(llmResult.gateReasonCodes) ? { gateReasonCodes: llmResult.gateReasonCodes } : {}),
-          },
+            ...(Array.isArray(llmResult.gateReasonCodes) ? { gateReasonCodes: llmResult.gateReasonCodes } : {})},
           llmResult,
-        ),
-      },
-    }, {
+        )}}, {
       audience: core.audience,
       sessionId: core.sessionId,
       truthPacket: core.truthPacket,
       intent: core.intent,
       utteranceLength: String(core.utteranceStr || "").trim().length,
       generationPath: "deterministic",
-      llmAttempt: mergeLlmFailureDiagnostics({ ok: false, reason: llmResult.reason || "llm_unavailable" }, llmResult),
-    });
+      llmAttempt: mergeLlmFailureDiagnostics({ ok: false, reason: llmResult.reason || "llm_unavailable" }, llmResult)});
   }
 
   const llmDraft = {
     ...llmResult.draft,
-    answerBlocks: normalizeAnswerBlocksHe(llmResult.draft.answerBlocks),
-  };
+    answerBlocks: normalizeAnswerBlocksHe(llmResult.draft.answerBlocks)};
   const vLlm = validateAnswerDraft(llmDraft, core.truthPacket, { intent: core.intent });
   if (!vLlm.ok) {
     if (draftHasClinicalGuardrailFailure(vLlm.failCodes) && core.truthPacket) {
       const rawBoundary = buildClinicalBoundaryAnswerDraft();
       const boundaryDraft = {
         ...rawBoundary,
-        answerBlocks: normalizeAnswerBlocksHe(rawBoundary.answerBlocks),
-      };
+        answerBlocks: normalizeAnswerBlocksHe(rawBoundary.answerBlocks)};
       const vBoundary = validateAnswerDraft(boundaryDraft, core.truthPacket, { intent: "clinical_boundary" });
       if (vBoundary.ok) {
         const boundaryResponse = buildResolvedParentCopilotResponse({
@@ -2047,8 +1914,7 @@ export async function runParentCopilotTurnAsync(input) {
           fallbackUsed: false,
           contractSourcesUsed: baseResponse.contractSourcesUsed || ["contractsV1.narrative"],
           priorRepeated: Number(core?.conv?.repeatedPhraseHits || 0),
-          metadata: core.scopeMeta,
-        });
+          metadata: core.scopeMeta});
         const boundaryFinal = validateParentCopilotResponseV1(boundaryResponse);
         if (boundaryFinal.ok) {
           return finalizeTurnResponse(
@@ -2069,9 +1935,7 @@ export async function runParentCopilotTurnAsync(input) {
                 resolutionStatus: "resolved",
                 scopeType: core.truthPacket.scopeType,
                 scopeId: core.truthPacket.scopeId,
-                llmAttempt: { ok: false, reason: "llm_draft_clinical_guardrail", failCodes: vLlm.failCodes },
-              }),
-            },
+                llmAttempt: { ok: false, reason: "llm_draft_clinical_guardrail", failCodes: vLlm.failCodes }})},
             {
               audience: core.audience,
               sessionId: core.sessionId,
@@ -2079,8 +1943,7 @@ export async function runParentCopilotTurnAsync(input) {
               intent: "clinical_boundary",
               utteranceLength: String(core.utteranceStr || "").trim().length,
               generationPath: "deterministic",
-              llmAttempt: { ok: false, reason: "llm_draft_clinical_guardrail" },
-            },
+              llmAttempt: { ok: false, reason: "llm_draft_clinical_guardrail" }},
           );
         }
       }
@@ -2089,17 +1952,14 @@ export async function runParentCopilotTurnAsync(input) {
       ...baseResponse,
       telemetry: {
         ...(baseResponse.telemetry || {}),
-        llmAttempt: { ok: false, reason: "llm_draft_validator_fail", failCodes: vLlm.failCodes },
-      },
-    }, {
+        llmAttempt: { ok: false, reason: "llm_draft_validator_fail", failCodes: vLlm.failCodes }}}, {
       audience: core.audience,
       sessionId: core.sessionId,
       truthPacket: core.truthPacket,
       intent: core.intent,
       utteranceLength: String(core.utteranceStr || "").trim().length,
       generationPath: "deterministic",
-      llmAttempt: { ok: false, reason: "llm_draft_validator_fail" },
-    });
+      llmAttempt: { ok: false, reason: "llm_draft_validator_fail" }});
   }
 
   let llmResponse = buildResolvedParentCopilotResponse({
@@ -2112,8 +1972,7 @@ export async function runParentCopilotTurnAsync(input) {
     fallbackUsed: false,
     contractSourcesUsed: baseResponse.contractSourcesUsed || ["contractsV1.narrative"],
     priorRepeated: Number(core?.conv?.repeatedPhraseHits || 0),
-    metadata: core.scopeMeta,
-  });
+    metadata: core.scopeMeta});
   const llmFinalCheck = validateParentCopilotResponseV1(llmResponse);
   if (!llmFinalCheck.ok) {
     return finalizeTurnResponse(baseResponse, {
@@ -2123,8 +1982,7 @@ export async function runParentCopilotTurnAsync(input) {
       intent: core.intent,
       utteranceLength: String(core.utteranceStr || "").trim().length,
       generationPath: "deterministic",
-      llmAttempt: { ok: false, reason: "llm_final_response_validator_fail" },
-    });
+      llmAttempt: { ok: false, reason: "llm_final_response_validator_fail" }});
   }
 
   llmResponse = {
@@ -2158,10 +2016,7 @@ export async function runParentCopilotTurnAsync(input) {
           : {}),
         ...(Array.isArray(llmResult.fallbackAttempts) && llmResult.fallbackAttempts.length
           ? { fallbackAttempts: llmResult.fallbackAttempts.map((a) => (a && typeof a === "object" ? { ...a } : a)) }
-          : {}),
-      },
-    }),
-  };
+          : {})}})};
   const llmOkAttempt = {
     ok: true,
     reason: "llm_draft_accepted",
@@ -2177,8 +2032,7 @@ export async function runParentCopilotTurnAsync(input) {
     ...(Array.isArray(llmResult.fallbackAttempts) && llmResult.fallbackAttempts.length
       ? { fallbackAttempts: llmResult.fallbackAttempts.map((a) => (a && typeof a === "object" ? { ...a } : a)) }
       : {}),
-    ...(typeof llmResult.llmRetryCount === "number" ? { llmRetryCount: llmResult.llmRetryCount } : {}),
-  };
+    ...(typeof llmResult.llmRetryCount === "number" ? { llmRetryCount: llmResult.llmRetryCount } : {})};
   llmResponse.telemetry.llmAttempt = llmOkAttempt;
   return finalizeTurnResponse(llmResponse, {
     audience: core.audience,
@@ -2187,8 +2041,7 @@ export async function runParentCopilotTurnAsync(input) {
     intent: core.intent,
     utteranceLength: String(core.utteranceStr || "").trim().length,
     generationPath: "llm_grounded",
-    llmAttempt: llmOkAttempt,
-  });
+    llmAttempt: llmOkAttempt});
   } finally {
     activeCopilotResponseLocale = "en";
   }

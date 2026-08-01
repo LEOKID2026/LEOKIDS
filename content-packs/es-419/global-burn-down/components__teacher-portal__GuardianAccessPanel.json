@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "El código actual será revocado y se generará uno nuevo. Guarde el nuevo código; se mostrará solo una vez.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "El nombre de usuario actual será revocado. El nuevo nombre de usuario se mostrará solo una vez."
+  }
+}

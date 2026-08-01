@@ -3,7 +3,7 @@ import test from "node:test";
 import {
   parseStepExplanationThreeLines,
   splitLearningMixedHebrewMathRuns,
-} from "../utils/learning-mixed-hebrew-math-render.js";
+} from "../utils/learning-mixed-rtl-math-render.js";
 
 test("parses addition step into three separate lines", () => {
   const blocks = parseStepExplanationThreeLines(

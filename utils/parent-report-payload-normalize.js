@@ -1,6 +1,6 @@
 /**
- * נרמול payload לדוח מקיף — אל UI ולבדיקות (שלב 6).
- * לא משנה מנוע; רק ברירות מחדל בטוחות כשחסרים שדות.
+ *  payload   —  UI  ( 6).
+ *   ;      .
  */
 
 export function normalizeExecutiveSummary(payload) {
@@ -15,8 +15,8 @@ export function normalizeExecutiveSummary(payload) {
   const activeSubjects = coverage.filter((row) => (Number(row?.questionCount) || 0) > 0).length;
   const suppressDeepCrossSubject = activeSubjects <= 1;
   const windowTotalQuestions =
-    Number(payload?.overallSnapshot?.totalQuestions) ||
-    Number(d.windowTotalQuestions) ||
+    Number(payload?.overallSnapshot?.totalQuestions) |
+    Number(d.windowTotalQuestions) |
     0;
   const normalized = {
     windowTotalQuestions,

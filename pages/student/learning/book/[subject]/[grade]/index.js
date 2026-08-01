@@ -5,6 +5,7 @@ import { useIOSViewportFix } from "../../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../../lib/learning-book/learning-book-nav";
 import { getLearningBookMasterPath } from "../../../../../../lib/learning-book/learning-book-catalog-meta";
 import { useMemo } from "react";
+import { resolveBookRequestContentLocale } from "../../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 export default function StudentBookIndex({ batches, subject, grade, bookMeta }) {
   useIOSViewportFix();
@@ -29,7 +30,8 @@ export default function StudentBookIndex({ batches, subject, grade, bookMeta }) 
 }
 
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { subject, grade } = params;
   const { getLearningBookEntry } = await import(
     "../../../../../../lib/learning-book/learning-book-catalog.js"
@@ -40,6 +42,6 @@ export async function getServerSideProps({ params }) {
   const entry = getLearningBookEntry(subject, grade);
   const clientMeta = getLearningBookClientMeta(subject, grade);
   if (!entry || !clientMeta) return { notFound: true };
-  const batches = entry.loader.loadTocEntries();
+  const batches = entry.loader.loadTocEntries({ contentLocale });
   return { props: { batches, subject, grade, bookMeta: clientMeta.meta } };
 }

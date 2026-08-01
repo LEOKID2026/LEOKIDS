@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 
 /**
  * @returns {{
- *   helpGame: object | null,
+ *   helpGame: object || null,
  *   isHelpOpen: boolean,
  *   openSoloGameHelp: (game: object) => void,
  *   closeSoloGameHelp: () => void,

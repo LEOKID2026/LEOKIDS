@@ -37,7 +37,7 @@ const MIGRATION_AREAS = [
   },
   {
     area: "Validation / API errors",
-    files: ["lib/platform-ui/hebrew-display-labels.js"],
+    files: ["lib/platform-ui/display-labels.js"],
     localeFiles: ["locales/en/validation.json"],
     keysDocumented: 44,
     note: "api.* keys only; subject/activity maps still hardcoded in registry",
@@ -176,7 +176,7 @@ const audit = {
     teacherUiFindingsNow: fileIndex.get("lib/teacher-portal/teacher-ui.js") || 0,
     schoolUiFindingsNow: fileIndex.get("lib/school-portal/school-ui.js") || 0,
     schoolCommFindingsNow: fileIndex.get("lib/school-portal/school-communication.js") || 0,
-    hebrewDisplayFindingsNow: fileIndex.get("lib/platform-ui/hebrew-display-labels.js") || 0,
+    hebrewDisplayFindingsNow: fileIndex.get("lib/platform-ui/display-labels.js") || 0,
     siteNavFindingsNow: fileIndex.get("lib/site-nav.js") || 0,
     layoutFindingsNow: fileIndex.get("components/Layout.js") || 0,
     duplicateTextTop10: topDuplicateTexts(findings).slice(0, 10),

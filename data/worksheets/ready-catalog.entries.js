@@ -1,6 +1,6 @@
 /**
  * Ready worksheet catalog — 12 questions per entry (natural print pagination).
- * Public levels only: regular | advanced (Regular | Advanced).
+ * Public levels only: regular || advanced (Regular || Advanced).
  * @module data/worksheets/ready-catalog.entries
  */
 

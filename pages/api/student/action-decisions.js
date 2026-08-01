@@ -7,7 +7,7 @@ import { aggregateParentReportPayload } from "../../../lib/parent-server/report-
 import { enrichPayloadWithParentFacing } from "../../../lib/parent-server/parent-report-parent-facing.server.js";
 import { buildDetailedPayloadFromAggregatedReportBody } from "../../../lib/parent-server/db-input-to-detailed-report.server.js";
 import { collectActionDecisionContractsV2 } from "../../../utils/action-decision-contract/public-action-decision-v2.js";
-import { buildParentFacingFromAdcV2 } from "../../../utils/parent-report-engine-insights-he.js";
+import { buildParentFacingFromAdcV2 } from "../../../utils/parent-report-engine-insights.js";
 
 const RANGE_DAYS = 30;
 

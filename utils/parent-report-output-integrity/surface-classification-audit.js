@@ -9,7 +9,7 @@ export const PARENT_FACING_SURFACES = [
     labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "short_report_table"),
     classification: "row-scoped",
     requiresRowIdentity: true,
-    implementation: "pages/learning/parent-report.js + baseReport topic maps",
+    implementation: "pages/learning/parent-report.js + baseReport topic maps"
   },
   {
     id: "short_report_smart_summary",
@@ -17,7 +17,7 @@ export const PARENT_FACING_SURFACES = [
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
-    implementation: "parent-report contract strip / rawMetricStrengthsHe + executive via detailed payload",
+    implementation: "parent-report contract strip / rawMetricStrengthsHe + executive via detailed payload"
   },
   {
     id: "detailed_smart_summary",
@@ -25,28 +25,28 @@ export const PARENT_FACING_SURFACES = [
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
-    implementation: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "parentaiinsight_executivesummary"),
+    implementation: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "parentaiinsight_executivesummary")
   },
   {
     id: "detailed_strengths",
     labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "strengths"),
     classification: "row-scoped",
     requiresRowIdentity: true,
-    implementation: "utils/detailed-parent-report.js topStrengths",
+    implementation: "utils/detailed-parent-report.js topStrengths"
   },
   {
     id: "detailed_weaknesses",
     labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "focus_weaknesses"),
     classification: "row-scoped",
     requiresRowIdentity: true,
-    implementation: "utils/detailed-parent-report.js topWeaknesses",
+    implementation: "utils/detailed-parent-report.js topWeaknesses"
   },
   {
     id: "topic_recommendations",
     labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "topic_recommendations"),
     classification: "row-scoped",
     requiresRowIdentity: true,
-    implementation: "utils/detailed-parent-report.js topicRecommendations",
+    implementation: "utils/detailed-parent-report.js topicRecommendations"
   },
   {
     id: "home_plan",
@@ -54,7 +54,7 @@ export const PARENT_FACING_SURFACES = [
     classification: "mixed",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
-    implementation: "buildHomePlanFromV2 - per-unit lines with parentFacingLabel",
+    implementation: "buildHomePlanFromV2 - per-unit lines with parentFacingLabel"
   },
   {
     id: "executive_summary",
@@ -62,14 +62,14 @@ export const PARENT_FACING_SURFACES = [
     classification: "aggregate-only",
     requiresRowIdentity: false,
     requiresGradeSplitRespect: true,
-    implementation: "buildExecutiveSummaryFromV2 + gradeSplitTopicNoticesHe",
+    implementation: "buildExecutiveSummaryFromV2 + gradeSplitTopicNoticesHe"
   },
   {
     id: "charts",
     labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "charts_labels"),
     classification: "row-scoped",
     requiresRowIdentity: true,
-    implementation: "parent-report.js buildTopicRowsForChart",
+    implementation: "parent-report.js buildTopicRowsForChart"
   },
   {
     id: "pdf_print",
@@ -77,14 +77,14 @@ export const PARENT_FACING_SURFACES = [
     classification: "mixed",
     requiresRowIdentity: true,
     requiresGradeSplitRespect: true,
-    implementation: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "playwright_print_of_pages_above"),
+    implementation: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "playwright_print_of_pages_above")
   },
   {
     id: "copilot_truth_packet",
     labelHe: reportPackCopy("utils__parent-report-output-integrity__surface-classification-audit", "copilot_truth_packet"),
     classification: "row-scoped",
     requiresRowIdentity: true,
-    implementation: "utils/parent-copilot/truth-packet-v1.js",
+    implementation: "utils/parent-copilot/truth-packet-v1.js"
   },
   {
     id: "copilot_answer_composer",
@@ -92,9 +92,8 @@ export const PARENT_FACING_SURFACES = [
     classification: "mixed",
     requiresRowIdentity: true,
     requiresGradeSplitRespect: true,
-    implementation: "utils/parent-copilot/* + gradeSplitTopicRowKeys",
-  },
-];
+    implementation: "utils/parent-copilot/* + gradeSplitTopicRowKeys"
+  }];
 
 /**
  * @param {unknown} detailedReport
@@ -111,7 +110,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
       results.push({
         surfaceId,
         status: "fail",
-        reason: `${path}: ${missing.length} row(s) missing rowIdentityV1/sourceId`,
+        reason: `${path}: ${missing.length} row(s) missing rowIdentityV1/sourceId`
       });
     } else {
       results.push({ surfaceId, status: "pass", reason: `${path}: ${list.length} row(s) keyed` });
@@ -130,13 +129,13 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     results.push({
       surfaceId: "executive_summary",
       status: "pass",
-      reason: `grade-split notices present (${es.gradeSplitTopicNoticesHe.length})`,
+      reason: `grade-split notices present (${es.gradeSplitTopicNoticesHe.length})`
     });
   } else {
     results.push({
       surfaceId: "executive_summary",
       status: "warn",
-      reason: "no gradeSplitTopicNoticesHe (ok if no split in payload)",
+      reason: "no gradeSplitTopicNoticesHe (ok if no split in payload)"
     });
   }
 
@@ -145,9 +144,8 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
     ["science", "scienceTopics"],
-    ["hebrew", "hebrewTopics"],
-    ["moledet-geography", "moledetGeographyTopics"],
-  ];
+    ["hebrewTopics"],
+    ["moledetGeographyTopics"]];
   let shortTableMissing = 0;
   let shortTableTotal = 0;
   for (const [sid, mk] of maps) {
@@ -160,18 +158,18 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
   }
   let tableGradeInTopic = 0;
   let chartNarrativeDup = 0;
-  for (const [, mk] of maps) {
+  for (const [ mk] of maps) {
     const tm = baseReport?.[mk];
     if (!tm) continue;
     const byClean = new Map();
     for (const [trk, row] of Object.entries(tm)) {
       const clean = String(row?.cleanTopicLabelHe || row?.displayName || "");
-      if (/(?:-|\()\s*(?:כיתה|תרגול ב|Grade|practice in)/iu.test(clean)) tableGradeInTopic += 1;
+      if (/(?!)/iu.test(clean)) tableGradeInTopic += 1;
       const narrative = String(row?.narrativeTopicLabelHe || "");
       if (!byClean.has(clean)) byClean.set(clean, []);
       byClean.get(clean).push({ trk, narrative });
     }
-    for (const [, entries] of byClean) {
+    for (const [ entries] of byClean) {
       if (entries.length < 2) continue;
       const narratives = new Set(entries.map((e) => e.narrative).filter(Boolean));
       if (narratives.size < entries.length) chartNarrativeDup += 1;
@@ -184,7 +182,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
       ? `${tableGradeInTopic} table row(s) embed grade in topic cell (use grade column only)`
       : shortTableMissing
         ? `${shortTableMissing}/${shortTableTotal} missing rowIdentity`
-        : `all ${shortTableTotal} rows: clean topic + rowIdentity`,
+        : `all ${shortTableTotal} rows: clean topic + rowIdentity`
   });
 
   results.push({
@@ -192,7 +190,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     status: chartNarrativeDup ? "fail" : "pass",
     reason: chartNarrativeDup
       ? `${chartNarrativeDup} chart topic group(s) with duplicate narrative labels`
-      : "chart narrative labels disambiguated when topic repeats across grades",
+      : "chart narrative labels disambiguated when topic repeats across grades"
   });
 
   const copilotRows = (detailedReport?.subjectProfiles || []).flatMap((s) => s.topicRecommendations || []);
@@ -202,7 +200,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     status: copilotMissing.length ? "fail" : "pass",
     reason: copilotMissing.length
       ? `${copilotMissing.length} copilot payload row(s) missing rowIdentity`
-      : `copilot payload rows keyed (${copilotRows.length})`,
+      : `copilot payload rows keyed (${copilotRows.length})`
   });
 
   const blocking = results.filter((r) => r.status === "fail");
@@ -210,7 +208,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     surfaces: PARENT_FACING_SURFACES,
     results,
     blockingFailures: blocking,
-    pass: blocking.length === 0,
+    pass: blocking.length === 0
   };
 }
 

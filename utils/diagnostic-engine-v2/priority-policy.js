@@ -1,5 +1,5 @@
 /**
- * עדיפות וחומרה P1–P4 — stage1 §10 (מטריצה מול ביטחון ורוחב).
+ *   P1–P4 — stage1 §10 (   ).
  * @typedef {"P1"|"P2"|"P3"|"P4"} PriorityLevel
  */
 
@@ -28,7 +28,7 @@ export function resolvePriority(confidence, breadth, flags = {}) {
 }
 
 /**
- * רוחב לפי מספר שורות עם needsPractice באותו מקצוע.
+ *      needsPractice  .
  * @param {number} weakRowCount
  * @returns {"narrow"|"medium"|"wide"}
  */

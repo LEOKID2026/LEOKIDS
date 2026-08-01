@@ -9,7 +9,7 @@ import {
   assertNarrativeSurfacesDisambiguateDuplicates,
   assertNoLongNarrativeTitles,
   assertTableLabelsStayClean,
-  assertTopicOverviewCompleteness,
+  assertTopicOverviewCompleteness
 } from "./display-context-label-tests.js";
 import { LONG_NARRATIVE_TITLE_RE, narrativeTitleFromRow } from "./row-display-label-context.js";
 import { parseCanonicalTopicFromRowKey } from "./row-identity-v1.js";
@@ -19,22 +19,18 @@ const SUBJECT_MAP_KEYS = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  history: "historyTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
+  history: "historyTopics"
 };
 
 const SUBJECT_LABEL_HE = {
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  science: "Science",
-  hebrew: reportPackCopy("utils__parent-report-output-integrity__context-labeling-matrix", "hebrew"),
-  "moledet-geography": reportPackCopy("utils__parent-report-output-integrity__context-labeling-matrix", "homeland_and_geography"),
+  science: "Science"
 };
 
-const NARRATIVE_GRADE_TITLE_RE = / - (?:כיתה|Grade) /iu;
-const TABLE_GRADE_IN_TOPIC_RE = /(?:-|\()\s*(?:כיתה|תרגול ב|Grade|practice in)/iu;
+const NARRATIVE_GRADE_TITLE_RE = /(?!)/iu;
+const TABLE_GRADE_IN_TOPIC_RE = /(?!)/iu;
 
 /**
  * @param {string} subjectId
@@ -66,8 +62,7 @@ function assertSubjectContextLabelingMatrix(subjectId, baseReport, detailedRepor
   const corePracticedKeys = [keys.splitG4, keys.soloG4];
   if (overview.length !== corePracticedKeys.length) {
     failures.push(
-      `${subjectId}: core topicOverviewRows expected ${corePracticedKeys.length}, got ${overview.length}`,
-    );
+      `${subjectId}: core topicOverviewRows expected ${corePracticedKeys.length}, got ${overview.length}`);
   }
   for (const k of corePracticedKeys) {
     if (!overviewKeys.has(k)) failures.push(`${subjectId}: core overview missing row ${k}`);
@@ -145,33 +140,29 @@ function assertSubjectContextLabelingMatrix(subjectId, baseReport, detailedRepor
     String(sp.summaryHe || ""),
     ...(detailedReport?.executiveSummary?.topFocusAreasHe || []),
     ...(detailedReport?.executiveSummary?.topStrengthsAcrossHe || []),
-    ...(detailedReport?.homePlan?.itemsHe || []),
-  ].join("\n");
+    ...(detailedReport?.homePlan?.itemsHe || [])].join("\n");
   const collapsed = new RegExp(
-    `${splitLabel.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}[^.\\n]{0,18}דורש חיזוק`,
-    "u",
-  );
+    `${splitLabel.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}[^.\\n]{0,18} `,
+    "u");
   const notices = detailedReport?.executiveSummary?.gradeSplitTopicNoticesHe || [];
   const transparency = detailedReport?.outOfGradePracticeTransparency;
   const transparencyRowCount =
     (transparency?.advancedPractice?.length || 0) + (transparency?.foundationPractice?.length || 0);
   const hasNotice =
-    notices.some((n) => String(n).includes(splitLabel)) ||
-    notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId)) ||
+    notices.some((n) => String(n).includes(splitLabel)) |
+    notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId)) |
     transparencyRowCount > 0;
   if (collapsed.test(bundle) && !hasNotice) {
     failures.push(
-      `${subjectId}: aggregate collapses grade-split "${splitLabel}" without gradeSplit notice`,
-    );
+      `${subjectId}: aggregate collapses grade-split "${splitLabel}" without gradeSplit notice`);
   }
 
   const subjectLabel = SUBJECT_LABEL_HE[subjectId] || subjectId;
   const homeLines = (detailedReport?.homePlan?.itemsHe || []).filter((line) =>
-    String(line).includes(subjectLabel),
-  );
+    String(line).includes(subjectLabel));
   const hasSubjectGuidance =
-    focusRecs.length > 0 ||
-    homeLines.length > 0 ||
+    focusRecs.length > 0 |
+    homeLines.length > 0 |
     Boolean(String(sp.parentActionHe || sp.subjectDoNowHe || sp.subjectImmediateActionHe || "").trim());
   const hasCoreWeakness =
     (sp.topWeaknesses || []).length > 0 || focusRecs.length > 0;
@@ -180,7 +171,7 @@ function assertSubjectContextLabelingMatrix(subjectId, baseReport, detailedRepor
   }
 
   const weakInHomeOrFocus =
-    homeLines.some((line) => line.includes(keys.splitLabelHe)) ||
+    homeLines.some((line) => line.includes(keys.splitLabelHe)) |
     focusRecs.some((r) => String(r.topicRowKey) === keys.splitG4);
   if (!weakInHomeOrFocus && focusRecs.length === 0) {
     // No same-grade weakness in fixture — core focus may legitimately be empty.
@@ -229,21 +220,18 @@ export function assertAggregateExplainsAllGradeSplits(detailedReport, baseReport
   const bundle = [
     ...(detailedReport?.executiveSummary?.topFocusAreasHe || []),
     ...(detailedReport?.executiveSummary?.topStrengthsAcrossHe || []),
-    ...(detailedReport?.homePlan?.itemsHe || []),
-  ].join("\n");
+    ...(detailedReport?.homePlan?.itemsHe || [])].join("\n");
 
   for (const { subjectId, displayName } of findGradeSplitTopicLabelsInBaseReport(baseReport)) {
     const collapsed = new RegExp(
-      `${displayName.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}[^.\\n]{0,20}דורש חיזוק`,
-      "u",
-    );
+      `${displayName.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}[^.\\n]{0,20} `,
+      "u");
     const hasNotice =
-      notices.some((n) => String(n).includes(displayName)) ||
+      notices.some((n) => String(n).includes(displayName)) |
       notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId));
     if (collapsed.test(bundle) && !hasNotice) {
       failures.push(
-        `${subjectId}: aggregate may collapse "${displayName}" without split explanation`,
-      );
+        `${subjectId}: aggregate may collapse "${displayName}" without split explanation`);
     }
   }
   if (findGradeSplitTopicLabelsInBaseReport(baseReport).length > 0 && notices.length === 0) {
@@ -251,10 +239,9 @@ export function assertAggregateExplainsAllGradeSplits(detailedReport, baseReport
     const transparencyRowCount =
       (transparency?.advancedPractice?.length || 0) + (transparency?.foundationPractice?.length || 0);
     const mixedNote = String(
-      detailedReport?.gradePracticeMeta?.mixedGradePracticeNoteHe ||
-        baseReport?.gradePracticeMeta?.mixedGradePracticeNoteHe ||
-        "",
-    ).trim();
+      detailedReport?.gradePracticeMeta?.mixedGradePracticeNoteHe |
+        baseReport?.gradePracticeMeta?.mixedGradePracticeNoteHe |
+        "").trim();
     if (!mixedNote && transparencyRowCount === 0 && !baseReport?.registeredGradeKey) {
       failures.push("executiveSummary.gradeSplitTopicNoticesHe empty despite grade-split topics");
     }
@@ -279,8 +266,7 @@ export function assertPrintBundleIncludesOverviewTitles(detailedReport, minGrade
   const dupGradeTitles = titles.filter((t) => NARRATIVE_GRADE_TITLE_RE.test(t));
   if (dupGradeTitles.length < minGradeDisambiguatedTitles) {
     failures.push(
-      `expected grade-disambiguated overview titles (got ${dupGradeTitles.length}, need >= ${minGradeDisambiguatedTitles})`,
-    );
+      `expected grade-disambiguated overview titles (got ${dupGradeTitles.length}, need >= ${minGradeDisambiguatedTitles})`);
   }
   return failures;
 }
@@ -340,5 +326,5 @@ export default {
   assertAggregateExplainsAllGradeSplits,
   assertPrintBundleIncludesOverviewTitles,
   findGradeSplitTopicLabelsInBaseReport,
-  SUBJECT_MAP_KEYS,
+  SUBJECT_MAP_KEYS
 };

@@ -1,43 +1,43 @@
 export const ENGLISH_GRADE_ORDER = ["g1", "g2", "g3", "g4", "g5", "g6"];
 
 export const ENGLISH_GENERAL_GOALS = [
-  "תרגול אוצר מילים, דקדוק, תרגום והרכבת משפטים - בהתאם לנושאים המקובלים הנלמדים בבתי הספר היסודיים.",
-  "התאמת רמת התרגול (רגיל / מתקדם) לכל תלמיד לפי כיתה, הצלחות ואתגרים יומיים.",
-  "חיזוק כתיבה באנגלית באמצעות תרגילי הקלדה ממוקדים ומעבר הדרגתי ממשפטים קצרים למשפטים מורחבים.",
+  "Practice vocabulary, grammar, meaning cues, and sentence building — aligned with common elementary school English topics.",
+  "Match practice level (standard / advanced) to each learner by grade, recent successes, and daily challenges.",
+  "Strengthen English writing with focused typing drills and a gradual path from short sentences to longer ones.",
 ];
 
 export const ENGLISH_GRADES = {
   g1: {
     key: "g1",
-    name: "כיתה א׳",
-    stage: "שלב חשיפה",
+    name: "Grade 1",
+    stage: "Exposure stage",
     topics: ["phonics", "vocabulary", "mixed"],
     wordLists: ["colors", "numbers", "family", "animals", "emotions", "actions", "school"],
     curriculum: {
-      summary: "היכרות חווייתית עם מילים בסיסיות באנגלית באמצעות כרטיסי אוצר מילים דו-כיווניים.",
+      summary: "A playful introduction to basic English words using two-way vocabulary cards.",
       focus: [
-        "זיהוי מילים באנגלית מתוך מילה בעברית והפוך לבניית ביטחון בסיסי.",
-        "שילוב צבעים, מספרים וחפצי כיתה כחלק מתרגול חזותי מהיר."
+        "Recognize English words from a meaning cue and the reverse to build early confidence.",
+        "Include colors, numbers, and classroom objects in quick visual practice.",
       ],
       skills: [
-        "בחירה נכונה של פירוש המילה באנגלית או בעברית.",
-        "זיהוי תרגום נכון בזמן קצוב ובדגש על ריכוז."
+        "Choose the correct meaning of a word in English or the instruction language.",
+        "Spot the correct meaning under time pressure with a focus on attention.",
       ],
-      grammar: ["חשיפה ל-I am / You are ולכינויי גוף בסיסיים בתוך תבניות קבועות."],
+      grammar: ["Exposure to I am / You are and basic pronouns inside fixed patterns."],
       vocabulary: [
-        "צבעים, מספרים 0–20, בני משפחה וחפצי כיתה.",
-        "חיות בסיסיות, רגשות ראשוניים ופעלים פשוטים של פעולות יומיומיות."
+        "Colors, numbers 0–20, family members, and classroom objects.",
+        "Basic animals, early feelings, and simple everyday action verbs.",
       ],
       benchmark: [
-        "דיוק של ‎80%‎ לפחות בתרגול 20 מילים בסיסיות.",
-        "שליטה בהחלפת כיוון תרגום (אנגלית→עברית / עברית→אנגלית) במצב למידה."
-      ]
-    }
+        "At least 80% accuracy practicing 20 basic words.",
+        "Comfort switching meaning direction (English ↔ instruction language) in learning mode.",
+      ],
+    },
   },
   g2: {
     key: "g2",
-    name: "כיתה ב׳",
-    stage: "שלב יסוד",
+    name: "Grade 2",
+    stage: "Foundation stage",
     topics: ["phonics", "vocabulary", "translation", "writing", "mixed"],
     wordLists: [
       "colors",
@@ -48,36 +48,36 @@ export const ENGLISH_GRADES = {
       "school",
       "food",
       "actions",
-      "house"
+      "house",
     ],
     curriculum: {
-      summary: "מעבר מזיהוי מילים לכתיבה קצרה והרחבת אוצר מילים לפי תחומי חיי היום-יום.",
+      summary: "Move from word recognition to short writing and broader everyday vocabulary.",
       focus: [
-        "תרגול כתיבה של מילים באנגלית מתוך מילה בעברית (הקלדה).",
-        "התחלה של תרגום משפטים קצרים לפי טמפלטים קבועים."
+        "Practice typing English words from a meaning cue.",
+        "Begin translating short sentences with fixed templates.",
       ],
       skills: [
-        "הקלדת מילים קלאסיות של מזון, לבוש וחדרי הבית ללא טעויות כתיב.",
-        "תרגום משפטים דו-כיווני באורך 3–4 מילים."
+        "Type classic food, clothing, and home-room words without spelling mistakes.",
+        "Two-way meaning practice for sentences of 3–4 words.",
       ],
       grammar: [
-        "חיזוק to be (am/is/are) וכינויי גוף.",
-        "ריבוי שמות עצם והיכרות עם מבני שאלות פשוטים."
+        "Strengthen to be (am/is/are) and pronouns.",
+        "Noun plurals and simple question patterns.",
       ],
       vocabulary: [
-        "מזון ושתייה, בגדים, מקומות בקהילה וחיי יום-יום בכיתה.",
-        "פעולות (run, jump, read) וחדרי הבית."
+        "Food and drink, clothes, community places, and classroom life.",
+        "Actions (run, jump, read) and rooms of the house.",
       ],
       benchmark: [
-        "דיוק כתיבה של ‎75%‎ ומעלה במצב כתיבה.",
-        "10 תרגילי תרגום דו-כיווני מוצלחים ברצף בכל שבוע."
-      ]
-    }
+        "Writing accuracy of 75% or higher in writing mode.",
+        "10 successful two-way meaning drills in a row each week.",
+      ],
+    },
   },
   g3: {
     key: "g3",
-    name: "כיתה ג׳",
-    stage: "שלב ראשית אוריינות",
+    name: "Grade 3",
+    stage: "Early literacy stage",
     topics: ["vocabulary", "grammar", "translation", "sentences", "writing", "mixed"],
     wordLists: [
       "animals",
@@ -90,36 +90,36 @@ export const ENGLISH_GRADES = {
       "weather",
       "sports",
       "actions",
-      "house"
+      "house",
     ],
     curriculum: {
-      summary: "חיבור בין אוצר מילים, דקדוק ותרגום כדי להתחיל לבנות משפטים אקטיביים.",
+      summary: "Connect vocabulary, grammar, and meaning cues to start building active sentences.",
       focus: [
-        "תרגום משפטים קצרים עם סימני פיסוק נכונים.",
-        "השלמת משפטים לפי גוף הפועל והרמזים בהקשר."
+        "Translate short sentences with correct punctuation.",
+        "Complete sentences using verb agreement and context clues.",
       ],
       skills: [
-        "הרכבת משפטים Present Simple מתוך תבניות מוכרות.",
-        "מעקב אחרי רמזים (נושא, זמן) כדי לבחור את המילה הנכונה."
+        "Build Present Simple sentences from familiar templates.",
+        "Follow clues (subject, time) to choose the right word.",
       ],
       grammar: [
-        "Present Simple בחיובי/שלילי/שאלה.",
-        "תארים בסיסיים, יידוע (a/an/the) ומילות יחס מקום (in/on/under)."
+        "Present Simple in positive, negative, and question forms.",
+        "Basic adjectives, articles (a/an/the), and place prepositions (in/on/under).",
       ],
       vocabulary: [
-        "שגרת יום, בית הספר, תחביבים, ספורט ומזג אוויר.",
-        "חלקי גוף וחדרי בית מורחבים."
+        "Daily routines, school, hobbies, sports, and weather.",
+        "Body parts and expanded home rooms.",
       ],
       benchmark: [
-        "דיוק ‎80%‎ ומעלה במצב דקדוק או משפטים.",
-        "כתיבת לפחות 5 משפטים קצרים באנגלית במצב כתיבה מורחב."
-      ]
-    }
+        "80% accuracy or higher in grammar or sentence mode.",
+        "Write at least 5 short English sentences in extended writing mode.",
+      ],
+    },
   },
   g4: {
     key: "g4",
-    name: "כיתה ד׳",
-    stage: "שלב אוריינות מתפתחת",
+    name: "Grade 4",
+    stage: "Developing literacy stage",
     topics: ["vocabulary", "grammar", "translation", "sentences", "writing", "mixed"],
     wordLists: [
       "animals",
@@ -132,36 +132,37 @@ export const ENGLISH_GRADES = {
       "travel",
       "community",
       "environment",
-      "emotions"
+      "emotions",
     ],
     curriculum: {
-      summary: "חיזוק הבנת זמנים (Present Simple / Continuous) והרחבת הנושאים לקהילה, טבע ונסיעות.",
+      summary:
+        "Strengthen tense awareness (Present Simple / Continuous) and expand topics to community, nature, and travel.",
       focus: [
-        "בחירה בין Present Simple לבין Present Continuous לפי מילת הזמן.",
-        "תרגול כתיבה של פסקה קצרה (3–4 משפטים) במצב הקלדה."
+        "Choose between Present Simple and Present Continuous using time clues.",
+        "Practice writing a short paragraph (3–4 sentences) in typing mode.",
       ],
       skills: [
-        "תרגול תרגום דו-כיווני למשפטים עם 2 פעולות.",
-        "התמודדות עם שאלות רב-ברירה מורכבות משילוב מילים."
+        "Two-way meaning practice for sentences with two actions.",
+        "Handle more complex multiple-choice items that mix vocabulary.",
       ],
       grammar: [
-        "Present Simple לעומת Present Continuous.",
-        "some/any, much/many, כינויי שייכות ותוארי פועל (slowly/quickly)."
+        "Present Simple versus Present Continuous.",
+        "some/any, much/many, possessive pronouns, and adverbs (slowly/quickly).",
       ],
       vocabulary: [
-        "מקומות בעיר, נסיעות, חגים ופעילויות קהילה.",
-        "רגשות מורחבים, סביבה וטבע."
+        "City places, travel, holidays, and community activities.",
+        "Expanded feelings, environment, and nature.",
       ],
       benchmark: [
-        "דיוק דקדוק של ‎85%‎ לפחות במצב דקדוק.",
-        "עמידה באתגר יומי (20 שאלות) לפחות פעמיים בשבוע."
-      ]
-    }
+        "At least 85% grammar accuracy in grammar mode.",
+        "Complete a daily challenge (20 questions) at least twice a week.",
+      ],
+    },
   },
   g5: {
     key: "g5",
-    name: "כיתה ה׳",
-    stage: "שלב אוריינות מורחבת",
+    name: "Grade 5",
+    stage: "Expanded literacy stage",
     topics: ["vocabulary", "grammar", "translation", "sentences", "writing", "mixed"],
     wordLists: [
       "animals",
@@ -173,36 +174,37 @@ export const ENGLISH_GRADES = {
       "environment",
       "health",
       "technology",
-      "emotions"
+      "emotions",
     ],
     curriculum: {
-      summary: "העמקת השימוש בזמני עבר והווה מתקדם, לצד הרחבת נושאים לעולמות טכנולוגיה ובריאות.",
+      summary:
+        "Deepen past and advanced present usage while expanding into technology and health topics.",
       focus: [
-        "תרגום והשלמה של משפטים Past Simple ו Future (will / going to).",
-        "תרגול כתיבה חופשית של 2 פסקאות קצרות במצטבר."
+        "Translate and complete Past Simple and Future (will / going to) sentences.",
+        "Practice free writing totaling about 2 short paragraphs.",
       ],
       skills: [
-        "הצלבת מילים בתחום טכנולוגיה, בריאות וטיולים.",
-        "קבלת החלטה מהירה לגבי מודאלי can / must / have to בשאלות בחירה."
+        "Cross-check vocabulary in technology, health, and travel.",
+        "Decide quickly among modals can / must / have to in choice questions.",
       ],
       grammar: [
-        "Past Simple (סדירים + חריגים נפוצים).",
-        "מודאליים בסיסיים, Future (will / going to) והשוואתיים."
+        "Past Simple (regular + common irregulars).",
+        "Basic modals, Future (will / going to), and comparatives.",
       ],
       vocabulary: [
-        "מסעות ותחבורה, בריאות וגוף האדם, טכנולוגיה ורשת.",
-        "סביבה ורגשות מתקדמים."
+        "Trips and transport, health and the human body, technology and the web.",
+        "Environment and more advanced feelings.",
       ],
       benchmark: [
-        "שמירה על דיוק ‎85%‎ לפחות במצב מעורב.",
-        "עצירת 3 טעויות חוזרות באמצעות תרגול ממוקד."
-      ]
-    }
+        "Keep at least 85% accuracy in mixed mode.",
+        "Stop 3 repeating mistakes through focused practice.",
+      ],
+    },
   },
   g6: {
     key: "g6",
-    name: "כיתה ו׳",
-    stage: "שלב מתקדם",
+    name: "Grade 6",
+    stage: "Advanced stage",
     topics: ["vocabulary", "grammar", "translation", "sentences", "writing", "mixed"],
     wordLists: [
       "animals",
@@ -214,30 +216,30 @@ export const ENGLISH_GRADES = {
       "culture",
       "history",
       "community",
-      "emotions"
+      "emotions",
     ],
     curriculum: {
-      summary: "יישור קו לחטיבת הביניים: משפטים מורכבים, זמנים משולבים ודיוק בתרגום נושאים גלובליים.",
+      summary:
+        "Bridge toward middle school: complex sentences, mixed tenses, and precise meaning work on global topics.",
       focus: [
-        "התאמת זמן נכון (Past Continuous, Present Perfect בסיסי, Future).",
-        "שימוש באוצר מילים מתקדם בנושא קיימות, תרבות וטכנולוגיה."
+        "Choose the right tense (Past Continuous, basic Present Perfect, Future).",
+        "Use advanced vocabulary on sustainability, culture, and technology.",
       ],
       skills: [
-        "תרגום דו-כיווני של משפטים בני 8–10 מילים.",
-        "כתיבת טענות קצרות (דעה) במצב הקלדה עם רמזים."
+        "Two-way meaning practice for sentences of 8–10 words.",
+        "Write short opinion claims in typing mode with hints.",
       ],
       grammar: [
-        "Past Continuous לצד Past Simple, היכרות עם Present Perfect.",
-        "Conditionals type 0/1 ומודאליים should / might / could."
+        "Past Continuous beside Past Simple, and an introduction to Present Perfect.",
+        "Conditionals type 0/1 and modals should / might / could.",
       ],
       vocabulary: [
-        "סוגיות גלובליות, סביבה וקיימות, תרבות וזהות דיגיטלית.",
-        "טכנולוגיה, היסטוריה, קהילה ורגשות מורכבים."
+        "Global issues, environment and sustainability, culture and digital identity.",
+        "Technology, history, community, and complex feelings.",
       ],
       benchmark: [
-        "דיוק ‎90%‎ ומעלה במצב דקדוק או משפטים במשך 3 תרגולים ברצף.",
-      ]
-    }
-  }
+        "90% accuracy or higher in grammar or sentence mode across 3 practices in a row.",
+      ],
+    },
+  },
 };
-

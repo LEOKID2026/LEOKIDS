@@ -32,7 +32,7 @@ import {
   prepareHebrewBookAudioTextForSection,
   prepareHebrewBookSectionAudioText,
   normalizeHebrewHyphensForTts,
-} from "../../lib/learning-book/audio/prepare-hebrew-book-audio-text.js";
+} from "../../lib/learning-book/audio/normalize-hyphens-for-tts.js";
 import {
   prepareEnglishBookAudioTextForSection,
   buildEnglishMixedLanguageSsml,

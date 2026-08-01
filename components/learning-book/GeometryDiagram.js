@@ -1,4 +1,4 @@
-﻿import MixedHebrewMathText from "./MixedHebrewMathText";
+﻿import MixedRtlMathText from "./MixedRtlMathText";
 import { bookMathIsolateStyle } from "../../lib/learning-book/book-math-display";
 import { isKnownGeometryDiagramType } from "../../lib/learning-book/geometry-diagram-registry";
 import { useMemo } from "react";
@@ -558,7 +558,7 @@ export default function GeometryDiagram({ type, options = {} }) {
       {options.caption === "1" || options.caption === "true" ? (
         options.label ? (
           <figcaption className="mt-3 text-center text-sm font-semibold sm:text-base" dir="ltr">
-            <MixedHebrewMathText text={options.label} />
+            <MixedRtlMathText text={options.label} />
           </figcaption>
         ) : null
       ) : null}

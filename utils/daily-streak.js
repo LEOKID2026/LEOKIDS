@@ -19,17 +19,17 @@ export function loadDailyStreak(storageKey = "mleo_daily_streak") {
     const todayKey = getTodayKey();
     const yesterdayKey = getYesterdayKey();
     
-    // אם היום הוא היום האחרון - הרצף נמשך
+    //      -  
     if (saved.lastDate === todayKey) {
       return { streak: saved.streak || 0, lastDate: todayKey };
     }
     
-    // אם היום הוא יום אחרי היום האחרון - הרצף נמשך
+    //        -  
     if (saved.lastDate === yesterdayKey) {
       return { streak: (saved.streak || 0) + 1, lastDate: todayKey };
     }
     
-    // אם עבר יותר מיום - הרצף מתחיל מחדש
+    //     -   
     return { streak: 1, lastDate: todayKey };
   } catch {
     return { streak: 1, lastDate: getTodayKey() };
@@ -46,15 +46,15 @@ export function updateDailyStreak(storageKey = "mleo_daily_streak") {
     
     let newStreak = 1;
     
-    // אם היום הוא היום האחרון - הרצף נשאר
+    //      -  
     if (saved.lastDate === todayKey) {
       newStreak = saved.streak || 0;
     }
-    // אם היום הוא יום אחרי היום האחרון - הרצף נמשך
+    //        -  
     else if (saved.lastDate === yesterdayKey) {
       newStreak = (saved.streak || 0) + 1;
     }
-    // אם עבר יותר מיום - הרצף מתחיל מחדש
+    //     -   
     else {
       newStreak = 1;
     }

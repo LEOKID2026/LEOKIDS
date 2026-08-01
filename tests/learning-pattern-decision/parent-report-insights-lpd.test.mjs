@@ -16,7 +16,7 @@ import {
 import {
   buildParentInsightsFromTopicEngineHe,
   buildTopicEngineInsightLineHe,
-} from "../../utils/parent-report-engine-insights-he.js";
+} from "../../utils/parent-report-engine-insights.js";
 
 const START = Date.UTC(2026, 3, 1);
 const END = Date.UTC(2026, 4, 1);
@@ -33,7 +33,7 @@ function lpdRow({ q, c, w, acc, name, bucket = "addition", subjectId = "math", m
   return {
     rowKey: `math_${bucket}`,
     subjectId,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabel: "מתמטיקה",
     label: name,
     questions: q,
     wrong: w,

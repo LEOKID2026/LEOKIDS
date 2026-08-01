@@ -1,0 +1,90 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Paralelo",
+      "Perpendicular"
+    ],
+    "triangles": [
+      "Equilátero",
+      "Isósceles",
+      "Escaleno"
+    ],
+    "quadrilaterals": [
+      "Cuadrado",
+      "Rectángulo",
+      "Paralelogramo",
+      "trapezoide"
+    ],
+    "transformations": [
+      "Traducción",
+      "Reflexión",
+      "Rotación",
+      "Sin movimiento"
+    ],
+    "concept_transform": [
+      "Traducción",
+      "Reflexión",
+      "Rotación",
+      "Sin movimiento"
+    ],
+    "shapes_basic_square": [
+      "Cuadrado",
+      "Rectángulo"
+    ],
+    "shapes_basic_rectangle": [
+      "Cuadrado",
+      "Rectángulo"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "No hay lados iguales"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "Sin ángulos rectos"
+    ]
+  },
+  "solidNames": [
+    "Cubo",
+    "Prisma rectangular",
+    "Cilindro",
+    "Pirámide",
+    "Cono",
+    "Esfera"
+  ],
+  "shapeWords": {
+    "": "Cuadrado",
+    "": "Rectángulo",
+    "": "Paralelogramo",
+    "": "Trapecio",
+    "": "Verdadero",
+    " ": "Falso",
+    "": "Rotación",
+    "": "Traslación",
+    "": "Reflexión",
+    " ": "Sin movimiento",
+    "": "Paralelas",
+    "": "Perpendiculares",
+    " ": "Equilátero",
+    " ": "Isósceles",
+    " ": "Escaleno"
+  },
+  "solidAliases": {
+    "cube": "Cubo",
+    "rectangular prism": "Prisma rectangular",
+    "cylinder": "Cilindro",
+    "pyramid": "Pirámide",
+    "cone": "Cono",
+    "sphere": "Esfera"
+  }
+}

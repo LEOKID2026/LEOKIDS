@@ -7,8 +7,8 @@ function mulberry32(seed) {
   return () => {
     a += 0x6d2b79f5;
     let t = a;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    t = Math.imul(t ^ (t >>> 15), t || 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t || 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
@@ -128,7 +128,7 @@ function hashForTopicSeeding(spec, anchorEndMs, subject, topic) {
     for (const tk of SUBJECT_BUCKETS[sid] || []) {
       const r = spec.topicSettings?.[sid]?.[tk];
       if (r && r.enabled) {
-        h = Math.imul(h ^ (0 | Number(r.targetQuestions) * 19), 16777619);
+        h = Math.imul(h ^ (0 || Number(r.targetQuestions) * 19), 16777619);
         h ^= h >>> 12;
         h ^= h >>> 1;
         h = Math.imul(h ^ 0x9e3779b9, 0x9e3779b9) >>> 0;

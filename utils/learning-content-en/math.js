@@ -8,95 +8,14 @@ const WEEKDAYS_EN = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday",
-];
+  "Saturday"];
 
-const OBJECTS_EN = {
-  כדורים: "balls",
-  תפוחים: "apples",
-  עפרונות: "pencils",
-  כוכבים: "stars",
-};
-
-const YES_NO = { כן: "Yes", לא: "No" };
-const PRIME_COMPOSITE = {
-  ראשוני: "prime",
-  פריק: "composite",
-  "לא ראשוני": "not prime",
-};
-const PARITY = { זוגי: "even", "אי-זוגי": "odd", "אי-זוגx": "odd", "אי-זוגi": "odd" };
-
-const MATH_PHRASES = [
-  ["האם המספר", "Is the number"],
-  ["הוא זוגי?", "even?"],
-  ["השלם את המספר החסר על ישר המספרים:", "Fill in the missing number on the number line:"],
-  ["שברים:", "Fractions:"],
-  ["חשיבה על שבר כחלק משלם:", "Fraction as part of a whole:"],
-  ["מה המספר השלם?", "What is the whole number?"],
-  ["מהו חצי מ-", "What is half of "],
-  ["מהו רבע מ-", "What is a quarter of "],
-  ["חצי מ-", "Half of "],
-  ["רבע מ-", "A quarter of "],
-  [" הוא ", " is "],
-  ["תרגיל ", "Exercise: "],
-  ["האם ", "Is "],
-  [" מתחלק ב-", " divisible by "],
-  [" מתחלק ב", " divisible by "],
-  [" בלי שארית", " with no remainder"],
-  ["מ.א.ח:", "GCF:"],
-  ["גורם ראשוני:", "Prime factor:"],
-  ["סימני התחלקות", "Divisibility rules"],
-  ["עיגול לעשרות:", "Round to tens:"],
-  ["עיגול למאות:", "Round to hundreds:"],
-  ["חיבור עשרוניים:", "Add decimals:"],
-  ["חיסור עשרוניים:", "Subtract decimals:"],
-  ["המשיכו את רצף המספרים", "Continue the number pattern"],
-  ["ספרו בקפיצות של", "Count by"],
-  ["ספור אחורה:", "Count backward:"],
-  ["ספור קדימה:", "Count forward:"],
-  ["חסר במשוואה:", "Missing in the equation:"],
-  ["שבר חלקי:", "Fractions:"],
-  ["עד 10: מה מוסיפים ל-", "Up to 10: what do you add to "],
-  [" כדי לסיים ל-10", " to reach 10?"],
-  ["בלי לחשב בטור: מה החיבור ל-", "Without a column: what addition to "],
-  [" שמתחיל ב-", " starts with "],
-  ["ושארית", "remainder"],
-  [" מול ", " vs "],
-  ["משבצות", "unit squares"],
-  ["כמה משבצות יש בשטחו?", "how many unit squares cover its area?"],
-  ["הצורה הפוכה כמו בראי - איזו תנועה?", "The shape flips like in a mirror — which move?"],
-  ["לא עשינו שום דבר לצורה - מה הסוג?", "We did nothing to the shape — which type?"],
-  ["פעולה שצורה מסתובבת סביב נקודה בזווית - מה שמה?", "A turn around a point — what is it called?"],
-  ["אתגר: רק המיקום משתנה, בלי סיבוב ובלי שינוי גודל - איזו תנועה?", "Challenge: only position changes, no rotation or size change — which move?"],
-  ["פעולה ששומרת מרחקים מהמרכז ומשנה זוויות - מה שמה?", "A move that keeps distances from the center and changes angles — what is it called?"],
-  ["פעולה ישומרת מרחקים מהמרכז ומשנה זוויות - מה שמה?", "A move that keeps distances from the center and changes angles — what is it called?"],
-  ["ארבע זוויות ישרות", "four right angles"],
-  ["ארבע צלעות שוות", "four equal sides"],
-  ["זוויות ישרות", "right angles"],
-  ["צלעות שוות", "equal sides"],
-  ["לכל צד", "on each side"],
-  ["לכל הצדדים", "on all sides"],
-  ["בגודל", " sized "],
-  ["מול", "vs"],
-  ["ניתוח:", "Analysis:"],
-  ["זיהוי:", "Identify:"],
-  ["בדיקה:", "Check:"],
-  ["אתגר:", "Challenge:"],
-  ["מצאו בסיס בחזקה:", "Find the base in the power:"],
-  ["חידת חזקה -", "Power puzzle —"],
-  ["בסיס חסר בחזקה:", "Missing base in the power:"],
-  ["מה התוצאה של", "What is the result of"],
-  ["השלם את המספר החסר", "Fill in the missing number"],
-  ["חשב במילים:", "Calculate in words:"],
-  ["כפול אפס שווה אל", "times zero equals"],
-  ["תמיד כן", "always yes"],
-  ["תמיד לא", "always no"],
-  ["ראשוני", "prime"],
-  ["פריק", "composite"],
-  ["כפול", "times"],
-  ["אפס", "zero"],
-  ["אחד", "one"],
-].sort((a, b) => b[0].length - a[0].length);
+/** Residual HE→EN maps cleared — generators emit English. Keep empty for API stability. */
+const OBJECTS_EN = {};
+const YES_NO = {};
+const PRIME_COMPOSITE = {};
+const PARITY = {};
+const MATH_PHRASES = [];
 
 function applyMathPhrases(text) {
   let out = String(text ?? "");
@@ -152,8 +71,8 @@ export function rebuildMathStemEn(question) {
     return `What is a quarter of ${p.whole ?? p.n}?`;
   }
   if (
-    kind === "frac_compare_like_den_g4" ||
-    kind === "frac_compare_like_den_g3" ||
+    kind === "frac_compare_like_den_g4" |
+    kind === "frac_compare_like_den_g3" |
     kind === "frac_compare_same_den"
   ) {
     if (p.n1 != null && p.n2 != null && p.den != null) {
@@ -161,9 +80,9 @@ export function rebuildMathStemEn(question) {
     }
   }
   if (
-    kind === "frac_same_den_add_g4" ||
-    kind === "frac_same_den_add" ||
-    kind === "frac_same_den_sub_g4" ||
+    kind === "frac_same_den_add_g4" |
+    kind === "frac_same_den_add" |
+    kind === "frac_same_den_sub_g4" |
     kind === "frac_same_den_sub"
   ) {
     if (p.n1 != null && p.n2 != null && p.den != null) {
@@ -375,8 +294,7 @@ export function applyMathLevelPresentationEn(question, ctx) {
         `Compare the two numbers and fill in (<, =, >): ${raw}`,
         `Comparison sign between the numbers: ${raw}`,
         `Choose < , = or > — compare: ${raw}`,
-        `Compare the values and fill in the sign: ${raw}`,
-      ];
+        `Compare the values and fill in the sign: ${raw}`];
       return opts[pv].trim();
     }
     if (mathLevelKey === "medium") {
@@ -384,16 +302,14 @@ export function applyMathLevelPresentationEn(question, ctx) {
         `Fill in the correct comparison sign: ${raw}`,
         `Which sign compares the pair? ${raw}`,
         `Match the correct comparison sign: ${raw}`,
-        `Fill in the sign between the number expressions: ${raw}`,
-      ];
+        `Fill in the sign between the number expressions: ${raw}`];
       return opts[pv].trim();
     }
     const opts = [
       `Fill in the comparison sign — check before you choose: ${raw}`,
       `Compare carefully and choose a sign: ${raw}`,
       `Compare with care and pick a sign: ${raw}`,
-      `Quick check: which sign fits? ${raw}`,
-    ];
+      `Quick check: which sign fits? ${raw}`];
     return opts[pv].trim();
   }
 
@@ -479,9 +395,9 @@ export function applyMathLevelPresentationEn(question, ctx) {
   }
 
   if (
-    kind === "frac_half" ||
-    kind === "frac_half_reverse" ||
-    kind === "frac_quarter" ||
+    kind === "frac_half" |
+    kind === "frac_half_reverse" |
+    kind === "frac_quarter" |
     kind === "frac_quarter_reverse"
   ) {
     if (mathLevelKey === "easy") return `Fractions: ${q0}`;
@@ -579,15 +495,11 @@ export function applyMathLevelPresentationEn(question, ctx) {
   }
 
   const looksNumericExercise =
-    /=\s*__|=\s*\?\?|___|\?\?=/.test(q0) ||
+    /=\s*__|=\s*\?\?|___|\?\?=/.test(q0) |
     (/^\d/.test(q0.trim()) && /[+\-×÷]/.test(q0));
 
   if (looksNumericExercise) return q0;
   if (/^Exercise\b/i.test(q0)) return q0;
-
-  if (/^תרגיל\s/.test(q0)) {
-    return q0.replace(/^תרגיל\s/, "Exercise: ");
-  }
 
   if (containsHebrew(q0) && params?.exerciseText && !containsHebrew(String(params.exerciseText))) {
     return String(params.exerciseText);
@@ -607,15 +519,6 @@ function localizeMathField(_field, value, question) {
   if (YES_NO[text.trim()]) return YES_NO[text.trim()];
   if (PRIME_COMPOSITE[text.trim()]) return PRIME_COMPOSITE[text.trim()];
   if (PARITY[text.trim()]) return PARITY[text.trim()];
-  if (/^זוגi?$/.test(text.trim())) return "even";
-  if (/^זוג/.test(text.trim())) return "even";
-  if (/^אי-?זוג/.test(text.trim())) return "odd";
-  // Only map כ/ל → Yes/No on short MCQ/answer tokens — never on stems
-  // (e.g. "כיתה ד׳ - …" must not become "Yes").
-  if (isShortAnswerField(_field)) {
-    if (/^כן\.?$/.test(text.trim()) || text.trim() === "כ") return "Yes";
-    if (/^לא\.?$/.test(text.trim()) || text.trim() === "ל") return "No";
-  }
 
   const rebuilt = rebuildMathStemEn(question);
   if (rebuilt && !containsHebrew(rebuilt) && (_field === "question" || _field === "exerciseText" || _field === "questionLabel")) {
@@ -635,11 +538,7 @@ function localizeMathField(_field, value, question) {
 
   const stripped = phrased
     .replace(/(\d+)\s+remainder\s+(\d+)/gu, "$1 remainder $2")
-    .replace(/(\d+)\s+ושארית\s+(\d+)/gu, "$1 remainder $2")
-    .replace(/האם המספר (\d+) הוא זוגי\?/u, "Is $1 an even number?")
-    .replace(/האם המספר (\d+) מתחלק ב-(\d+)\?/u, "Does $1 divide evenly by $2?")
-    .replace(/^תרגיל\s/u, "Exercise: ")
-    .replace(/[\u0590-\u05FF]+/gu, " ")
+    .replace(/(?!)/gu, " ")
     .replace(/\s{2,}/g, " ")
     .trim();
 
@@ -687,7 +586,7 @@ function resolveMathDisplayStem(question) {
 /**
  * Localize math question for Global English display.
  * Display stems come from params/kind templates — not from translating Hebrew prose.
- * Option tokens (כן/לא, זוגי/…) use closed dictionaries (logical labels), not sentence MT.
+ * Option tokens use closed dictionaries (logical labels), not sentence MT.
  */
 export function localizeMathQuestionEn(question) {
   if (!question) return question;
@@ -713,14 +612,8 @@ export function localizeMathQuestionEn(question) {
       if (YES_NO[text.trim()]) return YES_NO[text.trim()];
       if (PRIME_COMPOSITE[text.trim()]) return PRIME_COMPOSITE[text.trim()];
       if (PARITY[text.trim()]) return PARITY[text.trim()];
-      if (/^כן\.?$/.test(text.trim()) || text.trim() === "כ") return "Yes";
-      if (/^לא\.?$/.test(text.trim()) || text.trim() === "ל") return "No";
       if (OBJECTS_EN[text.trim()]) return OBJECTS_EN[text.trim()];
-      // Numeric / remainder patterns without prose translation
-      const rem = text.match(/^(\d+)\s+ושארית\s+(\d+)$/u);
-      if (rem) return `${rem[1]} remainder ${rem[2]}`;
-      // Leave non-mapped tokens as-is only if no Hebrew letters remain after digit keep
-      const digitsOnly = text.replace(/[\u0590-\u05FF]+/gu, "").trim();
+      const digitsOnly = text.replace(/(?!)/gu, "").trim();
       return digitsOnly || text;
     }
     if (!containsHebrew(String(value ?? ""))) return value;
@@ -738,9 +631,8 @@ export function localizeMathQuestionEn(question) {
     if (YES_NO[ca]) out.correctAnswer = YES_NO[ca];
     else if (PRIME_COMPOSITE[ca]) out.correctAnswer = PRIME_COMPOSITE[ca];
     else if (PARITY[ca]) out.correctAnswer = PARITY[ca];
-    else {
-      const rem = ca.match(/^(\d+)\s+ושארית\s+(\d+)$/u);
-      if (rem) out.correctAnswer = `${rem[1]} remainder ${rem[2]}`;
+    else if (containsHebrew(ca)) {
+      out.correctAnswer = ca.replace(/(?!)/gu, "").trim() || ca;
     }
   }
   if (Array.isArray(out.answers)) {

@@ -3,16 +3,16 @@
  */
 
 const STEM = {
-  pickUpper: "בחר/י את האות הגדולה שמתאימה לאות הקטנה שמוצגת",
-  pickLower: "בחר/י את האות הקטנה שמתאימה לאות הגדולה שמוצגת",
-  pickLetterName: "שמע/י את שם האות - בחר/י את האות הנכונה",
-  pickLetterNameVisual: "בחר/י את האות ששמה נשמע כמו בתמונה",
-  hearSound: "שמע/י את הצליל - בחר/י את האות הנכונה",
-  firstSound: "שמע/י את המילה - מה הצליל הראשון?",
-  pictureWord: "בחר/י את המילה שמתאימה לתמונה",
-  hearWord: "שמע/י את המילה - בחר/י את המילה הנכונה",
-  readWord: "קרא/י את המילה - בחר/י את המילה הנכונה",
-  listenCmd: "שמע/י את ההוראה - בחר/י את הפעולה או החפץ הנכון",
+  pickUpper: "Choose the uppercase letter that matches the lowercase letter shown",
+  pickLower: "Choose the lowercase letter that matches the uppercase letter shown",
+  pickLetterName: "Listen to the letter name — choose the correct letter",
+  pickLetterNameVisual: "Choose the letter whose name matches the picture cue",
+  hearSound: "Listen to the sound — choose the correct letter",
+  firstSound: "Listen to the word — what is the first sound?",
+  pictureWord: "Choose the word that matches the picture",
+  hearWord: "Listen to the word — choose the correct word",
+  readWord: "Read the word — choose the correct word",
+  listenCmd: "Listen to the instruction — choose the correct action or object",
 };
 
 /** @param {object} row */

@@ -5,6 +5,7 @@ import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../lib/learning-book/learning-book-nav";
 import { GEOMETRY_G5_BOOK_META } from "../../../../../lib/learning-book/geometry-g5-registry";
 import { useMemo } from "react";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 const SUBJECT = "geometry";
 const GRADE = "g5";
@@ -34,8 +35,10 @@ export default function GeometryG5BookIndex({ batches }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx) {
+  const { params, req, resolvedUrl, query } = ctx;
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadGeometryG5TocEntries } = await import("../../../../../lib/learning-book/load-geometry-g5-pages");
-  const batches = loadGeometryG5TocEntries();
+  const batches = loadGeometryG5TocEntries({ contentLocale });
   return { props: { batches } };
 }

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "worksheet": "Hoja de actividades",
+    "name": "Nombre: ________________",
+    "date": "Fecha: ________________",
+    "options": "Opciones:",
+    "answer": "Respuesta:",
+    "question": "Pregunta",
+    "answer_2": "Respuesta",
+    "answer_key": "Clave de respuestas"
+  }
+}

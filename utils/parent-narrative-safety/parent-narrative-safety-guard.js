@@ -13,13 +13,12 @@ import {
   PERMANENT_ABILITY_RES,
   SAFE_THIN_DATA_CAUTION_RES,
   UNSAFE_THIN_DATA_MIXED_CONCLUSION_RES,
-  UNSUPPORTED_ADVANCE_RES,
-} from "./parent-narrative-safety-contract.js";
+  UNSUPPORTED_ADVANCE_RES} from "./parent-narrative-safety-contract.js";
 
 /** @param {string} s */
 function normalizeHe(s) {
   return String(s || "")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
 }
 
@@ -48,17 +47,17 @@ function isUnsafeThinDataMixedConclusionHe(text) {
 }
 
 /**
- * Cautionary templates that contain words like "חד משמעי" but are not certainty claims.
+ * Cautionary templates that contain words like "" but are not certainty claims.
  * @param {string} text
  */
 function scrubCautionaryOverconfidenceFalsePositives(text) {
   return String(text)
-    .replace(/לפני\s+לומר\s+משהו\s+חד[\s-]*משמעית?/gu, " ")
-    .replace(/לומר\s+משהו\s+חד[\s-]*משמעית?/gu, " ")
-    .replace(/לא\s+לקבוע\s+חד[\s-]*משמעית?/gu, " ")
-    .replace(/כדי\s+שיהיה\s+חד[\s-]*משמעית?\s+מה\s+לעשות/gu, " ")
-    .replace(/אין\s+כרגע\s+פעולה\s+ביתית\s+חד-משמעית/gu, " ")
-    .replace(/פעולה\s+ביתית\s+חד-משמעית/gu, " ");
+    .replace(/\s+\s+\s+[\s-]*?/gu, "")
+    .replace(/\s+\s+[\s-]*?/gu, "")
+    .replace(/\s+\s+[\s-]*?/gu, "")
+    .replace(/\s+\s+[\s-]*?\s+\s+/gu, "")
+    .replace(/\s+\s+\s+\s+-/gu, "")
+    .replace(/\s+\s+-/gu, "");
 }
 
 /** @param {string} text */
@@ -149,19 +148,18 @@ export function validateParentNarrativeSafety(input) {
       code,
       severity,
       message,
-      ...(detail ? { detail } : {}),
-    });
+      ...(detail ? { detail } : {})});
     if (blocking) blockedReasons.push(code);
   }
 
-  /** Reduce must_not_say false positives (negated “לא מאסטרי”, cautious “חד משמעית” about actions). */
+  /** Reduce must_not_say false positives (negated “ ”, cautious “ ” about actions). */
   function scrubForMustNotSayScan(s) {
     return String(s)
-      .replace(/לא\s+מאסטרי(?:\s+מלא)?/gu, " ")
-      .replace(/לא\s+לפרש\s+כמאסטרי\s+מלא/gu, " ")
-      .replace(/כמאסטרי\s+מלא/gu, " ")
-      .replace(/פעולה\s+ביתית\s+חד-משמעית/gu, " ")
-      .replace(/אין\s+כרגע\s+פעולה\s+ביתית\s+חד-משמעית/gu, " ");
+      .replace(/\s+(?:\s+)?/gu, "")
+      .replace(/\s+\s+\s+/gu, "")
+      .replace(/\s+/gu, "")
+      .replace(/\s+\s+-/gu, "")
+      .replace(/\s+\s+\s+\s+-/gu, "");
   }
 
   if (!narrativeText.length) {
@@ -175,8 +173,7 @@ export function validateParentNarrativeSafety(input) {
       medicalLanguageFindings,
       recommendationFindings,
       infoFindings,
-      cautionaryThinDataFindings,
-    });
+      cautionaryThinDataFindings});
   }
 
   // --- mustNotSay (ASCII + configurable Hebrew phrases)
@@ -188,7 +185,7 @@ export function validateParentNarrativeSafety(input) {
     const p = String(phrase).trim();
     if (!p) continue;
     const hit =
-      /[\u0590-\u05FF]/.test(p) ? scanForBanned.includes(p) : lower.includes(p.toLowerCase());
+      /[^\s\S]/.test(p) ? scanForBanned.includes(p) : lower.includes(p.toLowerCase());
     if (hit) {
       mustNotSayHits.push(p);
       record(ISSUE_CODES.must_not_say, "high", `Forbidden phrase for parent surface: "${p}"`, p, true);
@@ -318,8 +315,7 @@ export function validateParentNarrativeSafety(input) {
     medicalLanguageFindings,
     recommendationFindings,
     infoFindings,
-    cautionaryThinDataFindings,
-  });
+    cautionaryThinDataFindings});
 }
 
 /** @param {Array<{ severity: string, blocking?: boolean }>} issues */
@@ -368,6 +364,5 @@ function finalizeOutcome(issues, blockedReasons, warnings, buckets) {
     infoFindings,
     cautionaryThinDataFindings,
     infoCount,
-    safeSummary: null,
-  };
+    safeSummary: null};
 }

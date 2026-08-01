@@ -28,11 +28,11 @@ const SCAN_ROOTS = [
   "utils/parent-report-language",
   "utils/parent-report-ai",
   "utils/parent-report-v2.js",
-  "utils/parent-report-ui-explain-he.js",
+  "utils/parent-report-ui-explain.js",
   "utils/parent-report-row-diagnostics.js",
   "utils/parent-data-presence.js",
   "utils/detailed-parent-report.js",
-  "utils/detailed-report-parent-letter-he.js",
+  "utils/detailed-report-parent-letter.js",
   "utils/contracts/narrative-contract-v1.js",
   "utils/learning-patterns-analysis.js",
   "utils/topic-next-step-engine.js",
@@ -296,8 +296,8 @@ const {
 const { buildNarrativeContractV1, narrativeSectionTextHe } = await import(
   u("utils/contracts/narrative-contract-v1.js")
 );
-const { normalizeParentFacingHe } = await import(
-  u("utils/parent-report-language/parent-facing-normalize-he.js")
+const { normalizeParentFacing } = await import(
+  u("utils/parent-report-language/parent-facing-normalize.js")
 );
 const {
   findParentCopyForbiddenFragmentsInString,
@@ -323,7 +323,7 @@ const subjects = [
 
 function addScenario(id, desc, route, subject, grade, texts) {
   for (const txt of texts.filter(Boolean)) {
-    const norm = normalizeParentFacingHe(String(txt));
+    const norm = normalizeParentFacing(String(txt));
     scenarioRows.push({
       scenario_id: id,
       scenario_description: desc,

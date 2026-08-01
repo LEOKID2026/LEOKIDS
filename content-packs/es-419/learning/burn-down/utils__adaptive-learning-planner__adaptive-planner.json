@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "No hay suficiente contexto para planificar (tema faltante).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "Se necesita más actividad de aprendizaje antes de sugerir un próximo enfoque.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "El sistema de aprendizaje necesita un poco más de datos de práctica antes de sugerir el siguiente paso.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Reúna algunos elementos de práctica más; Se aplazan las conclusiones.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "La práctica de inglés puede continuar, pero un profesor debe confirmar el rumbo de las habilidades.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "El etiquetado en inglés está incompleto en el banco de contenidos; El planificador no enrutará automáticamente las habilidades específicas.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "Esperar a los metadatos de preguntas verificadas antes de sugerir una ruta avanzada.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "Los metadatos de habilidades para el siguiente paso no están confirmados; mantener el avance automático.",
+    "short_probe_to_verify_understanding_versus_guessing": "Sonda corta para verificar la comprensión frente a las conjeturas.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Señales inconsistentes o con muchas conjeturas: utilice un conjunto de diagnóstico pequeño.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Práctica adicional en la habilidad actual en una dificultad de apoyo.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Práctica dirigida a la misma habilidad; dificultad mantenida o bajada ligeramente.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Breve revisión de una habilidad básica que respalda el tema actual.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Fortalezca una habilidad previa antes de esforzarse más en la habilidad principal.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Listo para una práctica un poco más desafiante en la misma línea de habilidades.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "Las señales respaldan un cauteloso aumento de las dificultades con el seguimiento.",
+    "continue_solid_practice_at_the_current_level": "Continuar con una práctica sólida al nivel actual.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Mantener la dificultad actual mientras consolida el dominio.",
+    "review_style_practice_on_the_current_skill": "Práctica de estilo repaso sobre la habilidad actual.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "El motor sugiere revisión; El planificador se alinea con la práctica de la misma habilidad.",
+    "steady_practice_on_the_current_focus": "Práctica constante en el enfoque actual.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Camino seguro predeterminado: continúa la práctica sin avanzar en la dificultad."
+  }
+}

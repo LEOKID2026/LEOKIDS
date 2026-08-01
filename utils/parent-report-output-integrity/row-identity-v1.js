@@ -9,12 +9,12 @@ import { practiceGradeRelation } from "../../lib/learning-supabase/practice-grad
 import {
   classifyTopicEvidenceBand,
   hasTopicLevelEvidence,
-  resolveHasSubskillMetadataFromRowSources,
+  resolveHasSubskillMetadataFromRowSources
 } from "../parent-report-topic-evidence.js";
 
 export const ROW_IDENTITY_CONTRACT_VERSION = "v1";
 
-const SUBJECT_IDS = ["math", "geometry", "english", "science", "hebrew", "moledet-geography"];
+const SUBJECT_IDS = ["math", "geometry", "english", "science"];
 
 const SAFE_PART = /^[a-z0-9_-]+$/i;
 
@@ -41,7 +41,7 @@ export function parseCanonicalTopicFromRowKey(topicRowKey) {
     return {
       canonicalTopicKey: raw.slice(0, idx) || raw,
       contentGradeKey: raw.slice(idx + gradeSep.length) || null,
-      topicRowKey: raw,
+      topicRowKey: raw
     };
   }
   const scoped = splitTopicRowKey(raw);
@@ -50,7 +50,7 @@ export function parseCanonicalTopicFromRowKey(topicRowKey) {
   return {
     canonicalTopicKey: scoped.bucketKey || raw,
     contentGradeKey: gk,
-    topicRowKey: raw,
+    topicRowKey: raw
   };
 }
 
@@ -149,7 +149,7 @@ export function buildRowIdentityV1(fields) {
     evidenceSourceCounts:
       fields?.evidenceSourceCounts && typeof fields.evidenceSourceCounts === "object" && !Array.isArray(fields.evidenceSourceCounts)
         ? fields.evidenceSourceCounts
-        : {},
+        : {}
   };
 }
 
@@ -177,7 +177,7 @@ const COLLECT_MORE_DATA_HE = reportPackCopy("utils__parent-report-output-integri
  */
 export function textImpliesThinDataMislabel(identity, text) {
   const t = String(text || "");
-  if (!t.includes(COLLECT_MORE_DATA_HE) && !t.includes("לאסוף עוד מידע") && !/עדיין מוקדם לקבוע|אין מספיק מידע על המצב|still too early to decide|not enough information about the situation/iu.test(t)) {
+  if (!t.includes(COLLECT_MORE_DATA_HE) && !t.includes("") && !/(?!)/iu.test(t)) {
     return false;
   }
   return identity.hasTopicLevelEvidence && !identity.thinEvidenceDowngraded;
@@ -209,7 +209,7 @@ export function assertDistinctSourceIds(identities) {
     if (seen.has(sid) && seen.get(sid) !== id.topicRowKey) {
       return {
         ok: false,
-        message: `duplicate sourceId ${sid} for rows ${seen.get(sid)} vs ${id.topicRowKey}`,
+        message: `duplicate sourceId ${sid} for rows ${seen.get(sid)} vs ${id.topicRowKey}`
       };
     }
     seen.set(sid, id.topicRowKey);
@@ -228,9 +228,8 @@ export function parentLabelHasGradeContext(displayName, identities) {
   if (grades.size < 2) return true;
   return sameLabel.every(
     (i) =>
-      /כיתה|מעל|נמוך|תרגול ב|g[1-6]/iu.test(String(i.recommendedStepLabelHe || "")) === false &&
-      (i.contentGradeKey != null || /כיתה|מעל|תרגול/u.test(String(i.displayName || ""))),
-  );
+      /(?!)/iu.test(String(i.recommendedStepLabelHe || "")) === false &&
+      (i.contentGradeKey != null || /(?!)/u.test(String(i.displayName || ""))));
 }
 
 export const OUTPUT_INTEGRITY_SUBJECT_IDS = SUBJECT_IDS;
@@ -244,5 +243,5 @@ export default {
   textImpliesThinDataMislabel,
   sectionPlacementConsistent,
   assertDistinctSourceIds,
-  parentLabelHasGradeContext,
+  parentLabelHasGradeContext
 };

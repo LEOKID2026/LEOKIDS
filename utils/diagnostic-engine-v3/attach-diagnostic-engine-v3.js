@@ -17,10 +17,8 @@ export function attachDiagnosticEngineV3(baseReport, opts = {}) {
     geometry: baseReport.geometryTopics,
     english: baseReport.englishTopics,
     science: baseReport.scienceTopics,
-    hebrew: baseReport.hebrewTopics,
     history: baseReport.historyTopics,
-    "moledet-geography": baseReport.moledetGeographyTopics,
-    ...(baseReport.maps && typeof baseReport.maps === "object" ? baseReport.maps : {}),
+    ...(baseReport.maps && typeof baseReport.maps === "object" ? baseReport.maps : {})
   };
 
   const rawMistakesBySubject =
@@ -51,7 +49,7 @@ export function attachDiagnosticEngineV3(baseReport, opts = {}) {
     startMs,
     endMs,
     probeEvidence: probeList,
-    diagnosticEngineV2: baseReport.diagnosticEngineV2 || null,
+    diagnosticEngineV2: baseReport.diagnosticEngineV2 || null
   });
 
   baseReport.diagnosticEngineV3 = v3;

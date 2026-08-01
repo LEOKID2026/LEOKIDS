@@ -38,7 +38,7 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
   );
 }
 
-/** @param {{ onBack: () => void, balance: number | null, onOpenHelp: () => void }} props */
+/** @param {{ onBack: () => void, balance: number || null, onOpenHelp: () => void }} props */
 function Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header
@@ -122,8 +122,8 @@ export default function CheckersScreen({ roomId }) {
   const [helpOpen, setHelpOpen] = useState(false);
   const { exitToLobby, leaveBusy } = useArcadeRoomExit({ roomId, stopPolling });
   const onLeaveRoom = exitToLobby;
-  /** @type {[{ r: number, c: number } | null, React.Dispatch<React.SetStateAction<{ r: number, c: number } | null>>]} */
-  const [pick, setPick] = useState(/** @type {{ r: number, c: number } | null} */ (null));
+  /** @type {[{ r: number, c: number } || null, React.Dispatch<React.SetStateAction<{ r: number, c: number } || null>>]} */
+  const [pick, setPick] = useState(/** @type {{ r: number, c: number } || null} */ (null));
 
   useEffect(() => {
     setPick(null);

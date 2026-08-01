@@ -1,36 +1,33 @@
 import { NUMERIC_GATES } from "./constants.js";
 
 const FORBIDDEN_SUBSTRINGS = [
-  "אבחון קליני",
+  "",
   "ADHD",
-  "מוגבל לומד",
-  "לא יכול ללמוד",
-  "תמיד ייכשל",
-  "אין לו סיכוי",
-  "אוטיזם",
-  "דיסלקציה",
-  "חוסר תקינות",
-];
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""];
 
 const UNCERTAINTY_MARKERS = [
-  "אין די נתונים",
-  "לא חד משמעי",
-  "מידת הוודאות",
-  "אי ודאות",
-  "אין מספיק ראיות",
-  "לא ניתן לקבוע",
-  "אין מספיק בסיס",
-  "עדיין מוקדם",
-];
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""];
 
 const SUCCESS_MARKERS = [
-  "שליטה מלאה",
-  "מומלץ להרחיב",
-  "מוכן להתקדם",
-  "נקודת חוזק",
-  "שליטה טובה",
-  "דפוס לימודי פעיל",
-];
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""];
 
 /**
  * @param {object} p
@@ -84,11 +81,11 @@ export function validateExplanationOutput({ text, requireUncertainty, evidenceRe
 
     const readiness = canonicalState.assessment?.readiness;
     const confidence = canonicalState.assessment?.confidenceLevel;
-    if (readiness === "insufficient" && (t.includes("מוכן להתקדם") || t.includes("ready to advance"))) {
+    if (readiness === "insufficient" && (t.includes("") || t.includes("ready to advance"))) {
       readinessConfidenceCoherencePass = false;
       reasonCodes.push("readiness_coherence:ready_text_for_insufficient");
     }
-    if ((confidence === "low" || confidence === "early_signal_only") && (t.includes("מידת הוודאות גבוהה") || t.includes("Certainty is relatively high"))) {
+    if ((confidence === "low" || confidence === "early_signal_only") && (t.includes("") || t.includes("Certainty is relatively high"))) {
       readinessConfidenceCoherencePass = false;
       reasonCodes.push("confidence_coherence:high_text_for_low_confidence");
     }

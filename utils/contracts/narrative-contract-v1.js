@@ -41,8 +41,7 @@ const FORBIDDEN_PHRASES = Object.freeze([
   "completely certain",
   "with full certainty",
   "without any doubt at all",
-  "unequivocally",
-]);
+  "unequivocally"]);
 
 function normalizeTopicKey(v) {
   const s = String(v ?? "").trim();
@@ -110,18 +109,14 @@ function deriveRecommendationEligibility(input) {
 function deriveEnvelope(input) {
   const q = Math.max(
     0,
-    Math.round(Number(input?.questions ?? input?.q ?? input?.contractsV1?.evidence?.questionCount) || 0),
-  );
+    Math.round(Number(input?.questions ?? input?.q ?? input?.contractsV1?.evidence?.questionCount) || 0));
   const acc = Math.max(
     0,
     Math.min(
       100,
       Math.round(
-        Number(input?.accuracy ?? input?.contractsV1?.evidence?.accuracyPct ?? input?.contractsV1?.evidence?.accuracy) ||
-          0,
-      ),
-    ),
-  );
+        Number(input?.accuracy ?? input?.contractsV1?.evidence?.accuracyPct ?? input?.contractsV1?.evidence?.accuracy) |
+          0)));
   const readiness = normalizeReadiness(input?.contractsV1?.readiness?.readiness);
   const confidenceBand = normalizeConfidenceBand(input?.contractsV1?.confidence?.confidenceBand);
   const decisionTier = normalizeDecisionTier(input?.contractsV1?.decision?.decisionTier);
@@ -164,14 +159,12 @@ function buildObservationSlot(displayName, q, acc, seed) {
     return pickVariant(seed, [
       `In ${displayName} there's still too little practice in the selected period to know how it's really going.`,
       `In ${displayName} we're only seeing a few attempts so far - that's okay; we'll add a bit more and come back to it.`,
-      `In ${displayName} there's still little practice in the selected period, so we're keeping a cautious wording.`,
-    ]);
+      `In ${displayName} there's still little practice in the selected period, so we're keeping a cautious wording.`]);
   }
   return pickVariant(seed, [
     `In ${displayName} in the selected period there are ${q} questions, with about ${acc}% accuracy.`,
     `In ${displayName}, ${q} questions were collected this period, with accuracy around ${acc}%.`,
-    `In ${displayName}, ${q} questions were collected this period, with average accuracy of about ${acc}%.`,
-  ]);
+    `In ${displayName}, ${q} questions were collected this period, with average accuracy of about ${acc}%.`]);
 }
 
 function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc = 0) {
@@ -179,8 +172,7 @@ function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc =
     return pickVariant(seed, [
       "It's still too early to set a clear direction here - we'll keep watching the practice.",
       "It's too early to write a final summary; we'll add a bit more practice and see how it holds.",
-      "There still isn't enough data to set a clear direction - we'll move slowly and carefully.",
-    ]);
+      "There still isn't enough data to set a clear direction - we'll move slowly and carefully."]);
   }
   if (envelope === "WE1") {
     const qWeak = Math.max(0, Math.round(Number(q) || 0));
@@ -189,28 +181,24 @@ function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc =
       return pickVariant(seed, [
         "There's enough practice here to see a pattern, but accuracy is still relatively low - this calls for focused reinforcement.",
         "Enough questions were collected for an initial picture, but the results still point to difficulty - focused reinforcement is worth it before marking the topic as stable.",
-        "The data shows activity this period, but accuracy is low - we're keeping a cautious wording and focused practice.",
-      ]);
+        "The data shows activity this period, but accuracy is low - we're keeping a cautious wording and focused practice."]);
     }
     return pickVariant(seed, [
       "We're starting to see early signs of a direction, but a bit more practice is still needed before settling on one direction.",
       "Sounds like there's a good start here, but it's still better to reinforce a bit more before setting a clear direction.",
-      "This is only an initial picture, and it's still too early for a sharp summary.",
-    ]);
+      "This is only an initial picture, and it's still too early for a sharp summary."]);
   }
   if (envelope === "WE2") {
     return pickVariant(seed, [
       "There's a sensible direction here, and we'd prefer to see it repeat once more before firming up the direction.",
       "The report looks like it's moving in a good direction, and it's worth making sure this isn't a one-time case.",
-      "The direction is relatively positive; we're keeping short, clear reinforcement before calling the topic stable.",
-    ]);
+      "The direction is relatively positive; we're keeping short, clear reinforcement before calling the topic stable."]);
   }
   if (envelope === "WE3") {
     return pickVariant(seed, [
       "The direction looks stable over the period - it's enough to continue with routine practice.",
       "Performance looks relatively well maintained for this period, and we'll keep gently watching.",
-      "There's relatively good stability in the results; we'll keep encouraging and checking now and then that it holds.",
-    ]);
+      "There's relatively good stability in the results; we'll keep encouraging and checking now and then that it holds."]);
   }
   // Grammar/claims fix: the two removed variants asserted attention/fatigue/pressure
   // with zero corresponding evidence input in this contract
@@ -220,8 +208,7 @@ function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc =
   return pickVariant(seed, [
     "There's a relatively strong direction here; we'll keep the same pace and make sure the success keeps repeating over time.",
     "There's relatively good stability in the results; we'll keep checking now and then that it holds going forward.",
-    "The report points to relatively stable performance this period, and we'll keep watching occasionally to make sure it holds.",
-  ]);
+    "The report points to relatively stable performance this period, and we'll keep watching occasionally to make sure it holds."]);
 }
 
 function buildActionSlot(capIntensity, eligible, seed) {
@@ -230,21 +217,18 @@ function buildActionSlot(capIntensity, eligible, seed) {
     return pickVariant(seed, [
       "Short, focused practice at the same level is worth it, then check whether it's really worth changing something.",
       "Do one more short, clear repetition at the current level, before trying a small step forward.",
-      "It's worth continuing to practice at the same difficulty level, then checking again whether it's a good time to advance.",
-    ]);
+      "It's worth continuing to practice at the same difficulty level, then checking again whether it's a good time to advance."]);
   }
   if (capIntensity === "RI2") {
     return pickVariant(seed, [
       "Focused reinforcement is worth it, then a short attempt without guidance in the middle, before raising the difficulty level.",
       "Let's practice with focus and then check a few short questions independently, before advancing.",
-      "Add short reinforcement, check brief independence, and only then check for progress.",
-    ]);
+      "Add short reinforcement, check brief independence, and only then check for progress."]);
   }
   return pickVariant(seed, [
     "A measured step forward can be considered, limited to this specific topic only.",
     "A small, controlled step forward can be considered, limited to this topic only.",
-    "A careful, limited step forward can be taken, only for this topic.",
-  ]);
+    "A careful, limited step forward can be taken, only for this topic."]);
 }
 
 function buildUncertaintySlot(hedgeLevel, seed, questionCount = 0) {
@@ -255,15 +239,13 @@ function buildUncertaintySlot(hedgeLevel, seed, questionCount = 0) {
     return pickVariant(seed, [
       "It's still too early to draw any final conclusion here; we'll continue with regular short practice and check again later.",
       "It's still too early to set a direction - it's worth collecting more practice data and checking again.",
-      "At this stage it's still too early to set a final direction; we'll keep collecting more practice data before deciding.",
-    ]);
+      "At this stage it's still too early to set a final direction; we'll keep collecting more practice data before deciding."]);
   }
   if (hedgeLevel === "light") {
     return pickVariant(seed, [
       "Right now it's worth continuing to practice and paying attention, and checking again after a bit more.",
       "It's worth checking again after a bit more short practice, to make sure the direction holds before firming it up.",
-      "We'll do a bit more short practice and come back to this - with an open mind and no rush.",
-    ]);
+      "We'll do a bit more short practice and come back to this - with an open mind and no rush."]);
   }
   return null;
 }
@@ -298,18 +280,17 @@ export function buildNarrativeContractV1(input) {
   const cappedIntensity = RI_RANK[existingIntensity] > RI_RANK[capIntensity] ? capIntensity : existingIntensity;
   const baseSeed = `${topicKey}|${subjectId}|${displayName}|${envelope}|${q}|${acc}|${cappedIntensity}|${hedgeLevel}`;
   const hasSubskillMetadata = !!(
-    input?.hasSubskillMetadata ||
-    input?.skillDetailAvailable ||
+    input?.hasSubskillMetadata |
+    input?.skillDetailAvailable |
     input?.contractsV1?.evidence?.skillBreakdownAvailable
   );
   let uncertainty = buildUncertaintySlot(hedgeLevel, `${baseSeed}:unc`, q);
   const topicEngineContract = readTopicEngineContract(input);
   const decisionCode =
-    readEngineDecisionCode(topicEngineContract) ||
+    readEngineDecisionCode(topicEngineContract) |
     (input && typeof input === "object" ? String(input[EDC_DECISION_FIELD] || "") : "");
   const evidenceStrength = String(
-    input?.evidenceStrength || topicEngineContract?.evidenceStrength || "",
-  );
+    input?.evidenceStrength || topicEngineContract?.evidenceStrength || "");
   if (q >= 20 || evidenceStrength === ES_STRONG || decisionCode === ED_CLEAR_TOPIC_GAP) {
     const resolved = resolveEngineDecisionUncertaintyText(q, evidenceStrength, decisionCode);
     if (resolved) uncertainty = resolved;
@@ -320,7 +301,7 @@ export function buildNarrativeContractV1(input) {
       uncertainty = uncertainty && hedgeLevel !== "mandatory" ? `${uncertainty} ${skillDetailNote}` : skillDetailNote;
     }
   }
-  if (q >= 50 && uncertainty && /עדיין מוקדם|כדאי לעקוב|מעט נתונים|too early|worth (?:watching|continuing)|little data/u.test(uncertainty)) {
+  if (q >= 50 && uncertainty && /(?!)/u.test(uncertainty)) {
     uncertainty = resolveEngineDecisionUncertaintyText(q, evidenceStrength, decisionCode);
   }
 

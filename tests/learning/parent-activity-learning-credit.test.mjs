@@ -13,7 +13,7 @@ import {
   aggregateReportPayloadFromActivityRows,
   stripInternalReportPayloadFields,
 } from "../../lib/parent-server/report-data-aggregate.server.js";
-import { evidenceSourcePhraseHe } from "../../utils/parent-report-language/grade-insight-he.js";
+import { evidenceSourcePhraseHe } from "../../utils/parent-report-language/grade-insight.js";
 
 test("resolveParentAttemptCreditedTimeMs prefers snapshot creditedTimeMs", () => {
   const ms = resolveParentAttemptCreditedTimeMs({

@@ -4,8 +4,8 @@ import { ParentCopilotPanel } from "./parent-copilot-panel.jsx";
 /**
  * @param {{
  *   payload: object;
- *   selectedContextRef?: object | null;
- *   asyncTurnRunner?: ((input: object) => Promise<any>) | null;
+ *   selectedContextRef?: object || null;
+ *   asyncTurnRunner?: ((input: object) => Promise<any>) || null;
  * }} props
  */
 export default function ParentCopilotShell({ payload, selectedContextRef = null, asyncTurnRunner = null }) {

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 import { flattenMixedHebrewMathVisibleText } from "../../lib/learning-book/book-visible-text-render.js";
 import {
   FORBIDDEN_LEARNING_MATH_STRINGS,

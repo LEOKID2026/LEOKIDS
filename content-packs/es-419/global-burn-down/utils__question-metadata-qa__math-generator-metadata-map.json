@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "No reemplaza la respuesta numérica correcta, las respuestas [] ni el texto de la pregunta después de la generación; solo enriquece los campos de metadatos.",
+    "blanket_patternfamily_math_kind_when_absent": "Patrón de mantaFamilia `math_${kind}` cuando está ausente",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Las filas de sonda + fracción ya llevan diagnosticSkillId/esperadoErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Las filas estándar de operación/tipo usan math_${kind} determinista de habilidad",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Tipos de bordes con parámetros mínimos: patrón de identificación aún seguro math_*"
+  }
+}

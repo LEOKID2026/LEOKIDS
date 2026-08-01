@@ -61,7 +61,7 @@ export default function MleoFruitSliceEngine({
   const loopSessionRef = useRef(0);
   const gameOverRef = useRef(false);
   const struckItemIdsRef = useRef(new Set());
-  const addStrikeRef = useRef(/** @type {((reason: string, itemId?: number, item?: object) => void) | null} */ (null));
+  const addStrikeRef = useRef(/** @type {((reason: string, itemId?: number, item?: object) => void) || null} */ (null));
   const swipeRef = useRef(null);
   const lastSpawnRef = useRef(0);
   const idRef = useRef(0);

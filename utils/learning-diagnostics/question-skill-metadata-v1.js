@@ -7,7 +7,7 @@
 
 import {
   SKILL_PACK_BY_SUBJECT_ID,
-  SKILL_RESOLVER_BY_SUBJECT_ID,
+  SKILL_RESOLVER_BY_SUBJECT_ID
 } from "./diagnostic-framework-v1.js";
 
 export const QUESTION_SKILL_METADATA_V1 = "1.0.0";
@@ -23,8 +23,7 @@ export const ANSWER_TYPES = [
   "ordering",
   "matching",
   "true_false",
-  "unknown",
-];
+  "unknown"];
 
 /**
  * @typedef {object} QuestionSkillMetadataV1
@@ -56,7 +55,7 @@ function numGrade(gradeKey) {
 
 function canonicalSubjectId(adapterSubject) {
   const s = String(adapterSubject || "").toLowerCase();
-  if (s === "moledet_geography" || s === "moledet-geography") return "moledet-geography";
+  
   return s;
 }
 
@@ -91,7 +90,7 @@ function inferAnswerType(q) {
   if (Array.isArray(answers) && answers.length >= 2) {
     const tf =
       answers.length === 2 &&
-      answers.every((a) => /^(true|false|כן|לא|נכון|שגוי)$/i.test(String(a).trim()));
+      answers.every((a) => /(?!)/i.test(String(a).trim()));
     if (tf) return "true_false";
     return "mcq";
   }
@@ -142,9 +141,9 @@ export function buildQuestionSkillMetadataV1(question, context = {}) {
   const skillId = resolver ? resolver(bucketKey) : "general";
 
   const subHint =
-    params?.subtype ||
-    params?.diagnosticSkillId ||
-    params?.patternFamily ||
+    params?.subtype |
+    params?.diagnosticSkillId |
+    params?.patternFamily |
     null;
   const subskillId = defaultSubskillId(
     subjectId,
@@ -167,8 +166,8 @@ export function buildQuestionSkillMetadataV1(question, context = {}) {
   const prerequisiteSkillIds = Array.isArray(prereq) ? prereq.map(String).filter(Boolean) : [];
 
   const generatorId =
-    params?.sourceTrace?.generatorId ||
-    params?.source ||
+    params?.sourceTrace?.generatorId |
+    params?.source |
     (question?._scienceBankId
       ? "science-bank"
       : question?._englishBank
@@ -206,7 +205,7 @@ export function buildQuestionSkillMetadataV1(question, context = {}) {
     answerType,
     generatorId,
     branchId,
-    version: DEFAULT_VERSION,
+    version: DEFAULT_VERSION
   };
 
   if (missingFields.length) out.missingFields = missingFields;
@@ -243,9 +242,9 @@ export function mergeQuestionSkillMetadataIntoParams(question, context) {
         answerType: meta.answerType,
         generatorId: meta.generatorId,
         branchId: meta.branchId,
-        version: meta.version,
-      },
-    },
+        version: meta.version
+      }
+    }
   };
 }
 

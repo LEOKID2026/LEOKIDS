@@ -1,7 +1,7 @@
-/** Primary typed-answer action: one slot swaps בדוק ↔ שאלה הבאה. */
+/** Primary typed-answer action: one slot swaps  ↔  . */
 
-export const MATH_ANSWER_CHECK_LABEL = "בדוק";
-export const MATH_ANSWER_NEXT_LABEL = "שאלה הבאה";
+export const MATH_ANSWER_CHECK_LABEL = "";
+export const MATH_ANSWER_NEXT_LABEL = "";
 
 /**
  * @param {{ selectedAnswer: unknown, textAnswer: unknown }} p

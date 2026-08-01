@@ -18,7 +18,60 @@ import {
   TRANSLATION_POOLS,
   getRuntimeEligiblePhonicsPool,
   getPhonicsPracticeStimulus,
+  resolveEnglishWordMeaning,
+  getLocalizedWordList,
 } from "../data/english-questions/index.js";
+
+/** @param {string} direction */
+function isEnToMeaningDirection(direction) {
+  return direction === "en_to_meaning";
+}
+
+/** @param {string} direction */
+function isMeaningToEnDirection(direction) {
+  return direction === "meaning_to_en";
+}
+
+/**
+ * Normalize active direction keys. Unknown → en_to_meaning.
+ * @param {string} key
+ * @returns {"en_to_meaning"|"meaning_to_en"}
+ */
+function normalizeMeaningDirection(key) {
+  if (isMeaningToEnDirection(key)) return "meaning_to_en";
+  return "en_to_meaning";
+}
+
+/**
+ * Locale meaning from pool row. Prefers `meaning` map, else string gloss, else `en`.
+ * @param {Record<string, unknown>} row
+ * @param {string} [instructionLocale]
+ * @returns {string}
+ */
+function resolvePoolLocalizedMeaning(row, instructionLocale) {
+  if (!row || typeof row !== "object") return "";
+  const m = row.meaning;
+  if (m && typeof m === "object") {
+    const tag = String(instructionLocale || "en")
+      .trim()
+      .replace(/_/g, "-")
+      .toLowerCase();
+    if (tag && typeof m[tag] === "string" && m[tag].trim()) return String(m[tag]).trim();
+    const base = tag.split("-")[0];
+    if (base && typeof m[base] === "string" && m[base].trim()) return String(m[base]).trim();
+    if (
+      (base === "es" || tag.startsWith("es")) &&
+      typeof m["es-419"] === "string" &&
+      m["es-419"].trim()
+    ) {
+      return String(m["es-419"]).trim();
+    }
+    if (typeof m.en === "string" && m.en.trim()) return String(m.en).trim();
+  }
+  if (typeof m === "string" && m.trim()) return m.trim();
+  if (typeof row.en === "string" && row.en.trim()) return String(row.en).trim();
+  return "";
+}
 import {
   englishClassSplitBucket,
   englishPoolItemAllowedWithClassSplit,
@@ -95,8 +148,7 @@ const WRITING_SENTENCES_BASIC = [
   { en: "My mom is kind", he: "say that your mom is kind" },
   { en: "I sit on a chair", he: "say that you sit on a chair" },
   { en: "We run in the park", he: "say that we run in the park" },
-  { en: "I write with a pen", he: "say that you write with a pen" },
-];
+  { en: "I write with a pen", he: "say that you write with a pen" }];
 
 const WRITING_SENTENCES_ADVANCED = [
   { en: "I will visit my grandparents tomorrow", he: "say you will visit your grandparents tomorrow" },
@@ -134,8 +186,7 @@ const WRITING_SENTENCES_ADVANCED = [
   { en: "People who never give up usually reach their goals", he: "say people who never give up usually reach their goals" },
   { en: "Understanding history helps us make better decisions today", he: "say understanding history helps us make better decisions today" },
   { en: "Asking questions is the beginning of all learning", he: "say asking questions is the beginning of all learning" },
-  { en: "Taking care of our planet starts with small daily actions", he: "say taking care of our planet starts with small daily actions" },
-];
+  { en: "Taking care of our planet starts with small daily actions", he: "say taking care of our planet starts with small daily actions" }];
 
 const WRITING_SENTENCES_MASTER = [
   { en: "We should protect the forest to keep animals safe", he: "say we should protect the forest to keep animals safe" },
@@ -165,8 +216,7 @@ const WRITING_SENTENCES_MASTER = [
   { en: "Physical activity and rest are both important for good health", he: "say physical activity and rest are both important for good health" },
   { en: "Being a good friend means listening and showing kindness", he: "say being a good friend means listening and showing kindness" },
   { en: "The ocean covers more than half of our planet", he: "say the ocean covers more than half of our planet" },
-  { en: "Saving energy at home is a simple way to help the planet", he: "say saving energy at home is a simple way to help the planet" },
-];
+  { en: "Saving energy at home is a simple way to help the planet", he: "say saving energy at home is a simple way to help the planet" }];
 
 const DEFAULT_GRADE_PROFILE = {
   choiceCount: 4,
@@ -174,7 +224,7 @@ const DEFAULT_GRADE_PROFILE = {
   grammarPools: ["present_simple"],
   sentencePools: ["routine"],
   writingPools: ["word", "sentence_basic"],
-  vocabDirections: ["en_to_he", "he_to_en"],
+  vocabDirections: ["en_to_meaning", "meaning_to_en"],
 };
 
 const GRADE_PROFILES = {
@@ -185,7 +235,7 @@ const GRADE_PROFILES = {
     grammarPools: ["be_basic"],
     sentencePools: ["base"],
     writingPools: ["word"],
-    vocabDirections: ["en_to_he", "en_to_he", "he_to_en"],
+    vocabDirections: ["en_to_meaning", "en_to_meaning", "meaning_to_en"],
   },
   g2: {
     ...DEFAULT_GRADE_PROFILE,
@@ -222,7 +272,7 @@ const GRADE_PROFILES = {
     grammarPools: ["complex_tenses", "conditionals", "modals", "comparatives"],
     sentencePools: ["advanced", "assigned_sentence_mcq"],
     writingPools: ["sentence_extended", "sentence_master"],
-    vocabDirections: ["he_to_en", "en_to_he", "he_to_en"],
+    vocabDirections: ["meaning_to_en", "en_to_meaning", "meaning_to_en"],
   },
 };
 
@@ -252,8 +302,7 @@ export function buildMcqFromOptionPool(correctAnswer, optionPool, targetChoices)
       (optionPool || [])
         .map((x) => String(mcqCellValue(x) ?? "").trim())
         .filter(Boolean)
-    ),
-  ];
+    )];
   const ca = String(correctAnswer ?? "").trim();
   if (!uniq.includes(ca)) uniq.push(ca);
   const target = Math.max(4, Number(targetChoices) || 4);
@@ -275,8 +324,7 @@ export function buildMcqFromOptionPool(correctAnswer, optionPool, targetChoices)
       "had",
       "can",
       "will",
-      "would",
-    ].find((w) => w !== ca && !uniq.includes(w));
+      "would"].find((w) => w !== ca && !uniq.includes(w));
     if (grammarWrong) {
       uniq.push(grammarWrong);
       continue;
@@ -319,7 +367,7 @@ export function resolveEnglishQType({
   if (selectedTopic === "phonics") return "choice";
 
   if (selectedTopic === "vocabulary") {
-    if (params?.direction === "en_to_he") return "choice";
+    if (isEnToMeaningDirection(params?.direction)) return "choice";
     if (gNum <= 2 && levelKey === "easy") return "choice";
     if (wordCount >= 3) return "choice";
     if (isHardLevel || gNum >= 4) return "typing";
@@ -328,7 +376,7 @@ export function resolveEnglishQType({
   }
 
   if (selectedTopic === "translation") {
-    if (params?.direction === "en_to_he") return "choice";
+    if (isEnToMeaningDirection(params?.direction)) return "choice";
     if (wordCount > 6) return "choice";
     if (isHardLevel || gNum >= 5) return "typing";
     if (isMediumUp && gNum >= 4 && wordCount <= 4) return "typing";
@@ -338,10 +386,10 @@ export function resolveEnglishQType({
   if (selectedTopic === "grammar") {
     const pl = String(question || "").toLowerCase();
     const fillLike =
-      pl.includes("complete") ||
-      pl.includes("fill") ||
-      pl.includes("השלם") ||
-      pl.includes("__") ||
+      pl.includes("complete") |
+      pl.includes("fill") |
+      pl.includes("") |
+      pl.includes("__") |
       (pl.includes("choose") && (pl.includes("___") || pl.includes("__")));
     if (!fillLike) return "choice";
     if (wordCount > 3) return "choice";
@@ -404,12 +452,12 @@ export function generateQuestion(
     selectedTopic = forcedTopic;
   }
   const forcedWordListKey =
-    parseEnglishWordListKeyFromSkillId(forceSkillId) ||
+    parseEnglishWordListKeyFromSkillId(forceSkillId) |
     englishWordListKeyFromPageId(forceKind);
   const forcedPoolKey = parseEnglishPoolKeyFromSkillId(forceSkillId);
   const forcedPhonicsPage = parseEnglishPhonicsPageFromSkillId(forceSkillId);
   const phonicsForceKind =
-    forceKind ||
+    forceKind |
     (forcedPhonicsPage && forcedPhonicsPage.grade === gradeKey
       ? forcedPhonicsPage.pageId
       : "");
@@ -425,8 +473,8 @@ export function generateQuestion(
   const buildAcceptedAnswers = (baseAnswer) => {
     const normalizeQuotes = (value) =>
       String(value ?? "")
-        .replace(/[“”״]/g, '"')
-        .replace(/[‘’׳]/g, "'")
+        .replace(/(?!)/g, '"')
+        .replace(/(?!)/g, "'")
         .trim();
     const stripSurroundingPunctuation = (value) =>
       normalizeQuotes(value).replace(
@@ -450,6 +498,8 @@ export function generateQuestion(
   const gradeConfig = GRADES[gradeKey] || GRADES.g3;
   const gradeProfile = GRADE_PROFILES[gradeKey] || DEFAULT_GRADE_PROFILE;
   const gNum = parseInt(String(gradeKey).replace(/\D/g, ""), 10) || 3;
+  const instructionLocale =
+    probeOpts?.instructionLocale || probeOpts?.interfaceLocale || "en";
   const gradeWordLists = (gradeConfig.wordLists || []).filter(
     (list) => WORD_LISTS[list]
   );
@@ -477,33 +527,37 @@ export function generateQuestion(
   const randomWord =
     wordEntries[Math.floor(Math.random() * wordEntries.length)] || [
       "sun",
-      "the sun",
-    ];
+      "the sun"];
 
   switch (selectedTopic) {
     case "vocabulary": {
       const vocabDirections =
-        gradeProfile.vocabDirections || ["en_to_he", "he_to_en"];
-      const directionKey =
-        vocabDirections[Math.floor(Math.random() * vocabDirections.length)];
-      const directionIsEnglish = directionKey === "en_to_he";
-      if (directionIsEnglish) {
-        question = `What does "${randomWord[0]}" mean?`;
-        correctAnswer = randomWord[1];
+        gradeProfile.vocabDirections || ["en_to_meaning", "meaning_to_en"];
+      const directionKey = normalizeMeaningDirection(
+        vocabDirections[Math.floor(Math.random() * vocabDirections.length)]
+      );
+      const enWord = randomWord[0];
+      const localizedMeaning = resolveEnglishWordMeaning(enWord, {
+        listKey: activeVocabList,
+        instructionLocale,
+      });
+      if (directionKey === "en_to_meaning") {
+        question = `What does "${enWord}" mean?`;
+        correctAnswer = localizedMeaning;
         params = {
-          word: randomWord[0],
-          translation: randomWord[1],
-          direction: "en_to_he",
+          word: enWord,
+          localizedMeaning,
+          direction: "en_to_meaning",
           listKey: activeVocabList,
           patternFamily: "vocab_translation",
         };
       } else {
-        question = `Write the English word for "${randomWord[1]}"`;
-        correctAnswer = randomWord[0];
+        question = `Write the English word for "${localizedMeaning}"`;
+        correctAnswer = enWord;
         params = {
-          word: randomWord[1],
-          translation: randomWord[0],
-          direction: "he_to_en",
+          word: enWord,
+          localizedMeaning,
+          direction: "meaning_to_en",
           listKey: activeVocabList,
           patternFamily: "vocab_recall_en",
         };
@@ -662,46 +716,57 @@ export function generateQuestion(
         correctAnswer = globalBurnDownCopy("utils__english-question-generator", "got_it");
         params = {
           patternFamily: "english_empty_pool",
-          direction: "en_to_he",
+          direction: "en_to_meaning",
         };
         break;
       }
       const translationToEnglish =
-        levelKey === "hard" ||
-        (levelKey === "medium" && gNum >= 4) ||
+        levelKey === "hard" |
+        (levelKey === "medium" && gNum >= 4) |
         (levelKey === "easy" && gNum >= 6);
       englishSourceRow = sentence;
-      const direction = translationToEnglish ? "he_to_en" : "en_to_he";
+      const direction = translationToEnglish ? "meaning_to_en" : "en_to_meaning";
+      const sentenceEn = String(sentence.en || "").trim();
+      const localizedMeaning = resolvePoolLocalizedMeaning(
+        sentence,
+        instructionLocale
+      );
       const trFam =
-        sentence.patternFamily ||
-        (direction === "en_to_he"
+        sentence.patternFamily |
+        (direction === "en_to_meaning"
           ? "translation_clause"
           : "translation_production");
-      if (direction === "en_to_he") {
-        question = `Translate: "${sentence.en}"`;
-        correctAnswer = sentence.he;
+      if (direction === "en_to_meaning") {
+        question = `Translate: "${sentenceEn}"`;
+        correctAnswer = localizedMeaning || sentenceEn;
         params = mergeDiagnosticContractIntoParams(
           {
-            sentence: sentence.en,
-            translation: sentence.he,
-            direction: "en_to_he",
+            sentence: sentenceEn,
+            localizedMeaning: localizedMeaning || sentenceEn,
+            direction: "en_to_meaning",
             patternFamily: trFam,
             difficulty: sentence.difficulty,
             cognitiveLevel: sentence.cognitiveLevel,
+            translationOptionSet: sentencesPool
+              .map((row) => resolvePoolLocalizedMeaning(row, instructionLocale) || String(row.en || "").trim())
+              .filter(Boolean),
           },
           sentence
         );
       } else {
-        question = `Translate: "${sentence.he}"`;
-        correctAnswer = sentence.en;
+        question = `Write in English: "${localizedMeaning || sentenceEn}"`;
+        correctAnswer = sentenceEn;
         params = mergeDiagnosticContractIntoParams(
           {
-            sentence: sentence.he,
-            translation: sentence.en,
-            direction: "he_to_en",
+            sentence: sentenceEn,
+            localizedMeaning: localizedMeaning || sentenceEn,
+            direction: "meaning_to_en",
             patternFamily: trFam,
             difficulty: sentence.difficulty,
             cognitiveLevel: sentence.cognitiveLevel,
+            translationOptionSet: sentencesPool
+              .map((row) => String(row.en || "").trim())
+              .filter(Boolean),
           },
           sentence
         );
@@ -793,14 +858,19 @@ export function generateQuestion(
       const modes = writingPools.length ? writingPools : ["word"];
       const mode = modes[Math.floor(Math.random() * modes.length)] || "word";
       if (mode === "word") {
-        const [en, he] = randomWord;
-        question = `Write in English: "${he}"`;
-        correctAnswer = en;
+        const enWord = randomWord[0];
+        const localizedMeaning = resolveEnglishWordMeaning(enWord, {
+          listKey: activeVocabList,
+          instructionLocale,
+        });
+        question = `Write in English: "${localizedMeaning}"`;
+        correctAnswer = enWord;
         params = {
           type: "word",
-          wordHe: he,
-          wordEn: en,
-          direction: "he_to_en",
+          wordEn: enWord,
+          localizedMeaning,
+          direction: "meaning_to_en",
+          listKey: activeVocabList,
           patternFamily: "writing_word",
         };
       } else {
@@ -818,13 +888,15 @@ export function generateQuestion(
           if (gated.length) pickPool = gated;
         }
         const s = pickPool[Math.floor(Math.random() * pickPool.length)];
-        question = `Write in English: "${s.he}"`;
-        correctAnswer = s.en;
+        const sentenceEn = String(s.en || "").trim();
+        const localizedMeaning = resolvePoolLocalizedMeaning(s, instructionLocale);
+        question = `Write in English: "${localizedMeaning || sentenceEn}"`;
+        correctAnswer = sentenceEn;
         params = {
           type: "sentence",
-          sentenceHe: s.he,
-          sentenceEn: s.en,
-          direction: "he_to_en",
+          sentenceEn,
+          localizedMeaning: localizedMeaning || sentenceEn,
+          direction: "meaning_to_en",
           patternFamily:
             mode === "sentence_master"
               ? "writing_sentence_master"
@@ -832,7 +904,7 @@ export function generateQuestion(
                 ? "writing_sentence_extended"
                 : "writing_sentence_basic",
           subtype: mode,
-          contentSlot: englishClassSplitBucket(String(s.he || s.en || ""), 2),
+          contentSlot: englishClassSplitBucket(String(sentenceEn || ""), 2),
         };
         qType = "typing";
         break;
@@ -866,7 +938,7 @@ export function generateQuestion(
       question = exerciseText || questionLabel;
       correctAnswer = phonicsQ.correct;
       const skillId =
-        englishPhonicsSkillIdFromBookPageRef(phonicsQ.bookPageRef) ||
+        englishPhonicsSkillIdFromBookPageRef(phonicsQ.bookPageRef) |
         (phonicsForceKind ? `english:phonics:${gradeKey}:${phonicsForceKind}` : null);
       params = mergeDiagnosticContractIntoParams(
         {
@@ -927,8 +999,7 @@ export function generateQuestion(
       "can",
       "could",
       "will",
-      "would",
-    ];
+      "would"];
 
     if (
       selectedTopic === "grammar" &&
@@ -960,12 +1031,25 @@ export function generateQuestion(
         params.phonicsOptionSet,
         targetChoices
       );
+    } else if (
+      selectedTopic === "translation" &&
+      Array.isArray(params.translationOptionSet) &&
+      params.translationOptionSet.length >= 2
+    ) {
+      allAnswers = buildMcqFromOptionPool(
+        correctAnswer,
+        params.translationOptionSet,
+        targetChoices
+      );
     } else if (selectedTopic === "vocabulary") {
       const list = WORD_LISTS[params.listKey] || words;
-      const pool =
-        params.direction === "he_to_en"
-          ? Object.keys(list)
-          : Object.values(list);
+      const localizedList = getLocalizedWordList(
+        params.listKey || activeVocabList,
+        instructionLocale
+      );
+      const pool = isMeaningToEnDirection(params.direction)
+        ? Object.keys(list)
+        : Object.values(localizedList);
       allAnswers = buildMcqFromOptionPool(
         correctAnswer,
         pool,
@@ -983,7 +1067,7 @@ export function generateQuestion(
             sameCategoryGrammar[
               Math.floor(Math.random() * sameCategoryGrammar.length)
             ];
-        } else if (params.direction === "he_to_en") {
+        } else if (isMeaningToEnDirection(params.direction)) {
           const allEnglishWords = vocabKeysForMcq.flatMap((k) =>
             Object.keys(WORD_LISTS[k] || {})
           );
@@ -994,14 +1078,12 @@ export function generateQuestion(
                 ]
               : "word";
         } else {
-          const allHebrewWords = vocabKeysForMcq.flatMap((k) =>
-            Object.values(WORD_LISTS[k] || {})
+          const allMeanings = vocabKeysForMcq.flatMap((k) =>
+            Object.values(getLocalizedWordList(k, instructionLocale))
           );
           wrong =
-            allHebrewWords.length > 0
-              ? allHebrewWords[
-                  Math.floor(Math.random() * allHebrewWords.length)
-                ]
+            allMeanings.length > 0
+              ? allMeanings[Math.floor(Math.random() * allMeanings.length)]
               : "word";
         }
         if (wrong !== correctAnswer && !wrongAnswers.has(wrong)) {
@@ -1081,8 +1163,7 @@ export function generateQuestion(
             selectedTopic,
             finalized.params?.patternFamily
           ),
-          ...(finalized.params?.expectedErrorTags || finalized.params?.expectedErrorTypes || []),
-        ]),
+          ...(finalized.params?.expectedErrorTags || finalized.params?.expectedErrorTypes || [])]),
       },
     }),
     {

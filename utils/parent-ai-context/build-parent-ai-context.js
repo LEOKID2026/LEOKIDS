@@ -6,7 +6,7 @@
  *                               (`utils/parent-copilot/truth-packet-v1.js`). Source of grounding for the Q&A path.
  *   - `strictExplainerInput`  - the strict allowlisted input consumed by `buildParentReportAIExplanation`
  *                               (`utils/parent-report-ai/parent-report-ai-explainer.js`). Source of grounding
- *                               for the Parent AI summary insight ("תובנה להורה") path.
+ *                               for the Parent AI summary insight ("Parent insight") path.
  *
  * Why both fields:
  *   The Parent Copilot Q&A and the Parent AI summary insight previously lived on parallel grounding paths.
@@ -16,7 +16,7 @@
  *   now goes through this helper. Future phases may converge the runtime callsites further.
  *
  * Constraints honored:
- *   - No behavior change for the short report's existing "תובנה להורה" rendering.
+ *   - No behavior change for the short report's existing "Parent insight" rendering.
  *   - No changes to TruthPacketV1 internals, validators, guardrails, banks, taxonomies, or engines.
  *   - The strict-input projection function is *injected* by the caller (the adapter), so this module
  *     does not import from `utils/parent-report-ai/*` and there is no circular dependency.
@@ -24,8 +24,8 @@
 
 import { buildTruthPacketV1 } from "../parent-copilot/truth-packet-v1.js";
 
-/** Default Hebrew label used for the executive (report-wide) scope when no caller-provided label exists. */
-export const DEFAULT_EXECUTIVE_SCOPE_LABEL_HE = "סיכום תקופתי";
+/** Default label used for the executive (report-wide) scope when no caller-provided label exists. */
+export const DEFAULT_EXECUTIVE_SCOPE_LABEL_HE = "Period summary";
 
 /** Default canonical intent for the report-wide summary insight surface. */
 export const DEFAULT_PARENT_AI_CANONICAL_INTENT = "explain_report";
@@ -41,8 +41,7 @@ export function buildDefaultExecutiveScope() {
     scopeType: "executive",
     scopeId: "executive",
     scopeLabel: DEFAULT_EXECUTIVE_SCOPE_LABEL_HE,
-    canonicalIntent: DEFAULT_PARENT_AI_CANONICAL_INTENT,
-  };
+    canonicalIntent: DEFAULT_PARENT_AI_CANONICAL_INTENT};
 }
 
 /**
@@ -73,8 +72,7 @@ export function normalizeParentAiScope(scope, canonicalIntentOverride) {
     scopeType,
     scopeId: scopeId || (scopeType === "executive" ? fallback.scopeId : scopeId),
     scopeLabel: scopeLabel || (scopeType === "executive" ? fallback.scopeLabel : scopeLabel || ""),
-    canonicalIntent: intent,
-  };
+    canonicalIntent: intent};
 }
 
 /**
@@ -141,14 +139,12 @@ export function buildParentAiContext({ payload, scope, canonicalIntent, strictEx
   const truthPacket = safeBuildTruthPacket(payload, normalizedScope);
   const strictExplainerInput = safeRunStrictInputProjection(payload, strictExplainerInputBuilder, {
     truthPacket,
-    scope: normalizedScope,
-  });
+    scope: normalizedScope});
   return {
     payload,
     scope: normalizedScope,
     truthPacket,
-    strictExplainerInput,
-  };
+    strictExplainerInput};
 }
 
 /* -------------------------------------------------------------------------- */
@@ -192,15 +188,10 @@ const NO_ANCHOR_TOKEN = "__no_anchor__";
 
 const SUBJECT_KEY_ALIASES = {
   math: "math",
-  hebrew: "hebrew",
+  
   english: "english",
   science: "science",
-  geometry: "geometry",
-  "moledet-geography": "moledet-geography",
-  moledetgeography: "moledet-geography",
-  moledet: "moledet-geography",
-  geography: "moledet-geography",
-};
+  geometry: "geometry"};
 
 function normalizeSubjectKey(raw) {
   const x = String(raw || "").trim().toLowerCase();
@@ -274,8 +265,7 @@ export function deriveCoreGroundingFromTruthPacket(truthPacket) {
     readiness,
     confidenceBand,
     decisionBand,
-    hasAnchoredObservation: !noAnchoredFallback && obs.length >= 14,
-  };
+    hasAnchoredObservation: !noAnchoredFallback && obs.length >= 14};
 }
 
 const STRICT_PLANNER_BAND = {
@@ -284,15 +274,13 @@ const STRICT_PLANNER_BAND = {
   probe_skill: "review",
   practice_current: "review",
   maintain_skill: "maintain",
-  advance_skill: "advance",
-};
+  advance_skill: "advance"};
 
 const STRICT_DATA_CONFIDENCE_BAND = {
   thin: "low",
   low: "low",
   moderate: "medium",
-  strong: "high",
-};
+  strong: "high"};
 
 /**
  * Project the strict explainer input into the canonical core-grounding shape.
@@ -335,8 +323,7 @@ export function deriveCoreGroundingFromStrictExplainerInput(strictInput) {
     dataConfidenceBand,
     hasStrengthsText,
     hasNeedsText,
-    recommendedNextStepText,
-  };
+    recommendedNextStepText};
 }
 
 /**
@@ -475,8 +462,7 @@ export function verifyParentAiContextConsistency(context) {
     secondarySource,
     issues,
     truthGrounding,
-    strictGrounding,
-  };
+    strictGrounding};
 }
 
 export default {
@@ -487,5 +473,4 @@ export default {
   buildParentAiContext,
   deriveCoreGroundingFromTruthPacket,
   deriveCoreGroundingFromStrictExplainerInput,
-  verifyParentAiContextConsistency,
-};
+  verifyParentAiContextConsistency};

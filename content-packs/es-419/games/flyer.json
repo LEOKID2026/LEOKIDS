@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Leo en un avión",
+  "blurb": "¡Mantén presionado para volar, recoger monedas y evitar obstáculos!",
+  "help": {
+    "howToPlay": "Mantén presionado el botón o la pantalla para volar y suéltalo para descender. Recoge monedas y evita obstáculos.",
+    "scoring": "Las monedas y los diamantes suman puntos. Golpear un obstáculo finaliza el juego.",
+    "rewards": "Cuanto más lejos vueles y más puntos ganes, más monedas y diamantes obtendrás.",
+    "tip": "No vueles demasiado alto; a veces es mejor pasar por debajo de un obstáculo."
+  }
+}

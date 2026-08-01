@@ -50,16 +50,16 @@ import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 /**
  * Claim vocabulary — matched against real rendered English parent text.
  * HE→EN map (former Hebrew triggers → English equivalents):
- *   דפוס חוזר → recurring/repeated pattern
- *   יציבות / יציב(ה) טובה|יחסית → steadiness / fairly steady / looks steady
- *   שליטה → mastery / strong success / good command
- *   קושי ברור / נקודת חיזוק|ידע / פער → clear difficulty|area to reinforce / gap
- *   קשב → attention
- *   עייפות / מתעייף → fatigue / getting tired
- *   תחת לחץ / לחץ זמן / קשור למהירות|לחץ → under/time pressure / related to speed|pressure
- *   השתפר / שיפור → improved / improvement
- *   כדאי לחזק|חיזוק / חיזוק ממוקד → helps to reinforce|strengthen / focused reinforcement
- *   מהירות → speed
+ *     → recurring/repeated pattern
+ *    / () || → steadiness / fairly steady / looks steady
+ *    → mastery / strong success / good command
+ *     /  || /  → clear difficulty|area to reinforce / gap
+ *    → attention
+ *    /  → fatigue / getting tired
+ *     /(?!)/  || → under/time pressure / related to speed|pressure
+ *    /  → improved / improvement
+ *    || /   → helps to reinforce|strengthen / focused reinforcement
+ *    → speed
  */
 export const CLAIM_REGEX = Object.freeze({
   repeated_pattern: /recurring\s*pattern|repeated\s*pattern/iu,
@@ -71,13 +71,11 @@ export const CLAIM_REGEX = Object.freeze({
   pressure: /(under\s*pressure|time\s*pressure|related\s+to\s+(speed|pressure))/iu,
   improvement: /\bimproved\b|\bimprovement\b/iu,
   needs_strengthening: /helps\s*to\s*(reinforce|strengthen)|worth\s*reinforcing|reinforce\s*this\s*topic|go\s*back\s*and\s*reinforce|focused\s*reinforcement/iu,
-  speed: /\bspeed\b|competitive\/speed/iu,
-});
+  speed: /\bspeed\b|competitive\/speed/iu});
 
 /** Forbidden combinations that must never co-occur in one rendered text. */
 export const FORBIDDEN_COOCCURRENCE = Object.freeze([
-  { a: "repeated_pattern", b: "insufficient_data_phrase", pattern_b: /still\s*too\s*early|not\s*enough\s*(data|of\s*a\s*picture)|limited\s*data/iu },
-]);
+  { a: "repeated_pattern", b: "insufficient_data_phrase", pattern_b: /still\s*too\s*early|not\s*enough\s*(data|of\s*a\s*picture)|limited\s*data/iu }]);
 
 /**
  * @typedef {{
@@ -105,8 +103,7 @@ export const PARENT_SURFACES = Object.freeze([
   "subjectSummary",
   "parentLetter",
   "parentLetterCompact",
-  "gradeAwareRecommendation",
-]);
+  "gradeAwareRecommendation"]);
 
 /**
  * Surfaces that this fixture audit (build-golden-book.mjs) does NOT independently
@@ -120,8 +117,7 @@ export const PARENT_SURFACES = Object.freeze([
  */
 export const NOT_INDEPENDENTLY_VERIFIED_SURFACES = Object.freeze([
   "parentLetterCompact",
-  "gradeAwareRecommendation",
-]);
+  "gradeAwareRecommendation"]);
 
 /** @type {DecisionContractEntry[]} */
 export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
@@ -140,8 +136,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "engineDecisionContract.parentSafeFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js",
     sourceFunction: "buildParentSafeFindingFromEngine",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "topic_needs_strengthening",
     scope: "topic",
@@ -156,8 +151,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "engineDecisionContract.parentSafeFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js",
     sourceFunction: "buildParentSafeFindingFromEngine",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "speed_pressure_pattern",
     scope: "topic",
@@ -185,7 +179,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
       "canonical sentence builder, buildSpeedPressurePatternFindingHe (utils/learning-pattern-decision/" +
       "normalize-parent-practice-metrics.js) - (1) build-parent-report-engine-decision-contract.js's " +
       "buildParentSafeFindingFromEngine (topic parentSafeFinding, feeds shortReport/detailedReport/" +
-      "subjectSummary), and (2) engine-decision-parent-copy-he.js's buildDiagnosticBodyByDecision (feeds " +
+      "subjectSummary), and (2) engine-decision-parent-copy.js's buildDiagnosticBodyByDecision (feeds " +
       "buildEngineDecisionParentTopicCopyHe - screen/PDF/insights). The same file's competitiveModeContextHe " +
       "addendum is now suppressed specifically when engineDecision==='speed_pressure_pattern' so the canonical " +
       "sentence is never doubled up with a second, differently-worded speed remark on the same surface. The " +
@@ -200,11 +194,10 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     ownerApprovalStatus: "owner_approved",
     provenance:
       "engineDecisionContract.parentSafeFinding via buildSpeedPressurePatternFindingHe (single canonical source, " +
-      "shared verbatim with engine-decision-parent-copy-he.js)",
+      "shared verbatim with engine-decision-parent-copy.js)",
     sourceFile: "utils/learning-pattern-decision/normalize-parent-practice-metrics.js",
     sourceFunction: "buildSpeedPressurePatternFindingHe",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "partial_stable",
     scope: "topic",
@@ -219,8 +212,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "engineDecisionContract.parentSafeFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js",
     sourceFunction: "buildParentSafeFindingFromEngine",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "mastery_stable",
     scope: "topic",
@@ -235,8 +227,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "engineDecisionContract.parentSafeFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js",
     sourceFunction: "buildParentSafeFindingFromEngine",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "early_direction_only",
     scope: "topic",
@@ -251,8 +242,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "engineDecisionContract.parentSafeFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js",
     sourceFunction: "buildParentSafeFindingFromEngine",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "insufficient_data",
     scope: "topic",
@@ -267,8 +257,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "engineDecisionContract.parentSafeFinding / build-parent-visible-finding.js initial_topic_data",
     sourceFile: "utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js",
     sourceFunction: "buildParentSafeFindingFromEngine",
-    status: "active",
-  },
+    status: "active"},
 
   // ---------------------------------------------------------------- LPD TOPIC STATUS (disambiguated)
   {
@@ -287,8 +276,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "learningPatternDecision.parentVisibleFinding / build-parent-visible-finding.js",
     sourceFile: "utils/learning-pattern-decision/build-parent-visible-finding.js",
     sourceFunction: "buildParentVisibleFinding",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "lpd_difficulty_no_specific_pattern",
     scope: "topic",
@@ -307,8 +295,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "learningPatternDecision.parentVisibleFinding / build-parent-visible-finding.js",
     sourceFile: "utils/learning-pattern-decision/build-parent-visible-finding.js",
     sourceFunction: "buildParentVisibleFinding",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "lpd_mixed",
     scope: "topic",
@@ -323,8 +310,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "learningPatternDecision.parentVisibleFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-visible-finding.js",
     sourceFunction: "buildParentVisibleFinding",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "lpd_difficulty_repeated",
     scope: "topic",
@@ -339,8 +325,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "learningPatternDecision.parentVisibleFinding",
     sourceFile: "utils/learning-pattern-decision/build-parent-visible-finding.js",
     sourceFunction: "buildParentVisibleFinding",
-    status: "active",
-  },
+    status: "active"},
 
   // ---------------------------------------------------------------- SUBJECT-LEVEL DECISIONS
   {
@@ -357,8 +342,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "subjectEngineDecisionContract.subjectDecision",
     sourceFile: "utils/learning-pattern-decision/build-subject-engine-decision-contract.js",
     sourceFunction: "deriveSubjectDecision",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "focused_strengthening_needed",
     scope: "subject",
@@ -373,8 +357,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "subjectEngineDecisionContract.subjectDecision",
     sourceFile: "utils/learning-pattern-decision/build-subject-engine-decision-contract.js",
     sourceFunction: "deriveSubjectDecision",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "mixed_subject_profile",
     scope: "subject",
@@ -393,13 +376,13 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
       "- gaps.length===1 && stable.length>=1 => mixed_subject_profile; gaps.length>=2 => multiple_topic_gaps " +
       "(regardless of stable.length); gaps.length===1 && stable.length===0 => focused_strengthening_needed; " +
       "gaps.length===0 && stable.length>=1 => subject_strength_stable. renderSubjectOpeningPriorityTopic0 now " +
-      "has a DEDICATED mixed_subject_profile branch using the product-owner-approved singular sentence ('ב" +
-      "{subjectName} נראית יציבות בחלק מהנושאים, ולצדה נושא אחד שכדאי לחזק. מומלץ להתחיל ב" +
+      "has a DEDICATED mixed_subject_profile branch using the product-owner-approved singular sentence ('" +
+      "{subjectName}    ,     .   " +
       "{priorityTopicName}.') instead of reusing the multiple_topic_gaps plural sentence - the plural " +
-      "'בולטים כמה נושאים' wording is no longer reachable for this decisionKey because gaps.length is always " +
+      "'' wording is no longer reachable for this decisionKey because gaps.length is always " +
       "exactly 1 when this decision is chosen. Corrected on follow-up review from an earlier approved draft " +
-      "('...יש נושאים שבהם נראית יציבות טובה...') that was itself imprecise when stable.length===1 (a single " +
-      "stable topic is not 'נושאים', plural) - the sentence never counts stable topics, so the wording must not " +
+      "('...     ...') that was itself imprecise when stable.length===1 (a single " +
+      "stable topic is not '', plural) - the sentence never counts stable topics, so the wording must not " +
       "imply plurality of the stable side either.",
     ownerApprovalStatus: "owner_approved",
     provenance:
@@ -408,8 +391,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
       "sentence, product-owner-approved)",
     sourceFile: "utils/learning-pattern-decision/build-subject-engine-decision-contract.js",
     sourceFunction: "deriveSubjectDecision",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "subject_strength_stable",
     scope: "subject",
@@ -424,8 +406,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "subjectEngineDecisionContract.subjectDecision",
     sourceFile: "utils/learning-pattern-decision/build-subject-engine-decision-contract.js",
     sourceFunction: "deriveSubjectDecision",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "speed_check_only_subject",
     scope: "subject",
@@ -437,7 +418,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
       "evidence of a knowledge gap. Before this decision existed, this exact state (0 gaps, 0 stable, >=1 " +
       "speedCheckTopics) fell through to insufficient_subject_data, and legacy (engine-unaware) subject-summary " +
       "/ parent-letter fallback paths (e.g. findClearWeakTopicInSubject, which only checks accuracy/volume) " +
-      "then overrode that with 'נראית נקודת חיזוק ברורה' (a CLEAR, definite knowledge-gap claim) - the exact " +
+      "then overrode that with '' (a CLEAR, definite knowledge-gap claim) - the exact " +
       "opposite of what speed_pressure_pattern is allowed to claim at the topic level.",
     evidenceRequirement: "gaps.length===0 AND stable.length===0 AND speedCheckTopics.length>=1 (exact match - see deriveSubjectDecision).",
     allowedClaims: ["speed"],
@@ -451,7 +432,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
       "to the legacy, engine-unaware heuristics. renderSubjectOpeningPriorityTopic0 has a dedicated " +
       "speed_check_only_subject branch using a new dedicated slot (prioritySpeedTopic0, built from the subject " +
       "contract's new prioritySpeedTopic field - the single highest-priority speedCheckTopics entry by the " +
-      "existing sortPriorityTopics order, never plural 'נושא אחד' wording). Diagnosis/home/closing all render " +
+      "existing sortPriorityTopics order, never plural '' wording). Diagnosis/home/closing all render " +
       "empty for this decisionKey (no owner template registered for them) rather than any legacy text - " +
       "buildSubjectHomeLineHe now has the same 'return \"\" when blockedLegacySummary and no owner template' " +
       "guard already used by buildSubjectDiagnosisLineHe/buildSubjectClosingLineHe, closing a gap where it was " +
@@ -463,8 +444,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
       "product-owner-approved)",
     sourceFile: "utils/learning-pattern-decision/build-subject-engine-decision-contract.js",
     sourceFunction: "deriveSubjectDecision",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "insufficient_subject_data",
     scope: "subject",
@@ -481,8 +461,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "subjectEngineDecisionContract.subjectDecision",
     sourceFile: "utils/learning-pattern-decision/build-subject-engine-decision-contract.js",
     sourceFunction: "deriveSubjectDecision",
-    status: "active",
-  },
+    status: "active"},
 
   // ---------------------------------------------------------------- NARRATIVE WORDING ENVELOPES (WE0-WE4)
   {
@@ -499,8 +478,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "narrativeContract.textSlots (WE0)",
     sourceFile: "utils/contracts/narrative-contract-v1.js",
     sourceFunction: "buildNarrativeContractV1",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "narrative_we1",
     scope: "topic",
@@ -515,8 +493,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "narrativeContract.textSlots (WE1)",
     sourceFile: "utils/contracts/narrative-contract-v1.js",
     sourceFunction: "buildNarrativeContractV1",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "narrative_we2",
     scope: "topic",
@@ -531,8 +508,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "narrativeContract.textSlots (WE2)",
     sourceFile: "utils/contracts/narrative-contract-v1.js",
     sourceFunction: "buildNarrativeContractV1",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "narrative_we3",
     scope: "topic",
@@ -547,8 +523,7 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     provenance: "narrativeContract.textSlots (WE3)",
     sourceFile: "utils/contracts/narrative-contract-v1.js",
     sourceFunction: "buildNarrativeContractV1",
-    status: "active",
-  },
+    status: "active"},
   {
     decisionKey: "narrative_we4",
     scope: "topic",
@@ -560,16 +535,14 @@ export const PARENT_ENGINE_DECISION_CONTRACT_V2 = Object.freeze([
     supportedSurfaces: ["detailedReport", "parentLetter"],
     fallbackPolicy:
       "FIXED (this closure): buildInterpretationSlot's WE4 branch previously included two variants that " +
-      "asserted attention/fatigue/pressure ('קשב', 'עייפות', 'לחץ') with zero corresponding evidence input " +
+      "asserted attention/fatigue/pressure ('', '', '') with zero corresponding evidence input " +
       "anywhere in the narrative contract (no attention/fatigue/pressure signal is computed above). Removed " +
       "both; kept only the variant whose claim (stability over time) matches the actual evidence gate.",
     ownerApprovalStatus: "engineering_grammar_fix",
     provenance: "narrativeContract.textSlots (WE4)",
     sourceFile: "utils/contracts/narrative-contract-v1.js",
     sourceFunction: "buildNarrativeContractV1",
-    status: "active",
-  },
-]);
+    status: "active"}]);
 
 /** @param {string} decisionKey */
 export function findDecisionContractEntry(decisionKey) {
@@ -612,8 +585,8 @@ export function hasRepeatedVsInsufficientContradiction(text) {
 /**
  * English grammar guard: catches "1" + plural noun (e.g. "1 questions/errors/mistakes").
  * Export name kept for API stability (was Hebrew singular-violation guard).
- * HE→EN: שאלות→questions, שגיאות/שגויות→errors/mistakes, תשובות נכונות→correct answers,
- * תשובות שגויות→wrong/incorrect answers, נושאים→topics.
+ * HE→EN: →questions, /→errors/mistakes,  →correct answers,
+ *  →wrong/incorrect answers, →topics.
  */
 export const HEBREW_SINGULAR_VIOLATION_RE =
   /\b1\s*(questions|errors|mistakes|correct\s*answers|wrong\s*answers|incorrect\s*answers|topics)\b/i;

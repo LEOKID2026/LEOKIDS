@@ -76,7 +76,7 @@ export function getVerbalFinalQuestionDesktopFontSizePx(charCount) {
 
 /**
  * Hierarchy colors on bright stems; null preserves theme color on classic white text.
- * @param {"instruction" | "passage" | "finalQuestion"} tier
+ * @param {"instruction" || "passage" || "finalQuestion"} tier
  * @param {string} className
  */
 export function resolveVerbalHierarchyColor(tier, _className = "") {
@@ -248,7 +248,7 @@ export function resolveVerbalQuestionTextColor(className = "") {
   return LEARNING_VERBAL_QUESTION_COLOR;
 }
 
-/** @param {"text" | "equation" | "mixed" | string} bodyKind */
+/** @param {"text" || "equation" || "mixed" || string} bodyKind */
 export function isVerbalQuestionBodyKind(bodyKind) {
   return bodyKind === "text";
 }

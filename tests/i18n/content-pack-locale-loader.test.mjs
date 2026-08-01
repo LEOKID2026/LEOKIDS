@@ -65,12 +65,44 @@ test("missing locale falls back to en inside loader chain", () => {
   const fromEn = resolveRegisteredContentPack("en", "games", "ui-pack-index.json");
   assert.ok(fromPseudo);
   assert.equal(fromPseudo, fromEn);
-
-  const unknown = resolveRegisteredContentPack("es-419", "learning", "diagnostic-labels.json");
-  assert.ok(unknown);
-  assert.equal(unknown, CONTENT_PACK_CATALOG.en["learning/diagnostic-labels.json"]);
 });
 
+test("es-419 diagnostic-labels returns Spanish distinct from en", () => {
+  const es = resolveRegisteredContentPack("es-419", "learning", "diagnostic-labels.json");
+  const en = resolveRegisteredContentPack("en", "learning", "diagnostic-labels.json");
+  assert.ok(es && typeof es === "object");
+  assert.ok(en && typeof en === "object");
+  assert.equal(es, CONTENT_PACK_CATALOG["es-419"]["learning/diagnostic-labels.json"]);
+  assert.notEqual(es, en);
+  assert.equal(en.operations?.addition, "Addition");
+  assert.equal(es.operations?.addition, "Suma");
+  assert.notEqual(es.operations?.addition, en.operations?.addition);
+});
+
+test("es-419 falls back to en for a missing registered pack path", () => {
+  const chain = getContentFallbackChain("es-419");
+  assert.ok(chain.includes("es-419"), `expected es-419 in chain, got ${chain.join(",")}`);
+  assert.ok(chain.includes("en"), `expected en in chain, got ${chain.join(",")}`);
+
+  // Path not registered in either locale catalog → null from catalog resolver.
+  const missing = resolveRegisteredContentPack("es-419", "learning", "__missing-pack-path__.json");
+  assert.equal(missing, null);
+
+  // Simulate unregistered es-419 key by resolving a path only present on disk for en
+  // via catalog: both locales register the same 28 keys, so remove temporarily.
+  const key = "learning/diagnostic-labels.json";
+  const saved = CONTENT_PACK_CATALOG["es-419"];
+  const { [key]: _removed, ...rest } = saved;
+  CONTENT_PACK_CATALOG["es-419"] = Object.freeze(rest);
+  try {
+    const fallback = resolveRegisteredContentPack("es-419", "learning", "diagnostic-labels.json");
+    assert.ok(fallback);
+    assert.equal(fallback, CONTENT_PACK_CATALOG.en[key]);
+    assert.equal(fallback.operations?.addition, "Addition");
+  } finally {
+    CONTENT_PACK_CATALOG["es-419"] = saved;
+  }
+});
 test("English subject forces contentLocale en for taxonomy pack", () => {
   assert.equal(resolveContentLocale({ subject: "english", interfaceLocale: "ar-XB" }), "en");
   assert.equal(

@@ -3,17 +3,17 @@
  */
 
 const STEM = {
-  pickUpper: "בחר/י את האות הגדולה שמתאימה לאות הקטנה שמוצגת",
-  pickLower: "בחר/י את האות הקטנה שמתאימה לאות הגדולה שמוצגת",
-  pickAfter: "בחר/י את האות שבאה אחרי האות שמוצגת",
-  hearSound: "שמע/י את הצליל - בחר/י את האות הנכונה",
-  firstSound: "שמע/י את המילה - מה הצליל הראשון?",
-  pictureWord: "בחר/י את המילה שמתאימה לתמונה",
-  hearWord: "שמע/י את המילה - בחר/י את המילה הנכונה",
-  readWord: "קרא/י את המילה - בחר/י את המילה הנכונה",
-  listenCmd: "שמע/י את ההוראה - בחר/י את התשובה הנכונה",
-  hearSentence: "שמע/י את המשפט - בחר/י את התמונה המתאימה",
-  tripleMatch: "שמע/י, הסתכל/י וקרא/י - בחר/י את המילה הנכונה",
+  pickUpper: "Choose the uppercase letter that matches the lowercase letter shown",
+  pickLower: "Choose the lowercase letter that matches the uppercase letter shown",
+  pickAfter: "Choose the letter that comes after the letter shown",
+  hearSound: "Listen to the sound — choose the correct letter",
+  firstSound: "Listen to the word — what is the first sound?",
+  pictureWord: "Choose the word that matches the picture",
+  hearWord: "Listen to the word — choose the correct word",
+  readWord: "Read the word — choose the correct word",
+  listenCmd: "Listen to the instruction — choose the correct answer",
+  hearSentence: "Listen to the sentence — choose the matching picture",
+  tripleMatch: "Listen, look, and read — choose the correct word",
 };
 
 /**

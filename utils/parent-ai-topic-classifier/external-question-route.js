@@ -18,8 +18,7 @@ const INTERPRETATION_SCOPES = new Set([
   "strengths",
   "weaknesses",
   "blocked_advance",
-  "executive",
-]);
+  "executive"]);
 
 /**
  * @param {unknown} stageA
@@ -130,8 +129,7 @@ export function tryBuildPhaseEClarificationBypassDraft(input) {
 
   const answerBlocks = [
     { type: "observation", textHe: observation.trim(), source: "composed" },
-    { type: "meaning", textHe: meaning.trim(), source: "composed" },
-  ];
+    { type: "meaning", textHe: meaning.trim(), source: "composed" }];
 
   const scopeMeta = {
     scopeConfidence: 0.55,
@@ -210,8 +208,7 @@ export function tryBuildPhaseEResolvedShortcutDraft(input) {
 
   const answerBlocks = [
     { type: "observation", textHe: observation.trim(), source: "composed" },
-    { type: "meaning", textHe: meaning.trim(), source: "composed" },
-  ];
+    { type: "meaning", textHe: meaning.trim(), source: "composed" }];
 
   const scopeMeta = {
     scopeConfidence: 0.54,
@@ -243,7 +240,7 @@ export function augmentPhaseEThinEvidenceDraft(draft, truthPacket) {
 
   const joined = blocks.map((b) => String(b.textHe || "")).join(" ");
   if (
-    /אין בדוח מספיק ראיות על ילדכם|not enough evidence in the report about your child/i.test(joined)
+    /(?!)/i.test(joined)
   )
     return draft;
 

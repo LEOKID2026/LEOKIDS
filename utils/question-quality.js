@@ -5,8 +5,8 @@ import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 
 import { mcqCellLabel } from "./mcq-option-cell.js";
 
-const NIQQUD_RE = /[\u0591-\u05C7]/g;
-const PUNCT_EDGE_RE = /^[\s"'`׳״“”‘’.,!?;:()[\]{}\-–-]+|[\s"'`׳״“”‘’.,!?;:()[\]{}\-–-]+$/g;
+const NIQQUD_RE = /(?!)/g;
+const PUNCT_EDGE_RE = /(?!)/g;
 
 /** @param {string} text */
 export function normalizeOptionForCompare(text) {
@@ -20,8 +20,8 @@ export function normalizeOptionForCompare(text) {
     .trim()
     .toLowerCase()
     .replace(NIQQUD_RE, "")
-    .replace(/[“”״]/g, '"')
-    .replace(/[‘’׳]/g, "'")
+    .replace(/(?!)/g, '"')
+    .replace(/(?!)/g, "'")
     .replace(PUNCT_EDGE_RE, "")
     .replace(/\s+/g, " ");
 }
@@ -52,20 +52,18 @@ export function optionsAreNearDuplicate(a, b) {
 }
 
 const BANNED_MCQ_OPTIONS_RE =
-  /כל\s*התשובות|שניהם\s*נכון|שנייהם\s*נכון|גם\s*וגם|^אף\s+אחת\s+לא$|אין\s+תשובה\s+נכונה/i;
+  /(?!)/i;
 
 const GENERIC_HEBREW_READING_DISTRACTORS = new Set([
-  normalizeOptionForCompare("ילד משחק"),
-  normalizeOptionForCompare("ילד כותב"),
-  normalizeOptionForCompare("ילד אוכל"),
-]);
+  normalizeOptionForCompare(""),
+  normalizeOptionForCompare(""),
+  normalizeOptionForCompare("")]);
 
 const READING_DISTRACTOR_REPLACEMENTS = [
-  ["ילד מדבר בטלפון", "ילד הולך לחנות", "ילד צופה בטלוויזיה"],
-  ["ילד רץ בחצר", "ילד ישן בבית", "ילד שוחה בים"],
-  ["ילד מכין ארוחת בוקר", "ילד מסדר את החדר", "ילד מחכה לאוטובוס"],
-  ["ילד בונה מגדל מקוביות", "ילד שומע מוזיקה", "ילד מחפש צעצוע"],
-];
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""]];
 
 /**
  * @param {unknown} q
@@ -150,7 +148,7 @@ export function auditMcqQuality(q, ctx = {}) {
   for (let i = 0; i < answers.length; i++) {
     if (i === correctIndex) continue;
     if (
-      normalizeOptionForCompare(answers[i]) === correctNorm ||
+      normalizeOptionForCompare(answers[i]) === correctNorm |
       optionsAreNearDuplicate(answers[i], correctAnswer)
     ) {
       multiCorrect += 1;
@@ -208,11 +206,11 @@ export function auditMcqQuality(q, ctx = {}) {
   ).length;
   if (
     genericWrong >= 2 &&
-    (ctx.topic === "reading" || /קרא את הטקסט|קרא את המשפט/i.test(stem))
+    (ctx.topic === "reading" || /(?!)/i.test(stem))
   ) {
     warnings.push({
       code: "generic_reading_distractors",
-      message: "Uses generic 'ילד משחק/כותב/אוכל' distractors",
+      message: "Uses generic ' //' distractors",
       count: genericWrong,
     });
   }
@@ -308,7 +306,7 @@ export function rebalanceGenericHebrewReadingDistractors(q) {
 /**
  * Lighter key for MCQ deduplication: strips niqqud and collapses whitespace but
  * intentionally does NOT strip punctuation from the edges of the string.
- * This prevents distinct MCQ options such as "היום חם." and "היום חם?" from being
+ * This prevents distinct MCQ options such as " ." and " ?" from being
  * collapsed into one another when the punctuation is the entire point of the question.
  * @param {string} t
  */

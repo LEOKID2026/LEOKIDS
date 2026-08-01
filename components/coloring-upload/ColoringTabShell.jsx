@@ -31,7 +31,7 @@ export default function ColoringTabShell(cardsTabProps) {
 
   return (
     <div className="coloring-tab-shell">
-      <div className="worksheet-create-type-toggle coloring-tab-shell-toggle" role="tablist" aria-label="סוג דף צביעה">
+      <div className="worksheet-create-type-toggle coloring-tab-shell-toggle" role="tablist" aria-label="">
         <button
           type="button"
           role="tab"

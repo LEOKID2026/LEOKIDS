@@ -32,7 +32,7 @@ const {
   applyTopicEngineParentFacingInsights,
   collectTopicEngineRowsFromReport,
   buildTopicEngineInsightLineHe,
-} = await load("utils/parent-report-engine-insights-he.js");
+} = await load("utils/parent-report-engine-insights.js");
 const { applyBridgeProvenanceToGeneratedReport } = await load("lib/learning-supabase/bridge-report-provenance.js");
 const { syncReportVisiblePracticeFromServer } = await load("lib/learning/report-visible-practice-sync.js");
 const { generateParentReportV2, summarizeV2UnitsForSubjectForTests } = await load("utils/parent-report-v2.js");
@@ -40,7 +40,7 @@ const { buildDetailedParentReportFromBaseReport } = await load("utils/detailed-p
 const {
   buildSubjectParentLetter,
   buildTopicRecommendationNarrative,
-} = await load("utils/detailed-report-parent-letter-he.js");
+} = await load("utils/detailed-report-parent-letter.js");
 const {
   resolveParentExplainRowCopy,
   buildLpdSafeTopicExplainSectionsHe,
@@ -304,7 +304,7 @@ function collectInventoryForStudent(ctx) {
         slotsAvailable: buildSlotsFromTopic(edc, lpd, mapRow || row, subjectLabelHe),
         currentRenderedText: line,
         renderFunction:
-          "utils/parent-report-engine-insights-he.js → buildTopicEngineInsightLineHe → buildLpdSafeTopicInsightLineHe",
+          "utils/parent-report-engine-insights.js → buildTopicEngineInsightLineHe → buildLpdSafeTopicInsightLineHe",
         safeToReplaceWithOwnerCopy: !!(lpd?.templateId || edc),
       }),
     );
@@ -441,7 +441,7 @@ function collectInventoryForStudent(ctx) {
               source: tr?.contractsV1?.narrative ? "engineDecisionContract" : "legacy",
               slotsAvailable: buildSlotsFromTopic(trEdc, lpd, mapRow, subjectLabelHe),
               currentRenderedText: t,
-              renderFunction: "utils/detailed-report-parent-letter-he.js → buildTopicRecommendationNarrative",
+              renderFunction: "utils/detailed-report-parent-letter.js → buildTopicRecommendationNarrative",
               safeToReplaceWithOwnerCopy: !!tr?.contractsV1?.narrative,
             }),
           );
@@ -498,7 +498,7 @@ function collectInventoryForStudent(ctx) {
             : "legacy",
         slotsAvailable: buildSlotsFromSubjectContract(subjectContract, subjectLabelHe),
         currentRenderedText: text,
-        renderFunction: "utils/detailed-report-parent-letter-he.js → buildSubjectParentLetter",
+        renderFunction: "utils/detailed-report-parent-letter.js → buildSubjectParentLetter",
         safeToReplaceWithOwnerCopy: !!(subjectContract?.blockedLegacySummary && slotTemplateId),
       }),
     );

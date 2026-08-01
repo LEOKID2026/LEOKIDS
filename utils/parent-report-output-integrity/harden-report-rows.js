@@ -6,12 +6,10 @@ import { buildGradeEvidenceFields } from "../../lib/learning-supabase/practice-g
 import {
   buildDuplicateCanonicalTopicKeysFromBaseReport,
   cleanTopicLabelHe,
-  resolveNarrativeDisplayLabels,
-} from "./row-display-label-context.js";
+  resolveNarrativeDisplayLabels} from "./row-display-label-context.js";
 import {
   buildRowIdentityV1,
-  parseCanonicalTopicFromRowKey,
-} from "./row-identity-v1.js";
+  parseCanonicalTopicFromRowKey} from "./row-identity-v1.js";
 
 const SUBJECT_TOPIC_MAP_KEYS = [
   ["math", "mathOperations"],
@@ -19,9 +17,8 @@ const SUBJECT_TOPIC_MAP_KEYS = [
   ["english", "englishTopics"],
   ["science", "scienceTopics"],
   ["history", "historyTopics"],
-  ["hebrew", "hebrewTopics"],
-  ["moledet-geography", "moledetGeographyTopics"],
-];
+  [ "hebrewTopics"],
+  [ "moledetGeographyTopics"]];
 
 /**
  * @param {string} subjectId
@@ -55,8 +52,7 @@ export function attachRowIdentityToTopicMapRow(
     accuracy: row.accuracy,
     correct: row.correct,
     timeSpentMinutes: row.timeMinutes,
-    latestActivityAt: row.latestActivityAt || row.lastAnswerAt || null,
-  });
+    latestActivityAt: row.latestActivityAt || row.lastAnswerAt || null});
   const labels = resolveNarrativeDisplayLabels({
     displayName,
     contentGradeKey: identity.contentGradeKey,
@@ -64,16 +60,14 @@ export function attachRowIdentityToTopicMapRow(
     gradeRelation: identity.gradeRelation,
     topicRowKey,
     requiresGradeContext,
-    includeGradeInTitle: Boolean(identity.contentGradeKey),
-  });
+    includeGradeInTitle: Boolean(identity.contentGradeKey)});
   row.rowIdentityV1 = {
     ...identity,
     cleanTopicLabelHe: displayName,
     narrativeTitleHe: labels.titleHe,
     narrativeTopicLabelHe: labels.titleHe,
     gradeRelationSublineHe: labels.gradeRelationSublineHe,
-    requiresGradeContextInNarrative: requiresGradeContext,
-  };
+    requiresGradeContextInNarrative: requiresGradeContext};
   row.rowSourceId = identity.sourceId;
   row.cleanTopicLabelHe = displayName;
   row.narrativeTitleHe = labels.titleHe;
@@ -135,8 +129,7 @@ export function parentFacingDisplayLabelsForV2Unit(baseReport, unit) {
     gradeRelation: ge.gradeRelation,
     topicRowKey,
     requiresGradeContext,
-    includeGradeInTitle: Boolean(gk),
-  });
+    includeGradeInTitle: Boolean(gk)});
 }
 
 /** @param {unknown} baseReport @param {object} unit */
@@ -151,8 +144,7 @@ function unitMetrics(unit) {
   const v = unit?.evidenceTrace?.[0]?.value;
   return {
     questions: Number(v?.questions) || 0,
-    accuracy: Number(v?.accuracy) || 0,
-  };
+    accuracy: Number(v?.accuracy) || 0};
 }
 
 /**
@@ -188,7 +180,7 @@ export function detectGradeSplitContradictions(units, baseReport) {
     if (!hasStrong || !hasWeak) continue;
     const displayName = String(group[0]?.displayName || "Topic");
     const subjectLabel =
-      { math: "Math", geometry: "Geometry", english: "English", science: "Science", hebrew: "Hebrew", "moledet-geography": "Homeland" }[
+      { math: "Math", geometry: "Geometry", english: "English", science: "Science" }[
         String(group[0]?.subjectId || "")
       ] || String(group[0]?.subjectId || "");
     const parts = group
@@ -214,7 +206,7 @@ export function executiveLineFromV2Unit(baseReport, unit) {
   const label = parentFacingLabelForV2Unit(baseReport, unit);
   const sid = String(unit?.subjectId || "");
   const subjectLabel =
-    { math: "Math", geometry: "Geometry", english: "English", science: "Science", hebrew: "Hebrew", "moledet-geography": "Homeland" }[
+    { math: "Math", geometry: "Geometry", english: "English", science: "Science" }[
       sid
     ] || sid;
   return `${label} (${subjectLabel})`;
@@ -228,7 +220,7 @@ export function homePlanLineFromV2Unit(baseReport, unit, actionHe) {
   const label = parentFacingLabelForV2Unit(baseReport, unit);
   const sid = String(unit?.subjectId || "");
   const subjectLabel =
-    { math: "Math", geometry: "Geometry", english: "English", science: "Science", hebrew: "Hebrew", "moledet-geography": "Homeland" }[
+    { math: "Math", geometry: "Geometry", english: "English", science: "Science" }[
       sid
     ] || sid;
   return `${label} (${subjectLabel}): ${String(actionHe || "").trim()}`;
@@ -241,5 +233,4 @@ export default {
   parentFacingLabelForV2Unit,
   detectGradeSplitContradictions,
   executiveLineFromV2Unit,
-  homePlanLineFromV2Unit,
-};
+  homePlanLineFromV2Unit};

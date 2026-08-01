@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "server_error": "error del servidor",
+    "server_error_try_refreshing_the_page": "Error del servidor: intente actualizar la página."
+  }
+}

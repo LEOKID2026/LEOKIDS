@@ -114,7 +114,7 @@ export const PUBLIC_WRITING_DEMO_PRESETS = [
 
 /**
  * @param {string} presetId
- * @returns {PublicWritingDemoPreset | null}
+ * @returns {PublicWritingDemoPreset || null}
  */
 export function getPublicWritingDemoPreset(presetId) {
   const key = String(presetId || "").trim();

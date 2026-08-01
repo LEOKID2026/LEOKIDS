@@ -12,7 +12,7 @@ export default function handler(req, res) {
   const imageFiles = [];
   const videoFiles = [];
 
-  // בדיקת תמונות JPG או PNG
+  //   JPG  PNG
   if (fs.existsSync(imagesDir)) {
     for (let i = 1; i <= 50; i++) {
       const jpg = `img${i}.jpg`;
@@ -25,7 +25,7 @@ export default function handler(req, res) {
     }
   }
 
-  // בדיקת סרטונים MP4
+  //   MP4
   if (fs.existsSync(videosDir)) {
     for (let i = 1; i <= 20; i++) {
       const fileName = `vid${i}.mp4`;

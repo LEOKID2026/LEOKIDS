@@ -1,0 +1,11 @@
+{
+  "gameId": "fruit-slice",
+  "title": "Rebanada de fruta",
+  "blurb": "¡Corta fruta, evita las bombas y alcanza el objetivo de puntuación!",
+  "help": {
+    "howToPlay": "Arrastra el dedo por la pantalla para cortar frutas voladoras. Evita las bombas: tienes tres errores permitidos.",
+    "scoring": "Cada fruta cortada suma puntos. Cortar varias frutas a la vez otorga una bonificación combinada. Golpear una bomba o perder una fruta cuesta un error.",
+    "rewards": "Alcanzar el objetivo de puntuación según el nivel de dificultad otorga monedas y diamantes.",
+    "tip": "Corta solo fruta; si ves una bomba, es mejor omitirla."
+  }
+}

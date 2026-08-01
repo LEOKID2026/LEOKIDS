@@ -62,29 +62,29 @@
     "Cone",
     "Sphere"
   ],
-  "hebrewSolidAliases": {
-    "קובייה": "Cube",
-    "תיבה": "Rectangular prism",
-    "גליל": "Cylinder",
-    "פירמידה": "Pyramid",
-    "חרוט": "Cone",
-    "כדור": "Sphere"
-  },
   "shapeWords": {
-    "ריבוע": "Square",
-    "מלבן": "Rectangle",
-    "מקבילית": "Parallelogram",
-    "טרפז": "Trapezoid",
-    "נכון": "True",
-    "לא נכון": "False",
-    "סיבוב": "Rotation",
-    "הזזה": "Translation",
-    "שיקוף": "Reflection",
-    "ללא תנועה": "No movement",
-    "מקבילות": "Parallel",
-    "מאונכות": "Perpendicular",
-    "שווה צלעות": "Equilateral",
-    "שווה שוקיים": "Isosceles",
-    "שונה צלעות": "Scalene"
+    "": "Square",
+    "": "Rectangle",
+    "": "Parallelogram",
+    "": "Trapezoid",
+    "": "True",
+    " ": "False",
+    "": "Rotation",
+    "": "Translation",
+    "": "Reflection",
+    " ": "No movement",
+    "": "Parallel",
+    "": "Perpendicular",
+    " ": "Equilateral",
+    " ": "Isosceles",
+    " ": "Scalene"
+  },
+  "solidAliases": {
+    "cube": "Cube",
+    "rectangular prism": "Rectangular prism",
+    "cylinder": "Cylinder",
+    "pyramid": "Pyramid",
+    "cone": "Cone",
+    "sphere": "Sphere"
   }
 }

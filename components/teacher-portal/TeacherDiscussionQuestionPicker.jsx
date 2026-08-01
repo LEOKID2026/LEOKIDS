@@ -1,7 +1,7 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { teacherAuthFetch, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
+import { teacherAuthFetch, subjectLabel } from "../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { formatGradeLevelHe, resolveCanonicalGradeKey } from "../../lib/teacher-portal/teacher-class-grade.js";
 import {
@@ -46,7 +46,7 @@ function correctAnswerText(q) {
  *   classId?: string,
  *   studentId?: string,
  *   monitorHref?: (activityId: string) => string,
- *   lockedSubject?: string | null,
+ *   lockedSubject?: string || null,
  *   subjectLocked?: boolean,
  * }} props
  */
@@ -336,7 +336,7 @@ export default function TeacherDiscussionQuestionPicker({
           {subjectLocked && lockedSubject ? (
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
-              value={subjectLabelHe(lockedSubject)}
+              value={subjectLabel(lockedSubject)}
               readOnly
               disabled
             />
@@ -352,7 +352,7 @@ export default function TeacherDiscussionQuestionPicker({
           >
             {subjectOptions.map((s) => (
               <option key={s} value={s}>
-                {subjectLabelHe(s)}
+                {subjectLabel(s)}
               </option>
             ))}
           </select>
@@ -605,7 +605,7 @@ export default function TeacherDiscussionQuestionPicker({
                   onClick={() => {
                     toggleQuestionIndex(i);
                     if (!title.trim()) {
-                      setTitle(`Discussion - ${subjectLabelHe(subject)}`);
+                      setTitle(`Discussion - ${subjectLabel(subject)}`);
                     }
                   }}
                 >

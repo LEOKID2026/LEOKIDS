@@ -5,7 +5,7 @@ import {
 } from "./parent-facing-error-pattern-factual.js";
 /**
  * Parent-facing English for internal error/pattern keys — never show raw snake_case to parents.
- * English sibling of parent-facing-error-pattern-he.js.
+ * English sibling of parent-facing-error-pattern.js.
  *
  * For tags that are approved, evidence-backed factual observations (see
  * parent-facing-error-pattern-factual.js), we prefer the factual English label over the
@@ -80,6 +80,9 @@ export function isTechnicalPatternKey(label) {
   if (/^default_[a-z0-9_]+$/i.test(raw)) return true;
   return /^[a-z][a-z0-9_]*$/i.test(raw) && !PARENT_ERROR_PATTERN_LABEL[raw.toLowerCase()];
 }
+
+/** @deprecated Alias kept for existing parent-label imports. */
+export const isTechnicalEnglishPatternKey = isTechnicalPatternKey;
 
 /**
  * @param {string|null|undefined} label

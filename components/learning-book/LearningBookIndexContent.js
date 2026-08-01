@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import { useBookGradeTheme } from "./BookGradeThemeContext";
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { resolveRegistryTitleKey } from "../../lib/learning-book/book-pack-copy.js";
 
@@ -36,7 +36,7 @@ export default function LearningBookIndexContent({ batches, routeBase }) {
                   className={`flex min-h-[3.25rem] items-center justify-between gap-3 rounded-2xl border px-5 py-4 text-left shadow-sm transition ${theme.indexTopicTile}`}
                 >
                   <span className="text-base font-semibold text-[color:var(--book-text)] sm:text-lg">
-                    <MixedHebrewMathText text={entry.displayTitle} />
+                    <MixedRtlMathText text={entry.displayTitle} />
                   </span>
                   <span
                     className={`shrink-0 text-lg ${theme.indexTopicIcon}`}

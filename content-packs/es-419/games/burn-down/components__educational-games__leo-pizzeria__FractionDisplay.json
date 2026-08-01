@@ -1,0 +1,8 @@
+{
+  "fraction_zero": "cero",
+  "fraction_whole": "un todo",
+  "fraction_parts": "{numerator} de {denominator} partes iguales",
+  "compare_greater": "La primera fracción es mayor.",
+  "compare_less": "La segunda fracción es mayor.",
+  "compare_equal": "las fracciones son iguales"
+}

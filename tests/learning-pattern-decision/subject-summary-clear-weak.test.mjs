@@ -3,8 +3,8 @@
  */
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { buildSubjectParentLetter } from "../../utils/detailed-report-parent-letter-he.js";
-import { withholdSummaryCopyHe } from "../../utils/parent-report-language/subject-withhold-summary-he.js";
+import { buildSubjectParentLetter } from "../../utils/detailed-report-parent-letter.js";
+import { withholdSummaryCopyHe } from "../../utils/parent-report-language/subject-withhold-summary.js";
 import {
   INSUFFICIENT_SUBJECT_SUMMARY_RE,
   isClearWeakTopicMetrics,
@@ -13,7 +13,7 @@ import {
 describe("subject summary clear weak topic", () => {
   test("buildSubjectParentLetter - math/addition q=10 acc=20% avoids insufficient copy", () => {
     const sp = {
-      subjectLabelHe: "מתמטיקה",
+      subjectLabel: "מתמטיקה",
       subjectConclusionReadiness: "not_ready",
       dominantRootCauseLabelHe: "קושי ביסוד",
       topWeaknesses: [
@@ -54,7 +54,7 @@ describe("subject summary clear weak topic", () => {
       sumUnitQuestions: 10,
       reportSubjectAccuracy: 20,
       reportTotalQuestions: 10,
-      subjectLabelHe: "מתמטיקה",
+      subjectLabel: "מתמטיקה",
       clearWeakTopicLabelHe: "חיבור",
       clearWeakTopicQuestions: 10,
       clearWeakTopicAccuracy: 20,

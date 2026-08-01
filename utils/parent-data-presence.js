@@ -7,30 +7,25 @@ import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { practicedSubjectCountFromReport } from "../lib/learning/normalized-subject-practice.js";
 import {
   rawMetricStrengthMixedSubjectHe,
-  rawMetricStrengthPositiveHe,
-} from "./parent-report-language/parent-report-hebrew-copy-spec.js";
+  rawMetricStrengthPositiveHe} from "./parent-report-language/parent-report-copy-spec.js";
 
 export const ParentDataPresence = Object.freeze({
   noData: "noData",
   hasVolumeNoPattern: "hasVolumeNoPattern",
   hasEvidenceLowConfidence: "hasEvidenceLowConfidence",
-  hasEvidenceReady: "hasEvidenceReady",
-});
+  hasEvidenceReady: "hasEvidenceReady"});
 
 const PATTERN_SUBJECT_ORDER = [
   "math",
   "geometry",
   "english",
-  "science",
-  "hebrew",
-  "moledet-geography",
-];
+  "science"];
 
 /** Minimum questions in window for a subject to qualify for a “strength” line from raw metrics. */
 const RAW_STRENGTH_MIN_Q = 10;
-/** High accuracy threshold (percent) for executive strength bullet (“מקצוע שהילד מצליח בו יותר”). */
+/** High accuracy threshold (percent) for executive strength bullet (subject the child does better in). */
 const RAW_STRENGTH_HIGH_ACC = 82;
-/** Mid band for consistency bullet (“תוצאות די עקביות בתקופה”). */
+/** Mid band for consistency bullet (fairly consistent results in the period). */
 const RAW_STRENGTH_MID_LO = 72;
 
 /**
@@ -65,9 +60,8 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
   if (totalQ <= 0) {
     return {
       state: ParentDataPresence.noData,
-      recommendationsExplainerHe: "אין עדיין תרגול בתקופה שנבחרה.",
-      lowConfidenceExplainerHe: null,
-    };
+      recommendationsExplainerHe: "There is no practice yet in the selected period.",
+      lowConfidenceExplainerHe: null};
   }
 
   const mode = String(diagnosticsView?.mode || "");
@@ -80,15 +74,13 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
     return {
       state: ParentDataPresence.hasEvidenceReady,
       recommendationsExplainerHe: null,
-      lowConfidenceExplainerHe: null,
-    };
+      lowConfidenceExplainerHe: null};
   }
   if (mode === "legacy" && legacyCount > 0) {
     return {
       state: ParentDataPresence.hasEvidenceReady,
       recommendationsExplainerHe: null,
-      lowConfidenceExplainerHe: null,
-    };
+      lowConfidenceExplainerHe: null};
   }
 
   const units = Array.isArray(report?.diagnosticEngineV2?.units) ? report.diagnosticEngineV2.units : [];
@@ -98,8 +90,7 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
       return {
         state: ParentDataPresence.hasEvidenceLowConfidence,
         recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-        lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-      };
+        lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE};
     }
   }
 
@@ -109,29 +100,25 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
       return {
         state: ParentDataPresence.hasEvidenceLowConfidence,
         recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-        lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-      };
+        lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE};
     }
     return {
       state: ParentDataPresence.hasVolumeNoPattern,
       recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-      lowConfidenceExplainerHe: null,
-    };
+      lowConfidenceExplainerHe: null};
   }
 
   if (mode === "new" && rowCount === 0 && totalQ > 0) {
     return {
       state: ParentDataPresence.hasEvidenceLowConfidence,
       recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-      lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-    };
+      lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE};
   }
 
   return {
     state: ParentDataPresence.hasVolumeNoPattern,
     recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-    lowConfidenceExplainerHe: null,
-  };
+    lowConfidenceExplainerHe: null};
 }
 
 /**
@@ -158,17 +145,10 @@ export function deriveRawMetricStrengthLinesHe(summary, report = null, weakSubje
 
   const rows = [
     { subjectId: "english", label: "English", q: summary.englishQuestions, acc: summary.englishAccuracy },
-    { subjectId: "hebrew", label: "Hebrew", q: summary.hebrewQuestions, acc: summary.hebrewAccuracy },
+    
     { subjectId: "science", label: "Science", q: summary.scienceQuestions, acc: summary.scienceAccuracy },
     { subjectId: "math", label: "Math", q: summary.mathQuestions, acc: summary.mathAccuracy },
-    { subjectId: "geometry", label: "Geometry", q: summary.geometryQuestions, acc: summary.geometryAccuracy },
-    {
-      subjectId: "moledet-geography",
-      label: globalBurnDownCopy("utils__parent-data-presence", "social_studies_geography"),
-      q: summary.moledetGeographyQuestions,
-      acc: summary.moledetGeographyAccuracy,
-    },
-  ];
+    { subjectId: "geometry", label: "Geometry", q: summary.geometryQuestions, acc: summary.geometryAccuracy }];
   const out = [];
   for (const { subjectId, label, q, acc } of rows) {
     const nq = Math.max(0, Math.floor(Number(q) || 0));
@@ -215,7 +195,7 @@ export const PARENT_REPORT_STANDALONE_ZERO_LEAK_RE = /(?<![#0-9])00000(?![0-9])/
 
 /**
  * When PR1 sanitization removed all bullet lines but the time window has practice volume —
- * do not tell parents “אין נתונים” (contradicts tables).
+ * do not tell parents there is no data (contradicts tables).
  */
 export const PARENT_BULLETS_EMPTY_WITH_VOLUME_HE = PARENT_THIN_DATA_EXPLAINER_HE;
 
@@ -226,9 +206,9 @@ export const PARENT_BULLETS_EMPTY_WITH_VOLUME_HE = PARENT_THIN_DATA_EXPLAINER_HE
 export function stripKnownParentReportLeakageHe(text) {
   let s = String(text || "");
   for (const bad of PARENT_REPORT_FORBIDDEN_LEAKAGE_SUBSTRINGS) {
-    if (bad && s.includes(bad)) s = s.split(bad).join("").replace(/\s{2,}/g, " ").trim();
+    if (bad && s.includes(bad)) s = s.split(bad).join("").replace(/\s{2}/g, " ").trim();
   }
-  s = s.replace(PARENT_REPORT_STANDALONE_ZERO_LEAK_RE, "").replace(/\s{2,}/g, " ").trim();
+  s = s.replace(PARENT_REPORT_STANDALONE_ZERO_LEAK_RE, "").replace(/\s{2}/g, " ").trim();
   return s;
 }
 
@@ -249,10 +229,8 @@ export function subjectQuestionCountFromReportSummary(report, subjectId) {
       return Math.max(0, Math.floor(Number(s.englishQuestions) || 0));
     case "science":
       return Math.max(0, Math.floor(Number(s.scienceQuestions) || 0));
-    case "hebrew":
-      return Math.max(0, Math.floor(Number(s.hebrewQuestions) || 0));
-    case "moledet-geography":
-      return Math.max(0, Math.floor(Number(s.moledetGeographyQuestions) || 0));
+    
+    
     default:
       return 0;
   }
@@ -280,12 +258,8 @@ export function subjectAccuracyFromReportSummary(report, subjectId) {
     case "science":
       raw = s.scienceAccuracy;
       break;
-    case "hebrew":
-      raw = s.hebrewAccuracy;
-      break;
-    case "moledet-geography":
-      raw = s.moledetGeographyAccuracy;
-      break;
+    
+    
     default:
       return null;
   }

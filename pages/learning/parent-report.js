@@ -12,18 +12,15 @@ import {
   getEnglishTopicName,
   getScienceTopicName,
   getHistoryTopicName,
-  getHebrewTopicName,
-  getMoledetGeographyTopicName,
+
   exportReportToPDF,
   isGenericParentTopicLabelHe,
   MATH_PARENT_TOPIC_FALLBACK_HE,
-  normalizeReportTopicBucketKey,
-} from "../../utils/math-report-generator";
-import { topicBucketLabelHe } from "../../utils/diagnostic-labels-he.js";
+  normalizeReportTopicBucketKey} from "../../utils/math-report-generator";
+import { topicBucketLabel } from "../../utils/diagnostic-labels.js";
 import {
   enrichParentReportWithParentAi,
-  getDeterministicParentAiExplanationFromParentReportV2,
-} from "../../utils/parent-report-ai/parent-report-ai-adapter";
+  getDeterministicParentAiExplanationFromParentReportV2} from "../../utils/parent-report-ai/parent-report-ai-adapter";
 import { ParentReportInsight } from "../../components/ParentReportInsight.jsx";
 import { ParentReportTopicExplainBlock } from "../../components/parent-report-topic-explain-row.jsx";
 import { ParentDiagnosticExplanationBlock } from "../../components/parent-diagnostic-explanation-block.jsx";
@@ -40,8 +37,7 @@ import {
   getParentReportStateShellClass,
   getParentReportStateShellStyle,
   getParentReportSecondaryLinkClass,
-  getParentReportErrorTextClass,
-} from "../../lib/parent-ui/parent-report-site-bright-theme.css.js";
+  getParentReportErrorTextClass} from "../../lib/parent-ui/parent-report-site-bright-theme.css.js";
 import { isImmersiveGameLayoutPath } from "../../lib/site-nav";
 import { useParentReportBrightPageBackground } from "../../lib/parent-ui/use-parent-report-bright-page-bg.js";
 import { mapParentReportLoadError } from "../../lib/parent-client/parent-api-errors.js";
@@ -52,39 +48,34 @@ import {
   shortReportDiagnosticsParentVisibleHe as diagnosticParentVisibleTextHe,
   trendCompactLineHe,
   truncateHe,
-  confidenceBadgeLabelHe,
-} from "../../utils/parent-report-ui-explain-he";
+  confidenceBadgeLabelHe} from "../../utils/parent-report-ui-explain";
 import { TOPIC_EVIDENCE_THRESHOLDS } from "../../utils/parent-report-topic-evidence.js";
 import { normalizeParentFacingHe } from "../../utils/parent-report-language/parent-facing-normalize.js";
 import {
-  diagnosticPrimarySourceParentLabelHe,
-} from "../../utils/parent-report-language/index.js";
+  diagnosticPrimarySourceParentLabelHe} from "../../utils/parent-report-language/index.js";
 import {
   formatParentReportActivitySourceHe,
   formatParentReportActivityDisplayLabelHe,
   formatParentReportGradeHe,
   formatParentReportLevelHe,
-  formatParentReportSubjectHe,
-} from "../../utils/parent-report-language/parent-report-display-labels.js";
+  formatParentReportSubjectHe} from "../../utils/parent-report-language/parent-report-display-labels.js";
 import {
   deriveParentDataPresenceForDiagnosticsView,
-  PARENT_THIN_DATA_EXPLAINER_HE,
-} from "../../utils/parent-data-presence.js";
+  PARENT_THIN_DATA_EXPLAINER_HE} from "../../utils/parent-data-presence.js";
 import { topicUiFromLearningPatternDecision } from "../../utils/learning-pattern-decision/parent-report-ui-helpers.js";
 import { normalizeParentVisibleMetrics } from "../../utils/learning-pattern-decision/normalize-parent-practice-metrics.js";
 import {
   filterSubjectOverviewRowsWithEvidence,
-  PARENT_REPORT_PERIOD_EMPTY_STATE_HE,
-} from "../../utils/parent-report-subject-visibility.js";
+  PARENT_REPORT_PERIOD_EMPTY_STATE_HE} from "../../utils/parent-report-subject-visibility.js";
 import { isDuplicateParentReportText } from "../../utils/parent-report-text-dedupe.js";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID = "moledet-geography";
+
 function moledetGeographyReportTopicKeyPrefix() {
-  return "moledet_geography";
+  return "geography_strand";
 }
 const VISUAL_STRAND_LABEL_HE = { moledet: "Social Studies", geography: "Geography" };
 function splitMoledetGeographyReportForDisplay(_report) {
@@ -92,8 +83,7 @@ function splitMoledetGeographyReportForDisplay(_report) {
     moledetTopics: {},
     geographyTopics: {},
     moledetStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
-    geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
-  };
+    geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 }};
 }
 function enrichDailyActivityWithVisualStrands(daily) {
   return daily;
@@ -114,19 +104,15 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-} from "recharts";
+  ResponsiveContainer} from "recharts";
 import ParentReportShortContractPreview, {
-  ParentReportWeeklyHomeActionLine,
-} from "../../components/parent-report-short-contract-preview.jsx";
+  ParentReportWeeklyHomeActionLine} from "../../components/parent-report-short-contract-preview.jsx";
 import {
   resolveParentReportWeeklyHomeActionHe,
-  mergeParentReportHomeActionHe,
-} from "../../lib/parent-ui/parent-report-parent-copy.js";
+  mergeParentReportHomeActionHe} from "../../lib/parent-ui/parent-report-parent-copy.js";
 import {
   formatExclusiveLearningMinutesHe,
-  normalizeLearningTimeExclusiveBreakdown,
-} from "../../lib/parent-ui/learning-time-exclusive-breakdown-display.js";
+  normalizeLearningTimeExclusiveBreakdown} from "../../lib/parent-ui/learning-time-exclusive-breakdown-display.js";
 import {
   buildRegularReportViewModel,
   cleanTopicLabelForRegularReportHe,
@@ -134,20 +120,17 @@ import {
   formatRegularReportTopicLabelHe,
   formatRegularReportTopicTimeCellHe,
   resolveRegisteredGradeKeyFromReport,
-  sumTopicMapMinutes,
-} from "../../lib/parent-ui/parent-report-regular-display.js";
+  sumTopicMapMinutes} from "../../lib/parent-ui/parent-report-regular-display.js";
 import ReportDateRangeControl from "../../components/reporting/ReportDateRangeControl.jsx";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
 import { resolveParentReportBearerToken } from "../../lib/parent-client/copilot-turn-api.js";
 import {
   runParentReportGenerationFromApiBody,
   computeReportRangeForParentApi,
-  resolveParentReportGenerationArgs,
-} from "../../lib/learning-supabase/parent-report-from-api-payload.js";
+  resolveParentReportGenerationArgs} from "../../lib/learning-supabase/parent-report-from-api-payload.js";
 import {
   parentReportRemoteDataUrl,
-  parseParentReportRemoteSource,
-} from "../../lib/teacher-portal/parent-report-remote-source.js";
+  parseParentReportRemoteSource} from "../../lib/teacher-portal/parent-report-remote-source.js";
 import { PARENT_REPORT_PORTAL_GATE } from "../../lib/parent-report-server-truth.js";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { hasParentDemoSession } from "../../lib/demo/parent-demo-mode.client.js";
@@ -221,11 +204,7 @@ function parentReportChartLabelFromAllItemKey(key, data) {
               ? getScienceTopicName(b)
               : subjectId === "history"
                 ? getHistoryTopicName(b)
-              : subjectId === "hebrew"
-                ? getHebrewTopicName(b)
-                : subjectId === MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID
-                  ? getMoledetGeographyTopicName(b)
-                  : b;
+                : b;
     return normalizeParentFacingHe(String(mapped || b || "").trim());
   };
   const displayName = String(data?.displayName || "").trim();
@@ -260,19 +239,7 @@ function parentReportChartLabelFromAllItemKey(key, data) {
     const fallbackBucket = sep === -1 ? rest : rest.slice(0, sep);
     return labelFrom("history", bucketKey || displayName || fallbackBucket);
   }
-  if (key.startsWith("hebrew_")) {
-    const rest = key.slice("hebrew_".length);
-    const sep = rest.indexOf("\u0001");
-    const fallbackBucket = sep === -1 ? rest : rest.slice(0, sep);
-    return labelFrom("hebrew", bucketKey || displayName || fallbackBucket);
-  }
-  const mgPrefix = moledetGeographyReportTopicKeyPrefix();
-  if (key.startsWith(mgPrefix)) {
-    const rest = key.slice(mgPrefix.length);
-    const sep = rest.indexOf("\u0001");
-    const fallbackBucket = sep === -1 ? rest : rest.slice(0, sep);
-    return labelFrom(MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID, bucketKey || displayName || fallbackBucket);
-  }
+
   if (displayName) return normalizeParentFacingHe(displayName);
   return normalizeParentFacingHe(key);
 }
@@ -285,7 +252,7 @@ function subjectTopicLabelForParentHe(subjectId, data, fallbackTopic) {
   const displayName = String(data?.displayName || data?.narrativeTopicLabelHe || "").trim();
   const bucket = String(data?.bucketKey ?? fallbackTopic ?? "").trim();
   const bucketForLookup = normalizeReportTopicBucketKey(bucket);
-  const fromCatalog = topicBucketLabelHe(subjectId, bucketForLookup || displayName);
+  const fromCatalog = topicBucketLabel(subjectId, bucketForLookup || displayName);
   if (fromCatalog && !isGenericParentTopicLabelHe(fromCatalog)) {
     return normalizeParentFacingHe(fromCatalog);
   }
@@ -300,11 +267,7 @@ function subjectTopicLabelForParentHe(subjectId, data, fallbackTopic) {
             ? getScienceTopicName(bucketForLookup || displayName)
             : subjectId === "history"
               ? getHistoryTopicName(bucketForLookup || displayName)
-            : subjectId === "hebrew"
-              ? getHebrewTopicName(bucketForLookup || displayName)
-              : subjectId === MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID
-                ? getMoledetGeographyTopicName(bucketForLookup || displayName)
-                : displayName || bucketForLookup;
+              : displayName || bucketForLookup;
   const resolved = String(raw || "").trim();
   if (resolved && !isGenericParentTopicLabelHe(resolved)) {
     return normalizeParentFacingHe(resolved);
@@ -354,13 +317,12 @@ const SUBJECT_CHART_COLORS = {
   english: "#a855f7",
   science: "#22c55e",
   history: "#a16207",
-  hebrew: "#f97316",
-  moledet: "#06b6d4",
-  geography: "#14b8a6",
-};
+  
+  
+  geography: "#14b8a6"};
 
 const INSUFFICIENT_TREND_SESSIONS_RE =
-  /\u05D0\u05D9\u05DF\s+\u05DE\u05E1\u05E4\u05D9\u05E7\s+\u05DE\u05E4\u05D2\u05E9|not enough sessions/i;
+  /not enough sessions/i;
 
 /** Status column subline — a short line built only from existing row data. */
 function ParentReportRowDiagnosticsFootnote({ data }) {
@@ -436,10 +398,9 @@ const SUBJECT_OVERVIEW_CARD_UI = {
   english: { emoji: "📘", cardClass: "bg-purple-500/20 border border-purple-400/50", statClass: "text-purple-200" },
   science: { emoji: "🔬", cardClass: "bg-green-500/20 border border-green-400/50", statClass: "text-green-200" },
   history: { emoji: "🏛️", cardClass: "bg-amber-700/25 border border-amber-500/50", statClass: "text-amber-200" },
-  hebrew: { emoji: "📚", cardClass: "bg-orange-500/20 border border-orange-400/50", statClass: "text-orange-300" },
-  moledet: { emoji: "🏠", cardClass: "bg-cyan-500/20 border border-cyan-400/50", statClass: "text-cyan-300" },
-  geography: { emoji: "🗺️", cardClass: "bg-teal-500/20 border border-teal-400/50", statClass: "text-teal-300" },
-};
+  
+  
+  geography: { emoji: "🗺️", cardClass: "bg-teal-500/20 border border-teal-400/50", statClass: "text-teal-300" }};
 
 function buildSubjectOverviewRows(report) {
   if (!report?.summary) return [];
@@ -450,8 +411,7 @@ function buildSubjectOverviewRows(report) {
     const metrics = normalizeParentVisibleMetrics({
       questions: Number(q) || 0,
       correct: correct != null ? Number(correct) : undefined,
-      accuracy: Math.round(Number(acc) || 0),
-    });
+      accuracy: Math.round(Number(acc) || 0)});
     return {
       key,
       name,
@@ -461,8 +421,7 @@ function buildSubjectOverviewRows(report) {
       accuracy: metrics.accuracy,
       wrong: metrics.wrong,
       parentVisibleMetrics: metrics,
-      fill,
-    };
+      fill};
   }
 
   return [
@@ -511,24 +470,7 @@ function buildSubjectOverviewRows(report) {
       s.historyAccuracy,
       SUBJECT_CHART_COLORS.history,
     ),
-    subjectRow(
-      "hebrew",
-      "Hebrew",
-      sumTopicMapMinutes(report.hebrewTopics),
-      s.hebrewQuestions,
-      s.hebrewCorrect,
-      s.hebrewAccuracy,
-      SUBJECT_CHART_COLORS.hebrew,
-    ),
-    subjectRow(
-      "moledet",
-      VISUAL_STRAND_LABEL_HE.moledet,
-      sumTopicMapMinutes(mgVisual.moledetTopics),
-      mgVisual.moledetStats.questions,
-      mgVisual.moledetStats.correct,
-      mgVisual.moledetStats.accuracy,
-      SUBJECT_CHART_COLORS.moledet,
-    ),
+
     subjectRow(
       "geography",
       VISUAL_STRAND_LABEL_HE.geography,
@@ -537,8 +479,7 @@ function buildSubjectOverviewRows(report) {
       mgVisual.geographyStats.correct,
       mgVisual.geographyStats.accuracy,
       SUBJECT_CHART_COLORS.geography,
-    ),
-  ];
+    )];
 }
 
 function chartSubjectIdFromKeyPrefix(keyPrefix) {
@@ -547,8 +488,7 @@ function chartSubjectIdFromKeyPrefix(keyPrefix) {
   if (String(keyPrefix || "").startsWith("english_")) return "english";
   if (String(keyPrefix || "").startsWith("science_")) return "science";
   if (String(keyPrefix || "").startsWith("history_")) return "history";
-  if (String(keyPrefix || "").startsWith("hebrew_")) return "hebrew";
-  if (String(keyPrefix || "").startsWith("moledet")) return MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID;
+
   return "math";
 }
 
@@ -597,8 +537,7 @@ function buildTopicRowsForChart(map, keyPrefix, regularDisplay = null) {
         ? data.recommendationDecisionTrace
         : null,
       patternStabilityHe: data?.patternStabilityHe ? String(data.patternStabilityHe) : "",
-      dataSufficiencyLabelHe: data?.dataSufficiencyLabelHe ? String(data.dataSufficiencyLabelHe) : "",
-    };
+      dataSufficiencyLabelHe: data?.dataSufficiencyLabelHe ? String(data.dataSufficiencyLabelHe) : ""};
   });
   rows.sort(
     (a, b) =>
@@ -646,30 +585,18 @@ const PATTERN_DIAGNOSTIC_SUBJECT_ORDER = [
   "geometry",
   "english",
   "science",
-  "history",
-  "hebrew",
-  MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID,
-];
+  "history"];
 
 const MAX_DIAGNOSTIC_EVIDENCE_CHARS = 200;
 
 /** Compatibility for the legacy tierHe in saved reports */
 function weaknessTierHeDisplay(tierHe) {
-  const t = String(tierHe || "").trim();
-  const legacyRecurring = "\u05E7\u05D5\u05E9\u05D9 \u05D7\u05D5\u05D6\u05E8";
-  const legacyRecurringConsistent = `${legacyRecurring} / \u05E7\u05D5\u05E9\u05D9 \u05E2\u05E7\u05D1\u05D9`;
-  const legacySelfRepeating = "\u05E7\u05D5\u05E9\u05D9 \u05E9\u05D7\u05D5\u05D6\u05E8 \u05E2\u05DC \u05E2\u05E6\u05DE\u05D5";
-  if (t === legacyRecurringConsistent || t === legacyRecurring || t === legacySelfRepeating) {
-    return "Right now practice suggests this could use reinforcement";
-  }
-  if (t === "\u05E7\u05D5\u05E9\u05D9 \u05E0\u05E7\u05D5\u05D3\u05D9") return "Looks like this could use more practice";
-  return t;
+  return String(tierHe || "").trim();
 }
 
 /** Compatibility for the legacy retention tierHe */
 function maintainTierHeDisplay(tierHe) {
-  const legacyMaintain = "\u05EA\u05D7\u05D5\u05DD \u05DC\u05E9\u05D9\u05DE\u05D5\u05E8";
-  return tierHe === legacyMaintain ? "Consistency" : tierHe;
+  return tierHe;
 }
 
 /**
@@ -681,11 +608,10 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   const weaknesses = (sub.stableWeaknesses || []).slice(0, 2).map((w, i) => ({
     id: w.id || `${subjectId}:w:${i}`,
     labelHe:
-      stripTechnicalParensHe(String(w.label || "").replace(/\u05D3\u05E4\u05D5\u05E1 \u05E9\u05D2\u05D9\u05D0\u05D5\u05EA\s*\([^)]+\)/, "Mistake pattern")) ||
+      stripTechnicalParensHe(String(w.label || "").replace(/Mistake pattern\s*\([^)]+\)/i, "Mistake pattern")) ||
       "Recurring mistake pattern",
     mistakeCount: Number(w.mistakeCount) || 0,
-    confidence: w.confidence === "high" ? "high" : "moderate",
-  }));
+    confidence: w.confidence === "high" ? "high" : "moderate"}));
   const legacyStrengths = sub.stableStrengths || [];
   const excellent = legacyStrengths.slice(0, 2).map((s) => ({
     id: s.id,
@@ -696,23 +622,20 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     accuracy: Number(s.accuracy) || 0,
     confidence: s.confidence === "high" ? "high" : "moderate",
     needsPractice: false,
-    excellent: true,
-  }));
+    excellent: true}));
   const studentRecommendationsImprove = (sub.studentRecommendations || [])
     .slice(0, 1)
     .map((r, i) => ({
       id: r.id || `stu-imp:${i}`,
       textHe: stripTechnicalParensHe(r.text),
-      strength: r.strength || "moderate",
-    }))
+      strength: r.strength || "moderate"}))
     .filter((r) => r.textHe);
   const parentRecommendationsImprove = (sub.parentRecommendations || [])
     .slice(0, 1)
     .map((r, i) => ({
       id: r.id || `par-imp:${i}`,
       textHe: stripTechnicalParensHe(r.text),
-      strength: r.strength || "moderate",
-    }))
+      strength: r.strength || "moderate"}))
     .filter((r) => r.textHe);
   let evidenceMistake = (sub.evidenceExamples || [])[0] || null;
   if (evidenceMistake) {
@@ -726,8 +649,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
         questionLabel: evidenceMistake.questionLabel || null,
         correctAnswer: evidenceMistake.correctAnswer ?? null,
         userAnswer: evidenceMistake.userAnswer ?? null,
-        confidence: evidenceMistake.confidence,
-      };
+        confidence: evidenceMistake.confidence};
     }
   }
   const topWeaknesses = weaknesses.map((w, i) => ({
@@ -740,12 +662,10 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
         ? "Right now practice suggests this could use reinforcement"
         : (w.mistakeCount || 0) >= 5
           ? "Looks like this could use more practice"
-          : reportPackCopy("pages__learning__parent-report", "area_to_reinforce"),
-  }));
+          : reportPackCopy("pages__learning__parent-report", "area_to_reinforce")}));
   const topStrengths = excellent.map((e) => ({
     ...e,
-    tierHe: e.questions >= 20 ? "A topic the child is succeeding in right now" : "A strong topic right now",
-  }));
+    tierHe: e.questions >= 20 ? "A topic the child is succeeding in right now" : "A strong topic right now"}));
   const evidenceExamples = [];
   if (evidenceMistake) evidenceExamples.push({ type: "mistake", ...evidenceMistake });
   const parentActionHe = parentRecommendationsImprove[0]?.textHe || null;
@@ -775,8 +695,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     parentRecommendationsMaintain: [],
     evidenceMistake,
     evidenceSuccess: null,
-    hasAnySignal,
-  };
+    hasAnySignal};
 }
 
 /**
@@ -794,9 +713,7 @@ function buildParentReportDiagnosticsView(report) {
       presence: deriveParentDataPresenceForDiagnosticsView(report, {
         mode,
         rows: [],
-        legacyRecommendations,
-      }),
-    };
+        legacyRecommendations})};
   }
 
   const legacy = Array.isArray(report?.analysis?.recommendations)
@@ -819,9 +736,7 @@ function buildParentReportDiagnosticsView(report) {
       presence: deriveParentDataPresenceForDiagnosticsView(report, {
         mode,
         rows: [],
-        legacyRecommendations,
-      }),
-    };
+        legacyRecommendations})};
   }
 
   const pdVersion = Number(report?.patternDiagnostics?.version) || 0;
@@ -851,9 +766,7 @@ function buildParentReportDiagnosticsView(report) {
       presence: deriveParentDataPresenceForDiagnosticsView(report, {
         mode: "insufficient",
         rows: [],
-        legacyRecommendations,
-      }),
-    };
+        legacyRecommendations})};
   }
 
   const rows = [];
@@ -862,9 +775,8 @@ function buildParentReportDiagnosticsView(report) {
     if (!sub || !sub.hasAnySignal) continue;
     rows.push({
       subjectId: id,
-      subjectLabelHe: formatParentReportSubjectHe(sub.subjectLabelHe || id),
-      sub,
-    });
+      subjectLabel: formatParentReportSubjectHe(sub.subjectLabel || id),
+      sub});
   }
 
   const legacyRecommendations = allowLegacyFallback ? legacy : [];
@@ -875,9 +787,7 @@ function buildParentReportDiagnosticsView(report) {
     presence: deriveParentDataPresenceForDiagnosticsView(report, {
       mode: "new",
       rows,
-      legacyRecommendations,
-    }),
-  };
+      legacyRecommendations})};
 }
 
 /** Topic card definitions — single source for the subject list + global label collection */
@@ -887,20 +797,12 @@ const TOPIC_BAR_SUBJECT_CARDS = [
   { title: "English - accuracy by topic", mapKey: "englishTopics", prefix: "english_", border: "border-purple-400/25" },
   { title: "Science - accuracy by topic", mapKey: "scienceTopics", prefix: "science_", border: "border-green-400/25" },
   { title: "History - accuracy by topic", mapKey: "historyTopics", prefix: "history_", border: "border-amber-400/25" },
-  { title: "Hebrew - accuracy by topic", mapKey: "hebrewTopics", prefix: "hebrew_", border: "border-orange-400/25" },
-  {
-    title: `${VISUAL_STRAND_LABEL_HE.moledet} - accuracy by topic`,
-    mapKey: "_visualMoledetTopics",
-    prefix: moledetGeographyReportTopicKeyPrefix(),
-    border: "border-cyan-400/25",
-  },
+
   {
     title: `${VISUAL_STRAND_LABEL_HE.geography} - accuracy by topic`,
     mapKey: "_visualGeographyTopics",
     prefix: moledetGeographyReportTopicKeyPrefix(),
-    border: "border-teal-400/25",
-  },
-];
+    border: "border-teal-400/25"}];
 
 /**
  * Master geometry - the "summary across six subjects" chart is the source; the bar track (pixel width) is identical across all topic charts.
@@ -939,8 +841,7 @@ const MASTER_BAR_CHART_GEOMETRY = {
   chartCardPadXPxMobile: 24,
   chartCardPadXPxDesktop: 40,
   /** Small margin from the card edge for the scrollbar/rounding */
-  chartHostWidthSlopPx: 6,
-};
+  chartHostWidthSlopPx: 6};
 
 function augmentReportWithVisualMgSplit(report) {
   if (!report) return report;
@@ -948,8 +849,7 @@ function augmentReportWithVisualMgSplit(report) {
   return {
     ...report,
     _visualMoledetTopics: split.moledetTopics,
-    _visualGeographyTopics: split.geographyTopics,
-  };
+    _visualGeographyTopics: split.geographyTopics};
 }
 
 function collectAllTopicChartLabels(report) {
@@ -1073,8 +973,7 @@ function computeMasterBarChartGeometry(report, view) {
     chartBodyVerticalPadPx: G.chartBodyVerticalPadPx,
     chartBodyMinHeightPx: G.chartBodyMinHeightPx,
     chartBodyMaxHeightPx: G.chartBodyMaxHeightPx,
-    barChartXAxisReservedHeightPx: G.barChartXAxisReservedHeightPx,
-  };
+    barChartXAxisReservedHeightPx: G.barChartXAxisReservedHeightPx};
 }
 
 const chartTooltipStyle = {
@@ -1083,8 +982,7 @@ const chartTooltipStyle = {
   borderRadius: "10px",
   color: "#f8fafc",
   direction: "ltr",
-  fontSize: "13px",
-};
+  fontSize: "13px"};
 
 const chartTooltipStyleLight = {
   backgroundColor: "#ffffff",
@@ -1092,8 +990,7 @@ const chartTooltipStyleLight = {
   borderRadius: "10px",
   color: "#0f172a",
   direction: "ltr",
-  fontSize: "13px",
-};
+  fontSize: "13px"};
 
 /** Below this inclusive total-question count, omit charts (thin global evidence). */
 const PARENT_REPORT_THIN_VOLUME_QUESTIONS_MAX = 14;
@@ -1155,8 +1052,7 @@ export default function ParentReport() {
     return {
       ...displayReport,
       _visualMoledetTopics: split.moledetTopics,
-      _visualGeographyTopics: split.geographyTopics,
-    };
+      _visualGeographyTopics: split.geographyTopics};
   }, [displayReport]);
   const dailyActivityVisual = useMemo(
     () =>
@@ -1207,8 +1103,7 @@ export default function ParentReport() {
       return {
         ...base,
         studentId: remoteStudentId,
-        source: isTeacherSource ? "teacher" : "parent",
-      };
+        source: isTeacherSource ? "teacher" : "parent"};
     }
     return base;
   }, [
@@ -1218,8 +1113,7 @@ export default function ParentReport() {
     period,
     isRemoteReportSource,
     isTeacherSource,
-    remoteStudentId,
-  ]);
+    remoteStudentId]);
 
   // useEffect (not useLayoutEffect) — required for Next SSR to avoid a hydration warning / useLayoutEffect on the server
   useEffect(() => {
@@ -1254,8 +1148,7 @@ export default function ParentReport() {
 
   const formatActivitySource = (row) =>
     formatParentReportActivityDisplayLabelHe(row, {
-      subjectId: row?.subject || row?.subjectId,
-    });
+      subjectId: row?.subject || row?.subjectId});
 
   // Screen size check
   useEffect(() => {
@@ -1353,8 +1246,7 @@ export default function ParentReport() {
     router.query.start,
     router.query.end,
     router.query.studentId,
-    router.query.source,
-  ]);
+    router.query.source]);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -1391,8 +1283,7 @@ export default function ParentReport() {
         setPlayerName,
         setShortContractTop,
         setParentReportError,
-        setLoading,
-      };
+        setLoading};
       const cachedBody = readParentReportRemoteSessionCache(fetchKey);
       const hasSessionCache =
         cachedBody &&
@@ -1442,8 +1333,7 @@ export default function ParentReport() {
           credentials: "include",
           cache: "no-store",
           signal: abortController.signal,
-          headers: { Authorization: `Bearer ${token}` },
-        });
+          headers: { Authorization: `Bearer ${token}` }});
         const body = await res.json().catch(() => ({}));
         if (!res.ok || body?.ok === false) {
           if (!cancelled) {
@@ -1487,8 +1377,7 @@ export default function ParentReport() {
               eventName: "parent_report_opened",
               actorType: "parent",
               studentId: parentStudentId,
-              metadata: { period: uiPeriodResolved, from, to },
-            });
+              metadata: { period: uiPeriodResolved, from, to }});
           }
         }
       } catch (loadErr) {
@@ -1528,8 +1417,7 @@ export default function ParentReport() {
     period,
     customDates,
     appliedStartDate,
-    appliedEndDate,
-  ]);
+    appliedEndDate]);
 
   const handleShowReport = () => {
     if (startDate && endDate && startDate <= endDate) {
@@ -1623,8 +1511,7 @@ export default function ParentReport() {
     return computeMasterBarChartGeometry(displayReport, {
       isMobileViewport: isMobile,
       forceDesktopLayout: isPrintLayout,
-      chartHostInnerWidthPx,
-    });
+      chartHostInnerWidthPx});
   }, [displayReport, isMobile, isPrintLayout, chartHostInnerWidthPx]);
 
   const diagnosticsView = useMemo(
@@ -1656,8 +1543,7 @@ export default function ParentReport() {
         ? resolveParentReportWeeklyHomeActionHe({
             shortContractTop,
             report,
-            diagnosticsView,
-          })
+            diagnosticsView})
         : null,
     [shortContractTop, report, diagnosticsView]
   );
@@ -2289,8 +2175,7 @@ export default function ParentReport() {
               <Link
                 href={{
                   pathname: "/parent/parent-report-detailed",
-                  query: detailedReportQuery,
-                }}
+                  query: detailedReportQuery}}
                 prefetch={false}
                 className={
                   isBright
@@ -3006,7 +2891,7 @@ export default function ParentReport() {
           )}
 
           {/* */}
-          {regularReportTopicMapHasRows(displayReport, "hebrewTopics", regularReportDisplay) && (
+          {regularReportTopicMapHasRows(displayReport, "__removed_hebrewTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
               <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📚 Hebrew progress</h2>
               {/* Desktop Table */}
@@ -3039,13 +2924,13 @@ export default function ParentReport() {
                     </tr>
                   </thead>
                   <tbody>
-                    {regularReportTopicTableEntries(displayReport, "hebrewTopics", regularReportDisplay)
+                    {regularReportTopicTableEntries(displayReport, "__removed_hebrewTopics", regularReportDisplay)
                       .sort(([_, a], [__, b]) => b.questions - a.questions)
                       .map(([topic, data]) => (
                         <tr key={topic} className="border-b border-white/10">
                           <td className="text-start align-top py-1.5 px-1 min-w-0">
                             <span className="text-start break-words">
-                              {regularReportTopicLabel("hebrew", data, topic, regularReportDisplay)}
+                              {regularReportTopicLabel("english", data, topic, regularReportDisplay)}
                             </span>
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
@@ -3093,11 +2978,11 @@ export default function ParentReport() {
               </div>
               {/* Mobile Cards */}
               <div className="parent-report-mobile-only md:hidden space-y-3">
-                {regularReportTopicTableEntries(displayReport, "hebrewTopics", regularReportDisplay)
+                {regularReportTopicTableEntries(displayReport, "__removed_hebrewTopics", regularReportDisplay)
                   .sort(([_, a], [__, b]) => b.questions - a.questions)
                   .map(([topic, data]) => (
                     <div key={topic} className="bg-black/40 border border-white/20 rounded-lg p-3">
-                      <div className="font-semibold text-sm mb-2 text-orange-400">{regularReportTopicLabel("hebrew", data, topic, regularReportDisplay)}</div>
+                      <div className="font-semibold text-sm mb-2 text-orange-400">{regularReportTopicLabel("english", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
                           <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
@@ -3187,8 +3072,7 @@ export default function ParentReport() {
                         <tr key={topic} className="border-b border-white/10">
                           <td className="text-start align-top py-1.5 px-1 min-w-0">
                             <span className="text-start break-words">
-                              {regularReportTopicLabel(
-                                MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID,
+                              {regularReportTopicLabel("science",
                                 data,
                                 topic,
                                 regularReportDisplay,
@@ -3248,7 +3132,7 @@ export default function ParentReport() {
                   .sort(([_, a], [__, b]) => b.questions - a.questions)
                   .map(([topic, data]) => (
                     <div key={topic} className="bg-black/40 border border-white/20 rounded-lg p-3">
-                      <div className="font-semibold text-sm mb-2 text-cyan-400">{subjectTopicLabelForParentHe(MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID, data, topic)}</div>
+                      <div className="font-semibold text-sm mb-2 text-cyan-400">{subjectTopicLabelForParentHe("science", data, topic)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
                           <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
@@ -3337,8 +3221,7 @@ export default function ParentReport() {
                         <tr key={topic} className="border-b border-white/10">
                           <td className="text-start align-top py-1.5 px-1 min-w-0">
                             <span className="text-start break-words">
-                              {regularReportTopicLabel(
-                                MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID,
+                              {regularReportTopicLabel("science",
                                 data,
                                 topic,
                                 regularReportDisplay,
@@ -3397,7 +3280,7 @@ export default function ParentReport() {
                   .sort(([_, a], [__, b]) => b.questions - a.questions)
                   .map(([topic, data]) => (
                     <div key={topic} className="bg-black/40 border border-white/20 rounded-lg p-3">
-                      <div className="font-semibold text-sm mb-2 text-teal-400">{subjectTopicLabelForParentHe(MOLEDET_GEOGRAPHY_REPORT_SUBJECT_ID, data, topic)}</div>
+                      <div className="font-semibold text-sm mb-2 text-teal-400">{subjectTopicLabelForParentHe("science", data, topic)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
                           <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
@@ -3572,13 +3455,11 @@ export default function ParentReport() {
                           x.tierHe ||
                           (x.excellent && (x.questions || 0) >= 20
                             ? "A topic the child is succeeding in right now"
-                            : "A strong topic right now"),
-                      }));
+                            : "A strong topic right now")}));
                       const topStr = s.topStrengths?.length ? s.topStrengths : legacyStrength;
                       const wkLegacy = (s.weaknesses || []).map((w) => ({
                         ...w,
-                        tierHe: w.tierHe || "Right now practice suggests this could use reinforcement",
-                      }));
+                        tierHe: w.tierHe || "Right now practice suggests this could use reinforcement"}));
                       const topWk = s.topWeaknesses?.length ? s.topWeaknesses : wkLegacy;
                       const mn = s.maintain || [];
                       const im = s.improving || [];
@@ -3601,8 +3482,7 @@ export default function ParentReport() {
                             type: "success",
                             titleHe: evS.titleHe,
                             bodyHe: evS.bodyHe,
-                            confidence: evS.confidence,
-                          });
+                            confidence: evS.confidence});
                         }
                       }
                       evidenceList = evidenceList
@@ -3619,18 +3499,17 @@ export default function ParentReport() {
 
                       const parentHomeActionHe = mergeParentReportHomeActionHe({
                         parentActionHe: s.parentActionHe,
-                        parImp,
-                      });
+                        parImp});
                       const nextWeekGoalHe = s.nextWeekGoalHe || null;
                       const summaryHe = s.summaryHe || null;
 
                       return (
                         <div
-                          key={`${row.subjectId}-${row.subjectLabelHe}`}
+                          key={`${row.subjectId}-${row.subjectLabel}`}
                           className="parent-report-diagnostic-subject-block rounded-lg border border-white/15 bg-black/20 p-2 md:p-3"
                         >
                           <div className="parent-report-diagnostic-subject-title font-bold text-sm md:text-base mb-2 text-white/95 border-b border-white/10 pb-1">
-                            {row.subjectLabelHe}
+                            {row.subjectLabel}
                           </div>
                           <div className="space-y-2 md:space-y-2.5">
                             {summaryHe ? (
@@ -4030,9 +3909,7 @@ export default function ParentReport() {
                   name: reportPackCopy("pages__learning__parent-report", "breakdown"),
                   question: qMin,
                   book: bMin,
-                  other: oMin,
-                },
-              ];
+                  other: oMin}];
               return (
                 <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                   <div className="text-center mb-1 md:mb-2">
@@ -4064,8 +3941,7 @@ export default function ParentReport() {
                           contentStyle={activeTooltipStyle}
                           formatter={(value, name) => [
                             `${formatExclusiveLearningMinutesHe(value)} min`,
-                            name,
-                          ]}
+                            name]}
                         />
                         <Legend
                           verticalAlign="top"
@@ -4073,8 +3949,7 @@ export default function ParentReport() {
                           wrapperStyle={{
                             paddingBottom: 10,
                             fontSize: isMobile ? 11 : 12,
-                            lineHeight: 1.4,
-                          }}
+                            lineHeight: 1.4}}
                           iconSize={11}
                           formatter={(value) => {
                             let mins = 0;
@@ -4155,8 +4030,7 @@ export default function ParentReport() {
                           new Date(value).toLocaleDateString("en-US", {
                             weekday: "short",
                             day: "numeric",
-                            month: "short",
-                          })
+                            month: "short"})
                         }
                         formatter={(value, name) => {
                           if (name === reportPackCopy("pages__learning__parent-report", "time_minutes")) return [`${value} min`, name];
@@ -4170,8 +4044,7 @@ export default function ParentReport() {
                         wrapperStyle={{
                           paddingBottom: 14,
                           fontSize: isMobile ? 11 : 12,
-                          lineHeight: 1.4,
-                        }}
+                          lineHeight: 1.4}}
                         iconType="line"
                         iconSize={11}
                         formatter={(value) => (
@@ -4243,8 +4116,7 @@ export default function ParentReport() {
                           new Date(value).toLocaleDateString("en-US", {
                             weekday: "short",
                             day: "numeric",
-                            month: "short",
-                          })
+                            month: "short"})
                         }
                       />
                       <Legend
@@ -4254,8 +4126,7 @@ export default function ParentReport() {
                           paddingBottom: 12,
                           fontSize: isMobile ? 10 : 11,
                           lineHeight: 1.35,
-                          maxWidth: "100%",
-                        }}
+                          maxWidth: "100%"}}
                         layout="horizontal"
                         iconType="line"
                         iconSize={10}
@@ -4308,24 +4179,7 @@ export default function ParentReport() {
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
-                      <Line
-                        type="monotone"
-                        dataKey="hebrewTopics"
-                        stroke={SUBJECT_CHART_COLORS.hebrew}
-                        strokeWidth={1.8}
-                        name="Hebrew"
-                        dot={{ r: 2 }}
-                        activeDot={{ r: 4 }}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="moledetVisualTopics"
-                        stroke={SUBJECT_CHART_COLORS.moledet}
-                        strokeWidth={1.8}
-                        name={VISUAL_STRAND_LABEL_HE.moledet}
-                        dot={{ r: 2 }}
-                        activeDot={{ r: 4 }}
-                      />
+
                       <Line
                         type="monotone"
                         dataKey="geographyVisualTopics"
@@ -4356,8 +4210,7 @@ export default function ParentReport() {
                 const gap = M.labelPlotGapPx;
                 const chartMargin = {
                   ...plotMargin,
-                  left: gap + plotMargin.left,
-                };
+                  left: gap + plotMargin.left};
                 return (
                   <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                     <div className="text-center mb-2 md:mb-3">
@@ -4378,8 +4231,7 @@ export default function ParentReport() {
                         style={{
                           width: M.summaryChartTotalWidthPx,
                           minWidth: M.summaryChartTotalWidthPx,
-                          height: sumH,
-                        }}
+                          height: sumH}}
                       >
                         <ResponsiveContainer
                           width={M.summaryChartTotalWidthPx}
@@ -4406,8 +4258,7 @@ export default function ParentReport() {
                                 position: "insideBottom",
                                 offset: -2,
                                 fill: "#ffffff70",
-                                fontSize: M.tickFontPx,
-                              }}
+                                fontSize: M.tickFontPx}}
                             />
                             <YAxis
                               type="category"
@@ -4415,8 +4266,7 @@ export default function ParentReport() {
                               width={M.summaryLabelRailWidthPx}
                               interval={0}
                               axisLine={{
-                                stroke: "rgba(255,255,255,0.1)",
-                              }}
+                                stroke: "rgba(255,255,255,0.1)"}}
                               tickLine={false}
                               tick={(tickProps) => {
                                 const { x, y, payload } = tickProps;
@@ -4458,8 +4308,7 @@ export default function ParentReport() {
                                   }
                                   return [
                                     `${p.minutes} min practice · ${q} questions · ${p.accuracy}% accuracy`,
-                                    "",
-                                  ];
+                                    ""];
                                 }}
                               />
                               <Bar
@@ -4505,8 +4354,7 @@ export default function ParentReport() {
                 const plotMargin = { ...m, bottom: m.bottom + xAxisRes };
                 const chartMargin = {
                   ...plotMargin,
-                  left: gap + plotMargin.left,
-                };
+                  left: gap + plotMargin.left};
                 return (
                   <div
                     key={cfg.mapKey}
@@ -4530,8 +4378,7 @@ export default function ParentReport() {
                         style={{
                           width: totalW,
                           minWidth: totalW,
-                          height: innerH,
-                        }}
+                          height: innerH}}
                       >
                         <ResponsiveContainer width={totalW} height={innerH}>
                           <BarChart
@@ -4555,8 +4402,7 @@ export default function ParentReport() {
                                 position: "insideBottom",
                                 offset: -2,
                                 fill: "#ffffff65",
-                                fontSize: M.tickFontPx,
-                              }}
+                                fontSize: M.tickFontPx}}
                             />
                             <YAxis
                               type="category"
@@ -4564,8 +4410,7 @@ export default function ParentReport() {
                               width={labelW}
                               interval={0}
                               axisLine={{
-                                stroke: "rgba(255,255,255,0.1)",
-                              }}
+                                stroke: "rgba(255,255,255,0.1)"}}
                               tickLine={false}
                               tick={(tickProps) => {
                                 const { x, y, payload } = tickProps;
@@ -4603,8 +4448,7 @@ export default function ParentReport() {
                                 }
                                 const timeLabel = formatRegularReportTopicTimeCellHe({
                                   questions: q,
-                                  timeMinutes: p.timeMinutes,
-                                });
+                                  timeMinutes: p.timeMinutes});
                                 const timePart = timeLabel === "-" ? "" : ` · ${timeLabel}`;
                                 return [`${p.accuracy}% accuracy · ${q} questions${timePart}`, ""];
                               }}
@@ -4701,8 +4545,7 @@ export default function ParentReport() {
                     eventName: "parent_report_pdf_exported",
                     actorType: "parent",
                     studentId: parentStudentId,
-                    metadata: { period },
-                  });
+                    metadata: { period }});
                 }
                 exportReportToPDF(report, pdfOpts);
               }}

@@ -18,9 +18,9 @@ const {
   findDuplicateWordPairsInString,
   findReadabilityLeakSubstringsInString,
 } = await import(u("utils/parent-report-language/forbidden-terms.js"));
-const { normalizeParentFacingHe } = await import(u("utils/parent-report-language/parent-facing-normalize-he.js"));
+const { normalizeParentFacing } = await import(u("utils/parent-report-language/parent-facing-normalize.js"));
 const { findParentReportEnglishEnumLeaks, formatParentReportModeHe } = await import(
-  u("utils/parent-report-language/parent-report-display-labels.he.js")
+  u("utils/parent-report-language/parent-report-display-labels.js")
 );
 const { buildNarrativeContractV1, narrativeSectionTextHe } = await import(u("utils/contracts/narrative-contract-v1.js"));
 const {
@@ -31,7 +31,7 @@ const {
   buildSubjectOwnerCopySlots,
   renderOwnerSubjectCopyTemplateHe,
   SUBJECT_OWNER_COPY_TEMPLATE_IDS,
-} = await import(u("utils/parent-report-language/parent-report-owner-copy-templates-he.js"));
+} = await import(u("utils/parent-report-language/parent-report-owner-copy-templates.js"));
 const {
   buildTopicOwnerCopySlots,
   resolveTopicOwnerCopyHe,
@@ -41,20 +41,20 @@ const {
   resolveTopicOwnerBaseTemplateId,
 } = await import(u("utils/learning-pattern-decision/resolve-topic-owner-copy.js"));
 const { parentReportOwnerTopicCopyTemplatesHe } = await import(
-  u("utils/parent-report-language/parent-report-owner-topic-copy-templates-he.js")
+  u("utils/parent-report-language/parent-report-owner-topic-copy-templates.js")
 );
 const { EDC_CONTRACT_KEY } = await import(u("utils/learning-pattern-decision/engine-decision-codes.js"));
 
 const SKIP_FILES = new Set([
   // Normalization / guard infrastructure — not parent-visible copy.
   "utils/parent-report-language/forbidden-terms.js",
-  "utils/parent-report-language/parent-facing-normalize-he.js",
-  "utils/parent-report-language/parent-report-hebrew-copy-spec.js",
+  "utils/parent-report-language/parent-facing-normalize.js",
+  "utils/parent-report-language/parent-report-copy-spec.js",
   // Owner-authored editorial packs: skip static source literal scan only.
   // Rendered output from these packs is validated in ownerCopyRenderedSamples below.
-  "utils/parent-report-language/engine-decision-parent-copy-he.js",
-  "utils/parent-report-language/parent-report-owner-copy-templates-he.js",
-  "utils/parent-report-language/parent-report-owner-topic-copy-templates-he.js",
+  "utils/parent-report-language/engine-decision-parent-copy.js",
+  "utils/parent-report-language/parent-report-owner-copy-templates.js",
+  "utils/parent-report-language/parent-report-owner-topic-copy-templates.js",
 ]);
 
 /**
@@ -83,8 +83,8 @@ const SCAN_ROOTS = [
   "utils/learning-pattern-decision/resolve-topic-owner-copy.js",
   "utils/parent-data-presence.js",
   "utils/detailed-parent-report.js",
-  "utils/detailed-report-parent-letter-he.js",
-  "utils/parent-report-ui-explain-he.js",
+  "utils/detailed-report-parent-letter.js",
+  "utils/parent-report-ui-explain.js",
   "utils/parent-report-v2.js",
   "utils/parent-report-row-diagnostics.js",
   "utils/contracts/narrative-contract-v1.js",
@@ -405,10 +405,10 @@ const renderedSamples = [
   thinEvidenceSubjectLineHe("עברית", 5),
   ...narrativeSamples,
   ...ownerCopyRenderedSamples,
-].map((s) => normalizeParentFacingHe(String(s || "")));
+].map((s) => normalizeParentFacing(String(s || "")));
 
 const topicOwnerRenderedSamples = topicOwnerCopyRenderedSamples.map((s) =>
-  normalizeParentFacingHe(String(s || "")),
+  normalizeParentFacing(String(s || "")),
 );
 
 for (const [i, sample] of renderedSamples.entries()) {
@@ -449,11 +449,11 @@ for (const req of requiredInScan) {
 
 // Wiring paths stay in static scan; only owner editorial packs are source-scan exempt.
 assert.ok(
-  SKIP_FILES.has("utils/parent-report-language/parent-report-owner-copy-templates-he.js"),
+  SKIP_FILES.has("utils/parent-report-language/parent-report-owner-copy-templates.js"),
   "owner copy pack must remain source-scan exempt (rendered samples checked separately)",
 );
 assert.ok(
-  files.includes("utils/detailed-report-parent-letter-he.js"),
+  files.includes("utils/detailed-report-parent-letter.js"),
   "guard must scan parent letter wiring for forbidden source fragments",
 );
 assert.ok(
@@ -461,7 +461,7 @@ assert.ok(
   "guard must scan subject owner-copy resolver wiring",
 );
 assert.ok(
-  SKIP_FILES.has("utils/parent-report-language/parent-report-owner-topic-copy-templates-he.js"),
+  SKIP_FILES.has("utils/parent-report-language/parent-report-owner-topic-copy-templates.js"),
   "topic owner copy pack must remain source-scan exempt (rendered samples checked separately)",
 );
 assert.ok(
@@ -472,14 +472,14 @@ assert.ok(ownerCopyRenderedSamples.length >= 5, "owner copy rendered samples mus
 assert.ok(topicOwnerCopyRenderedSamples.length >= 20, "topic owner copy rendered samples must cover Phase B+C+D");
 
 const GUILLEMET_UI_FILES = [
-  "utils/parent-report-language/parent-report-hebrew-copy-spec.js",
-  "utils/parent-report-language/engine-decision-parent-copy-he.js",
+  "utils/parent-report-language/parent-report-copy-spec.js",
+  "utils/parent-report-language/engine-decision-parent-copy.js",
   "utils/topic-next-step-engine.js",
   "utils/topic-next-step-phase2.js",
   "utils/learning-patterns-analysis.js",
   "utils/parent-report-intervention-plan.js",
   "utils/parent-report-mistake-intelligence.js",
-  "utils/parent-report-ui-explain-he.js",
+  "utils/parent-report-ui-explain.js",
   "utils/parent-report-language/grade-aware-recommendation-templates.js",
   "utils/parent-report-language/v2-parent-copy.js",
   "utils/parent-copilot/intent-answer-composers.js",

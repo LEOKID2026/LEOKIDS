@@ -6,7 +6,7 @@
 
 
 
-import { renderLearningMixedHebrewMathText } from "../learning/LearningMixedHebrewMathText.jsx";
+import { renderLearningMixedRtlMathText } from "../learning/LearningMixedRtlMathText.jsx";
 
 import WorksheetMathLtr from "./WorksheetMathLtr.jsx";
 
@@ -68,7 +68,7 @@ export default function WorksheetStemText({ text = "", hasNikud = false, classNa
 
       <p className={`${className}${nikudClass}`}>
 
-        {renderLearningMixedHebrewMathText(value, className)}
+        {renderLearningMixedRtlMathText(value, className)}
 
       </p>
 

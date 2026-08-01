@@ -3,7 +3,7 @@ import { resolveProfileBackgroundKey } from "../../lib/student-ui/profile-backgr
 
 /**
  * Grid of preset profile circle backgrounds.
- * @param {{ selectedKey?: string, disabled?: boolean, variant?: "bright" | "dark", onSelect: (key: string) => void }} props
+ * @param {{ selectedKey?: string, disabled?: boolean, variant?: "bright" || "dark", onSelect: (key: string) => void }} props
  */
 export default function ProfileBackgroundPickerGrid({
   selectedKey = "sky",

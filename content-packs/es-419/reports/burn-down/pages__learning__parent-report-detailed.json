@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again": "Se requiere el inicio de sesión de los padres; utilice el inicio de sesión de los padres e inténtelo de nuevo.",
+    "the_detailed_report_cannot_be_loaded_right_now": "El informe detallado no se puede cargar en este momento.",
+    "report_display_mode": "Modo de visualización de informes",
+    "loading_detailed_report": "Cargando informe detallado…",
+    "detailed_report_for_the_period_leo_kids": "Informe detallado del periodo - Leo Kids",
+    "what_we_did_during_this_period": "Lo que hicimos durante este período",
+    "whats_important_to_know": "Lo importante que conviene saber",
+    "messages_from_the_teacher": "Mensajes del maestro o la maestra"
+  }
+}

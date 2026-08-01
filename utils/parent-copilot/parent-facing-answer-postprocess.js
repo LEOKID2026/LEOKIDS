@@ -6,36 +6,29 @@ import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-me
 /** @param {string} t */
 function norm(t) {
   return String(t || "")
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
 }
 
 const BANNED_PHRASE_RULES = [
   {
-    pattern: /רוב המוקדים עם ניסוח יציב יחסית[^.!?]*[.!?]?/gu,
-    replace: "",
-  },
+    pattern: /     [^.!?]*[.!?]?/gu,
+    replace: ""},
   {
-    pattern: /(?:כדאי להמשיך לעקוב\s*-\s*)?נכון לעכשיו, אין כאן מידע שלא מגיע מהדוח[^.!?]*[.!?]?/gu,
-    replace: "",
-  },
+    pattern: /(?:  \s*-\s*)? ,      [^.!?]*[.!?]?/gu,
+    replace: ""},
   {
-    pattern: /זה אומר שהתמונה בנויה ממקצועות ונושאים שכבר הוכנסו לטווח התקופה\.?/gu,
-    replace: copilotStaticMessage("copilot.answers.utils_parent-copilot_parent-facing-answer-postpr.the_report_is_based_on_the_practice_carried_out_on_the_site_in_t"),
-  },
+    pattern: /(?!)/gu,
+    replace: copilotStaticMessage("copilot.answers.utils_parent-copilot_parent-facing-answer-postpr.the_report_is_based_on_the_practice_carried_out_on_the_site_in_t")},
   {
-    pattern: /כהורה,?\s*אפשר להשתמש בזה כמילון משמעויות לדוח[^.!?]*[.!?]?/gu,
-    replace: "",
-  },
+    pattern: /,?\s*     [^.!?]*[.!?]?/gu,
+    replace: ""},
   {
-    pattern: /בלי להוסיף שכבת פרשנות חיצונית\.?/gu,
-    replace: "",
-  },
+    pattern: /(?!)/gu,
+    replace: ""},
   {
-    pattern: /מילון משמעויות(?:\s+לדוח)?[^.!?]*[.!?]?/gu,
-    replace: "",
-  },
-];
+    pattern: / (?:\s+)?[^.!?]*[.!?]?/gu,
+    replace: ""}];
 
 /**
  * @param {string} text
@@ -46,7 +39,7 @@ export function sanitizeBannedParentPhrasesHe(text) {
     pattern.lastIndex = 0;
     t = norm(t.replace(pattern, replace));
   }
-  t = norm(t.replace(/\s{2,}/g, " "));
+  t = norm(t.replace(/\s{2}/g, ""));
   return t;
 }
 
@@ -69,7 +62,7 @@ export function dedupeSentencesHe(text) {
     if (key.length >= 12) seen.add(key);
     out.push(p);
   }
-  return norm(out.join(" "));
+  return norm(out.join(""));
 }
 
 /**
@@ -79,7 +72,7 @@ export function dedupeSentencesHe(text) {
 export function dedupeTopicPairsHe(text) {
   const raw = norm(text);
   if (!raw.includes("-")) return raw;
-  const pairRe = /([\u0590-\u05FF][\u0590-\u05FF\s]{0,24})\s*-\s*([\u0590-\u05FF][^\n,.;]{2,48})/gu;
+  const pairRe = /([^\s\S][-\s]{0,24})\s*-\s*([^\s\S][^\n,.;]{2,48})/gu;
   const seen = new Set();
   let changed = false;
   const rebuilt = raw.replace(pairRe, (full, subj, topic) => {
@@ -92,7 +85,7 @@ export function dedupeTopicPairsHe(text) {
     return full;
   });
   if (!changed) return raw;
-  return norm(rebuilt.replace(/\s{2,}/g, " ").replace(/\(\s*\)/g, ""));
+  return norm(rebuilt.replace(/\s{2}/g, "").replace(/\(\s*\)/g, ""));
 }
 
 /**
@@ -112,7 +105,7 @@ export function postprocessParentFacingBlocksHe(blocks) {
   const joined = (Array.isArray(blocks) ? blocks : [])
     .map((b) => norm(b?.answerText))
     .filter(Boolean)
-    .join(" ");
+    .join("");
   const globalSeen = new Set();
   return (Array.isArray(blocks) ? blocks : []).map((b) => {
     let textHe = postprocessParentFacingAnswerHe(String(b?.answerText || ""));
@@ -126,7 +119,7 @@ export function postprocessParentFacingBlocksHe(blocks) {
       if (key.length >= 12) globalSeen.add(key);
       kept.push(p);
     }
-    if (kept.length) textHe = norm(kept.join(" "));
+    if (kept.length) textHe = norm(kept.join(""));
     if (!textHe && joined) textHe = postprocessParentFacingAnswerHe(joined);
     return { ...b, answerText: textHe };
   }).filter((b) => norm(b.answerText).length > 0);
@@ -137,8 +130,7 @@ export const BANNED_PARENT_PHRASE_SNIPPETS = [
   "Currently, there is no information here that does not come from the report",
   "The picture is made up of subjects and topics",
   "Dictionary of meanings",
-  "External interpretation layer",
-];
+  "External interpretation layer"];
 
 export default {
   postprocessParentFacingAnswerHe,
@@ -146,5 +138,4 @@ export default {
   sanitizeBannedParentPhrasesHe,
   dedupeSentencesHe,
   dedupeTopicPairsHe,
-  BANNED_PARENT_PHRASE_SNIPPETS,
-};
+  BANNED_PARENT_PHRASE_SNIPPETS};

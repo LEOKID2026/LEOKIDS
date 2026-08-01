@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Registro",
+    "pick_coins": "recoger monedas",
+    "removechangeat_lastindex": "removeChangeAt(lastIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Ayuda a Leo, el cajero: elige el producto, calcula el cambio y devuelve el dinero correcto",
+    "x_id_id_if_p_return_null_return": "x.id === id);\n                      if (!p) return null;\n                      return (",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n            New game",
+    "pick_the_product_the_customer_asked_for": "Elija el producto que el cliente pidió",
+    "leo_apos_s_market": "El mercado de Leo",
+    "change_you_gave": "Cambio que diste:",
+    "purchase_total": "Total de compra:",
+    "customer_paid": "Cliente pagado:",
+    "give_change": "Dar cambio ✓",
+    "clear_change": "Borrar cambio",
+    "start_game": "iniciar juego",
+    "back": "Atrás"
+  }
+}

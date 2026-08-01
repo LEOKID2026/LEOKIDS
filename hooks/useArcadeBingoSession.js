@@ -54,7 +54,7 @@ function initialRoundState() {
 }
 
 function previewDisabledReason(vm) {
-  if (vm.deckRemaining <= 0) return "חפיסת הקלפים ריקה";
+  if (vm.deckRemaining <= 0) return "Card deck is empty";
   return null;
 }
 
@@ -63,7 +63,7 @@ function previewDisabledReason(vm) {
  *   room?: object,
  *   members?: unknown[],
  *   self?: { participant_key?: string, display_name?: string },
- *   reloadRoomContext?: () => void | Promise<void>,
+ *   reloadRoomContext?: () => void || Promise<void>,
  * }} baseContext
  */
 export function useArcadeBingoSession(baseContext) {
@@ -84,7 +84,7 @@ export function useArcadeBingoSession(baseContext) {
   const [nowMs, setNowMs] = useState(() => Date.now());
   const callInFlightRef = useRef(false);
   const lastAutoCallKeyRef = useRef(/** @type {string|null} */ (null));
-  const livePollStopRef = useRef(/** @type {(() => void) | null} */ (null));
+  const livePollStopRef = useRef(/** @type {(() => void) || null} */ (null));
 
   const playMode = useMemo(() => {
     return resolveOv2BingoPlayMode(
@@ -313,7 +313,7 @@ export function useArcadeBingoSession(baseContext) {
   }, [roomId, isBingoRoom, selfKey]);
 
   const openSession = useCallback(async () => {
-    if (!roomId || !selfKey) return { ok: false, error: "לא מוכן" };
+    if (!roomId || !selfKey) return { ok: false, error: "Not ready" };
     const r = await openOv2BingoSession(roomId, selfKey);
     if (r.ok && r.snapshot) {
       setLiveSnapshot(prev => coalesceOv2BingoLiveSnapshots(prev, r.snapshot, selfKey));
@@ -324,7 +324,7 @@ export function useArcadeBingoSession(baseContext) {
   }, [roomId, selfKey, refreshLiveSnapshot, reloadRoomContext]);
 
   const callNextManual = useCallback(async () => {
-    if (!roomId || !selfKey || !liveSnapshot) return { ok: false, error: "לא מוכן" };
+    if (!roomId || !selfKey || !liveSnapshot) return { ok: false, error: "Not ready" };
     const r = await callOv2BingoNext(roomId, selfKey, liveSnapshot.revision);
     if (r.ok && "snapshot" in r && r.snapshot) {
       setLiveSnapshot(prev => coalesceOv2BingoLiveSnapshots(prev, r.snapshot, selfKey));
@@ -333,7 +333,7 @@ export function useArcadeBingoSession(baseContext) {
   }, [roomId, selfKey, liveSnapshot]);
 
   const requestRematch = useCallback(async () => {
-    if (!roomId || !selfKey) return { ok: false, error: "לא מוכן" };
+    if (!roomId || !selfKey) return { ok: false, error: "Not ready" };
     const r = await requestOv2BingoRematch(roomId, selfKey);
     await refreshLiveSnapshot();
     if (typeof reloadRoomContext === "function") void Promise.resolve(reloadRoomContext());
@@ -341,7 +341,7 @@ export function useArcadeBingoSession(baseContext) {
   }, [roomId, selfKey, refreshLiveSnapshot, reloadRoomContext]);
 
   const cancelRematch = useCallback(async () => {
-    if (!roomId || !selfKey) return { ok: false, error: "לא מוכן" };
+    if (!roomId || !selfKey) return { ok: false, error: "Not ready" };
     const r = await cancelOv2BingoRematch(roomId, selfKey);
     await refreshLiveSnapshot();
     if (typeof reloadRoomContext === "function") void Promise.resolve(reloadRoomContext());
@@ -349,7 +349,7 @@ export function useArcadeBingoSession(baseContext) {
   }, [roomId, selfKey, refreshLiveSnapshot, reloadRoomContext]);
 
   const startNextMatch = useCallback(async () => {
-    if (!roomId || !selfKey) return { ok: false, error: "לא מוכן" };
+    if (!roomId || !selfKey) return { ok: false, error: "Not ready" };
     const seq =
       room?.match_seq != null && Number.isFinite(Number(room.match_seq)) ? Math.floor(Number(room.match_seq)) : null;
     const r = await startOv2BingoNextMatch(roomId, selfKey, seq);
@@ -360,7 +360,7 @@ export function useArcadeBingoSession(baseContext) {
 
   const claimPrize = useCallback(
     async prizeKey => {
-      if (!roomId || !selfKey || !liveSnapshot) return { ok: false, error: "לא מוכן" };
+      if (!roomId || !selfKey || !liveSnapshot) return { ok: false, error: "Not ready" };
       const pk = String(prizeKey ?? "").trim();
       const r = await claimOv2BingoPrize(roomId, pk, selfKey, liveSnapshot.revision);
       if (r.ok && "snapshot" in r && r.snapshot) {
@@ -391,17 +391,17 @@ export function useArcadeBingoSession(baseContext) {
       const ctxHostPk = room?.host_participant_key != null ? String(room.host_participant_key).trim() : "";
       const ctxIsHost = Boolean(selfKey && ctxHostPk && selfKey === ctxHostPk);
       const allowHostOpenOverride = ctxIsHost && life === "active";
-      let phaseLine = "ממתינים שהמארח יפתח משחק בינגו.";
-      if (life === "lobby") phaseLine = "ממתינים לשחקנים - המארח צריך להתחיל את המשחק מהלובי.";
-      else if (life === "pending_start" || life === "pending_stakes") phaseLine = "ממתינים להימור מכל השחקנים.";
+      let phaseLine = "Waiting for the host to open a Bingo game.";
+      if (life === "lobby") phaseLine = "Waiting for players — the host must start the game from the lobby.";
+      else if (life === "pending_start" || life === "pending_stakes") phaseLine = "Waiting for all players to be ready.";
       else if (life === "active")
         phaseLine = liveSnapshot?.canOpenSession
-          ? "החדר מוכן - המארח יכול לפתוח בינגו כשלפחות שני שחקנים יושבים ומוכנים."
-          : "ממתינים שהמארח יפתח בינגו.";
+          ? "Room ready — the host can start Bingo when at least two players are seated and ready."
+          : "Waiting for the host to open Bingo.";
       /** @type {Record<string, string|null>} */
       const roomNoMatchPrizeDisabled = {};
       for (const pk of BINGO_PRIZE_KEYS) {
-        roomNoMatchPrizeDisabled[pk] = "אין סיבוב בינגו פעיל עדיין";
+        roomNoMatchPrizeDisabled[pk] = "No active Bingo round yet";
       }
       const emptyMarks = makeEmptyMarks();
       return {
@@ -443,14 +443,14 @@ export function useArcadeBingoSession(baseContext) {
         cardIsAuthoritative: false,
         disabledReasons: {
           openSession: !selfKey
-            ? "אין מזהה שחקן"
+            ? "No player identity"
             : liveSnapshot && !liveSnapshot.canOpenSession && !allowHostOpenOverride
-              ? "לא ניתן לפתוח כעת"
+              ? "Cannot start right now"
               : null,
-          callNext: "הקריאות מתחילות אחרי שהמארח פותח את הסיבוב.",
-          claim: "אין משחק חי",
-          rematch: "אין משחק שהסתיים",
-          startNextMatch: "לא מארח או לא מוכן",
+          callNext: "Calls start after the host opens the round.",
+          claim: "No live game",
+          rematch: "No finished game",
+          startNextMatch: "Not host or not ready",
         },
       };
     }
@@ -459,11 +459,11 @@ export function useArcadeBingoSession(baseContext) {
       const linePreview = computePreviewLineCompletion(previewRound.marks);
       const previewCalledSet = new Set(previewRound.called);
       const previewLast = previewRound.called.length ? previewRound.called[previewRound.called.length - 1] : null;
-      let phaseLine = "פתחו חדרים משותפים כדי לשחק בינגו אונליין.";
+      let phaseLine = "Open shared rooms to play Bingo online.";
       /** @type {Record<string, string|null>} */
       const previewPrizeDisabled = {};
       for (const pk of BINGO_PRIZE_KEYS) {
-        previewPrizeDisabled[pk] = "לא בחדר בינגו חי";
+        previewPrizeDisabled[pk] = "Not in a live Bingo room";
       }
 
       return {
@@ -504,11 +504,11 @@ export function useArcadeBingoSession(baseContext) {
         canStartNextMatch: false,
         cardIsAuthoritative: false,
         disabledReasons: {
-          openSession: "לא מחובר לחדר",
-          callNext: "לא מחובר לחדר",
-          claim: "אין משחק חי",
-          rematch: "אין משחק שהסתיים",
-          startNextMatch: "לא מארח או לא מוכן",
+          openSession: "Not connected to a room",
+          callNext: "Not connected to a room",
+          claim: "No live game",
+          rematch: "No finished game",
+          startNextMatch: "Not host or not ready",
         },
       };
     }
@@ -525,12 +525,12 @@ export function useArcadeBingoSession(baseContext) {
     }
 
     const dr = {
-      openSession: snap?.canOpenSession ? null : snap?.roomLifecyclePhase !== "active" ? "החדר לא פעיל" : "כבר יש סשן פעיל או שלא ניתן לפתוח",
-      callNext: snap?.canCallNext ? (nextCallDue ? null : "ממתינים לטיימר הקריאה") : "רק הקורא יכול למשוך מספר",
-      claim: snap?.sessionPhase === "playing" ? (!liveCard ? "אין כרטיס (נדרש מושב)" : null) : "המשחק לא בעיצומו",
-      rematch: snap?.canRequestRematch ? null : snap?.sessionPhase === "finished" ? "לא ניתן לבקש משחק חוזר כעת" : "משחק חוזר לא זמין",
-      cancelRematch: snap?.canCancelRematch ? null : "אין מה לבטל",
-      startNextMatch: snap?.canStartNextMatch ? null : "לא מארח או לא מוכן",
+      openSession: snap?.canOpenSession ? null : snap?.roomLifecyclePhase !== "active" ? "Room is not active" : "A session is already active or start is blocked",
+      callNext: snap?.canCallNext ? (nextCallDue ? null : "Waiting for the call timer") : "Only the caller can draw a number",
+      claim: snap?.sessionPhase === "playing" ? (!liveCard ? "No card (seat required)" : null) : "Game is not in progress",
+      rematch: snap?.canRequestRematch ? null : snap?.sessionPhase === "finished" ? "Cannot request a rematch right now" : "Rematch is not available",
+      cancelRematch: snap?.canCancelRematch ? null : "Nothing to cancel",
+      startNextMatch: snap?.canStartNextMatch ? null : "Not host or not ready",
     };
 
     const selfClaimedPrizeKeys =
@@ -547,10 +547,10 @@ export function useArcadeBingoSession(baseContext) {
     /** @type {Record<string, string|null>} */
     const prizeDisabledByKey = {};
     for (const pk of BINGO_PRIZE_KEYS) {
-      if (snap?.sessionPhase === "finished") prizeDisabledByKey[pk] = "המשחק הסתיים";
+      if (snap?.sessionPhase === "finished") prizeDisabledByKey[pk] = "Game finished";
       else if (dr.claim) prizeDisabledByKey[pk] = dr.claim;
-      else if (takenPrizeKeys.has(pk)) prizeDisabledByKey[pk] = "כבר נתבע";
-      else if (!liveCard) prizeDisabledByKey[pk] = "אין כרטיס (נדרש מושב)";
+      else if (takenPrizeKeys.has(pk)) prizeDisabledByKey[pk] = "Already claimed";
+      else if (!liveCard) prizeDisabledByKey[pk] = "No card (seat required)";
       else if (
         !canClaimPrize({
           prizeKey: pk,
@@ -559,20 +559,20 @@ export function useArcadeBingoSession(baseContext) {
           existingClaims: existingClaimsForEngine,
         })
       ) {
-        prizeDisabledByKey[pk] = "עדיין לא זכאי";
+        prizeDisabledByKey[pk] = "Pattern not complete";
       } else if (pk === "full") {
-        prizeDisabledByKey[pk] = isFullComplete(liveMarks) ? null : "עדיין לא זכאי";
+        prizeDisabledByKey[pk] = isFullComplete(liveMarks) ? null : "Pattern not complete";
       } else {
         const m = /^row([1-5])$/.exec(pk);
         const ri = m ? Number(m[1]) - 1 : -1;
         prizeDisabledByKey[pk] =
-          ri >= 0 && isRowComplete(liveMarks, ri) ? null : "עדיין לא זכאי";
+          ri >= 0 && isRowComplete(liveMarks, ri) ? null : "Pattern not complete";
       }
     }
 
-    let phaseLine = "משחק פעיל - המספרים נקראים בשרת.";
-    if (snap?.sessionPhase === "playing") phaseLine = "משחק פעיל";
-    else if (snap?.sessionPhase === "finished") phaseLine = "הסתיים";
+    let phaseLine = "Game in progress — numbers are called in order.";
+    if (snap?.sessionPhase === "playing") phaseLine = "Game in progress";
+    else if (snap?.sessionPhase === "finished") phaseLine = "Finished";
 
     return {
       playMode,

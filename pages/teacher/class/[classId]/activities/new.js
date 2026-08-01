@@ -7,7 +7,7 @@ import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
-import { REPORT_SUBJECTS, subjectLabelHe, activitySubjectsForGrade } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabel, activitySubjectsForGrade } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../../lib/classroom-activities/generate-activity-questions-client.js";
 import { activityModeLabelHe } from "../../../../../lib/classroom-activities/classroom-activities-labels.client.js";
@@ -263,7 +263,7 @@ export default function TeacherNewActivityPage({ classId }) {
             {classContext.subjectLocked ? (
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
-                value={subjectLabelHe(subject)}
+                value={subjectLabel(subject)}
                 readOnly
                 disabled
               />
@@ -281,7 +281,7 @@ export default function TeacherNewActivityPage({ classId }) {
                 .filter((s) => ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS.has(s))
                 .map((s) => (
                 <option key={s} value={s}>
-                  {subjectLabelHe(s)}
+                  {subjectLabel(s)}
                 </option>
               ))}
             </select>

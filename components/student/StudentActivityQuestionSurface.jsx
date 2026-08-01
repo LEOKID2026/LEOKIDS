@@ -6,7 +6,7 @@ import {
   getStudentActivityEquationFontStyle,
   getStudentActivityQuestionFontStyle,
   getStudentActivityVerticalExerciseText,
-  normalizeStudentActivityMathLayoutQuestion,
+  normalizeStudentActivityMathLayoutQuestion
 } from "../../lib/classroom-activities/student-activity-question-ui.client.js";
 import { isTextualAssignedActivitySubject } from "../../lib/classroom-activities/student-activity-textual-subjects.client.js";
 import { useStudentActivityUi } from "../../hooks/useStudentActivityUi.js";
@@ -15,14 +15,14 @@ import {
   isMathFractionsQuestionStem,
   MATH_FRACTIONS_QUESTION_STEM_SIZE_CLASS,
   shouldHideFractionsMcqTrailingBlank,
-  stripRedundantTrailingAnswerBlank,
+  stripRedundantTrailingAnswerBlank
 } from "../../utils/math-fraction-question-display.js";
 import { assignedActivityQuestionUsesChoiceUi } from "../../utils/geometry-activity-answer-ui.js";
 import { renderMaybeStackedFractionText } from "../learning/MathFractionExpression.jsx";
 import {
   getHebrewApprovedSingleVerbalQuestionStyle,
-  HEBREW_APPROVED_SINGLE_VERBAL_QUESTION_CLASSNAME,
-} from "../../utils/hebrew-approved-verbal-master-contract.client.js";
+  HEBREW_APPROVED_SINGLE_VERBAL_QUESTION_CLASSNAME
+} from "../../utils/approved-verbal-master-contract.client.js";
 import { useMobileViewport } from "../../hooks/useMobileViewport.js";
 
 /**
@@ -34,7 +34,7 @@ export default function StudentActivityQuestionSurface({
   question,
   questionIndex,
   hideLayoutToggle = false,
-  onVerticalExerciseHeadlineChange,
+  onVerticalExerciseHeadlineChange
 }) {
   const [isVerticalDisplay, setIsVerticalDisplay] = useState(false);
   const { L, textualAssigned } = useStudentActivityUi();
@@ -53,7 +53,7 @@ export default function StudentActivityQuestionSurface({
   const hideFractionsMcqBlank = useMemo(
     () =>
       shouldHideFractionsMcqTrailingBlank(layoutQuestion || question, {
-        usesChoiceUi: assignedActivityQuestionUsesChoiceUi(question),
+        usesChoiceUi: assignedActivityQuestionUsesChoiceUi(question)
       }),
     [layoutQuestion, question]
   );
@@ -64,7 +64,7 @@ export default function StudentActivityQuestionSurface({
     return {
       ...layoutQuestion,
       question: stripRedundantTrailingAnswerBlank(layoutQuestion.question),
-      exerciseText: stripRedundantTrailingAnswerBlank(layoutQuestion.exerciseText),
+      exerciseText: stripRedundantTrailingAnswerBlank(layoutQuestion.exerciseText)
     };
   }, [layoutQuestion, hideFractionsMcqBlank]);
 
@@ -84,7 +84,7 @@ export default function StudentActivityQuestionSurface({
         question: displayLayoutQuestion?.question,
         questionLabel: displayLayoutQuestion?.questionLabel,
         exerciseText:
-          displayLayoutQuestion?.exerciseText || displayLayoutQuestion?.question,
+          displayLayoutQuestion?.exerciseText || displayLayoutQuestion?.question
       }),
     [displayLayoutQuestion]
   );
@@ -117,7 +117,7 @@ export default function StudentActivityQuestionSurface({
     isVerticalDisplay,
     canDisplayVertically,
     verticalText,
-    onVerticalExerciseHeadlineChange,
+    onVerticalExerciseHeadlineChange
   ]);
 
   const isGeometryActivity =
@@ -128,12 +128,12 @@ export default function StudentActivityQuestionSurface({
     textualAssigned || isTextualAssignedActivitySubject(question?.subject);
 
   const textualSubjectForFonts =
-    question?.subject || (isTextualSubject ? "hebrew" : undefined);
+    question?.subject || (isTextualSubject ? "english" : undefined);
 
   const resolveQuestionFontStyle = (opts = {}) =>
     getStudentActivityQuestionFontStyle({
       ...opts,
-      subject: textualSubjectForFonts,
+      subject: textualSubjectForFonts
     });
 
   if (!displayLayoutQuestion) return null;
@@ -146,7 +146,7 @@ export default function StudentActivityQuestionSurface({
           displayLayoutQuestion.question ||
           displayLayoutQuestion.exerciseText ||
           "",
-        isMobileViewport,
+        isMobileViewport
       })
     : undefined;
 
@@ -187,8 +187,8 @@ export default function StudentActivityQuestionSurface({
                   unicodeBidi: "plaintext",
                   ...resolveQuestionFontStyle({
                     text: displayParts.leadText,
-                    kind: "label",
-                  }),
+                    kind: "label"
+                  })
                 }}
               >
                 {stackedFractions
@@ -206,7 +206,7 @@ export default function StudentActivityQuestionSurface({
                 style={{
                   direction: "ltr",
                   unicodeBidi: "isolate",
-                  ...resolveQuestionFontStyle({ text: verticalText }),
+                  ...resolveQuestionFontStyle({ text: verticalText })
                 }}
               >
                 {stackedFractions

@@ -52,9 +52,9 @@ function traceItemClass(traceRenderMode) {
 
  *   scriptStyle: import("../../lib/writing/writing-worksheet-types.js").ScriptStyle,
 
- *   language: "he" | "en" | "mixed",
+ *   language: "he" || "en" || "mixed",
 
- *   mode: "screen" | "print",
+ *   mode: "screen" || "print",
 
  * }} props
 
@@ -171,7 +171,7 @@ function WritingWordTrace({ text, scriptStyle, language, mode }) {
 
  * @param {import("../../lib/writing/writing-worksheet-types.js").ScriptStyle} scriptStyle
 
- * @param {"screen" | "print"} mode
+ * @param {"screen" || "print"} mode
 
  */
 
@@ -481,7 +481,7 @@ function WritingItemView({ item, meta, scriptStyle, mode }) {
 
  *   scriptStyle: import("../../lib/writing/writing-worksheet-types.js").ScriptStyle,
 
- *   mode: "screen" | "print",
+ *   mode: "screen" || "print",
 
  * }} props
 
@@ -629,7 +629,7 @@ export default function WritingBlockContent({ block, meta, scriptStyle, mode }) 
 
  *   scriptStyle: import("../../lib/writing/writing-worksheet-types.js").ScriptStyle,
 
- *   mode: "screen" | "print",
+ *   mode: "screen" || "print",
 
  *   inkSave?: boolean,
 

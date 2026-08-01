@@ -51,11 +51,11 @@ export function isClearWeakSubjectVolume(q, acc) {
 }
 
 /**
- * @param {string} subjectLabelHe
+ * @param {string} subjectLabel
  * @param {string} topicLabelHe
  */
-export function subjectClearWeakOpeningHe(subjectLabelHe, topicLabelHe) {
-  const lab = String(subjectLabelHe || "this subject").trim();
+export function subjectClearWeakOpeningHe(subjectLabel, topicLabelHe) {
+  const lab = String(subjectLabel || "this subject").trim();
   const topic = String(topicLabelHe || "this topic")
     .replace(/^[^-]+-\s*/, "")
     .trim();
@@ -63,11 +63,11 @@ export function subjectClearWeakOpeningHe(subjectLabelHe, topicLabelHe) {
 }
 
 /**
- * @param {string} subjectLabelHe
+ * @param {string} subjectLabel
  * @param {string} topicLabelHe
  */
-export function subjectClearWeakClosingHe(subjectLabelHe, topicLabelHe) {
-  const lab = String(subjectLabelHe || "this subject").trim();
+export function subjectClearWeakClosingHe(subjectLabel, topicLabelHe) {
+  const lab = String(subjectLabel || "this subject").trim();
   const topic = String(topicLabelHe || "this topic")
     .replace(/^[^-]+-\s*/, "")
     .trim();

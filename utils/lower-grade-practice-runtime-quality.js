@@ -22,15 +22,14 @@ export const LOWER_GRADE_WORD_READING_ITEM_TYPES = Object.freeze(
 );
 
 const INTERNAL_CHILD_LABEL_PATTERNS = [
-  /משפט\s+\d+/u,
-  /בחנה.{0,8}פונולוגית/u,
-  /בנק\s+[א-ת׳"']/u,
-  /כיתה\s+[א-ת׳"']+\s*-/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
+  /(?!)/u,
   /patternFamily|subtype|diagnosticSkillId/i,
-  /english_empty_pool/u,
-];
+  /english_empty_pool/u];
 
-const INTERNAL_SUFFIX_RE = /\s*·\s*משפט\s+\d+\s*$/u;
+const INTERNAL_SUFFIX_RE = /(?!)/u;
 
 /**
  * @param {string|null|undefined} gradeKey
@@ -79,8 +78,7 @@ export function collectChildVisibleSurfaces(question) {
     question.exerciseText,
     question.params?.phonicsStimulus,
     question.params?.displayWord,
-    question.params?.displayRef,
-  ];
+    question.params?.displayRef];
 
   return surfaces
     .filter((s) => typeof s === "string" && s.trim())
@@ -101,7 +99,7 @@ function literalIncludes(haystack, needle) {
     return new RegExp(`\\b${escaped}\\b`, "i").test(h);
   }
 
-  if (/[\u0590-\u05FF]/.test(n)) {
+  if (/(?!)/.test(n)) {
     const escaped = n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     return new RegExp(
       `(^|[\\s,.;:!?'"(\\[\\{\\-–])${escaped}($|[\\s,.;:!?'")\\]\\}\\-–])`,
@@ -149,9 +147,9 @@ export function hasMcqCopyAnswerLeak(question) {
 
   if (LOWER_GRADE_APPROVED_NON_LEAK_ITEM_TYPES.has(itemType)) {
     const stimulus = String(
-      question.params?.phonicsStimulus ||
-        question.params?.displayRef ||
-        question.params?.displayWord ||
+      question.params?.phonicsStimulus |
+        question.params?.displayRef |
+        question.params?.displayWord |
         ""
     ).trim();
     if (!stimulus) return false;
@@ -194,7 +192,7 @@ export function isHebrewReadAloudCopyLeakRaw(row) {
   if (!correct) return false;
   const stem = String(row.question || "").trim();
   if (!stem) return false;
-  if (!/קרא את המ(?:שפט|ילה)/i.test(stem)) return false;
+  if (!/(?!)/i.test(stem)) return false;
   return hasMcqCopyAnswerLeak({
     question: stem,
     exerciseText: stem,
@@ -243,15 +241,15 @@ export function sanitizeLowerGradeChildFacingText(question) {
 
   const clean = (text) => {
     let t = stripInternalRuntimeSuffix(String(text || ""));
-    t = t.replace(/הבחנה\s+פונולוגית/gu, "הצליל");
-    t = t.replace(/לפי\s+ההבחנה\s+הפונולוגית/gu, "לפי הצליל");
+    t = t.replace(/(?!)/gu, "");
+    t = t.replace(/(?!)/gu, "");
     return t.trim();
   };
 
   if (typeof question.questionLabel === "string") {
     const label = clean(question.questionLabel);
     question.questionLabel =
-      label === "שמע" || label === "הקלטה קצרה" ? "האזינו ובחרו" : label;
+      label === "" || label === "" ? "" : label;
   }
   if (typeof question.exerciseText === "string") {
     question.exerciseText = clean(question.exerciseText);

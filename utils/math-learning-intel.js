@@ -1,4 +1,4 @@
-// מעקב קל למתמטיקה — localStorage בלבד
+//    — localStorage 
 
 const STORAGE_KEY = "mleo_math_learning_intel";
 const VERSION = 1;
@@ -50,14 +50,13 @@ export function recordMathAnswerIntel(intel, operation, isCorrect) {
   const opStats = { ...intel.opStats, [op]: stats };
   const recentTail = [
     ...(intel.recentTail || []),
-    { op, ok: !!isCorrect, at: Date.now() },
-  ].slice(-TAIL_MAX);
+    { op, ok: !!isCorrect, at: Date.now() }].slice(-TAIL_MAX);
   return { opStats, recentTail };
 }
 
 export function getMathOperationInsights(opStats) {
   const entries = Object.entries(opStats || {}).filter(
-    ([, s]) => (s.attempts || 0) >= 2
+    ([ s]) => (s.attempts || 0) >= 2
   );
   if (entries.length === 0) {
     return { weakest: null, strongest: null };

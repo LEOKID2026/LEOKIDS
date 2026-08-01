@@ -16,11 +16,11 @@ import WritingPrintDocument from "../writing/WritingPrintDocument.jsx";
 /**
  * @param {{
  *   session: {
- *     worksheetPayload: import("./worksheet-question-types.js").WorksheetPayload | import("../writing/writing-worksheet-types.js").WritingWorksheetPayload,
+ *     worksheetPayload: import("./worksheet-question-types.js").WorksheetPayload || import("../writing/writing-worksheet-types.js").WritingWorksheetPayload,
  *     generation?: Record<string, unknown>,
  *     includeAnswers?: boolean,
  *     source?: string,
- *   } | null,
+ *   } || null,
  *   onClose: () => void,
  *   onPrint?: () => void,
  *   onRefresh?: () => void,

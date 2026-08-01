@@ -241,7 +241,7 @@ The RTL/LTR renderer treated some **plain Hebrew prose** as **formula-like bodie
 
 - Tightened \`isFormulaLikeBody\` (exclude word hyphens and multi-word explanatory equals chains).
 - \`splitFormulaTokens\` preserves whitespace as \`space\` tokens; no \`.trim()\` on Hebrew chunks.
-- \`MixedHebrewMathText\` re-inserts source gaps between runs/segments and renders formula space tokens.
+- \`MixedRtlMathText\` re-inserts source gaps between runs/segments and renders formula space tokens.
 - Added \`book-visible-text-render.js\` for export + regression simulation.
 
 ## Known glued patterns checked
@@ -278,7 +278,7 @@ ${
 
 ## Affected renderer files
 
-- \`components/learning-book/MixedHebrewMathText.js\`
+- \`components/learning-book/MixedRtlMathText.js\`
 - \`lib/learning-book/book-math-display.js\`
 - \`lib/learning-book/book-visible-text-render.js\` (new simulation helper)
 

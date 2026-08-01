@@ -13,7 +13,7 @@ import {
   roleLabelHe,
   auditActionLabelHe,
   apiErrorMessageHe,
-} from "../../lib/platform-ui/hebrew-display-labels.js";
+} from "../../lib/platform-ui/display-labels.js";
 
 const ROOT = process.cwd();
 const SCAN_DIRS = [
@@ -94,7 +94,7 @@ function scanSources(files) {
     const text = readFileSync(file, "utf8");
     const lines = text.split("\n");
     lines.forEach((line, i) => {
-      if (line.includes("hebrew-display-labels") && line.includes("||")) return;
+      if (line.includes("display-labels") && line.includes("||")) return;
       if (BAD_FALLBACK_RE.test(line) && /LabelHe|labelHe|StatusHe|ModeHe/.test(line)) {
         issues.push(`${rel}:${i + 1} suspicious raw-key fallback: ${line.trim()}`);
       }

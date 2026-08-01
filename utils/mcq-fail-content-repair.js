@@ -6,37 +6,11 @@
  * - HEBREW_STOP_TOKENS: Hebrew stopwords used when tokenizing stems that still contain Hebrew
  * - LENGTH_PAD_HE: reserved Hebrew length pads (unused for EN display; kept for HE content paths)
  * - EXACT map keys in lengthenHebrewOption: match short Hebrew distractors before expanding
- * - Weak-distractor regexes /^לא\s/ and /^אין\s/: detect Hebrew weak options
- * - Stem-token skip regex /^(ראשוני|פריק|זוגי|אי)$/ + /או/: Hebrew math-stem matching
+ * - Weak-distractor regexes /^\s/ and /^\s/: detect Hebrew weak options
+ * - Stem-token skip regex /^()$/ + //: Hebrew math-stem matching
  */
 
 const HEBREW_STOP_TOKENS = new Set([
-  "מה",
-  "מי",
-  "איך",
-  "מתי",
-  "למה",
-  "האם",
-  "איזה",
-  "אילו",
-  "יש",
-  "זה",
-  "זו",
-  "זאת",
-  "הם",
-  "הן",
-  "של",
-  "על",
-  "את",
-  "עם",
-  "גם",
-  "רק",
-  "כל",
-  "כמו",
-  "אחרי",
-  "לפני",
-  "בין",
-  "או",
   "what",
   "which",
   "when",
@@ -49,17 +23,15 @@ const HEBREW_STOP_TOKENS = new Set([
   "this",
   "that",
   "with",
-  "from",
-]);
+  "from"]);
 
 /** Kept for Hebrew content-length paths; not shown on GLOBAL EN UI. */
 const LENGTH_PAD_HE = [
-  " באופן שונה",
-  " במקרה אחר",
-  " בדרך כלל",
-  " לפעמים",
-  " באזור אחר",
-];
+  "",
+  "",
+  "",
+  "",
+  ""];
 
 const LENGTH_PAD_EN = [" in another case", " usually", " sometimes", " in general"];
 
@@ -107,7 +79,7 @@ function injectStemTokenIntoDistractor(tok, distractor, stem) {
   if (!t || !d) return d;
   if (d.toLowerCase().includes(t.toLowerCase())) return d;
 
-  const isHebrew = /[\u0590-\u05FF]/.test(stem) || /[\u0590-\u05FF]/.test(d);
+  const isHebrew = /(?!)/.test(stem) | /(?!)/.test(d);
   if (isHebrew) {
     return d;
   }
@@ -146,7 +118,7 @@ function repairStemKeywordClues(answers, ci, stem) {
       (a, i) => i !== ci && String(a).toLowerCase().includes(tok.toLowerCase())
     );
     if (inAnyDist) continue;
-    if (/^(ראשוני|פריק|זוגי|אי)$/.test(tok) && /או/.test(stem)) continue;
+    if (/(?!)/.test(tok) && /(?!)/.test(stem)) continue;
 
     let injected = 0;
     for (let i = 0; i < answers.length && injected < 2; i++) {
@@ -251,17 +223,6 @@ function lengthenHebrewOption(text, minLen) {
 
   // HE keys match short Hebrew distractors; EN values are what may be shown after expansion.
   const EXACT = {
-    כלב: "house dog",
-    חתול: "fluffy cat",
-    דג: "fish swimming in water",
-    זכוכית: "clear glass",
-    אבן: "solid stone",
-    מתכת: "heavy metal",
-    עץ: "solid wood",
-    לראות: "see with eyes",
-    לשמוע: "hear with ears",
-    לרוץ: "run on the field",
-    תרנגול: "rooster with feathers",
   };
   if (EXACT[t]) t = EXACT[t];
   if (t.length >= minLen) return t;
@@ -283,7 +244,7 @@ function lengthenHebrewOption(text, minLen) {
 function repairWeakPlausibleDistractors(answers, ci) {
   const isWeak = (d) => {
     const t = String(d ?? "").trim();
-    return t.length < 3 || /^לא\s/.test(t) || /^אין\s/.test(t);
+    return t.length < 3 || /(?!)/.test(t) | /(?!)/.test(t);
   };
   const weakIdx = answers.map((a, i) => (i !== ci && isWeak(a) ? i : -1)).filter((i) => i >= 0);
   if (weakIdx.length === 0) return answers;
@@ -294,8 +255,7 @@ function repairWeakPlausibleDistractors(answers, ci) {
     "A plausible but incorrect option",
     "Another possible answer",
     "Only a partial explanation",
-    "Only in rare cases",
-  ];
+    "Only in rare cases"];
   let ri = 0;
   for (const i of weakIdx) {
     while (ri < REPLACEMENTS.length && answers.some((a, j) => j !== i && a === REPLACEMENTS[ri])) {
@@ -332,7 +292,7 @@ function repairLengthOutliers(answers, ci, stem) {
       : 0;
 
   const AUDIT_RATIO = 1.75;
-  const isHebrew = /[\u0590-\u05FF]/.test(stem) || /[\u0590-\u05FF]/.test(correct);
+  const isHebrew = /(?!)/.test(stem) | /(?!)/.test(correct);
 
   if (avgDist > 0 && correctLen > avgDist * AUDIT_RATIO) {
     const targetMax = Math.floor(avgDist * AUDIT_RATIO);
@@ -399,12 +359,12 @@ function hasParens(text) {
  */
 function repairFormatOutliers(answers, ci) {
   const correct = String(answers[ci] ?? "");
-  const isHebrew = /[\u0590-\u05FF]/.test(correct);
+  const isHebrew = /(?!)/.test(correct);
   if (hasParens(correct)) {
     for (let i = 0; i < answers.length; i++) {
       if (i === ci) continue;
       const t = String(answers[i] ?? "").trim();
-      // Skip Hebrew — adding (לא)/(אחר) produces metadata-like text unnatural for children
+      // Skip Hebrew — adding ()/() produces metadata-like text unnatural for children
       if (isHebrew) continue;
       if (!hasParens(t) && t.length >= 4 && t.length <= 24) {
         answers[i] = t.length <= 12 ? `${t} (not)` : `${t} (other)`;

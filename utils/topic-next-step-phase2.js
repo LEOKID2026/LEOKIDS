@@ -14,22 +14,21 @@ import {
   RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE,
   NEXT_CYCLE_DECISION_FOCUS_LABEL_HE,
   diagnosticTypeLabelHe,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 import {
   meaningExplainSentenceHe,
   preliminarySignalHe,
-} from "./parent-report-language/parent-report-hebrew-copy-spec.js";
+} from "./parent-report-language/parent-report-copy-spec.js";
 import { isScienceSubjectId } from "../lib/learning/display-level.js";
 import { resolveRowDisplayLevelKey } from "../lib/learning/parent-report-display-level.js";
 
-const VAGUE_FOUNDATION_PHRASE = /חלקים פשוטים יותר|יסוד שעליו הוא נשען/i;
+const VAGUE_FOUNDATION_PHRASE = /(?!)/i;
 
 const AGGRESSIVE = new Set([
   "advance_level",
   "advance_grade_topic_only",
   "drop_one_level_topic_only",
-  "drop_one_grade_topic_only",
-]);
+  "drop_one_grade_topic_only"]);
 
 export function isAggressiveStep(step) {
   return AGGRESSIVE.has(step);
@@ -154,18 +153,18 @@ export function buildPhase2RiskFlags(row, trend, behaviorProfile, trendDer) {
     suff !== "strong" || ev === "low" || row?.isEarlySignalOnly === true || q < 12;
 
   let hintDependenceRisk =
-    behaviorType === "instruction_friction" ||
+    behaviorType === "instruction_friction" |
     (hintRate != null && hintRate >= 0.32 && hintKnown >= 3);
 
   let speedOnlyRisk =
-    behaviorType === "speed_pressure" ||
+    behaviorType === "speed_pressure" |
     ((modeKey === "speed" || modeKey === "marathon") && acc >= 55 && wrongRatio < 0.32);
 
   let falsePromotionRisk =
-    insufficientEvidenceRisk ||
-    hintDependenceRisk ||
-    trendDer.fragileProgressPattern ||
-    (behaviorType === "fragile_success" && !trendDer.progressSupportsAdvance) ||
+    insufficientEvidenceRisk |
+    hintDependenceRisk |
+    trendDer.fragileProgressPattern |
+    (behaviorType === "fragile_success" && !trendDer.progressSupportsAdvance) |
     (trendDer.independenceDeteriorating && trendDer.positiveAccuracy);
 
   const strongKnowledgeGapEvidence =
@@ -175,15 +174,15 @@ export function buildPhase2RiskFlags(row, trend, behaviorProfile, trendDer) {
     wrongRatio >= 0.28;
 
   let falseRemediationRisk =
-    speedOnlyRisk ||
-    (behaviorType === "careless_pattern" && acc >= 58) ||
-    (trendDer.positiveAccuracy && behaviorType !== "knowledge_gap") ||
+    speedOnlyRisk |
+    (behaviorType === "careless_pattern" && acc >= 58) |
+    (trendDer.positiveAccuracy && behaviorType !== "knowledge_gap") |
     (trendDer.fluencySupportWithoutAccuracyDrop && behaviorType === "speed_pressure");
 
   let recentTransitionRisk =
     (String(row?.levelKey) === "hard" &&
       trendDer.negativeAccuracy &&
-      trendDer.recentDifficultyIncrease) ||
+      trendDer.recentDifficultyIncrease) |
     (trendDer.periodRegression && trendDer.negativeAccuracy);
 
   ({
@@ -394,8 +393,8 @@ export function applyPhase2GuardsToStep(proposed, ctx) {
   const wrongRR = qR > 0 ? Math.max(0, Number(row?.wrong) || 0) / qR : 0;
   const modeR = String(row?.modeKey || "").trim();
   const fragileLikeProfile =
-    behaviorType === "fragile_success" ||
-    behaviorType === "instruction_friction" ||
+    behaviorType === "fragile_success" |
+    behaviorType === "instruction_friction" |
     (behaviorType === "speed_pressure" && (modeR === "speed" || modeR === "marathon"));
   if (
     step === "maintain_and_strengthen" &&
@@ -620,7 +619,7 @@ export function buildPhase7RecommendationFields(p) {
       : "More questions in the selected period, a more precise direction, and less need for hints - will help to understand the picture better.";
 
   const whyNot =
-    String(restraint?.diagnosticCautionHe || "").trim() ||
+    String(restraint?.diagnosticCautionHe || "").trim() |
     (restraint?.conclusionStrength === "strong"
       ? "There is no special sign that requires you to stop at this stage."
       : "Currently maintaining careful wording due to scope of practice and trend.");
@@ -769,7 +768,7 @@ export function buildPhase10RecommendationOverlay(p) {
   }
 
   const nextSupportAdjustmentHe =
-    NEXT_SUPPORT_ADJUSTMENT_LABEL_HE[nextSupportAdjustment] ||
+    NEXT_SUPPORT_ADJUSTMENT_LABEL_HE[nextSupportAdjustment] |
     NEXT_SUPPORT_ADJUSTMENT_LABEL_HE.continue_same_plan;
 
   let continueWhatWorksHe = "";
@@ -852,7 +851,7 @@ export function buildPhase11SequenceOverlay(p) {
   }
 
   const nextSupportSequenceActionHe =
-    NEXT_SUPPORT_SEQUENCE_ACTION_LABEL_HE[nextSupportSequenceAction] ||
+    NEXT_SUPPORT_SEQUENCE_ACTION_LABEL_HE[nextSupportSequenceAction] |
     NEXT_SUPPORT_SEQUENCE_ACTION_LABEL_HE.continue_same_sequence;
 
   let whyThisIsDifferentNowHe = "";
@@ -988,10 +987,10 @@ export function buildPhase12ContinuationOverlay(p) {
   }
 
   const recommendationContinuationDecisionHe =
-    RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE[recommendationContinuationDecision] ||
+    RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE[recommendationContinuationDecision] |
     RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE.continue_but_refine;
   const outcomeBasedNextMoveHe =
-    OUTCOME_BASED_NEXT_MOVE_LABEL_HE[outcomeBasedNextMove] ||
+    OUTCOME_BASED_NEXT_MOVE_LABEL_HE[outcomeBasedNextMove] |
     OUTCOME_BASED_NEXT_MOVE_LABEL_HE.collect_new_evidence_first;
 
   return {
@@ -1043,7 +1042,7 @@ export function buildPhase13NextCycleOverlay(p) {
   }
 
   const nextCycleDecisionFocusHe =
-    NEXT_CYCLE_DECISION_FOCUS_LABEL_HE[nextCycleDecisionFocus] ||
+    NEXT_CYCLE_DECISION_FOCUS_LABEL_HE[nextCycleDecisionFocus] |
     NEXT_CYCLE_DECISION_FOCUS_LABEL_HE.prove_current_direction;
 
   const whatWouldJustifyReleaseHe =
@@ -1287,15 +1286,13 @@ export function buildWhyThisRecommendationHe(p) {
       parts.push(`Pattern: ${patternLab.replace(/^Pattern:\s*/i, "").replace(/^Outstanding error pattern:\s*/i, "")}.`);
     } else {
       parts.push(
-        "There are mistakes on the subject - you should check again after another short practice before a more accurate conclusion.",
-      );
+        "There are mistakes on the subject - you should check again after another short practice before a more accurate conclusion.");
     }
     if (whyFoundation && blocker !== "unknown" && blockerLabel && !VAGUE_FOUNDATION_PHRASE.test(blockerLabel)) {
       parts.push(whyFoundation);
     } else if (dep === "likely_foundational_block" || dep === "mixed_dependency_signal") {
       parts.push(
-        "The data suggests that the problem may be related to the foundation of the subject, but there is currently insufficient information to identify which underlying part needs strengthening.",
-      );
+        "The data suggests that the problem may be related to the foundation of the subject, but there is currently insufficient information to identify which underlying part needs strengthening.");
     }
   } else if (behaviorType === "stable_mastery") {
     const statStr = accPct !== null && qNum !== null ? `(accuracy ${accPct}% of ${qNum} questions)` : "";

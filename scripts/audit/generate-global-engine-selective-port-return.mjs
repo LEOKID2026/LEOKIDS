@@ -199,7 +199,7 @@ const payload = {
     "history taxonomy/classifiers",
     "moledet-geography",
     "parent-action-decision-translations-he.js",
-    "parent-facing-error-pattern-he.js (93 HE map)",
+    "parent-facing-error-pattern.js (93 HE map)",
     "israel-calendar Asia/Jerusalem default",
     "H-02 hebrew fixtures",
     "Israeli demo children / hebrew-only assert",

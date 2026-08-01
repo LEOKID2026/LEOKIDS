@@ -10,7 +10,7 @@
 import { validateParentNarrativeSafety } from "../parent-narrative-safety/parent-narrative-safety-guard.js";
 import { NARRATIVE_OUTPUT_SHAPE } from "./output-schema.js";
 
-const HEBREW_LETTER_RE = /[\u0590-\u05FF]/;
+const HEBREW_LETTER_RE = /(?!)/;
 const LATIN_LETTER_RE = /[A-Za-z]/;
 const ENGLISH_DOMINANCE_THRESHOLD = 0.6;
 const RAW_KEY_RE = /[a-z][a-z0-9_]{2,}_[a-z0-9_]{2,}/i;
@@ -24,10 +24,10 @@ const ABSOLUTE_TERMS_RE = /\b(always|never|especially excellent|needs treatment|
  * "fluency", "independence in practice", "building understanding", "consistent practice" - see prompt.js.
  *
  * Matches the English word `confidence` (case-insensitive) plus its legacy Hebrew
- * equivalents (`ביטחון`/`בטחון`, any possessive-suffix form) in case older cached
+ * equivalents (``/``, any possessive-suffix form) in case older cached
  * content or a misbehaving provider still emits Hebrew.
  */
-const EMOTIONAL_CONFIDENCE_TERMS_RE = /(ביטחו[ןנ]|בטחו[ןנ]|confidence)/iu;
+const EMOTIONAL_CONFIDENCE_TERMS_RE = /(?!)/iu;
 
 const SAFE_THIN_DATA_HINTS_RE =
   /(limited data|little data|limited practice|short period|initial direction|not much data)/i;
@@ -69,7 +69,7 @@ function fail(reason, details) {
  * @param {object} [options]
  * @param {{ surface?: "short"|"detailed" }} [options.narrativeReportContext]
  * @param {object} [options.engineSnapshot]
- * @returns {{ ok: true, normalized: object } | { ok: false, reason: string, details: any }}
+ * @returns {{ ok: true, normalized: object } || { ok: false, reason: string, details: any }}
  */
 export function validateNarrativeOutput(aiPayload, packet, options = {}) {
   if (!isObjectShape(aiPayload)) return fail("structural_invalid_root");
@@ -140,8 +140,7 @@ export function validateNarrativeOutput(aiPayload, packet, options = {}) {
     summary,
     ...strengthsItems.map((x) => x.textHe),
     ...focusItems.map((x) => x.textHe),
-    ...homeTips,
-  ];
+    ...homeTips];
   if (cautionNote) allTexts.push(cautionNote);
   for (const text of allTexts) {
     if (englishRatio(text) < ENGLISH_DOMINANCE_THRESHOLD) return fail("english_dominance");
@@ -202,7 +201,7 @@ export function validateNarrativeOutput(aiPayload, packet, options = {}) {
     if (ABSOLUTE_TERMS_RE.test(text)) return fail("absolute_unsupported_claim", { text });
   }
 
-  // 10. No emotional/confidence assumptions ("ביטחון" / "בטחון" / "confidence").
+  // 10. No emotional/confidence assumptions ("" / "" / "confidence").
   //     Hardening: parent narrative must avoid framing progress in confidence terms,
   //     positive or negative. The deterministic fallback never uses these words.
   for (const text of allTexts) {

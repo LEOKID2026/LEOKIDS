@@ -11,12 +11,10 @@ import {
   ISRAELI_PRIMARY_CURRICULUM_MAP,
   CURRICULUM_SOURCE_REF_PRESETS,
   gradeNumToKey,
-  matchTopicDef,
-} from "./israeli-primary-curriculum-map.js";
+  matchTopicDef} from "./israeli-primary-curriculum-map.js";
 import {
   MATH_ELEMENTARY_GRADE_PDF_BASE,
-  SOURCE_REGISTRY_CHECKED_AT,
-} from "./official-curriculum-source-registry.js";
+  SOURCE_REGISTRY_CHECKED_AT} from "./official-curriculum-source-registry.js";
 
 /** @typedef {'intro' | 'basic' | 'developing' | 'advanced'} GradeDepth */
 /** @typedef {'high' | 'medium' | 'low'} SpineConfidence */
@@ -33,7 +31,7 @@ import {
  * @property {string} notes
  */
 
-const G_HE = ["", "א׳", "ב׳", "ג׳", "ד׳", "ה׳", "ו׳"];
+const G_EN = ["", "1", "2", "3", "4", "5", "6"];
 
 /** @param {number} g @returns {GradeDepth} */
 function depthForGrade(g) {
@@ -68,8 +66,7 @@ function toOfficialTopic(def, strand, gradeDepth, bucket, extraNotes = "") {
     gradeDepth,
     confidence: /** @type {SpineConfidence} */ (def.confidence || "medium"),
     sourceRefs: Array.isArray(def.sourceRefs) ? def.sourceRefs : [],
-    notes: [def.notes, extraNotes].filter(Boolean).join(" "),
-  };
+    notes: [def.notes, extraNotes].filter(Boolean).join(" ")};
 }
 
 function bucketToLevel(bucket) {
@@ -78,8 +75,7 @@ function bucketToLevel(bucket) {
     allowedTopics: "allowed",
     enrichmentTopics: "enrichment",
     notExpectedYet: "not_expected_yet",
-    exposureOnlyTopics: "exposure_only",
-  };
+    exposureOnlyTopics: "exposure_only"};
   return m[bucket] || "allowed";
 }
 
@@ -91,40 +87,26 @@ const STRAND = {
     fractions_decimals: "math.fractions_decimals_percent",
     geometry_link: "math.geometry_strand_link",
     data: "math.data_measurement",
-    patterns: "math.patterns_algebra",
-  },
+    patterns: "math.patterns_algebra"},
   geometry: {
     shapes: "geometry.shapes_polygons",
     measure: "geometry.measure_perimeter_area_volume",
     angles: "geometry.angles_reasoning",
     spatial: "geometry.spatial_symmetry_transform",
-    solids: "geometry.solids_3d",
-  },
-  hebrew: {
-    decoding: "hebrew.decoding_fluency",
-    comprehension: "hebrew.comprehension_inference",
-    vocabulary: "hebrew.vocabulary_language",
-    writing: "hebrew.writing_composition",
-    oral: "hebrew.oral_expression",
-  },
+    solids: "geometry.solids_3d"},
+  
   english: {
     exposure: "english.exposure_oral_listening",
     lexis: "english.lexis_translation",
     grammar: "english.grammar_literacy",
-    patterns: "english.sentence_discourse_patterns",
-  },
+    patterns: "english.sentence_discourse_patterns"},
   science: {
     life: "science.life_sciences",
     materials: "science.materials_changes",
     energy: "science.energy_physical",
     earth: "science.earth_environment_space",
     inquiry: "science.inquiry_practices",
-    tech: "science.technology_society",
-  },
-  moledet: {
-    citizenship: "moledet.society_citizenship_geography",
-  },
-};
+    tech: "science.technology_society"}};
 
 function strandForMathKey(key) {
   if (!key.startsWith("math.")) return STRAND.math.number;
@@ -179,14 +161,12 @@ function pickStrand(subjectKey, topicKey) {
       return strandForMathKey(topicKey);
     case "geometry":
       return strandForGeometryKey(topicKey);
-    case "hebrew":
-      return strandForHebrewKey(topicKey);
+    
     case "english":
       return strandForEnglishKey(topicKey);
     case "science":
       return strandForScienceKey(topicKey);
-    case "moledet-geography":
-      return STRAND.moledet.citizenship;
+    
     default:
       return "unknown";
   }
@@ -247,9 +227,7 @@ function buildOfficialGradeSlot(legacy, subjectKey, gradeNum) {
           "Official frameworks stress exposure / oral / lexical bands in early grades - grammar drills are not treated as core literacy targets here.",
         sourceRefs: [
           ...CURRICULUM_SOURCE_REF_PRESETS.english_exposure_framework,
-          ...g.sourceRefs,
-        ],
-      });
+          ...g.sourceRefs]});
     }
     const filteredEnr = enrichmentTopics.filter((t) => t.key !== "english.grammar");
     enrichmentTopics.length = 0;
@@ -261,8 +239,7 @@ function buildOfficialGradeSlot(legacy, subjectKey, gradeNum) {
         expectedLevel: "exposure_only",
         notes:
           (s.notes ? `${s.notes} ` : "") +
-          "Sentence-pattern pools may resemble writing skills - classify as exposure unless formally assessed.",
-      });
+          "Sentence-pattern pools may resemble writing skills - classify as exposure unless formally assessed."});
     }
     enrichmentTopics.splice(
       0,
@@ -272,80 +249,62 @@ function buildOfficialGradeSlot(legacy, subjectKey, gradeNum) {
   }
 
   /* Hebrew: skills narrative */
-  if (subjectKey === "hebrew") {
-    skills.push(
-      "הפרדה בין פיענוח וזרימה להבנת הנקרא, אוצר מילים, דקדוק וכתיבה.",
-      "בכיתות נמוכות דגש על קריאה בסיסית ואוצר מילים; הבנת הנקרא מתפתחת בהדרגה."
-    );
-    textComplexityNotes.push(
-      gradeNum <= 2
-        ? "טקסטים קצרים, מילות תוכן ברורות - מורכבות תחבירית מוגבלת בדרך כלל."
-        : gradeNum <= 4
-          ? "טקסטים דומים לספרות ילדים; משימות הבנה מתחילות לכלול הסקות בסיסיות."
-          : "טקסטים ארוכים יותר; דרישות הנמקה והיקש מתגברות."
-    );
-    difficultyNotes.push(
-      "מפת רשמית לפי כיתה דורשת אימות מול מסמך משרד החינוך - כאן רמת אמון בינונית עד נמוכה."
-    );
-    sourceRefs.push(...CURRICULUM_SOURCE_REF_PRESETS.rama_general);
-  }
+  
 
   if (subjectKey === "english") {
     skills.push(
-      "הפרדה בין האזנה / דיבור / חשיפה לבין דקדוק פורמלי והבנת הנקרא ברמת ספרות.",
-      "כיתות 1–2: התמקדות באוצר מילים והשמה מילולית לפני ליבת דקדוק פורמלית."
+      "Separate listening / speaking / exposure from formal grammar and literature-level reading comprehension.",
+      "Grades 1–2: focus on vocabulary and verbal placement before a formal grammar core."
     );
     textComplexityNotes.push(
       gradeNum <= 2
-        ? "משפטים קצרים, שאלון מילולי בסיסי - לא ספרות כבדה."
-        : "טקסטים מתארכים בהדרגה; עדיין יש לאמת מול תוכנית האנגלית בבית הספר."
+        ? "Short sentences, basic verbal questioning - not heavy literature."
+        : "Texts gradually lengthen; still validate against the school English program."
     );
     sourceRefs.push(...CURRICULUM_SOURCE_REF_PRESETS.english_exposure_framework);
   }
 
   if (subjectKey === "science") {
     skills.push(
-      "חקירה מדעית: תצפית, השערה, ניסוי בטוח בכיתה, תיעוד.",
-      "תכני חיים, חומרים, אנרגיה, כדור הארץ וטכנולוגיה - לפי מסגרות מדע וטכנולוגיה."
+      "Scientific inquiry: observation, hypothesis, safe classroom experiment, documentation.",
+      "Life, materials, energy, Earth and technology content - per science and technology frameworks."
     );
     difficultyNotes.push(
-      "נושאים מתקדמים (אנרגיה מוליכים מורכבים) דורשים אימות עומק לכיתה."
+      "Advanced topics (complex energy conductors) require grade-depth validation."
     );
     sourceRefs.push(...CURRICULUM_SOURCE_REF_PRESETS.rama_general);
   }
 
   if (subjectKey === "math") {
     skills.push(
-      "תפיסה מספרית, פעולות, שאלות מילוליות, שברים/עשרוניים (בהתאם לכיתה), נתונים ותרשימים.",
-      "גאומטריה במתמטיקה: קשרים גיאומטריים בהקשר חישובי - מוסבר במיתר נפרד למוצר."
+      "Number sense, operations, word problems, fractions/decimals (by grade), data and charts.",
+      "Geometry within math: geometric links in a computational context - explained as a separate product strand."
     );
     difficultyNotes.push(
-      "גיאומטריה כמיתר בתוך מתמטיקה מופרד ממקצוע הגאומטריה של האתר עבור השוואות דוח.",
-      "מסמך תוכנית רשמי לכיתה במאגר מיידע (PDF) משמש כעיגון כיתתי לפני תיקוני תוכן."
+      "Geometry as a strand inside math is separated from the site geometry subject for report comparisons.",
+      "An official grade plan document in the Meyda repository (PDF) anchors the grade before content edits."
     );
     sourceRefs.push({
       sourceType: "official_pdf",
-      title: `מתמטיקה יסודי - מסמך תוכנית לכיתה ${G_HE[gradeNum]} (מיידע)`,
+      title: `Elementary math - grade ${G_EN[gradeNum]} plan document (Meyda)`,
       url: `${MATH_ELEMENTARY_GRADE_PDF_BASE}/kita${gradeNum}.pdf`,
       checkedAt: SOURCE_REGISTRY_CHECKED_AT,
-      note: "עיגון רשמי לכיתה - יש לאמת כל פריט מול הסעיפים הרלוונטיים בקובץ.",
-    });
+      note: "Official grade anchor - validate each item against the relevant sections in the file."});
     sourceRefs.push({
       sourceType: "official_moe",
-      title: "חקר נתונים - מרחב פדגוגי",
+      title: "Data inquiry - pedagogical space",
       url: "https://pop.education.gov.il/tchumey_daat/matmatika/yesodi/noseem_nilmadim/choker-netunim/",
       checkedAt: SOURCE_REGISTRY_CHECKED_AT,
-      note: "מיתר חקר נתונים במסגרת התוכנית.",
-    });
+      note: "Data-inquiry strand within the program."});
   }
 
   if (subjectKey === "geometry") {
     skills.push(
-      "הכרת צורות, מדידות (היקף, שטח), זוויות, גופים, סימטריה - עומק לפי כיתה.",
-      "הפרדה בין הכרת צורה לבין נפח משולש למשולש פיתגורס וכו׳."
+      "Shape recognition, measurement (perimeter, area), angles, solids, symmetry - depth by grade.",
+      "Separate shape recognition from triangle volume, Pythagoras, etc."
     );
     difficultyNotes.push(
-      "פריטים עם נפח/אלכסונים בכיתות מוקדמות נסמנים כחשודי רצף."
+      "Items with volume/diagonals in early grades are flagged as sequence suspects."
     );
   }
 
@@ -353,25 +312,7 @@ function buildOfficialGradeSlot(legacy, subjectKey, gradeNum) {
   let needsHumanPedagogyReview = confidence === "low";
 
   /* Moledet: ministry framing commonly grades 2–4 */
-  if (subjectKey === "moledet-geography") {
-    if (gradeNum < 2 || gradeNum > 4) {
-      confidence = "low";
-      needsHumanPedagogyReview = true;
-      difficultyNotes.push(
-        "מולדת/חברה לפי מסגרות רבות מותאם לכיתות ב׳–ד׳; פריטים בכיתה א׳ או בכיתות ה׳–ו׳ דורשים מקור רשמי נפרד או הסבר פדגוגי."
-      );
-    } else {
-      confidence = "medium";
-      needsHumanPedagogyReview = true;
-      difficultyNotes.push("נדרש אימות מול תוכנית המוסד ומסגרות משרד החינוך לגיל המדויק.");
-      /* Bank topic defs inherit legacy \"low\"; bump within official Moladeta band so compare reports do not mislabel every row as low-confidence anchoring. */
-      for (const t of allowedTopics) {
-        if (t.key && String(t.key).startsWith("moledet")) t.confidence = "medium";
-      }
-    }
-    skills.push("זהות, גיאוגרפיה מקומית, חברה ואזרחות - בהתאם לבנק המופיע במוצר.");
-    sourceRefs.push(...CURRICULUM_SOURCE_REF_PRESETS.moe_portal);
-  }
+  
 
   return {
     coreTopics,
@@ -386,8 +327,7 @@ function buildOfficialGradeSlot(legacy, subjectKey, gradeNum) {
     confidence,
     needsHumanPedagogyReview,
     narrativeNotes: legacy.sourceNotes || "",
-    gradeLabelHe: `כיתה ${G_HE[gradeNum]}`,
-  };
+    gradeLabelHe: `Grade ${G_EN[gradeNum]}`};
 }
 
 function buildOfficialSpineObject() {
@@ -423,8 +363,7 @@ export const OFFICIAL_SPINE_META = {
   moladetaGradeBandNote:
     "Moladeta / society / citizenship items outside grades 2–4 are flagged unless an additional geography source is cited.",
   disclaimer:
-    "This spine does not replace Ministry PDF programmes item-by-item. Low-confidence rows require human approval before content changes.",
-};
+    "This spine does not replace Ministry PDF programmes item-by-item. Low-confidence rows require human approval before content changes."};
 
 /**
  * Find topic in official spine buckets for a grade.
@@ -439,8 +378,7 @@ export function findOfficialTopicPlacement(subjectKey, gradeNum, normalizedKey) 
     "enrichmentTopics",
     "exposureOnlyTopics",
     "allowedTopics",
-    "coreTopics",
-  ];
+    "coreTopics"];
   for (const bucket of order) {
     const arr = slot[bucket];
     if (!Array.isArray(arr)) continue;

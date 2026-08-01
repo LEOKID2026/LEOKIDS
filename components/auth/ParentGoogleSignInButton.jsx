@@ -15,7 +15,7 @@ import {
  * @param {{
  *   disabled?: boolean;
  *   className?: string;
- *   onCredential?: (payload: { credential: string, nonce: string }) => void | Promise<void>;
+ *   onCredential?: (payload: { credential: string, nonce: string }) => void || Promise<void>;
  *   onError?: (messageKey: string) => void;
  * }} props
  */

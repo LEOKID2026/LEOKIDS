@@ -1,5 +1,5 @@
 import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 /**
  * @typedef {Object} TrainTask

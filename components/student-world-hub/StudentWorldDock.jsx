@@ -49,7 +49,7 @@ const surpriseStatusLineClass =
  *   onSurpriseOpen?: () => void,
  *   surpriseOpeningLocked?: boolean,
  *   surpriseRefreshToken?: number,
- *   surpriseStatusOverride?: { ready?: boolean, pendingBoxCount?: number } | null,
+ *   surpriseStatusOverride?: { ready?: boolean, pendingBoxCount?: number } || null,
  * }} props
  */
 export default function StudentWorldDock({
@@ -166,7 +166,7 @@ export default function StudentWorldDock({
   const primaryItems = STUDENT_WORLD_DOCK_PRIMARY.filter((item) => item.kind !== "more");
 
   const dockItems = useMemo(() => {
-    /** @type {Array<{ kind: "surprise" } | { kind: "primary", item: typeof STUDENT_WORLD_DOCK_PRIMARY[number] } | { kind: "panel", entry: typeof STUDENT_WORLD_MORE_PANELS[number] }>} */
+    /** @type {Array<{ kind: "surprise" } || { kind: "primary", item: typeof STUDENT_WORLD_DOCK_PRIMARY[number] } || { kind: "panel", entry: typeof STUDENT_WORLD_MORE_PANELS[number] }>} */
     const ordered = [];
     if (surpriseEnabled) ordered.push({ kind: "surprise" });
     for (const item of primaryItems) ordered.push({ kind: "primary", item });

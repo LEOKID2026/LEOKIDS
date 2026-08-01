@@ -6,7 +6,7 @@ const DISMISS_BTN_CLASS =
   "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/30 bg-slate-900/90 text-sm leading-none text-white shadow-md transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white";
 
 /**
- * @param {{ onDismiss?: () => void, variant?: "fixed" | "footer-above" | "inline" }} props
+ * @param {{ onDismiss?: () => void, variant?: "fixed" || "footer-above" || "inline" }} props
  */
 export default function HomeDemoButton({ onDismiss, variant = "fixed" }) {
   const { locale, direction } = useI18n();

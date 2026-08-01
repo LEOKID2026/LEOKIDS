@@ -76,10 +76,10 @@ export const LEARNING_MASTER_MOBILE_TYPING_INPUT_CLASS =
 
 /**
  * @param {{
- *   wrapRef: import("react").RefObject<HTMLElement | null>,
- *   headerRef: import("react").RefObject<HTMLElement | null>,
- *   desktopHeaderRef: import("react").RefObject<HTMLElement | null>,
- *   controlsRef: import("react").RefObject<HTMLElement | null>,
+ *   wrapRef: import("react").RefObject<HTMLElement || null>,
+ *   headerRef: import("react").RefObject<HTMLElement || null>,
+ *   desktopHeaderRef: import("react").RefObject<HTMLElement || null>,
+ *   controlsRef: import("react").RefObject<HTMLElement || null>,
  * }} refs
  */
 export function buildLearningMasterMobileShellLayoutOptions(refs) {

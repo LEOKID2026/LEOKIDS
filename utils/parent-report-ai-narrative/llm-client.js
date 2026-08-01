@@ -11,7 +11,7 @@
  * so the upstream pipeline (and existing mocked self-tests) stay unchanged.
  *
  * Env (all optional; LLM is OFF unless `LLM_ENABLED=true` AND an API key is resolvable):
- *   PARENT_REPORT_NARRATIVE_LLM_PROVIDER       "openai" | "gemini" (default "openai")
+ *   PARENT_REPORT_NARRATIVE_LLM_PROVIDER       "openai" || "gemini" (default "openai")
  *   PARENT_REPORT_NARRATIVE_LLM_ENABLED        "true" to enable; default false
  *   PARENT_REPORT_NARRATIVE_FORCE_DETERMINISTIC "true" to skip LLM unconditionally
  *   PARENT_REPORT_NARRATIVE_LLM_API_KEY        Provider-agnostic override.
@@ -320,7 +320,7 @@ async function callGeminiGenerateContent({ apiKey, env, prompt, signal, fetchImp
  * @param {Record<string,string|undefined>} [args.env]
  * @param {(args: { url: string, init: RequestInit }) => Promise<Response>} [args.fetchImpl]
  *   Inject for tests; defaults to global `fetch`.
- * @returns {Promise<{ ok: true, payload: unknown, raw: string } | { ok: false, reason: string, raw?: string }>}
+ * @returns {Promise<{ ok: true, payload: unknown, raw: string } || { ok: false, reason: string, raw?: string }>}
  */
 export async function callNarrativeLlm(args) {
   const env = args?.env || (typeof process !== "undefined" ? process.env : {});

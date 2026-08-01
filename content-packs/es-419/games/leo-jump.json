@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-jump",
+  "title": "Leo salta",
+  "blurb": "¡Salta obstáculos y recoge monedas!",
+  "help": {
+    "howToPlay": "Toca para saltar. Supera obstáculos y recoge monedas, diamantes e imanes en el camino.",
+    "scoring": "Las monedas y los diamantes suman puntos. Los saltos consecutivos sobre obstáculos otorgan una bonificación combinada. Golpear un obstáculo finaliza el juego.",
+    "rewards": "Cuanto más corras y más puntos ganes, más monedas y diamantes obtendrás.",
+    "tip": "No saltes cada vez; a veces es mejor esperar un momento y saltar en el momento adecuado."
+  }
+}

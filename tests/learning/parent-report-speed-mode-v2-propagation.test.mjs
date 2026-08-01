@@ -7,7 +7,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { aggregateReportPayloadFromActivityRows } from "../../lib/parent-server/report-data-aggregate.server.js";
 import { buildParentReportV2FromAggregate } from "../../scripts/qa/lib/mass-virtual-students/report-v2-bridge.mjs";
-import { collectTopicEngineRowsFromReport } from "../../utils/parent-report-engine-insights-he.js";
+import { collectTopicEngineRowsFromReport } from "../../utils/parent-report-engine-insights.js";
 
 const FROM = new Date("2026-06-01");
 const TO = new Date("2026-06-30");

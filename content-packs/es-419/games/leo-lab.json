@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-lab",
+  "title": "Laboratorio de experimentos de Leo",
+  "blurb": "Un juego sobre experimentos, materiales y causa y efecto.",
+  "help": {
+    "howToPlay": "Lea la tarea del experimento, elija elementos del estante (arrastre o toque), colóquelos en la mesa del laboratorio y toque \"Verificar experimento\".",
+    "scoring": "Un experimento exitoso +30, éxito en el primer intento +10, racha de 3 aciertos +15, racha de 5 +30. No se deducen puntos por errores.",
+    "rewards": "Las monedas se otorgan en función de cuántos experimentos tuvo éxito, nivel de dificultad, precisión, rachas y de completar 20 experimentos, solo si tuvo éxito al menos una vez.",
+    "tip": "Piense en lo que se necesita para completar la tarea; no confíe en las sugerencias de las tarjetas de elementos."
+  },
+  "accessibility": {
+    "title": "Laboratorio de experimentos de Leo"
+  }
+}

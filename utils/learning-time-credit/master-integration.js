@@ -35,7 +35,7 @@ export function resolveMasterFairnessEnabled(_mode, _flagOverride) {
 }
 
 /**
- * @param {import('react').MutableRefObject<QuestionTimeLedger | null>} ledgerRef
+ * @param {import('react').MutableRefObject<QuestionTimeLedger || null>} ledgerRef
  * @param {{
  *   subjectId: string,
  *   mode: string,
@@ -112,10 +112,10 @@ export function beginMasterQuestionLedger(ledgerRef, options) {
 /**
  * Close open question ledger: credit session ms and optional topic track.
  *
- * @param {import('react').MutableRefObject<QuestionTimeLedger | null>} ledgerRef
+ * @param {import('react').MutableRefObject<QuestionTimeLedger || null>} ledgerRef
  * @param {import('react').MutableRefObject<number>} sessionSecondsRef - stores milliseconds (legacy name)
  * @param {(closed: { creditedMs: number, creditedSecForTopic: number }) => void} [onTopicTrack]
- * @returns {ReturnType<QuestionTimeLedger['closeQuestion']> | null}
+ * @returns {ReturnType<QuestionTimeLedger['closeQuestion']> || null}
  */
 export function finalizeMasterQuestionLedger(
   ledgerRef,
@@ -139,7 +139,7 @@ export function finalizeMasterQuestionLedger(
 /**
  * Legacy path when no ledger (fallback): wall-clock ms capped at 10 min per unit.
  *
- * @param {number | null} questionStartTime
+ * @param {number || null} questionStartTime
  * @param {import('react').MutableRefObject<number>} sessionSecondsRef
  */
 export function legacyAccumulateQuestionWallTime(questionStartTime, sessionSecondsRef) {

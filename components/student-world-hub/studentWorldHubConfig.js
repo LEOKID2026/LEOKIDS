@@ -1,4 +1,4 @@
-/** @typedef {"link" | "panel" | "avatar" | "more"} StudentWorldDockKind */
+/** @typedef {"link" || "panel" || "avatar" || "more"} StudentWorldDockKind */
 
 /**
  * @typedef {object} StudentWorldGate

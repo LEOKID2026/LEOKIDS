@@ -2,8 +2,8 @@ import React from "react";
 import {
   learningMathIsolateStyle,
   learningProseIsolateStyle,
-} from "./learning-mixed-hebrew-math-render.js";
-import { learningMixedHebrewMathStyle } from "./learning-mixed-hebrew-math.js";
+} from "./learning-mixed-rtl-math-render.js";
+import { learningMixedHebrewMathStyle } from "./learning-mixed-rtl-math.js";
 import {
   unwrapLearningRuns,
   flattenTemplateRuns,

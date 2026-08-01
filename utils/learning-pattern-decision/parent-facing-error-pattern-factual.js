@@ -90,8 +90,7 @@ export const PROVEN_FACTUAL_PARENT_LABEL_EN = Object.freeze({
   math_power_as_multiplication_error: "the base multiplied by the exponent instead of a power calculation",
   math_identity_property_error: "an identity (zero or one) property used incorrectly",
   math_estimation_strategy_error: "an estimate used where an exact result was required",
-  math_gcd_smaller_input_error: "a greatest-common-divisor choice that did not match",
-});
+  math_gcd_smaller_input_error: "a greatest-common-divisor choice that did not match"});
 
 /**
  * Only these classifier-proven keys (and aliases that normalize into them)
@@ -125,13 +124,11 @@ export const LEGACY_PATTERN_FAMILY_LABEL_EN = Object.freeze({
   instruction_misread: "an answer that did not match the instruction",
   support_dependent_success: "success mainly with hints or guided support",
   recurring_weakness: "the same kind of error repeating in the activity",
-  speed_driven_error: "errors that appeared during fast work",
-});
+  speed_driven_error: "errors that appeared during fast work"});
 
 export const PARENT_ERROR_PATTERN_LABEL_EN = Object.freeze({
   ...PROVEN_FACTUAL_PARENT_LABEL_EN,
-  ...LEGACY_PATTERN_FAMILY_LABEL_EN,
-});
+  ...LEGACY_PATTERN_FAMILY_LABEL_EN});
 
 /**
  * @param {string|null|undefined} tag
@@ -185,7 +182,7 @@ export function provenFactualParentLabelEn(label) {
  */
 export function isTechnicalEnglishPatternKey(label) {
   const raw = String(label || "").trim();
-  if (!raw || /[\u0590-\u05FF]/.test(raw)) return false;
+  if (!raw || /[^\s\S]/.test(raw)) return false;
   if (/^(pf|k|to|st|ct|mt):/i.test(raw)) {
     const stripped = raw.replace(/^(pf|k|to|st|ct|mt):/i, "");
     if (PARENT_ERROR_PATTERN_LABEL_EN[stripped.toLowerCase()]) return false;

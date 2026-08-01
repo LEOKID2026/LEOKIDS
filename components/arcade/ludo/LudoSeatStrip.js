@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * רצועת מושבים אופקית — תואם Ov2SeatStrip (MLEO online-v2).
+ *    —  Ov2SeatStrip (MLEO online-v2).
  */
 
 /**
@@ -28,8 +28,7 @@ export default function LudoSeatStrip({
     "border-violet-300/80 bg-violet-800/45",
     "border-cyan-300/80 bg-cyan-800/45",
     "border-orange-300/80 bg-orange-800/45",
-    "border-fuchsia-300/80 bg-fuchsia-800/45",
-  ];
+    "border-fuchsia-300/80 bg-fuchsia-800/45"];
 
   return (
     <div className="flex min-h-0 w-full shrink-0 gap-1 overflow-hidden pb-0.5 pt-0 sm:gap-1 sm:pb-0.5 sm:pt-0">

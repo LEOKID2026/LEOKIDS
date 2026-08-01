@@ -21,8 +21,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{ skillId: "arithmetic_operations" }],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "remediate_current_skill",
@@ -40,8 +40,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "thin_data_pause",
@@ -58,13 +58,13 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "basic",
-    },
+      currentDifficultyHint: "basic"
+    }
   },
   {
     name: "do_not_conclude_caution",
     input: {
-      subject: "hebrew",
+      subject: "english",
       currentSkillId: "reading_comprehension",
       currentSubskillId: "explicit_information",
       engineDecision: "advance",
@@ -76,8 +76,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "prerequisite_review",
@@ -95,8 +95,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSubskillIdHint: "place_value",
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "guessing_probe",
@@ -113,8 +113,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "inconsistency_probe_over_thin",
@@ -131,8 +131,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "basic",
-    },
+      currentDifficultyHint: "basic"
+    }
   },
   {
     name: "engine_insufficient_data",
@@ -149,8 +149,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "basic",
-    },
+      currentDifficultyHint: "basic"
+    }
   },
   {
     name: "missing_subject_insufficient",
@@ -164,8 +164,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       doNotConclude: [],
       prerequisiteSkillIds: [],
       recentAttempts: [],
-      availableQuestionMetadata: [{}],
-    },
+      availableQuestionMetadata: [{}]
+    }
   },
   {
     name: "missing_metadata_advance_blocked",
@@ -182,8 +182,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "english_missing_skill_exempt",
@@ -200,8 +200,8 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "basic",
-    },
+      currentDifficultyHint: "basic"
+    }
   },
   {
     name: "english_skill_tagging_incomplete_flag",
@@ -219,13 +219,13 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "standard",
-    },
+      currentDifficultyHint: "standard"
+    }
   },
   {
     name: "maintain_strong_signal",
     input: {
-      subject: "moledet-geography",
+      subject: "science",
       currentSkillId: "moledet_geo_maps",
       currentSubskillId: "g3",
       engineDecision: "maintain",
@@ -237,7 +237,7 @@ export const ADAPTIVE_PLANNER_FIXTURES = [
       prerequisiteSkillIds: [],
       recentAttempts: [],
       availableQuestionMetadata: [{}],
-      currentDifficultyHint: "standard",
-    },
-  },
+      currentDifficultyHint: "standard"
+    }
+  }
 ];

@@ -15,10 +15,10 @@ import { writingGlyphVisualScaleForGroup } from "../../lib/writing/writing-glyph
  *   src: string,
  *   className?: string,
  *   character?: string,
- *   scriptStyle?: "print" | "script",
- *   language?: "he" | "en" | "mixed",
+ *   scriptStyle?: "print" || "script",
+ *   language?: "he" || "en" || "mixed",
  *   traceRenderMode?: import("../../lib/writing/writing-worksheet-types.js").TraceRenderMode,
- *   mode?: "screen" | "print",
+ *   mode?: "screen" || "print",
  * }} props
  */
 export default function WritingTraceSvg({
@@ -102,7 +102,7 @@ export default function WritingTraceSvg({
         data-writing-trace-error-message={error}
         title={error}
         role="img"
-        aria-label={`שגיאת נכס עקיבה: ${error}`}
+        aria-label={`  : ${error}`}
       >
         {process.env.NODE_ENV !== "production" ? `⚠ ${error}` : ""}
       </span>

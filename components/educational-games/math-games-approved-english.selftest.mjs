@@ -52,9 +52,8 @@ const FORBIDDEN = [
   "findTotal",
   "sameTotal",
   "build_fraction",
-  "א",
-  "ב",
-];
+  "",
+  ""];
 
 const ENGLISH_LEAK = /\b(LESS|GREATER|EQUAL|share_equally|make_groups|findTotal|sameTotal|build_fraction)\b/;
 

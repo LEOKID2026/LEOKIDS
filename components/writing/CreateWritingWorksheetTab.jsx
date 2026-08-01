@@ -5,7 +5,7 @@
 import {
   ENGLISH_LOWER,
   ENGLISH_UPPER,
-  ENGLISH_WORD_PACKS,
+  getWritingWordPacks,
   PREWRITING_PATHS,
   prewritingPathLabelEn,
   wordPackLabelEn,
@@ -24,7 +24,8 @@ import {
   getPublicWritingDemoPreset,
 } from "../../data/writing/public-demo-allowlist.js";
 import { useWorksheetUi, writingCategoryLabel } from "../../hooks/useWorksheetUi.js";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useMemo } from "react";
 
 const TRACING_OPTION_KEYS = [
   { key: "trace", labelKey: "worksheets.writingTracingTrace" },
@@ -123,9 +124,16 @@ export function defaultWritingCreateForm() {
 
 /**
  * @param {Record<string, unknown>} form
+ * @param {{ interfaceLocale?: string, contentLocale?: string }} [localeOpts]
  * @returns {Record<string, unknown>}
  */
-export function buildWritingGenerateBody(form) {
+export function buildWritingGenerateBody(form, localeOpts = {}) {
+  const interfaceLocale = String(localeOpts.interfaceLocale || "").trim();
+  const contentLocale = String(localeOpts.contentLocale || interfaceLocale || "").trim();
+  const localeFields = {
+    ...(interfaceLocale ? { interfaceLocale } : {}),
+    ...(contentLocale ? { contentLocale, instructionLocale: contentLocale } : {}),
+  };
   const referenceSheetPreset = String(form.referenceSheetPreset || "");
   if (referenceSheetPreset && REFERENCE_SHEET_PRESET_KEYS.includes(referenceSheetPreset)) {
     const applied = applyReferenceSheetPreset(referenceSheetPreset);
@@ -135,6 +143,7 @@ export function buildWritingGenerateBody(form) {
         ...applied,
         inkSave: form.inkSave === true,
         pageOrientation: form.pageOrientation || WRITING_REQUEST_DEFAULTS.pageOrientation,
+        ...localeFields,
       };
     }
   }
@@ -167,6 +176,7 @@ export function buildWritingGenerateBody(form) {
     showDirectionArrows: WRITING_REQUEST_DEFAULTS.showDirectionArrows,
     showStrokeNumbers: WRITING_REQUEST_DEFAULTS.showStrokeNumbers,
     inkSave: form.inkSave === true,
+    ...localeFields,
   };
 
   if (category === "english_letters") {
@@ -203,7 +213,7 @@ export function buildWritingGenerateBody(form) {
  *   busy: boolean,
  *   error: string,
  *   T: Record<string, string>,
- *   variant?: "parent" | "public-demo",
+ *   variant?: "parent" || "public-demo",
  *   hidePanelHeader?: boolean,
  * }} props
  */
@@ -219,6 +229,11 @@ export default function CreateWritingWorksheetTab({
 }) {
   const ui = useWorksheetUi();
   const t = useT();
+  const { locale, contentLocale } = useI18n();
+  const wordPacks = useMemo(
+    () => getWritingWordPacks(contentLocale || locale || "en"),
+    [contentLocale, locale]
+  );
   const isPublicDemo = variant === "public-demo";
   const category = String(form.writingCategory || "english_letters");
   const referenceSheetPreset = String(form.referenceSheetPreset || "");
@@ -294,7 +309,9 @@ export default function CreateWritingWorksheetTab({
               <option value="">{ui.writingReferenceSheetManual}</option>
               {REFERENCE_SHEET_PRESET_KEYS.map((key) => (
                 <option key={key} value={key}>
-                  {REFERENCE_SHEET_PRESETS[key].labelHe}
+                  {typeof REFERENCE_SHEET_PRESETS[key].labelForLocale === "function"
+                    ? REFERENCE_SHEET_PRESETS[key].labelForLocale(locale || "en")
+                    : REFERENCE_SHEET_PRESETS[key].labelHe}
                 </option>
               ))}
             </select>
@@ -447,7 +464,7 @@ export default function CreateWritingWorksheetTab({
           >
             {PREWRITING_PATHS.map((pathId) => (
               <option key={pathId} value={pathId}>
-                {prewritingPathLabelEn(pathId)}
+                {prewritingPathLabelEn(pathId, locale || "en")}
               </option>
             ))}
           </select>
@@ -465,9 +482,9 @@ export default function CreateWritingWorksheetTab({
               value={String(form.wordPackId || "animals")}
               onChange={(e) => onChange({ wordPackId: e.target.value, customWords: "" })}
             >
-              {Object.keys(ENGLISH_WORD_PACKS).map((packId) => (
+              {Object.keys(wordPacks).map((packId) => (
                 <option key={packId} value={packId}>
-                  {wordPackLabelEn(ENGLISH_WORD_PACKS, packId)}
+                  {wordPackLabelEn(wordPacks, packId)}
                 </option>
               ))}
               <option value="custom">{t("worksheets.writingWordPackCustom")}</option>

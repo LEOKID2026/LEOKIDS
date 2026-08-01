@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "name_example_com": "nombre@ejemplo.com",
+    "invite_by_user_id_advanced": "Invitar por ID de usuario (avanzado)"
+  }
+}

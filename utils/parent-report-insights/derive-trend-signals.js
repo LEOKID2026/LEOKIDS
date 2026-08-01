@@ -2,7 +2,7 @@
  * Trend signals: overall daily totals (date + answers + accuracyPct) and per-subject trend bands.
  *
  * Per-subject trend resolution priority:
- *  1. V2 deterministic engine via `v2Report.subjectProfiles[*].trendBucket | trend`.
+ *  1. V2 deterministic engine via `v2Report.subjectProfiles[*].trendBucket || trend`.
  *  2. V2 hybridRuntime per-subject bucket if present.
  *  3. Fallback: `insufficient_data` if thin, else `stable`.
  *

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "total_students": "Estudiantes totales",
+    "opened_pdf": "PDF abierto",
+    "completed_pdf": "Completado (PDF)",
+    "submitted_answers": "Respuestas enviadas",
+    "pending_review": "Pendiente de revisión",
+    "published": "Publicado",
+    "class_average": "promedio de clase"
+  }
+}

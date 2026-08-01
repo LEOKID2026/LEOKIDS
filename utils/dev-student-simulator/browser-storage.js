@@ -34,7 +34,7 @@ export function getResetTouchedKeysFromMetadata(meta) {
 
 /**
  * @param {string[]} keys
- * @returns {Record<string, string | null>}
+ * @returns {Record<string, string || null>}
  */
 export function readRawStorageMapForKeys(keys) {
   const out = {};
@@ -56,7 +56,7 @@ export function stringifyForLocalStorage(value) {
 /**
  * @param {Record<string, unknown>} snapshot
  * @param {readonly string[]} allowedKeys frozen allowlist (defaults to STORAGE_KEYS)
- * @returns {{ ok: true } | { ok: false, key: string, code: string }}
+ * @returns {{ ok: true } || { ok: false, key: string, code: string }}
  */
 export function validateSnapshotForApply(snapshot, allowedKeys = STORAGE_KEYS) {
   if (!snapshot || typeof snapshot !== "object") {
@@ -84,7 +84,7 @@ function writeSnapshotEntries(snapshot) {
  * Writes snapshot keys only (validated against allowlist; blocks leok_*).
  * @param {Record<string, unknown>} snapshot
  * @param {readonly string[]} [allowedKeys]
- * @returns {{ ok: true } | { ok: false, key: string, error?: string }}
+ * @returns {{ ok: true } || { ok: false, key: string, error?: string }}
  */
 export function applySnapshotToLocalStorage(snapshot, allowedKeys = STORAGE_KEYS) {
   const v = validateSnapshotForApply(snapshot, allowedKeys);
@@ -96,10 +96,10 @@ export function applySnapshotToLocalStorage(snapshot, allowedKeys = STORAGE_KEYS
  * Phase 3.5: persist backup metadata before snapshot writes so Reset can recover if snapshot write fails mid-way.
  * @param {{ metadata: unknown, snapshot: Record<string, unknown>, allowedKeys?: readonly string[] }} args
  * @returns
- *   | { ok: true }
- *   | { ok: false, phase: "validate", key: string, error: string }
- *   | { ok: false, phase: "metadata", reason: string }
- *   | { ok: false, phase: "snapshot", key: string, error?: string, metadataWritten: true }
+ *   || { ok: true }
+ *   || { ok: false, phase: "validate", key: string, error: string }
+ *   || { ok: false, phase: "metadata", reason: string }
+ *   || { ok: false, phase: "snapshot", key: string, error?: string, metadataWritten: true }
  */
 export function applyMetadataThenSnapshot({ metadata, snapshot, allowedKeys = STORAGE_KEYS }) {
   const v = validateSnapshotForApply(snapshot, allowedKeys);
@@ -119,7 +119,7 @@ export function applyMetadataThenSnapshot({ metadata, snapshot, allowedKeys = ST
 
 /**
  * @param {unknown} metadata
- * @returns {{ ok: true } | { ok: false, reason: string }}
+ * @returns {{ ok: true } || { ok: false, reason: string }}
  */
 export function writeSimulatorMetadata(metadata) {
   if (!metadata || typeof metadata !== "object") return { ok: false, reason: "invalid_metadata" };
@@ -131,7 +131,7 @@ export function writeSimulatorMetadata(metadata) {
 /**
  * Restores backup from metadata or removes keys when backup is null. Removes metadata key at end.
  * Never touches keys outside getResetTouchedKeysFromMetadata(meta) (except metadata key itself).
- * @returns {{ ok: true } | { ok: false, reason: string }}
+ * @returns {{ ok: true } || { ok: false, reason: string }}
  */
 export function resetSimulatedStudentFromMetadata() {
   const raw = safeGetItem(SIMULATOR_METADATA_KEY);
@@ -167,7 +167,7 @@ export function resetSimulatedStudentFromMetadata() {
 
 /**
  * Reads current snapshot for keys listed in metadata (for export).
- * @returns {{ snapshot: Record<string, unknown>, metadata: unknown } | null}
+ * @returns {{ snapshot: Record<string, unknown>, metadata: unknown } || null}
  */
 export function readCurrentSimulatorExportFromLocalStorage() {
   const raw = safeGetItem(SIMULATOR_METADATA_KEY);

@@ -8,5 +8,6 @@ export default async function handler(req, res) {
 
   if (rejectIfPublicWorksheetsCatalogRateLimited(req, res)) return undefined;
 
-  return res.status(200).json({ ok: true, items: buildUnifiedWorksheetCatalogItems() });
+  const locale = String(req.query?.contentLocale || req.query?.locale || req.query?.interfaceLocale || "en").trim();
+  return res.status(200).json({ ok: true, items: buildUnifiedWorksheetCatalogItems(locale || "en") });
 }

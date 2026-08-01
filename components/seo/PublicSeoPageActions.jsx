@@ -1,7 +1,7 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 
-/** @typedef {'practice-hub' | 'practice-inner' | 'guides-hub' | 'guides-inner'} SeoPageKind */
+/** @typedef {'practice-hub' || 'practice-inner' || 'guides-hub' || 'guides-inner'} SeoPageKind */
 
 /**
  * Subtle in-page nav — below site header, above H1. Not HUD, footer, or PUBLIC_NAV.

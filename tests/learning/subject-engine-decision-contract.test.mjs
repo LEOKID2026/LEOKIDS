@@ -5,7 +5,7 @@ import {
   buildSubjectEngineDecisionContractFromTopicMap,
   resolveSubjectSummaryTextFromEngineContract,
 } from "../../utils/learning-pattern-decision/build-subject-engine-decision-contract.js";
-import { buildSubjectParentLetter } from "../../utils/detailed-report-parent-letter-he.js";
+import { buildSubjectParentLetter } from "../../utils/detailed-report-parent-letter.js";
 import { summarizeV2UnitsForSubjectForTests } from "../../utils/parent-report-v2.js";
 import { RENDER_SOURCE_SUBJECT_ENGINE } from "../../utils/learning-pattern-decision/engine-decision-codes.js";
 
@@ -94,7 +94,7 @@ function topicRowFromContract(input) {
   assert.equal(contract.totalQuestions, 238);
   assert.ok(contract.weightedAccuracy > 0 && contract.weightedAccuracy < 100);
 
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "מתמטיקה" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "מתמטיקה" });
   assert.ok(summary && summary.length > 0);
   assert.match(summary, /topics stand out as needing reinforcement/i);
   assert.match(summary, /שברים/);
@@ -102,7 +102,7 @@ function topicRowFromContract(input) {
 
   const sp = {
     subject: "math",
-    subjectLabelHe: "חשבון",
+    subjectLabel: "חשבון",
     subjectEngineDecisionContract: contract,
     topicRecommendations: [fractions, multiplication],
     topWeaknesses: [],
@@ -248,13 +248,13 @@ function topicRowFromContract(input) {
       subjectId: "math",
       topicMap,
       subjectReportQuestions: 238,
-      subjectLabelHe: "מתמטיקה",
+      subjectLabel: "מתמטיקה",
     },
   );
 
   assert.equal(shortSubject.subjectSummaryRenderSource, RENDER_SOURCE_SUBJECT_ENGINE);
   assert.equal(shortSubject.subjectSummaryDecisionCode, "multiple_topic_gaps");
-  assert.equal(shortSubject.summaryHe, resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabelHe: "מתמטיקה" }));
+  assert.equal(shortSubject.summaryHe, resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "מתמטיקה" }));
   assert.match(shortSubject.summaryHe, /topics stand out as needing reinforcement/i);
 }
 

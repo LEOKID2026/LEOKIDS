@@ -106,7 +106,7 @@ export default function ColoringUploadWizard() {
 
   const [printA4Url, setPrintA4Url] = useState("");
 
-  const [printOrientation, setPrintOrientation] = useState(/** @type {"portrait" | "landscape"} */ ("portrait"));
+  const [printOrientation, setPrintOrientation] = useState(/** @type {"portrait" || "landscape"} */ ("portrait"));
 
 
 
@@ -118,7 +118,7 @@ export default function ColoringUploadWizard() {
 
 
 
-  const [quotaRemaining, setQuotaRemaining] = useState(/** @type {number | null} */ (null));
+  const [quotaRemaining, setQuotaRemaining] = useState(/** @type {number || null} */ (null));
 
   const [quotaLimit, setQuotaLimit] = useState(10);
 
@@ -132,11 +132,11 @@ export default function ColoringUploadWizard() {
 
 
 
-  const lineArtRef = useRef(/** @type {ImageData | null} */ (null));
+  const lineArtRef = useRef(/** @type {ImageData || null} */ (null));
 
-  const finalA4BlobRef = useRef(/** @type {Blob | null} */ (null));
+  const finalA4BlobRef = useRef(/** @type {Blob || null} */ (null));
 
-  const cropSourceRef = useRef(/** @type {ImageBitmap | null} */ (null));
+  const cropSourceRef = useRef(/** @type {ImageBitmap || null} */ (null));
 
 
 

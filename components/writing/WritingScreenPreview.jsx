@@ -20,7 +20,7 @@ export default function WritingScreenPreview({ worksheetPayload }) {
     <div
       className="writing-screen-preview worksheet-screen-preview"
       data-page-orientation={pageOrientation}
-      aria-label="תצוגה מקדימה"
+      aria-label=""
     >
       <header className="writing-screen-info-card worksheet-screen-info-card">
         <div className="worksheet-screen-brand" dir="ltr" lang="en">

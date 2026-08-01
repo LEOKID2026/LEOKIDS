@@ -6,7 +6,7 @@ import {
   defaultTopicForAssignedActivity,
   topicOptionsForAssignedActivity,
 } from "../../lib/classroom-activities/assigned-activity-topic-options.js";
-import { activitySubjectsForGrade, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
+import { activitySubjectsForGrade, subjectLabel } from "../../lib/teacher-portal/teacher-ui.js";
 import AssignedActivityQuestionDisplay from "../classroom-activities/AssignedActivityQuestionDisplay.jsx";
 import ActivityDisplayLevelSelector from "../classroom-activities/ActivityDisplayLevelSelector.jsx";
 import { writeActivityDifficultyFromDisplayLevel } from "../../lib/learning/activity-display-level.js";
@@ -260,7 +260,7 @@ export default function AssignActivityModal({
             >
               {activitySubjectsForGrade(activityGradeKey, [...ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS]).map((s) => (
                 <option key={s} value={s}>
-                  {subjectLabelHe(s)}
+                  {subjectLabel(s)}
                 </option>
               ))}
             </select>

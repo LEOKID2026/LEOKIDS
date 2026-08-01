@@ -1,0 +1,11 @@
+{
+  "gameId": "puzzle",
+  "title": "El rompecabezas de Leo",
+  "blurb": "¡Combina fichas y acumula puntos antes de que se acabe el tiempo!",
+  "help": {
+    "howToPlay": "Mueve fichas en el tablero para fusionar números coincidentes. Cuanto mayores sean los números, mayor será la puntuación.",
+    "scoring": "Cada fusión suma puntos. El objetivo es alcanzar el objetivo de puntuación antes de que acabe el tiempo.",
+    "rewards": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agrega aún más.",
+    "tip": "Intenta mantener una esquina libre para tener espacio para mover las fichas."
+  }
+}

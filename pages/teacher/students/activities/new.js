@@ -5,7 +5,7 @@ import Layout from "../../../../components/Layout";
 import TeacherPortalShell from "../../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch, subjectLabelHe, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.js";
+import { teacherAuthFetch, subjectLabel, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../lib/classroom-activities/generate-activity-questions-client.js";
 import { activityModeLabelHe } from "../../../../lib/classroom-activities/classroom-activities-labels.client.js";
@@ -343,7 +343,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                 }}
               >
                 {activitySubjectsForGrade(gradeKey, [...ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS]).map((s) => (
-                  <option key={s} value={s}>{subjectLabelHe(s)}</option>
+                  <option key={s} value={s}>{subjectLabel(s)}</option>
                 ))}
               </select>
             </label>

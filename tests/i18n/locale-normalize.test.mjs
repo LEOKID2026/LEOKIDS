@@ -26,8 +26,10 @@ test("normalizeLocaleInput: known aliases resolve to canonical registry ids", ()
   assert.equal(normalizeLocaleId("en-au"), "en");
   assert.equal(normalizeLocaleId("en-xa"), "en-XA");
   assert.equal(normalizeLocaleId("ar-xb"), "ar-XB");
-  assert.equal(normalizeLocaleId("he-IL"), "he");
-  assert.equal(normalizeLocaleId("he"), "he");
+  // Unregistered locales (including he / he-IL) fall back to English
+  assert.equal(normalizeLocaleId("he-IL"), "en");
+  assert.equal(normalizeLocaleId("he"), "en");
+  assert.equal(normalizeLocaleId("xx-YY"), "en");
 });
 
 test("normalizeLocaleInput: script subtags preserve canonical form", () => {
@@ -50,15 +52,31 @@ test("buildLocaleFallbackChain: exact → base → configured → default", () =
   ]);
   assert.deepEqual(buildLocaleFallbackChain("ar-XB", { configuredFallback: "en", defaultLocale: "en" }), [
     "ar-XB",
-    "ar",
     "en",
   ]);
   assert.deepEqual(buildLocaleFallbackChain("pt-BR", { configuredFallback: "en", defaultLocale: "en" }), [
     "pt-BR",
-    "pt",
     "en",
   ]);
   assert.deepEqual(buildLocaleFallbackChain("en", { configuredFallback: "en", defaultLocale: "en" }), ["en"]);
+});
+
+test("buildLocaleFallbackChain: same-language regional parent prefers es-419 over bare es", () => {
+  assert.deepEqual(
+    buildLocaleFallbackChain("es-MX", { configuredFallback: "es-419", defaultLocale: "en" }),
+    ["es-MX", "es-419", "en"]
+  );
+  assert.deepEqual(
+    buildLocaleFallbackChain("es-AR", { configuredFallback: "es-419", defaultLocale: "en" }),
+    ["es-AR", "es-419", "en"]
+  );
+});
+
+test("normalizeLocaleInput: es-419 and es-LA alias", () => {
+  assert.equal(normalizeLocaleId("es-419"), "es-419");
+  assert.equal(normalizeLocaleId("es_419"), "es-419");
+  assert.equal(normalizeLocaleId("es-LA"), "es-419");
+  assert.equal(normalizeLocaleInput("es-419").region, "419");
 });
 
 test("buildLocaleFallbackChain: deduplicates repeated entries", () => {

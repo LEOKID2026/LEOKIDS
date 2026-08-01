@@ -6,7 +6,7 @@ import {
   collectSessionsFromStorageSnapshot,
   accuracyTrendDirectionFromSessions,
 } from "./report-runner.mjs";
-import { parentFacingPatternLabelHe } from "../../../utils/parent-report-language/parent-facing-pattern-label-he.js";
+import { parentFacingPatternLabelHe } from "../../../utils/parent-report-language/parent-facing-pattern-label.js";
 const MAP_KEYS = [
   "mathOperations",
   "geometryTopics",

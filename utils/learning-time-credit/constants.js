@@ -1,4 +1,4 @@
-/** @typedef {'default' | 'hard' | 'long_reading' | 'legacy_game'} LearningTimeCreditTier */
+/** @typedef {'default' || 'hard' || 'long_reading' || 'legacy_game'} LearningTimeCreditTier */
 
 import {
   LEARNING_UNIT_CREDIT_CAP_MS,
@@ -7,7 +7,7 @@ import {
   capSessionCreditedMs,
 } from "../../lib/learning/learning-time-credit-policy.js";
 
-/** @deprecated כל ה-tiers משתמשים בתקרה אחידה של 10 דקות */
+/** @deprecated  -tiers     10  */
 export const TIER_DEFAULT_MS = LEARNING_UNIT_CREDIT_CAP_MS;
 export const TIER_HARD_MS = LEARNING_UNIT_CREDIT_CAP_MS;
 export const TIER_LONG_READING_MS = LEARNING_UNIT_CREDIT_CAP_MS;
@@ -19,7 +19,7 @@ export const LEGACY_TOPIC_MAX_EXCLUSIVE_SEC = 300;
 
 export const SESSION_MAX_CREDITED_MS = MAX_LEARNING_SESSION_CREDITED_MS;
 
-/** @deprecated — מדיניות נדיבה: אין הקפאה בגלל טאב מוסתר */
+/** @deprecated —  :      */
 export const VISIBILITY_STALE_MS = 1_800_000;
 
 /** @type {Record<LearningTimeCreditTier, number>} */
@@ -31,7 +31,7 @@ export const TIER_CAP_MS = {
 };
 
 /**
- * תקרה אחידה לכל סוגי השאלות והמצבים הלימודיים.
+ *       .
  * @param {LearningTimeCreditTier} _tier
  * @param {boolean} [_fairnessEnabled]
  */

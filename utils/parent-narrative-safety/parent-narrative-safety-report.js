@@ -44,7 +44,7 @@ export function buildNarrativeSafetySummaryMd(params) {
     `- **Generated:** ${generatedAtIso}`,
     `- **Overall:** ${allPassed ? "**PASS**" : "**FAIL**"}`,
     "",
-    "| Fixture | Expected | Actual | OK |",
+    "| Fixture || Expected || Actual || OK |",
     "|---------|----------|--------|-----|",
   ];
 
@@ -52,7 +52,7 @@ export function buildNarrativeSafetySummaryMd(params) {
     const exp = c.expectedStatus ?? "?";
     const act = c.result?.status ?? "-";
     const ok = c.pass ? "yes" : "**no**";
-    lines.push(`| ${c.id} | ${exp} | ${act} | ${ok} |`);
+    lines.push(`| ${c.id} || ${exp} || ${act} || ${ok} |`);
   }
 
   lines.push("", "## Failures", "");

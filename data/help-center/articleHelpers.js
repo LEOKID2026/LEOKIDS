@@ -1,7 +1,7 @@
 /**
  * Shared builders for Help Center article modules.
  */
-import videosManifest from "./videos-manifest.json";
+import videosManifest from "./videos-manifest.json" with { type: "json" };
 
 function publicUrl(rel) {
   if (!rel) return null;
@@ -82,6 +82,18 @@ export function disclaimerQuoteBlock() {
       "The report is based on practice data collected on Leo Kids.",
       "The report is meant to help parents understand what their child practiced, where strengths appeared, and what to strengthen next.",
       "The report is not a medical, psychological, or educational diagnosis and does not replace a teacher, counselor, assessor, or other professional. If you have ongoing concerns about learning difficulty or gaps, speak with a teacher or qualified professional.",
+    ],
+  };
+}
+
+export function disclaimerQuoteBlockEs419() {
+  return {
+    kind: "disclaimerQuote",
+    title: "Aviso importante",
+    paragraphs: [
+      "El informe se basa en los datos de práctica recopilados en Leo Kids.",
+      "El informe está pensado para ayudar a los padres a entender qué practicó su hijo o hija, dónde aparecieron fortalezas y qué conviene reforzar a continuación.",
+      "El informe no es un diagnóstico médico, psicológico ni educativo, y no reemplaza a un docente, orientador, evaluador u otro profesional. Si tienes preocupaciones persistentes sobre dificultades o brechas de aprendizaje, habla con un docente o un profesional calificado.",
     ],
   };
 }

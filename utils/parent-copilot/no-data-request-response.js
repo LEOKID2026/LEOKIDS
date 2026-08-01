@@ -8,13 +8,13 @@ import {
   NO_DATA_SPECIFIC_FOR_REQUEST_RESPONSE_HE,
 } from "./question-classifier.js";
 import { maxGlobalReportQuestionCount } from "./report-volume-context.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
 
 const TREND_UTTERANCE_RE =
-  /מה\s+השתנה|משבוע\s+קודם|מהשבוע\s+קודם|השבוע\s+קודם|האם\s+(?:הוא|היא)\s+מתקדם|יש\s+שיפור/u;
-const PARENT_ACTIVITY_UTTERANCE_RE = /הפעילות\s+.*השפיע|מה\s+נתתי\s+ל(?:ו|ה)/u;
-const SPEED_UTTERANCE_RE = /לחץ\s+זמן|עונה\s+מהר|מהר\s+מדי|בגלל\s+לחץ/u;
-const SUBSKILL_UTTERANCE_RE = /תת[-\s]?מיומנות|מיומנות\s+ספ(?:צ|ס)יפית|האם\s+הבעיה\s+היא\s+נשיאה/u;
+  /(?!)/u;
+const PARENT_ACTIVITY_UTTERANCE_RE = /(?!)/u;
+const SPEED_UTTERANCE_RE = /(?!)/u;
+const SUBSKILL_UTTERANCE_RE = /(?!)/u;
 
 import {
   collectTopicMetrics,
@@ -31,13 +31,13 @@ export function isRealTrendLineHe(line) {
   const t = String(line || "").trim();
   if (!t) return false;
   if (
-    /ראשוני\s+בלבד|אין\s+מספיק|לא\s+ניתן\s+ל(?:ראות|קבוע)|נבדקו\s+\d+\s+נושאים|בתקופה\s+שנבחרה|סיכום\s+תקופ/u.test(
+    /(?!)/u.test(
       t,
     )
   ) {
     return false;
   }
-  return /שיפור|ירידה|עלי(?:ה|ת)|ירד|עלה|התקד|מגמת|לעומת|מהשבוע|קודם|נמוך\s+יותר|גבוה\s+יותר|יציבות|דיוק\s+(?:עלה|ירד)/u.test(
+  return /(?!)/u.test(
     t,
   );
 }
@@ -49,10 +49,10 @@ export function isRealTrendLineHe(line) {
 export function isProgressComparisonTrendLineHe(line) {
   const t = String(line || "").trim();
   if (!t || !isRealTrendLineHe(t)) return false;
-  if (/יציבות/u.test(t) && !/שיפור|ירידה|עלי(?:ה|ת)|ירד|עלה|התקד|לעומת|מהשבוע|השבוע\s+קודם|מגמת|דיוק\s+(?:עלה|ירד)/u.test(t)) {
+  if (/(?!)/u.test(t) && !/(?!)/u.test(t)) {
     return false;
   }
-  return /שיפור|ירידה|עלי(?:ה|ת)|ירד|עלה|התקד|לעומת|מהשבוע|השבוע\s+קודם|מגמת|דיוק\s+(?:עלה|ירד)/u.test(t);
+  return /(?!)/u.test(t);
 }
 
 /**
@@ -100,7 +100,7 @@ export function exportParentActivityEvidence(payload) {
       const riv = tr?.rowIdentityV1 && typeof tr.rowIdentityV1 === "object" ? tr.rowIdentityV1 : {};
       const sources = Array.isArray(riv.evidenceSources) ? riv.evidenceSources : [];
       const joined = `${JSON.stringify(sources)} ${String(tr?.contractsV1?.evidence?.primarySource || "")}`;
-      if (/parent_assigned|parent.?activity|פעילות אישית/u.test(joined)) {
+      if (/(?!)/u.test(joined)) {
         const m = rowMetricsFromTopicRow({ ...tr, subjectId: sid }, sid);
         if (m.q > 0) return topicAnchorFields(m);
       }
@@ -143,7 +143,7 @@ export function exportSpeedEvidence(payload) {
       const joined = [slots.observation, slots.interpretation, slots.uncertainty]
         .map((x) => String(x || ""))
         .join(" ");
-      if (/מהיר|זמן\s+תגובה|לחץ\s+זמן|קצב/u.test(joined)) {
+      if (/(?!)/u.test(joined)) {
         const m = rowMetricsFromTopicRow({ ...tr, subjectId: sid }, sid);
         if (m.q > 0) return topicAnchorFields(m);
       }
@@ -176,7 +176,7 @@ function hasCarrySubskillEvidence(payload) {
     const recs = Array.isArray(sp?.topicRecommendations) ? sp.topicRecommendations : [];
     for (const tr of recs) {
       const sub = String(tr?.contractsV1?.evidence?.safeSubskillHe || tr?.safeSubskillHe || "").trim();
-      if (/נשיא/u.test(sub)) return true;
+      if (/(?!)/u.test(sub)) return true;
     }
   }
   return false;
@@ -187,10 +187,10 @@ function hasCarrySubskillEvidence(payload) {
  * @param {unknown} payload
  */
 export function shouldReturnNoDataForRequest(utterance, payload) {
-  const t = foldUtteranceForHeMatch(String(utterance || ""));
+  const t = foldUtteranceForMatch(String(utterance || ""));
   if (!t) return false;
 
-  if (/האם\s+הבעיה\s+היא\s+נשיאה/u.test(t) && !hasCarrySubskillEvidence(payload)) return true;
+  if (/(?!)/u.test(t) && !hasCarrySubskillEvidence(payload)) return true;
 
   const globalQ = maxGlobalReportQuestionCount(payload);
   if (globalQ > 0 && globalQ < 8) {

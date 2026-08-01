@@ -20,7 +20,7 @@ import {
 
 const LIVE_ROLL_MIN_MS = 1400;
 const DICE_FACE_HOLD_MS = 900;
-/** השהיה אחרי שהקובייה ננעלת על התוצאה, לפני תחילת תנועת הפיון — חייב להירגש כברור למשתמש */
+/**      ,     —     */
 const PAUSE_AFTER_DICE_BEFORE_WALK_MS = 1700;
 
 function preferNewer(prev, next) {
@@ -41,7 +41,7 @@ function sleepMs(ms) {
   });
 }
 
-/** זוג פריימים כדי לאפשר ל-React לצייר את פני הקובייה לפני השהיית המהלך */
+/**     -React        */
 function yieldPaintFrames() {
   if (typeof window === "undefined") return Promise.resolve();
   return new Promise((resolve) => {
@@ -84,11 +84,11 @@ export function useSnakesLaddersSession(ctx) {
   const prevSnapPollRef = useRef(null);
 
   const [pawnMotion, setPawnMotion] = useState(
-    /** @type {null | { key: number, seat: number, displayCell: number, phase: 'walk' | 'edge_hold' | 'edge_land', preCell: number, finalCell: number, kind: 'ladder' | 'snake' | null }} */ (
+    /** @type {null || { key: number, seat: number, displayCell: number, phase: 'walk' || 'edge_hold' || 'edge_land', preCell: number, finalCell: number, kind: 'ladder' || 'snake' || null }} */ (
       null
     )
   );
-  /** עד תחילת אנימציה מה-poll (השהיה לפני walk) — השרת כבר מחזיר turnSeat הבא */
+  /**    -poll (  walk) —    turnSeat  */
   const [pendingTurnVisualSeat, setPendingTurnVisualSeat] = useState(/** @type {number|null} */ (null));
 
   const clearPawnWalkTimers = useCallback(() => {
@@ -175,7 +175,7 @@ export function useSnakesLaddersSession(ctx) {
   const [liveSpinTick, setLiveSpinTick] = useState(1);
   const [liveRollServerFace, setLiveRollServerFace] = useState(/** @type {number|null} */ (null));
   const [liveDiceRevealHold, setLiveDiceRevealHold] = useState(
-    /** @type {{ face: number; until: number } | null} */ (null)
+    /** @type {{ face: number; until: number } || null} */ (null)
   );
   const [nowMs, setNowMs] = useState(() => Date.now());
   const diceRollingRef = useRef(false);
@@ -289,7 +289,7 @@ export function useSnakesLaddersSession(ctx) {
       const prevPhase = String(prev.phase || "").toLowerCase();
       const nextPhase = String(next.phase || "").toLowerCase();
       const playingChain =
-        (prevPhase === "playing" && nextPhase === "playing") ||
+        (prevPhase === "playing" && nextPhase === "playing") |
         (prevPhase === "playing" && nextPhase === "finished");
       if (playingChain) {
         const moved = findSingleMovedSeat(prev, next);
@@ -331,7 +331,7 @@ export function useSnakesLaddersSession(ctx) {
     try {
       const r = await requestSnakesAndLaddersGameAction(roomId, { action: "roll", revision: s.revision });
       if (!r.ok) {
-        setErr(r.error || "פעולה נכשלה");
+        setErr(r.error || "");
         return { ok: false };
       }
       const nextSnap = r.snapshot;
@@ -416,7 +416,7 @@ export function useSnakesLaddersSession(ctx) {
       positionRecord[String(pawnMotion.seat)] = pawnMotion.displayCell;
     }
 
-    /** תור להצגה בלבד — לא עובר לשחקן הבא עד סיום תנועת הפיון (כמו OV2) */
+    /**    —         ( OV2) */
     const turnSeatForUi =
       pawnMotion != null
         ? pawnMotion.seat

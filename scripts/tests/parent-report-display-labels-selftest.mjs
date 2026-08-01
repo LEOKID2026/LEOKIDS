@@ -20,7 +20,7 @@ const {
   formatParentReportEvidenceHe,
   findParentReportEnglishEnumLeaks,
   isTechnicalParentActivityTitleHe,
-} = await import(u("utils/parent-report-language/parent-report-display-labels.he.js"));
+} = await import(u("utils/parent-report-language/parent-report-display-labels.js"));
 const { buildParentActivityDisplayLabelHe } = await import(
   u("utils/parent-report-parent-assigned-activities.js")
 );

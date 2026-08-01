@@ -15,7 +15,7 @@ export const CALIBRATION_ENGINE_V1 = "1.0.0";
 export function buildCalibrationV1(maps, summaryCounts = {}, studentGradeKey = null) {
   /** @type {object[]} */
   const perSubject = [];
-  const subjects = ["math", "hebrew", "english", "science", "geometry", "moledet-geography"];
+  const subjects = ["math", "english", "science", "geometry"];
 
   for (const subjectId of subjects) {
     const tm = maps?.[subjectId];
@@ -89,8 +89,8 @@ export function buildCalibrationV1(maps, summaryCounts = {}, studentGradeKey = n
         gradeMismatch: gradeMismatchFlag,
         missingDifficultyMetadata: missingDifficultyMeta,
         easyOnlyHighAccuracy: easyOnlyHighAccuracyProfile,
-        hardQuestionSignal: hardRows >= 1,
-      },
+        hardQuestionSignal: hardRows >= 1
+      }
     });
   }
 

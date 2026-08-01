@@ -7,7 +7,7 @@ const VALID_CONFIDENCE = ["low", "medium", "high"];
 
 /**
  * @param {unknown} iv
- * @returns {{ weaknessLevel: string, confidenceBand: string, recurrence: boolean } | null}
+ * @returns {{ weaknessLevel: string, confidenceBand: string, recurrence: boolean } || null}
  */
 function normalizeIntelligenceV1(iv) {
   if (!iv || typeof iv !== "object") return null;

@@ -1,5 +1,5 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
-/** @typedef {'build' | 'findTrays' | 'findPerTray' | 'findTotal' | 'sameTotal'} BakeryMode */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
+/** @typedef {'build' || 'findTrays' || 'findPerTray' || 'findTotal' || 'sameTotal'} BakeryMode */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import {

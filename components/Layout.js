@@ -45,7 +45,7 @@ export default function Layout({
   layoutShowThemePicker = false,
   /** Lock shell to one viewport (no document scroll) — parent-report empty/loading under /parent. */
   layoutLockViewport = false,
-  /** Optional override for HUD nav area (student | parent | teacher). */
+  /** Optional override for HUD nav area (student || parent || teacher). */
   layoutNavArea = null,
 }) {
   const router = useRouter();

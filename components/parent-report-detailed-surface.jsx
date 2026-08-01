@@ -8,7 +8,7 @@ import React, { useMemo } from "react";
 import {
   buildSubjectParentLetterDetailedPhase1,
   rewriteParentRecommendationForDetailedHe,
-} from "../utils/detailed-report-parent-letter-he";
+} from "../utils/detailed-report-parent-letter";
 import {
   behaviorDominantLabelHe,
   buildTopicDiagnosticExplainSectionsHe,
@@ -18,7 +18,7 @@ import {
   subjectMajorRiskLabelsHe,
   transferReadinessLineHe,
   truncateHe,
-} from "../utils/parent-report-ui-explain-he";
+} from "../utils/parent-report-ui-explain";
 import {
   PARENT_TOPIC_TIER,
   parentTopicTierSectionTitleHe,
@@ -38,7 +38,7 @@ import { trendV1DisplayLineHe } from "../utils/parent-report-topic-trend-v1.js";
 import {
   SUBJECT_PHASE3_ROW_LABEL_HE,
   SUBJECT_V2_RECALIBRATION_NEED_NO_HE,
-  normalizeParentFacingHe,
+  normalizeParentFacing,
 } from "../utils/parent-report-language/index.js";
 import { narrativeSectionTextHe } from "../utils/contracts/narrative-contract-v1.js";
 import {
@@ -73,10 +73,10 @@ const PHASE1_WHAT_NOT_TO_DO_DISPLAY = Object.freeze({
 function canonicalPhase1WhatNotToDoKey(raw) {
   const t = String(raw || "").trim();
   if (PHASE1_WHAT_NOT_TO_DO_DISPLAY[t]) return t;
-  const hasCounterExample = /(?:counter-example|דוגמה\s*נגדית)/iu.test(t);
-  const hasMixing = /(?:mixing topics|ערבוב\s*נושאים)/iu.test(t);
-  const isFastRise = /(?:Rising in level too quickly|עלייה\s*מהירה\s*מדי\s*ברמה)/iu.test(t);
-  const isHighJump = /(?:Jumping to a high level|קפיצה\s*לרמה\s*גבוהה)/iu.test(t);
+  const hasCounterExample = /(?!)/iu.test(t);
+  const hasMixing = /(?!)/iu.test(t);
+  const isFastRise = /(?!)/iu.test(t);
+  const isHighJump = /(?!)/iu.test(t);
   if (isFastRise && hasMixing && hasCounterExample) {
     return "Rising in level too quickly; mixing topics; general feedback without a counter-example";
   }
@@ -141,7 +141,7 @@ function pr1ParentVisibleTextHe(s) {
   t = t.replace(/\(ct:[^)]*\)/gi, "");
   t = t.replace(/\b[a-z][a-z0-9_]{10,}\b/g, "");
   t = t.replace(/\s{2,}/g, " ").trim();
-  t = normalizeParentFacingHe(t);
+  t = normalizeParentFacing(t);
   t = stripKnownParentReportLeakageHe(t);
   if (!t) return "";
   const numericOnly = /^[\d\s.,/%\-–-]+$/u.test(t);
@@ -659,8 +659,7 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
     {
       label: reportPackCopy("components__parent-report-detailed-surface", "other_active_learning"),
       value: `${formatExclusiveLearningMinutesHe(b.otherActiveLearningMinutes)} min`,
-    },
-  ];
+    }];
 
   return (
     <details className="pr-detailed-learning-time-breakdown no-pdf no-print mb-5 md:mb-6 min-w-0 rounded-lg border border-white/10 bg-black/10">
@@ -698,7 +697,7 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
                 <tbody>
                   {b.bySubject.map((row) => (
                     <tr key={row.subjectKey} className="border-b border-white/10">
-                      <td className="p-2">{row.subjectLabelHe}</td>
+                      <td className="p-2">{row.subjectLabel}</td>
                       <td className="p-2">
                         {formatExclusiveLearningMinutesHe(row.questionPracticeMinutes)} min
                       </td>
@@ -756,7 +755,7 @@ export function ParentAssignedActivitiesSection({ rows }) {
                 className="border-b border-white/10"
               >
                 <td className="p-2">{row.activityLabelHe || "Personal activity from parent"}</td>
-                <td className="p-2">{row.subjectLabelHe || "-"}</td>
+                <td className="p-2">{row.subjectLabel || "-"}</td>
                 <td className="p-2">{row.topicLabelHe || "-"}</td>
                 <td className="p-2">{row.gradeLabelHe || "-"}</td>
                 <td className="p-2">{row.lastActivityAtHe || "Not available"}</td>
@@ -797,7 +796,7 @@ function OutOfGradePracticeTable({ rows }) {
               key={row.topicRowKey || `${row.subjectId}-${row.topicLabelHe}-${idx}`}
               className="border-b border-white/10"
             >
-              <td className="p-2">{row.subjectLabelHe || "-"}</td>
+              <td className="p-2">{row.subjectLabel || "-"}</td>
               <td className="p-2">{row.topicLabelHe || "-"}</td>
               <td className="p-2">{row.gradeLabelHe || "-"}</td>
               <td className="p-2">{row.questions ?? 0}</td>
@@ -869,8 +868,7 @@ export function SubjectTopicTierGroups({ sp, hideTopicRowKeysForTiers, tierAllow
     PARENT_TOPIC_TIER.STRENGTHEN,
     PARENT_TOPIC_TIER.CLEAR_GAP,
     PARENT_TOPIC_TIER.NEEDS_GUIDANCE,
-    PARENT_TOPIC_TIER.LOW_EVIDENCE,
-  ];
+    PARENT_TOPIC_TIER.LOW_EVIDENCE];
   const order =
     Array.isArray(tierAllowlist) && tierAllowlist.length ? tierAllowlist : defaultOrder;
   // Wave 2 Fix 2.4: tiers that already get a dedicated topic recommendation card
@@ -881,8 +879,7 @@ export function SubjectTopicTierGroups({ sp, hideTopicRowKeysForTiers, tierAllow
           PARENT_TOPIC_TIER.STRENGTHEN,
           PARENT_TOPIC_TIER.CLEAR_GAP,
           PARENT_TOPIC_TIER.ADVANCED_PRACTICE,
-          PARENT_TOPIC_TIER.FOUNDATION_PRACTICE,
-        ])
+          PARENT_TOPIC_TIER.FOUNDATION_PRACTICE])
       : null;
   const sections = order
     .map((tier) => {
@@ -946,10 +943,10 @@ export function SubjectSummaryBlock({ sp }) {
     <div className="pr-detailed-summary-subject pr-detailed-subject-stack min-w-0">
       <div className="pr-detailed-subject-heading">
         <h3 className="pr-detailed-subject-title text-base md:text-lg font-bold text-white m-0 tracking-tight pb-2 border-b border-white/12">
-          {sp.subjectLabelHe}
+          {sp.subjectLabel}
         </h3>
         <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-          Questions: {q} | Accuracy: {a}%
+          Questions: {q} || Accuracy: {a}%
         </p>
       </div>
       <div className="pr-detailed-subject-inner space-y-2.5 pt-3">
@@ -989,7 +986,7 @@ function topicStripParentClean(s) {
   t = t.replace(/\blow_?confidence\b|\bmin_?questions\b|\btier\b/gi, "");
   t = t.replace(/\b[a-z][a-z0-9_]{10,}\b/g, "");
   t = t.replace(/\s{2,}/g, " ").trim();
-  t = normalizeParentFacingHe(t);
+  t = normalizeParentFacing(t);
   if (!t) return "";
   const numericOnly = /^[\d\s.,/%\-–-]+$/u.test(t);
   if (numericOnly) return "";
@@ -1016,8 +1013,7 @@ export function TopicRecommendationExplainStrip({ tr, suppressedLines = [] }) {
     const suppressed = new Set(
       (Array.isArray(suppressedLines) ? suppressedLines : [])
         .map((x) => topicStripNorm(x))
-        .filter(Boolean),
-    );
+        .filter(Boolean));
     const seenRowNorm = new Set();
     const trendLine = trendV1DisplayLineHe(tr?.trendV1 || tr?.mapRow?.trendV1);
     const sectionRows = [
@@ -1026,8 +1022,7 @@ export function TopicRecommendationExplainStrip({ tr, suppressedLines = [] }) {
       trendLine || null,
       explainSections.pattern,
       explainSections.meaning,
-      explainSections.action,
-    ].filter((body) => {
+      explainSections.action].filter((body) => {
       const n = topicStripNorm(body);
       if (!n) return false;
       if (suppressed.has(n)) return false;

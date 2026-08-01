@@ -13,7 +13,7 @@ import {
   resolveOrBuildLpdOnRow,
   resolveParentExplainRowCopy,
 } from "../../utils/learning-pattern-decision/index.js";
-import { buildActivityGapParentInsightHe } from "../../utils/parent-report-engine-insights-he.js";
+import { buildActivityGapParentInsightHe } from "../../utils/parent-report-engine-insights.js";
 import { parentTopicTierFromUnit } from "../../utils/parent-report-surface/parent-topic-tier.js";
 import { aggregateReportPayloadFromActivityRows } from "../../lib/parent-server/report-data-aggregate.server.js";
 import { EVIDENCE_CATEGORIES } from "../../lib/learning/activity-classification.js";

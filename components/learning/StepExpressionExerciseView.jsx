@@ -1,6 +1,6 @@
 import React from "react";
 import { useStepExerciseUi } from "../../contexts/StepExerciseUiContext";
-import { learningMathBlockStyle } from "../../utils/learning-mixed-hebrew-math-render";
+import { learningMathBlockStyle } from "../../utils/learning-mixed-rtl-math-render";
 import { hasStackedFractionToken } from "../../utils/math-fraction-expression-parse";
 import { renderStackedFractionFragment } from "./MathFractionExpression";
 

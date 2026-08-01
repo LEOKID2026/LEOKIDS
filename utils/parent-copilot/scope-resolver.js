@@ -8,11 +8,11 @@ import {
   findFirstAnchoredTopicRowForSubject,
   findTopicRowByKey,
   listCopilotAnchoredTopicRows,
-  subjectLabelHe,
+  subjectLabel,
   SUBJECT_ORDER,
 } from "./contract-reader.js";
 import { detectAggregateQuestionClass, EXECUTIVE_AGGREGATE_SCOPE_CLASSES } from "./semantic-question-class.js";
-import { foldUtteranceForHeMatch, normalizeFreeformParentUtteranceHe } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch, normalizeFreeformParentUtterance } from "./utterance-normalize.js";
 import { interpretFreeformStageA } from "./stage-a-freeform-interpretation.js";
 import { resolveReportRowFromUtterance, utteranceNamesTopicRow } from "./report-row-resolver.js";
 import {
@@ -70,7 +70,7 @@ function resolveSubjectScopeOrZeroEvidence(subjectId, payload, stageA, reason, c
   if (classifySubjectEvidenceTier(subjectQuestionCountFromPayload(payload, subjectId)) === SUBJECT_EVIDENCE_TIER.none) {
     return {
       resolutionStatus: "clarification_required",
-      clarificationQuestionHe: zeroEvidenceSubjectCopilotHe(subjectLabelHe(subjectId)),
+      clarificationQuestionHe: zeroEvidenceSubjectCopilotHe(subjectLabel(subjectId)),
       scopeConfidence: 0,
       scopeReason: "subject_zero_evidence_in_period",
       stageA,
@@ -82,7 +82,7 @@ function resolveSubjectScopeOrZeroEvidence(subjectId, payload, stageA, reason, c
       {
         scopeType: "subject",
         scopeId: subjectId,
-        scopeLabel: subjectLabelHe(subjectId),
+        scopeLabel: subjectLabel(subjectId),
       },
       stageA,
     ),
@@ -121,19 +121,19 @@ function listTopicDisplayIndex(payload) {
  * @param {string} utterance
  * @param {unknown} payload
  * @returns {{
- *   best: { subjectId: string; topicRowKey: string; displayName: string; score: number } | null;
+ *   best: { subjectId: string; topicRowKey: string; displayName: string; score: number } || null;
  *   ambiguous: boolean;
  *   candidates: Array<{ subjectId: string; topicRowKey: string; displayName: string; score: number }>;
  * }}
  */
 function matchTopicFromUtterance(utterance, payload) {
-  const u = foldUtteranceForHeMatch(utterance);
+  const u = foldUtteranceForMatch(utterance);
   if (u.length < 2) return { best: null, ambiguous: false, candidates: [] };
   const rows = listTopicDisplayIndex(payload);
   /** @type {Array<{ subjectId: string; topicRowKey: string; displayName: string; score: number }>} */
   const hits = [];
   for (const row of rows) {
-    const d = foldUtteranceForHeMatch(row.displayName);
+    const d = foldUtteranceForMatch(row.displayName);
     if (d.length < 2) continue;
     if (!u.includes(d)) continue;
     hits.push({ ...row, score: d.length });
@@ -154,10 +154,10 @@ function matchTopicFromUtterance(utterance, payload) {
  * Match subject by approved Hebrew labels (longer labels first to reduce ambiguity).
  * @param {string} utterance
  * @param {unknown} payload
- * @returns {string | null} subjectId
+ * @returns {string || null} subjectId
  */
 function matchSubjectFromUtterance(utterance, payload) {
-  const u = foldUtteranceForHeMatch(utterance);
+  const u = foldUtteranceForMatch(utterance);
   if (u.length < 2) return null;
   const profiles = Array.isArray(payload?.subjectProfiles) ? payload.subjectProfiles : [];
   const present = new Set(profiles.map((p) => String(p?.subject || "")).filter(Boolean));
@@ -166,13 +166,13 @@ function matchSubjectFromUtterance(utterance, payload) {
   const pairs = [];
   for (const sid of SUBJECT_ORDER) {
     if (!present.has(sid)) continue;
-    const label = norm(subjectLabelHe(sid));
+    const label = norm(subjectLabel(sid));
     if (label.length < 2) continue;
     pairs.push({ id: sid, label });
   }
   pairs.sort((a, b) => b.label.length - a.label.length);
   for (const { id, label } of pairs) {
-    const lf = foldUtteranceForHeMatch(label);
+    const lf = foldUtteranceForMatch(label);
     if (lf.length >= 4) {
       if (u.includes(lf)) return id;
     } else if (lf.length >= 2) {
@@ -241,11 +241,11 @@ function attachScopeInterpretation(scope, stageA) {
 export function resolveScope(input) {
   const payload = input?.payload;
   const rawUtterance = String(input?.utterance || "");
-  const normalizedUtterance = normalizeFreeformParentUtteranceHe(rawUtterance);
+  const normalizedUtterance = normalizeFreeformParentUtterance(rawUtterance);
   const stageA =
     input?.stageA ||
     interpretFreeformStageA(rawUtterance, payload && typeof payload === "object" ? payload : null);
-  const utterance = foldUtteranceForHeMatch(normalizedUtterance);
+  const utterance = foldUtteranceForMatch(normalizedUtterance);
   const selected = input?.selectedContextRef && typeof input.selectedContextRef === "object" ? input.selectedContextRef : null;
 
   if (!payload || typeof payload !== "object") {
@@ -288,7 +288,7 @@ export function resolveScope(input) {
   if (historyLockedScope) return historyLockedScope;
 
   const rowResPre = resolveReportRowFromUtterance(normalizedUtterance || rawUtterance, payload);
-  const foldedPre = foldUtteranceForHeMatch(normalizedUtterance);
+  const foldedPre = foldUtteranceForMatch(normalizedUtterance);
   const topicNamedInAggregateQuestion =
     rowResPre.best && utteranceNamesTopicRow(foldedPre, rowResPre.best);
 
@@ -357,7 +357,7 @@ export function resolveScope(input) {
     }
     const label =
       String(hit?.tr?.displayName || "").trim() ||
-      (subj ? `${subjectLabelHe(subj)} · Subject` : "Selected topic");
+      (subj ? `${subjectLabel(subj)} · Subject` : "Selected topic");
     return {
       resolutionStatus: "resolved",
       scope: attachScopeInterpretation(

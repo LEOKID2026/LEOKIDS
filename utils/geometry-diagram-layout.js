@@ -152,8 +152,7 @@ export function triangleLayoutFromAngles(angle1, angle2, angle3, options = {}) {
   const vertices = [
     { x: x0 + tx, y: y0 + ty, role: "baseLeft", angle: a1 },
     { x: x1 + tx, y: y1 + ty, role: "baseRight", angle: a2 },
-    { x: x2 + tx, y: y2 + ty, role: "apex", angle: a3 },
-  ];
+    { x: x2 + tx, y: y2 + ty, role: "apex", angle: a3 }];
 
   const centroid = {
     x: (vertices[0].x + vertices[1].x + vertices[2].x) / 3,
@@ -185,59 +184,49 @@ const SHAPE_POLYGONS = {
     { x: -40, y: -40 },
     { x: 40, y: -40 },
     { x: 40, y: 40 },
-    { x: -40, y: 40 },
-  ],
+    { x: -40, y: 40 }],
   rectangle: [
     { x: -72, y: -36 },
     { x: 72, y: -36 },
     { x: 72, y: 36 },
-    { x: -72, y: 36 },
-  ],
+    { x: -72, y: 36 }],
   parallelogram: [
     { x: -78, y: 52 },
     { x: 78, y: 52 },
     { x: 98, y: -52 },
-    { x: -58, y: -52 },
-  ],
+    { x: -58, y: -52 }],
   trapezoid: [
     { x: -92, y: 56 },
     { x: 92, y: 56 },
     { x: 62, y: -56 },
-    { x: -62, y: -56 },
-  ],
+    { x: -62, y: -56 }],
   rhombus: [
     { x: 0, y: -88 },
     { x: 72, y: 0 },
     { x: 0, y: 88 },
-    { x: -72, y: 0 },
-  ],
+    { x: -72, y: 0 }],
   quadrilateral_general: [
     { x: -86, y: 58 },
     { x: 92, y: 46 },
     { x: 74, y: -54 },
-    { x: -58, y: -42 },
-  ],
+    { x: -58, y: -42 }],
   triangle_equilateral: [
     { x: 0, y: -86 },
     { x: -96, y: 78 },
-    { x: 96, y: 78 },
-  ],
+    { x: 96, y: 78 }],
   triangle_isosceles: [
     { x: 0, y: -92 },
     { x: -88, y: 78 },
-    { x: 88, y: 78 },
-  ],
+    { x: 88, y: 78 }],
   triangle_scalene: [
     { x: 24, y: -88 },
     { x: -102, y: 76 },
-    { x: 96, y: 68 },
-  ],
+    { x: 96, y: 68 }],
   kite: [
     { x: 0, y: -88 },
     { x: 52, y: -8 },
     { x: 0, y: 88 },
-    { x: -52, y: -8 },
-  ],
+    { x: -52, y: -8 }],
   pentagon_regular: regularPolygonPoints(5, 78),
   hexagon_regular: regularPolygonPoints(6, 78),
   octagon_regular: regularPolygonPoints(8, 72),
@@ -283,12 +272,6 @@ export function shapeTemplatePointsString(templateId, center) {
 /** @param {string} [type] */
 export function resolveQuadrilateralTemplate(type) {
   const map = {
-    ריבוע: "square",
-    מלבן: "rectangle",
-    מקבילית: "parallelogram",
-    טרפז: "trapezoid",
-    מעוין: "rhombus",
-    דלתון: "kite",
   };
   return map[type] || "quadrilateral_general";
 }
@@ -296,9 +279,6 @@ export function resolveQuadrilateralTemplate(type) {
 /** @param {string} [type] */
 export function resolveTriangleClassTemplate(type) {
   const map = {
-    "שווה צלעות": "triangle_equilateral",
-    "שווה שוקיים": "triangle_isosceles",
-    "שונה צלעות": "triangle_scalene",
   };
   return map[type] || "triangle_scalene";
 }

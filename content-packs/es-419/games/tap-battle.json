@@ -1,0 +1,9 @@
+{
+  "gameId": "tap-battle",
+  "title": "Toca batalla",
+  "blurb": "Cada lado toca lo más rápido que puede: ¿quién gana?",
+  "players": "2 jugadores",
+  "help": {
+    "howToPlay": "Jueguen juntos en el mismo dispositivo."
+  }
+}

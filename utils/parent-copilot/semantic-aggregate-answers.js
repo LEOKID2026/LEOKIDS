@@ -4,7 +4,7 @@
  */
 
 import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
-import { SUBJECT_ORDER, normalizeSubjectId, subjectLabelHe } from "./contract-reader.js";
+import { SUBJECT_ORDER, normalizeSubjectId, subjectLabel } from "./contract-reader.js";
 import { normalizeExecutiveTrendLines as normalizeExecutiveTrendLinesHe } from "../parent-report-language/parent-facing-normalize.js";
 
 /**
@@ -38,8 +38,8 @@ function subjectRollups(payload) {
   const profiles = Array.isArray(payload?.subjectProfiles) ? payload.subjectProfiles : [];
   const bySubject = Object.fromEntries(profiles.map((sp) => [normalizeSubjectId(sp?.subject), sp]));
   /** @type {Array<{
-   *   sid: string; label: string; totalQ: number; avg: number | null; topicRows: number; dataTopics: number;
-   *   lowConfidenceTopics: number; insufficientTopics: number; cannotConcludeTopics: number; accStdDev: number | null;
+   *   sid: string; label: string; totalQ: number; avg: number || null; topicRows: number; dataTopics: number;
+   *   lowConfidenceTopics: number; insufficientTopics: number; cannotConcludeTopics: number; accStdDev: number || null;
    *   readinessAvg: number; confidenceAvg: number;
    * }>} */
   const rows = [];
@@ -92,7 +92,7 @@ function subjectRollups(payload) {
         : accList.reduce((sum, x) => sum + Math.pow(x - mean, 2), 0) / Math.max(1, accList.length);
     rows.push({
       sid,
-      label: subjectLabelHe(sid),
+      label: subjectLabel(sid),
       totalQ,
       avg,
       topicRows: list.length,
@@ -102,7 +102,7 @@ function subjectRollups(payload) {
       cannotConcludeTopics,
       accStdDev: variance == null ? null : Math.round(Math.sqrt(variance)),
       readinessAvg: list.length ? readinessSum / list.length : 0,
-      confidenceAvg: list.length ? confidenceSum / list.length : 0,
+      confidenceAvg: list.length ? confidenceSum / list.length : 0
     });
   }
   return rows;
@@ -138,24 +138,24 @@ function subjectsMentionedInUtterance(utterance, payload) {
   /** @type {Array<{ sid: string; idx: number; len: number }>} */
   const hits = [];
   for (const sid of listed) {
-    const lab = subjectLabelHe(sid);
+    const lab = subjectLabel(sid);
     const idx = u.indexOf(lab);
     if (idx >= 0) hits.push({ sid, idx, len: lab.length });
   }
   /** Informal wording parents use (e.g. "reading" ≈ Hebrew / literacy). Longer needles first. */
   const informalNeedles = [
-    ["hebrew", "reading words"],
-    ["hebrew", "Reading sentences"],
-    ["hebrew", "Reading comprehension"],
+    ["reading words"],
+    ["Reading sentences"],
+    ["Reading comprehension"],
     ["math", "Math"],
-    ["hebrew", "Hebrew"],
+    [],
     ["english", "English"],
     ["science", "Science"],
     ["geometry", "Geometry"],
-    ["moledet-geography", "Homeland & Geography"],
-    ["moledet-geography", "Homeland Studies"],
+    ["Homeland & Geography"],
+    ["Homeland Studies"],
     ["math", "Math"],
-    ["hebrew", "Reading"],
+    ["Reading"]
   ];
   for (const [sid, needle] of informalNeedles) {
     if (!listed.includes(sid)) continue;
@@ -206,7 +206,7 @@ function passesEnvelope(truthPacket, obs, meaning, caution = "") {
     String(nar?.textSlots?.observation || ""),
     String(nar?.textSlots?.interpretation || ""),
     String(nar?.textSlots?.action || ""),
-    String(nar?.textSlots?.uncertainty || ""),
+    String(nar?.textSlots?.uncertainty || "")
   ].join(" ");
   const slotBundle = slotText + joined;
   for (const hedge of truthPacket?.allowedClaimEnvelope?.requiredHedges || []) {
@@ -263,7 +263,7 @@ function narrativeTextSlots(truthPacket) {
     observation: String(nar.observation || "").trim(),
     interpretation: String(nar.interpretation || "").trim(),
     action: String(nar.action || "").trim(),
-    uncertainty: String(nar.uncertainty || "").trim(),
+    uncertainty: String(nar.uncertainty || "").trim()
   };
 }
 
@@ -273,7 +273,7 @@ function narrativeTextSlots(truthPacket) {
  *   utterance?: string;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } || null}
  */
 function buildClarifyReexplainDraft(input) {
   const truthPacket = input?.truthPacket;
@@ -320,8 +320,8 @@ function buildClarifyReexplainDraft(input) {
   return {
     answerBlocks: [
       { type: "observation", answerText: obs, source: "composed" },
-      { type: "meaning", answerText: meaning, source: "composed" },
-    ],
+      { type: "meaning", answerText: meaning, source: "composed" }
+    ]
   };
 }
 
@@ -331,7 +331,7 @@ function buildClarifyReexplainDraft(input) {
  *   utterance?: string;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } || null}
  */
 function buildAdvanceOrHoldDraft(input) {
   const truthPacket = input?.truthPacket;
@@ -349,9 +349,9 @@ function buildAdvanceOrHoldDraft(input) {
   const lead = hedges[0] ? `${hedges[0]} - ` : "";
 
   const holdStrong =
-    dl.cannotConcludeYet === true ||
-    dl.readiness === "insufficient" ||
-    dl.confidenceBand === "low" ||
+    dl.cannotConcludeYet === true |
+    dl.readiness === "insufficient" |
+    dl.confidenceBand === "low" |
     tier < 2;
 
   const hasConcreteStep =
@@ -367,8 +367,8 @@ function buildAdvanceOrHoldDraft(input) {
   if (holdStrong) {
     obs = `${lead}At the moment it is better to wait and not to push for big progress: the report still does not have a sufficiently stable basis to say that it is worth "pressing the gas".`;
     meaning = norm(
-      uncertainty ||
-        interpretation ||
+      uncertainty |
+        interpretation |
         (observation.length >= 8 ? `According to what appears in the report: ${observation}` : "You can continue with normal practice and check again after some more data."),
     );
   } else if (hasConcreteStep) {
@@ -378,8 +378,8 @@ function buildAdvanceOrHoldDraft(input) {
   } else {
     obs = `${lead}You can only progress at a slow pace: some practice, stopping to check, then deciding again according to what will appear in the report.`;
     meaning = norm(
-      interpretation ||
-        uncertainty ||
+      interpretation |
+        uncertainty |
         (observation.length >= 8 ? observation : "This is not yet a stage for opening new goals that were not built from the report."),
     );
   }
@@ -392,8 +392,8 @@ function buildAdvanceOrHoldDraft(input) {
   return {
     answerBlocks: [
       { type: "observation", answerText: obs, source: "composed" },
-      { type: "meaning", answerText: meaning, source: "composed" },
-    ],
+      { type: "meaning", answerText: meaning, source: "composed" }
+    ]
   };
 }
 
@@ -403,7 +403,7 @@ function buildAdvanceOrHoldDraft(input) {
  *   utterance?: string;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }> } || null}
  */
 function buildRecommendationActionDraft(input) {
   const truthPacket = input?.truthPacket;
@@ -431,11 +431,11 @@ function buildRecommendationActionDraft(input) {
 
   if (eligible && action) {
     obs = `${lead}${action}`;
-    if (/השבוע|בשבוע|שבוע\s+הקרוב/.test(t)) {
+    if (/(?!)/.test(t)) {
       meaning = interp
         ? `${interp} Within the framework of the week: break down the step that appears in the report into small units throughout the days, without adding goals that do not appear there.`
         : `As part of the week: break down the step that appears in the report into small units throughout the days, without adding goals that do not appear there.`;
-    } else if (/עכשיו|היום|מיד|כרגע/.test(t) || /על\s+מה\s+להתמקד/.test(t)) {
+    } else if (/(?!)/.test(t) || /(?!)/.test(t)) {
       meaning = interp
         ? `${interp} Now: start from the step that appears in the report before further expansion.`
         : `Now: start from the step that appears in the report before further expansion.`;
@@ -466,8 +466,8 @@ function buildRecommendationActionDraft(input) {
   return {
     answerBlocks: [
       { type: "observation", answerText: obs, source: "composed" },
-      { type: "meaning", answerText: meaning, source: "composed" },
-    ],
+      { type: "meaning", answerText: meaning, source: "composed" }
+    ]
   };
 }
 
@@ -478,7 +478,7 @@ function buildRecommendationActionDraft(input) {
  *   payload: unknown;
  *   truthPacket: NonNullable<ReturnType<typeof import("./truth-packet-v1.js").buildTruthPacketV1>>;
  * }} input
- * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }>; aggregateContinuity?: { questionClass: string; subjectId: string; role: string } | null } | null}
+ * @returns {{ answerBlocks: Array<{ type: string; answerText: string; source: "composed" }>; aggregateContinuity?: { questionClass: string; subjectId: string; role: string } || null } || null}
  */
 export function buildSemanticAggregateDraft(input) {
   const qc = String(input?.questionClass || "");
@@ -526,7 +526,7 @@ export function buildSemanticAggregateDraft(input) {
   let obs = "";
   /** @type {string} */
   let meaning = "";
-  /** @type {{ questionClass: string; subjectId: string; role: string } | null} */
+  /** @type {{ questionClass: string; subjectId: string; role: string } || null} */
   let aggregateContinuity = null;
 
   if (qc === "subject_listing") {
@@ -535,7 +535,7 @@ export function buildSemanticAggregateDraft(input) {
       obs = `${lead}The report does not currently show subjects with subject lines.`;
       meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.when_subjects_appear_in_the_date_range_you_can_ask_again_and_get");
     } else {
-      const names = ids.map((sid) => subjectLabelHe(sid)).join(" · ");
+      const names = ids.map((sid) => subjectLabel(sid)).join(" · ");
       obs = `${lead}The following subjects appear in the report: ${names}.`;
       meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f");
     }
@@ -603,7 +603,7 @@ export function buildSemanticAggregateDraft(input) {
   } else if (qc === "improved") {
     const es = payload?.executiveSummary && typeof payload.executiveSummary === "object" ? payload.executiveSummary : {};
     const trends = normalizeExecutiveTrendLinesHe(es.majorTrendsHe);
-    const improvementLines = trends.filter((t) => /שיפור|התקדמות|עלייה|התחזק|משתפר/.test(t));
+    const improvementLines = trends.filter((t) => /||/.test(t));
     if (improvementLines.length) {
       obs = `Signs of improvement that appear in the wording of the summary for the period: ${improvementLines.slice(0, 3).join(" · ")}.`;
       meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.this_is_an_answer_based_on_the_summary_lines_in_the_report_only_");
@@ -611,7 +611,7 @@ export function buildSemanticAggregateDraft(input) {
     } else {
       const uImp = norm(utterance).toLowerCase();
       const mathRow = roll.find((r) => r.sid === "math");
-      if (/מתמטיקה|חשבון/.test(uImp) && mathRow && mathRow.avg != null && mathRow.totalQ > 0) {
+      if (/|/.test(uImp) && mathRow && mathRow.avg != null && mathRow.totalQ > 0) {
         obs = `${lead}in mathematics, about ${mathRow.totalQ} questions were counted in the range, with an average accuracy of about ${mathRow.avg}% according to the report.`;
         meaning =
           "An explicit sign of improvement does not always appear as a separate line in the report - it is still possible to anchor the volume and accuracy in the subject from the data that is presented.";
@@ -717,7 +717,7 @@ export function buildSemanticAggregateDraft(input) {
     "least_data",
     "improved",
     "needs_attention",
-    "most_stable",
+    "most_stable"
   ]);
   const uncSlot = String(truthPacket.contracts?.narrative?.textSlots?.uncertainty || "").trim();
   let cautionHe = "";
@@ -740,7 +740,7 @@ export function buildSemanticAggregateDraft(input) {
   /** @type {Array<{ type: string; answerText: string; source: "composed"|"contract_slot" }>} */
   const answerBlocks = [
     { type: "observation", answerText: obs, source: "composed" },
-    { type: "meaning", answerText: meaning, source: "composed" },
+    { type: "meaning", answerText: meaning, source: "composed" }
   ];
   if (cautionHe) {
     answerBlocks.push({ type: "caution", answerText: cautionHe, source: cautionSource });
@@ -748,7 +748,7 @@ export function buildSemanticAggregateDraft(input) {
 
   return {
     answerBlocks,
-    aggregateContinuity,
+    aggregateContinuity
   };
 }
 

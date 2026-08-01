@@ -23,6 +23,11 @@ test("stripLocaleFromPath: extracts enabled locale prefix", () => {
     pathname: "/learning",
     hadPrefix: true,
   });
+  assert.deepEqual(stripLocaleFromPath("/es-419/about"), {
+    locale: "es-419",
+    pathname: "/about",
+    hadPrefix: true,
+  });
 });
 
 test("stripLocaleFromPath: Hebrew /he is never a locale segment", () => {
@@ -35,8 +40,8 @@ test("stripLocaleFromPath: Hebrew /he is never a locale segment", () => {
 });
 
 test("stripLocaleFromPath: registered disabled locale still strips prefix", () => {
-  assert.deepEqual(stripLocaleFromPath("/es/about"), {
-    locale: "es",
+  assert.deepEqual(stripLocaleFromPath("/fr/about"), {
+    locale: "fr",
     pathname: "/about",
     hadPrefix: true,
   });
@@ -57,11 +62,12 @@ test("withLocalePath: pseudo locales receive prefix", () => {
   assert.equal(withLocalePath("en-XA", "/parent/dashboard"), "/en-XA/parent/dashboard");
   assert.equal(withLocalePath("ar-XB", "/"), "/ar-XB");
   assert.equal(withLocalePath("ar-XB", "/student/home"), "/ar-XB/student/home");
+  assert.equal(withLocalePath("es-419", "/parent/dashboard"), "/es-419/parent/dashboard");
 });
 
 test("withLocalePath: Hebrew is not prefixed; registered locales are", () => {
   assert.equal(withLocalePath("he", "/about"), "/about");
-  assert.equal(withLocalePath("es", "/about"), "/es/about");
+  assert.equal(withLocalePath("fr", "/about"), "/fr/about");
 });
 
 test("shouldRedirectPrefixedDefaultLocale: /en prefix should redirect to unprefixed", () => {
@@ -106,6 +112,6 @@ test("isLocaleRoutable: enabled locales routable; disabled registry ids fall bac
   assert.equal(isLocaleRoutable("en"), true);
   assert.equal(isLocaleRoutable("en-XA"), true);
   assert.equal(isLocaleRoutable("ar-XB"), true);
-  assert.equal(isLocaleRoutable("es"), true);
+  assert.equal(isLocaleRoutable("fr"), true);
   assert.equal(isLocaleRoutable("zz-unknown"), true);
 });

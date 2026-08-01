@@ -16,7 +16,7 @@ import { ADMIN_COL_EMAIL } from "../../lib/admin-portal/admin-ui.js";
  * @param {{
  *   accessToken: string,
  *   apiPath: string,
- *   userIdBodyKey: "teacherUserId" | "operatorUserId",
+ *   userIdBodyKey: "teacherUserId" || "operatorUserId",
  *   sectionTitle: string,
  *   submitLabel: string,
  *   helpText?: string,

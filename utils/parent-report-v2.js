@@ -16,13 +16,11 @@ import {
   getMoledetGeographyTopicName,
   mathReportBaseOperationKey,
   formatParentReportGradeLabel,
-  canonicalParentReportGradeKey,
-} from "./math-report-generator.js";
+  canonicalParentReportGradeKey} from "./math-report-generator.js";
 import { mistakeTimestampMs, normalizeMistakeEvent } from "./mistake-event.js";
 import {
   formatParentReportActivityIsrael,
-  parseActivityTimestampMs,
-} from "../lib/learning-supabase/parent-report-activity-time.js";
+  parseActivityTimestampMs} from "../lib/learning-supabase/parent-report-activity-time.js";
 import { sanitizeReportDurationSeconds } from "../lib/parent-server/report-duration-sanity.js";
 import { analyzeLearningPatterns } from "./learning-patterns-analysis.js";
 import {
@@ -36,22 +34,18 @@ import {
   normalizeSessionModeForMath,
   buildMathScopedMistakeAggregationKey,
   MATH_MISTAKE_UNSCOPED_MARKER,
-  MATH_SCOPE_UNKNOWN,
-} from "./parent-report-row-diagnostics.js";
+  MATH_SCOPE_UNKNOWN} from "./parent-report-row-diagnostics.js";
 import {
   buildGradeEvidenceFields,
-  practiceGradeRelation,
-} from "../lib/learning-supabase/practice-grade-resolution.js";
+  practiceGradeRelation} from "../lib/learning-supabase/practice-grade-resolution.js";
 import {
   filterCoreV2Units,
   isCoreParentReportRow,
   isCoreV2UnitForReport,
-  registeredGradeKeyFromReportMaps,
-} from "./parent-report-core-grade-filter.js";
+  registeredGradeKeyFromReportMaps} from "./parent-report-core-grade-filter.js";
 import {
   mergeEvidenceSourceCounts,
-  summarizeEvidenceSources,
-} from "../lib/learning-supabase/evidence-source.js";
+  summarizeEvidenceSources} from "../lib/learning-supabase/evidence-source.js";
 import { normalizeGradeLevelToKey } from "../lib/learning-student-defaults.js";
 
 function buildHistorySubtopicReportMap() {
@@ -66,8 +60,7 @@ function enrichHistoryRecommendations() {
 import { enrichTopicMapsWithRowTrends, filterMistakesForRow } from "./parent-report-row-trend.js";
 import {
   enrichTopicMapsWithTrendV1,
-  loadTopicAnswerEventsFromReportStorage,
-} from "./parent-report-topic-trend-v1.js";
+  loadTopicAnswerEventsFromReportStorage} from "./parent-report-topic-trend-v1.js";
 import { buildWeaknessConfidencePatternsV1 } from "./intelligence-layer-v1/weakness-confidence-patterns.js";
 import { enrichTopicMapsWithRowBehaviorProfiles } from "./parent-report-row-behavior.js";
 import { validateParentReportDataIntegrity } from "./parent-report-data-integrity.js";
@@ -81,8 +74,8 @@ import { computeTopicPriority } from "./system-intelligence/priority-engine.js";
 import { computeGlobalScore } from "./system-intelligence/global-score.js";
 import { applyMathScopedParentDisplayNames } from "./math-topic-parent-display.js";
 import { deriveRawMetricStrengthLinesHe } from "./parent-data-presence.js";
-import { strengthOverviewLineHe } from "./parent-report-language/parent-report-hebrew-copy-spec.js";
-import { collectTopicEngineRowsFromReport } from "./parent-report-engine-insights-he.js";
+import { strengthOverviewLineHe } from "./parent-report-language/parent-report-copy-spec.js";
+import { collectTopicEngineRowsFromReport } from "./parent-report-engine-insights.js";
 import { runDiagnosticEngineV2 } from "./diagnostic-engine-v2/index.js";
 import { enrichDiagnosticEngineV2WithProfessionalFrameworkV1 } from "./learning-diagnostics/diagnostic-framework-v1.js";
 import { enrichDiagnosticEngineV2WithProfessionalEngineV1 } from "./learning-diagnostics/professional-engine-output-v1.js";
@@ -91,16 +84,13 @@ import { runDiagnosticEngineV3 } from "./diagnostic-engine-v3/index.js";
 import {
   applyLearningPatternDecisionToUnitsAndRows,
   buildSubjectEngineDecisionContractFromTopicMap,
-  resolveSubjectSummaryTextFromEngineContract,
-} from "./learning-pattern-decision/index.js";
+  resolveSubjectSummaryTextFromEngineContract} from "./learning-pattern-decision/index.js";
 import {
   SP_SUBJECT_ENGINE_CONTRACT,
-  RENDER_SOURCE_SUBJECT_ENGINE,
-} from "./learning-pattern-decision/engine-decision-codes.js";
+  RENDER_SOURCE_SUBJECT_ENGINE} from "./learning-pattern-decision/engine-decision-codes.js";
 import {
   buildTopicRollupsFromLearningPatternDecision,
-  syncRowFlagsFromLearningPatternDecision,
-} from "./learning-pattern-decision/parent-report-ui-helpers.js";
+  syncRowFlagsFromLearningPatternDecision} from "./learning-pattern-decision/parent-report-ui-helpers.js";
 import { safeBuildHybridRuntimeForReport } from "./ai-hybrid-diagnostic/safe-build-hybrid-runtime.js";
 import { getActiveDiagnosisSessionSummaryForReport } from "./active-diagnosis-session-summary.js";
 import {
@@ -121,29 +111,25 @@ import {
   parentFacingPatternLabelHe,
   parentFacingDiagnosisSnippetHe,
   sanitizeDiagnosticEngineV2ForParentFacing,
-  buildParentDiagnosticExplanationV1FromV2Unit,
-} from "./parent-report-language/index.js";
+  buildParentDiagnosticExplanationV1FromV2Unit} from "./parent-report-language/index.js";
 import {
   formatParentReportModeHe,
   formatParentReportLevelHe,
-  formatParentReportSubjectHe,
-} from "./parent-report-language/parent-report-display-labels.js";
+  formatParentReportSubjectHe} from "./parent-report-language/parent-report-display-labels.js";
 import { resolvePracticeDisplayLevelKey } from "../lib/learning/parent-report-display-level.js";
 import { isScienceSubjectId } from "../lib/learning/display-level.js";
-import { withholdSummaryCopyHe } from "./parent-report-language/subject-withhold-summary-he.js";
+import { withholdSummaryCopyHe } from "./parent-report-language/subject-withhold-summary.js";
 import { hardenBaseReportWithRowIdentity } from "./parent-report-output-integrity/harden-report-rows.js";
 import {
   resolveUnitHomeMethodHe,
   resolveUnitNextGoalHe,
-  resolveUnitParentActionHe,
-} from "./parent-report-recommendation-consistency.js";
+  resolveUnitParentActionHe} from "./parent-report-recommendation-consistency.js";
 import { EVIDENCE_CONTRACT_VERSION } from "./contracts/parent-report-contracts-v1.js";
-import { shortReportDiagnosticsParentVisibleHe } from "./parent-report-ui-explain-he.js";
+import { shortReportDiagnosticsParentVisibleHe } from "./parent-report-ui-explain.js";
 import {
   safeGetItem,
   safeGetJsonArray,
-  safeGetJsonObject,
-} from "./safe-local-storage.js";
+  safeGetJsonObject} from "./safe-local-storage.js";
 
 function modeLabel(m) {
   return formatParentReportModeHe(m);
@@ -259,8 +245,7 @@ function sessionDurationSeconds(session) {
   const answerCount =
     session.total !== undefined && session.total !== null ? Number(session.total) : 0;
   return sanitizeReportDurationSeconds(sec, {
-    answerCount: Number.isFinite(answerCount) ? answerCount : 0,
-  }).seconds;
+    answerCount: Number.isFinite(answerCount) ? answerCount : 0}).seconds;
 }
 
 function mergeAggregateModeCountsFromSessions(sessions) {
@@ -298,8 +283,7 @@ function buildMapFromBucket({
   startMs,
   endMs,
   subject,
-  displayNameFn,
-}) {
+  displayNameFn}) {
   const map = {};
   const raw = bucket && typeof bucket === "object" && !Array.isArray(bucket) ? bucket : {};
 
@@ -355,8 +339,7 @@ function buildMapFromBucket({
         legacyProgress: legacy,
         displayNameFn,
         subject,
-        itemKey,
-      };
+        itemKey};
     }
   }
 
@@ -370,8 +353,7 @@ function buildMapFromBucket({
       sessions: pack.sessions,
       legacyProgress: pack.legacyProgress,
       displayNameFn: pack.displayNameFn,
-      aggregateModeCounts: pack.aggregateModeCounts,
-    });
+      aggregateModeCounts: pack.aggregateModeCounts});
   }
   return out;
 }
@@ -385,8 +367,7 @@ export function normalizeDailyToDateMap(daily) {
       if (row && row.date) {
         out[row.date] = {
           timeMinutes: Math.round((row.total || 0) / 60),
-          raw: row,
-        };
+          raw: row};
       }
     });
     return out;
@@ -395,8 +376,7 @@ export function normalizeDailyToDateMap(daily) {
     Object.entries(daily).forEach(([date, row]) => {
       out[date] = {
         timeMinutes: Math.round(((row && row.total) || 0) / 60),
-        raw: row,
-      };
+        raw: row};
     });
   }
   return out;
@@ -593,9 +573,7 @@ export function collapseTopicRowsToCanonicalTopicEntity(subjectId, rowsByKey) {
         modeBreakdown: countsToSortedList(modeCounts),
         gradeBreakdown: countsToSortedList(gradeCounts),
         levelBreakdown: countsToSortedList(levelCounts),
-        sourceRowKeys: Array.isArray(pack?.rowKeys) ? [...pack.rowKeys] : [],
-      },
-    };
+        sourceRowKeys: Array.isArray(pack?.rowKeys) ? [...pack.rowKeys] : []}};
     const outputKey =
       gradeKey && gradeKey !== MATH_SCOPE_UNKNOWN
         ? `${bucketKey}::grade:${gradeKey}`
@@ -670,8 +648,7 @@ function buildRowSummary({
   sessions,
   legacyProgress,
   displayNameFn,
-  aggregateModeCounts: aggregateModeCountsInput = null,
-}) {
+  aggregateModeCounts: aggregateModeCountsInput = null}) {
   const tp = splitTopicRowKey(itemKey);
   const bucketKey = tp.bucketKey;
   const modeFromKey = tp.modeKey;
@@ -785,8 +762,7 @@ function buildRowSummary({
     modeKey,
     ...(aggregateModeCounts ? { aggregateModeCounts } : {}),
     // Topic/op only — mode appears in the dedicated mode column in parent-report UI.
-    displayName: topicOpLabel,
-  };
+    displayName: topicOpLabel};
   if (subject === "math") base.improvement = null;
   return base;
 }
@@ -800,8 +776,7 @@ const SUBJECTS = [
     mistakesKey: "mleo_mistakes",
     mistakeKeyField: "operation",
     topicKey: (m) => m.operation,
-    displayName: getMathReportBucketDisplayName,
-  },
+    displayName: getMathReportBucketDisplayName},
   {
     id: "geometry",
     trackingKey: "mleo_geometry_time_tracking",
@@ -810,8 +785,7 @@ const SUBJECTS = [
     mistakesKey: "mleo_geometry_mistakes",
     mistakeKeyField: "topic",
     topicKey: (m) => m.topic,
-    displayName: getTopicName,
-  },
+    displayName: getTopicName},
   {
     id: "english",
     trackingKey: "mleo_english_time_tracking",
@@ -820,8 +794,7 @@ const SUBJECTS = [
     mistakesKey: "mleo_english_mistakes",
     mistakeKeyField: "topic",
     topicKey: (m) => m.topic,
-    displayName: getEnglishTopicName,
-  },
+    displayName: getEnglishTopicName},
   {
     id: "science",
     trackingKey: "mleo_science_time_tracking",
@@ -830,9 +803,7 @@ const SUBJECTS = [
     mistakesKey: "mleo_science_mistakes",
     mistakeKeyField: "topic",
     topicKey: (m) => m.topic,
-    displayName: getScienceTopicName,
-  },
-];
+    displayName: getScienceTopicName}];
 
 function loadTracking(rawKey) {
   try {
@@ -943,8 +914,7 @@ function buildDailyActivityFromSessions(startMs, endMs) {
         scienceKeys: new Set(),
         historyKeys: new Set(),
         hebrewKeys: new Set(),
-        moledetKeys: new Set(),
-      };
+        moledetKeys: new Set()};
     }
     return byDate[dateStr];
   };
@@ -973,8 +943,8 @@ function buildDailyActivityFromSessions(startMs, endMs) {
         if (def.id === "english") row.englishKeys.add(itemKey);
         if (def.id === "science") row.scienceKeys.add(itemKey);
         if (def.id === "history") row.historyKeys.add(itemKey);
-        if (def.id === "hebrew") row.hebrewKeys.add(itemKey);
-        if (def.id === "moledet-geography") row.moledetKeys.add(itemKey);
+        
+        
       });
     });
   });
@@ -990,23 +960,20 @@ function buildDailyActivityFromSessions(startMs, endMs) {
       scienceTopics: r.scienceKeys.size,
       historyTopics: r.historyKeys.size,
       hebrewTopics: r.hebrewKeys.size,
-      moledetGeographyTopics: r.moledetKeys.size,
-    }));
+      moledetGeographyTopics: r.moledetKeys.size}));
 }
 
 const V2_SUBJECT_ORDER = [
   "math",
   "geometry",
   "english",
-  "science",
-];
+  "science"];
 
 const V2_SUBJECT_LABEL_HE = {
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  science: "Science",
-};
+  science: "Science"};
 
 function safeNumber(n) {
   const v = Number(n);
@@ -1208,9 +1175,7 @@ function buildDiagnosticCardsForSubject(subjectId, subjectUnits, topicMap, regis
       fastDiagnosis: u.fastDiagnosis && typeof u.fastDiagnosis === "object" ? u.fastDiagnosis : null,
       source: {
         unitId: String(u.unitKey || ""),
-        rowKey: trk,
-      },
-    });
+        rowKey: trk}});
   }
   return out;
 }
@@ -1223,7 +1188,7 @@ function stripParentOverviewLeakageHe(text) {
   s = s.replace(/\bdc:/gi, "");
   s = s.replace(/\u0001/g, " ");
   s = shortReportDiagnosticsParentVisibleHe(s);
-  s = normalizeParentFacingHe(s.replace(/\s{2,}/g, " ").trim());
+  s = normalizeParentFacingHe(s.replace(/\s{2}/g, " ").trim());
   return s;
 }
 
@@ -1318,8 +1283,7 @@ function overviewShortLineWithSubject(subjectId, unit, kind) {
           subjectId,
           topic: name,
           q: Math.round(safeNumber(vol.questions)),
-          acc: Math.round(safeNumber(vol.accuracy)),
-        }),
+          acc: Math.round(safeNumber(vol.accuracy))}),
       );
     }
     core = name;
@@ -1376,8 +1340,7 @@ function buildDiagnosticOverviewHeV2(p) {
       insufficientDataSubjectsHe,
       notPracticedSubjectsHe: [],
       thinEvidenceSubjectsHe,
-      practicedSubjectsSummaryHe: p?.practicedSubjectsSummaryHe ?? null,
-    };
+      practicedSubjectsSummaryHe: p?.practicedSubjectsSummaryHe ?? null};
   }
 
   const uList = units.filter((u) => u && typeof u === "object");
@@ -1496,8 +1459,7 @@ function buildDiagnosticOverviewHeV2(p) {
     insufficientDataSubjectsHe,
     notPracticedSubjectsHe: [],
     thinEvidenceSubjectsHe,
-    practicedSubjectsSummaryHe: p?.practicedSubjectsSummaryHe ?? null,
-  };
+    practicedSubjectsSummaryHe: p?.practicedSubjectsSummaryHe ?? null};
 }
 
 /** @param {Parameters<typeof buildDiagnosticOverviewHeV2>[0]} params */
@@ -1524,7 +1486,7 @@ function intelligenceSummaryFromV2Units(list) {
  * @param {{
  *   subjectId?: string,
  *   subjectReportQuestions?: number,
- *   subjectLabelHe?: string,
+ *   subjectLabel?: string,
  *   reportSubjectAccuracy?: number|null,
  *   reportTotalQuestions?: number,
  *   topicMap?: Record<string, unknown>|null,
@@ -1539,7 +1501,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
   const list = filterCoreV2Units(units, topicMap, registeredGradeKey);
   const subjectReportQuestions = Math.max(0, Number(opts.subjectReportQuestions) || 0);
   const reportTotalQuestions = Math.max(0, Number(opts.reportTotalQuestions) || 0);
-  const subjectLabelHe = String(opts.subjectLabelHe || "").trim();
+  const subjectLabel = String(opts.subjectLabel || "").trim();
   const reportSubjectAccuracyRaw =
     opts.reportSubjectAccuracy == null ? null : Number(opts.reportSubjectAccuracy);
   const reportSubjectAccuracy =
@@ -1549,8 +1511,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
   if (list.length === 0) {
     return {
       hasAnySignal: false,
-      intelligenceSummary: { lowConfidenceCount: 0, noWeaknessCount: 0, recurrenceCount: 0 },
-    };
+      intelligenceSummary: { lowConfidenceCount: 0, noWeaknessCount: 0, recurrenceCount: 0 }};
   }
 
   const cs = (u) => u?.canonicalState;
@@ -1613,8 +1574,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
     excellent: excellentFlag,
     tierHe: tierStableStrengthHe(),
     topicStateId: cs(u)?.topicStateId || null,
-    stateHash: cs(u)?.stateHash || null,
-  });
+    stateHash: cs(u)?.stateHash || null});
 
   const stableExcellence = excellentUnits.slice(0, 5).map((u) => mapStrengthRow(u, true));
   const topStrengths = veryGoodUnits.slice(0, 3).map((u) => mapStrengthRow(u, false));
@@ -1633,8 +1593,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
         topicStateId: cs(u)?.topicStateId || null,
         stateHash: cs(u)?.stateHash || null,
         taxonomyId: taxonomyId || null,
-        parentDiagnosticExplanationV1: buildParentDiagnosticExplanationV1FromV2Unit(u),
-      };
+        parentDiagnosticExplanationV1: buildParentDiagnosticExplanationV1FromV2Unit(u)};
     });
 
   const rankedForEvidence = [...strengthUnits].sort(rankPositive);
@@ -1646,8 +1605,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
       type: "success",
       titleHe: normalizeParentFacingHe(String(u?.displayName || evidenceExampleTitleFallbackHe())),
       bodyHe: v2PositiveStrengthBodyFromUnitHe(u),
-      confidence,
-    });
+      confidence});
   }
   for (const u of diagnosed) {
     if (evidenceExamples.length >= 2) break;
@@ -1662,8 +1620,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
           String(u?.diagnosis?.lineHe || parentFacingPatternLabelHe(u) || evidenceExampleBodyFallbackHe()),
         ),
       ),
-      confidence,
-    });
+      confidence});
   }
 
   const evidenceSuccess =
@@ -1677,8 +1634,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
             (cs(rankedForEvidence[0])?.evidence?.positiveAuthorityLevel === "excellent" ||
              cs(rankedForEvidence[0])?.evidence?.positiveAuthorityLevel === "very_good")
               ? "high"
-              : "moderate",
-        }
+              : "moderate"}
       : null;
 
   const p4Unit = diagnosed.find((u) => String(u?.priority?.level || "") === "P4");
@@ -1742,10 +1698,9 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
           diagnosedCount: diagnosed.length,
           weakPatternHe: parentFacingPatternLabelHe(topWeak),
           units: list,
-          subjectLabelHe,
+          subjectLabel,
           reportSubjectAccuracy,
-          reportTotalQuestions,
-        });
+          reportTotalQuestions});
         return normalizeParentFacingHe(`On ${name}: ${inner}`);
       }
       // Grammar fix (prior Hebrew wording had broken syntax).
@@ -1768,11 +1723,9 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
 
   if (subjectId && topicMap && typeof topicMap === "object" && Object.keys(topicMap).length > 0) {
     subjectEngineContract = buildSubjectEngineDecisionContractFromTopicMap(subjectId, topicMap, {
-      subjectLabelKey: subjectId,
-    });
+      subjectLabelKey: subjectId});
     const contractSummary = resolveSubjectSummaryTextFromEngineContract(subjectEngineContract, {
-      subjectLabelHe: String(opts.subjectLabelHe || "").trim(),
-    });
+      subjectLabel: String(opts.subjectLabel || "").trim()});
     if (contractSummary) {
       summaryHe = contractSummary;
       subjectSummaryRenderSource = RENDER_SOURCE_SUBJECT_ENGINE;
@@ -1823,8 +1776,7 @@ function summarizeV2UnitsForSubject(units, opts = {}) {
       ? resolveUnitNextGoalHe(actionAnchor, anchorGradeKey) || resolveUnitHomeMethodHe(actionAnchor, anchorGradeKey)
       : null,
     subjectMemoryNarrativeHe: uncertain.length ? v2SubjectMemoryPartialEvidenceHe() : null,
-    subjectDiagnosticRestraintHe: uncertain.length ? v2SubjectDiagnosticRestraintHe() : null,
-  };
+    subjectDiagnosticRestraintHe: uncertain.length ? v2SubjectDiagnosticRestraintHe() : null};
 }
 
 /** Test hook: keep regular-report recommendation mapping verifiable in phase suites. */
@@ -1879,18 +1831,16 @@ function buildPatternDiagnosticsFromV2(
       accRaw != null && Number.isFinite(Number(accRaw)) ? Math.round(Number(accRaw)) : null;
     const rtq = Math.max(0, Number(reportTotalQuestions) || 0);
     subjects[sid] = {
-      subjectLabelHe: labelHe,
+      subjectLabel: labelHe,
       ...summarizeV2UnitsForSubject(subjectUnits, {
         subjectId: sid,
         subjectReportQuestions: srQ,
-        subjectLabelHe: labelHe,
+        subjectLabel: labelHe,
         reportSubjectAccuracy: reportAcc,
         reportTotalQuestions: rtq,
         topicMap,
-        registeredGradeKey: regKey,
-      }),
-      diagnosticCards: buildDiagnosticCardsForSubject(sid, subjectUnits, topicMap, regKey),
-    };
+        registeredGradeKey: regKey}),
+      diagnosticCards: buildDiagnosticCardsForSubject(sid, subjectUnits, topicMap, regKey)};
   }
   return { version: 2, subjects };
 }
@@ -1948,8 +1898,7 @@ function applySystemIntelligenceLayerToMaps(maps) {
         topicRowKey,
         subjectId,
         recommendedNextStep: String(step),
-        __reportRow: row,
-      });
+        __reportRow: row});
     }
   }
   if (topicResults.length === 0) {
@@ -2001,8 +1950,7 @@ function applySystemIntelligenceLayerToMaps(maps) {
           feedback: Object.prototype.hasOwnProperty.call(t, "_feedback") ? t._feedback : null,
           timeAdjusted: Object.prototype.hasOwnProperty.call(t, "_timeAdjusted") ? t._timeAdjusted : null,
           feedbackAdjusted: Object.prototype.hasOwnProperty.call(t, "_feedbackAdjusted") ? t._feedbackAdjusted : null,
-          priorityScore: Object.prototype.hasOwnProperty.call(t, "_priorityScore") ? t._priorityScore : null,
-        };
+          priorityScore: Object.prototype.hasOwnProperty.call(t, "_priorityScore") ? t._priorityScore : null};
       }
     }
   }
@@ -2059,10 +2007,7 @@ export function generateParentReportV2(
     geometry: geometryTopics,
     english: englishTopics,
     science: scienceTopics,
-    history: historyTopics,
-    hebrew: hebrewTopics,
-    "moledet-geography": moledetGeographyTopics,
-  };
+    history: historyTopics};
 
   let mathTotalQuestions = 0;
   let mathTotalCorrect = 0;
@@ -2092,9 +2037,8 @@ export function generateParentReportV2(
       progressData,
       startMs,
       endMs,
-      subject: def.id === "moledet-geography" ? "moledet-geography" : def.id,
-      displayNameFn: def.displayName,
-    });
+      subject: def.id,
+      displayNameFn: def.displayName});
     const built = collapseTopicRowsToCanonicalTopicEntity(def.id, builtRaw);
 
     Object.assign(targetMap, built);
@@ -2115,12 +2059,6 @@ export function generateParentReportV2(
       } else if (def.id === "history") {
         historyTotalQuestions += row.questions;
         historyTotalCorrect += row.correct;
-      } else if (def.id === "hebrew") {
-        hebrewTotalQuestions += row.questions;
-        hebrewTotalCorrect += row.correct;
-      } else if (def.id === "moledet-geography") {
-        moledetGeographyTotalQuestions += row.questions;
-        moledetGeographyTotalCorrect += row.correct;
       }
     });
   });
@@ -2194,8 +2132,7 @@ export function generateParentReportV2(
     ...scienceAchievements,
     ...historyAchievements,
     ...hebrewAchievements,
-    ...moledetGeographyAchievements,
-  ];
+    ...moledetGeographyAchievements];
 
   const mathMistakesRaw = safeGetJsonArray("mleo_mistakes");
   const geometryMistakesRaw = safeGetJsonArray("mleo_geometry_mistakes");
@@ -2238,8 +2175,7 @@ export function generateParentReportV2(
   );
   const historySubtopics = buildHistorySubtopicReportMap({
     historyTopics,
-    mistakeCountsBySubtopic: historyMistakesBySubtopic,
-  });
+    mistakeCountsBySubtopic: historyMistakesBySubtopic});
   maps.historySubtopics = historySubtopics;
   const hebrewMistakesByTopic = filterMistakes(
     hebrewMistakesRaw,
@@ -2259,14 +2195,7 @@ export function generateParentReportV2(
     geometry: mistakesInDateRange(geometryMistakesRaw, startMs, endMs),
     english: mistakesInDateRange(englishMistakesRaw, startMs, endMs),
     science: mistakesInDateRange(scienceMistakesRaw, startMs, endMs),
-    history: mistakesInDateRange(historyMistakesRaw, startMs, endMs),
-    hebrew: mistakesInDateRange(hebrewMistakesRaw, startMs, endMs),
-    "moledet-geography": mistakesInDateRange(
-      moledetGeographyMistakesRaw,
-      startMs,
-      endMs
-    ),
-  };
+    history: mistakesInDateRange(historyMistakesRaw, startMs, endMs)};
 
   const mathRecommendations = generateRecommendations(
     mathOperations,
@@ -2304,8 +2233,7 @@ export function generateParentReportV2(
     ...scienceRecommendations,
     ...historyRecommendations,
     ...hebrewRecommendations,
-    ...moledetGeographyRecommendations,
-  ];
+    ...moledetGeographyRecommendations];
 
   let totalTimeMinutes = 0;
   [
@@ -2315,8 +2243,7 @@ export function generateParentReportV2(
     scienceTopics,
     historyTopics,
     hebrewTopics,
-    moledetGeographyTopics,
-  ].forEach((m) => {
+    moledetGeographyTopics].forEach((m) => {
     Object.values(m).forEach((row) => {
       totalTimeMinutes += row.timeMinutes || 0;
     });
@@ -2351,8 +2278,7 @@ export function generateParentReportV2(
       .map(
         ([_, d]) =>
           `Homeland & geography: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
-      ),
-  ];
+      )];
 
   const excellent = [
     ...Object.entries(mathOperations)
@@ -2381,8 +2307,7 @@ export function generateParentReportV2(
       .map(
         ([_, d]) =>
           `Homeland & geography: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
-      ),
-  ];
+      )];
 
   const dailyChallenge = safeGetJsonObject("mleo_daily_challenge");
   const weeklyChallenge = safeGetJsonObject("mleo_weekly_challenge");
@@ -2409,10 +2334,8 @@ export function generateParentReportV2(
     ...Object.fromEntries(
       Object.entries(moledetGeographyTopics).map(([k, v]) => [
         `moledet-geography_${k}`,
-        v,
-      ])
-    ),
-  };
+        v])
+    )};
 
   const mathAccuracy =
     mathTotalQuestions > 0
@@ -2450,10 +2373,7 @@ export function generateParentReportV2(
     geometry: geometryMistakesByTopic,
     english: englishMistakesByTopic,
     science: scienceMistakesByTopic,
-    history: historyMistakesByTopic,
-    hebrew: hebrewMistakesByTopic,
-    "moledet-geography": moledetGeographyMistakesByTopic,
-  };
+    history: historyMistakesByTopic};
   const trackingSnapshots = {};
   SUBJECTS.forEach((def) => {
     const saved = loadTracking(def.trackingKey);
@@ -2470,8 +2390,7 @@ export function generateParentReportV2(
   }
   enrichReportMapsWithTopicStepHints(maps, mistakesBySubjectMaps, endMs, undefined, {
     rawMistakesBySubject,
-    startMs,
-  });
+    startMs});
 
   const systemIntelligenceLayer = applySystemIntelligenceLayerToMaps(maps);
 
@@ -2488,8 +2407,7 @@ export function generateParentReportV2(
     maps,
     rawMistakesBySubject,
     startMs,
-    endMs,
-  });
+    endMs});
 
   enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEngineV2, maps, {
     mathQuestions: mathTotalQuestions,
@@ -2506,8 +2424,7 @@ export function generateParentReportV2(
     historyAccuracy,
     geometryAccuracy,
     moledetGeographyAccuracy,
-    totalQuestions,
-  });
+    totalQuestions});
 
   enrichDiagnosticEngineV2WithProfessionalEngineV1(
     diagnosticEngineV2,
@@ -2525,14 +2442,12 @@ export function generateParentReportV2(
       scienceAccuracy,
       geometryAccuracy,
       moledetGeographyAccuracy,
-      totalQuestions,
-    },
+      totalQuestions},
     {
       rawMistakesBySubject,
       startMs,
       endMs,
-      studentGradeKey: null,
-    }
+      studentGradeKey: null}
   );
 
   if (Array.isArray(diagnosticEngineV2?.units)) {
@@ -2552,8 +2467,7 @@ export function generateParentReportV2(
       const iv1 = buildWeaknessConfidencePatternsV1({
         row: row && typeof row === "object" ? row : {},
         mistakes,
-        unit: u,
-      });
+        unit: u});
       u.intelligenceV1 = iv1;
       if (row && typeof row === "object") {
         row.intelligenceV1 = iv1;
@@ -2566,8 +2480,7 @@ export function generateParentReportV2(
     rawMistakesBySubject,
     maps,
     startMs,
-    endMs,
-  });
+    endMs});
 
   const diagnosticEngineV3 = runDiagnosticEngineV3({
     maps,
@@ -2575,8 +2488,7 @@ export function generateParentReportV2(
     startMs,
     endMs,
     probeEvidence: null,
-    diagnosticEngineV2,
-  });
+    diagnosticEngineV2});
 
   applyLearningPatternDecisionToUnitsAndRows({
     diagnosticEngineV2,
@@ -2584,8 +2496,7 @@ export function generateParentReportV2(
     diagnosticEngineV3,
     rawMistakesBySubject,
     startMs,
-    endMs,
-  });
+    endMs});
   syncRowFlagsFromLearningPatternDecision(maps);
 
   const lpdRollups = buildTopicRollupsFromLearningPatternDecision(
@@ -2604,10 +2515,8 @@ export function generateParentReportV2(
           return String(row.displayName || getScienceTopicName(bk));
         case "history":
           return String(row.displayName || getHistoryTopicName(bk));
-        case "hebrew":
-          return String(row.displayName || getHebrewTopicName(bk));
-        case "moledet-geography":
-          return String(row.displayName || getMoledetGeographyTopicName(bk));
+        
+        
         default:
           return String(row.displayName || bk || "topic");
       }
@@ -2624,8 +2533,7 @@ export function generateParentReportV2(
     maps,
     rawMistakesBySubject,
     startMs,
-    endMs,
-  });
+    endMs});
 
   const dataIntegrityReport = validateParentReportDataIntegrity({
     trackingSnapshots,
@@ -2633,8 +2541,7 @@ export function generateParentReportV2(
     maps,
     dailyActivity,
     startMs,
-    endMs,
-  });
+    endMs});
 
   const legacyPatternDiagnostics = analyzeLearningPatterns(
     {
@@ -2645,8 +2552,7 @@ export function generateParentReportV2(
       historyTopics,
       historySubtopics,
       hebrewTopics,
-      moledetGeographyTopics,
-    },
+      moledetGeographyTopics},
     rawMistakesBySubject
   );
   const hasV2Units = Array.isArray(diagnosticEngineV2?.units) && diagnosticEngineV2.units.length > 0;
@@ -2655,19 +2561,13 @@ export function generateParentReportV2(
     geometry: geometryTotalQuestions,
     english: englishTotalQuestions,
     science: scienceTotalQuestions,
-    history: historyTotalQuestions,
-    hebrew: hebrewTotalQuestions,
-    "moledet-geography": moledetGeographyTotalQuestions,
-  };
+    history: historyTotalQuestions};
   const subjectAccuracyById = {
     math: mathAccuracy,
     geometry: geometryAccuracy,
     english: englishAccuracy,
     science: scienceAccuracy,
-    history: historyAccuracy,
-    hebrew: hebrewAccuracy,
-    "moledet-geography": moledetGeographyAccuracy,
-  };
+    history: historyAccuracy};
   const registeredGradeKey = registeredGradeKeyFromReportMaps(maps);
   const patternDiagnostics = hasV2Units
     ? buildPatternDiagnosticsFromV2(
@@ -2710,8 +2610,7 @@ export function generateParentReportV2(
     insufficientDataSubjectsHe: evidenceCoverage.thinEvidenceSubjectsHe,
     notPracticedSubjectsHe: [],
     thinEvidenceSubjectsHe: evidenceCoverage.thinEvidenceSubjectsHe,
-    practicedSubjectsSummaryHe,
-  };
+    practicedSubjectsSummaryHe};
 
   const diagnosticOverviewHe = hasV2Units
     ? buildDiagnosticOverviewHeV2({
@@ -2723,8 +2622,7 @@ export function generateParentReportV2(
         fallbackOverview: fallbackDiagnosticOverviewHe,
         insufficientDataSubjectsHe: evidenceCoverage.thinEvidenceSubjectsHe,
         thinEvidenceSubjectsHe: evidenceCoverage.thinEvidenceSubjectsHe,
-        practicedSubjectsSummaryHe,
-      })
+        practicedSubjectsSummaryHe})
     : fallbackDiagnosticOverviewHe;
 
   let mixedGradePractice = false;
@@ -2749,8 +2647,7 @@ export function generateParentReportV2(
     historyTopics: maps.historyTopics,
     historySubtopics: maps.historySubtopics,
     hebrewTopics: maps.hebrewTopics,
-    moledetGeographyTopics: maps.moledetGeographyTopics,
-  })) {
+    moledetGeographyTopics: maps.moledetGeographyTopics})) {
     if (!isCoreParentReportRow(row, registeredGradeKey)) continue;
     const acc = Number(row.accuracy) || 0;
     const q = Number(row.questions) || 0;
@@ -2773,8 +2670,7 @@ export function generateParentReportV2(
       geometryQuestions: geometryTotalQuestions,
       geometryAccuracy,
       moledetGeographyQuestions: moledetGeographyTotalQuestions,
-      moledetGeographyAccuracy,
-    },
+      moledetGeographyAccuracy},
     null,
     weakSubjectIds,
   );
@@ -2787,8 +2683,7 @@ export function generateParentReportV2(
     scienceTopics,
     historyTopics,
     hebrewTopics,
-    moledetGeographyTopics,
-  });
+    moledetGeographyTopics});
 
   return {
     playerName,
@@ -2802,8 +2697,7 @@ export function generateParentReportV2(
       registeredGradeKey,
       mixedGradePractice,
       mixedGradePracticeNoteHe,
-      gradeRelationsSeen: [...gradeRelationsSeen],
-    },
+      gradeRelationsSeen: [...gradeRelationsSeen]},
     summary: {
       totalTimeMinutes,
       totalTimeHours: (totalTimeMinutes / 60).toFixed(2),
@@ -2837,8 +2731,7 @@ export function generateParentReportV2(
       achievements: achievements.length,
       diagnosticOverviewHe,
       /** Phase 1: strengths from raw per-subject volume/accuracy (for short + contract strip). */
-      rawMetricStrengthsHe,
-    },
+      rawMetricStrengthsHe},
     /** Phase 1: same lines at top-level for short-page UI without digging into summary. */
     rawMetricStrengthsHe,
     mathOperations,
@@ -2862,27 +2755,21 @@ export function generateParentReportV2(
       historyMistakesBySubtopic,
       hebrewMistakesByTopic,
       moledetGeographyMistakesByTopic,
-      recommendations,
-    },
+      recommendations},
     challenges: {
       daily: {
         questions: dailyChallenge.questions || 0,
         correct: dailyChallenge.correct || 0,
-        bestScore: dailyChallenge.bestScore || 0,
-      },
+        bestScore: dailyChallenge.bestScore || 0},
       weekly: {
         current: weeklyChallenge.current || 0,
         target: weeklyChallenge.target || 100,
-        completed: weeklyChallenge.completed || false,
-      },
+        completed: weeklyChallenge.completed || false},
       bySubject: {
         math: {
           questions: dailyChallenge.questions || 0,
           correct: dailyChallenge.correct || 0,
-          bestScore: dailyChallenge.bestScore || 0,
-        },
-      },
-    },
+          bestScore: dailyChallenge.bestScore || 0}}},
     achievements: achievements.map((name) => ({ name, earned: true })),
     /** Data-driven diagnostics for UI authority (V2 primary, legacy fallback only). */
     patternDiagnostics,
@@ -2904,16 +2791,13 @@ export function generateParentReportV2(
       scope: "evidence-only",
       traceAttached: contractsV1TraceEnabled,
       enabled: contractsV1TraceEnabled,
-      validationMode: "soft",
-    },
+      validationMode: "soft"},
     systemIntelligence: {
-      globalScore: systemIntelligenceLayer?.globalScore ?? { score: 0, level: "unknown" },
-    },
+      globalScore: systemIntelligenceLayer?.globalScore ?? { score: 0, level: "unknown" }},
     /** Session-local active diagnosis snapshot when available (additive; no UI). */
     activeDiagnosisSessionSummary: getActiveDiagnosisSessionSummaryForReport(),
     /** Internal — DE3 re-run / server probe merge (not parent-facing). */
     _internalRawMistakesBySubject: rawMistakesBySubject,
     _reportStartMs: startMs,
-    _reportEndMs: endMs,
-  };
+    _reportEndMs: endMs};
 }

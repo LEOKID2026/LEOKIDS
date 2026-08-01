@@ -42,12 +42,12 @@ function deriveAllowedClaimClass(decisionTier) {
 
 function deriveNarrativeConstraints(actionState, confidenceLevel, cannotConcludeYet) {
   const uncertaintyRequired =
-    actionState === "withhold" ||
-    actionState === "probe_only" ||
-    confidenceLevel === "low" ||
-    confidenceLevel === "early_signal_only" ||
-    confidenceLevel === "insufficient_data" ||
-    confidenceLevel === "contradictory" ||
+    actionState === "withhold" |
+    actionState === "probe_only" |
+    confidenceLevel === "low" |
+    confidenceLevel === "early_signal_only" |
+    confidenceLevel === "insufficient_data" |
+    confidenceLevel === "contradictory" |
     cannotConcludeYet;
 
   const allowedSections = [];
@@ -55,21 +55,21 @@ function deriveNarrativeConstraints(actionState, confidenceLevel, cannotConclude
 
   if (actionState === "withhold") {
     allowedSections.push("stub_only");
-    forbiddenPhrases.push("נקודת חוזק", "שליטה מלאה", "מומלץ להרחיב");
+    forbiddenPhrases.push("", "", "");
   } else if (actionState === "probe_only") {
     allowedSections.push("observation", "uncertainty_note");
-    forbiddenPhrases.push("שליטה מלאה", "מומלץ להרחיב", "מוכן להתקדם");
+    forbiddenPhrases.push("", "", "");
   } else if (actionState === "diagnose_only") {
     allowedSections.push("observation", "pattern_note", "uncertainty_note");
-    forbiddenPhrases.push("שליטה מלאה");
+    forbiddenPhrases.push("");
   } else if (actionState === "intervene") {
     allowedSections.push("observation", "pattern_note", "action_recommendation");
   } else if (actionState === "maintain") {
     allowedSections.push("strength_note", "maintenance_action");
-    forbiddenPhrases.push("קושי", "דורש תמיכה", "חולשה");
+    forbiddenPhrases.push("", "", "");
   } else if (actionState === "expand_cautiously") {
     allowedSections.push("strength_note", "expansion_action");
-    forbiddenPhrases.push("קושי", "דורש תמיכה", "חולשה");
+    forbiddenPhrases.push("", "", "");
   }
 
   return { uncertaintyRequired, allowedSections, forbiddenPhrases };

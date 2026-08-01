@@ -13,7 +13,7 @@ import {
 } from "./public-seo-wide-theme";
 
 /**
- * @typedef {'practice-hub' | 'practice-inner' | 'guides-hub' | 'guides-inner'} SeoPageKind
+ * @typedef {'practice-hub' || 'practice-inner' || 'guides-hub' || 'guides-inner'} SeoPageKind
  */
 
 /**

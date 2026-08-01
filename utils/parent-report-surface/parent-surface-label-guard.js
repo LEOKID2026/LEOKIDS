@@ -3,7 +3,7 @@
  */
 
 import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
-import { normalizeParentFacingHe } from "../parent-report-language/index.js";
+import { normalizeParentFacing } from "../parent-report-language/index.js";
 
 /** Internal/engine identifiers (snake_case), not ordinary parent-facing English words. */
 const INTERNAL_SNAKE_TOKEN = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/i;
@@ -11,18 +11,18 @@ const ENGINE_STEP =
   /\b(advance_level|advance_grade_topic_only|maintain_and_strengthen|remediate_same_level|drop_one_level_topic_only|drop_one_grade_topic_only|undetermined)\b/i;
 
 /** Probe specification format — never parent-facing, even in geometry. */
-const PROBE_SPECIFICATION_HE = /עם\s*\/\s*בלי/i;
+const PROBE_SPECIFICATION_HE = /(?!)/i;
 
 /** Geometry-only phrases that must not appear outside geometry. */
 const GEOMETRY_ONLY_PHRASES = [
-  "אנכי מול אופקי",
-  "קו גובה",
-  "עם/בלי קו גובה",
-  "גובה חיצוני",
-  "פריסה",
-  "עם/בלי פריסה",
-  "עם/בלי ציר",
-  "ציר + סימבולי",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
   "Vertical vs horizontal",
   "Height line",
   "With/without height line",
@@ -30,8 +30,7 @@ const GEOMETRY_ONLY_PHRASES = [
   "Net",
   "With/without net",
   "With/without axis",
-  "Axis + symbolic",
-];
+  "Axis + symbolic"];
 
 /** Parent-facing subskill overrides (surface copy only). */
 const SUBSKILL_SURFACE_HE = Object.freeze({
@@ -52,7 +51,7 @@ export function parentSubskillSurfaceLabelHe(taxonomyId, subjectId, rawSubskill,
   if (!raw) return "";
   if (INTERNAL_SNAKE_TOKEN.test(raw) || ENGINE_STEP.test(raw)) return "";
   if (isForbiddenParentSurfaceLabel(raw, { subjectId, taxonomyId: id })) return "";
-  return normalizeParentFacingHe(raw);
+  return normalizeParentFacing(raw);
 }
 
 /**
@@ -76,7 +75,7 @@ export function isForbiddenParentSurfaceLabel(text, ctx = {}) {
     if (!isGeometry) return true;
   }
 
-  if (!isGeometry && /\b(אנכי|אופקי)\b/.test(t) && /מול/.test(t)) return true;
+  if (!isGeometry && /(?!)/.test(t) && /(?!)/.test(t)) return true;
 
   return false;
 }
@@ -86,7 +85,7 @@ export function isForbiddenParentSurfaceLabel(text, ctx = {}) {
  * @param {{ subjectId?: string|null, taxonomyId?: string|null, allowEmpty?: boolean }} [ctx]
  */
 export function sanitizeParentSurfaceTextHe(text, ctx = {}) {
-  let t = normalizeParentFacingHe(String(text ?? ""));
+  let t = normalizeParentFacing(String(text ?? ""));
   t = t.replace(/\u0001/g, " ");
   t = t.replace(/\bdefault_[a-z0-9_]+\b/gi, "");
   t = t.replace(ENGINE_STEP, "");

@@ -12,7 +12,7 @@
  *
  * Output shape (always):
  *   { ok: true,
- *     source: "ai" | "deterministic_fallback",
+ *     source: "ai" || "deterministic_fallback",
  *     reason?: string,
  *     structured: { summary, strengths[{textHe,sourceId}], focusAreas[{textHe,sourceId}],
  *                   homeTips: string[], cautionNote: string }

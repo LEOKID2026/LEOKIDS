@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "oops_something_went_wrong": "¡Ups! algo salió mal",
+    "we_couldn_t_load_the_game_you_can_try_again": "No pudimos cargar el juego. Puedes intentarlo de nuevo.",
+    "back_to_games_list": "Volver a la lista de juegos",
+    "offline_games_area": "Área de juegos sin conexión",
+    "try_again": "Intentar otra vez"
+  }
+}

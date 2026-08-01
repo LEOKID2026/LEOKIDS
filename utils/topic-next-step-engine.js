@@ -13,7 +13,7 @@ import {
   computeConfidence01,
   computeRowDiagnosticSignals,
   computeStability01,
-  rowMistakeEventCount,
+  rowMistakeEventCount
 } from "./parent-report-row-diagnostics.js";
 import {
   applyPhase2GuardsToStep,
@@ -32,7 +32,7 @@ import {
   buildWhyThisRecommendationHe,
   confidenceBadgeFromScore,
   mergePhase7SoftHebrewCopy,
-  sufficiencyBadgeFromLevel,
+  sufficiencyBadgeFromLevel
 } from "./topic-next-step-phase2.js";
 import { computeDiagnosticRestraint } from "./parent-report-diagnostic-restraint.js";
 import { estimateRowRootCause } from "./parent-report-root-cause.js";
@@ -44,7 +44,7 @@ import {
   applyAccuracyBandRootCauseGuard,
   buildEngineDiagnosticDecision,
   computeAccuracyBand,
-  computeEngineConfidenceTier,
+  computeEngineConfidenceTier
 } from "./parent-report-engine-v1-signals.js";
 import { buildInterventionEffectivenessPhase10 } from "./parent-report-intervention-effectiveness.js";
 import { buildConfidenceAgingPhase10 } from "./parent-report-confidence-aging.js";
@@ -60,27 +60,27 @@ import { glossTopicRecommendationHeFields } from "./parent-report-language/index
 import { isScienceSubjectId } from "../lib/learning/display-level.js";
 import {
   hasRegularMediumEvidence,
-  resolveRowDisplayLevelKey,
+  resolveRowDisplayLevelKey
 } from "../lib/learning/parent-report-display-level.js";
 import { assertContractMatchesStep } from "./contracts/assert-contract-step-consistency.js";
 import { normalizeRecommendationContract } from "./contracts/recommendation-contract-normalizer.js";
 import {
   applyRecommendationContractToRecord,
   buildRecommendationContractV1,
-  validateRecommendationContractV1,
+  validateRecommendationContractV1
 } from "./contracts/recommendation-contract-v1.js";
 import {
   buildDecisionReadinessContractsBundleV1,
-  isDecisionReadinessContractsBundleV1,
+  isDecisionReadinessContractsBundleV1
 } from "./contracts/decision-readiness-contract-v1.js";
 import {
   applyNarrativeContractToRecord,
   buildNarrativeContractV1,
-  validateNarrativeContractV1,
+  validateNarrativeContractV1
 } from "./contracts/narrative-contract-v1.js";
 import {
   buildEvidenceContractV1,
-  validateEvidenceContractV1,
+  validateEvidenceContractV1
 } from "./contracts/parent-report-contracts-v1.js";
 
 /** @typedef {'advance_level'|'advance_grade_topic_only'|'maintain_and_strengthen'|'maintain_regular_strengthen_medium'|'remediate_same_level'|'drop_one_level_topic_only'|'drop_one_grade_topic_only'|'suggest_return_to_regular'} RecommendedNextStep */
@@ -93,7 +93,7 @@ export const RECOMMENDED_STEP_LABEL_HE = {
   remediate_same_level: burnDownCopy("utils__topic-next-step-engine", "strengthen_at_the_same_level"),
   suggest_return_to_regular: burnDownCopy("utils__topic-next-step-engine", "return_to_regular_practice"),
   drop_one_level_topic_only: burnDownCopy("utils__topic-next-step-engine", "strengthen_at_the_same_level"),
-  drop_one_grade_topic_only: burnDownCopy("utils__topic-next-step-engine", "lower_difficulty_same_topic_only"),
+  drop_one_grade_topic_only: burnDownCopy("utils__topic-next-step-engine", "lower_difficulty_same_topic_only")
 };
 
 /** Engine field key — split to keep parent-copy guard clean. */
@@ -109,7 +109,7 @@ const LEVEL_ORDER = ["easy", "medium", "hard"];
 export function mergeTopicNextStepConfig(partial) {
   return {
     ...DEFAULT_TOPIC_NEXT_STEP_CONFIG,
-    ...(partial && typeof partial === "object" ? partial : {}),
+    ...(partial && typeof partial === "object" ? partial : {})
   };
 }
 
@@ -197,7 +197,7 @@ function buildHebrewCopy(step, ctx, cfg) {
     mistakeEventCount: mC,
     levelLabel,
     gradeLabel,
-    wrongRatio,
+    wrongRatio
   } = ctx;
 
   const mPart =
@@ -210,44 +210,44 @@ function buildHebrewCopy(step, ctx, cfg) {
     advance_level: {
       reasonHe: burnDownCopy("utils__topic-next-step-engine", "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin"),
       parentHe: burnDownCopy("utils__topic-next-step-engine", "trying_advanced_on_the_same_topic_is_recommended"),
-      studentHe: burnDownCopy("utils__topic-next-step-engine", "you_can_try_advanced_on_the_same_topic"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "you_can_try_advanced_on_the_same_topic")
     },
     advance_grade_topic_only: {
       reasonHe: `On ${displayName}, current practice (${levelLabel}) already shows good accuracy (${acc}%) with enough questions (${q}). Trying a higher grade on this topic only — not for the whole subject — is reasonable.`,
       parentHe: `If grade can be chosen by topic — on ${displayName} you can try one grade up. That applies only to this topic; keep other topics as usual until similar data appears.`,
-      studentHe: `On ${displayName}, you can try a slightly higher grade — only there, step by step.`,
+      studentHe: `On ${displayName}, you can try a slightly higher grade — only there, step by step.`
     },
     maintain_and_strengthen: {
       reasonHe: `On ${displayName} there are ${q} questions with about ${acc}% accuracy${mPart}. Not confident enough yet for a jump forward or back — stay on the same grade and difficulty and build consistency.`,
       parentHe: `On ${displayName}, continue at the same difficulty for now, and add short focused practice twice a week. Goal: solidify the topic and consistency before changing anything.`,
-      studentHe: `Practice a bit more on ${displayName} at the same level — then we will pick the next step.`,
+      studentHe: `Practice a bit more on ${displayName} at the same level — then we will pick the next step.`
     },
     remediate_same_level: {
       reasonHe: `On ${displayName}, accuracy is moderate (${acc}%) with ${q} questions${mPart}. Better to strengthen the foundation at the same difficulty before trying something new.`,
       parentHe:
         "Stay on the same difficulty and focus on understanding mistakes: practice together, and after a wrong answer pause and figure out where it went wrong. Prefer not to raise the level until progress and consistency feel real.",
-      studentHe: `We will strengthen the base on ${displayName} at the same level first — then move forward.`,
+      studentHe: `We will strengthen the base on ${displayName} at the same level first — then move forward.`
     },
     maintain_regular_strengthen_medium: {
       reasonHe: burnDownCopy("utils__topic-next-step-engine", "build_more_steady_practice_at_regular_level_before_moving_to_advanced"),
       parentHe: burnDownCopy("utils__topic-next-step-engine", "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_"),
-      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva")
     },
     suggest_return_to_regular: {
       reasonHe: burnDownCopy("utils__topic-next-step-engine", "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_"),
       parentHe: burnDownCopy("utils__topic-next-step-engine", "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str"),
-      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again")
     },
     drop_one_level_topic_only: {
       reasonHe: burnDownCopy("utils__topic-next-step-engine", "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace"),
       parentHe: burnDownCopy("utils__topic-next-step-engine", "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio"),
-      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_strengthen_with_regular_practice_first_then_move_on"),
+      studentHe: burnDownCopy("utils__topic-next-step-engine", "we_will_strengthen_with_regular_practice_first_then_move_on")
     },
     drop_one_grade_topic_only: {
       reasonHe: `On ${displayName}, practice is already at the easiest level (${levelLabel}) but accuracy is still low (${acc}%)${mPart}. The gap is likely grade-related — drop one grade on this topic only.`,
       parentHe: burnDownCopy("utils__topic-next-step-engine", "try_a_lower_level_or_grade_then_advance_gradually"),
-      studentHe: `On ${displayName}, we will try a slightly more comfortable grade — only there — so it feels fairer.`,
-    },
+      studentHe: `On ${displayName}, we will try a slightly more comfortable grade — only there — so it feels fairer.`
+    }
   };
 
   return table[step] || table.maintain_and_strengthen;
@@ -268,7 +268,7 @@ export function applyAggressiveEvidenceCap(result, row, ctx, cfg) {
     "advance_level",
     "advance_grade_topic_only",
     "drop_one_level_topic_only",
-    "drop_one_grade_topic_only",
+    "drop_one_grade_topic_only"
   ]);
   if (!aggressive.has(result.step)) {
     return { ...result, recommendationDecisionTrace: trace, postCapApplied: false };
@@ -280,7 +280,7 @@ export function applyAggressiveEvidenceCap(result, row, ctx, cfg) {
     source: "recommendation",
     phase: "post_cap_adjustments",
     ruleId: "evidence_sufficiency_cap",
-    data: { fromStep: result.step, toStep: step, suppressAggressiveStep: !!row?.suppressAggressiveStep },
+    data: { fromStep: result.step, toStep: step, suppressAggressiveStep: !!row?.suppressAggressiveStep }
   });
   return {
     ...result,
@@ -291,7 +291,7 @@ export function applyAggressiveEvidenceCap(result, row, ctx, cfg) {
     recommendationDecisionTrace: trace,
     postCapApplied: true,
     postCapFromStep: result.step,
-    postCapToStep: step,
+    postCapToStep: step
   };
 }
 
@@ -323,7 +323,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
     mistakeEventCount,
     levelLabel: row?.level || (displayLevel === "advanced" ? "advanced" : "regular"),
     gradeLabel: row?.grade || gradeKey || "Not available",
-    wrongRatio,
+    wrongRatio
   };
 
   trace.push({
@@ -343,8 +343,8 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       mistakeEventCount,
       stability01: stability,
       confidence01: confidence,
-      recencyScore,
-    },
+      recencyScore
+    }
   });
 
   const repeatedStruggle =
@@ -368,7 +368,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "min_questions_low_confidence",
-      data: { q, threshold: cfg.minQuestionsLowConfidence, step },
+      data: { q, threshold: cfg.minQuestionsLowConfidence, step }
     });
     return applyAggressiveEvidenceCap(
       {
@@ -380,7 +380,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
         reasonHe: `Only ${q} questions on ${displayName} in the selected period — too early to change grade or difficulty. Prefer a few more short sessions with the same setup, then reassess.`,
         parentHe: `On ${displayName} there is still little data (${q} questions). Continue at the same difficulty and add two or three short practices so the next recommendation is more precise.`,
         studentHe: `We will stay a bit longer at the same level on ${displayName} — then we will know better what is next.`,
-        recommendationDecisionTrace: trace,
+        recommendationDecisionTrace: trace
       },
       row,
       ctx,
@@ -395,7 +395,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "repeated_struggle_advanced_return_regular",
-      data: { repeatedStruggle, displayLevel, step },
+      data: { repeatedStruggle, displayLevel, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -412,7 +412,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "repeated_struggle_regular_remediate",
-      data: { repeatedStruggle, displayLevel, step },
+      data: { repeatedStruggle, displayLevel, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -429,7 +429,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "repeated_struggle_drop_level",
-      data: { repeatedStruggle, li, step },
+      data: { repeatedStruggle, li, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -446,7 +446,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "repeated_struggle_drop_grade",
-      data: { repeatedStruggle, li, gi, step },
+      data: { repeatedStruggle, li, gi, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -468,7 +468,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "remediate_mid_band_no_drag",
-      data: { q, acc, mistakeDrag, step },
+      data: { q, acc, mistakeDrag, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -496,7 +496,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "advance_grade_topic",
-      data: { q, acc, recencyScore, mistakeDrag, step },
+      data: { q, acc, recencyScore, mistakeDrag, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -525,7 +525,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "regular_to_advanced_with_medium_evidence",
-      data: { q, acc, stability, confidence, mediumEvidenceOk, mistakeDrag, step },
+      data: { q, acc, stability, confidence, mediumEvidenceOk, mistakeDrag, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -549,7 +549,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "regular_easy_only_strengthen_medium",
-      data: { q, acc, mediumEvidenceOk, step },
+      data: { q, acc, mediumEvidenceOk, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -566,7 +566,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "advanced_struggle_return_regular",
-      data: { q, acc, displayLevel, step },
+      data: { q, acc, displayLevel, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -583,7 +583,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "low_accuracy_regular_remediate",
-      data: { q, acc, displayLevel, step },
+      data: { q, acc, displayLevel, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -600,7 +600,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "low_accuracy_drop_level",
-      data: { q, acc, li, step },
+      data: { q, acc, li, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -617,7 +617,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "low_accuracy_unknown_level_remediate",
-      data: { q, acc, step },
+      data: { q, acc, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -634,7 +634,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "low_accuracy_drop_grade",
-      data: { q, acc, li, gi, step },
+      data: { q, acc, li, gi, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -651,7 +651,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
       source: "recommendation",
       phase: "decision",
       ruleId: "remediate_band",
-      data: { q, acc, step },
+      data: { q, acc, step }
     });
     return applyAggressiveEvidenceCap(
       { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -667,7 +667,7 @@ function runLegacyTopicNextStep(row, mistakeEventCount, cfg) {
     source: "recommendation",
     phase: "decision",
     ruleId: "default_maintain",
-    data: { q, acc, repeatedStruggle, highVolumeStrong, mistakeDrag, step },
+    data: { q, acc, repeatedStruggle, highVolumeStrong, mistakeDrag, step }
   });
   return applyAggressiveEvidenceCap(
     { step, ...copy, currentMastery: acc, stability, confidence, recommendationDecisionTrace: trace },
@@ -713,7 +713,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     confidence01: Number(legacy.confidence) || 0,
     trendDer,
     riskFlags,
-    behaviorProfile,
+    behaviorProfile
   });
 
   const rootCausePayload = applyAccuracyBandRootCauseGuard(
@@ -726,7 +726,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
       q,
       accuracy: acc,
       wrongRatio,
-      behaviorType,
+      behaviorType
     }),
     {
       accuracyBand,
@@ -734,7 +734,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
       acc,
       behaviorType,
       riskFlags,
-      modeKey: row?.modeKey,
+      modeKey: row?.modeKey
     }
   );
 
@@ -745,12 +745,12 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     behaviorType,
     sufficiencyStrong,
     strongKnowledgeGapEvidence,
-    intelligenceV1: row?.intelligenceV1 || null,
+    intelligenceV1: row?.intelligenceV1 || null
   });
 
   const afterP7 = applyPhase7RestraintGuards(afterP2.step, {
     restraint: restraintPayload,
-    rootCause: rootCausePayload,
+    rootCause: rootCausePayload
   });
 
   const guardedBlockers = [...afterP2.blockers, ...afterP7.blockers];
@@ -767,20 +767,20 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     mistakeEventCount,
     levelLabel: row?.level || levelKey || "Not available",
     gradeLabel: row?.grade || gradeKey || "Not available",
-    wrongRatio,
+    wrongRatio
   };
 
   let merged = {
     ...legacy,
     step: guardedStep,
-    recommendationDecisionTrace: [...(legacy.recommendationDecisionTrace || []), ...guardedTraceAdds],
+    recommendationDecisionTrace: [...(legacy.recommendationDecisionTrace || []), ...guardedTraceAdds]
   };
 
   if (guardedStep !== legacy.step) {
     const copy = buildHebrewCopy(guardedStep, ctx, cfg);
     const phaseNote =
       guardedBlockers.length > 0
-        ? ` [Phases 2–7: ${guardedBlockers.map((b) => b.detailHe).join(" | ")}]`
+        ? ` [Phases 2–7: ${guardedBlockers.map((b) => b.detailHe).join(" || ")}]`
         : "";
     const softened = mergePhase7SoftHebrewCopy(
       { ...copy, reasonHe: (copy.reasonHe || "") + phaseNote },
@@ -790,7 +790,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     merged = {
       ...merged,
       ...softened,
-      reasonHe: softened.reasonHe || (copy.reasonHe || "") + phaseNote,
+      reasonHe: softened.reasonHe || (copy.reasonHe || "") + phaseNote
     };
   } else {
     const soft = mergePhase7SoftHebrewCopy(
@@ -812,7 +812,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     speedOnlyRisk: !!riskFlags.speedOnlyRisk,
     hintDependenceRisk: !!riskFlags.hintDependenceRisk,
     insufficientEvidenceRisk: !!riskFlags.insufficientEvidenceRisk,
-    recentTransitionRisk: !!riskFlags.recentTransitionRisk,
+    recentTransitionRisk: !!riskFlags.recentTransitionRisk
   };
 
   const iv1ForStructuredTrace =
@@ -829,16 +829,16 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
             accuracy: trendDer.accuracyDirection,
             independence: trendDer.independenceDirection,
             fluency: trendDer.fluencyDirection,
-            trendConfidence01: trendDer.trendConfidence01,
+            trendConfidence01: trendDer.trendConfidence01
           }
         : null,
       behaviorType,
-      modeKey: row?.modeKey ?? null,
+      modeKey: row?.modeKey ?? null
     },
     derivedFlags: {
       riskFlags: riskFlagsPayload,
       trendDerived: trendDer,
-      strongKnowledgeGapEvidence,
+      strongKnowledgeGapEvidence
     },
     blockers: guardedBlockers,
     appliedRules: (legacy.recommendationDecisionTrace || []).filter(
@@ -849,15 +849,15 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
       phase2RuleId: afterP2.phase2RuleId,
       stepAfterPhase2: afterP2.step,
       phase7RuleId: afterP7.phase7RuleId,
-      stepAfterPhase7: afterP7.step,
+      stepAfterPhase7: afterP7.step
     },
     postCapAdjustments: [],
-    intelligenceV1: iv1ForStructuredTrace || undefined,
+    intelligenceV1: iv1ForStructuredTrace || undefined
   });
 
   merged.recommendationDecisionTrace = [
     { source: "recommendation", phase: "structured_trace", version: 2, sections: structured },
-    ...(merged.recommendationDecisionTrace || []),
+    ...(merged.recommendationDecisionTrace || [])
   ];
 
   let capped = applyAggressiveEvidenceCap(merged, row, ctx, cfg);
@@ -865,13 +865,13 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     structured.postCapAdjustments.push({
       ruleId: "evidence_sufficiency_cap",
       fromStep: capped.postCapFromStep,
-      toStep: capped.postCapToStep,
+      toStep: capped.postCapToStep
     });
     const softCap = mergePhase7SoftHebrewCopy(
       {
         reasonHe: capped.reasonHe,
         parentHe: capped.parentHe,
-        studentHe: capped.studentHe,
+        studentHe: capped.studentHe
       },
       restraintPayload,
       rootCausePayload
@@ -888,7 +888,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     riskFlags: riskFlagsPayload,
     trendDer,
     behaviorType,
-    legacyRuleId,
+    legacyRuleId
   });
 
   const mistakeIntel = buildMistakeIntelligencePhase9({
@@ -907,7 +907,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     displayName,
     engineConfidenceTier,
     accuracyBand,
-    taxonomyMatch,
+    taxonomyMatch
   });
 
   const engineDiagnosticDecision = buildEngineDiagnosticDecision({
@@ -921,7 +921,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     behaviorType,
     dominantMistakePattern: mistakeIntel.dominantMistakePattern,
     riskFlags: riskFlagsPayload,
-    modeKey: row?.modeKey,
+    modeKey: row?.modeKey
   });
 
   const memoryPhase9 = buildLearningMemoryPhase9({
@@ -933,7 +933,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     wrongRatio,
     conclusionStrength: restraintPayload.conclusionStrength,
     diagnosticRestraintLevel: restraintPayload.diagnosticRestraint?.level,
-    trend,
+    trend
   });
 
   const interventionPhase8 = buildInterventionPlanPhase8({
@@ -951,8 +951,8 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     phase9: {
       dominantMistakePattern: mistakeIntel.dominantMistakePattern,
       learningStage: memoryPhase9.learningStage,
-      retentionRisk: memoryPhase9.retentionRisk,
-    },
+      retentionRisk: memoryPhase9.retentionRisk
+    }
   });
 
   const calibrationPhase8 = buildPracticeCalibration({
@@ -966,7 +966,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     dataSufficiencyLevel: String(row?.dataSufficiencyLevel || ""),
     interventionIntensity: interventionPhase8.interventionIntensity,
     retentionRisk: memoryPhase9.retentionRisk,
-    learningStage: memoryPhase9.learningStage,
+    learningStage: memoryPhase9.learningStage
   });
 
   const phase9Recommendation = buildPhase9RecommendationOverlay({
@@ -976,7 +976,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     transferReadiness: memoryPhase9.transferReadiness,
     rootCause: rootCausePayload.rootCause,
     finalStep: capped.step,
-    riskFlags: riskFlagsPayload,
+    riskFlags: riskFlagsPayload
   });
 
   const phase10Effectiveness = buildInterventionEffectivenessPhase10({
@@ -993,7 +993,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     evidenceStrength: String(row?.evidenceStrength || "low"),
     dataSufficiencyLevel: String(row?.dataSufficiencyLevel || "low"),
     conclusionStrength: restraintPayload.conclusionStrength,
-    displayName,
+    displayName
   });
 
   const phase10Aging = buildConfidenceAgingPhase10({
@@ -1002,7 +1002,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     evidenceStrength: String(row?.evidenceStrength || "low"),
     dataSufficiencyLevel: String(row?.dataSufficiencyLevel || "low"),
     conclusionStrength: restraintPayload.conclusionStrength,
-    retentionRisk: memoryPhase9.retentionRisk,
+    retentionRisk: memoryPhase9.retentionRisk
   });
 
   const phase10Overlay = buildPhase10RecommendationOverlay({
@@ -1014,7 +1014,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     freshnessState: phase10Aging.freshnessState,
     finalStep: capped.step,
     rootCause: rootCausePayload.rootCause,
-    recommendedPracticeMode: phase9Recommendation.recommendedPracticeMode,
+    recommendedPracticeMode: phase9Recommendation.recommendedPracticeMode
   });
 
   const phase11Sequencing = buildSupportSequencingPhase11({
@@ -1034,14 +1034,14 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     mistakeRecurrenceLevel: mistakeIntel.mistakeRecurrenceLevel,
     trendDer,
     trend,
-    displayName,
+    displayName
   });
 
   const phase11Drift = buildAdviceDriftPhase11({
     ...phase11Sequencing,
     rootCause: rootCausePayload.rootCause,
     recommendedInterventionType: phase7Rec.recommendedInterventionType,
-    recommendedPracticeMode: phase9Recommendation.recommendedPracticeMode,
+    recommendedPracticeMode: phase9Recommendation.recommendedPracticeMode
   });
 
   const phase11Overlay = buildPhase11SequenceOverlay({
@@ -1052,7 +1052,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     conclusionFreshness: phase10Aging.conclusionFreshness,
     freshnessState: phase10Aging.freshnessState,
     recalibrationNeed: phase10Aging.recalibrationNeed,
-    displayName,
+    displayName
   });
 
   const phase12Memory = buildRecommendationMemoryPhase12({
@@ -1066,7 +1066,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     recommendedPracticeMode: phase9Recommendation.recommendedPracticeMode,
     interventionFormat: interventionPhase8.interventionFormat,
     responseToIntervention: phase10Effectiveness.responseToIntervention,
-    displayName,
+    displayName
   });
 
   const phase12Outcome = buildOutcomeTrackingPhase12({
@@ -1075,7 +1075,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     independenceProgress: memoryPhase9.independenceProgress,
     mistakeRecurrenceLevel: mistakeIntel.mistakeRecurrenceLevel,
     trendDer,
-    displayName,
+    displayName
   });
 
   const phase12Overlay = buildPhase12ContinuationOverlay({
@@ -1087,7 +1087,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     conclusionFreshness: phase10Aging.conclusionFreshness,
     nextSupportSequenceAction: phase11Overlay.nextSupportSequenceAction,
     supportSequenceState: phase11Sequencing.supportSequenceState,
-    strategyRepetitionRisk: phase11Sequencing.strategyRepetitionRisk,
+    strategyRepetitionRisk: phase11Sequencing.strategyRepetitionRisk
   });
 
   const phase13Gates = buildDecisionGatesPhase13({
@@ -1110,7 +1110,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     transferReadiness: memoryPhase9.transferReadiness,
     trendDer,
     finalStep: capped.step,
-    displayName,
+    displayName
   });
 
   const phase13Targets = buildEvidenceTargetsPhase13({
@@ -1122,7 +1122,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     responseToIntervention: phase10Effectiveness.responseToIntervention,
     mistakeRecurrenceLevel: mistakeIntel.mistakeRecurrenceLevel,
     learningStage: memoryPhase9.learningStage,
-    displayName,
+    displayName
   });
 
   const phase13Overlay = buildPhase13NextCycleOverlay({
@@ -1135,7 +1135,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     conclusionFreshness: phase10Aging.conclusionFreshness,
     recalibrationNeed: phase10Aging.recalibrationNeed,
     expectedVsObservedMatch: phase12Outcome.expectedVsObservedMatch,
-    recommendationMemoryState: phase12Memory.recommendationMemoryState,
+    recommendationMemoryState: phase12Memory.recommendationMemoryState
   });
 
   const phase14Dep = buildFoundationDependencyPhase14({
@@ -1156,14 +1156,14 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     gateReadiness: phase13Gates.gateReadiness,
     gateState: phase13Gates.gateState,
     targetEvidenceType: phase13Targets.targetEvidenceType,
-    displayName,
+    displayName
   });
 
   const phase14Overlay = buildPhase14RecommendationOverlay({
     ...phase13Gates,
     ...phase13Targets,
     ...phase13Overlay,
-    ...phase14Dep,
+    ...phase14Dep
   });
 
   const wnTrim = String(phase7Rec.whyNotAStrongerConclusionHe || "")
@@ -1188,7 +1188,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     dependencyState: phase14Dep.dependencyState,
     likelyFoundationalBlocker: phase14Dep.likelyFoundationalBlocker,
     likelyFoundationalBlockerLabelHe: phase14Dep.likelyFoundationalBlockerLabelHe,
-    whyFoundationFirstHe: phase14Overlay.whyFoundationFirstHe,
+    whyFoundationFirstHe: phase14Overlay.whyFoundationFirstHe
   });
   if (capped.postCapApplied) {
     whyThisRecommendationHe += " A caution rule was kept — no big change while information is still partial.";
@@ -1288,7 +1288,7 @@ export function decideTopicNextStep(row, mistakeEventCount, cfg = DEFAULT_TOPIC_
     engineConfidenceTier,
     accuracyBand,
     taxonomyMatch,
-    engineDiagnosticDecision,
+    engineDiagnosticDecision
   };
 }
 
@@ -1296,9 +1296,7 @@ const MISTAKE_ANALYSIS_KEY = {
   math: "mathMistakesByOperation",
   geometry: "geometryMistakesByTopic",
   english: "englishMistakesByTopic",
-  science: "scienceMistakesByTopic",
-  hebrew: "hebrewMistakesByTopic",
-  "moledet-geography": "moledetGeographyMistakesByTopic",
+  science: "scienceMistakesByTopic"
 };
 
 /**
@@ -1313,7 +1311,7 @@ function intelligenceV1SliceFromRow(row) {
   return {
     weaknessLevel: String(iv.weakness?.level || "none"),
     confidenceBand: String(iv.confidence?.band || "low"),
-    recurrence: !!iv.patterns?.recurrenceFull,
+    recurrence: !!iv.patterns?.recurrenceFull
   };
 }
 
@@ -1352,7 +1350,7 @@ export function buildTopicRecommendationRecord(
       row,
       rawMistakes,
       startMs,
-      endMs,
+      endMs
     });
   }
   const rowAug = { ...row, ...signals, engineConfidenceTier, accuracyBand, taxonomyMatch, subjectId: String(subjectId) };
@@ -1378,7 +1376,7 @@ export function buildTopicRecommendationRecord(
     : [];
   const decisionTrace = [
     ...(Array.isArray(signals.decisionTrace) ? signals.decisionTrace : []),
-    ...recommendationDecisionTrace,
+    ...recommendationDecisionTrace
   ];
 
   let whyThisRecommendationHe = decision.whyThisRecommendationHe || "";
@@ -1407,7 +1405,7 @@ export function buildTopicRecommendationRecord(
         internalGateReadinessBand: String(decision?.gateReadiness || "insufficient"),
         gateState: String(decision?.gateState || "gates_not_ready"),
         dev2ConfidenceLevel: String(decision?.diagnosticConfidenceBand || ""),
-        confidence: String(decision?.diagnosticConfidenceBand || ""),
+        confidence: String(decision?.diagnosticConfidenceBand || "")
       });
   const existingEvidenceContract =
     row?.contractsV1 && row.contractsV1.evidence && typeof row.contractsV1.evidence === "object"
@@ -1422,7 +1420,7 @@ export function buildTopicRecommendationRecord(
       row,
       signals,
       trend: row?.trend || null,
-      behaviorProfile: row?.behaviorProfile || null,
+      behaviorProfile: row?.behaviorProfile || null
     });
   const evidenceValidation = validateEvidenceContractV1(evidenceContract);
   const anchorEvidenceIds = Array.isArray(evidenceContract?.anchorEventIds)
@@ -1442,7 +1440,7 @@ export function buildTopicRecommendationRecord(
     rootCause: decision?.rootCause ?? null,
     retentionRisk: decision?.retentionRisk ?? null,
     evidenceStrength: signals.evidenceStrength,
-    anchorEvidenceIds,
+    anchorEvidenceIds
   });
   const recValidation = validateRecommendationContractV1(recommendationContractV1);
   const recommendationContractV1Checked = recValidation.ok
@@ -1452,7 +1450,7 @@ export function buildTopicRecommendationRecord(
         eligible: false,
         intensity: "RI0",
         family: null,
-        forbiddenBecause: [...(recommendationContractV1.forbiddenBecause || []), ...recValidation.errors],
+        forbiddenBecause: [...(recommendationContractV1.forbiddenBecause || []), ...recValidation.errors]
       };
 
   const recommendationContractV1Normalized = normalizeRecommendationContract(
@@ -1499,7 +1497,7 @@ export function buildTopicRecommendationRecord(
       evidence: evidenceContract,
       evidenceValidation: {
         ok: !!evidenceValidation.ok,
-        errors: Array.isArray(evidenceValidation.errors) ? evidenceValidation.errors : [],
+        errors: Array.isArray(evidenceValidation.errors) ? evidenceValidation.errors : []
       },
       decision: canonicalDecisionReadinessBundle.decision,
       readiness: canonicalDecisionReadinessBundle.readiness,
@@ -1508,8 +1506,8 @@ export function buildTopicRecommendationRecord(
       recommendation: recommendationContractV1Normalized,
       recommendationValidation: {
         ok: !!recValidationNormalized.ok,
-        errors: Array.isArray(recValidationNormalized.errors) ? recValidationNormalized.errors : [],
-      },
+        errors: Array.isArray(recValidationNormalized.errors) ? recValidationNormalized.errors : []
+      }
     },
     // Backward compatibility mirror only (temporary).
     recommendationContractV1: recommendationContractV1Normalized,
@@ -1752,7 +1750,7 @@ export function buildTopicRecommendationRecord(
       decision.engineDiagnosticDecision?.taxonomyMatchStrength ?? decision.taxonomyMatch?.matchStrength ?? null,
     [K_SKILL_FOCUS]: decision.engineDiagnosticDecision?.[K_SKILL_FOCUS] ?? null,
     patternCandidate: decision.engineDiagnosticDecision?.patternCandidate ?? null,
-    interventionActionCandidate: decision.engineDiagnosticDecision?.actionCandidate ?? null,
+    interventionActionCandidate: decision.engineDiagnosticDecision?.actionCandidate ?? null
   };
 
   const contractAppliedRecord = applyRecommendationContractToRecord(
@@ -1764,7 +1762,7 @@ export function buildTopicRecommendationRecord(
     ...contractAppliedRecord,
     topicKey: String(topicRowKey),
     subjectId: String(subjectId),
-    contractsV1: contractAppliedRecord?.contractsV1 ?? {},
+    contractsV1: contractAppliedRecord?.contractsV1 ?? {}
   });
   const narrativeValidation = validateNarrativeContractV1(narrativeContract);
   const withNarrative = applyNarrativeContractToRecord(
@@ -2025,7 +2023,7 @@ export function enrichReportMapsWithTopicStepHints(
         taxonomyMatch: rec.engineDiagnosticDecision?.taxonomyMatch ?? !!rec.taxonomyMatchId,
         [K_SKILL_FOCUS]: rec[K_SKILL_FOCUS] ?? null,
         patternCandidate: rec.patternCandidate ?? null,
-        interventionActionCandidate: rec.interventionActionCandidate ?? null,
+        interventionActionCandidate: rec.interventionActionCandidate ?? null
       };
     }
   }
@@ -2072,7 +2070,7 @@ export function buildTopicRecommendationsForSubject(
       remediate_same_level: 2,
       maintain_and_strengthen: 3,
       advance_level: 4,
-      advance_grade_topic_only: 5,
+      advance_grade_topic_only: 5
     };
     return o[s] ?? 9;
   };

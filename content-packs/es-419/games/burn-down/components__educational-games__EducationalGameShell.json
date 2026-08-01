@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "game_not_found": "Juego no encontrado",
+    "back_to_educational_games": "Volver a juegos educativos",
+    "back": "Atrás",
+    "home": "Inicio"
+  }
+}

@@ -1,8 +1,8 @@
 /**
- * Phase 9 — זיכרון למידה לאורך זמן ברמת שורה (v1).
+ * Phase 9 —       (v1).
  */
 
-import { LEARNING_STAGE_LABEL_HE } from "./parent-report-ui-explain-he.js";
+import { LEARNING_STAGE_LABEL_HE } from "./parent-report-ui-explain.js";
 
 /**
  * @param {object} ctx

@@ -17,7 +17,7 @@ import {
 const WORKSHEETS_HUB_SPLIT_INDEX = 2;
 
 /**
- * @param {{ content: import("../../data/seo/practice-pages").PracticePageContent | import("../../data/seo/worksheets-pages.en.js").WorksheetsPageContent }} props
+ * @param {{ content: import("../../data/seo/practice-pages").PracticePageContent || import("../../data/seo/worksheets-pages.en.js").WorksheetsPageContent }} props
  */
 export default function PracticeSeoLandingPage({ content }) {
   const { isBright } = useStudentTheme();

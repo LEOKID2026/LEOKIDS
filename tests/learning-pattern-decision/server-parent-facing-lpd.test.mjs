@@ -12,8 +12,8 @@ import {
   guardParentFacingText,
   LEGACY_TOPIC_ATTENTION_INSIGHT_DISABLED,
 } from "../../utils/learning-pattern-decision/index.js";
-import { topicAttentionInsightHe } from "../../utils/parent-report-language/parent-report-hebrew-copy-spec.js";
-import { subjectLabelHe, topicLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { topicAttentionInsightHe } from "../../utils/parent-report-language/parent-report-copy-spec.js";
+import { subjectLabel, topicLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
 
 const START = Date.UTC(2026, 3, 1);
 
@@ -114,7 +114,7 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
 {
   const row = {
     subjectId: "math",
-    subjectLabelHe: "מתמטיקה",
+    subjectLabel: "מתמטיקה",
     label: "חיבור",
     topicKey: "addition",
     questions: 2,
@@ -166,7 +166,7 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
       payload,
       { subject: "math", topicKey, answers: 8, accuracy: 40 },
       topicLabelHe,
-      subjectLabelHe,
+      subjectLabel,
     );
     assert.ok(line.length > 0, `expected a non-empty insight line for topic "${topicKey}"`);
     assert.ok(

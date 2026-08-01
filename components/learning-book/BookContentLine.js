@@ -1,4 +1,4 @@
-import MixedHebrewMathText from "./MixedHebrewMathText";
+import MixedRtlMathText from "./MixedRtlMathText";
 import BookExampleTitleLine from "./BookExampleTitleLine";
 import BookPlaceValueEquation from "./BookPlaceValueEquation";
 import BookVerticalArithmetic from "./BookVerticalArithmetic";
@@ -6,7 +6,7 @@ import { classifyBookLine } from "../../lib/learning-book/book-line-classifier";
 import { canonicalizePlaceValueDecomposition } from "../../lib/learning-book/place-value-equation-order";
 
 /**
- * Book-only line dispatcher. Unrecognized lines fall back to MixedHebrewMathText unchanged.
+ * Book-only line dispatcher. Unrecognized lines fall back to MixedRtlMathText unchanged.
  * @param {{ text: string, context?: 'prose'|'diagram'|'diagram_block' }} props
  */
 export default function BookContentLine({ text, context = "prose" }) {
@@ -23,5 +23,5 @@ export default function BookContentLine({ text, context = "prose" }) {
     return <BookVerticalArithmetic content={normalized} />;
   }
 
-  return <MixedHebrewMathText text={normalized} diagramLayout={context === "diagram"} />;
+  return <MixedRtlMathText text={normalized} diagramLayout={context === "diagram"} />;
 }

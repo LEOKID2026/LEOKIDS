@@ -47,14 +47,14 @@ test("resolveInterfaceLocale priority: URL beats profile, cookie, Accept-Languag
 test("resolveInterfaceLocale: disabled locale prefix resolves via registry fallback to en", () => {
   assert.equal(
     resolveInterfaceLocale({
-      asPath: "/es/about",
+      asPath: "/fr/about",
       profileInterfaceLocale: "en-XA",
     }),
     "en"
   );
   assert.equal(
     resolveInterfaceLocale({
-      asPath: "/es/about",
+      asPath: "/fr/about",
       cookieHeader: cookieAr,
     }),
     "en"
@@ -84,7 +84,9 @@ test("resolveInterfaceLocale: Hebrew path segment is not treated as locale", () 
 
 test("resolveContentLocale: explicit content locale and english subject shortcut", () => {
   assert.equal(resolveContentLocale({ contentLocale: "en-XA" }), "en-XA");
-  assert.equal(resolveContentLocale({ contentLocale: "he-IL" }), "he");
+  // Unknown / unregistered (including he*) resolve to en via registry
+  assert.equal(resolveContentLocale({ contentLocale: "he-IL" }), "en");
+  assert.equal(resolveContentLocale({ contentLocale: "he" }), "en");
   assert.equal(resolveContentLocale({ subject: "english" }), "en");
   assert.equal(resolveContentLocale({ interfaceLocale: "ar-XB" }), "en");
   assert.equal(resolveContentLocale({ interfaceLocale: "en-XA" }), "en");
@@ -104,6 +106,17 @@ test("resolveReportLocale: explicit report locale wins, else interface chain wit
 
 test("getLocaleFallbackChain uses registry configured fallback", () => {
   assert.deepEqual(getLocaleFallbackChain("en-XA"), ["en-XA", "en"]);
-  assert.deepEqual(getLocaleFallbackChain("ar-XB"), ["ar-XB", "ar", "en"]);
+  assert.deepEqual(getLocaleFallbackChain("ar-XB"), ["ar-XB", "en"]);
   assert.deepEqual(getLocaleFallbackChain("en"), ["en"]);
+  assert.deepEqual(getLocaleFallbackChain("es-419"), ["es-419", "en"]);
+});
+
+test("resolveInterfaceLocale: es-419 URL prefix is active", () => {
+  assert.equal(
+    resolveInterfaceLocale({
+      asPath: "/es-419/parent/dashboard",
+      acceptLanguage: "en",
+    }),
+    "es-419"
+  );
 });

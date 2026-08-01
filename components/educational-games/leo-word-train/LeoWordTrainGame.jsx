@@ -55,7 +55,7 @@ export default function LeoWordTrainGame({
   const [taskIndex, setTaskIndex] = useState(0);
   const [fills, setFills] = useState(/** @type {Record<string, string>} */ ({}));
   const [pieceToCarriage, setPieceToCarriage] = useState(/** @type {Record<string, string>} */ ({}));
-  const [selectedPiece, setSelectedPiece] = useState(/** @type {string | null} */ (null));
+  const [selectedPiece, setSelectedPiece] = useState(/** @type {string || null} */ (null));
   const [score, setScore] = useState(0);
   const [mistakes, setMistakes] = useState(0);
   const [successCount, setSuccessCount] = useState(0);

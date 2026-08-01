@@ -6,7 +6,7 @@ import {
   splitTextAndMathRuns,
   findInlineMathRuns,
 } from "../../lib/learning-book/book-math-display.js";
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 import {
   analyzeBidiRenderStructure,
   assertBidiMathOrder,

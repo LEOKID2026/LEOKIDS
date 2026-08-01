@@ -42,7 +42,7 @@ import {
   buildHebrewApprovedVerbalMcqGridClassName,
   getHebrewApprovedSingleVerbalQuestionStyle,
   HEBREW_APPROVED_VERBAL_ANSWER_AREA_CLASS,
-} from "../../utils/hebrew-approved-verbal-master-contract.client.js";
+} from "../../utils/approved-verbal-master-contract.client.js";
 import EnglishPhonicsAudioPanel from "../../components/EnglishPhonicsAudioPanel";
 import { validateAudioStem } from "../../utils/audio-task-contract";
 import { isLowerGradeG1G2Key } from "../../utils/lower-grade-practice-runtime-quality";
@@ -99,9 +99,7 @@ import {
 import { computeFreePracticeTiming } from "../../lib/learning/timing-policy.js";
 import TrackingDebugPanel from "../../components/TrackingDebugPanel";
 import LearningPlannerRecommendationBlock from "../../components/LearningPlannerRecommendationBlock";
-import {
-  WORD_LISTS,
-} from "../../data/english-questions";
+import { getLocalizedWordEntries } from "../../data/english-questions/word-meanings-locale.js";
 import {
   ENGLISH_LEVELS as LEVELS,
   ENGLISH_TOPICS as TOPICS,
@@ -220,8 +218,7 @@ const AVATAR_OPTIONS = [
   "🎮",
   "🏆",
   "⭐",
-  "💫",
-];
+  "💫"];
 
 const REFERENCE_CATEGORIES = {
   colors: { label: "Colors", lists: ["colors"] },
@@ -494,7 +491,7 @@ export default function EnglishMaster() {
   });
   const [showDailyChallenge, setShowDailyChallenge] = useState(false);
 
-  // הסבר מפורט לשאלה
+  //   
   const [showSolution, setShowSolution] = useState(false);
   const [showPreviousSolution, setShowPreviousSolution] = useState(false);
   const {
@@ -511,7 +508,7 @@ export default function EnglishMaster() {
   const bookContextRef = useRef(null);
   const bookContextConsumedRef = useRef(false);
 
-  // הסבר לטעות אחרונה
+  //   
   const [errorExplanation, setErrorExplanation] = useState("");
 
   const [showMixedSelector, setShowMixedSelector] = useState(false);
@@ -623,8 +620,7 @@ export default function EnglishMaster() {
       typedAnswer,
       feedback,
       questionStartTime,
-      router,
-    ]
+      router]
   );
 
   const applyBookPracticePreset = useCallback((preset) => {
@@ -776,8 +772,7 @@ export default function EnglishMaster() {
           profile.row.profile,
           setPlayerAvatar,
           setPlayerAvatarImage,
-          setPlayerAvatarBackground,
-        );
+          setPlayerAvatarBackground);
         learningProfileHydratedRef.current = true;
         try {
           const pr = profile.row.subjects?.english?.progressStore?.progress;
@@ -840,8 +835,7 @@ export default function EnglishMaster() {
     weeklyChallenge,
     dailyStreak,
     playerAvatar,
-    playerAvatarImage,
-  ]);
+    playerAvatarImage]);
 
   useEffect(() => {
     const idx = GRADE_ORDER.indexOf(grade);
@@ -854,7 +848,7 @@ export default function EnglishMaster() {
     refreshMonthlyPersistenceView();
   }, [refreshMonthlyPersistenceView]);
 
-  // טעינת תמונת אווטר מ-localStorage
+  //    -localStorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       try {
@@ -869,7 +863,7 @@ export default function EnglishMaster() {
     }
   }, []);
 
-  // טיפול בהעלאת תמונת אווטר (דחיסה + שמירה בפרופיל — סנכרון בין מכשירים)
+  //     ( +   —   )
   const handleAvatarImageUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -903,7 +897,7 @@ export default function EnglishMaster() {
     e.target.value = "";
   };
 
-  // טיפול במחיקת תמונת אווטר
+  //    
   const handleRemoveAvatarImage = () => {
     void (async () => {
       const defaultAvatar = "👤";
@@ -1208,7 +1202,7 @@ export default function EnglishMaster() {
       : questionFingerprint || `english-${Date.now()}`;
     const expectedValue =
       Array.isArray(question?.acceptedAnswers) && question.acceptedAnswers.length > 0
-        ? question.acceptedAnswers.join(" | ")
+        ? question.acceptedAnswers.join(" || ")
         : question?.correctAnswer != null
           ? String(question.correctAnswer)
           : null;
@@ -1618,6 +1612,9 @@ export default function EnglishMaster() {
           probeMetaHolder,
           forceKind: practiceForceKindRef.current,
           forceSkillId: practiceForceSkillIdRef.current,
+          interfaceLocale: ms.locale,
+          instructionLocale: ms.locale,
+          contentLocale: "en",
         }
       );
       attempts++;
@@ -2389,8 +2386,7 @@ export default function EnglishMaster() {
       playerAvatar,
       playerAvatarImage,
       dailyChallenge,
-      weeklyChallenge,
-    ]
+      weeklyChallenge]
   );
 
   useEffect(() => {
@@ -2404,8 +2400,7 @@ export default function EnglishMaster() {
     { open: showReferenceModal, close: () => setShowReferenceModal(false) },
     { open: showHowTo, close: () => setShowHowTo(false) },
     { open: showLeaderboard, close: () => setShowLeaderboard(false) },
-    { open: showMixedSelector, close: () => setShowMixedSelector(false) },
-  ]);
+    { open: showMixedSelector, close: () => setShowMixedSelector(false) }]);
 
 
 
@@ -2428,15 +2423,17 @@ export default function EnglishMaster() {
   );
   const weeklyPercent = Math.round(weeklyProgress * 100);
   const referenceData =
-    REFERENCE_CATEGORIES[referenceCategory] ||
+    REFERENCE_CATEGORIES[referenceCategory] |
     REFERENCE_CATEGORIES[REFERENCE_CATEGORY_KEYS[0]];
-  const referenceEntries = referenceData.lists.flatMap((listKey) =>
-    Object.entries(WORD_LISTS[listKey] || {})
+  // Word board: English learning word || meaning in instructionLocale (never Hebrew on Global).
+  // Legacy UI used en|he; meaning now follows interface/instruction locale (es-419 → Español).
+  const referenceEntries = Object.entries(
+    getLocalizedWordEntries(referenceData.lists, ms.locale)
   );
 
   const hasEnglishAudio =
     gameActive &&
-    (currentQuestion?.topic === "phonics" ||
+    (currentQuestion?.topic === "phonics" |
       (currentQuestion?.topic === "vocabulary" && isLowerGradeG1G2Key(grade))) &&
     currentQuestion?.params?.audioStem &&
     validateAudioStem(currentQuestion.params.audioStem);
@@ -2449,8 +2446,7 @@ export default function EnglishMaster() {
         questionParts: [
           currentQuestion.question,
           currentQuestion.questionLabel,
-          currentQuestion.exerciseText,
-        ],
+          currentQuestion.exerciseText],
         answers: currentQuestion.answers ?? [],
       })
     : null;
@@ -2614,7 +2610,7 @@ export default function EnglishMaster() {
                 <div
                   data-testid="english-player-name"
                   className={MB.preGamePlayerBadge}
-                  dir={playerName && /[\u0590-\u05FF]/.test(playerName) ? "rtl" : "ltr"}
+                  dir={playerName && /(?!)/.test(playerName) ? "rtl" : "ltr"}
                   title={playerName.trim() ? playerName.trim() : undefined}
                   aria-label={playerName.trim() ? ms.t("learning.master.childNameAria", { name: playerName.trim() }) : ms.childNameUnavailable}
                 >
@@ -2819,8 +2815,8 @@ export default function EnglishMaster() {
                         {feedback && (
                           <div
                             className={`px-4 py-2 rounded-lg text-sm font-semibold text-center ${
-                              feedback.includes("Correct") ||
-                              feedback.includes("∞") ||
+                              feedback.includes("Correct") |
+                              feedback.includes("∞") |
                               feedback.includes("Start")
                                 ? MB.feedbackOk
                                 : MB.feedbackBad
@@ -2953,7 +2949,7 @@ export default function EnglishMaster() {
                                 type="button"
                                 onClick={handleEnglishPrimaryAnswerButtonClick}
                                 disabled={
-                                  !gameActive ||
+                                  !gameActive |
                                   (primaryBtn.action === "check" && primaryBtn.disabled)
                                 }
                                 className={
@@ -3372,15 +3368,17 @@ export default function EnglishMaster() {
                   ))}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2" dir="ltr">
-                  {referenceEntries.map(([en, he]) => (
+                  {referenceEntries.map(([en, meaning]) => (
                     <div
-                      key={`${referenceCategory}-${en}-${he}`}
+                      key={`${referenceCategory}-${en}-${meaning}`}
                       className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 flex items-center justify-between text-sm"
                     >
-                      <span className="font-semibold">{en}</span>
+                      <span className="font-semibold" dir="ltr" lang="en">
+                        {en}
+                      </span>
                       <span className="text-white/50 mx-2">|</span>
-                      <span className="text-start" dir={ms.direction}>
-                        {he}
+                      <span className="text-start" dir={ms.direction} lang={ms.locale}>
+                        {meaning}
                       </span>
                     </div>
                   ))}
@@ -3421,8 +3419,7 @@ export default function EnglishMaster() {
                   {[
                     { value: "normal", label: ms.t("learning.master.defaultMode") },
                     { value: "mistakes", label: ms.t("learning.master.repeatRecentMistakes") },
-                    { value: "graded", label: ms.t("learning.master.gradedPracticeLabel") },
-                  ].map((opt) => (
+                    { value: "graded", label: ms.t("learning.master.gradedPracticeLabel") }].map((opt) => (
                     <label key={opt.value} className="flex items-center gap-2 text-sm">
                       <input
                         type="radio"
@@ -3662,8 +3659,8 @@ export default function EnglishMaster() {
                       <div className="text-sm text-white/60 mb-2">{ms.topicProgress}</div>
                       <div className="space-y-2 max-h-[200px] overflow-y-auto">
                         {Object.entries(progress)
-                          .filter(([, data]) => (data?.total || 0) > 0)
-                          .sort(([, a], [, b]) => (b?.total || 0) - (a?.total || 0))
+                          .filter(([ data]) => (data?.total || 0) > 0)
+                          .sort(([ a], [ b]) => (b?.total || 0) - (a?.total || 0))
                           .map(([topicKey, data]) => {
                             const topicAccuracy =
                               data.total > 0 ? Math.round((data.correct / data.total) * 100) : 0;

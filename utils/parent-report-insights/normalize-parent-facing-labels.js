@@ -12,10 +12,8 @@ const SUBJECT_LABEL_HE = Object.freeze({
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  hebrew: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "hebrew"),
-  science: "Science",
-  moledet_geography: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "homeland_geography"),
-});
+  
+  science: "Science"});
 
 const MATH_OPERATION_NAMES_HE = Object.freeze({
   addition: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "addition"),
@@ -42,8 +40,7 @@ const MATH_OPERATION_NAMES_HE = Object.freeze({
   factors_multiples: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "factors_and_multiples"),
   word_problems: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "word_problems"),
   multiplication_table: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "multiplication_table"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice"),
-});
+  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
 
 const GEOMETRY_TOPIC_NAMES_HE = Object.freeze({
   shapes_basic: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "basic_shapes"),
@@ -64,8 +61,7 @@ const GEOMETRY_TOPIC_NAMES_HE = Object.freeze({
   circles: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "circles"),
   solids: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "solid_shapes"),
   pythagoras: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "pythagorean_theorem"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice"),
-});
+  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
 
 const ENGLISH_TOPIC_NAMES_HE = Object.freeze({
   vocabulary: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "vocabulary"),
@@ -78,8 +74,7 @@ const ENGLISH_TOPIC_NAMES_HE = Object.freeze({
   reading_comprehension: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "reading_comprehension"),
   matching: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "matching"),
   inference: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "inference"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice"),
-});
+  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
 
 const SCIENCE_TOPIC_NAMES_HE = Object.freeze({
   body: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "human_body"),
@@ -89,8 +84,7 @@ const SCIENCE_TOPIC_NAMES_HE = Object.freeze({
   earth_space: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "earth_and_space"),
   environment: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "environment_and_ecology"),
   experiments: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "experiments_and_processes"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_topics"),
-});
+  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_topics")});
 
 const HEBREW_TOPIC_NAMES_HE = Object.freeze({
   reading: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "reading"),
@@ -103,8 +97,7 @@ const HEBREW_TOPIC_NAMES_HE = Object.freeze({
   mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice"),
   main_idea: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "main_idea"),
   sequence: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "sequence"),
-  inference: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "inference"),
-});
+  inference: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "inference")});
 
 const MOLEDET_GEOGRAPHY_TOPIC_NAMES_HE = Object.freeze({
   homeland: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "homeland"),
@@ -117,8 +110,7 @@ const MOLEDET_GEOGRAPHY_TOPIC_NAMES_HE = Object.freeze({
   map_reading: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "map_reading"),
   directions: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "directions"),
   places: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "places"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice"),
-});
+  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
 
 const RAW_KEY_RE = /^[a-z][a-z0-9_]*$/i;
 
@@ -150,10 +142,8 @@ export function getTopicDisplayNameHe(subjectKey, topicKey) {
       return ENGLISH_TOPIC_NAMES_HE[tk] || "";
     case "science":
       return SCIENCE_TOPIC_NAMES_HE[tk] || "";
-    case "hebrew":
-      return HEBREW_TOPIC_NAMES_HE[tk] || "";
-    case "moledet_geography":
-      return MOLEDET_GEOGRAPHY_TOPIC_NAMES_HE[tk] || "";
+    
+    
     default:
       return "";
   }

@@ -1,15 +1,5 @@
 {
   "copy": {
-    "subject_history": "History",
-    "subject_hebrew": "Hebrew",
-    "subject_moledet_geography": "Homeland & Geography",
-    "subject_moledet": "Homeland Studies",
-    "subject_geography": "Geography",
-    "history": "History",
-    "hebrew": "Hebrew",
-    "homeland_geography": "Homeland & Geography",
-    "homeland_studies": "Homeland Studies",
-    "geography": "Geography",
     "your_child_is_doing_well_on_this_topic_over_time": "Your child is doing well on this topic over time",
     "what_your_child_is_doing_well_in_practice": "What your child is doing well in practice",
     "only_an_initial_sign_still_too_early_for_an_unequivocal_conclusion": "Only an early sign — it is still too early for a firm conclusion.",

@@ -15,8 +15,8 @@ export function MathPlainRenderer({ question }) {
     Boolean(math) &&
     Boolean(stem) &&
     math !== stem &&
-    /שארית/.test(stem) &&
-    !/שארית/.test(math);
+    /(?!)/.test(stem) &&
+    !/(?!)/.test(math);
 
   if (remainderSplit) {
     return (

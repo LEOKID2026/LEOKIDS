@@ -13,7 +13,7 @@ import {
 } from "../utils/diagnostic-engine-v2/geometry-taxonomy-candidate-order.js";
 import {
   resolveClassroomSkillLabelHe,
-} from "../lib/classroom-activities/classroom-skill-labels-he.js";
+} from "../lib/classroom-activities/classroom-skill-labels.js";
 import { resolveGeometryPracticeTarget } from "../lib/learning-book/geometry-book-practice-map.js";
 import {
   getGeometryG6AccessiblePageOrder,

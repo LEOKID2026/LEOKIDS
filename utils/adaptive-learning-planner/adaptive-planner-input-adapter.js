@@ -41,8 +41,8 @@ export function mapRecommendedNextStepToEngineDecision(step) {
   if (s === "advance_level" || s === "advance_grade_topic_only") return "advance";
   if (s === "maintain_and_strengthen") return "maintain";
   if (
-    s === "remediate_same_level" ||
-    s === "drop_one_level_topic_only" ||
+    s === "remediate_same_level" |
+    s === "drop_one_level_topic_only" |
     s === "drop_one_grade_topic_only"
   ) {
     return "remediate";
@@ -128,7 +128,7 @@ export function extractDoNotConcludeFromFacets(facets) {
   }
   const exec = facets?.executive || {};
   const rr = String(exec.reportReadinessHe || "").trim();
-  if (rr && rr.length > 10 && /מצומצם|עדיין|צריך עוד/i.test(rr)) {
+  if (rr && rr.length > 10 && /(?!)/i.test(rr)) {
     out.push("Report readiness: window practice may still be limited.");
   }
   return [...new Set(out)];
@@ -216,7 +216,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
     skillAlignmentConfidence: unit?.skillAlignmentConfidence ?? null,
     skillAlignmentSource: unit?.skillAlignmentSource ?? null,
     skillAlignmentWarnings: Array.isArray(unit?.skillAlignmentWarnings) ? unit.skillAlignmentWarnings : [],
-    metadataResolution: /** @type {Record<string, unknown>|null} */ (null),
+    metadataResolution: /** @type {Record<string, unknown>|null} */ (null)
   };
 
   if (!unit) {
@@ -235,7 +235,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
       recentAttempts: [],
       availableQuestionMetadata: Array.isArray(options.availableQuestionMetadata)
         ? options.availableQuestionMetadata
-        : [],
+        : []
     };
     if (!input.availableQuestionMetadata.length) warnings.push("availableQuestionMetadata_missing");
     return { input, warnings, missingFields, sourceInfo };
@@ -249,7 +249,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
   const dataQuality = inferDataQuality({
     topThinDowngraded: topThin,
     evidenceQuestions: evidenceQ,
-    dataQualityNoteHe: cross.dataQualityNoteHe,
+    dataQualityNoteHe: cross.dataQualityNoteHe
   });
   const mastery = mapPositiveAuthorityToMastery(unit.positiveAuthorityLevel);
   const confidence = inferConfidenceNumeric({ evidenceQuestions: evidenceQ, topThinDowngraded: topThin });
@@ -268,10 +268,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
     "english",
     "geometry",
     "math",
-    "hebrew",
-    "science",
-    "moledet-geography",
-  ]);
+    "science"]);
   if (
     plannerAlignmentSubjects.has(subject.toLowerCase()) &&
     (!skillFromUnit || !subFromUnit) &&
@@ -285,7 +282,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
         scenarioId,
         metadataIndex: options.metadataIndex,
         topicBucketKeys,
-        allowEnglishSkillRouting: subject.toLowerCase() === "english",
+        allowEnglishSkillRouting: subject.toLowerCase() === "english"
       }
     );
     if (
@@ -331,7 +328,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
         difficulty: difficultyHint,
         detectedErrorTypes,
         limit: metaLimit,
-        allowSubjectFallback,
+        allowSubjectFallback
       });
       if (Array.isArray(custom) && custom.length) {
         availableQuestionMetadata = custom;
@@ -340,7 +337,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
           candidateCount: custom.length,
           subjectFallback: false,
           skillOnlyFallback: false,
-          warnings: [],
+          warnings: []
         };
       }
     } else if (options.metadataIndex && typeof options.metadataIndex === "object") {
@@ -351,7 +348,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
         difficulty: difficultyHint,
         detectedErrorTypes,
         limit: metaLimit,
-        allowSubjectFallback,
+        allowSubjectFallback
       });
       for (const w of res.warnings || []) warnings.push(w);
       if (res.candidates?.length) {
@@ -362,7 +359,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
         candidateCount: res.candidates?.length || 0,
         subjectFallback: !!res.subjectFallback,
         skillOnlyFallback: !!res.skillOnlyFallback,
-        warnings: res.warnings || [],
+        warnings: res.warnings || []
       };
     }
   } else if (hasExplicitMetadata) {
@@ -371,7 +368,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
       candidateCount: availableQuestionMetadata.length,
       subjectFallback: false,
       skillOnlyFallback: false,
-      warnings: [],
+      warnings: []
     };
   }
 
@@ -395,7 +392,7 @@ export function buildPlannerInputFromDiagnosticPayload(root, options = {}) {
     availableQuestionMetadata,
     skillTaggingIncomplete,
     currentDifficultyHint: String(options.currentDifficultyHint || "standard"),
-    prerequisiteSubskillIdHint: options.prerequisiteSubskillIdHint,
+    prerequisiteSubskillIdHint: options.prerequisiteSubskillIdHint
   };
 
   return { input, warnings, missingFields, sourceInfo };

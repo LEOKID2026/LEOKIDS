@@ -3,7 +3,7 @@
  */
 import assert from "node:assert/strict";
 import * as _RC from "../utils/parent-report-recommendation-consistency.js";
-import * as _CH from "../utils/parent-report-language/confidence-parent-he.js";
+import * as _CH from "../utils/parent-report-language/confidence-parent.js";
 import * as _EL from "../utils/ai-hybrid-diagnostic/explanation-layer.js";
 
 const resolveUnitParentActionHe = _RC.resolveUnitParentActionHe || _RC.default?.resolveUnitParentActionHe;

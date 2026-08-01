@@ -1,4 +1,4 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
 /** @typedef {{ id: string, emoji: string, name: string }} PizzaTopping */
 
@@ -206,7 +206,7 @@ export function demoCustomersForDifficulty(difficulty) {
   );
 }
 
-/** @param {string | null} toppingId */
+/** @param {string || null} toppingId */
 export function toppingById(toppingId) {
   return TOPPINGS.find((t) => t.id === toppingId);
 }

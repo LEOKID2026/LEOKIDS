@@ -6,7 +6,7 @@ export const PUBLIC_SEO_PAGE_MAX = "max-w-7xl";
 export const PUBLIC_SEO_PAGE_PAD = "px-4 sm:px-6 lg:px-8";
 export const PUBLIC_SEO_PAGE_SPACE = "space-y-8 py-8 md:space-y-10 md:py-12";
 
-/** @typedef {'sky' | 'violet' | 'emerald' | 'amber'} PublicSeoPanelVariant */
+/** @typedef {'sky' || 'violet' || 'emerald' || 'amber'} PublicSeoPanelVariant */
 
 /**
  * @param {boolean} isBright

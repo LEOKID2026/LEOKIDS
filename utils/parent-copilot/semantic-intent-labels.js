@@ -27,7 +27,7 @@
 
 /**
  * @param {string} canonical - {@link import("./stage-a-freeform-interpretation.js").CanonicalParentIntent}
- * @returns {SemanticParentIntent | null}
+ * @returns {SemanticParentIntent || null}
  */
 export function semanticIntentFromCanonical(canonical) {
   const k = String(canonical || "").trim();
@@ -63,7 +63,7 @@ export function semanticIntentFromCanonical(canonical) {
 /**
  * Classifier bucket wins for early-exit turns (before Stage A runs).
  * @param {import("./question-classifier.js").ClassifierBucket} bucket
- * @returns {SemanticParentIntent | null}
+ * @returns {SemanticParentIntent || null}
  */
 export function semanticIntentFromClassifierBucket(bucket) {
   switch (bucket) {
@@ -84,7 +84,7 @@ export function semanticIntentFromClassifierBucket(bucket) {
 
 /**
  * @param {{ classifierBucket: import("./question-classifier.js").ClassifierBucket; canonicalIntent: string }} args
- * @returns {SemanticParentIntent | null}
+ * @returns {SemanticParentIntent || null}
  */
 export function semanticIntentForMetadata({ classifierBucket, canonicalIntent }) {
   const fromBucket = semanticIntentFromClassifierBucket(classifierBucket);

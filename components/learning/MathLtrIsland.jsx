@@ -1,4 +1,4 @@
-import { learningMathIsolateStyle } from "../../utils/learning-mixed-hebrew-math-render";
+import { learningMathIsolateStyle } from "../../utils/learning-mixed-rtl-math-render";
 
 const mathLtrIslandStyle = Object.freeze({
   ...learningMathIsolateStyle,

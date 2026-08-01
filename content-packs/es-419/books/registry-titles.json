@@ -1,0 +1,391 @@
+{
+  "batches": {
+    "english.g1": {
+      "phonics-a": {
+        "title": "Letras mayúsculas A–Z y más"
+      },
+      "phonics-b": {
+        "title": "Sonidos de las letras y más"
+      },
+      "phonics-c": {
+        "title": "Palabras del aula y más"
+      },
+      "phonics-d": {
+        "title": "Imagen y palabra y más"
+      }
+    },
+    "english.g2": {
+      "phonics-review": {
+        "title": "Repaso: letras y nombres y más"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "a": {
+        "title": "Conociendo el cuadrado y más"
+      },
+      "b": {
+        "title": "Traslación y reflexión — introducción"
+      }
+    },
+    "geometry.g2": {
+      "a": {
+        "title": "Sólidos tridimensionales — nombres e introducción"
+      },
+      "b": {
+        "title": "Área de un cuadrado"
+      },
+      "c": {
+        "title": "Traslación y reflexión — más práctica"
+      }
+    },
+    "geometry.g3": {
+      "a": {
+        "title": "Tipos de triángulos y más"
+      },
+      "b": {
+        "title": "Rectas paralelas y perpendiculares"
+      },
+      "c": {
+        "title": "Área de un cuadrado y más"
+      },
+      "d": {
+        "title": "Ángulos en un triángulo"
+      },
+      "e": {
+        "title": "Rotación en el plano y más"
+      }
+    },
+    "geometry.g4": {
+      "a": {
+        "title": "Propiedades de un cuadrado y más"
+      },
+      "b": {
+        "title": "Cuadriláteros y más"
+      },
+      "c": {
+        "title": "Perímetro de un cuadrado y más"
+      },
+      "d": {
+        "title": "Diagonal de un cuadrado y más"
+      },
+      "e": {
+        "title": "Sólidos y más"
+      }
+    },
+    "geometry.g5": {
+      "a": {
+        "title": "Rectas paralelas y perpendiculares y más"
+      },
+      "b": {
+        "title": "Perímetro de un cuadrado y más"
+      },
+      "c": {
+        "title": "Altura de un triángulo y más"
+      },
+      "d": {
+        "title": "Área de un cuadrado y más"
+      },
+      "e": {
+        "title": "Diagonal de un cuadrado y más"
+      },
+      "f": {
+        "title": "Sólidos tridimensionales y más"
+      },
+      "g": {
+        "title": "Embaldosar un plano"
+      }
+    },
+    "geometry.g6": {
+      "a": {
+        "title": "Perímetro de un cuadrado y más"
+      },
+      "b": {
+        "title": "Circunferencia de un círculo y más"
+      },
+      "c": {
+        "title": "Teorema de Pitágoras y más"
+      },
+      "d": {
+        "title": "Sólidos y más"
+      },
+      "e": {
+        "title": "Volumen de un prisma y más"
+      },
+      "f": {
+        "title": "Volumen de una pirámide y más"
+      },
+      "g": {
+        "title": "Volumen de un cilindro y más"
+      }
+    },
+    "math.g1": {
+      "a": {
+        "title": "Contar hacia adelante en la recta numérica y más"
+      },
+      "b": {
+        "title": "Decenas y unidades y más"
+      },
+      "c": {
+        "title": "Sumar dos números y más"
+      },
+      "d": {
+        "title": "Problemas verbales y más"
+      }
+    },
+    "math.g2": {
+      "a": {
+        "title": "Centenas, decenas y unidades y más"
+      },
+      "b": {
+        "title": "Sumar dos números y más"
+      },
+      "c": {
+        "title": "¿Cuándo se divide un número entre 2, 5 y 10? y más"
+      },
+      "d": {
+        "title": "Problemas verbales y más"
+      }
+    },
+    "math.g3": {
+      "a": {
+        "title": "Centenas, decenas y unidades y más"
+      },
+      "b": {
+        "title": "Sumar dos números y más"
+      },
+      "c": {
+        "title": "Fracciones — ¿qué son y cómo las comparamos?"
+      },
+      "d": {
+        "title": "Ecuación de suma y más"
+      },
+      "e": {
+        "title": "Problemas verbales y más"
+      }
+    },
+    "math.g4": {
+      "a": {
+        "title": "Valor posicional y más"
+      },
+      "b": {
+        "title": "Sumar con 0 y más"
+      },
+      "c": {
+        "title": "Sumar dos números y más"
+      },
+      "d": {
+        "title": "División y más"
+      },
+      "e": {
+        "title": "Sumar decimales y más"
+      },
+      "f": {
+        "title": "Potencias y más"
+      },
+      "g": {
+        "title": "Problemas verbales y más"
+      }
+    },
+    "math.g5": {
+      "a": {
+        "title": "Valor posicional y más"
+      },
+      "b": {
+        "title": "Sumar dos números y más"
+      },
+      "c": {
+        "title": "División y más"
+      },
+      "d": {
+        "title": "Simplificar fracciones y más"
+      },
+      "e": {
+        "title": "Sumar decimales y más"
+      },
+      "f": {
+        "title": "Factores de un número y más"
+      },
+      "g": {
+        "title": "Porcentaje de una cantidad y más"
+      },
+      "h": {
+        "title": "Problemas verbales y más"
+      }
+    },
+    "math.g6": {
+      "a": {
+        "title": "Valor posicional y más"
+      },
+      "b": {
+        "title": "Sumar dos números y más"
+      },
+      "c": {
+        "title": "Factores de un número y más"
+      },
+      "d": {
+        "title": "Ecuación de suma y más"
+      },
+      "e": {
+        "title": "Sumar números decimales y más"
+      },
+      "f": {
+        "title": "A Fraction as División y más"
+      },
+      "g": {
+        "title": "Razones y más"
+      },
+      "h": {
+        "title": "Porcentaje de una cantidad y más"
+      },
+      "i": {
+        "title": "Problemas verbales y más"
+      }
+    },
+    "science.g1": {
+      "a": {
+        "title": "El cuerpo humano y más"
+      },
+      "b": {
+        "title": "Materiales y más"
+      }
+    },
+    "science.g2": {
+      "a": {
+        "title": "El cuerpo humano y más"
+      },
+      "b": {
+        "title": "Materiales y más"
+      },
+      "c": {
+        "title": "Observación e investigación"
+      }
+    },
+    "science.g3": {
+      "a": {
+        "title": "El cuerpo humano y más"
+      },
+      "b": {
+        "title": "Materiales y más"
+      },
+      "c": {
+        "title": "Un experimento científico corto"
+      }
+    },
+    "science.g4": {
+      "a": {
+        "title": "El cuerpo humano y más"
+      },
+      "b": {
+        "title": "Materiales y más"
+      },
+      "c": {
+        "title": "Planificar un experimento"
+      }
+    },
+    "science.g5": {
+      "b": {
+        "title": "Materiales y más"
+      },
+      "a": {
+        "title": "El cuerpo humano y más"
+      },
+      "c": {
+        "title": "Investigación completa — documentación"
+      }
+    },
+    "science.g6": {
+      "b": {
+        "title": "Materiales y más"
+      },
+      "a": {
+        "title": "El cuerpo humano y más"
+      },
+      "c": {
+        "title": "Proyecto de ciencias"
+      }
+    },
+    "placeholder": {
+      "comingSoon": {
+        "title": "Próximamente"
+      }
+    }
+  },
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglés — Grado 1"
+    },
+    "english.g2": {
+      "bookTitle": "Inglés — Grado 2"
+    },
+    "english.g3": {
+      "bookTitle": "Inglés — Grado 3"
+    },
+    "english.g4": {
+      "bookTitle": "Inglés — Grado 4"
+    },
+    "english.g5": {
+      "bookTitle": "Inglés — Grado 5"
+    },
+    "english.g6": {
+      "bookTitle": "Inglés — Grado 6"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometría — Grado 1"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometría — Grado 2"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometría — Grado 3"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometría — Grado 4"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometría — Grado 5"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometría — Grado 6"
+    },
+    "math.g1": {
+      "bookTitle": "Matemáticas — Grado 1"
+    },
+    "math.g2": {
+      "bookTitle": "Matemáticas — Grado 2"
+    },
+    "math.g3": {
+      "bookTitle": "Matemáticas — Grado 3"
+    },
+    "math.g4": {
+      "bookTitle": "Matemáticas — Grado 4"
+    },
+    "math.g5": {
+      "bookTitle": "Matemáticas — Grado 5"
+    },
+    "math.g6": {
+      "bookTitle": "Matemáticas — Grado 6"
+    },
+    "science.g1": {
+      "bookTitle": "Ciencias — Grado 1"
+    },
+    "science.g2": {
+      "bookTitle": "Ciencias — Grado 2"
+    },
+    "science.g3": {
+      "bookTitle": "Ciencias — Grado 3"
+    },
+    "science.g4": {
+      "bookTitle": "Ciencias — Grado 4"
+    },
+    "science.g5": {
+      "bookTitle": "Ciencias — Grado 5"
+    },
+    "science.g6": {
+      "bookTitle": "Ciencias — Grado 6"
+    }
+  }
+}

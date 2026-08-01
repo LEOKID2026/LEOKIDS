@@ -31,7 +31,7 @@ const { applyParentReportGamificationOverlay } = await import(u("lib/learning-sh
 const { applyServerParentFacingAuthorityToClientReport } = await import(
   u("lib/parent-server/parent-facing-report-authority.js"),
 );
-const { applyTopicEngineParentFacingInsights } = await import(u("utils/parent-report-engine-insights-he.js"));
+const { applyTopicEngineParentFacingInsights } = await import(u("utils/parent-report-engine-insights.js"));
 const { applyBridgeProvenanceToGeneratedReport } = await import(u("lib/learning-supabase/bridge-report-provenance.js"));
 const { syncReportVisiblePracticeFromServer } = await import(u("lib/learning/report-visible-practice-sync.js"));
 const { attachDiagnosticEngineV3 } = await import(u("utils/diagnostic-engine-v3/attach-diagnostic-engine-v3.js"));

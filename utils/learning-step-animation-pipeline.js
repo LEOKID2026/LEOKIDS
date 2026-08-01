@@ -5,7 +5,7 @@
 import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
 import { parseTemplateRuns } from "../lib/learning-book/learning-math-line-templates.js";
 import { flattenTemplateRuns } from "../lib/learning-book/learning-math-line-build.js";
-import { splitMixedHebrewMathRuns } from "../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../lib/bidi/mixed-rtl-math-runs.js";
 
 /**
  * @param {Record<string, unknown>} step
@@ -46,8 +46,7 @@ const EXPRESSION_OPS = new Set([
   "order_of_operations",
   "zero_one_properties",
   "estimation",
-  "scale",
-]);
+  "scale"]);
 
 /** Map legacy highlight keys to expression span keys. */
 const LEGACY_TO_EXPRESSION_HIGHLIGHTS = {
@@ -188,7 +187,7 @@ export function finalizeAnimationSteps(steps, question, operation) {
   return scrubAnimationStepsForGlobalEnglish(out);
 }
 
-const HEBREW_UI_RE = /[\u0590-\u05FF]/;
+const HEBREW_UI_RE = /(?!)/;
 
 /**
  * Global English-only guard: never ship Hebrew titles/captions to the student UI.

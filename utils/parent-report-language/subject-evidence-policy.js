@@ -8,8 +8,7 @@
 import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   PARENT_EVIDENCE_VOLUME,
-  SUBJECT_VALID_MIN_QUESTIONS,
-} from "./parent-evidence-matrix.js";
+  SUBJECT_VALID_MIN_QUESTIONS} from "./parent-evidence-matrix.js";
 import { effectivePracticeAnswerCount } from "../../lib/learning/report-practice-counts.js";
 
 export { SUBJECT_VALID_MIN_QUESTIONS };
@@ -21,11 +20,10 @@ export const SUBJECT_VISIBLE_LABELS_HE = Object.freeze({
   english: ["English"],
   science: ["Science"],
   history: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "history")],
-  hebrew: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "hebrew")],
-  "moledet-geography": [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies_and_geography")],
-  moledet: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies")],
-  geography: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography")],
-});
+  
+  
+  
+  geography: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography")]});
 
 /** Primary label per subject id (matches subject cards). */
 export const SUBJECT_LABEL_BY_ID = Object.freeze({
@@ -34,25 +32,23 @@ export const SUBJECT_LABEL_BY_ID = Object.freeze({
   english: "English",
   science: "Science",
   history: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "history"),
-  hebrew: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "hebrew"),
-  "moledet-geography": reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies_and_geography"),
-  moledet: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "social_studies"),
-  geography: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography"),
-});
+  
+  
+  
+  geography: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography")});
 
 export const SUBJECT_EVIDENCE_TIER = Object.freeze({
   none: "none",
   thin: "thin",
-  valid: "valid",
-});
+  valid: "valid"});
 
 /** Subject-specific insight wording forbidden when visible questions = 0. */
 export const ZERO_EVIDENCE_SUBJECT_INSIGHT_RE =
-  /(?:יש\s+(?:עדיין\s+)?מעט\s+(?:נתונ|מידע|תרגול)|טעויות\s+חוזרות|נראה\s+שיש\s+קושי|כדאי\s+לשים\s+לב|נושא\s+לחיזוק|מוקד\s+לתרגול|התקדמות\s+יחסית|מגמת\s|יש\s+מגמה|מגמה\s+(?:חיובית|שלילית|ברורה|כללית)|there(?:'s| is)\s+(?:still\s+)?(?:little|limited)\s+(?:data|information|practice)|recurring\s+mistakes|(?:looks|there'?s?)\s+like\s+there'?s?\s+difficulty|worth\s+paying\s+attention|topic\s+to\s+reinforce|focus\s+for\s+practice|relative\s+progress|trend)/iu;
+  /(?:there(?:'s| is)\s+(?:still\s+)?(?:little|limited)\s+(?:data|information|practice)|recurring\s+mistakes|(?:looks|there'?s?)\s+like\s+there'?s?\s+difficulty|worth\s+paying\s+attention|topic\s+to\s+reinforce|focus\s+for\s+practice|relative\s+progress|trend)/iu;
 
 /** Wording that must never accompany zero-question subjects (not a bare "trend" mention — executive trend lines may quote it). */
 export const ZERO_EVIDENCE_FORBIDDEN_RE =
-  /כיוון ראשוני|אפשר לקבל כיוון|תחום לחיזוק|נושא למעקב|כדאי לתרגל עוד כדי לחזק|דורש חיזוק|דורש תשומת לב|מעט מדי לסיכום עשיר|initial direction|can get a direction|area to reinforce|topic to watch|worth practicing more to reinforce|needs reinforcement|needs attention|too little for a rich summary/iu;
+  /initial direction|can get a direction|area to reinforce|topic to watch|worth practicing more to reinforce|needs reinforcement|needs attention|too little for a rich summary/iu;
 
 /**
  * @param {number} questionCount
@@ -119,8 +115,7 @@ export function buildSubjectEvidenceCoverageLines(subjectQuestionCounts, subject
     notPracticedSubjectsSummaryHe: notPracticedSubjectsSummaryLineHe(
       subjectQuestionCounts,
       subjectLabelById,
-    ),
-  };
+    )};
 }
 
 /**
@@ -139,7 +134,7 @@ export function practicedSubjectIds(subjectQuestionCounts) {
 export function practicedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLabelById) {
   const practiced = Object.entries(subjectLabelById)
     .filter(([sid]) => classifySubjectEvidenceTier(subjectQuestionCounts[sid]) !== SUBJECT_EVIDENCE_TIER.none)
-    .map(([, label]) => label);
+    .map(([ label]) => label);
   if (practiced.length === 0) return "No practice was recorded in the report's subjects for the selected period.";
   if (practiced.length === 1) return `The subject practiced this period: ${practiced[0]}.`;
   return `The subjects practiced this period: ${practiced.join(", ")}.`;
@@ -152,7 +147,7 @@ export function practicedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLab
 export function notPracticedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLabelById) {
   const labels = Object.entries(subjectLabelById)
     .filter(([sid]) => classifySubjectEvidenceTier(subjectQuestionCounts[sid]) === SUBJECT_EVIDENCE_TIER.none)
-    .map(([, label]) => label);
+    .map(([ label]) => label);
   if (!labels.length) return null;
   return `Subjects not practiced this period: ${labels.join(", ")}.`;
 }
@@ -192,15 +187,12 @@ export function subjectQuestionCountsFromPayload(payload) {
       geometry: Math.max(0, Math.floor(Number(s.geometryQuestions) || 0)),
       english: Math.max(0, Math.floor(Number(s.englishQuestions) || 0)),
       science: Math.max(0, Math.floor(Number(s.scienceQuestions) || 0)),
-      history: Math.max(0, Math.floor(Number(s.historyQuestions) || 0)),
-      hebrew: Math.max(0, Math.floor(Number(s.hebrewQuestions) || 0)),
-      "moledet-geography": Math.max(0, Math.floor(Number(s.moledetGeographyQuestions) || 0)),
-    };
+      history: Math.max(0, Math.floor(Number(s.historyQuestions) || 0))};
   }
 
   const subjects = payload?.subjects || {};
   const read = (canonicalId) => {
-    const aggKey = canonicalId === "moledet-geography" ? "moledet_geography" : canonicalId;
+    const aggKey = canonicalId;
     const subj = subjects[aggKey];
     if (!subj || typeof subj !== "object") return 0;
     return effectivePracticeAnswerCount(subj);
@@ -211,10 +203,7 @@ export function subjectQuestionCountsFromPayload(payload) {
     geometry: read("geometry"),
     english: read("english"),
     science: read("science"),
-    history: read("history"),
-    hebrew: read("hebrew"),
-    "moledet-geography": read("moledet-geography"),
-  };
+    history: read("history")};
 }
 
 /**
@@ -229,7 +218,6 @@ export function lineMentionsSubjectLabelHe(text, label) {
     t.startsWith(`${lab}:`) ||
     t.startsWith(`${lab} -`) ||
     t.includes(`${lab}:`) ||
-    t.includes(`ב${lab}`) ||
     t.includes(`in ${lab}`) ||
     t.includes(`${lab},`)
   );
@@ -260,7 +248,7 @@ export function filterRecentMistakesForVisibleSubjects(recentMistakes, subjectQu
   return (recentMistakes || []).filter((m) => {
     const raw = String(m?.subject || "").trim();
     if (!raw) return false;
-    const sid = raw === "moledet_geography" ? "moledet-geography" : raw;
+    const sid = raw;
     return (Number(subjectQuestionCounts[sid]) || 0) > 0;
   });
 }
@@ -311,5 +299,4 @@ export default {
   lineMentionsZeroEvidenceSubjectHe,
   filterRecentMistakesForVisibleSubjects,
   lineViolatesZeroEvidenceInsightPolicy,
-  filterInsightLinesForUnpracticedSubjects,
-};
+  filterInsightLinesForUnpracticedSubjects};

@@ -12,7 +12,7 @@ import { normalizeCalledNumbers } from "../../../lib/arcade/bingo/ov2BingoEngine
  *   card: number[][],
  *   called: unknown,
  *   marks: boolean[],
- *   onToggleMark?: ((n: number) => void) | null,
+ *   onToggleMark?: ((n: number) => void) || null,
  *   disabled?: boolean,
  * }} props
  */

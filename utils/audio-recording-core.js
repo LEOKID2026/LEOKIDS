@@ -1,5 +1,5 @@
 /**
- * Build 1 — הקלטה קצרה (MediaRecorder), ללא ניתוח דיבור.
+ * Build 1 —   (MediaRecorder),   .
  */
 
 /**

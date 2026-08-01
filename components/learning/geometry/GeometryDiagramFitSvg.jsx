@@ -10,7 +10,7 @@ import {
 /**
  * SVG shell that crops empty margins and scales content to the frame.
  * @param {{
- *   variant?: "mini" | "compact" | "expanded",
+ *   variant?: "mini" || "compact" || "expanded",
  *   measureKey?: string,
  *   stepId?: string,
  *   className?: string,

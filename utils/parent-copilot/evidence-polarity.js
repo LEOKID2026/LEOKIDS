@@ -4,15 +4,13 @@
 
 import {
   PARENT_EVIDENCE_VOLUME,
-  SUBJECT_VALID_MIN_QUESTIONS,
-} from "../parent-report-language/parent-evidence-matrix.js";
+  SUBJECT_VALID_MIN_QUESTIONS} from "../parent-report-language/parent-evidence-matrix.js";
 
 export const POLARITY = Object.freeze({
   none: "none",
   thin: "thin",
   support_needed: "support_needed",
-  strong: "strong",
-});
+  strong: "strong"});
 
 export const THIN_MAX_QUESTIONS = PARENT_EVIDENCE_VOLUME.PRELIMINARY_MAX;
 export const VALID_MIN_QUESTIONS = SUBJECT_VALID_MIN_QUESTIONS;
@@ -21,7 +19,7 @@ export const STRONG_ACCURACY_MIN = 75;
 
 /** Must not appear when polarity is support_needed with enough questions. */
 export const FORBIDDEN_POSITIVE_WHEN_WEAK_RE =
-  /כיוון\s*חזק|נמשיך\s*באותו\s*קצב|ההצלחה\s*חוזרת|יציבות\s*טובה\s*יחסית|ביצוע\s*יציב|מוכנות\s*להתקדמות\s*נוספת/u;
+  /\s*|\s*\s*|\s*|\s*\s*|\s*|\s*\s*/u;
 
 /**
  * @param {number} q
@@ -74,5 +72,4 @@ export default {
   classifyPracticePolarity,
   meaningHeForPolarity,
   textViolatesPolarityForEvidence,
-  FORBIDDEN_POSITIVE_WHEN_WEAK_RE,
-};
+  FORBIDDEN_POSITIVE_WHEN_WEAK_RE};

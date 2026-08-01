@@ -1,18 +1,18 @@
-// קבועים לדף הגאומטריה
+// Geometry page constants
 
 export const LEVELS = {
   easy: {
-    name: "קל",
+    name: "Easy",
     maxSide: 10,
     decimals: false,
   },
   medium: {
-    name: "בינוני",
+    name: "Medium",
     maxSide: 20,
     decimals: true,
   },
   hard: {
-    name: "קשה",
+    name: "Hard",
     maxSide: 50,
     decimals: true,
   },
@@ -21,90 +21,90 @@ export const LEVELS = {
 export const PI = 3.14;
 
 export const TOPICS = {
-  shapes_basic: { name: "צורות בסיסיות", description: "הכרת מצולעים", icon: "🔷" },
-  /** Default subtitles — detailed grades א׳–ג׳ use `topicDescriptionForCurriculumPage` on the curriculum page */
-  area: { name: "שטח", description: "חישוב שטח", icon: "📐" },
-  perimeter: { name: "היקף", description: "חישוב היקף", icon: "📏" },
-  volume: { name: "נפח", description: "חישוב נפח", icon: "📦" },
-  angles: { name: "זוויות", description: "זוויות", icon: "📐" },
-  parallel_perpendicular: { name: "מקבילות ומאונכות", description: "מקבילות ומאונכות", icon: "📐" },
-  triangles: { name: "משולשים", description: "מיון משולשים", icon: "🔺" },
-  quadrilaterals: { name: "מרובעים", description: "מיון מרובעים", icon: "⬜" },
-  transformations: { name: "טרנספורמציות", description: "הזזה, שיקוף, סיבוב", icon: "🔄" },
-  rotation: { name: "סיבוב", description: "סיבוב", icon: "🔄" },
-  symmetry: { name: "סימטרייה", description: "סימטרייה", icon: "✨" },
-  diagonal: { name: "אלכסון", description: "אלכסון", icon: "📐" },
-  heights: { name: "גבהים", description: "גבהים", icon: "📏" },
-  tiling: { name: "ריצוף", description: "ריצוף", icon: "🔲" },
-  circles: { name: "מעגל ועיגול", description: "מעגל ועיגול", icon: "⭕" },
-  solids: { name: "גופים", description: "גופים תלת-מימדיים", icon: "📦" },
-  pythagoras: { name: "פיתגורס", description: "משפט פיתגורס", icon: "🔺" },
-  mixed: { name: "ערבוב", description: "ערבוב", icon: "🎲" },
+  shapes_basic: { name: "Basic shapes", description: "Introducing polygons", icon: "🔷" },
+  /** Default subtitles — detailed grades 1–3 use `topicDescriptionForCurriculumPage` on the curriculum page */
+  area: { name: "Area", description: "Calculate area", icon: "📐" },
+  perimeter: { name: "Perimeter", description: "Calculate perimeter", icon: "📏" },
+  volume: { name: "Volume", description: "Calculate volume", icon: "📦" },
+  angles: { name: "Angles", description: "Angles", icon: "📐" },
+  parallel_perpendicular: { name: "Parallel & perpendicular", description: "Parallel and perpendicular lines", icon: "📐" },
+  triangles: { name: "Triangles", description: "Classify triangles", icon: "🔺" },
+  quadrilaterals: { name: "Quadrilaterals", description: "Classify quadrilaterals", icon: "⬜" },
+  transformations: { name: "Transformations", description: "Translation, reflection, rotation", icon: "🔄" },
+  rotation: { name: "Rotation", description: "Rotation", icon: "🔄" },
+  symmetry: { name: "Symmetry", description: "Symmetry", icon: "✨" },
+  diagonal: { name: "Diagonal", description: "Diagonal", icon: "📐" },
+  heights: { name: "Heights", description: "Heights", icon: "📏" },
+  tiling: { name: "Tiling", description: "Tiling", icon: "🔲" },
+  circles: { name: "Circles", description: "Circles and disks", icon: "⭕" },
+  solids: { name: "Solids", description: "3D solids", icon: "📦" },
+  pythagoras: { name: "Pythagoras", description: "Pythagorean theorem", icon: "🔺" },
+  mixed: { name: "Mixed", description: "Mixed", icon: "🎲" },
 };
 
 /**
- * Subtitles for כיתות א׳–ג׳ on the curriculum transparency page (מדידות וגאומטריה).
- * phrasing: היכרות / זיהוי / השוואה / מדידות — not “formal calculation only”.
+ * Subtitles for grades 1–3 on the curriculum transparency page (measurement & geometry).
+ * Phrasing: intro / identify / compare / measure — not “formal calculation only”.
  */
 export const TOPIC_DESCRIPTION_LOW_GRADES = {
   g1: {
-    shapes_basic: "הכרת מצולעים - זיהוי ריבוע ומלבן והשוואה בסיסית",
-    transformations: "הזזה ושיקוף - היכרות (ברמה המקובלת לכיתה א׳, ללא סיבוב נפרד)",
+    shapes_basic: "Introducing polygons — identify square and rectangle, basic comparison",
+    transformations: "Translation and reflection — introduction (Grade 1 level, no separate rotation)",
   },
   g2: {
-    shapes_basic: "צורות במישור - זיהוי והשוואה",
-    area: "מדידות שטח - היכרות, השוואה וכיסוי (לפי רמת הקושי במוצר)",
-    solids: "מצולעים וגופים - היכרות ושמות גופים תלת ממדיים",
-    transformations: "שיקוף והזזה - המשך היכרות",
+    shapes_basic: "Plane shapes — identification and comparison",
+    area: "Area measurement — intro, comparison, and covering (by product difficulty)",
+    solids: "Polygons and solids — intro and 3D solid names",
+    transformations: "Reflection and translation — continued introduction",
   },
   g3: {
-    shapes_basic: "צורות במישור - הרחבת זיהוי",
-    angles: "זוויות - סיווג והיכרות",
-    parallel_perpendicular: "מקבילות ומאונכות במישור",
-    triangles: "משולשים - מיון והיכרות",
-    quadrilaterals: "מרובעים - מיון והיכרות",
-    area: "שטח - מדידות והשוואה (עומק לפי רמה)",
-    perimeter: "היקף - מדידה והיכרות במצולעים",
-    rotation: "סיבוב במישור - היכרות בסיסית",
-    solids: "גופים תלת ממדיים - היכרות ושמות",
+    shapes_basic: "Plane shapes — expanded identification",
+    angles: "Angles — classification and introduction",
+    parallel_perpendicular: "Parallel and perpendicular lines in the plane",
+    triangles: "Triangles — classification and introduction",
+    quadrilaterals: "Quadrilaterals — classification and introduction",
+    area: "Area — measurement and comparison (depth by level)",
+    perimeter: "Perimeter — measuring polygons",
+    rotation: "Rotation in the plane — basic introduction",
+    solids: "3D solids — introduction and names",
   },
 };
 
-/** כיתות ד׳–ו׳ — ניסוח עמוק יותר מ«חישוב בלבד» בעמוד השקיפות בלבד */
+/** Grades 4–6 — richer phrasing than “calculation only” on the transparency page */
 export const TOPIC_DESCRIPTION_MID_HIGH_GRADES = {
   g4: {
-    shapes_basic: "צורות במישור - תכונות ריבוע ומלבן והרחבה",
-    angles: "זוויות - סיווג והמשך פיתוח",
-    parallel_perpendicular: "מקבילות ומאונכות - יישום במצולעים",
-    triangles: "משולשים - תכונות וסיווג",
-    quadrilaterals: "מרובעים - תכונות וסיווג",
-    diagonal: "אלכסונים במצולעים - היכרות ותרגול",
-    symmetry: "סימטרייה במישור",
-    area: "שטח - מדידות, השוואה וחישובים לפי רמה",
-    perimeter: "היקף - מדידה וחישוב במצולעים",
-    volume: "נפח תיבה - היכרות ומדידות בסיסיות",
-    solids: "גופים תלת ממדיים - היכרות לפני נפח",
+    shapes_basic: "Plane shapes — square/rectangle properties and extension",
+    angles: "Angles — classification and further development",
+    parallel_perpendicular: "Parallel and perpendicular — applied in polygons",
+    triangles: "Triangles — properties and classification",
+    quadrilaterals: "Quadrilaterals — properties and classification",
+    diagonal: "Diagonals in polygons — introduction and practice",
+    symmetry: "Symmetry in the plane",
+    area: "Area — measurement, comparison, and calculations by level",
+    perimeter: "Perimeter — measuring and calculating polygons",
+    volume: "Box volume — introduction and basic measurement",
+    solids: "3D solids — introduction before volume",
   },
   g5: {
-    angles: "זוויות - יישום במצולעים",
-    parallel_perpendicular: "מקבילות ומאונכות - קשר לצורות",
-    quadrilaterals: "מרובעים - תכונות, מיון וקשרי הכלה",
-    solids: "גופים תלת ממדיים - היכרות ושטח פנים",
-    diagonal: "אלכסונים - כולל הקשר במרובעים",
-    heights: "גבהים - קשר לשטח במשולשים ובמרובעים",
-    tiling: "ריצוף במישור - היכרות ודוגמאות",
-    area: "שטח - חישובים והשוואות לפי צורה",
-    perimeter: "היקף - חישוב במצולעים מורכבים יותר",
-    volume: "נפח - תיבות וגופים מוכרים",
+    angles: "Angles — applied in polygons",
+    parallel_perpendicular: "Parallel and perpendicular — linked to shapes",
+    quadrilaterals: "Quadrilaterals — properties, classification, inclusion",
+    solids: "3D solids — introduction and surface area",
+    diagonal: "Diagonals — including relationships in quadrilaterals",
+    heights: "Heights — linked to area in triangles and quadrilaterals",
+    tiling: "Tiling the plane — introduction and examples",
+    area: "Area — calculations and comparisons by shape",
+    perimeter: "Perimeter — calculating more complex polygons",
+    volume: "Volume — boxes and familiar solids",
   },
   g6: {
-    solids: "גופים משוכללים - נפח ושטח פנים לפי רמה",
-    circles: "מעגל ועיגול - היקף ושטח",
-    volume: "נפח - גופים שונים לפי רמה",
-    area: "שטח - יישומים כולל צורות מורכבות",
-    perimeter: "היקף - יישומים כולל מעגל",
-    angles: "זוויות - יישום במצולשים ובבעיות",
-    pythagoras: "משפט פיתגורס - משולש ישר זווית",
+    solids: "Regular solids — volume and surface area by level",
+    circles: "Circles — circumference and area",
+    volume: "Volume — various solids by level",
+    area: "Area — applications including complex shapes",
+    perimeter: "Perimeter — applications including circles",
+    angles: "Angles — applied in polygons and problems",
+    pythagoras: "Pythagorean theorem — right triangles",
   },
 };
 
@@ -120,25 +120,24 @@ export function topicDescriptionForCurriculumPage(gradeKey, topicKey) {
   return TOPICS[topicKey]?.description || "";
 }
 
-// עדכון ל-6 כיתות נפרדות (א', ב', ג', ד', ה', ו')
 export const GRADES = {
   g1: {
-    name: "כיתה א'",
-    topics: ["shapes_basic", "transformations"], // הכרת מצולעים, הזזה/שיקוף
+    name: "Grade 1",
+    topics: ["shapes_basic", "transformations"],
     shapes: ["square", "rectangle"],
   },
   g2: {
-    name: "כיתה ב'",
-    topics: ["shapes_basic", "area", "solids", "transformations"], // צורות בסיסיות + מדידות שטח, גופים, טרנספורמציות
+    name: "Grade 2",
+    topics: ["shapes_basic", "area", "solids", "transformations"],
     shapes: ["square", "rectangle", "cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
   },
   g3: {
-    name: "כיתה ג'",
-    topics: ["shapes_basic", "angles", "parallel_perpendicular", "triangles", "quadrilaterals", "area", "perimeter", "rotation", "solids"], // היכרות צורות; מאונכות/מקבילות; משולשים/מרובעים; מדידות; סיבוב; גופים
+    name: "Grade 3",
+    topics: ["shapes_basic", "angles", "parallel_perpendicular", "triangles", "quadrilaterals", "area", "perimeter", "rotation", "solids"],
     shapes: ["triangle", "square", "rectangle", "cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
   },
   g4: {
-    name: "כיתה ד'",
+    name: "Grade 4",
     topics: [
       "shapes_basic",
       "angles",
@@ -151,28 +150,27 @@ export const GRADES = {
       "perimeter",
       "volume",
       "solids",
-    ], // מצולעים, זוויות, מקבילות/מאונכות, משולשים/מרובעים, אלכסון, סימטרייה, מדידות, נפח תיבה, גופים
+    ],
     shapes: ["square", "rectangle", "triangle", "circle", "rectangular_prism", "cube"],
   },
   g5: {
-    name: "כיתה ה'",
-    topics: ["angles", "parallel_perpendicular", "quadrilaterals", "solids", "diagonal", "heights", "tiling", "area", "perimeter", "volume", "mixed"], // גופים מוכרים נשארים זמינים לצד נושאי מישור
+    name: "Grade 5",
+    topics: ["angles", "parallel_perpendicular", "quadrilaterals", "solids", "diagonal", "heights", "tiling", "area", "perimeter", "volume", "mixed"],
     shapes: ["square", "rectangle", "triangle", "circle", "parallelogram", "trapezoid", "rectangular_prism", "cube"],
   },
   g6: {
-    name: "כיתה ו'",
-    topics: ["solids", "circles", "volume", "area", "perimeter", "angles", "triangles", "pythagoras", "mixed"], // גופים, מעגל ועיגול, חישובי נפחים, שטח, היקף, זוויות, משולשים, פיתגורס, ערבוב (symmetry G4 per oracle)
+    name: "Grade 6",
+    topics: ["solids", "circles", "volume", "area", "perimeter", "angles", "triangles", "pythagoras", "mixed"],
     shapes: ["square", "rectangle", "triangle", "circle", "parallelogram", "trapezoid", "cylinder", "sphere", "cube", "rectangular_prism", "pyramid", "cone", "prism"],
   },
 };
 
-// מיפוי נושאים לצורות לפי כיתה
 export const TOPIC_SHAPES = {
   shapes_basic: {
-    g1: ["square", "rectangle"], // הכרת מצולעים - כיתה א'
+    g1: ["square", "rectangle"],
     g2: ["square", "rectangle"],
     g3: ["square", "rectangle", "triangle"],
-    g4: ["square", "rectangle"], // ריבוע ומלבן (תכונות) - כיתה ד'
+    g4: ["square", "rectangle"],
   },
   area: {
     g2: ["square", "rectangle"],
@@ -182,15 +180,15 @@ export const TOPIC_SHAPES = {
     g6: ["square", "rectangle", "triangle", "parallelogram", "trapezoid", "circle"],
   },
   perimeter: {
-    g3: ["square", "rectangle", "triangle"], // מדידת היקף של מצולע - כיתה ג'
+    g3: ["square", "rectangle", "triangle"],
     g4: ["square", "rectangle", "triangle"],
     g5: ["square", "rectangle", "triangle"],
     g6: ["square", "rectangle", "triangle", "circle"],
   },
   volume: {
-    g4: ["rectangular_prism", "cube"], // תיבות - כיתה ד'
+    g4: ["rectangular_prism", "cube"],
     g5: ["rectangular_prism", "cube"],
-    g6: ["rectangular_prism", "cube", "cylinder", "sphere", "pyramid", "cone", "prism"], // כיתה ו' - כולל מנסרה
+    g6: ["rectangular_prism", "cube", "cylinder", "sphere", "pyramid", "cone", "prism"],
   },
   angles: {
     g3: ["triangle", "quadrilateral"],
@@ -221,24 +219,24 @@ export const TOPIC_SHAPES = {
     g6: ["square", "rectangle", "triangle"],
   },
   diagonal: {
-    g4: ["square", "rectangle"], // אלכסון - כיתה ד'
-    g5: ["square", "rectangle", "parallelogram"], // אלכסון - כיתה ה'
+    g4: ["square", "rectangle"],
+    g5: ["square", "rectangle", "parallelogram"],
   },
   heights: {
     g5: ["triangle", "parallelogram", "trapezoid"],
   },
   tiling: {
-    g5: ["square", "triangle"], // ריצוף במצולעים משוכללים - כיתה ה'
+    g5: ["square", "triangle"],
   },
   circles: {
     g6: ["circle"],
   },
   solids: {
-    g2: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"], // גופים - כיתה ב'
+    g2: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
     g3: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
     g4: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
     g5: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
-    g6: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"], // גופים משוכללים - כיתה ו'
+    g6: ["cube", "rectangular_prism", "cylinder", "pyramid", "cone", "sphere"],
   },
   pythagoras: {
     g6: ["triangle"],
@@ -250,16 +248,15 @@ export function getShapesForTopic(gradeKey, topicKey) {
   if (cfg && cfg[gradeKey] && cfg[gradeKey].length > 0) {
     return cfg[gradeKey];
   }
-  // אם אין הגדרה ספציפית, נחזיר את הצורות הכלליות של הכיתה
   return GRADES[gradeKey]?.shapes || [];
 }
 
 export const MODES = {
-  learning: { name: "למידה", description: "ללא סיום משחק, תרגול בקצב שלך" },
-  challenge: { name: "אתגר", description: "טיימר + חיים, מרוץ ניקוד גבוה" },
-  speed: { name: "מהירות", description: "תשובות מהירות = יותר נקודות! ⚡" },
-  marathon: { name: "מרתון", description: "כמה שאלות תוכל לפתור? 🏃" },
-  practice: { name: "תרגול", description: "התמקד בנושא אחד 📚" },
+  learning: { name: "Learning", description: "No game over — practice at your own pace" },
+  challenge: { name: "Challenge", description: "Timer + lives, high-score race" },
+  speed: { name: "Speed", description: "Faster answers = more points! ⚡" },
+  marathon: { name: "Marathon", description: "How many questions can you solve? 🏃" },
+  practice: { name: "Practice", description: "Focus on one topic 📚" },
 };
 
 export const STORAGE_KEY = "mleo_geometry_master";

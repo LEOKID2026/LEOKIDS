@@ -1,6 +1,6 @@
 /**
- * מגמות ברמת שורת דוח — השוואות מבוססות נתונים בין חלונות זמן (ללא UI).
- * לא תלוי ב window; ניתן לבדיקות יחידה.
+ *     —       ( UI).
+ *    window;   .
  */
 
 import {
@@ -39,9 +39,9 @@ function sessionInRange(session, startMs, endMs) {
 }
 
 /**
- * עקביות עם parent-report-v2:
- * - סופרים רק מפגשים עם total תקין וחיובי.
- * - בלי השלמת correct אוטומטית מנתוני legacy.
+ *   parent-report-v2:
+ * -     total  .
+ * -   correct   legacy.
  */
 export function sumQuestionsCorrectForSessions(sessions, legacyProgress) {
   let q = 0;
@@ -375,9 +375,9 @@ export function computeRowTrend({
 }
 
 /**
- * מוסיף לכל שורה אובייקט trend לפי אחסון גולמי (אותו מפתח דלי כמו ב V2).
+ *     trend    (     V2).
  * @param {Record<string, Record<string, unknown>>} maps
- * @param {Record<string, unknown>} trackingSnapshots bucket פר מקצוע (operations/topics)
+ * @param {Record<string, unknown>} trackingSnapshots bucket   (operations/topics)
  * @param {Record<string, unknown[]>} rawMistakesBySubject
  * @param {number} periodStartMs
  * @param {number} periodEndMs

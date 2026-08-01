@@ -40,7 +40,7 @@ function deepClone(x) {
 }
 
 /**
- * @param {Record<string, string | null | undefined>} existingStorageMap
+ * @param {Record<string, string || null || undefined>} existingStorageMap
  * @param {string} playerName
  */
 function snapshotFromExistingMap(existingStorageMap, playerName) {

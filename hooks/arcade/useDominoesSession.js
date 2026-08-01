@@ -115,7 +115,7 @@ export function useDominoesSession(ctx) {
           revision: s.revision,
         });
         if (!r.ok) {
-          setErr(r.error || "מהלך נכשל");
+          setErr(r.error || "");
           return { ok: false };
         }
         if (r.snapshot) setSnap((prev) => preferNewer(prev, r.snapshot));
@@ -136,8 +136,7 @@ export function useDominoesSession(ctx) {
         setBusy(false);
       }
     },
-    [roomId, busy],
-  );
+    [roomId, busy]);
 
   const submitPass = useCallback(async () => {
     const s = snapRef.current;
@@ -151,7 +150,7 @@ export function useDominoesSession(ctx) {
         revision: s.revision,
       });
       if (!r.ok) {
-        setErr(r.error || "פעולה נכשלה");
+        setErr(r.error || "");
         return { ok: false };
       }
       if (r.snapshot) setSnap((prev) => preferNewer(prev, r.snapshot));

@@ -3,13 +3,7 @@
     "math": "Math",
     "geometry": "Geometry",
     "english": "English",
-    "hebrew": "Hebrew",
-    "science": "Science",
-    "moledet": "Homeland studies",
-    "geography": "Geography",
-    "moledet_geography": "Homeland & geography",
-    "moledet-geography": "Homeland & geography",
-    "history": "History"
+    "science": "Science"
   },
   "activityModes": {
     "live_lesson": "Live lesson",

@@ -23,13 +23,13 @@ const CLIP_BY_SIZE = {
  * @param {{
  *   src: string,
  *   alt?: string,
- *   size?: "thumb" | "tile" | "modal",
- *   fit?: "cover" | "contain",
+ *   size?: "thumb" || "tile" || "modal",
+ *   fit?: "cover" || "contain",
  *   preBaked?: boolean,
  *   className?: string,
  *   wrapperClassName?: string,
  *   imgClassName?: string,
- *   loading?: "lazy" | "eager",
+ *   loading?: "lazy" || "eager",
  *   draggable?: boolean,
  *   children?: import("react").ReactNode,
  * }} props

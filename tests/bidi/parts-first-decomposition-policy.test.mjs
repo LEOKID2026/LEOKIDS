@@ -9,7 +9,7 @@ import {
   assertNotForbiddenLearningMath,
   FORBIDDEN_LEARNING_MATH_STRINGS,
 } from "../../lib/learning-book/learning-math-line-templates.js";
-import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-hebrew-math-runs.js";
+import { splitMixedHebrewMathRuns } from "../../lib/bidi/mixed-rtl-math-runs.js";
 
 /** Owner policy: learning example decomposition rows are parts-first. */
 const PARTS_FIRST_CASES = [

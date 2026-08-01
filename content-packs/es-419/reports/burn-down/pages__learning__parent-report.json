@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "Zona a reforzar",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "Se requiere el inicio de sesión de los padres: use el inicio de sesión de los padres e inténtelo nuevamente.",
+    "network_error_while_loading_the_report": "Error de red al cargar el informe.",
+    "please_choose_valid_dates": "Por favor elige fechas válidas",
+    "custom": "Personalizado",
+    "preparing_the_performance_report": "Preparando el informe de desempeño...",
+    "charts": "Gráficos",
+    "breakdown": "Descomponer",
+    "practice_with_questions": "Practicar con preguntas",
+    "book_reading": "Lectura del libro",
+    "other_active_learning": "Otro aprendizaje activo",
+    "time_minutes": "Tiempo (minutos)",
+    "questions": "Preguntas",
+    "accuracy": "Exactitud %"
+  }
+}

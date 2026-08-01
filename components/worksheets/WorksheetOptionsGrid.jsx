@@ -16,10 +16,10 @@ const OPTION_LABELS = ["A", "B", "C", "D", "E", "F"];
  *   optionsLatin?: boolean[],
  *   englishMode?: boolean,
  *   nikudMode?: boolean,
- *   layout?: "grid" | "stack",
+ *   layout?: "grid" || "stack",
  *   showHeading?: boolean,
  *   mathNumericOptions?: boolean,
- *   optionCaseMode?: "upper" | "lower" | null,
+ *   optionCaseMode?: "upper" || "lower" || null,
  * }} props
  */
 export default function WorksheetOptionsGrid({

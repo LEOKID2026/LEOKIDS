@@ -575,7 +575,7 @@ export default function SchoolStudentDetailsPanel({
       {showAuditFooter && profile?.updatedAt ? (
         <p className="text-xs text-white/40 pt-2 border-t border-white/10">
           {profile.updatedByName ? `${profile.updatedByName} · ` : ""}
-          {new Date(profile.updatedAt).toLocaleString("he-IL")}
+          {new Date(profile.updatedAt).toLocaleString("en-US")}
         </p>
       ) : null}
     </div>

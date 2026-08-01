@@ -42,10 +42,10 @@ Each holds **six** `{ en, he, minGrade, maxGrade, patternFamily, difficulty }` r
 **Learning UI (`english-master.js`):**
 
 - Grade profiles list **only** these six pool keys in `translationPools` — **`simulator_translation_mcq` is not included** ([`GRADE_PROFILES`](../pages/learning/english-master.js) ~203–249).
-- For a picked phrase, `correctAnswer` is the **target string** (`sentence.he` for `en_to_he`, `sentence.en` for `he_to_en`).
+- For a picked phrase, `correctAnswer` is the **target string** (`sentence.he` for `en_to_meaning`, `sentence.en` for `meaning_to_en`).
 - `resolveEnglishQType` decides **`choice`** vs **`typing`**:
-  - **`en_to_he`** → always **`choice`** (MCQ).
-  - **`he_to_en`** → **`typing`** when rules hit (e.g. hard level, higher grades, long answers); otherwise **`choice`** ([`resolveEnglishQType`](../pages/learning/english-master.js) ~392–397).
+  - **`en_to_meaning`** → always **`choice`** (MCQ).
+  - **`meaning_to_en`** → **`typing`** when rules hit (e.g. hard level, higher grades, long answers); otherwise **`choice`** ([`resolveEnglishQType`](../pages/learning/english-master.js) ~392–397).
 - When `qType === "choice"`, **wrong answers are sampled** from vocabulary keys (`WORD_LISTS`), **not** from sibling phrases in the translation pool ([`generateQuestion`](../pages/learning/english-master.js) ~914–954).
 
 **Scoring:** `acceptedAnswers` is built via `buildAcceptedAnswers(correctAnswer)` — quote normalization, trimming, optional stripping of surrounding punctuation ([`buildAcceptedAnswers`](../pages/learning/english-master.js) ~464–487).

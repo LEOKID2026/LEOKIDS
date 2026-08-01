@@ -69,7 +69,7 @@ function isArithmeticCarryingContext(file, text) {
   const f = String(file || "");
   const t = String(text || "");
   if (!t.includes("העברה")) return false;
-  if (f.includes("pedagogy-glossary-he.js")) return true;
+  if (f.includes("pedagogy-glossary.js")) return true;
   if (
     /חיבור|עשרונית|בלי העברה|בלי בסיס להעברה|נכון כשאין העברה|ספרות הקיצון|העברה עשרונית|עם העברה ובלי/.test(
       t
@@ -78,7 +78,7 @@ function isArithmeticCarryingContext(file, text) {
     return true;
   }
   if (/קידום|עלייה ברמה|מוכנות לשלב|העברה לרמה|ירידה ברמה/.test(t)) return false;
-  if (f.includes("parent-facing-normalize-he.js") && /בחיבור|עשרונית/.test(t)) return true;
+  if (f.includes("parent-facing-normalize.js") && /בחיבור|עשרונית/.test(t)) return true;
   return false;
 }
 

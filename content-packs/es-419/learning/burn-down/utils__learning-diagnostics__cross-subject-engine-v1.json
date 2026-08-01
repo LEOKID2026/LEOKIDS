@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "patterns_require_evidence_in_multiple_subjects_thin_single_subject_data_": "Los patrones requieren evidencia en múltiples temas; los datos finos de un solo sujeto no pueden activarse."
+  }
+}

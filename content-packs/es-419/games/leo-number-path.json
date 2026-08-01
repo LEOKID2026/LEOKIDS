@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-number-path",
+  "title": "Camino numérico de Leo",
+  "blurb": "Secuencias, pares, impares y múltiplos",
+  "help": {
+    "howToPlay": "Elige números del camino según la regla (pares, impares, múltiplos, conteo salteado o secuencias) y luego toca \"Comprobar camino\". El orden importa en los saltos y las secuencias.",
+    "scoring": "Correcto al primer intento +30, segundo +20, tercero +10. Después de 3 errores se muestra el camino correcto.",
+    "rewards": "Las monedas se otorgan según cuántas de las 20 tareas completaste, la precisión, las rachas y si terminaste el camino.",
+    "tip": "Fíjate si el orden importa: en el conteo salteado y las secuencias debes elegir en orden."
+  },
+  "accessibility": {
+    "title": "Camino numérico de Leo"
+  }
+}

@@ -5,6 +5,7 @@ import { useIOSViewportFix } from "../../../../../../hooks/useIOSViewportFix";
 import { createLearningBookNav } from "../../../../../../lib/learning-book/learning-book-nav";
 import { getLearningBookMasterPath } from "../../../../../../lib/learning-book/learning-book-catalog-meta";
 import { useMemo } from "react";
+import { resolveBookRequestContentLocale } from "../../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 export default function StudentBookPage({
   page,
@@ -49,7 +50,8 @@ export default function StudentBookPage({
 }
 
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { subject, grade, pageId } = params;
   const { getLearningBookEntry } = await import(
     "../../../../../../lib/learning-book/learning-book-catalog.js"
@@ -60,12 +62,12 @@ export async function getServerSideProps({ params }) {
   const entry = getLearningBookEntry(subject, grade);
   const clientMeta = getLearningBookClientMeta(subject, grade);
   if (!entry || !clientMeta || !entry.registry.isValidPageId(pageId)) return { notFound: true };
-  const page = entry.loader.loadPage(pageId);
+  const page = entry.loader.loadPage(pageId, { contentLocale });
   if (!page) return { notFound: true };
-  const batches = entry.loader.loadTocEntries();
+  const batches = entry.loader.loadTocEntries({ contentLocale });
   const { prev, next } = entry.registry.getPageNeighbors(pageId);
-  const prevPage = prev ? entry.loader.loadPage(prev) : null;
-  const nextPage = next ? entry.loader.loadPage(next) : null;
+  const prevPage = prev ? entry.loader.loadPage(prev, { contentLocale }) : null;
+  const nextPage = next ? entry.loader.loadPage(next, { contentLocale }) : null;
   return {
     props: {
       page,

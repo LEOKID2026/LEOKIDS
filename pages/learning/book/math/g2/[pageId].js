@@ -2,6 +2,7 @@ import Layout from "../../../../../components/Layout";
 import MathG2BookShell from "../../../../../components/learning-book/MathG2BookShell";
 import LearningPageBody from "../../../../../components/learning-book/LearningPageBody";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 import {
   getMathG2PageNeighbors,
   isValidMathG2PageId,
@@ -37,23 +38,24 @@ export default function MathG2BookPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadMathG2Page, loadMathG2TocEntries } = await import("../../../../../lib/learning-book/load-math-g2-pages");
   const pageId = params.pageId;
   if (!isValidMathG2PageId(pageId)) {
     return { notFound: true };
   }
 
-  const page = loadMathG2Page(pageId);
+  const page = loadMathG2Page(pageId, { contentLocale });
   if (!page) {
     return { notFound: true };
   }
 
-  const batches = loadMathG2TocEntries();
+  const batches = loadMathG2TocEntries({ contentLocale });
   const { prev, next } = getMathG2PageNeighbors(pageId);
 
-  const prevPage = prev ? loadMathG2Page(prev) : null;
-  const nextPage = next ? loadMathG2Page(next) : null;
+  const prevPage = prev ? loadMathG2Page(prev, { contentLocale }) : null;
+  const nextPage = next ? loadMathG2Page(next, { contentLocale }) : null;
 
   return {
     props: {

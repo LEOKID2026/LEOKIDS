@@ -318,10 +318,7 @@
     "regular": "Regular",
     "advanced": "Advanced"
   },
-  "lib__learning__question-metadata-validator": {
-    "hebrew": "Hebrew",
-    "moledet_geography": "Moledet/Geography"
-  },
+  "lib__learning__question-metadata-validator": {},
   "lib__learning__report-visible-practice-sync": {
     "learning": "Learning",
     "practice": "Practice",
@@ -658,7 +655,6 @@
     "separate_answer_key_generated_only_on_explicit_request": "Separate answer key - generated only on explicit request",
     "ink_saver": "Ink saver",
     "no_answers_on_the_worksheet": "No answers on the worksheet",
-    "hebrew": "Hebrew",
     "this_question_requires_audio_and_cannot_be_printed": "This question requires audio and cannot be printed",
     "this_question_requires_an_image_and_cannot_be_printed": "This question requires an image and cannot be printed",
     "question": "Question",
@@ -831,7 +827,7 @@
     "how_much_to_trust_this_not_high_yet": "How much to trust this: not high yet.",
     "data_is_missing_or_partial": "Data is missing or partial."
   },
-  "utils__detailed-report-parent-letter-he": {
+  "utils__detailed-report-parent-letter": {
     "sparse_data": "Sparse data"
   },
   "utils__english-question-generator": {
@@ -842,7 +838,7 @@
     "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Cross-subject patterns are hypotheses and require confirming probes per subject.",
     "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Internal educational diagnostic support only - not clinical / not parent-facing."
   },
-  "utils__hebrew-audio-narration-binding": {
+  "utils__audio-narration-binding": {
     "listen_to_the_question_and_answer_based_on_what_you_hear": "Listen to the question and answer based on what you hear."
   },
   "utils__math-topic-parent-display": {

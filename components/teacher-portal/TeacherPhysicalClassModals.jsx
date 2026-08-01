@@ -3,8 +3,8 @@ import {
   activityModeLabelHe,
   activityStatusLabelHe,
 } from "../../lib/classroom-activities/classroom-activities-labels.client.js";
-import { sanitizeActivityTitleHe } from "../../lib/platform-ui/hebrew-display-labels.js";
-import { subjectLabelHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
+import { sanitizeActivityTitleHe } from "../../lib/platform-ui/display-labels.js";
+import { subjectLabel, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 
 function Overlay({ onClose, children, title }) {
   useEffect(() => {
@@ -112,7 +112,7 @@ export function TeacherPhysicalClassActivitiesModal({ accessToken, classCard, on
             >
               <p className="font-medium">{sanitizeActivityTitleHe(a.title, a.subject)}</p>
               <p className="text-white/60 text-xs mt-1">
-                {subjectLabelByClassId.get(a.classId) || subjectLabelHe(a.subject)} ·{" "}
+                {subjectLabelByClassId.get(a.classId) || subjectLabel(a.subject)} ·{" "}
                 {activityStatusLabelHe(a.status)} · {activityModeLabelHe(a.mode)}
               </p>
             </li>

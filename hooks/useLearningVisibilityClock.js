@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
  *
  * @param {{
  *   enabled?: boolean,
- *   ledger?: import('../utils/learning-time-credit/question-time-ledger.js').QuestionTimeLedger | null,
+ *   ledger?: import('../utils/learning-time-credit/question-time-ledger.js').QuestionTimeLedger || null,
  * }} options
  */
 export function useLearningVisibilityClock({ enabled = true, ledger = null } = {}) {

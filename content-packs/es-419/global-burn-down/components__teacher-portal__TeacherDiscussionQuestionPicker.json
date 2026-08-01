@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "level": "Nivel",
+    "whole_class": "toda la clase",
+    "selected_students": "Estudiantes seleccionados",
+    "discussion_with_response_students_submit_an_answer": "Discusión con respuesta (los estudiantes envían una respuesta)",
+    "explanation_only_no_response_required": "Sólo explicación: no se requiere respuesta"
+  }
+}

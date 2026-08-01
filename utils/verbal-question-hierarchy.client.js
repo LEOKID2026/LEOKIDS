@@ -27,8 +27,7 @@ function extractQuotedPassage(text) {
   const patterns = [
     /^['']([\s\S]*?)['']\s*([\s\S]+)$/u,
     /^"([\s\S]*?)"\s*([\s\S]+)$/u,
-    /^«([\s\S]*?)»\s*([\s\S]+)$/u,
-  ];
+    /^«([\s\S]*?)»\s*([\s\S]+)$/u];
   for (const re of patterns) {
     const match = t.match(re);
     if (match?.[1] != null && match[2]?.trim()) {
@@ -122,7 +121,7 @@ function isShortStandaloneVerbalQuestion(text) {
 
   if (extractQuotedPassage(raw)) return false;
 
-  if (/^(קרא|קראו|Read the|Listen and)/iu.test(raw) && raw.length > 72) return false;
+  if (/(?!)/iu.test(raw) && raw.length > 72) return false;
 
   const sentenceCount = raw.split(/(?<=[.!?؟])\s+/u).filter(Boolean).length;
   if (sentenceCount >= 2 && /[?؟]/.test(raw)) return false;
@@ -134,7 +133,7 @@ function isShortStandaloneVerbalQuestion(text) {
  * @param {string} instruction
  * @param {string} passage
  * @param {string} finalQuestion
- * @returns {{ mode: "hierarchy", instruction?: string, passage?: string, finalQuestion?: string } | { mode: "single", text: string }}
+ * @returns {{ mode: "hierarchy", instruction?: string, passage?: string, finalQuestion?: string } || { mode: "single", text: string }}
  */
 function buildHierarchy(instruction, passage, finalQuestion) {
   const inst = String(instruction ?? "").trim();
@@ -177,8 +176,8 @@ function buildHierarchy(instruction, passage, finalQuestion) {
  *   leadText?: string,
  *   bodyText?: string,
  *   bodyKind?: string,
- * } | null | undefined} input
- * @returns {{ mode: "single", text: string } | { mode: "hierarchy", instruction?: string, passage?: string, finalQuestion?: string } | null}
+ * } || null || undefined} input
+ * @returns {{ mode: "single", text: string } || { mode: "hierarchy", instruction?: string, passage?: string, finalQuestion?: string } || null}
  */
 export function resolveVerbalQuestionHierarchy(input) {
   if (!input || typeof input !== "object") {
@@ -205,8 +204,8 @@ export function resolveVerbalQuestionHierarchy(input) {
       ? stemField
       : "";
   const finalFromFields =
-    explicitPrompt ||
-    (questionField && questionField !== explicitPassage ? questionField : "") ||
+    explicitPrompt |
+    (questionField && questionField !== explicitPassage ? questionField : "") |
     stemAsQuestion;
 
   if (explicitInstruction && explicitPassage && finalFromFields) {

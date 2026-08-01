@@ -1,24 +1,23 @@
 /**
- * גבולות אנושי בלולא — stage1 §16: מונע ניסוחים אסורים במסקנה.
+ *    — stage1 §16:    .
  */
 const FORBIDDEN_SUBSTRINGS = [
-  "דיסלקציה",
+  "",
   "ADHD",
   "ADD",
-  "לקות למידה",
-  "אוטיזם",
-  "הפרעת קשב",
-  "אתה חכם",
-  "אתה לא חכם",
-  "מבחן קליני",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
   "dyslexia",
   "learning disability",
   "autism",
   "attention disorder",
   "you are smart",
   "you are not smart",
-  "clinical test",
-];
+  "clinical test"];
 
 /**
  * @param {string} text

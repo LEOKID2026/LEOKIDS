@@ -7,7 +7,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { PARENT_DIAGNOSTIC_TYPE_LABEL_HE } from "../../utils/parent-report-language/parent-report-hebrew-copy-spec.js";
+import { PARENT_DIAGNOSTIC_TYPE_LABEL_HE } from "../../utils/parent-report-language/parent-report-copy-spec.js";
 
 test("insufficient_evidence label uses the softer approved wording", () => {
   assert.match(PARENT_DIAGNOSTIC_TYPE_LABEL_HE.insufficient_evidence, /עדיין מוקדם לקבוע/);

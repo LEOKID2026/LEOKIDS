@@ -8,9 +8,7 @@ const REPORT_MAP_KEY = {
   geometry: "geometryTopics",
   english: "englishTopics",
   science: "scienceTopics",
-  history: "historyTopics",
-  hebrew: "hebrewTopics",
-  "moledet-geography": "moledetGeographyTopics",
+  history: "historyTopics"
 };
 
 /**
@@ -78,7 +76,7 @@ function canonicalFactualObservationsJson(list) {
       canonicalKey: o?.canonicalKey,
       label: o?.label,
       count: o?.count,
-      recurrenceLevel: o?.recurrenceLevel,
+      recurrenceLevel: o?.recurrenceLevel
     })),
   );
 }
@@ -92,7 +90,7 @@ export function learningPatternDecisionsMatch(shortLpd, detailedLpd) {
     "parentWordingLevel",
     "parentVisibleFinding",
     "evidenceStrength",
-    "observedPatternLevel",
+    "observedPatternLevel"
   ];
   for (const f of fields) {
     if (String(shortLpd[f] || "") !== String(detailedLpd[f] || "")) return false;
@@ -141,12 +139,12 @@ export function compareShortDetailedLearningPatternFindings(baseReport, detailed
           topicRowKey,
           short: {
             topicStatus: shortLpd?.topicStatus,
-            parentVisibleFinding: shortLpd?.parentVisibleFinding,
+            parentVisibleFinding: shortLpd?.parentVisibleFinding
           },
           detailed: {
             topicStatus: detailedLpd?.topicStatus,
-            parentVisibleFinding: detailedLpd?.parentVisibleFinding,
-          },
+            parentVisibleFinding: detailedLpd?.parentVisibleFinding
+          }
         });
       }
     }
@@ -159,5 +157,5 @@ export default {
   shortLearningPatternDecisionFromBase,
   detailedLearningPatternDecisionFromReport,
   learningPatternDecisionsMatch,
-  compareShortDetailedLearningPatternFindings,
+  compareShortDetailedLearningPatternFindings
 };

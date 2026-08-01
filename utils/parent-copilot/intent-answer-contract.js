@@ -2,9 +2,9 @@
  * Maps resolved scope + Stage A intent + utterance → intent-specific answer contract.
  */
 
-import { foldUtteranceForHeMatch, normalizeFreeformParentUtteranceHe } from "./utterance-normalize-he.js";
+import { foldUtteranceForMatch, normalizeFreeformParentUtterance } from "./utterance-normalize.js";
 import { isMistakePatternQuestion } from "./topic-evidence-answer.js";
-import { isContextualFollowUpUtterance } from "./contextual-follow-up-he.js";
+import { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
 import { classifySubjectEvidenceTier, SUBJECT_EVIDENCE_TIER } from "../parent-report-language/subject-evidence-policy.js";
 
 export const ANSWER_CONTRACT = Object.freeze({
@@ -16,29 +16,28 @@ export const ANSWER_CONTRACT = Object.freeze({
   home_practice: "home_practice",
   strength: "strength",
   progression: "progression",
-  zero_evidence: "zero_evidence",
-});
+  zero_evidence: "zero_evidence"});
 
 const REPORT_EXPLAIN_RE =
-  /תסביר\s*(?:לי\s*)?(?:על\s*)?(?:ה)?דוח|מה\s*הדוח\s*אומר|תן\s*לי\s*סיכום|מה\s*רואים\s*פה|מה\s*מראה\s*הדוח|סיכום\s*הדוח|תמונה\s*כללית/u;
+  /\s*(?:\s*)?(?:\s*)?(?:)?|\s*\s*|\s*\s*|\s*\s*|\s*\s*|\s*|\s*/u;
 
 const IMPORTANT_FOCUS_RE =
-  /מה\s*חשוב\s*כאן|מה\s*חשוב\s*עכשיו|מה\s*הכי\s*חשוב|תסביר\s*לי\s*מה\s*חשוב|מה\s*לשים\s*דגש|על\s*מה\s*לשים\s*דגש/u;
+  /\s*\s*|\s*\s*|\s*\s*|\s*\s*\s*|\s*\s*|\s*\s*\s*/u;
 
-const TOPIC_LOOKUP_RE = /^מה\s*לגבי\s+/u;
+const TOPIC_LOOKUP_RE = /^\s*\s+/u;
 
 const TOPIC_PROBLEM_RE =
-  /מה\s*הבעיה|מה\s*הקושי|איפה\s*הבעיה|איפה\s*הקושי|למה\s*(?:הוא|היא|הילד)?\s*(?:חלש|קשה)|מה\s*לא\s*עובד|מה\s*חלש|למה\s*קשה/u;
+  /\s*|\s*|\s*|\s*|\s*(?:)?\s*(?:)|\s*\s*|\s*|\s*/u;
 
 const HOME_PRACTICE_RE =
-  /מה\s*לעשות|איך\s*לתרגל|כמה\s*זמן|בבית|הצעד\s*הבא|מה\s*עושים\s*עכשיו|תרגול\s*בבית|איך\s*מתרגלים/u;
+  /\s*|\s*|\s*|\s*|\s*\s*|\s*|\s*/u;
 
 const STRENGTH_RE =
-  /מה\s*הולך\s*טוב|במה\s*(?:הוא|היא|הילד)?\s*חזק|מה\s*חזק|איפה\s*חזק|מה\s*מצליח|תחומי\s*חוזק|(?:ה)?מקצוע\s*(?:הכי\s*)?(?:ה)?חזק|הכי\s*חזק|(?:ה)?חזק\s*ביותר/u;
+  /\s*\s*|\s*(?:)?\s*|\s*|\s*|\s*|\s*|(?:)?\s*(?:\s*)?(?:)?|\s*|(?:)?\s*/u;
 
 // Progression family: advance / level up / level down / mastered / above-grade / below-grade / focus elsewhere.
 const PROGRESSION_RE =
-  /להתקדם|לעלות\s*(?:ב)?רמה|להעלות\s*(?:את\s*)?(?:ה)?רמה|לרדת\s*(?:ב)?רמה|להוריד\s*(?:את\s*)?(?:ה)?רמה|כבר\s*שולט|שולט\s*בנושא|כבר\s*יודע|מעל\s*(?:ה)?כיתה|מעל\s*הרמה|מתחת\s*(?:ל)?כיתה|מתקשה\s*(?:גם\s*)?מתחת|להתמקד\s*בנושא\s*אחר|לעבור\s*לנושא\s*אחר|מבזבז/u;
+  /\s*(?:)?|\s*(?:\s*)?(?:)?|\s*(?:)?|\s*(?:\s*)?(?:)?|\s*|\s*|\s*|\s*(?:)?|\s*|\s*(?:)?|\s*(?:\s*)?|\s*\s*|\s*\s*/u;
 
 /**
  * @param {unknown} payload
@@ -70,12 +69,12 @@ export function subjectQuestionCountFromPayload(payload, subjectId) {
  */
 export function resolveAnswerContract(params) {
   const utteranceStr = String(params?.utteranceStr || "");
-  const folded = foldUtteranceForHeMatch(normalizeFreeformParentUtteranceHe(utteranceStr));
+  const folded = foldUtteranceForMatch(normalizeFreeformParentUtterance(utteranceStr));
   const scopeType = String(params?.scopeType || "");
   const stageAIntent = String(params?.stageAIntent || "");
   const payload = params?.payload;
   const subjectId =
-    String(params?.subjectId || "").trim() ||
+    String(params?.subjectId || "").trim() |
     String(params?.truthPacket?.surfaceFacts?.subjectId || "").trim();
 
   if (scopeType === "subject" && subjectId) {
@@ -87,14 +86,14 @@ export function resolveAnswerContract(params) {
 
   if (IMPORTANT_FOCUS_RE.test(folded)) return ANSWER_CONTRACT.important_focus;
 
-  if (TOPIC_LOOKUP_RE.test(folded) || /^מה\s*עם\s+/u.test(folded)) return ANSWER_CONTRACT.topic_lookup;
+  if (TOPIC_LOOKUP_RE.test(folded) || /^\s*\s+/u.test(folded)) return ANSWER_CONTRACT.topic_lookup;
 
   if (
-    HOME_PRACTICE_RE.test(folded) ||
-    stageAIntent === "what_to_do_today" ||
-    stageAIntent === "what_to_do_this_week" ||
-    stageAIntent === "how_to_tell_child" ||
-    (isContextualFollowUpUtterance(utteranceStr) && /מה\s*לעשות|איך\s*לתרגל|כמה\s*זמן/u.test(folded))
+    HOME_PRACTICE_RE.test(folded) |
+    stageAIntent === "what_to_do_today" |
+    stageAIntent === "what_to_do_this_week" |
+    stageAIntent === "how_to_tell_child" |
+    (isContextualFollowUpUtterance(utteranceStr) && /\s*|\s*|\s*/u.test(folded))
   ) {
     return ANSWER_CONTRACT.home_practice;
   }
@@ -113,9 +112,9 @@ export function resolveAnswerContract(params) {
 
   if (
     scopeType === "executive" &&
-    (stageAIntent === "explain_report" ||
-      stageAIntent === "ask_topic_specific" ||
-      stageAIntent === "ask_subject_specific" ||
+    (stageAIntent === "explain_report" |
+      stageAIntent === "ask_topic_specific" |
+      stageAIntent === "ask_subject_specific" |
       REPORT_EXPLAIN_RE.test(folded))
   ) {
     return ANSWER_CONTRACT.report_explanation;
@@ -123,9 +122,9 @@ export function resolveAnswerContract(params) {
 
   if (scopeType === "topic") {
     if (
-      TOPIC_PROBLEM_RE.test(folded) ||
-      stageAIntent === "what_is_still_difficult" ||
-      stageAIntent === "why_not_advance" ||
+      TOPIC_PROBLEM_RE.test(folded) |
+      stageAIntent === "what_is_still_difficult" |
+      stageAIntent === "why_not_advance" |
       stageAIntent === "what_not_to_do_now"
     ) {
       return ANSWER_CONTRACT.topic_problem;

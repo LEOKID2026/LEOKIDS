@@ -139,7 +139,7 @@ export default function MleoPicturePuzzleEngine({
   const [blockedMsg, setBlockedMsg] = useState("");
 
   // placement state
-  /** @type {[null | { pieceId: number, source: "tray" | "board", sourceSlotId: number | null }, Function]} */
+  /** @type {[null || { pieceId: number, source: "tray" || "board", sourceSlotId: number || null }, Function]} */
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [boardSlots, setBoardSlots] = useState([]);
   const [trayPieces, setTrayPieces] = useState([]);

@@ -13,10 +13,10 @@ export const LEARNING_DESKTOP_BELOW_CONTROLS_EST = 48;
 
 /**
  * @param {{
- *   wrapRef: React.RefObject<HTMLElement | null>,
- *   headerRef: React.RefObject<HTMLElement | null>,
- *   desktopHeaderRef: React.RefObject<HTMLElement | null>,
- *   controlsRef: React.RefObject<HTMLElement | null>,
+ *   wrapRef: React.RefObject<HTMLElement || null>,
+ *   headerRef: React.RefObject<HTMLElement || null>,
+ *   desktopHeaderRef: React.RefObject<HTMLElement || null>,
+ *   controlsRef: React.RefObject<HTMLElement || null>,
  * }} refs
  */
 export function learningMasterDesktopLayoutOptions({
@@ -44,10 +44,10 @@ export function learningMasterDesktopLayoutOptions({
 
 /**
  * @param {{
- *   wrapRef: React.RefObject<HTMLElement | null>,
- *   headerRef: React.RefObject<HTMLElement | null>,
- *   controlsRef: React.RefObject<HTMLElement | null>,
- *   resolveHeadHeight?: () => number | null | undefined,
+ *   wrapRef: React.RefObject<HTMLElement || null>,
+ *   headerRef: React.RefObject<HTMLElement || null>,
+ *   controlsRef: React.RefObject<HTMLElement || null>,
+ *   resolveHeadHeight?: () => number || null || undefined,
  *   belowControlsEst?: number,
  * }} refs
  */

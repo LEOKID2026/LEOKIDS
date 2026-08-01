@@ -4,7 +4,7 @@ import styles from "./LeoLabGame.module.css";
 /**
  * @param {{
  *   item: { id?: string, name: string, icon: string, imageSrc?: string }
- *   size?: 'shelf' | 'bench' | 'ghost'
+ *   size?: 'shelf' || 'bench' || 'ghost'
  *   showName?: boolean
  * }} props
  */

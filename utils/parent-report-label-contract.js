@@ -1,9 +1,9 @@
 /**
- * בדיקות חוזה — מזהים פנימיים לא אמורים להופיע כטקסט UI במקום תוויות עבריות.
- * משמש סקריפטי בדיקה בלבד; לא משנה מנוע או דוח.
+ *   —       UI   .
+ *    ;     .
  */
 
-/** מזהים שמוצגים לעיתים כערך גולמי כשחסר מיפוי תווית */
+/**         */
 export const INTERNAL_DOMINANT_AND_DIAGNOSTIC_IDS = new Set([
   "knowledge_gap",
   "fragile_success",
@@ -18,8 +18,7 @@ export const INTERNAL_DOMINANT_AND_DIAGNOSTIC_IDS = new Set([
   "undetermined",
   "fragile_success_cluster",
   "hint_dependence",
-  "false_promotion",
-]);
+  "false_promotion"]);
 
 /**
  * @param {unknown} value
@@ -38,7 +37,7 @@ function looksLikeAsciiSnakeId(s) {
 }
 
 /**
- * טקסט שאמור להיות תווית עברית למשתמש — לא מזהה פנימי ידוע ולא snake ASCII בלי עברית.
+ *       —      snake ASCII  .
  * @param {string} fieldCtx
  * @param {unknown} value
  */
@@ -48,7 +47,7 @@ export function assertUiHebrewLabelField(fieldCtx, value) {
   if (INTERNAL_DOMINANT_AND_DIAGNOSTIC_IDS.has(s)) {
     throw new Error(`${fieldCtx}: raw internal id leaked as label: "${s}"`);
   }
-  if (looksLikeAsciiSnakeId(s) && !/[\u0590-\u05FF]/.test(s)) {
+  if (looksLikeAsciiSnakeId(s) && !/(?!)/.test(s)) {
     throw new Error(`${fieldCtx}: snake_case ASCII without Hebrew (possible id leak): "${s}"`);
   }
 }

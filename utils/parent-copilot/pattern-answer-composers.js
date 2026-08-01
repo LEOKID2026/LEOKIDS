@@ -5,8 +5,8 @@
 import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-message.js";
 import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { NO_DATA_FOR_REQUEST_RESPONSE_HE } from "./question-classifier.js";
-import { foldUtteranceForHeMatch } from "./utterance-normalize-he.js";
-import { normalizeSubjectId, subjectLabelHe, SUBJECT_ORDER } from "./contract-reader.js";
+import { foldUtteranceForMatch } from "./utterance-normalize.js";
+import { normalizeSubjectId, subjectLabel, SUBJECT_ORDER } from "./contract-reader.js";
 import {
   collectTopicMetrics,
   pickWeakestTopic,
@@ -28,30 +28,30 @@ import {
 } from "./no-data-request-response.js";
 import { detectAggregateQuestionClass } from "./semantic-question-class.js";
 
-const WHERE_HELP_RE = /איפה\s+(?:ה(?:וא|יא)|(?:הילד|הילדה))\s+צ(?:ר|ר)יך\s+עזרה/u;
-const THREE_THINGS_RE = /(?:מה\s+)?(?:שלוש(?:ת)?|3)\s*(?:ה)?דברים(?:\s+הכי\s+חשוב(?:ים)?)?(?:\s+להורה)?/u;
-const OPEN_ACTIVITY_RE = /על\s+איזה\s+נושא\s+ל(?:פתוח|התחיל)(?:\s+(?:ל(?:ו|ה)|פעילות))?/u;
+const WHERE_HELP_RE = /(?!)/u;
+const THREE_THINGS_RE = /(?!)/u;
+const OPEN_ACTIVITY_RE = /(?!)/u;
 const TREND_RE =
-  /מה\s+השתנה|משבוע\s+קודם|מהשבוע\s+קודם|השבוע\s+קודם|האם\s+(?:הוא|היא)\s+מתקדם|יש\s+שיפור|התקדמות/u;
-const PARENT_ACTIVITY_RE = /הפעילות\s+.*השפיע|האם\s+הפעילות\s+.*השפיע|מה\s+נתתי\s+ל(?:ו|ה)/u;
+  /(?!)/u;
+const PARENT_ACTIVITY_RE = /(?!)/u;
 const SPEED_RE =
-  /האם\s+ז(?:ה|ו)\s+בגלל\s+לחץ\s+זמן|אולי\s+ז(?:ה|ו)\s+בגלל\s+מהירות|האם\s+(?:הוא|היא)\s+טע(?:ה|תה)\s+כי\s+עבד(?:ה)?\s+מהר|לחץ\s+זמן|עונה\s+מהר|מהר\s+מדי/u;
+  /(?!)/u;
 const HOME_TODAY_RE =
-  /(?:^|\s)(?:מה\s+לעשות\s+(?:אית(?:ו|ה|ם)|עמ(?:ו|ה))(?:\s+בבית)?\s+היום|מה\s+לעשות\s+בבית(?:\s+היום)?|מה\s+עושים\s+עכשיו|ו?מה\s+לעשות\s+(?:עם\s+ז(?:ה|ו)\s+)?בבית)(?:\s*[.?؟]*)?$/u;
-const ASK_AT_HOME_RE = /מה\s+לשאול\s+(?:אות(?:ו|ה)|את(?:ו|ה))\s+בבית/u;
-const WHAT_NOT_INFER_RE = /מה\s+לא\s+כדאי\s+(?:לי\s+)?להסיק(?:\s+עדיין)?/u;
+  /(?!)/u;
+const ASK_AT_HOME_RE = /(?!)/u;
+const WHAT_NOT_INFER_RE = /(?!)/u;
 const PROGRESS_WHERE_RE =
-  /איפה\s+רואים(?:\s+(?:ש(?:יפור|התקדמות)|(?:ש(?:ה)?)?מצב\s+טוב\s+יותר))?/u;
+  /(?!)/u;
 const IMPORTANT_NOW_RE =
-  /מה\s+ה(?:כי\s+)?חשוב(?:\s+(?:כרגע|לי(?:\s+ל)?דעת(?:\s+השבוע)?|עכשיו))?|במה\s+להתמקד\s+(?:עכשיו|השבוע)?|מה\s+העיקר|מה\s+חשוב\s+עכשיו/u;
+  /(?!)/u;
 const AVOID_NOW_RE =
-  /מה\s+כדאי\s+להימנע(?:\s+ממנ(?:ו|ה))?(?:\s+עכשיו)?|ממה\s+להימנע|מה\s+לא\s+(?:כדאי\s+)?(?:ל)?עשות|מה\s+לא\s+כדאי\s+(?:לי\s+)?להסיק/u;
-const LEARNING_SEVERITY_FOLLOWUP_RE = /^(?:ז(?:ה|ו)\s+)?חמור\s*\??$/u;
+  /(?!)/u;
+const LEARNING_SEVERITY_FOLLOWUP_RE = /(?!)/u;
 const EXPLAIN_REPORT_SIMPLE_RE =
-  /תסביר\s+לי\s+א(?:ת|ת)?\s+הדוח\s+במילים\s+פשוטות|במילים\s+פשוטות.*(?:א(?:ת|ת)?\s+)?(?:ה)?דוח|תסביר.*(?:א(?:ת|ת)?\s+)?(?:ה)?דוח.*(?:במילים\s+פשוטות|פשוט)/u;
+  /(?!)/u;
 
 export function matchesExplainReportSimpleWordsUtterance(utterance) {
-  return EXPLAIN_REPORT_SIMPLE_RE.test(foldUtteranceForHeMatch(String(utterance || "")));
+  return EXPLAIN_REPORT_SIMPLE_RE.test(foldUtteranceForMatch(String(utterance || "")));
 }
 
 function globalReportQuestionCount(payload) {
@@ -114,7 +114,7 @@ function stableSubjectPhraseList(payload, excludeSid) {
   if (!rows.length) return "";
   return rows
     .slice(0, 4)
-    .map((r) => `${subjectLabelHe(r.sid)} with ${r.q} questions and ${r.acc}%`)
+    .map((r) => `${subjectLabel(r.sid)} with ${r.q} questions and ${r.acc}%`)
     .join(", ");
 }
 
@@ -171,7 +171,7 @@ export function tryComposeExplainReportSimpleWordsDraft(params) {
  * @param {string} utterance
  */
 export function classifyApprovedPatternQuestion(utterance) {
-  const t = foldUtteranceForHeMatch(String(utterance || ""));
+  const t = foldUtteranceForMatch(String(utterance || ""));
   if (!t) return null;
   const aggregateClass = detectAggregateQuestionClass(utterance);
   if (aggregateClass === "recommendation_action" || aggregateClass === "improved") return null;
@@ -366,8 +366,8 @@ function composeHomeToday(payload, conv) {
   let text = `Today I would do one thing: a short activity on the topic ${a.subjectLabel} - ${a.topicLabel}. In the report there are ${a.questionCount} questions with ${a.accuracyPercent}% success, so it is a good place for focused practice. Do only 5-10 minutes, 3-5 questions, and at the end ask the child: How did you think of the answer?`;
   const hit = findTopicRowByKey(payload, a.topicRowKey, a.subjectId || undefined);
   const sub =
-    hit?.tr?.contractsV1?.evidence?.safeSubskillHe ||
-    hit?.tr?.safeSubskillHe ||
+    hit?.tr?.contractsV1?.evidence?.safeSubskillHe |
+    hit?.tr?.safeSubskillHe |
     hit?.tr?.contractsV1?.narrative?.safeSubskillHe;
   if (String(sub || "").trim().length >= 3) {
     text += copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i");
@@ -431,7 +431,7 @@ function findTrendAnchor(payload) {
       }
     }
     for (const sid of SUBJECT_ORDER) {
-      const label = subjectLabelHe(sid);
+      const label = subjectLabel(sid);
       if (trendText.includes(label)) {
         const topic = pickWeakestTopic(metas.filter((x) => x.sid === sid)) || metas.find((x) => x.sid === sid);
         if (topic) return { ...topicAnchorFields(topic), trendText };
@@ -498,8 +498,8 @@ export function tryComposePatternAnswerDraft(params) {
 
   if (pattern === "learning_severity_followup") {
     const hasCtx =
-      String(conv.lastResolvedTopic || "").trim() ||
-      String(conv.lastResolvedSubject || "").trim() ||
+      String(conv.lastResolvedTopic || "").trim() |
+      String(conv.lastResolvedSubject || "").trim() |
       (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0);
     if (!hasCtx) return null;
   }

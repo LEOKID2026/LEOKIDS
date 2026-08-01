@@ -3,6 +3,7 @@ import MathG6BookShell from "../../../../../components/learning-book/MathG6BookS
 import LearningBookIndexContent from "../../../../../components/learning-book/LearningBookIndexContent";
 import { useIOSViewportFix } from "../../../../../hooks/useIOSViewportFix";
 import { MATH_G6_BOOK_META } from "../../../../../lib/learning-book/math-g6-registry";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 export default function MathG6BookIndex({ batches }) {
   useIOSViewportFix();
@@ -19,8 +20,10 @@ export default function MathG6BookIndex({ batches }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx) {
+  const { params, req, resolvedUrl, query } = ctx;
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadMathG6TocEntries } = await import("../../../../../lib/learning-book/load-math-g6-pages");
-  const batches = loadMathG6TocEntries();
+  const batches = loadMathG6TocEntries({ contentLocale });
   return { props: { batches } };
 }

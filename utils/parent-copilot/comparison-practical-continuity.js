@@ -8,15 +8,14 @@ import { buildTruthPacketV1 } from "./truth-packet-v1.js";
 import { planConversation } from "./conversation-planner.js";
 import { composeAnswerDraft } from "./answer-composer.js";
 import { compactParentAnswerBlocks } from "./answer-compaction.js";
-import { readContractsSliceForScope, subjectLabelHe } from "./contract-reader.js";
-import { normalizeParentFacingHe } from "../parent-report-language/parent-facing-normalize.js";
+import { readContractsSliceForScope, subjectLabel } from "./contract-reader.js";
+import { normalizeParentFacing } from "../parent-report-language/parent-facing-normalize.js";
 
 /** @param {Array<{ type: string; answerText: string; source: string }>} blocks */
 function normalizeAnswerBlocksHe(blocks) {
   return (Array.isArray(blocks) ? blocks : []).map((b) => ({
     ...b,
-    answerText: normalizeParentFacingHe(String(b?.answerText || "").trim()),
-  }));
+    answerText: normalizeParentFacing(String(b?.answerText || "").trim())}));
 }
 
 /** Prior aggregate classes that establish a comparison thread. */
@@ -32,8 +31,7 @@ const PRIOR_COMPARISON_THREAD = new Set([
   "most_stable",
   "improved",
   "still_unclear",
-  "subject_listing",
-]);
+  "subject_listing"]);
 
 /**
  * @param {string} t normalized lower
@@ -43,18 +41,18 @@ function scorePracticalFollowupMode(t) {
   let advance = 0;
   let strengthen = 0;
   if (
-    /מה\s+עושים|מה\s+לעשות|אז\s+מה|מה\s+הלאה|מה\s+עכשיו|בפועל|במעשה|מה\s+זה\s+אומר\s+בפועל|איך\s+זה\s+מתבטא|מה\s+עושים\s+עם\s+זה/.test(t) ||
+    /\s+|\s+|\s+|\s+|\s+||\s+\s+\s+|\s+\s+|\s+\s+\s+/.test(t) |
     /what\s+(?:should|do)\s+(?:we|i)\s+do|what\s+now|what\s+next|in\s+practice|practical|do\s+with\s+this/.test(t)
   ) {
     action += 2.4;
   }
-  if (/ומה\s*עכשיו|ממה\s*עכשיו|אז\s*מה\s*עושים|ומה\s*בבית|ממה\s*בבית|ומה\s*מחר|ממה\s*מחר/u.test(t)) {
+  if (/\s*|\s*|\s*\s*|\s*|\s*|\s*|\s*/u.test(t)) {
     action += 1.85;
   }
-  if (/המלצות|הצעד\s+הבא|מה\s+לעשות\s+היום|מה\s+לעשות\s+בשבוע|שבוע\s*הקרוב|recommendation|next\s+step|today|week|coming\s+week/.test(t)) action += 1.6;
-  if (/להתקדם|לקדם|כדאי\s+לקדם|האם\s+לקדם|מתי\s+לקדם|להעלות\s+רמה|לעלות\s+רמה|קידום|להמשיך\s+לקדם|advance|promote|move\s+ahead|raise\s+(?:the\s+)?level/.test(t)) advance += 2.5;
-  if (/להמתין|לעצור|לא\s+לקדם|לחכות|wait|stop|hold|do\s+not\s+promote/.test(t)) advance += 0.8;
-  if (/לחזק|חיזוק|לטפח|לעבוד\s+על|לחזק\s+את|חיזוקים|חיזוק\s+נוסף|strengthen|reinforce|work\s+on/.test(t)) strengthen += 2.4;
+  if (/\s+|\s+\s+|\s+\s+|\s*|recommendation|next\s+step|today|week|coming\s+week/.test(t)) action += 1.6;
+  if (/\s+|\s+|\s+|\s+|\s+|\s+|advance|promote|move\s+ahead|raise\s+(?:the\s+)?level/.test(t)) advance += 2.5;
+  if (/\s+|wait|stop|hold|do\s+not\s+promote/.test(t)) advance += 0.8;
+  if (/|\s+|\s+|\s+|strengthen|reinforce|work\s+on/.test(t)) strengthen += 2.4;
   return { action, advance, strengthen };
 }
 
@@ -66,11 +64,11 @@ function interpretationForComparisonThread(priorClass, role) {
   const p = String(priorClass || "");
   const r = String(role || "");
   if (
-    p === "weakest_subject" ||
-    p === "needs_attention" ||
-    p === "hardest_subject" ||
-    r === "weakest" ||
-    r === "needs_attention" ||
+    p === "weakest_subject" |
+    p === "needs_attention" |
+    p === "hardest_subject" |
+    r === "weakest" |
+    r === "needs_attention" |
     r === "hardest"
   ) {
     return "weaknesses";
@@ -93,7 +91,7 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
 
   const t = utteranceStr
     .toLowerCase()
-    .replace(/\s+/g, " ")
+    .replace(/\s+/g, "")
     .trim();
   const aggQ = detectAggregateQuestionClass(utteranceStr);
   const scores = scorePracticalFollowupMode(t);
@@ -118,11 +116,10 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
     scope = {
       scopeType: /** @type {const} */ ("subject"),
       scopeId: sid,
-      scopeLabel: subjectLabelHe(sid),
+      scopeLabel: subjectLabel(sid),
       interpretationScope: interp,
       scopeClass: interp,
-      canonicalIntent: canon,
-    };
+      canonicalIntent: canon};
   } else {
     scope = {
       scopeType: /** @type {const} */ ("executive"),
@@ -130,8 +127,7 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
       scopeLabel: "the report for the selected period",
       interpretationScope: "executive",
       scopeClass: "executive",
-      canonicalIntent: canon,
-    };
+      canonicalIntent: canon};
   }
 
   const truthPacket = buildTruthPacketV1(payload, scope);
@@ -141,7 +137,7 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
   if (mode === "advance") plannerIntent = "why_not_advance";
   else if (mode === "strengthen") plannerIntent = "what_is_still_difficult";
   else if (mode === "action") {
-    plannerIntent = /השבוע|שבוע\s*הקרוב|בשבוע/.test(t) ? "what_to_do_this_week" : "what_to_do_today";
+    plannerIntent = /\s*/.test(t) ? "what_to_do_this_week" : "what_to_do_today";
   }
 
   const turnOrd = Array.isArray(conv.priorIntents) ? conv.priorIntents.length : 0;
@@ -149,21 +145,18 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
     continuityRepeat: false,
     turnOrdinal: turnOrd,
     scopeType: truthPacket.scopeType,
-    interpretationScope: truthPacket.interpretationScope,
-  });
+    interpretationScope: truthPacket.interpretationScope});
   const composed = composeAnswerDraft(plan, truthPacket, {
     intent: plannerIntent,
     continuityRepeat: false,
     conversationState: conv,
-    turnOrdinal: turnOrd,
-  });
+    turnOrdinal: turnOrd});
   let answerBlocks = compactParentAnswerBlocks(normalizeAnswerBlocksHe(composed.answerBlocks), {
     scopeType: String(truthPacket.scopeType || ""),
     maxBlocks: 5,
-    maxTotalChars: 2400,
-  });
+    maxTotalChars: 2400});
 
-  const label = sid ? subjectLabelHe(sid) : "";
+  const label = sid ? subjectLabel(sid) : "";
   const hook = label
     ? `Continuing from the comparison presented - especially around ${label}:`
     : "Continuing from the comparison over the period:";
@@ -172,16 +165,14 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
     answerBlocks[oix] = {
       ...answerBlocks[oix],
       answerText: `${hook}${String(answerBlocks[oix].answerText || "").trim()}`,
-      source: "composed",
-    };
+      source: "composed"};
   } else if (oix < 0) {
     const firstIx = answerBlocks.findIndex((b) => String(b?.answerText || "").trim());
     if (firstIx >= 0 && !String(answerBlocks[firstIx].answerText || "").includes("Continuing from the comparison")) {
       answerBlocks[firstIx] = {
         ...answerBlocks[firstIx],
         answerText: `${hook}${String(answerBlocks[firstIx].answerText || "").trim()}`,
-        source: "composed",
-      };
+        source: "composed"};
     }
   }
 
@@ -189,8 +180,7 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
     scopeConfidence: 0.9,
     scopeReason: "comparison_practical_continuity",
     intentConfidence: Number(stageA.canonicalIntentScore) || 0.75,
-    intentReason: "comparison_practical_continuity",
-  };
+    intentReason: "comparison_practical_continuity"};
 
   return { truthPacket, plannerIntent, answerBlocks, scopeMeta };
 }

@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "what_we_see": "¿Qué vemos?",
+    "what_it_means": "¿Qué significa?",
+    "what_to_do_together": "¿Qué hacer juntos?",
+    "in_the_recent_period": "En el período reciente:",
+    "what_we_saw": "Lo que vimos:",
+    "foundation_and_dependencies": "Fundación y dependencias:",
+    "where_they_sometimes_get_stuck": "Donde a veces se quedan atascados:",
+    "retention_at_home": "Retención en casa:",
+    "now": "Ahora:",
+    "avoid": "Evitar:",
+    "caution": "Precaución:",
+    "what_stands_out_in_each_topic": "Lo que destaca en cada tema"
+  }
+}

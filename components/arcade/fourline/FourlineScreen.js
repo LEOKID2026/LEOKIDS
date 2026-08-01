@@ -47,7 +47,7 @@ const HUD_BTN_SQUARE = `${HUD_BTN_BASE} w-9`;
 
 /**
  * OV2-style top bar: back, game title, coins, help
- * @param {{ onBack: () => void, balance: number | null, onOpenHelp: () => void }} props
+ * @param {{ onBack: () => void, balance: number || null, onOpenHelp: () => void }} props
  */
 function FourlineOv2Hud({ onBack, balance, onOpenHelp }) {
   return (
@@ -163,8 +163,7 @@ function fourLineWinningIndicesFromLastMove(cells, row, col, seat) {
     [0, 1],
     [1, 0],
     [1, 1],
-    [1, -1],
-  ];
+    [1, -1]];
   for (const [dr, dc] of dirs) {
     const line = [];
     let r = row;
@@ -376,8 +375,7 @@ export default function FourlineScreen({ roomId }) {
   const [hoverCol, setHoverCol] = useState(/** @type {number|null} */ (null));
   const [movePulseCol, setMovePulseCol] = useState(/** @type {number|null} */ (null));
   const [dropAnim, setDropAnim] = useState(
-    /** @type {null | { key: string; row: number; col: number; seat: 0|1 }} */ (null),
-  );
+    /** @type {null || { key: string; row: number; col: number; seat: 0|1 }} */ (null));
   const [dropTranslatePx, setDropTranslatePx] = useState(0);
   const [winFreeze, setWinFreeze] = useState(false);
   const [cellStridePx, setCellStridePx] = useState(0);
@@ -445,8 +443,7 @@ export default function FourlineScreen({ roomId }) {
       setErr("");
       await playColumn(col);
     },
-    [vm, busy, cells, playColumn, setErr],
-  );
+    [vm, busy, cells, playColumn, setErr]);
 
   const finished = vm.phase === "finished";
   const didIWin = vm.mySeat != null && vm.winnerSeat != null && vm.winnerSeat === vm.mySeat;
@@ -598,7 +595,7 @@ export default function FourlineScreen({ roomId }) {
       : "";
 
   const showLobbyWait = room?.status === "waiting";
-  /** חדר active בלי session — מצב שבור; לא להציג "Loading board…" לנצח */
+  /**  active  session —  ;   "Loading board…"  */
   const showSessionInitError =
     bundleLoaded && room?.status === "active" && !snapshot && !gameSession;
   const showBoardLoading =

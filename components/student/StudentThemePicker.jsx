@@ -7,8 +7,8 @@ import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Toggle between bright and classic student UI themes.
- * @param {'default' | 'icon'} [variant] - `icon` for compact emoji-only (no labels).
- * @param {'default' | 'nav' | 'cta'} [iconSize] - `nav` compact nav; `cta` matches student CTA min-height.
+ * @param {'default' || 'icon'} [variant] - `icon` for compact emoji-only (no labels).
+ * @param {'default' || 'nav' || 'cta'} [iconSize] - `nav` compact nav; `cta` matches student CTA min-height.
  */
 export default function StudentThemePicker({
   className = "",

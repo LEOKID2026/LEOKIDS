@@ -9,18 +9,17 @@ import { parseActivityTimestampMs } from "../lib/learning-supabase/parent-report
 import { taxonomyIdsForReportBucket } from "./diagnostic-engine-v2/topic-taxonomy-bridge.js";
 import { normalizeMistakeEvent } from "./mistake-event.js";
 import {
-  resolveAnswerLevelFromPayload,
+  resolveAnswerLevelFromPayload
 } from "../lib/learning/session-evidence-levels.js";
 
 /** Evidence sources allowed for parent-report diagnostic engine. */
 export const DIAGNOSTIC_EVIDENCE_SOURCES = Object.freeze({
   SELF_PRACTICE: "self_practice",
   PARENT_ASSIGNED: "parent_assigned",
-  TEACHER_ASSIGNED: "teacher_assigned",
+  TEACHER_ASSIGNED: "teacher_assigned"
 });
 
 const SUBJECT_ID_ALIASES = Object.freeze({
-  moledet_geography: "moledet-geography",
 });
 
 /**
@@ -89,7 +88,7 @@ export function assessMetadataPresence(row, subjectId) {
 
   return {
     metadataPresent: false,
-    reasonMissingMetadata: reasons.join("|") || "missing_engine_metadata",
+    reasonMissingMetadata: reasons.join("|") || "missing_engine_metadata"
   };
 }
 
@@ -144,7 +143,7 @@ export function buildDiagnosticEvidenceRow(p) {
     "expectedAnswerType",
     "metadataSource",
     "metadataPresent",
-    "reasonMissingMetadata",
+    "reasonMissingMetadata"
   ]) {
     const v = engineFields[key] ?? diagnosticMeta?.[key];
     if (v != null && v !== "") metadata[key] = v;
@@ -157,7 +156,7 @@ export function buildDiagnosticEvidenceRow(p) {
     p?.metadataPresent === true || p?.metadataPresent === false
       ? {
           metadataPresent: p.metadataPresent === true,
-          reasonMissingMetadata: p.metadataPresent === true ? null : p.reasonMissingMetadata || "missing_metadata",
+          reasonMissingMetadata: p.metadataPresent === true ? null : p.reasonMissingMetadata || "missing_metadata"
         }
       : assessMetadataPresence(
           {
@@ -166,7 +165,7 @@ export function buildDiagnosticEvidenceRow(p) {
             possibleErrorPatterns: metadata.possibleErrorPatterns,
             skillId: metadata.skillId,
             subskillId: metadata.subskillId ?? metadata.subSkill,
-            questionId: p?.questionId,
+            questionId: p?.questionId
           },
           sid,
         );
@@ -185,7 +184,7 @@ export function buildDiagnosticEvidenceRow(p) {
       scienceInternalState: p?.scienceInternalState,
       clientMeta: p?.clientMeta,
       questionEngine: p?.questionEngine,
-      params: p?.params,
+      params: p?.params
     },
     {},
     sid
@@ -234,7 +233,7 @@ export function buildDiagnosticEvidenceRow(p) {
     reasonMissingMetadata: metaAssessment.reasonMissingMetadata,
     metadata: Object.keys(metadata).length ? metadata : null,
     diagnosticMetadata: diagnosticMeta,
-    prompt: p?.prompt ?? null,
+    prompt: p?.prompt ?? null
   };
 }
 
@@ -283,7 +282,7 @@ export function diagnosticEvidenceToStorageMistake(evidence, aggregateSubjectId)
     sessionId: ev.sessionId ?? undefined,
     answerId: ev.answerId ?? undefined,
     metadataPresent: ev.metadataPresent === true,
-    reasonMissingMetadata: ev.reasonMissingMetadata ?? undefined,
+    reasonMissingMetadata: ev.reasonMissingMetadata ?? undefined
   };
 
   if (sid === "math") {
@@ -332,7 +331,7 @@ export function aggregateMistakeRowToStorageEvent(aggregateRow, aggregateSubject
           subskillId: aggregateRow.subskillId,
           questionType: aggregateRow.questionType,
           possibleErrorPatterns: aggregateRow.possibleErrorPatterns,
-          diagnosticSkillId: aggregateRow.diagnosticSkillId,
+          diagnosticSkillId: aggregateRow.diagnosticSkillId
         };
   const evidence = buildDiagnosticEvidenceRow({
     ...aggregateRow,
@@ -343,7 +342,7 @@ export function aggregateMistakeRowToStorageEvent(aggregateRow, aggregateSubject
     hintsUsed: aggregateRow.hintsUsed,
     timeSpentMs: aggregateRow.timeSpentMs,
     diagnosticMetadata: aggregateRow.diagnosticMetadata,
-    engineFields,
+    engineFields
   });
   return diagnosticEvidenceToStorageMistake(evidence, aggregateSubjectId);
 }

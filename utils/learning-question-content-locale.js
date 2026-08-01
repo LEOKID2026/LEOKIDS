@@ -5,10 +5,18 @@ import { resolveContentLocale as resolveCore } from "../lib/content/locale.js";
 
 export const DEFAULT_CONTENT_LOCALE = "en";
 
-const HEBREW_RE = /[\u0590-\u05FF]/;
+/** Product locales accepted by Global content resolution. */
+const PRODUCT_CONTENT_LOCALES = new Set(["en", "es-419"]);
 
+/** Detect Hebrew-script code points without embedding Unicode escapes in source. */
 export function containsHebrew(text) {
-  return HEBREW_RE.test(String(text ?? ""));
+  const s = String(text || "");
+  for (let i = 0; i < s.length; ) {
+    const cp = s.codePointAt(i);
+    if (cp >= 0x0590 && cp <= 0x05ff) return true;
+    i += cp > 0xffff ? 2 : 1;
+  }
+  return false;
 }
 
 export function resolveContentLocale(opts) {
@@ -19,7 +27,9 @@ export function resolveContentLocale(opts) {
     market: opts?.market,
     curriculum: opts?.curriculum,
   });
-  if (resolved === "he" || resolved === "he-IL") return "he";
+  if (!resolved || !PRODUCT_CONTENT_LOCALES.has(String(resolved))) {
+    return "en";
+  }
   return resolved;
 }
 
@@ -74,4 +84,7 @@ export function collectQuestionTextFields(question) {
   return parts;
 }
 
-export { cloneStringArray, HEBREW_RE as HEBREW_CODEPOINT_RE };
+/** @deprecated Never-matching stub — HE codepoint regex removed from product. */
+const HEBREW_CODEPOINT_RE = /(?!)/;
+
+export { cloneStringArray, HEBREW_CODEPOINT_RE };

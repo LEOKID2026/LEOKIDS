@@ -18,8 +18,8 @@ import {
  * @param {{
  *   accessToken: string,
  *   assets: Array<Record<string, unknown>>,
- *   voiceoverAssetId: string | null,
- *   onChange: (assetId: string | null) => void,
+ *   voiceoverAssetId: string || null,
+ *   onChange: (assetId: string || null) => void,
  *   onUploaded: (asset: Record<string, unknown>) => void,
  *   embedded?: boolean,
  * }} props

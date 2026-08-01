@@ -4,7 +4,7 @@
 import React from "react";
 
 /**
- * @param {{ explanationV1: { explanationHe?: string; exampleHe?: string | null } | null | undefined; className?: string }} props
+ * @param {{ explanationV1: { explanationHe?: string; exampleHe?: string || null } || null || undefined; className?: string }} props
  */
 export function ParentDiagnosticExplanationBlock({ explanationV1, className = "" }) {
   const explanationHe = String(explanationV1?.explanationHe || "").trim();

@@ -1,0 +1,11 @@
+{
+  "gameId": "balloons",
+  "title": "Explota globos",
+  "blurb": "¡Explota globos antes de que se acabe el tiempo!",
+  "help": {
+    "howToPlay": "Toca los globos para reventarlos. Tienes tres vidas y un minuto. ¡Cuidado con las bombas!",
+    "scoring": "Los globos normales, dorados y de diamantes suman puntos. Los globos de reloj añaden tiempo y los globos de corazón restauran la vida. Una bomba acaba con una vida.",
+    "rewards": "Alcanzar el objetivo pop o una puntuación final alta otorga monedas y diamantes.",
+    "tip": "Esté atento a los globos especiales: pueden ayudarle antes de que se acabe el tiempo."
+  }
+}

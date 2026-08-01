@@ -26,15 +26,15 @@ function signPayload(payloadB64) {
 }
 
 /**
- * @param {string | undefined} cookieHeaderValue raw `Cookie` header
- * @returns {string | null}
+ * @param {string || undefined} cookieHeaderValue raw `Cookie` header
+ * @returns {string || null}
  */
 export function getDevStudentSimulatorCookieRaw(cookieHeaderValue) {
   return readCookieFromHeader(cookieHeaderValue, DEV_STUDENT_SIMULATOR_COOKIE_NAME);
 }
 
 /**
- * @param {string | undefined} cookieHeaderValue raw Cookie header value (optional)
+ * @param {string || undefined} cookieHeaderValue raw Cookie header value (optional)
  * @returns {boolean}
  */
 export function hasValidDevStudentSimulatorSession(cookieHeaderValue) {
@@ -61,8 +61,8 @@ function readCookieFromHeader(cookieHeader, name) {
 }
 
 /**
- * @param {string | null | undefined} token cookie value
- * @returns {{ exp: number } | null}
+ * @param {string || null || undefined} token cookie value
+ * @returns {{ exp: number } || null}
  */
 export function verifySessionToken(token) {
   const secret = hmacSecret();
@@ -91,7 +91,7 @@ export function verifySessionToken(token) {
 }
 
 /**
- * @returns {string | null} full token for Set-Cookie value
+ * @returns {string || null} full token for Set-Cookie value
  */
 export function createSessionToken() {
   const secret = hmacSecret();

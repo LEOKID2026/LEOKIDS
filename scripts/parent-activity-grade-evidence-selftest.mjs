@@ -449,7 +449,7 @@ const contractMod = await import(
   new URL("../utils/parent-copilot/intent-answer-contract.js", import.meta.url).href
 );
 const insightMod = await import(
-  new URL("../utils/parent-report-language/grade-insight-he.js", import.meta.url).href
+  new URL("../utils/parent-report-language/grade-insight.js", import.meta.url).href
 );
 const recMod = await import(
   new URL("../utils/parent-report-recommendation-consistency.js", import.meta.url).href

@@ -7,7 +7,7 @@ import {
   FOUNDATION_DECISION_LABEL_HE,
   INTERVENTION_ORDERING_LABEL_HE,
   NEXT_CYCLE_SUPPORT_LEVEL_LABEL_HE,
-} from "./parent-report-ui-explain-he.js";
+} from "./parent-report-ui-explain.js";
 
 /**
  * @param {Record<string, unknown>} p merged dependency + gates + targets

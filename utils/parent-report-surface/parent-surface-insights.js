@@ -10,7 +10,7 @@ import {
 } from "./parent-topic-tier.js";
 import { parentFacingPatternLabelHe } from "../parent-report-language/index.js";
 
-const UNPRACTICED_SUBJECTS_BULLET_RE = /^(?:מקצועות שלא תורגלו|Subjects not practiced)/u;
+const UNPRACTICED_SUBJECTS_BULLET_RE = /(?!)/u;
 
 /**
  * @param {object} payload — detailed parent report payload
@@ -30,7 +30,7 @@ export function buildParentSurfaceWhatToNoticeHe(payload) {
     .filter(Boolean)
     .filter((line) => !UNPRACTICED_SUBJECTS_BULLET_RE.test(String(line)));
 
-  // Wave 2 Fix 2.3: this global "מה חשוב לדעת" section used to auto-generate one
+  // Wave 2 Fix 2.3: this global "  " section used to auto-generate one
   // line per topic tier (tierLines), but each of those topics is already shown
   // inside its own subject card (tier groups + topic recommendation cards), so
   // repeating them here only doubled up the same idea. Keep only real cross-cutting
@@ -55,7 +55,7 @@ export function buildParentSurfaceHomeActionsHe(payload) {
   // Wave 2 Fix 2.6: `fromTopics` is only a fallback built from the very same
   // per-subject primary actions that already render inside each subject card
   // (SubjectPrimaryActionBlock). Showing it globally would just repeat those same
-  // lines a second time, so the global "מה מומלץ לעשות בבית" section is shown only
+  // lines a second time, so the global "   " section is shown only
   // when there's a real, independent source (server home recs or an explicit home plan).
   const source = server.length ? server : plan.length ? plan : [];
   return capAndDedupeParentSurfaceLines(source, { max: 3 });
@@ -89,8 +89,7 @@ export function resolveSubjectPrimaryParentActionHe(sp, baseReport) {
       "clear_gap",
       "needs_guidance",
       "strengthen",
-      "monitor",
-    ]) {
+      "monitor"]) {
       const rows = Array.isArray(groups[tier]) ? groups[tier] : [];
       for (const row of rows) {
         if (row?.parentActionHe) {
@@ -100,10 +99,10 @@ export function resolveSubjectPrimaryParentActionHe(sp, baseReport) {
       }
     }
     const focus =
-      groups[PARENT_TOPIC_TIER.ADVANCED_PRACTICE]?.[0] ||
-      groups[PARENT_TOPIC_TIER.FOUNDATION_PRACTICE]?.[0] ||
-      groups[PARENT_TOPIC_TIER.CLEAR_GAP]?.[0] ||
-      groups[PARENT_TOPIC_TIER.STRENGTHEN]?.[0] ||
+      groups[PARENT_TOPIC_TIER.ADVANCED_PRACTICE]?.[0] |
+      groups[PARENT_TOPIC_TIER.FOUNDATION_PRACTICE]?.[0] |
+      groups[PARENT_TOPIC_TIER.CLEAR_GAP]?.[0] |
+      groups[PARENT_TOPIC_TIER.STRENGTHEN]?.[0] |
       groups[PARENT_TOPIC_TIER.MONITOR]?.[0];
     if (focus?.narrativeTitleHe) {
       const generic = tryLine(
@@ -126,8 +125,8 @@ export function countSubjectsNeedingStrengthenFromUnits(units, sid) {
     if (String(u?.subjectId || "") !== sid) continue;
     const tier = parentTopicTierFromUnit(u, null);
     if (
-      tier === PARENT_TOPIC_TIER.STRENGTHEN ||
-      tier === PARENT_TOPIC_TIER.CLEAR_GAP ||
+      tier === PARENT_TOPIC_TIER.STRENGTHEN |
+      tier === PARENT_TOPIC_TIER.CLEAR_GAP |
       tier === PARENT_TOPIC_TIER.NEEDS_GUIDANCE
     ) {
       n += 1;

@@ -1,0 +1,11 @@
+{
+  "gameId": "picture-puzzle",
+  "title": "Rompecabezas de imágenes",
+  "blurb": "¡Completa las piezas del cuadro de Leo!",
+  "help": {
+    "howToPlay": "Arrastra las piezas de la imagen al lugar correcto en el tablero. Completa todas las piezas antes de que acabe el tiempo.",
+    "scoring": "Cuanto más rápido termines y menos movimientos utilices, mayor será la puntuación. Si se acaba el tiempo antes de terminar, no habrá victoria.",
+    "rewards": "Completar el rompecabezas según el nivel de dificultad otorga monedas, y una bonificación de puntuación agrega aún más.",
+    "tip": "Comience con las esquinas y los bordes; es más fácil ver a dónde pertenece cada pieza."
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { buildGeometryTextHighlightState } from "../../../utils/learning-step-geometry-text";
 import { GEOMETRY_HIGHLIGHT_STYLE } from "../../../utils/geometry-step-highlight-styles";
-import { normalizeHebrewWordNumberSpacing } from "../../../utils/learning-hebrew-number-spacing";
+import { normalizeHebrewWordNumberSpacing } from "../../../utils/learning-number-spacing";
 
 function kindStyle(kind) {
   if (kind === "formula" || kind === "keyword") {

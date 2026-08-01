@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "the_customer_waited_too_long": "El cliente esperó demasiado",
+    "aria_first_pizza": "Primera pizza",
+    "aria_second_pizza": "Segunda pizza",
+    "aria_work_pizza": "pizza de trabajo",
+    "pizza_in_progress": "Pizza en proceso",
+    "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "Los clientes entran a la pizzería y ¡prepárales exactamente la pizza que pidieron!",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n                New game",
+    "leo_apos_s_pizzeria": "Pizzería Leo",
+    "serve_pizza": "Servir pizza 🍕",
+    "open_shift": "Turno abierto 🍕",
+    "clear_pizza": "pizza clara",
+    "new_game": "Nuevo juego",
+    "back": "Atrás"
+  }
+}

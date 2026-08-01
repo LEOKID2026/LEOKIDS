@@ -54,7 +54,7 @@ export default function LeoWordDetectiveGame({
   const [tasks, setTasks] = useState(/** @type {import('./leo-word-detective-data.js').DetectiveTask[]} */ ([]));
   const [taskIndex, setTaskIndex] = useState(0);
   const [zoneFills, setZoneFills] = useState(/** @type {Record<string, string>} */ ({}));
-  const [selectedPiece, setSelectedPiece] = useState(/** @type {string | null} */ (null));
+  const [selectedPiece, setSelectedPiece] = useState(/** @type {string || null} */ (null));
   const [score, setScore] = useState(0);
   const [mistakes, setMistakes] = useState(0);
   const [successCount, setSuccessCount] = useState(0);

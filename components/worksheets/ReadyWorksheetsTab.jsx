@@ -22,7 +22,7 @@ const CATALOG_PAGE_SIZE = 24;
  *   loading: boolean,
  *   error: string,
  *   onViewPrint: (slug: string) => void,
- *   busySlug: string | null,
+ *   busySlug: string || null,
  *   filterSubject: string,
  *   filterGrade: string,
  *   filterLevel: string,

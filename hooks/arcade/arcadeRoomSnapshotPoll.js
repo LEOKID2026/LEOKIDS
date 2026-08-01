@@ -69,7 +69,7 @@ export async function pollArcadeRoomSnapshot(refs, roomId, fetchBundle) {
  *   joinRecoveryAttemptedRef?: { current: boolean },
  *   bundleLoadedOnceRef?: { current: boolean },
  * }} refs
- * @param {{ current: ReturnType<typeof setInterval> | null }} [intervalRef]
+ * @param {{ current: ReturnType<typeof setInterval> || null }} [intervalRef]
  */
 export function haltArcadeRoomPolling(refs, intervalRef) {
   refs.pollStoppedRef.current = true;

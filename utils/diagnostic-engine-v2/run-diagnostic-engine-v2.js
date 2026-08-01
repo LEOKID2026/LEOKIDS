@@ -1,6 +1,6 @@
 /**
- * Diagnostic Engine V2 — אורכסטרציה end-to-end לפי stage1 blueprint.
- * תלות: מפות דוח V2 לאחר enrich, טעויות גולמיות, חלון זמן.
+ * Diagnostic Engine V2 —  end-to-end  stage1 blueprint.
+ * :   V2  enrich,  .
  */
 import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import { splitTopicRowKey } from "../parent-report-row-diagnostics.js";
@@ -75,8 +75,7 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
           type: "mistake_events",
           source: "normalized_mistake_event",
           value: { total: events.length, wrong: wrongs.length, rowWrongTotal, wrongCountForRules },
-        },
-      ];
+        }];
       if (row.lastSessionMs != null) evidenceTrace.push({ type: "recency", source: "row", value: { lastSessionMs: row.lastSessionMs } });
 
       const hintInvalidates = heavyHintLikelyInvalidatesPattern(events);
@@ -156,7 +155,7 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
         return passesEvidenceRecurrenceRules(wrongs, trow);
       })();
       const counterEvidenceStrong =
-        (Number(row.accuracy) >= 88 && wrongCountForRules >= 4) ||
+        (Number(row.accuracy) >= 88 && wrongCountForRules >= 4) |
         (row.modeKey === "speed" && Number(row.accuracy) >= 82 && wrongCountForRules >= 2);
 
       const confidence = resolveConfidenceLevel({

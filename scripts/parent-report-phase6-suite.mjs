@@ -87,7 +87,7 @@ const {
   topicFoundationDependencyCompactLineHe,
   topicMemoryOutcomeContinuationCompactLineHe,
   topicSequencingRepeatCompactLineHe,
-} = await importUtils("utils/parent-report-ui-explain-he.js");
+} = await importUtils("utils/parent-report-ui-explain.js");
 const { PARENT_REPORT_SCENARIOS, FIXTURE_MATH_ROW_ADD_LEARN_G4_MED } = await import(
   pathToFileURL(join(ROOT, "tests/fixtures/parent-report-pipeline.mjs")).href
 );

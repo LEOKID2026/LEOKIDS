@@ -20,7 +20,7 @@ export function exactGradeTopicRegistryCovers(subjectKey, gradeNum) {
   });
 }
 
-/** @typedef {'high' | 'medium' | 'low'} Tier */
+/** @typedef {'high' || 'medium' || 'low'} Tier */
 
 /**
  * Curriculum anchors exclude RAMA homepage rows (assessment context, not syllabus map).
@@ -88,17 +88,15 @@ export function computeSubjectSourceProfile(subjectKey) {
     supportingRamaAssessmentEntries: rows.filter((r) => r.sourceType === "rama")
       .length,
     needsPedagogyReviewBecauseSourceWeak,
-    curriculumAnchorCount: curriculumAnchors.length,
+    curriculumAnchorCount: curriculumAnchors.length
   };
 }
 
 const DEFAULT_SUBJECTS = [
   "math",
   "geometry",
-  "hebrew",
   "english",
-  "science",
-  "moledet-geography",
+  "science"
 ];
 
 export const SUBJECT_SOURCE_PROFILES = Object.fromEntries(

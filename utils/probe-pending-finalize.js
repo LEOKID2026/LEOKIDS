@@ -1,7 +1,7 @@
 import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 /**
  * Subject-specific adjustments to pending probe hints (deterministic; no UI).
- * Keeps probe-map-he shared while routing geometry vs science vs math operation shapes.
+ * Keeps probe-map shared while routing geometry vs science vs math operation shapes.
  */
 
 /** @param {string} s */

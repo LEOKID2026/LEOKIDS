@@ -20,42 +20,34 @@ import { buildParentReportInsightPacket } from "./index.js";
 import { buildGradeEvidenceFields } from "../../lib/learning-supabase/practice-grade-resolution.js";
 import { normalizeGradeLevelToKey } from "../../lib/learning-student-defaults.js";
 
-const SUBJECT_KEYS = ["math", "geometry", "english", "hebrew", "science", "moledet_geography"];
+const SUBJECT_KEYS = ["math", "geometry", "english", "science"];
 
 const SUMMARY_Q_KEYS = {
   math: "mathQuestions",
   geometry: "geometryQuestions",
   english: "englishQuestions",
-  hebrew: "hebrewQuestions",
-  science: "scienceQuestions",
-  moledet_geography: "moledetGeographyQuestions",
+  science: "scienceQuestions"
 };
 
 const SUMMARY_C_KEYS = {
   math: "mathCorrect",
   geometry: "geometryCorrect",
   english: "englishCorrect",
-  hebrew: "hebrewCorrect",
-  science: "scienceCorrect",
-  moledet_geography: "moledetGeographyCorrect",
+  science: "scienceCorrect"
 };
 
 const SUMMARY_A_KEYS = {
   math: "mathAccuracy",
   geometry: "geometryAccuracy",
   english: "englishAccuracy",
-  hebrew: "hebrewAccuracy",
-  science: "scienceAccuracy",
-  moledet_geography: "moledetGeographyAccuracy",
+  science: "scienceAccuracy"
 };
 
 const TOPIC_FIELD_KEYS = {
   math: "mathOperations",
   geometry: "geometryTopics",
   english: "englishTopics",
-  hebrew: "hebrewTopics",
-  science: "scienceTopics",
-  moledet_geography: "moledetGeographyTopics",
+  science: "scienceTopics"
 };
 
 function safeNumber(v, def = 0) {
@@ -88,7 +80,7 @@ function emptyTopic() {
     avgHintsPerQuestion: null,
     avgTimePerQuestionSec: null,
     modeCounts: emptyEnumCounts(),
-    levelCounts: emptyLevelCounts(),
+    levelCounts: emptyLevelCounts()
   };
 }
 
@@ -111,7 +103,7 @@ function emptySubject() {
     avgTimePerQuestionSec: null,
     modeCounts: emptyEnumCounts(),
     levelCounts: emptyLevelCounts(),
-    topics: {},
+    topics: {}
   };
 }
 
@@ -230,7 +222,7 @@ export function synthesizeAggregateFromV2Snapshot(report) {
   const range = period && typeof period === "object"
     ? {
         from: typeof period.startISO === "string" ? period.startISO.slice(0, 10) : "",
-        to: typeof period.endISO === "string" ? period.endISO.slice(0, 10) : "",
+        to: typeof period.endISO === "string" ? period.endISO.slice(0, 10) : ""
       }
     : { from: "", to: "" };
 
@@ -241,7 +233,7 @@ export function synthesizeAggregateFromV2Snapshot(report) {
       full_name: studentName || null,
       grade_level: gradeFragment || registeredForAggregate || null,
       registeredGradeLevel: registeredForAggregate,
-      is_active: true,
+      is_active: true
     },
     range,
     summary: {
@@ -257,7 +249,7 @@ export function synthesizeAggregateFromV2Snapshot(report) {
       modeCounts: emptyEnumCounts(),
       levelCounts: emptyLevelCounts(),
       normalizedGradeLevel: gradeLevelToNormalized(gradeFragment || registeredForAggregate || ""),
-      registeredGradeLevel: registeredForAggregate,
+      registeredGradeLevel: registeredForAggregate
     },
     subjects,
     dailyActivity: [],
@@ -269,8 +261,8 @@ export function synthesizeAggregateFromV2Snapshot(report) {
       fallbackUsed: false,
       sessionDateField: "started_at",
       answerDateField: "answered_at",
-      fluencyThresholds: { slowMs: 60000, fastMs: 6000, manyHints: 3 },
-    },
+      fluencyThresholds: { slowMs: 60000, fastMs: 6000, manyHints: 3 }
+    }
   };
 }
 
@@ -287,9 +279,9 @@ function gradePracticeBreakdownFromV2Maps(report) {
     ["math", "mathOperations"],
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
-    ["hebrew", "hebrewTopics"],
+    ["hebrewTopics"],
     ["science", "scienceTopics"],
-    ["moledet_geography", "moledetGeographyTopics"],
+    ["moledetGeographyTopics"]
   ];
   for (const [subjectKey, field] of subjectFieldPairs) {
     const map = report?.[field];
@@ -320,7 +312,7 @@ function gradePracticeBreakdownFromV2Maps(report) {
             ? row.gradeRelation.trim()
             : "unknown",
         totalQuestions: q,
-        accuracyPct: Math.max(0, Math.min(100, safeNumber(row.accuracy))),
+        accuracyPct: Math.max(0, Math.min(100, safeNumber(row.accuracy)))
       });
     }
   }

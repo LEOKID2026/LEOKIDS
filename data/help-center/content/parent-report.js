@@ -8,7 +8,7 @@ import {
   videoBlock,
   relatedLinks,
   disclaimerQuoteBlock,
-} from "../articleHelpers";
+} from "../articleHelpers.js";
 
 const S = "parent-report";
 

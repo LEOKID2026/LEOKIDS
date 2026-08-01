@@ -11,23 +11,23 @@ function isPortrait() {
 }
 
 /**
- * @param {"landscape-recommend" | "portrait-recommend" | null|undefined} hint
+ * @param {"landscape-recommend" || "portrait-recommend" || null|undefined} hint
  * @param {boolean} mobile
  * @param {boolean} portrait
  */
 export function getSoloOrientationHintMessage(hint, mobile, portrait) {
   if (!hint || !mobile) return null;
   if (hint === "landscape-recommend" && portrait) {
-    return "מומלץ לסובב לרוחב לחוויה נוחה יותר";
+    return "";
   }
   if (hint === "portrait-recommend" && !portrait) {
-    return "מומלץ לשחק לאורך לחוויה נוחה יותר";
+    return "";
   }
   return null;
 }
 
 /**
- * @param {"landscape-recommend" | "portrait-recommend" | null|undefined} orientationHint
+ * @param {"landscape-recommend" || "portrait-recommend" || null|undefined} orientationHint
  */
 export function useSoloOrientationHint(orientationHint) {
   const [hintMessage, setHintMessage] = useState(null);

@@ -32,7 +32,7 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
   );
 }
 
-/** @param {{ onBack: () => void, balance: number | null, onOpenHelp: () => void }} props */
+/** @param {{ onBack: () => void, balance: number || null, onOpenHelp: () => void }} props */
 function Hud({ onBack, balance, onOpenHelp }) {
   return (
     <header

@@ -13,7 +13,7 @@ const EMPTY_GAME_ACCESS = {
   isGuest: false,
 };
 
-/** @param {object | null} data */
+/** @param {object || null} data */
 export function buildStudentGameAccessView(data) {
   const gamesByKey = data?.games
     ? Object.fromEntries(data.games.map((g) => [g.gameKey, g]))

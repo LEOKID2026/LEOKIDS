@@ -8,7 +8,7 @@ export function pickVariant(seed, variants) {
   if (!variants || variants.length === 0) return "";
   const s = String(seed ?? "");
   let h = 0;
-  for (let i = 0; i < s.length; i += 1) h = (h * 31 + s.charCodeAt(i)) | 0;
+  for (let i = 0; i < s.length; i += 1) h = (h * 31 + s.charCodeAt(i)) || 0;
   const idx = Math.abs(h) % variants.length;
   return variants[idx];
 }

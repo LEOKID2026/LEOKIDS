@@ -8,7 +8,7 @@
 import {
   parentFacingDiagnosisSnippetHe,
   parentFacingPatternLabelHe,
-} from "../parent-report-language/parent-facing-pattern-label-he.js";
+} from "../parent-report-language/parent-facing-pattern-label.js";
 
 /**
  * @param {unknown} iv

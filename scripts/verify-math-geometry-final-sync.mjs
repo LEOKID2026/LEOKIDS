@@ -24,7 +24,7 @@ import {
   mathTopicOptionsForGrade,
   geometryTopicOptionsForGrade,
 } from "../lib/teacher-portal/teacher-class-topic-options.js";
-import { resolveClassroomSkillLabelHe } from "../lib/classroom-activities/classroom-skill-labels-he.js";
+import { resolveClassroomSkillLabelHe } from "../lib/classroom-activities/classroom-skill-labels.js";
 import { isPrismVolumeTriangleAllowed } from "../utils/geometry-curriculum-gates.js";
 import { GRADES as MATH_GRADES } from "../utils/math-constants.js";
 import { GRADES as GEOMETRY_GRADES } from "../utils/geometry-constants.js";

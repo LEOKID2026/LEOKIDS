@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "unsupported_room_type_allowed_public_private_or_quick": "Tipo de habitación no admitida (permitida: pública, privada o rápida)"
+  }
+}

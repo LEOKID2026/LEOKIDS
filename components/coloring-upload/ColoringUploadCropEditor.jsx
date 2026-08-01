@@ -24,9 +24,9 @@ const A4_RATIO = 210 / 297;
 
  *   sourceUrl: string,
 
- *   aspectMode: "auto" | "a4",
+ *   aspectMode: "auto" || "a4",
 
- *   onAspectModeChange: (m: "auto" | "a4") => void,
+ *   onAspectModeChange: (m: "auto" || "a4") => void,
 
  *   rotation: number,
 

@@ -9,6 +9,7 @@ import {
   GEOMETRY_G3_BOOK_META,
 } from "../../../../../lib/learning-book/geometry-g3-registry";
 import { useMemo } from "react";
+import { resolveBookRequestContentLocale } from "../../../../../lib/learning-book/resolve-book-request-content-locale";
 
 const SUBJECT = "geometry";
 const GRADE = "g3";
@@ -52,23 +53,24 @@ export default function GeometryG3BookPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const { loadGeometryG3Page, loadGeometryG3TocEntries } = await import("../../../../../lib/learning-book/load-geometry-g3-pages");
   const pageId = params.pageId;
   if (!isValidGeometryG3PageId(pageId)) {
     return { notFound: true };
   }
 
-  const page = loadGeometryG3Page(pageId);
+  const page = loadGeometryG3Page(pageId, { contentLocale });
   if (!page) {
     return { notFound: true };
   }
 
-  const batches = loadGeometryG3TocEntries();
+  const batches = loadGeometryG3TocEntries({ contentLocale });
   const { prev, next } = getGeometryG3PageNeighbors(pageId);
 
-  const prevPage = prev ? loadGeometryG3Page(prev) : null;
-  const nextPage = next ? loadGeometryG3Page(next) : null;
+  const prevPage = prev ? loadGeometryG3Page(prev, { contentLocale }) : null;
+  const nextPage = next ? loadGeometryG3Page(next, { contentLocale }) : null;
 
   return {
     props: {

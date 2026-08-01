@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "seats": "Asientos",
+    "live_game_stats": "Estadísticas de juegos en vivo",
+    "game_results_summary": "Resumen de resultados del juego"
+  }
+}

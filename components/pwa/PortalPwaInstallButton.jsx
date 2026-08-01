@@ -50,7 +50,7 @@ function InstallPhoneIcon() {
 
 /**
  * Marketing landing pages — same install flow as home page, direct to portal install route.
- * @param {{ portal: 'student' | 'parent' | 'teacher', isBright?: boolean, accent: object, label?: string }} props
+ * @param {{ portal: 'student' || 'parent' || 'teacher', isBright?: boolean, accent: object, label?: string }} props
  */
 export default function PortalPwaInstallButton({ portal, isBright = false, accent, label }) {
   const t = useT();

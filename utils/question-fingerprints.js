@@ -4,8 +4,7 @@ import { geometryQuestionFingerprint, geometryConceptLineageKey } from "./geomet
 import { englishQuestionFingerprint } from "./english-learning-intel.js";
 import {
   hebrewQuestionFingerprint,
-  hebrewNearDuplicateKey,
-} from "./hebrew-learning-intel.js";
+  hebrewNearDuplicateKey} from "./hebrew-learning-intel.js";
 
 /**
  * @param {unknown} q
@@ -21,15 +20,12 @@ export function getQuestionFingerprintForSubject(q, subject, ctx = {}) {
       return geometryQuestionFingerprint(q) || buildQuestionFingerprint(q, { ...ctx, subject: subj });
     case "english":
       return englishQuestionFingerprint(q) || buildQuestionFingerprint(q, { ...ctx, subject: subj });
-    case "hebrew":
-      return hebrewQuestionFingerprint(q) || buildQuestionFingerprint(q, { ...ctx, subject: subj });
+    
     case "science":
       if (q?.id || q?._scienceBankId) return `science|id:${q.id || q._scienceBankId}`;
       return buildQuestionFingerprint(q, { ...ctx, subject: subj });
-    case "moledet":
-    case "moledet_geography":
-      if (q?.id) return `moledet|id:${q.id}`;
-      return buildQuestionFingerprint(q, { ...ctx, subject: "moledet" });
+    
+    
     default:
       return buildQuestionFingerprint(q, { ...ctx, subject: subj });
   }
@@ -41,7 +37,7 @@ export function getQuestionFingerprintForSubject(q, subject, ctx = {}) {
  */
 export function getNearDuplicateKeyForSubject(q, subject) {
   const subj = String(subject || "").toLowerCase();
-  if (subj === "hebrew") return hebrewNearDuplicateKey(q);
+  
   if (subj === "geometry") return geometryConceptLineageKey(q);
   return buildNearDuplicateStemKey(q);
 }

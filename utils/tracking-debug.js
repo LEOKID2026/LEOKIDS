@@ -10,16 +10,14 @@ export const TRACKING_DEBUG_SNAPSHOT = {
   lastTrackedFn: null,
   lastSessionSubject: null,
   lastSessionTopic: null,
-  lastSessionMode: null,
+  lastSessionMode: null
 };
 
 const STORAGE_SPECS = {
   math: { key: "mleo_time_tracking", field: "operations" },
   geometry: { key: "mleo_geometry_time_tracking", field: "topics" },
   english: { key: "mleo_english_time_tracking", field: "topics" },
-  science: { key: "mleo_science_time_tracking", field: "topics" },
-  hebrew: { key: "mleo_hebrew_time_tracking", field: "topics" },
-  moledet: { key: "mleo_moledet_geography_time_tracking", field: "topics" },
+  science: { key: "mleo_science_time_tracking", field: "topics" }
 };
 
 export function isTrackingDebugEnabled() {

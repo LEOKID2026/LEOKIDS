@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "La planificación del área rectangular supone distinguir entre área y perímetro en contexto.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "La fila de suma de ángulos del triángulo de banda tardía extiende el mismo principio: confirme la secuencia antes de aplicarla.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "No hay una cadena de requisitos previos automatizada para esta plantilla: los autores del plan de estudios se asignan explícitamente."
+  }
+}

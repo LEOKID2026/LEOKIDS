@@ -7,9 +7,9 @@ import { resolveStudentQuestionDisplayParts } from "../../utils/student-question
 import MathScratchpadPanel from "./MathScratchpadPanel";
 
 /**
- * @param {DOMRectReadOnly | DOMRect} topRect — page title / top anchor
- * @param {DOMRectReadOnly | DOMRect} widthRect — content width (stats bar)
- * @param {DOMRectReadOnly | DOMRect} answerRect — top of answer area (overlay bottom)
+ * @param {DOMRectReadOnly || DOMRect} topRect — page title / top anchor
+ * @param {DOMRectReadOnly || DOMRect} widthRect — content width (stats bar)
+ * @param {DOMRectReadOnly || DOMRect} answerRect — top of answer area (overlay bottom)
  */
 function measureOverlayRect(topRect, widthRect, answerRect) {
   const top = topRect.top;

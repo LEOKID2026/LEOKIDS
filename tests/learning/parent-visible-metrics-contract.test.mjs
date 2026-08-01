@@ -14,7 +14,7 @@ import {
   resolveParentExplainRowCopy,
 } from "../../utils/learning-pattern-decision/index.js";
 import { buildTopicRecommendationFromV2UnitForPhaseTests } from "../../utils/detailed-parent-report.js";
-import { collectTopicEngineRowsFromReport } from "../../utils/parent-report-engine-insights-he.js";
+import { collectTopicEngineRowsFromReport } from "../../utils/parent-report-engine-insights.js";
 import {
   shouldShowTrendV1Line,
   TREND_V1_PARENT_LINE_HE,

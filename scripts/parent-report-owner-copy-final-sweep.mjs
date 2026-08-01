@@ -11,16 +11,16 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const u = (rel) => pathToFileURL(join(ROOT, rel)).href;
 
 const { findParentReportEnglishEnumLeaks } = await import(
-  u("utils/parent-report-language/parent-report-display-labels.he.js")
+  u("utils/parent-report-language/parent-report-display-labels.js")
 );
 const {
   parentReportOwnerCopyTemplatesHe,
   renderOwnerSubjectCopyTemplateHe,
   buildSubjectOwnerCopySlots,
   SUBJECT_OWNER_COPY_TEMPLATE_IDS,
-} = await import(u("utils/parent-report-language/parent-report-owner-copy-templates-he.js"));
+} = await import(u("utils/parent-report-language/parent-report-owner-copy-templates.js"));
 const { parentReportOwnerTopicCopyTemplatesHe } = await import(
-  u("utils/parent-report-language/parent-report-owner-topic-copy-templates-he.js")
+  u("utils/parent-report-language/parent-report-owner-topic-copy-templates.js")
 );
 const { EDC_CONTRACT_KEY } = await import(u("utils/learning-pattern-decision/engine-decision-codes.js"));
 const {

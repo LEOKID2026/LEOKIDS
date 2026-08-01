@@ -4,16 +4,14 @@ const HEBREW_LONG_READING_TOPICS = new Set(["reading", "comprehension"]);
 const HEBREW_LONG_READING_KIND_MARKERS = [
   "comprehension_",
   "reading_structural",
-  "reading_",
-];
+  "reading_"];
 
 const HEBREW_HARD_KIND_MARKERS = [
   "full_composition",
   "multi_step",
   "composition_scaffold",
   "argument_scaffold",
-  "argument_",
-];
+  "argument_"];
 
 const ENGLISH_LONG_READING_KIND_PREFIXES = ["story_", "passage_", "reading_"];
 const ENGLISH_LONG_READING_TOPICS_WITH_PASSAGE = new Set(["vocabulary"]);
@@ -24,8 +22,7 @@ const ENGLISH_HARD_KIND_MARKERS = [
   "grammar_context",
   "translation_multi",
   "build_sentence",
-  "sentence_build",
-];
+  "sentence_build"];
 
 const SCIENCE_HARD_TOPICS = new Set(["experiments"]);
 const SCIENCE_HARD_PATTERN_MARKERS = [
@@ -34,13 +31,11 @@ const SCIENCE_HARD_PATTERN_MARKERS = [
   "experiment",
   "multi_step",
   "lab_",
-  "investigation",
-];
+  "investigation"];
 const SCIENCE_LONG_READING_PATTERN_MARKERS = [
   "passage",
   "reading_comprehension",
-  "comprehension_passage",
-];
+  "comprehension_passage"];
 
 const MOLEDET_LONG_READING_TOPICS = new Set(["maps"]);
 const MOLEDET_HARD_TOPICS = new Set(["maps", "geography"]);
@@ -57,7 +52,7 @@ function norm(value) {
  */
 export function normalizeTimeCreditSubjectId(subjectId) {
   const s = norm(subjectId);
-  if (s === "moledet" || s === "moledet-geography") return "moledet_geography";
+  
   return s;
 }
 
@@ -107,13 +102,7 @@ function matchesLongReading(subjectId, question) {
   const patternFamily = questionPatternFamily(question);
   const subtype = questionSubtype(question);
 
-  if (subject === "hebrew") {
-    if (HEBREW_LONG_READING_TOPICS.has(topic)) return true;
-    if (HEBREW_LONG_READING_KIND_MARKERS.some((m) => kind.startsWith(m) || kind.includes(m))) {
-      return true;
-    }
-    return false;
-  }
+  
 
   if (subject === "english") {
     if (ENGLISH_LONG_READING_KIND_PREFIXES.some((p) => kind.startsWith(p))) return true;
@@ -138,13 +127,7 @@ function matchesLongReading(subjectId, question) {
     return false;
   }
 
-  if (subject === "moledet_geography") {
-    if (MOLEDET_LONG_READING_TOPICS.has(topic)) return true;
-    if (topic === "geography" && (kind.includes("passage") || kind.includes("map_read"))) {
-      return true;
-    }
-    return false;
-  }
+  
 
   if (subject === "math" || subject === "geometry") {
     if (kind.startsWith("reading_") || kind.includes("passage") || kind.includes("comprehension")) {
@@ -183,12 +166,7 @@ function matchesHard(subjectId, question) {
     if (kind.startsWith("concept")) return true;
   }
 
-  if (subject === "hebrew") {
-    if (answerMode === "hebrew_audio_recorded_manual") return true;
-    if (HEBREW_HARD_KIND_MARKERS.some((m) => kind.includes(m))) return true;
-    if (topic === "grammar" && kind.includes("multi")) return true;
-    return false;
-  }
+  
 
   if (subject === "english") {
     if (ENGLISH_HARD_TOPICS.has(topic)) return true;
@@ -213,19 +191,7 @@ function matchesHard(subjectId, question) {
     return false;
   }
 
-  if (subject === "moledet_geography") {
-    if (
-      MOLEDET_HARD_TOPICS.has(topic) &&
-      (levelKey === "hard" || difficulty === "advanced")
-    ) {
-      return true;
-    }
-    if (kind.includes("multi_part") || kind.includes("multi_step")) return true;
-    if (patternFamily.includes("navigation") || patternFamily.includes("analysis")) {
-      return true;
-    }
-    return false;
-  }
+  
 
   return false;
 }

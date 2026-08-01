@@ -1,5 +1,5 @@
-/** @typedef {'easy' | 'medium' | 'hard'} DifficultyId */
-/** @typedef {'even' | 'odd' | 'multiples' | 'skip' | 'sequence'} PathRule */
+/** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
+/** @typedef {'even' || 'odd' || 'multiples' || 'skip' || 'sequence'} PathRule */
 
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import {

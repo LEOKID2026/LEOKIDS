@@ -9,7 +9,7 @@ import { ENGLISH_WORD_PACKS } from "./word-packs.en.js";
  * @typedef {Object} WordIllustrationEntry
  * @property {string} word
  * @property {string} illustrationId
- * @property {"he" | "en"} language
+ * @property {"he" || "en"} language
  * @property {string} [wordPackId]
  * @property {string} [colorInstructionHe]
  */
@@ -18,7 +18,7 @@ import { ENGLISH_WORD_PACKS } from "./word-packs.en.js";
 const WORD_ILLUSTRATION_MAP = new Map();
 
 /**
- * @param {"he" | "en"} language
+ * @param {"he" || "en"} language
  * @param {string} packId
  * @param {Array<{ text: string, illustrationId: string, colorInstructionHe?: string }>} entries
  */
@@ -36,13 +36,23 @@ function registerPack(language, packId, entries) {
 }
 
 for (const [packId, pack] of Object.entries(ENGLISH_WORD_PACKS)) {
-  registerPack("en", packId, pack.words);
+  registerPack(
+    "en",
+    packId,
+    (pack.words || []).map((w) => ({
+      text: w.text,
+      illustrationId: w.illustrationId,
+      ...(w.colorInstruction
+        ? { colorInstructionHe: w.colorInstruction }
+        : {}),
+    }))
+  );
 }
 
 /**
- * @param {"he" | "en"} language
+ * @param {"he" || "en"} language
  * @param {string} word
- * @returns {WordIllustrationEntry | null}
+ * @returns {WordIllustrationEntry || null}
  */
 export function getWordIllustration(language, word) {
   const key = `${language}:${String(word || "").trim()}`;

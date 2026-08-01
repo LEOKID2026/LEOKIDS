@@ -1,0 +1,116 @@
+{
+  "reportSubjects": ["math", "geometry", "english", "science"],
+  "subjects": {
+    "math": "Matemáticas",
+    "geometry": "Geometría",
+    "english": "Inglés",
+    "science": "Ciencias"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Inactividad prolongada",
+    "no_sessions_in_range": "Sin sesiones de práctica en este período",
+    "low_overall_accuracy": "Dificultad en el desempeño general",
+    "many_recent_mistakes": "Alto número de errores recientes",
+    "never_active_in_range": "Sin actividad en este período",
+    "insufficient_answers": "Datos insuficientes para analizar"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Se recomienda repasar los fundamentos de la materia",
+    "encourage_session_start": "Se recomienda motivar el inicio de la práctica",
+    "targetedReview": "Se recomienda reforzar {subject} en clase",
+    "focusPractice": "Se recomienda enfocar la práctica en {subject}",
+    "generic": "Continúe monitoreando el progreso"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inactivo en este período",
+    "low_accuracy": "Dificultad en el desempeño",
+    "many_recent_mistakes": "Alto número de errores recientes",
+    "recent_mistakes": "Errores recurrentes"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Requiere atención inmediata",
+    "needs_reinforcement": "Necesita refuerzo",
+    "monitor": "Conviene monitorear",
+    "on_track": "En buen camino"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "La clase requiere atención inmediata",
+    "class_needs_reinforcement": "La clase necesita refuerzo",
+    "class_monitor": "La clase necesita monitoreo y práctica enfocada",
+    "class_on_track": "La clase está en buen camino"
+  },
+  "classHealth": {
+    "no_data": "Datos insuficientes",
+    "critical_class": "La clase requiere atención inmediata",
+    "needs_reinforcement": "La clase necesita refuerzo",
+    "monitor": "La clase necesita monitoreo y práctica enfocada",
+    "strong": "La clase está en buen camino"
+  },
+  "groupTier": {
+    "struggling": "Grupo de apoyo",
+    "on_track": "Grupo en buen camino",
+    "advanced": "Grupo avanzado"
+  },
+  "guardianAccessState": {
+    "active": "Activo",
+    "expired": "Vencido",
+    "revoked": "Revocado"
+  },
+  "actionTypes": {
+    "class_reteach": "Reenseñanza a toda la clase",
+    "small_group": "Trabajo en grupo pequeño",
+    "individual_practice": "Práctica individual enfocada",
+    "collect_more_data": "Esperar más datos"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Actividad en clase",
+    "worksheet_pdf": "Hoja de actividades",
+    "focused_practice": "Práctica enfocada"
+  },
+  "riskLevel": {
+    "high": "Requiere atención inmediata",
+    "moderate": "Conviene monitorear",
+    "low": "En buen camino"
+  },
+  "focus": {
+    "studentCalmMessage": "No hay temas urgentes por ahora: continúe como de costumbre.",
+    "hubStudentCalmMessage": "No hay temas enfocados: continúe monitoreando.",
+    "hubClassWeakTopicsCalmMessage": "No se detectaron temas débiles significativos: continúe monitoreando.",
+    "studentFallbackBanner": "Dificultad en esta materia: se necesita práctica diagnóstica para identificar el tema exacto",
+    "classFallbackBanner": "La clase muestra dificultad en esta materia: se recomienda refuerzo diagnóstico en clase"
+  },
+  "fallback": {
+    "unknownSubject": "Desconocida",
+    "defaultTopic": "Tema",
+    "defaultStudentName": "Estudiante",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject}: dificultad a nivel de materia",
+    "studentSubjectHeadlineNoSubject": "Dificultad a nivel de materia",
+    "studentSubjectEvidence": "{percent}% correcto de {totalAnswers} respuestas",
+    "studentSubjectAction": "Se recomienda iniciar una práctica diagnóstica breve para identificar el tema exacto",
+    "classSubjectHeadline": "{subject}: dificultad de materia a nivel de clase",
+    "classSubjectHeadlineNoSubject": "Dificultad de materia a nivel de clase",
+    "classSubjectAction": "Se recomienda iniciar una actividad diagnóstica breve o un repaso enfocado con toda la clase",
+    "classSuffix": "Clase {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject}: {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "No hay clases activas",
+    "noClassesHint": "Cree una clase nueva abajo y luego agregue niños con «Administrar clase» en la tarjeta de la clase.",
+    "createClassLabel": "Nombre de la clase",
+    "createClassButton": "Crear clase",
+    "createClassPlaceholder": "ej. Clase 3 - LEO"
+  },
+  "activities": {
+    "personalSectionTitle": "Actividades personales",
+    "individualBadge": "Personal"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Todos los niños ({count})",
+      "directStudents": "Niños privados ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

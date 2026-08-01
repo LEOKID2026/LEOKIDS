@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "No se completa en el modo de instantánea de artefacto. Ejecute `npm run qa:learning-simulator:expert-review-pack` para mapas/agregados sintéticos.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Los patrones entre sujetos son hipótesis y requieren pruebas de confirmación por sujeto.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Solo apoyo de diagnóstico educativo interno, no clínico ni orientado a los padres."
+  }
+}

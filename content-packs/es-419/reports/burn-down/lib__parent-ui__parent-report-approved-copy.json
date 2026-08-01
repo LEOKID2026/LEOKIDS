@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "not_available": "No disponible",
+    "there_are_only_a_few_questions_on_this_topic_so_it_is_still_early_to_dra": "Sólo hay unas pocas preguntas sobre este tema, por lo que aún es pronto para sacar una conclusión sólida.",
+    "keep_practicing_a_few_more_short_questions_and_watch_for_whether_the_sam": "Continúe practicando algunas preguntas breves más y observe si se repite el mismo error.",
+    "most_answers_are_correct_and_this_topic_looks_relatively_stable": "La mayoría de las respuestas son correctas y este tema parece relativamente estable.",
+    "keep_up_the_success_with_a_short_practice_every_now_and_then": "Mantenga el éxito con una breve práctica de vez en cuando.",
+    "the_same_type_of_mistake_keeps_showing_up": "Sigue apareciendo el mismo tipo de error.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_how_they_reached_the_": "Haga una pausa después de un error y pídale al niño que explique cómo llegó a la respuesta.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_step_by_step_how_they": "Haga una pausa después de un error y pida al niño que explique, paso a paso, cómo llegó a la respuesta.",
+    "practice_the_specific_pairs_that_keep_coming_up_wrong_out_loud_and_as_a_": "Practica las parejas específicas que siguen saliendo mal, en voz alta y como un juego rápido.",
+    "pause_before_solving_and_ask_should_the_result_be_bigger_or_smaller_than": "Haga una pausa antes de resolver y pregunte: ¿el resultado debería ser mayor o menor que el número inicial?",
+    "read_a_short_passage_together_and_pause_to_ask_where_in_the_text_did_you": "Lean juntos un breve pasaje y hagan una pausa para preguntar: ¿en qué parte del texto encontraron la respuesta?",
+    "practice_a_few_short_questions_and_ask_the_child_to_explain_the_method": "Practique algunas preguntas breves y pídale al niño que le explique el método."
+  }
+}

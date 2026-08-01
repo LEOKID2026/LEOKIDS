@@ -1,0 +1,9 @@
+{
+  "gameId": "rock-paper-scissors",
+  "title": "Piedra · Papel · Tijera",
+  "blurb": "Rondas rápidas: lo mejor de todo.",
+  "players": "2 jugadores o vs robot",
+  "help": {
+    "howToPlay": "Jueguen juntos en el mismo dispositivo."
+  }
+}

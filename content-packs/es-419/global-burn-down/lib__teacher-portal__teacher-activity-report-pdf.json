@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "activity_report_teacher": "Informe de actividades — profesor",
+    "questions": "Preguntas",
+    "student_summary": "Resumen del estudiante",
+    "question_analysis": "Análisis de preguntas",
+    "skill_analysis": "Análisis de habilidades"
+  }
+}

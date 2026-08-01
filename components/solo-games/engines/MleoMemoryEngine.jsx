@@ -86,7 +86,7 @@ function computeMemoryGridLayout({ totalCards, difficulty, boardW, boardH, isMob
  *   initialDifficulty?: string,
  *   onSessionEnd?: (metrics: object) => void,
  *   onPreGameUiChange?: (active: boolean) => void,
- *   deckBuilder?: (pairCount: number) => Promise<{ ok: true, deck: object[] } | { ok: false, reason: string }>,
+ *   deckBuilder?: (pairCount: number) => Promise<{ ok: true, deck: object[] } || { ok: false, reason: string }>,
  * }} props
  */
 export default function MleoMemoryEngine({

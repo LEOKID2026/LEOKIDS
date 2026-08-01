@@ -10,7 +10,7 @@ const [resolverMod, recMod, templatesMod, detailedMod, v2Mod, truthMod, normaliz
   import("../utils/detailed-parent-report.js"),
   import("../utils/parent-report-v2.js"),
   import("../utils/parent-copilot/truth-packet-v1.js"),
-  import("../utils/parent-report-language/parent-facing-normalize-he.js"),
+  import("../utils/parent-report-language/parent-facing-normalize.js"),
 ]);
 
 const { resolveGradeAwareParentRecommendationHe } = resolverMod;
@@ -19,7 +19,7 @@ const GRADE_AWARE_RECOMMENDATION_TEMPLATES = templatesMod.GRADE_AWARE_RECOMMENDA
 const { buildDetailedParentReportFromBaseReport } = detailedMod;
 const { summarizeV2UnitsForSubjectForTests } = v2Mod;
 const { buildTruthPacketV1 } = truthMod;
-const { normalizeParentFacingHe } = normalizeMod;
+const { normalizeParentFacing } = normalizeMod;
 
 const ENG = GRADE_AWARE_RECOMMENDATION_TEMPLATES.english;
 const E06_S = ENG["E-06"].bucketOverrides.sentences;
@@ -141,8 +141,8 @@ assertNoE06Forbidden("resolver E-06 outputs", resolvedBlob);
 {
   const raw =
     "עובדה מול inference · עובדה במקום הסקה · מילות סימן להסקה · טעות רק ב־inference · לפני לימוד inference";
-  const n = normalizeParentFacingHe(raw);
-  assertNoE06Forbidden("normalizeParentFacingHe E-06 raw concat", n);
+  const n = normalizeParentFacing(raw);
+  assertNoE06Forbidden("normalizeParentFacing E-06 raw concat", n);
 }
 
 const summaryFixture = {

@@ -13,14 +13,14 @@ import {
   sufficiencyBadgeLabelHe,
   topicFoundationDependencyCompactLineHe,
   trendCompactLineHe,
-} from "../utils/parent-report-ui-explain-he";
-import { normalizeParentFacingHe } from "../utils/parent-report-language/index.js";
+} from "../utils/parent-report-ui-explain";
+import { normalizeParentFacing } from "../utils/parent-report-language/index.js";
 import { resolveParentExplainRowCopy } from "../utils/learning-pattern-decision/index.js";
 import { buildRegularReportTopicExplainCardHe } from "../lib/parent-ui/parent-report-regular-display.js";
 import { trendV1DisplayLineHe } from "../utils/parent-report-topic-trend-v1.js";
 import {
-  resolveParentFacingPatternLabelHe,
-} from "../utils/learning-pattern-decision/parent-facing-error-pattern-he.js";
+  resolveParentFacingPatternLabel,
+} from "../utils/learning-pattern-decision/parent-facing-error-pattern.js";
 
 /**
  * @param {string} raw
@@ -29,12 +29,12 @@ function parentFacingEngineLine(raw) {
   let s = sanitizeEngineSnippetHe(String(raw || ""));
   s = s.replace(
     /\b([a-z][a-z0-9]*_[a-z0-9_]+)\b/gi,
-    (match) => resolveParentFacingPatternLabelHe(match) || "",
+    (match) => resolveParentFacingPatternLabel(match) || "",
   );
   s = s.replace(/\bdefault_[a-z0-9_]+\b/gi, "");
   s = s.replace(/\b[a-z][a-z0-9]*_[a-z0-9_]{7,}\b/gi, "");
   s = s.replace(/\s{2,}/g, " ").trim();
-  return normalizeParentFacingHe(s);
+  return normalizeParentFacing(s);
 }
 
 /** Compact badge */

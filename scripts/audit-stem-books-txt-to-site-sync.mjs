@@ -13,7 +13,7 @@ import {
   normalizePracticeSectionBody,
 } from "../lib/learning-book/parse-learning-page-markdown.js";
 import { prepareBookSectionExportNarrationText } from "./lib/prepare-book-export-narration-text.js";
-import { normalizeHebrewHyphensForTts } from "../lib/learning-book/audio/prepare-hebrew-book-audio-text.js";
+import { normalizeHebrewHyphensForTts } from "../lib/learning-book/audio/normalize-hyphens-for-tts.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");

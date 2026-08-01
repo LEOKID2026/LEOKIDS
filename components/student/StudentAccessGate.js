@@ -103,9 +103,9 @@ export default function StudentAccessGate({ children }) {
   const bootstrappedRef = useRef(false);
   const hubsPrefetchedRef = useRef(false);
 
-  /** @type {[{ status: "loading" | "ok" | "blocked", student: object | null, subjectAccess?: object|null }, function]: any} */
+  /** @type {[{ status: "loading" || "ok" || "blocked", student: object || null, subjectAccess?: object|null }, function]: any} */
   const [session, setSession] = useState(EMPTY_SESSION);
-  /** @type {[{ status: "skip" | "loading" | "ready" | "error", data: object | null }, function]: any} */
+  /** @type {[{ status: "skip" || "loading" || "ready" || "error", data: object || null }, function]: any} */
   const [gameAccess, setGameAccess] = useState(() =>
     needsGameAccess ? EMPTY_GAME_ACCESS : { status: "skip", data: null },
   );

@@ -31,7 +31,7 @@ export function categorizeFindingLegacyWaveFPool(file, text) {
   if (/seo|public-page-seo|PageSeo/.test(f)) return "SEO";
   if (/email|sendgrid|mail/.test(f)) return "Emails";
   if (/diagnostic-|taxonomy-|probe-map|math-animations/.test(f)) return "Learning";
-  if (/hebrew-display-labels|apiError|validation/.test(f)) return "API errors";
+  if (/display-labels|apiError|validation/.test(f)) return "API errors";
   if (/aria-|a11y|accessibility/.test(f)) return "Accessibility";
   if (/site-nav|Layout\.js|AppLocaleShell|shared\/|common\/modal|toast/.test(f)) return "Navigation";
   if (/guardian/.test(f)) return "Guardian";

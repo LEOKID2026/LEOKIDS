@@ -97,7 +97,7 @@ const servedTr = {
   topic: "translation",
   question: `תרגם: "${trRow.en}"`,
   correctAnswer: trRow.he,
-  params: { patternFamily: trRow.patternFamily, direction: "en_to_he" },
+  params: { patternFamily: trRow.patternFamily, direction: "en_to_meaning" },
   levelKey: "easy",
 };
 let wrongT = {

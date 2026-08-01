@@ -2,6 +2,7 @@
  * Science closure fill — targeted MCQs to lift thin runtime buckets (grade × topic × UI level) to ≥3.
  * Wired from data/science-questions.js. Science-only.
  */
+
 export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
   {
     "id": "sci_closure_g4exp_001",
@@ -12,18 +13,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מהי השערה פשוטה בחקירה?",
+    "stem": "Hypothesis?",
     "options": [
-      "ניסוח חיזוי שניתן לבדוק",
-      "לסיים בלי לבדוק",
-      "להתעלם מתוצאות",
-      "לכתוב רק סיפור"
+      "Science question",
+      "Science question",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_experiments_scientific_method",
@@ -45,18 +46,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה תיאור נכון לשלב תיעוד?",
+    "stem": "What true?",
     "options": [
-      "רישום תוצאות בצורה ברורה",
-      "למחוק תוצאות",
-      "לא לרשום תאריך",
-      "להימנע מטבלאות"
+      "Way.",
+      "Science question",
+      "Not.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_experiments_scientific_method",
@@ -80,18 +81,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה מאפיין יום לילה במקום אחד?",
+    "stem": "What day night?",
     "options": [
-      "מחזור שמש/חושך בפרק זמן",
-      "אין שינוי כלל",
-      "תמיד לילה",
-      "תמיד יום"
+      "/.",
+      "All.",
+      "Always night.",
+      "Always day usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -115,18 +116,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה לתצפית מזג אוויר?",
+    "stem": "What to observation weather?",
     "options": [
-      "מדידת טמפרטורה ביומן",
-      "לנחש בלי לראות",
-      "להתעלם מעננות",
-      "לספור רק ימי חופש"
+      "Science question",
+      "See.",
+      "Science question",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -150,18 +151,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה קשר פשוט בין צמח למים?",
+    "stem": "What plant to water?",
     "options": [
-      "צמח זקוק למים לגדילה",
-      "צמח לא נוגע במים",
-      "מים רק מפריעים",
-      "אין קשר"
+      "Plant to water.",
+      "Plant not in water.",
+      "Water.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -185,18 +186,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה להבדל בין חי לדומם?",
+    "stem": "What living to non-living?",
     "options": [
-      "חתול נושם ונע",
-      "סלע קופץ לבד",
-      "מים אינם זזים",
-      "אין הבדל"
+      "Science question",
+      "Science question",
+      "Water.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -218,18 +219,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה השלכה סבירה כשבית גידול משתנה?",
+    "stem": "What variable?",
     "options": [
-      "אוכלוסייה עלולה לרדת אם אין התאמה",
-      "תמיד גדלה בלי גבול",
-      "אין קשר לסביבה",
-      "כל בעלי החיים זהים"
+      "Science question",
+      "Always.",
+      "To environment usually all.",
+      "All animals living."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -251,18 +252,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה קשר בין התאמה לסביבה לשרידות?",
+    "stem": "What to environment?",
     "options": [
-      "התאמה טובה יכולה לסייע לשרידות",
-      "אין קשר",
-      "שרידות תלויה רק במזל",
-      "כל בעלי החיים זהים באותה מידה"
+      "Best.",
+      "Science question",
+      "Science question",
+      "All animals living."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -284,18 +285,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה משתנה נבחר נכון בניסוי פשוט?",
+    "stem": "What variable true in experiment?",
     "options": [
-      "גודל אחד שמשתנה במכוון",
-      "כל דבר ביחד",
-      "אף משתנה",
-      "רק צבע המכנסיים"
+      "Science question",
+      "All.",
+      "Nose variable usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -317,18 +318,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "למה חוזרים על ניסוי לפעמים?",
+    "stem": "Why on experiment sometimes?",
     "options": [
-      "כדי לוודא שהתוצאה עקבית",
-      "כדי לאסור ניסויים",
-      "כדי לבטל מדידות",
-      "כדי לקצר זמן"
+      "To.",
+      "To.",
+      "To.",
+      "To to short usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -351,18 +352,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה תיאור בסיסי של עונה?",
+    "stem": "What of?",
     "options": [
-      "תקופה עם דפוס מזג אופייני",
-      "יום אחד בלבד",
-      "רק טמפרטורת חדר",
-      "תמיד אותו דבר כל שנה"
+      "With weather.",
+      "Day usually all.",
+      "Usually all.",
+      "Always all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -385,18 +386,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה לסלע משקע?",
+    "stem": "What?",
     "options": [
-      "סלע שנוצר מהצטברות שכבות",
-      "קרח נוזל בלבד",
-      "פלסטיק טבעי",
-      "ענן מוצק"
+      "Science question",
+      "Liquid.",
+      "Plastic usually all.",
+      "Solid usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -419,18 +420,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה למיחזור בסיסי?",
+    "stem": "What to recycling?",
     "options": [
-      "איסוף בקבוקים למיחזור",
-      "שריפת פסולת ללא הבחנה",
-      "השלכת הכל לאותה פח",
-      "אין צורך למיין"
+      "To recycling.",
+      "Without.",
+      "All.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -453,18 +454,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה קשר בין צמחים לאוויר?",
+    "stem": "What plants?",
     "options": [
-      "צמחים משתמשים בחומרים מהאוויר לצמיחה",
-      "אין קשר",
-      "צמחים לא נושמים",
-      "רק בעלי חיים צריכים אוויר"
+      "Plants use in materials.",
+      "Usually all.",
+      "Plants not.",
+      "Animals living."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -486,18 +487,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה קשר נכון בין דופק לפעילות?",
+    "stem": "What true?",
     "options": [
-      "פעילות גופנית עלולה להעלות דופק זמנית",
-      "דופק לא משתנה לעולם",
-      "פעילות תמיד מורידה דופק לאפס",
-      "אין קשר ללב"
+      "Science question",
+      "Not variable never usually all.",
+      "Always.",
+      "To heart usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -519,18 +520,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה תפקיד פשוט של כלי דם?",
+    "stem": "What role of blood?",
     "options": [
-      "הובלת דם לאיברים",
-      "ייצור חמצן מהאוויר",
-      "עיכול מזון ישירות",
-      "שמיעת צלילים"
+      "Blood.",
+      "Oxygen from air.",
+      "Food.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -552,18 +553,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה מאפיין כוכב לכת פנימי לעומת חיצוני במערכת השמש?",
+    "stem": "What planet planet in system sun?",
     "options": [
-      "פנימי קטן יחסית וסלעי לעיתים",
-      "כולם זהים",
-      "חיצוני תמיד קטן יותר מהפנימי",
-      "אין הבדל כלל"
+      "Small.",
+      "Usually all.",
+      "Always small more.",
+      "All usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -585,18 +586,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה למחזור יום לילה?",
+    "stem": "What day night?",
     "options": [
-      "סיבוב כדור הארץ והיחס לשמש",
-      "רק עונות בלי יום",
-      "לילה בלי כוכבים",
-      "יום בלי אור"
+      "Earth Earth.",
+      "Day.",
+      "Night stars.",
+      "Day light usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -618,18 +619,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה השפעה סבירה של זיהום אוויר על בריאות?",
+    "stem": "What of pollution on in lungs?",
     "options": [
-      "קושי נשימתי אצל רגישים לפעמים",
-      "תמיד תוצאה זהה לכולם",
-      "אין השפעה מדעית",
-      "רק על צמחים"
+      "Science question",
+      "Always result.",
+      "Science question",
+      "On plants usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -651,18 +652,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה להתחממות כדור הארץ ברמת כיתה?",
+    "stem": "What Earth Earth class?",
     "options": [
-      "עלייה ממוצעת בטמפרטורה לאורך שנים",
-      "יום חם אחד",
-      "שינוי יומי רגיל",
-      "רק קור קיצוני"
+      "Science question",
+      "Day hot usually all.",
+      "Science question",
+      "Cold usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -684,18 +685,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה רצף הגיוני להסבר תגובה של הגוף לחום?",
+    "stem": "What of body to heat?",
     "options": [
-      "זיהוי חום → תגובה לקירור → שמירה על טמפרטורה יציבה",
-      "קירור ללא זיהוי",
-      "אין תגובה",
-      "רק פעימות ללא קשר"
+      "Heat →.",
+      "Without.",
+      "Usually all.",
+      "Without."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -717,18 +718,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה השערה זהירה על התנהגות בעלי חיים בחורף?",
+    "stem": "What hypothesis on animals living?",
     "options": [
-      "חיפוש מחסה או צבירת אנרגיה לפי מין",
-      "כל בעלי החיים נעלמים",
-      "אין שינוי התנהגות",
-      "כולם נכנסים לישינה חורף זהה"
+      "Or energy.",
+      "All animals living usually all.",
+      "Usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -753,18 +754,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה תכונה פשוטה של מתכת לעומת פלסטיק במכלי מטבח?",
+    "stem": "What of metal plastic?",
     "options": [
-      "מתכת מוליכה חום טוב יותר לרוב",
-      "פלסטיק תמיד מוליך יותר",
-      "אין הבדל",
-      "שניהם בידוד זהים"
+      "Metal heat more.",
+      "Plastic always more.",
+      "Usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -790,18 +791,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה הבחנה בין שינוי פיזיקלי לשינוי כימי פשוט?",
+    "stem": "What?",
     "options": [
-      "כימי יוצר חומר חדש; פיזיקלי דומה זהות החומר ביסודו",
-      "אין הבדל",
-      "פיזיקלי תמיד יוצר חדש",
-      "כימי לא משנה תכונות"
+      "Material.",
+      "Usually all.",
+      "Always.",
+      "Not."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -823,18 +824,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה נכון לגבי מדידה באותן יחידות?",
+    "stem": "What true?",
     "options": [
-      "משווים מספרים רק באותן יחידות או ממירים",
-      "אפשר לערבב סנטימטרים עם ליטרים בלי המרה",
-      "יחידות לא חשובות",
-      "רק ציור חשוב"
+      "Or.",
+      "With.",
+      "Not usually all.",
+      "Science question"
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -859,18 +860,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה תיאור פשוט של ענן?",
+    "stem": "What of?",
     "options": [
-      "טיפות מים קטנות או גבישי קרח באוויר",
-      "גז חומצה תמיד",
-      "חומר מוצק יחיד בלבד",
-      "אין חומר"
+      "Water or.",
+      "Gas always.",
+      "Material solid.",
+      "Material usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -894,18 +895,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה קשר סביר בין רוח למפלס ים מקומי?",
+    "stem": "What sea?",
     "options": [
-      "רוח חזקה יכולה לדחוף מים ולהעלות גלים",
-      "אין קשר",
-      "רוח תמיד מורידה גלים לאפס",
-      "רק חושך משפיע"
+      "Water.",
+      "Usually all.",
+      "Always.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -929,18 +930,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה לצמח כמפיק מזון בסיסי?",
+    "stem": "What to plant food?",
     "options": [
-      "עץ פרי שנותן פרי לאדם",
-      "סלע שנותן פרי",
-      "ענן שנותן פרי",
-      "פלסטיק שנותן פרי"
+      "Wood fruit fruit.",
+      "Fruit usually all.",
+      "Fruit usually all.",
+      "Plastic fruit."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -964,18 +965,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה קשר אפשרי בין פסולת לאדמת גינה?",
+    "stem": "What?",
     "options": [
-      "פסולת לא מתאימה עלולה לפגוע באיכות מים וקרקע",
-      "פסולת תמיד משפרת בלי בדיקה",
-      "אין קשר",
-      "רק אוויר נפגע"
+      "Not.",
+      "Always.",
+      "Usually all.",
+      "Usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -997,18 +998,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "hard",
     "maxLevel": "hard",
     "type": "mcq",
-    "stem": "מה הסבר בסיסי למחזור דם ריאותי?",
+    "stem": "What blood?",
     "options": [
-      "דם עובר בריאות לחמצון וחזרה ללב",
-      "דם לא עובר בריאות",
-      "ריאות מייצרות דם חדש",
-      "לב לא קשור לריאות"
+      "Blood in lungs to heart.",
+      "Blood not in lungs usually all.",
+      "Lungs blood.",
+      "Heart not to lungs usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -1032,18 +1033,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה לשינוי פיזיקלי שמתרחש במים?",
+    "stem": "What in water?",
     "options": [
-      "קיפאון או התאדות תחת תנאים מתאימים",
-      "מים הופכים תמיד לאבן חדשה",
-      "אין שינוי לעולם",
-      "תמיד תגובה כימית"
+      "Or.",
+      "Water always.",
+      "Never usually all.",
+      "Always usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -1065,18 +1066,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "medium",
     "maxLevel": "medium",
     "type": "mcq",
-    "stem": "מה תיאור נכון להגנה על עור בשמש?",
+    "stem": "What true on skin in sun?",
     "options": [
-      "לבוש והצללה מפחיתים סיכון לכוויות",
-      "אין צורך בהגנה",
-      "שמש לא משפיעה על עור",
-      "רק מים מגנים"
+      "Science question",
+      "Usually all.",
+      "Sun not on skin.",
+      "Water usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -1099,18 +1100,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה הבחנה בין מוליך למבודד בכיתה?",
+    "stem": "What in class?",
     "options": [
-      "מוליך מאפשר זרם חשמלי יחסית בקלות",
-      "מבודד תמיד מוליך חזק יותר",
-      "אין הבדל",
-      "שניהם זהים תמיד"
+      "Science question",
+      "Always more.",
+      "Science question",
+      "Always usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
@@ -1132,18 +1133,18 @@ export const SCIENCE_QUESTIONS_CLOSURE_FILL = [
     "minLevel": "easy",
     "maxLevel": "easy",
     "type": "mcq",
-    "stem": "מה דוגמה לשימוש הנדסי בתכונת חומר?",
+    "stem": "What material?",
     "options": [
-      "בחירת חומר חזק לפי תפקיד כדי למנוע שבירה",
-      "חומר לא קובע תוצאה",
-      "תמיד אותו חומר לכל דבר",
-      "אין קשר לבטיחות"
+      "Material role to.",
+      "Material not result.",
+      "Always material to all.",
+      "To safety usually all."
     ],
     "correctIndex": 0,
-    "explanation": "שאלת תרגול נוספת שנועדה לחזק כיסוי רציף לפי נושא, כיתה ורמת הממשק.",
+    "explanation": ", class.",
     "theoryLines": [
-      "תצפית וסיווג הם בסיס לחשיבה מדעית.",
-      "כדאי לבדוק את ההסבר אחרי בחירת התשובה."
+      "Observation.",
+      "."
     ],
     "params": {
       "patternFamily": "sci_closure_coverage",
