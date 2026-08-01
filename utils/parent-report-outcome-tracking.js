@@ -69,13 +69,13 @@ export function buildOutcomeTrackingPhase12(ctx) {
   } else if (observedOutcomeState === "contradictory_response") {
     expectedVsObservedMatch = "misaligned";
   } else if (
-    (expectedOutcomeType === "accuracy_stabilization" && (observedOutcomeState === "clear_progress" || observedOutcomeState === "partial_progress")) |
-    (expectedOutcomeType === "release_readiness" && (rti === "independence_growing" || indepUp || indep === "improving")) |
+    (expectedOutcomeType === "accuracy_stabilization" && (observedOutcomeState === "clear_progress" || observedOutcomeState === "partial_progress")) ||
+    (expectedOutcomeType === "release_readiness" && (rti === "independence_growing" || indepUp || indep === "improving")) ||
     (expectedOutcomeType === "evidence_collection" && q >= 14 && rti !== "stalled_response")
   ) {
     expectedVsObservedMatch = "aligned";
   } else if (
-    (expectedOutcomeType === "accuracy_stabilization" && observedOutcomeState === "flat_response") |
+    (expectedOutcomeType === "accuracy_stabilization" && observedOutcomeState === "flat_response") ||
     (expectedOutcomeType === "release_readiness" && !indepUp && indep !== "improving" && rti !== "independence_growing")
   ) {
     expectedVsObservedMatch = "misaligned";
@@ -112,7 +112,7 @@ export function buildOutcomeTrackingPhase12(ctx) {
   const expLab = EXPECTED_OUTCOME_TYPE_LABEL_HE[expectedOutcomeType] || EXPECTED_OUTCOME_TYPE_LABEL_HE.unknown;
   const obsLab = OBSERVED_OUTCOME_STATE_LABEL_HE[observedOutcomeState] || OBSERVED_OUTCOME_STATE_LABEL_HE.not_observable_yet;
   const matchLab =
-    EXPECTED_VS_OBSERVED_MATCH_LABEL_HE[expectedVsObservedMatch] |
+    EXPECTED_VS_OBSERVED_MATCH_LABEL_HE[expectedVsObservedMatch] ||
     EXPECTED_VS_OBSERVED_MATCH_LABEL_HE.not_enough_evidence;
   const ftLab = FOLLOW_THROUGH_SIGNAL_LABEL_HE[followThroughSignal] || FOLLOW_THROUGH_SIGNAL_LABEL_HE.not_inferable;
 

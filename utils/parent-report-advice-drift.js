@@ -19,10 +19,10 @@ export function buildAdviceDriftPhase11(ctx) {
   const seq = String(ctx?.supportSequenceState || "");
 
   const sameGuidedBand =
-    rpm === "slow_guided_accuracy" |
-    rpm === "error_reduction_loop" |
-    rpm === "guided_release" |
-    intv === "guided_to_independent_transition" |
+    rpm === "slow_guided_accuracy" ||
+    rpm === "error_reduction_loop" ||
+    rpm === "guided_release" ||
+    intv === "guided_to_independent_transition" ||
     intv === "stabilize_accuracy";
 
   let adviceSimilarityLevel = "unknown";
@@ -60,7 +60,7 @@ export function buildAdviceDriftPhase11(ctx) {
     ADVICE_SIMILARITY_LEVEL_LABEL_HE[adviceSimilarityLevel] || ADVICE_SIMILARITY_LEVEL_LABEL_HE.unknown;
   const adviceNoveltyHe = ADVICE_NOVELTY_LABEL_HE[adviceNovelty] || ADVICE_NOVELTY_LABEL_HE.unknown;
   const recommendationRotationNeedHe =
-    RECOMMENDATION_ROTATION_NEED_LABEL_HE[recommendationRotationNeed] |
+    RECOMMENDATION_ROTATION_NEED_LABEL_HE[recommendationRotationNeed] ||
     RECOMMENDATION_ROTATION_NEED_LABEL_HE.none;
 
   const repeatAdviceWarningHe = repeatAdviceWarning

@@ -56,23 +56,23 @@ export function shouldTryNextFallbackCandidateAfterValidationFailure(reason) {
 const DEFAULT_TIMEOUT_MS = 9000;
 
 const LLM_CLINICAL_DIAGNOSIS_RES = [
-  //u,
-  /\s*/u,
-  /\s*/u,
+  /dyslexia|dyscalculia/iu,
+  /learning\s*disability|learning\s*disorder/iu,
+  /attention\s*disorder/iu,
   /\bADHD\b/i,
-  /\s*/u,
-  /\s*/u,
-  /(?:\s*|\s*).{0,64}(?:\s*|\s*|ADHD)/iu,
-  /(?:\s*|\s*|ADHD).{0,64}(?:\s*|\s*)/iu];
+  /the\s*diagnosis\s*is/iu,
+  /(?:the\s+child\s+has|has\s+(?:a\s+)?(?:diagnosis|disorder)).{0,64}(?:dyslexia|dyscalculia|learning\s*disability|attention\s*disorder|\bADHD\b)/iu,
+  /(?:dyslexia|dyscalculia|learning\s*disability|attention\s*disorder|\bADHD\b).{0,64}(?:the\s+child\s+has|has\s+(?:a\s+)?(?:diagnosis|disorder))/iu,
+];
 
-const LLM_CLINICAL_CERTAINTY_RE = /([\s-]*|\s*|\s*)/u;
+const LLM_CLINICAL_CERTAINTY_RE = /\b(?:with\s+certainty|unambiguous(?:ly)?|no\s+doubt|clear(?:ly)?\s+that)\b/iu;
 
 /**
  * @param {string} s
  */
 function normalizeWsHe(s) {
   return String(s || "")
-    .replace(/\s+/g, "")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
@@ -89,7 +89,7 @@ function env(name, fallback = "") {
 
 /** Same predicate as truth-packet executive strength (subject-level wording). */
 function utteranceAsksSubjectLevelStrength(u) {
-  return /\s+()|\s+|\s+|\s+/u.test(String(u || "").trim());
+  return /\b(?:subject|subjects)\b|\bstrong(?:est)?\s+subject\b|\bwhich\s+subject\b|\bbest\s+subject\b/iu.test(String(u || "").trim());
 }
 
 export function buildGroundedPrompt(utterance, truthPacket, parentIntent = "", opts = {}) {
@@ -246,7 +246,7 @@ function validateLlmDraft(payload, truthPacket, hints = null) {
   const hasMean = blocks.some((b) => String(b?.type || "") === "meaning");
   if (!hasObs && !hasMean) return { ok: false, reason: "llm_missing_observation_or_meaning" };
 
-  const joined = blocks.map((b) => String(b?.answerText || "").trim()).join("");
+  const joined = blocks.map((b) => String(b?.answerText || "").trim()).join(" ");
   const intent = String(hints?.intent || "").trim();
   const joinedNorm = normalizeWsHe(joined);
   const boundaryNorm = normalizeWsHe(clinicalBoundaryJoinedFingerprintHe());

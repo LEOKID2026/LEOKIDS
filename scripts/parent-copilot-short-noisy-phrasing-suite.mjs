@@ -9,12 +9,12 @@ import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 const payload = syntheticPayload();
 
 const classificationCases = [
-  { utterance: "מהזה אומר", expectedIntent: "clarify_term", expectedScopeStatus: "resolved" },
-  { utterance: "מחר?", expectedIntent: "what_to_do_this_week", expectedScopeStatus: "resolved" },
-  { utterance: "חשבון", expectedIntent: "unclear", expectedScopeStatus: "resolved" },
-  { utterance: "שברים?", expectedIntent: "unclear", expectedScopeStatus: "resolved" },
-  { utterance: "לא ברור", expectedIntent: "is_intervention_needed", expectedScopeStatus: "resolved" },
-  { utterance: "מה המקצוע החזק", expectedIntent: "what_is_going_well", expectedScopeStatus: "resolved" },
+  { utterance: "What does this mean", expectedIntent: "clarify_term", expectedScopeStatus: "resolved" },
+  { utterance: "this week?", expectedIntent: "what_to_do_this_week", expectedScopeStatus: "resolved" },
+  { utterance: "Math", expectedIntent: "unclear", expectedScopeStatus: "resolved" },
+  { utterance: "Fractions?", expectedIntent: "unclear", expectedScopeStatus: "resolved" },
+  { utterance: "Not clear", expectedIntent: "is_intervention_needed", expectedScopeStatus: "resolved" },
+  { utterance: "What is the strongest subject", expectedIntent: "what_is_going_well", expectedScopeStatus: "resolved" },
 ];
 
 let pass = 0;

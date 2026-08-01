@@ -27,18 +27,16 @@ import {
 
 /** Deterministic clinical / diagnostic labeling (joined parent copy + contract slots). Not the fixed boundary fingerprint. */
 const CLINICAL_DIAGNOSIS_SURFACE_RES = [
-  /(?!)/u,
-  /(?!)/u,
-  /(?!)/u,
+  /dyslexia|dyscalculia/iu,
+  /learning\s*disability|learning\s*disorder/iu,
+  /attention\s*disorder/iu,
   /\bADHD\b/i,
-  /(?!)/u,
-  /(?!)/u,
-  /(?!)/iu,
-  /(?!)/iu,
+  /the\s*diagnosis\s*is/iu,
+  /clinical\s*diagnosis|medical\s*diagnosis/iu,
 ];
 
 /** Over-certain tone when answering a clinical-boundary-class turn. */
-const CLINICAL_CERTAINTY_RE = /(?!)/u;
+const CLINICAL_CERTAINTY_RE = /\b(?:with\s+certainty|unambiguous(?:ly)?|no\s+doubt|clear(?:ly)?\s+that)\b/iu;
 
 /**
  * @param {string} s

@@ -149,8 +149,8 @@ function assertSubjectContextLabelingMatrix(subjectId, baseReport, detailedRepor
   const transparencyRowCount =
     (transparency?.advancedPractice?.length || 0) + (transparency?.foundationPractice?.length || 0);
   const hasNotice =
-    notices.some((n) => String(n).includes(splitLabel)) |
-    notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId)) |
+    notices.some((n) => String(n).includes(splitLabel)) ||
+    notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId)) ||
     transparencyRowCount > 0;
   if (collapsed.test(bundle) && !hasNotice) {
     failures.push(
@@ -161,8 +161,8 @@ function assertSubjectContextLabelingMatrix(subjectId, baseReport, detailedRepor
   const homeLines = (detailedReport?.homePlan?.itemsHe || []).filter((line) =>
     String(line).includes(subjectLabel));
   const hasSubjectGuidance =
-    focusRecs.length > 0 |
-    homeLines.length > 0 |
+    focusRecs.length > 0 ||
+    homeLines.length > 0 ||
     Boolean(String(sp.parentActionHe || sp.subjectDoNowHe || sp.subjectImmediateActionHe || "").trim());
   const hasCoreWeakness =
     (sp.topWeaknesses || []).length > 0 || focusRecs.length > 0;
@@ -171,7 +171,7 @@ function assertSubjectContextLabelingMatrix(subjectId, baseReport, detailedRepor
   }
 
   const weakInHomeOrFocus =
-    homeLines.some((line) => line.includes(keys.splitLabelHe)) |
+    homeLines.some((line) => line.includes(keys.splitLabelHe)) ||
     focusRecs.some((r) => String(r.topicRowKey) === keys.splitG4);
   if (!weakInHomeOrFocus && focusRecs.length === 0) {
     // No same-grade weakness in fixture — core focus may legitimately be empty.
@@ -227,7 +227,7 @@ export function assertAggregateExplainsAllGradeSplits(detailedReport, baseReport
       `${displayName.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}[^.\\n]{0,20} `,
       "u");
     const hasNotice =
-      notices.some((n) => String(n).includes(displayName)) |
+      notices.some((n) => String(n).includes(displayName)) ||
       notices.some((n) => String(n).includes(SUBJECT_LABEL_HE[subjectId] || subjectId));
     if (collapsed.test(bundle) && !hasNotice) {
       failures.push(
@@ -239,8 +239,8 @@ export function assertAggregateExplainsAllGradeSplits(detailedReport, baseReport
     const transparencyRowCount =
       (transparency?.advancedPractice?.length || 0) + (transparency?.foundationPractice?.length || 0);
     const mixedNote = String(
-      detailedReport?.gradePracticeMeta?.mixedGradePracticeNoteHe |
-        baseReport?.gradePracticeMeta?.mixedGradePracticeNoteHe |
+      detailedReport?.gradePracticeMeta?.mixedGradePracticeNoteHe ||
+        baseReport?.gradePracticeMeta?.mixedGradePracticeNoteHe ||
         "").trim();
     if (!mixedNote && transparencyRowCount === 0 && !baseReport?.registeredGradeKey) {
       failures.push("executiveSummary.gradeSplitTopicNoticesHe empty despite grade-split topics");

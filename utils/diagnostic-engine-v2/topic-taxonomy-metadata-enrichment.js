@@ -134,8 +134,8 @@ export function enrichMetadataFromTaxonomy(ctx) {
 
   const taxonomyPatterns = possiblePatternsFromTaxonomyRow(trow);
   const patternFamily =
-    base.patternFamily |
-    (trow.patternHe ? patternFamilyKeyFromTaxonomy(trow.patternHe) : null) |
+    base.patternFamily ||
+    (trow.patternHe ? patternFamilyKeyFromTaxonomy(trow.patternHe) : null) ||
     `tax_${primaryId}`;
 
   /** @type {string[]} */

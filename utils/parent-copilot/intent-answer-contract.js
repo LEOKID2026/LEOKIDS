@@ -19,25 +19,25 @@ export const ANSWER_CONTRACT = Object.freeze({
   zero_evidence: "zero_evidence"});
 
 const REPORT_EXPLAIN_RE =
-  /\s*(?:\s*)?(?:\s*)?(?:)?|\s*\s*|\s*\s*|\s*\s*|\s*\s*|\s*|\s*/u;
+  /(?:explain|tell\s+me\s+about)\s+(?:the\s+)?report|what\s+(?:does\s+)?(?:the\s+)?report\s+(?:say|show|mean)|(?:give\s+me\s+)?(?:a\s+)?summary|what\s+(?:do\s+we\s+)?see\s+here|overall\s+picture/iu;
 
 const IMPORTANT_FOCUS_RE =
-  /\s*\s*|\s*\s*|\s*\s*|\s*\s*\s*|\s*\s*|\s*\s*\s*/u;
+  /what\s+(?:is\s+)?important\s+(?:here|now)|what\s+(?:is\s+)?(?:the\s+)?most\s+important|what\s+(?:to\s+)?(?:focus|emphasize)|where\s+(?:to\s+)?(?:put\s+)?(?:the\s+)?focus/iu;
 
-const TOPIC_LOOKUP_RE = /^\s*\s+/u;
+const TOPIC_LOOKUP_RE = /^(?:what\s+about|how\s+about)\s+/iu;
 
 const TOPIC_PROBLEM_RE =
-  /\s*|\s*|\s*|\s*|\s*(?:)?\s*(?:)|\s*\s*|\s*|\s*/u;
+  /what\s+(?:is\s+)?(?:the\s+)?(?:problem|difficulty)|where\s+(?:is\s+)?(?:the\s+)?(?:problem|difficulty)|why\s+(?:is\s+)?(?:he|she|the\s+child)?\s*(?:weak|struggling)|what\s+(?:is\s+)?(?:not\s+working|weak)|why\s+(?:is\s+it\s+)?(?:hard|difficult)/iu;
 
 const HOME_PRACTICE_RE =
-  /\s*|\s*|\s*|\s*|\s*\s*|\s*|\s*/u;
+  /what\s+should\s+(?:we|i)\s+do|what\s+to\s+do(?:\s+(?:now|today|this\s+week|at\s+home))?|how\s+(?:to\s+)?practice|how\s+long|at\s+home|next\s+step|what\s+(?:do\s+we\s+)?do\s+now|home\s+practice|how\s+(?:do\s+(?:we|i)\s+)?practice/iu;
 
 const STRENGTH_RE =
-  /\s*\s*|\s*(?:)?\s*|\s*|\s*|\s*|\s*|(?:)?\s*(?:\s*)?(?:)?|\s*|(?:)?\s*/u;
+  /what\s+(?:is\s+)?going\s+well|where\s+(?:is\s+)?(?:he|she|the\s+child)?\s*strong|what\s+(?:is\s+)?strong|strengths?|succeeding|strongest|(?:the\s+)?strong(?:est)?\s+subject|which\s+subject\s+is\s+strongest/iu;
 
 // Progression family: advance / level up / level down / mastered / above-grade / below-grade / focus elsewhere.
 const PROGRESSION_RE =
-  /\s*(?:)?|\s*(?:\s*)?(?:)?|\s*(?:)?|\s*(?:\s*)?(?:)?|\s*|\s*|\s*|\s*(?:)?|\s*|\s*(?:)?|\s*(?:\s*)?|\s*\s*|\s*\s*/u;
+  /\b(?:advance|move\s+ahead|level\s+up|raise\s+(?:the\s+)?level|level\s+down|lower\s+(?:the\s+)?level|already\s+masters?|masters?\s+the\s+topic|already\s+knows?|above\s+(?:grade|level)|below\s+(?:grade|level)|focus\s+on\s+(?:another|a\s+different)\s+topic|switch\s+(?:to\s+)?(?:another|a\s+different)\s+topic|wasting)\b/iu;
 
 /**
  * @param {unknown} payload
@@ -74,7 +74,7 @@ export function resolveAnswerContract(params) {
   const stageAIntent = String(params?.stageAIntent || "");
   const payload = params?.payload;
   const subjectId =
-    String(params?.subjectId || "").trim() |
+    String(params?.subjectId || "").trim() ||
     String(params?.truthPacket?.surfaceFacts?.subjectId || "").trim();
 
   if (scopeType === "subject" && subjectId) {
@@ -86,14 +86,14 @@ export function resolveAnswerContract(params) {
 
   if (IMPORTANT_FOCUS_RE.test(folded)) return ANSWER_CONTRACT.important_focus;
 
-  if (TOPIC_LOOKUP_RE.test(folded) || /^\s*\s+/u.test(folded)) return ANSWER_CONTRACT.topic_lookup;
+  if (TOPIC_LOOKUP_RE.test(folded)) return ANSWER_CONTRACT.topic_lookup;
 
   if (
-    HOME_PRACTICE_RE.test(folded) |
-    stageAIntent === "what_to_do_today" |
-    stageAIntent === "what_to_do_this_week" |
-    stageAIntent === "how_to_tell_child" |
-    (isContextualFollowUpUtterance(utteranceStr) && /\s*|\s*|\s*/u.test(folded))
+    HOME_PRACTICE_RE.test(folded) ||
+    stageAIntent === "what_to_do_today" ||
+    stageAIntent === "what_to_do_this_week" ||
+    stageAIntent === "how_to_tell_child" ||
+    (isContextualFollowUpUtterance(utteranceStr) && /\b(?:home|practice|today|week|next\s+step)\b/iu.test(folded))
   ) {
     return ANSWER_CONTRACT.home_practice;
   }
@@ -112,9 +112,9 @@ export function resolveAnswerContract(params) {
 
   if (
     scopeType === "executive" &&
-    (stageAIntent === "explain_report" |
-      stageAIntent === "ask_topic_specific" |
-      stageAIntent === "ask_subject_specific" |
+    (stageAIntent === "explain_report" ||
+      stageAIntent === "ask_topic_specific" ||
+      stageAIntent === "ask_subject_specific" ||
       REPORT_EXPLAIN_RE.test(folded))
   ) {
     return ANSWER_CONTRACT.report_explanation;
@@ -122,9 +122,9 @@ export function resolveAnswerContract(params) {
 
   if (scopeType === "topic") {
     if (
-      TOPIC_PROBLEM_RE.test(folded) |
-      stageAIntent === "what_is_still_difficult" |
-      stageAIntent === "why_not_advance" |
+      TOPIC_PROBLEM_RE.test(folded) ||
+      stageAIntent === "what_is_still_difficult" ||
+      stageAIntent === "why_not_advance" ||
       stageAIntent === "what_not_to_do_now"
     ) {
       return ANSWER_CONTRACT.topic_problem;

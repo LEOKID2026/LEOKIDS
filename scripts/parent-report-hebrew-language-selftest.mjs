@@ -68,7 +68,7 @@ function assertNoReadabilityLeaks(label, s) {
 const samples = [];
 
 samples.push(["exec home empty", executiveV2HomeFocusHe([])]);
-samples.push(["exec home with", executiveV2HomeFocusHe(["חשבון: חיסור", "עברית: דיקדוק"])]);
+samples.push(["exec home with", executiveV2HomeFocusHe(["Math: Subtraction", "English: Grammar"])]);
 samples.push(["exec trends", executiveV2MajorTrendsLinesHe({ units: 10, diagnosed: 6, uncertain: 2, stable: 3 }).join("\n")]);
 samples.push(["exec mixed", executiveV2MixedSignalNoticeHe(true)]);
 samples.push(["exec mixed off", executiveV2MixedSignalNoticeHe(false)]);
@@ -103,8 +103,8 @@ for (const src of ["diagnosticEngineV2", "legacy_patternDiagnostics_fallback", "
 }
 
 const SURFACE_ROW_LABELS = {
-  topicPatternCounts: "תמונת מצב בשאלות",
-  majorRisks: "נקודות לתשומת לב",
+  topicPatternCounts: "Practice snapshot",
+  majorRisks: "Points to watch",
 };
 for (const [k, v] of Object.entries(SURFACE_ROW_LABELS)) {
   samples.push([`rowlabel.${k}`, v]);
@@ -125,24 +125,24 @@ scanValueForForbidden(tree, () => {
 });
 assert.equal(treeHits, 0, "scanValueForForbidden should find no hits in sample tree");
 
-// Pedagogy gloss — engine/taxonomy phrasing → parent Hebrew (display layer)
+// Pedagogy gloss — engine/taxonomy phrasing → parent English (display layer)
 assert.equal(
-  normalizePedagogyForParentReport("חיבור עם/בלי נשיאה"),
-  "חיבור עם העברה עשרונית ובלי העברה"
+  normalizePedagogyForParentReport("addition with/without carrying"),
+  "addition with and without regrouping"
 );
 assert.ok(
-  normalizePedagogyForParentReport("נכון כשאין נשיאה").includes("העברה"),
-  "expected העברה replacement"
+  normalizePedagogyForParentReport("correct when there is no carrying").includes("regrouping"),
+  "expected regrouping replacement"
 );
-assert.equal(normalizePedagogyForParentReport("נשיאה"), "העברה עשרונית (בחיבור)");
+assert.equal(normalizePedagogyForParentReport("carrying"), "regrouping (in addition)");
 
-// שכבת ניסוח הורה מלאה — ללא מאסטרי/טקסונומיה במחרוזת
-const glossed = normalizeParentFacing("שליטה יציבה בנשיאה · מאסטרי יציב · טקסונומיה M-02");
-assert.ok(!glossed.includes("מאסטרי"), glossed);
+// Full parent-facing layer — no mastery/taxonomy jargon left in the string
+const glossed = normalizeParentFacing("stable control of carrying · stable_mastery · taxonomy M-02");
+assert.ok(!glossed.includes("stable_mastery"), glossed);
 assert.ok(!glossed.toLowerCase().includes("m-02"), glossed);
 
 const whyHe = buildWhyThisRecommendationHe({
-  displayName: "חיבור",
+  displayName: "Addition",
   finalStep: "maintain_and_strengthen",
   riskFlags: {
     falsePromotionRisk: false,
@@ -161,7 +161,7 @@ assertNoForbidden("why.phase2", whyHe);
 assertNoReadabilityLeaks("why.phase2", whyHe);
 
 const whyUnknownStep = buildWhyThisRecommendationHe({
-  displayName: "חיבור",
+  displayName: "Addition",
   finalStep: "internal_unknown_step_token",
   riskFlags: {
     falsePromotionRisk: false,

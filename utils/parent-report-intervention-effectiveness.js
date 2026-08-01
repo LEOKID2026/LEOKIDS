@@ -56,10 +56,10 @@ export function buildInterventionEffectivenessPhase10(ctx) {
   let supportAdjustmentNeed = "monitor_only";
 
   const weak =
-    q < 8 |
-    ev === "low" |
-    cs === "withheld" |
-    dmp === "insufficient_mistake_evidence" |
+    q < 8 ||
+    ev === "low" ||
+    cs === "withheld" ||
+    dmp === "insufficient_mistake_evidence" ||
     learningStage === "insufficient_longitudinal_evidence";
 
   if (weak) {
@@ -119,7 +119,7 @@ export function buildInterventionEffectivenessPhase10(ctx) {
   }
 
   const responseToInterventionLabelHe =
-    RESPONSE_TO_INTERVENTION_LABEL_HE[responseToIntervention] |
+    RESPONSE_TO_INTERVENTION_LABEL_HE[responseToIntervention] ||
     RESPONSE_TO_INTERVENTION_LABEL_HE.not_enough_evidence;
 
   const supportFitLabelHe = SUPPORT_FIT_LABEL_HE[supportFit] || SUPPORT_FIT_LABEL_HE.unknown;

@@ -65,8 +65,8 @@ export function resolveNarrativeDisplayLabels(args) {
   }
 
   const includeGrade =
-    args?.includeGradeInTitle === true |
-    args?.requiresGradeContext === true |
+    args?.includeGradeInTitle === true ||
+    args?.requiresGradeContext === true ||
     Boolean(gk);
 
   if (!gk || !includeGrade) {
@@ -110,8 +110,8 @@ export function buildDuplicateCanonicalTopicKeys(subjectId, topicMap) {
     const parsed = parseCanonicalTopicFromRowKey(topicRowKey);
     const canon = parsed.canonicalTopicKey || topicRowKey;
     const gk =
-      (row && typeof row === "object" && (row.contentGradeKey || row.gradeKey)) |
-      parsed.contentGradeKey |
+      (row && typeof row === "object" && (row.contentGradeKey || row.gradeKey)) ||
+      parsed.contentGradeKey ||
       null;
     const g = gk != null ? String(gk).trim() : "";
     if (!gradesByCanon.has(canon)) gradesByCanon.set(canon, new Set());
@@ -162,7 +162,7 @@ export function resolveRowDisplayLabelHe(context, fields) {
 export function narrativeTitleFromRow(row) {
   if (!row || typeof row !== "object") return "";
   return (
-    String(row.narrativeTitleHe || row.narrativeTopicLabelHe || row.labelHe || "").trim() |
+    String(row.narrativeTitleHe || row.narrativeTopicLabelHe || row.labelHe || "").trim() ||
     cleanTopicLabelHe(row.displayName)
   );
 }

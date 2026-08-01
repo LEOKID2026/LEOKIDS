@@ -155,7 +155,7 @@ export function runDiagnosticEngineV2({ maps, rawMistakesBySubject, startMs, end
         return passesEvidenceRecurrenceRules(wrongs, trow);
       })();
       const counterEvidenceStrong =
-        (Number(row.accuracy) >= 88 && wrongCountForRules >= 4) |
+        (Number(row.accuracy) >= 88 && wrongCountForRules >= 4) ||
         (row.modeKey === "speed" && Number(row.accuracy) >= 82 && wrongCountForRules >= 2);
 
       const confidence = resolveConfidenceLevel({

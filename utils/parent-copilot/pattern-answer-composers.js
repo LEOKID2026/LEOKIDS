@@ -366,8 +366,8 @@ function composeHomeToday(payload, conv) {
   let text = `Today I would do one thing: a short activity on the topic ${a.subjectLabel} - ${a.topicLabel}. In the report there are ${a.questionCount} questions with ${a.accuracyPercent}% success, so it is a good place for focused practice. Do only 5-10 minutes, 3-5 questions, and at the end ask the child: How did you think of the answer?`;
   const hit = findTopicRowByKey(payload, a.topicRowKey, a.subjectId || undefined);
   const sub =
-    hit?.tr?.contractsV1?.evidence?.safeSubskillHe |
-    hit?.tr?.safeSubskillHe |
+    hit?.tr?.contractsV1?.evidence?.safeSubskillHe ||
+    hit?.tr?.safeSubskillHe ||
     hit?.tr?.contractsV1?.narrative?.safeSubskillHe;
   if (String(sub || "").trim().length >= 3) {
     text += copilotStaticMessage("copilot.answers.utils_parent-copilot_pattern-answer-composers.if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i");
@@ -498,8 +498,8 @@ export function tryComposePatternAnswerDraft(params) {
 
   if (pattern === "learning_severity_followup") {
     const hasCtx =
-      String(conv.lastResolvedTopic || "").trim() |
-      String(conv.lastResolvedSubject || "").trim() |
+      String(conv.lastResolvedTopic || "").trim() ||
+      String(conv.lastResolvedSubject || "").trim() ||
       (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0);
     if (!hasCtx) return null;
   }

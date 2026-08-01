@@ -68,7 +68,7 @@ export function detectAggregateQuestionClass(utterance) {
 
   if (
     /(?!)/.test(t) ||
-    /\b(?:should\s+(?:we|i)\s+(?:move\s+forward|wait)|wait\s+or\s+continue|continue\s+or\s+wait|advance\s+or\s+hold)\b/.test(
+    /\b(?:should\s+(?:we|i)\s+(?:move\s+forward|wait)|wait\s+or\s+continue|continue\s+or\s+wait|advance\s+or\s+hold|advance\s+or\s+wait)\b/.test(
       t,
     ) ||
     /\bis\s+it\s+worth\s+moving\s+forward\b/.test(t) ||
@@ -98,34 +98,39 @@ export function detectAggregateQuestionClass(utterance) {
     return "recommendation_action";
   }
 
-  const hasSubjectWord = /(?!)/.test(t);
-  const hasMore = /(?!)/.test(t);
+  const hasSubjectWord = /\bsubject\b|\bsubjects\b/.test(t);
+  const hasMore =
+    /\bmore\b|\bother\b|\blist\b|\bwhich\s+subjects\b|\bwhat\s+subjects\b|\bare\s+there\s+more\b/.test(t);
 
   if (
-    (/(?!)/.test(t) && /(?!)/.test(t)) ||
-    (/(?!)/.test(t) && /(?!)/.test(t)) ||
     (/\b(?:what|which)\b.*\b(?:stands?\s+out|most\s+noticeable|most\s+important|highlight)\b/.test(t) &&
       /\b(?:period|report|learning)\b/.test(t))
   ) {
     return "period_highlight";
   }
-  if (/(?!)/.test(t) && (t.includes("report") || t.includes("learning"))) {
+  if (/\b(?:stands?\s+out|highlight)\b/.test(t) && (t.includes("report") || t.includes("learning"))) {
     return "period_highlight";
   }
 
   if (hasMore && hasSubjectWord) return "subject_listing";
-  if (hasMore && /(?!)/.test(t)) return "subject_listing";
+  if (hasMore && /\btopic\b|\btopics\b/.test(t)) return "subject_listing";
 
-  if (/(?!)/.test(t)) {
+  if (/most\s+practice|most\s+questions/.test(t)) {
     return "most_practice";
   }
-  if (/(?!)/.test(t)) {
+  if (/least\s+data|least\s+information|fewest\s+questions/.test(t)) {
     return "least_data";
   }
-  if (/(?!)/.test(t)) return "improved";
-  if (/(?!)/.test(t)) return "needs_attention";
-  if (/(?!)/.test(t)) return "still_unclear";
-  if (/(?!)/.test(t) && (hasSubjectWord || t.includes("subject"))) {
+  if (/\bimprov|\bprogress/.test(t)) return "improved";
+  if (
+    /needs\s+attention|needs\s+work|needs\s+strengthening|reinforcement\s+needed|most\s+reinforcement|what\s+is\s+(?:weak|difficult)/.test(
+      t,
+    )
+  ) {
+    return "needs_attention";
+  }
+  if (/still\s+unclear|not\s+clear|uncertain/.test(t)) return "still_unclear";
+  if (/stable|unstable/.test(t) && (hasSubjectWord || t.includes("subject"))) {
     return "most_stable";
   }
 

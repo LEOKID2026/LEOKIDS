@@ -41,18 +41,17 @@ function scorePracticalFollowupMode(t) {
   let advance = 0;
   let strengthen = 0;
   if (
-    /\s+|\s+|\s+|\s+|\s+||\s+\s+\s+|\s+\s+|\s+\s+\s+/.test(t) |
     /what\s+(?:should|do)\s+(?:we|i)\s+do|what\s+now|what\s+next|in\s+practice|practical|do\s+with\s+this/.test(t)
   ) {
     action += 2.4;
   }
-  if (/\s*|\s*|\s*\s*|\s*|\s*|\s*|\s*/u.test(t)) {
+  if (/\band\s+now\b|\bso\s+what\s+(?:do\s+we\s+)?do\b|\bat\s+home\b|\btomorrow\b/u.test(t)) {
     action += 1.85;
   }
-  if (/\s+|\s+\s+|\s+\s+|\s*|recommendation|next\s+step|today|week|coming\s+week/.test(t)) action += 1.6;
-  if (/\s+|\s+|\s+|\s+|\s+|\s+|advance|promote|move\s+ahead|raise\s+(?:the\s+)?level/.test(t)) advance += 2.5;
-  if (/\s+|wait|stop|hold|do\s+not\s+promote/.test(t)) advance += 0.8;
-  if (/|\s+|\s+|\s+|strengthen|reinforce|work\s+on/.test(t)) strengthen += 2.4;
+  if (/recommendation|next\s+step|today|week|coming\s+week/.test(t)) action += 1.6;
+  if (/advance|promote|move\s+ahead|raise\s+(?:the\s+)?level/.test(t)) advance += 2.5;
+  if (/wait|stop|hold|do\s+not\s+promote/.test(t)) advance += 0.8;
+  if (/strengthen|reinforce|work\s+on/.test(t)) strengthen += 2.4;
   return { action, advance, strengthen };
 }
 
@@ -64,11 +63,11 @@ function interpretationForComparisonThread(priorClass, role) {
   const p = String(priorClass || "");
   const r = String(role || "");
   if (
-    p === "weakest_subject" |
-    p === "needs_attention" |
-    p === "hardest_subject" |
-    r === "weakest" |
-    r === "needs_attention" |
+    p === "weakest_subject" ||
+    p === "needs_attention" ||
+    p === "hardest_subject" ||
+    r === "weakest" ||
+    r === "needs_attention" ||
     r === "hardest"
   ) {
     return "weaknesses";
@@ -91,7 +90,7 @@ export function tryBuildComparisonPracticalFollowupDraft(ctx) {
 
   const t = utteranceStr
     .toLowerCase()
-    .replace(/\s+/g, "")
+    .replace(/\s+/g, " ")
     .trim();
   const aggQ = detectAggregateQuestionClass(utteranceStr);
   const scores = scorePracticalFollowupMode(t);

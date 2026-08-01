@@ -30,10 +30,10 @@ export function buildDecisionGatesPhase13(ctx) {
   const transferReadiness = String(ctx?.transferReadiness || "");
   /** QA calibration:  «forming»    /  */
   const releaseIndependenceHold =
-    root === "weak_independence" |
-    transferReadiness === "not_ready" |
-    transferReadiness === "limited" |
-    indep === "flat" |
+    root === "weak_independence" ||
+    transferReadiness === "not_ready" ||
+    transferReadiness === "limited" ||
+    indep === "flat" ||
     String(td.independenceDirection || "") === "down";
   const finalStep = String(ctx?.finalStep || "");
   const weak = q < PARENT_EVIDENCE_VOLUME.STRONG_MIN || ev === "low" || cs === "withheld" || cs === "tentative";

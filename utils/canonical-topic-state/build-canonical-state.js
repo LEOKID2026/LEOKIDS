@@ -42,12 +42,12 @@ function deriveAllowedClaimClass(decisionTier) {
 
 function deriveNarrativeConstraints(actionState, confidenceLevel, cannotConcludeYet) {
   const uncertaintyRequired =
-    actionState === "withhold" |
-    actionState === "probe_only" |
-    confidenceLevel === "low" |
-    confidenceLevel === "early_signal_only" |
-    confidenceLevel === "insufficient_data" |
-    confidenceLevel === "contradictory" |
+    actionState === "withhold" ||
+    actionState === "probe_only" ||
+    confidenceLevel === "low" ||
+    confidenceLevel === "early_signal_only" ||
+    confidenceLevel === "insufficient_data" ||
+    confidenceLevel === "contradictory" ||
     cannotConcludeYet;
 
   const allowedSections = [];

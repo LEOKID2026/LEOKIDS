@@ -78,9 +78,9 @@ function priorTurnWasStrengthSide(conv) {
 function priorTurnWasDifficultySide(conv) {
   const k = lastPlannerIntentFromConv(conv);
   return (
-    k === "what_is_still_difficult" |
-    k === "what_not_to_do_now" |
-    k === "why_not_advance" |
+    k === "what_is_still_difficult" ||
+    k === "what_not_to_do_now" ||
+    k === "why_not_advance" ||
     k === "is_intervention_needed"
   );
 }
@@ -131,9 +131,9 @@ export function tryBuildParentShortFollowupDraft(ctx) {
   const scopeKey = scopes.length ? String(scopes[scopes.length - 1] || "").trim() : "";
   if (!scopeKey) return null;
   const chipOptional =
-    replyClass === "contrast_follow_negative" |
-    replyClass === "contrast_follow_positive" |
-    replyClass === "vague_summary_follow" |
+    replyClass === "contrast_follow_negative" ||
+    replyClass === "contrast_follow_positive" ||
+    replyClass === "vague_summary_follow" ||
     replyClass === "short_action_follow";
   if (!fam && !chipOptional) return null;
   const colon = scopeKey.indexOf(":");
@@ -317,10 +317,10 @@ export function tryBuildParentShortFollowupDraft(ctx) {
         ? conv.priorIntents.slice(-4).filter((x) => x === "what_to_do_today" || x === "what_to_do_this_week")
         : [];
       const hadActionContext =
-        lastFam === "action_today" |
-        lastFam === "action_week" |
-        lastP === "what_to_do_today" |
-        lastP === "what_to_do_this_week" |
+        lastFam === "action_today" ||
+        lastFam === "action_week" ||
+        lastP === "what_to_do_today" ||
+        lastP === "what_to_do_this_week" ||
         priorActs.length > 0;
       if (!recOk || !hadActionContext) {
         plannerIntent = "explain_report";

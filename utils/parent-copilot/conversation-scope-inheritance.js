@@ -9,7 +9,7 @@ import { interpretFreeformStageA } from "./stage-a-freeform-interpretation.js";
 import { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
 
 const NAMED_TOPIC_RE =
-  /|||||/u;
+  /\bfractions?\b|\bsubtraction\b|\baddition\b|\bmultiplication\b|\bdivision\b|\benglish\b|\bhebrew\b|\bgeometry\b|\bscience\b|\bgeography\b|\bmath(?:ematics)?\b|\barithmetic\b|\bhistory\b/iu;
 
 export { isContextualFollowUpUtterance } from "./contextual-follow-up.js";
 
@@ -78,8 +78,8 @@ export function tryResolveInheritedScope(params) {
   if (prior.scopeType === "topic" && prior.scopeId) {
     const hit = findTopicRowByKey(payload, prior.scopeId, "");
     const label =
-      String(hit?.tr?.displayName || "").trim() |
-      String(conv?.lastScopeLabelHe || "").trim() |
+      String(hit?.tr?.displayName || "").trim() ||
+      String(conv?.lastScopeLabelHe || "").trim() ||
       "Topic";
     return {
       resolutionStatus: "resolved",

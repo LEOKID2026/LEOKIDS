@@ -14,7 +14,7 @@ export const DATA_GROUNDED_PARENT_SURFACE_SIGNALS_RE =
  * @param {string} text
  */
 export function answerHasExplicitSubjectOrNumericEvidence(text) {
-  const t = String(text || "").replace(/\s+/g, "").trim();
+  const t = String(text || "").replace(/\s+/g, " ").trim();
   if (!t) return false;
   if (/\d/.test(t)) return true;
   return DATA_GROUNDED_PARENT_SURFACE_SIGNALS_RE.test(t);
@@ -32,10 +32,10 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
 
   const intent = String(opts.plannerIntent || "");
   if (
-    intent === "clinical_boundary" |
-    intent === "sensitive_education_choice" |
-    intent === "parent_policy_refusal" |
-    intent === "off_report_subject_clarification" |
+    intent === "clinical_boundary" ||
+    intent === "sensitive_education_choice" ||
+    intent === "parent_policy_refusal" ||
+    intent === "off_report_subject_clarification" ||
     intent === "off_topic_redirect"
   ) {
     return draft;
@@ -49,8 +49,8 @@ export function augmentHighVolumeEvidenceAnchorDraft(draft, truthPacket, payload
 
   const joined = blocks
     .map((b) => String(b?.answerText || ""))
-    .join("")
-    .replace(/\s+/g, "")
+    .join(" ")
+    .replace(/\s+/g, " ")
     .trim();
   if (answerHasExplicitSubjectOrNumericEvidence(joined)) return draft;
 

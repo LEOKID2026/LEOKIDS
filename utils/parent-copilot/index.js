@@ -152,14 +152,14 @@ function normalizeWsHeJoin(s) {
 function isClinicalBoundaryDraft(draft) {
   const joined = (Array.isArray(draft?.answerBlocks) ? draft.answerBlocks : [])
     .map((b) => String(b?.answerText || ""))
-    .join("");
+    .join(" ");
   return normalizeWsHeJoin(joined) === normalizeWsHeJoin(clinicalBoundaryJoinedFingerprintHe());
 }
 
 function isSensitiveEducationChoiceDraft(draft) {
   const joined = (Array.isArray(draft?.answerBlocks) ? draft.answerBlocks : [])
     .map((b) => String(b?.answerText || ""))
-    .join("");
+    .join(" ");
   return normalizeWsHeJoin(joined) === normalizeWsHeJoin(sensitiveEducationChoiceJoinedFingerprintHe());
 }
 
@@ -169,7 +169,7 @@ function contractNarrativeSlotBundleHe(truthPacket) {
     String(nar?.textSlots?.observation || ""),
     String(nar?.textSlots?.interpretation || ""),
     String(nar?.textSlots?.action || ""),
-    String(nar?.textSlots?.uncertainty || "")].join("");
+    String(nar?.textSlots?.uncertainty || "")].join(" ");
 }
 
 /**
@@ -232,9 +232,9 @@ function shouldUseThinDataLead(truthPacket, intent, payload) {
   if (!intentSet.has(String(intent || ""))) return false;
   const practiceVolume = globalQ;
   return (
-    practiceVolume < 90 |
-    dl.readiness === "insufficient" |
-    dl.readiness === "forming" |
+    practiceVolume < 90 ||
+    dl.readiness === "insufficient" ||
+    dl.readiness === "forming" ||
     (dl.cannotConcludeYet === true && practiceVolume < 120)
   );
 }
@@ -246,7 +246,7 @@ function enforceThinDataScarcityLead(draft, truthPacket, intent, payload) {
     return draft;
   }
   if (!shouldUseThinDataLead(truthPacket, intent, payload)) return draft;
-  const joined = blocks.map((b) => String(b?.answerText || "")).join("").trim();
+  const joined = blocks.map((b) => String(b?.answerText || "")).join(" ").trim();
   if (THIN_DATA_APPROVED_SCARCITY_RE.test(joined)) return draft;
   const firstIdx = blocks.findIndex((b) => String(b?.answerText || "").trim());
   if (firstIdx < 0) return draft;
@@ -262,28 +262,40 @@ function buildNoScopeCategorySpecificClarification(utterance) {
   const t = String(utterance || "").trim();
   if (!t) return null;
 
-  if (/\s+|\s+?|(?:)|\s*|database|\bdb\b|\s+?|\s+|\s+\s+\s+|(?:)\s+/u.test(t)) {
+  if (
+    /another\s+child|all\s+(?:the\s+)?kids|password|database|\bdb\b|all\s+(?:the\s+)?users|another\s+account|someone\s+else'?s\s+data|list\s+of\s+(?:kids|children)/i.test(
+      t
+    )
+  ) {
     return PRIVACY_BOUNDARY_RESPONSE_HE;
   }
-  if (/\s*||||javascript|java\s*script|\s*|\s*||\s+\s+(?:)/i.test(t)) {
+  if (
+    /weather|news|soccer|football|recipe|song|shoes|bitcoin|javascript|java\s*script|what\s*time|joke|prime\s*minister|investments|stock\s*market|homework\s+that\s+(?:isn'?t|not)/i.test(
+      t
+    )
+  ) {
     return GENERAL_OFF_TOPIC_RESPONSE_HE;
   }
-  if (/system\s*prompt|debug|\s*|\s*\s*/i.test(t)) {
+  if (/ignore\s+(?:the\s+)?(?:instructions|rules)|system\s*prompt|debug|internal\s*instructions|print\s*(?:them|it)|from\s+now\s+on\s+don'?t\s+use/i.test(t)) {
     return "I do not ignore the report and do not disclose internal instructions. The answer here remains based on learning data, and it is possible to continue with the question about the actual state of learning.";
   }
-  if (/\s*\s*|\s*\s*\s*|\s*\s*/i.test(t)) {
+  if (
+    /\binvent\b|hide\s+(?:the\s+)?(?:data|report)|without\s+considering\s+(?:the\s+)?data|write\s+that\s+(?:the\s+)?child\s+is\s+excellent\s+even\s+though|change\s+(?:the\s+)?report/i.test(
+      t
+    )
+  ) {
     return "It is not possible to invent, change or improve data in the report. It is possible to explain only the data that appears in it. It is also possible to build a clear formulation for the parent according to what is currently in the learning data.";
   }
-  if (/\s*.*|/i.test(t)) {
+  if (/how\s+is\s+(?:he|she|they).*(?:in\s+)?music|\bin\s+music\b|\bin\s+art\b|\bin\s+sports?\b|\bin\s+dance\b/i.test(t)) {
     return "At the moment, there is no practice data for this subject in the report, so it is impossible to conclude a situation about it. If you wish, we can focus on subjects that do appear in the report.";
   }
-  if (/\s*\s*\s*|\s*\s*\s*|\s*/i.test(t)) {
+  if (/why\s+(?:did\s+you\s+)?(?:say|write).*(?:weak|struggling)|don'?t\s+agree\s+with\s+(?:the\s+)?report|(?:the\s+)?report\s+is\s+wrong/i.test(t)) {
     return "There can be a gap between success at home and performance in practice in the app. That is why we look at a repeating pattern in the report over time, and not at a single answer.";
   }
-  if (/\s*\s*\s*|\s*|\s*|\s*3\s*/i.test(t)) {
+  if (/explain\s+(?:it\s+)?(?:to\s+me\s+)?like\s+(?:a\s+)?parent|without\s+(?:the\s+)?(?:jargon|concepts)|in\s+one\s+sentence|only\s+3\s+points|in\s+short/i.test(t)) {
     return "In short: the report compares subjects according to the amount of questions and accuracy in practice. If the data is still few, it is an initial sign and not a final direction - it is better to accumulate some more short practice before determining a direction.";
   }
-  if (/\s*\s*|\s*\s*|\s*|\s*\s*\s*/i.test(t)) {
+  if (/what\s+(?:to\s+)?do\s+tomorrow|what\s+to\s+practice\s+(?:this\s+)?week|short\s+plan|how\s+to\s+help\s+without\s+pressure/i.test(t)) {
     return "You can start with a short program: 1) 10 minutes of repetition on one subject, 2) 5-8 questions on another subject, 3) retesting in two days if the same pattern is maintained.";
   }
   return null;
@@ -585,7 +597,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     )};
 
   const answerBlockTypes = draft.answerBlocks.map((b) => b.type);
-  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join("").trim();
+  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join(" ").trim();
 
   const follow = selectFollowUp({
     audience: "parent",
@@ -597,7 +609,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     answerBlockTypes,
     clickedFollowupFamilyThisTurn: input?.clickedFollowupFamily ? String(input.clickedFollowupFamily).trim() : null,
     omitFollowUpEntirely:
-      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") |
+      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") ||
       (truthPacket.scopeType === "executive" && vDraft.ok),
     truthPacket: {
       cannotConcludeYet: truthPacket.derivedLimits.cannotConcludeYet,
@@ -619,8 +631,8 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
   /** @type {Array<"contractsV1.evidence"|"contractsV1.decision"|"contractsV1.readiness"|"contractsV1.confidence"|"contractsV1.recommendation"|"contractsV1.narrative">} */
   const contractSourcesUsed = ["contractsV1.narrative"];
   const explainLikeIntentEarly =
-    plannerIntent === "explain_report" |
-    plannerIntent === "ask_topic_specific" |
+    plannerIntent === "explain_report" ||
+    plannerIntent === "ask_topic_specific" ||
     plannerIntent === "ask_subject_specific";
   if (!explainLikeIntentEarly) {
     contractSourcesUsed.push("contractsV1.decision", "contractsV1.readiness", "contractsV1.confidence");
@@ -684,7 +696,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
 
   const assistantAnswerSummary = draft.answerBlocks
     .map((b) => b.answerText)
-    .join("")
+    .join(" ")
     .trim()
     .slice(0, 480);
 
@@ -696,7 +708,7 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
       : {}),
     addedScopeKey: `${truthPacket.scopeType}:${truthPacket.scopeId}`,
     answeredConstraintTag: constraintParts.join(","),
-    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join("").slice(-48),
+    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join(" ").slice(-48),
     ...(suggestedFollowUp?.answerText ? { suggestedFollowupTextHe: suggestedFollowUp.answerText } : {}),
     ...(assistantAnswerSummary ? { assistantAnswerSummary } : {}),
     scopeLabelSnapshotHe: truthPacket.scopeLabel || "",
@@ -704,9 +716,9 @@ function packageParentResolvedEarlyTurn(input, sessionId, priorRepeated, conv, u
     lastOfferedFollowupFamily: suggestedFollowUp?.family ?? null,
     lastTurnWasNoData: false,
     lastTurnWasWhatNotInfer:
-      String(scopeMeta?.patternId || "") === "what_not_infer" |
-      String(scopeMeta?.patternId || "") === "avoid_now" |
-      assistantAnswerSummary.includes("You should not draw conclusions from the report") |
+      String(scopeMeta?.patternId || "") === "what_not_infer" ||
+      String(scopeMeta?.patternId || "") === "avoid_now" ||
+      assistantAnswerSummary.includes("You should not draw conclusions from the report") ||
       assistantAnswerSummary.includes("Do not draw a personal conclusion"),
     ...(memoryHints && memoryHints.lastAnswerAggregateClass !== undefined
       ? {
@@ -855,7 +867,7 @@ function runDeterministicCore(input, options) {
       intentReason: String(stageAForMissing?.reason || "missing_payload")};
     const r = buildClarificationParentCopilotResponse({
       clarificationQuestionHe:
-        scopeResMissing.clarificationQuestionHe |
+        scopeResMissing.clarificationQuestionHe ||
         "A comprehensive report was not loaded - it is not possible to answer from the data of the period. Refresh the page or choose another period.",
       intent: stageAForMissing?.canonicalIntent || "uncertainty_boundary",
       priorRepeated,
@@ -881,8 +893,8 @@ function runDeterministicCore(input, options) {
     : routeParentQuestion(String(input?.utterance || ""), scopedInput?.payload);
   if (qaRoute.exitEarly && qaRoute.classifierBucket === "ambiguous_or_unclear") {
     const hasPriorScope =
-      (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) |
-      String(conv.lastResolvedTopic || "").trim() |
+      (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) ||
+      String(conv.lastResolvedTopic || "").trim() ||
       String(conv.lastResolvedSubject || "").trim();
     const reportQualified = utteranceQualifiesAsReportQuestion(utteranceStr, scopedInput?.payload);
     if (shouldReturnNoDataForRequest(utteranceStr, scopedInput?.payload)) {
@@ -896,8 +908,8 @@ function runDeterministicCore(input, options) {
         classifierSource: "deterministic",
         classifierSignals: qaRoute.classifierSignals};
     } else if (
-      (isContextualFollowUpUtterance(utteranceStr) && hasPriorScope) |
-      reportQualified |
+      (isContextualFollowUpUtterance(utteranceStr) && hasPriorScope) ||
+      reportQualified ||
       matchesLegitimateParentQuestion(utteranceStr)
     ) {
       qaRoute = {
@@ -928,8 +940,8 @@ function runDeterministicCore(input, options) {
       classifierSignals: qaRoute.classifierSignals};
   }
   const hasPriorScopeForFollowUp =
-    (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) |
-    String(conv.lastResolvedTopic || "").trim() |
+    (Array.isArray(conv.priorScopes) && conv.priorScopes.length > 0) ||
+    String(conv.lastResolvedTopic || "").trim() ||
     String(conv.lastResolvedSubject || "").trim();
   if (
     qaRoute.exitEarly &&
@@ -986,7 +998,7 @@ function runDeterministicCore(input, options) {
   }
   /** Fabrication / integrity asks must stay on refusal copy even when Stage A leans explain-like. */
   const reportDataFabricationProbe =
-    /\s*|\s*(?:|\s*)|\s*\s*|\s*\s*\s*|\s*\s*/i.test(
+    /\binvent\b|hide\s+(?:the\s+)?(?:data|report)|without\s+considering\s+(?:the\s+)?data|write\s+that\s+(?:the\s+)?child\s+is\s+excellent\s+even\s+though|change\s+(?:the\s+)?report/i.test(
       utteranceStr,
     );
   if (
@@ -1361,11 +1373,11 @@ function runDeterministicCore(input, options) {
   /** When aggregate asks for recommendations but contracts forbid them, plan as action intent (truth slots + uncertainty), not unrelated Stage A labels. */
   const plannerIntent =
     aggregateQuestionClass === "recommendation_action" && !skipSemanticAggregateForIneligibleRec
-      ? /\s*||\s*/.test(utteranceStr)
+      ? /\b(?:this\s+)?week\b|coming\s+week|\bweekly\b/i.test(utteranceStr)
         ? "what_to_do_this_week"
         : "what_to_do_today"
       : skipSemanticAggregateForIneligibleRec &&
-          /\s*||\s*/.test(utteranceStr)
+          /\b(?:this\s+)?week\b|coming\s+week|\bweekly\b/i.test(utteranceStr)
         ? "what_to_do_this_week"
         : skipSemanticAggregateForIneligibleRec
           ? "what_to_do_today"
@@ -1430,9 +1442,9 @@ function runDeterministicCore(input, options) {
   {
     const augGlobalQ = maxGlobalReportQuestionCount(scopedInput?.payload);
     const isBoundaryIntent =
-      plannerIntent === "off_topic_redirect" |
-      plannerIntent === "parent_policy_refusal" |
-      plannerIntent === "clinical_boundary" |
+      plannerIntent === "off_topic_redirect" ||
+      plannerIntent === "parent_policy_refusal" ||
+      plannerIntent === "clinical_boundary" ||
       plannerIntent === "sensitive_education_choice";
     const isHighVolume = augGlobalQ >= STRONG_GLOBAL_QUESTION_FLOOR;
     if (!isBoundaryIntent && !isHighVolume) {
@@ -1450,7 +1462,7 @@ function runDeterministicCore(input, options) {
           ...b,
           answerText: String(b?.answerText || "")
             .replace(SCARCITY_STRIP_RE, "")
-            .replace(/\s{2}/g, "")
+            .replace(/\s{2,}/g, " ")
             .trim()}))};
     }
   }
@@ -1523,7 +1535,7 @@ function runDeterministicCore(input, options) {
     )};
 
   const answerBlockTypes = draft.answerBlocks.map((b) => b.type);
-  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join("").trim();
+  const answerBodyTextHe = draft.answerBlocks.map((b) => b.answerText).join(" ").trim();
 
   const follow = selectFollowUp({
     audience: "parent",
@@ -1535,7 +1547,7 @@ function runDeterministicCore(input, options) {
     answerBlockTypes,
     clickedFollowupFamilyThisTurn: scopedInput?.clickedFollowupFamily ? String(scopedInput.clickedFollowupFamily).trim() : null,
     omitFollowUpEntirely:
-      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") |
+      (aggregateQuestionClass !== "none" && aggregateQuestionClass !== "vague_summary_question") ||
       (semanticAggregateSatisfied && vDraft.ok),
     truthPacket: {
       cannotConcludeYet: truthPacket.derivedLimits.cannotConcludeYet,
@@ -1557,8 +1569,8 @@ function runDeterministicCore(input, options) {
   /** @type {Array<"contractsV1.evidence"|"contractsV1.decision"|"contractsV1.readiness"|"contractsV1.confidence"|"contractsV1.recommendation"|"contractsV1.narrative">} */
   const contractSourcesUsed = ["contractsV1.narrative"];
   const explainLikeIntent =
-    plannerIntent === "explain_report" |
-    plannerIntent === "ask_topic_specific" |
+    plannerIntent === "explain_report" ||
+    plannerIntent === "ask_topic_specific" ||
     plannerIntent === "ask_subject_specific";
   if (!explainLikeIntent) {
     contractSourcesUsed.push("contractsV1.decision", "contractsV1.readiness", "contractsV1.confidence");
@@ -1619,7 +1631,7 @@ function runDeterministicCore(input, options) {
 
   const assistantAnswerSummary = draft.answerBlocks
     .map((b) => b.answerText)
-    .join("")
+    .join(" ")
     .trim()
     .slice(0, 480);
 
@@ -1631,7 +1643,7 @@ function runDeterministicCore(input, options) {
       : {}),
     addedScopeKey: `${truthPacket.scopeType}:${truthPacket.scopeId}`,
     answeredConstraintTag: constraintParts.join(","),
-    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join("").slice(-48),
+    closingSnippet: draft.answerBlocks.map((b) => b.answerText).join(" ").slice(-48),
     ...(suggestedFollowUp?.answerText ? { suggestedFollowupTextHe: suggestedFollowUp.answerText } : {}),
     ...(assistantAnswerSummary ? { assistantAnswerSummary } : {}),
     scopeLabelSnapshotHe: truthPacket.scopeLabel || "",
@@ -1758,7 +1770,7 @@ export async function runParentCopilotTurnAsync(input) {
   const core = runDeterministicCore(input, { preRoute: effectiveRoute });
   const baseResponse = core.response;
   if (
-    baseResponse?.telemetry?.generationPath === "intent_composer" |
+    baseResponse?.telemetry?.generationPath === "intent_composer" ||
     baseResponse?.telemetry?.answerComposerUsed
   ) {
     return finalizeTurnResponse(baseResponse, {
@@ -1780,11 +1792,11 @@ export async function runParentCopilotTurnAsync(input) {
   }
 
   if (
-    core.intent === "clinical_boundary" |
-    core.intent === "sensitive_education_choice" |
-    core.intent === "off_topic_redirect" |
-    core.intent === "parent_policy_refusal" |
-    core.intent === "unclear" |
+    core.intent === "clinical_boundary" ||
+    core.intent === "sensitive_education_choice" ||
+    core.intent === "off_topic_redirect" ||
+    core.intent === "parent_policy_refusal" ||
+    core.intent === "unclear" ||
     forceDeterministic
   ) {
     const skipReason = forceDeterministic

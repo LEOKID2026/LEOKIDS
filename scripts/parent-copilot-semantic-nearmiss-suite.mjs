@@ -3,16 +3,16 @@ import semanticClass from "../utils/parent-copilot/semantic-question-class.js";
 import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const cases = [
-  { utterance: "מה המקצוע הכי חזק?", expected: "strongest_subject" },
-  { utterance: "מה מקצוע חזק מאוד עכשיו", expected: "none" },
-  { utterance: "מה המקצוע הכי חלש", expected: "weakest_subject" },
-  { utterance: "באיזה מקצוע קשת?", expected: "none" },
-  { utterance: "מה הכי בוטל בתקופה?", expected: "none" },
-  { utterance: "יש עוד נושאים?", expected: "subject_listing" },
-  { utterance: "השוואה בין חשבון לאנגלית", expected: "none" },
-  { utterance: "מה לעסות השבוה?", expected: "none" },
-  { utterance: "להתקדם או להמתין", expected: "advance_or_hold_question" },
-  { utterance: "לא הבנתי בכלל תסביר פשוט", expected: "clarify_reexplain" },
+  { utterance: "What is the strongest subject?", expected: "strongest_subject" },
+  { utterance: "What subject is very strong now", expected: "none" },
+  { utterance: "What is the weakest subject", expected: "weakest_subject" },
+  { utterance: "In which subject is it hardish?", expected: "none" },
+  { utterance: "What is most cancelled this period?", expected: "none" },
+  { utterance: "Are there more topics?", expected: "subject_listing" },
+  { utterance: "Comparrison betwen math an english", expected: "none" },
+  { utterance: "What to doo thiss weeek?", expected: "none" },
+  { utterance: "Advance or wait", expected: "advance_or_hold_question" },
+  { utterance: "I did not understand at all please explain simply", expected: "clarify_reexplain" },
 ];
 
 let pass = 0;

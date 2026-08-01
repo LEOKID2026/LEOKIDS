@@ -78,9 +78,9 @@ export function buildRecommendationMemoryPhase12(ctx) {
   const rpm = String(ctx?.recommendedPracticeMode || "");
   const iff = String(ctx?.interventionFormat || "");
   const guidedBand =
-    rpm === "slow_guided_accuracy" |
-    rpm === "error_reduction_loop" |
-    rpm === "guided_release" |
+    rpm === "slow_guided_accuracy" ||
+    rpm === "error_reduction_loop" ||
+    rpm === "guided_release" ||
     iff === "guided_practice";
   const reviewBand = rpm === "review_and_hold";
   const observeBand = rpm === "observe_only" || iff === "observation_block";
@@ -91,9 +91,9 @@ export function buildRecommendationMemoryPhase12(ctx) {
   } else if (priorRecommendationSignature === "unknown" || priorRecommendationSignature === "mixed_prior_path") {
     recommendationCarryover = recommendationMemoryState === "light_memory" ? "unclear" : "partly_visible";
   } else if (
-    (priorRecommendationSignature === "guided_accuracy_path" && guidedBand) |
-    (priorRecommendationSignature === "review_hold_path" && reviewBand) |
-    (priorRecommendationSignature === "observe_monitor_path" && observeBand) |
+    (priorRecommendationSignature === "guided_accuracy_path" && guidedBand) ||
+    (priorRecommendationSignature === "review_hold_path" && reviewBand) ||
+    (priorRecommendationSignature === "observe_monitor_path" && observeBand) ||
     (priorRecommendationSignature === "release_transition_path" && rpm === "guided_release")
   ) {
     recommendationCarryover =
@@ -117,14 +117,14 @@ export function buildRecommendationMemoryPhase12(ctx) {
 
   const displayName = String(ctx?.displayName || "").trim();
   const stLab =
-    RECOMMENDATION_MEMORY_STATE_LABEL_HE[recommendationMemoryState] |
+    RECOMMENDATION_MEMORY_STATE_LABEL_HE[recommendationMemoryState] ||
     RECOMMENDATION_MEMORY_STATE_LABEL_HE.no_memory;
   const depthLab =
     SUPPORT_HISTORY_DEPTH_LABEL_HE[supportHistoryDepth] || SUPPORT_HISTORY_DEPTH_LABEL_HE.unknown;
   const carryLab =
     RECOMMENDATION_CARRYOVER_LABEL_HE[recommendationCarryover] || RECOMMENDATION_CARRYOVER_LABEL_HE.unclear;
   const priorSigLab =
-    PRIOR_RECOMMENDATION_SIGNATURE_LABEL_HE[priorRecommendationSignature] |
+    PRIOR_RECOMMENDATION_SIGNATURE_LABEL_HE[priorRecommendationSignature] ||
     PRIOR_RECOMMENDATION_SIGNATURE_LABEL_HE.unknown;
 
   const recommendationMemoryNarrativeHe = `«${displayName}»: ${stLab} · ${depthLab} · ${priorSigLab} - ${carryLab}.`;

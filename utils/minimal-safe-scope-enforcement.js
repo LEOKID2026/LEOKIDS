@@ -1,6 +1,6 @@
 /**
- * Minimal Safe Scope —   , gate-to-text, readiness,   (v1).
- *  : docs/decision-contract-v1.md, gate-to-text-binding-v1.md,
+ * Minimal Safe Scope — אכיפת חוזה החלטה, gate-to-text, readiness, ועוצמת המלצות (v1).
+ * מקור מדיניות: docs/decision-contract-v1.md, gate-to-text-binding-v1.md,
  * subject-overall-readiness-policy-v1.md, recommendation-intensity-contract-v1.md
  */
 import { buildDecisionReadinessContractsBundleV1 } from "./contracts/decision-readiness-contract-v1.js";
@@ -44,7 +44,7 @@ export function deriveEvidenceBandFromRowSignals(ctx) {
 }
 
 /**
- *  max PS (0–3)  gate-to-text-binding v1 +  DEv2.
+ * חישוב max PS (0–3) לפי gate-to-text-binding v1 + עדיפות DEv2.
  * @param {object} p
  */
 export function computeEffectiveMaxPS(p) {
@@ -74,10 +74,10 @@ export function computeEffectiveMaxPS(p) {
 
 /** Detection of over-strong HE/EN wording (keep HE for legacy parent copy). */
 const PS3_REGEX =
-  /(?!)/giu;
+  /מומלץ בבירור|בהחלט כדאי|בוודאות|מוכח ש|סגורנו|אין ספק|ודאי ש|בטוח ש|מאסטרי מלא|שליטה מלאה|clearly recommended|definitely worth|with certainty|proven that|no doubt|sure that|certain that|full mastery|full control/giu;
 const PS3_PROMO_REGEX =
-  /(?!)/giu;
-const HEDGE_PRESENT_RE = /(?!)/i;
+  /קפיצת כיתה|שחרור מלא|עצמאות מלאה|העלאת כיתה כעת|grade skip|full release|full independence|raise the grade now/giu;
+const HEDGE_PRESENT_RE = /מוקדם|חלקי|אולי|נאסוף|early|partial|perhaps|maybe|gather more|still early|initial sign/i;
 
 /**
  * @param {string} text
@@ -105,7 +105,7 @@ export function clampHebrewParentTextToMaxPS(text, maxPS, contentClass = "diagno
       out = `Initial sign only - ${out}`;
     }
   } else if (maxPS === 2) {
-    out = out.replace(/(?!)/giu, "worth considering carefully");
+    out = out.replace(/מומלץ בבירור|בהחלט כדאי|clearly recommended|definitely worth/giu, "worth considering carefully");
   }
 
   return out.replace(/\s+/g, " ").trim();
@@ -252,7 +252,7 @@ export function capInterventionIntensityByContract(intensity, ctx) {
 }
 
 /**
- * @param {object} rec —    
+ * @param {object} rec — רשומת המלצת נושא מהמנוע
  */
 export function applyGateToTextClampToTopicRecord(rec) {
   if (!rec || typeof rec !== "object") return rec;
@@ -260,8 +260,8 @@ export function applyGateToTextClampToTopicRecord(rec) {
   const ev = String(rec?.evidenceStrength || "low");
   const cs = String(rec?.conclusionStrength || "tentative");
   const recCannotConcludeYet = !!(
-    rec?.cannotConcludeYet |
-    rec?.outputGating?.cannotConcludeYet |
+    rec?.cannotConcludeYet ||
+    rec?.outputGating?.cannotConcludeYet ||
     rec?.contractsV1?.decision?.cannotConcludeYet
   );
   const weak = q < 12 || ev === "low" || cs === "withheld" || cs === "tentative";
@@ -305,7 +305,7 @@ export function applyGateToTextClampToTopicRecord(rec) {
         ? rec.contractsV1.evidence.anchorEventIds
         : [];
   let recommendationContractV1 =
-    sourceRecommendationContract |
+    sourceRecommendationContract ||
     buildRecommendationContractV1({
       topicKey: String(rec?.topicKey || rec?.topicRowKey || rec?.displayName || "__unknown_topic__"),
       subjectId: String(rec?.subjectId || "__unknown_subject__"),
@@ -341,7 +341,8 @@ export function applyGateToTextClampToTopicRecord(rec) {
         ...(Array.isArray(recommendationContractV1.forbiddenBecause)
           ? recommendationContractV1.forbiddenBecause
           : []),
-        ...recContractValidation.errors],
+        ...recContractValidation.errors,
+      ],
     };
   }
 
@@ -406,7 +407,7 @@ export function applyGateToTextClampToTopicRecord(rec) {
 }
 
 /**
- *    —   
+ * מערך המלצות נושא — אחרי בניית המנוע
  * @param {object[]|null|undefined} recs
  */
 export function applyGateToTextClampToTopicRecommendations(recs) {
@@ -415,7 +416,7 @@ export function applyGateToTextClampToTopicRecommendations(recs) {
 }
 
 /**
- *   DEv2    breadth/depth  .
+ * המרת יחידות DEv2 לשורות סינתטיות לחישוב breadth/depth לפי החוזה.
  * @param {object[]} units
  */
 export function v2UnitsToContractRows(units) {
@@ -440,7 +441,7 @@ export function v2UnitsToContractRows(units) {
 }
 
 /**
- *      ()
+ * סריקת דוח מפורט לאיתור הפרות (לתרחישים)
  * @returns {{ fails: Array<{ code: string, detail?: string }> }}
  */
 export function scanDetailedReportForContractViolations(detailedReport, baseReport) {
@@ -476,7 +477,7 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
         dataSufficiencyLevel: String(tr?.dataSufficiencyLevel || "low"),
         conclusionStrength: cs,
       });
-      if (band <= 1 && /(?!)/giu.test(combined)) {
+      if (band <= 1 && /בטוח|ודאי|מוכח|סגור|יציב לחלוטין|certain|sure|proven|settled|fully stable/giu.test(combined)) {
         fails.push({ code: "fail_too_early", detail: "decisive wording under E0–E1" });
       }
       const riN = RI_RANK[String(tr?.interventionIntensity)] || 0;
@@ -492,7 +493,7 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
         riN >= 3 &&
         band <= 1 &&
         !/\d/.test(combined) &&
-        !/(?!)/i.test(combined)
+        !/שאלות|טעויות|תרגול|questions|mistakes|practice/i.test(combined)
       ) {
         fails.push({ code: "fail_generic", detail: "RI3 under thin evidence without anchor" });
       }
@@ -508,7 +509,8 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
       "englishQuestions",
       "scienceQuestions",
       "hebrewQuestions",
-      "moledetGeographyQuestions"];
+      "moledetGeographyQuestions",
+    ];
     let ge12 = 0;
     for (const qk of qKeys) {
       if ((Number(sum[qk]) || 0) >= 12) ge12 += 1;

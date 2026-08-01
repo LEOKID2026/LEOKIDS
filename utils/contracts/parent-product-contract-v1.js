@@ -65,7 +65,7 @@ export function getTrendEvidenceCounters(row) {
   );
   const statusRaw = cleanText(trend?.trendEvidenceStatus);
   const trendEvidenceStatus =
-    statusRaw |
+    statusRaw ||
     (points >= minRequired && points > 0 ? "sufficient" : "insufficient");
   return {
     trendEvidencePoints: Number.isFinite(points) ? points : 0,

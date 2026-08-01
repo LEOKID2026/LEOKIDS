@@ -53,9 +53,9 @@ export function buildMistakeIntelligencePhase9(ctx) {
   let mistakePatternConfidence = 0.35;
 
   const weakSignal =
-    q < 6 |
-    (ev === "low" && suff === "low" && mC < 3) |
-    rootCause === "insufficient_evidence" |
+    q < 6 ||
+    (ev === "low" && suff === "low" && mC < 3) ||
+    rootCause === "insufficient_evidence" ||
     cs === "withheld";
 
   if (mC === 0 && q < 10 && wr < 0.08) {

@@ -209,7 +209,7 @@ export function assertHomePlanReflectsStrengthAndSupport(detailedReport) {
   const failures = [];
   const hasCoreWeakness = (detailedReport?.subjectProfiles || []).some(
     (sp) =>
-      (Array.isArray(sp?.topWeaknesses) && sp.topWeaknesses.length > 0) |
+      (Array.isArray(sp?.topWeaknesses) && sp.topWeaknesses.length > 0) ||
       (Array.isArray(sp?.topicRecommendations) && sp.topicRecommendations.length > 0));
   const hasSupport = /(?!)/u.test(bundle);
   const hasMaintain =

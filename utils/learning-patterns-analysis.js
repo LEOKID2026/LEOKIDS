@@ -271,7 +271,7 @@ function inferWeaknessKindHe(labelHe) {
   const h = `${labelHe || ""}`;
   if (
     /(?!)/i.test(h) |
-    s.includes("reading") |
+    s.includes("reading") ||
     s.includes("listening")
   ) {
     return "wording";
@@ -745,10 +745,10 @@ function buildNextWeekGoalHe(subjectLabel, topWeaknesses, improving, topStrength
   const subj = subjectLabel || "the subject";
   const w0 = topWeaknesses[0];
   const preserve =
-    stableExcellence[0] |
-    topStrengths.find((t) => t.excellent || t.questions >= 8) |
-    maintain.find((m) => m.questions >= 8) |
-    topStrengths[0] |
+    stableExcellence[0] ||
+    topStrengths.find((t) => t.excellent || t.questions >= 8) ||
+    maintain.find((m) => m.questions >= 8) ||
+    topStrengths[0] ||
     maintain[0];
   const preserveLabel = preserve?.labelHe;
   const tp = parentCopyTopicPhraseHe;
@@ -997,8 +997,8 @@ function computeSubjectPriorityFieldsPhase8(subjectId, args) {
 function synthesizeSubjectPhase3FromRows(subjectId, report) {
   const rowsKey = REPORT_ROWS_KEY[subjectId];
   const map =
-    (rowsKey && report[rowsKey] ? report[rowsKey] : null) |
-    (subjectId === "history" && report.historyTopics ? report.historyTopics : {}) |
+    (rowsKey && report[rowsKey] ? report[rowsKey] : null) ||
+    (subjectId === "history" && report.historyTopics ? report.historyTopics : {}) ||
     {};
   const entries = Object.entries(map || {}).filter(([ row]) => row && typeof row === "object");
   const rows = entries
@@ -1654,12 +1654,12 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     }
   }
   const subjectResponseToInterventionLabelHe =
-    RESPONSE_TO_INTERVENTION_LABEL_HE[subjectResponseToIntervention] |
+    RESPONSE_TO_INTERVENTION_LABEL_HE[subjectResponseToIntervention] ||
     RESPONSE_TO_INTERVENTION_LABEL_HE.not_enough_evidence;
   const subjectSupportFit = subjectSupportFitAgg;
   const subjectSupportAdjustmentNeed = subjectSupportAdjustmentNeedAgg;
   const subjectSupportAdjustmentNeedHe =
-    SUPPORT_ADJUSTMENT_NEED_LABEL_HE[subjectSupportAdjustmentNeed] |
+    SUPPORT_ADJUSTMENT_NEED_LABEL_HE[subjectSupportAdjustmentNeed] ||
     SUPPORT_ADJUSTMENT_NEED_LABEL_HE.monitor_only;
   const subjectConclusionFreshness = subjectConclusionFreshnessAgg;
   const subjectRecalibrationNeed = subjectRecalibrationNeedAgg;
@@ -1681,7 +1681,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     }
   }
   const subjectSupportSequenceStateLabelHe =
-    SUPPORT_SEQUENCE_STATE_LABEL_HE[subjectSupportSequenceState] |
+    SUPPORT_SEQUENCE_STATE_LABEL_HE[subjectSupportSequenceState] ||
     SUPPORT_SEQUENCE_STATE_LABEL_HE.insufficient_sequence_evidence;
 
   let subjectNextBestSequenceStep = "observe_before_next_cycle";
@@ -1695,12 +1695,12 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     }
   }
   const subjectNextBestSequenceStepHe =
-    NEXT_BEST_SEQUENCE_STEP_LABEL_HE[subjectNextBestSequenceStep] |
+    NEXT_BEST_SEQUENCE_STEP_LABEL_HE[subjectNextBestSequenceStep] ||
     NEXT_BEST_SEQUENCE_STEP_LABEL_HE.observe_before_next_cycle;
 
   const subjectSequenceNarrativeHe =
     `In ${subLabAgg}: ${subjectSupportSequenceStateLabelHe}. ${subjectNextBestSequenceStepHe}` +
-    (RECOMMENDATION_ROTATION_NEED_LABEL_HE[subjectRecommendationRotationNeedAgg] |
+    (RECOMMENDATION_ROTATION_NEED_LABEL_HE[subjectRecommendationRotationNeedAgg] ||
       RECOMMENDATION_ROTATION_NEED_LABEL_HE.none);
 
   const priorSigEntries = Object.entries(priorSigCounts)
@@ -1744,7 +1744,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     }
   }
   const subjectContinuationDecisionHe =
-    RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE[subjectContinuationDecision] |
+    RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE[subjectContinuationDecision] ||
     RECOMMENDATION_CONTINUATION_DECISION_LABEL_HE.continue_but_refine;
 
   const subjectOutcomeNarrativeHe =
@@ -1794,7 +1794,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
     }
   }
   const subjectNextCycleDecisionFocusHe =
-    NEXT_CYCLE_DECISION_FOCUS_LABEL_HE[subjectNextCycleDecisionFocus] |
+    NEXT_CYCLE_DECISION_FOCUS_LABEL_HE[subjectNextCycleDecisionFocus] ||
     NEXT_CYCLE_DECISION_FOCUS_LABEL_HE.prove_current_direction;
 
   let subjectEvidenceTargetType = "mixed_target";
@@ -1872,7 +1872,7 @@ function synthesizeSubjectPhase3FromRows(subjectId, report) {
   else if (worstDownstreamRank === 1) subjectDownstreamSymptomRisk = "low";
 
   const subjectFoundationFirstPriority =
-    subjectDependencyState === "likely_foundational_block" |
+    subjectDependencyState === "likely_foundational_block" ||
     (subjectDependencyState === "mixed_dependency_signal" && foundationHeavyRows >= 1);
   const subjectFoundationFirstPriorityHe = subjectFoundationFirstPriority
     ? "It is better to first build a short foundation in this subject — and only then expand."
@@ -2196,17 +2196,17 @@ export function analyzeLearningPatterns(report, rawMistakesBySubject = {}) {
     const phase3Subject = synthesizeSubjectPhase3FromRows(sid, report);
 
     const hasAnySignal =
-      stableExcellence.length > 0 |
-      topWeaknesses.length > 0 |
-      topStrengths.length > 0 |
-      maintain.length > 0 |
-      improving.length > 0 |
-      studentRecommendationsImprove.length > 0 |
-      studentRecommendationsMaintain.length > 0 |
-      parentRecommendationsImprove.length > 0 |
-      parentRecommendationsMaintain.length > 0 |
-      evidenceMistake != null |
-      evidenceSuccess != null |
+      stableExcellence.length > 0 ||
+      topWeaknesses.length > 0 ||
+      topStrengths.length > 0 ||
+      maintain.length > 0 ||
+      improving.length > 0 ||
+      studentRecommendationsImprove.length > 0 ||
+      studentRecommendationsMaintain.length > 0 ||
+      parentRecommendationsImprove.length > 0 ||
+      parentRecommendationsMaintain.length > 0 ||
+      evidenceMistake != null ||
+      evidenceSuccess != null ||
       !!summaryHe;
 
     out.subjects[sid] = {

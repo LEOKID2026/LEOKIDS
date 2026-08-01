@@ -37,9 +37,9 @@ export function buildSupportSequencingPhase11(ctx) {
   const posAcc = !!td.positiveAccuracy;
 
   const guidedHeavy =
-    rpm === "slow_guided_accuracy" |
-    rpm === "guided_release" |
-    rpm === "error_reduction_loop" |
+    rpm === "slow_guided_accuracy" ||
+    rpm === "guided_release" ||
+    rpm === "error_reduction_loop" ||
     iff === "guided_practice";
   const reviewHold = rpm === "review_and_hold";
   const observe = rpm === "observe_only";
@@ -126,7 +126,7 @@ export function buildSupportSequencingPhase11(ctx) {
 
   const displayName = String(ctx?.displayName || "").trim();
   const supportSequenceStateLabelHe =
-    SUPPORT_SEQUENCE_STATE_LABEL_HE[supportSequenceState] |
+    SUPPORT_SEQUENCE_STATE_LABEL_HE[supportSequenceState] ||
     SUPPORT_SEQUENCE_STATE_LABEL_HE.insufficient_sequence_evidence;
   const priorSupportPatternLabelHe =
     PRIOR_SUPPORT_PATTERN_LABEL_HE[priorSupportPattern] || PRIOR_SUPPORT_PATTERN_LABEL_HE.unknown;

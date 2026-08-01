@@ -1730,6 +1730,7 @@ function buildSubjectProfiles(baseReport) {
     out.push({
       subject: sid,
       subjectLabel: SUBJECT_LABEL_HE[sid],
+      subjectLabelHe: SUBJECT_LABEL_HE[sid],
       summaryHe: s.summaryHe ?? null,
       topStrengths: Array.isArray(s.topStrengths) ? s.topStrengths : [],
       topWeaknesses: Array.isArray(s.topWeaknesses) ? s.topWeaknesses : [],
@@ -2467,6 +2468,7 @@ function buildSubjectProfilesFromV2(baseReport) {
       out.push({
         subject: sid,
         subjectLabel: SUBJECT_LABEL_HE[sid],
+        subjectLabelHe: SUBJECT_LABEL_HE[sid],
         summaryHe: summaryHeEmpty,
         hasAnySignal: false,
         topStrengths: [],
@@ -2708,6 +2710,7 @@ function buildSubjectProfilesFromV2(baseReport) {
     out.push({
       subject: sid,
       subjectLabel: SUBJECT_LABEL_HE[sid],
+      subjectLabelHe: SUBJECT_LABEL_HE[sid],
       summaryHe: finalSummaryHe,
       topStrengths,
       topWeaknesses,

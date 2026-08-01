@@ -15,14 +15,6 @@ const PROBE_SPECIFICATION_HE = /(?!)/i;
 
 /** Geometry-only phrases that must not appear outside geometry. */
 const GEOMETRY_ONLY_PHRASES = [
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
   "Vertical vs horizontal",
   "Height line",
   "With/without height line",
@@ -30,7 +22,8 @@ const GEOMETRY_ONLY_PHRASES = [
   "Net",
   "With/without net",
   "With/without axis",
-  "Axis + symbolic"];
+  "Axis + symbolic",
+];
 
 /** Parent-facing subskill overrides (surface copy only). */
 const SUBSKILL_SURFACE_HE = Object.freeze({

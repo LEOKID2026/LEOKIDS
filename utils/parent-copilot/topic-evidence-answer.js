@@ -10,7 +10,7 @@ import {
   parentFacingPatternLabelHe} from "../parent-report-language/parent-facing-pattern-label.js";
 
 const MISTAKE_QUESTION_RE =
-  /|\s*(?:|)?\s*|\s*(?:)?\s*|\s*\s*|\s*|\s*\s*|\s*|\s*/u;
+  /\bmistakes?\b|\berrors?\b|\bwhere\s+(?:did\s+)?(?:he|she|the\s+child)?\s*(?:go\s+)?wrong\b|\bwhat\s+(?:keeps\s+)?(?:going\s+)?wrong\b|\brepeating\s+(?:mistake|error)\b|\bmistake\s+pattern\b|\berror\s+pattern\b|\btype\s+of\s+(?:mistake|error)\b/iu;
 
 /**
  * @param {string} utterance

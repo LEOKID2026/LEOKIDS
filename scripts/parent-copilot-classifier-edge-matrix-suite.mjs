@@ -8,30 +8,30 @@ const { resolveIntentWithConfidence } = intentResolver;
 const { detectAggregateQuestionClass } = semanticQuestionClass;
 
 const intentCases = [
-  { utterance: "מה לעשות היום בנושא הזה?", expected: "what_to_do_today" },
-  { utterance: "מה כדאי לעשות בשבוע הקרוב?", expected: "what_to_do_this_week" },
-  /** Matches Stage A `what_not_to_do_now` regex `/מה\s*לא\s*כדאי\s*לעשות\s*עכשיו/` — not difficulty wording. */
-  { utterance: "מה לא כדאי לעשות עכשיו?", expected: "what_not_to_do_now" },
-  { utterance: "להתקדם או להמתין כרגע?", expected: "what_is_most_important" },
-  { utterance: "איך להסביר לילד את זה?", expected: "how_to_tell_child" },
-  { utterance: "מה לשאול את המורה?", expected: "question_for_teacher" },
-  { utterance: "מה רואים בנתונים?", expected: "explain_report" },
-  { utterance: "מה המשמעות של הנתונים?", expected: "clarify_term" },
-  { utterance: "לא ברור לי, יש חוסר ודאות", expected: "is_intervention_needed" },
-  { utterance: "מה המשמעותת של המספרים", expected: "clarify_term" },
-  { utterance: "מה הכי חשוב כרגע בדוח?", expected: "what_is_most_important" },
-  { utterance: "איך לומר את זה לילד בבית?", expected: "how_to_tell_child" },
+  { utterance: "What should we do today on this topic?", expected: "what_to_do_today" },
+  { utterance: "What should we do this week?", expected: "what_to_do_this_week" },
+  /** Matches Stage A `what_not_to_do_now` — not difficulty wording. */
+  { utterance: "What should we not do now?", expected: "what_not_to_do_now" },
+  { utterance: "What is the most important right now?", expected: "what_is_most_important" },
+  { utterance: "How do I explain this to the child?", expected: "how_to_tell_child" },
+  { utterance: "What should I ask the teacher?", expected: "question_for_teacher" },
+  { utterance: "What do we see in the data?", expected: "explain_report" },
+  { utterance: "What is the meaning of the data?", expected: "clarify_term" },
+  { utterance: "It is not clear to me, there is uncertainty", expected: "is_intervention_needed" },
+  { utterance: "What is the meaning of the numbers", expected: "clarify_term" },
+  { utterance: "What is the most important right now in the report?", expected: "what_is_most_important" },
+  { utterance: "How do I say this to the child at home?", expected: "how_to_tell_child" },
 ];
 
 const semanticCases = [
-  { utterance: "מה המקצוע החזק?", expected: "strongest_subject" },
-  { utterance: "באיזה מקצוע הכי קשה?", expected: "hardest_subject" },
-  { utterance: "מה הכי בולט בתקופה?", expected: "period_highlight" },
-  { utterance: "יש עוד מקצועות?", expected: "subject_listing" },
-  { utterance: "מה ההמלצות להמשך?", expected: "recommendation_action" },
-  { utterance: "לא הבנתי, תסביר פשוט", expected: "clarify_reexplain" },
-  { utterance: "להתקדם או להמתין?", expected: "advance_or_hold_question" },
-  { utterance: "חשבון מול אנגלית מה עדיף?", expected: "comparison" },
+  { utterance: "What is the strongest subject?", expected: "strongest_subject" },
+  { utterance: "Which subject is hardest?", expected: "hardest_subject" },
+  { utterance: "What stands out most this period?", expected: "period_highlight" },
+  { utterance: "Are there more subjects?", expected: "subject_listing" },
+  { utterance: "What are the next recommendations?", expected: "recommendation_action" },
+  { utterance: "I did not understand, please explain simply", expected: "clarify_reexplain" },
+  { utterance: "Should we advance or wait?", expected: "advance_or_hold_question" },
+  { utterance: "Math versus English which is better?", expected: "comparison" },
 ];
 
 let intentPass = 0;

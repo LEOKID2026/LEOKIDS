@@ -24,8 +24,8 @@ const ENGINE_DECISION_RANK = {
  */
 function extractTopicEngineContract(row) {
   const edc =
-    row?.engineDecisionContract |
-    row?.learningPatternDecision?.engineDecisionContract |
+    row?.engineDecisionContract ||
+    row?.learningPatternDecision?.engineDecisionContract ||
     null;
   if (!edc || typeof edc !== "object") return null;
 
@@ -118,7 +118,7 @@ function deriveSubjectDecision(priorityTopics, allTopics, speedCheckTopicsCount 
   const stable = allTopics.filter(
     (t) =>
       String(t.engineDecision || "") !== "speed_pressure_pattern" &&
-      (String(t.engineDecision || "") === "partial_stable" |
+      (String(t.engineDecision || "") === "partial_stable" ||
         String(t.action || "") === "maintain"),
   );
 
@@ -145,8 +145,8 @@ function deriveRecommendedSubjectAction(priorityTopics, subjectDecision) {
   const gaps = priorityTopics.filter(isActionableGapTopic);
   if (
     gaps.length >= 1 &&
-    (subjectDecision === "multiple_topic_gaps" |
-      subjectDecision === "focused_strengthening_needed" |
+    (subjectDecision === "multiple_topic_gaps" ||
+      subjectDecision === "focused_strengthening_needed" ||
       subjectDecision === "mixed_subject_profile")
   ) {
     return "remediate_priority_topics_same_level";
@@ -230,8 +230,8 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
   const actionableCandidates = allExtracted.filter(
     (t) =>
       t.parentSafeFinding &&
-      (t.engineDecision === "clear_topic_gap" |
-        t.engineDecision === "topic_needs_strengthening" |
+      (t.engineDecision === "clear_topic_gap" ||
+        t.engineDecision === "topic_needs_strengthening" ||
         t.engineDecision === "early_direction_only"),
   );
 
@@ -268,7 +268,7 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
     .filter(
       (t) =>
         String(t.engineDecision || "") !== "speed_pressure_pattern" &&
-        (String(t.engineDecision || "") === "partial_stable" |
+        (String(t.engineDecision || "") === "partial_stable" ||
           String(t.action || "") === "maintain"),
     )
     .map((t) => t.topicKey)
@@ -280,7 +280,7 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
   const speedCheckEvidenceQualifies =
     !!prioritySpeedTopic &&
     (evidenceStrengthRank(String(prioritySpeedTopic.evidenceStrength || "none")) >=
-      evidenceStrengthRank("supported") |
+      evidenceStrengthRank("supported") ||
       Number(prioritySpeedTopic.questions) >= 20);
 
   // Blocks the legacy (engine-unaware) subject-summary/parent-letter fallback paths —
@@ -294,7 +294,7 @@ export function buildSubjectEngineDecisionContract(subjectId, topicRows = [], op
         evidenceStrengthRank(String(t.evidenceStrength || "none")) >=
           evidenceStrengthRank("supported") || Number(t.questions) >= 20
       );
-    }) |
+    }) ||
     (subjectDecision === "speed_check_only_subject" && speedCheckEvidenceQualifies);
 
   if (blockedLegacySummary) traceReason.push("blockedLegacySummary:true");

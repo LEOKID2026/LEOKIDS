@@ -36,16 +36,16 @@ export function matchesContinuityFollowUp(utterance) {
   const t = foldUtteranceForMatch(String(utterance || ""));
   if (!t || t.length > 48) return false;
   return (
-    WHAT_NOW_RE.test(t) |
-    PRESERVE_RE.test(t) |
-    IF_WRONG_RE.test(t) |
-    SIMPLER_RE.test(t) |
-    SHORTEN_RE.test(t) |
-    WHY_RE.test(t) |
-    SEVERITY_RE.test(t) |
-    THEN_ACTIVITY_RE.test(t) |
-    HOME_FOLLOWUP_RE.test(t) |
-    WHICH_TOPIC_RE.test(t) |
+    WHAT_NOW_RE.test(t) ||
+    PRESERVE_RE.test(t) ||
+    IF_WRONG_RE.test(t) ||
+    SIMPLER_RE.test(t) ||
+    SHORTEN_RE.test(t) ||
+    WHY_RE.test(t) ||
+    SEVERITY_RE.test(t) ||
+    THEN_ACTIVITY_RE.test(t) ||
+    HOME_FOLLOWUP_RE.test(t) ||
+    WHICH_TOPIC_RE.test(t) ||
     THEN_AFTER_RE.test(t)
   );
 }
@@ -69,9 +69,9 @@ export function classifyContinuityFollowUp(utterance) {
 
 function hasConversationContext(conv) {
   return (
-    String(conv?.lastResolvedTopic || "").trim() |
-    String(conv?.lastResolvedSubject || "").trim() |
-    (Array.isArray(conv?.priorScopes) && conv.priorScopes.length > 0) |
+    String(conv?.lastResolvedTopic || "").trim() ||
+    String(conv?.lastResolvedSubject || "").trim() ||
+    (Array.isArray(conv?.priorScopes) && conv.priorScopes.length > 0) ||
     String(conv?.lastAnswerSummary || "").trim().length > 12
   );
 }
@@ -80,8 +80,8 @@ function priorTurnWasNoData(conv) {
   if (conv?.lastTurnWasNoData === true) return true;
   const s = String(conv?.lastAnswerSummary || conv?.lastAssistantAnswerDigestHe || "");
   return (
-    s.includes("Not enough information") |
-    s.includes(NO_DATA_FOR_REQUEST_RESPONSE_HE.slice(0, 24)) |
+    s.includes("Not enough information") ||
+    s.includes(NO_DATA_FOR_REQUEST_RESPONSE_HE.slice(0, 24)) ||
     s.includes("There is not enough in the current report")
   );
 }

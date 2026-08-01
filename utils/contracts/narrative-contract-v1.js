@@ -115,7 +115,7 @@ function deriveEnvelope(input) {
     Math.min(
       100,
       Math.round(
-        Number(input?.accuracy ?? input?.contractsV1?.evidence?.accuracyPct ?? input?.contractsV1?.evidence?.accuracy) |
+        Number(input?.accuracy ?? input?.contractsV1?.evidence?.accuracyPct ?? input?.contractsV1?.evidence?.accuracy) ||
           0)));
   const readiness = normalizeReadiness(input?.contractsV1?.readiness?.readiness);
   const confidenceBand = normalizeConfidenceBand(input?.contractsV1?.confidence?.confidenceBand);
@@ -280,14 +280,14 @@ export function buildNarrativeContractV1(input) {
   const cappedIntensity = RI_RANK[existingIntensity] > RI_RANK[capIntensity] ? capIntensity : existingIntensity;
   const baseSeed = `${topicKey}|${subjectId}|${displayName}|${envelope}|${q}|${acc}|${cappedIntensity}|${hedgeLevel}`;
   const hasSubskillMetadata = !!(
-    input?.hasSubskillMetadata |
-    input?.skillDetailAvailable |
+    input?.hasSubskillMetadata ||
+    input?.skillDetailAvailable ||
     input?.contractsV1?.evidence?.skillBreakdownAvailable
   );
   let uncertainty = buildUncertaintySlot(hedgeLevel, `${baseSeed}:unc`, q);
   const topicEngineContract = readTopicEngineContract(input);
   const decisionCode =
-    readEngineDecisionCode(topicEngineContract) |
+    readEngineDecisionCode(topicEngineContract) ||
     (input && typeof input === "object" ? String(input[EDC_DECISION_FIELD] || "") : "");
   const evidenceStrength = String(
     input?.evidenceStrength || topicEngineContract?.evidenceStrength || "");

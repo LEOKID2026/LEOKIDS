@@ -33,68 +33,46 @@
 
 /** Clinical / medical / disability-framing — parent report must not use (block). */
 export const MEDICAL_DIAGNOSTIC_RES = [
-  //u,
-  /\s*/u,
-  /\s*|ADHD/u,
-  /\s*|\s*/u,
-  /\s*|\s*|\s*/u,
-  /\s*|\s*/u];
+  /dyslexia|dyscalculia/iu,
+  /learning\s*disability|learning\s*disorder/iu,
+  /attention\s*disorder|\bADHD\b/iu,
+  /neurological\s*disorder|psychiatric\s*disorder/iu,
+  /medical\s*diagnosis|clinical\s*diagnosis/iu,
+  /clinical\s*psychologist|specialist\s*doctor/iu,
+];
 
 /** Absolute certainty — risky when engine forbids strong conclusions or has low confidence. */
 export const OVERCONFIDENT_PHRASE_RES = [
-  //u,
-  /[\s-]*(?:)?/u,
-  /\s*/u,
-  /\s*(?!)/u, // allow "" careful? keep simple:  
-  /\s*|\s*[\s-]*/u,
-  /\s*\s*(?:)/u];
+  /\bwith\s*certainty\b/iu,
+  /\bunambiguous(?:ly)?\b/iu,
+  /\bno\s*doubt\b/iu,
+  /\bclear(?:ly)?\s+that\b/iu,
+  /\bproves?\s+(?:fully|completely)\b|\bunambiguous\s*proof\b/iu,
+  /\bwithout\s*a\s*doubt\b/iu,
+];
 
 /** Hedging / observational — reduces risk when evidence is thin. */
 export const CAUTIOUS_HEDGE_RES = [
-  /\s*/u,
-  /\s*/u,
-  /\s*/u,
-  /\s*/u,
-  /\s*\s*/u,
-  /\s*/u,
-  /\s*\s*/u,
-  /\s+\s+/u];
+  /\bit\s*seems\b/iu,
+  /\bit\s*may\s*be\b|\bmight\s*be\b/iu,
+  /\bstill\s*too\s*early\b/iu,
+  /\bfrom\s*the\s*data\s*here\b/iu,
+  /\bnot\s*clear\s*yet\b/iu,
+  /\bworth\s*gathering\b/iu,
+  /\bnot\s*enough\s*data\b/iu,
+  /\bstill\s+little\s+data\b/iu,
+];
 
 /**
  * Hebrew narrative explicitly acknowledges limited evidence / need for more data.
  * When matched on thin engine rows, these are treated as safe framing (info), not `ambiguous_evidence`.
  */
 export const SAFE_THIN_DATA_CAUTION_RES = [
-  /\s+\s+\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+/u,
-  /\s*/u,
-  /\s+/u,
-  /\s+\s+/u,
-  /\s+\s+/u,
-  /\s+/u,
-  /\s+\s+\s*/u,
-  /\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+/u,
-  /\s+\s+/u,
-  /\s+/u,
-  /\s+/u,
-  /\s+/u,
-  /(?:)?\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+\s+/u,
-  /\s+\s+\s+/u];
+  /not\s+enough\s+(?:practice|data|questions)/iu,
+  /still\s+too\s+early/iu,
+  /thin\s+data|limited\s+evidence/iu,
+  /need\s+more\s+(?:practice|data)/iu,
+];
 
 /**
  * Strong claims or prescriptions despite thin data — still warn (do not treat as safe caution).

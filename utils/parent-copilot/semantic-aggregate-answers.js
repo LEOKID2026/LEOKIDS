@@ -349,9 +349,9 @@ function buildAdvanceOrHoldDraft(input) {
   const lead = hedges[0] ? `${hedges[0]} - ` : "";
 
   const holdStrong =
-    dl.cannotConcludeYet === true |
-    dl.readiness === "insufficient" |
-    dl.confidenceBand === "low" |
+    dl.cannotConcludeYet === true ||
+    dl.readiness === "insufficient" ||
+    dl.confidenceBand === "low" ||
     tier < 2;
 
   const hasConcreteStep =
@@ -367,8 +367,8 @@ function buildAdvanceOrHoldDraft(input) {
   if (holdStrong) {
     obs = `${lead}At the moment it is better to wait and not to push for big progress: the report still does not have a sufficiently stable basis to say that it is worth "pressing the gas".`;
     meaning = norm(
-      uncertainty |
-        interpretation |
+      uncertainty ||
+        interpretation ||
         (observation.length >= 8 ? `According to what appears in the report: ${observation}` : "You can continue with normal practice and check again after some more data."),
     );
   } else if (hasConcreteStep) {
@@ -378,8 +378,8 @@ function buildAdvanceOrHoldDraft(input) {
   } else {
     obs = `${lead}You can only progress at a slow pace: some practice, stopping to check, then deciding again according to what will appear in the report.`;
     meaning = norm(
-      interpretation |
-        uncertainty |
+      interpretation ||
+        uncertainty ||
         (observation.length >= 8 ? observation : "This is not yet a stage for opening new goals that were not built from the report."),
     );
   }
@@ -603,7 +603,7 @@ export function buildSemanticAggregateDraft(input) {
   } else if (qc === "improved") {
     const es = payload?.executiveSummary && typeof payload.executiveSummary === "object" ? payload.executiveSummary : {};
     const trends = normalizeExecutiveTrendLinesHe(es.majorTrendsHe);
-    const improvementLines = trends.filter((t) => /||/.test(t));
+    const improvementLines = trends.filter((t) => /improv|progress|increase|strengthen|getting\s+better/i.test(t));
     if (improvementLines.length) {
       obs = `Signs of improvement that appear in the wording of the summary for the period: ${improvementLines.slice(0, 3).join(" · ")}.`;
       meaning = copilotStaticMessage("copilot.answers.utils_parent-copilot_semantic-aggregate-answers.this_is_an_answer_based_on_the_summary_lines_in_the_report_only_");
@@ -611,7 +611,7 @@ export function buildSemanticAggregateDraft(input) {
     } else {
       const uImp = norm(utterance).toLowerCase();
       const mathRow = roll.find((r) => r.sid === "math");
-      if (/|/.test(uImp) && mathRow && mathRow.avg != null && mathRow.totalQ > 0) {
+      if (/\bmath(?:ematics)?\b|\barithmetic\b/i.test(uImp) && mathRow && mathRow.avg != null && mathRow.totalQ > 0) {
         obs = `${lead}in mathematics, about ${mathRow.totalQ} questions were counted in the range, with an average accuracy of about ${mathRow.avg}% according to the report.`;
         meaning =
           "An explicit sign of improvement does not always appear as a separate line in the report - it is still possible to anchor the volume and accuracy in the subject from the data that is presented.";

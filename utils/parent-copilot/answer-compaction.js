@@ -6,7 +6,7 @@
 /** @param {string} t */
 function norm(t) {
   return String(t || "")
-    .replace(/\s+/g, "")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
@@ -43,7 +43,7 @@ export function compactParentAnswerBlocks(blocks, opts = {}) {
     for (const p of ONCE_ACROSS_ANSWER) {
       if (!p) continue;
       if (acc.includes(p) && t.includes(p)) {
-        t = norm(t.split(p).join("").replace(/\s{2}/g, ""));
+        t = norm(t.split(p).join(" ").replace(/\s{2,}/g, " "));
       }
     }
     if (t.length > 2) {

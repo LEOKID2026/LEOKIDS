@@ -6,29 +6,36 @@ import { copilotStaticMessage } from "../../lib/parent-copilot/copilot-static-me
 /** @param {string} t */
 function norm(t) {
   return String(t || "")
-    .replace(/\s+/g, "")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
 const BANNED_PHRASE_RULES = [
   {
-    pattern: /     [^.!?]*[.!?]?/gu,
-    replace: ""},
+    pattern: /Most foci with a relatively stable formulation[^.!?]*[.!?]?/giu,
+    replace: "",
+  },
   {
-    pattern: /(?:  \s*-\s*)? ,      [^.!?]*[.!?]?/gu,
-    replace: ""},
+    pattern: /(?:worth continuing to follow\s*-\s*)?Currently, there is no information here that does not come from the report[^.!?]*[.!?]?/giu,
+    replace: "",
+  },
   {
-    pattern: /(?!)/gu,
-    replace: copilotStaticMessage("copilot.answers.utils_parent-copilot_parent-facing-answer-postpr.the_report_is_based_on_the_practice_carried_out_on_the_site_in_t")},
+    pattern: /This means the picture is built from subjects and topics already included in the period range\.?/giu,
+    replace: copilotStaticMessage("copilot.answers.utils_parent-copilot_parent-facing-answer-postpr.the_report_is_based_on_the_practice_carried_out_on_the_site_in_t"),
+  },
   {
-    pattern: /,?\s*     [^.!?]*[.!?]?/gu,
-    replace: ""},
+    pattern: /Parent,?\s*you can use this as a dictionary of meanings for the report[^.!?]*[.!?]?/giu,
+    replace: "",
+  },
   {
-    pattern: /(?!)/gu,
-    replace: ""},
+    pattern: /without adding an external interpretation layer\.?/giu,
+    replace: "",
+  },
   {
-    pattern: / (?:\s+)?[^.!?]*[.!?]?/gu,
-    replace: ""}];
+    pattern: /Dictionary of meanings(?:\s+for the report)?[^.!?]*[.!?]?/giu,
+    replace: "",
+  },
+];
 
 /**
  * @param {string} text
@@ -39,7 +46,7 @@ export function sanitizeBannedParentPhrasesHe(text) {
     pattern.lastIndex = 0;
     t = norm(t.replace(pattern, replace));
   }
-  t = norm(t.replace(/\s{2}/g, ""));
+  t = norm(t.replace(/\s{2,}/g, " "));
   return t;
 }
 
@@ -62,7 +69,7 @@ export function dedupeSentencesHe(text) {
     if (key.length >= 12) seen.add(key);
     out.push(p);
   }
-  return norm(out.join(""));
+  return norm(out.join(" "));
 }
 
 /**
@@ -72,7 +79,7 @@ export function dedupeSentencesHe(text) {
 export function dedupeTopicPairsHe(text) {
   const raw = norm(text);
   if (!raw.includes("-")) return raw;
-  const pairRe = /([^\s\S][-\s]{0,24})\s*-\s*([^\s\S][^\n,.;]{2,48})/gu;
+  const pairRe = /([\p{L}][\p{L}\s]{0,24})\s*-\s*([\u0590-\u05FF][^\n,.;]{2,48})/gu;
   const seen = new Set();
   let changed = false;
   const rebuilt = raw.replace(pairRe, (full, subj, topic) => {
@@ -85,7 +92,7 @@ export function dedupeTopicPairsHe(text) {
     return full;
   });
   if (!changed) return raw;
-  return norm(rebuilt.replace(/\s{2}/g, "").replace(/\(\s*\)/g, ""));
+  return norm(rebuilt.replace(/\s{2,}/g, " ").replace(/\(\s*\)/g, ""));
 }
 
 /**
@@ -105,7 +112,7 @@ export function postprocessParentFacingBlocksHe(blocks) {
   const joined = (Array.isArray(blocks) ? blocks : [])
     .map((b) => norm(b?.answerText))
     .filter(Boolean)
-    .join("");
+    .join(" ");
   const globalSeen = new Set();
   return (Array.isArray(blocks) ? blocks : []).map((b) => {
     let textHe = postprocessParentFacingAnswerHe(String(b?.answerText || ""));
@@ -119,7 +126,7 @@ export function postprocessParentFacingBlocksHe(blocks) {
       if (key.length >= 12) globalSeen.add(key);
       kept.push(p);
     }
-    if (kept.length) textHe = norm(kept.join(""));
+    if (kept.length) textHe = norm(kept.join(" "));
     if (!textHe && joined) textHe = postprocessParentFacingAnswerHe(joined);
     return { ...b, answerText: textHe };
   }).filter((b) => norm(b.answerText).length > 0);
@@ -130,7 +137,8 @@ export const BANNED_PARENT_PHRASE_SNIPPETS = [
   "Currently, there is no information here that does not come from the report",
   "The picture is made up of subjects and topics",
   "Dictionary of meanings",
-  "External interpretation layer"];
+  "External interpretation layer",
+];
 
 export default {
   postprocessParentFacingAnswerHe,
@@ -138,4 +146,5 @@ export default {
   sanitizeBannedParentPhrasesHe,
   dedupeSentencesHe,
   dedupeTopicPairsHe,
-  BANNED_PARENT_PHRASE_SNIPPETS};
+  BANNED_PARENT_PHRASE_SNIPPETS,
+};

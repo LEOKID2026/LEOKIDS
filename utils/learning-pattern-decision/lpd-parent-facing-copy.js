@@ -289,11 +289,11 @@ function lpdMeaningLineHe(lpd, topicName) {
     return "What this means: The same mistake keeps coming back, so it helps to pause and practice it on its own.";
   }
   if (
-    ts === "difficulty_observed" |
-    ts === "practice_focus" |
-    ft === "practice_focus" |
-    ft === "difficulty_pattern" |
-    templateId.includes("difficulty") |
+    ts === "difficulty_observed" ||
+    ts === "practice_focus" ||
+    ft === "practice_focus" ||
+    ft === "difficulty_pattern" ||
+    templateId.includes("difficulty") ||
     templateId.includes("practice_focus")
   ) {
     return `What this means: It helps to reinforce ${topicName} before moving on to harder topics.`;
@@ -383,8 +383,8 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
   const w = metrics.wrong;
 
   const contract =
-    lpd.engineDecisionContract |
-    row?.engineDecisionContract |
+    lpd.engineDecisionContract ||
+    row?.engineDecisionContract ||
     null;
 
   if (contract?.parentSafeFinding && q >= 3) {
@@ -394,7 +394,7 @@ export function buildLpdSafeTopicExplainSectionsHe(row) {
         ? guardParentFacingText(`The recurring mistake: ${patternLabel}.`)
         : "";
     const meaning =
-      contract.engineDecision === "clear_topic_gap" |
+      contract.engineDecision === "clear_topic_gap" ||
       contract.engineDecision === "topic_needs_strengthening"
         ? guardParentFacingText(
             `What this means: It helps to reinforce ${topicName} before moving on to harder topics.`,

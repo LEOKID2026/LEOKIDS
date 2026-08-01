@@ -19,7 +19,7 @@ export const STRONG_ACCURACY_MIN = 75;
 
 /** Must not appear when polarity is support_needed with enough questions. */
 export const FORBIDDEN_POSITIVE_WHEN_WEAK_RE =
-  /\s*|\s*\s*|\s*|\s*\s*|\s*|\s*\s*/u;
+  /strong\s*direction|keep\s*(?:the\s+)?same\s*pace|success\s*is\s*repeating|relatively\s*good\s*stability|stable\s*performance|ready\s*for\s*(?:further\s+)?(?:progress|advancement)/iu;
 
 /**
  * @param {number} q

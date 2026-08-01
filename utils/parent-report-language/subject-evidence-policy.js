@@ -134,7 +134,7 @@ export function practicedSubjectIds(subjectQuestionCounts) {
 export function practicedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLabelById) {
   const practiced = Object.entries(subjectLabelById)
     .filter(([sid]) => classifySubjectEvidenceTier(subjectQuestionCounts[sid]) !== SUBJECT_EVIDENCE_TIER.none)
-    .map(([ label]) => label);
+    .map(([, label]) => label);
   if (practiced.length === 0) return "No practice was recorded in the report's subjects for the selected period.";
   if (practiced.length === 1) return `The subject practiced this period: ${practiced[0]}.`;
   return `The subjects practiced this period: ${practiced.join(", ")}.`;
@@ -147,7 +147,7 @@ export function practicedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLab
 export function notPracticedSubjectsSummaryLineHe(subjectQuestionCounts, subjectLabelById) {
   const labels = Object.entries(subjectLabelById)
     .filter(([sid]) => classifySubjectEvidenceTier(subjectQuestionCounts[sid]) === SUBJECT_EVIDENCE_TIER.none)
-    .map(([ label]) => label);
+    .map(([, label]) => label);
   if (!labels.length) return null;
   return `Subjects not practiced this period: ${labels.join(", ")}.`;
 }
@@ -198,12 +198,37 @@ export function subjectQuestionCountsFromPayload(payload) {
     return effectivePracticeAnswerCount(subj);
   };
 
-  return {
+  const fromSubjects = {
     math: read("math"),
     geometry: read("geometry"),
     english: read("english"),
     science: read("science"),
     history: read("history")};
+  if (Object.values(fromSubjects).some((n) => n > 0)) return fromSubjects;
+
+  /** Copilot / report v2 payloads often carry practice only under subjectProfiles. */
+  const profiles = Array.isArray(payload?.subjectProfiles) ? payload.subjectProfiles : [];
+  const fromProfiles = {
+    math: 0,
+    geometry: 0,
+    english: 0,
+    science: 0,
+    history: 0};
+  for (const sp of profiles) {
+    const sid = String(sp?.subject || "").trim();
+    if (!Object.prototype.hasOwnProperty.call(fromProfiles, sid)) continue;
+    const topics = Array.isArray(sp?.topicRecommendations) ? sp.topicRecommendations : [];
+    let sum = 0;
+    for (const tr of topics) {
+      const q = Math.max(0, Math.floor(Number(tr?.questions ?? tr?.questionCount) || 0));
+      sum += q > 0 ? q : Math.max(0, effectivePracticeAnswerCount(tr) || 0);
+    }
+    if (!sum) {
+      sum += Math.max(0, Math.floor(Number(sp?.subjectQuestionCount ?? sp?.questionCount) || 0));
+    }
+    fromProfiles[sid] = sum;
+  }
+  return fromProfiles;
 }
 
 /**

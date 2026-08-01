@@ -44,7 +44,7 @@ export function buildClinicalBoundaryAnswerDraft() {
  * Normalized join of boundary blocks - matches `validateAnswerDraft` joined shape (single spaces between blocks).
  */
 export function clinicalBoundaryJoinedFingerprintHe() {
-  return [CLINICAL_BOUNDARY_LINE_1_HE, CLINICAL_BOUNDARY_LINE_2_HE, CLINICAL_BOUNDARY_LINE_3_HE].join("");
+  return [CLINICAL_BOUNDARY_LINE_1_HE, CLINICAL_BOUNDARY_LINE_2_HE, CLINICAL_BOUNDARY_LINE_3_HE].join(" ");
 }
 
 /** Approved peer-comparison early-exit (single line). */
@@ -65,7 +65,7 @@ export function buildSensitiveEducationChoiceAnswerDraft() {
 
 /** Normalized join for validator whitelist (fixed deterministic copy). */
 export function sensitiveEducationChoiceJoinedFingerprintHe() {
-  return [SENSITIVE_EDUCATION_LINE_1_HE, SENSITIVE_EDUCATION_LINE_2_HE, SENSITIVE_EDUCATION_LINE_3_HE].join("");
+  return [SENSITIVE_EDUCATION_LINE_1_HE, SENSITIVE_EDUCATION_LINE_2_HE, SENSITIVE_EDUCATION_LINE_3_HE].join(" ");
 }
 
 /**
@@ -100,7 +100,7 @@ function tokenOverlapCount4(a, b) {
 function requiredHedgeAlreadyCoveredInDraft(hedge, reason, priorSlots) {
   const h = String(hedge || "").trim();
   if (!h) return true;
-  const bucket = `${priorSlots} ${reason}`.replace(/\s+/g, "").trim();
+  const bucket = `${priorSlots} ${reason}`.replace(/\s+/g, " ").trim();
   if (!bucket) return false;
   if (bucket.includes(h)) return true;
   if (h === copilotStaticMessage("copilot.answers.utils_parent-copilot_answer-composer.still_too_early_to_decide") && (bucket.includes("too early to determine") || bucket.includes("still early"))) return true;
@@ -419,7 +419,7 @@ export function composeAnswerDraft(plan, truthPacket, coachingCtx = null) {
       const hedges = Array.isArray(truthPacket.allowedClaimEnvelope?.requiredHedges)
         ? truthPacket.allowedClaimEnvelope.requiredHedges.map((h) => String(h || "").trim()).filter(Boolean)
         : [];
-      const priorSlotsForHedgeDedup = [obs, interp, lim].filter(Boolean).join("");
+      const priorSlotsForHedgeDedup = [obs, interp, lim].filter(Boolean).join(" ");
       for (const h of hedges) {
         if (h && !requiredHedgeAlreadyCoveredInDraft(h, reason, priorSlotsForHedgeDedup)) {
           reason = `${h} - ${reason}`;

@@ -313,7 +313,7 @@ function executiveTopicKey(m) {
 function interpretationReadsAsWeaknessNeedingSupport(interp) {
   const s = String(interp || "").trim();
   if (!s) return false;
-  return /\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*|\s*\s*|\s*/u.test(
+  return /needs?\s*(?:reinforcement|support|work|practice)|requires?\s*(?:reinforcement|support|work|practice)|significant\s*reinforcement|unique\s*challenge|still\s*needs?|harder|weak(?:ness)?|unstable|special\s*attention|needs?\s*more\s*practice/iu.test(
     s,
   );
 }
@@ -395,7 +395,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
   const parentUtteranceRaw = String(x.parentUtterance || "").trim();
   /** Subject-level strength asks (strong subject / best subject …) — align wording with llm-orchestrator.js */
   const subjectLevelStrengthQuestion =
-    /\s+()|\s+|\s+|\s+/u.test(parentUtteranceRaw);
+    /\b(?:subject|subjects)\b|\bstrong(?:est)?\s+subject\b|\bwhich\s+subject\b|\bbest\s+subject\b/iu.test(parentUtteranceRaw);
 
   /** When the parent asks about a subject, lead with subject name then optional topic — not topic-only. */
   const subjectFirstStrengthObservation = (m) => {
@@ -431,8 +431,8 @@ function buildExecutiveIntentNarrativeSlots(x) {
   const intent = String(x.canonicalIntent || "unclear").trim() || "unclear";
 
   const defaultInterpBase =
-    (metas[0]?.interp && clipHe(metas[0].interp, 200)) |
-    (trends[0] && !looksLikeNumericOrCountLead(trends[0]) ? trends[0] : "") |
+    (metas[0]?.interp && clipHe(metas[0].interp, 200)) ||
+    (trends[0] && !looksLikeNumericOrCountLead(trends[0]) ? trends[0] : "") ||
     "What is missing in the report is mainly a breadth of anchored formulations - not necessarily numbers in themselves.";
   const defaultInterp = appendDistinctSentence(defaultInterpBase, supportingNumericTail(x, intent));
 
@@ -599,7 +599,7 @@ function buildExecutiveIntentNarrativeSlots(x) {
       let focus = rankedWorstFirst[0] || metas[0];
       if (primarySid) {
         const prefer =
-          rankedWorstFirst.find((m) => normalizeSubjectId(m.sid) === primarySid && m.q > 0) |
+          rankedWorstFirst.find((m) => normalizeSubjectId(m.sid) === primarySid && m.q > 0) ||
           metas.find((m) => normalizeSubjectId(m.sid) === primarySid && m.q > 0);
         if (prefer) focus = prefer;
       }
@@ -950,7 +950,7 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
   const slotUnc = String(narTs.uncertainty || "").trim();
   const narrativeCoreOk = slotObs.length >= 14 && (slotInterp.length >= 14 || slotUnc.length >= 14);
   const narrativeSignalsOpenPartial =
-    /|\s+||||\s+|\s+|\s+\s+|\s+||\s+|\s+|\s+|\s+\s+|\s+/u.test(
+    /still|cautious|partial|early|not\s+clear|lack|medium|needed|reinforcement|open|limited|not\s+closed|too\s+early|narrow|cannot\s+(?:yet\s+)?(?:conclude|decide)|do\s+not\s+(?:advance|progress)|stop|wait|needs?\s+reinforcement|attention|not\s+(?:yet\s+)?closed|without\s+(?:a\s+)?sufficient\s+basis|do\s+not\s+close/iu.test(
       `${slotInterp} ${slotUnc}`,
     );
 
@@ -960,23 +960,23 @@ function buildTruthPacketV1NoAnchoredFallback(scope) {
   }
   const avoidNowGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet |
-      confidenceBand === "low" |
-      readiness === "insufficient" |
-      readiness === "forming" |
-      anchorUncertaintyRows > 0 |
+    (cannotConcludeYet ||
+      confidenceBand === "low" ||
+      readiness === "insufficient" ||
+      readiness === "forming" ||
+      anchorUncertaintyRows > 0 ||
       (readiness === "emerging" && narrativeSignalsOpenPartial));
   if (avoidNowGrounded) {
     allowedFollowupFamilies.push("avoid_now");
   }
   const advanceHoldGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet |
-      anchorUncertaintyRows > 0 |
-      !recommendationEligible |
-      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" |
-      readiness === "insufficient" |
-      confidenceBand === "low" |
+    (cannotConcludeYet ||
+      anchorUncertaintyRows > 0 ||
+      !recommendationEligible ||
+      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" ||
+      readiness === "insufficient" ||
+      confidenceBand === "low" ||
       (readiness !== "ready" && narrativeSignalsOpenPartial));
   if (advanceHoldGrounded) {
     allowedFollowupFamilies.push("advance_or_hold");
@@ -1335,7 +1335,7 @@ export function buildTruthPacketV1(payload, scope) {
   const slotUnc = String(narTs.uncertainty || "").trim();
   const narrativeCoreOk = slotObs.length >= 14 && (slotInterp.length >= 14 || slotUnc.length >= 14);
   const narrativeSignalsOpenPartial =
-    /\s+|\s+|\s+|\s+\s+|\s+|\s+|\s+|\s+|\s+\s+|\s+/u.test(
+    /still|cautious|partial|early|not\s+clear|lack|medium|needed|reinforcement|open|limited|not\s+closed|too\s+early|narrow|cannot\s+(?:yet\s+)?(?:conclude|decide)|do\s+not\s+(?:advance|progress)|stop|wait|needs?\s+reinforcement|attention|not\s+(?:yet\s+)?closed|without\s+(?:a\s+)?sufficient\s+basis|do\s+not\s+close/iu.test(
       `${slotInterp} ${slotUnc}`,
     );
 
@@ -1350,11 +1350,11 @@ export function buildTruthPacketV1(payload, scope) {
   /** Offer "what to avoid" only when continuation can lean on real partial-risk signals, not "emerging" alone. */
   const avoidNowGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet |
-      confidenceBand === "low" |
-      readiness === "insufficient" |
-      readiness === "forming" |
-      anchorUncertaintyRows > 0 |
+    (cannotConcludeYet ||
+      confidenceBand === "low" ||
+      readiness === "insufficient" ||
+      readiness === "forming" ||
+      anchorUncertaintyRows > 0 ||
       (readiness === "emerging" && narrativeSignalsOpenPartial));
   if (avoidNowGrounded) {
     allowedFollowupFamilies.push("avoid_now");
@@ -1362,12 +1362,12 @@ export function buildTruthPacketV1(payload, scope) {
   /** Offer advance/hold only when the packet supports a non-generic tradeoff (risk rows, limits, or open partial copy). */
   const advanceHoldGrounded =
     narrativeCoreOk &&
-    (cannotConcludeYet |
-      anchorUncertaintyRows > 0 |
-      !recommendationEligible |
-      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" |
-      readiness === "insufficient" |
-      confidenceBand === "low" |
+    (cannotConcludeYet ||
+      anchorUncertaintyRows > 0 ||
+      !recommendationEligible ||
+      String(recommendationIntensityCap || "RI0").toUpperCase() === "RI0" ||
+      readiness === "insufficient" ||
+      confidenceBand === "low" ||
       (readiness !== "ready" && narrativeSignalsOpenPartial));
   if (advanceHoldGrounded) {
     allowedFollowupFamilies.push("advance_or_hold");
@@ -1423,9 +1423,9 @@ export function buildTruthPacketV1(payload, scope) {
       cannotConcludeYet,
       recommendationEligible,
       recommendationIntensityCap:
-        recommendationIntensityCap === "RI0" |
-        recommendationIntensityCap === "RI1" |
-        recommendationIntensityCap === "RI2" |
+        recommendationIntensityCap === "RI0" ||
+        recommendationIntensityCap === "RI1" ||
+        recommendationIntensityCap === "RI2" ||
         recommendationIntensityCap === "RI3"
           ? recommendationIntensityCap
           : "RI0",
@@ -1453,7 +1453,7 @@ export function buildTruthPacketV1(payload, scope) {
       weakFocusTopicDisplayNameHe,
       relevantSummaryLines: summaryLines,
       registeredGradeKey:
-        String(payload?.registeredGradeKey || payload?.gradePracticeMeta?.registeredGradeKey || "").trim() |
+        String(payload?.registeredGradeKey || payload?.gradePracticeMeta?.registeredGradeKey || "").trim() ||
         null,
       gradePracticeMeta:
         payload?.gradePracticeMeta && typeof payload.gradePracticeMeta === "object"
