@@ -1,0 +1,61 @@
+{
+  "boundary": {
+    "peerComparison": "El informe se basa solo en la práctica de este niño o niña y no lo compará con otros niños de la clase. Podés enfocarte en lo que aparece en el informe y preguntar sobre un tema específico.",
+    "noDataForRequest": "Este informe aún no tiene suficiente información para responder eso con precisión. Hacé una sesión breve de práctica en el sitio y volvé a consultar para una dirección más clara.",
+    "noDataSpecificForRequest": "El informe tiene datos de práctica del período, pero no alcanza para responder este punto específico con precisión. Hacé una sesión breve de práctica en el sitio y volvé a consultar para una dirección más clara sobre este tema."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "Volvé a iniciar sesión como padre, madre o tutor."
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "Seguí observando durante varios días más de práctica."
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "¿Querés dar juntos un paso pequeño en casa hoy sobre el mismo tema?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "¿Querés armar juntos un plan breve para esta semana sobre este tema?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "¿Querés marcar juntos qué conviene evitar esta semana?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "¿Querés revisar juntos cuándo subir de nivel y cuándo quedarse en el mismo tema?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "¿Querés una forma breve de explicárselo a tu hijo o hija sin presión?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "¿Querés una formulación para una pregunta concreta al maestro o la maestra, basada en lo que aparece en el informe?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "¿Querés desglosar juntos lo que todavía no queda claro a partir de los datos del informe?"
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Hacé un seguimiento después de 3–4 días de esta forma y luego revisá en el informe si la precisión mejora o si el patrón volvé a aparecer.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Podés elegir otro tema del informe, o practicar más este tema y preguntar de nuevo.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Reuní más práctica en esta materia antes de decidir un cambio de nivel.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Reuní más práctica antes de concluir que el desempeño está por encima del grado."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "No debés incluir un bloque next_step.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "No incluyas un bloque next_step: mantené las recomendaciones prácticas solo dentro del bloque meaning (FACTS_JSON permite recomendaciones solo cuando recommendation"
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "Si en el informe aparece una subhabilidad clara, enfocate en ella: no abras varias materias a la vez."
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "En esta materia todavía no hay suficiente práctica en el informe: elegí una materia que ya tenga práctica.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "En esta materia todavía no hay un tema con suficiente práctica para conversar: podés probar con otra materia.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "Hay más de un tema aquí: ¿sobre cuál tema querés que responda?"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Estas son las líneas de resumen del período tal como aparecen en el informe. Para detalles por materia, abrí la pantalla de materias.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Cuando aparezcan datos de práctica de al menos un tema con preguntas, podés preguntar de nuevo para una imagen más clara.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "Podés preguntar de nuevo con dos nombres de materia, o hacer una pregunta sobre el orden por dificultad frente a resultados relativamente fuertes según los datos del informe.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Cuando aparezcan materias activas, podés ver exactamente dónde los datos son más escasos.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "Esto significa que hay demasiado pocos datos en el informe del período: tené cuidado al sacar conclusiones.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Cuando aparezcan datos completos de práctica por materia en el informe, podés identificar un área que necesita atención.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Seguí practicando y revisando: el informe no muestra por ahora una señal clara de confusión.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "Esta es una descripción a nivel de materia tomada del informe. Para detalles exactos por tema, abrí la materia en el informe.",
+      "you_can_formulate_again_with_two_subject_names": "Podés preguntar de nuevo con dos nombres de materia, o hacer una pregunta sobre el orden por dificultad frente a resultados relativamente fuertes según los datos del informe."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Perfecto: empezá con un paso pequeño que coincida con lo que aparece en el informe, sin ir más allá de esa redacción.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "Aquí no hay un párrafo largo de explicación: dime con otra palabra qué seguí sin quedar claro."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Seguí con práctica breve y constante para afianzar el progreso en las distintas áreas.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Aquí hay una formulación que podés compartir con un niño o niña en un lenguaje suave."
+    }
+  }
+}

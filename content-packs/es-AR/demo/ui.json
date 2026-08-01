@@ -1,0 +1,38 @@
+{
+  "enter": {
+    "intro": "Elegí un grado y explora el mundo infantil. {minutes} minutos de juego y aprendizaje, sin registrarte.",
+    "activeSessionNote": "Tenés una demo activa: cambiar el grado no reiniciará el temporizador.",
+    "chooseGradeLegend": "Elegí un grado"
+  },
+  "gate": {
+    "loadError": "No se pudo cargar el modo demo. Intentá actualizar la página."
+  },
+  "timeExpiredModal": {
+    "body": "Han pasado {minutes} minutos desde que empezó la demo. Podés seguir explorando el mundo infantil, pero no podés iniciar un juego o una actividad nueva."
+  },
+  "onlineGameUnavailable": {
+    "body": "En modo demo podés explorar el arcade y ver los juegos, pero el multijugador en línea no está activo."
+  },
+  "display": {
+    "encouragement": "Seguí practicando: ¡esta es una demo!"
+  },
+  "missions": {
+    "mathDescription": "Respondé 5 preguntas de matemáticas",
+    "soloDescription": "Jugá un juego individual"
+  },
+  "worksheet": {
+    "intro": "Podés explorar hojas de actividades desde la lista de la página de inicio. El envío digital no está disponible en modo demo."
+  },
+  "grades": {
+    "g1": "1.er grado",
+    "g2": "2.º grado",
+    "g3": "3.er grado",
+    "g4": "4.º grado",
+    "g5": "5.º grado",
+    "g6": "6.º grado"
+  },
+  "parentPortal": {
+    "enterActiveSessionNote": "Tenés una demo de padres activa: podés continuar donde lo dejaste.",
+    "readOnlyWorksheets": "Modo demo — podés explorar hojas de actividades, pero no crear nuevas."
+  }
+}

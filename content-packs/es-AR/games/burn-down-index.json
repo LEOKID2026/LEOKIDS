@@ -1,0 +1,240 @@
+{
+  "components__arcade__club__ArcadeClubFriendsPanel": {
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "No se pudo mostrar tu número Leo; intentá actualizar la página."
+  },
+  "components__arcade__dominoes__DominoesScreen": {
+    "play_a_tile_matching_an_open_end_of_the_chain": "Jugá una ficha que coincida con un extremo abierto de la cadena.",
+    "no_legal_move_pass_two_passes_in_a_row_end_in_a_block_lowest_pip_total_w": "Ningún movimiento legal: pase; dos pases seguidos terminan en un bloque (el total de pips más bajo ganá).",
+    "pick_a_tile_or_an_end_if_shown": "Elegí un mosaico (o un extremo si se muestra)"
+  },
+  "components__arcade__fourline__FourlineScreen": {
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "Cada jugador elegí una columna; el disco cae al fondo."
+  },
+  "components__arcade__ludo__LudoScreen": {
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "En tu turno, se lanzan los dados (OV2 también abre automáticamente una animación de tirada), luego elegí qué pieza mover.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "Una pieza que llega a la casa termina; cuatro piezas en casa ganan."
+  },
+  "components__educational-games__EducationalGameEntryScreen": {
+    "choose_a_difficulty": "Elegí una dificultad"
+  },
+  "components__educational-games__leo-bakery__leo-bakery-data": {
+    "prompt_find_trays": "Hay {total} {itemLabel}. Cada bandeja tiene capacidad para {perTray}. ¿Cuantas bandejas necesitás?",
+    "prompt_build_fallback": "Configurá el pedido.",
+    "control_find_trays": "Elegí cuántas bandejas necesitás.",
+    "control_find_per_tray": "Elegí cuántos van en cada bandeja.",
+    "solution_text_find_trays": "Necesitás {trays} bandejas."
+  },
+  "components__educational-games__leo-gifts__leo-gifts-data": {
+    "prompt_make_groups": "Hay {total} {itemLabel}. Poné {groupSize} en cada bolsa. ¿Cuántas bolsas llenas podés hacer?",
+    "prompt_make_groups_with_remainder": "Hay {total} {itemLabel}. Poné {groupSize} en cada bolsa. ¿Cuántas bolsas llenas podés hacer y cuántas quedan?",
+    "solution_text_groups": "Podés hacer {quotient} bolsas completas.",
+    "solution_text_groups_remainder": "Podés hacer {quotient} bolsas completas. {remaining}",
+    "feedback_almost_groups": "Comprobá cuántas bolsas llenas podés hacer.",
+    "feedback_almost_share": "Comprobá que cada niño recibí la misma parte y que el resto es correcto.",
+    "idle_make_groups_remainder": "Elegí cuantas bolsas llenas y cuantas quedan",
+    "idle_make_groups": "Elegí cuántas bolsas completas podés hacer",
+    "idle_share_remainder": "Elegí cuántos recibe cada niño y cuántos quedan",
+    "idle_share_equal": "Elegí cuántos recibe cada niño"
+  },
+  "components__educational-games__leo-lab__leo-lab-data": {
+    "grades_1_2": "1.er–2.º grado"
+  },
+  "components__educational-games__leo-lab__leo-lab-experiments-clean": {
+    "pick_a_nail_and_a_can_that_are_attracted_to_a_magnet": "Elegí un clavo y una lata que sean atraídos por un imán.",
+    "pick_2_objects_that_are_not_attracted_to_a_magnet": "Elegí 2 objetos que no sean atraídos por un imán.",
+    "pick_a_metal_spoon_and_a_can": "Elegí una cuchara de metal y una lata.",
+    "pick_2_objects_that_can_float_in_water": "Elegí 2 objetos que puedan flotar en el agua.",
+    "pick_a_nail_and_a_can_that_sink_in_water": "Escogé un clavo y una lata que se hunda en el agua.",
+    "pick_sun_and_water": "Elegí sol y agua.",
+    "pick_a_nail_and_a_can": "Elegí un clavo y una lata.",
+    "pick_wood_and_a_plant": "Escogé madera y una planta.",
+    "pick_a_nail_and_a_spoon": "Elegí un clavo y una cuchara.",
+    "pick_2_things_from_nature": "Elegí 2 cosas de la naturaleza.",
+    "pick_2_metal_objects": "Elegí 2 objetos metálicos.",
+    "pick_2_objects_that_can_get_warm_in_the_sun": "Elegí 2 objetos que puedan calentarse con el sol.",
+    "pick_3_objects_that_can_power_a_simple_electric_circuit": "Elegí 3 objetos que puedan alimentar un circuito eléctrico simple.",
+    "pick_3_objects_that_can_make_light_appear": "Elegí 3 objetos que puedan hacer aparecer la luz.",
+    "pick_3_things_that_help_a_plant_grow": "Elegí 3 cosas que ayuden a una planta a crecer.",
+    "pick_3_objects_for_an_experiment_where_ice_melts": "Elegí 3 objetos para un experimento donde el hielo se derrite.",
+    "pick_3_objects_for_testing_ice_in_water": "Elegí 3 objetos para probar el hielo en el agua.",
+    "pick_2_objects_that_help_keep_things_cold": "Elegí 2 objetos que ayuden a mantener las cosas frías.",
+    "when_an_object_stands_in_front_of_light_a_shadow_appears": "Cuando un objeto se encontrá frente a la luz, aparece una sombra.",
+    "pick_a_plant_and_one_thing_that_helps_it_survive": "Elegí una planta y algo que la ayude a sobrevivir.",
+    "pick_2_objects_that_are_good_for_carrying_electricity_in_a_circuit": "Elegí 2 objetos que sean buenos para transportar electricidad en un circuito.",
+    "pick_2_objects_that_show_a_change_from_cold_to_warmer": "Elegí 2 objetos que muestren un cambio de frío a más cálido.",
+    "you_can_compare_a_metal_material_with_one_from_nature": "Podés comparar un material metálico con uno procedente de la naturaleza.",
+    "pick_2_objects_for_a_cold_experiment_inside_a_container": "Elegí 2 objetos para un experimento frío dentro de un contenedor.",
+    "pick_4_objects_for_a_circuit_with_a_switch": "Elegí 4 objetos para un circuito con un interruptor.",
+    "pick_3_objects_for_a_basic_electric_circuit": "Elegí 3 objetos para un circuito eléctrico básico.",
+    "pick_3_objects_that_are_not_attracted_to_a_magnet": "Elegí 3 objetos que no sean atraídos por un imán.",
+    "pick_4_things_a_plant_needs_to_grow": "Elegí 4 cosas que una planta necesita para crecer.",
+    "pick_3_things_for_making_a_basic_planting": "Elegí 3 cosas para hacer una plantación básica.",
+    "pick_2_things_for_a_drying_experiment": "Elegí 2 cosas para un experimento de secado.",
+    "pick_2_things_for_a_heating_experiment": "Elegí 2 cosas para un experimento de calentamiento.",
+    "pick_2_things_for_testing_sinking": "Elegí 2 cosas para probar el hundimiento.",
+    "pick_4_things_from_the_natural_world": "Elegí 4 cosas del mundo natural.",
+    "you_can_test_conduction_with_a_simple_electric_circuit": "Podés probar la conducción con un circuito eléctrico simple.",
+    "with_a_switch_you_can_control_whether_the_bulb_is_on_or_off": "Con un interruptor podés controlar si la bombilla está encendida o apagada."
+  },
+  "components__educational-games__leo-number-path__leo-number-path-data": {
+    "choose_all_the_odd_numbers_on_the_path": "Elegí todos los números impares del camino.",
+    "prompt_odd": "Elegí todos los números impares.",
+    "prompt_even": "Elegí todos los números pares.",
+    "prompt_skip_forward": "Empezá en {start}. Agregá {step} en cada paso. Elegí los números en orden.",
+    "prompt_arithmetic_missing": "Completá la secuencia. Elegí los números que faltan en orden."
+  },
+  "components__educational-games__leo-pizzeria__leo-pizzeria-data": {
+    "put_olives_on_a_quarter_of_the_pizza": "Poné aceitunas en una cuarta parte de la pizza.",
+    "put_basil_on_a_quarter_of_the_pizza": "Poné albahaca en una cuarta parte de la pizza.",
+    "put_basil_on_half_the_pizza": "Poné albahaca en la mitad de la pizza.",
+    "put_cheese_on_three_quarters_of_the_pizza": "Poné queso en tres cuartas partes de la pizza.",
+    "put_tomato_on_three_quarters_of_the_pizza": "Poné tomate en tres cuartas partes de la pizza.",
+    "put_mushrooms_on_a_quarter_of_the_pizza": "Poné champiñones en una cuarta parte de la pizza.",
+    "put_olives_on_three_quarters_of_the_pizza": "Poné aceitunas en tres cuartas partes de la pizza.",
+    "put_mushrooms_on_three_quarters_of_the_pizza": "Poné champiñones en tres cuartas partes de la pizza.",
+    "put_olives_on_an_eighth_of_the_pizza": "Poné aceitunas en una octava parte de la pizza.",
+    "put_basil_on_an_eighth_of_the_pizza": "Poné albahaca en una octava parte de la pizza.",
+    "put_cheese_on_seven_eighths_of_the_pizza": "Poné queso en siete octavos de la pizza.",
+    "put_tomato_on_two_eighths_of_the_pizza": "Poné tomate en dos octavos de la pizza.",
+    "put_olives_on_six_eighths_of_the_pizza": "Poné aceitunas en seis octavos de la pizza.",
+    "put_cheese_on_five_eighths_of_the_pizza": "Poné queso en cinco octavos de la pizza.",
+    "hint_medium": "Construí fracciones, fracciones equivalentes y compará",
+    "hint_hard": "Fracciones equivalentes, compará y combina visualmente",
+    "greeting_complete": "Completá la pizza hasta formar un todo.",
+    "greeting_equivalent": "Hacé una fracción igual a la que se muestra.",
+    "error_almost_check_slices": "¡Casi! Comprobá cuántas rebanadas están marcadas.",
+    "feedback_identify_almost": "Comprobá cuántas rebanadas están marcadas."
+  },
+  "components__educational-games__leo-supermarket__LeoSupermarketGame": {
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Ayudá a Leo, el cajero: elegí el producto, calculá el cambio y devolvé el dinero correcto"
+  },
+  "components__educational-games__leo-word-detective__leo-word-detective-data": {
+    "grades_1_2": "1.er–2.º grado",
+    "grades_3_4": "3.er–4.º grado",
+    "grades_5_6": "5.º–6.º grado",
+    "drag_the_word_that_matches_the_picture": "Arrastrá la palabra que coincida con la imagen.",
+    "put_events_in_order_drag_to_the_board": "Ordená los eventos: arrástralos al tablero",
+    "drag_a_title_that_fits_the_passage": "Arrastrá un título que se ajuste al pasaje.",
+    "title_fits_the_passage": "¡El título se ajustá al pasaje!"
+  },
+  "components__educational-games__leo-word-train__leo-word-train-data": {
+    "grades_1_2": "1.er–2.º grado",
+    "grades_3_4": "3.er–4.º grado",
+    "grades_5_6": "5.º–6.º grado",
+    "fill_in_the_missing_letter_on_the_car": "Completá la letra que falta en el auto.",
+    "that_word_fits_the_situation": "¡Esa palabra se ajustá a la situación!"
+  },
+  "components__educational-games__recycling-factory__RecyclingFactoryGame": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "El artículo pasó por la cinta transportadora. ¡Intentá ser más rápido!",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Clasificá los artículos en los contenedores adecuados y ayuda al medio ambiente.",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Clasificá cada artículo en el contenedor correcto: ¡ayuda al planeta!"
+  },
+  "components__leo-miners__LeoMinersGame": {
+    "tap_to_open_diamond_chest": "Tocá para abrir el cofre de diamantes.",
+    "tap": "Tocá",
+    "on_an_empty_slot_to_add_a_dog_the_price_goes_up_over_time": "en un espacio vacío para agregar un perro. El precio subí con el tiempo.",
+    "drag_two_dogs_of_the_same_level_together_to_merge_into_a_higher_level": "Arrastrá dos perros del mismo nivel para fusionarlos en un nivel superior.",
+    "each_dog_adds_damage_per_second_to_its_lane_when_a_rock_breaks_you_get_c": "Cada perro añade daño por segundo a su carril. Cuando una roca se rompe, obtenés monedas.",
+    "collect_diamonds_and_open_special_chests": "Coleccioná diamantes y abrí cofres especiales."
+  },
+  "components__offline__OfflineGameErrorBoundary": {
+    "we_couldn_t_load_the_game_you_can_try_again": "No pudimos cargar el juego. Podés intentarlo de nuevo."
+  },
+  "components__solo-games__engines__MleoMazeEngine": {
+    "each_new_maze_collect_and_race_on": "Cada nuevo laberinto: ¡coleccioná y seguí corriendo!",
+    "solve_as_many_mazes_as_you_can_before_time_runs_out": "¡Resolvé tantos laberintos como puedas antes de que se acabe el tiempo!"
+  },
+  "components__solo-games__engines__MleoMemoryEngine": {
+    "go_back_to_the_card_shop_and_make_sure_cards_are_available": "Volvé a la tienda de tarjetas y asegurate de que las tarjetas estén disponibles."
+  },
+  "components__solo-games__engines__MleoPicturePuzzleEngine": {
+    "tap_a_picture_to_select_it": "Tocá una imagen para seleccionarla",
+    "choose_a_puzzle_picture": "Elegí una imagen de rompecabezas"
+  },
+  "components__solo-games__engines__MleoPicturePuzzlePlacementPlay": {
+    "pick_a_piece": "elegí una pieza"
+  },
+  "components__solo-games__engines__MleoSortShapesEngine": {
+    "drag_the_shape_to_the_right_group_50_for_each_correct_sort": "¡Arrastrá la forma al grupo correcto! +50 por cada clasificación correcta."
+  },
+  "components__solo-games__prototypes__dev__BalanceScalePrototype": {
+    "tap_to_return_to_tray": "Tocá para volver a la bandeja"
+  },
+  "components__solo-games__prototypes__dev__BrickBreakerPrototype": {
+    "tap_to_play_again": "Tocá para jugar de nuevo"
+  },
+  "components__solo-games__prototypes__dev__PipePuzzlePrototype": {
+    "check_water": "Revisá el agua 💧"
+  },
+  "components__solo-games__prototypes__dev__TowerStackPrototype": {
+    "tap_to_play_again": "Tocá para jugar de nuevo"
+  },
+  "components__solo-games__SoloGameEntryScreen": {
+    "choose_difficulty": "Elegí dificultad"
+  },
+  "lib__arcade__club__friends.server": {
+    "too_many_friend_requests_try_again_in_a_minute": "Demasiadas solicitudes de amistad. Volvé a intentarlo en un minuto."
+  },
+  "lib__arcade__club__invites.server": {
+    "too_many_invites_try_again_in_a_minute": "Demasiadas invitaciones. Volvé a intentarlo en un minuto."
+  },
+  "lib__arcade__club__missions.server": {
+    "play_one_arcade_game": "Jugá un juego de arcade",
+    "win_10_times": "Ganá 10 veces",
+    "play_50_arcade_games": "Jugá 50 juegos arcade"
+  },
+  "lib__arcade__club__player-profile.server": {
+    "you_can_change_your_display_name_once_every_24_hours": "Podés cambiar tu nombre para mostrar una vez cada 24 horas"
+  },
+  "lib__educational-games__educational-game-registry": {
+    "drag_evidence_onto_the_board_and_solve_reading_and_vocabulary_cases": "Arrastrá evidencia a la pizarra y resolvé casos de lectura y vocabulario.",
+    "watch_whether_task_asks_per_child_or_full_bags": "Observe si la tarea pedí por niño o bolsas llenas."
+  },
+  "lib__leo-miners__server__leo-miners-guards.server": {
+    "too_many_breaks_try_again_in_a_moment": "Demasiados descansos: intentalo de nuevo en un momento"
+  },
+  "lib__offline__offline-game-catalog": {
+    "tap_battle": "Tocá batalla",
+    "flip_cards_find_pairs_and_try_to_win": "Voltea cartas, encontrá parejas e intentá ganar."
+  },
+  "lib__solo-games__dev-prototype-hub-list": {
+    "care_for_leo_play_pet_and_bathe_a_light_talking_tom_style_feel": "Cuidá a Leo, jugá, acariciá y banate: una sensación ligera al estilo Talking Tom."
+  },
+  "lib__solo-games__solo-game-help": {
+    "follow_the_instructions_on_screen_and_try_to_reach_the_goal": "Seguí las instrucciones en pantalla e intentá alcanzar la meta.",
+    "finish_a_successful_game_to_earn_coins_and_diamonds_for_kid_s_world": "Terminá un juego exitoso para ganar monedas y diamantes para Kid's World."
+  },
+  "lib__solo-games__solo-game-registry": {
+    "hold_to_fly_collect_coins_and_avoid_obstacles": "¡Mantené presionado para volar, recoger monedas y evitar obstáculos!",
+    "hold_the_button_or_the_screen_to_fly_and_release_to_descend_collect_coin": "Mantené presionado el botón o la pantalla para volar y suéltalo para descender. Coleccioná monedas y evitá obstáculos.",
+    "winning_based_on_difficulty_level_grants_coins_and_a_score_bonus_adds_ev": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agregá aún más.",
+    "try_to_keep_a_corner_free_so_you_have_room_to_move_tiles": "Intentá mantener una esquina libre para tener espacio para mover las fichas.",
+    "flip_cards_and_find_pairs_before_the_clock_runs_out": "¡Voltea cartas y encontrá pares antes de que se acabe el tiempo!",
+    "tap_a_card_to_flip_it_and_find_its_matching_pair_every_pair_you_find_sta": "Tocá una carta para darle la vuelta y encontrá el par correspondiente. Cada par que encuentres permanece abierto.",
+    "you_start_with_a_high_score_the_longer_you_take_the_lower_it_drops_findi": "Comenzás con una puntuación alta: cuanto más tardes, más baja será. Encontrar todas las parejas antes de que acabe el tiempo = una victoria.",
+    "tap_to_jump_get_past_obstacles_and_collect_coins_diamonds_and_magnets_al": "Tocá para saltar. Supera obstáculos y recoge monedas, diamantes e imanes en el camino.",
+    "tap_balloons_to_pop_them_you_have_three_lives_and_one_minute_watch_out_f": "Tocá los globos para reventarlos. Tenés tres vidas y un minuto. ¡Cuidado con las bombas!",
+    "find_the_exit_of_the_maze_before_time_runs_out": "¡Encontrá la salida del laberinto antes de que acabe el tiempo!",
+    "move_leo_through_the_maze_collect_keys_and_stars_and_find_the_exit_befor": "Mueve a Leo a través del laberinto, recoge llaves y estrellas y encontrá la salida antes de que se acabe el tiempo.",
+    "successfully_finishing_the_maze_based_on_difficulty_level_grants_coins_a": "Terminar con éxito el laberinto según el nivel de dificultad otorga monedas, y una bonificación de puntuación agregá aún más.",
+    "drag_the_picture_pieces_to_the_right_place_on_the_board_complete_all_the": "Arrastrá las piezas de la imagen al lugar correcto en el tablero. Completá todas las piezas antes de que acabe el tiempo.",
+    "completing_the_puzzle_based_on_difficulty_level_grants_coins_and_a_score": "Completar el rompecabezas según el nivel de dificultad otorga monedas, y una bonificación de puntuación agregá aún más.",
+    "tap_the_targets_before_they_disappear": "¡Tocá los objetivos antes de que desaparezcan!",
+    "tap_the_targets_that_appear_on_the_screen_before_they_disappear_you_have": "Tocá los objetivos que aparecen en la pantalla antes de que desaparezcan. Tenés tres vidas.",
+    "sort_shapes_and_colors_into_the_correct_boxes": "¡Clasificá formas y colores en las casillas correctas!",
+    "drag_each_shape_to_the_matching_box_by_shape_or_color_finish_all_the_sor": "Arrastrá cada forma al cuadro correspondiente por forma o color. Terminá toda la clasificación antes de que acabe el tiempo.",
+    "finishing_successfully_based_on_difficulty_level_grants_coins_and_a_scor": "Terminar con éxito según el nivel de dificultad otorga monedas, y una bonificación de puntuación agregá aún más.",
+    "slice_fruit_avoid_bombs_and_reach_the_score_target": "¡Corta fruta, evitá las bombas y alcanza el objetivo de puntuación!",
+    "drag_your_finger_across_the_screen_to_slice_flying_fruit_avoid_bombs_you": "Arrastrá el dedo por la pantalla para cortar frutas voladoras. Evitá las bombas: tenés tres errores permitidos.",
+    "merge_mining_dogs_break_rocks_and_earn_points_to_redeem": "¡Fusioná perros mineros, rompé rocas y ganá puntos para canjear!"
+  },
+  "pages__offline__index": {
+    "tap_battle": "Tocá batalla",
+    "flip_cards_find_pairs_and_try_to_win": "Voltea cartas, encontrá parejas e intentá ganar.",
+    "play_on_the_same_device_even_offline": "Jugá en el mismo dispositivo, incluso sin conexión."
+  },
+  "pages__offline__tap-battle": {
+    "left_side_wins": "¡El lado izquierdo ganá! 🏆",
+    "right_side_wins": "¡El lado derecho ganá! 🏆"
+  }
+}

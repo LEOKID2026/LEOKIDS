@@ -1,0 +1,79 @@
+{
+  "components__promo__PromoMobileCompareVideo": {
+    "mobile_compare_version": "Versión de comparación celular",
+    "mobile_test_video": "Vídeo de prueba celular"
+  },
+  "components__seo__public-seo-wide-defaults": {
+    "want_to_create_more_sheets_and_unlock_every_topic": "¿Querés crear más hojas y desbloquear todos los temas?"
+  },
+  "lib__classroom-activities__student-activity-error-labels.client": {
+    "please_sign_in": "Iniciá sesión",
+    "you_do_not_have_permission_to_open_this_activity": "No tenés permiso para abrir esta actividad.",
+    "the_system_is_updating_try_again_later": "El sistema se está actualizando. Volvé a intentarlo más tarde.",
+    "something_went_wrong_please_try_again": "Algo salió mal — intentalo de nuevo",
+    "server_error_please_try_again": "Error del servidor — intentalo de nuevo"
+  },
+  "lib__guest__guest-start-rate-limit.server": {
+    "too_many_attempts_please_try_again_in_a_few_minutes": "Demasiados intentos. Volvé a intentarlo en unos minutos."
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "you_don_t_have_permission_to_select_this_grade": "No tenés permiso para seleccionar este grado."
+  },
+  "lib__site__public-page-seo": {
+    "learn_and_play_with_leo_leo_kids": "Aprendé y jugá con Leo · Leo Kids",
+    "practice_without_printing_leo_kids_guides": "Practicá sin imprimir · Guías Leo Kids"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1.er grado",
+    "grade_2": "2.º grado",
+    "grade_3": "3.er grado",
+    "grade_4": "4.º grado",
+    "grade_5": "5.º grado",
+    "grade_6": "6.º grado"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1.er grado",
+    "grade_2": "2.º grado",
+    "grade_3": "3.er grado",
+    "grade_4": "4.º grado",
+    "grade_5": "5.º grado",
+    "grade_6": "6.º grado"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "the_report_explains_the_experiment_worked": "El informe explicá ___ el experimento funcionó."
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1.er grado",
+    "grade_2": "2.º grado",
+    "grade_3": "3.er grado",
+    "grade_4": "4.º grado",
+    "grade_5": "5.º grado",
+    "grade_6": "6.º grado"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "something_went_wrong_please_try_again": "Algo salió mal. Intentalo de nuevo.",
+    "select_a_child": "Seleccioná un niño o niña",
+    "choose_topics_for_mixed_practice": "Elegí temas para práctica mixta.",
+    "no_worksheet_to_preview_go_back_to_create_one": "No hay hoja de trabajo para obtener una vista previa. Volvé para crear uno."
+  },
+  "pages__api__parent__delete-student": {
+    "server_error_please_try_again": "Error del servidor — intentalo de nuevo"
+  },
+  "pages__api__parent__guest__link": {
+    "unable_to_link_this_guest_number_check_the_number_and_try_again": "No se puede vincular este número de invitado. Comprobá el número y volvé a intentarlo."
+  },
+  "pages__student__activity__[activityId]": {
+    "type_your_answer": "Escribí tu respuesta"
+  },
+  "pages__teacher__class__[classId]": {
+    "you_do_not_have_permission_to_view_this_class_report": "No tenés permiso para ver este informe de clase."
+  },
+  "pages__teacher__student__[studentId]": {
+    "you_do_not_have_permission_to_view_this_student_s_report": "No tenés permiso para ver el informe de este estudiante."
+  },
+  "utils__student-question-display": {
+    "complete_the_missing_part_of_the_equation": "Completá la parte que falta de la ecuación:",
+    "find_the_unknown": "Encontrá lo desconocido:",
+    "find_x": "Encontrá x:"
+  }
+}

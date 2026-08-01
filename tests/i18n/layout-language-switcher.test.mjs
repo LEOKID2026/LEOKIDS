@@ -51,15 +51,18 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
   }
 });
 
-test("selectable locales for switcher are English + Español only (native names)", () => {
+test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
   assert.deepEqual(
     locales.map((l) => l.id).sort(),
-    ["en", "es-419"]
+    ["en", "es-AR", "es-CO", "es-MX", "es-PE"]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   assert.equal(byId.en.nativeName, "English");
-  assert.equal(byId["es-419"].nativeName, "Español");
+  assert.equal(byId["es-MX"].nativeName, "México");
+  assert.equal(byId["es-CO"].nativeName, "Colombia");
+  assert.equal(byId["es-AR"].nativeName, "Argentina");
+  assert.equal(byId["es-PE"].nativeName, "Perú");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {

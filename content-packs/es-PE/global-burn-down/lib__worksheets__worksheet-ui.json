@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "printable_worksheets": "Hojas de trabajo para imprimir",
+    "create_worksheet": "Crear hoja de trabajo",
+    "create_a_new_worksheet": "Crear una hoja de trabajo nueva",
+    "worksheet": "Hoja de trabajo",
+    "creating_worksheet": "Creando hoja de trabajo…",
+    "try_the_worksheet_generator": "Prueba el generador de hojas de trabajo",
+    "back_to_worksheets": "Volver a las hojas de trabajo"
+  }
+}

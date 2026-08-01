@@ -1,0 +1,17 @@
+{
+  "hubSubtitle": "Elegí la experiencia que más te guste — juegos de Leo, juego sin conexión y más.",
+  "hubOfflineBlurb": "Jugá aunque no haya internet",
+  "soloHubSubtitle": "¡Jugá, ganá puntos y coleccioná monedas y gemas para tu mundo!",
+  "arcadeHubSubtitle": "Jugá con amigos — creá una sala o uníte a una.",
+  "selectEntryCost": "Elegí el monto de entrada",
+  "apiInsufficientFunds": "No tenés suficientes monedas para esta acción",
+  "quickAlreadyInRoom": "Ya estás en una sala — tocá Entrar al juego",
+  "arcadeGames": {
+    "dominoes": {
+      "blurb": "Dominó de bloqueo · jugá hasta quedarte sin fichas"
+    },
+    "bingo": {
+      "blurb": "Bingo · ganá con una línea completa"
+    }
+  }
+}

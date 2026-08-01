@@ -2,12 +2,22 @@
  * Locale-aware meanings for English learning words.
  * English word ID stays stable; meaning follows instructionLocale.
  * Global: never return Hebrew. WORD_LISTS is an English ID catalog.
- * Spanish (es / es-419 / …): word-meanings/es-419.js pack.
- * English and unknown locales: the English word itself.
+ * Spanish: country packs deep-merge onto es-419 (e.g. es-CO → es-419 → en word).
  */
 
 import { WORD_LISTS } from "./word-lists.js";
+import { WORD_MEANINGS_EN } from "./word-meanings/en.js";
 import { WORD_MEANINGS_ES_419 } from "./word-meanings/es-419.js";
+import { WORD_MEANINGS_ES_CO } from "./word-meanings/es-CO.js";
+import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
+import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
+
+/** @type {Record<string, Record<string, Record<string, string>>>} */
+const MEANING_PACKS = {
+  en: WORD_MEANINGS_EN,
+  "es-419": WORD_MEANINGS_ES_419,
+  "es-CO": WORD_MEANINGS_ES_CO,
+};
 
 /**
  * @param {unknown} locale
@@ -31,12 +41,36 @@ function isSpanishInstructionLocale(locale) {
 }
 
 /**
+ * Build merged meaning tables for a locale via fallback chain.
+ * @param {string|null|undefined} instructionLocale
+ * @returns {Record<string, Record<string, string>>}
+ */
+function getMergedMeaningPack(instructionLocale) {
+  const tag = normalizeLocaleTag(instructionLocale);
+  if (!isSpanishInstructionLocale(tag)) {
+    return MEANING_PACKS.en || {};
+  }
+  const chain = getLocaleFallbackChain(tag === "es" || tag === "es419" ? "es-419" : tag);
+  /** @type {Record<string, Record<string, string>>} */
+  let merged = {};
+  for (const loc of [...chain].reverse()) {
+    const pack = MEANING_PACKS[loc];
+    if (!pack) continue;
+    merged = /** @type {Record<string, Record<string, string>>} */ (
+      deepMergeJson(merged, pack)
+    );
+  }
+  return merged;
+}
+
+/**
+ * @param {Record<string, Record<string, string>>} pack
  * @param {string} listKey
  * @param {string} enWord
  * @returns {string|null}
  */
-function spanishMeaningFromPack(listKey, enWord) {
-  const list = WORD_MEANINGS_ES_419?.[listKey];
+function meaningFromPack(pack, listKey, enWord) {
+  const list = pack?.[listKey];
   if (!list || typeof list !== "object") return null;
   const value = list[enWord];
   return typeof value === "string" && value ? value : null;
@@ -64,14 +98,15 @@ export function resolveEnglishWordMeaning(enWord, { listKey, instructionLocale }
   if (!word) return "";
 
   const resolvedListKey = listKey || findListKeyForEnglishWord(word);
+  const pack = getMergedMeaningPack(instructionLocale);
 
   if (isSpanishInstructionLocale(instructionLocale)) {
     if (resolvedListKey) {
-      const es = spanishMeaningFromPack(resolvedListKey, word);
+      const es = meaningFromPack(pack, resolvedListKey, word);
       if (es) return es;
     }
-    for (const key of Object.keys(WORD_MEANINGS_ES_419 || {})) {
-      const es = spanishMeaningFromPack(key, word);
+    for (const key of Object.keys(pack || {})) {
+      const es = meaningFromPack(pack, key, word);
       if (es) return es;
     }
   }

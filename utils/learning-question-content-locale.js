@@ -6,7 +6,7 @@ import { resolveContentLocale as resolveCore } from "../lib/content/locale.js";
 export const DEFAULT_CONTENT_LOCALE = "en";
 
 /** Product locales accepted by Global content resolution. */
-const PRODUCT_CONTENT_LOCALES = new Set(["en", "es-419"]);
+const PRODUCT_CONTENT_LOCALES = new Set(["en", "es-419", "es-MX", "es-CO", "es-AR", "es-PE"]);
 
 /** Detect Hebrew-script code points without embedding Unicode escapes in source. */
 export function containsHebrew(text) {
@@ -27,10 +27,11 @@ export function resolveContentLocale(opts) {
     market: opts?.market,
     curriculum: opts?.curriculum,
   });
-  if (!resolved || !PRODUCT_CONTENT_LOCALES.has(String(resolved))) {
-    return "en";
-  }
-  return resolved;
+  const id = String(resolved || "");
+  if (PRODUCT_CONTENT_LOCALES.has(id)) return id;
+  // Country / regional Spanish still product content via registry chain.
+  if (id.toLowerCase().startsWith("es-")) return id;
+  return "en";
 }
 
 const QUESTION_TEXT_KEYS = [

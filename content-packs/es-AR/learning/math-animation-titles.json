@@ -1,0 +1,15 @@
+{
+  "titles": {
+    "step_var_write_in_the_quotient": "paso {index}: escribí el cociente",
+    "find_a_common_denominator": "Encontrá un denominador común",
+    "write_the_exercise": "escribí el ejercicio",
+    "find_the_difference": "Encontrá la diferencia",
+    "confirm_it_is_constant": "Confirmá que es constante",
+    "find_the_missing_number": "Encontrá el número que falta",
+    "find_the_missing_divisor": "Encontrá el divisor que falta",
+    "find_the_missing_dividend": "Encontrá el dividendo que falta",
+    "break_apart_the_number": "Separá el número",
+    "read_the_story": "Leé la historia",
+    "read_the_question": "leé la pregunta"
+  }
+}

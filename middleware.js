@@ -8,6 +8,7 @@ import {
 import {
   isLocaleRoutingExcluded,
   shouldRedirectPrefixedDefaultLocale,
+  shouldRedirectToPublicLocalePrefix,
   stripLocaleFromPath,
   withLocalePath,
 } from "./lib/i18n/locale-path.js";
@@ -81,6 +82,17 @@ export function middleware(request) {
   if (parsed.locale && shouldRedirectPrefixedDefaultLocale(parsed.locale)) {
     const url = request.nextUrl.clone();
     url.pathname = parsed.pathname;
+    return NextResponse.redirect(url, 308);
+  }
+
+  // Never expose internal ids like /es-MX — canonicalize to public /mx.
+  if (
+    parsed.locale &&
+    parsed.hadPrefix &&
+    shouldRedirectToPublicLocalePrefix(parsed.locale, parsed.pathSegment)
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = withLocalePath(parsed.locale, parsed.pathname);
     return NextResponse.redirect(url, 308);
   }
 

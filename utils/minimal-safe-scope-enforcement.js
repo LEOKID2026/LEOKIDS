@@ -1,6 +1,6 @@
 /**
- * Minimal Safe Scope — אכיפת חוזה החלטה, gate-to-text, readiness, ועוצמת המלצות (v1).
- * מקור מדיניות: docs/decision-contract-v1.md, gate-to-text-binding-v1.md,
+ * Minimal Safe Scope — decision-contract, gate-to-text, readiness, and recommendation intensity (v1).
+ * Policy sources: docs/decision-contract-v1.md, gate-to-text-binding-v1.md,
  * subject-overall-readiness-policy-v1.md, recommendation-intensity-contract-v1.md
  */
 import { buildDecisionReadinessContractsBundleV1 } from "./contracts/decision-readiness-contract-v1.js";
@@ -44,7 +44,7 @@ export function deriveEvidenceBandFromRowSignals(ctx) {
 }
 
 /**
- * חישוב max PS (0–3) לפי gate-to-text-binding v1 + עדיפות DEv2.
+ * Compute max PS (0–3) from gate-to-text-binding v1 + DEv2 priority.
  * @param {object} p
  */
 export function computeEffectiveMaxPS(p) {
@@ -72,12 +72,12 @@ export function computeEffectiveMaxPS(p) {
   return Math.max(0, Math.min(3, maxPS));
 }
 
-/** Detection of over-strong HE/EN wording (keep HE for legacy parent copy). */
+/** Detection of over-strong parent wording (English Global product copy). */
 const PS3_REGEX =
-  /מומלץ בבירור|בהחלט כדאי|בוודאות|מוכח ש|סגורנו|אין ספק|ודאי ש|בטוח ש|מאסטרי מלא|שליטה מלאה|clearly recommended|definitely worth|with certainty|proven that|no doubt|sure that|certain that|full mastery|full control/giu;
+  /clearly recommended|definitely worth|with certainty|proven that|no doubt|sure that|certain that|full mastery|full control/giu;
 const PS3_PROMO_REGEX =
-  /קפיצת כיתה|שחרור מלא|עצמאות מלאה|העלאת כיתה כעת|grade skip|full release|full independence|raise the grade now/giu;
-const HEDGE_PRESENT_RE = /מוקדם|חלקי|אולי|נאסוף|early|partial|perhaps|maybe|gather more|still early|initial sign/i;
+  /grade skip|full release|full independence|raise the grade now/giu;
+const HEDGE_PRESENT_RE = /early|partial|perhaps|maybe|gather more|still early|initial sign/i;
 
 /**
  * @param {string} text
@@ -105,7 +105,7 @@ export function clampHebrewParentTextToMaxPS(text, maxPS, contentClass = "diagno
       out = `Initial sign only - ${out}`;
     }
   } else if (maxPS === 2) {
-    out = out.replace(/מומלץ בבירור|בהחלט כדאי|clearly recommended|definitely worth/giu, "worth considering carefully");
+    out = out.replace(/clearly recommended|definitely worth/giu, "worth considering carefully");
   }
 
   return out.replace(/\s+/g, " ").trim();
@@ -252,7 +252,7 @@ export function capInterventionIntensityByContract(intensity, ctx) {
 }
 
 /**
- * @param {object} rec — רשומת המלצת נושא מהמנוע
+ * @param {object} rec — topic recommendation record from the engine
  */
 export function applyGateToTextClampToTopicRecord(rec) {
   if (!rec || typeof rec !== "object") return rec;
@@ -407,7 +407,7 @@ export function applyGateToTextClampToTopicRecord(rec) {
 }
 
 /**
- * מערך המלצות נושא — אחרי בניית המנוע
+ * Topic recommendation array — after engine build
  * @param {object[]|null|undefined} recs
  */
 export function applyGateToTextClampToTopicRecommendations(recs) {
@@ -416,7 +416,7 @@ export function applyGateToTextClampToTopicRecommendations(recs) {
 }
 
 /**
- * המרת יחידות DEv2 לשורות סינתטיות לחישוב breadth/depth לפי החוזה.
+ * Map DEv2 units to synthetic rows for breadth/depth contract checks.
  * @param {object[]} units
  */
 export function v2UnitsToContractRows(units) {
@@ -441,7 +441,7 @@ export function v2UnitsToContractRows(units) {
 }
 
 /**
- * סריקת דוח מפורט לאיתור הפרות (לתרחישים)
+ * Scan a detailed report for contract violations (scenarios).
  * @returns {{ fails: Array<{ code: string, detail?: string }> }}
  */
 export function scanDetailedReportForContractViolations(detailedReport, baseReport) {
@@ -477,7 +477,7 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
         dataSufficiencyLevel: String(tr?.dataSufficiencyLevel || "low"),
         conclusionStrength: cs,
       });
-      if (band <= 1 && /בטוח|ודאי|מוכח|סגור|יציב לחלוטין|certain|sure|proven|settled|fully stable/giu.test(combined)) {
+      if (band <= 1 && /certain|sure|proven|settled|fully stable/giu.test(combined)) {
         fails.push({ code: "fail_too_early", detail: "decisive wording under E0–E1" });
       }
       const riN = RI_RANK[String(tr?.interventionIntensity)] || 0;
@@ -493,7 +493,7 @@ export function scanDetailedReportForContractViolations(detailedReport, baseRepo
         riN >= 3 &&
         band <= 1 &&
         !/\d/.test(combined) &&
-        !/שאלות|טעויות|תרגול|questions|mistakes|practice/i.test(combined)
+        !/questions|mistakes|practice/i.test(combined)
       ) {
         fails.push({ code: "fail_generic", detail: "RI3 under thin evidence without anchor" });
       }

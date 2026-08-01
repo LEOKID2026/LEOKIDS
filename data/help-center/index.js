@@ -63,8 +63,11 @@ export const ALL_ARTICLES = [
  * @param {string|null|undefined} [locale]
  */
 export function resolveHelpLocale(locale) {
-  const id = String(locale || "en").toLowerCase();
-  if (id === "es-419") return "es-419";
+  const id = String(locale || "en")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  if (id === "es-419" || id.startsWith("es-")) return "es-419";
   return "en";
 }
 

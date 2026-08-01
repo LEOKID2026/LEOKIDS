@@ -19,16 +19,19 @@ test("stripLocaleFromPath: extracts enabled locale prefix", () => {
     locale: "en-XA",
     pathname: "/parent/dashboard",
     hadPrefix: true,
+    pathSegment: "en-XA",
   });
   assert.deepEqual(stripLocaleFromPath("/ar-XB/learning"), {
     locale: "ar-XB",
     pathname: "/learning",
     hadPrefix: true,
+    pathSegment: "ar-XB",
   });
   assert.deepEqual(stripLocaleFromPath("/es-419/about"), {
     locale: "es-419",
     pathname: "/about",
     hadPrefix: true,
+    pathSegment: "es-419",
   });
 });
 
@@ -37,6 +40,7 @@ test("stripLocaleFromPath: Hebrew /he is never a locale segment", () => {
     locale: null,
     pathname: "/he/parent/dashboard",
     hadPrefix: false,
+    pathSegment: null,
   });
   assert.equal(getLocaleFromPath("/he/about"), null);
 });
@@ -46,11 +50,13 @@ test("stripLocaleFromPath: registered disabled locale still strips prefix", () =
     locale: "fr",
     pathname: "/about",
     hadPrefix: true,
+    pathSegment: "fr",
   });
   assert.deepEqual(stripLocaleFromPath("/about"), {
     locale: null,
     pathname: "/about",
     hadPrefix: false,
+    pathSegment: null,
   });
 });
 

@@ -1,0 +1,161 @@
+{
+  "home": {
+    "subhead": "Practicá matemáticas, geometría, inglés y ciencias — pensado para estudiantes de primaria."
+  },
+  "empty": {
+    "noStudents": "Aún no hay estudiantes. Agregá un niño o niña para empezar."
+  },
+  "installApp": {
+    "iosStep1": "Tocá el botón Compartir 📤 en la parte inferior de Safari",
+    "iosStep2": "Desplazate hacia abajo y elegí \"Agregar a la pantalla de inicio\"",
+    "iosStep3": "Tocá \"Agregar\" en la esquina superior derecha",
+    "androidStep1": "En Chrome/Edge: hacé clic en el ícono de instalar en la barra de direcciones",
+    "androidStep2": "En Firefox: abrí el menú (☰) y elegí \"Instalar\"",
+    "androidStep3": "En el celular: tocá \"Agregar a la pantalla de inicio\" en el menú del navegador",
+    "prompt": {
+      "bodyIos": "Agregá la app a tu pantalla de inicio para una mejor experiencia",
+      "iosStep1": "Tocá el botón Compartir 📤 en la parte inferior de Safari",
+      "iosStep2": "Elegí \"Agregar a la pantalla de inicio\"",
+      "iosStep3": "Tocá \"Agregar\""
+    }
+  },
+  "guest": {
+    "resume": {
+      "alreadyLinked": "Este número de invitado ya está vinculado a un padre o madre. Iniciá sesión con tu nombre de usuario y código, o pedí a tu padre o madre los datos de acceso."
+    }
+  },
+  "public": {
+    "contact": {
+      "intro": "¿Tenés una pregunta, idea, comentario o un error para reportar? Nos encantaría saber de vos. Escribinos sobre el aprendizaje, la cuenta de tu hijo o hija, los informes para padres, los juegos, las tarjetas o tu experiencia usando el sitio.",
+      "form": {
+        "errors": {
+          "name": "Ingresá tu nombre.",
+          "email": "Ingresá tu correo electrónico.",
+          "message": "Escribí un mensaje.",
+          "network": "Error de red. Intentalo de nuevo en un momento.",
+          "rateLimit": "Demasiados mensajes en poco tiempo. Intentalo de nuevo más tarde.",
+          "generic": "No pudimos enviar tu mensaje en este momento. Intentalo de nuevo más tarde."
+        }
+      }
+    },
+    "homepage": {
+      "hero": {
+        "badge": "Aprendé · Jugá · Avanzá",
+        "flowStep3": "Elegí el siguiente paso"
+      },
+      "valueCards": {
+        "0": {
+          "text": "Mirá qué practicó tu hijo o hija, dónde está mejorando y qué reforzar."
+        }
+      },
+      "parentIntro": {
+        "text": "Obtené una imagen clara de fortalezas y brechas, y luego enviá una actividad enfocada que coincida con lo que necesita ahora."
+      },
+      "parentVideo": {
+        "description": "Mirá un video corto sobre el seguimiento, los informes y las actividades de padres."
+      },
+      "learningSystem": {
+        "flowStep3": "Elegí el siguiente paso",
+        "capabilities": {
+          "subject-map": {
+            "text": "Mirá el progreso en matemáticas, geometría, inglés y ciencias hasta los temas practicados."
+          }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "2": {
+            "text": "Asigna práctica enfocada y seguí los resultados después."
+          },
+          "3": {
+            "text": "La práctica, los juegos y las actividades se conectan en una imagen que se actualizá."
+          }
+        }
+      },
+      "kids": {
+        "text": "Respondé preguntas, avanzá a tu ritmo, jugá, reuní recompensas y volvé por más.",
+        "videoDescription": "Mirá un video corto sobre la práctica, los juegos, las sorpresas y el progreso en el mundo infantil."
+      },
+      "howItWorks": {
+        "title": "Empezá en unos pocos pasos simples",
+        "step1": "Agregá a tu hijo o hija y obtené datos de acceso personales"
+      },
+      "finalCta": {
+        "title": "¿Querés una imagen más clara de cómo le va a tu hijo o hija?",
+        "text": "Abrí una cuenta, agregá a tu hijo o hija y construí una imagen organizada del aprendizaje a partir de la práctica, las actividades y los juegos."
+      },
+      "teachers": {
+        "text": "Enviá actividades enfocadas, mirá cómo rinden los estudiantes y continuá desde la clase en casa."
+      }
+    },
+    "about": {
+      "title": "Acerca de Leo — aprendé, practicá y avanzá"
+    }
+  },
+  "pwa": {
+    "installBody": "Tocá \"Instalar\" abajo para agregar la app a tu pantalla de inicio.",
+    "iosStep1": "Abrí esta página en Safari.",
+    "iosStep2": "Tocá el botón Compartir en la barra del navegador.",
+    "iosStep3": "Desplazate por el menú y elegí \"Agregar a la pantalla de inicio\".",
+    "iosStep4": "Asegurate de que \"Abrir como app web\" esté activado, si aparece.",
+    "iosStep5": "Tocá \"Agregar\". El ícono de la app aparecerá en tu pantalla de inicio.",
+    "iosHelpFooter": "¿No ves \"Agregar a la pantalla de inicio\"? Desplazate al final del menú, tocá \"Editar acciones\" y agregalo a la lista.",
+    "installedStudent": "LEO KIDS está instalada. Abrí el ícono LEO KIDS desde tu pantalla de inicio.",
+    "installedParent": "P LEO KIDS está instalada. Abrí el ícono P LEO KIDS desde tu pantalla de inicio.",
+    "installedTeacher": "T LEO KIDS está instalada. Abrí el ícono T LEO KIDS desde tu pantalla de inicio.",
+    "promptAcceptedStudent": "Chrome aceptó la instalación. Si el ícono LEO KIDS no aparece en tu pantalla de inicio en un minuto, actualizá la página e intentalo de nuevo. Si aún no hay ícono, eliminá instalaciones anteriores de este sitio en la configuración de apps.",
+    "promptAcceptedParent": "Chrome aceptó la instalación. Si el ícono P LEO KIDS no aparece en tu pantalla de inicio en un minuto, actualizá la página e intentalo de nuevo. Si aún no hay ícono, eliminá instalaciones anteriores de este sitio en la configuración de apps.",
+    "promptAcceptedTeacher": "Chrome aceptó la instalación. Si el ícono T LEO KIDS no aparece en tu pantalla de inicio en un minuto, actualizá la página e intentalo de nuevo.",
+    "unavailableConsumed": "El aviso de instalación ya se usó. Actualizá la página para intentarlo de nuevo, si Chrome aún lo permite.",
+    "unavailableError": "El aviso de instalación falló. Actualizá la página e intentalo de nuevo.",
+    "unavailableNoPromptStudent": "Chrome no ofreció un aviso de instalación para LEO KIDS en este momento. Asegurate de que la app no esté ya instalada y probá actualizar.",
+    "unavailableNoPromptParent": "Chrome no ofreció un aviso de instalación para P LEO KIDS en este momento. Asegurate de que LEO KIDS esté instalada y probá actualizar — las dos apps deben ser separadas.",
+    "unavailableNoPromptTeacher": "Chrome no ofreció un aviso de instalación para T LEO KIDS en este momento. Asegurate de que la app no esté ya instalada y probá actualizar."
+  },
+  "parent": {
+    "promoDescription": "Mirá un video corto sobre las herramientas para padres y cómo aprenden los niños en LEO KIDS.",
+    "saveCredentialsImportant": "Guardá estos datos — el PIN no se mostrará de nuevo.",
+    "deleteChildConfirm": "Escribí el nombre del niño o niña exactamente:",
+    "deleteConfirmPlaceholder": "Escribí el nombre para confirmar",
+    "gradeRequired": "Seleccioná un grado.",
+    "childLimitMessage": "Podés agregar hasta {limit} niños por cuenta de padre o madre.",
+    "credentialsFailedAfterCreate": "El niño o niña se creó, pero falló la configuración de acceso — podés configurarla en los detalles del niño o niña.",
+    "guestLeoEightDigits": "Ingresá un Número Leo de 8 dígitos.",
+    "credentialsBothRequired": "Ingresá el nombre de usuario y el PIN.",
+    "newPinFourDigits": "Ingresá un PIN nuevo de 4 dígitos.",
+    "deleteNetworkError": "Error de red — intentalo de nuevo.",
+    "errors": {
+      "signInAgain": "Iniciá sesión de nuevo.",
+      "signInAgainParent": "Iniciá sesión de nuevo como padre o madre.",
+      "signInAgainTeacher": "Iniciá sesión de nuevo como docente.",
+      "reportForbidden": "No tenés acceso al informe de este niño o niña.",
+      "actionForbidden": "No tenés permiso para esta acción.",
+      "genericFailed": "No se pudo completar esa acción. Intentalo de nuevo."
+    }
+  },
+  "student": {
+    "guestGameLockHint": "Pedí a un padre o madre que lo desbloquee",
+    "subjectsIntro": "Progreso por materia — precisión, preguntas, nivel y estrellas. Tocá \"Ir a la materia\" para empezar a practicar.",
+    "noBadgesYet": "Aún no hay insignias — empezá a aprender y ganá logros en cada materia.",
+    "youHaveOneBox": "Tenés 1 caja",
+    "youHaveBoxes": "Tenés {count} cajas",
+    "errors": {
+      "sessionExpired": "Tu sesión expiró — iniciá sesión de nuevo."
+    },
+    "promoDescription": "Mirá un video corto sobre la práctica, los juegos, las tarjetas y las sorpresas en el camino.",
+    "avatarChoosePrompt": "Elegí un avatar:",
+    "avatarImageTooLarge": "La imagen es demasiado grande. Elegí una imagen de hasta 5 MB",
+    "avatarImageTypeInvalid": "Elegí solo un archivo de imagen",
+    "accessGateSignInPrompt": "Iniciá sesión como estudiante para continuar"
+  },
+  "help": {
+    "videoModalMobile": "Video tutorial (celular)"
+  },
+  "copilot": {
+    "panel": {
+      "intro": "Podés preguntar libremente sobre el informe aquí, por ejemplo: qué importa más ahora, en qué enfocarse esta semana, qué va bien o cómo explicárselo a tu hijo o hija.",
+      "youPrefix": "Vos: ",
+      "errorGeneric": "No se puede responder la pregunta en este momento. Intentalo de nuevo en un momento."
+    }
+  }
+}

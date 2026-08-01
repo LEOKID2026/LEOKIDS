@@ -79,7 +79,7 @@ export function dedupeSentencesHe(text) {
 export function dedupeTopicPairsHe(text) {
   const raw = norm(text);
   if (!raw.includes("-")) return raw;
-  const pairRe = /([\p{L}][\p{L}\s]{0,24})\s*-\s*([\u0590-\u05FF][^\n,.;]{2,48})/gu;
+  const pairRe = /([\p{L}][\p{L}\s]{0,24})\s*-\s*([\p{L}][^\n,.;]{2,48})/gu;
   const seen = new Set();
   let changed = false;
   const rebuilt = raw.replace(pairRe, (full, subj, topic) => {

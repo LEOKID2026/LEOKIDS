@@ -48,7 +48,12 @@ test("es-419 is registered, LTR, enabled, Español label", () => {
 test("es-419 always appears in language switcher with English", () => {
   const ids = getSelectableLocales().map((l) => l.id);
   assert.ok(ids.includes("en"));
-  assert.ok(ids.includes("es-419"));
+  // es-419 is the inheritance base; countries are selectable instead of Español.
+  assert.ok(!ids.includes("es-419"));
+  assert.ok(ids.includes("es-MX"));
+  assert.ok(ids.includes("es-CO"));
+  assert.ok(ids.includes("es-AR"));
+  assert.ok(ids.includes("es-PE"));
   assert.ok(!ids.includes("en-XA"));
   assert.ok(!ids.includes("ar-XB"));
 });
@@ -58,6 +63,7 @@ test("es-419 path routing and same-page locale switch prefix", () => {
     locale: "es-419",
     pathname: "/learning",
     hadPrefix: true,
+    pathSegment: "es-419",
   });
   assert.equal(withLocalePath("es-419", "/learning"), "/es-419/learning");
   assert.equal(withLocalePath("en", "/learning"), "/learning");

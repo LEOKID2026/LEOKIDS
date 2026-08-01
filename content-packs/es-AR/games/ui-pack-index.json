@@ -1,0 +1,150 @@
+{
+  "balloons": {
+    "help": {
+      "howToPlay": "Tocá los globos para reventarlos. Tenés tres vidas y un minuto. ¡Cuidado con las bombas!"
+    }
+  },
+  "bingo": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "catcher": {
+    "help": {
+      "tip": "Mantené tus ojos en lo que está cayendo y avanzá antes de que el objeto llegue al fondo."
+    }
+  },
+  "checkers": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "chess": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "dominoes": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "flyer": {
+    "blurb": "¡Mantené presionado para volar, recoger monedas y evitar obstáculos!",
+    "help": {
+      "howToPlay": "Mantené presionado el botón o la pantalla para volar y suéltalo para descender. Coleccioná monedas y evitá obstáculos."
+    }
+  },
+  "fourline": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "fruit-slice": {
+    "blurb": "¡Corta fruta, evitá las bombas y alcanza el objetivo de puntuación!",
+    "help": {
+      "howToPlay": "Arrastrá el dedo por la pantalla para cortar frutas voladoras. Evitá las bombas: tenés tres errores permitidos."
+    }
+  },
+  "leo-gifts": {
+    "help": {
+      "tip": "Comprobá que lo has dividido todo y que a Leo no le quedan demasiados: podés darle más a cada niño."
+    }
+  },
+  "leo-jump": {
+    "help": {
+      "howToPlay": "Mantené presionado el botón o la pantalla para volar y suéltalo para descender. Coleccioná monedas y evitá obstáculos."
+    }
+  },
+  "leo-miners": {
+    "blurb": "¡Fusioná perros mineros, rompé rocas y ganá puntos para canjear!",
+    "help": {
+      "howToPlay": "Agregá perros mineros al tablero, arrastrá perros del mismo nivel para fusionarlos y rompé rocas para ganar monedas y puntos."
+    }
+  },
+  "leo-number-path": {
+    "help": {
+      "scoring": "Correcto en el primer intento +30, segundo intento +20, tercer intento +10. Después de 3 errores pasás a la siguiente tarea."
+    }
+  },
+  "leo-supermarket": {
+    "help": {
+      "howToPlay": "Un cliente solicita productos: recogé los del estante, calculá el cambio y elegí las monedas correspondientes. Tocá \"Dar cambio\" cuando estés listo."
+    }
+  },
+  "leo-word-detective": {
+    "blurb": "Arrastrá evidencia a la pizarra y resolvé casos de lectura y vocabulario."
+  },
+  "leo-word-train": {
+    "help": {
+      "howToPlay": "Elegí una tarjeta, cárgala en un vagón vacío y tocá \"Enviar el tren\". Cuando la respuesta es correcta, ¡el tren sale!"
+    }
+  },
+  "ludo": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "maze": {
+    "blurb": "¡Encontrá la salida del laberinto antes de que acabe el tiempo!",
+    "help": {
+      "howToPlay": "Mové a Leo a través del laberinto, coleccioná llaves y estrellas y encontrá la salida antes de que se acabe el tiempo.",
+      "rewards": "Terminar con éxito el laberinto según el nivel de dificultad otorga monedas, y una bonificación de puntuación agregá aún más."
+    }
+  },
+  "memory-match": {
+    "blurb": "Voltea cartas, encontrá parejas e intentá ganar."
+  },
+  "memory": {
+    "blurb": "¡Voltea cartas y encontrá pares antes de que se acabe el tiempo!",
+    "help": {
+      "howToPlay": "Tocá una carta para darle la vuelta y encontrá el par correspondiente. Cada par que encuentres permanece abierto.",
+      "scoring": "Comenzás con una puntuación alta: cuanto más tardes, más baja será. Encontrar todas las parejas antes de que acabe el tiempo = una victoria."
+    }
+  },
+  "picture-puzzle": {
+    "help": {
+      "howToPlay": "Arrastrá las piezas de la imagen al lugar correcto en el tablero. Completá todas las piezas antes de que acabe el tiempo.",
+      "rewards": "Completar el rompecabezas según el nivel de dificultad otorga monedas, y una bonificación de puntuación agregá aún más."
+    }
+  },
+  "puzzle": {
+    "help": {
+      "rewards": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agregá aún más.",
+      "tip": "Intentá mantener una esquina libre para tener espacio para mover las fichas."
+    }
+  },
+  "smart-blocks": {
+    "help": {
+      "rewards": "Ganar según el nivel de dificultad otorga monedas y una bonificación de puntuación agregá aún más."
+    }
+  },
+  "snakes-and-ladders": {
+    "blurb": "Jugá con amigos en la sala de juegos.",
+    "help": {
+      "howToPlay": "Seguí las instrucciones que aparecen en pantalla para este juego."
+    }
+  },
+  "sort-shapes": {
+    "blurb": "¡Clasificá formas y colores en las casillas correctas!",
+    "help": {
+      "howToPlay": "Arrastrá cada forma al cuadro correspondiente por forma o color. Terminá toda la clasificación antes de que acabe el tiempo.",
+      "rewards": "Terminar con éxito según el nivel de dificultad otorga monedas, y una bonificación de puntuación agregá aún más."
+    }
+  },
+  "tap-battle": {
+    "title": "Tocá batalla"
+  },
+  "target-tap": {
+    "blurb": "¡Tocá los objetivos antes de que desaparezcan!",
+    "help": {
+      "howToPlay": "Tocá los objetivos que aparecen en la pantalla antes de que desaparezcan. Tenés tres vidas."
+    }
+  }
+}

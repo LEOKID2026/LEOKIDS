@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "something_went_wrong_please_try_again": "Algo salió mal. Intentalo de nuevo.",
+    "select_a_child": "Seleccioná un niño o niña",
+    "choose_topics_for_mixed_practice": "Elegí temas para práctica mixta.",
+    "no_worksheet_to_preview_go_back_to_create_one": "No hay hoja de trabajo para obtener una vista previa. Volvé para crear uno."
+  }
+}

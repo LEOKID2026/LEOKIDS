@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "grades_1_2": "1.er–2.º grado",
+    "grades_3_4": "3.er–4.º grado",
+    "grades_5_6": "5.º–6.º grado",
+    "drag_the_word_that_matches_the_picture": "Arrastrá la palabra que coincida con la imagen.",
+    "put_events_in_order_drag_to_the_board": "Ordená los eventos: arrástralos al tablero",
+    "drag_a_title_that_fits_the_passage": "Arrastrá un título que se ajuste al pasaje.",
+    "title_fits_the_passage": "¡El título se ajustá al pasaje!"
+  }
+}

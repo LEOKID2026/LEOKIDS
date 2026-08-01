@@ -1,0 +1,32 @@
+{
+  "remediateSameLevel": "Seguí practicando al mismo nivel.",
+  "maintainAndStrengthen": "Seguí practicando y subí el desafío de a poco.",
+  "actions": {
+    "remediateSameLevel": "Seguí practicando al mismo nivel.",
+    "maintainAndStrengthen": "Seguí practicando y subí el desafío de a poco.",
+    "reviewPrerequisites": "Repasá habilidades anteriores y luego volvé a este tema.",
+    "shortBreakThenRetry": "Toma una pausa breve y luego intentá algunas preguntas más."
+  },
+  "short": {
+    "recommendations": {
+      "maintainAndStrengthen": "Mantené el ritmo y agregá un poco más de desafío cuando esté listo."
+    }
+  },
+  "detailed": {
+    "recommendations": {
+      "practiceFocusSkill": "Practicá {skill} antes de pasar a un trabajo más desafiante.",
+      "remediateSameLevel": "Repetí el mismo nivel hasta que la precisión se mantenga de forma consistente por encima de {target}%.",
+      "maintainAndStrengthen": "Continuá con la práctica actual y luego subí la dificultad de forma gradual.",
+      "reviewPrerequisites": "Repasá: {prerequisites}, y luego volvé a intentar {topic}."
+    },
+    "caveats": {
+      "mixedSignals": "La precisión varía entre sesiones; volvé a revisar después de otro bloque de práctica."
+    }
+  },
+  "v2": {
+    "executive": {
+      "homeFocusWithAreas": "Enfocate primero en: {areas}",
+      "overallConfidenceOneUnit": "Vista general: por ahora solo se revisó un tema en el período seleccionado; se mantiene un lenguaje cuidadoso mientras se reuní más práctica."
+    }
+  }
+}

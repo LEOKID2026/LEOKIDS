@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "put_olives_on_a_quarter_of_the_pizza": "Poné aceitunas en una cuarta parte de la pizza.",
+    "put_basil_on_a_quarter_of_the_pizza": "Poné albahaca en una cuarta parte de la pizza.",
+    "put_basil_on_half_the_pizza": "Poné albahaca en la mitad de la pizza.",
+    "put_cheese_on_three_quarters_of_the_pizza": "Poné queso en tres cuartas partes de la pizza.",
+    "put_tomato_on_three_quarters_of_the_pizza": "Poné tomate en tres cuartas partes de la pizza.",
+    "put_mushrooms_on_a_quarter_of_the_pizza": "Poné champiñones en una cuarta parte de la pizza.",
+    "put_olives_on_three_quarters_of_the_pizza": "Poné aceitunas en tres cuartas partes de la pizza.",
+    "put_mushrooms_on_three_quarters_of_the_pizza": "Poné champiñones en tres cuartas partes de la pizza.",
+    "put_olives_on_an_eighth_of_the_pizza": "Poné aceitunas en una octava parte de la pizza.",
+    "put_basil_on_an_eighth_of_the_pizza": "Poné albahaca en una octava parte de la pizza.",
+    "put_cheese_on_seven_eighths_of_the_pizza": "Poné queso en siete octavos de la pizza.",
+    "put_tomato_on_two_eighths_of_the_pizza": "Poné tomate en dos octavos de la pizza.",
+    "put_olives_on_six_eighths_of_the_pizza": "Poné aceitunas en seis octavos de la pizza.",
+    "put_cheese_on_five_eighths_of_the_pizza": "Poné queso en cinco octavos de la pizza."
+  }
+}

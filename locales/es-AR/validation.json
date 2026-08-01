@@ -1,0 +1,14 @@
+{
+  "invalidEmail": "Ingresá un correo electrónico válido.",
+  "schemaNotReady": "El servicio aún no está listo. Intentalo de nuevo más tarde.",
+  "forbidden": "No tenés permiso para esta acción.",
+  "api": {
+    "unauthorized": "Iniciá sesión",
+    "internal_error": "Error del servidor — intentalo de nuevo",
+    "db_schema_not_ready": "El sistema aún se está actualizando — intentalo más tarde",
+    "staff_user_not_found": "No se encontró un usuario registrado con este correo. Registrate o iniciá sesión primero en el portal docente y luego vinculalo a la escuela.",
+    "physical_class_not_found": "No se encontró una clase coincidente — confirmá que estén configuradas las clases del docente y de la materia",
+    "auth_list_failed": "No se pudieron cargar los usuarios de autenticación — verificá que la clave del servidor esté configurada"
+  },
+  "apiFallback": "Algo salió mal — intentalo de nuevo"
+}

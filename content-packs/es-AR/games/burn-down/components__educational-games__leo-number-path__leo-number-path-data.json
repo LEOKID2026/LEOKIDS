@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "choose_all_the_odd_numbers_on_the_path": "Elegí todos los números impares del camino.",
+    "prompt_odd": "Elegí todos los números impares.",
+    "prompt_even": "Elegí todos los números pares.",
+    "prompt_skip_forward": "Empezá en {start}. Agregá {step} en cada paso. Elegí los números en orden.",
+    "prompt_arithmetic_missing": "Completá la secuencia. Elegí los números que faltan en orden."
+  }
+}

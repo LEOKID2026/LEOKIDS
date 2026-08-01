@@ -1,0 +1,42 @@
+{
+  "lib__learning-client__adaptive-planner-recommendation-view-model": {
+    "keep_practicing_based_on_your_progress": "Seguí practicando según tu progreso."
+  },
+  "lib__learning-client__studentHomeDashboardClient": {
+    "no_activity_recorded_yet_choose_a_subject_to_get_started": "Aún no se ha registrado ninguna actividad: elegí un tema para comenzar.",
+    "the_monthly_goal_is_usually_marked_after_you_reach_the_minutes_goal_keep": "La meta mensual generalmente se marca después de alcanzar la meta de minutos: ¡seguí aprendiendo!"
+  },
+  "lib__learning-client__subjectMonthlyPersistenceView": {
+    "you_reached_the_monthly_goal_keep_learning": "¡Alcanzaste la meta mensual! ¡Seguí aprendiendo!"
+  },
+  "pages__learning__english-master": {
+    "choose_a_game_mode_learning_challenge_with_timer_and_lives_speed_or_mara": "Elegí un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+    "read_each_question_carefully_sometimes_you_choose_an_answer_sometimes_yo": "Lea cada pregunta con atención: a veces elegí una respuesta, a veces escribí en inglés."
+  },
+  "utils__adaptive-learning-planner__adaptive-planner": {
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Camino seguro predeterminado: continuá la práctica sin avanzar en la dificultad."
+  },
+  "utils__curriculum-audit__israeli-primary-curriculum-map": {
+    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "Contexto político general; Los primeros grados a menudo enfatizan la exposición/escuchá; verifique la alfabetización formal versus la exposición por escuela.",
+    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "1.er y 2.º grado: la gramática no se asume como básica; separación de exposición/enriquecimiento."
+  },
+  "utils__geometry-conceptual-bank": {
+    "you_want_a_fence_around_a_rectangular_field_only_the_outer_boundary_what": "Querés una cerca alrededor de un campo rectangular (solo el límite exterior). ¿Qué sueles calcular para saber cuánta cerca comprar?",
+    "in_a_triangle_two_angles_are_known_50_and_60_what_can_you_conclude_about": "En un triángulo se conocen dos ángulos: 50° y 60°. ¿Qué podés concluir sobre el tercer ángulo antes de calcular el número?",
+    "same_shape_and_same_size_you_can_place_one_on_the_other": "Misma forma y mismo tamaño (podés colocar uno sobre otro)",
+    "rectangular_box_first_you_want_the_volume_what_is_a_reasonable_calculati": "Caja rectangular: primero querés el volumen. ¿Qué es un orden de cálculo razonable?"
+  },
+  "utils__learning-content-en__english": {
+    "choose_another_topic": "Elegí otro tema"
+  },
+  "utils__learning-diagnostics__probe-engine-v1": {
+    "prerequisite_remains_unstable": "El requisito previo seguí siendo inestable",
+    "default_maintenance_probe_confirm_stability": "Sonda de mantenimiento predeterminada: confirmá la estabilidad."
+  },
+  "utils__topic-next-step-engine": {
+    "you_can_try_advanced_on_the_same_topic": "Podés intentar avanzar sobre el mismo tema."
+  },
+  "utils__topic-next-step-phase2": {
+    "write_an_order_of_operations_on_a_draft_and_go_step_by_step": "Escribí un orden de operaciones en un borrador y ve paso a paso."
+  }
+}

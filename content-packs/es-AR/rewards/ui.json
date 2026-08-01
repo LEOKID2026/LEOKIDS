@@ -1,0 +1,50 @@
+{
+  "shop": {
+    "alreadyOwned": "¡Ya la tenés!",
+    "notEnoughCoins": "No tenés suficientes monedas para comprar esto.",
+    "purchaseFailed": "La compra falló — intentalo de nuevo.",
+    "sellFailed": "No se pudo vender el duplicado — intentalo de nuevo.",
+    "noDuplicate": "No tenés un duplicado para vender."
+  },
+  "fallback": {
+    "earnCard": "Ganá esta carta: {name}",
+    "keepLearning": "Seguí aprendiendo para desbloquear esta carta",
+    "completeRequirement": "Completá el requisito: {label}"
+  },
+  "gradeBands": {
+    "g12": "1.er–2.º grado",
+    "g34": "3.er–4.º grado",
+    "g56": "5.º–6.º grado"
+  },
+  "requirements": {
+    "total_questions": "Respondé {minQuestions} preguntas en total",
+    "weekly_questions": "Respondé {minQuestions} preguntas en la última semana",
+    "subject_questions": "Respondé {minQuestions} preguntas en {subject}",
+    "subject_questions_fallback_subject": "Respondé {minQuestions} preguntas en una materia",
+    "parent_activity_complete": "Completá {minCompletedActivities} actividades de padres",
+    "daily_mission_complete": "Completá la misión: {missionKey}",
+    "daily_mission_generic": "Completá una misión diaria"
+  },
+  "surpriseBox": {
+    "openError": "No pudimos abrir la caja ahora. Intentalo de nuevo en un momento.",
+    "noBoxReady": "No hay ninguna caja lista ahora — intentalo más tarde.",
+    "duplicateHint": "Tenés una copia extra — podés vender duplicados en la tienda.",
+    "keepLearning": "Seguí aprendiendo — ¡pronto habrá una caja nueva!"
+  },
+  "shopView": {
+    "sellFailed": "No se pudo vender el duplicado — intentalo de nuevo."
+  },
+  "surpriseBoxModal": {
+    "doneTitle": "¡Genial! ¡Tenés recompensas!"
+  },
+  "previewModal": {
+    "downloadError": "No pudimos descargar la carta. Intentalo de nuevo."
+  },
+  "cardsPage": {
+    "collectionEmpty": "Aún no tenés cartas en tu colección — ¡abrí una caja sorpresa en Mundo Kids o compra en la tienda!"
+  },
+  "server": {
+    "duplicateConversionRemoved": "Se eliminó la conversión de duplicados — podés vender un duplicado en la tienda.",
+    "insufficientCoinsDetailed": "No tenés suficientes monedas para esta carta"
+  }
+}

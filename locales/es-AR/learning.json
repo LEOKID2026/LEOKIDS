@@ -1,0 +1,160 @@
+{
+  "hubBlurb": "Elegí una materia y empezá a practicar.",
+  "incorrect": "Casi — intentalo de nuevo.",
+  "hubBadge": "Practicá · repasá · mejora",
+  "hubSubtitle": "La constancia da frutos: cuanto más jugás, más monedas ganás.",
+  "master": {
+    "enterAnswer": "Escribí la respuesta",
+    "remember": "🧠 Recordá",
+    "rememberTitle": "¿Qué debés recordar?",
+    "enterNameToStart": "Escribí tu nombre para empezar",
+    "noBadgesYet": "Aún no hay insignias. ¡Seguí practicando!",
+    "imageTooLarge": "La imagen es demasiado grande. Elegí una imagen de hasta 5 MB.",
+    "imageTypeOnly": "Elegí solo un archivo de imagen.",
+    "gradeRequired": "Elegí un grado antes de practicar. Pedí a un padre o tutor que actualice tu grado.",
+    "enterValidNumber": "Ingresá un número válido",
+    "enterPlayerNameForMistake": "Escribí un nombre de jugador para practicar el error seleccionado",
+    "selectAtLeastOneOp": "Seleccioná al menos una operación",
+    "practiceSettingsBlurb": "Controlá tu entrenamiento: repasá errores recientes, práctica por grados (empezá bajo y avanzá hasta el nivel que elijas) o elegí un área de enfoque.",
+    "mistakeReviewEmpty": "Aún no hay errores guardados. Practicá, comete errores y tocá aquí para repasar exactamente lo que necesitás.",
+    "referenceBoardBlurb": "Elegí una categoría para repasar puntos clave — como los tableros de ayuda de matemáticas y geometría.",
+    "noStepDetail": "No hay detalle paso a paso para esta pregunta. Usá el tablero de fórmulas.",
+    "multiplicationTableHint": "Tocá un número en la tabla y luego un número de fila o columna",
+    "divisionTableHint": "Tocá un producto y luego un número de fila o columna para ver la división",
+    "gradedPracticeBlurb": "Práctica por grados — empezá bajo y avanzá hasta el nivel que elijas",
+    "modes": {
+      "learning": {
+        "description": "Sin game over — practicá a tu ritmo"
+      },
+      "marathon": {
+        "description": "¿Cuántas preguntas podés resolver? 🏃"
+      },
+      "practice": {
+        "description": "Elegí un tema o un modo de entrenamiento enfocado"
+      }
+    },
+    "grades": {
+      "g1": "1.er grado",
+      "g2": "2.º grado",
+      "g3": "3.er grado",
+      "g4": "4.º grado",
+      "g5": "5.º grado",
+      "g6": "6.º grado"
+    },
+    "feedback": {
+      "wrong": "Casi — intentalo de nuevo 😔"
+    },
+    "streakEncouragement": {
+      "keepGoing": "🔥 ¡Seguí así!"
+    },
+    "practiceYourMistakes": "Practicá tus {count} errores",
+    "tableTapNumberHint": "Tocá un número en la tabla y luego un número de fila o columna",
+    "divisionTableTapHint": "Tocá un producto y luego un número de fila o columna para ver la división",
+    "answerPlaceholderLong": "Escribí tu respuesta aquí...",
+    "pickMixTopicsBlurb": "Elegí qué temas incluir en la práctica mixta",
+    "selectOneTopicMin": "Seleccioná al menos un tema",
+    "mistakePracticeBlurb": "Elegí un error reciente para abrir práctica enfocada en el mismo tema, grado y dificultad.",
+    "noActiveMistakes": "Aún no hay errores activos. Jugá una sesión, reuní datos y volvé aquí.",
+    "wordBoardBlurb": "Elegí una categoría para repasar palabras importantes en inglés.",
+    "smartPracticeBlurb": "Como en matemáticas y geometría, elegí un modo especial de entrenamiento, vinculalo a errores recientes o usá la práctica por grados.",
+    "gradedPracticeLabel": "Práctica por grados (empezá bajo → tu nivel elegido)",
+    "noStepDetailGeometry": "No hay detalle de pasos para esta pregunta. Usá el tablero de fórmulas.",
+    "dailyStreakKeepGoing": "🔥 ¡Seguí así!"
+  },
+  "math": {
+    "pickRowOrColumn": "Elegí una fila o columna para practicar:",
+    "howToLearnSteps": {
+      "step1": "Elegí el grado, la dificultad y la operación (suma, resta, multiplicación, división, fracciones, porcentajes y más).",
+      "step2": "Elegí un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+      "step3": "Leé cada pregunta con cuidado — algunas son problemas verbales en los que debés entender la historia."
+    },
+    "referenceBoardBlurb": "Elegí una categoría para repasar operaciones clave, fórmulas y términos de matemáticas."
+  },
+  "geometry": {
+    "howToLearnSteps": {
+      "step1": "Elegí el grado, la dificultad y el tema (área, perímetro, volumen, ángulos, Pitágoras y más).",
+      "step2": "Elegí un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+      "step3": "Leé cada pregunta con cuidado — algunas son problemas verbales sobre jardines, cercas y cajas."
+    },
+    "referenceBoardBlurb": "Elegí una categoría para repasar figuras, fórmulas y términos clave de geometría.",
+    "reference": {
+      "terms": {
+        "diagonal": {
+          "desc": "Una línea que uní dos esquinas no consecutivas"
+        }
+      }
+    },
+    "errors": {
+      "invalidGrade": "Grado no válido. Elegí otro grado.",
+      "noTopics": "No hay temas disponibles para este grado. Elegí otro grado.",
+      "generateError": "Error al generar la pregunta. Intentalo de nuevo o elegí otro tema."
+    }
+  },
+  "english": {
+    "steps": {
+      "findLocalizedMeaning": "Encontrá el significado de la palabra.",
+      "checkMeaning": "Comprobá que el significado tenga sentido.",
+      "findEnglishMeaning": "Encontrá el significado en inglés de la palabra.",
+      "grammarRules": "Repasá las reglas de gramática en inglés.",
+      "readEnglishSentence": "Leé la oración en inglés: \"{sentence}\".",
+      "translatePiece": "Intentá traducir cada palabra o parte.",
+      "readSentence": "Leé la oración: \"{sentence}\".",
+      "readTemplate": "Leé la oración: \"{template}\".",
+      "grammarCheck": "Comprobá qué encaja con las reglas: I/You/We/They = are, He/She/It = is.",
+      "spellingReadWord": "Leé la palabra: \"{word}\".",
+      "spellingRecallEnglish": "Recordá su forma en inglés.",
+      "spellingLetterByLetter": "Escribí letra por letra y cuidá la ortografía.",
+      "writeSentence": "Leé la oración: \"{sentence}\".",
+      "breakIntoParts": "Dividí la oración en partes y pensá cómo decir cada una en inglés.",
+      "checkWordOrder": "Comprobá el orden de las palabras y una mayúscula al inicio."
+    },
+    "mistakes": {
+      "checkMeaningLearning": "La respuesta correcta es \"{answer}\". Comprobá otra vez: ¿tu significado coincide con la palabra?",
+      "checkMeaning": "Comprobá otra vez: ¿tu significado coincide con la palabra?",
+      "iAmNotIs": "Recordá: I siempre usa am, no is. I am = I.",
+      "amOnlyWithI": "Recordá: am solo va con I. He/She/It = is, You/We/They = are.",
+      "checkGrammarLearning": "La respuesta correcta es \"{answer}\". Revisá otra vez las reglas: I am, You/We/They are, He/She/It is.",
+      "checkGrammar": "Revisá otra vez las reglas: I am, You/We/They are, He/She/It is.",
+      "checkTranslationLearning": "Traducción correcta: {answer}. Comprobá otra vez: ¿tradujiste cada palabra bien?",
+      "checkTranslation": "Comprobá otra vez: ¿tradujiste cada palabra bien?",
+      "checkWordFitLearning": "La respuesta correcta es \"{answer}\". Comprobá otra vez: ¿tu palabra encaja en la oración?",
+      "checkWordFit": "Comprobá otra vez: ¿tu palabra encaja en la oración?",
+      "checkSpellingLearning": "La respuesta correcta es \"{answer}\". Puede que la hayas escrito mal — revisá letra por letra.",
+      "checkSpelling": "Puede que la hayas escrito mal — revisá letra por letra.",
+      "checkMeaningContext": "Comprobá otra vez: ¿tu significado coincide con la palabra? Pensá en la palabra según el contexto."
+    },
+    "audio": {
+      "playFailed": "No se puede reproducir ahora. Intentalo de nuevo o continuá con el texto."
+    }
+  },
+  "science": {
+    "reference": {
+      "life_science": {
+        "terms": {
+          "respiratory": {
+            "desc": "Lleva oxígeno al cuerpo y eliminá dióxido de carbono."
+          }
+        }
+      }
+    },
+    "hints": {
+      "body": "Comprobá otra vez: ¿cuál es el papel del sistema u órgano? ¿Cómo ayuda al cuerpo?",
+      "plants": "Recordá las partes de la planta y sus roles: raíz, tallo, hojas, flores.",
+      "materials": "Pensá en el estado de la materia y las propiedades del material (sólido/líquido/gas, solubilidad, etc.).",
+      "earth_space": "Recordá: la Tierra tiene movimientos constantes (rotación y órbita alrededor del Sol).",
+      "experiments": "Pensá como un científico: ¿qué ocurre en el experimento? ¿Causa y resultado?",
+      "genericRetry": "Pensá otra vez usando el enunciado de la pregunta y la lista «¿Qué debés recordar?» de arriba — no adivines demasiado rápido.",
+      "genericCheck": "Revisá otra vez los datos y la explicación que aprendiste."
+    },
+    "insights": {
+      "accuracyFalling": "La tendencia de precisión en la racha reciente está bajando — repasá el material."
+    },
+    "howToLearnSteps": {
+      "step1": "Elegí el grado, el nivel y el tema (p. ej. cuerpo humano, plantas, animales y más).",
+      "step2": "Elegí un modo de juego: aprendizaje, desafío con temporizador y vidas, velocidad o maratón.",
+      "step3": "Respondé preguntas de opción múltiple, verdadero/falso y estilo experimento.",
+      "step4": "Construí rachas de respuestas y ganá estrellas y puntos XP."
+    },
+    "safety": "Seguí siempre las reglas de seguridad del laboratorio. Pedí a un adulto antes de hacer experimentos en casa."
+  }
+}

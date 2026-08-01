@@ -58,7 +58,7 @@ export default function LanguageSwitcher({
   }
 
   const label = t("ui.languageSwitcher.label");
-  const currentName = current.nativeName || current.displayName || current.id;
+  const currentName = current.label || current.nativeName || current.displayName || current.id;
 
   const isBright = appearance === "bright";
   const isClassic = appearance === "classic";
@@ -128,7 +128,7 @@ export default function LanguageSwitcher({
           className={menuClass}
         >
           {locales.map((loc) => {
-            const name = loc.nativeName || loc.displayName || loc.id;
+            const name = loc.label || loc.nativeName || loc.displayName || loc.id;
             const active = loc.id === locale;
             return (
               <li key={loc.id} role="presentation">
