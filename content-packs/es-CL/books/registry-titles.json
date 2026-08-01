@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglés — 1° básico"
+    },
+    "english.g2": {
+      "bookTitle": "Inglés — 2° básico"
+    },
+    "english.g3": {
+      "bookTitle": "Inglés — 3° básico"
+    },
+    "english.g4": {
+      "bookTitle": "Inglés — 4° básico"
+    },
+    "english.g5": {
+      "bookTitle": "Inglés — 5° básico"
+    },
+    "english.g6": {
+      "bookTitle": "Inglés — 6° básico"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometría — 1° básico"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometría — 2° básico"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometría — 3° básico"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometría — 4° básico"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometría — 5° básico"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometría — 6° básico"
+    },
+    "math.g1": {
+      "bookTitle": "Matemáticas — 1° básico"
+    },
+    "math.g2": {
+      "bookTitle": "Matemáticas — 2° básico"
+    },
+    "math.g3": {
+      "bookTitle": "Matemáticas — 3° básico"
+    },
+    "math.g4": {
+      "bookTitle": "Matemáticas — 4° básico"
+    },
+    "math.g5": {
+      "bookTitle": "Matemáticas — 5° básico"
+    },
+    "math.g6": {
+      "bookTitle": "Matemáticas — 6° básico"
+    },
+    "science.g1": {
+      "bookTitle": "Ciencias — 1° básico"
+    },
+    "science.g2": {
+      "bookTitle": "Ciencias — 2° básico"
+    },
+    "science.g3": {
+      "bookTitle": "Ciencias — 3° básico"
+    },
+    "science.g4": {
+      "bookTitle": "Ciencias — 4° básico"
+    },
+    "science.g5": {
+      "bookTitle": "Ciencias — 5° básico"
+    },
+    "science.g6": {
+      "bookTitle": "Ciencias — 6° básico"
+    }
+  }
+}

@@ -6,7 +6,18 @@ import { resolveContentLocale as resolveCore } from "../lib/content/locale.js";
 export const DEFAULT_CONTENT_LOCALE = "en";
 
 /** Product locales accepted by Global content resolution. */
-const PRODUCT_CONTENT_LOCALES = new Set(["en", "es-419", "es-MX", "es-CO", "es-AR", "es-PE"]);
+const PRODUCT_CONTENT_LOCALES = new Set([
+  "en",
+  "es-419",
+  "es-MX",
+  "es-CO",
+  "es-AR",
+  "es-PE",
+  "es-CL",
+  "es-EC",
+  "es-GT",
+  "es-DO",
+]);
 
 /** Detect Hebrew-script code points without embedding Unicode escapes in source. */
 export function containsHebrew(text) {

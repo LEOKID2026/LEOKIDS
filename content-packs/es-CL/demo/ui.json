@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "changeGrade": "Cambiar curso",
+    "gradeLabel": "Curso"
+  },
+  "enter": {
+    "intro": "Elige un curso y explora el mundo infantil. {minutes} minutos de juego y aprendizaje, sin registrarte.",
+    "activeSessionNote": "Tienes una demo activa: cambiar el curso no reiniciará el temporizador.",
+    "chooseGradeLegend": "Elige un curso"
+  },
+  "worksheet": {
+    "pageTitle": "Hoja de ejercicios — modo demo",
+    "intro": "Puedes explorar hojas de ejercicios desde la lista de la página de inicio. El envío digital no está disponible en modo demo."
+  },
+  "grades": {
+    "g1": "1° básico",
+    "g2": "2° básico",
+    "g3": "3° básico",
+    "g4": "4° básico",
+    "g5": "5° básico",
+    "g6": "6° básico"
+  },
+  "parentPortal": {
+    "readOnlyWorksheets": "Modo demo — puedes explorar hojas de ejercicios, pero no crear nuevas."
+  }
+}

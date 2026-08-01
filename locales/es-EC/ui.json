@@ -1,0 +1,13 @@
+{
+  "home": {
+    "subhead": "Practica matemáticas, geometría, inglés y ciencias — pensado para estudiantes de Educación General Básica."
+  },
+  "public": {
+    "about": {
+      "intro1": "El sitio está diseñado para estudiantes de Educación General Básica con práctica por materia, grado, tema y nivel de dificultad. Cada niño puede empezar donde tenga sentido, avanzar de forma gradual y reforzar los temas donde necesite más confianza."
+    }
+  },
+  "help": {
+    "videoModalMobile": "Video tutorial (celular)"
+  }
+}

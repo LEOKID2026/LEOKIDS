@@ -55,7 +55,7 @@ test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
   assert.deepEqual(
     locales.map((l) => l.id).sort(),
-    ["en", "es-AR", "es-CO", "es-MX", "es-PE"]
+    ["en", "es-AR", "es-CL", "es-CO", "es-DO", "es-EC", "es-GT", "es-MX", "es-PE"]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   assert.equal(byId.en.nativeName, "English");
@@ -63,6 +63,10 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["es-CO"].nativeName, "Colombia");
   assert.equal(byId["es-AR"].nativeName, "Argentina");
   assert.equal(byId["es-PE"].nativeName, "Perú");
+  assert.equal(byId["es-CL"].nativeName, "Chile");
+  assert.equal(byId["es-EC"].nativeName, "Ecuador");
+  assert.equal(byId["es-GT"].nativeName, "Guatemala");
+  assert.equal(byId["es-DO"].nativeName, "República Dominicana");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {

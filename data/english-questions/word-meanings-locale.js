@@ -9,6 +9,7 @@ import { WORD_LISTS } from "./word-lists.js";
 import { WORD_MEANINGS_EN } from "./word-meanings/en.js";
 import { WORD_MEANINGS_ES_419 } from "./word-meanings/es-419.js";
 import { WORD_MEANINGS_ES_CO } from "./word-meanings/es-CO.js";
+import { WORD_MEANINGS_ES_GT } from "./word-meanings/es-GT.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -17,6 +18,7 @@ const MEANING_PACKS = {
   en: WORD_MEANINGS_EN,
   "es-419": WORD_MEANINGS_ES_419,
   "es-CO": WORD_MEANINGS_ES_CO,
+  "es-GT": WORD_MEANINGS_ES_GT,
 };
 
 /**

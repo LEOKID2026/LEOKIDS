@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "mobile_compare_version": "Versión de comparación para celular",
+    "mobile_test_video": "Video de prueba en celular"
+  }
+}

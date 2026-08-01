@@ -1,0 +1,13 @@
+{
+  "master": {
+    "gradeRequired": "Elige un curso antes de practicar. Pide a un padre o tutor que actualice tu curso.",
+    "grades": {
+      "g1": "1° básico",
+      "g2": "2° básico",
+      "g3": "3° básico",
+      "g4": "4° básico",
+      "g5": "5° básico",
+      "g6": "6° básico"
+    }
+  }
+}
