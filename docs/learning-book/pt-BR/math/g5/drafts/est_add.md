@@ -1,4 +1,4 @@
-# Estimativa de adição - 5ª série
+# Estimativa de adição - 5º ano
 
 ## Metadados
 
@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g5:est_add` |
 | **skill_id** | `math:kind:est_add` |
 | **assunto** | matemática |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Arredondamento para milhares/centenas; último na 5ª série
+**Escopo do conteúdo:** Arredondamento para milhares/centenas; último na 5º ano
 
 ---
 

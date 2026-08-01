@@ -1,78 +1,54 @@
-# Livro de aprendizagem de inglês da 1ª série - Rascunhos
+# Livro de aprendizagem — Inglês · 1º ano
 
-**Status:** Rascunho do conteúdo — **10/10** páginas. Não aprovado pelo proprietário. Nenhum tempo de execução conectado.
-**Data:** junho de 2026
-**Pasta:** `docs/learning-book/english/g1/drafts/`
-**Título do livro:** ספר אנגלית — כיתה א׳
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/ENGLISH_GRADE_1_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas de redução | ✅ **10/10** |
-| Pacote de revisão | ✅ `docs/learning-book/ENGLISH_GRADE_1_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificação de conteúdo | ✅ `scripts/verify-english-g1-book-content.mjs` |
-| Rascunho do manifesto (somente scripts) | ✅ `scripts/lib/english-g1-draft-manifest.mjs` |
-| Tempo de execução/registro/rotas | ❌ Não criado |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/english/g1/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Nomenclatura
+## Páginas em rascunho
 
-- Disciplina voltada para crianças: **אנגלית**
-- IDs internos: `english:g1:{pageId}`, `subject: english`
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `classroom_words.md` | `english:g1:classroom_words` | rascunho |
+| `first_words_cvc.md` | `english:g1:first_words_cvc` | rascunho |
+| `first_words_simple.md` | `english:g1:first_words_simple` | rascunho |
+| `grammar_be.md` | `english:g1:grammar_be` | rascunho |
+| `letter_names.md` | `english:g1:letter_names` | rascunho |
+| `letters_lower.md` | `english:g1:letters_lower` | rascunho |
+| `letters_match.md` | `english:g1:letters_match` | rascunho |
+| `letters_upper.md` | `english:g1:letters_upper` | rascunho |
+| `listening_classroom.md` | `english:g1:listening_classroom` | rascunho |
+| `listening_commands.md` | `english:g1:listening_commands` | rascunho |
+| `phonics_first_sound.md` | `english:g1:phonics_first_sound` | rascunho |
+| `phonics_sounds.md` | `english:g1:phonics_sounds` | rascunho |
+| `picture_word_match.md` | `english:g1:picture_word_match` | rascunho |
+| `sentence_base.md` | `english:g1:sentence_base` | rascunho |
+| `translation_classroom.md` | `english:g1:translation_classroom` | rascunho |
+| `vocab_actions.md` | `english:g1:vocab_actions` | rascunho |
+| `vocab_animals.md` | `english:g1:vocab_animals` | rascunho |
+| `vocab_colors.md` | `english:g1:vocab_colors` | rascunho |
+| `vocab_emotions.md` | `english:g1:vocab_emotions` | rascunho |
+| `vocab_family.md` | `english:g1:vocab_family` | rascunho |
+| `vocab_numbers.md` | `english:g1:vocab_numbers` | rascunho |
+| `vocab_school.md` | `english:g1:vocab_school` | rascunho |
 
----
-
-## Lote A — אוצר מילים (3)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `vocab_colors.md` | צבעים באנגלית |
-| `vocab_numbers.md` | מספרים 0–10 באנגלית |
-| `vocab_family.md` | משפחה באנגלית |
-
-## Lote B — אוצר מילים (4)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `vocab_animals.md` | חיות באנגלית |
-| `vocab_emotions.md` | רגשות באנגלית |
-| `vocab_actions.md` | פעולות באנגלית |
-| `vocab_school.md` | בית ספר באנגלית |
-
-## Lote C — תבניות בסיסיות (3)
-
-| Arquivo | Título do rascunho | Mesclar nota |
-|------|-------------|--------|
-| `grammar_be.md` | Eu sou / Você é — היכרות | Linha be mesclada com pool be_basic |
-| `sentence_base.md` | משפטים קצרים — בסיס | |
-| `translation_classroom.md` | ביטויי כיתה | |
+**Total de páginas de habilidade:** 22
 
 ---
 
-## Regras de conteúdo
+## Regras deste locale
 
-- Explicações em hebraico; Exemplos de inglês em linhas próprias
-- 7 seções por página; não `[DRAFT]` nos corpos da seção
-- Seção 7 somente texto - sem roteamento prático
-- Sem páginas alfabéticas/fonéticas (não na lombada)
-
----
-
-## Regenerar pacote de revisão
-
-```bash
-node scripts/build-english-g1-hebrew-review-pack.mjs
-node scripts/verify-english-g1-book-content.mjs
-```
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Regra de parada explícita
+## Confirmações
 
-- ❌ Sem registro, rotas, pratique CTA, SQL, commit, push, deploy
-- ✅ Os rascunhos permanecem como fonte para futuras tarefas de tempo de execução
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

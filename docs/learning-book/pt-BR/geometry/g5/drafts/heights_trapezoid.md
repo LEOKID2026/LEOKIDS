@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g5:heights_trapezoid` |
 | **skill_id** | `geometry:kind:heights_trapezoid` |
 | **assunto** | geometria |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g4:vocab_body` |
 | **skill_id** | `english:vocabulary:wordlist:body` |
 | **assunto** | inglês |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

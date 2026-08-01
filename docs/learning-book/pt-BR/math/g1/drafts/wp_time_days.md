@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g1:wp_time_days` |
 | **skill_id** | `math:kind:wp_time_days` |
 | **assunto** | matemática |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | palavra_problema_estratégia |
 | **status_aprovação** | lançamento_pronto |

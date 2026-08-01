@@ -1,25 +1,38 @@
-# Livro de aprendizagem de ciências da 4ª série - Rascunhos
+# Livro de aprendizagem — Ciências · 4º ano
 
-**Status:** Rascunho do conteúdo — **6/6** páginas. Nenhuma inserção de tempo de execução.  
-**Plano:** `docs/learning-book/SCIENCE_GRADE_4_LEARNING_BOOK_PLAN.md`  
-**Data:** junho de 2026
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/science/g4/drafts/`
+**Locale:** pt-BR (Brasil)
 
-## Páginas
+---
 
-| Arquivo | Título [RASCUNHO] |
-|------|---------------|
-| `body.md` | גוף האדם — נשימה ועיכול |
-| `animals.md` | בעלי חיים — יחסי גומלין |
-| `materials.md` | חומרים — שינויים וחשמל (מושגי) |
-| `earth_space.md` | כדור הארץ — סלעים, קרקע ועונות |
-| `environment.md` | סביבה — שמירת משאבים |
-| `experiments.md` | תכנון ניסוי |
+## Páginas em rascunho
 
-**Não `plants.md`** — lombada `maxGrade = 3`.
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `animals.md` | `science:g4:animals` | rascunho |
+| `body.md` | `science:g4:body` | rascunho |
+| `earth_space.md` | `science:g4:earth_space` | rascunho |
+| `environment.md` | `science:g4:environment` | rascunho |
+| `experiments.md` | `science:g4:experiments` | rascunho |
+| `materials.md` | `science:g4:materials` | rascunho |
 
-## Verifique
+**Total de páginas de habilidade:** 6
 
-```bash
-node scripts/build-science-g4-hebrew-review-pack.mjs
-node scripts/verify-science-g4-book-content.mjs
-```
+---
+
+## Regras deste locale
+
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
+
+---
+
+## Confirmações
+
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g1:mul` |
 | **skill_id** | `math:kind:mul` |
 | **assunto** | matemática |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Multiplicação como **adição repetida** / **grupos iguais** apenas. **Na 1ª série usamos pequenas multiplicações: grupos de até 5 e respostas de até 20** (por exemplo 5×4, 4×3). Sem tabela de tempos completos, sem divisão.
+**Escopo do conteúdo:** Multiplicação como **adição repetida** / **grupos iguais** apenas. **Na 1º ano usamos pequenas multiplicações: grupos de até 5 e respostas de até 20** (por exemplo 5×4, 4×3). Sem tabela de tempos completos, sem divisão.
 
 ---
 

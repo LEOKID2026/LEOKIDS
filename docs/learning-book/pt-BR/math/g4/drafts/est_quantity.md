@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:est_quantity` |
 | **skill_id** | `math:kind:est_quantity` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

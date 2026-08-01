@@ -1,111 +1,59 @@
-# Livro de aprendizagem de matemática da 3ª série - Rascunhos
+# Livro de aprendizagem — Matemática · 3º ano
 
-**Status:** Todos os lotes criados — **26/26** páginas de rascunho concluídas (Lotes A + B + C + D). Revisão do proprietário pendente.  
-**Data:** junho de 2026  
-**Pasta:** `docs/learning-book/math/g3/drafts/`
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas de redução | ✅ **26/26** (Lotes A + B + C + D) |
-| Pacote de revisão | ✅ `docs/learning-book/MATH_GRADE_3_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificação de conteúdo | ✅ `scripts/verify-math-g3-book-content.mjs` |
-| Registro/rotas em tempo de execução | ❌ Fora do escopo — tarefa somente de conteúdo |
-| Pratique o resolvedor CTA (G3) | ❌ Não criado — sem mapeamentos falsos |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/math/g3/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Fonte da Verdade
+## Páginas em rascunho
 
-| Documento/arquivo | Função |
-|-----------------|------|
-| `data/curriculum-spine/v1/skills.json` | Todas as 26 entradas de matemática da 3ª série `skill_id` no escopo |
-| `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md` | Lista de páginas, lotes, limites |
-| `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md` | Modelo de sete seções da Seção B (3ª a 4ª séries) |
-| `docs/learning-book/math/g1/drafts/`, `math/g2/drafts/` | Apenas referência de estilo — **não modificado** |
-| `utils/math-constants.js` | Contexto operacional do ano 3 |
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `add_three.md` | `math:g3:add_three` | rascunho |
+| `add_two.md` | `math:g3:add_two` | rascunho |
+| `cmp.md` | `math:g3:cmp` | rascunho |
+| `dec_add.md` | `math:g3:dec_add` | rascunho |
+| `dec_sub.md` | `math:g3:dec_sub` | rascunho |
+| `div.md` | `math:g3:div` | rascunho |
+| `div_with_remainder.md` | `math:g3:div_with_remainder` | rascunho |
+| `divisibility.md` | `math:g3:divisibility` | rascunho |
+| `eq_add.md` | `math:g3:eq_add` | rascunho |
+| `eq_sub.md` | `math:g3:eq_sub` | rascunho |
+| `fractions.md` | `math:g3:fractions` | rascunho |
+| `mul.md` | `math:g3:mul` | rascunho |
+| `mul_hundreds.md` | `math:g3:mul_hundreds` | rascunho |
+| `mul_tens.md` | `math:g3:mul_tens` | rascunho |
+| `ns_complement10.md` | `math:g3:ns_complement10` | rascunho |
+| `ns_complement100.md` | `math:g3:ns_complement100` | rascunho |
+| `ns_even_odd.md` | `math:g3:ns_even_odd` | rascunho |
+| `ns_neighbors.md` | `math:g3:ns_neighbors` | rascunho |
+| `ns_place_hundreds.md` | `math:g3:ns_place_hundreds` | rascunho |
+| `order_add_mul.md` | `math:g3:order_add_mul` | rascunho |
+| `order_mul_sub.md` | `math:g3:order_mul_sub` | rascunho |
+| `order_parentheses.md` | `math:g3:order_parentheses` | rascunho |
+| `sequence.md` | `math:g3:sequence` | rascunho |
+| `sub_two.md` | `math:g3:sub_two` | rascunho |
+| `wp_comparison_more.md` | `math:g3:wp_comparison_more` | rascunho |
+| `wp_leftover.md` | `math:g3:wp_leftover` | rascunho |
+| `wp_time_sum.md` | `math:g3:wp_time_sum` | rascunho |
 
----
-
-## Lote A — יסודות מספרים, השוואה וסדרות (7)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `ns_place_hundreds.md` | מאות, עשרות ואחדות — עד 1.000 |
-| `ns_neighbors.md` | שכנים של מספר — עד 1.000 |
-| `ns_complement10.md` | זוגות שמרכיבים 10 — חזרה |
-| `ns_complement100.md` | זוגות שמרכיבים 100 |
-| `ns_even_odd.md` | זוגי ואי-זוגי — מספרים גדולים |
-| `cmp.md` | Mais de 1.000 |
-| `sequence.md` | סדרות מספרים |
-
----
-
-## Lote B — חיבור, חיסור, כפל וחילוק (9)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `add_two.md` | חיבור שני מספרים — עד 1.000 |
-| `sub_two.md` | חיסור שני מספרים — עד 1.000 |
-| `add_three.md` | חיבור שלושה מספרים |
-| `mul.md` | כפל — לוח הכפל |
-| `mul_tens.md` | כפל בעשרות |
-| `mul_hundreds.md` | כפל במאות |
-| `div.md` | חילוק — חלוקה שווה |
-| `div_with_remainder.md` | חילוק עם שארית |
-| `divisibility.md` | התחלקות ב-2, ב-5 e וב-10 |
+**Total de páginas de habilidade:** 27
 
 ---
 
-## Lote C — משוואות, עשרוניים וסדר פעולות (7)
+## Regras deste locale
 
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `eq_add.md` | משוואת חיבור — מספר חסר |
-| `eq_sub.md` | משוואת חיסור — מספר חסר |
-| `dec_add.md` | חיבור עשרוניים |
-| `dec_sub.md` | חיסור עשרוניים |
-| `order_add_mul.md` | סדר פעולות — חיבור וכפל |
-| `order_mul_sub.md` | סדר פעולות — כפל וחיסור |
-| `order_parentheses.md` | סוגריים בחישוב |
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Lote D — שאלות מילוליות (3)
+## Confirmações
 
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `wp_comparison_more.md` | שאלה מילולית — כמה יותר? |
-| `wp_leftover.md` | שאלה מילולית — מה נשאר? |
-| `wp_time_sum.md` | שאלה מילולית — סכום זמנים |
-
----
-
-## Notas
-
-- `book_placeholder.md` — espaço reservado para infraestrutura de expansão de estrutura; **não** faz parte do livro de 26 páginas.
-- Todas as páginas: `age_band: grades_3_4`, `approval_status: draft`.
-- Seção 7: apenas rascunho do texto do convite — **sem roteamento prático**.
-- A cópia voltada para crianças usa **חשבון**, não **מתמטיקה**.
-
----
-
-## Regenerar pacote de revisão
-
-```bash
-node scripts/build-math-g3-hebrew-review-pack.mjs
-node scripts/verify-math-g3-book-content.mjs
-```
-
----
-
-## Regra de parada explícita
-
-Até que o proprietário aprove o conteúdo:
-
-- ❌ Sem registro, rotas, SQL, commit, push ou implantação
-- ✅ Somente documentação e remarcação de rascunho
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

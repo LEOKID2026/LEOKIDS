@@ -1,4 +1,4 @@
-# Área de um Quadrado – 6ª série
+# Área de um Quadrado – 6º ano
 
 ## Metadados
 
@@ -7,11 +7,11 @@
 | **learning_page_id** | `geometry:g6:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
 | **assunto** | geometria |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
-| **título_inglês** | Área de um quadrado — 6ª série `[DRAFT — not owner-approved]` |
+| **título_inglês** | Área de um quadrado — 6º ano `[DRAFT — not owner-approved]` |
 
 **Referências de fontes:**
 - `data/curriculum-spine/v1/skills.json`

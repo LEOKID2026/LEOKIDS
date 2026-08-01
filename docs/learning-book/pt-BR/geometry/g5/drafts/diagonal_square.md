@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g5:diagonal_square` |
 | **skill_id** | `geometry:kind:diagonal_square` |
 | **assunto** | geometria |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

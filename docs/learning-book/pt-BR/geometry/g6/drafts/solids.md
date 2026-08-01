@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g6:solids` |
 | **skill_id** | `geometry:kind:solids` |
 | **assunto** | geometria |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

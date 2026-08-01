@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g2:vocab_numbers` |
 | **skill_id** | `english:vocabulary:wordlist:numbers` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

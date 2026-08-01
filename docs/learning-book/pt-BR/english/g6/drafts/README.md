@@ -1,45 +1,49 @@
-# Livro de aprendizagem de inglês da 6ª série - Rascunhos
+# Livro de aprendizagem — Inglês · 6º ano
 
-**Status:** Rascunho do conteúdo — **17/17** páginas. Não aprovado pelo proprietário. Nenhum tempo de execução conectado.
-**Data:** junho de 2026
-**Título do livro:** ספר אנגלית — כיתה ו׳
-**faixa_idade:** `grades_5_6`
-
----
-
-##Lotes
-
-| Lote | Páginas | Foco |
-|-------|-------|-------|
-| Um | 7 | Vocabulário contínuo (profundidade G6) |
-| B | 3 | Novo vocabulário (cultura, questões globais, história) |
-| C | 4 | Gramática (tempos complexos, condicionais, modais, comparativos) |
-| D | 1 | Frases avançadas |
-| E | 2 | Tradução (tecnologia, global) |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/english/g6/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Mesclar notas
+## Páginas em rascunho
 
-- `grammar_complex_tenses.md` — linha de tempos_complexos mesclada + pool; Apenas introdução PP
-- `grammar_conditionals.md` — linha condicional mesclada + pool; digite 0/1 apenas
-- `grammar_modals.md` — deveria/poderia/poderia (não G5 pode/deve focar)
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `grammar_comparatives.md` | `english:g6:grammar_comparatives` | rascunho |
+| `grammar_complex_tenses.md` | `english:g6:grammar_complex_tenses` | rascunho |
+| `grammar_conditionals.md` | `english:g6:grammar_conditionals` | rascunho |
+| `grammar_modals.md` | `english:g6:grammar_modals` | rascunho |
+| `sentence_advanced.md` | `english:g6:sentence_advanced` | rascunho |
+| `translation_global.md` | `english:g6:translation_global` | rascunho |
+| `translation_technology.md` | `english:g6:translation_technology` | rascunho |
+| `vocab_animals.md` | `english:g6:vocab_animals` | rascunho |
+| `vocab_community.md` | `english:g6:vocab_community` | rascunho |
+| `vocab_culture.md` | `english:g6:vocab_culture` | rascunho |
+| `vocab_emotions.md` | `english:g6:vocab_emotions` | rascunho |
+| `vocab_environment.md` | `english:g6:vocab_environment` | rascunho |
+| `vocab_global_issues.md` | `english:g6:vocab_global_issues` | rascunho |
+| `vocab_health.md` | `english:g6:vocab_health` | rascunho |
+| `vocab_history.md` | `english:g6:vocab_history` | rascunho |
+| `vocab_technology.md` | `english:g6:vocab_technology` | rascunho |
+| `vocab_travel.md` | `english:g6:vocab_travel` | rascunho |
 
-## Listas de palavras excluídas
-
-família, escola, comida, esportes, cores, números, ações, casa, corpo, clima — coluna vertebral `maxGrade < 6`
+**Total de páginas de habilidade:** 17
 
 ---
 
-## Regenerar
+## Regras deste locale
 
-```bash
-node scripts/build-english-g6-hebrew-review-pack.mjs
-node scripts/verify-english-g6-book-content.mjs
-```
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Parar regra
+## Confirmações
 
-❌ Sem registro, rotas, pratique CTA, SQL, commit, push, deploy
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

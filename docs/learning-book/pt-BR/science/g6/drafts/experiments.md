@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g6:experiments` |
 | **skill_id** | `science:topic:experiments` |
-| **assunto** | ciência |
-| **nota** | g6 |
+| **assunto** | Ciências |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Projeto de Ciências `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Questão de pesquisa; comparação; variáveis; gráfico; apresentação - segura

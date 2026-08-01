@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g4:sentence_narrative` |
 | **skill_id** | `english:pool:sentence:narrative` |
 | **assunto** | inglês |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | aprovado |

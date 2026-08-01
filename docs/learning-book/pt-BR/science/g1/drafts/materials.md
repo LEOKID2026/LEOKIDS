@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g1:materials` |
 | **skill_id** | `science:topic:materials` |
-| **assunto** | ciência |
-| **nota** | g1 |
+| **assunto** | Ciências |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Materiais — Propriedades cotidianas `[DRAFT — not owner-approved]` |
 
 **Referências de fontes:**

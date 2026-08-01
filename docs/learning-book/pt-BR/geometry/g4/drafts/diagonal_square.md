@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:diagonal_square` |
 | **skill_id** | `geometry:kind:diagonal_square` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `scripts/lib/geometry-g4-draft-manifest.mjs`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Linha de canto a canto; mais longo que um lado; nenhuma raiz quadrada formal na 4ª série
+**Escopo do conteúdo:** Linha de canto a canto; mais longo que um lado; nenhuma raiz quadrada formal na 4º ano
 
 ---
 

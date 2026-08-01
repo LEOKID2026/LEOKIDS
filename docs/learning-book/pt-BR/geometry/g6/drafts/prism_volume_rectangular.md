@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g6:prism_volume_rectangular` |
 | **skill_id** | `geometry:kind:prism_volume_rectangular` |
 | **assunto** | geometria |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

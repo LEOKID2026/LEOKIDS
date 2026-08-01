@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g6:environment` |
 | **skill_id** | `science:topic:environment` |
-| **assunto** | ciência |
-| **nota** | g6 |
+| **assunto** | Ciências |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Meio Ambiente — Mudanças Climáticas e Ação `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Pegada de carbono; escolhas sustentáveis; sem palavras assustadoras

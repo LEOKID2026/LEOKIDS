@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:symmetry` |
 | **skill_id** | `geometry:kind:symmetry` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |

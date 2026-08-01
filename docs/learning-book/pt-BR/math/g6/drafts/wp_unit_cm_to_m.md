@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:wp_unit_cm_to_m` |
 | **skill_id** | `math:kind:wp_unit_cm_to_m` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | palavra_problema_estratégia |
 | **status_aprovação** | lançamento_pronto |

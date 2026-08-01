@@ -56,6 +56,13 @@
       "invalidGrade": "Invalid year. Please choose another year.",
       "noTopics": "No topics available for this year. Please choose another year.",
       "noQuestions": "No questions available for the selected topic and year."
+    },
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
     }
   },
   "science": {

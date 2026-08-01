@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g6:body` |
 | **skill_id** | `science:topic:body` |
-| **assunto** | ciência |
-| **nota** | g6 |
+| **assunto** | Ciências |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | O Corpo Humano – Coordenação entre Sistemas `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Sistemas trabalhando juntos; nutrição/sono/atividade — requer ilustração: sistemas corporais conectados

@@ -1,52 +1,46 @@
-# Livro de aprendizagem de geometria da 4ª série - Rascunhos
+# Livro de aprendizagem — Geometria · 4º ano
 
-**Status:** Todos os lotes criados — **14/14** páginas de rascunho concluídas. Revisão do proprietário pendente.  
-**Data:** junho de 2026  
-**Pasta:** `docs/learning-book/geometry/g4/drafts/`
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/GEOMETRY_GRADE_4_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas | ✅ **14/14** (Lotes A–E) |
-| Pacote de revisão | ✅ `docs/learning-book/GEOMETRY_GRADE_4_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificador | ✅ `scripts/verify-geometry-g4-book-content.mjs` |
-| Manifesto | ✅ `scripts/lib/geometry-g4-draft-manifest.mjs` |
-| Registro/rotas em tempo de execução | ✅ com fio (`geometry-g4-registry`, `/learning/book/geometry/g4`) |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/geometry/g4/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-##Lotes
+## Páginas em rascunho
 
-| Lote | Páginas |
-|-------|--------|
-| **A** | `shapes_basic_properties_square`, `shapes_basic_properties_rectangle`, `shapes_basic_properties_angles`, `symmetry` |
-| **B** | `quadrilaterals`, `parallel_perpendicular` |
-| **C** | `square_perimeter`, `square_area`, `triangle_perimeter`, `triangle_angles` |
-| **D** | `diagonal_square`, `diagonal_rectangle` |
-| **E** | `solids`, `rectangular_prism_volume` |
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `diagonal_rectangle.md` | `geometry:g4:diagonal_rectangle` | rascunho |
+| `diagonal_square.md` | `geometry:g4:diagonal_square` | rascunho |
+| `parallel_perpendicular.md` | `geometry:g4:parallel_perpendicular` | rascunho |
+| `quadrilaterals.md` | `geometry:g4:quadrilaterals` | rascunho |
+| `rectangular_prism_volume.md` | `geometry:g4:rectangular_prism_volume` | rascunho |
+| `shapes_basic_properties_angles.md` | `geometry:g4:shapes_basic_properties_angles` | rascunho |
+| `shapes_basic_properties_rectangle.md` | `geometry:g4:shapes_basic_properties_rectangle` | rascunho |
+| `shapes_basic_properties_square.md` | `geometry:g4:shapes_basic_properties_square` | rascunho |
+| `solids.md` | `geometry:g4:solids` | rascunho |
+| `square_area.md` | `geometry:g4:square_area` | rascunho |
+| `square_perimeter.md` | `geometry:g4:square_perimeter` | rascunho |
+| `symmetry.md` | `geometry:g4:symmetry` | rascunho |
+| `triangle_angles.md` | `geometry:g4:triangle_angles` | rascunho |
+| `triangle_perimeter.md` | `geometry:g4:triangle_perimeter` | rascunho |
 
----
-
-## Nomenclatura
-
-- Título do livro: **ספר גאומטריה — כיתה ד׳** (não **הנדסה**).
-- IDs: `geometry:g4:{pageId}`, `age_band: grades_3_4`.
-
----
-
-## Regenerar
-
-```bash
-node scripts/build-geometry-g4-hebrew-review-pack.mjs
-node scripts/verify-geometry-g4-book-content.mjs
-```
+**Total de páginas de habilidade:** 14
 
 ---
 
-## Parar regra
+## Regras deste locale
 
-Conteúdo aprovado – tempo de execução conectado. Sem SQL, commit, push ou implantação sem solicitação do proprietário.
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
+
+---
+
+## Confirmações
+
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g5:earth_space` |
 | **skill_id** | `science:topic:earth_space` |
-| **assunto** | ciência |
-| **nota** | g5 |
+| **assunto** | Ciências |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Terra — Recursos e Fenômenos `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Camadas da Terra; terremotos/vulcão — conscientização — requer ilustração: camadas da Terra

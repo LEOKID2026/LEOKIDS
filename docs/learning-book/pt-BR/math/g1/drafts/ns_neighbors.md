@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g1:ns_neighbors` |
 | **skill_id** | `math:kind:ns_neighbors` |
 | **assunto** | matemática |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |

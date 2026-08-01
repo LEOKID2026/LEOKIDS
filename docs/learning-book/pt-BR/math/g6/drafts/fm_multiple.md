@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:fm_multiple` |
 | **skill_id** | `math:kind:fm_multiple` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |

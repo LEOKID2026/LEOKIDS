@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:wp_comparison_more` |
 | **skill_id** | `math:kind:wp_comparison_more` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | palavra_problema_estratégia |
 | **status_aprovação** | lançamento_pronto |

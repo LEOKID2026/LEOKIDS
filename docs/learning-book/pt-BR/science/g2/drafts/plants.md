@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g2:plants` |
 | **skill_id** | `science:topic:plants` |
-| **assunto** | ciência |
-| **nota** | g2 |
+| **assunto** | Ciências |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Plantas — Crescimento e Ciclo `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Semente → planta; sem água - não cresce

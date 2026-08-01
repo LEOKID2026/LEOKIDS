@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:div_with_remainder` |
 | **skill_id** | `math:kind:div_with_remainder` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |

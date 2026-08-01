@@ -123,21 +123,21 @@ export function rebuildMathStemPtBr(question) {
   }
   if (kind === "wp_simple_add" || kind === "wp_simple_add_g2") {
     if (kind === "wp_simple_add_g2") {
-      return `Havia ${p.a} crianças na classe e mais ${p.b} participaram. Quantas crianças existem agora?`;
+      return `Havia ${p.a} crianças na turma e mais ${p.b} participaram. Quantas crianças existem agora?`;
     }
     return `Leo tem ${p.a} bolas e ganha ${p.b} a mais. Quantas bolas Leo tem ao todo?`;
   }
   if (kind === "wp_simple_sub" || kind === "wp_simple_sub_g2") {
     if (kind === "wp_simple_sub_g2") {
-      return `Existem ${p.total} maçãs em uma cesta. ${p.give} foram comidos. Quantas maçãs sobraram?`;
+      return `Existem ${p.total} maçãs em uma cesta. ${p.give} foram comidas. Quantas maçãs sobraram?`;
     }
     return `Leo tem ${p.total} adesivos. Ele dá ${p.give} para um amigo. Quantos adesivos Leo ainda tem?`;
   }
   if (kind === "wp_pocket_money" || kind === "wp_pocket_money_g2") {
-    return `Emma tem ${p.money} dólares. Ela compra um lanche por ${p.toy} dólares. Quanto dinheiro resta?`;
+    return `Emma tem ${p.money} reais. Ela compra um lanche por ${p.toy} reais. Quanto dinheiro resta?`;
   }
   if (kind === "wp_groups_g2") {
-    return `Cada fileira possui ${p.per} cadeiras. Existem ${p.groups} linhas como essa. Quantas cadeiras há ao todo?`;
+    return `Cada fileira possui ${p.per} cadeiras. Existem ${p.groups} fileiras como essa. Quantas cadeiras há ao todo?`;
   }
   if (kind === "wp_groups_g3") {
     return `Cada caixa contém ${p.per} lápis. Existem ${p.groups} caixas. Quantos lápis existem ao todo?`;
@@ -175,10 +175,10 @@ export function rebuildMathStemPtBr(question) {
     return `Se hoje for ${p.today} do mês, em que data será daqui a ${p.daysLater} dias?`;
   }
   if (kind === "wp_coins") {
-    return `Leo tem ${p.coins1} moedas de um dólar e ${p.coins2} moedas de dois dólares. Quanto dinheiro ele tem ao todo?`;
+    return `Leo tem ${p.coins1} moedas de 1 real e ${p.coins2} moedas de 2 reais. Quanto dinheiro ele tem ao todo?`;
   }
   if (kind === "wp_coins_spent") {
-    return `Leo tem ${p.total} dólares em moedas. Ele compra doces por ${p.spent} dólares. Quanto dinheiro resta?`;
+    return `Leo tem R$ ${p.total} em moedas. Ele compra doces por R$ ${p.spent}. Quanto dinheiro resta?`;
   }
   if (kind === "wp_division_simple") {
     return `Existem ${p.total} maçãs divididas em grupos de ${p.perGroup} maçãs cada. Quantos grupos existem?`;
@@ -187,7 +187,7 @@ export function rebuildMathStemPtBr(question) {
     return `${p.total} alunos são divididos em grupos de ${p.groupSize}. Quantos alunos ficam sem um grupo completo?`;
   }
   if (kind === "wp_shop_discount") {
-    return `Uma camisa custa ${p.price} dólares com um desconto de ${p.discPerc}%. Quanto você paga após o desconto?`;
+    return `Uma camisa custa R$ ${p.price} com um desconto de ${p.discPerc}%. Quanto você paga após o desconto?`;
   }
   if (kind === "wp_unit_cm_to_m") {
     return `Quantos metros equivalem a ${p.cm} centímetros? = ${BLANK}`;
@@ -208,7 +208,7 @@ export function rebuildMathStemPtBr(question) {
     return `Leo obteve pontuação ${p.s1}, ${p.s2} e ${p.s3} em três testes. Qual é a média dele (arredondada para um número inteiro)?`;
   }
   if (kind === "wp_multi_step" || kind === "wp_multi_step_g6") {
-    return `Leo tem ${p.money} dólares. Ele compra ${p.a} canetas e ${p.b} lápis, e cada item custa ${p.price} dólares. Quanto dinheiro resta depois das compras?`;
+    return `Leo tem R$ ${p.money}. Ele compra ${p.a} canetas e ${p.b} lápis, e cada item custa R$ ${p.price}. Quanto dinheiro resta depois das compras?`;
   }
   if (kind === "operation_choice_word_problem_probe") {
     return `Existem ${p.groups} grupos com ${p.each} itens em cada grupo. Qual operação encontra o total?`;

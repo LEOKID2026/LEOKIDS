@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:divisibility` |
 | **skill_id** | `math:kind:divisibility` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Testes de divisibilidade para 2, 3, 5, 6, 9, 10. Inclui 3, 6, 9 (novo na 4ª série). Números até aproximadamente 1.000.
+**Escopo do conteúdo:** Testes de divisibilidade para 2, 3, 5, 6, 9, 10. Inclui 3, 6, 9 (novo na 4º ano). Números até aproximadamente 1.000.
 
 ---
 

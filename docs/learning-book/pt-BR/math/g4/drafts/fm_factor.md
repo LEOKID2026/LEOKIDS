@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:fm_factor` |
 | **skill_id** | `math:kind:fm_factor` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g2:wp_division_simple` |
 | **skill_id** | `math:kind:wp_division_simple` |
 | **assunto** | matemática |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | palavra_problema_estratégia |
 | **status_aprovação** | lançamento_pronto |

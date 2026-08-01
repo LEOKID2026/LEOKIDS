@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g6:sentence_advanced` |
 | **skill_id** | `english:pool:sentence:advanced` |
 | **assunto** | inglês |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | aprovado |

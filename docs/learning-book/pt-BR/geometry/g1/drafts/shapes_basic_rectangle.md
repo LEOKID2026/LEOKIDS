@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g1:shapes_basic_rectangle` |
 | **skill_id** | `geometry:kind:shapes_basic_rectangle` |
 | **assunto** | geometria |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |
@@ -49,16 +49,16 @@ uma porta, uma folha de papel, uma tela de TV.
 Imagine uma folha de papel:
 - O lado mais longo — comprimento
 - O lado mais curto – largura
-- 4 cantos direitos
+- 4 ângulos retos
 Isso é um retângulo (não um quadrado, porque o comprimento e a largura são diferentes).
 
 ---
 
 ## 4. Vamos resolver juntos
 
-Uma forma tem comprimento e largura diferentes, 4 cantos direitos e lados opostos iguais. Como é chamado?
+Uma forma tem comprimento e largura diferentes, 4 ângulos retos e lados opostos iguais. Como é chamado?
 Comprimento e largura diferentes — não um quadrado (tudo é igual em um quadrado).
-4 cantos direitos – como um retângulo.
+4 ângulos retos – como um retângulo.
 Retângulo
 
 ---
@@ -77,7 +77,7 @@ Na próxima página verificaremos os passos e a resposta juntos.
 
 Quadro-negro na sala de aula: o lado comprido é diferente do lado curto e todos os 4 cantos são ângulos retos.
 O tabuleiro é um retângulo?
-Tem 4 cantos direitos? Sim - como um retângulo.
+Tem 4 ângulos retos? Sim - como um retângulo.
 O lado longo é diferente do lado curto? Sim - tem comprimento e largura diferentes.
 Os lados opostos são iguais entre si - longo oposto ao longo, curto oposto ao curto.
 Sim, o tabuleiro é um retângulo

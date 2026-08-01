@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g5:triangle_area` |
 | **skill_id** | `geometry:kind:triangle_area` |
 | **assunto** | geometria |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

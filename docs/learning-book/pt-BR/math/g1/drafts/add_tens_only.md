@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g1:add_tens_only` |
 | **skill_id** | `math:kind:add_tens_only` |
 | **assunto** | matemática |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Adicionando apenas dezenas inteiras. **Na 1ª série usamos dezenas de 10, 20 e 30.** Soma até 30. Nenhuma unidade, nenhuma adição vertical.
+**Escopo do conteúdo:** Adicionando apenas dezenas inteiras. **Na 1º ano usamos dezenas de 10, 20 e 30.** Soma até 30. Nenhuma unidade, nenhuma adição vertical.
 
 ---
 

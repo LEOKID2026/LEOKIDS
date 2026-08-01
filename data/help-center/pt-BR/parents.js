@@ -10,7 +10,7 @@ export const PARENT_ARTICLES = [
       "começar",
       "visão geral"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -31,7 +31,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Leo Kids é um espaço de aprendizagem para alunos do ensino fundamental da 1ª à 6ª série, com prática de matemática, geometria, inglês e ciências, além de jogos e relatórios de progresso para os responsáveis."
+        "text": "Leo Kids é um espaço de aprendizagem para alunos do ensino fundamental da 1ª à 6º ano, com prática de matemática, geometria, inglês e ciências, além de jogos e relatórios de progresso para os responsáveis."
       },
       {
         "kind": "screenshot",
@@ -57,7 +57,7 @@ export const PARENT_ARTICLES = [
         "kind": "list",
         "ordered": false,
         "items": [
-          "Crie uma conta pai e faça login",
+          "Crie uma conta de responsável e faça login",
           "Adicione filhos e gerencie detalhes de login",
           "Veja relatórios e recomendações práticas"
         ]
@@ -67,11 +67,11 @@ export const PARENT_ARTICLES = [
         "items": [
           {
             "href": "/help/parents/create-parent-account",
-            "label": "Crie uma conta pai"
+            "label": "Crie uma conta de responsável"
           },
           {
             "href": "/help/parents/parent-dashboard-tour",
-            "label": "Tour pelo painel pai"
+            "label": "Tour pelo painel do responsável"
           }
         ]
       }
@@ -80,14 +80,14 @@ export const PARENT_ARTICLES = [
   {
     "slug": "create-parent-account",
     "section": "parents",
-    "title": "Crie uma conta pai",
+    "title": "Crie uma conta de responsável",
     "summary": "Como se inscrever e entrar no portal dos responsáveis.",
     "keywords": [
       "inscrever-se",
       "Conecte-se",
       "responsáveis"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -139,14 +139,14 @@ export const PARENT_ARTICLES = [
   {
     "slug": "parent-dashboard-tour",
     "section": "parents",
-    "title": "Tour pelo painel pai",
+    "title": "Tour pelo painel do responsável",
     "summary": "Lista de filhos, adição de um novo filho e limites de conta.",
     "keywords": [
       "painel",
       "crianças",
       "responsáveis"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -167,13 +167,13 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Na página pai você verá todos os filhos vinculados à conta, com nome, série e opções de gerenciamento."
+        "text": "Na página do responsável você verá todos os filhos vinculados à conta, com nome, ano e opções de gerenciamento."
       },
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parents/parent-dashboard-tour/desktop/dashboard.png",
-        "alt": "Página pai com lista de filhos",
-        "caption": "Página pai com lista de filhos",
+        "alt": "Página do responsável com lista de filhos",
+        "caption": "Página do responsável com lista de filhos",
         "sources": {
           "mobile": "/help-center/screenshots/parents/parent-dashboard-tour/mobile/dashboard.png",
           "tablet": "/help-center/screenshots/parents/parent-dashboard-tour/tablet/dashboard.png"
@@ -191,7 +191,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Por padrão, cada conta pai pode incluir até três filhos."
+        "text": "Por padrão, cada conta de responsável pode incluir até três filhos."
       },
       {
         "kind": "callout",
@@ -204,13 +204,13 @@ export const PARENT_ARTICLES = [
     "slug": "add-students",
     "section": "parents",
     "title": "Adicionar um filho",
-    "summary": "Crie um perfil infantil, escolha uma nota e salve.",
+    "summary": "Crie um perfil infantil, escolha um ano e salve.",
     "keywords": [
       "criança",
-      "nota",
+      "ano",
       "adicionar"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -227,7 +227,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Digite o nome da criança e escolha uma série (1º ao 6º ano). Depois de salvar, os detalhes de login da criança aparecerão."
+        "text": "Digite o nome da criança e escolha um ano (1º ao 6º ano). Depois de salvar, os detalhes de login da criança aparecerão."
       },
       {
         "kind": "video",
@@ -236,8 +236,8 @@ export const PARENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parents/add-students/desktop/form.png",
-        "alt": "Adicionar formulário filho com seleção de notas",
-        "caption": "Adicionar formulário filho com seleção de notas",
+        "alt": "Adicionar formulário filho com seleção de anos",
+        "caption": "Adicionar formulário filho com seleção de anos",
         "sources": {
           "mobile": "/help-center/screenshots/parents/add-students/mobile/form.png",
           "tablet": "/help-center/screenshots/parents/add-students/tablet/form.png"
@@ -247,9 +247,9 @@ export const PARENT_ARTICLES = [
         "kind": "list",
         "ordered": false,
         "items": [
-          "1ª série — nota_1",
-          "2ª série — nota_2",
-          "até a 6ª série — nota_6"
+          "1º ano",
+          "2º ano — nota_2",
+          "até a 6º ano — nota_6"
         ]
       }
     ]
@@ -257,14 +257,14 @@ export const PARENT_ARTICLES = [
   {
     "slug": "student-pin-and-credentials",
     "section": "parents",
-    "title": "PIN e detalhes de login do seu filho",
+    "title": "PIN e detalhes de login de seu filho ou sua filha",
     "summary": "O que é um PIN, quando é mostrado uma vez e como redefini-lo.",
     "keywords": [
       "ALFINETE",
       "senha",
       "criança"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -285,7 +285,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Seu filho faz login com um nome de usuário e um código de 4 dígitos. Após a criação ou redefinição, o código é mostrado uma vez – salve-o."
+        "text": "Seu filho ou sua filha faz login com um nome de usuário e um código de 4 dígitos. Após a criação ou redefinição, o código é mostrado uma vez – salve-o."
       },
       {
         "kind": "screenshot",
@@ -309,7 +309,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Na página pai você pode criar um novo código de login para seu filho. O código antigo irá parar de funcionar."
+        "text": "Na página do responsável você pode criar um novo código de login para seu filho ou sua filha. O código antigo irá parar de funcionar."
       },
       {
         "kind": "callout",
@@ -322,13 +322,13 @@ export const PARENT_ARTICLES = [
     "slug": "edit-or-delete-student",
     "section": "parents",
     "title": "Editar ou excluir um filho",
-    "summary": "Altere o nome ou a série e exclua com confirmação.",
+    "summary": "Altere o nome ou o ano e exclua com confirmação.",
     "keywords": [
       "editar",
       "excluir",
       "criança"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -392,7 +392,7 @@ export const PARENT_ARTICLES = [
       "responsáveis",
       "leitura"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -450,7 +450,7 @@ export const PARENT_ARTICLES = [
       "questões",
       "relatório"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -514,7 +514,7 @@ export const PARENT_ARTICLES = [
       "persistência",
       "mensal"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -531,7 +531,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Seu filho desenvolve persistência por meio da prática mensal. Na página de recompensas você pode ver o progresso por assunto."
+        "text": "Seu filho ou sua filha desenvolve persistência por meio da prática mensal. Na página de recompensas você pode ver o progresso por assunto."
       },
       {
         "kind": "screenshot",
@@ -568,7 +568,7 @@ export const PARENT_ARTICLES = [
       "instalar",
       "aplicativo"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -617,7 +617,7 @@ export const PARENT_ARTICLES = [
       "móvel",
       "off-line"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -685,7 +685,7 @@ export const PARENT_ARTICLES = [
       "Conecte-se",
       "ALFINETE"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -738,7 +738,7 @@ export const PARENT_ARTICLES = [
       "privacidade",
       "dados"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {

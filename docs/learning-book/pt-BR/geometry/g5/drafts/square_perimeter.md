@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g5:square_perimeter` |
 | **skill_id** | `geometry:kind:square_perimeter` |
 | **assunto** | geometria |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
@@ -36,7 +36,7 @@ tipo: perímetro_quadrado
 :::
 
 Perímetro = o caminho ao redor da forma.
-Em uma praça:
+Em um quadrado:
 - lado 1: 9 cm
 - lado 2: 9 cm
 - lado 3: 9 cm

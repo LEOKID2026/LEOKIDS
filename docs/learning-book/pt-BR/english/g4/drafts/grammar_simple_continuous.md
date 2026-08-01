@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g4:grammar_simple_continuous` |
 | **skill_id** | `english:pool:grammar:progressive` |
 | **assunto** | inglês |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | página_contraste |
 | **status_aprovação** | aprovado |

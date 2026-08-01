@@ -1,4 +1,4 @@
-# ספר בהכנה
+# Livro em preparação
 
 ## Metadados
 
@@ -7,36 +7,36 @@
 | **learning_page_id** | `math:g4:book_placeholder` |
 | **skill_id** | `math:kind:book_placeholder` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **tipo_página** | espaço reservado |
-| **status_aprovação** | lançamento_pronto |
+| **status_aprovação** | rascunho |
 
 ---
 
-## 1. מה אנחנו לומדים?
+## 1. O que vamos aprender?
 
-תוכן יתווסף בהמשך.
+O conteúdo será adicionado em breve.
 
-## 2. הסבר פשוט
+## 2. Explicação simples
 
-הדף הזה מוכן לתוכן הלימודי של **חשבון**.
+Esta página está pronta para o conteúdo de aprendizagem de **Matemática**.
 
-## 3. דוגמה ויזואלית / קונקרטית
+## 3. Exemplo visual / concreto
 
-בקרוב נוסיף הסבר, דוגמה ותרגול לנושא הזה.
+Em breve adicionaremos explicação, exemplo e prática para este tema.
 
-## 4. בואו נפתור יחד
+## 4. Vamos resolver juntos
 
-תוכן יתווסף בהמשך.
+O conteúdo será adicionado em breve.
 
-## 5. נסו בעצמכם
+## 5. Experimente você mesmo
 
-הדף הזה מוכן לתוכן הלימודי.
+Esta página está pronta para o conteúdo de aprendizagem.
 
-## 6. טעות נפוצה — שימו לב!
+## 6. Erro comum — atenção!
 
-בקרוב נוסיף הסבר, דוגמה ותרגול לנושא הזה.
+Em breve adicionaremos explicação, exemplo e prática para este tema.
 
-## 7. בואו נתרגל!
+## 7. Vamos praticar!
 
-תוכן יתווסף בהמשך.
+O conteúdo será adicionado em breve.

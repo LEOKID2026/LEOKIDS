@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g5:wp_time_sum` |
 | **skill_id** | `math:kind:wp_time_sum` |
 | **assunto** | matemática |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | palavra_problema_estratégia |
 | **status_aprovação** | lançamento_pronto |

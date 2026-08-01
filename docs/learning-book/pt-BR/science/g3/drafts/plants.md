@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g3:plants` |
 | **skill_id** | `science:topic:plants` |
-| **assunto** | ciência |
-| **nota** | g3 |
+| **assunto** | Ciências |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Plantas — Condições de cultivo (Resumo) `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Página de resumo final para plantas (coluna máxima Ano 3); fazendo comida com luz – sem fórmula química

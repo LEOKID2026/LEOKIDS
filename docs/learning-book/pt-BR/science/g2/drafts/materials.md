@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g2:materials` |
 | **skill_id** | `science:topic:materials` |
-| **assunto** | ciência |
-| **nota** | g2 |
+| **assunto** | Ciências |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Materiais — Estados da matéria `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Sólido/líquido/gás na vida diária; o gelo derrete – sem experimentos perigosos

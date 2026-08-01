@@ -11,8 +11,8 @@
   "enter": {
     "pageTitle": "Modo de demonstração — LEO KIDS",
     "pageDescription": "Experimente o mundo infantil sem se inscrever",
-    "heading": "Modo de demonstração pai",
-    "intro": "Escolha uma série e explore o mundo infantil. {minutes} minutos de jogo e aprendizagem — sem inscrição.",
+    "heading": "Modo de demonstração do responsável",
+    "intro": "Escolha um ano e explore o mundo infantil. {minutes} minutos de jogo e aprendizagem — sem inscrição.",
     "activeSessionNote": "Você tem uma demonstração ativa – alterar a nota não zera o cronômetro.",
     "chooseGradeLegend": "escolha um ano",
     "enterButton": "Entre no mundo infantil",
@@ -80,7 +80,7 @@
   },
   "worksheet": {
     "pageTitle": "folha de atividades - modo de demonstração",
-    "intro": "Você pode navegar pelas folha de atividadess na lista da página inicial. O envio digital não está disponível no modo de demonstração.",
+    "intro": "Você pode navegar pelas folhas de atividades na lista da página inicial. O envio digital não está disponível no modo de demonstração.",
     "backHome": "← De volta para casa",
     "submitBlocked": "O envio não está disponível no modo de demonstração."
   },
@@ -100,27 +100,27 @@
     "g6": "6º ano"
   },
   "parentPortal": {
-    "barBadge": "Modo de demonstração pai",
+    "barBadge": "Modo de demonstração do responsável",
     "barSubtitle": "Visualizar apenas · 3 exemplos de filhos",
     "barExit": "Sair da demonstração",
-    "dashboardSubtitle": "Modo de demonstração – portal pai",
+    "dashboardSubtitle": "Modo de demonstração – portal do responsável",
     "homeParentLabelLine1": "Responsável",
     "homeParentLabelLine2": "demonstração",
-    "homeParentAriaLabel": "Demonstração pai – portal somente visualização",
+    "homeParentAriaLabel": "Demonstração do responsável – portal somente visualização",
     "homeParentDismissAriaLabel": "Botão Ignorar demonstração dos responsáveis",
     "enterPageTitle": "Demonstração para responsáveis - LEO KIDS",
-    "enterPageDescription": "Explore o portal pai com exemplos de filhos, relatórios e recomendações — somente visualização",
-    "enterHeading": "Demonstração do portal pai",
+    "enterPageDescription": "Explore o portal do responsável com exemplos de filhos, relatórios e recomendações — somente visualização",
+    "enterHeading": "Demonstração do portal do responsável",
     "enterBack": "Voltar",
     "enterIntro": "Explore o portal dos responsáveis com três exemplos de filhos, relatórios, atividades e recomendações – somente visualização, sem inscrição.",
     "enterActiveSessionNote": "Você tem uma demonstração para responsáveis ativa – você pode continuar de onde parou.",
     "enterReadOnlyNote": "As alterações não podem ser salvas neste modo.",
-    "enterButton": "Entrar no portal pai",
+    "enterButton": "Entrar no portal do responsável",
     "enteringButton": "Entrando…",
     "enterBackHome": "De volta para casa",
     "readOnlyDefault": "O modo de demonstração é somente visualização. As alterações não podem ser salvas.",
     "readOnlyShare": "Modo de demonstração – o compartilhamento fora da demonstração não está disponível.",
-    "readOnlyWorksheets": "Modo de demonstração – você pode navegar pelas folha de atividadess, mas não pode criar novas.",
+    "readOnlyWorksheets": "Modo de demonstração – você pode navegar pelas folhas de atividades, mas não pode criar novas.",
     "apiReadOnlyError": "O modo de demonstração é somente visualização."
   }
 }

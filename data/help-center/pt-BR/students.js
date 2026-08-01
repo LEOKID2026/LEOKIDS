@@ -28,7 +28,7 @@ export const STUDENT_ARTICLES = [
         "kind": "list",
         "ordered": true,
         "items": [
-          "Peça ao seu pai seu nome de usuário e código",
+          "Peça ao seu responsável seu nome de usuário e código",
           "Digite-os na página de login",
           "Toque em Entrar"
         ]
@@ -96,11 +96,11 @@ export const STUDENT_ARTICLES = [
   {
     "slug": "choose-subject-and-grade",
     "section": "students",
-    "title": "Escolha uma matéria e nota",
+    "title": "Escolha uma matéria e ano",
     "summary": "Como entrar na prática na disciplina que você escolheu.",
     "keywords": [
       "assunto",
-      "nota"
+      "ano"
     ],
     "audience": "estudante",
     "updatedAt": "23/05/2026",
@@ -119,7 +119,7 @@ export const STUDENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Escolha um assunto da lista. As atividades corresponderão à sua nota."
+        "text": "Escolha um assunto da lista. As atividades corresponderão ao seu ano."
       },
       {
         "kind": "video",

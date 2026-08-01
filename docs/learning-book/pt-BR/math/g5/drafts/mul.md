@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g5:mul` |
 | **skill_id** | `math:kind:mul` |
 | **assunto** | matemática |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

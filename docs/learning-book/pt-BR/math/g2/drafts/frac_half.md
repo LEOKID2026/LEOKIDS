@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g2:frac_half` |
 | **skill_id** | `math:kind:frac_half` |
 | **assunto** | matemática |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |

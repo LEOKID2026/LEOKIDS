@@ -1,0 +1,19 @@
+{
+  "components__parent__ParentCurriculumContent": {
+    "topics_by_grade": "Topics by primary level"
+  },
+  "pages__learning__english-master": {
+    "choose_grade_difficulty_and_topic_vocabulary_grammar_translation_writing": "Choose a primary level, difficulty, and topic (vocabulary, grammar, translation, writing, and more)."
+  },
+  "utils__curriculum-audit__israeli-primary-curriculum-map": {
+    "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer": "Strands align with normalized maths.* keys from curriculum-topic-normalizer.js",
+    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "Primary 1–2: grammar not assumed core; exposure/enrichment separation.",
+    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israel elementary (Primary 1–6) - conservative structured mapping + advisory source anchors"
+  },
+  "utils__curriculum-audit__official-primary-curriculum-spine": {
+    "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu": "Israeli elementary Primary 1–6 - source-anchored planning spine (not syllabus certification)"
+  },
+  "utils__topic-next-step-engine": {
+    "move_up_a_grade_same_topic_only": "Move up a primary level — same topic only"
+  }
+}

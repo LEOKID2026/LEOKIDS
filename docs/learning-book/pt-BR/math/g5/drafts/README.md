@@ -1,158 +1,72 @@
-# Livro de aprendizagem de matemática da 5ª série - Rascunhos
+# Livro de aprendizagem — Matemática · 5º ano
 
-**Status:** Todos os lotes criados — **40/40** páginas de rascunho concluídas (Lotes A–H). Revisão do proprietário pendente.  
-**Data:** junho de 2026  
-**Pasta:** `docs/learning-book/math/g5/drafts/`
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/MATH_GRADE_5_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas de redução | ✅ **40/40** (Lotes A–H) |
-| Pacote de revisão | ✅ `docs/learning-book/MATH_GRADE_5_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificação de conteúdo | ✅ `scripts/verify-math-g5-book-content.mjs` |
-| Rascunho do manifesto (somente scripts) | ✅ `scripts/lib/math-g5-draft-manifest.mjs` |
-| Rascunho da fonte de conteúdo (somente scripts) | ✅ `scripts/lib/math-g5-draft-content.mjs` |
-| Gerador de tiragem (regeneração opcional) | ✅ `scripts/gen-math-g5-drafts.mjs` |
-| Registro/rotas em tempo de execução | ❌ Fora do escopo — tarefa somente de conteúdo |
-| Pratique o resolvedor CTA (G5) | ❌ Não criado — sem mapeamentos falsos |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/math/g5/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Fonte da Verdade
+## Páginas em rascunho
 
-| Documento/arquivo | Função |
-|-----------------|------|
-| `data/curriculum-spine/v1/skills.json` | Todas as 40 entradas de matemática da 5ª série `skill_id` no escopo |
-| `docs/learning-book/MATH_GRADE_5_LEARNING_BOOK_PLAN.md` | Lista de páginas, lotes, limites |
-| `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md` | Modelo de sete seções (faixa etária de 5ª a 6ª série) |
-| `docs/learning-book/math/g1/drafts/`… `g4/drafts/` | Apenas referência de estilo — **não modificado** |
-| `utils/math-constants.js` | Somente contexto de operações de ano 5 |
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `add_three.md` | `math:g5:add_three` | rascunho |
+| `add_two.md` | `math:g5:add_two` | rascunho |
+| `cmp.md` | `math:g5:cmp` | rascunho |
+| `dec_add.md` | `math:g5:dec_add` | rascunho |
+| `dec_sub.md` | `math:g5:dec_sub` | rascunho |
+| `div.md` | `math:g5:div` | rascunho |
+| `div_two_digit.md` | `math:g5:div_two_digit` | rascunho |
+| `div_with_remainder.md` | `math:g5:div_with_remainder` | rascunho |
+| `eq_add.md` | `math:g5:eq_add` | rascunho |
+| `eq_div.md` | `math:g5:eq_div` | rascunho |
+| `eq_mul.md` | `math:g5:eq_mul` | rascunho |
+| `eq_sub.md` | `math:g5:eq_sub` | rascunho |
+| `est_add.md` | `math:g5:est_add` | rascunho |
+| `est_mul.md` | `math:g5:est_mul` | rascunho |
+| `est_quantity.md` | `math:g5:est_quantity` | rascunho |
+| `fm_factor.md` | `math:g5:fm_factor` | rascunho |
+| `fm_gcd.md` | `math:g5:fm_gcd` | rascunho |
+| `fm_multiple.md` | `math:g5:fm_multiple` | rascunho |
+| `frac_add_sub.md` | `math:g5:frac_add_sub` | rascunho |
+| `frac_expand.md` | `math:g5:frac_expand` | rascunho |
+| `frac_reduce.md` | `math:g5:frac_reduce` | rascunho |
+| `frac_to_mixed.md` | `math:g5:frac_to_mixed` | rascunho |
+| `mixed_to_frac.md` | `math:g5:mixed_to_frac` | rascunho |
+| `mul.md` | `math:g5:mul` | rascunho |
+| `ns_complement100.md` | `math:g5:ns_complement100` | rascunho |
+| `ns_neighbors.md` | `math:g5:ns_neighbors` | rascunho |
+| `ns_place_hundreds.md` | `math:g5:ns_place_hundreds` | rascunho |
+| `perc_discount.md` | `math:g5:perc_discount` | rascunho |
+| `perc_part_of.md` | `math:g5:perc_part_of` | rascunho |
+| `round.md` | `math:g5:round` | rascunho |
+| `sequence.md` | `math:g5:sequence` | rascunho |
+| `sub_two.md` | `math:g5:sub_two` | rascunho |
+| `wp_comparison_more.md` | `math:g5:wp_comparison_more` | rascunho |
+| `wp_distance_time.md` | `math:g5:wp_distance_time` | rascunho |
+| `wp_leftover.md` | `math:g5:wp_leftover` | rascunho |
+| `wp_multi_step.md` | `math:g5:wp_multi_step` | rascunho |
+| `wp_shop_discount.md` | `math:g5:wp_shop_discount` | rascunho |
+| `wp_time_sum.md` | `math:g5:wp_time_sum` | rascunho |
+| `wp_unit_cm_to_m.md` | `math:g5:wp_unit_cm_to_m` | rascunho |
+| `wp_unit_g_to_kg.md` | `math:g5:wp_unit_g_to_kg` | rascunho |
 
----
-
-## Lote A — ערך מקום, השוואה, סדרות ועיגול (6)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `ns_place_hundreds.md` | ערך המקום — עד 100.000 |
-| `ns_neighbors.md` | שכנים — 100.000 |
-| `ns_complement100.md` | השלמה ל-100 |
-| `cmp.md` | השוואת מספרים — עד 100.000 |
-| `sequence.md` | סדרות — קפיצות גדולות |
-| `round.md` | עיגול — עשרות אלפים |
-
----
-
-## Lote B — חיבור, חיסור וכפל (4)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `add_two.md` | חיבור — 100.000 |
-| `sub_two.md` | חיסור — 100.000 |
-| `add_three.md` | חיבור שלושה מספרים |
-| `mul.md` | כפל — אסטרטגיות |
-
----
-
-## Lote C — חילוק (3)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `div.md` | חילוק — חלוקה שווה |
-| `div_with_remainder.md` | חילוק עם שארית |
-| `div_two_digit.md` | חילוק במחלק דו-ספרתי |
-
----
-
-## Lote D — שברים (5)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `frac_reduce.md` | צמצום שבר |
-| `frac_expand.md` | הרחבת שבר |
-| `frac_add_sub.md` | חיבור וחיסור שברים |
-| `mixed_to_frac.md` | מספר מעורב לשבר |
-| `frac_to_mixed.md` | שבר למספר מעורב |
+**Total de páginas de habilidade:** 40
 
 ---
 
-## Lote E — עשרוניים ומשוואות (6)
+## Regras deste locale
 
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `dec_add.md` | חיבור עשרוניים |
-| `dec_sub.md` | חיסור עשרוניים |
-| `eq_add.md` | משוואת חיבור |
-| `eq_sub.md` | משוואת חיסור |
-| `eq_mul.md` | משוואת כפל |
-| `eq_div.md` | משוואת חילוק |
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Lote F — גורמים, כפולות, מ.א.ח ואומדן (6)
+## Confirmações
 
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `fm_factor.md` | גורמים |
-| `fm_multiple.md` | כפולות |
-| `fm_gcd.md` | המחלק המשותף הגדול ביותר (מ.א.ח) |
-| `est_add.md` | אומדן חיבור |
-| `est_mul.md` | אומדן כפל |
-| `est_quantity.md` | אומדן כמות |
-
----
-
-## Lote G — אחוזים (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `perc_part_of.md` | אחוז מכמות |
-| `perc_discount.md` | הנחה באחוזים |
-
----
-
-## Lote H — שאלות מילוליות (8)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `wp_comparison_more.md` | כמה יותר? |
-| `wp_leftover.md` | Você não? |
-| `wp_time_sum.md` | סכום זמנים |
-| `wp_multi_step.md` | שאלה מרובת שלבים |
-| `wp_distance_time.md` | מרחק, זמן, מהירות |
-| `wp_shop_discount.md` | קניות והנחה |
-| `wp_unit_cm_to_m.md` | ס״מ ↔ מטר |
-| `wp_unit_g_to_kg.md` | גרם ↔ ק״ג |
-
----
-
-## Notas
-
-- `book_placeholder.md` — espaço reservado para infraestrutura; **não** faz parte do livro de 40 páginas.
-- Todas as páginas: `age_band: grades_5_6`, `approval_status: draft`, `grade: g5`.
-- Seção 7: apenas rascunho do texto do convite — **sem roteamento prático**.
-- A cópia voltada para crianças usa **חשבון**, não **מתמטיקה**.
-- Milhares agrupados (`1,000`, `10,000`, `48,726`) aparecem em muitas páginas — o renderizador deve isolar o LTR.
-
----
-
-## Gerar novamente rascunhos/pacote de revisão
-
-```bash
-node scripts/gen-math-g5-drafts.mjs
-node scripts/build-math-g5-hebrew-review-pack.mjs
-node scripts/verify-math-g5-book-content.mjs
-```
-
----
-
-## Regra de parada explícita
-
-Até que o proprietário aprove o conteúdo:
-
-- ❌ Sem registro, rotas, SQL, commit, push ou implantação
-- ✅ Somente documentação e remarcação de rascunho
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

@@ -1,4 +1,4 @@
-# Conhecendo a Praça
+# Conhecendo o quadrado
 
 ## Metadados
 
@@ -7,11 +7,11 @@
 | **learning_page_id** | `geometry:g1:shapes_basic_square` |
 | **skill_id** | `geometry:kind:shapes_basic_square` |
 | **assunto** | geometria |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |
-| **título_inglês** | Conhecendo a Praça `[DRAFT — not owner-approved]` |
+| **título_inglês** | Conhecendo o quadrado `[DRAFT — not owner-approved]` |
 
 **Referências de fontes:**
 - `data/curriculum-spine/v1/skills.json`
@@ -47,7 +47,7 @@ um ladrilho quadrado, uma janela quadrada, um quadrado num tabuleiro de jogo.
 
 Imagine um piso quadrado:
 - 4 lados iguais
-- 4 cantos direitos
+- 4 ângulos retos
 Isso é um quadrado.
 Se alguém perguntar:
 Isto é um quadrado? - verifique:
@@ -78,7 +78,7 @@ Na próxima página verificaremos os passos e a resposta juntos.
 
 ## 6. Vamos verificar juntos
 
-Adesivo: 4 lados, todos os cantos direitos e todos os lados iguais entre si.
+Adesivo: 4 lados, todos os ângulos retos e todos os lados iguais entre si.
 O adesivo é quadrado?
 Quantos lados? 4 lados – como um quadrado.
 Os cantos são ângulos retos? Sim - como um quadrado.

@@ -15,10 +15,10 @@ export function rebuildGeometryStemPtBr(question) {
   const hasRadius = Number.isFinite(radius) && radius > 0;
 
   if (kind === "circle_area" && hasRadius) {
-    return `Um círculo com raio ${radius}. Qual é a área? (π = 3.14)`;
+    return `Um círculo tem raio ${radius}. Qual é a área? (π = 3.14)`;
   }
   if (kind === "circle_perimeter" && hasRadius) {
-    return `Um círculo com raio ${radius}. Qual é o comprimento da circunferência? (π = 3.14)`;
+    return `Um círculo tem raio ${radius}. Qual é o comprimento da circunferência? (π = 3.14)`;
   }
   if (kind === "concept_circle" && p.patternFamily === "radius_diameter") {
     return "Em um círculo, a relação entre o diâmetro e o raio é:";

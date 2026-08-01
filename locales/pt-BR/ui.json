@@ -46,7 +46,7 @@
   "home": {
     "headline": "Leo Kids",
     "subhead": "Pratique matemática, geometria, inglês e ciências — desenvolvido para alunos do ensino fundamental.",
-    "ctaParents": "Eu sou um pai",
+    "ctaParents": "Sou responsável",
     "ctaKids": "Eu sou um estudante",
     "ctaTeachers": "Eu sou um professor"
   },
@@ -62,7 +62,7 @@
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu",
     "backHome": "De volta para casa",
-    "logoAlt": "LEO KIDS logo"
+    "logoAlt": "Leo Kids logo"
   },
   "empty": {
     "default": "Nada para mostrar ainda.",
@@ -96,7 +96,7 @@
     "androidStep3": "No celular: toque em \"Adicionar à tela inicial\" no menu do navegador",
     "androidStep4": "O aplicativo aparecerá na sua tela inicial",
     "prompt": {
-      "title": "Instale LEO KIDS",
+      "title": "Instale Leo Kids",
       "bodyIos": "Adicione o aplicativo à sua tela inicial para uma melhor experiência",
       "bodyDefault": "Instale o aplicativo para acesso mais rápido e fácil",
       "installNow": "Baixe e instale agora",
@@ -221,7 +221,7 @@
       }
     },
     "homepage": {
-      "brandLine": "LEO KIDS — ferramentas para os responsáveis, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
+      "brandLine": "Leo Kids — ferramentas para os responsáveis, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
       "flowDiagramAria": "Fluxo do sistema",
       "primaryActionsAria": "Faça login e registre-se",
       "hero": {
@@ -229,14 +229,14 @@
         "titleLine0": "Ferramentas para responsáveis.",
         "titleLine1": "Um mundo que as crianças adoram.",
         "titleLine2": "Aprendizagem que avança passo a passo.",
-        "subtitle": "LEO KIDS conecta práticas e jogos para crianças com um sistema que mapeia o progresso e dá aos responsáveis uma imagem clara.",
+        "subtitle": "Leo Kids conecta práticas e jogos para crianças com um sistema que mapeia o progresso e dá aos responsáveis uma imagem clara.",
         "reinforcement": "Disciplinas · Tópicos · Habilidades · Sub-habilidades",
         "videoTitle": "Veja do ponto de vista dos responsáveis",
         "videoDescription": "Conheça o rastreamento, relatórios e atividades pessoais.",
         "parentCta": "Login / inscrição dos responsáveis",
         "kidsCta": "Login do aluno",
-        "worksheetsCta": "folha de atividadess para impressão",
-        "infoLine": "LEO KIDS — ferramentas para os responsáveis, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
+        "worksheetsCta": "folhas de atividades para impressão",
+        "infoLine": "Leo Kids — ferramentas para os responsáveis, uma experiência divertida para as crianças e um aprendizado que avança passo a passo",
         "howItWorksTitle": "Como funciona",
         "flowStep0": "Práticas infantis",
         "flowStep1": "Desempenho de mapas do sistema",
@@ -296,7 +296,7 @@
             "text": "A imagem é baseada na prática real – não em uma única pontuação."
           },
           "parent-report": {
-            "title": "Limpar relatório pai",
+            "title": "Limpar relatório do responsável",
             "text": "Linguagem simples: o que seu filho sabe, para onde está se movendo e no que focar."
           },
           "focused-work": {
@@ -309,7 +309,7 @@
         "items": {
           "0": {
             "title": "Entenda o que está acontecendo",
-            "text": "Uma visão mais ampla do que uma série — construída a partir de atividades reais."
+            "text": "Uma visão mais ampla do que um ano — construída a partir de atividades reais."
           },
           "1": {
             "title": "Saiba onde focar",
@@ -325,7 +325,7 @@
           }
         },
         "highlight": "Em vez de adivinhar onde é difícil, obtenha uma visão organizada sobre o que fazer.",
-        "cta": "Vá para o portal pai"
+        "cta": "Vá para o portal do responsável"
       },
       "kids": {
         "label": "Para crianças",
@@ -364,7 +364,7 @@
       "finalCta": {
         "title": "Quer uma imagem mais clara de como seu filho está?",
         "text": "Abra uma conta, adicione seu filho e crie um quadro de aprendizagem organizado a partir de práticas, atividades e jogos.",
-        "parentCta": "Abrir conta pai",
+        "parentCta": "Abrir conta de responsável",
         "kidsCta": "Login do aluno"
       },
       "teachers": {
@@ -381,7 +381,7 @@
       "imageAlt": "Leo – ambiente de aprendizagem inteligente para crianças",
       "title": "Sobre Leo – aprenda, pratique e progrida",
       "intro0": "Bem-vindo ao Leo — um ambiente de aprendizagem inteligente criado para ajudar as crianças a praticar, compreender e progredir em um ritmo adequado a elas.",
-      "intro1": "O site foi projetado para alunos do ensino fundamental com prática por matéria, série, tópico e nível de dificuldade. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os tópicos onde precisa de mais confiança.",
+      "intro1": "O site foi projetado para alunos do ensino fundamental com prática por matéria, ano, tópico e nível de dificuldade. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os tópicos onde precisa de mais confiança.",
       "intro2": "Nosso objetivo é tornar o aprendizado mais claro, amigável e preciso: menos suposições, menos frustração e uma melhor compreensão do que seu filho já sabe e do que ainda precisa de reforço.",
       "missionTitle": "Nossa missão",
       "missionBody": "Ajudamos as crianças a desenvolver confiança na aprendizagem, a fortalecer competências básicas e avançadas e a dar aos responsáveis uma imagem mais clara do progresso dos seus filhos.",
@@ -476,23 +476,23 @@
     "portalInstallParent": "Instale o aplicativo para responsáveis",
     "portalInstallTeacher": "Instale o aplicativo para professores",
     "nativeOnlyBrowser": "A instalação do PWA está disponível no navegador, não no aplicativo nativo instalado.",
-    "installBtnStudent": "Instale LEO KIDS",
-    "installBtnParent": "Instalar P LEO KIDS",
-    "installBtnTeacher": "Instale o T LEO KIDS",
-    "installedStudent": "LEO KIDS está instalado. Abra o ícone LEO KIDS na tela inicial.",
-    "installedParent": "P LEO KIDS está instalado. Abra o ícone P LEO KIDS na tela inicial.",
-    "installedTeacher": "O T LEO KIDS está instalado. Abra o ícone T LEO KIDS na tela inicial.",
-    "promptAcceptedStudent": "O Chrome aceitou a instalação. Se o ícone LEO KIDS não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações do aplicativo.",
-    "promptAcceptedParent": "O Chrome aceitou a instalação. Se o ícone do P LEO KIDS não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações do aplicativo.",
-    "promptAcceptedTeacher": "O Chrome aceitou a instalação. Se o ícone do T LEO KIDS não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente.",
+    "installBtnStudent": "Instale Leo Kids",
+    "installBtnParent": "Instalar P Leo Kids",
+    "installBtnTeacher": "Instale o T Leo Kids",
+    "installedStudent": "Leo Kids está instalado. Abra o ícone Leo Kids na tela inicial.",
+    "installedParent": "P Leo Kids está instalado. Abra o ícone P Leo Kids na tela inicial.",
+    "installedTeacher": "O T Leo Kids está instalado. Abra o ícone T Leo Kids na tela inicial.",
+    "promptAcceptedStudent": "O Chrome aceitou a instalação. Se o ícone Leo Kids não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações do aplicativo.",
+    "promptAcceptedParent": "O Chrome aceitou a instalação. Se o ícone do P Leo Kids não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente. Se ainda não houver ícone, remova as instalações anteriores deste site das configurações do aplicativo.",
+    "promptAcceptedTeacher": "O Chrome aceitou a instalação. Se o ícone do T Leo Kids não aparecer na tela inicial dentro de um minuto, atualize a página e tente novamente.",
     "unavailableConsumed": "O prompt de instalação já foi usado. Atualize a página para tentar novamente, se o Chrome ainda permitir.",
     "unavailableError": "O prompt de instalação falhou. Atualize a página e tente novamente.",
-    "unavailableNoPromptStudent": "O Chrome não ofereceu um prompt de instalação para LEO KIDS no momento. Certifique-se de que o aplicativo ainda não esteja instalado e tente atualizar.",
-    "unavailableNoPromptParent": "O Chrome não ofereceu um prompt de instalação para P LEO KIDS no momento. Certifique-se de que o LEO KIDS esteja instalado e tente atualizar – os dois aplicativos devem estar separados.",
-    "unavailableNoPromptTeacher": "O Chrome não ofereceu um prompt de instalação para T LEO KIDS no momento. Certifique-se de que o aplicativo ainda não esteja instalado e tente atualizar.",
-    "pageTitleStudent": "LEO KIDS - Instalar",
-    "pageTitleParent": "P LEO KIDS - Instalar",
-    "pageTitleTeacher": "T LEO KIDS - Instalar",
+    "unavailableNoPromptStudent": "O Chrome não ofereceu um prompt de instalação para Leo Kids no momento. Certifique-se de que o aplicativo ainda não esteja instalado e tente atualizar.",
+    "unavailableNoPromptParent": "O Chrome não ofereceu um prompt de instalação para P Leo Kids no momento. Certifique-se de que o Leo Kids esteja instalado e tente atualizar – os dois aplicativos devem estar separados.",
+    "unavailableNoPromptTeacher": "O Chrome não ofereceu um prompt de instalação para T Leo Kids no momento. Certifique-se de que o aplicativo ainda não esteja instalado e tente atualizar.",
+    "pageTitleStudent": "Leo Kids - Instalar",
+    "pageTitleParent": "P Leo Kids - Instalar",
+    "pageTitleTeacher": "T Leo Kids - Instalar",
     "titleStudent": "Instale o aplicativo infantil",
     "titleParent": "Instale o aplicativo para responsáveis",
     "titleTeacher": "Instale o aplicativo para professores"
@@ -503,7 +503,7 @@
     "share": "Compartilhar",
     "studentWorld": "Mundo infantil",
     "studentWorldAriaLabel": "Vá para o mundo infantil",
-    "worksheets": "folha de atividadess para impressão",
+    "worksheets": "folhas de atividades para impressão",
     "curriculum": "Currículo",
     "addChild": "Adicionar filho",
     "addChildTitle": "Adicionar filho",
@@ -525,8 +525,8 @@
     "activity": "Atividade",
     "noChildrenYet": "Nenhum filho adicionado ainda",
     "promoVideoLabel": "Vídeo pai",
-    "promoTitle": "Conheça LEO KIDS",
-    "promoDescription": "Assista a um pequeno vídeo sobre ferramentas para responsáveis e como as crianças aprendem no LEO KIDS.",
+    "promoTitle": "Conheça Leo Kids",
+    "promoDescription": "Assista a um pequeno vídeo sobre ferramentas para responsáveis e como as crianças aprendem no Leo Kids.",
     "promoVideoAria": "Vídeo dos responsáveis",
     "curriculumModalTitle": "Planos curriculares",
     "curriculumSubjectTabsAria": "Seleção de assunto",
@@ -606,7 +606,7 @@
       "signInAgainParent": "Faça login novamente como pai/mãe.",
       "signInAgainTeacher": "Faça login novamente como professor.",
       "reportForbidden": "Você não tem acesso ao relatório desta criança.",
-      "reportLoadFailed": "Não foi possível carregar o relatório pai.",
+      "reportLoadFailed": "Não foi possível carregar o relatório do responsável.",
       "actionForbidden": "Você não tem permissão para esta ação.",
       "loadChildrenFailed": "Não foi possível carregar a lista de filhos.",
       "createChildFailed": "Não foi possível adicionar a criança.",
@@ -631,7 +631,7 @@
     "guestLock": "Não disponível no modo visitante",
     "guestTopicLock": "Este tópico está bloqueado no modo visitante",
     "guestGameLockLabel": "Bloqueada",
-    "guestGameLockHint": "Peça a um pai para desbloquear",
+    "guestGameLockHint": "Peça a um responsável para desbloquear",
     "parentLocked": "Bloqueado pelos responsáveis",
     "panelStats": "Minhas estatísticas",
     "panelProgress": "Meu progresso",
@@ -673,7 +673,7 @@
     "goToSubject": "Ir para o assunto",
     "noBadgesYet": "Ainda não há emblemas. Comece a aprender e obtenha conquistas em todas as disciplinas.",
     "noPersonalActivities": "Nenhuma atividade pessoal no momento. Quando um professor ou pai envia uma tarefa, ela aparecerá aqui.",
-    "noWorksheets": "Nenhuma folha de atividades aberta no momento. Quando as folha de atividadess forem atribuídas, elas aparecerão aqui.",
+    "noWorksheets": "Nenhuma folha de atividades aberta no momento. Quando as folhas de atividades forem atribuídas, elas aparecerão aqui.",
     "loadingActivities": "Carregando atividades…",
     "progressLoadFailed": "Não foi possível carregar os dados de progresso.",
     "dataProcessFailed": "Erro ao processar dados.",
@@ -724,7 +724,7 @@
     "parentInviteScanPromptLine2": "escaneie este código com seu telefone:",
     "parentInviteOrGoTo": "Ou acesse:",
     "parentInviteCopyLink": "Copiar link",
-    "parentInviteQrAria": "Código QR para página pai",
+    "parentInviteQrAria": "Código QR para página do responsável",
     "arcadeMissingRoom": "ID do quarto ausente.",
     "arcadeBackToArcade": "De volta ao fliperama",
     "arcadePageTitle": "{game} — Arcada",

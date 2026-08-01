@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g2:transformations` |
 | **skill_id** | `geometry:kind:transformations` |
 | **assunto** | geometria |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |

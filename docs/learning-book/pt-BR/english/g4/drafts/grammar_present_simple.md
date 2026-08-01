@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g4:grammar_present_simple` |
 | **skill_id** | `english:pool:grammar:present_simple` |
 | **assunto** | inglês |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |

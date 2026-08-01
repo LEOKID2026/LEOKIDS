@@ -10,7 +10,7 @@ export const SUBJECT_ARTICLES = [
       "assunto",
       "prática"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -39,7 +39,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "A prática é projetada para crianças da 1ª à 6ª série, de acordo com o nível da série."
+        "text": "A prática é projetada para crianças da 1ª à 6º ano, de acordo com o nível do ano."
       },
       {
         "kind": "heading",
@@ -64,7 +64,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Escolha uma série e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
+        "text": "Escolha um ano e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
       },
       {
         "kind": "video",
@@ -126,7 +126,7 @@ export const SUBJECT_ARTICLES = [
       "assunto",
       "prática"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -155,7 +155,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "A prática é projetada para crianças da 1ª à 6ª série, de acordo com o nível da série."
+        "text": "A prática é projetada para crianças da 1ª à 6º ano, de acordo com o nível do ano."
       },
       {
         "kind": "heading",
@@ -180,7 +180,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Escolha uma série e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
+        "text": "Escolha um ano e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
       },
       {
         "kind": "video",
@@ -236,13 +236,13 @@ export const SUBJECT_ARTICLES = [
     "slug": "english",
     "section": "subjects",
     "title": "Guia inglês",
-    "summary": "Prática de inglês da 1ª à 6ª série — o que as crianças aprendem e como praticar.",
+    "summary": "Prática de inglês da 1ª à 6º ano — o que as crianças aprendem e como praticar.",
     "keywords": [
       "Inglês",
       "assunto",
       "prática"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -271,7 +271,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "A prática é projetada para crianças da 1ª à 6ª série, de acordo com o nível da série."
+        "text": "A prática é projetada para crianças da 1ª à 6º ano, de acordo com o nível do ano."
       },
       {
         "kind": "heading",
@@ -296,7 +296,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Escolha uma série e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
+        "text": "Escolha um ano e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
       },
       {
         "kind": "video",
@@ -352,13 +352,13 @@ export const SUBJECT_ARTICLES = [
     "slug": "science",
     "section": "subjects",
     "title": "Guia científico",
-    "summary": "Prática científica da 1ª à 6ª série — o que as crianças aprendem e como praticar.",
+    "summary": "Prática científica da 1ª à 6º ano — o que as crianças aprendem e como praticar.",
     "keywords": [
       "Ciência",
       "assunto",
       "prática"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -387,7 +387,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "A prática é projetada para crianças da 1ª à 6ª série, de acordo com o nível da série."
+        "text": "A prática é projetada para crianças da 1ª à 6º ano, de acordo com o nível do ano."
       },
       {
         "kind": "heading",
@@ -412,7 +412,7 @@ export const SUBJECT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Escolha uma série e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
+        "text": "Escolha um ano e um nível, responda às perguntas e obtenha uma explicação após cada resposta."
       },
       {
         "kind": "video",

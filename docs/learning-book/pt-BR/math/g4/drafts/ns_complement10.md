@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Pares de números que somam 10. Revisão final na 4ª série. Não há complemento para 100 nesta página.
+**Escopo do conteúdo:** Pares de números que somam 10. Revisão final na 4º ano. Não há complemento para 100 nesta página.
 
 ---
 

@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g4:materials` |
 | **skill_id** | `science:topic:materials` |
-| **assunto** | ciência |
-| **nota** | g4 |
+| **assunto** | Ciências |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Materiais — Mudanças e Eletricidade (Conceitos) `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Mudança física/química (exemplos); condutor/isolador – sem fiação

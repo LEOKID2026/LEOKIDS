@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g1:transformations` |
 | **skill_id** | `geometry:kind:transformations` |
 | **assunto** | geometria |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Tradução (mover sem virar); reflexão (imagem espelhada); sem rotação na 1ª série
+**Escopo do conteúdo:** Tradução (mover sem virar); reflexão (imagem espelhada); sem rotação na 1º ano
 
 ---
 

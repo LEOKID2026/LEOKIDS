@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g1:sentence_base` |
 | **skill_id** | `english:pool:sentence:base` |
 | **assunto** | inglês |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | aprovado |

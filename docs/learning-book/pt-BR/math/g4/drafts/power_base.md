@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:power_base` |
 | **skill_id** | `math:kind:power_base` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

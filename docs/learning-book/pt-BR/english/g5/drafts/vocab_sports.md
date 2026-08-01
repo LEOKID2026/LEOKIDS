@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g5:vocab_sports` |
 | **skill_id** | `english:vocabulary:wordlist:sports` |
 | **assunto** | inglês |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

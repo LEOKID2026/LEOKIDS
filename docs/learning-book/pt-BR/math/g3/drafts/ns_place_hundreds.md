@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g3:ns_place_hundreds` |
 | **skill_id** | `math:kind:ns_place_hundreds` |
 | **assunto** | matemática |
-| **nota** | g3 |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

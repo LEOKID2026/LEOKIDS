@@ -1,6 +1,6 @@
 {
   "copy": {
-    "grade_status": "Status da nota",
+    "grade_status": "Status do ano",
     "class_status": "Status da aula"
   }
 }

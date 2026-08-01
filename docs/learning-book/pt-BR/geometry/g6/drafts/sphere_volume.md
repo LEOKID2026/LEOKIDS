@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g6:sphere_volume` |
 | **skill_id** | `geometry:kind:sphere_volume` |
 | **assunto** | geometria |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

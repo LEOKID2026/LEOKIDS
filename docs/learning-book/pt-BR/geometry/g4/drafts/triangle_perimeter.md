@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:triangle_perimeter` |
 | **skill_id** | `geometry:kind:triangle_perimeter` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

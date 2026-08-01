@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g5:body` |
 | **skill_id** | `science:topic:body` |
-| **assunto** | ciência |
-| **nota** | g5 |
+| **assunto** | Ciências |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | O corpo humano – esqueleto, músculos e sentidos `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Esqueleto/músculos; sistema nervoso como uma rede de mensagens – requer ilustração: esqueleto e músculos

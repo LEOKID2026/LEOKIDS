@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:diagonal_rectangle` |
 | **skill_id** | `geometry:kind:diagonal_rectangle` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

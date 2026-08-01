@@ -1,95 +1,51 @@
-# Livro de aprendizagem de geometria da 6ª série - Rascunhos
+# Livro de aprendizagem — Geometria · 6º ano
 
-**Status:** Todos os lotes criados — **19/19** páginas de rascunho concluídas (Lotes A–G). Revisão do proprietário pendente.  
-**Data:** junho de 2026  
-**Pasta:** `docs/learning-book/geometry/g6/drafts/`  
-**Título do livro (voltado para crianças):** ספר גאומטריה — כיתה ו׳
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas de redução | ✅ **19/19** (Lotes A – G) |
-| Pacote de revisão | ✅ `docs/learning-book/GEOMETRY_GRADE_6_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificação de conteúdo | ✅ `scripts/verify-geometry-g6-book-content.mjs` |
-| Projeto de manifesto | ✅ `scripts/lib/geometry-g6-draft-manifest.mjs` |
-| Registro/rotas em tempo de execução | ❌ Fora do escopo |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/geometry/g6/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Lote A — היקף, שטח וזוויות (6)
+## Páginas em rascunho
 
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `square_perimeter.md` | היקף ריבוע — כיתה ו׳ |
-| `triangle_perimeter.md` | היקף משולש — כיתה ו׳ |
-| `square_area.md` | שטח ריבוע — כיתה ו׳ |
-| `parallelogram_area.md` | שטח מקבילית — כיתה ו׳ |
-| `trapezoid_area.md` | שטח טרפז — כיתה ו׳ |
-| `triangle_angles.md` | זוויות במשולש — כיתה ו׳ |
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `circle_area.md` | `geometry:g6:circle_area` | rascunho |
+| `circle_perimeter.md` | `geometry:g6:circle_perimeter` | rascunho |
+| `cone_volume.md` | `geometry:g6:cone_volume` | rascunho |
+| `cylinder_volume.md` | `geometry:g6:cylinder_volume` | rascunho |
+| `parallelogram_area.md` | `geometry:g6:parallelogram_area` | rascunho |
+| `prism_volume_rectangular.md` | `geometry:g6:prism_volume_rectangular` | rascunho |
+| `prism_volume_triangle.md` | `geometry:g6:prism_volume_triangle` | rascunho |
+| `pyramid_volume_rectangular.md` | `geometry:g6:pyramid_volume_rectangular` | rascunho |
+| `pyramid_volume_square.md` | `geometry:g6:pyramid_volume_square` | rascunho |
+| `pythagoras_hyp.md` | `geometry:g6:pythagoras_hyp` | rascunho |
+| `pythagoras_leg.md` | `geometry:g6:pythagoras_leg` | rascunho |
+| `rectangular_prism_volume.md` | `geometry:g6:rectangular_prism_volume` | rascunho |
+| `solids.md` | `geometry:g6:solids` | rascunho |
+| `sphere_volume.md` | `geometry:g6:sphere_volume` | rascunho |
+| `square_area.md` | `geometry:g6:square_area` | rascunho |
+| `square_perimeter.md` | `geometry:g6:square_perimeter` | rascunho |
+| `trapezoid_area.md` | `geometry:g6:trapezoid_area` | rascunho |
+| `triangle_angles.md` | `geometry:g6:triangle_angles` | rascunho |
+| `triangle_perimeter.md` | `geometry:g6:triangle_perimeter` | rascunho |
 
-## Lote B — מעגל ועיגול (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `circle_perimeter.md` | היקף מעגל |
-| `circle_area.md` | שטח עיגול |
-
-## Lote C — משפט פיתגורס (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `pythagoras_hyp.md` | משפט פיתגורס — מציאת יתר |
-| `pythagoras_leg.md` | משפט פיתגורס — מציאת ניצב |
-
-## Lote D — גופים ונפח בסיסי (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `solids.md` | גופים — גליל, פירמידה, חרוט, כדור |
-| `rectangular_prism_volume.md` | נפח תיבה — כיתה ו׳ |
-
-## Lote E — נפח מנסרות (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `prism_volume_rectangular.md` | נפח מנסרה — בסיס מלבן |
-| `prism_volume_triangle.md` | נפח מנסרה — בסיס משולש |
-
-## Lote F — נפח פירמידות (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `pyramid_volume_square.md` | נפח פירמידה — בסיס ריבוע |
-| `pyramid_volume_rectangular.md` | נפח פירמידה — בסיס מלבן |
-
-## Lote G — נפח גליל, חרוט וכדור (3)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `cylinder_volume.md` | נפח גליל |
-| `cone_volume.md` | נפח חרוט |
-| `sphere_volume.md` | נפח כדור |
+**Total de páginas de habilidade:** 19
 
 ---
 
-## Notas
+## Regras deste locale
 
-- Todas as páginas: `age_band: grades_5_6`, `approval_status: draft`, `grade: g6`.
-- A cópia voltada para crianças usa **גאומטריה**, não **הנדסה**.
-- A Seção 5 e a Seção 6 usam o **mesmo problema de geometria** (mesmos números, unidades, história).
-- Seção 7: rascunho apenas para convite — **sem roteamento prático**.
-- `book_placeholder.md` — espaço reservado para infraestrutura; **não** faz parte do livro de 19 páginas.
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Regenerar
+## Confirmações
 
-```bash
-node scripts/generate-geometry-g6-drafts.mjs
-node scripts/build-geometry-g6-hebrew-review-pack.mjs
-node scripts/verify-geometry-g6-book-content.mjs
-```
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

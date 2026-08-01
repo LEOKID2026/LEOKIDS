@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g1:plants` |
 | **skill_id** | `science:topic:plants` |
-| **assunto** | ciência |
-| **nota** | g1 |
+| **assunto** | Ciências |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Plantas — O que as plantas precisam `[DRAFT — not owner-approved]` |
 
 **Referências de fontes:**

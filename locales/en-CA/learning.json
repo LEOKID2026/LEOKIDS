@@ -1,0 +1,11 @@
+{
+  "geometry": {
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    }
+  }
+}

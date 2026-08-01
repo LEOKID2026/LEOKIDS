@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:scale_real_to_map` |
 | **skill_id** | `math:kind:scale_real_to_map` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

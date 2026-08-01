@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:perc_discount` |
 | **skill_id** | `math:kind:perc_discount` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | palavra_problema_estratégia |
 | **status_aprovação** | lançamento_pronto |

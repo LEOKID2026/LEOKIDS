@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g1:grammar_be` |
 | **skill_id** | `english:pool:grammar:be_basic` |
 | **assunto** | inglês |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | aprovado |

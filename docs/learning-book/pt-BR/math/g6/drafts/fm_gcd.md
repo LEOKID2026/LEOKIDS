@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:fm_gcd` |
 | **skill_id** | `math:kind:fm_gcd` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

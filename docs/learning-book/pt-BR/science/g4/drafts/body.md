@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g4:body` |
 | **skill_id** | `science:topic:body` |
-| **assunto** | ciência |
-| **nota** | g4 |
+| **assunto** | Ciências |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | O Corpo Humano – Respiração e Digestão `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Trocas gasosas na respiração; caminho digestivo – simples

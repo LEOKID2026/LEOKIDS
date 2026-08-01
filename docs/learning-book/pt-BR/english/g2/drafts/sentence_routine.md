@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g2:sentence_routine` |
 | **skill_id** | `english:pool:sentence:routine` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | aprovado |

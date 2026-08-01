@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g2:early_sentences_exposure` |
 | **skill_id** | `english:phonics:g2:early_sentences_exposure` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | phonics_foundation |
 | **status_aprovação** | aprovado |

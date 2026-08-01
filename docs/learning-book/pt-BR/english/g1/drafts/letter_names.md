@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g1:letter_names` |
 | **skill_id** | `english:phonics:g1:letter_names` |
 | **assunto** | inglês |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | phonics_foundation |
 | **status_aprovação** | aprovado |

@@ -1,4 +1,4 @@
-# Frases curtas - 2ª série
+# Frases curtas - 2º ano
 
 ## Metadados
 
@@ -7,11 +7,11 @@
 | **learning_page_id** | `english:g2:sentence_base` |
 | **skill_id** | `english:pool:sentence:base` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | aprovado |
-| **título_inglês** | Frases Curtas — 2ª série |
+| **título_inglês** | Frases Curtas — 2º ano |
 
 **Referências de fontes:**
 - `data/curriculum-spine/v1/skills.json`

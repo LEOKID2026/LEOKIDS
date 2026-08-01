@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g3:grammar_articles_prepositions` |
   | **skill_id** | `english:grammar:line:articles_prepositions_in_on_under` |
 | **assunto** | inglês |
-| **nota** | g3 |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | aprovado |

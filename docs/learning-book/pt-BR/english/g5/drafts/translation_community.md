@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g5:translation_community` |
 | **skill_id** | `english:pool:translation:community` |
 | **assunto** | inglês |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |

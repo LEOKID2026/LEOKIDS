@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g6:earth_space` |
 | **skill_id** | `science:topic:earth_space` |
-| **assunto** | ciência |
-| **nota** | g6 |
+| **assunto** | Ciências |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Terra — Clima e Espaço `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Mudanças climáticas — factuais, não assustadoras; sistema solar — requer ilustração: Terra no sistema solar

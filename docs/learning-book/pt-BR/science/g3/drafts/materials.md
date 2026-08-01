@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g3:materials` |
 | **skill_id** | `science:topic:materials` |
-| **assunto** | ciência |
-| **nota** | g3 |
+| **assunto** | Ciências |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Materiais — Forças e Movimento `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Empurrar/puxar; atrito; ímã – sem eletricidade

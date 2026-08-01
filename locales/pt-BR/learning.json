@@ -149,7 +149,7 @@
     "mixedPractice": "Prática mista",
     "editMixOperations": "Editar operações de mixagem",
     "subjects": "Assuntos",
-    "notEnoughQuestions": "Não há perguntas suficientes para o tópico/série/nível que você escolheu. Tente alterar uma configuração.",
+    "notEnoughQuestions": "Não há perguntas suficientes para o tópico/ano/nível que você escolheu. Tente alterar uma configuração.",
     "step": "Etapa {num}",
     "explanation": "Explicação",
     "noStepDetail": "Nenhum detalhe passo a passo para esta pergunta. Use o quadro de fórmulas.",
@@ -278,9 +278,9 @@
     "deselectAll": "Desmarcar tudo",
     "selectOneTopicMin": "Selecione pelo menos um tópico",
     "mistakePracticeTitle": "🎯 Pratique erros recentes",
-    "mistakePracticeBlurb": "Escolha um erro recente para abrir a prática focada no mesmo tópico, série e dificuldade.",
+    "mistakePracticeBlurb": "Escolha um erro recente para abrir a prática focada no mesmo tópico, ano e dificuldade.",
     "noActiveMistakes": "Nenhum erro ativo ainda. Jogue uma sessão, colete dados e depois volte aqui.",
-    "currentGrade": "Nota atual",
+    "currentGrade": "Ano atual",
     "practiceNow": "Pratique agora",
     "clearMistakesBtn": "🧹 Elimine erros",
     "wordBoardTitle": "📚 Quadro de palavras interativo",
@@ -330,7 +330,7 @@
   "math": {
     "levelUpScience": "Você subiu de nível em matemática!",
     "howToLearnTitle": "📘 Como aprender matemática aqui?",
-    "howToLearnBlurb": "O objetivo é praticar matemática de uma forma divertida, de acordo com a série, o tema e a dificuldade.",
+    "howToLearnBlurb": "O objetivo é praticar matemática de uma forma divertida, de acordo com a ano, o tema e a dificuldade.",
     "leaderboardTitle": "🏆 Tabela de classificação - matemática",
     "referenceBoardTitle": "📚 Quadro de ajuda matemática",
     "multiplicationTable": "📊 Tabuada de multiplicação",
@@ -377,7 +377,7 @@
       "checkAnswer": "Verificaremos a resposta."
     },
     "howToLearnSteps": {
-      "step1": "Escolha nota, dificuldade e operação (adição, subtração, multiplicação, divisão, frações, porcentagens e muito mais).",
+      "step1": "Escolha o ano, a dificuldade e a operação (adição, subtração, multiplicação, divisão, frações, porcentagens e muito mais).",
       "step2": "Escolha um modo de jogo: aprendizagem, desafio com cronômetro e vidas, velocidade ou maratona.",
       "step3": "Leia cada pergunta com atenção - alguns são problemas de palavras em que você precisa entender a história.",
       "step4": "Pontuações mais altas, sequências de respostas, estrelas e emblemas ajudam você a subir de nível como jogador."
@@ -490,9 +490,9 @@
   "geometry": {
     "leaderboardTitle": "🏆 Tabela de classificação – Geometria",
     "howToLearnTitle": "📘 Como aprender geometria aqui?",
-    "howToLearnBlurb": "O objetivo é praticar geometria de uma forma divertida, de acordo com a série, tema e dificuldade.",
+    "howToLearnBlurb": "O objetivo é praticar geometria de uma forma divertida, de acordo com a ano, tema e dificuldade.",
     "howToLearnSteps": {
-      "step1": "Escolha nota, dificuldade e tópico (área, perímetro, volume, ângulos, Pitágoras e muito mais).",
+      "step1": "Escolha o ano, a dificuldade e o tópico (área, perímetro, volume, ângulos, Pitágoras e muito mais).",
       "step2": "Escolha um modo de jogo: aprendizagem, desafio com cronômetro e vidas, velocidade ou maratona.",
       "step3": "Leia cada pergunta com atenção - algumas são problemas verbais sobre jardins, cercas e caixas.",
       "step4": "Pontuações mais altas, sequências de respostas, estrelas e emblemas ajudam você a subir de nível como jogador."
@@ -643,8 +643,8 @@
       "mixed": "Misturado"
     },
     "errors": {
-      "invalidGrade": "Nota inválida. Por favor, escolha outra série.",
-      "noTopics": "Não há tópicos disponíveis para esta série. Por favor, escolha outra série.",
+      "invalidGrade": "Ano inválido. Por favor, escolha outro ano.",
+      "noTopics": "Não há tópicos disponíveis para este ano. Por favor, escolha outro ano.",
       "noQuestions": "Não há perguntas disponíveis para o tópico e nota selecionados.",
       "generateError": "Erro ao gerar pergunta. Por favor, tente novamente ou escolha outro tópico."
     }
@@ -741,7 +741,7 @@
   "science": {
     "leaderboardTitle": "🏆 Tabela de classificação – Ciência",
     "howToLearnTitle": "📘 Como aprender ciências aqui?",
-    "howToLearnBlurb": "O objetivo é praticar ciências de uma forma divertida, de acordo com a série, o tema e a dificuldade.",
+    "howToLearnBlurb": "O objetivo é praticar ciências de uma forma divertida, de acordo com a ano, o tema e a dificuldade.",
     "levelUp": "Você subiu de nível em ciências!",
     "levelUpNow": "Você está agora no nível {level}",
     "scientistLevel": "Nível de cientista",
@@ -851,7 +851,7 @@
       "accuracyFalling": "A tendência de precisão na sequência recente está caindo – revise o material."
     },
     "howToLearnSteps": {
-      "step1": "Escolha a série, o nível e o tópico (por exemplo, corpo humano, plantas, animais e muito mais).",
+      "step1": "Escolha a ano, o nível e o tópico (por exemplo, corpo humano, plantas, animais e muito mais).",
       "step2": "Escolha um modo de jogo: aprendizagem, desafio com cronômetro e vidas, velocidade ou maratona.",
       "step3": "Responda perguntas de múltipla escolha, verdadeiro/falso e estilo experimental.",
       "step4": "Crie sequências de respostas e ganhe estrelas e pontos de XP."

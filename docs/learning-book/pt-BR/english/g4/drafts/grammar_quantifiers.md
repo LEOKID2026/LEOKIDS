@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g4:grammar_quantifiers` |
 | **skill_id** | `english:pool:grammar:quantifiers` |
 | **assunto** | inglês |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | aprovado |

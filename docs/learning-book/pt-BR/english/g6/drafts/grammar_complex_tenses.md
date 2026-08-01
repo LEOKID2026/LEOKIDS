@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g6:grammar_complex_tenses` |
 | **skill_id** | `english:pool:grammar:complex_tenses` |
 | **assunto** | inglês |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | página_contraste |
 | **status_aprovação** | aprovado |

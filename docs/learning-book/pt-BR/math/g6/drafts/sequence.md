@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:sequence` |
 | **skill_id** | `math:kind:sequence` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

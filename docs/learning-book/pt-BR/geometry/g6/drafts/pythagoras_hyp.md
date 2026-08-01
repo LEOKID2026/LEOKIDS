@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g6:pythagoras_hyp` |
 | **skill_id** | `geometry:kind:pythagoras_hyp` |
 | **assunto** | geometria |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
@@ -38,14 +38,14 @@ tipo: triângulo_direito
 
 Passos para encontrar a hipotenusa:
 1.
-Quadrado da perna 1 + quadrado da perna 2
+Quadrado do cateto 1 + quadrado do cateto 2
 2. Raiz quadrada da soma = hipotenusa
 
 ---
 
 ## 3. Exemplo
 
-Pernas 3 cm e 4 cm:
+Catetos 3 cm e 4 cm:
 3² + 4² = 9 + 16 = 25
 √25 = 5 centímetros
 
@@ -53,7 +53,7 @@ Pernas 3 cm e 4 cm:
 
 ## 4. Vamos resolver juntos
 
-Triângulo retângulo — pernas de 3 cm e 4 cm. Qual é o comprimento da hipotenusa?
+Triângulo retângulo — catetos de 3 cm e 4 cm. Qual é o comprimento da hipotenusa?
 9 + 16 = 25
 √25 = 5
 5 cm.
@@ -80,4 +80,4 @@ Triângulo retângulo: catetos de 5 cm e 12 cm — qual é o comprimento da hipo
 ## 7. Vamos praticar!
 
 Teorema de Pitágoras: a² + b² = c².
-Na prática, você encontrará a hipotenusa – eleve cada perna ao quadrado e depois some!
+Na prática, você encontrará a hipotenusa – eleve cada cateto ao quadrado e depois some!

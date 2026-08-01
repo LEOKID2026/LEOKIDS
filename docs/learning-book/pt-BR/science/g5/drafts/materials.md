@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g5:materials` |
 | **skill_id** | `science:topic:materials` |
-| **assunto** | ciência |
-| **nota** | g5 |
+| **assunto** | Ciências |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Materiais — Misturas e Luz `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Misturas/soluções; sombra, reflexo, transparência — requer ilustração: caminho da luz

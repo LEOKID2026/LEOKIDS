@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g5:diagonal_rectangle` |
 | **skill_id** | `geometry:kind:diagonal_rectangle` |
 | **assunto** | geometria |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
@@ -68,7 +68,7 @@ Na próxima página verificaremos os passos e a resposta juntos.
 ## 6. Vamos verificar juntos
 
 Retângulo 5 cm × 12 cm — qual é o comprimento da diagonal?
-Alinhe as pernas:
+Alinhe os catetos:
 5² = 25
 12² = 144
 Adicionar:
@@ -82,4 +82,4 @@ Diagonal = 13 cm
 ## 7. Vamos praticar!
 
 Diagonal de um retângulo = √(comprimento² + largura²).
-Na prática você encontrará diagonais – primeiro esquadre cada perna!
+Na prática você encontrará diagonais – primeiro esquadre cada cateto!

@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g1:environment` |
 | **skill_id** | `science:topic:environment` |
-| **assunto** | ciência |
-| **nota** | g1 |
+| **assunto** | Ciências |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Nosso Meio Ambiente `[DRAFT — not owner-approved]` |
 
 **Referências de fontes:**

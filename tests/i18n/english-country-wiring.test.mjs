@@ -128,19 +128,19 @@ test("English country canonical redirects preserve deep paths and query", () => 
   assert.equal(resolveLocaleIdFromPathPrefix("uk"), null);
 });
 
-test("selector adds Australia New Zealand Ireland England; count 26", () => {
+test("selector includes Australia New Zealand Ireland England among 30 locales", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 26);
+  assert.equal(locales.length, 30);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of COUNTRIES) {
     assert.equal(byId[c.id].label, c.label);
     assert.equal(byId[c.id].nativeName, c.label);
     assert.notEqual(byId[c.id].label, c.id);
   }
-  assert.equal(locales[locales.length - 4].id, "en-AU");
-  assert.equal(locales[locales.length - 3].id, "en-NZ");
-  assert.equal(locales[locales.length - 2].id, "en-IE");
-  assert.equal(locales[locales.length - 1].id, "en-GB");
+  assert.ok(locales.some((l) => l.id === "en-AU"));
+  assert.ok(locales.some((l) => l.id === "en-NZ"));
+  assert.ok(locales.some((l) => l.id === "en-IE"));
+  assert.ok(locales.some((l) => l.id === "en-GB"));
   assert.ok(!locales.some((l) => /United Kingdom|British English|Australian English/i.test(l.label)));
 });
 

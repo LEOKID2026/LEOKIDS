@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g3:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
 | **assunto** | matemática |
-| **nota** | g3 |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |
@@ -39,7 +39,7 @@ Usando-o adicionalmente: "faça 10 primeiro" - depois continue.
 Exemplo: 9 + 6
 - 9 + 1 = 10, 5 sobrando
 10 + 5 = 15
-Link para a 3ª série: 7 + 3 = 10 → 67 + 33 = 100 (a mesma ideia com dezenas).
+Link para a 3º ano: 7 + 3 = 10 → 67 + 33 = 100 (a mesma ideia com dezenas).
 
 ---
 

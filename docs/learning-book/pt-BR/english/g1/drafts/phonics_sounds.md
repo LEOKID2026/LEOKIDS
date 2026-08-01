@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g1:phonics_sounds` |
 | **skill_id** | `english:phonics:g1:phonics_sounds` |
 | **assunto** | inglês |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | phonics_foundation |
 | **status_aprovação** | aprovado |

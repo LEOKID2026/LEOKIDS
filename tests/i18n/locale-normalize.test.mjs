@@ -28,7 +28,10 @@ test("normalizeLocaleInput: known aliases resolve to canonical registry ids", ()
   assert.equal(normalizeLocaleId("en-au"), "en-AU");
   assert.equal(normalizeLocaleId("en-nz"), "en-NZ");
   assert.equal(normalizeLocaleId("en-ie"), "en-IE");
-  assert.equal(normalizeLocaleId("en-ca"), "en");
+  assert.equal(normalizeLocaleId("en-ca"), "en-CA");
+  assert.equal(normalizeLocaleId("en-sg"), "en-SG");
+  assert.equal(normalizeLocaleId("en-za"), "en-ZA");
+  assert.equal(normalizeLocaleId("en-wls"), "en-WLS");
   assert.equal(normalizeLocaleId("en-xa"), "en-XA");
   assert.equal(normalizeLocaleId("ar-xb"), "ar-XB");
   // Unregistered locales (including he / he-IL) fall back to English
@@ -74,6 +77,13 @@ test("buildLocaleFallbackChain: same-language regional parent prefers es-419 ove
   assert.deepEqual(
     buildLocaleFallbackChain("es-AR", { configuredFallback: "es-419", defaultLocale: "en" }),
     ["es-AR", "es-419", "en"]
+  );
+});
+
+test("buildLocaleFallbackChain: Wales multi-step en-WLS → en-GB → en", () => {
+  assert.deepEqual(
+    buildLocaleFallbackChain("en-WLS", { configuredFallback: "en-GB", defaultLocale: "en" }),
+    ["en-WLS", "en-GB", "en"]
   );
 });
 

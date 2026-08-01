@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g1:eq_sub_simple` |
 | **skill_id** | `math:kind:eq_sub_simple` |
 | **assunto** | matemática |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g5:animals` |
 | **skill_id** | `science:topic:animals` |
-| **assunto** | ciência |
-| **nota** | g5 |
+| **assunto** | Ciências |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Animais — Reprodução e Adaptações `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Reprodução; características herdadas – sem fórmulas genéticas

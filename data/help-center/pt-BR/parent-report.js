@@ -3,13 +3,13 @@ export const PARENT_REPORT_ARTICLES = [
   {
     "slug": "report-overview",
     "section": "parent-report",
-    "title": "Visão geral do relatório pai",
+    "title": "Visão geral do relatório do responsável",
     "summary": "Relatório padrão versus relatório detalhado — quando usar cada um.",
     "keywords": [
       "relatório",
       "visão geral"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -39,8 +39,8 @@ export const PARENT_REPORT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parent-report/report-overview/desktop/short-report.png",
-        "alt": "Página padrão do relatório pai",
-        "caption": "Página padrão do relatório pai",
+        "alt": "Página padrão do relatório do responsável",
+        "caption": "Página padrão do relatório do responsável",
         "sources": {
           "mobile": "/help-center/screenshots/parent-report/report-overview/mobile/short-report.png",
           "tablet": "/help-center/screenshots/parent-report/report-overview/tablet/short-report.png"
@@ -77,7 +77,7 @@ export const PARENT_REPORT_ARTICLES = [
       "resumo",
       "cartão"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -121,7 +121,7 @@ export const PARENT_REPORT_ARTICLES = [
       "dados",
       "presença"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -138,7 +138,7 @@ export const PARENT_REPORT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Se o seu filho praticou apenas um pouco, o relatório dirá que ainda não há informações suficientes. Isso é normal – continue praticando."
+        "text": "Se o seu filho ou sua filha praticou apenas um pouco, o relatório dirá que ainda não há informações suficientes. Isso é normal – continue praticando."
       },
       {
         "kind": "callout",
@@ -170,7 +170,7 @@ export const PARENT_REPORT_ARTICLES = [
       "tendência",
       "confiança"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -209,12 +209,12 @@ export const PARENT_REPORT_ARTICLES = [
     "slug": "strengths-and-improvements",
     "section": "parent-report",
     "title": "Pontos fortes e áreas a melhorar",
-    "summary": "O que seu filho faz bem e o que fortalecer.",
+    "summary": "O que seu filho ou sua filha faz bem e o que fortalecer.",
     "keywords": [
       "pontos fortes",
       "melhoria"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -262,7 +262,7 @@ export const PARENT_REPORT_ARTICLES = [
       "tópicos",
       "assunto"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -306,7 +306,7 @@ export const PARENT_REPORT_ARTICLES = [
       "assuntos",
       "gráfico"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -323,7 +323,7 @@ export const PARENT_REPORT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Permite que você veja rapidamente onde seu filho é forte e onde há espaço para crescer em matemática, geometria, inglês e ciências."
+        "text": "Permite que você veja rapidamente onde seu filho ou sua filha é forte e onde há espaço para crescer em matemática, geometria, inglês e ciências."
       },
       {
         "kind": "screenshot",
@@ -349,7 +349,7 @@ export const PARENT_REPORT_ARTICLES = [
     "keywords": [
       "recomendações"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -392,7 +392,7 @@ export const PARENT_REPORT_ARTICLES = [
     "keywords": [
       "desafios"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -436,7 +436,7 @@ export const PARENT_REPORT_ARTICLES = [
       "detalhado",
       "carta"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -467,7 +467,7 @@ export const PARENT_REPORT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "Cada matéria inclui uma explicação escrita para os responsáveis — o que seu filho sabe e o que fortalecer."
+        "text": "Cada matéria inclui uma explicação escrita para os responsáveis — o que seu filho ou sua filha sabe e o que fortalecer."
       },
       {
         "kind": "screenshot",
@@ -494,7 +494,7 @@ export const PARENT_REPORT_ARTICLES = [
       "imprimir",
       "PDF"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -543,7 +543,7 @@ export const PARENT_REPORT_ARTICLES = [
       "isenção de responsabilidade",
       "jurídico"
     ],
-    "audience": "pai",
+    "audience": "responsável",
     "updatedAt": "23/05/2026",
     "toc": [
       {
@@ -574,8 +574,8 @@ export const PARENT_REPORT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parent-report/understanding-the-disclaimer/desktop/disclaimer.png",
-        "alt": "Caixa de aviso importante em um relatório pai",
-        "caption": "Caixa de aviso importante em um relatório pai",
+        "alt": "Caixa de aviso importante em um relatório do responsável",
+        "caption": "Caixa de aviso importante em um relatório do responsável",
         "sources": {
           "mobile": "/help-center/screenshots/parent-report/understanding-the-disclaimer/mobile/disclaimer.png",
           "tablet": "/help-center/screenshots/parent-report/understanding-the-disclaimer/tablet/disclaimer.png"

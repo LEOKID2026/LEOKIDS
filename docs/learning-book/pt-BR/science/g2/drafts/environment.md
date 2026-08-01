@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g2:environment` |
 | **skill_id** | `science:topic:environment` |
-| **assunto** | ciência |
-| **nota** | g2 |
+| **assunto** | Ciências |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Meio Ambiente — Protegendo a Natureza `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Menos desperdício; protegendo plantas e animais locais

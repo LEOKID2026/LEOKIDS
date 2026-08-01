@@ -1,0 +1,11 @@
+{
+  "leo-gifts": {
+    "blurb": "Equal division, remainders, and quick maths"
+  },
+  "sort-shapes": {
+    "blurb": "Sort shapes and colours into the correct boxes!",
+    "help": {
+      "howToPlay": "Drag each shape to the matching box by shape or colour. Finish all the sorting before time runs out."
+    }
+  }
+}

@@ -28,5 +28,6 @@
   "coloringUploadBadResult": "We could not create a good colouring sheet. Try a photo with a simpler background.",
   "coloringUploadQuotaUser": "You reached the daily limit of 10 colouring sheets. You can create more tomorrow.",
   "coloringUploadStyleColoringTitle": "Colouring sheet",
-  "coloringUploadCreateColoring": "Create colouring sheet"
+  "coloringUploadCreateColoring": "Create colouring sheet",
+  "writingTraceRenderStrokePath": "Centre line (stroke order)"
 }

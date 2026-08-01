@@ -1,41 +1,51 @@
-# Livro de aprendizagem de inglês da 4ª série - Rascunhos
+# Livro de aprendizagem — Inglês · 4º ano
 
-**Status:** Rascunho do conteúdo — **19/19** páginas. Não aprovado pelo proprietário. Nenhum tempo de execução conectado.
-**Data:** junho de 2026
-**Título do livro:** ספר אנגלית — כיתה ד׳
-**faixa_idade:** `grades_3_4`
-
----
-
-##Lotes
-
-| Lote | Páginas | Foco |
-|-------|-------|-------|
-| Um | 8 | Vocabulário contínuo |
-| B | 3 | Novo vocabulário (comunidade, meio ambiente, viagens) |
-| C | 3 | Gramática (recapitulação simples, mesclagem simples vs contínua, quantificadores mesclados) |
-| D | 3 | Frases (descritivas, rotineiras, narrativas) |
-| E | 2 | Tradução (hobbies, comunidade) |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/english/g4/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Mesclar notas
+## Páginas em rascunho
 
-- `grammar_simple_continuous.md` — linha de contraste mesclada + pool progressivo
-- `grammar_quantifiers.md` — linha de quantificadores mesclados + pool
-- `grammar_present_simple.md` — recapitulação contínua separada (não mesclada com contraste)
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `grammar_present_simple.md` | `english:g4:grammar_present_simple` | rascunho |
+| `grammar_quantifiers.md` | `english:g4:grammar_quantifiers` | rascunho |
+| `grammar_simple_continuous.md` | `english:g4:grammar_simple_continuous` | rascunho |
+| `sentence_descriptive.md` | `english:g4:sentence_descriptive` | rascunho |
+| `sentence_narrative.md` | `english:g4:sentence_narrative` | rascunho |
+| `sentence_routine.md` | `english:g4:sentence_routine` | rascunho |
+| `translation_community.md` | `english:g4:translation_community` | rascunho |
+| `translation_hobbies.md` | `english:g4:translation_hobbies` | rascunho |
+| `vocab_animals.md` | `english:g4:vocab_animals` | rascunho |
+| `vocab_body.md` | `english:g4:vocab_body` | rascunho |
+| `vocab_community.md` | `english:g4:vocab_community` | rascunho |
+| `vocab_emotions.md` | `english:g4:vocab_emotions` | rascunho |
+| `vocab_environment.md` | `english:g4:vocab_environment` | rascunho |
+| `vocab_family.md` | `english:g4:vocab_family` | rascunho |
+| `vocab_food.md` | `english:g4:vocab_food` | rascunho |
+| `vocab_school.md` | `english:g4:vocab_school` | rascunho |
+| `vocab_sports.md` | `english:g4:vocab_sports` | rascunho |
+| `vocab_travel.md` | `english:g4:vocab_travel` | rascunho |
+| `vocab_weather.md` | `english:g4:vocab_weather` | rascunho |
+
+**Total de páginas de habilidade:** 19
 
 ---
 
-## Regenerar
+## Regras deste locale
 
-```bash
-node scripts/build-english-g4-hebrew-review-pack.mjs
-node scripts/verify-english-g4-book-content.mjs
-```
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Parar regra
+## Confirmações
 
-❌ Sem registro, rotas, pratique CTA, SQL, commit, push, deploy
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

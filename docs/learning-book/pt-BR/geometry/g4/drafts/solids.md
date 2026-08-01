@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:solids` |
 | **skill_id** | `geometry:kind:solids` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |

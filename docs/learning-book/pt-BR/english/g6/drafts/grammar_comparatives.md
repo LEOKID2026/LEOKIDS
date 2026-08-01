@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g6:grammar_comparatives` |
 | **skill_id** | `english:pool:grammar:comparatives` |
 | **assunto** | inglês |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |
@@ -17,7 +17,7 @@
 - `data/curriculum-spine/v1/skills.json`
 - `docs/learning-book/ENGLISH_LEARNING_BOOK_MASTER_SCOPE_PLAN.md`
 
-**Escopo do conteúdo:** o melhor/mais interessante — avaliação da 6ª série
+**Escopo do conteúdo:** o melhor/mais interessante — avaliação da 6º ano
 
 ---
 

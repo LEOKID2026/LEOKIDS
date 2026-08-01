@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g6:translation_technology` |
 | **skill_id** | `english:pool:translation:technology` |
 | **assunto** | inglês |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |

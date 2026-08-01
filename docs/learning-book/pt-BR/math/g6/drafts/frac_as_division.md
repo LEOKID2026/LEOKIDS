@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:frac_as_division` |
 | **skill_id** | `math:kind:frac_as_division` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

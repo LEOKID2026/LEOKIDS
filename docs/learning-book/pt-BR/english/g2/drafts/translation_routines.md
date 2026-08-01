@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g2:translation_routines` |
 | **skill_id** | `english:pool:translation:routines` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |

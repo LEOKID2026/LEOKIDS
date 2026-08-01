@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g2:ns_complement10` |
 | **skill_id** | `math:kind:ns_complement10` |
 | **assunto** | matemática |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | intuição_visual |
 | **status_aprovação** | lançamento_pronto |

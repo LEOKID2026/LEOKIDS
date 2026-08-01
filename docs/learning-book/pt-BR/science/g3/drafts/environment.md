@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g3:environment` |
 | **skill_id** | `science:topic:environment` |
-| **assunto** | ciência |
-| **nota** | g3 |
+| **assunto** | Ciências |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Meio Ambiente — Pequenos Ecossistemas `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Cadeia alimentar local; planta → herbívoro → predador

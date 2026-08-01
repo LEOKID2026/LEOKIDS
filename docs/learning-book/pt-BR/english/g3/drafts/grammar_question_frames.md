@@ -1,4 +1,4 @@
-# Perguntas - Prática da 3ª série
+# Perguntas - Prática da 3º ano
 
 ## Metadados
 
@@ -7,11 +7,11 @@
 | **learning_page_id** | `english:g3:grammar_question_frames` |
 | **skill_id** | `english:pool:grammar:question_frames` |
 | **assunto** | inglês |
-| **nota** | g3 |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |
-| **título_inglês** | Perguntas - Prática da 3ª série |
+| **título_inglês** | Perguntas - Prática da 3º ano |
 
 **Referências de fontes:**
 - `data/curriculum-spine/v1/skills.json`

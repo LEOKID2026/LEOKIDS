@@ -1,54 +1,41 @@
-# Livro de aprendizagem de geometria da 3ª série - Rascunhos
+# Livro de aprendizagem — Geometria · 3º ano
 
-**Status:** **Aprovado pelo proprietário** — **9/9** páginas; tempo de execução conectado.  
-**Aprovação:** `docs/learning-book/GEOMETRY_GRADE_3_LEARNING_BOOK_SIGNOFF.md`  
-**Data:** junho de 2026  
-**Pasta:** `docs/learning-book/geometry/g3/drafts/`
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/GEOMETRY_GRADE_3_LEARNING_BOOK_PLAN.md` |
-| Aprovação do proprietário | ✅ `docs/learning-book/GEOMETRY_GRADE_3_LEARNING_BOOK_SIGNOFF.md` |
-| Rascunho de páginas | ✅ **9/9** (Lotes A–E) |
-| Rotas de tempo de execução | ✅ `/learning/book/geometry/g3` + `[pageId]` |
-| Pacote de revisão | ✅ `docs/learning-book/GEOMETRY_GRADE_3_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificador | ✅ `scripts/verify-geometry-g3-book-content.mjs` |
-| Manifesto | ✅ `scripts/lib/geometry-g3-draft-manifest.mjs` |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/geometry/g3/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-##Lotes
+## Páginas em rascunho
 
-| Lote | Páginas |
-|-------|--------|
-| **A** | `triangles`, `quadrilaterals` |
-| **B** | `parallel_perpendicular` |
-| **C** | `square_area`, `square_perimeter`, `triangle_perimeter` |
-| **D** | `triangle_angles` |
-| **E** | `rotation`, `solids` |
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `parallel_perpendicular.md` | `geometry:g3:parallel_perpendicular` | rascunho |
+| `quadrilaterals.md` | `geometry:g3:quadrilaterals` | rascunho |
+| `rotation.md` | `geometry:g3:rotation` | rascunho |
+| `solids.md` | `geometry:g3:solids` | rascunho |
+| `square_area.md` | `geometry:g3:square_area` | rascunho |
+| `square_perimeter.md` | `geometry:g3:square_perimeter` | rascunho |
+| `triangle_angles.md` | `geometry:g3:triangle_angles` | rascunho |
+| `triangle_perimeter.md` | `geometry:g3:triangle_perimeter` | rascunho |
+| `triangles.md` | `geometry:g3:triangles` | rascunho |
 
----
-
-## Nomenclatura
-
-- Voltado para crianças: **גאומטריה** (não הנדסה).
-- IDs: `geometry:g3:{pageId}`, `age_band: grades_3_4`.
-
----
-
-## Regenerar
-
-```bash
-node scripts/build-geometry-g3-hebrew-review-pack.mjs
-node scripts/verify-geometry-g3-book-content.mjs
-```
+**Total de páginas de habilidade:** 9
 
 ---
 
-## Parar regra
+## Regras deste locale
 
-Nenhum registro, rotas, SQL, commit, push ou implantação até que o proprietário aprove o conteúdo.
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
+
+---
+
+## Confirmações
+
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

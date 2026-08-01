@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g6:ratio_first` |
 | **skill_id** | `math:kind:ratio_first` |
 | **assunto** | matemática |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

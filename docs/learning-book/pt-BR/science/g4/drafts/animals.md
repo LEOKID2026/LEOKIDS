@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g4:animals` |
 | **skill_id** | `science:topic:animals` |
-| **assunto** | ciência |
-| **nota** | g4 |
+| **assunto** | Ciências |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Animais — Interações `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Predador/presa; concorrência; grupos (mamíferos, aves)

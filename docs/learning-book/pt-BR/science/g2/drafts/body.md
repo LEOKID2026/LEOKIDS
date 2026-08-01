@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g2:body` |
 | **skill_id** | `science:topic:body` |
-| **assunto** | ciência |
-| **nota** | g2 |
+| **assunto** | Ciências |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | O Corpo Humano — Saúde e Hábitos `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Higiene; alimentação e atividade; sono - sem sistemas corporais

@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g2:vocab_house` |
 | **skill_id** | `english:vocabulary:wordlist:house` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

@@ -1,92 +1,50 @@
-# Livro de aprendizagem de geometria da 5ª série - Rascunhos
+# Livro de aprendizagem — Geometria · 5º ano
 
-**Status:** Todos os lotes criados — **17/17** páginas de rascunho concluídas (Lotes A–G). Revisão do proprietário pendente.  
-**Data:** junho de 2026  
-**Pasta:** `docs/learning-book/geometry/g5/drafts/`  
-**Título do livro (voltado para crianças):** ספר גאומטריה — כיתה ה׳
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas de redução | ✅ **17/17** (Lotes A – G) |
-| Pacote de revisão | ✅ `docs/learning-book/GEOMETRY_GRADE_5_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificação de conteúdo | ✅ `scripts/verify-geometry-g5-book-content.mjs` |
-| Projeto de manifesto | ✅ `scripts/lib/geometry-g5-draft-manifest.mjs` |
-| Registro/rotas em tempo de execução | ❌ Fora do escopo |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/geometry/g5/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Lote A — מקבילות, מרובעים וזוויות (3)
+## Páginas em rascunho
 
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `parallel_perpendicular.md` | קווים מקבילים ומאונכים |
-| `quadrilaterals.md` | סיווג מרובעים — כיתה ה׳ |
-| `triangle_angles.md` | זוויות במשולש |
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `diagonal_parallelogram.md` | `geometry:g5:diagonal_parallelogram` | rascunho |
+| `diagonal_rectangle.md` | `geometry:g5:diagonal_rectangle` | rascunho |
+| `diagonal_square.md` | `geometry:g5:diagonal_square` | rascunho |
+| `heights_parallelogram.md` | `geometry:g5:heights_parallelogram` | rascunho |
+| `heights_trapezoid.md` | `geometry:g5:heights_trapezoid` | rascunho |
+| `heights_triangle.md` | `geometry:g5:heights_triangle` | rascunho |
+| `parallel_perpendicular.md` | `geometry:g5:parallel_perpendicular` | rascunho |
+| `parallelogram_area.md` | `geometry:g5:parallelogram_area` | rascunho |
+| `quadrilaterals.md` | `geometry:g5:quadrilaterals` | rascunho |
+| `rectangular_prism_volume.md` | `geometry:g5:rectangular_prism_volume` | rascunho |
+| `solids.md` | `geometry:g5:solids` | rascunho |
+| `square_area.md` | `geometry:g5:square_area` | rascunho |
+| `square_perimeter.md` | `geometry:g5:square_perimeter` | rascunho |
+| `tiling.md` | `geometry:g5:tiling` | rascunho |
+| `trapezoid_area.md` | `geometry:g5:trapezoid_area` | rascunho |
+| `triangle_angles.md` | `geometry:g5:triangle_angles` | rascunho |
+| `triangle_area.md` | `geometry:g5:triangle_area` | rascunho |
+| `triangle_perimeter.md` | `geometry:g5:triangle_perimeter` | rascunho |
 
-## Lote B — היקף ושטח — ריבוע ומשולש (3)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `square_perimeter.md` | היקף ריבוע |
-| `triangle_perimeter.md` | היקף משולש |
-| `square_area.md` | שטח ריבוע |
-
-## Lote C — שטח — מקבילית וטרפז (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `parallelogram_area.md` | שטח מקבילית |
-| `trapezoid_area.md` | שטח טרפז |
-
-## Lote D — גובה במצולעים (3)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `heights_triangle.md` | גובה במשולש |
-| `heights_parallelogram.md` | גובה במקבילית |
-| `heights_trapezoid.md` | גובה בטרפז |
-
-## Lote E — אלכסונים (3)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `diagonal_square.md` | אלכסון בריבוע |
-| `diagonal_rectangle.md` | אלכסון במלבן |
-| `diagonal_parallelogram.md` | אלכסון במקבילית |
-
-## Lote F — גופים ונפח (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `solids.md` | גופים תלת-ממדיים — חזרה |
-| `rectangular_prism_volume.md` | נפח תיבה |
-
-## Lote G — ריצוף (1)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `tiling.md` | ריצוף במישור |
+**Total de páginas de habilidade:** 18
 
 ---
 
-## Notas
+## Regras deste locale
 
-- Todas as páginas: `age_band: grades_5_6`, `approval_status: draft`, `grade: g5`.
-- A cópia voltada para crianças usa **גאומטריה**, não **הנדסה**.
-- Seção 7: rascunho apenas para convite — **sem roteamento prático**.
-- `book_placeholder.md` — espaço reservado para infraestrutura; **não** faz parte do livro de 17 páginas.
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Regenerar
+## Confirmações
 
-```bash
-node scripts/generate-geometry-g5-drafts.mjs
-node scripts/build-geometry-g5-hebrew-review-pack.mjs
-node scripts/verify-geometry-g5-book-content.mjs
-```
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

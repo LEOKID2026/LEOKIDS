@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g5:experiments` |
 | **skill_id** | `science:topic:experiments` |
-| **assunto** | ciência |
-| **nota** | g5 |
+| **assunto** | Ciências |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Investigação Completa — Documentação `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Diário de investigação; gráfico; avaliar resultados — seguro — requer ilustração: exemplo de gráfico simples

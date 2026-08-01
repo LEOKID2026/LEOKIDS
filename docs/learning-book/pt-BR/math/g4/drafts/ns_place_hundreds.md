@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:ns_place_hundreds` |
 | **skill_id** | `math:kind:ns_place_hundreds` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |

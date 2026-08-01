@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g2:translation_classroom` |
 | **skill_id** | `english:pool:translation:classroom` |
 | **assunto** | inglês |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |

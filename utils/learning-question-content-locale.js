@@ -56,6 +56,8 @@ export function resolveContentLocale(opts) {
   // Country / regional Spanish still product content via registry chain.
   if (id.toLowerCase().startsWith("es-")) return id;
   if (id.toLowerCase().startsWith("pt-")) return id;
+  // English country layers (AU/NZ/IE/GB/CA/SG/ZA/WLS, …) keep their locale id.
+  if (id.toLowerCase().startsWith("en-")) return id;
   return "en";
 }
 

@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:div_long` |
 | **skill_id** | `math:kind:div_long` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
@@ -18,7 +18,7 @@
 - `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`
 - `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`
 
-**Escopo do conteúdo:** Algoritmo de divisão longa — dividendo de até 3 dígitos, divisor de um dígito. Não há resto nesta página. Divisor de dois dígitos → 5ª série.
+**Escopo do conteúdo:** Algoritmo de divisão longa — dividendo de até 3 dígitos, divisor de um dígito. Não há resto nesta página. Divisor de dois dígitos → 5º ano.
 
 ---
 

@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g4:dec_add` |
 | **skill_id** | `math:kind:dec_add` |
 | **assunto** | matemática |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:parallel_perpendicular` |
 | **skill_id** | `geometry:kind:parallel_perpendicular` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

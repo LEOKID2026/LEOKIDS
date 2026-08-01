@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g3:earth_space` |
 | **skill_id** | `science:topic:earth_space` |
-| **assunto** | ciência |
-| **nota** | g3 |
+| **assunto** | Ciências |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Terra — Tempo e Água `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Tempo versus clima (simples); o ciclo da água

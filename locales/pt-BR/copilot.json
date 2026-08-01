@@ -3,7 +3,7 @@
     "generalOffTopic": "Só posso ajudar com o relatório, a prática e o progresso do seu filho no site. Tente perguntar o que praticar esta semana, o que tentar em casa ou qual tópico abrir como uma atividade curta.",
     "diagnosticBoundary": "Só posso usar o que aparece nos dados práticos do site. O relatório pode destacar assuntos e temas a fortalecer, mas não é um diagnóstico pessoal. Podemos concentrar-nos naquilo que o relatório mostra: um tema forte, um tema a fortalecer ou um pequeno passo para casa.",
     "healthBoundary": "Só posso usar os dados práticos mostrados no site. O relatório não pretende tirar conclusões pessoais sobre o seu filho – ele ajuda você a ver qual tópico de aprendizagem fortalecer. Podemos escolher um pequeno próximo passo de aprendizagem a partir desses dados.",
-    "privacyBoundary": "Só posso ajudar com o relatório da criança vinculada a esta conta de pai/mãe. Não posso mostrar dados, senhas, listas de usuários ou informações internas do sistema de outras crianças.",
+    "privacyBoundary": "Só posso ajudar com o relatório da criança vinculada a esta conta de responsável/mãe. Não posso mostrar dados, senhas, listas de usuários ou informações internas do sistema de outras crianças.",
     "peerComparison": "O relatório baseia-se apenas na prática desta criança e não a compara com outras crianças da turma. Você pode se concentrar no que aparece no relatório e perguntar sobre um tópico específico.",
     "ambiguous": "Não consegui dizer a que parte do relatório você se referia. Tente uma pergunta mais simples — por exemplo: o que é mais importante praticar esta semana, o que tentar em casa ou qual tópico abrir como uma atividade curta.",
     "noDataForRequest": "Este relatório ainda não contém informações suficientes para responder com precisão. Faça uma breve sessão prática no site e verifique novamente para obter uma orientação mais clara.",
@@ -62,7 +62,7 @@
       "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Reúna mais prática sobre este assunto antes de decidir sobre uma mudança de nível.",
       "no_weak_line_stood_out_with_enough_practice_at_the_range": "Nenhuma linha de tópico fraca se destacou com prática suficiente nesta faixa.",
       "according_to_the_report_there_is_still_insufficient_evidence_for": "Segundo o relatório, ainda não há provas suficientes para trabalhos acima da nota listada.",
-      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Reúna mais prática antes de concluir que o desempenho está acima do nível da série.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Reúna mais prática antes de concluir que o desempenho está acima do nível do ano.",
       "it_is_therefore_impossible_to_determine_direction_from_the_curre": "Ainda não é possível determinar a direcção do actual relatório sobre o desempenho nesta matéria."
     },
     "utils_parent-copilot_llm-orchestrator": {

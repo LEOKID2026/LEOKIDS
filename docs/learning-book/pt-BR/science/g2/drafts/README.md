@@ -1,27 +1,39 @@
-# Livro de aprendizagem de ciências da 2ª série - Rascunhos
+# Livro de aprendizagem — Ciências · 2º ano
 
-**Status:** Rascunho do conteúdo — **7/7** páginas. Nenhuma inserção de tempo de execução.  
-**Plano:** `docs/learning-book/SCIENCE_GRADE_2_LEARNING_BOOK_PLAN.md`  
-**Livro:** ספר מדעים — כיתה ב׳  
-**Data:** junho de 2026
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/science/g2/drafts/`
+**Locale:** pt-BR (Brasil)
 
-## Páginas
+---
 
-| Arquivo | Título [RASCUNHO] |
-|------|---------------|
-| `body.md` | גוף האדם — בריאות והרגלים |
-| `animals.md` | בעלי חיים — מחזור חיים |
-| `plants.md` | צמחים — גדילה ומחזור |
-| `materials.md` | חומרים — מצבי צבירה |
-| `earth_space.md` | כדור הארץ — עונות ושמיים |
-| `environment.md` | סביבה — שמירה על הטבע |
-| `experiments.md` | תצפית וחקירה |
+## Páginas em rascunho
 
-**Observação:** A 2ª série é a primeira série com `experiments` (coluna `minGrade = 2`).
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `animals.md` | `science:g2:animals` | rascunho |
+| `body.md` | `science:g2:body` | rascunho |
+| `earth_space.md` | `science:g2:earth_space` | rascunho |
+| `environment.md` | `science:g2:environment` | rascunho |
+| `experiments.md` | `science:g2:experiments` | rascunho |
+| `materials.md` | `science:g2:materials` | rascunho |
+| `plants.md` | `science:g2:plants` | rascunho |
 
-## Verifique
+**Total de páginas de habilidade:** 7
 
-```bash
-node scripts/build-science-g2-hebrew-review-pack.mjs
-node scripts/verify-science-g2-book-content.mjs
-```
+---
+
+## Regras deste locale
+
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
+
+---
+
+## Confirmações
+
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:shapes_basic_properties_angles` |
 | **skill_id** | `geometry:kind:shapes_basic_properties_angles` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |
@@ -36,7 +36,7 @@ tipo: ângulo_direito
 :::
 
 Um ângulo reto = um ângulo de 90° – como o canto de uma sala.
-Em uma praça:
+Em um quadrado:
 Todos os 4 cantos são ângulos retos.
 Soma dos ângulos de um quadrado: 4 × 90° = 360°
 Um retângulo também tem 4 ângulos retos – mas em um quadrado todos os lados também são iguais.

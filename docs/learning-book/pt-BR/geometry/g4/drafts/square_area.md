@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:square_area` |
 | **skill_id** | `geometry:kind:square_area` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

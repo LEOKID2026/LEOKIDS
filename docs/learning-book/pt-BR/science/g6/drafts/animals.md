@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g6:animals` |
 | **skill_id** | `science:topic:animals` |
-| **assunto** | ciência |
-| **nota** | g6 |
+| **assunto** | Ciências |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Animais — Sistemas Ecológicos `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Teias alimentares; biodiversidade; papel dos humanos - requer ilustração: teia alimentar

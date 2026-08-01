@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g6:vocab_animals` |
 | **skill_id** | `english:vocabulary:wordlist:animals` |
 | **assunto** | inglês |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

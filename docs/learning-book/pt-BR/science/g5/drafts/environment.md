@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g5:environment` |
 | **skill_id** | `science:topic:environment` |
-| **assunto** | ciência |
-| **nota** | g5 |
+| **assunto** | Ciências |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Meio Ambiente — Recursos Naturais `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Renovável/não renovável; tipos de poluição – factuais, não assustadores

@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g3:vocab_colors` |
 | **skill_id** | `english:vocabulary:wordlist:colors` |
 | **assunto** | inglês |
-| **nota** | g3 |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

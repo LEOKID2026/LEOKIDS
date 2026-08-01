@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g2:ns_even_odd` |
 | **skill_id** | `math:kind:ns_even_odd` |
 | **assunto** | matemática |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |

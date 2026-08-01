@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g5:fm_factor` |
 | **skill_id** | `math:kind:fm_factor` |
 | **assunto** | matemática |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | lançamento_pronto |

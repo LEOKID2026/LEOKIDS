@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g1:earth_space` |
 | **skill_id** | `science:topic:earth_space` |
-| **assunto** | ciência |
-| **nota** | g1 |
+| **assunto** | Ciências |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Terra e clima `[DRAFT — not owner-approved]` |
 
 **Referências de fontes:**

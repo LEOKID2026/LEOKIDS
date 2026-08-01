@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g4:shapes_basic_properties_rectangle` |
 | **skill_id** | `geometry:kind:shapes_basic_properties_rectangle` |
 | **assunto** | geometria |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "helpCenter": "Help centre"
+  },
+  "public": {
+    "homepage": {
+      "valueCards": {
+        "1": {
+          "text": "Practice, games, coins, and progress in a friendly, colourful journey."
+        }
+      },
+      "kids": {
+        "benefits": {
+          "0": {
+            "text": "Colourful questions and challenges that make practice feel lighter."
+          }
+        }
+      }
+    },
+    "about": {
+      "learnEnjoyBody": "Beyond academic practice, the site includes educational games, engaging play, coins, and cards designed to add fun, motivation, and enjoyment to learning. The goal is for kids not to feel they are only \"doing homework,\" but entering a colourful kids world where they can learn, play, and progress with a good feeling."
+    }
+  }
+}

@@ -4,6 +4,8 @@
  * Global: never return Hebrew. WORD_LISTS is an English ID catalog.
  * Spanish: country packs deep-merge onto es-419 (e.g. es-CO → es-419 → en word).
  * Portuguese Brazil: pt-BR → en.
+ * Bare `pt` is NOT an alias of pt-BR (reserved for future pt-PT); it follows
+ * registry resolution (currently disabled → English meanings).
  */
 
 import { WORD_LISTS } from "./word-lists.js";
@@ -64,7 +66,8 @@ function isSpanishInstructionLocale(locale) {
 function isPortugueseBrazilInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   if (!tag) return false;
-  return tag === "pt-br" || tag === "pt" || tag.startsWith("pt-");
+  // Exact Brazil only — never bare `pt` or future `pt-PT`.
+  return tag === "pt-br";
 }
 
 /**
@@ -87,7 +90,7 @@ function getMergedMeaningPack(instructionLocale) {
   }
   let chainLocale = tag;
   if (tag === "es" || tag === "es419") chainLocale = "es-419";
-  else if (tag === "pt") chainLocale = "pt-BR";
+  else if (tag === "pt-br") chainLocale = "pt-BR";
   const chain = getLocaleFallbackChain(chainLocale);
   /** @type {Record<string, Record<string, string>>} */
   let merged = {};

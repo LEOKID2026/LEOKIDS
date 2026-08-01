@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g3:animals` |
 | **skill_id** | `science:topic:animals` |
-| **assunto** | ciência |
-| **nota** | g3 |
+| **assunto** | Ciências |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Animais — Adaptação ao Meio Ambiente `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Camuflagem, peles, barbatanas; habitat ↔ necessidades

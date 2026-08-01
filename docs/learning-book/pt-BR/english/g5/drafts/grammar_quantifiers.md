@@ -1,4 +1,4 @@
-#muitos/muitos — Avaliação da 5ª série
+#muitos/muitos — Avaliação da 5º ano
 
 ## Metadados
 
@@ -7,11 +7,11 @@
 | **learning_page_id** | `english:g5:grammar_quantifiers` |
 | **skill_id** | `english:pool:grammar:quantifiers` |
 | **assunto** | inglês |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |
-| **título_inglês** | muito/muitos — Revisão da 5ª série |
+| **título_inglês** | muito/muitos — Revisão da 5º ano |
 
 **Referências de fontes:**
 - `data/curriculum-spine/v1/skills.json`

@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g5:grammar_comparatives` |
 | **skill_id** | `english:pool:grammar:comparatives` |
 | **assunto** | inglês |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | aprovado |

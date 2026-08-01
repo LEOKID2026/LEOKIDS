@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g4:experiments` |
 | **skill_id** | `science:topic:experiments` |
-| **assunto** | ciência |
-| **nota** | g4 |
+| **assunto** | Ciências |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | procedimento_passo_por_passo |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Planejando um experimento `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Pergunta → previsão → método → resultados → conclusão – somente seguro

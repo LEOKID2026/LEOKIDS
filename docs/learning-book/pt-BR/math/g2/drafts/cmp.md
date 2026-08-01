@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g2:cmp` |
 | **skill_id** | `math:kind:cmp` |
 | **assunto** | matemática |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

@@ -1,0 +1,13 @@
+{
+  "subjects": {
+    "math": "Maths"
+  },
+  "auditActions": {
+    "school_student_enrolled": "Learner enrolled",
+    "school_student_unenrolled": "Learner unenrolled",
+    "school_student_report_viewed": "Learner report viewed",
+    "school_student_class_transferred": "Learner transferred",
+    "class_transfer": "Learner transferred",
+    "viewed_student_report": "Learner report viewed"
+  }
+}

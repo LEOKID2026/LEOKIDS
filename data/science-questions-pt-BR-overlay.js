@@ -367,10 +367,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "env_1": {
     "stem": "Que ação ajuda a proteger o meio ambiente?",
     "options": [
-      "Classificando em casa e depois jogando tudo em uma lixeira pública",
-      "Usando menos papel, mas jogando todo o plástico no lixo comum",
+      "Classificar em casa e depois jogar tudo em uma lixeira pública",
+      "Usar menos papel, mas jogar todo o plástico no lixo comum",
       "Reciclagem de papel, plástico e vidro nas lixeiras certas",
-      "Esmagando garrafas para economizar espaço sem reciclá-las"
+      "Esmagar garrafas para economizar espaço sem reciclá-las"
     ],
     "explanation": "A reciclagem reduz o desperdício, economiza matérias-primas e ajuda a proteger o meio ambiente.",
     "theoryLines": [
@@ -927,9 +927,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "env_6": {
     "stem": "O que ajuda a manter o ambiente limpo?",
     "options": [
-      "Limpando apenas a sua casa e deixando as ruas compartilhadas como estão",
+      "Limpar apenas a sua casa e deixar as ruas compartilhadas como estão",
       "Colocar o lixo na lixeira em vez de jogá-lo na rua",
-      "Coletando garrafas no quintal e atrasando a coleta até a primavera",
+      "Coletar garrafas no quintal e atrasar a coleta até a primavera",
       "Embalar o lixo até que o saco rasgue antes de colocá-lo na lixeira"
     ],
     "explanation": "Colocar o lixo no lixo – e não na rua – ajuda a manter os locais limpos e agradáveis.",
@@ -1111,7 +1111,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Cor e aroma sem ligação com sementes ou polinização",
       "Atrair insetos, polinizar e produzir sementes",
-      "Tirando água do solo diretamente pelas pétalas",
+      "Tirar água do solo diretamente pelas pétalas",
       "Lançamento de sombra fixa no caule sem nenhum papel na reprodução"
     ],
     "explanation": "As flores atraem insetos que transportam o pólen. Depois disso, as sementes podem se formar e se transformar em novas plantas.",
@@ -1137,7 +1137,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "earth_10": {
     "stem": "Qual é o ciclo da água?",
     "options": [
-      "Chuva caindo no mar sem evaporação retornando ao ar",
+      "Chuva cair no mar sem evaporação retornar ao ar",
       "O movimento repetido da água entre o oceano, a terra e o ar",
       "Evaporação do mar sem retorno de precipitação",
       "Nuvens que ficam na mesma altura para sempre"
@@ -1181,8 +1181,8 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Enterrar tudo no solo do quintal sem triagem",
       "Usar materiais antigos novamente para fazer novos produtos",
-      "Empilhando resíduos para sempre em um só lugar, sem reciclagem",
-      "Esmagamento de materiais misturados sem preparação para reutilização"
+      "Empilhar resíduos para sempre em um só lugar, sem reciclagem",
+      "Esmagar materiais misturados sem preparação para reutilização"
     ],
     "explanation": "A reciclagem transforma materiais usados, como plástico, papel e vidro, em novos produtos, em vez de jogá-los fora.",
     "theoryLines": [
@@ -1194,9 +1194,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que é conservação ambiental?",
     "options": [
       "Desenvolver terras selvagens sem verificar os efeitos sobre as espécies locais",
-      "Protegendo a natureza, animais e plantas",
+      "Proteger a natureza, animais e plantas",
       "Coletar lixo ao ar livre apenas para exibição, não para reciclagem",
-      "Supondo que a natureza sempre se recupere sozinha em poucos dias"
+      "Supor que a natureza sempre se recupere sozinha em poucos dias"
     ],
     "explanation": "Conservação significa proteger a natureza para que as gerações futuras possam desfrutar de plantas, animais e lugares saudáveis.",
     "theoryLines": [
@@ -1364,7 +1364,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Apenas uma mudança de forma",
       "Uma mudança que cria um novo material com propriedades diferentes",
       "Uma mudança de cor sem formação de novo material",
-      "Ficando maior ou menor sem reação química"
+      "Ficar maior ou menor sem reação química"
     ],
     "explanation": "Numa mudança química, um novo material se forma. A queima de papel produz cinzas e gases – novos materiais.",
     "theoryLines": [
@@ -2271,9 +2271,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "env_20": {
     "stem": "O que significa sustentabilidade?",
     "options": [
-      "Usando tantos recursos naturais quanto possível, o mais rápido possível.",
+      "Usar tantos recursos naturais quanto possível, o mais rápido possível.",
       "Utilizar os recursos com cuidado e responsabilidade para que estejam disponíveis para as gerações futuras.",
-      "Pensando na natureza apenas em um dia especial por ano.",
+      "Pensar na natureza apenas em um dia especial por ano.",
       "Ignorar o meio ambiente para que as empresas possam crescer mais rapidamente."
     ],
     "explanation": "Sustentabilidade significa utilizar recursos como água, energia e materiais de forma que não se esgotem nem prejudiquem o ambiente, para que as gerações futuras também possam satisfazer as suas próprias necessidades.",
@@ -2327,9 +2327,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "exp_13": {
     "stem": "O que é medição?",
     "options": [
-      "Observando a olho nu, sem números",
-      "Usando ferramentas para descobrir quão grande, pesado ou quente algo é",
-      "Não coletando nenhum dado",
+      "Observar a olho nu, sem números",
+      "Usar ferramentas para descobrir quão grande, pesado ou quente algo é",
+      "Não coletar nenhum dado",
       "Adivinhar o tamanho sem régua ou escala"
     ],
     "explanation": "A medição usa ferramentas como réguas, escalas e termômetros para obter números exatos.",
@@ -2355,7 +2355,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "exp_18": {
     "stem": "O que é uma conclusão em um experimento?",
     "options": [
-      "Abrindo o relatório antes do experimento",
+      "Abrir o relatório antes do experimento",
       "O que você aprendeu com o experimento e o que os dados mostram",
       "Uma nova pergunta sem link para os dados",
       "Um palpite antes de verificar o gráfico"
@@ -2411,7 +2411,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "animals_28": {
     "stem": "O que é domesticação?",
     "options": [
-      "Cruzando duas espécies selvagens sem reprodução ao longo de gerações",
+      "Cruzar duas espécies selvagens sem reprodução ao longo de gerações",
       "Criar animais ao longo de gerações para que possam viver com as pessoas e ajudá-las",
       "Migração sazonal de uma população sem alteração genética",
       "Uma adaptação selvagem única sem contato humano"
@@ -2582,7 +2582,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Toda a população sem filtragem",
       "Um grupo menor que você testa para aprender sobre um grupo maior",
       "Um único participante sem generalização",
-      "Escrevendo uma pergunta sem coleta de dados"
+      "Escrever uma pergunta sem coleta de dados"
     ],
     "explanation": "Uma amostra é um grupo menor estudado para aprender sobre um grupo maior – por exemplo, testando 100 plantas para aprender sobre muitas plantas.",
     "theoryLines": [
@@ -3520,7 +3520,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Uma cor decorativa sem ajuda para a sobrevivência",
       "Características que facilitam a vida em um determinado ambiente",
       "Movimento sem ligação com as condições locais",
-      "Fazendo sons sem significado ecológico"
+      "Fazer sons sem significado ecológico"
     ],
     "explanation": "Uma adaptação ambiental é uma característica que ajuda um animal a viver em um determinado lugar – como pêlo grosso para o frio ou barbatanas para a água.",
     "theoryLines": [
@@ -3546,7 +3546,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que é fotossíntese?",
     "options": [
       "Crescimento sem uso de pigmento claro ou verde",
-      "Fazendo comida a partir da luz, usando água e dióxido de carbono",
+      "Fazer comida a partir da luz, usando água e dióxido de carbono",
       "Apenas respiração celular como nos animais",
       "Beber água sem converter energia luminosa em alimento"
     ],
@@ -3646,7 +3646,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Aquecimento sem mudança de estado",
       "Uma mudança de sólido para líquido",
       "Resfriamento que produz gelo em vez de água",
-      "Congelando um líquido em um sólido"
+      "Congelar um líquido em um sólido"
     ],
     "explanation": "O derretimento é a mudança de sólido para líquido – por exemplo, o gelo se transforma em água quando aquecido.",
     "theoryLines": [
@@ -4121,7 +4121,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Cuidado parcial sem preparação prévia",
       "Ter cuidado e garantir que tudo esteja seguro antes, durante e depois",
-      "Executando etapas rapidamente sem verificação de equipamento",
+      "Executar etapas rapidamente sem verificação de equipamento",
       "Apenas se divertindo sem regras de proteção"
     ],
     "explanation": "Segurança do experimento significa ter cuidado e verificar se tudo está seguro antes, durante e depois do experimento.",
@@ -4302,7 +4302,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual é apenas um exemplo de mudança física, sem nenhum material novo feito?",
     "options": [
       "Dobrar uma folha de papel sem queimá-la",
-      "Queimando papel em cinzas",
+      "Queimar papel em cinzas",
       "Assar a massa até virar pão",
       "Ferro enferrujando com o tempo"
     ],
@@ -5450,9 +5450,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual é a principal função da pele?",
     "options": [
       "Proteção, ajudando a controlar a temperatura e detectando o ambiente",
-      "Produzindo oxigênio como os pulmões fazem",
-      "Digerindo carboidratos dos alimentos",
-      "Levando sangue para todos os órgãos"
+      "Produzir oxigênio como os pulmões fazem",
+      "Digerir carboidratos dos alimentos",
+      "Levar sangue para todos os órgãos"
     ],
     "explanation": "A pele é uma barreira protetora e também ajuda a regular a temperatura corporal.",
     "theoryLines": [
@@ -5660,9 +5660,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Quando a água evapora, que tipo de mudança é essa?",
     "options": [
       "Uma mudança física de estado enquanto a substância permanece água",
-      "Transformando a água em uma substância química completamente diferente",
-      "Apagando todas as propriedades do material sem alteração de energia",
-      "Fazendo plasma quente sem ligação com água"
+      "Transformar a água em uma substância química completamente diferente",
+      "Apagar todas as propriedades do material sem alteração de energia",
+      "Fazer plasma quente sem ligação com água"
     ],
     "explanation": "Uma mudança de estado é muitas vezes uma mudança física que não produz uma nova substância.",
     "theoryLines": [
@@ -5982,9 +5982,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual é um exemplo de proteção da biodiversidade em um parque?",
     "options": [
       "Sair de habitats nativos e evitar danos às plantas e animais locais",
-      "Removendo todas as plantas para fazer concreto plano",
-      "Jogando lixo perto dos ninhos",
-      "Apresentando qualquer espécie invasora para se divertir"
+      "Remover todas as plantas para fazer concreto plano",
+      "Jogar lixo perto dos ninhos",
+      "Apresentar qualquer espécie invasora para se divertir"
     ],
     "explanation": "A proteção de habitats e espécies nativas apoia a biodiversidade do parque.",
     "theoryLines": [
@@ -6318,9 +6318,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Antes de uma experiência em sala de aula, o que um plano razoável deve incluir?",
     "options": [
       "Uma hipótese, variáveis, equipamentos e uma forma de registrar resultados",
-      "Mudando todas as condições de uma vez",
-      "Evitando medição",
-      "Escolhendo o resultado antes do teste"
+      "Mudar todas as condições de uma vez",
+      "Evitar medição",
+      "Escolher o resultado antes do teste"
     ],
     "explanation": "O planejamento cobre o que é testado e como será medido.",
     "theoryLines": [
@@ -6416,9 +6416,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que ajuda a prevenir a erosão do solo numa encosta?",
     "options": [
       "Cobertura vegetal e raízes que sustentam o solo",
-      "Removendo todas as plantas",
-      "Tornando a encosta completamente nua",
-      "Derramando óleo no chão"
+      "Remover todas as plantas",
+      "Tornar a encosta completamente nua",
+      "Derramar óleo no chão"
     ],
     "explanation": "A vegetação retarda o escoamento e fixa o solo.",
     "theoryLines": [
@@ -6472,9 +6472,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual é um exemplo de redução do plástico descartável na escola?",
     "options": [
       "Usar uma garrafa de água reutilizável em vez de garrafas plásticas descartáveis",
-      "Jogando mais embalagens no playground",
+      "Jogar mais embalagens no playground",
       "Comprar apenas sacolas descartáveis ​​todos os dias",
-      "Queimando plástico na sala de aula"
+      "Queimar plástico na sala de aula"
     ],
     "explanation": "Itens reutilizáveis ​​eliminam a necessidade de plástico descartável.",
     "theoryLines": [
@@ -6487,7 +6487,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Cortar um grande número de árvores para obter madeira ou para limpar terras para agricultura.",
       "Plantar mudas para substituir árvores que foram removidas.",
-      "Caminhando em trilhas marcadas pela floresta.",
+      "Caminhar em trilhas marcadas pela floresta.",
       "Observar e fotografar a vida selvagem sem perturbá-la."
     ],
     "explanation": "A desflorestação – o desmatamento em grande escala das florestas – destrói o habitat de inúmeras plantas e animais. Também reduz o número de árvores que absorvem dióxido de carbono do ar. Quando áreas florestais são desmatadas para agricultura ou construção, os ecossistemas entram em colapso e muitas espécies perdem as suas casas.",
@@ -6697,7 +6697,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Um palpite testável sobre o que vai acontecer",
       "O resultado final que nunca pode mudar",
-      "Excluindo todos os dados",
+      "Excluir todos os dados",
       "Um desenho sem medição"
     ],
     "explanation": "Uma hipótese é uma suposição que você pode verificar com um experimento.",
@@ -6752,9 +6752,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual afirmação descreve corretamente a etapa de gravação?",
     "options": [
       "Anotar observações e medições durante a investigação",
-      "Apagando evidências para que ninguém possa verificar",
+      "Apagar evidências para que ninguém possa verificar",
       "Escolher um resultado antes de coletar dados",
-      "Pulando notas porque a memória é suficiente"
+      "Pular notas porque a memória é suficiente"
     ],
     "explanation": "A gravação mantém um rastro claro do que aconteceu na investigação.",
     "theoryLines": [
@@ -6765,10 +6765,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_closure_g4es_004": {
     "stem": "O que é um exemplo de observação meteorológica?",
     "options": [
-      "Registrando a temperatura em um diário",
+      "Registrar a temperatura em um diário",
       "Adivinhar sem olhar",
-      "Ignorando as nuvens",
-      "Contando apenas os dias de férias"
+      "Ignorar as nuvens",
+      "Contar apenas os dias de férias"
     ],
     "explanation": "As observações meteorológicas são medições ou notas sobre as condições externas, como a temperatura.",
     "theoryLines": [
@@ -6835,9 +6835,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_closure_g5env_013": {
     "stem": "Qual é um exemplo básico de reciclagem?",
     "options": [
-      "Coletando garrafas para reciclagem",
-      "Queimando lixo sem classificação",
-      "Jogando tudo na mesma lixeira",
+      "Coletar garrafas para reciclagem",
+      "Queimar lixo sem classificação",
+      "Jogar tudo na mesma lixeira",
       "Nunca separando materiais"
     ],
     "explanation": "Reciclar significa coletar materiais usados ​​para que possam ser transformados em novos produtos.",
@@ -7270,7 +7270,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual é um bom exemplo de adaptação animal a um habitat quente e seco?",
     "options": [
       "Ser ativo principalmente à noite para evitar calor extremo",
-      "Vivendo apenas em água doce, sem exceções",
+      "Viver apenas em água doce, sem exceções",
       "Cada pássaro precisa exatamente da mesma comida",
       "Peixes que precisam de pernas longas para o deserto"
     ],
@@ -7577,10 +7577,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_pb1_g5_materials_medium_01": {
     "stem": "O que um experimento simples pode mostrar sobre as propriedades elétricas dos materiais?",
     "options": [
-      "Construindo um circuito com bateria e lâmpada para testar se um material conduz",
+      "Construir um circuito com bateria e lâmpada para testar se um material conduz",
       "Normalmente iluminando um material sem supervisão",
       "Geralmente provando um material desconhecido",
-      "Medindo apenas cor sem circuito"
+      "Medir apenas cor sem circuito"
     ],
     "explanation": "Um circuito elétrico simples pode testar a condutividade com segurança com orientação de um adulto.",
     "theoryLines": [
@@ -8418,9 +8418,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que é digestão?",
     "options": [
       "Quebrar os alimentos em partes menores que o corpo possa usar",
-      "Bombeando sangue apenas pelos pulmões",
-      "Crescendo novos dentes com a luz solar",
-      "Transformando ossos em água"
+      "Bombear sangue apenas pelos pulmões",
+      "Crescer novos dentes com a luz solar",
+      "Transformar ossos em água"
     ],
     "explanation": "A digestão começa na boca e continua no estômago e intestinos. Os nutrientes então passam para o sangue.",
     "theoryLines": [
@@ -8767,10 +8767,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_p0_g2_experiments_medium_07": {
     "stem": "Qual prática torna os resultados experimentais mais confiáveis?",
     "options": [
-      "Medindo cuidadosamente e repetindo testes",
+      "Medir cuidadosamente e repetindo testes",
       "Mudar muitas coisas ao mesmo tempo de propósito",
       "Jogar fora dados que você não gosta",
-      "Ignorando unidades em cada número"
+      "Ignorar unidades em cada número"
     ],
     "explanation": "Métodos e repetições cuidadosos reduzem erros e erros casuais. O trabalho confiável também pode ser verificado por outras pessoas.",
     "theoryLines": [
@@ -9440,8 +9440,8 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que pode reduzir o erro de medição?",
     "options": [
       "Usar as ferramentas corretamente e medir mais de uma vez",
-      "Estimando descontroladamente sem olhar",
-      "Arredondando para o que parecer mais bonito",
+      "Estimar descontroladamente sem olhar",
+      "Arredondar para o que parecer mais bonito",
       "Trocar de unidade no meio da mesa sem perceber"
     ],
     "explanation": "Técnica cuidadosa e repete erros inferiores. Conhecer os limites de uma ferramenta também ajuda a interpretar os dados com sabedoria.",
@@ -9707,8 +9707,8 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Ancorando-o e absorvendo água e minerais",
       "Voando para novos jardins",
-      "Fazendo néctar para o próprio estômago",
-      "Ouvindo sons no subsolo"
+      "Fazer néctar para o próprio estômago",
+      "Ouvir sons no subsolo"
     ],
     "explanation": "A ancoragem evita tombamento. A absorção fornece materiais que a planta necessita para crescimento e fotossíntese.",
     "theoryLines": [
@@ -9720,9 +9720,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual é a principal função das flores em muitas plantas?",
     "options": [
       "Reprodução – ajudando a planta a produzir sementes",
-      "Digerindo rochas em vitaminas do solo",
-      "Bombeando seiva como um coração de animal",
-      "Assustando toda a luz solar"
+      "Digerir rochas em vitaminas do solo",
+      "Bombear seiva como um coração de animal",
+      "Assustar toda a luz solar"
     ],
     "explanation": "As flores contêm partes reprodutivas. Após a polinização e fertilização, podem formar-se sementes (muitas vezes dentro dos frutos).",
     "theoryLines": [
@@ -9805,7 +9805,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Distensões musculares e outras lesões",
       "Fotossíntese instantânea na pele",
-      "Crescendo um segundo esqueleto durante a noite",
+      "Crescer um segundo esqueleto durante a noite",
       "Nunca mais precisar de água"
     ],
     "explanation": "Músculos frios e tensos e esforço súbito aumentam o risco de lesões. O aquecimento prepara os tecidos para o estresse.",
@@ -9831,10 +9831,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_p1_g4_body_hard_05": {
     "stem": "Como os rins ajudam principalmente a manter o corpo em equilíbrio?",
     "options": [
-      "Removendo resíduos e água extra do sangue",
-      "Produzindo oxigênio para fotossíntese",
+      "Remover resíduos e água extra do sangue",
+      "Produzir oxigênio para fotossíntese",
       "Mastigar os alimentos antes que cheguem à boca",
-      "Substituindo o cérebro durante o sono"
+      "Substituir o cérebro durante o sono"
     ],
     "explanation": "Filtrar o sangue protege o ambiente interno. A urina transporta os resíduos removidos para fora do corpo.",
     "theoryLines": [
@@ -10057,8 +10057,8 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Ao comer plantas como grama",
       "Ao fotossintetizar com pêlo verde",
-      "Caçando tubarões em oceanos profundos",
-      "Bebendo apenas óleo de motor"
+      "Caçar tubarões em oceanos profundos",
+      "Beber apenas óleo de motor"
     ],
     "explanation": "Como herbívoros, as vacas convertem material vegetal em energia e nutrientes. O pastoreio é a sua principal estratégia alimentar.",
     "theoryLines": [
@@ -10167,9 +10167,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_p1_g5_body_easy_01": {
     "stem": "Os rins fazem parte de qual função corporal?",
     "options": [
-      "Filtrando resíduos do sangue",
-      "Bombeando ar nas penas",
-      "Fazendo clorofila para a pele",
+      "Filtrar resíduos do sangue",
+      "Bombear ar nas penas",
+      "Fazer clorofila para a pele",
       "Armazenamento de pólen na medula óssea"
     ],
     "explanation": "Os rins limpam o sangue e ajudam a controlar o equilíbrio de água e sal. Os resíduos saem como urina.",
@@ -10237,10 +10237,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_p1_g5_body_easy_06": {
     "stem": "Além do sentido do tato, de que outra forma a pele ajuda o seu corpo?",
     "options": [
-      "Protegendo o corpo e ajudando a controlar a temperatura",
-      "Fotossintetizando refeições para o cérebro",
-      "Filtrando o sangue como um rim",
-      "Armazenando memórias factuais de longo prazo"
+      "Proteger o corpo e ajudando a controlar a temperatura",
+      "Fotossintetizar refeições para o cérebro",
+      "Filtrar o sangue como um rim",
+      "Armazenar memórias factuais de longo prazo"
     ],
     "explanation": "A pele é uma barreira contra lesões e muitos germes. A sudorese e as alterações no fluxo sanguíneo na pele ajudam no controle da temperatura.",
     "theoryLines": [
@@ -10603,8 +10603,8 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Isolamento contra água fria",
       "Voando longas distâncias no ar",
-      "Fotossintetizando sob gelo",
-      "Caminhando pelas dunas de areia do deserto"
+      "Fotossintetizar sob gelo",
+      "Caminhar pelas dunas de areia do deserto"
     ],
     "explanation": "Camadas de gordura retêm o calor em mares frios. O isolamento é crítico onde a água retira o calor rapidamente.",
     "theoryLines": [
@@ -10685,10 +10685,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_p1_g5_animals_hard_01": {
     "stem": "Como é que a construção sobre zonas húmidas sem proteções pode prejudicar principalmente os animais?",
     "options": [
-      "Destruindo o habitat de que necessitam para alimentação, reprodução e abrigo",
+      "Destruir o habitat de que necessitam para alimentação, reprodução e abrigo",
       "Dando automaticamente a cada espécie novo espaço ilimitado",
-      "Impedindo que o clima mude novamente",
-      "Convertendo predadores em produtores durante a noite"
+      "Impedir que o clima mude novamente",
+      "Converter predadores em produtores durante a noite"
     ],
     "explanation": "As zonas húmidas suportam muitas espécies. Preenchê-los ou pavimentá-los remove recursos críticos e pode causar o colapso das populações locais.",
     "theoryLines": [
@@ -11092,9 +11092,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que pode ajudar alguns mamíferos a se manterem aquecidos em climas frios?",
     "options": [
       "Pêlo grosso ou uma camada de gordura corporal",
-      "Crescendo guelras nas costas",
+      "Crescer guelras nas costas",
       "Transformando-se completamente em plantas",
-      "Parando todo o fluxo sanguíneo"
+      "Parar todo o fluxo sanguíneo"
     ],
     "explanation": "A pele e a gordura ajudam a reter o calor para que os mamíferos possam sobreviver em habitats frios.",
     "theoryLines": [
@@ -11175,10 +11175,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_p1_g6_animals_medium_07": {
     "stem": "Como os animais podem ajudar as plantas a espalhar suas sementes?",
     "options": [
-      "Transportando sementes na pele ou em excrementos para novos lugares",
-      "Transformando sementes em metal puro",
-      "Bloqueando toda a luz solar para sempre",
-      "Bombeando sangue em cada folha"
+      "Transportar sementes na pele ou em excrementos para novos lugares",
+      "Transformar sementes em metal puro",
+      "Bloquear toda a luz solar para sempre",
+      "Bombear sangue em cada folha"
     ],
     "explanation": "Os animais movem as sementes quando comem frutas ou quando as sementes grudam nelas, ajudando as plantas a crescerem em novos locais.",
     "theoryLines": [
@@ -11497,9 +11497,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que constitui uma boa observação científica?",
     "options": [
       "Perceber e descrever o que você realmente vê ou mede",
-      "Adivinhando uma história sem evidências",
-      "Ignorando todos os dados propositalmente",
-      "Alterando os resultados para parecerem mais bonitos"
+      "Adivinhar uma história sem evidências",
+      "Ignorar todos os dados propositalmente",
+      "Alterar os resultados para parecerem mais bonitos"
     ],
     "explanation": "As observações são anotações cuidadosas sobre o que realmente acontece, usando sentidos e ferramentas.",
     "theoryLines": [
@@ -11511,9 +11511,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Para que serve um copo em muitos experimentos?",
     "options": [
       "Segurar e despejar líquidos com cuidado",
-      "Medindo apenas a altura das montanhas",
-      "Ouvindo sons de animais",
-      "Fazendo as sombras desaparecerem"
+      "Medir apenas a altura das montanhas",
+      "Ouvir sons de animais",
+      "Fazer as sombras desaparecerem"
     ],
     "explanation": "Um copo é um recipiente para líquidos durante investigações científicas.",
     "theoryLines": [
@@ -11836,9 +11836,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Como as plantas verdes produzem açúcares para alimentação?",
     "options": [
       "Através da fotossíntese usando luz, água e dióxido de carbono",
-      "Caçando à noite por carne",
-      "Congelando água em metal",
-      "Copiando apenas a digestão animal"
+      "Caçar à noite por carne",
+      "Congelar água em metal",
+      "Copiar apenas a digestão animal"
     ],
     "explanation": "Na fotossíntese, as plantas usam a luz solar para produzir açúcares a partir da água e do dióxido de carbono.",
     "theoryLines": [
@@ -12195,10 +12195,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_vol_g5_animals_hard_01": {
     "stem": "Qual é a função principal das barbatanas de um peixe?",
     "options": [
-      "Ajudando os peixes a se moverem e permanecerem equilibrados na água",
-      "Fazendo penas para voar",
+      "Ajudar os peixes a se moverem e permanecerem equilibrados na água",
+      "Fazer penas para voar",
       "Produção de pólen para flores",
-      "Filtrando o sangue como os rins"
+      "Filtrar o sangue como os rins"
     ],
     "explanation": "As barbatanas ajudam os peixes a nadar, virar e manter-se firmes na água.",
     "theoryLines": [
@@ -12346,7 +12346,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Penas",
       "Brânquias para respiração subaquática",
       "Escamas cobrindo todo o corpo",
-      "Vivendo apenas debaixo d'água para sempre"
+      "Viver apenas debaixo d'água para sempre"
     ],
     "explanation": "As penas são uma característica fundamental das aves. Os peixes normalmente têm escamas e usam guelras na água.",
     "theoryLines": [
@@ -12570,7 +12570,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Comer bem, movimentar-se com frequência, descansar e manter-se limpo",
       "Nunca beber água",
       "Pular o sono todas as noites",
-      "Evitando todas as frutas e vegetais para sempre"
+      "Evitar todas as frutas e vegetais para sempre"
     ],
     "explanation": "Rotinas saudáveis ​​apoiam a energia, o crescimento e sistemas corporais fortes.",
     "theoryLines": [
@@ -13677,7 +13677,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "O que normalmente faz um cubo de gelo derreter mais rápido?",
     "options": [
       "Ambiente mais quente",
-      "Colocando em um freezer mais frio",
+      "Colocar em um freezer mais frio",
       "Mantendo-o longe de todo calor para sempre",
       "Envolvendo-o em gelo mais grosso"
     ],
@@ -13944,10 +13944,10 @@ export const SCIENCE_PT_BR_OVERLAY = {
   "sci_phb_g5_materials_med_01": {
     "stem": "O que geralmente ajuda um sólido a se dissolver mais rapidamente na água?",
     "options": [
-      "Mexendo e usando água mais quente",
-      "Mantendo a água mais fria e parada",
+      "Mexer e usando água mais quente",
+      "Manter a água mais fria e parada",
       "Usando apenas pedaços maiores e inquebráveis",
-      "Removendo toda a água"
+      "Remover toda a água"
     ],
     "explanation": "O calor e a agitação ajudam as partículas a misturar tantos sólidos que se dissolvem mais rapidamente.",
     "theoryLines": [
@@ -13988,8 +13988,8 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "options": [
       "Proteger e usar cuidadosamente os recursos naturais",
       "Desperdiçar água e energia de propósito",
-      "Destruindo habitats por diversão",
-      "Ignorando o lixo nos parques"
+      "Destruir habitats por diversão",
+      "Ignorar o lixo nos parques"
     ],
     "explanation": "Conservação significa cuidar da natureza para que os recursos e a vida selvagem possam durar no futuro.",
     "theoryLines": [
@@ -14040,9 +14040,9 @@ export const SCIENCE_PT_BR_OVERLAY = {
     "stem": "Qual das alternativas a seguir é um exemplo de alteração química em um material?",
     "options": [
       "Queima de madeira, que produz cinzas e fumaça e não pode ser revertida",
-      "Derretendo um cubo de gelo em água líquida",
+      "Derreter um cubo de gelo em água líquida",
       "Quebrar um copo em pedaços menores",
-      "Misturando areia na água"
+      "Misturar areia na água"
     ],
     "explanation": "Uma mudança química cria uma nova substância com propriedades diferentes. A queima de madeira é uma mudança química porque produz cinzas e gases, e a madeira não pode ser restaurada.",
     "theoryLines": []
@@ -14067,7 +14067,7 @@ export const SCIENCE_PT_BR_OVERLAY = {
       "Temperatura mais alta, agitação e pedaços menores",
       "Temperatura mais baixa e sem movimento",
       "Pedaços maiores deixados intocados em água gelada",
-      "Removendo completamente o solvente"
+      "Remover completamente o solvente"
     ],
     "explanation": "Calor, agitação e maior área de superfície ajudam as partículas do soluto a se misturarem ao solvente mais rapidamente.",
     "theoryLines": [

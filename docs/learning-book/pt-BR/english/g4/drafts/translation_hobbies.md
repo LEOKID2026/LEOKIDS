@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g4:translation_hobbies` |
 | **skill_id** | `english:pool:translation:hobbies` |
 | **assunto** | inglês |
-| **nota** | g4 |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | prática_bridge |
 | **status_aprovação** | aprovado |

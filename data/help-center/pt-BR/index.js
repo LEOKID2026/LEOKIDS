@@ -22,7 +22,7 @@ export const SECTIONS_PT_BR = {
   },
   "parent-report": {
     "key": "parent-report",
-    "title": "Relatório pai explicado",
+    "title": "Relatório do responsável explicado",
     "description": "Como ler cada parte do relatório — passo a passo.",
     "href": "/help/parent-report",
     "emoji": "📊",

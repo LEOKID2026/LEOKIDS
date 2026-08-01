@@ -1,87 +1,58 @@
-# Livro de aprendizagem de inglês da 2ª série - Rascunhos
+# Livro de aprendizagem — Inglês · 2º ano
 
-**Status:** Rascunho do conteúdo — **15/15** páginas. Não aprovado pelo proprietário. Nenhum tempo de execução conectado.
-**Data:** junho de 2026
-**Pasta:** `docs/learning-book/english/g2/drafts/`
-**Título do livro:** ספר אנגלית — כיתה ב׳
-
----
-
-## Status atual
-
-| Artigo | Estado |
-|------|--------|
-| Plano curricular | ✅ `docs/learning-book/ENGLISH_GRADE_2_LEARNING_BOOK_PLAN.md` |
-| Rascunho de páginas de redução | ✅ **15/15** |
-| Pacote de revisão | ✅ `docs/learning-book/ENGLISH_GRADE_2_HEBREW_REVIEW_PACK.md` (gerado) |
-| Verificação de conteúdo | ✅ `scripts/verify-english-g2-book-content.mjs` |
-| Rascunho do manifesto (somente scripts) | ✅ `scripts/lib/english-g2-draft-manifest.mjs` |
-| Tempo de execução/registro/rotas | ❌ Não criado |
+**Status:** Conteúdo em rascunho. Sem código. Sem UI. Sem SQL. Sem commit/push/deploy.
+**Pasta:** `docs/learning-book/pt-BR/english/g2/drafts/`
+**Locale:** pt-BR (Brasil)
 
 ---
 
-## Nomenclatura
+## Páginas em rascunho
 
-- Disciplina voltada para crianças: **אנגלית**
-- IDs internos: `english:g2:{pageId}`, `subject: english`
+| Arquivo | learning_page_id | status |
+|---------|------------------|--------|
+| `classroom_vocab_g2.md` | `english:g2:classroom_vocab_g2` | rascunho |
+| `early_sentences_exposure.md` | `english:g2:early_sentences_exposure` | rascunho |
+| `first_word_reading.md` | `english:g2:first_word_reading` | rascunho |
+| `grammar_be.md` | `english:g2:grammar_be` | rascunho |
+| `grammar_plural_questions.md` | `english:g2:grammar_plural_questions` | rascunho |
+| `letters_order.md` | `english:g2:letters_order` | rascunho |
+| `letters_review.md` | `english:g2:letters_review` | rascunho |
+| `listening_comprehension.md` | `english:g2:listening_comprehension` | rascunho |
+| `phonics_blending.md` | `english:g2:phonics_blending` | rascunho |
+| `phonics_sounds_review.md` | `english:g2:phonics_sounds_review` | rascunho |
+| `picture_audio_word_match.md` | `english:g2:picture_audio_word_match` | rascunho |
+| `sentence_base.md` | `english:g2:sentence_base` | rascunho |
+| `sentence_routine.md` | `english:g2:sentence_routine` | rascunho |
+| `sound_letter_match.md` | `english:g2:sound_letter_match` | rascunho |
+| `translation_classroom.md` | `english:g2:translation_classroom` | rascunho |
+| `translation_routines.md` | `english:g2:translation_routines` | rascunho |
+| `vocab_actions.md` | `english:g2:vocab_actions` | rascunho |
+| `vocab_animals.md` | `english:g2:vocab_animals` | rascunho |
+| `vocab_colors.md` | `english:g2:vocab_colors` | rascunho |
+| `vocab_emotions.md` | `english:g2:vocab_emotions` | rascunho |
+| `vocab_family.md` | `english:g2:vocab_family` | rascunho |
+| `vocab_food.md` | `english:g2:vocab_food` | rascunho |
+| `vocab_house.md` | `english:g2:vocab_house` | rascunho |
+| `vocab_numbers.md` | `english:g2:vocab_numbers` | rascunho |
+| `vocab_school.md` | `english:g2:vocab_school` | rascunho |
+| `word_families_cvc.md` | `english:g2:word_families_cvc` | rascunho |
 
----
-
-## Lote A — continuação do vocabulário (7)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `vocab_colors.md` | צבעים — שימוש במשפט |
-| `vocab_numbers.md` | מספרים — עד 20 |
-| `vocab_family.md` | משפחה — מילים במשפט |
-| `vocab_animals.md` | חיות — שמות ומשפטים |
-| `vocab_emotions.md` | רגשות — במשפט |
-| `vocab_actions.md` | פעולות — פועל במשפט |
-| `vocab_school.md` | בית ספר — חפצים במשפט |
-
-## Lote B — novo vocabulário (2)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `vocab_food.md` | מזון באנגלית |
-| `vocab_house.md` | בית — חדרים וחפצים |
-
-## Lote C — gramática (2)
-
-| Arquivo | Título do rascunho | Mesclar nota |
-|------|-------------|--------|
-| `grammar_be.md` | sou / é / são — חיזוק | Linha mesclada com ו-be_basic |
-| `grammar_plural_questions.md` | ריבוי ושאלות פשוטות | Linha plural mesclada ו-question_frames |
-
-## Lote D — sentenças ו-tradução (4)
-
-| Arquivo | Título do rascunho |
-|------|-------------|
-| `sentence_base.md` | משפטים קצרים — כיתה ב׳ |
-| `sentence_routine.md` | שגרת יום — משפטים |
-| `translation_classroom.md` | ביטויי כיתה — משפטים |
-| `translation_routines.md` | שגרת יום — תרגום |
+**Total de páginas de habilidade:** 26
 
 ---
 
-## Regras de conteúdo
+## Regras deste locale
 
-- As páginas de continuação devem ser diferentes do G1 — frases mais profundas, não copiar e colar
-- Nenhuma página de escrita independente (linha de acesso de escrita excluída)
-- Seção 7 somente texto - sem roteamento prático
-
----
-
-## Regenerar pacote de revisão
-
-```bash
-node scripts/build-english-g2-hebrew-review-pack.mjs
-node scripts/verify-english-g2-book-content.mjs
-```
+- IDs de página, skill_id e ordem permanecem estáveis.
+- Textos exibidos ao aluno estão nos arquivos `.md` irmãos.
+- Este README é metadado interno do locale `pt-BR` (não é corpo de página).
+- Status de aprovação: `draft` até revisão explícita do proprietário.
+- Idioma de produto: Português do Brasil (`você`; anos escolares: 1º ano–6º ano).
 
 ---
 
-## Regra de parada explícita
+## Confirmações
 
-- ❌ Sem registro, rotas, pratique CTA, SQL, commit, push, deploy
-- ✅ Os rascunhos permanecem como fonte para futuras tarefas de tempo de execução
+- Nenhuma página está marcada como `review`, `approved` ou `active` neste inventário.
+- Sem alteração de currículo, respostas ou diagnósticos neste arquivo.
+- Sem hebraico e sem andaime instrucional em inglês neste README.

@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g4:environment` |
 | **skill_id** | `science:topic:environment` |
-| **assunto** | ciência |
-| **nota** | g4 |
+| **assunto** | Ciências |
+| **ano** | g4 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Meio Ambiente — Conservação de Recursos `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Recursos naturais; impacto humano; conservação

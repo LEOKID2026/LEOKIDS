@@ -25,7 +25,7 @@
     "english.g6": {},
     "geometry.g1": {
       "a": {
-        "title": "Conhecendo a Praça e muito mais"
+        "title": "Conhecendo o quadrado e muito mais"
       },
       "b": {
         "title": "Tradução e Reflexão — Introdução"
@@ -316,76 +316,76 @@
   },
   "meta": {
     "english.g1": {
-      "bookTitle": "Inglês - 1ª série"
+      "bookTitle": "Inglês - 1º ano"
     },
     "english.g2": {
-      "bookTitle": "Inglês - 2ª série"
+      "bookTitle": "Inglês - 2º ano"
     },
     "english.g3": {
-      "bookTitle": "Inglês - 3ª série"
+      "bookTitle": "Inglês - 3º ano"
     },
     "english.g4": {
-      "bookTitle": "Inglês - 4ª série"
+      "bookTitle": "Inglês - 4º ano"
     },
     "english.g5": {
-      "bookTitle": "Inglês - 5ª série"
+      "bookTitle": "Inglês - 5º ano"
     },
     "english.g6": {
-      "bookTitle": "Inglês - 6ª série"
+      "bookTitle": "Inglês - 6º ano"
     },
     "geometry.g1": {
-      "bookTitle": "Geometria - 1ª série"
+      "bookTitle": "Geometria - 1º ano"
     },
     "geometry.g2": {
-      "bookTitle": "Geometria - 2ª série"
+      "bookTitle": "Geometria - 2º ano"
     },
     "geometry.g3": {
-      "bookTitle": "Geometria - 3ª série"
+      "bookTitle": "Geometria - 3º ano"
     },
     "geometry.g4": {
-      "bookTitle": "Geometria - 4ª série"
+      "bookTitle": "Geometria - 4º ano"
     },
     "geometry.g5": {
-      "bookTitle": "Geometria - 5ª série"
+      "bookTitle": "Geometria - 5º ano"
     },
     "geometry.g6": {
-      "bookTitle": "Geometria - 6ª série"
+      "bookTitle": "Geometria - 6º ano"
     },
     "math.g1": {
-      "bookTitle": "Matemática - 1ª série"
+      "bookTitle": "Matemática - 1º ano"
     },
     "math.g2": {
-      "bookTitle": "Matemática - 2ª série"
+      "bookTitle": "Matemática - 2º ano"
     },
     "math.g3": {
-      "bookTitle": "Matemática - 3ª série"
+      "bookTitle": "Matemática - 3º ano"
     },
     "math.g4": {
-      "bookTitle": "Matemática - 4ª série"
+      "bookTitle": "Matemática - 4º ano"
     },
     "math.g5": {
-      "bookTitle": "Matemática - 5ª série"
+      "bookTitle": "Matemática - 5º ano"
     },
     "math.g6": {
-      "bookTitle": "Matemática - 6ª série"
+      "bookTitle": "Matemática - 6º ano"
     },
     "science.g1": {
-      "bookTitle": "Ciências - 1ª série"
+      "bookTitle": "Ciências - 1º ano"
     },
     "science.g2": {
-      "bookTitle": "Ciências - 2ª série"
+      "bookTitle": "Ciências - 2º ano"
     },
     "science.g3": {
-      "bookTitle": "Ciências - 3ª série"
+      "bookTitle": "Ciências - 3º ano"
     },
     "science.g4": {
-      "bookTitle": "Ciências - 4ª série"
+      "bookTitle": "Ciências - 4º ano"
     },
     "science.g5": {
-      "bookTitle": "Ciências - 5ª série"
+      "bookTitle": "Ciências - 5º ano"
     },
     "science.g6": {
-      "bookTitle": "Ciências - 6ª série"
+      "bookTitle": "Ciências - 6º ano"
     }
   }
 }

@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g5:frac_to_mixed` |
 | **skill_id** | `math:kind:frac_to_mixed` |
 | **assunto** | matemática |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

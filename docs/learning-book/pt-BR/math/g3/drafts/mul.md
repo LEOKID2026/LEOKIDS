@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g3:mul` |
 | **skill_id** | `math:kind:mul` |
 | **assunto** | matemática |
-| **nota** | g3 |
+| **ano** | g3 |
 | **idade_banda** | notas_3_4 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |
@@ -34,7 +34,7 @@ Multiplicação = adicionar grupos iguais repetidas vezes.
 6 × 7 = 6 vezes 7 = 7 + 7 + 7 + 7 + 7 + 7 = 42
 7 × 8 = 7 grupos de 8 = 56
 Dica: 7 × 8 = 8 × 7 — mesma resposta (a ordem não importa).
-Link para a 3ª série: tabelas fortes ajudam na multiplicação por dezenas e em problemas com palavras.
+Link para a 3º ano: tabelas fortes ajudam na multiplicação por dezenas e em problemas com palavras.
 
 ---
 

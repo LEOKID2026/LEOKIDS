@@ -6,11 +6,11 @@
 |-------|-------|
 | **learning_page_id** | `science:g2:experiments` |
 | **skill_id** | `science:topic:experiments` |
-| **assunto** | ciência |
-| **nota** | g2 |
+| **assunto** | Ciências |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | procedimento_passo_por_passo |
-| **status_aprovação** | projecto |
+| **status_aprovação** | projeto |
 | **título_inglês** | Observação e Investigação `[DRAFT — not owner-approved]` |
 
 **Escopo do conteúdo:** Observação; comparação; uma variável — apenas segura; sem materiais perigosos

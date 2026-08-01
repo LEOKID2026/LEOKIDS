@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g1:add_second_decade` |
 | **skill_id** | `math:kind:add_second_decade` |
 | **assunto** | matemática |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

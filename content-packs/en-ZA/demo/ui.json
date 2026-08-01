@@ -1,0 +1,9 @@
+{
+  "missions": {
+    "mathTitle": "Practice maths",
+    "mathDescription": "Answer 5 maths questions"
+  },
+  "subjects": {
+    "math": "Maths"
+  }
+}

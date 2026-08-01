@@ -39,6 +39,22 @@ const PACK_TITLE_ES_419 = Object.freeze({
   sight: "Palabras de uso frecuente",
 });
 
+/** Portuguese Brazil pack titles (chrome only). */
+const PACK_TITLE_PT_BR = Object.freeze({
+  colors: "Cores",
+  animals: "Animais",
+  family: "Família",
+  food: "Comidas",
+  school: "Escola",
+  body: "Corpo",
+  home: "Casa",
+  nature: "Natureza",
+  transport: "Transporte",
+  numbers: "Números",
+  cvc: "Palavras CVC",
+  sight: "Palavras frequentes",
+});
+
 /** EN colorInstruction → es-419 (colors pack only). */
 const COLOR_INSTRUCTION_ES_419 = Object.freeze({
   "Color in red": "Colorea de rojo",
@@ -49,6 +65,18 @@ const COLOR_INSTRUCTION_ES_419 = Object.freeze({
   "Color in purple": "Colorea de morado",
   "Color in pink": "Colorea de rosa",
   "Color in black": "Colorea de negro",
+});
+
+/** EN colorInstruction → pt-BR (colors pack only). */
+const COLOR_INSTRUCTION_PT_BR = Object.freeze({
+  "Color in red": "Pinte de vermelho",
+  "Color in blue": "Pinte de azul",
+  "Color in green": "Pinte de verde",
+  "Color in yellow": "Pinte de amarelo",
+  "Color in orange": "Pinte de laranja",
+  "Color in purple": "Pinte de roxo",
+  "Color in pink": "Pinte de rosa",
+  "Color in black": "Pinte de preto",
 });
 
 /**
@@ -63,12 +91,25 @@ function isEs419(locale) {
 }
 
 /**
+ * @param {string} locale
+ */
+function isPtBr(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "pt-br";
+}
+
+/**
  * @param {string|null|undefined} [contentLocale]
  */
 export function resolveWritingWordPacks(contentLocale) {
   const locale = resolveContentLocale({ contentLocale });
   const useEs = isEs419(locale);
-  const titles = useEs ? PACK_TITLE_ES_419 : PACK_TITLE_EN;
+  const usePt = isPtBr(locale);
+  const titles = usePt ? PACK_TITLE_PT_BR : useEs ? PACK_TITLE_ES_419 : PACK_TITLE_EN;
+  const colorMap = usePt ? COLOR_INSTRUCTION_PT_BR : useEs ? COLOR_INSTRUCTION_ES_419 : null;
 
   /** @type {typeof ENGLISH_WORD_PACKS} */
   const out = {};
@@ -85,9 +126,7 @@ export function resolveWritingWordPacks(contentLocale) {
       words: (pack.words || []).map((w) => {
         const colorEn = w.colorInstruction || w.colorInstructionEn || undefined;
         const colorLocalized =
-          useEs && colorEn && COLOR_INSTRUCTION_ES_419[colorEn]
-            ? COLOR_INSTRUCTION_ES_419[colorEn]
-            : colorEn;
+          colorMap && colorEn && colorMap[colorEn] ? colorMap[colorEn] : colorEn;
         return {
           ...w,
           colorInstruction: colorLocalized,

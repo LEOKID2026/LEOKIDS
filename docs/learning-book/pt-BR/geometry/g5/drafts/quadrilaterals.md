@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g5:quadrilaterals` |
 | **skill_id** | `geometry:kind:quadrilaterals` |
 | **assunto** | geometria |
-| **nota** | g5 |
+| **ano** | g5 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | fundação_conceito |
 | **status_aprovação** | lançamento_pronto |

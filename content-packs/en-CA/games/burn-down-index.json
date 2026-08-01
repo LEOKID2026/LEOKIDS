@@ -1,0 +1,12 @@
+{
+  "components__educational-games__leo-lab__leo-lab-experiments-clean": {
+    "color_experiment": "Colour Experiment"
+  },
+  "components__solo-games__prototypes__dev__ConnectColorsPrototype": {
+    "connect_colors": "Connect Colours"
+  },
+  "lib__solo-games__solo-game-registry": {
+    "sort_shapes_and_colors_into_the_correct_boxes": "Sort shapes and colours into the correct boxes!",
+    "drag_each_shape_to_the_matching_box_by_shape_or_color_finish_all_the_sor": "Drag each shape to the matching box by shape or colour. Finish all the sorting before time runs out."
+  }
+}

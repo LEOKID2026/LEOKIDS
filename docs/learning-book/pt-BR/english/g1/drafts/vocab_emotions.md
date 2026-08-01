@@ -7,7 +7,7 @@
 | **learning_page_id** | `english:g1:vocab_emotions` |
 | **skill_id** | `english:vocabulary:wordlist:emotions` |
 | **assunto** | inglês |
-| **nota** | g1 |
+| **ano** | g1 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | vocabulário_tema |
 | **status_aprovação** | aprovado |

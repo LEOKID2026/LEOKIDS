@@ -1,4 +1,4 @@
-# Perímetro de um Triângulo – 6ª série
+# Perímetro de um Triângulo – 6º ano
 
 ## Metadados
 
@@ -7,7 +7,7 @@
 | **learning_page_id** | `geometry:g6:triangle_perimeter` |
 | **skill_id** | `geometry:kind:triangle_perimeter` |
 | **assunto** | geometria |
-| **nota** | g6 |
+| **ano** | g6 |
 | **idade_banda** | notas_5_6 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |

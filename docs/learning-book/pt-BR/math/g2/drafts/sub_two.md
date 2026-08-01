@@ -7,7 +7,7 @@
 | **learning_page_id** | `math:g2:sub_two` |
 | **skill_id** | `math:kind:sub_two` |
 | **assunto** | matemática |
-| **nota** | g2 |
+| **ano** | g2 |
 | **idade_banda** | notas_1_2 |
 | **tipo_página** | procedimento_passo_por_passo |
 | **status_aprovação** | lançamento_pronto |
