@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "six_grades": "six primary years",
+    "per_grade_regular_advanced": "per primary year: regular, advanced",
+    "topics_by_grade": "Topics by primary year"
+  }
+}

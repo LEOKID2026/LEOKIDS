@@ -1,0 +1,49 @@
+{
+  "chooseGrade": "Choose a primary year",
+  "master": {
+    "gradeRequired": "Please choose a primary year before practising. Ask a parent to update your primary year.",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practise by primary year (start low and advance to your chosen level), or pick a focus area.",
+    "notEnoughQuestions": "Not enough questions for the topic/primary year/level you chose. Try changing a setting.",
+    "gradeFallback": "Primary year",
+    "gradedPracticeBlurb": "Practise by primary year — starts low and advances to your chosen level",
+    "grades": {
+      "g1": "Primary 2",
+      "g2": "Primary 3",
+      "g3": "Primary 4",
+      "g4": "Primary 5",
+      "g5": "Primary 6",
+      "g6": "Primary 7"
+    },
+    "practiceModes": {
+      "graded": "Practise by primary year"
+    },
+    "gradeTitle": "{grade}",
+    "mistakePracticeBlurb": "Pick a recent mistake to open focused practice in the same topic, primary year, and difficulty.",
+    "currentGrade": "Current primary year",
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practise by primary year.",
+    "gradedPracticeLabel": "Practise by primary year (start low → your chosen level)"
+  },
+  "math": {
+    "howToLearnBlurb": "The goal is to practise maths in a fun way, matched to primary year, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a primary year, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    }
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practise geometry in a fun way, matched to primary year, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a primary year, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "errors": {
+      "invalidGrade": "Invalid primary year. Please choose another primary year.",
+      "noTopics": "No topics available for this primary year. Please choose another primary year.",
+      "noQuestions": "No questions available for the selected topic and primary year."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practise science in a fun way, matched to primary year, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a primary year, level, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

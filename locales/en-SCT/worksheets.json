@@ -1,0 +1,15 @@
+{
+  "gradeField": "Primary year",
+  "readyEmptyText": "Try changing the filters — or choose all subjects, primary years, and levels.",
+  "createHint": "Choose subject, primary year, topic, and difficulty — then create a sheet ready to print.",
+  "publicDemoHint": "A short demo with 8 exercises — pick subject, primary year, and topic.",
+  "publicReadyTitle": "Ready worksheets by primary year",
+  "gradeFilterAll": "All primary years",
+  "gradeG1": "Primary 2",
+  "gradeG2": "Primary 3",
+  "gradeG3": "Primary 4",
+  "gradeG4": "Primary 5",
+  "gradeG5": "Primary 6",
+  "gradeG6": "Primary 7",
+  "selectGrade": "Primary year"
+}

@@ -32,6 +32,9 @@ test("normalizeLocaleInput: known aliases resolve to canonical registry ids", ()
   assert.equal(normalizeLocaleId("en-sg"), "en-SG");
   assert.equal(normalizeLocaleId("en-za"), "en-ZA");
   assert.equal(normalizeLocaleId("en-wls"), "en-WLS");
+  assert.equal(normalizeLocaleId("en-sct"), "en-SCT");
+  assert.equal(normalizeLocaleId("en-nir"), "en-NIR");
+  assert.equal(normalizeLocaleId("en-ph"), "en-PH");
   assert.equal(normalizeLocaleId("en-xa"), "en-XA");
   assert.equal(normalizeLocaleId("ar-xb"), "ar-XB");
   // Unregistered locales (including he / he-IL) fall back to English

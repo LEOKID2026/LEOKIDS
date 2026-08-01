@@ -1,0 +1,19 @@
+{
+  "public": {
+    "about": {
+      "intro1": "The site is designed for primary learners with practice by subject, primary year, topic, and difficulty level. Every child can start where it makes sense, move forward gradually, and reinforce the topics where they need more confidence.",
+      "siteFeatures": {
+        "1": {
+          "phase": "Primary years and difficulty levels"
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Select primary year",
+    "gradeRequired": "Please select a primary year.",
+    "filterSuitable": "Suitable for primary year",
+    "gradeSuitable": "Suitable for primary year",
+    "allowGradePicker": "Allow child to pick primary year on learning pages"
+  }
+}

@@ -152,9 +152,9 @@ test("wave2 canonical redirects and reserved routes", () => {
   assert.equal(stripLocaleFromPath("/wls/parents").locale, "en-WLS");
 });
 
-test("selector adds Canada Singapore South Africa Wales; count 30", () => {
+test("selector adds Canada Singapore South Africa Wales; count 33", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 30);
+  assert.equal(locales.length, 33);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of WAVE2) {
     assert.equal(byId[c.id].label, c.label);
@@ -162,7 +162,7 @@ test("selector adds Canada Singapore South Africa Wales; count 30", () => {
     assert.notEqual(byId[c.id].label, c.id);
   }
   assert.ok(!locales.some((l) => /United Kingdom|Canada-en|Canada-fr|Welsh|Wales-cy/i.test(l.label)));
-  assert.equal(locales[locales.length - 1].id, "en-WLS");
+  assert.ok(locales.some((l) => l.id === "en-WLS"));
 });
 
 test("wave2 namespace merge and Wales inherits en-GB", () => {

@@ -10,10 +10,21 @@
       "faq": {
         "subjects": {
           "a": "The site includes practice in maths, geometry, English, and science — based on what is open and available for your child."
+        },
+        "parentsSee": {
+          "a": "Parents can view reports showing performance, repeating mistakes, strengths, and topics to keep practising."
         }
       }
     },
     "homepage": {
+      "howItWorks": {
+        "step2": "Child starts learning, practising, and playing"
+      },
+      "funGames": {
+        "0": {
+          "text": "Games that add interest and fun, encouraging kids to keep practising."
+        }
+      },
       "valueCards": {
         "1": {
           "text": "Practice, games, coins, and progress in a friendly, colourful journey."
@@ -63,5 +74,8 @@
     "filterSuitable": "Suitable for year",
     "gradeSuitable": "Suitable for year",
     "allowGradePicker": "Allow child to pick year on learning pages"
+  },
+  "student": {
+    "subjectsIntro": "Progress by subject — accuracy, questions, level, and stars. Tap \"Go to subject\" to start practising."
   }
 }

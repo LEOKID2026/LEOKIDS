@@ -37,6 +37,7 @@ import {
   BY_SECTION_EN_GB,
   SECTIONS_EN_GB,
 } from "./en-GB/index.js";
+// BY_SECTION_EN_GB used for SCT/NIR parent-report Maths inheritance (no local parent-report overlays).
 import {
   ALL_ARTICLES_EN_SG,
   BY_SECTION_EN_SG,
@@ -46,6 +47,16 @@ import {
   BY_SECTION_EN_ZA,
   SECTIONS_EN_ZA,
 } from "./en-ZA/index.js";
+import {
+  ALL_ARTICLES_EN_SCT,
+  BY_SECTION_EN_SCT,
+  SECTIONS_EN_SCT,
+} from "./en-SCT/index.js";
+import {
+  ALL_ARTICLES_EN_NIR,
+  BY_SECTION_EN_NIR,
+  SECTIONS_EN_NIR,
+} from "./en-NIR/index.js";
 
 export {
   ALL_ARTICLES_ES_419,
@@ -65,6 +76,10 @@ export {
   ALL_ARTICLES_EN_SG,
   ALL_ARTICLES_EN_ZA,
   SECTIONS_EN_ZA,
+  ALL_ARTICLES_EN_SCT,
+  SECTIONS_EN_SCT,
+  ALL_ARTICLES_EN_NIR,
+  SECTIONS_EN_NIR,
 };
 
 export const SECTIONS = {
@@ -118,7 +133,7 @@ export const ALL_ARTICLES = [
 
 /**
  * @param {string|null|undefined} [locale]
- * @returns {"en"|"es-419"|"es-ES"|"pt-BR"|"en-AU"|"en-NZ"|"en-IE"|"en-GB"|"en-SG"|"en-ZA"}
+ * @returns {"en"|"es-419"|"es-ES"|"pt-BR"|"en-AU"|"en-NZ"|"en-IE"|"en-GB"|"en-SG"|"en-ZA"|"en-SCT"|"en-NIR"}
  */
 export function resolveHelpLocale(locale) {
   const id = String(locale || "en")
@@ -129,10 +144,12 @@ export function resolveHelpLocale(locale) {
   if (id === "en-nz") return "en-NZ";
   if (id === "en-ie") return "en-IE";
   if (id === "en-gb" || id === "en-wls") return "en-GB";
+  if (id === "en-sct") return "en-SCT";
+  if (id === "en-nir") return "en-NIR";
   if (id === "en-sg") return "en-SG";
   if (id === "en-za") return "en-ZA";
-  // Canada has no Help overlay — inherit English base.
-  if (id === "en-ca") return "en";
+  // Canada / Philippines have no Help overlay — inherit English base.
+  if (id === "en-ca" || id === "en-ph") return "en";
   if (id === "pt-br" || id === "pt") return "pt-BR";
   if (id === "es-es") return "es-ES";
   if (id === "es-419" || id.startsWith("es-")) return "es-419";
@@ -148,6 +165,8 @@ export function getHelpSections(locale) {
   if (helpLocale === "en-NZ") return SECTIONS_EN_NZ;
   if (helpLocale === "en-IE") return SECTIONS_EN_IE;
   if (helpLocale === "en-GB") return SECTIONS_EN_GB;
+  if (helpLocale === "en-SCT") return SECTIONS_EN_SCT;
+  if (helpLocale === "en-NIR") return SECTIONS_EN_NIR;
   if (helpLocale === "en-SG") return SECTIONS;
   if (helpLocale === "en-ZA") return SECTIONS_EN_ZA;
   if (helpLocale === "pt-BR") return SECTIONS_PT_BR;
@@ -173,6 +192,15 @@ export function listArticles(section, locale) {
   }
   if (helpLocale === "en-GB") {
     return BY_SECTION_EN_GB[section] || [];
+  }
+  if (helpLocale === "en-SCT") {
+    // Country packs omit parent-report Maths chrome; inherit England overlays.
+    if (section === "parent-report") return BY_SECTION_EN_GB[section] || [];
+    return BY_SECTION_EN_SCT[section] || [];
+  }
+  if (helpLocale === "en-NIR") {
+    if (section === "parent-report") return BY_SECTION_EN_GB[section] || [];
+    return BY_SECTION_EN_NIR[section] || [];
   }
   if (helpLocale === "en-SG") {
     return BY_SECTION_EN_SG[section] || [];
@@ -255,6 +283,8 @@ export function assertAllArticlesValid() {
     { locale: "en-GB", articles: ALL_ARTICLES_EN_GB },
     { locale: "en-SG", articles: ALL_ARTICLES_EN_SG },
     { locale: "en-ZA", articles: ALL_ARTICLES_EN_ZA },
+    { locale: "en-SCT", articles: ALL_ARTICLES_EN_SCT },
+    { locale: "en-NIR", articles: ALL_ARTICLES_EN_NIR },
   ];
   for (const pack of packs) {
     for (const article of pack.articles) {

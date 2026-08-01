@@ -1,9 +1,11 @@
 {
+  "hubBlurb": "Choose a subject and start practising.",
   "chooseGrade": "Choose a year",
   "subjects": {
     "math": "Maths"
   },
   "master": {
+    "noBadgesYet": "No badges yet. Keep practising!",
     "gradeRequired": "Please choose a year before practising. Ask a parent to update your year.",
     "practiceSettingsBlurb": "Control your training: review recent mistakes, practice by year (start low and advance to your chosen level), or pick a focus area.",
     "notEnoughQuestions": "Not enough questions for the topic/year/level you chose. Try changing a setting.",
