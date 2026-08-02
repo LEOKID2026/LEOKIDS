@@ -1,0 +1,27 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez l’année scolaire (1re–5e année primaire, puis 6e), le groupe-classe et la matière — rapports et gestion par année scolaire",
+    "chooseGrade": "Choisissez une année",
+    "choosePhysicalClass": "Choisissez le groupe-classe",
+    "backGrades": "← Retour aux années",
+    "colGrade": "Année",
+    "colClass": "Groupe-classe",
+    "classLabel": "Groupe-classe",
+    "createStudentGrade": "Année",
+    "createStudentClass": "Classe (groupe-classe à l’école)",
+    "classMgmtGrade": "Année",
+    "classMgmtName": "Nom du groupe-classe",
+    "classMgmtAdd": "Ajouter un groupe-classe",
+    "classMgmtCreate": "Créer un groupe-classe",
+    "assignCurrentGrade": "Année actuelle",
+    "assignTargetGrade": "Année cible",
+    "studentsSubtitle": "Parcourez par année scolaire et par groupe-classe — rapports sur les enfants sans saisir d’identifiant",
+    "physicalClassReportTitle": "Rapport général du groupe-classe",
+    "physicalClassReportButton": "Rapport général du groupe-classe",
+    "physicalClassLoading": "Chargement du rapport général du groupe-classe…"
+  },
+  "communication": {
+    "detailsFieldGrade": "Année",
+    "detailsFieldClass": "Groupe-classe"
+  }
+}

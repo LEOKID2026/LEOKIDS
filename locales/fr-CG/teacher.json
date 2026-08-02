@@ -1,0 +1,29 @@
+{
+  "classGuidanceSeverityTier": {
+    "critical_class": "Le groupe-classe a besoin d'une attention immédiate",
+    "class_needs_reinforcement": "Le groupe-classe a besoin de renforcement",
+    "class_monitor": "Le groupe-classe a besoin d’un suivi et d’une pratique ciblée",
+    "class_on_track": "Le groupe-classe est sur la bonne voie"
+  },
+  "classHealth": {
+    "critical_class": "Le groupe-classe a besoin d'une attention immédiate",
+    "needs_reinforcement": "Le groupe-classe a besoin de renforcement",
+    "monitor": "Le groupe-classe a besoin d’un suivi et d’une pratique ciblée",
+    "strong": "Le groupe-classe est sur la bonne voie"
+  },
+  "focus": {
+    "classFallbackBanner": "Le groupe-classe montre des difficultés dans cette matière — un renforcement par activité de diagnostic est recommandé"
+  },
+  "fallback": {
+    "classSubjectHeadline": "{subject} - difficulté de la matière au niveau du groupe-classe",
+    "classSubjectHeadlineNoSubject": "Difficulté du sujet au niveau du groupe-classe",
+    "classSuffix": "Groupe-classe {label}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Aucun groupe-classe actif",
+    "noClassesHint": "Créez un nouveau groupe-classe ci-dessous, puis ajoutez des enfants via « Gérer le groupe-classe » sur la fiche du groupe-classe.",
+    "createClassLabel": "Nom du groupe-classe",
+    "createClassButton": "Créer un groupe-classe",
+    "createClassPlaceholder": "par ex. CE1 — LION"
+  }
+}

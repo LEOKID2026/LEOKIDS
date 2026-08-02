@@ -1,0 +1,15 @@
+{
+  "levelFilterAll": "Tous les niveaux",
+  "gradeField": "Niveau",
+  "createHint": "Choisissez la matière, le niveau, le thème et la difficulté, puis créez une fiche d’exercices prête à imprimer.",
+  "readyEmptyText": "Essayez de modifier les filtres ou choisissez toutes les matières, tous les niveaux et toutes les difficultés.",
+  "publicDemoHint": "Une courte démo avec 8 exercices : choisissez la matière, le niveau et le thème.",
+  "gradeFilterAll": "Tous les niveaux",
+  "gradeG1": "CP1",
+  "gradeG2": "CP2",
+  "gradeG3": "CE1",
+  "gradeG4": "CE2",
+  "gradeG5": "CM1",
+  "gradeG6": "CM2",
+  "selectGrade": "Niveau"
+}

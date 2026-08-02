@@ -1,0 +1,18 @@
+{
+  "subjects": {
+    "math": "Maths"
+  },
+  "shell": {
+    "backMath": "Back to Maths",
+    "practiceGeometry": "We'll practise this Geometry topic next",
+    "practiceScience": "We'll practise this Science topic next",
+    "practiceEnglish": "We'll practise this English topic next",
+    "practiceMath": "We'll practise this Maths topic next",
+    "practiceNow": "Let's practise now"
+  },
+  "sections": {
+    "map": {
+      "Let's practice!": "Let's practise"
+    }
+  }
+}

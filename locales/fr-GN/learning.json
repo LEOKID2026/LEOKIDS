@@ -1,0 +1,21 @@
+{
+  "chooseGrade": "Choisis un niveau",
+  "master": {
+    "gradeRequired": "Merci de choisir un niveau avant de pratiquer. Demande à un parent de mettre à jour ton niveau.",
+    "gradeFallback": "Niveau",
+    "currentGrade": "Niveau actuel",
+    "grades": {
+      "g1": "CP1",
+      "g2": "CP2",
+      "g3": "CE1",
+      "g4": "CE2",
+      "g5": "CM1",
+      "g6": "CM2"
+    }
+  },
+  "geometry": {
+    "errors": {
+      "invalidGrade": "Niveau non valide. Choisis un autre niveau."
+    }
+  }
+}

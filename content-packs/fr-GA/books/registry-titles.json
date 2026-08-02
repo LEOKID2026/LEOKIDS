@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Anglais — 1re année"
+    },
+    "english.g2": {
+      "bookTitle": "Anglais — 2e année"
+    },
+    "english.g3": {
+      "bookTitle": "Anglais — 3e année"
+    },
+    "english.g4": {
+      "bookTitle": "Anglais — 4e année"
+    },
+    "english.g5": {
+      "bookTitle": "Anglais — 5e année"
+    },
+    "geometry.g1": {
+      "bookTitle": "Géométrie — 1re année"
+    },
+    "geometry.g2": {
+      "bookTitle": "Géométrie — 2e année"
+    },
+    "geometry.g3": {
+      "bookTitle": "Géométrie — 3e année"
+    },
+    "geometry.g4": {
+      "bookTitle": "Géométrie — 4e année"
+    },
+    "geometry.g5": {
+      "bookTitle": "Géométrie — 5e année"
+    },
+    "math.g1": {
+      "bookTitle": "Mathématiques — 1re année"
+    },
+    "math.g2": {
+      "bookTitle": "Mathématiques — 2e année"
+    },
+    "math.g3": {
+      "bookTitle": "Mathématiques — 3e année"
+    },
+    "math.g4": {
+      "bookTitle": "Mathématiques — 4e année"
+    },
+    "math.g5": {
+      "bookTitle": "Mathématiques — 5e année"
+    },
+    "science.g1": {
+      "bookTitle": "Sciences — 1re année"
+    },
+    "science.g2": {
+      "bookTitle": "Sciences — 2e année"
+    },
+    "science.g3": {
+      "bookTitle": "Sciences — 3e année"
+    },
+    "science.g4": {
+      "bookTitle": "Sciences — 4e année"
+    },
+    "science.g5": {
+      "bookTitle": "Sciences — 5e année"
+    }
+  }
+}

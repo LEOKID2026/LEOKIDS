@@ -1,0 +1,14 @@
+{
+  "createHint": "Choisissez la matière, l’année, le thème et le niveau de difficulté, puis créez une fiche d’exercices prête à imprimer.",
+  "readyEmptyText": "Essayez de modifier les filtres ou choisissez toutes les matières, toutes les années et tous les niveaux de difficulté.",
+  "publicDemoHint": "Une courte démo avec 8 exercices : choisissez la matière, l’année et le thème.",
+  "gradeField": "Année",
+  "gradeFilterAll": "Toutes les années",
+  "gradeG1": "CP1",
+  "gradeG2": "CP2",
+  "gradeG3": "CE1",
+  "gradeG4": "CE2",
+  "gradeG5": "CM1",
+  "gradeG6": "CM2",
+  "selectGrade": "Année"
+}

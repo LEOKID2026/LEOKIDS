@@ -1,0 +1,21 @@
+{
+  "home": {
+    "subhead": "Pratiquez les mathématiques, la géométrie, l’anglais et les sciences – conçus pour les élèves du primaire en République du Congo."
+  },
+  "layout": {
+    "backHome": "Retour à l’accueil"
+  },
+  "pwa": {
+    "backHome": "Retour à l’accueil"
+  },
+  "parent": {
+    "selectGrade": "Choisir une année",
+    "gradeRequired": "Veuillez sélectionner une année.",
+    "allowGradePicker": "Autoriser l’enfant à choisir l’année sur les pages d’apprentissage"
+  },
+  "public": {
+    "about": {
+      "intro1": "Le site est conçu pour les élèves du primaire en République du Congo (CP1–CP2, CE1–CE2 et CM1–CM2), avec une pratique par matière, année, thème et niveau de difficulté. L’interface est en français, langue d’enseignement du système éducatif ; d’autres langues sont également parlées dans le pays."
+    }
+  }
+}

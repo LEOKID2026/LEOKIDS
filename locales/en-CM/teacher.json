@@ -1,0 +1,12 @@
+{
+  "subjects": {
+    "math": "Maths"
+  },
+  "dashboard": {
+    "noClassesTitle": "No active class groups",
+    "noClassesHint": "Create a new class group below, then add children via “Manage class group” on the class group card.",
+    "createClassLabel": "Class group name",
+    "createClassButton": "Create class group",
+    "createClassPlaceholder": "e.g. Class 3A"
+  }
+}

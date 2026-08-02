@@ -1,0 +1,23 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez l’année scolaire (CP1–CM2), le groupe-classe et la matière — rapports et gestion par année scolaire",
+    "chooseGrade": "Choisissez une année",
+    "choosePhysicalClass": "Choisissez le groupe-classe",
+    "backGrades": "← Retour aux années",
+    "colGrade": "Année",
+    "createStudentGrade": "Année",
+    "createStudentClass": "Classe (groupe-classe à l’école)",
+    "classMgmtGrade": "Année",
+    "assignCurrentGrade": "Année actuelle",
+    "assignTargetGrade": "Année cible",
+    "studentsSubtitle": "Parcourez par année scolaire et par groupe-classe — rapports sur les enfants sans saisir d’identifiant",
+    "colClass": "Groupe-classe",
+    "classLabel": "Groupe-classe",
+    "physicalClassReportTitle": "Rapport général du groupe-classe",
+    "physicalClassReportButton": "Rapport général du groupe-classe",
+    "physicalClassLoading": "Chargement du rapport général du groupe-classe…"
+  },
+  "communication": {
+    "detailsFieldGrade": "Année"
+  }
+}

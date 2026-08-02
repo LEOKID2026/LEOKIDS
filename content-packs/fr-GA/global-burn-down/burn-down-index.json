@@ -1,0 +1,60 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1re année",
+    "grade_2": "2e année",
+    "grade_3": "3e année",
+    "grade_4": "4e année",
+    "grade_5": "5e année"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1re année",
+    "grade_2": "2e année",
+    "grade_3": "3e année",
+    "grade_4": "4e année",
+    "grade_5": "5e année"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1re année",
+    "grade_2": "2e année",
+    "grade_3": "3e année",
+    "grade_4": "4e année",
+    "grade_5": "5e année"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Pratique numérique pour les élèves au Gabon : mathématiques, géométrie, anglais et sciences.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — pratique pour les élèves au Gabon."
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "Supprimer cet élève du groupe-classe ?",
+    "manage_class": "Gérer le groupe-classe",
+    "classes": "Groupes-classes",
+    "class_report": "Rapport du groupe-classe"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "3e année — LION"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "class_report": "Rapport du groupe-classe",
+    "loading_class_report": "Chargement du rapport du groupe-classe…"
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "Rapport du groupe-classe",
+    "invalid_class_id": "Identifiant de groupe-classe invalide.",
+    "you_do_not_have_permission_to_view_this_class_report": "Vous n'êtes pas autorisé à consulter ce rapport de groupe-classe."
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "Activités du groupe-classe"
+  },
+  "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Élève du groupe-classe"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Élève du groupe-classe"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "Aucun enfant dans ce groupe-classe."
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "class_average": "Moyenne du groupe-classe"
+  }
+}

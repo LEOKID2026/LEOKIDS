@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "gradeLabel": "Class",
+    "changeGrade": "Change class"
+  },
+  "enter": {
+    "intro": "Pick a class and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
+    "activeSessionNote": "You have an active demo — changing class will not reset the timer.",
+    "chooseGradeLegend": "Choose a class"
+  },
+  "missions": {
+    "mathTitle": "Practice maths",
+    "mathDescription": "Answer 5 maths questions"
+  },
+  "subjects": {
+    "math": "Maths"
+  },
+  "grades": {
+    "g1": "Class 1",
+    "g2": "Class 2",
+    "g3": "Class 3",
+    "g4": "Class 4",
+    "g5": "Class 5",
+    "g6": "Class 6"
+  }
+}

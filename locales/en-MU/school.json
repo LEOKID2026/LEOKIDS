@@ -1,0 +1,17 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a grade, class group and subject — reports and management by grade",
+    "studentsSubtitle": "Browse by grade and class group — view child reports without entering IDs",
+    "choosePhysicalClass": "Choose class group",
+    "colClass": "Class group",
+    "classLabel": "Class group",
+    "physicalClassReportTitle": "General class group report",
+    "physicalClassReportButton": "General class group report",
+    "physicalClassLoading": "Loading general class group report…",
+    "createStudentClass": "Class group (class name at school)"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this grade",
+    "audienceGradeTeachers": "Teachers of this grade"
+  }
+}

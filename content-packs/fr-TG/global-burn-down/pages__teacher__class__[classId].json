@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "class_report": "Rapport du groupe-classe",
+    "invalid_class_id": "Identifiant de groupe-classe invalide.",
+    "you_do_not_have_permission_to_view_this_class_report": "Vous n'êtes pas autorisé à consulter ce rapport de groupe-classe."
+  }
+}

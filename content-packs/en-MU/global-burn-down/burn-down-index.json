@@ -1,0 +1,26 @@
+{
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Digital practice for English-language primary school pupils in Mauritius: maths, geometry, English, and science.",
+    "math_practice_by_grade_and_topic_leo_kids": "Maths practice by grade and topic · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Ready worksheets, a worksheet generator, and answer keys for primary school practice.",
+    "help_center_leo_kids": "Help centre · Leo Kids",
+    "math_practice_at_home_leo_kids_guides": "Maths practice at home · Leo Kids guides",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "How to choose a maths topic, respond to mistakes, and build steady home practice.",
+    "math_games_for_kids_leo_kids_guides": "Maths games for kids · Leo Kids guides",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "How to use maths games for operations, numbers, and problem-solving practice.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — English-language practice for primary school pupils in Mauritius."
+  },
+  "lib__worksheets__worksheet-ui": {
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Try changing the filters - or select all subjects, grades, and difficulties.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Choose a subject, grade, topic, and difficulty - then create a worksheet ready to print."
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "No class groups in this grade."
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · English-language learning for primary school pupils in Mauritius"
+  },
+  "utils__question-metadata-qa__question-bank-discovery": {
+    "procedural_math_items_metadata_assigned_at_generation_time": "Procedural maths items - metadata assigned at generation time"
+  }
+}

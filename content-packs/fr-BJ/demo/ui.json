@@ -1,0 +1,25 @@
+{
+  "bar": {
+    "gradeLabel": "Niveau",
+    "changeGrade": "Changer de niveau"
+  },
+  "enter": {
+    "intro": "Choisissez un niveau et explorez le monde des enfants. {minutes} minutes de jeu et d’apprentissage — aucune inscription.",
+    "chooseGradeLegend": "Choisissez un niveau",
+    "activeSessionNote": "Vous avez une démo active : changer de niveau ne réinitialisera pas le chronomètre."
+  },
+  "display": {
+    "arcadePlayerName": "Joueur démo"
+  },
+  "parentPortal": {
+    "enterBackHome": "Retour à l’accueil"
+  },
+  "grades": {
+    "g1": "CI",
+    "g2": "CP",
+    "g3": "CE1",
+    "g4": "CE2",
+    "g5": "CM1",
+    "g6": "CM2"
+  }
+}

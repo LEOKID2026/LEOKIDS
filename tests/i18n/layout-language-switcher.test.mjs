@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Layout HUD language switcher visibility + same-page locale href contract.
  */
 import test from "node:test";
@@ -53,7 +53,7 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 62);
+  assert.equal(locales.length, 69);
   assert.deepEqual(
     locales.map((l) => l.id),
     [
@@ -119,6 +119,13 @@ test("selectable locales for switcher are English + country names", () => {
       "ru-BY",
       "en-RW",
       "fr-CM",
+      "en-CM",
+      "fr-BJ",
+      "en-MU",
+      "fr-GN",
+      "fr-TG",
+      "fr-GA",
+      "fr-CG",
     ]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
@@ -263,7 +270,7 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
 
 test("LanguageSwitcher list can reach all selectable locales including group-1 countries", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 62);
+  assert.equal(locales.length, 69);
   assert.equal(locales[0].id, "en");
   assert.ok(locales.some((l) => l.id === "pt-BR" && l.nativeName === "Brasil"));
   assert.ok(locales.some((l) => l.id === "pt-PT" && l.nativeName === "Portugal"));
@@ -296,6 +303,13 @@ test("LanguageSwitcher list can reach all selectable locales including group-1 c
   assert.ok(locales.some((l) => l.id === "ru-BY" && l.nativeName === "Belarus-ru" && l.pathPrefix === "by-ru"));
   assert.ok(locales.some((l) => l.id === "en-RW" && l.nativeName === "Rwanda-en" && l.pathPrefix === "rw-en"));
   assert.ok(locales.some((l) => l.id === "fr-CM" && l.nativeName === "Cameroon-fr" && l.pathPrefix === "cm-fr"));
-  assert.equal(locales[locales.length - 1].id, "fr-CM");
-  assert.equal(locales[locales.length - 1].nativeName, "Cameroon-fr");
+  assert.ok(locales.some((l) => l.id === "en-CM" && l.nativeName === "Cameroon-en" && l.pathPrefix === "cm-en"));
+  assert.ok(locales.some((l) => l.id === "fr-BJ" && l.nativeName === "Benin" && l.pathPrefix === "bj"));
+  assert.ok(locales.some((l) => l.id === "en-MU" && l.nativeName === "Mauritius-en" && l.pathPrefix === "mu-en"));
+  assert.ok(locales.some((l) => l.id === "fr-GN" && l.nativeName === "Guinea" && l.pathPrefix === "gn"));
+  assert.ok(locales.some((l) => l.id === "fr-TG" && l.nativeName === "Togo" && l.pathPrefix === "tg"));
+  assert.ok(locales.some((l) => l.id === "fr-GA" && l.nativeName === "Gabon" && l.pathPrefix === "ga"));
+  assert.ok(locales.some((l) => l.id === "fr-CG" && l.nativeName === "Congo" && l.pathPrefix === "cg"));
+  assert.equal(locales[locales.length - 1].id, "fr-CG");
+  assert.equal(locales[locales.length - 1].nativeName, "Congo");
 });

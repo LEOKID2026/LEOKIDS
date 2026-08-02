@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "helpCenter": "Help centre"
+  },
+  "home": {
+    "subhead": "Practice maths, geometry, English, and science — built for English-language primary school pupils in Mauritius."
+  },
+  "public": {
+    "contact": {
+      "faq": {
+        "subjects": {
+          "a": "The site includes practice in maths, geometry, English, and science — based on what is open and available for your child."
+        },
+        "parentsSee": {
+          "a": "Parents can view reports showing performance, repeating mistakes, strengths, and topics to keep practising."
+        }
+      }
+    },
+    "homepage": {
+      "howItWorks": {
+        "step2": "Child starts learning, practising, and playing"
+      },
+      "valueCards": {
+        "0": {
+          "text": "See what your child practised, where they are improving, and what to reinforce."
+        },
+        "1": {
+          "text": "Practice, games, coins, and progress in a friendly, colourful journey."
+        }
+      },
+      "learningSystem": {
+        "capabilities": {
+          "subject-map": {
+            "text": "See progress across maths, geometry, English, and science down to the topics practised."
+          }
+        }
+      },
+      "parentBenefits": {
+        "highlight": "Instead of guessing where it's hard — get organised insight about what to work on."
+      },
+      "kids": {
+        "benefits": {
+          "0": {
+            "text": "Colourful questions and challenges that make practice feel lighter."
+          }
+        }
+      },
+      "finalCta": {
+        "text": "Open an account, add your child, and build an organised learning picture from practice, activities, and games."
+      },
+      "teachers": {
+        "title": "Organised practice and tracking between lessons",
+        "text": "Send focused activities, see how pupils perform, and continue from the lesson at home.",
+        "bullet0": "Manage pupils"
+      }
+    },
+    "about": {
+      "intro1": "The site is designed for English-language primary school pupils in Mauritius in Grade 1–6 (Grade 1–2, Grade 3–4, and Grade 5–6), with practice by subject, grade, topic, and difficulty level. Every child can start where it makes sense, move forward gradually, and reinforce the topics where they need more confidence.",
+      "missionMuted": "The system combines practice, playfulness, parent reports, and progress summaries to create a learning process that feels personal, organised, and encouraging.",
+      "learnEnjoyBody": "Beyond academic practice, the site includes educational games, engaging play, coins, and cards designed to add fun, motivation, and enjoyment to learning. The goal is for kids not to feel they are only \"doing homework,\" but entering a colourful kids world where they can learn, play, and progress with a good feeling.",
+      "siteFeatures": {
+        "0": {
+          "text": "Maths, geometry, English, and science."
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Select a grade"
+  },
+  "student": {
+    "subjectsIntro": "Progress by subject — accuracy, questions, level, and stars. Tap \"Go to subject\" to start practising.",
+    "childDefault": "Pupil"
+  },
+  "empty": {
+    "noStudents": "No children yet. Add a child to get started."
+  }
+}

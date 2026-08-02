@@ -205,6 +205,46 @@ function isFrenchCameroonInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isFrenchBeninInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "fr-bj";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchGuineaInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "fr-gn";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchTogoInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "fr-tg";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchGabonInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "fr-ga";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchCongoBrazzavilleInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "fr-cg";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isDutchNetherlandsInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "nl-nl";
@@ -308,6 +348,11 @@ function isLocalizedMeaningLocale(locale) {
     isFrenchSenegalInstructionLocale(locale) ||
     isFrenchCongoInstructionLocale(locale) ||
     isFrenchCameroonInstructionLocale(locale) ||
+    isFrenchBeninInstructionLocale(locale) ||
+    isFrenchGuineaInstructionLocale(locale) ||
+    isFrenchTogoInstructionLocale(locale) ||
+    isFrenchGabonInstructionLocale(locale) ||
+    isFrenchCongoBrazzavilleInstructionLocale(locale) ||
     isDutchNetherlandsInstructionLocale(locale) ||
     isDutchBelgiumInstructionLocale(locale) ||
     isGermanGermanyInstructionLocale(locale) ||
@@ -345,6 +390,11 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "fr-sn") chainLocale = "fr-SN";
   else if (tag === "fr-cd") chainLocale = "fr-CD";
   else if (tag === "fr-cm") chainLocale = "fr-CM";
+  else if (tag === "fr-bj") chainLocale = "fr-BJ";
+  else if (tag === "fr-gn") chainLocale = "fr-GN";
+  else if (tag === "fr-tg") chainLocale = "fr-TG";
+  else if (tag === "fr-ga") chainLocale = "fr-GA";
+  else if (tag === "fr-cg") chainLocale = "fr-CG";
   else if (tag === "fr-ci") chainLocale = "fr-CI";
   else if (tag === "fr-ca") chainLocale = "fr-CA";
   else if (tag === "nl-be") chainLocale = "nl-BE";
