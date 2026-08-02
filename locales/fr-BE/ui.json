@@ -1,0 +1,7 @@
+{
+  "parent": {
+    "selectGrade": "Choisir une année",
+    "gradeRequired": "Veuillez sélectionner une année.",
+    "allowGradePicker": "Autoriser l’enfant à choisir l’année sur les pages d’apprentissage"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "grades": {
+    "g1": "1ste leerjaar",
+    "g2": "2de leerjaar",
+    "g3": "3de leerjaar",
+    "g4": "4de leerjaar",
+    "g5": "5de leerjaar",
+    "g6": "6de leerjaar"
+  }
+}

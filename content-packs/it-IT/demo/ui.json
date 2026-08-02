@@ -1,64 +1,64 @@
 {
   "bar": {
-    "badge": "Modo demo",
+    "badge": "Modalità demo",
     "gradeLabel": "Classe",
-    "playExpired": "Se acabo il tempo para nuevos inicios",
-    "playTime": "Tiempo de gioco",
+    "playExpired": "Il tempo è scaduto. Puoi ricominciare.",
+    "playTime": "Tempo di gioco",
     "minutesUnit": "min",
-    "changeGrade": "Cambiar classe",
-    "exitDemo": "Salir de la demo"
+    "changeGrade": "Cambia classe",
+    "exitDemo": "Esci dalla demo"
   },
   "enter": {
-    "pageTitle": "Modo demo — LEO KIDS",
-    "pageDescription": "Prova el mundo infantil sin registrarte",
-    "heading": "Modo demo per i genitori",
-    "intro": "scegli una classe y explora el mundo infantil. {minutes} minutos de gioco y apprendimento, sin registrarte.",
-    "activeSessionNote": "You have an active demo — changing grade will not reset the timer.",
+    "pageTitle": "Modalità demo — LEO KIDS",
+    "pageDescription": "Prova il mondo dei bambini senza registrarti.",
+    "heading": "Modalità demo per i genitori",
+    "intro": "Scegli una classe ed esplora il mondo dei bambini. {minutes} minuti di gioco e apprendimento — senza registrarti.",
+    "activeSessionNote": "Hai una demo attiva: cambiare classe non azzera il cronometro.",
     "chooseGradeLegend": "Scegli una classe",
     "enterButton": "Entra nel mondo dei bambini",
-    "enteringButton": "Entrando..."
+    "enteringButton": "Ingresso…"
   },
   "homeButton": {
-    "labelDesktop": "Probar el mundo infantil",
+    "labelDesktop": "Prova il mondo dei bambini",
     "labelMobile": "Demo",
-    "ariaLabel": "Probar el mundo infantil — modalità demo",
-    "dismissAriaLabel": "Descartar boton de demo"
+    "ariaLabel": "Prova il mondo dei bambini — modalità demo",
+    "dismissAriaLabel": "Nascondi il pulsante demo"
   },
   "gate": {
-    "loading": "Loading demo mode…",
-    "loadError": "No se pudo cargar el modalità demo. Intenta actualizar la pagina."
+    "loading": "Caricamento della modalità demo…",
+    "loadError": "Impossibile caricare la modalità demo. Prova ad aggiornare la pagina."
   },
   "timeExpiredModal": {
-    "title": "Se acabo il tempo de la demo",
-    "body": "{minutes} minutes have passed since the demo started. You can keep browsing the kids world, but you cannot start a new game or activity.",
-    "inProgressNote": "Games or activities already in progress will continue until finished.",
-    "dismiss": "Fatto",
-    "restart": "Empezar una demo nuova"
+    "title": "Il tempo della demo è scaduto",
+    "body": "Sono passati {minutes} minuti dall'inizio della demo. Puoi continuare a esplorare il mondo dei bambini, ma non puoi avviare un nuovo gioco o una nuova attività.",
+    "inProgressNote": "I giochi o le attività già in corso continueranno fino alla fine.",
+    "dismiss": "Ho capito",
+    "restart": "Avvia una nuova demo"
   },
   "onlineGameUnavailable": {
-    "title": "Los giochi en linea no estan disponibles en modalità demo",
-    "body": "In demo mode you can browse the arcade and see the games, but online multiplayer is not active.",
-    "backToArcade": "Torniamo alla sala giochi"
+    "title": "I giochi online non sono disponibili in modalità demo",
+    "body": "In modalità demo puoi esplorare la sala giochi e vedere i giochi, ma il multigiocatore online non è attivo.",
+    "backToArcade": "Torna alla sala giochi"
   },
   "display": {
-    "studentName": "Modo demo",
-    "greeting": "Bienvenido al modalità demo",
-    "arcadePlayerName": "Jugador demo",
-    "myRoomMessage": "Mi habitacion — vista previa de demo",
-    "learningMinutesScope": "From session summaries (demo)",
-    "allSubjectsScope": "Tutti i soggetti",
-    "encouragement": "Sigue practicando: questa es una demo!",
+    "studentName": "Modalità demo",
+    "greeting": "Benvenuto nella modalità demo",
+    "arcadePlayerName": "Giocatore demo",
+    "myRoomMessage": "La mia stanza — anteprima demo",
+    "learningMinutesScope": "Dai riepiloghi delle sessioni (demo)",
+    "allSubjectsScope": "Tutte le materie",
+    "encouragement": "Continua a esercitarti: questa è una demo!",
     "lifetimeMinutesDisplay": "120",
     "monthlyMinutesDisplay": "8"
   },
   "missions": {
-    "mathTitle": "Esercitarsi matematica",
-    "mathDescription": "Responde 5 domande de matematica",
-    "soloTitle": "Gioco individual",
-    "soloDescription": "Juega un gioco individual",
-    "tier5": "5 minutos",
-    "tier15": "15 minutos",
-    "tier30": "30 minutos"
+    "mathTitle": "Esercitati in matematica",
+    "mathDescription": "Rispondi a 5 domande di matematica",
+    "soloTitle": "Gioco individuale",
+    "soloDescription": "Gioca a un gioco individuale",
+    "tier5": "5 minuti",
+    "tier15": "15 minuti",
+    "tier30": "30 minuti"
   },
   "subjects": {
     "math": "Matematica",
@@ -67,29 +67,29 @@
     "science": "Scienze"
   },
   "cards": {
-    "purchaseBlocked": "Las compras no estan disponibles en modalità demo.",
-    "sellBlocked": "Vender cartas no esta disponible en modalità demo.",
-    "loadFailed": "No se pudieron cargar las cartas."
+    "purchaseBlocked": "Gli acquisti non sono disponibili in modalità demo.",
+    "sellBlocked": "La vendita delle carte non è disponibile in modalità demo.",
+    "loadFailed": "Impossibile caricare le carte."
   },
   "arcade": {
-    "actionBlocked": "Questa accion no esta disponible en modalità demo.",
-    "quickPlayBlocked": "El gioco rapido no esta disponible en modalità demo."
+    "actionBlocked": "Questa azione non è disponibile in modalità demo.",
+    "quickPlayBlocked": "Il gioco rapido non è disponibile in modalità demo."
   },
   "activity": {
-    "classroomUnavailable": "Classroom activities are not available in demo mode."
+    "classroomUnavailable": "Le attività di classe non sono disponibili in modalità demo."
   },
   "worksheet": {
-    "pageTitle": "Scheda didattica — demo mode",
-    "intro": "You can browse schede didattiche from the list on the home page. Digital submission is not available in demo mode.",
-    "backHome": "← Back to home",
-    "submitBlocked": "El envio no esta disponible en modalità demo."
+    "pageTitle": "Scheda didattica — modalità demo",
+    "intro": "Puoi sfogliare le schede didattiche dall'elenco nella home. L'invio digitale non è disponibile in modalità demo.",
+    "backHome": "← Torna alla home",
+    "submitBlocked": "L'invio non è disponibile in modalità demo."
   },
   "myRoom": {
-    "title": "Mi habitacion",
-    "saveBlocked": "Salvare no esta disponible en modalità demo."
+    "title": "La mia stanza",
+    "saveBlocked": "Il salvataggio non è disponibile in modalità demo."
   },
   "friends": {
-    "demoUnavailable": "Amigos y numero Leo — vista previa de demo. Agregar amigos e invitaciones no esta disponible."
+    "demoUnavailable": "Amici e numero Leo — anteprima demo. Aggiungere amici e inviti non è disponibile."
   },
   "grades": {
     "g1": "1ª primaria",
@@ -100,27 +100,27 @@
     "g6": "1ª secondaria"
   },
   "parentPortal": {
-    "barBadge": "Modo demo per i genitori",
-    "barSubtitle": "View only · 3 sample children",
-    "barExit": "Salir de la demo",
-    "dashboardSubtitle": "Modo demo — portal de genitori",
+    "barBadge": "Modalità demo per i genitori",
+    "barSubtitle": "Solo lettura · 3 bambini di esempio",
+    "barExit": "Esci dalla demo",
+    "dashboardSubtitle": "Modalità demo — portale genitori",
     "homeParentLabelLine1": "Genitori",
     "homeParentLabelLine2": "demo",
-    "homeParentAriaLabel": "Demo per i genitori — portal de solo lectura",
-    "homeParentDismissAriaLabel": "Descartar boton de demo per i genitori",
+    "homeParentAriaLabel": "Demo per i genitori — portale in sola lettura",
+    "homeParentDismissAriaLabel": "Nascondi il pulsante demo per i genitori",
     "enterPageTitle": "Demo per i genitori — LEO KIDS",
-    "enterPageDescription": "Explore the parent portal with sample children, reports, and recommendations — view only",
-    "enterHeading": "Demo del portal de genitori",
-    "enterBack": "Atras",
-    "enterIntro": "Explore the parent portal with 3 sample children, reports, activities, and recommendations — view only, no sign-up.",
-    "enterActiveSessionNote": "You have an active parent demo — you can continue where you left off.",
-    "enterReadOnlyNote": "En questo modo no se possono salvare cambiamenti.",
-    "enterButton": "Entrar al portal de genitori",
-    "enteringButton": "Entrando...",
-    "enterBackHome": "Ritorno a casa",
-    "readOnlyDefault": "El modalità demo es de solo lectura. No se possono salvare cambiamenti.",
-    "readOnlyShare": "Modo demo — compartir fuera de la demo no esta disponible.",
-    "readOnlyWorksheets": "Demo mode — you can browse worksheets, but not create new ones.",
-    "apiReadOnlyError": "El modalità demo es de solo lectura."
+    "enterPageDescription": "Esplori il portale genitori con bambini di esempio, rapporti e consigli — solo visualizzazione",
+    "enterHeading": "Demo del portale genitori",
+    "enterBack": "Indietro",
+    "enterIntro": "Esplori il portale genitori con 3 bambini di esempio, rapporti, attività e consigli — solo visualizzazione, senza registrazione.",
+    "enterActiveSessionNote": "Ha una demo genitori attiva: può continuare da dove si era fermato.",
+    "enterReadOnlyNote": "In questa modalità non è possibile salvare le modifiche.",
+    "enterButton": "Entri nel portale genitori",
+    "enteringButton": "Ingresso…",
+    "enterBackHome": "Torna alla home",
+    "readOnlyDefault": "La modalità demo è in sola lettura. Non è possibile salvare le modifiche.",
+    "readOnlyShare": "Modalità demo — la condivisione fuori dalla demo non è disponibile.",
+    "readOnlyWorksheets": "Modalità demo — può sfogliare le schede didattiche, ma non crearne di nuove.",
+    "apiReadOnlyError": "La modalità demo è in sola lettura."
   }
 }

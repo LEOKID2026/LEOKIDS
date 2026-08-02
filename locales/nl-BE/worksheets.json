@@ -1,0 +1,15 @@
+{
+  "gradeField": "Leerjaar",
+  "readyEmptyText": "Probeer de filters te wijzigen — of kies alle vakken, leerjaren en niveaus.",
+  "createHint": "Kies een vak, een leerjaar, een onderwerp en een niveau en maak vervolgens een blad dat klaar is om af te drukken.",
+  "publicDemoHint": "Een korte demo met 8 oefeningen – kies vak, leerjaar en onderwerp.",
+  "publicReadyTitle": "Kant-en-klare werkbladen per leerjaar",
+  "gradeFilterAll": "Alle leerjaren",
+  "gradeG1": "1ste leerjaar",
+  "gradeG2": "2de leerjaar",
+  "gradeG3": "3de leerjaar",
+  "gradeG4": "4de leerjaar",
+  "gradeG5": "5de leerjaar",
+  "gradeG6": "6de leerjaar",
+  "selectGrade": "Leerjaar"
+}

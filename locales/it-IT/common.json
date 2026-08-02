@@ -10,7 +10,7 @@
   "retry": "Riprova",
   "errorGeneric": "Qualcosa è andato storto. Riprova.",
   "notFound": "Pagina non trovata",
-  "accessDenied": "Non hai accesso a questa pagina.",
+  "accessDenied": "Non ha accesso a questa pagina.",
   "writeDisabled": "Il salvataggio è temporaneamente disabilitato mentre il sito globale è in modalità di anteprima.",
   "mockModeBanner": "Modalità di anteprima: i dati dello studio non vengono salvati nella produzione.",
   "brandName": "Leo Kids",

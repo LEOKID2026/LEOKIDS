@@ -1,0 +1,15 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez l’année scolaire (3P à 8P), le groupe-classe et la matière — rapports et gestion par année scolaire",
+    "chooseGrade": "Choisissez une année",
+    "backGrades": "← Retour aux années",
+    "colGrade": "Année",
+    "createStudentGrade": "Année",
+    "classMgmtGrade": "Année",
+    "assignCurrentGrade": "Année actuelle",
+    "assignTargetGrade": "Année cible"
+  },
+  "communication": {
+    "detailsFieldGrade": "Année"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez l’année du primaire (1re–6e primaire), la classe physique et la matière — rapports et gestion par année du primaire",
+    "chooseGrade": "Choisissez une année",
+    "backGrades": "← Retour aux années",
+    "colGrade": "Année",
+    "createStudentGrade": "Année",
+    "classMgmtGrade": "Année",
+    "assignCurrentGrade": "Année actuelle",
+    "assignTargetGrade": "Année cible"
+  },
+  "communication": {
+    "detailsFieldGrade": "Année"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "portal": {
+    "classesSubtitle": "Selezioni l'anno scolastico (dalla 1ª elementare alla 1ª media), la sezione e la materia — resoconti e gestione per classe.",
+    "chooseGrade": "Selezioni la classe",
+    "choosePhysicalClass": "Selezioni la sezione",
+    "backGrades": "← Torna alle classi",
+    "createStudentClass": "Sezione (gruppo classe a scuola)",
+    "createStudentClassHint": "Selezioni una sezione già esistente per un docente della scuola (ad esempio \"A\", \"B\").",
+    "classMgmtName": "Nome della sezione",
+    "assignTargetGrade": "Classe di destinazione",
+    "assignChooseClass": "Selezioni la sezione"
+  }
+}

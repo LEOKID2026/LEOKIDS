@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "grade_1": "1ste leerjaar",
+    "grade_2": "2de leerjaar",
+    "grade_3": "3de leerjaar",
+    "grade_4": "4de leerjaar",
+    "grade_5": "5de leerjaar",
+    "grade_6": "6de leerjaar"
+  }
+}

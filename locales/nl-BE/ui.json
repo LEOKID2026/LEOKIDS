@@ -1,0 +1,22 @@
+{
+  "home": {
+    "subhead": "Oefen rekenen, meetkunde, Engels en natuur en techniek — gemaakt voor leerlingen van de lagere school."
+  },
+  "public": {
+    "about": {
+      "intro1": "De site is ontworpen voor leerlingen van de lagere school die kunnen oefenen op vak, leerjaar en moeilijkheidsgraad. Ieder kind kan beginnen waar het zinvol is, geleidelijk verder gaan en de onderwerpen versterken waar het meer zelfvertrouwen nodig heeft.",
+      "siteFeatures": {
+        "1": {
+          "phase": "Leerjaren en moeilijkheidsniveaus"
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Kies een leerjaar",
+    "gradeRequired": "Selecteer alstublieft een leerjaar.",
+    "filterSuitable": "Geschikt voor leerjaar",
+    "gradeSuitable": "Geschikt voor leerjaar",
+    "allowGradePicker": "Kind toestaan om een leerjaar te kiezen op leerpagina’s"
+  }
+}

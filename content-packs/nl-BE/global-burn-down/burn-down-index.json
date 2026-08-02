@@ -1,0 +1,51 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1ste leerjaar",
+    "grade_2": "2de leerjaar",
+    "grade_3": "3de leerjaar",
+    "grade_4": "4de leerjaar",
+    "grade_5": "5de leerjaar",
+    "grade_6": "6de leerjaar"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1ste leerjaar",
+    "grade_2": "2de leerjaar",
+    "grade_3": "3de leerjaar",
+    "grade_4": "4de leerjaar",
+    "grade_5": "5de leerjaar",
+    "grade_6": "6de leerjaar"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1ste leerjaar",
+    "grade_2": "2de leerjaar",
+    "grade_3": "3de leerjaar",
+    "grade_4": "4de leerjaar",
+    "grade_5": "5de leerjaar",
+    "grade_6": "6de leerjaar"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Digitale oefening voor leerlingen van de lagere school in België: rekenen, meetkunde, Engels en natuurwetenschappen.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — oefenen voor leerlingen van de lagere school in België.",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Kant-en-klare werkbladen, een werkbladgenerator en antwoordsleutels voor het lager onderwijs."
+  },
+  "lib__worksheets__worksheet-ui": {
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Probeer de filters te wijzigen — of selecteer alle vakken, leerjaren en niveaus.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Kies een vak, leerjaar, onderwerp en niveau en maak vervolgens een werkblad dat klaar is om af te drukken.",
+    "ready_made_worksheets_by_grade": "Kant-en-klare werkbladen per leerjaar"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "you_don_t_have_permission_to_select_this_grade": "Je hebt geen toestemming om dit leerjaar te selecteren."
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Selecteer alstublieft een leerjaar."
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "Geen klasgroepen in dit leerjaar."
+  },
+  "pages__school__students__index": {
+    "no_children_in_this_grade": "Geen kinderen in dit leerjaar."
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Leren voor leerlingen van de lagere school"
+  }
+}

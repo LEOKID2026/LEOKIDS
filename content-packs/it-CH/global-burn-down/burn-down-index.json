@@ -1,0 +1,30 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1ª elementare",
+    "grade_2": "2ª elementare",
+    "grade_3": "3ª elementare",
+    "grade_4": "4ª elementare",
+    "grade_5": "5ª elementare",
+    "grade_6": "1ª media"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1ª elementare",
+    "grade_2": "2ª elementare",
+    "grade_3": "3ª elementare",
+    "grade_4": "4ª elementare",
+    "grade_5": "5ª elementare",
+    "grade_6": "1ª media"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1ª elementare",
+    "grade_2": "2ª elementare",
+    "grade_3": "3ª elementare",
+    "grade_4": "4ª elementare",
+    "grade_5": "5ª elementare",
+    "grade_6": "1ª media"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Esercitazione digitale per allievi della scuola elementare e della scuola media in Svizzera: matematica, geometria, inglese e scienze.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — esercitazione per allievi della scuola elementare e della 1ª media in Svizzera."
+  }
+}

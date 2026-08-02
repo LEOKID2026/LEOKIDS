@@ -124,6 +124,23 @@ import {
   BY_SECTION_DE_CH,
   SECTIONS_DE_CH,
 } from "./de-CH/index.js";
+import {
+  ALL_ARTICLES_NL_BE,
+  BY_SECTION_NL_BE,
+  SECTIONS_NL_BE,
+} from "./nl-BE/index.js";
+import {
+  ALL_ARTICLES_FR_BE,
+  BY_SECTION_FR_BE,
+} from "./fr-BE/index.js";
+import {
+  ALL_ARTICLES_FR_CH,
+  BY_SECTION_FR_CH,
+} from "./fr-CH/index.js";
+import {
+  ALL_ARTICLES_IT_CH,
+  BY_SECTION_IT_CH,
+} from "./it-CH/index.js";
 
 export {
   ALL_ARTICLES_ES_419,
@@ -138,10 +155,13 @@ export {
   SECTIONS_PT_AO,
   ALL_ARTICLES_IT_IT,
   SECTIONS_IT_IT,
+  ALL_ARTICLES_IT_CH,
   ALL_ARTICLES_FR_FR,
   SECTIONS_FR_FR,
   ALL_ARTICLES_FR_CI,
   ALL_ARTICLES_FR_CA,
+  ALL_ARTICLES_FR_BE,
+  ALL_ARTICLES_FR_CH,
   ALL_ARTICLES_PT_MZ,
   SECTIONS_PT_MZ,
   ALL_ARTICLES_EN_KE,
@@ -150,6 +170,8 @@ export {
   SECTIONS_DE_CH,
   ALL_ARTICLES_NL_NL,
   SECTIONS_NL_NL,
+  ALL_ARTICLES_NL_BE,
+  SECTIONS_NL_BE,
   ALL_ARTICLES_DE_DE,
   SECTIONS_DE_DE,
   ALL_ARTICLES_DE_AT,
@@ -251,10 +273,14 @@ export function resolveHelpLocale(locale) {
   if (id === "pt-br") return "pt-BR";
   // Italy / France / Netherlands / Germany / Russia own /it /fr /nl /de /ru;
   // bare tags are not aliases of other locales.
+  if (id === "it-ch") return "it-CH";
   if (id === "it-it" || id === "it") return "it-IT";
+  if (id === "fr-be") return "fr-BE";
+  if (id === "fr-ch") return "fr-CH";
   if (id === "fr-ci") return "fr-CI";
   if (id === "fr-ca") return "fr-CA";
   if (id === "fr-fr" || id === "fr") return "fr-FR";
+  if (id === "nl-be") return "nl-BE";
   if (id === "nl-nl" || id === "nl") return "nl-NL";
   if (id === "de-at") return "de-AT";
   if (id === "de-ch") return "de-CH";
@@ -284,10 +310,14 @@ export function getHelpSections(locale) {
   if (helpLocale === "pt-MZ") return SECTIONS_PT_MZ;
   if (helpLocale === "pt-PT") return SECTIONS_PT_PT;
   if (helpLocale === "pt-BR") return SECTIONS_PT_BR;
+  if (helpLocale === "it-CH") return SECTIONS_IT_IT;
   if (helpLocale === "it-IT") return SECTIONS_IT_IT;
+  if (helpLocale === "fr-BE") return SECTIONS_FR_FR;
+  if (helpLocale === "fr-CH") return SECTIONS_FR_FR;
   if (helpLocale === "fr-CI") return SECTIONS_FR_FR;
   if (helpLocale === "fr-CA") return SECTIONS_FR_FR;
   if (helpLocale === "fr-FR") return SECTIONS_FR_FR;
+  if (helpLocale === "nl-BE") return SECTIONS_NL_BE;
   if (helpLocale === "nl-NL") return SECTIONS_NL_NL;
   if (helpLocale === "de-AT") return SECTIONS_DE_AT;
   if (helpLocale === "de-CH") return SECTIONS_DE_CH;
@@ -349,8 +379,17 @@ export function listArticles(section, locale) {
   if (helpLocale === "pt-BR") {
     return BY_SECTION_PT_BR[section] || [];
   }
+  if (helpLocale === "it-CH") {
+    return BY_SECTION_IT_CH[section] || [];
+  }
   if (helpLocale === "it-IT") {
     return BY_SECTION_IT_IT[section] || [];
+  }
+  if (helpLocale === "fr-BE") {
+    return BY_SECTION_FR_BE[section] || [];
+  }
+  if (helpLocale === "fr-CH") {
+    return BY_SECTION_FR_CH[section] || [];
   }
   if (helpLocale === "fr-CI") {
     return BY_SECTION_FR_CI[section] || [];
@@ -360,6 +399,9 @@ export function listArticles(section, locale) {
   }
   if (helpLocale === "fr-FR") {
     return BY_SECTION_FR_FR[section] || [];
+  }
+  if (helpLocale === "nl-BE") {
+    return BY_SECTION_NL_BE[section] || [];
   }
   if (helpLocale === "nl-NL") {
     return BY_SECTION_NL_NL[section] || [];
@@ -462,6 +504,10 @@ export function assertAllArticlesValid() {
     { locale: "pt-MZ", articles: ALL_ARTICLES_PT_MZ },
     { locale: "fr-CI", articles: ALL_ARTICLES_FR_CI },
     { locale: "fr-CA", articles: ALL_ARTICLES_FR_CA },
+    { locale: "fr-BE", articles: ALL_ARTICLES_FR_BE },
+    { locale: "fr-CH", articles: ALL_ARTICLES_FR_CH },
+    { locale: "nl-BE", articles: ALL_ARTICLES_NL_BE },
+    { locale: "it-CH", articles: ALL_ARTICLES_IT_CH },
     { locale: "de-AT", articles: ALL_ARTICLES_DE_AT },
     { locale: "de-CH", articles: ALL_ARTICLES_DE_CH },
   ];

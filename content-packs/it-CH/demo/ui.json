@@ -1,0 +1,17 @@
+{
+  "worksheet": {
+    "pageTitle": "Scheda di lavoro — modalità demo",
+    "intro": "Puoi sfogliare le schede di lavoro dall'elenco nella home. L'invio digitale non è disponibile in modalità demo."
+  },
+  "grades": {
+    "g1": "1ª elementare",
+    "g2": "2ª elementare",
+    "g3": "3ª elementare",
+    "g4": "4ª elementare",
+    "g5": "5ª elementare",
+    "g6": "1ª media"
+  },
+  "parentPortal": {
+    "readOnlyWorksheets": "Modalità demo — può sfogliare le schede di lavoro, ma non crearne di nuove."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "master": {
+    "grades": {
+      "g1": "1ª elementare",
+      "g2": "2ª elementare",
+      "g3": "3ª elementare",
+      "g4": "4ª elementare",
+      "g5": "5ª elementare",
+      "g6": "1ª media"
+    }
+  }
+}

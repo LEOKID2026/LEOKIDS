@@ -1,0 +1,24 @@
+{
+  "portal": {
+    "classesSubtitle": "Kies leerjaar, klasgroep (fysieke klas) en onderwerp — rapporten en beheer per leerjaar",
+    "chooseGrade": "Kies een leerjaar",
+    "choosePhysicalClass": "Kies een klasgroep",
+    "backGrades": "← Terug naar leerjaren",
+    "colGrade": "Leerjaar",
+    "studentsSubtitle": "Blader op leerjaar en klasgroep — kindrapporten zonder ID's in te voeren",
+    "createStudentGrade": "Leerjaar",
+    "createStudentClass": "Klasgroep (naam van de fysieke klas op school)",
+    "classMgmtGrade": "Leerjaar",
+    "assignCurrentGrade": "Huidig leerjaar",
+    "assignTargetGrade": "Doelleerjaar"
+  },
+  "communication": {
+    "audienceGradeParents": "Ouders van dit leerjaar",
+    "audienceGradeTeachers": "Leerkrachten van dit leerjaar",
+    "detailsFieldGrade": "Leerjaar",
+    "detailsFieldClass": "Klasgroep"
+  },
+  "reportSummary": {
+    "studentLine": "Antwoorden: {totalAnswers} · Nauwkeurigheid: {accuracy} · Leerjaar: {gradeLevel}"
+  }
+}

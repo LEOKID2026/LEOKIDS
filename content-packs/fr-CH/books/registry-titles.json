@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Anglais — 3P"
+    },
+    "english.g2": {
+      "bookTitle": "Anglais — 4P"
+    },
+    "english.g3": {
+      "bookTitle": "Anglais — 5P"
+    },
+    "english.g4": {
+      "bookTitle": "Anglais — 6P"
+    },
+    "english.g5": {
+      "bookTitle": "Anglais — 7P"
+    },
+    "english.g6": {
+      "bookTitle": "Anglais — 8P"
+    },
+    "geometry.g1": {
+      "bookTitle": "Géométrie — 3P"
+    },
+    "geometry.g2": {
+      "bookTitle": "Géométrie — 4P"
+    },
+    "geometry.g3": {
+      "bookTitle": "Géométrie — 5P"
+    },
+    "geometry.g4": {
+      "bookTitle": "Géométrie — 6P"
+    },
+    "geometry.g5": {
+      "bookTitle": "Géométrie — 7P"
+    },
+    "geometry.g6": {
+      "bookTitle": "Géométrie — 8P"
+    },
+    "math.g1": {
+      "bookTitle": "Mathématiques — 3P"
+    },
+    "math.g2": {
+      "bookTitle": "Mathématiques — 4P"
+    },
+    "math.g3": {
+      "bookTitle": "Mathématiques — 5P"
+    },
+    "math.g4": {
+      "bookTitle": "Mathématiques — 6P"
+    },
+    "math.g5": {
+      "bookTitle": "Mathématiques — 7P"
+    },
+    "math.g6": {
+      "bookTitle": "Mathématiques — 8P"
+    },
+    "science.g1": {
+      "bookTitle": "Sciences — 3P"
+    },
+    "science.g2": {
+      "bookTitle": "Sciences — 4P"
+    },
+    "science.g3": {
+      "bookTitle": "Sciences — 5P"
+    },
+    "science.g4": {
+      "bookTitle": "Sciences — 6P"
+    },
+    "science.g5": {
+      "bookTitle": "Sciences — 7P"
+    },
+    "science.g6": {
+      "bookTitle": "Sciences — 8P"
+    }
+  }
+}

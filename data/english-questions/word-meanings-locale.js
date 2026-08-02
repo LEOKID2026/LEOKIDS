@@ -124,6 +124,15 @@ function isItalianInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isItalianSwitzerlandInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "it-ch";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isFrenchFranceInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "fr-fr";
@@ -151,9 +160,36 @@ function isFrenchCanadaInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isFrenchBelgiumInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "fr-be";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchSwitzerlandInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "fr-ch";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isDutchNetherlandsInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "nl-nl";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isDutchBelgiumInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "nl-be";
 }
 
 /**
@@ -204,10 +240,14 @@ function isLocalizedMeaningLocale(locale) {
     isPortugueseAngolaInstructionLocale(locale) ||
     isPortugueseMozambiqueInstructionLocale(locale) ||
     isItalianInstructionLocale(locale) ||
+    isItalianSwitzerlandInstructionLocale(locale) ||
     isFrenchFranceInstructionLocale(locale) ||
     isFrenchCoteIvoireInstructionLocale(locale) ||
     isFrenchCanadaInstructionLocale(locale) ||
+    isFrenchBelgiumInstructionLocale(locale) ||
+    isFrenchSwitzerlandInstructionLocale(locale) ||
     isDutchNetherlandsInstructionLocale(locale) ||
+    isDutchBelgiumInstructionLocale(locale) ||
     isGermanGermanyInstructionLocale(locale) ||
     isGermanAustriaInstructionLocale(locale) ||
     isGermanSwitzerlandInstructionLocale(locale) ||
@@ -231,10 +271,14 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "pt-pt") chainLocale = "pt-PT";
   else if (tag === "pt-ao") chainLocale = "pt-AO";
   else if (tag === "pt-mz") chainLocale = "pt-MZ";
+  else if (tag === "it-ch") chainLocale = "it-CH";
   else if (tag === "it-it") chainLocale = "it-IT";
   else if (tag === "fr-fr") chainLocale = "fr-FR";
+  else if (tag === "fr-be") chainLocale = "fr-BE";
+  else if (tag === "fr-ch") chainLocale = "fr-CH";
   else if (tag === "fr-ci") chainLocale = "fr-CI";
   else if (tag === "fr-ca") chainLocale = "fr-CA";
+  else if (tag === "nl-be") chainLocale = "nl-BE";
   else if (tag === "nl-nl") chainLocale = "nl-NL";
   else if (tag === "de-de") chainLocale = "de-DE";
   else if (tag === "de-at") chainLocale = "de-AT";

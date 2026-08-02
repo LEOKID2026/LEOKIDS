@@ -1,0 +1,21 @@
+{
+  "chooseGrade": "Choisis une année",
+  "master": {
+    "gradeRequired": "Merci de choisir une année avant de pratiquer. Demande à un parent de mettre à jour ta année scolaire.",
+    "gradeFallback": "Année",
+    "currentGrade": "Année actuelle",
+    "grades": {
+      "g1": "3P",
+      "g2": "4P",
+      "g3": "5P",
+      "g4": "6P",
+      "g5": "7P",
+      "g6": "8P"
+    }
+  },
+  "geometry": {
+    "errors": {
+      "invalidGrade": "Année non valide. Choisis une autre année."
+    }
+  }
+}

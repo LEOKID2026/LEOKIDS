@@ -1,0 +1,12 @@
+{
+  "required": "Dit veld is verplicht.",
+  "invalidEmail": "Voer een geldig e-mailadres in.",
+  "passwordMismatch": "De wachtwoorden komen niet overeen.",
+  "minLength": "Moet minstens {min} tekens bevatten.",
+  "maxLength": "Mag maximaal {max} tekens bevatten.",
+  "invalidCode": "Die code is niet geldig.",
+  "invalidGrade": "Dat leerjaar is niet geldig.",
+  "productMembershipSuspended": "Dit lidmaatschap is opgeschort.",
+  "unauthorized": "U bent niet aangemeld.",
+  "invalidRequest": "Dat verzoek is niet geldig."
+}

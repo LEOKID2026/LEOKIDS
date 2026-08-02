@@ -1,0 +1,7 @@
+{
+  "parent": {
+    "selectGrade": "Selezionare la classe",
+    "gradeRequired": "Selezioni una classe.",
+    "allowGradePicker": "Consentire all'allievo di scegliere la classe nelle pagine di apprendimento"
+  }
+}

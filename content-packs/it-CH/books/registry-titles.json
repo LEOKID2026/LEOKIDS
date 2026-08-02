@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglese — 1ª elementare"
+    },
+    "english.g2": {
+      "bookTitle": "Inglese — 2ª elementare"
+    },
+    "english.g3": {
+      "bookTitle": "Inglese — 3ª elementare"
+    },
+    "english.g4": {
+      "bookTitle": "Inglese — 4ª elementare"
+    },
+    "english.g5": {
+      "bookTitle": "Inglese — 5ª elementare"
+    },
+    "english.g6": {
+      "bookTitle": "Inglese — 1ª media"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometria — 1ª elementare"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometria — 2ª elementare"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometria — 3ª elementare"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometria — 4ª elementare"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometria — 5ª elementare"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometria — 1ª media"
+    },
+    "math.g1": {
+      "bookTitle": "Matematica — 1ª elementare"
+    },
+    "math.g2": {
+      "bookTitle": "Matematica — 2ª elementare"
+    },
+    "math.g3": {
+      "bookTitle": "Matematica — 3ª elementare"
+    },
+    "math.g4": {
+      "bookTitle": "Matematica — 4ª elementare"
+    },
+    "math.g5": {
+      "bookTitle": "Matematica — 5ª elementare"
+    },
+    "math.g6": {
+      "bookTitle": "Matematica — 1ª media"
+    },
+    "science.g1": {
+      "bookTitle": "Scienze — 1ª elementare"
+    },
+    "science.g2": {
+      "bookTitle": "Scienze — 2ª elementare"
+    },
+    "science.g3": {
+      "bookTitle": "Scienze — 3ª elementare"
+    },
+    "science.g4": {
+      "bookTitle": "Scienze — 4ª elementare"
+    },
+    "science.g5": {
+      "bookTitle": "Scienze — 5ª elementare"
+    },
+    "science.g6": {
+      "bookTitle": "Scienze — 1ª media"
+    }
+  }
+}
